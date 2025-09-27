@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_23":			//КОНЕЦ ЭТАПА 1
 			DialogExit();
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 
 			AddQuestRecord("DTSG", "2");
 			bDisableFastReload = false;
@@ -2340,7 +2340,7 @@ void ProcessDialogEvent()
 			dialog.text = "I'm almost sorry to say this, Brian, but I'm afraid our cooperation ends here.";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_11";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_11":
 			DialogExit();
@@ -2356,7 +2356,7 @@ void ProcessDialogEvent()
 			dialog.text = "I... am free, Colonel? Will you lift the bounty on my head, and I can start anew as if I'm a law-abiding man?";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_13";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_13":
 			DialogExit();
@@ -2371,7 +2371,7 @@ void ProcessDialogEvent()
 			dialog.text = "I'd say you have seen too much - just like late Fleetwood. I've essentially received a bribe right in front of you just now.";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_15";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_15":
 			DialogExit();
@@ -2386,7 +2386,7 @@ void ProcessDialogEvent()
 			dialog.text = "I... I won't tell anyone anything, I swear to God!";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_17";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_17":
 			DialogExit();
@@ -2401,7 +2401,7 @@ void ProcessDialogEvent()
 			dialog.text = "Of course, you won't.";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_19";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_19":
 			DialogExit();
@@ -2416,7 +2416,7 @@ void ProcessDialogEvent()
 			dialog.text = "No!..";
 			link.l1 = "...";
 			link.l1.go = "DTSG_Kortni_LT_21";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_21":
 			DialogExit();

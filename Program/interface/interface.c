@@ -2,9 +2,16 @@
 #include "interface\utils\interface.c"
 #include "interface\utils\MessageBox.c"
 #include "interface\utils\IconSelector.c"
+#include "interface\utils\sorting.c"
+#include "interface\utils\argb_palette.c"
+#include "interface\utils\items\items.c"
+#include "interface\utils\goods.c"
+#include "interface\utils\exchange_from_inventory.c"
+#include "interface\utils\common_character_scroll.c"
+#include "interface\utils\numbers_formatter.c"
 #include "interface\utilite.c"
 #include "interface\interface_utils.c"
-#include "interface\perks\perks.c"
+
 
 #define FONT_NORMAL	"interface_normal"
 #define FONT_CAPTION	"interface_button"
@@ -459,13 +466,13 @@ void LaunchNetCreateGame()
 		InitInterface(Interfaces[CurrentInterface].IniFile);
 	}
 }
-void LaunchMapScreen()
+void LaunchMapScreen(int iMapTarget)
 {
 	if(procInterfacePrepare(INTERFACE_MAP))
 	{
 		nPrevInterface = -1;
 		CurrentInterface = INTERFACE_MAP;
-		InitInterface(Interfaces[CurrentInterface].IniFile);
+		InitInterface_I(Interfaces[CurrentInterface].IniFile, iMapTarget);
 	}
 }
 
@@ -2363,7 +2370,7 @@ bool MakeAutoSave()
 			return true;
 		} 
 	}
-	return false; // Это критерий, что делаем сейв и потому нужно обождать делать след шаг (переход на карту или что-то еще и делать его уже после)
+	return false; // Это критерий, что делаем сейв и потому нужно обождать делать след шаг (переход на карту или что-то ещё и делать его уже после)
 }
 
 bool MakeAutoSave2()
@@ -2382,7 +2389,7 @@ bool MakeAutoSave2()
 			return true;
 		} 
 	}
-	return false; // Это критерий, что делаем сейв и потому нужно обождать делать след шаг (переход на карту или что-то еще и делать его уже после)
+	return false; // Это критерий, что делаем сейв и потому нужно обождать делать след шаг (переход на карту или что-то ещё и делать его уже после)
 }
 
 bool AutoSave()		// Ручное автосохранение для квестов
@@ -2672,6 +2679,14 @@ string GetConvertStr(string _param, string _file)
     return totalInfo;
 }
 
+// Локализация с возвратом ключа вместо значения, если перевод не найден
+string GetConvertStrB(string _param, string _file)
+{
+	string result = GetConvertStr(&_param, &_file);
+	if (result == "" || result == " ") return "Key " + _param + " in " + _file;
+	return result;
+}
+
 int GetFileStringsQuantity(string _file)
 {
 	int idLngFile = -1;
@@ -2793,4 +2808,13 @@ void SetInterfaceGlobalsVariables()
 	{
 		iCompassPos = sti(InterfaceStates.CompassPos);
 	}
+}
+
+// Заплатка для сортировок и прочего, если нет родного инпута
+// После использования вернуть старый!
+string BackUpLanguage()
+{
+	string curLanguage = LanguageGetLanguage();
+	if (curLanguage == "chinese" || curLanguage == "hungarian") LanguageSetLanguage("english");
+	return curLanguage;
 }

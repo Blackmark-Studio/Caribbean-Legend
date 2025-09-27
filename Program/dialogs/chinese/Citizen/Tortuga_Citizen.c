@@ -12,7 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && npchar.sex == "man")
             {
                 link.l1 = "你不会刚好认识一个叫乔普.范德温克的人吧? ";
-                link.l1.go = "PZ1";
+                link.l1.go = "PZ_1";
             }
         break;
         
@@ -35,19 +35,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l2.go = "new question";
         break;
         
-        case "PZ1":
+        case "PZ_1":
             dialog.text = "嗯, 我个人不认识他, 但我时不时会在这里看到他。 你为什么问这个? ";
             link.l1 = "我被派去亲自给他送一个包裹。 但没人想谈论他, 我不知道为什么。 你知道吗? 他是个坏人吗? 我想听听你诚实的看法。 ";
-            link.l1.go = "PZ2";
+            link.l1.go = "PZ_2";
         break;
         
-        case "PZ2":
+        case "PZ_2":
             dialog.text = "再说一遍, 我们并不认识, 所以我几乎一无所知。 但他在镇上有个密友, 他们经常一起出现。 去找他吧 —他会决定是否告诉你更多信息。 他朋友的名字是罗伯.马滕。 ";
             link.l1 = "你说罗伯.马滕... 他是谁? 我在哪里可以找到他? ";
-            link.l1.go = "PZ3";
+            link.l1.go = "PZ_3";
         break;
         
-        case "PZ3":
+        case "PZ_3":
             dialog.text = "各个地方都有可能, 但现在他在我们的灯塔那里 —在一场可怕的风暴后修理他的大帆船。 那艘船叫'伏尔泰格'号。 ";
             link.l1 = "非常感谢你! 你都不知道你帮了我多大的忙。 ";
             link.l1.go = "Exit";

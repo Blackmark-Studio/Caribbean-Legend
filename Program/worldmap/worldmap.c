@@ -433,11 +433,51 @@ void wdmAddNavyExp()
 		else
 			AddCharacterExpToSkill(pchar, "Sailing", 1.5);
 		// belamour пока на тесты раз в три дня
-		if(hour == 0.00 && GetDataDay() % 3 == 0) notification(StringFromKey("RPGUtilite_1"), "Sailing");
+		if(hour == 0.0 && GetDataDay() % 3 == 0) notification(StringFromKey("RPGUtilite_1"), "Sailing");
 			
 	}
 	if(GetSkillValue(pchar, SKILL_TYPE, "Sailing") < 100)
 	{
 		PostEvent("EventAddNavyExp", 1000);
 	}
+}
+
+void wdmEncSpeedUpdate(string qName)
+{
+    aref aEnc, aCurEnc;
+    makearef(aEnc, TEV.EncSpeed);
+    int qty = GetAttributesNum(aEnc);
+    if (qty == 0)
+    {
+        DeleteAttribute(&TEV, "EncSpeed");
+        PChar.quest.wdmEncSpeedUpdate.over = "yes";
+        return;
+    }
+
+    bool bWdmActive = IsEntity(&worldMap);
+    float curSpeed;
+    string encID;
+
+    for (int i = qty-1; i >= 0; i--)
+    {
+        aCurEnc = GetAttributeN(aEnc, i);
+        encID = GetAttributeName(aCurEnc);
+        if (!CheckAttribute(&worldMap, "encounters." + encID + ".SpeedMod"))
+        {   // Идём сверху вниз, удалять можно
+            DeleteAttribute(aEnc, encID);
+            continue;
+        }
+        aCurEnc.dLeft = sti(aCurEnc.dLeft) - 1;
+        curSpeed = stf(GetAttributeValue(aCurEnc)) * (0.7 + 0.1 * (3.0 - stf(aCurEnc.dLeft)));
+        if (bWdmActive) SendMessage(&worldMap, "lsf", MSG_WORLDMAP_SET_SPEED, encID, curSpeed);
+        worldMap.encounters.(encID).kMaxSpeed = curSpeed;
+        if (sti(aCurEnc.dLeft) == 0) DeleteAttribute(aEnc, encID);
+    }
+
+    SetFunctionTimerCondition("wdmEncSpeedUpdate", 0, 0, 1, true);
+}
+
+void wdmEscapeRefresh(string qName)
+{
+    DeleteAttribute(&TEV, "EscapeBlock");
 }

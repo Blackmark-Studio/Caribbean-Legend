@@ -123,7 +123,7 @@ Non sono riuscito a parlare con l’ufficiale di pattuglia. Bah, al diavolo lui,
 #TEXT 8
 Che sfortuna! L’ufficiale di pattuglia è morto, e con lui è svanito anche il suo segreto...
 #TEXT 9
-Giuda nell’esercito cerca di ottenere i suoi 30 “denari”. Chissà quale favore può valere una tale montagna di @<sText>?
+Giuda nell’esercito cerca di ottenere i suoi 30 'denari'. Chissà quale favore può valere una tale montagna di @<sText>?
 #TEXT 10
 Un affare discutibile! Eppure, @<sName> non cercherebbe questa mappa senza un valido motivo.
 #TEXT 11
@@ -555,7 +555,7 @@ Si scopre che le cose non sono così semplici come sembravano. Il capitano della
 #TEXT 40
 Ex cannoniere del @<sShipType> '@<sShipName>', @<sName>, mi ha raccontato tutta la storia della fine del @<sShipTypeQuest> '@<sShipNameQuest>'. Ma quel tipo un po’ strano ha chiesto una cifra assurda per dirmi dove si trova il nascondiglio. Ho deciso di non pagare.
 #TEXT 41
-La conversazione con l’ex cannoniere della @<sShipType> “@<sShipName>” è stata davvero utile. Ora devo trovare @<sSum> pesos: è questa la somma che @<sName> vuole in cambio delle informazioni sul nascondiglio.
+La conversazione con l’ex cannoniere della @<sShipType> '@<sShipName>' è stata davvero utile. Ora devo trovare @<sSum> pesos: è questa la somma che @<sName> vuole in cambio delle informazioni sul nascondiglio.
 #TEXT 42
 Ho lasciato perdere tutta la faccenda della cassa del capitano @<sName>. Che il vecchio cannoniere @<sCharName> mi perdoni, ma chiedeva davvero troppo, e ho cose più importanti da fare.
 #TEXT 43
@@ -569,7 +569,7 @@ I contrabbandieri hanno trovato il nascondiglio del capitano @<sName> prima di m
 #TEXT 47
 I contrabbandieri hanno trovato il nascondiglio del capitano @<sName> prima di me. Ho dovuto riprendere il carico con la forza. Ho preso tutte le merci che sono riuscito a stivare: @<sSum> unità di @<sGoods>. Ora devo portare il cannoniere @<sCharName> all’insediamento di @<sCity>.
 #TEXT 48
-Ci siamo separati dall’ex cannoniere della @<sShipType> “@<sShipName>”, @<sCharName>, nel porto di @<sCity>. In segno di gratitudine, mi ha regalato un oggetto di valore. Almeno qualcuno dell’equipaggio della @<sShipType> ha tratto qualche beneficio da quell’impresa rischiosa.
+Ci siamo separati dall’ex cannoniere della @<sShipType> '@<sShipName>', @<sCharName>, nel porto di @<sCity>. In segno di gratitudine, mi ha regalato un oggetto di valore. Almeno qualcuno dell’equipaggio della @<sShipType> ha tratto qualche beneficio da quell’impresa rischiosa.
 #TEXT 49
 Si è scoperto che il capitano della pattuglia @<sShipType>, @<sName>, è stato arrestato per pirateria navale. Forse dovrei fargli visita nelle segrete del forte, non credi?
 #TEXT 50
@@ -627,7 +627,7 @@ Sono riuscito a catturare la nave '@<sShipName>' carica di @<sGoods>.
 #TEXT 5
 Nella furia della battaglia, la nave '@<sShipName>' è stata affondata e tutto il carico di @<sGoods> giace ora sul fondo del mare!
 #TEXT 6
-Il capitano prigioniero @<sName> mi ha detto che nella città di @<sCity> ha un amico, @<sNameChar>, che a quanto pare sarebbe disposto a pagare un grosso riscatto per liberare il suo vecchio compagno. Credo che dovrò andare a trovare questo suo “amico”.
+Il capitano prigioniero @<sName> mi ha detto che nella città di @<sCity> ha un amico, @<sNameChar>, che a quanto pare sarebbe disposto a pagare un grosso riscatto per liberare il suo vecchio compagno. Credo che dovrò andare a trovare questo suo 'amico'.
 #TEXT 7
 Quel capitano prigioniero @<sName> ha cercato di fregarmi! Beh, non la passerà liscia! Lo farò impiccare subito!
 #TEXT 8
@@ -672,7 +672,7 @@ Ho deciso di rifiutare questa missione. Centomila pesos sono una fortuna, ma la 
 #TEXT 7
 All’uscita dalla città sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno gentilmente chiesto di consegnare tutto il mio denaro. Di sicuro erano stati mandati da quel lurido ratto. Beh, temo di averlo deluso ancora una volta...
 #TEXT 8
-All’uscita dal forte sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno “gentilmente” chiesto di restituire tutti i miei soldi. Di sicuro li ha mandati quel lurido ratto. Ho preferito non mettermi nei guai: erano armati fino ai denti. Così ho dovuto consegnare tutto il denaro...
+All’uscita dal forte sono stato avvicinato da alcuni scagnozzi che, a quanto pare, mi stavano aspettando. Mi hanno 'gentilmente' chiesto di restituire tutti i miei soldi. Di sicuro li ha mandati quel lurido ratto. Ho preferito non mettermi nei guai: erano armati fino ai denti. Così ho dovuto consegnare tutto il denaro...
 
 #QUEST NoiseCemetery
 Cimitero Spettrale
@@ -726,7 +726,7 @@ Il prete della chiesa locale ha minacciato Thomas Morrison di scomunica se accet
 Dovrò trovare delle soluzioni alternative. Il prete è senza dubbio testardo, e per certi versi ha anche ragione. Ma non posso comunque dargli ragione. Se c’è una possibilità di rimettere in sesto la ragazza, devo provarci.
 #TEXT	5
 Sono riuscito a convincere il prete. Ha accettato di chiudere un occhio sul coinvolgimento della zingara nella cura, a patto che Thomas si riscatti davanti a Dio con sincero pentimento e buone azioni.
-Ora devo trovare la mangarosa, l’ingrediente principale per la pozione della zingara. Questa pianta si riconosce dal profumo gradevole, dallo stelo alto e dalle foglie frastagliate. Posso trovare la mangarosa in una grotta fuori città, da certi “loschi individui”, probabilmente vagabondi o banditi. Meglio così: magari non dovrò nemmeno pagarli.
+Ora devo trovare la mangarosa, l’ingrediente principale per la pozione della zingara. Questa pianta si riconosce dal profumo gradevole, dallo stelo alto e dalle foglie frastagliate. Posso trovare la mangarosa in una grotta fuori città, da certi 'loschi individui', probabilmente vagabondi o banditi. Meglio così: magari non dovrò nemmeno pagarli.
 #TEXT	6
 Ho fatto tutto ciò che era in mio potere. Ora non resta che confidare nelle capacità della zingara. Mi sono talmente dedicato a salvare la bambina che ho completamente trascurato i miei affari. Tornerò ad Antigua tra un mese. Entro allora, Esther dovrebbe essere completamente guarita.
 #TEXT	7
@@ -770,7 +770,7 @@ Confini della Giustizia
 #TEXT	1
 È stato fatto un audace attentato contro il capo dell’Autorità Portuale di Belize. L’assalitore è riuscito a fuggire, ma ora è lui la preda. Si dice che il funzionario abbia messo una taglia sulla sua testa. Beh, il nemico sembra pericoloso, dovrò pensarci bene prima di mettermi sulle sue tracce.
 #TEXT	2
-Il capo del porto sostiene di non avere la minima idea di chi l’abbia aggredito, né del motivo. Dice che l’assalitore è solo un pazzo qualunque, uno dei tanti che girano per i Caraibi. Non sembra molto credibile, ma poco importa. Per la testa di questo “pazzo” c’è una taglia di duecento dobloni. Questo è ciò che conta davvero. Inizierò le ricerche nelle insenature e grotte vicine: è lì che il fuggitivo probabilmente si nasconde dalla giustizia.
+Il capo del porto sostiene di non avere la minima idea di chi l’abbia aggredito, né del motivo. Dice che l’assalitore è solo un pazzo qualunque, uno dei tanti che girano per i Caraibi. Non sembra molto credibile, ma poco importa. Per la testa di questo 'pazzo' c’è una taglia di duecento dobloni. Questo è ciò che conta davvero. Inizierò le ricerche nelle insenature e grotte vicine: è lì che il fuggitivo probabilmente si nasconde dalla giustizia.
 #TEXT	3
 È fatta. È ora di tornare dal Capo del Porto e riscuotere la mia meritata ricompensa. Eppure, forse avrei dovuto ascoltare cosa aveva da dire il mercenario. Sembrava davvero convincente. D’altra parte, chi non cercherebbe di salvarsi la pelle, aggrappandosi anche alla più flebile speranza? Probabilmente era solo un altro dei suoi trucchi.
 #TEXT	4
@@ -795,7 +795,7 @@ Sotto pressione, la cameriera ha confessato che tutta la scena era stata organiz
 #TEXT 5
 Sono riuscito a riportare la botte all’oste giusto in tempo, salvandolo da un bel guaio. Devo dire che mi ha ricompensato generosamente: oltre ai dobloni, mi ha concesso vitto e alloggio gratis a vita nella sua taverna. Quanto alla cameriera, ha fatto bene a svanire, l’oste ha capito subito che anche lei era coinvolta nella faccenda.
 #TEXT 6
-L’equipaggio del “Lupo di Mare” ha seguito il suo capitano. Meritavano davvero una fine simile? Chi può dirlo... Ma una cosa è certa: avrebbero dovuto pensarci due volte prima di mettersi contro di me.
+L’equipaggio del 'Lupo di Mare' ha seguito il suo capitano. Meritavano davvero una fine simile? Chi può dirlo... Ma una cosa è certa: avrebbero dovuto pensarci due volte prima di mettersi contro di me.
 
 #QUEST UV
 Memoria Rubata
@@ -841,3 +841,165 @@ Il ciondolo comprato dal vagabondo appartiene a Betsy. Lui l’ha trovato nell�
 Beh, che donna questa Betsy... O forse Miranda? No, meglio restare su Betsy, non c’è bisogno di scavare nel suo passato. In ogni caso, l’ho tirata fuori dalle grinfie di quei bastardi... È ora di riscuotere la ricompensa che mi spetta.
 #TEXT	6
 Il taverniere mi ha pagato generosamente per aver riportato indietro la sua preziosa cameriera. A dire il vero, non riesco a smettere di pensare a Betsy... Forse dovrei farle visita, prima o poi.
+
+#QUEST OZ
+Catene dell'azzardo
+#TEXT	1
+A San Jose il fabbro ha pagato caro la sua passione per le carte: in una partita con Javier Castillo ha perso qualcosa di molto prezioso. Secondo le voci, è completamente abbattuto: il lavoro non procede, nonostante sul suo futuro incomba una tempesta, perché se l'ordine non sarà pronto in tempo, l'ammiraglio si infurierà. Cosa poteva essere così prezioso da gettare un uomo in una tale disperazione?
+#TEXT	2
+Ora è chiaro cosa ha causato lo sconforto di Sebastian Cordoba. Ha perso un libro molto importante per il suo lavoro – un libro sull'arte della lavorazione del metallo. La sua situazione è aggravata dal fatto che Javier ha deciso di non perdere tempo e vendere il libro a un maestro armaiolo francese. Come al solito, i guai non vengono mai da soli. Poco prima, il fabbro aveva ricevuto un importante ordine dall'ammiraglio Eugenio de la Torre... Quando arriverà qui, saprà certamente perché il suo ordine non è stato eseguito. Venuto a sapere che il libro è finito nelle mani dei francesi, secondo il fabbro, sarà molto severo con lui. Ho accettato@<sSex> di aiutare il poveretto. Se riuscirò a restituirgli il libro, avrà una seconda possibilità e, spero, non ripeterà più i suoi errori, mentre io potrò sempre contare sui servizi di un buon fabbro. Comincerò cercando Javier, che sicuramente ora starà cercando di raggirare qualcun altro.
+#TEXT	3
+Sono riuscit@ a battere Javier! Il libro è con me. I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio – sono inutili. Non è riuscito ad accettare la sconfitta e mi ha accusat@ di barare. Beh, ho dovuto ridimensionare la sua arroganza.
+#TEXT	4
+Dannazione! Javier è davvero forte a carte. Ora devo trovare un modo per recuperare non solo il libro, ma anche i miei soldi! Per prima cosa dovrei informarmi meglio su di lui.
+#TEXT	5
+Dannazione! Javier non vuole nemmeno sentir parlare di una proroga del debito. Non lo lascerò così. Devo trovare un modo per mettergli pressione. Ma prima dovrei informarmi meglio su di lui.
+#TEXT	6
+Ho scoperto che Javier deve una grossa somma a un certo Felipe Alarcón. Forse, parlando con lui, troverò un modo per fare pressione sul debitore. La casa di Felipe si trova di fronte alla banca, è una splendida villa con colonne all'ingresso.
+#TEXT	7
+Ho ottenuto il permesso di Felipe di agire a suo nome. Ora posso esigere da Javier la restituzione immediata del denaro e, se non li ha, prendere per cominciare il libro.
+#TEXT	8
+Far perdere le staffe a Javier non è stato così difficile. A un passo dalla conclusione dell'affare, non ha retto la pressione – capendo che tutto poteva crollare in un momento, si è lanciato in combattimento senza pensarci. Il francese, arrivato per il libro, mi ha offerto ottantamila pesos – ma non ho voluto commerciare con il destino di Sebastian. Nelle tasche di Javier ho trovato solo un biglietto. A quanto pare, dopo questa transazione Javier intendeva lasciare l'isola con qualcuno. Devo controllare cosa nascondono in quella grotta. Sarebbe molto utile se lì ci fossero soldi, perché la questione con Felipe non è ancora risolta.
+#TEXT	8_1
+Sono riuscito a battere Javier! I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio sono inutili. Non riusciva ad accettare la sconfitta e mi ha accusato di barare. Beh, ho dovuto ridimensionarlo. Il francese venuto per il libro mi ha offerto ottantamila pesos – ma non avevo intenzione di mercanteggiare con il destino di Sebastian. 
+Nelle tasche di Javier ho trovato solo un biglietto. A quanto pare, dopo questo affare, Javier progettava di lasciare l’isola insieme a qualcuno. Devo controllare cosa nascondono in quella grotta.
+#TEXT	9
+Far perdere le staffe a Javier non è stato così difficile. A un passo dalla conclusione dell'affare, non ha retto la pressione – capendo che tutto poteva crollare in un momento, si è lanciato in combattimento senza pensarci. Il francese, arrivato per il libro, mi ha offerto ottantamila pesos – ma sono riuscit@ a spuntare centocinquantamila! Credo che ora sia meglio non farmi vedere da Sebastian. Nelle tasche di Javier non c'era nulla oltre a un biglietto. A quanto pare, dopo questa transazione Javier intendeva lasciare l'isola con qualcuno. Devo controllare cosa nascondono in quella grotta. Sarebbe molto utile se lì ci fossero soldi, perché la questione con Felipe non è ancora risolta. Non vorrei separarmi dai soldi ottenuti per la vendita del libro.
+#TEXT	9_1
+Sono riuscito a battere Javier! I suoi trucchi funzionano bene con gli ingenui, ma contro un giocatore serio sono inutili. Non riusciva ad accettare la sconfitta e mi ha accusato di barare. Beh, ho dovuto ridimensionarlo. Il francese venuto per il libro mi ha offerto ottantamila pesos – ma sono riuscito a spuntare centocinquantamila! Credo che ora sia meglio non incrociare Sebastian. 
+Nelle tasche di Javier non c’era altro che un biglietto. A quanto pare, dopo questo affare, Javier progettava di lasciare l’isola insieme a qualcuno. Devo controllare cosa nascondono in quella grotta.
+#TEXT	10
+Il libro è tornato nelle mani del suo proprietario. Spero che Sebastian abbia davvero imparato la lezione e che i miei sforzi non siano stati vani.
+#TEXT	11
+Non ho restituito i soldi a Felipe Alarcón. A quanto pare, non ha apprezzato la mossa – ora tutto l’esercito spagnolo vuole impiccarmi nella piazza.
+#TEXT	12
+Non ho restituito i soldi a Felipe Alarcón. Non ha apprezzato il gesto – si è lanciato all'attacco. L'ho sistemato senza problemi, ma ora, a quanto pare, dovrò aprirmi la strada fuori dalla città combattendo.
+
+#QUEST LFD
+Lettera da un morto
+#TEXT	1
+A Porto Bello circolano voci che il capitano del fluyt "Águila" abbia fatto una sfuriata al suo quartiermastro per aver lasciato l'equipaggio libero di andare in città. Di solito, se l'equipaggio resta a bordo, o c'è qualcosa che non devono raccontare, o la nave non ha intenzione di restare a lungo in porto. Devo parlare con i marinai, forse si presenterà un'opportunità per guadagnare.
+#TEXT	2
+Per le strade di Porto Bello ho incontrato un marinaio proprio di quel fluyt. Rischiava di arrivare in ritardo alla nave a causa della lunga ricerca di una certa Marisa Caldera. Nella stiva della sua nave, tra la roba vecchia, aveva trovato una vecchia lettera indirizzata a lei e aveva deciso di consegnarla nella speranza di ricevere una ricompensa.  
+Poiché non aveva più tempo, mi ha proposto di acquistare questa importante lettera per pochi soldi, e io ho accettat. In fondo, questa storia potrebbe davvero trasformarsi in un affare vantaggioso.
+#TEXT	3
+Il locandiere ha detto che Marisa non si fa vedere in città da quasi due anni. Dopo la notizia della morte del marito, è come scomparsa, evitando gli occhi della gente. Tuttavia, il suo nome è ancora sulle labbra di molti, e alcuni uomini continuano a interessarsi a lei. Si potrebbe pensare che si sia dedicata a qualcosa di indecente e per questo si nasconda, ma il proprietario della taverna assicura che Marisa era pia e trascorreva molto tempo in chiesa, quindi è difficile che sia coinvolta in cose simili. Devo continuare la ricerca. Ma dove trovarla? Chi potrà raccontarmi di più su di lei?
+#TEXT	4
+Il pastore ha confermato che Marisa Caldera ha lasciato la città da tempo e vi compare solo di rado. Non ne sa altro. Tuttavia, in città vive la sua amica Dolores Monjo, che forse sa più di lui. La sua casa si trova a sinistra dell'ufficio portuale.
+#TEXT	5
+A quanto pare, la situazione di Marisa è piuttosto difficile, visto che la sua amica mi ha accolto con tanta diffidenza appena ha sentito chi stavo cercando. Tuttavia, sono riuscit a convincere Dolores della purezza delle mie intenzioni. L'incontro è fissato per domani, dopo le undici di sera. Dolores non garantisce che Marisa verrà, ma ha promesso di riferirle tutto ciò di cui abbiamo parlato.
+#TEXT	6
+Marisa ha raccontato che il suo defunto marito aveva lasciato un nascondiglio da qualche parte fuori città. Ha paura di andarci da sola e mi ha chiesto di accompagnarla. Domani alle sette del mattino devo passare da lei per partire insieme.
+#TEXT	7
+Abbiamo trovato il nascondiglio appartenuto al marito di Marisa. Appena stavamo per andarcene, ci ha raggiunti un sicario mandato dal creditore Ramiro. Ho dovuto dargli una lezione mortale. Marisa, però, per usare un eufemismo, non ha gradito il mio gesto. È convinta che si dovesse risolvere tutto pacificamente, a qualsiasi costo. Be’, su questo non posso essere d'accordo. Ora resta solo accompagnarla in città, dove finalmente potrà iniziare una nuova vita tranquilla.
+#TEXT	8
+Abbiamo trovato il nascondiglio appartenuto al marito di Marisa. Ma appena stavamo per andarcene, ci ha raggiunti un sicario mandato dal creditore Ramiro. Ho sistemato tutto di tasca mia: debito pagato, interessi compresi. Ora la paura e la vita nell’ombra per la povera vedova appartengono al passato. Spero che possa ricominciare da capo, dimenticando tutto ciò che ha dovuto sopportare.
+
+#QUEST WildRose
+Rosa Selvaggia
+#TEXT	1
+Storia curiosa... Dalla piantagione del Bishop sono fuggiti alcuni schiavi — e non comuni, bensì disertori della marina. Pare che un soldato abbia riferito che Bishop abbia offerto una taglia per la loro cattura, e orde di uomini armati si siano gettate nella giungla per guadagnare qualcosa. Forse dovrei partecipare anch’io? D’altra parte il rischio di beccarsi una palla in pancia è altissimo — non tanto dai fuggiaschi, ma da chi li insegue.
+#TEXT	2
+Mary è sparita da qualche parte... senza dire una parola. Spero che non sia per colpa della nostra conversazione di ieri... Forse è semplicemente scesa nella sala. Devo cercarla lì.
+#TEXT	3
+È sorprendente come incontri casuali possano cambiare una persona. Soprattutto se è un razziatore con le mani fino al gomito nel sangue. I fuggiaschi, prima che li accerchiassero e massacrassero, hanno ferito alcuni guardiani e burattini del piantatore. Ma ciò che è ancora peggio — hanno stuprato e ucciso una giovane colona, e poi quasi ucciso anche il marito. A capo dei fuggiaschi c’era Jerry Casper.
+Dubito che sia — anche il parente più remoto della mia amata. Tuttavia questa storia ha fatto riflettere Mary: chi erano i suoi genitori? Non conosce né i loro nomi, né tanto meno il luogo della sua nascita.
+In ogni caso, se iniziamo la ricerca delle loro tracce, disperse vent’anni fa, allora solo sull’Isola della Giustizia. Forse qualcuno dei vecchi residenti potrà aiutarci...
+Mary ha detto che non bisogna dimenticare nulla al mondo, pur di sollevare il velo su quel mistero. Ma vedo che non vede l’ora di farlo il prima possibile.
+Quanto a me... devo aiutarla.
+Tuttavia so molto bene: certi segreti devono restare tali. Forse questo è uno di quelli. Dopotutto non è per nulla casuale che fino ad ora Mary non abbia saputo nulla dei suoi genitori.
+#TEXT	4
+Eccoci di nuovo in questo cimitero di navi... Non ho grande desiderio di restare qui questa volta, meglio metterci all’opera al più presto — chiedere a chi viveva qui vent’anni fa. Penso che convenga cominciare da Donald. Nonostante Mary dica che la volta scorsa non riuscì o non volle rispondere alle sue domande, chi se non il capo del clan 'Narval' può aiutarci?
+Una sensazione non troppo positiva riguardo al piano di Mary ancora mi tormenta, ma ormai è troppo tardi per tornare indietro. 
+#TEXT	5
+Non sono riuscito a parlare con Donald — ha organizzato delle esercitazioni per il suo clan sul cerchio esterno. Sembra che all’Isola della Giustizia si preparino ancora tempi turbolenti. Spero che Leighton Dexter abbia volontà e forza per tenere la situazione sotto controllo, ma in ogni caso dobbiamo ottenere al più presto le informazioni necessarie e ritirarci. L’ultima cosa che vorrei è trovarmi sotto il fuoco incrociato di gente che combatte per niente.
+Grenspy dovrebbe tornare domani — posso passare il tempo aspettando nella cabina di Mary sulla ‘Ceres Smiti’.
+#TEXT	6
+La conversazione con Grenspy si è rivelata quasi inutile. Dice di essere arrivato sull’Isola qualche anno dopo la nascita di Mary e di non aver mai conosciuto i suoi genitori. Nessuno può confermare le sue parole, ma non credo che abbia motivo di mentire.
+Ma qualcosa abbiamo scoperto. Primo: Mary è nata qui, sull’Isola — lo disse Donald a me, Erik Udett, vecchio marinaio che la crebbe, ormai passato a miglior vita. Secondo: nell’educazione di Mary ha partecipato Aureli Bertin — vive sull’Isola da molto tempo, e se assistette alla nascita di Mary al momento giusto, allora deve per forza conoscere i suoi genitori.
+Donald ha accennato che non sta bene — l’età, che vuoi farci. L’importante è che la memoria non la tradisca.
+#TEXT	6.1
+L’unica persona in grado di raccontare dei genitori di Mary è Aureli Bertin. Ma, ahimè, ora non è in grado di riferire nulla di chiaro. Secondo Raymond Baker, ella è malata... di vecchiaia. Purtroppo questa malattia non si può curare — si può solo sostenere la chiarezza della mente per un tempo. Raymond, si è scoperto, in tempi in cui viveva a Saint John's parlava spesso con Johan van Merden, che condivideva con lui vari tipi di ricette da sue miscugli basate su erbe locali, cosa che ora mi torna utile. Perché Raymond possa iniziare il ‘trattamento’ devo procurargli tre fiaschi di lacrime di Ish-Chel e tre steli di mangarosa.
+#TEXT	6.2
+L’unica persona in grado di raccontare dei genitori di Mary è Aureli Bertin. Purtroppo, ora non può raccontare nulla di comprensibile. Secondo Raymond Baker, Aureli è malata... di vecchiaia. Questa malattia è, come si sa, incurabile — ma possiamo per un tempo sostenere la chiarezza della sua mente. Non ci sono garanzie che la cura funzioni, così come non che non arrechi danno. Tuttavia ho deciso di rischiare — prima di andar via potrebbe renderci un ultimo favore con Mary. Penso che non rifiuterebbe. Per permettere a Raymond di iniziare il 'trattamento' il prima possibile, devo procurargli tre fiaschi di lacrime di Ish-Chel, tre steli di mangarosa e la tintura di Ométochtli.
+#TEXT	7
+Certo, è folle sperare che sarà tutto così semplice. Aureli Bertin sembra avere un disturbo senile — o come lo chiamano i medici... Nessuno la può aiutare sull’Isola — non c’è medico, e le preghiere del fratello Giulliano, ahimè, non bastano. Così l’ultimo su cui possiamo contare è lo sciamano rivados Chimiset. Temo solo immaginare cosa potrebbe succedere se questa storia uscisse allo scoperto — perciò dovremo portare la vecchia sul 'Protettore' sotto copertura della notte, affinché nessuno ci veda.
+#TEXT	8
+Mai avrei pensato che io, figlio della vera chiesa, avrei detto che un indemoniato sciamano nero è la mia ultima speranza. O meglio, la nostra con Mary. Aureli Bertin appare afflitto da quello che chiamano demenza senile. Di conseguenza, estrarre da lei ciò che ci serve appare quasi impossibile — non capiremo nemmeno se dice la verità o no. Sull’Isola non c’è medico che possa curarla. Forse Gino Guineali o Occhio Serpente potrebbero farcela, ma ho timore che la vecchia non sopravviverebbe a un lungo viaggio. Così non resta che sperare nell’aiuto di Chimiset, anche se un gelo mi avvolge al pensiero di ciò che potrebbe fare. Andare da lui sul 'Protettore' con Aureli dovrà essere di notte — non manca che il nostro piano diventi noto agli altri abitanti dell’Isola.
+#TEXT	9
+Spero che non vivrò fino agli anni di Aureli Bertin. Veramente, non c’è cosa più terribile che morire così — senza capire che giorno sia oggi, mese o anno, senza rendersi nemmeno conto di cosa accade intorno. Se fossimo arrivati un mese dopo, sono certo che la vecchia non si ricorderebbe nemmeno del suo nome, per non parlare degli eventi di vent’anni fa. Ebbene, anche se la sua mente si risvegliasse solo per un breve tempo e ciò portasse alla sua morte... credo che sia una fine molto più dignitosa che morire nel delirio. Il risultato arriverà tra tre giorni — così tanto tempo servì una volta a van Merden per rimettere in piedi un paziente con un disturbo simile.
+#TEXT	10
+Se eu perceber que na velhice corro o risco de cair no estado em que Aureli Bertin se encontra agora, espero ter coragem de engatilhar o revólver e disparar contra a própria têmpora. Sim, o suicídio é pecado mortal, mas preferiria isso a esquecer o próprio nome. Ainda bem que tenho na equipe Raymond Baker, um médico que sabe não apenas alinhar ossos e costurar bordas de feridas. O ruim é que ele vai precisar de duas semanas para, mesmo sem curar Aureli, apenas levá-la a um estado em que ela possa conversar normalmente conosco. Mas não há o que fazer, resta só esperar e esperar pelo gênio de Baker. Ou melhor, de Johan van Merden, que, segundo o ex-verdugo, compartilhou com ele a receita de uma mistura milagrosa cujo ingrediente principal são as Lágrimas de Ish-Chel.  
+#TEXT	11
+O xamã rivados conseguiu. Não sei o que aconteceu esta noite no porão da 'Protetor', mas quando Chimiset trouxe Aureli Bertin de volta, não restou vestígio da doença. No entanto, entendemos que o xamã apenas conseguiu esconder a enfermidade bem no fundo de sua… mente? E isso por pouco tempo. Então Mary e eu não devemos perder tempo, precisamos falar com Aureli imediatamente.  
+P.S. Durante a conversa com Chimiset notei uma expressão um tanto enigmática em seu rosto quando ele falou sobre o sentido desse ritual. Já aprendi há muito que tudo neste mundo tem seu preço. A questão é: qual.
+#TEXT	12
+Não consigo acreditar, ele conseguiu! Raymond conseguiu! O juízo voltou para Aureli. Não sei por quanto tempo — então com certeza não vale a pena perder tempo. Temos que falar com ela o mais rápido possível.  
+Johan van Merden… Seu cérebro ferveu pra valer!
+#TEXT	13
+Então, tudo deu certo. Baker não me decepcionou. O ex-verdugo salvou mais uma vida. A receita de van Merden certamente teve seu papel, mas acho que Raymond teria inventado algo mesmo sem ela. Ou talvez eu esteja enganado... Mas tanto faz — precisamos conversar com Aureli sem demora, Mary e eu já esperamos muito por isso.
+#TEXT	14
+Não descobrimos tudo que queríamos, mas não queiramos irritar o Criador — Aureli lembrou de bastante coisa, e por isso somos gratos. A seguir, em ordem: confirma-se que Mary nasceu na Ilha da Justiça. Mas seus pais não eram habitantes locais, e sim náufragos milagrosamente salvos de uma tempestade cruel.  
+A mãe de Mary se chamava Teresa, ela deu à luz uma semana depois de chegar à Ilha — após isso faleceu, o que foi bem previsível, considerando as provações que enfrentou. O que ela esqueceu no navio — seja mercante ou de guerra — no último mês de gestação, só seu marido, o pai de Mary, poderia saber.  
+Mas com ele a coisa é bem mais complicada: Aureli só lembrou que o nome dele começava com 'J.'. Nada mais. Nem o nome do navio, nem o tipo de embarcação em que servia. Bertin afirma que esse misterioso 'J.' desapareceu sem deixar rastro poucos dias após o nascimento da filha, mas duvida que ele tenha morrido — considerando que naquela época tartanas de contrabandistas navegavam regularmente entre a Ilha e Cuba. Não há nenhuma evidência de que ele tenha sido morto nesse cemitério de navios.  
+É difícil supor se o pai de Mary ainda esteja vivo, assim como responder por que abandonou a filha recém-nascida. No entanto, talvez seja suficiente para Mary simplesmente saber quem ele era... Mas para avançar nesta empreitada difícil, é necessário descobrir ao menos o nome do navio que naufragou em uma das noites de junho de 1638 no anel externo. E nisso, espero, poderá nos ajudar ninguém menos que Donald Grenspy.
+#TEXT	15
+Minhas suposições se confirmaram: os Narvais de fato mantêm registro dos navios encalhados no anel externo da Ilha da Justiça, dos objetos recuperados deles e dos passageiros. Já é de certa forma uma boa tradição, seguida por cada novo chefe do clã "Narval", inclusive Grenspy. Entretanto, Donald não conseguiu disponibilizar esses registros para nós — Leighton Dexter os tomou dele há pouco tempo.
+#TEXT	16
+Não consigo me livrar da sensação de que nesta investigação, por assim dizer, somos perseguidos por alguma má sorte. Problemas infinitos e obstáculos. Ninguém sabe de nada, e os que poderiam nos ajudar estão à beira da morte ou já faleceram. Quanto aos registros dos navios, pelo menos para o ano de 1638 que precisamos, Leighton Dexter não os tem. Sumiram de algum lugar da cabine de Alan Milrow. Mary afirma que o antigo líder do clã 'Narval' cuidava tanto desses documentos e jamais os destruiria. Mas quem mais neste cemitério de navios poderia precisar de papéis que têm valor apenas para historiadores?
+#TEXT	17
+Finalmente se vislumbra uma saída desta caverna de ignorância e mistérios. A mãe de Mary e seu pai — Joshua Casper — chegaram à Ilha da Justiça a bordo do brig English da marinha 'Wrangler'. Com eles sobreviveram outros dois marinheiros, mas eles entregaram suas almas a Deus na noite seguinte. Uma voz interior me diz que não foi um acaso — mas provas depois de vinte anos, naturalmente, não há nenhuma. De qualquer modo, isso já não importa — descobrimos o que precisávamos, conversando, ao que parece, com todos que viram os acontecimentos daqueles dias com seus próprios olhos, e agora podemos deixar a Ilha da Justiça para trás.  
+Resta pensar a quem poderíamos recorrer para ajuda na busca de informações sobre Joshua Casper. Não conseguimos chegar sozinhos aos arquivos da Royal Navy...  
+Mas, antes de partir, quero me assegurar mais uma vez de que nada ficou de fora. Quem mais poderia contar algo? Quem está na ilha há tanto tempo que possa lembrar daqueles dias?
+#TEXT	18
+Devo ammettere che quasi mi sono dimenticato di Chimiset — ed è forse il più anziano abitante dell’Isola della Giustizia. È arrivato qui nel 1623 ed ha assistito alla nascita di Mary, alla morte di sua madre e alla sparizione del padre, che fu incarcerato dopo che due Narvali si rifiutarono di far entrare lo sciamano mentre la partoriente soffriva.  
+Dal racconto di Chimiset si può dedurre che Joshua Casper riuscì a fuggire ed imbarcarsi su una delle barche dei contrabbandieri — altro modo per lasciare questo posto non c’era. Sull’Isola lasciò la figlia neonato e certamente aveva in mente di tornare per lei — ma, se ha mai confidato queste intenzioni a qualcuno, non lo sapremo mai: coloro con cui avrebbe potuto parlare prima della sua sparizione sono ormai diventati nutrimento per i granchi. L’unico filo rimasto potrebbe essere il sacerdote ormai defunto — padre Domingo, che conversò con Casper sulla ‘Tartarus’. Forse teneva un diario, sulle pagine del quale sono rimaste tracce di quella conversazione. Se sia così o no, lo si può scoprire parlando con fratello Julian.  
+P.S. E un’altra cosa interessante. Poco prima di morire Teresa gridò il nome di un tale Ruperto. Non Joshua, suo marito e padre della sua bambina, che fece tutto il possibile per salvarla, ma proprio Ruperto.
+#TEXT	19
+La nostra visita a fratello Julian non è stata affatto vana — anche solo perché gli appunti di padre Domingo De la Cruz hanno rivelato la data di nascita di Mary: il 22 giugno 1638. Fu battezzata il 3 maggio, insieme a Fabian Gallard, figlio di Cécile Gallard, che morì poco dopo. Era Cécile a prendersi cura di Mary — ed è ancora la nostra ultima speranza per scoprire i dettagli della conversazione tra padre Domingo e Joshua Casper prima che costui scomparisse.
+#TEXT	20
+Più scopriamo sui genitori di Mary, più ci addentriamo in un pantano di enigmi e incomprensioni su ciò che accadde sull’Isola della Giustizia venti anni fa. È davvero curioso: chi fosse per Teresa quel Ruperto: un fratello, un amico o forse... un marito? La conversazione con Cécile Gallard mi ha fatto pensare che Joshua Casper potrebbe non essere stato del tutto onesto — e per qualche ragione aver usato un altro nome: uno diverso, o addirittura inventato.  
+Ma questa è solo un’ipotesi — niente più. Se dovessimo iniziare la ricerca negli archivi della flotta, sarebbe strettamente con il nome Joshua Casper. Tutto il resto sono solo supposizioni per ora.  
+Dobbiamo andare dall’abate Benoît a Saint-Pierre.
+#TEXT	21
+Per chiedere aiuto nella ricerca del padre di Mary ci siamo rivolti al comandante delle volpi marine, colonnello Jonathan Fox. Non ha dimenticato che ho salvato sua figlia dalle mani di Marten e Thibo, e ha promesso di inviare una richiesta ufficiale a Londra. Forse i funzionari dell’Archivio Ammiragliato riusciranno a trovare il fascicolo personale di Casper. Se ci riusciranno o no, lo sapremo fra sei mesi — disturbare il colonnello prima sarebbe inutile.
+#TEXT	22
+L’abate Benoît non è affatto così semplice come appare. Un lampo di eccitazione ha brillato nei suoi occhi — proprio nel momento in cui gli ho chiesto di procurarmi informazioni dall’archivio dell’Ammiragliato, che potrebbero riguardare segreti militari. O forse mi è sembrato? Però, se il passato dell’abate custodisce qualche segreto oscuro, è difficile credere che li condivida con me. Per quanto riguarda il passato del signor Casper — spero che otterremo qualche risposta tra sette mesi — tanto ci vorrà per ottenere le informazioni necessarie.
+#TEXT	23
+E pensare che questa storia all’inizio sembrava tanto semplice! Ecco cosa sappiamo... Joshua Casper era un ufficiale dalla reputazione immacolata, capitano del brigantino 'Cornwell', che su ordine partì dall’Inghilterra per il mare dei Caraibi con le paga delle guarnigioni di Antigua e Providence — che allora erano ancora sotto controllo inglese. Presso le isole Azzorre avvenne uno scontro con una galeone spagnola, dove perì un terzo dell’equipaggio e uno degli ufficiali — Rupert Northwood. Così recita il rapporto ufficiale conservato presso l’amministrazione portuale di Saint John.  
+Dopo aver lasciato Antigua, il 'Cornwell' puntò verso Providence, ma concluse il suo viaggio sugli scogli dell’Isola della Giustizia, già con il nome 'Wrangler'.  
+Dal bastimento si salvarono quattro persone — il capitano, una donna e due marinai. Questi ultimi morirono meno di ventiquattro ore dopo. Furono forse uccisi? Probabilmente sí, poiché potevano sapere troppo. Fu oppure il vero Joshua Casper, innamorato folle della moglie del suo primo ufficiale — dato che correva tra i relitti in cerca di chi potesse salvare Teresa — oppure Rupert Northwood, il cui nome Teresa gridò prima di morire, non chiaro perché chiamatosi col nome del suo comandante.  
+La seconda versione non ha alcuna logica. Così come è assurdo che quell’uomo non sia tornato sull’Isola della Giustizia per sua figlia — né dopo un mese, né dopo un anno, né tantomeno dopo venti anni.  
+Forse è davvero morto — talvolta né l’esperienza, né il coraggio, né l’astuzia bastano contro le circostanze. Ma proprio come allora egli spinse troppo in là i propri passi, così ora siamo immersi fino al collo negli intrecci di questo mistero. E certo non intendiamo voltare le spalle o fermarci.  
+Vale la pena disturbare ancora Aureli Bertin, e poi decidere finalmente chi davvero stiamo cercando: Rupert Northwood o Joshua Casper?
+#TEXT	27
+Ce l’abbiamo fatta, dopotutto. Non siamo ancora riusciti a chiarire cosa sia accaduto a bordo del 'Cornwall' e come sia diventato il 'Wrangler' — ma si è incagliato contro le scogliere dell’Isola della Giustizia sotto il comando di Rupert Northwood. Se sia ancora vivo dopo due decenni, non lo so — come non so nemmeno dove cercarlo, nel caso lo sia. Ad aiutarci in questa faccenda sarà un nostro vecchio conoscente, che ha sia i contatti che le risorse per incarichi del genere. 
+Nel frattempo, mentre ci mettiamo in viaggio per raggiungerlo, dovrò riflettere seriamente su chi esattamente dovremmo chiedergli di cercare: Joshua Kasper o Rupert Northwood? Anche se… è abbastanza furbo da non usare nomi ripetuti. Certo, per uno che vive in fuga è sempre più sicuro usare il proprio vero nome, così da non ignorare per errore un richiamo rivolto a un alias. Ma era davvero così semplice il primo ufficiale del 'Cornwall'?
+#TEXT	28
+Partenza da Isola della Giustizia dovrà attendere. La scorsa notte Orelie Bertin non c’è più. La vecchia è morta nel sonno, con un sorriso sulle labbra. Abbiamo avuto fortuna ad arrivare qui con tutte le vele spiegate - se fossimo arrivati anche solo un giorno dopo, con chi avremmo parlato del padre di Marie? Eppure ho una strana sensazione che Orelie... come se ci stesse aspettando. 
+Questo pensiero non mi dà pace, e mentre Marie insieme agli abitanti dell’Isola si occupa dell’organizzazione del funerale, io farò un salto da Chimiset - devo parlarne con lui.
+#TEXT	29
+Tutto ha un prezzo. L’ho sempre saputo e ho cercato di tenerne conto quando prendevo certe decisioni. Se allora avessi saputo cosa Chimiset avrebbe imposto a Orelie, l’avrei portata da lui quella notte? Mi costa ammetterlo, ma credo che lo avrei fatto comunque — senza le conoscenze perdute nella memoria distorta dalla malattia di Orelie, non avremmo fatto alcun progresso nella ricerca del padre di Marie. 
+È crudele? Sicuramente. Cinico? Senza dubbio. Nelle ventiquattr'ore passate dal mio dialogo con Chimiset ho riflettuto molto su quella che lui chiama il fiume del tempo. In verità, non può essere invertito. Anche solo perché non ha senso — l’uomo, il più delle volte, prende consapevolmente una decisione in un punto preciso di quel corso, e dunque difficilmente la cambierà.
+Orelie Bertin, riposa in pace. Noi porteremo a termine ciò per cui tu, senza saperlo, hai dato la vita.
+#TEXT	30
+Fadey ha chiesto, come previsto, una bella somma — ma comunque meno di quanto avrebbe potuto, considerando il suo amore per l’oro. Dobbiamo presentarci da lui fra un mese — per allora, qualcosa sul padre di Marie dovrebbe chiarirsi.
+#TEXT	32
+Siamo quasi arrivati. Ci separa solo la distanza da Basse-Terre a Belize. È lì che si trova un uomo di nome Jerome Sovernie, che afferma di aver rintracciato Rupert Kasper. Issiamo tutte le vele e facciamo rotta verso ovest. I vent’anni di attesa di Marie per incontrare suo padre stanno quasi per finire.
+#TEXT	33
+Eccoci a Belize. Credo che trovare Jerome Sovernie non sarà difficile. Sono certo che il proprietario della taverna sappia dove alloggia. Eppure, quella rissa al 'Glass Eye' con il coinvolgimento di Jerome mi dà un po’ da pensare. Aveva un incarico importante e ben pagato — eppure vi si è buttato dentro. Forse è legato alla sua indagine su Rupert Kasper. Meglio non fare troppo rumore — e riflettere bene se valga la pena fare domande in taverna.
+#TEXT	35
+Abbiamo percorso un cammino lungo e tortuoso — e siamo giunti a una conclusione amara: fai attenzione a ciò che desideri. È questa la lezione che ci ha lasciato questa storia. La povera Marie, certo, merita un padre migliore di Rupert Northwood… ma i genitori non si scelgono.
+Beh, per quanto orribile sia stato l’esito, e per quanto il disincanto sia profondo — la vita continua. Abbiamo passato tutta la notte sulla riva, in silenzio, rotto solo di tanto in tanto da parole su quanto accaduto. Marie ha sopportato bene il colpo. Non si tormenterà pensando a chi fosse suo padre e quali 'imprese' abbia compiuto. E io… farò tutto ciò che posso per farle pensare a tutto ciò il meno possibile.
+
+
+#QUEST LEDR
+La Espada Del Rey
+#TEXT	1
+Si dice che a Sharptown giri un uomo proveniente proprio da quella nave che ora giace sulla costa della baia di Sabu-Matilla. A quanto pare, è l’unico sopravvissuto al naufragio. Ora vuole tornarci, ma non ha il coraggio di andare da solo — e per giustificarsi racconta strane storie su uno scheletro di indiano. Beh, vedremo… Forse vale la pena scortarlo. Mi chiedo cosa possa cercare lì dopo tutto questo tempo.
+#TEXT	2
+Ho accettato di aiutare il vecchio, Gonsalo Peralta. Non sembra pazzo, a parte i suoi racconti un po’ strani. Beh, non dovrebbe volerci molto — la baia è a due passi.
+#TEXT	3
+Quando ho accettato di accompagnare il vecchio, non immaginavo certo che avrei dovuto combattere contro degli scheletri. Scheletri! Per fortuna la sorte era dalla nostra parte, e nonostante lo shock siamo riusciti a respingerli. Nella cabina del capitano abbiamo trovato il baule del vescovo, pieno di gioielli e un vecchio diario appartenente a Diego Velázquez de Cuéllar — il famoso conquistador e primo governatore di Cuba. Anche solo sfogliando quelle memorie ti viene la pelle d’oca. Forse è lui la chiave per spezzare la maledizione che tormenta Gonsalo.
+#TEXT	4
+Il diario è sistemato. Ho riportato Gonsalo là dove l’ho incontrato — a Sharptown. Che viva in pace, se davvero gli incubi l’hanno lasciato. E io farò meglio a stare zitto — storie così si rivoltano facilmente contro chi le racconta.

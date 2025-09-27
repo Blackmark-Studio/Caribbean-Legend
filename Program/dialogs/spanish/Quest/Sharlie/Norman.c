@@ -366,39 +366,35 @@ void ProcessDialogEvent()
 		break;
 
 	case "tieyasal_4":
-		dialog.text = "¿Y a quién fue que Dichoso le dio matarile para que andes buscándolo, eh compadre? ";
-		link.l1 = "";
-		Link.l1.edit = 8;
-		link.l1.go = "tieyasal_5";
+			dialog.text = "¿Y a quién mató Dichoso para que tú te pusieras a buscarlo, eh, amigo?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Al Papa";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
 
-	case "tieyasal_4_1":
-		dialog.text = "¿Qué quieres decir? ¿A cuál Sharp mató exactamente? Hay muchos Sharps, ya sabes.";
-		link.l1 = "";
-		Link.l1.edit = 8;
-		link.l1.go = "tieyasal_5";
+		case "tieyasal_5_1":
+			dialog.text = "Shhh... (mira a su alrededor) ¿Así que tú también crees que Dichoso mató a Blaze Sharp?";
+			link.l1 = "Sí. Y no es solo una sospecha — tengo pruebas. Entradas en el cuaderno de bitácora...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "¿Así que ahora vamos de graciosos? ¡Qué falta de respeto! Anda, acércate...";
+			link.l1 = "Ni loco.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 
 	case "tieyasal_5":
-		sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-		if (sTemp == "blaze sharp")
-		{
-			dialog.text = "Sh-sh-sh...(mirando alrededor) ¿Así que tú también piensas que Blaze Sharp fue asesinado por Dichoso?";
-			link.l1 = "Sí. No solo tengo mis sospechas, sino pruebas sólidas. Entradas en su diario de bitácora...";
-			link.l1.go = "tieyasal_6";
-			break;
-		}
-		if (sTemp == "sharp")
-		{
-			dialog.text = "Adelante, pequeño marinero...";
-			link.l1 = "¿Qué quieres decir? Cuéntame más.";
-			link.l1.go = "tieyasal_4_1";
-			break;
-		}
 		dialog.text = "Ah...Bueno. Lo mató y eso es todo. ¿Sabes cuántos asesinos tenemos por aquí corriendo? ¡Cada segundo hombre! No, Marinero. No he visto a Dichoso en mucho tiempo. No puedo ayudarte con nada.";
 		link.l1 = "Lástima...";
 		link.l1.go = "exit";
-		break;
+	break;
 
 	case "tieyasal_6":
 		dialog.text = "Cálmate, camarada. ¿Cómo te llamas, eh? De alguna manera se me ha escapado de la memoria...";

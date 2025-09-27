@@ -1,679 +1,143 @@
-Roger_1
-{
-You gave away the Spanish flag
-}
-
-Roger_2
-{
-Gabriela
-}
-Roger_3
-{
-Chapada
-}
-
-Roger_4
-{
-Exploration mode: timer extended. Complete the quest!
-}
-
-Roger_5
-{
-Lope
-}
-Roger_6
-{
-Montoro
-}
-
-Roger_7
-{
-Rosario
-}
-Roger_8
-{
-Gusman
-}
-
-Roger_9
-{
-Cantavro
-}
-
-Roger_10
-{
-Esberdo
-}
-Roger_11
-{
-Cabanas
-}
-
-Roger_12
-{
-Approach barges closely and take their loot. Be careful not to crush them with your ship's hull.
-}
-
-Roger_13
-{
-Amber acquired @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
-}
-
-Roger_14
-{
-Snake
-}
-
-Roger_15
-{
-Geffrey
-}
-Roger_16
-{
-Brooke
-}
-
-Roger_17
-{
-Fly Fish
-}
-
-Roger_18
-{
-Billy
-}
-Roger_19
-{
-Pert
-}
-
-Roger_20
-{
-Utrecht
-}
-
-Roger_21
-{
-Joachim
-}
-Roger_22
-{
-Gusen
-}
-
-Roger_23
-{
-brigantine 'Utrecht'
-}
-
-Roger_24
-{
-Exploration mode: timer is not disabled. Meet the deadline!
-}
-
-Roger_25
-{
-One hour later...@<NewStr()>The silk was unloaded to the buyer
-}
-
-Roger_26
-{
-Moray
-}
-
-Roger_27
-{
-Paul
-}
-Roger_28
-{
-Chant
-}
-
-Roger_29
-{
-Jean
-}
-Roger_30
-{
-Picard
-}
-
-Roger_31
-{
-30 pieces of cold arms has been taken from the ship's arsenal
-}
-
-Roger_32
-{
-Gathered cold arms - 30 pieces
-}
-
-Roger_33
-{
-No cold arms
-}
-
-Roger_34
-{
-Gathered pistols - @<FindRussianQtyString(iGun)>
-}
-
-Roger_35
-{
-Gathered muskets - @<FindRussianQtyString(iMushket)>
-}
-
-Roger_36
-{
-Gathered healing potions - @<FindRussianQtyString(iPotion)>
-}
-
-Roger_37
-{
-Gathered supplies for @<iShot> shots
-}
-
-Roger_38
-{
-Gathered cold arms - 30 pieces
-}
-Roger_39
-{
-Gathered pistols - 50 pieces
-}
-Roger_40
-{
-Gathered healing potions - 90 pieces
-}
-Roger_41
-{
-Gathered supplies for 70 shots
-}
-
-Roger_42
-{
-Later, next evening...
-}
-
-Roger_43
-{
-Some time later...
-}
-
-Roger_44
-{
-Plantation is alarmed!
-}
-
-Roger_45
-{
-You have 300 seconds before the Spanish will get reinforces from the fort
-}
-
-Roger_46
-{
-The Spanish has lost their flagship! We can try to flee!
-}
-
-Roger_47
-{
-Dutch convoy is on the horizon!
-}
-
-Roger_48
-{
-Rosbohom
-}
-
-Roger_49
-{
-Gryphon
-}
-
-Roger_50
-{
-Night has come...
-}
-
-Roger_51
-{
-Mirabelle
-}
-Roger_52
-{
-
-}
-
-Roger_53
-{
-Mirabelle died of fever!
-}
-
-Roger_54
-{
-Luka
-}
-Roger_55
-{
-Bayard
-}
-
-Roger_56
-{
-Kumwana
-}
-Roger_57
-{
-
-}
-
-Roger_58
-{
-Hayami
-}
-Roger_59
-{
-
-}
-
-Roger_60
-{
-Tagofa
-}
-Roger_61
-{
-
-}
-
-Roger_62
-{
-Two days later...@<NewStr()>Six longboats has been built...
-}
-
-Roger_63
-{
-Demetrio
-}
-Roger_64
-{
-Rojas
-}
-
-Roger_65
-{
-Kitty
-}
-
-Roger_66
-{
-Torero
-}
-
-Roger_67
-{
-Ignacio
-}
-Roger_68
-{
-Marco
-}
-
-Roger_69
-{
-Exploration mode: timer is disabled.
-}
-
-Roger_70
-{
-Eduardo
-}
-Roger_71
-{
-de Losada
-}
-
-Roger_72
-{
-El Casador
-}
-
-Roger_73
-{
-Go to your cabin in order to study the ship log
-}
-
-Roger_74
-{
-Gaspard
-}
-Roger_75
-{
-Goldenteeth
-}
-
-Roger_76
-{
-Boarding party is ready!
-}
-
-Roger_77
-{
-Cuttlefish
-}
-
-Roger_78
-{
-Vagrant
-}
-Roger_79
-{
-
-}
-
-Roger_80
-{
-Merciless
-}
-
-Roger_81
-{
-Vampire
-}
-Roger_82
-{
-
-}
-
-Roger_83
-{
-The Torero is on a raid of Le Francois!
-}
-
-Roger_84
-{
-You are waiting stealthily from your hiding place...
-}
-
-Roger_85
-{
-'Torero'
-}
-
-Roger_86
-{
-Exploration mode: quest duration doubled
-}
-
-Roger_87
-{
-Eagle-Owl
-}
-
-Roger_88
-{
-Joker
-}
-Roger_89
-{
-Jim
-}
-
-Roger_90
-{
-Exploration mode: Corrida - the coordinates are correct
-}
-
-Roger_91
-{
-Exploration mode: Corrida - the coordinates are not correct
-}
-
-Roger_92
-{
-Spanish convoy on the horizon!
-}
-
-Roger_93
-{
-Toro de Oro
-}
-
-Roger_94
-{
-Red Dragon
-}
-
-Roger_95
-{
-A huge explosion on @<pchar.ship.name>!
-}
-
-Roger_96
-{
-We've arrived to Cartagena! Tyrex orders to sail to Covenas Bay
-}
-
-Roger_97
-{
-Landing parties are ready to storm Cartagena!
-}
-
-Roger_98
-{
-Landing party of '@<pchar.ship.name>' has @<iCrew1> men
-}
-Roger_99
-{
-Landing party of Red Dragon has @<iCrew2> men
-}
-Roger_100
-{
-Landing party of Snake has @<iCrew3> men
-}
-Roger_101
-{
-Landing party of Moray has @<iCrew4> men
-}
-
-Roger_102
-{
-One day later...@<NewStr()>Barrels with gunpowder have been delivered to the logjam.
-}
-
-Roger_103
-{
-Tonneur
-}
-
-Roger_104
-{
-Libre
-}
-
-Roger_105
-{
-Myutin
-}
-
-Roger_106
-{
-Inconnu
-}
-
-Roger_107
-{
-Alonso
-}
-Roger_108
-{
-
-}
-
-Roger_109
-{
-Three hours later...
-}
-
-Roger_110
-{
-Rodgar
-}
-Roger_111
-{
-Janssen
-}
-
-Roger_112
-{
-Ignacio Marco landed on the pier!
-}
-
-Roger_113
-{
-2 hours passed...@<NewStr()>
-}
-
-Roger_114
-{
-Ignacio Marco left the residence
-}
-
-Roger_115
-{
-together with two captains
-}
-
-Roger_116
-{
-Separator
-}
-
-Roger_117
-{
-Bernar
-}
-Roger_118
-{
-Vensan
-}
-
-Roger_119
-{
-Dionisio
-}
-Roger_120
-{
-Peres
-}
-
-Roger_121
-{
-One day later...@<NewStr()>The ransom for Cartagena was collected
-}
-
-Roger_122
-{
-Two days have passed swiftly @<NewStr()> in partying and amorous pleasures...
-}
-
-Roger_123
-{
-Camilla
-}
-Roger_124
-{
-
-}
-
-Roger_125
-{
-don Enrico
-}
-Roger_126
-{
-
-}
-
-Roger_127
-{
-Michel
-}
-Roger_128
-{
-de Monper
-}
-
-Roger_129
-{
-Marcus
-}
-Roger_130
-{
-Tyrex
-}
-
-Roger_131
-{
-I, Charles de Maure, a French nobleman and a captain, swear:
-}
-
-Roger_132
-{
-... I am done with my pirate past for good ...
-}
-
-Roger_133
-{
-... No more innocent civilians will die from my hand ...
-}
-
-Roger_134
-{
-... I swear to protect women despite  their status and nationality ...
-}
-
-Roger_135
-{
-... I swear that gold will no longer make me blind ...
-}
-
-Roger_136
-{
-... I swear to oppose any villain I will meet on my path ...
-}
-
-Roger_137
-{
-... I swear to always choose honor between it and riches ...
-}
-
-Roger_138
-{
-... I swear to stay an worthy and noble man in any situation and with any people ...
-}
-
-Roger_139
-{
-I keep thinking of Mirabelle for some reason. How is she there? Is she missing me? It must had been cruel of me to leave a young girl alone. I will fix this! I should see her soon.
-}
-
-Roger_140
-{
-Книппель
-}
-
-Roger_141
-{
-Лонгвэй
-}
-
-Roger_142
-{
-Тичингиту
-}
-
-Roger_143
-{
-Томми
-}
+Roger_1 {You gave away the Spanish flag}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {Exploration mode: timer extended. Complete the quest!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {Approach barges closely and take their loot. Be careful not to crush them with your ship's hull.}
+Roger_13 {Amber acquired @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {brigantine 'Utrecht'}
+Roger_24 {Exploration mode: timer is not disabled. Meet the deadline!}
+Roger_25 {One hour later...@<NewStr()>The silk was unloaded to the buyer}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 {Jean}
+Roger_30 {Picard}
+Roger_31 {30 pieces of cold arms has been taken from the ship's arsenal}
+Roger_32 {Gathered cold arms - 30 pieces}
+Roger_33 {No cold arms}
+Roger_34 {Gathered pistols - @<FindRussianQtyString(iGun)>}
+Roger_35 {Gathered muskets - @<FindRussianQtyString(iMushket)>}
+Roger_36 {Gathered healing potions - @<FindRussianQtyString(iPotion)>}
+Roger_37 {Gathered supplies for @<iShot> shots}
+Roger_38 {Gathered cold arms - 30 pieces}
+Roger_39 {Gathered pistols - 50 pieces}
+Roger_40 {Gathered healing potions - 90 pieces}
+Roger_41 {Gathered supplies for 70 shots}
+Roger_42 {Later, next evening...}
+Roger_43 {Some time later...}
+Roger_44 {Plantation is alarmed!}
+Roger_45 {You have 300 seconds before the Spanish will get reinforces from the fort}
+Roger_46 {The Spanish has lost their flagship! We can try to flee!}
+Roger_47 {Dutch convoy is on the horizon!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {Night has come...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {Mirabelle died of fever!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {Two days later...@<NewStr()>Six longboats has been built...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 {Torero}
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {Exploration mode: timer is disabled.}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {Go to your cabin in order to study the ship log}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {Boarding party is ready!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {The Torero is on a raid of Le Francois!}
+Roger_84 {You are waiting stealthily from your hiding place...}
+Roger_85 {'Torero'}
+Roger_86 {Exploration mode: quest duration doubled}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {Exploration mode: Corrida - the coordinates are correct}
+Roger_91 {Exploration mode: Corrida - the coordinates are not correct}
+Roger_92 {Spanish convoy on the horizon!}
+Roger_93 {Toro de Oro}
+Roger_94 {Red Dragon}
+Roger_95 {A huge explosion on @<pchar.ship.name>!}
+Roger_96 {We've arrived to Cartagena! Tyrex orders to sail to Covenas Bay}
+Roger_97 {Landing parties are ready to storm Cartagena!}
+Roger_98 {Landing party of '@<pchar.ship.name>' has @<iCrew1> men}
+Roger_99 {Landing party of Red Dragon has @<iCrew2> men}
+Roger_100 {Landing party of Snake has @<iCrew3> men}
+Roger_101 {Landing party of Moray has @<iCrew4> men}
+Roger_102 {One day later...@<NewStr()>Barrels with gunpowder have been delivered to the logjam.}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 {Alonso}
+Roger_108 { }
+Roger_109 {Three hours later...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco landed on the pier!}
+Roger_113 {2 hours passed...@<NewStr()>}
+Roger_114 {Ignacio Marco left the residence}
+Roger_115 {together with two captains}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {One day later...@<NewStr()>The ransom for Cartagena was collected}
+Roger_122 {Two days have passed swiftly @<NewStr()> in partying and amorous pleasures...}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {I, Charles de Maure, a French nobleman and a captain, swear:}
+Roger_132 {... I am done with my pirate past for good ...}
+Roger_133 {... No more innocent civilians will die from my hand ...}
+Roger_134 {... I swear to protect women despite  their status and nationality ...}
+Roger_135 {... I swear that gold will no longer make me blind ...}
+Roger_136 {... I swear to oppose any villain I will meet on my path ...}
+Roger_137 {... I swear to always choose honor between it and riches ...}
+Roger_138 {... I swear to stay an worthy and noble man in any situation and with any people ...}
+Roger_139 {I keep thinking of Mirabelle for some reason. How is she there? Is she missing me? It must had been cruel of me to leave a young girl alone. I will fix this! I should see her soon.}
+Roger_140 {Книппель}
+Roger_141 {Лонгвэй}
+Roger_142 {Тичингиту}
+Roger_143 {Томми}

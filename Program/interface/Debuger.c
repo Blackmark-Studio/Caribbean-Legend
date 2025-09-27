@@ -435,7 +435,7 @@ void CalculateInfoDataF1()
     Statistic_AddValue(PChar, "Cheats.F1", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF2 = "Вкл/выкл подсветку попаданий картечи у ГГ";
+string descF2 = "Настроить магические числа курсового угла";
 
 void CalculateInfoDataF2()
 {
@@ -453,19 +453,47 @@ void CalculateInfoDataF2()
 	locations[FindLocation("Mayak2")].DisableEncounters = true;
 	LAi_LocationDisableOfficersGen("Mayak2", true);*/
 	
-	if(!CheckAttribute(pchar, "chr_ai.musket.test_lights") || !CheckAttribute(pchar, "chr_ai.gun.test_lights") || pchar.chr_ai.musket.test_lights == "0" || pchar.chr_ai.gun.test_lights == "0")
-	{
-		pchar.chr_ai.musket.test_lights = 1;
-		pchar.chr_ai.gun.test_lights = 1;
-		totalInfo += NewStr() + "Подсветка попаданий включена.";
-	}
+/*	if(!CheckAttribute(pchar, "CorrectFov"))
+		pchar.CorrectFov = 1;
+	int k = sti(pchar.CorrectFov);
+	k = 1 - k;
+	pchar.CorrectFov = k;
+	Render.CorrectFov = k;
+	if(!bSeaActive || bAbordageStarted)
+		SendMessage(&locCamera, "lf", MSG_CAMERA_SET_PERSPECTIVE, 1.285);
+	
+	if(k == 0)
+		totalInfo += NewStr() + "Выставлен некорректный FoV.";
 	else
-	{
-		pchar.chr_ai.musket.test_lights = 0;
-		pchar.chr_ai.gun.test_lights = 0;
-		totalInfo += NewStr() + "Подсветка попаданий выключена.";
-	}
+		totalInfo += NewStr() + "Выставлен корректный FoV.";	*/
+	
+	// ВЫСТАВЛЕНИЕ СКОРОСТИ ЭКШНОВ
+/*	SetCharacterActionSpeed(pchar, "fire", 1.0);
+	SetCharacterActionSpeed(pchar, "musket_run", 1.0);
+	SetCharacterActionSpeed(pchar, "aiming_walk", 1.0);
+	SetCharacterActionSpeed(pchar, "sprint", 1.0);
+	SetCharacterActionSpeed(pchar, "force", 1.0);
+	SetCharacterActionSpeed(pchar, "fast", 1.0);
+	SetCharacterActionSpeed(pchar, "break", 1.0);
+	SetCharacterActionSpeed(pchar, "round", 1.0);
+	SetCharacterActionSpeed(pchar, "feint", 1.0);	*/
+	
+	
+	// ОТРИСОВКА ИКОНОК АРХЕТИПОВ
+/*	float fBarSize = 4.0;
+	SendMessage(&loadedLocation, "lsf", MSG_LOCATION_EX_MSG, "SetEnemyBarSize", fBarSize);	
+*/
 
+	// МАГИЧЕСКИЕ ЧИСЛА КУРСОВОГО УГЛА
+	pchar.test.WindAgainstSpeed.base1		= 1.0;		// База, из нее вычитаем
+	pchar.test.WindAgainstSpeed.baseshift	= 0.5;		// Базовое смещение	
+	pchar.test.WindAgainstSpeed.factor1		= 6.0;		// Множитель в скобках 1
+	pchar.test.WindAgainstSpeed.power		= 0.2;		// Степень
+	pchar.test.WindAgainstSpeed.base2		= 1.0;		// База, к ней прибавляем
+	pchar.test.WindAgainstSpeed.divider		= 6.0;		// Делитель в скобках
+	pchar.test.WindAgainstSpeed.factor2		= 6.0;		// Множитель в скобках
+	pchar.test.WindAgainstSpeed.arcade		= 0.974;	// Множитель прямопарусника по ветру	
+	
     totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -576,7 +604,7 @@ void CalculateInfoDataF4()
     Statistic_AddValue(PChar, "Cheats.F4", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF5 = "Ранг +1 (35 скилов)";
+string descF5 = "Навыки +35";
 int BOAL_debug_num = 1;
 void CalculateInfoDataF5()
 {
@@ -599,33 +627,32 @@ void CalculateInfoDataF5()
     Statistic_AddValue(PChar, "Cheats.F5", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF6 = "Добавить навык 'Вызывающий доверие' и прокачать Харизму до 100";
+string descF6 = "Уровень +5";
 
 void CalculateInfoDataF6()
 {
-    SetCharacterPerk(pchar, "Trustworthy");
-	AddCharacterSkillDontClearExp(pchar, "Leadership", 100);
+	pchar.rank = sti(pchar.rank) + 5;
+    Event("PlayerLevelUp");
+	
+	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+	
+	SetFormatedText("INFO_TEXT", totalInfo);
 
-    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
-
-    SetFormatedText("INFO_TEXT", totalInfo);
-
-    //ProcessCancelExit();
     // Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F6", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF7 = "Убрать навык 'Вызывающий доверие'";
+string descF7 = "Макс. здоровье +50";
 
 void CalculateInfoDataF7()
 {
-	DeleteAttribute(pchar,"perks.list.Trustworthy");
-
-    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+	LAi_SetHP(pchar,LAi_GetCharacterMaxHP(pchar)+50,LAi_GetCharacterMaxHP(pchar)+50);
 	
-    SetFormatedText("INFO_TEXT", totalInfo);
-
-    // Статистика по читам
+	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+	
+	SetFormatedText("INFO_TEXT", totalInfo);
+	 
+	// Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F7", 1);
 }
 ////////////////////////////////////////////////////////////////////////
@@ -686,33 +713,66 @@ void CalculateInfoDataF10()
     Statistic_AddValue(PChar, "Cheats.F10", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF11 = "Увеличить уровень +5";
+string descF11 = "Навык 'Вызывающий доверие' вкл/выкл";
 
 void CalculateInfoDataF11()
 {
-	pchar.rank = sti(pchar.rank) + 5;
-    Event("PlayerLevelUp");
-	
-	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
-	
-	SetFormatedText("INFO_TEXT", totalInfo);
+	if (IsCharacterPerkOn(pchar, "Trustworthy"))
+	{
+		DeleteAttribute(pchar,"perks.list.Trustworthy");
+	}
+	else
+	{
+		SetCharacterPerk(pchar, "Trustworthy");
+		AddCharacterSkillDontClearExp(pchar, "Leadership", 100);
+	}
 
+    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+
+    SetFormatedText("INFO_TEXT", totalInfo);
+
+    //ProcessCancelExit();
     // Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F11", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-//string descF12 = "НЗГ у всех наций +50";
-string descF12 = "Увеличить макс. здоровье +50";
+string descF12 = "Выставить новые боевые параметры";
 
 void CalculateInfoDataF12()
 {
-	LAi_SetHP(pchar,LAi_GetCharacterMaxHP(pchar)+50,LAi_GetCharacterMaxHP(pchar)+50);
+	// вероятность в процентах пробить блок для всех персонажей (симуляция перка фехтовальщика)
+	pchar.test.block_bypass_chance = 50;
 	
-	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+	// вкл/выкл усиленный круговой удар для ГГ (симуляция перка пирата)
+	pchar.test.power_round_main = 1;
 	
-	SetFormatedText("INFO_TEXT", totalInfo);
-	 
-	// Статистика по читам
+	// вкл/выкл усиленный круговой удар для нпс (симуляция перка пирата)
+	pchar.test.power_round_npc = 1;
+	
+	// вкл/выкл усиленный пробивающий удар для ГГ (симуляция перка солдата)
+	pchar.test.power_break_main = 1;
+	
+	// вкл/выкл усиленный пробивающий удар для нпс (симуляция перка солдата)
+	pchar.test.power_break_npc = 1;
+	
+	// вкл/выкл улучшенный выстрел из мушкета для ГГ (симуляция перка мушкетёра)
+	pchar.test.knee_shot_main = 1;
+	
+	// вкл/выкл улучшенный выстрел из мушкета для нпс (симуляция перка мушкетёра)
+	pchar.test.knee_shot_npc = 1;
+	
+	// угол блока в градусах - атака, пришедшая с большего угла, считается атакой сзади
+	// считается от направления героя (например, угол 150 градусов означает, что вправо или влево можно блокировать атаку на угол вплоть до 150 градусов, общий угол покрытия блока равен 150+150=300 градусов, а сзади остаётся уязвимая зона 360-300=60 градусов)
+	pchar.test.back_block_angle = 150;
+	
+	// масса ГГ, определяет его мощь при расталкивании спринтом и отскоком, по умолчанию 100
+	SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "SetMass", 130);
+	
+    totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
+	
+    SetFormatedText("INFO_TEXT", totalInfo);
+
+    // Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F12", 1);
 }
 
@@ -724,26 +784,9 @@ void CalculateInfoDataF13()
     // -->
     totalInfo = descF13;
 
-    ref mc;
-    mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-    {
-        mc.worldmapencountersoff = "1";
-        Log_SetStringToLog("Worldmap encounters OFF");
-    }
-    else
-    {
-        if(mc.worldmapencountersoff == "1")
-        {
-            mc.worldmapencountersoff = "0";
-            Log_SetStringToLog("Worldmap encounters ON");
-        }
-        else
-        {
-            mc.worldmapencountersoff = "1";
-            Log_SetStringToLog("Worldmap encounters OFF");
-        }
-    }
+	bEncOffGlobal = !bEncOffGlobal;
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
+	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
     // <--
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
                 "Команда отработала успешно!";
@@ -754,23 +797,17 @@ void CalculateInfoDataF13()
     Statistic_AddValue(PChar, "Cheats.F13", 1);
 }*/
 
-string descF13 = "";
+string descF13 = "Добавить офицера: Элен";
 void CalculateInfoDataF13()
 {
-
-    ProcessCancelExit();
-}
-
-string descF14 = "Добавить офицера: Элен";
-
-void CalculateInfoDataF14()
-{
-    // Элен:
+	// Элен:
     pchar.questTemp.Saga.Helena_officer = "true";
     sld = characterFromId("Helena");
     sld.greeting = "helena_hire";
-    sld.quest.OfficerPrice = sti(pchar.rank) * 500;
-    sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
+	sld.Dialog.Filename = "Quest\Saga\Helena.c";
+	sld.Dialog.CurrentNode = "Helena_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+    sld.OfficerWantToGo.DontGo = true;
     sld.loyality = MAX_LOYALITY;
     AddPassenger(pchar, sld, false);
     SetCharacterRemovable(sld, true);
@@ -779,6 +816,10 @@ void CalculateInfoDataF14()
     sld.dialog.currentnode = "Helena_officer";
     LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
     SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
     sld.rank = 35;
     LAi_SetHP(sld, 400.0, 400.0);
     SetSelfSkill(sld, 100, 90, 100, 100, 90);
@@ -787,45 +828,47 @@ void CalculateInfoDataF14()
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");
     SetCharacterPerk(sld, "Grus");
-    GiveItem2Character(sld, "blade_31");
-    sld.equip.blade = "blade_31";
+    GiveItem2Character(sld, "pirate_cutlass");
+    sld.equip.blade = "pirate_cutlass";
     GiveItem2Character(sld, "pistol4");
     sld.equip.gun = "pistol4";
     GiveItem2Character(sld, "cirass4");
     EquipCharacterbyItem(sld, "cirass4");
     AddItems(sld, "cartridge", 50);
-    //LAi_SetCharacterUseBullet(sld, "cartridge");
     AddItems(sld, "potion2", 10);
     AddItems(sld, "potion4", 5);
 
     ProcessCancelExit();
 }
 
-string descF15 = "Добавить офицера: Мэри";
-void CalculateInfoDataF15()
+string descF14 = "Добавить офицера: Мэри";
+
+void CalculateInfoDataF14()
 {
     // Мэри:
     pchar.questTemp.LSC.Mary_officer = "true";
     sld = characterFromId("Mary");
-    sld.quest.OfficerPrice = sti(pchar.rank) * 500;
-    sld.OfficerWantToGo.DontGo = true; //не пытаться уйти
-    sld.CompanionDisable = true;       //нельзя в компаньоны
+	sld.Dialog.Filename = "Quest\LSC\Mary.c";
+	sld.Dialog.currentnode = "Mary_officer";
+    sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+    sld.OfficerWantToGo.DontGo = true;
+    sld.CompanionDisable = true;
     sld.loyality = MAX_LOYALITY;
     AddPassenger(pchar, sld, false);
     SetCharacterRemovable(sld, true);
     sld.Payment = true;
     sld.DontClearDead = true;
-    sld.dialog.currentnode = "Mary_officer";
     LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
     SaveCurrentNpcQuestDateParam(sld, "HiredDate");
-    sld.rank = 35;
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
     LAi_SetHP(sld, 500.0, 500.0);
     SetSelfSkill(sld, 100, 90, 100, 100, 90);
     SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
-    SetCharacterPerk(sld, "HardHitter");
-    SetCharacterPerk(sld, "ByWorker");
-    SetCharacterPerk(sld, "ByWorker2");
-    SetCharacterPerk(sld, "Grus");
+    SetHalfPerksToChar(sld, false);
     GiveItem2Character(sld, "blade_31");
     sld.equip.blade = "blade_31";
     GiveItem2Character(sld, "pistol4");
@@ -833,41 +876,42 @@ void CalculateInfoDataF15()
     GiveItem2Character(sld, "cirass4");
     EquipCharacterbyItem(sld, "cirass4");
     AddItems(sld, "cartridge", 50);
-    //LAi_SetCharacterUseBullet(sld, "cartridge");
     AddItems(sld, "potion2", 10);
     AddItems(sld, "potion4", 5);
-	
+
     ProcessCancelExit();
 }
 
-string descF16 = "Добавить офицера: Тичингиту";
-void CalculateInfoDataF16() 
+string descF15 = "Добавить офицера: Тичингиту";
+void CalculateInfoDataF15()
 {
-// Тичингиту
+    // Тичингиту:
     sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
     sld.name = "Тичингиту";
     sld.lastname = "";
     sld.greeting = "Tichingitu";
     sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-    sld.dialog.currentnode = "Tichingitu";
+	sld.Dialog.CurrentNode = "Tichingitu_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+    sld.OfficerWantToGo.DontGo = true;
+    sld.CompanionDisable = true;
+    sld.loyality = MAX_LOYALITY;
+    AddPassenger(pchar, sld, false);
+    SetCharacterRemovable(sld, true);
+    sld.Payment = true;
+    LAi_SetOfficerType(sld);
+    LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+    SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
     sld.rank = 30;
     LAi_SetHP(sld, 380.0, 380.0);
     SetSPECIAL(sld, 4, 9, 5, 5, 10, 8, 8);
-    SetSelfSkill(sld, 90, 90, 100, 100, 90);
-    SetShipSkill(sld, 40, 40, 40, 40, 40, 40, 40, 40, 40);
-    SetCharacterPerk(sld, "Energaiser");
-    SetCharacterPerk(sld, "BasicDefense");
-    SetCharacterPerk(sld, "AdvancedDefense");
-    SetCharacterPerk(sld, "CriticalHit");
-    SetCharacterPerk(sld, "Tireless");
-    SetCharacterPerk(sld, "HardHitter");
-    SetCharacterPerk(sld, "Gunman");
-    SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
-    SetCharacterPerk(sld, "Sliding");
-    SetCharacterPerk(sld, "ByWorker");
-    SetCharacterPerk(sld, "ByWorker2");
-    SetCharacterPerk(sld, "Grus");
+    SetSelfSkill(sld, 50, 50, 50, 100, 50);
+	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
     AddItems(sld, "mushket6", 1);
     sld.CanTakeMushket = true;
     GiveItem2Character(sld, "blade_21");
@@ -879,31 +923,91 @@ void CalculateInfoDataF16()
     AddItems(sld, "cartridge", 30);
     AddItems(sld, "GunEchin", 30);
     AddItems(sld, "GunPowder", 30);
-    sld.quest.OfficerPrice = sti(pchar.rank) * 20;
-    sld.OfficerWantToGo.DontGo = true;
-    sld.CompanionDisable = true;
-    sld.loyality = MAX_LOYALITY;
-    AddPassenger(pchar, sld, false);
-    SetCharacterRemovable(sld, true);
-    sld.Payment = true;
-    LAi_SetOfficerType(sld);
-    sld.dialog.currentnode = "Tichingitu_officer";
-    LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-    SaveCurrentNpcQuestDateParam(sld, "HiredDate");
     AddItems(sld, "potion2", 7);
     AddItems(sld, "potion4", 3);
 	
     ProcessCancelExit();
 }
 
-string descF17 = "Добавить офицера: Тонзага";
+string descF16 = "Добавить офицера: Тонзага";
+void CalculateInfoDataF16() 
+{
+	// Тонзаг:
+	sld = characterFromId("Tonzag");
+	sld.Dialog.Filename = "Quest\HollandGambit\Tonzag.c";
+	sld.dialog.currentnode = "Tonzag_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	LAi_SetOfficerType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
+	LAi_SetHP(sld, 450.0, 450.0);
+	SetSPECIAL(sld, 10, 3, 10, 3, 6, 10, 8);
+	SetSelfSkill(sld, 90, 90, 90, 50, 90);
+	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
+	GiveItem2Character(sld, "cirass2");
+	EquipCharacterbyItem(sld, "cirass2");
+	
+	ProcessCancelExit();
+}
+
+string descF17 = "Добавить офицера: Книппеля";
 void CalculateInfoDataF17()
 {
-    // Тонзаг
-    sld = characterFromId("Tonzag");
-    sld.Dialog.Filename = "Enc_Officer_dialog.c";
-    sld.Dialog.currentnode = "hired";
-    sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	// Чарли:
+	sld = GetCharacter(NPC_GenerateCharacter("Knippel", "Kneepel", "man", "man_B", 20, ENGLAND, -1, false, "quest"));
+	sld.name = "Чарли";
+	sld.lastname = "Книппель";
+	sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
+	sld.Dialog.CurrentNode = "Knippel_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.OfficerWantToGo.DontGo = true;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	LAi_SetOfficerType(sld);
+	sld.greeting = "knippel_hire";
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
+	LAi_SetHP(sld, 120, 120);
+	SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
+	SetSelfSkill(sld, 50, 50, 50, 50, 50);
+	SetShipSkill(sld, 100, 50, 90, 90, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
+	GiveItem2Character(sld, "shamshir");
+	sld.equip.blade = "shamshir";
+	GiveItem2Character(sld, "pistol1");
+	EquipCharacterbyItem(sld, "pistol1");
+	AddItems(sld, "cartridge", 50);
+	TakeNItems(sld,"potion4", 20);
+	
+    ProcessCancelExit();
+}
+
+string descF18 = "Добавить офицера: Лонгвэя";
+
+void CalculateInfoDataF18()
+{
+	DeleteAttribute(sld, "CompanionDisable");
+	// Лонгвэй:
+    sld = characterFromId("Longway");
+	sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
+	sld.Dialog.CurrentNode = "Longway_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
     sld.OfficerWantToGo.DontGo = true;
     sld.loyality = MAX_LOYALITY;
     AddPassenger(pchar, sld, false);
@@ -912,56 +1016,55 @@ void CalculateInfoDataF17()
     LAi_SetOfficerType(sld);
     LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
     SaveCurrentNpcQuestDateParam(sld, "HiredDate");
-    sld.rank = 35;
-    LAi_SetHP(sld, 450.0, 450.0);
-    SetSelfSkill(sld, 90, 90, 100, 100, 90);
-    SetShipSkill(sld, 50, 80, 80, 80, 80, 80, 80, 80, 80);
-    SetCharacterPerk(sld, "HardHitter");
-    SetCharacterPerk(sld, "Sliding");
-    SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
-    SetCharacterPerk(sld, "Gunman");
-    SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "ByWorker");
-    SetCharacterPerk(sld, "ByWorker2");
-    SetCharacterPerk(sld, "Grus");
-    GiveItem2Character(sld, "topor_06");
-    sld.equip.blade = "topor_06";
-    GiveItem2Character(sld, "pistol8");
-    sld.equip.gun = "pistol8";
-    GiveItem2Character(sld, "cirass2");
-    EquipCharacterbyItem(sld, "cirass2");
-    AddItems(sld, "GunEchin", 50);
-    AddItems(sld, "GunPowder", 50);
-    //LAi_SetCharacterUseBullet(sld, "GunEchin");
-    AddItems(sld, "potion2", 15);
-    AddItems(sld, "potion4", 10);
-	
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
+	LAi_SetHP(sld, 250.0, 250.0);
+	SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
+	SetSelfSkill(sld, 50, 50, 50, 50, 50);
+	SetShipSkill(sld, 100, 50, 90, 90, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
+	GiveItem2Character(sld, "cirass2");
+	EquipCharacterbyItem(sld, "cirass2");
+			
     ProcessCancelExit();
 }
 
-string descF18 = "Добавить офицера: Томми";
-
-void CalculateInfoDataF18()
+string descF19 = "Добавить офицера: Томми";
+void CalculateInfoDataF19()
 {
-	// Томми
+	// Томми:
 	sld = GetCharacter(NPC_GenerateCharacter("Irons", "Irons", "man", "Irons", 12, ENGLAND, -1, false, "quest"));
 	sld.name = StringFromKey("BlackMark_5");
 	sld.lastname = StringFromKey("BlackMark_6");
-	sld.rank = 12;
+	sld.dialog.filename = "Quest\BlackMark.c";
+	sld.Dialog.CurrentNode = "Irons_officer";
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.CompanionDisable = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
 	sld.CanTakeMushket = true;
-	SetPriorityMode(sld, 2);
-	sld.MusketerDistance = 10;
+	LAi_SetOfficerType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
+	LAi_SetHP(sld, 170.0, 170.0);
 	SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
-	SetSelfSkill(sld, 15, 15, 50, 60, 20);
-	SetShipSkill(sld, 5, 1, 4, 6, 1, 1, 7, 1, 10);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "Tireless");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "Gunman");
-	SetCharacterPerk(sld, "Jager"); //Егерь
-	SetCharacterPerk(sld, "Sniper"); //Снайпер
+	SetSelfSkill(sld, 50, 50, 50, 100, 50);
+	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
+	sld.CanTakeMushket = true;
+	sld.PriorityMode = 2;
+	sld.MusketerDistance = 10;
 	GiveItem2Character(sld, "cirass10");
 	EquipCharacterByItem(sld, "cirass10");
 	GiveItem2Character(sld, "blade_42");
@@ -973,60 +1076,38 @@ void CalculateInfoDataF18()
 	AddItems(sld, "GunPowder", 15);
 	AddItems(sld, "bullet", 15);
 	LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
-	sld.SaveItemsForDead = true;
-	sld.DontClearDead = true;
-	sld.quest.OfficerPrice = 15000;
-	sld.OfficerWantToGo.DontGo = true;
-	sld.CompanionDisable = true;
-	sld.loyality = MAX_LOYALITY;
-	AddPassenger(pchar, sld, false);
-	SetCharacterRemovable(sld, true);
-	sld.Payment = true;
-	sld.OfficerImmortal = true;
-	sld.Health.HP       = 60.0; 
-	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.CanTakeMushket = true;
-	LAi_SetOfficerType(sld);
-	sld.dialog.filename = "Quest\BlackMark.c";
-	sld.Dialog.CurrentNode = "Irons_officer";
-	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
-	LAi_SetHP(sld, 170.0, 170.0);
-			
+	
     ProcessCancelExit();
 }
 
-string descF19 = "Добавить офицера: Дюрана";
-void CalculateInfoDataF19()
+string descF20 = "Добавить офицера: Дюрана";
+void CalculateInfoDataF20()
 {
+    // Дюран:
 	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
 	sld.name = StringFromKey("FMQ_49");
 	sld.lastname = StringFromKey("FMQ_50");
+	sld.greeting = "Duran_officer";
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
 	sld.Dialog.CurrentNode = "hired";
-	sld.rank = 15;
-	sld.reputation = 25;
-	LAi_SetHP(sld, 180, 180);
-	SetSelfSkill(sld, 45, 50, 45, 45, 35);
-	SetShipSkill(sld, 25, 10, 20, 20, 20, 20, 20, 20, 30);
-	SetSPECIAL(sld, 8, 5, 8, 4, 6, 8, 5);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "Gunman");
-	SetCharacterPerk(sld, "Tireless");
-	sld.SuperShooter = true;
 	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
 	sld.OfficerWantToGo.DontGo = true;
 	sld.loyality = MAX_LOYALITY;
 	AddPassenger(pchar, sld, false);
 	SetCharacterRemovable(sld, true);
 	sld.Payment = true;
-	EquipCharacterByArtefact(sld, "indian_1");
-	EquipCharacterByArtefact(sld, "indian_7");
-	EquipCharacterByArtefact(sld, "indian_4");
+	LAi_SetOfficerType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	SetCharacterPerk(sld, "ShipEscape");
+	sld.rank = 30;
+	LAi_SetHP(sld, 180, 180);
+	SetSPECIAL(sld, 8, 5, 8, 4, 6, 8, 5);
+	SetSelfSkill(sld, 50, 50, 50, 100, 50);
+	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
+	SetHalfPerksToChar(sld, false);
 	GiveItem2Character(sld, "blade_12");
 	sld.equip.blade = "blade_12";
 	GiveItem2Character(sld, "pistol1");
@@ -1034,66 +1115,6 @@ void CalculateInfoDataF19()
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 	TakeNItems(sld, "bullet", 20);
 	AddItems(sld, "gunpowder", 20);
-	sld.greeting = "Duran_officer";
-	LAi_SetOfficerType(sld);
-	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	sld.OfficerImmortal = true;
-	sld.Health.HP       = 60.0; 
-	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	
-    ProcessCancelExit();
-}
-
-string descF20 = "Добавить офицера: Книппеля";
-void CalculateInfoDataF20()
-{
-    //Чарли
-	sld = GetCharacter(NPC_GenerateCharacter("Knippel", "Kneepel", "man", "man_B", 20, ENGLAND, -1, false, "quest"));
-	sld.name = "Чарли";
-	sld.lastname = "Книппель";
-	sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-	sld.Dialog.CurrentNode = "Knippel_officer";
-	sld.rank = 20;
-	LAi_SetHP(sld, 120, 120);
-	SetSelfSkill(sld, 10, 12, 10, 10, 70);
-	SetShipSkill(sld, 50, 20, 75, 75, 45, 20, 20, 10, 15);
-	SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "Ciras");
-	SetCharacterPerk(sld, "SwordplayProfessional");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "AgileMan");
-	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "SailsDamageUp");
-	SetCharacterPerk(sld, "CrewDamageUp");
-	SetCharacterPerk(sld, "CriticalShoot");
-	SetCharacterPerk(sld, "LongRangeShoot");
-	SetCharacterPerk(sld, "CannonProfessional");
-	SetCharacterPerk(sld, "FastReload");
-	SetCharacterPerk(sld, "ByWorker2");
-	GiveItem2Character(sld, "shamshir");
-	sld.equip.blade = "shamshir";
-	GiveItem2Character(sld, "pistol1");
-	EquipCharacterbyItem(sld, "pistol1");
-	AddItems(sld, "cartridge", 50);
-	TakeNItems(sld,"potion4", 20);
-	//LAi_SetCharacterUseBullet(sld, "cartridge");
-	sld.money = 1000;
-	sld.quest.OfficerPrice = sti(pchar.rank)*200;
-	sld.OfficerWantToGo.DontGo = true;
-	sld.loyality = MAX_LOYALITY;
-	sld.OfficerImmortal = true;
-	sld.Health.HP       = 60.0; 
-	sld.Health.maxHP    = 60.0;
-	AddPassenger(pchar, sld, false);
-	SetCharacterRemovable(sld, true);
-	sld.Payment = true;
-	LAi_SetOfficerType(sld);
-	sld.greeting = "knippel_hire";
-	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	
 	ProcessCancelExit();
 }

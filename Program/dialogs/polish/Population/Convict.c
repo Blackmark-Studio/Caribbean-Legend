@@ -13,7 +13,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = NPCStringReactionRepeat("Znowu ty, senor?","Słuchaj, panie, lepiej żebyś sobie poszedł...","Nie zawracaj mi głowy, panie! Uprzejmie proszę.","Och, nie mogę tego znieść... Nawet wiosłowanie na galerze było lepsze.","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Znowu ty, senor?","Słuchaj, panie, lepiej żebyś sobie poszedł...","Nie zawracaj mi głowy, panie! Uprzejmie proszę.","Och, nie mogę tego znieść... Nawet wiosłowanie na galerze było lepsze.","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Tak, to znowu ja.","Nie mów mi, co mam robić.","A jeśli będę dalej przeszkadzał?","Wróć do kuchni wtedy!",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			

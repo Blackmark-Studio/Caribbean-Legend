@@ -618,6 +618,8 @@ void WaitDate(string postName,int year, int month, int day, int hour, int minute
 	postWaitHour = hour;
 	postWaitMinute = minute;
 	WaitDatePostEventControl();
+	CreateWeatherEnvironment();
+	RefreshLandTime();
 }
 
 // установить камеру на просмотр корабля персонажа и вызвать квест через заданное число секунд
@@ -1687,6 +1689,7 @@ void SetTimerConditionParam(string _name, string _quest, int _year, int _month, 
         DeleteAttribute(Pchar, "quest."+_name+".again");
     }
 }
+
 // проверка локации на зянятость по квестам, нужно для выбора локации без конфликта с др. квестами (генераторы)
 bool isLocationFreeForQuests(string loc_id)
 {
@@ -1885,6 +1888,7 @@ void SetFunctionLocatorCondition(string _name, string _location, string _group, 
 	{
 		DeleteAttribute(Pchar, "quest."+_name+".again");
 	}
+	QuestsCheck();
 }
 
 // Для универсализации -->
@@ -2653,4 +2657,68 @@ string FindEventInLocator(ref loc, string locator)
 	}
 	
 	return "";
+}
+
+void TeleportCharacter()
+{
+	ref location = &Locations[FindLocation(pchar.location)];
+	bool bOk;
+	
+	if (CheckAttribute(location, "id") && location.id == "KhaelRoa_Treasure_Alcove") // калеуче
+	{
+		bOk = (IsCharacterInLocator(pchar, "teleport", "teleport0")) || (IsCharacterInLocator(pchar, "teleport", "teleport1")) || (IsCharacterInLocator(pchar, "teleport", "teleport2")) || (IsCharacterInLocator(pchar, "teleport", "teleport3")) || (IsCharacterInLocator(pchar, "teleport", "teleport4")) || (IsCharacterInLocator(pchar, "teleport", "teleport5")) || (IsCharacterInLocator(pchar, "teleport", "teleport6"))
+		if (bOk)
+		{
+			if (IsCharacterInLocator(pchar, "teleport", "teleport0")) sGlobalTemp = "teleport0";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport1")) sGlobalTemp = "teleport1";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport2")) sGlobalTemp = "teleport2";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport3")) sGlobalTemp = "teleport3";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport4")) sGlobalTemp = "teleport4";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport5")) sGlobalTemp = "teleport5";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport6")) sGlobalTemp = "teleport6";
+			Caleuche_TeleportStart();
+		}
+	}
+	
+	if (CheckAttribute(location, "dolly"))
+	{
+		if (CheckAttribute(pchar, "questTemp.NotTeleportation")) 
+		{
+			DoQuestCheckDelay("TalkSelf_Quest", 0.1);
+			Log_SetActiveAction("Nothing");
+		}
+		else
+		{
+			if (IsCharacterInLocator(pchar, "item", "dolly1")) sGlobalTemp = "dolly1";
+			if (IsCharacterInLocator(pchar, "item", "dolly2")) sGlobalTemp = "dolly2";
+			if (IsCharacterInLocator(pchar, "item", "dolly3")) sGlobalTemp = "dolly3";
+			Dolly_TeleportStart();
+			Log_SetActiveAction("Nothing");
+		}
+	}
+}
+
+void CaleucheLeversAction()
+{
+	string _locator = "";
+	if(CheckAttribute(pchar,"questTemp.Caleuche.Lever.CurLocator"))
+	{
+		_locator = pchar.questTemp.Caleuche.Lever.CurLocator;
+	}
+	if(_locator == "") return;
+	
+	if (CheckAttribute(pchar, "questTemp.Caleuche.LeverL") && findsubstr(_locator, "column1" , 0) != -1)
+	{
+		pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
+		pchar.questTemp.Caleuche.Lever.Locator = _locator;
+		Caleuche_ThreeLeverAim();
+		Log_SetActiveAction("Nothing");
+	}
+	if (CheckAttribute(pchar, "questTemp.Caleuche.LeverR") && findsubstr(_locator, "column2" , 0) != -1)
+	{
+		pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
+		pchar.questTemp.Caleuche.Lever.Locator = _locator;
+		Caleuche_SixLeverAim();
+		Log_SetActiveAction("Nothing");
+	}
 }

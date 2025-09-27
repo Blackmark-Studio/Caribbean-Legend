@@ -2513,7 +2513,7 @@ void ProcessDialogEvent()
 		case "CaptainComission_30_1":
 			//addMoneyToCharacter(pchar, 25000);
 			TakeNItems(pchar, "chest", 3);
-			Log_Info("You have received credit chests");
+			Log_Info("Avete ricevuto dei forzieri di credito");
 			PlaySound("interface\important_item.wav");
 			AddQuestRecord("CaptainComission1", "14");
 			AddQuestUserData("CaptainComission1", "sSex", GetSexPhrase("",""));
@@ -2527,7 +2527,7 @@ void ProcessDialogEvent()
 		case "CaptainComission_31":
 			//addMoneyToCharacter(pchar, 25000);
 			TakeNItems(pchar, "chest", 2);
-			Log_Info("You have received credit chests");
+			Log_Info("Avete ricevuto dei forzieri di credito");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Non capisco... Non abbiamo già concordato l'importo del tuo pagamento?";
 			link.l1 = "Abbiamo, ma invece di 150000 pesos sono stato costretto a pagare 200000, senza contare il viaggio fino a Barbados.";

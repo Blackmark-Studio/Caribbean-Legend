@@ -1,37 +1,8 @@
-Tonzag_1
-{
-Kopfgeldjäger
-}
-
-Tonzag_2
-{
-Alonso
-}
-Tonzag_3
-{
-
-}
-
-Tonzag_4
-{
-6 Stunden sind vergangen...
-}
-
-Tonzag_5
-{
-Erkundungsmodus: Der Timer ist deaktiviert.
-}
-
-Tonzag_6
-{
-Bronzereiter freigeschaltet
-}
-
-Tonzag_7
-{
-Alberto
-}
-Tonzag_8
-{
-Gaodio
-}
+Tonzag_1 {Kopfgeldjäger}
+Tonzag_2 {Alonso}
+Tonzag_3 { }
+Tonzag_4 {6 Stunden sind vergangen...}
+Tonzag_5 {Erkundungsmodus: Der Timer ist deaktiviert.}
+Tonzag_6 {Bronzereiter freigeschaltet}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

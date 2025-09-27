@@ -1,10 +1,13 @@
+int iBenuaPseudoGlobal;
+
 // аббат Бенуа
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
 	aref Link, NextDiag;
-    string sTemp;
 	int rate;
+    string sTemp;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -53,6 +56,26 @@ void ProcessDialogEvent()
 				link.l1 = "Да, отче. Для того, чтобы помочь Мишелю, мне нужен корабль. Но я только недавно прибыл на Карибы, и почти без гроша в кармане. Мой брат сказал мне, что вы можете ссудить мне некоторую сумму денег...";
 				link.l1.go = "FastStart_2";
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua"))
+			{
+				link.l1 = "Здравствуйте, отче. Нам нужна ваша помощь - в весьма нетривиальном вопросе.";
+				link.l1.go = "WildRose_Abb_2";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2") && PCharDublonsTotal() >= 800)
+			{
+				link.l3 = "Отче, я достал нужную сумму. Восемьсот золотых.";
+				link.l3.go = "WildRose_Abb_14_pay";
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3"))
+			{
+				dialog.text = "Здравствуй, сын мой. Полагаю, ты пожаловал, чтобы справиться по результатам твоего... кхм, вашего дела?";
+				link.l1 = "Вы как всегда проницательны, отче. Не томите же, скажите, что вашему человеку удалось выяснить?";
+				link.l1.go = "WildRose_Abb_16";
+				break;
+			}
+			//<-- Дикая Роза
 			if (CheckAttribute(npchar, "quest.help") && CheckAttribute(npchar, "quest.meet"))
 			{
 				link.l1 = "Да, отче. Мне нужна ваша помощь.";
@@ -205,22 +228,7 @@ void ProcessDialogEvent()
 		case "escape_10":
 			DialogExit();
 			NextDiag.CurrentNode = "first time";
-			pchar.questTemp.Sharlie = "escape";
-			CloseQuestHeader("Sharlie");
-			AddQuestRecord("Guardoftruth", "1");
-			pchar.questTemp.Guardoftruth = "begin";
-			DeleteAttribute(pchar, "questTemp.GoldenGirl_Block");	// Разрешаем квест Дороже Золота
-			SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
-			// ставим пленного испанца
-			sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);
-			sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
-			sld.dialog.currentnode = "spa_prisoner";
-			RemoveAllCharacterItems(sld, true);
-			LAi_SetStayType(sld);
-			LAi_SetImmortal(sld, true);
-			ChangeCharacterAddressGroup(sld, "Fortfrance_dungeon", "quest", "quest1");
-			LAi_CharacterDisableDialog(sld);//запрет диалога
+			AddDialogExitQuestFunction("Sharlie_Benua_BrotherEscape");
 		break;
 		
 		// уменьшение награды за голову
@@ -281,41 +289,40 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
+			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
+			if (rate < 2)
 			{
-				dialog.text = "Да, эти слухи достигли и нашей церкви. Смогу я помочь твоей беде, это дело поправимое. Мне нужно двести пятьдесят золотых дублонов, чтобы уладить неприятности.";
-				if (PCharDublonsTotal() >= 250) // Sinistra legendary edition
+				dialog.text = "Да, эти слухи достигли и нашей церкви. Смогу я помочь твоей беде, это дело поправимое. Мне нужно " + sTemp + ", чтобы уладить неприятности.";
+				if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 				{
 					link.l1 = "Отлично! Вот, держите золотые.";
 					link.l1.go = "agree";
-					iTotalTemp = 250;
 				}
 				link.l2 = "Тогда мне самое время отправиться за монетами.";
 				link.l2.go = "exit";
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
-					dialog.text = "Да, слухи о твоих 'подвигах' достигли и нашей церкви. Подмочил ты свою репутацию, "+GetSexPhrase("сын мой","дочь моя")+", надо было быть осмотрительнее. Но помочь всё же я сумею. Мне нужно пятьсот золотых дублонов, чтобы уладить неприятности.";
-					if (PCharDublonsTotal() >= 500) // Sinistra legendary edition
+					dialog.text = "Да, слухи о твоих 'подвигах' достигли и нашей церкви. Подмочил ты свою репутацию, "+GetSexPhrase("сын мой","дочь моя")+", надо было быть осмотрительнее. Но помочь всё же я сумею. Мне нужно " + sTemp + ", чтобы уладить неприятности.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Отлично! Вот, держите золотые.";
 						link.l1.go = "agree";
-						iTotalTemp = 500;
 					}
 					link.l2 = "Тогда мне самое время отправиться за монетами.";
 					link.l2.go = "exit";
 				}
 				else
 				{
-					dialog.text = "Да, "+GetSexPhrase("сын мой","дочь моя")+", ты такой же отчаянный, как и твой брат... Это, вероятно, ваша родовая черта. Полностью ситуацию я исправить не смогу, но улучшить твоё бедственное положение - думаю, сумею. А потом ещё раз пожертвования сделаем, если пожелаешь. Мне нужно шестьсот золотых дублонов - и сразу начну решать твои проблемы.";
-					if (PCharDublonsTotal() >= 600) // Sinistra legendary edition
+					dialog.text = "Да, "+GetSexPhrase("сын мой","дочь моя")+", ты такой же отчаянный, как и твой брат... Это, вероятно, ваша родовая черта. Полностью ситуацию я исправить не смогу, но улучшить твоё бедственное положение - думаю, сумею. А потом ещё раз пожертвования сделаем, если пожелаешь. Мне нужно " + sTemp + " - и сразу начну решать твои проблемы.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Отлично! Вот, держите золотые.";
 						link.l1.go = "agree";
-						iTotalTemp = 600;
 					}
 					link.l2 = "Тогда мне самое время отправиться за монетами.";
 					link.l2.go = "exit";
@@ -324,8 +331,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "agree":
-			RemoveDublonsFromPCharTotal(iTotalTemp); // Sinistra legendary edition
-			Log_Info("Вы отдали "+iTotalTemp+" дублонов");
+			RemoveDublonsFromPCharTotal(iBenuaPseudoGlobal);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Теперь ожидай не менее двух недель. Думаю, за это время я встречусь и переговорю с нужными людьми.";
 			link.l1 = "Спасибо, отче! Буду ждать...";
@@ -334,10 +340,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-            rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            bOk = HasShipTrait(pchar, "trait23");
+            rate = 10 + hrand(5);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		
@@ -760,6 +767,212 @@ void ProcessDialogEvent()
 			link.l1 = "Спасибо вам святой отец. Это была прекрасная служба и я рад, что именно вы её провели.";
 			link.l1.go = "LH_abbat_38";
 		break;
+		
+		//--> Дикая Роза
+		case "WildRose_Abb_2":
+			dialog.text = "Так вы явились ко мне за советом, дети мои? Что ж, я весь внимание.";
+			link.l1 = "Скорее за содействием, отче. Содействием человека, имеющего связи и знающего самых разных людей...";
+			link.l1.go = "WildRose_Abb_3";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua");
+		break;
+
+		case "WildRose_Abb_3":
+			dialog.text = "Прости, что перебиваю тебя, сын мой, но я хочу напомнить, что я - простой аббат, а не тайный агент.";
+			link.l1 = "Но ведь простой аббат может знать тайного агента, верно? Или же подсказать, как выйти на него?";
+			link.l1.go = "WildRose_Abb_4_fortune";
+			link.l2 = "Дело, по которому мы к вам пришли, и в самом деле касается неких давно позабытых тайн... Мы же пытаемся вытащить их обратно на свет.";
+			link.l2.go = "WildRose_Abb_4_stealth";
+		break;
+
+		case "WildRose_Abb_4_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Так, юноша, мне перестаёт это нравиться. Переходи-ка к делу, а там посмотрим, чем я могу тебе помочь... и могу ли вообще.";
+			link.l1 = "Да, отче. Постараюсь изложить ситуацию кратко...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_4_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = ""+pchar.name+", не надо говорить загадками - это, признаться, утомляет.";
+			link.l1 = "Да, отче. Постараюсь изложить ситуацию кратко...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_5":
+			dialog.text = "Продолжай, сын мой.";
+			link.l1 = "Моя спутница - Мэри Каспер - пытается разыскать своего отца, или хотя бы какую-либо информацию о нём. Нам удалось выяснить, что он был офицером английского флота и нёс службу на бриге 'Рэнглер', разбившегося у мыса Каточе в 1638 году.";
+			link.l1.go = "WildRose_Abb_6";
+		break;
+
+		case "WildRose_Abb_6":
+			dialog.text = "И вы надеетесь, что он ещё жив? Спустя столько лет?";
+			link.l1 = "Даже если он и не пережил кораблекрушения, Мэри хочет знать, откуда её отец родом, каким человеком был, какую жизнь вёл... Официальные бумаги скупы на подробности - но и в них может содержаться нечто ценное, согласны, отче?";
+			link.l1.go = "WildRose_Abb_7";
+		break;
+
+		case "WildRose_Abb_7":
+			dialog.text = "Ты, конечно, прав в своих рассуждениях, сын мой. Дело вы затеяли хорошее и богоугодное. Но я пока не могу взять в толк, чего именно вы хотите от меня?";
+			link.l1 = "Вы ведь давно живёте на Архипелаге, отче. Возможно, вы знакомы с кем-то, имеющим доступ к колониальным архивам документов, касающихся английских флотских офицеров?";
+			link.l1.go = "WildRose_Abb_8_stealth";
+			link.l2 = "Нам нужен человек, имеющий доступ к колониальным архивам, где хранятся сведения об офицерах английского флота. Наверняка, у вас есть такой на примете, отче.";
+			link.l2.go = "WildRose_Abb_8_charisma";
+		break;
+
+		case "WildRose_Abb_8_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = "Ты понимаешь, о чём просишь, сын мой? Дело даже не в том, что такая информация может быть военной тайной...";
+			link.l1 = "А в чём же ещё, отче? Скажу сразу...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_8_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Ты понимаешь, о чём просишь, сын мой? Дело даже не в том, что такая информация может быть военной тайной...";
+			link.l1 = "А в чём же ещё, отче? Скажу сразу...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_9":
+			dialog.text = "Проблема заключается в тех самых колониальных архивах. Двадцать лет назад Ямайка была под испанцами, а Сент-Джонс и Бриджтаун — в постоянной угрозе от набегов. Вряд ли туда были приписаны корабли Королевского флота...";
+			link.l1 = "Вы говорите об архиве Адмиралтейства в Лондоне, отче?";
+			link.l1.go = "WildRose_Abb_10";
+		break;
+
+		case "WildRose_Abb_10":
+			dialog.text = "Возможно. Бумаги должны были быть переданы в Адмиралтейство. Получить их — непросто.";
+			link.l1 = "Но ведь это возможно, отче?";
+			link.l1.go = "WildRose_Abb_11";
+		break;
+
+		case "WildRose_Abb_11":
+			dialog.text = "Нет ничего невозможного, сын мой. Но это потребует усилий... и оплаты.";
+			link.l1 = "Конечно, отче. Мне передать деньги вам, или нужно будет встретиться с кем-то ещё?";
+			link.l1.go = "WildRose_Abb_12";
+		break;
+
+		case "WildRose_Abb_12":
+			dialog.text = "С кем-то ещё встречусь я сам, сын мой. От тебя мне нужно... восемь сотен дублонов.";
+			link.l1 = "Хорошо, отче. Как долго всё это займёт?";
+			link.l1.go = "WildRose_Abb_13";
+		break;
+
+		case "WildRose_Abb_13":
+			dialog.text = "Полагаю, два месяца. И, кстати, ты не сообщил мне имя того, кого ищете.";
+			link.l1 = "Этого человека зовут Джошуа Каспер.";
+			link.l1.go = "WildRose_Abb_14";
+		break;
+
+		case "WildRose_Abb_14":
+			dialog.text = "Я запомнил. Если ты готов передать всю сумму сейчас — я уже завтра направлю весточку.";
+			if (PCharDublonsTotal() >= 800)
+			{
+				link.l1 = "Разумеется, отче. Вот, держите. Восемьсот золотых.";
+				link.l1.go = "WildRose_Abb_14_pay";
+			}
+			else
+			{
+				link.l1 = "Нет, отче, у меня нет при себе таких денег. Но я скоро вернусь и принесу их.";
+				link.l1.go = "WildRose_Abb_14_nopay";
+			}
+		break;
+
+		case "WildRose_Abb_14_pay":
+			RemoveDublonsFromPCharTotal(800);
+			dialog.text = "Очень хорошо, "+pchar.name+". Возвращайтесь через два месяца - уверен, тот или иной ответ для вас у меня к тому времени будет.";
+			link.l1 = "Спасибо, отче. И до скорой встречи!";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_1");
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2");
+		break;
+
+		case "WildRose_Abb_14_nopay":
+			dialog.text = "Как скажешь, сын мой.";
+			link.l1 = "Скоро вернусь.";
+			link.l1.go = "exit";
+			pchar.questTemp.WildRose_Etap3_Benua_2 = true;
+		break;
+		
+		case "WildRose_Abb_16":
+			dialog.text = "Он разузнал и про Джошуа Каспера, и про его корабль, которым оказался, однако, вовсе не 'Рэнглер'. Бриг с таким названием никогда не входил в состав Королевского флота.";
+			link.l1 = "Хм... Я абсолютно уверен, что судно, на котором служил Джошуа Каспер, носило именно это название.. А что по поводу самого Джошуа?";
+			link.l1.go = "WildRose_Abb_17";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3");
+		break;
+
+		case "WildRose_Abb_17":
+			dialog.text = "Этот человек был прекрасным офицером со множеством заслуг и наград - всё это зафиксировано в его личном деле. Пусть он и не принадлежал к истинной вере, но капитаном был достойным. Мадемуазель может гордиться такими корнями.";
+			link.l1 = "Это хорошие новости, отче. Но если позволите, вернёмся к кораблю. Если он звался не 'Рэнглером' - то как же тогда?";
+			link.l1.go = "WildRose_Abb_19";
+			AddQuestRecordInfo("WildRose_Records_3", "1");
+		break;
+
+		case "WildRose_Abb_19":
+			dialog.text = "'Корнуэлл'. Он покинул Плимут в январе 1638 года с приказом доставить жалованье в гарнизоны Антигуа и Провиденса.";
+			link.l1 = "Невероятно...";
+			link.l1.go = "WildRose_Abb_20";
+			AddQuestRecordInfo("WildRose_Records_4", "1");
+		break;
+
+		case "WildRose_Abb_20":
+			dialog.text = "Добрался ли корабль до конечного пункта назначения, мне неведомо. Но в Сент-Джонс он заходил. В портовом управлении сохранился отчёт капитана Каспера от 2 июня того года.";
+			link.l1 = "А я знал, что вы не так просты, как пытаетесь казаться, отче! Этот документ, полагаю, содержит некие важные сведения?";
+			link.l1.go = "WildRose_Abb_21_charisma";
+			link.l2 = "Мы перед вами в неоплатном долгу, отче. Раз вы упомянули этот документ - в нём, стало быть, содержалось нечто важное?";
+			link.l2.go = "WildRose_Abb_21_honor";
+			AddQuestRecordInfo("WildRose_Records_5", "1");
+		break;
+
+		case "WildRose_Abb_21_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Разве что отчёт о бое с испанским галеоном 'Торо' у Азорских островов, в котором погибла треть команды - изучи отчёт, в нём всё сказано.";
+			link.l1 = "Ещё вопрос: раз уж вам удалось ознакомиться с записями антигуанского портового управления, не попадалось ли вам на глаза имя Джошуа Каспера где-нибудь ещё?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_21_honor":
+			AddComplexSelfExpToScill(100, 100, 100, 100);
+			dialog.text = "Разве что отчёт о бое с испанским галеоном 'Торо' у Азорских островов, в котором погибла треть команды - изучи отчёт, в нём всё сказано.";
+			link.l1 = "Ещё вопрос: раз уж вам удалось ознакомиться с записями антигуанского портового управления, не попадалось ли вам на глаза имя Джошуа Каспера где-нибудь ещё?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_22":
+			dialog.text = "Ты многого от меня хочешь, сын мой. Если ты ведёшь к тому, что он мог уцелеть в том кораблекрушении, а после вернуться во флот - я весьма в этом сомневаюсь.";
+			link.l1 = "Пути Господни неисповедимы, отче.";
+			link.l1.go = "WildRose_Abb_23";
+		break;
+
+		case "WildRose_Abb_23":
+			dialog.text = "Воистину, сын мой. Но, видишь ли, в личном деле записано, что Джошуа Каспер родился в 1586 году...";
+			link.l1 = "Наверное, вы правы, отче.";
+			link.l1.go = "WildRose_Abb_24_fortune";
+			link.l2 = "Знаете, отче, за годы жизни на Карибах я насмотрелся такого, что поверю даже в самые невероятные вещи.";
+			link.l2.go = "WildRose_Abb_24_charisma";
+		break;
+
+		case "WildRose_Abb_24_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Разумеется, такой офицер был достоин смерти в бою. Но если рассуждать философски, в какой-то степени это тоже был бой...";
+			link.l1 = "В философии я не силён, отче. Однако, спасибо вам за всё...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_24_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Разумеется, такой офицер был достоин смерти в бою. Но если рассуждать философски, в какой-то степени это тоже был бой...";
+			link.l1 = "В философии я не силён, отче. Однако, спасибо вам за всё...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_25":
+			dialog.text = "Господь ведёт вас по этому пути, дети мои, и помочь вам - мой скромный долг. Но, боюсь, больше ничем в этом деле я вам помочь не смогу...";
+			link.l1 = "Понимаю, отче. Что ж, позвольте нам откланяться.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
+		break;
+		//<-- Дикая Роза
 		
 		case "LH_abbat_38":
 			DialogExit();

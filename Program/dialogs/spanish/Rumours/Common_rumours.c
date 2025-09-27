@@ -142,6 +142,63 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Тайна Бетси Прайс
+		
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? Nuestro herrero perdió en las cartas contra Javier Castillo, tanto que este lo dejó sin un centavo, obligándolo a apostar algo muy valioso. Desde entonces el herrero no logra recuperarse y no acepta nuevos encargos – sigue lamentándose de que el almirante le arrancará tres pieles. Lástima de pobre ingenuo, todos los locales saben que no se puede jugar con ese tahúr Castillo.";
+			link.l1 = "Gracias, deb"+ GetSexPhrase("o","a") +" retirarme.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("OZ");
+			AddQuestRecord("OZ", "1");
+			pchar.questTemp.OZ_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
+			sld.City = "PortSpein";
+			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
+			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
+			sld.dialog.currentnode = "OZ_Kuznets_1";
+			LAi_SetStayType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? ¡El capitán de la fragata 'Águila' armó tal escándalo en la taberna a su contramaestre que las paredes temblaban! Resulta que el capitán pensaba zarpar con la marea, y el contramaestre dejó ir a toda la tripulación a tierra. Ahora los marineros se han dispersado por la ciudad, y si no vuelven a tiempo, el barco se irá sin ellos – ¡el capitán no piensa esperar! ¿A qué vendrá tanta prisa? ¿Un flete rentable, un buen negocio, una misión urgente del gobernador?";
+			link.l1 = "Gracias, deb"+ GetSexPhrase("o","a") +" retirarme.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
+
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2)
 			srum = SelectRumourEx("towngirl", NPChar);
 		else
@@ -317,6 +374,62 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Тайна Бетси Прайс
+		
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? Nuestro herrero perdió en las cartas contra Javier Castillo, tanto que este lo dejó sin un centavo, obligándolo a apostar algo muy valioso. Desde entonces el herrero no logra recuperarse y no acepta nuevos encargos – sigue lamentándose de que el almirante le arrancará tres pieles. Lástima de pobre ingenuo, todos los locales saben que no se puede jugar con ese tahúr Castillo.";
+			link.l1 = "Gracias, deb"+ GetSexPhrase("o","a") +" retirarme.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("OZ");
+			AddQuestRecord("OZ", "1");
+			pchar.questTemp.OZ_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
+			sld.City = "PortSpein";
+			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
+			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
+			sld.dialog.currentnode = "OZ_Kuznets_1";
+			LAi_SetStayType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? ¡El capitán de la fragata 'Águila' armó tal escándalo en la taberna a su contramaestre que las paredes temblaban! Resulta que el capitán pensaba zarpar con la marea, y el contramaestre dejó ir a toda la tripulación a tierra. Ahora los marineros se han dispersado por la ciudad, y si no vuelven a tiempo, el barco se irá sin ellos – ¡el capitán no piensa esperar! ¿A qué vendrá tanta prisa? ¿Un flete rentable, un buen negocio, una misión urgente del gobernador?";
+			link.l1 = "Gracias, deb"+ GetSexPhrase("o","a") +" retirarme.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
 		
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2)
 			srum = SelectRumourEx("townman", NPChar);
@@ -553,6 +666,33 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Грани справедливости
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? ¡El capitán de la fragata 'Águila' armó tal escándalo en la taberna a su contramaestre que las paredes temblaban! Resulta que el capitán pensaba zarpar con la marea, y el contramaestre dejó ir a toda la tripulación a tierra. Ahora los marineros se han dispersado por la ciudad, y si no vuelven a tiempo, el barco se irá sin ellos – ¡el capitán no piensa esperar! ¿A qué vendrá tanta prisa? ¿Un flete rentable, un buen negocio, una misión urgente del gobernador?";
+			link.l1 = "Gracias, deb"+ GetSexPhrase("o","a") +" retirarme.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
+
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2)
 			srum = SelectRumourEx("sailor", NPChar);
 		else
@@ -656,7 +796,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Длинные тени старых грехов
 
 		//--> Rebbebion, квест "Путеводная звезда"
-		if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter") && npchar.city == "Beliz")
+		if (CheckAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.PZ_Sotta") && !CheckAttribute(npchar, "questTemp.PZ_Lutter") && npchar.city == "Beliz")
 		{
 			link.l1 = "El héroe del día, el capitán Edgardo Sotta. ¿Qué se dice de él? ¿Y qué piensa usted? Tenía muchas ganas de conocerlo.";
 			link.l1.go = "Sotta1";
@@ -855,6 +995,86 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Тайна Бетси Прайс
+		
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? Nuestro herrero perdió en las cartas contra Javier Castillo, tanto que este lo dejó sin un centavo, obligándolo a apostar algo muy valioso. Desde entonces el herrero no logra recuperarse y no acepta nuevos encargos – sigue lamentándose de que el almirante le arrancará tres pieles. Lástima de pobre ingenuo, todos los locales saben que no se puede jugar con ese tahúr Castillo.";
+			link.l1 = RandPhraseSimple(RandSwear() + "Esto merece otra taza...",
+								   "Bien, bebamos una vez más.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Gracias, debería irme.",
+									   "Eh, vaya ron. Bien, debo irme, que te diviertas.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("OZ");
+			AddQuestRecord("OZ", "1");
+			pchar.questTemp.OZ_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
+			sld.City = "PortSpein";
+			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
+			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
+			sld.dialog.currentnode = "OZ_Kuznets_1";
+			LAi_SetStayType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			LAi_SetImmortal(sld, true);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "¿Ha oído? ¡El capitán de la fragata 'Águila' armó tal escándalo en la taberna a su contramaestre que las paredes temblaban! Resulta que el capitán pensaba zarpar con la marea, y el contramaestre dejó ir a toda la tripulación a tierra. Ahora los marineros se han dispersado por la ciudad, y si no vuelven a tiempo, el barco se irá sin ellos – ¡el capitán no piensa esperar! ¿A qué vendrá tanta prisa? ¿Un flete rentable, un buen negocio, una misión urgente del gobernador?";
+			link.l1 = RandPhraseSimple(RandSwear() + "Esto merece otra taza...",
+								   "Bien, bebamos una vez más.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Gracias, debería irme.",
+									   "Eh, vaya ron. Bien, debo irme, que te diviertas.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
+		//--> LaEspadaDelRey
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Hai sentito, "+GetSexPhrase("amico","amica")+"? C’è un vecchio svitato che gira per la città. Dice di essere l’unico sopravvissuto al naufragio di quella carcassa marcia nella baia di Sabu-Matilla, e ora vuole a tutti i costi tornarci. Solo che non ha il coraggio di andarci da solo. Blatera di uno scheletro vestito da indiano che lo affronta ogni mattina in un duello mortale. Io? *hic* Neanche per cinquecento dobloni ci andrei con lui. Chissà quali diavoli gli ballano nella testa a quel povero scemo.";
+			link.l1 = RandPhraseSimple(RandSwear() + "Esto merece otra taza...",
+								   "Bien, bebamos una vez más.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Gracias, debería irme.",
+									   "Eh, vaya ron. Bien, debo irme, que te diviertas.");
+			link.l2.go = "exit_sit";
+			LEDR_Start();
+			break;
+        }
+		//<-- LaEspadaDelRey
 		
 		Dialog.Text = LinkRandPhrase("¡Buen... hic! ", "¡Ah, buen ron! ", "¡Buen... ") + SelectRumourEx("habitue", NPChar);
 		link.l1 = RandPhraseSimple(RandSwear() + "Esto merece otra taza...",
@@ -1360,7 +1580,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 	// Addon-2016 Jason ФМК-Сент-Кристофер
 	case "FMQN_r":
 		DelLandQuestMark(npchar);
-		Dialog.Text = "No hace mucho, un buque inglés fue capturado en aguas de Sint-Maarten; en él viajaban algunos oficiales de alto rango. Se decidió enviarlos a Willemstad, pero en este momento están retenidos aquí, en nuestras cómodas mazmorras. Dicen que uno de los soldados capturados ha informado a nuestro comandante de las intenciones de los ingleses de enviar aquí una partida de asalto para rescatar a los oficiales. Por eso nuestro buen comandante está listo y armado. ¿Por qué no habría de estarlo? ¡Si los prisioneros desaparecen, será degradado a soldado raso!";
+		if (GetNationRelation(SPAIN, ENGLAND) == RELATION_NEUTRAL) { Dialog.Text = "No hace mucho, frente a la costa de Sint Maarten, detuvieron un barco inglés en el que viajaban varios oficiales de alto rango. Decidieron enviarlos a Willemstad hasta aclarar las circunstancias, pero por ahora los encerraron en prisión. Se cuenta que un prisionero de ese barco, a cambio de su libertad, reveló al comandante que los ingleses planean mandar un grupo de sabotaje y organizar la fuga de los presos. Hasta tenían un plan. Y por eso nuestro valeroso comandante está en guardia. Porque si se escapan pájaros tan importantes – pues lo degradarán a soldado, te lo aseguro. ¡Así van las cosas! No hay que esperar nada bueno — no vaya a ser que la guerra comience de nuevo.";}
+		else {Dialog.Text = "No hace mucho, un buque inglés fue capturado en aguas de Sint-Maarten; en él viajaban algunos oficiales de alto rango. Se decidió enviarlos a Willemstad, pero en este momento están retenidos aquí, en nuestras cómodas mazmorras. Dicen que uno de los soldados capturados ha informado a nuestro comandante de las intenciones de los ingleses de enviar aquí una partida de asalto para rescatar a los oficiales. Por eso nuestro buen comandante está listo y armado. ¿Por qué no habría de estarlo? ¡Si los prisioneros desaparecen, será degradado a soldado raso!";}
 		link.l1 = "Intrigante... Bien, el dinero es tuyo. Toma esto. ¿Algo más que decirme?";
 		link.l1.go = "rumours_tavern";
 		pchar.questTemp.FMQN = "governor";

@@ -1,51 +1,11 @@
-Regatta_1
-{
-Henry
-}
-Regatta_2
-{
-Stivenson
-}
-
-Regatta_3
-{
-Sie sind zu spät für die Regatta.
-}
-
-Regatta_4
-{
-Saint Catherine
-}
-
-Regatta_5
-{
-Leutnant
-}
-Regatta_6
-{
-Mahoiny
-}
-
-Regatta_7
-{
-Vudro
-}
-Regatta_8
-{
-Doggerty
-}
-
-Regatta_9
-{
-Der Navigator hat Ihr Schiff verlassen!
-}
-
-Regatta_10
-{
-Passagiere sind an Bord.
-}
-
-Regatta_11
-{
-Ihr Schiff ist überladen. Seine Geschwindigkeit und Manövrierfähigkeit sind beeinträchtigt.
-}
+Regatta_1 {Henry}
+Regatta_2 {Stivenson}
+Regatta_3 {Sie sind zu spät für die Regatta.}
+Regatta_4 {Saint Catherine}
+Regatta_5 {Leutnant}
+Regatta_6 {Mahoiny}
+Regatta_7 {Vudro}
+Regatta_8 {Doggerty}
+Regatta_9 {Der Navigator hat Ihr Schiff verlassen!}
+Regatta_10 {Passagiere sind an Bord.}
+Regatta_11 {Ihr Schiff ist überladen. Seine Geschwindigkeit und Manövrierfähigkeit sind beeinträchtigt.}

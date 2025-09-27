@@ -1,74 +1,16 @@
-Portugal_1
-{
-Bartolomeo
-}
-Portugal_2
-{
-Portugiese
-}
-
-Portugal_3
-{
-Piter
-}
-Portugal_4
-{
-van Stahl
-}
-
-Portugal_5
-{
-Leo
-}
-Portugal_6
-{
-Cord
-}
-
-Portugal_7
-{
-Zwei Tage später@<NewStr()>wurde das gegnerische Schiff nicht mehr gesehen
-}
-
-Portugal_8
-{
-Frants
-}
-Portugal_9
-{
-Garke
-}
-
-Portugal_10
-{
-Albatross
-}
-
-Portugal_11
-{
-Bart, der Portugiese, hat Ihr Schiff verlassen!
-}
-
-Portugal_12
-{
-Ernando
-}
-Portugal_13
-{
-Vaskez
-}
-
-Portugal_14
-{
-Eine Stunde ist vergangen...@<NewStr()>Der Portugiese wurde ins Haus getragen
-}
-
-Portugal_15
-{
-Zwei Stunden vergingen...
-}
-
-Portugal_16
-{
-Sie haben die Schätze von Bart dem Portugiesen entdeckt!
-}
+Portugal_1 {Bartolomeo}
+Portugal_2 {Portugiese}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {Zwei Tage später@<NewStr()>wurde das gegnerische Schiff nicht mehr gesehen}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {Bart, der Portugiese, hat Ihr Schiff verlassen!}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {Eine Stunde ist vergangen...@<NewStr()>Der Portugiese wurde ins Haus getragen}
+Portugal_15 {Zwei Stunden vergingen...}
+Portugal_16 {Sie haben die Schätze von Bart dem Portugiesen entdeckt!}

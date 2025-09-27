@@ -13,11 +13,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				ref sld = characterFromId("Villemstad_Priest");
 				link.l1 = "Saluti padre. Padre superiore "+sld.name+" della chiesa di Willemstad mi ha mandato. Gli hai parlato di strane apparizioni in una grotta a Cuba.";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana1")
 			{
 				link.l1 = "Ho visitato la grotta nella giungla, padre.";
 				link.l1.go = "caleuche_4";
+				DelLandQuestMark(npchar);
 			}
 		break;
 		
@@ -43,7 +45,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DialogExit();
 			AddQuestRecord("Caleuche", "27");
 			pchar.questTemp.Caleuche = "cave";
-			Log_Info("You have received a church amulet");
+			Log_Info("Avete ricevuto un amuleto della chiesa");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_7"); 
 			if (GetCharacterIndex("cavehunter") != -1)
@@ -53,6 +55,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				LAi_SetGuardianType(sld);
 				sld.protector = true;
 				LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+				AddLandQuestMark(sld, "questmarkmain");
 			}
 			LocatorReloadEnterDisable("Cuba_Jungle_07", "reload2_back", false);
 			pchar.quest.Caleuche_cuba_caveentrance.win_condition.l1 = "location";
@@ -73,7 +76,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_6":
-			Log_Info("You have received church amulets");
+			Log_Info("Avete ricevuto gli amuleti della chiesa");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "amulet_3"); 
 			GiveItem2Character(pchar, "amulet_9"); 
@@ -125,6 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ChangeCharacterComplexReputation(pchar, "fame", 3);
 			ChangeCharacterNationReputation(pchar, SPAIN, 10);
 			AddCharacterExpToSkill(pchar, "Leadership", 500);
+			AddLandQuestMark(characterFromId("Havana_CemeteryMan"), "questmarkmain");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

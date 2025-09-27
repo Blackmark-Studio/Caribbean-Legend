@@ -97,6 +97,7 @@ void InitLocations()
 			loc.locators_radius.patrol = 0.5;
 			loc.locators_radius.Smugglers = 0.5;
 			loc.locators_radius.monsters = 0.5;
+            loc.locators_radius.sound = 0.4;
 		}
 		
 		//Day dynamic light

@@ -807,7 +807,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_30":
-			dialog.text = "Vincento non crederà alla storia dell’infarto, ma si berrà la байка se gli dici che mi sono tolto la vita bevendo del veleno che sa di mandorla. Dagli il mio almanacco, sa bene che non me ne separo mai.";
+			dialog.text = "Vincento non crederà alla storia dell’infarto, ma si berrà la storiella se gli dici che mi sono tolto la vita bevendo del veleno che sa di mandorla. Dagli il mio almanacco, sa bene che non me ne separo mai.";
 			link.l1 = "Va bene. Ho bisogno di quel legame con l’inquisitore. Sicuramente sa un sacco dei nostri affari.";
 			link.l1.go = "guardoftruth_31";
 		break;

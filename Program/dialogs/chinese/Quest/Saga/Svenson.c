@@ -731,7 +731,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "barbazon_1":
-			dialog.text = "神秘类型。 假装贫穷, 但他可能是加勒比海最富有的人。 他控制着东部的所有走私活动。 如果不是马库斯反对他, 他会统治向风群岛的所有走私运输。 泰雷克斯就像他喉咙里的一根刺。 \n他们在委员会总是争吵, 但巴尔巴宗没有胆量宣布公开战争。 也许他真的像他声称的那样曾经是敦刻尔克的海盗, 但现在他更让我想起一个高利贷者。 ";
+			dialog.text = "神秘类型。 假装贫穷, 但他可能是加勒比海最富有的人。 他控制着东部的所有走私活动。 如果不是马库斯反对他, 他会统治向风群岛的所有走私运输。 泰雷克斯就像他喉咙里的一根刺。 \n他们在委员会总是争吵, 但巴尔巴宗没有胆量宣布公开战争。 也许他真的像他声称的那样曾经是敦刻尔克的海盗, 但现在他更让我想起一个放贷人。 ";
 			link.l1 = "他到底是如何当选男爵的? ";
 			link.l1.go = "barbazon_2";
 		break;
@@ -1206,9 +1206,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61":
 			dialog.text = "很好。 那么我们将它平分。 ";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // 口袋里的杜布隆
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // 口袋里的杜布隆
 				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1222,9 +1222,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61_1":
 			dialog.text = "太好了。 你带来了多少? ";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // 口袋里的杜布隆
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // 口袋里的杜布隆
 				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1244,7 +1244,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // 记住剩余
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
 			Log_Info("你已经给了"+sti(npchar.quest.bakaut_pay)+"杜布隆");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)

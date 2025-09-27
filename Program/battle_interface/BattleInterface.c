@@ -72,7 +72,7 @@ bool boal_soundOn = true;
 int rColor1, rColor2, rColor3, rColor4; // 1-2-центр/край заряжено, 3-4-центр/край разряжено
 float fblindUpTime, fblindDownTime; // время возрастания/убывания
 
-int numLine = 7; // количество строк в подсказках управления
+int numLine = 8; // количество строк в подсказках управления
 string sAttr = "";
 string sAttrDes = "";
 string sAttrB = "";
@@ -2248,15 +2248,15 @@ void SetParameterData()
 	BattleInterface.textinfo.Cannonr.refreshable = true;
 
 	// подсказки управления
-	for(numLine = 1; numLine < 8; numline ++)
+	for(numLine = 1; numLine <= 8; numline ++)
 	{
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
 		sAttrB = "Con"+numLine+"Back";
 		
-		int boff = -85 + (numLine-1)*45;
-		int coff = -84 + (numLine-1)*45;
-		int doff = -79 + (numLine-1)*45;
+		int boff = -125 + (numLine-1)*45;
+		int coff = -122 + (numLine-1)*45;
+		int doff = -119 + (numLine-1)*45;
 	
 		BattleInterface.textinfo.(sAttrB).font = "Info_fader_ls";
 		BattleInterface.textinfo.(sAttrB).scale = 0.6 * fHtRatio;
@@ -2572,43 +2572,11 @@ void RepairDelay()
 	DelEventHandler("evntRepairDelay","RepairDelay");
 }
 
-// ugeen -> учет безвозвратной убыли корпуса
-void ProcessHullDecrease()
-{
-	int i, cn, hp;
-	ref chref;
-	ref mchar = GetMainCharacter();
-	
-	if (!bSeaActive || mchar.location == mchar.SystemInfo.CabinType) // спим в каюте
-	{
-		for (i=0; i<COMPANION_MAX; i++)
-		{
-			cn = GetCompanionIndex(mchar,i);
-			if(cn == -1) continue;
-			chref = GetCharacter(cn);
-	
-			if(CheckAttribute(chref, "Ship.HP_penalty"))
-			{
-				hp = sti(RealShips[sti(chref.ship.type)].HP);	// текущий максимум
-				if(hp > makeint(stf(chref.Ship.HP_penalty)) ) RealShips[sti(chref.ship.type)].HP = hp - makeint(stf(chref.Ship.HP_penalty)); 
-				else RealShips[sti(chref.ship.type)].HP = 1;
-				if( GetCurrentShipHP(chref) > sti(RealShips[sti(chref.ship.type)].HP) )
-				{
-					chref.ship.hp =	sti(RealShips[sti(chref.ship.type)].HP);
-				}
-				DeleteAttribute(chref, "Ship.HP_penalty");
-			}	
-		}
-	}	
-}
-// <-- ugeen
-
 bool CheckRepairPerks(ref chref)
 {	
 	if( CheckOfficersPerk(chref, "Carpenter") 		||
 	    CheckOfficersPerk(chref, "LightRepair")		||
-		CheckOfficersPerk(chref, "Builder")			||
-		CheckOfficersPerk(chref, "SelfRepair"))	return true;
+		CheckOfficersPerk(chref, "Builder"))	return true;
 	return false;	
 }
 
@@ -3139,10 +3107,10 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
     if (shootIdx>=0 )
 	{
 		ref shoot_chr = GetCharacter(shootIdx);
-		if (CheckOfficersPerk(shoot_chr,"CannonProfessional") )	{ fDmgRig *= 1.3; }
+		if (CheckOfficersPerk(shoot_chr,"CannonProfessional") )	{ fDmgRig *= 1+PERK_VALUE_CANNON_PROFESSIONAL; }
 		else
 		{
-			if( CheckOfficersPerk(shoot_chr,"SailsDamageUp") )	{ fDmgRig *= 1.15; }
+			if( CheckOfficersPerk(shoot_chr,"SailsDamageUp") )	{ fDmgRig *= PERK_VALUE_SAILS_DAMAGE_UP; }
 		}
 	}
 	
@@ -3156,8 +3124,8 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
 		}
 	}
 	
-	fDmgRig = fDmgRig * isEquippedArtefactUse(shoot_chr, "indian_8", 1.0, 1.05 ); // belamour фикс читерства амулета
-	fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.95 ); // belamour 
+	fDmgRig = fDmgRig * isEquippedArtefactUse(shoot_chr, "indian_8", 1.0, 1.10 );
+	fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.90 ); // belamour 
     fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "talisman7", 1.0, 0.95 ); // belamour legendary edition скарабей
 	if(IsCharacterEquippedArtefact(shoot_chr, "talisman19")) 
 	{
@@ -3358,10 +3326,6 @@ void procSetUsingAbility()
 	{
 		BattleInterface.Commands.Brander.enable			= false;
 		BattleInterface.Commands.Bomb.enable = true;
-		if(bAttack && GetRemovable(GetCharacter(chIdx)) && GetOfficersPerkUsing(pchar,"Brander"))
-		{
-			BattleInterface.Commands.Brander.enable		= true;
-		}
 		//BattleInterface.AbilityIcons.Troopers.enable		= GetCharacterPerkUsing(pchar,"Troopers");
 
 		BattleInterface.Commands.InstantRepair.enable	= CheckInstantRepairCondition(GetCharacter(chIdx));		
@@ -3784,7 +3748,7 @@ void ControlsDesc()
 {
 	if(iControlsTips > 0 && !IsSteamDeck())
 	{
-		numLine = 7;
+		numLine = 8;
 		sAttrB = "Con"+numLine+"Back";
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
@@ -3794,7 +3758,7 @@ void ControlsDesc()
 		int colorempty	= argb(155,255,255,255);
 		
 		string cname = "";
-		for(numline = 1; numline < 8; numline ++)
+		for(numline = 1; numline <= 8; numline ++)
 		{
 			sAttrB = "Con"+numLine+"Back";
 			sAttr = "Con"+numLine;
@@ -3809,7 +3773,7 @@ void ControlsDesc()
 			
 		}
 
-		numLine = 7;
+		numLine = 8;
 		sAttrB = "Con"+numLine+"Back";
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
@@ -3886,6 +3850,18 @@ void ControlsDesc()
 			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("BICommandsActivate","ControlsNames.txt");
 			BattleInterface.textinfo.(sAttrB).text = "1" ;
 			numLine --;
+			
+			sAttr = "Con"+numLine;
+			sAttrDes = "Con"+numLine+"desc";
+			sAttrB = "Con"+numLine+"Back";
+			
+			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+			BattleInterface.textinfo.(sAttrB).text = "1";
+			if(TimeScaleCounter <= 0)
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOn","ControlsNames.txt");
+			else
+				BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOff","ControlsNames.txt");
+			numline--;
 			
 			sAttr = "Con"+numLine;
 			sAttrDes = "Con"+numLine+"desc";

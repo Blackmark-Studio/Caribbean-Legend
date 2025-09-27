@@ -1050,3 +1050,162 @@ Co za kobieta, ta Betsy... A może jednak Miranda? Nie, Betsy brzmi lepiej – n
 #TEXT	6
 Karczmarz uczciwie zapłacił mi za sprowadzenie jego cennej pracownicy. Przyznam, że myśli o Betsy wciąż mnie nie opuszczają... Może warto będzie ją kiedyś odwiedzić.
 
+#QUEST OZ
+Kajdany hazardu
+#TEXT	1
+W San Jose kowal drogo zapłacił za swoją namiętność do kart – w grze z Javierem Castillo przegrał coś bardzo cennego. Według plotek jest zupełnie załamany: praca mu nie idzie, mimo że nad jego przyszłością zbierają się czarne chmury, bo jeśli zamówienie nie zostanie wykonane na czas – admirał wpadnie w furię. Cóż mogło być tak cenne, by wpędzić człowieka w taką rozpacz?
+#TEXT	2
+Teraz jasne jest, co spowodowało upadek ducha Sebastiana Cordoby. Przegrał bardzo ważną dla swojej pracy księgę – księgę rzemiosła kowalskiego. Jego sytuację komplikuje fakt, że Javier postanowił nie tracić czasu i sprzedać księgę francuskiemu mistrzowi broni. Jak to zwykle bywa, nieszczęścia chodzą parami. W przeddzień kowal otrzymał poważne zamówienie od admirała Eugenio de la Torre... Gdy ten tu przybędzie, z pewnością dowie się, z jakiego powodu jego zamówienie nie zostało wykonane. Dowiedziawszy się, że księga trafiła w ręce Francuzów, według słów kowala, potraktuje go bardzo surowo. Zgodził@<sSex> się pomóc biedakowi. Jeśli uda mi się odzyskać dla niego księgę, dostanie drugą szansę i, mam nadzieję, już więcej nie powtórzy swoich błędów, a ja zawsze będę mógł liczyć na usługi dobrego kowala. Zacznę od poszukiwań Javiera – zapewne teraz próbuje nabrać kogoś innego.
+#TEXT	3
+Udało mi się ograć Javiera! Księga jest u mnie. Jego sztuczki są dobre przeciwko prostakom, ale przeciwko poważnemu graczowi – bezużyteczne. Z przegraną pogodzić się nie potrafił – oskarżył mnie o oszustwo. Cóż, trzeba go było trochę sprowadzić na ziemię.
+#TEXT	4
+Diabli nadali! Javier naprawdę jest mocny w karty. Teraz muszę znaleźć sposób, by odzyskać nie tylko księgę, ale i moje pieniądze! Najpierw warto dowiedzieć się o nim czegoś więcej.
+#TEXT	5
+Diabli nadali! Javier nie chce nawet słyszeć o odroczeniu długu. Tak tego nie zostawię. Trzeba znaleźć sposób, by na niego nacisnąć. Ale najpierw warto dowiedzieć się o nim czegoś więcej.
+#TEXT	6
+Udało mi się ustalić, że Javier jest winien dużą sumę pewnemu Felipe Alarconowi. Być może, rozmawiając z nim, znajdę sposób, by nacisnąć na dłużnika. Dom Felipe znajduje się naprzeciw banku, to wspaniała rezydencja z kolumnami przy wejściu.
+#TEXT	7
+Otrzymałem pozwolenie od Felipe na działanie w jego imieniu. Teraz mogę żądać od Javiera natychmiastowego zwrotu pieniędzy, a jeśli ich nie ma – zabrać mu na początek księgę.
+#TEXT	8
+Wyprowadzenie Javiera z równowagi nie było takie trudne. Będąc o krok od zawarcia transakcji, nie wytrzymał presji – uświadomiwszy sobie, że wszystko może runąć w jednej chwili, rzucił się do walki bez namysłu. Francuz, który przybył po księgę, oferował mi osiemdziesiąt tysięcy peso – ale nie chciałem handlować losem Sebastiana. W kieszeniach Javiera znalazłem tylko notatkę. Wynika z niej, że po tej transakcji Javier planował opuścić wyspę wraz z kimś innym. Trzeba sprawdzić, co chowają w tamtej grocie. Byłoby bardzo korzystnie, gdyby znalazły się tam pieniądze, bo sprawa z Felipe wciąż nie jest rozwiązana.
+#TEXT	8_1
+Udało mi się pokonać Javiera! Jego sztuczki działają na prostaków, ale przeciwko poważnemu graczowi są bezużyteczne. Nie potrafił pogodzić się z porażką i oskarżył mnie o oszustwo. Cóż, musiałem sprowadzić go na ziemię. Francuz, który przybył po książkę, zaproponował mi osiemdziesiąt tysięcy peso – ale nie zamierzałem targować się o los Sebastiana. 
+W kieszeniach Javiera znalazłem tylko kartkę. Najwyraźniej po tej transakcji Javier planował opuścić wyspę razem z kimś. Muszę sprawdzić, co ukrywają w tej grocie.
+#TEXT	9
+Wyprowadzenie Javiera z równowagi nie było takie trudne. Będąc o krok od zawarcia transakcji, nie wytrzymał presji – uświadomiwszy sobie, że wszystko może runąć w jednej chwili, rzucił się do walki bez namysłu. Francuz, który przybył po księgę, oferował mi osiemdziesiąt tysięcy peso – ale udało mi się wytargować za nią sto pięćdziesiąt! Myślę, że teraz lepiej nie pokazywać się Sebastianowi na oczy. W kieszeniach Javiera nie było nic oprócz notatki. Wynika z niej, że po tej transakcji Javier planował opuścić wyspę wraz z kimś innym. Trzeba sprawdzić, co chowają w tamtej grocie. Byłoby bardzo korzystnie, gdyby znalazły się tam pieniądze, bo sprawa z Felipe wciąż nie jest rozwiązana. Nie chciałbym rozstawać się z pieniędzmi uzyskanymi ze sprzedaży księgi.
+#TEXT	9_1
+Udało mi się pokonać Javiera! Jego sztuczki działają na prostaków, ale przeciwko poważnemu graczowi są bezużyteczne. Nie potrafił pogodzić się z porażką i oskarżył mnie o oszustwo. Cóż, musiałem sprowadzić go na ziemię. Francuz, który przybył po książkę, zaproponował mi osiemdziesiąt tysięcy peso – ale udało mi się wynegocjować sto pięćdziesiąt tysięcy! Myślę, że teraz lepiej, żebym nie wpadł Sebastianowi w oczy. 
+W kieszeniach Javiera nie było nic oprócz kartki. Najwyraźniej po tej transakcji Javier planował opuścić wyspę razem z kimś. Muszę sprawdzić, co ukrywają w tej grocie.
+#TEXT	10
+Księga wróciła w ręce swojego właściciela. Mam nadzieję, że Sebastian naprawdę wyciągnął lekcję i mój wysiłek nie pójdzie na marne.
+#TEXT	11
+Pieniędzy Felipe Alarconowi nie oddałem. Widocznie takiego kroku nie docenił – teraz cała hiszpańska brać marzy, by powiesić mnie na placu.
+#TEXT	12
+Pieniędzy Felipe Alarconowi nie oddałem. Takiego gestu nie docenił – rzucił się do ataku. Poradziłem sobie z nim bez trudu, ale z miasta, wygląda na to, będę musiał przebijać się z walką.
+
+#QUEST LFD
+List od nieboszczyka
+#TEXT	1
+W Porto Bello krążą plotki, że kapitan fregaty "Águila" zrobił awanturę swojemu kwatermistrzowi za to, że wypuścił załogę do miasta. Zazwyczaj, jeśli załogę trzyma się na pokładzie, to albo mają coś do ukrycia, albo statek rzeczywiście nie zamierza długo pozostawać w porcie.
+Trzeba pogadać z marynarzami, może znajdzie się sposób, by na tym zarobić.
+#TEXT	2
+Na ulicach Porto Bello spotkałem marynarza z tej właśnie fregaty. Ryzykował spóźnieniem na statek przez przedłużające się poszukiwania pewnej Marisy Caldera. W ładowni swojego statku, pośród rupieci, natknął się na stary list adresowany do niej i postanowił go dostarczyć w nadziei na nagrodę.
+Ponieważ nie miał już czasu, zaproponował mi odkupienie tego ważnego listu za niewielką sumę, i zgodził się. W końcu ta historia może naprawdę obrócić się na moją korzyść.
+#TEXT	3
+Karczmarz powiedział, że Marisa od prawie dwóch lat prawie nie pojawia się w mieście. Po wieści o śmierci męża jakby zniknęła, unikając ludzkich oczu. Jednak jej imię wciąż jest na ustach, a niektórzy mężczyźni nadal się nią interesują. Można by pomyśleć, że zajęła się czymś nieprzyzwoitym i dlatego się ukrywa, ale właściciel tawerny zapewnia, że Marisa była pobożna, spędzała dużo czasu w kościele, więc raczej nie mogła być w coś takiego zamieszana. Trzeba kontynuować poszukiwania. Tylko gdzie jej szukać? Kto może opowiedzieć o niej więcej?
+#TEXT	4
+Pastor potwierdził, że Marisa Caldera dawno opuściła miasto i tylko od czasu do czasu się w nim pojawia. Nic więcej mu nie wiadomo. Jednak w mieście mieszka jej przyjaciółka Dolores Monio, która być może wie więcej niż on. Jej dom można znaleźć po lewej stronie od zarządu portu.
+#TEXT	5
+Najwyraźniej sytuacja Marisy jest dość trudna, skoro jej przyjaciółka przyjęła mnie z taką nieufnością, ledwie usłyszała, kogo szukam. Udało mi się jednak przekonać Dolores o czystości moich intencji. Spotkanie wyznaczono na jutro, po jedenastej wieczorem. Dolores nie daje gwarancji, że Marisa się pojawi, ale obiecała przekazać wszystko, o czym rozmawialiśmy.
+#TEXT	6
+Marisa opowiedziała, że jej zmarły mąż zostawił skrytkę gdzieś za miastem. Bojąc się iść tam sama, poprosiła mnie, bym jej towarzyszył. Jutro o siódmej rano muszę do niej zajść, by wyruszyć w drogę.
+#TEXT	7
+Znaleźliśmy skrytkę należącą do męża Marisy. Ledwie mieliśmy odejść, gdy dopadł nas najemnik wysłany przez wierzyciela Ramiro. Trzeba mu było dać śmiertelną nauczkę. Jednak Marisa, delikatnie mówiąc, nie była zadowolona z takiego obrotu spraw. Jest przekonana, że wszystko należało załatwić pokojowo, za wszelką cenę. Cóż, w tej kwestii nie mogę się z nią zgodzić. Teraz pozostaje tylko odprowadzić ją do miasta, gdzie wreszcie będzie mogła rozpocząć nowe, spokojne życie.
+#TEXT	8
+Znaleźliśmy skrytkę należącą do męża Marisy. Ale ledwie mieliśmy odejść, gdy dopadł nas najemnik wysłany przez wierzyciela Ramiro. Wszystko zostało załatwione na mój koszt: dług spłacony, odsetki również. Teraz strach i życie w cieniu dla biednej wdowy należą do przeszłości. Mam nadzieję, że zdoła zacząć wszystko od nowa, zapominając o tym, co przyszło jej przeżyć.
+
+#QUEST WildRose
+Dzika róża
+#TEXT	1
+Ciekawa historia... Z plantacji Bishopa uciekli niewolnicy — i to nie byle jacy, lecz biali dezerterzy z floty. Według jednego żołnierza, Bishop ogłosił nagrodę za ich schwytanie, i do dżungli ruszyły tłumy uzbrojonych, chcących sobie dorobić. Może i ja powinienem wziąć udział? Z drugiej strony, szansa na kulkę w brzuch jest ogromna — nie tyle od uciekinierów, co od tych, którzy ich ścigają.
+#TEXT	2
+Mary gdzieś zniknęła... Nie powiedziawszy ani słowa. Mam nadzieję, że to nie przez naszą wczorajszą rozmowę... Być może po prostu zeszła do sali. Trzeba jej tam poszukać.
+#TEXT	3
+Zadziwiające, jak przypadkowe spotkania mogą wpłynąć na człowieka. Szczególnie jeśli to spotkanie z rzezimieszkiem, którego ręce po łokcie są we krwi. Uciekinierzy, zanim zostali wciśnięci w róg i wybici, postrzelili kilku strażników i najemników plantatora. Ale co gorsza — zgwałcili i zabili młodą osadniczkę, po czym niemal rozprawili się z jej mężem. Przywódcą uciekinierów był Jerry Casper.  
+Wątpię, aby był nawet najbardziej odległym krewnym mojej ukochanej. Jednak sama Mary ta historia skłoniła do refleksji: kim byli jej rodzice? Nie zna ani ich imion, ani nawet miejsca swojego urodzenia.  
+W każdym razie, jeśli zaczynać poszukiwania śladów sprzed dwudziestu lat, to tylko na Wyspie Sprawiedliwości. Być może ktoś ze starych mieszkańców będzie mógł nam w tym pomóc...  
+Mary powiedziała, że nie warto niczego odkładać — byle tylko zdjąć zasłonę tajemnicy. Widzę jednak, że nie może się doczekać, aby zrobić to jak najszybciej.  
+Co do mnie... jestem zobowiązany jej pomóc.  
+Jednak dobrze wiem: niektóre tajemnice powinny pozostać tajemnicami. Być może ta jest właśnie taką. W końcu nikt do tej pory nie powiedział Mary nic o jej rodzicach.
+#TEXT	4
+Znów jesteśmy na tym statkowym cmentarzysku... Nie mam wielkiej ochoty tutaj zbyt długo przebywać, więc warto jak najszybciej zabrać się do pracy — wypytać tych, którzy mieszkali tu dwadzieścia lat temu. Myślę, że warto zacząć od Donalda. Mimo że, według Mary, nie mógł lub nie chciał odpowiedzieć na jej pytania przy ostatnim spotkaniu, kto jeśli nie lider klanu 'Narwal' może nam pomóc?  
+Wciąż niepokoi mnie złe przeczucie co do planu Mary, ale wycofać się już za późno.
+#TEXT	5
+Nie udało się porozmawiać z Donaldem — zorganizował ćwiczenia dla swojego klanu na zewnętrznym pierścieniu. Wygląda na to, że Wyspa Sprawiedliwości znów czekają niespokojne czasy. Mam nadzieję, że Layton Dexter będzie miał siłę i wolę, by utrzymać sytuację pod kontrolą, ale tak czy inaczej trzeba jak najszybciej zdobyć potrzebne informacje i się stamtąd wynieść. Ostatnie, czego bym chciał, to znaleźć się pod ogniem krzyżowym ludzi, którzy walczą o nic.  
+Grinspie powinien wrócić jutro — czas oczekiwania można skrócić w kajucie Mary na 'Ceres Smiti'.
+#TEXT	6
+Rozmowa z Grinspiem okazała się niemal bezowocna. Twierdzi, że pojawił się na Wyspie kilka lat po urodzeniu Mary i nie znał jej rodziców. Nie ma nikogo, kto mógłby to potwierdzić, ale nie sądzę, by miał powód kłamać.  
+Coś jednak udało się ustalić. Po pierwsze: Mary urodziła się tutaj, na Wyspie — powiedział Donaldowi Eric Udett, stary żeglarz, który ją wychowywał i niestety już odszedł. Po drugie: w wychowaniu Mary brała udział Aurelie Bertin — mieszka na Wyspie od dawna i jeśli była przy narodzinach Mary, to zapewne znała jej rodziców.  
+Donald wspomniał, że źle się czuje — wiek, nic nie poradzisz. Ważne, by pamięć była w porządku.
+#TEXT	6.1
+Jedyną osobą, która może opowiedzieć o rodzicach Mary, jest Aurelie Bertin. Niestety, teraz nie jest w stanie niczego powiedzieć. Według Raymonda Bakera jest chora... starością. Niestety, tej dolegliwości nie da się wyleczyć — można tylko tymczasowo utrzymać jej jasny umysł. Raymond, jak się okazało, podczas pobytu w Saint Johns blisko współpracował z Johanem van Merdenem, który dzielił się z nim różnego rodzaju recepturami własnych mikstur opartych na ziołach miejscowych tubylców, co teraz działa na naszą korzyść. Aby Raymond mógł rozpocząć leczenie, muszę dostarczyć mu trzy fiolki łez Ish-Chel i trzy łodygi mangarosy.
+#TEXT	6.2
+Jedyną osobą, która może opowiedzieć o rodzicach Mary, jest Aurelie Bertin. Niestety, teraz nie jest w stanie niczego sensownego powiedzieć. Według Raymonda Bakera Aurelie jest chora... starością. Ta dolegliwość, jak wiadomo, jest nieuleczalna — ale możemy tymczasowo utrzymać jej jasny umysł. Nie ma gwarancji, że leczenie zadziała, ani pewności, że nie zaszkodzi. Niemniej jednak postanowiłem zaryzykować — zanim odejdzie, może wyświadczyć nam ostatnią przysługę. Myślę, że nie odmówiłaby. Aby Raymond mógł rozpocząć 'leczenie' jak najszybciej, muszę dostarczyć mu trzy fiolki łez Ish-Chel, trzy łodygi mangarosy i tinkturę Ometochti.
+#TEXT	7
+Oczywiście, głupio byłoby liczyć, że wszystko pójdzie gładko. Aurelie Bertin najwyraźniej cierpi na starcze otępienie — lub jak to lekarze nazywają... Nie ma nikogo, kto mógłby jej pomóc na Wyspie — lekarza tu nie ma, a moc modlitw brata Juliana niestety nie wystarczy. Więc ostatnią osobą, na której możemy polegać, jest szaman rivadów Chimiset. Boję się sobie wyobrazić, co się stanie, gdy historia wyjdzie na jaw — dlatego trzeba przetransportować staruszkę na 'Protector' nocą, aby nikt nas nie widział.
+#TEXT	8
+Nigdy bym nie pomyślał, że ja, syn prawdziwego Kościoła, powiem, że czarny szaman jest naszą ostatnią nadzieją. Dokładniej, naszą i Mary. Aurelie Bertin najwyraźniej cierpi na dolegliwość zwaną starczym otępieniem. Wydobycie z niej potrzebnych informacji wydaje się prawie niemożliwe — w końcu nawet nie będziemy wiedzieć, czy mówi prawdę, czy nie. Na Wyspie nie ma lekarza, który mógłby ją wyleczyć. Być może poradziliby sobie Gino Gwineali albo Snake Eye, ale obawiam się, że staruszka nie przetrwałaby długiej podróży. Zostaje więc tylko nadzieja na pomoc Chimiseta, choć przy myśli o tym robi mi się zimno w środku. Do niego na 'Protector' trzeba udać się z Aurelie nocą — tylko brakowałoby, aby nasz plan stał się znany pozostałym mieszkańcom Wyspy.
+#TEXT	9
+Mam nadzieję, że nie dożyję wieku Aurelie Bertin. Naprawdę, nie ma nic gorszego niż umierać w ten sposób — nie wiedząc, jaki jest dzisiaj dzień, miesiąc czy rok, nie zdając sobie sprawy z tego, co się dzieje wokół. Gdybyśmy przybyli miesiąc później, jestem pewien, że staruszka nie pamiętałaby nawet swojego imienia, nie mówiąc już o wydarzeniach sprzed dwudziestu lat. Cóż, nawet jeśli jej rozum przebudzi się tylko na krótki czas i doprowadzi to do jej śmierci... Uważam, że to znacznie godniejszy koniec niż śmierć w majaczeniu. Efekt będzie widoczny za trzy dni — dokładnie tyle czasu van Merden potrzebował kiedyś, aby postawić na nogi pacjenta z podobną dolegliwością.
+#TEXT	10
+Jeśli zrozumiem, że w starości ryzykuję popadnięcie w stan, w którym obecnie znajduje się Aurelie Bertin, mam nadzieję, że będę miał odwagę naładować pistolet i strzelić sobie w skroń. Tak, samobójstwo to grzech śmiertelny, ale raczej zdecyduję się na nie, niż zapomnę, jak mam na imię. Dobrze, że w mojej drużynie jest Raymond Baker, lekarz potrafiący nie tylko nastawiać kości i zszywać brzegi ran. Źle, że na to, by nie tyle wyleczyć Aurelie, co przywrócić ją do stanu, w którym będzie mogła normalnie z nami porozmawiać, potrzebne mu będą aż dwa tygodnie. Ale nic na to nie poradzę, pozostaje czekać i liczyć na geniusz Bakera. A właściwie Johana van Merdena, który, według byłego kata, podzielił się z nim przepisem na cudowną miksturę, w której podstawę stanowią Łzy Ish-Chel.
+#TEXT	11
+Szaman rivadów poradził sobie. Nie wiem, co działo się tej nocy w ładowni „Protectora”, ale gdy Chimiset przyprowadził Aurelie Bertin z powrotem, choroba zniknęła jak ręką odjął. Jednak wiemy, że szamanowi udało się tylko głęboko ukryć dolegliwość w jej... umyśle? I to na krótko. Dlatego nie możemy z Mary tracić czasu — trzeba natychmiast porozmawiać z Aurelie.  
+P.S. Podczas rozmowy z Chimisetem zwróciłem uwagę na nieco zagadkowy wyraz jego twarzy, gdy opowiadał o znaczeniu rytuału. Od dawna wiem, że wszystko na tym świecie ma swoją cenę. Pytanie tylko, jaka.
+#TEXT	12
+Nie mogę w to uwierzyć, udało się! Raymond dał radę! Aurelie odzyskała rozum. Nie wiem, na jak długo — więc czasu tracić na pewno nie warto. Trzeba porozmawiać z nią jak najszybciej.  
+Johan van Merden... A twój umysł pracował cholernie dobrze!
+#TEXT	13
+Więc udało się. Baker mnie nie zawiódł. Były kat uratował kolejne życie. Przepis van Merdena oczywiście też odegrał rolę, ale myślę, że Raymond i bez niego coś by wymyślił. A może się mylę... Ale nieważne — trzeba natychmiast porozmawiać z Aurelie, my z Mary i tak długo na to czekaliśmy.
+#TEXT	14
+Nie dowiedzieliśmy się wszystkiego, czego chcieliśmy, ale nie będziemy gniewać Stwórcy — Aurelie przypomniała sobie wiele, i to wystarczy. Więc po kolei: informacja, że Mary urodziła się na Wyspie Sprawiedliwości, została potwierdzona. Jej rodzice nie byli jednak miejscowymi, lecz rozbitkami, którzy cudem przeżyli okrutny sztorm.  
+Matkę Mary nazywano Teresą, urodziła tydzień po przybyciu na Wyspę — po czym zmarła, co było przewidywalne, biorąc pod uwagę wyzwania, jakie ją spotkały. Co zapomniała na statku — handlowym czy wojennym — w ostatnim miesiącu ciąży, znać może tylko jej mąż, ojciec Mary.  
+Z nim sprawa jest trudniejsza: Aurelie przypomniała sobie jedynie, że jego imię zaczynało się na 'J.'. Nic więcej. Ani nazwy, ani typu statku, na którym służył. Bertin twierdzi, że tajemniczy J. zniknął bez śladu kilka dni po narodzinach córki, ale wątpi, by zginął — w tych latach między Wyspą a Kubą regularnie kursowały tartany przemytników. Nie ma żadnych dowodów, że został zabity na tym cmentarzu statków.  
+Trudno stwierdzić, czy ojciec Mary żyje, jak również dlaczego porzucił nowo narodzoną córkę. Być może wystarczy, że Mary pozna jego tożsamość... Ale aby ruszyć dalej, trzeba najpierw ustalić przynajmniej nazwę statku, który zatonął jednej z czerwcu 1638 roku przy zewnętrznym pierścieniu. W tym, mam nadzieję, pomoże nam nikt inny jak Donald Grinspie.
+#TEXT	15
+Moje przypuszczenia się potwierdziły: narwale rzeczywiście prowadzą ewidencję statków przybitych do zewnętrznego pierścienia Wyspy Sprawiedliwości, zarekwirowanych wartości i pasażerów. To w pewnym sensie dobra tradycja, której przestrzega każdy nowy przywódca klanu „Narwal”, w tym Grinspie. Jednak Donald nie mógł udostępnić nam tych zapisów — niedawno zabrał je mu Layton Dexter.
+#TEXT	16
+Nie opuszcza mnie wrażenie, że podczas tego, można powiedzieć, śledztwa, ściga nas jakieś fatum. Niekończące się problemy i przeszkody. Nikt nic nie wie, a ci, którzy mogą nam pomóc, są albo przy śmierci, albo na tamtym świecie. Zapisów o statkach za potrzebny nam 1638 rok Layton Dexter nie posiadał. Zniknęły gdzieś z kajuty Alana Milrow. Mary twierdzi przy tym, że były one dla byłego przywódcy klanu 'Narwal' cenne i z pewnością nie zniszczyłby ich. Ale kto jeszcze mógł potrzebować takich dokumentów na tym statkowym cmentarzu, mających wartość jedynie dla historyków?
+#TEXT	17
+W końcu widać wyjście z tej jaskini niewiedzy i zagadek. Matka Mary i jej ojciec — Joshua Casper — trafili na Wyspę Sprawiedliwości na brygu angielskiej floty „Rangler”. Razem z nimi przeżyło jeszcze dwóch marynarzy, ale ich dusze odeszły do Boga tej samej nocy. Wewnętrzny głos podpowiada mi, że to nie przypadek, choć po dwudziestu latach nie da się tego udowodnić. Niemniej, dowiedzieliśmy się, czego potrzebowaliśmy, rozmawiając z tymi, którzy widzieli wydarzenia tamtych dni na własne oczy, i teraz możemy zostawić Wyspę Sprawiedliwości za rufą.  
+Pozostaje pomyśleć, do kogo moglibyśmy zwrócić się po informacje o Joshua Casperze. Sami nie mamy dostępu do archiwów Królewskiej Floty...  
+Ale przed odpłynięciem chcę upewnić się jeszcze raz, że niczego nie przeoczyłem. Kto jeszcze mógłby coś wiedzieć? Kto jest na wyspie tak długo, że pamięta tamte wydarzenia?
+#TEXT	18
+Trzeba przyznać, prawie zapomniałem o Chimisecie — a przecież jest chyba najstarszym mieszkańcem Wyspy Sprawiedliwości. Przybył tutaj w 1623 roku i był świadkiem narodzin Mary, śmierci jej matki i zaginięcia ojca, który trafił do więzienia po zabiciu dwóch narwali, którzy nie pozwolili szamanowi podejść do rodzącej. 
+Z opowieści Chimiseta można wnioskować, że Joshua Casper udało się uciec i dotrzeć na jeden z kontrabandowych barkasów — innej możliwości opuszczenia wyspy nie ma. Na Wyspie zostawił nowo narodzoną córkę i zapewne planował wrócić po nią później — ale jeśli dzielił się takimi planami, i tak nie możemy tego sprawdzić: ci, z którymi mógł się kontaktować, dawno stali się pożywieniem dla krabów. Jedyną nicią może być były ksiądz, również nieżyjący — padre Domingo, który rozmawiał z Casperem na 'Tartarusie'. Być może prowadził coś w rodzaju dziennika, na kartach którego pozostały ślady tej rozmowy. Czy tak było, można dowiedzieć się u brata Juliana.  
+P.S. I jeszcze coś ciekawego. Przed śmiercią Teresa Caspar wykrzyczała imię pewnego Ruperta. Nie Joshuę, jej męża i ojca dziecka, który zrobił wszystko, by ją ocalić, lecz właśnie Ruperta.
+#TEXT	19
+Nasza wizyta u Brata Juliana zdecydowanie nie poszła na marne — choćby dlatego, że notatki Padre Domingo De la Cruz ujawniły datę urodzenia Mary: 22 czerwca 1638. Została ochrzczona 3 maja, wraz z Fabianem Gallardem, synem Cécile Gallard, która zmarła niedługo potem. To Cécile opiekowała się Mary — i ona pozostaje naszą ostatnią nadzieją na odkrycie szczegółów rozmowy Padre Domingo z Joshuą Casperem przed jego zniknięciem.
+#TEXT	20
+Im więcej dowiadujemy się o rodzicach Mary, tym głębiej wpadamy w bagno zagadek i niezrozumienia, co wydarzyło się na Wyspie Sprawiedliwości dwadzieścia lat temu. Ciekawi mnie, kim był dla Teresy ów Rupert: bratem, przyjacielem czy... mężem? Rozmowa z Cécile Gallard nasunęła mi myśl, że Joshua Casper mógł nie być całkiem uczciwy — i z jakiegoś powodu posługiwał się innym imieniem: obcym lub wymyślonym.  
+Ale to tylko myśl — nic więcej. Jeśli inicjować poszukiwania w archiwach floty, to tylko po imieniu Joshua Casper. Wszystko inne na razie pozostaje domysłami.  
+Powinniśmy udać się do opata Benoit w Saint-Pierre.
+#TEXT	21
+Po pomoc w poszukiwaniach ojca Mary zwróciliśmy się do dowódcy marynarki, pułkownika Jonathana Foxa. Nie zapomniał, że uratowałem jego córkę z rąk Marténa i Thibo, i obiecał wysłać oficjalny wniosek do Londynu. Być może urzędnicy Archiwum Admiralicji będą w stanie odnaleźć akt osobisty Caspera. Czy im się uda, czy nie, dowiemy się za pół roku — wcześniej nie ma sensu niepokoić pułkownika.
+#TEXT	22
+Opat Benoit ewidentnie nie jest tak prosty, jak się wydaje. W jego oczach zabłysła iskra emocji — dokładnie wtedy, gdy poprosiłem go o zdobycie informacji z Archiwum Admiralicji, które mogą dotyczyć tajemnicy wojskowej. A może mi się tylko wydawało? Ale jeśli przeszłość opata skrywa jakieś mroczne sekrety, wątpię, by się nimi ze mną podzielił. Co do przeszłości pana Caspera — mam nadzieję, że coś się dowiemy za siedem miesięcy, tyle czasu potrzeba na zdobycie odpowiednich informacji.
+#TEXT	23
+A jaka ta historia wydawała się prosta na początku! Więc co mamy... Joshua Casper był oficerem o krystalicznie czystej reputacji, kapitanem brygu 'Cornwall', który na rozkaz wyruszył z Anglii na Morze Karaibskie z żołdem dla garnizonów Antigua i Providence — wówczas jeszcze należących do Anglików. U wybrzeży Azorów doszło do starcia z hiszpańskim galeonem, w którym zginęła jedna trzecia załogi i jeden z oficerów — Rupert Nortwood. Tak podaje oficjalny raport zachowany w zarządzie portowym Saint Johns. Po opuszczeniu Antigua 'Cornwall' obrał kurs na Providence, ale zakończył podróż na rafach Wyspy Sprawiedliwości, już pod nazwą 'Rangler'.  
+Z okrętu ocalało czworo — kapitan, kobieta i dwóch marynarzy. Ci ostatni zmarli w mniej niż dobę. Czy zostali zabici? Na pewno, bo mogli za dużo wiedzieć. To był albo prawdziwy Joshua Casper, szaleńczo zakochany w żonie swojego starszego oficera — skoro biegał po wrakach w poszukiwaniu kogoś, kto mógł uratować Teresę, albo Rupert Nortwood, którego imię Teresa wykrzyczała przed śmiercią, nie wiadomo czemu, podszywając się pod imię swego dowódcy. Druga opcja nie ma żadnej logiki. Tak samo jak fakt, że ten człowiek nie wrócił na Wyspę Sprawiedliwości po swoją córkę — ani po miesiącu, ani po roku, ani po dwudziestu latach.
+Być może zginął — doświadczenie, odwaga i spryt czasem nie ratują. Ale tak jak wtedy posunął się za daleko, tak i my ugrzęźliśmy po uszy w tajemnicach. Nie zamierzamy zawracać ani przerywać.
+Warto jeszcze raz niepokoić Aurelie Bertin, a potem zdecydować, kogo szukamy: Ruperta Nortwooda czy Joshuę Caspera.
+#TEXT	27
+Udało się w końcu. Co stało się na pokładzie 'Cornwalla' i jak stał się 'Ranglerem', nie udało się jeszcze wyjaśnić — ale na rafy Wyspy Sprawiedliwości wpłynął pod dowództwem Ruperta Nortwooda. Czy żyje do dziś, po dwóch dekadach, nie wiem — ani gdzie w takim przypadku go szukać. Pomóc nam w tym ma stary znajomy, który ma kontakty i zasoby do takich zadań.  
+Póki do niego dotrzemy, muszę dobrze przemyśleć, na czyje poszukiwania skierować jego ludzi: Joshuę Caspera czy Ruperta Nortwooda? Choć... jest wystarczająco sprytny, by nie powtarzać wyboru imion. Oczywiście, człowiek w ukryciu bezpieczniej używa prawdziwego imienia, by przypadkiem nie wpaść, gdy nie odpowie na obce. Ale czy starszy oficer 'Cornwalla' był aż tak prosty?
+#TEXT	28
+Z odpłynięciem z Wyspy Sprawiedliwości trzeba poczekać. Minionej nocy zmarła Aurelie Bertin. Staruszka odeszła we śnie, z uśmiechem na ustach. Mieliśmy szczęście, że płynęliśmy pełnymi żaglami — gdybyśmy spóźnili się choćby dzień, z kim rozmawialibyśmy o ojcu Mary?  
+Mimo to mam dziwne przeczucie, że Aurelie... jakby czekała na nas.  
+Ta myśl nie daje mi spokoju, a dopóki Mary razem z mieszkańcami wyspy zajmuje się organizacją pogrzebu, pójdę do Chimiseta — trzeba to z nim omówić.
+#TEXT	29
+Wszystko ma swoją cenę. Zawsze to wiedziałem i starałem się brać pod uwagę przy podejmowaniu decyzji. Gdybym wtedy wiedział, co Chimiset przeznaczy Aurelie, czy zabrałbym ją do niego tamtej nocy? Trudno mi to przyznać samemu sobie, ale pewnie i tak bym to zrobił — bo bez wiedzy utraconej w pamięci Aurelie, zniekształconej przez chorobę, nie posunęlibyśmy się w poszukiwaniach ojca Mary.  
+Czy to okrutne? Zdecydowanie. Czy cyniczne? Bez wątpienia. W ciągu ostatnich dwudziestu czterech godzin po rozmowie z Chimisetem wiele myślałem o tym, co nazywa rzeką
+#TEXT	30
+Fadey, jak można się było spodziewać, zażądał niemało, ale wciąż mniej niż teoretycznie mógłby, biorąc pod uwagę jego miłość do złota. Musimy stawić się u niego za miesiąc — do tego czasu coś w sprawie ojca Mary powinno się wyjaśnić.
+#TEXT	32
+Jesteśmy prawie na miejscu. Dzieli nas odległość od Bas-Ter do Belize. Tam znajduje się człowiek o imieniu Jerome Souvernier, który twierdzi, że udało mu się odnaleźć Ruperta Caspera. Stawiamy wszystkie żagle i kierujemy kurs na zachód. Dwadzieścia lat oczekiwania Mary na spotkanie z ojcem prawie dobiegło końca.
+#TEXT	33
+Jesteśmy w Belize. Myślę, że odnalezienie Jerome’a Souverniera nie będzie trudne. Jestem pewien, że właściciel tawerny wie, gdzie się zatrzymał. Mimo to trochę martwi mnie ta bójka w 'Szklanym Oku' z udziałem Jerome’a. Wykonywał odpowiedzialne i dobrze opłacone zlecenie — i z jakiegoś powodu wplątał się w bijatykę. Być może miało to związek z jego śledztwem dotyczącym Ruperta Caspera. Dlatego lepiej nie robić zbędnego hałasu i dobrze przemyśleć, czy przeprowadzać przesłuchania w tawernie.
+#TEXT	35
+Przeszliśmy długą, krętą drogę — i doszliśmy do gorzkiego wniosku: uważaj na swoje pragnienia. Taki właśnie morał przyniosła nam ta historia. Biedna Mary, oczywiście zasługuje na lepszego ojca niż Rupert Nortwood… ale rodziców się nie wybiera.  
+Cóż, jakby nie był potworny rezultat i jak bardzo nie targało nas rozczarowanie — życie toczy się dalej. Całą tę noc spędziliśmy na brzegu, w ciszy, przerywanej od czasu do czasu rozmowami o wydarzeniach. Mary dzielnie zniosła ten cios. Nie będzie dręczyć siebie myślami o tym, kim był jej ojciec i jakie „czyny” popełnił. A ja… zrobię wszystko, co w mojej mocy, żeby myślała o tym jak najrzadziej.
+
+#QUEST LEDR
+La Espada Del Rey
+#TEXT	1
+Mówią, że po Sharptownie kręci się facet z tego samego statku, który teraz leży rozbity na brzegu zatoki Sabu-Matilla. Twierdzi, że jest jedynym ocalałym z katastrofy. Teraz chce tam wrócić, ale sam nie ma odwagi — a na usprawiedliwienie opowiada bajki o szkielecie w indiańskim stroju. No cóż, zobaczymy... Może rzeczywiście warto go odprowadzić. Ciekawe, co takiego go tam ciągnie po tylu latach?
+#TEXT	2
+Zgodziłem się pomóc starcowi, Gonsalo Peralcie. Nie wygląda na wariata, jeśli nie liczyć tych jego dziwacznych opowieści. Cóż, nie powinno to zająć dużo czasu — zatoka jest niedaleko.
+#TEXT	3
+Kiedy zgodziłem się odprowadzić starca, nie przypuszczałem, że przyjdzie mi walczyć ze szkieletami. Szkieletami! Dobrze, że szczęście nam sprzyjało i mimo szoku udało nam się je odeprzeć. W kajucie kapitana znaleźliśmy kufer biskupa, pełen klejnotów i stary dziennik należący do Diego Velázqueza de Cuéllara — słynnego konkwistadora i pierwszego gubernatora Kuby. Nawet pobieżna lektura tych wspomnień przyprawia o dreszcze. Może to on jest kluczem do rozwiązania klątwy, która prześladuje Gonsalo.
+#TEXT	4
+Dziennik to już przeszłość. Odprowadziłem Gonsala tam, gdzie go spotkałem — do Sharptown. Niech żyje w spokoju, jeśli koszmary naprawdę go opuściły. A ja lepiej trzymam język za zębami — takie historie potrafią się łatwo obrócić przeciwko temu, kto je opowiada.

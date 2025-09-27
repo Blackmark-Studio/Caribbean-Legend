@@ -1377,6 +1377,9 @@ Es ist mir gelungen, mit Christian eine Erhöhung der Liefermenge zu vereinbaren
 #TEXT   6
 ************************************************************
 In der Taverne von Puerto Principe erwarten mich kostenlose Unterkunft und Getränke auf Kosten des Hauses. Der Wirt hat zudem versprochen, dass dank seiner Bemühungen mehr Matrosen unter meinem Kommando dienen wollen.
+#TEXT   7
+************************************************************
+Beim Schmied in San José kann ich die für mich benötigten Materialien und Waren erwerben. Seine Lieferungen erfolgen einmal im Monat.
 
 
 #QUEST FMQ_Guadeloupe
@@ -1496,7 +1499,9 @@ Ich habe mir auf der Reise Zeit gelassen, und die Briten hatten eine Meuterei an
 #TEXT   3
 Leutnant Caspar Gratton beschloss, dass ich ihn bei seiner militärischen Operation gegen Holland unterstützen würde. Das geht nicht. Die Flucht aus Saint-Maarten ist jetzt sein Problem.
 #TEXT   4
-Ich habe Leutnant Caspar Gratton und seine Soldaten nach Saint-Maarten gebracht, wurde aber nicht bezahlt. Stattdessen bat der Leutnant darum, ein paar Tage auf ihn zu warten und dann mit seiner Truppe nach Antigua zu fahren, wo mich Colonel Fox großzügig in voller Höhe bezahlen wird. Kein Scheiß, Sir. Ich hoffe, die Holländer erfahren nichts davon, denn englische Militäroperationen zu unterstützen, gilt in ihren Augen nicht als gute Tat... Ich sollte nach Philipsburg segeln und die Lage erkunden. Ich frage mich auch, was die Marineinfanteristen vorhaben?
+Leutnant Kaspar Gratton und seine Soldaten wurden nach Sint Maarten gebracht, doch eine Bezahlung blieb aus. Stattdessen bat mich der Leutnant, ein paar Tage zu warten und sie dann nach Antigua zu bringen, wo sein Kommandeur, Oberst Fox, mich großzügig entlohnen werde. Na schön... Hoffentlich bekomme ich deswegen keinen Ärger mit den Niederländern. Ich mache mich auf den Weg zum Hafen von Philipsburg – erstens, um möglichen Verdacht der Holländer abzulenken, zweitens, um herauszufinden, was die britischen Marines überhaupt hierher geführt hat.
+#TEXT   4_1
+Leutnant Kaspar Gratton und seine Soldaten wurden nach Sint Maarten gebracht, doch eine Bezahlung erfolgte nicht. Stattdessen bat mich der Leutnant, zwei, drei Tage zu warten und sie dann nach Antigua zu bringen, wo sein Kommandant, Oberst Fox, mir großzügig zahlen würde. Na schön… Hoffentlich bekomme ich deswegen keinen Ärger mit den Niederländern. Ich fahre zum Hafen von Philipsburg – einerseits, um den Verdacht der Holländer abzulenken, andererseits, um herauszufinden, warum britische Marines hier auftauchen – wo doch derzeit Frieden zwischen England und Holland herrscht.
 #TEXT   5
 Drei Tage sind vergangen und ich habe nichts erfahren. Ich sollte zum Strand von Grand Case zurückkehren - vielleicht ist der Leutnant schon dort?
 #TEXT   6

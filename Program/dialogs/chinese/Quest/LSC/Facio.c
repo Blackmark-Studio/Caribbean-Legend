@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 					link.l5 = "朱塞佩, 他们说你完全耐酒。 不管喝多少, 你仍然站着。 ";
 					link.l5.go = "drink";
 				}
-				if (CheckAttribute(pchar, "questTemp.LSC.Drink") && GetCharacterItem(pchar, "gold_dublon") >= 100 && pchar.questTemp.LSC.Drink == "wait")
+				if (CheckAttribute(pchar, "questTemp.LSC.Drink") && PCharDublonsTotal() >= 100 && pchar.questTemp.LSC.Drink == "wait")
 				{
 					link.l5 = "我准备好参加你的游戏了。 这是我的赌注。 ";
 					link.l5.go = "drink_4";
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "当然, 孩子。 你知道价格。 你有五十杜布隆吗? ";
-				if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+				if (PCharDublonsTotal() >= 50)
 				{
 					link.l1 = "是的。 拿你的硬币。 ";
 					link.l1.go = "parol_pay";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		
 		case "parol_1":
 			dialog.text = "好了好了, 孩子, 冷静点。 别贪心, 相信我: 我知道我的信息的真正价值。 你不只是要在"+pchar.questTemp.LSC.parol+"的船上走走, 对吧。 所以你必须准备好 lose 一些硬币... 那么, 你准备好支付五十杜布隆了吗? ";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+			if (PCharDublonsTotal() >= 50)
 			{
 				link.l1 = "是的。 拿你的硬币。 ";
 				link.l1.go = "parol_pay";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "parol_pay":
-			RemoveItems(pchar, "gold_dublon", 50);
+			RemoveDublonsFromPCharTotal(50);
 			dialog.text = "太好了! 和你做生意真愉快。 "+pchar.questTemp.LSC.parol+"的当前密码是:'"+sTotalTemp+"'。 好好记住, 不要弄错, 否则我不会为你的生命支付一个硬币。 ";
 			link.l1 = "我知道, 我知道... 谢谢! ";
 			link.l1.go = "exit";
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -321,7 +321,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "当然, 我听说过。 你惹了个大麻烦, 亲爱的。 但有办法解决。 "+sti(npchar.quest.price)+" 杜布隆, 你的问题将在一天内解决。 ";
 				else dialog.text = "整个岛都知道你造成的屠杀。 帮助你不容易, 但有机会。 "+sti(npchar.quest.price)+" 杜布隆, 我会尝试解决你的问题。 ";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "给, 拿你的硬币, 处理一下。 ";
 				link.l1.go = "pay";
@@ -348,7 +348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
 			Log_Info("你给了"+sti(npchar.quest.price)+"杜布隆");
 			dialog.text = "太好了。 现在坐下休息一下。 在我解决你的问题之前, 你最好待在我的船舱里。 我不想让你把事情弄得更糟, 亲爱的。 ";
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 		
 		case "drink_3":
 			dialog.text = "是的, 输家付酒钱。 成交? ";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 100)
+			if (PCharDublonsTotal() >= 100)
 			{
 				link.l1 = "是的, 成交。 这是我的赌注。 ";
 				link.l1.go = "drink_4";
@@ -432,7 +432,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink_4":
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			Log_Info("你给了100杜布隆");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "太好了, 亲爱的! 那么晚上九点在桑乔的酒馆见我! 是的, 如果你迟到, 你的赌注将留在我这里, 这是规则之一。 但你不会迟到的, 孩子, 对吧? ";

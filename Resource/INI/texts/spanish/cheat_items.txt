@@ -1,57 +1,30 @@
-
 new_string
 {
 
 }
-
 Cheat_success {El truco ha funcionado.}
-
 Cheat_on {Cheat on}
-
 Cheat_off {Cheat off}
-
 Cheat_Comming_soon {Muy pronto.}
-
 f1 {Desbloquea todas las recetas de alquimia}
-
 f2 {Añadir materiales de alquimia}
-
 f3 {Añadir hierbas}
-
 f4 {Añadir gemas}
-
 f5 {Añadir piedra +100}
-
 f6 {Munición +50}
-
 f7 {Obtener hojas}
-
 f8 {Conseguir armas}
-
 f9 {Obtener mosquetes}
-
 f10 {Modo Dios activado/desactivado}
-
 f11 {Conseguir Corazas}
-
 f12 {Obtener talismanes}
-
 f13 {Obtener amuletos}
-
 f14 {¿Acceder a salas?}
-
 f15 {Obtener pociones}
-
 f16 {Conseguir Catalejos}
-
 f17 {Obtener farol}
-
 f18 {Obtener dispositivos de navegación}
-
 f19 {Obtener herramientas}
-
 f20 {Obtener mapas ordinarios}
-
 f21 {Obtener mapas de almirante}
-
 descF21No {No disponible en esta fase del juego}

@@ -1,679 +1,143 @@
-Roger_1
-{
-Sie haben die spanische Flagge weitergegeben
-}
-
-Roger_2
-{
-Gabriela
-}
-Roger_3
-{
-Chapada
-}
-
-Roger_4
-{
-Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!
-}
-
-Roger_5
-{
-Lope
-}
-Roger_6
-{
-Montoro
-}
-
-Roger_7
-{
-Rosario
-}
-Roger_8
-{
-Gusman
-}
-
-Roger_9
-{
-Cantavro
-}
-
-Roger_10
-{
-Esberdo
-}
-Roger_11
-{
-Cabanas
-}
-
-Roger_12
-{
-Nähern Sie sich den Kähnen und nehmen Sie ihre Beute. Passen Sie auf, dass Sie sie nicht mit Ihrem Schiffsrumpf zerquetschen.
-}
-
-Roger_13
-{
-Bernstein erworben @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
-}
-
-Roger_14
-{
-Snake
-}
-
-Roger_15
-{
-Geffrey
-}
-Roger_16
-{
-Brooke
-}
-
-Roger_17
-{
-Fly Fish
-}
-
-Roger_18
-{
-Billy
-}
-Roger_19
-{
-Pert
-}
-
-Roger_20
-{
-Utrecht
-}
-
-Roger_21
-{
-Joachim
-}
-Roger_22
-{
-Gusen
-}
-
-Roger_23
-{
-Brigantine 'Utrecht'
-}
-
-Roger_24
-{
-Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!
-}
-
-Roger_25
-{
-Eine Stunde später...@<NewStr()>Die Seide wurde beim Käufer abgeladen
-}
-
-Roger_26
-{
-Moray
-}
-
-Roger_27
-{
-Paul
-}
-Roger_28
-{
-Chant
-}
-
-Roger_29
-{
-Jean
-}
-Roger_30
-{
-Picard
-}
-
-Roger_31
-{
-30 Kalte Waffen wurden aus dem Arsenal des Schiffes entwendet.
-}
-
-Roger_32
-{
-Gesammelte kalte Waffen - 30 Stück
-}
-
-Roger_33
-{
-Keine kalten Waffen
-}
-
-Roger_34
-{
-Gesammelte Pistolen - @<FindRussianQtyString(iGun)>
-}
-
-Roger_35
-{
-Gesammelte Musketen - @<FindRussianQtyString(iMushket)>
-}
-
-Roger_36
-{
-Gesammelte Heiltränke - @<FindRussianQtyString(iPotion)>
-}
-
-Roger_37
-{
-Gesammelte Materialien für @<iShot>- Schüsse
-}
-
-Roger_38
-{
-Gesammelte kalte Waffen - 30 Stück
-}
-Roger_39
-{
-Gesammelte Pistolen - 50 Stück
-}
-Roger_40
-{
-Gesammelte Heiltränke - 90 Stück
-}
-Roger_41
-{
-Gesammelte Materialien für 70 Schüsse
-}
-
-Roger_42
-{
-Später, am nächsten Abend...
-}
-
-Roger_43
-{
-Einige Zeit später...
-}
-
-Roger_44
-{
-Die Plantage ist alarmiert!
-}
-
-Roger_45
-{
-Sie haben 300 Sekunden Zeit, bevor die Spanier Verstärkung von dem Fort erhalten.
-}
-
-Roger_46
-{
-Die Spanier haben ihr Flaggschiff verloren! Wir können versuchen zu fliehen!
-}
-
-Roger_47
-{
-Ein holländischer Konvoi ist am Horizont zu sehen!
-}
-
-Roger_48
-{
-Rosbohom
-}
-
-Roger_49
-{
-Gryphon
-}
-
-Roger_50
-{
-Die Nacht ist angebrochen...
-}
-
-Roger_51
-{
-Mirabelle
-}
-Roger_52
-{
-
-}
-
-Roger_53
-{
-Mirabelle starb an Fieber!
-}
-
-Roger_54
-{
-Luka
-}
-Roger_55
-{
-Bayard
-}
-
-Roger_56
-{
-Kumwana
-}
-Roger_57
-{
-
-}
-
-Roger_58
-{
-Hayami
-}
-Roger_59
-{
-
-}
-
-Roger_60
-{
-Tagofa
-}
-Roger_61
-{
-
-}
-
-Roger_62
-{
-Zwei Tage später...@<NewStr()>Sechs Langboote wurden gebaut...
-}
-
-Roger_63
-{
-Demetrio
-}
-Roger_64
-{
-Rojas
-}
-
-Roger_65
-{
-Kitty
-}
-
-Roger_66
-{
-Torero
-}
-
-Roger_67
-{
-Ignacio
-}
-Roger_68
-{
-Marco
-}
-
-Roger_69
-{
-Erkundungsmodus: Der Timer ist deaktiviert.
-}
-
-Roger_70
-{
-Eduardo
-}
-Roger_71
-{
-de Losada
-}
-
-Roger_72
-{
-El Casador
-}
-
-Roger_73
-{
-Gehen Sie in Ihre Kabine und studieren Sie das Schiffslogbuch.
-}
-
-Roger_74
-{
-Gaspard
-}
-Roger_75
-{
-Goldenteeth
-}
-
-Roger_76
-{
-Entermannschaft ist bereit!
-}
-
-Roger_77
-{
-Cuttlefish
-}
-
-Roger_78
-{
-Vagrant
-}
-Roger_79
-{
-
-}
-
-Roger_80
-{
-Merciless
-}
-
-Roger_81
-{
-Vampire
-}
-Roger_82
-{
-
-}
-
-Roger_83
-{
-Die Torero ist auf einem Überfall auf Le Francois!
-}
-
-Roger_84
-{
-Sie warten heimlich in Ihrem Versteck...
-}
-
-Roger_85
-{
-'Torero'
-}
-
-Roger_86
-{
-Erkundungsmodus: Questdauer verdoppelt
-}
-
-Roger_87
-{
-Eagle-Owl
-}
-
-Roger_88
-{
-Joker
-}
-Roger_89
-{
-Jim
-}
-
-Roger_90
-{
-Erkundungsmodus: Corrida - die Koordinaten sind korrekt
-}
-
-Roger_91
-{
-Erkundungsmodus: Corrida - die Koordinaten sind nicht korrekt
-}
-
-Roger_92
-{
-Ein spanischer Konvoi ist am Horizont zu sehen!
-}
-
-Roger_93
-{
-Toro de Oro
-}
-
-Roger_94
-{
-Red Dragon
-}
-
-Roger_95
-{
-Eine gewaltige Explosion auf der @<pchar.ship.name>!
-}
-
-Roger_96
-{
-Wir sind in Cartagena angekommen! Tyrex befiehlt, nach Covenas Bay zu segeln
-}
-
-Roger_97
-{
-Die Landungstruppen sind bereit zum Sturm auf Cartagena!
-}
-
-Roger_98
-{
-Landungstrupp der '@<pchar.schiff.name>' hat @<iCrew1> Männer
-}
-Roger_99
-{
-Landungstrupp der Red Dragon hat @<iCrew2> Männer
-}
-Roger_100
-{
-Landungstrupp der Snake hat @<iCrew3> Männer
-}
-Roger_101
-{
-Landungstrupp der Moray hat @<iCrew4> Männer
-}
-
-Roger_102
-{
-Einen Tag später...@<NewStr()>Fässer mit Schießpulver wurden an die Blockade geliefert.
-}
-
-Roger_103
-{
-Tonneur
-}
-
-Roger_104
-{
-Libre
-}
-
-Roger_105
-{
-Myutin
-}
-
-Roger_106
-{
-Inconnu
-}
-
-Roger_107
-{
-Alonso
-}
-Roger_108
-{
-
-}
-
-Roger_109
-{
-Drei Stunden später...
-}
-
-Roger_110
-{
-Rodgar
-}
-Roger_111
-{
-Janssen
-}
-
-Roger_112
-{
-Ignacio Marco ist auf dem Pier gelandet!
-}
-
-Roger_113
-{
-2 Stunden sind vergangen...@<NewStr()>
-}
-
-Roger_114
-{
-Ignacio Marco verließ die Residenz
-}
-
-Roger_115
-{
-zusammen mit zwei Kapitänen
-}
-
-Roger_116
-{
-Separator
-}
-
-Roger_117
-{
-Bernar
-}
-Roger_118
-{
-Vensan
-}
-
-Roger_119
-{
-Dionisio
-}
-Roger_120
-{
-Peres
-}
-
-Roger_121
-{
-Einen Tag später...@<NewStr()>Das Lösegeld für Cartagena wurde kassiert
-}
-
-Roger_122
-{
-Zwei Tage sind schnell vergangen @<NewStr()> mit Feiern und amourösen Vergnügungen...
-}
-
-Roger_123
-{
-Camilla
-}
-Roger_124
-{
-
-}
-
-Roger_125
-{
-don Enrico
-}
-Roger_126
-{
-
-}
-
-Roger_127
-{
-Michel
-}
-Roger_128
-{
-de Monper
-}
-
-Roger_129
-{
-Marcus
-}
-Roger_130
-{
-Tyrex
-}
-
-Roger_131
-{
-Ich, Charles de Maure, ein französischer Adliger und Kapitän, schwöre:
-}
-
-Roger_132
-{
-... Ich bin mit meiner Piratenvergangenheit endgültig fertig ...
-}
-
-Roger_133
-{
-... Keine unschuldigen Zivilisten werden mehr durch meine Hand sterben ...
-}
-
-Roger_134
-{
-... Ich schwöre, die Frauen zu schützen, ungeachtet ihres Status und ihrer Nationalität ...
-}
-
-Roger_135
-{
-... Ich schwöre, dass Gold mich nicht mehr blind machen wird ...
-}
-
-Roger_136
-{
-... Ich schwöre, mich jedem Bösewicht zu widersetzen, dem ich auf meinem Weg begegne ...
-}
-
-Roger_137
-{
-... Ich schwöre, die Ehre immer zwischen ihr und dem Reichtum zu wählen ...
-}
-
-Roger_138
-{
-... Ich schwöre, in jeder Situation und mit jedem Volk ein würdiger und edler Mann zu bleiben ...
-}
-
-Roger_139
-{
-Aus irgendeinem Grund muss ich immer an Mirabelle denken. Wie ist sie dort? Vermisst sie mich? Es muss grausam von mir gewesen sein, ein junges Mädchen allein zu lassen. Ich werde das in Ordnung bringen! Ich sollte sie bald sehen.
-}
-
-Roger_140
-{
-Knippel
-}
-
-Roger_141
-{
-Longway
-}
-
-Roger_142
-{
-Tichingitu
-}
-
-Roger_143
-{
-Thomas
-}
+Roger_1 {Sie haben die spanische Flagge weitergegeben}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {Nähern Sie sich den Kähnen und nehmen Sie ihre Beute. Passen Sie auf, dass Sie sie nicht mit Ihrem Schiffsrumpf zerquetschen.}
+Roger_13 {Bernstein erworben @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {Brigantine 'Utrecht'}
+Roger_24 {Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!}
+Roger_25 {Eine Stunde später...@<NewStr()>Die Seide wurde beim Käufer abgeladen}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 {Jean}
+Roger_30 {Picard}
+Roger_31 {30 Kalte Waffen wurden aus dem Arsenal des Schiffes entwendet.}
+Roger_32 {Gesammelte kalte Waffen - 30 Stück}
+Roger_33 {Keine kalten Waffen}
+Roger_34 {Gesammelte Pistolen - @<FindRussianQtyString(iGun)>}
+Roger_35 {Gesammelte Musketen - @<FindRussianQtyString(iMushket)>}
+Roger_36 {Gesammelte Heiltränke - @<FindRussianQtyString(iPotion)>}
+Roger_37 {Gesammelte Materialien für @<iShot>- Schüsse}
+Roger_38 {Gesammelte kalte Waffen - 30 Stück}
+Roger_39 {Gesammelte Pistolen - 50 Stück}
+Roger_40 {Gesammelte Heiltränke - 90 Stück}
+Roger_41 {Gesammelte Materialien für 70 Schüsse}
+Roger_42 {Später, am nächsten Abend...}
+Roger_43 {Einige Zeit später...}
+Roger_44 {Die Plantage ist alarmiert!}
+Roger_45 {Sie haben 300 Sekunden Zeit, bevor die Spanier Verstärkung von dem Fort erhalten.}
+Roger_46 {Die Spanier haben ihr Flaggschiff verloren! Wir können versuchen zu fliehen!}
+Roger_47 {Ein holländischer Konvoi ist am Horizont zu sehen!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {Die Nacht ist angebrochen...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {Mirabelle starb an Fieber!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {Zwei Tage später...@<NewStr()>Sechs Langboote wurden gebaut...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 {Torero}
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {Erkundungsmodus: Der Timer ist deaktiviert.}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {Gehen Sie in Ihre Kabine und studieren Sie das Schiffslogbuch.}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {Entermannschaft ist bereit!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {Die Torero ist auf einem Überfall auf Le Francois!}
+Roger_84 {Sie warten heimlich in Ihrem Versteck...}
+Roger_85 {'Torero'}
+Roger_86 {Erkundungsmodus: Questdauer verdoppelt}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {Erkundungsmodus: Corrida - die Koordinaten sind korrekt}
+Roger_91 {Erkundungsmodus: Corrida - die Koordinaten sind nicht korrekt}
+Roger_92 {Ein spanischer Konvoi ist am Horizont zu sehen!}
+Roger_93 {Toro de Oro}
+Roger_94 {Red Dragon}
+Roger_95 {Eine gewaltige Explosion auf der @<pchar.ship.name>!}
+Roger_96 {Wir sind in Cartagena angekommen! Tyrex befiehlt, nach Covenas Bay zu segeln}
+Roger_97 {Die Landungstruppen sind bereit zum Sturm auf Cartagena!}
+Roger_98 {Landungstrupp der '@<pchar.schiff.name>' hat @<iCrew1> Männer}
+Roger_99 {Landungstrupp der Red Dragon hat @<iCrew2> Männer}
+Roger_100 {Landungstrupp der Snake hat @<iCrew3> Männer}
+Roger_101 {Landungstrupp der Moray hat @<iCrew4> Männer}
+Roger_102 {Einen Tag später...@<NewStr()>Fässer mit Schießpulver wurden an die Blockade geliefert.}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 {Alonso}
+Roger_108 { }
+Roger_109 {Drei Stunden später...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco ist auf dem Pier gelandet!}
+Roger_113 {2 Stunden sind vergangen...@<NewStr()>}
+Roger_114 {Ignacio Marco verließ die Residenz}
+Roger_115 {zusammen mit zwei Kapitänen}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {Einen Tag später...@<NewStr()>Das Lösegeld für Cartagena wurde kassiert}
+Roger_122 {Zwei Tage sind schnell vergangen @<NewStr()> mit Feiern und amourösen Vergnügungen...}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {Ich, Charles de Maure, ein französischer Adliger und Kapitän, schwöre:}
+Roger_132 {... Ich bin mit meiner Piratenvergangenheit endgültig fertig ...}
+Roger_133 {... Keine unschuldigen Zivilisten werden mehr durch meine Hand sterben ...}
+Roger_134 {... Ich schwöre, die Frauen zu schützen, ungeachtet ihres Status und ihrer Nationalität ...}
+Roger_135 {... Ich schwöre, dass Gold mich nicht mehr blind machen wird ...}
+Roger_136 {... Ich schwöre, mich jedem Bösewicht zu widersetzen, dem ich auf meinem Weg begegne ...}
+Roger_137 {... Ich schwöre, die Ehre immer zwischen ihr und dem Reichtum zu wählen ...}
+Roger_138 {... Ich schwöre, in jeder Situation und mit jedem Volk ein würdiger und edler Mann zu bleiben ...}
+Roger_139 {Aus irgendeinem Grund muss ich immer an Mirabelle denken. Wie ist sie dort? Vermisst sie mich? Es muss grausam von mir gewesen sein, ein junges Mädchen allein zu lassen. Ich werde das in Ordnung bringen! Ich sollte sie bald sehen.}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Thomas}

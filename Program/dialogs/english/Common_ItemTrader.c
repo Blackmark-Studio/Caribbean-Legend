@@ -52,16 +52,16 @@ void ProcessDialogEvent()
 		break;
 
   		case "First time":
-			dialog.text = NPCharSexPhrase(npchar, "Would you like to buy equipment for yourself or for your officers, captain? If so, you've come just to the right person!", "Oh, captain, I knew that you'd approach me! I can offer you equipment for you and your officers, among many other useful things.");
+			dialog.text = NPCharSexPhrase(npchar,"Would you like to buy equipment for yourself or your officers, captain? If so, you've come to just the right person!","Oh, captain, I knew you'd come to me! I can offer equipment for you and your officers, among many other useful things.");
 			link.l1 = "Show me what you've got.";
 			link.l1.go = "Trade_exit";
 			
-   			/*link.l2 = "I came on a different business.";
+   			/*link.l2 = "I came on different business.";
 			link.l2.go = "quests";*/
 			// --> Мангароса
 			if (CheckCharacterItem(pchar, "cannabis7") && CheckAttribute(pchar, "questTemp.Mangarosa") && pchar.questTemp.Mangarosa == "find" && npchar.Merchant.type == "potion" && !CheckAttribute(npchar, "quest.mangarosa"))
 			{
-				link.l4 = "Hey, I've found one interesting plant around. Could you tell me if it can be used to brew potions or decoctions? It just seems interesting to me. Can you take a look?";
+				link.l4 = "Hey, I found an interesting plant nearby. Could you tell me if it can be used to brew potions or decoctions? It just caught my eye. Can you take a look?";
 				link.l4.go = "mangarosa";
 			}
 			// <-- Мангароса
@@ -109,12 +109,12 @@ void ProcessDialogEvent()
 			}
 			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_2") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
 			{
-				link.l4 = "I wonder if among your inventory you might possess anything of significant value? I seek a piece that would satisfy even the most particular noblewoman's taste—something distinctive and refined, far beyond what would appeal to ordinary citizens. Perhaps a pendant of uncommon artistry or a bracelet of sophisticated design?";
+				link.l4 = "I wonder if, among your inventory, you might possess anything of significant value? I seek a piece that would satisfy even the most particular noblewoman's taste—something distinctive and refined, far beyond what would appeal to ordinary citizens. Perhaps a pendant of uncommon artistry or a bracelet of sophisticated design?";
 				link.l4.go = "UV_Lavochniki_2";
 			}
 			if(CheckAttribute(pchar, "questTemp.UV_Lavochniki_3") && !CheckAttribute(npchar, "quest.UV_Vopros") && npchar.city == "PortPax")
 			{
-				link.l4 = "Tell me, good merchant, are you knowledgeable in matters of fine jewelry? I seek something extraordinary to present to a lady of quality. Let me be frank I have no interest in commonplace trinkets. What I require is a piece of genuine magnificence: perhaps a brooch adorned with precious stones or a ring of unparalleled craftsmanship.";
+				link.l4 = "Tell me, good merchant, are you knowledgeable in matters of fine jewellery? I seek something extraordinary to present to a lady of quality. Let me be frank, I have no interest in commonplace trinkets. What I require is a piece of genuine magnificence: perhaps a brooch adorned with precious stones or a ring of unparalleled craftsmanship.";
 				link.l4.go = "UV_Lavochniki_3";
 			}
 			//<-- Украденное воспоминание
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
-   				link.l5 = "Listen, you're dealing in all sorts of goods... Yesterday or today - did anyone offer to sell you  "+pchar.GenQuest.Device.Shipyarder.Type+"?";
+   				link.l5 = "Listen, you deal in all sorts of goods... Yesterday or today - did anyone offer to sell you  "+pchar.GenQuest.Device.Shipyarder.Type+"?";
 				link.l5.go = "Device_ItemTrader";
 			}
 			//<-- генератор Неудачливый вор
@@ -148,7 +148,7 @@ void ProcessDialogEvent()
 			dialog.text = "Sure. Seven hundred pesos per bottle.";
 			if (makeint(Pchar.money) >= 700)
 			{
-				link.l1 = "Excellent. Take the money and give it to me.";
+				link.l1 = "Excellent. Take the money and hand it over to me.";
 				link.l1.go = "Wine_ItemTrader_1";
 			}
 			link.l2 = "Excellent! I'll be back once I decide to buy some.";
@@ -168,24 +168,24 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Wine_Bottles":
-			dialog.text = "Ha! I'm just a retailer, not a wholesaler. I'd be selling that many bottles for over half a year - that wine is rare and expensive, and not just anyone can afford it, you know. I don't have that many.";
-			link.l1 = "Alright, you don't have them - no problem. But you get it somewhere for yourself, don't you? Maybe you could tell me the name of your supplier, and I'd buy it directly from him. Or is wine delivered to you from Europe?";
+			dialog.text = "Ha! I'm just a retailer, not a wholesaler. I'd be selling that many bottles for over half a year – that wine is rare and expensive, and not just anyone can afford it, you know. I don't have that many.";
+			link.l1 = "Alright, you don't have them - no problem. But you get it from somewhere yourself, don't you? Maybe you could tell me the name of your supplier, and I'd buy it directly from him. Or is wine delivered to you from Europe?";
 			link.l1.go = "Wine_Bottles_1";
 		break;
 		
 		case "Wine_Bottles_1":
-			dialog.text = "No, it isn't. I get it here. But I won`t name you my supplier just like that. But for a thousand peso... perhaps, I would...";
+			dialog.text = "No, it isn't. I get it here. But I won't name my supplier just like that. But for a thousand pesos... perhaps, I would...";
 			if (makeint(Pchar.money) >= 1000)
             {
-				link.l1 = "Fine. Here's your thousand - and now tell me, who your supplier is.";
+				link.l1 = "Fine. Here's your thousand – and now tell me, who your supplier is.";
 				link.l1.go = "Wine_Bottles_2";
 			}
-			link.l2 = "Now you hucksters have gone too brazen! Wouldn't it be too good for you? I'll do fine without your supplier, thanks.";
+			link.l2 = "Now you hucksters have grown too brazen! Wouldn't that be too good for you? I'll do just fine without your supplier, thanks.";
 			link.l2.go = "Wine_Bottles_fail";
 		break;
 		
 		case "Wine_Bottles_free":
-			dialog.text = "I guess... alright then. Here's your note, and I hope you return the favor in the future.";
+			dialog.text = "I suppose... very well then. Here's your note, and I hope you'll return the favour in the future.";
 			link.l1 = "...";
 			link.l1.go = "Wine_Bottles_free_1";
 		break;
@@ -195,7 +195,7 @@ void ProcessDialogEvent()
 			sld = characterFromId(pchar.questTemp.Wine.TraderID);
 			pchar.questTemp.Wine.Name = GetFullName(sld);
 			pchar.questTemp.Wine.ItemTraderID = npchar.id;
-			dialog.text = "The name of my wine supplier is "+pchar.questTemp.Wine.Name+", he owns the local store.";
+			dialog.text = "The name of my wine supplier is "+pchar.questTemp.Wine.Name+", he owns the local shop.";
 			link.l1 = "Got it! Thanks!";
 			link.l1.go = "exit";
 			//pchar.questTemp.Wine.Trader = "true";
@@ -235,23 +235,23 @@ void ProcessDialogEvent()
 		case "Wine_Repeat1":
 			DeleteAttribute(pchar, "questTemp.Wine.Repeat1");
 			dialog.text = "What do you mean by that? Explain yourself.";
-			link.l1 = "You have tricked me, you rascal! I've just been at the store, "+pchar.questTemp.Wine.Name+" never deals in wine, as he himself told me that! Give me my money back!";
+			link.l1 = "You've tricked me, you rascal! I've just been at the store, "+pchar.questTemp.Wine.Name+" never deals in wine, as he himself told me that! Give me my money back!";
 			link.l1.go = "Wine_Repeat1_fail";
-			link.l2 = "There was a misunderstanding... I came to the storekeeper, and "+pchar.questTemp.Wine.Name+" claimed that he has never dealt in wine. How can you explain it?";
+			link.l2 = "There was a misunderstanding... I went to the storekeeper, and "+pchar.questTemp.Wine.Name+" claimed that he has never dealt in wine. How can you explain it?";
 			link.l2.go = "Wine_Repeat1_1";
 		break;
 		
 		case "Wine_Repeat1_1":
-			dialog.text = "Heh! He deals in wine, that's for damn sure. He just doesn't sell wine to just anyone - like with few other goods, too. And there are several reasons for that... If you want to buy wine from him, I can write him a note. He knows me and my handwriting, so, after he's read it, he will sell you that wine. Of course, this favor is not free, either.";
-			link.l1 = "That's an outrage! You've just taken a grand from me!";
+			dialog.text = "Heh! He deals in wine, that's for damn sure. He just doesn't sell wine to just anyone – same as with a few other goods, too. And there are several reasons for that... If you want to buy wine from him, I can write him a note. He knows me and my handwriting, so after he's read it, he'll sell you that wine. Of course, this favour isn't free, either.";
+			link.l1 = "That's outrageous! You've just taken a grand from me!";
 			link.l1.go = "Wine_Repeat1_2";
 		break;
 		
 		case "Wine_Repeat1_2":
-			dialog.text = "I took a thousand from you for information. And for a letter you'll have to pay two thousand pesos separately, and in any way not less than that.";
+			dialog.text = "I took a thousand from you for the information. And for the letter, you'll have to pay two thousand pesos separately, and in any case, not less than that.";
 			if (makeint(Pchar.money) >= 2000)
 			{
-				link.l1 = "Oh... You traders are so damn greedy. No wonder that no one likes your kind. Oh well, here's your money, so go ahead and write the note.";
+				link.l1 = "Oh... You traders are so damn greedy. No wonder no one likes your kind. Oh well, here's your money, so go ahead and write the note.";
 				link.l1.go = "Wine_Bottles_3";
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
@@ -260,11 +260,11 @@ void ProcessDialogEvent()
 				link.l2 = "(Trustworthy) Let's strike a compromise. You provide a recommendation now, free of charge, and I'll reciprocate with a recommendation for you later, also at no cost. This wine deal is only the beginning.";
 				link.l2.go = "Wine_Bottles_free";
 			}
-			link.l3 = "Now that's completely out of line! I'd rather abandon the whole affair, I will not enrich such a cunning miser. And by that miser I mean you. Farewell.";
+			link.l3 = "Now that's completely out of line! I'd rather abandon the whole affair; I will not enrich such a cunning miser. And by that miser I mean you. Farewell.";
 			link.l3.go = "Wine_Repeat1_goaway";
 		break;
 		case "Wine_Bottles_free":
-			dialog.text = "I guess... alright then. Here's your note, and I hope you return the favor in the future.";
+			dialog.text = "I suppose... very well then. Here's your note, and I hope you'll return the favour in the future.";
 			link.l1 = "...";
 			link.l1.go = "Wine_Bottles_free_1";
 		break;
@@ -283,8 +283,8 @@ void ProcessDialogEvent()
 		
 		case "Wine_Bottles_3":
 			AddMoneyToCharacter(pchar, -2000);
-			dialog.text = "You are a queer bird, captain! Sure, I realize that your purser does all the financials, but you should use your own head too sometimes. You will have an opportunity to buy a decent lot of wines wholesale without my price markup and make a considerable profit. So let's not prevent each other from making coin, because it is you who look greedy now.\nRight...(writing) Here, take this letter - "+pchar.questTemp.Wine.Name+"  will sell you the wine without any questions.";
-			link.l1 = "I do hope so... If anything goes wrong again, I will be back. See you!";
+			dialog.text = "You are a queer bird, captain! Sure, I realize that your purser handles all the finances, but you should use your own head sometimes too. You'll have an opportunity to buy a decent lot of wines wholesale without my markup and make a considerable profit. So let's not stand in each other's way of making coin, because it's you who looks greedy now.\nRight... (writing) Here, take this letter - "+pchar.questTemp.Wine.Name+"  will sell you the wine without asking any questions.";
+			link.l1 = "I do hope so... If anything goes wrong again, I'll be back. See you!";
 			link.l1.go = "Wine_Bottles_4";
 		break;
 		
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Repeat1_fail":
 			dialog.text = "Oh, so you've come here to threaten me and be rude? I'll call the guards, then! Hey, guards! Right here!";
-			link.l1 = "Oh, shut up! You won, I'm leaving! Curse you "+ NPCharSexPhrase(npchar, "","") +", cormorant, may you get ruined!";
+			link.l1 = "Oh, shut up! You win, I'm leaving! Curse you "+NPCharSexPhrase(npchar,"","")+", cormorant, may you be ruined!";
 			link.l1.go = "exit";
 			AddQuestRecord("Wine", "7");
 			DelLandQuestMark(npchar);
@@ -322,7 +322,7 @@ void ProcessDialogEvent()
 			sld = CharacterFromID("Tichingitu");
 			if (sld.location == pchar.location && !LAi_IsDead(sld))
 			{
-				dialog.text = "Ah, I see. Making deals with the natives? I heard this one's already cost you a pretty penny, ha ha!";
+				dialog.text = "Ah, I see. Making deals with the natives? I heard this one has already cost you a pretty penny, ha ha!";
 			}
 			else
 			{
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.Money) > 2299)
 			{
-				link.l2 = "The price seems unfair. How about a discount for a friend of Fadey Muscovite?";
+				link.l2 = "The price seems unfair. How about a discount for a friend of Fadey the Muscovite?";
 				link.l2.go = "ZsI_Torg";
 			}
 			link.l3 = "Three thousand? That's robbery! Goodbye, Monsieur!";
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
 			else
 			{
 				notification("Skill Check Failed (19)", SKILL_COMMERCE); 
-				dialog.text = "Monsieur Fadey's friends are always welcome, but prices don't have friends. It'll be three thousand pesos, Captain.";
+				dialog.text = "Monsieur Fadey's friends are always welcome, but prices have no friends. It'll be three thousand pesos, Captain.";
 				if (sti(pchar.Money) > 2999)
 				{
 					link.l1 = "Pricey, but alright. I'll take it.";
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 		
 		// --> Цена чахотки
 		case "Consumption":
-			dialog.text = "No it doesn't... Now, please don't bother me, I am quite busy... What an idiotic question...";
+			dialog.text = "No, it doesn't... Now, please don't bother me, I am quite busy... What an idiotic question...";
 			link.l1 = "I see. Sorry for wasting your time...";
 			link.l1.go = "exit";
 			npchar.quest.Consumption = "true";
@@ -423,8 +423,8 @@ void ProcessDialogEvent()
 		// <-- Цена чахотки
 		//Jason --> генератор Неудачливый вор
 		case "Device_ItemTrader":
-			dialog.text = "Hmm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Never heard about it before... Just what is it, actually? I've never heard about such a thing in all my time"+ NPCharSexPhrase(npchar, "","") +".";
-			link.l1 = "Well, it's a shipwright's tool, "+pchar.GenQuest.Device.Shipyarder.Describe+". Did anyone offer anything like that to you?";
+			dialog.text = "Hmm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Never heard of it before... What is it, actually? I've never heard of such a thing in all my time"+NPCharSexPhrase(npchar,"","")+".";
+			link.l1 = "Well, it's a shipwright's tool, "+pchar.GenQuest.Device.Shipyarder.Describe+". Did anyone offer you anything like that?";
 			link.l1.go = "Device_ItemTrader_1";
 			npchar.quest.Device = "true";
 		break;
@@ -432,8 +432,8 @@ void ProcessDialogEvent()
 		case "Device_ItemTrader_1":
 			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) > 0 && sti(pchar.GenQuest.Device.Shipyarder.Chance1) < 4 && npchar.location.group == "merchant" && npchar.location.locator == "merchant"+sti(pchar.GenQuest.Device.Shipyarder.Chance1))
 			{
-				dialog.text = "Hmm... Yeah, there was one strange guy. But he didn't tell me what that thing was, he just tried to sell it to me. But what would I need it for, if I had no idea what's it for? How would I resell it? So, I just refused"+ NPCharSexPhrase(npchar, "","") +", and he went away";
-				link.l1 = "And how did he look like and where did he go? I need that instrument badly.";
+				dialog.text = "Hmm... Yeah, there was one strange guy. But he didn't tell me what that thing was, he just tried to sell it to me. But what would I need it for, if I had no idea what it's for? How would I resell it? So, I just refused"+NPCharSexPhrase(npchar,"","")+", and he walked away";
+				link.l1 = "And what did he look like, and where did he go? I need that instrument badly.";
 				link.l1.go = "Device_Common";
 			}
 			else
@@ -450,14 +450,14 @@ void ProcessDialogEvent()
 			// тут работает везение
 			if (sti(pchar.questTemp.Mangarosa.m_count) == 5 || GetSummonSkillFromName(pchar, SKILL_FORTUNE) > 10+hrand(30)+hrand(40, "1"))
 			{
-				dialog.text = "Show it to me... Yes, that's an interesting plant. And a very, very rare one. It is called Manga Rosa. I don't know what it is used for, but there was an interesting fact relevant to it...";
+				dialog.text = "Show it to me... Yes, that's an interesting plant. And a very, very rare one. It's called Manga Rosa. I don't know what it's used for, but there is an interesting fact about it...";
 				link.l1 = "What do you mean?";
 				link.l1.go = "mangarosa_1";
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("Show it to me... Yes, that's an interesting plant. But, unfortunately, I can't tell you more than that. If it is indeed used for some purpose, it's unknown to me.","Let's see... Hmm... It looks like a medicinal plant, but I don't know anything about it. Sorry, I can't help you.","Where is it? Hmm... No, I've never seen this one before. It sure looks very interesting, but I have no clue what it's used for...");
-				link.l1 = "I see. Well, I'll ask around some more. Sorry.";
+				dialog.text = LinkRandPhrase("Show it to me... Yes, that's an interesting plant. But unfortunately, I can't tell you more than that. If it is indeed used for some purpose, it's unknown to me.","Let's see... Hmm... It looks like a medicinal plant, but I don't know anything about it. Sorry, I can't help you.","Where is it? Hmm... No, I've never seen this one before. It certainly looks very interesting, but I have no clue what it's used for...");
+				link.l1 = "I see. Well, I'll ask around a bit more. Sorry.";
 				link.l1.go = "mangarosa_exit";
 			}
 		break;
@@ -469,8 +469,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_1":
-			dialog.text = "Nomadic gypsies and savages show great interest in these plants. I saw once a gypsy paying handful of gold for just one stem such as this one. But I have no idea why would they need it.";
-			link.l1 = "I see... Well, it's something at least! Now I know where to ask further. Thank you very much!";
+			dialog.text = "Nomadic gypsies and savages show great interest in these plants. I once saw a gypsy pay a handful of gold for just one stem like this. But I have no idea why they would need it.";
+			link.l1 = "I see... Well, it's something at least! Now I know where to ask next. Thank you very much!";
 			link.l1.go = "mangarosa_2";
 		break;
 		
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "UV_Lavochniki_2":
-			dialog.text = "Much to my regret, Captain, such exquisite pieces have not graced my establishment for quite some time. The affluent patrons of this port seldom favor my modest shop with their presence, and my regular customers seek only what their meager purses can afford.";
+			dialog.text = "Much to my regret, Captain, such exquisite pieces have not graced my establishment for quite some time. The affluent patrons of this port seldom favour my modest shop with their presence, and my regular customers seek only what their meagre purses can afford.";
 			link.l1 = "Very well...";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_2");
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "UV_Lavochniki_3_1":
-			dialog.text = "Tristan Renier, captain of the 'Golden Seagull'. His vessel remains anchored in our harbor. Though I must confess, I question whether he would relinquish such a prize. Should he prove unwilling, return to me on the morrow. On my honor, Captain, you shall find the arrangement most satisfactory.";
+			dialog.text = "Tristan Renier, captain of the 'Golden Seagull'. His vessel remains anchored in our harbor. Though I must confess, I question whether he would relinquish such a prize. Should he prove unwilling, return to me on the morrow. On my honour, Captain, you shall find the arrangement most satisfactory.";
 			link.l1 = "...";
 			link.l1.go = "UV_Lavochniki_exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");

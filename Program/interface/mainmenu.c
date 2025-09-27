@@ -58,6 +58,9 @@ void InitInterface(string iniName)
 
 	GameInterface.SavePath = "SAVE";
 
+	// логотип
+	SetMenuLogo();
+
 	// кнопка "продолжить игру" --->
 	string saveName = GetLastSavePathFromCurrentProfile();
 	string saveData;
@@ -118,25 +121,29 @@ void InitInterface(string iniName)
 	{ 
 		if(Whr_IsNight())
 		{
-			SetSoundScheme("mainmenu_night_rain");
+            if (!CheckScheme("mainmenu_night_rain"))
+                UpdateSoundScheme("mainmenu_night_rain", true);
 		}
 		else
 		{
-			SetSoundScheme("mainmenu_day_rain");
+            if (!CheckScheme("mainmenu_day_rain"))
+                UpdateSoundScheme("mainmenu_day_rain", true);
 		}
     }
 	else
 	{ 
 		if(Whr_IsNight())
 		{
-			SetSoundScheme("mainmenu_night");
+            if (!CheckScheme("mainmenu_night"))
+                UpdateSoundScheme("mainmenu_night", true);
 		}
 		else
 		{
-			SetSoundScheme("mainmenu_day");
+            if (!CheckScheme("mainmenu_day"))
+                UpdateSoundScheme("mainmenu_day", true);
 		}
 	}
-    
+
 	SetMusic("music_MainMenu");
 	// запуск титров после прохождения игры
 	if(CheckAttribute(&InterfaceStates, "MainMenu.InstantCredits")) {
@@ -461,7 +468,6 @@ void MainMenu_CreateShip()
 	
 	rCharacter.TmpPerks = "";
 	aref aTmpPerks; makearef(aTmpPerks, rCharacter.TmpPerks);
-	aTmpPerks.StormProfessional		= 0;
 	
 	SendMessage(&InterfaceBackScene, "lsa", 2, "ship", &rCharacter); // set ship position
 	CreateEntity( rCharacter, "ship" );

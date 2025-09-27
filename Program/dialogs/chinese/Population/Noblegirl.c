@@ -53,7 +53,7 @@ void ProcessDialogEvent()
                     DeleteAttribute(link, "l2");
                 }
                 //<== 圣慈悲号上的检查官来了
-                //==> 贝丝夫人在港口城市
+                //==> 贝丝女士在港口城市
                 if (CheckAttribute(pchar, "questTemp.LadyBeth.CaptainInColony") && pchar.location == pchar.questTemp.LadyBeth.CaptainInColony + "_town")
                 {
                     dialog.Text = findLedyBethRumour(npchar);
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
                     link.l1.go = "exit";
                     DeleteAttribute(link, "l2");
                 }
-                //<== 贝丝夫人在港口城市
+                //<== 贝丝女士在港口城市
             }
             else
             {

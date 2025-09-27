@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 		
 		case "map_1":
 			dialog.text = "不行。 我要金币。 没得商量。 ";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 200)
+			if (PCharDublonsTotal() >= 200)
 			{
 				link.l1 = "好吧。 给你金币, 我买了。 ";
 				link.l1.go = "map_2";
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map_2":
-			RemoveItems(pchar, "gold_dublon", 200);
+			RemoveDublonsFromPCharTotal(200);
 			PlaySound("interface\important_item.wav");
 			Log_Info("你获得了废弃船只城地图");
 			GiveItem2Character(pchar, "map_LSC");

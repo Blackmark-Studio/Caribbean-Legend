@@ -1,78 +1,16 @@
-quests_reaction_1
-{
-El oficial @<GetFullName(npchar)> está a bordo.
-}
-
-quests_reaction_2
-{
-@<GetFullName(npchar)> se rindió.
-}
-
-quests_reaction_3
-{
-Los cadáveres de los rebeldes fueron arrojados por la borda en su último viaje.
-}
-
-quests_reaction_4
-{
-El motín fue sofocado
-}
-
-quests_reaction_5
-{
-@<GetCityName(sld.City)> ¡Es nuestra!
-}
-
-quests_reaction_6
-{
-Alguien había hurgado en tus bolsillos.
-}
-
-quests_reaction_7
-{
-Hace poco hubo una pelea cerca del faro. Un capitán había intentado contrabandear algunas mercancías, pero nuestro grupo de patrulla lo atrapó en el acto. ~
-}
-
-quests_reaction_8
-{
-¡Fue un tiroteo increible! ¡Una bala de cañón destrozó el techo de la tienda! Pero todo fue en vano. Los contrabandistas locales se escondieron en la jungla y el capitán se fue. ¡Engañó a nuestros soldados fácilmente, te lo aseguro! ¡También es un piloto excelente, escapó de la bahía como un rey!
-}
-
-quests_reaction_9
-{
-
-}
-quests_reaction_10
-{
-
-}
-
-quests_reaction_11
-{
-, en ¬
-}
-
-quests_reaction_12
-{
-Los plazos de entrega han expirado.
-}
-
-quests_reaction_13
-{
-Pasaron algunas horas...
-}
-
-quests_reaction_14
-{
-Pasó una hora...
-}
-
-quests_reaction_15
-{
-Pasó un día...
-}
-
-quests_reaction_16
-{
-Pasaron algunos días...
-}
+quests_reaction_1 {El oficial @<GetFullName(npchar)> está a bordo.}
+quests_reaction_2 {@<GetFullName(npchar)> se rindió.}
+quests_reaction_3 {Los cadáveres de los rebeldes fueron arrojados por la borda en su último viaje.}
+quests_reaction_4 {El motín fue sofocado}
+quests_reaction_5 {¡@<GetCityName(sld.City)> es nuestra!}
+quests_reaction_6 {Alguien había hurgado en tus bolsillos.}
+quests_reaction_7 {Hace poco hubo una pelea cerca del faro. Un capitán había intentado contrabandear algunas mercancías, pero nuestro grupo de patrulla lo atrapó en el acto. ~}
+quests_reaction_8 {¡Fue un tiroteo increible! ¡Una bala de cañón destrozó el techo de la tienda! Pero todo fue en vano. Los contrabandistas locales se escondieron en la jungla y el capitán se fue. ¡Engañó a nuestros soldados fácilmente, te lo aseguro! ¡También es un piloto excelente, escapó de la bahía como un rey!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {en}
+quests_reaction_12 {Los plazos de entrega han expirado.}
+quests_reaction_13 {Pasaron algunas horas...}
+quests_reaction_14 {Pasó una hora...}
+quests_reaction_15 {Pasó un día...}
+quests_reaction_16 {Pasaron algunos días...}

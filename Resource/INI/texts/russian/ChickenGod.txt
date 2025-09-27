@@ -1,18 +1,9 @@
-
 Bridgetown_Dat {Мирабель}
-
 Charles_Dat {Мерилин}
-
 FortFrance_Dat {Авроре}
-
 Marigo_Dat {Йоханне}
-
 Panama_Dat {Долорес}
-
 PortRoyal_Dat {Иде}
-
 SantoDomingo_Dat {Лолите}
-
 Tortuga_Dat {Жанетте}
-
 Villemstad_Dat {Флорентине}

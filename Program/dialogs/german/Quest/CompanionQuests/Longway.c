@@ -82,23 +82,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_OsmatrivaemKautu":
 			DialogExit();
-			
-			if (npchar.id == "Tichingitu")
-			{
-				LAi_SetOfficerType(npchar);
-				npchar.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-				npchar.Dialog.CurrentNode = "Tichingitu_officer";
-			}
-			if (npchar.id == "Duran" || npchar.id == "Folke")
-			{
-				LAi_SetOfficerType(npchar);
-				npchar.Dialog.Filename = "Enc_Officer_dialog.c";
-				npchar.Dialog.CurrentNode = "hired";
-			}
-			ChangeCharacterAddressGroup(npchar, "none", "", "");
-			
-			LAi_SetActorType(pchar);
-			LAi_ActorGoToLocator(pchar, "rld", "loc2", "PZ_OsmatrivaemSunduk", -1);
+			AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_0");
 		break;
 		
 		case "PZ_LigaInJungle_1":
@@ -186,7 +170,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_6":
 			DialogExit();
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			chrDisableReloadToLocation = false;
 			pchar.questTemp.PZ_RazgovorGerrits = true;
@@ -1281,8 +1265,8 @@ void ProcessDialogEvent()
 			link.l1 = "Um ehrlich zu sein... nicht zu weit, ich muss sicherstellen, dass ich nicht vorbeischieße."link.l1.go ="PZ_OliverTrust_Plantation_MediumDistance1";
 			link.l2 = "Ich werde aus der Ferne angreifen - mein Feind wird nicht einmal realisieren, woher ich ihn getroffen habe.";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
-			notification("Jager Unlocked", "Longway");
-			SetCharacterPerk(pchar, "Jager");
+			notification(GetConvertStr("Sniper", "AbilityDescribe.txt")+" Unlocked", "Longway");
+			SetCharacterPerk(pchar, "Sniper");
 		break;
 		
 		case "PZ_OliverTrust_Plantation_MediumDistance1":
@@ -1336,9 +1320,9 @@ void ProcessDialogEvent()
 			//Log_Info("Вы получили двуствольный штуцер");
 			PlaySound("interface\important_item.wav");
 			
-			AddItems(pchar, "cartridge", 50);
+			AddItems(pchar, "bullet", 50);
 			AddItems(pchar, "gunpowder", 50);
-			LAi_SetCharacterUseBullet(pchar, GUN_ITEM_TYPE, "cartridge");
+			LAi_SetCharacterUseBullet(pchar, GUN_ITEM_TYPE, "bullet");
 			
 			dialog.text = "Ein wahrer Jäger! Sei vorsichtig, das war ein Geschenk. Es ist einer dieser seltenen Fälle, in denen eine Waffe sowohl kunstvoll als auch tödlich ist. Ein doppelläufiges Jagdgewehr! Schwer zu halten, einfach zu benutzen. Hast du schon herausgefunden, wie man es abfeuert?";
 			link.l1 = "Verstanden. Vielen Dank!";
@@ -1396,8 +1380,8 @@ void ProcessDialogEvent()
 			link.l1 = "Clewang! Ich erkenne diese Klinge. Leute von den Nachbarinseln benutzen oft eine solche.";
 			link.l1.go = "PZ_OliverTrust_resedinsia_2";
 			pchar.questTemp.PZ_Batavia_resedinsia_Go = true;
-			notification("Duelist Unlocked", "Longway");
-			SetCharacterPerk(pchar, "FencingMaster");
+			notification(GetConvertStr("TannedLeather", "AbilityDescribe.txt") +" Unlocked", "Longway");
+			SetCharacterPerk(pchar, "TannedLeather");
 			SetCharacterPerk(pchar, "HT1");
 		break;
 		
@@ -2095,6 +2079,7 @@ void ProcessDialogEvent()
 			link.l1 = "Sklaven, richtig?";
 			link.l1.go = "PZ_Longway_PosleRasskaza_Shifr_3";
 			AddQuestRecordInfo("PZ_ArchiveOneMerden", "1");
+			RemoveItems(PChar, "MerdokArchive", 1);
 		break;
 		
 		case "PZ_Longway_PosleRasskaza_Shifr_3":
@@ -2799,7 +2784,7 @@ void ProcessDialogEvent()
 			LAi_SetOfficerType(npchar);
 			npchar.Dialog.Filename = "Quest\HollandGambit\Longway.c";
 			npchar.Dialog.CurrentNode = "Longway_officer";
-			LAi_SetCheckMinHP(npchar, 1, true, "SkritoeBessmertie");
+			LAi_SetCheckMinHP(npchar, 1, true, "HiddenImmortality");
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1 = "locator";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.location = "Mayak4";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.locator_group = "goto";
@@ -2918,7 +2903,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_30":
 			DialogExit();
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			LAi_RemoveCheckMinHP(npchar);
 			AddQuestRecord("PZ", "17");
 			sld = &Locations[FindLocation("Mayak4")];
@@ -3133,7 +3118,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_34":
 			DialogExit();
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			if (!CheckAttribute(pchar, "questTemp.PZ.Shipwreckers.Decline")) AddQuestRecord("PZ", "18");
 			else AddQuestRecord("PZ", "18_1");
 			pchar.questTemp.PZ_Beliz_Komendant = true;
@@ -3174,7 +3159,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.jailCanMove = true;
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			sld = CharacterFromID("BelizJailOff");
 			LAi_SetHuberType(sld);
@@ -3683,8 +3668,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_HelenaMary_Exit":
 			DialogExit();
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 			WaitDate("", 0, 0, 0, 2, 0);
 			LAi_SetImmortal(npchar, true);
 			ChangeCharacterAddressGroup(npchar, "Pirates_tavern_upstairs", "goto", "goto1");
@@ -3793,8 +3778,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_MaryHelena_BitvaNaverhu_3":
 			DialogExit();
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 			sld = CharacterFromID("Longway");
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Longway_61";
@@ -5162,12 +5147,12 @@ void ProcessDialogEvent()
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) 
 			{
 				AddLandQuestMark(characterFromId("Terrax"), "questmarkmain");
-				QuestSetCurrentNode("Terrax", "PZ1");
+				QuestSetCurrentNode("Terrax", "PZ_1");
 			}
 			else 
 			{
 				AddLandQuestMark(characterFromId("Vensan"), "questmarkmain");
-				QuestSetCurrentNode("Vensan", "PZ1");
+				QuestSetCurrentNode("Vensan", "PZ_1");
 			}
 			DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
 			chrDisableReloadToLocation = false;
@@ -5178,13 +5163,13 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Mary");
 				AddPassenger(pchar, sld, false);
-				Return_MaryOfficer();
+				ReturnOfficer_Mary();
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				sld = CharacterFromID("Helena");
 				AddPassenger(pchar, sld, false);
-				Return_HelenaOfficer();
+				ReturnOfficer_Helena();
 			}
 			if (!CheckAttribute(pchar, "questTemp.PZ_PredupredilNashuDevushku")) AddQuestRecord("PZ", "31");
 		break;
@@ -5353,8 +5338,8 @@ void ProcessDialogEvent()
 		case "PZ_AnriTibo_6":
 			StartInstantDialog("Tibo", "PZ_AnriTibo_7", "Quest\CompanionQuests\Longway.c");
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		break;
 		
 		case "PZ_AnriTibo_7":
@@ -5474,13 +5459,13 @@ void ProcessDialogEvent()
 
 			LAi_LoginInCaptureTown(npchar, false);
 			AddPassenger(pchar, npchar, false);
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			if (GetCharacterIndex("Tichingitu") != -1)
 			{
 				sld = characterFromId("Tichingitu");
 				AddPassenger(pchar, sld, false);
-				Return_TichingituOfficer();
+				ReturnOfficer_Tichingitu();
 			}
 			
 			PChar.quest.PZ_PoP_Pogonya.win_condition.l1 = "location";
@@ -5751,7 +5736,7 @@ void ProcessDialogEvent()
 			
 			LAi_SetPlayerType(pchar);
 			npchar.greeting = "Longway";
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			bQuestDisableMapEnter = false;
 			Island_SetReloadEnableGlobal("Hispaniola2", true);
@@ -6434,7 +6419,7 @@ void ProcessDialogEvent()
 		break;
 		
 		/*case "PZ_Longway_SisterDialog5":
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			StartInstantDialog("PZ_ChangShin", "PZ_ChangShin_WithLongway3", "Quest\CompanionQuests\Longway.c");
 		break;*/
@@ -7289,7 +7274,7 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
-				Return_LongwayOfficer();
+				ReturnOfficer_Longway();
 				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
 			}
 			LAi_SetFightMode(pchar, true);
@@ -7423,7 +7408,7 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
-				Return_LongwayOfficer();
+				ReturnOfficer_Longway();
 				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
@@ -7455,7 +7440,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Longway_3":
 			DialogExit();
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			chrDisableReloadToLocation = false;
 		break;
 		
@@ -7533,8 +7518,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Legko")) AddPassenger(pchar, npchar, false);
 			LAi_SetPlayerType(pchar);
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		break;
 		
 		case "PZ_TortureRoom_Levasser_18":
@@ -7667,9 +7652,9 @@ void ProcessDialogEvent()
 			PChar.quest.PZ_TortureRoom_Levasser_ObratnoNaBereg.win_condition.l1.locator = "reload1";
 			PChar.quest.PZ_TortureRoom_Levasser_ObratnoNaBereg.win_condition = "PZ_TortureRoom_Levasser_ObratnoNaBereg";
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
-			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) Return_LongwayOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
+			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) ReturnOfficer_Longway();
 			sld = CharacterFromID("Levasser");
 			sld.location = "None";
 			LAi_SetActorType(sld);
@@ -8235,7 +8220,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			DeleteAttribute(npchar, "CompanionDisable");//теперь можем и в компаньоны
 			chrDisableReloadToLocation = false;
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 		break;
 		
 		case "PZ_PuansieDialogWithLevasser_1":

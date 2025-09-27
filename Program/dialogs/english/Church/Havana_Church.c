@@ -4,28 +4,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions, "+ GetSexPhrase("my son","my daughter") +"?", "Ask away, I am listening..."), "I am listening, speak now, "+ GetSexPhrase("my son","my daughter") +"...", "For the third time, "+ GetSexPhrase("my son","my daughter") +", ask for what you need.",
-                          "A clergyman has a lot of work and you are distracting me, "+ GetSexPhrase("my son","my daughter") +"...", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...", "Not at this time, padre..."), "I have nothing to say, my apologies.",
-                      "I'll ask, but later. Forgive me, father.", "Pardon me, holy father...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions, "+GetSexPhrase("my son","my daughter")+"?","Ask away, I'm listening..."),"I am listening, speak now. "+GetSexPhrase("my son","my daughter")+"...","For the third time, "+GetSexPhrase("my son","my daughter")+", ask for what you need.","A clergyman has a lot of work and you are distracting me, "+GetSexPhrase("my son","my daughter")+"...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...","Not at this time, padre..."),"I have nothing to say, my apologies.","I'll ask, but later. Forgive me, father.","Pardon me, holy father...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// калеуче
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana")
 			{
 				ref sld = characterFromId("Villemstad_Priest");
-				link.l1 = "Greetings father. Father superior "+sld.name+" of the church of Willemstad sent me. You told him of strange sightings in a cave on Cuba.";
+				link.l1 = "Greetings, Father. Father Superior "+sld.name+" of the church of Willemstad sent me. You told him about strange sightings in a cave in Cuba.";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
 			if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana1")
 			{
 				link.l1 = "I have visited the cave in the jungle, father.";
 				link.l1.go = "caleuche_4";
+				DelLandQuestMark(npchar);
 			}
 		break;
 		
 		case "caleuche":
-			dialog.text = "Thank God he paid heed to it! Once the gossips about the living dead had reached my ears, I immediately notified His Reverence Father Vincento, the inquisitor of Santiago. He promised to look into it, but so far no action was undertaken! I'm afraid His Reverence has more important matters to attend to...";
-			link.l1 = "I'll look into it myself. Besides, all these gossips are nothing but the ramblings of drunken hunters - therefore the Inquisition hasn't taken them seriously. I'll head into the jungle to witness it with my own eyes.";
+			dialog.text = "Thank God he paid heed to it! Once the gossip about the living dead reached my ears, I immediately notified His Reverence Father Vincento, the inquisitor of Santiago. He promised to look into it, but so far no action has been taken! I'm afraid His Reverence has more important matters to attend to...";
+			link.l1 = "I'll look into it myself. Besides, all these rumours are nothing but the ramblings of drunken hunters - that's why the Inquisition hasn't taken them seriously. I'll head into the jungle to see it with my own eyes.";
 			link.l1.go = "caleuche_1";
 		break;
 		
@@ -36,8 +36,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_2":
-			dialog.text = "Go with the Lord's blessing, my son! Here, take this sanctified amulet. It will help you on your task. Go now, destroy the spawns of evil!";
-			link.l1 = "Until then, Father "+npchar.name+". Once I'm finished I'll return to you immediately.";
+			dialog.text = "Go with the Lord's blessing, my son! Here, take this sanctified amulet. It will help you in your task. Go now, destroy the spawn of evil!";
+			link.l1 = "Until then, Father "+npchar.name+". Once I'm finished, I'll return to you immediately.";
 			link.l1.go = "caleuche_3";
 		break;
 		
@@ -55,6 +55,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				LAi_SetGuardianType(sld);
 				sld.protector = true;
 				LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+				AddLandQuestMark(sld, "questmarkmain");
 			}
 			LocatorReloadEnterDisable("Cuba_Jungle_07", "reload2_back", false);
 			pchar.quest.Caleuche_cuba_caveentrance.win_condition.l1 = "location";
@@ -63,13 +64,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "caleuche_4":
-			dialog.text = "What have you seen, my son? Were our fears groundless?";
-			link.l1 = "I'm afraid not, Father "+npchar.name+". The cave was crawling with undead, but with God's help I came out victorious. They will not bother anyone anymore.";
+			dialog.text = "What have you seen, my son? Were our fears unfounded?";
+			link.l1 = "I'm afraid not, Father "+npchar.name+". The cave was crawling with the undead, but with God's help I emerged victorious. They will not trouble anyone anymore.";
 			link.l1.go = "caleuche_5";
 		break;
 		
 		case "caleuche_5":
-			dialog.text = "Praise the Lord! You're indeed his chastising sword, my son! Please allow me to express my deepest gratitude on behalf of the entire parish of Havana. Please, accept these sanctified amulets as a token of gratitude. You will surely find them useful on your perilous journeys.";
+			dialog.text = "Praise the Lord! You are indeed His chastising sword, my son! Please allow me to express my deepest gratitude on behalf of the entire parish of Havana. Please, accept these sanctified amulets as a token of gratitude. You will surely find them useful on your perilous journeys.";
 			link.l1 = "Thank you, Father "+npchar.name+".";
 			link.l1.go = "caleuche_6";
 		break;
@@ -81,39 +82,39 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			GiveItem2Character(pchar, "amulet_9"); 
 			GiveItem2Character(pchar, "obereg_7"); 
 			GiveItem2Character(pchar, "obereg_11"); 
-			dialog.text = "Additionally I'll make sure both commonfolk and noblemen will know about your heroic deed and I will pray tirelessly for you day and night.";
+			dialog.text = "Additionally, I'll make sure both commoners and noblemen know about your heroic deed, and I will pray tirelessly for you day and night.";
 			link.l1 = "Thank you, Father. I also have one more question to ask.";
 			link.l1.go = "caleuche_7";
 		break;
 		
 		case "caleuche_7":
-			dialog.text = "Ask, my son.";
-			link.l1 = "Tell me, Father "+npchar.name+", did a man by the name of Joachim Merriman arrive at your town recently? Middle-aged Senor, a Portuguese with a moustache, imperial beard and piercing eyes?";
+			dialog.text = "Ask, my child.";
+			link.l1 = "Tell me, Father "+npchar.name+", did a man by the name of Joachim Merriman arrive in your town recently? Middle-aged señor, a Portuguese with a moustache, imperial beard and piercing eyes?";
 			link.l1.go = "caleuche_8";
 		break;
 		
 		case "caleuche_8":
 			sld = characterFromId("Villemstad_Priest");
-			dialog.text = "Neither name nor description rings a bell, I am sorry. Who is this man?";
-			link.l1 = "Merriman is a warlock. The Inquisition has been hunting him for a very long time. Father "+sld.name+" and I suspect that the emergence of the living dead on Cuba is his work. Not long ago he had been living in Willemstad, then he suddenly disappeared. Shortly after the woman who was accommodating him was turned into a walking skeleton.";
+			dialog.text = "Neither the name nor the description rings a bell, I am sorry. Who is this man?";
+			link.l1 = "Merriman is a warlock. The Inquisition has been hunting him for a very long time. Father "+sld.name+" and I suspect that the emergence of the living dead in Cuba is his doing. Not long ago, he had been living in Willemstad, then he suddenly disappeared. Shortly after, the woman who was accommodating him was turned into a walking skeleton.";
 			link.l1.go = "caleuche_9";
 		break;
 		
 		case "caleuche_9":
-			dialog.text = "What a nightmare! I will immediately inform the inquisitors, Father Vincento himself! He must know what's happening here! Tell me, my son, do you think the people who had gone missing in the jungle...?";
-			link.l1 = "Indeed, I'm almost certain that those living dead in the cavern were your former citizens. I want to seek out this Portuguese on Cuba and bring him to heel! That scoundrel managed to get a hold of an old heathen relic - a jade skull of Yum Cimil. I'm afraid that with the artifact and Indian witchery, Merriman will cause even more trouble if nobody stops him anytime soon.";
+			dialog.text = "What a nightmare! I will immediately inform the inquisitors, Father Vincento himself! He must know what's happening here! Tell me, my son, do you think the people who have gone missing in the jungle...?";
+			link.l1 = "Indeed, I'm almost certain that those living dead in the cavern were your former citizens. I want to seek out this Portuguese on Cuba and bring him to heel! That scoundrel managed to get hold of an old heathen relic - a jade skull of Yum Cimil. I'm afraid that with the artifact and Indian witchery, Merriman will cause even more trouble if nobody stops him anytime soon.";
 			link.l1.go = "caleuche_10";
 		break;
 		
 		case "caleuche_10":
-			dialog.text = "Do you believe the undead will be rising again?";
-			link.l1 = "Almost certainly. I am not sure what drives him, but surely his aspirations are far from being virtuous.";
+			dialog.text = "Do you believe the undead will rise again?";
+			link.l1 = "Almost certainly. I am not sure what drives him, but surely his aspirations are far from virtuous.";
 			link.l1.go = "caleuche_11";
 		break;
 		
 		case "caleuche_11":
-			dialog.text = "May the Almighty show mercy on us! Seek him out, my son! I allow you to take any measures against him in the name of our Holy Church! I will immediately dispatch a messenger to Santiago with a report for Father Vincento.";
-			link.l1 = "You doo that. Farewell, Father "+npchar.name+".";
+			dialog.text = "May the Almighty have mercy on us! Seek him out, my son! I permit you to take any measures against him in the name of our Holy Church! I will immediately dispatch a messenger to Santiago with a report for Father Vincento.";
+			link.l1 = "You do that. Farewell, Father "+npchar.name+".";
 			link.l1.go = "caleuche_12";
 		break;
 		
@@ -127,6 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ChangeCharacterComplexReputation(pchar, "fame", 3);
 			ChangeCharacterNationReputation(pchar, SPAIN, 10);
 			AddCharacterExpToSkill(pchar, "Leadership", 500);
+			AddLandQuestMark(characterFromId("Havana_CemeteryMan"), "questmarkmain");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

@@ -29,12 +29,12 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "Chuanzhang. My name Longway. Longway gives his ship under your command. Longway also under your command. Order of mynheer Rodenburg.";
+			dialog.text = "Chuanzhang. My name is Longway. Longway places his ship under your command. Longway is also under your command. By order of mynheer Rodenburg.";
 			link.l1 = "Greetings, Longway. Charles de Maure, at your service. Do you have any leads on the operation to eliminate Jacob van Berg?";
 			link.l1.go = "Longway_friend";
-			link.l2 = "Good to see you, Longway. My name is Charles de Maure. No time to waste - mynheer Rodenburg appreciates fast and high-quality work. Where is Jacob van Berg hiding now?";
+			link.l2 = "Good to see you, Longway. My name is Charles de Maure. No time to waste – mynheer Rodenburg appreciates fast and high-quality work. Where is Jacob van Berg hiding now?";
 			link.l2.go = "Longway_neutral";
-			link.l3 = "Well, and mine is Charles de Maure! To hope that ours will work well together! So, mynheer Longway, to tell me, please, where should ours look for Jacob van Berg?";
+			link.l3 = "Well, and mine is Charles de Maure! Let us hope that ours will work well together! So, mynheer Longway, please tell me, where should ours look for Jacob van Berg?";
 			link.l3.go = "Longway_enemy";
 			NextDiag.TempNode = "First time";
 			pchar.questTemp.HWIC.Holl.JacobCity = SelectJacobCity();
@@ -42,14 +42,14 @@ void ProcessDialogEvent()
 		
 //-----------------------------------------------за Голландию-----------------------------------------------
 		case "Longway_neutral":
-			dialog.text = "Longway sure that we will work well together, chuanzhang. Jacob van Berg currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". I have arranged meeting with him in local tavern. He will be there.";
+			dialog.text = "Longway is sure that we will work well together, chuanzhang. Jacob van Berg is currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". I have arranged a meeting with him in the local tavern. He will be there.";
 			link.l1 = "Let's set sail!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayNeutral = "true";//признак враждебности китайца
 		break;
 		
 		case "Longway_enemy":
-			dialog.text = "Order of mynheer Rodenburg law for Longway... Jacob van Berg currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". I have arranged meeting with him in local tavern. He will be there.";
+			dialog.text = "Order of mynheer Rodenburg's law for Longway... Jacob van Berg currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". I have arranged a meeting with him in the local tavern. He will be there.";
 			link.l1 = "Let's set sail!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayEnemy = "true";//признак враждебности китайца
@@ -57,7 +57,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_friend":
-			dialog.text = "Longway will do all he can, chuanzhang. And Jacob van Berg currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+". I have arranged meeting with him in local tavern. He will be there.";
+			dialog.text = "Longway will do all he can, chuanzhang. And Jacob van Berg is currently at "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+". I have arranged a meeting with him in the local tavern. He will be there.";
 			link.l1 = "Let's set sail!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayFriend = "true";//признак враждебности китайца
@@ -100,21 +100,21 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\hambit\Longway-02.wav");
 			if (pchar.questTemp.HWIC.Holl == "MirageFail")
 			{
-				dialog.text = "You idiot fool Mongol, chuanzhang! We had easy task - capture 'Mirage' without losing 'Meifeng'. She was an easy target without her chuanzhang, yet you failed to do job\nLongway will neither serve you, nor see you no more. Longway sure that Mynheer Rodenburg will approve his decision.";
+				dialog.text = "You idiot fool Mongol, chuanzhang! We had an easy task - capture the 'Mirage' without losing the 'Meifeng'. She was an easy target without her chuanzhang, yet you failed to do the job\nLongway will neither serve you, nor see you anymore. Longway is sure that Mynheer Rodenburg will approve his decision.";
 				link.l1 = "To hell with you and your master!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-10");
 			}
 			if (pchar.questTemp.HWIC.Holl == "JacobOnMain" || pchar.questTemp.HWIC.Holl == "JacobInRoom")
 			{
-				dialog.text = "You idiot Mongol, chuanzhang! We wasted too much time solving your own matters instead of meeting Jacob van Berg. He already gone from "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nYou have failed to do task. Longway doesn't wish neither serve you, nor see you no more. Longway sure that Mynheer Rodenburg will approve his decision.";
+				dialog.text = "You idiot Mongol, chuanzhang! We wasted too much time dealing with your own affairs instead of meeting Jacob van Berg. He's already gone from "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nYou have failed to complete the task. Longway wishes neither to serve you nor to see you again. Longway is sure that Mynheer Rodenburg will approve his decision.";
 				link.l1 = "To hell with you and your master!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-9");
 			}
 			if (pchar.questTemp.HWIC.Holl == "lateVillemstad")
 			{
-				dialog.text = "Chuanzhang, you wasted too much time without result. This not your ship and Longway not your coolie. Longway return to Willemstad\nLongway neither serve you, nor see you no more. Longway is sure that Mynheer Rodenburg will approve his decision.";
+				dialog.text = "Chuanzhang, you have wasted too much time without results. This is not your ship and Longway is not your coolie. Longway returns to Willemstad\nLongway will neither serve you, nor see you anymore. Longway is sure that Mynheer Rodenburg will approve his decision.";
 				link.l1 = "To hell with you and your master!";
 				link.l1.go = "exit";
 			}
@@ -157,7 +157,7 @@ void ProcessDialogEvent()
 		
 		case "Longway_hire":
 			PlaySound("Voice\English\hambit\Longway-03.wav");
-			dialog.text = "Chuanzhang, Longway left Mynheer Rodenburg. Longway never go back to him. You were kind to Longway and you are brave chuanzhang. Longway want join your crew as your servant, Lord Captain.";
+			dialog.text = "Chuanzhang, Longway left Mynheer Rodenburg. Longway will never go back to him. You were kind to Longway and you are a brave chuanzhang. Longway wants to join your crew as your servant, Lord Captain.";
 			link.l1 = "Not as a servant, but as an officer! Welcome aboard, friend!";
 			link.l1.go = "Longway_hire_1";	
 			link.l2 = "No thanks, Longway. You are a free man. I don't need your services.";
@@ -206,8 +206,8 @@ void ProcessDialogEvent()
 //---------------------------------------------против всех-------------------------------------------------
 		case "Longway_abordage":
 			PlaySound("Voice\English\hambit\Longway-02.wav");
-			dialog.text = "Why you stop? Kill. Longway tired, Longway want death. Xing... forgive me.";
-			link.l1 = "Not so fast, Chinaman. I will kill you if I want, but I need to talk with you first. Your fate depends on your future actions. For now, welcome to my cargo hold!";
+			dialog.text = "Why did you stop? Kill me. Longway is tired, Longway wants death. Xing... forgive me.";
+			link.l1 = "Not so fast, Chinaman. I could kill you if I wished, but I need to speak with you first. Your fate depends on your future actions. For now, welcome to my cargo hold!";
 			link.l1.go = "Longway_abordage_1";			
 		break;
 		
@@ -224,58 +224,58 @@ void ProcessDialogEvent()
 		case "Longway_prisoner":
 			DelLandQuestMark(npchar);
 			dialog.text = "";
-			link.l1 = "Now we can talk without the clash of steel ringing my ears. Listen Longway, I need information and I have no doubt that you know what I need to know. The question is: will you tell me the easy way or the hard way?";
+			link.l1 = "Now we can talk without the clash of steel ringing in my ears. Listen, Longway, I need information and I have no doubt that you know what I need to know. The question is: will you tell me the easy way or the hard way?";
 			link.l1.go = "Longway_prisoner_1";			
 		break;
 		
 		case "Longway_prisoner_1":
 			dialog.text = "";
-			link.l1 = "Keeping silent? Fine. I offer you a deal. I will spare your life and land you on the next shore. In return, you will tell me where and why Lucas Rodenburg has sent you. Deal?";
+			link.l1 = "Keeping silent? Fine. I offer you a deal. I will spare your life and set you ashore at the next land. In return, you will tell me where and why Lucas Rodenburg has sent you. Deal?";
 			link.l1.go = "Longway_prisoner_2";			
 		break;
 		
 		case "Longway_prisoner_2":
 			dialog.text = "";
-			link.l1 = "I know that you understand English, Dutch, and French. You're also a good listener. Now it's time to start talking. You will tell me everything you know eventually. I know you Chinese are proud of your art of torture, but we men of the Occident have made our own advancements in that ancient science. Alonso here is a master of loosening people's tongues. He was a questioner for the Holy Inquisition in Santiago before he hired on my ship. He knows all sorts of tricks which he learnt from the holy fathers who perfected the art of making folk to confess...you don't even have to be a Protestant!";
+			link.l1 = "I know that you understand English, Dutch, and French. You're also a good listener. Now it's time to start talking. You will tell me everything you know eventually. I know you Chinese are proud of your art of torture, but we men of the Occident have made our own advancements in that ancient science. Alonso here is a master at loosening people's tongues. He was a questioner for the Holy Inquisition in Santiago before he signed on to my ship. He knows all sorts of tricks which he learned from the holy fathers who perfected the art of making folk confess... you don't even have to be a Protestant!";
 			link.l1.go = "Longway_prisoner_3";			
 		break;
 		
 		case "Longway_prisoner_3":
 			dialog.text = "";
-			link.l1 = "My wit is wasted on you. You will tell me everything, my slant eyed friend... Everything... But you won't live long after that, no, you won't. Your body will suffer much after meeting with Alonso/. So the choice is yours. Either you tell me all the truth and live, or you tell me all the truth and die in agony on the rack. Wracked with pain on the rack. Get it? Don't worry, I'll be sure to have a priest attendance to baptise you a Christian to spare your pagan soul the eternal fires of hell.";
+			link.l1 = "My wit is wasted on you. You will tell me everything, my slant-eyed friend... Everything... But you won't live long after that, no, you won't. Your body will suffer greatly after meeting Alonso. So the choice is yours. Either you tell me the whole truth and live, or you tell me the whole truth and die in agony on the rack. Wracked with pain on the rack. Get it? Don't worry, I'll be sure to have a priest in attendance to baptise you a Christian, to spare your pagan soul from the eternal fires of hell.";
 			link.l1.go = "Longway_prisoner_4";
 		break;
 		
 		case "Longway_prisoner_4":
 			dialog.text = "";
-			link.l1 = "I see doubt growing in your black eyes. Why should you die for the sins of your master? Is he worth that? Is Rodenburg really worth having your soul ripped out of your suffering body?";
+			link.l1 = "I see doubt growing in your dark eyes. Why should you die for the sins of your master? Is he worth that? Is Rodenburg really worth having your soul ripped out of your suffering body?";
 			link.l1.go = "Longway_prisoner_5";			
 		break;
 		
 		case "Longway_prisoner_5":
-			dialog.text = "Longway speak. But first, Longway wants to be sure that you keep word, chuanzhang.";
+			dialog.text = "Longway will speak. But first, Longway wants to be sure that you will keep your word, chuanzhang.";
 			link.l1 = "Ha! Wise words! I give you my word, boy.";
 			link.l1.go = "Longway_prisoner_6";			
 		break;
 		
 		case "Longway_prisoner_6":
-			dialog.text = "Sorry chuanzhang, your word not enough. You get information and kill Longway after! Longway want guarantees.";
-			link.l1 = "You haggle like a Jew. What guarantees do you want?";
+			dialog.text = "Sorry, chuanzhang, your word is not enough. You get information and kill Longway after! Longway wants guarantees.";
+			link.l1 = "You drive a hard bargain. What guarantees do you want?";
 			link.l1.go = "Longway_prisoner_7";			
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "There is small island Marie Galante at the south of Guadeloupe. Cape Inaccessible. Land Longway there and give him weapon. Only then Longway tell you everything he knows about Lucas Rodenburg.";
+			dialog.text = "There is a small island, Marie Galante, to the south of Guadeloupe. Cape Inaccessible. Land Longway there and give him a weapon. Only then will Longway tell you everything he knows about Lucas Rodenburg.";
 			link.l1 = "You are in no position to bargain with me, Chinaman.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
 		
 		case "Longway_prisoner_8":
-			dialog.text = "You would do same if you were Longway, chuanzhang. Not be easy for your man to get words from me even with tortures. Longway not weak white man.";
-			link.l1 = "Fine. Deal. But I warn you - don't try to play me or I will personally cut you to pieces. A thousand ones, and slowly...just like your emperors do. Alonso!";
+			dialog.text = "You would do the same if you were Longway, chuanzhang. It would not be easy for your men to get words from me, even with torture. Longway is not a weak white man.";
+			link.l1 = "Fine. Deal. But I warn you - don't try to play me or I will personally cut you to pieces. A thousand ways, and slowly...just like your emperors do. Alonso!";
 			link.l1.go = "Longway_prisoner_9";
 			// belamour legendary edition -->
-			link.l2 = "You speak true. But keep in mind - I've come too far for you to mess this up. If you try and stop me, I will end your life like stepping on an insect.";
+			link.l2 = "You speak the truth. But keep in mind - I've come too far for you to mess this up. If you try to stop me, I will end your life as easily as stepping on an insect.";
 			link.l2.go = "Longway_prisoner_9a";
 		break;
 		
@@ -324,8 +324,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Have we arrived at Marie Galante, chuanzhang?";
-			link.l1 = "Cool your heels, we will be there soon.";
+			dialog.text = "Have we arrived at Marie Galante, captain?";
+			link.l1 = "Cool your heels, we'll be there soon.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";
 		break;
@@ -337,49 +337,49 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_11":
-			dialog.text = "Longway remembers. He will answer everything you ask about Rodenburg, chuanzhang.";
+			dialog.text = "Longway remembers. He will answer anything you ask about Rodenburg, chuanzhang.";
 			link.l1 = "Start talking.";
 			link.l1.go = "Longway_prisoner_12";			
 		break;
 		
 		case "Longway_prisoner_12":
-			dialog.text = "'Meifeng' was sailing from the port of Willemstad to the North to the shores of St. Christopher. In five days there would be a galleon under the command of Peter Stuyvesant. Longway's order was to sink this ship with its captain aboard.";
+			dialog.text = "'Meifeng' was sailing from the port of Willemstad northwards to the shores of St. Christopher. In five days, there would be a galleon under the command of Peter Stuyvesant. Longway's order was to sink this ship with its captain aboard.";
 			link.l1 = "God in heaven! Rodenburg ordered you to kill Stuyvesant? That's madness!";
 			link.l1.go = "Longway_prisoner_13";			
 		break;
 		
 		case "Longway_prisoner_13":
-			dialog.text = "Longway speaks truth, captain. That was order of Mynheer Rodenburg. Longway didn't like it but Longway doesn't question orders.";
-			link.l1 = "How very much like a Chinaman. What game is your master up to?";
+			dialog.text = "Longway speaks the truth, captain. That was the order of Mynheer Rodenburg. Longway didn't like it, but Longway doesn't question orders.";
+			link.l1 = "How very much like a Chinaman. What game is your master playing at?";
 			link.l1.go = "Longway_prisoner_14";			
 		break;
 		
 		case "Longway_prisoner_14":
-			dialog.text = "Not my master anymore, chuanzhang. Longway not going to return to Mynheer Rodenburg. Rodenburg has seized power in Curacao. Mathias Beck was easy prey, Rodenburg's authority and connections with commandant enough to put the governor in jail\nThe only obstacle left is West India Company director, Mynheer Stuyvesant. Once Stuyvesant eliminated, Rodenburg will hold every office of power in Dutch colonies.";
-			link.l1 = "Tell me, Longway, what has made a respected and powerful man such as Rodenburg to perform such a radical actions against his company and republic? And don't tell me it's from a touch of the sun or an outburst of insanity.";
+			dialog.text = "Not my master anymore, chuanzhang. Longway is not going to return to Mynheer Rodenburg. Rodenburg has seized power in Curacao. Mathias Beck was easy prey; Rodenburg's authority and connections with the commandant were enough to put the governor in jail\nThe only obstacle left is the West India Company director, Mynheer Stuyvesant. Once Stuyvesant is eliminated, Rodenburg will hold every office of power in the Dutch colonies.";
+			link.l1 = "Tell me, Longway, what has made a respected and powerful man such as Rodenburg perform such radical actions against his company and republic? And don't tell me it's from a touch of the sun or an outburst of insanity.";
 			link.l1.go = "Longway_prisoner_15";			
 		break;
 		
 		case "Longway_prisoner_15":
-			dialog.text = "Longway wanted to know himself from you, chuanzhang. It was you who captured Company packet ship and took letter to Rodenburg, right? The reason in that letter.";
-			link.l1 = "I see now... Seems that there are a lot of wonderful things in John Murdock's archive to make Rodenburg scared enough to launch a rebellion against his own country.";
+			dialog.text = "Longway wanted to hear it from you himself, chuanzhang. You were the one who captured the Company packet ship and brought the letter to Rodenburg, right? The reason was in that letter.";
+			link.l1 = "I see now... It seems there are plenty of remarkable things in John Murdock's archive to make Rodenburg frightened enough to launch a rebellion against his own country.";
 			link.l1.go = "Longway_prisoner_16";			
 		break;
 		
 		case "Longway_prisoner_16":
-			dialog.text = "Want to know anything else, chuanzhang?";
+			dialog.text = "Want to know anything else, captain?";
 			link.l1 = "Yes. What else has Rodenburg done?";
 			link.l1.go = "Longway_prisoner_17";			
 		break;
 		
 		case "Longway_prisoner_17":
-			dialog.text = "Mynheer Rodenburg has ordered to kill you. Longway was in Caracas before hunting Stuyvesant and had a meeting with Chuanzhang Jacob and gave him orders.";
+			dialog.text = "Mynheer Rodenburg has ordered your death. Longway was in Caracas before hunting Stuyvesant, had a meeting with Chuanzhang Jacob, and gave him orders.";
 			link.l1 = "Captain Jacob van Berg?";
 			link.l1.go = "Longway_prisoner_18";			
 		break;
 		
 		case "Longway_prisoner_18":
-			dialog.text = "You are well informed. Yes. Chuanzhang Jacob van Berg is hunting you, captain. He will eventually find you. No one able to hide from van Berg for long.";
+			dialog.text = "You are well informed. Yes. Chuanzhang Jacob van Berg is hunting you, captain. He will eventually find you. No one is able to hide from van Berg for long.";
 			link.l1 = "If he bleeds, I can kill him. I will deal with van Berg and his vaunted ghost ship.";
 			link.l1.go = "Longway_prisoner_19";			
 		break;
@@ -397,14 +397,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_21":
-			dialog.text = "One last advice, chuanzhang. You must take 'Meifeng' if you want to get close to the galleon without being attacked.";
-			link.l1 = "Understood. Thanks for your information.";
+			dialog.text = "One last piece of advice, chuanzhang. You must take 'Meifeng' if you want to get close to the galleon without being attacked.";
+			link.l1 = "Understood. Thank you for the information.";
 			link.l1.go = "Longway_prisoner_22";			
 		break;
 		
 		case "Longway_prisoner_22":
-			dialog.text = "Longway leaving now. Farewell, chuanzhang.";
-			link.l1 = "Godspeed, my Oriental fellow.";
+			dialog.text = "Longway is leaving now. Farewell, chuanzhang.";
+			link.l1 = "Godspeed, my Eastern friend.";
 			link.l1.go = "Longway_prisoner_23";			
 		break;
 		
@@ -425,10 +425,10 @@ void ProcessDialogEvent()
 		
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Longway_officer":
-			dialog.text = "Longway listening, chuanzhang.";
+			dialog.text = "Listening closely, captain.";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Longway, I am going to an ancient Indian city Tayasal. I will be clear, this is going to be a really dangerous trip and it is also a mystic one - we will get there through the teleport idol. Will you... join me?";
+				Link.l4 = "Longway, I am going to the ancient Indian city of Tayasal. I'll be clear, this is going to be a truly dangerous journey, and a mystical one as well – we will get there through the teleport idol. Will you... join me?";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -436,17 +436,17 @@ void ProcessDialogEvent()
            	// boal отчёт о корабле
 			if(CheckAttribute(NPChar, "treasurer") && NPChar.treasurer == 1)
 			{
-			    Link.l11 = "Longway, give me a full ship report.";
+			    Link.l11 = "Longway, give me a full report on the ship.";
 			    Link.l11.go = "QMASTER_1";
 				
 			    // Warship. Автозакупка товара
-				Link.l12 = "I want you to purchase certain goods every time we are docked.";
+				Link.l12 = "I want you to purchase certain goods every time we dock.";
 				Link.l12.go = "QMASTER_2";
 			}
 
 			if (CheckAttribute(NPChar, "IsCompanionClone"))//////////////////компаньон//////////////////////////////////////////////
 			{
-				//dialog.text = "Я прибыл по вашему распоряжению, капитан.";
+				//dialog.text = "I have arrived at your command, Captain.";
 				Link.l2 = "I need to give you several orders.";
 				Link.l2.go = "Companion_Tasks";
 				NextDiag.TempNode = "Longway_officer";// не забыть менять в зависисомости от оффа
@@ -461,13 +461,13 @@ void ProcessDialogEvent()
 		
 		/////////////////////////// ответы для казначея ///////////////////////////////////
 		case "QMASTER_1":
-			dialog.Text = "Longway has never been purser, chuanzhang. Longway can tell you how to navigate from Trinidad to Havana and how long it will take. But Longway never count cargo, sales, and trade.";
-			Link.l1 = "I guess you are right. It would be a shame to waste such a fine navigator.";
+			dialog.Text = "Longway has never been purser, chuanzhang. Longway can tell you how to navigate from Trinidad to Havana and how long it will take. But Longway never counts cargo, sales, or trade.";
+			Link.l1 = "I suppose you're right. It would be a shame to waste such a fine navigator.";
 			Link.l1.go = "exit";
 		break;	
 
 		case "QMASTER_2":
-			dialog.text = "Longway not trade with gwailo, chuanzhang. Longway always stood at the helm, not shop where old hooknose bargain to last piece of eight.";
+			dialog.text = "Longway does not trade with gwailo, chuanzhang. Longway has always stood at the helm, not in a shop where old hooknose bargains over the last piece of eight.";
 			link.l1 = "Hm, you're right. You'd probably scare the merchants.";
 			link.l1.go = "exit";
 		break;
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 			Link.l2.go = "Companion_TaskChange";
 			if (bBettaTestMode) // Только при бета-тесте
 			{
-				Link.l3 = "I want you to leave my squadron for a while and seek fortune on your own.";
+				Link.l3 = "I want you to leave my squadron for a while and seek your fortune on your own.";
 				Link.l3.go = "CompanionTravel";
 			}
 			Link.l8 = "Nothing so far.";
@@ -489,7 +489,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Companion_TaskBoarding":
-			dialog.Text = "What is your wish.";
+			dialog.Text = "What is your wish?";
 			Link.l1 = "Don't board enemy ships. Take care of yourself and the crew.";
 			Link.l1.go = "Companion_TaskBoardingNo";
 			Link.l2 = "I want you to board enemy ships aggressively.";
@@ -497,10 +497,10 @@ void ProcessDialogEvent()
 		break;
 
 		case "Companion_TaskChange":
-			dialog.Text = "What is your wish.";
-			Link.l1 = "Don't swap your ship for another one after boarding her. She's too valuable.";
+			dialog.Text = "What is your wish?";
+			Link.l1 = "Don't swap your ship for another after boarding her. She's too valuable.";
 			Link.l1.go = "Companion_TaskChangeNo";
-			Link.l2 = "When you are boarding enemy ships, you can take them for yourself, if they happen to be decent.";
+			Link.l2 = "When you board enemy ships, you can claim them for yourself, if they happen to be decent.";
 			Link.l2.go = "Companion_TaskChangeYes";
 		break;
 
@@ -533,7 +533,7 @@ void ProcessDialogEvent()
 		break;
 	//	<========////////////////////////////////////////
 		case "stay_follow":
-            dialog.Text = "Orders, chuanzhang?";
+            dialog.Text = "Orders, captain?";
             Link.l1 = "Stand fast!";
             Link.l1.go = "Boal_Stay";
             Link.l2 = "Follow me and keep up!";
@@ -550,12 +550,12 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
-					Link.l4 = "Change the type of ammo for your musket.";
+					Link.l4 = "Change the type of ammunition for your musket.";
 					Link.l4.go = "SetMusketBullets";
 				}
-					Link.l5 = "Change your priority weapon for combat.";
+					Link.l5 = "Change your primary weapon for combat.";
 					Link.l5.go = "SetPriorityMode";
-					Link.l6 = "I want you to fire at the enemies from a specific distance, Lonway.";
+					Link.l6 = "I want you to fire at the enemy from a specific distance, Lonway.";
 					Link.l6.go = "TargetDistance";
 			}	
 		break;
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -617,13 +617,13 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;
 		
 		case "SetPriorityMode":
-			Dialog.Text = "At the beginning of the fight you will use:";
+			Dialog.Text = "At the beginning of the fight, you will use:";
 			Link.l1 = "Blade";
 			Link.l1.go = "BladePriorityMode";
 			Link.l2 = "Musket";
@@ -643,7 +643,7 @@ void ProcessDialogEvent()
         case "Boal_Stay":
             Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
             AddDialogExitQuestFunction("LandEnc_OfficerStay");
-            dialog.Text = "There is change of disposition!";
+            dialog.Text = "There is a change of disposition!";
             Link.l1 = "Dismissed.";
             Link.l1.go = "Exit";
             Npchar.chr_ai.tmpl = LAI_TMPL_STAY;
@@ -651,14 +651,14 @@ void ProcessDialogEvent()
         
         case "Boal_Follow":
             SetCharacterTask_FollowCharacter(Npchar, PChar);
-            dialog.Text = "There is change of disposition!";
+            dialog.Text = "There is a change of disposition!";
             Link.l1 = "Dismissed.";
             Link.l1.go = "Exit";
         break;
 		
 		//--> задать дистанцию стрельбы
 		case "TargetDistance":
-			dialog.text = "And what distance would that be? Keep in mind, Lord Captain, you can't hit anything with a musket beyond twenty meters.";
+			dialog.text = "And what distance would that be? Keep in mind, Lord Captain, you can't hit anything with a musket beyond twenty metres.";
 			link.l1 = "";
 			Link.l1.edit = 3;
 			link.l1.go = "TargetDistance_1";			
@@ -669,13 +669,13 @@ void ProcessDialogEvent()
 			if (iTemp < 0)
 			{
 				dialog.text = "What do you mean, Lord Captain?";
-				link.l1 = "Sorry, sometimes I forget you're not great with jokes.";
+				link.l1 = "Sorry, sometimes I forget you're not good with jokes.";
 				link.l1.go = "exit";
 				break;
 			}
 			if (iTemp == 0)
 			{
-				dialog.text = "I'll hold my ground but fire at any enemy that comes too close. Is that what you want?";
+				dialog.text = "I'll hold my ground and fire at any enemy that comes too close. Is that what you want?";
 				link.l1 = "Yes, exactly, Lonway.";
 				link.l1.go = "exit";
 				npchar.MusketerDistance = 0;
@@ -683,8 +683,8 @@ void ProcessDialogEvent()
 			}
 			if (iTemp > 20)
 			{
-				dialog.text = "That's too far, Lord Captain. You might hit into a crowd, but aiming at a single target - no chance.";
-				link.l1 = "It'd be worth a try, but alright.";
+				dialog.text = "That's too far, Lord Captain. You might hit a crowd, but aiming at a single target - no chance.";
+				link.l1 = "It might be worth a try, but alright.";
 				link.l1.go = "exit";
 				npchar.MusketerDistance = 20.0;
 				break;
@@ -699,8 +699,8 @@ void ProcessDialogEvent()
 	
 	// на Тайясаль
 		case "tieyasal":
-			dialog.text = "Longway has been following you for a long time. Longway will follow you as always. Longway not leave his chuanzhang.";
-			link.l1 = "Thank you, Longway! I am glad that I was right about you.";
+			dialog.text = "Longway has been following you for a long time. Longway will follow you as always. Longway will not leave his chuanzhang.";
+			link.l1 = "Thank you, Longway! I'm glad I was right about you.";
 			link.l1.go = "tieyasal_1";
 		break;
 		

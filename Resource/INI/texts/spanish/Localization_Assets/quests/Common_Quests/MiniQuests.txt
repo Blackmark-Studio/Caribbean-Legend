@@ -1,113 +1,24 @@
-MiniQuests_1
-{
-
-}
-MiniQuests_2
-{
-
-}
-
-MiniQuests_3
-{
-
-}
-MiniQuests_4
-{
-
-}
-
-MiniQuests_5
-{
-
-}
-MiniQuests_6
-{
-
-}
-
-MiniQuests_7
-{
-
-}
-MiniQuests_8
-{
-
-}
-
-MiniQuests_9
-{
-¡El comerciante ha levantado la bandera negra y nos está atacando!
-}
-
-MiniQuests_10
-{
-Boatswain
-}
-
-MiniQuests_11
-{
-¡El pasajero @<GetFullName(sld)> ha dejado su nave!
-}
-
-MiniQuests_12
-{
-¡El capellán @<GetFullName(sld)> ha dejado su nave!
-}
-
-MiniQuests_13
-{
-goleta '@<pchar.GenQuest.Marginpassenger.ShipName1>'
-}
-
-MiniQuests_14
-{
-convoy comercial
-}
-
-MiniQuests_15
-{
-
-}
-MiniQuests_16
-{
-
-}
-
-MiniQuests_17
-{
-¡El barco enemigo está en el horizonte!
-}
-
-MiniQuests_18
-{
-¡El convoy enemigo está en el horizonte!
-}
-
-MiniQuests_19
-{
-¡Barco pirata en el horizonte!
-}
-
-MiniQuests_20
-{
-@<pchar.GenQuest.FindFugitive.Name> murió de fiebre!
-}
-
-MiniQuests_21
-{
-se ha puesto bajo custodia en su barco a @<sld.name>
-}
-
-MiniQuests_22
-{
-Pasó una hora...
-}
-
-MiniQuests_23
-{
-, que en ~
-}
-MiniQuests_24
-{
-Alonso
-}
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {¡El comerciante ha levantado la bandera negra y nos está atacando!}
+MiniQuests_10 {Boatswain}
+MiniQuests_11 {¡El pasajero @<GetFullName(sld)> ha dejado su nave!}
+MiniQuests_12 {¡El capellán @<GetFullName(sld)> ha dejado su nave!}
+MiniQuests_13 {goleta '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {convoy comercial}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {¡El barco enemigo está en el horizonte!}
+MiniQuests_18 {¡El convoy enemigo está en el horizonte!}
+MiniQuests_19 {¡Barco pirata en el horizonte!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> murió de fiebre!}
+MiniQuests_21 {se ha puesto bajo custodia en su barco a @<sld.name>}
+MiniQuests_22 {Pasó una hora...}
+MiniQuests_23 {, que en ~}
+MiniQuests_24 {Alonso}

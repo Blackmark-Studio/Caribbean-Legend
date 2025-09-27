@@ -24,6 +24,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "Guarda, sto cercando un uomo di nome Bertrand Pinette, ne hai sentito parlare? È arrivato a Portobello non molto tempo fa. Un signore imponente con una parrucca riccia. Un commerciante. Potrebbe essere stato qui...";
                 link.l1.go = "FMQG";
             }
+			//--> Lettera dal defunto
+			if (CheckAttribute(pchar, "questTemp.LFD_Tavern_1"))
+            {
+                link.l1 = "Sai dirmi dove posso trovare Marisa Caldera?";
+                link.l1.go = "LFD_Tavern_1_1";
+            }
+			//<-- Lettera dal defunto
 		break;
 		
 		case "Portobello_rat_1":
@@ -59,6 +66,38 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("FMQ_Guadeloupe", "9");
 			npchar.quest.FMQG = true;
 		break;
+		
+		//--> Письмо от покойника
+		case "LFD_Tavern_1_1":
+			dialog.text = "Marisa? Hm... Non la vedo da un bel po'. Da quando ha ricevuto la notizia della morte del marito, non si è più vista in città.";
+			link.l1 = "Quindi è vedova?";
+			link.l1.go = "LFD_Tavern_1_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "LFD_Tavern_1_2":
+			dialog.text = "Sì. Suo marito era il capitano del pínaco mercantile 'Frangionde'. Grazie alla licenza della Compagnia Olandese delle Indie Occidentali, aveva accesso a quasi tutti i porti dell'arcipelago. Si dice che non sia sopravvissuto a un attacco di pirati tra Belize e Capsterville. Non è raro da queste parti, ma per lei fu un colpo terribile.";
+			link.l1 = "E quindi è semplicemente sparita?";
+			link.l1.go = "LFD_Tavern_1_3";
+		break;
+
+		case "LFD_Tavern_1_3":
+			dialog.text = "Beh, dire che è sparita è forse un'esagerazione. Ma da allora, non la si vede quasi più in città. Strano, però... ogni tanto degli uomini chiedono di lei. Proprio come fai tu, capitano. Se non fosse stata così devota, avrei pensato che... si fosse ritirata dalla vista pubblica e viva come può. Ma Marisa, prima della morte del marito, non perdeva una sola messa: viveva letteralmente in chiesa. Quindi è difficile da credere.";
+			link.l1 = "È tutto? Non sai nient'altro?";
+			link.l1.go = "LFD_Tavern_1_4";
+		break;
+
+		case "LFD_Tavern_1_4":
+			dialog.text = "Capitano, vi ho detto tutto quello che so.";
+			link.l1 = "...";
+			link.l1.go = "LFD_Tavern_1_5";
+		break;
+
+		case "LFD_Tavern_1_5":
+			DialogExit();
+			AddDialogExitQuestFunction("LFD_Tavern_1");
+		break;
+		//<-- Письмо от покойника
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

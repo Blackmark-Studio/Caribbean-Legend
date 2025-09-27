@@ -466,6 +466,16 @@ void ProcessDialogEvent()
 					link.l3.go = "quests";//(перессылка в файл города) */				
 				}
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier") && npchar.location.group == "soldiers" && npchar.city == "Bridgetown")
+			{
+				dialog.text = "Benvenuto a Bridgetown, "+GetAddress_Form(NPChar)+"...";
+				link.l1 = "Pensavo che il mio volto fosse noto non solo nelle colonie francesi... Mi chiamo "+GetFullName(pchar)+".";
+				link.l1.go = "WildRose_Soldier_1";
+				DeleteAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier");
+				DelLandQuestMark(npchar);
+			}
+			//<-- Дикая Роза
 		break;
 		//============================== ноды на разборки при распознавании =========================
 		case "PegYou":
@@ -721,8 +731,68 @@ void ProcessDialogEvent()
 		break;
 		// <-- ночной приключенец
 		
+		//--> Дикая Роза
+		case "WildRose_Soldier_1":
+			if (GetHour() >= 6 && GetHour() <= 21)
+			{
+				dialog.text = "Ah, siete voi, capitano... Questo sole mi ha stordito un po'... Maledetto caldo!";
+			}
+			else
+			{
+				dialog.text = "Non posso che essere d’accordo. Tuttavia, di notte tutti sembrano uguali, sapete com’è.";
+			}
+			link.l1 = "A cosa devo l’onore, soldato? Di solito voi della guarnigione non mi assillate con chiacchiere.";
+			link.l1.go = "WildRose_Soldier_2";
+		break;
+		
+		case "WildRose_Soldier_2":
+			dialog.text = "Ehm, sì, "+GetAddress_Form(NPChar)+". Tuttavia, ho un ordine da parte di Lord Willoughby: devo avvertire tutti i nuovi arrivati sull’isola che qualche giorno fa un gruppo di schiavi è fuggito dalla piantagione di Bishop. Maledetti sorveglianti, dormivano di sicuro mentre quelli rompevano le catene. E dire che oggi sarei dovuto essere tra le braccia della mia cara Angelica...";
+			link.l1 = "Lasciami indovinare: hanno mandato i soldati della guarnigione a recuperare la 'proprietà' del piantatore?";
+			link.l1.go = "WildRose_Soldier_3";
+		break;
+		
+		case "WildRose_Soldier_3":
+			dialog.text = "Eccome... Bishop ha mandato anche alcuni suoi mercenari nella selva, ma non gli basta. Ha promesso una bella ricompensa a chi gli riporterà gli schiavi. Vivi. Di solito fa lavorare i negri fino a spezzargli la schiena, ma di recente è arrivato un carico di disertori della marina — inutili nelle cave, ma abbastanza furbi da svignarsela dalla piantagione...";
+			link.l1 = "Quindi erano bianchi?";
+			link.l1.go = "WildRose_Soldier_4";
+		break;
+		
+		case "WildRose_Soldier_4":
+			dialog.text = "Più bianchi non si può, che il diavolo mi porti! I negri se la sarebbero semplicemente svignata, ma questi si sono presi alcuni moschetti e sciabole dai mercenari che hanno fatto fuori — e li hanno già messi a frutto. Hanno ammazzato uno dei nostri, e anche un paio degli scagnozzi di Bishop — gli altri sono impazziti per questo.\nHanno quasi sparato ai nostri per errore, scambiandoli per i fuggiaschi. E poi ci sono anche dei civili spariti nella selva, senza lasciare traccia.";
+			link.l1 = "Le porte della città sono chiuse?";
+			link.l1.go = "WildRose_Soldier_5";
+		break;
+		
+		case "WildRose_Soldier_5":
+			dialog.text = "Ma no, ovviamente — la città non è in stato d’assedio. Siete libero di andare dove volete. Ma se decidete di darvi alla caccia dei fuggitivi e finite sotto il fuoco incrociato, sarà solo colpa vostra. Se sopravvivete, non andate poi a bussare alla residenza per lamentarvi con Sua Eccellenza — dopotutto, ha già mostrato abbastanza buona volontà da occuparsi non solo degli abitanti di Bridgetown, ma anche dei suoi ospiti.";
+			link.l1 = "Che... gentile da parte sua. Dio benedica Francis Willoughby!";
+			link.l1.go = "WildRose_Soldier_6";
+			link.l2 = "Ah, se solo tutti i governatori si prendessero cura dei nuovi arrivati come fa Sir Willoughby!..";
+			link.l2.go = "WildRose_Soldier_7";
+		break;
+		
+		case "WildRose_Soldier_6":
+			dialog.text = "Molto spiritoso. Potete andare, capitano.";
+			link.l1 = "Ci si vede, soldato.";
+			link.l1.go = "WildRose_Soldier_8";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+		break;
+		
+		case "WildRose_Soldier_7":
+			dialog.text = "Eh già, per noi della guarnigione ci sarebbe molto meno lavoro. Non vi trattengo oltre, capitano.";
+			link.l1 = "Buona fortuna, soldato.";
+			link.l1.go = "WildRose_Soldier_8";
+			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+		break;
+		
+		case "WildRose_Soldier_8":
+			DialogExit();
+			AddDialogExitQuestFunction("WildRose_Etap1_EscapeSlaves");
+		break;
+		//<-- Дикая Роза
+		
 		//замечение по обнажённому оружию
-		case "SoldierNotBlade":
+		case "SoldierNotBlade": 
 			// belamour legendary edition если у герой офицер нации -->
 			if(IsOfficerFullEquip())
 			{

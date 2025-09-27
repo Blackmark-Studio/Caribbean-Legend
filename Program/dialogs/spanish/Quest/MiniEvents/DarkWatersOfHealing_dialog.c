@@ -787,7 +787,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Tu alma es brillante, veo que no eres ningún ignorante, sabes de hierbas como las mejores curanderas. Puedes encontrar muchas cosas, aunque la suerte no siempre esté de tu lado. Se llama mangarosa y si la necesitas, "+GetSexPhrase("el halconcito","la palomita")+" me buscará. Te conseguiré tres tallos, pero no serán gratis: te costarán trescientos cincuenta doblones\nPero esta hierba es caprichosa, así que no me apresures. No la pidas más de una vez al mes - aunque eches todas las cartas del destino, no la conseguiré antes.";
+				dialog.text = "Tu alma es brillante, veo que no eres ningún ignorante, sabes de hierbas como las mejores curanderas. Puedes encontrar muchas cosas, aunque la suerte no siempre esté de tu lado. Se llama mangarosa. Si la necesitas, ven a mí, "+GetSexPhrase("halconcito","palomita")+". Te conseguiré tres tallos, pero no serán gratis: te costarán trescientos cincuenta doblones\nPero esta hierba es caprichosa, así que no me apresures. No la pidas más de una vez al mes - aunque eches todas las cartas del destino, no la conseguiré antes.";
 			}
 			link.l1 = "Bueno, gracias, "+npchar.name+".";
 			link.l1.go = "gypsy_47";

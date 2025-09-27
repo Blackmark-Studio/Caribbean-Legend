@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("VOICE\Russian\Enc_RapersGirl_1.wav");
-				dialog.text = "Месье! Месье, помогите! Убивают!";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", помогите! Убивают!";
 				link.l1 = "А?.. Кого убивают? Где? Что за шутки, милочка?";
 				link.l1.go = "FMQP";
 				break;
@@ -339,7 +339,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, французские миниквесты (ФМК) Порт Пренс
 		case "FMQP":
-			dialog.text = "Это не шутки, месье! Наверху! Наверху, в комнате - два негодяя убивают благородного джентльмена! Помогите, капитан, вы один тут при оружии!";
+			dialog.text = "Это не шутки, "+GetAddress_Form(NPChar)+"! Наверху! Наверху, в комнате - два негодяя убивают благородного джентльмена! Помогите, капитан, кроме вас здесь нет никого при оружии!";
 			link.l1 = "Беги на улицу, зови стражников! Я наверх!!";
 			link.l1.go = "FMQP_1";
 			link.l2 = "Дорогуша, ты, кажется, перепутала меня со стражником. Если кого-то убивают - надо звать патрульных.";

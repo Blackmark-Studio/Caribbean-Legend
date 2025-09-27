@@ -181,7 +181,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_23":			//КОНeЦ ЭТАПА 1
 			DialogExit();
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 
 			AddQuestRecord("DTSG", "2");
 			bDisableFastReload = false;
@@ -690,7 +690,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_52":
-			dialog.text = "我不确定, 船长, 但也许是圣约翰的一个放债人。 ";
+			dialog.text = "我不确定, 船长, 但也许是圣约翰的一个放贷人。 ";
 			link.l1 = "你怎么惹到他的? ";
 			link.l1.go = "DTSG_Knippel_53";
 		break;
@@ -988,7 +988,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Knippel_74":
-			dialog.text = "您想得没错, 先生。 最后我从一个放债人那里借钱, 几乎还清了所有债务。 他当然有能力做这些。 但是... ";
+			dialog.text = "您想得没错, 先生。 最后我从一个放贷人那里借钱, 几乎还清了所有债务。 他当然有能力做这些。 但是... ";
 			link.l1 = "但是什么? 我们会帮你还清债务, 就这样。 你在担心什么? ";
 			link.l1.go = "DTSG_Knippel_75";
 		break;
@@ -1203,7 +1203,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Killer":
-			dialog.text = "还在这儿, 还没被吊死? 好吧, 代苏塞克斯向你问好, 查理。 ";
+			dialog.text = "还在这儿, 还没被吊死? 好吧, 代萨塞克斯向你问好, 查理。 ";
 			link.l1 = "也向你问好, 不管你是谁。 ";
 			link.l1.go = "DTSG_Killer_2";
 			CharacterTurnToLoc(npchar, "goto", "goto9");
@@ -1218,7 +1218,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Killer_3":
 			dialog.text = "这不重要。 你让我们花费了大量时间和金钱, 德莫尔先生。 我想他们不会介意我在这里同时解决掉查理和你。 ";
-			link.l1 = "好吧, 既然我们反正都得死, 能否出于好心告诉我们到底惹了谁? 我们保证不会再犯。 还有, 苏塞克斯是谁? ";
+			link.l1 = "好吧, 既然我们反正都得死, 能否出于好心告诉我们到底惹了谁? 我们保证不会再犯。 还有, 萨塞克斯是谁? ";
 			link.l1.go = "DTSG_Killer_4";
 		break;
 		
@@ -1258,7 +1258,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_KnippelDaySpasen_5":
 			dialog.text = "该死, 先生, 我几乎不敢相信... ";
-			link.l1 = "顺便问一下, 告诉我, 他们指控你什么? 还有, 苏塞克斯是谁? ";
+			link.l1 = "顺便问一下, 告诉我, 他们指控你什么? 还有, 萨塞克斯是谁? ";
 			link.l1.go = "DTSG_KnippelDaySpasen_6";
 		break;
 		
@@ -1294,7 +1294,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_AntiguaNightPirs_2":
 			dialog.text = "该死, 这是个绝妙的主意, 船长! ";
-			link.l1 = "没错。 告诉我, 查理, 你在这里住过一段时间。 你知道那个放债人住在哪里吗? ";
+			link.l1 = "没错。 告诉我, 查理, 你在这里住过一段时间。 你知道那个放贷人住在哪里吗? ";
 			link.l1.go = "DTSG_AntiguaNightPirs_3";
 		break;
 		
@@ -1306,7 +1306,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_AntiguaNightPirs_4":
 			dialog.text = "我相信您会想出办法的, 船长, 毕竟您打败了可怕的卢卡斯.罗登伯格! ";
-			link.l2 = "好吧, 我会处理。 不过, 如果你知道放债人的房子在哪里, 那就更好了! ";
+			link.l2 = "好吧, 我会处理。 不过, 如果你知道放贷人的房子在哪里, 那就更好了! ";
 			link.l2.go = "DTSG_AntiguaIskat_1";
 			link.l1 = "我确实打败了他。 但早晨比晚上更明智, 查理。 我们旅途劳累, 先休息一下, 白天再去 —毕竟我们不是来谋杀那个人的。 ";
 			link.l1.go = "DTSG_AntiguaSpat_1";
@@ -1360,7 +1360,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_SluhSmertFleetWood_3":
 			dialog.text = "您一定是在开玩笑, 船长。 我不了解欧洲的情况, 但在这里每个荷兰人都想让理查德死。 ";
-			link.l1 = "没错。 也许这里有人花大价钱派刺客去旧大陆追杀他。 会不会是追杀你的不是这个 petty 放债人, 而是理查德的某个神秘敌人? ";
+			link.l1 = "没错。 也许这里有人花大价钱派刺客去旧大陆追杀他。 会不会是追杀你的不是这个 petty 放贷人, 而是理查德的某个神秘敌人? ";
 			link.l1.go = "DTSG_Knippel_SluhSmertFleetWood_4";
 		break;
 		
@@ -1443,8 +1443,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_NightKiller":
-			dialog.text = "怎么, 查理, 今晚想和你以前的赞助人躲在一起? 他不在那里。 但你很快就会见到他了。 代苏塞克斯向你问好。 ";
-			link.l1 = "我们已经知道了。 苏塞克斯是谁? 你又是谁? ";
+			dialog.text = "怎么, 查理, 今晚想和你以前的赞助人躲在一起? 他不在那里。 但你很快就会见到他了。 代萨塞克斯向你问好。 ";
+			link.l1 = "我们已经知道了。 萨塞克斯是谁? 你又是谁? ";
 			link.l1.go = "DTSG_NightKiller_2";
 		break;
 		
@@ -1485,7 +1485,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_80":
 			dialog.text = "我没想到会有‘海狐’参与... ";
-			link.l1 = "嗯, 凡事都有第一次。 告诉我, 查理, 苏塞克斯是谁? ";
+			link.l1 = "嗯, 凡事都有第一次。 告诉我, 查理, 萨塞克斯是谁? ";
 			link.l1.go = "DTSG_Knippel_81";
 		break;
 		
@@ -1539,17 +1539,17 @@ void ProcessDialogEvent()
 			dialog.text = "我真的不知道, 先生... ";
 			if (CheckAttribute(pchar, "questTemp.DTSG_Nastoroje2"))
 			{
-				link.l1 = "这不是玩笑, 查理。 追杀你的人可以命令‘海狐’。 他可能也是杀害理查德的幕后黑手。 所以如果你有任何想法, 就分享出来。 苏塞克斯的问候是什么意思, 它是谁? ";
+				link.l1 = "这不是玩笑, 查理。 追杀你的人可以命令‘海狐’。 他可能也是杀害理查德的幕后黑手。 所以如果你有任何想法, 就分享出来。 萨塞克斯的问候是什么意思, 它是谁? ";
 			}
 			else
 			{
-				link.l1 = "别回避了, 查理。 我知道你有事瞒着。 作为你的船长, 我命令你告诉我一切。 苏塞克斯是谁? ";
+				link.l1 = "别回避了, 查理。 我知道你有事瞒着。 作为你的船长, 我命令你告诉我一切。 萨塞克斯是谁? ";
 			}
 			link.l1.go = "DTSG_KnippelRazgovorOProshlom_4";
 		break;
 		
 		case "DTSG_KnippelRazgovorOProshlom_4":
-			dialog.text = "好吧, 船长。 苏塞克斯不是一个人。 它是... 一艘船。 ";
+			dialog.text = "好吧, 船长。 萨塞克斯不是一个人。 它是... 一艘船。 ";
 			link.l1 = "一艘船的问候? 这太荒谬了。 ";
 			link.l1.go = "DTSG_KnippelRazgovorOProshlom_5";
 		break;
@@ -1621,7 +1621,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_4":
-			dialog.text = "铲除一个叛徒。 我们自己人里的。 很快, 一艘来自旧大陆的外交船会出现在多米尼加海岸 —护卫舰‘苏塞克斯’号。 官方说法是, 他们要和荷兰人谈笔好交易。 但实际上... ";
+			dialog.text = "铲除一个叛徒。 我们自己人里的。 很快, 一艘来自旧大陆的外交船会出现在多米尼加海岸 —护卫舰‘萨塞克斯’号。 官方说法是, 他们要和荷兰人谈笔好交易。 但实际上... ";
 			link.l1 = "... 他们要给我们的敌人传递情报吗, 先生? ";
 			link.l1.go = "DTSG_Fleetwood_5";
 		break;
@@ -1639,7 +1639,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_7":
-			dialog.text = "我确定。 还有一件事。 这个叛徒在议会里地位很高, 明白吗? 他可能到处都有眼线 —不只是在国内, 这里, 在加勒比也有。 所以别在镇上提苏塞克斯号或我们任务的任何细节。 ";
+			dialog.text = "我确定。 还有一件事。 这个叛徒在议会里地位很高, 明白吗? 他可能到处都有眼线 —不只是在国内, 这里, 在加勒比也有。 所以别在镇上提萨塞克斯号或我们任务的任何细节。 ";
 			link.l1 = "您不必告诉我, 先生。 老查理永远靠得住。 ";
 			link.l1.go = "DTSG_Fleetwood_8";
 		break;
@@ -1660,7 +1660,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "DTSG_Fleetwood_10":
-			dialog.text = "‘苏塞克斯’号在天际线上, 查理, 准备好。 ";
+			dialog.text = "‘萨塞克斯’号在天际线上, 查理, 准备好。 ";
 			link.l1 = "时刻准备着, 船长。 ";
 			link.l1.go = "DTSG_Fleetwood_11";
 		break;
@@ -2307,7 +2307,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_5":
 			dialog.text = "没有银币 —没有交易。 你以为我会仁慈吗? 先生, 我看起来像圣人吗? ";
-			link.l1 = "但也许你可以等一下? 你方便在哪里。 什么时候再见面? 我可以从放债人那里借杜布隆。 ";
+			link.l1 = "但也许你可以等一下? 你方便在哪里。 什么时候再见面? 我可以从放贷人那里借杜布隆。 ";
 			link.l1.go = "DTSG_Kortni_LT_6";
 		break;
 		
@@ -2340,7 +2340,7 @@ void ProcessDialogEvent()
 			dialog.text = "我几乎遗憾地说, 布莱恩, 恐怕我们的合作到此结束。 ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_11";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_11":
 			DialogExit();
@@ -2356,7 +2356,7 @@ void ProcessDialogEvent()
 			dialog.text = "我... 自由了吗, 上校? 你会取消对我的悬赏吗, 我可以像守法公民一样重新开始? ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_13";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_13":
 			DialogExit();
@@ -2371,7 +2371,7 @@ void ProcessDialogEvent()
 			dialog.text = "我得说你见得太多了 —就像已故的弗利特伍德。 我刚才就在你面前收了贿赂。 ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_15";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_15":
 			DialogExit();
@@ -2386,7 +2386,7 @@ void ProcessDialogEvent()
 			dialog.text = "我... 我不会告诉任何人任何事, 我对上帝发誓! ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_17";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_17":
 			DialogExit();
@@ -2401,7 +2401,7 @@ void ProcessDialogEvent()
 			dialog.text = "当然, 你不会。 ";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_19";
-			CharacterTurnToLoc(npchar, "rld", "aloc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_Mrt_Rocur"));
 		break;
 		case "DTSG_Kortni_LT_19":
 			DialogExit();
@@ -2416,7 +2416,7 @@ void ProcessDialogEvent()
 			dialog.text = "不! ..";
 			link.l1 = "... ";
 			link.l1.go = "DTSG_Kortni_LT_21";
-			CharacterTurnToLoc(npchar, "rld", "loc0");
+			CharacterTurnByChr(npchar, CharacterFromID("DTSG_KortniClone"));
 		break;
 		case "DTSG_Kortni_LT_21":
 			DialogExit();
@@ -2558,7 +2558,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_Kech_3":
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				dialog.text = "我看你知道自己想要什么, 并在生活中追求目标\n好吧。 双桅船是你的了。 但别想那笔钱 —放债人会告诉你他什么都不知道。 ";
+				dialog.text = "我看你知道自己想要什么, 并在生活中追求目标\n好吧。 双桅船是你的了。 但别想那笔钱 —放贷人会告诉你他什么都不知道。 ";
 				link.l1 = "这适合我。 ";
 				link.l1.go = "DTSG_Kortni_Kech_4";
 				pchar.questTemp.DTSG_Kech = true;

@@ -385,20 +385,6 @@ int FindNationExceptNationWithoutPirates(int iNation)
 	return iResultNation;
 }
 
-bool IsStopMapFollowEncounters()
-{
-	int iRelation;
-	for(int i = 0; i < MAX_NATIONS; i++)
-	{
-		iRelation = GetNationRelation2MainCharacter(i);
-		if(iRelation != RELATION_FRIEND)
-		{
-			return false;
-		}
-	}
-	return true;
-}
-
 int GetEnemyNationToMainCharacter()
 {
 	object Relations[MAX_NATIONS];

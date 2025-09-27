@@ -28,7 +28,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ShadowGuarder_1":
-			dialog.text = "A-ah, but I've been waiting for him here! I was told that he would come to a tavern! Sorry, I'm on my way at once.";
+			dialog.text = "A-ah, but I've been waiting for him here! I was told he would come to the tavern! Sorry, I'm on my way at once.";
 			link.l1 = "Very well!";
 			link.l1.go = "ShadowGuarder_2";
 		break;
@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ShadowAgent":
-			dialog.text = "Good evening, captain. Want to get some cheap goods, heh? Follow me!";
+			dialog.text = "Good evening, captain. Looking for some cheap goods, eh? Follow me!";
 			link.l1 = "Lead on.";
 			link.l1.go = "ShadowAgent_1";
 		break;
@@ -60,28 +60,28 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ShadowTrader":
-			dialog.text = "Good evening, mister. It is good to meet a new client, ha! Let me introduce myself: I am " + GetFullName(npchar) + ". I've got the cheapest goods in this town, I assure you.";
-			link.l1 = "Finally we've met..." + npchar.name + ". I suppose, I will disappoint you: I was looking for you not to trade but to end your filthy racket. You've been a great pain in the arse of an important man. The pain has become so great that he is eager to shut you down... by any means necessary.";
+			dialog.text = "Good evening, sir. It's a pleasure to meet a new client, ha! Let me introduce myself: I am "+GetFullName(npchar)+". I've got the cheapest goods in this town, I assure you.";
+			link.l1 = "At last, we've met..."+npchar.name+". I suppose I will disappoint you: I was looking for you not to trade, but to end your filthy racket. You've been a great pain in the arse of an important man. The pain has become so great that he is eager to shut you down... by any means necessary.";
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
 				notification("Trustworthy", "Trustworthy");
-				link.l2 = "Stop right there criminal scum! Didn't you know that you have to pay taxes for operating a commercial business? No one breaks the law on my watch! " + GetFullName(npchar) + ", you violated the law and your stolen goods are now forfeit! There are armed soldiers right behind me outside the door, so don't even try to play dumb!";
+				link.l2 = "Stop right there, criminal scum! Didn't you know that you have to pay taxes to operate a commercial business? No one breaks the law on my watch! "+GetFullName(npchar)+", you have broken the law and your stolen goods are now forfeit! There are armed soldiers right behind me outside the door, so don't even think about playing dumb!";
 				link.l2.go = "ShadowTrader_2";
 			}
 			AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
 		break;
 	
 		case "ShadowTrader_1":
-			dialog.text = "Really? I didn't expect... Who the devil are you?! This is a setup! I guess I know who is responsible for this! By any means necessary... lads, kill him!";
+			dialog.text = "Really? I didn't expect... Who the devil are you?! This is a setup! I think I know who's responsible for this! By any means necessary... lads, kill him!";
 			link.l1 = "Let's dance, scoundrel!";
 			link.l1.go = "ShadowTrader_fight";
 			NextDiag.currentnode = "ShadowTrader_6";
 		break;
 	
 	case "ShadowTrader_2":
-		dialog.text = "Oh God... officer, listen! Let's make a deal. You are a wise and merciful man! I will pay you 5000 pieces of eight and you let us escape through the second floor. You will also take the goods, you need them, right? Why would you need me? I will leave the town right now and no one will ever see us again. And you will get your money. What do you think, officer?";
-		link.l1 = "Do you really think, scum, that I will dishonor my duty for such a petty sum?";
+		dialog.text = "Oh God... officer, listen! Let's make a deal. You are a wise and merciful man! I will pay you 5,000 pieces of eight and you let us escape through the second floor. You will also take the goods, you need them, right? Why would you need me? I will leave the town right now and no one will ever see us again. And you will get your money. What do you think, officer?";
+		link.l1 = "Do you really think, scum, that I would dishonour my duty for such a petty sum?";
 		link.l1.go = "ShadowTrader_3";
 		break;
 	
@@ -92,8 +92,8 @@ void ProcessDialogEvent()
 		break;
 		
 	case "ShadowTrader_4":
-			dialog.text = "Thank you, thank you, thank you officer! Here is your money, and you won't see me here again. Let's go!";
-			link.l1 = "Get out or I will have to arrest you!";
+			dialog.text = "Thank you, thank you, thank you, officer! Here is your money, and you won't see me here again. Let's go!";
+			link.l1 = "Get out or I'll have to arrest you!";
 			link.l1.go = "ShadowTrader_escape";
 		break;
 	
@@ -135,14 +135,14 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ShadowTrader_6":
-			dialog.text = "Ah! Mercy, don't kill me! I will give you all I have!";
-			link.l1 = "All your goods will be confiscated by the authorities. Do you really think that I have mercy on you after what just has happened here?";
+			dialog.text = "Ah! Mercy, don't kill me! I'll give you everything I have!";
+			link.l1 = "All your goods will be confiscated by the authorities. Do you really think I would have mercy on you after what has just happened here?";
 			link.l1.go = "ShadowTrader_7";
 		break;
 	
 		case "ShadowTrader_7":
-			dialog.text = "I... I will give you all my money and belongings! Just let me go! I will leave the island today and you won't see me here again!";
-			link.l1 = "Very well. Give me everything you've got on you and get lost. And don't ever try to do business here again - next time I won't spare your pathetic life, you  brigand.";
+			dialog.text = "I... I'll give you all my money and belongings! Just let me go! I'll leave the island today and you won't see me here again!";
+			link.l1 = "Very well. Give me everything you've got on you and get lost. And don't ever try to do business here again - next time I won't spare your pathetic life, you brigand.";
 			link.l1.go = "ShadowTrader_free";
 			link.l2 = "No way, bastard, you won't buy me off. The only way to deal with your kind is cold steel and hot lead!";
 			link.l2.go = "ShadowTrader_killed";

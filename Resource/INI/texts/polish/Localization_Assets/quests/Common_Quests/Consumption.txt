@@ -1,45 +1,10 @@
-Consumption_1
-{
-
-}
-Consumption_2
-{
-
-}
-
-Consumption_3
-{
-Sergio
-}
-Consumption_4
-{
-Saldo
-}
-
-Consumption_5
-{
-Juan
-}
-Consumption_6
-{
-Gruźlica
-}
-
-Consumption_7
-{
-
-}
-Consumption_8
-{
-
-}
-
-Consumption_9
-{
-Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!
-}
-
-Consumption_10
-{
-Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!
-}
+Consumption_1 { }
+Consumption_2 { }
+Consumption_3 {Sergio}
+Consumption_4 {Saldo}
+Consumption_5 {Juan}
+Consumption_6 {Gruźlica}
+Consumption_7 { }
+Consumption_8 { }
+Consumption_9 {Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!}
+Consumption_10 {Statek za kilka chwil eksploduje! Uciekaj stamtąd natychmiast!}

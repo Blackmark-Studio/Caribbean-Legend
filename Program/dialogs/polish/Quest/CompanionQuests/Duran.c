@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			npchar.loyality = makeint(npchar.loyality) + 10;
-			Return_DurandOfficer();
+			ReturnOfficer_Duran();
 		break;
 		
 		case "SKD_KlodDuran_10":
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_KlodDuran_13":
 			dialog.text = "Dzięki, Kapitanie.";
-			link.l1 = "Czuje, że jeszcze nieraz mi podziękujesz...";
+			link.l1 = "...";
 			link.l1.go = "SKD_KlodDuran_14";
 		break;
 		
@@ -399,7 +399,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("TheFormerKnight", "1");
 			chrDisableReloadToLocation = false;
 			npchar.loyality = makeint(npchar.loyality) + 15;
-			Return_DurandOfficer();
+			ReturnOfficer_Duran();
 			PChar.quest.SKD_DomAnri.win_condition.l1 = "location";
 			PChar.quest.SKD_DomAnri.win_condition.l1.location = "PortRoyal_houseSp1";
 			PChar.quest.SKD_DomAnri.win_condition = "SKD_DomAnri";

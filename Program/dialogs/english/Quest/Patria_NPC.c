@@ -27,7 +27,7 @@ void ProcessDialogEvent()
 		// инспектор Ноэль Форже
 		case "noel":
 			dialog.text = "Nice to meet you, captain!";
-			link.l1 = "I'm glad to meet you too, monsieur Forget. It's a rare occasion to meet a guest from the metropolis here in the wilderness...";
+			link.l1 = "I'm glad to meet you too, Monsieur Forget. It's a rare occasion to meet a guest from the metropolis here in the wilderness...";
 			link.l1.go = "noel_1";
 		break;
 		
@@ -41,14 +41,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_2":
-			dialog.text = "I'm pleased that during this journey I will be on your ship, captain. Chevalier de Poincy told me a lot of interesting stories about you. I'm sure that after the dinner in the messroom we will have plenty of topics to discuss about. A glass of wine could also come in handy.";
-			link.l1 = "I'm all in for a cosy talk, especially when I'm full. I'd be glad to be your companion, Baron. ";
+			dialog.text = "I'm pleased that during this journey I will be on your ship, captain. Chevalier de Poincy told me a lot of interesting stories about you. I'm sure that after dinner in the messroom we will have plenty of topics to discuss. A glass of wine could also come in handy.";
+			link.l1 = "I'm always up for a cosy chat, especially when I'm well fed. I'd be glad to be your companion, Baron. ";
 			link.l1.go = "noel_3";
 		break;
 		
 		case "noel_3":
-			dialog.text = "Perfect. When we go to a colony, I'd ask you to gide me to the governor, and I'll personally explain to him what needs to be done. You'll just wait until I finish my affairs. Deal?";
-			link.l1 = "Aye, monsieur Forget. Welcome aboard!";
+			dialog.text = "Perfect. When we go to a colony, I'd ask you to guide me to the governor, and I'll personally explain to him what needs to be done. You'll just wait until I finish my affairs. Deal?";
+			link.l1 = "Aye, Monsieur Forget. Welcome aboard!";
 			link.l1.go = "noel_4";
 		break;
 		
@@ -58,8 +58,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_5":
-			dialog.text = "Tortuga is a small colony captain. I estimate that it will take me about three days to inspect all I need on this Island.";
-			link.l1 = "Understood, Baron. So in three days time I'll come here to pick you up. Good luck!";
+			dialog.text = "Tortuga is a small colony, Captain. I estimate that it will take me about three days to inspect all I need on this island.";
+			link.l1 = "Understood, Baron. So in three days' time I'll come here to pick you up. Good luck!";
 			link.l1.go = "noel_6";
 		break;
 		
@@ -69,8 +69,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_7":
-			dialog.text = "My work on Tortuga is done, it's time to raise the anchor.";
-			link.l1 = "Understood, Baron. We will be underway immediately.";
+			dialog.text = "My work on Tortuga is done, it's time to weigh anchor.";
+			link.l1 = "Understood, Baron. We will get underway immediately.";
 			link.l1.go = "noel_8";
 		break;
 		
@@ -80,8 +80,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_9":
-			dialog.text = "Yes-yes, we will definitely report on this in Capsterville. The threat of such an important colony being conquered... unthinkable, I will personally make sure that Chevalier de Poincy takes strict and ruthless measures! Captain, I will remain for a week on this island, there are a lot of plantations here, it will take some time.";
-			link.l1 = "Got it, Baron. I will be waiting for you by the governors palace in seven days. Have fun and don't overwork yourself!";
+			dialog.text = "Yes, yes, we will definitely report this in Capsterville. The threat of such an important colony being conquered... unthinkable. I will personally ensure that Chevalier de Poincy takes strict and ruthless measures! Captain, I will remain on this island for a week; there are many plantations here, and it will take some time.";
+			link.l1 = "Got it, Baron. I will be waiting for you by the governor's palace in seven days. Have fun and don't overwork yourself!";
 			link.l1.go = "noel_10";
 		break;
 		
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_11":
-			dialog.text = "There you are, captain. My work on Hipaniola is done, It's time to raise the anchor.";
+			dialog.text = "There you are, captain. My work on Hispaniola is done, it's time to raise the anchor.";
 			link.l1 = "Understood, Baron. We will be underway immediately.";
 			link.l1.go = "noel_12";
 		break;
@@ -108,14 +108,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_14":
-			dialog.text = "Almost there?! Weren't we supposed to visit Saint-Martin too? It also belongs to the French colonies.";
-			link.l1 = "You mean Sint Maarten? It's a Dutch colony, monsieur Forget.";
+			dialog.text = "Almost there?! Weren't we supposed to visit Saint-Martin as well? It's also part of the French colonies.";
+			link.l1 = "You mean Sint Maarten? It's a Dutch colony, Monsieur Forget.";
 			link.l1.go = "noel_15";
 		break;
 		
 		case "noel_15":
-			dialog.text = "Is it? In Paris it was considered to be French. How come?";
-			link.l1 = "No idea, Baron. Ever since I first set foot in the archipelago, Sint Maarten was a Dutch colony. Perhaps I don't know something. You should consider talking to Chevalier de Poincy on this matter.";
+			dialog.text = "Is it? In Paris, it was considered French. How come?";
+			link.l1 = "No idea, Baron. Ever since I first set foot in the archipelago, Sint Maarten has been a Dutch colony. Perhaps there's something I don't know. You should consider talking to Chevalier de Poincy about this matter.";
 			link.l1.go = "noel_16";
 		break;
 		
@@ -137,13 +137,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_18":
-			dialog.text = TimeGreeting()+", captain. I'm glad to see you. I have heard that you were promoted, please accept my congratulations! To tell you the truth, you really are one of the most sensible and gifted officers in de Poincy's service.";
+			dialog.text = TimeGreeting()+", captain. I'm glad to see you. I heard you were promoted, please accept my congratulations! To tell you the truth, you really are one of the most sensible and gifted officers in de Poincy's service.";
 			link.l1 = "Thank you, monsieur.";
 			link.l1.go = "noel_19";
 		break;
 		
 		case "noel_19":
-			dialog.text = "Finally, there is only one colony left then, Saint-Martin. To be honest, I've grown tired of these trips. I'll be glad to finish this inspection and start arranging the next French West-Indies trade campaign. Are we ready to call away the anchor?";
+			dialog.text = "Finally, there is only one colony left, Saint-Martin. To be honest, I've grown tired of these trips. I'll be glad to finish this inspection and start arranging the next French West Indies trade campaign. Are we ready to weigh anchor?";
 			link.l1 = "Aye, Baron. Get on board.";
 			link.l1.go = "noel_20";
 		break;
@@ -155,19 +155,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_21":
-			dialog.text = "Captain, could you tell me what just happened? Does this mean a war? Why in the hell's name were we almost sunk by the Dutch?";
+			dialog.text = "Captain, could you tell me what just happened? Does this mean war? Why in hell's name were we almost sunk by the Dutch?";
 			link.l1 = "Baron, I don't understand anything myself! This must be some kind of misunderstanding, no doubt.";
 			link.l1.go = "noel_22";
 		break;
 		
 		case "noel_22":
-			dialog.text = "Captain, I can bet that this 'misunderstanding' has a name! Peter Stuyvesant, so called 'renter' of Saint-Martin and a partner of our dear Chevalier de Poincy!";
-			link.l1 = "I have no idea, Baron. We better hurry to the Capsterville and report on this matter to the Governor General.";
+			dialog.text = "Captain, I can bet that this 'misunderstanding' has a name! Peter Stuyvesant, the so-called 'renter' of Saint-Martin and a partner of our dear Chevalier de Poincy!";
+			link.l1 = "I have no idea, Baron. We'd better hurry to Capsterville and report this matter to the Governor General.";
 			link.l1.go = "noel_23";
 		break;
 		
 		case "noel_23":
-			dialog.text = "Without a doubt, that's exactly what we will do! And I will demand explanations! I knew that renting an island to the Dutch was a big mistake! Let's leave this place as quick as we can captain, before someone decides to chase us!";
+			dialog.text = "Without a doubt, that's exactly what we will do! And I will demand an explanation! I knew that renting an island to the Dutch was a big mistake! Let's leave this place as quickly as we can, captain, before someone decides to chase us!";
 			link.l1 = "Precisely, monsieur ...";
 			link.l1.go = "noel_24";
 		break;
@@ -179,13 +179,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_25":
-			dialog.text = "Monsieur, first let me congratulate you on your promotion! I eagerly supported the decision of monseigneur de Poincy to grant you the rank of Vice Admiral. You deserve this title! Now, I have recently returned from Saint-Martin. At the warehouses of Philipsburg, we conducted a revision, all Dutch goods were confiscated and now belong to the treasury of France. You, as the commander of a combat operation, have been granted a share of the trophies. I agree with the Chevalier that this is fair. Your goods have been transferred to the warehouse of the St. Christopher store, and you can pick them up whenever you want.";
-			link.l1 = "Thank you, Baron. Let the goods stay there for a while. Upon my return from Curacao, I will take them.";
+			dialog.text = "Monsieur, first let me congratulate you on your promotion! I eagerly supported Monseigneur de Poincy's decision to grant you the rank of Vice Admiral. You truly deserve this title! Now, I have recently returned from Saint-Martin. At the warehouses of Philipsburg, we conducted an inspection; all Dutch goods were confiscated and now belong to the treasury of France. You, as the commander of the operation, have been granted a share of the spoils. I agree with the Chevalier that this is only fair. Your goods have been transferred to the warehouse of the St. Christopher store, and you may collect them whenever you wish.";
+			link.l1 = "Thank you, Baron. Let the goods remain there for a while. Upon my return from Curacao, I will collect them.";
 			link.l1.go = "noel_26";
 		break;
 		
 		case "noel_26":
-			dialog.text = "Good luck in your next campaign, Vice Admiral! I am confident that you will return with victory and justly punish this scoundrel Stuyvesant.";
+			dialog.text = "Good luck in your next campaign, Vice Admiral! I am confident that you will return victorious and justly punish that scoundrel Stuyvesant.";
 			link.l1 = "...";
 			link.l1.go = "noel_27";
 		break;
@@ -198,13 +198,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_28":
-			dialog.text = "Who do we have here! Vice Admiral Charles de Maure! Glad to see you! What's your business in Port-au-Prince?";
-			link.l1 = "I'm pleased to meet you too, Baron. I'm here because of my duty, I had to pay monsieur Jeremy Deschamps du Mussaca a visit of politeness...";
+			dialog.text = "Who do we have here! Vice Admiral Charles de Maure! Glad to see you! What brings you to Port-au-Prince?";
+			link.l1 = "I'm pleased to meet you too, Baron. I'm here because of my duty; I had to pay monsieur Jeremy Deschamps du Mussaca a courtesy visit...";
 			link.l1.go = "noel_29";
 		break;
 		
 		case "noel_29":
-			dialog.text = "This encounter is very fortunate indeed, because I have been waiting for a long time to meet with you personally. I want to talk to you, but not here.";
+			dialog.text = "This encounter is indeed most fortunate, for I have been waiting a long time to meet you in person. I wish to speak with you, but not here.";
 			link.l1 = "Let's go to the tavern then, shall we?";
 			link.l1.go = "noel_30";
 		break;
@@ -217,49 +217,49 @@ void ProcessDialogEvent()
 		
 		case "noel_31":
 			LAi_SetSitType(pchar);
-			dialog.text = "There are no unwanted ears here, we can talk safely...";
+			dialog.text = "There are no unwanted ears here, we can speak freely...";
 			link.l1 = "I'm all ears, Baron.";
 			link.l1.go = "noel_32";
 		break;
 		
 		case "noel_32":
-			dialog.text = "Vice Admiral, you seem to be a man of honour. Such a valiant naval officer just has to be like that...";
+			dialog.text = "Vice Admiral, you seem to be a man of honour. Such a valiant naval officer simply must be like that...";
 			link.l1 = "Hmm... I don't think I fully understand you, monsieur...";
 			link.l1.go = "noel_33";
 		break;
 		
 		case "noel_33":
-			dialog.text = "Monsieur de Maure, I wanted to ask you: what do you think of your liege, Governor General Philippe de Poincy?";
-			link.l1 = "Officer's duty is not to think about his commander, but to follow his orders.";
+			dialog.text = "Monsieur de Maure, I wanted to ask you: what do you think of your liege, Governor-General Philippe de Poincy?";
+			link.l1 = "An officer's duty is not to think about his commander, but to follow his orders.";
 			link.l1.go = "noel_34";
 		break;
 		
 		case "noel_34":
-			dialog.text = "Oh, leave it, Vice Admiral, we're not in the barracks, and not in the de Poincy's hall. I will say it this way: don't you think, that monsieur de Poincy... abuses his power? I still can't forget how we almost went down the drain under the Fort guns of Saint-Martin. I am sure that the treachery of the Dutch had a reason.";
+			dialog.text = "Oh, leave it, Vice Admiral, we're not in the barracks, nor in de Poincy's hall. I'll put it this way: don't you think that monsieur de Poincy... abuses his power? I still can't forget how we almost went under from the Fort guns of Saint-Martin. I'm sure the Dutch treachery had a reason.";
 			link.l1 = "They wanted to conquer the island.";
 			link.l1.go = "noel_35";
 		break;
 		
 		case "noel_35":
-			dialog.text = "Yes, yes, but why exactly at the same moment when I decided to inspect it? Why not a month earlier? Or two months later? I do not believe that this was coincidence, monseigneur. Don't you have any suspicions? We both had our lives at the stake there.";
+			dialog.text = "Yes, yes, but why exactly at the very moment when I decided to inspect it? Why not a month earlier? Or two months later? I do not believe this was a coincidence, monseigneur. Don't you have any suspicions? We both had our lives at stake there.";
 			link.l1 = "I risk my life every day, monseigneur Forget. I think you understand that...";
 			link.l1.go = "noel_36";
 		break;
 		
 		case "noel_36":
-			dialog.text = "Your courage is beyond doubt. But that's not what I wanted to say. You see... When I was doing my job on the Saint-Martin that was liberated by you, I repeatedly heard whisperings from locals about some mine in the depths of the island. I tried to ask people about it, but they just acted foolish. They were afraid... It was obvious that I didn't seem very trustwothy, but this only strengthened my suspicions: could this misterious mine be the reason for all this, Monsieur de Maure? Wars are waged because of gold, am I right?";
-			link.l1 = "There are numerous mines in the archipelago. Most of them are exhauseted and became worthless. I know of one major operating gold mine, it is owned by the Spaniards on South Main. But I've never heard of gold mining on Saint-Martin.";
+			dialog.text = "Your courage is beyond doubt. But that's not what I wanted to say. You see... When I was doing my job on Saint-Martin, which was liberated by you, I repeatedly heard whisperings from locals about some mine in the depths of the island. I tried to ask people about it, but they just acted foolishly. They were afraid... It was obvious that I didn't seem very trustworthy, but this only strengthened my suspicions: could this mysterious mine be the reason for all this, Monsieur de Maure? Wars are waged because of gold, am I right?";
+			link.l1 = "There are numerous mines in the archipelago. Most of them are exhausted and have become worthless. I know of one major operating gold mine; it is owned by the Spaniards on South Main. But I've never heard of gold mining on Saint-Martin.";
 			link.l1.go = "noel_37";
 		break;
 		
 		case "noel_37":
-			dialog.text = "You are skilled in the art of speechcraft, Vice Admiral! I understand: you do not trust me. I'm new here... Monsieur de Maure, but I'm an infulential person in Paris. The Minister of Finance is my close friend. I visit the King regularly. My authority is much greater than the authority of Philippe de Poincy, formally, of course, because here the Governor General is the most entitled person. But truth be told, here, in the colonies, the rule of the stongest is the only rule.";
+			dialog.text = "You are skilled in the art of speechcraft, Vice Admiral! I understand: you do not trust me. I'm new here... Monsieur de Maure, but I'm an influential person in Paris. The Minister of Finance is my close friend. I visit the King regularly. My authority is much greater than the authority of Philippe de Poincy, formally, of course, because here the Governor General is the most entitled person. But truth be told, here, in the colonies, the rule of the strongest is the only rule.";
 			link.l1 = "I completely agree with you there.";
 			link.l1.go = "noel_38";
 		break;
 		
 		case "noel_38":
-			dialog.text = "But not in Paris. There, the most influencial people are the King and the Minister of Finance... my close friend. Monsieur de Maure, you are a brilliant military man, but I believe that Phillip de Poincy is using you for his own personal purposes. You are intelligent, so you must have suspicions. You can trust me. I guarantee you complete anonimity and support of the authorities of Paris. I swear by my title.";
+			dialog.text = "But not in Paris. There, the most influential people are the King and the Minister of Finance... my close friend. Monsieur de Maure, you are a brilliant military man, but I believe that Phillipe de Poincy is using you for his own personal purposes. You are intelligent, so you must have suspicions. You can trust me. I guarantee you complete anonymity and the support of the authorities in Paris. I swear by my title.";
 			link.l1 = "***REMAIN LOYAL TO POINCY***";
 			link.l1.go = "noel_39"; // развилка
 			link.l2 = "***SIDE WITH BARON FORGET***";
@@ -268,43 +268,43 @@ void ProcessDialogEvent()
 		
 		case "noel_39":
 			dialog.text = "";
-			link.l1 = "I understand you, Monsieur Forger. To a man unfamiliar with local mindsets, de Poincy's actions may indeed seem strange. When I first arrived at the Archipelago, I was literally shocked by what was happening here. I still remember the very first words I was told: 'If you meet an unprotected Spanish ship, you can try to board it.' Betrayal, treachery, deception - they are present here at every step. Piracy, pillaging, robbery...";
+			link.l1 = "I understand you, Monsieur Forger. To a man unfamiliar with local ways of thinking, de Poincy's actions may indeed seem strange. When I first arrived in the Archipelago, I was genuinely shocked by what was happening here. I still remember the very first words I was told: 'If you meet an unprotected Spanish ship, you can try to board it.' Betrayal, treachery, deception – they are present here at every turn. Piracy, pillaging, robbery...";
 			link.l1.go = "noel_40";
 		break;
 		
 		case "noel_40":
 			dialog.text = "";
-			link.l1 = "We are at peace with Spain in Europe. But here we are fierce enemies. The Dutch today seem friendly and harmless, and tomorrow the Company official confiscates your goods just because they suddenly announced it was banned from importation even though you could not know it. The English officer is openly pirating, sinking the Company's ships, and the Company hires a cutthroat who disguises as a ghost ship, and terrifies British traders...";
+			link.l1 = "We are at peace with Spain in Europe. But here, we are fierce enemies. The Dutch may seem friendly and harmless today, but tomorrow a Company official confiscates your goods simply because they have suddenly announced it is banned from import, even though you could not have known. The English officer is openly pirating, sinking the Company's ships, and the Company hires a cutthroat who disguises himself as a ghost ship and terrifies British traders...";
 			link.l1.go = "noel_41";
 		break;
 		
 		case "noel_41":
 			dialog.text = "";
-			link.l1 = "In this wolf's den, we sometimes have to make strange decisions that are not quite obvious to someone unfamiliar with all this. And what seems suspicious to you is in fact the only correct action. It is difficult to sit on several chairs at once and still manage to send profits to the parent state. Chevalier de Poincy copes with this perfectly, he is an experienced manager and visionary politician. Of course, he can make mistakes, but we all make them at some point in our lives...";
+			link.l1 = "In this wolf's den, we sometimes have to make strange decisions that may not be obvious to those unfamiliar with it all. And what seems suspicious to you is, in fact, the only correct course of action. It is difficult to sit on several chairs at once and still manage to send profits to the parent state. Chevalier de Poincy handles this perfectly; he is an experienced administrator and a visionary politician. Of course, he can make mistakes, but we all do at some point in our lives...";
 			link.l1.go = "noel_42";
 		break;
 		
 		case "noel_42":
 			dialog.text = "";
-			link.l1 = "And you need to reckon with everything and everyone. With the ambitions of the Spaniards who believe that the whole New World belongs to them, with the greed of the Dutch traders, with cold prudence and ruthless brutality of the English. And even with pirates.";
+			link.l1 = "And you must reckon with everything and everyone. With the ambitions of the Spaniards who believe that the whole New World belongs to them, with the greed of the Dutch traders, with the cold prudence and ruthless brutality of the English. And even with pirates.";
 			link.l1.go = "noel_43";
 		break;
 		
 		case "noel_43":
 			dialog.text = "With pirates?!";
-			link.l1 = "Yes, you heard right. The Dutch and the British are actively cooperating with pirates... unofficially, of course. The Brethren of the Coast is a serious force that can challenge any nation in the region, they are in constant conflict with everyone they encounter and no one is capable of stopping them. The only thing that makes them slightly less dangerous is the fact that they are scattered and act on their own behalf. Did you know that the former governor of Tortuga, Levasseur, actually created a state in the state, relying completely on pirates?";
+			link.l1 = "Yes, you heard right. The Dutch and the British are actively cooperating with pirates... unofficially, of course. The Brethren of the Coast is a serious force that can challenge any nation in the region; they are in constant conflict with everyone they encounter, and no one is capable of stopping them. The only thing that makes them slightly less dangerous is the fact that they are scattered and act on their own behalf. Did you know that the former governor of Tortuga, Levasseur, actually created a state within a state, relying completely on pirates?";
 			link.l1.go = "noel_44";
 		break;
 		
 		case "noel_44":
 			dialog.text = "I believe I've heard something about it...";
-			link.l1 = "A few powerful privateer ships that protected the island were constantly docked in the port of Tortuga. Levasseur betrayed France, becoming a sort of local authority. And now, after the destruction of the pirate nest on Tortuga together with their master, the pirates are awfully angry at the French...";
+			link.l1 = "A few powerful privateer ships that protected the island were constantly docked in the port of Tortuga. Levasseur betrayed France, becoming a sort of local authority. And now, after the destruction of the pirate nest on Tortuga along with their master, the pirates are terribly angry at the French...";
 			link.l1.go = "noel_45";
 		break;
 		
 		case "noel_45":
 			dialog.text = "You don't say!";
-			link.l1 = "Yes. We had to do it otherwise Tortuga would be lost to us, although the result we got was not the best. No trading French ship can feel safe in the Caribbean now. The Spaniards, who also do not have agreements with pirate barons, at least have a fleets of strong galleons and powerful military warships capable of repelling the filibusters. Like the Dutch with their East Indians and Xebecs. But we can not boast of such a thing, alas. And French pirates often rob French merchants.";
+			link.l1 = "Yes. We had to do it, otherwise Tortuga would have been lost to us, although the result we got was not the best. No French trading ship can feel safe in the Caribbean now. The Spaniards, who also do not have agreements with the pirate barons, at least have fleets of strong galleons and powerful warships capable of repelling the filibusters. Like the Dutch with their East Indiamen and xebecs. But we cannot boast of such things, alas. And French pirates often rob French merchants.";
 			link.l1.go = "noel_46";
 		break;
 		
@@ -316,91 +316,91 @@ void ProcessDialogEvent()
 		
 		case "noel_47":
 			dialog.text = "Hmm...";
-			link.l1 = "So speaking from experience French trading company here on the Archipelago would be a very bad idea. Do you understand now what difficulties you will have to face? How many bastards want to get their share of income here? And they are not going to let go of it easily. And pirates, they are capable of unthinkable things, call them crazy if you want but they almost always achieve their dirty goals? In order to protect merchant ships, you would have to maintain a massive military fleet, but will that be profitable from a financial standpoint?";
+			link.l1 = "So, speaking from experience, a French trading company here in the Archipelago would be a very bad idea. Do you understand now what difficulties you will have to face? How many bastards want to get their share of the income here? And they are not going to let go of it easily. And pirates, they are capable of unthinkable things; call them crazy if you want, but they almost always achieve their dirty goals. In order to protect merchant ships, you would have to maintain a massive military fleet, but will that be profitable from a financial standpoint?";
 			link.l1.go = "noel_48";
 		break;
 		
 		case "noel_48":
 			dialog.text = "But French traders manage here somehow?";
-			link.l1 = "Exactly, somehow. Especially now, when Levasseur's pirate fortress on Tortuga has been siezed...";
+			link.l1 = "Exactly, somehow. Especially now, when Levasseur's pirate fortress on Tortuga has been seized...";
 			link.l1.go = "noel_49";
 		break;
 		
 		case "noel_49":
-			dialog.text = "Your words fall in line with what de Poincy said.";
-			link.l1 = "It's the truth. That's how it is here in the archipelago, it always was.";
+			dialog.text = "Your words are in line with what de Poincy said.";
+			link.l1 = "It's the truth. That's how it is here in the archipelago, it always has been.";
 			link.l1.go = "noel_50";
 		break;
 		
 		case "noel_50":
-			dialog.text = "You're so eager in what you say. Even I did not know a lot of this and, you are right: I still don't. I guess my suspicions of Poincy were invalid. You opened my eyes. I thank you, Vice Admiral. But the French minister is counting on the creation of the Company. The King needs the money...";
-			link.l1 = "I understand. But please take what I just said into consideration, if the creation of the French West Indies is unavoidable, then please make sure that we have a strong military fleet to protect it.";
+			dialog.text = "You're so eager in what you say. Even I did not know much of this and, you are right: I still don't. I suppose my suspicions of Poincy were unfounded. You have opened my eyes. I thank you, Vice Admiral. But the French minister is counting on the creation of the Company. The King needs the money...";
+			link.l1 = "I understand. But please take what I have just said into consideration; if the creation of the French West Indies is unavoidable, then please make sure that we have a strong military fleet to protect it.";
 			link.l1.go = "noel_51";
 		break;
 		
 		case "noel_51":
-			dialog.text = "Your grace is truly admirable, Vice Admiral! Such a noble temper! I'm not surprised that you've been here so long and did not hurry back home. But we will see each other again: I will return here in half a year. The French Trading Company shall rise. And with pirates, I think you're exaggerating a bit. All in all, we do have warships and brave captains, such as you.";
-			link.l1 = "I am sorry Baron but I am just one man, and beside me France has only one strong ship in archipelago 'Eclatant', it won't be enough, we will lose a lot more than we will gain... Eh whenever, it is what it is, I guess we will think of something in the meantime... When will you be heading off to France?";
+			dialog.text = "Your grace is truly admirable, Vice Admiral! Such a noble temperament! I'm not surprised that you've been here so long and have not hurried back home. But we shall meet again: I will return here in half a year. The French Trading Company shall rise. And as for pirates, I think you're exaggerating a bit. All in all, we do have warships and brave captains, such as yourself.";
+			link.l1 = "I am sorry, Baron, but I am just one man, and besides me France has only one strong ship in the archipelago, 'Eclatant'. It won't be enough; we will lose far more than we will gain... Eh, whatever, it is what it is. I suppose we will think of something in the meantime... When will you be heading off to France?";
 			link.l1.go = "noel_52";
 		break;
 		
 		case "noel_52":
-			dialog.text = "In two weeks I will return to Saint Christopher, and from there I'll be heading home. Monsieur de Poincy gave me a good ship - a brig called 'Favory' and a glorious captain. The ship is fast and the captain is experienced, but, of course, I was safer with you. I remember our travels through the archipelago, Vice Admiral, it was truly a wonderful experience.";
-			link.l1 = "Thank you for your kind words, Baron. Well, I guess it's time for us part...";
+			dialog.text = "In two weeks I will return to Saint Christopher, and from there I'll be heading home. Monsieur de Poincy gave me a fine ship - a brig called 'Favory' and a splendid captain. The ship is swift and the captain is experienced, but, of course, I felt safer with you. I remember our journeys through the archipelago, Vice Admiral, it was truly a wonderful experience.";
+			link.l1 = "Thank you for your kind words, Baron. Well, I suppose it's time for us to part...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Patria_CondotierToPirates");
 		break;
 		
 		case "noel_53":
 			dialog.text = "";
-			link.l1 = "Here everyone uses each other. Chevalier used me in his doings long before I became an officer of the navy.";
+			link.l1 = "Here, everyone uses each other. Chevalier used me in his dealings long before I became an officer of the navy.";
 			link.l1.go = "noel_54";
 		break;
 		
 		case "noel_54":
-			dialog.text = "And is it acceptable? What do you think?";
+			dialog.text = "And is that acceptable? What do you think?";
 			link.l1 = "No. But the Chevalier left me with no choice: either follow his orders, or my brother would remain behind bars until the end of his days, and the good name of my family would be ruined.";
 			link.l1.go = "noel_55";
 		break;
 		
 		case "noel_55":
-			dialog.text = "Horrible! This is straight up terrorism! Did he have any reason for such threats?";
-			link.l1 = "My brother had the misfortune of being his entrusted man. Just like I am now.";
+			dialog.text = "Horrible! This is outright terrorism! Did he have any reason for such threats?";
+			link.l1 = "My brother had the misfortune of being his trusted man. Just like I am now.";
 			link.l1.go = "noel_56";
 		break;
 		
 		case "noel_56":
 			dialog.text = "Where is your brother now?";
-			link.l1 = "I managed to free him but I lost him the very next day, he chose to not serve under anyone anymore.";
+			link.l1 = "I managed to free him, but I lost him the very next day; he chose not to serve under anyone anymore.";
 			link.l1.go = "noel_57";
 		break;
 		
 		case "noel_57":
-			dialog.text = "I knew that Poincy was not who he said he was! Wolf in sheep's skin! Vice Admiral, you can trust me. I am a man of honour. And I will save you from this yoke of your 'patron' if we can find tangible evidence of his criminal activities. Do you know anything about this dull story with Stuyvesant? Speak openly, and don't worry you are only a military man, and you were obliged to carry out your orders.";
-			link.l1 = "I know. There indeed is a mine at Saint-Martin. Only they get there not gold, but salt. It is in great demand from the Spaniards. Poincy could not trade with the Spaniards directly, so Stuyvesant acted as a middleman.";
+			dialog.text = "I knew that Poincy was not who he claimed to be! A wolf in sheep's clothing! Vice Admiral, you can trust me. I am a man of honour. And I will save you from the yoke of your 'patron' if we can find tangible evidence of his criminal activities. Do you know anything about this tedious story with Stuyvesant? Speak openly, and don't worry – you are only a military man, and you were obliged to carry out your orders.";
+			link.l1 = "I know. There is indeed a mine at Saint-Martin. Only, they do not get gold there, but salt. It is in great demand among the Spaniards. Poincy could not trade with the Spaniards directly, so Stuyvesant acted as a middleman.";
 			link.l1.go = "noel_58";
 		break;
 		
 		case "noel_58":
 			dialog.text = "So Poincy and Stuyvesant are business partners?";
-			link.l1 = "Used to be. After you expressed a desire to inspect the Saint-Martin, the Stuyvesant decided to knock Poincy out of the game, taking all the profits from the salt mine himself. Poincy could not tell anyone... But Stuyvesant miscalculated, as we can see.";
+			link.l1 = "Used to be. After you expressed a desire to inspect the Saint-Martin, Stuyvesant decided to knock Poincy out of the game, taking all the profits from the salt mine for himself. Poincy could not tell anyone... But Stuyvesant miscalculated, as we can see.";
 			link.l1.go = "noel_59";
 		break;
 		
 		case "noel_59":
-			dialog.text = "Do you think that the mine continues to operate?";
-			link.l1 = "I'm sure of it. It seems that Poincy has a new trade ally now. It's no one other that Colonel Doily himself.";
+			dialog.text = "Do you think the mine is still operating?";
+			link.l1 = "I'm sure of it. It seems that Poincy has a new trade ally now. It's none other than Colonel Doily himself.";
 			link.l1.go = "noel_60";
 		break;
 		
 		case "noel_60":
 			dialog.text = "Can we present any evidence to the ministry?";
-			link.l1 = "Hmm. During the storming of the mine, which, by the way, was conducted by Spaniards, not the Dutch, we captured the owner. He is still on my ship. You can talk to him. There is a chance that in exchange for freedom he will tell a lot of interesting things.";
+			link.l1 = "Hmm. During the storming of the mine, which, by the way, was conducted by Spaniards, not the Dutch, we captured the owner. He is still on my ship. You can talk to him. There is a chance that, in exchange for his freedom, he will tell you a lot of interesting things.";
 			link.l1.go = "noel_61";
 		break;
 		
 		case "noel_61":
-			dialog.text = "Let's go to your ship immediately. Order your prisoner to be delivered to your cabin. I will have a talk with him.";
+			dialog.text = "Let's go to your ship immediately. Order your prisoner to be taken to your cabin. I will have a word with him.";
 			link.l1 = "Fine, let's go.";
 			link.l1.go = "exit";
 			npchar.greeting = "noel_4";
@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_62":
-			dialog.text = "Great, Vice Admiral. I'll have a talk with him. Stay here, please.";
+			dialog.text = "Great, Vice Admiral. I'll have a word with him. Stay here, please.";
 			link.l1 = "Of course...";
 			link.l1.go = "noel_63";
 		break;
@@ -421,19 +421,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_64":
-			dialog.text = "I wrote down all the evidence of your captive, and he signed under them. Now we must fulfill what I promised to him, whenever there is a convenient opportunity stop by Cartagena and let him disembark. But you yourself heard everything\nNow what a scoundrel our Poincy is! Rented an island to the Dutch, conducted illegal activities there and allowed the Spaniards to go there and manage the mine! I'm afraid to imagine how much money the King's treasury is missing because of his selfishness!";
+			dialog.text = "I wrote down all the evidence from your captive, and he signed beneath it. Now we must fulfil what I promised him: whenever there is a convenient opportunity, stop by Cartagena and let him disembark. But you heard everything yourself.\nNow, what a scoundrel our Poincy is! He rented an island to the Dutch, conducted illegal activities there, and allowed the Spaniards to go there and manage the mine! I'm afraid to imagine how much money the King's treasury is missing because of his selfishness!";
 			link.l1 = "Will that evidence be enough to charge Poincy?";
 			link.l1.go = "noel_65";
 		break;
 		
 		case "noel_65":
 			dialog.text = "Unfortunately, I'm afraid it won't. The evidence is very important, but it's not enough. But I don't want you to be involved in all this for reasons we both understand.";
-			link.l1 = "The Spaniard agreed to testify before your commission when it arrives here.";
+			link.l1 = "The Spaniard has agreed to testify before your commission when it arrives here.";
 			link.l1.go = "noel_66";
 		break;
 		
 		case "noel_66":
-			dialog.text = "This will happen no sooner than in six months, and who knows what will become of this Spaniard, and will we be able to find him later in Cartagena... We need to have even more valuable evidence. Namely - a proof that the mine continues its secret activities and still fills the pockets of our dear governor-general.";
+			dialog.text = "This will happen no sooner than six months from now, and who knows what will become of this Spaniard, or whether we will be able to find him later in Cartagena... We need even more valuable evidence. Namely – proof that the mine continues its secret activities and still fills the pockets of our dear governor-general.";
 			link.l1 = "So you're suggesting that we travel to Saint-Martin?";
 			link.l1.go = "noel_67";
 		break;
@@ -445,31 +445,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_68":
-			dialog.text = "Then, at night, you and I will sneak in there, quietly, so that no one will see, and we will check what is going on there.";
+			dialog.text = "Then, at night, you and I will sneak in there, quietly, so that no one sees us, and we will check what is going on there.";
 			link.l1 = "Very good.";
 			link.l1.go = "noel_69";
 		break;
 		
 		case "noel_69":
-			dialog.text = "But what about the Chevalier, huh? Now I understand why he hinted to me with such courage that the creation of the French Trading Company on the Archipelago would be unprofitable... Of course, it would be very unprofitable for him!";
-			link.l1 = "Since we are now allies, Baron, I will tell you all the truth, Poincy asked me... to convince you that you to not create the Trade Company here.";
+			dialog.text = "But what about the Chevalier, eh? Now I understand why he so boldly hinted to me that establishing the French Trading Company in the Archipelago would be unprofitable... Of course, it would be most unprofitable for him!";
+			link.l1 = "Since we are now allies, Baron, I will tell you the whole truth. Poincy asked me... to convince you not to create the Trade Company here.";
 			link.l1.go = "noel_70";
 		break;
 		
 		case "noel_70":
-			dialog.text = "So that's how it is! I hope that at least he didn't ask you to eliminate me with a sword or a pistol?";
-			link.l1 = "No. You had to be convinced is some other way.";
+			dialog.text = "So that's how it is! I hope at least he didn't ask you to do away with me with a sword or a pistol?";
+			link.l1 = "No. You had to be convinced in some other way.";
 			link.l1.go = "noel_71";
 		break;
 		
 		case "noel_71":
-			dialog.text = "Poincy will pay for this, but now we need to immediately sail to Saint-Martin. Spaniard will be delivered to Main after. We're leaving, Vice Admiral!";
-			link.l1 = "It will seem a bit strange that you will be leaving the island on my ship, don't you think?";
+			dialog.text = "Poincy will pay for this, but now we need to sail immediately to Saint-Martin. The Spaniard will be delivered to the Main afterwards. We're leaving, Vice Admiral!";
+			link.l1 = "It will seem a bit strange that you are leaving the island on my ship, don't you think?";
 			link.l1.go = "noel_72";
 		break;
 		
 		case "noel_72":
-			dialog.text = "Don't think so. Weren't you supposed to convince me? That's exactly what you did, haha! Yes, before sailing to Europe, I'll tell the Chevalier that I agree with his points and the Trading Company won't be created. Let him live in blissful peace of a lie, for now... Let's go!";
+			dialog.text = "Don't think so. Weren't you supposed to convince me? That's exactly what you did, haha! Yes, before sailing to Europe, I'll tell the Chevalier that I agree with his points and that the Trading Company won't be created. Let him live in the blissful peace of a lie, for now... Let's go!";
 			link.l1 = "...";
 			link.l1.go = "noel_73";
 		break;
@@ -481,7 +481,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_74":
-			dialog.text = "Lead the way, Vice Admiral. The night will conceal us with it's shroud of darkness.";
+			dialog.text = "Lead the way, Vice Admiral. The night will conceal us with its shroud of darkness.";
 			link.l1 = "Follow me...";
 			link.l1.go = "noel_75";
 		break;
@@ -497,8 +497,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_76":
-			dialog.text = "(whispering) I saw it! I saw it! Did you see it? Redcoats! Those are english soldiers!";
-			link.l1 = "I told you - Poincy now conducts business with colonel Doily.";
+			dialog.text = "(whispering) I saw it! I saw it! Did you see it? Redcoats! Those are English soldiers!";
+			link.l1 = "I told you - Poincy now does business with Colonel Doily.";
 			link.l1.go = "noel_77";
 		break;
 		
@@ -518,26 +518,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_79":
-			dialog.text = "You see what the 'commercial projects' of our dear Chevalier lead to! The English behave like hosts on a French island! This is outrageous!";
+			dialog.text = "You see what the 'commercial projects' of our dear Chevalier have led to! The English behave like hosts on a French island! This is outrageous!";
 			link.l1 = "We need to move, or someone will most definitely come here. We can't afford to be recognised.";
 			link.l1.go = "noel_80";
 		break;
 		
 		case "noel_80":
-			dialog.text = "Vice Admiral, I've been thinking all the time during our travel to Saint-Martin, and I decided on something: can you arrange me a meeting with Peter Stuyvesant?";
+			dialog.text = "Vice Admiral, I've been thinking the whole time during our journey to Saint-Martin, and I've come to a decision: can you arrange a meeting with Peter Stuyvesant?";
 			link.l1 = "With Stuyvesant? But why?";
 			link.l1.go = "noel_81";
 		break;
 		
 		case "noel_81":
-			dialog.text = "A former business partner might have some serious clues, and some serious proofs of Chevaliers' involvement. I'm sure that Stuyvesant is not very happy with Poincy and will seek revenge, especially after these recent events...";
-			link.l1 = "I believe so, Baron. I personally will not dare to go to the Stuyvesant's palace. It is too risky for me, after everything I have done to them...";
+			dialog.text = "A former business partner might have some serious clues, and some solid proof of the Chevaliers' involvement. I'm sure that Stuyvesant is not very happy with Poincy and will seek revenge, especially after these recent events...";
+			link.l1 = "I believe so, Baron. I personally would not dare to go to Stuyvesant's palace. It is too risky for me, after everything I have done to them...";
 			link.l1.go = "noel_82";
 		break;
 		
 		case "noel_82":
-			dialog.text = "I already thought about it. We will go to Curacao, disembark in a bay far from the city and send our captive Spaniard from the mine with a letter to Stuyvesant. I will not mention you there, instead I will inform him that I'm leading an investigation against Poincy or something along the lines. I think the Dutchman will come for the rendezvous.";
-			link.l1 = "Hmm. I don't think that this is a good idea. The Stuyvesant is not a fool, he takes what he can he might even try to imprison you and demand a huge ransom, but if we make him believe that all that happened was because of Poincy he might side with us. Well, if you are so determined, let's give it a try.";
+			dialog.text = "I've already thought about it. We'll go to Curaçao, disembark in a bay far from the city, and send our captive Spaniard from the mine with a letter to Stuyvesant. I won't mention you there; instead, I'll inform him that I'm conducting an investigation against Poincy or something of the sort. I think the Dutchman will come to the rendezvous.";
+			link.l1 = "Hmm. I don't think this is a good idea. Stuyvesant is no fool; he takes what he can, he might even try to imprison you and demand a huge ransom. But if we make him believe that all that happened was because of Poincy, he might side with us. Well, if you are so determined, let's give it a try.";
 			link.l1.go = "noel_83";
 		break;
 		
@@ -564,26 +564,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_85":
-			dialog.text = "What are you talking about Vice Admiral?";
-			link.l1 = "When I arrived to the Carribean, Poincy wanted me to pay a million as a ransom for my brother.";
+			dialog.text = "What are you talking about, Vice Admiral?";
+			link.l1 = "When I arrived in the Caribbean, Poincy wanted me to pay a million as ransom for my brother.";
 			link.l1.go = "noel_86";
 		break;
 		
 		case "noel_86":
 			dialog.text = "And you paid that much?";
-			link.l1 = "I earned it and I paid it. Not in a month, of course. Truth be told, I was just a landlubber back then. Still Chevalier didn't let Michel go.";
+			link.l1 = "I earned it and I paid it. Not in a month, of course. Truth be told, I was just a landlubber back then. Still, Chevalier didn't let Michel go.";
 			link.l1.go = "noel_87";
 		break;
 		
 		case "noel_87":
 			dialog.text = "And after that you enlisted to work for Poincy? I honestly don't understand you.";
-			link.l1 = "I enlisted to serve the France and those I love, I bow to no one else except the king.";
+			link.l1 = "I enlisted to serve France and those I love, I bow to no one else except the king.";
 			link.l1.go = "noel_88";
 		break;
 		
 		case "noel_88":
-			dialog.text = "Excuse me, Monsieur de Maure. Of course, you serve the France and the King! Poincy will answer for everything! Including all the pain that he caused to you.";
-			link.l1 = "Very well Baron, I'll find a million that I can spare. Get on board... I will solve this problem.";
+			dialog.text = "Excuse me, Monsieur de Maure. Of course, you serve France and the King! Poincy will answer for everything! Including all the pain he caused you.";
+			link.l1 = "Very well, Baron, I'll find a million I can spare. Get on board... I will solve this problem.";
 			link.l1.go = "noel_89";
 		break;
 		
@@ -607,27 +607,27 @@ void ProcessDialogEvent()
 		
 		case "noel_91":
 			RemoveItems(pchar, "Reserve_item_01", 1);
-			dialog.text = "I don't believe it! Hmm, let's see... (reading)";
+			dialog.text = "I can't believe it! Hmm, let's see... (reading)";
 			link.l1 = "...";
 			link.l1.go = "noel_92";
 		break;
 		
 		case "noel_92":
 			LAi_Fade("", "");
-			dialog.text = "This is it! Our dear Chevalier is doomed. As soon as all this accounting will be seen by the Minister of Finance... I can't even imagine what will happen to him. We won't even have to look for the Spaniard from Cartagena. Monsieur de Maure, did you really pay million for this book?";
-			link.l1 = "I did. If I tried anything else France could lose it's colonies in the Caribbean due to a civil war, which I could win, but what kind of an admiral would I be if I fought my own people.";
+			dialog.text = "This is it! Our dear Chevalier is doomed. As soon as all this accounting is seen by the Minister of Finance... I can't even imagine what will happen to him. We won't even have to look for the Spaniard from Cartagena. Monsieur de Maure, did you really pay a million for this book?";
+			link.l1 = "I did. If I tried anything else France could lose its colonies in the Caribbean due to a civil war, which I could win, but what kind of admiral would I be if I fought my own people.";
 			link.l1.go = "noel_93";
 		break;
 		
 		case "noel_93":
-			dialog.text = "You truly are worthy of your name. I swear to you Vice Admiral that you will get it back. I am sure that we will find a hefty sum of money in Poincy's chests and his usurers. I only ask you to wait six months until I return from Europe with a commission.";
-			link.l1 = "And don't forget to bring a regiment of well trained and armed soldiers. And a ship like 'Eclatant'. I also believe that the captain of 'Eclatant' will take our side when the time comes.";
+			dialog.text = "You truly are worthy of your name. I swear to you, Vice Admiral, that you will get it back. I am sure that we will find a hefty sum of money in Poincy's chests and among his usurers. I only ask you to wait six months until I return from Europe with a commission.";
+			link.l1 = "And don't forget to bring a regiment of well-trained and armed soldiers. And a ship like 'Eclatant'. I also believe that the captain of 'Eclatant' will take our side when the time comes.";
 			link.l1.go = "noel_94";
 		break;
 		
 		case "noel_94":
-			dialog.text = "Don't doubt it, he is also an honorable man. I realized moral values play a major role in the making of your own decisions. You did a great job, that you trusted me and exposed this state criminal. Now take me to Capsterville, where I will report to Poincy about the success of your mission - you managed to convince me and I will abandon the idea of creating the trading company. Perhaps Poincy will even reward you for this - take the reward with a clear conscience and do not worry about anything, you of all people deserved it. You will not be dragged into this, and your name will not be stained with misdeeds of your superior, in fact I will say all the best things about you when I meet with the king. Baron Forget is a man of honor and a man of his word.";
-			link.l1 = "I'm glad, baron. Let's set out!";
+			dialog.text = "Don't doubt it, he is also an honourable man. I have realised that moral values play a major role in making your own decisions. You did a great job in trusting me and exposing this state criminal. Now take me to Capsterville, where I will report to Poincy about the success of your mission – you managed to convince me, and I will abandon the idea of creating the trading company. Perhaps Poincy will even reward you for this – accept the reward with a clear conscience and do not worry about anything, you of all people deserve it. You will not be dragged into this, and your name will not be stained by the misdeeds of your superior; in fact, I will say all the best things about you when I meet with the king. Baron Forget is a man of honour and a man of his word.";
+			link.l1 = "I'm glad, Baron. Let's set out!";
 			link.l1.go = "noel_95";
 		break;
 		
@@ -647,8 +647,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_96":
-			dialog.text = "So, Vice Admiral, we have finally arrived. Your mission is over, now it's up to me. Go conduct your own affairs, defend the interests of France, as you have done before. In about six months, this vile story will come to an end. I'll send the courier to find you when you will be needed. Farewell, Monsieur de Maure, I was very lucky to meet an honorable man here! The minister and the King will hear of you, that I promise. And they will hear all the best.";
-			link.l1 = "Thank you, Baron. Bon Voyage!";
+			dialog.text = "So, Vice Admiral, we have finally arrived. Your mission is over, now it's up to me. Go about your own affairs, defend the interests of France, as you have done before. In about six months, this vile story will come to an end. I'll send a courier to find you when you are needed. Farewell, Monsieur de Maure, I was very fortunate to meet an honourable man here! The minister and the King will hear of you, that I promise. And they will hear only the best.";
+			link.l1 = "Thank you, Baron. Bon voyage!";
 			link.l1.go = "noel_97";
 		break;
 		
@@ -661,25 +661,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_98":
-			dialog.text = "Glad to see you, Vice Admiral. I am here again, as promised. And with me - the first assistant of Minister of Finance, Baron Olivier Bourdin.";
-			link.l1 = "Where's Chevalier de Poincy?";
+			dialog.text = "Glad to see you, Vice Admiral. I am here again, as promised. And with me is the First Assistant to the Minister of Finance, Baron Olivier Bourdin.";
+			link.l1 = "Where is Chevalier de Poincy?";
 			link.l1.go = "noel_99";
 		break;
 		
 		case "noel_99":
-			dialog.text = "Where he's supposed to be, in prison. He was arrested and will be brought to France for investigation and a trial. Given his position, he will certainly avoid the execution, but he can't avoid a huge fine, demotion and, probably, imprisonment.";
+			dialog.text = "Where he is supposed to be, in prison. He was arrested and will be brought to France for investigation and trial. Given his position, he will certainly avoid execution, but he can't avoid a huge fine, demotion and, probably, imprisonment.";
 			link.l1 = "Was the arrest peaceful?";
 			link.l1.go = "noel_100";
 		break;
 		
 		case "noel_100":
-			dialog.text = "Not really. The Chevalier had here, in the residence, a whole guard of loyal soldiers. But we were ready for such escalation in advance.";
-			link.l1 = "Well then, I congratulate you, baron! Perhaps now you will deal with the French trading Company?";
+			dialog.text = "Not really. The Chevalier had a whole guard of loyal soldiers here in the residence. But we were prepared for such an escalation in advance.";
+			link.l1 = "Well then, I congratulate you, Baron! Perhaps now you will deal with the French Trading Company?";
 			link.l1.go = "noel_101";
 		break;
 		
 		case "noel_101":
-			dialog.text = "Me? Yes. His grace monsieur Bourdin - will go back to France together with Chevalier de Poincy. And you, vice-admiral, should also expect some changes. Now you have a new position. His grace will tell you more.";
+			dialog.text = "Me? Yes. His Grace Monsieur Bourdin will return to France together with Chevalier de Poincy. And you, Vice-Admiral, should also expect some changes. Now you have a new position. His Grace will tell you more.";
 			link.l1 = "...";
 			link.l1.go = "noel_102";
 		break;
@@ -693,45 +693,45 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_103":
-			dialog.text = "Monsieur de Maure! Wait a minute!";
+			dialog.text = "Monsieur de Maure! Wait a moment!";
 			link.l1 = "Yes, Baron. I'm listening.";
 			link.l1.go = "noel_104";
 		break;
 		
 		case "noel_104":
-			dialog.text = "As for the million that you paid to the Stuyvesant... I did not tell the ministry about this, so as to... avoid questions, like how a French officer came into possession of so much money. This may have been harmful to you since they would likely ask you to increase the Kings' treasury with your own.";
+			dialog.text = "As for the million that you paid to Stuyvesant... I did not tell the ministry about this, so as to... avoid questions, such as how a French officer came into possession of so much money. This may have been harmful to you, since they would likely have asked you to increase the King's treasury with your own.";
 			link.l1 = "I understand, thank you.";
 			link.l1.go = "noel_105";
 		break;
 		
 		case "noel_105":
-			dialog.text = "All the money that was found in possession of Poincy in Casterville was confiscated by baron Bourdin. But, as it turns out, Poincy also had a stash that the English moneylenders were hiding for him. I will talk to him about returning the investments, and then I will find a way to compensate you.";
-			link.l1 = "I'm afraid it won't be easy for you to take something from the hands of the English moneylenders.";
+			dialog.text = "All the money that was found in Poincy's possession in Casterville was confiscated by Baron Bourdin. But, as it turns out, Poincy also had a stash that the English moneylenders were hiding for him. I will talk to him about returning the investments, and then I will find a way to compensate you.";
+			link.l1 = "I'm afraid it won't be easy for you to take anything from the hands of the English moneylenders.";
 			link.l1.go = "noel_106";
 		break;
 		
 		case "noel_106":
-			dialog.text = "I agree. But we will work on it, and I will keep you updated on the results.";
+			dialog.text = "I agree. But we shall work on it, and I will keep you updated on the results.";
 			link.l1 = "As you wish.";
 			link.l1.go = "noel_107";
 		break;
 		
 		case "noel_107":
-			dialog.text = "Vice-admiral, you aren't looking so good, or is it just me? You've only just received the highest position in the colonies!";
-			link.l1 = "No-no, not at all... It's just that everything happened so unexpectedly, and I'm a bit lost.";
+			dialog.text = "Vice-admiral, you don't look so well, or is it just me? You've only just received the highest position in the colonies!";
+			link.l1 = "No, no, not at all... It's just that everything happened so unexpectedly, and I'm a bit lost.";
 			link.l1.go = "noel_108";
 		break;
 		
 		case "noel_108":
-			dialog.text = "Don't worry. You will get used to your new position. And besides, you were quite successful at being the governor of Saint-Martin for half a year, so it will be nothing new to you.";
-			link.l1 = "Oh, I'm sure I'll get used to it. I've been in worse situations during my time here in the Caribbean. I guess I'll manage this one as well.";
+			dialog.text = "Don't worry. You'll get used to your new position. Besides, you were quite successful as the governor of Saint-Martin for half a year, so this will be nothing new to you.";
+			link.l1 = "Oh, I'm sure I'll get used to it. I've been in worse situations during my time here in the Caribbean. I suppose I'll manage this one as well.";
 			link.l1.go = "noel_109";
 		break;
 		
 		case "noel_109":
 			// belamour legendary edition -->
-			dialog.text = "Well, fine. In addition, I have one more surprise for you. I'm sure you'll like it. But first I ask you to go back to the residence. I think someone is waiting for us there.";
-			link.l1 = "You have intrigued me, Monsieur Forget. Well, let's go back.";
+			dialog.text = "Well, fine. In addition, I have one more surprise for you. I'm sure you'll like it. But first, I ask you to return to the residence. I believe someone is waiting for us there.";
+			link.l1 = "You have intrigued me, Monsieur Forget. Well, let us go back.";
 			link.l1.go = "noel_110";
 		break;
 		
@@ -744,8 +744,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_111":
-			dialog.text = "It's all right, Marquis. A real captain should always take care of his ship first, right? Charles, do you remember Marquis Hubert Dassier, captain of the battleship 'Eclatant'?";
-			link.l1 = "Of course I remember! If not for him I wouldn't be alive today. The strongest friendship between naval officers comes from battles that are fought side by side. And Monsieur Dassier turned out to be an incredibly experienced captain.";
+			dialog.text = "It's all right, Marquis. A true captain should always see to his ship first, right? Charles, do you remember Marquis Hubert Dassier, captain of the battleship 'Eclatant'?";
+			link.l1 = "Of course I remember! If it weren't for him, I wouldn't be alive today. The strongest friendships between naval officers are forged in battles fought side by side. And Monsieur Dassier proved to be an incredibly experienced captain.";
 			link.l1.go = "noel_112";
 		break;
 		
@@ -758,31 +758,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_113":
-			dialog.text = "Vice Admiral, I have the honor to inform you of the following. In addition to your appointment as an Acting Governor-General of the French colonies in the archipelago, I also raised the issue of your flagship.";
+			dialog.text = "Vice Admiral, I have the honour to inform you of the following. In addition to your appointment as Acting Governor-General of the French colonies in the archipelago, I have also raised the issue of your flagship.";
 			link.l1 = "Flagship?";
 			link.l1.go = "noel_114";
 		break;
 		
 		case "noel_114":
-			dialog.text = "Exactly. As far as I know, when you entered the service of France, you were given the light frigate 'Gryffondor' at your disposal. This is a wonderful ship no doubt, but still it is only for an officer, and not for a vice admiral and now, a governor general. You are the face of France here. And your flagship should be appropriate. So we have decided that the ship that went through its first battles here in the Caribbean to be added in your squadron...";
+			dialog.text = "Exactly. As far as I know, when you entered the service of France, you were given the light frigate 'Gryffondor' at your disposal. This is a wonderful ship, no doubt, but still it is only fit for an officer, and not for a vice admiral and now, a governor general. You are the face of France here. And your flagship should be appropriate. So we have decided that the ship which fought its first battles here in the Caribbean will be added to your squadron...";
 			link.l1 = "Monsieur Forget, are you trying to say...";
 			link.l1.go = "noel_115";
 		break;
 		
 		case "noel_115":
-			dialog.text = "From now on, the pride of the French Navy, the 66-gun warship 'Eclatant' is at your disposal! This decision is approved by the king!";
+			dialog.text = "From now on, the pride of the French Navy, the 66-gun warship 'Éclatant', is at your disposal! This decision is approved by the King!";
 			link.l1 = "But Baron, I can't just take...";
 			link.l1.go = "noel_116";
 		break;
 		
 		case "noel_116":
-			dialog.text = "You can, Charles. This is not to be discussed. In France, the 'Eclatant' was upgraded a bit specifically for you, because, as it turned out, there are no such big naval battles in the Caribbean as in Europe, and therefore the requirements for individual ships are higher. Here everything is decided by the characteristics of the vessel and the experience of its captain. The 'Eclatant' had its hull strengthened, increased deadweight and the crew size, slightly re-equipped the sailing rig to enable it to take sharper courses, and also completely replaced all the cannons with forty-second caliber, these are the strongest cannons that we have.";
-			link.l1 = "Yes, now this ship is simply the master of the seas... But Monsieur Forget, because the captain of this ship is Marquis Hubert Dassier. I can't take it from him...";
+			dialog.text = "You can, Charles. This is not up for discussion. In France, the 'Eclatant' was specially upgraded for you, because, as it turned out, there are no such large naval battles in the Caribbean as in Europe, and therefore the requirements for individual ships are higher. Here, everything is determined by the characteristics of the vessel and the experience of its captain. The 'Eclatant' had its hull reinforced, deadweight and crew size increased, the sailing rig slightly re-equipped to enable it to sail closer to the wind, and all the cannons were completely replaced with forty-two calibre guns, the most powerful cannons we have.";
+			link.l1 = "Yes, now this ship is truly the master of the seas... But Monsieur Forget, the captain of this ship is Marquis Hubert Dassier. I can't take it from him...";
 			link.l1.go = "noel_117";
 		break;
 		
 		case "noel_117":
-			dialog.text = "It's just that I haven't told you yet that the Marquis himself has expressed a strong desire to serve under your command... Monsieur Dassier?";
+			dialog.text = "It's just that I haven't yet told you that the Marquis himself has expressed a strong desire to serve under your command... Monsieur Dassier?";
 			link.l1 = "...";
 			link.l1.go = "noel_118";
 		break;
@@ -811,14 +811,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_121":
-			dialog.text = "Between us, Charles, I would strongly advise you to leave the Marquis in your service. I assure you, you will not find such an experienced captain.";
-			link.l1 = "Believe me, baron, I had the honor to see this personally during the fighting against Spain and Holland. Monsieur Dassier is indeed an excellent combat officer, and also my friend.";
+			dialog.text = "Between us, Charles, I would strongly advise you to keep the Marquis in your service. I assure you, you will not find such an experienced captain.";
+			link.l1 = "Believe me, Baron, I had the honour to witness this personally during the fighting against Spain and Holland. Monsieur Dassier is indeed an excellent combat officer, and also my friend.";
 			link.l1.go = "noel_122";
 		break;
 		
 		case "noel_122":
-			dialog.text = "Well, now allow me to take my leave, Your Grace, Governor-General! Things do cannot wait: the work of creating a trading company is on the first day of its creation. See you soon!";
-			link.l1 = "Good luck, Monsieur Forget. And good luck with your trading endeavors!";
+			dialog.text = "Well, now allow me to take my leave, Your Grace, Governor-General! Things cannot wait: the work of creating a trading company begins on the very first day. See you soon!";
+			link.l1 = "Good luck, Monsieur Forget. And good luck with your trading endeavours!";
 			link.l1.go = "noel_123";
 		break;
 		
@@ -874,8 +874,8 @@ void ProcessDialogEvent()
 		// <-- legendary edition
 		
 		case "noel_final":
-			dialog.text = "Allow me to express my sincerest appreciation for you, vice-admiral! You have saved my life by freeing me from those damned pirates. I thank you, as well as Philippe de Poincy. I must admit, I was absolutely wrong in my judgement of him, and I ask you to forgive me for that. You and the Chevalier were right: the French trading Company will have a lot of troubles here, and it looks like we will only lose money here\nOnly experienced people, like Poincy, and such brave soldiers as you, can withstand these wolves that live on every island here. I need to go to the palace, and after that I will leave to Europe as soon as possible, and forget this nightmare.";
-			link.l1 = "I'm glad everything ended well, Baron. Goodbye!";
+			dialog.text = "Allow me to express my sincerest appreciation to you, Vice-Admiral! You have saved my life by freeing me from those damned pirates. I thank you, as well as Philippe de Poincy. I must admit, I was absolutely wrong in my judgement of him, and I ask you to forgive me for that. You and the Chevalier were right: the French Trading Company will have a lot of trouble here, and it looks like we will only lose money here. Only experienced people like Poincy, and such brave soldiers as you, can withstand these wolves that live on every island here. I need to go to the palace, and after that I will leave for Europe as soon as possible, and forget this nightmare.";
+			link.l1 = "I'm glad everything turned out well, Baron. Goodbye!";
 			link.l1.go = "noel_final_1";
 		break;
 		
@@ -889,15 +889,15 @@ void ProcessDialogEvent()
 		
 		// капитан Эклятона
 		case "ecliaton_cap":
-			dialog.text = TimeGreeting()+", monsieur. What brings you onto the deck of the 'Eclatant'?";
-			link.l1 = TimeGreeting()+", monsieur. Allow me to introduce myself - Captain Charles de Maure, I come from the Governor General of the French colonies in the Archipelago, Chevalier de Poincy. I was ordered to take your ship into my squadron and under my command. Here is the letter...";
+			dialog.text = TimeGreeting()+", monsieur. What brings you to the deck of the 'Eclatant'?";
+			link.l1 = TimeGreeting()+", monsieur. Allow me to introduce myself - Captain Charles de Maure. I come from the Governor General of the French colonies in the Archipelago, Chevalier de Poincy. I have been ordered to take your ship into my squadron and under my command. Here is the letter...";
 			// belamour legendary edition фикс проверки мундира с мушкетом
 			if(IsUniformEquip()) link.l1.go = "ecliaton_cap_1";
 			else link.l1.go = "ecliaton_cap_no";
 		break;
 		
 		case "ecliaton_cap_no":
-			dialog.text = "It's some sort of mistake, monsieur. You are standing on a ship-of-the-line of the French navy, and I only listen to orders issued by those who are in service to the Royal navy. And you do not seem to have any signs or belonging to that fleet. Perhaps, you mistake our ship for another one.";
+			dialog.text = "It's some sort of mistake, monsieur. You are standing on a ship-of-the-line of the French navy, and I only take orders from those who serve in the Royal Navy. And you do not appear to have any insignia or belong to that fleet. Perhaps you have mistaken our ship for another.";
 			link.l1 = "But...";
 			link.l1.go = "ecliaton_cap_no_1";
 		break;
@@ -910,13 +910,13 @@ void ProcessDialogEvent()
 		case "ecliaton_cap_no_2":
 			if(IsUniformEquip())
 			{
-				dialog.text = "Huh, I didn't even recognize you in this uniform, Captain. Well then, let me see your letter, I wish to look through the contents.";
+				dialog.text = "Huh, I didn't even recognise you in this uniform, Captain. Well then, let me see your letter, I wish to look through the contents.";
 				link.l1 = "Here.";
 				link.l1.go = "ecliaton_cap_1";
 			}
 			else
 			{
-				dialog.text = "We've already discussed everything, monseigneur...";
+				dialog.text = "We've already discussed everything, monsieur...";
 				link.l1 = "Hmm...";
 				link.l1.go = "ecliaton_cap_no_1";
 			}
@@ -924,26 +924,26 @@ void ProcessDialogEvent()
 		
 		case "ecliaton_cap_1":
 			RemoveItems(pchar, "Reserve_item_01", 1);
-			dialog.text = "Well, let's see... (reading) Interesting. So, me and my ship are to be under your command, Captain de Maure?";
+			dialog.text = "Well, let's see... (reading) Interesting. So, my ship and I are to be under your command, Captain de Maure?";
 			link.l1 = "That is the order of the Governor General.";
 			link.l1.go = "ecliaton_cap_2";
 		break;
 		
 		case "ecliaton_cap_2":
-			dialog.text = "Yes-yes, orders are not to be questioned. Very well. Let me introduce myself: I am Marquis Hubert Dassier, Captain of the 66-cannon ship-of-the-line of the French navy named 'Eclatant', along with this well-trained crew, and I swear on my honour, it is one of the best ships that France has ever had.";
-			link.l1 = "Glad to hear it, as the task we were assigned by the Governor General will require good knowledge of navigation and artillery.";
+			dialog.text = "Yes, yes, orders are not to be questioned. Very well. Let me introduce myself: I am Marquis Hubert Dassier, Captain of the 66-gun ship-of-the-line of the French Navy named 'Eclatant', along with this well-trained crew, and I swear on my honour, it is one of the finest ships France has ever had.";
+			link.l1 = "Glad to hear it, as the task we have been assigned by the Governor General will require a good knowledge of navigation and artillery.";
 			link.l1.go = "ecliaton_cap_3";
 		break;
 		
 		case "ecliaton_cap_3":
 			dialog.text = "Will you tell me the details of this upcoming operation?";
-			link.l1 = "Of course. We will be moving to the Spanish island of Trinidad, located about a week's travel South-East from here. We will abruptly attack the fort guarding the San Jose colony and run it into the ground. Then, we will talk with the Spanish about our compensation for the recent attack on the French settlement of Saint-Pierre.";
+			link.l1 = "Of course. We will be moving to the Spanish island of Trinidad, located about a week's travel southeast from here. We will launch a sudden attack on the fort guarding the San Jose colony and raze it to the ground. Then, we will negotiate with the Spanish regarding our compensation for the recent attack on the French settlement of Saint-Pierre.";
 			link.l1.go = "ecliaton_cap_4";
 		break;
 		
 		case "ecliaton_cap_4":
 			dialog.text = "I see. When will we depart?";
-			link.l1 = "As soon as possible. We have to complete this task in a month, so we have more than enough time.";
+			link.l1 = "As soon as possible. We have to complete this task within a month, so we have more than enough time.";
 			if (GetCompanionQuantity(pchar) > 4) link.l1.go = "ecliaton_cap_5_1";
 			else link.l1.go = "ecliaton_cap_5";
 		break;
@@ -974,7 +974,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_5_1":
-			dialog.text = "But, Captain de Maure, first you have to make your squadron smaller - my ship cannot join you, or it will be too largeof a squadron.";
+			dialog.text = "But, Captain de Maure, first you have to make your squadron smaller - my ship cannot join you, or it will be too large a squadron.";
 			link.l1 = "Huh. You're right. I will leave one ship here in the harbour.";
 			link.l1.go = "ecliaton_cap_5_2";
 		break;
@@ -987,23 +987,23 @@ void ProcessDialogEvent()
 		case "ecliaton_cap_5_3":
 			if (GetCompanionQuantity(pchar) > 4)
 			{
-				dialog.text = "Haven't you yet made your squadron smaller, monsieur?";
-				link.l1 = "Yes-yes, I remember, I'm working on it.";
+				dialog.text = "Haven't you reduced your squadron yet, monsieur?";
+				link.l1 = "Yes, yes, I remember, I'm working on it.";
 				link.l1.go = "ecliaton_cap_5_2";
 			}
 			else
 			{
-				dialog.text = "So, the 'Eclatant' is ready to join your squadron, monsieur.";
-				link.l1 = "Then I will go to my ship, and you should prepare to enter the sea.";
+				dialog.text = "So, the 'Éclatant' is ready to join your squadron, monsieur.";
+				link.l1 = "Then I will go to my ship, and you should prepare to set sail.";
 				link.l1.go = "ecliaton_cap_5";
 			}
 		break;
 		
 		case "ecliaton_cap_7":
 			dialog.text = "Greetings, Commodore. Do we have another battle ahead of us?";
-			link.l1 = "Indeed we do. Once again we will join forces. We are going to storm Philipsburg. The Governor General has tasked us with clearing out the Dutch from Saint-Martin.";
+			link.l1 = "Indeed we do. Once again, we will join forces. We are going to storm Philipsburg. The Governor General has tasked us with clearing out the Dutch from Saint-Martin.";
 			link.l1.go = "ecliaton_cap_9";
-			link.l2 = "We do Captain, but a bit later. I will tell you when. The 'Eclatant' has to be ready to enter the sea at any minute.";
+			link.l2 = "We do, Captain, but a bit later. I will tell you when. The 'Eclatant' has to be ready to set sail at any moment.";
 			link.l2.go = "ecliaton_cap_8";
 		break;
 		
@@ -1014,8 +1014,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_9":
-			dialog.text = "Everything is clear. It will be a hard mission, monseigneur. As far as I have heard the fort of Philipsburg has a lot of cannons.";
-			link.l1 = "I'm sure of it my friend, but we will manage. Prepare to enter the sea, we are departing soon.";
+			dialog.text = "Everything is clear. It will be a hard mission, monseigneur. As far as I have heard, the fort at Philipsburg has a lot of cannons.";
+			link.l1 = "I'm sure of it, my friend, but we will manage. Prepare to set sail, we are departing soon.";
 			link.l1.go = "ecliaton_cap_10";
 		break;
 		
@@ -1027,10 +1027,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_11":
-			dialog.text = "Glad to see you on the deck of the 'Eclatant', vice-admiral! What are your orders?";
-			link.l1 = "Prepare the 'Eclatant' for the departure. First, we will sail to the coast of Jamaica, and then, together with Colonel D'Oyley's squadron, we shall attack Curacao.";
+			dialog.text = "Glad to see you on the deck of the 'Éclatant', Vice-Admiral! What are your orders?";
+			link.l1 = "Prepare the 'Eclatant' for departure. First, we will sail to the coast of Jamaica, and then, together with Colonel D'Oyley's squadron, we shall attack Curacao.";
 			link.l1.go = "ecliaton_cap_13";
-			link.l2 = "There will be orders, Captain, but later. I will tell you when. The 'Eclatant' has to be ready to enter the sea at any minute.";
+			link.l2 = "There will be orders, Captain, but later. I will tell you when. The 'Eclatant' must be ready to put to sea at any moment.";
 			link.l2.go = "ecliaton_cap_12";
 		break;
 		
@@ -1041,8 +1041,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_13":
-			dialog.text = "The 'Eclatant' and its crew are ready, Vice Admiral!";
-			link.l1 = "Excellent. Then we depart immmediately.";
+			dialog.text = "The 'Éclatant' and her crew are ready, Vice Admiral!";
+			link.l1 = "Excellent. Then we depart immediately.";
 			link.l1.go = "ecliaton_cap_14";
 		break;
 		
@@ -1055,7 +1055,7 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition -->
 		case "ecliaton_cap_15":
-			dialog.text = "Excuse me gentlemen, I couldn't join you earlier I was preoccupied with giving the orders on the ship. I already thought that I was quite late, because I did not find you at the residence, and therefore I was going to return to the ship...";
+			dialog.text = "Excuse me, gentlemen, I couldn't join you earlier as I was preoccupied with giving orders on the ship. I already thought I was quite late, as I did not find you at the residence, and therefore I was about to return to the ship...";
 			link.l1 = "...";
 			link.l1.go = "ecliaton_cap_16";
 		break;
@@ -1070,7 +1070,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_17":
-			dialog.text = "It was an honor for me to fight alongside you, Monsieur de Maure! I must say that I rarely meet such competent and skillful officers such as you. I'm sure I myself could not have dealt with the fort of that Spanish colony in Trinidad so quickly!";
+			dialog.text = "It was an honour for me to fight alongside you, Monsieur de Maure! I must say that I rarely meet such competent and skilful officers as you. I'm sure I myself could not have dealt with the fort of that Spanish colony in Trinidad so quickly!";
 			link.l1 = "You underestimate yourself, Monsieur Dassier. We dealt with it together.";
 			link.l1.go = "ecliaton_cap_18";
 		break;
@@ -1084,25 +1084,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ecliaton_cap_19":
-			dialog.text = "That's right. Although I am a marquis, I am still a sailor. For me, the Caribbean archipelago is new, unexplored and full of new adventures. Last time I was here for only a few months, but when I returned to Europe, I started missing this place. I would like to serve our Fatherland here. And you are a very talented and experienced captain, you managed to win my sincere respect and my friendship. I would be honored to serve under your command, Vice Admiral!";
-			link.l1 = "Well, I can't and what's more! - I don't want to refuse you, Monsieur Dassier!";
+			dialog.text = "That's right. Although I am a marquis, I am still a sailor. For me, the Caribbean archipelago is new, unexplored, and full of adventure. Last time I was here for only a few months, but when I returned to Europe, I found myself missing this place. I would like to serve our Fatherland here. And you are a very talented and experienced captain; you have managed to win my sincere respect and my friendship. I would be honoured to serve under your command, Vice Admiral!";
+			link.l1 = "Well, I can't, and what's more! - I don't want to refuse you, Monsieur Dassier!";
 			link.l1.go = "ecliaton_cap_20";
 		break;
 		
 		case "ecliaton_cap_20":
-			dialog.text = "I also understand that the Eclatant is now your flagship, so I will understand perfectly if you decide to take command of it personally. In that case, you can leave me as your officer, give me another ship, or simply relieve me of my duties - Monsieur Forget kindly promised me that then he would find me a worthy position in the fleet of the French West India Company.";
-			link.l1 = "I can assure you my friend, that it won't come to that. You are one of the best captains that I have ever met, and with you by my side we will be unstoppable.";
+			dialog.text = "I also understand that the Eclatant is now your flagship, so I will understand perfectly if you decide to take command of her personally. In that case, you can leave me as your officer, give me another ship, or simply relieve me of my duties – Monsieur Forget kindly promised me that he would then find me a worthy position in the fleet of the French West India Company.";
+			link.l1 = "I can assure you, my friend, that it won't come to that. You are one of the best captains I have ever met, and with you by my side we will be unstoppable.";
 			link.l1.go = "ecliaton_cap_21";
 		break;
 		
 		case "ecliaton_cap_21":
-			dialog.text = "Thank you for such a flattering assessment of my abilities. And one more thing, Vice Admiral. I don't know the size of your squadron at the moment, so just in case, I'll be waiting for you on the captain's bridge of the Eclatant in the pier of Capsterville. As soon as you decide to take the ship under your command - just let me know.";
+			dialog.text = "Thank you for such a flattering assessment of my abilities. And one more thing, Vice Admiral. I don't know the size of your squadron at the moment, so just in case, I'll be waiting for you on the captain's bridge of the Éclatant at the pier in Capsterville. As soon as you decide to take the ship under your command - just let me know.";
 			link.l1 = "Very well, Monsieur Dassier.";
 			link.l1.go = "ecliaton_cap_22";
 		break;
 		
 		case "ecliaton_cap_22":
-			dialog.text = "Then I ask for a permission to bow out. Vice Admiral, Baron...";
+			dialog.text = "Then I ask for permission to bow out. Vice Admiral, Baron...";
 			link.l1 = "See you soon, Monsieur Dassier.";
 			link.l1.go = "ecliaton_cap_23";
 		break;
@@ -1116,7 +1116,7 @@ void ProcessDialogEvent()
 		break;
 	
 		case "ecliaton_cap_24":
-			dialog.text = "Vice Admiral, welcome aboard. Would you like to take Eclatant under your command?";
+			dialog.text = "Vice Admiral, welcome aboard. Would you like to take Éclatant under your command?";
 			if (GetCompanionQuantity(pchar) > 4)
 			{
 				
@@ -1166,27 +1166,27 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "end" && colonies[FindColony("Pirates")].nation == PIRATE)
 			{
 				PlaySound("Voice\English\LE\Doily\Edvard_Doily_01.wav");
-				dialog.text = "Oh, what an acquaintance! Isn't it Captain Charles de Maure himself?! I've heard, you now have a position in the French navy. What a surprise, considering who you were, let's say, 'working' for previously...";
-				link.l1 = "Greetings, sir. Are you talking about the affair with Isla Tesoro? Oh, but it wasn't me who wrote the English laws, according to which the island was passed down to the heir of the explorer who found it, according to his will. So, I am not guilty of that, I only helped Miss Sharp to get what was hers by rights.";
+				dialog.text = "Oh, what an acquaintance! Isn't it Captain Charles de Maure himself?! I've heard you now have a position in the French navy. What a surprise, considering who you were, let's say, 'working' for previously...";
+				link.l1 = "Greetings, sir. Are you referring to the affair with Isla Tesoro? Oh, but it was not I who wrote the English laws, according to which the island was passed down to the heir of the explorer who discovered it, as per his will. So, I am not to blame for that; I only helped Miss Sharp to claim what was rightfully hers.";
 				link.l1.go = "doily_1";
 			}
 			else
 			{
-				dialog.text = TimeGreeting()+", Captain. I suppose, the representative of the French navy has arrived at Antigua with an important goal in mind?";
-				link.l1 = "Indeed, sir. I was sent here by the Governor General of the French colonies, Philippe de Poincy. Saint-Christopher has been besieged by the Spanish and Dutch navy squadrons. The Chevalier asks for help from you and sir Jonathan Fox as well. Here is his letter for you, colonel.";
+				dialog.text = TimeGreeting()+", Captain. I suppose the representative of the French navy has arrived in Antigua with an important goal in mind?";
+				link.l1 = "Indeed, sir. I was sent here by the Governor General of the French colonies, Philippe de Poincy. Saint Christopher has been besieged by the Spanish and Dutch naval squadrons. The Chevalier asks for help from you and Sir Jonathan Fox as well. Here is his letter for you, Colonel.";
 				link.l1.go = "doily_3";
 			}
 		break;
 		
 		case "doily_1":
-			dialog.text = "I'm wondering, Captain, how much money did you make off of this? I suppose, quite a lot, since you've managed to pay for the services of the rogue Loxley, which are not cheap at all. I'm sure, the pirate barons pay you deductions regularly for keeping the island in their possession. We both know perfectly well that Helen Sharp is only a mask.";
-			link.l1 = "Colonel, we both also know that the pirate barons mostly operate in the interests of England, not officially, mind you... Without them, it would be quite hard to resist the hegemony of the Spanish in the region, wouldn't you agree? So, from the point of view of the politicians, the fact that the Brethren of the Coast has kept the island to themselves, was perhaps, even more profitable then if Isla Tesoro had become an English naval base...";
+			dialog.text = "I'm wondering, Captain, how much money did you make from this? I suppose quite a lot, since you've managed to pay for the services of the rogue Loxley, which are not cheap at all. I'm sure the pirate barons pay you deductions regularly for keeping the island in their possession. We both know perfectly well that Helen Sharp is only a mask.";
+			link.l1 = "Colonel, we both also know that the pirate barons mostly operate in the interests of England, not officially, mind you... Without them, it would be quite hard to resist the hegemony of the Spanish in the region, wouldn't you agree? So, from the point of view of the politicians, the fact that the Brethren of the Coast have kept the island to themselves was perhaps even more profitable than if Isla Tesoro had become an English naval base...";
 			link.l1.go = "doily_2";
 		break;
 		
 		case "doily_2":
-			dialog.text = "This is arguably true, Captain, but... be that as it is. You've arrived at Antigua with some important goal, I suppose? Perhaps it has to do with the fact that the relations of two former allies - France and Holland, have worsened considerably?";
-			link.l1 = "Quite right. I was sent by the governor-general of the French colonies, Philippe de Poincy. Saint-Christopher has been besieged by the Spanish and Dutch navy. The Chevalier asks for your help. Here is his letter to you, colonel.";
+			dialog.text = "This is arguably true, Captain, but... be that as it may. You've arrived at Antigua with some important goal, I suppose? Perhaps it has to do with the fact that the relations between two former allies - France and Holland - have worsened considerably?";
+			link.l1 = "Quite right. I was sent by the governor-general of the French colonies, Philippe de Poincy. Saint Christopher has been besieged by the Spanish and Dutch navies. The Chevalier asks for your help. Here is his letter to you, Colonel.";
 			link.l1.go = "doily_3";
 		break;
 		
@@ -1199,16 +1199,16 @@ void ProcessDialogEvent()
 		
 		case "doily_3_1":
 			LAi_Fade("", "");
-			dialog.text = "Hmm... very intriguing! Captain, your commander knows how to pique my interest, it isn't that unusual for people to call him a cunning fox. We should have done this long ago, instead of trying to befriend the Dutch. As we know very well what the Dutch Company and their Director stand for. Well then, I think that in this situation we really shouldn't deny helping to the besieged Casterville, and we have more than enough troops to allow it.\nWhat are the numbers and types of ships in their squadrons, Captain?";
-			link.l1 = "I've counted six ships: one eighty-cannon ship-of-the-line of the third rank and five ships of the fourth. They might also have frigates and galleons.";
+			dialog.text = "Hmm... very intriguing! Captain, your commander certainly knows how to pique my interest; it's not unusual for people to call him a cunning fox. We should have done this long ago, instead of trying to befriend the Dutch. We know very well what the Dutch Company and their Director stand for. Well then, I think in this situation we really shouldn't refuse to help the besieged Casterville, and we have more than enough troops to do so.\nWhat are the numbers and types of ships in their squadrons, Captain?";
+			link.l1 = "I've counted six ships: one eighty-gun ship-of-the-line of the third rank and five ships of the fourth. They might also have frigates and galleons.";
 			link.l1.go = "doily_4";
 		break;
 		
 		case "doily_4":
-			dialog.text = "Hmm... We can put forward our squadron, consisting of a hundred-cannon ship of the first rank, two ships of the fourth and a heavy frigate, against theirs.";
+			dialog.text = "Hmm... We can deploy our squadron, consisting of a first-rate ship of one hundred guns, two fourth-rate ships, and a heavy frigate, against theirs.";
 			if (!CheckAttribute(pchar, "questTemp.Patria.FailLugger"))
 			{
-				link.l1 = "Sir, we also have a 66-cannon warship, the 'Eclatant', sailing to the help of Saint-Christopher defense from the coast of Guadeloupe.";
+				link.l1 = "Sir, we also have a 66-gun warship, the 'Eclatant', sailing to aid the defence of Saint-Christopher from the coast of Guadeloupe.";
 				link.l1.go = "doily_5";
 			}
 			else
@@ -1219,27 +1219,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_5":
-			dialog.text = "Perfect. In that case, we are well above our enemies' firing capability. The victory shall be ours.";
-			link.l1 = "And let us not forget of my own ship, sir. I am not going to miss such a battle, don't even consider it.";
+			dialog.text = "Perfect. In that case, we are well beyond our enemies' firing range. Victory shall be ours.";
+			link.l1 = "And let us not forget my own ship, sir. I am not going to miss such a battle, don't even consider it.";
 			link.l1.go = "doily_6";
 		break;
 		
 		case "doily_5_1":
-			dialog.text = "That is true. Including the help from the fort of Casterville, the victory shall be ours.";
-			link.l1 = "And let us not forget of my own ship, sir. I am not going to miss such a battle, don't even consider it.";
+			dialog.text = "That is true. With the help from the fort at Casterville, victory shall be ours.";
+			link.l1 = "And let us not forget my own ship, sir. I am not going to miss such a battle, don't even consider it.";
 			link.l1.go = "doily_6";
 		break;
 		
 		case "doily_6":
-			dialog.text = "Of course, monsieur de Maure. Whatever the case may be, tales of your talents in sailing can be heard throughout the archipelago. Your flagship will lead the squadron.";
+			dialog.text = "Of course, Monsieur de Maure. Whatever the case may be, tales of your talents in sailing can be heard throughout the archipelago. Your flagship will lead the squadron.";
 			if (GetCompanionQuantity(pchar) > 1)
 			{
-				link.l1 = "I will put the rest of the ships from my squadron on hold, then come back to you, and we will rush to the help of the besieged.";
+				link.l1 = "I will hold the rest of the ships in my squadron, then return to you, and together we will rush to the aid of the besieged.";
 				link.l1.go = "doily_7_1";
 			}
 			else
 			{
-				link.l1 = "I will prepare my ship shortly, and we will rush to the help of the besieged.";
+				link.l1 = "I will prepare my ship shortly, and we will rush to the aid of the besieged.";
 				link.l1.go = "doily_8";
 			}
 		break;
@@ -1250,10 +1250,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_7_2":
-			dialog.text = "So, are you ready for departure?";
+			dialog.text = "So, are you ready to depart?";
 			if (GetCompanionQuantity(pchar) > 1)
 			{
-				link.l1 = "Wait just a little bit, sir.";
+				link.l1 = "Wait just a moment, sir.";
 				link.l1.go = "doily_7_1";
 			}
 			else
@@ -1281,7 +1281,7 @@ void ProcessDialogEvent()
 		
 		case "doily_10":
 			dialog.text = "Do you have any further questions, sir?";
-			link.l1 = "No, colonel...";
+			link.l1 = "No, Colonel...";
 			link.l1.go = "doily_11";
 		break;
 		
@@ -1293,25 +1293,25 @@ void ProcessDialogEvent()
 		
 		case "doily_12":
 			PlaySound("Voice\English\LE\Doily\Edvard_Doily_02.wav");
-			dialog.text = "Get the letter for the Stuyvesant, sir. If you're not aware of who I am, let me introduce myself: Colonel Edward Doily, governor of Port-Royal and commander of this expedition!\nTo tell you the truth, I have a great urge to run the bandit hideout known as Willemstad into the ground. The most vile, two-faced and despicable organisation in the Caribbean, known as the Dutch West-Indies trading Company who think that all trade in the Archipelago is exclusively their right, and who hire the likes of Jacob van Berg and other pirates to capture and sink the ships of English merchants...";
+			dialog.text = "Get the letter for the Stuyvesant, sir. If you're not aware of who I am, let me introduce myself: Colonel Edward Doily, governor of Port Royal and commander of this expedition!\nTo tell you the truth, I have a great urge to raze the bandit hideout known as Willemstad to the ground. The most vile, two-faced and despicable organisation in the Caribbean, known as the Dutch West Indies Trading Company, who believe that all trade in the Archipelago is exclusively their right, and who hire the likes of Jacob van Berg and other pirates to capture and sink the ships of English merchants...";
 			link.l1 = "...";
 			link.l1.go = "doily_13";
 		break;
 		
 		case "doily_13":
-			dialog.text = "I am here to put an end to these outrageous acts, and, luckily for you, I propose a diplomatic way. For now... But if the director of this abominable organisation doesn't arrive here for the talks, I will run his business into the ground. After we storm the city, I will leave only cinders behind, and any powder that we find, we will put into the basement of your fort, and blow it up. The same fate will await your plantations, and the Stuyvesant himself will hang on the yardarm of my flagship...";
+			dialog.text = "I am here to put an end to these outrageous acts, and, luckily for you, I propose a diplomatic solution. For now... But if the director of this abominable organisation does not arrive here for the talks, I will run his business into the ground. After we storm the city, I will leave only cinders behind, and any powder we find, we will put in the basement of your fort and blow it up. The same fate will await your plantations, and Stuyvesant himself will hang from the yardarm of my flagship...";
 			link.l1 = "...";
 			link.l1.go = "doily_14";
 		break;
 		
 		case "doily_14":
-			dialog.text = "You will need more than a year to rebuild your colony, and then you will have no time for your schemes and plots. Tell your 'Mynheer Director' everything that I've just said, and don't think these are jokes and empty promises. I've run out of patience, so you must understand me perfectly. Do you understand, Officer?!";
-			link.l1 = "Everything is perfectly clear, sir Colonel.";
+			dialog.text = "You will need more than a year to rebuild your colony, and then you will have no time for your schemes and plots. Tell your 'Mynheer Director' everything that I've just said, and don't think these are jokes or empty promises. I've run out of patience, so you must understand me perfectly. Do you understand, Officer?!";
+			link.l1 = "Everything is perfectly clear, Colonel.";
 			link.l1.go = "doily_15";
 		break;
 		
 		case "doily_15":
-			dialog.text = "Great. Then leave. I give you exactly one day to think this over. If after twenty-four hours Peter Stuyvesant will not be standing here like you are right now, let him blame that on himself.";
+			dialog.text = "Great. Then leave. I give you exactly one day to think this over. If after twenty-four hours Peter Stuyvesant is not standing here as you are right now, let him blame himself for it.";
 			link.l1 = "...";
 			link.l1.go = "doily_16";
 		break;
@@ -1331,7 +1331,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_17":
-			dialog.text = "I think that ratchet dog Stuyvesant will come here. And if not - he can only blame himself!";
+			dialog.text = "I think that mangy dog Stuyvesant will come here. And if not - he has only himself to blame!";
 			link.l1 = "...";
 			link.l1.go = "doily_17_1";
 		break;
@@ -1344,8 +1344,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_18": // д'Ойли на берегу
-			dialog.text = "You've done a good job with the fort, monsieur de Maure. Now we will approach the city gates by land. I will take the cannons from here, the path here is shorter and easier, and you will disembark the company of your marines on the Santa-Maria Cape and move to Willemstad. If you meet enemies on the way, you know what to do. Nobody can be left behind us.";
-			link.l1 = "Of course, colonel. I will meet you at the gates!";
+			dialog.text = "You've done a good job with the fort, monsieur de Maure. Now we will approach the city gates by land. I will take the cannons from here; the path is shorter and easier, and you will disembark your company of marines at Santa Maria Cape and advance towards Willemstad. If you encounter any enemies on the way, you know what to do. No one can be left behind us.";
+			link.l1 = "Of course, Colonel. I will meet you at the gates!";
 			link.l1.go = "doily_19";
 		break;
 		
@@ -1359,14 +1359,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_20":
-			dialog.text = "Well then, it seems like our mission has ended quite successfully. Congratulations, Captain! Oh, excuse me - Vice Admiral! Let's go back on the ships. I will tell my men to stand guard - that fool Stuyvesant will likely not risk attacking us while we retreat, but it won't hurt to be careful.";
-			link.l1 = "I'm sure the Dutch will not dare break a treaty that was just signed.";
+			dialog.text = "Well then, it seems our mission has ended quite successfully. Congratulations, Captain! Oh, excuse me - Vice Admiral! Let's get back to the ships. I'll tell my men to stand guard - that fool Stuyvesant will likely not risk attacking us as we retreat, but it won't hurt to be cautious.";
+			link.l1 = "I'm sure the Dutch will not dare to break a treaty that was just signed.";
 			link.l1.go = "doily_21";
 		break;
 		
 		case "doily_21":
-			dialog.text = "It was a pleasure working with you, monsieur de Maure. I think we will meet once again in Port-Royal or Capsterville.";
-			link.l1 = "Without a doubt, colonel. Now, let's tell our men to retreat.";
+			dialog.text = "It was a pleasure working with you, Monsieur de Maure. I think we shall meet again in Port-Royal or Capsterville.";
+			link.l1 = "Without a doubt, Colonel. Now, let's tell our men to retreat.";
 			link.l1.go = "doily_22";
 		break;
 		
@@ -1377,8 +1377,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "doily_23":
-			dialog.text = "It seems, the Dutch have finally learned that they have no way to approach us from the fort by that narrow path under our artillery fire. And the ones stuck in the city will likely not risk a sortie, unless they are completely mad. Now we will sow some panic: let's bomb the city with our cannons. The men on my ship will see it and they'll make it look like they're preparing to disembark. After an hour or two, Stuyvesant will shit his pants and will be ready to send the truce envoys.";
-			link.l1 = "Everything is going according to our plan, colonel! Let's do it!";
+			dialog.text = "It seems the Dutch have finally realised that they have no way to approach us from the fort by that narrow path under our artillery fire. And those stuck in the city will likely not risk a sortie, unless they are completely mad. Now, we shall sow some panic: let's bombard the city with our cannons. The men on my ship will see it and make it look as though they're preparing to disembark. After an hour or two, Stuyvesant will soil his breeches and be ready to send the truce envoys.";
+			link.l1 = "Everything is going according to our plan, Colonel! Let's do it!";
 			link.l1.go = "doily_24";
 		break;
 		
@@ -1389,8 +1389,8 @@ void ProcessDialogEvent()
 		
 		// голландский парламентёр под стенами Виллемстада
 		case "holoff":
-			dialog.text = "I've arrived here to begin the negotiations. What are your demands?";
-			link.l1 = "We demand a meeting with the Company's Director, Peter Stuyvesant. Specifically, we want to talk about the fact that due to his company's fault, as well as his own, Willemstad is currently under threat of destruction.";
+			dialog.text = "I've arrived here to begin negotiations. What are your demands?";
+			link.l1 = "We demand a meeting with the Company's Director, Peter Stuyvesant. Specifically, we wish to discuss the fact that, due to his company's negligence, as well as his own, Willemstad is currently under threat of destruction.";
 			link.l1.go = "holoff_1";
 		break;
 		
@@ -1402,13 +1402,13 @@ void ProcessDialogEvent()
 		
 		case "holoff_2":
 			dialog.text = "I don't understand, mynheer?";
-			link.l1 = "I said: will you arrange a safe exit from the city for us? I'm not sure about that. I'm afraid, mynheer Stuyvesant may just decide to take our envoys into captivity. For this reason, I invite mynheer Stuyvesant to appear right here for the negotiations.";
+			link.l1 = "I said: will you arrange a safe exit from the city for us? I'm not sure about that. I'm afraid mynheer Stuyvesant may simply decide to take our envoys captive. For this reason, I invite mynheer Stuyvesant to come here for the negotiations.";
 			link.l1.go = "holoff_3";
 		break;
 		
 		case "holoff_3":
 			dialog.text = "But...";
-			link.l1 = "Officer, we dictate the conditions here. Your fleet is destroyed, the garrison cut off from the city, and we will penetrate Willemstad's defense like a fregate penetrates a rowboat if we decide to storm the city. Now, you will receive a letter for mynheer Stuyvesant, and you will give it to him along with our invitation...";
+			link.l1 = "Officer, we dictate the terms here. Your fleet is destroyed, the garrison cut off from the city, and we will breach Willemstad's defences as a frigate breaches a rowboat if we decide to storm the city. Now, you will receive a letter for mynheer Stuyvesant, and you will deliver it to him along with our invitation...";
 			link.l1.go = "holoff_4";
 		break;
 		
@@ -1427,14 +1427,14 @@ void ProcessDialogEvent()
 		
 		// офицер-испанец на маяке Тринидада
 		case "SanJoseSpanish":
-			dialog.text = "So, Captain, you've called the truce envoys because you wanted to dictate your demands?";
-			link.l1 = "You are absolutely correct, senor. Let me briefly explain to you my reason for arriving in Trinidad - this is our answer for your recent attack on Saint-Pierre. You've damaged the city considerably, and now you will be forced to compensate it. The price of compensation is three hundred thousand Peso. And that is not so much, considering the vile acts your soldiers have committed on Martinique.";
+			dialog.text = "So, Captain, you've summoned the truce envoys because you wanted to dictate your demands?";
+			link.l1 = "You are absolutely correct, señor. Let me briefly explain my reason for arriving in Trinidad – this is our response to your recent attack on Saint-Pierre. You have damaged the city considerably, and now you will be forced to compensate for it. The price of compensation is three hundred thousand pesos. And that is not so much, considering the vile acts your soldiers have committed on Martinique.";
 			link.l1.go = "SanJoseSpanish_1";
 		break;
 		
 		case "SanJoseSpanish_1":
-			dialog.text = "Excuse me, senor, but what does San Jose have to do with Saint-Pierre? Why does our colony have to pay?";
-			link.l1 = "Because the attackers were Spanish, not Dutch or English. Then you will put the bill on Providence for Don de Mendosa, along with my sincerest greetings. As you understand, in case you refuse to pay the compensation, I will order my men to disembark, and then San Jose will lose much more. I'm sure your colony's governor will make the right decision. You have one day to respond. I wish you all the best, senores.";
+			dialog.text = "Excuse me, señor, but what does San Jose have to do with Saint-Pierre? Why does our colony have to pay?";
+			link.l1 = "Because the attackers were Spanish, not Dutch or English. Then you will send the bill to Providence for Don de Mendoza, along with my sincerest greetings. As you understand, should you refuse to pay the compensation, I will order my men to disembark, and then San Jose will lose much more. I'm sure your colony's governor will make the right decision. You have one day to respond. I wish you all the best, señores.";
 			link.l1.go = "SanJoseSpanish_2";
 		break;
 		
@@ -1446,14 +1446,14 @@ void ProcessDialogEvent()
 		
 		case "SanJoseSpanish_3":
 			dialog.text = "";
-			link.l1 = "So, as I understand, the governor has made the right decision?";
+			link.l1 = "So, as I understand it, the governor has made the right decision?";
 			link.l1.go = "SanJoseSpanish_4";
 		break;
 		
 		case "SanJoseSpanish_4":
 			AddMoneyToCharacter(pchar, 300000);
-			dialog.text = "Get your three hundred thousand and get out of our colony.";
-			link.l1 = "Excellent, senores. I assure you - this was the best way. I hope this will discourage the Don de Mendosa and others from attacking our colonies. Don't forget to send the message to Providence and him personally. I wish you well, gentlemen.";
+			dialog.text = "Take your three hundred thousand and get out of our colony.";
+			link.l1 = "Excellent, señores. I assure you - this was the best way. I hope this will discourage Don de Mendosa and others from attacking our colonies. Don't forget to send the message to Providence and to him personally. I wish you well, gentlemen.";
 			link.l1.go = "SanJoseSpanish_5";
 		break;
 		
@@ -1464,7 +1464,7 @@ void ProcessDialogEvent()
 		
 		// вестовой на 5 задание
 		case "fraofficer":
-			dialog.text = "Captain Charles de Maure, allow me to report: Chevalier Philippe de Poincy wanted to notify you that Baron Noel Forget is ready to depart for Saint-Martin and will await you on the pier.";
+			dialog.text = "Captain Charles de Maure, allow me to report: Chevalier Philippe de Poincy wishes to inform you that Baron Noel Forget is ready to depart for Saint-Martin and will await you on the pier.";
 			link.l1 = "Excellent! Thank you, monsieur.";
 			link.l1.go = "fraofficer_1";
 		break;
@@ -1477,7 +1477,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "fraofficer_2":
-			dialog.text = "Captain Charles de Maure! The Governor General is calling for you right now. A mighty enemy squadron has appeared at the coast of Saint-Christopher!";
+			dialog.text = "Captain Charles de Maure! The Governor General is calling for you right now. A formidable enemy squadron has appeared off the coast of Saint-Christopher!";
 			link.l1 = "Then let us waste no time!";
 			link.l1.go = "fraofficer_3";
 		break;
@@ -1498,13 +1498,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "engofficer_1":
-			dialog.text = "No strangers are allowed to enter here! Who are you, spies? I'll bring you to the commandant's office, they'll deal with you.";
+			dialog.text = "No strangers are allowed to enter here! Who are you, spies? I'll take you to the commandant's office, they'll deal with you.";
 			link.l1 = "But we can't go to the commandant's office...";
 			link.l1.go = "engofficer_2";
 		break;
 		
 		case "engofficer_2":
-			dialog.text = "If you won't go yourself - we'll just have to drag you by force! Hand over you weapons!";
+			dialog.text = "If you won't go yourself - we'll just have to drag you by force! Hand over your weapons!";
 			link.l1 = "No deal...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Patria_CondotierBeachFight");
@@ -1518,13 +1518,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "miner_1":
-			dialog.text = "Yes, monsieur. The letter is to be handed personally to mynheer Peter Stuyvesant or Mathias Beck.";
-			link.l1 = "I'm sure you won't have trouble finding a ship from Willemstad to Cartagena. We gave you all the necessary funds to pay for the trip and for accommodation. And in case you need to - you will confirm your reports in front of the French commission half a year from now?";
+			dialog.text = "Yes, monsieur. The letter is to be handed personally to Mynheer Peter Stuyvesant or Mathias Beck.";
+			link.l1 = "I'm sure you won't have trouble finding a ship from Willemstad to Cartagena. We've given you all the necessary funds to pay for the journey and accommodation. And should the need arise – will you confirm your reports before the French commission six months from now?";
 			link.l1.go = "miner_2";
 		break;
 		
 		case "miner_2":
-			dialog.text = "Monsieur, I'm loyal to my word.";
+			dialog.text = "Monsieur, I am true to my word.";
 			link.l1 = "Very well. Then I wish you luck. This path leads to Willemstad, follow it. It's not far from here.";
 			link.l1.go = "miner_3";
 		break;
@@ -1539,14 +1539,14 @@ void ProcessDialogEvent()
 		
 		// курьер в Капстервиль
 		case "cureer":
-			dialog.text = "Vice-admiral Charles de Maure, right?";
-			link.l1 = "Precisely. Who do I have the honour of speaking with?";
+			dialog.text = "Vice-Admiral Charles de Maure, right?";
+			link.l1 = "Precisely. Whom do I have the honour of speaking with?";
 			link.l1.go = "cureer_1";
 		break;
 		
 		case "cureer_1":
-			dialog.text = "I have a message to you from Baron Noel Forget. He told you to come to the governor's palace at Casterville as soon as possible.";
-			link.l1 = "Oh! Great news! Thank you, I will depart immediately!";
+			dialog.text = "I have a message for you from Baron Noel Forget. He told you to come to the governor's palace in Casterville as soon as possible.";
+			link.l1 = "Oh! Wonderful news! Thank you, I shall depart at once!";
 			link.l1.go = "cureer_2";
 		break;
 		
@@ -1559,25 +1559,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "burden":
-			dialog.text = "Greetings, vice-admiral. Baron Forget told me stories about you. A lot of stories. I give you my sincerest thanks for your loyal and brilliant service for the good of France in the colonies, as well as for your help in uncovering the schemes of the swindler de Poincy. Now, me and the Minister of Finance will deal with him personally, and you will take the place of your former commander. At least, for the time being.";
+			dialog.text = "Greetings, Vice-Admiral. Baron Forget has told me stories about you. Many stories. I offer you my sincerest thanks for your loyal and brilliant service to the good of France in the colonies, as well as for your help in uncovering the schemes of the swindler de Poincy. Now, the Minister of Finance and I will deal with him personally, and you will take the place of your former commander. At least, for the time being.";
 			link.l1 = "But...";
 			link.l1.go = "burden_1";
 		break;
 		
 		case "burden_1":
-			dialog.text = "No 'buts', vice-admiral! This decision has already been made and approved by the King. I have here an order signed by him personally about assigning you as the de facto Governor General of the French colonies in the Archipelago. We have no better candidates for this position. Your outstanding experience in warfare, your knowledge of the region and the people that are responsible for everything here, your skills and talents are all worthy of this high and respectable position. If I may be honest with you, I expect that after some time you will be assigned to this position once again, without the 'de facto' part.";
+			dialog.text = "No 'buts', vice-admiral! This decision has already been made and approved by the King. I have here an order signed by him personally, appointing you as the de facto Governor General of the French colonies in the Archipelago. We have no better candidates for this position. Your outstanding experience in warfare, your knowledge of the region and the people who are responsible for everything here, your skills and talents are all worthy of this high and respectable position. If I may be honest with you, I expect that after some time you will be assigned to this position once again, without the 'de facto' part.";
 			link.l1 = "But I dreamed of going back to Paris...";
 			link.l1.go = "burden_2";
 		break;
 		
 		case "burden_2":
-			dialog.text = "France needs you here! The Minister of Finance is gathering a navy in Europe right now, and our presence here, in the Archipelago, will also not go unnoticed. Your main task will be to strengthen and fortify the colonies and increase the military power of our fleet, while Baron Forget and the French West-Indies trade Company will focus on the trading and domestic development! And who else, if not you, can help prepare the French navy?\nSo, start working, Governor General! I know you don't like sitting in a room all day, but your task doesn't even require it!";
+			dialog.text = "France needs you here! The Minister of Finance is assembling a navy in Europe right now, and our presence here in the Archipelago will not go unnoticed either. Your main task will be to strengthen and fortify the colonies and increase the military power of our fleet, while Baron Forget and the French West Indies Trading Company will focus on trade and domestic development! And who else, if not you, can help prepare the French navy?\nSo, get to work, Governor General! I know you don't like sitting in a room all day, but your task doesn't even require it!";
 			link.l1 = "At once, your Grace! Orders are not to be questioned!";
 			link.l1.go = "burden_3";
 		break;
 		
 		case "burden_3":
-			dialog.text = "I'm glad you've understood me correctly. And I will also ask you to pay a visit to the Chevalier de Poincy: he insisted on meeting you. We can't deny him such pleasure before his departure for Paris, can we? You will find him in the prison.";
+			dialog.text = "I'm glad you've understood me correctly. I would also ask you to pay a visit to the Chevalier de Poincy: he insisted on meeting you. We can't deny him such pleasure before his departure for Paris, can we? You will find him in the prison.";
 			link.l1 = "Very well, your Grace...";
 			link.l1.go = "burden_4";
 		break;
@@ -1604,7 +1604,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_02":
-			dialog.text = "And how did they prioritize what to carry on the first ship and what on the second?! I'm not just some seamstress from the boondocks - I even have an order from the governor-general, his Excellency chevalier de Poincy!";
+			dialog.text = "And how did they decide what to load onto the first ship and what onto the second?! I'm not just some seamstress from the boondocks - I even have an order from the governor-general, His Excellency Chevalier de Poincy!";
 			link.l1 = "...";
 			link.l1.go = "Tailor_03";
 			CharacterTurnByChr(npchar, characterFromId("Charles_PortMan"));
@@ -1627,43 +1627,43 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_05":
-			dialog.text = "Trouble? That's putting it mildly! Oh, I think I recognize you... You're the new vice admiral, correct?";
+			dialog.text = "Trouble? That's putting it mildly! Oh, I think I recognise you... You're the new vice admiral, correct?";
 			link.l1 = "Quick on the uptake. That's correct, before you stands the second man in the French colonies, Vice Admiral of the French fleet, Charles de Maure.";
 			link.l1.go = "Tailor_06";
-			link.l2 = "Drop these formalities, we're not on a ship. And don't worry, I won't call the guards just because you didn't recognize me right away. Just call me Charles de Maure.";
+			link.l2 = "Drop these formalities, we're not on a ship. And don't worry, I won't call the guards just because you didn't recognise me right away. Just call me Charles de Maure.";
 			link.l2.go = "Tailor_07";
 			CharacterTurnByChr(npchar, pchar);
 		break;
 		
 		case "Tailor_06":
 			AddCharacterExpToSkill(pchar, "Leadership", 300);//харизма
-			dialog.text = "Your Excellency, please forgive me for not recognizing you immediately! Yes, you are correct, I've encountered unforeseen circumstances.";
-			link.l1 = "And what would those circumstances be? As I understand it, they didn't bring you materials from Paris?";
+			dialog.text = "Your Excellency, please forgive me for not recognising you immediately! Yes, you are correct, I've encountered unforeseen circumstances.";
+			link.l1 = "And what circumstances would those be? As I understand it, they didn't bring you any materials from Paris?";
 			link.l1.go = "Tailor_08";
 		break;
 		
 		case "Tailor_07":
 			AddCharacterExpToSkill(pchar, "Fortune", 300);//везение
-			dialog.text = "Oh, thank you very much. You're right, I've encountered unforeseen circumstances, which is why I didn't immediately realize who was in front of me.";
-			link.l1 = "And what would those circumstances be? As I understand it, they didn't bring you materials from Paris?";
+			dialog.text = "Oh, thank you very much. You're right, I've encountered unforeseen circumstances, which is why I didn't immediately realise who was in front of me.";
+			link.l1 = "And what circumstances would those be? As I understand it, they didn't bring you any materials from Paris?";
 			link.l1.go = "Tailor_08";
 		break;
 		
 		case "Tailor_08":
-			dialog.text = "Yes, that's correct. I ordered them several months ago. The governor signed the order for your appointment back then and insisted that I prepare all the necessary materials for a new admiral's uniform, confident that it would be approved in the metropolis.";
+			dialog.text = "Yes, that's correct. I ordered them several months ago. The governor signed the order for your appointment back then and insisted that I prepare all the necessary materials for a new admiral's uniform, confident that it would be approved in the capital.";
 			link.l1 = "And the materials were not delivered, I presume?";
 			link.l1.go = "Tailor_09";
 		break;
 		
 		case "Tailor_09":
-			dialog.text = "magine that! I explained how important it was, placed the order... But they got more urgent shipments to take care of! What am I to do? Make my orders a year in advance, hoping they will deign to bring me the materials?";
-			link.l1 = "What exactly are you missing? Maybe it can be obtained in the Caribbean?";
+			dialog.text = "Imagine that! I explained how important it was, placed the order... But they have more urgent shipments to take care of! What am I to do? Place my orders a year in advance, hoping they will deign to bring me the materials?";
+			link.l1 = "What exactly are you missing? Perhaps it can be found in the Caribbean?";
 			link.l1.go = "Tailor_10";
 		break;
 		
 		case "Tailor_10":
 			dialog.text = "Even if it's possible, I have no idea where... You won't find good materials here. Although... I could use your old officer's jacket as a base, if you allow. You probably won't need it once you have an admiral's uniform, right?";
-			link.l1 = "If I have an admiral's uniform, then of course, I won't need a simple officer's jacket. What else?";
+			link.l1 = "If I have an admiral's uniform, then of course I won't need a simple officer's jacket. What else?";
 			link.l1.go = "Tailor_11";
 		break;
 		
@@ -1674,20 +1674,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_12":
-			dialog.text = "For the finishing touches, I need very high-quality fabrics. I do have a spinner who can make such fabric even from coarse fiber. But for that, I need material - ideally cotton. One bale will be more than enough.";
-			link.l1 = "That can be obtained as well. What's next?";
+			dialog.text = "For the finishing touches, I need very high-quality fabrics. I have a spinner who can make such fabric even from coarse fibre. But for that, I need material – ideally cotton. One bale will be more than enough.";
+			link.l1 = "That can be arranged as well. What's next?";
 			link.l1.go = "Tailor_13";
 		break;
 		
 		case "Tailor_13":
-			dialog.text = "They were supposed to deliver an admiral's tricorne from Paris, but I can make it myself if I have the material. While the tricorne for you was supposed to be a fabric one, leather would be better for the salty winds and scorching sun of the Caribbean. It would last longer.";
+			dialog.text = "They were supposed to deliver an admiral's tricorne from Paris, but I can make one myself if I have the materials. While the tricorne for you was meant to be a fabric one, leather would be better for the salty winds and scorching sun of the Caribbean. It would last longer.";
 			link.l1 = "I'll get you the leather; don't worry. I won't even have to chase bulls through the jungles of Espanola. Is that all?";
 			link.l1.go = "Tailor_14";
 		break;
 		
 		case "Tailor_14":
-			dialog.text = "They were also supposed to deliver top-quality silk from Lyon. It's light, breathable, easily absorbs moisture, and dries even faster. And most importantly, it doesn't stretch and maintains its shape.";
-			link.l1 = "Yes, I understand what silk you're talking about. That might be harder to get in the colonies though.";
+			dialog.text = "They were also supposed to deliver top-quality silk from Lyon. It's light, breathable, easily absorbs moisture, and dries even faster. And most importantly, it doesn't stretch and keeps its shape.";
+			link.l1 = "Yes, I understand what silk you're talking about. That might be harder to get in the colonies, though.";
 			link.l1.go = "Tailor_15";
 		break;
 		
@@ -1699,18 +1699,18 @@ void ProcessDialogEvent()
 		
 		case "Tailor_16":
 			dialog.text = "Certainly not! I'll guard it with my life!";
-			link.l1 = "Alright then. If that's all, I'll go get the materials.";
+			link.l1 = "Alright then. If that's all, I'll go and get the materials.";
 			link.l1.go = "Tailor_17";
 		break;
 		
 		case "Tailor_17":
-			dialog.text = "There's one more thing... My tailoring tools have become unusable. I ordered new ones from Paris, but alas... If you could find all the necessary materials and lend me the tools, if you have them - just lend, I'll get new ones later! - I'd immediately start sewing.";
-			link.l1 = "Well, what can I do? I'll bring you everything you need. Where can I find you? You won't be waiting for me in the port authority, will you?";
+			dialog.text = "There's one more thing... My tailoring tools have become unusable. I ordered new ones from Paris, but alas... If you could find all the necessary materials and lend me the tools, if you have them – just lend them, I'll get new ones later! – I'd immediately start sewing.";
+			link.l1 = "Well, what can I do? I'll bring you everything you need. Where can I find you? You won't be waiting for me at the port authority, will you?";
 			link.l1.go = "Tailor_18";
 		break;
 		
 		case "Tailor_18":
-			dialog.text = "My workshop is located in the building right at the pier - when you go ashore, it will be on your right.";
+			dialog.text = "My workshop is located in the building right by the pier - when you go ashore, it will be on your right.";
 			link.l1 = "Deal. I'll get you the materials.";
 			link.l1.go = "Tailor_19";
 		break;
@@ -1726,12 +1726,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_20":
-			dialog.text = "Greetings, vice admiral! Have you brought everything necessary for your new uniform?";
+			dialog.text = "Greetings, Vice Admiral! Have you brought everything necessary for your new uniform?";
 			link.l1 = "Not yet, I haven't had the time. Hold on, I'll get everything.";
 			link.l1.go = "Tailor_20_exit";
 			if(CheckCoatItems())
 			{
-				link.l2 = "Yes, I brought everything. Here's my old jacket, the Order, and the tailoring tools. The rest of the materials, my sailors will bring from to your workshop shortly.";
+				link.l2 = "Yes, I brought everything. Here's my old jacket, the Order, and the tailoring tools. The rest of the materials, my sailors will bring to your workshop shortly.";
 				link.l2.go = "Tailor_21";
 			}
 		break;
@@ -1769,13 +1769,13 @@ void ProcessDialogEvent()
 		case "Tailor_24":
 			if(CheckAttribute(pchar,"questTemp.PatriaTailorDone"))
 			{
-				dialog.text = "Vice admiral! It's a pleasure to see you!";
+				dialog.text = "Vice Admiral! It's a pleasure to see you!";
 				link.l1 = "Well, I've come for the new uniform, as we agreed.";
 				link.l1.go = "Tailor_27";
 			}
 			else
 			{
-				dialog.text = "Greetings, vice admiral! I apologize, but your uniform is not ready yet.";
+				dialog.text = "Greetings, Vice Admiral! I apologise, but your uniform is not ready yet.";
 				link.l1 = "Well, can I at least take a little peek at what's happening?";
 				link.l1.go = "Tailor_25";
 			}
@@ -1783,7 +1783,7 @@ void ProcessDialogEvent()
 		
 		case "Tailor_25":
 			dialog.text = "No, no! Right now, it looks completely unpresentable, and I don't want to disappoint your expectations. Please have patience.";
-			link.l1 = "Оk, I'll wait.";
+			link.l1 = "Ok, I'll wait.";
 			link.l1.go = "Tailor_26";
 		break;
 		
@@ -1793,19 +1793,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tailor_27":
-			dialog.text = "Yes, of course! I must tell you that it turned out no worse than the ones made in Paris! You were right, even in the colonies, you can find suitable material if you know where to look. Just a moment. Here it is! Please, inspect and try it on.";
+			dialog.text = "Yes, of course! I must tell you, it turned out no worse than those made in Paris! You were right, even in the colonies you can find suitable material if you know where to look. Just a moment. Here it is! Please, inspect it and try it on.";
 			link.l1 = "Thank you. Excellent quality! And it fits well.";
 			link.l1.go = "Tailor_28";
 		break;
 		
 		case "Tailor_28":
-			dialog.text = "Not just well! You can proudly wear this as the vice admiral of France in the colonies! And your Order, as I promised, is now in its proper place, not dangling on your belt.";
-			link.l1 = "Good job! When you meet Chevalier de Poincy, you can tell him I am satisfied.";
+			dialog.text = "Not just well! You can wear this with pride as the Vice Admiral of France in the colonies! And your Order, as I promised, is now in its rightful place, not dangling from your belt.";
+			link.l1 = "Good job! When you meet the Chevalier de Poincy, you can tell him I am satisfied.";
 			link.l1.go = "Tailor_29";
 		break;
 		
 		case "Tailor_29":
-			dialog.text = "I will definitely tell him! May the uniform serve you faithfully! Good luck!";
+			dialog.text = "I will definitely tell him! May the uniform serve you well! Good luck!";
 			link.l1 = "Thank you! Goodbye.";
 			link.l1.go = "Tailor_30";
 		break;
@@ -1849,7 +1849,7 @@ void ProcessDialogEvent()
 				if(sItem != "" && rItem.groupID == BLADE_ITEM_TYPE) 
 				{
 					attrL = "l" + i;
-					Link.(attrL) = GetItemName(rItem) + ": Attack - " + FloatToString(stf(rItem.attack),1) + ", balance - " + FloatToString(stf(rItem.Balance),1) + ", weight - " + FloatToString(stf(rItem.Weight),1);
+					Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt") + ": Attack - " + FloatToString(stf(rItem.attack),1) + ", balance - " + FloatToString(stf(rItem.Balance),1) + ", weight - " + FloatToString(stf(rItem.Weight),1);
 					Link.(attrL).go = "bladeindex_"+GetItemIndex(rItem.id);
 					i++;
 				}

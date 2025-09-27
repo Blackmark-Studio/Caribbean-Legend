@@ -1,0 +1,47 @@
+CheatStatus { }
+new_string
+{
+
+}
+Cheat_success { }
+Cheat_on { }
+Cheat_off { }
+Cheat_Comming_soon { }
+f1 { }
+f2 { }
+f3 { }
+StrF3_on { }
+StrF3_off { }
+f4 { }
+f5 { }
+f6 { }
+f7 { }
+f8 { }
+f9 { }
+f10 { }
+f11 { }
+f12 { }
+f13 { }
+f14 { }
+f15 { }
+f16 { }
+f17 { }
+f18 { }
+f19 { }
+f20 { }
+f21 { }
+f22 { }
+f23 { }
+f24 { }
+f25 { }
+f26 { }
+f27 { }
+f28 { }
+f29 { }
+f30 { }
+StrF9_on { }
+StrF9_off { }
+StrF27_on { }
+StrF27_off { }
+StrF28_on { }
+StrF28_off { }

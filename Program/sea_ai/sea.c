@@ -162,10 +162,6 @@ void DeleteSeaEnvironment()
 
 	//
 		LanguageCloseFile(iSeaSectionLang); iSeaSectionLang = -1;
-
-	//
-		Encounter_DeleteDeadQuestMapEncounters();
-
 }
 
 void CreateSeaEnvironment()
@@ -438,6 +434,13 @@ void Sea_MapLoad()
             }  
         }
     }
+
+		
+		if (!CanBeCaptain(chref))
+		{
+			Log_Info(DLGO(GetConvertStr("CanBeCaptain", "Notification.txt"), chref));
+			ok = false;
+		}
     if (!ok)
     {
         Log_Info(XI_ConvertString("NoMapAccess"));
@@ -559,8 +562,6 @@ void SeaLogin(ref Login)
 	fSeaExpTimer = 0.0;
 
 	Sea_FreeTaskList();	
-	
-	Encounter_DeleteDeadQuestMapEncounters();
 
 	// weather parameters
 	WeatherParams.Tornado = false;
@@ -1166,7 +1167,6 @@ void SeaLogin(ref Login)
 	//Trace("iNumFantomShips = " + iNumFantomShips);
 
 	pchar.space_press = "0";
-	DeleteAttribute(pchar, "SkipEshipIndex");// boal
 
 	pchar.DirSailFail = ""; // mitrokosta удалить флаг фейла директсаила
 

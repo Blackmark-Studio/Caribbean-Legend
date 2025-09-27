@@ -1130,25 +1130,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "真的吗? 那你一定知道密码。 说出来, 如果你撒谎, 你会后悔的... ";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "特里同";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "海王星";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "百夫长";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "鱼叉";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "正确。 但你, 伙计, 从错误的一侧来了。 他们没警告过你吗? 回去, 从枯井走左边的路。 然后绕过小山, 你就会看到正门。 ";
-				link.l1 = "我不能从这里进吗? ";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "伙计们, 有探子! 火枪准备! 开火!! ";
-				link.l1 = "... ";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "正确。 但你, 伙计, 从错误的一侧来了。 他们没警告过你吗? 回去, 从枯井走左边的路。 然后绕过小山, 你就会看到正门。 ";
+			link.l1 = "我不能从这里进吗? ";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "伙计们, 有探子! 火枪准备! 开火!! ";
+			link.l1 = "... ";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1172,25 +1173,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "真的吗? 那你应该知道密码。 说出来, 让我听到。 如果你想骗我, 那将是你这辈子对别人开的最后一个玩笑。 ";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "特里同";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "海王星";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "百夫长";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "鱼叉";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "正确。 往前走。 营地的头儿在矿场入口左边的房子里。 去见他。 ";
-				link.l1 = "好的, 伙计... ";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "伙计们, 有探子! 加农炮, 开火!! ";
-				link.l1 = "... ";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "正确。 往前走。 营地的头儿在矿场入口左边的房子里。 去见他。 ";
+			link.l1 = "好的, 伙计... ";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "伙计们, 有探子! 加农炮, 开火!! ";
+			link.l1 = "... ";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1565,7 +1567,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);

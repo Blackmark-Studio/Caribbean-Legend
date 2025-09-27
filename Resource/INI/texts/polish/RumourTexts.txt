@@ -1,63 +1,46 @@
 Start_GoldFleet_t0 {Mówią, że flotilla, która transportuje złoto i srebro do skarbca Hiszpanii, niedawno opuściła port w Portobello i popłynęła do Hawany.}
 Start_GoldFleet_t1 {Hiszpańska flotilla z bezcennym ładunkiem srebra i złota z Inków i Azteków właśnie wypłynęła z Portobello. Konwój zmierza do Hawany, skąd skarby zostaną przetransportowane do Hiszpanii.}
 Start_GoldFleet_t2 {Mówią, że hiszpański konwój złota wypłynął z Portobello do Hawany z ładunkiem srebra i złota. Flotyllę eskortuje ogromny man-of-war oraz fregaty i galeony z dwoma pokładami armat, a także inne statki wojenne, których nie udało mi się rozpoznać.}
-
 End_GoldFleet_t0 {Hiszpański konwój złota bezpiecznie dotarł do Kuby. Teraz całe zebrane srebro i złoto zostanie bezpiecznie przetransportowane do Hiszpanii.}
 End_GoldFleet_t1 {Wszystkie statki hiszpańskiego konwoju złota bezpiecznie dotarły do Hawany. Srebro i złoto z Peru i Meksyku wkrótce zostaną dostarczone do Europy.}
 End_GoldFleet_t2 {Hiszpańska flotilla dotarła do Hawany. Ładunek srebra i złota jest bezpieczny i wkrótce zostanie dostarczony do Hiszpanii.}
-
 Defeat_GoldFleet_t0 {Mówią, że hiszpański konwój złota, płynący z Portobello do Hawany, nigdy nie dotarł do celu. Tylko Bóg wie, co mogło się stać, może straszliwe burze albo piraci, chociaż wątpię, że tacy odważni, a raczej szaleni piraci istnieją.}
 Defeat_GoldFleet_t1 {Hiszpańska flotilla złota, transportująca ładunek srebra i złota z Portobello, zniknęła bez śladu. Nikt nie wie na pewno, ale mówią, że padła ofiarą piratów!}
 Defeat_GoldFleet_t2 {Konwój złota transportujący skarby z Portobello nigdy nie dotarł do Hawany, chociaż powinien był już dawno. Co się mogło stać? ... Kto wie, wokół tej pory roku są dzikie burze.}
-
 Attak_GoldFleet_t0 {Mówią, że hiszpański konwój złota, transportujący srebro, złoto i inne skarby Nowego Świata, został zaatakowany, a kilka statków zostało straconych w wyniku tego ataku.}
 Attak_GoldFleet_t1 {Morza są niebezpieczne! Hiszpański konwój złota płynący z Portobello do Hawany został zaatakowany przez piratów lub angielskich korsarzy, nie wiem na pewno, może to byli Francuzi! Naprawdę, jacy oni odważni! Chciałbym ich wszystkich powiesić!}
 Attak_GoldFleet_t2 {Z każdym dniem robi się coraz gorzej! Hiszpański konwój złota, transportujący srebro, złoto i inne skarby Nowego Świata z Portobello do Hawany, został zaatakowany przez odważnych piratów! O, Święta Dziewico! Koniec świata na pewno nadchodzi!}
-
 Init_GoldFleet_t0 {Mówią, że hiszpański konwój złota przygotowuje się do wypłynięcia z Portobello. Dokładny dzień wypłynięcia jest tajemnicą, ale mówią, że konwój wypłynie do Kuby na początku #sgold_month#.}
 Init_GoldFleet_t1 {Mówią, że złoto i srebro są załadowywane na statki konwoju złota. Konwój wyruszy do Kuby w pierwszej połowie #sgold_month#.}
 Init_GoldFleet_t2 {Oczekiwany dzień wypłynięcia konwoju złota z Portobello do Kuby zaplanowano na pierwszą połowę #sgold_month#. Do tego czasu całe zdobyte złoto i srebro zostanie załadowane do ładowni.}
-
 MerchantOnMapTo_t0 {Mówią, że statek "#sShipName#", pod flagą #snation#, zmierza w naszą stronę z kolonii #ssColony#, w pełni załadowany ładunkiem #sQuestGoodsIdx#.}
 MerchantOnMapTo_t1 {Lokalny kupiec czeka na przybycie statku "#sShipName#", pod flagą #snation#, z kolonii #ssColony#, z ładunkiem #sQuestGoodsIdx#.}
 MerchantOnMapTo_t2 {Słyszałem, że jeden kupiec na statku "#sShipName#", pod flagą #snation#, transportuje ładunek #sQuestGoodsIdx# z kolonii #ssColony#.}
-
 MerchantOnMap_t0 {Mówią, że statek kupiecki "#sShipName#", pod flagą #snation#, czeka na przypływ, by wypłynąć do #ssNextColony# z ładunkiem #sQuestGoodsIdx#.}
 MerchantOnMap_t1 {Mówią, że bogaty negocjant działający pod patronatem #snation#, wynajął statek "#sShipName#". Wkrótce wypłynie do #ssNextColony# z ładunkiem #sQuestGoodsIdx#.}
 MerchantOnMap_t2 {Lokalny kupiec wyposażył statek "#sShipName#" w ładunek #sQuestGoodsIdx# dla #snation#, i wkrótce wypłynie do #ssNextColony#.}
-
 MerchantRumour_t0 {Słyszałem plotki, że statek "#sShipName#", pod flagą #snation#, który wypłynął z #ssColony# do #ssNextColony# z ładunkiem #sQuestGoodsIdx#, został zatopiony przez nieznanych piratów!}
 MerchantRumour_t1 {Słyszałem plotki, że statek "#sShipName#", pod flagą #snation#, który wypłynął z #ssColony# z ładunkiem #sQuestGoodsIdx# do #ssNextColony#, zatonął razem z ładunkiem i całą załogą!}
 MerchantRumour_t2 {Krążą straszne plotki, że jakiś pirat ostatnio abordował statek kupiecki #snation#, płynący z kolonii #ssColony#. Zabił całą załogę i zabrał ładunek #sQuestGoodsIdx# dla siebie. To nie byłeś ty, przypadkiem, kapitanie?}
-
-GetColonyPrices_t0 {Kwatermistrz statku Kompanii Zachodnioindyjskiej opowiedział mi przy odrobinie rumu o cenach w sklepie #sColony#. (otrzymano aktualną listę cen)}
-GetColonyPrices_t0 {Kapitan statku handlowego, który niedawno przybył z miasta #sColony#, opowiedział mi o cenach w lokalnym sklepie. (lista cen uzyskana)}
 GetColonyPrices_t0 {Ostatnio podsłuchałem w tawernie dwóch kapitanów, którzy dyskutowali o cenach w sklepie w mieście #sColony#. (lista cen uzyskana)}
-
 WaitInTavern_t0 {Mówią, że #sPsHero_Name# stracił swój statek i teraz topi smutki w rumie w tawernie w #sTown_Name#.}
 WaitInTavern_t1 {Słyszałem od pijanego marynarza, który został wczoraj aresztowany za kradzież, że #sPsHero_Name# stracił swój statek w grze w karty i teraz czeka na przygodę w tawernie w #sTown_Name#.}
 WaitInTavern_t2 {Marynarze w tawernie mówią, że #sPsHero_Name# miał ostatnio straszną passę pecha. Urzędnicy celni zatopili jego statek, a on ledwie uniknął szubienicy w mieście #sTown_Name#.}
-
 WorkOnMayor_t0 {Dziś widziałem #sPsHero_Name# z naszym gubernatorem. Wygląda na to, że jego Ekscelencja dał mu kolejną "interesującą" misję.}
 WorkOnMayor_t1 {Mówią, że nasz gubernator ma nowego protegowanego. Kapitan #sPsHero_Name# jest częstym gościem w rezydencji, podejmuje delikatne misje dla niego, a podobno ma romans z córką Jego Ekscelencji.}
 WorkOnMayor_t2 {Kucharka powiedziała mi, że usłyszała od pokojówki Jego Ekscelencji, że #sPsHero_Name# jest jego dobrym przyjacielem. Dziś wcześnie rano spieszył do rezydencji - z pewnością miał tam ważne sprawy.}
-
 SailToIsland_t0 {#sPsHero_Name# powiedział, że płynie do #sTo# #sTown_Name#. Może jest tam coś do kupienia.}
 SailToIsland_t1 {#sPsHero_Name# płynie do #sTo# #sTown_Name# w interesach - tak przynajmniej słyszałem od jednego z jego marynarzy w tawernie.}
 SailToIsland_t2 {Wczoraj #sPsHero_Name# był pijany jak świnia w lokalnej tawernie i krzyczał głośno, że płynie do #sTo# #sTown_Name#, gdzie ma interesy.}
-
 WorkOnStore_t0 {Jeden z marynarzy w tawernie wspomniał, że #sPsHero_Name# podjął się dostarczenia ładunku #sGood# do #sTown_Name#.}
 WorkOnStore_t1 {Asystent naszego handlarza powiedział mi, że #sPsHero_Name# podjął się dostarczenia ładunku #sGood# od szefa sklepu do miasta #sTown_Name#.}
 WorkOnStore_t2 {Nasz barman powiedział, że #sPsHero_Name# wynajmował marynarzy w tawernie, by popłynęli do #sTown_Name# z ładunkiem #sGood# z lokalnego sklepu.}
-
 WorkWithContra_t0 {Widziałem, jak #sPsHero_Name# rozmawiał z jakąś podejrzaną osobą. Mówią, że to był przemytnik.}
 WorkWithContra_t1 {Mówią, że #sPsHero_Name# przywiózł pełny ładunek przemyconych towarów. Może już je sprzedał, a może jeszcze nie...}
 WorkWithContra_t2 {Podsłuchałem, jak #sPsHero_Name# rozmawiał z naszym przemytnikiem. Uzgodnili spotkanie w miejscu o nazwie #sContraPlace#.}
-
 DuelCoward_t0 {Jaka szkoda! #sName# spanikował i nie pojawił się na swoim własnym pojedynku. Teraz wszyscy gadają, że jest zwykłym tchórzem!}
 DuelCoward_t1 {Ha-ha, #sName# nie stawił się na pojedynek! Nie sądzę, żeby po tej akcji miał taki sam sukces z kobietami, jaki miał wcześniej.}
 DuelCoward_t2 {Słyszałeś? #sName# nie stawił się na pojedynek! Mówią, że był absolutnie pijany i po prostu nie mógł ustać na nogach.}
-
 DuelHero_t0 {Wiesz, że #sName# to mistrz pojedynków? Zabił już #sKill# ludzi. Nie chciałbym stanąć mu na drodze.}
 DuelHero_t1 {Mówią, że #sName# sprzedał swoją duszę diabłu, dlatego nie można go pokonać w pojedynku! A dusze tych, których zabije... zabił już #sKill# ludzi i wszyscy idą prosto do piekła! Mówią też, że jeśli skończy swoją krwawą passę, diabeł zabierze jego duszę.}
 DuelHero_t2 {Ten nowicjusz #sName# ma niesamowite szczęście! Zabił już #sKill# ludzi w pojedynku i nigdy się nie zadrapał! Naprawdę, możesz w to w ogóle uwierzyć?}

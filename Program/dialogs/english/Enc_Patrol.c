@@ -64,13 +64,13 @@ void ProcessDialogEvent()
 			{
     			if (pchar.nation == npchar.nation)
 				{
-					dialog.text = RandPhraseSimple("Oh look, it seems, this scoundrel has raised alarm in " + XI_ConvertString("Colony" + npchar.city + "Dat") + "! Seize h"+ GetSexPhrase("im","er") +"!!", "Heh, look at this! Several " + NationNamePeople(sti(pchar.nation))+ " manage to be enemies with " + NationNameAblative(sti(npchar.nation)) + "! Seize the scoundrel!!!");
+					dialog.text = RandPhraseSimple("Oh look, it seems this scoundrel has raised the alarm in "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! Seize h"+GetSexPhrase("im","er")+"!!","Heh, look at this! Several "+NationNamePeople(sti(pchar.nation))+" manage to be enemies with "+NationNameAblative(sti(npchar.nation))+" Seize the scoundrel!!!");
 				}
 				else
 				{
-					dialog.text = RandPhraseSimple("Enemy agent near " + XI_ConvertString("Colony" + npchar.city + "Gen") + "! Seize h"+ GetSexPhrase("im","er") +"!!", "Hey, look, " + NationNamePeople(sti(pchar.nation))+ " are walking around almost in " + XI_ConvertString("Colony" + npchar.city + "Dat") + "! Immediately grab him!!!");
+					dialog.text = RandPhraseSimple("Enemy agent nearby "+XI_ConvertString("Colony"+npchar.city+"Gen")+"! Seize h"+GetSexPhrase("im","er")+"!!","Hey, look, "+NationNamePeople(sti(pchar.nation))+" are wandering around almost in "+XI_ConvertString("Colony"+npchar.city+"Dat")+"! Grab him immediately!!!");
 				}
-				link.l1 = RandPhraseSimple("Well, you may try. We are alone here...", "Heh, no one will lend you a helping hand here.");
+				link.l1 = RandPhraseSimple("Well, you may try. We are alone here...","Heh, no one will give you a helping hand here.");
 				link.l1.go = "exit_fight"; 				
 			}
 			else
@@ -80,36 +80,28 @@ void ProcessDialogEvent()
 				if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation)) sTemp1 = "Vice Admiral! ";
 				if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE) sTemp1 = "Your Excellency Governor General! ";
 				
-				dialog.text = LinkRandPhrase("Allow me to introduce myself! I am a patrol officer from " + XI_ConvertString("Colony" + npchar.city + "Gen") + ", we're looking for an escaped convict.",
-					"Hello, I am the head of this patrol. We're looking for an escaped slave from " + XI_ConvertString("Colony" + npchar.city + "Gen") + ".",
-					"Greetings to you, " + GetAddress_Form(NPChar) + ". My detachment is patrolling territory near " + XI_ConvertString("Colony" + npchar.city + "Gen") + ".");
-				Link.l1 = LinkRandPhrase("Very good. How can I help you?",
-				"Very good. Can I help you with anything, " + GetAddress_FormToNPC(NPChar) + "?",
-				"Very good. Is there anything I can do for you?");
+				dialog.text = LinkRandPhrase("Allow me to introduce myself! I am a patrol officer from "+XI_ConvertString("Colony"+npchar.city+"Gen")+", we're looking for an escaped convict.","Hello, I am the head of this patrol. We're looking for an escaped slave from "+XI_ConvertString("Colony"+npchar.city+"Gen")+".","Greetings to you, "+GetAddress_Form(NPChar)+". My detachment is patrolling the territory near "+XI_ConvertString("Colony"+npchar.city+"Gen")+".");
+				Link.l1 = LinkRandPhrase("Very good. How can I help you?","Very good. Can I help you with anything, "+GetAddress_FormToNPC(NPChar)+"?","Very good. Is there anything I can do for you?");
 				Link.l1.go = "Node_2";
 			}
 		break;
 		
 		case "Node_2":
-			dialog.text = RandPhraseSimple("Have you seen anything suspicious in the district?",
-				"Have you met anyone looking suspicious, " + GetAddress_Form(NPChar) + "?");
-			Link.l1 = RandPhraseSimple("No, nothing like that.", "No, officer, everything seemed calm.");
+			dialog.text = RandPhraseSimple("Have you seen anything suspicious in the district?","Have you seen anyone acting suspicious, "+GetAddress_Form(NPChar)+"?");
+			Link.l1 = RandPhraseSimple("No, nothing like that.","No, officer, everything seemed calm.");
 			Link.l1.go = "Node_3";		
 		break;
 
 		case "Node_3":
 			Diag.TempNode = "GoodBye";
-			dialog.text = RandPhraseSimple("Alright, that I will not delay you any longer. Goodbye, " + GetAddress_Form(NPChar) + ".",
-				"I see. Goodbye, then.");
+			dialog.text = RandPhraseSimple("Alright, then I will not delay you any longer. Goodbye, "+GetAddress_Form(NPChar)+".","I see. Goodbye, then.");
 			Link.l1 = "Good luck.";
 			Link.l1.go = "exit_noFight";
 		break;
 
 		case "GoodBye":
 			Diag.TempNode = "GoodBye";
-			dialog.text = LinkRandPhrase("Do not distract us from our duty.",
-				"I would like you to leave us be!",
-				"Oh, that's you again... Go your own way and don't disturb us.");
+			dialog.text = LinkRandPhrase("Do not distract us from our duty.","I would like you to leave us alone!","Oh, it's you again... Go your own way and don't bother us.");
 			Link.l1 = "Fine.";
 			Link.l1.go = "Exit";			
 		break;
@@ -119,17 +111,17 @@ void ProcessDialogEvent()
 				if(Pchar.Location == Pchar.location.from_sea)
 				{
 					dialog.text = "Hmm... I haven't seen you before. Who are you?";
-					link.l1 = "I am the one whom you're waiting for...";
+					link.l1 = "I am the one you are waiting for...";
 					link.l1.go = "Reason_To_Fast_11";
-					link.l2 = "I am captain " + GetFullName(pchar) + ". I would like to know why would you be in such a hurry that you'd almost forgotten your pants in the brothel...";
+					link.l2 = "I am the captain "+GetFullName(pchar)+". I would like to know why you would be in such a hurry that you'd almost forgotten your pants in the brothel...";
 					link.l2.go = "Reason_To_Fast_21";
-					link.l3 = "I am captain " + GetFullName(pchar) + ". I am just taking a stroll here, breathing in the salty sea breeze...";
+					link.l3 = "I am the captain "+GetFullName(pchar)+". I'm just taking a stroll here, breathing in the salty sea breeze...";
 					link.l3.go = "Reason_To_Fast_31";
 				}
 				else
 				{
 					Diag.TempNode = "GoodBye";
-					dialog.text = "You've come at last. I thought I'd never see you again. And who is that type with you?";
+					dialog.text = "You've come at last. I thought I'd never see you again. And who is that fellow with you?";
 					link.l1 = "What type?";
 					link.l1.go = "Reason_To_Fast_Hunter";
 				} 
@@ -141,27 +133,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_11":
-			dialog.text = "You don't look much like someone whom I would trust " + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_NOM) + ".";
+			dialog.text = "You don't look much like someone I would trust "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+".";
 			if(!CheckCharacterItem(pchar,"mapQuest"))
 			{
-				link.l1 = "Alright, I'll tell him all you said.";
+				link.l1 = "Alright, I'll tell him everything you said.";
 				link.l1.go = "Reason_To_Fast_12";
 			}	
-			link.l2 = "And who is this " + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_NOM) + "?";
+			link.l2 = "And who is this "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+"?";
 			link.l2.go = "Reason_To_Fast_13";
 		break;
 		
 		case "Reason_To_Fast_21":
-			dialog.text = "Curiosity has killed a lot more people than cats...";
-			link.l1 = "Well-well!";
+			dialog.text = "Curiosity has killed far more people than cats...";
+			link.l1 = "Well, well!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAfter";	
 		break;
 		
 		case "Reason_To_Fast_31":
 			Diag.TempNode = "Reason_To_Fast_GoodBye";
-			dialog.text = "The tide is coming. You'd better leave the cove, the water here rises to the level of the palm tree.";
-			link.l1 = "No problem, I am a good swimmer.";
+			dialog.text = "The tide is coming in. You'd better leave the cove; the water here rises to the level of the palm tree.";
+			link.l1 = "No problem, I'm a good swimmer.";
 			link.l1.go = "Reason_To_Fast_GoodBye_0";
 			pchar.questTemp.ReasonToFast = "MeetPatrolFail";
 		break;
@@ -186,8 +178,8 @@ void ProcessDialogEvent()
 				break;
 			}
 			pchar.questTemp.ReasonToFast.jewType = sItemName;
-			dialog.text = "Alright, alright. Are promised 30 " + sItemName + " with you?";
-			link.l1 = GetName(NAMETYPE_MAIN , pchar.questTemp.ReasonToFast.p3, NAME_NOM) + " said that there was not enough time to collect that many gems. He ordered me to offer money instead.";
+			dialog.text = "Alright, alright. You are promised 30 "+sItemName+" with you?";
+			link.l1 = GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" said there wasn't enough time to gather that many gems. He ordered me to offer money instead.";
 			link.l1.go = "Reason_To_Fast_14";
 			if (GetCharacterItem(pchar, pchar.questTemp.ReasonToFast.item) >= 30)
 			{
@@ -197,15 +189,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_13":
-			dialog.text = "Heh! You'll know it in hell!";
-			link.l1 = "What a self-confidence ...";
+			dialog.text = "Heh! You'll find out in hell!";
+			link.l1 = "What self-confidence ...";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAfter";	
 		break;
 		
 		case "Reason_To_Fast_14":
-			dialog.text = "Alright, then you owe me " + sti(pchar.questTemp.ReasonToFast.p5) + " pesos, as we had agreed.";
-			link.l1 = "Isn't that a little to much?";
+			dialog.text = "Alright, then you owe me "+sti(pchar.questTemp.ReasonToFast.p5)+" pesos, as we agreed.";
+			link.l1 = "Isn't that a little too much?";
 			link.l1.go = "Reason_To_Fast_16";
 			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
 			{
@@ -220,7 +212,7 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_15":
 			TakeNItems(pchar, pchar.questTemp.ReasonToFast.item, -30); 
-			dialog.text = "Everything is in accordance with the agreement. Here you go. This map was taken from the hanged pirate, about whom "  + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_NOM) + " had inquired.";
+			dialog.text = "Everything is in accordance with the agreement. Here you go. This map was taken from the hanged pirate, about whom "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_NOM)+" had inquired.";
 			link.l1 = "The deal is done!";
 			link.l1.go = "Reason_To_Fast_15_1";
 		break;
@@ -240,7 +232,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_16":
-			dialog.text = "We have settled the sum with " + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_ABL) + " in advance. I don't like it a bit. Kill h"+ GetSexPhrase("im","er") +", boys!";
+			dialog.text = "We have settled the sum with "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_ABL)+" in advance. I don't like it one bit. Kill h"+GetSexPhrase("im","er")+", boys!";
 			link.l1 = "Alright, you may try!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAfter";	
@@ -259,8 +251,8 @@ void ProcessDialogEvent()
 					sTemp1 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
 					iShipType = ReasonToFast_GetVictimShipType();
 					iShipGoods = ReasonToFast_GetVictimShipGoods();
-					dialog.text = "Excellent! Now let's get down to business. We have intercepted that " + GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName) +" '" + sTemp1 + "' with a cargo of " + GetGoodsNameAlt(iShipGoods) + ", the crew is already detained, and the 'cargo' is still on board. The crew was hired among down-and-outers in the port, and they won't get into the port until tomorrow. You can deal with them however you want.";
-					link.l1 = "Alright. I'll tell your words " + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + ".";
+					dialog.text = "Excellent! Now let's get down to business. We have intercepted that "+GetStrSmallRegister(pchar.questTemp.ReasonToFast.ShipTypeName)+" '"+sTemp1+"' with a cargo of "+GetGoodsNameAlt(iShipGoods)+", the crew is already detained, and the 'cargo' is still on board. The crew was hired from down-and-outers in the port, and they won't get into port until tomorrow. You can deal with them however you want.";
+					link.l1 = "Alright. I'll deliver your message "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+".";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
 					pchar.questTemp.ReasonToFast.chain = "A0";
 					pchar.questTemp.ReasonToFast.ShipName = sTemp1;										
@@ -305,8 +297,8 @@ void ProcessDialogEvent()
 					}
 					pchar.questTemp.ReasonToFast.password = sTemp2;
 					sTemp2 = generateRandomNameToShip(sti(pchar.questTemp.ReasonToFast.GuardNation));
-					dialog.text = "Excellent! " + sTemp1 + " kept in his boudoir. The courier ship will arrive any day now, but you should still manage. The lackey is 'our' man. Password: '"+ pchar.questTemp.ReasonToFast.password +"', reply: '"+ sTemp2 +"'.";
-					link.l1 = "Alright. I'll pass your word " + GetName( NAMETYPE_MAIN, pchar.questTemp.ReasonToFast.p3, NAME_DAT) + ".";
+					dialog.text = "Excellent! "+sTemp1+" kept in his boudoir. The courier ship will arrive any day now, but you should still manage. The lackey is 'our' man. Password: '"+pchar.questTemp.ReasonToFast.password+"', reply: '"+sTemp2+"'.";
+					link.l1 = "Alright. I'll pass on your message "+GetName(NAMETYPE_MAIN,pchar.questTemp.ReasonToFast.p3,NAME_DAT)+".";
 					link.l1.go = "Reason_To_Fast_GoodBye_0";
 					pchar.questTemp.ReasonToFast.chain = "A1";
 					AddQuestRecord("ReasonToFast", "12");
@@ -326,7 +318,7 @@ void ProcessDialogEvent()
 			if(makeint(pchar.money) >= sti(pchar.questTemp.ReasonToFast.p5))
 			{
 				dialog.text = "Are you trying to trick me?! You dog!";
-				link.l1 = "Shut the fuck up!";
+				link.l1 = "Shut the hell up!";
 				link.l1.go = "Reason_To_Fast_ExitFight";
 				pchar.questTemp.ReasonToFast = "PatrolAfter";	
 			}
@@ -358,8 +350,8 @@ void ProcessDialogEvent()
 		
 		case "Reason_To_Fast_GoodBye":
 			Diag.TempNode = "Reason_To_Fast_GoodBye";
-			dialog.text = "You'd better leave the cove, the tide is already coming...";
-			link.l1 = "Yeah, yeah, I am leaving.";
+			dialog.text = "You'd better leave the cove, the tide is already coming in...";
+			link.l1 = "Yeah, yeah, I'm leaving.";
 			link.l1.go = "Exit";
 		break;
 		
@@ -397,22 +389,22 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Reason_To_Fast_AfterHunter1":
-			dialog.text = "Haven't we agreed that the messenger must be alone?";
-			link.l1 = "Lack of coordination. The messenger had lost his way. I am the substitute.";
+			dialog.text = "Haven't we agreed that the messenger must come alone?";
+			link.l1 = "Lack of coordination. The messenger lost his way. I am the substitute.";
 			link.l1.go = "Reason_To_Fast_11";
 			link.l2 = "And I have come alone, but not for what you are expecting.";
 			link.l2.go = "Reason_To_Fast_AfterHunter2";
 		break;
 		
 		case "Reason_To_Fast_AfterHunter2":
-			dialog.text = "So, you have tracked me down after all, I am sorry for what will happen...";
+			dialog.text = "So, you have tracked me down after all. I am sorry for what is about to happen...";
 			link.l1 = "Arrgh!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAfterHunter";	
 		break;
 		
 		case "Reason_To_Fast_AfterHunter3":
-			dialog.text = "You prick! I've almost believed in that! Guards! Seize h"+ GetSexPhrase("im","er") +"...";
+			dialog.text = "You prick! I almost believed that! Guards! Seize h"+GetSexPhrase("im","er")+"...";
 			link.l1 = "Try it, bastards!";
 			link.l1.go = "Reason_To_Fast_ExitFight";
 			pchar.questTemp.ReasonToFast = "PatrolAngry";	

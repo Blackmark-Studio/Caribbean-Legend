@@ -285,8 +285,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_16":
-			dialog.text = "¿Tal vez tengas uno mejor? ¿No necesitarás un guardaespaldas por casualidad? Porque pareces... débil. Me preocupa que no llegues lejos, jeje. Recuerda, es el séquito el que hace a los reyes. Un mal séquito puede derrocarlos.";
-			link.l1 = "¿Y qué tipo de "+GetSexPhrase("rey","reina")+" sería yo contigo en mi comitiva? ¿"+GetSexPhrase("El Rey","La Reina")+" del montón de estiércol?";
+			dialog.text = "¿Tal vez tengas uno mejor? No necesitas un guardaespaldas, ¿por casualidad? Porque pareces... débil. Me preocupa que no llegues lejos, jeje. Recuerda, es el séquito el que hace a los reyes. Y un mal séquito puede derribarlos.";
+			link.l1 = "¿Y qué tipo de "+GetSexPhrase("rey","reina")+" ¿estaría yo con una comitiva como tú? "+GetSexPhrase("Rey","Reina")+" del montón de estiércol?";
 			link.l1.go = "BM_Irons_17";
 		break;
 		
@@ -297,7 +297,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "¡Doscientos cincuenta doblones por adelantado! Para asegurarme de que hablas en serio y no eres solo un fracaso. Y una tarifa mensual después de eso. Creo que podemos llegar a un acuerdo.";
+			dialog.text = "¡Quinientos doblones por adelantado! Para asegurarme de que hablas en serio y no eres solo un fracaso. Y una tarifa mensual después de eso. Creo que podemos llegar a un acuerdo.";
 			link.l1 = "Y tú no...";
 			link.l1.go = "BM_Irons_19";
 		break;
@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Incluso esperé hasta que estuviéramos en la jungla para no distraerte de los asuntos en la ciudad. Entonces, ¿tienes una ronda?";
+			dialog.text = "¿Por qué estás tomando tan mal mi petición? No estoy pidiendo malditas perlas, solo un cartucho. Estuve esperando el momento justo para no distraerte de tus asuntos ni meterme en medio como un loco cualquiera, jeje. Entonces... ¿tienes un cartucho?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "Sí, tengo una ronda. Aquí tienes. Solo no me hagas una broma estúpida con esa bala. ¿Entiendes, Tommy?";
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		
@@ -682,7 +682,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_15":
-			dialog.text = "Eso es lo que dije, alguien allá arriba decidió rescatarme. ¡Y vaya rescate fue, jeje! Lo has entendido bien, los piratas vencieron a aquellos que disfrutan de abusar de hombres atados y encadenados. Pero aún así fue una pelea ardiente, tan ardiente como el sol de aquí. Y nuestros salvadores sufrieron algunas bajas, así que ofrecieron a todos la posibilidad de unirse a ellos.";
+			dialog.text = "Eso es lo que dije: alguien allá arriba decidió rescatarme. ¡Vaya rescate fue, jeje! Lo has entendido bien: los piratas vencieron a aquellos que disfrutan abusar de hombres atados y encadenados. Pero aún así fue una pelea ardiente, tan ardiente como el sol aquí. Y nuestros salvadores sufrieron algunas bajas. Así que ofrecieron a todos los que querían unirse a ellos.";
 			link.l1 = "¿Y te uniste a ellos? Dijiste que navegaste con piratas.";
 			link.l1.go = "BM_IronsThirdJungle_16";
 		break;
@@ -700,14 +700,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_18":
-			dialog.text = "Porque Jack era un verdadero líder, así que dijo que no tomaría el mal camino por un hombre, jugar a la venganza y meterse con oficiales prominentes de la Marina Británica en lugar de atacar a los orondos barcos mercantes.";
-			link.l1 = "¿Oficiales prominentes? Creo que Frank era un civil.";
+			dialog.text = "Porque Jack era un verdadero líder, así que dijo que no haría un desvío por un hombre, esperarlo, jugar a la venganza y meterse con oficiales prominentes de la Marina Británica en lugar de atacar a los gordos barcos mercantes.";
+			link.l1 = "¿Oficiales prominentes? Frank era un civil, creo.";
 			link.l1.go = "BM_IronsThirdJungle_19";
 		break;
 		
 		case "BM_IronsThirdJungle_19":
-			dialog.text = "Eh, no siempre fue uno de ellos. Siempre fue algo, turbio. Y cuando intentó tenderle una trampa a alguien, quedó en desgracia. Intentó navegar como comerciante, pero el trabajo honesto no era lo suyo y terminó estableciéndose aquí.";
-			link.l1 = "Aún no lo llamaría oficial prominente.";
+			dialog.text = "Eh, no siempre fue uno de ellos. Siempre fue algo, turbio. Y cuando intentó tenderle una trampa a alguien, lo echaron en desgracia. Intentó navegar en un comerciante, pero el trabajo honesto no era lo suyo. Terminó estableciéndose aquí.";
+			link.l1 = "Aún no lo llamaría un oficial prominente.";
 			link.l1.go = "BM_IronsThirdJungle_20";
 		break;
 		
@@ -724,8 +724,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_22":
-			dialog.text = "¡Está bien, está bien! No quería perder más el tiempo. Hablando de Jack, me gustaron un par de sus tradiciones. El tablón y repartir marcas negras. Eso me dio una idea divertida en aquel entonces.";
-			link.l1 = "¿Marcas negras... ? ¿Te refieres a una mancha negra, verdad? ¿Y qué fue, Tommy? No creo que él sabría qué hacer si le hubieras entregado la marca negra. ¿Eso fue lo que pasó? Querías entregarla, y él te atacó en cuanto te vio. Así que corriste al faro, y él llevó un escuadrón de soldados con él, diciéndoles que eras un pirata.";
+			dialog.text = "¡Está bien, está bien! Más bien, no quería perder el tiempo por mí. Hablando de Jack, me gustaron un par de tradiciones que vi por primera vez de él: el tablón y repartir marcas negras. Eso me dio una idea divertida en aquel entonces.";
+			link.l1 = "¿Marcas negras... ? ¿Te refieres a una mancha negra, verdad? ¿Y qué fue, Tommy? No creo que él sabría qué hacer si le hubieras entregado una mancha negra. ¿Eso fue lo que pasó? Querías entregarla, y él te atacó en cuanto te vio, así que corriste al faro, y él llevó un escuadrón de soldados con él, diciéndoles que eras un pirata?";
 			link.l1.go = "BM_IronsThirdJungle_23";
 		break;
 		
@@ -748,8 +748,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_26":
-			dialog.text = "¡Bueno, es una cosa aprender una historia interesante, y otra crearla uno mismo! Así que aquí está el plan. Necesitaremos dejarle a Gabe una marca negra especial, ya tengo una hecha. Luego seguiremos su rastro hasta Portland Cove, donde nos ocuparemos de él sin dejar rastro.";
-			link.l1 = "¿Y dónde quieres dejarla?";
+			dialog.text = "Bueno, es una cosa aprender una historia interesante, ¡y otra crearla uno mismo! Así que aquí está el plan. Necesitaremos dejarle a Gabe otra marca negra especial - ya tengo una hecha. Luego seguiremos su rastro hasta Portland Cove, donde nos ocuparemos de él sin dejar rastro.";
+			link.l1 = "¿Y dónde vamos a plantarlo?";
 			link.l1.go = "BM_IronsThirdJungle_27";
 		break;
 		
@@ -800,8 +800,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "¡Sí, eso podría funcionar! Pero, de nuevo, nada más grande que una Nao. Gabe no es solo un cobarde, nunca ha sido lo suficientemente codicioso como para dejar que eso pese más que su cautela.";
-			link.l1 = "Esperemos que funcione, Tommy. Entonces, una Nao de quinta categoría ondeando colores españoles o holandeses. ¡Prepárate para encontrarte con tu viejo camarada de guerra!";
+			dialog.text = "¡Sí, eso podría funcionar! Pero, de nuevo, nada más grande que una barca. Gabe no es solo un cobarde, nunca ha sido lo suficientemente codicioso como para dejar que eso pese más que su cautela.";
+			link.l1 = "Esperemos que funcione, Tommy. Entonces, una barca de quinta categoría ondeando colores españoles o holandeses. ¡Prepárate para encontrarte con tu viejo camarada de guerra!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
 		break;
@@ -892,10 +892,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Pyanitsa_6":
-			if (sti(pchar.basenation) == ENGLAND) sStr = "nuestro";
-			else sStr = "su";
+			if (sti(pchar.basenation) == ENGLAND) sStr = "our";
+			else sStr = "your";
 			dialog.text = "Bueno, no es tan rápida como en sus mejores años, ¡como yo después de otro trago, ja-ja-ja! Pero un buen capitán aún puede sacar algo de esta vieja dama. Gabe también intenta no ponerla en la línea de fuego.";
-			link.l1 = "Entonces, ¿por qué no ha sido renombrado el barco? El Buque de Su Majestad Azote. ¿Tal vez, bajo "+sStr+" antiguo régimen?";
+			link.l1 = "Entonces, ¿por qué no ha sido renombrado el barco? El Buque de Su Majestad Azote, tal vez, bajo "+sStr+"¿ antiguo régimen?";
 			link.l1.go = "BM_Pyanitsa_7";
 		break;
 		
@@ -1955,7 +1955,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -1970,7 +1970,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -1986,7 +1986,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2001,7 +2001,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;

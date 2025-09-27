@@ -1,37 +1,66 @@
 
+int iMapTarget = -1;
+string sTargetId = "";
+string sOkBtn = "";
 string totalInfo = "";
-bool isSkipable = false;
-bool bEncType   = false;
+string powerInfo = "";
+bool bPowerCompare = true;
+bool bPlayerInit = false;
+bool isSkipable = true;
+bool QuestSkipOff = false;
 bool bShowVideo; // для показа квестовых роликов, если будут
-bool bEscDisable = false; // belamour для выхода из меню на ESC BigPatch
-string  sQuestSeaCharId = "";
 
-void InitInterface(string iniName)
+int iSubs[4] = {1, 2, 3, 4};
+string sRedText = "";
+string sGreenText = "";
+int EscapeChance = -1;
+int EscapeSummary = -1;
+bool EscapeBlock = false;
+bool bRollEscape = false;
+
+string sQuestSeaCharId[10] = {"", "", "", "", "", "", "", "", "", ""};
+int iQuestSeaCharQty = 0;
+
+void InitInterface_I(string iniName, int eshipIndex)
 {
-	StartAboveForm(true);	
+    iMapTarget = eshipIndex; // Наша цель, либо наш преследователь
+    bPlayerInit = (pchar.space_press == "1");
+    EscapeBlock = CheckAttribute(&TEV, "EscapeBlock");
+    sOkBtn = XI_ConvertString("map_closer");
+	StartAboveForm(true);
 	// лочим квест и карту
     bQuestCheckProcessFreeze = true;
-    bEncType = false; // обычный тип
     bShowVideo = false;
-    
+
     GameInterface.title = "title_map";
 
     SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
+    SendMessage(&GameInterface, "lslff", MSG_INTERFACE_MSG_TO_NODE, "CIRCLE_PROGRESSBAR", 9, 0.0, 0.0);
+    SetNodeUsing("CIRCLE_PROGRESSBAR", false);
 
-    SetFormatedText("MAP_CAPTION", XI_ConvertString("title_map"));
+    SetFormatedText("MAP_CAPTION", XI_ConvertString("NavalSignal"));
 
 	SetFormatedText("INFO_TEXT_QUESTION", XI_ConvertString("MapWhatYouWantToDo"));
 
 	SetCurrentNode("INFO_TEXT_QUESTION");
-	
+
 	CalculateInfoData();
 
-	SetFormatedText("INFO_TEXT",totalInfo);
-
+	SetFormatedText("INFO_TEXT", totalInfo);
+	int nStrings = GetNumberOfStringsInFormatedText("INFO_TEXT", totalInfo); // считаем сколько строк в форме
+	if (nStrings < 7) // Запрет на скроллинг
+	{
+		SetNodeUsing("SCROLL_TEXT", false);
+		SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
+		SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 13, 1); //1 - запрет, 0 - нет
+	}
+	
 	SetEventHandler("InterfaceBreak","ProcessBreakExit",0); // Выход на море
 	SetEventHandler("exitCancel","ProcessCancelExit",0); // Выход на море по крестику или Esc
 	SetEventHandler("ievnt_command","ProcCommand",0); // выход на карту только тут (по НЕТ)
 	SetEventHandler("evntDoPostExit","DoPostExit",0); // выход из интерфейса
+	SetEventHandler("ShowInfoWindow", "ShowInfoWindow", 0);
+	SetEventHandler("HideInfoWindow", "HideInfoWindow", 0);
 	
 	EI_CreateFrame("INFO_BORDERS", 250,152,550,342);
 	PlaySound("interface\" + LanguageGetLanguage() + "\_EvShip"+rand(1)+".wav");
@@ -45,16 +74,7 @@ void ProcessBreakExit()
 
 void ProcessCancelExit()
 {
-	//IDoExit( RC_INTERFACE_MAP_EXIT );
-	//wdmReloadToSea();
-	
-	//belamour выход через ESC -->
-	if (!bEscDisable) 
-	{ 
-		pchar.SkipEshipIndex = pchar.eshipIndex; 
-		IDoExit(RC_INTERFACE_MAP_EXIT);
-	}
-	//<-- belamour BigPatch
+	if (isSkipable) IDoExit(RC_INTERFACE_MAP_EXIT);
 }
 
 void IDoExit(int exitCode)
@@ -64,21 +84,24 @@ void IDoExit(int exitCode)
 	DelEventHandler("exitCancel","ProcessCancelExit");
 	DelEventHandler("ievnt_command","ProcCommand");
 	DelEventHandler("evntDoPostExit","DoPostExit");
-	
+	DelEventHandler("ShowInfoWindow", "ShowInfoWindow");
+	DelEventHandler("HideInfoWindow", "HideInfoWindow");
+
 	TimeScaleCounter = 0; //boal
 	if(IsPerkIntoList("TimeSpeed"))
 	{	
 		DelPerkFromActiveList("TimeSpeed");
 	}
-	
+
 	interfaceResultCommand = exitCode;
 	EndCancelInterface(true);
-	
+
 	PostEvent("StopQuestCheckProcessFreeze", 100);//boal 230804 заморозка проверки квестов
 }
 
 void ProcCommand()
 {
+    int i;
 	string comName = GetEventData();
 	string nodName = GetEventData();
 	
@@ -87,72 +110,158 @@ void ProcCommand()
 		case "B_OK":
 			if(comName=="activate" || comName=="click")
 			{
-				if (sQuestSeaCharId != "")
+				if (iQuestSeaCharQty != 0)
 				{
-					if(sQuestSeaCharId == "LadyBeth_cap")
+                    bool bExit = false;
+                    for(i = 0; i < iQuestSeaCharQty; i++)
+                    {
+                        if(sQuestSeaCharId[i] == "LadyBeth_cap") {
+                            bExit = true;
+                            break;
+                        }
+                    }
+                    if(bExit)
 					{
-						pchar.SkipEshipIndex = pchar.eshipIndex;
 						IDoExit(RC_INTERFACE_MAP_EXIT);
 						break;
 					}
-					wdmEnterSeaQuest(sQuestSeaCharId);
-				}
-				if(CharacterIsAlive("LadyBeth_cap"))
-				{
-					ref sld = characterFromId("LadyBeth_cap");
-					if(sld.quest == "InCity" && sld.City == "Shore16" && worldMap.island == "Caiman")
-					{
-						pchar.SkipEshipIndex = pchar.eshipIndex;
-						IDoExit(RC_INTERFACE_MAP_EXIT);
-						break;
-					}
+                    if(CharacterIsAlive("LadyBeth_cap"))
+                    {
+                        ref sld = characterFromId("LadyBeth_cap");
+                        if(sld.quest == "InCity" && sld.City == "Shore16" && worldMap.island == "Caiman")
+                        {
+                            IDoExit(RC_INTERFACE_MAP_EXIT);
+                            break;
+                        }
+                    }
+                    for(i = 0; i < iQuestSeaCharQty; i++)
+                    {
+                        wdmEnterSeaQuest(sQuestSeaCharId[i]);
+                    }
 				}
 				// напасть
+                TEV.iTarget = iMapTarget;
 				IDoExit(RC_INTERFACE_MAP_EXIT);
 				wdmReloadToSea();
+                DeleteAttribute(&TEV, "iTarget");
 			}
 			if(comName=="rightstep")
 			{
-				if(GetSelectable("B_CANCEL"))	{SetCurrentNode("B_CANCEL");}
+				if(GetSelectable("B_CANCEL")) SetCurrentNode("B_CANCEL");
 			}
 		break;
 
 		case "B_CANCEL":
 			if(comName=="activate" || comName=="click")
 			{
-				//пропустить
-				//PostEvent("evntDoPostExit",1,"l",RC_INTERFACE_MAP_EXIT);
-				pchar.SkipEshipIndex = pchar.eshipIndex;
-				IDoExit(RC_INTERFACE_MAP_EXIT);
+                if (bRollEscape)
+                {
+                    ShuffleSubs();
+                    totalInfo = XI_ConvertString("map_maneuvers_" + iSubs[0]);
+                    SetFormatedText("INFO_TEXT", totalInfo);
+					SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
+                    SetCurrentNode("INFO_TEXT_QUESTION");
+                    SetNodeUsing("SCROLL_TEXT", false);
+                    SendMessage(&GameInterface,"lsll", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 13, 1);
+                    SetNodeUsing("TRIGGER", false);
+                    SetNodeUsing("INFO_PICTURE", false);
+                    SetNodeUsing("CIRCLE_PROGRESSBAR", true);
+                    SetSelectable("B_CANCEL", false);
+                    SetSelectable("B_OK", false);
+                    SetEventHandler("MapManeuvers", "ManeuversLoading", 0);
+                    PostEvent("MapManeuvers", 0, "lllf", 0, 1, 0, 0.0);
+                }
+                else
+                {
+                    if (EscapeChance == 100) SuccessEscape();
+                    IDoExit(RC_INTERFACE_MAP_EXIT);
+                }
 			}	
 			if(comName=="leftstep")
 			{
-				if(GetSelectable("B_OK"))	{SetCurrentNode("B_OK");}
+				if(GetSelectable("B_OK")) SetCurrentNode("B_OK");
 			}
 		break;
 	}
 }
+
 void wdmRecalcReloadToSea()
 {
 	worldMap.encounter.type = "";
 	totalInfo = "";
+	powerInfo = "";
 	string loadScr = "";
-	int iRand;
-	//Encounters
-	int numEncounters = wdmGetNumberShipEncounters();
+	int i, idx;
 	int isShipEncounterType = 0;
-    bool bPowerCompare = true;
-	string sOkBtn = XI_ConvertString("map_attack");
     ref rChar;
-	//Log_TestInfo("Начинаем перебирать энкаунтеров");
-	for(int i = 0; i < numEncounters; i++)
+
+    int numShips = 0;
+    for(i = 0; i < COMPANION_MAX; i++)
+    {
+        idx = GetCompanionIndex(PChar, i);
+        if (idx != -1) numShips++;
+    }
+	int numEncounters = wdmGetNumberShipEncounters();
+
+    int  iPlayer = SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX);
+    int  iSort[2];
+    bool bSort[2];
+    if (iMapTarget >= 0)
+    {
+        idx = 1;
+        // Нумерация энок для wdmSetCurrentShipData, пропускает корабль игрока
+        // wdmGetNumberShipEncounters возвращает кол-во энок без учёта игрока
+        if (iMapTarget >= iPlayer) iMapTarget--;
+        iSort[0] = iMapTarget;
+    }
+    else idx = 0;
+
+    if (numEncounters > 0)
+    {
+        SetArraySize(&iSort, numEncounters);
+        SetArraySize(&bSort, numEncounters);
+        int j = 0;
+        int numEncountersReal = numEncounters + (iPlayer != -1);
+        // В этом цикле скипаем игрока
+        for (i = 0; i < numEncountersReal; i++)
+        {
+            if (i == iPlayer) continue;
+
+            bSort[j] = SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i);
+            if (j != iMapTarget && bSort[j])
+            {
+                iSort[idx] = j;
+                idx++;
+            }
+            j++;
+        }
+        // В предыдущем уже скипали, поэтому здесь сразу проверяем
+        for (i = 0; i < numEncounters; i++)
+        {
+            if (i != iMapTarget && !bSort[i])
+            {
+                iSort[idx] = i;
+                idx++;
+            }
+        }
+    }
+
+    bool bTargetInBattle = false;
+	for(i = 0; i < numEncounters; i++)
 	{
-		if(wdmSetCurrentShipData(i))
+        if(numShips > MAX_SHIPS_LOAD_FROM_WDM) break;
+		if(wdmSetCurrentShipData(iSort[i]))
 		{
 			if(MakeInt(worldMap.encounter.select) == 0) continue;
 			isShipEncounterType++;
 
 			string encID = worldMap.encounter.id;
+            if (i == 0 && iMapTarget >= 0)
+            {
+                sTargetId = encID;
+                if(sti(worldMap.encounter.attack) != -1)
+                    bTargetInBattle = true;
+            }
 
 			aref rEncounter;
 			makearef(rEncounter, worldMap.encounters.(encID).encdata);
@@ -177,25 +286,32 @@ void wdmRecalcReloadToSea()
 
 			if (CheckAttribute(rEncounter, "CharacterID"))
 			{
-                iNumWarShips = GetCharacterIndex(rEncounter.CharacterID);
-                if (iNumWarShips != -1)
+                idx = GetCharacterIndex(rEncounter.CharacterID);
+                if (idx != -1)
                 {
-                    rChar = &characters[iNumWarShips];
-					sQuestSeaCharId = rChar.id; // квестовый 
+                    rChar = &characters[idx];
+                    iQuestSeaCharQty++;
+					sQuestSeaCharId[iQuestSeaCharQty - 1] = rChar.id; // квестовый 
 					if (CheckAttribute(rChar, "mapEnc.Name"))
-					{
-						totalInfo = totalInfo + characters[iNumWarShips].mapEnc.Name;
-						//sOkBtn = XI_ConvertString("map_defend");
-					}
+                        totalInfo = totalInfo + rChar.mapEnc.Name;
 					else
-					{
-						totalInfo = totalInfo + "'" + characters[iNumWarShips].ship.name + "'.";
-					}
+                        totalInfo = totalInfo + "'" + rChar.ship.name + "'.";
+                    if (CheckAttribute(rChar, "SeaAI.Group.Name"))
+                        numShips += Group_GetLiveCharactersNum(rChar.SeaAI.Group.Name);
+                    if (CheckAttribute(rChar, "mapEnc.NoSkip"))
+                    {
+                        isSkipable = false;
+                        QuestSkipOff = true;
+                    }
+                    if (CheckAttribute(rChar, "AlwaysEnemy"))
+                    {
+                        isSkipable = false;
+                    }
 				}
-				bEncType = true;
 			}
 			else
 			{
+                numShips += iNumWarShips + iNumMerchantShips;
                 // Торговый караван 
                 if(iRealEncounterType <= ENCOUNTER_TYPE_MERCHANT_LARGE)
                 {
@@ -203,62 +319,74 @@ void wdmRecalcReloadToSea()
                         totalInfo = totalInfo + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("of traders");
                     else
                         totalInfo = totalInfo + XI_ConvertString("Trade caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+					if(iRealEncounterType < ENCOUNTER_TYPE_MERCHANT_LARGE)
+						loadScr = "interfaces\le\worldmapenc\caravan.tga";
+					else
+						loadScr = "interfaces\le\worldmapenc\galeon.tga";
                 }
 
                 // Торговая экспедиция - Средняя
-                if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_CROWN)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_CROWN)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Crown caravan") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+					loadScr = "interfaces\le\worldmapenc\galeon.tga";
                 }
 
                 // Торговая экспедиция - Большая
-                if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_EXPEDITION)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_EXPEDITION)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Trade expedition") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+					loadScr = "interfaces\le\worldmapenc\galeon.tga";
                 }
 
                 // Работорговцы
-                if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_SLAVES)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_MERCHANT_SLAVES)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Slave traders") + GetTextOnShipsQuantity(iNumMerchantShips) + XI_ConvertString("merchants in accompaniment") + GetTextOnSecondShipsQuantity(iNumWarShips) + XI_ConvertString("guards");
+					loadScr = "interfaces\le\worldmapenc\slvtraders.tga";
                 }
 
                 // Патруль
-                if(iRealEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_PATROL_MEDIUM)
+                else if(iRealEncounterType >= ENCOUNTER_TYPE_PATROL_SMALL && iRealEncounterType <= ENCOUNTER_TYPE_PATROL_MEDIUM)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Patrol") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+					loadScr = "interfaces\le\worldmapenc\patrol.tga";
                 }
 
                 // Военная эскадра
-                if(iRealEncounterType >= ENCOUNTER_TYPE_NAVAL_MEDIUM && iRealEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
+                else if(iRealEncounterType >= ENCOUNTER_TYPE_NAVAL_MEDIUM && iRealEncounterType <= ENCOUNTER_TYPE_NAVAL_LARGE)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Naval squadron") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+					loadScr = "interfaces\le\worldmapenc\warfleet.tga";
                 }
 
                 // Контрабандисты
-                if(iRealEncounterType == ENCOUNTER_TYPE_SMUGGLERS)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_SMUGGLERS)
                 {
                    // TO_DO
                 }
 
                 // Пираты
-                if(iRealEncounterType == ENCOUNTER_TYPE_PIRATE)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_PIRATE)
                 {
                     totalInfo = totalInfo + XI_ConvertString("Pirates") + GetTextOnShipsQuantity(iNumWarShips + iNumMerchantShips);
+					loadScr = "interfaces\le\worldmapenc\pirates.tga";
                 }
 
                 // Бочонок
-                if(iRealEncounterType == ENCOUNTER_TYPE_BARREL)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_BARREL)
                 {
                     bPowerCompare = false;
                     totalInfo = totalInfo + XI_ConvertString("SailingItems");
+					loadScr = "interfaces\le\worldmapenc\barrel.tga";
                 }
 
                 // Кораблекрушенец
-                if(iRealEncounterType == ENCOUNTER_TYPE_BOAT)
+                else if(iRealEncounterType == ENCOUNTER_TYPE_BOAT)
                 {
                     bPowerCompare = false;
                     totalInfo = totalInfo + XI_ConvertString("ShipWreck");
+					loadScr = "interfaces\le\worldmapenc\flplndra.tga";
                 }
 			}
 			
@@ -289,115 +417,162 @@ void wdmRecalcReloadToSea()
 				}
 			}
 
-			if(GetNationRelation2MainCharacter(sti(rEncounter.Nation)) != RELATION_ENEMY)
-			{
-				isSkipable = true;
+			if(bSort[iSort[i]] && GetNationRelation2MainCharacter(sti(rEncounter.Nation)) == RELATION_ENEMY)
+			{   // Враждебный преследователь
+				isSkipable = false;
 			}
 		}
 	}
-	//Log_TestInfo("isShipEncounterType :" + isShipEncounterType);
 
 	if (isShipEncounterType > 1)
 	{
-		switch (rand(1))
-		{
-			case 0 :
-				if(IsDay()) loadScr = "interfaces\le\sea_1.tga";
-				else		loadScr = "interfaces\le\sea_2.tga";
-			break;
-			case 1 :
-				loadScr = "interfaces\le\sea_3.tga";
-			break;
-		}
-        bPowerCompare = false;
+        if (bTargetInBattle)
+            loadScr = "interfaces\le\worldmapenc\battle.tga";
+        else
+        {
+            switch (rand(1))
+            {
+                case 0 :
+                    if(IsDay()) loadScr = "interfaces\le\worldmapenc\1.tga";
+                    else		loadScr = "interfaces\le\worldmapenc\2.tga";
+                break;
+                case 1 :
+                    loadScr = "interfaces\le\worldmapenc\3.tga";
+                break;
+            }
+        }
+        bPowerCompare = false; // TO_DO: Умный расчёт 
 		SetNewPicture("INFO_PICTURE", loadScr); 
-		totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("battle on course") + totalInfo;
+		totalInfo = XI_ConvertString("battle on course") + totalInfo;
 		sOkBtn = XI_ConvertString("map_join");
 	}
 	else
 	{
 		if(iRealEncounterType == ENCOUNTER_TYPE_BARREL || iRealEncounterType == ENCOUNTER_TYPE_BOAT)
-		{		
-			if(iRealEncounterType == ENCOUNTER_TYPE_BARREL) 
-			{
-				SetNewPicture("INFO_PICTURE", "interfaces\le\polundra.tga"); 
-			}	
-			if(iRealEncounterType == ENCOUNTER_TYPE_BOAT) 
-			{
-				SetNewPicture("INFO_PICTURE", "interfaces\le\flplndra.tga"); 
-			}			
-			totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("SpecialSituation") + totalInfo;
+		{
+			totalInfo = XI_ConvertString("SpecialSituation") + totalInfo;
 			sOkBtn = XI_ConvertString("map_tobort");
 		}
 		else
 		{
-			switch (rand(1))
+			if(sQuestSeaCharId[0] != "")
 			{
-				case 0:
-					if(IsDay()) loadScr = "interfaces\le\sea_1.tga";
-					else		loadScr = "interfaces\le\sea_2.tga";
-				break;
-				case 1:
-					loadScr = "interfaces\le\sea_3.tga";
-				break;
-			}
-			if(sQuestSeaCharId != "")
-			{
-				switch (sQuestSeaCharId)
+				switch (sQuestSeaCharId[0])
 				{
 					case "SantaMisericordia_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
+						loadScr = "interfaces\le\worldmapenc\sm.tga";
 						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
-						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
 					case "LadyBeth_cap":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga");
+						loadScr = "interfaces\le\worldmapenc\lb.tga";
 						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
 						sOkBtn = XI_ConvertString("map_ok");
 					break;
 					
 					case "Memento_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_mem.tga");
+						loadScr = "interfaces\le\worldmapenc\mem.tga";
 						totalInfo = StringFromKey("Memento_4");
-						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
                     case "MaryCelesteCapitan":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_cel.tga");
-                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+						loadScr = "interfaces\le\worldmapenc\cel.tga";
+                        totalInfo = XI_ConvertString("someone sails") + totalInfo;
+                    break;
+
+                    case "Head_of_Gold_Squadron":
+						loadScr = "interfaces\le\worldmapenc\goldfleet.tga";
+                        totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     break;
 
                     //default:
-                        SetNewPicture("INFO_PICTURE", loadScr); 
-                        if(CheckAttribute(rChar, "Brigadier"))
+                        if(CheckAttribute(rChar, "mapEnc.Marker"))
                         {
-                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone follows") + totalInfo + 
-                                        StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
-                                        " '" + rChar.Ship.Name + "'.";
+                            switch(rChar.mapEnc.Marker)
+                            {
+                                case "Brigadier":
+                                    switch(sti(rEncounter.Nation))
+                                    {
+                                        case ENGLAND:	loadScr = "interfaces\le\worldmapenc\chm.tga";	break;
+                                        case FRANCE:	loadScr = "interfaces\le\worldmapenc\gr.tga";	break;
+                                        case SPAIN:		loadScr = "interfaces\le\worldmapenc\elc.tga";	break;
+                                        case HOLLAND:	loadScr = "interfaces\le\worldmapenc\mf.tga";	break;
+                                    }
+									totalInfo = XI_ConvertString("someone follows") + totalInfo + 
+												StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
+												" '" + rChar.Ship.Name + "'.";
+								break;
+                                case "BountyHunter":
+									loadScr = "interfaces\le\worldmapenc\hunters.tga";
+									totalInfo = XI_ConvertString("someone sails") + totalInfo;
+                                break;
+                            }
                         }
                         else
-                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                            totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
-				//sQuestSeaCharId = ""; ~!~ WTF
 			}
 			else
 			{
-				SetNewPicture("INFO_PICTURE", loadScr); 
-				totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+				totalInfo = XI_ConvertString("someone sails") + totalInfo;
+			}
+
+			if(loadScr == "")
+			{
+				switch (rand(1))
+					{
+						case 0:
+							if(IsDay()) loadScr = "interfaces\le\worldmapenc\1.tga";
+							else		loadScr = "interfaces\le\worldmapenc\2.tga";
+						break;
+						case 1:
+							loadScr = "interfaces\le\worldmapenc\3.tga";
+						break;
+					}
 			}
 		}
+
+        SetNewPicture("INFO_PICTURE", loadScr);
 	}
-	if(!isSkipable) sOkBtn = XI_ConvertString("map_defend");
+	if(!isSkipable) 
+    {
+        if (bPlayerInit) sOkBtn = XI_ConvertString("map_yes");
+        else sOkBtn = XI_ConvertString("map_defend");
+    }
     if(bPowerCompare)
     {
-        totalInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter); // Механика мощи
+		int iBattleDifficulty = GetBattleDifficulty(rEncounter); // инт сложности
+		string sBattleDifficulty = XI_ConvertString("Unknown dif");
+		switch(iBattleDifficulty)
+		{
+			case 1: // Elementary dif
+				sBattleDifficulty = "<color=255,255,255,255>" + XI_ConvertString("Elementary dif") + "</color>"; //обычный
+			break;
+			case 2: // Low dif
+				sBattleDifficulty = "<color=255,128,255,128>" + XI_ConvertString("Low dif") + "</color>"; //зелёный
+			break;
+			case 3:// Medium dif
+				sBattleDifficulty = "<color=255,255,245,155>" + XI_ConvertString("Medium dif") + "</color>"; //желтый
+			break;
+			case 4:// High dif
+				sBattleDifficulty = "<color=255,240,175,95>" + XI_ConvertString("High dif") + "</color>"; //оранжевый
+			break;
+			case 5:// Fatal dif
+				sBattleDifficulty = "<color=255,255,128,128>" + XI_ConvertString("Fatal dif") + "</color>"; //красный
+			break;
+		}
+		powerInfo = XI_ConvertString("Battle difficulty") + sBattleDifficulty; // Механика мощи
+		SetFormatedText("POWER_TEXT",powerInfo);
         if(bBettaTestMode) MapEncInfo(rEncounter, iRealEncounterType);
     }
-	SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"B_OK",0, "#" + sOkBtn);
+    else 
+    {
+        SetNodeUsing("POWER_LINES", false);
+    }
+    SendMessage(&GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, "B_OK", 0, "#" + sOkBtn);
 }
 
 void DoPostExit()
@@ -408,38 +583,37 @@ void DoPostExit()
 
 void CalculateInfoData()
 {
-	if (pchar.space_press == "1")
-	{
-		isSkipable = true;
-	}
-    wdmRecalcReloadToSea();
-    
-	/* if (pchar.space_press == "1")
-	{
-		isSkipable = true;
-	} */
-	SetCurrentNode("B_OK");
-		
-    SetSelectable("B_CANCEL",true);
+    SetCurrentNode("B_OK");
 
-	if (!isSkipable && !bBettaTestMode)
-	{
-		if (CheckOfficersPerk(pchar, "SailingProfessional"))
-		{
-			if (rand(100) > 75) {SetSelectable("B_CANCEL",false); bEscDisable = true;} // belamour BigPatch
+    wdmRecalcReloadToSea();
+	if (bPlayerInit || bBettaTestMode)
+    {
+        isSkipable = true;
+        SetNodeUsing("TRIGGER", false);
+    }
+    if (!isSkipable)
+    {
+        sOkBtn = XI_ConvertString("map_escape");
+        if (QuestSkipOff)
+        {
+            SetNodeUsing("TRIGGER", false);
+            SetSelectable("B_CANCEL", false);
         }
-		else
-		{
-			if (rand(100) > 25) {SetSelectable("B_CANCEL",false); bEscDisable = true;} // belamour BigPatch
+        else
+        {
+            EscapeChance = CalculateEscapeChance();
+            if(EscapeChance > 0)
+            {
+                if (EscapeChance != 100) bRollEscape = true;
+            }
+            else SetSelectable("B_CANCEL", false);
+            if (!EscapeBlock) sOkBtn += " (" + EscapeChance + "%)";
         }
-	}
-	if (pchar.space_press == "1") bEncType = false;
-	
-	if (bEncType && !bBettaTestMode) // спец тип не пропустить
-	{
-        SetSelectable("B_CANCEL",false);
-		bEscDisable = true; // belamour BigPatch
-	}
+        SendMessage(&GameInterface, "lsls", MSG_INTERFACE_MSG_TO_NODE, "B_CANCEL", 0, "#" + sOkBtn);
+    }
+	int x1, y1, x2, y2;
+	GetNodePosition("INFO_TEXT", &x1, &y1, &x2, &y2);
+	if(!bPowerCompare) SetNodePosition("INFO_TEXT", x1, y1, x2, y2+45);
 	pchar.space_press = 0;
 }
 
@@ -585,4 +759,269 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
     }
 
     trace(sInfo);
+}
+
+void ShowInfoWindow()
+{
+	string sCurrentNode = GetEventData();
+	string sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture;
+	int iColor1, iColor2, iColor3, iColor4;
+	int	picW = 128;
+	int	picH = 128;
+
+	switch (sCurrentNode)
+	{
+		case "B_CANCEL":
+		    sHeader = XI_ConvertString("Factors");
+            sText1 = "";
+			iColor1 = argb(255,255,255,255);
+			sText2 = sRedText;
+			iColor2 = argb(255,255,255,255);
+			sText3 = sGreenText;
+			iColor3 = argb(255,255,255,255);
+            if (!EscapeBlock) sText4 = XI_ConvertString("TotalSmall") + EscapeSummary;
+            else sText4 = "";
+			iColor4 = argb(255,255,255,255);
+			sPicture = "";
+		break;
+	}
+
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, sText4, sPicture, sGroup, sGroupPicture, picW, picH, true);
+}
+
+void HideInfoWindow()
+{
+	CloseTooltipNew();
+}
+
+int CalculateEscapeChance()
+{
+    if (EscapeBlock)
+    {
+        sRedText = XI_ConvertString("EscapeBlock");
+        return 0;
+    }
+
+    ref rChar, rShip;
+    float fTemp;
+    int i, idx, iShipType;
+    int iWar = 0;   int iUniv = 0;      int iRaider = 0;  int iTrade = 0;
+    int iSails = 0; int iLoadLight = 0; int iLoadHard = 0;
+
+    for(i = 0; i < COMPANION_MAX; i++)
+    {
+        idx = GetCompanionIndex(PChar, i);
+        if (idx != -1)
+        {
+            rChar = &Characters[idx];
+            iShipType = sti(rChar.Ship.Type);
+            if(iShipType == SHIP_NOTUSED) continue;
+            rShip = GetRealShip(iShipType);
+            // Тип
+            switch (sti(rShip.Spec))
+            {
+                case SHIP_SPEC_MERCHANT:  iTrade  += -6; break;
+                case SHIP_SPEC_UNIVERSAL: iUniv   += 8;  break;
+                case SHIP_SPEC_RAIDER:    iRaider += 12;  break;
+                case SHIP_SPEC_WAR:       iWar    += -10; break;
+            }
+            // Паруса
+            fTemp = stf(rChar.ship.SP) / stf(rShip.SP);
+            iSails += (MakeInt(100.0 - (fTemp * 100.0)) / 10) * -4;
+            // Загруженность
+            fTemp = MakeFloat(GetCargoLoad(rChar)) / MakeFloat(GetCargoMaxSpace(rChar));
+            if (fTemp <= 0.4) iLoadLight += 10;
+            else if (fTemp >= 0.7) iLoadHard += -12; 
+        }
+    }
+
+    int iNegative = -100;
+    sRedText = XI_ConvertString("EscapeNeg_0") + iNegative;
+    if (iTrade != 0)
+    {
+        iNegative += iTrade;
+        sRedText += NewStr() + XI_ConvertString("EscapeNeg_1") + iTrade;
+        
+    }
+    if (iWar != 0)
+    {
+        iNegative += iWar;
+        sRedText += NewStr() + XI_ConvertString("EscapeNeg_2") + iWar;
+        
+    }
+    if (iSails != 0)
+    {
+        iNegative += iSails;
+        sRedText += NewStr() + XI_ConvertString("EscapeNeg_3") + iSails;
+    }
+    if (iLoadHard != 0)
+    {
+        iNegative += iLoadHard;
+        sRedText += NewStr() + XI_ConvertString("EscapeNeg_4") + iLoadHard;
+    }
+    if (sTargetId != "" && CheckAttribute(&worldMap, "encounters." + sTargetId + ".SpeedMod"))
+    {
+        iNegative += -1000;
+        sRedText += NewStr() + XI_ConvertString("EscapeNeg_5") + -1000;
+    }
+
+    int iPositive = 0;
+    // Удача
+    i = GetCharacterSPECIAL(PChar, SPECIAL_L) * 4;
+    iPositive += i;
+    sGreenText = XI_ConvertString(SPECIAL_L) + ": " + i;
+    // Скрытность
+    i = MakeInt(90.0 * pow((MakeFloat(GetSkillAfterPenalty(PChar, SKILL_SNEAK))/100.0), 0.40));
+    iPositive += i;
+    sGreenText += NewStr() + XI_ConvertString(SKILL_SNEAK) + ": " + i;
+    // Навигация
+    int iSailing = GetSkillAfterPenalty(PChar, SKILL_SAILING);
+    i = MakeInt(65.0 * pow((MakeFloat(iSailing)/100.0), 0.40));
+    iPositive += i;
+    sGreenText += NewStr() + XI_ConvertString(SKILL_SAILING) + ": " + i;
+    // Навигация выше порога
+    i = 1 * (iSailing - GetShipClassNavySkill(GetCharacterShipClass(PChar)));
+    if (i > 0)
+    {
+        iPositive += i;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_0") + i;
+    }
+    if (iRaider != 0)
+    {
+        iPositive += iRaider;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_1") + iRaider;
+        
+    }
+    if (iUniv != 0)
+    {
+        iPositive += iUniv;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_2") + iUniv;
+        
+    }
+    if (iLoadLight != 0)
+    {
+        iPositive += iLoadLight;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_3") + iLoadLight;
+    }
+    if (CheckOfficersPerk(PChar, "SailingProfessional"))
+    {
+        iPositive += PERK_VALUE2_SAILING_PROFESSIONAL;
+        sGreenText += NewStr() + GetConvertStr("SailingProfessional", "AbilityDescribe.txt") + ": " + PERK_VALUE2_SAILING_PROFESSIONAL;
+    }
+    if (CheckOfficersPerk(PChar, "LoneWolf") && GetCompanionQuantity(pchar) < 1)
+    {
+        iPositive += PERK_VALUE2_LONE_WOLF;
+        sGreenText += NewStr() + GetConvertStr("LoneWolf", "AbilityDescribe.txt") + ": " + PERK_VALUE2_LONE_WOLF;
+    }
+    if (CheckCharacterItem(PChar, GetMapByArea(worldMap.island)))
+    {
+        iPositive += 14;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_4") + 14;
+    }
+
+    EscapeSummary = iPositive + iNegative;
+    return iClamp(0, 100, EscapeSummary);
+}
+
+void ManeuversLoading()
+{
+    int iRealDelta = GetEventData();
+    int iDots = GetEventData();
+    int iCurSub = GetEventData();
+    float fRatio = GetEventData();
+    int dltTime = GetRDeltaTime();
+
+    fRatio += dltTime / 2000.0;
+    if (fRatio > 1.0) 
+    {
+		SendMessage(&GameInterface, "lslff", MSG_INTERFACE_MSG_TO_NODE, "CIRCLE_PROGRESSBAR", 9, 0.0, PIm2);
+        DelEventHandler("MapManeuvers", "ManeuversLoading");
+        SetEventHandler("MapManeuvers", "ManeuversResult", 0);
+        PostEvent("MapManeuvers", 0); // Следующий кадр
+        return;
+    }
+    SendMessage(&GameInterface, "lslff", MSG_INTERFACE_MSG_TO_NODE, "CIRCLE_PROGRESSBAR", 9, 0.0, PIm2 * fRatio);
+
+    if (iRealDelta > 250)
+    {
+        iRealDelta = 0;
+        string dots = "";
+        if (iDots == 3)      dots = "...";
+        else if (iDots == 2) dots = "..";
+        else if (iDots == 1) dots = ".";
+        else
+        {
+            iCurSub = (iCurSub+1) % 4;
+            totalInfo = XI_ConvertString("map_maneuvers_" + iSubs[iCurSub]);
+        }
+        SetFormatedText("INFO_TEXT", totalInfo + dots);
+		SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
+        iDots = (iDots+1) % 4;
+    }
+
+    iRealDelta += dltTime;
+    PostEvent("MapManeuvers", 0, "lllf", iRealDelta, iDots, iCurSub, fRatio);
+}
+
+void ManeuversResult()
+{
+    bRollEscape = false;
+    DelEventHandler("MapManeuvers", "ManeuversResult");
+    if (EscapeChance <= rand(99))
+    {
+        AddCharacterExpToSkill(PChar, SKILL_SNEAK, 7);
+        AddCharacterExpToSkill(PChar, SKILL_FORTUNE, 3);
+        SetSelectable("B_OK", true);
+        SetNodeUsing("CIRCLE_PROGRESSBAR", false);
+        SetNodeUsing("INFO_PICTURE", true);
+        // TO_DO: Особая пикча неудачного побега
+        PlaySound("interface\sobitie_na_karte_001.wav");
+        totalInfo = XI_ConvertString("map_escape_no");
+        SetFormatedText("INFO_TEXT", totalInfo);
+		SendMessage(&GameInterface,"lsl", MSG_INTERFACE_MSG_TO_NODE, "INFO_TEXT", 5); // выравниванием текст по центру
+    }
+    else
+    {
+        SuccessEscape();
+        IDoExit(RC_INTERFACE_MAP_EXIT);
+    }
+}
+
+void SuccessEscape()
+{
+    TEV.EscapeBlock = "";
+    SetFunctionTimerCondition("wdmEscapeRefresh", 0, 0, 2, false);
+
+    Notification(XI_ConvertString("map_escape_yes"), "Sneak");
+    PlaySound("interface\s_korablami_001.wav");
+
+    // Замедление
+    if (sTargetId != "")
+    {
+        if (CheckAttribute(&TEV, "EncSpeed." + sTargetId)) return; // Дважды не снижаем
+        AddCharacterExpToSkill(PChar, SKILL_SNEAK, 10);
+        AddCharacterExpToSkill(PChar, SKILL_FORTUNE, 5);
+        // Обновить скорость
+        float curSpeed = stf(worldMap.encounters.(sTargetId).kMaxSpeed);
+        SendMessage(&worldMap, "lsf", MSG_WORLDMAP_SET_SPEED, sTargetId, curSpeed * 0.7);
+        worldMap.encounters.(sTargetId).kMaxSpeed = curSpeed * 0.7;
+        // Процессирование
+        worldMap.encounters.(sTargetId).SpeedMod = "";
+        TEV.EncSpeed.(sTargetId) = curSpeed;
+        TEV.EncSpeed.(sTargetId).dLeft = 3;
+        if (!CheckAttribute(PChar, "quest.wdmEncSpeedUpdate"))
+            SetFunctionTimerCondition("wdmEncSpeedUpdate", 0, 0, 1, true);
+    }
+}
+
+void ShuffleSubs()
+{
+    int i, j, tmp;
+    for (i = 3; i > 0; i--)
+    {
+        j = rand(i);
+        tmp = iSubs[i];
+        iSubs[i] = iSubs[j];
+        iSubs[j] = tmp;
+    }
 }

@@ -32,6 +32,7 @@ void InitInterface(string iniName)
 	SetEventHandler("My_eStartGame","StartGame",0);
 	SetEventHandler("My_eOpenCards","OpenCards",0);
     SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
 	/*
 	hearts_A,diamonds_A,clubs_A,spades_A  - 124x184
@@ -158,6 +159,7 @@ void Exit()
     	DelEventHandler("My_eStartGame","StartGame");
     	DelEventHandler("My_eOpenCards","OpenCards");
 		DelEventHandler("ShowInfoWindow","ShowInfoWindow");
+		DelEventHandler("HideInfoWindow","HideInfoWindow");
 		DelEventHandler("MouseRClickUp","HideInfoWindow");
 
         if (CheckAttribute(pchar,"GenQuest.Cards.SitType") && sti(pchar.GenQuest.Cards.SitType) == true)
@@ -238,18 +240,18 @@ void Exit()
 void ShowInfoWindow()
 {
 	string sHeader,sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
-
+	string sCurrentNode = GetEventData();
 	sHeader = XI_ConvertString("titleCards");
 	sText1 = XI_ConvertString("RulesCards1");
 	sText2 = XI_ConvertString("RulesCards2");
 	sText3 = XI_ConvertString("RulesCards3");
 	
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 }
 
 void ProcessCommandExecute()

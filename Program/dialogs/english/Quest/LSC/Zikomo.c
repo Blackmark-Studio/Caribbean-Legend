@@ -13,8 +13,8 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "What you want, white man? Zikomo not talk with you. Talk with Black Eddie. He boss.";
-			link.l1 = "You don't say so!";
+			dialog.text = "What do you want, white man? Zikomo will not talk to you. Talk to Black Eddie. He is the boss.";
+			link.l1 = "You don't say!";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
 		break;

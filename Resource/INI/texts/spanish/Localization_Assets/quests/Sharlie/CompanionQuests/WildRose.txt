@@ -1,0 +1,13 @@
+WildRose_1 {¿Lo ha oído? Hace unos días escaparon un par de docenas de esclavos de la plantación de Bishop. Dicen que durante la noche serraron sus cadenas, mataron a varios guardias y huyeron a la selva. ¿Y a dónde iban a ir en esta isla? Por supuesto, los atraparon bastante rápido — a unos en una cueva, a otros cerca del cabo Punta Rugosa. A casi todos los mataron a tiros. Aunque los soldados también tuvieron bajas. Pero dicen que lo que más enfureció a Bishop no fue eso, sino el no poder vengarse personalmente de los fugitivos.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Casper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jérôme}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Casper}
+WildRose_12 {Hereje}
+WildRose_13 {La patrulla ya debería estar en su lugar...}

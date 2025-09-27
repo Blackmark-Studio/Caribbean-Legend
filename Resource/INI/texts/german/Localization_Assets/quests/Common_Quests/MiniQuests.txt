@@ -1,113 +1,24 @@
-MiniQuests_1
-{
-
-}
-MiniQuests_2
-{
-
-}
-
-MiniQuests_3
-{
-
-}
-MiniQuests_4
-{
-
-}
-
-MiniQuests_5
-{
-
-}
-MiniQuests_6
-{
-
-}
-
-MiniQuests_7
-{
-
-}
-MiniQuests_8
-{
-
-}
-
-MiniQuests_9
-{
-Der Händler hat die schwarze Flagge gehisst und greift uns an!
-}
-
-MiniQuests_10
-{
-Boatswain
-}
-
-MiniQuests_11
-{
-Passagier @<GetFullName(sld)> hat Ihr Schiff verlassen!
-}
-
-MiniQuests_12
-{
-Kaplan @<GetFullName(sld)> hat Ihr Schiff verlassen!
-}
-
-MiniQuests_13
-{
-Barkentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'
-}
-
-MiniQuests_14
-{
-Handelskonvoi
-}
-
-MiniQuests_15
-{
-
-}
-MiniQuests_16
-{
-
-}
-
-MiniQuests_17
-{
-Ein feindliches Schiff ist am Horizont zu sehen!
-}
-
-MiniQuests_18
-{
-Ein feindlicher Konvoi ist am Horizont zu sehen!
-}
-
-MiniQuests_19
-{
-Ein Piratenschiff ist am Horizont zu sehen!
-}
-
-MiniQuests_20
-{
-@<pchar.GenQuest.FindFugitive.Name> starb an Fieber!
-}
-
-MiniQuests_21
-{
-@<sld.name> wurde auf Ihrem Schiff in Gewahrsam genommen
-}
-
-MiniQuests_22
-{
-Eine Stunde verging...
-}
-
-MiniQuests_23
-{
-, die am ~
-}
-MiniQuests_24
-{
-Alonso
-}
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {Der Händler hat die schwarze Flagge gehisst und greift uns an!}
+MiniQuests_10 {Boatswain}
+MiniQuests_11 {Passagier @<GetFullName(sld)> hat Ihr Schiff verlassen!}
+MiniQuests_12 {Kaplan @<GetFullName(sld)> hat Ihr Schiff verlassen!}
+MiniQuests_13 {Barkentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {Handelskonvoi}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {Ein feindliches Schiff ist am Horizont zu sehen!}
+MiniQuests_18 {Ein feindlicher Konvoi ist am Horizont zu sehen!}
+MiniQuests_19 {Ein Piratenschiff ist am Horizont zu sehen!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> starb an Fieber!}
+MiniQuests_21 {@<sld.name> wurde auf Ihrem Schiff in Gewahrsam genommen}
+MiniQuests_22 {Eine Stunde verging...}
+MiniQuests_23 {, die am ~}
+MiniQuests_24 {Alonso}

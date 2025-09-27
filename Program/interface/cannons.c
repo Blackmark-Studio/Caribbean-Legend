@@ -62,7 +62,8 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
-	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 960,250,SCRIPT_ALIGN_CENTER,1.5);
+	CreateString(true,"ShipName","",FONT_NORMAL,COLOR_MONEY, 960,247,SCRIPT_ALIGN_CENTER,1.5);
+	CreateString(true,"ShipCannons","",FONT_NORMAL,COLOR_NORMAL, 960,272,SCRIPT_ALIGN_CENTER,1.5); // QualityPL
 
     SetShipWeight();
 	SetDescription();
@@ -74,8 +75,10 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
+	SetEventHandler("HideInfoWindow","EndTooltip",0);
 	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
+	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
@@ -133,7 +136,9 @@ void IDoExit(int exitCode)
 
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
+	DelEventHandler("HideInfoWindow","EndTooltip");
 	DelEventHandler("MouseRClickUP","EndTooltip");
+	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
 	DelEventHandler("TableSelectChange", "CS_TableSelectChange");
@@ -225,6 +230,9 @@ void AddToTable()
 	int tradeType, iColor;
 	aref refGoods;
 	n = 1;
+	int maxCaliber = GetMaximumCaliber(&refCharacter);
+	int currentCannonsIdx = sti(refCharacter.Ship.Cannons.Type);
+
 	Table_Clear("TABLE_LIST", false, true, false);
     for (i = 0; i< GetArraySize(&Goods); i++)
 	{
@@ -262,13 +270,7 @@ void AddToTable()
 		GameInterface.TABLE_LIST.(row).td6.str = sStoreQ;
 
 
-		iColor = argb(255,255,255,255);
-		if(checkAttribute(refCharacter, "ship.cargo.goods." + sGood + ".isquest"))
-		{
-			iColor = argb(255,255,192,255);
-		}
-
-        GameInterface.TABLE_LIST.(row).td4.icon.group = GetGoodImageGroup(&Goods[i]);
+		GameInterface.TABLE_LIST.(row).td4.icon.group = "GOODS";
 		GameInterface.TABLE_LIST.(row).td4.icon.image = sGood;
 		GameInterface.TABLE_LIST.(row).td4.icon.offset = "0, 0";
 		GameInterface.TABLE_LIST.(row).td4.icon.width = 40;
@@ -276,7 +278,7 @@ void AddToTable()
 		GameInterface.TABLE_LIST.(row).td4.textoffset = "30,0";
 		GameInterface.TABLE_LIST.(row).td4.str = XI_ConvertString(sGood);
 		GameInterface.TABLE_LIST.(row).index = i;
-		GameInterface.TABLE_LIST.(row).td4.color = iColor;
+		GameInterface.TABLE_LIST.(row).td4.color = GetCannonsStoreColor(Goods[i], currentCannonsIdx, maxCaliber);
 
 		if (tradeType == T_TYPE_CONTRABAND)
 		{
@@ -302,6 +304,8 @@ void AddToTable()
 		}
 		n++;
 	}
+
+	RestoreTableSorting("TABLE_LIST");
 	NextFrameRefreshTable();
 }
 
@@ -332,8 +336,9 @@ void OnTableClick()
 
 void OnHeaderClick()
 {
-	string sNode = GetEventData();
-	int iCol = GetEventData();
+	string sControl = GetEventData();
+	int iColumn = GetEventData();
+	if (sControl == "TABLE_LIST") SortCannonsList(iColumn, false, sControl);
 }
 
 void ChangePosTable()
@@ -344,13 +349,14 @@ void ShowHelpHint()
 {
     string sHeader;
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
+	string sCurrentNode = GetEventData();
 	sPicture = "none";
 	sGroup = "none";
 	sGroupPicture = "none";
 }
 void EndTooltip()
 {
-	CloseTooltip(); // всегда убирать, если был
+	CloseTooltipNew(); // всегда убирать, если был
     GameInterface.qty_edit.str = 0;
 	SetShipWeight();
 	SetVariable();
@@ -418,7 +424,7 @@ void CS_TableSelectChange()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{
@@ -460,6 +466,7 @@ void SetVariable()
 	if (nShipType != SHIP_NOTUSED)
 	{
 		if (CheckAttribute(refCharacter, "ship.name")) GameInterface.strings.shipname = refCharacter.ship.name;
+		GameInterface.strings.shipcannons = GetCurrentCannonsStatus(refCharacter);
 	} else {
 	    GameInterface.strings.shipname = "";
 	}
@@ -523,11 +530,12 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
+	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
     string goodsDescr = "";
-	goodsDescr = GetAssembledString( GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
+	goodsDescr = GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHold") + " "  + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -547,9 +555,10 @@ void ShowGoodsInfo(int iGoodIndex)
  	SetNodeUsing("QTY_BUYSELL_BUTTON", false); 
 	GameInterface.qty_edit.str = "0";
 
-	SetNewGroupPicture("QTY_GOODS_PICTURE", GetGoodImageGroup(&goods[iGoodIndex]), GoodName);
+	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
+	LanguageCloseFile(lngFileID);
 
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
 
@@ -843,4 +852,35 @@ void ADD_BUTTON()  // купить
 		BuyOrSell = 0;
 	}
 	ChangeQTY_EDIT();
+}
+
+string GetCurrentCannonsStatus(ref rchar)
+{
+	int cannonsGoodsIndex = GetCannonGoodsIdxByType(GetCaracterShipCannonsType(rchar));
+	int cargoCannonsCount = GetCargoGoods(rchar, cannonsGoodsIndex);
+	int allCanons = GetIntactCannonQuantity(rchar) + cargoCannonsCount;
+	return XI_ConvertString(goods[cannonsGoodsIndex].name) + ": " + allCanons + " / " + GetCannonQuantity(rchar);
+}
+
+void SortCannonsList(int column, bool preserveState, string tableName)
+{
+	int offset = 0
+  string datatype = "integer";
+	switch (column)
+	{
+		case 4: datatype = "index"; break; 
+		case 9: datatype = "floatEnd"; break; 
+	}
+
+	if (column == 9) offset = 1;
+
+  QoLSortTable(tableName, column, datatype, preserveState, offset);
+}
+
+int GetCannonsStoreColor(ref good, int currentCannonsIdx, int maxCaliber)
+{
+  if (CheckAttribute(&refCharacter, "ship.cargo.goods." + good.name + ".isquest")) return ARGB_Color("quest"); // по квесту
+  if (currentCannonsIdx == sti(good.cannonidx)) return ARGB_Color("gold");                                     // сейчас стоят
+  if (maxCaliber < sti(Cannon[sti(good.cannonidx)].caliber)) return ARGB_Color("badGrey");                     // нельзя поставить
+  return ARGB_Color("white");                                                                                  // можно поставить
 }

@@ -28,46 +28,46 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "Ah hello, darling. What do you want?";
-			link.l1 = "Nothing I suppose.";
+			dialog.text = "Ah, hello, darling. What do you want?";
+			link.l1 = "Nothing, I suppose.";
 			link.l1.go = "exit";
-			link.l2 = RandPhraseSimple("I have got a question for you.", "I need information.");
+			link.l2 = RandPhraseSimple("I have a question for you.","I need information.");
 			link.l2.go = "quests";//(перессылка в файл города)
 			
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = LinkRandPhrase("Darling, would you be kindly to share some gold? I'll tell you your future.","Hey, sailor, don't hurry like that! Do you want to know the future?","Give me some tobacco and a few silver coins, brave young man. And I will take a look at your future. (wink) Want to hear some secret gypsy magic?");
+				dialog.text = LinkRandPhrase("Darling, would you be so kind as to share some gold? I'll tell you your future.","Hey, sailor, don't rush off like that! Would you like to know your future?","Give me some tobacco and a few silver coins, brave young man. And I will take a look at your future. (wink) Would you like to hear some secret gypsy magic?");
 				link.l1 = "Sorry, but I have to go.";
 				link.l1.go = "exit";
 				// --> мангароса
 				if (CheckCharacterItem(pchar, "cannabis7") && CheckAttribute(pchar, "questTemp.Mangarosa") && pchar.questTemp.Mangarosa == "gipsy" && !CheckAttribute(npchar, "quest.mangarosa"))
 				{
-					link.l5 = "Listen tinker lady, I know that your people are experts in potions and poisons. I was told that you could be interested in this plant. Take a look. What do you think?";
+					link.l5 = "Listen, tinker lady, I know your people are experts in potions and poisons. I was told you might be interested in this plant. Take a look. What do you think?";
 					link.l5.go = "mangarosa";
 				}
 				if (CheckCharacterItem(pchar, "cannabis7") && CheckAttribute(pchar, "questTemp.Mangarosa") && pchar.questTemp.Mangarosa == "gipsy_trade" && !CheckAttribute(npchar, "quest.mangarosa"))
 				{
-					link.l5 = "Hey, dark-eyes, I've got something for you... This is mangarosa. Want to buy some??";
+					link.l5 = "Hey, dark-eyes, I've got something for you... This is mangarosa. Want to buy some?";
 					link.l5.go = "mangarosa_trade1";
 				}
 				// <-- мангароса
-				link.l2 = "Can you tell fortunes for me?";
+				link.l2 = "Can you tell my fortune?";
 				link.l2.go = "guess";
-				link.l3 = RandPhraseSimple("I have got a question for you.", "I need information.");
+				link.l3 = RandPhraseSimple("I have a question for you.","I need information.");
 				link.l3.go = "quests";//(перессылка в файл города)
 				npchar.quest.meeting = "1";
 			}
 			// --> Тёмные воды исцеления
 			if (CheckAttribute(pchar, "questTemp.DWH_Start") && !CheckAttribute(pchar, "questTemp.DWH_gipsy") && npchar.city == "SentJons")
 			{
-				link.l6 = "I'm looking for a gypsy woman who tends to the sick. Would that be thee?";
+				link.l6 = "I'm looking for a gypsy woman who tends to the sick. Would that be you?";
 				link.l6.go = "dwh_ne_ta";
 			}
 			// <-- Тёмные воды исцеления
 
 			if (!CheckAttribute(npchar, "quest.poison_price") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && rand(2) == 0)
 			{
-				link.l4 = "Hey, dark-eyes, do you have any poisons for rats? They're being a damn nuisance on my ship.";
+				link.l4 = "Hey, dark-eyes, do you have any poison for rats? They're being a damn nuisance on my ship.";
 				link.l4.go = "get_poison_1";
 			}
 			NextDiag.TempNode = "First time";
@@ -75,15 +75,15 @@ void ProcessDialogEvent()
 
 //-------------------------------------------------гадание-------------------------------------------------
 		case "guess":
-			dialog.text = "Of course, handsome. Give me some coins and show me your right hand. I'll tell you about your future and help you avoid disaster. I never cheat! Money back guarantee!";
-			link.l1 = "I feel like this is the part where your compatriot picks my pocket...I changed my mind. I am not in the mood.";
+			dialog.text = "Of course, handsome. Give me some coins and show me your right hand. I'll tell you about your future and help you avoid disaster. I never cheat! Money-back guarantee!";
+			link.l1 = "I feel like this is the part where your compatriot picks my pocket... I've changed my mind. I'm not in the mood.";
 			link.l1.go = "exit";
 			link.l2 = "How much money do you want?";
 			link.l2.go = "guess_1";
 		break;
 		
 		case "guess_1":
-			dialog.text = "Ah dear, as much as your coinpurse allows and your heart desires. The more pieces of eight, the further into the future I can see!";
+			dialog.text = "Ah dear, as much as your coin purse allows and your heart desires. The more pieces of eight, the further into the future I can see!";
 			link.l1 = "100 pesos";
 			link.l1.go = "guess_rate_1";
 			link.l2 = "500 pesos";
@@ -99,14 +99,14 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
-				dialog.text = "Ah, thanks you for your charity, my handsome young falcon! Now listen:  "+sTemp+"";
+				dialog.text = "Ah, thank you for your charity, my handsome young falcon! Now listen:  "+sTemp+"";
 				link.l1 = LinkRandPhrase("Heh! That's very interesting. I'll consider that...","Really? I'll consider that...","Oh, really? Are you serious? I'll remember that...");
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "The ugliest and the unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds to gather upon you and let punishment find you!";
-				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquistiion takes you!";
+				dialog.text = "The ugliest and most unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds gather above you and let punishment find you!";
+				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquisition takes you!";
 				link.l1.go = "guess_exit";
 			}
 		break;
@@ -115,16 +115,16 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 500)
 			{
 				AddMoneyToCharacter(pchar, -500);
-				dialog.text = "Ah, thank you, my handsome  young falcon! Now listen:"+sTemp+"";
-				link.l1 = LinkRandPhrase("Heh! That's very interesting. I'll consider that...","Really? I'll consider that...","Oh, really? Are you serious? Well, I'll remember that...","Hey, I feel better already!");
+				dialog.text = "Ah, thank you, my handsome young falcon! Now listen:"+sTemp+"";
+				link.l1 = LinkRandPhrase("Heh! That's very interesting. I'll keep that in mind...","Really? I'll consider that...","Oh, really? Are you serious? Well, I'll remember that...","Hey, I feel better already!");
 				link.l1.go = "exit";
 				if (hrand(1) == 0) AddCharacterExpToSkill(pchar, "Fortune", 30+rand(10));//везение
 				else AddCharacterExpToSkill(pchar, "Sneak", 30+rand(10));//скрытность
 			}
 			else
 			{
-				dialog.text = "The ugliest and the unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds to gather upon you and let punishment find you!";
-				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquistiion takes you!";
+				dialog.text = "The ugliest and most unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds gather above you and let punishment find you!";
+				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquisition takes you!";
 				link.l1.go = "guess_exit";
 			}
 		break;
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
-				dialog.text = "Ah, thanks for your silver, my handsome young falcon! Now listen:"+sTemp+"";
+				dialog.text = "Ah, thank you for your silver, my handsome young falcon! Now listen:"+sTemp+"";
 				link.l1 = LinkRandPhrase("Heh! That's very interesting. I'll consider that...","Really? I'll consider that...","Oh, really? Are you serious? Well, I'll remember that...");
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 1);
@@ -143,8 +143,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "The ugliest and the unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds to gather upon you and let punishment find you!";
-				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquistiion takes you!";
+				dialog.text = "The ugliest and most unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds gather above you and let punishment find you!";
+				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquisition takes you!";
 				link.l1.go = "guess_exit";
 			}
 		break;
@@ -164,8 +164,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "The ugliest and the unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds to gather upon you and let punishment find you!";
-				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquistiion takes you!";
+				dialog.text = "The ugliest and unavoidable misfortune is waiting for you. Curse the mocker! Let dark clouds gather above you and let punishment find you!";
+				link.l1 = "Ha-ha! Did you really think I would give you money, you gypsy witch? Get out of my way! I hope the Inquisition takes you!";
 				link.l1.go = "guess_exit";
 			}
 		break;
@@ -182,16 +182,14 @@ void ProcessDialogEvent()
 			npchar.quest.poison_price = (hrand(3) + 1) * 10;
 			if(hrand(10) == 3 || IsCharacterPerkOn(pchar, "Trustworthy"))
 			{				
-				dialog.text = LinkRandPhrase("Oh, I am not sure, handsome! There was a fellow not long ago asking for help in killing rats and then someone poisoned the soldiers in the fort. It got pretty hot for my people on the island while the guards interrogated us for two weeks until they found the murderer. He was an enemy spy.",
-				                             "And how can I be sure of your purpose? Maybe you just want to poison a nobleman who you are too cowardly to fight in an honorable duel??",
-											 "I've been told that someone had poisoned some tradesman in the tavern and had stole all of his belongings. The man suffered for a long time before expiring. The foam came out from his mouth and he turned purple like an aubergine.. Are you responsible for that, my love?");
-				link.l1 = "You gypsy wenches certainly like to share your opinions! Don't worry lass, I am not going to poison people. That's a womanish way to kill, not my style. For men I have my sword, but I can't handle those accursed rats.";
+				dialog.text = LinkRandPhrase("Oh, I'm not sure, handsome! Not long ago, there was a fellow asking for help killing rats, and then someone poisoned the soldiers at the fort. Things got pretty heated for my people on the island while the guards interrogated us for two weeks until they found the murderer. He was an enemy spy.","And how can I be sure of your purpose? Maybe you just want to poison a nobleman whom you are too cowardly to face in an honourable duel?","I've heard that someone poisoned a tradesman in the tavern and stole all his belongings. The man suffered for a long time before dying. Foam came out of his mouth and he turned purple like an aubergine.. Are you responsible for that, my love?");
+				link.l1 = "You gypsy wenches certainly like to share your opinions! Don't worry, lass, I'm not going to poison anyone. That's a woman's way to kill, not my style. For men, I have my sword, but I can't handle those accursed rats.";
 				link.l1.go = "get_poison_2";
 				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
 			}
 			else
 			{
-				dialog.text = "You're trying to entrap me! No sir, I don't have any poison. I've got plants and potions, but no poisons.";
+				dialog.text = "You're trying to entrap me! No, sir, I don't have any poison. I've got plants and potions, but no poisons.";
 				link.l1 = "Whatever then. Don't put the evil eye on me.";
 				link.l1.go = "exit";
 				notification("Perk Check Failed", "Trustworthy");
@@ -199,10 +197,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_2" :
-			dialog.text = "Oh handsome such a gallant man! (whispering) Pay me "+sti(npchar.quest.poison_price)+" doubloons.";
+			dialog.text = "Oh, such a handsome and gallant man! (whispering) Pay me "+sti(npchar.quest.poison_price)+" doubloons.";
 			if (PCharDublonsTotal() >= sti(npchar.quest.poison_price))
 			{				
-				link.l1 = "Pricy... This stuff better work.";
+				link.l1 = "Pricey... This stuff had better work.";
 				link.l1.go = "get_poison_4";
 			}
 			else
@@ -213,8 +211,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "get_poison_3" :
-			dialog.text = "Catch them yourself then and don't bother me. I will call the guard next time.";
-			link.l1 = "No need for the guards witch, I am leaving.";
+			dialog.text = "Catch them yourself then and don't bother me. I'll call the guard next time.";
+			link.l1 = "No need for the guards, witch, I am leaving.";
 			link.l1.go = "exit";
 		break;
 		
@@ -228,14 +226,14 @@ void ProcessDialogEvent()
 
 	// --> Мангароса
 		case "mangarosa":
-			dialog.text = LinkRandPhrase("Show me the plant, dear... Hm... I suppose that I can buy it from you. Three hundred pieces of eight, agree?","Show me to it, handsome... Heh... Well, I can pay two hundred and a half for it.","Let's see... Oh! An interesting example! Two hundred pesos! Deal?")"";
-			link.l1 = LinkRandPhrase("Oh Lord... dark-eyes, I am not some country bumpkin. I know this plant. It is mangarosa...","Oh, really?! This is a perfect specimen of mangarosa. Don't try to cheat me, gyppo.","Aha, and you suppose that I will give you this mangarosa for such a paltry sum.");
+			dialog.text = LinkRandPhrase("Show me the plant, dear... Hm... I suppose I can buy it from you. Three hundred pieces of eight, agreed?","Show me to it, handsome... Heh... Well, I can pay two hundred and fifty for it.","Let's see... Oh! An interesting example! Two hundred pesos! Deal?")"";
+			link.l1 = LinkRandPhrase("Oh Lord... dark-eyes, I am not some country bumpkin. I know this plant. It's mangarosa...","Oh, really?! This is a perfect specimen of mangarosa. Don't try to cheat me, gypsy.","Aha, and you suppose that I would give you this mangarosa for such a paltry sum.");
 			link.l1.go = "mangarosa_1";
 		break;
 		
 		case "mangarosa_1":
-			dialog.text = "Fine, fine, handsome. I see that you know something about this plant. Fifty doubloons. Give it to me.";
-			link.l1 = "Hold on now! I want to know how it can be used and what for. Can you tell me about that? All of your people are willing to pay a lot of gold for this little shrub!";
+			dialog.text = "Fine, fine, handsome. I see you know something about this plant. Fifty doubloons. Give it to me.";
+			link.l1 = "Hold on now! I want to know how it can be used and what for. Can you tell me about that? All your people are willing to pay a lot of gold for this little shrub!";
 			link.l1.go = "mangarosa_2";
 		break;
 		
@@ -243,16 +241,16 @@ void ProcessDialogEvent()
 			// тут работает харизма
 			if (sti(pchar.questTemp.Mangarosa.g_count) == 5 || GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 10+hrand(25)+hrand(30, "1"))
 			{
-				dialog.text = "Hm... I suppose that it's not too bad if I tell you a bit about it. You won't be able to do anything with this plant without special skills.";
+				dialog.text = "Hm... I suppose it's not too bad if I tell you a bit about it. You won't be able to do anything with this plant without special skills.";
 				link.l1 = "I am listening.";
 				link.l1.go = "mangarosa_3";
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("My people might pay a lot of gold but they would never expose their secrets.","Gold is gold and secrets are secrets, young man... ","Aye, we are willing to pay but not to tell.")+"So are you going to sell me your mangarosa? Fifty doubloons is our going rate for it, no one will pay you more.";
-				link.l1 = "Oh, fine... It works for me anyway. Fifty doubloons. Take it";
+				dialog.text = LinkRandPhrase("My people might pay a lot of gold, but they would never reveal their secrets.","Gold is gold and secrets are secrets, young man... ","Aye, we are willing to pay, but not to tell.")+"So are you going to sell me your mangarosa? Fifty doubloons is our going rate for it, no one will pay you more.";
+				link.l1 = "Oh, fine... Works for me anyway. Fifty doubloons. Take it";
 				link.l1.go = "mangarosa_trade";
-				link.l2 = "Understand me, I don't want to sell it. I want to know why do you need it. Share your knowledge with me and I will give it to you for free.";
+				link.l2 = "Understand me, I don't want to sell it. I want to know why you need it. Share your knowledge with me and I will give it to you for free.";
 				link.l2.go = "mangarosa_exit";
 			}
 		break;
@@ -261,7 +259,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "cannabis7", 1);
 			TakeNItems(pchar, "gold_dublon", 50);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Take your coins, young falcon. And one more thing, bring us more of these plants. But we can buy them only by one plant because we don't carry big sums with us. The guards don't trust our kind and like pestering us...";
+			dialog.text = "Take your coins, young falcon. And one more thing, bring us more of these plants. But we can only buy them one at a time, as we don't carry large sums with us. The guards don't trust our kind and enjoy pestering us...";
 			link.l1 = "Fine. If I find more, I'll bring it.";
 			link.l1.go = "mangarosa_trade_exit";
 		break;
@@ -275,18 +273,18 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_exit":
-			dialog.text = LinkRandPhrase("No way! If you don't want to sell it - don't do so then. I won't tell you a thing.","I won't expose our secrets to a gorger outsider! (spits) Don't want to sell it? To hell with you.","Friend, that is not for your ears. Don't want to sell it for fifty doubloons? Go and sell it to the trade girl for two hundred pesos.");
-			link.l1 = LinkRandPhrase("Too bad for you then! Another one of your people will tell me about it anyway. And she will get this plant as a present. See you!","Why so stubborn? If you won't tell me then the other does. And she will get this mangarosa as a present. Farewell.","Your breath stinks of garlic. I will get what I want eventually. Another of your race will be more talkative and will get the plant for free. See you.");
+			dialog.text = LinkRandPhrase("No way! If you don't want to sell it, then don't. I won't tell you a thing.","I won't reveal our secrets to a gorger outsider! (spits) Don't want to sell it? To hell with you.","Friend, that's not for your ears. Don't want to sell it for fifty doubloons? Go and sell it to the trade girl for two hundred pesos.");
+			link.l1 = LinkRandPhrase("Too bad for you then! Someone else from your crew will tell me about it anyway. And she will get this plant as a present. See you!","Why so stubborn? If you won't tell me, then the other will. And she will get this mangarosa as a present. Farewell.","Your breath reeks of garlic. I will get what I want eventually. Another of your kind will be more talkative and will get the plant for free. See you.");
 			link.l1.go = "exit";
 			npchar.quest.mangarosa = "true";
 			pchar.questTemp.Mangarosa.g_count = sti(pchar.questTemp.Mangarosa.g_count)+1;
 		break;
 		
 		case "mangarosa_trade1":
-			dialog.text = "And why do you ask, falcon?! Sure! Give it to me.";
+			dialog.text = "And why do you ask, falcon?! Of course! Give it to me.";
 			link.l1 = "Give me fifty doubloons.";
 			link.l1.go = "mangarosa_trade1_1";
-			link.l2 = "Oups! It seems that I've lost it or forgotten on my ship. Such a pity. Bye...";
+			link.l2 = "Oops! It seems I've lost it or left it on my ship. Such a pity. Bye...";
 			link.l2.go = "exit";
 			npchar.quest.mangarosa = "true";
 		break;
@@ -296,24 +294,24 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 50);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Don't worry, I won't cheat you. Take your coins.";
-			link.l1 = "Take your mangarosa. I will bring more if I find.";
+			link.l1 = "Take your mangarosa. I will bring more if I find any.";
 			link.l1.go = "exit";
 		break;
 		
 		case "mangarosa_3":
-			dialog.text = "We grind the buds in this special way, then dry it, pick out the seeds and stems, then mix it with tobacco, tamp our pipes and smoke the mix. And we get an... unforgettable effect. Like intoxication with alcohol, but with no headache after. One plant is enough for two dozens pipefuls.";
+			dialog.text = "We grind the buds in a special way, then dry them, pick out the seeds and stems, then mix it with tobacco, tamp our pipes and smoke the mix. And we get an... unforgettable effect. Like intoxication from alcohol, but without the headache after. One plant is enough for two dozen pipefuls.";
 			link.l1 = "I see now! Can you teach me this secret technique? I can pay you well...";
 			link.l1.go = "mangarosa_4";
 		break;
 		
 		case "mangarosa_4":
-			dialog.text = "Young falcon, trust me, you don't need this. Don't get involved, the plant will ruin you. It dulls the brain and makes you fat. Don't even ask me. But... I see a brave man in front of me, with a sword, a man of the sea...even a captain perhaps?";
+			dialog.text = "Young falcon, trust me, you don't need this. Don't get involved, the plant will ruin you. It dulls the mind and makes you fat. Don't even ask me. But... I see a brave man before me, with a sword, a man of the sea... perhaps even a captain?";
 			link.l1 = "You are right.";
 			link.l1.go = "mangarosa_5";
 		break;
 		
 		case "mangarosa_5":
-			dialog.text = "Listen here then. Mangarosa can be utilized for much nobler things and you may find it useful. One healer of ours knows all the secrets of it. She is the one you need\nGive me the plant and I will tell you her name and where to find her. Convincing her to share her secrets with you will be your problem though.";
+			dialog.text = "Listen here then. Mangarosa can be used for much nobler purposes, and you may find it useful. One of our healers knows all its secrets. She is the one you need.\nGive me the plant and I will tell you her name and where to find her. Convincing her to share her secrets with you will be your problem, though.";
 			link.l1 = "Fine. Take the plant and tell me how to find your gypsy magician.";
 			link.l1.go = "mangarosa_6";
 		break;
@@ -321,20 +319,20 @@ void ProcessDialogEvent()
 		case "mangarosa_6":
 			RemoveItems(pchar, "cannabis7", 1);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Her name is Amelia. She lives alone in a small house among the dunes not far from the sea, somewhere on the south-west coast of the Spanish Main as the wise folks say.";
-			link.l1 = "Oh for God's sake, can you please be more specific?";
+			dialog.text = "Her name is Amelia. She lives alone in a small house among the dunes not far from the sea, somewhere on the south-west coast of the Spanish Main, as the wise folk say.";
+			link.l1 = "Oh, for God's sake, can you please be more specific?";
 			link.l1.go = "mangarosa_7";
 		break;
 		
 		case "mangarosa_7":
-			dialog.text = "You are a sailor, brave falcon, and I am not. Look for her where I said. Her home is really close to the seacoast. It is nearby a bay right on the south-west of the Spanish Main - sailors must know it.";
+			dialog.text = "You are a sailor, bold falcon, and I am not. Look for her where I told you. Her home is very close to the seacoast. It's near a bay just southwest of the Spanish Main – sailors should know it.";
 			link.l1 = "Alright, I'll try to find it...";
 			link.l1.go = "mangarosa_8";
 		break;
 		
 		case "mangarosa_8":
-			dialog.text = "Take a Mangarosa to her or she won't even talk to you. And don't forget about bringing doubloons either, don't even think that she will teach you for free!";
-			link.l1 = "Such avarice. I'll consider that. Thanks for your story!";
+			dialog.text = "Take a Mangarosa to her or she won't even talk to you. And don't forget to bring doubloons either, don't even think she'll teach you for free!";
+			link.l1 = "Such avarice. I'll consider that. Thank you for your story!";
 			link.l1.go = "mangarosa_9";
 		break;
 		
@@ -361,7 +359,7 @@ void ProcessDialogEvent()
 		// --> Тёмные воды исцеления
 		case "dwh_ne_ta":
 			sld = CharacterFromID("DWH_gypsy");
-			dialog.text = "No, " + GetSexPhrase("dear", "beauty") + ", I'm not the one you need, it's " + sld.name + ". She's here in the city right now. I saw her recently.";
+			dialog.text = "No, "+GetSexPhrase("dear","beauty")+", I'm not the one you need, it's "+sld.name+". She's here in the city right now. I saw her recently.";
 			link.l1 = "Thank you.";
 			link.l1.go = "exit";
 		break;
@@ -369,8 +367,8 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
-			dialog.text = NPCharSexPhrase(NPChar, "Listen to me brave falcon, I may be a gypsy but even we decry open violence. Please sheathe your sword.", "Listen to me brave falcon, as a citizen of this town I'm asking you to sheathe your blade.");
-			link.l1 = LinkRandPhrase("Fine.", "As you wish.", "As you say...");
+			dialog.text = NPCharSexPhrase(NPChar,"Listen to me, brave falcon, I may be a gypsy, but even we decry open violence. Please sheathe your sword.","Listen to me, brave falcon, as a citizen of this town I'm asking you to sheathe your blade.");
+			link.l1 = LinkRandPhrase("Fine.","As you wish.","As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;

@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 
 		case "Kristian_2":
 			dialog.text = "Co??? Kto ci to powiedział? To jakaś pomyłka, zapewniam cię, nie handluję żadnym alkoholem!";
-			link.l1 = "Aha. Widzę, że trafiłem"+GetSexPhrase("em","am")+" pod właściwy adres.";
+			link.l1 = "Aha. Widzę, że trafił"+GetSexPhrase("em","am")+" pod właściwy adres.";
 			link.l1.go = "Kristian_3";
 		break;
 

@@ -371,6 +371,7 @@ void SetSpyGlassData()
 		
 	}
 	// boal <--
+	if (!isFort) ShowShipCargoEstimateCost(&objISpyGlass, chref);
 }
 
 void ResetSpyGlassData()

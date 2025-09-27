@@ -236,7 +236,7 @@ void ProcessDialogEvent()
 		case "lock_5":
 			GiveItem2Character(pchar, "keys_skel");
 			AddCharacterExpToSkill(pchar, "Sneak", 200);
-			dialog.text = "Grazie, grazie, buon zio "+pchar.name+"Prendi pure le tue chiavi. Usarle è un gioco da ragazzi: infilale una за другой, и пробуй. Prima o poi una aprirà la serratura che ti serve. Se non funziona, vuol dire che quella serratura è davvero furba — ti servirà una chiave particolare, senza dubbio.";
+			dialog.text = "Grazie, grazie, buon zio "+pchar.name+"Prendi pure le tue chiavi. Usarle è un gioco da ragazzi: infilale una uno per uno, e provale. Prima o poi una aprirà la serratura che ti serve. Se non funziona, vuol dire che quella serratura è davvero furba — ti servirà una chiave particolare, senza dubbio.";
 			link.l1 = "Capisco. Suppongo che me ne occuperò io.";
 			link.l1.go = "lock_6";
 		break;

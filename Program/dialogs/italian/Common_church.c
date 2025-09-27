@@ -1642,7 +1642,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			RemoveItems(PChar, "prayer_book", 1);//заменить на нужный
 			GiveItem2Character(pchar, pchar.GenQuest.Churchbooks.Item);
-			Log_Info("You have received '"+XI_ConvertString(pchar.GenQuest.Churchbooks.Item)+"'");
+			Log_Info("Avete ricevuto '"+XI_ConvertString(pchar.GenQuest.Churchbooks.Item)+"'");
 			AddQuestRecord("Churchbooks", "4");
 			CloseQuestHeader("Churchbooks");
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);

@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 					link.l1.go = "patria_59";
 					break;
 				}
-				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < 5)
+				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < COMPANION_MAX)
 				{
 					dialog.text = "Вы готовы принять в эскадру наш курьерский люггер?";
 					link.l1 = "Да.";
@@ -503,7 +503,6 @@ void ProcessDialogEvent()
 			pchar.quest.DefendSP_prepare.function = "DefendSP_PrepareMartinique";
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);
 			AddCharacterExpToSkill(pchar, "Fortune", 500);
-			pchar.questTemp.GoldenGirl_Block = true;	// Запрещаем квест Дороже Золота
 		break;
 		
 		case "serve_wait":
@@ -1833,7 +1832,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			SetTimerCondition("PZ_NormanBackToStreets", 0, 0, 1, false);	//Вовзращаем Акулу или Тиракса в Шарптаун
 			// ставим сразу прерывание, чтобы потом по тысячу раз не копировать
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
@@ -1852,7 +1851,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.PZ_LevasserPlenen"))
 				{
 					link.l1 = "Это ещё не всё, Ваша Светлость.";
-					link.l1.go = "PZ2";
+					link.l1.go = "PZ_2";
 				}
 				else
 				{
@@ -1870,13 +1869,13 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube");
 		break;
 					
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Вот как? Что вы имеете в виду, капитан?";
 			link.l1 = "Вместе со своими людьми мне удалось схватить Левассера живым и доставить его вам. Как только мы закончим, я прикажу привести его.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Это правда? Я и подумать не мог о чём-то подобном! Воистину, блестящая работа, Шарль! Сомневаюсь, что даже ваш прославленный брат смог бы лучше. Ваш отец может гордиться вами, друг мой.";
 			link.l1 = "Благодарю за тёплые слова, шевалье.";
 			link.l1.go = "exit";
@@ -1884,7 +1883,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("PZ_LevasserVGostyahUPuansie");
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Очень хорошо, Шарль. Я доволен вами.";
 			link.l1 = "Теперь я могу получить от вас письменный приказ, согласно которому мой брат будет освобождён из-под ареста?";
 			link.l1.go = "serve";

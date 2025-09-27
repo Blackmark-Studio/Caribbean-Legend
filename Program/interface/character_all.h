@@ -292,7 +292,6 @@ void FillCharactersScrollEx(bool bOfficers)
 	FillFaceList("CHARACTERS_SCROLL.ImagesGroup", pchar, 2); // passengers
 	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_upgrade");
 	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_byworker");
-	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_byworker2");
 
 	GameInterface.CHARACTERS_SCROLL.BadTex1 = 0;
 	GameInterface.CHARACTERS_SCROLL.BadPic1 = "emptyface";
@@ -377,11 +376,6 @@ void FillCharactersScrollEx(bool bOfficers)
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
 				}
-				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-				{
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
-				}
             }
             else
             {
@@ -425,11 +419,6 @@ void FillCharactersScrollEx(bool bOfficers)
 				{
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-				}
-				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-				{
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
 				}
             }
             else
@@ -483,11 +472,6 @@ void FillCharactersScrollEx(bool bOfficers)
 					{
 						GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 						GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-					}
-					if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-					{
-						GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-						GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
 					}
                     m++;
                 }
@@ -547,11 +531,6 @@ void FillCharactersScrollEx(bool bOfficers)
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
                 }
-                if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-                {
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
-                }
                 m++;
             }
             else
@@ -565,4 +544,10 @@ void FillCharactersScrollEx(bool bOfficers)
 
     if(m < 7) m = 7; // Чтобы не дублировало по кругу
 	GameInterface.CHARACTERS_SCROLL.ListSize = m;
+}
+
+int GetCurrentCharactersTab()
+{
+	if (!CheckAttribute(&InterfaceStates, "nCurScrollTab")) return 1;
+	return sti(InterfaceStates.nCurScrollTab);
 }

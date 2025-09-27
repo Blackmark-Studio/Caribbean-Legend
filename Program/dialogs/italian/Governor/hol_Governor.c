@@ -51,7 +51,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Portugal_3":
 			TakeNItems(pchar, "gold_dublon", 1500);
-			Log_Info("You have received 1500 doubloons");
+			Log_Info("Hai ricevuto 1500 dobloni");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "E ora, capitano, sareste così gentile da trasferire il portoghese alla Compagnia. Non vediamo l'ora di parlare con lui.";
 			link.l1 = "Certo, signore, mandate la barca alla mia nave.";

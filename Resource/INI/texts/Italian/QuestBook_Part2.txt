@@ -263,7 +263,7 @@ Ho parlato con il disertore. Mi ha convinto a lasciarlo in pace. Sembra che abbi
 #TEXT 20
 Non ce l'ho fatta in tempo. @<MayorName> non ne sarà contento.
 #TEXT 21
-Ho fallito una missione per il governatore di @<ColonyName>. Ho trovato il mio bersaglio, ma non sono riuscito a portare a termine l'incarico. @<MayorName> è furioso…
+Ho fallito una missione per il governatore di @<ColonyName>. Ho trovato il mio bersaglio, ma non sono riuscito a portare a termine l'incarico. @<MayorName> è furioso...
 #QUEST GivePrisonFree
 Extra: Fuga dalla Prigione
 #TEXT 1
@@ -716,7 +716,7 @@ Sfortunatamente, una delle navi è affondata durante lo scontro con il nemico. S
 #TEXT 12
 Sfortunatamente, una delle navi è affondata durante lo scontro con il nemico. Sono riuscito a salvarne un'altra, ma non ho ricevuto alcuna ricompensa. Dovrei approfondire le tattiche per non commettere altri errori... Mi hanno pagato solo per la consegna del carico - @<sMoney>.
 #TEXT 13
-Il viaggio è stato davvero sfortunato: una delle navi è affondata durante uno scontro con il nemico. Inoltre, ho perso una buona parte del carico. Il mio cliente si è rifiutato di pagare e ha anche chiesto un risarcimento per la merce persa ,@<sMoney>. Ho deciso di accettare le sue condizioni; non voglio farmi dei nemici. Meglio che dia un'occhiata al mio registro commerciale per trovare il prezzo migliore per il carico…
+Il viaggio è stato davvero sfortunato: una delle navi è affondata durante uno scontro con il nemico. Inoltre, ho perso una buona parte del carico. Il mio cliente si è rifiutato di pagare e ha anche chiesto un risarcimento per la merce persa ,@<sMoney>. Ho deciso di accettare le sue condizioni; non voglio farmi dei nemici. Meglio che dia un'occhiata al mio registro commerciale per trovare il prezzo migliore per il carico...
 #TEXT 14
 Questi burocrati sono davvero troppo insolenti! Volevano spogliarmi fino all'ultima camicia. Meglio abbracciare il nemico, che pagare una tale somma a quei furfanti.
 #TEXT 15
@@ -863,7 +863,7 @@ Ho trovato il ladro. Ha chiesto delle monete per @<sName>. Non volevo problemi, 
 #TEXT 6
 Ho trovato il ladro. Ha fatto finta di niente, ma l'ho spaventato e ha restituito l'attrezzo rubato.
 #TEXT 7
-Ho trovato il ladro. Non ha voluto restituire l'oggetto rubato con le buone. L'ho spaventato e lui è scappato. Ora lo strumento rubato è perso per sempre…
+Ho trovato il ladro. Non ha voluto restituire l'oggetto rubato con le buone. L'ho spaventato e lui è scappato. Ora lo strumento rubato è perso per sempre...
 #TEXT 8
 Ho trovato il ladro. Ha rifiutato di restituire l'oggetto rubato e ha opposto resistenza armata.
 #TEXT 9
@@ -1012,7 +1012,7 @@ Non appena sono salito a bordo, ho visto la nave di Solly. Beh, allora, peggio p
 #TEXT 18
 Non appena sono salito a bordo, ho visto la nave di Solly. Era troppo potente per me, così ho dovuto ritirarmi e lasciare tutto il bottino sulla spiaggia...
 #TEXT 19
-Il mio ex prigioniero ha mantenuto la parola e mi ha dato un'informazione: tra due settimane, un pesante galeone carico di oro grezzo salperà da @<sCity> verso l'Europa. Io sarò a bordo. Non credo ci sia motivo di preoccuparsi per Adam…
+Il mio ex prigioniero ha mantenuto la parola e mi ha dato un'informazione: tra due settimane, un pesante galeone carico di oro grezzo salperà da @<sCity> verso l'Europa. Io sarò a bordo. Non credo ci sia motivo di preoccuparsi per Adam...
 #TEXT 20
 Nonostante tutti i miei sforzi, non sono riuscito a catturare il galeone. Pazienza, al diavolo l'oro.
 #TEXT 21
@@ -1366,6 +1366,9 @@ Sono riuscito a concordare con Christian un aumento delle consegne. D'ora in poi
 #TEXT   6
 ************************************************************
 Nella taverna di Puerto Principe ho diritto a vitto e alloggio gratuiti, e l'oste mi ha assicurato che, grazie al suo impegno, altri marinai saranno desiderosi di salpare sotto il mio comando.
+#TEXT   7
+************************************************************
+Dal fabbro di San Jose potrò acquistare i materiali e i manufatti di cui ho bisogno. Riceve forniture una volta al mese.
 
 
 #QUEST FMQ_Guadeloupe
@@ -1485,7 +1488,7 @@ Mi sono preso il mio tempo durante il viaggio, e gli inglesi hanno iniziato un a
 #TEXT 3
 Il tenente Caspar Gratton ha deciso che dovrei aiutarlo nella sua operazione militare contro l'Olanda. Neanche per sogno. Ora fuggire da Sint-Maarten è un suo problema.
 #TEXT 4
-Ho consegnato il tenente Caspar Gratton e i suoi soldati a Sint-Maarten, ma non ho visto nemmeno una moneta. Invece, il tenente mi ha chiesto di aspettarlo qualche giorno, poi portare la sua squadra ad Antigua, dove il colonnello Fox mi pagherà generosamente tutto quanto. Che storia... Spero solo che gli olandesi non vengano a saperlo, visto che aiutare i militari britannici non è proprio ben visto da queste parti. Meglio salpare verso Philipsburg e capire cosa sta succedendo. Mi chiedo anche cosa stiano tramando i marines...
+Il tenente Kaspar Gratton e i suoi soldati sono stati portati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe ricompensato generosamente. Già... speriamo solo di non avere guai con gli olandesi alla fine. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti degli olandesi, e secondo, per cercare di scoprire cosa ci fanno davvero qui questi marines britannici.
 #TEXT 5
 Sono passati tre giorni e non ho scoperto nulla. Dovrei tornare alla spiaggia di Grand Case ,forse il tenente è già arrivato?
 #TEXT 6
@@ -1609,7 +1612,7 @@ Eccoci arrivati alla piantagione di Portobello. Dobbiamo trovare la casa di Luis
 #TEXT 8
 Ho trovato il libro contabile di Ortiz. Domingo si è agitato molto dopo aver letto gli appunti: a quanto pare, suo zio lo ingannava da anni, abbassando più volte i veri guadagni. Il gran signore Albalate sta andando a Portobello per rivolgersi al tribunale.
 #TEXT 9
-Questo è stato davvero inaspettato. Quando don Luis Ortiz e i suoi scagnozzi sono spuntati all'improvviso, ho preferito lasciarli risolvere le loro questioni di famiglia senza di me. D'altronde, la mia ricompensa l'ho già avuta…
+Questo è stato davvero inaspettato. Quando don Luis Ortiz e i suoi scagnozzi sono spuntati all'improvviso, ho preferito lasciarli risolvere le loro questioni di famiglia senza di me. D'altronde, la mia ricompensa l'ho già avuta...
 #TEXT 10
 Don Diego e io abbiamo finalmente incontrato Luis Ortiz faccia a faccia appena usciti da casa sua. Quel bastardo ha provato a corrompermi, ma non ci è riuscito, e ora è morto. Purtroppo, lo stesso destino è toccato al povero grande di Spagna Albalate. Che peccato... Meglio che me la dia a gambe prima che le autorità mi considerino suo complice.
 #TEXT 11
@@ -2023,7 +2026,7 @@ Mi sono completamente dimenticato delle istruzioni di Markus: non perdere tempo 
 #QUEST Roger_9
 Flying the Jolly Roger: Città della Raccolta di Sangue
 #TEXT 1
-Yo-ho-ho! Io, Marcus, il coraggioso Geffrey, Cutlass Pelly, Luke Leprechaun e Bernard Vensan, l'amico di Tyrex, siamo pronti a saccheggiare Cartagena! Dentro il forte della città ci aspetta una montagna d'oro, senza contare il riscatto che otterremo dagli abitanti. Che vita fantastica, a parte il mal di testa di stamattina, ahah! Che festa ieri: alcol, donne… La Vega ha davvero tanto da offrire a Charlie Prince. Qui mi rispettano! Adoro questa vita!
+Yo-ho-ho! Io, Marcus, il coraggioso Geffrey, Cutlass Pelly, Luke Leprechaun e Bernard Vensan, l'amico di Tyrex, siamo pronti a saccheggiare Cartagena! Dentro il forte della città ci aspetta una montagna d'oro, senza contare il riscatto che otterremo dagli abitanti. Che vita fantastica, a parte il mal di testa di stamattina, ahah! Che festa ieri: alcol, donne... La Vega ha davvero tanto da offrire a Charlie Prince. Qui mi rispettano! Adoro questa vita!
 #TEXT 2
 Sono uno stupido senza pari! Le mie eccezionali doti di navigatore hanno fatto sì che gli altri mi abbandonassero!
 #TEXT 3
@@ -2037,7 +2040,7 @@ La resistenza è stata annientata. Cartagena è nostra! Marcus va al forte per l
 #TEXT 7
 Ho fatto pagare agli spagnoli ancora più di quanto volesse Marcus: ho ottenuto un riscatto di 350.000 pesos. Ora mi dirigo al forte.
 #TEXT 8
-L'oro di Cartagena è stato caricato sulle nostre navi. La mia parte è di @<sGold> pezzi d'oro e @<sMoney> pesos. Un bel bottino, e la spartizione è stata… quasi giusta. Non mi è piaciuto che Marcus abbia diviso l'oro senza di me, e poi si è preso metà del malloppo, maledizione! D'accordo, era lui a guidare il colpo e aveva la nave più grossa… Pazienza, ho già un nuovo ordine. Devo dirigermi a Tortuga e spendere le mie monete come si deve. Donne e rum, non vi deluderò!
+L'oro di Cartagena è stato caricato sulle nostre navi. La mia parte è di @<sGold> pezzi d'oro e @<sMoney> pesos. Un bel bottino, e la spartizione è stata... quasi giusta. Non mi è piaciuto che Marcus abbia diviso l'oro senza di me, e poi si è preso metà del malloppo, maledizione! D'accordo, era lui a guidare il colpo e aveva la nave più grossa... Pazienza, ho già un nuovo ordine. Devo dirigermi a Tortuga e spendere le mie monete come si deve. Donne e rum, non vi deluderò!
 
 #QUEST Roger_10
 Flying the Jolly Roger: Nemesis
@@ -2062,7 +2065,7 @@ Ho trovato i tesori, ma sono protetti da sbarre di metallo. Dovrei prendere degl
 Accidenti!.. Fa un male cane! Jeffrey mi ha fregato! Maledetto avaro! È già il secondo "amico" della Fratellanza che oggi cerca di farmi fuori per l'oro. Devo levarmi di torno subito. c'è qualcosa che non va. Chi altro devo incontrare qui? Picard? Avevamo un accordo, ma ormai non mi fido più di nessuno. Gli uomini di Jeffrey sono ancora nei paraggi, ho sentito quei bastardi parlare di una squadra di moschettieri che ha portato con sé.
 #TEXT 9
 Purtroppo, invece di Jean, qui ho trovato Luke Leprechaun. Lui e i suoi bucanieri mi avevano preparato un'imboscata al piano di sopra. A quanto pare, il vecchio guardaboschi ce l'ha sempre avuta con me. Ecco cosa succede a fidarsi di banditi e pirati!
-Non vedo tutto questo come un semplice gioco d'azzardo. c'è qualcosa nell'aria… Meglio che me ne vada subito!
+Non vedo tutto questo come un semplice gioco d'azzardo. c'è qualcosa nell'aria... Meglio che me ne vada subito!
 #TEXT 10
 Tutto questo era stato pianificato... Un dannato vendicatore del popolo mi ha teso una trappola. Si chiama don Henrico, e la cosa peggiore è che tutte le sue accuse sono giuste e fondate.
 Sono completamente solo qui, in questa prigione buia, inquietante e silenziosa. Sono circondato dai morti; persino i topi sono spariti. Ho ancora un pò di tempo per trovare una via d'uscita prima che la fame mi uccida.
@@ -2091,7 +2094,7 @@ Io, Charles de Maure, capitano francese e gentiluomo, giuro davanti a me stesso 
 Ho molto da fare per riabilitare il mio nome. Ma ci riuscirò, ne sono certo. Ora però devo andare a Saint-Pierre, da Michel. La vita continua!
 @<sText>
 #TEXT 18
-Sono riuscito a fuggire dall'oscurità delle segrete e dall'inferno bollente. Una vera prova di fuoco. Dopo tutto questo, non mi sembra più il caso di fare lo scagnozzo di Marcus. Lascio il suo servizio e torno da mio fratello. La vita continua, nuove sfide e nuove vette mi attendono! Basta solo che l'odore di zolfo svanisca un pò…
+Sono riuscito a fuggire dall'oscurità delle segrete e dall'inferno bollente. Una vera prova di fuoco. Dopo tutto questo, non mi sembra più il caso di fare lo scagnozzo di Marcus. Lascio il suo servizio e torno da mio fratello. La vita continua, nuove sfide e nuove vette mi attendono! Basta solo che l'odore di zolfo svanisca un pò...
 #TEXT	19
 Quando sono riuscito a uscire e sono tornato sulla riva, ancora in bilico tra follia, paura, incertezza e speranza, il mio fedele amico e compagno, @<sName>, mi ha accolto sulla spiaggia. Grazie a Dio, anche lui è sopravvissuto a questa giornata. In una lunga conversazione, mi ha aiutato a vedere le cose più chiaramente. E a prendere la decisione giusta. Oggi, Charlie Prince, il pirata al guinzaglio di Terrax, è morto per il mondo, là in mezzo a quei geyser. E Charles de Maure, il nobile francese, non un misero pirata, ha continuato a vivere. E nessuno, mai più, gli dirà cosa deve fare. Nessuno si metterà tra lui e il suo obiettivo. Deciderò io quali sono i miei scopi e come raggiungerli. Andrò a trovare mio fratello e gli dirò che dal suo caro Terrax non è venuto fuori nulla di buono. Che dica pure quello che vuole ,io troverò un'altra strada.
 #TEXT	20

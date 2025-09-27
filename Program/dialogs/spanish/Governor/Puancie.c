@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 					link.l1.go = "patria_59";
 					break;
 				}
-				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < 5)
+				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < COMPANION_MAX)
 				{
 					dialog.text = "¿Estás listo para recibir nuestro lugre de correo?";
 					link.l1 = "Lo estoy.";
@@ -300,7 +300,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_2":
-			dialog.text = "Mejor. Ahora, en cuanto a tu pregunta anterior, fuiste considerado, por error, como un espía español y puesto bajo arresto hasta que se aclare la situación. Malditos castellanos, se han vuelto más activos últimamente, por eso ordené detener a toda persona sospechosa.\nPero ahora sabemos quién eres... eres realmente Charles de Maure, hermano de Michelle de Monper, y personalmente vine aquí para liberarte. ¡Y me gritas como un niño pequeño!";
+			dialog.text = "Mejor. Ahora, en cuanto a tu pregunta anterior, fuiste considerado, por error, como un espía español y puesto bajo arresto hasta que se aclare la situación. Malditos castellanos, se han vuelto más activos últimamente, por eso ordené detener a toda persona sospechosa.\nPero ahora sabemos quién eres... eres realmente Charles de Maure, hermano de Michel de Monper, y personalmente vine aquí para liberarte. ¡Y me gritas como un niño pequeño!";
 			link.l1 = "Perdóneme de nuevo, su Excelencia. ¿Estoy libre ahora?";
 			link.l1.go = "Puancie_Jail_3";			
 		break;
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Puancie_Jail_4":
-			dialog.text = "Me alegra escuchar eso. Quiero que sepas que monsieur de Monper está en serios problemas. Tengo todas las razones para que sea sospechoso de abuso de autoridad, apropiación indebida de bienes y perjurio. Pero tú puedes ayudarlo.";
+			dialog.text = "Me alegra escuchar eso. Quiero que sepas que monsieur de Monper está en serios problemas. Tengo todas las razones para sospecharlo de abuso de autoridad, apropiación indebida de bienes y perjurio. Pero tú puedes ayudarlo.";
 			link.l1 = "Monsieur, ¿podría decirme más? No entiendo, Michel era el orgullo de la Orden y...";
 			link.l1.go = "Puancie_Jail_5";			
 		break;
@@ -503,7 +503,6 @@ void ProcessDialogEvent()
 			pchar.quest.DefendSP_prepare.function = "DefendSP_PrepareMartinique";
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);
 			AddCharacterExpToSkill(pchar, "Fortune", 500);
-			pchar.questTemp.GoldenGirl_Block = true;	// Запрещаем квест Дороже Золота
 		break;
 		
 		case "serve_wait":
@@ -1832,7 +1831,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			SetTimerCondition("PZ_NormanBackToStreets", 0, 0, 1, false);	//Вовзращаем Акулу или Тиракса в Шарптаун
 			// ставим сразу прерывание, чтобы потом по тысячу раз не копировать
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
@@ -1851,7 +1850,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.PZ_LevasserPlenen"))
 				{
 					link.l1 = "Ese no es todo, Su Excelencia.";
-					link.l1.go = "PZ2";
+					link.l1.go = "PZ_2";
 				}
 				else
 				{
@@ -1869,13 +1868,13 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube");
 		break;
 					
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "¿Es así? ¿Qué quieres decir, Capitán?";
 			link.l1 = "He logrado capturar a Levasseur con vida y traerlo ante usted. Tan pronto como terminemos, daré la orden de traerlo.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "¡Nunca pensé que algo así fuera siquiera posible! ¡Realmente, un trabajo brillante, Charles! Dudo que incluso tu ilustre hermano pudiera haberlo hecho mejor. Tu padre estaría orgulloso de ti, mi amigo.";
 			link.l1 = "Gracias por sus amables palabras, Monsieur Philippe.";
 			link.l1.go = "exit";
@@ -1883,7 +1882,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("PZ_LevasserVGostyahUPuansie");
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Muy bien, Charles. Estoy complacido contigo.";
 			link.l1 = "¿Puedo obtener una orden escrita de usted para que mi hermano sea liberado de la custodia ahora?";
 			link.l1.go = "serve";

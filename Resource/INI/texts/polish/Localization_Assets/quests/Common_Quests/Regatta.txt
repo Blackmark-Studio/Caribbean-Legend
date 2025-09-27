@@ -1,51 +1,11 @@
-Regatta_1
-{
-Henry
-}
-Regatta_2
-{
-Stivenson
-}
-
-Regatta_3
-{
-Spóźniłeś się na regate.
-}
-
-Regatta_4
-{
-Saint Catherine
-}
-
-Regatta_5
-{
-Porucznik
-}
-Regatta_6
-{
-Mahoiny
-}
-
-Regatta_7
-{
-Vudro
-}
-Regatta_8
-{
-Doggerty
-}
-
-Regatta_9
-{
-Nawigator opuścił twój statek!
-}
-
-Regatta_10
-{
-Pasażerowie są na pokładzie.
-}
-
-Regatta_11
-{
-Twój statek jest przeciążony. Jej prędkość i zwrotność są obniżone.
-}
+Regatta_1 {Henry}
+Regatta_2 {Stivenson}
+Regatta_3 {Spóźniłeś się na regate.}
+Regatta_4 {Saint Catherine}
+Regatta_5 {Porucznik}
+Regatta_6 {Mahoiny}
+Regatta_7 {Vudro}
+Regatta_8 {Doggerty}
+Regatta_9 {Nawigator opuścił twój statek!}
+Regatta_10 {Pasażerowie są na pokładzie.}
+Regatta_11 {Twój statek jest przeciążony. Jej prędkość i zwrotność są obniżone.}

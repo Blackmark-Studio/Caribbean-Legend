@@ -4,6 +4,7 @@
 /// bestmap ===>
 //settings file
 #include "activemap_settings.h"
+#include "interface\utils\common_header.c"
 //changing this requires frame resizing
 #define TRADEASSISTANT_MAXGOODS 5
 
@@ -93,8 +94,9 @@ int _GetDistanceToColony2D(string _sColony)
 
 void InitInterface(string iniName)
 {
-    InterfaceStack.SelectMenu_node = "LaunchMapViewScreen"; // запоминаем, что звать по Ф2
+	InterfaceStack.SelectMenu_node = "LaunchMapViewScreen"; // запоминаем, что звать по Ф2
 	GameInterface.title = "titleMapView";
+	RefreshEquippedMaps(GetMainCharacter());
 	
 	xi_refCharacter = pchar;
 	
@@ -108,37 +110,21 @@ void InitInterface(string iniName)
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);	
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("SelectRColony","SelectRColony",0);
 	SetEventHandler("HideRColony","HideRColony",0);
 	SetEventHandler("FillTable","FillTable",0);
 	SetEventHandler("HideTable","HideTable",0);
 	SetEventHandler("DoTP","DoTP",0);
-	
-    XI_RegistryExitKey("IExit_F2");
+
+	XI_RegistryExitKey("IExit_F2");
 	FillMapsTable();
-	
-	if(CheckCharacterItem(pchar, "MapsAtlas")) // проверяем наличие атласа в инвентаре
-	{
-		XI_WindowShow("MAIN_WINDOW", true);
-		SetNodeUsing("STR_NOMAP", false);
-	}
-	else
-	{
-		XI_WindowShow("MAIN_WINDOW", false);
-		SetNodeUsing("STR_NOMAP", true);
-	}
-	// доп инфа в шапку --->
-	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
-	SetFormatedText("Money", FindRussianMoneyString(sti(xi_refCharacter.money)));
-	SetFormatedText("Dublon", FindRussianDublonString(sti(xi_refCharacter.dublon)));
-	SetFormatedText("Rank", xi_refCharacter.rank);
-	SetFormatedText("Rank_progress", GetCharacterRankRateCur(xi_refCharacter) + " / " + GetCharacterRankRate(xi_refCharacter));
-	// порог уровня
-	GameInterface.StatusLine.BAR_RANK.Max   = GetCharacterRankRate(xi_refCharacter);
-	GameInterface.StatusLine.BAR_RANK.Min   = 0;
-	GameInterface.StatusLine.BAR_RANK.Value = GetCharacterRankRateCur(xi_refCharacter);	
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_RANK",0);
-	// <--- 
+
+	bool atlasNotEmpty = IsAtlasNotEmpty();
+	XI_WindowShow("MAIN_WINDOW", atlasNotEmpty);
+	SetNodeUsing("STR_NOMAP", !atlasNotEmpty);
+
+	SetCommonHeaderInfo();
 	//Show boundaries
 	if(SHOW_BOUNDARIES == 1)
 	{
@@ -152,7 +138,6 @@ void InitInterface(string iniName)
 		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "BOUNDARIES", 4,
 			argb(makeint(255/(makefloat(100)/BOUNDARIES_OPACITY)), BOUNDARIES_R, BOUNDARIES_G, BOUNDARIES_B));
 	}
-	SetAlertMarks(xi_refCharacter);
 }
 
 // гуляем по меню кнопками Q и E
@@ -187,6 +172,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("TableSelectChange", "TableSelectChange");
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("SelectRColony","SelectRColony");
 	DelEventHandler("HideRColony","HideRColony");
 	DelEventHandler("FillTable","FillTable");
@@ -271,6 +257,9 @@ void ProcessCommandExecute()
 				}
 			}
 		break;
+		case "SWITCH_MAP_BUTTON":
+			if (comName == "click") SetNewMapPicture(GetMapSwitch(pchar.showlastmap));
+		break;
 	}
 	// boal new menu 31.12.04 -->
 	if (nodName == "I_INVENTORY" || nodName == "I_SHIP" || nodName == "I_QUESTBOOK" ||
@@ -298,66 +287,76 @@ void FillMapsTable()
 	int n, i;
 	string row;
 	string sGood, selectedId = "";
-	bool ok = true;
-	aref rootItems, arItem;
-	aref  curItem;
-		
+	int  idLngFile;
+	aref arItem;
+	string bestMapId = GetBestRegionMap();
+	aref mapsTable;
+	makearef(mapsTable, GameInterface.TABLE_MAPS);
+
 	n = 1;
-	if(CheckAttribute(pchar, "showlastmap")) { selectedId = pchar.showlastmap; }
-	// belamour cle выбираем карту  в зависимости от местоположения
-	if(IsEntity(&worldMap))
+	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+	if (CheckAttribute(pchar, "showlastmap")) selectedId = pchar.showlastmap;
+	if (!CheckAttribute(pchar, "showlastmap.force"))
 	{
-		IsEquipCharacterByMap(xi_refCharacter, "map_bad")) selectedId = "map_bad";
-		IsEquipCharacterByMap(xi_refCharacter, "map_normal")) selectedId = "map_normal";
-		IsEquipCharacterByMap(xi_refCharacter, "Map_Best")) selectedId = "Map_Best";
-	}
-	else
-	{
-		if(FindAtlasMap(&selectedId)) {}
-		else
+		if (IsEntity(&worldMap) && bestMapId != "") selectedId = bestMapId;
+		else if (FindAtlasMap(&selectedId) == "")
 		{
-			if(CheckAttribute(pchar, "showlastmap")) { selectedId = pchar.showlastmap; }
+			if (CheckAttribute(pchar, "showlastmap")) { selectedId = pchar.showlastmap; }
 		}
-	}
-	
-	// GameInterface.TABLE_MAPS.hr.td1.str = "";
-	GameInterface.TABLE_MAPS.hr.td1.str = XI_ConvertString("Select map");
+	} else DeleteAttribute(pchar, "showlastmap.force");
+
+	mapsTable.hr.td1.str = XI_ConvertString("Select map");
 	Table_UpdateWindow("TABLE_MAPS");
 
-	// Заполним картами
-	makearef(rootItems, xi_refCharacter.Items);
-	object langFiles;
-    for (i=0; i<GetAttributesNum(rootItems); i++)
-    {
-		curItem = GetAttributeN(rootItems, i);
-		if (Items_FindItem(GetAttributeName(curItem), &arItem)>=0 )
-		{
-			row = "tr" + n;
-			// Index = FindItem("Map_Best");
-			sGood = arItem.id;			
-			if(CheckAttribute(arItem,"mapType") && IsEquipCharacterByMap(xi_refCharacter, arItem.id))
-			{
-                ok = true;
-			}
-            else ok = false;
-			if (arItem.ItemType != "MAP" || !ok) continue;			
 
-			if (selectedId == sGood) { iSelected = n; }			
-			if (GetCharacterItem(xi_refCharacter, sGood) > 0)
-			{					
-				GameInterface.TABLE_MAPS.(row).index = GetItemIndex(arItem.id);				
-				GameInterface.TABLE_MAPS.(row).td1.textoffset = "0,0";
-				GameInterface.TABLE_MAPS.(row).td1.str = GetItemNameBatch(arItem, &langFiles);
-				n++;							
-			}
-		}
-    }	
-	CloseLanguageFilesBatch(&langFiles);
-	GameInterface.TABLE_MAPS.select = iSelected;
-	CurRow   =  "tr" + (iSelected);    
-	SetNewMapPicture();
-		
+	// Cначала лучшая карта архипелага
+	if (bestMapId != "")
+	{
+		Items_FindItem(bestMapId, &arItem)
+		mapsTable.tr1.index = arItem.index;
+		mapsTable.tr1.td1.str = XiStr(GetMapShownKey(&arItem));
+		if (selectedId == bestMapId) { iSelected = n; }
+		n++;
+	}
+
+	// Затем какие-то остальные карты
+	aref restMaps, restMap;
+	makearef(restMaps, Atlas.rest);
+
+	for(i=0;i<GetAttributesNum(&restMaps);i++)
+	{
+		restMap = GetAttributeN(&restMaps, i);
+		Items_FindItem(GetAttributeName(&restMap), &arItem)
+		row = "tr" + n;
+		sGood = arItem.id;
+
+		if (selectedId == sGood) { iSelected = n; }
+		mapsTable.(row).index = arItem.index;
+		mapsTable.(row).td1.str = LanguageConvertString(idLngFile, "itmname_"+arItem.id);
+		n++;
+	}
+
+	// Теперь карты акваторий
+	string areaMapsIds[2];
+	int mapsQty = FillAreaMapsIds(&areaMapsIds);
+	if (mapsQty > 0) SortMapsIdsByABC(&areaMapsIds);
+
+	for(i=0;i<mapsQty;i++)
+	{
+		Items_FindItem(areaMapsIds[i], &arItem);
+		row = "tr" + n;
+		if (GetMapArea(&selectedId) == GetMapArea(&arItem)) { iSelected = n; }
+		mapsTable.(row).index = arItem.index;
+		mapsTable.(row).td1.str = XiStr(GetMapShownKey(arItem));
+		n++;
+	}
+
+	CurRow   =  "tr" + (iSelected);
+	mapsTable.select = iSelected;
+	SetNewMapPicture(ItemsFromID(selectedId));
+
 	Table_UpdateWindow("TABLE_MAPS");
+	LanguageCloseFile(idLngFile);
 }
 
 void TableSelectChange()
@@ -365,105 +364,70 @@ void TableSelectChange()
 	string sControl = GetEventData();
 	iSelected = GetEventData();
 	CurTable = sControl;
-    CurRow   =  "tr" + (iSelected);    
-    if (CurTable != "TABLE_LOCS") SetNewMapPicture();
+	CurRow   =  "tr" + (iSelected);
+	if (CurTable != "TABLE_LOCS") SetNewMapPicture("");
 }
 
-void SetNewMapPicture()
+void SetNewMapPicture(ref map)
 {
-	if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
-		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
-	}
-	ref itmRef = &Items[iGoodIndex];
-	
-	if (CheckAttribute(itmRef, "groupID"))
+	ref itmRef;
+
+	if (CheckAttribute(&map, "id")) itmRef = map;
+	else
 	{
-		string itmGroup = itmRef.groupID;
-		if (itmGroup == MAPS_ITEM_TYPE)
-		{
-			if (itmRef.id != "Map_Best")
-			{
-				if(LanguageGetLanguage() != "Russian"){
-					if(LanguageGetLanguage() == "Chinese")
-						SetNewPicture("MAPS", "interfaces\Maps\chinese\" + itmRef.imageTga + ".tga");
-					else SetNewPicture("MAPS", "interfaces\Maps\english\" + itmRef.imageTga + ".tga");
-				} else {
-					SetNewPicture("MAPS", "interfaces\Maps\russian\" + itmRef.imageTga + ".tga");
-				}
-				XI_WindowShow("MAINBESTMAP_WINDOW", false);
-			}
-			else
-			{
-				SetNewPicture("MAPS", "");
-				XI_WindowShow("MAINBESTMAP_WINDOW", true);
-				if(LanguageGetLanguage() != "Russian"){
-					if(LanguageGetLanguage() == "Chinese")
-						SetNewPicture("MAIN_MAP", "interfaces\Maps\chinese\" + "map_good.tga");
-					else SetNewPicture("MAIN_MAP", "interfaces\Maps\english\" + "map_good.tga");
-				} else {
-					SetNewPicture("MAIN_MAP", "interfaces\Maps\russian\" + "map_good.tga");
-				}
-			}
-			pchar.showlastmap = itmRef.id;							
+		if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
+			iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
+		}
+		itmRef = &Items[iGoodIndex];
+	}
+
+	if (!CheckAttribute(itmRef, "groupID")) return;
+	if (itmRef.groupID != MAPS_ITEM_TYPE) return;
+
+	if (itmRef.id != "Map_Best")
+	{
+		if(LanguageGetLanguage() != "Russian"){
+			if(LanguageGetLanguage() == "Chinese")
+				SetNewPicture("MAPS", "interfaces\Maps\chinese\" + itmRef.imageTga + ".tga");
+			else SetNewPicture("MAPS", "interfaces\Maps\english\" + itmRef.imageTga + ".tga");
+		} else {
+			SetNewPicture("MAPS", "interfaces\Maps\russian\" + itmRef.imageTga + ".tga");
+		}
+		XI_WindowShow("MAINBESTMAP_WINDOW", false);
+	}
+	else
+	{
+		SetNewPicture("MAPS", "");
+		XI_WindowShow("MAINBESTMAP_WINDOW", true);
+		if(LanguageGetLanguage() != "Russian"){
+			if(LanguageGetLanguage() == "Chinese")
+				SetNewPicture("MAIN_MAP", "interfaces\Maps\chinese\" + "map_good.tga");
+			else SetNewPicture("MAIN_MAP", "interfaces\Maps\english\" + "map_good.tga");
+		} else {
+			SetNewPicture("MAIN_MAP", "interfaces\Maps\russian\" + "map_good.tga");
 		}
 	}
+	pchar.showlastmap = itmRef.id;
+
+	ref switchMap = GetMapSwitch(itmRef);
+	SetNodeUsing("SWITCH_MAP_BUTTON", switchMap.id != itmRef.id);
 }
 
 void ShowInfoWindow()
 {
-	if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
-		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
-	}
-	ref  itmRef = &Items[iGoodIndex];
-
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
+	sHeader = XI_ConvertString("Atlas");
+	sText1 = XI_ConvertString("Atlas_Descr");
 
-	string sAttributeName;
-	sPicture = "-1";
-
-	switch (sCurrentNode)
-	{
-		// sith --->
-		case "WEIGHT":
-		    sHeader = XI_ConvertString("Weight");
-			sText1 = GetRPGText("Weight");
-		break;
-		case "MONEY":
-		    sHeader = XI_ConvertString("Money");
-			sText1 = GetRPGText("Money");
-		break;		
-		case "RANK":
-		    sHeader = XI_ConvertString("Rank");
-			sText1 = GetRPGText("Rank");
-		break;
-		case "TABLE_MAPS":
-			sGroup = itmRef.picTexture; 
-			sGroupPicture = "itm" + itmRef.picIndex
-			sHeader = GetItemName(itmRef);
-			sText1  = GetItemDescribe(iGoodIndex); 
-		break;
-		case "MAP_INFO":
-			if (itmRef.id != "Map_Best")
-			{
-				sHeader = XI_ConvertString("Atlas");
-				sText1 = XI_ConvertString("Atlas_Descr");
-			}
-			else
-			{
-				sHeader = XI_ConvertString("BestMap");
-				sText1 = XI_ConvertString("BestMap_Descr");
-			}
-		break;
-		// <--- sith
-	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 128, 128);
+	LanguageCloseFile(LanguageOpenFile("ItemsDescribe.txt"));
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 128, 128, false);
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 	HideRColony();
 }
 

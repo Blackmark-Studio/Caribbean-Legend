@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");

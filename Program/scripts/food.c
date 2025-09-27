@@ -28,7 +28,8 @@ int CalculateFood()
 			if (characters[chrIndex].ship.type != SHIP_NOTUSED)
 			{
 				iCrewQuantity   += sti(characters[chrIndex].ship.crew.quantity);
-				iFoodQuantity   += makeint(GetCargoGoods(&characters[chrIndex], GOOD_FOOD) / isEquippedArtefactUse(&characters[chrIndex], "talisman6", 1.0, 0.75));
+				float cookMtp = GetCookMtp(characters[chrIndex]);
+				iFoodQuantity   += makeint(GetCargoGoods(&characters[chrIndex], GOOD_FOOD) / isEquippedArtefactUse(&characters[chrIndex], "talisman6", 1.0, 0.75) / cookMtp);
 				iSlavesQuantity += GetCargoGoods(&characters[chrIndex], GOOD_SLAVES);
 			}
 		}
@@ -64,7 +65,8 @@ int CalculateShipFood(ref _chr)
 		iPassQuantity = GetPassengersQuantity(pchar);
 	}
 
-	foodNeeded = isEquippedArtefactUse(_chr, "talisman6", 1.0, 0.75) * makefloat(iCrewQuantity/FOOD_BY_CREW + iPassQuantity/FOOD_BY_PASSENGERS + iSlavesQuantity/FOOD_BY_SLAVES);
+	float cookMtp = GetCookMtp(_chr);
+	foodNeeded = isEquippedArtefactUse(_chr, "talisman6", 1.0, 0.75) * cookMtp * makefloat(iCrewQuantity/FOOD_BY_CREW + iPassQuantity/FOOD_BY_PASSENGERS + iSlavesQuantity/FOOD_BY_SLAVES);
 
 	if (foodNeeded < 1.0)
 	{
@@ -86,7 +88,8 @@ int CalculateShipRum(ref _character)
 {
 	int crewQuantity 	= GetCrewQuantity(_character);
 	int rumQuantity     = GetCargoGoods(_character, GOOD_RUM);	
-	float rumNeeded 	= isEquippedArtefactUse(_character, "talisman4", 1.0, 0.2) * makefloat( (crewQuantity + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
+	float bartenderMtp = GetBartenderMtp(_character);
+	float rumNeeded 	= isEquippedArtefactUse(_character, "talisman4", 1.0, 0.2) * bartenderMtp * makefloat( (crewQuantity + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
 	
 	if(rumNeeded < 1.0) rumNeeded = 1.0;	
 	rumQuantity = makeint(rumQuantity/rumNeeded + 0.2);		
@@ -110,7 +113,8 @@ int CalculateRum()
 			if (characters[chrIndex].ship.type != SHIP_NOTUSED)
 			{
 				iCrewQuantity   += GetCrewQuantity(&characters[chrIndex]);
-				iRumCount       += makeint(GetCargoGoods(&characters[chrIndex], GOOD_RUM) / isEquippedArtefactUse(&characters[chrIndex], "talisman4", 1.0, 0.75));							
+				float bartenderMtp = GetBartenderMtp(&characters[chrIndex]);
+				iRumCount       += makeint(GetCargoGoods(&characters[chrIndex], GOOD_RUM) / isEquippedArtefactUse(&characters[chrIndex], "talisman4", 1.0, 0.75) / bartenderMtp);							
 			}
 		}
 	}
@@ -241,7 +245,7 @@ void DailyEatCrewUpdate()   // сюда пихаю все что в 1 день
 			DailyRatsEatGoodsUpdate(chref);
 			// RATS <--
 			DailyEatCrewUpdateForShip(chref, false);
-			
+			DailyCheckIfQuartermaster(chref);
 		}
 	}
 }
@@ -328,7 +332,8 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 
 	// расчёт рома	
 	iCrewQty = GetCrewQuantity(rChar);
-	float rumNeeded = isEquippedArtefactUse(rChar, "talisman4", 1.0, 0.2) * makefloat( (iCrewQty + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
+	float bartenderMtp = GetBartenderMtp(rChar);
+	float rumNeeded = isEquippedArtefactUse(rChar, "talisman4", 1.0, 0.2) * bartenderMtp * makefloat( (iCrewQty + 5.1) / (RUM_BY_CREW - MOD_SKILL_ENEMY_RATE * 2.5)); // Сколько жрут за день);
 	
 	if(rumNeeded < 1.0) rumNeeded = 1.0;
 	iCrewQty = makeint(rumNeeded);
@@ -381,8 +386,11 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 			}
 		}
 	}
+
+	float cookMtp = GetCookMtp(rChar);
+
 	// расчёт еды после Рома	
-	iCrewQty = makeint(isEquippedArtefactUse(rChar, "talisman6", 1.0, 0.75) * (iCrewQty+5.1) / FOOD_BY_CREW + GetPassengersQuantity(rChar) / FOOD_BY_PASSENGERS); // eat ratio
+	iCrewQty = makeint(isEquippedArtefactUse(rChar, "talisman6", 1.0, 0.75) * cookMtp * (iCrewQty+5.1) / FOOD_BY_CREW + GetPassengersQuantity(rChar) / FOOD_BY_PASSENGERS); // eat ratio
 	iCrewQty = iCrewQty + makeint((GetCargoGoods(rChar, GOOD_SLAVES)+6)/ FOOD_BY_SLAVES);  // учёт рабов
 	if(iCrewQty == 0) iCrewQty = 1;
 	if(GetCargoGoods(rChar, GOOD_FOOD) >= iCrewQty)

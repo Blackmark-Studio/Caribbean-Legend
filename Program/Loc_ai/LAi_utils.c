@@ -300,12 +300,13 @@ int LAi_FindNearestVisCharacter(aref chr, float radius)
 //Получить уровень драки приведёный к 0..1
 float LAi_GetCharacterFightLevel(aref character)
 {
+	if (!LAi_IsArmed(&character)) return 0.0; // невооруженные пофигу
 	//Fencing skill
 	float fgtlevel = 0.0;
-	if (CharUseMusket(character))
-		fgtlevel = GetCharacterSkill(character, SKILL_PISTOL);
+	if (CharUseMusket(&character))
+		fgtlevel = GetCharacterSkill(&character, SKILL_PISTOL);
 	else
-		fgtlevel = GetCharacterSkill(character, LAi_GetBladeFencingType(character)); 
+		fgtlevel = GetCharacterSkill(&character, LAi_GetBladeFencingType(&character)); 
 	//Level
 	fgtlevel = fgtlevel/SKILL_MAX;
 	return fgtlevel;
@@ -427,6 +428,15 @@ void LAi_CheckKillCharacter(aref chr)
 				return;
 			}
 		}
+		// Квестовое бессмертие, персонаж садится на землю
+		if(CheckAttribute(chr, "QuestImmortal"))
+		{
+			chr.chr_ai.hp = 10.0 + LAi_GetCharacterMaxHP(chr) * 0.5;
+			LAi_SetActorType(chr);
+			LAi_ActorSetGroundSitMode(chr);
+			LAi_group_MoveCharacter(chr, LAI_GROUP_PEACE);
+			return;
+		}
 		// Бессмертные офицеры с Йориком
 		if(GetCharacterFreeItem(pchar, "talisman19") > 0 && IsOfficer(chr) && chr.id != pchar.id)
 		{
@@ -435,12 +445,13 @@ void LAi_CheckKillCharacter(aref chr)
 			SetCharacterTask_Dead(chr);
 			return;
 		}
-		
+
+		BRD_BoardingCaptainKilled(chr);
+
 		// бессмертные квестовые офицеры
 		if(CheckAttribute(chr, "OfficerImmortal"))
 		{
-			//Log_Info(XI_ConvertString("OfficerWounded1") + GetFullName(chr) + XI_ConvertString("OfficerWounded2"));
-			Notification(XI_ConvertString("OfficerWounded1") + XI_ConvertString("OfficerWounded2"), chr.id);
+			Notification(XI_ConvertString("OfficerWounded1") + XI_ConvertString("OfficerWounded2"), GetMessagePortrait(&chr));
 			chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr);
 			chr.OfficerImmortal = "Injury";
 			chr.Health.HP = makefloat(chr.Health.HP) - 10.0;
@@ -475,13 +486,27 @@ void LAi_CheckKillCharacter(aref chr)
 			}
 		}
 
+		// Убили офицера (не обязательно абордажника)
+		if (CheckAttribute(&chr, "Payment") && chr.chr_ai.group == LAI_GROUP_PLAYER) Notification(XiStr("OfficerKilled"), GetMessagePortrait(&chr));
+
 		DeleteAttribute(chr, "quest.questflag");
 		
 		if(CheckAttribute(chr,"model.animation") && chr.model.animation == "man")
 		{
 			if(CheckAttribute(chr,"DamageFromShot"))
 			{
-				if(chr.DamageFromShot == "grenade")
+				if(CheckAttribute(chr, "chr_ai.getheadshot"))
+				{
+					BeginChangeCharacterActions(chr);
+					chr.actions.fightdead.d1 = "Dead_Gun_1";
+					chr.actions.fightdead.d2 = "Dead_Gun_2";
+					chr.actions.fightdead.d3 = "Dead_Gun_3";
+					chr.actions.dead.d1 = "Dead_Gun_1";
+					chr.actions.dead.d2 = "Dead_Gun_2";
+					chr.actions.dead.d3 = "Dead_Gun_3";
+					EndChangeCharacterActions(chr);
+				}
+				else if(chr.DamageFromShot == "grenade")
 				{
 					BeginChangeCharacterActions(chr);
 					chr.actions.fightdead.d1 = "death_8";
@@ -504,10 +529,8 @@ void LAi_CheckKillCharacter(aref chr)
 					else
 					{
 						BeginChangeCharacterActions(chr);
-						chr.actions.fightdead.d1 = "Dead_Gun";
-						chr.actions.fightdead.d2 = "death_7";
-						chr.actions.fightdead.d3 = "Dead_Gun";
-						chr.actions.fightdead.d4 = "death_7";
+						chr.actions.fightdead.d1 = "death_7";
+						chr.actions.fightdead.d2 = "death_11";
 						EndChangeCharacterActions(chr);
 					}
 				}
@@ -638,7 +661,8 @@ ref LAi_CreateFantomCharacterEx(string model, string ani, string group, string l
 	CirassMaker(chr);
 	//game params
  	CalculateAppropriateSkills(chr);
-    SetFantomHP(chr);
+	Log_TestInfo("Ребаланс фантома:" + chr.id);
+	InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6);
 	chr.money = 100 + rand(500);
 	chr.reputation = 10 + rand(70);
 	chr.skill.freeskill = 0;
@@ -976,6 +1000,12 @@ void LAi_FadeToBlackStartInstantly()
 	SendMessage(&LAi_QuestFader, "lfl", FADER_OUT, 0.0, false);
 	//LAi_QuestFader.oldSaveState = InterfaceStates.Buttons.Save.enable;
 	//InterfaceStates.Buttons.Save.enable = 0;
+}
+
+void LAi_FadeToBlackEndInstantly()
+{
+	DelEventHandler("FaderEvent_EndFade", "LAi_FadeToBlackEnd");
+	SendMessage(&LAi_QuestFader, "lfl", FADER_IN, 0.0, true);
 }
 
 void LAi_FadeEndFadeOut()
@@ -1445,17 +1475,18 @@ void MakePoisonAttack(aref attack, aref enemy)
 	enemy.chr_ai.poison = poison + 30 + rand(20);
 }
 
-void MakePoisonAttackCheckSex(aref attacked, aref enemy)
+void MakePoisonAttackCheckSex(aref attacker, aref enemy, aref attackerLandTable)
 {
-	if (IsCharacterEquippedArtefact(attacked, "kaleuche_amulet3")) return; // калеуче
-	if (enemy.sex == "skeleton" || enemy.sex == "crab" || IsCharacterEquippedArtefact(enemy, "indian_10") || CheckAttribute(enemy, "viper"))
+	if (IsCharacterEquippedArtefact(enemy, "talisman8")) return;
+	if (IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3")) return; // калеуче
+	if (rand(2) < 2 && CheckAttribute(attacker, "viper")) 
 	{
-		if (rand(1000) < 150) MakePoisonAttack(enemy, attacked);
-		else
-		{
-			if (rand(2) < 2 && CheckAttribute(enemy, "viper")) MakePoisonAttack(enemy, attacked);
-		}
+		MakePoisonAttack(attacker, enemy);
+		return;
 	}
+
+	int chance = GetPoisonChance(&attacker, &attackerLandTable);
+	if (PercentChance(chance)) MakePoisonAttack(&attacker, &enemy);
 }
 
 string LAi_FindFreeRandomLocator(string group)
@@ -1671,4 +1702,26 @@ void SetInvulnerable(ref chr, float time)
 bool IsInvulnerable(ref chr)
 {
 	return CheckAttribute(chr, "chr_ai.invulnerability");
+}
+
+// Сдался, сидит на полу и не отсвечивает
+void SetSurrenderedAnimation(aref chr)
+{
+	BeginChangeCharacterActions(chr);
+	chr.actions.idle.i1 = "Ground_sitting";
+	chr.actions.idle.i2 = "Ground_look_around";
+	chr.actions.idle.i3 = "Ground_Scratch";
+	chr.actions.dead.d1 = "Ground_Death";
+	chr.actions.dead.d2 = "Ground_Death1";
+	chr.actions.HitNoFight = "Ground_HitNoFight";
+	EndChangeCharacterActions(chr);
+}
+
+ref LAi_GetCurrentWeapon(ref chr, string sWeapon, string attackType)
+{
+	if (CharUseMusket(chr)) sWeapon = MUSKET_ITEM_TYPE;
+	else if (attackType == "range") sWeapon = GUN_ITEM_TYPE;
+	else sWeapon = BLADE_ITEM_TYPE;
+
+	return ItemsFromID(GetCharacterEquipByGroup(chr, sWeapon));
 }

@@ -144,11 +144,11 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Тайна Бетси Прайс
 		//--> Оковы азарта
-		/*bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
-			dialog.text = "Вы слышали? Наш кузнец проигрался в карты Хавьеру Кастилио, да так, что тот ободрал его до нитки, вынудив поставить что-то очень ценное. С тех пор кузнец никак не может прийти в себя, и новых заказов не берёт - всё говорит про то, что адмирал с него три шкуры спустит. Жалко этого добряка, все местные знают что с этим шулером Кастилио нельзя играть!";
+			dialog.text = "Вы слышали? Наш кузнец проигрался в карты Хавьеру Кастильо, да так, что тот ободрал его до нитки, вынудив поставить что-то очень ценное. С тех пор кузнец никак не может прийти в себя, и новых заказов не берёт - всё сокрушается, что адмирал с него три шкуры спустит. Жаль этого простака, все местные знают, что с этим шулером Кастильо нельзя играть!";
 			link.l1 = "Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.";
 			link.l1.go = "exit";
 			
@@ -157,8 +157,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.OZ_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			//sld.name = StringFromKey("Neutral_21");
-			//sld.lastname = StringFromKey("Neutral_22");
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
 			sld.City = "PortSpein";
 			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
 			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
@@ -170,8 +170,34 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
-        }*/
+        }
 		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Вы слышали? Капитан флейта 'Орёл' устроил в таверне такой разнос своему квартирмейстеру, что стены дрожали! Оказывается, капитан собирался выйти в море с приливом, а квартирмейстер отпустил всю команду на берег. Теперь матросы разбрелись по городу, и если не вернутся вовремя, корабль уйдёт без них - капитан ждать не намерен! Интересно, к чему такая спешка? Выгодный фрахт, удачный торг, срочное задание от губернатора?";
+			link.l1 = "Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("towngirl", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
@@ -344,7 +370,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Тайна Бетси Прайс
 		//--> Оковы азарта
-		/*bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
 		if (bOk1 || bOk2)
         {
@@ -356,10 +382,9 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			AddQuestRecord("OZ", "1");
 			pchar.questTemp.OZ_Start = true;
 			
-			//sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "woman", "man", 5, SPAIN, -1, false, "quest"));
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "Liza", "woman", "women", 5, SPAIN, -1, false, "quest"));
-			//sld.name = StringFromKey("Neutral_21");
-			//sld.lastname = StringFromKey("Neutral_22");
+			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
 			sld.City = "PortSpein";
 			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
 			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
@@ -371,8 +396,36 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
-        }*/
+        }
 		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Вы слышали? Капитан флейта 'Орёл' устроил в таверне такой разнос своему квартирмейстеру, что стены дрожали! Оказывается, капитан собирался выйти в море с приливом, а квартирмейстер отпустил всю команду на берег. Теперь матросы разбрелись по городу, и если не вернутся вовремя, корабль уйдёт без них - капитан ждать не намерен! Интересно, к чему такая спешка? Выгодный фрахт, удачный торг, срочное задание от губернатора?";
+			link.l1 = "Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			sld.name = "Антонио";
+			sld.lastname = "Велента";
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("townman", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
@@ -602,6 +655,32 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			break;
         }
 		//<-- Грани справедливости
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Вы слышали? Капитан флейта 'Орёл' устроил в таверне такой разнос своему квартирмейстеру, что стены дрожали! Оказывается, капитан собирался выйти в море с приливом, а квартирмейстер отпустил всю команду на берег. Теперь матросы разбрелись по городу, и если не вернутся вовремя, корабль уйдёт без них - капитан ждать не намерен! Интересно, к чему такая спешка? Выгодный фрахт, удачный торг, срочное задание от губернатора?";
+			link.l1 = "Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.";
+			link.l1.go = "exit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2) srum = SelectRumourEx("sailor", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // fix
         if (RumourHasInformation(srum))
@@ -703,7 +782,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//<-- Длинные тени старых грехов
 		
 		//--> Rebbebion, квест "Путеводная звезда"
-		if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter") && npchar.city == "Beliz")
+		if (CheckAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.PZ_Sotta") && !CheckAttribute(npchar, "questTemp.PZ_Lutter") && npchar.city == "Beliz")
 		{
 			link.l1 = "Как тебе ваш новый герой, капитан Эдгардо Сотта? Что о нём вообще говорят в городе? И что думаешь ты? Так хотел его увидеть.";
 			link.l1.go = "Sotta1";
@@ -898,7 +977,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
         }
 		//<-- Тайна Бетси Прайс
 		//--> Оковы азарта
-		/*bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
 		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
 		if (bOk1 || bOk2)
         {
@@ -914,8 +993,8 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			pchar.questTemp.OZ_Start = true;
 			
 			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			//sld.name = StringFromKey("Neutral_21");
-			//sld.lastname = StringFromKey("Neutral_22");
+			sld.name = StringFromKey("Neutral_31");
+			sld.lastname = StringFromKey("Neutral_32");
 			sld.City = "PortSpein";
 			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
 			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
@@ -927,8 +1006,54 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			
 			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 			break;
-        }*/
+        }
 		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Вы слышали? Капитан флейта 'Орёл' устроил в таверне такой разнос своему квартирмейстеру, что стены дрожали! Оказывается, капитан собирался выйти в море с приливом, а квартирмейстер отпустил всю команду на берег. Теперь матросы разбрелись по городу, и если не вернутся вовремя, корабль уйдёт без них - капитан ждать не намерен! Интересно, к чему такая спешка? Выгодный фрахт, удачный торг, срочное задание от губернатора?";
+			link.l1 = RandPhraseSimple(RandSwear() + "За это надо выпить ещё кружечку...",
+                                 "Хорошо. Давай ещё по одной.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.",
+									 "Эх, забористый ром. Ладно, мне уже пора, удачно посидеть.");
+			link.l2.go = "exit_sit";
+			
+			SetQuestHeader("LFD");
+			AddQuestRecord("LFD", "1");
+			pchar.questTemp.LFD_Start = true;
+			
+			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", "goto10");
+			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+			sld.dialog.currentnode = "Sailor_1";
+			LAi_SetCitizenType(sld);
+			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			//LAi_SetLoginTime(sld, 07.00, 21.99);
+			AddLandQuestMark(sld, "questmarkmain");
+			
+			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			break;
+        }
+		//<-- Письмо от покойника
+		//--> LaEspadaDelRey
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Слыхал"+GetSexPhrase("","а")+", "+GetSexPhrase("приятель","подруга")+"? У нас тут один полоумный старик по городу шастает. Бредит, будто он единственный, кто уцелел после крушения того гнилого корыта, что в бухте Сабу-Матила лежит, и туда, видишь ли, ему невтерпёж. Да вот только идти туда в одиночку у него кишка тонка. Несёт всякую чушь, мол, каждое утро к нему является скелет в индейском убранстве, и они бьются насмерть. Лично я, ик... с ним и за пятьсот дублонов не пойду. Кто знает, что за черти в голове у этого болвана пляшут.";
+			link.l1 = RandPhraseSimple(RandSwear() + "За это надо выпить ещё кружечку...",
+                                 "Хорошо. Давай ещё по одной.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Спасибо, долж"+ GetSexPhrase("ен","на") +" откланяться.",
+									 "Эх, забористый ром. Ладно, мне уже пора, удачно посидеть.");
+			link.l2.go = "exit_sit";
+			LEDR_Start();
+			break;
+        }
+		//<-- LaEspadaDelRey
 		
 		Dialog.Text = LinkRandPhrase("Ну... И-ик! ","Эх, какой ром! ","Н-да... ")+SelectRumourEx("habitue", NPChar);
 		link.l1 = RandPhraseSimple(RandSwear() + "За это надо выпить ещё кружечку...",
@@ -1429,7 +1554,8 @@ pcharrepphrase(RandSwear() +" Ещё одно дельце, и я уйду.","В
 		// Addon-2016 Jason ФМК-Сент-Кристофер
 		case "FMQN_r":
 			DelLandQuestMark(npchar);
-			Dialog.Text =  "Да не так давно у берегов Синт-Маартена захватили английский корабль, а на нём было несколько высокопоставленных военных. Их решили отправить в Виллемстад, но временно поместили в тюрьму. Поговаривают, что пленный солдат с того судна в обмен на свободу рассказал коменданту, что англичане намереваются прислать диверсионную группу и организовать побег заключённых. Даже план у них готов был. Вот и начеку наш бравый комендант. Ведь если упорхнут такие важные птицы - его, как пить дать, разжалуют в солдаты. Так-то!";
+			if (GetNationRelation(SPAIN, ENGLAND) == RELATION_NEUTRAL) { Dialog.Text =  "Да не так давно у берегов Синт-Маартена задержали английский корабль, а на нём было несколько высокопоставленных военных. Их решили отправить в Виллемстад, до выяснения обстоятельств, но временно поместили в тюрьму. Поговаривают, что пленный солдат с того судна в обмен на свободу рассказал коменданту, что англичане намереваются прислать диверсионную группу и организовать побег заключённых. Даже план у них готов был. Вот и начеку наш бравый комендант. Ведь если упорхнут такие важные птицы - его, как пить дать, разжалуют в солдаты. Так-то! Добра ждать не приходится - как бы война снова не началась.";}
+			else {dialog.Text =  "Да не так давно у берегов Синт-Маартена захватили английский корабль, а на нём было несколько высокопоставленных военных. Их решили отправить в Виллемстад, но временно поместили в тюрьму. Поговаривают, что пленный солдат с того судна в обмен на свободу рассказал коменданту, что англичане намереваются прислать диверсионную группу и организовать побег заключённых. Даже план у них готов был. Вот и начеку наш бравый комендант. Ведь если упорхнут такие важные птицы - его, как пить дать, разжалуют в солдаты. Так-то!";}
 			link.l1 = "Очень интересно... Хорошо, ты заслужил свои деньги - держи. А больше ничего примечательного не знаешь?";
 			link.l1.go = "rumours_tavern";
 			pchar.questTemp.FMQN = "governor";

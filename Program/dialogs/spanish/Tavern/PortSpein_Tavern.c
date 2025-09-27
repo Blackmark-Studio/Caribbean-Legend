@@ -28,6 +28,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Escucha, en abril de 1654 una fragata atracó en tu puerto bajo el mando del Capitán Miguel Dichoso y luego desapareció. ¿Hay algo que puedas decirme al respecto?";
 				link.l1.go = "guardoftruth";
 			}
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "Dime, "+npchar.name+", ¿qué clase de pájaro es ese Javier Castillo?";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "Volvamos a hablar de esa persona que puede influir en Javier.";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
 		break;
 		
 		//--> Цена чахотки
@@ -136,6 +148,56 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.Consumption_1 = "true";
 		break;
 		//<-- Цена чахотки
+		
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "Javier es un jugador, un tramposo y un estafador. Siempre merodea por la taberna buscando a quién sacarle un par de pesos.";
+			link.l1 = "Entonces, ¿no ha estado involucrado en otros asuntos turbios? ¿Quizá tenga enemigos?";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "OZ_Tavern_2":
+			dialog.text = "Bueno, digamos que tiene muchos menos amigos que gente que sueña con romperle el cuello. Pero si quiere el nombre de una persona que realmente pueda influir en él, eso le costará mil pesos. Pague y le contaré todo.";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Está bien, toma tu dinero, viejo chantajista.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Volveremos a esta conversación más tarde. Ahora no tengo la suma necesaria.";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+		
+		case "OZ_Tavern_2_1":
+			dialog.text = "Capitán, ¿ha traído los mil pesos?";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Sí. Toma, viejo chantajista.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Maldición. Volveré pronto.";
+				link.l1.go = "exit";
+			}
+		break;
+		
+		case "OZ_Tavern_3":
+			dialog.text = "Eso ya es otra cosa. Verá, Javier no solo tiene deudas de juego. Una vez decidió meterse en el negocio del comercio de antigüedades, pero, como era de esperar, no le salió bien. Al principio incluso le fue bastante bien, pero luego tuvo la oportunidad de adquirir una pieza rara\nSe entusiasmó tanto con la idea que recorrió a todos los prestamistas en busca de dinero. Por supuesto, nadie le dio ni un centavo. Entonces encontró a otro tan obsesionado con las antigüedades como él y le pidió prestados ciento cincuenta mil pesos. Creo que ya se imagina el resto\nLo engañaron por completo y ahora esa deuda le cuelga como una losa. Ha pagado una miseria y, por lo que parece, no piensa devolver el resto, aunque su acreedor incluso contrató matones para asustarlo\nLa persona a la que debe es Felipe Alarcón. Su casa está frente al banco, la reconocerá fácilmente: es una magnífica mansión con columnas en la entrada.";
+			link.l1 = "¡Gracias!";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
 		
 		case "guardoftruth":
 			dialog.text = "Lo recuerdo. A menudo pasaba por mi taberna, pero no hablaba mucho. Se tomaba unos tragos de ron, compartía un susurro con algunos clientes y se iba. Muy sombrío y serio como todos en ese bergantín. Mercenarios de aspecto peligroso que mantenían sus espadas listas.\nHabía un rumor de que el bergantín estaba lleno de tesoros, pero no creo en tales cuentos. La carga valiosa nunca se transporta en un solo barco sin un convoy. Estuvieron aquí un día, luego se fueron a Europa, escuché. Eso es todo lo que sé.";

@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		dialog.text = "¡Excelente! Sabes qué hacer a continuación, igual que la última vez. Aquí están los documentos, preséntalos al comandante de la prisión. Ha sido un placer hacer negocios contigo, capitán.";
 		link.l1 = "No hay mucho que disfrutar de esta situación. Adiós.";
 		link.l1.go = "exit";
-		RemoveItems(pchar, "gold_dublon", 100);
+		RemoveDublonsFromPCharTotal(100);
 		DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 		Log_Info("¡Has recibido una letra de deuda!");
 		PlaySound("interface\important_item.wav");

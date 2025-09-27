@@ -30,7 +30,7 @@ void ProcessDialogEvent()
             // Addon-2016 杰森, 法属圣克里斯托弗迷你任务 (FMQN) 
             if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
             {
-                dialog.text = "据我所知, 你就是在圣马丁岛上协助我军执行任务的法国船长? " +TimeGreeting()+ "! ";
+                dialog.text = "我没猜错的话, 您就是"+GetSexPhrase("那位船长先生","那位女船长")+", 在圣马丁帮助了我的人完成任务的那位?"+TimeGreeting()+"!";
                 link.l1 = TimeGreeting() + ", 上校。 是的, 正是在下。 ";
                 link.l1.go = "FMQN";
                 break;
@@ -55,7 +55,7 @@ void ProcessDialogEvent()
         
         case "guardoftruth_2":
             dialog.text = "没有, 我们搜查了他, 那个无赖身上没有任何财物, 而且所有东西肯定都是从诚实的商人那里抢来的! 至于你关心的... 嗯, 没有, 我们没找到。 而且一个香炉在海盗船上能有什么用? 你真以为他们中间有牧师吗? ";
-            link.l1 = "我不这么认为.'帽子罗利'从威廉斯塔德的放债人那里买了它, 而放债人又是从另一个海盗那里买的。 这个香炉很精致也很昂贵, 我正试图把它归还给合法的主人。 我想罗利像喜鹊一样盯上了它。 ";
+            link.l1 = "我不这么认为.'帽子罗利'从威廉斯塔德的放贷人那里买了它, 而放贷人又是从另一个海盗那里买的。 这个香炉很精致也很昂贵, 我正试图把它归还给合法的主人。 我想罗利像喜鹊一样盯上了它。 ";
             link.l1.go = "guardoftruth_3";
         break;
         

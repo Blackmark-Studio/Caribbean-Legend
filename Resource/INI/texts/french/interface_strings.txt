@@ -1,18 +1,15 @@
-Delete profile confirm{Êtes-vous sûr de vouloir supprimer ce profil et toutes ses sauvegardes ?}
-Delete savefile confirm{Êtes-vous sûr de vouloir supprimer cette sauvegarde ?}
-Overwrite savefile confirm{Êtes-vous sûr de vouloir écraser cette sauvegarde ?}
-
-Low storage and unable save create{Il n'y a pas assez d'espace libre pour sauvegarder le jeu.}
-Load game confirm{Êtes-vous sûr de vouloir charger cette sauvegarde ?}
-Unable to Load save game{Impossible de charger cette sauvegarde.}
-
+Delete profile confirm {Êtes-vous sûr de vouloir supprimer ce profil et toutes ses sauvegardes ?}
+Delete savefile confirm {Êtes-vous sûr de vouloir supprimer cette sauvegarde ?}
+Overwrite savefile confirm {Êtes-vous sûr de vouloir écraser cette sauvegarde ?}
+Low storage and unable save create {Il n'y a pas assez d'espace libre pour sauvegarder le jeu.}
+Load game confirm {Êtes-vous sûr de vouloir charger cette sauvegarde ?}
+Unable to Load save game {Impossible de charger cette sauvegarde.}
 Salary info
-{Votre équipage demande le salaire mensuel.
-Allez-vous payer ?}
+{
+Votre équipage demande le salaire mensuel.Allez-vous payer ?
+}
 Officer info {Vos officiers demandent leur salaire mensuel :}
-All info {Montant net: }
-
-New game confirm{Êtes-vous sûr de vouloir commencer un nouveau jeu ?}
-
+All info {Montant net:}
+New game confirm {Êtes-vous sûr de vouloir commencer un nouveau jeu ?}
 Insert Disk Ok {Veuillez insérer le disque 1 "Pirates des Caraibes"}
 save game limit {Vous avez depassé la limite des sauvegardes. Supprimez les sauvegardes plus anciennes.}

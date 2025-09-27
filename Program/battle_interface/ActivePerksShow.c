@@ -168,7 +168,6 @@ string GetPerkTextureName(string perkName)
 		case "Turn180":			return "interfaces\le\battle_interface\list_icons.tga"; break;
 		case "LightRepair":		return "interfaces\le\battle_interface\list_icons.tga"; break;
 		case "InstantRepair":	return "interfaces\le\battle_interface\list_icons.tga"; break;
-		case "SelfRepair":		return "interfaces\le\battle_interface\LandCommands.tga";	break;
 	}
 	trace("WARNING!!! Perk name - "+perkName+" hav`t texture");
 	return "";

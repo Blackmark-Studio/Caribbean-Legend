@@ -117,8 +117,8 @@ void ProcessDialogEvent()
 			{
 				pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
 				pchar.GenQuest.Monkletter.StartCity = npchar.city;//город квестодателя
-				dialog.text = "  Mam dla ciebie pilną sprawę, mój synu. Muszę dostarczyć te dokumenty pastorowi do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Rodzaj")+"Żeglujesz w tamtym kierunku? Dokumenty muszą być dostarczone w ciągu dwóch tygodni...";
-				link.l1 = "Łatwo, ojcze. Daj mi te dokumenty, a dostarczę je do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Rodzaj")+".";
+				dialog.text = "  Mam dla ciebie pilną sprawę, mój synu. Muszę dostarczyć te dokumenty pastorowi do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Gen")+". Żeglujesz w tamtym kierunku? Dokumenty muszą być dostarczone w ciągu dwóch tygodni...";
+				link.l1 = "Łatwo, ojcze. Daj mi te dokumenty, a dostarczę je do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Gen")+".";
 				link.l1.go = "Monkletter";
 				link.l2 = "Byłbym zadowolony, ojcze, ale żegluję w innym kierunku.";
 				link.l2.go = "exit_monkletter";
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		case "slaves_2":
 			npchar.quest.slaves = "true";
 			DialogExit();
-			SetLaunchFrameFormParam("Two hours later"+ NewStr() +"Slaves were freed", "Monk_RemoveSlaves", 0, 4);
+			SetLaunchFrameFormParam("Dwie godziny później"+ NewStr() +"Niewolnicy zostali uwolnieni", "Monk_RemoveSlaves", 0, 4);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, 2, 10); //крутим время
 			RecalculateJumpTable();
@@ -290,28 +290,28 @@ void ProcessDialogEvent()
 			switch (GetCompanionQuantity(pchar))
 			{
 				case 1: 
-					sTemp = "I have only one ship in my squadron and it's "+iTemp+" rank.";
+					sTemp = "Mam tylko jeden statek w mojej eskadrze i jest to "+iTemp+" klasa.";
 					pchar.GenQuest.Shipshine.Money = 5000*(7-iTemp);
 				break;
 				case 2:
-					sTemp = "I have two ships in my squadron and the biggest one is "+iTemp+" rank.";
+					sTemp = "Mam dwa statki w mojej eskadrze i największy jest "+iTemp+" klasy.";
 					pchar.GenQuest.Shipshine.Money = makeint(1.8*(5000*(7-iTemp)));
 				break;
 				case 3:
-					sTemp = "I have three ships in my squadron and the biggest one is "+iTemp+" rank.";
+					sTemp = "Mam trzy statki w mojej eskadrze, a największy jest "+iTemp+" klasy.";
 					pchar.GenQuest.Shipshine.Money = makeint(2.6*(5000*(7-iTemp)));
 				break;
 				case 4:
-					sTemp = "I have four ships in my squadron and the biggest one is "+iTemp+" rank.";
+					sTemp = "Mam cztery statki w mojej eskadrze, a największy jest "+iTemp+" klasy.";
 					pchar.GenQuest.Shipshine.Money = makeint(3.4*(5000*(7-iTemp)));
 				break;
 				case 5:
-					sTemp = "I have five ships in my squadron and the biggest one is "+iTemp+" rank.";
+					sTemp = "Mam pięć statków w mojej eskadrze, a największy jest "+iTemp+" klasy.";
 					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
 				break;
 			}
 			dialog.text = "To wszystko zależy od całkowitej liczby statków w twojej eskadrze i ich rozmiaru.";
-			link.l1 = " "+sTemp+"Got it. Please provide the text you want translated.";
+			link.l1 = " "+sTemp+".";
 			link.l1.go = "shipshine_1";
 		break;
 		
@@ -335,7 +335,7 @@ void ProcessDialogEvent()
 		
 		case "shipshine_3":
 			DialogExit();
-			SetLaunchFrameFormParam("Several hours later"+ NewStr() +"The priest has held mass aboard your ship and blessed it", "Monk_Shipshine", 0, 4);
+			SetLaunchFrameFormParam("Kilka godzin później"+ NewStr() +"Ksiądz odprawił mszę na pokładzie twojego statku i poświęcił ją", "Monk_Shipshine", 0, 4);
 			LaunchFrameForm();
 			WaitDate("", 0, 0, 0, GetCompanionQuantity(pchar), 10); //крутим время
 			RecalculateJumpTable();
@@ -349,7 +349,7 @@ void ProcessDialogEvent()
 
 //------------------------------------------корабельный капеллан-----------------------------------------------
 		case "capellan":
-			dialog.text = "Cześć kapitanie, pozwól mi się przedstawić. Jestem księdzem i mam spore doświadczenie jako kapelan na pokładzie okrętów wojennych. Opuściłem swój ostatni statek, ponieważ kapitan i ja mieliśmy pewne... moralne nieporozumienia. Chcesz mnie przyjąć do swojej załogi?";
+			dialog.text = "Witaj kapitanie, pozwól mi się przedstawić. Jestem księdzem i mam spore doświadczenie jako kapelan na pokładzie okrętów wojennych. Opuściłem swój ostatni statek, ponieważ kapitan i ja mieliśmy pewne... moralne nieporozumienia. Chcesz mnie przyjąć do swojej załogi?";
 			link.l1 = "Kapłan na pokładzie? Powiedz mi ojcze, czym zajmuje się kapelan na statku?";
 			link.l1.go = "capellan_1";
 			pchar.questTemp.ShipCapellan = "true";
@@ -374,7 +374,7 @@ void ProcessDialogEvent()
 		case "capellan_2":
 			AddMoneyToCharacter(pchar, -50000);
 			chrDisableReloadToLocation = true;//закрыть локацию
-			dialog.text = "Dziękuję za twoje zaufanie, mój synu. Mądrze wydałeś swoje pieniądze. Ale ostrzegam cię, służę tylko godnym kapitanom, czy to kupcom, czy kaprom, to nie ma znaczenia. Ale nigdy nie będę głosił na pokładzie pirackiego statku!\nZatem jeśli kiedykolwiek wciągniesz diabelską Jolly Roger, natychmiast opuszczę twój statek w pierwszym porcie.";
+			dialog.text = "Dziękuję za twoje zaufanie, mój synu. Mądrze wydałeś swoje pieniądze. Ale ostrzegam cię, służę tylko godnym kapitanom, czy to kupcom, czy kaprom, to nie ma znaczenia. Ale nigdy nie będę głosił na pokładzie pirackiego statku!\nZatem jeśli kiedykolwiek wciągniesz diabelskiego Wesołego Rogera, natychmiast opuszczę twój statek w pierwszym porcie.";
 			link.l1 = "Rozważę to, ojcze, i postaram się cię nie zawieść. Proszę, wejdź na pokład i przedstaw się załodze!";
 			link.l1.go = "capellan_3";
 		break;
@@ -429,11 +429,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "Mój "+GetSexPhrase("synu","córka")+", Muszę się dostać do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" zaczyna się "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"To")+", dla "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+"Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" za to. Co powiesz?";
+				dialog.text = "Mój "+GetSexPhrase("synu","córka")+", Muszę się dostać do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", w ciągu "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". Zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" za to. Co powiesz?";
 			}
 			else
 			{
-				dialog.text = "Mój "+GetSexPhrase("synu","córka")+", Pan działa w tajemniczy sposób, dlatego szukam niezawodnego kapitana. Czy możesz pomóc mi dotrzeć do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", który jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Ta")+"? Rozumiem, że to jak wyprawa do ognistej Gehenny, ponieważ nasi wrogowie nigdy nie śpią. I rozumiem, że nie jesteś Jezusem Chrystusem, ale ja również nie jestem apostołem, dlatego mam pewne oszczędności. Czy "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" wystarczy dla ciebie?";
+				dialog.text = "Mój "+GetSexPhrase("synu","córka")+", Pan działa w tajemniczy sposób, dlatego szukam niezawodnego kapitana. Czy możesz pomóc mi dotrzeć do "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", które jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? Rozumiem, że to jak wyprawa do ognistej Gehenny, ponieważ nasi wrogowie nigdy nie śpią. I rozumiem, że nie jesteś Jezusem Chrystusem, ale ja również nie jestem apostołem, dlatego mam pewne oszczędności. Czy "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" wystarczy dla ciebie?";
 			}
 			link.l1 = "Zgadzam się, ojcze.";
 			link.l1.go = "passenger_1";
@@ -508,7 +508,7 @@ void ProcessDialogEvent()
 		
 		case "passenger_3":
 			pchar.quest.Monkpassenger_Over.over = "yes"; //снять таймер
-			dialog.text = "Dziękuję, mój "+GetSexPhrase("synu","córka")+"Spełniłeś swoją obietnicę i teraz moja kolej. Weź swoje pieniądze, jak obiecałem.";
+			dialog.text = "Dziękuję, mój "+GetSexPhrase("synu","córka")+". Spełniłeś swoją obietnicę i teraz moja kolej. Weź swoje pieniądze, jak obiecałem.";
 			link.l1 = "Dziękuję. Powodzenia, ojcze.";
 			link.l1.go = "passenger_4";
 		break;
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Churchbooks":
-			dialog.text = "Tak. Możesz je dostać w każdej kolonii "+NationNameGenitive(sti(npchar.nation))+"Przynieś wszystkie książki, które znajdziesz, naszemu pastorowi w kościele. Niech Bóg cię błogosławi!";
+			dialog.text = "Tak. Możesz je dostać w każdej kolonii "+NationNameGenitive(sti(npchar.nation))+". Przynieś wszystkie książki, które znajdziesz, naszemu pastorowi w kościele. Niech Bóg cię błogosławi!";
 			link.l1 = "Dzięki! Wkrótce otrzymasz swoje książki.";
 			link.l1.go = "Churchbooks_1";
 		break;
@@ -606,16 +606,16 @@ string DonationType()
 	string sText;
 	switch (hrand(9))
 	{
-		case 0: sText = "I am gathering money for building "+LinkRandPhrase("a chapel","an almshouse","a hospital")+". The local citizens give little in alms so I must ask prosperous men like you." break;
-		case 1: sText = "I am gathering donations for our church. Sailors don't usually have much time to visit the house of God, but everyone must do his best in saving his own soul." break;
-		case 2: sText = "I am gathering money to buy food and medicines for our poorhouse for the sick, widows, orphans, and infirm. Please donate sir, because there but for the grace of God go all of us." break;
-		case 3: sText = "I am gathering money for new sacred vessels, the ones which we brought from Europe are battered with continual use. It's a duty for every Christian to take care of our Church." break;
-		case 4: sText = "I am gathering money for our church's renovation, the roof is leaking terribly and the pews have to be repaired too. It's a duty for every Christian to take care of our Church." break;
-		case 5: sText = "I am gathering money to pay the good artist who is able to paint the walls of our church and draw scenes from the Bible on them for those of our parish who cannot read. It's a duty for every Christian to take care about his Church." break;
-		case 6: sText = "I am gathering money for a new high altar for our church. Our parish is poor and we would like a noble seat for the Blessed Sacrament. I do hope for your help." break;
-		case 7: sText = "There are a lot of wounded sailors from pirate raids in our hospital. They need medicines and bandages. Pray help them, for you can really understand sufferings of the common sailors." break;
-		case 8: sText = "I am trying to get money for clothes and food for our poorest citizens. The only hope they have is our holy church. Please help them." break;
-		case 9: sText = "I am going to go deep in our island for missionary work to bring the light of Christ's Gospel to the lost souls of the pagan Indians. I am gathering funds for this expedition. Please help our good deed!" break;
+		case 0: sText = "Zbieram pieniądze na budowę "+LinkRandPhrase("kapliczki","przytułku","szpitala")+". Miejscowi mieszkańcy dają niewiele jałmużny, więc muszę prosić o jałmużnę zamożnych ludzi takich jak ty." break;
+		case 1: sText = "Zbieram datki dla naszego kościoła. Marynarze zazwyczaj nie mają zbyt wiele czasu, aby odwiedzać dom Boży, ale każdy musi zrobić wszystko, co w jego mocy, aby ocalić własną duszę." break;
+		case 2: sText = "Zbieram pieniądze na zakup żywności i leków dla naszego przytułku dla chorych, wdów, sierot i niedołężnych. Proszę, proszę, wesprzyj nas finansowo, bo z Bożej łaski wszyscy tam trafimy." break;
+		case 3: sText = "Zbieram pieniądze na nowe naczynia liturgiczne, te, które przywieźliśmy z Europy, są zniszczone od ciągłego użytkowania. Obowiązkiem każdego chrześcijanina jest troska o nasz Kościół." break;
+		case 4: sText = "Zbieram pieniądze na remont naszego kościoła, dach strasznie przecieka, a ławki też trzeba naprawić. Obowiązkiem każdego chrześcijanina jest dbanie o nasz Kościół." break;
+		case 5: sText = "Zbieram pieniądze na opłacenie dobrego artysty, który pomaluje ściany naszego kościoła i namaluje na nich sceny biblijne dla tych z naszej parafii, którzy nie potrafią czytać. Obowiązkiem każdego chrześcijanina jest troska o swój Kościół." break;
+		case 6: sText = "Zbieram pieniądze na nowy ołtarz główny do naszego kościoła. Nasza parafia jest biedna i chcielibyśmy mieć godne miejsce dla Najświętszego Sakramentu. Liczę na Twą pomoc." break;
+		case 7: sText = "W naszym szpitalu jest wielu rannych marynarzy, którzy odnieśli obrażenia podczas pirackich napadów. Potrzebują leków i bandaży. Módl się, pomóż im, bo naprawdę rozumiesz cierpienie zwykłych marynarzy." break;
+		case 8: sText = "Próbuję zdobyć pieniądze na ubrania i jedzenie dla naszych najbiedniejszych obywateli. Jedyną nadzieją dla nich jest nasz święty Kościół. Proszę, pomóżcie im." break;
+		case 9: sText = "Zamierzam udać się w głąb naszej wyspy, aby podjąć pracę misyjną i nieść światło Ewangelii Chrystusa zagubionym duszom pogańskich Indian. Zbieram fundusze na tę wyprawę. Proszę, wesprzyjcie nasz dobry uczynek!" break;
 	}
 	return sText;
 }

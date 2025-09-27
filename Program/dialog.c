@@ -135,8 +135,11 @@ void StartDialogMain()
 	object persRef = GetCharacterModel(Characters[GetMainCharacterIndex()]);
 	SendMessage(&Dialog, "lii", 0, &Characters[GetMainCharacterIndex()], &persRef);
 
-	object charRef = GetCharacterModel(Characters[makeint(CharacterRef.index)]);
-	SendMessage(&Dialog, "lii", 1, &Characters[makeint(CharacterRef.index)], &charRef);
+	ref chr = GetCharacter(makeint(CharacterRef.index));
+	object charRef = GetCharacterModel(chr);
+	SendMessage(&Dialog, "lii", 1, chr, &charRef);
+
+	UpdateDynamicRole(&Dialog, chr);
 
 	LayerSetRealize(REALIZE);
 	LayerAddObject(REALIZE,Dialog,-256);
@@ -248,6 +251,7 @@ void DialogExit()
 		{
 			locCameraTarget(mainChr);
 			locCameraFollow();
+			locCameraSetFollowCamAngleToCharacterAngle();
 		}
 	}else{
 		LAi_Character_EndDialog(CharacterRef, CharacterRef);
@@ -388,7 +392,8 @@ bool CanStartDialog()
 		!LAi_Character_CanDialog(mc, chr) || !LAi_Character_CanDialog(chr, mc)) {
 		return false;
 	}
-	
+	// evganat - помечаем готового к диалогу персонажа
+	SendMessage(pchar, "lsli", MSG_CHARACTER_EX_MSG, "MarkDialogCharacter", true, chr);
 	return true;
 }
 //belamour специальный угол для камеры
@@ -441,4 +446,76 @@ void AddDialogMeta() {
 			if(!CheckAttribute(link, linkName + ".edit")) link.(linkName) = "...";
 		}
 	}
+}
+
+// Выставляем плашку с ролью в диалоге по атрибуту персонажа, за исключением офицеров
+void UpdateDynamicRole(ref Dialog, ref chr)
+{
+	Dialog.role = "";
+
+	// Уважаемый дата-майнер, здесь совершенно точно не спрятано секретных квестов, это просто пасхалка
+	// медленно положи свой текстовый редактор на пол и отойди. Медленно! (⌐■_■)
+	if (CheckAttribute(chr, "quest.last_theme") && chr.quest.last_theme == "0" && !CheckAttribute(chr, "role"))
+	{
+		if (chr.greeting == "habitue") chr.role = "drinker_" + rand(9);
+	}
+	if (CheckAttribute(chr, "PhantomType"))
+	{
+		if (chr.PhantomType == "pofficer") chr.role = "pofficer";
+		else if (chr.PhantomType == "gipsy") chr.role = "gipsy";
+		else if (chr.PhantomType == "captain") chr.role = "captain";
+		else if (chr.PhantomType == "noble") chr.role = "noble";
+	}
+	if(CheckAttributeEqualTo(chr, "quest.type", "hovernor"))
+	{
+		if(sti(chr.nation) == PIRATE) chr.role = "Phovernor";
+		else chr.role = "hovernor";
+	}
+	if(CheckAttribute(chr, "Merchant.type") && chr.Merchant.type != "GasparGold")
+	{
+		chr.role = chr.Merchant.type + "_merchant";
+	}
+	
+	if(HasSubStr(chr.id, "_tavernkeeper")) chr.role = "tavernkeeper";
+	else if(HasSubStr(chr.id, "_waitress")) chr.role = "waitress";
+	else if(HasSubStr(chr.id, "_trader")) chr.role = "trader";
+	else if(HasSubStr(chr.id, "_shipyarder")) chr.role = "shipyarder";
+	else if(HasSubStr(chr.id, "_PortMan")) chr.role = "portman";
+	else if(HasSubStr(chr.id, "_Priest")) chr.role = "priest";
+	else if(HasSubStr(chr.id, "_usurer")) chr.role = "usurer";
+	else if(HasSubStr(chr.id, "_Poorman")) chr.role = "poorman";
+	
+	// belamour return только в особых ситуациях
+	if(RoleFromID(chr))
+	{
+		Dialog.role = GetConvertStr(chr.role, "roles.txt");
+		return;
+	}
+	
+	if (CheckAttribute(chr, "Payment")) Dialog.role = GetJobsList(chr, " / ");
+	else if (CheckAttributeHasValue(chr, "role")) Dialog.role = GetConvertStr(chr.role, "roles.txt");
+}
+
+bool RoleFromID(ref chr)
+{
+	if(!CheckAttribute(chr, "id")) return;
+	
+	string role = "";
+	switch (chr.id)
+	{
+		case "Puancie": role = "Ghovernor"; break;
+		case "Vindzor": role = "Ghovernor"; break;
+		case "Cordova": role = "Ghovernor"; break;
+		
+		case "LadyBeth_cap": role = "legend"; break;
+		case "LadyBeth_clone_tavern": role = "legend"; break;
+		case "Memento_cap": role = "legend"; break;
+		case "SantaMisericordia_cap": role = "legend"; break;
+		case "SantaMisericordia_clone_church": role = "legend"; break;
+		case "SantaMisericordia_clone_city": role = "legend"; break;
+		case "SantaMisericordia_clone_guber": role = "legend"; break;
+	}
+	if(role != "") chr.role = role;
+	
+	return false;
 }

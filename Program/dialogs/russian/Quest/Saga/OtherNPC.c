@@ -1134,25 +1134,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "Вот как? Ну тогда тебе должен быть известен пароль для входа. Говори его, а если ты солгал - даже пожалеть об этом не успеешь...";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "Тритон";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "Нептун";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "Центурион";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "Гарпун";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "нептун")
-			{
-				dialog.text = "Всё верно. Но ты, приятель, пришёл не с той стороны. Разве тебя не предупредили? Топай назад по тропе, потом пройдёшь мимо сухого колодца, возьмёшь левее, на тропинку вокруг холма - она тебя приведёт к центральному входу.";
-				link.l1 = "А здесь пройти никак нельзя?";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "Ребята, у нас тут шпик! Мушкеты на изготовку! Пли!!";
-				link.l1 = "...";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "Всё верно. Но ты, приятель, пришёл не с той стороны. Разве тебя не предупредили? Топай назад по тропе, потом пройдёшь мимо сухого колодца, возьмёшь левее, на тропинку вокруг холма - она тебя приведёт к центральному входу.";
+			link.l1 = "А здесь пройти никак нельзя?";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "Ребята, у нас тут шпик! Мушкеты на изготовку! Пли!!";
+			link.l1 = "...";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1176,25 +1177,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "Да неужели? Ну тогда тебе должен быть известен пароль. Говори его, и говори чётко, чтобы я хорошо расслышал. Ну, а если ты сейчас попытался схитрить - то это была последняя неудачная шутка в твоей жизни.";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "Тритон";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "Нептун";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "Центурион";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "Гарпун";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "нептун")
-			{
-				dialog.text = "Верно. Можете проходить. Старший по лагерю находится в доме слева от входа в шахту. Топайте сразу к нему.";
-				link.l1 = "Хорошо, приятель...";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "Ребята, у нас тут шпик! Орудия, пли!!";
-				link.l1 = "...";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "Верно. Можете проходить. Старший по лагерю находится в доме слева от входа в шахту. Топайте сразу к нему.";
+			link.l1 = "Хорошо, приятель...";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "Ребята, у нас тут шпик! Орудия, пли!!";
+			link.l1 = "...";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":

@@ -23,7 +23,7 @@ void Tonzag_AtTortuga(string qName) {
 	// ходячие мушкетеры
 	for (i = 1; i <= 3; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("Tonzag_StartSoldier_" + i, "mush_fra_" + (1 + rand(5)), "man", "mushketer", 30, FRANCE, 0, true, "soldier"));
-		FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "cartridge", 150);
+		FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "bullet", 150);
 		PlaceCharacter(sld, "goto", "random_must_be_near");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, rCharacter, "", -1);
@@ -497,36 +497,10 @@ void Tonzag_LoadDeck() {
 			pchar.questTemp.TonzagQuest.BoardingGF = "Mary";
 		} else {
 			bool found = false;
-			for (int i = 1; i <= 3; i++) {
-				int index = GetOfficersIndex(pchar, i);
-				
-				if (index < 0) {
-					continue;
-				}
-				
-				sld = GetCharacter(index);
-				if (sld.Dialog.FileName == "Enc_Officer_dialog.c") {
-					found = true;
-					pchar.questTemp.TonzagQuest.BoardingGF = sld.id;
-					break;
-				}
-			}
-			
 			if (!found) {
-				index = sti(pchar.Fellows.Passengers.boatswain);
-				if (index >= 0) {
-					sld = GetCharacter(index);
-					if (sld.Dialog.FileName == "Enc_Officer_dialog.c") {
-						found = true;
-						pchar.questTemp.TonzagQuest.BoardingGF = sld.id;
-					}
-				}
-			}
-			
-			if (!found) {
-				sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "citiz_36_mush", "man", "mushketer", sti(pchar.rank), FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 150);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
+				GiveItem2Character(sld, "blade_10");
+				EquipCharacterByItem(sld, "blade_10");
 				
 				sld.name = StringFromKey("Tonzag_2");
 				sld.lastname = StringFromKey("Tonzag_3");
@@ -540,23 +514,6 @@ void Tonzag_LoadDeck() {
 				pchar.questTemp.TonzagQuest.BoardingGF = "Tonzag_Alonso";
 			}
 		}
-	}
-	
-	for (i = 1; i <= 3; i++) {
-		index = GetOfficersIndex(pchar, i);
-		
-		if (index < 0) {
-			continue;
-		}
-		
-		sld = GetCharacter(index);
-		if (sld.id == pchar.questTemp.TonzagQuest.BoardingGF) {
-			continue;
-		}
-		
-		ChangeCharacterAddressGroup(sld, pchar.location, "quest", "quest" + (i + 2));
-		LAi_SetActorType(sld);
-		LAi_ActorTurnToLocator(sld, "quest", "quest6");
 	}
 	
 	LAi_SetActorType(pchar);
@@ -671,6 +628,7 @@ void Tonzag_BoardingFightEnd(string qName) {
 	//DoQuestCheckDelay("pchar_back_to_player", 1.0);
 	
 	sld = CharacterFromID(pchar.questTemp.TonzagQuest.BoardingGF);
+	if (!CharacterIsHere(sld)) ChangeCharacterAddressGroup(sld, PChar.location, "reload", LAi_FindNearestLocator2Pchar("reload"));
 	LAi_UseAtidoteBottle(sld);
 	//LAi_Actor2WaitDialog(pchar, sld);
 	sld.dialog.currentnode = "tonzag_after_boarding";
@@ -1852,7 +1810,7 @@ void Tonzag_ResetTonzag() {
 	DeleteAttribute(pchar, "GenQuest.CannotWait");
 	sld = CharacterFromID("Tonzag");
 	SetCharacterPerk(sld, "Dragoon");
-	Return_TonzagOfficer();
+	ReturnOfficer_Tonzag();
 	
 	Achievment_Set("ach_CL_91");
 	AddQuestRecord("Tonzag", "9");
@@ -1876,6 +1834,7 @@ void Tonzag_CaracasTownBitva(string qName) {
 		if (i>=13 && i<=18) ChangeCharacterAddressGroup(sld, "Caracas_town", "reload", "houseS2");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_CharacterDisableDialog(sld);
 	}
 	for (i = 1; i <= 3; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("Tonzag_TownCaptain_"+i, "off_spa_"+(rand(1)+1), "man", "man", 30, SPAIN, 0, true, "soldier"));
@@ -1885,6 +1844,7 @@ void Tonzag_CaracasTownBitva(string qName) {
 		if (i==3) ChangeCharacterAddressGroup(sld, "Caracas_town", "reload", "houseS2");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+		LAi_CharacterDisableDialog(sld);
 	}
 }
 

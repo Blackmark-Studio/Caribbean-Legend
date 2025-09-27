@@ -1,0 +1,17 @@
+Net_ShipDieFromPlayer {%1 <%2> elsüllyedt %3 <%4>.}
+Net_ShipDieFromCollisionLiveShip {%1 <%2> megütötte %3 <%4>.}
+Net_ShipDieFromCollisionDeadShip {%1 <%2> cápákat etetni ment! Jaj egy ilyen navigátornak!}
+Net_ShipDieFromCollisionIsland {%1 <%2> nekicsapódott a szikláknak! Szégyen egy ilyen navigátorra!}
+Net_ShipDieFromLighting {Az Úr megharagudott %1 <%2> és megfenyítette ôt!}
+Net_ShipDieFromCriticalHit {%1 <%2> darabokra robbantotta %3 <%4>!}
+Net_CriticalHit {%1 <%2> eltalálta a puskaporos hordót a %3 <%4> fedélzetén!}
+Net_MastFallFromHit {%1 <%2> ledöntötte %3 <%4> árbocát.}
+Net_MastFallFromCollision {%1 <%2> egy ütközés következtében elvesztette az árbocát.}
+Net_FireActivation {%1 <%2> felgyújtotta %3 <%4>}
+NetFG_ServerIsFull {A szerver megtelt. Egy másik játékos csatlakozása lehetetlen.}
+NetFG_NeedUserPassword {A megadott jelszó nem egyezik a szerveren tárolt jelszóval, kérjük, próbáld meg újra.}
+NetFG_NeedServerPassword {Érvénytelen jelszót adtál meg a szerverhez való csatlakozáshoz, kérlek, próbáld meg újra.}
+NetFG_RejectedUnknown {A szerverhez való csatlakozás ismeretlen okból nem sikerült.}
+NetFG_Banned {Megtiltották a szerverhez való hozzáférést.}
+NetEG_DeathMatch {A csata befejezôdött.\n \n%1 nyert!}
+NetEG_Team {A csata véget ért.\n \nTeam "%1" nyert!}

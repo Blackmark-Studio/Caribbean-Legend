@@ -1,218 +1,46 @@
-Patria_1
-{
-Noel
-}
-Patria_2
-{
-Forget
-}
-
-Patria_3
-{
-Eclatant
-}
-
-Patria_4
-{
-Hubert
-}
-Patria_5
-{
-Dassien
-}
-
-Patria_6
-{
-Modo exploración: temporizador ampliado. ¡Completa la misión!
-}
-
-Patria_7
-{
-¡A los españoles se les ha dado una nota para que envíen parlamentos al faro de Trinidad para iniciar negociaciones!
-}
-
-Patria_8
-{
-Ha pasado un día...
-}
-
-Patria_9
-{
-Modo de exploración: el temporizador no está desactivado. ¡Cumpla con el plazo!
-}
-
-Patria_10
-{
-¡El barón Noel Forget ha abandonado tu barco!
-}
-
-Patria_11
-{
-¡Otro barco enemigo está sobre nosotros!
-}
-
-Patria_12
-{
-Frederick
-}
-
-Patria_13
-{
-Peter
-}
-Patria_14
-{
-Stuyvesant
-}
-
-Patria_15
-{
-El convoy comercial de la Compañía
-}
-
-Patria_16
-{
-¡El Ost-Indian de la Compañía ha sido capturado!
-}
-
-Patria_17
-{
-Oliphant
-}
-
-Patria_18
-{
-Lenart
-}
-Patria_19
-{
-Klap
-}
-
-Patria_20
-{
-Edward
-}
-Patria_21
-{
-Doily
-}
-
-Patria_22
-{
-Trafalgar
-}
-
-Patria_23
-{
-Kristian
-}
-Patria_24
-{
-Beusson
-}
-
-Patria_25
-{
-El convoy de la Compañía hacia África
-}
-
-Patria_26
-{
-Modo de exploración: el temporizador está deshabilitado.
-}
-
-Patria_27
-{
-¡Debemos destruir el escuadrón enemigo!
-}
-
-Patria_28
-{
-¡El coronel Doily ha dado una señal para aterrizar en laguna Blanca!
-}
-
-Patria_29
-{
-Después de dos horas de bombardeo,@<NewStr()>los holandeses han enviado un grupo parlamentario.
-}
-
-Patria_30
-{
-Christian
-}
-Patria_31
-{
-Tior
-}
-
-Patria_32
-{
-Fortune
-}
-
-Patria_33
-{
-Steven
-}
-Patria_34
-{
-Dodson
-}
-
-Patria_35
-{
-Red Dragon
-}
-
-Patria_36
-{
-Marcus
-}
-Patria_37
-{
-Tyrex
-}
-
-Patria_38
-{
-Dos horas despues...@<NewStr()>
-}
-
-Patria_39
-{
-¡El barón Noel Forget murió de fiebre!
-}
-
-Patria_40
-{
-Olivier
-}
-Patria_41
-{
-Burden
-}
-
-Patria_42
-{
-Mary
-}
-Patria_43
-{
-Casper
-}
-
-Patria_44
-{
-El gobernador de la mina fue visto en una de las casas, capturado y encarcelado
-}
-
-Patria_45
-{
-Veintitrés horas después...@<NewStr()>Peter Stuyvesant se ha presentado en las puertas
-}
-
-Patria_46
-{
-Un día después...@<NewStr()>
-}
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 {Eclatant}
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
+Patria_7 {¡A los españoles se les ha dado una nota para que envíen parlamentos al faro de Trinidad para iniciar negociaciones!}
+Patria_8 {Ha pasado un día...}
+Patria_9 {Modo de exploración: el temporizador no está desactivado. ¡Cumpla con el plazo!}
+Patria_10 {¡El barón Noel Forget ha abandonado tu barco!}
+Patria_11 {¡Otro barco enemigo está sobre nosotros!}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {El convoy comercial de la Compañía}
+Patria_16 {¡El Ost-Indian de la Compañía ha sido capturado!}
+Patria_17 {Oliphant}
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 {Trafalgar}
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {El convoy de la Compañía hacia África}
+Patria_26 {Modo de exploración: el temporizador está deshabilitado.}
+Patria_27 {¡Debemos destruir el escuadrón enemigo!}
+Patria_28 {¡El coronel Doily ha dado una señal para aterrizar en laguna Blanca!}
+Patria_29 {Después de dos horas de bombardeo,@<NewStr()>los holandeses han enviado un grupo parlamentario.}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 {Fortune}
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 {Red Dragon}
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {Dos horas despues...@<NewStr()>}
+Patria_39 {¡El barón Noel Forget murió de fiebre!}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {El gobernador de la mina fue visto en una de las casas, capturado y encarcelado}
+Patria_45 {Veintitrés horas después...@<NewStr()>Peter Stuyvesant se ha presentado en las puertas}
+Patria_46 {Un día después...@<NewStr()>}

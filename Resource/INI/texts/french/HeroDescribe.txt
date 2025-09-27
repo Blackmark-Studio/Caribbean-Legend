@@ -1,572 +1,269 @@
 info
 {
-    Универсальный создатель героев адд-она SLiB
-    Скрипт создан ALexusB 09.10.04
-    Путь к файлу \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt
-    
-    версия 02.07.06
-
-    hero_qty - количество героев
-    ps_hero_qty - количество псевдо-героев (могут встретиться как квестовые персонажи в игре, в ПГГ берутся строго персонажы мужского пола)
-    heroName_Х        - имя героя
-    heroLastname_Х    - фамилия героя
-    heroNameGen_ и heroLastnameGen_ - родительный падеж,   heroLastnameDat_  - дательный падеж.
-    heroFace_Х        - номер портрета
-    heroModel_Х       - список моделей через зяпятую без пробелов, может быть меньше, чем полный список, тогда первая возмется
-            (без брони, лёгкая, средняя, крутая, золотая, одежда_1, одежда_2, одежда_3)
-    heroType_Х        - тип героя (влияет на стартовые параметры)
-        значения только: Corsair, Merchant, Adventurer
-			или (для русской версии)
-			Корсар,
-			Торговец,
-			Авантюрист
-    heroNation_Х      - стартовая нация героя (нейтральные отношения)
-        значения только: ENGLAND, FRANCE, SPAIN, HOLLAND
-            или (для русской версии)
-			Англия
-            Франция
-            Испания
-            Голландия
-    sex_X             - пол (man, woman, skeleton)
-    animation_X       - анимация (man, woman, towngirl)
-    hero_Х            - краткая биография героя (pas plus de 5-7 lignes a placer dans le champ de texte)
-    Х - порядковый номер героя в списке
-    
-    Где что:
-    Текстуры портретов \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)
-    Скины              \RESOURCE\Textures\Characters
-    Модели             \RESOURCE\MODELS\Characters
-    Головы             \RESOURCE\MODELS\Heads
-    Анимация головы    \RESOURCE\animation\Heads и \RESOURCE\animation\Heads\AN
-    
-    Обязательно сохраните исходный файл до редактирования. Иначе обновления могут не установится.
-    Перед установкой верните его на место, установите обновление. После чего повторите настройку своего героя (героев).
-    
-    _______________
-               С заботой о Вас, ALexusB
+Универсальный создатель героев адд-она SLiB    Скрипт создан ALexusB 09.10.04    Путь к файлу \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt        версия 02.07.06    hero_qty - количество героев    ps_hero_qty - количество псевдо-героев (могут встретиться как квестовые персонажи в игре, в ПГГ берутся строго персонажы мужского пола)    heroName_Х        - имя героя    heroLastname_Х    - фамилия героя    heroNameGen_ и heroLastnameGen_ - родительный падеж,   heroLastnameDat_  - дательный падеж.    heroFace_Х        - номер портрета    heroModel_Х       - список моделей через зяпятую без пробелов, может быть меньше, чем полный список, тогда первая возмется            (без брони, лёгкая, средняя, крутая, золотая, одежда_1, одежда_2, одежда_3)    heroType_Х        - тип героя (влияет на стартовые параметры)        значения только: Corsair, Merchant, Adventurerили (для русской версии)Корсар,Торговец,Авантюрист    heroNation_Х      - стартовая нация героя (нейтральные отношения)        значения только: ENGLAND, FRANCE, SPAIN, HOLLAND            или (для русской версии)Англия            Франция            Испания            Голландия    sex_X             - пол (man, woman, skeleton)    animation_X       - анимация (man, woman, towngirl)    hero_Х            - краткая биография героя (pas plus de 5-7 lignes a placer dans le champ de texte)    Х - порядковый номер героя в списке        Где что:    Текстуры портретов \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)    Скины              \RESOURCE\Textures\Characters    Модели             \RESOURCE\MODELS\Characters    Головы             \RESOURCE\MODELS\Heads    Анимация головы    \RESOURCE\animation\Heads и \RESOURCE\animation\Heads\AN        Обязательно сохраните исходный файл до редактирования. Иначе обновления могут не установится.    Перед установкой верните его на место, установите обновление. После чего повторите настройку своего героя (героев).        _______________               С заботой о Вас, ALexusB
 }
-
-Merchant
-{
-Ceux qui oseront commercer dans les eaux de l'archipel des Caraïbes, qui regorge de corsaires, de pirates et de hors-la-loi en tout genre, devront non seulement surveiller les prix pratiqués dans les îles pour maximiser leurs profits, mais aussi apprendre à tenir fermement la lame, afin de les conserver. 
-}
-Corsair
-{
-Le corsaire est-il un gredin ou un romantique ? Cela dépend de ce que vous faites de votre héros. Mais il y a des qualités sans lesquelles il est impossible de devenir un corsaire: l'intrépidité, la persévérance et une prise de décision rapide. Allez-y, foncez.
-}
-Adventurer
-{
-L'aventure est la vraie vie d'un homme libre. Et si l'on peut obtenir de bons dividendes en poursuivant ses rêves, pourquoi ne pas en profiter ?
-}
-
-
+Merchant {Ceux qui oseront commercer dans les eaux de l'archipel des Caraïbes, qui regorge de corsaires, de pirates et de hors-la-loi en tout genre, devront non seulement surveiller les prix pratiqués dans les îles pour maximiser leurs profits, mais aussi apprendre à tenir fermement la lame, afin de les conserver.}
+Corsair {Le corsaire est-il un gredin ou un romantique ? Cela dépend de ce que vous faites de votre héros. Mais il y a des qualités sans lesquelles il est impossible de devenir un corsaire: l'intrépidité, la persévérance et une prise de décision rapide. Allez-y, foncez.}
+Adventurer {L'aventure est la vraie vie d'un homme libre. Et si l'on peut obtenir de bons dividendes en poursuivant ses rêves, pourquoi ne pas en profiter ?}
 hero_qty {5}
 ps_hero_qty {20}
-
-;============================== Jason: отсюда берется имя ГГ в одну старую функцию...
-
 heroName_1 {Charles}
 heroNameGen_1 {Charles}
 heroNameDat_1 {Charles}
-
 heroLastname_1 {de Maure}
 heroLastnameGen_1 {de Maure}
 heroLastNameDat_1 {de Maure}
-
 heroFace_1 {201}
-
 heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
-
 heroType_1 {Corsaire}
-
 heroNation_1 {France}
-
 sex_1 {man}
 animation_1 {man}
-
-hero_1
-{
-Fils d'un noble français, artiste insouciant et charmeur notoire, il arrive aux Caraïbes à la recherche de son frère disparu. Mais plus qu'une quête familiale, ce voyage le façonnera. Il y affrontera la duperie et le danger, recherchera la connaissance et l'amour, et finalement fera face aux obstacles qui se dressent entre lui et son destin.
-}
-
-;==========================
-
+hero_1 {Fils d'un noble français, artiste insouciant et charmeur notoire, il arrive aux Caraïbes à la recherche de son frère disparu. Mais plus qu'une quête familiale, ce voyage le façonnera. Il y affrontera la duperie et le danger, recherchera la connaissance et l'amour, et finalement fera face aux obstacles qui se dressent entre lui et son destin.}
 heroName_2 {Diego}
-heroLastname_2   {de Montoya}
-
+heroLastname_2 {de Montoya}
 heroNameGen_2 {Diego}
 heroLastnameGen_2 {de Montoya}
-
 heroNameDat_2 {Diego}
 heroLastNameDat_2 {de Montoya}
-
 heroFace_2 {203}
-
-heroModel_2  {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
-
-heroType_2 {Aventurier} 
-
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {Aventurier}
 heroNation_2 {Espagne}
-
 sex_2 {man}
 animation_2 {man}
-
-hero_2
-{
-Mercenaire originaire du lointain Aragon, il a été victime de son propre excès de confiance et a échappé de peu à la mort dans les rues sombres de Madrid. Dans le Nouveau Monde, il se verra accorder une seconde chance d'accéder au titre de baron et de prendre enfin le contrôle de sa vie.
-}
-
-;=====================================
-
+hero_2 {Mercenaire originaire du lointain Aragon, il a été victime de son propre excès de confiance et a échappé de peu à la mort dans les rues sombres de Madrid. Dans le Nouveau Monde, il se verra accorder une seconde chance d'accéder au titre de baron et de prendre enfin le contrôle de sa vie.}
 heroName_3 {William}
 heroLastname_3 {Paterson}
-
 heroNameGen_3 {William}
 heroLastnameGen_3 {Paterson}
-
 heroNameDat_3 {William}
 heroLastNameDat_3 {Paterson}
-
 heroFace_3 {202}
-
 heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
-
 heroType_3 {Marchand}
-
 heroNation_3 {Angleterre}
-
 sex_3 {man}
 animation_3 {man}
-
-hero_3
-{
-Les nobles intentions de ce jeune noble de faire du commerce équitable pour le bien de la nation et de sa propre bourse se sont heurtées à une réalité cruelle. Il a dû acquérir une lettre de marque et se frayer un chemin vers la prospérité à coups de canons et de lames, oubliant les manières fanfaronnes de l'Ancien Monde...
-}
-
-;=====================================================
-
+hero_3 {Les nobles intentions de ce jeune noble de faire du commerce équitable pour le bien de la nation et de sa propre bourse se sont heurtées à une réalité cruelle. Il a dû acquérir une lettre de marque et se frayer un chemin vers la prospérité à coups de canons et de lames, oubliant les manières fanfaronnes de l'Ancien Monde...}
 heroName_4 {Helen}
 heroLastname_4 {McArthur}
-
 heroNameGen_4 {Helen}
 heroLastnameGen_4 {McArthur}
-
 heroNameDat_4 {Helen}
 heroLastNameDat_4 {McArthur}
-
 heroFace_4 {250}
-
 heroModel_4 {Rumba}
-
 heroType_4 {Corsaire}
-
 heroNation_4 {Frères de la Côte}
-
 sex_4 {woman}
 animation_4 {rumba}
-
-hero_4
-{
-Une jeune pirate, la protégée du Diable de la Forêt - Baron des Frères de la Côte. Cependant, le baron la protège de la dure réalité des vrais pirates et des atrocités qu'ils peuvent commettre. Pour Helen, la piraterie se résume à l'amour, à la contrebande, à la liberté... et au pont de sa goélette de guerre bien-aimée, l'Arc-en-ciel.
-}
-
-;====================================
-
+hero_4 {Une jeune pirate, la protégée du Diable de la Forêt - Baron des Frères de la Côte. Cependant, le baron la protège de la dure réalité des vrais pirates et des atrocités qu'ils peuvent commettre. Pour Helen, la piraterie se résume à l'amour, à la contrebande, à la liberté... et au pont de sa goélette de guerre bien-aimée, l'Arc-en-ciel.}
 heroName_5 {Jessica}
 heroLastname_5 {Bradford}
-
 heroNameGen_5 {Jessica}
 heroLastnameGen_5 {Bradford}
-
 heroNameDat_5 {Jessica}
 heroLastNameDat_5 {Bradford}
-
 heroFace_5 {244}
-
 heroModel_5 {Jessica}
-
 heroType_5 {Corsaire}
-
 heroNation_5 {Angleterre}
-
 sex_5 {femme}
 animation_5 {Jessica}
-
-hero_5
-{
-Apres la trahison de Beltrop, elle jura qu'elle ne cederait plus aux hommes en quoi que ce soit et qu'elle deviendrait un capitaine a succes d'une escadre de corsaires. Il faut admettre qu'elle y est plutôt douee, et les gouvernements de nombreux pays ont deja designe une recompense pour sa belle tete..
-}
-
+hero_5 {Apres la trahison de Beltrop, elle jura qu'elle ne cederait plus aux hommes en quoi que ce soit et qu'elle deviendrait un capitaine a succes d'une escadre de corsaires. Il faut admettre qu'elle y est plutôt douee, et les gouvernements de nombreux pays ont deja designe une recompense pour sa belle tete..}
 heroName_6 {Ingasio}
 heroLastname_6 {Marc}
-
 heroNameGen_6 {Ingasio}
 heroLastnameGen_6 {Marc}
-
 heroNameDat_6 {Ingasio}
 heroLastNameDat_6 {Marc}
-
 heroFace_6 {212}
-
 heroModel_6 {Chard2}
-
 heroType_6 {Aventurier}
-
 heroNation_6 {Espagne}
-
 sex_6 {homme}
 animation_6 {homme}
-
-hero_6
-{
-ПГГ
-}
-
+hero_6 {ПГГ}
 heroName_7 {Horatio}
 heroLastname_7 {Souffleur de cor}
-
 heroNameGen_7 {Horatio}
 heroLastnameGen_7 {Souffleur de cor}
-
 heroNameDat_7 {Horatio}
 heroLastNameDat_7 {Souffleur de cor}
-
 heroFace_7 {220}
-
 heroModel_7 {Un jeune homme}
-
 heroType_7 {Aventurier}
-
 heroNation_7 {Angleterre}
-
 sex_7 {homme}
 animation_7 {homme}
-
-hero_7
-{
-ПГГ
-}
-
+hero_7 {ПГГ}
 heroName_8 {John}
 heroLastname_8 {Orient}
-
 heroNameGen_8 {John}
 heroLastnameGen_8 {Orient}
-
 heroNameDat_8 {John}
 heroLastNameDat_8 {Orient}
-
 heroFace_8 {216}
-
 heroModel_8 {Sterling}
-
 heroType_8 {Aventurier}
-
 heroNation_8 {Angleterre}
-
 sex_8 {homme}
 animation_8 {homme}
-
-hero_8
-{
-ПГГ
-}
-
+hero_8 {ПГГ}
 heroName_9 {Sanchos}
 heroLastname_9 {Esteban}
-
 heroNameGen_9 {Sanchos}
 heroLastnameGen_9 {Esteban}
-
 heroNameDat_9 {Sanchos}
 heroLastnameDat_9 {Esteban}
-
 heroFace_9 {30}
-
 heroModel_9 {officier_13}
-
 heroType_9 {Aventurier}
-
 heroNation_9 {Espagne}
-
 sex_9 {homme}
 animation_9 {homme}
-
-hero_9
-{
-ПГГ
-}
-
+hero_9 {ПГГ}
 heroName_10 {Kirk}
 heroLastname_10 {Sandre}
-
 heroNameGen_10 {Kirk}
 heroLastnameGen_10 {Sandre}
-
 heroNameDat_10 {Kirk}
 heroLastnameDat_10 {Sandre}
-
 heroFace_10 {31}
-
 heroModel_10 {officer_14}
-
 heroType_10 {Aventurier}
-
 heroNation_10 {Hollande}
-
 sex_10 {homme}
 animation_10 {homme}
-
-hero_10
-{
-ПГГ
-}
-
+hero_10 {ПГГ}
 heroName_11 {Alphonse}
 heroLastname_11 {Salvatore}
-
 heroNameGen_11 {Alphonse}
 heroLastnameGen_11 {Salvatore}
-
 heroNameDat_11 {Alphonse}
 heroLastnameDat_11 {Salvatore}
-
 heroFace_11 {32}
-
 heroModel_11 {officier_15}
-
 heroType_11 {Aventurier}
-
 heroNation_11 {Espagne}
-
 sex_11 {homme}
 animation_11 {homme}
-
-hero_11
-{
-ПГГ
-}
-
+hero_11 {ПГГ}
 heroName_12 {Delvin}
 heroNameGen_12 {Delvin}
 heroNameDat_12 {Delvin}
-
 heroLastname_12 {Flamber}
 heroLastnameGen_12 {Flamber}
 heroLastNameDat_12 {Flamber}
-
 heroFace_12 {1}
-
 heroModel_12 {Devlin}
-
 heroType_12 {Marchand}
-
 heroNation_12 {Hollande}
-
 sex_12 {homme}
 animation_12 {homme}
-
-hero_12
-{
-ПГГ
-}
-
+hero_12 {ПГГ}
 heroName_13 {John}
-heroLastname_13   {Siver}
-
+heroLastname_13 {Siver}
 heroNameGen_13 {John}
 heroLastnameGen_13 {Siver}
-
 heroNameDat_13 {John}
 heroLastNameDat_13 {Siver}
-
 heroFace_13 {22}
-
-heroModel_13  {officier_5}
-
+heroModel_13 {officier_5}
 heroType_13 {Corsaire}
-
 heroNation_13 {Angleterre}
-
 sex_13 {homme}
 animation_13 {homme}
-
-hero_13
-{
-ПГГ
-}
-
+hero_13 {ПГГ}
 heroName_14 {Francis}
 heroLastname_14 {Dubois}
-
 heroNameGen_14 {Francis}
 heroLastnameGen_14 {Dubois}
-
 heroNameDat_14 {Francis}
 heroLastNameDat_14 {Dubois}
-
 heroFace_14 {24}
-
 heroModel_14 {officier_7}
-
 heroType_14 {Aventurier}
-
 heroNation_14 {France}
-
 sex_14 {homme}
 animation_14 {homme}
-
-hero_14
-{
-ПГГ
-}
-
+hero_14 {ПГГ}
 heroName_15 {Arthur}
 heroLastname_15 {Corneille}
-
 heroNameGen_15 {Arthur}
 heroLastnameGen_15 {Corneille}
-
 heroNameDat_15 {Arthur}
 heroLastNameDat_15 {Corneille}
-
 heroFace_15 {25}
-
 heroModel_15 {officier_8}
-
 heroType_15 {Aventurier}
-
 heroNation_15 {Angleterre}
-
 sex_15 {homme}
 animation_15 {homme}
-
-hero_15
-{
-ПГГ
-}
-
+hero_15 {ПГГ}
 heroName_16 {Marc}
 heroLastname_16 {Vanderborg}
-
 heroNameGen_16 {Marc}
 heroLastnameGen_16 {Vanderborg}
-
 heroNameDat_16 {Marc}
 heroLastNameDat_16 {Vanderborg}
-
 heroFace_16 {27}
-
 heroModel_16 {officier_10}
-
 heroType_16 {Aventurier}
-
 heroNation_16 {Hollande}
-
 sex_16 {homme}
 animation_16 {homme}
-
-hero_16
-{
-ПГГ
-}
-
+hero_16 {ПГГ}
 heroName_17 {Cecile}
 heroLastname_17 {Forestier}
-
 heroNameGen_17 {Cecile}
 heroLastnameGen_17 {Forestier}
-
 heroNameDat_17 {Cecile}
 heroLastNameDat_17 {Forestier}
-
 heroFace_17 {28}
-
 heroModel_17 {officier_11}
-
 heroType_17 {Aventurier}
-
 heroNation_17 {Angleterre}
-
 sex_17 {femme}
 animation_17 {femme}
-
-hero_17
-{
-ПГГ
-}
-
+hero_17 {ПГГ}
 heroName_18 {Jose}
 heroLastname_18 {Dasco}
-
 heroNameGen_18 {Jose}
 heroLastnameGen_18 {Dasco}
-
 heroNameDat_18 {Jose}
 heroLastNameDat_18 {Dasco}
-
 heroFace_18 {26}
-
 heroModel_18 {officier_9}
-
 heroType_18 {Aventurier}
-
 heroNation_18 {Espagne}
-
 sex_18 {homme}
 animation_18 {homme}
-
-hero_18
-{
-ПГГ
-}
-
+hero_18 {ПГГ}
 heroName_19 {Johan}
 heroLastname_19 {Daring}
-
 heroNameGen_19 {Johan}
 heroLastnameGen_19 {Daring}
-
 heroNameDat_19 {Johan}
 heroLastNameDat_19 {Daring}
-
 heroFace_19 {213}
-
 heroModel_19 {Bette a carde3}
-
 heroType_19 {Aventurier}
-
 heroNation_19 {Hollande}
-
 sex_19 {homme}
 animation_19 {homme}
-
-hero_19
-{
-ПГГ
-}
-
+hero_19 {ПГГ}
 heroName_20 {Michael}
 heroLastname_20 {Chard}
-
 heroNameGen_20 {Michael}
 heroLastnameGen_20 {Chard}
-
 heroNameDat_20 {Michael}
 heroLastNameDat_20 {Chard}
-
 heroFace_20 {211}
-
 heroModel_20 {Chard}
-
 heroType_20 {Aventurier}
-
 heroNation_20 {Angleterre}
-
 sex_20 {homme}
 animation_20 {homme}
-
-hero_20
-{
-ПГГ
-}
+hero_20 {ПГГ}

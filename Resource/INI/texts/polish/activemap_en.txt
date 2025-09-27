@@ -2,22 +2,22 @@ CONTRABAND {Kontrabanda}
 AGGRESSIVE {Wysoki popyt}
 EXPORT {Eksport}
 IMPORT {Import}
-Trade_assistant {Trade assistant}
-No_price {No price list}
-No_profit {No profitable trades}
+Trade_assistant {Asystent handlu}
+No_price {Brak cennika}
+No_profit {Brak opłacalnych transakcji}
 Distance {Dystans}
-To {D}
+To {Do}
 From {Z}
-day {dzien}
+day {dzień}
 day2 {dni}
 days {dni}
-hour {hour}
-hour2 {hours}
-hours {hours}
-hours2 {hours}
-nautical_mile {nautical mile}
-nautical_mile2 {nautical miles}
-nautical_miles {nautical miles}
-nautical_miles2 {nautical miles}
-TRAVEL_from {}
-TRAVEL_to {to}
+hour {godzina}
+hour2 {godziny}
+hours {godziny}
+hours2 {godzin}
+nautical_mile {mila morska}
+nautical_mile2 {mile morskie}
+nautical_miles {mile morskie}
+nautical_miles2 {mil morskich}
+TRAVEL_from {Podróż z}
+TRAVEL_to {Podróż do}

@@ -1,13 +1,8 @@
-
 new_string
 {
 
 }
-
-
-Uninstalled_Mods_Founded {
-   Uwaga!
-   Nie ma wystarczająco zainstalowanych modów, aby grać na tym zapisie. Nie powinieneś grać w ten sposób.
-   Zainstaluj je lub załaduj wcześniejszy zapis, który został wykonany przed zainstalowaniem moda. Mody:
-   ~
- }
+Uninstalled_Mods_Founded
+{
+Uwaga!   Nie ma wystarczająco zainstalowanych modów, aby grać na tym zapisie. Nie powinieneś grać w ten sposób.   Zainstaluj je lub załaduj wcześniejszy zapis, który został wykonany przed zainstalowaniem moda. Mody:   ~
+}

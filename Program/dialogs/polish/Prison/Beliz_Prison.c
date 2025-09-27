@@ -12,16 +12,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Słyszałem o gangu złodziei i rabusiów działających w okolicach Belize i w samym mieście.";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
 			}
 			if (CheckAttribute(pchar, "questTemp.Caleuche.Bandos") && pchar.questTemp.Caleuche.Bandos == "know" && CheckAttribute(pchar, "questTemp.Caleuche.belizbandos") && GetQuestPastDayParam("questTemp.Caleuche.belizbandos") < 3)
 			{
 				link.l1 = "Mogę ci dać informacje o tej bandzie.";
 				link.l1.go = "caleuche_3";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
 			}
 			if (CheckAttribute(pchar, "questTemp.Caleuche.BelizRegard"))
 			{
 				link.l1 = "Jakie wieści o bandzie? Czy pojmałeś ich w jaskini?";
 				link.l1.go = "caleuche_7";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
 			}
 			// Путеводная звезда ==>
 			if (CheckAttribute(pchar, "questTemp.PZ_Beliz_Komendant"))
@@ -126,10 +132,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "caleuche_6":
 			DialogExit();
-			AddQuestRecord("Caleuche", "15");
-			pchar.questTemp.Caleuche.Bandos = "comendant";
-			pchar.questTemp.Caleuche.BelizChance = hrand(3);
-			SetFunctionTimerCondition("Caleuche_BelizRegard", 0, 0, 3, false); // таймер
+			AddDialogExitQuestFunction("Caleuche_BelizComendantPrison");
 		break;
 		
 		case "caleuche_7":

@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("You have given 100 doubloons");
 			dialog.text = "Wszystko wydaje się w porządku. Oto twój amulet. Powodzenia z nim!";
 			link.l1 = "Dziękuję, "+npchar.name+"!";
@@ -585,6 +585,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak? Rozmawiałeś z Tuttuathapak, czy się mylę?";
 			link.l1 = "Dokładnie. A teraz chcę znaleźć jeszcze dwa amulety. Powiedziałeś, że byłem trzeci, który pokazał ci ten artefakt. A kim byli dwaj inni?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -619,6 +620,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":

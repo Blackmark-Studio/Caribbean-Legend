@@ -10,20 +10,20 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//Португалец
 			if (CheckAttribute(pchar, "questTemp.Portugal") && pchar.questTemp.Portugal == "PortugalInPrison")
             {
-                link.l1 = "Officer, you hold a prisoner here named Bartolomeo the Portuguese...";
+                link.l1 = "Officer, you are holding a prisoner here named Bartolomeo the Portuguese...";
                 link.l1.go = "Portugal";
             }
 		break;
 		
 		//Португалец
 		case "Portugal":
-			dialog.text = "We do. And why do you care? Only envoys of the Dutch West India Company are allowed to see him and only by the written order of the governor. One of the Company's officer is interrogating this pirate right now. So if you've come here just to see him, you'd better go away, you will see him when he hangs, now go away.";
-			link.l1 = "I have come here not to see him.";
+			dialog.text = "We do. And why do you care? Only envoys of the Dutch West India Company are allowed to see him, and only by written order of the governor. One of the Company's officers is interrogating this pirate right now. So if you've come here just to see him, you'd better go away. You'll see him when he hangs. Now go away.";
+			link.l1 = "I have not come here to see him.";
 			link.l1.go = "Portugal_1";
 		break;
 		
 		case "Portugal_1":
-			dialog.text = "Why then, if I may ask?";
+			dialog.text = "Why, then, if I may ask?";
 			link.l1 = "I came here... to free him!";
 			link.l1.go = "fight";
 			chrDisableReloadToLocation = true;

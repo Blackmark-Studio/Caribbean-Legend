@@ -1,322 +1,90 @@
-new_string        {
-
-
-}
-
-Tartane
+new_string
 {
-Ein Fischerbarkasse ist kein gutes Schiff für einen Kapitän, der in der feinen Gesellschaft glänzen möchte. Aber wenn das Schicksal Ihnen Ihr Lieblingsschiff genommen hat, eignet sich dieses traurige Boot durchaus für eine schnelle Reise zwischen den Inseln – doch denken Sie daran: Es ist nur vorübergehend!
-}
 
-WarTartane
-{
-Tartanen sind die gleichen Fischerbarkassen, die hastig für Küstenarbeiten in den gefährlichen Gewässern der Karibik umgebaut wurden. Ihre bescheidene Bewaffnung und die improvisierte Konstruktion erwecken keinen Respekt, aber sie können durchaus einen unerfahrenen Piraten oder armen Schmuggler abschrecken. Eine Übergangslösung, wenn es keine große Auswahl gibt.
 }
-
-Barque
-{
-Eine Bark ist ideal für lange Reisen geeignet. Mit einem geräumigen Laderaum und guten Segeleigenschaften gilt die Bark als eines der ausgewogensten Handelsschiffe. Ihre beeindruckende Größe und die relativ schwache Bewaffnung machen sie jedoch zu einem leichten Ziel für Seeräuber.
-}
-
-Schooner
-{
-Gute Segeleigenschaften, ein geräumiger Laderaum, geringer Tiefgang und anständige Bewaffnung haben die Schoner zu einem der beliebtesten Schiffe der kleinen Klassen gemacht. Sie eignen sich gleichermaßen für Handel, Küstenschifffahrt und Kämpfe.
-}
-
-Barkentine
-{
-Das Aufkommen der Barkentine war dem Wunsch geschuldet, die Führung eines Handelsschiffs für eine unerfahrene und kleine Besatzung zu vereinfachen. Dafür wurden die Rahsegel am Großmast der Bark durch Schratsegel ersetzt und der Rumpf etwas verkleinert. Dank ihrer gemischten Takelage segelt die Barkentine sowohl vor als auch gegen den Wind sicher.
-}
-
-Shnyava
-{
-Die Schniave und die Briggantine waren die Vorläufer der Brigg. Dank ihres gelungenen Rumpfdesigns, ihrer guten Geschwindigkeit und der Fähigkeit, schwere Geschütze zu tragen, wurden diese Schiffe sowohl in der Karibik als auch in Europa sehr beliebt. Sie werden oft zum Schutz kleinerer Handelskonvois eingesetzt.
-}
-
-Fleut
-{
-Die Flöte ist ein einzigartiger Zweig in der Entwicklung von Handelsschiffen. Ihr charakteristisch verengtes Deck ermöglichte es, die Zollgebühren zu senken, die nach der Breite des Oberdecks berechnet wurden. Ein geräumiger Laderaum, hohe Geschwindigkeit und sicheres Kreuzen am Wind machten die Flöte schnell zu einem der beliebtesten Handelsschiffe.
-}
-
-Caravel
-{
-Die charakteristische Takelage der Karavelle macht es leicht, dieses Schiff aus großer Entfernung zu erkennen. Die veraltete Konstruktion verleiht der Karavelle eher mittelmäßige Segeleigenschaften, was sie trotz ausreichender Bewaffnung daran hindert, mit modernen Schiffen gleichzuziehen.
-}
-
-Pinnace
-{
-Zusammen mit der Flöte wurde die Pinasse als Handelsschiff weit verbreitet. Sie ist groß und robust genug für lange Seereisen, und ihr Laderaum ermöglicht den Transport großer Mengen an Fracht. Dank der scharfen Linien ihres Bugs erreicht die Pinasse auch mit einem schweren Rumpf eine anständige Geschwindigkeit.
-}
-
-Navio
-{
-Ein solches Schiff ist nur für einen wirklich wohlhabenden Kaufmann erschwinglich. Ein großer und starker Rumpf, ein geräumiger Laderaum und eine fortschrittliche Takelage ermöglichen die längsten Reisen, und nicht weniger als drei Dutzend schwere Geschütze schützen es zuverlässig vor Piraten und Freibeutern.
-}
-
-EastIndiaMan
-{
-Ostindienfahrer vereinten die besten Eigenschaften der Pinassen und beseitigten deren Schwächen, wodurch sie zu nahezu perfekten Universalschiffen wurden. Mit großkalibrigen Geschützen können sie mit Kriegsschiffen vergleichbarer Größe konkurrieren, und ihr geräumiger Laderaum ermöglicht einen effektiven Einsatz im Handel.
-}
-
-LuggerQuest
-{
-Der Kurier-Lugger wurde speziell für die Bedürfnisse des Botenwesens gebaut. Hervorragende Segeleigenschaften, großartige Am-Wind-Leistung und eine recht starke Bewaffnung garantieren die zuverlässige Zustellung wichtiger Depeschen und kleiner wertvoller Ladungen.
-}
-
+Tartane {Ein Fischerbarkasse ist kein gutes Schiff für einen Kapitän, der in der feinen Gesellschaft glänzen möchte. Aber wenn das Schicksal Ihnen Ihr Lieblingsschiff genommen hat, eignet sich dieses traurige Boot durchaus für eine schnelle Reise zwischen den Inseln – doch denken Sie daran: Es ist nur vorübergehend!}
+WarTartane {Tartanen sind die gleichen Fischerbarkassen, die hastig für Küstenarbeiten in den gefährlichen Gewässern der Karibik umgebaut wurden. Ihre bescheidene Bewaffnung und die improvisierte Konstruktion erwecken keinen Respekt, aber sie können durchaus einen unerfahrenen Piraten oder armen Schmuggler abschrecken. Eine Übergangslösung, wenn es keine große Auswahl gibt.}
+Barque {Eine Bark ist ideal für lange Reisen geeignet. Mit einem geräumigen Laderaum und guten Segeleigenschaften gilt die Bark als eines der ausgewogensten Handelsschiffe. Ihre beeindruckende Größe und die relativ schwache Bewaffnung machen sie jedoch zu einem leichten Ziel für Seeräuber.}
+Schooner {Gute Segeleigenschaften, ein geräumiger Laderaum, geringer Tiefgang und anständige Bewaffnung haben die Schoner zu einem der beliebtesten Schiffe der kleinen Klassen gemacht. Sie eignen sich gleichermaßen für Handel, Küstenschifffahrt und Kämpfe.}
+Barkentine {Das Aufkommen der Barkentine war dem Wunsch geschuldet, die Führung eines Handelsschiffs für eine unerfahrene und kleine Besatzung zu vereinfachen. Dafür wurden die Rahsegel am Großmast der Bark durch Schratsegel ersetzt und der Rumpf etwas verkleinert. Dank ihrer gemischten Takelage segelt die Barkentine sowohl vor als auch gegen den Wind sicher.}
+Shnyava {Die Schniave und die Briggantine waren die Vorläufer der Brigg. Dank ihres gelungenen Rumpfdesigns, ihrer guten Geschwindigkeit und der Fähigkeit, schwere Geschütze zu tragen, wurden diese Schiffe sowohl in der Karibik als auch in Europa sehr beliebt. Sie werden oft zum Schutz kleinerer Handelskonvois eingesetzt.}
+Fleut {Die Flöte ist ein einzigartiger Zweig in der Entwicklung von Handelsschiffen. Ihr charakteristisch verengtes Deck ermöglichte es, die Zollgebühren zu senken, die nach der Breite des Oberdecks berechnet wurden. Ein geräumiger Laderaum, hohe Geschwindigkeit und sicheres Kreuzen am Wind machten die Flöte schnell zu einem der beliebtesten Handelsschiffe.}
+Caravel {Die charakteristische Takelage der Karavelle macht es leicht, dieses Schiff aus großer Entfernung zu erkennen. Die veraltete Konstruktion verleiht der Karavelle eher mittelmäßige Segeleigenschaften, was sie trotz ausreichender Bewaffnung daran hindert, mit modernen Schiffen gleichzuziehen.}
+Pinnace {Zusammen mit der Flöte wurde die Pinasse als Handelsschiff weit verbreitet. Sie ist groß und robust genug für lange Seereisen, und ihr Laderaum ermöglicht den Transport großer Mengen an Fracht. Dank der scharfen Linien ihres Bugs erreicht die Pinasse auch mit einem schweren Rumpf eine anständige Geschwindigkeit.}
+Navio {Ein solches Schiff ist nur für einen wirklich wohlhabenden Kaufmann erschwinglich. Ein großer und starker Rumpf, ein geräumiger Laderaum und eine fortschrittliche Takelage ermöglichen die längsten Reisen, und nicht weniger als drei Dutzend schwere Geschütze schützen es zuverlässig vor Piraten und Freibeutern.}
+EastIndiaMan {Ostindienfahrer vereinten die besten Eigenschaften der Pinassen und beseitigten deren Schwächen, wodurch sie zu nahezu perfekten Universalschiffen wurden. Mit großkalibrigen Geschützen können sie mit Kriegsschiffen vergleichbarer Größe konkurrieren, und ihr geräumiger Laderaum ermöglicht einen effektiven Einsatz im Handel.}
+LuggerQuest {Der Kurier-Lugger wurde speziell für die Bedürfnisse des Botenwesens gebaut. Hervorragende Segeleigenschaften, großartige Am-Wind-Leistung und eine recht starke Bewaffnung garantieren die zuverlässige Zustellung wichtiger Depeschen und kleiner wertvoller Ladungen.}
 Lugger
 {
-Der Lugger ist ein kleines Segelschiff, das viele Seeleute, insbesondere Schmuggler, wegen seiner Wendigkeit und Vielseitigkeit schätzen. Luggers gleichen ihren Mangel an Geschwindigkeit unter vollen Segeln durch hervorragende Am-Wind-Eigenschaften aus.
-Trotz ihrer geringen Größe sind Luggers seetüchtig und können lange Reisen unternehmen.
+Der Lugger ist ein kleines Segelschiff, das viele Seeleute, insbesondere Schmuggler, wegen seiner Wendigkeit und Vielseitigkeit schätzen. Luggers gleichen ihren Mangel an Geschwindigkeit unter vollen Segeln durch hervorragende Am-Wind-Eigenschaften aus.Trotz ihrer geringen Größe sind Luggers seetüchtig und können lange Reisen unternehmen.
 }
-
-Sloop
-{
-Mit guter Geschwindigkeit und Wendigkeit sowie solider Bewaffnung für seine Größe ist die Sloop ein zuverlässiges Patrouillenschiff, das sich auch für Aufklärungszwecke eignet.
-}
-
-Brigantine
-{
-Ein legendärer Typ von Segelschiff. Schnell und wendig wie eine Schwalbe, wird die Briggantine besonders von Piraten und Abenteurern aller Art geschätzt. Ihre gelungene Konstruktion macht die Briggantine für jede Aufgabe geeignet – vom Kampf bis zum Handel.
-}
-
-Brig
-{
-Briggs werden in der Marine häufig für Aufklärungszwecke eingesetzt. Geringer Tiefgang, scharfe Rumpflinien und fortschrittliche Takelage machen die Brigg zu einem der schnellsten Schiffe, und ihre anständigen Kaliber machen sie zu einem sehr gefährlichen Gegner.
-}
-
-Schooner_W
-{
-Seeleute in der Neuen Welt waren die ersten, die Schoner zu schätzen wussten und begannen, sie für militärische Zwecke einzusetzen. Dafür musste der Rumpf etwas modifiziert, der nutzbare Laderaum reduziert und Geschütze hinzugefügt werden, aber das Ergebnis war es wert. Gut bewaffnet, schnell und wendig stellt der Kriegsschoner eine ernsthafte Bedrohung für jedes Handelsschiff dar.
-}
-
-Galeon_l
-{
-Die Galeone wurde Anfang des 16. Jahrhunderts auf Basis der Karacke geschaffen und von Anfang an als Kriegsschiff konzipiert. Bis zur Mitte des 17. Jahrhunderts hatte die Galeone den Höhepunkt ihrer Entwicklung erreicht und gab den Staffelstab an fortschrittlichere Schiffe weiter, ist aber noch nicht von der Bühne verschwunden und dient den Seeleuten weiterhin treu.
-}
-
-Galeon_sm
-{
-Ein Symbol spanischer Macht und Ambitionen. Die Decks glänzen mit goldenen Verzierungen, und am Heck thront das Bild der Jungfrau der Barmherzigkeit, der Schutzpatronin des Schiffes. Für die einen ist die 'Santa Misericordia' der Inbegriff von Ordnung, für andere ein gefürchtetes Symbol königlicher Unterdrückung. Und manche sehen darin sogar echte göttliche Vorsehung.
-}
-
+Sloop {Mit guter Geschwindigkeit und Wendigkeit sowie solider Bewaffnung für seine Größe ist die Sloop ein zuverlässiges Patrouillenschiff, das sich auch für Aufklärungszwecke eignet.}
+Brigantine {Ein legendärer Typ von Segelschiff. Schnell und wendig wie eine Schwalbe, wird die Briggantine besonders von Piraten und Abenteurern aller Art geschätzt. Ihre gelungene Konstruktion macht die Briggantine für jede Aufgabe geeignet – vom Kampf bis zum Handel.}
+Brig {Briggs werden in der Marine häufig für Aufklärungszwecke eingesetzt. Geringer Tiefgang, scharfe Rumpflinien und fortschrittliche Takelage machen die Brigg zu einem der schnellsten Schiffe, und ihre anständigen Kaliber machen sie zu einem sehr gefährlichen Gegner.}
+Schooner_W {Seeleute in der Neuen Welt waren die ersten, die Schoner zu schätzen wussten und begannen, sie für militärische Zwecke einzusetzen. Dafür musste der Rumpf etwas modifiziert, der nutzbare Laderaum reduziert und Geschütze hinzugefügt werden, aber das Ergebnis war es wert. Gut bewaffnet, schnell und wendig stellt der Kriegsschoner eine ernsthafte Bedrohung für jedes Handelsschiff dar.}
+Galeon_l {Die Galeone wurde Anfang des 16. Jahrhunderts auf Basis der Karacke geschaffen und von Anfang an als Kriegsschiff konzipiert. Bis zur Mitte des 17. Jahrhunderts hatte die Galeone den Höhepunkt ihrer Entwicklung erreicht und gab den Staffelstab an fortschrittlichere Schiffe weiter, ist aber noch nicht von der Bühne verschwunden und dient den Seeleuten weiterhin treu.}
+Galeon_sm {Ein Symbol spanischer Macht und Ambitionen. Die Decks glänzen mit goldenen Verzierungen, und am Heck thront das Bild der Jungfrau der Barmherzigkeit, der Schutzpatronin des Schiffes. Für die einen ist die 'Santa Misericordia' der Inbegriff von Ordnung, für andere ein gefürchtetes Symbol königlicher Unterdrückung. Und manche sehen darin sogar echte göttliche Vorsehung.}
 LadyBeth
 {
-Ein großartiges Beispiel englischen Schiffbaus, geschaffen für den eigenständigen Patrouillendienst in gefährlichen Gewässern. Diese Schniave hat hervorragende Segeleigenschaften und für ihre Größe beeindruckende Bewaffnung, sodass sie mit Schiffen höherer Klassen konkurrieren kann.
-Ihre Jahre im Militärdienst sind längst vorbei, und der Ruhm ihres früheren Besitzers zieht heute eher Antiquitätenhändler und Schatzkartenhändler als Seewölfe an.
+Ein großartiges Beispiel englischen Schiffbaus, geschaffen für den eigenständigen Patrouillendienst in gefährlichen Gewässern. Diese Schniave hat hervorragende Segeleigenschaften und für ihre Größe beeindruckende Bewaffnung, sodass sie mit Schiffen höherer Klassen konkurrieren kann.Ihre Jahre im Militärdienst sind längst vorbei, und der Ruhm ihres früheren Besitzers zieht heute eher Antiquitätenhändler und Schatzkartenhändler als Seewölfe an.
 }
-
-Memento
-{
-In diesem Schiff ist es schwer, das alte Design eines englischen Brigs zu erkennen, das seine schwachen Segeleigenschaften mit starker Feuerkraft und einem schweren, langlebigen Rumpf ausgleicht. Überzogen mit einheimischen Amuletten und durchdrungen von Tod, erschreckt es nicht nur Feinde, sondern auch die eigene Besatzung.
-}
-
-Corvette
-{
-Korvetten sind für Aufklärung, Kurierdienste und Kreuzfahrteinsätze konzipiert. Mit guter Geschwindigkeit und Wendigkeit kann eine Korvette leichtere Schiffe einholen und erfolgreich Kämpfen mit schwereren Schiffen ausweichen.
-}
-
-XebekVML
-{
-Die Schebecke ist der bekannteste Typ eines Mittelmeerschiffs. Ihr schmaler Rumpf und die großen Lateinersegel an allen Masten ermöglichen es ihr, bei extremen Windwinkeln zu segeln, was sie zu einem sehr lästigen Gegner macht. Leider beschränkt die geringe Geschwindigkeit bei Vorwindkursen die Schebecke hauptsächlich auf Piraterie und Schmuggel.
-}
-
-Polacre
-{
-Die Polacre ist der engste Verwandte der Schebecke. Im Gegensatz zu ihr trägt sie Rahsegel am Großmast, was ihr ermöglicht, bei achterlichem Wind sicher Kurs zu halten. Diese Takelage verringert jedoch die Wendigkeit, verschlechtert die Am-Wind-Leistung und stellt deutlich höhere Anforderungen an die Fähigkeiten und Koordination der Besatzung.
-}
-
-Galeon_h
-{
-Die schwere Galeone ist ein mächtiges Kriegsschiff, das zum Schutz von Konvois und zum eigenständigen Transport besonders wertvoller Ladungen gebaut wurde. Sie ist modernen Schiffen in Geschwindigkeit und Wendigkeit unterlegen, aber ihre großkalibrigen Geschütze, der starke Rumpf und die zahlreiche Besatzung bieten jedem Gut zuverlässigen Schutz. Eine Flotte schwerer Galeonen ist eine Macht, mit der man in der Karibik rechnen muss.
-}
-
-Elcasador
-{
-Ein brillantes Beispiel für ein Kriegsschiff, das für Spezialoperationen auf offener See gebaut wurde. Diese Galeone wurde im Auftrag der Casa de Contratación gebaut, um die gefährlichsten Piraten zu vernichten, die eine echte Bedrohung für den Handel in der Region und die Interessen der spanischen Krone darstellen.
-}
-
-Frigate
-{
-Fregatten haben hervorragende Segeleigenschaften, gute Feuerkraft und wurden speziell für Fernaufklärung, Geleitschutz und Gefechte als Teil eines Geschwaders geschaffen. Heute trifft man sie häufiger als eigenständige Kreuzfahrtschiffe auf feindlichen Kommunikationswegen – zum Aufbringen oder Zerstören feindlicher Handelsschiffe.
-}
-
-Frigate_h
-{
-Schwere Fregatten wurden zum Kompromiss für jene Kapitäne, denen die Feuerkraft gewöhnlicher Fregatten nicht ausreichte. Verstärkte Rümpfe und Geschütze größeren Kalibers bringen sie den Linienschiffen 4. Ranges näher – allerdings auf Kosten von Geschwindigkeit und Wendigkeit.
-}
-
-LineShip
-{
-Linienschiffe 4. Ranges können in Sachen Feuerkraft nicht mit ihren älteren Brüdern konkurrieren, daher macht es keinen Sinn, sie in die Gefechtslinie zu stellen. Ihre beste Verwendung ist der Konvoischutz, da sie durch ihre Geschwindigkeit und Wendigkeit diese Aufgabe am effektivsten erfüllen.
-}
-
-Warship
-{
-Schiffe dieses Typs wurden noch zu Zeiten von Kardinal Richelieu gebaut und sind heute konstruktiv veraltet. Sie haben jedoch anständige Segeleigenschaften und können die schwersten Geschütze tragen, was sie zu einer beeindruckenden Kraft macht.
-}
-
-Ecliaton
-{
-Schiffe dieses Typs wurden noch zu Zeiten von Kardinal Richelieu gebaut und sind heute konstruktiv veraltet. Sie haben jedoch anständige Segeleigenschaften und können die schwersten Geschütze tragen, was sie zu einer beeindruckenden Kraft macht.
-}
-
-Pink
-{
-Der Pink ist ein kleines Schiff, das für den Transport von Fracht und den Schutz kleiner Konvois gebaut wurde. Obwohl seine Bewaffnung schwach und die Besatzung klein ist, ist der Pink speziell für Handel und Kampf konstruiert, und viele Kapitäne schätzen ihn wegen seiner Geschwindigkeit und Wendigkeit. Die geringe Größe des Pink erlaubt jedoch keine langen Seereisen.
-}
-
-Battleship
-{
-Linienschiffe 3. Ranges sind sehr zahlreich und die ausgewogensten in ihren Kampfeigenschaften, konzipiert für Gefechte in der Linie. Sie haben genug Feuerkraft, um selbst 100-Kanonen-Leviathane herauszufordern. Gleichzeitig übertreffen sie diese deutlich in Geschwindigkeit und Wendigkeit.
-}
-
-Manowar
-{
-Linienschiffe 2. Ranges sind das Rückgrat der Seemacht jeder Nation. Zusammen mit den Schiffen 3. Ranges bilden sie eine Flotte, die Stärke mit Wendigkeit verbindet. Und in Abwesenheit von Schiffen 1. Ranges dienen einige von ihnen als Flaggschiffe.
-}
-
-Manowar_e
-{
-Ein Linienschiff 1. Ranges ist eine wahre schwimmende Festung. Dank seiner gewaltigen Feuerkraft kann es jeden Gegner mit nur wenigen gezielten Salven versenken. Aber selbst die größten Seemächte haben nicht viele solcher Schiffe, und sie werden als Flaggschiffe in großen Seeschlachten eingesetzt.
-}
-
+Memento {In diesem Schiff ist es schwer, das alte Design eines englischen Brigs zu erkennen, das seine schwachen Segeleigenschaften mit starker Feuerkraft und einem schweren, langlebigen Rumpf ausgleicht. Überzogen mit einheimischen Amuletten und durchdrungen von Tod, erschreckt es nicht nur Feinde, sondern auch die eigene Besatzung.}
+Corvette {Korvetten sind für Aufklärung, Kurierdienste und Kreuzfahrteinsätze konzipiert. Mit guter Geschwindigkeit und Wendigkeit kann eine Korvette leichtere Schiffe einholen und erfolgreich Kämpfen mit schwereren Schiffen ausweichen.}
+XebekVML {Die Schebecke ist der bekannteste Typ eines Mittelmeerschiffs. Ihr schmaler Rumpf und die großen Lateinersegel an allen Masten ermöglichen es ihr, bei extremen Windwinkeln zu segeln, was sie zu einem sehr lästigen Gegner macht. Leider beschränkt die geringe Geschwindigkeit bei Vorwindkursen die Schebecke hauptsächlich auf Piraterie und Schmuggel.}
+Polacre {Die Polacre ist der engste Verwandte der Schebecke. Im Gegensatz zu ihr trägt sie Rahsegel am Großmast, was ihr ermöglicht, bei achterlichem Wind sicher Kurs zu halten. Diese Takelage verringert jedoch die Wendigkeit, verschlechtert die Am-Wind-Leistung und stellt deutlich höhere Anforderungen an die Fähigkeiten und Koordination der Besatzung.}
+Galeon_h {Die schwere Galeone ist ein mächtiges Kriegsschiff, das zum Schutz von Konvois und zum eigenständigen Transport besonders wertvoller Ladungen gebaut wurde. Sie ist modernen Schiffen in Geschwindigkeit und Wendigkeit unterlegen, aber ihre großkalibrigen Geschütze, der starke Rumpf und die zahlreiche Besatzung bieten jedem Gut zuverlässigen Schutz. Eine Flotte schwerer Galeonen ist eine Macht, mit der man in der Karibik rechnen muss.}
+Elcasador {Ein brillantes Beispiel für ein Kriegsschiff, das für Spezialoperationen auf offener See gebaut wurde. Diese Galeone wurde im Auftrag der Casa de Contratación gebaut, um die gefährlichsten Piraten zu vernichten, die eine echte Bedrohung für den Handel in der Region und die Interessen der spanischen Krone darstellen.}
+Frigate {Fregatten haben hervorragende Segeleigenschaften, gute Feuerkraft und wurden speziell für Fernaufklärung, Geleitschutz und Gefechte als Teil eines Geschwaders geschaffen. Heute trifft man sie häufiger als eigenständige Kreuzfahrtschiffe auf feindlichen Kommunikationswegen – zum Aufbringen oder Zerstören feindlicher Handelsschiffe.}
+Frigate_h {Schwere Fregatten wurden zum Kompromiss für jene Kapitäne, denen die Feuerkraft gewöhnlicher Fregatten nicht ausreichte. Verstärkte Rümpfe und Geschütze größeren Kalibers bringen sie den Linienschiffen 4. Ranges näher – allerdings auf Kosten von Geschwindigkeit und Wendigkeit.}
+LineShip {Linienschiffe 4. Ranges können in Sachen Feuerkraft nicht mit ihren älteren Brüdern konkurrieren, daher macht es keinen Sinn, sie in die Gefechtslinie zu stellen. Ihre beste Verwendung ist der Konvoischutz, da sie durch ihre Geschwindigkeit und Wendigkeit diese Aufgabe am effektivsten erfüllen.}
+Warship {Schiffe dieses Typs wurden noch zu Zeiten von Kardinal Richelieu gebaut und sind heute konstruktiv veraltet. Sie haben jedoch anständige Segeleigenschaften und können die schwersten Geschütze tragen, was sie zu einer beeindruckenden Kraft macht.}
+Ecliaton {Schiffe dieses Typs wurden noch zu Zeiten von Kardinal Richelieu gebaut und sind heute konstruktiv veraltet. Sie haben jedoch anständige Segeleigenschaften und können die schwersten Geschütze tragen, was sie zu einer beeindruckenden Kraft macht.}
+Pink {Der Pink ist ein kleines Schiff, das für den Transport von Fracht und den Schutz kleiner Konvois gebaut wurde. Obwohl seine Bewaffnung schwach und die Besatzung klein ist, ist der Pink speziell für Handel und Kampf konstruiert, und viele Kapitäne schätzen ihn wegen seiner Geschwindigkeit und Wendigkeit. Die geringe Größe des Pink erlaubt jedoch keine langen Seereisen.}
+Battleship {Linienschiffe 3. Ranges sind sehr zahlreich und die ausgewogensten in ihren Kampfeigenschaften, konzipiert für Gefechte in der Linie. Sie haben genug Feuerkraft, um selbst 100-Kanonen-Leviathane herauszufordern. Gleichzeitig übertreffen sie diese deutlich in Geschwindigkeit und Wendigkeit.}
+Manowar {Linienschiffe 2. Ranges sind das Rückgrat der Seemacht jeder Nation. Zusammen mit den Schiffen 3. Ranges bilden sie eine Flotte, die Stärke mit Wendigkeit verbindet. Und in Abwesenheit von Schiffen 1. Ranges dienen einige von ihnen als Flaggschiffe.}
+Manowar_e {Ein Linienschiff 1. Ranges ist eine wahre schwimmende Festung. Dank seiner gewaltigen Feuerkraft kann es jeden Gegner mit nur wenigen gezielten Salven versenken. Aber selbst die größten Seemächte haben nicht viele solcher Schiffe, und sie werden als Flaggschiffe in großen Seeschlachten eingesetzt.}
 MayFang
 {
-Diese Schebecke hat einen leichten Rumpf auf Kosten der Festigkeit, aber das macht sie zu einem unübertroffenen Segler – in der gesamten Karibik gibt es kein anderes Schiff, das fast gegen den Wind segeln kann!
-Und zwanzig mittelkalibrige Geschütze sind ein starkes Argument im Wettstreit auf See.
+Diese Schebecke hat einen leichten Rumpf auf Kosten der Festigkeit, aber das macht sie zu einem unübertroffenen Segler – in der gesamten Karibik gibt es kein anderes Schiff, das fast gegen den Wind segeln kann!Und zwanzig mittelkalibrige Geschütze sind ein starkes Argument im Wettstreit auf See.
 }
-
-Mirage
-{
-Im Gegensatz zu Bombarden-Ketschen tragen Freibeuter-Ketschen keine riesigen Mörser, die für die Bombardierung von Festungen bestimmt sind, sondern haben einen leichteren, stromlinienförmigen Rumpf, was sich positiv auf ihre Segeleigenschaften auswirkt. Selbst die Yachten von Prinzen könnten die Geschwindigkeit dieser Freibeuter-Ketsche beneiden.
-}
-
-Himera
-{
-Ein Meisterwerk von Schiff, das speziell für die Bedürfnisse des britischen Marinenachrichtendienstes geschaffen wurde. In seinen Eigenschaften ist es mit Kriegsschiffen der 3. Klasse vergleichbar, behält aber die einfache Handhabung der 4. Klasse bei.
-}
-
-Valciria
-{
-Ein feiner englischer Brigg. Hohe Geschwindigkeit und Wendigkeit, gute Am-Wind-Leistung und zwei Dutzend Geschütze an Deck machen dieses Segelschiff zum Traum.
-}
-
-CORVETTE_QUEST
-{
-Ein Einzelstück, ein Meisterwerk französischer Schiffbauer. Die umfassende Modernisierung der Korvettenkonstruktion hat fast alle Eigenschaften verbessert, ohne die Geschwindigkeit zu beeinträchtigen. Die vergrößerte Segelfläche und das größere Kaliber der Geschütze erfordern eine erfahrenere und zahlreichere Besatzung, aber wenn die Tests in der Karibik erfolgreich verlaufen, könnten die hier eingesetzten Technologien einen echten Durchbruch im Schiffbau bedeuten.
-}
-
-Polacre_q
-{
-Ein Meister, der erfolgreich Elemente der Schebecke und der Fregatte kombiniert hat, schuf eine Polacre mit einem ungewöhnlichen, starken und geräumigen Rumpf, der sich durch hohe Bordwände, geringen Tiefgang und sehr starke Bewaffnung auszeichnet. Drei Masten und ein Bugspriet mit Segeln verschiedener Typen machen sie schnell und sehr wendig. All diese Eigenschaften sind einzeln gut, aber zusammen hervorragend – nur der Besitzer entscheidet: Wird es ein Kriegs-, Piraten- oder Handelsschiff, das in See sticht?
-}
-
-ArabellaShip
-{
-Dieses einzigartige Schiff vereint die besten Eigenschaften von Fregatten und Linienschiffen. Erstaunliche Segeleigenschaften werden mit einer Batterie großkalibriger Geschütze kombiniert, und die Innenräume bieten Platz für eine ganze Kompanie Marinesoldaten. In geschickten Händen kann die Fortuna es allein mit einem viel stärkeren Gegner aufnehmen.
-}
-
-Flyingdutchman
-{
-"Caleuche". Der Schrecken aller, die unter Segeln fahren...
-}
-
-Flyingdutchman_l
-{
-Eine Kopie der "Caleuche".
-}
-
-NewFlyingdutchman
-{
-Dies war einst das berüchtigte "Geisterschiff". Jetzt ist es komplett umgebaut und ein mächtiges Kriegsgaleone, das es sogar mit Linienschiffen aufnehmen kann. Mit beeindruckender Geschwindigkeit für seine Größe, großem Laderaum und beeindruckender Bewaffnung ist es ein völlig autarkes Schiff, das feindliche Schiffe versenken, entern und sogar ganze Kolonien belagern kann.
-}
-
-Santisima
-{
-Dieses Schiff lief auf der berühmten Werft von Havanna vom Stapel. Sein Rumpf ist etwas leichter und schwächer als der anderer Schiffe 1. Ranges, aber das wird durch verbesserte Segeleigenschaften mehr als ausgeglichen.
-}
-
-NoneBoat
-{
-Kein Schiff. Der Held ist zum Landratten geworden und kann sich erst wieder Kapitän nennen, wenn er ein Schiff hat.
-}
-
-Hull
-{
-Rumpf – zeigt die aktuelle und maximale Schadensmenge, die der Schiffsrumpf aushalten kann.
-}
-
-Sails
-{
-Segel – zeigen den aktuellen und maximalen Schaden, den die Segel des Schiffs aushalten können.
-}
-
-Speed
-{
-Geschwindigkeit – zeigt die aktuelle Höchstgeschwindigkeit des Schiffs unter Berücksichtigung aller Faktoren (Ladung, Fähigkeiten des Kapitäns, Schiffsschäden) und die maximal erreichbare Geschwindigkeit.
-}
-
-Maneuver
-{
-Manövrierfähigkeit – zeigt die Manövrierfähigkeit des Schiffs unter Berücksichtigung aller Faktoren (Ladung, Fähigkeiten des Kapitäns, Schiffsschäden) und die maximal erreichbare Manövrierfähigkeit.
-}
-
+Mirage {Im Gegensatz zu Bombarden-Ketschen tragen Freibeuter-Ketschen keine riesigen Mörser, die für die Bombardierung von Festungen bestimmt sind, sondern haben einen leichteren, stromlinienförmigen Rumpf, was sich positiv auf ihre Segeleigenschaften auswirkt. Selbst die Yachten von Prinzen könnten die Geschwindigkeit dieser Freibeuter-Ketsche beneiden.}
+Himera {Ein Meisterwerk von Schiff, das speziell für die Bedürfnisse des britischen Marinenachrichtendienstes geschaffen wurde. In seinen Eigenschaften ist es mit Kriegsschiffen der 3. Klasse vergleichbar, behält aber die einfache Handhabung der 4. Klasse bei.}
+Valciria {Ein feiner englischer Brigg. Hohe Geschwindigkeit und Wendigkeit, gute Am-Wind-Leistung und zwei Dutzend Geschütze an Deck machen dieses Segelschiff zum Traum.}
+CORVETTE_QUEST {Ein Einzelstück, ein Meisterwerk französischer Schiffbauer. Die umfassende Modernisierung der Korvettenkonstruktion hat fast alle Eigenschaften verbessert, ohne die Geschwindigkeit zu beeinträchtigen. Die vergrößerte Segelfläche und das größere Kaliber der Geschütze erfordern eine erfahrenere und zahlreichere Besatzung, aber wenn die Tests in der Karibik erfolgreich verlaufen, könnten die hier eingesetzten Technologien einen echten Durchbruch im Schiffbau bedeuten.}
+Polacre_q {Ein Meister, der erfolgreich Elemente der Schebecke und der Fregatte kombiniert hat, schuf eine Polacre mit einem ungewöhnlichen, starken und geräumigen Rumpf, der sich durch hohe Bordwände, geringen Tiefgang und sehr starke Bewaffnung auszeichnet. Drei Masten und ein Bugspriet mit Segeln verschiedener Typen machen sie schnell und sehr wendig. All diese Eigenschaften sind einzeln gut, aber zusammen hervorragend – nur der Besitzer entscheidet: Wird es ein Kriegs-, Piraten- oder Handelsschiff, das in See sticht?}
+ArabellaShip {Dieses einzigartige Schiff vereint die besten Eigenschaften von Fregatten und Linienschiffen. Erstaunliche Segeleigenschaften werden mit einer Batterie großkalibriger Geschütze kombiniert, und die Innenräume bieten Platz für eine ganze Kompanie Marinesoldaten. In geschickten Händen kann die Fortuna es allein mit einem viel stärkeren Gegner aufnehmen.}
+Flyingdutchman {"Caleuche". Der Schrecken aller, die unter Segeln fahren...}
+Flyingdutchman_l {Eine Kopie der "Caleuche".}
+NewFlyingdutchman {Dies war einst das berüchtigte "Geisterschiff". Jetzt ist es komplett umgebaut und ein mächtiges Kriegsgaleone, das es sogar mit Linienschiffen aufnehmen kann. Mit beeindruckender Geschwindigkeit für seine Größe, großem Laderaum und beeindruckender Bewaffnung ist es ein völlig autarkes Schiff, das feindliche Schiffe versenken, entern und sogar ganze Kolonien belagern kann.}
+Santisima {Dieses Schiff lief auf der berühmten Werft von Havanna vom Stapel. Sein Rumpf ist etwas leichter und schwächer als der anderer Schiffe 1. Ranges, aber das wird durch verbesserte Segeleigenschaften mehr als ausgeglichen.}
+NoneBoat {Kein Schiff. Der Held ist zum Landratten geworden und kann sich erst wieder Kapitän nennen, wenn er ein Schiff hat.}
+Hull {Rumpf – zeigt die aktuelle und maximale Schadensmenge, die der Schiffsrumpf aushalten kann.}
+Sails {Segel – zeigen den aktuellen und maximalen Schaden, den die Segel des Schiffs aushalten können.}
+Speed {Geschwindigkeit – zeigt die aktuelle Höchstgeschwindigkeit des Schiffs unter Berücksichtigung aller Faktoren (Ladung, Fähigkeiten des Kapitäns, Schiffsschäden) und die maximal erreichbare Geschwindigkeit.}
+Maneuver {Manövrierfähigkeit – zeigt die Manövrierfähigkeit des Schiffs unter Berücksichtigung aller Faktoren (Ladung, Fähigkeiten des Kapitäns, Schiffsschäden) und die maximal erreichbare Manövrierfähigkeit.}
 AgainstWind
 {
-Der beste Kurs des Schiffs relativ zum Wind, bei dem das Schiff die maximale Geschwindigkeit erreichen kann. Die Werte werden in Grad angegeben.
-Der zweite Wert zeigt die Differenz zwischen der aktuellen Windrichtung und dem besten Kurswinkel für dieses Schiff.
+Der beste Kurs des Schiffs relativ zum Wind, bei dem das Schiff die maximale Geschwindigkeit erreichen kann. Die Werte werden in Grad angegeben.Der zweite Wert zeigt die Differenz zwischen der aktuellen Windrichtung und dem besten Kurswinkel für dieses Schiff.
 }
-
 Capacity
 {
-Tragfähigkeit – zeigt die aktuelle und maximale Kapazität des Schiffs. Je mehr das Schiff beladen ist, desto träger und langsamer wird es.
-Die auf dem Schiff installierten Geschütze werden bei der Berechnung der Tragfähigkeit ebenfalls berücksichtigt. Sie können vom Schiff entfernt werden, um zusätzlichen Platz für Ladung zu schaffen. Wählen Sie dazu im Schiffsparameter-Menü im Interface "Schiff" die aktuellen Geschütze aus.
+Tragfähigkeit – zeigt die aktuelle und maximale Kapazität des Schiffs. Je mehr das Schiff beladen ist, desto träger und langsamer wird es.Die auf dem Schiff installierten Geschütze werden bei der Berechnung der Tragfähigkeit ebenfalls berücksichtigt. Sie können vom Schiff entfernt werden, um zusätzlichen Platz für Ladung zu schaffen. Wählen Sie dazu im Schiffsparameter-Menü im Interface "Schiff" die aktuellen Geschütze aus.
 }
-
-Crew
-{
-Besatzung – zeigt die aktuelle Anzahl der Besatzungsmitglieder sowie die minimale und maximale Anzahl für dieses Schiff.
-}
-
-CannonType
-{
-Geschütztyp – zeigt den Typ (Kanonen oder Kartaunen), das aktuelle Kaliber und die Anzahl der installierten Geschütze an
-}
-
-sCannons
-{
-Zeigt das maximal zulässige Kaliber und die maximal mögliche Anzahl von Geschützen auf dem Schiff an.
-}
-
+Crew {Besatzung – zeigt die aktuelle Anzahl der Besatzungsmitglieder sowie die minimale und maximale Anzahl für dieses Schiff.}
+CannonType {Geschütztyp – zeigt den Typ (Kanonen oder Kartaunen), das aktuelle Kaliber und die Anzahl der installierten Geschütze an}
+sCannons {Zeigt das maximal zulässige Kaliber und die maximal mögliche Anzahl von Geschützen auf dem Schiff an.}
 Crew_Exp {Besatzungserfahrung}
-
 Crew_Exp_hint
 {
-Die Besatzungserfahrung ist in drei Kategorien unterteilt: Seemannschaft (beeinflusst die Schiffsführung), Artillerie (Nachladegeschwindigkeit und Zielgenauigkeit) und Enterkampf (Effektivität der Besatzung im Nahkampf).
-Eine erfahrene Besatzung in kleinerer Zahl kann effektiver sein als ein überladenes Schiff voller Neulinge.
-Erfahrung in allen drei Kategorien sammelt die Besatzung bei den entsprechenden Tätigkeiten (Manövrieren, Schießen, Entern), geht aber auch verloren, wenn die erworbenen Fähigkeiten längere Zeit nicht geübt werden.
+Die Besatzungserfahrung ist in drei Kategorien unterteilt: Seemannschaft (beeinflusst die Schiffsführung), Artillerie (Nachladegeschwindigkeit und Zielgenauigkeit) und Enterkampf (Effektivität der Besatzung im Nahkampf).Eine erfahrene Besatzung in kleinerer Zahl kann effektiver sein als ein überladenes Schiff voller Neulinge.Erfahrung in allen drei Kategorien sammelt die Besatzung bei den entsprechenden Tätigkeiten (Manövrieren, Schießen, Entern), geht aber auch verloren, wenn die erworbenen Fähigkeiten längere Zeit nicht geübt werden.
 }
-
-TakeAllGoods_hint
-{
-Die Schaltfläche "Alle Waren umladen" lädt Waren auf das Schiff des Charakters entsprechend ihrem durchschnittlichen Einzelwert. Zuerst werden die wertvollsten Waren umgeladen, dann die weniger wertvollen, und so weiter, bis kein Platz mehr im Laderaum ist.
-}
-
+TakeAllGoods_hint {Die Schaltfläche "Alle Waren umladen" lädt Waren auf das Schiff des Charakters entsprechend ihrem durchschnittlichen Einzelwert. Zuerst werden die wertvollsten Waren umgeladen, dann die weniger wertvollen, und so weiter, bis kein Platz mehr im Laderaum ist.}
 GoodsKeys_hint
 {
-Die Pfeiltasten "Links" und "Rechts" auf der Tastatur bewegen die Waren in der ausgewählten Tabellenzeile um eine Einheit. Wenn Sie die Umschalttaste gedrückt halten, werden die Waren vollständig verschoben.
-Ein Rechtsklick auf die Pfeile in der Zeile mit der Ware im Interface verschiebt zehn Einheiten auf einmal.
+Die Pfeiltasten "Links" und "Rechts" auf der Tastatur bewegen die Waren in der ausgewählten Tabellenzeile um eine Einheit. Wenn Sie die Umschalttaste gedrückt halten, werden die Waren vollständig verschoben.Ein Rechtsklick auf die Pfeile in der Zeile mit der Ware im Interface verschiebt zehn Einheiten auf einmal.
 }
-
 Shipyard_hint
 {
-In der Werft können Sie Schiffe kaufen, reparieren oder verkaufen.
-Der Held kann sein Schiff nicht verkaufen, wenn er Gefährten hat. Sie können auch kein Schiff für einen Gefährten kaufen, wenn der Held kein eigenes Schiff hat.
-Um das Schiff des Helden oder Gefährten zu wechseln und dabei den gesamten Laderauminhalt und die Besatzung zu behalten, wählen Sie im Geschwader-Menü des Helden (linke Seite des Interfaces) das zu ersetzende Schiff aus und im Verkaufsmenü der Werft (rechte Seite des Interfaces) das gewünschte Schiff, dann klicken Sie auf "Kaufen".
-Um ein neues Schiff zu kaufen (einen neuen Gefährten zuzuweisen), wählen Sie vor dem Kauf zuerst einen leeren Slot in der Liste auf der linken Seite aus.
+In der Werft können Sie Schiffe kaufen, reparieren oder verkaufen.Der Held kann sein Schiff nicht verkaufen, wenn er Gefährten hat. Sie können auch kein Schiff für einen Gefährten kaufen, wenn der Held kein eigenes Schiff hat.Um das Schiff des Helden oder Gefährten zu wechseln und dabei den gesamten Laderauminhalt und die Besatzung zu behalten, wählen Sie im Geschwader-Menü des Helden (linke Seite des Interfaces) das zu ersetzende Schiff aus und im Verkaufsmenü der Werft (rechte Seite des Interfaces) das gewünschte Schiff, dann klicken Sie auf "Kaufen".Um ein neues Schiff zu kaufen (einen neuen Gefährten zuzuweisen), wählen Sie vor dem Kauf zuerst einen leeren Slot in der Liste auf der linken Seite aus.
 }
-
-NoneBoat2
-{
-Kein Schiff.
-}
+NoneBoat2 {Kein Schiff.}

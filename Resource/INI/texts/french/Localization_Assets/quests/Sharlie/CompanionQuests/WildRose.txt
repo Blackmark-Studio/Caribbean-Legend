@@ -1,0 +1,13 @@
+WildRose_1 {Vous avez entendu ? Une vingtaine d’esclaves se sont échappés de la plantation de Bishop il y a quelques jours. On raconte qu’ils ont scié leurs chaînes pendant la nuit, tué plusieurs gardes et se sont enfuis dans la jungle. Mais où pouvaient-ils bien aller depuis cette île ? Bien sûr, ils ont été retrouvés assez vite — certains dans une grotte, d’autres près du cap Ragged Point. La plupart ont été abattus. Les soldats ont aussi subi des pertes. Mais ce qu’on dit, c’est que ce qui a le plus mis Bishop en colère, ce n’est pas ça — c’est de ne pas avoir pu régler leur compte lui-même.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kasper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jérôme}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kasper}
+WildRose_12 {Hérétique}
+WildRose_13 {L’escouade devrait déjà être en place...}

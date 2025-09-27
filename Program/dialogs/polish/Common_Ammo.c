@@ -70,13 +70,13 @@ void ProcessDialogEvent()
 			// вице-адмирал
 			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "Witaj Wiceadmirał! Czy masz jakieś rozkazy?";
+				dialog.text = "Witaj Wiceadmirale! Czy masz jakieś rozkazy?";
 				link.l1 = "Nie, oficerze, bez poleceń. Przyszedłem tylko zobaczyć fort.";
 			}
 			// генерал-губернатор
 			if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE)
 			{
-				dialog.text = "Gubernatorze Generale, Wasza Wysokość! Mam pełen porządek w forcie. Czy będą jakieś rozkazy?";
+				dialog.text = "Gubernatorze Generalny, Wasza Wysokość! Mam pełen porządek w forcie. Czy będą jakieś rozkazy?";
 				link.l1 = "Cieszę się, że jesteś w porządku, oficerze. Bez rozkazów, tylko wpadłem sprawdzić fort.";
 			}
 			// <-- legendary edition

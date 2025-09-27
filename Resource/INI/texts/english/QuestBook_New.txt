@@ -1,689 +1,689 @@
 #QUEST JusticeOnSale
 Side Job: Smuggler in Trouble
 #TEXT 1
-I agreed to help a band of smugglers rescue their captain, who is sitting in the prison of @<cityName>. Surely, I'd be better off without soiling my hands with this affair, but they've offered me a decent reward. I should talk to the commandant... or, perhaps, it's better to turn all those gallowbirds to the authorities?
+I've agreed to help a band of smugglers rescue their captain, who's locked up in the prison at @<cityName>. Truth be told, I'd be better off steering clear of this business, but the reward they've promised is tempting. I should speak with the commandant... or perhaps it would be wiser to turn these rogues over to the authorities?
 #TEXT 2
-Being occupied with more important affairs, I have forgotten about the captain I liberated from the prison and the deal with his boys. The rascal must have used his opportunity to sneak away. Well, so be it.
+Caught up with more pressing matters, I lost track of the captain I freed from prison and the agreement with his crew. The scoundrel must have seized his chance to slip away. So be it.
 #TEXT 3
-I liberated the captain of the smugglers and received my reward. Money has no smell.
+I freed the smugglers' captain and collected my reward. Money knows no scent.
 #TEXT 4
-I liberated the captain of the smugglers from the prison, but these scoundrels decided to deceive me! Alright, now they can strike their deals with the devil!
+I freed the smugglers' captain from prison, but those scoundrels tried to double-cross me! Very well—let them make their bargains with the devil now!
 #TEXT 5
-I informed the town authorities about the smugglers' plans - they can handle it by themselves from this point on.
+I’ve informed the town authorities about the smugglers’ plans. From here on, they can handle the matter themselves.
 #TEXT 6
-Part of the smugglers managed to get away. The governor will surely be displeased with my slowness.
+Some of the smugglers managed to escape. The governor will no doubt be displeased with my lack of haste.
 #TEXT 7
-All smugglers got what they deserved. Now I need to report to the governor, and the deal is done.
+All the smugglers have received their due. Now I must report to the governor, and the job will be finished.
 
 #QUEST AffairOfHonor
 Side Job: Matter of Honour
 #TEXT 1
-By chance, I met a very bad-mannered officer. I'll have to teach him some manners and uphold the honor of the girl. So, in two hours at the lighthouse we'll meet.
+By chance, I encountered a most ill-mannered officer. I'll need to teach him a lesson and defend the lady's honor. We are to meet at the lighthouse in two hours.
 #TEXT 2
-The churl is punished, and the outraged honor is upheld! I must tell this pleasant news to the girl. Quickly back to the town!
+The scoundrel has been punished, and honor restored! I must bring this good news to the young lady. Back to town at once!
 #TEXT 2_1
-Oh hell. I missed the duel. What a fool I am.
+Damn it. I missed the duel. What a fool I am.
 #TEXT 3
-A miserable father, a good-for-nothing son, the lady's honor... Alright, let's see how it ends up this time. Let's visit the tavern and the brothel for starters.
+A wretched father, a worthless son, and a lady's honor at stake... Very well, let's see how this unfolds. First, I'll pay a visit to the tavern and the brothel.
 #TEXT 3_1
-Excellent! Now there's only one little thing left - to slaughter the scoundrel.
+Excellent! Now there's only one thing left—to deal with the scoundrel.
 #TEXT 4
-The deed is done, and father and son can sleep well... until the next time. Oh, and I deserve a reward. Let's collect it!
+The deed is done, and father and son can rest easy—at least until trouble stirs again. Now, it's time to claim my well-earned reward.
 #TEXT 4_1
-Well, I missed it - so what? No big deal.
+Well, I missed it—so what? It's no great loss.
 #TEXT 5
-Are things looking that black if the authorities are issuing letters of marque to random rascals and drunkards? I should visit the tavern and see who is terrorizing the local populace.
+Are things truly so dire if the authorities are handing out letters of marque to any rascal or drunkard? I should visit the tavern and find out who’s been terrorizing the locals.
 #TEXT 6
-One scoundrel less in this world. It's nice to do good deeds.
+One less scoundrel in the world. It feels good to do a righteous deed.
 #TEXT 6_1
-I have changed my mind - I won't fight. I'm just not in the mood. Besides, the girl should taste all the delights of being a concubine of a brave corsair compared to being a maid in the tavern.
+I've changed my mind—I won't fight. I'm simply not in the mood. Besides, the girl should experience the pleasures of being a corsair's concubine, rather than living as a tavern maid.
 #TEXT 7
-A duel! And the reason can't be any weightier.
+A duel! And the cause could not be more serious.
 #TEXT 8
-The insolent fellow got his due.
+The insolent fellow got what he deserved.
 #TEXT 8_1
-Perhaps I chickened out... I don't know.
+Perhaps I lost my nerve... I can't say for certain.
 #TEXT 9
-A citizen told me about an intriguing way of making money: robbing partners at the game of cards, then accusing them of cheating and later killing them in a duel to avoid the spreading of undesired gossip. I should check out if it is true.
+A local told me of an unusual way to make money: cheat partners at cards, accuse them of dishonesty, and then challenge them to a duel—killing them to keep rumors from spreading. I should look into whether this is true.
 #TEXT 10
-Yes, the citizen was right. Poor Tom, like the others, too, fell victim to the rascal. But I have put an end to this.
+The citizen was right. Poor Tom, like the others, fell victim to that scoundrel. But I've put an end to it.
 #TEXT 10_1
-Pfff! Cards, sharpers, duels... I've got no time for this crap!
+Cards, cheats, duels... I’ve no time for such nonsense!
 #TEXT 11
-A fencing teacher is afraid of a fight - who would believe it! The governor's nephew will have a hard time with a teacher like that. But it's not my business, anyway. I'd rather see the merchant.
+A fencing instructor afraid of a duel—who would believe it! The governor's nephew won't learn much from a teacher like that. Still, it's none of my concern. I'd best pay a visit to the merchant.
 #TEXT 12
-The mercenary is dead. Let's tell the teacher the good news.
+The mercenary is dead. I should report the good news to the teacher.
 #TEXT 12_1
-That mercenary looked like a very tough guy. I decided not to fight him.
+That mercenary looked like a real bruiser. I decided it was wiser not to pick a fight with him.
 #TEXT 13
-Yeah, these days the officers are not like they used to be. But even those strive to be killed in a duel instead of perishing in glorious combat. Well, I only need to make sure that the more worthy will live on. I have two days at most. I should start with the search for the mistress.
+These days, officers aren't what they once were. Still, even now, they’d rather die in a duel than fall in the heat of battle. My task is to ensure the most worthy survive. I have no more than two days. Best begin by searching for the mistress.
 #TEXT 14
-It seems that the officer I knew was lucky as opposed to the officer I haven't known, who is now dead. Now I should heed the advice of the seconds and leave the town for a while.
+It appears the officer I knew was fortunate, unlike the one I didn't know—he's dead now. I should take the seconds' advice and leave town for a while.
 #TEXT 14_1
-I decided not to interfere with someone else's affairs. Let them solve their own problems by themselves.
+I decided not to meddle in other people's affairs. Let them handle their own problems.
 #TEXT 15
-'Divine Justice' sounds great! I will have to interfere and defend the planter in a duel.
+"Divine Justice"—what a fine name for this affair! I must intervene and defend the planter's honor in a duel.
 #TEXT 16
-An ambush! I should have figured it out. Now the planter should have weighty arguments against his neighbor. Now to collect my reward: surely it was well deserved.
+An ambush! I should have seen it coming. Now the planter has strong evidence against his neighbor. Time to collect my reward—I've certainly earned it.
 #TEXT 16_1
-Interesting, can I now expect discounts from the local smugglers?
+I wonder if I can now expect discounts from the local smugglers.
 
 #QUEST BurntShipQuest
 Side Job: Ship Replacement in @<cityName>
 #TEXT 1
-Harbor master @<portmanName> from @<cityName> asked me to find an extraordinary ship with a specific characteristic @<text>. He offered me a very decent reward. I have half a year at my disposal.
+Harbormaster @<portmanName> of @<cityName> has asked me to find an extraordinary ship with a specific characteristic: @<text>. He’s offered a generous reward for my trouble. I have six months to complete this task.
 #TEXT 2
-Well, it seems that harbor master @<portmanName> resolved all his issues by himself. I don't think he came off as a loser, anyway.
+It seems that harbor master @<portmanName> managed to resolve his problems on his own. In any case, he didn't come across as a failure.
 #TEXT 3
-The harbor master was not so simple and he gave the insurance money to the usurer. Well, I still have the ship. Let's see how this works out.
+The harbor master proved cunning and handed the insurance money over to the usurer. At least I still have my ship. We'll see how this turns out.
 #TEXT 4
-I have received a reward for a unique ship - @<money> pesos. For such money, two similar ships can be bought. I must admit that the harbor master surely knows his business and can persuade the insurance office.
+I've received a reward of @<money> pesos for a unique ship. For that sum, I could buy two ships of the same kind. I must admit, the harbor master certainly knows his trade and how to negotiate with the insurance office.
 #TEXT 5
-I decided to keep the ship for myself. It seemed to me that @<money> pesos is just too small a price for such a gorgeous ship.
+I've decided to keep the ship for myself. @<money> pesos is far too little for such a magnificent vessel.
 
 #QUEST GiveShipLetters
 Side Job: Lost and Found
 #TEXT 1
-A curious find! Someone was either in a hurry or just too absentminded - either way, he lost a full set of a ship's documents. I am certain that their owner will soon announce his loss.
+A curious find! Someone was either in a hurry or simply too absentminded—either way, he lost a complete set of ship's documents. I'm certain the owner will soon report their loss.
 #TEXT 2
-Well, I did a favor for nice people, and it didn't cost me any effort.
+Well, I did a favor for some good people, and it didn't cost me any effort.
 #TEXT 3
-Well, the world is not without good people. It's great that the owner will soon recover his loss!
+Well, there are still good people in this world. It's a relief that the owner will soon recover his loss!
 #TEXT 4
-Well, the world is not without good people. It was lucky that I dropped in at the shipyard.
+Well, the world is not without good people. I was fortunate to stop by the shipyard.
 #TEXT 5
-The reward was small, but I spent almost no effort, anyway.
+The reward was small, but I hardly had to lift a finger for it.
 #TEXT 6
-Perhaps, it's for the best. I gained little, but at least I don't have to bother myself with these documents now.
+Perhaps it's for the best. I gained little from this, but at least I no longer have to trouble myself with those documents.
 #TEXT 7
-It's great when the merchant and the merchandise find each other so fortunately!
+It's always a fine thing when the merchant and his goods find each other so fortuitously!
 #TEXT 8
-It's great when your favor is rewarded accordingly!
+It's always satisfying when your loyalty is properly rewarded!
 #TEXT 9
-Unicuique secundum opera eius! The documents will soon return to their owner - and money has already slipped into my pocket.
+Unicuique secundum opera eius! The documents will soon be returned to their rightful owner—and the coin is already in my pocket.
 #TEXT 10
-I should have delivered these documents earlier, that way their owner wouldn't have to obtain a new set of documents.
+I should have delivered these documents sooner; then their owner wouldn't have needed to obtain a new set.
 
 #QUEST ReasonToFast
 Side Job: A Reason to Hurry
 #TEXT 1
-A cute girl blabbed out that an officer from the garrison was hurrying to some cove so much that it had even distracted him from his fun and games. Perhaps it's worth investigating?
+A charming young woman let slip that a garrison officer was in such a hurry to reach a certain cove, he abandoned his revelry altogether. Perhaps it's worth looking into?
 #TEXT 2
-There are many windbags around. Perhaps, I was just imagining things?
+There are plenty of windbags about. Perhaps I was just imagining things?
 #TEXT 3
-Perhaps, I just gave way to the offended girl. I shouldn't have thought up what was missing...
+Perhaps I simply gave in to the girl's wounded pride. I shouldn't have imagined things that weren't there...
 #TEXT 4
-What an ill-luck! That guy showed up at the very wrong time. Now it is too late to guess what they were up to...
+What rotten luck! That fellow appeared at the worst possible moment. Now it's too late to figure out what they were planning...
 #TEXT 5
-It turned out that I was tracked by a pirate messenger, the patrolman was waiting for him here. But it seems I managed to pretend to be the messenger, @<sName>.
+It turns out I was being tracked by a pirate messenger, and the patrolman was waiting for him here. But it seems I managed to pass myself off as the messenger, @<sName>.
 #TEXT 6
-I tracked down the corrupt patrol officer and was convinced that he had dealings with pirates. Unfortunately, I didn't manage to arrest him. Still, he was duly punished.
+I tracked down the corrupt patrol officer and confirmed his dealings with pirates. Although I failed to arrest him, he received the punishment he deserved.
 #TEXT 7
-I failed to talk to the patrol officer. Ah, hell with him, anyway!..
+I failed to speak with the patrol officer. Ah, to hell with him anyway!
 #TEXT 8
-What an ill-luck! The patrol officer died, and his mystery died with him...
+What ill luck! The patrol officer is dead, and his secret has died with him...
 #TEXT 9
-Judas in the military seeks to get his 30 'pieces' of silver. Interesting, what kind of favor can cost such a pile of @<sText>?
+A Judas in the military is looking to earn his thirty pieces of silver. I wonder what kind of favor is worth such a pile of @<sText>?
 #TEXT 10
-A questionable bargain! Still, @<sName> would not hunt this map without a reason.
+A questionable bargain indeed! Still, @<sName> wouldn't be after this map without good reason.
 #TEXT 11
-@<sShipType> '@<sShipName>' with a cargo of @<sGoodsName> is hanging around without an escort. That's some useful information...
+The @<sShipType> '@<sShipName>', carrying a cargo of @<sGoodsName>, is sailing without an escort. That's valuable information...
 #TEXT 12
 The governor keeps his valuables in his own boudoir? How careless of him...
 #TEXT 13
-Thank God, this is finally over!
+Thank God, it's finally over!
 #TEXT 14
-A nice blade is a great reward! It's also worth seeing whether this map can cost a handful of gems!
+A fine blade makes for a worthy reward! I should also find out if this map is worth a handful of gems.
 #TEXT 15
-I got a hold of a pirate map. I need to check whether it's worth the money as soon as I can!
+I've acquired a pirate map. I need to find out if it's worth the money as soon as possible!
 #TEXT 16
-Huh... That's how your trust in justice can turn against you... I was suspected of an attack on the patrolling party...
+Hmph... So much for trusting in justice—it’s turned against me. Now I stand accused of attacking the patrol.
 #TEXT 17
-This affair was finally over, and, it seems, I didn't come off as a loser!
+This affair is finally over, and it seems I didn't come out the loser!
 #TEXT 18
-The lead of the patrolman was correct! The great prize will surely more than cover all my expenses.
+The patrolman's lead was true! This grand prize will more than cover all my expenses.
 #TEXT 19
-How unfortunate. I failed to make any good of the information purchased for a crapload of money.
+How unfortunate. I failed to make any use of the information I bought for a hefty sum.
 #TEXT 20
-I had to give @<sText> just in order to not hear the hot breath of @<sName> behind my back. Next time I shall be more cautious when undertaking such adventures.
+I had to hand over @<sText> just to avoid feeling the hot breath of @<sName> on my neck. Next time, I'll be more cautious when embarking on such ventures.
 #TEXT 21
-@<sName> will not part with @<sText> easily. I need to get out of here, and quickly.
+@<sName> won't give up @<sText> without a fight. I need to get out of here—and fast.
 #TEXT 22
-It turned out that the pirates somehow learned about the blunder of the patrol officer. Well, it is his funeral, most likely, he's already dead, anyway, and it's high time for me to get out of here... It seems that there is no one left to tell @<sName> about my deeds...
+It seems the pirates have discovered the patrol officer's blunder. It's likely he's already met his end—his funeral, not mine. Best I make my escape while I still can. With no one left alive, there’s no one to tell @<sName> of my actions...
 #TEXT 23
-The pirates knew that I had the map of @<sName>. Moreover, they also knew about the island where he had hidden his treasures. It's good that their wits were no match for their greed, as they failed to find the treasure before I did.
+The pirates knew I had the map of @<sName>, and they also knew about the island where he hid his treasures. Fortunately, their greed outpaced their wits, and they failed to find the treasure before I did.
 #TEXT 24
-Considering that the forces were unequal, I was forced to hand over the treasure to treasure hunters of @<sName>. Next time I shall be more cautious when undertaking such adventures.
+Given that the odds were against me, I had no choice but to surrender the treasure to the treasure hunters from @<sName>. Next time, I'll be more cautious before embarking on such ventures.
 #TEXT 25
-I managed to sink a pirate ship, on which this operation involving the patrol officer was orchestrated. The patrolman himself must surely be dead by now, the pirates never forgive blunders like that one... Well, it seems that there is no one left to tell @<sName> about my deeds...
+I managed to sink the pirate ship that was at the center of this operation with the patrol officer. The patrolman himself must be dead by now—pirates never forgive mistakes like that. Well, it seems there’s no one left to tell @<sName> about what I’ve done...
 #TEXT 26
-I managed to come off clear out of this story with the patrolman. I don't think the pirates will chase me forever. Surely they have other things to do.
+I managed to come out of this business with the patrolman unscathed. I doubt the pirates will pursue me forever—they surely have other matters to attend to.
 
 #QUEST PiratesOnUninhabited
 Side Job: Saved from @<shoreName>
 #TEXT 1
-At @<shoreName> I have taken onboard @<count> sailors from the wrecked pirate @<shipTypeName>. They asked to be delivered to any inhabited cove. Well, I can understand them - they are at odds with the law, after all...
+At @<shoreName>, I took aboard @<count> sailors from the wrecked pirate @<shipTypeName>. They've asked me to deliver them to any inhabited cove. I can't blame them—they're wanted men, after all...
 #TEXT 2
-I delivered the shipwrecked pirates to @<toShore> and even received a small reward. Surely, it wasn't much, but still will not hurt...
+I delivered the shipwrecked pirates to @<toShore> and even received a small reward. It wasn't much, but every bit helps.
 #TEXT 3
-I delivered the pirates from the uninhabited island to @<toShore>. But, these scoundrels demanded that I lend them money. I was forced to explain to them that I don't lend money to any of their kind.
+I brought the pirates from the deserted island to @<toShore>. However, these scoundrels had the nerve to ask me for a loan. I made it clear that I don't lend money to the likes of them.
 #TEXT 4
-I delivered the pirates from the uninhabited island to @<toShore> and even loaned them some money... I can't imagine how I would have struggled out of these dire straits, were I in their shoes...
+I brought the pirates from the deserted island to @<toShore> and even lent them some money. I can't imagine how I would have managed in such dire straits if I were in their place.
 #TEXT 5
-At @<shoreName> I have taken onboard @<count> sailors from the wrecked pirate @<shipTypeName>. They asked to be delivered to any inhabited cove in exchange for a treasure map. Well, we'll see about the map... Or should I just turn them in to the authorities? In that case, I am sure to receive my reward...
+At @<shoreName>, I took aboard @<count> sailors from the wrecked pirate @<shipTypeName>. They've asked me to deliver them to any inhabited cove in exchange for a treasure map. We'll see about that map... Or perhaps I should turn them over to the authorities instead. In that case, I'm certain to receive a reward.
 #TEXT 6
-The rascal chose to trick me, but in the end, he paid for this.
+The scoundrel tried to deceive me, but in the end, he paid the price.
 #TEXT 7
-The rascal didn't have the map on him, but he told me where captain @<capName> had hidden his loot. I'll have to check @<toShore>.
+The scoundrel didn't have the map on him, but he did tell me where Captain @<capName> hid his loot. I'll need to search @<toShore>.
 #TEXT 8
-I don't know whether the treasure was in @<shore> or not. I failed to find it. Well, I can't say my expenses were too big, anyway.
+I can't say for certain whether the treasure was hidden at @<shore> or not—I failed to find it. At least my expenses weren't too great.
 #TEXT 9
-The pirate was right. In @<shore> I have found a nice treasure indeed...
+The pirate was right. I found quite a treasure in @<shore>...
 #TEXT 10
-That pirate is surely no simple guy. It turned out that he had promised that treasure not just to me. Well, either way in the end I was the one to claim it.
+That pirate was no ordinary man. It seems he promised that treasure to more than just me. Still, in the end, I was the one who claimed it.
 #TEXT 11
-At @<shoreName> I have taken onboard @<count> sailors from the wrecked pirate @<shipTypeName>. I should deliver them to any inhabited cove. Or simply turn them in to the authorities.
+At @<shoreName>, I took aboard @<count> sailors from the wrecked pirate @<shipTypeName>. I can deliver them to any inhabited cove, or turn them over to the authorities.
 #TEXT 12
-I decided that a bird in hand is better than two in the bush and turned the pirates in to governor @<mayorName>. I think it was the right thing to do, at least the money is already jingling in my pocket.
+I decided that a bird in the hand is worth more than two in the bush and turned the pirates over to Governor @<mayorName>. I believe it was the right choice—at least the reward is already jingling in my pocket.
 #TEXT 13
-At @<shoreName> I have taken onboard @<count> sailors, put ashore by captain @<badCapName>. They claim that captain is sailing on @<ship> and deals in slaves. We have agreed to find him. If everything goes as planned, I will take the contents of the hold, and they'll get the ship.
+At @<shoreName>, I took aboard @<count> sailors who were put ashore by Captain @<badCapName>. They claim that captain is sailing on the @<ship> and is involved in the slave trade. We've agreed to track him down. If all goes well, I'll take whatever is in the hold, and they'll get the ship.
 #TEXT 14
-I boarded @<ship>, and in her hold, I have actually found the slaves. Well, it turns out that having friends among pirates pays off sometimes...
+I boarded @<ship> and, sure enough, found the slaves in her hold. It seems having friends among pirates does pay off from time to time...
 #TEXT 15
-I had to sink @<ship> and finish off the pirates as well. I guess no one will be upset about it.
+I was tasked with sinking the @<ship> and dealing with the pirates aboard. I doubt anyone will mourn their loss.
 #TEXT 16
-In the heat of battle I have sunk @<ship>. I had to compensate her cost to the pirates. I couldn't have left them without any means for existence, after all, could I?
+In the heat of battle, I sank @<ship>. I had to pay the pirates for her loss—I couldn't very well leave them without any means to survive, could I?
 
 #QUEST ShipWrecked
 Side Job: The Shipwrecked
 #TEXT 1
-At @<shoreName> I have taken onboard @<count> sailors from the wrecked @<shipTypeName> '@<ShipName>'. I should deliver them to any settlement of @<sNation>.
+At @<shoreName>, I took aboard @<count> sailors from the wrecked @<shipTypeName> "@<ShipName>". I must deliver them to any settlement belonging to @<sNation>.
 #TEXT 2
-At @<shoreName> I have taken onboard @<count> sailors, put ashore by captain @<badCapName>. I should deliver them to any settlement of @<sNation>.
+At @<shoreName>, I took aboard @<count> sailors who were put ashore by Captain @<badCapName>. I need to deliver them to any settlement belonging to @<sNation>.
 #TEXT 3
-At @<shoreName> I have taken onboard @<count> sailors from the wrecked @<shipTypeName> '@<ShipName>'. I should deliver them to the nearest settlement.
+At @<shoreName>, I took aboard @<count> sailors from the wrecked @<shipTypeName> '@<ShipName>'. I must deliver them to the nearest settlement.
 #TEXT 4
-At @<shoreName> I have taken onboard @<count> sailors, put ashore by captain @<badCapName>. I should deliver them to the nearest settlement.
+At @<shoreName>, I took aboard @<count> sailors who had been put ashore by Captain @<badCapName>. I must deliver them to the nearest settlement.
 #TEXT 5
-At @<shoreName> I have met @<count> sailors from the wrecked @<shipTypeName> '@<ShipName>'. Their captain should have taken too many blows to the head; he demands to be delivered to Dunkirk. I have no clue what to do with them. So far, I have taken them onboard. I couldn't just leave them in this deserted place.
+At @<shoreName>, I encountered @<count> sailors from the wrecked @<shipTypeName> '@<ShipName>'. Their captain seems to have taken one too many blows to the head—he insists on being taken to Dunkirk. I have no idea what to do with them yet. For now, I've taken them aboard; I couldn't just abandon them in this desolate place.
 #TEXT 6
-I delivered captain @<sName> and his sailors to @<sCity> and even received a small reward. Not too much, but won't hurt, either.
+I delivered Captain @<sName> and his crew to @<sCity>, and even received a small reward for my trouble. Not much, but every bit helps.
 #TEXT 7
-This insane captain demands to be delivered to Dunkirk and just doesn't want to leave my ship! His behavior becomes absolutely intolerable! I have no clue what to do in this situation!
+This mad captain insists on being taken to Dunkirk and refuses to leave my ship. His behavior has become utterly intolerable. I have no idea how to handle this situation!
 #TEXT 8
-That nutcase finally got what he was asking for. I had to finish him off. I simply had no other choice. He was talking about unimaginable treasures, while not having even a spoon. What a crook...
+That madman finally got what was coming to him. I had no choice but to finish him off. He rambled on about unimaginable treasures, yet didn't even own a spoon. What a scoundrel...
 #TEXT 8_1
-What kind of people went!? Circumstances have changed, but that's no reason to wave in front of people. I had to teach this rude person a lesson in good manners.
+What sort of people have I encountered!? The circumstances may have changed, but that's no excuse for such behavior. I had to teach this rude fellow a lesson in proper manners.
 #TEXT 9
-Finally, I managed to get rid of that shipwreck survivor and he even slipped me a piece of a map. I must cut and run before he realizes that I have tricked him. He-he... Dunki-irk... Dunki-iiirk...
+At last, I managed to be rid of that shipwreck survivor—and he even slipped me a piece of a map. I must make sail before he realizes I’ve tricked him. Heh-heh... Dunki-irk... Dunki-iiirk...
 #TEXT 10
-At @<shoreName> I have met the shipwrecked sailors. I should tell the governor of the nearest settlement of @<sNation> about them. I guess, the provisions I have left for them will last long enough until the rescue ship arrives.
+At @<shoreName>, I encountered some shipwrecked sailors. I should inform the governor of the nearest @<sNation> settlement about their situation. I believe the provisions I left will last them until a rescue ship arrives.
 #TEXT 11
-At @<shoreName> I met several sailors, put ashore by pirate @<sBadName>. I should tell the governor of the nearest settlement of @<sNation> about them. I guess the provisions I have left for them will last long enough until the rescue ship arrives.
+At @<shoreName>, I encountered several sailors who had been marooned by the pirate @<sBadName>. I should inform the governor of the nearest @<sNation> settlement about their plight. I believe the provisions I left will sustain them until a rescue ship arrives.
 #TEXT 12
-I was too busy to return to that ill-fated cove. I can only hope that those poor souls were found and rescued by some other captain...
+I was too busy to return to that ill-fated cove. I can only hope those poor souls were found and rescued by another captain...
 #TEXT 13
-I told the governor of @<sCity> about the sailors abandoned at @<ShoreName>, but I have taken too long. Now we can only pray to the Lord that help will arrive in time...
+I informed the governor of @<sCity> about the sailors stranded at @<ShoreName>, but I fear I was too late. Now, all we can do is pray to the Lord that help reaches them in time...
 #TEXT 14
-I told the governor of @<sCity> about the sailors abandoned at @<ShoreName> and even received a small reward. The governor was delighted to hear that the captain of the wrecked ship managed to survive. He will set up a rescue expedition at once.
+I informed the governor of @<sCity> about the sailors stranded at @<ShoreName> and received a modest reward for my trouble. The governor was pleased to learn that the captain of the wrecked ship survived. He will organize a rescue expedition immediately.
 #TEXT 15
-I delivered captain @<sName> and his sailors to the nearest settlement and was rewarded very handsomely, although I never asked for this...
+I delivered Captain @<sName> and his crew to the nearest settlement and was rewarded most generously, though I never asked for it...
 #TEXT 16
-At @<shoreName> I have taken onboard captain @<sName> and @<count> of his sailors. The captain claims that pirate @<sBadName> instigated his crew to mutiny, deprived him of his ship, and put the poor guys ashore. I promised him to seek out his ship '@<ShipName>' and return it to him, whereas I will receive the contents of her hold.
+At @<shoreName>, I took Captain @<sName> and @<count> of his sailors aboard. The captain claims that the pirate @<sBadName> incited his crew to mutiny, stole his ship, and left them stranded ashore. I promised to find his ship, '@<ShipName>', and return it to him. In exchange, I will receive whatever cargo is in her hold.
 #TEXT 17
-As we had agreed, I delivered the captain and his sailors to the settlement. My only reward was their thanks, but it didn't cost me anything anyway.
+As agreed, I delivered the captain and his crew to the settlement. My only reward was their gratitude, but it cost me nothing in the end.
 #TEXT 18
-I boarded @<ShipType> '@<ShipName>' and, according to our deal, gave it back to @<sName>. I took the contents of the hold for myself. Justice was served.
+I boarded the @<ShipType> '@<ShipName>' and, as agreed, returned it to @<sName>. I kept the contents of the hold for myself. Justice has been served.
 #TEXT 19
-In the heat of battle @<ShipType> '@<ShipName>' was sunk and the contents of her hold, obviously, were lost as well. I feel very bad for captain @<sName>. But what was done, is done.
+In the heat of battle, the @<ShipType> '@<ShipName>' was sunk, and naturally, everything in her hold was lost as well. I feel sorry for Captain @<sName>, but what's done is done.
 
 #QUEST JungleGirl
 Side Job: Damsel in the Jungle
 #TEXT 1
-I promised @<sName> from the settlement of @<sCity> to bring her @<sText1> large and @<sText2> small pearls for the necklace of her mistress. I have only 10 days - otherwise, all my efforts could be in vain.
+I promised @<sName> from the settlement of @<sCity> to bring her @<sText1> large pearls and @<sText2> small pearls for her mistress's necklace. I have only 10 days—any longer, and all my efforts may be for nothing.
 #TEXT 2
-In exchange for the pearls @<sName> gave me a very nice amulet. Indeed, you never know where you lose something and when you gain something.
+In exchange for the pearls, @<sName> gave me a fine amulet. Truly, you never know when you'll lose something—or when fortune will smile upon you.
 #TEXT 3
-I failed to collect enough pearls for @<sName>. I feel sorry for the girl, but it's her fault, after all, she shouldn't have applied for work with such a fickle mistress...
+I failed to gather enough pearls for @<sName>. I feel sorry for the girl, but in the end, it's her own doing—she shouldn't have taken a position with such a capricious mistress.
 #TEXT 4
-@<sName> claims that she knows the location where her father, notorious pirate @<sPirateName>, has hidden his treasure. It's @<sTreasureLoc>. We should disembark at @<sShore>. After we find the treasure, I'll need to deliver her back to the settlement of @<sCity>.
+@<sName> claims she knows where her father, the notorious pirate @<sPirateName>, hid his treasure. The location is @<sTreasureLoc>. We should make landfall at @<sShore>. Once we've found the treasure, I'll need to return her to the settlement of @<sCity>.
 #TEXT 5
-@<sName> is dead, and I don't know the place where the chests are hidden. Pity, but this time I was out of luck.
+@<sName> is dead, and I have no idea where the chests are hidden. A pity—this time, luck was not on my side.
 #TEXT 5_1
-I decided not to bother myself with the search for @<sName>'s father's treasure. She can deal with it by herself, if she chooses to.
+I've decided not to trouble myself with searching for @<sName>'s father's treasure. She can handle it on her own, if she wishes.
 #TEXT 6
-The treasure of @<sPirateName> was vast indeed. I received my half. Now I need to deliver @<sName> back home to the settlement of @<sCity>.
+The treasure of @<sPirateName> was truly vast. I’ve received my share. Now I must see @<sName> safely back to the settlement of @<sCity>.
 #TEXT 7
-@<sName> died. I feel sorry for the girl, she's just become rich... What a stupid death...
+@<sName> is dead. I feel sorry for the girl—she's just come into her fortune, and now this. What a senseless death...
 #TEXT 8
-I delivered @<sName> home with her treasure. As a token of her gratitude, she made me a very nice gift... Indeed, it's very nice to make people happy...
+I brought @<sName> home along with her treasure. As a token of gratitude, she gave me a fine gift. It’s a good feeling, bringing happiness to others.
 #TEXT 9
-Daughter of @<sText> in the settlement of @<sCity> has run away from home. She claimed that she hated to marry the usurer's son, and she begged me to take her to her chosen one, @<sLover>. And what should I do with her? I would hate to spoil her life for the rest of her days, but I can understand her parents as well...
+The daughter of @<sText> in @<sCity> has run away from home. She says she cannot bear to marry the usurer's son and has pleaded with me to take her to her true love, @<sLover>. What am I to do with her? I’d hate to ruin her life, but I can see her parents’ side as well...
 #TEXT 10
-@<sName> died... That's what happens when the young ones pay no heed to their parents...
+@<sName> is dead... Such is the fate of those young souls who ignore their parents' warnings...
 #TEXT 11
-I handed the runaway to the guards. Let them decide what to do with her...
+I turned the runaway over to the guards. Let them decide her fate...
 #TEXT 12
-In the settlement of @<sCity> the girl ran away from me, as well. Well, I can only hope that she finds her happiness, for which she is willing to sacrifice everything. Oh, the youth...
+In the settlement of @<sCity>, the girl ran away from me as well. All I can do now is hope she finds the happiness she's willing to risk everything for. Ah, youth...
 #TEXT 13
-I took the runaway to her father, and I am certain it was the right thing to do. What can be worse than the woe of the parents who lost their only child? And her father rewarded me handsomely.
+I returned the runaway to her father, and I am certain it was the right thing to do. What could be worse than the grief of parents who have lost their only child? Her father rewarded me handsomely.
 #TEXT 14
-I took the girl to her chosen one. From now on they can go on their own, I am not their nanny.
+I delivered the girl to her beloved. From here on, they can manage on their own—I'm no nursemaid.
 #TEXT 15
-I have undertaken to deliver the loving couple to the town of @<sCity>, to the parents of her new groom. I think this is the right thing to do.
+I've agreed to escort the young couple to @<sCity>, where the bride will meet her new groom's family. I believe this is the right course of action.
 #TEXT 16
-I have delivered the loving couple where I promised. Now, I should go to @<sText> and claim my reward from the groom's father. I wonder how much happy he will be to see me?
+I've delivered the loving couple as promised. Now I should head to @<sText> and claim my reward from the groom's father. I wonder how pleased he'll be to see me.
 #TEXT 17
-I decided not to bother the groom's parents, surely they must have other concerns. Besides, my expenses in this affair were very small, anyway.
+I decided not to trouble the groom's parents—they surely have other concerns. Besides, my own expenses in this matter were minimal.
 #TEXT 18
-The groom's father thanked me and made me a very decent gift... I feel almost jealous for these two young lovers...
+The groom's father thanked me and gave me a generous gift. I almost envy these two young lovers...
 #TEXT 19
-Seems that it was a waste of my time. Groom's father turned out a real miser. I almost feel sorry for the young couple - neither of them had any luck with their parents... People are too hard-hearted in this back of beyond and wouldn't talk of anything beside gold. Still, I am glad that I managed to help the young ones. They deserve a different life.
+It seems my efforts were wasted. The groom's father proved to be a true miser. I almost pity the young couple—neither has had any luck with their parents. Folks in this godforsaken corner care for nothing but gold. Still, I'm glad I was able to help the young ones. They deserve a better life.
 #TEXT 20
-I have undertaken to deliver the girl @<sName>, who had fled from the brothel in @<sBrothelCity>, to her parents in @<sCity>.
+I've agreed to escort the girl, @<sName>, who escaped from the brothel in @<sBrothelCity>, back to her parents in @<sCity>.
 #TEXT 21
-I have undertaken to bring to @<sName>, who had fled from the brothel, her grip sack. I'll need to look for it in the privacy room. Inside there should be some money, documents, a decent dress, and other belongings of the poor girl.
+I've agreed to return the grip sack to @<sName>, who fled from the brothel. I'll need to search the private room for it. The bag should contain some money, documents, a decent dress, and other personal belongings of the poor girl.
 #TEXT 22
-I was too busy and had to leave the girl in the tavern. Still, I hope that she is smart enough to deal with it by herself.
+I was too busy and had to leave the girl at the tavern. Still, I hope she's clever enough to handle things on her own.
 #TEXT 23
-I did everything I could. I can only hope that @<sName> makes it safely to her home.
+I've done all I can. Now I can only hope that @<sName> reaches her home safely.
 #TEXT 24
-I delivered @<sName> to the settlement of @<sCity>. I didn't bring her to her parents, they will surely have other concerns...
+I delivered @<sName> to the settlement of @<sCity>. I didn't take her to her parents—no doubt they have other matters to attend to.
 #TEXT 25
-I delivered @<sName> home. I was rewarded with a decent blade and also deep moral satisfaction.
+I brought @<sName> safely home. For my efforts, I received a fine blade—and the satisfaction of knowing I did the right thing.
 #TEXT 26
-I delivered @<sName> home. I was rewarded with a great musket and also deep moral satisfaction.
+I brought @<sName> safely home. As a reward, I received an excellent musket—and the deep satisfaction of having done the right thing.
 #TEXT 27
-I delivered @<sName> home. Her brother offered me to partake in a joint raid against the pirates, but I had to refuse.
+I brought @<sName> safely home. Her brother invited me to join a raid against the pirates, but I had to decline.
 
 #QUEST ShipEpidemy
 Event: The Epidemic
 #TEXT 1
-It seems I have caught an infection. Apparently, the captain of '@<sShipName>' was not kidding about the epidemic. I will need to minimize my interactions with the crew and be more careful in the future.
+The captain of '@<sShipName>' was clearly not exaggerating about the epidemic. I'll need to limit my contact with the crew and exercise greater caution from now on.
 #TEXT 2
-The epidemic is declining. I have an appetite again, which means that I am getting well, thank God.
+The epidemic is waning. My appetite has returned, which means I am recovering—thank God.
 #TEXT 3
-We have an epidemic on the ship. The sailors are perishing to disease. The captain of boarded '@<sShipName>', may he burn in hell, was not kidding... What do we have to do now? May the Holy Virgin save us all.
+There's an epidemic aboard the ship. Sailors are dying from disease. The captain of the boarded '@<sShipName>'—may he burn in hell—wasn't exaggerating. What are we to do now? May the Holy Virgin save us all.
 #TEXT 4
-The disease is declining. Praise the Most Holy Mother of God! In the future, I definitely need to be more careful...
+The disease is subsiding. Praise the Most Holy Mother of God! I must be more cautious in the future...
 
 #QUEST ChurchGenQuest1
-Side Job: @<sCity> priest's manuscripts
+Side Job: Manuscripts for the Priest in @<sCity>
 #TEXT 1
-Holy father @<sName> tasked me with an errand: bring precious theosophical manuscripts, given by him for the sake of enlightenment and by the order of his superiors to the priest of @<sOwnerCity>, which he hasn't promptly returned. I undertook to help him in resolving this delicate matter.
+Father @<sName> has entrusted me with a task: to retrieve valuable theosophical manuscripts he lent—by order of his superiors and for the sake of enlightenment—to the priest in @<sOwnerCity>. The priest has not returned them as promised. I have agreed to help Father @<sName> resolve this delicate matter.
 #TEXT 2
-Adult men, servants of God and acting like little children! Well, not a big deal, the most important thing is that I have the manuscripts! Now to take them back to @<sColony>.
+Grown men, servants of God, behaving like children! No matter—the important thing is I have the manuscripts. Now to return them to @<sColony>.
 #TEXT 3_1
-Well, it's amazing to see how people try to vindicate their laziness and irresponsibility by some high purpose. How could one give such priceless things to a random person without any warranties? What a careless priest... Now I must chase that @<sCapName>, captain of "@<sShipName>" across the entire archipelago.
+It's remarkable how some folks justify their laziness and irresponsibility with lofty ideals. How could anyone entrust such valuable items to a stranger without any guarantees? That priest was far too careless... Now I have to hunt down @<sCapName>, captain of the "@<sShipName>", all across the archipelago.
 #TEXT 3_2
-That will be not an easy task to seek for a ship, a name of which I don't know. And I must act quickly, before that God-fearing captain gets rid of these precious books... but the first thing to do is to find out, what is that SACRED name written by @<sCapName> on the backside of his old tub?
+This won't be an easy task—searching for a ship when I don't even know its name. I must act quickly, before that God-fearing captain disposes of those precious books. My first step is to discover the SACRED name that @<sCapName> has written on the stern of his old tub.
 #TEXT 4
-I wonder - why should I be the one paying for someone's religious impulses?! Goddammit! I do hope that near the colony of @<sColony> I will finally catch up with this old tub "@<sShipName>" and her God-fearing captain at the helm, and I will get these papers from him. Perhaps, the Lord will absolve me of a couple of sins for that.
+Why should I be the one footing the bill for someone else's religious fervor? Damn it! I hope that near the colony of @<sColony>, I'll finally catch up with that old tub "@<sShipName>" and her God-fearing captain. Once I have those papers in hand, perhaps the Lord will forgive me a sin or two for my trouble.
 #TEXT 5
-Out of luck again. That @<sName> is surely an interesting guy: the priest entrusted to him an extremely valuable cargo, but the port officials are trembling just at the sound of his name. Well, we'll see how it works out when we finally meet in @<sColony>...
+Out of luck again. That @<sName> is quite the character—the priest has entrusted him with an extremely valuable cargo, yet the port officials tremble at the mere mention of his name. Well, we'll see how things turn out when we finally meet in @<sColony>...
 #TEXT 6
-That captain is surely an interesting person. Well, it's time to meet him face to face, take those longed-for books from him and deliver them to their rightful owner in @<sColony>.
+That captain is certainly an interesting character. Now it's time to meet him in person, retrieve the long-awaited books, and deliver them to their rightful owner in @<sColony>.
 #TEXT 7
-Today I have handed the priest of @<sColony> his precious manuscripts and received my reward together with a warning against the mortal sin of greed.
+Today I delivered the priest of @<sColony> his precious manuscripts and received my reward, along with a warning against the mortal sin of greed.
 #TEXT 7_2
-Old fool @<sCapName> made a debt in the tavern and gave the owner precious books and manuscripts as a pledge. Expenses and expenses again... I will buy out the manuscripts and finally deliver them to @<sColony>.
+Old fool @<sCapName> ran up a debt at the tavern and left his precious books and manuscripts as collateral. Always spending, never learning... I'll pay off the debt, reclaim the manuscripts, and finally deliver them to @<sColony>.
 #TEXT 8
-Another expense in my ledger: I have paid the debt of an old cachalot @<sName> in the tavern. The manuscripts of the priest in the colony of @<sColony> have been bought out, and now it's time to return his longed-for manuscripts to him and show him my expenses book as well!
+Another entry in my ledger: I have settled the debt of the old cachalot @<sName> at the tavern. The priest’s manuscripts in the colony of @<sColony> have been redeemed. Now it’s time to return his long-awaited manuscripts and present him with my expense book as well!
 #TEXT 9
-In fact, there are yet unselfish tavern owners around. I will hurry to @<sColony> to return the theosophical manuscripts and tell the story about a tavern keeper, who gave away priceless books only to uphold his vow.
+It seems there are still some selfless tavern keepers left in this world. I'll make haste to @<sColony> to return the theosophical manuscripts and share the tale of a tavern owner who parted with priceless books simply to honor his vow.
 #TEXT 10
-Oh, my... I would never imagine that such a simple task will be so time and effort-consuming. Well, at least the God-fearing captain @<sCapName> didn't cause me any trouble - he gave me the precious manuscripts and told me to get lost, which I gladly did. Now back to @<sColony>.
+Oh, my... I never would have imagined that such a simple task could be so time-consuming and demanding. At least the God-fearing Captain @<sCapName> didn't give me any trouble—he handed over the precious manuscripts and told me to be on my way, which I gladly did. Now, it's time to return to @<sColony>.
 
 #QUEST ChurchGenQuest2
-Side Job: Church Robbery in @<sCity>
+Side Job: Robbery at the Church in @<sCity>
 #TEXT 1
-Stealing the church money! What's wrong with this world?! Well, while Father @<sName> is bringing curses upon the heads of these scoffers, I should undertake more effective actions - and if the Lord does not reward me for them, then Padre certainly will... They couldn't have gone far...
+Stealing from the church! What is this world coming to? While Father @<sName> calls down curses on these blasphemers, I’d best take matters into my own hands. If the Lord doesn’t reward me, perhaps the Padre will... They can’t have gotten far.
 #TEXT 2
-People in the town say that the money was stolen by the local bandits, who were smart enough to go into hiding. Perhaps I should visit their hunting grounds.
+The townsfolk say the money was stolen by local bandits, who were clever enough to disappear. Perhaps I should search their usual hunting grounds.
 #TEXT 3
-Indeed, God gives everyone his due - the bandits got what they deserved, and I got the church money. Now back to see Father.
+Indeed, God gives everyone his due—the bandits got what they deserved, and I recovered the church’s money. Now, I should return to see the Father.
 #TEXT 4
-Isn't that nice? I did a favor to God and didn't forget about myself, either. A blessing!
+Well, isn’t that something? I did the Lord a favor and looked after my own interests as well. A true blessing!
 #TEXT 5
-That's even more than I could expect! Indeed, working for the church really pays off sometimes!
+That's even more than I expected! Working for the church certainly pays off at times.
 #TEXT 6
-Well, I am rich and I am cursed. Whatever. With such money I don't care neither about God nor about Devil.
+Well, I am rich—and I am cursed. No matter. With this kind of money, I care neither for God nor the Devil.
 #TEXT 7
-The jungle is full of scoundrels of all sorts, but I still haven't found those I was looking for. I'll have to get back to the town to get more precise information regarding their whereabouts.
+The jungle is crawling with all manner of scoundrels, but I still haven't found the ones I'm after. I'll need to return to town to gather more precise information about their whereabouts.
 #TEXT 8
-The stealers of the church property were smarter than I thought, and they fled the settlement. I must hurry to @<sCity> on @<sIsland>, before they have wasted all their money on booze and hookers!
+The thieves who stole the church property were craftier than I expected—they've already fled the settlement. I must make haste to @<sCity> on @<sIsland> before they squander all their loot on drink and women!
 #TEXT 9
-Well, smugglers turned out to be easy to come to an agreement with. They helped the scoundrels for money, and they betrayed them for money. Alright, to @<sShore>, then.
+The smugglers were easy enough to strike a deal with. They aided the scoundrels for coin, and betrayed them just as quickly for the same. Now, it's time to set course for @<sShore>.
 #TEXT 10_1
-Now that's quite a story... Could Father @<sName> indeed be so treacherous? Well, anyway I should talk to him first - it might be that I am suspecting a completely innocent man...
+Now that's quite a tale... Could Father @<sName> truly be so treacherous? In any case, I should speak with him first—it may be that I'm suspecting an entirely innocent man...
 #TEXT 10_2
-Now that's quite a story... Could Father @<sName> indeed be so treacherous? Well, since I have killed all those scoundrels, no one but the padre himself can now confirm or disprove their words...
+Now that's quite a tale... Could Father @<sName> truly be so treacherous? Since I've dealt with all those scoundrels, only the padre himself can confirm or deny their claims now...
 #TEXT 11_1
-Finally, I have found the scoundrels. Surely, this was no Holy Grail, but still... Well, it's time to go back.
+At last, I've found the scoundrels. It may not have been the Holy Grail, but still... Time to head back.
 #TEXT 11_2
-I hope that I did something good and when Doomsday comes, the Almighty will credit it on my account - I shared my belongings with the unfortunate in order to reveal to them the way of righteousness. By the way, I'll need to tell the Father that his church property was likely used for the same purpose as well...
+I hope I've done some good in this world, and that when Doomsday comes, the Almighty will remember it—I've shared my belongings with the less fortunate, hoping to show them the path of righteousness. I should also inform the Father that his church property was likely used for the same purpose...
 #TEXT 11_3
-Who could have thought that the church property could be so expensive... Well, at least I got something in exchange for the money. I'll bring the chalice to the padre - perhaps it will soothe his grief for the stolen cash...
+Who would have thought church property could be so costly... Still, at least I received something for my money. I'll bring the chalice to the padre—perhaps it will ease his sorrow over the stolen funds.
 #TEXT 11_4
-Being poor is no sin... being a liar is! And God has rewarded such nobleness: the scoundrels who defied Him shall be put down, the church property will be saved, and I will receive my due reward!
+Being poor is no sin... but being a liar is! And God has rewarded such virtue: the scoundrels who defied Him shall be brought low, the church’s property will be saved, and I shall receive my rightful reward!
 #TEXT 12_1
-I would like to believe that the repentance of the priest of @<sCity> was sincere. Of course, I have lost something from the material point of view - but moral satisfaction more than makes up for it!
+I’d like to believe the priest of @<sCity> was truly repentant. I may have lost something in material terms, but the moral satisfaction more than makes up for it.
 #TEXT 12_2
-What a twist of events! It turns out that even the priests can fall victim to greed. But, as they say, all is well that ends well. Father @<sName> managed to cope with his temptation and even compensated my expenses.
+What a turn of events! It seems even priests are not immune to greed. Still, all's well that ends well. Father @<sName> overcame his temptation and even reimbursed my expenses.
 #TEXT 12_3
-What a twist of events! It turns out that even the priests can fall victim to greed. But, as they say, all is well that ends well. Father @<sName> managed to cope with his temptation. But he forgot to compensate my expenses - perhaps he was too excited. I had to remind him about it.
+What a turn of events! Even priests, it seems, are not immune to greed. Still, all's well that ends well. Father @<sName> managed to overcome his temptation, but in his excitement, he forgot to reimburse my expenses. I had to remind him.
 #TEXT 12_4
-In these times driven by greed, the Devil can seduce even the clergy, not to mention the laymen. Well, it might seem stupid, but I didn't take the dirty money of that crook in the soutane.
+In these times, when greed rules the day, even the clergy can fall prey to the Devil's temptations—let alone common folk. It may seem foolish, but I refused to take the dirty money from that scoundrel in the soutane.
 #TEXT 12_5
-Indeed, our Lord is merciful if He allows sinners like Father @<sName> to deceive their credulous congregation. I am not as good-natured, and I'd be happy to turn in that crook to the authorities - but, unfortunately, I have no solid evidence of his collusion... Well, that's enough good deeds in our Lord's name. I was lucky enough to make that crook compensate my expenses, though.
+Indeed, our Lord is merciful if He allows sinners like Father @<sName> to deceive their trusting flock. I am not so forgiving, and I'd gladly turn that scoundrel over to the authorities—but, unfortunately, I have no solid proof of his schemes. Well, that's enough good deeds in our Lord's name for now. At least I managed to make that rogue repay my expenses.
 #TEXT 12_6
-Indeed, our Lord is merciful if He allows sinners like Father @<sName> to deceive their credulous congregation. I am not as good-natured, and I'd be happy to turn in that crook to the authorities - but, unfortunately, I have no solid evidence of his collusion... Well, that's enough good deeds in our Lord's name - all I am left with are expenses and disappointments.
+Indeed, our Lord is merciful if He allows sinners like Father @<sName> to deceive their trusting flock. I am not so forgiving, and I'd gladly turn that scoundrel over to the authorities—if only I had solid proof of his misdeeds. Well, that's enough good deeds in our Lord's name for now—all I've gained are expenses and disappointment.
 #TEXT 12_7
-I still could not cast off my suspicions regarding the priest of @<sCity>. Of course, the word of a priest weighs more than that of a bandit, but this entire story stinks. Well, that's enough good deeds in our Lord's name - all I am left with are expenses and disappointments.
+I still can't shake my suspicions about the priest of @<sCity>. True, a priest's word carries more weight than that of a bandit, but this whole affair reeks of trouble. Enough good deeds in the Lord's name for now—all I've gained are expenses and disappointment.
 #TEXT 12_8
-Father accepted the news that all the church money was in the end wasted on booze for the bandits. Well, my expenses haven't paid up as well, if that can be a consolation for him.
+Father took the news calmly that all the church funds were ultimately squandered on drink for the bandits. Well, my own expenses haven't paid off either—if that's any consolation to him.
 #TEXT 12_9
-That was not something a good Christian should have done, but the parish will not become poorer, and my expenses will be covered at least partially. The important thing is that the thieves didn't get a hold of the church coffers.
+That wasn't exactly the act of a good Christian, but the parish won't be any poorer for it, and at least some of my expenses are covered. Most importantly, the thieves didn't get their hands on the church coffers.
 #TEXT 12_10
-To appropriate the church money and to receive a reward for it is surely not the most virtuous deed, but... If I don't change the rigging, any of the sailors may fall down to death, and this sin will be on my soul... As for the Father, I take a vow to donate to his church three times as much money as I have taken!
+Taking the church’s money and claiming a reward for it is hardly a virtuous act, but... if I don’t replace the rigging, any one of my crew could fall to their death, and that sin would weigh on my soul. As for the Father, I vow to donate to his church three times the amount I’ve taken!
 #TEXT 12_11
-Will the Lord forgive me? He is the only one who might know why I deceived the openhearted priest? That alone was a sin, but it was even a greater sin to accept money, which he gave me in his limitless kindness to console me.
+Will the Lord forgive me? Only He knows why I deceived the openhearted priest. That alone was a sin, but accepting the money he gave me in his boundless kindness to comfort me was an even greater one.
 #TEXT 12_12
-No money! No glory! All I was left with are filthy insinuations!!! I will never deal with these hypocrites again!
+No money, no glory—only filthy insinuations! I’ll never deal with these hypocrites again.
 #TEXT 13
-The Bible says that all trials we face are given by the Lord according to our strengths, and God tempers the wind to the shorn lamb. Well, it seems that I have lost my strength, and this burden became too heavy for me. I hope that Father @<sName> will understand when I tell him that I had failed his mission.
+The Bible teaches that every trial is given by the Lord according to our strength, and that God tempers the wind to the shorn lamb. Yet it seems I have lost my strength, and this burden has become too heavy for me. I hope Father @<sName> will understand when I tell him I have failed his mission.
 
 #QUEST CaptainComission1
 Side Job: Last Wish
 #TEXT 1
-Captain of @<sShipName>, @<sCapName>, before he died, had asked me to tell @<sCharName> from @<sCity> that he didn't have time to do his errand. I will have to find this man. The last will of the dying man should be respected...
+Before he died, Captain @<sCapName> of the @<sShipName> asked me to tell @<sCharName> from @<sCity> that he wasn't able to complete his errand. I must find this man—it's only right to honor the dying captain's last wish.
 #TEXT 2
-I decided to not waste time on petty business. Surely that man must have long forgotten about that errand of his.
+I've decided not to waste time on trivial matters. Surely that man has long forgotten about his errand.
 #TEXT 3
-@<sCharName> offered me to ransom his captive @<sCharType>. I didn't agree to that, pleading being busy.
+@<sCharName> offered to let me ransom his captive, @<sCharType>. I declined, claiming I was too busy.
 #TEXT 4
-@<sCharName> from @<sCity> asked me to deliver 150,000 pesos to @<sPirateName> in @<sPirateCity>, to liberate his @<sFamilyType> @<sSlaveName>, held by the pirates in waiting for ransom. When I return, I will receive 40,000 pesos for the job well done.
+@<sCharName> from @<sCity> has asked me to deliver 150,000 pesos to @<sPirateName> in @<sPirateCity>, to secure the release of his @<sFamilyType>, @<sSlaveName>, who is being held by pirates for ransom. Once I return, I'll receive 40,000 pesos as payment for a job well done.
 #TEXT 5
-I was caught in dire straits. It turns out that @<sCapName> was delivering @<sPirateName> in @<sPirateCity> a ransom for some captive @<sSlaveName> - 3 chests of gold. That type, @<sCharName>, told me that his assignment still holds. If I don't bring @<sSlaveName> to the tavern of @<sCity> in 30 days, he promised to set bounty hunters upon my trail... But how could I have missed these chests in the cabin of the late captain?!
+I found myself in a tight spot. It seems that @<sCapName> was delivering a ransom—three chests of gold—to @<sPirateName> in @<sPirateCity> for the captive @<sSlaveName>. That scoundrel, @<sCharName>, made it clear his demand still stands. If I don't bring @<sSlaveName> to the tavern in @<sCity> within 30 days, he'll send bounty hunters after me. But how could I have overlooked those chests in the late captain's cabin?
 #TEXT 6
-I failed to complete @<sCharName>'s assignment, but he must forgive me. After all, I could have perished just like captain @<sCapName>.
+I failed to complete @<sCharName>'s assignment, but he must forgive me. After all, I could have perished, just like Captain @<sCapName>.
 #TEXT 7
-Well, the time allotted to deliver the captive has run out. Let's see what this menacing mister @<sCharName> will do now.
+Well, the time to deliver the captive has run out. Let's see what this menacing Mister @<sCharName> will do now.
 #TEXT 8
-I decided to turn down @<sCharName>'s mission. He might feel offended, but I returned him the money, after all.
+I decided to refuse @<sCharName>'s mission. He may be offended, but I returned his money, after all.
 #TEXT 9
-I have liberated the captive. Now I must deliver him to @<sCharName> in @<sCity>.
+I've freed the captive. Now I must deliver him to @<sCharName> in @<sCity>.
 #TEXT 10
-@<sName> got tired of waiting for a ransom to arrive and sold his captive to a plantation on Barbados. Well, that must be for the best - surely a slave cannot cost more than a hostage. I must hurry to Barbados to visit colonel Bishop.
+@<sName> grew tired of waiting for the ransom and sold his captive to a plantation in Barbados. Perhaps that's for the best—a slave surely fetches less than a hostage. I must make haste to Barbados and speak with Colonel Bishop.
 #TEXT 11
-I paid for @<sName> @<sSum> pesos. Now I must hurry to @<sCity> to @<sCharName>. He must be worried, poor soul. And a reward wouldn't hurt, either.
+I paid @<sSum> pesos for @<sName>. Now I must make haste to @<sCity> to find @<sCharName>. He must be worried, poor soul. And a reward wouldn’t hurt, either.
 #TEXT 12
-A blunder with the chests has cost me a lot. I paid for @<sName> a hefty sum of @<sSum> pesos. But the captive was not so simple and he offered me to take him to @<sCity> in exchange for some very valuable information. I agreed since the client didn't seem to be willing to pay me anything.
+A blunder with the chests has cost me dearly. I paid @<sName> a hefty sum of @<sSum> pesos. But the captive was no ordinary man—he offered me valuable information if I took him to @<sCity>. I agreed, since the client showed no intention of paying me anything.
 #TEXT 13
-A blunder with the chests has cost me a lot. I paid for @<sName> a hefty sum of @<sSum> pesos. It seems that the liberated guy doesn't want to meet with my client at all, but this is not my business. I don't need any more trouble because of this ragamuffin.
+A blunder with the chests has cost me dearly. I paid @<sName> a hefty sum of @<sSum> pesos. It seems the freed man has no intention of meeting my client, but that's not my concern. I want no further trouble over this ragamuffin.
 #TEXT 14
-I have delivered a former hostage and now the free citizen @<sName> to his relative and received my promised reward of 40,000 pesos in credit chests.
+I have delivered the former hostage, now a free citizen, @<sName>, to his relative and received my promised reward of 40,000 pesos in credit chests.
 #TEXT 15
-I have delivered a former hostage @<sName> to his relative, but he refused to compensate my additional expenses... People become really intractable when they don't need anything from you anymore.
+I delivered the former hostage, @<sName>, to his relative, but he refused to compensate me for my additional expenses. People become truly ungrateful once they no longer need your help.
 #TEXT 16
-I delivered the former captive to the client. It turned out that it was a specialist of @<sSpeciality>, hunted by @<sNation>. I was given a valuable gift as a reward on behalf of the government.
+I delivered the former captive to the client. It turned out the person was a @<sSpeciality> specialist, hunted by @<sNation>. As a reward, I received a valuable gift from the government.
 #TEXT 17
-During an escape attempt @<sName> was killed. Perhaps, I shouldn't have endangered him. What am I supposed to say to the client now?
+During the escape attempt, @<sName> was killed. Perhaps I shouldn't have put him in harm's way. What am I supposed to tell the client now?
 #TEXT 17_1
-@<sName> perished in the jungle. Perhaps, I shouldn't have endangered him. What am I supposed to say to the client now?
+@<sName> perished in the jungle. Perhaps I shouldn't have put him at risk. What am I to tell the client now?
 #TEXT 18
-I managed to arrange @<sName>'s escape from the plantation. Now I only need to find him and deliver him to the client.
+I've arranged for @<sName>'s escape from the plantation. Now I just need to find him and deliver him to the client.
 #TEXT 19
-That captive was not so simple and he offered me to take him to @<sCity> in exchange for some very valuable information. I agreed since the client didn't seem to be willing to pay me anything.
+That captive was no ordinary prisoner—he offered me valuable information if I took him to @<sCity>. I agreed, since the client showed no intention of paying me.
 #TEXT 20
-It seems that the liberated guy doesn't want to meet with my client at all, but this is not my business. I don't need any more trouble because of this ragamuffin.
+It appears the freed man has no intention of meeting with my client, but that's none of my concern. I want no further trouble over this ragamuffin.
 #TEXT 21
-That captive engineer was rather useful. The information I had obtained from him would be priceless even for a seasoned warrior.
+That captive engineer proved quite useful. The information I obtained from him would be invaluable, even to a seasoned warrior.
 #TEXT 22
-I notified @<sCharName> about the death of @<sName>, his relative. I kept the ransom money as compensation for my expenses.
+I informed @<sCharName> of the death of his relative, @<sName>. I kept the ransom money to cover my expenses.
 #TEXT 23
-I notified @<sCharName> about the death of @<sName>, his relative, and returned him the ransom money - 150,000 pesos. Of course, I could have demanded to compensate my expenses, but hardly in this case.
+I informed @<sCharName> of the death of his relative, @<sName>, and returned the ransom money—150,000 pesos. Of course, I could have asked to be compensated for my expenses, but that hardly seemed appropriate in this situation.
 #TEXT 24
-@<sName> charged me with the task of sinking two pirate vessels - '@<sShipName1>' and '@<sShipName2>', which went to @<sShoreName> on @<sShoreType>. I must manage in 15 days before they clear the cache.
+@<sName> has tasked me with sinking two pirate ships—'@<sShipName1>' and '@<sShipName2>'—which have sailed to @<sShoreName> on @<sShoreType>. I have 15 days to complete this mission before they empty the cache.
 #TEXT 25
-@<sName>'s task was fulfilled, '@<sShipName1>' and '@<sShipName2>' were destroyed. Now I must hurry to @<sCity> before @<sNameNom> sells the captive to slavers.
+@<sName>'s task is complete—both '@<sShipName1>' and '@<sShipName2>' have been destroyed. Now I must make haste to @<sCity> before @<sNameNom> sells the captive to the slavers.
 #TEXT 26
-I failed to catch up with the pirates. Surely they have cleared the cache by now. I'll have to return to @<sName> empty-handed.
+I failed to catch up with the pirates. No doubt they've cleared out the cache by now. I'll have to return to @<sName> empty-handed.
 #TEXT 27
-I failed to come to an agreement with @<sName>. Now I have no idea whether I should return to @<sCity> to meet @<sCharName>. What will I tell him?
+I failed to reach an agreement with @<sName>. Now I’m not sure if I should return to @<sCity> to meet with @<sCharName>. What will I tell him?
 #TEXT 28
-After my blunder with the mission @<sName> increased the ransom to 200,000 pesos. I didn't pay it with my own money. Now I have no idea whether I should return to @<sCity> to meet @<sCharName>. What will I tell him?
+After my blunder with the mission, @<sName> raised the ransom to 200,000 pesos. I didn't pay it out of my own pocket. Now I’m unsure whether I should return to @<sCity> to meet with @<sCharName>. What am I supposed to tell him?
 #TEXT 29
-After my blunder with the mission @<sName> increased the ransom to 200,000 pesos. I had to pay it with my own money. Now I should hurry to @<sCity> to meet @<sCharName>. Perhaps, the client will compensate my additional expenses, after all?
+After my mistake with the mission, @<sName> raised the ransom to 200,000 pesos. I had to pay it out of my own pocket. Now I must make haste to @<sCity> to meet with @<sCharName>. Perhaps the client will reimburse my extra expenses after all?
 #TEXT 30
-I didn't pay such an outrageous sum. Ransoming a hostage is one thing, but buying a plantation slave is a different story... I wonder, did Bishop reinforce the guard after the incident, or is he still saving?
+I refused to pay such an outrageous sum. Ransoming a hostage is one thing, but buying a plantation slave is quite another... I wonder if Bishop increased the guard after the incident, or is he still trying to save money?
 #TEXT 31
-@<sName> doesn't want to part with his captive without a ransom. Well, I'll have to either find the money or just abandon the whole matter.
+@<sName> refuses to release his captive without a ransom. I'll need to come up with the money, or else give up on the whole affair.
 #TEXT 32
-I told @<sName> about the captive's death. It seems that now he is in the same hopeless position he had put me in before.
+I informed @<sName> about the captive's death. Now, it appears he finds himself in the same hopeless situation he once put me in.
 #TEXT 33
-I failed to destroy the pirate ships @<sShipName1> and @<sShipName2>. Now I'll have to return to @<sName> empty-handed.
+I failed to sink the pirate ships @<sShipName1> and @<sShipName2>. Now I must return to @<sName> empty-handed.
 #TEXT 34
-Finally @<sName> is on board my ship. Now I must hurry to @<sCity> to meet @<sCharName> before he has a heart attack.
+At last, @<sName> is aboard my ship. I must make haste to @<sCity> to meet with @<sCharName> before he suffers a heart attack.
 #TEXT 35
-Eh ... I should not have chosen this option. There was no need to quarrel with @<sName>. Now we really have to solve problems...
+Eh... I shouldn't have chosen that course of action. There was no need to quarrel with @<sName>. Now we've truly got problems to solve...
 #TEXT 36
-Eh ... I should not have chosen this option. There was no need to abandon the @<sName> quest. Now the prisoner had to be redeemed for 250,000 pesos.
+Eh... I shouldn't have chosen that option. There was no need to abandon the @<sName> quest. Now I have to ransom the prisoner for 250,000 pesos.
 
 #QUEST CaptainComission2
 Side Job: Last Wish
 #TEXT 1
-Captain @<sName>, before he died, had asked me to inform the captain of @<sShipType> '@<sShipName>', @<sCapName>, that he is going to be arrested in @<sCity1>. The authorities have sniffed something out about him... @<sShipTypeNom> sails from @<sCity2> and will arrive at the port of @<sCity1> in 10-15 days. I must catch up with it. The last will of a dying man has to be respected.
+Before his death, Captain @<sName> asked me to warn the captain of the @<sShipType> '@<sShipName>', @<sCapName>, that he is about to be arrested in @<sCity1>. The authorities have caught wind of something concerning him. The @<sShipTypeNom> is sailing from @<sCity2> and will arrive at the port of @<sCity1> in 10 to 15 days. I must intercept her. The last wish of a dying man must be honored.
 #TEXT 2
-I was too busy to give @<sCapName> notice about the impending danger. I guess he will pull through, if he is smart enough.
+I was too busy to warn @<sCapName> about the impending danger. If he’s clever enough, he’ll manage to get through it.
 #TEXT 3
-I have fulfilled the task of @<sName>, but didn't help his friend, pleading being busy. He's a smart guy and will pull through by himself.
+I've completed the task for @<sName>, but I didn't help his friend, claiming I was too busy. He's a clever fellow and should manage on his own.
 #TEXT 4
-Captain @<sName> asked me to help him to secretly take out a load of @<sGoods> from @<sShoreName>. When I refused, he just took my ship and left me on a desert coast. Now I have to start from scratch... That's what happens to those willing to help others.
+Captain @<sName> asked me to help him secretly smuggle a load of @<sGoods> from @<sShoreName>. When I refused, he seized my ship and left me stranded on a deserted shore. Now I must start from scratch... So much for helping others.
 #TEXT 5
-Captain @<sName> asked me to help him to secretly take out a load of @<sGoods> from @<sShoreName>. When I refused, he attempted to take my ship. He shouldn't have tried better because I sent him down to feed the sharks. Unfortunately, I don't know where the cache is.
+Captain @<sName> asked me to help him secretly smuggle a load of @<sGoods> from @<sShoreName>. When I refused, he tried to seize my ship. He shouldn't have made that mistake—I sent him down to feed the sharks. Unfortunately, I still don't know where the cache is hidden.
 #TEXT 6
-Captain @<sName> asked me to help him to secretly take out a load of @<sGoods> from @<sShoreName>. When I refused, he attempted to take my ship. I had to flee with all sails set.
+Captain @<sName> asked me to help him smuggle a load of @<sGoods> out of @<sShoreName> in secret. When I refused, he tried to seize my ship. I was forced to flee at full sail.
 #TEXT 7
-Captain @<sName> asked me to help him to secretly take out a load of @<sGoods> from @<sShoreName>. I will receive everything which doesn't fit into his hold... I'll need to moor at @<sShoreNameDat> right after midnight.
+Captain @<sName> has asked me to help him secretly transport a load of @<sGoods> from @<sShoreName>. I’ll receive whatever won’t fit in his hold. I must moor at @<sShoreNameDat> just after midnight.
 #TEXT 8
-I changed my mind and will not deal with @<sName>. Let him face the consequences alone.
+I've changed my mind and will no longer deal with @<sName>. Let him face the consequences on his own.
 #TEXT 9
-It seems that an ambush was set up at @<sShoreName> - the patrol showed up way too quickly. Captain @<sName> was killed in the skirmish. The sailors have scoured the cove, but haven't found the cache. Perhaps, the authorities have already cleared it...
+It appears an ambush was laid at @<sShoreName>—the patrol arrived far too quickly. Captain @<sName> was killed in the skirmish. My crew has searched the cove thoroughly, but the cache remains missing. Perhaps the authorities have already taken it.
 #TEXT 10
-The cargo is in the holds. My share is @<sGoodsQuantity> pieces of @<sGoods>. It is time for us to part. We should hurry before the crown sends hunters for our heads.
+The cargo is stowed in the hold. My share amounts to @<sGoodsQuantity> pieces of @<sGoods>. It's time for us to part ways. We'd best make haste before the Crown sends hunters after us.
 #TEXT 11
-The cargo is in the holds. My share was @<sGoodsQuantity> units of @<sGoods>. Captain @<sName> fears that a chase is possible, and asks to escort his ship to @<sShoreName>, on @<sShoreType>. I decided to help him, all the more so that he promised me a decent reward of @<sSum> pesos.
+The cargo is stowed in the hold. My share amounts to @<sGoodsQuantity> units of @<sGoods>. Captain @<sName> fears we may be pursued and has asked me to escort his ship to @<sShoreName>, on @<sShoreType>. I agreed to help him—especially since he promised a fair reward of @<sSum> pesos.
 #TEXT 12
-A patrol squadron was already waiting for us at the exit of the cove. We had to accept the battle. @<sShipType> '@<sShipName>' with a hold full of @<sGoods> has sunk, and captain @<sName> with it as well.
+A patrol squadron was already waiting for us at the mouth of the cove. We had no choice but to engage in battle. The @<sShipType> '@<sShipName>', its hold full of @<sGoods>, was sunk—along with Captain @<sName>.
 #TEXT 13
-We accepted the battle, and @<sShipType> '@<sShipName>' with a hold full of @<sGoods> has sunk... Well, seems like that was God's will... Brave captain @<sName> had no time to enjoy his newly found riches.
+We engaged in battle, and the @<sShipType> "@<sShipName>", her hold full of @<sGoods>, has sunk... It seems that was God's will. Brave Captain @<sName> had no time to enjoy his newly found riches.
 #TEXT 14
-Me and captain @<sName> decided that it's best for us to go separate ways in order not to bind ourselves by mutual obligations. He went to @<sShoreName>, and I went about my own business.
+Captain @<sName> and I agreed it was best to part ways, so we wouldn't be bound by mutual obligations. He set course for @<sShoreName>, while I turned to my own affairs.
 #TEXT 15
-I failed to escort @<sShipType> '@<sShipName>' in time, and captain @<sName> refused to pay me my reward. Still, I didn't come off as a loser, anyway.
+I failed to escort the @<sShipType> "@<sShipName>" in time, and Captain @<sName> refused to pay my reward. Still, I don't feel like a complete loser.
 #TEXT 16
-Captain @<sName> lured me into a trap and demanded to return the cargo or pay ransom in gold. At @<sShoreName>, part of his heroic crew was already waiting for us. I had to accept the battle.
+Captain @<sName> lured me into a trap and demanded that I return the cargo or pay a ransom in gold. At @<sShoreName>, part of his crew was already waiting for us. I had no choice but to accept the battle.
 #TEXT 17
-Captain @<sName> lured me into a trap and demanded to return the cargo or pay ransom in gold. At @<sShoreName>, part of his heroic crew was already waiting for us. I had to pay him @<sSum> pesos.
+Captain @<sName> lured me into a trap and demanded that I return the cargo or pay a ransom in gold. At @<sShoreName>, part of his crew was already waiting for us. I had to pay him @<sSum> pesos.
 #TEXT 18
-It turned out that captain of patrol @<sShipType>, @<sName>, has connections with smugglers. Perhaps I should visit him in the fort's dungeons, shouldn't I?
+It turns out that the captain of the patrol @<sShipType>, @<sName>, has ties to smugglers. Perhaps I should pay him a visit in the fort's dungeons.
 #TEXT 19
-It turned out that captain of patrol @<sShipType>, @<sName>, is entangled in a dirty story with some lost cargo. Perhaps, I should visit him in the fort's dungeons, shouldn't I?
+It turns out that the captain of the patrol @<sShipType>, @<sName>, is caught up in a sordid affair involving some lost cargo. Perhaps I should pay him a visit in the fort's dungeons.
 #TEXT 20
-I failed to find the cache of captain @<sName>. I think I should not bother the governor of @<sCity> with this.
+I failed to find Captain @<sName>'s cache. I don't think it's worth troubling the governor of @<sCity> about this.
 #TEXT 21
-Captain @<sName> agreed to show me the cache in exchange for half of its contents. First, I'll need to hide the escaper on my ship, and then I'll deal with the rest.
+Captain @<sName> has agreed to show me the cache in exchange for half its contents. First, I need to hide the escapee on my ship, and then I'll handle the rest.
 #TEXT 22
-Captain @<sName> died - and my hope to find the cache died with him.
+Captain @<sName> is dead—and with him, my hopes of finding the cache have perished as well.
 #TEXT 23
-I totally failed the governor's mission... What a shame...
+I've completely failed the governor's mission. What a disgrace...
 #TEXT 24
-The cache of captain @<sName> is in @<sShoreName>. I need to prepare the hold to accept @<sGoodsQuantity> units of @<sGoods>. We need to hurry before the cache is found.
+Captain @<sName>'s cache is hidden at @<sShoreName>. I must ready the hold to take on @<sGoodsQuantity> units of @<sGoods>. We need to move quickly before someone else discovers the stash.
 #TEXT 25
-I was so foolish to let captain @<sName> slip away! I could have earned quite a bit.
+I was a fool to let Captain @<sName> slip away. I could have made a tidy profit.
 #TEXT 26
-We have found the cache, @<sGoodsQuantity> units of @<sGoods> were loaded into the hold. @<sSum1> of those belong to captain @<sName>. In @<sDays> days I'll have to deliver it to @<sShoreName> on @<sShoreType>. Let those governor's hounds chase captain @<sName> and his precious cargo and add me to their list as well.
+We’ve found the cache—@<sGoodsQuantity> units of @<sGoods> are now stowed in the hold. Of these, @<sSum1> belong to Captain @<sName>. In @<sDays> days, I must deliver them to @<sShoreName> on @<sShoreType>. Let the governor’s hounds chase after Captain @<sName> and his precious cargo—and add my name to their list as well.
 #TEXT 27
-Finally, captain @<sName> revealed his cache, but I thought that I wasn't going to share with him. He tried to dispute my decision and paid for it. And now @<sGoodsQuantity> units of @<sGoods> belong to me.
+At last, Captain @<sName> revealed the location of his cache. I decided I wouldn't share it with him. He tried to argue, but paid the price. Now, @<sGoodsQuantity> units of @<sGoods> are mine.
 #TEXT 28
-Finally, captain @<sName> revealed his cache, but he couldn't stand the news that I was going to hand the whole cargo to the authorities. I had to use surgical intervention, and captain died as a result. Now I need to tell the governor of @<sCity> about the whereabouts of the cache.
+At last, Captain @<sName> revealed the location of his cache. However, he couldn't bear the news that I intended to turn the entire cargo over to the authorities. I was forced to take decisive action, and the captain did not survive. Now I must inform the governor of @<sCity> about the cache's whereabouts.
 #TEXT 29
-I didn't tell the authorities about the location of captain @<sName>'s cache. I guess they'll find it without my aid.
+I chose not to inform the authorities about Captain @<sName>'s cache. I suppose they'll discover it without my help.
 #TEXT 30
-The task of the governor of @<sCity> was completed. Instead of monetary compensation, I have received a very decent gift.
+I have completed the task for the governor of @<sCity>. Instead of a monetary reward, I received a rather generous gift.
 #TEXT 31
-We were late, and there were no buyers at @<sShoreName>. Captain @<sName> offered me to buy his share, but I see no reason to throw away my money for the cargo which is already in my hold anyway. Our dispute was decided by the duel.
+We arrived too late—there were no buyers at @<sShoreName>. Captain @<sName> offered to sell me his share, but I see no reason to waste coin on cargo that's already in my hold. In the end, our dispute was settled by a duel.
 #TEXT 32
-We were late, and there were no buyers at @<sShoreName>. Captain @<sName> offered me to buy his share for @<sSum> pesos. I agreed, and in turn, the captain gave me a nice gift. We parted as friends.
+We arrived too late—there were no buyers at @<sShoreName>. Captain @<sName> offered to sell me his share for @<sSum> pesos. I agreed, and in return, the captain gave me a fine gift. We parted as friends.
 #TEXT 33
-Apparently, captain @<sName> could not share the loot with his crew. I had to reduce the number of those willing to get his share. Captain himself didn't last much longer, either. So, our agreement is now null and void due to the death of one of the partners. I get to keep the whole cargo.
+It seems Captain @<sName> couldn't divide the loot with his crew. I had to deal with those who wanted a share for themselves. The captain didn't last much longer, either. With one partner dead, our agreement is now void. The entire cargo is mine to keep.
 #TEXT 34
-Apparently, captain @<sName> could not share the loot with his crew. I had to reduce the number of those willing to get his share. Besides, the captain offered me to buy his share for @<sSum> pesos. I agreed, and in turn, the captain gave me a nice gift. We parted as friends.
+It seems Captain @<sName> couldn't divide the loot fairly among his crew. I had to deal with a few men eager to claim his share for themselves. Afterwards, the captain offered to sell me his portion for @<sSum> pesos. I accepted, and in return, he presented me with a fine gift. We parted on good terms.
 #TEXT 35
-Apparently, captain @<sName> could not share the loot with his crew. I had to reduce the number of those willing to get his share. Besides, the captain offered me to buy his share for @<sSum> pesos. He also asked me to accept him in my crew, but I refused. He is way too independent.
+It seems Captain @<sName> couldn't divide the loot with his crew. I had to deal with a few who were eager for a larger share. The captain then offered to sell me his portion for @<sSum> pesos. He also asked to join my crew, but I refused—he's far too independent for my liking.
 #TEXT 36
-It seems that captain @<sName> failed to share the booty with his crew. I had to lower the amount of those who wanted a cut. Besides, the captain offered to buy out the booty for @<sSum> pesos. So I did it. And also hired him as an officer under my command. Everyone is looking for such fighters.
+It seems Captain @<sName> neglected to share the booty with his crew. I had to deal with those who demanded their share. In the end, the captain offered to buy out the loot for @<sSum> pesos, which I accepted. I also hired him as an officer under my command—fighters like him are always in demand.
 #TEXT 37
-I was late, and the captain of the patrol @<sShipType>, @<sName>, was executed with his entire crew. I should learn more about it.
+I arrived too late—Captain @<sName> of the patrol @<sShipType> was executed along with his entire crew. I need to find out more about what happened.
 #TEXT 38
-I was late, and the captain of the patrol @<sShipType>, @<sName>, was executed with his entire crew. But he could have enough time to take to the shore the contents of @<sShipTypeQuest>'s hold.
+I was too late—the captain of the patrol @<sShipType>, @<sName>, was executed along with his entire crew. However, he may have had enough time to bring the contents of @<sShipTypeQuest>'s hold ashore.
 #TEXT 39
-It turns out that things are not as simple as they look like. The captain of the patrol @<sShipType>, @<sName>, was executed with part of his crew, but there was no evidence of his crime. I should meet with @<sCharName>, contused former cannoneer of @<sShipType> '@<sShipName>'.
+It seems things are not as simple as they appeared. The captain of the patrol @<sShipType>, @<sName>, was executed along with part of his crew, yet there was no evidence of any crime. I should meet with @<sCharName>, the wounded former cannoneer of the @<sShipType> '@<sShipName>'.
 #TEXT 40
-Former cannoneer of @<sShipType> '@<sShipName>', @<sName>, told me the entire story of the death of @<sShipTypeQuest> '@<sShipNameQuest>'. But that confused guy asked an outrageous price for the information about the cache. I refused to pay him.
+The former cannoneer of the @<sShipType> '@<sShipName>', @<sName>, told me the full story behind the sinking of the @<sShipTypeQuest> '@<sShipNameQuest>'. However, the poor fool demanded an outrageous sum for information about the cache. I refused to pay.
 #TEXT 41
-The conversation with the former cannoneer of @<sShipType> '@<sShipName>' was very fruitful. I need to find @<sSum> pesos - that's what @<sName> has asked for the information about the cache.
+My conversation with the former cannoneer of the @<sShipType> "@<sShipName>" proved quite fruitful. Now, I need to gather @<sSum> pesos—@<sName>'s price for information about the cache.
 #TEXT 42
-I abandoned the whole affair with the cache of captain @<sName>. May the former cannoneer @<sCharName> forgive me, but he asked just too much for it, and I have more important things to do.
+I've decided to abandon the whole business with Captain @<sName>'s cache. May former cannoneer @<sCharName> forgive me, but he was asking far too much for it, and I have more pressing matters to attend to.
 #TEXT 43
-Former cannoneer of @<sShipType> '@<sShipName>', @<sName>, told me the entire story of the death of @<sShipTypeQuest> '@<sShipNameQuest>'. As it turns out, the cache indeed exists and contains the entire cargo of @<sShipTypeQuest> - @<sSum> pieces of @<sGoods> is stored there. I need to prepare the hold and come to @<sShoreName> after midnight - @<sName> will be waiting for me there.
+The former cannoneer of the @<sShipType> '@<sShipName>', @<sName>, has told me the full story behind the sinking of the @<sShipTypeQuest> '@<sShipNameQuest>'. It turns out the cache is real and holds the entire cargo from the @<sShipTypeQuest>—@<sSum> pieces of @<sGoods> are stashed there. I must ready my hold and make for @<sShoreName> after midnight—@<sName> will be waiting for me.
 #TEXT 44
-I foolishly missed my chance to scavenge the cache of captain @<sName>! Perhaps, @<sCharName> didn't wait for me, or, maybe, he decided to put me on. Either way, it was wasted time and money...
+I foolishly missed my chance to scavenge Captain @<sName>'s cache! Perhaps @<sCharName> didn't wait for me, or maybe he was simply toying with me. Either way, it was a waste of time and money...
 #TEXT 45
-The smugglers cleaned out the cache of captain @<sName>. Or, perhaps, @<sCharName> decided to put me on and worked on both fronts. Either way, it was wasted time and money...
+The smugglers have emptied Captain @<sName>'s cache. Or perhaps @<sCharName> was playing me all along, working both sides. Either way, it was a waste of time and money...
 #TEXT 46
-The smugglers found the cache of captain @<sName> before me. I had to recapture the cargo by force. Unfortunately, cannoneer @<sCharName> perished. Ironically, all members of the crew of that ill-fated @<sShipType> '@<sShipName>' are dead, and none of them managed to make any use of their heroic undertaking... I took all goods that fitted into my hold - @<sSum> units of @<sGoods>.
+The smugglers discovered Captain @<sName>'s cache before I arrived, so I was forced to reclaim the cargo by force. Sadly, cannoneer @<sCharName> was killed in the fight. Ironically, every member of the crew from that ill-fated @<sShipType> '@<sShipName>' is now dead, and none lived to benefit from their brave efforts. I took all the goods I could fit in my hold—@<sSum> units of @<sGoods>.
 #TEXT 47
-The smugglers found the cache of captain @<sName> before me. I had to recapture the cargo by force. I took all goods that fitted into my hold - @<sSum> units of @<sGoods>. Now to deliver cannoneer @<sCharName> to the settlement of @<sCity>.
+The smugglers discovered Captain @<sName>'s cache before I arrived, so I had to reclaim the cargo by force. I took all the goods that would fit in my hold—@<sSum> units of @<sGoods>. Now I must deliver cannoneer @<sCharName> to the settlement of @<sCity>.
 #TEXT 48
-We parted with the former cannoneer of @<sShipType> '@<sShipName>' @<sCharName> in the port of @<sCity>. As a token of his gratitude, he gave me a valuable thing as a gift. At least someone from @<sShipType>'s crew made some use of their risky affair.
+We parted ways with @<sCharName>, the former cannoneer of the @<sShipType> '@<sShipName>', in the port of @<sCity>. As a token of gratitude, he gave me a valuable gift. At least someone from the crew of the @<sShipType> managed to gain something from their risky venture.
 #TEXT 49
-It turned out that captain of patrol @<sShipType>, @<sName>, was arrested for naval banditry. Perhaps I should visit him in the fort's dungeons, shouldn't I?
+It turns out that the captain of the patrol @<sShipType>, @<sName>, has been arrested for naval banditry. Perhaps I should pay him a visit in the fort's dungeons.
 #TEXT 50
-It turned out that the captain of patrol @<sShipType>, @<sName>, was arrested for naval banditry, and now the governor of @<sCity> is searching for his cache. I undertook to help him in that affair and obtained permission to pay the prisoner a visit.
+It turns out that the captain of the patrol @<sShipType>, @<sName>, has been arrested for naval banditry, and now the governor of @<sCity> is searching for his hidden cache. I agreed to assist in this matter and received permission to visit the prisoner.
 #TEXT 51
-I completely forgot about the contract with the captain with his cargo ... And to hell with him ... I'll manage somehow. And I'll drop the captain in the first city.
+I completely forgot about the contract with the captain and his cargo... To hell with it. I'll manage somehow. I'll leave the captain in the first port I reach.
 #TEXT 52
-I think that the governor will not get poorer from the fact that I deceived him. And the captain ... As they say: they cut down the forest - the chips fly.
+I doubt the governor will suffer much from my deception. As for the captain... well, as they say, when you cut down the forest, the chips will fly.
 #TEXT 53
-We found a stash, @<sGoodsQuantity> pieces @<sGoods> loaded into the hold. Of these, @<sSum1> belongs to my partner. In @<sDays> days, it needs to be delivered to @<sShoreName>, which is near @<sShoreType>. I decided not to hand the captain over to the authorities, but to hide with him! Now let the governor's bloodhounds look for me ... good luck to them in this!
+We discovered a stash—@<sGoodsQuantity> pieces of @<sGoods> now secured in the hold. Of that, @<sSum1> belongs to my partner. In @<sDays> days, I must deliver it to @<sShoreName>, near @<sShoreType>. I chose not to turn the captain over to the authorities, but to hide with him instead. Let the governor’s bloodhounds hunt for us—good luck to them!
 #TEXT 54
-Looks like Captain @<sName> couldn't share the loot with his crew. I had to reduce the number of people who wanted to get his share. Then he offered to buy it from me. But I refused to pay him. The duel decided our issue in my favor.
+It seems Captain @<sName> couldn't divide the loot with his crew. I had to deal with those who wanted his share for themselves. Afterwards, he tried to buy it back from me, but I refused to pay. In the end, a duel settled the matter in my favor.
 #TEXT 55
-Captain @<sName> accidentally died on his way from jail to my ship. Too bad. Now you can forget about the cache.
+Captain @<sName> died unexpectedly while being transferred from jail to my ship. A pity—now the cache is lost to me.
 
 #QUEST Convict
 Side Job: Fugitives
 #TEXT 1
-In the jungle of @<sIslandType> I met @<sConvictNum> fugitive convicts. I decided to accept them into my crew. Around midnight I'll need to moor at @<sShoreName>.
+In the jungle of @<sIslandType>, I encountered @<sConvictNum> fugitive convicts. I've decided to take them into my crew. Around midnight, I'll need to moor at @<sShoreName>.
 #TEXT 2
-The fugitive convicts, whom I met at @<sIslandType>, asked me to procure a tartane or long boat for them, and promised to pay double. I'll have to bring their new tub to @<sShoreName>. The deadline is tomorrow morning.
+The fugitive convicts I encountered at @<sIslandType> have asked me to procure a tartane or a longboat for them, promising to pay double the usual rate. I must deliver their new vessel to @<sShoreName> by tomorrow morning.
 #TEXT 3
-I changed my mind - I won't help the convicts. They'll have to pull through all by themselves.
+I've changed my mind—I won't help the convicts. They'll have to fend for themselves.
 #TEXT 4
 I brought the vessel to @<sShoreName>. The fugitive convicts have paid me in full.
 #TEXT 5
-I brought the vessel to @<sShoreName>. But instead of paying me, the convicts made me a very decent gift. I am fine with that.
+I brought the vessel to @<sShoreName>. Instead of paying me, the convicts gave me quite a generous gift. I can't complain about that.
 #TEXT 6
-I brought the vessel to @<sShoreName>. But the damned convicts chose to put me on. I had to explain to them that one should stay true to his word. Pity that this lesson will be of no use to them anymore.
+I brought the vessel to @<sShoreName>. But the damned convicts tried to double-cross me. I had to remind them that a man should keep his word. Pity this lesson will do them no good now.
 #TEXT 7
-The convicts saw the ship called @<sShipName> being loaded yesterday night with @<sGoodName>. Whoever they were, they couldn't have gone far.
+The convicts spotted the ship called @<sShipName> being loaded with @<sGoodName> last night. Whoever they were, they can't have gone far.
 #TEXT 8
-In the jungle of @<sIslandType> I met @<sConvictNum> fugitive convicts. They asked to be delivered to the lighthouse of @<sCity>. I agreed to do this for @<sSum> pesos. About midnight I'll need to send a lifeboat for them to @<sShoreName>.
+In the jungle of @<sIslandType>, I encountered @<sConvictNum> fugitive convicts. They asked me to take them to the lighthouse at @<sCity>. I agreed to do it for @<sSum> pesos. Around midnight, I'll need to send a lifeboat to @<sShoreName> to pick them up.
 #TEXT 9
-I refused to take the convicts onboard, which caused unhealthy aggression among them. I had to pacify them in my own way.
+I refused to take the convicts aboard, which stirred up dangerous aggression among them. I was forced to pacify them by my own means.
 #TEXT 10
-The convicts are onboard. Now I have to cut and run, before a patrol shows up.
+The convicts are aboard. Now I need to cut and run before a patrol arrives.
 #TEXT 11
-I delivered the convicts to @<sMayak> and received my reward - @<sSum> pesos in gold ingots. As they say, money has no smell...
+I delivered the convicts to @<sMayak> and received my reward—@<sSum> pesos in gold ingots. As they say, money has no smell...
 #TEXT 12
-I delivered the convicts to @<sMayak>. But instead of paying me, the convicts made me a very decent gift. I am fine with that.
+I delivered the convicts to @<sMayak>. Instead of payment, the convicts gave me a rather generous gift. I can't complain about that.
 #TEXT 13
-I delivered the convicts to @<sMayak>. But the damned convicts chose to put me on. I had to explain to them that one should stay true to his word. Pity that this lesson will be of no use to them anymore.
+I delivered the convicts to @<sMayak>. But the scoundrels tried to double-cross me. I had to remind them that a man should keep his word. A shame this lesson will do them no good now.
 
 #QUEST HoldQuest
-Side Job: Lead from captive Captain
+Side Job: Lead from the Captive Captain
 #TEXT 1
-Captive captain @<sName> told me that a wealthy merchant is transporting @<sGoods> from @<sCityFrom> to @<sCityTo>. At times he hires an escort. One could try to intercept his ship '@<sShipName>' on approach to either of these ports. If the captain was telling the truth, the loot will be very rich. The captive was set free, by the way.
+Captain @<sName> revealed that a wealthy merchant is transporting @<sGoods> from @<sCityFrom> to @<sCityTo>. Sometimes he hires an escort. I could try to intercept his ship, '@<sShipName>', as it approaches either port. If the captain spoke true, the prize will be well worth the risk. I’ve released the captive, by the way.
 #TEXT 2
-Before I managed to prepare the assault, '@<sShipName>' lifted the anchor and sailed away. I have no hopes for another chance of tracking it down.
+Before I could prepare the assault, '@<sShipName>' weighed anchor and sailed away. I have no hope of getting another chance to track it down.
 #TEXT 3
-I failed to capture ship '@<sShipName>' loaded with @<sGoods>. I have no hopes for another chance of tracking it down.
+I failed to capture the ship '@<sShipName>' carrying @<sGoods>. There's no hope of finding it again.
 #TEXT 4
-I managed to capture ship '@<sShipName>' loaded with @<sGoods>.
+I managed to capture the ship '@<sShipName>', which was loaded with @<sGoods>.
 #TEXT 5
-In the heat of battle, ship '@<sShipName>' was sunk, and the whole cargo of @<sGoods> now rests on the seabed!
+In the heat of battle, the ship '@<sShipName>' was sunk, and the entire cargo of @<sGoods> now lies on the seabed!
 #TEXT 6
-Captive captain @<sName> told me that in the city of @<sCity> he has a friend, @<sNameChar>, who, allegedly, can pay a large ransom for the liberation of his former companion. I guess I need to see that 'friend' of his.
+Captain @<sName> told me he has a friend in @<sCity>, @<sNameChar>, who can supposedly pay a hefty ransom for his release. I suppose I should seek out this 'friend' of his.
 #TEXT 7
-That captive captain @<sName> tried to put me on! Well, he's not getting away with that! I'll have him hanged right now!
+That captive captain @<sName> tried to play me for a fool! Well, he won't get away with it. I'll have him hanged at once!
 #TEXT 8
-The owner of the tavern in @<sCity> advised me to visit @<sFoundChar>; if I am lucky, I'll see @<sName> there.
+The tavern owner in @<sCity> suggested I visit @<sFoundChar>; with any luck, I'll find @<sName> there.
 #TEXT 9
-I have foolishly let @<sName> slip away! I could have got a nice ransom for the captive.
+I've foolishly let @<sName> escape! I could have secured a fine ransom for the captive.
 #TEXT 10
-That captive captain @<sName> tried to put me on! Well, he's not getting away with that! I'll have him hanged right now!
+That captive captain, @<sName>, tried to deceive me! Well, he won't get away with it. I'll have him hanged at once!
 #TEXT 11
-Captive captain @<sName> didn't trick me. His mate @<sNameChar> without more ado paid @<sSum> pesos. I'll need to order the bosun to send our sufferer to the shore.
+Captain @<sName> didn't try to deceive me. His mate, @<sNameChar>, promptly paid the @<sSum> pesos. I'll have to order the bosun to send our captive ashore.
 #TEXT 12
-Captive captain @<sName> told me that in the city of @<sCity> lives a @<sNameChar>, who is willing to sell the map to the treasure of @<sPirateName>. I don't know whether this is true or not, but I still had to release the captive. I'll need to pay a visit to that @<sNameChar>, before he claims the treasure for himself.
+The captive captain, @<sName>, told me that in the city of @<sCity> lives a certain @<sNameChar> who is willing to sell the map to @<sPirateName>'s treasure. Whether this is true or not, I had no choice but to release the prisoner. I should seek out @<sNameChar> before he claims the treasure for himself.
 #TEXT 13
-I don't know whether captive captain @<sName> has tricked me or it just so happened, but I never found @<sNameChar>, the owner of the map... And I don't think that I ever will...
+I can't say whether the captive captain @<sName> deceived me or if it was just bad luck, but I never found @<sNameChar>, the owner of the map. And I doubt I ever will...
 #TEXT 14
-I have foolishly let @<sName> slip away!
+I've foolishly let @<sName> slip away!
 #TEXT 15
-I have bought a map of @<sPirateName> for @<sSum> pesos. I can only hope that the treasure is still there.
+I purchased a map from @<sPirateName> for @<sSum> pesos. I can only hope the treasure remains where it was left.
 #TEXT 16
-I decided not to buy the map from @<sName>. @<sSum> - it's just too expensive, all the more so that the treasure might already not be there...
+I decided not to buy the map from @<sName>. @<sSum>—it's simply too expensive, especially since the treasure might already be gone.
 #TEXT 17
-There was nothing worthy in the chest. Perhaps, the owner of the treasure was there before me - or that rascal @<sName> invented an original method of making money on fools like me.
+There was nothing of value in the chest. Perhaps the owner of the treasure arrived before me—or that rascal @<sName> has devised a clever way to profit from fools like me.
 #TEXT 18
-Captive captain @<sCapName> wasn't lying. All treasures were there. Now that's a stroke of luck!
+Captain @<sCapName> wasn't lying—all the treasure was there. Now that's a stroke of luck!
 
 #QUEST zpq
 The Dangerous Cargo
 #TEXT 0
-Smugglers whispered that in one of the Spanish colonies on the Maine, there was a big problem with the stocks of gunpowder in the local fort. If there is a chance, you need to talk to the commandants - maybe someone will want to buy this dangerous cargo from me. There are only two problems: firstly, they say that the commandant will not deal with rogues, and secondly, the party will be very large - it will be necessary to take care of the ship's capacity and its safety. But that's all later - to begin with, to find this buyer in general.
+Smugglers whispered that one of the Spanish colonies on the Main is having serious trouble with gunpowder supplies in its local fort. If the opportunity arises, I should speak with the commandants—perhaps one of them will be interested in buying this dangerous cargo from me. There are two problems, though: first, they say the commandant won't deal with rogues; second, the shipment will be quite large, so I'll need to ensure my ship has enough capacity and is well protected. But that's for later—for now, I need to find a buyer at all.
 #TEXT 1
-The commandant of Cumana's fort asked me to deliver him a batch of gunpowder barrels - 15,000 pcs. A reward of 100,000 pesos surely looks very lucrative. I decided to undertake this affair, although having so much gunpowder in the hold is surely dangerous.
+The commandant of Cumana's fort has asked me to deliver 15,000 barrels of gunpowder. The reward—100,000 pesos—is certainly tempting. I've decided to take on the task, though carrying so much powder in the hold is a risky business.
 #TEXT 2
-The cargo is delivered, and, despite the bad memory of the fort's commandant, I still managed to receive my due reward.
+The cargo has been delivered. Despite the commandant's poor memory, I still managed to receive my rightful reward.
 #TEXT 3
-Who could have thought that the fort's commandant is just an ordinary crook! Using his position, he only paid me half of the sum we agreed upon! I decided that it's still better than nothing and he was too well-guarded, anyway...
+Who would have thought the fort's commandant was just another common crook? He used his position to pay me only half of what we agreed upon. Still, I decided it was better than nothing—he was too well-guarded to press the matter further.
 #TEXT 4
-That skunk in an officer's uniform tried to trick me and appropriate half of my reward! Such treachery cannot be forgiven! I had to take what's mine from his cold dead body.
+That scoundrel in an officer's uniform tried to cheat me out of half my reward! Such treachery cannot be forgiven. I was forced to claim what was rightfully mine from his cold, dead hands.
 #TEXT 5
-That wannabe machinator tried to pay me only half of the promised sum. I had to explain to him who was right in this case. My arguments turned out to be very persuasive, and in the end, the commandant paid me even a quarter more. Still, I am certain that he didn't come off as a loser, anyway.
+That schemer tried to pay me only half the promised sum. I had to make it clear who was in the right. My arguments proved quite persuasive, and in the end, the commandant paid me a quarter more than agreed. Still, I doubt he truly lost out in the bargain.
 #TEXT 6
-I decided to turn this mission down. 100,000 pesos is a whole lot of money, but I still value my own life higher than that.
+I've decided to turn down this mission. 100,000 pesos is a fortune, but I value my own life more.
 #TEXT 7
-At the exit from the town I was approached by some goons, who evidently were waiting for me. They kindly requested to give them all the money. Surely they were hired by that stinky rat. Well, I had to disappoint him yet another time...
+As I was leaving town, a group of thugs approached me—clearly lying in wait. They politely demanded all my money. No doubt they were sent by that filthy rat. Well, I had to disappoint him once again...
 #TEXT 8
-At the exit from the fort I was approached by some goons, who evidently were waiting for me. They kindly requested to give them back all the money. Surely they were hired by that stinky rat. I decided not to tangle with them - they were very well-armed. I had to give away all my money...
+As I was leaving the fort, a group of thugs approached me—clearly lying in wait. They politely demanded all my money. No doubt they were sent by that treacherous rat. I chose not to cross them; they were heavily armed. I had no choice but to hand over every coin I had...
 
 #QUEST NoiseCemetery
 Spooky Cemetery
 #TEXT 1
-The cemetery guard on the island @<sCity> is scared to death. According to him, for several nights now, there have been strange noises and eerie moans, like those of a ghost. Of course, I don't believe much in these tales but I decided to help the poor old man and see what's going on there. Worst case scenario, I'll either have to fight some marauders or run for my life if this is indeed a ghost. I just need to wait for nightfall.
+The cemetery guard on @<sCity> island is terrified. He claims that for several nights now, strange noises and eerie moans—like those of a ghost—have been coming from the graveyard. I don't put much stock in such tales, but I've decided to help the poor old man and see what's really happening. At worst, I'll have to deal with some grave robbers—or make a hasty retreat if it truly is a ghost. All that's left is to wait for nightfall.
 #TEXT 2
-It's both funny and sad. All these noises and moans are not the wailing of a ghost at all but merely secret meetings of a couple of lovebirds. Their parents are against them seeing each other, so they thought they would find a suitable secluded place. Now I can put the guard's mind at ease. On my way to him, I'll need to think of what to tell him.
+It's both amusing and a bit sad. All those noises and moans weren't the cries of a ghost after all, but simply secret meetings between a pair of young lovers. Their parents forbid them from seeing each other, so they sought out a secluded spot. Now I can set the guard's mind at ease. On my way to him, I'll need to decide what to say.
 #TEXT 3
-I decided not to spoil the life of the unlucky couple and did not tell the guard about them. Young love... Hopefully, everything works out for them.
+I chose not to ruin the lives of the unfortunate couple and kept their secret from the guard. Young love... I hope things turn out well for them.
 #TEXT 4
-I told the guard the truth. He was, of course, furious at first but calmed down eventually. We've all sinned. This couple just didn't have another place to see each other. Young love... Hopefully, everything works out for them.
+I told the guard the truth. He was furious at first, of course, but eventually calmed down. We've all sinned in our own ways. That couple simply had nowhere else to meet. Young love... I hope things work out for them.
 #TEXT 5
-I decided that I did not care about any noises and terrible groans imagined by the watchman. My time is more valuable.
+I've decided not to concern myself with the watchman's tales of strange noises and dreadful groans. My time is far too valuable for such nonsense.
 
 #QUEST SixCaptains
 Six Captains
@@ -713,7 +713,7 @@ I barely dragged the damned cannonballs to Paul. That sailor is acting a bit sus
 I found the captain's key! I wonder what treasures it opens...
 
 #QUEST DWH
-Dark waters of healing
+Dark Waters of Healing
 #TEXT	1
 In St. John's, they whisper that the local gypsy is the last hope for Thomas Morrison's gravely ill daughter. But she stubbornly refuses to help. Does she truly feel no pity for the poor girl?
 #TEXT	2
@@ -741,38 +741,38 @@ Now the gypsy has everything needed to prepare the healing potion. Tomorrow morn
 #QUEST TPZ
 Trade by Law
 #TEXT 1
-The citizens of Bas-Ter are complaining about the lack of alcohol in the tavern. The innkeeper keeps making promises to fix the situation, but nothing has come of it so far. It looks like he’s in serious trouble. And where there’s trouble, there’s an opportunity to make some coin.
+The citizens of Bas-Ter are grumbling about the shortage of alcohol in the tavern. The innkeeper keeps promising to resolve the issue, but nothing has changed so far. It seems he's in real trouble—and where there's trouble, there's a chance to earn some coin.
 #TEXT 2
-The innkeeper said that his supplier from Antigua lost his distillery during a pirate raid and won’t be able to deliver anything for at least two months. The innkeeper is willing to accept any batch of wine and rum, provided the trader has a good reputation. No document checks this time, but in the future he will only work with honest and reliable merchants. Maybe I should try sourcing the goods through unofficial channels... If I play it right, there’s money to be made.
+The innkeeper told me his supplier from Antigua lost his distillery in a pirate raid and won’t be able to deliver anything for at least two months. He’s willing to accept any batch of wine or rum, as long as the trader has a good reputation. No paperwork required this time, but in the future he’ll only deal with honest and reliable merchants. Perhaps I should try sourcing the goods through unofficial channels... If I handle this carefully, there’s profit to be made.
 #TEXT 3
-Smugglers don’t have any alcohol to offer right now. However, there’s a dealer living near the governor’s residence who’s been quietly trading in small amounts of spirits. Might be worth paying him a visit.
+The smugglers have no alcohol to offer at the moment. However, there’s a dealer living near the governor’s residence who’s been quietly trading small amounts of spirits. It might be worth paying him a visit.
 #TEXT 4
-I managed to find the underground alcohol dealer. At first, he thought I was an agent of the authorities, but I convinced him otherwise. If I help him legalize his business, I’ll be able to buy wine and rum from him in the future on very favorable terms. But right now, it’s time to see the innkeeper - I might be able to make a few more doubloons on this deal.
+I tracked down the underground alcohol dealer. At first, he mistook me for an agent of the authorities, but I managed to convince him otherwise. If I help him legalize his trade, I'll be able to purchase wine and rum from him on very favorable terms in the future. For now, I should visit the innkeeper—there may be an opportunity to earn a few more doubloons from this arrangement.
 #TEXT 5
-I struck a deal with the innkeeper, on my terms. He’s willing to pay 240 doubloons for 100 bottles of wine and 100 bottles of rum, now and for future batches. Time to legalize Christian’s business.
+I struck a deal with the innkeeper on my own terms. He’s agreed to pay 240 doubloons for 100 bottles of wine and 100 bottles of rum, both now and for future shipments. Time to legitimize Christian’s business.
 #TEXT 6
-I struck a deal with the innkeeper. He’s willing to pay 200 doubloons for 100 bottles of wine and 100 bottles of rum, now and for future batches. Time to legalize Christian’s business.
+I struck a deal with the innkeeper. He’s willing to pay 200 doubloons for 100 bottles of wine and 100 bottles of rum, both now and for future deliveries. Time to legitimize Christian’s business.
 #TEXT 7
-The innkeeper is happy - the tavern is flowing with alcohol again. Christian is happy too - he got a great client and his business is now legal. Now it’s time to think about my own profits in this deal. To Christian!
+The innkeeper is pleased—the tavern is flowing with rum once more. Christian is satisfied as well; he’s gained a valuable client and his business is now legitimate. Now it’s time to consider my own share of the profits from this arrangement. To Christian!
 #TEXT 8
-I found myself playing the middleman. Strange feeling. Everyone’s satisfied: the tavern is lively again, Christian is probably counting the doubloons raining down on him, and I now have a reliable booze supplier in the Caribbean. And not once did I have to draw my sword. Incredible.
+I’ve ended up as the middleman in all this—a strange feeling. Still, everyone’s pleased: the tavern is lively once more, Christian is likely counting the doubloons pouring in, and I now have a dependable rum supplier in the Caribbean. And not once did I have to draw my sword. Incredible.
 #TEXT 9
-Just as I was enjoying how everything had gone smoothly for once, I was attacked by a pirate ship in the port. As it turns out, the supply issues weren’t a coincidence - it was all part of a scheme by the captain of that ship, trying to take over the Bas-Ter tavern supply line. This time, he failed. He learned a deadly lesson.
+Just as I was enjoying a rare moment of smooth sailing, a pirate ship attacked me right in the port. It turns out the supply troubles were no accident—they were part of a plot by that ship’s captain to seize control of the Bas-Ter tavern’s supply line. This time, he failed. He paid for his ambition with his life.
 #TEXT 10
-I was attacked at sea by a pirate ship. Who they were and what they wanted - I’ll never know. Their vessel went to the bottom, taking all the answers with it.
+I was attacked at sea by a pirate ship. Who they were and what they wanted—I’ll never know. Their vessel went to the bottom, taking all the answers with it.
 #TEXT 11
-The trade regulations on the island turned out to be quite simple: a hundred doubloons per month to the city treasury as a tax and timely reporting. I think Christian will handle those requirements just fine. Now to give the rogue the good news - everything went perfectly.
+The trade regulations on the island are straightforward: a hundred doubloons per month to the city treasury as tax, along with timely reports. I trust Christian can manage these requirements without trouble. Now to bring the good news to the rogue—everything went smoothly.
 
 #QUEST GS
 Edges of Justice
 #TEXT	1
 A bold attempt was made on the Port Authority Chief in Belize. The attacker managed to escape, and now he’s become the hunted. Rumor has it the official has put a price on his head. Well, the enemy seems formidable - I’ll need to think twice before going after him.
 #TEXT	2
-The head of the port claims he has no idea who attacked him or why. He calls the assailant a common madman - the kind that’s a dime a dozen in the Caribbean. That may not sound convincing, but I don’t care. There’s a reward of two hundred doubloons for this “madman’s” head. That’s what truly matters. I’ll begin the search in nearby coves and grottos. That’s where the fugitive is most likely hiding from justice.
+The head of the port claims he has no idea who attacked him or why. He calls the assailant a common madman - the kind that’s a dime a dozen in the Caribbean. That may not sound convincing, but I don’t care. There’s a reward of two hundred doubloons for this 'madman’s' head. That’s what truly matters. I’ll begin the search in nearby coves and grottos. That’s where the fugitive is most likely hiding from justice.
 #TEXT	3
 It’s done. Time to report back to the Port Chief and claim my well-earned reward. And yet, perhaps I should have listened to what the mercenary had to say. He sounded quite convincing. Then again, who wouldn’t try to bargain for their life, clinging even to the faintest hope? Most likely, it was just another trick.
 #TEXT	4
-The Port Chief paid me in full, even more generously than agreed. He offered a permanent fifty percent discount on docking one ship for any period. But that generosity only deepens my suspicions. What if the mercenary spoke the truth? If he really encountered pirates, why didn’t he call the guard? Why didn’t he mention it when sending me after the “killer”? Still, it’s all speculation. What’s done is done, and perhaps only time will reveal the truth. I must move on.
+The Port Chief paid me in full, even more generously than agreed. He offered a permanent fifty percent discount on docking one ship for any period. But that generosity only deepens my suspicions. What if the mercenary spoke the truth? If he really encountered pirates, why didn’t he call the guard? Why didn’t he mention it when sending me after the 'killer'? Still, it’s all speculation. What’s done is done, and perhaps only time will reveal the truth. I must move on.
 #TEXT	5
 The Port Chief is a true scoundrel! Smiling as he waves my comrades off to sea, then casually sells their ship routes to pirates. People like him must not go unpunished. I'll wait for nightfall and deal with him. deal with him. His filthy deeds will be exposed. The notes given to me by the mercenary will remain in his house, in plain sight. Let the whole town see him for what he really is. It's ironic that he lives near the prison-by rights, he ought to be an inmate.
 #TEXT	6
@@ -783,50 +783,52 @@ The Port Chief is no more. He won’t be sending anyone else into the hands of p
 #QUEST OS
 Old Scores
 #TEXT 1
-The tavern keeper in Puerto Principe has somehow lost an entire barrel of rare gin imported from old Europe. If the missing goods aren’t found, the poor fellow could be in serious trouble. Judging by the panic, this shipment was meant for someone important - otherwise, why all the fuss?
+The tavern keeper in Puerto Principe has somehow lost an entire barrel of rare gin imported from Europe. If the missing goods aren't found, the poor fellow could be in serious trouble. Judging by his panic, this shipment must have been intended for someone important—otherwise, why all the commotion?
 #TEXT 2
-The gin was stolen right from under the barkeep's nose. Now his life hangs by a thread – the mysterious client is clearly not someone who forgives mistakes. He’s offering one hundred and fifty doubloons to anyone who can retrieve the barrel. I have a few ideas. First step: question the sailors. Maybe one of them saw something.
+The gin was stolen right under the barkeep's nose. Now his life hangs by a thread—the mysterious client is clearly not someone who forgives mistakes. He’s offering one hundred and fifty doubloons to anyone who can retrieve the barrel. I have a few ideas. First step: question the sailors. Perhaps one of them saw something.
 #TEXT 3
-This whole story truly sounds suspicious. But I think I’ve got a theory about what really happened. Time to speak with the waitress.
+This whole story sounds suspicious. But I believe I have a theory about what truly happened. It's time to speak with the waitress.
 #TEXT 4
-Under pressure, the waitress confessed that the whole scene was staged by someone named Jack Wales. Together with the captain of the 'Sea Beast', they put on quite a performance to steal the barrel. Such effort for gin! Looks like they’re not just drinkers, but true connoisseurs. The thief's house is just a few steps away – right across from the tavern.
+Under pressure, the waitress confessed that the entire scene was staged by someone named Jack Wales. Together with the captain of the 'Sea Beast', they orchestrated quite a performance to steal the barrel. Such effort for gin! It seems they're not just drinkers, but true connoisseurs. The thief's house is only a few steps away—right across from the tavern.
 #TEXT 5
-I managed to return the barrel to the tavern keeper just in time, saving his skin from serious trouble. To be fair, he repaid me well: besides the doubloons, I was granted lifetime rights to free drinks and lodging at his tavern. As for the waitress, she wisely disappeared – the tavern keeper quickly figured out her involvement in the scheme.
+I managed to return the barrel to the tavern keeper just in time, saving him from serious trouble. To be fair, he rewarded me well: besides the doubloons, I was granted lifetime rights to free drinks and lodging at his tavern. As for the waitress, she wisely vanished—the tavern keeper quickly uncovered her part in the scheme.
 #TEXT 6
-The crew of the 'Sea Beast' followed their captain. Did they deserve such a fate? Who’s to say... But one thing is certain – they should’ve thought twice before challenging me.
+The crew of the 'Sea Beast' followed their captain to the end. Did they deserve such a fate? Who's to say... But one thing is certain—they should have thought twice before crossing me.
 
 #QUEST UV
 Stolen Memory
+
+
 #TEXT 1
-Rumor has it that Julie d’Armagnac, the niece of the governor himself, is more sorrowful than ever in Port-au-Prince. Once radiant and cheerful, she now walks around gloomier than a storm cloud. No one knows exactly what could have changed the girl so much, but clearly something serious has happened.
+Rumor has it that Julie d’Armagnac, the governor’s own niece, is more sorrowful than ever in Port-au-Prince. Once radiant and cheerful, she now moves about gloomier than a storm cloud. No one knows exactly what could have changed her so, but it’s clear something serious has happened.
 #TEXT 2
-Julie has found herself in a difficult position. A necklace dear to her heart has been stolen. She can’t turn to the guards—her uncle, the governor of the French part of Hispaniola, strictly forbade her from contacting the one who gave her the gift. She suspects her own servant may be the thief. I simply can’t leave her alone with this misfortune and have firmly decided to help. I suppose I should start by questioning the local merchants—the thief surely rushed to sell the jewel.
+Julie has found herself in a difficult situation. A necklace dear to her heart has been stolen. She cannot turn to the guards—her uncle, the governor of the French part of Hispaniola, has strictly forbidden her from contacting the one who gave her the gift. She suspects her own servant may be the thief. I cannot leave her to face this misfortune alone and have resolved to help. I should begin by questioning the local merchants—the thief surely tried to sell the jewel quickly.
 #TEXT 3
-A certain Tristan Renier, captain of the 'Golden Seagull' recently purchased a necklace from a trader, which might belong to Julie. His ship is still anchored in the port. If my hunch is right, the thief might be none other than Giselle, whose name the merchant let slip by accident.
+A certain Tristan Renier, captain of the 'Golden Seagull,' recently bought a necklace from a trader that may belong to Julie. His ship is still anchored in the port. If my suspicions are correct, the thief could be Giselle—the name the merchant accidentally revealed.
 #TEXT 4
-Tristan wasn’t on board. I should look for him in town.
+Tristan wasn't aboard. I should search for him in town.
 #TEXT 5
-I’ve managed to retrieve Julie’s necklace. Now it’s time to return it to its rightful owner. Or... perhaps pay a visit to the governor and tell him everything?
+I’ve recovered Julie’s necklace. Now I must decide whether to return it to her, or perhaps visit the governor and reveal the whole story.
 #TEXT 6
-The necklace has been returned to its charming owner. The thief turned out to be her maid—Giselle herself. Julie is now unleashing all her cunning to punish the trickster. I wouldn’t want to be in her place.
+The necklace has been returned to its charming owner. The thief turned out to be her own maid—Giselle herself. Julie is now using all her cunning to punish the trickster. I wouldn’t want to be in her shoes.
 
 #QUEST VPVL
 Caught in the Great Catch
 #TEXT   1
-Tales circulate through Saint Pierre of local fisherman Pierre Carno's disappearance. For two full turns of the tide, his vessel has failed to return to harbor, while his wife Lea, harrowed by dread, maintains her lonely watch at the quayside, her eyes searching the churning waters for her husband's form. Only his safe return could balm her wounded spirit. Yet the merciless sea keeps its secrets, and with each passing bell, hope wanes thinner and his chances of cheating death grow ever more slight​.
+Rumors swirl in Saint Pierre about the disappearance of local fisherman Pierre Carno. For two full tides, his boat has not returned to harbor. His wife, Lea, haunted by fear, keeps a lonely vigil at the quay, her eyes scanning the restless waters for any sign of her husband. Only his safe return can ease her suffering. But the unforgiving sea guards its secrets well, and with each passing bell, hope fades and his chances of survival grow ever slimmer.
 #TEXT   2
-Lea divulged that her husband had set his course for Le Marin Bay, tucked along the southern shores of the island. Two full days have passed since he cast off, yet no sign of his return. The anguish etched upon this poor woman's countenance moved me to offer my aid. I shall first survey the waters of Le Marin Bay—mayhap Pierre remains at sea, delayed by circumstance. Should the waters prove empty of his presence, I must then scour the shoreline for any trace of man or vessel​.
+Lea revealed that her husband set sail for Le Marin Bay, nestled on the southern coast of the island. Two days have passed since his departure, and there’s still no sign of his return. The worry written on this poor woman’s face compelled me to offer my help. First, I’ll search the waters of Le Marin Bay—perhaps Pierre is still at sea, held up by some misfortune. If I find no sign of him there, I’ll comb the shoreline for any trace of man or ship.
 #TEXT   3
-Those beach-dwelling smugglers mistook me for one of the governor's hounds and sought to dispatch me to a watery grave. Fortune, however, turned her face from them—their own blood now stains the sand instead of mine. I must now investigate the sea cave they spoke of. Mayhap 'tis Pierre they've been keeping chained in that damp prison​.
+Those beach-dwelling smugglers mistook me for one of the governor's hounds and tried to send me to a watery grave. Fortune, however, turned her face from them—their own blood now stains the sand instead of mine. I must investigate the sea cave they mentioned. Perhaps Pierre is the one they've been keeping chained in that damp prison.
 #TEXT   4
-Pierre now breathes the sweet air of freedom, and the time has come to return him to his devoted wife's embrace. Fate dealt him a cruel hand—his skiff dashed upon the reef, then once ashore, he fell into the clutches of those addled smugglers who mistook him for a governor's agent. The poor soul endured torture and starvation, pressed to reveal secrets he never possessed. One shudders to think what grim end might have awaited had Providence not guided my steps to that accursed cave when it did​.
+Pierre now breathes the sweet air of freedom, and the time has come to return him to his devoted wife's embrace. Fate dealt him a cruel hand—his skiff dashed upon the reef, and once ashore, he fell into the clutches of those addled smugglers who mistook him for a governor's agent. The poor soul endured torture and starvation, pressed to reveal secrets he never possessed. One shudders to think what grim end might have awaited him had Providence not guided my steps to that accursed cave when it did.
 #TEXT   5
-Pierre has been safely returned to his devoted wife's tender care. He has pledged to show his gratitude once his strength returns and insists upon sharing a drink at the tavern tomorrow after the sixth bell. Yet a question still gnaws at my thoughts like a rat on ship's rope—who were those ill-fated smugglers truly awaiting on Le Marin's shores? Their talk spoke of a vessel soon to make landfall. The governor's men would surely pay handsomely for advance warning of such a ship laden with contraband. Or perhaps...​.
+Pierre has been safely returned to his devoted wife's care. He has promised to show his gratitude once his strength returns, and insists we share a drink at the tavern tomorrow after the sixth bell. Yet a question still gnaws at me like a rat on a ship's rope—who were those ill-fated smugglers truly waiting for on Le Marin's shores? Their talk suggested a vessel soon to make landfall. The governor's men would surely pay handsomely for advance warning of such a ship laden with contraband. Or perhaps...
 #TEXT   6
-I have reported to the governor about the smugglers who were expecting a ship. He has promised to investigate, and I am to visit him again in three days. Should my report prove accurate, a reward may well be mine​.
+I have reported to the governor about the smugglers who were awaiting a ship. He has promised to investigate, and I am to visit him again in three days. If my report proves accurate, a reward may well be mine.
 
 #QUEST TBP
-Mystery of Betsy Price
+The Mystery of Betsy Price
 #TEXT	1
 In Willemstad, I heard an intriguing story – the local tavern recently acquired a waitress of extraordinary beauty, but three days ago she suddenly disappeared. The tavern keeper is worried and willing to pay whoever can find her.
 #TEXT	2
@@ -839,3 +841,155 @@ The pendant bought from the vagabond belongs to Betsy. He found it in the flower
 Well, what a woman this Betsy is... Or is it Miranda? No, let's stick with Betsy – no need to prod at her past. Anyway, she's been pulled from the clutches of those bastards... Time to claim the well-deserved reward.
 #TEXT	6
 The tavern keeper has paid me in full for returning his valuable waitress. To be honest, thoughts of Betsy still don't leave me... Perhaps I should visit her sometime.
+
+#QUEST OZ
+In the Grip of Gambling
+#TEXT	1
+In San Jose, the blacksmith paid dearly for his passion for cards – in a game with Javier Castillo, he lost something very valuable. Judging by the rumors, he is completely broken: work is at a standstill, even though storm clouds hang over his future, because if the order is not completed on time, the admiral will be furious. What could be so valuable as to drive a man into such despair?
+#TEXT	2
+Now it is clear what caused Sebastian Cordoba’s loss of spirit. He lost a very important book for his work – a book of blacksmithing. His situation is made worse by the fact that Javier decided not to waste time and sell the book to a French master gunsmith. As usual, trouble rarely comes alone. The day before, the blacksmith received a serious order from Admiral Eugenio de la Torre... When he arrives here, he will certainly find out why his order was not fulfilled. Learning that the book ended up in the hands of the French, he will, according to the blacksmith, treat him very harshly. I agreed@<sSex> to help the poor man. If I manage to return the book to him, he will get a second chance, and I hope he will not repeat his mistakes, and I will always be able to count on the services of a good blacksmith. I will start by looking for Javier, he is surely now trying to swindle someone else.
+#TEXT	3
+I managed to beat Javier! The book is mine. His tricks work well against simpletons, but are useless against a serious player. He couldn’t accept the loss – accused me of cheating. Well, I had to knock the arrogance out of him.
+#TEXT	4
+Damn! Javier really is strong at cards. Now I need to find a way to get back not only the book, but my money as well! First I should learn more about him.
+#TEXT	5
+Damn! Javier refuses to even listen about a debt delay. I won’t leave it at that. I need to find a way to put pressure on him. But first I should learn more about him.
+#TEXT	6
+I managed to find out that Javier owes a large sum to a certain Felipe Alarcon. Perhaps by talking to him, I can find a way to put pressure on the debtor. Felipe’s house is across from the bank – a luxurious mansion with columns at the entrance.
+#TEXT	7
+I received Felipe’s permission to act on his behalf. Now I can demand that Javier repay the money immediately, and if he doesn’t have it, take the book first.
+#TEXT	8
+It wasn’t so hard to provoke Javier. On the verge of closing a deal, he couldn’t stand the pressure – realizing that everything could collapse in a moment, he rushed into a fight without hesitation. The Frenchman who arrived for the book offered me eighty thousand pesos – but I wasn’t going to trade on Sebastian’s fate. In Javier’s pockets, I found only a note. Apparently, after this deal, Javier planned to leave the island with someone. I need to check what they’re hiding in that grotto. It would be very convenient if there’s money there, because the matter with Felipe is still unresolved.
+#TEXT	8_1
+I managed to beat Javier! His tricks work well on simpletons, but they’re useless against a serious player. He couldn’t accept the loss and accused me of cheating. Well, I had to put him in his place. The Frenchman who came for the book offered me eighty thousand pesos – but I wasn’t about to bargain with Sebastian’s fate. 
+In Javier’s pockets I found only a note. Apparently, after this deal, Javier planned to leave the island with someone. I need to check what they’re hiding in that grotto.
+#TEXT	9
+It wasn’t so hard to provoke Javier. On the verge of closing a deal, he couldn’t stand the pressure – realizing that everything could collapse in a moment, he rushed into a fight without hesitation. The Frenchman who arrived for the book offered me eighty thousand pesos – but I managed to bargain one hundred and fifty for it! I think I’d better not run into Sebastian now. In Javier’s pockets, there was nothing but a note. Apparently, after this deal, Javier planned to leave the island with someone. I need to check what they’re hiding in that grotto. It would be very convenient if there’s money there, because the matter with Felipe is still unresolved. I wouldn’t want to part with the money I got for selling the book.
+#TEXT	9_1
+I managed to beat Javier! His tricks work well on simpletons, but they’re useless against a serious player. He couldn’t accept the loss and accused me of cheating. Well, I had to put him in his place. The Frenchman who came for the book offered me eighty thousand pesos – but I managed to haggle it up to a hundred and fifty! I guess I’d better not run into Sebastian now. 
+In Javier’s pockets there was nothing but a note. Apparently, after this deal, Javier planned to leave the island with someone. I need to check what they’re hiding in that grotto.
+#TEXT	10
+The book has returned to its owner’s hands. I hope Sebastian really learned his lesson, and my efforts will not be in vain.
+#TEXT	11
+I did not return the money to Felipe Alarcon. Apparently, he did not appreciate such a move – now the whole Spanish force is eager to hang me in the square.
+#TEXT	12
+I did not return the money to Felipe Alarcon. He did not appreciate the gesture – he rushed to attack. I dealt with him easily, but now it seems I’ll have to fight my way out of the city.
+
+#QUEST LFD
+Letter from the Dead
+#TEXT	1
+In Porto Bello, rumors are circulating that the captain of the flute "Águila" gave his quartermaster a dressing-down for letting the crew go ashore. Usually, if the crew is kept on board, it’s either because they have something to talk about or the ship really doesn’t intend to stay in port for long. I should talk to the sailors; maybe there’s a way to make some money.
+#TEXT	2
+On the streets of Porto Bello, I happened to meet a sailor from that very flute. He was risking missing the ship due to a prolonged search for a certain Marisa Caldera. In the hold of his ship, among the junk, he came across an old letter addressed to her and decided to deliver it in hopes of a reward. Since he no longer had the time, he offered to sell this important letter for a small price, and I agreed. After all, this story might turn out to be quite profitable.
+#TEXT	3
+The innkeeper said that Marisa has hardly been seen in town for the past two years. After news of her husband’s death, she seemed to disappear, avoiding people’s eyes. Yet her name is still known, and some men continue to show interest in her. One might think she took up something indecent and therefore hides, but the innkeeper insists Marisa was pious and spent a lot of time in church, so she is unlikely to be involved in such things. I need to continue the search. But where should I look for her? Who could tell me more about her?
+#TEXT	4
+The pastor confirmed that Marisa Caldera left town long ago and only occasionally appears in it. He knows nothing more. However, her friend Dolores Monjo lives in town and might know more than he does. Her house can be found to the left of the port authority.
+#TEXT	5
+It seems Marisa’s situation is quite difficult, as her friend met me with great suspicion the moment she heard whom I was looking for. However, I managed to convince Dolores of my good intentions. The meeting is set for tomorrow after eleven in the evening. Dolores gives no guarantees that Marisa will come, but she promised to pass along everything we discussed.
+#TEXT	6
+Marisa told me that her late husband left a cache somewhere outside the town. She’s afraid to go there alone and asked me to accompany her. Tomorrow at seven in the morning, I need to visit her so we can set out.
+#TEXT	7
+We found the cache that belonged to Marisa’s husband. Just as we were about to leave, we were caught by a mercenary sent by her creditor Ramiro. I had to teach him a deadly lesson. However, Marisa was, to put it mildly, not pleased with such an act. She believes everything should have been settled peacefully, whatever the cost. Well, on that point I cannot agree with her. Now all that remains is to see her safely back to town, where she can finally start a new, peaceful life.
+#TEXT	8
+We found the cache that belonged to Marisa’s husband. But just as we were about to leave, we were caught by a mercenary sent by her creditor Ramiro. Everything was settled at my expense: the debt paid, interest too. Now fear and life in the shadows are in the past for the poor widow. I hope she can start anew, forgetting all she had to endure.
+
+#QUEST WildRose
+Wild Rose
+#TEXT 1
+An intriguing tale… Slaves fled from Bishop’s plantation — not ordinary ones, but white men, deserters from the navy. According to one soldier, Bishop put a bounty on their capture, and the jungle filled with armed men eager to make some coin. Perhaps I should join the hunt? On the other hand, the chance of catching a bullet in the gut is high — and not so much from the fugitives as from those chasing them.
+#TEXT 2
+Mary has vanished somewhere… without saying a word. I hope it’s not because of our talk yesterday… Perhaps she just went down to the hall. I should look for her there.
+#TEXT 3
+It’s astonishing how chance encounters can shape a person. Especially when it’s a meeting with a cutthroat whose hands are drenched in blood. The runaway slaves, before they were cornered and slaughtered, shot several guards and Bishop’s hirelings. Worse still — they raped and killed a young colonist woman, then nearly did the same to her husband. The ringleader of the fugitives was Jerry Casper.
+I doubt he was in any way kin to my beloved Mary. But the story has made her wonder: who were her parents? She knows neither their names nor even where she was born.
+In any case, if we are to search for their traces, lost twenty years ago, it can only be on Justice Island. Perhaps some of its old settlers can help us…
+Mary said we shouldn’t forget the whole world just to lift the veil from this secret. But I can see she is eager to do it as soon as possible.
+As for me… I am bound to help her.
+Yet I know too well: some secrets are best left buried. Perhaps this is one of them. After all, no one has ever told Mary anything of her parents to this day.
+#TEXT 4
+So here we are again on this ship graveyard… I’ve little desire to linger here this time, so best to set to work quickly — question those who lived here twenty years ago. I think we should start with Donald. Though, as Mary says, he could not or would not answer her questions last time, who better than the leader of the Narwhal clan to aid us?
+I still feel uneasy about Mary’s endeavor, but it’s too late to turn back now.
+#TEXT 5
+I couldn’t speak with Donald — he was drilling his clan on the outer ring. It seems Justice Island faces troubled times again. I hope Leighton Dexter has the will and strength to keep things under control. In any case, we must learn what we need quickly and be gone. The last thing I want is to be caught in the crossfire of men fighting over nothing.
+Grinspie should return tomorrow — we can pass the time waiting in Mary’s cabin on the 'Ceres Smithy'.
+#TEXT 6
+Our talk with Grinspie proved nearly fruitless. He claims he came to the Island a few years after Mary’s birth and never knew her parents. None can confirm his words, but I see no reason for him to lie.
+Still, we learned something. First: Mary was indeed born here, on the Island — Donald heard it from Erik Udett, an old sailor who raised her, now long gone to a better world. Second: Aurelie Bertin helped in raising Mary — she has lived here a long time and, if she witnessed Mary’s birth, then surely knew her parents.
+Donald mentioned her health is failing — age takes its toll. Let us hope her memory is still intact.
+#TEXT 6.1
+The only person who can tell us about Mary’s parents is Aurelie Bertin. Alas, she is now in no state to speak. According to Raymond Baker, she is ill… with age. That ailment cannot be cured — only briefly held at bay. Raymond, it turns out, once lived in St. John’s and was close with Johan van Merden, who shared various recipes of his brews made from native herbs — something that may now aid me. For Raymond to begin treatment, I must bring him three flasks of Tears of Ix-Chel and three stalks of mangarosa.
+#TEXT 6.2
+The only person who can tell us about Mary’s parents is Aurelie Bertin. Alas, she cannot say anything coherent now. Raymond Baker told me she is ill… with age. That sickness, as we know, is incurable — but we may restore her mind for a time. There is no guarantee the cure will work, nor that it will not harm her. Still, I chose to risk it — before she departs, she might grant us one last favor. I think she would not refuse. For Raymond to begin this 'treatment' quickly, I must bring him three flasks of Tears of Ix-Chel, three stalks of mangarosa, and a tincture of Ometochtli.
+#TEXT 7
+Of course, it was foolish to expect things to be simple. Aurelie Bertin shows signs of senile madness — or whatever name the healers give this affliction… There’s no one on the Island to help her — no doctor, and Brother Julian’s prayers lack the strength. So our last hope is the Rivados shaman, Chimisete. I dread to think what may follow if this becomes known — so we must take the old woman aboard the 'Protector' by night, unseen.
+#TEXT 8
+Never thought I, a son of the true Church, would say that a black shaman is my last hope. Or rather, mine and Mary’s. Aurelie Bertin seems to suffer from the ailment known as senility. Thus, it’s unlikely we’ll get from her what we need — we couldn’t even tell if her words were true. There is no healer on the Island who can cure her. Perhaps Gino Guinelli or Snake-Eye could, but the old woman would never survive so long a journey. So we must put our hope in Chimisete, though the thought of what he might do chills me. We’ll have to bring Aurelie to the 'Protector' by night — the last thing we need is the Islanders learning of our plan.
+#TEXT 9
+I hope I never live to Aurelie Bertin’s years. Truly, nothing is more dreadful than dying thus — not knowing the day, the month, or the year, unaware of all around you. Had we come a month later, I’m sure the old woman wouldn’t even recall her name, let alone the events of twenty years past. Still, even if her mind wakes for but a moment, though it may cost her life… I think that is a far better end than death in delirium. The result will be known in three days — just as long as van Merden once needed to restore a patient stricken with the same ailment.
+#TEXT 10
+If ever I come to such an age and risk falling into the state Aurelie Bertin is in now, may I have the courage to load a pistol and shoot myself in the head. Aye, suicide is a mortal sin, but I would rather that than forget my own name. Luckily, we have Raymond Baker in our crew — a physician who can do more than set bones and stitch wounds. Sadly, even he will need two whole weeks not to cure Aurelie, but just to bring her to a state fit for speech. Still, nothing can be done — we must wait and trust in Baker’s skill. Or rather, in Johan van Merden, who, according to the former hangman, shared with him the recipe for a miraculous draught made from the Tears of Ix-Chel.
+#TEXT 11
+The Rivados shaman did the deed. I cannot say what went on that night in the 'Protector'’s hold, but when Chimisete brought Aurelie Bertin back, there was no trace of the illness. Yet we know the shaman only buried the malady deep within her… mind? And that will not last. So Mary and I must waste no time — we must speak with Aurelie at once.
+P.S. I noticed a strange expression on Chimisete’s face when he spoke of the ritual’s meaning. I have long learned that everything in this world has its price. The question is what that price will be.
+#TEXT 12
+I cannot believe it — he succeeded! Raymond succeeded! Aurelie’s mind is returned. I know not how long it will last, so there is no time to waste. We must speak with her as soon as possible.
+Johan van Merden… and by God, your head brewed a fine draught!
+#TEXT 13
+So, it worked. Baker did not fail me. The former hangman saved yet another life. Van Merden’s recipe surely played its part, but I think Raymond could have contrived something regardless. Perhaps I err… But never mind — we must speak with Aurelie without delay; Mary and I have waited too long already.
+#TEXT 14
+We did not learn everything we sought, but let us not anger the Creator — Aurelie recalled much, and for that we are grateful. To the point: it was confirmed that Mary was born on Justice Island. Her parents were not islanders but castaways, miraculously surviving a violent storm.
+Mary’s mother was called Teresa; she gave birth a week after coming ashore and then died — hardly surprising given her ordeals. What she gave birth to aboard — whether a merchantman or a man-of-war — in the last month of her pregnancy only her husband, Mary’s father, could know.
+But he is harder to pin down: Aurelie recalled only that his name began with ‘J.’ Nothing more. No ship name, no vessel type. Bertin says this mysterious J. vanished a few days after the birth, though she doubts he was dead — in those years tartanes of smugglers ran regularly between the Island and Cuba. There is no evidence that he was slain on this ship graveyard.
+It’s hard to say whether Mary’s father lives, or why he left the newborn to her fate. Perhaps Mary will be satisfied to know only who he was… But to move forward we must at least learn the name of the vessel wrecked on one of the June nights of 1638 at the outer ring. For that, I hope Donald Grinspie can help.
+#TEXT 15
+My suspicions were confirmed: the Narwhals do indeed keep records of ships driven upon the outer ring of Justice Island, the valuables taken from them, and their passengers. It’s a kind of tradition each new head of the Narwhal clan follows, Grinspie included. Yet Donald could not hand those records to us — Leighton Dexter took them from him not long ago.
+#TEXT 16
+I cannot shake the feeling that misfortune dogged this investigation. Endless troubles and obstacles. No one knows anything, and those who could help are either dying or already dead. Leighton Dexter had no records for 1638. They vanished from Alan Milrow’s cabin. Mary says the former clan head treasured such documents and would never have destroyed them. But then who on this ship graveyard could have wanted those papers — valuable only to historians?
+#TEXT 17
+At last a way out of this cave of ignorance and riddles. Mary’s mother and her father — Joshua Casper — reached Justice Island aboard the English Navy brig 'Wrangler'. Two other seamen survived with them but gave up their souls the next night. My inner voice says it wasn’t an accident, though after twenty years proof is gone. Still, we learned what we needed from those who saw those days, and now we can leave Justice Island to leeward.
+It remains to decide whom to ask for help in tracing Joshua Casper. We cannot reach the Royal Navy archives ourselves…
+But before we sail, I must be sure I missed nothing. Who else might remember? Who has been on the island long enough to recall those events?
+#TEXT 18
+Goodness, I nearly forgot Chimisete — he may be the island’s chief old-timer. He arrived here in 1623 and witnessed Mary’s birth, her mother’s death, and the father’s disappearance, who was thrown into irons after killing two Narwhals who refused to let the shaman attend the birthing woman.
+From Chimisete’s tale one may infer Joshua Casper escaped and boarded a smugglers’ tartane — there was no other way off. He left his newborn daughter on the Island, intending to return for her later — if he confided as much to anyone, we cannot learn it: those with whom he spoke before vanishing are long since crab-food. One clue might be the late padre Domingo, who spoke with Casper aboard the 'Tartarus'; perhaps he kept a journal. Brother Julian may know.
+P.S. One more curious thing: before she died Teresa Casper cried out the name Rupert. Not Joshua — her husband, who strove to save her — but Rupert.
+#TEXT 19
+Our visit to Brother Julian was not in vain. From padre Domingo De la Cruz’s notes they found Mary’s birth date — 22 June 1638. She was christened on May 3, together with Fabian Galard, son of Cecil Galard, who soon after died. Mary suckled Cecil — and he remains our last hope of learning the details of the conversation between padre Domingo and Joshua Casper before the latter vanished.
+#TEXT 20
+The more we learn of Mary’s parents, the deeper we sink into the mire of puzzles about what happened on Justice Island twenty years ago. I still wonder who Rupert was to Teresa: brother, friend, or… husband? A talk with Cecil Galard led me to think Joshua Casper might not have been entirely honest — perhaps he gave another name, an assumed one, or an outright fabrication.
+But that is only conjecture. If we seek records in the naval archives, we should do so under the name Joshua Casper. Everything else is mere guesswork for now.
+We must go to Abbot Benoît in Saint-Pierre.
+#TEXT 21
+For help in the search for Mary’s father we turned to the commander of the sea foxes, Colonel Jonathan Fox. He did not forget that I saved his daughter from the hands of Marten and Thibault, and promised to send an official request to London. Perhaps the clerks of the Admiralty archives will be able to find Casper’s personal file. Whether they succeed or not, we shall know in half a year — it is pointless to trouble the colonel before then.
+#TEXT 22
+Abbot Benoît is clearly not as simple as he appears. I saw a spark of excitement in his eyes the very moment I asked him to procure information from the Admiralty archives, information that might well be a military secret. Or perhaps I imagined it? But if the abbot’s past holds dark secrets, he is unlikely to share them with me. As for Mr. Casper’s past — God willing, we will learn something of it in seven months, the time it will take to obtain the needed records.
+#TEXT 23
+And to think how simple this story seemed at the start! So, what do we know… Joshua Casper was an officer of spotless reputation, captain of the brig 'Cornwall', who under orders sailed from England to the Caribbean with wages for the garrisons of Antigua and Providence — the latter still English at the time. Near the Azores he fought a Spanish galleon, where a third of the crew fell, along with one officer — Rupert Northwood. So says the official report kept in the St. John’s port office. After leaving Antigua, the 'Cornwall' set course for Providence, but ended its voyage on the reefs of Justice Island, now renamed the 'Wrangler'. Four survived — the captain, a woman, and two sailors. The latter died within a day. Were they slain? Almost certainly — they may have known too much. The survivor was either the true Joshua Casper, madly in love with his first mate’s wife — for he ran like a man possessed through the wreckage seeking someone to save Teresa — or Rupert Northwood, whose name Teresa cried out before her death, having for some reason taken his captain’s name. The second version defies all logic. As does the fact that this man never returned for his daughter — not after a month, a year, nor twenty years. Perhaps he perished — sometimes neither skill, nor courage, nor cunning can save a man. But as he once went too far, so we are now mired in the tangled skein of this mystery. We will not turn back, nor will we stop. It is time to trouble Aurelie Bertin once more, then decide whom we truly seek: Rupert Northwood or Joshua Casper.
+#TEXT 27
+We did succeed after all. What befell the 'Cornwall' and how it became the 'Wrangler' we could not yet uncover — but it struck the reefs of Justice Island under Rupert Northwood’s command. Whether he still lives after two decades, I cannot say — nor where to find him if so. To aid us in this task, we must call upon an old acquaintance, one with the connections and resources such a search demands. And while we make our way to him, I must ponder whom we should truly send his men to seek: Joshua Casper or Rupert Northwood? Then again… he is clever enough not to repeat names. Of course, a fugitive is safer using his true name, lest he betray himself by failing to answer to another. But was the 'Cornwall'’s first mate really such a simple man?
+#TEXT 28
+We must delay our departure from Justice Island. Last night Aurelie Bertin passed away. The old woman died in her sleep, a smile on her lips. Fortune favored us that we reached here under full sail — had we been a day late, with whom could we have spoken of Mary’s father? Yet I cannot shake the sense that Aurelie… was waiting for us. The thought gnaws at me, and while Mary tends with the islanders to the funeral, I will go to Chimisete — I must speak of it with him.
+#TEXT 29
+Everything has its price. I have always known this, and tried to reckon with it when making choices. Had I known then what Chimisete would doom Aurelie to, would I have taken her to him that night? It is hard to admit to myself, but likely I would have — for without the knowledge buried in her ailing mind we would never have advanced in our search for Mary’s father. Was it cruel? Surely. Cynical? Without a doubt. Since that talk with Chimisete I have thought much on what he calls the river of time. Indeed, it cannot be turned back. Nor should it — for men most often make their choices knowingly at each bend, and so would hardly change them. Aurelie Bertin, rest easy. We will finish the task you gave your life for, though unwittingly.
+#TEXT 30
+Fadey, as expected, asked for a fair sum, though less than he might have, given his love of gold. We must return to him in a month — by then, something regarding Mary’s father should be clear.
+#TEXT 32
+We are almost at our goal. Only the distance from Basse-Terre to Belize separates us. There lies a man named Jerome Sauvernier, who claims he has found Rupert Casper. All sails set, and we steer west. Mary’s twenty years of waiting to meet her father are nearly over.
+#TEXT 33
+So, we are in Belize. I think finding Jerome Sauvernier will not be difficult. I am sure the tavernkeeper knows where he lodges. Still, I am troubled by that brawl in the 'Glass Eye' involving Jerome. He was on an important, well-paid mission — so why throw himself into it? Perhaps it ties somehow to his search for Rupert Casper. Best not to draw too much attention, and to think carefully before asking questions in the tavern.
+#TEXT 35
+We walked a long and winding road — only to reach a bitter truth: beware what you wish for. That is the lesson this tale has taught us. Poor Mary, she surely deserves a better father than Rupert Northwood… but one cannot choose one’s parents. Be the outcome monstrous, the disappointment gnawing — life goes on. We spent the whole night on the shore, breaking the silence only now and then with words of what had happened. Mary bore the blow with strength. She will not torment herself with thoughts of who her father was and what 'deeds' he did. And I… I shall do all in my power to keep such thoughts far from her mind.
+
+#QUEST LEDR
+La Espada Del Rey
+#TEXT	1
+They say a man from that very shipwreck that now rests on the shore of Sabu-Matilla Bay is wandering around Sharptown. He claims to be the sole survivor of the wreck. Now he wants to go back there, but doesn’t dare go alone — and to justify it, he spins tales about an Indian skeleton. Well, we’ll see… Maybe it’s worth escorting him. I wonder what he’s looking for after all this time?
+#TEXT	2
+I agreed to help the old man, Gonsalo Peralta. He doesn’t seem insane, aside from his strange stories. Well, I suppose this won’t take long — the bay isn’t far.
+#TEXT	3
+When I agreed to escort the old man, I never imagined I’d be fighting skeletons. Skeletons! Fortunately, luck was on our side, and despite the shock, we managed to fend them off. In the captain’s cabin, we found the bishop’s chest, filled with jewels and an old journal belonging to Diego Velázquez de Cuéllar — the famous conquistador and first governor of Cuba. Even a quick glance through those memoirs sends chills down your spine. Perhaps he is the key to unraveling the curse that haunts Gonsalo.
+#TEXT	4
+The journal is dealt with. I brought Gonsalo back to where I found him — Sharptown. Well, let him live in peace, if the nightmares have truly left him. As for me, I’d best keep my mouth shut — stories like this have a way of turning on the storyteller.
+
+

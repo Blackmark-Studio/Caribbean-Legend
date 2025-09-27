@@ -10,13 +10,11 @@ QUEST_MESSAGE9 {Maintenant, vous êtes face à face avec ce monde cruel !}
 QUEST_MESSAGE10 {Un pirate impitoyable}
 QUEST_MESSAGE11 {mérite une récompense spéciale !}
 QUEST_MESSAGE12 {Malheureusement, vous avez deja recruté trop d'officiers ! Vous ne pouvez en recruter un autre qu'après avoir viré l'un des officiers !}
-
 Address_Form_Spa {señor}
 Address_Form_Fra {Monsieur}
 Address_Form_Eng {Sir}
 Address_Form_Por {Senhor}
 Address_Form_Hol {Mynheer}
-
 Swear_1 {Marin d'eau douce !}
 Swear_2 {Bon sang !}
 Swear_3 {Oh merde !}
@@ -27,9 +25,7 @@ Swear_7 {Flûte !}
 Swear_8 {Arrghhh !!!}
 Swear_9 {Mille milliards de mille sabords !}
 Swear_10 {Flibustier de carnaval !}
-
 TimeGreeting {Bon après-midi}
-
 Antigua {Antigua}
 Barbados {La Barbade}
 Curacao {Curaçao}
@@ -54,14 +50,11 @@ PetitGoave {Petit-Goâve}
 Bridgetown {Bridgetown}
 SanJuan {San Juan}
 SantiagoVega {Santiago Vega}
-
-
 OFFIC_TYPE_BOATSWAIN {bosco}
 OFFIC_TYPE_CANNONEER {canonnier}
 OFFIC_TYPE_QMASTER {timonier}
 OFFIC_TYPE_NAVIGATOR {navigateur}
 OFFIC_TYPE_FIRSTMATE {premier lieutenant}
-
 Pirate {Pirate}
 Spain {Espagnol}
 France {Français}

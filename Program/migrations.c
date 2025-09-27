@@ -48,9 +48,12 @@ void CheckForUninstalledMods() {
     modsList = modsList + modName + " ";
   }
 
-  // выводим предупреждение
-  string messageText = GetConvertStr("Uninstalled_Mods_Founded", "migrations.txt") + "~" + modsList;
-  if(modsNumber > 0) LaunchMessage(messageText);
+	// выводим предупреждение
+	if (!bBettaTestMode)
+	{
+		string messageText = GetConvertStr("Uninstalled_Mods_Founded", "migrations.txt") + "~" + modsList;
+		if(modsNumber > 0) LaunchMessage(messageText);
+	}
 }
 
 void ApplyModMigrations() {

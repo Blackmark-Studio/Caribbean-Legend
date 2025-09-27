@@ -1,144 +1,33 @@
-Slavetrader_1
-{
-Modo exploración: temporizador ampliado. ¡Completa la misión!
-}
-
-Slavetrader_2
-{
-
-}
-Slavetrader_3
-{
-
-}
-
-Slavetrader_4
-{
-
-}
-Slavetrader_5
-{
-
-}
-
-Slavetrader_6
-{
-
-}
-Slavetrader_7
-{
-
-}
-
-Slavetrader_8
-{
-Nabukee
-}
-Slavetrader_9
-{
-Anaconda
-}
-
-Slavetrader_10
-{
-desde Caracas
-}
-Slavetrader_11
-{
-desde Cumana
-}
-
-Slavetrader_12
-{
-Fransua
-}
-Slavetrader_13
-{
-Gontier
-}
-
-Slavetrader_14
-{
-consideró
-}
-Slavetrader_15
-{
-consideró
-}
-
-Slavetrader_16
-{
-en las costas de Barbados
-}
-Slavetrader_17
-{
-en las costas de Guadeloupe
-}
-Slavetrader_18
-{
-no muy lejos de Santiago
-}
-Slavetrader_19
-{
-no muy lejos de Havana
-}
-Slavetrader_20
-{
-en las costas de Tortuga
-}
-Slavetrader_21
-{
-en las costas de Trinidad
-}
-Slavetrader_22
-{
-en las costas de St. Christopher
-}
-Slavetrader_23
-{
-no muy lejos de Santo Domingo
-}
-Slavetrader_24
-{
-no muy lejos de Port-au-Prince
-}
-Slavetrader_25
-{
-no muy lejos de Cartagena
-}
-
-Slavetrader_26
-{
-Tamango
-}
-Slavetrader_27
-{
-
-}
-
-Slavetrader_28
-{
-Sven
-}
-Slavetrader_29
-{
-Carlson
-}
-
-Slavetrader_30
-{
-Janna
-}
-Slavetrader_31
-{
-Mollery
-}
-
-Slavetrader_32
-{
-Izaura
-}
-Slavetrader_33
-{
-
-}
+Slavetrader_1 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
+Slavetrader_2 { }
+Slavetrader_3 { }
+Slavetrader_4 { }
+Slavetrader_5 { }
+Slavetrader_6 { }
+Slavetrader_7 { }
+Slavetrader_8 {Nabukee}
+Slavetrader_9 {Anaconda}
+Slavetrader_10 {desde Caracas}
+Slavetrader_11 {desde Cumana}
+Slavetrader_12 {Fransua}
+Slavetrader_13 {Gontier}
+Slavetrader_14 {consideró}
+Slavetrader_15 {consideró}
+Slavetrader_16 {en las costas de Barbados}
+Slavetrader_17 {en las costas de Guadeloupe}
+Slavetrader_18 {no muy lejos de Santiago}
+Slavetrader_19 {no muy lejos de Havana}
+Slavetrader_20 {en las costas de Tortuga}
+Slavetrader_21 {en las costas de Trinidad}
+Slavetrader_22 {en las costas de St. Christopher}
+Slavetrader_23 {no muy lejos de Santo Domingo}
+Slavetrader_24 {no muy lejos de Port-au-Prince}
+Slavetrader_25 {no muy lejos de Cartagena}
+Slavetrader_26 {Tamango}
+Slavetrader_27 { }
+Slavetrader_28 {Sven}
+Slavetrader_29 {Carlson}
+Slavetrader_30 {Janna}
+Slavetrader_31 {Mollery}
+Slavetrader_32 {Izaura}
+Slavetrader_33 { }

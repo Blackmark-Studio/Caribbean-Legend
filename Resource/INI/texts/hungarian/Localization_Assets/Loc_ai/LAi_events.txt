@@ -1,0 +1,1 @@
+LAi_events_1 {Streltsy Sash is destroyed.}

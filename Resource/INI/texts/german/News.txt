@@ -1,18 +1,16 @@
-News {Patch 1.5.0}
+News {Offene Beta 1.6.0}
 News_descr
 {
 ************************   Ahoi!   ***********************
-Willkommen zu Version 1.5.0!
+Willkommen zu Version 1.6.0!
 ------------------------------------------------------------------------------------------------
-— Ein neues Spiel ist erforderlich
-— Wenn Sie Ihren Spielstand fortsetzen möchten, wechseln Sie in Steam zu Version 1.4 oder 1.3.5
-— Deaktivieren Sie alle Modifikationen, bis die Steam Workshop-Autoren ihre Arbeiten aktualisieren
-— Eine detaillierte Liste der Änderungen finden Sie in den Neuigkeiten über die Schaltfläche unten
+— Neues Spiel - nicht erforderlich
+— Wir haben das Kampf- und Levelsystem vollständig geändert. Die Änderungen sind so groß, dass wir wirklich euer Feedback brauchen
+— Teilt eure Eindrücke in den offiziellen Discord- und Telegram-Kanälen sowie auf Steam
+— Wenn ihr einen Spielstand aus einer anderen Version ladet, vergesst nicht, die Vorteile des Helden und der Offiziere neu zuzuweisen
+— Deaktiviert alle Modifikationen, bis die Steam Workshop-Autoren ihre Arbeiten aktualisiert haben
+— Eine detaillierte Liste der Änderungen findet ihr in den Neuigkeiten durch Klicken auf die Schaltfläche unten
 — Danke fürs Spielen!
 }
-News_Attention
-{
-}
-
-[News]
-IsRead = false
+News_Attention { }
+[News]IsRead = false { }

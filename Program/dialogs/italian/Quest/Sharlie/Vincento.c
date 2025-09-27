@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "Ero certo che avresti risposto così, "+pchar.name+". Ora la mia fede si rafforza ancor di più, certo che siete stato mandato a меня dalla stessa Mano della Divina Provvidenza. Dov'è mio figlio sciagurato, il figliol prodigo?";
+			dialog.text = "Ero certo che avresti risposto così, "+pchar.name+". Ora la mia fede si rafforza ancor di più, certo che siete stato mandato a me dalla stessa Mano della Divina Provvidenza. Dov'è mio figlio sciagurato, il figliol prodigo?";
 			link.l1 = "Temo che quello che sto per dirti non ti piacerà affatto, ma non ho altra scelta. Il tuo segretario è morto.";
 			link.l1.go = "guardoftruth_1";
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardoftruth_18":
-			dialog.text = "Calmati, figliolo. Al momento non abbiamo alcых notizie di un naufragio vicino alla Martinica в то время. E una fregata non è certo una feluca: la sua distruzione avrebbe di sicuro attirato parecchia attenzione e offerto un bel banchetto agli avvoltoi di queste acque.";
+			dialog.text = "Calmati, figliolo. Al momento non abbiamo alcune notizie di un naufragio vicino alla Martinica в то время. E una fregata non è certo una feluca: la sua distruzione avrebbe di sicuro attirato parecchia attenzione e offerto un bel banchetto agli avvoltoi di queste acque.";
 			link.l1 = "Forse vale la pena frugare la costa e le spiagge per scovare ciò che resta di quella nave?";
 			link.l1.go = "guardoftruth_19";
 		break;

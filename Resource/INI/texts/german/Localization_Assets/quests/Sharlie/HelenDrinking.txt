@@ -1,106 +1,23 @@
-HelenDrinking_1
-{
-Francois
-}
-HelenDrinking_2
-{
-de Tavann
-}
-
-HelenDrinking_3
-{
-Vit
-}
-HelenDrinking_4
-{
-Needles
-}
-
-HelenDrinking_5
-{
-Rainbow
-}
-
-HelenDrinking_6
-{
-Ist das ein Traum? Wo sind alle?
-}
-
-HelenDrinking_7
-{
-Ich sollte Jan suchen und mich entschuldigen.
-}
-
-HelenDrinking_8
-{
-Amelia
-}
-HelenDrinking_9
-{
-
-}
-
-HelenDrinking_10
-{
-Dane
-}
-HelenDrinking_11
-{
-
-}
-
-HelenDrinking_12
-{
-Lucky
-}
-HelenDrinking_13
-{
-
-}
-
-HelenDrinking_14
-{
-Und wie schrecklich es ist, zwei Heime zu haben. Oh, Mary... Nach allem, was passiert ist, was sollen wir jetzt tun, wir drei?
-}
-
-HelenDrinking_15
-{
-Alonso
-}
-HelenDrinking_16
-{
-
-}
-
-HelenDrinking_17
-{
-Richard
-}
-HelenDrinking_18
-{
-Small
-}
-
-HelenDrinking_19
-{
-Helen approves
-}
-HelenDrinking_20
-{
-Helen disapproves
-}
-
-HelenDrinking_21
-{
-Eisenholz wurde in Ihren Laderaum geliefert!
-}
-
-HelenDrinking_22
-{
-~ erhielt +1 für ~
-}
-
-HelenDrinking_23
-{
-~ erhielt +1 für ~
-}
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {Ist das ein Traum? Wo sind alle?}
+HelenDrinking_7 {Ich sollte Jan suchen und mich entschuldigen.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {Und wie schrecklich es ist, zwei Heime zu haben. Oh, Mary... Nach allem, was passiert ist, was sollen wir jetzt tun, wir drei?}
+HelenDrinking_15 {Alonso}
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 {Helen approves}
+HelenDrinking_20 {Helen disapproves}
+HelenDrinking_21 {Eisenholz wurde in Ihren Laderaum geliefert!}
+HelenDrinking_22 {~ erhielt +1 für ~}
+HelenDrinking_23 {~ erhielt +1 für ~}

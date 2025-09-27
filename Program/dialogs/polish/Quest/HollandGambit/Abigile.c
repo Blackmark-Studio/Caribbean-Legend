@@ -17,30 +17,30 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.HWIC.Holl == "AbbyInHouse")
 				{
-					dialog.text = "Dzień dobry, panie. Co sprowadza cię do naszego domu?";
-					link.l1 = "Dzień dobry, Abigail. Nazywam się "+GetFullName(pchar)+"Jestem kapitanem pracującym dla dobra Republiki i Holenderskiej Kompanii Zachodnioindyjskiej.";
+					dialog.text = "Dzień dobry, mynheer. Co cię sprowadza do naszego domu?";
+					link.l1 = "Dzień dobry, Abigail. Nazywam się "+GetFullName(pchar)+". Służę Republice Holenderskiej Kompanii Zachodnioindyjskiej jako kapitan.";
 					link.l1.go = "AbbyAndLucas";
 					DelLandQuestMark(npchar);
 					break;
 				}
 				if (pchar.questTemp.HWIC.Holl == "AbbyFindScull" && makeint(Pchar.money) >= 200000)
 				{
-					dialog.text = "Boże mój, czy znalazłeś pieniądze mojego ojca? To prawda? Ach, tak się cieszę! Szybko idź do mojego ojca, chce z tobą porozmawiać. Idź i zobacz go!";
-					link.l1 = "Jestem w drodze, madame.";
+					dialog.text = "Boże wielki...! Znalazłeś pieniądze mojego ojca? Naprawdę?! Rany, nie potrafię nawet wyrazić, jak bardzo się cieszę! Proszę, idź natychmiast do ojca - chce z tobą jak najszybciej porozmawiać!";
+					link.l1 = "Już idę, madame.";
 					link.l1.go = "exit";
 					DelLandQuestMark(npchar);
 					break;
 				}
 				if (pchar.questTemp.HWIC.Holl == "AbbyLeavesMarried")
 				{
-					dialog.text = "Uratowałeś nas od całkowitej rozpaczy, kapitanie! Jestem ci tak wdzięczny! Teraz dobre imię rodziny Shneur może zostać przywrócone!";
-					link.l1 = "Zaledwie spełniam swój obowiązek jako dżentelmen, madame. Mam nadzieję, że nie ma już niczego, co mogłoby powstrzymać cię przed poślubieniem mojego protektora.";
+					dialog.text = "Kapitanie, uratowałeś nas przed całkowitą rozpaczą! Nigdy ci tego nie zapomnę! Dobre imię rodu Shneur zostało uratowane!";
+					link.l1 = "Madame, ja tylko spełniam swój obowiązek jako dżentelmen. Mam nadzieję, że nic już nie stoi na drodze do twego szczęścia.";
 					link.l1.go = "AbbyAndLucas_8";
 					DelLandQuestMark(npchar);
 					break;
 				}
-				dialog.text = "Czy czegoś potrzebujesz, kapitanie?";
-				link.l1 = "Nie teraz, madame.";
+				dialog.text = "Potrzebujesz czegoś, kapitanie?";
+				link.l1 = "Nie, nie teraz, madame.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -48,14 +48,14 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.HWIC.Eng == "AbigileInChurch")
 				{
-					dialog.text = "Witaj, Święta Królowo, nasza życie, nasza słodycz i nasza nadziejo. Do Ciebie wołamy, biedne wygnane dzieci Ewy. Do Ciebie wzdychamy, płacząc i lamentując w tej dolinie łez... oh mynheer, przestraszyłeś mnie! Co Cię tu sprowadza?";
-					link.l1 = "Proszę o wybaczenie, Abigail, jak mniemam? Richard Fleetwood mnie przysłał...";
+					dialog.text = "Najświętsza Panno, Królowo Miłosierdzia! Jedyna nadziejo nasza. Do Ciebie wzdychamy, biedni grzesznicy... Proszę, przybądź nam z pomocą! Błagamy Cię, o Pani. Dojrzyj nasz płacz, naszą udrękę... spraw, aby Twój Przenajświętszy Syn zlitował się nad nami... Oh, mynheer! Przestraszyłeś mnie! Co Cię tu sprowadza?";
+					link.l1 = "Wybacz mi, nie chciałem cię wystraszyć. Madame Abigail, jak mniemam? Przysłał mnie Richard Fleetwood...";
 					link.l1.go = "Seek_Island";
 					DelLandQuestMark(npchar);
 					break;
 				}
-				dialog.text = "Czy chcesz czegoś, kapitanie?";
-				link.l1 = "Nie teraz, madame.";
+				dialog.text = "Czy mogę doś dla ciebie zrobić, kapitanie?";
+				link.l1 = "Nie, madame. Tylko się upewniam, że wszystko w porządku.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -63,50 +63,50 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.HWIC.Self == "toVillemstad")
 				{
-					dialog.text = "Co tu się dzieje? Co to za hałas? Tato, kim jest ten dziwny człowiek?";
-					link.l1 = "Dzień dobry, madame. Abigail Schneur, jak mniemam? Cieszę się, że mogę cię zobaczyć. Musisz wybaczyć mi moją zuchwałość, ale mam tutaj pilny list adresowany do ciebie od... cóż, bardzo bym chciał ci powiedzieć, ale twój drogi ojciec odmawia nawet pozwolenia, bym stanął w środku waszego domu, nie mówiąc już o dostarczeniu tej wiadomości dla ciebie.";
+					dialog.text = "Hej, co tu się dzieje?! Tato, kim jest ten dziwaczny jegomość?";
+					link.l1 = "Spokojnie madame. Abigail Schneur, jak zakładam? Proszę, wybacz to najście, ale mam dla ciebie bardzo ważny list od... Cóż, chciałem ci to wyznać, ale twój drogi ojciec nie pozwolił mi nawet wejść do środka...";
 					link.l1.go = "Abigile_kidnapping";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "AbigileNextDay")
 				{
-					dialog.text = "Ach, oto jesteś, Charles. Jestem gotów podążać za tobą wszędzie!";
-					link.l1 = "Idźmy zatem.";
+					dialog.text = "Ach, oto jesteś, Charles. Jestem gotowa, by podążyć za tobą wszędzie!";
+					link.l1 = "Chodźmy więc!";
 					link.l1.go = "Abigile_kidnapping_7";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "AbigileInCabin")
 				{
-					dialog.text = "Czy jesteśmy już w St. John's, Charles? Czy wkrótce zobaczę Richarda?";
-					link.l1 = "Tak, madame, jesteśmy w St. John's. Niestety, Richard nie jest obecnie w mieście, dwa dni temu został wysłany na patrol w pobliże Barbadosu. Nie martw się, powinien wrócić za tydzień.";
+					dialog.text = "Czy to już St. John? Kiedy wreszcie spotkam się z Richardem?";
+					link.l1 = "Dokładnie tak, madame. Niestety, Richarda aktualnie tu nie ma - wysłano go na patrol w kierunku Barbaros. Wróci za kilka dni, więc nie musisz się martwić. Wszystko będzie dobrze.";
 					link.l1.go = "Abigile_kidnapping_8";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "AbigileLie")
 				{
-					dialog.text = "Charles! Jakże się cieszę, że cię widzę! Czy są jakieś wieści od Richarda?";
-					link.l1 = "Ach, moja droga madame. Richard musiał zostać w Bridgetown na jakiś czas z powodu tajnej i ważnej misji, coś związanego z Holendrami. Zakładam, że Richard powiedział ci, czym się zajmuje, prawda?";
+					dialog.text = "Charles! Tak się cieszę, że jesteś! Czy masz jakieś wieści od Richarda?";
+					link.l1 = "Niestety, madame, ale Richard nadal przebywa w Bridgetown. To tajna i bardzo ważna misja, coś związanego z Holendrami. Zakładam, że Richard powiedział ci, czym się zajmuje, tak?";
 					link.l1.go = "Abigile_kidnapping_13";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "AbiReturnHome")
 				{
 					DelLandQuestMark(npchar);
-					dialog.text = "Charles! To ty! W końcu wróciłeś!";
-					link.l1 = "Witam, madame. Cieszę się, że cię widzę.";
+					dialog.text = "CCharles! Nareszcie! Myślałam, że już nigdy cię nie zobaczę!";
+					link.l1 = "Witam, madame. Miło znów cię widzieć.";
 					link.l1.go = "Abigile_return";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "AbiReturnHomeGo")
 				{
-					dialog.text = "Ach, wreszcie jestem w domu! Tak się cieszę, że znów zobaczę tatę! Charles, dziękuję ci za wszystko, co dla mnie zrobiłeś!";
-					link.l1 = "Proszę, nie ma potrzeby takiej rozmowy, madame. Po prostu spełniam swój obowiązek jako dżentelmen wobec damy w potrzebie.";
+					dialog.text = "Ach, wreszcie jestem w domu! Nawet nie wiesz jak tęskniłam za tym miejscem... i za tatą. Charles, nigdy nie zapomnę, co dla mnie zrobiłeś. Jesteś prawdziwym bohaterem.";
+					link.l1 = "Ależ madame, to nic takiego. Zrobiłem jedynie to, co zrobiłby każdy dżentelmen, widząc damę w potrzebie. To mój obowiązek";
 					link.l1.go = "Abigile_return_6";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "SolomonHistoryNext")
 				{
-					dialog.text = "Tato, jeśli coś pamiętasz, proszę, powiedz to! Charles, on jest... można mu zaufać. Śmiem twierdzić, że jest jedynym, który może nam pomóc!";
+					dialog.text = "Tato, proszę... jeśli cokolwiek pamiętasz, powiedz to! Charles, on jest... można mu zaufać. Jest jedynym człowiekiem, który może nam pomóc!";
 					link.l1 = "";
 					link.l1.go = "Abigile_return_12";
 					pchar.questTemp.HWIC.Self = "SolomonHistoryAfter";
@@ -114,31 +114,31 @@ void ProcessDialogEvent()
 				}
 				if (pchar.questTemp.HWIC.Self == "SolomonHistoryEnd")
 				{
-					dialog.text = "Będę się za ciebie modlić dniem i nocą! Powiedz mi... powiedz mi, że to zrobisz! Że znajdziesz wyspę!";
-					link.l1 = "Zrobię, co w mojej mocy, madame.";
+					dialog.text = "Rany, będę się za ciebie modlić dniami i nocami! Przysięgam! Tylko proszę... obiecaj mi, że to zrobisz! Że znajdziesz tę wyspę!";
+					link.l1 = "Możesz być o to spokojna, madame. Masz moje słowo. Zrobię co tylko w mojej mocy.";
 					link.l1.go = "Abigile_return_13";
 					break;
 				}
 				if (pchar.questTemp.HWIC.Self == "final" || pchar.questTemp.HWIC.Self == "VanbergDestroyed")
 				{
 					DelLandQuestMark(npchar);
-					dialog.text = "Ach, Charles! Wróciłeś! Powiedz mi szybko, czy znalazłeś wyspę? Ledwie mogę dłużej czekać!";
+					dialog.text = "Charles! Jak dobrze, że wróciłeś! Czy udało ci się znaleźć tę wyspę? Uwierz mi, ja już nie potrafię dłużej czekać!";
 					if (makeint(Pchar.money) >= 200000)
 					{
-						link.l1 = "Tak, Abi. Znalazłem wyspę i pieniądze twojego ojca. Jestem tu, by je zwrócić tobie.";
+						link.l1 = "W takim razie mam dla ciebie dobre wieści! Tak, znalazłem wyspę, a na niej pieniądze twojego ojca. Przybyłem, by oddać je w twoje ręce.";
 						link.l1.go = "Abigile_GiveMoney";
 					}
-					link.l2 = "Niestety, madame. Nie udało mi się znaleźć ani kapitana Kellera, ani waszej wyspy. Zrobiłem, co mogłem, ale...";
+					link.l2 = "Niestety, madame. Ja po prostu... cóż, zawiodłem. Nie zdołałem odnaleźć ani wyspy, ani kapitana Kellera. Zrobiłem, co mogłem, ale...";
 					link.l2.go = "Abigile_NoMoney";
 				break;
 				}
-				dialog.text = "Ach, to ty, Charles! Potrzebujesz czegoś? Mogę ci zaoferować kawę?";
-				link.l1 = "Nie, nic. Proszę, nie kłopocz się.";
-				link.l1.go = "exit";
-				break;
+                dialog.text = "Ach, Charles! To naprawdę ty! Czy czegoś ci potrzeba? Może filiżankę kawy?";
+                link.l1 = "Nie trzeba, ale dziękuję. Nie kłopocz się.";
+                link.l1.go = "exit";
+                break;
 			}
-			dialog.text = "Dzień dobry, panie. Czego sobie życzysz?";
-			link.l1 = "Nic, madame. Muszę prosić o wybaczenie. Żegnaj.";
+			dialog.text = "Dzień dobry, mynheer. Czego sobie życzysz?";
+			link.l1 = "Nic, madame, wybacz to najście.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
@@ -150,43 +150,43 @@ void ProcessDialogEvent()
 
 //-------------------------------------------------за Голландию-----------------------------------------------
 		case "AbbyAndLucas":
-			dialog.text = "Zaszczycony jestem spotkaniem, Kapitanie "+GetFullName(pchar)+" Słyszałam różne opowieści o tobie od innych dam w mieście. Jesteś człowiekiem, który pojmał piracki statek widmo i przywiózł go jako nagrodę do Willemstad. Powiedz mi kapitanie... czy to prawda, że ten statek był pod dowództwem... Richarda Fleetwooda?";
-			link.l1 = "Wszystko, co pani słyszała, to prawda, madame. Byłem równie zszokowany jak każdy inny, gdy dowiedziałem się prawdy. To skandal! Oficer marynarki Wspólnoty Angielskiej rabuje kupców własnego narodu jak zwykły pirat! Ten łajdak próbował ukryć swoje nikczemne czyny, udając renegacki 'statek widmo' wspierany przez Holenderską Kompanię Zachodnioindyjską. Używał tego przykrywki, by obwiniać Kompanię i atakować również holenderskie statki.";
+			dialog.text = "Jestem zaszczycona tym spotkaniem, Kapitanie "+GetFullName(pchar)+". Uwierz mi, w mieście słyszałam niejedną historię o twoich przygodach. Jesteś człowiekiem, który przechwycił ten piracki statek widmo, a potem przywiózł do Willemstad jako łup! To naprawdę fascynujące! Tylko powiedz mi, proszę... czy to prawda, że dowodził nim sam... Richarda Fleetwood?";
+			link.l1 = "Wszystko, co pani słyszała, to prawda, madame. I przyznam, byłem równie zaskoczony jak wszyscy, gdy poznałem prawdę. To... to czysty skandal! Oficer Królewskiej Marynarki grabiący własnych rodaków jak zwykły pirat! Heh, że też ten drań wpadł na pomysł, by ukrywać swoje występki, podszywając się pod statek-widmo, rzekomo działający dla Holenderskiej Kompanii. Używał tej fikcji, by zrzucać winę na Kompanię i potem atakować też nasze statki.";
 			link.l1.go = "AbbyAndLucas_1";
 		break;
 		
 		case "AbbyAndLucas_1":
-			dialog.text = "Kręci mi się w głowie... Ciężko słuchać takich okropności, kapitanie. Znałem osobiście Richarda Fleetwooda, nigdy bym nie pomyślał, że on...";
-			link.l1 = "Madame, zostałem poinformowany przez mego patrona Lucasa Rodenburga o waszej podróży do Curacao z Recife. Teraz wszystko jest jasne. Fleetwood zatopił wasz statek, a potem wrócił, by 'uratować' was i waszego ojca przed pozostaniem na tej zagubionej wyspie. Sam czytałem dziennik pirata, zapisał każdy szczegół w swoim dzienniku pokładowym.";
+			dialog.text = "Rany, aż mi słabo, jak o tym słucham... To straszne łajdactwo, Kapitanie. Znałam osobiście Richarda Fleetwooda i nigdy bym nie pomyślała, że on...";
+			link.l1 = "Madame, Lucas Rodenburg poinformował mnie o waszej podróży z Recife do Curacao. Teraz wszystko się układa. Fleetwood zatopił wasz statek, a potem wrócił, by 'uratować' was z tej przeklętej wyspy. Nawet czytałem dziennik pokładowy tego łajdaka - opisał tam wszystko ze szczegółami.";
 			link.l1.go = "AbbyAndLucas_2";
 		break;
 		
 		case "AbbyAndLucas_2":
-			dialog.text = "„Co za koszmar... Wygląda na to, że mój papa miał rację. Mówił mi, że Richard to ten pirat, który był źródłem wszystkich naszych nieszczęść. Powinnam się cieszyć, że prawda wyszła na jaw... ah, przepraszam, kapitanie. To po prostu za dużo dla mojej biednej głowy... czego taki ważny człowiek jak ty chce od zwykłej dziewczyny?”";
-			link.l1 = "Abigail, jestem tu z powodu bardzo skomplikowanej i delikatnej sprawy. Czy mnie wysłuchasz?";
+			dialog.text = "Co za koszmar... Czyli mój papa miał rację. Od początku powtarzał, że to Richard był źródłem całego naszego nieszczęścia. Powinnam się cieszyć, że prawda wyszła na jaw, ale... Eh, wybacz mi, kapitanie. To po prostu mnie przerasta. Czego taki człowiek jak ty mógłby chcieć od zwykłej dziewczyny?";
+			link.l1 = "Abigail, jestem tu z powodu bardzo skomplikowanej i delikatnej sprawy. Czy zechcesz mnie wysłuchać?";
 			link.l1.go = "AbbyAndLucas_3";
 		break;
 		
 		case "AbbyAndLucas_3":
 			dialog.text = "Oczywiście, mynheer. Zamieniam się w słuch.";
-			link.l1 = "Jak już mówiłem, służę Kompanii. Lucas Rodenburg jest nie tylko moim dowódcą wojskowym, ale również dobrym przyjacielem. Wysłał mnie do ciebie z wiadomością. Byłoby największym szczęściem, gdybyś zgodziła się na jego propozycję małżeństwa. Jestem tu, aby poprosić cię o rękę mojego protektora. Jest gotów zrobić wszystko na świecie dla twojego szczęścia.";
+			link.l1 = "Jak już mówiłem, służę Kompanii. Lucas Rodenburg jest nie tylko moim przełożonym, ale i bliskim przyjacielem. Wysłał mnie tu z wiadomością - a raczej prośbą. Wiesz, on... chciałby cię poślubić. Jest gotów uczynić wszystko, byle tylko dać ci szczęście.";
 			link.l1.go = "AbbyAndLucas_4";
 		break;
 		
 		case "AbbyAndLucas_4":
-			dialog.text = "O, kapitanie! Teraz rozumiem, dlaczego Mynheer Rodenburg nie chciał zrobić tego sam... Mój biedny papa byłby wniebowzięty, ale ja...";
-			link.l1 = "Madame, widzę, że coś Panią trapi. Czy wątpi Pani w szczerość pana Rodenburga? Może mógłbym pomóc Pani zmienić zdanie?";
+			dialog.text = "O, kapitanie! Teraz rozumiem, dlaczego Mynheer Rodenburg nie zdobył się na to sam... Mój biedny papa byłby wniebowzięty, ale ja...";
+			link.l1 = "Widzę, że coś cię dręczy, madame. Czy wątpisz w jego szczerość? Może mogę jakoś pomóc rozwiać twoje obawy?";
 			link.l1.go = "AbbyAndLucas_5";
 		break;
 		
 		case "AbbyAndLucas_5":
-			dialog.text = "O nie, kapitanie, nie wątpię w szczerość Mynheera Rodenburga. Lucas zrobił dla mnie i mojego taty tak wiele, nie wiem, co by się z nami stało, gdyby się nami nie opiekował. Ale proszę, musisz zrozumieć moje położenie!\nMoja rodzina to nie Rothschildowie, ale nigdy nie byliśmy biedni. Rodzina Shneur jest dobrze znana wśród europejskich domów bankowych z naszego majątku... ale teraz ten okropny pirat nas zrujnował! Nie mogę znieść tych paskudnych plotek, które wiem, że krążą za naszymi plecami, już dłużej. Każda paplająca gospodyni i służąca w tym mieście myśli, że szukam tylko pieniędzy Mynheera Rodenburga. 'Jak bardzo jak Żydówka,' mówią. Okrutni nędznicy! Gdyby tylko mój ojciec pamiętał lokalizację wyspy! Ukrył tam resztki naszego rodzinnego majątku, aby uratować go przed rękami tych podłych piratów, którzy zamordowali moje siostry i brata!\nAle mój biedny ojciec nie jest żeglarzem, po prostu nie pamięta, gdzie ta wyspa i nasze rodzinne pieniądze są! Proszę, porozmawiaj z moim ojcem, kapitanie! Może przypomni sobie cokolwiek, co może być użyteczne dla twoich doświadczonych zmysłów. Proszę, znajdź tę wyspę i nasz majątek! Uratowałbyś biedną dziewczynę przed wstydem i hańbą!";
-			link.l1 = "Bardzo dobrze, Abigail. Porozmawiam z twoim ojcem. Miej wiarę, dziewczyno, zrobię, co w mojej mocy.";
+			dialog.text = "O nie, kapitanie, nie wątpię w jego intencje. Lucas zrobił dla mnie i mego ojca więcej, niż ktokolwiek inny. Nie wiem, co by się z nami stało, gdyby nie jego opieka. Ale musisz też zrozumieć moją sytuację! \nCo prawda nie jesteśmy jak Rothschildowie, ale też biedni nie jesteśmy. Shneurowie byli dobrze znani wśród europejskich bankierów z powodu naszego majątku... Ale teraz... ten okropny pirat nas zrujnował! Miasto wręcz huczy od plotek na ten temat. Służące, przekupki, damy - wszyscy gadają, że zależy mi tylko na majątku Rodenburga. 'Jak przystało na Żydówkę', mówią... bezwstydne języki! Mój biedny ojciec ukrył resztki naszego majątku na tamtej wyspie, próbując ocalić to, co zostało po śmierci moich braci i sióstr... \nAle on nie jest żeglarzem. Nie pamięta drogi. I nie wie, gdzie jest ta wyspa! Proszę cię, porozmawiaj z nim. Może zdołasz z niego coś wydobyć. I naprawdę - jeśli odnajdziesz tę cholerną wyspę i to, co zostało - uratujesz mnie przed hańbą i ocalisz imię mojej rodziny. Proszę cię, kapitanie...!";
+			link.l1 = "Dobrze, Abigail. Zajmę się tym i porozmawiam z nim. Nie martw się, dziewczyno, zrobię wszystko, co w mojej mocy.";
 			link.l1.go = "AbbyAndLucas_6";
 		break;
 		
 		case "AbbyAndLucas_6":
-			dialog.text = "Dziękuję, panie. Będę modlić się za ciebie dniem i nocą. Niechaj Bóg naszych ojców będzie z tobą!";
+			dialog.text = "Dziękuję, mynheer! Naprawdę! Będę się modlić dniami i ojcami o ciebie i twój sukces. I niech Bóg naszych ojców będzie z tobą!";
 			link.l1 = "Żegnaj, Abigail. Wrócę z dobrymi wieściami, przysięgam.";
 			link.l1.go = "AbbyAndLucas_7";
 		break;
@@ -199,8 +199,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AbbyAndLucas_8":
-			dialog.text = "O, tak! Mynheer Rodenburg to honorowy i życzliwy człowiek. Bez wahania dam mu swoje błogosławieństwo i będę szczęśliwa, nazywając go moim mężem.";
-			link.l1 = "W takim razie uważam moje zadanie za zakończone. Muszę teraz udać się do pana Rodenburga i przekazać mu dobre wieści. Szczerze życzę ci szczęścia, madame.";
+			dialog.text = "O, tak! Mynheer Rodenburg to prawdziwie honorowy i życzliwy człowiek. Bez wahania oddam mu swoje serce i z dumą nazwę swoim mężem.";
+			link.l1 = "Świetnie! W takim razie uważam swoją misję za zakończoną. No cóż, czas teraz wracać do Rodenburga i przekazać mu tę dobrą nowinę. Ale się ucieszy...! Żegnaj madame. Życzę wam szczęścia na nowej drodze i błogosławieństwa Bożego!";
 			link.l1.go = "AbbyAndLucas_9";
 		break;
 		
@@ -219,14 +219,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Seek_Island_1":
-			dialog.text = "Ach, mój drogi posłańcu, powiedz Richardowi, że dla naszego szczęścia jestem gotowa iść z nim, gdzie tylko zechce. Ale obawiam się, że nasza ucieczka zabije mojego biednego ojca... Panie, jestem zrozpaczona i nie wiem, co robić. Chciałabym, aby Richard znalazł tę przeklętą wyspę i skrzynię z naszym rodzinnym złotem... Może to w jakiś sposób pocieszyłoby mojego tatę w mojej nieobecności.";
-			link.l1 = "Widzę... Moja misja polegała na dostarczeniu cię na Antiguę, ale to trochę komplikuje sprawy. Jeśli znajdę wyspę i skrzynię, i przyniosę ją tobie, czy wtedy pojedziesz ze mną do St. John's i Richarda?";
+			dialog.text = "Ach, jak piękne są stopy tego, który zwiastuje dobrą nowinę! Mój drogi posłańcu, powiedz Richardowi, że dla wspólnego szczęścia pójdę za nim, dokądkolwiek zechce. Ale... Jest pewien problem. Boję się, że nasza ucieczka złamałaby serce mojego biednego ojca. Rany, jestem rozdarta i kompletnie nie wiem, co robić...! Chciałabym, aby Richard znalazł tę przeklętą wyspę i tą skrzynię z rodzinnym złotem... Może chociaż to w jakiś sposób by go wtedy pocieszyło? O Boże, zmiłuj się nade mną!";
+			link.l1 = "Rozumiem... Moja misja polegała tylko na dostarczeniu cię na Antiguę, ale to nieco komplikuje sytuacje. Jeśli znajdę wyspę i skrzynię, i przyniosę ją tobie, czy wtedy pojedziesz ze mną do St. John's i Richarda?";
 			link.l1.go = "Seek_Island_2";
 		break;
 		
 		case "Seek_Island_2":
-			dialog.text = "O tak, panie, wspomnę o tobie w naszych rodzinnych modlitwach! Nazwiemy naszego pierworodnego syna twoim imieniem! Bardzo dziękuję, kapitanie! Będę się za ciebie modlić! Idź i niech Chrystus oraz Błogosławiona Matka będą z tobą!";
-			link.l1 = "Nie każę ci długo na siebie czekać, madame. Wkrótce wrócę.";
+			dialog.text = "O tak, mynheer, będziemy się za ciebie modlić, daję słowo! Jeśli dane nam będzie mieć syna, nazwiemy go twoim imieniem. Dziękuję ci, kapitanie! Niech pan nasz Jezus Chrystus i Najświętsza Maryja Panna nad tobą czuwają!";
+			link.l1 = "Nie każę ci długo na siebie czekać, madame. Wrócę wkrótce.";
 			link.l1.go = "Seek_Island_3";
 		break;
 		
@@ -242,8 +242,8 @@ void ProcessDialogEvent()
 		
 //--------------------------------------------против всех------------------------------------------------
 		case "Abigile_kidnapping":
-			dialog.text = "Och... Masz od niego list? Och, ojcze, nie bądź tak surowy dla naszych gości! Zawstydzasz mnie swoimi neurotycznymi fantazjami! Mynheer proszę, chodź ze mną, chcę z tobą porozmawiać.";
-			link.l1 = "Dziękuję, panienko. Miło widzieć, że ktoś w tym domu mówi z sensem.";
+			dialog.text = "Och... Masz od niego list? Ależ, ojcze, nie bądź taki surowy dla naszego gościa! Przysparzasz mi wstydu tą swoją dziwną podejrzliwością! Mynheer, chodź ze mną, proszę. Chciałabym porozmawiać z tobą w cztery oczy.";
+			link.l1 = "Dziękuję, madame Abigail. Miło wreszcie spotkać pod tym dachem kogoś rozsądnego.";
 			link.l1.go = "Abigile_kidnapping_1";
 		break;
 		
@@ -259,27 +259,27 @@ void ProcessDialogEvent()
 		
 		case "Abigile_kidnapping_2":
 			DelLandQuestMark(npchar);
-			dialog.text = "Wybacz mojemu ojcu, panie. Jest naprawdę dobrym i życzliwym człowiekiem, ale nasze...nieszczęścia go złamały.";
-			link.l1 = "  W porządku, pani, rozumiem. Pozwólcie, że się przedstawię, jestem Charlie... Knippel. Jestem tu z rozkazu Richarda Fleetwooda, chce, żebym cię do niego przyprowadził. Proszę, oto list.";
+			dialog.text = "Wybacz mojemu ojcu, mynheer. Jest naprawdę dobrym i życzliwym człowiekiem, ale to, co nas spotkało... po prostu nas zniszczyło.";
+			link.l1 = "  W porządku, madame, to zrozumiałe. Pozwól, że się przedstawię, jestem Charlie... Knippel. Jestem tu z rozkazu Richarda Fleetwooda. On chce, żebym cię do niego przyprowadził. Proszę, oto list.";
 			link.l1.go = "Abigile_kidnapping_3";
 		break;
 		
 		case "Abigile_kidnapping_3":
 			RemoveItems(PChar, "NPC_Letter", 1);
-			dialog.text = "O, Richard...(czyta). O, Boże! On postanowił... oddać mojemu ojcu wszystkie stracone pieniądze! Jaka hojność! Drogi, słodki Richard! Mynheer, przynosisz dobre wieści niczym sam Gabriel! Richard, gdzie on jest? Czy jest na Curaçao?";
-			link.l1 = "Nie, panno. Była próba zamachu na jego życie i został ciężko ranny. Teraz jest na Antigui... nie skończyłaś czytać listu.";
+			dialog.text = "O, Richard... (czyta). O, Boże! On postanowił... zwrócić ojcu wszystkie stracone pieniądze! Rany, to takie szlachetne... Aż się wzruszyłam (ociera łzę). Mój drogi, słodki Richard! Mynheer, przynosisz dobre wieści niczym sam Archanioł Gabriel! Gdzie on teraz jest? Na Curacao?";
+			link.l1 = "Nie, madame. Próbowano go zamordować - został ciężko ranny. Leży teraz na Antigui... ale nie skończyłaś jeszcze listu. Czytaj dalej.";
 			link.l1.go = "Abigile_kidnapping_4";
 		break;
 		
 		case "Abigile_kidnapping_4":
-			dialog.text = "Święta Maryjo, poczęta bez grzechu, módl się za nami, którzy się do Ciebie uciekamy! Powiedz mi, czy on jest bezpieczny? Czy jego rana jest poważna?";
-			link.l1 = "Nie martw się tak, panno! Richard to nie jest człowiek, który pozwoliłby jakimś draniom tak po prostu go zabić. Teraz odpoczywa i dochodzi do siebie. Chce, żebym cię do niego zabrał. Potem wy dwoje popłyniecie do Londynu... proszę, dokończ list, panno, pospieszasz się.";
+			dialog.text = "O Najświętsza Maryjo, niepokalanie poczęta, módl się za nami, którzy się do Ciebie uciekamy! Słodki Jezu...! Błagam, powiedz mi, czy on jest bezpieczny?! Czy to coś poważnego?";
+			link.l1 = "Nie martw się, madame! Richard to nie człowiek, którego można łatwo zabić. Odpoczywa teraz i wraca do sił. I co najważniejsze - pragnie, abym cię do niego zabrał. A potem...  odpłyniecie razem do Londynu. Ale proszę, skończ najpierw czytać list!";
 			link.l1.go = "Abigile_kidnapping_5";
 		break;
 		
 		case "Abigile_kidnapping_5":
-			dialog.text = "Ach, tak... Przepraszam (czytanie). Mój Panie Knippel, jestem gotów wypłynąć z tobą. Potrzebuję jednego dnia, aby spakować swoje rzeczy i porozmawiać z moim ojcem. Wróć jutro, a popłynę z tobą.";
-			link.l1 = "Dobrze, pani. Będę tu jutro. Nie martw się, ja i moja załoga ochronimy cię przed wszelkimi niebezpieczeństwami podczas naszej podróży.";
+			dialog.text = "Ach, tak... Wybacz mi (czytanie). Mynheer Knippel, jestem gotowa popłynąć z tobą. Potrzebuję przynajmniej jednego dnia, aby spakować rzeczy, ogarnąć wszystko, no i też porozmawiać z ojcem. Wróć jutro - będę gotowa.";
+			link.l1 = "Dobrze, madame. Przyjdę tu jutro. I proszę, nie martw się, ja i moja załoga ochronimy cię przed wszelkimi niebezpieczeństwami podczas naszej podróży.";
 			link.l1.go = "Abigile_kidnapping_6";
 		break;
 		
@@ -320,13 +320,13 @@ void ProcessDialogEvent()
 		
 		case "Abigile_kidnapping_8":
 			DelLandQuestMark(npchar);
-			dialog.text = "Ach, co za szkoda. Ale myślę, że mogę poczekać jeszcze tydzień, jak czekałem wcześniej...";
-			link.l1 = "Dobrze powiedziane, panno. A żeby umilić pani oczekiwanie, proponuję zamienić tę surową kajutę na dom mojego przyjaciela. Tam czeka na panią miękkie łóżko i wyśmienite jedzenie.";
+			dialog.text = "Eh, szkoda. Cóz mogę powiedzieć... myślę, że zdołam poczekać jeszcze tydzień, skoro i tak już tyle czekałam.";
+			link.l1 = "Dokładnie tak, madame. A żeby umilić ten czas, proponuję zmienić tę surową kajutę na dom mojego przyjaciela. Tam czeka na panią mięciutkie łóżko i wyśmienite jedzenie!";
 			link.l1.go = "Abigile_kidnapping_9";
 		break;
 		
 		case "Abigile_kidnapping_9":
-			dialog.text = "Jesteś taki dobry, Charlie. Dziękuję. Dobrze będzie mieć ziemię pod stopami... Czuję się dość mdłości po tym całym kołysaniu na falach.";
+			dialog.text = "Och, jesteś dla mnie taki dobry, Charlie. Dziękuję. Dobrze będzie znów stanąc na stałym lądzie... Mam już dosyć tego kołysania!";
 			link.l1 = "Proszę za mną, panienko.";
 			link.l1.go = "Abigile_kidnapping_10";
 		break;
@@ -340,8 +340,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_kidnapping_11":
-			dialog.text = "Cieszę się, że mogę cię poznać, John. Dziękuję za waszą uprzejmą gościnność, panowie!";
-			link.l1 = "... ";
+			dialog.text = "Miło mi cię poznać, John. Dziękuję wam za tak uprzejmą gościnę!";
+			link.l1 = "...";
 			link.l1.go = "Abigile_kidnapping_12";
 		break;
 		
@@ -359,44 +359,44 @@ void ProcessDialogEvent()
 		
 		case "Abigile_kidnapping_13":
 			DelLandQuestMark(npchar);
-			dialog.text = "O, Charlie, widziałem Richarda tylko kilka razy i nie powiedział mi wiele o tym, co robi.";
-			link.l1 = "Jestem dość zaskoczony, że ukrywał tak wielką tajemnicę przed kobietą, którą kocha... Panna, Richard nie jest zwykłym kapitanem. Jest także specjalnym agentem angielskiej Tajnej Rady. Bardzo ważnym człowiekiem, który zajmuje się delikatnymi zadaniami bezpośrednio zleconymi przez samego Lorda Protektora. Obecnie jego obowiązkiem jest zniszczenie handlowej potęgi Holenderskiej Kompanii Zachodnioindyjskiej na Karaibach.";
+			dialog.text = "O, Charlie, musisz wiedzieć, że spotkałam się z Richardem tylko kilka razy i nie zdradził mi zbyt wiele o tym, co robi.";
+			link.l1 = "To i tak zaskakujące, że ukrywał przed swoją miłością tak wielką tajemnicę. Otóz Richard wcale nie jest zwykłym kapitanem. To agent Tajnej Rady Jego Królewskiej Mości. To cholernie ważny człowiek, który zajmuje się delikatnymi zadaniami zleconymi bezpośrednio przez samego Lorda Protektora. Obecnie jego obowiązkiem jest rozbicie wpływów Holenderskiej Kompanii Zachodnioindyjskiej tutaj, na Karaibach.";
 			link.l1.go = "Abigile_kidnapping_14"
 		break;
 		
 		case "Abigile_kidnapping_14":
-			dialog.text = "Panie, o czym pan mówi?";
-			link.l1 = "Tak, panienko. Twój ukochany Richard - mój przyjaciel - jest bardzo ważnym człowiekiem. Zawsze byłem dumny, że jestem jego przyjacielem, ale stał się bardzo tajemniczy nawet wobec mnie. Oczywiste jest, że jest na jakiejś tajnej misji. Bardzo mi przykro, że ta misja nie pozwala mu się z tobą spotkać.";
+			dialog.text = "Co...? Mynheer, o czym pan mówi?";
+			link.l1 = "Tak, madame. Twój ukochany Richard - mój przyjaciel - jest człowiek wielkiej wagi. Zawsze cieszyła mnie jego przyjaźń, ale ostatnio stał się aż nazbyt tajemniczy także wobec mnie. Wszystko wskazuje na to, że prowadzi jakąś tajną operację. Przykro mi, że przez to nie może się z tobą spotkać.";
 			link.l1.go = "Abigile_kidnapping_15";
 		break;
 		
 		case "Abigile_kidnapping_15":
-			dialog.text = "Charlie, przerażasz mnie. Czy jesteś pewien, że z nim wszystko w porządku?";
-			link.l1 = "Jestem tego pewien. Tylko... Nie pochwalałem, jak cię teraz traktuje. Rozumiem, że jego zadanie jest kluczowe i nie może zdradzić swojego obowiązku, nawet dla ciebie.";
+			dialog.text = "Charlie, przerażasz mnie. Czy jesteś pewien, że nic mu nie grozi? Boję się, nawet nie wiesz jak bardzo.";
+			link.l1 = "Wszystko jest w porządku. Tylko... nie spodobało mi się, że tak cię potraktował. Ale rozumiem - obowiązku ponad uczucia. Nawet wobec kogoś takiego jak ty.";
 			link.l1.go = "Abigile_kidnapping_16";
 		break;
 		
 		case "Abigile_kidnapping_16":
-			dialog.text = "O mój drogi Charlie... Będę czekać na Richarda do Drugiego Przyjścia, jeśli zajdzie taka potrzeba. Może mogłabym zostać nad tawerną... Nie mogę wciąż tak długo korzystać z gościnności Johna.";
-			link.l1 = "Przestań pleść bzdury, pani! Twoja obecność nas zaszczyca, a nie nazywam się Charlie Knipepel, jeśli wyrzucę narzeczoną mojej panny młodej, mojego drogiego przyjaciela Richarda Fleetwooda, z domu!";
+			dialog.text = "O mój drogi Charlie... Ale wiedz, że będę czekać na Richarda, choćby do końca świata. Może mogłabym wynając pokój w atawernie... Nie chcę wiecznie nadużywać gościnności Johna.";
+			link.l1 = "Nie opowiadaj bzdur, madame! Twoja obecność to dla nas zaszczyt, a nie ciężar! Jak mógłbym pozowlić, by narzeczona mojego najdroższczego przyjaciela spała w tawernie?! Mój honor na to nie pozwoli!";
 			link.l1.go = "Abigile_kidnapping_17";
 		break;
 		
 		case "Abigile_kidnapping_17":
-			dialog.text = "Charlie... Jestem bardzo poruszona twoim stosunkiem do mnie. Jestem tylko zwykłą dziewczyną, i na dodatek Żydówką...";
-			link.l1 = "Panienko! Wiem, że to zuchwałe gadanie, jesteś szlachetną, chrześcijańską kobietą! I nawet nie myśl o tawernach! Nigdy sobie nie wybaczę, jeśli zawiodłem cię w mojej służbie dla Richarda.";
+			dialog.text = "Charlie... Teraz naprawdę mnie wzruszyłeś. Jesteś dla mnie taki dobry... A przecież jestem tylko zwykłą dziewczyną, i do tego Żydówką...";
+			link.l1 = "Madame! Ależ proszę tak nie mówić. Dla mnie jesteś prawdziwą damą i chrześcijanką z sercem ze złota. I ani mi się waż myśleć o tawernach! Nigdy sobie nie wybaczę, jeśli zawiodę cię w służbie Richardowi.";
 			link.l1.go = "Abigile_kidnapping_18";
 		break;
 		
 		case "Abigile_kidnapping_18":
-			dialog.text = "Dziękuję, Charlie. Cieszę się, że jesteś takim... dobrym człowiekiem.";
-			link.l1 = "To mój obowiązek, panienko. Teraz przepraszam, ale muszę iść. Możesz swobodnie spacerować po mieście, zapewne czujesz się dość samotna zamknięta w tym domu, prawda?";
+			dialog.text = "Dziękuję, Charlie. Cieszę się, że jesteś... taki szlachetny.";
+			link.l1 = "To mój obowiązek, madame. Ale teraz muszę już iść. Jeśli chcesz, możesz swobodnie spacerować po mieście. W końcu siedzenie bez końca w czterech ścianach mogłoby przyprawić cię o ból głowy. Tylko uważaj na siebie, dobrze?";
 			link.l1.go = "Abigile_kidnapping_19";
 		break;
 		
 		case "Abigile_kidnapping_19":
-			dialog.text = "Cóż... John jest bardzo interesującym towarzystwem. Potrafi godzinami opowiadać o swoich proszkach, mieszankach i różnych... chorobach. Jest również uprzejmym i łaskawym człowiekiem. Chodzę też regularnie do kościoła, miejscowy ksiądz jest całkiem miły... ale, oczywiście, naprawdę tęsknię za Richardem.";
-			link.l1 = " Myślę, że wkrótce wróci. Charlie Knippel jest do twojej dyspozycji, jeśli czegoś potrzebujesz.";
+			dialog.text = "Cóż... Powiem ci, że John to intrygujący człowiek. Potrafi godzinami mówić o swoich proszkach, mieszankach i różnych... chorobach. Ale jest też uprzejmym i łaskawym człowiekiem. Zaczęłam chodzić też do lokalnego kościoła, tutejszy ksiądz jest taki miły i troskliwy... Jest dobrze, ale moje serce dalej tęskni za Richardem.";
+			link.l1 = " Myślę, że wkrótce wróci. A jeśli czegoś potrzebujesz - Charlie Knippel jest do twojej dyspozycji.";
 			link.l1.go = "Abigile_kidnapping_20";
 		break;
 		
@@ -409,32 +409,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_return":
-			dialog.text = "Słyszałem plotki o Richardzie... że zniknął. Wiesz coś o tym, Charlie?";
-			link.l1 = "Tak, Abigail. Przykro mi... Richard Fleetwood wyjechał do Anglii i nie wróci. Dostał awans lub przeniesienie, coś w tym stylu... w każdym razie, po tym, co ci zrobił, nie chcę go znać.";
+			dialog.text = "Słyszałem jakieś dziwne plotki o Richardzie... że podobno zniknął. Wiesz coś o tym, Charlie? Błagam, powiedz!";
+			link.l1 = "Tak, Abigail. Przykro mi... Richard Fleetwood wyjechał do Anglii i już tu nie wróci. Podobno dostał awans, przeniesienie, albo coś w tym rodzaju. Ale tak szczerze, to po tym, co ci zrobił... nawet nie chcę więcej słyszeć jego imienia.";
 			link.l1.go = "Abigile_return_1";
 		break;
 		
 		case "Abigile_return_1":
-			dialog.text = "Ach, wiedziałem, że to się tak skończy....(szlocha) Dlaczego nie posłuchałem taty! Przynajmniej byłby zadowolony, gdybym poślubił Lucasa Rodenburga.";
-			link.l1 = "Przebacz mi znowu, panienko...";
+			dialog.text = "O rany. Wiedziałam, że to się tak skończy... (szlocha). Jezu, dlaczego nie posłuchałam ojca?! Przynajmniej by się ucieszył, gdybym wyszła za Lucasa Rodenburga. O Boże...!";
+			link.l1 = "Przebacz mi, madame...";
 			link.l1.go = "Abigile_return_2";
 		break;
 		
 		case "Abigile_return_2":
-			dialog.text = "Za co, Charlie? Wcale nie jesteś winny. Byłeś dla mnie tylko dobry!";
-			link.l1 = "Dla mnie jeszcze gorsze wieści dla ciebie. Właśnie wróciłem z Curacao, Lucas Rodenburg został aresztowany za bunt i zdradę przeciwko Republice. Jest wysyłany z powrotem do Amsterdamu w kajdanach, by stanąć przed sądem. Próbował zamordować Petera Stuyvesanta, dyrektora Kompanii. Na dodatek usiłował obalić gubernatora Willemstad i jest podejrzewany o morderstwo co najmniej jednej innej osoby, więc wątpię, by Stadtholder go oszczędził.";
+			dialog.text = "Ależ za co, Charlie? Przecież to nie twoja wina. Byłeś dla mnie taki dobry i wspierający przez ten cały czas!";
+			link.l1 = "Niestety, to nie koniec złych wieści. Właśnie wróciłem z Curacao. Musisz wiedzieć, że Lucas Rodenburg został aresztowany za bunt i zdradę przeciwko Republice. Będą go wysyłać w kajdanach do Amsterdamu, by stanął przed sądem. Okazało się, że próbował zamordować Petera Stuyvesanta, dyrektora Kompanii. Usiłował też obalić gubernatora Willemstad i jest podejrzewany o morderstwo co najmniej jednej osoby. Wątpię więc, by Stadtholder go oszczędził.";
 			link.l1.go = "Abigile_return_3";
 		break;
 		
 		case "Abigile_return_3":
-			dialog.text = "O Boże! Co za koszmar! Myślę, że zemdleję! Charles, czy to prawda? Nie, proszę, powiedz, że to nieprawda!";
-			link.l1 = "Przepraszam, panno, sytuacja się pogarsza. W trakcie śledztwa dotyczącego działań Rodenburga ujawniono, że pirat, który zatopił twój fluit, działał na rozkaz Lucasa Rodenburga. Prowadził on swoją prywatną wojnę przeciwko angielskiej flocie. Bardzo mi przykro, Abigail. Wszyscy mężczyźni, z którymi miałaś tutaj do czynienia na Karaibach, to kłamcy, złodzieje i mordercy.";
+			dialog.text = "Boże, Co za koszmar?! (łapie się za głowę). Chyba zaraz zemdleję! Słabo mi. Charles, czy to prawda...? Błagam, nie... powiedz mi, że to nieprawda! (szlocha)";
+			link.l1 = "Przykro mi, madame. Naprawdę. Ale sytuacja jeszcze się pogarsza. Śledztwo w sprawiwe Rodenburga wykazało, że ten przeklęty pirat, który zatopił twóją fluitę, działał na rozkaz Lucasa Rodenburga. Prowadził on swoją własną, prywatną wojenkę przeciwko angielskiej flocie. Tak bardzo ci współczuję, Abigail... Wszyscy mężczyźni, z którymi miałaś do czynienia po tej stronie świata, to kłamcy, złodzieje i mordercy. Zasłużyłaś na kogoś lepszego";
 			link.l1.go = "Abigile_return_4";
 		break;
 		
 		case "Abigile_return_4":
-			dialog.text = "Oh... jestem zgubiona. Charles... proszę... zabierz mnie z powrotem do Willemstad. Potrzebuję mojego taty...";
-			link.l1 = "Oczywiście, droga panna. Niestety, nie ma tu dla ciebie nic w Bridgetown. Idź, spakuj swoje rzeczy, pożegnaj się z Johnem i natychmiast wyruszymy w morze.";
+			dialog.text = "Ja... jestem zgubiona. Nie wiem. Charles... proszę... zabierz mnie do Willemstad. Potrzebuję mojego taty...";
+			link.l1 = "Oczywiście, moja droga. Z Bridgetown już cię nic nie łączy. Spakuj swoje rzeczy i pożegnaj się z Johnem. A potem natymiast wyruszymy w morze.";
 			link.l1.go = "Abigile_return_5";
 		break;
 		
@@ -454,38 +454,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_return_6":
-			dialog.text = "Nie, Charlie, to ja muszę ci podziękować. Gdyby nie ty i John, nawet nie wiem, co by się ze mną stało. Jesteście jedynymi uczciwymi ludźmi, których spotkałem na archipelagu.";
-			link.l1 = "Hm... sprawiasz, że się rumienię, Abigail. Byłem zadowolony, mogąc ci pomóc. I bardzo mi przykro z powodu całego tego bałaganu.";
+			dialog.text = "Nie, Charlie, to ja ci dziękuję. Gdyby nie ty i John, nawet nie wiem, co by się ze mną stało. Jesteście jedynymi uczciwymi ludźmi, których spotkałem po tej stronie świata.";
+			link.l1 = "Ojej... aż się zarumieniłem. To miłe, Abigail, dzięki. Cieszę się, że mogłem ci jakoś pomóc. I naprawdę przykro mi z powodu całego tego zamieszania.";
 			link.l1.go = "Abigile_return_7";
 		break;
 		
 		case "Abigile_return_7":
-			dialog.text = "Wiesz, Charlie, dużo myślałem podczas naszej podróży na Curacao. Wszystko jest teraz jasne - Richard Fleetwood, Mynheer Rodenburg - wszystko to wydaje się koszmarem, który wreszcie się skończył. Jestem znowu z ojcem i możemy wrócić do normalnego życia\nNie będzie to łatwe - nie mamy żadnych pieniędzy. Ale jakoś sobie poradzimy, wszystko będzie dobrze. Błogosławiona Matka się nami zajmie, ona nigdy nie zapomina o swoich dzieciach, nawet o moim upartym starym ojcu, który zaprzecza Jej Synowi.";
-			link.l1 = "Panno Abigail, zamierzam ci pomóc.";
+			dialog.text = "Wiesz, Charlie, dużo myślałem podczas naszej podróży na Curacao. Teraz już wszystko jest dla mnie jasne - Richard Fleetwood, Lucas Rodenburg... to wszystko jest jak jakiś koszmar, który właśnie dobiegł końca. Jestem znowu z ojcem i możemy wrócić do normalności. \nNie będzie to łatwe - nie mamy żadnych pieniędzy. Ale jakoś sobie poradzimy. Musimy. Błogosławiona Maryja cały czas czuwa nad nami i wierzę, że się nami zajmie; ona nigdy nie zapomina o swoich dzieciach, nawet o moim upartym starym ojcu, który nie wierzy w Jej Syna.";
+			link.l1 = "Abigail, proszę, pozwól mi wam pomóc!";
 			link.l1.go = "Abigile_return_8";
 		break;
 		
 		case "Abigile_return_8":
-			dialog.text = "Pomóc nam? Ale jak, Charlie?";
-			link.l1 = "Ryszard opowiedział mi historię twojego rozbicia i twojego ocalenia. Wiem też, że twój ojciec zdołał ukryć swoje rzeczy na niezbadanej wyspie. Zamierzam ją znaleźć i przywieźć z powrotem twoje pieniądze.";
+			dialog.text = "Pomóc? Ale jak, Charlie?";
+			link.l1 = "Richard opowiedział mi historię o twoim rozbiciu i ocaleniu. Wiem też, że twój ojciec ukrył swoje rzeczy na pewnej nieznanej wyspie. Zamierzam ją znaleźć i przywieźć z powrotem twoje pieniądze.";
 			link.l1.go = "Abigile_return_9";
 		break;
 		
 		case "Abigile_return_9":
-			dialog.text = "O, Charlie... Ani ja, ani mój ojciec nie jesteśmy w stanie powiedzieć ci, gdzie znajduje się ta nieszczęsna wyspa... Nie jesteśmy żeglarzami. Na dodatek, byłem przerażony o swoje życie podczas ataku, nie pamiętam nic oprócz krwi i zapachu śmierci.";
-			link.l1 = "Abigail, spróbuj sobie przypomnieć. Proszę, każdy szczegół może mi pomóc, nawet najmniejszy. Może coś się wydarzyło przed atakiem? Jak wygląda ta wyspa?";
+			dialog.text = "O, Charlie... To takie kochane z twojej strony. Ale nni ja, ani mój ojciec nie jesteśmy w stanie powiedzieć ci, gdzie konkretnie leży ta nieszczęsna wyspa... Nie jesteśmy żeglarzami. Poza tym podczas ataku byłam śmiertelnie przerażona - nie pamiętam nic oprócz krwi i przemocy.";
+			link.l1 = "Proszę, spróbuj sobie przypomnieć - cokolwiek! Każdy drobiazg może mi pomóc, nawet ten najmniejszy. Może coś się wydarzyło tuż przed atakiem? Jak wygląda ta wyspa? Hm?";
 			link.l1.go = "Abigile_return_10";
 		break;
 		
 		case "Abigile_return_10":
-			dialog.text = "Wyspa... Wygląda jak wyspa? Zatoka, dżungle. Nic naprawdę nie rzuciło mi się w oczy. Ach, pamiętam! Może to ci pomoże. Niedługo przed atakiem piratów spotkaliśmy fluitę i zawołaliśmy jej kapitana. Został zaproszony na nasz statek i zjadł kolację z naszym kapitanem. My też tam byliśmy. Może on wie o tej wyspie.";
-			link.l1 = "To coś niesamowitego! Jakie były nazwy fluyty i jej kapitana?";
+			dialog.text = "Wyspa... Jak wygląda? Po prostu jak wyspa. Zatoka, dżungla... Przepraszam, ale nie wiem, co mogę ci powiedzieć (kręci głową). Albo... chwila! Coś pamiętam! Nie wiem czy to ci cokolwiek da, ale kojarzę, że tuż przed atakiem piratów napotkaliśmy na obcą fluitę. Zaprosiliśmy tamtego kapitana na nasz statek, aby zjadł z nami kolacje. Pamiętam to, byłam tam. Może on wie coś o tej wyspie?";
+			link.l1 = "Wow, Abigail! To już bardzo dużo mi daje! A jak miał na imię ten kapitan? A może kojarzysz nazwę tej fluity?";
 			link.l1.go = "Abigile_return_11";
 		break;
 		
 		case "Abigile_return_11":
-			dialog.text = "Nie pamiętam, Charlie. Naprawdę nie...";
-			link.l1 = "Spróbuj sobie przypomnieć, Abi!";
+			dialog.text = "Oj nie, nie pamiętam, Charlie. Naprawdę nie...";
+			link.l1 = "Błagam, spróbuj sobie przypomnieć, Abi!";
 			link.l1.go = "Abigile_return_12";
 			pchar.questTemp.HWIC.Self = "SolomonHistory";
 		break;
@@ -499,8 +499,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_return_13":
-			dialog.text = "Będziemy na ciebie czekać. Pomóż mi Charlie Knippel. Jesteś naszą jedyną nadzieją... Będę się za ciebie modlić! Niech Bóg cię prowadzi!";
-			link.l1 = "Jestem w drodze. Żegnaj, Abi. Żegnaj, Solomon.";
+			dialog.text = "Będziemy na ciebie czekać. Uwierz mi, że jesteś naszą jedyną nadzieją... Będę się za ciebie modlić! Niech Bóg cię prowadzi!";
+			link.l1 = "Wrócę najszybciej jak to tylko możliwe. Tymczasem żegnaj, Abi. Żegnaj, Salomon.";
 			link.l1.go = "Abigile_return_14";
 		break;
 		
@@ -514,15 +514,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_NoMoney":
-			dialog.text = "Och, drogi... jaka szkoda. Mieliśmy nadzieję, ale... dziękujemy mimo wszystko, Charlie, że próbowałeś nam pomóc, gdy nikt inny nie chciał. Wygląda na to, że to jest los, który Bóg mi przeznaczył.";
-			link.l1 = "Żegnaj, Abigail. Mam nadzieję, że będziesz w porządku.";
+			dialog.text = "Och, drogi... jaka szkoda. Mieliśmy nadzieję, ale... dziękujemy mimo wszystko, Charlie, że chociaż spróbowałeś nam pomóc, gdy nikt inny nie chciał. Wygląda na to, że to jest los, który Bóg w swojej niepojętej mądrości mi wyznaczył. Pozostaje mi z ufnością podporządkować się Jego woli.";
+			link.l1 = "Żegnaj, Abigail. Mam nadzieję, że wszystko się ułoży.";
 			link.l1.go = "exit";
 			npchar.dialog.currentnode = "Abigile_Poor";
 		break;
 		
 		case "Abigile_GiveMoney":
-			dialog.text = "Czy to... czy to prawda? Naprawdę przywiozłeś nam z powrotem nasze zgubione pieniądze? Och, Charlie!";
-			link.l1 = "Tak, to prawda. Mam to. Proszę, weź to. To wszystko twoje.";
+			dialog.text = "Czy to... czy to prawda? Czy ty naprawdę przywiozłeś nam z powrotem ten zaginiony skarb? Och, Charlie!";
+			link.l1 = "Tak, Abi, to prawda. Mam go przy sobie. Proszę, oto on. Należy do ciebie.";
 			link.l1.go = "Abigile_GiveMoney_1";
 		break;
 		
@@ -530,13 +530,13 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -200000);
 			pchar.quest.MakeAbiPoor.over = "yes"; //снять прерывание
 			ChangeCharacterComplexReputation(pchar, "nobility", 10);
-			dialog.text = "Jak mogę ci podziękować?! Jak?!";
-			link.l1 = "Nie potrzebuję żadnych podziękowań, Abi. To najmniej, co mogłem dla ciebie zrobić. Teraz możesz zacząć nowe życie bez Rodenburgów, Fleetwoodów czy jakichkolwiek innych dziwnych mężczyzn próbujących cię wykorzystać. Jestem pewien, że twój ojciec znajdzie sposób, by te pieniądze pomnożyły się... wydaje się, że to cecha dziedziczna.";
+			dialog.text = "Jezu! Aż nie mogę w to uwierzyć...! Charlie, jak mogę ci podziękować?! Jak?!";
+			link.l1 = "Nie potrzebuję żadnych podziękowań, Abi. Tylko tyle mogłem dla ciebie zrobić. Najważniejsze, że teraz masz szansę zacząć wszystko od nowa - bez Rodenburgów, Fleetwoodów i innych podejrzanych indywiduuów, którzy będą chcieli cię wykorzystać. Zresztą jestem przekonany, że twój ojciec znajdzie sposób, aby te pieniądze poszły w ruch. Coś mi mówi, że u was to rodzinne.";
 			link.l1.go = "Abigile_GiveMoney_2";
 		break;
 		
 		case "Abigile_GiveMoney_2":
-			dialog.text = "Charlie, nie bądź taki bezczelny! Zrobiłeś tak wiele dla mnie, dla mnie i dla mojego biednego ojca. No cóż, przyzwyczaiłam się do twojej obecności w moim życiu. Modliłam się za ciebie niestrudzenie każdego dnia i będę nadal modliła się za ciebie i twoją załogę do Błogosławionej Matki każdego dnia, który nadejdzie! Jesteś naszym aniołem stróżem. Sam Pan cię do nas zesłał, wierz lub nie\nZanim odejdziesz, chcę, żebyś wiedział, że drzwi naszego domu zawsze będą dla ciebie otwarte o każdej porze. I... proszę, pozwól mi cię pocałować, mój drogi Charlie...";
+			dialog.text = "Ależ Charlie, błagam, nie bądź taki bezczelny! Zrobiłeś tak wiele dla mnie...  i mojego biednego ojca. No cóż, przyznam, że bardzo przyzwyczaiłam się do twojej obecności w moim życiu. Bez przerwy, każdego dnia modliłam się za ciebie i obiecuję, że nadal będę to robić. Jesteś naszym aniołem stróżem. Sam Pan cię do nas zesłał, wierz lub nie. \nZanim jednak odejdziesz, chcę, żebyś wiedział, że drzwi naszego domu zawsze będą dla ciebie otwarte o każdej porze. I... proszę, pozwól mi cię pocałować, mój drogi Charlie...";
 			link.l1 = "Cóż... tak, oczywiście Abi... jeśli nalegasz.";
 			link.l1.go = "Abigile_GiveMoney_3";
 		break;
@@ -552,15 +552,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Abigile_Poor":
-			dialog.text = "Niech cię Bóg błogosławi, Charles. Nic się dla nas nie zmieniło... Żebrzę o resztki przed kościołem.";
-			link.l1 = "Trzymaj się mocno, panienko. Niech Bóg będzie z tobą.";
+			dialog.text = "Niech ci Bóg błogosławi, Charles. U nas niestety wszystko po staremu... Jestem zmuszona żebrać o resztki przed kościołem.";
+			link.l1 = "Trzymaj się mocno, madame. Niech Bóg będzie z tobą.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Abigile_Poor";
 		break;
 		
 		case "Abigile_AllRight":
 			dialog.text = "Charles, to ty! Tak się cieszę, że cię widzę! Proszę, usiądź! Zaparzę kawę!";
-			link.l1 = "Też się cieszę, że cię widzę, Abi. I cieszę się, że u ciebie wszystko w porządku.";
+			link.l1 = "Też się cieszę, że cię widzę, Abi. I dobrze wiedzieć, że u ciebie wszystko w porządku.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Abigile_AllRight";
 		break;
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 		//--> блок реагирования на попытку залезть в сундук
 		case "Woman_FackYou":
 			dialog.text = "Ach, więc to tak?! Przyjąłem cię jako mego gościa, a ty postanowiłeś mnie okraść?! Straże!!!";
-			link.l1 = "Zamknij gębę, głupia dziewko.";
+			link.l1 = "Stul pysk, głupia dziwko!";
 			link.l1.go = "exit";
 			LAi_group_Attack(NPChar, Pchar);
 		break;

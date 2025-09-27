@@ -1,252 +1,54 @@
-SharlieTrial_1
-{
-Ihr Darlehen vom Abbé Benoit ist abgelaufen!
-}
-
-SharlieTrial_2
-{
-Gralam
-}
-SharlieTrial_3
-{
-Lavua
-}
-
-SharlieTrial_4
-{
-Boot
-}
-
-SharlieTrial_5
-{
-Euer Schiff ist bereit! Begeben Sie sich zur Anlegestelle und stechen Sie in See!
-}
-
-SharlieTrial_6
-{
-Geist
-}
-
-SharlieTrial_7
-{
-Begeben Sie sich auf die gegenüberliegende Seite der Insel, um Ihre Aufgabe zu erfüllen. Verlasst die Bucht auf der rechten Seite und haltet Euch an der Küstenlinie!
-}
-
-SharlieTrial_8
-{
-Die Steuerung des Seemodus ist in den Spieloptionen verfügbar.
-}
-
-SharlieTrial_9
-{
-Sie kommen zu spät zum Treffen!
-}
-
-SharlieTrial_10
-{
-Eine Stunde verging...@<NewStr()>Rum wurde auf Ihr Boot geladen
-}
-
-SharlieTrial_11
-{
-Verwenden Sie das Aktionsmenü, um zu Ihrem Schiff zurückzukehren (Enter).
-}
-SharlieTrial_12
-{
-Transportieren Sie den Rum nach Le Francois. Segeln Sie weiter um die Insel.
-}
-
-SharlieTrial_13
-{
-Lutisse
-}
-SharlieTrial_14
-{
-Montane
-}
-
-SharlieTrial_15
-{
-Ein anspruchsvoller Kampf wartet auf Sie. Drücken Sie (F6) für schnelles Speichern.
-}
-
-SharlieTrial_16
-{
-Jemand wurde in der Nähe getötet! Im Falle eines Mordes benutzen Sie das Aktionsmenü (ENTER) oder den zugewiesenen Hotkey, um den Verstorbenen zu plündern.
-}
-
-SharlieTrial_17
-{
-Prosper
-}
-SharlieTrial_18
-{
-Trubal
-}
-
-SharlieTrial_19
-{
-Selina
-}
-SharlieTrial_20
-{
-Trubal
-}
-
-SharlieTrial_21
-{
-Gilbert
-}
-SharlieTrial_22
-{
-Cursee
-}
-
-SharlieTrial_23
-{
-Wolter
-}
-SharlieTrial_24
-{
-Catcher
-}
-
-SharlieTrial_25
-{
-Versenken Sie sie mit Bomben oder entern Sie sie sofort, wenn der Wind es zulässt.
-}
-
-SharlieTrial_26
-{
-Ausgezeichnete Arbeit! Öffnen Sie die Weltkarte über das Aktionsmenü und setzen Sie die Segel in Richtung Norden nach Guadeloupe!
-}
-
-SharlieTrial_27
-{
-Tichingitu
-}
-SharlieTrial_28
-{
-
-}
-
-SharlieTrial_29
-{
-Alonso
-}
-SharlieTrial_30
-{
-
-}
-
-SharlieTrial_31
-{
-Gerar
-}
-SharlieTrial_32
-{
-Lecrua
-}
-
-SharlieTrial_33
-{
-Warlike
-}
-
-SharlieTrial_34
-{
-Florian
-}
-SharlieTrial_35
-{
-Shoke
-}
-
-SharlieTrial_36
-{
-"Drei Stunden vergingen...@<NewStr()>Die Kanonen wurden auf die Fregatte geladen"
-}
-
-SharlieTrial_37
-{
-Arthuro
-}
-SharlieTrial_38
-{
-Cascos
-}
-
-SharlieTrial_39
-{
-Puebla
-}
-SharlieTrial_40
-{
-'Puebla'
-}
-
-SharlieTrial_41
-{
-Jirarz
-}
-SharlieTrial_42
-{
-Artua
-}
-
-SharlieTrial_43
-{
-Gregoire
-}
-SharlieTrial_44
-{
-Valinnie
-}
-
-SharlieTrial_45
-{
-Rufen Sie Ihr Logbuch auf, indem Sie F3 drücken.
-}
-
-SharlieTrial_46
-{
-Von nun an bist du auf dich allein gestellt in dieser grausamen Welt.
-}
-
-SharlieTrial_47
-{
-Tichingitu hat seine Meinung geändert.
-}
-
-SharlieTrial_48
-{
-Charles
-}
-SharlieTrial_49
-{
-Barbier
-}
-
-SharlieTrial_50
-{
-Henry
-}
-
-SharlieTrial_51
-{
-Barke 'Henry'
-}
-
-SharlieTrial_52
-{
-Eine Gelegenheit, die Toten für wertvolle Gegenstände zu plündern!
-}
-
-SharlieTrial_53
-{
-Guillaume
-}
-SharlieTrial_54
-{
-Dubois
-}
+SharlieTrial_1 {Ihr Darlehen vom Abbé Benoit ist abgelaufen!}
+SharlieTrial_2 {Gralam}
+SharlieTrial_3 {Lavua}
+SharlieTrial_4 {Boot}
+SharlieTrial_5 {Euer Schiff ist bereit! Begeben Sie sich zur Anlegestelle und stechen Sie in See!}
+SharlieTrial_6 {Geist}
+SharlieTrial_7 {Begeben Sie sich auf die gegenüberliegende Seite der Insel, um Ihre Aufgabe zu erfüllen. Verlasst die Bucht auf der rechten Seite und haltet Euch an der Küstenlinie!}
+SharlieTrial_8 {Die Steuerung des Seemodus ist in den Spieloptionen verfügbar.}
+SharlieTrial_9 {Sie kommen zu spät zum Treffen!}
+SharlieTrial_10 {Eine Stunde verging...@<NewStr()>Rum wurde auf Ihr Boot geladen}
+SharlieTrial_11 {Verwenden Sie das Aktionsmenü, um zu Ihrem Schiff zurückzukehren (Enter).}
+SharlieTrial_12 {Transportieren Sie den Rum nach Le Francois. Segeln Sie weiter um die Insel.}
+SharlieTrial_13 {Lutisse}
+SharlieTrial_14 {Montane}
+SharlieTrial_15 {Ein anspruchsvoller Kampf wartet auf Sie. Drücken Sie (F6) für schnelles Speichern.}
+SharlieTrial_16 {Jemand wurde in der Nähe getötet! Im Falle eines Mordes benutzen Sie das Aktionsmenü (ENTER) oder den zugewiesenen Hotkey, um den Verstorbenen zu plündern.}
+SharlieTrial_17 {Prosper}
+SharlieTrial_18 {Trubal}
+SharlieTrial_19 {Selina}
+SharlieTrial_20 {Trubal}
+SharlieTrial_21 {Gilbert}
+SharlieTrial_22 {Cursee}
+SharlieTrial_23 {Wolter}
+SharlieTrial_24 {Catcher}
+SharlieTrial_25 {Versenken Sie sie mit Bomben oder entern Sie sie sofort, wenn der Wind es zulässt.}
+SharlieTrial_26 {Ausgezeichnete Arbeit! Öffnen Sie die Weltkarte über das Aktionsmenü und setzen Sie die Segel in Richtung Norden nach Guadeloupe!}
+SharlieTrial_27 {Tichingitu}
+SharlieTrial_28 { }
+SharlieTrial_29 {Alonso}
+SharlieTrial_30 { }
+SharlieTrial_31 {Gerar}
+SharlieTrial_32 {Lecrua}
+SharlieTrial_33 {Warlike}
+SharlieTrial_34 {Florian}
+SharlieTrial_35 {Shoke}
+SharlieTrial_36 {"Drei Stunden vergingen...@<NewStr()>Die Kanonen wurden auf die Fregatte geladen"}
+SharlieTrial_37 {Arthuro}
+SharlieTrial_38 {Cascos}
+SharlieTrial_39 {Puebla}
+SharlieTrial_40 {'Puebla'}
+SharlieTrial_41 {Jirarz}
+SharlieTrial_42 {Artua}
+SharlieTrial_43 {Gregoire}
+SharlieTrial_44 {Valinnie}
+SharlieTrial_45 {Rufen Sie Ihr Logbuch auf, indem Sie F3 drücken.}
+SharlieTrial_46 {Von nun an bist du auf dich allein gestellt in dieser grausamen Welt.}
+SharlieTrial_47 {Tichingitu hat seine Meinung geändert.}
+SharlieTrial_48 {Charles}
+SharlieTrial_49 {Barbier}
+SharlieTrial_50 {Henry}
+SharlieTrial_51 {Barke 'Henry'}
+SharlieTrial_52 {Eine Gelegenheit, die Toten für wertvolle Gegenstände zu plündern!}
+SharlieTrial_53 {Guillaume}
+SharlieTrial_54 {Dubois}

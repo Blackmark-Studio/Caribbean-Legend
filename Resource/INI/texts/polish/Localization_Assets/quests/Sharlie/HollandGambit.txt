@@ -1,213 +1,45 @@
-HollandGambit_1
-{
-Baltazar
-}
-
-HollandGambit_2
-{
-Ridderbok
-}
-
-HollandGambit_3
-{
-Tryb eksploracji: wydłużony czas. Ukończ zadanie!
-}
-
-HollandGambit_4
-{
-Miguel
-}
-HollandGambit_5
-{
-
-}
-
-HollandGambit_6
-{
-Mirage
-}
-
-HollandGambit_7
-{
-Tryb eksploracji: podwojono czas trwania zadania
-}
-
-HollandGambit_8
-{
-Walkiria
-}
-
-HollandGambit_9
-{
-Walkiria jest na horyzoncie!
-}
-
-HollandGambit_10
-{
-Hainrih
-}
-HollandGambit_11
-{
-Claus
-}
-
-HollandGambit_12
-{
-Meifeng
-}
-
-HollandGambit_13
-{
-Jest i grota. Powinienem poszukać tu skrytki Salomona.
-}
-
-HollandGambit_14
-{
-Harry
-}
-HollandGambit_15
-{
-Fletcher
-}
-
-HollandGambit_16
-{
-konwój ze srebrem
-}
-
-HollandGambit_17
-{
-Boat
-}
-
-HollandGambit_18
-{
-Fernando
-}
-HollandGambit_19
-{
-Rodriges
-}
-
-HollandGambit_20
-{
-Zeekalf
-}
-
-HollandGambit_21
-{
-Charlie
-}
-HollandGambit_22
-{
-Knippel
-}
-
-HollandGambit_23
-{
-Alonso
-}
-HollandGambit_24
-{
-
-}
-
-HollandGambit_25
-{
-Abigail zmarła na gorączke tropikalną!
-}
-
-HollandGambit_26
-{
-Charlie Knippel skonał z powodu odniesionych ran!
-}
-
-HollandGambit_27
-{
-Longway zmarł na gorączke tropikalną!
-}
-
-HollandGambit_28
-{
-Longway skonał z powodu odniesionych ran!
-}
-
-HollandGambit_29
-{
-Mineła godzina...
-}
-
-HollandGambit_30
-{
-Jack
-}
-HollandGambit_31
-{
-Harrison
-}
-
-HollandGambit_32
-{
-brygandyna 'Hoop'
-}
-
-HollandGambit_33
-{
-Hoop
-}
-
-HollandGambit_34
-{
-Longway
-}
-HollandGambit_35
-{
-
-}
-
-HollandGambit_36
-{
-Peter
-}
-HollandGambit_37
-{
-Stuyvesant
-}
-
-HollandGambit_38
-{
-Frederic
-}
-
-HollandGambit_39
-{
-Leiden
-}
-
-HollandGambit_40
-{
-Toff
-}
-HollandGambit_41
-{
-Keller
-}
-
-HollandGambit_42
-{
-Zemdlałeś z powodu ran...
-}
-
-HollandGambit_43
-{
-Nie oddałeś pieniędzy Abigail, przez co stała się żebraczką
-}
-
-HollandGambit_44
-{
-Chavinavy
-}
-HollandGambit_45
-{
-
-}
+HollandGambit_1 {Baltazar}
+HollandGambit_2 {Ridderbok}
+HollandGambit_3 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
+HollandGambit_4 {Miguel}
+HollandGambit_5 { }
+HollandGambit_6 {Mirage}
+HollandGambit_7 {Tryb eksploracji: podwojono czas trwania zadania}
+HollandGambit_8 {Walkiria}
+HollandGambit_9 {Walkiria jest na horyzoncie!}
+HollandGambit_10 {Hainrih}
+HollandGambit_11 {Claus}
+HollandGambit_12 {Meifeng}
+HollandGambit_13 {Jest i grota. Powinienem poszukać tu skrytki Salomona.}
+HollandGambit_14 {Harry}
+HollandGambit_15 {Fletcher}
+HollandGambit_16 {konwój ze srebrem}
+HollandGambit_17 {Boat}
+HollandGambit_18 {Fernando}
+HollandGambit_19 {Rodriges}
+HollandGambit_20 {Zeekalf}
+HollandGambit_21 {Charlie}
+HollandGambit_22 {Knippel}
+HollandGambit_23 {Alonso}
+HollandGambit_24 { }
+HollandGambit_25 {Abigail zmarła na gorączke tropikalną!}
+HollandGambit_26 {Charlie Knippel skonał z powodu odniesionych ran!}
+HollandGambit_27 {Longway zmarł na gorączke tropikalną!}
+HollandGambit_28 {Longway skonał z powodu odniesionych ran!}
+HollandGambit_29 {Mineła godzina...}
+HollandGambit_30 {Jack}
+HollandGambit_31 {Harrison}
+HollandGambit_32 {brygandyna 'Hoop'}
+HollandGambit_33 {Hoop}
+HollandGambit_34 {Longway}
+HollandGambit_35 { }
+HollandGambit_36 {Peter}
+HollandGambit_37 {Stuyvesant}
+HollandGambit_38 {Frederic}
+HollandGambit_39 {Leiden}
+HollandGambit_40 {Toff}
+HollandGambit_41 {Keller}
+HollandGambit_42 {Zemdlałeś z powodu ran...}
+HollandGambit_43 {Nie oddałeś pieniędzy Abigail, przez co stała się żebraczką}
+HollandGambit_44 {Chavinavy}
+HollandGambit_45 { }

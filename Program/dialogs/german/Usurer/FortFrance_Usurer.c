@@ -283,7 +283,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Ausgezeichnet! Sie wissen, was als nächstes zu tun ist - genau wie beim letzten Mal. Hier sind die Dokumente - übergeben Sie sie dem Gefängniskommandanten. Es war mir ein Vergnügen, Geschäfte mit Ihnen zu machen, Kapitän.";
 			link.l1 = "Es gibt wenig an dieser Situation zu genießen. Auf Wiedersehen.";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("You have received a bill of debt");
 			PlaySound("interface\important_item.wav");

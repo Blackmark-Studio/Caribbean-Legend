@@ -1,0 +1,38 @@
+portman {Harbormaster}
+drinker_0 {The most famous pirate in these waters}
+drinker_1 {A masterful teller of true tales}
+drinker_2 {Retired Escorial Special Agent}
+drinker_3 {Extremely knowledgeable conversationalist}
+drinker_4 {A competent expert in anything}
+drinker_5 {A jolly soul, fearless and true}
+drinker_6 {A magnificent man in his prime}
+drinker_7 {Head of odds and ends}
+drinker_8 {Senior of the Drunken Watch}
+drinker_9 {The second cousin of a not insignificant person in the DWIC}
+pofficer {Candidate}
+hovernor {Governor}
+tavernkeeper {Innkeeper}
+waitress {Waitress}
+trader {Trader}
+shipyarder {Shipwright}
+priest {Priest}
+Ghovernor {Governor-General}
+Phovernor {Baron}
+usurer {Banker}
+poorman {Beggar}
+gipsy {Gypsy Woman}
+captain {Captain}
+sailor {Sailor}
+marginal_town {Pirate}
+noble {Noble}
+monk {Monk}
+chaplain {Chaplain}
+potion_merchant {Alchemist}
+veteran_merchant {Ironmonger}
+armourer_merchant {Gunsmith}
+monk_merchant {Holy Relics Vendor}
+indian_merchant {Fortune Teller}
+lightman_merchant {Lighthouse Keeper}
+cemeteryman_merchant {Graveyard Keeper}
+legend {Legend}
+soldier_town {Guard}

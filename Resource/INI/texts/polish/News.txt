@@ -1,18 +1,16 @@
-News {Patch 1.5.0}
+News {Otwarta Beta 1.6.0}
 News_descr
 {
 ************************   Ahoj!   ***********************
-Witamy w wersji 1.5.0!
+Witamy w wersji 1.6.0!
 ------------------------------------------------------------------------------------------------
-— Wymagana jest nowa gra
-— Jeśli chcesz kontynuować swoją rozgrywkę, przełącz się na wersję 1.4 lub 1.3.5 w Steam
+— Nowa gra - nieobowiązkowa
+— Całkowicie zmieniliśmy system walki i rozwoju postaci. Zmiany są tak duże, że naprawdę potrzebujemy waszych opinii
+— Podzielcie się swoimi wrażeniami na oficjalnych kanałach Discord i Telegram, a także na Steam
+— Jeśli wczytujesz zapis z innej wersji, nie zapomnij ponownie przypisać atutów bohatera i oficerów
 — Wyłącz wszelkie modyfikacje, dopóki autorzy Steam Workshop nie zaktualizują swoich prac
-— Szczegółową listę zmian możesz znaleźć w aktualnościach używając przycisku poniżej
-— Dzięki za grę!
+— Szczegółową listę zmian znajdziesz w aktualnościach po kliknięciu przycisku poniżej
+— Dziękujemy za grę!
 }
-News_Attention
-{
-}
-
-[News]
-IsRead = false
+News_Attention { }
+[News]IsRead = false { }

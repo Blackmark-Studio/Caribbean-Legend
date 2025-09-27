@@ -1,0 +1,9 @@
+sea_minimap {Navigációs minitérkép.}
+ship_commands {Parancsok a hajód és a társaid hajóinak irányításához.}
+fast_commands {Az aktuális parancs gyors hozzáféréssel.}
+sea_aim {A hajó ágyúinak látványa.}
+alarm_indicator {Riasztásjelzô.}
+land_commands {Szárazföldi akcióparancsok.}
+WorldMap_Date_Clock {Dátum és idô kijelzô a térképen.}
+WorldMap_Compas {Iránytû a térképen.}
+Dialog_window {Párbeszéd ablak.}

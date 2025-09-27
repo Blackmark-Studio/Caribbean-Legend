@@ -1,68 +1,37 @@
-
 new_string
 {
 
 }
-
 Ship_Name {Święte Miłosierdzie}
-
 Cap_Name {Fernando}
-
 Cap_lastname {de Alamida}
-
 City_Rum1 {Cale miasto jest postawione w stan wyższej konieczności - don Fernando de Alamida, królewski inspektor, zawitał do naszego portu. Wiesz, wiele już widziałem, ale w przypadku inspektora... To nie smutek zmienia ludzi, ale to, jak sobie z nim radzą. Mówi się, iż po śmierci ojca, don Fernando zmienił się nie do poznania. Teraz nie znajdziesz bardziej nieprzekupnego i... bezlitosnego sługi Korony na całym Archipelagu.}
-
 City_Rum2 {Popatrz tylko na "Święte Miłosierdzie"! Mówią, że sam król kazał ją zbudować według specjalnych projektów. I zauważ – ani jednej rysy. Jakby sama Dziewica Maryja ją chroniła. Chociaż słyszałem plotki... może to wcale nie jest Dziewica.}
-
 City_Rum3 {Zdajesz sobie sprawę ile razy próbowano zabić dona Fernando? Dwanaście bitew morskich na otwartych wodach - i to w ciągu ostatniego roku! Cóż, z tak lojalną i wyszkoloną załogą i pod ochroną naszego Pana i Zbawiciela - przeżyje i trzynastą!}
-
 City_Rum4 {Słyszałeś? Don Fernando de Alamida przybył do naszego miasta, i teraz spaceruje sobie gdzieś po ulicy. Chciałbym go osobiście zobaczyć na własne oczy...}
-
 City_Rum5 {Tajemniczy człowiek, ten don Fernando. Niektórzy mówią, że jest zbawicielem oczyszczającym Ojczyznę z brudu. Inni szepczą, że po śmierci ojca coś w nim pękło i niedługo wszyscy będziemy płakać. Ale powiem ci tak: nie bój się go. Boj się tych, którzy uczynili go tym, kim jest.}
-
 City_Rum6 {Aż przystojniak, ten don Fernando! Ale wiesz, co jest w nim dziwnego? Zachowuje się jakby nikogo nie zauważał. Ciągle tylko obowiązki i służba i tak w kółko. Słyszałem, że była taka jedna dziewczyna... ale po spotkaniu z jakimś księdzem całkowicie odrzucił ziemskie przyjemności. Jakby złożył śluby czystości.}
-
 City_Rum7 {Cholerny inspektor! Dopóki on tu jest, miasto jest jak martwe. Nie ma handlu, a o zabawie nawet nie wspomnę. Wydaje się, że w jego rozumowaniu nawet oddychanie musi być cichsze. A wiesz co jest najbardziej przerażające? W każdym porcie jest tak samo - wypisz wymaluj. Jak w zegarku. Jego Królewska Mość nie mógł celowo wymyślić dla nas wszystkich tych tortur!}
-
 City_Rum8 {Don Fernando ponownie odwiedził sierociniec. Hojnie ofiarowuje, modli się godzinami. Taki godny człowiek powinien być przykładem dla tych przeklętych malwersantów!}
-
 City_Rum9 {A to dobre! „Święty” Fernando ponownie zamknął wszystkie burdele. Cóż, nieważne, wkrótce odpłynie po czym znowu je otworzą.}
-
 City_Rum10 {Prz... przybył inspektor, ot co! Don Fernando de Almeyda, czy jak on się nazywa, Alamida! Facet tak ważny, że sam gubernator chodzi wokół niego na palcach. Mówi się, że jak tylko spojrzy w twoje oczy, to od razu widzi wszystkie twoje grzechy. Przerażające!}
-
 Pop_Name {Diego}
-
 Pop_lastname {de Landa}
-
-SM_WorldMap 
+Took_LiberMisericordiae {Otrzymano: Liber Misericordiae}
+SM_WorldMap
 {
-Wszystkie ręce na pokład! 'Święte Miłosierdzie' zostało zauważone! 
-Czy naprawdę jesteśmy gotowi stawić jej czoła? Nie mamy tu do czynienia z typowym okrętem...
-Może powinniśmy przechwycić ją na otwartym morzu, z dala od kolonii?
+Wszystkie ręce na pokład! 'Święte Miłosierdzie' zostało zauważone! Czy naprawdę jesteśmy gotowi stawić jej czoła? Nie mamy tu do czynienia z typowym okrętem...Może powinniśmy przechwycić ją na otwartym morzu, z dala od kolonii?
 }
-
 City_Rum11 {Dotarła do mnie wieść, że tym razem celem Świętego Miłosierdzia jest  ~}
-
 City_Rum12 {. Raz jeszcze wszyscy pochylimy głowy pod jarzmem Escorialu. Czy naprawdę zasłużyliśmy na ten los?}
-
 City_Rum13 {Inspektor de Alamida przybył do ~}
-
 City_Rum14 {~  - Święte Miłosierdzie stoi na kotwicy. Po raz kolejny Don de Alamida sprawia, że ​​życie zwykłych ludzi staje się nieszczęściem - żadnych radosnych drinków, żadnych burdeli! Jaki diabeł to na nas sprowadził?}
-
 City_Rum15 {Nie można zazdrościć gubernatorowi ~}
-
 City_Rum16 {~ - Señor Alamida zacumował w porcie i rozpoczął inspekcję. Ostatnio, jak mówią, ~}
-
 City_Rum17 {~ prawie stracił swój tytuł. Och... modlę się, aby Święte Miłosierdzie nie zapuszczało się tu wkrótce ponownie...}
-
 City_Rum18 {Czy słyszałeś, że wysłannik korony teraz osobiście przemierza archipelag? Jakie podłe uczynki popełnili koloniści przed Escorialem? Mój kumpel powiedział mi, że Holy Mercy jest obecnie zakotwiczony w ~}
-
 City_Rum19 {. Zastanawiam się, czy jest w tym ziarnko prawdy?}
-
 City_Rum20 {Wygląda na to, że nadzorca rzucił się na głowy Hiszpanów, wysłany z Europy, by nadzorować! Myślałem, że władza ich króla panuje niepodzielnie nawet na Karaibach. Muszę zapytać, czy rządy w  ~}
-
 City_Rum21 {~  może ulec zmianie w nadchodzących miesiącach, ponieważ statek „Święte Miłosierdzie” jest obecnie tam zadokowany.}
-
 City_Rum22 {Z hiszpańskich kolonii dochodzą dziwne wieści. Mówią, że kiedy Señor Alamide przybywa do miasta, strach ogarnia wszystkich i chodzą na palcach. Chętnie posłuchałbym kogoś w ~}
-
 City_Rum23 {, bo krążą pogłoski, że Miłosierdzie Święte jest tam obecnie.}

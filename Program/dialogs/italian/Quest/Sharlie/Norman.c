@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 				link.l1.go = "tieyasal";
 				break;
 			}
-			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("Che ti serve, compare? Fatti gli affari tuoi, bada alla tua rotta. Lasciami in pace.","Ehi, ehi, compare. Vai a farti una passeggiata? Allora cammina pure e lascia in pace il signor Abraham. Anche lui si sta sgranchendo le gambe, vuole respirare un po' d'aria salmastra.","Ciao, compare. Vuoi scambiare due chiacchiere? Peccato che oggi non ho proprio voglia di parlare. Vai a scocciare qualcun altro. Buttati in taverna, fatti un sorso di rum..."),LinkRandPhrase("Ehi, marinaio. Che sei, duro d’orecchi o cosa? Credevo d’esser stato chiaro come il sole.","Compare, va’ a riposarti. Pare che tu abbia la cera nelle orecchie.","Ehi compare, che hai, sei scemo o cosa? Te l'ho già detto chiaro e tondo, no?"),"Amico, non farmi arrabbiare. Ho fatto fuori così tanti zucconi di terra in vita mia che uno in più o in meno nemmeno si заметит.","D'accordo, mi hai fatto girar le palle. Ora o tiri fuori quella tua spada arrugginita o scappi a gambe levate. Ti consiglio la seconda...","block",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("Che ti serve, compare? Fatti gli affari tuoi, bada alla tua rotta. Lasciami in pace.","Ehi, ehi, compare. Vai a farti una passeggiata? Allora cammina pure e lascia in pace il signor Abraham. Anche lui si sta sgranchendo le gambe, vuole respirare un po' d'aria salmastra.","Ciao, compare. Vuoi scambiare due chiacchiere? Peccato che oggi non ho proprio voglia di parlare. Vai a scocciare qualcun altro. Buttati in taverna, fatti un sorso di rum..."),LinkRandPhrase("Ehi, marinaio. Che sei, duro d’orecchi o cosa? Credevo d’esser stato chiaro come il sole.","Compare, va’ a riposarti. Pare che tu abbia la cera nelle orecchie.","Ehi compare, che hai, sei scemo o cosa? Te l'ho già detto chiaro e tondo, no?"),"Amico, non farmi arrabbiare. Ho fatto fuori così tanti zucconi di terra in vita mia che uno in più o in meno nemmeno si accorgerà.","D'accordo, mi hai fatto girar le palle. Ora o tiri fuori quella tua spada arrugginita o scappi a gambe levate. Ti consiglio la seconda...","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("D'accordo, amico. Non ti disturbo più.","Va bene, va bene. Ho capito...","Urca, sembri proprio il terrore dei sette mari! Va bene, io me la svigno.","Cosa?!",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			NextDiag.TempNode = "norman_us";
@@ -366,36 +366,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "E chi sarebbe, allora, quello che Dichoso ha fatto fuori, visto che ora lo state cercando, eh compagno? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "Allora, chi ha fatto fuori Dichoso per farti metterti sulle sue tracce, eh, amico?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Il Papa";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "Che vuoi dire? Quale Sharp ha fatto fuori, di preciso? Di Sharp ce n’è una marea, sai.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Shhh... (si guarda intorno) Quindi anche tu pensi che sia stato Dichoso a uccidere Blaze Sharp?";
+			link.l1 = "Già. E non è solo un sospetto — ho delle prove. Annotazioni nel diario di bordo...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Quindi adesso facciamo gli spiritosi? Nessun rispetto! Dai, vieni più vicino...";
+			link.l1 = "Neanche per sogno.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "Sh-sh-sh... (guardando in giro) Anche tu pensi che Blaze Sharp sia stato fatto fuori da Dichoso?";
-				link.l1 = "Sì. Non ho solo sospetti, ma prove concrete. Annotazioni nel suo giornale di bordo...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Avanti, piccolo marinaio...";
-				link.l1 = "Cosa vuoi dire? Spiegati meglio.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
-			dialog.text = "Ah... Beh. L’ha fatto fuori, e punto e basta. Sai quanti assassini scorrazzano da queste parti? Uno через uno! No, marinaio. Non vedo Dichoso da un bel pezzo. Non posso aiutarti in nulla.";
+			dialog.text = "Ah... Beh. L’ha fatto fuori, e punto e basta. Sai quanti assassini scorrazzano da queste parti? Uno ad uno! No, marinaio. Non vedo Dichoso da un bel pezzo. Non posso aiutarti in nulla.";
 			link.l1 = "Che peccato...";
 			link.l1.go = "exit";
 		break;

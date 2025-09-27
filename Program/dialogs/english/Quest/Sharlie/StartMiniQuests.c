@@ -30,18 +30,18 @@ void ProcessDialogEvent()
 		
 		case "Storehelper_1":
 			dialog.text = "Who is asking? Don't bother me while I'm drinking rum, sir. I'm not in the mood for conversation.";
-			link.l1 = "I won't take much of your time. I've been sent here by a merchant from Saint-Pierre. You were his former employee. He's searching for you and...";
+			link.l1 = "I won't take much of your time. I've been sent here by a merchant from Saint-Pierre. You were his former employee. He's looking for you and...";
 			link.l1.go = "Storehelper_2";
 		break;
 		
 		case "Storehelper_2":
-			dialog.text = "Ha, he's searching for me!? That's rich of that fucking skinflint! Did he really think that I would spend my whole life working for such paltry wages? He is the greediest pennypincher in the Caribbean! I slaved for him for five years and he never paid me a penny more than he could get away with! Bah, not even enough to buy a drink!\nHe can count his own wares  now, I quit. No one in Saint-Pierre will work for that cheapskate, that's for sure. He has only one concern - earn more for himself and pay his people less.";
+			dialog.text = "Ha, he's searching for me!? That's rich coming from that bloody skinflint! Did he really think I would spend my whole life working for such paltry wages? He is the greediest penny-pincher in the Caribbean! I slaved for him for five years and he never paid me a penny more than he could get away with! Bah, not even enough to buy a drink!\nHe can count his own wares now, I quit. No one in Saint-Pierre will work for that cheapskate, that's for certain. He has only one concern – to earn more for himself and pay his people less.";
 			link.l1 = "I take it you're not going back to work for him?";
 			link.l1.go = "Storehelper_3";
 		break;
 		
 		case "Storehelper_3":
-			dialog.text = "No, God strike me dead if I did! I'll just wait here in Le Francois for some ship to arrive and I'll sign on as purser if they'll take me. And if that doesn't work out then I'll slum it as a common sailor. I can't even stand to set my eyes on that money grubber. If I'm going to be poor I may as well be a free man...";
+			dialog.text = "No, God strike me dead if I did! I'll just wait here in Le François for some ship to arrive and I'll sign on as purser if they'll take me. And if that doesn't work out then I'll slum it as a common sailor. I can't even stand to set my eyes on that money-grubber. If I'm going to be poor I may as well be a free man...";
 			link.l1 = "I understand, that's all I needed to know. Good luck, Gralam!";
 			link.l1.go = "Storehelper_12";
 		break;
@@ -54,19 +54,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Storehelper_5":
-			dialog.text = "Ha! Yeah, that's me. What do you want?";
+			dialog.text = "Ha! Yes, that's me. What do you want?";
 			link.l1 = "You're being searched by a merchant from St. Pierre. You used to work for him, didn't you?";
 			link.l1.go = "Storehelper_6";
 		break;
 		
 		case "Storehelper_6":
-			dialog.text = "Ha-ha! What a joke! And what does his royal majesty need from me? Has he decided to pay me my missing salary for my last two weeks of work? Or is he having troubles counting his barrels and fooling his customers at the same time, eh? Ha-ha-ha!";
-			link.l1 = "He asked me to look for you and to clarify why you aren't coming to his store to work any more.";
+			dialog.text = "Ha-ha! What a joke! And what does His Royal Majesty want from me? Has he decided to pay me my missing wages for my last two weeks of work? Or is he having trouble counting his barrels and cheating his customers at the same time, eh? Ha-ha-ha!";
+			link.l1 = "He asked me to look for you and to clarify why you aren't coming to his shop to work any more.";
 			link.l1.go = "Storehelper_7";
 		break;
 		
 		case "Storehelper_7":
-			dialog.text = "Why? Because he is a fucking miser and a terrible employer! I am a part of the Brethren of the Coast now, a free man and a slave no longer! Look around you, I am really enjoying myself!\nSoon I will set sail and count pesos and doubloons taken from the Spanish instead of crates of bananas! And about that skinflint - I doubt that he will find anyone to replace me. No one in Saint-Pierre is stupid enough to work for him, we've spread news of his reputation to all the apprentices on the island, ha-ha!";
+			dialog.text = "Why? Because he is a bloody miser and a terrible employer! I am part of the Brethren of the Coast now, a free man and a slave no longer! Look around you, I am truly enjoying myself!\nSoon I shall set sail and count pesos and doubloons taken from the Spanish instead of crates of bananas! And as for that skinflint - I doubt he will find anyone to replace me. No one in Saint-Pierre is foolish enough to work for him, we've spread word of his reputation to all the apprentices on the island, ha-ha!";
 			link.l1 = "I understand. That's all I needed to know. Good luck, Gralam!";
 			link.l1.go = "Storehelper_12";
 		break;
@@ -80,18 +80,18 @@ void ProcessDialogEvent()
 		
 		case "Storehelper_9":
 			dialog.text = "Yes. What do you want, monsieur?";
-			link.l1 = "You're being searched for by a merchant from Saint-Pierre. You used to work for him, didn't you?";
+			link.l1 = "You're being sought by a merchant from Saint-Pierre. You used to work for him, didn't you?";
 			link.l1.go = "Storehelper_10";
 		break;
 		
 		case "Storehelper_10":
-			dialog.text = "Well, let him keep on searching. I don't owe him anything. He still owes me two weeks wage, but I'm not even going to bother getting my money from him. I hope he chokes on his own coppers.";
+			dialog.text = "Well, let him keep on searching. I don't owe him anything. He still owes me two weeks' wages, but I'm not even going to bother getting my money from him. I hope he chokes on his own coppers.";
 			link.l1 = "Hm. So you've left him for good, I take it?";
 			link.l1.go = "Storehelper_11";
 		break;
 		
 		case "Storehelper_11":
-			dialog.text = "You got everything right, sirrah. My ex-employer is a rare specimen of miser, truly Biblical in scale. I'm a Brother of the Coast now and my talents are well esteemed by my new mates. I get twice as much, plus bonuses\nI doubt that our dear friend will find anyone to replace me. His greed is well-known to the people of Saint-Pierre, no one there is stupid enough to work for him.";
+			dialog.text = "You got everything right, sirrah. My former employer is a rare specimen of miser, truly Biblical in scale. I'm a Brother of the Coast now and my talents are well esteemed by my new mates. I get twice as much, plus bonuses\nI doubt that our dear friend will find anyone to replace me. His greed is well-known to the people of Saint-Pierre; no one there is foolish enough to work for him.";
 			link.l1 = "I got it. That's all I needed to know. Good luck, Gralam!";
 			link.l1.go = "Storehelper_12";
 		break;
@@ -123,39 +123,39 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_1":
-			dialog.text = "Hello, monsieur. I don't mean to be too forward, but I believe that my candidacy will be quite a fit for the position you are offering.";
+			dialog.text = "Hello, monsieur. I don't mean to be too forward, but I believe that my candidacy would be quite a good fit for the position you are offering.";
 			link.l1 = "Good afternoon. And why do you suppose that?";
 			link.l1.go = "Newstorehelper_1_1";
 		break;
 		
 		case "Newstorehelper_2":
-			dialog.text = "Greetings, sir! Allow me to tell you a little bit about myself.";
+			dialog.text = "Greetings, sir! Allow me to tell you a little about myself.";
 			link.l1 = "I'm all ears.";
 			link.l1.go = "Newstorehelper_2_1";
 		break;
 		
 		case "Newstorehelper_3":
-			dialog.text = "Good health to you, dear sir. Are you offering a merchant vacancy?";
+			dialog.text = "Good health to you, dear sir. Are you offering a merchant position?";
 			link.l1 = "Yes, I am. What can you tell me about yourself?";
 			link.l1.go = "Newstorehelper_3_1";
 		break;
 		
 		case "Newstorehelper_1_1":
-			dialog.text = "I served as a quartermaster under the command of Captain Francis Dubois himself. He was quite pleased with my skills, but I was injured in battle and had to take leave to be treated. I am fine now, completely sound of body, but the thought of the rolling waves makes me sick. No, my only desire now is to stay on solid earth\n(whispering) And if you choose me, I will pay five hundred pesos and twenty five golden doubloons extra.";
+			dialog.text = "I served as quartermaster under the command of Captain Francis Dubois himself. He was quite pleased with my skills, but I was injured in battle and had to take leave to recover. I am fine now, completely sound of body, but the thought of the rolling waves makes me sick. No, my only desire now is to stay on solid ground\n(whispering) And if you choose me, I will pay five hundred pesos and twenty-five golden doubloons extra.";
 			link.l1 = "I see. I'll think about it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Newstorehelper_1_2";
 		break;
 		
 		case "Newstorehelper_2_1":
-			dialog.text = "I used to be a peddler, but had to flee some debtors and took to the sea as a purser on a trade ship. Fate has brought me to this village. I didn't like the sailor's life much anyway, and I'd be glad to accept your offer\n(whispering) And if you choose me, I will give you not only five hundred pesos, but also this heavy packet of amber.";
+			dialog.text = "I used to be a peddler, but had to flee some creditors and took to the sea as a purser on a trade ship. Fate has brought me to this village. I didn't much care for the sailor's life anyway, and I'd be glad to accept your offer\n(whispering) And if you choose me, I will give you not only five hundred pesos, but also this heavy packet of amber.";
 			link.l1 = "I see. I'll think about it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Newstorehelper_2_2";
 		break;
 		
 		case "Newstorehelper_3_1":
-			dialog.text = "I was a clerk in one of the port warehouses of Glasgow. I came to the Caribbean in search of wealth and managed to earn enough money to live through my old age with dignity. But I got tired of sea voyages and I'd like to live a calm life on the shore\n(whispering) And if you choose me, I will give you five hundred pesos plus an additional twenty-five hundred pesos as extra.";
+			dialog.text = "I was a clerk in one of the port warehouses in Glasgow. I came to the Caribbean in search of wealth and managed to earn enough money to live out my old age with dignity. But I grew tired of sea voyages and would like to live a quiet life on shore\n(whispering) And if you choose me, I will give you five hundred pesos plus an additional twenty-five hundred pesos as a bonus.";
 			link.l1 = "I see. I'll think about it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Newstorehelper_3_2";
@@ -163,7 +163,7 @@ void ProcessDialogEvent()
 		
 		case "Newstorehelper_1_2":
 			dialog.text = "Monsieur, make the right choice. And don't forget about the doubloons...";
-			link.l1 = "I have decided in your favor. Get yourself together. We're going to Saint-Pierre.";
+			link.l1 = "I have decided in your favour. Pull yourself together. We're going to Saint-Pierre.";
 			link.l1.go = "Newstorehelper_1_3";
 			link.l2 = "I still haven't decided yet...";
 			link.l2.go = "exit";
@@ -171,8 +171,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_2_2":
-			dialog.text = "I hope you pick me, monsieur. And amber is also quite a valuable, useful thing...";
-			link.l1 = "I have decided in your favor. Get yourself together. We're going to Saint-Pierre.";
+			dialog.text = "I hope you choose me, monsieur. And amber is also quite a valuable, useful thing...";
+			link.l1 = "I have decided in your favour. Get yourself together. We're going to Saint-Pierre.";
 			link.l1.go = "Newstorehelper_2_3";
 			link.l2 = "I still haven't decided yet...";
 			link.l2.go = "exit";
@@ -180,8 +180,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_3_2":
-			dialog.text = "The merchant will not be disappointed by my work. And don't forget about your bonus.";
-			link.l1 = "I have decided in your favor. Get yourself together. We're going to Saint-Pierre.";
+			dialog.text = "The merchant will not be disappointed with my work. And don't forget about your bonus.";
+			link.l1 = "I have decided in your favour. Pull yourself together. We're going to Saint-Pierre.";
 			link.l1.go = "Newstorehelper_3_3";
 			link.l2 = "I still haven't decided yet...";
 			link.l2.go = "exit";
@@ -189,21 +189,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_1_3":
-			dialog.text = "Just let me get my things together! I'll be waiting for you at the entrance of the tavern.";
+			dialog.text = "Just let me get my things together! I'll be waiting for you at the entrance to the tavern.";
 			link.l1 = "...";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 0;
 		break;
 		
 		case "Newstorehelper_2_3":
-			dialog.text = "I'll be right there in a moment, monsieur! I'll be waiting for you at the entrance of the tavern.";
+			dialog.text = "I'll be right there in a moment, monsieur! I'll be waiting for you at the entrance to the tavern.";
 			link.l1 = "...";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 1;
 		break;
 		
 		case "Newstorehelper_3_3":
-			dialog.text = "I'll get my old valise and I'll be waiting for you at the entrance to the tavern, sir!";
+			dialog.text = "I'll fetch my old valise and wait for you at the entrance to the tavern, sir!";
 			link.l1 = "...";
 			link.l1.go = "Newstorehelper_exit";
 			pchar.questTemp.Sharlie.Storehelper.Quality = 2;
@@ -233,8 +233,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Newstorehelper_regard":
-			dialog.text = "Well, I take it this is where I work since now? Thank you, monsieur, for choosing me. Here are your five hundred pesos and the bonus on top as promised.";
-			link.l1 = "My gratitude... Let me introduce you to your employer.";
+			dialog.text = "Well, I take it this is where I work from now on? Thank you, monsieur, for choosing me. Here are your five hundred pesos and the bonus on top as promised.";
+			link.l1 = "My gratitude... Allow me to introduce you to your employer.";
 			link.l1.go = "Newstorehelper_regard_1";
 		break;
 		
@@ -274,19 +274,19 @@ void ProcessDialogEvent()
 		case "Rum_Cap":
 			pchar.quest.Sharlie_rum2.over = "yes"; //снять таймер
 			chrDisableReloadToLocation = false; // patch-4
-			dialog.text = "Well? Who are you, mate?";
+			dialog.text = "Well? Who are you, then?";
 			//link.l1.edit = 1;			
 			link.l1 = ""+pchar.questTemp.Sharlie.Rum.Pass+"!";
 			link.l1.go = "Rum_Cap_1";
 		break;
 		
 		case "Rum_Cap_1":
-			dialog.text = "Have a shot of rum, sailor! Ha-ha! Welcome on board my lugger. You've come for the product?";
+			dialog.text = "Have a shot of rum, sailor! Ha-ha! Welcome aboard my lugger. You've come for the goods?";
 			link.l1 = "Yes. What else would I be here for?";
 			link.l1.go = "Rum_Cap_2";
 			/* if(GetStrSmallRegister(pchar.questTemp.Sharlie.Rum.Pass) == GetStrSmallRegister(dialogEditStrings[1]))
 			{
-				dialog.text = "Have a shot of rum, sailor! Ha-ha! Welcome on board my lugger. You've come for the product?";
+				dialog.text = "Have a shot of rum, sailor! Ha-ha! Welcome aboard my lugger. You've come for the goods?";
 				link.l1 = "Yes. What else would I be here for?";
 				link.l1.go = "Rum_Cap_2";
 			}
@@ -307,20 +307,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Rum_Cap_2":
-			dialog.text = "Lads! Load the boxes onto the launch!";
+			dialog.text = "Lads! Load the crates onto the launch!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Rum_CarrierEnter");
 		break;
 		
 		case "Rum_Cap_3":
-			dialog.text = "All the crates of rum are on your launch. Port Le Francois is located due south from here. Make haste, it's time for me to pull in anchor too!";
+			dialog.text = "All the crates of rum are on your launch. Port Le Francois is due south from here. Make haste, it's time for me to weigh anchor too!";
 			link.l1 = "Let's not waste time, gentlemen! Good luck!";
 			link.l1.go = "Rum_Cap_4";
 		break;
 		
 		case "Rum_Cap_4":
-			dialog.text = "Same to you, matey...";
+			dialog.text = "Same to you, mate...";
 			link.l1 = "...";
 			link.l1.go = "Rum_Cap_5";
 		break;
@@ -357,12 +357,12 @@ void ProcessDialogEvent()
 		
 		case "Rum_Carrier":
 			dialog.text = "We've been waiting for you, monsieur. How did everything go? Do you have the crates?";
-			link.l1 = "Everything went spectacular. The rum boxes are on the launch.";
+			link.l1 = "Everything went spectacularly. The rum boxes are on the launch.";
 			link.l1.go = "Rum_Carrier_1";
 		break;
 		
 		case "Rum_Carrier_1":
-			dialog.text = "Great. We'll take care of it from here. You take off to St. Pierre to the tavern for the payment. Be attentive and cautious in the night jungles.";
+			dialog.text = "Great. We'll take it from here. You head to St. Pierre, to the tavern, for your payment. Be alert and cautious in the jungle at night.";
 			link.l1 = "All the best, gentlemen.";
 			link.l1.go = "Rum_Carrier_2";
 		break;
@@ -396,13 +396,13 @@ void ProcessDialogEvent()
 		//доставить девочку из борделя
 		case "GigoloMan":
 			DelLandQuestMark(npchar);
-			dialog.text = "Good afternoon, monsieur! I say, you don't look like the raggedy scoundrels usually hanging around our colony. Judging by your clothes, you must've come a long way... Arrived from Europe, have you?";
+			dialog.text = "Good afternoon, monsieur! I must say, you don't look like the ragged scoundrels usually hanging around our colony. Judging by your clothes, you must have come a long way... Arrived from Europe, have you?";
 			link.l1 = "Exactly, monsieur. "+GetFullName(pchar)+", at your service. What do you need?";
 			link.l1.go = "GigoloMan_1";
 		break;
 		
 		case "GigoloMan_1":
-			dialog.text = "Allow me to introduce myself - "+GetFullName(npchar)+". I have arrived to this dreadful place from France a few years ago. But that is neither here nor there. I have a very delicate matter for you\nPlease understand that if I wasn't sure that you were a gentleman, I would never ask you for such a favour.";
+			dialog.text = "Allow me to introduce myself - "+GetFullName(npchar)+". I arrived at this dreadful place from France a few years ago. But that is neither here nor there. I have a very delicate matter for you\nPlease understand that if I were not certain you were a gentleman, I would never ask you for such a favour.";
 			link.l1 = "Please, state your request, monsieur. If it is within my capabilities, then of course I will try to help.";
 			link.l1.go = "GigoloMan_2";
 		break;
@@ -414,10 +414,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_3":
-			dialog.text = "I appreciate your discretion, monsieur. I can't go to the girl, so the girl must come to me. At my house. I ask you to go to the brothel and arrange a deal with the madame so she would allow you to arrange a 'house call' of the blonde girl for one night\nAurora won't refuse, she is well known to provide such delivery services, although it always costs a bit more. After that you shall bring the girl to my house. For payment, I will give you six thousand pesos. Aurora usually takes three thousand or three and five hundred for one night with the girl in house. You may keep the extra as a compensation for your troubles.";
+			dialog.text = "I appreciate your discretion, monsieur. I cannot go to the girl, so the girl must come to me. At my house. I ask you to go to the brothel and make an arrangement with the madame so that she will allow you to organise a 'house call' with the blonde girl for one night.\nAurora will not refuse; she is well known for providing such services, although it always costs a bit more. After that, you shall bring the girl to my house. For payment, I will give you six thousand pesos. Aurora usually takes three thousand or three and a half thousand for one night with the girl at home. You may keep the extra as compensation for your troubles.";
 			link.l1 = "Doesn't sound too complicated. I can do that.";
 			link.l1.go = "GigoloMan_4";
-			link.l2 = "Monsieur, I take my reputation as a gentleman just as seriously as you do. Please forgive me, but I can't fulfill your request. I must refuse. I'd should probably go to the tavern and check if the innkeeper has any job for me.";
+			link.l2 = "Monsieur, I take my reputation as a gentleman just as seriously as you do. Please forgive me, but I can't fulfil your request. I must refuse. I should probably go to the tavern and check if the innkeeper has any work for me.";
 			link.l2.go = "GigoloMan_exit";
 		break;
 		
@@ -464,8 +464,8 @@ void ProcessDialogEvent()
 			{
 				DelLandQuestMark(npchar);
 				QuestPointerDelLoc("fortfrance_town", "reload", "reload9_back");
-				dialog.text = "Good day, monsieur. Why, are you the man that hired me tonight? My my, I must say, I'm one lucky girl to score such a handsome and well-groomed gentleman, nothing like the brutes that come off the docks stinking of tar and sweat...";
-				link.l1 = "My apologies but not tonight, Lucille. I am here on behalf of my good friend, who for a multitude of very complicated reasons is not able to leave his house, so I will be bringing you to him. Now, don't be upset, he's a gentle man and is quite fond of you. I think you will be happy at the end of it.";
+				dialog.text = "Good day, monsieur. Why, are you the man who hired me tonight? My, my, I must say, I'm one lucky girl to have such a handsome and well-groomed gentleman, nothing like the brutes who come off the docks stinking of tar and sweat...";
+				link.l1 = "My apologies, but not tonight, Lucille. I am here on behalf of my good friend, who, for a multitude of very complicated reasons, is not able to leave his house, so I will be bringing you to him. Now, don't be upset, he's a gentle man and is quite fond of you. I think you will be happy at the end of it.";
 				link.l1.go = "GigoloGirl_1";
 				// belamour legendary edition -->
 				link.l2 = "Uhm... You are quite right, dear. Shall we?";
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Monsieur, I hope you understand that I can't just promanade around with you at night. You need to take me to your friend's house quickly or I will go straight back to Madame and you're going to waste your money.";
+				dialog.text = "Monsieur, I hope you understand that I can't just promenade around with you at night. You need to take me to your friend's house quickly or I will go straight back to Madame and you're going to waste your money.";
 				link.l1 = "Alright, I understand. Follow me!";
 				link.l1.go = "GigoloGirl_2";
 			}
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 		case "GigoloGirl_1":
 			AddCharacterExpToSkill(pchar, "Fortune", 40);
 		// <-- legendary edition
-			dialog.text = "That's too bad... I liked you right away, monsieur. I would've loved to spend the night with you...perhaps next time. Shall we go?";
+			dialog.text = "That's too bad... I liked you right away, monsieur. I would have loved to spend the night with you... perhaps next time. Shall we go?";
 			link.l1 = "Yes. Follow me!";
 			link.l1.go = "GigoloGirl_2";
 		break;
@@ -531,8 +531,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloGirl_4":
-			dialog.text = "You underestimate me, I am not afraid, monsieur. I know how to handle myself. Now, maybe some time later you can pay Madame for a night with me? I promise it'll be the best night of your life!";
-			link.l1 = "Anything's possible, Lucille. Maybe we'll meet each other again. Farewell!";
+			dialog.text = "You underestimate me, I am not afraid, monsieur. I know how to handle myself. Now, perhaps sometime later you could pay Madame for a night with me? I promise it'll be the best night of your life!";
+			link.l1 = "Anything's possible, Lucille. Maybe we'll meet again. Farewell!";
 			link.l1.go = "GigoloGirl_5";
 		break;
 		
@@ -567,8 +567,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptivePirate_1":
-			dialog.text = "Listen up boy, I wasn't raised to be polite, just like I didn't learn to read and write, but spliting your skull with a cutlass is as easy to me as a whore falling backwards. And I swear on my deadlights that if you don't walk out of here this minute, you'll be carried out. You got that?";
-			link.l1 = "No, you listen to me you knave. Your scheme is out in the open. I need that man alive, so throw down your arms and run. There's a squad of French soldiers in the jungle right behind me. If you run fast enough, then maybe you'll manage to save your pathetic lives.";
+			dialog.text = "Listen up, boy, I wasn't raised to be polite, just like I didn't learn to read and write, but splitting your skull with a cutlass is as easy for me as a whore falling backwards. And I swear on my deadlights that if you don't walk out of here this minute, you'll be carried out. You got that?";
+			link.l1 = "No, you listen to me, you knave. Your scheme is out in the open. I need that man alive, so throw down your arms and run. There's a squad of French soldiers in the jungle right behind me. If you run fast enough, then maybe you'll manage to save your pathetic lives.";
 			link.l1.go = "CaptivePirate_3";
 			link.l2 = "All right, all right, calm down. I'm leaving.";
 			link.l2.go = "CaptivePirate_2";
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptivePirate_3":
-			dialog.text = "Whaa-at? You're bluffing, mate! Take him down boys, to arms!";
+			dialog.text = "Wha-at? You're bluffing, mate! Take him down, boys, to arms!";
 			link.l1 = "On your own head be it then, en garde!";
 			link.l1.go = "CaptivePirate_4";
 		break;
@@ -626,13 +626,13 @@ void ProcessDialogEvent()
 		
 		//пленный испанец
 		case "CaptiveSpain":
-			dialog.text = "Gracias a Dios! Ah, you are Francés? Mierda, you fended off those brigands in style. But don't think that I'll just roll over and surrender, I'll show you how a Spainard fights! Santiago!";
-			link.l1 = "No wait, please!";
+			dialog.text = "Gracias a Dios! Ah, you are Francés? Mierda, you fended off those brigands in style. But don't think that I'll just roll over and surrender, I'll show you how a Spaniard fights! Santiago!";
+			link.l1 = "No, wait, please!";
 			link.l1.go = "CaptiveSpain_1";
 		break;
 		
 		case "CaptiveSpain_1":
-			dialog.text = "I would sooner die than be taken by the French. I took a cutlass from one of the dead bodies while you were fighting...now I'll make you dance to a Spanish quadrille!";
+			dialog.text = "I would sooner die than be taken by the French. I took a cutlass from one of the dead bodies while you were fighting... now I'll make you dance a Spanish quadrille!";
 			link.l1 = "You Spaniards are as stubborn as mules!";
 			link.l1.go = "CaptiveSpain_2";
 		break;
@@ -650,27 +650,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptiveSpain_3":
-			dialog.text = "Maldito... You won. I give up, damn Frenchman. I'm at your mercy.";
-			link.l1 = "Put up your blade and let me speak, you obstinate Castilian! I don't want you to die, and I'm not sending you to jail either!";
+			dialog.text = "Maldito... You win. I give up, damn Frenchman. I'm at your mercy.";
+			link.l1 = "Put away your blade and let me speak, you stubborn Castilian! I don't want you to die, and I'm not sending you to jail either!";
 			link.l1.go = "CaptiveSpain_4";
 			RemoveCharacterEquip(npchar, BLADE_ITEM_TYPE);
 		break;
 		
 		case "CaptiveSpain_4":
 			dialog.text = "Then what are you doing? Why did you kill the pirates? And where are your soldiers?";
-			link.l1 = "There are no soldiers. I tried to trick the scoundrels, but as you can see around us, it didn't work. I am here by myself, according to your old friend's request. His name is "+pchar.questTemp.Sharlie.Captive.Name+", he's a banker in St. Pierre.";
+			link.l1 = "There are no soldiers. I tried to trick the scoundrels, but as you can see around us, it didn't work. I am here alone, at your old friend's request. His name is "+pchar.questTemp.Sharlie.Captive.Name+", he's a banker in St. Pierre.";
 			link.l1.go = "CaptiveSpain_5";
 		break;
 		
 		case "CaptiveSpain_5":
 			dialog.text = ""+pchar.questTemp.Sharlie.Captive.Name+"? I don't know anyone by that name...";
-			link.l1 = "Nor did I know a thing about you or your captivity. I became aware of your transfer to an English ship from him. My task is to deliver you to him and I swore I would fulfill that! Now then, come with me if you want to live.";
+			link.l1 = "Nor did I know anything about you or your captivity. I learned of your transfer to an English ship from him. My task is to deliver you to him, and I swore I would fulfil that! Now then, come with me if you want to live.";
 			link.l1.go = "CaptiveSpain_6";
 		break;
 		
 		case "CaptiveSpain_6":
 			dialog.text = "I don't have a choice anyway... This banker of yours can't be any worse than the English and their atrocious cooking...";
-			link.l1 = "You're finally making a wise decision. That's enough talking for now, we're heading for St. Pierre. Keep close to me and don't stray. If you run, I'll catch you and beat you to within an inch of your life again.";
+			link.l1 = "You're finally making a wise decision. That's enough talking for now, we're heading to St. Pierre. Keep close to me and don't stray. If you run, I'll catch you and beat you within an inch of your life again.";
 			link.l1.go = "CaptiveSpain_7";
 		break;
 		
@@ -718,26 +718,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_1":
-			dialog.text = "Yes, that's me. But you have the advantage of me. Please inform me of who you are and what the hell you want.";
-			link.l1 = "My name is "+GetFullName(pchar)+". I've been sent to you by "+GetFullName(characterFromId("Fortfrance_portman"))+", the harbor master. He said that you needed urgent help...";
+			dialog.text = "Yes, that's me. But you have the advantage over me. Please inform me who you are and what the hell you want.";
+			link.l1 = "My name is "+GetFullName(pchar)+". I've been sent to you by "+GetFullName(characterFromId("Fortfrance_portman"))+", the harbour master. He said that you needed urgent help...";
 			link.l1.go = "Prosper_2";
 		break;
 		
 		case "Prosper_2":
-			dialog.text = "My God yes! That rascal of a commandant didn't even hear my complaint! He's either too lazy or cowardly to help. Have you really come here to help me? If it is so, I won't leave you unrewarded!";
-			link.l1 = "Yes Prosper. Tell me what happened and what I have to do to help. I've heard that your daughter disappeared...";
+			dialog.text = "My God, yes! That rascal of a commandant didn't even listen to my complaint! He's either too lazy or too cowardly to help. Have you really come here to help me? If that's so, I won't leave you unrewarded!";
+			link.l1 = "Yes, Prosper. Tell me what happened and what I must do to help. I've heard that your daughter has disappeared...";
 			link.l1.go = "Prosper_3";
 		break;
 		
 		case "Prosper_3":
-			dialog.text = "Yes, my dear daughter Celene has been missing for two days. She went on a walk to the fort not far from here. But she did not return, so I went to the fort myself and soldiers told me that she had never been there!\nBut then on my return I was attacked by two savage Indians! They leapt upon me with clubs and tried to beat me\nBut I am no kitten, so I  punched one in the face, bought me enough time to draw my pistol and shoot. I missed but scared them away. I managed to reach the city gates and told the guards about the attack. They ran to the jungle, but the savages were already long gone\nI am sure that they are responsible for Celene's disappearance. Besides, on top of that, two more people have disappeared for the last week - Cesar Blanchet and Gilbert Courcy! One was heading to the bay and another to Le Francois. They've never returned.";
+			dialog.text = "Yes, my dear daughter Celene has been missing for two days. She went for a walk to the fort not far from here. But she did not return, so I went to the fort myself and the soldiers told me that she had never been there!\nBut then on my return I was attacked by two savage Indians! They leapt upon me with clubs and tried to beat me.\nBut I am no kitten, so I punched one in the face, which bought me enough time to draw my pistol and shoot. I missed, but scared them away. I managed to reach the city gates and told the guards about the attack. They ran to the jungle, but the savages were already long gone.\nI am sure that they are responsible for Celene's disappearance. Besides, on top of that, two more people have disappeared in the last week - Cesar Blanchet and Gilbert Courcy! One was heading to the bay and the other to Le Francois. They've never returned.";
 			link.l1 = "So the Indians have been attacking townsfolk right at the city gates? That's unbelievably bold...";
 			link.l1.go = "Prosper_4";
 		break;
 		
 		case "Prosper_4":
-			dialog.text = "In the meantime I went out to the jungle myself to look for her and found a cave north of the city. I found the bastards are squatting in there. I saw several Indians at the entrance, but some of them must be inside too\nI heard a girl screaming... It was my Celene, I am sure of that, it was her voice! It took all of my restraint not to run in  right then and there - the odds were not in my favor and they would have butchered me. I am no use to her dead.";
-			link.l1 = "But why on Earth are they attacking and taking townspeople as prisoners?";
+			dialog.text = "In the meantime I went out into the jungle myself to look for her and found a cave north of the city. I found the bastards squatting in there. I saw several Indians at the entrance, but some of them must be inside too\nI heard a girl screaming... It was my Celene, I am sure of it, it was her voice! It took all my restraint not to rush in right then and there - the odds were not in my favour and they would have butchered me. I am no use to her dead.";
+			link.l1 = "But why on earth are they attacking and taking townspeople as prisoners?";
 			link.l1.go = "Prosper_5";
 		break;
 		
@@ -748,19 +748,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_6":
-			dialog.text = "Stories? Well, some men like you thought the same until the Caribs had them cooked on a fire and eaten... So, I immediately addressed the commandant and requested a punitive raid to save my Celene. He refused! He said that when girls are missing, they probably ran off with a boy, not Indians. He suggested I search for her in the local haylofts\nAnd as for the two others missing... he said that one of them was under suspicion of smuggling, and the other is probably drinking to death in Le Francois' tavern. To sum up, I have achieved nothing and decided to act on my own.";
-			link.l1 = "What are you intending on doing?";
+			dialog.text = "Stories? Well, some men like you thought the same, until the Caribs had them roasted over a fire and eaten... So, I immediately went to the commandant and requested a punitive raid to save my Celene. He refused! He said that when girls go missing, they probably ran off with a boy, not with Indians. He suggested I search for her in the local haylofts\nAnd as for the other two missing... he said that one of them was suspected of smuggling, and the other is probably drinking himself to death in Le Francois' tavern. To sum up, I achieved nothing and decided to act on my own.";
+			link.l1 = "What are you intending to do?";
 			link.l1.go = "Prosper_7";
 		break;
 		
 		case "Prosper_7":
-			dialog.text = "I will go there and kill every last one of those red bastards. I only hope that Celene still lives. As you can see, I bought a musket - and I know how to shoot it. Paid a lot of coin for it but I don't give a damn\nMy mission will be much easier if you will accompany me. Together we can finish the savages without much trouble if you can watch my back while I reload. Will you go with me to save my daughter?";
-			link.l1 = "Of course! It's a matter of honour! I can't just allow a girl to die by the knife of some savage.";
+			dialog.text = "I will go there and kill every last one of those red bastards. I only hope that Celene is still alive. As you can see, I bought a musket - and I know how to shoot it. Paid a lot of coin for it but I don't give a damn\nMy mission will be much easier if you accompany me. Together we can finish off the savages without much trouble if you can watch my back while I reload. Will you go with me to save my daughter?";
+			link.l1 = "Of course! It's a matter of honour! I can't just let a girl die by the knife of some savage.";
 			link.l1.go = "Prosper_8";
 			if (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) == "") {
 				link.l1.go = "Prosper_noweapon";
 			}
-			link.l2 = "Hm. You know, I think commandant's words make sense. Maybe we should still follow his advice first?";
+			link.l2 = "Hm. You know, I think the commandant's words make sense. Maybe we should follow his advice first?";
 			link.l2.go = "Prosper_exit";
 		break;
 		
@@ -771,7 +771,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_noweapon_1":
-			dialog.text = "That will simply not do. I will wait for you until evening, I advise you to grovel at the feet of our governor and beg for his assistance.";
+			dialog.text = "That will simply not do. I will wait for you until evening; I advise you to grovel at the feet of our governor and beg for his assistance.";
 			link.l1 = "Grovel at his feet, eh? Well, as you wish...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Prosper_getweapon";
@@ -781,7 +781,7 @@ void ProcessDialogEvent()
 		case "Prosper_getweapon":
 			dialog.text = "Well, monsieur? Did you get yourself a weapon?";
 			if (FindCharacterItemByGroup(pchar, BLADE_ITEM_TYPE) == "") {
-				link.l1 = "Not yet, please wait a bit longer...";
+				link.l1 = "Not yet, please wait a little longer...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Prosper_getweapon";
 			} else {
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 
 		case "Prosper_exit":
 			dialog.text = "My God, are you fleeing? No! Get the hell out of here! Coward!";
-			link.l1 = "Hey-hey, easy there, you simpleton! I better go out and see any nobles on the streets of Saint-Pierre need help.";
+			link.l1 = "Hey-hey, easy there, you simpleton! I'd better go out and see if any nobles on the streets of Saint-Pierre need help.";
 			link.l1.go = "Prosper_exit_1";
 			pchar.questTemp.Sharlie.GigoloMan.SamPodbezhit = true;
 		break;
@@ -824,7 +824,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_8":
-			dialog.text = "I'm glad there at least one courageous man in this town. Here, take these three vials. These are health-giving herbs, I bought them from our herbalist. It can be a substantial help to you in battle.";
+			dialog.text = "I'm glad there's at least one courageous man in this town. Here, take these three vials. These are health-giving herbs; I bought them from our herbalist. They can be a substantial help to you in battle.";
 			link.l1 = "What about you?";
 			link.l1.go = "Prosper_9";
 		break;
@@ -864,20 +864,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_11":
-			dialog.text = "We're almost in position, "+pchar.name+". Beyond this turn is the entrance into the cave. Come close and I'll tell you our plan.";
+			dialog.text = "We're almost in position, "+pchar.name+". Beyond this turn is the entrance to the cave. Come closer and I'll tell you our plan.";
 			link.l1 = "I'm all ears, Prosper.";
 			link.l1.go = "Prosper_12";
 		break;
 		
 		case "Prosper_12":
-			dialog.text = "I need to get a steady aim with this heavy firelock, but if you can buy me time I won't miss. If I have to engage in hand-to-hand combat, forget about any fire support, I'll only be able to fend people off with my barrel as a club. This fight is going to depend on your skill at fencing.";
+			dialog.text = "I need to get a steady aim with this heavy firelock, but if you can buy me time I won't miss. If I have to engage in hand-to-hand combat, forget about any fire support, I'll only be able to fend people off with my barrel as a club. This fight is going to depend on your skill with a blade.";
 			link.l1 = "What are you trying to say?";
 			link.l1.go = "Prosper_13";
 		break;
 		
 		case "Prosper_13":
-			dialog.text = "All you need is to distract their attention in order to let me shoot them all. I can't move and shoot, so I will stick to one location. There are three bastards close to the cave's entrance. You should rush them as fast as you can with your blade in hand\nHit one of them and make them chase you. Lure them away from me. If all three will focus on you, I can shoot them down like birds as you parry and dodge. But if those savages swoop down upon me, we are doomed. Are you ready?";
-			link.l1 = "This won't be the first time I've handled a sword, these savages are no threat.";
+			dialog.text = "All you need to do is distract their attention so I can shoot them all. I can't move and shoot, so I'll stick to one spot. There are three bastards near the cave's entrance. You should rush at them as quickly as you can with your blade in hand\nStrike one of them and make them chase you. Lure them away from me. If all three focus on you, I can shoot them down like birds while you parry and dodge. But if those savages swoop down on me, we're doomed. Are you ready?";
+			link.l1 = "This won't be the first time I've handled a sword; these savages are no threat.";
 			link.l1.go = "Prosper_14";
 			// belamour legendary edition -->
 			link.l2 = "Ha! Don't worry about me. It's like hunting in Le Mans! Just don't shoot me in the back by mistake!";
@@ -889,15 +889,15 @@ void ProcessDialogEvent()
 			AddCharacterExpToSkill(pchar, "FencingS", 10);
 			AddCharacterExpToSkill(pchar, "FencingH", 10);
 			AddCharacterExpToSkill(pchar, "Pistol", 10);
-			dialog.text = "Go first, I'm behind you. Remember: you must not let them get close to me!";
-			link.l1 = "I remember, let's go. Forward!";
+			dialog.text = "Go first, I'm right behind you. Remember: you must not let them get close to me!";
+			link.l1 = "I remember, let's go. Onward!";
 			link.l1.go = "Prosper_15";
 		break;
 		
 		case "Prosper_14":
 			AddCharacterExpToSkill(pchar, "Leadership", 40);
 			// <-- legendary edition
-			dialog.text = "Then prepare for action. Go first, I'll be behind you. Remember: you can't let them get within a close distance to me!";
+			dialog.text = "Then prepare for action. Go first, I'll be right behind you. Remember: you can't let them get too close to me!";
 			link.l1 = "I remember. I'll do everything I can. Onward!";
 			link.l1.go = "Prosper_15";
 		break;
@@ -912,7 +912,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_16":
-			dialog.text = "Well done, "+pchar.name+"! These pagan savages will murder no longer. Now for the main event - the cave. I believe that there are three or four of them inside, but I can't know for sure. Now listen\nI've been there ten years ago. There is a narrow tunnel inside the cave. It leads to a small grotto, divided by a wall with a hole in the middle of it. Let's repeat our plan from before. I stand still close to the entrance and you rush in\nProvoke them, don't try to fight all of them at once, just prevent them from attacking me. Take position at the tunnel I mentioned, it is narrow, so only one or two of them will be able to fight you at the same time\nI will shoot at them over your shoulder. Ready?";
+			dialog.text = "Well done, "+pchar.name+"! These pagan savages will murder no longer. Now for the main event - the cave. I believe there are three or four of them inside, but I can't be certain. Now listen\nI was there ten years ago. There is a narrow tunnel inside the cave. It leads to a small grotto, divided by a wall with a hole in the middle of it. Let's repeat our plan from before. I will stand close to the entrance and you rush in\nProvoke them, don't try to fight all of them at once, just prevent them from attacking me. Take position at the tunnel I mentioned, it's narrow, so only one or two of them will be able to fight you at the same time\nI will shoot at them over your shoulder. Ready?";
 			link.l1 = "Onward! Let's finish off this nest of savages!";
 			link.l1.go = "Prosper_17";
 		break;
@@ -930,8 +930,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_18":
-			dialog.text = "My daughter is alive! Thank God! We've got here in time, "+pchar.name+". I'm indebted to you, sir. You're a brave man and a good fighter!";
-			link.l1 = "I'm glad that there is a happy ending, Prosper. That was quite some bloody work taking out all those Indians.";
+			dialog.text = "My daughter is alive! Thank God! We've got here in time. "+pchar.name+". I'm indebted to you, sir. You're a brave man and a fine fighter!";
+			link.l1 = "I'm glad there was a happy ending, Prosper. That was quite some bloody work taking out all those Indians.";
 			link.l1.go = "Prosper_19";
 		break;
 		
@@ -944,13 +944,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_20":
-			dialog.text = "My deepest thanks once again, "+pchar.name+"! Now let's make our way back to town. The life of my daughter is priceless, immeasurable by any amount of money, but I want to thank you by giving you what's left of my savings. As soon as we get to Saint-Pierre, I will gladly give them to you. And don't even think of refusing!";
-			link.l1 = "I won't refuse, Prosper. Although money was not my object in helping you.";
+			dialog.text = "My deepest thanks once again, "+pchar.name+"! Now let's make our way back to town. My daughter's life is priceless, beyond any amount of money, but I want to thank you by giving you what remains of my savings. As soon as we get to Saint-Pierre, I will gladly give them to you. And don't even think of refusing!";
+			link.l1 = "I won't refuse, Prosper. Although money was not my motive in helping you.";
 			link.l1.go = "Prosper_21";
 		break;
 		
 		case "Prosper_21":
-			dialog.text = "You are a true Christian knight, "+pchar.name+"! Now let's not meddle around here. Let's make our way back home posthaste!";
+			dialog.text = "You are a true Christian knight, "+pchar.name+"! Now let's not linger here. Let's make our way back home posthaste!";
 			link.l1 = "...";
 			link.l1.go = "Prosper_22";
 		break;
@@ -975,8 +975,8 @@ void ProcessDialogEvent()
 		
 		case "Prosper_23":
 			SelectPresentAmulet();
-			dialog.text = "Here we are, Charles. I thank you once again for your help and tie this modest sum of pesos and gold doubloons to my words. I suggest you don't waste doubloons and hold onto them for special occasions. I know, this is not much money for such a service you have granted me, but it's from the bottom of my heart. Also take this amulet, "+pchar.questTemp.SMQ.Text+"";
-			link.l1 = "Thank you! Farewell Prosper, I wish happiness to you and to your dear daughter!";
+			dialog.text = "Here we are, Charles. I thank you once again for your help and tie this modest sum of pesos and gold doubloons to my words. I suggest you don't waste the doubloons and save them for special occasions. I know this is not much money for such a service you have rendered me, but it is from the bottom of my heart. Also, take this amulet, "+pchar.questTemp.SMQ.Text+"";
+			link.l1 = "Thank you! Farewell, Prosper, I wish happiness to you and your dear daughter!";
 			link.l1.go = "Prosper_24";
 		break;
 		
@@ -990,7 +990,7 @@ void ProcessDialogEvent()
 			Log_Info("You've received 15 doubloons");
 			Log_Info("You've received an amulet");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Ah, a husband like you would do her well. All she does is get chased around town by a bunch of skinny-legged, chinless fops. Such a damned pity that every last one of them off and disappeared somewhere... good riddance to them. Good luck, Charles!";
+			dialog.text = "Ah, a husband like you would do her well. All she does is get chased around town by a bunch of skinny-legged, chinless fops. Such a damned pity that every last one of them has up and disappeared somewhere... good riddance to them. Good luck, Charles!";
 			link.l1 = "...";
 			link.l1.go = "Prosper_25";
 		break;
@@ -1024,14 +1024,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina":
-			dialog.text = "Ah! God help me! (crying) You...you can't even imagine the horror that's going on here! These... these Indians have dragged us here to kill us and eat us! Cesar Blanchet was here...The savages took him... They performed some awful devilish ritual and then... Lord, I can't even speak of it! I was supposed to be next! They were going to slaughter me... tomorrow!";
-			link.l1 = "Calm down, Celine. It's all over. Those bastards have got what they deserved and they won't hurt anyone anymore.";
+			dialog.text = "Ah! God help me! (crying) You... you can't even imagine the horror that's going on here! These... these Indians dragged us here to kill us and eat us! Cesar Blanchet was here... The savages took him... They performed some awful devilish ritual and then... Lord, I can't even speak of it! I was supposed to be next! They were going to slaughter me... tomorrow!";
+			link.l1 = "Calm down, Celine. It's all over. Those bastards have got what they deserved and they won't hurt anyone any more.";
 			link.l1.go = "Selina_1";
 		break;
 		
 		case "Selina_1":
-			dialog.text = "Gilbert Coursie is here too. Over there... he uh...he still hasn't recovered yet. Speak with him... Then let's hurry up and get out of here!";
-			link.l1 = "There, there. It's all right, girl. Enough crying. Everything's fine. You've got a wonderful father. He wouldn't let anybody harm you... Go outside, I'll help...uh... Gilbert out of here and I'll catch up with you later.";
+			dialog.text = "Gilbert Coursie is here too. Over there... he, uh... he still hasn't recovered yet. Speak with him... Then let's hurry up and get out of here!";
+			link.l1 = "There, there. It's all right, girl. Enough crying. Everything's fine. You've got a wonderful father. He wouldn't let anyone harm you... Go outside, I'll help...uh... Gilbert out of here and I'll catch up with you later.";
 			link.l1.go = "Selina_2";
 		break;
 		
@@ -1054,20 +1054,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina_4":
-			dialog.text = "Yes... (crying) You...you can't even imagine the horror that's going on here! These... these Indians have dragged us here to kill us and eat us! Cesar Blanchet was here...They took him... They performed some devilish ritual and then... Lord, I can't even speak of it! I'm supposed to be next! They were going to slaughter me... tomorrow!";
-			link.l1 = "Calm down, little girl... I'm sorry but I bring you bad news. I came here with your father. He was killed just outside by those redskinned savages as we fought to get to you. He gave his life to save you.";
+			dialog.text = "Yes... (crying) You... you can't even imagine the horror that's going on here! These... these Indians dragged us here to kill us and eat us! Cesar Blanchet was here... They took him... They performed some devilish ritual and then... Lord, I can't even speak of it! I'm supposed to be next! They were going to slaughter me... tomorrow!";
+			link.l1 = "Calm down, little girl... I'm sorry, but I bring you bad news. I came here with your father. He was killed just outside by those red-skinned savages as we fought to reach you. He gave his life to save you.";
 			link.l1.go = "Selina_5";
 		break;
 		
 		case "Selina_5":
-			dialog.text = "What?! My father... Oh God! I... I...(sobbing)";
-			link.l1 = "My condolences, Celine. There is another here with you, am I right?";
+			dialog.text = "What?! My father... Oh God! I... I... (sobbing)";
+			link.l1 = "My condolences, Celine. There is someone else here with you, am I right?";
 			link.l1.go = "Selina_6";
 		break;
 		
 		case "Selina_6":
-			dialog.text = "(through tears) Yes... Gilbert Coursie. He's in there... He still hasn't recovered yet. Go speak to him... Then let's hurry out of here!";
-			link.l1 = "Yes, of course. We can't waste one minute standing around here.";
+			dialog.text = "(through tears) Yes... Gilbert Coursie. He's in there... He still hasn't recovered. Go speak to him... Then let's hurry out of here!";
+			link.l1 = "Yes, of course. We can't waste a minute standing around here.";
 			link.l1.go = "Selina_7";
 		break;
 		
@@ -1083,12 +1083,12 @@ void ProcessDialogEvent()
 		
 		case "Selina_8":
 			dialog.text = "My father... My poor, dear father! Ah, monsieur, I haven't even thanked you for saving me...";
-			link.l1 = "Selina I'm just glad that you and Gilbert came out of that cave alive. Your father's heroic death was not in vain.";
+			link.l1 = "Selina, I'm just glad that you and Gilbert made it out of that cave alive. Your father's heroic death was not in vain.";
 			link.l1.go = "Selina_9";
 		break;
 		
 		case "Selina_9":
-			dialog.text = "(crying) Please, monsieur, take us with you to town. We have to send for the soldiers to come and get my father's body, so that he will have a proper Christian burial...";
+			dialog.text = "(crying) Please, monsieur, take us with you to town. We must send for the soldiers to come and fetch my father's body, so that he may have a proper Christian burial...";
 			link.l1 = "Of course, Celine. Follow me!";
 			link.l1.go = "Selina_10";
 		break;
@@ -1104,15 +1104,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina_11":
-			dialog.text = "Thank you, monsieur, for accompanying my poor father... Thank you for saving me from certain death. I... I... Here, take this bag of doubloons. I found it at home in my father's chest. Please, don't even dare think of refusing!";
-			link.l1 = "Thank you, Celine. I'm glad we managed to save you. And my sincere condolences about the loss of your father.";
+			dialog.text = "Thank you, monsieur, for accompanying my poor father... Thank you for saving me from certain death. I... I... Here, take this bag of doubloons. I found it at home in my father's chest. Please, don't even think of refusing!";
+			link.l1 = "Thank you, Celine. I'm glad we managed to save you. And my sincere condolences on the loss of your father.";
 			link.l1.go = "Selina_12";
 		break;
 		
 		case "Selina_12":
 			TakeNItems(pchar, "gold_dublon", 15);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "You are a noble man, monsieur. I will never forget you. Farewell!";
+			dialog.text = "You are a noble man, monsieur. I shall never forget you. Farewell!";
 			link.l1 = "Farewell, Celine.";
 			link.l1.go = "Selina_13";
 		break;
@@ -1138,19 +1138,19 @@ void ProcessDialogEvent()
 		
 		case "Jilberte":
 			PlaySound("Voice\English\other\robinzons-08.wav");
-			dialog.text = "Oh Lord, is it really all behind us? I can't even believe it... You've saved both me and Celine. If it weren't for you, the same fate that befell the luckless Cesar would've called upon her tomorrow and the same would be prepared for me in a few days.";
+			dialog.text = "Oh Lord, is it really all behind us? I can hardly believe it... You've saved both me and Celine. If it weren't for you, the same fate that befell poor Cesar would have awaited her tomorrow, and the same would have been prepared for me in a few days.";
 			link.l1 = "These Indians, are they really cannibals?!";
 			link.l1.go = "Jilberte_1";
 		break;
 		
 		case "Jilberte_1":
-			dialog.text = "You doubt it? If you have a strong stomach, have a look into the ashes of their cooking fire. You'll find poor old Cesar there. Now he's just some gnawed bones...";
-			link.l1 = "Blessed Sacrement... No, I'll pass. I've only recently arrived here from Europe and I couldn't even imagine that such vile diabolical things still take place on Earth.";
+			dialog.text = "You doubt it? If you have a strong stomach, take a look in the ashes of their cooking fire. You'll find poor old Cesar there. Now he's just some gnawed bones...";
+			link.l1 = "Blessed Sacrament... No, I'll pass. I've only recently arrived here from Europe and I couldn't even imagine that such vile, diabolical things still take place on Earth.";
 			link.l1.go = "Jilberte_2";
 		break;
 		
 		case "Jilberte_2":
-			dialog.text = "A lot of strange things happen in the Caribbean, things that you heard whispers of in the Old World... Indian medicine men, magic, shamans, and secret rituals. Stay here longer and you will witness all sorts of devilry. But forgive me, I haven't thanked you for saving me - I am still in shock\nYou saved my life and I am going to express my gratitude not only in words, but also in gold. Escort Celine and me to the city. There I will be able to thank you as you deserve, monsieur.";
+			dialog.text = "A lot of strange things happen in the Caribbean, things you only heard whispers of in the Old World... Indian medicine men, magic, shamans, and secret rituals. Stay here longer and you will witness all sorts of devilry. But forgive me, I haven't thanked you for saving me – I am still in shock\nYou saved my life and I am going to express my gratitude not only in words, but also in gold. Escort Celine and me to the city. There I will be able to thank you as you deserve, monsieur.";
 			link.l1 = "All right. Step outside. I'm going to have a look around here first.";
 			link.l1.go = "Jilberte_3";
 		break;
@@ -1175,14 +1175,14 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 20);
 			Log_Info("You've received 20 doubloons");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "You can't even imagine how happy I am about this! Thank you once again and allow me to take my leave, monsieur.";
-			link.l1 = "Good luck, Gilbert! By the way, would you happen to know if anyone else in Saint-Pierre needs help?";
+			dialog.text = "You can't even imagine how happy I am about this! Thank you once again, and allow me to take my leave, monsieur.";
+			link.l1 = "Good luck, Gilbert! By the way, do you happen to know if anyone else in Saint-Pierre needs help?";
 			link.l1.go = "Jilberte_6a";
 		break;
 		
 		case "Jilberte_6a":
-			dialog.text = "I don't know, but... You can ask the citizens out on the streets, Monsieur. Ordinary townspeople, and even the well-off ones are unlikely to offer anything worthy, but the rich nobles... they might have some job for you.";
-			link.l1 = "Understood, Gilbert, thanks. See you!";
+			dialog.text = "I don't know, but... You can ask the citizens out on the streets, Monsieur. Ordinary townsfolk, and even the well-off, are unlikely to offer anything worthwhile, but the rich nobles... they might have some work for you.";
+			link.l1 = "Understood, Gilbert, thank you. See you!";
 			link.l1.go = "Jilberte_6";
 		break;
 		
@@ -1211,8 +1211,8 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
-			dialog.text = NPCharSexPhrase(NPChar, "Listen you, I am a law abiding citizen of this city. I must ask you not to walk around with your blade exposed like a robber.", "Sir please, the law is clear that men may not go about with weapons drawn within the city walls.");
-			link.l1 = LinkRandPhrase("Alright.", "Very well.", "As you wish...");
+			dialog.text = NPCharSexPhrase(NPChar,"Listen, you, I am a law-abiding citizen of this city. I must ask you not to walk around with your blade exposed like a robber.","Sir, please, the law is clear: men may not go about with weapons drawn within the city walls.");
+			link.l1 = LinkRandPhrase("Alright.","Very well.","As you wish...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 			if (npchar.id == "GigoloMan") NextDiag.TempNode = "GigoloMan";

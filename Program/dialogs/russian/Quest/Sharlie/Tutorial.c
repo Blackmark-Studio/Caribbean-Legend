@@ -959,6 +959,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 		
 		case "SailorWantRum_PrinestiRum_6":
@@ -1537,7 +1538,7 @@ void ProcessDialogEvent()
 		case "OfficerKaznachey_12":
 			if (IsCharacterPerkOn(pchar, "HT2"))
 			{
-				dialog.text = "(Счетовод) 150 песо, и еще 5 дублонов сверху за то, что вы почти мой коллега. Ну и возможность обменивать песо на дублоны по достойному курсу.";
+				dialog.text = "(Счетовод) 150 песо, и ещё 5 дублонов сверху за то, что вы почти мой коллега. Ну и возможность обменивать песо на дублоны по достойному курсу.";
 			}
 			else
 			{
@@ -1582,7 +1583,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_12_Wait": // ждёт выполнения квеста
 			dialog.text = "Как успехи? Плату раздали? Всё принесли? Остаток дублонов, пустой сундучок?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "Всё готово.";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1599,7 +1600,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "А говорили, что считать умеете. Тут меньше, чем должно быть. А это значит, что моя бухгалтерия только что усложнилась, и вы создали мне новую проблему, вместо того чтобы решить текущую\n"+
@@ -1682,7 +1683,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval_3":
 			dialog.text = "Сражение начнётся только через пару часов, так что самое время закрыть дневной учёт. У вас мой сундучок с дублонами, де Мор. Потрудитесь вернуть.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Забирайте. И больше сюда свою физиономию не показывайте.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
@@ -1695,12 +1696,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "И не собирался. Я же не сухопутная крыса - моё место не в трюме. Прощайте.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);

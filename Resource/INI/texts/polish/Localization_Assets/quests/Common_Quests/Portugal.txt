@@ -1,74 +1,16 @@
-Portugal_1
-{
-Bartolomeo
-}
-Portugal_2
-{
-Portugalski
-}
-
-Portugal_3
-{
-Piter
-}
-Portugal_4
-{
-van Stahl
-}
-
-Portugal_5
-{
-Leo
-}
-Portugal_6
-{
-Cord
-}
-
-Portugal_7
-{
-Po dwóch dniach@<NewStr()>wrogiego statku już nie było
-}
-
-Portugal_8
-{
-Frants
-}
-Portugal_9
-{
-Garke
-}
-
-Portugal_10
-{
-Albatross
-}
-
-Portugal_11
-{
-Bart Portugalczyk opuścił twój statek!
-}
-
-Portugal_12
-{
-Ernando
-}
-Portugal_13
-{
-Vaskez
-}
-
-Portugal_14
-{
-Po około godzinie...@<NewStr()>Portugalczyk został wniesiony do domu
-}
-
-Portugal_15
-{
-Dwie godziny mineły...
-}
-
-Portugal_16
-{
-Odkryłeś skarby Barta Portugalczyka!
-}
+Portugal_1 {Bartolomeo}
+Portugal_2 {Portugalski}
+Portugal_3 {Piter}
+Portugal_4 {van Stahl}
+Portugal_5 {Leo}
+Portugal_6 {Cord}
+Portugal_7 {Po dwóch dniach@<NewStr()>wrogiego statku już nie było}
+Portugal_8 {Frants}
+Portugal_9 {Garke}
+Portugal_10 {Albatross}
+Portugal_11 {Bart Portugalczyk opuścił twój statek!}
+Portugal_12 {Ernando}
+Portugal_13 {Vaskez}
+Portugal_14 {Po około godzinie...@<NewStr()>Portugalczyk został wniesiony do domu}
+Portugal_15 {Dwie godziny mineły...}
+Portugal_16 {Odkryłeś skarby Barta Portugalczyka!}

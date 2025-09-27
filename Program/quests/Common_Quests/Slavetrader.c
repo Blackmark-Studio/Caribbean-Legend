@@ -625,6 +625,8 @@ void Slavetrader_EscapeSlaveInShore(string qName)
 
 void Slavetrader_Slavewoman()
 {
+	StartBattleLandInterface();
+	DeleteAttribute(pchar, "GenQuest.Notsearchbody");
 	sld = characterFromId("Slavewoman");	
 	LAi_SetPlayerType(pchar);
 	SetCharacterRemovable(sld, false);
@@ -825,6 +827,8 @@ bool Slavetrader_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Slavetrader_EscapeSlaves_Win")
 	{
+			EndBattleLandInterface();
+			pchar.GenQuest.Notsearchbody = true;
 			chrDisableReloadToLocation = false;
 			sld = GetCharacter(NPC_GenerateCharacter("Slavewoman", "Izaura", "woman", "towngirl", 10, PIRATE, -1, false, "citizen"));
 			ChangeCharacterAddressGroup(sld, pchar.questTemp.Slavetrader.Island.Shore, "goto",  "goto31");

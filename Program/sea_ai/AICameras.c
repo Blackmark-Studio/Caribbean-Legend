@@ -151,7 +151,7 @@ void CreateSeaCamerasEnvironment()
 	Crosshair.MaxDeltaAy = 0.007;
 	Crosshair.MaxDeltaHeight = 2.0;
 	
-	Crosshair.TargetDeltaDist = 0.01;
+	Crosshair.MaxTargetDeltaDist = 10.0;
 	Crosshair.TargetBoxIncreaseWidth = 2.2;
 	Crosshair.TargetBoxIncreaseLength = 1.8;
 
@@ -422,26 +422,26 @@ void FireCamera_UpdateAttributes()
 	float kCrewExp = Bring2Range(0.8, 1.2, 1.0, 100.0, fCrewExp);
 	
 	//скорость движения прицельных кружков
-	Crosshair.DistSpeed = Bring2Range(35.0, 70.0, 0.01, 1.0, fCannons) * kCrewExp; //дистанция
-	Crosshair.AySpeed = Bring2Range(0.08, 0.14, 0.01, 1.0, fCannons) * kCrewExp; //угол (горизонталь)
-	Crosshair.HeightSpeed = Bring2Range(3.5, 7.0, 0.01, 1.0, fCannons) * kCrewExp; //высота
+	Crosshair.DistSpeed = Bring2Range(45.0, 80.0, 0.01, 1.0, fCannons) * kCrewExp; //дистанция
+	Crosshair.AySpeed = Bring2Range(0.1, 0.15, 0.01, 1.0, fCannons) * kCrewExp; //угол (горизонталь)
+	Crosshair.HeightSpeed = Bring2Range(4.5, 8.0, 0.01, 1.0, fCannons) * kCrewExp; //высота
 	
 	//плотность сведения
 	Crosshair.Density = Bring2Range(0.2, 0.65, 0.01, 1.0, fAccuracy); //0 - не сводятся, 1 - в точку.
 	Crosshair.DensitySpeed = Bring2Range(0.45, 2.5, 0.01, 1.0, fAccuracy) * kCrewExp; //скорость досведения
 	
 	//флуктуации - коэффициенты влияния. Расчитываются на основе дельты при превышении порога
-	Crosshair.FluctuationDistToDist = Bring2Range(0.003, 0.0007, 0.01, 1.0, fAccuracy);
-	Crosshair.FluctuationDistToAy = Bring2Range(0.0009, 0.0003, 0.01, 1.0, fAccuracy);
-	Crosshair.FluctuationDistToHeight = Bring2Range(0.00016, 0.00008, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationDistToDist = Bring2Range(0.0022, 0.0007, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationDistToAy = Bring2Range(0.00075, 0.0003, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationDistToHeight = Bring2Range(0.00015, 0.00008, 0.01, 1.0, fAccuracy);
 	
-	Crosshair.FluctuationAyToDist = Bring2Range(100.0, 35.0, 0.01, 1.0, fAccuracy);
-	Crosshair.FluctuationAyToAy = Bring2Range(12.5, 4.25, 0.01, 1.0, fAccuracy);
-	Crosshair.FluctuationAyToHeight = Bring2Range(55.0, 25.0, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationAyToDist = Bring2Range(85.0, 35.0, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationAyToAy = Bring2Range(10.5, 4.25, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationAyToHeight = Bring2Range(48.0, 25.0, 0.01, 1.0, fAccuracy);
 	
 	Crosshair.FluctuationHeightToDist = 0.0;
-	Crosshair.FluctuationHeightToAy = Bring2Range(0.05, 0.015, 0.01, 1.0, fAccuracy);
-	Crosshair.FluctuationHeightToHeight = Bring2Range(0.045, 0.007, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationHeightToAy = Bring2Range(0.04, 0.015, 0.01, 1.0, fAccuracy);
+	Crosshair.FluctuationHeightToHeight = Bring2Range(0.04, 0.007, 0.01, 1.0, fAccuracy);
 }
 
 /*

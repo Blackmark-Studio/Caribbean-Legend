@@ -1,83 +1,17 @@
-food_1
-{
-Крысы
-}
-food_2
-{
-~ испортили ~
-}
-
-food_3
-{
-~ повредили ~
-}
-
-food_4
-{
-~ уничтожили ~
-}
-
-food_5
-{
-~ шт. ~
-}
-
-food_6
-{
-На корабле @<rChar.Ship.Name> от болезней умерло @<FindRussianSailorString(cn, "No")>
-}
-
-food_7
-{
-На корабле @<rChar.Ship.Name> осталось мало медикаментов
-}
-
-food_8
-{
-На корабле @<rChar.Ship.Name> от болезней умерло @<FindRussianSlavesString(cn, "No")>
-}
-
-food_9
-{
-На корабле  @<rChar.Ship.Name>  весь ром выпит
-}
-
-food_10
-{
-На корабле @<rChar.Ship.Name> продовольствия осталось на @<FindRussianDaysString(cn)>
-}
-
-food_11
-{
-Нужно срочно пополнить запасы!
-}
-
-food_12
-{
-Рабы подняли восстание!
-}
-
-food_13
-{
-На корабле @<rChar.Ship.Name> матросы голодают. Мораль команды падает!
-}
-
-food_14
-{
-Матросы умирают от голода
-}
-
-food_15
-{
-Рабы умирают от голода
-}
-
-food_16
-{
-Бунт на корабле @<rChar.Ship.Name>!!!! ~
-}
-
-food_17
-{
-Корабль выходит из эскадры
-}
+food_1 {Крысы}
+food_2 {~ испортили ~}
+food_3 {~ повредили ~}
+food_4 {~ уничтожили ~}
+food_5 {~ шт. ~}
+food_6 {На корабле @<rChar.Ship.Name> от болезней умерло @<FindRussianSailorString(cn, "No")>}
+food_7 {На корабле @<rChar.Ship.Name> осталось мало медикаментов}
+food_8 {На корабле @<rChar.Ship.Name> от болезней умерло @<FindRussianSlavesString(cn, "No")>}
+food_9 {На корабле  @<rChar.Ship.Name>  весь ром выпит}
+food_10 {На корабле @<rChar.Ship.Name> продовольствия осталось на @<FindRussianDaysString(cn)>}
+food_11 {Нужно срочно пополнить запасы!}
+food_12 {Рабы подняли восстание!}
+food_13 {На корабле @<rChar.Ship.Name> матросы голодают. Мораль команды падает!}
+food_14 {Матросы умирают от голода}
+food_15 {Рабы умирают от голода}
+food_16 {Бунт на корабле @<rChar.Ship.Name>!!!! ~}
+food_17 {Корабль выходит из эскадры}

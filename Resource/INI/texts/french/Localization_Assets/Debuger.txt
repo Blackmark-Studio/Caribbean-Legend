@@ -1,4 +1,1 @@
-Debuger_1
-{
-Наш город  @<GetCN(city)> в осаде!
-}
+Debuger_1 {Наш город  @<GetCN(city)> в осаде!}

@@ -1,34 +1,7 @@
-time_events_1
-{
-你收到了来 Poinsey 的利润分成
-}
-
-time_events_2
-{
-Jean David 在勒弗朗索瓦为你准备了战利品分 成
-}
-
-time_events_3
-{
-Sandro
-}
-
-time_events_4
-{
-Torn
-}
-
-time_events_5
-{
-Jim
-}
-
-time_events_6
-{
-Hopkins
-}
-
-time_events_7
-{
-Alonso
-}
+time_events_1 {你收到了来 Poinsey 的利润分成}
+time_events_2 {Jean David 在勒弗朗索瓦为你准备了战利品分 成}
+time_events_3 {Sandro}
+time_events_4 {Torn}
+time_events_5 {Jim}
+time_events_6 {Hopkins}
+time_events_7 {Alonso}

@@ -1,40 +1,10 @@
-SharlieTutorial_1
-{
-Kapitän
-}
-SharlieTutorial_2
-{
-Matrose
-}
-SharlieTutorial_3
-{
-Bootsmann
-}
-SharlieTutorial_4
-{
-Schatzmeister
-}
-SharlieTutorial_5
-{
-Pirat
-}
-SharlieTutorial_6
-{
-Ulysse
-}
-SharlieTutorial_7
-{
-Paul
-}
-SharlieTutorial_8
-{
-Henry
-}
-SharlieTutorial_9
-{
-Mathieu
-}
-SharlieTutorial_10
-{
-Pinchon
-}
+SharlieTutorial_1 {Kapitän}
+SharlieTutorial_2 {Matrose}
+SharlieTutorial_3 {Bootsmann}
+SharlieTutorial_4 {Schatzmeister}
+SharlieTutorial_5 {Pirat}
+SharlieTutorial_6 {Ulysse}
+SharlieTutorial_7 {Paul}
+SharlieTutorial_8 {Henry}
+SharlieTutorial_9 {Mathieu}
+SharlieTutorial_10 {Pinchon}

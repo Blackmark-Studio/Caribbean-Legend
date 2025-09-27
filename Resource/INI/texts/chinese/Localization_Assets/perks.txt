@@ -1,0 +1,8 @@
+perks_1 {价格已更新}
+perks_2 {船只“@<_ShipName>”的破损已修补。}
+perks_3 {@<_ShipName>——水线以下破损!}
+perks_4 {$rand(' $attr($context.ship.name) '的货舱里一定有贵重物品|他们显然在' $attr($context.ship.name) '上运送着重要东西)}
+perks_5 {$rand('$attr($context.ship.name)'的货舱里没什么可拿的|看起来'$attr($context.ship.name)'的货舱里没有值钱的东西)}
+perks_6 {在@<rChar.Ship.Name>号船上, @<FindRussianSailorString(cn, "No")>在拥挤中丧生。}
+perks_7 {根据计算, @<_ShipName>已抵达@<_PortName>。}
+perks_8 {仍在途中。}

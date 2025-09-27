@@ -27,6 +27,9 @@ void InitInterface_gm(string iniName)
 
 	InterfaceStates.showGameMenuOnExit = true;
 
+	// логотип
+	SetMenuLogo();
+
 	if(CheckAttribute(&InterfaceStates,"Buttons.Resume.enable") && sti(InterfaceStates.Buttons.Resume.enable) == true)
 	{
 		SetSelectable("MB_RESUME", true);

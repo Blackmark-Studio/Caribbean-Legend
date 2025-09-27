@@ -341,55 +341,8 @@ void ProcessDialogEvent()
 		case "guide_64": // решили убить Валинье
 			dialog.text = "闭嘴, 先生! 我再也不会容忍你的无礼。不过, 我理解你初来乍到的反应, 这次就原谅你的失态了。但以后注意你的言辞。告辞了, de Maure先生。";
 			link.l1 = "无意冒犯, Valinnie先生。如果咱们现在在卢浮宫, 你可得注意你的语气! 现在该给你这个乡下佬上最后一课了。准备好挨打吧! ";
-			link.l1.go = "guide_65";
-		break;
-		
-		case "guide_65":
-			DialogExit();
-			
-			npchar.rank = 25;
-			int iHp = MOD_SKILL_ENEMY_RATE*10+300;
-			LAi_SetHP(npchar, iHp, iHp);
-			SetSelfSkill(npchar, 80, 80, 80, 80, 50);
-			SetShipSkill(npchar, 50, 80, 35, 30, 50, 20, 30, 20, 80);
-			SetSPECIAL(npchar, 9, 5, 8, 6, 5, 10, 8);
-			SetCharacterPerk(npchar, "Energaiser");
-			SetCharacterPerk(npchar, "BasicDefense");
-			SetCharacterPerk(npchar, "AdvancedDefense");
-			SetCharacterPerk(npchar, "CriticalHit");
-			SetCharacterPerk(npchar, "Tireless");
-			SetCharacterPerk(npchar, "HardHitter");
-			SetCharacterPerk(npchar, "Sliding");
-			SetCharacterPerk(npchar, "BladeDancer");
-			SetCharacterPerk(npchar, "SwordplayProfessional");
-			SetCharacterPerk(npchar, "Gunman");
-			SetCharacterPerk(npchar, "GunProfessional");
-			GiveItem2Character(npchar, "blade_30");
-			EquipCharacterbyItem(npchar, "blade_30");
-			GiveItem2Character(npchar, "cirass7");
-			GiveItem2Character(npchar, "obereg_7");
-			GiveItem2Character(npchar, "talisman11");
-			AddMoneyToCharacter(npchar, 10000);
-			AddItems(npchar, "gold_dublon", 25);
-			AddItems(npchar, "bullet", 5);
-			AddItems(npchar, "grapeshot", 5);
-			AddItems(npchar, "GunPowder", 10);
-			TakeItemFromCharacter(npchar, "blade_12");
-			npchar.cirassId = Items_FindItemIdx("cirass4");
-			LAi_SetCurHPMax(npchar);
-			LAi_GetCharacterMaxEnergy(npchar);
-			LAi_SetCurHPMax(pchar); 
-			LAi_GetCharacterMaxEnergy(pchar);
-			LAi_SetImmortal(npchar, false);
-			LAi_group_Delete("EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			npchar.SaveItemsForDead = true;
-			npchar.DontClearDead = true;
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "Guide_HeroKill");
-			AddDialogExitQuest("MainHeroFightModeOn");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Guide_DlgExit_64");
 		break;
 		
 		case "Exit":

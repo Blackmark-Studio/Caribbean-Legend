@@ -136,7 +136,7 @@ He hundido el Mirage, he fracasado
 ¡Era el momento justo para matar a van Berg! ¿Pero quién está detrás de él? Debería preguntar a Richard sobre el asiático. ¿Y por qué Rodenburg está tan interesado en un filibote que se hundió en la latitud 12 grados 48 minutos?
 ¡El Mirage, así es como se llama ese pájaro! Bueno, le conviene... Ahora tengo que navegar a Antigua.
 #TEXT   2-16
-Richard me habló de la isla y me dio la longitud. Ahora sólo yo sé la verdadera ubicación, debería navegar allí en cuanto pueda... Antes visitaré Curaçao para llevarle a Richard su soborno: Abigail Shneur.
+Richard me habló de la isla y me dio la longitud. Ahora sólo yo sé la verdadera ubicación, debería navegar allí en cuanto pueda... Antes visitaré Curaçao para llevarle a Richard su prometida: Abigail Shneur.
 #TEXT   2-17
 Abigail no está en casa, sólo he encontrado al loco de su padre. Me ha dicho que puedo encontrarla en la iglesia.
 #TEXT   2-18
@@ -1608,7 +1608,7 @@ El nigromante Merryman fue un duro contrincante y los monstruos Chavinavi convoc
 #TEXT    33
 Ya tengo el cráneo de jade de Yum Cimil, vuelvo a Dominica para ver a Tuttuathapak.
 #TEXT    34
-El siguiente paso es llevar el cráneo de jade al templo de los Chavins, que se encuentra en una isla deshabitada del archipiélago. Lo único que sé es que se encuentra al norte de Dominica, cerca del océano. @<sText> Debo darme prisa, sólo tengo un mes para depositar la calavera en el templo. Después de ese plazo, los amuletos de Tuttuathapak perderán su poder y no podré atravesar las defensas del templo, los espantosos Chavinavi.
+El siguiente paso es llevar el cráneo de jade al templo de los Chavins, que se encuentra en una isla deshabitada del archipiélago. Lo único que se sabe de él es que está al norte de Dominica, en medio de un triángulo de islas, y por el cuarto lado se encuentra el océano. @<sText> Debo darme prisa, sólo tengo un mes para depositar la calavera en el templo. Después de ese plazo, los amuletos de Tuttuathapak perderán su poder y no podré atravesar las defensas del templo, los espantosos Chavinavi.
 #TEXT    35
 ¡He hablado con Nathaniel Hawk y sé las coordenadas de Khael Roa! 19 grados 32 minutos Norte, 62 grados 25 minutos Oeste. Además, Nathan me advirtió de los peligros que me esperan en el templo.
 #TEXT    36
@@ -1630,6 +1630,10 @@ Bueno, es el final de esta larga historia. El chamán me ha entregado tres extra
 He pasado demasiado tiempo buscando la isla y los amuletos de Tuttuathapak han perdido su poder. No pude devolver el cráneo de jade al templo y Tuttuathapak se ha negado a hablar conmigo. Bueno, no tengo nada que hacer por aquí y fue culpa mía.
 #TEXT    44
 He encontrado una sala bastante curiosa en las profundidades del templo. Hay unas placas de piedra entre unos pilares y la salida que conduce al santuario está bloqueada por una enorme puerta de piedra. Debería encontrar una forma de abrirla, tengo que investigar esta sala.
+#TEXT   45
+Parece que debajo de estas losas hay un mecanismo oculto que abre un pasaje. Tendré que pisarlas una por una hasta encontrar el orden correcto. Cada paso acertado emite un sonido especial – o eso creo. No tengo otra idea para seguir adelante, así que buscaré la combinación adecuada y aguzaré bien el oído...
+#TEXT   46
+Maldita sea... Parece que las columnas también esconden un mecanismo, además protegido por la magia de los chavines. Pero ahora el precio del error es mucho más alto: una combinación incorrecta hace aparecer esqueletos indígenas. Tendré que ser extremadamente cuidadoso – y recordar cada intento para no repetirlos. Quién sabe cuántas oleadas más podré resistir...
 
 #QUEST Patria
 El héroe de la nación.
@@ -2404,9 +2408,9 @@ No es tan sencillo como parecía a primera vista. Eso es lo que pensé inicialme
 #TEXT  10
 La gente podrida suele convencer a los demás de que no lo son. Incluso los que parecen excelentes jueces de carácter: Gabe consiguió ganarse la confianza del propio coronel D'Oyley, que lo valora mucho. También me enteré en la taberna de que tiene fama de honesto y valiente. Qué ironía. La casa de nuestro valiente está junto a la tienda, pero rara vez está allí, sólo por las noches, cuando todos los establecimientos principales de la ciudad están cerrados. Mejor aún: puedo colarme y dejarle un mensaje en cualquier momento.
 #TEXT  11
-He visto a muchos matrimonios peleándose. A veces es gracioso. Y lo que vi hoy me recordó mucho a eso. Gabe mordió el anzuelo, y lo abordamos con éxito. En la cabina, Tommy se unió a mí para intercambiar algunas bromas con Callow. Cada uno expresó su verdad, su versión de lo que había sucedido en Inglaterra, y se acusaron coloridamente de todo lo que podían y no podían. Después de eso, Tommy y yo terminamos lo que habíamos empezado. Él se alegró de que yo le hubiera ayudado a vengarse de Gabe, así que por fin se desahogó del resentimiento que le había estado carcomiendo y cerró un viejo capítulo no muy agradable de su vida. Tras lo cual soltó dos bromas a la vez en su mejor tradición. La primera fue que yo ya no era su capitán, sino un verdadero amigo. Y dos, me entregó... un punto negro. Pero no cualquier punto negro. El que estaba destinado a Gabe. Tommy está convencido de que cuando bordó la Jolly Roger en su viejo pañuelo de seda, ese trozo de tela le trajo inmediatamente suerte. Esperemos que ahora también me la traiga a mí.
+He visto a muchos matrimonios peleándose. A veces es gracioso. Y lo que vi hoy me recordó mucho a eso. Gabe mordió el anzuelo, y lo abordamos con éxito. En la cabina, Tommy se unió a mí para intercambiar algunas bromas con Callow. Cada uno expresó su verdad, su versión de lo que había sucedido en Inglaterra, y se acusaron coloridamente de todo lo que podían y no podían. Después de eso, Tommy y yo terminamos lo que habíamos empezado. Él se alegró de que yo le hubiera ayudado a vengarse de Gabe, así que por fin se desahogó del resentimiento que le había estado carcomiendo y cerró un viejo capítulo no muy agradable de su vida. Tras lo cual soltó dos bromas a la vez en su mejor tradición. La primera fue que yo ya no era su capitán, sino un verdadero amigo. Y dos, me entregó... un punto negro. Pero no cualquier punto negro. El que estaba destinado a Gabe. Tommy está convencido de que cuando bordó Jolly Roger en su viejo pañuelo de seda, ese trozo de tela le trajo inmediatamente suerte. Esperemos que ahora también me la traiga a mí.
 #TEXT  12
-¿Dónde se ha visto que un mercante hunda un buque de guerra? Sin embargo, eso es exactamente lo que ocurrió. Quién sabe qué buscaba Gabe con su barco: tal vez quería cansarnos primero con un largo combate, romper unos cuantos mástiles y acribillar a la tripulación antes de abordar. O quizá se dio cuenta de que no éramos mercantes y nos iba a mandar al fondo en vez de huir. Pero otra de nuestras salvas impactó por debajo de la línea de flotación, y así este viejo rosado, que ya parecía apenas a flote, se hundió finalmente. Tommy se rió a carcajadas ante lo ridículo de la situación, pero cuando se calmó, señaló que quería tratar con Gabe cara a cara, aunque en general se alegraba de que todo hubiera terminado. Tan contento que incluso me llamó amigo. Y me puso un punto negro. Pero no de esa manera, por supuesto. Tommy está convencido de que cuando bordó la Jolly Roger en su viejo pañuelo de seda, ese trozo de tela empezó inmediatamente a traerle buena suerte. Con suerte, ahora me la traerá a mí. Es hora de abandonar las aguas jamaicanas y cambiar de barco: no se puede ganar mucho dinero con una barcaza.
+¿Dónde se ha visto que un mercante hunda un buque de guerra? Sin embargo, eso es exactamente lo que ocurrió. Quién sabe qué buscaba Gabe con su barco: tal vez quería cansarnos primero con un largo combate, romper unos cuantos mástiles y acribillar a la tripulación antes de abordar. O quizá se dio cuenta de que no éramos mercantes y nos iba a mandar al fondo en vez de huir. Pero otra de nuestras salvas impactó por debajo de la línea de flotación, y así este viejo rosado, que ya parecía apenas a flote, se hundió finalmente. Tommy se rió a carcajadas ante lo ridículo de la situación, pero cuando se calmó, señaló que quería tratar con Gabe cara a cara, aunque en general se alegraba de que todo hubiera terminado. Tan contento que incluso me llamó amigo. Y me puso un punto negro. Pero no de esa manera, por supuesto. Tommy está convencido de que cuando bordó el Jolly Roger en su viejo pañuelo de seda, ese trozo de tela empezó inmediatamente a traerle buena suerte. Con suerte, ahora me la traerá a mí. Es hora de abandonar las aguas jamaicanas y cambiar de barco: no se puede ganar mucho dinero con una barcaza.
 #TEXT 13
 Hecho. Como Gabe está fuera de casa la mayor parte del tiempo, no dejarse atrapar fue fácil. Ahora sólo queda volver con Tommy. Esperemos que Callow eche un buen vistazo a sus escritorios y baúles cuando llegue a casa y no se vaya directamente a la cama, o estaremos esperando un buen rato.
 #TEXT 14
@@ -2551,3 +2555,24 @@ La regata ha terminado. He quedado quinto. Aunque no hay premio para mí, estoy 
 ¡Maldita sea! He quedado el último. Qué metedura de pata. Debería haberme quedado fuera de esta regata.
 #TEXT 45
 Mi viaje de regata ha terminado. He infringido las normas y he sido descalificado de la competición.
+
+#QUEST LoyaltyPack
+Voz de la Tripulación
+#TEXT 1
+Alonso Pimentel, contramaestre y voz de mi tripulación, quiere hablar conmigo. Puedo encontrarlo en la bodega.
+#TEXT 2
+Aunque Alonso reconoció mis modestos éxitos como capitán, claramente está preocupado por mí. Me ofreció consejos, me regaló equipo útil y compartió una historia. Quizás si continúo por este camino, escuche el resto.
+#TEXT 3
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 4
+Ha pasado casi un año, y la tripulación finalmente ha encontrado confianza en mí. Alonso esquivó magistralmente mis preguntas sobre su pasado, pero compartió otra de sus historias de guerra. Claramente se toma en serio esa parte de sus deberes concerniente a la moral de la tripulación. Casi como un confesor, aunque dudo que los sacerdotes regalen a su rebaño recetas de brebaje moscovita y armas de fuego de calidad. ¿Continuará?
+#TEXT 5
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 6
+Ahora soy dueño no solo de cierta fama en el Caribe, sino también de un sombrero de aspecto ridículo. Aunque puede proteger la cabeza de un capitán aspirante, definitivamente se desmoronará después de un par de golpes fuertes. Sin embargo, mi triunfo se vio algo empañado por la trágica historia que Alonso me contó hoy. No sé qué se supone que me enseñe, pero me gustaría conocer a su "amigo moscovita".
+#TEXT 7
+Alonso ha solicitado una reunión. Como siempre, lo encontraré en la bodega.
+#TEXT 8
+¿Fadey? ¿El mismo Fadey de Basse-Terre? ¡Qué pequeño es el mundo! Debería visitarlo.
+#TEXT 9
+El encuentro con Fadey me hizo pensar en muchas cosas. ¿Cuántos más "Alonsos" hay en mi tripulación? ¿Cuántas historias y destinos humanos peculiares? He escuchado solo una voz, pero ahora tengo cientos. No sé cómo terminará mi odisea caribeña, pero gracias a los cuidados de Alonso y sus sencillos regalos, estoy completamente equipado, preparado y listo para enfrentar mi destino.

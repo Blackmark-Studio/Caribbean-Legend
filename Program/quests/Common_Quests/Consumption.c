@@ -122,7 +122,7 @@ void Consumption_CreateBandits()//бандиты Хуана
 		if (i == 1)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Conbandit_"+i, "mush_ctz_2", "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2); // patch-9
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2); // patch-9
 			sld.MusketerDistance = 0;
 			ChangeCharacterAddressGroup(sld, "PortSpein_Exittown", "goto", "goto2");
 		}
@@ -135,7 +135,6 @@ void Consumption_CreateBandits()//бандиты Хуана
 			ChangeCharacterAddressGroup(sld, "PortSpein_Exittown", "rld", "aloc"+(i+4));
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
-			if (sti(pchar.rank) > 7) SetCharacterPerk(sld, "SwordplayProfessional");
 			if (i == 2)
 			{
 				sld.dialog.filename = "Quest\LineMiniQuests\Consumption.c";
@@ -183,7 +182,6 @@ void Consumption_CreateJuan(string qName)//галеон Хуана
 	sld.Ship.Mode = "pirate";
 	DeleteAttribute(sld, "SaveItemsForDead");
 	DeleteAttribute(sld, "DontClearDead");
-	if (sti(pchar.rank) > 7) SetCharacterPerk(sld, "SwordplayProfessional");
 	if (sti(pchar.rank) > 14) SetCharacterPerk(sld, "CannonProfessional");
 	if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter("ConJuanShip", "ConJuan");

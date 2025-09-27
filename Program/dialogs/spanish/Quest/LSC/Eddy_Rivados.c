@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 		GiveItem2Character(pchar, "letter_chad_1");
 		ChangeItemDescribe("letter_chad_1", "itmdescr_letter_axel");
 		pchar.questTemp.LSC.rvd_friend = "true";		   // флаг на проход по кораблям ривадос
-		pchar.rvd_friend = true;						   // ривадосы не будут останавливать где просят пароль
+		//						   // ривадосы не будут останавливать где просят пароль
 		pchar.questTemp.Saga.SharkHunt = "dodson_whiskey"; // к Акуле
 		sld = CharacterFromID("Dodson");
 		sld.dialog.currentnode = "Chad_escape"; // ноду Акуле

@@ -996,7 +996,7 @@ void ProcessDialogEvent()
 		//--> Sinistra 旧罪的漫长阴影
 		case "DTSG_NightIskat":
 			dialog.text = "当... 当然, 我们都互相认识! 你为什么这么问? ";
-            link.l1 = "我想去拜访那个放债人, 却发现他卖掉了老房子。 你知道他现在住在哪里吗? ";
+            link.l1 = "我想去拜访那个放贷人, 却发现他卖掉了老房子。 你知道他现在住在哪里吗? ";
             link.l1.go = "DTSG_NightIskat_2";
 		break;
 		
@@ -1105,7 +1105,7 @@ void ProcessDialogEvent()
 			link.l1 = "我明白了。 谢谢你的陪伴, 伙计。 放松点。 ";
 			link.l1.go = "exit_sit";
 			
-			npchar.questTemp.Sotta = true;
+			npchar.questTemp.PZ_Sotta = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -1121,7 +1121,7 @@ void ProcessDialogEvent()
 			link.l1 = "没错, 独行侠不会长久。 好吧, 庆祝吧。 我得走了, 伙计。 ";
 			link.l1.go = "exit_sit";
 			
-			npchar.questTemp.Lutter = true;
+			npchar.questTemp.PZ_Lutter = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;

@@ -106,32 +106,32 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "Ah, c'est toi, de Maure. Eh bien, quelle surprise. Par le diable des mers, ton arrivée est la chose la plus intéressante qui soit arrivée depuis longtemps, que diable.";
 			link.l1 = "Ravi de te voir aussi, Vensan. Apprécies-tu de gouverner le village ?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 			DelLandQuestMark(npchar);
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Comment pourrais-je ? Je suis un capitaine, un sacré bon en plus, pas un foutu comptable. Et j'ai attendu plus longtemps les messagers de Marcus pour qu'ils me convoquent à un nouveau voyage que je n'ai attendu Noël, sacrées malédictions !";
 			link.l1 = "Noël et malédictions dans une seule phrase, voilà quelque chose. Aye, je ne t'envie pas. Pourtant, beaucoup aimeraient être à ta place actuelle. Mais je suis venu te voir pour affaires, Vensan.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Des affaires ?! Eh bien, crache le morceau alors - as-tu pensé à quelque chose ? As-tu une bonne piste ? Je suis sur le point de vider la cave locale par pur ennui et tous ces foutus calculs.";
 			link.l1 = "Eh bien, c'est plutôt que j'ai une question pour vous, rien de plus.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Mille tonnerres ! Mais d'accord, je t'écoute, Charles.";
 			link.l1 = "Une femme est-elle venue vous voir ? Ou peut-être l'avez-vous aperçue à La Vega ? Elle se fait appeler Belle Étoile, bien que ce ne soit qu'un pseudonyme, donc elle aurait pu se présenter sous un autre nom. Ce qui est important, c'est qu'elle... elle a la peau jaune. Mais ce n'est ni une esclave ni une ouvrière - c'est une femme riche.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Au teint jaune, mais riche ? On n'a jamais eu quelqu'un comme ça ici, jamais ! On dirait que vous continuez à vivre cette vie intéressante, de Maure ! Je suis presque jaloux.";
 			link.l1 = "Est-ce ainsi... Eh bien, merci pour votre temps, Vensan. Je ne vous distrairai plus de votre comptabilité, héh-héh.";
 			link.l1.go = "Exit";

@@ -3050,18 +3050,8 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_2":
 			dialog.text = "Конечно, капитан. Вот, примите на прощание скромную благодарность от меня лично.";
 			link.l1 = "Благодарю.";
-			link.l1.go = "JusticeOnSale_3";
-		break;
-		
-		case "JusticeOnSale_3":
-			AddQuestRecord("JusticeOnSale", "5");
-			CloseQuestHeader("JusticeOnSale");
-			
-			AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
-			
-			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
-			
-			DialogExit();
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_1");
 		break;
 		
 		case "JusticeOnSale_4":
@@ -3073,56 +3063,8 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_5":
 			dialog.text = "Ступайте. Доплывите туда, и проследите, чтобы никто не ушёл от правосудия! Думаю, вам сначала надо будет высадиться на берег, а потом уже заняться кораблём.";
 			link.l1 = "...";
-			link.l1.go = "JusticeOnSale_6";
-		break;
-		
-		case "JusticeOnSale_6":
-			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", sti(PChar.rank) + 5, PIRATE, -1, true, "quest"));
-			sld.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
-			sld.Ship.Name = PChar.GenQuest.JusticeOnSale.ShipName;
-			SetBaseShipData(sld);
-			SetCrewQuantityFull(sld);
-			Fantom_SetCannons(sld, "pirate");
-			Fantom_SetBalls(sld, "pirate");
-			Fantom_SetUpgrade(sld, "pirate");
-			SetCaptanModelByEncType(sld, "pirate");
-			SetRandGeraldSail(sld, PIRATE);
-			
-			Character_SetAbordageEnable(sld, false);
-			
-			Group_FindOrCreateGroup("JusticeOnSaleGroup");
-			Group_AddCharacter("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-			Group_SetGroupCommander("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-			Group_SetAddress("JusticeOnSaleGroup", PChar.curislandid, "reload", Island_GetLocationReloadLocator(PChar.curislandid, PChar.GenQuest.JusticeOnSale.ShoreId));
-			Group_SetTaskNone("JusticeOnSaleGroup");
-			Group_LockTask("JusticeOnSaleGroup");
-			
-			sld.AlwaysFriend = true;
-			SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
-			
-			SetCharacterShipLocation(sld, PChar.GenQuest.JusticeOnSale.ShoreId);
-
-			DeleteAttribute(sld, "SinkTenPercent");
-			DeleteAttribute(sld, "SaveItemsForDead");
-			DeleteAttribute(sld, "DontClearDead");
-			DeleteAttribute(sld, "AboardToFinalDeck");
-			
-			sld.AlwaysSandbankManeuver = true;
-			sld.AnalizeShips = true;
-			sld.DontRansackCaptain = true;
-			
-			sld = &Locations[FindLocation(PChar.GenQuest.JusticeOnSale.ShoreId)];
-			sld.DisableEncounters = true;
-			
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1  = "location";
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1.location = PChar.GenQuest.JusticeOnSale.ShoreId;
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.function = "JusticeOnSale_ShoreEnterFromMayor";
-			
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1 = "Character_sink";
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1.character = "JusticeOnSale_ShipPirate";
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.function = "JusticeOnSale_PirateShip_Sink";
-			
-			DialogExit();
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_2");
 		break;
 		
 		case "JusticeOnSale_7":

@@ -1,132 +1,30 @@
-Knippel_1
-{
-Usaste la llave
-}
-
-Knippel_2
-{
-Peter
-}
-Knippel_3
-{
-Adams
-}
-
-Knippel_4
-{
-Jane
-}
-Knippel_5
-{
-Adams
-}
-
-Knippel_6
-{
-¡Charlie vino al rescate!
-}
-
-Knippel_7
-{
-Frederick
-}
-Knippel_8
-{
-Stokes
-}
-
-Knippel_9
-{
-Ralph
-}
-Knippel_10
-{
-Faggle
-}
-
-Knippel_11
-{
-21 de julio de 1654@<NewStr()>St. John's, Antigua
-}
-
-Knippel_12
-{
-Thomas
-}
-Knippel_13
-{
-Lynch
-}
-
-Knippel_14
-{
-¡Sussex está en el horizonte!
-}
-
-Knippel_15
-{
-Edmund
-}
-Knippel_16
-{
-Sheffield
-}
-
-Knippel_17
-{
-Michael
-}
-Knippel_18
-{
-Whitney
-}
-
-Knippel_19
-{
-Bombardero desbloqueado
-}
-
-Knippel_20
-{
-Algún tiempo después...@<NewStr()>En la Casa de Fleetwood
-}
-Knippel_21
-{
-Frederick
-}
-Knippel_22
-{
-Stokes
-}
-Knippel_23
-{
-Ralph
-}
-Knippel_24
-{
-Faggle
-}
-Knippel_25
-{
-2 hours later...@<NewStr()>Boarding the 'Sussex'
-}
-Knippel_26
-{
-Thomas
-}
-Knippel_27
-{
-Lynch
-}
-Knippel_28
-{
-Сhimera
-}
-Knippel_29
-{
-Present time
-}
-Knippel_30
-{
-August 17th, 1654@<NewStr()>, SE of Dominica"
-}
+Knippel_1 {Usaste la llave}
+Knippel_2 {Peter}
+Knippel_3 {Adams}
+Knippel_4 {Jane}
+Knippel_5 {Adams}
+Knippel_6 {¡Charlie vino al rescate!}
+Knippel_7 {Frederick}
+Knippel_8 {Stokes}
+Knippel_9 {Ralph}
+Knippel_10 {Faggle}
+Knippel_11 {21 de julio de 1654@<NewStr()>St. John's, Antigua}
+Knippel_12 {Thomas}
+Knippel_13 {Lynch}
+Knippel_14 {¡Sussex está en el horizonte!}
+Knippel_15 {Edmund}
+Knippel_16 {Sheffield}
+Knippel_17 {Michael}
+Knippel_18 {Whitney}
+Knippel_19 {Bombardero desbloqueado}
+Knippel_20 {Algún tiempo después...@<NewStr()>En la Casa de Fleetwood}
+Knippel_21 {Frederick}
+Knippel_22 {Stokes}
+Knippel_23 {Ralph}
+Knippel_24 {Faggle}
+Knippel_25 {2 hours later...@<NewStr()>Boarding the 'Sussex'}
+Knippel_26 {Thomas}
+Knippel_27 {Lynch}
+Knippel_28 {Сhimera}
+Knippel_29 {Present time}
+Knippel_30 {August 17th, 1654@<NewStr()>, SE of Dominica"}

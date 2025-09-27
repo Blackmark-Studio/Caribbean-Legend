@@ -1,113 +1,23 @@
-RPGUtilite_1
-{
-Zdobyto doświadczenie ~
-}
-
-RPGUtilite_2
-{
-okropne
-}
-RPGUtilite_3
-{
-złe
-}
-
-RPGUtilite_4
-{
-kiepskie
-}
-
-RPGUtilite_5
-{
-bez rewolucji
-}
-
-RPGUtilite_6
-{
-dobre
-}
-
-RPGUtilite_7
-{
-świetne
-}
-
-RPGUtilite_8
-{
-Witalność wzrosła
-}
-
-RPGUtilite_9
-{
-Witalność spadła
-}
-
-RPGUtilite_10
-{
-Zwiększono nagrode za głowe!
-}
-
-RPGUtilite_11
-{
-Reputacja wzrosła!
-}
-
-RPGUtilite_12
-{
-Reputacja wzrosła!
-}
-
-RPGUtilite_13
-{
-Reputacja spadła!
-}
-
-RPGUtilite_14
-{
-Nagroda ~
-}
-
-RPGUtilite_15
-{
-Wrogie
-}
-
-RPGUtilite_16
-{
-Neutralne
-}
-
-RPGUtilite_17
-{
-Dobre
-}
-
-RPGUtilite_18
-{
-Świetne
-}
-
-RPGUtilite_19
-{
-Sympatia
-}
-
-RPGUtilite_20
-{
-Przyjazność
-}
-
-RPGUtilite_21
-{
-Podziw
-}
-
-RPGUtilite_22
-{
-Rainbow
-}
-
-RPGUtilite_23
-{
-Quicksilver
-}
+RPGUtilite_1 {Zdobyto doświadczenie ~}
+RPGUtilite_2 {okropne}
+RPGUtilite_3 {złe}
+RPGUtilite_4 {kiepskie}
+RPGUtilite_5 {bez rewolucji}
+RPGUtilite_6 {dobre}
+RPGUtilite_7 {świetne}
+RPGUtilite_8 {Witalność wzrosła}
+RPGUtilite_9 {Witalność spadła}
+RPGUtilite_10 {Zwiększono nagrode za głowe!}
+RPGUtilite_11 {Reputacja wzrosła!}
+RPGUtilite_12 {Reputacja wzrosła!}
+RPGUtilite_13 {Reputacja spadła!}
+RPGUtilite_14 {Nagroda ~}
+RPGUtilite_15 {Wrogie}
+RPGUtilite_16 {Neutralne}
+RPGUtilite_17 {Dobre}
+RPGUtilite_18 {Świetne}
+RPGUtilite_19 {Sympatia}
+RPGUtilite_20 {Przyjazność}
+RPGUtilite_21 {Podziw}
+RPGUtilite_22 {Rainbow}
+RPGUtilite_23 {Quicksilver}

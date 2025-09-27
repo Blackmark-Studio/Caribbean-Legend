@@ -1,119 +1,36 @@
-Neutral_1
-{
-Bandyta
-}
-
-Neutral_2
-{
-Zostawiłeś notatki
-}
-
-Neutral_3
-{
-Jack
-}
-
-Neutral_4
-{
-Veils
-}
-
-Neutral_5
-{
-Sea Beast
-}
-
-Neutral_6
-{
-Julie
-}
-
-Neutral_7
-{
-d'Armagnac
-}
-
-Neutral_8
-{
-Golden Seagull
-}
-
-Neutral_9
-{
-Tristan
-}
-
-Neutral_10
-{
-Renier
-}
-
-Neutral_11
-{
-Piracki statek na horyzoncie! Płyną, by przeciąć nasz kurs.
-}
-
-Neutral_12
-{
-Głos zza drzwi
-}
-
-Neutral_13
-{
-Betsy
-}
-
-Neutral_14
-{
-Price
-}
-
-Neutral_15
-{
-Otrzymano przedmiot: Dokumenty Betsy Price
-}
-
-Neutral_16
-{
-Przekazano: Dokumenty Betsy Price
-}
-
-Neutral_17
-{
-Lea
-}
-
-Neutral_18
-{
-Carno
-}
-
-Neutral_19
-{
-Pierre
-}
-
-Neutral_20
-{
-Statek piracki na horyzoncie! Przecinają nasz kurs.
-}
-
-Neutral_21
-{
-Pokład
-}
-
-Neutral_22
-{
-Wejście do jaskini pokryte jest pajęczynami. Wygląda na to, że nikogo tu dawno nie było.
-}
-
-Neutral_23
-{
-W domu panuje totalny bałagan. Wygląda na to, że trafiłem pod właściwy adres.
-}
-
-Neutral_24
-{
-The Ghost
-}
+Neutral_1 {Bandyta}
+Neutral_2 {Zostawiłeś notatki}
+Neutral_3 {Jack}
+Neutral_4 {Veils}
+Neutral_5 {Sea Beast}
+Neutral_6 {Julie}
+Neutral_7 {d'Armagnac}
+Neutral_8 {Golden Seagull}
+Neutral_9 {Tristan}
+Neutral_10 {Renier}
+Neutral_11 {Piracki statek na horyzoncie! Płyną, by przeciąć nasz kurs.}
+Neutral_12 {Głos zza drzwi}
+Neutral_13 {Betsy}
+Neutral_14 {Price}
+Neutral_15 {Otrzymano przedmiot: Dokumenty Betsy Price}
+Neutral_16 {Przekazano: Dokumenty Betsy Price}
+Neutral_17 {Lea}
+Neutral_18 {Carno}
+Neutral_19 {Pierre}
+Neutral_20 {Statek piracki na horyzoncie! Przecinają nasz kurs.}
+Neutral_21 {Pokład}
+Neutral_22 {Wejście do jaskini pokryte jest pajęczynami. Wygląda na to, że nikogo tu dawno nie było.}
+Neutral_23 {W domu panuje totalny bałagan. Wygląda na to, że trafiłem pod właściwy adres.}
+Neutral_24 {The Ghost}
+Neutral_25 {Dolores}
+Neutral_26 {Moño}
+Neutral_27 {Marisa}
+Neutral_28 {Caldera}
+Neutral_29 {Felipe}
+Neutral_30 {Alarcón}
+Neutral_31 {Sebastián}
+Neutral_32 {Córdoba}
+Neutral_33 {Javier}
+Neutral_34 {Castillo}
+Neutral_35 {Gonzalo}
+Neutral_36 {Peralta}

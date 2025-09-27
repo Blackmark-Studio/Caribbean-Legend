@@ -39,10 +39,10 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttribute(npchar, "quest.donation"))//пожертвования
 				{
-					dialog.text = "Good day to you, my son. I ask you to show some favor and to donate a few silver coins for the good of the poor, your soul, and Holy Mother Church.";
-					link.l1 = "Well father, I suppose that we all have to help one another as Christ and His Church teaches us. Can you tell me about where the money will go?";
+					dialog.text = "Good day to you, my son. I ask you to show some favour and to donate a few silver coins for the good of the poor, your soul, and Holy Mother Church.";
+					link.l1 = "Well Father, I suppose that we all have to help one another as Christ and His Church teach us. Can you tell me where the money will go?";
 					link.l1.go = "donation";
-					link.l2 = "Forgive me, father, but I'm as poor as a churchmouse right now.";
+					link.l2 = "Forgive me, father, but I'm as poor as a church mouse right now.";
 					link.l2.go = "exit";
 					npchar.quest.meeting = "1";
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 				bool ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
 				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Monkpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) < 3)//монах-пассажир
 				{
-					dialog.text = "Good day to you, my son. I'd like to ask you to do my favor. I will pay of course.";
+					dialog.text = "Good day to you, my son. I'd like to ask you a favour. I will pay, of course.";
 					link.l1 = "I am listening to you, father. What do you need?";
 					link.l1.go = "passenger";
 					link.l2 = "I am so sorry, father, but I have to go.";
@@ -62,51 +62,51 @@ void ProcessDialogEvent()
 				}
 				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.capellan") && !CheckAttribute(pchar, "questTemp.ShipCapellan"))//корабельный капеллан
 				{
-					dialog.text = "Greetings, my son. I take it that you are a captain. So I have a proposal for you.";
+					dialog.text = "Greetings, my son. I take it you are a captain. So I have a proposal for you.";
 					link.l1 = "I am listening, father.";
 					link.l1.go = "capellan";
 					npchar.quest.meeting = "1";
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				dialog.text = PCharRepPhrase(LinkRandPhrase("Greetings, my son. What troubles you?","Greetings, my son. See the pastor if you want to confess.","Greetings, my son. 'Remember thy Creator in the days of thy youth.'"),LinkRandPhrase("Greetings, my son. What troubles you?","Good day to you, my son, may God bless you!","Good day to you, my son, may God's face shine upon you!"));
+				dialog.text = PCharRepPhrase(LinkRandPhrase("Greetings, my son. What troubles you?","Greetings, my son. See the priest if you wish to confess.","Greetings, my son. 'Remember thy Creator in the days of thy youth.'"),LinkRandPhrase("Greetings, my son. What troubles you?","Good day to you, my son, may God bless you!","Good day to you, my son, may God's face shine upon you!"));
 				link.l1 = LinkRandPhrase("Same to you, father. How are you doing?","Good day to you, father. How is your parish?","How are you, father?");
 				link.l1.go = "check";//на возможную выдачу квестов
-				link.l2 = RandPhraseSimple("I have a question for you, father.", "I need information.");
+				link.l2 = RandPhraseSimple("I have a question for you, father.","I need information.");
 				link.l2.go = "quests";//(перессылка в файл города)
 				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10)
 				{
-					link.l3 = "Father, I've got people on my ship. They are slaves, both Christians and non-baptized pagans. I want you to baptize the pagans and to administer communion to the Christians. Afterwards I will free them all for the glory of God and our Church.";
+					link.l3 = "Father, I've got people on my ship. They are slaves, both Christians and unbaptized pagans. I want you to baptize the pagans and to administer communion to the Christians. Afterwards I will free them all for the glory of God and our Church.";
 					link.l3.go = "slaves";
 				}
 				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
-					link.l4 = "Father, I want you to bless my ship and offer mass for my crew. How much would that cost?";
+					link.l4 = "Father, I want you to bless my ship and offer Mass for my crew. How much would that cost?";
 					link.l4.go = "shipshine";
 				}
-				link.l10 = LinkRandPhrase("Pardon, father, but I have to go.","Sorry for troubling you, father.","I need to go back to my ship, father. Farewell!");
+				link.l10 = LinkRandPhrase("Pardon me, father, but I have to go.","Sorry for troubling you, Father.","I need to go back to my ship, father. Farewell!");
 				link.l10.go = "exit";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
 				//--> диалог второй встречи
-				dialog.text = LinkRandPhrase("You again, my son? What do you want?","Have anything more to tell me, my son?","It is good to see you again, my son.");
-				link.l1 = LinkRandPhrase("Same to you, father. How are you doing?","Good day to you, father. How is your parish?","How are you, father?");
+				dialog.text = LinkRandPhrase("You again, my child? What do you want?","Have anything more to tell me, my son?","It is good to see you again, my son.");
+				link.l1 = LinkRandPhrase("Same to you, father. How are you doing?","Good day to you, Father. How is your parish?","How are you, father?");
 				link.l1.go = "check";//на возможную выдачу квестов
-				link.l2 = RandPhraseSimple("I have a question for you, father.", "I need information.");
+				link.l2 = RandPhraseSimple("I have a question for you, father.","I need information.");
 				link.l2.go = "quests";//(перессылка в файл города)
 				if (GetSquadronGoods(pchar, GOOD_SLAVES) > 0 && sti(pchar.money) >= GetSquadronGoods(pchar, GOOD_SLAVES)*10 && !CheckAttribute(npchar, "quest.slaves"))
 					{
-						link.l3 = "Father, I've got people on my ship. They are slaves, both Christians and non-baptized pagans. I want you to baptize the pagans and to administer communion to the Christians. Afterwards I will free them all for the glory of God and our Church.";
+						link.l3 = "Father, I have people on my ship. They are slaves, both Christians and unbaptized pagans. I want you to baptize the pagans and administer communion to the Christians. Afterwards, I will free them all for the glory of God and our Church.";
 						link.l3.go = "slaves";
 					}
 				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && sti(pchar.reputation.nobility) > 41 && !CheckAttribute(pchar, "GenQuest.Shipshine") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)
 				{
-					link.l4 = "Father, I want you to bless my ship and offer mass for my crew. How much would that cost?";
+					link.l4 = "Father, I want you to bless my ship and offer Mass for my crew. How much would that cost?";
 					link.l4.go = "shipshine";
 				}
-				link.l10 = LinkRandPhrase("Pardon, father, but I have to go.","Sorry for troubling you, father.","I need to go to my ship, father. Farewell!");
+				link.l10 = LinkRandPhrase("Pardon me, father, but I must go.","Sorry for troubling you, Father.","I need to go to my ship, Father. Farewell!");
 				link.l10.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
@@ -117,10 +117,10 @@ void ProcessDialogEvent()
 			{
 				pchar.GenQuest.Monkletter.City = FindFriendCityToMC(false);
 				pchar.GenQuest.Monkletter.StartCity = npchar.city;//город квестодателя
-				dialog.text = "I have a pressing matter for you, my son. I need to deliver these papers to the pastor of  "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Gen")+". Are you sailing in that direction? The documents must be delivered in two weeks...";
+				dialog.text = "I have a pressing matter for you, my son. I need you to deliver these papers to the pastor of  "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Gen")+". Are you sailing that way? The documents must be delivered within two weeks...";
 				link.l1 = "Easy enough, father. Give me those papers and I will deliver them to "+XI_ConvertString("Colony"+pchar.GenQuest.Monkletter.City+"Gen")+".";
 				link.l1.go = "Monkletter";
-				link.l2 = "I'd be glad to do it, father, but I am sailing in another direction.";
+				link.l2 = "I'd be glad to do it, father, but I'm sailing in another direction.";
 				link.l2.go = "exit_monkletter";
 				npchar.quest.monkletter = "true";
 				break;
@@ -129,25 +129,25 @@ void ProcessDialogEvent()
 			{
 				pchar.GenQuest.Churchbooks.StartCity = npchar.city;//город квестодателя
 				pchar.GenQuest.Churchbooks.Nation = npchar.nation;
-				dialog.text = "My son, would you agree to help me in an urgent matter? Our church is running low on Bibles and prayer books which we give to all who need them\nCould you sail to the nearest colony "+NationNameGenitive(sti(npchar.nation))+", to pick up a few Bibles and prayer books from the local church and bring them here? And try to do that in one month, we don't have many left.";
-				link.l1 = "I'll help your church with pleasure. Can I get these books from any pastor?";
+				dialog.text = "My son, would you agree to help me with an urgent matter? Our church is running low on Bibles and prayer books, which we give to all who need them\nCould you sail to the nearest colony "+NationNameGenitive(sti(npchar.nation))+", to pick up a few Bibles and prayer books from the local church and bring them here? And try to do that within a month, we don't have many left.";
+				link.l1 = "I'll gladly help your church. Can I get these books from any pastor?";
 				link.l1.go = "Churchbooks";
-				link.l2 = "I'd be glad to it, father, but I can't do it now.";
+				link.l2 = "I'd be glad to do it, father, but I can't do it now.";
 				link.l2.go = "exit_churchbooks";
 				npchar.quest.churchbooks = "true";
 				break;
 			}
 			
-			dialog.text = RandPhraseSimple("It's alright, my son. Thank you for your kind words.", "Our parish is fine, my son. Thank you for your concerns.");
-			link.l1 = "I have to go then, father.";
+			dialog.text = RandPhraseSimple("It's alright, my son. Thank you for your kind words.","Our parish is fine, my son. Thank you for your concern.");
+			link.l1 = "I have to go then, Father.";
 			link.l1.go = "exit";
 		break;
 		
 //-------------------------------------------------пожертвования------------------------------------------------
 		case "donation":
 			sTemp = DonationType();
-			dialog.text = "Sure, my son. "+sTemp+"";
-			link.l1 = "What donation would be considered as sufficient?";
+			dialog.text = "Of course, my son. "+sTemp+"";
+			link.l1 = "What donation would be considered sufficient?";
 			link.l1.go = "donation_1";
 		break;
 		
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 			link.l2.go = "donation_rate_2";
 			link.l3 = "5000 pesos";
 			link.l3.go = "donation_rate_3";
-			link.l4 = "10000 pesos";
+			link.l4 = "10,000 pesos";
 			link.l4.go = "donation_rate_4";
 		break;
 		
@@ -167,13 +167,13 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 100)
 			{
 				AddMoneyToCharacter(pchar, -100);
-				dialog.text = "Thank you for the coins, my son! They will go to a good cause!";
+				dialog.text = "Thank you for the coins, my child! They will go to a good cause!";
 				link.l1 = "You're welcome, holy father.";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "'Be not deceived, God is not mocked. For what things a man shall sow, those also shall he reap. For he that soweth in his flesh, of the flesh also shall reap corruption. But he that soweth in the spirit, of the spirit shall reap life everlasting.'";
+				dialog.text = "'Be not deceived, God is not mocked. For whatsoever a man soweth, that shall he also reap. For he that soweth to his flesh shall of the flesh reap corruption; but he that soweth to the Spirit shall of the Spirit reap life everlasting.'";
 				link.l1 = "Ha-ha! Save the sermon, I don't do charity. Get lost!";
 				link.l1.go = "donation_exit";
 			}
@@ -183,7 +183,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 1000)
 			{
 				AddMoneyToCharacter(pchar, -1000);
-				dialog.text = "I thank you, my son. This sum will really help our parish mission. Bless you!";
+				dialog.text = "I thank you, my son. This sum will truly help our parish mission. Bless you!";
 				link.l1 = "Good luck, father!";
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 5);
@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "God's retribution is waiting for you, sirrah! Mocking a servant of Christ's holy church is a blasphemy!";
+				dialog.text = "God's retribution awaits you, sirrah! Mocking a servant of Christ's holy church is blasphemy!";
 				link.l1 = "Ha-ha! I don't do charity. Get lost!";
 				link.l1.go = "donation_exit";
 			}
@@ -202,8 +202,8 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 5000)
 			{
 				AddMoneyToCharacter(pchar, -5000);
-				dialog.text = "I couldn't even imagine that you would be that generous, my son! I will mention you in my next letter to our bishop and we will pray for you every day! I bless you and accept your money gratefully!";
-				link.l1 = "Money is nothing unless it is used for God's purpose! Good luck, father!";
+				dialog.text = "I couldn't have imagined you would be so generous, my son! I shall mention you in my next letter to our bishop, and we shall pray for you every day! I bless you and gratefully accept your money!";
+				link.l1 = "Money is nothing unless it is used for God's purpose! Good luck, Father!";
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 5);
 				AddCharacterExpToSkill(pchar, "Leadership", 40);
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "God's retribution is waiting for you, sirrah! Mocking a servant of Christ's holy church is a blasphemy!";
+				dialog.text = "God's retribution awaits you, sirrah! Mocking a servant of Christ's holy church is blasphemy!";
 				link.l1 = "Ha-ha! I don't do charity. Get lost!";
 				link.l1.go = "donation_exit";
 			}
@@ -223,7 +223,7 @@ void ProcessDialogEvent()
 			if (sti(pchar.money) >= 10000)
 			{
 				AddMoneyToCharacter(pchar, -10000);
-				dialog.text = "What...Have I heard you right? Will you really donate ten thousand pesos!? I bless you and accept your money gratefully. I will mention you in my next letter to our bishop and we will pray for you every day! This is a huge help for the Church!";
+				dialog.text = "What... Have I heard you right? Will you really donate ten thousand pesos!? I bless you and accept your money gratefully. I will mention you in my next letter to our bishop, and we will pray for you every day! This is a huge help for the Church!";
 				link.l1 = "'To whom much is given, much is required,' right? Good luck, holy father.";
 				link.l1.go = "exit";
 				AddCharacterHealth(pchar, 10);
@@ -237,7 +237,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "God's retribution is waiting for you, sirrah! Mocking a servant of Christ's holy church is a blasphemy!";
+				dialog.text = "God's retribution is waiting for you, sirrah! Mocking a servant of Christ's holy church is blasphemy!";
 				link.l1 = "Ha-ha! I don't do charity. Get lost!";
 				link.l1.go = "donation_exit";
 			}
@@ -252,14 +252,14 @@ void ProcessDialogEvent()
 		
 //-------------------------------------------отпустить рабов---------------------------------------------------
 		case "slaves":
-			dialog.text = "Of course, my son. It's our sacred duty to help these poor miserable people. I will do what you ask for.";
-			link.l1 = "Thank you, father. I will donate ten pieces of eight for each baptized and administered prisoner.";
+			dialog.text = "Of course, my son. It is our sacred duty to help these poor, miserable people. I will do as you ask.";
+			link.l1 = "Thank you, Father. I will donate ten pieces of eight for each prisoner who is baptized and administered.";
 			link.l1.go = "slaves_1";
 		break;
 		
 		case "slaves_1":
 			AddMoneyToCharacter(pchar, -GetSquadronGoods(pchar, GOOD_SLAVES)*10);
-			dialog.text = "While not necessary, I gratefully accept your stole fee. Your money will go towards various missions at our parish. Could you lead me to your ship?";
+			dialog.text = "While not necessary, I gratefully accept your stolen fee. Your money will go towards various missions at our parish. Could you lead me to your ship?";
 			link.l1 = "Yes, father. Follow me.";
 			link.l1.go = "slaves_2";
 		break;
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 					pchar.GenQuest.Shipshine.Money = makeint(4.2*(5000*(7-iTemp)));
 				break;
 			}
-			dialog.text = "It all depends on the total amount of ships in your squadron and their size.";
+			dialog.text = "It all depends on the total number of ships in your squadron and their size.";
 			link.l1 = ""+sTemp+"";
 			link.l1.go = "shipshine_1";
 		break;
@@ -349,20 +349,20 @@ void ProcessDialogEvent()
 
 //------------------------------------------корабельный капеллан-----------------------------------------------
 		case "capellan":
-			dialog.text = "Hello captain, allow me to introduce myself. I am a priest and have quite some experience as a chaplain aboard warships. I left my last ship because the captain and I had some...moral disagreements. Do you want to take me in your crew?";
-			link.l1 = "A priest aboard? Tell me father, what does a ship's chaplain do?";
+			dialog.text = "Hello captain, allow me to introduce myself. I am a priest and have quite some experience as a chaplain aboard warships. I left my last ship because the captain and I had some... moral disagreements. Do you want to take me into your crew?";
+			link.l1 = "A priest aboard? Tell me, Father, what does a ship's chaplain do?";
 			link.l1.go = "capellan_1";
 			pchar.questTemp.ShipCapellan = "true";
 		break;
 		
 		case "capellan_1":
-			dialog.text = "Why, it is quite obvious. I pray to God for you and your crew, hold mass daily, and bless your men and hear confession before battle. God's word grants strength to your crew's hands and spirits. Your crew will have an opportunity to receive communion and a confession on a regular basis. Believe me, a sailor in a state of grace will hold firm through situations where an impious one will quail\nI ask not much for myself: a one-time payment of fifty thousand pesos for my home parish, a simple bunk in a cabin and a board same to your officers have. That would be all.";
+			dialog.text = "Why, it is quite obvious. I pray to God for you and your crew, hold mass daily, and bless your men and hear confession before battle. God's word grants strength to your crew's hands and spirits. Your crew will have an opportunity to receive communion and confession on a regular basis. Believe me, a sailor in a state of grace will hold firm through situations where an impious one will quail.\nI ask not much for myself: a one-time payment of fifty thousand pesos for my home parish, a simple bunk in a cabin and a board the same as your officers have. That would be all.";
 			if (sti(pchar.money) >= 50000)
 			{
-				link.l1 = "Interesting... You are right, a good captain must carry about not only his crew's bodies but their souls as well. Welcome aboard, father!";
+				link.l1 = "Interesting... You are right, a good captain must care not only for his crew's bodies but their souls as well. Welcome aboard, father!";
 				link.l1.go = "capellan_2";
 			}
-			link.l2 = "No, father. I am sorry but I can't afford your services.";
+			link.l2 = "No, father. I'm sorry, but I can't afford your services.";
 			link.l2.go = "capellan_exit";
 		break;
 		
@@ -374,8 +374,8 @@ void ProcessDialogEvent()
 		case "capellan_2":
 			AddMoneyToCharacter(pchar, -50000);
 			chrDisableReloadToLocation = true;//закрыть локацию
-			dialog.text = "Thank you for your trust, my son. You have spent your money wisely. But I warn you, I serve only worthy captains, whether trader or privateer, it is of no matter. But I will never preach aboard a pirate ship!\nSo if you ever raise the devil's Jolly Roger I will immediately leave your vessel at the very first port.";
-			link.l1 = "I will consider that, father, and I'll try to not disappoint you. Please head aboard and introduce yourself to the crew!";
+			dialog.text = "Thank you for your trust, my son. You have spent your money wisely. But I warn you, I serve only worthy captains, whether trader or privateer, it matters not. But I will never preach aboard a pirate ship!\nSo if you ever raise the devil's Jolly Roger, I will immediately leave your vessel at the very first port.";
+			link.l1 = "I will consider that, father, and I'll try not to disappoint you. Please head aboard and introduce yourself to the crew!";
 			link.l1.go = "capellan_3";
 		break;
 		
@@ -396,15 +396,15 @@ void ProcessDialogEvent()
 		
 		case "capellan_4":
 			dialog.text = "Need anything, my son?";
-			link.l1 = "No it's nothing, father.";
+			link.l1 = "No, it's nothing, father.";
 			link.l1.go = "exit";
-			link.l2 = "Padre, I'd like you to leave the ship in the next port. I will not explain myself further.";
+			link.l2 = "Padre, I'd like you to leave the ship at the next port. I will not explain myself further.";
 			link.l2.go = "capellan_5";
 			NextDiag.TempNode = "capellan_4";
 		break;
 		
 		case "capellan_5":
-			dialog.text = "Very well, my son. You are in charge here. I will leave your ship in the next settlement.";
+			dialog.text = "Very well, my son. You are in charge here. I will leave your ship at the next settlement.";
 			link.l1 = "Thank you for your understanding, father.";
 			link.l1.go = "capellan_6";
 		break;
@@ -416,8 +416,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "capellan_7":
-			dialog.text = "Fie, captain! I warned you, that I would leave you if you raise the pirate flag! I am leaving your ship at the next port. I will pray for your immediate repentance and return to the fold of Holy Mother Church.";
-			link.l1 = "Well damn...";
+			dialog.text = "Fie, captain! I warned you that I would leave you if you raised the pirate flag! I am leaving your ship at the next port. I will pray for your immediate repentance and return to the fold of Holy Mother Church.";
+			link.l1 = "Well, damn...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "capellan_7";
 		break;
@@ -429,15 +429,15 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Monkpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Monkpassenger.Enemycity"))
 			{
-				dialog.text = "My "+GetSexPhrase("son","daughter")+", I have to get to " + XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" it is on "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", for "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". I'll pay you "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" for that. What do you say?";
+				dialog.text = "My "+GetSexPhrase("son","daughter")+", I have to get to "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+" it is on "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+", for "+FindRussianDaysString(sti(pchar.GenQuest.Monkpassenger.DaysQty))+". I'll pay you "+FindRussianMoneyString(sti(pchar.GenQuest.Monkpassenger.Money))+" for that. What do you say?";
 			}
 			else
 			{
-				dialog.text = "My "+GetSexPhrase("son","daughter")+", the Lord moves in mysterious ways, and so I seek a reliable captain. Can you help me get to " + XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", which is on "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? I understand that it's like trip to fiery Gehenna, since our enemies never sleep. And I understand that you are not Jesus Christ, but I am not an apostle too, and therefore I have some savings. Will " + FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money)) + " be enough for you?";
+				dialog.text = "My "+GetSexPhrase("son","daughter")+", the Lord moves in mysterious ways, and so I seek a reliable captain. Can you help me get to "+XI_ConvertString("Colony"+pchar.GenQuest.Monkpassenger.City)+", which is on "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Monkpassenger.City)+"Dat")+"? I understand that it's like a trip to fiery Gehenna, since our enemies never sleep. And I understand that you are not Jesus Christ, but I am not an apostle either, and therefore I have some savings. Will "+FindRussianDublonString(sti(pchar.GenQuest.Monkpassenger.Money))+" be enough for you?";
 			}
-			link.l1 = "I agree, father.";
+			link.l1 = "I agree, Father.";
 			link.l1.go = "passenger_1";
-			link.l2 = "I am sorry, father, but I am sailing in a different direction. Can't help you.";
+			link.l2 = "I am sorry, father, but I am sailing in a different direction. I can't help you.";
 			link.l2.go = "passenger_exit";
 			npchar.quest.passenger = true;
 		break;
@@ -450,7 +450,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "passenger_1":
-			dialog.text = "God bless you! You will get your payment when we get to our destination.";
+			dialog.text = "God bless you! You will get your payment when we reach our destination.";
 			link.l1 = "Head to my ship, father. We are leaving soon.";
 			link.l1.go = "passenger_2";
 		break;
@@ -508,8 +508,8 @@ void ProcessDialogEvent()
 		
 		case "passenger_3":
 			pchar.quest.Monkpassenger_Over.over = "yes"; //снять таймер
-			dialog.text = "Thank you, my "+GetSexPhrase("son","daughter")+". You have fulfilled your promise and it's my turn now. Take your money as I promised.";
-			link.l1 = "Thank you. Good luck, father.";
+			dialog.text = "Thank you, my "+GetSexPhrase("son","daughter")+". You have kept your word, and now it's my turn. Take your money, as I promised.";
+			link.l1 = "Thank you. Good luck, Father.";
 			link.l1.go = "passenger_4";
 		break;
 		
@@ -544,7 +544,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Monkletter":
-			dialog.text = "Here. Take this package, my son. Remember that you have only two weeks to deliver it. The pastor is waiting for it. Go, and may God be with you!";
+			dialog.text = "Here. Take this package, my son. Remember, you have only two weeks to deliver it. The pastor is waiting for it. Go, and may God be with you!";
 			link.l1 = "I won't fail you, father. Farewell.";
 			link.l1.go = "Monkletter_1";
 		break;
@@ -569,8 +569,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "Churchbooks":
-			dialog.text = "Yes. You can get them in any colony "+NationNameGenitive(sti(npchar.nation))+". Bring all the books that you'll find to our pastor in the church. May God bless you!";
-			link.l1 = "Thanks! You will receive your books soon.";
+			dialog.text = "Yes. You can get them in any colony "+NationNameGenitive(sti(npchar.nation))+". Bring all the books you find to our pastor at the church. May God bless you!";
+			link.l1 = "Thank you! You will receive your books soon.";
 			link.l1.go = "Churchbooks_1";
 		break;
 		

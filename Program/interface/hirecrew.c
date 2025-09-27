@@ -5,7 +5,7 @@ ref refCharacter;
 ref refTown;
 ref refShipChar;
 int iShipCapacity;
-float fShipWeight;
+int iShipWeight;
 int  BuyOrSell = 0; // 1-buy -1 sell
 int  iPriceSailor;
 int	 QtyMax = 0; 	 
@@ -36,6 +36,7 @@ void InitInterface(string iniName)
 	SetEventHandler("evntDoPostExit","DoPostExit",0);
 
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
 	SetEventHandler("frame","ProcessFrame",1);
 	SetEventHandler("OnTableRClick", "OnTableRClick", 0);
@@ -231,6 +232,17 @@ void SetHireEffects()
 		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "louis";
 	}
 
+	// уволенные с кораблей
+	if (CheckAttribute(&refTown, "Ship.Crew.HasExcess"))
+	{
+		nBonus++;
+		sRow = "tr1";
+		sCol = "td" + nBonus;
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon1.image = "arrowup2";
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.image = "excessCrew";
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "excessCrew";
+	}
+
 	int nCol;
 	for(iRow = 1; iRow <= 2; iRow++)
 	{
@@ -280,6 +292,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("evntDoPostExit","DoPostExit");
 
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("OnTableRClick", "OnTableRClick");
@@ -344,7 +357,7 @@ void DoPostExit()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{
@@ -372,7 +385,7 @@ void SetVariable()
 	
 	iShipCapacity = sti(refBaseShip.Capacity);
 	sText  = iShipCapacity;
-	sText  = makeint(fShipWeight) + " / " + sText;	
+	sText  = iShipWeight + " / " + sText;	
 	SetFormatedText("CAPACITY", sText);	
 	
 	sText = MakeMoneyShow(sti(pchar.Money), MONEY_SIGN,MONEY_DELIVER);
@@ -397,7 +410,7 @@ void SetVariable()
 	}
 	else
 	{
-		iColor = argb(255,255,255,255);
+		iColor = ARGB_Color("white");
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY", 8,-1,iColor);
 	SetFormatedText("QTY_CREW_CAPACITY", "" + GetOptCrewQuantity(refCharacter));
@@ -429,7 +442,7 @@ void SetVariable()
 	SetFormatedText("QTY_CREW_QTY2", ""+GetCrewQuantity(refTown));
 	if(PosEffects()) iColor = argb(255,128,255,128);
 	else iColor = argb(255,255,128,128);
-	if(GetCrewQuantity(refTown)==0) iColor = argb(255,255,255,255);
+	if(GetCrewQuantity(refTown)==0) iColor = ARGB_Color("white");
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY2", 8,-1,iColor);	
 	SetNewGroupPicture("CREW_MORALE_PIC2", "MORALE_SMALL", GetMoraleGroupPicture(stf(refTown.ship.crew.morale)));
 	SetFormatedText("CREW_MORALE_TEXT2", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(sti(refTown.Ship.crew.morale))));
@@ -484,12 +497,12 @@ void SetShipWeight()
 		RecalculateCargoLoad(refCharacter);
 		refCharacter.Ship.Cargo.RecalculateCargoLoad = 0;
 	}
-	fShipWeight  = makeint(GetCargoLoad(refCharacter)+ 0.4);
+	iShipWeight  = GetCargoLoad(refCharacter);
 }
 
 void ShowInfoWindow()
 {
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	int iItem;
@@ -498,9 +511,10 @@ void ShowInfoWindow()
 	sPicture = "-1";
 	string sAttributeName;
 	int nChooseNum = -1;
+	int nChooseCol = -1;
 	int iShip;
 	ref refBaseShip;
-	
+	string sRow, sCol;
 	bool  bShowHint = true;
 	switch (sCurrentNode)
 	{
@@ -542,11 +556,17 @@ void ShowInfoWindow()
 			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
 		break;
 		case "TABLE_EFFECTS":
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 1);
+			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 3);
+			nChooseNum++;
+			nChooseCol++;
+			sRow = "tr" + nChooseNum;
+			sCol = "td" + nChooseCol;
 			sHeader = XI_Convertstring("HireEffects");
 			sText1 = XI_Convertstring("HireEffects_descr");
-			if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + "." + CurCol + ".effectID"))
+			if(CheckAttribute(&GameInterface, "TABLE_EFFECTS." + sRow + "." + sCol + ".effectID"))
 			{
-				sText = "E" + GameInterface.(CurTable).(CurRow).(CurCol).effectID;
+				sText = "E" + GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID;
 				sHeader = XI_Convertstring(sText);
 				sText1 = XI_Convertstring(sText + "_descr");
 			}
@@ -554,13 +574,13 @@ void ShowInfoWindow()
 	}
 	if (bShowHint)
 	{
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 160, 160);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false);
 	}
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 }
 // бакап значений, до применения
 void SetBackupQty()
@@ -589,6 +609,7 @@ void GetBackupQty()
 	makearef(arFrom,   NullCharacter.TavernBak.Tavern);
 	makearef(arTo, refTown.Ship.Crew);
 	CopyAttributes(arTo, arFrom);
+	RecalculateCargoLoad(refCharacter);	// evganat - поправил баг, но нужен полный рефактор
 }
 
 void TransactionCancel()

@@ -852,10 +852,12 @@ void ProcessDialogEvent()
 					dialog.Text = "Hmm... Nun, das hängt von der Arbeit ab, an der du interessiert bist.";
 					link.l1 = "Ich könnte Ihnen anbieten, mein Schiff für den Warentransport zu chartern.";
 					Link.l1.go = "Fraht_begin";		//фрахты
-					link.l2 = "Ich möchte zusätzliches Geld verdienen, indem ich Kaufleute begleite oder Post ausliefere.";
-					Link.l2.go = "Check_other";		//доставка почты, эскорт
-					Link.l3 = "Nun, vielleicht könntest du etwas anbieten?";
-					Link.l3.go = "node_4"; 			//судовой журнан, угнанное судно, сгоревшее судно
+					link.l2 = "Ich möchte zusätzliches Geld verdienen, indem ich Kaufleute begleite.";
+					Link.l2.go = "escort_begin";	//эскорт
+					link.l3 = "Ich möchte zusätzliches Geld verdienen, indem ich Post ausliefere.";
+					Link.l3.go = "cureer_begin";	//доставка почты
+					Link.l4 = "Nun, vielleicht könntest du etwas anbieten?";
+					Link.l4.go = "node_4"; 			//судовой журнан, угнанное судно, сгоревшее судно
 				}
 				else
 				{
@@ -871,76 +873,113 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		break;
-	
-		case "Check_other"://выбор между почтовым курьером, эскортом и ничем
+		
+		case "escort_begin"://эскорт
 		SaveCurrentNpcQuestDateParam(npchar, "work_date"); // mitrokosta безусловно сохраняем
-		int nTask = 0;
-		string tasks[10]; // mitrokosta сделал выбор задания расширяемым на тот случай если задания добавятся
-		if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER) {
-			tasks[nTask] = "cureer";
-			nTask++;
-		}
-		if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) {
-			tasks[nTask] = "escort";
-			nTask++;
-		}
-		if (nTask > 0 && hrand(5) > 1) {
-			string sTask = tasks[hrand(nTask - 1)];
-			switch (sTask) {
-				case "cureer":
-					if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp")) { // если заняты
-						dialog.text = "Leider kann ich Ihnen nichts Derartiges anbieten. Schauen Sie in ein paar Tagen noch einmal vorbei.";
-						link.l1 = "In Ordnung, ich werde genau das tun.";
-						link.l1.go = "exit";
-					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) { //если 2 уровень
-							dialog.text = "So... Du hast bereits mehrere Jobs als Kurier übernommen und warst dabei, nach meinem besten Wissen, ziemlich erfolgreich. Du kannst wahrscheinlich die Aufgabe, die ich dir gleich zuweisen werde, bewältigen.";
-							link.l1 = "Ich bin ganz Ohr, "+GetAddress_FormToNPC(NPChar)+".";
-							link.l1.go = "Postcureer_LevelUp";
-						} else { // первый уровень
-							dialog.text = "Ich sehe, Sie haben ein schnelles Schiff. Ich kann Ihnen einen Botenjob anbieten - Zustellung von Post und Handelspapieren.";
-							link.l1 = "Das ist interessant. Ich stimme zu. Wo muss ich hin?";
-							link.l1.go = "Postcureer";
+		
+		if (hrand(5) > 1)
+		{
+			if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
+			{
+				if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) 
+				{ // если заняты
+					dialog.text = "Leider kann ich Ihnen nichts dergleichen anbieten. Schauen Sie in ein paar Tagen noch einmal vorbei.";
+					link.l1 = "In Ordnung, das werde ich tun.";
+					link.l1.go = "exit";
+				} 
+				else 
+				{ // если не заняты
+					if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) 
+					{ // 2 уровень
+						dialog.text = "Sie haben bereits mehrmals erfolgreich Handelsschiffe eskortiert. Ich vermute, ich habe einen Auftrag, der Ihnen passen würde.";
+						link.l1 = "Ich bin ganz Ohr.";
+						link.l1.go = "Escort_LevelUp";
+					} 
+					else 
+					{ // 1 уровень
+						if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // если на ТГ
+							dialog.text = "Ich habe einen Auftrag nur für dich. Es gibt zwei Handelsschiffe im Hafen, die schon längst hätten auslaufen sollen. Die Sache ist die, ihr Eskortschiff wurde beschädigt und wartet noch immer auf die notwendigen Reparaturen, so dass es vorerst nicht auslaufen kann. \nEs stellt sich heraus, dass dein Schiff ideal für den Job ist - außerdem muss ich noch zusätzliche Ladung in deinen Laderaum einlagern. Natürlich wird die Bezahlung doppelt sein - für die Fracht und die Eskorte.";
+							link.l1 = "Was für ein interessantes Angebot! Ich nehme es an!";
+							link.l1.go = "escort_bonus";
+							link.l2 = "Danke, aber das ist einfach nicht meine Art von Arbeit.";
+							link.l2.go = "exit";
+						} 
+						else 
+						{ // просто эскорт
+							dialog.text = "Ich habe einen Job nur für dich. Zwei Handelsschiffe liegen gerade in unserem Hafen - sie brauchen Geleitschutz. Ich biete dir an, diese Schiffe zu ihrem Ziel zu begleiten. Wirst du das tun?";
+							link.l1 = "Ein interessantes Angebot! Ich nehme es!";
+							link.l1.go = "escort";
 							link.l2 = "Danke, aber das ist einfach nicht meine Art von Arbeit.";
 							link.l2.go = "exit";
 						}
 					}
-				break;
-
-				case "escort":
-					if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) { // если заняты
-						dialog.text = "Leider kann ich Ihnen nichts dergleichen anbieten. Schauen Sie in ein paar Tagen noch einmal vorbei.";
-						link.l1 = "In Ordnung, das werde ich tun.";
-						link.l1.go = "exit";
-					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) { // 2 уровень
-							dialog.text = "Sie haben bereits mehrmals erfolgreich Handelsschiffe eskortiert. Ich vermute, ich habe einen Auftrag, der Ihnen passen würde.";
-							link.l1 = "Ich bin ganz Ohr.";
-							link.l1.go = "Escort_LevelUp";
-						} else { // 1 уровень
-							if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // если на ТГ
-								dialog.text = "Ich habe einen Auftrag nur für dich. Es gibt zwei Handelsschiffe im Hafen, die schon längst hätten auslaufen sollen. Die Sache ist die, ihr Eskortschiff wurde beschädigt und wartet noch immer auf die notwendigen Reparaturen, so dass es vorerst nicht auslaufen kann. \nEs stellt sich heraus, dass dein Schiff ideal für den Job ist - außerdem muss ich noch zusätzliche Ladung in deinen Laderaum einlagern. Natürlich wird die Bezahlung doppelt sein - für die Fracht und die Eskorte.";
-								link.l1 = "Was für ein interessantes Angebot! Ich nehme es an!";
-								link.l1.go = "escort_bonus";
-								link.l2 = "Danke, aber das ist einfach nicht meine Art von Arbeit.";
-								link.l2.go = "exit";
-							} else { // просто эскорт
-								dialog.text = "Ich habe einen Job nur für dich. Zwei Handelsschiffe liegen gerade in unserem Hafen - sie brauchen Geleitschutz. Ich biete dir an, diese Schiffe zu ihrem Ziel zu begleiten. Wirst du das tun?";
-								link.l1 = "Ein interessantes Angebot! Ich nehme es!";
-								link.l1.go = "escort";
-								link.l2 = "Danke, aber das ist einfach nicht meine Art von Arbeit.";
-								link.l2.go = "exit";
-							}
-						}
-					}
-				break;
+				}
 			}
-			break;
+			else
+			{
+				//не тот тип корабля
+				dialog.text = "Sie wollen wohl noch mit einer Tartane Konvois beschützen. Für solche Arbeit braucht man ein Schiff mit ordentlicher Feuerkraft — ein Warrior oder ein Kaperschiff.";
+				link.l1 = "Okay, ich habe verstanden.";
+				link.l1.go = "exit";
+			}
 		}
-		//ничего не подошло
-		dialog.text = "Leider kann ich Ihnen nichts dergleichen anbieten. Schauen Sie in ein paar Tagen wieder vorbei.";
-		link.l1 = "In Ordnung, das werde ich tun.";
-		link.l1.go = "exit";
+		else
+		{
+			//нет работы
+			dialog.text = "Leider kann ich Ihnen nichts dergleichen anbieten. Schauen Sie in ein paar Tagen wieder vorbei.";
+			link.l1 = "In Ordnung, das werde ich tun.";
+			link.l1.go = "exit";
+		}
+		break;
+		
+		case "cureer_begin"://доставка почты
+		SaveCurrentNpcQuestDateParam(npchar, "work_date");
+		
+		if (hrand(5) > 1)
+		{
+			if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)
+			{
+				if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp"))
+				{ 
+					// если заняты
+					dialog.text = "Leider kann ich Ihnen nichts Derartiges anbieten. Schauen Sie in ein paar Tagen noch einmal vorbei.";
+					link.l1 = "In Ordnung, ich werde genau das tun.";
+					link.l1.go = "exit";
+				} 
+				else 
+				{ 
+					// если не заняты
+					if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) 
+					{ //если 2 уровень
+						dialog.text = "So... Du hast bereits mehrere Jobs als Kurier übernommen und warst dabei, nach meinem besten Wissen, ziemlich erfolgreich. Du kannst wahrscheinlich die Aufgabe, die ich dir gleich zuweisen werde, bewältigen.";
+						link.l1 = "Ich bin ganz Ohr, "+GetAddress_FormToNPC(NPChar)+".";
+						link.l1.go = "Postcureer_LevelUp";
+					} 
+					else 
+					{ // первый уровень
+						dialog.text = "Ich sehe, Sie haben ein schnelles Schiff. Ich kann Ihnen einen Botenjob anbieten - Zustellung von Post und Handelspapieren.";
+						link.l1 = "Das ist interessant. Ich stimme zu. Wo muss ich hin?";
+						link.l1.go = "Postcureer";
+						link.l2 = "Danke, aber das ist einfach nicht meine Art von Arbeit.";
+						link.l2.go = "exit";
+					}
+				}
+			}
+			else
+			{
+				//не тот тип корабля
+				dialog.text = "Es tut mir leid, aber ich habe nichts für Sie. Für Aufgaben dieser Art braucht man ein wendiges Kaperschiff. Mit Ihrem Schiff ist es besser, Fracht zu übernehmen.";
+				link.l1 = "Okay, ich habe verstanden.";
+				link.l1.go = "exit";
+			}
+		}
+		else
+		{
+			//нет работы
+			dialog.text = "Leider kann ich Ihnen nichts dergleichen anbieten. Schauen Sie in ein paar Tagen wieder vorbei.";
+			link.l1 = "In Ordnung, das werde ich tun.";
+			link.l1.go = "exit";
+		}
 		break;
 
 ///--> ------фрахт со свободным выбором пункта назначения, оплаты и вида груза из предложенного списка---------
@@ -3063,7 +3102,7 @@ void ProcessDialogEvent()
 			sTemp = "SeekShip_checkAbordage" + npchar.index;
 			pchar.quest.(sTemp).over = "yes"; //снимаем прерывание на абордаж
 			cn = GetCharacterIndex("SeekCap_" + npchar.index);
-			//если кэп-вор еще жив - убираем его
+			//если кэп-вор ещё жив - убираем его
 			if (cn > 0)
 			{
 				characters[cn].LifeDay = 0; 
@@ -4043,7 +4082,7 @@ int CheckCapitainsList(ref npchar)
     {
     	arCapLocal = GetAttributeN(arCapBase, i);
         sCapitainId = GetAttributeName(arCapLocal);
-    	if (GetCharacterIndex(sCapitainId) > 0) //если еще жив
+    	if (GetCharacterIndex(sCapitainId) > 0) //если ещё жив
     	{
 			bResult++;			
     	}
@@ -4089,8 +4128,8 @@ void SetSeekShipCapParam(ref npchar)
 	SetCharacterPerk(sld, "ShipDefenseProfessional");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
+
 	SetCharacterPerk(sld, "AdvancedDefense");
 	SetCharacterPerk(sld, "CriticalHit");
 	SetCharacterPerk(sld, "Sliding");

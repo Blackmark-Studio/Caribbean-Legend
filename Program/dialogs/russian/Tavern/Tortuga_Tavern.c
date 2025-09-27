@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && !CheckAttribute(npchar, "quest.PZ.Ask.Block"))
 			{
 				link.l1 = "Приятель, я ищу человека по имени Сепп ван дер Винк. Что можешь мне о нём рассказать?";
-				link.l1.go = "PZ1";
+				link.l1.go = "PZ_1";
 			}
         break;
         
@@ -159,19 +159,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddDialogExitQuestFunction("Mtraxx_WolfreekJewellerHouse");
 		break;
 		
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "А как я тебе расскажу того, чего не знаю? Не слышал об этом человеке.";
 			link.l1 = "Возможно, он просто представляется другим именем. Может, ты слышал о нём, как о капитане брига 'Бантен'?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Да и о бриге таком не слыхивал.";
 			link.l1 = "Я точно слышал, что он здесь был недавно. Может, немного серебра освежит твою память?";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			npchar.quest.PZ.Ask.Block = true;
 			
 			dialog.text = "Ну так где слыхивал, там и уточняй - может, ещё что-то знают. Серебро я, конечно, могу взять, коли раздаёшь, вот только как освежить то, чего я никогда даже не знал?";

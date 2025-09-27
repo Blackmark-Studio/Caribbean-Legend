@@ -1,114 +1,23 @@
-RPGUtilite_1
-{
-Erfahrung erhalten ~
-}
-
-RPGUtilite_2
-{
-furchtbar
-}
-RPGUtilite_3
-{
-schlecht
-}
-
-RPGUtilite_4
-{
-arm
-}
-
-RPGUtilite_5
-{
-mäßig
-}
-
-RPGUtilite_6
-{
-gut
-}
-
-RPGUtilite_7
-{
-hervorragend
-}
-
-RPGUtilite_8
-{
-Vitalität erhöht
-}
-
-RPGUtilite_9
-{
-Vitalität gesunken
-}
-
-RPGUtilite_10
-{
-Kopfgeld erhöht!
-}
-
-RPGUtilite_11
-{
-Nationale Reputation gestiegen!
-}
-
-RPGUtilite_12
-{
-Nationale Reputation gesunken!
-
-}
-
-RPGUtilite_13
-{
-Nationale Reputation gesunken!
-}
-
-RPGUtilite_14
-{
-Hass
-}
-
-RPGUtilite_15
-{
-Feindselig
-}
-
-RPGUtilite_16
-{
-Abneigung
-}
-
-RPGUtilite_17
-{
-Verärgerung
-}
-
-RPGUtilite_18
-{
-Neutral
-}
-
-RPGUtilite_19
-{
-Sympathie
-}
-
-RPGUtilite_20
-{
-Freundlich
-}
-
-RPGUtilite_21
-{
-Bewunderung
-}
-
-RPGUtilite_22
-{
-Rainbow
-}
-
-RPGUtilite_23
-{
-Quicksilver
-}
+RPGUtilite_1 {Erfahrung erhalten ~}
+RPGUtilite_2 {furchtbar}
+RPGUtilite_3 {schlecht}
+RPGUtilite_4 {arm}
+RPGUtilite_5 {mäßig}
+RPGUtilite_6 {gut}
+RPGUtilite_7 {hervorragend}
+RPGUtilite_8 {Vitalität erhöht}
+RPGUtilite_9 {Vitalität gesunken}
+RPGUtilite_10 {Kopfgeld erhöht!}
+RPGUtilite_11 {Nationale Reputation gestiegen!}
+RPGUtilite_12 {Nationale Reputation gesunken!}
+RPGUtilite_13 {Nationale Reputation gesunken!}
+RPGUtilite_14 {Hass}
+RPGUtilite_15 {Feindselig}
+RPGUtilite_16 {Abneigung}
+RPGUtilite_17 {Verärgerung}
+RPGUtilite_18 {Neutral}
+RPGUtilite_19 {Sympathie}
+RPGUtilite_20 {Freundlich}
+RPGUtilite_21 {Bewunderung}
+RPGUtilite_22 {Rainbow}
+RPGUtilite_23 {Quicksilver}

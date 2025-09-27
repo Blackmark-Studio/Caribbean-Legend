@@ -1610,7 +1610,7 @@ Der Nekromant Merriman war eine harte Nuss, und seine beschworenen Chavinavi-Mon
 #TEXT   33
 Ich habe jetzt den Jadeschädel von Yum Cimil. Jetzt nach Dominica, um Tuttuathapak zu sehen.
 #TEXT   34
-Der nächste Schritt besteht darin, den Jadeschädel zum Tempel von Chavins zu bringen, der sich auf einer unbewohnten Insel im Archipel befindet. Das Einzige, was ich darüber weiß, ist, dass sie im Norden von Dominica in der Nähe des Ozeans liegt. @<sText> Und ich muss mich beeilen - ich habe nur einen Monat Zeit, um den Schädel zum Tempel zu bringen. Nach Ablauf des Monats verlieren die Amulette von Tuttuathapakа ihre Kraft, und ich werde nicht mehr an den Tempelwächtern - den schrecklichen Chavinavi - vorbeikommen können.
+Der nächste Schritt besteht darin, den Jadeschädel zum Tempel von Chavins zu bringen, der sich auf einer unbewohnten Insel im Archipel befindet. Das Einzige, was man über ihn weiß, ist, dass er nördlich von Dominica liegt, in der Mitte eines Dreiecks aus Inseln, und dass auf der vierten Seite der Ozean liegt. @<sText> Und ich muss mich beeilen - ich habe nur einen Monat Zeit, um den Schädel zum Tempel zu bringen. Nach Ablauf des Monats verlieren die Amulette von Tuttuathapakа ihre Kraft, und ich werde nicht mehr an den Tempelwächtern - den schrecklichen Chavinavi - vorbeikommen können.
 #TEXT   35
 Ich habe mit Nathaniel Hawk gesprochen! Jetzt kenne ich die Koordinaten von Khael Roa: 19 Grad 32 Minuten Nord, 62 Grad 25 Minuten West. Außerdem hat Nathan mir von den Gefahren erzählt, die im Tempel auf mich warten.
 #TEXT   36
@@ -1632,6 +1632,10 @@ Nun, das ist das Ende dieser langen Geschichte. Ich habe vom Schamanen drei gro�
 Ich habe zu viel Zeit mit der Suche nach der Insel verbracht, und die Amulette von Tuttuathapak haben ihre Kraft verloren. Ich habe es nicht geschafft, den Jadeschädel in den Tempel zurückzubringen, und Tuttuathapak hat sich geweigert, weiter mit mir zu verhandeln. Nun, da kann man nichts machen, es war alles meine Schuld.
 #TEXT   44
 Ich habe in den Tiefen des Tempels eine recht merkwürdige Halle gefunden. Es gibt steinerne Bodenplatten und Säulen. Der Ausgang, der offenbar zum Heiligtum führt, ist durch eine massive Steintür versperrt. Ich sollte einen Weg finden, sie zu öffnen. Diese Halle zu untersuchen, wäre ein guter Anfang.
+#TEXT   45
+Es sieht so aus, als ob sich unter diesen Platten ein Mechanismus verbirgt, der einen Durchgang öffnet. Ich werde sie nacheinander betreten müssen, bis ich die richtige Reihenfolge finde. Jeder korrekte Schritt gibt ein besonderes Geräusch von sich – zumindest scheint es so. Ich habe keinen anderen Ansatz, um weiterzukommen, also werde ich die Kombinationen durchprobieren und ganz genau hinhören...
+#TEXT   46
+Verdammt... In den Säulen scheint ebenfalls ein Mechanismus verborgen zu sein, der obendrein durch die Magie der Chavín geschützt ist. Doch jetzt ist der Preis für einen Fehler deutlich höher: Eine falsche Kombination ruft indianische Skelette herbei. Ich muss äußerst vorsichtig sein – und mir jeden Versuch merken, um Wiederholungen zu vermeiden. Wer weiß, wie viele solcher Wellen ich noch überlebe...
 
 #QUEST Patria
 Held der Nation.
@@ -2553,3 +2557,24 @@ The regatta is over. I placed fifth. Though there's no prize for me, I'm satisfi
 Damn it! I came in last. What a blunder. I should've stayed out of this regatta.
 #TEXT   45
 My regatta journey is over. I broke the rules and was disqualified from the competition.
+
+#QUEST LoyaltyPack
+Stimme der Mannschaft
+#TEXT 1
+Alonso Pimentel, Obermaat und Stimme meiner Mannschaft, will mit mir sprechen. Ich kann ihn im Laderaum finden.
+#TEXT 2
+Obwohl Alonso meine bescheidenen Erfolge als Kapitän anerkannte, macht er sich offensichtlich Sorgen um mich. Er gab mir Ratschläge, schenkte mir nützliche Ausrüstung und erzählte eine Geschichte. Vielleicht höre ich die Fortsetzung, wenn ich so weitermache.
+#TEXT 3
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 4
+Fast ein Jahr ist vergangen, und die Mannschaft hat endlich Vertrauen in mich gefunden. Alonso wich meinen Fragen über seine Vergangenheit meisterhaft aus, teilte aber eine weitere seiner Kriegsgeschichten. Er nimmt offensichtlich den Teil seiner Pflichten ernst, der die Moral der Mannschaft betrifft. Fast wie ein Beichtvater, obwohl ich bezweifle, dass Priester ihrer Herde Rezepte für Moskauer Gebräu und hochwertige Feuerwaffen schenken. Fortsetzung folgt?
+#TEXT 5
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 6
+Jetzt bin ich nicht nur Besitzer eines gewissen Rufes in der Karibik, sondern auch eines idiotisch aussehenden Hutes. Obwohl er den Kopf eines aufstrebenden Kapitäns schützen kann, wird er definitiv nach ein paar kräftigen Schlägen auseinanderfallen. Trotzdem wurde mein Triumph etwas getrübt durch die tragische Geschichte, die mir Alonso heute erzählte. Ich weiß nicht, was sie mich lehren soll, aber ich würde gerne seinen "Moskauer Freund" kennenlernen.
+#TEXT 7
+Alonso hat um ein Treffen gebeten. Wie üblich finde ich ihn im Laderaum.
+#TEXT 8
+Fadey? Derselbe Fadey aus Basse-Terre? Wie klein die Welt ist! Ich sollte ihn besuchen.
+#TEXT 9
+Das Treffen mit Fadey brachte mich zum Nachdenken über vieles. Wie viele weitere "Alonsos" sind in meiner Mannschaft? Wie viele Geschichten und eigentümliche menschliche Schicksale? Ich habe nur eine Stimme gehört, doch jetzt habe ich Hunderte. Ich weiß nicht, wie meine karibische Odyssee enden wird, aber dank Alonsos Fürsorge und seinen einfachen Geschenken bin ich vollständig ausgerüstet, vorbereitet und bereit, meinem Schicksal zu begegnen.

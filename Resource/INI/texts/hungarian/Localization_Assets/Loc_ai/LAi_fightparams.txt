@@ -1,0 +1,2 @@
+LAi_fightparams_1 {A lövéstôl való kitérés}
+LAi_fightparams_2 {Mercenary’s Hat is destroyed.}

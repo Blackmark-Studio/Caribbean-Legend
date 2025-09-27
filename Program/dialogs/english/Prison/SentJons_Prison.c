@@ -20,26 +20,26 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// --> Sinistra Длинные тени старых грехов
 		case "DTSG_AntiguaZalog_2":
 			dialog.text = "That's right, but why do you ask?";
-			link.l1 = "The thing is, Charlie is one my officer. I'd like to know what he's accused of. The soldiers who took him didn't tell me anything."; 
+			link.l1 = "The thing is, Charlie is one of my officers. I'd like to know what he's accused of. The soldiers who took him didn't tell me anything."; 
 			link.l1.go = "DTSG_AntiguaZalog_3";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "DTSG_AntiguaZalog_3":
-			dialog.text = "Right. It's not common knowledge. Unfortunately, even for you. It's a state secret, sir.";
-			link.l1 = "So, I take it a bail is not an option?"; 
+			dialog.text = "Right. It's not common knowledge. Unfortunately, not even for you. It's a state secret, sir.";
+			link.l1 = "So, I take it bail is not an option?"; 
 			link.l1.go = "DTSG_AntiguaZalog_4";
 		break;
 		
 		case "DTSG_AntiguaZalog_4":
 			dialog.text = "Exactly. I understand it's unpleasant to lose a valuable crewman, but neither you nor I can do anything about it. I'm very sorry, Captain.";
-			link.l1 = "No bail, I see. Then how about... compensation? A generous one I might add. For you and all your men, so no one is left out."; 
+			link.l1 = "No bail, I see. Then how about... compensation? A generous one, I might add. For you and all your men, so no one is left out."; 
 			link.l1.go = "DTSG_AntiguaZalog_5";
 		break;
 		
 		case "DTSG_AntiguaZalog_5":
 			dialog.text = "A bribe? Bold of you, Captain, but no amount of money will save us from the wrath of those who find out we let Charlie go.";
-			link.l1 = "Perhaps... But can I at least talk to him?"; 
+			link.l1 = "Perhaps... But can I at least speak to him?"; 
 			link.l1.go = "DTSG_AntiguaZalog_6";
 		break;
 		
@@ -84,14 +84,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_AntiguaTrevoga_2":
-			dialog.text = "There's no need, Captain. As I said, you would have been thrown into the same cell with that fool Charlie. But, first, the Governor appreciated that you didn't resist the arrest, and second, he wasn't pleased with the recent visit from the moneylender, whose screams nearly shattered the windows in the palace...";
+			dialog.text = "There's no need, Captain. As I said, you would have been thrown into the same cell as that fool Charlie. But first, the Governor appreciated that you didn't resist arrest, and second, he wasn't pleased with the recent visit from the moneylender, whose screams nearly shattered the windows in the palace...";
 			link.l1 = "He asked for my arrest?"; 
 			link.l1.go = "DTSG_AntiguaTrevoga_3";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "DTSG_AntiguaTrevoga_3":
-			dialog.text = "He didn't ask - he demanded. And His Excellency doesn't like being demanded of anything. Therefore, that usurer was shown the door.";
+			dialog.text = "He didn't ask - he demanded. And His Excellency doesn't like being demanded anything. Therefore, that usurer was shown the door.";
 			link.l1 = "Hilarious. Now..."; 
 			link.l1.go = "DTSG_AntiguaTrevoga_4";
 		break;
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_AntiguaTrevoga_H3":
-			dialog.text = "Exactly. And now don't test my patience - before I order you thrown in a cell for killing an English soldier.";
+			dialog.text = "Exactly. And now don't test my patience – before I order you thrown in a cell for killing an English soldier.";
 			link.l1 = "Considering not many get out of your cells, I wouldn't want to end up there. I won't wish you a good day."; 
 			link.l1.go = "DTSG_AntiguaTrevoga_5";
 		break;
@@ -132,7 +132,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "DTSG_AntiguaTrevoga_Ch2":
 			dialog.text = "The sentence has been carried out. I can't give you any details. And I hope you won't insist - it could end badly for you. Not just with a cell. Am I clear, Captain de Mor?";
-			link.l1 = "More than clear. Goodbye."; 
+			link.l1 = "Perfectly clear. Goodbye."; 
 			link.l1.go = "DTSG_AntiguaTrevoga_5";
 		break;
 		

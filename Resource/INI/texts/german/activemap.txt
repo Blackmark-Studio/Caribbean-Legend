@@ -1,0 +1,22 @@
+CONTRABAND {Schmuggelware}
+EXPORT {Export}
+IMPORT {Import}
+Trade_assistant {Handelsassistent}
+No_price {Keine Preisliste}
+No_profit {Keine lohnenden Geschäfte}
+Distance {Entfernung}
+To {Dorthin}
+From {Zurück}
+day {Tag}
+day2 {Tag}
+days {Tage}
+hour {Stunde}
+hour2 {Stunde}
+hours {Stunden}
+hours2 {Stunden}
+nautical_mile {Seemeile}
+nautical_mile2 {Seemeile}
+nautical_miles {Seemeilen}
+nautical_miles2 {Seemeilen}
+TRAVEL_from {von}
+TRAVEL_to {bis}

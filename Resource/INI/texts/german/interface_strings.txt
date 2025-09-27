@@ -1,18 +1,15 @@
-Delete profile confirm{Sind Sie sicher, dass Sie dieses Profil und alle seine Speicherungen löschen wollen?}
-Delete savefile confirm{Sind Sie sicher, dass Sie diesen Speicher löschen wollen?}
-Overwrite savefile confirm{Sind Sie sicher, dass Sie diesen Speicher überschreiben wollen?}
-
-Low storage and unable save create{Nicht genügend freier Speicherplatz zum Speichern des Spiels.}
-Load game confirm{Sind Sie sicher, dass Sie diesen Spielstand laden wollen?}
-Unable to Load save game{Diese Speicherung kann nicht geladen werden.}
-
+Delete profile confirm {Sind Sie sicher, dass Sie dieses Profil und alle seine Speicherungen löschen wollen?}
+Delete savefile confirm {Sind Sie sicher, dass Sie diesen Speicher löschen wollen?}
+Overwrite savefile confirm {Sind Sie sicher, dass Sie diesen Speicher überschreiben wollen?}
+Low storage and unable save create {Nicht genügend freier Speicherplatz zum Speichern des Spiels.}
+Load game confirm {Sind Sie sicher, dass Sie diesen Spielstand laden wollen?}
+Unable to Load save game {Diese Speicherung kann nicht geladen werden.}
 Salary info
-{Ihre Mannschaft verlangt den monatlichen Sold.
-Werden Sie zahlen?}
+{
+Ihre Mannschaft verlangt den monatlichen Sold.Werden Sie zahlen?
+}
 Officer info {Ihre Offiziere verlangen ihren monatlichen Sold:}
-All info {Gesamtbetrag: }
-
-New game confirm{Sind Sie sicher, dass Sie ein neues Spiel beginnen wollen?}
-
+All info {Gesamtbetrag:}
+New game confirm {Sind Sie sicher, dass Sie ein neues Spiel beginnen wollen?}
 Insert Disk Ok {Bitte legen Sie Disc 1 "Pirates Of The Caribbean" ein."}
 save game limit {Sie haben das Limit der gespeicherten Spiele überschritten. Löschen Sie ältere Spielstände.}

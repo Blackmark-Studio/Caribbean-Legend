@@ -12,6 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Hören Sie, haben Sie einen Mann namens Joachim Merriman gesehen oder getroffen, hier in Havanna oder in der Nähe? Er ist ein mittelalter, portugiesischer Senor mit einem durchdringenden Blick und einem Schnurrbart, der fast schon kaiserlich anmutet. Vielleicht haben Sie ihn in einer Bucht oder im Dschungel gesehen? Ich suche ihn.";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
 		break;
 		

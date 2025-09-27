@@ -1,3 +1,5 @@
+int iLoxlyPseudoGlobal;
+
 // 阿尔伯特.洛克斯利 - 律师
 void ProcessDialogEvent()
 {
@@ -25,11 +27,7 @@ void ProcessDialogEvent()
 		{
 			Dialog.CurrentNode = "RelationYet";
 		}
-		else
-		{
-			Dialog.CurrentNode = "RelationAny_Done";
-			npchar.quest.relation.summ = CalculateRelationLoyerSum(sti(npchar.quest.relation));
-		}
+		else Dialog.CurrentNode = "RelationAny_Done";
 	}
 	
 	switch(Dialog.CurrentNode)
@@ -71,6 +69,7 @@ void ProcessDialogEvent()
 					Link.l7.go = "exit";
 					NextDiag.TempNode = "Loxly";
 					npchar.quest.meeting = "1";
+					break;
 				}
 				link.l1 = "谢谢, 但幸运的是, 到目前为止我还不需要律师的服务。 ";
 				link.l1.go = "exit";
@@ -629,15 +628,16 @@ void ProcessDialogEvent()
 		
 		// --> 移除国家敌对状态
 		case "RelationAny_Done":
-			iSumm = sti(npchar.quest.relation.summ);
-			int iRate = abs(ChangeCharacterNationReputation(pchar, sti(npchar.quest.relation), 0));
+			i = sti(npchar.quest.relation);
+			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
+			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
 			if (iRate <= 10) sTemp = "好吧, 我不会称之为麻烦。 只是一个小问题。 我会立即解决这件事";
 			if (iRate > 10 && iRate <= 30) sTemp = "是的, 你的声誉略有受损, 但我没有看到任何关键问题。 我会立即解决这件事";
 			if (iRate > 30 && iRate <= 60) sTemp = "是的, 你与当局走了错误的道路。 这并不容易, 但我相信我能够顺利解决你的分歧";
 			if (iRate > 60 && iRate <= 90) sTemp = "先生, 你是怎么做到的? 你的麻烦不仅仅是严重, 而是真的很严重。 当局非常渴望抓住你。 我将不得不付出很多努力来解决你的分歧";
 			if (iRate > 90) sTemp = "嗯... 情况是灾难性的 - 你被认为是最激烈的敌人。 这将是艰难的, 但毕竟我是加勒比地区最好的律师, 所以我会解决你的分歧";
-			dialog.text = ""+sTemp+" 与 "+XI_ConvertString(Nations[sti(npchar.quest.relation)].Name+"Abl")+"。 这将花费你 "+FindRussianMoneyString(iSumm)+"。 ";
-			if(sti(pchar.money) >= iSumm)
+			dialog.text = ""+sTemp+" 与 "+XI_ConvertString(Nations[i].Name+"Abl")+"。 这将花费你 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+"。 ";
+			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "很好, 洛克斯利先生, 我同意。 这是你的钱, 并尝试尽快解决问题。 ";
 				link.l1.go = "relation";
@@ -648,12 +648,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "relation":
-			dialog.text = "与你做生意很愉快, 先生。 你可以再次自由呼吸, 你的问题将在未来两周内消失。 请避免与 "+XI_ConvertString(Nations[sti(npchar.quest.relation)].Name+"Abl") +" 发生任何对抗, 而我正在谈判中。 ";
+			i = sti(npchar.quest.relation);
+			dialog.text = "与你做生意很愉快, 先生。 你可以再次自由呼吸, 你的问题将在未来两周内消失。 请避免与 "+XI_ConvertString(Nations[i].Name+"Abl") +" 发生任何对抗, 而我正在谈判中。 ";
 			link.l1 = "好的, 我会考虑你的警告。 谢谢你, 再见! ";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.relation.summ));
-			ChangeNationRelationFromRelationAgent(npchar);
-			attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
+			AddMoneyToCharacter(pchar, -iLoxlyPseudoGlobal);
+			ChangeNationRelationFromRelationAgent(i);
+			attrLoc = "RelationAgent" + GetNationNameByType(i);
             Pchar.GenQuest.(attrLoc) = true;
 			Pchar.GenQuest.(attrLoc).loyer = "true";
 			NextDiag.TempNode = "Loxly";
@@ -661,9 +662,9 @@ void ProcessDialogEvent()
 		// < —移除国家敌对状态
 		
 		case "contraband":
-			npchar.quest.contrasum = makeint(0.3*stf(Pchar.rank)/stf(Pchar.reputation.nobility)*60000);
-			dialog.Text = "你为什么要那样做? 走私者是好孩子, 他们以自己的方式诚实。 我们都需要生活和吃饭... 好吧, 这不是什么大事, 只需要花费你 "+FindRussianMoneyString(sti(npchar.quest.contrasum))+"。 ";
-			if(sti(Pchar.money) >= sti(npchar.quest.contrasum))
+			iLoxlyPseudoGlobal = CalculateRelationContraSum(true);
+			dialog.Text = "你为什么要那样做? 走私者是好孩子, 他们以自己的方式诚实。 我们都需要生活和吃饭... 好吧, 这不是什么大事, 只需要花费你 "+FindRussianMoneyString(iLoxlyPseudoGlobal)+"。 ";
+			if(sti(Pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				Link.l1 = "很好, 洛克斯利先生, 我同意。 这是你的钱, 并尝试尽快解决问题。 ";
 				Link.l1.go = "Contraband_Agreed";
@@ -677,7 +678,7 @@ void ProcessDialogEvent()
 			Link.l1 = "谢谢! ";
 			Link.l1.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.contrasum));
+			AddMoneyToCharacter(pchar, -iLoxlyPseudoGlobal);
 		break;
 		
 		case "Exit":

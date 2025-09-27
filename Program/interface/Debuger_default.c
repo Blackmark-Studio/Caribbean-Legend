@@ -490,7 +490,7 @@ void CalculateInfoDataF2()
     SetCharacterPerk(mc, "AdvancedBattleState");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "Doctor1");
     SetCharacterPerk(mc, "BasicCommerce");
     SetCharacterPerk(mc, "MusketsShoot");
@@ -1042,7 +1042,7 @@ void CalculateInfoDataF11()
     SetCharacterPerk(mc, "MusketsShoot");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "WindCatcher");
     SetCharacterPerk(mc, "SailsMan");
     SetCharacterPerk(mc, "SailingProfessional");
@@ -1056,7 +1056,7 @@ void CalculateInfoDataF11()
     SetCharacterPerk(mc, "HardHitter");
     SetCharacterPerk(mc, "Sliding");
     SetCharacterPerk(mc, "BladeDancer");
-    SetCharacterPerk(mc, "SwordplayProfessional");
+
     SetCharacterPerk(mc, "Gunman");
     SetCharacterPerk(mc, "GunProfessional");
     mc.rank = 35;
@@ -1128,7 +1128,7 @@ void CalculateInfoDataF11()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");
@@ -1209,7 +1209,7 @@ void CalculateInfoDataF11()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "ByWorker");
@@ -1331,7 +1331,7 @@ void CalculateInfoDataF12()
     SetCharacterPerk(mc, "MusketsShoot");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "WindCatcher");
     SetCharacterPerk(mc, "SailsMan");
     SetCharacterPerk(mc, "SailingProfessional");
@@ -1345,7 +1345,7 @@ void CalculateInfoDataF12()
     SetCharacterPerk(mc, "HardHitter");
     SetCharacterPerk(mc, "Sliding");
     SetCharacterPerk(mc, "BladeDancer");
-    SetCharacterPerk(mc, "SwordplayProfessional");
+
     SetCharacterPerk(mc, "Gunman");
     SetCharacterPerk(mc, "GunProfessional");
     mc.rank = 35;
@@ -1409,7 +1409,7 @@ void CalculateInfoDataF12()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");
@@ -1490,7 +1490,7 @@ void CalculateInfoDataF12()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "ByWorker");
@@ -1498,7 +1498,6 @@ void CalculateInfoDataF12()
     SetCharacterPerk(sld, "Grus");
     SetCharacterPerk(sld, "ShipSpeedUp");
     SetCharacterPerk(sld, "ShipTurnRateUp");
-    SetCharacterPerk(sld, "StormProfessional");
     SetCharacterPerk(sld, "WindCatcher");
     SetCharacterPerk(sld, "SailsMan");
     SetCharacterPerk(sld, "SailingProfessional");
@@ -1612,26 +1611,9 @@ void CalculateInfoDataF13()
     // -->
     totalInfo = descF13;
 
-    ref mc;
-    mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-    {
-        mc.worldmapencountersoff = "1";
-        Log_SetStringToLog("Worldmap encounters OFF");
-    }
-    else
-    {
-        if(mc.worldmapencountersoff == "1")
-        {
-            mc.worldmapencountersoff = "0";
-            Log_SetStringToLog("Worldmap encounters ON");
-        }
-        else
-        {
-            mc.worldmapencountersoff = "1";
-            Log_SetStringToLog("Worldmap encounters OFF");
-        }
-    }
+	bEncOffGlobal = !bEncOffGlobal;
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
+	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
     // <--
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
                 "Команда отработала успешно!";
@@ -1701,7 +1683,7 @@ void CalculateInfoDataF13()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "ByWorker");
@@ -1833,7 +1815,7 @@ void CalculateInfoDataF14()
     SetCharacterPerk(mc, "ShipDefenseProfessional");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "WindCatcher");
     SetCharacterPerk(mc, "Doctor1");
     SetCharacterPerk(mc, "Doctor2");
@@ -1959,7 +1941,7 @@ void CalculateInfoDataF14()
     SetCharacterPerk(sld, "Tireless");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "HardHitter");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     GiveItem2Character(sld, "blade_10");
@@ -2087,7 +2069,7 @@ void CalculateInfoDataF15()
     SetCharacterPerk(mc, "MusketsShoot");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "WindCatcher");
     SetCharacterPerk(mc, "SailsMan");
     SetCharacterPerk(mc, "SailingProfessional");
@@ -2101,7 +2083,7 @@ void CalculateInfoDataF15()
     SetCharacterPerk(mc, "HardHitter");
     SetCharacterPerk(mc, "Sliding");
     SetCharacterPerk(mc, "BladeDancer");
-    SetCharacterPerk(mc, "SwordplayProfessional");
+
     SetCharacterPerk(mc, "Gunman");
     SetCharacterPerk(mc, "GunProfessional");
     mc.rank = 35;
@@ -2165,7 +2147,7 @@ void CalculateInfoDataF15()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");
@@ -2246,7 +2228,7 @@ void CalculateInfoDataF15()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "ByWorker");
@@ -2620,10 +2602,9 @@ void CalculateInfoDataF24()
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "HardHitter");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "ShipSpeedUp");
     SetCharacterPerk(sld, "ShipTurnRateUp");
-    SetCharacterPerk(sld, "StormProfessional");
     SetCharacterPerk(sld, "WindCatcher");
     SetCharacterPerk(sld, "SailsMan");
     SetCharacterPerk(sld, "Doctor1");
@@ -2794,7 +2775,7 @@ void CalculateInfoDataF25()
     SetCharacterPerk(mc, "MusketsShoot");
     SetCharacterPerk(mc, "ShipSpeedUp");
     SetCharacterPerk(mc, "ShipTurnRateUp");
-    SetCharacterPerk(mc, "StormProfessional");
+
     SetCharacterPerk(mc, "WindCatcher");
     SetCharacterPerk(mc, "SailsMan");
     SetCharacterPerk(mc, "SailingProfessional");
@@ -2808,7 +2789,7 @@ void CalculateInfoDataF25()
     SetCharacterPerk(mc, "HardHitter");
     SetCharacterPerk(mc, "Sliding");
     SetCharacterPerk(mc, "BladeDancer");
-    SetCharacterPerk(mc, "SwordplayProfessional");
+
     SetCharacterPerk(mc, "Gunman");
     SetCharacterPerk(mc, "GunProfessional");
     mc.rank = 35;
@@ -2880,7 +2861,7 @@ void CalculateInfoDataF25()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");
@@ -2961,7 +2942,7 @@ void CalculateInfoDataF25()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "BladeDancer");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
     SetCharacterPerk(sld, "ByWorker");

@@ -1257,7 +1257,7 @@ void Marginpassenger_Southshore(string qName)//бой в бухте
 		if (i == 1)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("MPEnemy_"+i, "mush_spa_1", "man", "mushketer", iRank+3, SPAIN, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank+3, iScl+2, iScl+2, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank+3, iScl+2, iScl+2, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{

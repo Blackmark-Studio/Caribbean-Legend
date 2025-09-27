@@ -74,3 +74,14 @@ string  LoyalityTable[MORALE_TABLE_SIZE];
 #define KILL_BY_ISLAND		4
 #define KILL_BY_TOUCH		5
 #define KILL_BY_SELF        6 ///boal
+
+// Анимации
+#define RUN_MOVE "run"
+#define WALK_MOVE "walk"
+#define FIRE_MOVE "fire"
+#define MUSKET_RUN_MOVE "musket_run"
+#define AIMING_WALK_MOVE "aiming_walk"
+#define SPRINT_MOVE "sprint"
+#define STRAFE_B_MOVE "recoil"
+#define STRAFE_L_MOVE "strafe_l"
+#define STRAFE_R_MOVE "strafe_r"

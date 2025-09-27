@@ -533,7 +533,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Helena_7":
 			DialogExit();
-			Return_HelenaOfficer();
+			ReturnOfficer_Helena();
 		break;
 		
 		case "LadyBeth_Mary_1": // Мэри
@@ -569,7 +569,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Mary_6":
 			DialogExit();
-			Return_MaryOfficer();
+			ReturnOfficer_Mary();
 		break;
 		
 		case "LadyBeth_Tichingitu_1": // Тичингиту
@@ -605,7 +605,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Tichingitu_6":
 			DialogExit();
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "LadyBeth_Irons_1": // Томми
@@ -641,7 +641,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Irons_6":
 			DialogExit();
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 		break;
 		
 		case "LadyBeth_Knippel_1": // Книппель
@@ -687,7 +687,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Knippel_7":
 			DialogExit();
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 		break;
 		
 		case "LadyBeth_Alonso_1": // Алонсо

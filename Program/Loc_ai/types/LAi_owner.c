@@ -92,7 +92,7 @@ void LAi_type_owner_CharacterUpdate(aref chr, float dltTime)
 					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
-						if (bMainCharacterInBox && chr.chr_ai.type.state != "afraid")
+						if (bMainCharacterInBox && chr.chr_ai.type.state != "afraid" && !HasPerk(pchar, "Quiet"))
 						{
 							if(chr.id == "Jino") continue; // belamour Джино не ругается // mitrokosta так быстрее чем по всему массиву персонажей искать
 							if(chr.id == "Amelia") continue;

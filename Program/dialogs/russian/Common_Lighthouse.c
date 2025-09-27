@@ -586,6 +586,7 @@ void ProcessDialogEvent()
 			dialog.text = "Да? Ты был у Туттуатхапака?";
 			link.l1 = "Точно. И теперь я хочу найти ещё два амулета. Ты же вроде говорил, что я третий, кто тебе такой артефакт показал. А кто были ещё двое?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -620,6 +621,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":

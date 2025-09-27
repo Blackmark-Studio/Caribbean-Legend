@@ -60,7 +60,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "DTSG_KnippelDolg_VD_6":
 			dialog.text = "如果你需要资金保释, 随时再来找我 —我会给你优惠条件。 ";
-			link.l1 = "哈哈, 你是认真的吗? 放债人终究是放债人。 我自己付得起保释金。 再见。 ";
+			link.l1 = "哈哈, 你是认真的吗? 放贷人终究是放贷人。 我自己付得起保释金。 再见。 ";
 			link.l1.go = "DTSG_KnippelDolg_VD_7";
 		break;
 		

@@ -253,6 +253,24 @@ int LocationInitMartinique(int n)
 	locations[n].reload.l29.emerge = "reload2";
 	locations[n].reload.l29.autoreload = "0";
 	locations[n].reload.l29.label = "House";*/
+	
+	// Расставляем записки
+	SetItemInLocation("PR_Letter", "FortFrance_town", "letter1");
+	locations[n].locators_radius.item.letter1 = 1.2;
+	QuestPointerToLoc("FortFrance_town", "item", "letter1");
+	
+	SetItemInLocation("PR_Letter", "FortFrance_town", "letter2");
+	locations[n].locators_radius.item.letter2 = 2.0;
+	QuestPointerToLoc("FortFrance_town", "item", "letter2");
+	
+	SetItemInLocation("PR_Letter", "FortFrance_town", "letter3");
+	locations[n].locators_radius.item.letter3 = 1.0;
+	QuestPointerToLoc("FortFrance_town", "item", "letter3");
+	
+	SetItemInLocation("PR_Letter", "FortFrance_town", "letter4");
+	locations[n].locators_radius.item.letter4 = 1.2;
+	QuestPointerToLoc("FortFrance_town", "item", "letter4");
+	
 	n = n + 1;
 
   	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -776,13 +794,14 @@ int LocationInitMartinique(int n)
 	//Always
 	locations[n].filespath.models = "locations\inside\Maltains";
 	locations[n].models.always.Maltains = "Malta_Base";
+	locations[n].models.always.Maltains_Door = "Malta_door_closed";
 	locations[n].models.always.InquisitionMaltainsFonars = "Malta_fonars";
 	locations[n].models.always.locators = "Malta_locators";
 	
 	//Day
-	locations[n].models.day.charactersPatch = "Malta_patch";
+	locations[n].models.day.charactersPatch = "Malta_patch_closed";
 	//Night
-	locations[n].models.night.charactersPatch = "Malta_patch";
+	locations[n].models.night.charactersPatch = "Malta_patch_closed";
 	//Environment
 	locations[n].environment.weather = "true";
 	Locations[n].lockWeather = "Inside";
@@ -1639,6 +1658,20 @@ int LocationInitMartinique(int n)
 	locations[n].reload.l9.label = "House";
 	
 	locations[n].locators_radius.quest.detector1 = 2.0;
+	
+	// Расставляем записки
+	SetItemInLocation("PR_Letter", "LeFransua_town", "letter1");
+	locations[n].locators_radius.item.letter1 = 1.0;
+	QuestPointerToLoc("LeFransua_town", "item", "letter1");
+	
+	SetItemInLocation("PR_Letter", "LeFransua_town", "letter2");
+	locations[n].locators_radius.item.letter2 = 1.2;
+	QuestPointerToLoc("LeFransua_town", "item", "letter2");
+	
+	SetItemInLocation("PR_Letter", "LeFransua_town", "letter3");
+	locations[n].locators_radius.item.letter3 = 1.0;
+	QuestPointerToLoc("LeFransua_town", "item", "letter3");
+	
     n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

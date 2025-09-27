@@ -1,0 +1,38 @@
+portman {Hafenmeister}
+drinker_0 {Der berühmteste Pirat in diesen Gewässern}
+drinker_1 {Meisterhafter Erzähler wahrer Geschichten}
+drinker_2 {Pensionierter Escorial-Spezialagent}
+drinker_3 {Außerordentlich belesener Gesprächspartner}
+drinker_4 {Ein fähiger Experte für alles}
+drinker_5 {Ein fröhlicher Geist, furchtlos und aufrichtig}
+drinker_6 {Ein prächtiger Mann in seinen besten Jahren}
+drinker_7 {Chef für Krimskrams}
+drinker_8 {Senior der Trunkenen Wache}
+drinker_9 {Der Cousin zweiten Grades einer nicht unbedeutenden Person in der DWIC.}
+pofficer {Kandidat}
+hovernor {Gouverneur}
+tavernkeeper {Wirt}
+waitress {Kellnerin}
+trader {Händler}
+shipyarder {Schiffbauer}
+priest {Priester}
+Ghovernor {Generalgouverneur}
+Phovernor {Baron}
+usurer {Bankier}
+poorman {Bettler}
+gipsy {Zigeunerin}
+captain {Kapitän}
+sailor {Matrose}
+marginal_town {Pirat}
+noble {Adliger}
+monk {Mönch}
+chaplain {Kaplan}
+potion_merchant {Alchemist}
+veteran_merchant {Eisenwarenhändler}
+armourer_merchant {Büchsenmacher}
+monk_merchant {Händler für heilige Reliquien}
+indian_merchant {Wahrsagerin}
+lightman_merchant {Leuchtturmwärter}
+cemeteryman_merchant {Friedhofswächter}
+legend {Legende}
+soldier_town {Wache}

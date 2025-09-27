@@ -72,18 +72,18 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 				switch (alignment)
 				{
 					case "bad":
-						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality;				
+						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality*2;				
 						else 							sld.loyality = makeint(sld.loyality) - iLoyality;				
 					break;
 					case "good":
-						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality;				
+						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality*2;				
 						else 							sld.loyality = makeint(sld.loyality) - iLoyality;									
 					break;
 					case "bad_all":
 						sld.loyality = makeint(sld.loyality) - iLoyality;
 					break;
 					case "good_all":
-						sld.loyality = makeint(sld.loyality) + iLoyality;
+						sld.loyality = makeint(sld.loyality) + 2*iLoyality;
 					break;
 				}
 			}
@@ -101,7 +101,7 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 				{
 					case "bad":
 						if (sld.alignment == alignment) {
-							sld.loyality = makeint(sld.loyality) + iLoyality;				
+							sld.loyality = makeint(sld.loyality) + 2*iLoyality;				
 							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy
 						}	
 						else 
@@ -112,7 +112,7 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 					break;
 					case "good":
 						if (sld.alignment == alignment) {
-							sld.loyality = makeint(sld.loyality) + iLoyality;
+							sld.loyality = makeint(sld.loyality) + 2*iLoyality;
 							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy		
 						}	
 						else 
@@ -126,7 +126,7 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1); //navy
 					break;
 					case "good_all":
-						sld.loyality = makeint(sld.loyality) + iLoyality;
+						sld.loyality = makeint(sld.loyality) + 2*iLoyality;
 						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy
 					break;
 				}	
@@ -468,7 +468,7 @@ void SetOfficerParam(ref Npchar, int _type)
 
     Npchar.reputation = rand(84) + 5;
     // пристрастие офицера -->
-    Npchar.loyality = 5 + rand(10);
+    Npchar.loyality = 10 + rand(10);
     if (sti(Npchar.reputation) > 41)
     {
         Npchar.alignment = "good";
@@ -483,7 +483,7 @@ void SetOfficerParam(ref Npchar, int _type)
     
     SetFantomHP(Npchar);
     
-    Npchar.quest.OfficerPrice    = (11 + 2*sti(Npchar.rank))*(150 + MOD_SKILL_ENEMY_RATE*20) + rand(5)*10;
+    Npchar.quest.OfficerPrice    = (11 + 2*sti(Npchar.rank))*(150 + MOD_SKILL_ENEMY_RATE*16) + rand(5)*8;
     Npchar.quest.OfficerLowPrice = makeint(sti(Npchar.quest.OfficerPrice)/1.5 + 0.5);
 }
 ///////////////////////////////////////////////////////////////////////////

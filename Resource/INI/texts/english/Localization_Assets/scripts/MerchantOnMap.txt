@@ -1,146 +1,30 @@
-MerchantOnMap_1
-{
-trader
-}
-
-MerchantOnMap_2
-{
-There was a rumor that 
-}
-
-MerchantOnMap_3
-{
-dashing pirate
-}
-
-MerchantOnMap_4
-{
-dashing pirate
-}
-
-MerchantOnMap_5
-{
-, got caught
-}
-
-MerchantOnMap_6
-{
-
-}
-
-MerchantOnMap_7
-{
-
-}
-
-MerchantOnMap_8
-{
-~ in a trap, in which ~
-}
-
-MerchantOnMap_9
-{
-he
-}
-
-MerchantOnMap_10
-{
-she
-}
-
-MerchantOnMap_11
-{
-~ was lured by @<NationNameSK(sti(MerPrm.ination))> authorities. They sent to ~
-}
-
-MerchantOnMap_12
-{
-him
-}
-
-MerchantOnMap_13
-{
-her
-}
-
-MerchantOnMap_14
-{
-~  ''trader '' ship with fully armed @<NationNameSK(sti(MerPrm.ination))> soldiers in the hold. But @<pchar.name> wasn't confused ~
-}
-
-MerchantOnMap_15
-{
-
-}
-
-MerchantOnMap_16
-{
-
-}
-
-MerchantOnMap_17
-{
-, ~
-}
-
-MerchantOnMap_18
-{
-he
-}
-
-MerchantOnMap_19
-{
-she
-}
-
-MerchantOnMap_20
-{
-~  simply killed them all!
-}
-
-MerchantOnMap_21
-{
-
-}
-MerchantOnMap_22
-{
-
-}
-
-MerchantOnMap_23
-{
-
-}
-MerchantOnMap_24
-{
-
-}
-MerchantOnMap_25
-{
-
-}
-
-MerchantOnMap_26
-{
-
-}
-
-MerchantOnMap_27
-{
-
-}
-
-MerchantOnMap_28
-{
-
-}
-
-MerchantOnMap_29
-{
-~ This is what our daring pirate is like @<GetFullName(pchar)>.
-}
-
-MerchantOnMap_30
-{
-People say that the daring pirate - @<GetFullName(pchar)> began to rob @<NationNameSK(sti(MerPrm.ination))> trader ships. And then our Governor General decided to put an end to him. He equipped a ship disguised as a merchant with several dozen well-trained soldiers from Europe and sent it to him. But the bloodthirsty pirate killed them all and again eluded justice!
-}
+MerchantOnMap_1 {trader}
+MerchantOnMap_2 {There was a rumor that}
+MerchantOnMap_3 {dashing pirate}
+MerchantOnMap_4 {dashing pirate}
+MerchantOnMap_5 {, got caught}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ in a trap, in which ~}
+MerchantOnMap_9 {he}
+MerchantOnMap_10 {she}
+MerchantOnMap_11 {~ was lured by @<NationNameSK(sti(MerPrm.ination))> authorities. They sent to ~}
+MerchantOnMap_12 {him}
+MerchantOnMap_13 {her}
+MerchantOnMap_14 {~  ''trader '' ship with fully armed @<NationNameSK(sti(MerPrm.ination))> soldiers in the hold. But @<pchar.name> wasn't confused ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {he}
+MerchantOnMap_19 {she}
+MerchantOnMap_20 {~  simply killed them all!}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ This is what our daring pirate is like @<GetFullName(pchar)>.}
+MerchantOnMap_30 {People say that the daring pirate - @<GetFullName(pchar)> began to rob @<NationNameSK(sti(MerPrm.ination))> trader ships. And then our Governor General decided to put an end to him. He equipped a ship disguised as a merchant with several dozen well-trained soldiers from Europe and sent it to him. But the bloodthirsty pirate killed them all and again eluded justice!}

@@ -1,0 +1,13 @@
+WildRose_1 {Did you hear? A couple dozen slaves escaped from Bishop’s plantation a few days ago. They say they sawed through their chains at night, killed several guards, and disappeared into the jungle. But where could they go from this island? Of course, they were caught pretty quickly — some found in a cave, others near Ragged Point. Most were shot. Still, the soldiers suffered losses too. But rumor has it, what angered Bishop the most wasn’t that — it was that he didn’t get to personally deal with the runaways.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kasper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jerome}
+WildRose_9 {Sauvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kasper}
+WildRose_12 {Heretic}
+WildRose_13 {The squad should already be in position...}

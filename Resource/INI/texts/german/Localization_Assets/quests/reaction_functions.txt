@@ -1,24 +1,5 @@
-reaction_functions_1
-{
-Mangarosa Trank Überdosis!
-}
-
-reaction_functions_2
-{
-Sie wurden vergiftet
-}
-
-reaction_functions_3
-{
-Spezieller Mangarosa Trank verwendet!
-}
-
-reaction_functions_4
-{
-Die Wirkung des Mangarosa Tranks ist vorbei
-}
-
-reaction_functions_5
-{
-Ein glücklicher Tag für einen Deal, die Laderäume sind mit Waren gefüllt! +
-}
+reaction_functions_1 {Mangarosa Trank Überdosis!}
+reaction_functions_2 {Sie wurden vergiftet}
+reaction_functions_3 {Spezieller Mangarosa Trank verwendet!}
+reaction_functions_4 {Die Wirkung des Mangarosa Tranks ist vorbei}
+reaction_functions_5 {Ein glücklicher Tag für einen Deal, die Laderäume sind mit Waren gefüllt! +}

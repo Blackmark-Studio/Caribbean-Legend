@@ -5,6 +5,7 @@
 #define EVENT_LOCATION_UNLOAD	"EventUnloadLocation"
 
 #define MAX_SHIPS_IN_LOCATION	32
+#define MAX_SHIPS_LOAD_FROM_WDM	17
 
 ref loadedLocation;
 object locWeather;
@@ -951,6 +952,13 @@ bool LoadLocation(ref loc)
 		}
 	}
 	
+	// применяем настройки отображения маркеров над персонажами
+	SetLocationCharacterMarksMode();
+	// применяем настройки отображения иконок архетипов
+	SetLocationArchetypeMarksMode();
+	// применяем настройки пресета камеры
+	Camera_CheckPreset();
+	
 	return 1;
 }
 
@@ -1744,6 +1752,7 @@ void ShowAllLocators()
     VisibleLocatorsGroup("Merchant", 1.0, 15.0, 105, 0, 255, 125);
     VisibleLocatorsGroup("box", 1.0, 15.0, 255, 0, 255, 255);
     VisibleLocatorsGroup("encdetector", 1.0, 15.0, 255, 0, 255, 255);
+    VisibleLocatorsGroup("sound", 1.0, 15.0, 255, 0, 0, 255);
     VisibleLocatorsGroup("outside", 1.0, 15.0, 255, 155, 155, 255);
     VisibleLocatorsGroup("officers", 1.0, 15.0, 255, 255, 0, 0);
     VisibleLocatorsGroup("waitress", 1.0, 15.0, 255, 255, 0, 0);
@@ -1779,6 +1788,7 @@ void HideAllLocators()
     HideLocatorsGroup("Merchant");
     HideLocatorsGroup("box");
     HideLocatorsGroup("encdetector");
+    HideLocatorsGroup("sound");
     HideLocatorsGroup("outside");
     HideLocatorsGroup("officers");
     HideLocatorsGroup("waitress");

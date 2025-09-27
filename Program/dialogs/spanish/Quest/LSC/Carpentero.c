@@ -85,9 +85,9 @@ void ProcessDialogEvent()
 				link.l7 = "Sancho, ¿quieres que te muestre algo interesante? ¿Es esta la máscara de murciélago que tanto querías conseguir?";
 				link.l7.go = "rat";
 			}
-			if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && GetCharacterItem(pchar, "gold_dublon") >= 1)
+			if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && PCharDublonsTotal() >= 1)
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.ratmoney))
+				if (PCharDublonsTotal() >= sti(npchar.quest.ratmoney))
 				{
 					if (!CheckAttribute(npchar, "quest.ratmoneyagain"))
 						ChangeCharacterComplexReputation(pchar, "fame", 5);
@@ -429,7 +429,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		GiveItem2Character(pchar, "cirass4");
 		RemoveItems(pchar, "talisman1", 1);
-		RemoveItems(pchar, "gold_dublon", sti(npchar.quest.ratmoney));
+		RemoveDublonsFromPCharTotal(sti(npchar.quest.ratmoney));
 		Log_Info("Has entregado el talismán Dios de las ratas");
 		Log_Info("Has recibido una armadura milanesa");
 		Log_Info("Has entregado " + FindRussianDublonString(sti(npchar.quest.ratmoney)) + "");
@@ -440,9 +440,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "rat_take_money_not_all":
-		npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - GetCharacterItem(pchar, "gold_dublon");
-		Log_Info("Has entregado " + FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon")) + "");
-		RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+		npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - PCharDublonsTotal();
+		Log_Info("Has entregado " + FindRussianDublonString(PCharDublonsTotal()) + "");
+		RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Todavía faltan " + FindRussianDublonString(sti(npchar.quest.ratmoney)) + ", " + pchar.name + ".";
 		link.l1 = "¡No me lo recuerdes!";

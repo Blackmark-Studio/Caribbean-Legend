@@ -633,7 +633,6 @@ void HelenDrinking_AtPerlas() {
 	sld.lastname = StringFromKey("HelenDrinking_4");
 	SetCharacterPerk(sld, "HPPlus");
 	SetCharacterPerk(sld, "EnergyPlus");
-	SetCharacterPerk(sld, "Brander");
 	SetCharacterPerk(sld, "Troopers");
 	sld.dialog.FileName = "Quest\Saga\OtherNPC.c";
 	sld.dialog.currentnode = "helendrinking_poorman";
@@ -1335,7 +1334,7 @@ void HelenDrinking_AfterKiss3() {
 	}
 	
 	pchar.questTemp.HelenDrinking.Kiss = true;
-	Return_HelenaOfficer();
+	ReturnOfficer_Helena();
 }
 
 void HelenDrinking_PortRoyalDialog(string qName) {
@@ -1420,30 +1419,31 @@ void HelenDrinking_AtSHDN(string qName) {
 	LAi_ActorFollowEverywhere(sld, "", -1);
 	
 	int iRank = sti(pchar.rank);
-	for (int i = 0; i < 3; i++) {
+	for (int i = 1; i < 3; i++) {
 		string model;
-		if (i == 0) {
-			model = "citiz_36_mush";
-		} else {
-			model = "mush_ctz_" + (4 + rand(2));
-		}
+		model = "mush_ctz_" + (4 + rand(2));
 		
 		sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_SDHN_OwnMush_" + i, model, "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 150);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
-		
-		if (i == 0) {
-			sld.name = StringFromKey("HelenDrinking_15");
-			sld.lastname = StringFromKey("HelenDrinking_16");
-			sld.greeting = "hambit_other_4";
-			sld.dialog.FileName = "Quest\Saga\OtherNPC.c";
-		}
+		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", 150);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		
 		ChangeCharacterAddressGroup(sld, "Shore55", "goto", "goto2");
 		LAi_SetActorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		LAi_ActorFollowEverywhere(sld, "", -1);
 	}
+	
+	sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_SDHN_OwnMush_0", "Alonso", "man", "man", iRank, FRANCE, -1, false, "soldier"));
+	sld.name = StringFromKey("HelenDrinking_15");
+	sld.lastname = StringFromKey("HelenDrinking_16");
+	sld.greeting = "hambit_other_4";
+	sld.dialog.FileName = "Quest\Saga\OtherNPC.c";
+	GiveItem2Character(sld, "blade_10");
+	EquipCharacterByItem(sld, "blade_10");
+	LAi_SetActorType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	LAi_ActorFollowEverywhere(sld, "", -1);
+	LAi_SetImmortal(sld, true);
 	
 	SetFunctionLocationCondition("HelenDrinking_AtCave", "SantaCatalina_PearlCaveEntrance", false);
 }
@@ -1549,8 +1549,8 @@ void HelenDrinking_SpawnAmbushSoldiers() {
 	
 	for (int i = 0; i < 3; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_SDHN_EnemyMush_" + i, "mush_eng_" + (1 + rand(5)), "man", "mushketer", iRank, ENGLAND, 0, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 150);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", 150);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		
 		ChangeCharacterAddressGroup(sld, "SantaCatalina_PearlCaveEntrance", "reload", "reload2");
 		LAi_SetActorType(sld);

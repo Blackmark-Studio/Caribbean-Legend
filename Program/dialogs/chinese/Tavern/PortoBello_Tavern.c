@@ -26,6 +26,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "听着, 我在找一个叫贝特朗.皮内特的人, 你听说过他吗? 他不久前到了贝洛港。 一个戴着卷发假发的威风绅士, 做贸易的, 可能来过这里... ";
                 link.l1.go = "FMQG";
             }
+			//--> Письмо от покойника
+			if (CheckAttribute(pchar, "questTemp.LFD_Tavern_1"))
+            {
+                link.l1 = "你知道我在哪儿能找到玛丽萨·卡尔德拉吗? ";
+                link.l1.go = "LFD_Tavern_1_1";
+            }
+			//<-- Письмо от покойника
         break;
         
         case "Portobello_rat_1":
@@ -61,6 +68,38 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             AddQuestRecord("FMQ_Guadeloupe", "9");
             npchar.quest.FMQG = true;
         break;
+		
+		//--> Письмо от покойника
+		case "LFD_Tavern_1_1":
+			dialog.text = "马丽萨? 哼……我好久没见到她了。自从她得知丈夫去世的消息后, 就再也没在城里露面。";
+			link.l1 = "所以, 她成了寡妇? ";
+			link.l1.go = "LFD_Tavern_1_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "LFD_Tavern_1_2":
+			dialog.text = "是的。她丈夫曾是商船“破浪者号”的船长。凭借荷兰西印度公司的许可证, 他几乎可以进入整个群岛的所有港口。传言说他在从伯利兹前往卡普斯特维尔途中遭遇海盗袭击, 不幸遇难。类似的事在这片海域并不少见, 但对她来说却是沉重的打击。";
+			link.l1 = "那她就这么消失了? ";
+			link.l1.go = "LFD_Tavern_1_3";
+		break;
+		
+		case "LFD_Tavern_1_3":
+			dialog.text = "嗯, 说她‘消失了’有点夸张。但从那以后, 她几乎不再出现在城里。不过, 奇怪的是……时不时有男人打听她。就像你一样, 船长。如果她不是那么虔诚, 我都以为她……是躲了起来, 靠别的手段谋生。但马丽萨在丈夫死前, 从不缺席任何一次弥撒, 几乎住在教堂里, 所以这种可能性不大。";
+			link.l1 = "就这些? 你就知道这么多? ";
+			link.l1.go = "LFD_Tavern_1_4";
+		break;
+		
+		case "LFD_Tavern_1_4":
+			dialog.text = "我知道的就这些了, 船长。";
+			link.l1 = "...";
+			link.l1.go = "LFD_Tavern_1_5";
+		break;
+		
+		case "LFD_Tavern_1_5":
+			DialogExit();
+			AddDialogExitQuestFunction("LFD_Tavern_1");
+		break;
+		//<-- Письмо от покойника
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果在switch中某处通过return退出, 别忘了执行卸载
 }

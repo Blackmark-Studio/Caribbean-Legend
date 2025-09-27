@@ -1205,9 +1205,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61":
 			dialog.text = "Bien. Entonces lo dividiremos por la mitad.";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
 				link.l1 = "Aquí tienes. He conseguido "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1221,9 +1221,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61_1":
 			dialog.text = "Qué alegría. ¿Cuánto has traído?";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
 				link.l1 = "Aquí tienes. Tengo "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1243,7 +1243,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
 			Log_Info("Has dado "+sti(npchar.quest.bakaut_pay)+" doblones");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)

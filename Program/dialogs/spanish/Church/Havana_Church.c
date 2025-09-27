@@ -13,11 +13,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			ref sld = characterFromId("Villemstad_Priest");
 			link.l1 = "Saludos, padre. El padre superior " + sld.name + " de la iglesia de Willemstad me envió. Le hablaste de avistamientos extraños en una cueva en Cuba.";
 			link.l1.go = "caleuche";
+			DelLandQuestMark(npchar);
 		}
 		if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana1")
 		{
 			link.l1 = "He visitado la cueva en la jungla, padre.";
 			link.l1.go = "caleuche_4";
+			DelLandQuestMark(npchar);
 		}
 		break;
 
@@ -53,6 +55,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			LAi_SetGuardianType(sld);
 			sld.protector = true;
 			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+			AddLandQuestMark(sld, "questmarkmain");
 		}
 		LocatorReloadEnterDisable("Cuba_Jungle_07", "reload2_back", false);
 		pchar.quest.Caleuche_cuba_caveentrance.win_condition.l1 = "location";
@@ -125,6 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		ChangeCharacterComplexReputation(pchar, "fame", 3);
 		ChangeCharacterNationReputation(pchar, SPAIN, 10);
 		AddCharacterExpToSkill(pchar, "Leadership", 500);
+		AddLandQuestMark(characterFromId("Havana_CemeteryMan"), "questmarkmain");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод

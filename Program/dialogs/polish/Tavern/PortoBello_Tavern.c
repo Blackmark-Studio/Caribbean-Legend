@@ -24,6 +24,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "Spójrz, szukam człowieka o imieniu Bertrand Pinette, słyszałeś o nim? Przybył do Portobello niedawno. Imponujący jegomość w falistej peruce. Kupiec. Może tu był...";
                 link.l1.go = "FMQG";
             }
+			//--> Письмо от покойника
+			if (CheckAttribute(pchar, "questTemp.LFD_Tavern_1"))
+            {
+                link.l1 = "Powiesz mi, gdzie mogę znaleźć Marisę Calderę?";
+                link.l1.go = "LFD_Tavern_1_1";
+            }
+			//<-- Письмо от покойника
 		break;
 		
 		case "Portobello_rat_1":
@@ -59,6 +66,38 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("FMQ_Guadeloupe", "9");
 			npchar.quest.FMQG = true;
 		break;
+		
+		//--> Письмо от покойника
+		case "LFD_Tavern_1_1":
+			dialog.text = "Marisa? Hm... Dawno jej nie widziałem. Odkąd dowiedziała się o śmierci męża, nie pokazywała się w mieście.";
+			link.l1 = "Więc jest wdową?";
+			link.l1.go = "LFD_Tavern_1_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "LFD_Tavern_1_2":
+			dialog.text = "Tak. Jej mąż był kapitanem handlowego pinasa 'Falałamacz'. Dzięki licencji Holenderskiej Kompanii Zachodnioindyjskiej miał dostęp niemal do wszystkich portów archipelagu. Mówi się, że nie przeżył ataku piratów w drodze z Belize do Capsterville. To tu nie jest rzadkość, ale dla niej był to prawdziwy cios.";
+			link.l1 = "Więc po prostu zniknęła?";
+			link.l1.go = "LFD_Tavern_1_3";
+		break;
+		
+		case "LFD_Tavern_1_3":
+			dialog.text = "Cóż, powiedzieć, że zniknęła, to przesada. Ale od tamtej pory prawie jej nie widać w mieście. Dziwna sprawa... Od czasu do czasu różni mężczyźni pytają o nią. Tak jak ty, kapitanie. Gdyby nie była taka pobożna, pomyślałbym, że... ukrywa się i zarabia jak potrafi. Ale Marisa przed śmiercią męża nie opuściła żadnej mszy. Żyła niemal w kościele, więc to raczej niemożliwe.";
+			link.l1 = "To wszystko? Nic więcej nie wiesz?";
+			link.l1.go = "LFD_Tavern_1_4";
+		break;
+		
+		case "LFD_Tavern_1_4":
+			dialog.text = "Wszystko, co wiem, kapitanie, już ci powiedziałem.";
+			link.l1 = "...";
+			link.l1.go = "LFD_Tavern_1_5";
+		break;
+		
+		case "LFD_Tavern_1_5":
+			DialogExit();
+			AddDialogExitQuestFunction("LFD_Tavern_1");
+		break;
+		//<-- Письмо от покойника
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

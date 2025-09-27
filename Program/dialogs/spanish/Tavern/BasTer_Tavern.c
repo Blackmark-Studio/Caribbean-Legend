@@ -62,32 +62,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "DTSG_BasTerTavern_2":
 			dialog.text = "No mucho, en realidad. Apareció hace un par de días. Le gustó estar aquí, incluso alquiló una casa a las afueras del pueblo. Venía a menudo, pagaba con regularidad. Y, lo más importante, se comportó bien todo este tiempo, nunca dijo una mala palabra a nadie. Todavía estoy sorprendido de que te haya atacado a ti y a tu amigo. Pensé que podría establecerse aquí para siempre.";
 			Link.l1 = "En cierto modo, lo hizo. Bueno, no es mucho, pero gracias por eso, mi amigo. Nos vemos.";
-			Link.l1.go = "DTSG_BasTerTavern_3";
-		break;
-		
-		case "DTSG_BasTerTavern_3":
-			DialogExit();
-			DeleteAttribute(pchar, "questTemp.DTSG_BasTerTavern");
-			LAi_LocationDisableOfficersGen("BasTer_tavern", false);
-			SetQuestHeader("DTSG");
-			AddQuestRecord("DTSG", "1");
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			
-			sld = CharacterFromID("Knippel");
-			LAi_SetOfficerType(sld);
-			sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-			sld.Dialog.CurrentNode = "Knippel_officer";
-			sld.location = "None";
-			
-			PChar.quest.DTSG_BasTerDom.win_condition.l1 = "locator";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.location = "BasTer_town";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator = "HutFish1";
-			PChar.quest.DTSG_BasTerDom.win_condition = "DTSG_BasTerDom";
-			
-			SetTimerCondition("DTSG_BasTerDom_Timer", 0, 0, 7, false);
-			SetTimerCondition("DTSG_Etap2", 0, 0, 14, false);
+			Link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_BasTerTavern_3");
 		break;
 		// <== Квест "Длинные тени старых грехов" - Sinistra
 		
@@ -176,7 +152,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "¡Permítame, capitán! ¡Eso es un robo en toda regla! Sí, mi situación es realmente desesperada, pero aún así no trabajaré con pérdidas.";
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 50)
 			{
-				link.l1 = "Quizás pueda ofrecerme un descuento. Además, quiero convertirme en su proveedor permanente. Le garantizo que no habrá problemas con las entregas. Alquilaré un almacén en Basse-Terre para recibir la mercancía directamente, sin demoras. Siempre habrá suficiente licor para anticiparse a cualquier tipo de interrupciones. En cuanto a la suma, con el descuento será de doscientos cuarenta doblones. ¿Qué me dice?";
+				link.l1 = "Quizás pueda ofrecerle un descuento. Pero eso no es todo. Quiero convertirme en su proveedor permanente. Le garantizo que no habrá problemas con las entregas. Alquilaré un almacén en Bass-Terre, y usted recibirá la mercancía directamente desde allí, sin demoras. Siempre habrá suficiente licor para anticiparse a cualquier tipo de interrupciones. En cuanto a la suma, con el descuento será de doscientos cuarenta doblones. ¿Qué dice?";
 				link.l1.go = "TPZ_Tavern2_4";
 				notification("Prueba superada", SKILL_COMMERCE);
 			}

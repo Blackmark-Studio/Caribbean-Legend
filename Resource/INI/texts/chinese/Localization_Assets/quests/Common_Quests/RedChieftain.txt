@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-酋长
-}
-RedChieftain_2
-{
-Kanauri
-}
-
-RedChieftain_3
-{
-印第安人
-}
-RedChieftain_4
-{
-凯门鳄部落
-}
-
-RedChieftain_5
-{
-酋长已离开你的船只! 
-}
-
-RedChieftain_6
-{
-印第安人
-}
-RedChieftain_7
-{
-凯门鳄部落
-}
+RedChieftain_1 {酋长}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {印第安人}
+RedChieftain_4 {凯门鳄部落}
+RedChieftain_5 {酋长已离开你的船只!}
+RedChieftain_6 {印第安人}
+RedChieftain_7 {凯门鳄部落}

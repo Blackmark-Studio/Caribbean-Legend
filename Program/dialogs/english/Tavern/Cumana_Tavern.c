@@ -4,21 +4,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat("All the rumors of "+ GetCityName(npchar.city) +" at your service. What would you like to find out?",
-                          "We were just talking about that. You must have forgotten...", "This is the third time you're bothering me now...",
-                          "You're repeating all the same like a parrot...", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("You know, " + NPChar.name + ", maybe next time.", "Right, I've forgotten for some reason...",
-                      "Yes, it really is the third time...", "Yup...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("All the rumours of "+GetCityName(npchar.city)+" at your service. What would you like to know?","We were just talking about that. You must have forgotten...","This is the third time you've bothered me now...","You're repeating the same thing like a parrot...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("You know, "+NPChar.name+", maybe next time.","Right, I've forgotten for some reason...","Yes, it really is the third time...","Yup...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && !CheckAttribute(npchar, "quest.utensil"))
 			{
-				link.l1 = "Tell me, where can I find Senora Belinda de Ribero?";
+				link.l1 = "Tell me, where can I find Señora Belinda de Ribero?";
                 link.l1.go = "guardoftruth";
 			}
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "In the governor's palace, of course. She's a cousin of Don Fernando de Villegas. You can look for her there after noon during her siesta, she usually has business to attend to in the mornings. She's into some trouble right now, so keep that in mind. But she won't mind speaking with you. Donna Belinda is a good woman.";
+			dialog.text = "In the governor's palace, of course. She's a cousin of Don Fernando de Villegas. You can look for her there after noon during her siesta; she usually has business to attend to in the mornings. She's in some trouble right now, so keep that in mind. But she won't mind speaking with you. Doña Belinda is a good woman.";
 			link.l1 = "Thank you!";
 			link.l1.go = "guardoftruth_1";
 		break;

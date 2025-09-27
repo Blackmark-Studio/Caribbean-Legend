@@ -352,6 +352,8 @@ void ProcessDialogEvent()
 			dialog.text = "Минхер Реджинальд Джексон совершает регулярные перевозки между Порт-Роялем и Филипсбургом. Так что ищите его на этом маршруте. Но я вас хочу предупредить, что если вы затеяли против него что-то недоброе - оставьте это, ибо данный капитан находится под нашей протекцией. Мы поняли друг друга, минхер?";
 			link.l1 = "У меня к нему дело совершенно мирного порядка - обычная торговая сделка. Никаких козней против минхера Джексона я строить не намерен, даю слово.";
 			link.l1.go = "caleuche_1";
+			DelLandQuestMark(npchar);
+			DelLandQuestMarkToPhantom();
 		break;
 		
 		case "caleuche_1":
@@ -362,10 +364,7 @@ void ProcessDialogEvent()
 		
 		case "caleuche_2":
 			DialogExit();
-			pchar.questTemp.Caleuche.Garpiya = "capitan";
-			pchar.questTemp.Garpiya = "to_portroyal";
-			AddQuestRecord("Caleuche", "19");
-			DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
+			AddDialogExitQuestFunction("Caleuche_PrepareCreateGarpiya");
 		break;
 		
 		// новый босс ГВИК

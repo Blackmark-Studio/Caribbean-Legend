@@ -1,44 +1,9 @@
-sea_minimap
-{
-  Minimapa de navegación.
-
-}
-ship_commands
-{
-  Órdenes a tu barco y resto del escuadrón.
-
-}
-fast_commands
-{
-  Orden de acceso rápido actual.
-
-}
-sea_aim
-{
-  Objetivo actual de los cañones del barco.
-
-}
-alarm_indicator
-{
-  Indicador de alarma.
-
-}
-land_commands
-{
-  Órdenes en tierra.
-
-}
-WorldMap_Date_Clock
-{
-  Fecha y hora del mapa.
-
-}
-WorldMap_Compas
-{
-  Brújula del mapa.
-
-}
-Dialog_window
-{
-  Ventana de diálogo.
-}
+sea_minimap {Minimapa de navegación.}
+ship_commands {Órdenes a tu barco y resto del escuadrón.}
+fast_commands {Orden de acceso rápido actual.}
+sea_aim {Objetivo actual de los cañones del barco.}
+alarm_indicator {Indicador de alarma.}
+land_commands {Órdenes en tierra.}
+WorldMap_Date_Clock {Fecha y hora del mapa.}
+WorldMap_Compas {Brújula del mapa.}
+Dialog_window {Ventana de diálogo.}

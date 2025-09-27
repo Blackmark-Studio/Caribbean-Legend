@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 			case "passenger_2":
 				pchar.GenQuest.Marginpassenger.Dublon = 70+hrand(5)*10;
 				dialog.text = "Es wäre äußerst unklug, dich zu betrügen, Seehund. Ich lebe in dieser Stadt und brauche die Schwierigkeiten nicht. Nur für "+sti(pchar.GenQuest.Marginpassenger.Dublon)+" Für Dublonen gebe ich vollständige Informationen. Du wirst viel mehr verdienen.";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "Du hast recht. Nimm das Gold und fang an zu reden.";
 					link.l1.go = "passenger_4";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 
 			case "passenger_repeat":
 				dialog.text = "Hast du mein Gold mitgebracht?";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "Ja. Nimm es. Versuche nicht einmal jetzt zu lügen...";
 					link.l1.go = "passenger_4";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 			
 			case "passenger_4"://установка параметров
 				pchar.quest.Marginpassenger_Over.over = "yes"; //снять возможный таймер
-				RemoveItems(pchar, "gold_dublon", sti(pchar.GenQuest.Marginpassenger.Dublon));
+				RemoveDublonsFromPCharTotal(sti(pchar.GenQuest.Marginpassenger.Dublon));
 				pchar.GenQuest.Marginpassenger.Name = GetFullName(npchar);
 				pchar.GenQuest.Marginpassenger.City = npchar.city;
 				pchar.GenQuest.Marginpassenger.Targetcity = SelectAnyColony(npchar.city); 

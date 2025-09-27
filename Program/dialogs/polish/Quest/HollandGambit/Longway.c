@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "Jest mała wyspa na południe od Gwadelupy. Przylądek Niedostępny. Tam wysadź Longwaya i daj mu broń. Tylko wtedy Longway powie ci wszystko, co wie o Lucasie Rodenburgu.";
+			dialog.text = "Jest mała wyspa Marie Galante na południe od Gwadelupy. Przylądek Niedostępny. Tam wysadź Longwaya i daj mu broń. Tylko wtedy Longway powie ci wszystko, co wie o Lucasie Rodenburgu.";
 			link.l1 = "Nie jesteś w pozycji, by się ze mną targować, Chińczyku.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +324,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Dotarliśmy do Gwadelupy, chuanzhang?";
+			dialog.text = "Dotarliśmy do Marie Galante, chuanzhang?";
 			link.l1 = "Uspokój się, wkrótce tam będziemy.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -617,7 +617,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;

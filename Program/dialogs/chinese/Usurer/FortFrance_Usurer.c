@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "太好了! 你知道接下来该怎么做 —和上次一样。 这是文件 —把它们交给监狱长。 和你做生意很愉快, 船长。 ";
 			link.l1 = "这种情况没什么愉快的。 再见。 ";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("你收到了一份债务账单");
 			PlaySound("interface\important_item.wav");

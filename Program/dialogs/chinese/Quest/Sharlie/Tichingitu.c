@@ -522,7 +522,7 @@ void ProcessDialogEvent()
 		case "Del_Deluck_6":
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "Exit":

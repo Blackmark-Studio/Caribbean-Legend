@@ -109,6 +109,28 @@ void Sharlie_BenuaLoanTime(string qName)//займ у Бенуа // Addon 2016-1
 	log_info(StringFromKey("SharlieTrial_1"));
 }
 
+void Sharlie_Benua_BrotherEscape()
+{
+	pchar.questTemp.Sharlie = "escape";
+	CloseQuestHeader("Sharlie");
+	AddQuestRecord("Guardoftruth", "1");
+	pchar.questTemp.Guardoftruth = "begin";
+	// ставим пленного испанца
+	sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
+	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);
+	sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
+	sld.dialog.currentnode = "spa_prisoner";
+	RemoveAllCharacterItems(sld, true);
+	LAi_SetStayType(sld);
+	LAi_SetImmortal(sld, true);
+	ChangeCharacterAddressGroup(sld, "Fortfrance_dungeon", "quest", "quest1");
+	LAi_CharacterDisableDialog(sld);//запрет диалога
+	
+	// наступает финальный этап игры, а значит и новые квесты
+	SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false); // Запуск квеста Дикая Роза
+}
+
 //------------------------------------------мини-квесты для сбора денег---------------------------------------
 //найти помощника для торговца
 void Sharlie_CreateStorehelper()//создаем помощника торговца
@@ -1168,18 +1190,10 @@ void SetTichingituJail()//ставим Тичингиту
 	sld.name = StringFromKey("SharlieTrial_27"); // 270912
 	sld.lastname = StringFromKey("SharlieTrial_28");
 	sld.greeting = "Tichingitu";
-    sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
+	sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
 	sld.dialog.currentnode = "Tichingitu";
 	sld.rank = 12;
-	LAi_SetHP(sld, 140.0, 140.0);
 	SetSPECIAL(sld, 4, 9, 5, 5, 10, 8, 8);
-	SetSelfSkill(sld, 30, 30, 30, 50, 20);
-    SetShipSkill(sld, 5, 5, 2, 5, 1, 2, 1, 1, 10);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "Tireless");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "Gunman");
 	GiveItem2Character(sld, "unarmed");
 	sld.equip.blade = "unarmed";
 	sld.equip.gun = "";
@@ -1189,6 +1203,7 @@ void SetTichingituJail()//ставим Тичингиту
 	AddLandQuestMark(sld, "questmarkmain");
 	SetFunctionLocationCondition("Tichingitu_AddQuestMark", "baster_prison", false);
 	QuestPointerToLoc("BasTer_town", "reload", "reload_jail");
+	InitHeroRebalance(sld, 0.6, GEN_ARCHETYPE_GUNMAN, GEN_ARCHETYPE_BOATSWAIN); // RB Квестовые офицеры
 }
 
 void Tichingitu_AddQuestMark(string qName)
@@ -1243,6 +1258,14 @@ void VsD_DiegoInTaverna_2(string qName)
 {
 	FreeSitLocator("PortPax_tavern", "sit4");
 	FreeSitLocator("PortPax_tavern", "sit5");
+}
+
+void VsD_DiegoInTaverna_3()
+{
+	sld = CharacterFromID("Diego_Clone");
+	LAi_CharacterDisableDialog(sld);
+	sld = CharacterFromID("GiumDyubua");
+	LAi_CharacterDisableDialog(sld);
 }
 
 void VsD_GoToCity(string qName)
@@ -1608,6 +1631,167 @@ void VsD_Vzriv_10(string qName)
 		LAi_ActorRunToLocator(sld, "rld", "loc0", "", -1);
 	}
 }
+
+void VsD_AfterVzriv_1()
+{
+	sld = GetCharacter(CreateCharacterClone(CharacterFromID("PortPaxAmmoOff"), 0));
+	sld.id = "PortPaxAmmoOff_clone";
+	LAi_LoginInCaptureTown(sld, true);
+	ChangeCharacterAddressGroup(sld, "PortPax_town", "quest", "quest1");
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, pchar, "", -1);
+}
+
+void VsD_AfterVzriv_2()
+{
+	LAi_SetStayType(pchar);
+	sld = CharacterFromID("PortPaxAmmoOff_clone");
+	sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "VsD_Komendant";
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", 3, 0);
+}
+
+void VsD_AfterVzriv_3()
+{
+	sld = CharacterFromID("Tichingitu");
+	if (sld.location == pchar.location && !LAi_IsDead(sld))
+	{
+		LAi_SetActorType(sld);
+		LAi_ActorGoToLocator(sld, "reload", "reload1", "", -1);
+	}
+}
+
+void VsD_AfterVzriv_4()
+{
+	sld = CharacterFromID("Tichingitu");
+	if (sld.location == pchar.location && !LAi_IsDead(sld))
+	{
+		LAi_SetOfficerType(sld);
+		sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
+		sld.Dialog.CurrentNode = "Tichingitu_officer";
+	}
+	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
+	{
+		sld = CharacterFromID("Folke");
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+		sld.Dialog.Filename = "Enc_Officer_dialog.c";
+		sld.Dialog.CurrentNode = "hired";
+	}
+	else
+	{
+		sld = CharacterFromID("Alonso");
+		ChangeCharacterAddressGroup(sld, "none", "", "");
+	}
+}
+
+void VsD_AfterVzriv_5()
+{
+	sld = CharacterFromID("VsD_Tsyganka");
+	ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload5_back");
+	LAi_CharacterEnableDialog(sld);
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, pchar, "", -1);
+}
+
+void VsD_AfterVzriv_6()
+{
+	pchar.ship.HP = sti(pchar.ship.HP) / 2;
+	pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - sti(pchar.ship.Crew.Quantity) / 7;
+	AddCharacterGoodsSimple(pchar, GOOD_PLANKS, 100);
+}
+
+void VsD_AfterVzriv_7()
+{
+	sld = CharacterFromID("PortRoyal_shipyarder");
+	sld.TrialDelQuestMark = true;
+	AddLandQuestMark(sld, "questmarkmain");
+	AddMapQuestMarkCity("PortRoyal", false);
+}
+
+void VsD_AfterVzriv_8()
+{
+	LAi_SetStayType(pchar);
+			
+	sld = CharacterFromID("VsD_Tsyganka");
+	sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "VsD_Tsyganka";
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", 3, 0);
+	
+	sld = CharacterFromID("PortPaxAmmoOff_clone");
+	sld.lifeday = 0;
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "gate_back", "none", "", "", "", -1);
+}
+
+void VsD_Final_1()
+{
+	for (i=3; i<=8; i++)
+	{				
+		sld = CharacterFromID("VsD_MirnyeMan_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	for (i=3; i<=6; i++)
+	{				
+		sld = CharacterFromID("VsD_MirnyeWoman_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	for (i=1; i<=6; i++)
+	{				
+		sld = CharacterFromID("VsD_Sold_"+i);
+		LAi_SetCitizenType(sld);
+	}
+	//Возвращаем всё обратно
+	chrDisableReloadToLocation = false;
+	bDisableFastReload = false;
+	bDisableCharacterMenu = false;
+	SetLocationCapturedState("PortPax_town", false);
+	Locations[FindLocation("PortPax_town")].locators_radius.quest.quest1 = 1.0;
+	Locations[FindLocation("PortPax_town")].locators_radius.patrol.patrol14 = 0.5;
+	LocatorReloadEnterDisable("PortPax_ExitTown", "reload2_back", false);
+	LocatorReloadEnterDisable("PortPax_ExitTown", "reload1_back", false);
+	LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
+	LAi_LocationFightDisable(&Locations[FindLocation("PortPax_Fort")], false);
+	
+	for (i=1; i<=5; i++)
+	{
+		sld = CharacterFromID("VsD_Guard_"+i);
+		sld.lifeday = 0;
+	}
+	//Диего исчезает
+	sld = CharacterFromID("Diego_Clone");
+	sld.lifeday = 0;
+	//Верфь закрывается
+	LocatorReloadEnterDisable("PortPax_Town", "reload5_back", true);
+	SetTimerCondition("VsD_VerfOtkryt", 0, 0, 7, false);
+	//Труп предателя в джунглях
+	PChar.quest.VsD_TrupPredatelya.win_condition.l1 = "location";
+	PChar.quest.VsD_TrupPredatelya.win_condition.l1.location = "PortPax_ExitTown";
+	PChar.quest.VsD_TrupPredatelya.win_condition = "VsD_TrupPredatelya";
+	SetTimerCondition("VsD_TrupPredatelya_3", 0, 0, 60, false);
+}
+
+void VsD_Tsyganka_Net()
+{
+	LAi_SetPlayerType(pchar);
+	AddQuestRecord("Trial", "7_1");
+	sld = CharacterFromID("VsD_Tsyganka");
+	LAi_SetCitizenType(sld);
+	LAi_CharacterDisableDialog(sld);
+}
+
+void VsD_Tsyganka_Da()
+{
+	LAi_SetPlayerType(pchar);
+	AddQuestRecord("Trial", "7_1");
+	AddCharacterExpToSkill(pchar, "Repair", 20);
+	AddMoneyToCharacter(pchar, -1000);
+	GiveItem2Character(PChar, "obereg_1");
+	sld = CharacterFromID("VsD_Tsyganka");
+	LAi_SetCitizenType(sld);
+	LAi_CharacterDisableDialog(sld);
+}
 // <== "Встреча с Диего"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////	
@@ -1667,7 +1851,6 @@ void Trial_FrahtFail(string qName)// провалил 1 задание
 	PChar.quest.VsD_DiegoNachalo.over = "yes";
 	ChangeCharacterNationReputation(pchar, FRANCE, -12);
 	DelMapQuestMarkCity("PortPax");
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_CreateFlorianFrigate(string qName)// ставим фрегат Флориана Шоке
@@ -1727,7 +1910,6 @@ void Trial_CannonFail(string qName)// провалил 2 задание
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_FlorianAfterBattle(string qName)// напал на Флориана Шоке
@@ -1748,7 +1930,6 @@ void Trial_FlorianAfterBattle(string qName)// напал на Флориана �
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TakeCannons()// выгрузка
@@ -1858,7 +2039,6 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 			DeleteAttribute(pchar,"questTemp.trialHabitueId");
 		}
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TavernEnterSoldiers() //неверный путь в таверне
@@ -1979,7 +2159,6 @@ void Trial_Pueblabarque_AfterBattle(string qName)// уничтожили
 	AddComplexSeaExpToScill(50, 50, 50, 50, 50, 50, 0);
 	ChangeCharacterNationReputation(pchar, SPAIN, -3);
 	ChangeCharacterComplexReputation(pchar, "fame", 1);
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_Pueblabarque_Check(string qName)// истекло время энкаунтера или уничтожен
@@ -2004,9 +2183,60 @@ void Trial_Pueblabarque_Result(string qName) // результаты
 		CloseQuestHeader("Trial");
 		DeleteAttribute(pchar, "questTemp.Trial");
 		pchar.questTemp.TrialEnd = true;
-		DeleteAttribute(pchar,"worldmapencountersoff");
 	}
 } // <-- 170712
+
+void Guide_DlgExit_64()	// Валинье становится супер боссом и нападает на ГГ
+{
+	sld = characterFromId("Guide");
+	sld.rank = 25;
+	GiveItem2Character(sld, "blade_30");
+	EquipCharacterbyItem(sld, "blade_30");
+	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_BOSS, true, 0.6); // RB Валинье на острове
+	GiveItem2Character(sld, "cirass7");
+	GiveItem2Character(sld, "obereg_7");
+	GiveItem2Character(sld, "talisman11");
+	AddMoneyToCharacter(sld, 10000);
+	AddItems(sld, "gold_dublon", 25);
+	AddItems(sld, "bullet", 5);
+	AddItems(sld, "grapeshot", 5);
+	AddItems(sld, "GunPowder", 10);
+	TakeItemFromCharacter(sld, "blade_12");
+	sld.cirassId = Items_FindItemIdx("cirass4");
+	LAi_SetCurHPMax(sld);
+	LAi_GetCharacterMaxEnergy(sld);
+	LAi_SetCurHPMax(pchar); 
+	LAi_GetCharacterMaxEnergy(pchar);
+	LAi_SetImmortal(sld, false);
+	LAi_group_Delete("EnemyFight");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheckFunction("EnemyFight", "Guide_HeroKill");
+	AddDialogExitQuest("MainHeroFightModeOn");
+}
+
+void Guide_HeroKill(string qName) // ГГ убил Валинье
+{
+	LAi_group_Delete("EnemyFight");
+	DoQuestCheckDelay("hide_weapon", 1.2);
+	Log_info(StringFromKey("SharlieTrial_46"));
+	Achievment_Set("ach_CL_107");
+	AddCharacterExpToSkill(pchar, "Leadership", 150);
+	AddCharacterExpToSkill(pchar, "Sneak", 150);
+	AddCharacterExpToSkill(pchar, "FencingL", 150);
+	AddCharacterExpToSkill(pchar, "FencingS", 150);
+	AddCharacterExpToSkill(pchar, "FencingH", 150);
+	AddCharacterExpToSkill(pchar, "Pistol", 150);
+	AddCharacterExpToSkill(pchar, "Fortune", 150);
+	ChangeCharacterComplexReputation(pchar, "nobility", -10);
+	ChangeCharacterComplexReputation(pchar, "fame", 1);
+	chrDisableReloadToLocation = false;
+	pchar.questTemp.GuideDeath = true;
+}
 
 //=================================================================
 //======================кейсы из quests_reaction===================
@@ -2079,6 +2309,8 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			RemoveAllCharacterItems(sld, true);
 			GiveItem2Character(sld, "blade_12");
 			EquipCharacterbyItem(sld, "blade_12");
+			InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Туториальный Валинье
+
 			sld.name = StringFromKey("SharlieTrial_43");
 			sld.lastname = StringFromKey("SharlieTrial_44");
 			sld.dialog.FileName = "Quest\Sharlie\Guide.c";
@@ -2370,24 +2602,6 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_ActorDialogDelay(sld, pchar, "", 1.0);
 			LAi_SetImmortal(pchar, false);
-	}
-	else if (sQuestName == "Guide_HeroKill") // Sinistra ГГ убил Валинье
-	{
-			LAi_group_Delete("EnemyFight");
-			DoQuestCheckDelay("hide_weapon", 1.2);
-			Log_info(StringFromKey("SharlieTrial_46"));
-			Achievment_Set("ach_CL_107");
-			AddCharacterExpToSkill(pchar, "Leadership", 150);
-			AddCharacterExpToSkill(pchar, "Sneak", 150);
-			AddCharacterExpToSkill(pchar, "FencingL", 150);
-			AddCharacterExpToSkill(pchar, "FencingS", 150);
-			AddCharacterExpToSkill(pchar, "FencingH", 150);
-			AddCharacterExpToSkill(pchar, "Pistol", 150);
-			AddCharacterExpToSkill(pchar, "Fortune", 150);
-			ChangeCharacterComplexReputation(pchar, "nobility", -10);
-			ChangeCharacterComplexReputation(pchar, "fame", 1);
-			chrDisableReloadToLocation = false;
-			pchar.questTemp.GuideDeath = true;
 	}
 	// <-- гид
 
@@ -2953,7 +3167,8 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	// Sinistra - квест "Встреча с Диего" ==>
 	else if (sQuestName == "VsD_DiegoNachalo")
 	{
-			sld = CharacterFromID("Diego");
+			sld = GetCharacter(CreateCharacterClone(CharacterFromID("Diego"), -1));
+			sld.id = "Diego_Clone";
 			LAi_SetImmortal(sld, true);
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "houseF1");
@@ -2975,7 +3190,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			FreeSitLocator("PortPax_tavern", "sit_base2");
 			FreeSitLocator("PortPax_tavern", "sit_front2");
 			
-			sld = CharacterFromID("Diego");
+			sld = CharacterFromID("Diego_Clone");
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "VsD_DiegoAndErnat";
 			ChangeCharacterAddressGroup(sld, "PortPax_tavern", "sit", "sit_front2");

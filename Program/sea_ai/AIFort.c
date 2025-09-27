@@ -2,7 +2,7 @@
 
 #define		MAX_FORTS						16
 #define		MIN_CANNON_DAMAGE_DISTANCE		20.0
-#define		FORT_CANNON_MAXHP				1500.0
+#define		FORT_CANNON_MAXHP				1850.0
 
 object		AIFort;
 object		Forts[MAX_FORTS];

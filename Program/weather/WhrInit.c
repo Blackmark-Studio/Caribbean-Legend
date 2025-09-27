@@ -222,8 +222,8 @@ int Whr_InitStdWeather( int		_index,
 	
 	// common wind
 	whr.Wind.Angle 					= 2.0;
-	whr.Wind.Speed.Min 				= 5.0;
-	whr.Wind.Speed.Max 				= 18.0;
+	whr.Wind.Speed.Min 				= WIND_MIN_POWER;
+	whr.Wind.Speed.Max 				= WIND_MAX_POWER;
 		
 	if(_storm)
 	{

@@ -557,7 +557,7 @@ void ProcessDialogEvent()
 		
 		case "trial_21":
 			pchar.alchemy.known = 1;
-			AddQuestRecordInfo("Otrzymałeś recepture", "cartridge");
+			AddQuestRecordInfo("Recipe", "cartridge");
 			SetAlchemyRecipeKnown("cartridge");
 			dialog.text = "Weź te instrukcje do tworzenia papierowych ładunków, przestudiuj je w wolnym czasie i nie bądź zbyt leniwy, by zastosować swoją nową wiedzę\Zaczekaj, bracie. Nie zapomnij wpaść do naszego drogiego gubernatora.";
 			link.l1 = "Czy jest jakaś okazja?";
@@ -782,9 +782,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gambit_8":
-			AddQuestRecordInfo("Otrzymałeś recepturę", "bussol");
+			AddQuestRecordInfo("Recipe", "bussol");
 			SetAlchemyRecipeKnown("bussol");
-			AddQuestRecordInfo("Otrzymałeś recepturę", "clock2");
+			AddQuestRecordInfo("Recipe", "clock2");
 			SetAlchemyRecipeKnown("clock2");
 			dialog.text = "Postaraj się zdobyć wszystkie te narzędzia tak szybko, jak to możliwe. Wszyscy doświadczeni i szanowani kapitanowie operują szerokością i długością geograficzną. Będziesz uważany za nowicjusza w żegludze, dopóki nie zrozumiesz, co te liczby oznaczają.\nCóż, wróć, by się pochwalić, gdy tylko odniesiesz sukces w sprawach, o których niedawno rozmawialiśmy. Powodzenia, Charles!";
 			link.l1 = "Dziękuję, drogi bracie. Czuję, że to na pewno się przyda!";

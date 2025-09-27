@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Нефритовый череп с зелёными камнями в глазницах? Я начинаю догадываться, что мне и его придётся найти? Так может он сгинул бесследно в сельве вместе с тем матросом полвека назад!";
+				link.l1 = "Нефритовый череп с зелёными камнями в глазницах? Так может он сгинул бесследно в сельве вместе с тем матросом полвека назад!";
 				link.l1.go = "Tuttuat_21_2";
 			}
 		break;
@@ -297,6 +297,8 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Tuttuat_10";
 			pchar.questTemp.Caleuche = "mayak"; 
 			AddQuestRecord("Caleuche", "6");
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "Santiago_Lightman") {AddLandQuestMark(characterFromId("Santiago_Lightman"), "questmarkmain");}
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "BasTer_Lightman") {AddLandQuestMark(characterFromId("BasTer_Lightman"), "questmarkmain");}
 		break;
 		
 		case "Tuttuat_33":
@@ -454,6 +456,7 @@ void ProcessDialogEvent()
 			dialog.text = "(смотрит) Да, это он. Очень красивый. Но и очень страшный.";
 			link.l1 = "Это точно... Но вот что интересно: я пересёк с нефритовым черепом всё Карибское море, от Кубы до Доминики, и Калеуче даже не попытался напасть. Я его вовсе не видел! Когда же я вёз тебе амулеты, этот чёртов призрак буквально загонял меня...";
 			link.l1.go = "Tuttuat_46a";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "Tuttuat_46a":
@@ -487,8 +490,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tuttuat_48":
-			dialog.text = "Из сказание моя понимать, что он малый, и находиться от остров с эта деревня по направление, который бледнолицые зовут 'север', на край великий вода, который твои братья звать 'океан'.";
-			link.l1 = "Хм. На север от Доминики на границе с океаном? Чёрт возьми, да это же огромный участок моря! Как там искать маленький островок, о котором до сих пор никто не слышал?";
+			dialog.text = "Из сказания моя понимать, что он малый и находиться от острова с эта деревня по направлению, который бледнолицые зовут 'север', посреди трёх островов, а с четвёртый стороа - большая вода, океан.";
+			link.l1 = "Хм. На север от Доминики в треугольнике из островов, на грани с океаном? Чёрт возьми, да это же немалый участок моря! Как там искать маленький островок, о котором до сих пор никто не слышал?";
 			link.l1.go = "Tuttuat_49";
 		break;
 		
@@ -620,6 +623,7 @@ void ProcessDialogEvent()
 				dialog.text = "Моя говорить с духи. Твоя быть на остров в храм Юм Симиль. Ты найти Калеуче и амулет?";
 				link.l1 = "Ты прав, великий шаман. Я нашёл остров, побывал в храме и оставил в нём нефритовый череп.";
 				link.l1.go = "Tuttuat_63";
+				DelLandQuestMark(npchar);
 			}
 			else
 			{
@@ -1003,6 +1007,62 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
+		// Наш Алонсо после финального абордажа на Калеуче
+		case "Caleuche_Alonso_1":
+			dialog.text = "Корыто очищено от нечисти, кэп. На сей раз мертвецы не восстали. Но сама посудина... уму непостижимо, как она держится на плаву.";
+			link.l1 = "Проклятие удерживало её, Алонсо. Но теперь с ним покончено.";
+			link.l1.go = "Caleuche_Alonso_2";
+		break;
+
+		case "Caleuche_Alonso_2":
+			dialog.text = "Как прикажете поступить? Подожжём - и дело с концом?";
+			link.l1 = "Я ещё подумаю над этим. Даже разваливаясь, 'Летящее Сердце' едва не превратило наш корабль в решето.";
+			link.l1.go = "Caleuche_Alonso_3";
+		break;
+
+		case "Caleuche_Alonso_3":
+			dialog.text = "С огневой мощью у этой рухляди уж точно всё в порядке, будь она трижды проклята... Я чего пришёл - у нас в команде матрос есть один, Жак...";
+			link.l1 = "Жак Трюдо? Помню такого. Он недавно к нам присоединился, верно?";
+			link.l1.go = "Caleuche_Alonso_4";
+		break;
+
+		case "Caleuche_Alonso_4":
+			dialog.text = "Так точно, кэп. Так вот, нюх у этого шельмеца на всякие ценности - отменный. Как только нежить улеглась, он мигом подскочил к одной из коек, залез под неё - и достал оттуда сундук. А в сундуке - пять тысяч дублонов!";
+			link.l1 = "Пять тысяч? Хм... Похоже, Бальтазар де Кордес и его команда действительно надеялись избавиться от проклятия. Набивали карманы золотом, мечтая зажить вольготно... когда всё закончится.";
+			link.l1.go = "Caleuche_Alonso_5";
+		break;
+		
+		case "Caleuche_Alonso_5":
+			dialog.text = "Наша команда тоже не прочь так пожить, кэп... Если вы поделитесь с парнями, они вам этого не никогда не забудут. Но и если не сделаете этого - запомнят.";
+			link.l1 = "Ты прав, Алонсо. Надо побаловать команду - заслужили. Раздай им половину, а Жака - освободи от вахт на неделю. Вместо грога сегодня разрешаю разливать ром. Но ухо держать востро - сам знаешь, море ошибок не прощает.";
+			link.l1.go = "Caleuche_Alonso_6";
+			link.l2 = "Хм... Может, ты и прав, Алонсо. Команде не помешает спустить пар. Выдай им четверть добычи. И проследи, чтобы эти пропойцы не начали пир до того, как мы бросим якорь в каком-нибудь порту.";
+			link.l2.go = "Caleuche_Alonso_7";
+			link.l3 = "Чтобы эти бездельники в первом же порту разбежались по трактирам и борделям? Я не собираюсь потом месяц собирать их по одному. Хватит им и жалования, что я им плачу. А дублоны принесите сюда. Чтобы ни у кого не возникло желания их присвоить.";
+			link.l3.go = "Caleuche_Alonso_8";
+		break;
+		
+		case "Caleuche_Alonso_6":
+			dialog.text = "Будет сделано, кэп. И не волнуйтесь, ребята вас ни за что не подведут.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_2");
+		break;
+		
+		case "Caleuche_Alonso_7":
+			dialog.text = "Есть, кэп. Я знаю, как держать этих дьяволов в узде - можете на меня положиться.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_3");
+		break;
+		
+		case "Caleuche_Alonso_8":
+			dialog.text = "Как прикажете, кэп. Команда, конечно, надеялась на большее... но капитан здесь вы, вам и решать.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_4");
+		break;
+		
 		// --> // наш матрос на берегу
 		case "on_coast":
 			dialog.text = "Ну наконец-то вы очнулись, кэп... Как самочувствие?";
@@ -1066,6 +1126,7 @@ void ProcessDialogEvent()
 			dialog.text = "Эй! Я ещё не собрал достаточное количество змеиных кож, чтобы продавать их тебе, так что отвали!";
 			link.l1 = "Хм... Ты - Фергус Хупер?";
 			link.l1.go = "fergus_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "fergus_1":
@@ -1129,6 +1190,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Caleuche.Bandos = "start"; 
 			LAi_CharacterDisableDialog(npchar);
 			npchar.lifeday = 0;
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// бандит в городе
@@ -1321,6 +1383,7 @@ void ProcessDialogEvent()
 			// меняем флаг
 			pchar.questTemp.Caleuche.Bandos = "know";
 			SaveCurrentQuestDateParam("questTemp.Caleuche.belizbandos");
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// спалили бандосы в пещере
@@ -1359,6 +1422,7 @@ void ProcessDialogEvent()
 			dialog.text = "Приветствую, коллега! Какими судьбами у меня на борту?";
 			link.l1 = TimeGreeting()+", минхер Джексон. Рад, что наконец-то нашёл тебя.";
 			link.l1.go = "reginald_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "reginald_1":
@@ -1412,6 +1476,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "reginald_9";
 			npchar.DeckDialogNode = "reginald_9";
+			AddLandQuestMark(npchar, "questmarkmain");
 		break;
 		
 		case "reginald_9":
@@ -1426,11 +1491,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "reginald_10":
-			Log_Info("Вы отдали 500 дублонов");
-			PlaySound("interface\important_item.wav");
 			RemoveDublonsFromPCharTotal(500);
+			DelLandQuestMark(npchar);
 			
-			DeleteAttribute(pchar, "GenQuest.SeaHunter2Pause"); // вертаем морских ОЗГов
 			dialog.text = "Вот и славно! А вот твой ключ. И у меня к тебе будет огромная просьба: после того, как заберёшь всё, что в сундуке, оставь ключ в замке. Неохота что-то делать новый замок для сундука и ключ к нему.";
 			link.l1 = "Хорошо.";
 			link.l1.go = "reginald_11";
@@ -1444,38 +1507,48 @@ void ProcessDialogEvent()
 		
 		case "reginald_12":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.DontDeskTalk = true;
-			DeleteAttribute(pchar, "questTemp.Caleuche.Garpiya");
-			DeleteAttribute(pchar, "questTemp.Garpiya");
-			GiveItem2Character(pchar, "kaleuche_key"); 
-			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key");
+			AddDialogExitQuestFunction("Caleuche_SpawnItemsInTheChest");
 			AddQuestRecord("Caleuche", "20");
-			// сундук со схроном
-			i = Findlocation("Mayak2");
-			Locations[i].models.always.locators = "lighthouse_Blocators";
-			locations[i].private1.key = "kaleuche_key";
-			locations[i].private1.key.delItem = true;
-			locations[i].private1.items.kaleuche_amulet3 = 1;
-			locations[i].private1.items.pistol9 = 1;
-			locations[i].private1.items.indian_6 = 1;
-			locations[i].private1.items.map_barbados = 1;
-			locations[i].private1.items.map_part2 = 1;
-			locations[i].private1.items.jewelry22 = 5;
-			locations[i].private1.items.jewelry17 = 6;
-			locations[i].private1.items.jewelry12 = 3;
-			locations[i].private1.items.jewelry16 = 2;
-			locations[i].private1.items.jewelry20 = 7;
-			locations[i].private1.items.jewelry53 = 11;
-			locations[i].private1.items.mineral25 = 1;
-			locations[i].private1.items.mineral21 = 1;
-			locations[i].private1.items.mineral22 = 5;
-			locations[i].private1.items.mineral26 = 1;
-			locations[i].private1.items.mineral10 = 1;
-			locations[i].private1.items.mineral3 = 10;
-			pchar.quest.caleuche_amulet3.win_condition.l1 = "item";
-			pchar.quest.caleuche_amulet3.win_condition.l1.item = "kaleuche_amulet3";
-			pchar.quest.caleuche_amulet3.function = "Caleuche_ThirdAmuletFind";
+		break;
+		
+		case "Caleuche_Reginald_21":
+			dialog.text = "Какого дьявола вам от нас нужно? Это судно Голландской Вест-Индской компании, и такие выходки даром не проходят. Тебя из-под земли достанут - уж можешь не сомневаться, и твой сброд тоже.";
+			link.l1 = "Плевать я хотел на голландцев и их торговую компанию. Мне нужен старинный индейский амулет, и я знаю, что он есть у тебя или был.";
+			link.l1.go = "Caleuche_Reginald_22";
+		break;
+
+		case "Caleuche_Reginald_22":
+			dialog.text = "Да ты спятил! Нападать на судно из-за безделушки?";
+			link.l1 = "Заткнись и давай его сюда, и, может, останешься жив.";
+			link.l1.go = "Caleuche_Reginald_23";
+		break;
+
+		case "Caleuche_Reginald_23":
+			dialog.text = "Да чтоб тебя... Не ношу я его с собой. Он на Барбадосе.";
+			link.l1 = "Тогда твоя дырявая лоханка пойдёт ко дну прямо сейчас, а ты составишь компанию крысам в моём трюме. По дороге у нас будет много времени, чтобы ты выложил мне где его искать. И поверь, у меня на борту есть такие ребята, что разговорят даже самого твердолобого болвана... без лишних слов и долгих прелюдий.";
+			link.l1.go = "Caleuche_Reginald_24";
+		break;
+
+		case "Caleuche_Reginald_24":
+			dialog.text = "В этом нет нужды. Он лежит в сундуке на маяке. Заперт на ключ. Вот он.";
+			link.l1 = "Правильный выбор, приятель. Даже жаль, что остальным не хватает мозгов поступать так же... мне бы меньше приходилось пачкать руки.";
+			link.l1.go = "Caleuche_Reginald_24_1";
+			link.l2 = "Ты поступил разумно. Но, видишь ли... я не могу оставить тебя в живых. Ты ведь сразу побежишь жаловаться этим голландским барыгам, а мне их внимание ни к чему.";
+			link.l2.go = "Caleuche_Reginald_24_2";
+		break;
+		
+		case "Caleuche_Reginald_24_1":
+			dialog.text = "В том сундуке всё, что я накопил за годы службы на голландцев...";
+			link.l1 = "Считай, что мы заключили сделку: твой сундук достаётся мне, а твоя драгоценная шкура - остаётся на тебе. Всё честно...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_EndFightWithReginald");
+		break;
+		
+		case "Caleuche_Reginald_24_2":
+			dialog.text = "Аргх...";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_KillToReginald");
 		break;
 		
 		// монах в Виллемстаде
@@ -1596,6 +1669,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ты уверен, что хочешь пойти туда?";
 			link.l1 = "Абсолютно. Меня прислал отец "+sld.name+", настоятель церкви Гаваны. Я должен выяснить, что здесь происходит, и принять адекватные меры.";
 			link.l1.go = "cavehunter_6";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "cavehunter_6":

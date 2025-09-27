@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 		
 		case "map_1":
 			dialog.text = "Нет. Мне нужны дублоны. Так что даже не торгуйся.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 200)
+			if (PCharDublonsTotal() >= 200)
 			{
 				link.l1 = "Хорошо. Держи своё золото, я согласен.";
 				link.l1.go = "map_2";
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map_2":
-			RemoveItems(pchar, "gold_dublon", 200);
+			RemoveDublonsFromPCharTotal(200);
 			PlaySound("interface\important_item.wav");
 			//Log_Info("Вы получили карту Острова Справедливости");
 			GiveItem2Character(pchar, "map_LSC");

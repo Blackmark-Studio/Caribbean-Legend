@@ -333,7 +333,7 @@ void Mtraxx_SilkCreateJeffry(string qName) // создаем Джеффри // 3
 	SetCharacterPerk(sld, "AdvancedDefense");
 	SetCharacterPerk(sld, "CriticalHit");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Tireless");
@@ -348,7 +348,7 @@ void Mtraxx_SilkCreateJeffry(string qName) // создаем Джеффри // 3
 	SetCharacterPerk(sld, "Carpenter");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "LongRangeGrappling");
 	SetCharacterPerk(sld, "GrapplingProfessional");
@@ -362,8 +362,9 @@ void Mtraxx_SilkCreateJeffry(string qName) // создаем Джеффри // 3
 	EquipCharacterbyItem(sld, "blade_15");
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
-	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
-    TakeNItems(sld, "cartridge", 50);
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
+    TakeNItems(sld, "bullet", 50);
+    TakeNItems(sld, "gunpowder", 50);
 	TakeNItems(sld, "potion2", 3);
 	sld.cirassId = Items_FindItemIdx("cirass2");
 	sld.DontRansackCaptain = true;
@@ -924,7 +925,7 @@ void Mtraxx_PlantPellyArrive(string qName) // 3 прогона
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Tireless");
@@ -939,7 +940,7 @@ void Mtraxx_PlantPellyArrive(string qName) // 3 прогона
 	SetCharacterPerk(sld, "Carpenter");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "LongRangeGrappling");
 	SetCharacterPerk(sld, "GrapplingProfessional");
@@ -953,8 +954,9 @@ void Mtraxx_PlantPellyArrive(string qName) // 3 прогона
 	EquipCharacterbyItem(sld, "blade_10");
 	GiveItem2Character(sld, "pistol4");
 	EquipCharacterbyItem(sld, "pistol4");
-	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
-    TakeNItems(sld, "cartridge", 50);
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
+    TakeNItems(sld, "bullet", 50);
+    TakeNItems(sld, "gunpowder", 50);
 	TakeNItems(sld, "potion2", 10);
 	sld.cirassId = Items_FindItemIdx("cirass1");
 	LAi_SetStayType(sld);
@@ -1072,7 +1074,7 @@ void Mtraxx_PlantSetMaxRocur() // ставим Жана Пикара
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "SailsDamageUp");
 	SetCharacterPerk(sld, "CrewDamageUp");
@@ -1643,7 +1645,7 @@ void Mtraxx_PlantMutiny() // восстание на плантации
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Mtr_PlantGuard_"+i, "sold_spa_15", "man", "man", iRank+5, SPAIN, -1, false, "soldier"));
 				FantomMakeCoolFighter(sld, iRank+5, iScl+10, iScl+10, "topor_04", "pistol4", "bullet", iScl*2+60);
-				SetCharacterPerk(sld, "SwordplayProfessional");
+			
 				SetCharacterPerk(sld, "Gunman");
 				SetCharacterPerk(sld, "GunProfessional");
 				sld.cirassId = Items_FindItemIdx("cirass1");
@@ -1712,7 +1714,7 @@ void Mtraxx_PlantMutinyFortAttack() // пришло подкрепление и�
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Mtr_FortGuard_"+i, "off_spa_4", "man", "man", iRank+5, SPAIN, -1, false, "soldier"));
 				FantomMakeCoolFighter(sld, iRank+5, iScl+10, iScl+10, "topor_04", "pistol4", "bullet", iScl*2+90);
-				SetCharacterPerk(sld, "SwordplayProfessional");
+			
 				SetCharacterPerk(sld, "Gunman");
 				SetCharacterPerk(sld, "GunProfessional");
 				sld.cirassId = Items_FindItemIdx("cirass1");
@@ -2816,7 +2818,7 @@ void Mtraxx_MeridaCreateLepricon(string qName) // ставим Леприкон�
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Tireless");
@@ -3867,7 +3869,7 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "Doctor2");
 	SetCharacterPerk(sld, "WindCatcher");
@@ -4740,8 +4742,8 @@ void Mtraxx_WolfreekIslaMonaPirates(string qName) // пиратусы в кус�
 			}
 			else 
 			{
-				FantomMakeCoolFighter(sld, 20, 60, 60, "", "mushket2", "cartridge", 120);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, 20, 60, 60, "", "mushket2", "bullet", 120);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			}
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
@@ -5579,12 +5581,11 @@ void Mtraxx_CorridaMarkus(string qName) //
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "Doctor2");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "SailingProfessional");
@@ -5598,7 +5599,6 @@ void Mtraxx_CorridaMarkus(string qName) //
 	SetCharacterPerk(sld, "Builder");
 	SetCharacterPerk(sld, "LongRangeGrappling");
 	SetCharacterPerk(sld, "GrapplingProfessional");
-	SetCharacterPerk(sld, "Brander");
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterPerk(sld, "BasicCommerce");
 	SetCharacterPerk(sld, "AdvancedCommerce");
@@ -5816,7 +5816,7 @@ void Mtraxx_CartahenaSailOver(string qName) // опоздание к Карта�
 	LocatorReloadEnterDisable("LaVega_town", "reload6", true); // закрыть на месяц
 	SetFunctionTimerCondition("Mtraxx_CartahenaLateOpen", 0, 0, 30, false);
 	DeleteAttribute(pchar, "DisableChangeFlagMode");
-	pchar.worldmapencountersoff = "0";
+	bEncOffGlobal = false;
 	int i = FindColony("Cartahena");
 	DeleteAttribute(colonies[i], "DontSetShipInPort");
 	sld = CharacterFromID("Terrax");
@@ -6235,7 +6235,7 @@ void Mtraxx_CartahenaClear(string qName) // чистим все запреты
 	LAi_LocationDisableOfficersGen("shore25", false);
 	LocatorReloadEnterDisable("shore25", "reload1_back", false);
 	DeleteAttribute(pchar, "DisableChangeFlagMode");
-	pchar.worldmapencountersoff = "0";
+	bEncOffGlobal = false;
 	int i = FindColony("Cartahena");
 	DeleteAttribute(colonies[i], "DontSetShipInPort");
 	DeleteAttribute(&locations[FindLocation("Cartahena_Town")], "QuestCapture");
@@ -7204,6 +7204,26 @@ void Mtraxx_RetributionJungle(string qName) // в джунглях
 	pchar.quest.mtraxx_retribution_freedom.win_condition.l1 = "location";
 	pchar.quest.mtraxx_retribution_freedom.win_condition.l1.location = "shore10";
 	pchar.quest.mtraxx_retribution_freedom.win_condition = "Mtraxx_RetributionSvoboda";
+}
+
+void Mtraxx_RetributionFinal_next()
+{
+	LocatorReloadEnterDisable("Carataska_jungle_02", "reload1_back", false);
+	LocatorReloadEnterDisable("Carataska_jungle_03", "reload1_back", false);
+	LocatorReloadEnterDisable("Ruins", "reload1_back", false);
+	bNoEatNoRats = false;
+	LAi_SetPlayerType(pchar);
+	bQuestDisableMapEnter = false;
+	DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
+	DeleteAttribute(pchar, "GenQuest.CannotWait");
+	if (GetCharacterIndex("Mirabella") != -1)
+	{
+		AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_139"));
+		sld = characterFromId("Mirabella");
+		sld.dialog.currentnode = "mirabelle_29";
+	}
+	pchar.quest.mtraxx_line_complete.win_condition.l1 = "MapEnter";
+	pchar.quest.mtraxx_line_complete.function = "Mtraxx_RetributionComplete";
 }
 
 void Mtraxx_RetributionComplete(string qName) // линейка пройдена полностью // 3 прогона
@@ -8600,8 +8620,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Guard_" + i, "mush_spa_" + (rand(2) + 1), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
 				if (i < 9) 
 				{
-					FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 170);
-					LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+					FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", 170);
+					LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				}
 				else 
 				{
@@ -8616,8 +8636,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 				if (i == 14) // офицер
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort1Guard_" + i, "off_spa_4", "man", "man", iRank + 5, SPAIN, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "cartridge", 200);
-					SetCharacterPerk(sld, "SwordplayProfessional");
+					FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "bullet", 200);
+				
 					SetCharacterPerk(sld, "Gunman");
 					SetCharacterPerk(sld, "GunProfessional");
 					sld.cirassId = Items_FindItemIdx("cirass1");
@@ -8718,8 +8738,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 				if (i == 14) // офицер
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort2Guard_" + i, "off_spa_5", "man", "man", iRank + 5, SPAIN, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "cartridge", 200);
-					SetCharacterPerk(sld, "SwordplayProfessional");
+					FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "bullet", 200);
+				
 					SetCharacterPerk(sld, "Gunman");
 					SetCharacterPerk(sld, "GunProfessional");
 					sld.cirassId = Items_FindItemIdx("cirass1");
@@ -8800,8 +8820,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			if (i == 14) // офицер
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaFort3Guard_" + i, "off_spa_3", "man", "man", iRank + 5, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "cartridge", 200);
-				SetCharacterPerk(sld, "SwordplayProfessional");
+				FantomMakeCoolFighter(sld, iRank + 5, 70, 70, "topor_04", "pistol4", "bullet", 200);
+			
 				SetCharacterPerk(sld, "Gunman");
 				SetCharacterPerk(sld, "GunProfessional");
 				sld.cirassId = Items_FindItemIdx("cirass1");
@@ -8875,8 +8895,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 			if (i < 3) // мушкетеры, 2 шт
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaExittownGuard_"+i, "mush_spa_"+(rand(2)+1), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 170);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", 170);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				if (MOD_SKILL_ENEMY_RATE > 2) sld.cirassId = Items_FindItemIdx("cirass1");
 				ChangeCharacterAddressGroup(sld, "Cartahena_ExitTown", "reload", "reload4");
 			}
@@ -8885,8 +8905,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 				if (i == 12) // офицер
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaExittownGuard_"+i, "off_spa_5", "man", "man", iRank+5, SPAIN, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank+5, 70, 70, "topor_04", "pistol4", "cartridge", 200);
-					SetCharacterPerk(sld, "SwordplayProfessional");
+					FantomMakeCoolFighter(sld, iRank+5, 70, 70, "topor_04", "pistol4", "bullet", 200);
+				
 					SetCharacterPerk(sld, "Gunman");
 					SetCharacterPerk(sld, "GunProfessional");
 					sld.cirassId = Items_FindItemIdx("cirass1");
@@ -8997,8 +9017,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_group_Delete("EnemyFight");
 		// офицер
 		sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownOfficer_"+i, "off_spa_5", "man", "man", iRank+7, SPAIN, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank+7, 75, 75, "topor_04", "pistol4", "cartridge", 220);
-		SetCharacterPerk(sld, "SwordplayProfessional");
+		FantomMakeCoolFighter(sld, iRank+7, 75, 75, "topor_04", "pistol4", "bullet", 220);
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 		sld.cirassId = Items_FindItemIdx("cirass1");
@@ -9012,8 +9032,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		{
 			
 			sld = GetCharacter(NPC_GenerateCharacter("Mtr_CartahenaTownMushketer_"+i, "mush_spa_"+(rand(2)+1), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", 170);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", 170);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			if (MOD_SKILL_ENEMY_RATE > 2) sld.cirassId = Items_FindItemIdx("cirass1");
 			sld.MusketerDistance = 0;
 			ChangeCharacterAddressGroup(sld, "Cartahena_Town", "reload", "reload"+i);
@@ -9112,6 +9132,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaResidenceWait1") // ждём выкупа от губернатора
 	{
+		pchar.systeminfo.DialogExitDelay = true;
 		SetLaunchFrameFormParam(StringFromKey("Roger_121", NewStr()), "Mtraxx_CartahenaResidenceMayor", 0, 5); // табличка
 		WaitDate("", 0, 0, 1, 1, 10); // крутим время
 		LaunchFrameForm();
@@ -9121,6 +9142,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_CartahenaResidenceMayor") // 
 	{
+		DeleteAttribute(pchar,"systeminfo.DialogExitDelay");
 		sld = CharacterFromID("Mtr_CartahenaMayorClone");
 		sld.lifeday = 1;
 		ChangeCharacterAddressGroup(sld, "Cartahena_Townhall", "reload", "reload1");
@@ -9489,19 +9511,19 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_RetributionZasada2") // засада
 	{
 		if (CharacterIsAlive("Tonzag") && CheckPassengerInCharacter(pchar, "Tonzag")) 
-			Return_TonzagOfficer();
+			ReturnOfficer_Tonzag();
 		
 		if (CharacterIsAlive("Knippel") && CheckPassengerInCharacter(pchar, "Knippel")) 
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 		
 		if (CharacterIsAlive("Longway") && CheckPassengerInCharacter(pchar, "Longway")) 
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 		
 		if (CharacterIsAlive("Tichingitu") && CheckPassengerInCharacter(pchar, "Tichingitu")) 
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		
 		if (CharacterIsAlive("Irons") && CheckPassengerInCharacter(pchar, "Irons")) 
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 		
 		LAi_SetFightMode(pchar, true);
 		
@@ -9798,11 +9820,11 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		StartQuestMovie(true, false, true);
 		locCameraFromToPos(-5.27, 8.23, 1.95, true, -8.62, 5.44, -6.61);
 		
-		if (CharacterIsAlive("Tonzag") && CheckPassengerInCharacter(pchar, "Tonzag")) Return_TonzagOfficer();
-		else if (CharacterIsAlive("Knippel") && CheckPassengerInCharacter(pchar, "Knippel")) Return_KnippelOfficer();
-		else if (CharacterIsAlive("Longway") && CheckPassengerInCharacter(pchar, "Longway")) Return_LongwayOfficer();
-		else if (CharacterIsAlive("Tichingitu") && CheckPassengerInCharacter(pchar, "Tichingitu")) Return_TichingituOfficer();
-		else if (CharacterIsAlive("Irons") && CheckPassengerInCharacter(pchar, "Irons")) Return_IronsOfficer();
+		if (CharacterIsAlive("Tonzag") && CheckPassengerInCharacter(pchar, "Tonzag")) ReturnOfficer_Tonzag();
+		else if (CharacterIsAlive("Knippel") && CheckPassengerInCharacter(pchar, "Knippel")) ReturnOfficer_Knippel();
+		else if (CharacterIsAlive("Longway") && CheckPassengerInCharacter(pchar, "Longway")) ReturnOfficer_Longway();
+		else if (CharacterIsAlive("Tichingitu") && CheckPassengerInCharacter(pchar, "Tichingitu")) ReturnOfficer_Tichingitu();
+		else if (CharacterIsAlive("Irons") && CheckPassengerInCharacter(pchar, "Irons")) ReturnOfficer_Irons();
 		
 		for (i=1; i<=12; i++)
 		{
@@ -9976,7 +9998,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorTurnToLocator(pchar, "quest", "door");
 		sld = GetCharacter(NPC_GenerateCharacter("Zorro", "Enrique_1", "man", "man", 40, SPAIN, -1, false, "quest"));
-		FantomMakeCoolFighter(sld, 40, 110, 110, "blade_17", "pistol5", "cartridge", 250);
+		FantomMakeCoolFighter(sld, 40, 110, 110, "blade_17", "pistol5", "bullet", 250);
 		LAi_SetHP(sld, 750.0, 750.0);
 		sld.viper = true;
 		GiveItem2Character(sld, "cirass3");
@@ -10538,74 +10560,43 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		PlaySound("ambient\church\zvon.wav");
 		InterfaceStates.Buttons.Save.enable = true;
 		bDisableCharacterMenu = false;
-		bNoEatNoRats = false;
-		LAi_SetPlayerType(pchar);
 		AddQuestRecord("Roger_10", "17");
-		bQuestDisableMapEnter = false;//открыть карту
-		DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
-		DeleteAttribute(pchar, "GenQuest.CannotWait");
-		if (GetCharacterIndex("Mirabella") != -1)
-		{
-			AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_139"));
-			sld = characterFromId("Mirabella");
-			sld.dialog.currentnode = "mirabelle_29";
-		}
-		pchar.quest.mtraxx_line_complete.win_condition.l1 = "MapEnter";
-		pchar.quest.mtraxx_line_complete.function = "Mtraxx_RetributionComplete";
+		Mtraxx_RetributionFinal_next();
 	}
 	else if (sQuestName == "Mtraxx_RetributionFinal_Tonzag") // завершение линейки квестов вместе с Тонзагом
 	{
 		Achievment_Set("ach_CL_97"); // не раскаились в грехах Чарли Принца
-		Return_TonzagOfficer();
-		bNoEatNoRats = false;
-		LAi_SetPlayerType(pchar);
+		ReturnOfficer_Tonzag();
 		AddQuestRecord("Roger_10", "20");
-		bQuestDisableMapEnter = false;//открыть карту
-		DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
-		DeleteAttribute(pchar, "GenQuest.CannotWait");
-		if (GetCharacterIndex("Mirabella") != -1)
-		{
-			sld = characterFromId("Mirabella");
-			sld.dialog.currentnode = "mirabelle_29";
-		}
-		pchar.quest.mtraxx_line_complete.win_condition.l1 = "MapEnter";
-		pchar.quest.mtraxx_line_complete.function = "Mtraxx_RetributionComplete";
+		Mtraxx_RetributionFinal_next();
 	}
 	else if (sQuestName == "Mtraxx_RetributionFinal_Officers") // завершение линейки квестов вместе с Книппелем, Лонгвэем, Тичингиту, Томми
 	{
-		bNoEatNoRats = false;
-		LAi_SetPlayerType(pchar);
-		bQuestDisableMapEnter = false;//открыть карту
-		DeleteAttribute(pchar, "GenQuest.MapClosedNoBattle");
-		DeleteAttribute(pchar, "GenQuest.CannotWait");
-		if (GetCharacterIndex("Mirabella") != -1)
-		{
-			sld = characterFromId("Mirabella");
-			sld.dialog.currentnode = "mirabelle_29";
-		}
-		pchar.quest.mtraxx_line_complete.win_condition.l1 = "MapEnter";
-		pchar.quest.mtraxx_line_complete.function = "Mtraxx_RetributionComplete";
+		Mtraxx_RetributionFinal_next();
 		AddQuestRecord("Roger_10", "19");
-		
 		if (CharacterIsAlive("Knippel") && CheckPassengerInCharacter(pchar, "Knippel"))
 		{
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 			AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_140"));
+			return true;
 		}
 		else if (CharacterIsAlive("Longway") && CheckPassengerInCharacter(pchar, "Longway"))
 		{
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_141"));
+			return true;
 		}
 		else if (CharacterIsAlive("Tichingitu") && CheckPassengerInCharacter(pchar, "Tichingitu"))
 		{
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 			AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_142"));
+			return true;
 		}
 		else if (CharacterIsAlive("Irons") && CheckPassengerInCharacter(pchar, "Irons"))
 		{
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 			AddQuestUserData("Roger_10", "sText", StringFromKey("Roger_143"));
+			return true;
 		}
 	}
 	else

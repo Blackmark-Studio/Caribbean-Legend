@@ -46,6 +46,8 @@ void InitInterface(string iniName)
 	SetEventHandler("confirmChangeProfileName", "confirmChangeProfileName", 0);
 	SetEventHandler("MouseRClickUP","HideInfo",0);
 	SetEventHandler("ShowInfo","ShowInfo",0);
+	SetEventHandler("ShowInfoWindow","ShowInfo",0);
+	SetEventHandler("HideInfoWindow","HideInfo",0);
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
@@ -60,6 +62,9 @@ void InitInterface(string iniName)
 	SetSetupInfoText();
 	
 	SelectNation();
+
+	// логотип
+	SetMenuLogo();
 
 	if (!CheckAttribute(&GameInterface, "SavePath"))
 		GameInterface.SavePath = "SAVE";
@@ -615,6 +620,8 @@ void IDoExit(int exitCode, bool bCode)
 	DelEventHandler("exitOk", "exitOk");
 	DelEventHandler("MouseRClickUP","HideInfo");
 	DelEventHandler("ShowInfo","ShowInfo");
+	DelEventHandler("ShowInfoWindow","ShowInfo");
+	DelEventHandler("HideInfoWindow","HideInfo");
 	DelEventHandler("noteOk","procNoteOk");	
 	DelEventHandler("frame","IProcessFrame");
 	DelEventHandler("OnTableClick", "OnTableClick");
@@ -649,11 +656,12 @@ void confirmChangeProfilePass()
 
 void ShowInfo()
 {
-	g_bToolTipStarted = true;
+//	g_bToolTipStarted = true;
 	string sHeader = " ";
-	string sNode = GetCurrentNode();
+	string sNode = GetEventData();
 	string sNation;
-
+	int nChooseCol;
+	string sCol;
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
 	sPicture = "none";
 	sGroup = "none";
@@ -661,22 +669,25 @@ void ShowInfo()
 
 	switch(sNode)
 	{
-        case "CHECK_CASUALMODE":
+        case "CHECK_CASUALMODE_NAME":
 			sHeader = XI_ConvertString("Restrictions");
 			sText1 = GetRPGText("CasualMode_desc");
 			sText2 = XI_ConvertString("CasualModeAtt");
 		break;
 		
 		case "TABLE_SMALLSKILL":
-			if(CheckAttribute(&GameInterface, "TABLE_SMALLSKILL." + CurRow + "." + CurCol + ".UserData.ID"))
+			CloseTooltipNew();
+			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SMALLSKILL", 3);
+			sCol = "td" + (nChooseCol + 1);
+			if(CheckAttribute(&GameInterface, "TABLE_SMALLSKILL.tr1." + sCol + ".UserData.ID"))
 			{
-				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);
-				sText1  = GetRPGText(GameInterface.(CurTable).(CurRow).(CurCol).UserData.ID);
+				sHeader = XI_ConvertString(GameInterface.TABLE_SMALLSKILL.tr1.(sCol).UserData.ID);
+				sText1  = GetRPGText(GameInterface.TABLE_SMALLSKILL.tr1.(sCol).UserData.ID);
 			}
-			else return;
+		//	else return;
 		break;
 
-        case "STRENGTH_P":
+    /*    case "STRENGTH_P":
 			sHeader = XI_ConvertString("Strength");
 			sText1 = GetRPGText("Strength");
 		break;
@@ -709,7 +720,7 @@ void ShowInfo()
         case "LUCK_S":
 			sHeader = XI_ConvertString("Luck");
 			sText1 = GetRPGText("Luck");
-		break;
+		break;	*/
 	
 		case "NATIONS_PICTURE":
 			sNation = GetNationNameByType(sti(nulChr.nation));
@@ -747,21 +758,22 @@ void ShowInfo()
 			sText1 = GetRPGText("Rains_desc");
 		break;
 
-		case "CHECK_ARCADESAIL":
+		case "CHECK_ARCADESAIL_NAME":
 			sHeader = XI_ConvertString("Sailing Mode");
 			sText1 = GetRPGText("ArcadeSailMode_desc");
 		break;
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 }
 
 void HideInfo()
 {
-	if( g_bToolTipStarted ) 
+	CloseTooltipNew();
+/*	if( g_bToolTipStarted ) 
 	{
 		g_bToolTipStarted = false;
-		CloseTooltip();
-	}
+		CloseTooltipNew();
+	}*/
 }
 
 void ProcessCommandExecuteLeft()

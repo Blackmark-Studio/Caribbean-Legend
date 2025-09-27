@@ -1,8 +1,7 @@
-newLine {
-
+newLine
+{
 
 }
-
 HelpChooser {选择帮助主题}
 MainInterface {界面控制}
 DialogControls {对话}
@@ -12,885 +11,181 @@ Sailing1Pers {第一人称航海}
 Sailing3Pers {第三人称航海}
 FightModeControls {战斗模式}
 PrimaryLand {陆地控制}
-
-
-
-ChrCamTurnV
-{
-跟随角色的镜头垂直移动
-}
-
-ChrCamTurnH
-{
-跟随角色的镜头水平移动
-}
-
-ChrCamCameraSwitch
-{
-镜头模式
-}
-
-SwitchCameraOffset
-{
-镜头视角
-}
-
-CharacterCamera_Forward
-{
-镜头拉近
-}
-
-CharacterCamera_Backward
-{
-镜头拉远
-}
-
-ChrAiming
-{
-神射手模式 (按住)
-}
-
-ChrAimingShot
-{
-射击
-}
-
-ChrCamCameraRadius
-{
-镜头缩放
-}
-
-ChrCamNormalize
-{
-居中镜头
-}
-
-ShipCamera_Turn_V
-{
-跟随船只的镜头垂直移动
-}
-
-ShipCamera_Turn_H
-{
-跟随船只的镜头水平移动
-}
-
-ShipCamera_Forward
-{
-拉近
-}
-
-ShipCamera_Backward
-{
-拉远
-}
-
-DeckCamera_Turn_V
-{
-镜头垂直旋转 (甲板视角) 
-}
-
-DeckCamera_Turn_H
-{
-镜头水平旋转 (甲板视角) 
-}
-
-DeckCamera_Forward
-{
-前进 (甲板视角) 
-}
-
-DeckCamera_Backward
-{
-后退 (甲板视角) 
-}
-
-DeckCamera_Left
-{
-左移 (甲板视角) 
-}
-
-DeckCamera_Right
-{
-右移 (甲板视角) 
-}
-
-ChrTurnH
-{
-角色转向
-}
-
-ChrTurnV
-{
-角色移动
-}
-
-ChrTurnHL
-{
-角色左转
-}
-
-ChrTurnHR
-{
-角色右转
-}
-
-ChrAction
-{
-执行动作
-}
-
-ChrForward
-{
-向前移动
-}
-
-ChrForward1
-{
-向前移动
-}
-
-ChrForward2
-{
-向前移动 (备用) 
-}
-
-ChrBackward
-{
-向后移动
-}
-
-ChrBackward1
-{
-向后移动
-}
-
-ChrSwitchWalk
-{
-行走/奔跑
-}
-
-ChrSprint
-{
-冲刺
-}
-
-ChrRunStick
-{
-行走/奔跑
-}
-
-ChrBlock
-{
-格挡
-}
-
-ChrRecoil
-{
-快速回退
-}
-
-ChrParry
-{
-拨挡 (备选)
-}
-
-ChrAttackForce
-{
-快速攻击
-}
-
-ChrAttackFast
-{
-劈砍攻击
-}
-
-ChrAttackRound
-{
-群体攻击
-}
-
-ChrAttackBreak
-{
-重击攻击
-}
-
-ChrAttackFient
-{
-佯攻 (备选)
-}
-
-ChrAttackBreakBase
-{
-重击攻击/佯攻
-}
-
-ChrAttackRoundBase
-{
-群体攻击
-}
-
-ChrAttackChoseBase
-{
-连招控制
-}
-
-ChrBlockBase
-{
-格挡
-}
-
-ChrAttackBase
-{
-快速攻击/拨挡
-}
-
-ChrAltAttackBase
-{
-劈砍攻击/群体攻击
-}
-
-ChrFire
-{
-开火
-}
-
-ChrFightMode
-{
-战斗模式
-}
-
-ChrSwitchFightMode
-{
-切换战斗模式
-}
-
-BulletChanger
-{
-切换弹药
-}
-
-PotionChanger
-{
-切换治疗药水
-}
-
-BOAL_UsePotion
-{
-使用治疗药水
-}
-
-BOAL_ActivateRush
-{
-使用奥美托奇利酊剂
-}
-
-BOAL_DeadSearch
-{
-掠夺
-}
-
-UseAntidote
-{
-使用解毒剂
-}
-
-Alchemy
-{
-炼金术
-}
-
-Inventory
-{
-物品栏
-}
-
-ShipState
-{
-舰队
-}
-
-QuestBook
-{
-日志
-}
-
-MapView
-{
-地图
-}
-
-Abilities
-{
-角色
-}
-
-Nations
-{
-国家
-}
-
-Dolly
-{
-激活玛雅神像
-}
-
-Ultimate_potion
-{
-饮用印第安药水
-}
-
-Ship_TurnLeft
-{
-船只左转
-}
-
-Ship_TurnRight
-{
-船只右转
-}
-
-Ship_SailUp
-{
-升起船帆
-}
-
-Ship_SailDown
-{
-降下船帆
-}
-
-Ship_Fire
-{
-开火!
-}
-
-Sea_CameraSwitch
-{
-航海镜头模式
-}
-
-TelescopeMode
-{
-切换望远镜
-}
-
-TelescopeZoomIn
-{
-望远镜 (拉近)
-}
-
-TelescopeZoomOut
-{
-望远镜 (拉远)
-}
-
-BI_MapEnter
-{
-全局地图
-}
-
-WMapTurnH
-{
-绕船只旋转镜头 (地图模式)
-}
-
-WMapTurnV
-{
-镜头高度 (地图模式)
-}
-
-WMapCameraRotate
-{
-镜头滑动/旋转模式开启
-}
-
-WMapForward
-{
-镜头拉近
-}
-
-WMapBackward
-{
-镜头拉远
-}
-
-WMapCameraSwitch
-{
-切换视角模式
-}
-
-WMapShipSailUp
-{
-向前航行
-}
-
-WMapShipSailDown
-{
-向后航行
-}
-
-WMapShipTurnLeft
-{
-左转
-}
-
-WMapShipTurnRight
-{
-右转
-}
-
-WMapCancel
-{
-退出地图到海面
-}
-
-Interface
-{
-角色菜单
-}
-
-MainMenu
-{
-主菜单
-}
-
-MainMenuDouble
-{
-主菜单
-}
-
-Help
-{
-游戏帮助
-}
-
-BICommandsActivate
-{
-动作菜单
-}
-
-LICommandsActivate
-{
-动作菜单
-}
-
-BICommandsConfirm
-{
-选择命令
-}
-
-BICommandsCancel
-{
-取消命令
-}
-
-BICommandsUp
-{
-动作菜单-向上导航
-}
-
-BICommandsDown
-{
-动作菜单-向下导航
-}
-
-BICommandsLeft
-{
-动作菜单-向左导航
-}
-
-BICommandsRight
-{
-动作菜单-向右导航
-}
-
-MiniMapZoomIn
-{
-迷你地图拉近
-}
-
-MiniMapZoomOut
-{
-迷你地图拉远
-}
-
-BIFastCommand
-{
-快速动作
-}
-
-HelpChooser_Cancel
-{
-退出帮助
-}
-
-HelpChooser_Action
-{
-显示当前元素的帮助
-}
-
-HelpChooser_Next
-{
-下一个帮助元素
-}
-
-HelpChooser_Prev
-{
-上一个帮助元素
-}
-
-HelpChooser_Left
-{
-左 (帮助模式) 
-}
-
-HelpChooser_Right
-{
-右 (帮助模式) 
-}
-
-HelpChooser_Up
-{
-上 (帮助模式) 
-}
-
-HelpChooser_Down
-{
-下 (帮助模式) 
-}
-
-DlgAction
-{
-对话中选择回复
-}
-
-DlgAction1
-{
-对话中选择回复
-}
-
-DlgUp
-{
-对话中上一条回复
-}
-
-DlgDown
-{
-对话中下一条回复
-}
-
-DlgScrollUp
-{
-滚动对话向下
-}
-
-DlgScrollDown
-{
-滚动对话向上
-}
-
-hk_charge1
-{
-装填圆形炮弹
-}
-
-hk_charge2
-{
-装填霰弹
-}
-
-hk_charge3
-{
-装填链弹
-}
-
-hk_charge4
-{
-装填炸弹
-}
-
-hk_Cure
-{
-使用治疗合剂
-}
-
-hk_Rush
-{
-使用"狂怒"能力
-}
-
-hk_ImmediateReload
-{
-立即装填
-}
-
-hk_LightRepair
-{
-紧急维修
-}
-
-hk_InstantRepair
-{
-维修
-}
-
-hk_Turn180
-{
-转向
-}
-
-hk_SandbankManeuver
-{
-激活沙洲机动
-}
-
-ChrStrafeLeft
-{
-左移
-}
-
-ChrStrafeRight
-{
-右移
-}
-
-OfficersCharge
-{
-副官命令: 自由战斗
-}
-
-OfficersHold
-{
-副官命令: 坚守位置
-}
-
-OfficersFollow
-{
-副官命令: 跟随
-}
-
-FLT_LoadBalls
-{
-舰队命令: 装填圆形炮弹
-}
-
-FLT_LoadGrapes
-{
-舰队命令: 装填霰弹
-}
-
-FLT_LoadChain
-{
-舰队命令: 装填链弹
-}
-
-FLT_LoadBombs
-{
-舰队命令: 装填炸弹
-}
-
-FLT_SailAway
-{
-舰队命令: 驶离
-}
-
-FLT_LowerSails
-{
-舰队命令: 降下船帆
-}
-
-FLT_ProtFlagship
-{
-舰队命令: 保护旗舰
-}
-
-Fast_store
-{
-快速旅行: 商店
-}
-
-Fast_shipyard
-{
-快速旅行: 造船厂
-}
-
-Fast_tavern
-{
-快速旅行: 酒馆
-}
-
-Fast_townhall
-{
-快速旅行: 市政厅
-}
-
-Fast_bank
-{
-快速旅行: 放债人
-}
-
-Fast_church
-{
-快速旅行: 教堂
-}
-
-Fast_brothel
-{
-快速旅行: 妓院
-}
-
-Fast_portoffice
-{
-快速旅行: 港务局
-}
-
-Fast_prison
-{
-快速旅行: 监狱
-}
-
-Fast_port
-{
-快速旅行: 港口
-}
-
-LI_Fast_store
-{
-商店
-}
-
-LI_Fast_shipyard
-{
-造船厂
-}
-
-LI_Fast_tavern
-{
-酒馆
-}
-
-LI_Fast_townhall
-{
-市政厅
-}
-
-LI_Fast_bank
-{
-银行
-}
-
-LI_Fast_church
-{
-教堂
-}
-
-LI_Fast_brothel
-{
-妓院
-}
-
-LI_Fast_portoffice
-{
-港务局
-}
-
-LI_Fast_prison
-{
-监狱
-}
-
-LI_Fast_port
-{
-港口
-}
-
-HK_Musket
-{
-装备长枪
-}
-
-HK_FencingL
-{
-装备轻型武器
-}
-
-HK_FencingS
-{
-装备中型武器
-}
-
-HK_FencingH
-{
-装备重型武器
-}
-
-HK_bullet
-{
-装填子弹 (修改器) 
-}
-
-HK_cartridge
-{
-装填纸弹筒 (修改器) 
-}
-
-HK_grapeshot
-{
-装填鹿弹 (修改器) 
-}
-
-HK_harpoon
-{
-装填鱼叉 (修改器) 
-}
-
-HK_GunEchin
-{
-装填刺猬弹 (修改器) 
-}
-
-HK_grenade
-{
-装填手榴弹 (修改器) 
-}
-
-hk_Cabin
-{
-船长室
-}
-
-CannonsRange
-{
-显示射程
-}
-
-ChangeShowInterface
-{
-隐藏/显示UI
-}
-
-FreeCam
-{
-自由镜头
-}
-
-TimeScale
-{
-时间加速/减速
-}
-
-TimeScaleFasterBA
-{
-时间加速
-}
-
-TimeScaleSlowerBA
-{
-时间减速
-}
-
-FireCamera_Set
-{
-瞄准视角
-}
+ChrCamTurnV {跟随角色的镜头垂直移动}
+ChrCamTurnH {跟随角色的镜头水平移动}
+ChrCamCameraSwitch {镜头模式}
+SwitchCameraOffset {镜头视角}
+CharacterCamera_Forward {镜头拉近}
+CharacterCamera_Backward {镜头拉远}
+ChrAiming {神射手模式 (按住)}
+ChrAimingShot {射击}
+ChrCamCameraRadius {镜头缩放}
+ChrCamNormalize {居中镜头}
+ShipCamera_Turn_V {跟随船只的镜头垂直移动}
+ShipCamera_Turn_H {跟随船只的镜头水平移动}
+ShipCamera_Forward {拉近}
+ShipCamera_Backward {拉远}
+DeckCamera_Turn_V {镜头垂直旋转 (甲板视角)}
+DeckCamera_Turn_H {镜头水平旋转 (甲板视角)}
+DeckCamera_Forward {前进 (甲板视角)}
+DeckCamera_Backward {后退 (甲板视角)}
+DeckCamera_Left {左移 (甲板视角)}
+DeckCamera_Right {右移 (甲板视角)}
+ChrTurnH {角色转向}
+ChrTurnV {角色移动}
+ChrTurnHL {角色左转}
+ChrTurnHR {角色右转}
+ChrAction {执行动作}
+ChrForward {向前移动}
+ChrForward1 {向前移动}
+ChrForward2 {向前移动 (备用)}
+ChrBackward {向后移动}
+ChrBackward1 {向后移动}
+ChrSwitchWalk {行走/奔跑}
+ChrSprint {冲刺}
+ChrRunStick {行走/奔跑}
+ChrBlock {格挡}
+ChrRecoil {快速回退}
+ChrParry {拨挡 (备选)}
+ChrAttackForce {快速攻击}
+ChrAttackFast {劈砍攻击}
+ChrAttackRound {群体攻击}
+ChrAttackBreak {重击攻击}
+ChrAttackFient {佯攻 (备选)}
+ChrAttackBreakBase {重击攻击}
+ChrAttackRoundBase {群体攻击}
+ChrAttackChoseBase {连招控制}
+ChrBlockBase {格挡}
+ChrAttackBase {快速攻击/拨挡}
+ChrAltAttackBase {劈砍攻击/群体攻击}
+ChrFire {开火}
+ChrFightMode {战斗模式}
+ChrSwitchFightMode {切换战斗模式}
+BulletChanger {切换弹药}
+PotionChanger {切换治疗药水}
+BOAL_UsePotion {使用治疗药水}
+BOAL_ActivateRush {使用奥美托奇利酊剂}
+BOAL_DeadSearch {掠夺}
+UseAntidote {使用解毒剂}
+Alchemy {炼金术}
+Inventory {物品栏}
+ShipState {舰队}
+QuestBook {日志}
+MapView {地图}
+Abilities {角色}
+Nations {国家}
+Dolly {激活玛雅神像}
+Ultimate_potion {饮用印第安药水}
+Ship_TurnLeft {船只左转}
+Ship_TurnRight {船只右转}
+Ship_SailUp {升起船帆}
+Ship_SailDown {降下船帆}
+Ship_Fire {开火!}
+Sea_CameraSwitch {航海镜头模式}
+TelescopeMode {切换望远镜}
+TelescopeZoomIn {望远镜 (拉近)}
+TelescopeZoomOut {望远镜 (拉远)}
+BI_MapEnter {全局地图}
+WMapTurnH {绕船只旋转镜头 (地图模式)}
+WMapTurnV {镜头高度 (地图模式)}
+WMapCameraRotate {镜头滑动/旋转模式开启}
+WMapForward {镜头拉近}
+WMapBackward {镜头拉远}
+WMapCameraSwitch {切换视角模式}
+WMapShipSailUp {向前航行}
+WMapShipSailDown {向后航行}
+WMapShipTurnLeft {左转}
+WMapShipTurnRight {右转}
+WMapCancel {退出地图到海面}
+TimeScaleOn {加速时间}
+TimeScaleOff {关闭加速}
+Interface {角色菜单}
+MainMenu {主菜单}
+MainMenuDouble {主菜单}
+Help {游戏帮助}
+BICommandsActivate {动作菜单}
+LICommandsActivate {动作菜单}
+BICommandsConfirm {选择命令}
+BICommandsCancel {取消命令}
+BICommandsUp {动作菜单-向上导航}
+BICommandsDown {动作菜单-向下导航}
+BICommandsLeft {动作菜单-向左导航}
+BICommandsRight {动作菜单-向右导航}
+MiniMapZoomIn {迷你地图拉近}
+MiniMapZoomOut {迷你地图拉远}
+BIFastCommand {快速动作}
+HelpChooser_Cancel {退出帮助}
+HelpChooser_Action {显示当前元素的帮助}
+HelpChooser_Next {下一个帮助元素}
+HelpChooser_Prev {上一个帮助元素}
+HelpChooser_Left {左 (帮助模式)}
+HelpChooser_Right {右 (帮助模式)}
+HelpChooser_Up {上 (帮助模式)}
+HelpChooser_Down {下 (帮助模式)}
+DlgAction {对话中选择回复}
+DlgAction1 {对话中选择回复}
+DlgUp {对话中上一条回复}
+DlgDown {对话中下一条回复}
+DlgScrollUp {滚动对话向下}
+DlgScrollDown {滚动对话向上}
+hk_charge1 {装填圆形炮弹}
+hk_charge2 {装填霰弹}
+hk_charge3 {装填链弹}
+hk_charge4 {装填炸弹}
+hk_Cure {使用治疗合剂}
+hk_Rush {使用"狂怒"能力}
+hk_ImmediateReload {立即装填}
+hk_LightRepair {紧急维修}
+hk_InstantRepair {维修}
+hk_Turn180 {转向}
+hk_SandbankManeuver {激活沙洲机动}
+ChrStrafeLeft {左移}
+ChrStrafeRight {右移}
+OfficersCharge {副官命令: 自由战斗}
+OfficersHold {副官命令: 坚守位置}
+OfficersFollow {副官命令: 跟随}
+FLT_LoadBalls {舰队命令: 装填圆形炮弹}
+FLT_LoadGrapes {舰队命令: 装填霰弹}
+FLT_LoadChain {舰队命令: 装填链弹}
+FLT_LoadBombs {舰队命令: 装填炸弹}
+FLT_SailAway {舰队命令: 驶离}
+FLT_LowerSails {舰队命令: 降下船帆}
+FLT_ProtFlagship {舰队命令: 保护旗舰}
+Fast_store {快速旅行: 商店}
+Fast_shipyard {快速旅行: 造船厂}
+Fast_tavern {快速旅行: 酒馆}
+Fast_townhall {快速旅行: 市政厅}
+Fast_bank {快速旅行: 放贷人}
+Fast_church {快速旅行: 教堂}
+Fast_brothel {快速旅行: 妓院}
+Fast_portoffice {快速旅行: 港务局}
+Fast_prison {快速旅行: 监狱}
+Fast_port {快速旅行: 港口}
+LI_Fast_store {商店}
+LI_Fast_shipyard {造船厂}
+LI_Fast_tavern {酒馆}
+LI_Fast_townhall {市政厅}
+LI_Fast_bank {银行}
+LI_Fast_church {教堂}
+LI_Fast_brothel {妓院}
+LI_Fast_portoffice {港务局}
+LI_Fast_prison {监狱}
+LI_Fast_port {港口}
+HK_Musket {装备长枪}
+HK_FencingL {装备轻型武器}
+HK_FencingS {装备中型武器}
+HK_FencingH {装备重型武器}
+HK_bullet {装填子弹 (修改器)}
+HK_cartridge {装填纸弹筒 (修改器)}
+HK_grapeshot {装填鹿弹 (修改器)}
+HK_harpoon {装填鱼叉 (修改器)}
+HK_GunEchin {装填刺猬弹 (修改器)}
+HK_grenade {装填手榴弹 (修改器)}
+hk_Cabin {船长室}
+CannonsRange {显示射程}
+ChangeShowInterface {隐藏/显示UI}
+FreeCam {自由镜头}
+TimeScale {时间加速/减速}
+TimeScaleFasterBA {时间加速}
+TimeScaleSlowerBA {时间减速}
+FireCamera_Set {瞄准视角}

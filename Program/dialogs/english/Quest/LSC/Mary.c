@@ -35,31 +35,8 @@ void ProcessDialogEvent()
 		case "Cabin":
 			dialog.text = "Marcello, I know him. He is a friend of the Rivados and the pirates. Adolf would never work with him. Hey... do you smell gun powder? And there's blood on the wall... He killed Adolf and now he's trying to trick us! He must be working for the Admiral! Kill him!";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
-		break;
-		
-		case "Cabin_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			DialogExit();
-			sld = characterFromId("Marchello");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-			{
-				for (i=1; i<=3; i++)
-				{
-					sld = characterFromId("CyclopGuard_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 		// на улице
@@ -91,7 +68,7 @@ void ProcessDialogEvent()
 		
 		case "Town_4":
 			dialog.text = "And here we are... Now tell me, bastard, where is the key?!";
-			link.l1 = "Wow! Ha, it seems that no help is needed... Mary.";
+			link.l1 = "Shiver me timbers! Ha, it seems that no help is needed... Mary.";
 			link.l1.go = "Town_5";
 		break;
 		
@@ -2772,7 +2749,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -2787,7 +2764,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

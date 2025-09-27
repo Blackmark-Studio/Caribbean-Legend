@@ -1,218 +1,46 @@
-Patria_1
-{
-Noel
-}
-Patria_2
-{
-Forget
-}
-
-Patria_3
-{
-Eclatant
-}
-
-Patria_4
-{
-Hubert
-}
-Patria_5
-{
-Dassien
-}
-
-Patria_6
-{
-Exploration mode: timer extended. Complete the quest!
-}
-
-Patria_7
-{
-The Spanish has been given a note to send parleys to Trinidad's lighthouse to start negotiations!
-}
-
-Patria_8
-{
-One day has passed...
-}
-
-Patria_9
-{
-Exploration mode: timer is not disabled. Meet the deadline!
-}
-
-Patria_10
-{
-Baron Noel Forget has left your ship!
-}
-
-Patria_11
-{
-Another enemy ship is on us!
-}
-
-Patria_12
-{
-Frederick
-}
-
-Patria_13
-{
-Peter
-}
-Patria_14
-{
-Stuyvesant
-}
-
-Patria_15
-{
-The Company's trade convoy
-}
-
-Patria_16
-{
-The Company's Ost-Indian has been captured!
-}
-
-Patria_17
-{
-Oliphant
-}
-
-Patria_18
-{
-Lenart
-}
-Patria_19
-{
-Klap
-}
-
-Patria_20
-{
-Edward
-}
-Patria_21
-{
-Doily
-}
-
-Patria_22
-{
-Trafalgar
-}
-
-Patria_23
-{
-Kristian
-}
-Patria_24
-{
-Beusson
-}
-
-Patria_25
-{
-The Company's Africa convoy
-}
-
-Patria_26
-{
-Exploration mode: timer is disabled.
-}
-
-Patria_27
-{
-We must destroy the enemy squadron!
-}
-
-Patria_28
-{
-Colonel Doily has given a signal to land in Blanca lagoon!
-}
-
-Patria_29
-{
-After a two hours bombardement,@<NewStr()>the Dutch has sent a parley party
-}
-
-Patria_30
-{
-Christian
-}
-Patria_31
-{
-Tior
-}
-
-Patria_32
-{
-Fortune
-}
-
-Patria_33
-{
-Steven
-}
-Patria_34
-{
-Dodson
-}
-
-Patria_35
-{
-Red Dragon
-}
-
-Patria_36
-{
-Marcus
-}
-Patria_37
-{
-Tyrex
-}
-
-Patria_38
-{
-Two hours later...@<NewStr()>
-}
-
-Patria_39
-{
-Baron Noel Forget died of fever!
-}
-
-Patria_40
-{
-Olivier
-}
-Patria_41
-{
-Burden
-}
-
-Patria_42
-{
-Mary
-}
-Patria_43
-{
-Casper
-}
-
-Patria_44
-{
-The governor of the mine has been spotted in one of the houses, caught and imprisoned
-}
-
-Patria_45
-{
-Twenty three hours later...@<NewStr()>Peter Stuyvesant has shown himself at the gates
-}
-
-Patria_46
-{
-One day later...@<NewStr()>
-}
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 {Eclatant}
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {Exploration mode: timer extended. Complete the quest!}
+Patria_7 {The Spanish has been given a note to send parleys to Trinidad's lighthouse to start negotiations!}
+Patria_8 {One day has passed...}
+Patria_9 {Exploration mode: timer is not disabled. Meet the deadline!}
+Patria_10 {Baron Noel Forget has left your ship!}
+Patria_11 {Another enemy ship is on us!}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {The Company's trade convoy}
+Patria_16 {The Company's Ost-Indian has been captured!}
+Patria_17 {Oliphant}
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 {Trafalgar}
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {The Company's Africa convoy}
+Patria_26 {Exploration mode: timer is disabled.}
+Patria_27 {We must destroy the enemy squadron!}
+Patria_28 {Colonel Doily has given a signal to land in Blanca lagoon!}
+Patria_29 {After a two hours bombardement,@<NewStr()>the Dutch has sent a parley party}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 {Fortune}
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 {Red Dragon}
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {Two hours later...@<NewStr()>}
+Patria_39 {Baron Noel Forget died of fever!}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {The governor of the mine has been spotted in one of the houses, caught and imprisoned}
+Patria_45 {Twenty three hours later...@<NewStr()>Peter Stuyvesant has shown himself at the gates}
+Patria_46 {One day later...@<NewStr()>}

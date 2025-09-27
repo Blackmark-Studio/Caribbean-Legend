@@ -84,7 +84,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_4":
 			DialogExit();
-			Log_Info("You have received a bill of debt");
+			Log_Info("Avete ricevuto una fattura di debito");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "letter_open");
 			ChangeItemDescribe("letter_open", "itmdescr_letter_open_usurer");
@@ -283,9 +283,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Eccellente! Sai cosa fare dopo - come l'ultima volta. Ecco i documenti - presentali al comandante della prigione. È stato un piacere fare affari con te, Capitano.";
 			link.l1 = "C'è poco da godere in questa situazione. Addio.";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
-			Log_Info("You have received a bill of debt");
+			Log_Info("Avete ricevuto una fattura di debito");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "letter_open");
 			ChangeItemDescribe("letter_open", "itmdescr_letter_open_usurer");

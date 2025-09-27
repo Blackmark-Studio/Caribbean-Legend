@@ -18,31 +18,25 @@ void ProcessDialogEvent()
 		break;
 
 		case "First time":
-			dialog.text = LinkRandPhrase("Oh my Lord, I am so glad that I met you!",
-				"Finally someone!",
-				"Oh my God, I am so glad to see you!");
-			Link.l1 = LinkRandPhrase("What's up, babe?",
-				"Any problems, darling?",
-				"Don't become so agitated - it isn't good for young lady's health. Now, just tell me - what happened?");
+			dialog.text = LinkRandPhrase("Oh my Lord, I am so glad I met you!","Finally, someone!","Oh my God, I am so glad to see you!");
+			Link.l1 = LinkRandPhrase("What's going on, darling?","Any problems, darling?","Don't become so agitated - it isn't good for a young lady's health. Now, just tell me - what happened?");
 			Link.l1.go = "Step_1";
 		break;
 		case "Step_1":
-			dialog.text = LinkRandPhrase("My friend... she's so brave... she got into an abandoned well!",
-				"My friend went down in an abandoned well, and she still hasn't come out! She's spent several hours there!",
-				"My friend has just disappeared in an abandoned well!");
-			Link.l1 = "And why the hell did she get in there?!";
+			dialog.text = LinkRandPhrase("My friend... she's so brave... she went down into an abandoned well!","My friend went down into an abandoned well, and she still hasn't come out! She's been there for several hours!","My friend has just vanished in an abandoned well!");
+			Link.l1 = "And why the hell did she go in there?!";
 			Link.l1.go = "Step_2";
 		break;
 		case "Step_2":
-			dialog.text = "Oh, you know, she fears absolutely anything! She heard that there was a dungeon full of gold, so she went down there... But I am not a fool, I wouldn't even think of it!";
-			Link.l1 = "That's right, there's nothing for you to do in such a place.";
+			dialog.text = "Oh, you know, she's afraid of absolutely everything! She heard there was a dungeon full of gold, so she went down there... But I'm no fool, I wouldn't even consider it!";
+			Link.l1 = "That's right, there's nothing for you to do in a place like this.";
 			Link.l1.go = "Step_3";
 		break;		
 		case "Step_3":
 			dialog.text = "But what am I supposed to do now? Please, help her, for Heaven's sake!";
 			Link.l1 = "Alright, I'll figure it out. And you'd better go home, there's nothing for you to do here.";
 			Link.l1.go = "Step_agree";
-			Link.l2 = "These are your problems, I don't wanna waste my time. Farewell...";
+			Link.l2 = "These are your problems, I don't want to waste my time. Farewell...";
 			Link.l2.go = "Step_disAgree";
 		break;
 
@@ -117,23 +111,23 @@ void ProcessDialogEvent()
 		break;			
 		case "FackYou":
             NextDiag.TempNode = "FackYou";
-            dialog.text = "I don't wanna talk with such a callous "+ GetSexPhrase("clot","wench") +". Get lost!";
+            dialog.text = "I don't want to talk to such a callous person "+GetSexPhrase("clot","wench")+". Get lost!";
 			Link.l1 = "Heh, what a bitch...";
 			Link.l1.go = "exit";
 		break;
 
 		case "Underground0": //девка реально заблудилась
-            dialog.text = "Oh my God, I am so glad to see you!";
-			Link.l1 = "What's up, beauty?";
+            dialog.text = "Oh my God, I'm so glad to see you!";
+			Link.l1 = "What's up, beautiful?";
 			Link.l1.go = "Underground0_1";
 		break;
 		case "Underground0_1": 
-            dialog.text = "I've got lost here! Oh my God, I am so terribly scared!!!";
-			Link.l1 = "Well, you're fine now. Follow me, I will show you the way. Once you are on the surface, run home, and pray that I'll never see you here again!";
+            dialog.text = "I've gotten lost here! Oh my God, I am so terribly scared!!!";
+			Link.l1 = "Well, you're fine now. Follow me, I will show you the way. Once you are on the surface, run home, and pray that I never see you here again!";
 			Link.l1.go = "Underground0_2";
 		break;
 		case "Underground0_2": 
-            dialog.text = "As you say, " + GetAddress_Form(NPChar) + ".";
+            dialog.text = "As you say, "+GetAddress_Form(NPChar)+".";
 			Link.l1 = "Fine.";
 			Link.l1.go = "exit";
 			npchar.LifeDay = 0;
@@ -143,38 +137,38 @@ void ProcessDialogEvent()
 		break;
 
 		case "Underground1": //крутая мочалка
-            dialog.text = "Wow, it seems that someone else took interest in this dungeon!";
-			Link.l1 = "Beauty, what you are doing here?";
+            dialog.text = "Shiver me timbers, it seems someone else has taken an interest in this dungeon!";
+			Link.l1 = "Beauty, what are you doing here?";
 			Link.l1.go = "Underground1_1";
 		break;
 		case "Underground1_1": 
             dialog.text = "None of your business!";
-			Link.l1 = "Wow, that's an answer for a million pesos...";
+			Link.l1 = "Shiver me timbers, that's an answer worth a million pesos...";
 			Link.l1.go = "Underground1_2";
 		break;
 		case "Underground1_2": 
             dialog.text = "For two million. Will you just go your own way? I couldn't care less about you.";
-			Link.l1 = "Well, the feeling is mutual, but your friend above was worried sick about you...";
+			Link.l1 = "Well, the feeling is mutual, but your friend upstairs was worried sick about you...";
 			Link.l1.go = "Underground1_3";
 		break;
 		case "Underground1_3": 
-            dialog.text = "What a fool! She would shit her pants with fright, and she thinks that I am as same as her.";
-			Link.l1 = "Wow, you surely don't like her. The devil in a skirt - that's who you are.";
+            dialog.text = "What a fool! She would shit herself with fright, and she thinks that I am just like her.";
+			Link.l1 = "Shiver me timbers, you surely don't like her. The devil in a skirt - that's what you are.";
 			Link.l1.go = "Underground1_4";
 		break;
 		case "Underground1_4": 
-            dialog.text = "Hey, choose your words! And better yet, just get lost.";
+            dialog.text = "Hey, watch your words! And better yet, just get lost.";
 			Link.l1 = "Well, if you don't need my help...";
 			Link.l1.go = "Underground1_5";
 		break;
 		case "Underground1_5": 
             dialog.text = "No, I don't!";
-			Link.l1 = "Then farewell and good luck to you.";
+			Link.l1 = "Then farewell, and good luck to you.";
 			Link.l1.go = "exit";
 			NextDiag.TempNode = "Underground1_again";
 		break;
 		case "Underground1_again": 
-            dialog.text = "You again? Get lost, I don't wanna see you anymore...";
+            dialog.text = "You again? Get lost, I don't want to see you anymore...";
 			Link.l1 = "Hmm...";
 			Link.l1.go = "exit";
 			NextDiag.TempNode = "Underground1_again";

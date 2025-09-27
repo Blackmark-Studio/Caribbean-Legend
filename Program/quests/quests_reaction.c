@@ -702,21 +702,6 @@ void QuestComplete(string sQuestName, string qname)
 			bDisableFastReload = true;
 		break;
 
-        case "God_hit_us": // это такой прикол - задействовать в ловушки для сундуков(boal)
-			iTemp = 10+rand(15);
-			if ((MakeInt(pchar.chr_ai.hp)-iTemp) > 0)
-            {
-    			LAi_SetActorType(PChar);
-                LAi_ActorAnimation(PChar, "hit_attack_2", "pchar_back_to_player", 1.0);
-            }
-			if (!LAi_IsImmortal(pchar))
-            {
-				LAi_ApplyCharacterDamage(pchar, iTemp, "other");
-				if(bDrawBars) SendMessage(pchar, "lfff", MSG_CHARACTER_VIEWDAMAGE, iTemp, MakeFloat(MakeInt(pchar.chr_ai.hp)), MakeFloat(MakeInt(pchar.chr_ai.hp_max)));
-				LAi_CheckKillCharacter(pchar);
-				SendMessage(pchar, "l", MSG_CHARACTER_STOPSTRAFE);
-			}
-		break;
 		// диалог с ГГ генератор
         case "TalkSelf_Start":
             StartActorSelfDialog("TalkSelf_Main");
@@ -1605,10 +1590,10 @@ void QuestComplete(string sQuestName, string qname)
 			TavernWaitDate(sTotalTemp);
 		break;
 
-		case "SkritoeBessmertie":
+		case "HiddenImmortality":
 			LAi_SetCurHP(pchar, 25.0);
 			LAi_SetImmortal(pchar, false);
-			LAi_SetCheckMinHP(pchar, 1, true, "SkritoeBessmertie");
+			LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 		break;
 		
 		// belamour тут должен быть default: но наш компилятор решил читать между блоков )))
@@ -1647,6 +1632,8 @@ void QuestComplete(string sQuestName, string qname)
 		if(EdgesJustice_QuestComplete(sQuestName, qname)) return;
 		if(VPVL_QuestComplete(sQuestName, qname)) return;
 		if(MysteryOfBetsyPrice_QuestComplete(sQuestName, qname)) return;
+		if(LaEspadaDelRey_QuestComplete(sQuestName, qname)) return;
+		if(WildRose_QuestComplete(sQuestName, qname)) return;
 	}	
 }
 
@@ -1736,7 +1723,7 @@ void WaitNextHours(string qName)
 	if(sti(pchar.quest.waithours) == 24)	sHour = StringFromKey("quests_reaction_15");
 	if(isShipInside(pchar.location))
 	{
-		SetLaunchFrameFormParam(sHour, "", 0.1, 2.0);
+		SetLaunchFrameFormParam(sHour, "Update_Deck_Model", 0.1, 2.0);
 	}
 	else
 	{
@@ -1765,7 +1752,7 @@ void WaitNextDays(string qName)
 	if(sti(pchar.quest.waithours) == 1)	sDay = StringFromKey("quests_reaction_15");
 	if(isShipInside(pchar.location))
 	{
-		SetLaunchFrameFormParam(sDay, "", 0.1, 2.0);
+		SetLaunchFrameFormParam(sDay, "Update_Deck_Model", 0.1, 2.0);
 	}
 	else
 	{

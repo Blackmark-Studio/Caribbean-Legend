@@ -534,6 +534,7 @@ void FillPriceListTownSorted(string _tabName)
 }
 
 // --> mitrokosta сортировка по дате
+/*
 int DateStringToInt(string dateString) {
 	int pos;
 	string time, date;
@@ -563,6 +564,7 @@ int DateStringToInt(string dateString) {
 	
 	return totalTime;
 }
+*/
 
 void FillPriceListTownSortedByDate(string _tabName) {
 	string	cityId, attr2, firstId;
@@ -826,7 +828,7 @@ void FillPriceList(string _tabName, string  attr1)
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
             
-	        GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
+	        GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
 			GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 			GameInterface.(_tabName).(row).td1.icon.offset = "1, 0";
 			GameInterface.(_tabName).(row).td1.icon.width = 32;
@@ -910,11 +912,11 @@ void ShowInfoWindow()
 	switch (sCurrentNode)
 	{
 		case "TABLE_GOODS":
+		    sGroup = "GOODS";
 		    sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
 		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
 		    iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-			sGroup = GetGoodImageGroup(&Goods[iItem]);
-		    sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
+		    sText1  = GetAssembledString(GetConvertStr(GameInterface.(CurTable).(CurRow).UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
 			sText2 = "Цвета указателя типа товара :" + newStr() + 
 				 "- зелёный : колониальные товары" + newStr() + 
 				 "- синий : импортные товары" + newStr() + 
@@ -943,7 +945,7 @@ void ShowInfoWindow()
 		break;
 		// <--
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	CreateTooltip(sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64);
 
 }
 void HideInfoWindow()

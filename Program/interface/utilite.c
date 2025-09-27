@@ -35,11 +35,21 @@ native void XI_RegistryExitKey(string key_name);
 
 #libriary "script_interface_functions"
 
+#define TOOLTIP_WIDTH_MIN 250
+#define TOOLTIP_WIDTH_MAX 500
+
 void CreateImage(string AttrName,string imgListName,string imgName,int left,int top,int right,int bottom)
 {
 	GameInterface.pictures.(AttrName).tex = imgListName;
     GameInterface.pictures.(AttrName).pic = imgName;
     SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_PLACE_IMAGE,AttrName,true,left,top,right,bottom);
+}
+
+void DeleteImage(string AttrName)
+{
+	if(CheckAttribute(&GameInterface, "pictures." + AttrName))
+		DeleteAttribute(&GameInterface, "pictures." + AttrName);
+	SendMessage(&GameInterface,"ls", MSG_INTERFACE_DELETE_PICTURE, AttrName);
 }
 
 void CreateAbsoluteImage(string AttrName,string imgListName,string imgName,int left,int top,int right,int bottom)
@@ -49,9 +59,10 @@ void CreateAbsoluteImage(string AttrName,string imgListName,string imgName,int l
     SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_PLACE_IMAGE,AttrName,false,left,top,right,bottom);
 }
 
-void SetPictureBlind(string picName,bool blindFlag,int minCol,int maxCol)
+void SetPictureBlind(string nodeName, bool blindFlag, int minCol, int maxCol, float blindUpTime, float blindDownTime)
 {
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_SET_BLIND,picName,blindFlag,minCol,maxCol);
+	SendMessage(&GameInterface, "lsllllff", MSG_INTERFACE_MSG_TO_NODE, nodeName, 5, blindFlag, minCol, maxCol, blindUpTime, blindDownTime);
+//	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_SET_BLIND,picName,blindFlag,minCol,maxCol);
 }
 
 void CreateString(int enable,string strName, string strData, string fontName, int color, int x, int y, int alignment, float scale)
@@ -88,6 +99,7 @@ void SetCurrentNode(string nodeName)
 {
     SendMessage(&GameInterface,"ls", MSG_INTERFACE_NEW_CURRENT_NODE,nodeName);
 }
+
 string GetCurrentNode()
 {
 	string retVal;
@@ -270,25 +282,6 @@ void SetFormattedTextLastLineColor(string _sNodeName, int _iColor)
 // <--
 //-------------------------------------------------------------------------------------------------------------
 
-string FloatToString(float fl,int nDigAfterPoint)
-{
-	//float fmul = pow(10.0,nDigAfterPoint);
-	//fl = fl + 0.5/fmul;
-	//int p1 = makeint(fl);
-	//int p2 = makeint((fl-p1)*fmul);
-	//return p1+"."+p2;
-
-	fl= fl + 0.5/pow(10.0,nDigAfterPoint); // округление
-	int p1 = makeint(fl); // целая часть
-	string str = p1 + "."; // строка
-	for(int n=0; n<nDigAfterPoint; n++)
-	{
-		fl = (fl - p1)*10.0;
-		p1 = makeint(fl);
-		str = str + p1;
-	}
-	return str;
-}
 int GetStringWidth(string str, string fontID, float fScale)
 {
 	if(!IsEntity(&GameInterface))
@@ -539,7 +532,7 @@ void FillShipList(string strAccess, ref chref)
 	int n;
 	string sShip;
 
-	for(n = 0; n < GetArraySize(&ShipsTypes); n++)
+	for(n = 0; n < GetArraySize(&ShipsTypes) - 1; n++)
 	{
 		if(CheckAttribute(ShipsTypes[n], "name"))
 		sShip = ShipsTypes[n].name;
@@ -681,12 +674,12 @@ void CreateTooltip(string header, string text1, int color1, string text2, int co
 	XI_MakeNode( "", "TOOLTIP_PICTURE", "tooltip_picture", 30001 ); // картинка
 	XI_MakeNode( "", "TOOLTIP_TEXTRECT", "tooltip_textborder2", 30001 ); // окно для техт2
 	XI_MakeNode( "", "TOOLTIP_TEXTRECT", "tooltip_textborder4", 30001 ); // окно для техт4
-	XI_MakeNode( "", "TOOLTIP_TITLE", "tooltip_titile", 30002 ); // заголовок
+	XI_MakeNode( "", "TOOLTIP_TITLE", "tooltip_title", 30002 ); // заголовок
 	XI_MakeNode( "", "TOOLTIP_TEXT1", "tooltip_text1", 30002 ); //
 	XI_MakeNode( "", "TOOLTIP_TEXT2", "tooltip_text2", 30002 ); //
 	XI_MakeNode( "", "TOOLTIP_TEXT3", "tooltip_text3", 30002 ); //
 	XI_MakeNode( "", "TOOLTIP_TEXT4", "tooltip_text4", 30002 ); //
-	SendMessage(&GameInterface,"lsslslslslsssll",MSG_INTERFACE_SET_TOOLTIP, header, text1,color1, text2,color2, text3,color3, text4,color4, picTexture, picGroup, picImage, nPicWidth, nPicHeight );
+//	SendMessage(&GameInterface,"lsslslslslsssll",MSG_INTERFACE_SET_TOOLTIP, header, text1,color1, text2,color2, text3,color3, text4,color4, picTexture, picGroup, picImage, nPicWidth, nPicHeight );
 }
 
 void CloseTooltip()
@@ -698,7 +691,7 @@ void CloseTooltip()
 	XI_DeleteNode( "tooltip_picture" ); // картинка
 	XI_DeleteNode( "tooltip_textborder2" ); // окно
 	XI_DeleteNode( "tooltip_textborder4" ); // окно
-	XI_DeleteNode( "tooltip_titile" ); // заголовок
+	XI_DeleteNode( "tooltip_title" ); // заголовок
 	XI_DeleteNode( "tooltip_text1" ); //
 	XI_DeleteNode( "tooltip_text2" ); //
 	XI_DeleteNode( "tooltip_text3" ); //
@@ -715,6 +708,99 @@ void CloseTooltip()
 		XI_RestoreNodeLocks(nSaveNodeState);
 		InterfaceStates.tooltip.savestate = -1;
 	}
+}
+
+void CreateTooltipNew(string sNode, string header, string text1, string text2, string text3, string text4, string picTexture, string picGroup, string picImage, int nPicWidth, int nPicHeight, bool isDarkTheme)
+{
+	
+	/*
+		список нод такой:
+		tooltip_shadow
+		tooltip_back
+		tooltip_frame
+		tooltip_titlerect
+		tooltip_title
+		tooltip_picture
+		tooltip_text1
+		tooltip_text2
+		tooltip_text3
+		tooltip_text4
+	*/
+	bool bHeader = (header != "");
+	int color1, color2, color3, color4;
+	// светлая тема
+	if(!isDarkTheme)
+	{
+		if(bHeader)
+		{
+			XI_MakeNode( "", "TOOLTIP_FRAMEW", "tooltip_frame", 30003 ); // рамка
+		}
+		else
+		{
+			XI_MakeNode( "", "TOOLTIP_FRAME_WITHOUT_TITLEW", "tooltip_frame", 30003 ); // рамка
+		}
+		XI_MakeNode( "", "TOOLTIP_TITLEORNW", "tooltip_ornament", 30002 ); // вензель
+		XI_MakeNode( "", "TOOLTIP_FRAME_SHADOW", "tooltip_shadow", 30000 ); // тень окна
+		XI_MakeNode( "", "TOOLTIP_BACKW", "tooltip_back", 30001 ); // фон окна
+		XI_MakeNode( "", "TOOLTIP_TITLERECT", "tooltip_titlerect", 30002 ); // фон заголовка
+		XI_MakeNode( "", "TOOLTIP_TITLE", "tooltip_title", 30004 ); // заголовок
+		XI_MakeNode( "", "TOOLTIP_PICTURE", "tooltip_picture", 30003 ); // картинка
+		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text1", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text2", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text3", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXTW", "tooltip_text4", 30004 ); //
+		// цвета текста для светлой
+		color1 = argb(255, 47, 39, 29); // черно-коричневый
+		color2 = argb(255, 120, 0, 0); // красный
+		color3 = argb(255, 0, 110, 26); // зелёный
+		color4 = argb(255, 47, 39, 29); // черно-коричневый доп
+	}
+	else
+	{
+		if(bHeader)
+		{
+			XI_MakeNode( "", "TOOLTIP_FRAME", "tooltip_frame", 30003 ); // рамка
+		}
+		else
+		{
+			XI_MakeNode( "", "TOOLTIP_FRAME_WITHOUT_TITLE", "tooltip_frame", 30003 ); // рамка
+		}
+		XI_MakeNode( "", "TOOLTIP_TITLEORN", "tooltip_ornament", 30002 ); // вензель
+		XI_MakeNode( "", "TOOLTIP_FRAME_SHADOW", "tooltip_shadow", 30000 ); // тень окна
+		XI_MakeNode( "", "TOOLTIP_BACK", "tooltip_back", 30001 ); // фон окна
+		XI_MakeNode( "", "TOOLTIP_TITLERECT", "tooltip_titlerect", 30002 ); // фон заголовка
+		XI_MakeNode( "", "TOOLTIP_TITLE", "tooltip_title", 30004 ); // заголовок
+		XI_MakeNode( "", "TOOLTIP_PICTURE", "tooltip_picture", 30003 ); // картинка
+		XI_MakeNode( "", "TOOLTIP_TEXT", "tooltip_text1", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXT", "tooltip_text2", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXT", "tooltip_text3", 30004 ); //
+		XI_MakeNode( "", "TOOLTIP_TEXT", "tooltip_text4", 30004 ); //
+		// цвета текста для темной
+		color1 = argb(255, 255, 255, 255); // белый
+		color2 = argb(255,255,128,128); // красный
+		color3 = argb(255, 128, 255, 128); // зелёный
+		color4 = argb(255, 255, 255, 255); // белый
+	}
+	int x1, y1, x2, y2;
+	GetNodePosition(sNode, &x1, &y1, &x2, &y2);
+	SendMessage(&GameInterface,"lsslslslslsssllllllll",MSG_INTERFACE_SET_TOOLTIP, header, text1, color1, text2, color2, text3, color3, text4, color4, picTexture, picGroup, picImage, nPicWidth, nPicHeight, x1, y1, x2, y2, TOOLTIP_WIDTH_MIN, TOOLTIP_WIDTH_MAX);
+//	if(bHeader)
+//		SendMessage(&GameInterface, "lsll", MSG_INTERFACE_MSG_TO_NODE, "tooltip_titlerect", 0, argb(255,255,100,255));
+}
+
+void CloseTooltipNew()
+{
+	XI_DeleteNode( "tooltip_frame" ); // окно
+	XI_DeleteNode( "tooltip_shadow" );
+	XI_DeleteNode( "tooltip_back" );
+	XI_DeleteNode( "tooltip_titlerect" ); // заголовок
+	XI_DeleteNode( "tooltip_picture" ); // картинка
+	XI_DeleteNode( "tooltip_ornament" );
+	XI_DeleteNode( "tooltip_title" ); // заголовок
+	XI_DeleteNode( "tooltip_text1" ); //
+	XI_DeleteNode( "tooltip_text2" ); //
+	XI_DeleteNode( "tooltip_text3" ); //
+	XI_DeleteNode( "tooltip_text4" ); //
 }
 
 string GetMoralePicture(float fMoraleValue)
@@ -900,124 +986,7 @@ string GetLevelComplexity(int _Level_Complexity)
 	return level;
 }
 
-string GetItemDescribe(int iGoodIndex)
-{
-	string GoodName = Items[iGoodIndex].name;
-	ref    arItm = &Items[iGoodIndex];
-	int    lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-    string describeStr = "";
-
-	if (CheckAttribute(arItm, "groupID"))
-	{
-		aref arGrape;
-		if(arItm.groupID == GUN_ITEM_TYPE)
-		{
-			if(IsBulletGrape(arItm.type.t1.bullet))
-			{
-				makearef(arGrape, arItm.type.t1);
-				describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon grape parameters"), arGrape) + newStr();
-			}
-			else
-				describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon gun parameters"), arItm) + newStr();
-		}
-		if(arItm.groupID == MUSKET_ITEM_TYPE)
-		{
-			if(IsBulletGrape(arItm.type.t1.bullet))
-			{
-				makearef(arGrape, arItm.type.t1);
-				describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon grape parameters"), arGrape) + newStr();
-			}
-			else
-				describeStr += GetAssembledString( LanguageConvertString(lngFileID,"mushket parameters"), arItm) + newStr();
-		}
-		if(arItm.groupID==BLADE_ITEM_TYPE)
-		{
-			SetBladeWeightAttack(arItm);
-			describeStr += GetAssembledString(
-				LanguageConvertString(lngFileID,"weapon blade parameters"),
-				arItm) + newStr();
-			if (CheckAttribute(arItm, "FencingType"))
-			{
-    			arItm.FencingTypeName = XI_ConvertString(arItm.FencingType);
-    			describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon blade type"), arItm) + newStr();
-			}
-			else
-			{
-                describeStr += "ERROR" + newStr();
-			}
-		}
-	}
-
-	describeStr = describeStr + GetAssembledString(GetItemDescr(&Items[iGoodIndex]), &Items[iGoodIndex]);
-	if (CheckAttribute(arItm, "potion"))
-	{
-		if (CheckAttribute(arItm, "potion.health"))
-		{
-			describeStr += NewStr() + LanguageConvertString(lngFileID, "Potion parameters")+":";
-			describeStr += " "+LanguageConvertString(lngFileID, "health value");
-			if (stf(arItm.potion.health) >= 0)
-			{	
-				describeStr += "+" + sti(arItm.potion.health);
-			} 
-			else
-			{	
-				describeStr += "" + sti(arItm.potion.health);
-			}
-		}
-	}
-	if(arItm.id == "lacrima_patris" && sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_GALEON_SM)
-	{
-		if(CheckAttribute(arItm,"KillerBonus.RangeBonus"))
-		{
-			aref KillerB;
-			makearef(KillerB, arItm.KillerBonus);
-			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"lacrima_patris_parameters"), KillerB) + newStr();
-		}
-	}
-	if(arItm.id == "talisman17")
-	{
-		if(CheckAttribute(arItm,"QBonus"))
-		{
-			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman17_quests"), arItm) + newStr();
-		}
-		else
-		{
-			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman17_questsNoBonus") + newStr();
-		}
-	}
-	if(arItm.id == "talisman18")
-	{
-		if(CheckAttribute(arItm,"QBonus"))
-		{
-			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman18_Bonus"), arItm) + newStr();
-		}
-		else
-		{
-			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman18_NoBonus") + newStr();
-		}
-	}
-	if(arItm.id == "talisman19")
-	{
-		if(IsEquipCharacterByArtefact(pchar, "talisman19"))
-		{
-			describeStr = LanguageConvertString(lngFileID, "talisman19_InSlot") + newStr();
-			
-		}
-		else
-		{
-			describeStr = GetAssembledString( LanguageConvertString(lngFileID,"itmdescr_talisman19"), pchar) + newStr();
-		}
-	}
-	if(CheckAttribute(arItm, "UpgradeStage"))
-	{
-		describeStr += newStr() + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));
-	}
-    describeStr += newStr() + XI_ConvertString("weight") + " " + FloatToString(stf(arItm.weight), 1);
-    
-	LanguageCloseFile(lngFileID);
-	
-	return describeStr;
-}
+// boal <--
 
 #event_handler("Tips_GetTipsDirectory","Tips_GetTipsDirectory");
 string Tips_GetTipsDirectory() {
@@ -1120,4 +1089,199 @@ void GetNodePosition(string sNode, ref x1, ref y1, ref x2, ref y2)
 void SetNodePosition(string sNode, int x1, int y1, int x2, int y2)
 {
 	SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 4, x1, y1, x2, y2);
+}
+
+void SetMenuLogo()
+{
+	string sAdd = "";
+	int x1, y1, x2, y2;
+	if(LanguageGetLanguage() == "Chinese")
+	{
+		sAdd = "_cn";
+		GetNodePosition("EYES", &x1, &y1, &x2, &y2);
+		SetNodePosition("EYES", x1+37, y1+3, x2+37, y2+3);
+	}
+	string sPictureName = "interfaces\le\cle_logo"+sAdd+".tga";
+	if(sAdd != "") 
+		SendMessage(&GameInterface,"lslls", MSG_INTERFACE_MSG_TO_NODE,"LOGO",2, false, sPictureName);
+}
+
+int GetChrIdxFromInterface(int charScrollIdx, string nodeName)
+{
+	string currentPic = "pic" + (charScrollIdx + 1);
+	if (!CheckAttribute(&GameInterface, nodeName + "." + currentPic + ".character")) return -1;
+ 
+	return sti(GameInterface.(nodeName).(currentPic).character);
+}
+
+void GetTriggerFramePosition(string sNode, ref x1, ref y1, ref x2, ref y2)
+{
+	SendMessage(&GameInterface, "lslleeee", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 6, &x1, &y1, &x2, &y2);
+}
+
+void SetTriggerFramePosition(string sNode, int x1, int y1, int x2, int y2)
+{
+	SendMessage(&GameInterface, "lsllllll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 7, x1, y1, x2, y2);
+}
+
+void GetTriggerFrameType(string sNode, ref type)
+{
+	SendMessage(&GameInterface, "lslle", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 8, &type);
+}
+
+void SetTriggerFrameType(string sNode, int type)
+{
+	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 9, type);
+}
+
+void SetUseTrigger(string sNode, bool useTrigger)
+{
+	SendMessage(&GameInterface, "lslll", MSG_INTERFACE_MSG_TO_NODE, sNode, -1, 10, useTrigger);
+}
+
+// задержка подсказок
+#event_handler("Event_GetTriggerDelay","Event_GetTriggerDelay");
+float Event_GetTriggerDelay()
+{
+	float fDelay = 1.0;
+	switch(iGlobalHelpTime)
+	{
+		// при отрицательном значении подсказки выключены
+		case 0:		fDelay = -1.0;		break;
+		case 1:		fDelay = 1.5;		break;
+		case 2: 	fDelay = 1.0;		break;
+		case 3: 	fDelay = 0.5;		break;
+	}
+	return fDelay;
+}
+
+#event_handler("Event_NodeStartTrigger","Event_NodeStartTrigger");
+void Event_NodeStartTrigger()
+{
+	string sNode = GetEventData();
+	int x1, y1, x2, y2;
+	GetTriggerFramePosition(sNode, &x1, &y1, &x2, &y2);
+	int frameType;
+	GetTriggerFrameType(sNode, &frameType);
+	EI_CreateTriggerFrame(frameType, x1, y1, x2, y2);
+}
+
+#event_handler("Event_NodeEndTrigger","Event_NodeEndTrigger");
+void Event_NodeEndTrigger()
+{
+	string sNode = GetEventData();
+	Event("ShowInfoWindow", "s", sNode);
+}
+
+#event_handler("Event_ChangeTableTriggerFrame","Event_ChangeTableTriggerFrame");
+void Event_ChangeTableTriggerFrame()
+{
+	string sNode = GetEventData();
+	int line = GetEventData();
+	int col = GetEventData();
+	int left = GetEventData();
+	int top = GetEventData();
+	int right = GetEventData();
+	int bottom = GetEventData();
+	if(line >= 0 && col < 0)
+	{
+		if(!CheckAttribute(&GameInterface, sNode + ".tr" + line))
+			GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);
+	}
+	else if(line >= 0)
+	{
+		line++;
+		col++;
+		if(!CheckAttribute(&GameInterface, sNode + ".tr" + line + ".td" + col))
+			GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);
+	}
+	EI_DeleteTriggerFrame();
+	int frameType;
+	GetTriggerFrameType(sNode, &frameType);
+	EI_CreateTriggerFrame(frameType, left, top, right, bottom);
+	Event("ShowInfoWindow", "s", sNode);
+}
+
+#event_handler("Event_ChangeScrollLineTrigger","Event_ChangeScrollLineTrigger");
+void Event_ChangeScrollLineTrigger()
+{
+	string sNode = GetEventData();
+	int iLine = GetEventData();
+	int left = GetEventData();
+	int top = GetEventData();
+	int right = GetEventData();
+	int bottom = GetEventData();
+	EI_DeleteTriggerFrame();
+	int frameType;
+	GetTriggerFrameType(sNode, &frameType);
+	EI_CreateTriggerFrame(frameType, left, top, right, bottom);
+	Event("ShowInfoWindow", "s", sNode);
+}
+
+#event_handler("Event_NullTrigger","Event_NullTrigger");
+void Event_NullTrigger()
+{
+	EI_DeleteTriggerFrame();
+	Event("HideInfoWindow");
+}
+
+int GetSelectedColumn(string tableName)
+{
+	return SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 3);
+}
+
+int GetSelectedRow(string tableName)
+{
+	return SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, tableName, 1);
+}
+
+// JOKERTODO допилить функцию под Y координату
+void AutoLayoutCenter(string nodeList, int factQty)
+{
+	if (nodeList == "") return;
+	int currentShift = GetAttributeInt(&GameInterface, "AutoLayoutShift." + nodelist);
+	object nodes;
+	string nodeName;
+	SplitString(&nodes, nodeList, "|", 0);
+	int nodesQty = GetAttributesNum(&nodes);
+	int containerStart, containerEnd;
+	int size, margin, delta;
+	int i, x, x2, y, y2;
+	if (currentShift != 0) // сброс позиций на дефолтные места
+	{
+		for (i = 0; i < nodesQty; i++)
+		{
+			nodeName = GetAttributeValue(GetAttributeN(&nodes, i));
+			GetNodePosition(nodeName, &x, &y, &x2, &y2);
+			SetNodePosition(nodeName, x - currentShift, y, x2 - currentShift, y2);
+		}
+	}
+
+	// собираем координаты
+	for (i = 0; i < nodesQty; i++)
+	{
+		nodeName = GetAttributeValue(GetAttributeN(&nodes, i));
+		GetNodePosition(nodeName, &x, &y, &x2, &y2);
+		if (i == 0) containerStart = x;
+		else if (i == nodesQty-1) containerEnd = x2;
+		if (i == 0) size = x2-x;
+		else if (i == 1) margin = x;
+	}
+
+	margin = margin - containerStart - size;
+	delta = (size+margin)*(nodesQty-factQty) / 2;
+
+	for (i = 0; i < nodesQty; i++)
+	{
+		nodeName = GetAttributeValue(GetAttributeN(&nodes, i));
+		GetNodePosition(nodeName, &x, &y, &x2, &y2);
+		SetNodePosition(nodeName, x + delta, y, x2 + delta, y2);
+	}
+
+	SetAttribute(&GameInterface, "AutoLayoutShift." + nodelist, delta);
+}
+
+void SetFormatedTextButton(string nodeName, string text)
+{
+	SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,nodeName, 0, text); // если текст начинается с #, то ставится в точности он (иначе это ID строки)
 }

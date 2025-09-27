@@ -1,69 +1,15 @@
-characterUtilite_1
-{
-@<_Money> Pesos ganados
-}
-
-characterUtilite_2
-{
-@<abs(_Money)> Pesos gastados
-}
-
-characterUtilite_3
-{
-Nuevo objeto: ~
-}
-
-characterUtilite_4
-{
-@<n> Doblones ganados
-}
-
-characterUtilite_5
-{
-Objeto perdido: ~
-}
-
-characterUtilite_6
-{
-~ ha notado que @<LanguageConvertString(idLngFile, arItem.name)> ha perdido sus poderes
-}
-
-characterUtilite_7
-{
-Honor aumentado
-}
-
-characterUtilite_8
-{
-Honor reducido
-}
-
-characterUtilite_9
-{
-@<_Dublons> Doblones gastados
-}
-
-characterUtilite_10
-{
-Un grupo de desembarco de @<officer.Ship.Name> tiene @<compCrew> soldados en él
-}
-
-characterUtilite_11
-{
-Los plazos de su préstamo han expirado
-}
-
-characterUtilite_12
-{
-Atlas actualizado: @<LanguageConvertString(idLngFile, arItem.name)>
-}
-
-characterUtilite_13
-{
-Has empeorado tu relación con los indígenas (
-}
-
-characterUtilite_14
-{
-Has mejorado tu relación con los indígenas (
-}
+characterUtilite_1 {@<_Money> Pesos ganados}
+characterUtilite_2 {@<abs(_Money)> Pesos gastados}
+characterUtilite_3 {Nuevo objeto: ~}
+characterUtilite_4 {@<n> Doblones ganados}
+characterUtilite_5 {Objeto perdido: ~}
+characterUtilite_6 {~ ha notado que @<LanguageConvertString(idLngFile, arItem.name)> ha perdido sus poderes}
+characterUtilite_7 {Honor aumentado}
+characterUtilite_8 {Honor reducido}
+characterUtilite_9 {@<_Dublons> Doblones gastados}
+characterUtilite_10 {Un grupo de desembarco de @<officer.Ship.Name> tiene @<compCrew> soldados en él}
+characterUtilite_11 {Los plazos de su préstamo han expirado}
+characterUtilite_12 {Atlas actualizado: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {Has empeorado tu relación con los indígenas (}
+characterUtilite_14 {Has mejorado tu relación con los indígenas (}
+characterUtilite_15 {El comerciante no tiene el monto completo. ¿Quieres vender por @<money>?}

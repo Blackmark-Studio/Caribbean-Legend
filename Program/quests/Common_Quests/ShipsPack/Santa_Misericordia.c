@@ -14,20 +14,17 @@ void SantaMisericordia_init()
 	chref = GetCharacter(NPC_GenerateCharacter("SantaMisericordia_cap", "off_spa_2", "man", "man", 30, SPAIN, -1, false, "governor"));
 	FantomMakeCoolSailor(chref, SHIP_GALEON_SM, sName, CANNON_TYPE_CANNON_LBS24, 105, 105, 105);
 	FantomMakeCoolFighter(chref, 30, 100, 100, "lacrima_patris", "pistol8", "harpoon", 100);
+	InitChrRebalance(chref, GEN_TYPE_CAPTAIN, GEN_BOSS, true, 0.6); // RB Аламида
 	chref.ship.Crew.Morale = 100;
 	ChangeCrewExp(chref, "Sailors",   100);
 	ChangeCrewExp(chref, "Cannoners", 100);
 	ChangeCrewExp(chref, "Soldiers",  100); 
-	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 2, 200 + makeint(pchar.rank) * 2);
-	SetAllPerksToChar(chref, true);
 	chref.name = GetConvertStr("Cap_Name", LangFile);
 	chref.lastname = GetConvertStr("Cap_lastname", LangFile);
 	UpgradeShipParameter(chref, "SpeedRate");	//апгрейдить скорость
 	UpgradeShipParameter(chref, "TurnRate");	//манёвренность 
 	chref.DontRansackCaptain = true; //квестовые не сдаются
-	SetSPECIAL(chref, 10, 10, 10, 10, 10, 10, 10);
-	SetSelfSkill(chref, 100, 100, 100, 100, 100);
-	SetShipSkill(chref, 100, 100, 100, 100, 100, 100, 100, 100, 100);
+	chref.AutoBoardingDisable = true; // запрет абордажа фантомов
 	chref.SaveItemsForDead = true;
 	chref.DontClearDead = true;
 	chref.DontHitInStorm = true;

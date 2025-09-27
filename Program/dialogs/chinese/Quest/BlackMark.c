@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "你为什么这么反感我的请求? 我不是在要该死的珍珠, 只是一发子弹。 我甚至等到我们在丛林里, 以免在城里分心。 那么, 有子弹吗? ";
+			dialog.text = "Why are you taking my request so badly? I ain't asking for bloody pearls, just a cartridge. I even waited for the right moment so I wouldn’t distract you from business or get in your way like some lunatic, hehe. So... got a bullet?";
 			if (CheckCharacterItem(PChar, "cartridge"))
 			{
 				link.l1 = "是的, 我有一发。 给你。 只是别用那颗子弹跟我开愚蠢的玩笑。 明白吗, 汤米? ";
@@ -531,7 +531,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
 		break;
 		
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			chrDisableReloadToLocation = false;
 			bDisableLandEncounters = false;
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
 		break;
 		

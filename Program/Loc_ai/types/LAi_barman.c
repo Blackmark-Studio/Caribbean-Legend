@@ -62,7 +62,7 @@ void LAi_type_barman_CharacterUpdate(aref chr, float dltTime)
 					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
-						if (bMainCharacterInBox && chr.chr_ai.type.state != "afraid")
+						if (bMainCharacterInBox && chr.chr_ai.type.state != "afraid" && !HasPerk(pchar, "Quiet"))
 						{
 							if(chr.city == "islamona") continue;
 							if (chr.sex == "man") chr.greeting = "VOICE\" + LanguageGetLanguage() + "\soldier_arest_1.wav";

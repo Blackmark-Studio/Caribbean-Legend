@@ -1,69 +1,35 @@
-
 new_string
 {
 
 }
-
 Cheat_success {¡Hecho!}
-
 Cheat_on {Trucos activados}
-
 Cheat_off {Trucos Desactivados}
-
 Cheat_Comming_soon {Muy pronto.}
-
 f1 {Añadir 35 puntos de habilidad}
-
 f2 {Añadir un punto de pericia naval}
-
 f3 {Añadir un punto de ventaja personal}
-
-f4 {+ 10 Max HP }
-
+f4 {+ 10 Max HP}
 f5 {+10 Energía máxima}
-
 f6 {Aumentar el honor}
-
 f7 {Disminuir Honor}
-
 f8 {Aumentar la fama}
-
 f9 {Disminuir Fama}
-
 f10 {Modo Dios activado/desactivado}
-
 f11 {Aumentar la autoridad}
-
 f12 {Mejorar la vitalidad}
-
 f13 {+1000 Capacidad máxima de inventario}
-
 f14 {х10 daño de hojas}
-
 f15 {х10 daño del arma de fuego equipada}
-
 f16 {х10 tiempo de recarga de un arma de fuego equipada}
-
-f17 {Activa el 100% de probabilidad de ruptura del bloqueo }
-
+f17 {Activa el 100% de probabilidad de ruptura del bloqueo}
 f18 {x10 Regeneración de energía}
-
 f19 {x10 Regeneración de vida}
-
 f20 {Establece un 100% de posibilidades de bloqueo}
-
 f21 {Veneno Taino activado/desactivado}
-
 f22 {Desbloquea las ventajas de Duelista}
-
 f23 {Desbloquea las ventajas del Contable}
-
 f24 {Desbloquea las ventajas del Atleta}
-
 f25 {Desbloquea las ventajas de fondo Sharpshooter}
-
 f26 {Desactivar los requisitos de navegación}
-
 f27 {Poner sobrio al héroe si está borracho}
-
-

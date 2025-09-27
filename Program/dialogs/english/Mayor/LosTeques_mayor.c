@@ -16,12 +16,8 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("You dare come here?! Bold action...", "How have those dumbasses let an enemy invade?! It's beyond me...", "Well, my guards are useless if some idiot is walking around in my residence..."), 
-					LinkRandPhrase("What do you want, bastard?! My soldiers have already tracked you down and you won't get away"+ GetSexPhrase(", filthy pirate"," filthy pirate") +"!", "Dirty murderer, get away from my residence! Guards!!!", "I am not afraid of you, bastard! You will be hanged, you won't get away..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Soldiers cost nothing...", "They'll never catch me."), 
-					RandPhraseSimple("Shut your mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I'll cut off your toungue and shove it in your throat...", "I'd tell you, mate: sit quietly, and you may yet see another day..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("You dare come here?! Bold move...","How could those idiots let an enemy invade?! It's beyond me...","Well, my guards are useless if some idiot is wandering around my residence..."),LinkRandPhrase("What do you want, bastard?! My soldiers have already tracked you down and you won't get away."+GetSexPhrase(", filthy pirate"," filthy pirate")+"!","Dirty murderer, get away from my residence! Guards!!!","I am not afraid of you, bastard! You'll be hanged, you won't get away..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Soldiers cost nothing...","They'll never catch me."),RandPhraseSimple("Shut your mouth, "+GetWorkTypeOfMan(npchar,"")+", or I'll cut off your tongue and shove it down your throat...","I'd tell you, mate: sit quietly, and you might yet see another day..."));
 				link.l1.go = "fight";
 				break;
 			}
@@ -34,22 +30,22 @@ void ProcessDialogEvent()
 			}			
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = TimeGreeting() + " Sir. I am "+GetFullName(npchar)+", commandant of the mine of Lost-Tekes which is owned by " + NationKingsName(npchar)+". Now, would you be kindly to tell me the purpose of your visit, " + GetAddress_Form(NPChar) + ".";
+				dialog.text = TimeGreeting()+" Sir. I am "+GetFullName(npchar)+", commandant of the Lost-Tekes mine, which is owned by "+NationKingsName(npchar)+". Now, would you be so kind as to tell me the purpose of your visit, "+GetAddress_Form(NPChar)+".";
 				link.l1 = "It's my first time here and I want to know more about this settlement and its laws...";
 				link.l1.go = "info";
-				link.l2 = "Just wanted to greet you, I am leaving already.";
+				link.l2 = "Just wanted to greet you, I'm leaving already.";
 				link.l2.go = "exit";
 				npchar.quest.meeting = "1";
 				break;
 			}
-			dialog.text = "You again, Sir? What else do you want?";
-			link.l1 = "It's nothing. I am leaving.";
+			dialog.text = "You again, sir? What else do you want?";
+			link.l1 = "It's nothing. I'm leaving.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "info":
-			dialog.text = "I respect such discipline. Well, I'll bring you up to speed in that case, since you are that interested.\nLos-Teques mine is property of the Spanish Crown. We mine silver and golden crude ore here, as well as silver and golden nuggets. All gold and silver belong to Spain and are transported to the Old World.\nThe mine is well guarded, a unit of elite Spanish soldiers is always stationed here. Pirates made several attempts to rob our mine, but the consequences were always bad... for them.\nAs you can see, it is a small town. We have a tavern and a store. You can buy golden and silver ingots for a good price there. Besides, our quartermaster who is also a merchant in the store can sell you other interesting metals and ores.\nMost of our workers are convicts, but we also have a small amount of black slaves. As you can see, we always have a need for new manpower, every day at least one of these blasted convicts die.\nSo, if you bring us slaves we will exchange nuggets for them. Contact our lead engineer for such matters. You can find him in the shaft.\nBehave yourself here. Don't start duels or fights, don't try to steal anything especially gold or silver. We don't have a prison here but we have a court martial.\nThat's pretty much of it. Follow these simple rules and you will have no problems. You are allowed to move freely within the mine. Don't forget to visit the tavern, they perform certain... services by my permission. Welcome!";
+			dialog.text = "I respect such discipline. Well, I'll bring you up to speed in that case, since you are that interested.\nLos-Teques mine is the property of the Spanish Crown. We mine silver and gold ore here, as well as silver and gold nuggets. All gold and silver belong to Spain and are transported to the Old World.\nThe mine is well guarded; a unit of elite Spanish soldiers is always stationed here. Pirates have made several attempts to rob our mine, but the consequences were always bad... for them.\nAs you can see, it is a small town. We have a tavern and a store. You can buy gold and silver ingots for a good price there. Besides, our quartermaster, who is also the merchant in the store, can sell you other interesting metals and ores.\nMost of our workers are convicts, but we also have a small number of black slaves. As you can see, we are always in need of new manpower; every day at least one of these blasted convicts dies.\nSo, if you bring us slaves, we will exchange nuggets for them. Contact our lead engineer for such matters. You can find him in the shaft.\nBehave yourself here. Don't start duels or fights, don't try to steal anything, especially gold or silver. We don't have a prison here, but we do have a court martial.\nThat's pretty much it. Follow these simple rules and you will have no problems. You are allowed to move freely within the mine. Don't forget to visit the tavern; they perform certain... services with my permission. Welcome!";
 			link.l1 = "My thanks!";			
 			link.l1.go = "exit";
 		break;
@@ -61,8 +57,8 @@ void ProcessDialogEvent()
 
 		// ============== Грабеж среди бела дня, попытка залезть в сундуки =========================
 		case "Man_FackYou":
-			dialog.text = "Robbery!!! That is unacceptable! Prepare yourself, "+ GetSexPhrase("pal","girl") +"...";
-			link.l1 = LinkRandPhrase("Shit!", "Carramba!!", "Damn it!");
+			dialog.text = "Robbery!!! That is unacceptable! Prepare yourself, "+GetSexPhrase("pal","girl")+"...";
+			link.l1 = LinkRandPhrase("Shit!","Caramba!!","Damn it!");
 			link.l1.go = "PL_Q3_fight";
 		break;
 		

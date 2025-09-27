@@ -1,19 +1,24 @@
 #include "encounters\encounters.h"
 #include "encounters\encounters_map.c"
-#include "encounters\encounters_quest.c"
 
 //#include "scripts\utils.c"
 
 #define MAX_MAP_ENCOUNTERS		128
 object MapEncounters[MAX_MAP_ENCOUNTERS];
 
+int WorldMapRandomEncQty = 12; // Без квестовых и специальных
+int	EncWeightCur[12];
+int	EncWeightBase[12];
+
 extern void InitEncounters();
+extern void InitEncountersBaseWeight();
 
 void EncountersInit()
 {
 	if(LoadSegment("Encounters\Encounters_init.c"))
 	{
 		InitEncounters();
+		InitEncountersBaseWeight();
 		UnloadSegment("Encounters\Encounters_init.c");
 	}
 
@@ -206,6 +211,7 @@ bool Encounter_GetClassesFromRank(int iEncounter, int iRank, ref rMClassMin, ref
 int FindRealEncounterTypeFromId(string _id)
 {
     if(_id == "") return -1;
+    if (!CheckAttribute(&worldMap, "encounters." + _id)) return -1;
     aref rEnc;
     makearef(rEnc, worldMap.encounters.(_id).encdata);
     return sti(rEnc.RealEncounterType);
@@ -354,7 +360,6 @@ void Encounter_Progress()
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
         Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 4);
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
         Enc_ConvertShipsCls(rEnc, SHIP_SPEC_MERCHANT, 2, 2);
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
@@ -372,8 +377,9 @@ void Encounter_Progress()
         EncProgress[13] = true;
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SMALL];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War",        1, 1, 4, 4);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 5, 6);
+        Enc_ConvertShipsCls(rEnc, "All", 4, 6);
+        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War",        1, 1, 4, 6);
+        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 4, 6);
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_MEDIUM];
         Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 5);
@@ -401,8 +407,7 @@ void Encounter_Progress()
         Enc_ConvertSpec(rEnc, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 5, 6);
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 5, 6);
+        Enc_ConvertShipsCls(rEnc, "All", 4, 6);
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_MEDIUM];
         Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 2, 2);
@@ -442,7 +447,6 @@ void Encounter_Progress()
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
         rEnc.Stage = 3;
         Enc_ConvertShipsCls(rEnc, "All", 3, 4);
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
 		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
 	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
     }
@@ -458,13 +462,12 @@ void Encounter_Progress()
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
         rEnc.Stage = 4;
         rEnc.worldMapShip = "frigate";
-        Enc_ConvertShipsCls(rEnc, "All", 2, 3);
+        Enc_ConvertShipsCls(rEnc, "All", 2, 4);
 		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
 	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
 
         rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
         Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 2, 2);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 2, 2);
     }
 }
 

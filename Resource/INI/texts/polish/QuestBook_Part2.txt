@@ -1410,6 +1410,9 @@ Udało mi się wynegocjować z Christianem zwiększenie dostaw. Teraz będzie od
 #TEXT   6
 ************************************************************
 W tawernie w Puerto Principe czekają na mnie darmowy nocleg, trunki na koszt lokalu, a do tego właściciel obiecał, że dzięki jego staraniom przybędzie marynarzy chętnych służyć pod moim dowództwem.
+#TEXT   7
+************************************************************
+U kowala w San José będę mógł zaopatrywać się w potrzebne mi materiały i wyroby. Dostawy u niego odbywają się raz w miesiącu.
 
 
 #QUEST FMQ_Guadeloupe
@@ -1530,7 +1533,9 @@ Zabrałem sobie czas na rejs, a Brytyjczycy zaczęli bunt. Musiałem ich zabić.
 #TEXT 3
 Porucznik Caspar Gratton postanowił, że pomogę mu w jego operacji wojskowej przeciwko Holendrom. Ani mowy. Ucieczka z Sint-Maarten to już jego problem.
 #TEXT 4
-Dostarczylem porucznika Caspara Grattona i jego żołnierzy na Sint-Maarten, ale nie dostałem zapłaty. Zamiast tego porucznik poprosił, abym poczekał na niego kilka dni, a potem zabrał jego drużynę na Antiguę, gdzie pułkownik Fox hojnie wypłaci mi całą należność. Żadne żarty, sir. Mam nadzieję, że Holendrzy się o tym nie dowiedzą, bo pomoc w brytyjskich operacjach wojskowych nie jest uważana za coś dobrego w ich książce... Muszę popłynąć do Philipsburga i sprawdzić sytuację. Zastanawiam się również, co brytyjscy marini mają w planach?
+Il tenente Kaspar Gratton e i suoi soldati sono stati portati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe ricompensato generosamente. Già... speriamo solo di non avere guai con gli olandesi alla fine. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti degli olandesi, e secondo, per cercare di scoprire cosa ci fanno davvero qui questi marines britannici.
+#TEXT   4_1
+Il tenente Kaspar Gratton e i suoi soldati sono stati consegnati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe pagato generosamente. Bene, bene... speriamo che alla fine non siano i miei guai con gli olandesi. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti da parte loro; secondo, per cercare di capire cosa ci fanno qui i marines britannici, visto che attualmente tra Olanda e Inghilterra c'è pace.
 #TEXT 5
 Minęły trzy dni, a nic się nie dowiedziałem. Powinienem wrócić na plażę Grand Case – może porucznik już tam jest?
 #TEXT 6

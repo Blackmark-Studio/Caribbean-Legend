@@ -50,18 +50,19 @@ void LoveSex_Cabin_Go_3(string qName)
 //--> Огромная каюта
 void LoveSex_Cabin_Huge()
 {	
-	TeleportCharacterToPosAy(pchar, -0.40, 10.00, 4.60, -1.50);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 16.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 15.0);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
+	TeleportCharacterToPosAy(pchar, -0.40, 10.00, 4.60, -1.50);
 	TeleportCharacterToPosAy(sld, -1.00, 10.00, 4.60, 1.50);
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 16.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 16.5);
 	locCameraFromToPos(1.64, 11.53, 1.81, true, -0.92, 9.78, 5.16);
 	DoQuestFunctionDelay("LoveSex_Cabin_Huge_2", 6.5);
 	DoQuestFunctionDelay("LoveSex_Cabin_Huge_3", 12.0);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 15.0);
 }
 
 void LoveSex_Cabin_Huge_2(string qName)
@@ -78,99 +79,125 @@ void LoveSex_Cabin_Huge_3(string qName)
 //--> Большая каюта
 void LoveSex_Cabin_Big()
 {	
-	TeleportCharacterToPosAy(pchar, -1.30, 20.00, -1.10, 3.00);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 9.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 9.5);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	IgnoreCollision(sld, true);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	TeleportCharacterToPosAy(sld, -1.30, 20.00, -1.70, 0.00);
+	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss1");
+	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss2");
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
-	LAi_ActorAnimation(sld, "kiss", "1", 9.5);
-	locCameraFromToPos(1.76, 21.32, -3.48, true, -3.14, 19.16, 0.27);
+	LAi_ActorAnimation(pchar, "kiss", "1", 14.5);
+	LAi_ActorAnimation(sld, "kiss", "1", 14.5);
+	locCameraFromToPos(2.38, 6.93, 2.65, true, -0.16, 4.87, 0.52);
 	DoQuestFunctionDelay("LoveSex_Cabin_Big_2", 6.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Big_3", 10.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 14.5);
 }
 
 void LoveSex_Cabin_Big_2(string qName)
 {	
-	locCameraFromToPos(-0.70, 21.85, -3.30, true, -1.57, 19.40, 1.43);
+	locCameraFromToPos(-1.06, 6.84, 0.04, true, 0.73, 4.97, 1.34);
+}
+
+void LoveSex_Cabin_Big_3(string qName)
+{	
+	locCameraFromToPos(-4.82, 6.90, -2.41, true, -2.99, 4.96, -0.99);
 }
 //<-- Большая каюта
 
 //--> Нормальная каюта
 void LoveSex_Cabin_Normal()
 {	
-	TeleportCharacterToPosAy(pchar, 1.50, 2.14, -3.80, -1.50);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 8.5);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	IgnoreCollision(sld, true);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	TeleportCharacterToPosAy(sld, 0.90, 2.14, -3.80, 1.50);
+	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss1");
+	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss2");
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 8.5);
-	locCameraFromToPos(-0.44, 3.57, -0.59, true, 1.76, 1.65, -5.05);
+	locCameraFromToPos(-2.32, 6.81, -1.75, true, -1.65, 5.00, 0.49);
 	DoQuestFunctionDelay("LoveSex_Cabin_Normal_2", 4.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 8.5);
 }
 
 void LoveSex_Cabin_Normal_2(string qName)
 {	
-	locCameraFromToPos(0.07, 3.32, -2.69, true, 1.92, 2.10, -4.31);
+	locCameraFromToPos(-4.26, 6.55, 1.19, true, -0.89, 4.65, -0.20);
 }
 //<-- Нормальная каюта
 
 //--> Средняя каюта
 void LoveSex_Cabin_Medium()
 {	
-	TeleportCharacterToPosAy(pchar, -0.55, 6.06, 1.65, -1.50);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 8.5);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	IgnoreCollision(sld, true);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	TeleportCharacterToPosAy(sld, -1.15, 6.06, 1.65, 1.50);
+	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss2");
+	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss1");
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 8.5);
-	locCameraFromToPos(-2.03, 7.59, -0.83, true, 0.01, 6.00, 3.28);
+	CharacterTurnByChr(pchar, sld);
+	CharacterTurnByChr(sld, pchar);
+	locCameraFromToPos(3.05, 7.02, -1.57, true, -0.00, 4.85, -0.13);
 	DoQuestFunctionDelay("LoveSex_Cabin_Medium_2", 4.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 8.5);
 }
 
 void LoveSex_Cabin_Medium_2(string qName)
 {	
-	locCameraFromToPos(-1.80, 7.03, 3.33, true, 0.85, 6.25, -0.85);
+	locCameraFromToPos(-2.22, 6.85, -1.09, true, 1.17, 4.86, -0.28);
 }
 //<-- Средняя каюта
 
 //--> Маленькая каюта
 void LoveSex_Cabin_Small()
 {	
-	TeleportCharacterToPosAy(pchar, 1.20, 3.00, -1.40, 3.00);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	IgnoreCollision(sld, true);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	TeleportCharacterToPosAy(sld, 1.20, 3.00, -2.00, 0.00);
+	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "kiss1");
+	TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "kiss2");
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
-	locCameraFromToPos(-0.55, 4.42, -2.84, true, 2.06, 2.82, -2.00);
+	CharacterTurnByChr(pchar, sld);
+	CharacterTurnByChr(sld, pchar);
+	locCameraFromToPos(0.99, 6.52, 2.47, true, 0.17, 4.79, -0.59);
+	// locCameraFromToPos(0.31, 6.87, 2.26, true, 0.46, 4.84, -0.36);
+	DoQuestFunctionDelay("LoveSex_Cabin_Small_2", 3.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
+}
+
+void LoveSex_Cabin_Small_2(string qName)
+{	
+	locCameraFromToPos(1.64, 6.81, -0.89, true, -0.65, 4.92, 0.54);
 }
 //<-- Маленькая каюта
 
 //--> Мементо каюта
 void LoveSex_Cabin_Memento()
 {	
-	TeleportCharacterToPosAy(pchar, -0.20, 6.12, 1.30, -1.50);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
-	sld = characterFromId(pchar.quest.sex_partner);
-	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
+	TeleportCharacterToPosAy(pchar, -0.20, 6.12, 1.30, -1.50);
 	TeleportCharacterToPosAy(sld, -0.80, 6.12, 1.30, 1.50);
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 8.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 8.5);
 	locCameraFromToPos(1.05, 8.12, -0.60, true, -0.18, 6.05, 1.26);
 	DoQuestFunctionDelay("LoveSex_Cabin_Memento_2", 4.5);
+	DoQuestFunctionDelay("LoveSex_Cabin_Final", 7.5);
 }
 
 void LoveSex_Cabin_Memento_2(string qName)
@@ -184,11 +211,9 @@ void LoveSex_Cabin_Final(string qName)
 	EndQuestMovie();
 	bDisableCharacterMenu = false;
 	LAi_SetPlayerType(pchar);
-	locCameraTarget(PChar);
-	locCameraFollowEx(true);
-	sld = CharacterFromID(pchar.quest.sex_partner);
-	ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
-	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
+	ref sld = CharacterFromID(pchar.quest.sex_partner);
+	// ChangeCharacterAddressGroup(pchar, PChar.location, "reload", "reload1");
+	// ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 	if (Get_My_Cabin() == "My_Cabin_Huge")
 	{
 		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc1");
@@ -196,34 +221,36 @@ void LoveSex_Cabin_Final(string qName)
 	}
 	if (Get_My_Cabin() == "My_Cabin" || Get_My_Cabin() == "My_CabineFDM")
 	{
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc2");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc5");
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay2");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay1");
 	}
 	if (Get_My_Cabin() == "My_Cabin_Medium2")
 	{
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc0");
-		ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto3");
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay2");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay1");
 	}
 	if (Get_My_Cabin() == "My_Cabin_Medium")
 	{
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc2");
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay1");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay2");
 	}
 	if (Get_My_Cabin() == "My_Cabin_Small")
 	{
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "loc1");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc0");
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay1");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay2");
 	}
 	if (Get_My_Cabin() == "My_Cabin_Memento")
 	{
-		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc0");
+		TeleportCharacterToLocatorIgnoreCollision(pchar,  "quest", "lay1");
+		TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "lay2");
 	}
 	LAi_SetActorType(sld);
 	LAi_ActorTurnToCharacter(sld, pchar);
 	LAi_ActorFollow(sld, pchar, "", -1);
 	LAi_SetOfficerType(sld);
 	sld.Dialog.CurrentNode = "sex_after";
+	IgnoreCollision(sld, false);
+	locCameraFollowEx(true);
 
 	//--> квестовые ситуации после секса
 	if (CheckAttribute(pchar, "questTemp.PZ_MaryRazgovorOBordeli")) sld.Dialog.CurrentNode = "PZ_MaryRazgovorOBordeli_Bad_17";
@@ -237,30 +264,7 @@ void LoveSex_Cabin_Final(string qName)
 	WaitDate("", 0, 0, 0, 3, 10);
 	RecalculateJumpTable();
 	
-	int addHealthQuantity = 6;
-	float addMaxHealthQuantity = 1;
-	
-	if (pchar.quest.sex_partner == "Mary")
-	{
-		addHealthQuantity *= 2;
-	}
-	
-	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
-	{
-		addHealthQuantity *= 2;
-		addMaxHealthQuantity *= 2;
-	}
-	
-	AddCharacterHealth(pchar, addHealthQuantity);
-	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
-	
-	LAi_SetCurHPMax(pchar);
-	
-	if (pchar.quest.sex_partner == "Mary")
-	{
-		pchar.quest.Mary_giveme_sex.over = "yes";
-		pchar.quest.Mary_giveme_sex1.over = "yes";
-	}
+	LoveSex_Bonus();
 }
 
 // Sinistra катсцена с поцелуями в комнате на суше
@@ -284,17 +288,15 @@ void LoveSex_Room_Go()
 //--> Комната в таверне
 void LoveSex_Room_Tavern()
 {
-	locCameraFromToPos(-0.64, 1.72, -0.90, true, 1.53, -0.20, -3.08);
-	TeleportCharacterToPosAy(pchar, 0.10, 0.00, -1.50, 3.00);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-	
 	ref sld = characterFromId(pchar.quest.sex_partner);
-
+	SyncPlaybackDlt(PChar, sld);
+	TeleportCharacterToPosAy(pchar, 0.10, 0.00, -1.50, 3.00);
 	TeleportCharacterToPosAy(sld, 0.10, 0.00, -2.10, 0.00);
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
-	
+	locCameraFromToPos(-0.64, 1.72, -0.90, true, 1.53, -0.20, -3.08);
 	DoQuestFunctionDelay("LoveSex_Room_Tavern_2", 2.9);
 	DoQuestFunctionDelay("LoveSex_Room_Final", 7.5);
 }
@@ -308,18 +310,16 @@ void LoveSex_Room_Tavern_2(string qName)
 //--> Комната в борделе
 void LoveSex_Room_Brothel()
 {
-	locCameraFromToPos(2.37, 1.48, -1.02, true, -0.29, -0.14, -3.85);
-	TeleportCharacterToPosAy(pchar, 1.50, 0.00, -2.49, 0.00);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
-	
 	ref sld = characterFromId(pchar.quest.sex_partner);
-	
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto3");
+	TeleportCharacterToPosAy(pchar, 1.50, 0.00, -2.49, 0.00);
 	TeleportCharacterToPosAy(sld, 1.50, 0.00, -1.89, 3.00);
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 7.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 7.5);
-	
+	locCameraFromToPos(2.37, 1.48, -1.02, true, -0.29, -0.14, -3.85);
 	DoQuestFunctionDelay("LoveSex_Room_Final", 7.5);
 }
 //<-- Комната в борделе
@@ -327,18 +327,16 @@ void LoveSex_Room_Brothel()
 //--> Комната на Исла Моне
 void LoveSex_Room_Doubleflour()
 {
-	locCameraFromToPos(-1.48, 1.84, -0.86, true, -3.61, -0.20, -2.41);
-	TeleportCharacterToPosAy(pchar, -3.60, 0.00, -2.20, 3.00);
-	LAi_SetActorType(pchar);
-	LAi_ActorAnimation(pchar, "kiss", "1", 5.5);
-	
 	ref sld = characterFromId(pchar.quest.sex_partner);
-	
+	SyncPlaybackDlt(PChar, sld);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
+	TeleportCharacterToPosAy(pchar, -3.60, 0.00, -2.20, 3.00);
 	TeleportCharacterToPosAy(sld, -3.60, 0.00, -2.80, 0.00);
+	LAi_SetActorType(pchar);
 	LAi_SetActorType(sld);
+	LAi_ActorAnimation(pchar, "kiss", "1", 5.5);
 	LAi_ActorAnimation(sld, "kiss", "1", 5.5);
-	
+	locCameraFromToPos(-1.48, 1.84, -0.86, true, -3.61, -0.20, -2.41);
 	DoQuestFunctionDelay("LoveSex_Room_Final", 5.5);
 }
 //<-- Комната на Исла Моне
@@ -351,23 +349,6 @@ void LoveSex_Room_Final(string qName)
 	LAi_SetPlayerType(pchar);
 	
 	ref sld = characterFromId(pchar.quest.sex_partner);
-	
-	int addHealthQuantity = 6;
-	float addMaxHealthQuantity = 1;
-	
-	if (pchar.quest.sex_partner == "Mary")
-	{
-		addHealthQuantity *= 2;
-	}
-	
-	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
-	{
-		addHealthQuantity *= 2;
-		addMaxHealthQuantity *= 2;
-	}
-	
-	AddCharacterHealth(pchar, addHealthQuantity);
-	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
 
 	if(loadedLocation.filespath.models == "locations\inside\Tavern_room")
 	{
@@ -394,7 +375,7 @@ void LoveSex_Room_Final(string qName)
     LaunchFrameForm();
 	WaitDate("", 0, 0, 0, 3, 10);
 	RecalculateJumpTable();
-	LAi_SetCurHPMax(pchar);
+	
 	if (rand(2) == 0)
 	{
 		pchar.GenQuest.CamShuttle = 2;
@@ -402,6 +383,46 @@ void LoveSex_Room_Final(string qName)
 	}
 	
 	AddMoneyToCharacter(pchar, -1000);
+	
+	LoveSex_Bonus();
+}
+	
+// Классический вариант секса
+void LoveSex_Classic(string qName)
+{
+	SetLaunchFrameFormParam("", "", 0, 15);
+	SetLaunchFrameFormPic("loading\inside\censored1.tga");
+	PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
+	LaunchFrameForm();
+	WaitDate("", 0, 0, 0, 3, 10);
+	RecalculateJumpTable();
+	
+	LoveSex_Bonus();
+}
+
+// Бонусы после секса
+void LoveSex_Bonus()
+{
+	ref sld = characterFromId(pchar.quest.sex_partner);
+	
+	int addHealthQuantity = 6;
+	float addMaxHealthQuantity = 1;
+	
+	if (pchar.quest.sex_partner == "Mary")
+	{
+		addHealthQuantity *= 2;
+	}
+	
+	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
+	{
+		addHealthQuantity *= 2;
+		addMaxHealthQuantity *= 2;
+	}
+	
+	AddCharacterHealth(pchar, addHealthQuantity);
+	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
+	
+	LAi_SetCurHPMax(pchar);
 	
 	string skill;
 	
@@ -448,11 +469,10 @@ void LoveSex_Room_Final(string qName)
 		break;
 	}
 	
-	
 	if (pchar.quest.sex_partner == "Mary")
 	{
 		pchar.quest.Mary_giveme_sex.over = "yes";
-		pchar.quest.Mary_giveme_sex1.over = "yes"; 
+		pchar.quest.Mary_giveme_sex1.over = "yes";
 	}
 	if (pchar.quest.sex_partner == "Helena")
 	{
@@ -466,42 +486,15 @@ void LoveSex_Room_Final(string qName)
 	}
 	AddCharacterSkill(sld, skill, 1);
 	Log_Info(""+sld.name + StringFromKey("HelenDrinking_23") + XI_ConvertString(skill));
+	
+	pchar.hat11_bonus = true;
+	SetFunctionTimerCondition("LoveSex_hat11_bonus", 0, 0, 14, false);
 }
-	
-// Классический вариант секса
-void LoveSex_Classic(string qName)
+
+// Сексуальный бонус от шляпы
+void LoveSex_hat11_bonus(string qName)
 {
-	SetLaunchFrameFormParam("", "", 0, 15);
-	SetLaunchFrameFormPic("loading\inside\censored1.tga");
-	PlayStereoSound("sex\sex" + (rand(9) + 1) + ".wav");
-	LaunchFrameForm();
-	WaitDate("", 0, 0, 0, 3, 10);
-	RecalculateJumpTable();
-	
-	int addHealthQuantity = 6;
-	float addMaxHealthQuantity = 1;
-	
-	if (pchar.quest.sex_partner == "Mary")
-	{
-		addHealthQuantity *= 2;
-	}
-	
-	if(IsEquipCharacterByArtefact(pchar, "totem_03")) 	
-	{
-		addHealthQuantity *= 2;
-		addMaxHealthQuantity *= 2;
-	}
-	
-	AddCharacterHealth(pchar, addHealthQuantity);
-	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
-	
-	LAi_SetCurHPMax(pchar);
-	
-	if (pchar.quest.sex_partner == "Mary")
-	{
-		pchar.quest.Mary_giveme_sex.over = "yes";
-		pchar.quest.Mary_giveme_sex1.over = "yes";
-	}
+	DeleteAttribute(pchar, "hat11_bonus");
 }
 	
 	

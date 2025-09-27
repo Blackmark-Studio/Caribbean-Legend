@@ -55,7 +55,13 @@ bool locCameraFollowEx(bool isTeleport)
 	else
 		res = SendMessage(&locCamera, "l", MSG_CAMERA_FOLLOW);
 	locCameraCurMode = LOCCAMERA_FOLLOW;
+	locCameraSetFollowCamAngleToCharacterAngle();
 	return res;
+}
+
+void locCameraSetFollowCamAngleToCharacterAngle()
+{
+	SendMessage(&locCamera, "l", -8);
 }
 
 //Set camera toPos mode
@@ -586,4 +592,12 @@ void AimingActive()
 		locCameraSetRadius(stf(locCamera.maxRadius)*stf(locCamera.zoom));
 		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, 0);
 	}
+}
+
+void Camera_CheckPreset()
+{
+	string sPreset = "preset" + (iGlobalCamera + 1);
+	locCamera.offsetX = locCamera.OffsetPreset.(sPreset).x;
+	locCamera.offsetY = locCamera.OffsetPreset.(sPreset).y;
+	locCamera.offsetZ = locCamera.OffsetPreset.(sPreset).z;
 }

@@ -15,11 +15,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 ref sld = characterFromId("Villemstad_Priest");
                 link.l1 = "神父您好。 威廉斯塔德教堂的院长"+sld.name+"派我来的。 您曾告诉他在古巴的一个山洞里看到了奇怪的景象。 ";
                 link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
             }
             if (CheckAttribute(pchar, "questTemp.Caleuche") && pchar.questTemp.Caleuche == "havana1")
             {
                 link.l1 = "神父, 我已经去过丛林里的那个山洞了。 ";
                 link.l1.go = "caleuche_4";
+				DelLandQuestMark(npchar);
             }
         break;
         
@@ -55,6 +57,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 LAi_SetGuardianType(sld);
                 sld.protector = true;
                 LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+				AddLandQuestMark(sld, "questmarkmain");
             }
             LocatorReloadEnterDisable("Cuba_Jungle_07", "reload2_back", false);
             pchar.quest.Caleuche_cuba_caveentrance.win_condition.l1 = "location";
@@ -127,6 +130,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             ChangeCharacterComplexReputation(pchar, "fame", 3);
             ChangeCharacterNationReputation(pchar, SPAIN, 10);
             AddCharacterExpToSkill(pchar, "Leadership", 500);
+			AddLandQuestMark(characterFromId("Havana_CemeteryMan"), "questmarkmain");
         break;
     }
     UnloadSegment(NPChar.FileDialog2);  // 若switch内部某处通过return退出, 切记执行卸载

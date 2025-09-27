@@ -947,7 +947,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 				}
 				else
 				{
@@ -1473,12 +1473,10 @@ void ProcessDialogEvent()
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 				}
 				else
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 				}
 			}
 			else
@@ -1489,7 +1487,6 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
 				else
 				{
@@ -1497,11 +1494,9 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
 			}
 	        shTo.Tuning.HP = true;
-			//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
 			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 			
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
@@ -2723,30 +2718,30 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_7":
             dialog.text = "Итак, с тебя "+sti(pchar.questTemp.IslaMona.Shipyarder.Money)+" дублонов.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 			{
 				link.l1 = "Держи, последнее отдаю, больше ни гроша не осталось.";
 				link.l1.go = "IslaMona_8";
 			}
 			else
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") < 1)
+				if (PCharDublonsTotal() < 1)
 				{
 					link.l1 = "Жди, сейчас пойду к ростовщику в долги влезать.";
 					link.l1.go = "IslaMona_money_exit";
 				}
 				else
 				{
-					link.l1 = "У меня с собой только "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+". Держи это, а я пошёл по ростовщикам побираться.";
+					link.l1 = "У меня с собой только "+FindRussianDublonString(PCharDublonsTotal())+". Держи это, а я пошёл по ростовщикам побираться.";
 					link.l1.go = "IslaMona_money";
 				}
 			}
 		break;
 		
 		case "IslaMona_money":
-			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("Вы отдали "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+"");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-PCharDublonsTotal();
+			Log_Info("Вы отдали "+FindRussianDublonString(PCharDublonsTotal())+"");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
             dialog.text = "Не дави на жалость, у тебя рундук в каюте ломится от золота, небось. С тебя ещё "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+".";
 			link.l1 = "";
@@ -2762,7 +2757,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_8":
 			Log_Info("Вы отдали "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+"");
-			RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 			PlaySound("interface\important_item.wav");
             dialog.text = "Отлично. Вся сумма на месте. Инструменты будут доставлены на твой корабль. Это несколько тяжёлых ящиков.";
 			link.l1 = "Спасибо, "+npchar.name+"!";

@@ -1612,7 +1612,7 @@ Il negromante Merriman era davvero tosto, e i mostri Chavinavi che aveva evocato
 #TEXT   33
 Ora ho il teschio di giada di Yum Cimil. Adesso devo andare a Dominica, per incontrare Tuttuathapak.
 #TEXT   34
-Il prossimo passo è portare il teschio di giada al tempio dei Chavin, che si trova su un’isola disabitata dell’arcipelago. Tutto quello che so è che si trova a nord di Dominica, vicino all’oceano. @<sText> E devo sbrigarmi: ho solo un mese per riportare il teschio al tempio. Dopo un mese, gli amuleti di Tuttuathapak perderanno il loro potere e non potrò superare i guardiani del tempio: i temibili Chavinavi.
+Il prossimo passo è portare il teschio di giada al tempio dei Chavin, che si trova su un’isola disabitata dell’arcipelago. L’unica cosa che si sa di esso è che si trova a nord di Dominica, nel mezzo di un triangolo di isole, e dal quarto lato c’è l’oceano. @<sText> E devo sbrigarmi: ho solo un mese per riportare il teschio al tempio. Dopo un mese, gli amuleti di Tuttuathapak perderanno il loro potere e non potrò superare i guardiani del tempio: i temibili Chavinavi.
 #TEXT   35
 Ho parlato con Nathaniel Hawk! Ora conosco le coordinate di Khael Roa: 19 gradi e 32 minuti Nord, 62 gradi e 25 minuti Ovest. Inoltre, Nathan mi ha avvertito dei pericoli che mi aspettano nel tempio.
 #TEXT   36
@@ -1634,6 +1634,10 @@ Bene, questa lunga storia è giunta al termine. Ho ricevuto dallo sciamano tre p
 Ho passato troppo tempo a cercare l’isola, e gli amuleti di Tuttuathapak hanno perso il loro potere. Non sono riuscito a riportare il teschio di giada al tempio, e Tuttuathapak ha deciso di non avere più nulla a che fare con me. Pazienza, è tutta colpa mia.
 #TEXT   44
 Ho trovato una sala davvero curiosa nelle profondità del tempio. Ci sono lastre di pietra sul pavimento e colonne tutt’intorno. L’uscita, che sembra portare al santuario, è bloccata da una pesante porta di pietra. Devo trovare un modo per aprirla. Esplorare questa sala è sicuramente un buon inizio.
+#TEXT   45
+Sembra che sotto queste piastrelle si nasconda un meccanismo che apre un passaggio. Dovrò camminarci sopra una alla volta, finché non troverò la sequenza giusta. Ogni passo corretto emette un suono particolare – almeno così mi sembra. Non ho altre idee per andare avanti, quindi cercherò la combinazione giusta e ascolterò con la massima attenzione...
+#TEXT   46
+Dannazione... Anche nelle colonne sembra esserci un meccanismo nascosto, e per di più protetto dalla magia dei Chavín. Ma ora l’errore costa molto di più: una combinazione sbagliata fa apparire scheletri indigeni. Dovrò stare estremamente attento – e ricordare ogni tentativo, per non ripetere gli errori. Chissà quante ondate ancora riuscirò a sopravvivere...
 
 #QUEST Patria
 Eroe della Nazione
@@ -2556,3 +2560,24 @@ La regata è finita. Sono arrivato quinto. Anche se non ho vinto nessun premio, 
 Maledizione! Sono arrivato ultimo. Che figuraccia. Avrei fatto meglio a non partecipare a questa regata.
 #TEXT   45
 Il mio viaggio nella regata è finito. Ho infranto le regole e sono stato squalificato dalla gara.
+
+#QUEST LoyaltyPack
+Voce dell'Equipaggio
+#TEXT 1
+Alonso Pimentel, nostromo e voce del mio equipaggio, vuole parlarmi. Posso trovarlo nella stiva.
+#TEXT 2
+Anche se Alonso ha riconosciuto i miei modesti successi come capitano, è chiaramente preoccupato per me. Mi ha offerto consigli, regalato equipaggiamento utile e condiviso una storia. Forse se continuo su questa strada, sentirò il resto.
+#TEXT 3
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 4
+È passato quasi un anno, e l'equipaggio ha finalmente trovato fiducia in me. Alonso ha magistralmente eluso le mie domande sul suo passato ma ha condiviso un'altra delle sue storie di guerra. Chiaramente prende sul serio quella parte dei suoi doveri che riguarda il morale dell'equipaggio. Quasi come un confessore, anche se dubito che i preti regalino al loro gregge ricette per intruglio moscovita e armi da fuoco di qualità. Continua?
+#TEXT 5
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 6
+Ora sono proprietario non solo di una certa fama nei Caraibi, ma anche di un cappello dall'aspetto ridicolo. Anche se può proteggere la testa di un capitano in erba, sicuramente si sfalderà dopo un paio di colpi solidi. Tuttavia, il mio trionfo è stato in parte rovinato dalla tragica storia che Alonso mi ha raccontato oggi. Non so cosa dovrebbe insegnarmi, ma mi piacerebbe incontrare il suo "amico moscovita".
+#TEXT 7
+Alonso ha richiesto un incontro. Come al solito, lo troverò nella stiva.
+#TEXT 8
+Fadey? Lo stesso Fadey di Basse-Terre? Com'è piccolo il mondo! Dovrei fargli visita.
+#TEXT 9
+L'incontro con Fadey mi ha fatto riflettere su molte cose. Quanti altri "Alonso" ci sono nel mio equipaggio? Quante storie e peculiari destini umani? Ho sentito solo una voce, eppure ora ne ho centinaia. Non so come finirà la mia odissea caraibica, ma grazie alle cure di Alonso e ai suoi semplici doni, sono completamente equipaggiato, preparato e pronto a incontrare il mio destino.

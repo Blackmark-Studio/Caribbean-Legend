@@ -352,6 +352,8 @@ void ProcessDialogEvent()
 			dialog.text = "让我查一下 manifest 日志... .伊克玛, 伊默泽尔, 雅各布斯... 杰克逊, 找到了。 嗯, 雷金纳德.杰克逊船长目前在皇家港和菲利普斯堡之间进行定期航运, 在那条航线上找他。 现在船长, 我必须事先警告你-如果你策划什么恶作剧, 最好不要, 因为杰克逊船长在我们的保护之下, 明白吗, 先生? ";
 			link.l1 = "我只是和他有生意, 普通贸易, 无意伤害他。 ";
 			link.l1.go = "caleuche_1";
+			DelLandQuestMark(npchar);
+			DelLandQuestMarkToPhantom();
 		break;
 		
 		case "caleuche_1":
@@ -362,10 +364,7 @@ void ProcessDialogEvent()
 		
 		case "caleuche_2":
 			DialogExit();
-			pchar.questTemp.Caleuche.Garpiya = "capitan";
-			pchar.questTemp.Garpiya = "to_portroyal";
-			AddQuestRecord("Caleuche", "19");
-			DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
+			AddDialogExitQuestFunction("Caleuche_PrepareCreateGarpiya");
 		break;
 		
 		// 荷兰西印度公司新老板

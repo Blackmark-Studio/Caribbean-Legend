@@ -29,15 +29,12 @@ void ProcessDialogEvent()
 		case "First time":
 			if (NPChar.sex != "man")
 			{
-                dialog.text = RandPhraseSimple("My husband doesn't allow me to talk with strangers!",
-                         "There is nothing we could talk about.");
+                dialog.text = RandPhraseSimple("My husband doesn't allow me to speak with strangers!","There is nothing we could talk about.");
 				Link.l1 = "No big deal.";
 				Link.l1.go = "exit";
                 break;
 			}
-			link.l10 = LinkRandPhrase ("Tell me, what are the popular gossips at the local tavern?",
-									"Would you rather tell me what's happening around here?",
-									"Hey, mate, would you tell me how's life on the dry land?");
+			link.l10 = LinkRandPhrase("Tell me, what are the popular rumours at the local tavern?","Would you rather tell me what's going on around here?","Hey, mate, would you tell me what life is like on dry land?");
 			link.l10.go = "rumours_citizen"; //повесил на горожанина, если нужны отедельные слухи, то пишем соответствующую реализацию
 			if (npchar.quest.Meeting != LastSpeakDate() || bBettaTestMode)
 		    {
@@ -559,7 +556,7 @@ void ProcessDialogEvent()
 
 		case "Fencing":
 			Sum = (sti(Pchar.skill.FencingS) + 1) * 10000;
-			dialog.text = DLG_TEXT[108] + Sum + DLG_TEXT[109];
+			dialog.text = DLG_TEXT[108]+Sum+DLG_TEXT[109];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[110];
@@ -576,7 +573,7 @@ void ProcessDialogEvent()
 
 		case "Fencing2":
 			Sum = (sti(Pchar.skill.FencingS) + 1) * 10000;
-			dialog.text = DLG_TEXT[113] + Sum + DLG_TEXT[114];
+			dialog.text = DLG_TEXT[113]+Sum+DLG_TEXT[114];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[115];
@@ -601,7 +598,7 @@ void ProcessDialogEvent()
 
 		case "Defence":
 			Sum = (sti(Pchar.skill.Defence) + 1) * 10000;
-			dialog.text = DLG_TEXT[118] + Sum + DLG_TEXT[119];
+			dialog.text = DLG_TEXT[118]+Sum+DLG_TEXT[119];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[120];
@@ -618,7 +615,7 @@ void ProcessDialogEvent()
 
 		case "Defence2":
 			Sum = (sti(Pchar.skill.Defence) + 1) * 10000;
-			dialog.text = DLG_TEXT[123] + Sum + DLG_TEXT[124];
+			dialog.text = DLG_TEXT[123]+Sum+DLG_TEXT[124];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[125];
@@ -643,7 +640,7 @@ void ProcessDialogEvent()
 
 		case "Leadership":
 			Sum = (sti(Pchar.skill.Leadership) + 1) * 10000;
-			dialog.text = DLG_TEXT[128] + Sum + DLG_TEXT[129];
+			dialog.text = DLG_TEXT[128]+Sum+DLG_TEXT[129];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[130];
@@ -660,7 +657,7 @@ void ProcessDialogEvent()
 
 		case "Leadership2":
 			Sum = (sti(Pchar.skill.Leadership) + 1) * 10000;
-			dialog.text = DLG_TEXT[133] + Sum + DLG_TEXT[134];
+			dialog.text = DLG_TEXT[133]+Sum+DLG_TEXT[134];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[135];
@@ -685,7 +682,7 @@ void ProcessDialogEvent()
 
 		case "Sailing":
 			Sum = (sti(Pchar.skill.Sailing) + 1) * 10000;
-			dialog.text = DLG_TEXT[138] + Sum + DLG_TEXT[139];
+			dialog.text = DLG_TEXT[138]+Sum+DLG_TEXT[139];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[140];
@@ -702,7 +699,7 @@ void ProcessDialogEvent()
 
 		case "Sailing2":
 			Sum = (sti(Pchar.skill.Sailing) + 1) * 10000;
-			dialog.text = DLG_TEXT[143] + Sum + DLG_TEXT[144];
+			dialog.text = DLG_TEXT[143]+Sum+DLG_TEXT[144];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[145];
@@ -727,7 +724,7 @@ void ProcessDialogEvent()
 
 		case "Accuracy":
 			Sum = (sti(Pchar.skill.Accuracy) + 1) * 10000;
-			dialog.text = DLG_TEXT[148] + Sum + DLG_TEXT[149];
+			dialog.text = DLG_TEXT[148]+Sum+DLG_TEXT[149];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[150];
@@ -744,7 +741,7 @@ void ProcessDialogEvent()
 
 		case "Accuracy2":
 			Sum = (sti(Pchar.skill.Accuracy) + 1) * 10000;
-			dialog.text = DLG_TEXT[153] + Sum + DLG_TEXT[154];
+			dialog.text = DLG_TEXT[153]+Sum+DLG_TEXT[154];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[155];
@@ -769,7 +766,7 @@ void ProcessDialogEvent()
 
 		case "Cannons":
 			Sum = (sti(Pchar.skill.Cannons) + 1) * 10000;
-			dialog.text = DLG_TEXT[158] + Sum + DLG_TEXT[159];
+			dialog.text = DLG_TEXT[158]+Sum+DLG_TEXT[159];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[160];
@@ -786,7 +783,7 @@ void ProcessDialogEvent()
 
 		case "Cannons2":
 			Sum = (sti(Pchar.skill.Cannons) + 1) * 10000;
-			dialog.text = DLG_TEXT[163] + Sum + DLG_TEXT[164];
+			dialog.text = DLG_TEXT[163]+Sum+DLG_TEXT[164];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[165];
@@ -811,7 +808,7 @@ void ProcessDialogEvent()
 
 		case "Grappling":
 			Sum = (sti(Pchar.skill.Grappling) + 1) * 10000;
-			dialog.text = DLG_TEXT[168] + Sum + DLG_TEXT[169];
+			dialog.text = DLG_TEXT[168]+Sum+DLG_TEXT[169];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[170];
@@ -828,7 +825,7 @@ void ProcessDialogEvent()
 
 		case "Grappling2":
 			Sum = (sti(Pchar.skill.Grappling) + 1) * 10000;
-			dialog.text = DLG_TEXT[173] + Sum + DLG_TEXT[174];
+			dialog.text = DLG_TEXT[173]+Sum+DLG_TEXT[174];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[175];
@@ -853,7 +850,7 @@ void ProcessDialogEvent()
 
 		case "Repair":
 			Sum = (sti(Pchar.skill.Repair) + 1) * 10000;
-			dialog.text = DLG_TEXT[178] + Sum + DLG_TEXT[179];
+			dialog.text = DLG_TEXT[178]+Sum+DLG_TEXT[179];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[180];
@@ -870,7 +867,7 @@ void ProcessDialogEvent()
 
 		case "Repair2":
 			Sum = (sti(Pchar.skill.Repair) + 1) * 10000;
-			dialog.text = DLG_TEXT[183] + Sum + DLG_TEXT[184];
+			dialog.text = DLG_TEXT[183]+Sum+DLG_TEXT[184];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[185];
@@ -895,7 +892,7 @@ void ProcessDialogEvent()
 
 		case "Commerce":
 			Sum = (sti(Pchar.skill.Commerce) + 1) * 10000;
-			dialog.text = DLG_TEXT[188] + Sum + DLG_TEXT[189];
+			dialog.text = DLG_TEXT[188]+Sum+DLG_TEXT[189];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[190];
@@ -912,7 +909,7 @@ void ProcessDialogEvent()
 
 		case "Commerce2":
 			Sum = (sti(Pchar.skill.Commerce) + 1) * 10000;
-			dialog.text = DLG_TEXT[193] + Sum + DLG_TEXT[194];
+			dialog.text = DLG_TEXT[193]+Sum+DLG_TEXT[194];
 			if(makeint(Pchar.money) < Sum)
 			{
 				Link.l1 = DLG_TEXT[195];
@@ -972,15 +969,12 @@ void ProcessDialogEvent()
 		case "sovet":
 			if (NPChar.sex != "man") //fix eddy. второй раз баба говорит как мужик
 			{
-                dialog.text = RandPhraseSimple("My husband doesn't allow me to talk with strangers!",
-                         "There is nothing we could talk about.");
+                dialog.text = RandPhraseSimple("My husband doesn't allow me to talk to strangers!","There is nothing we could talk about.");
 				Link.l1 = "No big deal.";
 				Link.l1.go = "exit";
                 break;
 			}
-			link.l10 = LinkRandPhrase ("Tell me, what are the popular gossips at the local tavern?",
-									"Would you rather tell me what's happening around here?",
-									"Hey, mate, would you tell me how's life on the dry land?");
+			link.l10 = LinkRandPhrase("Tell me, what are the popular rumours at the local tavern?","Would you rather tell me what's going on around here?","Hey, mate, would you tell me what life is like on dry land?");
 			link.l10.go = "rumours_citizen"; //повесил на горожанина, если нужны отедельные слухи, то пишем соответствующую реализацию
 			dialog.text = DLG_TEXT[210];
 			Link.l1 = DLG_TEXT[211];
@@ -1125,35 +1119,25 @@ void ProcessDialogEvent()
 
 		//у горожанина должна быть эта ветка.
 		case "new question":
-            dialog.text = NPCharRepPhrase(npchar,
-		                PCharRepPhrase(LinkRandPhrase("Oh yeah, I am glad"+NPCharSexPhrase(NPChar, "", "")+" to see you almost like a cup of booze. Ask whatever you like.", "You like talking, captain? Well, me too... Especially over a cup of rum.", "Yes, " + PChar.name + "?"),
-                                        LinkRandPhrase("What do you need?", "I see, captain "+PChar.name+", you are quite a talker?", "Tiresome questions Captain, would be better if you treated me with rum.")),
-		                PCharRepPhrase(LinkRandPhrase("What did you want to know "+ GetAddress_Form(NPChar) + "?", "I am listening to you, captain.", "I have to go, so please be quick about it, captain."),
-                                        LinkRandPhrase("Always glad to have nice company, " + GetAddress_Form(NPChar) + " " + PChar.lastname + ". Speak your mind.",
-                                                        "Yes, " + GetAddress_Form(NPChar) + "?",
-                                                        "You like chatting, captain? Well, me too..."))
-                            );
+            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Oh yes, I'm glad"+NPCharSexPhrase(NPChar,"","")+" to see you is almost like a cup of booze. Ask whatever you like.","You like talking, captain? Well, me too... Especially over a cup of rum.","Yes, "+PChar.name+"?"),LinkRandPhrase("What do you need?","I see, Captain "+PChar.name+", you are quite the talker?","Tiresome questions, Captain. It would be better if you treated me to some rum.")),PCharRepPhrase(LinkRandPhrase("What did you want to know "+GetAddress_Form(NPChar)+"?","I am listening to you, captain.","I have to go, so please be quick about it, captain."),LinkRandPhrase("Always glad to have pleasant company, "+GetAddress_Form(NPChar)+" "+PChar.lastname+". Speak your mind.","Yes, "+GetAddress_Form(NPChar)+"?","You like chatting, captain? Well, so do I...")));
 
             // homo 25/06/06
-			link.l1 = LinkRandPhrase ("What kinds of gossips are popular in the local tavern?",
-                                    "What's going on in these lands?",
-                                    "What's new on land down here?");
+			link.l1 = LinkRandPhrase("What kinds of gossip are popular in the local tavern?","What's happening in these lands?","What's new on land down here?");
 			link.l1.go = "rumours_citizen";
-			link.l5 = PCharRepPhrase(RandPhraseSimple("No, you're hearing things. I'll be going now.", "No, nothing. Just went out for a stroll."),
-                                        RandPhraseSimple("No, nothing. Best of luck to you!", "Just taking a stroll. Goodbye."));
+			link.l5 = PCharRepPhrase(RandPhraseSimple("No, you're hearing things. I'll be going now.","No, nothing. Just went out for a stroll."),RandPhraseSimple("No, nothing. Best of luck to you!","Just taking a stroll. Goodbye."));
 			link.l5.go = "exit";
 		break;
 		//замечение по обнажённому оружию
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, as a citizen of this town, I must ask you to restrain from walking around with an unsheathed blade.");
-				link.l1 = LinkRandPhrase("Fine.", "Fine.", "As you say...");
+				dialog.text = NPCharSexPhrase(NPChar,"Listen, as a citizen of this town, I must ask you to refrain from walking around with an unsheathed blade.");
+				link.l1 = LinkRandPhrase("Fine.","Fine.","As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Hold your horses, "+ GetSexPhrase("mate","lass") +", when running around with a weapon in hand. That can make me nervous...", "I don't like it when "+ GetSexPhrase("men","people") +" walk around with weapons ready. It scares me...");
-				link.l1 = RandPhraseSimple("I got it.", "I will remove it.");
+				dialog.text = NPCharSexPhrase(NPChar,"Hold your horses, "+GetSexPhrase("mate","lass")+", when you're running around with a weapon in your hand. That can make me nervous...","I don't like it when "+GetSexPhrase("men","people")+" walk around with weapons at the ready. It scares me...");
+				link.l1 = RandPhraseSimple("I got it.","I will remove it.");
 			}
 			link.l1.go = "exit";
 			Diag.TempNode = "First Time";

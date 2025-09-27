@@ -1,0 +1,89 @@
+sea_Cancel {Mégse}
+sea_Moor {Kikötés}
+sea_Cabin {Kisház}
+sea_SailTo {Árbóc a Láthatáron}
+sea_Board {Igazgatóság}
+sea_LandTroops {Szárazföldi csapatok}
+sea_Map {Térkép}
+sea_Attack {Támadás}
+sea_Abordage {Markolás}
+sea_Defend {Védekezés}
+sea_SailAway {Elvitorlázni}
+sea_HeaveToDrift {Szedd le a vitorlákat}
+sea_Reload {Kereskedelem}
+sea_Charge {Újratöltés}
+sea_Speed {Vitorlák}
+sea_CCommand {Rendelések}
+sea_Ability {Képesség}
+sea_ImmediateDeath {Pusztíts!}
+sea_InstantBoarding {Azonnali beszállás}
+sea_Speak {Beszélgetés}
+sea_Sneak {Lopakodj be a városba}
+sea_Repair {Javítás}
+sea_SailDir {Vitorlázz a ...}
+sea_SailNW {Északnyugat}
+sea_SailN {Észak}
+sea_SailNE {Északkelet}
+sea_SailE {Kelet}
+sea_SailSE {Délkelet}
+sea_SailS {Dél}
+sea_SailSW {Délnyugat}
+sea_SailW {Nyugat}
+sea_Boat {Hajó küldése}
+sea_Bomb {Bányát indítani}
+sea_Brander {Brander}
+sea_ImmediateReload {Újratöltés}
+sea_LightRepair {Sürgôs javítás}
+sea_InstantRepair {Harci javítás}
+sea_SandbankManeuver {Manôverezés sekély vízben}
+sea_Turn180 {Megfordulás}
+land_TalkSelf {Hangos gondolkodás}
+land_ItemsDead {Zsákmány}
+land_FastReload {Menjetek!}
+land_ItemsUse {Használat}
+land_DialogStart {Párbeszédpanel}
+land_ItemsChange {Exchange}
+land_TakeItem {Vedd el}
+land_PlaceItem {Hely}
+land_OutDoor {Megnyitás}
+land_UseBox {Megnyitás}
+land_ActivateRush {Ometochtli tinktúra használata}
+land_ActivateCabine {Kapitányi kabin}
+land_DeActivateCabine {Földterület}
+land_Look {Lásd}
+land_Exit {Tenger}
+land_SelfRepair {Javítás}
+land_Alchemy {Kézmûvesség}
+land_MapAtlas {Térképek}
+land_Rest {Pihenés}
+go_store {Áruház}
+go_shipyard {Hajógyár}
+go_tavern {Kocsma}
+go_residence {Lakóhely}
+go_port {Kikötô}
+go_loanshark {Bankár}
+go_church {Templom}
+go_prison {Börtönbüntetés}
+go_brothel {Bordélyház}
+go_usurer {Uzsorás}
+go_portman {Kikötômester}
+go_duel {Párbaj}
+go_exittown {Városkapu}
+go_Caroline {Frigate 'Carolina'}
+go_CeresSmithy_Mary {Mary Casper}
+go_CeresSmithy_Jurgen {Jurgen Schmidt}
+go_EsmeraldaStoreBig {Galleon 'Esmeralda'}
+go_EsmeraldaStoreBig_Donald {Donald Greenspen}
+go_FenixPlatform {Platform 'Fenix'}
+go_FleuronTavern {Caravel 'Fleron'}
+go_GloriaChurch {Galleon 'Gloria'}
+go_ProtectorFisher {Eduard Black}
+go_SanAugustineResidence {Steven Dodson}
+go_SanGabrielMechanic {Henrick Vedecker}
+go_TartarusPrison {Battleship 'Tartarus'}
+worldmap_toisland {A tengerre}
+worldmap_tosea {A tengerre}
+worldmap_toship {Támadás}
+worldmap_tostorm {Vihar}
+worldmap_toattack {Csatlakozz a csatához!}
+worldmap_toenemy {Harc}

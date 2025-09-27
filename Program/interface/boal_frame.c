@@ -64,6 +64,13 @@ void IDoExit(int exitCode)
 		{
 		    DoQuestReloadToLocation(PChar.AutoQuest.FrameLocation, PChar.AutoQuest.FrameGroup, PChar.AutoQuest.FrameLocator, PChar.AutoQuest.FrameLocationQuest);
 		}
+		else if (pchar.AutoQuest.FrameQuest == "Update_Deck_Model")
+		{
+			ref loc = loadedLocation;
+			UnloadLocation(loc);
+			LoadLocation(loc);
+			TeleportCharacterToPos(pchar, stf(pchar.locx), stf(pchar.locy), stf(pchar.locz));
+		}
 		else
 		{
 		    if (pchar.AutoQuest.FrameQuest == "Run_Function")

@@ -129,6 +129,7 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	{
 		GiveItem2Character(sld, "hat2");
 	}
+	if(rand(9) == 6) AddItems(sld, "ArmoryPaper", 6 + rand(2));
 	LAi_SetImmortal(sld, false);
 	LAi_CharacterEnableDialog(sld);
 	LAi_RemoveLoginTime(sld);

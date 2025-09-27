@@ -131,7 +131,7 @@ void DTSG_Knippel_36()
 
 void DTSG_Knippel_64()
 {
-	Return_KnippelOfficer();
+	ReturnOfficer_Knippel();
 	bDisableFastReload = false;
 	chrDisableReloadToLocation = false;
 	
@@ -205,7 +205,7 @@ void DTSG_Fleetwood_13()
 	AddItems(pchar, "bullet", 10);
 	AddItems(pchar, "GunPowder", 10);
 	AddItems(pchar, "grapeshot", 10);
-	AddItems(pchar, "cartridge", 10);
+	AddItems(pchar, "cartridge", 1);
 	PlaySound("interface\abordage.wav");
 	PlaySound("interface\abordage.wav");
 	PlaySound("interface\MusketFire1.wav");
@@ -266,10 +266,10 @@ void DTSG_Graf_Sheffild_25()
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -301,6 +301,26 @@ void DTSG_Graf_Sheffild_25()
 	LaunchFrameForm();
 }
 
+void DTSG_BasTerTavern_3()
+{
+	DeleteAttribute(pchar, "questTemp.DTSG_BasTerTavern");
+	LAi_LocationDisableOfficersGen("BasTer_tavern", false);
+	SetQuestHeader("DTSG");
+	AddQuestRecord("DTSG", "1");
+	bDisableFastReload = false;
+	chrDisableReloadToLocation = false;
+	ReturnOfficer_Knippel();
+	
+	PChar.quest.DTSG_BasTerDom.win_condition.l1 = "locator";
+	PChar.quest.DTSG_BasTerDom.win_condition.l1.location = "BasTer_town";
+	PChar.quest.DTSG_BasTerDom.win_condition.l1.locator_group = "reload";
+	PChar.quest.DTSG_BasTerDom.win_condition.l1.locator = "HutFish1";
+	PChar.quest.DTSG_BasTerDom.win_condition = "DTSG_BasTerDom";
+	
+	SetTimerCondition("DTSG_BasTerDom_Timer", 0, 0, 7, false);
+	SetTimerCondition("DTSG_Etap2", 0, 0, 14, false);
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -312,19 +332,18 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	bool condition = true;
 	
 	if (sQuestName == "DTSG_Start") {
-		if (GetCharacterIndex("Knippel") != -1 && CheckPassengerInCharacter(pchar, "Knippel") && !CheckAttribute(pchar, "questTemp.DTSG_Start"))
-		{
-			PChar.quest.DTSG_Nachalo.win_condition.l1 = "location";
-			PChar.quest.DTSG_Nachalo.win_condition.l1.location = "BasTer_town";
-			PChar.quest.DTSG_Nachalo.win_condition = "DTSG_Nachalo";
-			AddMapQuestMarkCity("BasTer", true);
-			pchar.questTemp.DTSG_Start = true;
-		}
+		PChar.quest.DTSG_Nachalo.win_condition.l1 = "location";
+		PChar.quest.DTSG_Nachalo.win_condition.l1.location = "BasTer_town";
+		PChar.quest.DTSG_Nachalo.win_condition = "DTSG_Nachalo";
+		AddMapQuestMarkCity("BasTer", true);
 	}
 	
 	else if (sQuestName == "DTSG_Nachalo") {
+		// if (CheckAttribute(pchar, "questTemp.DTSG_Start") && GetCharacterIndex("Knippel") != -1 && CheckPassengerInCharacter(pchar, "Knippel"))
 		if (GetCharacterIndex("Knippel") != -1 && CheckPassengerInCharacter(pchar, "Knippel"))
 		{
+			DeleteQuestCondition("DTSG_Start");
+			DeleteQuestCondition("DTSG_Nachalo");
 			sld = characterFromId("Knippel");
 			ChangeCharacterAddressGroup(sld, "BasTer_town", "goto", "goto20");
 			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
@@ -335,6 +354,11 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 			chrDisableReloadToLocation = true;
 			DelMapQuestMarkCity("BasTer");
 			pchar.quest.Mary_giveme_sex1.over = "yes";
+			pchar.questTemp.DTSG_Start = true;
+		}
+		else
+		{
+			SetTimerCondition("DTSG_Start", 0, 0, 7, true);
 		}
 	}
 	
@@ -1251,7 +1275,7 @@ bool Knippel_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "DTSG_ProshloeDominika_12") {
 		locCameraFromToPos(1.05, 18.74, -15.47, true, -3.05, 16.40, -14.08);
 		//LAi_SetCheckMinHP(pchar, 1, false, "DTSG_Knippel_Smert");
-		LAi_SetCheckMinHP(pchar, 1, true, "SkritoeBessmertie");
+		LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 		//LAi_SetFightMode(pchar, true);
 		LAi_SetWarriorType(pchar);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);

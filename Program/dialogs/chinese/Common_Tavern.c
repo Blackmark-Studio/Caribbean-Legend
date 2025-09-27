@@ -584,7 +584,7 @@ void ProcessDialogEvent()
 							}
 						break;
 						case 2:
-							pchar.GenQuest.Hold_GenQuest.foundStr = "放债人";												
+							pchar.GenQuest.Hold_GenQuest.foundStr = "放贷人";												
 							pchar.GenQuest.Hold_GenQuest.found = "bank";
 						break;
 						case 3:

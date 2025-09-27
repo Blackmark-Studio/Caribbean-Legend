@@ -481,13 +481,8 @@ int GetMaximumCaliber(ref refCharacter)
 int GetCharacterShipType(ref _refCharacter)
 {
 	if(CheckAttribute(_refCharacter,"Ship.Type"))
-	{
-		int iShipType = sti(_refCharacter.Ship.Type);
-		if(iShipType != SHIP_NOTUSED)
-		{
-            return iShipType;
-		}
-	}
+		return sti(_refCharacter.Ship.Type);
+
 	return SHIP_NOTUSED;
 }
 int GetCharacterShipHP(ref _refCharacter)
@@ -511,7 +506,7 @@ int GetCharacterShipBaseHP(ref _refCharacter)
 {
 	int nShipType = GetCharacterShipType(_refCharacter);
 	if(nShipType==SHIP_NOTUSED) return 0;
-	return sti(RealShips[nShipType].BaseHP);
+	return sti(RealShips[nShipType].HP);
 }
 int GetCurrentShipHP(ref _refCharacter)
 {
@@ -570,9 +565,10 @@ int GetMaxCrewQuantity(ref _refCharacter)
 	if(!CheckAttribute(_refCharacter,"Ship.Type")) return 0;
 	int shipType = sti(_refCharacter.Ship.Type);
 	if(shipType<0) return 0;
-    if(shipType>=REAL_SHIPS_QUANTITY) return 0;
-	return sti(RealShips[shipType].MaxCrew);
+	if(shipType>=REAL_SHIPS_QUANTITY) return 0;
+	return GetBonusCrewQuartermaster(_refCharacter, sti(RealShips[shipType].OptCrew), sti(RealShips[shipType].MaxCrew));
 }
+
 //boal optimal crew
 int GetOptCrewQuantity(ref _refCharacter)
 {
@@ -691,30 +687,27 @@ float GetSailRPD(ref _refCharacter) // процент ремонта парус�
 {
 	float repairSkill = GetSummonSkillFromNameToOld(_refCharacter, SKILL_REPAIR);
 	
-	if(CheckOfficersPerk(_refCharacter, "SelfRepair")) repairSkill = repairSkill * 1.25;
+
+	if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.00;
 	else
 	{
-		if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.00;
+		// belamour legendary edition: CheckOfficersPerk не работает со способностями, которые имеют КД
+		if(GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 0.75;
 		else
 		{
-			// belamour legendary edition: CheckOfficersPerk не работает со способностями, которые имеют КД
-			if(GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 0.75;
-			else
+			if(CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.50;
+			else 
 			{
-				if(CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.50;
-				else 
-				{
-					if(IsCharacterEquippedArtefact(_refCharacter, "obereg_2")) repairSkill = repairSkill * 0.10;
-					else repairSkill = 0.0;
-				}
+				if(IsCharacterEquippedArtefact(_refCharacter, "obereg_2")) repairSkill = repairSkill * 0.10;
+				else repairSkill = 0.0;
 			}
 		}
 	}
+
 	
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает 
     if(IsCharacterEquippedArtefact(_refCharacter, "indian_5")) repairSkill = repairSkill * 0.9;  // тсантса
-    if(IsCharacterEquippedArtefact(_refCharacter, "indian_6")) repairSkill = repairSkill * 0.9;  // Коралловая голова
     //<-- belamour
 
 	float damagePercent = 100.0 - GetSailPercent(_refCharacter);
@@ -728,25 +721,22 @@ float GetHullRPD(ref _refCharacter) // процент ремонта корпу�
 {
 	float repairSkill = GetSummonSkillFromNameToOld(_refCharacter, SKILL_REPAIR);
 	
-	if(CheckOfficersPerk(_refCharacter, "SelfRepair")) repairSkill = repairSkill * 1.25;
+	if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.00;
 	else
 	{
-		if (CheckOfficersPerk(_refCharacter, "Builder")) repairSkill = repairSkill * 1.00;
+		// belamour legendary edition: CheckOfficersPerk не работает со способностями, которые имеют КД
+		if(GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 0.75;
 		else
 		{
-			// belamour legendary edition: CheckOfficersPerk не работает со способностями, которые имеют КД
-			if(GetOfficersPerkUsing(_refCharacter, "LightRepair")) repairSkill = repairSkill * 0.75;
-			else
+			if(CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.50;
+			else 
 			{
-				if(CheckOfficersPerk(_refCharacter, "Carpenter")) repairSkill = repairSkill * 0.50;
-				else 
-				{
-					if(IsCharacterEquippedArtefact(_refCharacter, "obereg_1")) repairSkill = repairSkill * 0.10;
-					else repairSkill = 0.0;
-				}					
-			}
+				if(IsCharacterEquippedArtefact(_refCharacter, "obereg_1")) repairSkill = repairSkill * 0.10;
+				else repairSkill = 0.0;
+			}					
 		}
 	}
+	
 	
     // belamour правка артефактов согласно описанию -->
 	if(IsCharacterEquippedArtefact(_refCharacter, "talisman7")) repairSkill = repairSkill * 2.0; // вдвое увеличивает
@@ -1248,10 +1238,13 @@ int SetCompanionIndex(ref _refCharacter,int _CompanionNum, int _CompanionIdx)
 	}
 
 	Event(EVENT_CHANGE_COMPANIONS,"");
+	Event(EVENT_CT_UPDATE_FELLOW, "a", &Characters[_CompanionIdx]);
+	Event(EVENT_CT_APPLY_COMPANION, "a", &Characters[_CompanionIdx]);
 	return _CompanionIdx;
 }
 int RemoveCharacterCompanion(ref _refCharacter, ref refCompanion)
 {
+	PostEvent(EVENT_CT_UPDATE, 50, "a", refCompanion);
 	string compName;
 	int i;
 
@@ -1903,15 +1896,14 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 {
 	int q;
 	aref arItm;
-	int   	idLngFile;
-	
+	int  idLngFile;
+
 	if(Items_FindItem(itemName, &arItm) < 0)
 	{
 		trace("TakeNItems warning - can't find " + itemName + " item");
 		return false;
 	}
-	
-	
+
 	if(CheckAttribute(arItm, "gold"))
 	{
 		if(CheckAttribute(_refCharacter,"Money"))
@@ -1933,18 +1925,14 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		_refCharacter.Money = q;
 		
 		//AddItemToCRC(_refCharacter, itemName, n);
-		RecalculateCharacterModifiers(_refCharacter);
+		
 		return true;
 	}	
 
 	if(n > 0)
 	{
-        //if (findsubstr(itemName, "map_part" , 0) != -1 && GetCharacterItem(_refCharacter,itemName) > 0) return true;
-        if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm))
-		{
-			RecalculateCharacterModifiers(_refCharacter);
-			return false;
-		}
+        if (itemName == "map_part1") GenerateTreasureMapSeed();
+        else if (itemName == "treasure_note" && !TreasureNotesHandler(_refCharacter, arItm)) return false;
 	}
 	
 	if (itemName == "talisman11" && IsMainCharacter(_refCharacter) && !CheckAttribute(pchar, "TookChickenGod")) {
@@ -1991,7 +1979,6 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 	{
 		if(q <= 0 && GetChrItemQuantity(_refCharacter) >= MAX_ITEM_TAKE)
 		{
-			RecalculateCharacterModifiers(_refCharacter);
 			return false;
 		}
 		
@@ -2018,15 +2005,20 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 			{
 				if(n > 0)
 				{
-					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+GetItemName(arItm), "BoxPlus");
+					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+					if(pchar.chr_ai.type == "player" && !LAi_IsDead(pchar)) notification(StringFromKey("characterUtilite_3")+LanguageConvertString(idLngFile, arItm.name), "BoxPlus");
 					//Log_Info(XI_ConvertString("You take item"));
 					AddMsgToCharacter(_refCharacter, MSGICON_GETITEM);
+					LanguageCloseFile(idLngFile);
 				}
 				
 				if(n < 0)
 				{
-					if(dialogrun) notification(StringFromKey("characterUtilite_5")+GetItemName(arItm), "BoxMinus");
+					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
+					//log_info("Отдано: "+LanguageConvertString(idLngFile, arItm.name))
+					if(dialogrun) notification(StringFromKey("characterUtilite_5")+LanguageConvertString(idLngFile, arItm.name), "BoxMinus");
 					//Log_Info(XI_ConvertString("You give item"));
+					LanguageCloseFile(idLngFile);
 				}
 			}
 		}
@@ -2051,7 +2043,7 @@ bool TakeNItems(ref _refCharacter, string itemName, int n)
 		}
 	}
 	
-	RecalculateCharacterModifiers(_refCharacter);
+	if (IsMainCharacter(_refCharacter)) UpdateSpeedByWeight(_refCharacter);
 	return true;
 }
 
@@ -2362,22 +2354,6 @@ bool IsEquipCharacterByItem(ref chref, string itemID)
 	return false;
 }
 
-// --> ugeen - проверяем, есть ли карта в атласе     18.06.09
-bool IsEquipCharacterByMap(ref chref, string itemID)
-{
-	aref arEquip;
-	string groupID = MAPS_ITEM_TYPE;
-	
-	makearef(arEquip,chref.equip.(groupID));
-	int q = GetAttributesNum(arEquip);
-	for(int i=0; i<q; i++)
-	{	
-		if(GetAttributeValue(GetAttributeN(arEquip,i))==itemID) return true;
-	}
-	
-	return false;
-}
-
 // получить суммарный вес экипированных предметов в зависимости от группы -> нужно для атласа карт
 float GetEquippedItemsWeight(ref chref, string groupID)
 {	
@@ -2464,7 +2440,6 @@ void RemoveOfficerEquip(ref chref, string groupID)
 
 void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 {
-	trace("SetEquipedItemToCharacter("+chref.name+", "+groupID+", "+itemID+")");
 	object emptyItm;
 	aref arItm;
 	string modelName = "";
@@ -2571,7 +2546,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 			if(CheckAttribute(arItm, "blade.time"))	{liveTime = stf(arItm.blade.time);}
 			if(CheckAttribute(arItm, "blade.colorstart"))	{colors = sti(arItm.blade.colorstart);}
 			if(CheckAttribute(arItm, "blade.colorend"))	{colore = sti(arItm.blade.colorend);}			
-			SendMessage(chref, "llsfll", MSG_CHARACTER_SETBLADE, 0, modelName, liveTime, colors, colore);
+			SendMessage(chref, "lsfll", MSG_CHARACTER_SETBLADE, modelName, liveTime, colors, colore);
 			// boal -->
 			if(CheckAttribute(arItm,"FencingType"))
 			{	LAi_BladeFencingType(chref, arItm.FencingType);
@@ -2593,24 +2568,7 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 				SendMessage(chref, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", 10, modelName, "hat", 1);
 			}
 		break;
-
-		// --> ugeen 18.06.09   - увеличиваем счетчик карт в атласе	
-		case MAPS_ITEM_TYPE:	
-			if(CheckAttribute(chref, "MapsAtlasCount"))
-			{
-				if(CheckAttribute(arItm,"Atlas") && sti(arItm.Atlas) > 0) // ugeen fix
-				{
-					chref.MapsAtlasCount = sti(chref.MapsAtlasCount) + 1;
-					if(sti(chref.MapsAtlasCount) == MAPS_IN_ATLAS && !CheckCharacterPerk(chref, "MapMaker"))  // даем скрытый перк если собрали все карты островов
-					{
-						SetCharacterPerk(chref, "MapMaker");
-					}	
-				}	
-			}			
-		break;	
-	// <-- ugeen
 	}
-	RecalculateCharacterModifiers(chref);
 }
 
 void SetGunParameters(ref chref, string sType, string itemID, bool bEquip)
@@ -3053,7 +3011,6 @@ void RemoveCharacterArtefactEquip(ref chref, string slotID)
 	}	
 	chref.equip_item.(slotID) = "";
 	chref.equip_item.(slotID).time = -1;
-	RecalculateCharacterModifiers(chref);
 }
 
 void EquipCharacterByArtefact(ref chref, string itemID)
@@ -3080,8 +3037,7 @@ void EquipCharacterByArtefact(ref chref, string itemID)
 				}
 				chref.equip_item.(slotID).time 	= sti(arItm.time)+addTime;
 			}
-			else chref.equip_item.(slotID).time = -1;
-			RecalculateCharacterModifiers(chref);
+			else chref.equip_item.(slotID).time = -1;	
 		}
 		else return;
 	}
@@ -3127,9 +3083,9 @@ void UpdateCharacterEquipItem(ref chref)
 				if(sti(arEquip.(sAttr).time) == 0) 
 				{
 					idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-					sItem = GetCharacterEquipBySlot(chref, sAttr)
+					sItem = GetCharacterEquipBySlot(chref, sAttr);
 					ref arItem = ItemsFromID(sItem);
-					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", GetItemName(arItem))+ LanguageConvertString(idLngFile, "new_string");
+					pchar.systemInfo.messages.Artefact = GetFullName(chref) + StringFromKey("characterUtilite_6", LanguageConvertString(idLngFile, arItem.name))+ LanguageConvertString(idLngFile, "new_string");
 					//Log_SetStringToLog(GetFullName(chref) + " заметил, что артефакт " + LanguageConvertString(idLngFile, arItem.name) + " утратил силу");
 					RemoveCharacterArtefactEquip(chref, sAttr);
 					LanguageCloseFile(idLngFile);
@@ -3669,6 +3625,7 @@ void  Set_My_Cabin() {
 				Locations[n].reload.l1.go = "My_Deck_Medium";
 				Locations[n].reload.l1.emerge = "reload_hold";
 			}
+			MyDeckSetModel(n, sti(rShip.Class));
 		}
 		n = FindLocation(Pchar.SystemInfo.CabinType);
 		if (n != -1) {
@@ -3684,6 +3641,102 @@ void  Set_My_Cabin() {
 		if (n != -1) {
 			Locations[n].reload.l1.go = Pchar.SystemInfo.CabinType;
 		}
+	}
+}
+
+void MyDeckSetModel(int n, int class)
+{
+	DeleteAttribute(&Locations[n], "models");
+	
+	// Locators
+	Locations[n].locators_radius.box.private1 = 1;
+    Locations[n].locators_radius.box.private2 = 1;
+    Locations[n].locators_radius.box.private3 = 1;
+    Locations[n].locators_radius.box.private4 = 1;
+	
+	SetDefaultLightingModels(n);
+	
+	if(class > 4)
+	{
+		//Models
+		Locations[n].filespath.models = "locations\decks\inside_hold_5"; // трюм шлюпа
+		//Always
+		Locations[n].models.always.main = "inside_hold_5";
+		Locations[n].models.always.parts = "inside_hold_5_parts";
+		Locations[n].models.always.outside = "inside_hold_5_outside";
+		Locations[n].models.always.locators = "inside_hold_5_locators";
+		//Locations[n].models.always.locators = "inside_hold_5_locators_combat"; // по 7 абордажников
+		Locations[n].models.always.camcollider = "inside_hold_5_camcollider"; // коллайдер
+		Locations[n].models.always.camcollider.tech = "LocationWindows";
+		locations[n].models.always.camcollider.level = 65539;
+		//Day
+		Locations[n].models.day.charactersPatch = "inside_hold_5_patch";
+		Locations[n].models.day.fonar = "inside_hold_5_fd";
+		Locations[n].models.always.rays = "inside_hold_5_rays"; // лучи днем
+		Locations[n].models.always.rays.uvslide.v0 = 0.08;
+		Locations[n].models.always.rays.uvslide.v1 = 0.0;
+		Locations[n].models.always.rays.tech = "LocationWaterFall";
+		Locations[n].models.always.rays.level = 99950;
+		Locations[n].fonarlights = true; // фонари всегда горят
+		//Night
+		Locations[n].models.night.charactersPatch = "inside_hold_5_patch";
+		Locations[n].models.night.fonar = "inside_hold_5_fn";
+
+		// Locators
+		Locations[n].locators_radius.box.private1 = 0.75;
+		Locations[n].locators_radius.box.private2 = 0.75;
+		Locations[n].locators_radius.box.private3 = 0.75;
+		Locations[n].locators_radius.box.private4 = 0.75;
+	}
+	else if(class == 4 || class == 3)
+	{
+		//Models
+		Locations[n].filespath.models = "locations\decks\inside_hold_4"; // трюм под бриг и т.п.
+		//Always
+		Locations[n].models.always.main = "inside_hold_4";
+		Locations[n].models.always.parts = "inside_hold_4_parts";
+		Locations[n].models.always.outside = "inside_hold_4_outside";
+		Locations[n].models.always.locators = "inside_hold_4_locators";
+		Locations[n].models.always.rays = "inside_hold_4_rays"; // лучи
+		Locations[n].models.always.rays.uvslide.v0 = 0.08;
+		Locations[n].models.always.rays.uvslide.v1 = 0.0;
+		Locations[n].models.always.rays.tech = "LocationWaterFall";
+		Locations[n].models.always.rays.level = 99950;
+		Locations[n].models.always.camcollider = "inside_hold_4_camcollider"; // коллайдер
+		Locations[n].models.always.camcollider.tech = "LocationWindows";
+		locations[n].models.always.camcollider.level = 65539;
+		//Day
+		Locations[n].models.day.charactersPatch = "inside_hold_4_patch";
+		Locations[n].models.day.fonar = "inside_hold_4_fd";
+		Locations[n].fonarlights = true; // фонари всегда горят
+		//Night
+		Locations[n].models.night.charactersPatch = "inside_hold_4_patch";
+		Locations[n].models.night.fonar = "inside_hold_4_fn";
+	}
+	else
+	{
+		//Models
+		Locations[n].filespath.models = "locations\decks\inside_hold_3";
+		//Always
+		Locations[n].models.always.main = "inside_hold_3";
+		Locations[n].models.always.parts = "inside_hold_3_parts";
+		Locations[n].models.always.outside = "inside_hold_3_outside";
+		Locations[n].models.always.locators = "inside_hold_3_locators";
+		Locations[n].models.always.camcollider = "inside_hold_3_camcollider";
+		Locations[n].models.always.camcollider.tech = "LocationWindows";
+		locations[n].models.always.camcollider.level = 65539;
+		Locations[n].models.always.rays = "inside_hold_3_rays"; // лучи
+		Locations[n].models.always.rays.uvslide.v0 = 0.08;
+		Locations[n].models.always.rays.uvslide.v1 = 0.0;
+		Locations[n].models.always.rays.tech = "LocationWaterFall";
+		Locations[n].models.always.rays.level = 99950;
+		//Day
+		Locations[n].models.day.charactersPatch = "inside_hold_3_patch";
+		Locations[n].models.day.fonar = "inside_hold_3_fn"; // тоже ночные
+		Locations[n].fonarlights = true; // фонари всегда горят
+		//Night
+		Locations[n].models.night.charactersPatch = "inside_hold_3_patch";
+		Locations[n].models.night.fonar = "inside_hold_3_fn";
 	}
 }
 
@@ -4436,109 +4489,6 @@ String GetCharacterEquipSuitID(ref rChar)
 	return sItem;
 }
 // <-- Warship
-// --> ugeen   16.02.09
-
-void EquipCharacterByAtlas(ref chref)
-{
-	string groupID = MAPS_ITEM_TYPE;
-	ref rLoc = ItemsFromID("MapsAtlas");
-	chref.equip.(groupID) = rLoc.id;
-}
-
-// проверим наличие атласа и карты в нём
-bool CheckMapForEquipped(ref refCh, string itemID)
-{
-	ref   arItem; 	 		 
-
-	arItem = ItemsFromID(itemID);
-
-	if(sti(refCh.index) == GetMainCharacterIndex() && CheckCharacterItem(refCh, arItem.id))	
-	{	
-		if(!CheckCharacterItem(refCh, "MapsAtlas")) { // тривиальная проверка на наличие атласа - если его нет,  то получите и распишитесь
-			GiveItem2Character(refCh, "MapsAtlas");
-			EquipCharacterByAtlas(refCh);
-		}	
-		if(!IsEquipCharacterByMap(refCh, itemID)) { // проверяем, экипирован ли ГГ  этой картой
-			EquipCharacterByItem(refCh, itemID); 			
-			notification(StringFromKey("characterUtilite_12", GetItemName(arItem)), "MapsAtlas");
-			arItem = ItemsFromID("MapsAtlas");
-			arItem.Weight = GetEquippedItemsWeight(refCh, MAPS_ITEM_TYPE);						
-		}
-		else return false;
-	}
-	
-	return true;
-}
-
-// проверка - есть ли новые карты для включения в атлас
-void RefreshEquippedMaps(ref chref)
-{
-	int 	i;
-	string  itemID, groupID;
-    ref     itm;
-	
-	for (i=0; i<TOTAL_ITEMS; i++)
-	{	
-		makeref(itm,Items[i]);
-		if(CheckAttribute(itm, "ID") && CheckAttribute(itm, "groupID"))
-		{
-			itemID = itm.id;
-			groupID = itm.groupID;
-			if(groupID == MAPS_ITEM_TYPE && itm.mapType == "")
-			{
-				CheckMapForEquipped(chref, itemID);
-			}
-		}		
-	}
-}
-
-void StoreEquippedMaps(ref refCh)
-{
-    aref arItems;
-	string  sName, groupID;
-	ref rLoc;
-	
-	if( CheckAttribute( refCh, "Stored.Maps") ) DeleteAttribute( refCh, "Stored.Maps" );
-	makearef(arItems, refCh.items);
-    int	Qty = GetAttributesNum(arItems);
-	
-	for (int a = 0; a < Qty; a++)
-    {
-        sName = GetAttributeName(GetAttributeN(arItems, a));
-		rLoc = ItemsFromID(sName);
-		if(CheckAttribute(rLoc, "GroupID"))
-		{
-			groupID = rLoc.groupID;
-			if(groupID == MAPS_ITEM_TYPE)
-			{
-				if(IsEquipCharacterByMap(refCh, rLoc.id))  
-				// проверяем, экипирован ли ГГ  этой картой
-				{
-					refCh.Stored.Maps.(sName) = refCh.items.(sName);
-				}
-			}	
-		}	
-    }
-}
-
-void RestoreEquippedMaps(ref refCh)
-{
-    aref arItems;
-	string sName;
-	
-	if( !CheckAttribute( refCh, "Stored.Maps") ) return;
-	
-	makearef(arItems, refCh.Stored.Maps);
-    int Qty = GetAttributesNum(arItems);
-    for (int a = 0; a < Qty; a++)
-    {
-        sName = GetAttributeName(GetAttributeN(arItems, a));
-		TakeNItems(refCh, sName, 1);
-    }
-	DeleteAttribute(refCh, "Stored.Maps");
-	RefreshEquippedMaps(refCh);
-}
-// <-- ugeen
 
 void OfficersHold()
 {
@@ -4547,7 +4497,7 @@ void OfficersHold()
 	{
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) {
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			SetCharacterTask_Stay(offchar);
 		}
 	}
@@ -4560,7 +4510,7 @@ void OfficersFollow()
 	{
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) {
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			LAi_tmpl_SetFollow(offchar, GetMainCharacter(), -1.0);
 		}
 	}
@@ -4574,7 +4524,7 @@ void OfficersCharge()
 		idx = GetOfficersIndex(PChar,i);
 		if (idx != -1) 
 		{
-			ref offchar = GetCharacter(idx)
+			ref offchar = GetCharacter(idx);
 			if(!LAi_CheckFightMode(offchar))
 			{
 				LAi_tmpl_SetFollow(offchar, GetMainCharacter(), -1.0);
@@ -4665,4 +4615,87 @@ string GetCharCurAni(ref chr)
 	string sAniCaseName;
 	SendMessage(chr, "le", MSG_CHARACTER_GETCURANIMATION, &sAniCaseName);
 	return sAniCaseName;
+}
+
+// Получить персонажа по ссылке/id/индексу
+ref FindChar_VT(ref entity)
+{
+	return FindObject_VT(entity, "CharacterFromID", "GetCharacter");
+}
+
+string GetMessagePortrait(ref chr)
+{
+  switch (chr.id)
+  {
+    case "Tichingitu":  return chr.id; break;
+    case "Helena":      return chr.id; break;
+    case "Mary":        return chr.id; break;
+    case "Longway":     return chr.id; break;
+    case "Tonzag":      return chr.id; break;
+    case "Knippel":     return chr.id; break;
+    case "Folke":       return chr.id; break;
+    case "Duran":       return chr.id; break;
+    case "Irons":       return chr.id; break;
+    case "Avendel":     return chr.id; break;
+    case "Baker":       return chr.id; break;
+  }
+
+  int faceid = sti(chr.FaceID);
+  if (faceid >= 29 && faceid < 57) return "face_" + faceid;
+
+  return "None";
+}
+
+// Может ли персонаж прокачать себе этот перк
+bool CanTakePerk(ref chr, ref perkEntity, string reason)
+{
+	ref perk = FindPerk_VT(&perkEntity);
+	aref condtionPerks;
+	string perkName = GetAttributeName(perk);
+
+	string pointsAttribute = "FreePoints_" + perk.baseType;
+	if (CheckCharacterPerk(chr, perk))                                       reason = "alreadyHave";     // уже есть
+	else if (CheckPerkFilter(chr, perk))                                     reason = "disabled";        // вообще нельзя
+	else if (sti(chr.perks.(pointsAttribute)) < GetPerkPrice(perk))          reason = "notEnoughPoints"; // нет очков
+	else if (CheckAttribute(perk, "rank") && sti(chr.rank) < sti(perk.rank)) reason = "notEnoughRank";   // требуемый ранг
+	else if (!CheckAttribute(perk, "condition")) return reason == "";                                    // требуемые перки
+	if (reason != "") return false;
+
+	makearef(condtionPerks, perk.condition);
+	for (int i=0; i < GetAttributesNum(&condtionPerks); i++)
+	{
+		if (CheckCharacterPerk(chr, GetAttributeN(&condtionPerks, i))) continue;
+		reason = "perksRequired";
+		return false;
+	}
+
+	return reason == "";
+}
+
+// Доступен ли вообще перк персонажу
+bool CheckPerkFilter(ref chr, ref perkEntity) {
+	ref perk = FindPerk_VT(perkEntity);
+	string perkName = GetAttributeName(perk);
+	if (IsMainCharacter(chr) && CheckAttribute(perk, "NPCOnly")) return true;
+	if (!IsMainCharacter(chr) && CheckAttribute(perk, "PlayerOnly")) return true;
+	if (perkName == "Captain" && CheckAttribute(chr, "CompanionDisable")) return true;
+	if (!CheckAttribute(perk, "HeroType")) return false;
+	if (!CheckCharacterPerk(chr, perk.HeroType)) return true;
+	return false;
+}
+
+float GetDepositRate()
+{
+	float result = 2.0 + (makeint(((1.0 * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
+	if (HasPerk(pchar, "Investor")) result += PERK_VALUE_INVESTOR;
+	return result;
+}
+
+// Может ли персонаж управлять кораблём на глобальной карте
+bool CanBeCaptain(ref chr)
+{
+	if (IsMainCharacter(chr)) return true;
+	if (!IsFellowOurCrew(chr)) return true;
+
+	return HasPerk(chr, "Captain");
 }

@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("Voice\English\Enc_RapersGirl_1.wav");
-				dialog.text = "先生! 先生, 救命! 杀人啦! ";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", 救命! 杀人啦! ";
 				link.l1 = "嗯? 杀谁? 在哪里? 这是玩笑吗, 亲爱的? ";
 				link.l1.go = "FMQP";
 				break;
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, 法国迷你任务 ("ЊЉ) 佐尔特 佐伦斯
 		case "FMQP":
-			dialog.text = "不, 不是开玩笑! 楼上! 两个暴徒正在谋杀一位贵族绅士! 救救他, 船长, 你是这里唯一带武器的人! ";
+			dialog.text = "不, 不是开玩笑! 楼上! 两个暴徒正在谋杀一位贵族绅士! 救命, 船长! 这里只有你一个人有武器! ";
 			link.l1 = "跑到外面去, 叫卫兵! 我上楼去! ";
 			link.l1.go = "FMQP_1";
 			link.l2 = "亲爱的, 你一定把我当成卫兵了。 如果发生谋杀就叫巡逻队。 ";

@@ -1105,7 +1105,7 @@ void ProcessDialogEvent()
 			link.l1 = "Да я понял. Спасибо за компанию, дружище, не напрягайся.";
 			link.l1.go = "exit_sit";
 			
-			npchar.questTemp.Sotta = true;
+			npchar.questTemp.PZ_Sotta = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -1121,7 +1121,7 @@ void ProcessDialogEvent()
 			link.l1 = "Это точно, одиночки редко долго живут. Ну, празднуй, а мне уже пора, приятель.";
 			link.l1.go = "exit_sit";
 			
-			npchar.questTemp.Lutter = true;
+			npchar.questTemp.PZ_Lutter = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;

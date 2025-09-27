@@ -271,7 +271,10 @@
 // Show or hide WdmWindUI: wind, date, moral, supplies, coordinates, flag
 #define MSG_WORLDMAP_WIND_UI_SET_SHOW 31152 // "ll" status
 // Update WdmWindUI on the map: wind, date, moral, supplies, coordinates, flag
-#define MSG_WORLDMAP_UPDATE 31153 // "l"
+#define MSG_WORLDMAP_UPDATE    31153 // "l"
+#define MSG_WORLDMAP_IS_ENEMY  31154 // "l"
+#define MSG_GET_PLAYERSHIP_IDX 31155 // ""
+#define MSG_WORLDMAP_SET_SPEED 31156 // "lf"
 
 // ============================================================================================
 // Effects
@@ -318,14 +321,11 @@
 // Sound Service messages
 //============================================================================================
 // Control functions
-#define MSG_SOUND_SET_ENABLED 77016         //"l"          enabled
-#define MSG_SOUND_SET_CAMERA_POSITION 77001 //"fff"       vector_x, vector_ym, vector_z
-//"ffffff"    nose_vector_x, nose_vector_ym, nose_vector_z, head_vector_x, head_vector_y, head_vector_z
-#define MSG_SOUND_SET_CAMERA_ORIENTATION 77002
-#define MSG_SOUND_SET_MASTER_VOLUME 77021 //"fff"       FX, music, speech volumes
-#define MSG_SOUND_GET_MASTER_VOLUME 77022 //"eee"       FX, music, speech volumes
-#define MSG_SOUND_SET_PITCH 77031 // "lf" set pitch
-#define MSG_SOUND_GET_PITCH 77032 // "le" get pitch
+#define MSG_SOUND_SET_ENABLED 77016         //"l"   enabled
+#define MSG_SOUND_SET_MASTER_VOLUME 77021   //"fff" FX, music, speech volumes
+#define MSG_SOUND_GET_MASTER_VOLUME 77022   //"eee" FX, music, speech volumes
+#define MSG_SOUND_SET_PITCH 77031           //"lf"  set pitch
+#define MSG_SOUND_GET_PITCH 77032           //"le"  get pitch
 
 // Sound management routines
 //"sl[llllfff]" file_name, type, simple_cache?, looped?, cached?, fade_in_time, start_x, start_y, start_y
@@ -338,13 +338,19 @@
 #define MSG_SOUND_IS_PLAYING 77009   //"l"         id
 #define MSG_SOUND_GET_POSITION 77010 //"l"         id
 #define MSG_SOUND_RESTART 77011      //"l"         id(0=all)
-#define MSG_SOUND_RESUME 77012       //"ll"         id(0=all), fade_in_time
+#define MSG_SOUND_RESUME 77012       //"ll"        id(0=all), fade_in_time
 // Sound schemes
 #define MSG_SOUND_SCHEME_RESET 77013 //""
 #define MSG_SOUND_SCHEME_SET 77014   //"s"         scheme_name
-#define MSG_SOUND_SCHEME_ADD 77015   //"s"          scheme_name
+#define MSG_SOUND_SCHEME_ADD 77015   //"s"         scheme_name
 // Aliases
-#define MSG_SOUND_ALIAS_ADD 77017 //"s"          alias_name
+#define MSG_SOUND_ALIAS_ADD 77017    //"s"         alias_name
+// Studio
+// MSG_SOUND_EVENT "slfff name, fade_in_time, coord" далее порядок лишь внутри одного типа "ll looped, prior" и "fff volume, mindist, maxdist"
+#define MSG_SOUND_EVENT_PLAY 77018
+#define MSG_SOUND_EVENT_STOP 77019       //"ll"
+#define MSG_SOUND_EVENT_SET_VOLUME 77020 //"lf"
+#define MSG_SOUND_BANK_ADD   77023       //"sl"
 //============================================================================================
 
 //============================================================================================

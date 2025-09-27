@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-jefe
-}
-RedChieftain_2
-{
-Kanauri
-}
-
-RedChieftain_3
-{
-indios
-}
-RedChieftain_4
-{
-de la tribu Caiman
-}
-
-RedChieftain_5
-{
-¡El jefe ha abandonado tu barco!
-}
-
-RedChieftain_6
-{
-indio
-}
-RedChieftain_7
-{
-de la tribu Caiman
-}
+RedChieftain_1 {jefe}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {indios}
+RedChieftain_4 {de la tribu Caiman}
+RedChieftain_5 {¡El jefe ha abandonado tu barco!}
+RedChieftain_6 {indio}
+RedChieftain_7 {de la tribu Caiman}

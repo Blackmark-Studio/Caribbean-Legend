@@ -1136,7 +1136,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1144,8 +1144,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2427,7 +2428,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2447,28 +2448,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Vedo che è il contrario. Cosa ti porta qui?";
 			link.l1 = "Hai sentito parlare del nuovo bordello a Tortuga?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "Allora per tutti i mezzi, chiedi. Sai che non mi piacciono le formalità, quindi vai al sodo.";
 			link.l1 = "Hai sentito parlare del nuovo bordello a Tortuga?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Sei ubriaco? Che tipo di domanda è questa? Non sprecare il mio tempo se è di quello che volevi veramente parlare.";
 			link.l1 = "Immagino tu non abbia sentito? È aperto un nuovo bordello lì - molto costoso, dove lavorano solo le ragazze più belle, sane e ben vestite.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Oh, quello! Certo che ho sentito - chi non l'ha fatto?";
 			link.l1 = "Ebbene, l'ho scoperto solo l'altro giorno.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Ah-ah-ah-ah, birbante, sarò dannato! Ma ancora, perché lo stai discutendo con me? Perché non provi prima con Hawks? Ehi ehi. Anche se... ti sei già divertito lì?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2485,34 +2486,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "Allora sei venuto a pavoneggiarti! Ah, che birbante.";
 			link.l1 = "Veramente, no. Volevo davvero chiederti qualcosa, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "Non l'hai fatto?! Sei un idiota, De Maure. Se fossi in te...";
 			link.l1 = "Avresti iniziato una vera e propria depravazione, lo so. Ma non è esattamente quello di cui volevo parlare con te.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Cosa vuoi? Dai, non farmi stare in ansia.";
 			link.l1 = "Sto cercando il proprietario di quel posto. Mi è stato detto che voleva incontrarti e offrirti un'opportunità di investimento nel suo commercio. Non puoi sbagliarti - è cinese.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Ah ah. No, non ho avuto il piacere di incontrare donne cinesi ultimamente. Ma non mi dispiacerebbe incontrarla e investire nel suo business. Dopotutto, non si può semplicemente entrare nel territorio di Levasseur, e come suddito del tuo re, sarebbe costretto a sparare con le sue navi costiere alla mia 'Drago' non appena la vede.";
 			link.l1 = "Sembra che stia considerando prima Port-au-Prince...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "Pensi così? È un errore. Anche se de Mussac ha più soldi di me, cosa che dubito, non può permettersi di destinare parte del budget della città a un bordello, non importa quanto oro porti.";
 			link.l1 = "Buon punto. Chiaramente non ha ponderato questa sua ambizione.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Sai, mi sono sempre chiesto come fanno gli altri bordelli a rimanere a galla. Non è la capacità di una donna di pensare e, soprattutto, di governare - segna le mie parole.";
 			link.l1 = "Ebbene, ti sbagli su questo. Grazie per il tuo tempo, Marcus! Se la incontro prima io, le dirò che sarai lieto di vederla.";
 			link.l1.go = "Exit";

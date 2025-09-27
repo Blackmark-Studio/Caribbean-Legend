@@ -75,7 +75,7 @@ void ProcessDialogEvent()
 			case "passenger_2":
 				pchar.GenQuest.Marginpassenger.Dublon = 70+hrand(5)*10;
 				dialog.text = "Я не стану обманывать тебя, "+GetSexPhrase("солёный сюртук","деваха")+". Я живу в этом городе, и мне не нужны проблемы. За каких-то "+sti(pchar.GenQuest.Marginpassenger.Dublon)+" дублонов я предоставлю тебе исчерпывающие сведения. Ты заработаешь на этом значительно больше.";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "Уговорил. Вот, держи. Но попробуй только рассказать мне какой-нибудь вздор или солгать...";
 					link.l1.go = "passenger_4";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 
 			case "passenger_repeat":
 				dialog.text = "Ну что, таки прин"+GetSexPhrase("ёс","есла")+" золотишко?";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "Да. Вот, держи. Но попробуй только рассказать мне какой-нибудь вздор или солгать...";
 					link.l1.go = "passenger_4";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 			
 			case "passenger_4"://установка параметров
 				pchar.quest.Marginpassenger_Over.over = "yes"; //снять возможный таймер
-				RemoveItems(pchar, "gold_dublon", sti(pchar.GenQuest.Marginpassenger.Dublon));
+				RemoveDublonsFromPCharTotal(sti(pchar.GenQuest.Marginpassenger.Dublon));
 				pchar.GenQuest.Marginpassenger.Name = GetFullName(npchar);
 				pchar.GenQuest.Marginpassenger.City = npchar.city;
 				pchar.GenQuest.Marginpassenger.Targetcity = SelectAnyColony(npchar.city); 

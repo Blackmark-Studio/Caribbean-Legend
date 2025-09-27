@@ -4,18 +4,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
  	switch(Dialog.CurrentNode)
 	{
         case "quests":
-            dialog.text = "Speak, I am listening";
+            dialog.text = "Speak, I'm listening";
 			link.l1 = "I was mistaken. Farewell.";
 			link.l1.go = "Exit";
 			/* //--> Бремя гасконца
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "jailskiper")
 			{
-				link.l1 = "Officer, I have heard that there is man named Folke Deluc in your prison. Is there anything I can do to release him?";
+				link.l1 = "Officer, I have heard that there is a man named Folke Deluc in your prison. Is there anything I can do to secure his release?";
                 link.l1.go = "Sharlie";
 			}
 			if (CheckAttribute(pchar, "questTemp.Sharlie") && pchar.questTemp.Sharlie == "freeskiper")
 			{
-				link.l1 = "Officer, it's me again about prisoner Folke Deluc. I have bought rights on his debt and I want this man released and given to me. Here are his debt papers, take a look.";
+				link.l1 = "Officer, it's me again about the prisoner Folke Deluc. I have bought the rights to his debt and I want this man released and handed over to me. Here are his debt papers, take a look.";
                 link.l1.go = "Sharlie_3";
 			}	
 			//<-- Бремя гасконца */
@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//--> Бремя гасконца
 		case "Sharlie":
 			DelLandQuestMark(npchar);
-			dialog.text = "Ah, that sailor? He had loaned a significant sum from our banker, haven't returned it and even tried to escape. But he was found quickly. Since then he has been under arrest and he will stay here until he repays his debt.";
+			dialog.text = "Ah, that sailor? He borrowed a significant sum from our banker, hasn't returned it, and even tried to escape. But he was found quickly. Since then, he has been under arrest and will stay here until he repays his debt.";
 			link.l1 = "Hm. And how will he do that while staying in prison?";
 			link.l1.go = "Sharlie_1";
 		break;
@@ -49,8 +49,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Sharlie_2":
-			dialog.text = "I don't know. Ask the banker and he will give you details.";
-			link.l1 = "I see, Thanks for your information, officer.";
+			dialog.text = "I don't know. Ask the banker and he will give you the details.";
+			link.l1 = "I see. Thank you for the information, officer.";
 			link.l1.go = "exit";
 			pchar.questTemp.Sharlie = "bankskiper";
 			LocatorReloadEnterDisable("Fortfrance_town", "reload8_back", false);
@@ -63,18 +63,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RemoveItems(pchar, "letter_open", 1);
 			DelLandQuestMark(npchar);
 			dialog.text = "Hm. They are all correct. Do you really want me to release that prisoner?";
-			link.l1 = "Yes. I need him to repay the debt and I know of the way he can do it.";
+			link.l1 = "Yes. I need him to repay the debt, and I know a way he can do it.";
 			link.l1.go = "Sharlie_4";
 		break;
 		
 		case "Sharlie_4":
-			dialog.text = "Fine, I have no reasons to refuse you. Deluc will be brought here soon. But I have to warn you that this fox will run away at the first opportunity, so don't have any illusions about him.";
-			link.l1 = "I got it, officer. And now I want to take my debtor.";
+			dialog.text = "Fine, I have no reason to refuse you. Deluc will be brought here soon. But I have to warn you, this fox will run away at the first opportunity, so don't have any illusions about him.";
+			link.l1 = "I understand, officer. Now I wish to take my debtor.";
 			link.l1.go = "Sharlie_5";
 		break;
 		
 		case "Sharlie_5":
-			dialog.text = "Yes, sure. Sergeant! Bring forth the prisoner! Folke Deluc, it appears that he has a new master now!";
+			dialog.text = "Yes, of course. Sergeant! Bring forth the prisoner! Folke Deluc, it seems he has a new master now!";
 			link.l1 = "...";
 			link.l1.go = "Sharlie_6";
 		break;
@@ -86,39 +86,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// замораживаем ГГ
 			LAi_SetActorType(pchar);
 			LAi_ActorTurnToLocator(pchar, "goto", "goto17"); // 170712
-			//создаем штурмана
-			ref sld = GetCharacter(NPC_GenerateCharacter("Folke", "DeLuck", "man", "man", 1, FRANCE, -1, false, "quest"));
-			sld.name = "Folke";
-			sld.lastname = "Deluc";
-			sld.greeting = "officer_hire";
-			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "Folke";
-			LAi_SetImmortal(sld, true);
-			sld.CompanionDisable = true;
-			sld.rank = 5;
-			LAi_SetHP(sld, 90, 90);
-			sld.money = 0;
-			SetSelfSkill(sld, 25, 28, 21, 24, 22);
-			SetShipSkill(sld, 10, 5, 24, 22, 30, 15, 5, 15, 18);
-			SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "HullDamageUp");
-			SetCharacterPerk(sld, "BasicDefense");
-			GiveItem2Character(sld, "unarmed");
-			EquipCharacterbyItem(sld, "unarmed");
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-			pchar.questTemp.Sharlie = "takeskiper";
-			
-			sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
-			
-			StartQuestMovie(true, false, true);
-			DoQuestCheckDelay("Del_Turma", 0.1);
+			// создаем штурмана
+			ref sld;
+			InitFolke("Folke", "Deluc");
 		break;
 		//<-- Бремя гасконца
 		

@@ -403,7 +403,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "af_immersion_1":
-			dialog.text = "你对我们的历史感兴趣? 去找安东尼奥.贝坦科特。 他出生在这里。 他住在长笛冥王星号上。 如果他不知道, 就没人知道了。 ";
+			dialog.text = "你对我们的历史感兴趣? 去找安东尼奥.贝坦科特。 他出生在这里。 他住在长笛普路托号上。 如果他不知道, 就没人知道了。 ";
 			link.l1 = "太好了! 我一定会去拜访他。 ";
 			link.l1.go = "af_immersion_2";
 			pchar.questTemp.LSC.Betancur = "true";

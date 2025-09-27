@@ -1,69 +1,35 @@
-
 new_string
 {
 
 }
-
 Cheat_success {Erledigt!}
-
 Cheat_on {Cheat Aktiviert}
-
 Cheat_off {Cheat Deaktiviert}
-
 Cheat_Comming_soon {Demnächst!}
-
 f1 {35 Fertigkeitspunkte hinzufügen}
-
 f2 {Einen Perk-Punkt für die Marine hinzufügen}
-
 f3 {Einen persönlichen Perk-Punkt hinzufügen}
-
-f4 {+ 10 Max HP }
-
+f4 {+ 10 Max HP}
 f5 {+10 Max Energy}
-
 f6 {Ehre erhöhen}
-
 f7 {Ehre senken}
-
 f8 {Ruhm erhöhen}
-
 f9 {Ruhm senken}
-
 f10 {God Mode on/off}
-
 f11 {Autorität erhöhen}
-
 f12 {Vitalität steigern}
-
 f13 {+1000 Max Inventar Kapazität}
-
 f14 {х10 Schaden der ausgerüsteten Nahkampfwaffe}
-
 f15 {х10 Schaden der ausgerüsteten Feuerwaffe}
-
 f16 {х10 Nachladezeit der ausgerüsteten Feuerwaffe}
-
-f17 {100%ige Chance auf Blocken durchbrechen }
-
+f17 {100%ige Chance auf Blocken durchbrechen}
 f18 {x10 Eneregy Regeneration}
-
 f19 {x10 HP Regeneration}
-
 f20 {100%ige Blockchance}
-
 f21 {Taino Gift an/aus}
-
 f22 {Duellanten-Hintergrund-Perks freischalten}
-
 f23 {Buchhalter-Hintergrund-Perks freischalten}
-
 f24 {Athleten-Hintergrund-Perks freischalten}
-
 f25 {Scharfschützen-Hintergrund-Perks freischalten}
-
 f26 {Navigationsanforderungen deaktivieren}
-
 f27 {Den Helden ausnüchtern, wenn er betrunken ist}
-
-

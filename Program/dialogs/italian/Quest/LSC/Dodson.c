@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "Total_wait";
 			pchar.questTemp.LSC.rvd_friend = "true"; //флаг на проход по кораблям ривадос
-			pchar.rvd_friend = true; // ривадосы не будут останавливать где просят пароль
+			// // ривадосы не будут останавливать где просят пароль
 			sld = characterFromId("Chimiset");
 			sld.dialog.currentnode = "Friend"; //ноду Чимисету
 			pchar.quest.LSC_Eddy.win_condition.l1 = "location";
@@ -574,25 +574,8 @@ void ProcessDialogEvent()
 		case "caroline_3":
 			dialog.text = "Accidenti! Hai ragione. Pare proprio che siamo nei guai."+pchar.name+".";
 			link.l1 = "...";
-			link.l1.go = "caroline_4";
-		break;
-		
-		case "caroline_4":
-			DialogExit();
-			LAi_SetPlayerType(pchar);
-			// запускаем Мэри, Чада и нарвалов - будет лютое рубилово
-			sld = characterFromId("Capper");
-			sld.cirassId = Items_FindItemIdx("cirass1");
-			LAi_SetActorType(sld);
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload3");
-			sld = characterFromId("Mary");
-			sld.greeting = "mary_4";
-			int iScl = MOD_SKILL_ENEMY_RATE*10 + 2*sti(pchar.rank);
-			LAi_SetHP(sld, 250+iScl, 250+iScl); // усилим
-			sld.dialog.currentnode = "caroline";
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload2");
-			LAi_SetActorType(sld);
-			LAi_ActorDialogNow(sld, pchar, "", -1);
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Caroline_DlgExit_3");
 		break;
 		
 		case "caroline_5":
@@ -1635,7 +1618,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrapin_5":
-			dialog.text = "Non so molto di quell’uomo. So solo che lo zio si fida abbastanza di quel cucciolo da farne il suo erede. Ha ancora una ragazza, altrimenti a che бы gli servirebbero tutte queste trame?\nNon si capisce dove tengano la ragazza né perché Thibaut lasci che Marten prenda il comando. C’è un mistero qui, che potrebbe aiutarci a vincere questa partita senza dover assaltare Tortuga. Sei francese, quindi immagino che sia di tuo gusto.\nMa devi sbrigarti, le chiacchiere da ubriaco di Lucas potrebbero già essere arrivate alle orecchie degli agenti di Marten e Levasseur, e puoi immaginare le conseguenze!";
+			dialog.text = "Non so molto di quell’uomo. So solo che lo zio si fida abbastanza di quel cucciolo da farne il suo erede. Ha ancora una ragazza, altrimenti a che gli servirebbero tutte queste trame?\nNon si capisce dove tengano la ragazza né perché Thibaut lasci che Marten prenda il comando. C’è un mistero qui, che potrebbe aiutarci a vincere questa partita senza dover assaltare Tortuga. Sei francese, quindi immagino che sia di tuo gusto.\nMa devi sbrigarti, le chiacchiere da ubriaco di Lucas potrebbero già essere arrivate alle orecchie degli agenti di Marten e Levasseur, e puoi immaginare le conseguenze!";
 			link.l1 = "Capisco. Quindi, Thibaut è l’erede di Levasseur? E nasconde una schiava allo zio? Maledizione, immagino che il ragazzo non veda l’ora che lo zio crepi!";
 			link.l1.go = "terrapin_6";
 		break;
@@ -1676,7 +1659,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			SetCharacterPerk(sld, "MusketsShoot");

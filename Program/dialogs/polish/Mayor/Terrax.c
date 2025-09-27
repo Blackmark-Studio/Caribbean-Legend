@@ -1136,7 +1136,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1144,8 +1144,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2427,7 +2428,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2447,28 +2448,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Widzę, że jest odwrotnie. Co cię tu sprowadza?";
 			link.l1 = "Słyszałeś o nowym burdelu na Tortudze?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "W takim razie, pytaj. Wiesz, że nie lubię formalności, więc przejdź do rzeczy.";
 			link.l1 = "Słyszałeś o nowym burdelu w Tortudze?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Jesteś pijany? Co to za pytanie? Nie marnuj mojego czasu, jeśli naprawdę o tym chciałeś pogadać.";
 			link.l1 = "Chyba nie słyszałeś? Niedawno otwarto tam nowy burdel - bardzo drogi, gdzie pracują tylko najpiękniejsze, zdrowe i dobrze ubrane dziewczęta.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "O, to! Oczywiście, że słyszałem - kto nie słyszał?";
 			link.l1 = "Cóż, dopiero co się o tym dowiedziałem.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Ha-ha-ha-ha, ty łajdaku, niech mnie kule biją! Ale wciąż, dlaczego o tym ze mną dyskutujesz? Czemu nie spróbujesz najpierw z Hawkiem? He he. Chociaż... już się tam trochę zabawiłeś?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2485,34 +2486,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "Więc przyszedłeś się popisać! Ha, co za łobuz.";
 			link.l1 = "Właściwie, nie. Naprawdę chciałem cię o coś zapytać, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "Nie zrobiłeś tego?! Jesteś idiotą, De Maure. Gdybym był na twoim miejscu...";
 			link.l1 = "Wiem, że zaczęłabyś prawdziwą rozróbę. Ale to nie do końca to, o czym chciałem z tobą porozmawiać.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Co jest? No dalej, nie trzymaj mnie w niepewności.";
 			link.l1 = "Szukam właścicielki tego miejsca. Powiedziano mi, że chciała się z tobą spotkać i zaproponować możliwość inwestycji w jej handel. Nie sposób jej pomylić - jest Chinką.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Ho ho. Nie, nie miałem ostatnio przyjemności spotkać żadnych chińskich kobiet. Ale nie miałbym nic przeciwko spotkaniu z nią i zainwestowaniu w jej interes. W końcu nie można tak po prostu wkroczyć na terytorium Levasseura, a jako poddany twojego króla, byłby zmuszony otworzyć ogień na moją 'Smok' swoimi przybrzeżnymi okrętami, gdy tylko ją zauważy.";
 			link.l1 = "Wydaje się, że najpierw rozważa Port-au-Prince...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "Tak myślisz? To błąd. Nawet jeśli de Mussac ma więcej pieniędzy niż ja, w co wątpię, nie stać go na to, by przeznaczyć jakąkolwiek część budżetu miasta na burdel, nieważne ile złota przynosi.";
 			link.l1 = "Dobry punkt. Wyraźnie nie przemyślała dokładnie tego swojego ambitnego planu.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Wiesz, zawsze się zastanawiałem, jak inne burdele utrzymują się na powierzchni. To nie jest zdolność kobiety do myślenia, a tym bardziej do rządzenia - zapamiętaj moje słowa.";
 			link.l1 = "„Cóż, mylisz się co do tego. Dzięki za twój czas, Marcus! Jeśli spotkam ją pierwszą, dam jej znać, że będziesz się cieszył, widząc ją.”";
 			link.l1.go = "Exit";

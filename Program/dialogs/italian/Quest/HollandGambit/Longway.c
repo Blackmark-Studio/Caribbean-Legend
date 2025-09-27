@@ -275,7 +275,7 @@ void ProcessDialogEvent()
 			link.l1 = "Va bene. Affare fatto. Ma ti avverto: non provare a fregarmi o ti faccio a pezzi con le mie stesse mani. Mille tagli, e piano... proprio come fanno i tuoi imperatori. Alonso!";
 			link.l1.go = "Longway_prisoner_9";
 			// belamour legendary edition -->
-			link.l2 = "Parli da saggio. Ma bada bene: sono arrivato troppo lontano perché tu possa rovinare всё. Se tenterai d’intralciarmi, ti schiaccerò come una cimice, senza pensarci due volte.";
+			link.l2 = "Parli da saggio. Ma bada bene: sono arrivato troppo lontano perché tu possa rovinare tutto. Se tenterai d’intralciarmi, ti schiaccerò come una cimice, senza pensarci due volte.";
 			link.l2.go = "Longway_prisoner_9a";
 		break;
 		
@@ -362,7 +362,7 @@ void ProcessDialogEvent()
 		
 		case "Longway_prisoner_15":
 			dialog.text = "Longway voleva sentire da te stesso, chuanzhang. Sei stato tu a catturare la nave postale della Compagnia e a portare la lettera a Rodenburg, giusto? Il motivo era in quella lettera.";
-			link.l1 = "Adesso capisco... Pare che nell’archivio di John Murdock ci siano tante meraviglie da far tremare Rodenburg al punto di замышлять una rivolta contro la sua stessa patria.";
+			link.l1 = "Adesso capisco... Pare che nell’archivio di John Murdock ci siano tante meraviglie da far tremare Rodenburg al punto di tramare una rivolta contro la sua stessa patria.";
 			link.l1.go = "Longway_prisoner_16";			
 		break;
 		
@@ -571,7 +571,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -586,7 +586,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -617,7 +617,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, MUSKET_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetMusketBullets");
 			DialogExit();
 		break;

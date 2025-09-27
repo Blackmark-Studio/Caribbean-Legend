@@ -1,0 +1,36 @@
+Neutral_1 {Bandita}
+Neutral_2 {Jegyzeteket hagytál hátra}
+Neutral_3 {Jack}
+Neutral_4 {Fátyol}
+Neutral_5 {Tengeri szörnyeteg}
+Neutral_6 {Julie}
+Neutral_7 {d'Armagnac}
+Neutral_8 {Arany sirály}
+Neutral_9 {Trisztán}
+Neutral_10 {Renier}
+Neutral_11 {Kalózhajó a láthatáron! Azért tartanak, hogy elvágják az útvonalunkat.}
+Neutral_12 {Egy hang az ajtó mögül}
+Neutral_13 {Betsy}
+Neutral_14 {Ár}
+Neutral_15 {Megérkezett a tárgy: Betsy Price dokumentumai}
+Neutral_16 {Adott: Betsy Price dokumentumai}
+Neutral_17 {Lea}
+Neutral_18 {Carno}
+Neutral_19 {Pierre}
+Neutral_20 {Kalózhajó a láthatáron! Keresztülvágnak az útvonalunkon.}
+Neutral_21 {Fedélzet}
+Neutral_22 {A barlang bejáratát pókhálók borítják. Úgy tûnik, régóta nem járt itt senki.}
+Neutral_23 {A házban teljes a rendetlenség. Úgy tûnik, jó helyre jöttem.}
+Neutral_24 {A szellem}
+Neutral_25 {Dolores}
+Neutral_26 {Moño}
+Neutral_27 {Marisa}
+Neutral_28 {Caldera}
+Neutral_29 {Felipe}
+Neutral_30 {Alarcón}
+Neutral_31 {Sebastián}
+Neutral_32 {Córdoba}
+Neutral_33 {Javier}
+Neutral_34 {Castillo}
+Neutral_35 {Gonzalo}
+Neutral_36 {Peralta}

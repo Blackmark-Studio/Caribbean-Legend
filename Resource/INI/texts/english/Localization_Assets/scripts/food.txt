@@ -1,84 +1,17 @@
-food_1
-{
-Rats
-}
-
-food_2
-{
-~ spoiled ~
-}
-
-food_3
-{
-~ damaged ~
-}
-
-food_4
-{
-~ destroyed ~
-}
-
-food_5
-{
-~ pcs. ~
-}
-
-food_6
-{
-On ship @<rChar.Ship.Name> died of diseases @<FindRussianSailorString(cn, "No")>
-}
-
-food_7
-{
-On ship @<rChar.Ship.Name> is low on medicines
-}
-
-food_8
-{
-On ship @<rChar.Ship.Name> died of diseases @<FindRussianSlavesString(cn, "No")>
-}
-
-food_9
-{
-On the @<rChar.Ship.Name> people are craving for rum.
-}
-
-food_10
-{
-On ship @<rChar.Ship.Name> food left on @<FindRussianDaysString(cn)>
-}
-
-food_11
-{
-We urgently need to restock!
-}
-
-food_12
-{
-Slaves rebelled!
-}
-
-food_13
-{
-Sailors are starving on the ship @<rChar.Ship.Name>. Morale of the crew is going down!
-}
-
-food_14
-{
-Sailors are starving
-}
-
-food_15
-{
-Slaves are starving
-}
-
-food_16
-{
-Riot on ship @<rChar.Ship.Name>!!!! ~
-}
-
-food_17
-{
-Ship leaves the squadron
-}
+food_1 {Rats}
+food_2 {~ spoiled ~}
+food_3 {~ damaged ~}
+food_4 {~ destroyed ~}
+food_5 {~ pcs. ~}
+food_6 {On ship @<rChar.Ship.Name> died of diseases @<FindRussianSailorString(cn, "No")>}
+food_7 {On ship @<rChar.Ship.Name> is low on medicines}
+food_8 {On ship @<rChar.Ship.Name> died of diseases @<FindRussianSlavesString(cn, "No")>}
+food_9 {On the @<rChar.Ship.Name> people are craving for rum.}
+food_10 {On ship @<rChar.Ship.Name> food left on @<FindRussianDaysString(cn)>}
+food_11 {We urgently need to restock!}
+food_12 {Slaves rebelled!}
+food_13 {Sailors are starving on the ship @<rChar.Ship.Name>. Morale of the crew is going down!}
+food_14 {Sailors are starving}
+food_15 {Slaves are starving}
+food_16 {Riot on ship @<rChar.Ship.Name>!!!! ~}
+food_17 {Ship leaves the squadron}

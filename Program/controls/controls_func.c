@@ -217,22 +217,16 @@ void Process_Controls(string ControlName)
                 TW_FinishSea_2_TimeScale();
             }
         }
+		
+		if(IsEntity(&worldMap))
+			ControlsMapDesc();
+		else if(bSeaActive && !bAbordageStarted)
+			ControlsDesc();
 	}
 	// boal <--
 
 	switch(ControlName)
 	{
-		case "SwitchCameraOffset":
-			int iPreset = sti(locCamera.OffsetPreset.CurPreset);
-			iPreset++;
-			if(iPreset > 2)
-				iPreset = 1;
-			string sPreset = "preset"+iPreset;
-			locCamera.offsetX = locCamera.OffsetPreset.(sPreset).x;
-			locCamera.offsetY = locCamera.OffsetPreset.(sPreset).y;
-			locCamera.offsetZ = locCamera.OffsetPreset.(sPreset).z;
-			locCamera.OffsetPreset.CurPreset = iPreset;
-		break;
 		case "CharacterCamera_Forward":
 			if(CheckAttribute(locCamera, "zoom.lock"))
 				break;
@@ -305,6 +299,11 @@ void Process_Controls(string ControlName)
                     TW_FinishSea_2_TimeScale();
                 }
             }
+			
+			if(IsEntity(&worldMap))
+				ControlsMapDesc();
+			else if(bSeaActive && !bAbordageStarted)
+				ControlsDesc();
 		break;
 	
 		case "ChangeShowInterface":
@@ -353,7 +352,6 @@ void Process_Controls(string ControlName)
 			if(IsEntity(&worldMap))
 			{
 				pchar.space_press = 1;
-				DeleteAttribute(pchar, "SkipEshipIndex");// boal
 			}
 		break;
 		
@@ -508,7 +506,6 @@ void Process_Controls(string ControlName)
 			{
 				if(MusketPriority(pchar)) notification(XI_ConvertString("Swordsman_mode_Note"), "None");
 				else notification(XI_ConvertString("Musketeer_mode_Note"), "None");
-				RecalculateCharacterModifiers(pchar);
 			}
 		break;
 		// boal -->
@@ -574,7 +571,7 @@ void Process_Controls(string ControlName)
 			}
 		break;
 		
-		case "Dolly":
+		/* case "Dolly":
 			ref location = &Locations[FindLocation(pchar.location)];
 			if (CheckAttribute(location, "dolly"))
 			{
@@ -606,7 +603,7 @@ void Process_Controls(string ControlName)
 					Caleuche_TeleportStart();
 				}
 			}
-		break;
+		break; */
 		
 		case "Ultimate_potion":
 			if (CheckCharacterItem(pchar, "Ultimate_potion")) UltimatePotionEffect();
@@ -895,21 +892,29 @@ void HKT_Button(string sHKB) // быстрый переход
 		if(CheckNationLicence(HOLLAND)) bOk = true;
 	}
 	// <--
+
+	if (GetAttributeInt(pchar, "WeightLoadLevel") > 0)
+	{
+		Log_info(XI_ConvertString("CharacterOverload"));
+		PlaySound("interface\knock.wav");
+		return;
+	}
+
 	if(bOk)
 	{
 		if (sHKB == "Fast_port")
 			PlayerFastTravel(curLocIdx, pchar.location.from_sea, "reload1");
 			else PlayerFastTravel(curLocIdx, sCityID + locID, "");
-	}	
+	}
 	if(pchar.location == sCityID + locID) {Log_info(XI_ConvertString("You are already there")); PlaySound("interface\knock.wav");}
 	if (sHKB == "Fast_port" && pchar.location == pchar.location.from_sea) {Log_info(XI_ConvertString("You are already there")); PlaySound("interface\knock.wav");}
-}	
+}
 
 void HKE_Button(string sHKB) // мушкет и клинки
 {
 	return;
 	string sGun, sItem, sBlade, BladeType, BladeInfo;
-	ref rItem, rBlade;
+	ref rItem;
 	aref aGun, arItems; 
 	bool bOk;
 	int i, p, iItemsNum; 
@@ -959,7 +964,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 			{
 				SetMainCharacterToMushketer(sGun, true);
 				GunCharging(pchar, MUSKET_ITEM_TYPE, sGun);
-				log_info("Gun selected: "+GetItemName(aGun)+"");
+				log_info("Gun selected: "+GetConvertStr("itmname_"+sGun, "ItemsDescribe.txt")+"");
 				/* DoQuestCheckDelay("pchar_fast_mushket_fade", 0.0);
 				DoQuestCheckDelay("pchar_fast_mushket", 3.5); */
 			}
@@ -1019,11 +1024,11 @@ void HKE_Button(string sHKB) // мушкет и клинки
 					if(n == p-1)
 					{
 						sBlade = sItem; 
-						rBlade = rItem;
+						BladeInfo = rItem.name; 
 						break;
 					}
 					sBlade = sItem; 
-					rBlade = rItem;
+					BladeInfo = rItem.name;
 				}
 			}
 			if(sBlade != "")
@@ -1031,7 +1036,7 @@ void HKE_Button(string sHKB) // мушкет и клинки
 				EquipCharacterbyItem(pchar, sBlade); 
 				PlaySound("PEOPLE FIGHT\Blade_Take_In_0"+(rand(2)+1) +".wav"); 
 				SendMessage(&ILogAndActions,"l",LI_CLEAR_STRINGS);
-				Log_info(XI_ConvertString("BladeSelect")+GetItemName(rBlade));
+				Log_info(XI_ConvertString("BladeSelect")+GetConvertStr(BladeInfo, "ItemsDescribe.txt"));
 				GetWeaponQty();
 			}
 			else

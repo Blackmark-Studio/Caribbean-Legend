@@ -1,0 +1,13 @@
+WildRose_1 {Słyszeliście? Kilka dni temu z plantacji Bishopa uciekło dwudziestu niewolników. Mówią, że w nocy przepiłowali łańcuchy, zabili kilku strażników i uciekli w dżunglę. No i gdzie niby mieli się podziać na tej wyspie? Oczywiście, dość szybko ich dorwano — jednych znaleziono w jaskini, innych przy przylądku Ragged Point. Prawie wszystkich zastrzelono. Żołnierze też mieli straty. Ale, jak mówią, najbardziej Bishopa rozwścieczyło nie to, tylko fakt, że nie mógł sam osobiście rozprawić się z uciekinierami.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Casper}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jerome}
+WildRose_9 {Souvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Casper}
+WildRose_12 {Heretic}
+WildRose_13 {Oddział powinien już być na miejscu...}

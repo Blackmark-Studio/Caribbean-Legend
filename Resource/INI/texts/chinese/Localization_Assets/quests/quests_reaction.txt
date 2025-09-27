@@ -1,78 +1,16 @@
-quests_reaction_1
-{
-副官 @<GetFullName(npchar)> 在船上。 
-}
-
-quests_reaction_2
-{
- @<GetFullName(npchar)> 投降了。 
-}
-
-quests_reaction_3
-{
-叛乱者的尸体被抛入海中 开始他们最后的航程。
-}
-
-quests_reaction_4
-{
-叛乱已被平息
-}
-
-quests_reaction_5
-{
- @<GetCityName(sld.City)> 是我们的了! 
-}
-
-quests_reaction_6
-{
-有人翻了你的口袋。 
-}
-
-quests_reaction_7
-{
-不久前在灯塔附近发生了一场战斗。 某个船长试图走私货物, 但我们的巡逻队当场抓住了他。 ~
-}
-
-quests_reaction_8
-{
-激烈的枪战, 商店的屋顶被一颗流弹击中! 但一切都是徒劳。 当地走私者躲进了丛林, 船长也驾船离开了。 我告诉你, 他轻松骗过了我们的士兵! 也是个厉害的舵手, 像国王一样逃离了海湾! 
-}
-
-quests_reaction_9
-{
-
-}
-quests_reaction_10
-{
-
-}
-
-quests_reaction_11
-{
-, 在~
-}
-
-quests_reaction_12
-{
-交货期限已过。 
-}
-
-quests_reaction_13
-{
-几小时过去了... 
-}
-
-quests_reaction_14
-{
-一小时过去了... 
-}
-
-quests_reaction_15
-{
-一天过去了... 
-}
-
-quests_reaction_16
-{
-几天过去了... 
-}
+quests_reaction_1 {副官 @<GetFullName(npchar)> 在船上。}
+quests_reaction_2 {@<GetFullName(npchar)> 投降了。}
+quests_reaction_3 {叛乱者的尸体被抛入海中 开始他们最后的航程。}
+quests_reaction_4 {叛乱已被平息}
+quests_reaction_5 {@<GetCityName(sld.City)> 是我们的了!}
+quests_reaction_6 {有人翻了你的口袋。}
+quests_reaction_7 {不久前在灯塔附近发生了一场战斗。 某个船长试图走私货物, 但我们的巡逻队当场抓住了他。 ~}
+quests_reaction_8 {激烈的枪战, 商店的屋顶被一颗流弹击中! 但一切都是徒劳。 当地走私者躲进了丛林, 船长也驾船离开了。 我告诉你, 他轻松骗过了我们的士兵! 也是个厉害的舵手, 像国王一样逃离了海湾!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, 在~}
+quests_reaction_12 {交货期限已过。}
+quests_reaction_13 {几小时过去了...}
+quests_reaction_14 {一小时过去了...}
+quests_reaction_15 {一天过去了...}
+quests_reaction_16 {几天过去了...}

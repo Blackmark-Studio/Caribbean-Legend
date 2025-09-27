@@ -1467,7 +1467,7 @@ case "Europe":
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 			LaunchTutorial("Fighter", 1);
 		break;
 		
@@ -2461,15 +2461,8 @@ case "Europe":
 		case "VsD_DiegoAndErnat_3":
 			dialog.text = "Herr, entschuldigen Sie, aber Sie sind ein bisschen lästig.";
 			link.l1 = "Ja, natürlich. Habt einen angenehmen Tag, meine Herren.";
-			link.l1.go = "VsD_DiegoAndErnat_4";
-		break;
-		
-		case "VsD_DiegoAndErnat_4":
-			DialogExit();
-			sld = CharacterFromID("Diego");
-			LAi_CharacterDisableDialog(sld);
-			sld = CharacterFromID("GiumDyubua");
-			LAi_CharacterDisableDialog(sld);
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("VsD_DiegoInTaverna_3");
 		break;
 		
 		//Гийом Дюбуа по квесту "Встреча с Диего"
@@ -2528,34 +2521,20 @@ case "Europe":
 			dialog.text = "Ist sie das?! Meine Entschuldigung, Kapitän. Es ist schwer zu sagen, aber es scheint, dass die Explosion auf dem Oberdeck stattgefunden hat, nicht darunter. Ich sehe keine aktiven Brände, und es sieht so aus, als ob wir größeren Schäden entkommen sind.";
 			link.l1 = "...";
 			link.l1.go = "VsD_FolkeAlonso_5";
-			sld = GetCharacter(CreateCharacterClone(CharacterFromID("PortPaxAmmoOff"), 0));
-			sld.id = "PortPaxAmmoOff_clone";
-			LAi_LoginInCaptureTown(sld, true);
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "quest", "quest1");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
+			
+			VsD_AfterVzriv_1();
 		break;
 		
 		case "VsD_FolkeAlonso_5":
 			DialogExit();
-			LAi_SetStayType(pchar);
-			sld = CharacterFromID("PortPaxAmmoOff_clone");
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "VsD_Komendant";
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 3, 0);
+			AddDialogExitQuestFunction("VsD_AfterVzriv_2");
 		break;
 		
 		case "VsD_Komendant":
 			dialog.text = "Was zum Teufel, Kapitän?!";
 			link.l1 = "Ich frage dasselbe, Oberst!";
 			link.l1.go = "VsD_Komendant_1";
-			sld = CharacterFromID("Tichingitu");
-			if (sld.location == pchar.location && !LAi_IsDead(sld))
-			{
-				LAi_SetActorType(sld);
-				LAi_ActorGoToLocator(sld, "reload", "reload1", "", -1);
-			}
+			VsD_AfterVzriv_3();
 		break;
 		
 		case "VsD_Komendant_1":
@@ -2587,45 +2566,21 @@ case "Europe":
 			dialog.text = "Keine Zeit dafür, Kapitän. Setzen Sie sofort Segel und erfüllen Sie die Mission. Die Einsätze sind zu hoch, um zu verzögern.";
 			link.l1 = "Können wir nicht wenigstens einen Tag haben, um Himmels willen? Die örtliche Werft könnte die notwendigen Reparaturen durchführen! Und was ist mit meiner Mannschaft?! Es gibt sicherlich Verletzte!";
 			link.l1.go = "VsD_Komendant_6";
-			sld = CharacterFromID("Tichingitu");
-			if (sld.location == pchar.location && !LAi_IsDead(sld))
-			{
-				LAi_SetOfficerType(sld);
-				sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-				sld.Dialog.CurrentNode = "Tichingitu_officer";
-			}
-			if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
-			{
-				sld = CharacterFromID("Folke");
-				ChangeCharacterAddressGroup(sld, "none", "", "");
-				sld.Dialog.Filename = "Enc_Officer_dialog.c";
-				sld.Dialog.CurrentNode = "hired";
-			}
-			else
-			{
-				sld = CharacterFromID("Alonso");
-				ChangeCharacterAddressGroup(sld, "none", "", "");
-			}
+			VsD_AfterVzriv_4();
 		break;
 		
 		case "VsD_Komendant_6":
 			dialog.text = "Falls Sie es noch nicht bemerkt haben, die Werft steht in Flammen. Wir versuchen immer noch festzustellen, ob es absichtlich passiert ist oder eine Nebenwirkung der Explosion. Ich kann Ihnen nur versprechen, dass Ihre Verwundeten medizinische Versorgung erhalten werden, und die Krone wird die Kosten für die Beerdigung der Toten tragen.";
 			link.l1 = "Bist du ernst? Das ist das Beste, was du anbieten kannst?";
 			link.l1.go = "VsD_Komendant_7";
-			sld = CharacterFromID("VsD_Tsyganka");
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload5_back");
-			LAi_CharacterEnableDialog(sld);
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
+			VsD_AfterVzriv_5();
 		break;
 		
 		case "VsD_Komendant_7":
 			dialog.text = "Kapitän, Frankreich benötigt dringend Ihre Hilfe. Ich werde Ihnen Planken zur Verfügung stellen, und wenn Sie Ihre Karten klug spielen, wird Ihr Schiff fast vollständig repariert sein, wenn Sie Jamaika erreichen.";
 			link.l1 = "Verzeihung, aber welche Planken? Und warum Jamaika?";
 			link.l1.go = "VsD_Komendant_8";
-			pchar.ship.HP = sti(pchar.ship.HP) / 2;
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - sti(pchar.ship.Crew.Quantity) / 7;
-			AddCharacterGoodsSimple(pchar, GOOD_PLANKS, 100);
+			VsD_AfterVzriv_6();
 		break;
 		
 		case "VsD_Komendant_8":
@@ -2633,26 +2588,12 @@ case "Europe":
 			link.l1 = "Sehr gut, dann. Ich werde sofort Segel setzen, Oberst.";
 			link.l1.go = "VsD_Komendant_9";
 			
-			sld = CharacterFromID("PortRoyal_shipyarder");
-			sld.TrialDelQuestMark = true;
-			AddLandQuestMark(sld, "questmarkmain");
-			AddMapQuestMarkCity("PortRoyal", false);
+			VsD_AfterVzriv_7();
 		break;
 		
 		case "VsD_Komendant_9":
 			DialogExit();
-			LAi_SetStayType(pchar);
-			
-			sld = CharacterFromID("VsD_Tsyganka");
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "VsD_Tsyganka";
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 3, 0);
-			
-			sld = CharacterFromID("PortPaxAmmoOff_clone");
-			sld.lifeday = 0;
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "gate_back", "none", "", "", "", -1);
+			AddDialogExitQuestFunction("VsD_AfterVzriv_8");
 		break;
 		
 		case "VsD_Tsyganka":
@@ -2672,50 +2613,7 @@ case "Europe":
 			link.l1 = "Ich habe noch nie gehört, dass euer Zigeunervolk Ambitionen im Zimmermannshandwerk hat.";
 			link.l1.go = "VsD_Tsyganka_3";
 			
-			for (i=3; i<=8; i++)
-			{				
-				sld = CharacterFromID("VsD_MirnyeMan_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			for (i=3; i<=6; i++)
-			{				
-				sld = CharacterFromID("VsD_MirnyeWoman_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			for (i=1; i<=6; i++)
-			{				
-				sld = CharacterFromID("VsD_Sold_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			//Возвращаем всё обратно
-			chrDisableReloadToLocation = false;
-			bDisableFastReload = false;
-			bDisableCharacterMenu = false;
-			SetLocationCapturedState("PortPax_town", false);
-			Locations[FindLocation("PortPax_town")].locators_radius.quest.quest1 = 1.0;
-			Locations[FindLocation("PortPax_town")].locators_radius.patrol.patrol14 = 0.5;
-			LocatorReloadEnterDisable("PortPax_ExitTown", "reload2_back", false);
-			LocatorReloadEnterDisable("PortPax_ExitTown", "reload1_back", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_Fort")], false);
-			
-			for (i=1; i<=5; i++)
-			{
-				sld = CharacterFromID("VsD_Guard_"+i);
-				sld.lifeday = 0;
-			}
-			//Диего исчезает
-			sld = CharacterFromID("Diego");
-			LAi_CharacterEnableDialog(sld);
-			sld.location = "None";
-			//Верфь закрывается
-			LocatorReloadEnterDisable("PortPax_Town", "reload5_back", true);
-			SetTimerCondition("VsD_VerfOtkryt", 0, 0, 7, false);
-			//Труп предателя в джунглях
-			PChar.quest.VsD_TrupPredatelya.win_condition.l1 = "location";
-			PChar.quest.VsD_TrupPredatelya.win_condition.l1.location = "PortPax_ExitTown";
-			PChar.quest.VsD_TrupPredatelya.win_condition = "VsD_TrupPredatelya";
-			SetTimerCondition("VsD_TrupPredatelya_3", 0, 0, 60, false);
+			VsD_Final_1();
 		break;
 		
 		case "VsD_Tsyganka_3":
@@ -2738,22 +2636,13 @@ case "Europe":
 		
 		case "VsD_Tsyganka_Net":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			AddQuestRecord("Trial", "7_1");
-			LAi_SetCitizenType(npchar);
-			LAi_CharacterDisableDialog(npchar);
+			AddDialogExitQuestFunction("VsD_Tsyganka_Net");
 		break;
 		
 		case "VsD_Tsyganka_Da":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			AddQuestRecord("Trial", "7_1");
-			AddCharacterExpToSkill(pchar, "Repair", 20);
-			AddMoneyToCharacter(pchar, -1000);
-			GiveItem2Character(PChar, "obereg_1");
+			AddDialogExitQuestFunction("VsD_Tsyganka_Da");
 			Log_info("You have received Amulet 'Teredo'");
-			LAi_SetCitizenType(npchar);
-			LAi_CharacterDisableDialog(npchar);
 		break;
 		
 		//замечание по обнажённому оружию от персонажей типа citizen

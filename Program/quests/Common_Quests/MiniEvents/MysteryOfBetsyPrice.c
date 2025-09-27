@@ -255,8 +255,8 @@ void TBP_ProvodimDoDoma_3(string qName)
 
 void TBP_ProvodimDoDoma_5(string qName)
 {
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && CharacterIsAlive("Helena")) Return_HelenaOfficer();
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) Return_MaryOfficer();
+	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && CharacterIsAlive("Helena")) ReturnOfficer_Helena();
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) ReturnOfficer_Mary();
 	
 	chrDisableReloadToLocation = false;
 	LAi_LocationFightDisable(&Locations[FindLocation("Villemstad_houseS2")], false);

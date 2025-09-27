@@ -357,7 +357,7 @@ void CreateGriffondor() // малый фрегат Гриффондор
 	SetCharacterPerk(sld, "BasicBattleState");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "Doctor1");
 	sld.ship.Crew.Morale = 100;
 	sld.Ship.Crew.Exp.Sailors = 100;
@@ -472,7 +472,7 @@ void Terrapin_CreateRoberConvoy()//создаем испанский конво�
 		SetCharacterPerk(sld, "HardHitter");
 		SetCharacterPerk(sld, "Sliding");
 		SetCharacterPerk(sld, "BladeDancer");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 		SetCharacterPerk(sld, "MusketsShoot");
@@ -853,7 +853,7 @@ void DefendSP_SpainPatrol(string qName) // ставим испанский па�
 			if (i == 2)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_spapatrol_"+i, "mush_spa_"+i, "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 			}
 			else
 			{
@@ -897,7 +897,7 @@ void DefendSP_SpainAvanpost(string qName) // ставим испанцев у в
 			if (i > 1 && i < 5)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_spaavanpost_"+i, "mush_spa_"+i, "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "bullet", iScl*2);
 				sld.MusketerDistance = dist;
 			}
 			else
@@ -958,7 +958,7 @@ void DefendSP_TownBattle(string qName) // городская боевка
 			if (i >= 2 && i < 4)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_fratown_"+i, "mush_fra_"+i, "man", "mushketer", iRank, FRANCE, 1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 			}
 			else
 			{
@@ -984,7 +984,7 @@ void DefendSP_TownBattle(string qName) // городская боевка
 			if (i >= 3 && i < 6)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_spatown_"+i, "mush_spa_"+i, "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 			}
 			else
 			{
@@ -1142,7 +1142,7 @@ void DefendSP_FortBattle(string qName) // входим в фортовую ло�
 			if (i >= 3 && i < 7)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("DefendSP_spafort_"+i, "mush_spa_"+i, "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+20);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+20);
 				sld.MusketerDistance = 0;
 			}
 			else
@@ -1547,7 +1547,7 @@ void GuardOT_GaleonGuardFightAdd() // выбежала подмога
 		LAi_group_MoveCharacter(sld, "GaleonFight");
 	}
 	sld = GetCharacter(NPC_GenerateCharacter("GuardOT_galeonguardaddmush", "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 	sld.MusketerDistance = 0;
 	ChangeCharacterAddressGroup(sld, "Deck_Galeon_Ship", "goto", "mush");
 	LAi_SetWarriorType(sld);
@@ -1676,7 +1676,7 @@ void GuardOT_InCaveEntrance(string qName) // ставим встречающег
 	int iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 	int iScl = 65;
 	sld = GetCharacter(NPC_GenerateCharacter("GOT_bandos_0", "mush_ctz_9", "man", "mushketer", iRank, PIRATE, -1, true, "marginal"));
-	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+	FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 	sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
 	sld.dialog.currentnode = "bandos_mush";
 	ChangeCharacterAddressGroup(sld, "Cumana_CaveEntrance", "monsters", "monster1");
@@ -1772,6 +1772,7 @@ void GuardOT_SetDiegoOnMayak(string qName) // ставим Диего
 	chrDisableReloadToLocation = true;//закрыть локацию
 	// Диего, косит под офицера патруля
 	sld = characterFromId("Diego");
+	LAi_CharacterEnableDialog(sld);
 	sld.name = StringFromKey("SharlieFinal_40");
 	sld.lastname = StringFromKey("SharlieFinal_41");
 	sld.dialog.FileName = "Quest\Sharlie\Diego.c";
@@ -1876,7 +1877,7 @@ void GuardOT_SanAntonioPrepare(string qName) // ставим абордажну�
 			if (i == 2 || i == 3)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("GuardOT_Oursoldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 			}
 			else
 			{
@@ -1924,7 +1925,7 @@ void GuardOT_CreateDiegoShoreGuard(string qName) // гишпанцы вылез�
 			if (i >= 2 && i < 6)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("GOT_spashore_"+i, "mush_spa_"+i, "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 				ChangeCharacterAddressGroup(sld, "Shore15", "quest", "quest1");
 			}
 			else
@@ -2000,7 +2001,7 @@ void GuardOT_LuggerClear(string qName)
 	pchar.nation = FRANCE; // принудительно
 	Island_SetReloadEnableGlobal("Cuba2", true);
 	questwdmLockReload = true;
-	pchar.worldmapencountersoff = "1";
+	bEncOffGlobal = true;
 	pchar.quest.GuardOT_diegoGaleondie.win_condition.l1 = "Group_Death";
 	pchar.quest.GuardOT_diegoGaleondie.win_condition.l1.group = "Diego_group";
 	pchar.quest.GuardOT_diegoGaleondie.function = "GuardOT_CatocheEnter";
@@ -2044,7 +2045,7 @@ void GuardOT_CatocheEnter(string qName)
 {
 	Group_DeleteGroup("Diego_group");
 	questwdmLockReload = false;
-	pchar.worldmapencountersoff = "0";
+	bEncOffGlobal = false;
 	pchar.quest.GuardOT_CatocheArrive1.win_condition.l1 = "location";
 	pchar.quest.GuardOT_CatocheArrive1.win_condition.l1.location = "Beliz";
 	pchar.quest.GuardOT_CatocheArrive1.function = "GuardOT_CreateCatocheSquadron";
@@ -2173,7 +2174,7 @@ void GuardOT_CatocheCoastBattle(string qName) // бой на берегу
 		if (i == 1 || i == 12)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -2192,7 +2193,7 @@ void GuardOT_CatocheCoastBattle(string qName) // бой на берегу
 		if (i > 7)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_coastsoldier_"+i, "mush_spa_"+(1+rand(2)), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -2266,7 +2267,7 @@ void GuardOT_CreateExitFortGuard(string qName) // бой на выходе из 
 		if (i > 8)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_exitsoldier_"+i, "mush_spa_"+(1+rand(2)), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -2305,7 +2306,7 @@ void GuardOT_CreateFortGuard(string qName) // бой внутри форта
 		if (i > 8)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_fortsoldier_"+i, "mush_spa_"+(1+rand(2)), "man", "mushketer", iRank, SPAIN, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -2365,7 +2366,7 @@ void GuardOT_SetDiegoFortInside(string qName) // бой в резиденции
 	}
 	// мушкетер
 	sld = GetCharacter(NPC_GenerateCharacter("GuardOT_resmushketer", "mush_spa_2", "man", "mushketer", 35, SPAIN, -1, false, "soldier"));
-	FantomMakeCoolFighter(sld, 35, 95, 95, "", "mushket2", "cartridge", 100);
+	FantomMakeCoolFighter(sld, 35, 95, 95, "", "mushket2", "bullet", 100);
 	sld.SaveItemsForDead = true; // сохранять на трупе вещи
 	sld.DontClearDead = true; // не убирать труп через 200с
 	sld.MusketerDistance = 0;
@@ -2730,7 +2731,7 @@ void GuardOT_CreateMercenInHouse(string qName)// вошел бандос
 	GiveItem2Character(sld, "amulet_1");
 	GiveItem2Character(sld, "amulet_7");
 	GiveItem2Character(sld, "totem_05");
-	TakeNItems(sld, "cartridge", 20);
+	TakeNItems(sld, "cartridge", 2);
 	TakeNItems(sld, "bullet", 30);
 	TakeNItems(sld, "gunpowder", 30);
 	if (MOD_SKILL_ENEMY_RATE > 4) LAi_SetCheckMinHP(sld, sti((LAi_GetCharacterHP(sld))/2), false, "GuardOT_CreateAddMercenInHouse");
@@ -2789,7 +2790,7 @@ void GuardOT_SetWillyOutHouse(string qName) //ставим Патерсона и
 	for (i=1; i<=5; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("GuardOT_willymushketer_"+i, "mush_ctz_"+(rand(3)+9), "man", "mushketer", iRank, ENGLAND, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "cartridge", iScl*2);
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "bullet", iScl*2);
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
@@ -2804,7 +2805,7 @@ void GuardOT_SetWillyOutHouse(string qName) //ставим Патерсона и
 	GiveItem2Character(sld, "mushket2x2");
 	EquipCharacterbyItem(sld, "mushket2x2");
 	sld.MushketType = "mushket2x2";
-	sld.MushketBulletType = "cartridge";
+	sld.MushketBulletType = "bullet";
 	if (MOD_SKILL_ENEMY_RATE > 6) TakeNItems(sld, "potion2", 3);
 	ChangeCharacterAddressGroup(sld, "IslaDeVieques_HouseEntrance", "rld", "loc0");
 	LAi_SetActorType(sld);
@@ -2884,7 +2885,7 @@ void GuardOT_ArchyInCrabShore(string qName) // в бухте
 		if (i < 3)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_archysoldier_"+i, "mush_ctz_"+(rand(3)+9), "man", "mushketer", iRank, ENGLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "bullet", iScl*2);
 		}
 		else
 		{
@@ -2904,7 +2905,7 @@ void GuardOT_ArchyInCrabShore(string qName) // в бухте
 	GiveItem2Character(sld, "mushket2x2");
 	EquipCharacterbyItem(sld, "mushket2x2");
 	sld.MushketType = "mushket2x2";
-	sld.MushketBulletType = "cartridge";
+	sld.MushketBulletType = "bullet";
 	GiveItem2Character(sld, "key_archy"); // ключ Арчи
 	GiveAdmiralMapToCharacter(sld, 5);
 	sld.SaveItemsForDead = true;
@@ -2939,7 +2940,7 @@ void GuardOT_OurSailorInCrabShore(string qName) // подмога - наши п�
 		if (i < 3)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("GuardOT_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -3233,7 +3234,7 @@ void Ksochitam_CreateDeMaldonado(string qName) // в скалистой бухт
 	for (i=1; i<=2; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Maldonado_mushketer_"+i, "mush_spa_"+i, "man", "mushketer", 35, SPAIN, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 35, 105, 105, "", "mushket2", "cartridge", iScl*2+50);
+		FantomMakeCoolFighter(sld, 35, 105, 105, "", "mushket2", "bullet", iScl*2+50);
 		sld.MusketerDistance = 0;
 		LAi_SetStayType(sld);
 		LAi_CharacterDisableDialog(sld);
@@ -3261,7 +3262,7 @@ void Ksochitam_CreateMaldonadoHelpers()
 	for (i=3; i<=n; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Maldonado_mushketer_"+i, "mush_spa_"+i, "man", "mushketer", 35, SPAIN, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 35, 105, 105, "", "mushket2", "cartridge", iScl*2+50);
+		FantomMakeCoolFighter(sld, 35, 105, 105, "", "mushket2", "bullet", iScl*2+50);
 		sld.MusketerDistance = 0;
 		LAi_SetStayType(sld);
 		LAi_CharacterDisableDialog(sld);
@@ -3682,7 +3683,7 @@ void Tieyasal_ArriveToNevis(string qName) // прибыли на Сент-Кри
 			if (i == 2 || i == 3)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Tieyasal_Oursoldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			}
 			else
 			{
@@ -3770,7 +3771,7 @@ void Tieyasal_StartCryptBattle() // драка в крипте
 	for(i=1; i<=4; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Dichoso_crypt_mushketer_"+i, "mush_ctz_"+(rand(2)+10), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+100);
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+100);
 		ChangeCharacterAddressGroup(sld, "Charles_CryptBig2", "quest", "mushketer"+i);
 		sld.MusketerDistance = 0;
 		LAi_SetWarriorType(sld);
@@ -3827,7 +3828,7 @@ void Tieyasal_GraveyardBattle(string qName) // бой на кладбище
 			if (i > 1 && i < 7)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Graveyardsoldier_"+i, "mush_ctz_"+(rand(2)+10), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			}
 			else
 			{
@@ -4016,7 +4017,7 @@ void Tieyasal_InGreatTemple(string qName) // внутри большого хр�
 	for(int i=1; i<=4; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Guard_itza_mush_"+i, "mush_itza_"+(rand(2)+1), "man", "mushketer", iRank, PIRATE, -1, false, "quest"));
-		FantomMakeCoolFighter(sld, iRank, 90, 90, "", "mushket1", "cartridge", 100);
+		FantomMakeCoolFighter(sld, iRank, 90, 90, "", "mushket1", "bullet", 100);
 		ChangeCharacterAddressGroup(sld, "Temple_great", "monsters", "mushketer"+i);
 		sld.MusketerDistance = 0;
 		sld.LSC_clan = true;
@@ -4869,7 +4870,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 				if (i == 9 || i == 12)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("DefendSP_soldier_"+i, "mush_ctz_"+(4+rand(2)), "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-					FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "cartridge", iScl*2);
+					FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket2", "bullet", iScl*2);
 				}
 				else
 				{
@@ -6384,7 +6385,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_warrior_DialogEnable(sld, false);
 		iTemp = MOD_SKILL_ENEMY_RATE;
 		TakeNItems(sld, "potion2", iTemp);
-		TakeNItems(sld, "cartridge", 50);
+		TakeNItems(sld, "cartridge", 50); // оставим бумажные патроны, как финальному боссу
 		TakeNItems(sld, "bullet", 50);
 		TakeNItems(sld, "gunpowder", 50);
 		LAi_SetCheckMinHP(sld, 150, true, "Tieyasal_RunThirdFloor");
@@ -6394,7 +6395,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		for(i=5; i<=6; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Warrior_itza_mush_"+i, "mush_itza_"+(rand(2)+1), "man", "mushketer", iRank, PIRATE, -1, false, "quest"));
-			FantomMakeCoolFighter(sld, iRank, 100, 100, "", "mushket1", "cartridge", 120);
+			FantomMakeCoolFighter(sld, iRank, 100, 100, "", "mushket1", "bullet", 120);
 			ChangeCharacterAddressGroup(sld, "Temple_great", "monsters", "mushketer"+i);
 			sld.MusketerDistance = 0;
 			LAi_SetWarriorType(sld);
@@ -6491,7 +6492,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 			if (i == 4)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Top_itza_"+i, "mush_itza_"+(rand(2)+1), "man", "mushketer", iRank, PIRATE, -1, false, "quest"));
-				FantomMakeCoolFighter(sld, iRank, 100, 100, "", "mushket2x2", "cartridge", 150);
+				FantomMakeCoolFighter(sld, iRank, 100, 100, "", "mushket2x2", "bullet", 150);
 				sld.MusketerDistance = 0;
 			}
 			else

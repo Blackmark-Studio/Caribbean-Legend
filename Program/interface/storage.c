@@ -207,7 +207,7 @@ void AddToTable()
 			iColor = argb(255,255,192,255);
 		}
 
-        GameInterface.TABLE_LIST.(row).td3.icon.group = GetGoodImageGroup(&Goods[i]);
+        GameInterface.TABLE_LIST.(row).td3.icon.group = "GOODS";
 		GameInterface.TABLE_LIST.(row).td3.icon.image = sGood;
 		GameInterface.TABLE_LIST.(row).td3.icon.offset = "0, 0";
 		GameInterface.TABLE_LIST.(row).td3.icon.width = 40;
@@ -321,7 +321,7 @@ void CS_TableSelectChange()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{
@@ -419,12 +419,13 @@ void ShowGoodsInfo(int iGoodIndex)
 {
 	string GoodName = goods[iGoodIndex].name;
 
+	int lngFileID = LanguageOpenFile("GoodsDescribe.txt");
 	string sHeader = XI_ConvertString(GoodName);
 
     iCurGoodsIdx = iGoodIndex;
     string goodsDescr = "";
 
-	goodsDescr += GetAssembledString(GetGoodDescr(&Goods[iGoodIndex]), &Goods[iGoodIndex]);
+	goodsDescr += GetAssembledString( LanguageConvertString(lngFileID,goodName+"_descr"), &Goods[iGoodIndex]);
     goodsDescr += newStr() + XI_ConvertString("weight") + " " + Goods[iGoodIndex].weight + " " + XI_ConvertString("cwt") +
 	              ", " + XI_ConvertString("PackHold") + " "  + Goods[iGoodIndex].Units + " " + XI_ConvertString("units");
 
@@ -438,9 +439,10 @@ void ShowGoodsInfo(int iGoodIndex)
  	SetNodeUsing("QTY_BUYSELL_BUTTON", false);
     GameInterface.qty_edit.str = "0";
 
-	SetNewGroupPicture("QTY_GOODS_PICTURE", GetGoodImageGroup(&goods[iGoodIndex]), GoodName);
+	SetNewGroupPicture("QTY_GOODS_PICTURE", "GOODS", GoodName);
     SetFormatedText("QTY_CAPTION", sHeader);
     SetFormatedText("QTY_GOODS_INFO", goodsDescr);
+	LanguageCloseFile(lngFileID);
 
 	iShipQty = GetCargoGoods(refCharacter, iGoodIndex);
 	iStoreQty = GetStorageGoodsQuantity(refStore, iGoodIndex); 

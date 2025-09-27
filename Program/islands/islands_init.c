@@ -197,9 +197,9 @@ void InitIslands()
 		Islands[n].Trade.Import.id8 = GOOD_COPRA;
 		Islands[n].Trade.Import.id9 = GOOD_PAPRIKA;
 		
-		Islands[n].Trade.Aggressive.id1 = GOOD_COTTON;
-		Islands[n].Trade.Aggressive.id2 = GOOD_LEATHER;
-		Islands[n].Trade.Aggressive.id3 = GOOD_CINNAMON;
+		Islands[n].Trade.Import.id10 = GOOD_COTTON;
+		Islands[n].Trade.Import.id11 = GOOD_LEATHER;
+		Islands[n].Trade.Import.id12 = GOOD_CINNAMON;
 		
 		Islands[n].Trade.Contraband.id1 = GOOD_SLAVES;
 		Islands[n].Trade.Contraband.id2 = GOOD_ROPES;
@@ -484,8 +484,8 @@ void InitIslands()
 		Islands[n].Trade.Import.id6 = GOOD_COPRA;
 		Islands[n].Trade.Import.id7 = GOOD_PAPRIKA;
 		
-		Islands[n].Trade.Aggressive.id1 = GOOD_EBONY;
-		Islands[n].Trade.Aggressive.id2 = GOOD_MAHOGANY;
+		Islands[n].Trade.Import.id8 = GOOD_EBONY;
+		Islands[n].Trade.Import.id9 = GOOD_MAHOGANY;
 		
 		Islands[n].Trade.Contraband.id1 = GOOD_SLAVES;
 		Islands[n].Trade.Contraband.id2 = GOOD_ROPES;
@@ -577,14 +577,14 @@ void InitIslands()
 		Islands[n].Trade.Import.id3 = GOOD_SUGAR;
 		Islands[n].Trade.Import.id4 = GOOD_COTTON;
 		
-		Islands[n].Trade.Aggressive.id1 = GOOD_COFFEE;
-		Islands[n].Trade.Aggressive.id2 = GOOD_CHOCOLATE;
-		Islands[n].Trade.Aggressive.id3 = GOOD_LEATHER;
-		Islands[n].Trade.Aggressive.id4 = GOOD_EBONY;
-		Islands[n].Trade.Aggressive.id5 = GOOD_MAHOGANY;
-		Islands[n].Trade.Aggressive.id6 = GOOD_CINNAMON;
-		Islands[n].Trade.Aggressive.id7 = GOOD_COPRA;
-		Islands[n].Trade.Aggressive.id8 = GOOD_PAPRIKA;
+		Islands[n].Trade.Import.id5 = GOOD_COFFEE;
+		Islands[n].Trade.Import.id6 = GOOD_CHOCOLATE;
+		Islands[n].Trade.Import.id7 = GOOD_LEATHER;
+		Islands[n].Trade.Import.id8 = GOOD_EBONY;
+		Islands[n].Trade.Import.id9 = GOOD_MAHOGANY;
+		Islands[n].Trade.Import.id10 = GOOD_CINNAMON;
+		Islands[n].Trade.Import.id11 = GOOD_COPRA;
+		Islands[n].Trade.Import.id12 = GOOD_PAPRIKA;
 		
 		Islands[n].Trade.Contraband.id1 = GOOD_SLAVES;
 		Islands[n].Trade.Contraband.id2 = GOOD_ROPES;
@@ -932,10 +932,10 @@ void InitIslands()
 		Islands[n].Trade.Import.id5 = GOOD_COTTON;
 		Islands[n].Trade.Import.id6 = GOOD_LEATHER;
 				
-		Islands[n].Trade.Aggressive.id1 = GOOD_EBONY;
-		Islands[n].Trade.Aggressive.id2 = GOOD_MAHOGANY;
-		Islands[n].Trade.Aggressive.id3 = GOOD_CINNAMON;
-		Islands[n].Trade.Aggressive.id4 = GOOD_PAPRIKA;
+		Islands[n].Trade.Import.id7 = GOOD_EBONY;
+		Islands[n].Trade.Import.id8 = GOOD_MAHOGANY;
+		Islands[n].Trade.Import.id9 = GOOD_CINNAMON;
+		Islands[n].Trade.Import.id10 = GOOD_PAPRIKA;
 		
 		Islands[n].Trade.Contraband.id1 = GOOD_SLAVES;
 		Islands[n].Trade.Contraband.id2 = GOOD_ROPES;
@@ -1688,8 +1688,8 @@ void InitIslands()
 		Islands[n].Trade.Import.id5 = GOOD_COTTON;
 		Islands[n].Trade.Import.id6 = GOOD_PAPRIKA;
 		
-		Islands[n].Trade.Aggressive.id1 = GOOD_EBONY;
-		Islands[n].Trade.Aggressive.id2 = GOOD_MAHOGANY;
+		Islands[n].Trade.Import.id7 = GOOD_EBONY;
+		Islands[n].Trade.Import.id8 = GOOD_MAHOGANY;
 		
 		Islands[n].Trade.Contraband.id1 = GOOD_SLAVES;
 		Islands[n].Trade.Contraband.id2 = GOOD_ROPES;

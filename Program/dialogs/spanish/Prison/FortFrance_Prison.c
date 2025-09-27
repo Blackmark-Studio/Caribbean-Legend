@@ -87,39 +87,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		LAi_SetActorType(pchar);
 		LAi_ActorTurnToLocator(pchar, "goto", "goto17"); // 170712
 		// создаем штурмана
-		ref sld = GetCharacter(NPC_GenerateCharacter("Folke", "DeLuck", "man", "man", 1, FRANCE, -1, false, "quest"));
-		sld.name = "Folke";
-		sld.lastname = "Deluc";
-		sld.greeting = "officer_hire";
-		sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-		sld.dialog.currentnode = "Folke";
-		LAi_SetImmortal(sld, true);
-		sld.CompanionDisable = true;
-		sld.rank = 5;
-		LAi_SetHP(sld, 90, 90);
-		sld.money = 0;
-		SetSelfSkill(sld, 25, 28, 21, 24, 22);
-		SetShipSkill(sld, 10, 5, 24, 22, 30, 15, 5, 15, 18);
-		SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-		SetCharacterPerk(sld, "ShipSpeedUp");
-		SetCharacterPerk(sld, "HullDamageUp");
-		SetCharacterPerk(sld, "BasicDefense");
-		GiveItem2Character(sld, "unarmed");
-		EquipCharacterbyItem(sld, "unarmed");
-		ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
-		LAi_SetActorType(sld);
-		LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-		pchar.questTemp.Sharlie = "takeskiper";
-
-		sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
-		LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-		ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
-		LAi_SetActorType(sld);
-		LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
-
-		StartQuestMovie(true, false, true);
-		DoQuestCheckDelay("Del_Turma", 0.1);
-		break;
+		ref sld;
+		InitFolke("Folke", "Deluc");
+	break;
 	//<-- Бремя гасконца
 
 	//--> Миниквест "Делюк" (Делюк снова попал в тюрьму)

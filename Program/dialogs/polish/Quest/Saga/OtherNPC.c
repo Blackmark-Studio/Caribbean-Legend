@@ -1130,25 +1130,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "Naprawdę? Musisz wtedy znać hasło. Mów, ale pożałujesz, jeśli kłamiesz...";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "Tryton";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "Neptun";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "Centurion";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "Harpun";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Zgadza się. Ale ty, kolego, przyszedłeś tu z niewłaściwej strony. Nie ostrzegli cię? Wróć się i wybierz lewą ścieżkę od suchej studni. Potem obejdź wzgórze i tam zobaczysz główną bramę.";
-				link.l1 = "Czy nie mogę tu wejść?";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "Chłopaki, mamy szpiega! Muszkiety gotowe! Ognia!!";
-				link.l1 = "...";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "Zgadza się. Ale ty, kolego, przyszedłeś tu z niewłaściwej strony. Nie ostrzegli cię? Wróć się i wybierz lewą ścieżkę od suchej studni. Potem obejdź wzgórze i tam zobaczysz główną bramę.";
+			link.l1 = "Czy nie mogę tu wejść?";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "Chłopaki, mamy szpiega! Muszkiety gotowe! Ognia!!";
+			link.l1 = "...";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1172,25 +1173,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "Naprawdę? W takim razie powinieneś znać hasło. Powiedz je głośno, żebym mógł je usłyszeć. A jeśli spróbujesz mnie oszukać, będzie to ostatni dowcip, jaki w życiu zrobisz komuś.";
-			link.l1.edit = 5;
-			link.l1 = " ";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "Tryton";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "Neptun";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "Centurion";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "Harpun";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Zgadza się. Idź dalej. Głowa obozu znajduje się w domu po lewej stronie od wejścia do kopalni. Idź i zobacz się z nim.";
-				link.l1 = "Dobrze, kumplu...";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "Chłopaki, mamy szpiega! Armaty, otworzyć ogień!!";
-				link.l1 = "...";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "Zgadza się. Idź dalej. Głowa obozu znajduje się w domu po lewej stronie od wejścia do kopalni. Idź i zobacz się z nim.";
+			link.l1 = "Dobrze, kumplu...";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "Chłopaki, mamy szpiega! Armaty, otworzyć ogień!!";
+			link.l1 = "...";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1565,7 +1567,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);

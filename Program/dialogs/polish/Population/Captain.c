@@ -22,11 +22,11 @@ void ProcessDialogEvent()
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
 					dialog.text = "Stój. Żeglujesz pod banderą "+NationNameGenitive(sti(pchar.nation))+", szczurze pokładowy. Nie mam ochoty z tobą rozmawiać i nie chcę żadnych problemów... Spływaj!";
-					link.l1 = "A ty nazywasz siebie kapitanem...";
+					link.l1 = "I ty nazywasz siebie kapitanem...";
 					link.l1.go = "exit";
 					break;
 				}
-				if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < 5)//боевые генераторные квесты 2015
+				if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < COMPANION_MAX)//боевые генераторные квесты 2015
 				{
 					dialog.text = "Ha! Jesteś tu w samą porę, kapitanie... Mam dla ciebie propozycję biznesową. Czy masz dla mnie kilka godzin?";
 					link.l1 = "Nie. Spieszę się, kumplu. Może następnym razem.";
@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 					break;
 				}
 				dialog.text = "Witaj i dobrze spotkać! Miło widzieć innego zamożnego kapitana!";
-				link.l1 = "Cieszę się, że cię widzę, panie! Nazywam się "+GetFullName(pchar)+"Masz chwilę, by porozmawiać?";
+				link.l1 = "Cieszę się, że cię widzę, panie! Nazywam się "+GetFullName(pchar)+". Masz chwilę, by porozmawiać?";
 				link.l1.go = "question";
 				npchar.quest.meeting = "1";
 			}
@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 				//повторные обращения
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "Czy mam się powtórzyć? Nie chcę być podejrzewany o przyjaźń z "+NationNameAblative(sti(pchar.nation))+"Zjeżdżaj, albo wezwę straż!";
+					dialog.text = "Czy mam się powtórzyć? Nie chcę być podejrzewany o przyjaźń z "+NationNameAblative(sti(pchar.nation))+". Zjeżdżaj, albo wezwę straż!";
 					link.l1 = "Dobrze, dobrze, uspokój się. Odchodzę.";
 					link.l1.go = "exit";
 				}
@@ -60,14 +60,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "question":
-			dialog.text = NPCStringReactionRepeat(""+GetFullName(npchar)+" do usług, dobry panie! Czego chciałbyś się dowiedzieć?","Miło z tobą rozmawiać, kapitanie!","Cóż, przypuszczam, że mam wolną chwilę na rozmowę...","Niestety, muszę iść. Do zobaczenia!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(""+GetFullName(npchar)+" do usług, dobry panie! Czego chciałbyś się dowiedzieć?","Miło z tobą rozmawiać, kapitanie!","Cóż, przypuszczam, że mam wolną chwilę na rozmowę...","Niestety, muszę iść. Do zobaczenia!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Czy masz coś ciekawego do opowiedzenia?","Masz coś ciekawego do opowiedzenia?","Masz mi coś ciekawego do opowiedzenia?","Pewnie. Powodzenia!",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("rumours_landcaptain", "rumours_landcaptain", "rumours_landcaptain", "exit", npchar, Dialog.CurrentNode);
 		break;
 		
 		//квестовая часть
 			case "march":
-				dialog.text = "Nie, kapitanie, na ulicach i w tawernie jest wiele oczu i uszu, a nam ich nie potrzeba, uwierz mi. Ta propozycja dotyczy... wrogiego przejęcia interesów, że tak powiem. Porozmawiajmy na moim statku.";
+				dialog.text = "Nie, kapitanie, na ulicach i w karczmie jest wiele oczu i uszu, a nam ich nie potrzeba, uwierz mi. Ta propozycja dotyczy... wrogiego przejęcia interesów, że tak powiem. Porozmawiajmy na moim statku.";
 				link.l1 = "Dobra, spróbuję... Jak się nazywa twój statek i jaka jest jej nazwa?";
 				link.l1.go = "march_1";
 				link.l2 = "Ha! Brzmi podejrzanie dla mnie. Myślę, że nie. Żegnaj, panie!";
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 				pchar.GenQuest.MarchCap.BaseNation = npchar.nation;
 				pchar.GenQuest.MarchCap.Nation = hrand(NON_PIRATES);
 				pchar.GenQuest.MarchCap.basecity = npchar.city;
-				dialog.text = "Mój statek to "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.shiptype),"Imię")))+" '"+pchar.GenQuest.MarchCap.shipname+"Jest teraz w porcie. Nie spóźnij się, kapitanie, wyjeżdżam za sześć godzin!";
+				dialog.text = "Mój statek to "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.MarchCap.shiptype),"Name")))+" '"+pchar.GenQuest.MarchCap.shipname+". Jest teraz w porcie. Nie spóźnij się, kapitanie, wypływam za sześć godzin!";
 				link.l1 = "Rozumiem, postaram się być na czas. Do zobaczenia!";
 				link.l1.go = "march_2";
 			break;

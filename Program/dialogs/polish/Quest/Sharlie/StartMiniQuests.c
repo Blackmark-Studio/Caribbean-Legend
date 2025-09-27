@@ -339,7 +339,7 @@ void ProcessDialogEvent()
 			Islands[i].EffectRadius = 3000;
 			
 			DoQuestFunctionDelay("MessageRum1", 1.0);
-			//NewGameTip("Transport the rum to Le Francois. Keep sailing around the island.");
+			//NewGameTip("Przewieź rum do Le Francois. Płyń dalej wokół wyspy.");
 			pchar.questTemp.Rum.Tip2.Reload = "l4";
 			
 			Weather.Wind.Speed = 16.0;
@@ -362,7 +362,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Rum_Carrier_1":
-			dialog.text = "Świetnie. Od teraz my się tym zajmiemy. Ty udaj się do St. Pierre do tawerny po zapłatę. Bądź uważny i ostrożny w nocnych dżunglach.";
+			dialog.text = "Świetnie. Od teraz my się tym zajmiemy. Ty udaj się do St. Pierre do karczmy po zapłatę. Bądź uważny i ostrożny w nocnych dżunglach.";
 			link.l1 = "Wszystkiego najlepszego, panowie.";
 			link.l1.go = "Rum_Carrier_2";
 		break;
@@ -396,7 +396,7 @@ void ProcessDialogEvent()
 		//доставить девочку из борделя
 		case "GigoloMan":
 			DelLandQuestMark(npchar);
-			dialog.text = "Dzień dobry, monsieur! Powiadam, nie wyglądacie jak ci obdrapani łotrzy zazwyczaj kręcący się po naszej kolonii. Sądząc po waszym odzieniu, musieliście przebyć długą drogę... Przybyliście z Europy, czyż nie?";
+			dialog.text = "Dzień dobry, monsieur! Powiadam, nie wyglądasz jak ci obdrapani łotrzy zazwyczaj kręcący się po naszej kolonii. Sądząc po twoim odzieniu, musiałeś przebyć długą drogę... Przybyłeś z Europy, czyż nie?";
 			link.l1 = "Dokładnie, monsieur. "+GetFullName(pchar)+", do usług. Czego potrzebujesz?";
 			link.l1.go = "GigoloMan_1";
 		break;
@@ -408,16 +408,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_2":
-			dialog.text = "I am glad to hear that, monsieur de Maure. Now, how to put this delicately...There is a brothel in this town. A new girl appeared there recently; young, pale, blonde, stunningly beautiful! Now, I've been watching her for weeks and... got a very strong desire to spend some time with her in private\nBut my estate and status make it...inconvenient to visit such a place. Imagine the gossip!\nThat is why I am appealing to you. Plainly put, you are a newcomer to our island, people don't know you and they don't care about what you do... yet. You could do me a great favour, monsieur.";
+			dialog.text = "Cieszę się, że to słyszę, monsieur de Maure. A teraz, jak to delikatnie ująć... W tym mieście jest zamtuz. Niedawno pojawiła się tam nowa dziewczyna; młoda, blada, blondynka, oszałamiająco piękna! Obserwowałem ją od tygodni i... poczułem ogromną potrzebę spędzenia z nią trochę czasu w cztery oczy.\nAle mój majątek i status sprawiają, że... niewygodne jest odwiedzanie takiego miejsca. Wyobraź sobie te plotki!\nDlatego właśnie do ciebie się zwracam. Mówiąc wprost, jesteś nowy na naszej wyspie, ludzie cię nie znają i nie interesuje ich, co robisz... jeszcze. Mógłbyś mi wyświadczyć wielką przysługę, monsieur.";
 			link.l1 = "Wydaje mi się, że rozumiem, do czego zmierzasz.";
 			link.l1.go = "GigoloMan_3";
 		break;
 		
 		case "GigoloMan_3":
-			dialog.text = "Doceniam pańską dyskrecję, monsieur. Nie mogę przyjść do dziewczyny, więc dziewczyna musi przyjść do mnie. Do mojego domu. Proszę, byś udał się do burdelu i umówił się z madame, aby pozwoliła ci zorganizować 'wizytę domową' blondynki na jedną noc.\nAurora nie odmówi, jest dobrze znana z tego, że świadczy takie usługi dostawcze, choć zawsze kosztuje to trochę więcej. Potem sprowadzisz dziewczynę do mojego domu. W ramach zapłaty dam ci sześć tysięcy pesos. Aurora zazwyczaj bierze trzy tysiące lub trzy i pięćset za jedną noc z dziewczyną w domu. Możesz zatrzymać resztę jako rekompensatę za swoje kłopoty.";
+			dialog.text = "Doceniam pańską dyskrecję, monsieur. Nie mogę przyjść do dziewczyny, więc dziewczyna musi przyjść do mnie. Do mojego domu. Proszę, byś udał się do zamtuza i umówił się z madame, aby pozwoliła ci zorganizować 'wizytę domową' blondynki na jedną noc.\nAurora nie odmówi, jest dobrze znana z tego, że świadczy takie usługi dostawcze, choć zawsze kosztuje to trochę więcej. Potem sprowadzisz dziewczynę do mojego domu. W ramach zapłaty dam ci sześć tysięcy pesos. Aurora zazwyczaj bierze trzy tysiące lub trzy i pięćset za jedną noc z dziewczyną w domu. Możesz zatrzymać resztę jako rekompensatę za swoje kłopoty.";
 			link.l1 = "Nie brzmi to zbyt skomplikowanie. Mogę to zrobić.";
 			link.l1.go = "GigoloMan_4";
-			link.l2 = "Monsieur, traktuję swoją reputację jako dżentelmen równie poważnie jak pan. Proszę o wybaczenie, lecz nie mogę spełnić pańskiej prośby. Muszę odmówić. Powinienem raczej udać się do tawerny i sprawdzić, czy karczmarz ma dla mnie jakieś zajęcie.";
+			link.l2 = "Monsieur, traktuję swoją reputację jako dżentelmen równie poważnie jak pan. Proszę o wybaczenie, lecz nie mogę spełnić pańskiej prośby. Muszę odmówić. Powinienem raczej udać się do karczmy i sprawdzić, czy karczmarz ma dla mnie jakieś zajęcie.";
 			link.l2.go = "GigoloMan_exit";
 		break;
 		
@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GigoloMan_4":
-			dialog.text = "I am damn glad to hear it. Now listen, the girl's name is Lucille. I ask you to deliver her to my place when it's dark, no earlier than eleven p.m., in order to avoid unwanted attention from any gawkers. Knock on the door, and I will open.\nMy house is located to the left of the governor's residence, facing away from it - a two-story mansion with a red roof. You can easily find it, and there's a shop nearby, too. Actually, I am heading to my house now; feel free to follow me to see what it looks like and where it is exactly, so you won't get lost at night.\n Regarding the matter at hand - here, take six thousand pesos. I expect you by the agreed-upon time!";
+			dialog.text = "Bardzo się cieszę, że to słyszę. Posłuchaj, dziewczyna ma na imię Lucille. Proszę, żebyś ją przyprowadził ją do mnie, kiedy będzie ciemno, nie wcześniej niż o jedenastej wieczorem, żeby uniknąć niechcianej uwagi gapiów. Zapukaj do drzwi, a otworzę.\nMój dom znajduje się na lewo od rezydencji gubernatora, tyłem do niej – to dwupiętrowa rezydencja z czerwonym dachem. Łatwo ją znajdziesz, a w pobliżu jest też sklep. Właściwie to właśnie idę do domu; możesz pójść za mną, żeby zobaczyć, jak wygląda i gdzie dokładnie jest, żebyś się nie zgubił w nocy.\n A co do sprawy – weź sześć tysięcy pesos. Oczekuję cię o umówionej godzinie!";
 			link.l1 = "Mamy umowę. Twoja blondynka Lucille będzie u twoich drzwi tej nocy.";
 			link.l1.go = "GigoloMan_5";
 		break;
@@ -475,7 +475,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Panie, mam nadzieję, że rozumiesz, iż nie mogę po prostu spacerować z tobą nocą. Musisz mnie szybko zabrać do domu swojego przyjaciela, inaczej wrócę prosto do Madamy, a ty zmarnujesz swoje pieniądze.";
+				dialog.text = "Panie, mam nadzieję, że rozumiesz, iż nie mogę po prostu spacerować z tobą nocą. Musisz mnie szybko zabrać do domu swojego przyjaciela, inaczej wrócę prosto do Madame, a ty zmarnujesz swoje pieniądze.";
 				link.l1 = "Dobrze, rozumiem. Chodź za mną!";
 				link.l1.go = "GigoloGirl_2";
 			}
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptivePirate_3":
-			dialog.text = "Co-o? Blefujesz, kamracie! Do niego, chłopcy, do broni!";
+			dialog.text = "Co-o? Blefujesz, kamracie! Na niego, chłopcy, do broni!";
 			link.l1 = "Na własną odpowiedzialność, do broni!";
 			link.l1.go = "CaptivePirate_4";
 		break;
@@ -633,7 +633,7 @@ void ProcessDialogEvent()
 		
 		case "CaptiveSpain_1":
 			dialog.text = "Wolę umrzeć, niż dać się schwytać Francuzom. Wziąłem szablę z jednego z martwych ciał, gdy walczyłeś... teraz sprawię, że zatańczysz do hiszpańskiej quadrilli!";
-			link.l1 = "Wy Hiszpanie jesteście uparci jak muły!";
+			link.l1 = "Wy Hiszpanie jesteście uparci jak osły!";
 			link.l1.go = "CaptiveSpain_2";
 		break;
 		
@@ -1048,7 +1048,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Selina_3":
-			dialog.text = "„Bóg i Najświętsza Matka wysłuchali moich modlitw! Czy przyszedłeś nas ocalić?”";
+			dialog.text = "Bóg i Najświętsza Matka wysłuchali moich modlitw! Czy przyszedłeś nas ocalić?";
 			link.l1 = "Ty... Twoje imię to Celine, prawda?";
 			link.l1.go = "Selina_4";
 		break;

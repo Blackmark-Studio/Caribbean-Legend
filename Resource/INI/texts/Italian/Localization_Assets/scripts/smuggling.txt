@@ -1,8 +1,2 @@
-smuggling_1
-{
-I contrabbandieri approvano (
-}
-smuggling_2
-{
-I contrabbandieri disapprovano (
-}
+smuggling_1 {I contrabbandieri approvano (}
+smuggling_2 {I contrabbandieri disapprovano (}

@@ -1,4 +1,2 @@
-LAi_fightparams_1
-{
-Uniknięcie strzału
-}
+LAi_fightparams_1 {Uniknięcie strzału}
+LAi_fightparams_2 {Kapelusz najemnika został zniszczony.}

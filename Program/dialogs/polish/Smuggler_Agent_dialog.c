@@ -67,6 +67,14 @@ void ProcessDialogEvent()
             else
             {
 	            AddQuestRecord("Gen_Contraband", "t1");
+				if (Pchar.quest.contraband.CurrentPlace == "shore30" || Pchar.quest.contraband.CurrentPlace == "shore31")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Marie Galante");
+				}
+				if (Pchar.quest.contraband.CurrentPlace == "shore59")
+				{
+					AddQuestUserData("Gen_Contraband", "sIsland", "Tobago");
+				}
 				AddQuestUserData("Gen_Contraband", "sIsland", XI_ConvertString(GetIslandByCityName(npchar.city)));
 			}
 			AddQuestUserData("Gen_Contraband", "sLoc", GetConvertStr(Pchar.quest.contraband.CurrentPlace, "LocLables.txt"));
@@ -527,9 +535,15 @@ void ProcessDialogEvent()
 		case "Meeting_3":
 			int iTmp = false;
 			int iChIdx, i;
+			
+			float fMaxClass = ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5);
+			if (IsEquipCharacterByArtefact(pchar, "talisman21")) fMaxClass = 2.0;
+			
+			if (GetCompanionQuantity(pchar) > 1) iTmp = true;
+			if (GetCharacterShipClass(pchar) < fMaxClass) iTmp = true;
 
 			// поиск мин.  те старшего класса
-			for (i=0; i<COMPANION_MAX; i++)
+			/* for (i=0; i<COMPANION_MAX; i++)
 			{
 				iChIdx = GetCompanionIndex(GetMainCharacter(), i);
 				if (iChIdx>=0)
@@ -537,7 +551,7 @@ void ProcessDialogEvent()
 					sld = GetCharacter(iChIdx);
             		if (GetCharacterShipClass(sld) < ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5)) iTmp = true;
 				}
-			}
+			} */
 			
 			if (iTmp)
 			{

@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 			
 		case "Contra_GenQuest_Church_2_4":
 			sColony = QuestGetColony(PChar.GenQuest.ChurchQuest_2.QuestTown);
-			dialog.text = "Вот оно что... Ну, было дело. Подошли люди, сказали, что им срочно нужно отчаливать, и при этом неважно куда. Мы в таких случаях причины не спрашиваем, лишь бы  цену платили. У нас ходка была в " + XI_ConvertString("Colony" + sColony + "Acc") + ", что находится на " + XI_ConvertString(locations[FindLocation(sColony + "_Town")].IslandID + "Dat") + ", туда они и погрузились. Можем и тебя подбросить, если в цене сойдёмся.";
+			dialog.text = "Вот оно что... Ну, было дело. Подошли люди, сказали, что им срочно нужно отчаливать, и при этом неважно куда. Мы в таких случаях причины не спрашиваем, лишь бы  цену платили. У нас ходка была в " + XI_ConvertString("Colony" + sColony + "Acc") + ", что находится на " + XI_ConvertString(locations[FindLocation(sColony + "_Town")].IslandID + "Voc") + ", туда они и погрузились. Можем и тебя подбросить, если в цене сойдёмся.";
 			link.l1 = "Спасибо, я под своим парусом.";
 			link.l1.go = "exit";
 			sQuestTitle = PChar.GenQuest.ChurchQuest_2.QuestTown + "ChurchGenQuest2";
@@ -532,9 +532,15 @@ void ProcessDialogEvent()
 		case "Meeting_3":
 			int iTmp = false;
 			int iChIdx, i;
-
+			
+			float fMaxClass = ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5);
+			if (IsEquipCharacterByArtefact(pchar, "talisman21")) fMaxClass = 2.0;
+			
+			if (GetCompanionQuantity(pchar) > 1) iTmp = true;
+			if (GetCharacterShipClass(pchar) < fMaxClass) iTmp = true;
+			
 			// поиск мин.  те старшего класса
-			for (i=0; i<COMPANION_MAX; i++)
+			/* for (i=0; i<COMPANION_MAX; i++)
 			{
 				iChIdx = GetCompanionIndex(GetMainCharacter(), i);
 				if (iChIdx>=0)
@@ -542,7 +548,7 @@ void ProcessDialogEvent()
 					sld = GetCharacter(iChIdx);
             		if (GetCharacterShipClass(sld) < ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5) || GetCompanionQuantity(pchar) > 1) iTmp = true;
 				}
-			}
+			} */
 			
 			if (iTmp)
 			{
@@ -804,6 +810,7 @@ void ProcessDialogEvent()
 				SetRandomNameToCharacter(sld);
 				SetMerchantShip(sld, rand(GOOD_PAPRIKA));
 				SetFantomParamHunter(sld);
+				InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Контрабандисты
 				SetCaptanModelByEncType(sld, "pirate");
 				SetCharacterShipLocation(sld, PChar.GenQuest.contraTravel.CurrentPlace);
 

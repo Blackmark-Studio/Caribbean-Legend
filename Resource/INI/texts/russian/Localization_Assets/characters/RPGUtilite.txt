@@ -1,113 +1,23 @@
-RPGUtilite_1
-{
-Получен опыт ~
-}
-
-RPGUtilite_2
-{
-ужасное
-}
-RPGUtilite_3
-{
-плохое
-}
-
-RPGUtilite_4
-{
-неважное
-}
-
-RPGUtilite_5
-{
-среднее
-}
-
-RPGUtilite_6
-{
-хорошее
-}
-
-RPGUtilite_7
-{
-отличное
-}
-
-RPGUtilite_8
-{
-Здоровье улучшилось
-}
-
-RPGUtilite_9
-{
-Здоровье ухудшилось
-}
-
-RPGUtilite_10
-{
-Награда за голову выросла
-}
-
-RPGUtilite_11
-{
-Отношение улучшилось
-}
-
-RPGUtilite_12
-{
-Отношение улучшилось
-}
-
-RPGUtilite_13
-{
-Отношение ухудшилось
-}
-
-RPGUtilite_14
-{
-Ненависть
-}
-
-RPGUtilite_15
-{
-Враждебность
-}
-
-RPGUtilite_16
-{
-Неприязнь
-}
-
-RPGUtilite_17
-{
-Раздражение
-}
-
-RPGUtilite_18
-{
-Нейтралитет
-}
-
-RPGUtilite_19
-{
-Симпатия
-}
-
-RPGUtilite_20
-{
-Дружелюбие
-}
-
-RPGUtilite_21
-{
-Восхищение
-}
-
-RPGUtilite_22
-{
-Радуга
-}
-
-RPGUtilite_23
-{
-Быстрый вепрь
-}
+RPGUtilite_1 {Получен опыт ~}
+RPGUtilite_2 {ужасное}
+RPGUtilite_3 {плохое}
+RPGUtilite_4 {неважное}
+RPGUtilite_5 {среднее}
+RPGUtilite_6 {хорошее}
+RPGUtilite_7 {отличное}
+RPGUtilite_8 {Здоровье улучшилось}
+RPGUtilite_9 {Здоровье ухудшилось}
+RPGUtilite_10 {Награда за голову выросла}
+RPGUtilite_11 {Отношение улучшилось}
+RPGUtilite_12 {Отношение улучшилось}
+RPGUtilite_13 {Отношение ухудшилось}
+RPGUtilite_14 {Ненависть}
+RPGUtilite_15 {Враждебность}
+RPGUtilite_16 {Неприязнь}
+RPGUtilite_17 {Раздражение}
+RPGUtilite_18 {Нейтралитет}
+RPGUtilite_19 {Симпатия}
+RPGUtilite_20 {Дружелюбие}
+RPGUtilite_21 {Восхищение}
+RPGUtilite_22 {Радуга}
+RPGUtilite_23 {Быстрый вепрь}

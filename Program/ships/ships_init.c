@@ -2,7 +2,7 @@ void InitShips()
 {
 	ref refShip;
 
-	for (int idx=0;idx<GetArraySize(&ShipsTypes);idx++)
+	for (int idx=0;idx<SHIP_TYPES_QUANTITY_WITH_FORT;idx++)
 	{
 		makeref(refShip,ShipsTypes[idx]);
 
@@ -287,10 +287,10 @@ void InitShips()
 	refShip.lcannon 					= 4;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;		
-	refShip.MaxCrew         			= 53;
-	refShip.OptCrew         			= 42;
+	refShip.MaxCrew         			= 55;
+	refShip.OptCrew         			= 44;
 	refShip.MinCrew         			= 11;	
-	refShip.SpeedRate       			= 12.05;
+	refShip.SpeedRate       			= 12.45;
 	refShip.TurnRate        			= 60.0;
 	refShip.Price           			= 10600;
 	refShip.HP              			= 600;
@@ -358,10 +358,10 @@ void InitShips()
 	refShip.fcannon 					= 0;
 	refShip.bcannon 					= 2;
 
-	refShip.MaxCrew         			= 73;
-	refShip.OptCrew         			= 58;
+	refShip.MaxCrew         			= 76;
+	refShip.OptCrew         			= 61;
 	refShip.MinCrew         			= 15;	
-	refShip.SpeedRate					= 13.2;	
+	refShip.SpeedRate					= 13.55;	
 	refShip.TurnRate        			= 50.0;
 	refShip.Price           			= 24300;	
 	refShip.HP              			= 1600;
@@ -374,7 +374,7 @@ void InitShips()
 	refship.Rocking.y = 0.4;
 	refship.Rocking.az = 0.03;
 
-	refship.WaterLine					= 0.0;
+	refship.WaterLine					= -0.3;
 	refship.SpeedDependWeight			= 0.2;
 	refship.SubSeaDependWeight			= 0.2;
 	refship.TurnDependWeight			= 0.3;
@@ -428,9 +428,9 @@ void InitShips()
 	refShip.lcannon 					= 7;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 0;		
-	refShip.MaxCrew         			= 80;
-	refShip.OptCrew         			= 64;
-	refShip.MinCrew         			= 16;	
+	refShip.MaxCrew         			= 89;
+	refShip.OptCrew         			= 71;
+	refShip.MinCrew         			= 18;	
 	refShip.SpeedRate       			= 16.55;
 	refShip.TurnRate        			= 45.0;
 	refShip.Price           			= 33900;
@@ -452,7 +452,7 @@ void InitShips()
 	refship.TurnDependWeight			= 0.3;
 	refship.WindAgainstSpeed   			= 0.65;
 	
-	refship.CabinType          			= "Cabin_Medium"; 
+	refship.CabinType          			= "Cabin_Medium2"; 
 
 	refship.InertiaAccelerationX	= 5.5;	refship.InertiaBrakingX		= 5.5;
 	refship.InertiaAccelerationY	= 8;	refship.InertiaBrakingY		= 8;
@@ -509,7 +509,7 @@ void InitShips()
 	refShip.OptCrew        				= 132;
 	refShip.MinCrew        				= 33;
 	
-	refShip.SpeedRate      				= 12.75;
+	refShip.SpeedRate      				= 13.10;
 	refShip.TurnRate       				= 50.0;
 	refShip.Price          				= 45900;
 	refShip.HP             				= 4150;
@@ -662,10 +662,10 @@ void InitShips()
 	refShip.lcannon 					= 5;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;
-	refShip.MaxCrew         			= 46
-	refShip.OptCrew         			= 37
-	refShip.MinCrew         			= 9;	
-	refShip.SpeedRate       			= 13.45
+	refShip.MaxCrew         			= 50;
+	refShip.OptCrew         			= 40
+	refShip.MinCrew         			= 10;	
+	refShip.SpeedRate       			= 13.65
 	refShip.TurnRate        			= 48.0;	
 	refShip.Price           			= 14300;	
 	refShip.HP              			= 850;
@@ -677,14 +677,12 @@ void InitShips()
 	
 	refship.Rocking.y 					= 0.5;
 	refship.Rocking.az 					= 0.04;
-	refship.WaterLine					= 1.15;
+	refship.WaterLine					= -0.25;
 	refship.SpeedDependWeight			= 0.27;
 	refship.SubSeaDependWeight			= 0.6;
 	refship.TurnDependWeight			= 0.3;
 	
 	refship.WindAgainstSpeed   			= 1.15;
-	
-	refship.CabinType          			= "Cabin_Medium";
 		
 	refship.InertiaAccelerationX	= 5.5;	refship.InertiaBrakingX		= 5.5;
 	refship.InertiaAccelerationY	= 8;	refship.InertiaBrakingY		= 8;
@@ -737,9 +735,9 @@ void InitShips()
 	refShip.lcannon 					= 6;
 	refShip.fcannon 					= 0;
 	refShip.bcannon 					= 2; 
-	refShip.MaxCrew         			= 61;
-	refShip.OptCrew         			= 49;
-	refShip.MinCrew         			= 12;
+	refShip.MaxCrew         			= 68;
+	refShip.OptCrew         			= 54;
+	refShip.MinCrew         			= 14;
 	refShip.SpeedRate					= 15.35;
 	refShip.TurnRate        			= 30.0;
 	refShip.Price           			= 23300;
@@ -758,6 +756,8 @@ void InitShips()
 	refship.SubSeaDependWeight			= 0.8;
 	refship.TurnDependWeight			= 0.2;
 	refship.WindAgainstSpeed   			= 0.45;
+	
+	refship.CabinType          			= "Cabin_Medium";
 	
 	refShip.Height.Bombs.Y				= 3.3;	refShip.Height.Bombs.DY		= 1.6;
 	refShip.Height.Grapes.Y				= 4.9;	refShip.Height.Grapes.DY	= 2.4;
@@ -806,9 +806,9 @@ void InitShips()
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 2;
 	
-	refShip.MaxCrew         			= 74;
-	refShip.OptCrew         			= 59;
-	refShip.MinCrew         			= 15;	
+	refShip.MaxCrew         			= 80;
+	refShip.OptCrew         			= 64;
+	refShip.MinCrew         			= 16;	
 	refShip.SpeedRate					= 14.80;
 	refShip.TurnRate        			= 35.0;
 	refShip.Price           			= 46800;
@@ -828,7 +828,7 @@ void InitShips()
 	refship.TurnDependWeight			= 0.25;
 	refship.WindAgainstSpeed   			= 0.95;
 	
-	refship.CabinType          			= "Cabin_Medium"; 
+	refship.CabinType          			= "Cabin_Medium2"; 
 	refship.DeckType           			= "Medium_trade";
 		
 	refship.InertiaAccelerationX	= 4.5;	refship.InertiaBrakingX		= 4.5;
@@ -877,9 +877,9 @@ void InitShips()
 	refShip.lcannon 					= 7;
 	refShip.fcannon 					= 2;
 	refShip.bcannon 					= 4;		
-	refShip.MaxCrew						= 125;
-	refShip.OptCrew         			= 100;
-	refShip.MinCrew         			= 25;	
+	refShip.MaxCrew						= 144;
+	refShip.OptCrew         			= 115;
+	refShip.MinCrew         			= 29;	
 	refShip.SpeedRate					= 14.00;
 	refShip.TurnRate        			= 39.0;
 	refShip.Price           			= 68000;
@@ -1033,10 +1033,10 @@ void InitShips()
 	refShip.lcannon 					= 4;
 	refShip.fcannon 					= 0;
 	refShip.bcannon 					= 2;	
-	refShip.MaxCrew         			= 44;
-	refShip.OptCrew         			= 35;
-	refShip.MinCrew         			= 9;	
-	refShip.SpeedRate       			= 12.35;
+	refShip.MaxCrew         			= 48;
+	refShip.OptCrew         			= 38;
+	refShip.MinCrew         			= 10;	
+	refShip.SpeedRate       			= 12.75;
 	refShip.TurnRate        			= 65.0;
 	refShip.Price           			= 10100;
 	refShip.HP              			= 750;
@@ -1106,7 +1106,7 @@ void InitShips()
 	refShip.MaxCrew         			= 90;
 	refShip.OptCrew         			= 72;
 	refShip.MinCrew         			= 18;
-	refShip.SpeedRate					= 13.65;
+	refShip.SpeedRate					= 14.45;
 	refShip.TurnRate        			= 55.0;
 	refShip.Price           			= 22300;
 	refShip.HP              			= 1175;
@@ -1179,7 +1179,7 @@ void InitShips()
 	refShip.OptCrew        				= 90;
 	refShip.MinCrew        				= 23;
 	
-	refShip.SpeedRate      				= 11.8;
+	refShip.SpeedRate      				= 12.15;
 	refShip.TurnRate       				= 60.0;
 	refShip.Price          				= 42000;
 	refShip.HP             				= 1650;
@@ -1257,7 +1257,7 @@ void InitShips()
 	refShip.OptCrew         			= 100;
 	refShip.MinCrew         			= 25;
 	
-	refShip.SpeedRate       			= 19.5;
+	refShip.SpeedRate       			= 18.05;
 	refShip.TurnRate        			= 48.0;
 	refShip.Price           			= 37700;
 	refShip.HP              			= 1900;
@@ -1276,7 +1276,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 0.6;
 	refship.TurnDependWeight			= 0.3;
 	refship.WindAgainstSpeed   			= 0.45;
-	refship.CabinType          			= "Cabin_Medium"; // boal 28.03.05
+	refship.CabinType          			= "Cabin_Medium2"; // boal 28.03.05
 	
 	refship.InertiaAccelerationX	= 5.5;	refship.InertiaBrakingX		= 5.5;
 	refship.InertiaAccelerationY	= 8;	refship.InertiaBrakingY		= 8;
@@ -1334,7 +1334,7 @@ void InitShips()
 	refShip.OptCrew						= 154;
 	refShip.MinCrew         			= 39;
 	
-	refShip.SpeedRate					= 18.65;
+	refShip.SpeedRate					= 17.80;
 	refShip.TurnRate        			= 43.0;
 	refShip.Price           			= 45500;
 	refShip.HP              			= 3120;
@@ -1635,7 +1635,7 @@ void InitShips()
 	refShip.MaxCrew         			= 150;
 	refShip.OptCrew         			= 120;
 	refShip.MinCrew         			= 30;	
-	refShip.SpeedRate					= 12.2;
+	refShip.SpeedRate					= 12.45;
 	refShip.TurnRate        			= 25.0;
 	refShip.Price           			= 53200;	
 	refShip.HP              			= 3200;
@@ -1648,7 +1648,7 @@ void InitShips()
 
 	refship.Rocking.y 					= 0.5;
 	refship.Rocking.az 					= 0.035;
-	refship.CabinType          			= "Cabin_Medium"; 
+	refship.CabinType          			= "Cabin_Medium2"; 
 	refship.DeckType           			= "Medium_war";
 	
 	refship.WaterLine					= 1.0;
@@ -1960,7 +1960,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 1.15;
 	refship.TurnDependWeight			= 0.4;
 	refship.WindAgainstSpeed            = 0.40;
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 	
 	refship.InertiaAccelerationX	= 4.5;	refship.InertiaBrakingX		= 4.0;
@@ -2038,7 +2038,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 1.0;
 	refship.TurnDependWeight			= 0.4;
 	refship.WindAgainstSpeed   			= 0.35;
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 	
 	refship.InertiaAccelerationX	= 4.0;	refship.InertiaBrakingX		= 3.5;
@@ -2116,7 +2116,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 0.75;
 	refship.TurnDependWeight			= 0.4;
 	refship.WindAgainstSpeed   			= 0.30;
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 		
 	refship.InertiaAccelerationX	= 3.5;	refship.InertiaBrakingX		= 3.0;
@@ -2194,7 +2194,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 1.8;
 	refship.TurnDependWeight			= 0.45;
 	refship.WindAgainstSpeed   			= 0.25;
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 	
 	refship.InertiaAccelerationX	= 1.5;	refship.InertiaBrakingX		= 1.5;
@@ -2271,7 +2271,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 1.8;
 	refship.TurnDependWeight			= 0.45;
 	refship.WindAgainstSpeed   			= 0.25;
-	refship.CabinType          			= "Cabin_Huge"; // boal 28.03.05
+	refship.CabinType          			= "Cabin"; // boal 28.03.05
 	refship.DeckType           			= "Big";
 	
 	refship.InertiaAccelerationX	= 1.5;	refship.InertiaBrakingX		= 1.5;
@@ -2334,12 +2334,12 @@ void InitShips()
 	refShip.OptCrew        			= 109;
 	refShip.MinCrew        			= 27;
 	
-	refShip.SpeedRate      			= 11.4;
+	refShip.SpeedRate      			= 11.65;
 	refShip.TurnRate       			= 65.0;
 	refShip.Price          			= 30500;
 	refShip.HP             			= 2125;
 	refShip.SP             			= 100;
-	refship.CabinType          		= "Cabin_Medium";
+	refship.CabinType          		= "Cabin_Medium2";
 	refship.Type.Merchant			= false;
 	refship.Type.War				= true;
 	refship.Spec                    = SHIP_SPEC_RAIDER;
@@ -2404,7 +2404,7 @@ void InitShips()
 	refShip.MaxCrew        		= 166;
 	refShip.OptCrew        		= 133;
 	refShip.MinCrew        		= 33;	
-	refShip.SpeedRate      		= 13.4;
+	refShip.SpeedRate      		= 13.65;
 	refShip.TurnRate       		= 45.0;
 	refShip.Price          		= 36900;
 	refShip.HP             		= 3600;
@@ -2473,7 +2473,7 @@ void InitShips()
 	refShip.MaxCrew        		= 228;
 	refShip.OptCrew        		= 182;
 	refShip.MinCrew        		= 46;	
-	refShip.SpeedRate      		= 15.05;
+	refShip.SpeedRate      		= 15.20;
 	refShip.TurnRate       		= 47.0;
 	refShip.Price          		= 36900;
 	refShip.HP             		= 3900;
@@ -2548,7 +2548,7 @@ void InitShips()
 	refShip.HP             		= 2350;
 	refShip.SP             		= 100;
 
-	refship.CabinType          	= "Cabin_Medium"; 
+	refship.CabinType          	= "Cabin_Medium2"; 
 	refship.Type.Merchant		= false;
 	refship.Type.War			= true;
 	refship.Spec                = SHIP_SPEC_RAIDER;
@@ -2635,7 +2635,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 0.7;
 	refship.TurnDependWeight			= 0.35;
 	refship.WindAgainstSpeed   			= 0.52;
-	refship.CabinType          			= "Cabin_Medium2"; 
+	refship.CabinType          			= "Cabin"; 
 
 	refship.InertiaAccelerationX	= 8.0;	refship.InertiaBrakingX		= 8.0;
 	refship.InertiaAccelerationY	= 6;	refship.InertiaBrakingY		= 6;
@@ -2854,7 +2854,7 @@ void InitShips()
 	refship.TurnDependWeight			= 0.2;
 	refship.WindAgainstSpeed   			= 0.73;
 	
-	refship.CabinType          			= "Cabin_Medium2"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Medium_war";
 		
 	refship.InertiaAccelerationX	= 4.0;	refship.InertiaBrakingX		= 4.0;
@@ -2925,7 +2925,7 @@ void InitShips()
 	refship.SubSeaDependWeight			= 1.0;
 	refship.TurnDependWeight			= 0.4;
 	refship.WindAgainstSpeed   			= 0.4;
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 	
 	refship.InertiaAccelerationX	= 4.0;	refship.InertiaBrakingX		= 3.5;
@@ -2980,7 +2980,7 @@ void InitShips()
 	refShip.MaxCrew         			= 80;
 	refShip.OptCrew         			= 65;
 	refShip.MinCrew         			= 16;	
-	refShip.SpeedRate					= 13.6;
+	refShip.SpeedRate					= 13.9;
 	refShip.TurnRate        			= 55.0;
 	refShip.Price           			= 23300;
 	refShip.HP              			= 1420;
@@ -3949,10 +3949,10 @@ void InitShips()
 	refShip.MaxCaliber      			= 36;
 	refShip.Weight						= Tonnes2CWT(1500);
 	refShip.Capacity        			= 7350;
-	refShip.CannonsQuantity				= 56;	// 6,4,23,23
-	refShip.CannonsQuantityMin			= 56;
-	refShip.rcannon 					= 23;
-	refShip.lcannon 					= 23;
+	refShip.CannonsQuantity				= 62;	// 6,4,26,26
+	refShip.CannonsQuantityMin			= 62;
+	refShip.rcannon 					= 26;
+	refShip.lcannon 					= 26;
 	refShip.fcannon 					= 6;
 	refShip.bcannon 					= 4;		
 	refShip.MaxCrew         			= 666;
@@ -3973,7 +3973,7 @@ void InitShips()
 	refship.Rocking.y 					= 0.5;
 	refship.Rocking.az 					= 0.035;
 	
-	refship.WaterLine					= 0.5;
+	refship.WaterLine					= -0.4;
 
 	refship.SpeedDependWeight			= 0.35;
 	refship.SubSeaDependWeight			= 1.0;
@@ -4017,7 +4017,7 @@ void InitShips()
 	//// Копия "Калеуче" - квестовый военный
 	///////////////////////////////////////////////////////////////////////////
 	makeref(refShip,ShipsTypes[SHIP_FDM]);
-	refShip.Name            			= "Flyingdutchman_l";  
+	refShip.Name            			= "Flyingdutchman";  
 	refship.Soundtype					= "lineship";
 	refShip.Class						= 2;
 	refShip.Cannon          			= CANNON_TYPE_CANNON_LBS36;
@@ -4130,7 +4130,7 @@ void InitShips()
 	refship.TurnDependWeight			= 0.4;
 	refship.WindAgainstSpeed   			= 0.66;
 	
-	refship.CabinType          			= "Cabin_Huge"; 
+	refship.CabinType          			= "Cabin"; 
 	refship.DeckType           			= "Big";
 		
 	refship.InertiaAccelerationX	= 4.0;	refship.InertiaBrakingX		= 3.5;
@@ -4266,9 +4266,11 @@ void InitShips()
 	refShip.SP									= 100;
 	refShip.CanEncounter						= false;
 	refship.ShipHolder					        = true; 
-
+	
+	makeref(refShip,ShipsTypes[SHIP_FORT + 1]);
+	refShip.ShipHolder  = true;
 	/// Check
-	for (int i=0; i<GetArraySize(&ShipsTypes); i++)
+	for (int i=0; i<SHIP_TYPES_QUANTITY_WITH_FORT-1; i++)
 	{
 	  	makeref(refShip, ShipsTypes[i]);
 		if (!CheckAttribute(refShip,"Name")) { continue; }

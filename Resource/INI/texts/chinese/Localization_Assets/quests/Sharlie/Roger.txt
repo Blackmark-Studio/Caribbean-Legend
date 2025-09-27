@@ -1,679 +1,143 @@
-Roger_1
-{
-你交出了西班牙国旗
-}
-
-Roger_2
-{
-Gabriela
-}
-Roger_3
-{
-Chapada
-}
-
-Roger_4
-{
-探索模式: 计时器已延长。 完成任务! 
-}
-
-Roger_5
-{
-Lope
-}
-Roger_6
-{
-Montoro
-}
-
-Roger_7
-{
-Rosario
-}
-Roger_8
-{
-Gusman
-}
-
-Roger_9
-{
-Cantavro
-}
-
-Roger_10
-{
-Esberdo
-}
-Roger_11
-{
-Cabanas
-}
-
-Roger_12
-{
-靠近驳船并夺取它们的战利品。 小心不要用你的船体撞碎它们。 
-}
-
-Roger_13
-{
-获得琥珀 @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5
-}
-
-Roger_14
-{
-Snake
-}
-
-Roger_15
-{
-Geffrey
-}
-Roger_16
-{
-Brooke
-}
-
-Roger_17
-{
-Fly Fish
-}
-
-Roger_18
-{
-Billy
-}
-Roger_19
-{
-Pert
-}
-
-Roger_20
-{
-Utrecht
-}
-
-Roger_21
-{
-Joachim
-}
-Roger_22
-{
-Gusen
-}
-
-Roger_23
-{
-双桅横帆船"Utrecht (乌得勒支号)"
-}
-
-Roger_24
-{
-探索模式: 计时器未禁用。 迎接最后期限! 
-}
-
-Roger_25
-{
-一小时后... @<NewStr()> 丝绸已卸载给买家
-}
-
-Roger_26
-{
-Moray
-}
-
-Roger_27
-{
-Paul
-}
-Roger_28
-{
-Chant
-}
-
-Roger_29
-{
-Jean
-}
-Roger_30
-{
-Picard
-}
-
-Roger_31
-{
-从船的武器库中取出了30件冷兵器
-}
-
-Roger_32
-{
-收集冷兵器 - 30件
-}
-
-Roger_33
-{
-没有冷兵器
-}
-
-Roger_34
-{
-收集手枪 - @<FindRussianQtyString(iGun)> 
-}
-
-Roger_35
-{
-收集滑膛枪 - @<FindRussianQtyString(iMushket)> 
-}
-
-Roger_36
-{
-收集治疗药水 - @<FindRussianQtyString(iPotion)> 
-}
-
-Roger_37
-{
-收集可供 @<iShot> 次射击的补给
-}
-
-Roger_38
-{
-收集冷兵器 - 30件
-}
-Roger_39
-{
-收集手枪 - 50件
-}
-Roger_40
-{
-收集治疗药水 - 90件
-}
-Roger_41
-{
-收集可供70次射击的补给
-}
-
-Roger_42
-{
-后来, 第二天晚上... 
-}
-
-Roger_43
-{
-一段时间后... 
-}
-
-Roger_44
-{
-种植园发出警报! 
-}
-
-Roger_45
-{
-在西班牙人从堡垒获得增援前, 你有300秒
-}
-
-Roger_46
-{
-西班牙人失去了他们的旗舰! 我们可以尝试逃跑! 
-}
-
-Roger_47
-{
-荷兰护航队出现在地平线上! 
-}
-
-Roger_48
-{
-Rosbohom
-}
-
-Roger_49
-{
-Gryphon
-}
-
-Roger_50
-{
-夜幕降临... 
-}
-
-Roger_51
-{
-Mirabelle
-}
-Roger_52
-{
-
-}
-
-Roger_53
-{
-Mirabelle 死于发烧! 
-}
-
-Roger_54
-{
-Luka
-}
-Roger_55
-{
-Bayard
-}
-
-Roger_56
-{
-Kumwana
-}
-Roger_57
-{
-
-}
-
-Roger_58
-{
-Hayami
-}
-Roger_59
-{
-
-}
-
-Roger_60
-{
-Tagofa
-}
-Roger_61
-{
-
-}
-
-Roger_62
-{
-两天后... @<NewStr()> 六艘长艇已建造完成... 
-}
-
-Roger_63
-{
-Demetrio
-}
-Roger_64
-{
-Rojas
-}
-
-Roger_65
-{
-Kitty
-}
-
-Roger_66
-{
-Torero
-}
-
-Roger_67
-{
-Ignacio
-}
-Roger_68
-{
-Marco
-}
-
-Roger_69
-{
-探索模式: 计时器已禁用。 
-}
-
-Roger_70
-{
-Eduardo
-}
-Roger_71
-{
-de Losada
-}
-
-Roger_72
-{
-El Casador
-}
-
-Roger_73
-{
-去你的船舱研究航海日志
-}
-
-Roger_74
-{
-Gaspard
-}
-Roger_75
-{
-Goldenteeth
-}
-
-Roger_76
-{
-登船队已准备就绪! 
-}
-
-Roger_77
-{
-Cuttlefish
-}
-
-Roger_78
-{
-Vagrant
-}
-Roger_79
-{
-
-}
-
-Roger_80
-{
-Merciless
-}
-
-Roger_81
-{
-Vampire
-}
-Roger_82
-{
-
-}
-
-Roger_83
-{
-"Torero (斗牛士号)" 正在袭击勒弗朗索瓦! 
-}
-
-Roger_84
-{
-你正从隐藏处悄悄等待... 
-}
-
-Roger_85
-{
-'Torero'
-}
-
-Roger_86
-{
-探索模式: 任务持续时间加倍
-}
-
-Roger_87
-{
-Eagle-Owl
-}
-
-Roger_88
-{
-Joker
-}
-Roger_89
-{
-Jim
-}
-
-Roger_90
-{
-探索模式: 斗牛场 - 坐标正确
-}
-
-Roger_91
-{
-探索模式: 斗牛场 - 坐标不正确
-}
-
-Roger_92
-{
-西班牙护航队出现在地平线上! 
-}
-
-Roger_93
-{
-Toro de Oro
-}
-
-Roger_94
-{
-Red Dragon
-}
-
-Roger_95
-{
- @<pchar.ship.name> 发生巨大爆炸! 
-}
-
-Roger_96
-{
-我们已抵达卡塔赫纳! Tyrex 命令驶向科维尼亚斯峡
-}
-
-Roger_97
-{
-登陆部队准备突袭卡塔赫纳! 
-}
-
-Roger_98
-{
-" @<pchar.ship.name> "的登陆部队有 @<iCrew1> 人
-}
-Roger_99
-{
-"Red Dragon (红龙号)" 的登陆部队有 @<iCrew2> 人
-}
-Roger_100
-{
-"Snake (毒蛇号)" 的登陆部队有 @<iCrew3> 人
-}
-Roger_101
-{
-"Moray (海鳗号)" 的登陆部队有 @<iCrew4> 人
-}
-
-Roger_102
-{
-一天后... @<NewStr()> 装有火药的桶已送达原木阻塞处。 
-}
-
-Roger_103
-{
-Tonneur
-}
-
-Roger_104
-{
-Libre
-}
-
-Roger_105
-{
-Myutin
-}
-
-Roger_106
-{
-Inconnu
-}
-
-Roger_107
-{
-Alonso
-}
-Roger_108
-{
-
-}
-
-Roger_109
-{
-三小时后... 
-}
-
-Roger_110
-{
-Rodgar
-}
-Roger_111
-{
-Janssen
-}
-
-Roger_112
-{
-Ignacio Marco 在码头登陆! 
-}
-
-Roger_113
-{
-2小时过去了... @<NewStr()> 
-}
-
-Roger_114
-{
-Ignacio Marco 离开了官邸
-}
-
-Roger_115
-{
-和两名船长一起
-}
-
-Roger_116
-{
-Separator
-}
-
-Roger_117
-{
-Bernar
-}
-Roger_118
-{
-Vensan
-}
-
-Roger_119
-{
-Dionisio
-}
-Roger_120
-{
-Peres
-}
-
-Roger_121
-{
-一天后... @<NewStr()> 卡塔赫纳的赎金已筹集
-}
-
-Roger_122
-{
-两天 @<NewStr ()> 在狂欢与柔情蜜意中飞快流逝... 
-}
-
-Roger_123
-{
-Camilla
-}
-Roger_124
-{
-
-}
-
-Roger_125
-{
-don Enrico
-}
-Roger_126
-{
-
-}
-
-Roger_127
-{
-Michel
-}
-Roger_128
-{
-de Monper
-}
-
-Roger_129
-{
-Marcus
-}
-Roger_130
-{
-Tyrex
-}
-
-Roger_131
-{
-我, Charles de Maure, 一位法国贵族和船长, 发誓: 
-}
-
-Roger_132
-{
-... 我已彻底告别海盗生涯 ... 
-}
-
-Roger_133
-{
-... 不再有无辜平民会死于我手 ... 
-}
-
-Roger_134
-{
-... 我发誓保护女性, 无论其身份和国籍 ... 
-}
-
-Roger_135
-{
-... 我发誓黄金不再使我盲目 ... 
-}
-
-Roger_136
-{
-... 我发誓对抗我在途中遇到的任何恶 棍 ... 
-}
-
-Roger_137
-{
-... 我发誓在荣誉和财富之间永远选择 荣誉 ... 
-}
-
-Roger_138
-{
-... 我发誓在任何情况和与任何人相处 时都做一个有价值和高尚的人 ... 
-}
-
-Roger_139
-{
-由于某种原因, 我一直在想 Mirabelle。 她在那里怎么样? 她想我吗? 我留下一个年轻女孩独自一人一定 很残忍。 我会解决这个问题! 我应该很快见到她。 
-}
-
-Roger_140
-{
-Knippel
-}
-
-Roger_141
-{
-Longway
-}
-
-Roger_142
-{
-Tichingitu
-}
-
-Roger_143
-{
-Tommy
-}
+Roger_1 {你交出了西班牙国旗}
+Roger_2 {Gabriela}
+Roger_3 {Chapada}
+Roger_4 {探索模式: 计时器已延长。 完成任务!}
+Roger_5 {Lope}
+Roger_6 {Montoro}
+Roger_7 {Rosario}
+Roger_8 {Gusman}
+Roger_9 {Cantavro}
+Roger_10 {Esberdo}
+Roger_11 {Cabanas}
+Roger_12 {靠近驳船并夺取它们的战利品。 小心不要用你的船体撞碎它们。}
+Roger_13 {获得琥珀 @<sti(pchar.questTemp.Mtraxx_SobralVsyo)> / 5}
+Roger_14 {Snake}
+Roger_15 {Geffrey}
+Roger_16 {Brooke}
+Roger_17 {Fly Fish}
+Roger_18 {Billy}
+Roger_19 {Pert}
+Roger_20 {Utrecht}
+Roger_21 {Joachim}
+Roger_22 {Gusen}
+Roger_23 {双桅横帆船"Utrecht (乌得勒支号)"}
+Roger_24 {探索模式: 计时器未禁用。 迎接最后期限!}
+Roger_25 {一小时后... @<NewStr()> 丝绸已卸载给买家}
+Roger_26 {Moray}
+Roger_27 {Paul}
+Roger_28 {Chant}
+Roger_29 {Jean}
+Roger_30 {Picard}
+Roger_31 {从船的武器库中取出了30件冷兵器}
+Roger_32 {收集冷兵器 - 30件}
+Roger_33 {没有冷兵器}
+Roger_34 {收集手枪 - @<FindRussianQtyString(iGun)>}
+Roger_35 {收集滑膛枪 - @<FindRussianQtyString(iMushket)>}
+Roger_36 {收集治疗药水 - @<FindRussianQtyString(iPotion)>}
+Roger_37 {收集可供 @<iShot> 次射击的补给}
+Roger_38 {收集冷兵器 - 30件}
+Roger_39 {收集手枪 - 50件}
+Roger_40 {收集治疗药水 - 90件}
+Roger_41 {收集可供70次射击的补给}
+Roger_42 {后来, 第二天晚上...}
+Roger_43 {一段时间后...}
+Roger_44 {种植园发出警报!}
+Roger_45 {在西班牙人从堡垒获得增援前, 你有300秒}
+Roger_46 {西班牙人失去了他们的旗舰! 我们可以尝试逃跑!}
+Roger_47 {荷兰护航队出现在地平线上!}
+Roger_48 {Rosbohom}
+Roger_49 {Gryphon}
+Roger_50 {夜幕降临...}
+Roger_51 {Mirabelle}
+Roger_52 { }
+Roger_53 {Mirabelle 死于发烧!}
+Roger_54 {Luka}
+Roger_55 {Bayard}
+Roger_56 {Kumwana}
+Roger_57 { }
+Roger_58 {Hayami}
+Roger_59 { }
+Roger_60 {Tagofa}
+Roger_61 { }
+Roger_62 {两天后... @<NewStr()> 六艘长艇已建造完成...}
+Roger_63 {Demetrio}
+Roger_64 {Rojas}
+Roger_65 {Kitty}
+Roger_66 {Torero}
+Roger_67 {Ignacio}
+Roger_68 {Marco}
+Roger_69 {探索模式: 计时器已禁用。}
+Roger_70 {Eduardo}
+Roger_71 {de Losada}
+Roger_72 {El Casador}
+Roger_73 {去你的船舱研究航海日志}
+Roger_74 {Gaspard}
+Roger_75 {Goldenteeth}
+Roger_76 {登船队已准备就绪!}
+Roger_77 {Cuttlefish}
+Roger_78 {Vagrant}
+Roger_79 { }
+Roger_80 {Merciless}
+Roger_81 {Vampire}
+Roger_82 { }
+Roger_83 {"Torero (斗牛士号)" 正在袭击勒弗朗索瓦!}
+Roger_84 {你正从隐藏处悄悄等待...}
+Roger_85 {'Torero'}
+Roger_86 {探索模式: 任务持续时间加倍}
+Roger_87 {Eagle-Owl}
+Roger_88 {Joker}
+Roger_89 {Jim}
+Roger_90 {探索模式: 斗牛场 - 坐标正确}
+Roger_91 {探索模式: 斗牛场 - 坐标不正确}
+Roger_92 {西班牙护航队出现在地平线上!}
+Roger_93 {Toro de Oro}
+Roger_94 {Red Dragon}
+Roger_95 {@<pchar.ship.name> 发生巨大爆炸!}
+Roger_96 {我们已抵达卡塔赫纳! Tyrex 命令驶向科维尼亚斯峡}
+Roger_97 {登陆部队准备突袭卡塔赫纳!}
+Roger_98 {" @<pchar.ship.name> "的登陆部队有 @<iCrew1> 人}
+Roger_99 {"Red Dragon (红龙号)" 的登陆部队有 @<iCrew2> 人}
+Roger_100 {"Snake (毒蛇号)" 的登陆部队有 @<iCrew3> 人}
+Roger_101 {"Moray (海鳗号)" 的登陆部队有 @<iCrew4> 人}
+Roger_102 {一天后... @<NewStr()> 装有火药的桶已送达原木阻塞处。}
+Roger_103 {Tonneur}
+Roger_104 {Libre}
+Roger_105 {Myutin}
+Roger_106 {Inconnu}
+Roger_107 {Alonso}
+Roger_108 { }
+Roger_109 {三小时后...}
+Roger_110 {Rodgar}
+Roger_111 {Janssen}
+Roger_112 {Ignacio Marco 在码头登陆!}
+Roger_113 {2小时过去了... @<NewStr()>}
+Roger_114 {Ignacio Marco 离开了官邸}
+Roger_115 {和两名船长一起}
+Roger_116 {Separator}
+Roger_117 {Bernar}
+Roger_118 {Vensan}
+Roger_119 {Dionisio}
+Roger_120 {Peres}
+Roger_121 {一天后... @<NewStr()> 卡塔赫纳的赎金已筹集}
+Roger_122 {两天 @<NewStr ()> 在狂欢与柔情蜜意中飞快流逝...}
+Roger_123 {Camilla}
+Roger_124 { }
+Roger_125 {don Enrico}
+Roger_126 { }
+Roger_127 {Michel}
+Roger_128 {de Monper}
+Roger_129 {Marcus}
+Roger_130 {Tyrex}
+Roger_131 {我, Charles de Maure, 一位法国贵族和船长, 发誓:}
+Roger_132 {... 我已彻底告别海盗生涯 ...}
+Roger_133 {... 不再有无辜平民会死于我手 ...}
+Roger_134 {... 我发誓保护女性, 无论其身份和国籍 ...}
+Roger_135 {... 我发誓黄金不再使我盲目 ...}
+Roger_136 {... 我发誓对抗我在途中遇到的任何恶 棍 ...}
+Roger_137 {... 我发誓在荣誉和财富之间永远选择 荣誉 ...}
+Roger_138 {... 我发誓在任何情况和与任何人相处 时都做一个有价值和高尚的人 ...}
+Roger_139 {由于某种原因, 我一直在想 Mirabelle。 她在那里怎么样? 她想我吗? 我留下一个年轻女孩独自一人一定 很残忍。 我会解决这个问题! 我应该很快见到她。}
+Roger_140 {Knippel}
+Roger_141 {Longway}
+Roger_142 {Tichingitu}
+Roger_143 {Tommy}

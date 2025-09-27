@@ -367,34 +367,30 @@ void ProcessDialogEvent()
 		
 		case "tieyasal_4":
 			dialog.text = "И кого же прикончил Дичозо, что ты занялся его поисками, а, дружище?";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			link.l1 = "Блейза Шарпа";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Николаса Шарпа";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Алонсо де Мальдонадо";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Папу Римского";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
 		
-		case "tieyasal_4_1":
-			dialog.text = "В смысле - какого именно Шарпа он убил? Шарпов, знаешь ли, много.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+		case "tieyasal_5_1":
+			dialog.text = "Чш-ш-ш...(оглядывается) Так ты тоже считаешь, что Блейза Шарпа убил Дичозо?";
+			link.l1 = "Ну да. У меня есть на то не просто подозрения, а доказательства. Записи в судовом журнале...";
+			link.l1.go = "tieyasal_6"
+		break;
+		
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Шутки шутить значит будем? Никакого уважения! Ну-ка, подойди поближе...";
+			link.l1 = "Ещё чего.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "блейз шарп" || sTemp == "блейза шарпа")
-			{
-				dialog.text = "Чш-ш-ш...(оглядывается) Так ты тоже считаешь, что Блейза Шарпа убил Дичозо?";
-				link.l1 = "Ну да. У меня есть на то не просто подозрения, а доказательства. Записи в судовом журнале...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "шарп" || sTemp == "шарпа")
-			{
-				dialog.text = "C этого места поподробнее, матросик...";
-				link.l1 = "В смысле - поподробнее?";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "А-а... Ну убил и убил. У нас тут знаешь сколько убивцев расхаживает? Да каждый первый встречный! Не, матросик, не видал я Дичозо уже давно. Ничем не помогу.";
 			link.l1 = "Жаль...";
 			link.l1.go = "exit";

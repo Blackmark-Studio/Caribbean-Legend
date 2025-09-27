@@ -30,8 +30,8 @@ void ProcessDialogEvent()
 			// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 			if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
 			{
-				dialog.text = "Z tego co rozumiem, jesteś francuskim kapitanem, który wspomógł moich ludzi w ich misji na Sint-Maarten? "+TimeGreeting()+"!";
-				link.l1 = TimeGreeting()+", Pułkowniku. Tak, to ja.";
+				dialog.text = "Jeśli się nie mylę, to pan"+GetSexPhrase("","i")+" jest "+GetSexPhrase("tym kapitanem","tą kapitan kobietą")+" , który"+GetSexPhrase("","a")+" pomógł"+GetSexPhrase("","a")+" moim ludziom wykonać misję na Sint Maarten? "+TimeGreeting()+"!";
+				link.l1 = ""TimeGreeting()+", Pułkowniku. Tak, to ja.";
 				link.l1.go = "FMQN";
 				break;
 			}
@@ -161,8 +161,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FMQN_2":
-			dialog.text = "Teraz, proszę mnie wybaczyć - mam inne sprawy do załatwienia. Szczęśliwej drogi, Kapitanie.";
-			link.l1 = "Żegnaj, Panie.";
+			dialog.text = "Teraz, proszę mnie wybaczyć - mam inne sprawy do załatwienia. Szczęśliwej drogi, Kapitanie "+pchar.lastname+".";
+			link.l1 = "Żegnaj, "+GetAddress_Form(NPChar)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_EnglandComplete");
 		break;

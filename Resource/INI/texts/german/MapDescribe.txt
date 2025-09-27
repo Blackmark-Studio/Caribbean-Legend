@@ -1,243 +1,156 @@
 info
 {
-    Генератор кладов
-    Скрипт создан ALexusB 05.11.04
+Генератор кладов    Скрипт создан ALexusB 05.11.04
 }
-type_full_1
-{
-Die Karte ist offensichtlich frisch und das Papier hat noch nicht vergilbt. Die Markierungen scheinen hastig gezeichnet, aber wenn wir ihnen Glauben schenken, ist der Schatz an der Stelle #sMaplocName# auf der #sMapIslName# verborgen.
-}
+type_full_1 {Die Karte ist offensichtlich frisch und das Papier hat noch nicht vergilbt. Die Markierungen scheinen hastig gezeichnet, aber wenn wir ihnen Glauben schenken, ist der Schatz an der Stelle #sMaplocName# auf der #sMapIslName# verborgen.}
 type_full_1_isl {Insel}
 type_full_1_mein {Festland}
-
-type_full_2
-{
-Die Karte ist ziemlich nachlässig gezeichnet, und #sMapIslName# ist kaum erkennbar. Wenn man die Markierungen beurteilt, ist der Schatz an #sMaplocName# versteckt, aber wir können nur sicher sein, wenn wir dorthin gehen.
-}
+type_full_2 {Die Karte ist ziemlich nachlässig gezeichnet, und #sMapIslName# ist kaum erkennbar. Wenn man die Markierungen beurteilt, ist der Schatz an #sMaplocName# versteckt, aber wir können nur sicher sein, wenn wir dorthin gehen.}
 type_full_2_isl {Insel}
 type_full_2_mein {Festland}
-
-type_full_3
-{
-Diese Karte war für ihren Besitzer nicht wertvoll - die Umrisse von #sMapIslName# sind durch Wasserflecken ruiniert. Der Standort des Schatzes scheint #sMaplocName# zu sein.
-}
+type_full_3 {Diese Karte war für ihren Besitzer nicht wertvoll - die Umrisse von #sMapIslName# sind durch Wasserflecken ruiniert. Der Standort des Schatzes scheint #sMaplocName# zu sein.}
 type_full_3_isl {Inseln}
 type_full_3_mein {Festland}
-
-type_full_4
-{
-Die Karte zeigt #sMapIslName#. Der Platz, an dem die Schätze aufbewahrt werden, ist #sMaplocName#. Der Mangel an Können des Autors wurde durch Mühe kompensiert - skurrile Tiere, als wären sie von einem Kind gezeichnet, schmücken die Ränder.
-}
+type_full_4 {Die Karte zeigt #sMapIslName#. Der Platz, an dem die Schätze aufbewahrt werden, ist #sMaplocName#. Der Mangel an Können des Autors wurde durch Mühe kompensiert - skurrile Tiere, als wären sie von einem Kind gezeichnet, schmücken die Ränder.}
 type_full_4_isl {Insel}
 type_full_4_mein {Festland}
-
-type_full_5
-{
-Die Karte spiegelt genau die Umrisse von #sMapIslName# wider. Der Standort des Schatzes ist #sMaplocName#. Es wird nicht schwer sein, ihn zu finden, da der Autor ziemlich präzise Anweisungen hinterlassen hat.
-}
+type_full_5 {Die Karte spiegelt genau die Umrisse von #sMapIslName# wider. Der Standort des Schatzes ist #sMaplocName#. Es wird nicht schwer sein, ihn zu finden, da der Autor ziemlich präzise Anweisungen hinterlassen hat.}
 type_full_5_isl {Insel}
 type_full_5_mein {Festland}
-
-type_full_6
-{
-Diese Karte ist auf hochwertigem linierten Papier gezeichnet. Die Umrisse von #sMapIslName# sind leicht erkennbar. Laut der Notiz auf der Rückseite befindet sich der Schatz an der Stelle #sMaplocName#.
-}
+type_full_6 {Diese Karte ist auf hochwertigem linierten Papier gezeichnet. Die Umrisse von #sMapIslName# sind leicht erkennbar. Laut der Notiz auf der Rückseite befindet sich der Schatz an der Stelle #sMaplocName#.}
 type_full_6_isl {Insel}
 type_full_6_mein {Festland}
-
 type_full_7
 {
-Das ist #sMapIslName#. Die Karte zeigt den Standort des versteckten Schatzes — es ist #sMaplocName#. Ein berüchtigter Pirat hat dort seinen Schatz versteckt.  
-Die Authentizität der Karte wird durch die braunen Blutflecken angedeutet, die auch zeigen, dass dieses Stück Papier mehrfach den Besitzer gewechselt hat.
+Das ist #sMapIslName#. Die Karte zeigt den Standort des versteckten Schatzes — es ist #sMaplocName#. Ein berüchtigter Pirat hat dort seinen Schatz versteckt.  Die Authentizität der Karte wird durch die braunen Blutflecken angedeutet, die auch zeigen, dass dieses Stück Papier mehrfach den Besitzer gewechselt hat.
 }
 type_full_7_isl {Insel}
 type_full_7_mein {Festland}
-
-type_full_8
-{
-Diese Karte hat offensichtlich viele Hände gesehen — das Papier ist an mehreren Stellen verbrannt, und die Umrisse von #sMapIslName# sind von zahlreichen Falten durchzogen. Der Standort des Schatzes ist #sMaplocName#. Offensichtlich liegt dort etwas wirklich Wertvolles.
-}
+type_full_8 {Diese Karte hat offensichtlich viele Hände gesehen — das Papier ist an mehreren Stellen verbrannt, und die Umrisse von #sMapIslName# sind von zahlreichen Falten durchzogen. Der Standort des Schatzes ist #sMaplocName#. Offensichtlich liegt dort etwas wirklich Wertvolles.}
 type_full_8_isl {Inseln}
 type_full_8_mein {Festland}
-
-type_full_9
-{
-#sMapIslName#, ziemlich genau auf dieser Karte dargestellt, ist von Schnörkeln und Zeichnungen von Seeungeheuern umgeben. Wer auch immer der Autor der Karte war, er wusste eindeutig, was er tat, und hat etwas sehr Wertvolles im Schatz verborgen. Alles, was bleibt, ist, den Ort zu erreichen — #sMaplocName#.
-}
+type_full_9 {#sMapIslName#, ziemlich genau auf dieser Karte dargestellt, ist von Schnörkeln und Zeichnungen von Seeungeheuern umgeben. Wer auch immer der Autor der Karte war, er wusste eindeutig, was er tat, und hat etwas sehr Wertvolles im Schatz verborgen. Alles, was bleibt, ist, den Ort zu erreichen — #sMaplocName#.}
 type_full_9_isl {Insel}
 type_full_9_mein {Festland}
-
-type_full_10
-{
-Die Hälften dieser Karte passen nicht zusammen, obwohl die Handschrift, die Tintenfarbe und der Zustand des Papiers eindeutig auf denselben Autor hindeuten. Die Umrisse von #sMapIslName# sind verwischt und mit Tinte besudelt, und der Schatz scheint sich an #sMaplocName# zu befinden.
-}
+type_full_10 {Die Hälften dieser Karte passen nicht zusammen, obwohl die Handschrift, die Tintenfarbe und der Zustand des Papiers eindeutig auf denselben Autor hindeuten. Die Umrisse von #sMapIslName# sind verwischt und mit Tinte besudelt, und der Schatz scheint sich an #sMaplocName# zu befinden.}
 type_full_10_isl {Insel}
 type_full_10_mein {Festland}
-
-type_full_11
-{
-Diese Karte wurde sorgfältig diagonal zertrennt, was es unmöglich macht, #sMapIslName# mit nur einer Hälfte zu erkennen. Die Notizen sind in ordentlicher Handschrift geschrieben, was es leicht macht zu verstehen, wo der Schatz liegt — am #sMaplocName#. Angesichts des Zustands des Papiers sind die Schätze dort seit vielen Jahrzehnten.
-}
+type_full_11 {Diese Karte wurde sorgfältig diagonal zertrennt, was es unmöglich macht, #sMapIslName# mit nur einer Hälfte zu erkennen. Die Notizen sind in ordentlicher Handschrift geschrieben, was es leicht macht zu verstehen, wo der Schatz liegt — am #sMaplocName#. Angesichts des Zustands des Papiers sind die Schätze dort seit vielen Jahrzehnten.}
 type_full_11_isl {Insel}
 type_full_11_mein {Festland}
-
-type_full_12
-{
-Diese Karte, die aus zwei Teilen besteht, sieht unglaublich alt aus. Die Umrisse von #sMapIslName# sind seit mehreren Jahrzehnten veraltet. Die Beschreibungen und Hinweise sind in einer altmodischen Sprache verfasst und sind reich an Latein. Es ist schwierig, das Ausmaß der Schätze, die an #sMaplocName# gelagert sind, abzuschätzen.
-}
+type_full_12 {Diese Karte, die aus zwei Teilen besteht, sieht unglaublich alt aus. Die Umrisse von #sMapIslName# sind seit mehreren Jahrzehnten veraltet. Die Beschreibungen und Hinweise sind in einer altmodischen Sprache verfasst und sind reich an Latein. Es ist schwierig, das Ausmaß der Schätze, die an #sMaplocName# gelagert sind, abzuschätzen.}
 type_full_12_isl {Inseln}
 type_full_12_mein {Festland}
-
-
-
 type_quest_0
 {
-Dies ist #sMapIslName#. Der Ort des versteckten Schatzes wird hier angezeigt - es ist #sMaplocName#. #sMapOwner# hat seinen Schatz dort versteckt.
-Den braunen Blutflecken nach zu urteilen, ist die Karte echt - dies deutet auch darauf hin, dass sie häufig den Besitzer gewechselt hat.
+Dies ist #sMapIslName#. Der Ort des versteckten Schatzes wird hier angezeigt - es ist #sMaplocName#. #sMapOwner# hat seinen Schatz dort versteckt.Den braunen Blutflecken nach zu urteilen, ist die Karte echt - dies deutet auch darauf hin, dass sie häufig den Besitzer gewechselt hat.
 }
 type_quest_0_isl {Insel}
 type_quest_0_mein {Festland}
-
 type_part
 {
- Das ist eines der Teile der Karte, das offenbar zum Schatz führt. Es gibt nicht genug Informationen, und man kann den Ort des Schatzes nicht allein anhand dieses Teils bestimmen. Man kann nur hoffen, dass man irgendwann den zweiten Teil der Karte in die Finger bekommt, der irgendwo in der Nähe sein sollte.
- Und dann wird alles klar sein!
+Das ist eines der Teile der Karte, das offenbar zum Schatz führt. Es gibt nicht genug Informationen, und man kann den Ort des Schatzes nicht allein anhand dieses Teils bestimmen. Man kann nur hoffen, dass man irgendwann den zweiten Teil der Karte in die Finger bekommt, der irgendwo in der Nähe sein sollte. Und dann wird alles klar sein!
 }
-
 type_fake
 {
- Diese Karte zeigt den Standort des Schatzes an. Natürlich können Sie überprüfen, ob er dort ist oder nicht, aber es ist mit Sicherheit nur eine Fälschung.
- Sie sollten dieses Stück Papier einfach entsorgen.
+Diese Karte zeigt den Standort des Schatzes an. Natürlich können Sie überprüfen, ob er dort ist oder nicht, aber es ist mit Sicherheit nur eine Fälschung. Sie sollten dieses Stück Papier einfach entsorgen.
 }
-
-Antigua_Grot 			{in der Höhle rechts der Falmouth Cove}
-Antigua_Grot_box1 		{eine Truhe über einem großen Stein}
-
-SentJons_TownCave 		{im Kerker von St. Jones}
-SentJons_TownCave_box1 	{unter den Brettern in einer Sackgasse}
-SentJons_TownCave_box2 	{in einer Sackgasse der Mine}
-SentJons_TownCave_box3 	{an der Blockade}
- 
-Barbados_Cave			{in einer Höhle nicht weit von Bridgetown}		
-Barbados_Cave_box1		{unter den Brettern in einer Sackgasse}
-
-Beliz_Cave 				{in einer Höhle rechts vom Ausgang von Belize}
-Beliz_Cave_box1			{eine Truhe in der Nähe der Steinbrücke}
-Beliz_Cave_box2			{eine Truhe auf einem großen Stein}
-Beliz_Cave_box3			{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-Beliz_Cave_2 			{in einer Höhle gegenüber des Ausgangs von Belize}		
-Beliz_Cave_2_box1		{unter den Brettern in einer Sackgasse}
-
-Bermudes_Dungeon 		{in einem Kerker unter der Werft von Sharptown}	
-Bermudes_Dungeon_box1	{eine Truhe hinter einer geschlossenen Tür}
-Bermudes_Dungeon_box2	{eine Truhe hinter einer offenen Tür}
-Bermudes_Dungeon_box3	{eine Truhe in einer Sackgasse}
-Bermudes_Dungeon_box4	{eine Truhe hinter den Fässern}
-
-Caracas_Grot 			{in einer Höhle rechts vom Ausgang von Caracas}	
-Caracas_Grot_box1		{eine Truhe über einem großen Stein}
-
-Cartahena_Cave			{in einer Höhle gegenüber des Ausgangs von Cartagena}	
-Cartahena_Cave_box1		{eine Truhe unter der Fackel}
-Cartahena_Cave_box2		{eine Truhe in einer Sackgasse}
-Cartahena_Cave_box3		{eine Truhe in der Nähe der Fackel}
-
-Caiman_Grot				{in einer Höhle auf der rechten Seite der  Desert Coast}
-Caiman_Grot_box1		{eine Truhe über einem großen Stein}
-
-Charles_Grot			{in einer Höhle auf der rechten Seite der  Half Moon Bay}	
-Charles_Grot_box1		{eine Truhe am Strand}
-
-Cuba_Grot				{in a cave to the right of Cape Camaguey}
-Cuba_Grot_box1			{eine Truhe am Strand}
-
-Cumana_Cave				{in einer Höhle auf der rechten Seite der  Carupano Cove}
-Cumana_Cave_box1		{eine Truhe in der Nähe der Steinbrücke}
-Cumana_Cave_box2		{eine Truhe auf einem großen Stein}
-Cumana_Cave_box3		{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-Curacao_Cave			{in einer Höhle rechts der Blanca Lagoon}	
-Curacao_Cave_box1		{eine Truhe unter der Fackel}
-Curacao_Cave_box2		{eine Truhe in einer Sackgasse}
-Curacao_Cave_box3		{eine Truhe in der Nähe der Fackel}
-
-Dominica_Grot			{in einer Höhle auf der linken Seite von Scott's Head Bay}	
-Dominica_Grot_box1		{eine Truhe am Strand}
-
-Guadeloupe_Cave			{in einer Höhle links neben dem Leuchtturm von Guadeloupe}
-Guadeloupe_Cave_box1	{eine Truhe in einer Nische hinter der Fackel}
-Guadeloupe_Cave_box2	{eine Truhe in einer Nische hinter der Säule}
-Guadeloupe_Cave_box3	{eine Truhe hinter den Steinen an der Mauer}
-
-Hispaniola_Cave			{in einer Höhle unweit der Stadt Port-au-Prince}		
-Hispaniola_Cave_box1	{eine Truhe in der Nähe der Steinbrücke}
-Hispaniola_Cave_box2	{eine Truhe auf einem großen Stein}
-Hispaniola_Cave_box3	{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-Jamaica_Grot			{in einer Höhle rechts vom Leuchtturm von Port-Royal}
-Jamaica_Grot_box1		{eine Truhe über einem großen Stein}
-
-Maracaibo_Cave			{in einer Höhle gegenüber des Ausgangs von Maracaibo}
-Maracaibo_Cave_box1		{eine Truhe unter der Fackel}
-Maracaibo_Cave_box2		{eine Truhe in einer Sackgasse}
-Maracaibo_Cave_box3		{eine Truhe in der Nähe der Fackel}
-
-Marigo_Cave				{in einer Höhle gegenüber des Ausgangs von Philipsburg}
-Marigo_Cave_box1		{eine Truhe unter der Fackel}
-Marigo_Cave_box2		{eine Truhe in einer Sackgasse}
-Marigo_Cave_box3		{eine Truhe in der Nähe der Fackel}
-			
-Panama_Cave				{in einer Höhle auf der linken Seite des Ausgangs von Portobello}
-Panama_Cave_box1		{unter den Brettern in einer Sackgasse}
-
-Pearl_Grot				{in einer Höhle in der Nähe der Westküste zwischen Belize und Blueweld}	
-Pearl_Grot_box1			{eine Truhe über einem großen Stein}
-
-PortoBello_Cave			{in einer Höhle rechts von Mosquitos Bay}		
-PortoBello_Cave_box1	{unter den Brettern in einer Sackgasse}
-
-SanJuan_Cave			{in einer Höhle nicht weit von San Juan}		
-SanJuan_Cave_box1		{eine Truhe in der Nähe der Steinbrücke}
-SanJuan_Cave_box2		{eine Truhe auf einem großen Stein}
-SanJuan_Cave_box3		{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-SantaCatalina_Cave		{in einer Höhle rechts vom Cape Perlas}
-SantaCatalina_Cave_box1	{eine Truhe unter der Fackel}
-SantaCatalina_Cave_box2	{eine Truhe in einer Sackgasse}
-SantaCatalina_Cave_box3	{eine Truhe in der Nähe der Fackel}
-
-SantaCatalina_Grot		{in einer Höhle auf der rechten Seite der Bucht von San Juan del Norte}
-SantaCatalina_Grot_box1	{eine Truhe am Strand}
-
-SantaCatalina_PearlCave	{in einer Höhle auf der linken Seite der Bucht von San Juan del Norte}
-SantaCatalina_PearlCave_box1	{eine Truhe in der Nähe der Steinbrücke}
-SantaCatalina_PearlCave_box2	{eine Truhe auf einem großen Stein}
-SantaCatalina_PearlCave_box3	{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-Tenotchitlan_Cave		{eine Truhe in der Nähe der Steinbrücke in einer Höhle nördlich des aztekischen Tempels}
-Tenotchitlan_Cave_box1	{eine Truhe in der Nähe der Steinbrücke}
-Tenotchitlan_Cave_box2	{eine Truhe auf einem großen Stein}
-Tenotchitlan_Cave_box3	{eine Truhe in der Nähe des von der Decke hängenden Seils}
-
-Terks_Grot				{in einer Höhle rechts von der Nördlichen Bucht}
-Terks_Grot_box1			{eine Truhe über einem großen Stein}
-
-Tortuga_Grot			{in einer Höhle gegenüber von Fisheye Beach}
-Tortuga_Grot_box1		{eine Truhe am Strand}
-
-Tortuga_Cave			{in einem Kerker von Tortuga}
-Tortuga_Cave_box1		{eine Truhe hinter einer geschlossenen Tür}
-
-Trinidad_Grot			{in einer Höhle gegenüber dem Leuchtturm von Trinidad}
-Trinidad_Grot_box1		{eine Truhe am Strand}
-
-Martinique_Grot 		{in einer Höhle unweit des Strandes von Lamentin}
-Martinique_Grot_box1 	{eine Truhe am Strand}
-
-FortFrance_Dungeon		{in einem Kerker von St. Pierre}
-FortFrance_Dungeon_box1	{eine Truhe auf der Anhöhe}
-FortFrance_Dungeon_box2	{eine Truhe hinter einer offenen Tür auf der oberen Ebene}
-FortFrance_Dungeon_box3	{eine Truhe nicht weit vom Aufzug entfernt}
-FortFrance_Dungeon_box4	{eine Truhe hinter einer offenen Tür auf der unteren Ebene}
-FortFrance_Dungeon_box5	{unter Holzkisten}
+Antigua_Grot {in der Höhle rechts der Falmouth Cove}
+Antigua_Grot_box1 {eine Truhe über einem großen Stein}
+SentJons_TownCave {im Kerker von St. Jones}
+SentJons_TownCave_box1 {unter den Brettern in einer Sackgasse}
+SentJons_TownCave_box2 {in einer Sackgasse der Mine}
+SentJons_TownCave_box3 {an der Blockade}
+Barbados_Cave {in einer Höhle nicht weit von Bridgetown}
+Barbados_Cave_box1 {unter den Brettern in einer Sackgasse}
+Beliz_Cave {in einer Höhle rechts vom Ausgang von Belize}
+Beliz_Cave_box1 {eine Truhe in der Nähe der Steinbrücke}
+Beliz_Cave_box2 {eine Truhe auf einem großen Stein}
+Beliz_Cave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+Beliz_Cave_2 {in einer Höhle gegenüber des Ausgangs von Belize}
+Beliz_Cave_2_box1 {unter den Brettern in einer Sackgasse}
+Bermudes_Dungeon {in einem Kerker unter der Werft von Sharptown}
+Bermudes_Dungeon_box1 {eine Truhe hinter einer geschlossenen Tür}
+Bermudes_Dungeon_box2 {eine Truhe hinter einer offenen Tür}
+Bermudes_Dungeon_box3 {eine Truhe in einer Sackgasse}
+Bermudes_Dungeon_box4 {eine Truhe hinter den Fässern}
+Caracas_Grot {in einer Höhle rechts vom Ausgang von Caracas}
+Caracas_Grot_box1 {eine Truhe über einem großen Stein}
+Cartahena_Cave {in einer Höhle gegenüber des Ausgangs von Cartagena}
+Cartahena_Cave_box1 {eine Truhe unter der Fackel}
+Cartahena_Cave_box2 {eine Truhe in einer Sackgasse}
+Cartahena_Cave_box3 {eine Truhe in der Nähe der Fackel}
+Caiman_Grot {in einer Höhle auf der rechten Seite der  Desert Coast}
+Caiman_Grot_box1 {eine Truhe über einem großen Stein}
+Charles_Grot {in einer Höhle auf der rechten Seite der  Half Moon Bay}
+Charles_Grot_box1 {eine Truhe am Strand}
+Cuba_Grot {in a cave to the right of Cape Camaguey}
+Cuba_Grot_box1 {eine Truhe am Strand}
+Cumana_Cave {in einer Höhle auf der rechten Seite der  Carupano Cove}
+Cumana_Cave_box1 {eine Truhe in der Nähe der Steinbrücke}
+Cumana_Cave_box2 {eine Truhe auf einem großen Stein}
+Cumana_Cave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+Curacao_Cave {in einer Höhle rechts der Blanca Lagoon}
+Curacao_Cave_box1 {eine Truhe unter der Fackel}
+Curacao_Cave_box2 {eine Truhe in einer Sackgasse}
+Curacao_Cave_box3 {eine Truhe in der Nähe der Fackel}
+Dominica_Grot {in einer Höhle auf der linken Seite von Scott's Head Bay}
+Dominica_Grot_box1 {eine Truhe am Strand}
+Guadeloupe_Cave {in einer Höhle links neben dem Leuchtturm von Guadeloupe}
+Guadeloupe_Cave_box1 {eine Truhe in einer Nische hinter der Fackel}
+Guadeloupe_Cave_box2 {eine Truhe in einer Nische hinter der Säule}
+Guadeloupe_Cave_box3 {eine Truhe hinter den Steinen an der Mauer}
+Hispaniola_Cave {in einer Höhle unweit der Stadt Port-au-Prince}
+Hispaniola_Cave_box1 {eine Truhe in der Nähe der Steinbrücke}
+Hispaniola_Cave_box2 {eine Truhe auf einem großen Stein}
+Hispaniola_Cave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+Jamaica_Grot {in einer Höhle rechts vom Leuchtturm von Port-Royal}
+Jamaica_Grot_box1 {eine Truhe über einem großen Stein}
+Maracaibo_Cave {in einer Höhle gegenüber des Ausgangs von Maracaibo}
+Maracaibo_Cave_box1 {eine Truhe unter der Fackel}
+Maracaibo_Cave_box2 {eine Truhe in einer Sackgasse}
+Maracaibo_Cave_box3 {eine Truhe in der Nähe der Fackel}
+Marigo_Cave {in einer Höhle gegenüber des Ausgangs von Philipsburg}
+Marigo_Cave_box1 {eine Truhe unter der Fackel}
+Marigo_Cave_box2 {eine Truhe in einer Sackgasse}
+Marigo_Cave_box3 {eine Truhe in der Nähe der Fackel}
+Panama_Cave {in einer Höhle auf der linken Seite des Ausgangs von Portobello}
+Panama_Cave_box1 {unter den Brettern in einer Sackgasse}
+Pearl_Grot {in einer Höhle in der Nähe der Westküste zwischen Belize und Blueweld}
+Pearl_Grot_box1 {eine Truhe über einem großen Stein}
+PortoBello_Cave {in einer Höhle rechts von Mosquitos Bay}
+PortoBello_Cave_box1 {unter den Brettern in einer Sackgasse}
+SanJuan_Cave {in einer Höhle nicht weit von San Juan}
+SanJuan_Cave_box1 {eine Truhe in der Nähe der Steinbrücke}
+SanJuan_Cave_box2 {eine Truhe auf einem großen Stein}
+SanJuan_Cave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+SantaCatalina_Cave {in einer Höhle rechts vom Cape Perlas}
+SantaCatalina_Cave_box1 {eine Truhe unter der Fackel}
+SantaCatalina_Cave_box2 {eine Truhe in einer Sackgasse}
+SantaCatalina_Cave_box3 {eine Truhe in der Nähe der Fackel}
+SantaCatalina_Grot {in einer Höhle auf der rechten Seite der Bucht von San Juan del Norte}
+SantaCatalina_Grot_box1 {eine Truhe am Strand}
+SantaCatalina_PearlCave {in einer Höhle auf der linken Seite der Bucht von San Juan del Norte}
+SantaCatalina_PearlCave_box1 {eine Truhe in der Nähe der Steinbrücke}
+SantaCatalina_PearlCave_box2 {eine Truhe auf einem großen Stein}
+SantaCatalina_PearlCave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+Tenotchitlan_Cave {eine Truhe in der Nähe der Steinbrücke in einer Höhle nördlich des aztekischen Tempels}
+Tenotchitlan_Cave_box1 {eine Truhe in der Nähe der Steinbrücke}
+Tenotchitlan_Cave_box2 {eine Truhe auf einem großen Stein}
+Tenotchitlan_Cave_box3 {eine Truhe in der Nähe des von der Decke hängenden Seils}
+Terks_Grot {in einer Höhle rechts von der Nördlichen Bucht}
+Terks_Grot_box1 {eine Truhe über einem großen Stein}
+Tortuga_Grot {in einer Höhle gegenüber von Fisheye Beach}
+Tortuga_Grot_box1 {eine Truhe am Strand}
+Tortuga_Cave {in einem Kerker von Tortuga}
+Tortuga_Cave_box1 {eine Truhe hinter einer geschlossenen Tür}
+Trinidad_Grot {in einer Höhle gegenüber dem Leuchtturm von Trinidad}
+Trinidad_Grot_box1 {eine Truhe am Strand}
+Martinique_Grot {in einer Höhle unweit des Strandes von Lamentin}
+Martinique_Grot_box1 {eine Truhe am Strand}
+FortFrance_Dungeon {in einem Kerker von St. Pierre}
+FortFrance_Dungeon_box1 {eine Truhe auf der Anhöhe}
+FortFrance_Dungeon_box2 {eine Truhe hinter einer offenen Tür auf der oberen Ebene}
+FortFrance_Dungeon_box3 {eine Truhe nicht weit vom Aufzug entfernt}
+FortFrance_Dungeon_box4 {eine Truhe hinter einer offenen Tür auf der unteren Ebene}
+FortFrance_Dungeon_box5 {unter Holzkisten}

@@ -606,7 +606,7 @@ void RegataSiegeSkiper()//Вудро в церкви
 	SetShipSkill(sld, 35, 15, 24, 30, 100, 35, 20, 60, 40);
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "SailingProfessional");

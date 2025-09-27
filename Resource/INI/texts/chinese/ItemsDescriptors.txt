@@ -1,0 +1,134 @@
+descriptor_Fancy {华丽}
+descriptor_Exotic {异域}
+descriptor_HighQuality {优质}
+descriptor_GoodFit {朴素}
+descriptor_HeartDefence {强化}
+descriptor_Unremarkable {朴素}
+descriptor_WeaponType_0 {轻}
+descriptor_WeaponType_1 {中}
+descriptor_WeaponType_2 {重}
+descriptor_WeaponLength_0 {短}
+descriptor_WeaponLength_1 {长}
+descriptor_WeaponCurvature_0 {直}
+descriptor_WeaponCurvature_1 {弯曲}
+descriptor_ArmorType_0 {轻}
+descriptor_ArmorType_1 {中}
+descriptor_ArmorType_2 {重}
+descriptor_ArmorMaterial_0 {布}
+descriptor_ArmorMaterial_1 {皮革}
+descriptor_ArmorMaterial_2 {板甲}
+descriptor_ArmorMaterial_3 {冲压}
+descriptor_ArmorMaterial_4 {铸造}
+descriptor_AmuletType_0 {普通}
+descriptor_AmuletType_1 {异教}
+descriptor_AmuletType_2 {基督}
+descriptor_SingleCharge {单发}
+descriptor_MultiCharge {多发}
+descriptor_OneHanded {单手}
+descriptor_TwoHanded {双手}
+descriptor_Bayonet {刺刀}
+descriptor_PiercingAmmo {穿甲}
+descriptor_StunAmmo {眩晕}
+descriptor_EmpoweredAmmo {增益}
+descriptor_SpyGlass {勘察}
+descriptor_SpyGlass_Crew_0 {粗略估算}
+descriptor_SpyGlass_Crew_1 {估计}
+descriptor_SpyGlass_Crew_2 {统计}
+descriptor_SpyGlass_Caliber_0 {火炮}
+descriptor_SpyGlass_Caliber_1 {武装}
+descriptor_Special {特殊}
+descriptor_Tool {工具}
+descriptor_Valuable {贵重}
+descriptor_BulletNeedPowder {火药}
+descriptor_GrapeAmmo {霰弹}
+descriptor_BulletAmmo {弹丸}
+descriptor_BombAmmo {手榴弹}
+descriptor_HealPotion {治疗}
+descriptor_Alcohol {醉酒}
+descriptor_EnhancingPotion {增益}
+descriptor_AntidotePotion {解毒剂}
+descriptor_Metal {金属}
+descriptor_Trinket {饰品}
+descriptor_descr_Alcohol {让人畅所欲言, 思绪轻盈, 但技能受罚。}
+descriptor_descr_EnhancingPotion {具有特殊增益效果。}
+descriptor_descr_AntidotePotion {解除中毒, 阻止毒素发作。}
+descriptor_descr_Metal {从地下提取, 可用于炼金术。}
+descriptor_descr_Trinket {精致与不那么精致的物品, 彰显品味与乡野之别。可在放债人处兑换达布隆金币。}
+descriptor_Junk {垃圾}
+descriptor_Herb {草药}
+descriptor_descr_Herb {大地的馈赠。主要用于炼金术中制作膏剂和药剂。}
+descriptor_descr_Fancy {此物以其典雅外观、镶嵌和昂贵材质而出众。佩戴可使领导力提升$number($DescriptorBaseValue(Fancy))。效果可叠加。}
+descriptor_descr_Exotic
+{
+此物不应落入虔诚基督徒之手, 持有者立刻便流言四起, 令人不寒而栗。
+舰队力量提升$percent($DescriptorBaseValue(Exotic)), 效果可叠加。
+}
+descriptor_descr_HighQuality {这把武器工艺精湛, 暴击伤害提升$percent($DescriptorBaseValue(HighQuality))。}
+descriptor_descr_GoodFit {这件护甲贴合度极高, 使任意武器的攻击速度提升5%。}
+descriptor_descr_HeartDefence {这件护甲在要害部位进行了强化, 可使敌人的暴击伤害降低20%。}
+descriptor_descr_Unremarkable
+{
+这种物品人手一件。有了它, 你不会引人注意, 也不会被记住。
+潜行提高$number($DescriptorBaseValue(Unremarkable)), 效果可叠加。
+}
+descriptor_descr_WeaponType_0 {轻型武器更轻巧灵活, 主要用于单挑。使用此类武器攻击速度提升5%。}
+descriptor_descr_WeaponType_1 {中型武器兼具重量与速度, 是最灵活多用的选择。非常适合混战和登船战斗。}
+descriptor_descr_WeaponType_2 {重型武器威力巨大, 伤害同样惊人, 但攻击速度降低5%。}
+descriptor_descr_WeaponLength_0 {此武器需贴近敌人, 更适合近距离战斗。}
+descriptor_descr_WeaponLength_1 {此武器攻击范围较远, 需在开阔空间才能发挥威力。}
+descriptor_descr_WeaponCurvature_0 {这种武器为直型或略带弯曲, 更适合快速攻击而非劈砍攻击。}
+descriptor_descr_WeaponCurvature_1 {此武器弯曲明显, 重心偏向前端, 更适合劈砍攻击而非快速攻击。}
+descriptor_descr_ArmorType_0 {轻甲几乎与普通衣物无异, 完全不影响行动, 但防护力较低。}
+descriptor_descr_ArmorType_1 {中型护甲略微限制行动, 但能很好保护要害部位。角色移动速度降低5%。}
+descriptor_descr_ArmorType_2 {重型护甲笨重难用, 但能助你强攻堡垒。移动速度降低10%。}
+descriptor_descr_ArmorMaterial_0 {布料无法抵挡重击, 但能防护擦伤和划伤。减少4%所受伤害。}
+descriptor_descr_ArmorMaterial_1 {皮甲或许能在醉酒斗殴中保你无恙, 但挡不住子弹或利刃。受到的伤害降低8%。}
+descriptor_descr_ArmorMaterial_2 {板甲兼顾重量与防护, 关键时刻能救你一命。可减少15%所受伤害。}
+descriptor_descr_ArmorMaterial_3
+{
+冲压护甲为部队批量生产, 广泛用于欧洲战争。 
+可减少22%所受伤害。
+}
+descriptor_descr_ArmorMaterial_4 {铸造护甲工艺复杂且成本高昂, 因此在加勒比地区极为罕见。可减少35%所受伤害。}
+descriptor_descr_AmuletType_0 {借助预兆、海上传说和真实因果。}
+descriptor_descr_AmuletType_1 {汲取异教神灵与土著仪式的力量。}
+descriptor_descr_AmuletType_2 {汲取基督圣徒与正信的力量。}
+descriptor_descr_SingleCharge {仅有一发备用——务必命中。}
+descriptor_descr_MultiCharge {配备多根枪管、弹膛或转轮, 可连续射击多发。需特殊技能操作。}
+descriptor_descr_OneHanded {随身携带的手用武器, 可挂在腰带或绶带上。单发类型无需特殊操作技能。}
+descriptor_descr_TwoHanded {重型火器, 射击时需双手持握。需具备专门技能方可使用。}
+descriptor_descr_Bayonet {这款长枪管火器配有刺刀, 快速攻击伤害提升25%。}
+descriptor_descr_PiercingAmmo {此弹药命中时无视护甲。}
+descriptor_descr_StunAmmo {这种弹药命中敌人时会施加减益效果。}
+descriptor_descr_EmpoweredAmmo {该弹药可提升武器属性。}
+descriptor_descr_SpyGlass {任何望远镜都能识别船只类型、名称、状态、速度和火炮数量。}
+descriptor_descr_SpyGlass_Crew_0 {这只望远镜无法看清船员, 因此人数仅为大致估算。}
+descriptor_descr_SpyGlass_Crew_1 {这只望远镜可精确统计船员人数, 并识别船上是否有火枪手。}
+descriptor_descr_SpyGlass_Crew_2 {这只望远镜能准确显示敌方船员、火枪手人数及船长技能。}
+descriptor_descr_SpyGlass_Caliber_0 {这只望远镜的镜片足够清晰, 不仅能看清火炮数量, 还能分辨口径。}
+descriptor_descr_SpyGlass_Caliber_1 {这只望远镜的高品质光学镜片可让你看清火炮口径和所装弹药类型。}
+descriptor_descr_Special {该物品具有特殊属性。}
+descriptor_descr_Tool {一套复杂的仪器, 对外行毫无价值。但你可不是外行。}
+descriptor_descr_Valuable {售价较高。}
+descriptor_descr_BulletNeedPower {没有火药无法发射。}
+descriptor_descr_GrapeAmmo {多枚小型弹丸。对群体敌人或近距离单个目标最为有效。}
+descriptor_descr_BulletAmmo {单发装填射击。中远距离效果出色, 爆头尤佳。}
+descriptor_descr_BombAmmo {爆炸并击中周围所有目标, 对成群敌人尤为有效。}
+descriptor_descr_HealPotion {该药剂可恢复生命值。}
+descriptor_descr_Junk {在加勒比海随处可见的各类饰品。只有懂得其用法的人才会珍视, 否则只会在角落里积灰。}
+descriptor_Alchemy {炼金术}
+descriptor_descr_Alchemy {该物品可通过炼金术制作或改造。}
+descriptor_Quest {任务}
+descriptor_Map {地图}
+descriptor_Fragile {脆弱}
+descriptor_descr_Fragile {该物品使用一定次数后会损坏。}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_Ingredient {原料}
+descriptor_Jewelery {宝石}
+descriptor_descr_Jewelery {宝石和半宝石。可出售或用于炼金术。}
+descriptor_descr_Ingredient {该物品用于炼金术。}

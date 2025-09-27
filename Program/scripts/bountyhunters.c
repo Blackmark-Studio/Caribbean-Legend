@@ -70,6 +70,7 @@ void SeaHunterCheck(int iNation)
             else sld.GenShip.Spec = SHIP_SPEC_WAR;
             sld.GenShip.Class = iShips[i-1];
             SetShipHunter(sld);
+            Fantom_SetPrize(sld);
             sld.WatchFort = true; //видеть форты
             SetFantomParamHunter(sld); //крутые парни
             SetCaptanModelByEncType(sld, "war");
@@ -78,6 +79,7 @@ void SeaHunterCheck(int iNation)
             sld.mapEnc.type = "war";
             sld.mapEnc.Name = XI_ConvertString("BountyHunters");
             sld.mapEnc.worldMapShip = sMapShip;
+            sld.mapEnc.Marker = "BountyHunter";
             sld.hunter = "hunter";
             Group_AddCharacter(sGroup, sCapId + i);
             if (i == 1 || GetCharacterShipClass(sld) < 3) SetRandGeraldSail(sld, sti(sld.Nation));
@@ -183,6 +185,7 @@ void LandHunterReactionResult(ref loc)  // отработает после вх�
 	            {
 	                sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, j, 0, true, "hunter"));
 	                SetFantomParamHunter(sld); //крутые парни
+				    InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Охотники за головами
 	                sld.name 		= XI_ConvertString("BountyHunter");
 	                sld.lastname 	= "";
 	                sld.Dialog.CurrentNode = "First time";
@@ -320,14 +323,11 @@ void FireBrigadeCheck(int iNation)
             iShips[4] = 4;
         }
 
-        int iDays;
-        if(bSkip) iDays = 8;
-        else iDays = 29;
-
+        int iDays = 6 + rand(6);
         for (i = 1; i <= 6; i++)
         {
             if(iShips[i - 1] == 0) break;
-            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays, true, "hunter"));
+            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays + 1, true, "hunter"));	// JokerChar Капитаны карательных эскадр
             if(i == 1)
             {
                 //"quest"?
@@ -340,6 +340,8 @@ void FireBrigadeCheck(int iNation)
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
                 }
                 else if(iNation == FRANCE) {
+					sld.name = TEV.FireBrigade_fra.name;
+					sld.lastname = TEV.FireBrigade_fra.lastname;
                     sld.model = "off_fra_2";
                     //sld.greeting = "";
                     sld.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, sld);
@@ -354,8 +356,13 @@ void FireBrigadeCheck(int iNation)
                         sld.model = "Maldonado";
                         //sld.greeting = "Alonso";
                     }
-                    else sld.model = "SpaOfficer2";
-                    sld.Ship.Type = GenerateShipExt(SHIP_ELCASADOR, true, sld);
+                    else
+					{
+                        sld.name = TEV.FireBrigade_spa.name;
+                        sld.lastname = TEV.FireBrigade_spa.lastname;
+						sld.model = "SpaOfficer2";
+                    }
+					sld.Ship.Type = GenerateShipExt(SHIP_ELCASADOR, true, sld);
                     sld.Ship.Name = StringFromKey("Roger_72");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
                 }
@@ -369,7 +376,6 @@ void FireBrigadeCheck(int iNation)
                     sld.Ship.Name = StringFromKey("HollandGambit_12");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
                 }
-                sld.Brigadier = "";
                 sld.QuestHandler = "FireBrigadeInterruption";
                 sld.DontClearDead      = true;
                 sld.SaveItemsForDead = true;
@@ -410,6 +416,7 @@ void FireBrigadeCheck(int iNation)
                 SetShipHunter(sld);
                 SetCaptanModelByEncType(sld, "war");
             }
+            //Fantom_SetPrize(sld);
             SetFantomParamHunter(sld);
             if(i == 1) SetBrigadierLoot(sld, iNation);
             sld.WatchFort = true;
@@ -419,6 +426,8 @@ void FireBrigadeCheck(int iNation)
             sld.mapEnc.type = "war";
             sld.mapEnc.Name = XI_ConvertString("Punitive expedition");
             sld.mapEnc.worldMapShip = sMapShip;
+            sld.mapEnc.NoSkip = "";
+            sld.mapEnc.Marker = "Brigadier";
             sld.hunter = "hunter";
             Group_AddCharacter(sGroup, sCapId + i);
             if(i != 1 && rand(1)) SetRandGeraldSail(sld, iNation);
@@ -429,8 +438,8 @@ void FireBrigadeCheck(int iNation)
         Group_LockTask(sGroup);
 
         // Механика мощи
-        if(bSkip) Map_CreateTrader("", "", sCapId + "1", 7);
-        else Map_CreateWarrior("", sCapId + "1", 28);
+        if(bSkip) Map_CreateTrader("", "", sCapId + "1", iDays);
+        else Map_CreateWarrior("", sCapId + "1", iDays);
     }
 
     SetFunctionTimerCondition("FireBrigade_" + sNation, 0, 0, 5 + rand(4), true);
@@ -510,6 +519,15 @@ void FireBrigadeSink(string qName)
     sTemp = "FireBrigade_" + sNation;
     PChar.quest.(sTemp).over = "yes"; // Ваша песенка спета, сэр
 	CheckFireBrigadeAchievements(iNation, "Sink");
+
+    // Нулим отношения по выходу
+    sTemp = "NationIntimidated" + sNation;
+    PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
+	PChar.quest.(sTemp).function = "NationIntimidated";
+    PChar.quest.(sTemp).Nation = iNation;
+
+	if (iNation == FRANCE) DeleteAttribute(&TEV, "FireBrigade_fra");
+	else if (iNation == SPAIN) DeleteAttribute(&TEV, "FireBrigade_spa");
 }
 
 void FireBrigadeCapture(string qName)
@@ -529,6 +547,57 @@ void FireBrigadeCapture(string qName)
     sTemp = "FireBrigade_" + sNation;
     PChar.quest.(sTemp).over = "yes";
 	CheckFireBrigadeAchievements(iNation, "Capture");
+
+    // Нулим отношения по выходу
+    sTemp = "NationIntimidated" + sNation;
+    PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
+	PChar.quest.(sTemp).function = "NationIntimidated";
+    PChar.quest.(sTemp).Nation = iNation;
+
+	if (iNation == FRANCE) DeleteAttribute(&TEV, "FireBrigade_fra");
+	else if (iNation == SPAIN) DeleteAttribute(&TEV, "FireBrigade_spa");
+}
+
+void NationIntimidated(string qName)
+{
+    int iNation = sti(PChar.quest.(qName).Nation);
+    string attrNation = iNation;
+    TEV.ThreatResetMsg.(attrNation) = abs(ChangeCharacterNationReputation(PChar, iNation, 0));
+    // Без отложенного вызова не отобразит
+    SetEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg", 0);
+    PostEvent("ShowThreatResetMsg" + iNation, 100);
+}
+
+void ThreatResetMsg()
+{
+    aref aNations, aNation;
+    makearef(aNations, TEV.ThreatResetMsg);
+    int qty = GetAttributesNum(aNations);
+    if (qty == 0)
+    {
+        DeleteAttribute(&TEV, "ThreatResetMsg");
+        DelEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg");
+        return;
+    }
+    string sText = XI_ConvertString("ThreatReset1");
+    string sTemp;
+    int iNation, iChange;
+    for(int i=0; i < qty; i++)
+    {
+        aNation = GetAttributeN(aNations, i);
+        iNation = sti(GetAttributeName(aNation));
+        iChange = sti(GetAttributeValue(aNation)) - 5;
+        SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+        ChangeCharacterNationReputation(PChar, iNation, iChange);
+        sTemp = XI_ConvertString(GetNationNameByType(iNation) + "Gen");
+        if(i == 0) sText += sTemp;
+        else if(i != qty-1) sText += ", " + sTemp;
+        else sText += " " + XI_ConvertString("And") + " " + sTemp;
+    }
+    sText += "." + NewStr() + XI_ConvertString("ThreatReset2");
+    LaunchMessage(sText);
+    DeleteAttribute(&TEV, "ThreatResetMsg");
+    DelEventHandler("ShowThreatResetMsg" + iNation, "ThreatResetMsg");
 }
 
 void SetBrigadierLoot(ref sld, int iNation)

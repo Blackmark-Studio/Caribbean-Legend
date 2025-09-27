@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk"))
 			{
 				link.l1 = "大人, 您想见我? ";
-				link.l1.go = "PZ1";
+				link.l1.go = "PZ_1";
 			}
 			// 失窃的记忆
 			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
@@ -71,33 +71,33 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.patria = "true";
 		break;
 		
-		case "PZ1":
+		case "PZ_1":
 			DeleteAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk");
 			dialog.text = "不, 我没有召见你, 先生。 你有事吗? ";
 			link.l1 = "我怎么会呢? 但您的信使遇见了我们; 他说您为我准备了镇上的一所房子... ";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 			DelLandQuestMark(npchar);
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "什么房子, 什么信使, 这算什么无礼行为? ! ";
 			link.l1 = "您说什么信使... 他叫亨利.蒂博, 而且... ";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "什么? 你知道他是谁吗? 显然不知道。 但这不重要。 勒瓦瑟的侄子在我的镇上做什么? ";
 			link.l1 = "哦, 我的上帝... ";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "德.莫尔, 你能听到我吗? 先生? ";
 			link.l1 = "... ";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			DialogExit();
 			LAi_SetActorType(pchar);
 			LAi_ActorRunToLocator(pchar, "reload", "reload1", "PZ_SharleBezhitObratno", -1);

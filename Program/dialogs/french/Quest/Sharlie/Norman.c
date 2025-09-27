@@ -366,35 +366,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "Et qui donc Dichoso a-t-il zigouillé pour que tu te mettes à le chercher, hein, camarade ? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "Alors, qui est-ce que Dichoso a buté pour que tu te mettes à le chercher, hein, mon pote ?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Le Pape";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "Que veux-tu dire? Quel Sharp a-t-il tué exactement? Il y a beaucoup de Sharp, tu sais.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Chut... (regarde autour de lui) Alors toi aussi tu penses que c’est Dichoso qui a tué Blaze Sharp ?";
+			link.l1 = "Ouais. Et j’ai pas juste des soupçons, j’ai des preuves. Des notes dans le journal de bord...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Alors on fait de l’humour maintenant ? Aucun respect ! Allez, approche un peu...";
+			link.l1 = "Même pas en rêve.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "Ch-ch-ch... (regarde autour) Donc tu penses aussi que Blaze Sharp a été tué par Dichoso ?";
-				link.l1 = "Oui. Je n'ai pas seulement des soupçons, mais des preuves solides. Des entrées dans son journal de bord...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Vas-y, petit marin...";
-				link.l1 = "Que veux-tu dire ? Dis-m'en plus.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "Ah...Eh bien. Il l'a tué et c'est tout ce qu'il y a à dire. Tu sais combien de tueurs traînent par ici ? Un homme sur deux ! Non, Marin. Je n'ai pas vu Dichoso depuis longtemps. Je ne peux pas t'aider avec quoi que ce soit.";
 			link.l1 = "Pitié...";
 			link.l1.go = "exit";

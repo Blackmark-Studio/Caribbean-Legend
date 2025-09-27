@@ -30,7 +30,6 @@ void SetAllPerksToChar(ref _ch, bool _isOfficer)
 	_ch.perks.list.BasicDefense = "1";
 	_ch.perks.list.AdvancedDefense = "1";
 	_ch.perks.list.CriticalHit = "1";
-	_ch.perks.list.SwordplayProfessional = "1";
 	_ch.perks.list.Grus = "1";
 	_ch.perks.list.Rush = "1";
 	_ch.perks.list.Tireless = "1";
@@ -71,18 +70,15 @@ void SetAllPerksToChar(ref _ch, bool _isOfficer)
 	_ch.perks.list.InstantRepair = "1";
 	_ch.perks.list.ShipSpeedUp = "1";
 	_ch.perks.list.ShipTurnRateUp = "1";
-	_ch.perks.list.StormProfessional = "1";
 	_ch.perks.list.Turn180 = "1";
 	_ch.perks.list.SeaDogProfessional = "1";
 	_ch.perks.list.SailingProfessional = "1";
-	_ch.perks.list.Brander = "1";
 	_ch.perks.list.Troopers = "1";
 	_ch.perks.list.BasicCommerce = "1";
 	_ch.perks.list.AdvancedCommerce = "1";
 	_ch.perks.list.ProfessionalCommerce = "1";	
 	_ch.perks.list.Carpenter = "1";
 	_ch.perks.list.Builder = "1";
-	_ch.perks.list.SelfRepair = "1";
 	_ch.perks.list.WindCatcher = "1";
 	_ch.perks.list.SailsMan = "1";
 	_ch.perks.list.Doctor1 = "1";
@@ -91,7 +87,6 @@ void SetAllPerksToChar(ref _ch, bool _isOfficer)
 	if(_isOfficer) // У офов есть доп. перки
 	{
 		_ch.perks.list.ByWorker = "1";
-		_ch.perks.list.ByWorker2 = "1";
 	}
 }
 
@@ -101,7 +96,6 @@ void SetHalfPerksToChar(ref _ch, bool _isOfficer)
 	_ch.perks.list.BasicDefense = "1";
 	_ch.perks.list.AdvancedDefense = "1";
 	_ch.perks.list.CriticalHit = "1";
-	_ch.perks.list.SwordplayProfessional = "1";
 	_ch.perks.list.Gunman = "1";
 	_ch.perks.list.SharedExperience = "1";
 	
@@ -121,7 +115,6 @@ void SetHalfPerksToChar(ref _ch, bool _isOfficer)
 	_ch.perks.list.AdvancedBattleState = "1";
 	_ch.perks.list.ShipSpeedUp = "1";
 	_ch.perks.list.ShipTurnRateUp = "1";
-	_ch.perks.list.StormProfessional = "1";
 	_ch.perks.list.Turn180 = "1";
 	_ch.perks.list.SailingProfessional = "1";
 	_ch.perks.list.WindCatcher = "1";
@@ -138,13 +131,6 @@ void SetHalfPerksToChar(ref _ch, bool _isOfficer)
 void RemoveAllCharacterItems(ref _ch, bool _removemoney)
 {
 	// сносим нафик всю экипировку
-	if(_ch.index == GetMainCharacterIndex()) // mitrokosta фикс сравнения ссылок
-	{
-		StoreEquippedMaps(_ch);
-        RemoveItems(_ch, "mapsatlas", 1); // belamour : иначе атлас так и лежит в инвентаре
-        DeleteAttribute(_ch,"perks.list.MapMaker"); //  висит после изъятия полного атласа
-		_ch.MapsAtlasCount = 0;
-	}	
 	RemoveCharacterEquip(_ch, BLADE_ITEM_TYPE);
 	RemoveCharacterEquip(_ch, GUN_ITEM_TYPE);
 	RemoveCharacterEquip(_ch, SPYGLASS_ITEM_TYPE);
@@ -511,12 +497,10 @@ void initStartState2Character(ref ch)
 	ch.questTemp.Waiting_time = "2";
 	// ==> номер текущего квеста, присваиваем сразу второй, т.к. первый берется на момент первого обращения к губеру.
 	ch.questTemp.CurQuestNumber = "2";
-	//параметры островов и бухт для корсарского метро, ПГГ, и много еще чего :)
+	//параметры островов и бухт для корсарского метро, ПГГ, и много ещё чего :)
 	InitTravelMap();
 	// ==> проверка не посещение борделей после свадьбы
 	pchar.RomanticQuest.HorseCheck = -1;
-	// ==> Количество карт в навигационном атласе
-	ch.MapsAtlasCount = 0;
     // ==> Найдено историй в кладах
     ch.questTemp.Treasure_Stories = 0;
     // ==> Истории в кладах
@@ -525,6 +509,8 @@ void initStartState2Character(ref ch)
         sTemp = i; //Safe moment
         ch.questTemp.Treasure_Stories.(sTemp) = sTemp;
 	}
+	// Бонус к появлению кладмена
+	TEV.TavernMapBonus = 0;
     // ==> Номер пиратского флага (берется из текстуры персональных флагов ГГ)
 	ch.Flags.Pirate = 3;
 	// ==> работорговец
@@ -620,6 +606,32 @@ void initStartState2Character(ref ch)
     // Механика мощи
     PChar.Squadron.RawPower = 0.0;
     PChar.Squadron.ModPower = 0.0;
+	// Сторожи на Тортуге
+	PChar.quest.TortugaGuards.win_condition.l1 = "location";
+	PChar.quest.TortugaGuards.win_condition.l1.location = "Tortuga";
+	PChar.quest.TortugaGuards.function = "Tortuga_SetShipGuard";
+	PChar.quest.TortugaGuards.again = true;
+	// Зафиксировать имена пожарников
+	TEV.FireBrigade_fra.name = GetRandSubString(sFrManNames[rand(GetArraySize(&sFrManNames) - 2)]);
+	TEV.FireBrigade_fra.lastname = GetRandSubString(sFrFamilies[rand(GetArraySize(&sFrFamilies) - 2)]);
+	if (!SandBoxMode)
+	{
+		TEV.FireBrigade_spa.name = GetRandSubString(sSpManNames[rand(GetArraySize(&sSpManNames) - 2)]);
+		TEV.FireBrigade_spa.lastname = GetRandSubString(sSpFamilies[rand(GetArraySize(&sSpFamilies) - 2)]);
+	}
+	// Калеуче
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1 = "Rank";
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1.value = 17;
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1.operation = ">=";
+	PChar.quest.Caleuche_StartSandBox.function = "Caleuche_StartSandBox";
+	if (SandBoxMode)
+	{
+		// Французские миниквесты (ФМК)
+		pchar.quest.FMQ_SetConditions.win_condition.l1 = "Rank";
+		pchar.quest.FMQ_SetConditions.win_condition.l1.value = 4;
+		pchar.quest.FMQ_SetConditions.win_condition.l1.operation = ">=";
+		pchar.quest.FMQ_SetConditions.function = "FMQ_SetConditions";
+	}
 }
 
 //==> eddy. квестовая обработка 'ноль часов'.
@@ -690,7 +702,7 @@ void QuestActions()
     			//---------- мёртв ------------
 				if (capIndex == -1)
     			{	
-					//страховка. если квест еще открыт - закрываем его
+					//страховка. если квест ещё открыт - закрываем его
 					/*if (CheckActiveQuest(arCapBase.Tilte1))
 					{
 						CitizCapIsDead_CloseQuest(arCapBase, sName);
@@ -1439,17 +1451,6 @@ bool IsAztecSkullOfficer(ref sld)
 	}
 	return false;
 }
-
-// --> ugeen 20.06.09 - проверка на наличие карт у ГГ
-bool CheckMainHeroMap(string itemName)
-{
-    if( CheckAttribute(pchar,"Items."+itemName) && sti(pchar.Items.(itemName))>0 )	
-	{
-		return true;
-	}
-	return false;	
-}
-// <-- ugeen
 
 // Инициализация прочих квестов. Warship
 void OtherQuestCharactersInit()

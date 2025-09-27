@@ -109,7 +109,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.NewGameTip4.win_condition.l1 = "location";
 			pchar.quest.NewGameTip4.win_condition.l1.location = "LeFransua_town";
 			pchar.quest.NewGameTip4.function = "ShowNewGameTip";
-			pchar.quest.NewGameTip4.text = "Your first sea battle is coming! Save you game!";					  
+			pchar.quest.NewGameTip4.text = "Sta arrivando la prima battaglia navale! Salva il tuo gioco!";					  
 		break;
 		
 		case "Portugal":

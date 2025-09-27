@@ -1,3 +1,6 @@
+#include "interface\utils\sort_questbook.c"
+#include "interface\utils\common_header.c"
+
 /// boal 07/06/06 переделка СЖ под нужны ВМЛ
 // Sith в сж добавлен журнал торговли
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q и E
@@ -7,6 +10,9 @@ string CurTable, CurRow;
 int iMaxGoodsStore = 50000;
 int currentTab = 0;
 int maxQuestsNum = 0;
+int sortedRow = 0;
+int sortedGoodIndex = 0;
+int tradeCityMode = 0;
 
 void InitInterface(string iniName)
 {
@@ -29,12 +35,16 @@ void InitInterface(string iniName)
 	SetEventHandler("ScrollPosChange","ProcScrollPosChange",0);
 	SetEventHandler("ScrollTopChange","ProcScrollChange",0);
 	SetEventHandler("ievnt_command","ProcessCommandExecute",0);
+	SetEventHandler("ShowCityByGoodMode","ShowCityByGoodMode", 0);
+	SetEventHandler("HideCityByGoodMode","HideCityByGoodMode", 0);
 	SetEventHandler("QuestTopChange","QuestTopChange",0);
 	SetEventHandler("QuestActivate","XI_QuestActivate",0);
 	SetEventHandler("QuestDeActivate","QuestDeActivate",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
 	SetEventHandler("TableSelectChange", "TableSelectChange", 0);
+	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0); // belamour окно инфы на пкм
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 
 	XI_RegistryExitKey("IExit_F2");
 	
@@ -56,17 +66,7 @@ void InitInterface(string iniName)
 		}
 	// <--
 	InitTableHeader();
-	// доп инфа в шапку --->
-	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
-	SetFormatedText("Money", FindRussianMoneyString(sti(xi_refCharacter.money)));
-	SetFormatedText("Dublon", FindRussianDublonString(sti(xi_refCharacter.dublon)));
-	SetFormatedText("Rank", xi_refCharacter.rank);
-	SetFormatedText("Rank_progress", GetCharacterRankRateCur(xi_refCharacter) + " / " + GetCharacterRankRate(xi_refCharacter));
-	// порог уровня
-	GameInterface.StatusLine.BAR_RANK.Max   = GetCharacterRankRate(xi_refCharacter);
-	GameInterface.StatusLine.BAR_RANK.Min   = 0;
-	GameInterface.StatusLine.BAR_RANK.Value = GetCharacterRankRateCur(xi_refCharacter);	
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_RANK",0);
+	SetCommonHeaderInfo();
 	// <--- 
 	SetFormatedText("Difficulty", XI_ConvertString("m_Complexity") + ": " + GetLevelComplexity(MOD_SKILL_ENEMY_RATE));
 	
@@ -130,8 +130,6 @@ void XI_SetQuestData()
 		SetNodeUsing("QUEST_TEXT", false);
 		SetNodeUsing("QUESTSCROLL_TEXT", false);
 	}
-
-	SetAlertMarks(xi_refCharacter);
 }
 
 void HideQuests()
@@ -168,6 +166,8 @@ void HideStoreBook()
 void HideTradeBook()
 {
 	SetNodeUsing("TRADEBOOK_TABLE_CITY",false);
+	SetNodeUsing("TRADEBOOK_TABLE_CITY_BY_GOOD",false);
+	SetNodeUsing("TRADEBOOK_SCROLL_CITY_BY_GOOD",false);
 	SetNodeUsing("TRADEBOOK_SCROLL_CITY",false);
 	SetNodeUsing("TRADEBOOK_TABLE_GOODS",false);
 	SetNodeUsing("TRADEBOOK_SCROLL_GOODS",false);
@@ -275,9 +275,13 @@ void IDoExit(int exitCode)
 	DelEventHandler("ievnt_command","ProcessCommandExecute");
 	DelEventHandler("eTabControlPress","procTabChange");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
+	DelEventHandler("ShowCityByGoodMode","ShowCityByGoodMode");
+	DelEventHandler("HideCityByGoodMode","HideCityByGoodMode");
  	DelEventHandler("QuestDeActivate","QuestDeActivate");
 	DelEventHandler("TableSelectChange", "TableSelectChange");
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow"); // belamour окно инфы
+	DelEventHandler("OnHeaderClick", "OnHeaderClick");
 
     interfaceResultCommand = exitCode;
 	if( CheckAttribute(&InterfaceStates,"ReloadMenuExit"))
@@ -439,11 +443,25 @@ void selectJournal(int iMode)
 	makearef(arQuestInfo, pchar.QuestInfo);
 	DeleteAttribute(pchar, "TmpQuestInfo");
 	pchar.TmpQuestInfo = "";
+
+	// сортировка архива
+	if (iMode == 2)
+	{
+		string sortedQuests[2];
+		SortQuests(&sortedQuests, &arQuestInfo);
+	}
+
 	for(i=0; i<GetAttributesNum(arQuestInfo); i++)
     {
-        arTmp = GetAttributeN(arQuestInfo, i);
-        attributeName = GetAttributeName(arTmp);
-        ok = false;
+			if (iMode == 2)
+			{
+				string questName = sortedQuests[i];
+				makearef(arTmp, arQuestInfo.(questName));
+			}
+			else arTmp = GetAttributeN(arQuestInfo, i);
+
+			attributeName = GetAttributeName(arTmp);
+			ok = false;
 		switch (iMode)
         {
             case 1:
@@ -544,21 +562,22 @@ void selectStatistic()
 
 void HideInfoWindow() 
 {
-	CloseTooltip();
+	CloseTooltipNew();
 }
 
 void ShowInfoWindow()
 {
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	int iItem;
 	sPicture = "-1";
 	int picW, picH;
 	// string sAttributeName;
-	// int nChooseNum = -1;
+	int nChooseNum = -1;
+	string sRow;
 	aref arCurRow;
-	makearef(arCurRow, GameInterface.(CurTable).(CurRow));
+	
 	sGroupPicture = "";
 	switch (sCurrentNode)
 	{
@@ -617,26 +636,33 @@ void ShowInfoWindow()
 				sText1 = XI_ConvertString("StorageBook_Descr");
 		break;
 		case "TABLE_GOODS":
+			CloseTooltipNew();
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_GOODS", 1);
+			sRow = "tr"+nChooseNum;
+			makearef(arCurRow, GameInterface.TABLE_GOODS.(sRow));
 			sGroup = "GOODS";
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				sHeader = XI_ConvertString("StorageBook");
 				sText1 = XI_ConvertString("StorageBook_Descr");
 			} else {
-				iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
-				sGroup = GetGoodImageGroup(&Goods[iItem]);
-				sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
+				iItem = sti(arCurRow.UserData.IDX);
+				sHeader = XI_ConvertString(arCurRow.UserData.ID);
+				sGroupPicture = arCurRow.UserData.ID;
 				picW = 128;
 				picH = 128;
-				sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
+				sText1  = GetAssembledString(GetConvertStr(arCurRow.UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
 			}
 		break;
 		case "TABLE_SHIP_PLACE":
+			CloseTooltipNew();
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SHIP_PLACE", 1);
+			sRow = "tr"+nChooseNum;
+			makearef(arCurRow, GameInterface.TABLE_SHIP_PLACE.(sRow));
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
 				sHeader = XI_ConvertString("ShipsPlaceBook");
 				sText1 = XI_ConvertString("ShipsPlaceBook_Descr1");
 			} else {
-				int chrIdx = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
+				int chrIdx = sti(arCurRow.UserData.IDX);
 				ref chref = GetCharacter(chrIdx);
 				int iShip = sti(chref.ship.type);
 				ref refBaseShip = GetRealShip(iShip);
@@ -651,10 +677,18 @@ void ShowInfoWindow()
 			}
 		break;
 		case "TRADEBOOK_TABLE_CITY":
-				sHeader = XI_ConvertString("TradeBook");
-				sText1 = XI_ConvertString("TradeBook_Descr1");
+			sHeader = XI_ConvertString("TradeBook");
+			sText1 = XI_ConvertString("TradeBook_Descr1");
+		break;
+		case "TRADEBOOK_TABLE_CITY_BY_GOOD":
+			sHeader = XI_ConvertString("TradeBook");
+			sText1 = XI_ConvertString("TradeBook_Descr1");
 		break;
 		case "TRADEBOOK_TABLE_GOODS":
+			CloseTooltipNew();
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TRADEBOOK_TABLE_GOODS", 1);
+			sRow = "tr"+nChooseNum;
+			makearef(arCurRow, GameInterface.TRADEBOOK_TABLE_GOODS.(sRow));
 		    sGroup = "GOODS";
 			sGroupPicture = "";
 			if (!CheckAttribute(arCurRow, "UserData.IDX")) {
@@ -662,14 +696,13 @@ void ShowInfoWindow()
 				sText1  = XI_ConvertString("TradeBook_Descr1");
 				sText2  = XI_ConvertString("TradeBook_Descr2");
 			} else {
-				iItem = sti(GameInterface.(CurTable).(CurRow).UserData.IDX);
-				sGroupPicture = GameInterface.(CurTable).(CurRow).UserData.ID;
-				sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
-				sGroup = GetGoodImageGroup(&Goods[iItem]);
-				sText1  = GetAssembledString(GetGoodDescr(&Goods[iItem]), &Goods[iItem]);
-				sText2 = XI_ConvertString("TradeBook_Descr3");
-				picW = 128;
-				picH = 128;
+		    iItem = sti(arCurRow.UserData.IDX);
+			sGroupPicture = arCurRow.UserData.ID;
+		    sHeader = XI_ConvertString(arCurRow.UserData.ID);
+		    sText1  = GetAssembledString(GetConvertStr(arCurRow.UserData.ID + "_descr", "GoodsDescribe.txt"), &Goods[iItem]);
+			sText2 = XI_ConvertString("TradeBook_Descr3");
+			picW = 128;
+			picH = 128;
 			}
 		break;
 		// sith --->
@@ -687,7 +720,7 @@ void ShowInfoWindow()
 		break;
 		//<--- sith
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, picW, picH);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
 void procTabChange()
@@ -747,35 +780,35 @@ void SetControlsTabMode(int nMode)
 	{
 		case 1: //
 			sPic1 = "TabSelected1";
-			nColor1 = argb(255,255,255,255);
+			nColor1 = ARGB_Color("white");
 		break;
 		case 2:
 			sPic2 = "TabSelected2";
-			nColor2 = argb(255,255,255,255);
+			nColor2 = ARGB_Color("white");
 		break;
 		case 3:
 			sPic3 = "TabSelected3";
-			nColor3 = argb(255,255,255,255);
+			nColor3 = ARGB_Color("white");
 		break;
 		case 4:
 			sPic4 = "TabSelected4";
-			nColor4 = argb(255,255,255,255);
+			nColor4 = ARGB_Color("white");
 		break;
 		case 5:
 			sPic5 = "TabSelected5";
-			nColor5 = argb(255,255,255,255);
+			nColor5 = ARGB_Color("white");
 		break;
 		case 6:
 			sPic6 = "TabSelected6";
-			nColor6 = argb(255,255,255,255);
+			nColor6 = ARGB_Color("white");
 		break;
 		case 7:
 			sPic7 = "TabSelected7";
-			nColor7 = argb(255,255,255,255);
+			nColor7 = ARGB_Color("white");
 		break;		
 		case 8:
 			sPic8 = "TabSelected8";
-			nColor8 = argb(255,255,255,255);
+			nColor8 = ARGB_Color("white");
 		break;	
 	}
 
@@ -1035,7 +1068,7 @@ void InitTableHeader()
                                sti(Pchar.Quest.Loans.(sQuestName).StartMonth),
                                sti(Pchar.Quest.Loans.(sQuestName).StartYear));
 			GameInterface.TABLE_CREDIT.(row).td4.str = Pchar.Quest.Loans.(sQuestName).Period;
-			GameInterface.TABLE_CREDIT.(row).td5.str = Pchar.Quest.Loans.(sQuestName).Interest;
+			GameInterface.TABLE_CREDIT.(row).td5.str = fts(stf(Pchar.Quest.Loans.(sQuestName).Interest), 1);
         }
     }
 	Table_UpdateWindow("TABLE_CREDIT");
@@ -1068,7 +1101,7 @@ void InitTableHeader()
 				GameInterface.TABLE_DEBIT.(row).td3.str = GetBookData(sti(Pchar.Quest.Deposits.(sQuestName).StartDay),
 	                               sti(Pchar.Quest.Deposits.(sQuestName).StartMonth),
 	                               sti(Pchar.Quest.Deposits.(sQuestName).StartYear));
-				GameInterface.TABLE_DEBIT.(row).td4.str = Pchar.Quest.Deposits.(sQuestName).Interest;
+				GameInterface.TABLE_DEBIT.(row).td4.str = fts(stf(Pchar.Quest.Deposits.(sQuestName).Interest), 1);
 				if(HasSubStr(sQuestName, "_type1"))
 				{
 					GameInterface.TABLE_DEBIT.(row).td5.str = XI_ConvertString("DebitType1");
@@ -1316,7 +1349,7 @@ void FillPriceList(string _tabName, string  attr1)
 				if(iStoreQ == 0) continue;
 				GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
 				GameInterface.(_tabName).(row).UserData.IDX = i;
-				GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
+				GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
 				GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 				GameInterface.(_tabName).(row).td1.icon.offset = "20, 0";
 				GameInterface.(_tabName).(row).td1.icon.width = 40;
@@ -1330,6 +1363,7 @@ void FillPriceList(string _tabName, string  attr1)
 			}	
 		}
 	}
+		RestoreTableSorting(_tabName);
     Table_UpdateWindow(_tabName);
 }
 
@@ -1410,12 +1444,10 @@ void TradebookFillPriceList(string _tabName, string  attr1)
 	GameInterface.(_tabName).hr.td3.line_space_modifier = 0.8;
 	GameInterface.(_tabName).hr.td4.str = XI_ConvertString("Price buy");
 	GameInterface.(_tabName).hr.td4.line_space_modifier = 0.8;
-	GameInterface.(_tabName).hr.td5.str = XI_ConvertString("In the store");
+	GameInterface.(_tabName).hr.td5.str = XI_ConvertString("WeightHold");
 	GameInterface.(_tabName).hr.td5.line_space_modifier = 0.8;
-	GameInterface.(_tabName).hr.td6.str = XI_ConvertString("PackHold");
+	GameInterface.(_tabName).hr.td6.str = XI_ConvertString("In the store");
 	GameInterface.(_tabName).hr.td6.line_space_modifier = 0.8;
-	GameInterface.(_tabName).hr.td7.str = XI_ConvertString("PackWeightHold");
-	GameInterface.(_tabName).hr.td7.line_space_modifier = 0.8;
 	if (attr1 != "")
 	{
 	    // <--
@@ -1429,7 +1461,7 @@ void TradebookFillPriceList(string _tabName, string  attr1)
             GameInterface.(_tabName).(row).UserData.ID = Goods[i].name;
             GameInterface.(_tabName).(row).UserData.IDX = i;
             
-	        GameInterface.(_tabName).(row).td1.icon.group = GetGoodImageGroup(&Goods[i]);
+	        GameInterface.(_tabName).(row).td1.icon.group = "GOODS";
 			GameInterface.(_tabName).(row).td1.icon.image = Goods[i].name;
 			GameInterface.(_tabName).(row).td1.icon.offset = "5, 0";
 			GameInterface.(_tabName).(row).td1.icon.width = 40;
@@ -1461,17 +1493,19 @@ void TradebookFillPriceList(string _tabName, string  attr1)
 	        }
 	        if (CheckAttribute(nulChr, "PriceList." + attr1 + "." + sGoods + ".Qty"))
 	        {
-	            GameInterface.(_tabName).(row).td5.str = nulChr.PriceList.(attr1).(sGoods).Qty;
+	            GameInterface.(_tabName).(row).td6.str = nulChr.PriceList.(attr1).(sGoods).Qty;
+							GameInterface.(_tabName).(row).td5.str = GetGoodWeightByType(i, sti(nulChr.PriceList.(attr1).(sGoods).Qty));
 	        }
 	        else
 	        {
-	            GameInterface.(_tabName).(row).td5.str = "????";
+	            GameInterface.(_tabName).(row).td6.str = "????";
+							GameInterface.(_tabName).(row).td5.str = "????";
 	        }
-	        GameInterface.(_tabName).(row).td6.str = Goods[i].Units;
-			GameInterface.(_tabName).(row).td7.str = Goods[i].Weight;
+
 	        n++;
 	    }
     }
+		RestoreTableSorting(_tabName);
     Table_UpdateWindow(_tabName);
 }
 // <---
@@ -1550,3 +1584,294 @@ void SetTabsFontType(int fontType)
 		break;
 	}
 }
+
+void OnHeaderClick()
+{
+	string sControl = GetEventData();
+	int iColumn = GetEventData();
+
+	if (sControl == "TRADEBOOK_TABLE_CITY")          SortTradeBookTowns(iColumn, false);
+	if (sControl == "TRADEBOOK_TABLE_CITY_BY_GOOD")  SortTradeBookTownsByGood(iColumn, false);
+	if (sControl == "TABLE_CITY")                    SortStoreTowns(iColumn, false);
+	if (sControl == "TRADEBOOK_TABLE_GOODS")         SortTradeBookGoods(iColumn, false);
+	if (sControl == "TABLE_GOODS")                   SortStoreGoods(iColumn, false);
+	if (sControl == "TABLE_SHIP_PLACE")              SortShipsInStock(iColumn, false);
+	if (sControl == "TABLE_DEBIT")                   SortDebits(iColumn, false);
+	if (sControl == "TABLE_CREDIT")                  SortCredits(iColumn, false);
+}
+
+void SortShipsInStock(int column, bool preserveState)
+{
+  string datatype = "string";
+	switch (column)
+	{
+		case 1: datatype = "integer"; break; 
+		case 3: datatype = "integer"; break; 
+		case 6: datatype = "date"; break; 
+		case 7: datatype = "integer"; break; 
+	}
+	
+  QoLSortTable("TABLE_SHIP_PLACE", column, datatype, preserveState, 0);
+}
+
+void SortDebits(int column, bool preserveState)
+{
+  string datatype = "string";
+	switch (column)
+	{
+		case 2: datatype = "integer"; break; 
+		case 3: datatype = "date"; break; 
+		case 4: datatype = "integer"; break; 
+	}
+
+  QoLSortTable("TABLE_DEBIT", column, datatype, preserveState, 0);
+}
+
+void SortCredits(int column, bool preserveState)
+{
+  string datatype = "string";
+	switch (column)
+	{
+		case 2: datatype = "integer"; break; 
+		case 3: datatype = "date"; break; 
+		case 4: datatype = "integer"; break; 
+		case 5: datatype = "integer"; break; 
+	}
+
+  QoLSortTable("TABLE_CREDIT", column, datatype, preserveState, 0);
+}
+
+void SortTradeBookTowns(int column, bool preserveState)
+{
+  string datatype = "string";
+	switch (column)
+	{
+		case 1: datatype = "sIcon"; break; 
+		case 4: datatype = "date"; break; 
+	}
+  QoLSortTable("TRADEBOOK_TABLE_CITY", column, datatype, preserveState, 0);
+}
+
+void SortStoreTowns(int column, bool preserveState)
+{
+  string datatype = "string";
+	switch (column)
+	{
+		case 1: datatype = "sIcon"; break; 
+		case 4: datatype = "integer"; break; 
+		case 5: datatype = "integer"; break; 
+	}
+  QoLSortTable("TABLE_CITY", column, datatype, preserveState, 0);
+}
+
+void SortTradeBookGoods(int column, bool preserveState)
+{
+  string datatype = "string";
+	int offset = 0;
+	if (column == 2) offset = 4;
+
+	switch (column)
+	{
+		case 2: datatype = "intIcon"; break; 
+		case 3: datatype = "integer"; break; 
+		case 4: datatype = "integer"; break; 
+		case 5: datatype = "integer"; break; 
+		case 6: datatype = "integer"; break; 
+		case 7: datatype = "integer"; break; 
+	}
+  QoLSortTable("TRADEBOOK_TABLE_GOODS", column, datatype, preserveState, offset);
+}
+
+void SortStoreGoods(int column, bool preserveState)
+{
+  string datatype = "string";
+	int offset = 0;
+
+	switch (column)
+	{
+		case 2: datatype = "integer"; break; 
+		case 3: datatype = "integer"; break; 
+		case 4: datatype = "integer"; break; 
+	}
+  QoLSortTable("TABLE_GOODS", column, datatype, preserveState, offset);
+}
+
+void SortTradeBookTownsByGood(int column, bool preserveState)
+{
+  string datatype = "integer";
+	int offset = 0;
+	if (column == 3) offset = 4;
+	switch (column)
+	{
+		case 1: datatype = "sIcon"; break; 
+		case 2: datatype = "string"; break; 
+		case 3: datatype = "intIcon"; break; 
+	}
+  QoLSortTable("TRADEBOOK_TABLE_CITY_BY_GOOD", column, datatype, preserveState, offset);
+}
+
+void ShowCityByGoodMode()
+{
+  ChangeCityTableMode(1);
+	int iGood = sti(GameInterface.TRADEBOOK_TABLE_GOODS.(CurRow).UserData.idx);
+	TradebookFillPriceListByGood("TRADEBOOK_TABLE_CITY_BY_GOOD", iGood);
+}
+
+void HideCityByGoodMode()
+{
+	if (tradeCityMode == 0) IDoExit(45043);
+	else ChangeCityTableMode(0);
+}
+
+void ChangeCityTableMode(int newMode)
+{
+	tradeCityMode = newMode;
+	SetNodeUsing("TRADEBOOK_SCROLL_CITY", tradeCityMode == 0);
+	SetNodeUsing("TRADEBOOK_TABLE_CITY", tradeCityMode == 0);
+	SetNodeUsing("TRADEBOOK_TABLE_CITY_BY_GOOD", tradeCityMode == 1);
+	SetNodeUsing("TRADEBOOK_SCROLL_CITY_BY_GOOD", tradeCityMode == 1);
+}
+
+void TradebookFillPriceListByGood(string _tabName, int goodIdx)
+{
+	string  cityId;
+	int     i, cn, n;
+	ref     nulChr;
+	string  row;
+	aref    rootItems;
+	aref    curItem;
+	ref     rCity;
+  string sGoods = "Gidx" + goodIdx;
+	bool hasMap = false;
+	if (CheckMapForEquipped(pchar, "map_normal")) hasMap = true;
+	else if(CheckMapForEquipped(pchar, "map_best")) hasMap = true;
+
+  // шапка -->
+  GameInterface.(_tabName).select = 0;
+	GameInterface.(_tabName).hr.td1.str = XI_ConvertString("Nation");
+	GameInterface.(_tabName).hr.td1.line_space_modifier = 0.8;
+	GameInterface.(_tabName).hr.td2.str = XI_ConvertString("City");
+	GameInterface.(_tabName).hr.td2.line_space_modifier = 0.8;
+  GameInterface.(_tabName).hr.td3.str = XI_ConvertString("Type");
+	GameInterface.(_tabName).hr.td3.line_space_modifier = 0.8;
+	GameInterface.(_tabName).hr.td4.str = XI_ConvertString("ColonyDistance");
+	GameInterface.(_tabName).hr.td5.str = XI_ConvertString("Price sell");
+	GameInterface.(_tabName).hr.td5.line_space_modifier = 0.8;
+	GameInterface.(_tabName).hr.td6.str = XI_ConvertString("Price buy");
+	GameInterface.(_tabName).hr.td6.line_space_modifier = 0.8;
+	GameInterface.(_tabName).hr.td7.str = XI_ConvertString("WeightHold");
+	GameInterface.(_tabName).hr.td7.line_space_modifier = 0.8;
+	GameInterface.(_tabName).hr.td8.str = XI_ConvertString("In the store");
+	GameInterface.(_tabName).hr.td8.line_space_modifier = 0.8;
+  // <--
+
+	nulChr = &NullCharacter;
+	makearef(rootItems, nulChr.PriceList);
+	n = 1;
+	for (i=0; i<GetAttributesNum(rootItems); i++)
+	{
+	row = "tr" + n;
+	curItem = GetAttributeN(rootItems, i);
+	cityId = GetAttributeName(curItem);
+	cn = FindColony(cityId);
+	if (cn != -1)
+	{
+		rCity = GetColonyByIndex(cn);
+		GameInterface.(_tabName).(row).UserData.CityID  = cityId;
+		GameInterface.(_tabName).(row).UserData.CityIDX = cn;
+		GameInterface.(_tabName).(row).td1.icon.group  = "NATIONSQ";
+		GameInterface.(_tabName).(row).td1.icon.image  = Nations[sti(rCity.nation)].Name;
+		GameInterface.(_tabName).(row).td1.icon.width  = 35;
+		GameInterface.(_tabName).(row).td1.icon.height = 35;
+		GameInterface.(_tabName).(row).td1.icon.offset = "13, 2";
+		GameInterface.(_tabName).(row).td2.str = GetConvertStr(cityId + " Town", "LocLables.txt");
+		GameInterface.(_tabName).(row).td3.icon.group = "TRADE_TYPE";
+		GameInterface.(_tabName).(row).td3.icon.image = "ico_" + nulChr.PriceList.(cityId).(sGoods).TradeType;
+		GameInterface.(_tabName).(row).td3.icon.offset = "5,2";
+		GameInterface.(_tabName).(row).td3.icon.width = 24;
+		GameInterface.(_tabName).(row).td3.icon.height = 34;
+		if (hasMap) GameInterface.(_tabName).(row).td4.str = makeint(_GetDistanceToColony2D(rCity.id)/100 + 0.5);
+		else GameInterface.(_tabName).(row).td4.str = "???";
+		if (CheckAttribute(nulChr, "PriceList." + cityId + "." + sGoods + ".Buy"))
+		{
+				GameInterface.(_tabName).(row).td5.str = nulChr.PriceList.(cityId).(sGoods).Buy;
+		}
+		else
+		{
+				GameInterface.(_tabName).(row).td5.str = "???";
+		}
+		if (CheckAttribute(nulChr, "PriceList." + cityId + "." + sGoods + ".Sell"))
+		{
+				GameInterface.(_tabName).(row).td6.str = nulChr.PriceList.(cityId).(sGoods).Sell;
+		}
+		else
+		{
+				GameInterface.(_tabName).(row).td6.str = "???";
+		}
+		if (CheckAttribute(nulChr, "PriceList." + cityId + "." + sGoods + ".Qty"))
+		{
+				GameInterface.(_tabName).(row).td8.str = nulChr.PriceList.(cityId).(sGoods).Qty;
+				GameInterface.(_tabName).(row).td7.str = nulChr.PriceList.(cityId).(sGoods).Qty;
+		}
+		else
+		{
+				GameInterface.(_tabName).(row).td7.str = "????";
+				GameInterface.(_tabName).(row).td8.str = "????";
+		}
+		n++;
+	  }
+  }
+
+	Table_UpdateWindow(_tabName);
+}
+
+//Whether on worldmap or not. Supports Hook's mod position fix
+void GetCorrectShipCoords(ref X, ref Y)
+{
+	if(IsEntity(&worldMap))
+	{
+		X = sti(worldMap.playerShipX);
+		Y = -sti(worldMap.playerShipZ);
+	}
+		else
+	{
+		// Compability with Hook's mod (LDH 14Mar17 add check for on dock, display last ship location before docking)
+		// this cannot be implemented without modifying sea.c
+		if (!bSeaActive && CheckAttribute(pchar, "shipx"))
+		{
+			X = GetSeaShipX(stf(pchar.shipx));
+			Y = -GetSeaShipZ(stf(pchar.shipz));
+		}
+		else
+		{
+			X = GetSeaShipX(stf(pchar.Ship.Pos.X));
+			Y = -GetSeaShipZ(stf(pchar.Ship.Pos.Z));
+		}
+	}
+	
+	X+=1000;
+	Y+=1000;
+}
+
+//Correct version of GetDistanceToColony2D
+int _GetDistanceToColony2D(string _sColony)
+{
+	ref rColony = GetColonyRefByID(_sColony);
+	string sColonyIslandID = rColony.Island;
+	string sColonyTown = _sColony + "_town";
+
+	if(_sColony == "FortOrange") sColonyTown = "Shore36";
+	if(_sColony == "LaVega") sColonyTown = "lavega_port";
+	if(_sColony == "Minentown"){
+		sColonyIslandID = "cumana";
+		sColonyTown = "shore19";
+	}
+
+	float X1, Z1;
+	GetCorrectShipCoords(&X1, &Z1)
+	float X2 = makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.x)+1000;
+	float Z2 = -makefloat(worldMap.islands.(sColonyIslandID).(sColonyTown).position.z)+1000;
+	
+	return makeint(GetDistance2D(X1, Z1, X2, Z2));
+}
+///espkk. utils <--

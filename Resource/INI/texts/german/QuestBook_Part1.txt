@@ -1480,6 +1480,74 @@ P.P.S. Wenn du es wirklich verdienst, Teil unserer Bruderschaft zu sein, wirst d
 ************************************************************
 Du hast die Prüfungen bestanden, die nur wenige Auserwählte meistern können. Du hast bewiesen, dass du beobachten, dich verbergen, geheime Gespräche führen und jeden deiner Schritte planen kannst. Jetzt bist du einer von uns. Der Inhalt dieser Truhe ist dein persönlicher Vorrat für schwere Zeiten, und dieser Raum ist dein sicheres Versteck. Halte diesen Moment in Erinnerung. Von heute an bist du nicht mehr einfach ein Teil der grauen Masse – du gehörst zur Bruderschaft.
 
+#QUEST LeFransua_town_Letter
+Die Geheimnisse von Le Fransua
+
+#TEXT 1
+************************************************************
+Anne, mein Leid und meine Muse...
+Du streifst jetzt wahrscheinlich durch die Stadt, suchst nach mir... Mach dir die Mühe nicht. Ich bin schon auf See.
+Und verdammt, glaub nicht, dass es mir leichtgefallen ist. Diese Trottel haben mir keine Wahl gelassen – entweder sie dulden dich und teilen mit keiner Hure, oder sie teilen mit dir, aber du bist raus aus der Crew... Ich war wütend, Anne, aber sich mit einer Horde bewaffneter Idioten anzulegen, ist keine gute Idee.
+Hätte ich ihnen die Hinweise vorenthalten, wäre ich meinen frisch errungenen Kapitänsposten gleich wieder los gewesen. Also werde ich erst ihr Vertrauen gewinnen, und dann kommst du zurück. Und dann führen wir diese Köter gemeinsam, ich schwöre bei meinem letzten Hemd.
+Ich habe dir alles dagelassen, was ich bei mir hatte. Es reicht, um nach Nassau zu kommen... es sei denn, du landest unterwegs wieder im Bett mit irgendwem. Die Notizen sind in der Stadt versteckt. Sammle sie – dann weißt du, wohin du musst. Ich habe Orte gewählt, an die nur du denken würdest.
+
+#TEXT 2
+************************************************************
+Ja, ja, „Verpiss dich, Jack!“, – ich höre dich das gerade sagen. „Erst haust du ab, und jetzt soll ich auch noch hinter ein paar beschissenen Zetteln herlaufen?!“
+Was hätte ich sonst tun sollen? Hier ist niemand, dem ich auch nur einen verrotteten Kupferling anvertrauen würde. Und Barbazons Köter wie Marco – die würden für ein paar Dublonen ihre eigene Mutter anketten. Glaub mir, von allen beschissenen Optionen war das die beste.
+
+P.S. Auf dem höchsten Hügel der Insel. Aber renn nicht gleich hin, bevor du nicht alles hast.
+
+#TEXT 3
+************************************************************
+Nassau ändert sich jede verdammte Minute. Wenn du zurückkommst, flüster deiner „Freundin“, dass ich alles wissen will, was in der Stadt passiert. Jedes Gerücht, jedes Wort.
+Aber jetzt – brauchst du einen Schlüssel. Er ist gut versteckt. Such nach einem engen Durchgang hinter einem Fass – dort, wo über deinem Kopf Wachen patrouillieren.
+P.S. Alles, was du brauchst, findest du unter diesem armseligen Festungsbau. Ich hätte es besser gebaut.
+
+#TEXT 4
+************************************************************
+Mit dem Zeug kommst du nach Nassau.
+Wir schaffen das, Anne. Und wir werden wieder zusammen sein wie früher. Ich glaube, das Schicksal hat mir Größe als Kapitän bestimmt, und Größe gibt es nicht umsonst. Aber ich schwöre dir, jedes Mal, wenn jemand den Namen von Kapitän Jack Rackham sagt, wird er auch deinen Namen nennen.
+Warte in Nassau. Ich komme mit Beute zurück. Und wenn nicht, musst du dir jemand anderen suchen, der deinen Charakter aushält. Viel Glück damit.
+
+#QUEST FortFrance_town_Letter
+Die Geheimnisse von Saint-Pierre
+
+#TEXT 1
+************************************************************
+Mein Freund. Ich musste Saint-Pierre überstürzt verlassen. Ich kann kein Teil eines Spiels mehr sein, in dem Ehre keinen Platz hat und das Leben eines Bruders nur eine Verhandlungsmasse ist. Solange es im Orden Männer gibt, die ihr Gewissen verkauft haben, weigere ich mich, ihm zu dienen.
+Michel wurde verhaftet. Pietro wurde getötet. Er wusste, welches Risiko er einging, und vor seiner letzten Mission hat er uns alles vermacht, was er hatte. Ich wollte es dir persönlich übergeben, aber das war mir nicht möglich.
+Ich habe dir ein paar Notizen an Orten versteckt, die du gut kennst. Darin findest du Hinweise. Sammle sie. Sie führen dich dorthin, wo sich alles offenbart.
+P.S. Alle Truhen sehen gleich aus. Doch nur eine enthält das, was du wirklich brauchst.
+
+#TEXT 2
+************************************************************
+Vielleicht wirst du mich für meinen Abschied verurteilen. Aber ich hatte keine Wahl. Ich werde meinen Brüdern und dem Herrn bis ans Ende meiner Tage treu bleiben – aber nicht denen, die ihren Eid aus Gier gebrochen haben. Und ich werde niemals Alicias Leben aufs Spiel setzen. Es war das Opfer wert, alles zu verlieren, um die Liebe meines Lebens am Ende der Welt zu finden!
+P.S. Suche die Tür, durch die man hineinsehen kann.
+
+#TEXT 3
+************************************************************
+Ich sollte denselben Auftrag erfüllen wie Pietro. Aber zu Hause warteten sie schon auf mich. Drei Mann. Söldner. Wir gerieten aneinander, und ich hatte Glück, lebend davon zu kommen.
+Bevor sie zu den Waffen griffen, überbrachten sie mir einen "Gruß" von Levasseur. Nach Pietros Tod und Michels Verhaftung konnte er sich denken, dass jemand Jagd auf ihn macht. Aber er konnte nicht wissen, wer genau geschickt wird – den Namen kannte nur die oberste Führung und der Kommandeur.
+Verräter in den Reihen der Bruderschaft!
+P.S. Geh nach unten. So lange, bis keine Stufe mehr tiefer führt.
+
+#TEXT 4
+************************************************************
+Als alles vorbei war und ich das Haus verließ, traf ich auf Valigny. Sein Grinsen sprach Bände: Er war es, der die Söldner zu meinem Haus geführt hat. Und kein noch so frommes Gerede wird mich vom Gegenteil überzeugen.
+P.S. Dein Weg führt zu dem Ort, den ich verlassen habe.
+P.S.S. Um zum Versteckten zu gelangen, brauchst du einen Schlüssel. Suche ihn dort, wo jeder von uns Kraft und Inspiration schöpft, wenn er zum Schöpfer spricht.
+
+#TEXT 5
+************************************************************
+Du kennst die Wahrheit über die Verschwörung. Du weißt von der Mine auf Sint Maarten. Von der Jagd auf "Heinrich".
+Zuerst kam Michel ohne Prozess ins Verlies – du weißt, wer den Befehl gab. Dann starb Pietro. Jetzt bin ich an der Reihe.
+Das Leben unserer Brüder ist für diese Leute nichts als ein Mittel zum Zweck – um an der Macht zu bleiben und ihre Probleme zu lösen. Die Besten unter uns sterben oder landen im Gefängnis. Durch jemanden, den du gut kennst, wird der Orden bald zu einer Söldnerbande – genauso wie Rodenburgs Schlächter.
+Bald werde ich dem Großmeister einen Brief schicken – ich bin sicher, er wird alles aufklären und die einzig richtige Entscheidung treffen.
+Ich nehme Alicia und gehe nach Port Royal.
+Gott schütze dich.
+Und wenn sich unsere Wege eines Tages wieder kreuzen – hoffe ich, du wirst mich noch einen Freund nennen.
+
 #QUEST LadyBeth_Book
 Blackwoods Tagebuch
 #TEXT 1
@@ -1591,3 +1659,16 @@ Der Schamane hat den Schädel abgerissen und irgendwo versteckt! Ein Federnarr! 
 Ich habe ihm alles erzählt. Ein unglaubliches Gefühl. Jetzt weiß ich, was zu tun ist! "Lass den Toten den Lebenden lehren." Natürlich! Es reicht nicht, Menschen vor Ketten oder dem Strick zu retten. Man muss sie vor dem Tod selbst retten! Und das geht nur, wenn man einen anderen durch das schickt, was ich selbst erlebt habe. Sterben und zurückkehren. Tun sie mir leid? Natürlich. Aber I. hatte recht. Mich hat auch nie jemand bemitleidet.
 
 Einen neuen Schädel habe ich schon gefunden—nicht jeder besteht die Prüfung des Todes. So ist es sogar besser. Sollen Mortimers Augenhöhlen auf Dominica bleiben und nicht sehen, was auf seinem Schiff geschieht. Er würde es nicht verstehen.
+
+#QUEST LEDR_Book_1
+Auszüge aus dem Tagebuch von Diego Velázquez de Cuéllar
+#TEXT 1
+"Heute haben wir ein weiteres Dorf von Wilden ausgelöscht. Keiner von ihnen hielt unseren Klingen stand. Männer, die Widerstand leisteten, töteten wir auf der Stelle, die anderen ketteten wir. Ihre Hütten verbrannten völlig, die Getreidespeicher lagen leer, und alles Wertvolle wurde unsere Beute. Diejenigen, die versuchten, Kinder zu verstecken, wurden erschlagen vor den Augen der Überlebenden. Ihre Tränen floßen wie Flüsse und wässerten den Triumph unserer Banner. Dieses Land gehört nun Spanien. Wir brachten hier Ordnung und den Willen des Herrn, auch wenn es Blut kostete."
+
+"Mein Plan ist erfüllt. Die Wilden kamen zu Verhandlungen. Ihre Häuptlinge saßen am Feuer und glaubten naiv an Frieden. Aber wahrer Frieden kommt nur durch Blut. Wir umzingelten die Hütte, verkeilten die Tür und entzündeten sie. Anfangs kamen Schreie – wütend, verzweifelt. Doch dann verstummte alles, nur das Knistern des Feuers durchbrach die Stille. Der Geruch verbrannten Fleisches erfüllte die Luft, wie ein Segen des Herrn selbst. Diese Wilden werden nie wieder ihre Köpfe erheben."
+
+"Cacique Atuéy erhielt seine gerechte Strafe. Ich zwang ihn zuzusehen, wie sein Volk hingerichtet wurde: Frauen in die Feuer geworfen, Jungen enthauptet, und Kinder schrien vor Furcht. Man band ihn an einen Pfahl in der Mitte eines großen Scheiterhaufens. Ich sah mit meinen eigenen Augen, wie die Flammen seinen Körper umarmten. Aber er schrie nicht aus Schmerz. Nein, seine Stimme war voller Verachtung uns gegenüber. Selbst im Sterben fand er die Kraft, Flüche gegen uns zu schleudern. Dummer Wilder! Er glaubte, seine Worte könnten uns erschrecken. Der Wind wird diesen Wahnsinn zusammen mit der Asche seines Körpers verwehen."
+
+"Nach dieser Hinrichtung begann ich Seltsames zu bemerken. Am Tag predigten die Mönche von Gottes Gnade, doch nachts begannen Schatten um uns herum zu leben. Ich glaubte, die Weinen der Frauen, die Schreie der Kinder und die Flüche der Wilden in meinen Ohren zu hören. Letzte Nacht starb einer der Matrosen. Sein Körper wurde zerrissen wie von wilden Tieren. Ich befahl allen zu beten, doch die Gebete waren nutzlos. Jetzt bin ich überzeugt: Es ist Atuéy. Er hat einen Fluch über uns gebracht. Diese Barbaren vergeben nicht. Niemals."
+
+"Der Fluch... Er verlässt mich nicht. Er nistet in mir wie eine Schlange, die mein Herz umschlingt. Jede Nacht sehe ich brennende Hütten, höre Schreie und Stöhnen der Toten, die mich zur Rechenschaft rufen. Ihre verkohlten Skelette erheben sich aus der Asche, ihre leeren Augenhöhlen blicken mich mit Hass an. Selbst jetzt, in diesem Zimmer, höre ich Schritte. Die Tür knarrt leise, als würde jemand eintreten, doch ich sehe niemanden. Meine Hände zittern so sehr, dass die Feder kaum gehorcht. Es gibt kein Heil. Der Herr hat mich verlassen, wie ich die Barmherzigkeit verließ. Sie sind schon nah. Bald werden sie mich holen..."

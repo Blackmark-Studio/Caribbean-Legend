@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("Voice\English\Enc_RapersGirl_1.wav");
-				dialog.text = "Herr! Herr, hilfe! Mord!";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", hilfe! Mord!";
 				link.l1 = "Hä? Wen ermorden? Wo? Ist das ein Witz, meine Liebe?";
 				link.l1.go = "FMQP";
 				break;
@@ -332,7 +332,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, французские миниквесты (”ЊЉ) Џорт Џренс
 		case "FMQP":
-			dialog.text = "Nein, keine Witze! Oben! Zwei Schläger ermorden einen edlen Herrn! Helfen Sie ihm, Kapitän, Sie sind der einzige bewaffnete Mann hier!";
+			dialog.text = "Nein, keine Witze! Oben! Zwei Schläger ermorden einen edlen Herrn! Hilfe, Kapitän! Außer Ihnen ist hier niemand bewaffnet!";
 			link.l1 = "Lauf draußen, ruf die Wachen! Ich gehe nach oben!";
 			link.l1.go = "FMQP_1";
 			link.l2 = "Mein Liebling, du musst mich für einen Wächter gehalten haben. Rufe eine Patrouille im Falle eines Mordes.";

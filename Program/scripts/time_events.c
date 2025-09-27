@@ -67,8 +67,7 @@ void WorldSituationsUpdate()
 	{
 		case 0:		
 			DailyEatCrewUpdate();
-		
-            DeleteAttribute(pchar, "SkipEshipIndex");// boal
+
 			Log_QuestInfo("WorldSituationsUpdate DailyEatCrewUpdate");
 
 			UpdateSeeds();
@@ -95,6 +94,7 @@ void WorldSituationsUpdate()
 			}
 			// трем эскадру у Тортуги
 			Tortuga_DeleteShipGuard();
+			PostEvent("Event_PerkCollection", 500);
 		break;
 		
 		case 1:			
@@ -112,7 +112,8 @@ void WorldSituationsUpdate()
 					if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
 				}
 			}
-
+			
+			if (GetDLCenabled(DLC_APPID_1) && !CheckAttribute(pchar, "questTemp.LoyaltyPack") && pchar.rank >= 4) DoQuestFunctionDelay("LoyaltyPack_Start", 1.0);
 			// Мерзкий Божок - без НИ
 			if (GetDLCenabled(DLC_APPID_2) && !CheckAttribute(pchar, "questTemp.CG_SpawnAguebana") && pchar.rank >= 9) DoQuestFunctionDelay("ChickenGod_BrothelCheck", 1.0);
 			// Чёрная Метка - без НИ
@@ -146,13 +147,12 @@ void WorldSituationsUpdate()
 					CheckMemento();
 				}
 			}
+			// Дикая Роза - без НИ
+			if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= 0 && !CheckAttribute(pchar, "questTemp.Tieyasal_final")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false);
 			CheckAchievments();
 		break;
 		
 		case 2:				
-			// Jason: ежедневная переустановка сторожевиков Тортуги
-			Tortuga_SetShipGuard();
-			ProcessHullDecrease();	// учёт безвозвратной убыли корпуса
 			ProcessDayRepair();
 			
 			// Addon 2016-1 Jason пиратская линейка
@@ -227,6 +227,7 @@ void WorldSituationsUpdate()
 		
 		case 9:		
 			if(GetDataDay() == 28) UpdateReputation();
+			UpdateCrewInDockedShips(); // обновляем команду на кораблях на приколе
 		break;
 		
 		case 10:

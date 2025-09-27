@@ -1,0 +1,396 @@
+Antigua {Antigua}
+Barbados {Barbados}
+Bermudes {Isla del Tesoro}
+Beliz {Yucatán}
+Cuba {Kuba}
+Cuba1 {Kuba}
+Cuba2 {Kuba}
+Caiman {Kajmán-szigetek}
+Cumana {Fô}
+Caracas {Fô}
+Curacao {Curacao}
+Cartahena {Fô}
+Dominica {Dominika}
+Guadeloupe {Guadeloupe}
+Hispaniola {Hispaniola}
+Hispaniola1 {Hispaniola}
+Hispaniola2 {Hispaniola}
+Jamaica {Jamaica}
+Maracaibo {Fô}
+Martinique {Martinique}
+SentMartin {Saint-Martin}
+Nevis {Szent Kristóf}
+PuertoRico {Puerto Rico}
+PortoBello {Fô}
+Pearl {Pearl Beach}
+Panama {Panama}
+SantaCatalina {Fô}
+Terks {Törökök}
+Tortuga {Tortuga}
+Trinidad {Trinidad}
+Tenotchitlan {Lago Peten}
+Mein {Fô}
+KhaelRoa {Khael Roa}
+Ksochitam {Ksocheatem}
+RockIsland {Északi zátonyok}
+Providence {Providence}
+SantaQuiteria {Santa Quiteria}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaDeCoche {Isla de Coche}
+Tobago {Tobago}
+MarieGalante {Marie Galante}
+SentJons_town {St. John's}
+Pirates_town {Sharptown}
+Bridge_town {Bridgetown}
+Beliz_town {Belize}
+Santiago_town {Santiago}
+PuertoPrincipe_town {Puerto del Principe}
+Havana_town {Havanna}
+Cumana_town {Cumana}
+Caracas_town {Caracas}
+Villemstad_town {Willemstad}
+Cartahena_town {Cartagena}
+BasTer_town {Basse-Terre}
+SantoDomingo_town {Santo Domingo}
+LaVega_town {La Vega}
+PortPax_town {Kikötô-au-Prince}
+PortRoyal_town {Port Royal}
+Maracaibo_town {Maracaibo}
+FortFrance_town {Saint-Pierre}
+LeFransua_town {Le Francois}
+Marigo_town {Philipsburg}
+Charles_town {Capsterville}
+SanJuan_town {San Juan}
+PortoBello_town {Portobello}
+Panama_town {Panama}
+SantaCatalina_town {Blueweld}
+Tortuga_town {Tortuga}
+PortSpein_town {San Jose}
+Tenotchitlan_town {Tayasal}
+FortOrange_town {Maroon Town}
+Providence_town {San Andres}
+Estate {Oglethorpe birtok, Anglia}
+DesMoines {Des Moines}
+LosTeques_town {Los-Teques bánya}
+ExitMine {Átjáró a bányába}
+Factoria {Factoria}
+Shore1 {Boon-fok}
+Shore2 {Falmouth Cove}
+Shore3 {Benures-öböl}
+Shore4 {Harrison-fok}
+Shore5 {Cape Ragged Point}
+Shore6 {Catoche-fok}
+Shore7 {Cozumel-öböl}
+Shore8 {Chetumal-öböl}
+Shore9 {Amatique-öböl}
+Shore10 {Caratasca-lagúna}
+Shore11 {Camaguey-fok}
+Shore12 {Anna Maria-öböl}
+Shore13 {Batabano Bay}
+Shore14 {Juventud-öböl}
+Shore15 {San Antonio-fok}
+Shore16 {Sivatagi part}
+Shore17 {Esmeralda-öböl}
+Shore18 {Boca de la Serpienta partja}
+Shore19 {Carupano öböl}
+Shore20 {Los-Teques Beach}
+Shore21 {Aruba-fok}
+Shore22 {Van Hato partja}
+Shore23 {Santa Maria-fok}
+Shore24 {Blanca-lagúna}
+Shore25 {Covenas-öböl}
+Shore26 {Castle Bruce Beach}
+Shore27 {Cape Scott's Head}
+Shore28 {Morne-a-l'Eau Cove}
+Shore29 {Capster Beach}
+Shore30 {Grand-Bourg Cove}
+Shore31 {Cape Inaccessible}
+Shore32 {Isabella-fok}
+Shore33 {Samana Cove}
+Shore34 {Gonaives-öböl}
+Shore35 {Negril-fok}
+Shore36 {Portland-öböl}
+Shore37 {Guajira-öböl}
+Shore38 {Lamentin öböl}
+Shore39 {Le Marin-öböl}
+Shore40 {Grand Case Beach}
+Shore41 {Simpson-öböl}
+Shore42 {Sandy-öböl}
+Shore43 {Half Moon Bay}
+Shore44 {Aguadilla-öböl}
+Shore45 {Fajardo Beach}
+Shore46 {Chiriqui lagúna}
+Shore47 {Mosquitoes Bay}
+Shore48 {Golfo del Darien}
+Shore49 {Papagayo-öböl}
+Shore50 {Nicoya-öböl}
+Shore51 {Coronado öböl}
+Shore52 {Golfo Dulce}
+Shore53 {Mosquito partvidék}
+Shore54 {Cape Perlas}
+Shore55 {San Juan del Norte-öböl}
+Shore56 {Északi öböl}
+Shore57 {Déli öböl}
+Shore58 {Fisheye Beach}
+Shore59 {Scarborough-öböl}
+Shore60 {Galera-fok}
+Shore61 {Tepeyakak}
+Shore62 {Iztapalapa}
+Shore63 {San Miguel-öböl}
+Shore64 {Reef Cove}
+Shore65 {Rocky Cove}
+Shore66 {Shark Beach}
+Shore66_1 {Elátkozott öböl}
+Shore67 {Skeleton Reef}
+Shore67_1 {Skeleton Reef - Nyugat}
+Shore67_2 {Skeleton Reef - Kelet}
+Shore68 {Ingallado Cove}
+Shore69 {Santa Maria del Mar strand}
+Shore70 {Slave Cove}
+Shore71 {Scorn Cape}
+Shore72 {Oriente Cove}
+Shore73 {Cape Machete}
+Shore74 {Crab Beach}
+Shore75 {Governor's Cove}
+Shore76 {A megfulladt ember foka}
+Shore77 {Vieques-öböl}
+Shore78 {Buccaneers Bay}
+Shore79 {Cabo Rojo-fok}
+Shore_ship1 {Sabo-Matila-öböl}
+Shore_ship2 {Veszélyes öböl}
+Shore_ship3 {Cape of Delusive Hopes}
+Shore_ship4 {Elátkozott öböl}
+Shore_mask {Guardian's Grotto}
+Mayak1 {Trinidad világítótorony}
+Mayak2 {Barbados világítótorony}
+Mayak3 {Port Royal világítótorony}
+Mayak4 {Guadeloupe világítótorony}
+Mayak5 {Saint Christopher világítótorony}
+Mayak6 {Tortuga világítótorony}
+Mayak7 {Kikötô-au-Prince világítótorony}
+Mayak8 {Santo Domingo világítótorony}
+Mayak9 {Santiago világítótorony}
+Mayak10 {Havanna világítótorony}
+Mayak11 {Cartagena világítótorony}
+Bridgetown {Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown Fort {Bridgetown erôdje}
+Bridgetown Port {Bridgetown kikötôje}
+SanJuan {San Juan}
+SanJuan Town {San Juan}
+SanJuan Fort {San Juan erôdje}
+SanJuan Port {San Juan kikötôje}
+Santiago {Santiago}
+Santiago Town {Santiago}
+Santiago Fort {Santiago erôd}
+Santiago Port {Santiago kikötô}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe Fort {Puerto del Principe erôdje}
+PuertoPrincipe Port {Puerto del Principe kikötôje}
+SentJons {St. John's}
+SentJons Town {St. John's}
+SentJons Fort {Szent János erôdje}
+SentJons Port {St. John's kikötôje}
+PortRoyal {Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal Fort {Port Royal erôd}
+PortRoyal Port {Port Royal kikötôje}
+FortOrange {Maroon Town}
+FortOrange Town {Maroon Town}
+Villemstad {Willemstad}
+Villemstad Town {Willemstad}
+Villemstad Fort {Willemstad erôdje}
+Villemstad Port {Willemstad kikötôje}
+BasTer {Basse-Terre}
+BasTer Town {Basse-Terre}
+BasTer Fort {Basse-Terre erôdje}
+BasTer Port {Basse-Terre kikötôje}
+LaVega {La Vega}
+LaVega Town {La Vega}
+LaVega Fort {La Vega erôdje}
+LaVega Port {La Vega kikötôje}
+SantoDomingo {Santo Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo Fort {Santo-Domingo erôd}
+SantoDomingo Port {Santo-Domingo kikötôje}
+PortPax {Kikötô-au-Prince}
+PortPax Town {Kikötô-au-Prince}
+PortPax Fort {Kikötô-au-Prince erôdje}
+PortPax Port {Kikötô-au-Prince kikötôje}
+Pirates {Sharptown}
+Pirates Town {Sharptown}
+Pirates Port {Sharptown kikötôje}
+FortFrance {Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance Fort {Saint-Pierre erôdje}
+FortFrance Port {Saint-Pierre kikötôje}
+LeFransua {Le Francois}
+LeFransua Town {Le Francois}
+LeFransua Port {Le Francois kikötôje}
+Havana {Havanna}
+Havana Town {Havanna}
+Havana Fort {Havanna erôdje}
+Havana Port {Havanna kikötôje}
+Charles {Capsterville}
+Charles Town {Capsterville}
+Charles Fort {Capsterville erôdje}
+Charles Port {Capsterville kikötôje}
+PortoBello Town {Portobello}
+PortoBello Fort {Portobello erôdje}
+PortoBello Port {Portobello kikötôje}
+PortSpein {San Jose}
+PortSpein Town {San Jose}
+PortSpein Fort {San Jose erôdje}
+PortSpein Port {San Jose kikötôje}
+Tortuga Town {Tortuga}
+Tortuga Fort {Tortuga erôdje}
+Tortuga Port {Tortuga kikötôje}
+Marigo {Philipsburg}
+Marigo Town {Philipsburg}
+Marigo Fort {Philipsburg erôdje}
+Marigo Port {Philipsburg kikötôje}
+Panama Town {Panama}
+Panama Fort {Panama erôdje}
+Panama Port {Panama kikötôje}
+Cartahena Town {Cartagena}
+Cartahena Fort {Cartagena erôdje}
+Cartahena Port {Cartagena kikötôje}
+Maracaibo Town {Maracaibo}
+Maracaibo Fort {Maracaibo erôdje}
+Maracaibo Port {Maracaibo kikötôje}
+Caracas Town {Caracas}
+Caracas Fort {Caracas erôdje}
+Caracas Port {Caracas kikötôje}
+Cumana Town {Cumana}
+Cumana Fort {Cumana erôdje}
+Cumana Port {Cumana kikötôje}
+SantaCatalina Town {Blueweld}
+SantaCatalina Fort {Blueweld erôdje}
+SantaCatalina Port {Blueweld kikötôje}
+Beliz Town {Belize}
+Beliz Fort {Belize erôdje}
+Beliz Port {Belize kikötôje}
+SanAndres {San Andres}
+SanAndres Town {San Andres}
+SanAndres Fort {San Andres erôdje}
+SanAndres Port {San Andres kikötôje}
+IslaMona Town {Isla Mona}
+LosTeques {Los-Teques bánya}
+LosTeques Town {Los-Teques bánya}
+Duel Field {Duel Field}
+Boarding deck {Fedélzet}
+Orlop deck {Orlop fedélzet}
+Fort inside {Erôd}
+Sea {Tenger}
+Jungle {Dzsungel}
+Street {Utcák}
+ExitTown {Átjáró a dzsungelbe}
+Graveyard {Temetô}
+Port {Kikötô}
+Tavern {Kocsma}
+Tavern upstairs {Szoba a kocsmában}
+Store {Áruház}
+Shipyard {Hajógyár}
+PackHouse {Raktár}
+Townhall {Kormányzói kúria}
+TownhallRoom {A kúria szobája}
+Residence {Lakóhely}
+PortOffice {Kikötôiroda}
+Church {Templom}
+Incquisitio {Inkvizíció}
+Maltese Order {Máltai rend}
+Incas Temple {Inka templom}
+Usurer House {Bank}
+House {Ház}
+ammo {Fegyverraktár}
+shack {Kunyhó}
+Room {Szoba}
+Cabinet {Vizsgálat}
+Bedroom {Hálószoba}
+Сhapel {Kápolna}
+Crypt {Kripta}
+Exit {Kilépés}
+The cavern {Barlang}
+????? {?????}
+Passage (мост)Beach { }
+Cave {Barlang}
+Cave entrance {A barlang bejárata}
+FloodedCave {Vízbefúlt barlang}
+Grot {Grotto}
+Prison {Börtönbüntetés}
+Lighthouse Inside {Világítótorony belül}
+Mines {Aknák}
+Dungeon {Dungeon}
+Gate {Városkapu}
+Brothel {Bordélyház}
+Brothel Room {Magánszoba}
+Village {Hamlet}
+Plantation {Ültetvény}
+UnderWater {Víz alatti}
+Grotto {Grotto}
+Dunes house {Dûne ház}
+Torture room {Kínzó szoba}
+Wine Cellar {Borospince}
+cabine {Kisház}
+My_Campus {Wardroom}
+My_Deck_Medium {Ágyúfedélzet}
+My_Deck {Raktér}
+My_Ship {Kiszállítás}
+Drugstore {Gyógyszertár}
+HWIC_flat {HWIC fôhadiszállás}
+Comendant's House {Havannai Parancsnoki Ház}
+Tibo House {Henri Thibaut háza}
+Gaspard_Gold House {Gaspard Goldenteeth háza}
+Ascold House {Fadey háza}
+Abby_House {Abigail Shneur háza}
+Knippel_House {Charley Knippel háza}
+Fleetwood_House {Richard Fleetwood háza}
+Comendant_House {A San Jose-i parancsnok háza}
+Svensons_house {Jan Svenson háza}
+Gladis_house {Gladys McArthur háza}
+Gonsales_house {Enrique Gonzales háza}
+Loxly_house {Albert Locksley irodája}
+Kristian_house {Christian’s House}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+LSC South {A halott hajók szigete - Dél}
+LSC North {Holt hajók szigete - észak}
+LSC Town {Loco-Riferte utcái}
+Ava Cabin {Galleon 'Eva'}
+Caroline cabin {Frigate 'Carolina'}
+CeresSmithy cabin {Fleut 'Ceres Smithy'}
+EsmeraldaStoreBig cabin {Galleon 'Esmeralda'}
+FenixPlatform cabin {Platform of 'Phoenix'}
+FernandaDiffIndoor cabin {Fleut 'Fernanda'}
+FleuronTavern cabin {Caravel 'Fleron'}
+FurieShipInside2 cabin {Pinnace 'Fury'}
+GloriaChurch cabin {Galleon 'Gloria'}
+PlutoStoreSmall cabin {Fleut 'Pluto'}
+ProtectorFisher cabin {Corvette 'Protector'}
+SanAugustineResidence cabin {Warship 'San Augustine'}
+SanGabrielMechanic cabin {Barque 'San Gabriel'}
+SantaFlorentinaShipInside4 cabin {Brig 'Santa Florentina'}
+TartarusPrison cabin {Battleship 'Tartarus'}
+VelascoShipInside1 cabin {Galleon 'Velasco'}
+Tenochtitlan {Tayasal}
+Temple_1 {Tohil templom}
+Temple_2 {Kauil templom}
+Temple_3 {Chak temploma}
+Temple_4 {Kinich Ahaw temploma}
+Temple_5 {Itzamna temploma}
+Temple_6 {Ek Chuah temploma}
+TempleTreasure {Kincstár}
+TempleGreatInside {Nagy Templom}
+TempleRoundInside {Kukulcan templom}
+TempleUnderwater {Víz alatti labirintus}
+Maze {Chavins templom}
+Alcove {Szentély}
+Merrimancave {Merriman rejtekhelye}
+River {Folyó partja}
+Jungle Fort {Dzsungel erôd}
+Basement {Pince}
+Ruins {Romok}
+Ulysse {Az Ulysse fedélzetén}
+La Espada Del Rey { }

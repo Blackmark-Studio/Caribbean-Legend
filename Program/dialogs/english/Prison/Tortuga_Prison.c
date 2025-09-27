@@ -15,7 +15,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "What is the purpose of your visit to Tortuga, Captain?";
 			link.l1 = "I beg you! Help my comrade, and I will answer all your questions!";
 			link.l1.go = "tonzag_bail_a";
-			link.l2 = "You're such an important person, and you came here without any guard, right after the whole prison heard a gunshot?!";
+			link.l2 = "You're such an important person, and you came here without any guards, right after the whole prison heard a gunshot?!";
 			link.l2.go = "tonzag_bail_b";
 		break;
 		
@@ -33,14 +33,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "tonzag_bail_1":
 			dialog.text = "Last chance, Captain.";
-			link.l1 = "I'm carrying out the task given to me by the governor-general!";
+			link.l1 = "I'm carrying out the task assigned to me by the governor-general!";
 			link.l1.go = "tonzag_bail_truth";
-			link.l2 = "You know very well that I'm a Captain of my own ship, and I work contractually. And I visit your lovely island a few times a year!";
+			link.l2 = "You know very well that I'm the captain of my own ship, and I work on contract. And I visit your lovely island a few times a year!";
 			link.l2.go = "tonzag_bail_lies";
 		break;
 		
 		case "tonzag_bail_truth":
-			dialog.text = "I had my suspicions, but wasn't entirely sure. You're lucky that just a few days ago an important meeting took place in Capsterville. Some very influential people managed to come to an agreement. Thus, you are no longer my enemy.";
+			dialog.text = "I had my suspicions, but I wasn't entirely sure. You're lucky that just a few days ago, an important meeting took place in Capsterville. Some very influential people managed to come to an agreement. Thus, you are no longer my enemy.";
 			link.l1 = "Will you help us?";
 			link.l1.go = "tonzag_bail_truth_1";
 			
@@ -54,21 +54,21 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tonzag_bail_truth_2":
-			dialog.text = "You almost ran aground, Charles! Leave and don't return to Tortuga for at least a month. Allow the dust to settle, and the heads to cool.";
-			link.l1 = "I'll do that. So long!";
+			dialog.text = "You almost ran aground, Charles! Leave and don't return to Tortuga for at least a month. Allow the dust to settle, and tempers to cool.";
+			link.l1 = "I'll do that. Farewell!";
 			link.l1.go = "exit";
-			link.l2 = "Won't you explain anything at all? Even in a little? ...";
+			link.l2 = "Won't you explain anything at all? Not even a little? ...";
 			link.l2.go = "tonzag_bail_truth_3";
 		break;
 		
 		case "tonzag_bail_truth_3":
-			dialog.text = "Someone reported you. Allegedly, you're a fanatic Catholic who arrived on our beautiful island to maliciously kill its honorable governor.";
+			dialog.text = "Someone reported you. Allegedly, you're a fanatical Catholic who arrived on our beautiful island to maliciously kill its honourable governor.";
 			link.l1 = "I'm not a fanatic!";
 			link.l1.go = "tonzag_bail_truth_4";
 		break;
 		
 		case "tonzag_bail_truth_4":
-			dialog.text = "It's written skillfully, believe me. I'm good at such things - the best libels are the ones that contain at least a grain of truth in them.";
+			dialog.text = "It's written skillfully, believe me. I'm good at such things – the best libels are the ones that contain at least a grain of truth in them.";
 			link.l1 = "Who wrote the report?";
 			link.l1.go = "tonzag_bail_truth_a";
 			link.l2 = "Who let the killer into the prison?";
@@ -76,7 +76,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tonzag_bail_truth_a":
-			dialog.text = "Someone who wanted you to be couped up in the prison for a few days, instead of immediately sending you to the torture table of the Huguenots in the basement of La Roche.\nEnough, Charles. Leave. Deal first with what you've got in front of you, and after... well, you understand me!";
+			dialog.text = "Someone wanted you to be cooped up in the prison for a few days, instead of immediately sending you to the torture table of the Huguenots in the basement of La Roche.\nEnough, Charles. Leave. Deal first with what you've got in front of you, and after... well, you understand me!";
 			link.l1 = "Yes. I will. Goodbye, Commandant.";
 			link.l1.go = "exit";
 		break;
@@ -100,7 +100,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
-				dialog.text = "You know what? I think, I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
+				dialog.text = "You know what? I think I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
 				link.l1 = "My officer?";
 				link.l1.go = "tonzag_bail_truth_b_1";
 				link.l2 = "My friend?";
@@ -121,7 +121,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
-				dialog.text = "You know what? I think, I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
+				dialog.text = "You know what? I think I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
 				link.l1 = "My officer?";
 				link.l1.go = "tonzag_bail_truth_b_1";
 				link.l2 = "My friend?";
@@ -161,7 +161,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Please deposit five hundred doubloons into the Tortuga garrison pension fund with the local moneylender.";
 			if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "end") {
 				pchar.questTemp.TonzagQuest.Bail = 600;
-				dialog.text = dialog.text + " And let's add another hundred doubloons for the old troubles you stirred up by getting involved with one high-ranking lady on this island.";
+				dialog.text = dialog.text+" And let's add another hundred doubloons for the old trouble you stirred up by getting involved with one high-ranking lady on this island.";
 			}
 			link.l1 = "Open this damn door already!";
 			link.l1.go = "exit";
@@ -171,10 +171,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "tonzag_bail_lies_b":
 			pchar.questTemp.TonzagQuest.Bail = 500;
-			dialog.text = "You've already taken too much of my time. Go to the moneylender and deposit five hundred doubloons into the Tortuga garrison pension fund.";
+			dialog.text = "You've already taken up too much of my time. Go to the moneylender and deposit five hundred doubloons into the Tortuga garrison pension fund.";
 			if (CheckAttribute(pchar, "questTemp.FMQT") && pchar.questTemp.FMQT == "end") {
 				pchar.questTemp.TonzagQuest.Bail = 600;
-				dialog.text = dialog.text + " And let's add another hundred doubloons for the old troubles you stirred up by getting involved with one high-ranking lady on this island.";
+				dialog.text = dialog.text+" And let's add another hundred doubloons for the old trouble you caused by getting involved with a high-ranking lady on this island.";
 			}
 			link.l1 = "Open this damn door already!";
 			link.l1.go = "exit";
@@ -189,8 +189,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "tonzag_bailed_1":
-			dialog.text = "We provided him with first aid and sent him to your ship. The scoundrel is tough, most likely he'll pull through. Farewell, Captain, and don't let me catch you on our island for a while!";
-			link.l1 = "Well, after such a reception, I'll stay well away from here! Farewell, commandant.";
+			dialog.text = "We gave him first aid and sent him to your ship. The scoundrel is tough; he'll most likely pull through. Farewell, Captain, and don't let me catch you on our island for a while!";
+			link.l1 = "Well, after such a reception, I'll stay well away from here! Farewell, Commandant.";
 			link.l1.go = "exit";
 			
 			NextDiag.TempNode = "First time";

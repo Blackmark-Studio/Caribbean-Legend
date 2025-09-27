@@ -21,7 +21,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "听着, 我需要一个叫弗格斯.胡珀的猎人。 有人告诉我他住在这里。 我在哪里可以找到他? ";
                 link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
             }
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz"))
+			{
+				link.l1 = "大约一个半月前, 有个叫热罗姆·索韦涅的人来到你们城里。 你记得他吗? ";
+				link.l1.go = "WildRose_Tavern_1";
+			}
+			//<-- Дикая Роза
         break;
         
         case "guardoftruth":
@@ -57,6 +65,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             SetFunctionTimerCondition("Caleuche_FergusCome", 0, 0, iTerms, false);
             npchar.quest.Caleuche = "true";
         break;
+		
+		//--> Дикая Роза
+		case "WildRose_Tavern_1":
+			dialog.text = "呃, 好像是的。对, 我记得那位先生。 衣着算不上讲究, 但手头宽裕。";
+			link.l1 = "他在你们酒馆的一场斗殴中受了伤。";
+			link.l1.go = "WildRose_Tavern_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Tavern_2":
+			dialog.text = "那又怎样? 这里三天两头就打架。 水手们喝醉了, 几句话就能吵翻天, 根本拦不住。 看您也是见过世面的——难道这种事还会让您吃惊? ";
+			link.l1 = "一点也不。只是这人是我的老相识。 我们约好在这里见面, 但我迟到了些。能告诉我, 他现在在哪儿吗?";
+			link.l1.go = "WildRose_Tavern_3";
+		break;
+
+		case "WildRose_Tavern_3":
+			dialog.text = "为什么不能告诉您呢, 先生? 正如我说的? 他钱不少——所以在港口管理局附近租了一栋小房子。 挺显眼的, 红屋顶。他大多窝在那儿养伤, 偶尔来这里喝一杯。但并不规律——有时候来, 有时候不来。";
+			link.l1 = "好, 那我就去他家拜访了。 多谢您的消息。 祝您一切顺利。";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_tavern");
+		break;
+		//<-- Дикая Роза
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果在switch中某处通过return退出, 别忘了执行卸载
 }

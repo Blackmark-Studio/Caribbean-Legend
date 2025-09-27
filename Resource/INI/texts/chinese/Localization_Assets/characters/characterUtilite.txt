@@ -1,69 +1,15 @@
-characterUtilite_1
-{
-赚取 @<_Money> 比索
-}
-
-characterUtilite_2
-{
-花费 @<abs(_Money)> 比索
-}
-
-characterUtilite_3
-{
-新物品: ~
-}
-
-characterUtilite_4
-{
-赚取 @<n> 达布隆金币
-}
-
-characterUtilite_5
-{
-物品丢失: ~
-}
-
-characterUtilite_6
-{
-~注意到 @<LanguageConvertString(idLngFile, arItem.name)> 已失去其力量
-}
-
-characterUtilite_7
-{
-荣誉增加
-}
-
-characterUtilite_8
-{
-荣誉减少
-}
-
-characterUtilite_9
-{
-花费 @<_Dublons> 达布隆金币
-}
-
-characterUtilite_10
-{
-@<officer.Ship.Name> 的登陆部队有 @<compCrew> 名士兵
-}
-
-characterUtilite_11
-{
-你的贷款期限已到
-}
-
-characterUtilite_12
-{
-地图集更新: @<LanguageConvertString(idLngFile, arItem.name)> 
-}
-
-characterUtilite_13
-{
-印第安人不满(
-}
-
-characterUtilite_14
-{
-印第安人认可(
-}
+characterUtilite_1 {赚取 @<_Money> 比索}
+characterUtilite_2 {花费 @<abs(_Money)> 比索}
+characterUtilite_3 {新物品: ~}
+characterUtilite_4 {赚取 @<n> 达布隆金币}
+characterUtilite_5 {物品丢失: ~}
+characterUtilite_6 {~注意到 @<LanguageConvertString(idLngFile, arItem.name)> 已失去其力量}
+characterUtilite_7 {荣誉增加}
+characterUtilite_8 {荣誉减少}
+characterUtilite_9 {花费 @<_Dublons> 达布隆金币}
+characterUtilite_10 {@<officer.Ship.Name> 的登陆部队有 @<compCrew> 名士兵}
+characterUtilite_11 {你的贷款期限已到}
+characterUtilite_12 {地图集更新: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {印第安人不满(}
+characterUtilite_14 {印第安人认可(}
+characterUtilite_15 {商人资金不足。是否以@<money>出售?}

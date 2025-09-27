@@ -1,91 +1,20 @@
-BlackMark_1
-{
-Контрабандист
-}
-BlackMark_2
-{
-
-}
-
-BlackMark_3
-{
-Фрэнсис
-}
-BlackMark_4
-{
-Ризли
-}
-
-BlackMark_5
-{
-Томми
-}
-BlackMark_6
-{
-Айронс
-}
-
-BlackMark_7
-{
-ся
-}
-BlackMark_8
-{
-ась
-}
-
-BlackMark_9
-{
-
-}
-BlackMark_10
-{
-а
-}
-
-BlackMark_11
-{
-Гэбриэл
-}
-BlackMark_12
-{
-Кэллоу
-}
-
-BlackMark_13
-{
-Принципио
-}
-
-BlackMark_14
-{
-му
-}
-BlackMark_15
-{
-й
-}
-
-BlackMark_16
-{
-Готово. Теперь надо сматываться, да побыстрее, пока Гейб не нагрянул
-}
-
-BlackMark_17
-{
-Прошла пара часов...
-}
-
-BlackMark_18
-{
-Наступило утро...
-}
-
-BlackMark_19
-{
-ёл
-}
-BlackMark_20
-{
-ла
-}
+BlackMark_1 {Контрабандист}
+BlackMark_2 { }
+BlackMark_3 {Фрэнсис}
+BlackMark_4 {Ризли}
+BlackMark_5 {Томми}
+BlackMark_6 {Айронс}
+BlackMark_7 {ся}
+BlackMark_8 {ась}
+BlackMark_9 { }
+BlackMark_10 {а}
+BlackMark_11 {Гэбриэл}
+BlackMark_12 {Кэллоу}
+BlackMark_13 {Принципио}
+BlackMark_14 {му}
+BlackMark_15 {й}
+BlackMark_16 {Готово. Теперь надо сматываться, да побыстрее, пока Гейб не нагрянул}
+BlackMark_17 {Прошла пара часов...}
+BlackMark_18 {Наступило утро...}
+BlackMark_19 {ёл}
+BlackMark_20 {ла}

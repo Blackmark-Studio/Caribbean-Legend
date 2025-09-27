@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_31":
-			dialog.text = "我该怎么办? 我父亲想让我嫁给高利贷者的儿子, 那个懦夫...就因为他爸爸的金库里有一大笔钱! 但我爱上了另一个男人! 请带我去找他...";
+			dialog.text = "我该怎么办? 我父亲想让我嫁给放贷人的儿子, 那个懦夫...就因为他爸爸的金库里有一大笔钱! 但我爱上了另一个男人! 请带我去找他...";
 			link.l1 = "你真是个负担! 好吧, 好吧, 我们走。 我现在不能把你留在这里, 不是吗? ...你选中的人叫什么名字, 我该带你去哪里? ";
 			link.l1.go = "Node_32";
 			link.l2 = "不, 就这样吧, " + GetSexPhrase("美人","亲爱的") + "! 我今天受够了惊喜。 找别人帮你吧。 ";
@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 		case "Node_132_6":
 			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.mapPrice))); 
 			ref rMap = ItemsFromID("map_full"); // mitrokosta 修复空地图
-			FillMapForTreasure(rMap);
+			FillMapForTreasure(rMap, "");
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Node_12End";
 			pchar.GenQuest.EncGirl = "close";
@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_250":
-			dialog.text = "不要毁了我的生活, 船长! 我父亲想让我嫁给高利贷者的儿子, 那个肮脏的懦夫...就因为他爸爸的金库里有很多钱! 嗯, 我宁愿留在丛林里被野兽吃掉, 也不愿和他一起被判终身监禁! ";
+			dialog.text = "不要毁了我的生活, 船长! 我父亲想让我嫁给放贷人的儿子, 那个肮脏的懦夫...就因为他爸爸的金库里有很多钱! 嗯, 我宁愿留在丛林里被野兽吃掉, 也不愿和他一起被判终身监禁! ";
 			link.l1 = "你的婚姻有什么问题, " + GetSexPhrase("美女","亲爱的") + "? 抓住那个想娶你的人, 然后快乐。 过一段时间你会很高兴嫁给那个懦夫, 但可能已经太晚了...";
 			link.l1.go = "Node_251";
 		break;

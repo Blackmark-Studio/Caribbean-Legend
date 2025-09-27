@@ -1053,10 +1053,6 @@ void FillPassengerScroll()
                 {
                     howWork = 2;
                 }
-                if (CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-                {
-                    howWork = 3;
-                }
                 ok = !CheckAttribute(&characters[_curCharIdx], "isbusy") || sti(characters[_curCharIdx].isbusy) < howWork;
                 PsgAttrName = GetOfficerTypeByNum(nCurScrollNum);
 				// совместители должностей <--
@@ -1385,7 +1381,7 @@ void FillPerksTable(string _type, bool _refresh)
         perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
         if (xi_refCharacter.id == pchar.id && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;
         if (xi_refCharacter.id != pchar.id && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue;
-        if (CheckAttribute(arPerksRoot, perkName + ".Hiden")) continue;
+        if (CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;
         
         if (!CheckAttribute(arPerksRoot, perkName + ".BaseType")) // to_DO
         {

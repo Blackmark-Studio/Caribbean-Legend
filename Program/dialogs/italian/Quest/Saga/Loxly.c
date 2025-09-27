@@ -1,3 +1,5 @@
+int iLoxlyPseudoGlobal;
+
 // Альберт Локсли - адвокат
 void ProcessDialogEvent()
 {
@@ -25,11 +27,7 @@ void ProcessDialogEvent()
 		{
 			Dialog.CurrentNode = "RelationYet";
 		}
-		else
-		{
-			Dialog.CurrentNode = "RelationAny_Done";
-			npchar.quest.relation.summ = CalculateRelationLoyerSum(sti(npchar.quest.relation));
-		}
+		else Dialog.CurrentNode = "RelationAny_Done";
 	}
 	
 	switch(Dialog.CurrentNode)
@@ -71,6 +69,7 @@ void ProcessDialogEvent()
 					Link.l7.go = "exit";
 					NextDiag.TempNode = "Loxly";
 					npchar.quest.meeting = "1";
+					break;
 				}
 				link.l1 = "Grazie, ma per fortuna non ho ancora bisogno dei servigi d’un avvocato.";
 				link.l1.go = "exit";
@@ -112,7 +111,7 @@ void ProcessDialogEvent()
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
 							RemoveItems(pchar, "map_sharp_full", 1);
-							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per вашего protettоре. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
+							dialog.text = "Signore, perché avete lavorato con tanta lentezza?! Ormai è finita per i tuoi protetti. Il termine di validità del testamento è scaduto e Isla Tesoro appartiene ora all’Inghilterra. Presto diventerà una base militare."link.l1 ="Accidenti! Pare che tutti i miei sforzi siano andati in malora...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -625,15 +624,16 @@ void ProcessDialogEvent()
 		
 		// --> снятие НЗГ
 		case "RelationAny_Done":
-			iSumm = sti(npchar.quest.relation.summ);
-			int iRate = abs(ChangeCharacterNationReputation(pchar, sti(npchar.quest.relation), 0));
+			i = sti(npchar.quest.relation);
+			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
+			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
 			if (iRate <= 10) sTemp = "Well, I wouldn't call that trouble. Just a little problem. I will settle the affair at once";
 			if (iRate > 10 && iRate <= 30) sTemp = "Yes, your reputation is slightly spoiled but I don't see anything critical. I will settle the affair at once";
 			if (iRate > 30 && iRate <= 60) sTemp = "Yes, you went down the wrong path with the authorities. It won't be easy but I am sure that I will be able to settle your disagreements without a hitch";
 			if (iRate > 60 && iRate <= 90) sTemp = "And how did you do that, Sir? Your troubles are not just serious, they are really serious. The authorities are very eager to get you. I will have to put a lot of effort into settling your disagreements";
 			if (iRate > 90) sTemp = "Well... The situation is catastrophic - you are claimed to be the most bitter enemy. It will be tough but I am the best lawyer in the Caribbean after all, so I will settle your disagreements";
-			dialog.text = ""+sTemp+" con "+XI_ConvertString(Nations[sti(npchar.quest.relation)].Name+"Abl")+" . Ti costerà "+FindRussianMoneyString(iSumm)+".";
-			if(sti(pchar.money) >= iSumm)
+			dialog.text = ""+sTemp+" con "+XI_ConvertString(Nations[i].Name+"Abl")+" . Ti costerà "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
+			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "Benissimo, signor Loxley, accetto. Ecco i vostri soldi, vedete di sistemare la faccenda quanto prima.";
 				link.l1.go = "relation";
@@ -644,12 +644,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "relation":
-			dialog.text = "È stato un piacere fare affari con voi, signore. Potete tirare un sospiro di sollievo, il vostro grattacapo sparirà entro le prossime due settimane. Evitate qualsiasi scaramuccia con "+XI_ConvertString(Nations[sti(npchar.quest.relation)].Name+"Abl")+", mentre sono nel bel mezzo delle trattative.";
+			i = sti(npchar.quest.relation);
+			dialog.text = "È stato un piacere fare affari con voi, signore. Potete tirare un sospiro di sollievo, il vostro grattacapo sparirà entro le prossime due settimane. Evitate qualsiasi scaramuccia con "+XI_ConvertString(Nations[i].Name+"Abl")+", mentre sono nel bel mezzo delle trattative.";
 			link.l1 = "D'accordo, terrò a mente il tuo avvertimento. Grazie e addio!";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.relation.summ));
-			ChangeNationRelationFromRelationAgent(npchar);
-			attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
+			AddMoneyToCharacter(pchar, -iLoxlyPseudoGlobal);
+			ChangeNationRelationFromRelationAgent(i);
+			attrLoc = "RelationAgent" + GetNationNameByType(i);
             Pchar.GenQuest.(attrLoc) = true;
 			Pchar.GenQuest.(attrLoc).loyer = "true";
 			NextDiag.TempNode = "Loxly";
@@ -657,9 +658,9 @@ void ProcessDialogEvent()
 		// <-- снятие НЗГ
 		
 		case "contraband":
-			npchar.quest.contrasum = makeint(0.3*stf(Pchar.rank)/stf(Pchar.reputation.nobility)*60000);
-			dialog.Text = "E perché mai hai fatto ciò? I contrabbandieri sono brava gente, a modo loro onesti. Tutti dobbiamo campare e mangiare... Va bene, non è nulla di grave e ti costerà soltanto "+FindRussianMoneyString(sti(npchar.quest.contrasum))+".";
-			if(sti(Pchar.money) >= sti(npchar.quest.contrasum))
+			iLoxlyPseudoGlobal = CalculateRelationContraSum(true);
+			dialog.Text = "E perché mai hai fatto ciò? I contrabbandieri sono brava gente, a modo loro onesti. Tutti dobbiamo campare e mangiare... Va bene, non è nulla di grave e ti costerà soltanto "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
+			if(sti(Pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				Link.l1 = "Va bene, messer Loxley, accetto. Ecco i tuoi dobloni, sbrigati a sistemare la faccenda quanto prima.";
 				Link.l1.go = "Contraband_Agreed";
@@ -673,7 +674,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Grazie, amico!";
 			Link.l1.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.contrasum));
+			AddMoneyToCharacter(pchar, -iLoxlyPseudoGlobal);
 		break;
 		
 		case "Exit":

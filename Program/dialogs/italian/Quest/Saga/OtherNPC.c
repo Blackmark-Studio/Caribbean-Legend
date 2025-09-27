@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		
 		case "Donovan_abordage_1":
 			dialog.text = "Quale Rumba? Non voglio canaglie con nomignoli sulla mia nave. Questa è una nave della marina inglese!";
-			link.l1 = "Non fare il fesso con me, Donovan. Sai benissimo di кого sto parlando. Dov’è la ragazza? Dov’è Helen? Rispondimi, lurido bastardo...";
+			link.l1 = "Non fare il fesso con me, Donovan. Sai benissimo di chi sto parlando. Dov’è la ragazza? Dov’è Helen? Rispondimi, lurido bastardo...";
 			link.l1.go = "Donovan_abordage_2";
 		break;
 		
@@ -883,7 +883,7 @@ void ProcessDialogEvent()
 		
 		case "vensan_12":
 			dialog.text = "Ti manda Marcus?";
-			link.l1 = "Non l’ha fatto lui. Sono riuscito a smascherare l’intrigo di un farabutto: voleva far fuori Marcus con tutta questa faccenda. Digli che per ora se ne stia buono e non ficchi носа... Gli spiegherò tutto di persona più tardi. E, per carità, dìgli di smetterla di prendersela con me.";
+			link.l1 = "Non l’ha fatto lui. Sono riuscito a smascherare l’intrigo di un farabutto: voleva far fuori Marcus con tutta questa faccenda. Digli che per ora se ne stia buono e non ficchi il naso... Gli spiegherò tutto di persona più tardi. E, per carità, dìgli di smetterla di prendersela con me.";
 			link.l1.go = "vensan_7";
 		break;
 		
@@ -909,7 +909,7 @@ void ProcessDialogEvent()
 		
 		case "molligan_2":
 			dialog.text = "Mogano? Jan ha detto così? Mh. E perché non lo porti tu stesso a Barbados? Perché proprio io?";
-			link.l1 = "Perché sei tu che navighi laggiù e non io. Ho ricevuto un incarico urgente da Svenson, quindi non posso perdere tempo a veleggiare fino a Bridgetown anch’io. Inoltre, Jan non si fida di меня per trattare con lord Willoughby e vuole che sia tu a farlo. Mi spiace. Ora carichiamo la roba, devo andare.";
+			link.l1 = "Perché sei tu che navighi laggiù e non io. Ho ricevuto un incarico urgente da Svenson, quindi non posso perdere tempo a veleggiare fino a Bridgetown anch’io. Inoltre, Jan non si fida di me per trattare con lord Willoughby e vuole che sia tu a farlo. Mi spiace. Ora carichiamo la roba, devo andare.";
 			link.l1.go = "molligan_3";
 		break;
 		
@@ -1052,7 +1052,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mine_bandit_1":
-			dialog.text = "Perché la miniera alle mie spalle è proprietà privata e io sto qui proprio per fermare forestieri come te dal проходить oltre. Faresti meglio a voltarti e sparire, straniero. I nostri cannoni sono carichi a pallettoni: fai solo un altro passo e ti ridurremo a una pozza fradicia.";
+			dialog.text = "Perché la miniera alle mie spalle è proprietà privata e io sto qui proprio per fermare forestieri come te dal passaggio. Faresti meglio a voltarti e sparire, straniero. I nostri cannoni sono carichi a pallettoni: fai solo un altro passo e ti ridurremo a una pozza fradicia.";
 			link.l1 = "Heh, capisco. La tua miniera è ben sorvegliata. Va bene, me ne vado.";
 			link.l1.go = "mine_bandit_exit";
 			link.l2 = "Tu, bastardo! Ah, vedremo chi finirà steso come una pozzanghera!";
@@ -1130,25 +1130,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "Davvero? Allora dovresti conoscere la parola d'ordine. Dilla subito, ma ti pentirai amaramente, se menti...";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "Tritone";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "Nettuno";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "Centurione";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "Arpione";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Esatto. Ma tu, compare, sei arrivato dalla parte sbagliata. Non ti hanno avvertito? Torna indietro e prendi la strada a sinistra dal pozzo secco. Poi aggira la collina e lì vedrai il portone principale.";
-				link.l1 = "Non posso entrare qui?";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "Ragazzi, abbiamo un ficcanaso! Moschetti pronti! Fuoco!!";
-				link.l1 = "...";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "Esatto. Ma tu, compare, sei arrivato dalla parte sbagliata. Non ti hanno avvertito? Torna indietro e prendi la strada a sinistra dal pozzo secco. Poi aggira la collina e lì vedrai il portone principale.";
+			link.l1 = "Non posso entrare qui?";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "Ragazzi, abbiamo un ficcanaso! Moschetti pronti! Fuoco!!";
+			link.l1 = "...";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1172,25 +1173,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "Davvero? Allora dovresti conoscere la parola d’ordine. Su, dilla forte che io possa sentirla. E se provi a fregarmi, sarà l’ultima burla della tua misера vita.";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "Tritone";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "Nettuno";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "Centurione";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "Arpione";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Giusto. Avanti, su. Il capo dell'accampamento sta nella casa a sinistra dell'ingresso della miniera. Vai a parlarci.";
-				link.l1 = "D’accordo, compare...";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "Ragazzi, abbiamo un ficcanaso! Cannoni, fuoco a volontà!!";
-				link.l1 = "...";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "Giusto. Avanti, su. Il capo dell'accampamento sta nella casa a sinistra dell'ingresso della miniera. Vai a parlarci.";
+			link.l1 = "D’accordo, compare...";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "Ragazzi, abbiamo un ficcanaso! Cannoni, fuoco a volontà!!";
+			link.l1 = "...";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1565,7 +1567,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -2032,7 +2034,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "alonso":
-			dialog.text = "Capitano, magari non capisco tutte le belle parole che questi damerini si бросают, ma vedi, se uno viene chiamato codardo, di solito non lo lasci andare così. Dagli una sberla, Capitano, o l’equipaggio comincerà a farsi delle idee.";
+			dialog.text = "Capitano, magari non capisco tutte le belle parole che questi damerini si riempono, ma vedi, se uno viene chiamato codardo, di solito non lo lasci andare così. Dagli una sberla, Capitano, o l’equipaggio comincerà a farsi delle idee.";
 			link.l1 = "Volete sangue? La vita è troppo noiosa, vi manca il brivido? Ebbene, avrete il vostro sangue, bestiacce!";
 			link.l1.go = "francois_duel";
 			link.l2 = "Uhu, che paura mi fate. Avete finito qui, signori? Ho ben altro da fare.";

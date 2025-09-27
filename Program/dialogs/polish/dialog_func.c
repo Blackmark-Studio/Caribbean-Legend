@@ -1,8 +1,8 @@
 #include "scripts\utils.c"
 
 // boal -->
-#define CARDS_RULE  "The rules are simple.  Blackjack. 36 cards, from sixes to aces. Ace goes for 11 points, kings - 4, Lord (horse knight) - 3, Nobile (foot soldier) - 2, the rest has the same value as written. Your goal is to get 21 points\nClick a deck to take one more card. Each card is a stake. Click a portrait at top right in order to finish your turn. You need enough money for at least three stakes if you want to play. Press esc or a cross if you are done."
-#define DICE_RULE   "Craps. Five to each players. You can overthrow all five or any of them but only once. Each dice is a stake. Your goal is to get the maximum score.\nHere goes combinations: duo (2), two duos (2+2), triad (3), full (3+2), square (4), street (dices in a row) and poker (5). \nClick a cup to throw, click a dice to overthrow this particular dice, click a portrait in order to finish your turn (in case you don't need to overthrow or don't have enough money to do so)."
+#define CARDS_RULE  "Zasady są proste. Blackjack. 36 kart - od szóstek do asów. As to 11 punktów, król - 4, lord (jeździec) - 3, nobil (piechur) - 2, reszta ma wartość zgodną z oznaczeniem. Celem jest uzyskanie 21 punktów.\nKliknij talię, by dobrać kartę. Każda karta to jedna stawka. Kliknij portret w prawym górnym rogu, by zakończyć turę. Aby grać, musisz mieć środki na co najmniej trzy stawki. Wciśnij Esc lub krzyżyk, by wyjść."
+#define DICE_RULE   "Gra w kości. Po pięć rzutów dla każdego gracza. Możesz przerzucić wszystkie lub dowolne z nich, ale tylko raz. Każda kość to jedna stawka. Celem jest uzyskanie jak najlepszego układu.\nKombinacje: para (2), dwie pary (2+2), trójka (3), full (3+2), czwórka (4), strit (kolejne wartości) i poker (5).\nKliknij kubek, by rzucić. Kliknij daną kość, by ją przerzucić. Kliknij portret, by zakończyć turę (jeśli nie chcesz lub nie możesz już przerzucać)."
 #define MAX_TITLENEXTRATE   13 // счетчик для званий
 #define MAX_TITLE           5
 // boal <--
@@ -30,35 +30,35 @@ void Set_inDialog_Attributes()
 		Address_Form.Hol = "mevrouw";
 		Address_Form.Pir = "miss";
 	}
-	Address_Form.Spa.Title1 = "Corsair";
-	Address_Form.Fra.Title1 = "Privateer";
-	Address_Form.Eng.Title1 = "Caper";
-	Address_Form.Hol.Title1 = "Filibuster";
-	Address_Form.Pir.Title1 = "Pirate";
+	Address_Form.Spa.Title1 = "Korsarz";
+	Address_Form.Fra.Title1 = "Flibustier";
+	Address_Form.Eng.Title1 = "Kaper";
+	Address_Form.Hol.Title1 = "Wolny strzelec";
+	Address_Form.Pir.Title1 = "Pirat";
 
-    Address_Form.Spa.Title2 = "Commander";
-	Address_Form.Fra.Title2 = "Commander";
-	Address_Form.Eng.Title2 = "Commander";
-	Address_Form.Hol.Title2 = "Commander";
-	Address_Form.Pir.Title2 = "Commander";
+    Address_Form.Spa.Title2 = "Comandante";
+	Address_Form.Fra.Title2 = "Dowódca";
+	Address_Form.Eng.Title2 = "Dowódca";
+	Address_Form.Hol.Title2 = "Dowódca";
+	Address_Form.Pir.Title2 = "Dowódca";
 	
-	Address_Form.Spa.Title3 = "Captain";
-	Address_Form.Fra.Title3 = "Captain";
-	Address_Form.Eng.Title3 = "Captain";
-	Address_Form.Hol.Title3 = "Captain";
-	Address_Form.Pir.Title3 = "Captain";
+	Address_Form.Spa.Title3 = "Capitán";
+	Address_Form.Fra.Title3 = "Kapitan";
+	Address_Form.Eng.Title3 = "Kapitan";
+	Address_Form.Hol.Title3 = "Kapitan";
+	Address_Form.Pir.Title3 = "Kapitan";
 
-	Address_Form.Spa.Title4 = "Commodore";
-	Address_Form.Fra.Title4 = "Commodore";
-	Address_Form.Eng.Title4 = "Commodore";
-	Address_Form.Hol.Title4 = "Commodore";
-	Address_Form.Pir.Title4 = "Commodore";
+	Address_Form.Spa.Title4 = "Komodor";
+	Address_Form.Fra.Title4 = "Komodor";
+	Address_Form.Eng.Title4 = "Komodor";
+	Address_Form.Hol.Title4 = "Komodor";
+	Address_Form.Pir.Title4 = "Watażka";
 
-	Address_Form.Spa.Title5 = "Admiral";
-	Address_Form.Fra.Title5 = "Admiral";
-	Address_Form.Eng.Title5 = "Admiral";
-	Address_Form.Hol.Title5 = "Admiral";
-	Address_Form.Pir.Title5 = "Admiral";
+	Address_Form.Spa.Title5 = "Admirał";
+	Address_Form.Fra.Title5 = "Admirał";
+	Address_Form.Eng.Title5 = "Admirał";
+	Address_Form.Hol.Title5 = "Admirał";
+	Address_Form.Pir.Title5 = "Lord";
 
 	Address_Form.Spa.woman = "senora";
 	Address_Form.Fra.woman = "madame";
@@ -104,27 +104,27 @@ string RandSwear()
 	switch (rand(14))
 	{
 		case 0:
-			return "Aj karamba! ";
+			return "O w mordę!";
 		break;
 
 		case 1:
-			return "Szlag by to trafił! ";
+			return "Do diabła! ";
 		break;
 
 		case 2:
-			return "O kurwa! ";
+			return "Cholera! ";
 		break;
 
 		case 3:
-			return "Jasny gwint! ";
+			return "Szlag by to! ";
 		break;
 
 		case 4:
-			return "Niech mnie jasny dunder świśnie! ";
+			return "O kurwa... ";
 		break;
 
 		case 5:
-			return "Na stado rekinów! ";
+			return "O ja pierdolę! ";
 		break;
 
 		case 6:
@@ -132,35 +132,35 @@ string RandSwear()
 		break;
 
 		case 7:
-			return "O ty diable rogaty!! ";
+			return "Co u licha! ";
 		break;	 
 		
 		case 8:
-			return "Na wszystkie świętości! ";	// стандартное пиратское "твою мать"
+			return "Bóbr kurwa! ";	// стандартное пиратское "твою мать"
 		break;
 		
 		case 9:
-			return "Niech to szlag! ";
+			return "Do stu piorunów! ";
 		break;
 
 		case 10:
-			return "Cholera jasna! ";
+			return "Niech mnie prądy porwią! ";
 		break;
 		
 		case 11:
-			return "Kuźwa... ";
+			return "Osz, kurwa mać...! ";
 		break;
 		
 		case 12:
-			return "Ja pierdole! ";
+			return "Zaraza! ";
 		break;
 		
 		case 13:
-			return "Chort ze mną! ";
+			return "A żeby to! ";
 		break;
 		
 		case 14:
-			return "A żeby to! ";
+			return "Do kurwy nędzy! ";
 		break;
 	}
 }
@@ -172,15 +172,15 @@ string RandExclamation()
 	switch(rand(2))
 	{
 		case 0:
-			return "O Panie! ";
+			return "O, Panie! ";
 		break;
 
 		case 1:
-			return "O niebiosa! ";
+			return "Na niebiosa! ";
 		break;
 
 		case 2:
-			return "Najświętsza Panienko! ";
+			return "Matko Boska! ";
 		break;
 	}
 }
@@ -238,19 +238,19 @@ string NationKingsCrown(ref Character)
     switch(sti(Character.nation))
 	{
 		case ENGLAND:
-            return "Angielski tron";
+            return "Protektorat Anglii, Szkocji i Irlandii";
 		break;
 		case FRANCE:
-            return "Francuska korona";
+            return "Najjaśniejsza Korona Francji";
 		break;
 		case SPAIN:
-            return "Hiszpańska korona";
+            return "Hiszpańska Korona Katolicka";
 		break;
 		case HOLLAND:
-			return "Królestwo niderlandów";
+			return "Zjednoczone Prowincje";
 		break;
 		case PIRATE:
-			return "Bractwo wybrzeża";
+			return "Bractwo Wybrzeża";
 		break;
 	}
 }
@@ -259,19 +259,19 @@ string NationKingsName(ref NPChar)
     switch(sti(NPChar.nation))
 	{
 		case ENGLAND:
-            return "Lorda Protektora";
+            return "Lorda Protektora Olivera Cromwella";
 		break;
 		case FRANCE:
-            return "Jego Wysokości Ludwika XIV";
+            return "Jego Królewskiej Wysokości Ludwika XIV, Króla Francji i Nawarry";
 		break;
 		case SPAIN:
-            return "Jego Katolickiej Wysokości Filipa IV von Habsburga";
+            return "Jego Katolickiej Mości Filipa IV Habsburga, Króla Hiszpanii i Indii";
 		break;
 		case HOLLAND:
-			return "Jego Królewskiej Mości Williama III z Niderlandów";
+			return "Stanu Generalnego Zjednoczonych Prowincji Niderlandzkich";
 		break;
 		case PIRATE:
-			return "Bractwa wybrzeża";
+			return "Bractwa Wybrzeża";
 		break;
 	}
 }
@@ -324,21 +324,21 @@ string NationNamePeopleAcc(int pNation)
 {
     switch(pNation)
 	{
-		case ENGLAND:
+        case ENGLAND:
             return "Anglików";
-		break;
-		case FRANCE:
+        break;
+        case FRANCE:
             return "Francuzów";
-		break;
-		case SPAIN:
-            return "Hiszpan";
-		break;
-		case HOLLAND:
-			return "Holendrów";
-		break;
-		case PIRATE:
-			return "piratów";
-		break;
+        break;
+        case SPAIN:
+            return "Hiszpanów";
+        break;
+        case HOLLAND:
+            return "Holendrów";
+        break;
+        case PIRATE:
+            return "piratów";
+        break;
 	}
 }
 
@@ -346,21 +346,21 @@ string NationNameAblative(int iNation) //творительный падеж
 {
     switch(iNation)
 	{
-		case ENGLAND:
-            return "Anglią";
-		break;
-		case FRANCE:
-            return "Francją";
-		break;
-		case SPAIN:
-            return "Hiszpanią";
-		break;
-		case HOLLAND:
-			return "Holandią";
-		break;
-		case PIRATE:
-			return "piratami";
-		break;
+        case ENGLAND:
+            return "Anglikami";
+        break;
+        case FRANCE:
+            return "Francuzami";
+        break;
+        case SPAIN:
+            return "Hiszpanami";
+        break;
+        case HOLLAND:
+            return "Holendrami";
+        break;
+        case PIRATE:
+            return "piratami";
+        break;
 	}
 }
 
@@ -368,21 +368,21 @@ string NationNameNominative(int iNation) //именительный падеж
 {
     switch(iNation)
 	{
-		case ENGLAND:
+        case ENGLAND:
             return "Anglia";
-		break;
-		case FRANCE:
+        break;
+        case FRANCE:
             return "Francja";
-		break;
-		case SPAIN:
+        break;
+        case SPAIN:
             return "Hiszpania";
-		break;
-		case HOLLAND:
-			return "Holandia";
-		break;
-		case PIRATE:
-			return "Bractwo wybrzeża";
-		break;
+        break;
+        case HOLLAND:
+            return "Holandia";
+        break;
+        case PIRATE:
+            return "Bractwo Wybrzeża";
+        break;
 	}
 }
 
@@ -390,21 +390,21 @@ string NationNameGenitive(int iNation) // родительный падеж
 {
     switch(iNation)
 	{
-		case ENGLAND:
+        case ENGLAND:
             return "Anglii";
-		break;
-		case FRANCE:
+        break;
+        case FRANCE:
             return "Francji";
-		break;
-		case SPAIN:
+        break;
+        case SPAIN:
             return "Hiszpanii";
-		break;
-		case HOLLAND:
-			return "Holandii";
-		break;
-		case PIRATE:
-			return "piratów";
-		break;
+        break;
+        case HOLLAND:
+            return "Holandii";
+        break;
+        case PIRATE:
+            return "piratów";
+        break;
 	}
 }
 
@@ -413,21 +413,21 @@ string NationEuropaTown(int iNation)
 {
     switch(iNation)
 	{
-		case ENGLAND:
-            return "London";
-		break;
-		case FRANCE:
-            return "Le Roshele";
-		break;
-		case SPAIN:
-            return "Sevillia";
-		break;
+        case ENGLAND:
+            return "Londyn";
+        break;
+        case FRANCE:
+            return "La Rochelle";
+        break;
+        case SPAIN:
+            return "Sewilla";
+        break;
+        case HOLLAND:
+            return "Amsterdam";
+        break;
         case PIRATE:
-	    	return "Tortuga";
-		break;
-		case HOLLAND:
-	    	return "Amsterdam";
-		break;
+            return "Tortuga";
+        break;
 	}
 }
 string GetCityName(string city) // имена городов по аттрибуту char.city
@@ -978,7 +978,7 @@ string TimeGreeting()
     }
     if (GetHour() >= 23 || GetHour() < 6)
     {
-       return "Dobranoc";
+       return "Dobry wieczór";
     }
     return "Hallo!";
 }
@@ -994,7 +994,7 @@ string Goodbye()
     {
        return "Dobranoc";
     }
-    return RandPhraseSimple("Żegnaj", "Do widzenia");
+    return RandPhraseSimple("Żegnaj", "Do zobaczenia");
 }
 
 // выбор фразы от репутации
@@ -1223,4 +1223,23 @@ string GetIndianName(int Sex) //Jason имена индейцев
 	else nameid = "l" + (100+rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle() //Титул ГГ
+{
+	string Title;
+
+	if (PChar.sex == "man")
+	{
+		Title = "kapitan";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = "kapitan";
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "gubernator generalny";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "wiceadmirał";
+
+	return Title;
 }

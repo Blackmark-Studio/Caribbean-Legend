@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("You have given 100 doubloons");
 			dialog.text = "Tutto sembra a posto. Ecco il tuo amuleto. Buona fortuna con esso!";
 			link.l1 = "Grazie, "+npchar.name+"!";
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 		
 		case "Trade_artefact_5":
 			DialogExit();
-			Log_Info("You have received "+XI_ConvertString(npchar.quest.art)+"");
+			Log_Info("Avete ricevuto "+XI_ConvertString(npchar.quest.art)+"");
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, npchar.quest.art, 1);
 			DeleteAttribute(npchar, "quest.art");
@@ -585,6 +585,7 @@ void ProcessDialogEvent()
 			dialog.text = "Sì? Hai parlato con Tuttuathapak, ho ragione?";
 			link.l1 = "Esatto. E ora voglio trovare altri due amuleti. Hai detto che ero il terzo che ti ha mostrato questo artefatto. E chi erano gli altri due?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -619,6 +620,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":
@@ -657,7 +659,7 @@ void ProcessDialogEvent()
 		case "Trial_1":
 			DialogExit();
 			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("You have received 400 doubloons");
+			Log_Info("Avete ricevuto 400 doubloons");
 			PlaySound("interface\important_item.wav");
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");

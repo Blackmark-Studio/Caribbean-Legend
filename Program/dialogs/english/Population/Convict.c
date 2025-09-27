@@ -13,19 +13,13 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = NPCStringReactionRepeat("You again, senor?", 
-				"Listen, sir, you'd better walk away...", 
-				"Don't bother me, sir! I kindly ask you.",
-                "Oh, I can't endure that... Even working a galley oar was better.", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Yes, it's me again.", 
-				"Don't tell me what to do.",
-                "And what if I keep bothering?", 
-				"Get back to the galley then!", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("You again, señor?","Listen, sir, you'd better walk away...","Don't bother me, sir! I ask you kindly.","Oh, I can't bear that... Even rowing a galley was better.","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Yes, it's me again.","Don't tell me what to do.","And what if I keep bothering?","Get back to the galley then!",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "What do you want, senor?";
+				dialog.text = "What do you want, señor?";
 				link.l1 = "From you? Nothing, I suppose. Just wanted to say hello.";
 				link.l1.go = "exit";
 				npchar.quest.meeting = "1";
@@ -35,8 +29,8 @@ void ProcessDialogEvent()
 
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
-			dialog.text = NPCharSexPhrase(NPChar, "Don't challenge your fate, mate! Put away your weapon!", "Listen, I am a citizen of this town and I'm asking you to sheath your blade.");
-			link.l1 = LinkRandPhrase("Fine...", "As you wish...", "As you say...");
+			dialog.text = NPCharSexPhrase(NPChar,"Don't tempt fate, mate! Put away your weapon!","Listen, I am a citizen of this town and I'm asking you to sheath your blade.");
+			link.l1 = LinkRandPhrase("Fine...","As you wish...","As you say...");
 			link.l1.go = "exit";
 		break;
 

@@ -1,0 +1,104 @@
+Smuggler {Csempész}
+Cristopher {Cristopher}
+Keynell {Keynell}
+Benjamin {Benjamin}
+Jones {Jones}
+Francis {Francis}
+lord Willoughby {Lord Willoughby}
+Gaston {Gaston}
+Bald-pate {Kopasz-páté}
+Mirabelle {Mirabelle}
+Peter {Péter}
+Walles {Walles}
+One-eyed {Egyszemû}
+Pascal {Pascal}
+Voisier {Voisier}
+Master {Mester}
+Alexis {Alexis}
+Abraham {Ábrahám}
+Norman {Norman}
+Diego Francisco {Diego Francisco}
+de Kero {de Kero}
+Dionisio {Dionisio}
+Peres {Peresz}
+Alvares {Alvares}
+Ortega {Ortega}
+Fernando {Fernando}
+de Vilyegas {de Vilyegas}
+Esteban {Esteban}
+Garcia {Garcia}
+Carlos {Carlos}
+Estrada {Estrada}
+Ignasio {Ignasio}
+Matthias {Mátyás}
+Beck {Beck}
+Florentina {Florentina}
+Claude Francois {Claude Francois}
+de Lyon {de Lyon}
+Diego {Diego}
+de Toledo {de Toledo}
+Alexandro {Alexandro}
+Jacopo {Jacopo}
+Jeraldy {Jeraldy}
+Edward {Edward}
+Doily {Doily}
+Oldjivly {Oldjivly}
+Moris {Moris}
+Mortimer {Mortimer}
+Hope {Remény}
+Ida {Ida}
+Jacob {Jákob}
+Jackman {Jackman}
+Marcus {Marcus}
+Tyrax {Tyrex}
+Andres {Andres}
+de Vera {de Vera}
+Jacques Dille {Jacques Dille}
+du Parquet { }
+Jean Pierre {Jean Pierre}
+Morua {Morua}
+Aurora {Aurora}
+Jacques {Jacques}
+Barbazon {Barbazon}
+Cesare {Cesare}
+Craig {Craig}
+Ian {Ian}
+Snake {Kígyó}
+Timothy {Timóteus}
+Vitrye {Vitrye}
+Simon {Simon}
+Merilin {Merilin}
+Sailor {Matróz}
+Pedro Carrilia {Pedro Carrilia}
+de Gusman {de Gusman}
+Dolores {Dolores}
+Luis {Luis}
+de Montanos {de Montanos}
+Ernesto {Ernesto}
+Jeremy Deshamp {Jeremy Deshamp}
+do Mussack {do Mussack}
+de la Cruz {de la Cruz}
+Zachary {Zachary}
+Marlow {Marlow}
+de Aguillera-Gamboa {de Aguillera-Gamboa}
+Joseph {József}
+Batler {Batler}
+Rodrigo {Rodrigo}
+de Flores-Aldana {de Flores-Aldana}
+Juan {Juan}
+de Kuencka {de Kuencka}
+Lolita {Lolita}
+Martin {Martin}
+Thomas {Tamás}
+Johanna {Johanna}
+Francois {Francois}
+Levasseur {Levasseur}
+Janetta {Janetta}
+Ruis {Ruis}
+de Aquerre {de Aquerre}
+Coris {Coris}
+Gerritz {Gerritz}
+Chavinavi {Chavinavi}
+TempleSkeleton {templom csontváza}
+Danielle {Danielle}
+Hawk {Hawk}

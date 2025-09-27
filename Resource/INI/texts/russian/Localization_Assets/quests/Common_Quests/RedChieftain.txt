@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-вождь
-}
-RedChieftain_2
-{
-Канаури
-}
-
-RedChieftain_3
-{
-араваки
-}
-RedChieftain_4
-{
-рода Кайман
-}
-
-RedChieftain_5
-{
-Вождь Канаури покинул ваш корабль!
-}
-
-RedChieftain_6
-{
-аравак
-}
-RedChieftain_7
-{
-рода Кайман
-}
+RedChieftain_1 {вождь}
+RedChieftain_2 {Канаури}
+RedChieftain_3 {араваки}
+RedChieftain_4 {рода Кайман}
+RedChieftain_5 {Вождь Канаури покинул ваш корабль!}
+RedChieftain_6 {аравак}
+RedChieftain_7 {рода Кайман}

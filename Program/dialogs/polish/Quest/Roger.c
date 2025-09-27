@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_32":
-            PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
+            //PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
 			dialog.text = "Co za spektakl! To ogromna kupa złota! Teraz rozumiem, dlaczego Cutlass oszalał. Mamy wielkie szczęście, książę! Jak myślisz, ile złota tu znajdziemy?";
 			link.l1 = "Wiele. Dowiemy się na pewno, gdy uporamy się z tymi kratami.";
 			link.l1.go = "Jeffry_33";
@@ -3559,7 +3559,7 @@ void ProcessDialogEvent()
 				link.l1.go = "IslaMona_20";
 				break;
 			}
-			if (CheckAttribute(pchar, "questTemp.IslaMona") && pchar.questTemp.IslaMona == "dublon_wait" && GetCharacterItem(pchar, "gold_dublon") >=600)
+			if (CheckAttribute(pchar, "questTemp.IslaMona") && pchar.questTemp.IslaMona == "dublon_wait" && PCharDublonsTotal() >=600)
 			{
 				link.l1 = "Przyniosłem dubloony dla ciebie, tylko nie przepij ich wszystkich od razu.";
 				link.l1.go = "IslaMona_24";
@@ -4365,7 +4365,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 				{
 					sld = characterFromId("Mary");
 					sld.dialog.currentnode = "IslaMona_2";
@@ -4374,7 +4374,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 					{
 						sld = characterFromId("Helena");
 						sld.dialog.currentnode = "IslaMona_2";
@@ -5263,7 +5263,7 @@ void ProcessDialogEvent()
 		case "mirabelle_47":
             DialogExit();
 		    npchar.dialog.currentnode = "mirabelle_42";
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 			{
 				sld = characterFromId("Mary");
 				sld.dialog.currentnode = "IslaMona_2";
@@ -5272,7 +5272,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 				{
 					sld = characterFromId("Helena");
 					sld.dialog.currentnode = "IslaMona_2";

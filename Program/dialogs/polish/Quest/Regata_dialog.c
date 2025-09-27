@@ -1153,14 +1153,14 @@ void ProcessDialogEvent()
 			pchar.quest.Regata_Final.function = "RegataFinal";
 			SetFunctionTimerCondition("RegataFinalOver", 0, 0, 8, false);//таймер не снимаем - через 8 дней подчистится все автоматически
 			// слухи
-			AddSimpleRumour("Ah, you are the legendary captain, the winner of the regatta! It's such a pleasure to see you in flesh!", ENGLAND, 60, 10);
-			AddSimpleRumour("Ha, look at this, a master of wind and waves, the winner of the regatta! You have my respect...", ENGLAND, 60, 10);
-			AddSimpleRumour("Oh, a great sailor, a king of the wind and the sea, the winner of regatta has visited our city! We are glad to see you, captain!", ENGLAND, 60, 10);
-			AddSimpleRumour("Oh, yes I was lucky to chat with a living legend, the captain who is capable of crossing the archipelago in three days even facing a headwind! My respects, captain!", ENGLAND, 60, 10);
-			AddSimpleRumour("Ah, so you are the legendary captain, the winner of the regatta! Pleasure to see you!", FRANCE, 60, 10);
-			AddSimpleRumour("Ha, aren't you the master of wind and waves, the winner of the regatta! You have my respects...", FRANCE, 60, 10);
-			AddSimpleRumour("Oh, a great sailor, a king of the wind and the sea, the winner of regatta has visited our city! We are glad to see you, captain!", FRANCE, 60, 10);
-			AddSimpleRumour("Oh, yes I was lucky to chat with a living legend, the captain capable of crossing the archipelago in three days even facing a headwind! My respects, captain!", FRANCE, 60, 10);
+			AddSimpleRumour("Ach, jesteś legendarnym kapitanem, zwycięzcą regat! To taka przyjemność widzieć cię osobiście!", ENGLAND, 60, 10);
+			AddSimpleRumour("Ha, spójrzcie na to, mistrz wiatru i fal, zwycięzca regat! Masz mój szacunek...", ENGLAND, 60, 10);
+			AddSimpleRumour("O, wielki żeglarzu, królu wiatru i morza, zwycięzco regat, odwiedziłeś nasze miasto! Cieszymy się, że cię widzimy, kapitanie!", ENGLAND, 60, 10);
+			AddSimpleRumour("O tak, miałem szczęście porozmawiać z żywą legendą, kapitanem, który potrafi przepłynąć archipelag w trzy dni, nawet z przeciwnym wiatrem! Z całym szacunkiem, kapitanie!", ENGLAND, 60, 10);
+			AddSimpleRumour("Ach, więc jesteś legendarnym kapitanem, zwycięzcą regat! Miło cię widzieć!", FRANCE, 60, 10);
+			AddSimpleRumour("Ha, czyż nie jesteś mistrzem wiatru i fal, zwycięzcą regat! Masz moje wyrazy szacunku...", FRANCE, 60, 10);
+			AddSimpleRumour("O, wielki żeglarzu, królu wiatru i morza, zwycięzco regat, odwiedziłeś nasze miasto! Cieszymy się, że cię widzimy, kapitanie!", FRANCE, 60, 10);
+			AddSimpleRumour("O tak, miałem szczęście porozmawiać z żywą legendą, kapitanem, który potrafił przepłynąć archipelag w trzy dni, nawet z przeciwnym wiatrem! Z całym szacunkiem, kapitanie!", FRANCE, 60, 10);
 			// экспа
 			AddComplexSeaExpToScill(2000, 300, 300, 0, 500, 500, 0);
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);//авторитет

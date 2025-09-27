@@ -1,84 +1,17 @@
-food_1
-{
-Les rats
-}
-
-food_2
-{
-~ ont gâté ~
-}
-
-food_3
-{
-~ ont endommagé ~
-}
-
-food_4
-{
-~ ont détruit ~
-}
-
-food_5
-{
-~ unt. ~
-}
-
-food_6
-{
-Sur le navire @<rChar.Ship.Name> sont morts de maladies @<FindRussianSailorString(cn, "No")>
-}
-
-food_7
-{
-Le navire @<rChar.Ship.Name> manque de médicaments
-}
-
-food_8
-{
-Sur le navire @<rChar.Ship.Name> sont morts de maladies @<FindRussianSlavesString(cn, "No")>
-}
-
-food_9
-{
-Sur le @<rChar.Ship.Name> les gens ont envie de rhum.
-}
-
-food_10
-{
-Sur le navire @<rChar.Ship.Name> il reste de la nourriture pour @<FindRussianDaysString(cn)>
-}
-
-food_11
-{
-Nous avons un besoin urgent de réapprovisionnement !
-}
-
-food_12
-{
-Les esclaves se sont révoltés !
-}
-
-food_13
-{
-Les marins meurent de faim sur le navire @<rChar.Ship.Name>. Le moral de l'équipage est en baisse !
-}
-
-food_14
-{
-Les marins sont affamés
-}
-
-food_15
-{
-Les marins sont affamés
-}
-
-food_16
-{
-Émeute sur le navire @<rChar.Ship.Name> !!!! ~
-}
-
-food_17
-{
-Le navire quitte la flotte
-}
+food_1 {Les rats}
+food_2 {~ ont gâté ~}
+food_3 {~ ont endommagé ~}
+food_4 {~ ont détruit ~}
+food_5 {~ unt. ~}
+food_6 {Sur le navire @<rChar.Ship.Name> sont morts de maladies @<FindRussianSailorString(cn, "No")>}
+food_7 {Le navire @<rChar.Ship.Name> manque de médicaments}
+food_8 {Sur le navire @<rChar.Ship.Name> sont morts de maladies @<FindRussianSlavesString(cn, "No")>}
+food_9 {Sur le @<rChar.Ship.Name> les gens ont envie de rhum.}
+food_10 {Sur le navire @<rChar.Ship.Name> il reste de la nourriture pour @<FindRussianDaysString(cn)>}
+food_11 {Nous avons un besoin urgent de réapprovisionnement !}
+food_12 {Les esclaves se sont révoltés !}
+food_13 {Les marins meurent de faim sur le navire @<rChar.Ship.Name>. Le moral de l'équipage est en baisse !}
+food_14 {Les marins sont affamés}
+food_15 {Les marins sont affamés}
+food_16 {Émeute sur le navire @<rChar.Ship.Name> !!!! ~}
+food_17 {Le navire quitte la flotte}

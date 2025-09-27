@@ -22,6 +22,27 @@ void LAi_type_officer_Init(aref chr)
 	chr.chr_ai.type.checkTarget = 0;
 	if(CheckAttribute(chr, "chr_ai.tmpl"))
 	{
+		if(bCabinStarted && or(Get_My_Cabin() == "My_Cabin_Medium2", Get_My_Cabin() == "My_Cabin"))
+		{
+			chr.OldCabinTmpl = chr.chr_ai.tmpl;
+			chr.chr_ai.tmpl = LAI_TMPL_STAY;
+			
+			if(chr.location.locator == "sit1")
+			{
+				LAi_SetOfficerCabinSitAnimation(chr);
+			}
+			else
+			{
+				LAi_SetDefaultStayAnimation(chr);
+			}
+			return;
+		}
+		else if(CheckAttribute(chr, "OldCabinTmpl"))
+		{
+			chr.chr_ai.tmpl = chr.OldCabinTmpl;
+			DeleteAttribute(chr, "OldCabinTmpl");
+		}
+		
 		if (chr.chr_ai.tmpl != LAI_TMPL_STAY)//команда ждать!
 		{
 	    	if (!LAi_IsFightMode(GetMainCharacter()))
@@ -275,8 +296,11 @@ bool LAi_type_follower_CanDialog(aref chr, aref by)
 void LAi_type_officer_StartDialog(aref chr, aref by)
 {
 	//Если мы пасивны, запускаем шаблон без времени завершения
-	LAi_CharacterSaveAy(chr);
-	CharacterTurnByChr(chr, by);
+	if(chr.location.locator != "sit1")
+	{
+		LAi_CharacterSaveAy(chr);
+		CharacterTurnByChr(chr, by);
+	}
 	LAi_tmpl_SetActivatedDialog(chr, by);
 }
 
@@ -292,6 +316,11 @@ void LAi_type_follower_StartDialog(aref chr, aref by)
 void LAi_type_officer_EndDialog(aref chr, aref by)
 {
 	LAi_CharacterRestoreAy(chr);
+	if(bCabinStarted && or(Get_My_Cabin() == "My_Cabin_Medium2", Get_My_Cabin() == "My_Cabin"))
+	{
+		chr.chr_ai.tmpl = LAI_TMPL_STAY;
+		return;
+	}
 	if (chr.chr_ai.tmpl != LAI_TMPL_STAY)//команда ждать!
 	   LAi_tmpl_SetFollow(chr, GetMainCharacter(), -1.0);
 }
@@ -405,3 +434,19 @@ bool LAi_type_officer_CheckDists(aref chr, aref trg)
 	return false;
 }
 
+void LAi_SetOfficerCabinSitAnimation(aref chr)
+{
+	if(IsEntity(&chr))
+	{
+		BeginChangeCharacterActions(chr);
+		chr.actions.idle.i1 = "Sit_Cabin_Idle_1";
+		chr.actions.idle.i2 = "Sit_Cabin_Idle_2";
+		chr.actions.idle.i3 = "Sit_Cabin_Idle_3";
+		chr.actions.idle.i4 = "Sit_Cabin_Idle_4";
+		chr.actions.idle.i5 = "Sit_Cabin_Idle_5";
+		chr.actions.idle.i6 = "Sit_Cabin_Idle_6";
+		chr.actions.HitNoFight = "HitNoFightSit";
+		SetDefaultSitDead(chr);
+		EndChangeCharacterActions(chr);
+	}
+}

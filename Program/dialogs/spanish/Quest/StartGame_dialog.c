@@ -21,74 +21,6 @@ void ProcessDialogEvent()
 
 	case "Finish_2":
 		SetAchievement("Test_Ach");
-		dialog.text = "Capitán, una última pregunta. ¿Qué mensaje debo transmitir a la tripulación?";
-		link.l1 = "¿Qué quieres decir?";
-		link.l1.go = "Finish_2_0";
-		break;
-
-	case "Finish_2_0":
-		dialog.text = "La gente quiere saber qué esperar. Parece que aún no te has decidido.";
-		link.l1 = "¿Cuáles son mis opciones?";
-		link.l1.go = "Finish_2_0_1";
-		break;
-
-	case "Finish_2_0_1":
-		dialog.text = "Bueno, Capitán, el Caribe es un lugar único. Puedes dedicarte al comercio, saquear, sumergirte en asuntos turbios o embarcarte en búsquedas de tesoros; hay innumerables caminos para convertirse en una leyenda en estas aguas. La tripulación y yo lo hemos discutido, y estamos listos para apoyar cualquier elección que hagas.";
-		link.l1 = "¿Tengo que elegir sólo uno?";
-		link.l1.go = "Finish_2_0_2";
-		break;
-
-	case "Finish_2_0_2":
-		dialog.text = "No, ciertamente no, pero es una buena idea establecer nuestras prioridades iniciales.";
-		link.l1 = "¡Como cualquier hombre sensato, quiero amasar una fortuna! Un millón de pesos sería suficiente.";
-		link.l1.go = "Finish_2_1";
-		link.l2 = "Me propongo ganar respeto, del tipo que tenía l'Olonnais después de saquear Maracaibo.";
-		link.l2.go = "Finish_2_2";
-		link.l3 = "¡Aventura! Anhelo explorar lugares exóticos y encontrarme con personajes curiosos.";
-		link.l3.go = "Finish_2_3";
-		link.l4 = "¡Siempre he soñado con el atractivo romántico de ser un cazador de tesoros!";
-		link.l4.go = "Finish_2_4";
-		link.l5 = "Guarda tus consejos, Alonso. ¿Por qué limitarme? ¡Sé lo que quiero, y lo quiero todo!";
-		link.l5.go = "Finish_2_5";
-		break;
-
-	case "Finish_2_1":
-		pchar.questTemp.SanBoxTarget = 1;
-		dialog.text = "Eso es una gran ambición, Capitán. La forma más rápida es asaltar barcos mercantes y dedicarse al contrabando. También podrías optar por el comercio honesto, pero llevará un poco más de tiempo. Sin embargo, no tienes que limitarte: acepta cualquier trabajo y métete en todos los líos que puedas encontrar. Así es como te harás rico. Informaré a la tripulación, Capitán. ¡Que la fortuna nos favorezca a todos!";
-		link.l1 = "Empezar juego";
-		link.l1.go = "Finish_3";
-		break;
-
-	case "Finish_2_2":
-		pchar.questTemp.SanBoxTarget = 2;
-		dialog.text = "¿Pero sabes cómo terminó l'Olonnais? Bueno, no te juzgaré, Capitán. Derramar sangre inocente puede ser lucrativo, pero prepárate para las consecuencias. Necesitarás un barco formidable, quizás incluso un escuadrón, para conquistar el fuerte y establecer una base. Alternativamente, podrías tomar la ciudad por tierra, cuatrocientos hombres deberían ser suficientes, pero ten por seguro que una guarnición no suprimida te empujará de vuelta a la jungla rápidamente. Transmitiré tu decisión a la tripulación, Capitán. ¡Que la fortuna nos favorezca a todos!";
-		link.l1 = "Empezar juego";
-		link.l1.go = "Finish_3";
-		break;
-
-	case "Finish_2_3":
-		pchar.questTemp.SanBoxTarget = 3;
-		dialog.text = "¡Tenemos abundancia de ambos, capitán! Visite las ciudades, mezcle con los lugareños, y las aventuras lo buscarán. Solo recuerde que la gente seria solo buscará su ayuda una vez que haya demostrado su valía y construido una reputación. A la tripulación le gustará eso. ¡Que la fortuna nos favorezca a todos!";
-		link.l1 = "Empezar juego";
-		link.l1.go = "Finish_3";
-		break;
-
-	case "Finish_2_4":
-		pchar.questTemp.SanBoxTarget = 4;
-		dialog.text = "No hay mucho romanticismo en ese oficio, Capitán. Es una búsqueda larga pero rentable, especialmente si la suerte está de tu lado. Busca mapas del tesoro en los vendedores de la taberna y mantén los ojos abiertos: te encontrarás con muchos cazadores rivales que quieren enriquecerse a tu costa. Además, los tesoros más valiosos a menudo requieren ensamblar la mitad de un mapa a partir de hallazgos más simples, ¡así que adelante! ¡Que la fortuna nos favorezca a todos!";
-		link.l1 = "Comenzar juego";
-		link.l1.go = "Finish_3";
-		break;
-
-	case "Finish_2_5":
-		pchar.questTemp.SanBoxTarget = 5;
-		dialog.text = "Entonces entiendes lo que se necesita para convertirse en una leyenda del Caribe, Capitán. La tripulación cree en ti y espera con ansias tus logros. ¡Que la fortuna nos favorezca a todos!";
-		link.l1 = "Comenzar juego";
-		link.l1.go = "Finish_3";
-		break;
-
-	case "Finish_3":
-		DoQuestFunctionDelay("Tut_locCamera_2", 0.1);
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		DialogExit();
 		LAi_RemoveCheckMinHP(Pchar); // снимем проверки
@@ -101,8 +33,8 @@ void ProcessDialogEvent()
 		//AddQuestRecordInfo("Guide_AtSea", "1");
 		//AddQuestRecordInfo("Guide_OnLand", "1");
 		DoQuestFunctionDelay("Tutorial_CameraControlFP", 2.5);
-		// DoQuestFunctionDelay("Tutorial_Rest", 2.5);
-		break;
+		//DoQuestFunctionDelay("Tutorial_Rest", 2.5);
+	break;
 
 	case "ChangePIRATES":
 		LAi_SetCitizenTypeNoGroup(NPChar);
@@ -195,7 +127,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicDefense");
 		SetCharacterPerk(pchar, "AdvancedDefense");
 		SetCharacterPerk(pchar, "Ciras");
-		SetCharacterPerk(pchar, "SwordplayProfessional");
+
 		SetCharacterPerk(pchar, "CriticalHit");
 		SetCharacterPerk(pchar, "AgileMan");
 		SetCharacterPerk(pchar, "BladeDancer");
@@ -220,7 +152,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicBattleState");
 		SetCharacterPerk(pchar, "AdvancedBattleState");
 		SetCharacterPerk(pchar, "ShipDefenseProfessional");
-		SetCharacterPerk(pchar, "StormProfessional");
+
 		SetCharacterPerk(pchar, "SailingProfessional");
 		SetCharacterPerk(pchar, "SailsMan");
 		SetCharacterPerk(pchar, "WindCatcher");
@@ -288,7 +220,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "ShipSpeedUp");
 		SetCharacterPerk(sld, "ShipTurnRateUp");
-		SetCharacterPerk(sld, "StormProfessional");
+	
 		SetCharacterPerk(sld, "WindCatcher");
 		SetCharacterPerk(sld, "SailsMan");
 		SetCharacterPerk(sld, "SailingProfessional");
@@ -461,7 +393,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicDefense");
 		SetCharacterPerk(pchar, "AdvancedDefense");
 		SetCharacterPerk(pchar, "Ciras");
-		SetCharacterPerk(pchar, "SwordplayProfessional");
+
 		SetCharacterPerk(pchar, "CriticalHit");
 		SetCharacterPerk(pchar, "AgileMan");
 		SetCharacterPerk(pchar, "BladeDancer");
@@ -486,7 +418,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicBattleState");
 		SetCharacterPerk(pchar, "AdvancedBattleState");
 		SetCharacterPerk(pchar, "ShipDefenseProfessional");
-		SetCharacterPerk(pchar, "StormProfessional");
+
 		SetCharacterPerk(pchar, "SailingProfessional");
 		SetCharacterPerk(pchar, "SailsMan");
 		SetCharacterPerk(pchar, "WindCatcher");
@@ -554,7 +486,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "ShipSpeedUp");
 		SetCharacterPerk(sld, "ShipTurnRateUp");
-		SetCharacterPerk(sld, "StormProfessional");
+	
 		SetCharacterPerk(sld, "WindCatcher");
 		SetCharacterPerk(sld, "SailsMan");
 		SetCharacterPerk(sld, "SailingProfessional");
@@ -723,7 +655,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicDefense");
 		SetCharacterPerk(pchar, "AdvancedDefense");
 		SetCharacterPerk(pchar, "Ciras");
-		SetCharacterPerk(pchar, "SwordplayProfessional");
+
 		SetCharacterPerk(pchar, "CriticalHit");
 		SetCharacterPerk(pchar, "AgileMan");
 		SetCharacterPerk(pchar, "BladeDancer");
@@ -748,7 +680,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicBattleState");
 		SetCharacterPerk(pchar, "AdvancedBattleState");
 		SetCharacterPerk(pchar, "ShipDefenseProfessional");
-		SetCharacterPerk(pchar, "StormProfessional");
+
 		SetCharacterPerk(pchar, "SailingProfessional");
 		SetCharacterPerk(pchar, "SailsMan");
 		SetCharacterPerk(pchar, "WindCatcher");
@@ -809,7 +741,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "ShipSpeedUp");
 		SetCharacterPerk(sld, "ShipTurnRateUp");
-		SetCharacterPerk(sld, "StormProfessional");
+	
 		SetCharacterPerk(sld, "WindCatcher");
 		SetCharacterPerk(sld, "SailsMan");
 		SetCharacterPerk(sld, "SailingProfessional");
@@ -929,7 +861,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicDefense");
 		SetCharacterPerk(pchar, "AdvancedDefense");
 		SetCharacterPerk(pchar, "Ciras");
-		SetCharacterPerk(pchar, "SwordplayProfessional");
+
 		SetCharacterPerk(pchar, "CriticalHit");
 		SetCharacterPerk(pchar, "AgileMan");
 		SetCharacterPerk(pchar, "BladeDancer");
@@ -954,7 +886,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicBattleState");
 		SetCharacterPerk(pchar, "AdvancedBattleState");
 		SetCharacterPerk(pchar, "ShipDefenseProfessional");
-		SetCharacterPerk(pchar, "StormProfessional");
+
 		SetCharacterPerk(pchar, "SailingProfessional");
 		SetCharacterPerk(pchar, "SailsMan");
 		SetCharacterPerk(pchar, "WindCatcher");
@@ -1015,7 +947,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "ShipSpeedUp");
 		SetCharacterPerk(sld, "ShipTurnRateUp");
-		SetCharacterPerk(sld, "StormProfessional");
+	
 		SetCharacterPerk(sld, "WindCatcher");
 		SetCharacterPerk(sld, "SailsMan");
 		SetCharacterPerk(sld, "SailingProfessional");
@@ -1113,7 +1045,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicDefense");
 		SetCharacterPerk(pchar, "AdvancedDefense");
 		SetCharacterPerk(pchar, "Ciras");
-		SetCharacterPerk(pchar, "SwordplayProfessional");
+
 		SetCharacterPerk(pchar, "CriticalHit");
 		SetCharacterPerk(pchar, "AgileMan");
 		SetCharacterPerk(pchar, "BladeDancer");
@@ -1138,7 +1070,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(pchar, "BasicBattleState");
 		SetCharacterPerk(pchar, "AdvancedBattleState");
 		SetCharacterPerk(pchar, "ShipDefenseProfessional");
-		SetCharacterPerk(pchar, "StormProfessional");
+
 		SetCharacterPerk(pchar, "SailingProfessional");
 		SetCharacterPerk(pchar, "SailsMan");
 		SetCharacterPerk(pchar, "WindCatcher");
@@ -1199,7 +1131,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "ShipSpeedUp");
 		SetCharacterPerk(sld, "ShipTurnRateUp");
-		SetCharacterPerk(sld, "StormProfessional");
+	
 		SetCharacterPerk(sld, "WindCatcher");
 		SetCharacterPerk(sld, "SailsMan");
 		SetCharacterPerk(sld, "SailingProfessional");

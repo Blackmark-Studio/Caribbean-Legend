@@ -12,6 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Escucha, ¿has visto o conocido a un hombre llamado Joachim Merriman, aquí en La Habana o en sus alrededores? Es un señor de mediana edad, portugués con bigote, barba imperial y ojos penetrantes. ¿Quizás en una cala o en la jungla? Estoy buscándolo.";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
 		break;
 		

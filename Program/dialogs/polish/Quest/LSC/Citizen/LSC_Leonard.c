@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 		case "result_grabbing":
 			// считаем деньги и дублоны взятые из сундука
 			iPeso = sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money);
-			iDubl = GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon);
+			iDubl = PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon);
 			if (iPeso <= 0) sPeso = "not a single peso";
 			else sPeso = ""+FindRussianMoneyString(iPeso)+"";
 			if (iDubl <= 0) sDubl = "not a single doubloon";
@@ -242,9 +242,9 @@ void ProcessDialogEvent()
 		
 		case "grabbing_part":
 			iPeso = makeint((sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money))/2);
-			iDubl = makeint((GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
+			iDubl = makeint((PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
 			AddMoneyToCharacter(pchar, -iPeso);
-			RemoveItems(pchar, "gold_dublon", iDubl);
+			RemoveDublonsFromPCharTotal(iDubl);
 			Log_Info("You have given "+iDubl+" doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Dobrze, daj mi klucz, a ja go zwrócę właścicielowi, zanim ten go zauważy. Żegnaj, druh...";

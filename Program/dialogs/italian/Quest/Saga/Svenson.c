@@ -258,7 +258,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_2":
-			dialog.text = "Oh, non sopporto quel Jackman! Da quando è arrivato lui, sono iniziati все i nostri guai. Rifletterò sulla tua richiesta. Al momento non mi viene nulla in mente.";
+			dialog.text = "Oh, non sopporto quel Jackman! Da quando è arrivato lui, sono iniziati i nostri guai. Rifletterò sulla tua richiesta. Al momento non mi viene nulla in mente.";
 			link.l1 = "Ho scoperto qualcosa d’interessante su Jackman.";
 			link.l1.go = "saga_3";
 		break;
@@ -617,7 +617,7 @@ void ProcessDialogEvent()
 		
 		case "return_LSC_14":
 			dialog.text = "Ah! E come diavolo ha fatto Squalo a diventare capitano d’una nave da guerra?";
-			link.l1 = "La nave giace in una bonaccia eterna da più di mezzo secolo. Lui è in trappola con своей gente sull’Isola. Ecco perché non s’è fatto vedere nei Caraibi per così tanto tempo. Ad ogni modo, presto lo porterò qui e vi racconterà lui stesso le sue avventure.";
+			link.l1 = "La nave giace in una bonaccia eterna da più di mezzo secolo. Lui è in trappola con la sua gente nell’Isola. Ecco perché non s’è fatto vedere nei Caraibi per così tanto tempo. Ad ogni modo, presto lo porterò qui e vi racconterà lui stesso le sue avventure.";
 			link.l1.go = "return_LSC_15";
 		break;
 		
@@ -736,7 +736,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "barbazon_2":
-			dialog.text = "Oro, amico mio, comanda su tutto e ovunque: chi ha l’oro detta legge. Inoltre, Barbazon ha un talento diabolico nell’inventare ogni sorta di affari lucrosi e fuori legge. Lui non si sporca mai direttamente, ma la sua fetta la pretende sempre. Così attorno a lui ronza вrava marmaglia, per lo più zucche vuote, che senza di lui morirebbero di fame o finirebbero dritti al patibolo.";
+			dialog.text = "Oro, amico mio, comanda su tutto e ovunque: chi ha l’oro detta legge. Inoltre, Barbazon ha un talento diabolico nell’inventare ogni sorta di affari lucrosi e fuori legge. Lui non si sporca mai direttamente, ma la sua fetta la pretende sempre. Così attorno a lui ronza una brava marmaglia, per lo più zucche vuote, che senza di lui morirebbero di fame o finirebbero dritti al patibolo.";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "full_complete_end")
 			{
 				link.l1 = "Mi ricorda Marcus... Jan, il fatto è... Non ho la minima idea di come avvicinarmi a Barbazon. C'è un problema di cui tu non sai nulla.";
@@ -835,7 +835,7 @@ void ProcessDialogEvent()
 		
 		case "saga_28":
 			RemoveItems(pchar, "letter_parol", 1); // удалить записку
-			dialog.text = "Vediamo un po'... Ah, dunque ecco perché quei mascalzoni hanno dato retta a Jackman e smesso di rapтire i miskito! Non poteva finire altrimenti! Quel furfante l’aveva tutto architettato ed era avanti di diverse lunghezze.";
+			dialog.text = "Vediamo un po'... Ah, dunque ecco perché quei mascalzoni hanno dato retta a Jackman e smesso di rapire i miskito! Non poteva finire altrimenti! Quel furfante l’aveva tutto architettato ed era avanti di diverse lunghezze.";
 			link.l1 = "Già, e capisco pure perché gli uomini di Hawk sono stati massacrati. Ma ci sono due cose che proprio non mi tornano: primo, che ci fanno i complici di Jackman nella miniera? E secondo, come mai te la prendi così comoda mentre tutto questo caos succede nei tuoi domini?";
 			link.l1.go = "saga_29";
 		break;
@@ -1205,9 +1205,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61":
 			dialog.text = "Benissimo. Allora lo dividiamo a metà.";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
 				link.l1 = "Ecco qua. Ho preso "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1221,9 +1221,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61_1":
 			dialog.text = "Per mille balene! Quanto hai portato?";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
 				link.l1 = "Ecco qua. Ho "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1243,7 +1243,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
 			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
@@ -1365,7 +1365,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_73":
-			dialog.text = "Dopo di ciò, tutta la città cominciò ad aver timore di lei. Poi arrivò la Maschera. Si trovarono l’un l’altro in men che non скажи rum.";
+			dialog.text = "Dopo di ciò, tutta la città cominciò ad aver timore di lei. Poi arrivò la Maschera. Si trovarono l’un l’altro in meno di dire rum.";
 			link.l1 = "Secondo gli scritti, la Maschera è Joshua Leadbeater, l’ex capitano del 'Neptune'...";
 			link.l1.go = "saga_74";
 		break;
@@ -1683,7 +1683,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 4) sStr = "Helen";
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 80)
 			{
-				dialog.text = "Felice che tu abbia preso gusto per il legno di ferro, "+sStr+"Aumentare i carichi non è un problema, ma c’è un tranello, come ben capisci. Più merci, più rischи di lasciare tracce che potrebbero attirare attenzioni sgradite, soprattutto quelle maledette autorità inglesi. Se però mettiamo gente affidabile, orecchie fidate e qualcuno nella residenza che ci aiuti a restare nell’ombra, tutto si può sistemare. Ma non sarà a buon mercato – tremila dobloni per svicolare dal tesoro cittadino e dalle grinfie d’Inghilterra. Dopodiché potrò fornirti cinque volte tanto. Che ne dici?";
+				dialog.text = "Felice che tu abbia preso gusto per il legno di ferro, "+sStr+"Aumentare i carichi non è un problema, ma c’è un tranello, come ben capisci. Più merci, più rischio di lasciare tracce che potrebbero attirare attenzioni sgradite, soprattutto quelle maledette autorità inglesi. Se però mettiamo gente affidabile, orecchie fidate e qualcuno nella residenza che ci aiuti a restare nell’ombra, tutto si può sistemare. Ma non sarà a buon mercato, tremila dobloni per svicolare dal tesoro cittadino e dalle grinfie d’Inghilterra. Dopodiché potrò fornirti cinque volte tanto. Che ne dici?";
 				link.l1 = " Tremila dobloni? Jan, questo è un furto alla luce del sole! Non potremmo cavarcela con meno spese? Forse c’è modo di risolvere la faccenda senza queste cifre da capogiro? ";
 				link.l1.go = "UpgradeBakaut_1";
 				notification("Skill Check Passed", SKILL_COMMERCE);

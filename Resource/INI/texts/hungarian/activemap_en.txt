@@ -1,0 +1,23 @@
+CONTRABAND {Ellenpánt}
+AGGRESSIVE {Nagy igény}
+EXPORT {Exportálás}
+IMPORT {Importálás}
+Trade_assistant {Kereskedelmi asszisztens}
+No_price {Nincs árlista}
+No_profit {Nincs nyereséges kereskedelem}
+Distance {Távolság}
+To {Eddig}
+From {Feladó}
+day {nap}
+day2 {nap}
+days {nap}
+hour {óra}
+hour2 {óra}
+hours {óra}
+hours2 {óra}
+nautical_mile {tengeri mérföld}
+nautical_mile2 {tengeri mérföld}
+nautical_miles {tengeri mérföld}
+nautical_miles2 {tengeri mérföld}
+TRAVEL_from {}
+TRAVEL_to {eddig}

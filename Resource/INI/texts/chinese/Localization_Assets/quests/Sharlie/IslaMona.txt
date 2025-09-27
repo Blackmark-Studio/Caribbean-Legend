@@ -1,56 +1,12 @@
-IslaMona_1
-{
-Rodrigo
-}
-IslaMona_2
-{
-Jiménez
-}
-
-IslaMona_3
-{
-第二天早上... 
-}
-
-IslaMona_4
-{
-Rodrigo Jimenez 在莫纳岛准备了又一批铁木
-}
-
-IslaMona_5
-{
-你交付了 @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> 瓶朗姆酒
-}
-
-IslaMona_6
-{
-你交付了 @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> 瓶葡萄酒
-}
-
-IslaMona_7
-{
-向你的仓库添加了 @<sti(pchar.questTemp.IslaMona.Factory.Goods)> 份铁木
-}
-
-IslaMona_8
-{
-Alonso
-}
-IslaMona_9
-{
-
-}
-
-IslaMona_10
-{
-Francisco
-}
-IslaMona_11
-{
-de Alba
-}
-
-IslaMona_12
-{
-从声音判断, 陷阱起作用了! 是时候回村庄了! 
-}
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {第二天早上...}
+IslaMona_4 {Rodrigo Jimenez 在莫纳岛准备了又一批铁木}
+IslaMona_5 {你交付了 @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> 瓶朗姆酒}
+IslaMona_6 {你交付了 @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> 瓶葡萄酒}
+IslaMona_7 {向你的仓库添加了 @<sti(pchar.questTemp.IslaMona.Factory.Goods)> 份铁木}
+IslaMona_8 {Alonso}
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {从声音判断, 陷阱起作用了! 是时候回村庄了!}

@@ -7,6 +7,7 @@ void ProcessDialogEvent()
 	string NPC_Area, sTemp, sTitle, sDepositType1, sDepositType2;
 	int LoanSum, LoanInterest, LoanPeriod, LoanResult, iPastMonths, DepositSum, DepositInterest, DepositResult, iNum, iTemp, iTotalDublonQty;
 	int iRes, iPer, iDep;
+	float fPer;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -756,7 +757,7 @@ void ProcessDialogEvent()
             if(CheckAttribute(Pchar, "Quest.Loans." + (NPC_Area)) && makeint(Pchar.Quest.Loans.(NPC_Area)) == true)
 			{
 				iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Loans.(NPC_Area).StartYear),makeint(Pchar.Quest.Loans.(NPC_Area).StartMonth),makeint(Pchar.Quest.Loans.(NPC_Area).StartDay), makefloat(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
-				Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makeint(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);// boal 23.01.2004
+				Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makefloat(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);// boal 23.01.2004
 				if(makeint(PChar.money) >= makeint(Pchar.Quest.Loans.(NPC_Area).Result))
 				{
 					Link.l5 = "Ich schulde dir "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).Result))+LinkRandPhrase(", ich bin bereit, Ihr Geld zurückzugeben",". Ich möchte die Schuld begleichen.",".  Endlich ist es Zeit, die Schulden zu begleichen.");
@@ -785,11 +786,11 @@ void ProcessDialogEvent()
 				iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Deposits.(sDepositType1).StartYear),makeint(Pchar.Quest.Deposits.(sDepositType1).StartMonth),makeint(Pchar.Quest.Deposits.(sDepositType1).StartDay), makefloat(Pchar.Quest.Deposits.(sDepositType1).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
 				if(CheckAttribute(Pchar, "Quest.Deposits." + (sDepositType1)+ ".Rem"))
 				{
-					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makeint(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths+sti(Pchar.Quest.Deposits.(sDepositType1).Rem);
+					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makefloat(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths+sti(Pchar.Quest.Deposits.(sDepositType1).Rem);
 				}
 				else
 				{
-					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makeint(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths;
+					Pchar.Quest.Deposits.(sDepositType1).Result = makeint(Pchar.Quest.Deposits.(sDepositType1).Sum) + ((makeint(Pchar.Quest.Deposits.(sDepositType1).Sum)/100)*makefloat(Pchar.Quest.Deposits.(sDepositType1).Interest))*iPastMonths;
 				}
 				Link.l9 = LinkRandPhrase("Ich bin hier, um meine Investition zurückzubekommen, in Pesos.","Es ist Zeit, mein Silber zurückzubekommen, das du mir schuldest.","Ich brauche meine Investition in Pesos zurück, mit all dem Zins.");
 				Link.l9.go = "Deposit_return";									
@@ -873,7 +874,6 @@ void ProcessDialogEvent()
 			Link.l2.go = "Loan";
 			Link.l3 = "Ich nehme an, es ist besser für mich, keine Schulden zu machen. Lebewohl.";
 			Link.l3.go = "ExitDelLoan1";
-			Pchar.Quest.Loans.(NPC_Area).Interest = 22 - makeint((GetSummonSkillFromName(pchar, "Commerce")+GetSummonSkillFromName(pchar, "Leadership"))/10);
 		break;
 
 		case "Medium":
@@ -886,7 +886,6 @@ void ProcessDialogEvent()
 			Link.l2.go = "Loan";
 			Link.l3 = "Ich vermute, es ist besser für mich, mich von Schulden fernzuhalten. Auf Wiedersehen.";
 			Link.l3.go = "ExitDelLoan1";
-			Pchar.Quest.Loans.(NPC_Area).Interest = 27 - makeint((GetSummonSkillFromName(pchar, "Commerce")+GetSummonSkillFromName(pchar, "Leadership"))/10);
 		break;
 
 		case "Large":
@@ -899,14 +898,14 @@ void ProcessDialogEvent()
 			Link.l2.go = "Loan";
 			Link.l3 = "Ich nehme an, dass es besser für mich ist, mich von Schulden fernzuhalten. Auf Wiedersehen.";
 			Link.l3.go = "ExitDelLoan1";
-			Pchar.Quest.Loans.(NPC_Area).Interest = 37 - makeint((GetSummonSkillFromName(pchar, "Commerce")+GetSummonSkillFromName(pchar, "Leadership"))/10);
 		break;
 
 		case "Interest":
+			Pchar.Quest.Loans.(NPC_Area).Interest = 4.0 + (makeint((((6.0 - 4.0) * (GetSummonSkillFromName(pchar, "Commerce") + GetSummonSkillFromName(pchar, "Leadership")) / 200) ) / 0.5 + 0.5)) * 0.5;
 			//Pchar.Quest.Loans.(NPC_Area).Interest = 16 - makeint(Pchar.skill.commerce);
 			// Rebbebion, добавил фикс отображения знака процента
 			Dialog.snd = "voice\USDI\USDI020";
-			dialog.text = Pchar.Quest.Loans.(NPC_Area).Interest+"%% pro Monat. Ich kann Ihnen keine besseren Konditionen anbieten, basierend auf dem, was ich über Sie weiß."; 
+			dialog.text = fts(stf(Pchar.Quest.Loans.(NPC_Area).Interest), 1)+"%% pro Monat. Ich kann Ihnen keine besseren Konditionen anbieten, basierend auf dem, was ich über Sie weiß."; 
 			Link.l1 = "Funktioniert für mich. Lass uns über die Zeit sprechen.";
 			Link.l1.go = "Period";
 			Link.l3 = "Ich vermute, es ist besser für mich, mich von Schulden fernzuhalten. Auf Wiedersehen.";
@@ -976,7 +975,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "result":
-			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = makeint((GetSummonSkillFromName(pchar, "Commerce")+GetSummonSkillFromName(pchar, "Leadership"))/10.0/4.0 + 0.66) + 1; 
+			Pchar.QuestTemp.Deposits.(sDepositType1).Interest = GetDepositRate();
 			Pchar.QuestTemp.Deposits.(sDepositType1).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)
@@ -993,7 +992,7 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 				break;
 			}
-			dialog.text = "In Ordnung. Ich kann dir anbieten... sagen wir mal..."+Pchar.QuestTemp.Deposits.(sDepositType1).Interest+" %. Pro Monat, natürlich.";
+			dialog.text = "In Ordnung. Ich kann dir anbieten... sagen wir mal..."+fts(stf(Pchar.QuestTemp.Deposits.(sDepositType1).Interest), 1)+" %. Pro Monat, natürlich.";
 			Link.l1 = "Es funktioniert für mich.";
 			Link.l1.go = "Deposit_placed";
 			Link.l2 = "Ich sollte besser die Summe ändern.";
@@ -1040,7 +1039,7 @@ void ProcessDialogEvent()
 			{
 				DeleteAttribute(Pchar,"Quest.Deposits." + (sDepositType1)+ ".Rem");
 			}
-			Pchar.Quest.Deposits.(sDepositType1).Interest = sti(Pchar.QuestTemp.Deposits.(sDepositType1).Interest);
+			Pchar.Quest.Deposits.(sDepositType1).Interest = stf(Pchar.QuestTemp.Deposits.(sDepositType1).Interest);
 			Pchar.Quest.Deposits.(sDepositType1).Sum      = sti(Pchar.QuestTemp.Deposits.(sDepositType1).Sum);
 			Pchar.Quest.Deposits.(sDepositType1).city 	  = NPC_Area;	
 
@@ -1096,19 +1095,19 @@ void ProcessDialogEvent()
 			iTemp = sti(dialogEditStrings[4]);
 			addMoneyToCharacter(Pchar, iTemp);
 			iRes = sti(Pchar.Quest.Deposits.(sDepositType1).Result)-iTemp; //остаток на счете
-			iPer = sti(Pchar.Quest.Deposits.(sDepositType1).Interest);
+			fPer = stf(Pchar.Quest.Deposits.(sDepositType1).Interest);
 			iDep = sti(Pchar.Quest.Deposits.(sDepositType1).Sum); //стартовая сумма
 			if (iRes <= sti(Pchar.Quest.Deposits.(sDepositType1).Sum)) // стало меньше начальной суммы
 			{
 				DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType1));
-				Pchar.Quest.Deposits.(sDepositType1).Interest = iPer;
+				Pchar.Quest.Deposits.(sDepositType1).Interest = fPer;
 				Pchar.Quest.Deposits.(sDepositType1).Sum = iRes;
 				Pchar.Quest.Deposits.(sDepositType1).Result = 0;
 			}
 			else // если остаток больше начальной суммы - проценты продолжаем считать с неё, а не с остатка, ибо нефиг, дельту приплюсуем к набежавшим процентам - банкир Jason :) 
 			{
 				DeleteAttribute(Pchar, "quest.Deposits." + (sDepositType1));
-				Pchar.Quest.Deposits.(sDepositType1).Interest = iPer;
+				Pchar.Quest.Deposits.(sDepositType1).Interest = fPer;
 				Pchar.Quest.Deposits.(sDepositType1).Sum = iDep;
 				Pchar.Quest.Deposits.(sDepositType1).Rem = iRes-iDep;
 			}
@@ -1147,7 +1146,7 @@ void ProcessDialogEvent()
 		
 		case "result_dub":		
 			iTotalDublonQty = GetCharacterItem(pchar,"gold_dublon") + CheckItemMyCabin("gold_dublon");		
-			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = makeint((GetSummonSkillFromName(pchar, "Commerce")+GetSummonSkillFromName(pchar, "Leadership"))/20.0/4.0 + 0.66) + 1; 
+			Pchar.QuestTemp.Deposits.(sDepositType2).Interest = 1;
 			Pchar.QuestTemp.Deposits.(sDepositType2).Sum = dialogEditStrings[3];
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp <= 0)
@@ -1340,7 +1339,7 @@ void ProcessDialogEvent()
 		// boal обратимость факапства -->
 		case "LoanRestore_1":
             iPastMonths = GetPastTime("Month", makeint(Pchar.Quest.Loans.(NPC_Area).StartYear),makeint(Pchar.Quest.Loans.(NPC_Area).StartMonth),makeint(Pchar.Quest.Loans.(NPC_Area).StartDay), makefloat(Pchar.Quest.Loans.(NPC_Area).StartTime), getDataYear(),getDataMonth(),GetDataDay(), GetTime());
-			Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makeint(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);
+			Pchar.Quest.Loans.(NPC_Area).Result = makeint(Pchar.Quest.Loans.(NPC_Area).Sum) + ((makeint(Pchar.Quest.Loans.(NPC_Area).Sum)/100)*makefloat(Pchar.Quest.Loans.(NPC_Area).Interest))*(iPastMonths+1);
 			dialog.text = "Ach wirklich? Und was sind Ihre Bedenken?";
 			Link.l1 = "Für heute schulde ich dir "+FindRussianMoneyString(sti(Pchar.Quest.Loans.(NPC_Area).Result))+". Und ich biete dir dieses Geld an.";
 			Link.l1.go = "DeadMotherFucker_1";
@@ -2752,8 +2751,8 @@ void SlavetraderGalleonInWorld()
 	sld.DontRansackCaptain = true;
 	sld.WatchFort = true;
 	sld.AlwaysEnemy = true;
-	SetCharacterPerk(sld, "StormProfessional");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
+
 	SetCharacterPerk(sld, "AdvancedDefense");
 	SetCharacterPerk(sld, "CriticalHit");
 	SetCharacterPerk(sld, "MusketsShoot");

@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 					link.l1.go = "patria_59";
 					break;
 				}
-				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < 5)
+				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < COMPANION_MAX)
 				{
 					dialog.text = "你准备好接收我们的信使单桅帆船了吗? ";
 					link.l1 = "准备好了。 ";
@@ -503,7 +503,6 @@ void ProcessDialogEvent()
 			pchar.quest.DefendSP_prepare.function = "DefendSP_PrepareMartinique";
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);
 			AddCharacterExpToSkill(pchar, "Fortune", 500);
-			pchar.questTemp.GoldenGirl_Block = true;	// 禁止任务《比黄金更珍贵》
 		break;
 		
 		case "serve_wait":
@@ -1833,7 +1832,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			SetTimerCondition("PZ_NormanBackToStreets", 0, 0, 1, false);	//Вовзращаем Акулу или Тиракса в Шарптаун
 			// ставим сразу прерывание, чтобы потом по тысячу раз не копировать
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
@@ -1852,7 +1851,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.PZ_LevasserPlenen"))
 				{
 					link.l1 = "这还不是全部, 阁下。 ";
-					link.l1.go = "PZ2";
+					link.l1.go = "PZ_2";
 				}
 				else
 				{
@@ -1870,13 +1869,13 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube");
 		break;
 					
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "是吗? 你是什么意思, 船长? ";
 			link.l1 = "我成功活捉了勒瓦瑟, 并把他带来见您。 我们一结束谈话, 我就下令把他带来。 ";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "我从没想过这种事是可能的! 真的, 干得漂亮, 查尔斯! 我怀疑即使你那位杰出的哥哥也未必能做得更好。 你的父亲会为你骄傲的, 我的朋友。 ";
 			link.l1 = "谢谢您的夸奖, 菲利普先生。 ";
 			link.l1.go = "exit";
@@ -1884,7 +1883,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("PZ_LevasserVGostyahUPuansie");
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "非常好, 查尔斯。 我对你很满意。 ";
 			link.l1 = "您能给我一份书面命令, 让我哥哥现在就被释放吗? ";
 			link.l1.go = "serve";

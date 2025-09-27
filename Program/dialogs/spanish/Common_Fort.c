@@ -48,7 +48,7 @@ void ProcessDialogEvent()
             NextDiag.TempNode = "First time";
 			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY && sti(NPChar.nation) != PIRATE)
 			{
-				dialog.text = RandPhraseSimple("¡Un espía! ¡Entrega tu arma y sígueme!","¡Un agente enemigo! Captura "+GetSexPhrase("él","ella")+"¡!");
+				dialog.text = RandPhraseSimple("¡Un espía! ¡Entrega tu arma y sígueme!","¡Un agente enemigo! ¡Capturar"+GetSexPhrase("lo","la")+"!");
 				link.l1 = RandPhraseSimple("¡Cállate, marica!","¡Que te jodan!");
 				link.l1.go = "fight"; 
 			}

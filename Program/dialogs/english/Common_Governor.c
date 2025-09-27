@@ -62,49 +62,42 @@ void ProcessDialogEvent()
             NextDiag.TempNode = "First time";
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("You dare to show your face at governor-general's office?! You're insane, indeed...", "How did these lazybones let an enemy break into my residence? This is beyond my mind...", "Surely, my guards aren't worth a coin if some tramp is running around in my residence..."), 
-					LinkRandPhrase("What do you need, "+ GetSexPhrase("creep","stinker") +"?! My soldiers have already been set on your trail, "+ GetSexPhrase("filthy pirate","stinker") +"!", ""+ GetSexPhrase("Filthy","Filthy") +" murderer, leave my residence immediately! Guards!", "I am not afraid of you, "+ GetSexPhrase("scoundrel","rascal") +"! Soon you will be hung in our fort, you won't get far..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Soldiers aren't worth a crap...", "You will never get me."), 
-					RandPhraseSimple("Shut up, mate, or I'll rip out that foul tongue of yours!", "I'm telling you, mate: sit quietly or I will cut off your head and throw it through that door to your guardian dogs..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("You dare show your face at the governor-general's office?! You're insane, indeed...","How did these lazybones let an enemy break into my residence? This is beyond me...","Surely, my guards aren't worth a coin if some tramp is running around in my residence..."),LinkRandPhrase("What do you need, "+GetSexPhrase("creep","stinker")+"?! My soldiers are already on your trail, "+GetSexPhrase("filthy pirate","stinker")+"!",""+GetSexPhrase("Filthy","Filthy")+" Murderer, leave my residence immediately! Guards!","I am not afraid of you, "+GetSexPhrase("scoundrel","rascal")+"! Soon you will be hanged in our fort, you won't get far..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Soldiers aren't worth a damn...","You will never catch me."),RandPhraseSimple("Shut up, mate, or I'll rip out that foul tongue of yours!","I'm telling you, mate: sit quietly or I'll cut off your head and throw it through that door to your guard dogs..."));
 				link.l1.go = "fight";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "I've heard that you were very persistent at requesting an audience. My name is " + GetFullName(npchar) +
-                              ". I am the governor-general of the colonies of " + NationNameGenitive(sti(NPChar.nation))+ ", deputy of the Crown of " + NationKingsName(npchar)+
-                              " in these waters. Now, please be so kind as to tell me, what is the purpose of your visit, " + GetAddress_Form(NPChar) + ".";
-				link.l1 = "My name is " + GetFullName(pchar) + ".";
+				dialog.text = "I've heard that you were very persistent in requesting an audience. My name is "+GetFullName(npchar)+". I am the governor-general of the colonies of "+NationNameGenitive(sti(NPChar.nation))+", deputy of the Crown of "+NationKingsName(npchar)+" in these waters. Now, please be so kind as to tell me, what is the purpose of your visit, "+GetAddress_Form(NPChar)+".";
+				link.l1 = "My name is "+GetFullName(pchar)+".";
 				link.l1.go = "node_1";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = RandPhraseSimple("Oh, that's you again? Well, what do you want from the governor-general of " + NationNameGenitive(sti(NPChar.nation))+ " this time?",
-                              "And once again, you are distracting me from important affairs of state? What do you want, " +GetAddress_Form(NPChar)+"?");
-				link.l1 = "I want to talk with you about working in the name of the Crown of " + NationNameGenitive(sti(NPChar.nation));
+				dialog.text = RandPhraseSimple("Oh, it's you again? Well, what do you want from the governor-general of "+NationNameGenitive(sti(NPChar.nation))+" this time?","And once again, you are distracting me from important affairs of state? What do you want, "+GetAddress_Form(NPChar)+"?");
+				link.l1 = "I want to talk to you about working in the name of the Crown of "+NationNameGenitive(sti(NPChar.nation));
 				link.l1.go = "work";
-				link.l2 = "I need to talk with you about one important affair.";
+				link.l2 = "I need to talk to you about an important matter.";
 				link.l2.go = "quests"; // файл нации
 				//Jason --> Регата
 				if (CheckAttribute(pchar, "questTemp.Regata.ToPortRoyal") && NPChar.location == "Portroyal_townhall")
 				{
-					link.l3 = "I came on an invitation to participate in the regatta. Here's my invitation.";
+					link.l3 = "I came by invitation to participate in the regatta. Here's my invitation.";
 					link.l3.go = "Regata";
 				}
 				//<-- Регата
-				link.l10 = "I am sorry, but I have some business to do.";
+				link.l10 = "I am sorry, but I have some business to attend to.";
 				link.l10.go = "exit";
 			}
 		break;
 		
 		case "node_1":
-			dialog.text = "So what was the reason for you to come here and distract me from important affairs of the state?";
-			link.l1 = "I wanted to talk to you about working in the name of the Crown of " + NationNameGenitive(sti(NPChar.nation));
+			dialog.text = "So what brings you here to distract me from important affairs of state?";
+			link.l1 = "I wanted to talk to you about working in the name of the Crown of "+NationNameGenitive(sti(NPChar.nation));
 			link.l1.go = "work";
-			link.l2 = "I was going to talk to you 'bout one important affair.";
+			link.l2 = "I was going to talk to you about an important matter.";
 			link.l2.go = "quests";
 			//Jason --> Регата
 			if (CheckAttribute(pchar, "questTemp.Regata.ToPortRoyal") && NPChar.location == "Portroyal_townhall")
@@ -113,25 +106,25 @@ void ProcessDialogEvent()
 				link.l3.go = "Regata";
 			}
 			//<-- Регата
-			link.l10 = "It is just a courtesy visit, nothing more, "+GetAddress_FormToNPC(NPChar);
+			link.l10 = "It is just a courtesy visit, nothing more. "+GetAddress_FormToNPC(NPChar);
 			link.l10.go = "node_2";
 		break;
 
 		case "node_2":
-			dialog.text = "In that case I would ask you to leave my office and stop distracting me from my work.";
+			dialog.text = "In that case, I would ask you to leave my office and stop distracting me from my work.";
 			link.l1 = "Yes, yes, of course. Sorry for bothering you.";
 			link.l1.go = "exit";
 		break;
 		
 		case "work":
-            dialog.text = "If you are looking for work, talk with the governors of colonies. They are often in need of smart and brave captains.";
+            dialog.text = "If you are looking for work, talk to the governors of the colonies. They are often in need of smart and brave captains.";
 			link.l1 = "I'll keep that in mind. Thank you.";
 			link.l1.go = "exit";
 		break;
 		
 		//--> Jason регата
 		case "Regata":
-			dialog.text = "Oh, great, glad to see you, captain! You've arrived just in time - the regatta is about to start in a few days. Did you read the rules of the regatta in the letter which must have been handed to you by messenger?";
+			dialog.text = "Oh, splendid, glad to see you, captain! You've arrived just in time – the regatta is about to begin in a few days. Did you read the rules of the regatta in the letter that must have been delivered to you by the messenger?";
 			link.l1 = "Yes, sir, I did.";
 			link.l1.go = "Regata_1";
 			RemoveItems(PChar, "letter_open", 1);//уберем письмо
@@ -140,18 +133,18 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Regata_1":
-			dialog.text = "And did you prepare 50000 pesos - your entrance fee, which will contribute to the prize money?";
+			dialog.text = "And have you prepared 50,000 pesos – your entrance fee, which will go towards the prize money?";
 			if (makeint(Pchar.money) >= 50000)
 			{
 				link.l1 = "Yes, of course. Please accept my fee.";
 				link.l1.go = "Regata_2";
 			}
-			link.l2 = "I am a bit short of money at the moment. But I will definitely bring it as fast as I can.";
+			link.l2 = "I am a bit short of money at the moment. But I will definitely bring it as soon as I can.";
 			link.l2.go = "Regata_nomoney";
 		break;
 		
 		case "Regata_2":
-			dialog.text = "Very well. If you win - your money will return to your fivefold more. Now, you should know how to not break the rules of the regatta.\nDiscuss details with Henry Stevenson, he must be in residence's room. Meet with him, he will explain everything.";
+			dialog.text = "Very well. If you win, your money will be returned to you fivefold. Now, you should know how not to break the rules of the regatta.\nDiscuss the details with Henry Stevenson; he should be in the residence's room. Meet with him, he will explain everything.";
 			link.l1 = "Alright. I'll do as you say.";
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, -50000);
@@ -164,7 +157,7 @@ void ProcessDialogEvent()
 		
 		case "Regata_nomoney":
 			dialog.text = "Fine, but please don't take too long, captain. The regatta is about to start soon.";
-			link.l1 = "I see. I will try to bring you money before the regatta starts.";
+			link.l1 = "I see. I will try to bring you the money before the regatta starts.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Regata_1";
 			pchar.questTemp.Regata.nomoney = "true";
@@ -172,13 +165,13 @@ void ProcessDialogEvent()
 		
 		//регата-финал
 		case "Regata_Final":
-			dialog.text = "And here we have the winner of the regatta! Hello, captain " + GetFullName(pchar) + "! Allow me to congratulate you with this well-deserved success! The winners of the regatta are always popular in English colonies, deservedly popular.";
+			dialog.text = "And here we have the winner of the regatta! Hello, Captain "+GetFullName(pchar)+"! Allow me to congratulate you on this well-deserved success! The winners of the regatta are always popular in English colonies, and deservedly so.";
 			link.l1 = "Thank you, sir!";
 			link.l1.go = "Regata_complete";
 		break;
 		
 		case "Regata_complete":
-			dialog.text = "Now let's skip to the most pleasant part for you - the reward ceremony. The first prize in money is 250000 pesos. Here you go!";
+			dialog.text = "Now let's move on to the most pleasant part for you - the award ceremony. The first prize is 250,000 pesos. Here you go!";
 			link.l1 = "Thanks!";
 			link.l1.go = "Regata_complete_1";
 		break;
@@ -223,13 +216,13 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, sItem2);
 			GiveItem2Character(pchar, sItem3);
 			dialog.text = "Also, you're eligible for a set of valuable prizes: "+sAdd+". Now it's all yours.";
-			link.l1 = "I am very glad, sir! Really, I could't have expected it.";
+			link.l1 = "I am very glad, sir! Really, I couldn't have expected it.";
 			link.l1.go = "Regata_complete_2";
 		break;
 		
 		case "Regata_complete_2":
-			dialog.text = "In the name of all English colonies, I am glad to thank you for participating in the regatta and once again I congratulate you for your victory! If you made a bet, now is the perfect time to see Sir Henry Stevenson and collect your winnings, if you haven't done so already. Best of luck to you, captain!";
-			link.l1 = "Thank you for your kind words, sir! In turn, allow me to thank you for providing me with the opportunity to participate in such a grand event. And now, please allow me to say farewell and leave.";
+			dialog.text = "In the name of all English colonies, I am glad to thank you for participating in the regatta and once again I congratulate you on your victory! If you placed a bet, now is the perfect time to see Sir Henry Stevenson and collect your winnings, if you haven't done so already. Best of luck to you, captain!";
+			link.l1 = "Thank you for your kind words, sir! In turn, allow me to thank you for giving me the opportunity to take part in such a grand event. And now, please allow me to bid you farewell and take my leave.";
 			link.l1.go = "Regata_complete_3";
 		break;
 		

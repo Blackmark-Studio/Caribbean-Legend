@@ -5,19 +5,11 @@ extern void InitGunExt(string id,
 				string sAttr,       
 				string sBullet,     
 				string sGunPowder,  
-				float  DmgMin_NC,   
-				float  DmgMax_NC,   
-				float  DmgMin_C,    
-				float  DmgMax_C,    
-				float  EnergyP_NC,  
-				float  EnergyP_C,   
-				bool   Stun_NC,     
-				bool   Stun_C,      
+				float  DmgMin,   
+				float  DmgMax, 
+				float  EnergyP,
 				bool   MultiDamage, 
 				int    MisFire,     
-				bool   SelfDamage,  
-				bool   Explosion,   
-				float  Accuracy,    
 				int    ChargeSpeed, 
 				bool   isDefault );
 
@@ -120,8 +112,8 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_play_3":
-			dialog.text = "¡Tal vez, pero sugiero que apostemos primero! ¡Mil de plata por carta! Por cierto, mi nombre es Agueybana.";
-			link.l1 = "El mío es "+GetFullName(pchar)+". Claro, juguemos.";
+			dialog.text = "Tal vez, ¡pero sugiero que apostemos primero! ¡Mil de plata por carta! Por cierto, mi nombre es Agueybana.";
+			link.l1 = "Mía es "+GetFullName(pchar)+". Claro, juguemos.";
 			link.l1.go = "native_accept";
 			link.l2 = "El mío es "+GetFullName(pchar)+". ¿Mil pesos? No está mal. Lo pensaré, pero no prometo nada.";
 			link.l2.go = "native_decline";
@@ -154,8 +146,8 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_cards_loss_1":
-			dialog.text = "Tú ni siquiera deberías estar aquí, capitán. Pero si anhelas descubrir de qué se trataba todo esto... busca un templo antiguo en el continente. Y trae mucho 'tuunich kaane'. Aquí, toma uno.";
-			link.l1 = "¿Una piedra de serpiente? La piedra con el agujero definitivamente encaja en el lugar. Gracias, Agueybana.";
+			dialog.text = "Tú ni siquiera deberías estar aquí, capitán. Pero si anhelas descubrir de qué se trataba todo esto... busca un templo antiguo en el continente. Y trae mucho tuunich kaane'. Aquí, toma uno.";
+			link.l1 = "¿Una piedra de serpiente? Una piedra con un agujero definitivamente encaja en el lugar. Gracias, Agueybana";
 			link.l1.go = "native_cards_loss_2";
 		break;
 		
@@ -314,7 +306,7 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_dice_story_14":
-			dialog.text = "Que lo que queremos siempre coincida con lo que necesitamos. Gracias, Capitán, es un final apropiado para... nuestra velada. Si deseas probar la veracidad de mi fábula algún día, ve al continente y encuentra un templo antiguo allí. Lleva contigo ciento trece 'tuunich kaane'. Me quedan noventa y nueve - llévalos y ¡adiós!";
+			dialog.text = "Que lo que queremos siempre coincida con lo que necesitamos. Gracias, Capitán, es un final apropiado para... nuestra velada. Si deseas probar la veracidad de mi fábula algún día, ve al continente y encuentra un templo antiguo allí. Lleva contigo ciento trece tuunich kaane'. Me quedan noventa y nueve - llévalos y ¡adiós!";
 			link.l1 = "¿Un montón de piedras con agujeros? Encaja bien con el lugar. Gracias por la velada, Agueybana. ¿Nos vemos de nuevo?";
 			link.l1.go = "native_dice_story_15";
 		break;
@@ -328,13 +320,13 @@ void ProcessDialogEvent()
 		break;
 		
         case "native_dice_win_not_story":
-			dialog.text = "Entiendo, capitán. Para bien o para mal, te daré una pista sobre el tesoro. Después de todo, has iluminado mis últimos días... En este burdel, quiero decir. Busca un templo antiguo en la gran tierra y trae una pila de 'tuunich kaane'. Aquí, toma uno.";
+			dialog.text = "Entiendo, capitán. Para bien o para mal, te daré una pista sobre el tesoro. Después de todo, has iluminado mis últimos días... En este burdel, quiero decir. Busca un templo antiguo en la gran tierra y trae una pila de tuunich kaane'. Aquí, toma uno.";
 			link.l1 = "¿Una piedra de víbora? Qué encantador, y una piedra con un agujero definitivamente encaja con el lugar. ¡Ya tuve suficiente de tu trato!";
 			link.l1.go = "native_dice_not_story";
 		break;
 		
         case "native_dice_loss_not_story":
-			dialog.text = "Entiendo que estás enfadado, capitán. Para bien o para mal, te daré una pista sobre el tesoro. Después de todo, has alegrado mis últimos días... En este burdel, quiero decir. Busca un antiguo templo en la gran tierra y trae un montón de 'tuunich kaane'. Aquí, toma uno.";
+			dialog.text = "Entiendo que estás enfadado, capitán. Para bien o para mal, te daré una pista sobre el tesoro. Después de todo, has alegrado mis últimos días... En este burdel, quiero decir. Busca un antiguo templo en la gran tierra y trae un montón de tuunich kaane'. Aquí, toma uno.";
 			link.l1 = "¿Una piedra de víbora? Qué encantador y una piedra con un agujero definitivamente encaja con el lugar. ¡He tenido suficiente de tu trato!";
 			link.l1.go = "native_dice_not_story";
 		break;
@@ -490,7 +482,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_16":
-			dialog.text = "Aruba el Magnífico. Una última cosa, "+pchar.name+", la entrada a la pirámide está permitida solo una vez al día. No retrases a otros clientes y no me molestes por nada.";
+			dialog.text = "Aruba la Magnífica. Una última cosa, "+pchar.name+", la entrada a la pirámide está permitida solo una vez al día. No retrases a otros clientes y no me molestes por nada.";
 			link.l1 = "No veo a la fila formarse... Adiós, su majestad.";
 			link.l1.go = "exit";
 			
@@ -605,9 +597,9 @@ void ProcessDialogEvent()
 		case "joruba_p1_2":
 			dialog.text = "Mi alma lo es. Verás, los sacerdotes evitan mi humilde pirámide desde aquel incidente con la Inquisición, así que tenemos que depender de métodos más tradicionales. Necesito, bueno, mi factoría necesita quince plantas de magarosa para seguir operativa.";
 			if (!ChickenGod_TalkedToAmelia()) {
-				link.l1 = "¿Es un tipo de hierba?";
+				link.l1 = "¿Es eso una hierba?";
 			} else {
-				link.l1 = "Ya sé qué es, je-je.";
+				link.l1 = "Yo sé qué es, je-je.";
 			}
 			link.l1.go = "joruba_p1_3";
 		break;
@@ -814,13 +806,13 @@ void ProcessDialogEvent()
 		
 		case "joruba_p3_3":
 			dialog.text = "¿Desarrollando un gusto por ello, eh capitán? Desafortunadamente para ti, yo también. ¿Por qué crees que elegí esta pirámide para mi oficina?";
-			link.l1 = "¿Probablemente porque la caza de brujas sigue estando activa?";
+			link.l1 = "¿Probablemente porque la caza de brujas sigue siendo algo?";
 			link.l1.go = "joruba_p3_4";
 		break;
 		
 		case "joruba_p3_4":
-			dialog.text = "Heh-heh, no, no exactamente. Hago mis negocios aquí porque los mejores tratos requieren sangre. Esta pirámide requiere sangre. Yo requiero sangre. Así ha sido y así será.";
-			link.l1 = "Ni siquiera lo pienses, monstruo. ¡No te entregaré más víctimas para que las mates!";
+			dialog.text = "Heh-heh, no, no exactamente. Hago mis negocios aquí porque los mejores tratos requieren sangre. Esta pirámide requiere sangre. Yo requiero sangre. Así ha sido, así será.";
+			link.l1 = "Ni siquiera lo pienses, monstruo. ¡No entregaré víctimas para que las mates!";
 			link.l1.go = "joruba_p3_5";
 		break;
 		
@@ -1000,8 +992,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_o2":
-			dialog.text = "En primer lugar, esa es mi esposa, no una novia. En segundo lugar, tienes un problema con los castellanos, no conmigo. Y finalmente, ya la he llevado y despedido a tus hombres. Y en cuanto a intenciones honorables... Mírame, ¿acaso no soy un modelo de un caballero decente? Tlazolteotl, bendícelo para que él también pueda conocer un día a una mujer de verdad o a un hombre.";
-			link.l1 = "¡Qué te den, Aruba!";
+			dialog.text = "En primer lugar, esa es mi esposa, no una novia. En segundo lugar, tienes un problema con los castellanos, no conmigo. Y finalmente, ya la he llevado y despedido a tus hombres. Y en cuanto a intenciones honorables... Mírame, ¿acaso no soy un modelo de un caballero decente? Tlazolteotl, bendícelo para que él también pueda conocer un día a una mujer de verdad. O a un hombre.";
+			link.l1 = "¡Que te den, Aruba!";
 			link.l1.go = "exit";
 			
 			notification("+ 10 HP, + 10 Energy!", "None");
@@ -1319,20 +1311,32 @@ void ProcessDialogEvent()
 
 void ChickenGod_InitAmmo() {
 	if(LoadSegment("items\initItems.c")) {
-		InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 20, 0);
-		InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,  20.0, 100.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 40, 20, 0);
-		InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0,  30.0, 110.0,  0.0,  0.0, 0, 1, 1, 2, 1, 1, 40, 20, 0);
-		InitGunExt(		 "pistol4", "t3",    "bullet_double",               "",  70.0, 270.0,  30.0, 230.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 35, 30, 0);
-		InitGunExt(		 "pistol5", "t3", 	 "bullet_double",               "", 130.0, 330.0,  90.0, 290.0,  0.0,  0.0, 1, 0, 0, 2, 0, 0, 70, 30, 0);
-		InitGunExt(		 "pistol6", "t3",    "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 50, 20, 0);
-		InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0,  30.0,  60.0,  5.0,  5.0, 1, 1, 1, 0, 1, 1, 20, 20, 0);
-		InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,  80.0, 280.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 30, 0);
-		InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0, 100.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 30, 0);
-		InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,  10.0, 620.0, 40.0, 30.0, 1, 1, 0, 0, 0, 0, 45,100, 0);
-		InitGunExt(		 "pistol12", "t3",   "bullet_double",               "",  80.0, 290.0,  60.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 20, 0);
-		InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0,  90.0, 260.0, 15.0,  0.0, 1, 1, 0, 0, 0, 0, 60, 30, 0);
-		InitGunExt(		 "howdah",  "t3", "grapeshot_double",	            "",  50.0, 140.0,  30.0,  70.0,  5.0,  5.0, 1, 1, 1, 0, 0, 1, 50, 30, 0);
-		InitGunExt(		 "pistol14", "t3",   "bullet_double",               "", 130.0, 330.0,  90.0, 290.0,  0.0,  0.0, 1, 0, 0, 4, 0, 0, 70, 34, 0); // Дуэльный двухзарядный пистоль cle 1.3
+		InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,    0.0,  0, 0,  20, 0);
+		InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,      0.0,  1, 0,  20, 0);
+		InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0,    0.0,  1, 2,  20, 0);
+		InitGunExt(		 "pistol4", "t3",    "bullet_double",               "",  70.0, 270.0,     0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol5", "t3", 	 "bullet_double",               "", 130.0, 330.0,     0.0,  0, 2,  30, 0);
+		InitGunExt(		 "pistol6", "t3",    "bullet_double",               "", 100.0, 300.0,     0.0,  0, 0,  20, 0);
+		InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0,    5.0,   1, 0,  20, 0);
+		InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,     0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0,    0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,   40.0,   0, 0, 100, 0);
+		InitGunExt(		 "pistol12", "t3",   "bullet_double",               "",  80.0, 290.0,    0.0,   0, 0,  20, 0);
+		InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0,  15.0,    0, 0,  30, 0);
+		InitGunExt(		 "howdah",  "t3", "grapeshot_double",	            "",  50.0, 140.0,   5.0,    1, 0,  30, 0);
+		InitGunExt(		 "pistol14", "t3",   "bullet_double",               "", 130.0, 330.0,   0.0,    0, 4,  34, 0); // Дуэльный двухзарядный пистоль cle 1.3
+		
+		InitGunExt(		"mushket1", "t3",    "bullet_double",      			"", 240.0, 440.0,  0.0,    0, 0,  20, 0);
+		InitGunExt(		"mushket2", "t3", 	 "bullet_double",      			"", 270.0, 470.0,  0.0,    0, 0,  15, 0);
+		InitGunExt(		"mushket5", "t3", 	 "bullet_double",      			"", 400.0, 600.0,  15.0,   0, 0,  15, 0);
+		InitGunExt(		"mushket7", "t3", 	 "bullet_double",      			"", 300.0, 440.0,   0.0,   0, 0,  18, 0); // Качественный мушкет cle
+		InitGunExt(		"mushket8", "t3", 	 "bullet_double",      			"", 200.0, 400.0,  0.0,    0, 0,  20, 0); // Четырехзарядный штуцер cle
+		InitGunExt(	  "mushket2x2", "t3", 	 "bullet_double",      			"", 360.0, 560.0,  15.0,   0, 0,  15, 0);
+		
+		InitGunExt(		"mushket3", "t2", "grapeshot_double",	            "", 140.0, 240.0,    0.0,    1, 0,  13, 0);
+		InitGunExt(		"mushket6", "t3", "grapeshot_double",	            "", 180.0, 310.0,  20.0,   1, 0,  15, 0);
+		InitGunExt(		"mushket9", "t3", "grapeshot_double",	            "", 140.0, 240.0,   0.0,   1, 0,  23, 0);
+		InitGunExt(	  "mushket10",  "t3", 	 "bullet_double",      			"", 360.0, 440.0,   0.0,   0, 0,  21, 0);
 		
 		UnloadSegment("items\initItems.c");
 	}
@@ -1343,6 +1347,49 @@ void ChickenGod_InitAmmo() {
 	CGInitGrapeGunExt(	"howdah",	"t3",		3,		85,		3.0,	5.5,	2);		// гауда, двойной заряд
 	CGInitGrapeGunExt(	"mushket3",	"t2",		3,		60,		6.0,	3.0,	3);		// аркебуза, картечь
 	CGInitGrapeGunExt(	"mushket6",	"t3",		3,		90,		4.0,	3.5,	2);		// башенный мушкетон, картечь
+	
+	ref itm;
+	
+	makeref(itm, items[FindItem("mushket9")]);
+	
+	itm.type.t3.basedmg  = 3;
+	itm.type.t3.shards  = 110;
+	itm.type.t3.width   = 8.5;
+	itm.type.t3.height  = 7.85;
+	itm.type.t3.area    = XI_ConvertString("grapes_area_4");
+		
+	if(CheckAttribute(itm, "UpgradeStage"))
+	{
+		int iUpgradeStage = sti(itm.UpgradeStage);
+		
+		switch (iUpgradeStage)
+		{
+			case 2:	
+				itm.type.t3.basedmg  = 3;
+				itm.type.t3.shards  = 120;
+				itm.type.t3.width   = 7.0;
+				itm.type.t3.height  = 5.75;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_4");
+			break;
+			
+			case 3:	
+				itm.type.t3.basedmg  = 4;
+				itm.type.t3.shards  = 130;
+				itm.type.t3.width   = 5.5;
+				itm.type.t3.height  = 4.5;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_3");
+			break;
+			
+			case 4:	
+				itm.type.t3.basedmg  = 5;
+				itm.type.t3.shards  = 130;
+				itm.type.t3.width   = 4.5;
+				itm.type.t3.height  = 3.75;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_2");
+				itm.type.t3.ChargeSpeed = 18;
+			break;
+		}
+	}
 }
 
 void CGInitGrapeGunExt(string id, string sAttr, int basedmg, int shards, float width, float height, int dispersion)

@@ -10,12 +10,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// --> Тичингиту
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "true")
             {
-                link.l1 = "There is an Indian under arrest. He was captured by Fadey the Muscovite. Can I talk with him?";
+                link.l1 = "There is an Indian under arrest. He was captured by Fadey the Muscovite. May I speak with him?";
                 link.l1.go = "Tichingitu";
             }
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "commandante")
             {
-                link.l1 = "Tell me, are you really going to hang this Indian? Isn't that too harsh of a punishment for such a small crime?";
+                link.l1 = "Tell me, are you really going to hang this Indian? Isn't that too harsh a punishment for such a small crime?";
                 link.l1.go = "Tichingitu_3";
             }
 			if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "pay")
@@ -27,7 +27,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//Jason --> Бесчестный конкурент
 			if (CheckAttribute(pchar, "questTemp.Shadowtrader.Fort") && NPChar.location == pchar.questTemp.Shadowtrader.City + "_prison")
 			{
-				link.l1 = "I have come to you on the request of the local store owner, his name is "+pchar.questTemp.Shadowtrader.Tradername+". He asked me to give you this letter.";
+				link.l1 = "I have come to you at the request of the local store owner, his name is "+pchar.questTemp.Shadowtrader.Tradername+". He asked me to give you this letter.";
 				link.l1.go = "Shadowtrader_prison";
 			}
 			
@@ -50,13 +50,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Tichingitu":
 			DelLandQuestMark(npchar);
 			QuestPointerDelLoc("BasTer_town", "reload", "reload_jail");
-			dialog.text = "A-ah, Fadey has told you his story? I have no reasons to forbid you from taking a look at him, monsieur. You are not the first who come to see that redskin. Well, in ten days every citizen will be able to take a look at him when we hang him to dry in the sun...";
-			link.l1 = "So can I enter the prison?";
+			dialog.text = "A-ah, Fadey has told you his story? I have no reason to forbid you from taking a look at him, monsieur. You are not the first to come to see that redskin. Well, in ten days every citizen will be able to take a look at him when we hang him out to dry in the sun...";
+			link.l1 = "So, can I enter the prison?";
 			link.l1.go = "Tichingitu_1";
 		break;
 		
 		case "Tichingitu_1":
-			dialog.text = "As I've told you already 'I have no reasons to forbid you that'. Move along.";
+			dialog.text = "As I've already told you, 'I have no reason to forbid you that.' Move along.";
 			link.l1 = "Thanks!";
 			link.l1.go = "Tichingitu_2";
 		break;
@@ -69,13 +69,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Tichingitu_3":
 			DelLandQuestMark(npchar);
-			dialog.text = "You are new here, aren't you, monsieur? Right from Europe? You don't understand a situation in the colonies. This execution will be a lesson for those redskin bastards who would dare to encroach on the property of French colonists. Besides, Fadey himself insists on that and he is a very respected man here and a close friend of our governor.";
-			link.l1 = "Is there any way to soften the punishment? I still think that it is too harsh...";
+			dialog.text = "You are new here, aren't you, monsieur? Fresh from Europe? You don't understand the situation in the colonies. This execution will serve as a lesson to those redskin bastards who dare to encroach on the property of French colonists. Besides, Fadey himself insists on it, and he is a very respected man here, as well as a close friend of our governor.";
+			link.l1 = "Is there any way to lessen the punishment? I still think that it is too harsh...";
 			link.l1.go = "Tichingitu_4";
 		break;
 		
 		case "Tichingitu_4":
-			dialog.text = "Oh, don't go into philosophy! Go to Fadey and ask for this Indian if you really care about his fate that much. If Fadey writes a petition for release, we will satisfy it.";
+			dialog.text = "Oh, spare me the philosophy! Go to Fadey and ask about this Indian if you truly care about his fate. If Fadey writes a petition for his release, we will grant it.";
 			link.l1 = "Understood, officer. I'll go to Fadey.";
 			link.l1.go = "Tichingitu_5";
 		break;
@@ -91,7 +91,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DelLandQuestMark(npchar);
 			QuestPointerDelLoc("BasTer_town", "reload", "reload_jail");
 			RemoveItems(pchar, "letter_1", 1);
-			dialog.text = "(reading) Hm... This Fadey is strange... He has demanded a demonstrative execution and now he is asking to release this Indian... Whatever, I suppose that all governor's friends are like him. Fine, you can go and take this redskin.";
+			dialog.text = "(reading) Hm... This Fadey is strange... He demanded a public execution, and now he's asking to release this Indian... Whatever, I suppose all the governor's friends are like him. Fine, you can go and take this redskin.";
 			link.l1 = "My thanks, officer!";
 			link.l1.go = "Tichingitu_7";
 		break;
@@ -118,13 +118,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Shadowtrader_prison_1":
-			dialog.text = "Once again, absurd guessworks and not a single strong evidence! Alright. Tell him that this is simply not enough for me to alert the guards and order them to scour the town.";
+			dialog.text = "Once again, absurd guesswork and not a single piece of strong evidence! Alright. Tell him that this is simply not enough for me to alert the guards and order them to scour the town.";
 			link.l1 = "You want me to tell him that?";
 			link.l1.go = "Shadowtrader_prison_2";
 		break;
 		
 		case "Shadowtrader_prison_2":
-			dialog.text = "Exactly - and, preferrably, word-for-word. He will understand what I mean. I will not waste paper to write a reply to this annoying one.";
+			dialog.text = "Exactly – and, preferably, word-for-word. He will understand what I mean. I will not waste paper to write a reply to this annoying one.";
 			link.l1 = "I see. Farewell, then.";
 			link.l1.go = "exit";
 			pchar.questTemp.Shadowtrader.Trouble = "true";
@@ -134,7 +134,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Shadowtrader_prison2":
 			dialog.text = "And what is this 'substantial' evidence that you claim to have gathered?";
-			link.l1 = "I struck a deal with the smugglers regarding the purchase of goods through their unofficial store. Their agent will come today at night to the port authority office, to take me to their so-called 'store'.";
+			link.l1 = "I struck a deal with the smugglers regarding the purchase of goods through their unofficial store. Their agent will come tonight to the port authority office to take me to their so-called 'store'.";
 			link.l1.go = "Shadowtrader_prison2_1";
 			DeleteAttribute(pchar, "questTemp.Shadowtrader.SeekTrader");
 			pchar.quest.ShadowtraderTimeSmugglers_Over.over = "yes";
@@ -145,8 +145,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Shadowtrader_prison2_1":
-			dialog.text = "Hhm... Well, excellent work, captain! Then we will act further. We'll send our man to their meeting, locate their hideout and arrest all of them. Thanks for your initiative!";
-			link.l1 = "Always glad to help. I am sure that your operation will be successful.";
+			dialog.text = "Hmm... Well, excellent work, captain! Now we proceed further. We'll send our man to their meeting, locate their hideout, and arrest all of them. Thank you for your initiative!";
+			link.l1 = "Always glad to help. I'm sure your operation will be successful.";
 			link.l1.go = "exit";
 			pchar.questTemp.Shadowtrader.End.Fort = "true";
 			AddQuestRecord("Shadowtrader", "7");
@@ -175,7 +175,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1.go = "PZ_IshemLongway_Zashita_1";
 			if (pchar.location.from_sea != "BasTer_Town")
 			{
-				link.l2 = "I'm looking for him because he's a known criminal on the Archipelago.";
+				link.l2 = "I'm looking for him because he's a known criminal in the Archipelago.";
 				link.l2.go = "PZ_IshemLongway_OhotnikOtryad_1";
 			}
 		break;
@@ -187,8 +187,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_Zashita_2":
-			dialog.text = "Under normal circumstances, I might agree with you. But you see, one of those killed was an officer - a promising young lieutenant, His Grace's favorite. The town is in mourning. There's no turning a blind eye or making up for it. You understand?";
-			link.l1 = "I understand perfectly. I apologize for my friend's actions. I'll trouble you no further.";
+			dialog.text = "Under normal circumstances, I might agree with you. But you see, one of those killed was an officer - a promising young lieutenant, His Grace's favourite. The town is in mourning. There's no turning a blind eye or making up for it. You understand?";
+			link.l1 = "I understand perfectly. I apologise for my friend's actions. I'll trouble you no further.";
 			link.l1.go = "PZ_IshemLongway_Uiti_1";
 			link.l2 = "You know, God only knows what's going on in the jungle. Anyone could have killed those men.";
 			link.l2.go = "PZ_IshemLongway_Blef_1";
@@ -199,31 +199,31 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
 				notification("Trustworthy", "Trustworthy");
-				link.l1 = "(Trustworthy) Bandits, who else? I'm ashamed to admit it, but I barely escaped a huge gang recently.";
+				link.l1 = "(Trustworthy) Bandits, who else? I'm ashamed to admit it, but I barely escaped from a huge gang recently.";
 				link.l1.go = "PZ_IshemLongway_Blef_2";
 			}
 			else
 			{
 				notification("Perk check failed", "Trustworthy");
-				link.l1 = "But how would I know? It could have been anyone-brigands, pirates, spies...";
+				link.l1 = "But how would I know? It could have been anyone—brigands, pirates, spies...";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}
 		break;
 		
 		case "PZ_IshemLongway_Blef_2":
-			dialog.text = "Heh, it's not surprising - considering your body size, Captain. Yes, we've got such scoundrels on the island these days...";
+			dialog.text = "Heh, it's not surprising – considering your size, Captain. Yes, we've got such scoundrels on the island these days...";
 			link.l1 = "Exactly! So, they could have massacred the patrol and the poor junior lieutenant.";
 			link.l1.go = "PZ_IshemLongway_Blef_3";
 		break;
 		
 		case "PZ_IshemLongway_Blef_3":
 			dialog.text = "Unfortunately, that's entirely possible.";
-			link.l1 = "Precisely. So once again, I ask you to let me join the next search party - Longway will listen to me, and that way we can avoid more deaths.";
+			link.l1 = "Precisely. So once again, I ask you to let me join the next search party – Longway will listen to me, and that way we can avoid more deaths.";
 			link.l1.go = "PZ_IshemLongway_Blef_4";
 		break;
 		
 		case "PZ_IshemLongway_Blef_4":
-			dialog.text = "All right. But there's still one 'but,' sir.";
+			dialog.text = "All right. But there's still one 'but', sir.";
 			link.l1 = "And what's that?";
 			link.l1.go = "PZ_IshemLongway_Blef_5";
 		break;
@@ -260,22 +260,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_NetDublonov_2":
-			dialog.text = "Words, words... I'm tired of your chatter, Captain. You're not going anywhere until we catch this goddamn yellow-skinned man ourselves.";
+			dialog.text = "Words, words... I'm tired of your chatter, Captain. You're not going anywhere until we catch this damn yellow-skinned man ourselves.";
 			link.l1 = "I will obey your order if you promise not to kill Longway on the spot, Mr. Officer.";
 			link.l1.go = "PZ_IshemLongway_Arest_1";
-			link.l2 = "But did I personally violate the laws of the city today?";
+			link.l2 = "But did I personally break the laws of the city today?";
 			link.l2.go = "PZ_IshemLongway_Pobeg_1";
 		break;
 		
 		case "PZ_IshemLongway_Blef_netVD_1":
-			dialog.text = "Then you don't know. I'll stick to my current hunch - the Chinaman must be caught, regardless.";
+			dialog.text = "Then you don't know. I'll stick to my current hunch – the Chinaman must be caught, regardless.";
 			link.l1 = "Your current hunch? But you have no proof that Longway killed everyone in the jungle.";
 			link.l1.go = "PZ_IshemLongway_Blef_netVD_2";
 		break;
 		
 		case "PZ_IshemLongway_Blef_netVD_2":
 			dialog.text = "And do you have proof of his innocence? No? Then stop making a saint out of your yellow-skinned man. Do you understand me?";
-			link.l1 = "I understand perfectly. I apologize for my friend's actions. I'll trouble you no further.";
+			link.l1 = "I understand perfectly. I apologise for my friend's actions. I'll trouble you no further.";
 			link.l1.go = "PZ_IshemLongway_Uiti_1";
 		break;
 		
@@ -289,7 +289,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "What I mean is that since this Longway is your friend, there's no guarantee you won't run after him and try to escape with him. So, I'll have to hold you until we catch this yellow-skinned butcher ourselves.";
 			link.l1 = "I will obey your order if you promise not to kill Longway on the spot, Mr. Officer.";
 			link.l1.go = "PZ_IshemLongway_Arest_1";
-			link.l2 = "But did I personally violate the laws of the city today?";
+			link.l2 = "But did I personally break the laws of the city today?";
 			link.l2.go = "PZ_IshemLongway_Pobeg_1";
 		break;
 		
@@ -313,8 +313,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_Pobeg_1":
-			dialog.text = "Understand, I have nothing against you personally. And you're right - you haven't committed any crime. But we need to ensure that your yellow-skinned friend doesn't escape justice.";
-			link.l1 = "Then understand that I won't allow myself to be detained in such a sham manner.";
+			dialog.text = "Understand, I have nothing against you personally. And you're right – you haven't committed any crime. But we need to ensure that your yellow-skinned friend doesn't escape justice.";
+			link.l1 = "Then understand that I will not allow myself to be detained in such a sham manner.";
 			link.l1.go = "PZ_IshemLongway_Pobeg_2";
 		break;
 		
@@ -371,7 +371,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_IshemLongway_OhotnikOtryad_2":
-			dialog.text = "Damned rascal! Here's what we'll do: I'll gather another squad, and you'll go with them. This time, he's got nowhere to run, and with your help, we'll have a better chance of success. Don't expect a reward from me, though - you're a bounty hunter, so your payment will come from whoever hired you. You should be grateful I'm letting you cooperate with me at all.";
+			dialog.text = "Damned rascal! Here's what we'll do: I'll gather another squad, and you'll go with them. This time, he's got nowhere to run, and with your help, we'll have a better chance of success. Don't expect a reward from me, though – you're a bounty hunter, so your payment will come from whoever hired you. You should be grateful I'm letting you cooperate with me at all.";
 			link.l1 = "That's true enough. See you later, officer. If any of your men survive another encounter with our Chinese friend, I'll let you know how it went.";
 			link.l1.go = "PZ_IshemLongway_BeryomOtryad";
 			pchar.questTemp.PZ_OhotnikOtryad = true;
@@ -387,24 +387,24 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_1":
-			dialog.text = "You're right. You two are acquaintances, I take it? Who are you to each other?";
-			link.l1 = " He's a navigating officer on my ship, and...";
+			dialog.text = "You're right. You two are acquainted, I take it? Who are you to each other?";
+			link.l1 = " He's a navigation officer on my ship, and...";
 			link.l1.go = "PZ_BasTer_ComendantDialog_2";
 			if (pchar.location.from_sea != "BasTer_Town")
 			{
-				link.l2 = "I'm looking for him because he's a known criminal on the Archipelago.";
+				link.l2 = "I'm looking for him because he's a known criminal in the Archipelago.";
 				link.l2.go = "PZ_IshemLongway_OhotnikOtryad_1";
 			}
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_2":
 			dialog.text = "He's better with guns than with maps. Do you have any idea what your pet Chinaman has done?";
-			link.l1 = "To be honest, no, because I just docked and started searching. I'm sure it all was a misunderstanding.";
+			link.l1 = "To be honest, no, because I just docked and started searching. I'm sure it was all a misunderstanding.";
 			link.l1.go = "PZ_IshemLongway_Zashita_1";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_1":
-			dialog.text = "Exactly. Who are you to him if you want him so much? It doesn't matter - what's important is the purpose of your visit to the city.";
+			dialog.text = "Exactly. Who are you to him, if you want him so much? It doesn't matter – what's important is the purpose of your visit to the city.";
 			link.l1 = "Nothing illegal, sir. But what did you mean by “it doesn't matter anymore”? Did he...";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_2";
 		break;
@@ -416,25 +416,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_3":
-			dialog.text = "Very simply - he arrived in the city, sniffing around without end. We tried to talk to him, to find out what he was doing here, but he killed some men and fled into the jungle. I sent several search parties after him, one after the other, but he wiped them all out! We had to trap him in a cave, and the marksmen did the rest.";
-			link.l1 = "And you don't know what he was looking for? You see, he'd never done anything like this before - he used to be a navigator on my ship. But then he stole from me and ran away.";
+			dialog.text = "Very simply - he arrived in the city, snooping around endlessly. We tried to talk to him, to find out what he was doing here, but he killed some men and fled into the jungle. I sent several search parties after him, one after another, but he wiped them all out! We had to trap him in a cave, and the marksmen did the rest.";
+			link.l1 = "And you don't know what he was looking for? You see, he'd never done anything like this before – he used to be a navigator on my ship. But then he stole from me and ran away.";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_4";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_4":
 			dialog.text = "It just slipped my mind, aye. So, you suffered from his actions too? That'll teach you a lesson, Captain. You'll know better than to take on someone you can't trust. Never trust a yellow-skinned man - mark my words!";
-			link.l1 = "Aye, I'll keep that in mind. Did you find anything on him?";
+			link.l1 = "Aye, I'll keep that in mind. Did you find anything about him?";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_5";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_5":
-			dialog.text = "Oh, you want to recover the stolen goods? He had some silver in his pockets, so if he stole from you, he's already spent it all. And there were some other papers... from your ship's log? We didn't understand it anyway - some kind of code, perhaps? Everything was covered in blood, so we couldn't make out the undamaged parts.";
+			dialog.text = "Oh, you want to recover the stolen goods? He had some silver in his pockets, so if he stole from you, he's already spent it all. And there were some other papers... from your ship's log? We couldn't make sense of them anyway - some kind of code, perhaps? Everything was covered in blood, so we couldn't make out the undamaged parts.";
 			link.l1 = "Er, yes. Thank you. I've always worried about what would happen if my journals and diaries were picked up by someone else...";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_6";
 		break;
 		
 		case "PZ_BasTer_ComendantDialog_Opozdal_6":
-			dialog.text = "And having to come up with a full-blown complex cipher because of that? Didn't you feel sorry for your time and effort? Here you go. And about the silver - don't be mad, but we returned it to the city. That Chinaman put a lot of my men in the ground that day.";
+			dialog.text = "And having to come up with a full-blown complex cipher because of that? Didn't you feel sorry for your time and effort? Here you go. And about the silver - don't be angry, but we returned it to the city. That Chinaman put a lot of my men in the ground that day.";
 			link.l1 = "Then I dare not insist. Goodbye.";
 			link.l1.go = "PZ_BasTer_ComendantDialog_Opozdal_7";
 		break;

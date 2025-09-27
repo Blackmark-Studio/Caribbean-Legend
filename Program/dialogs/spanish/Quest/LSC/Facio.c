@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 				link.l5 = "Giuseppe, dicen que eres completamente resistente a las bebidas. No importa cuánto bebas, aún te mantienes en pie.";
 				link.l5.go = "drink";
 			}
-			if (CheckAttribute(pchar, "questTemp.LSC.Drink") && GetCharacterItem(pchar, "gold_dublon") >= 100 && pchar.questTemp.LSC.Drink == "wait")
+			if (CheckAttribute(pchar, "questTemp.LSC.Drink") && PCharDublonsTotal() >= 100 && pchar.questTemp.LSC.Drink == "wait")
 			{
 				link.l5 = "Estoy listo para jugar tu juego. Aquí está mi apuesta.";
 				link.l5.go = "drink_4";
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.text = "Claro, muchacho. Sabes el precio. ¿Tienes cincuenta doblones?";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+			if (PCharDublonsTotal() >= 50)
 			{
 				link.l1 = "Sí. Toma tus monedas.";
 				link.l1.go = "parol_pay";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 
 	case "parol_1":
 		dialog.text = "Bueno-bueno, muchacho, cálmate. No seas codicioso, confía en mí: conozco el verdadero precio de mi información. No vas a simplemente pasear por los barcos de " + pchar.questTemp.LSC.parol + " ¿verdad? Correcto. Así que tienes que estar listo para perder algunas monedas... Entonces, ¿estás listo para pagar cincuenta doblones?";
-		if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+		if (PCharDublonsTotal() >= 50)
 		{
 			link.l1 = "Sí. Toma tus monedas.";
 			link.l1.go = "parol_pay";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "parol_pay":
-		RemoveItems(pchar, "gold_dublon", 50);
+		RemoveDublonsFromPCharTotal(50);
 		dialog.text = "¡Estupendo! Un placer hacer negocios contigo. La contraseña actual para " + pchar.questTemp.LSC.parol + "es: '" + sTotalTemp + "'. Recuérdalo bien y no te equivoques o no daré ni una sola moneda por tu vida.";
 		link.l1 = "Lo sé, lo sé... ¡Gracias!";
 		link.l1.go = "exit";
@@ -311,7 +311,7 @@ void ProcessDialogEvent()
 			else
 				dialog.text = "Toda la Isla está al tanto de la matanza que hiciste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
 		}
-		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+		if (PCharDublonsTotal() >= sti(npchar.quest.price))
 		{
 			link.l1 = "Aquí, toma tus monedas y resuélvelo.";
 			link.l1.go = "pay";
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 			else
 				dialog.text = "Toda la Isla es consciente de la masacre que hiciste. No será fácil ayudarte, pero hay una posibilidad.  " + sti(npchar.quest.price) + " doblones y trataré de resolver tu problema.";
 		}
-		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+		if (PCharDublonsTotal() >= sti(npchar.quest.price))
 		{
 			link.l1 = "Aquí, toma tus monedas y ocúpate de ello.";
 			link.l1.go = "pay";
@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 			else
 				dialog.text = "Toda la Isla está al tanto de la masacre que cometiste. No será fácil ayudarte, pero hay una posibilidad. " + sti(npchar.quest.price) + "  doblones y trataré de resolver tu problema.";
 		}
-		if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+		if (PCharDublonsTotal() >= sti(npchar.quest.price))
 		{
 			link.l1 = "Aquí, toma tus monedas y ocúpate de ello.";
 			link.l1.go = "pay";
@@ -361,7 +361,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "pay":
-		RemoveItems(pchar, "gold_dublon", sti(npchar.quest.price));
+		RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
 		PlaySound("interface\important_item.wav");
 		Log_Info("Has entregado " + sti(npchar.quest.price) + " doblones");
 		dialog.text = "Espléndido. Ahora toma asiento y descansa. Será mejor que te quedes en mi camarote hasta que resuelva tu problema. No quiero que lo empeores aún más, mi querido.";
@@ -430,7 +430,7 @@ void ProcessDialogEvent()
 
 	case "drink_3":
 		dialog.text = "Sí, y el perdedor paga las bebidas. ¿Trato?";
-		if (GetCharacterItem(pchar, "gold_dublon") >= 100)
+		if (PCharDublonsTotal() >= 100)
 		{
 			link.l1 = "Sí, trato hecho. Aquí está mi apuesta.";
 			link.l1.go = "drink_4";
@@ -447,7 +447,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "drink_4":
-		RemoveItems(pchar, "gold_dublon", 100);
+		RemoveDublonsFromPCharTotal(100);
 		Log_Info("Has entregado 100 doblones");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "¡Excelente, mi querido! Entonces encuéntrame a las nueve de la noche en la taberna de Sancho. Sí, tu apuesta se quedará conmigo si llegas tarde, esta es una de las reglas. Pero no llegarás tarde, ¿verdad, muchacho?";

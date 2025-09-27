@@ -21,7 +21,11 @@
 #define FLAG_GOODS_TYPE_CANNONS 		64		// орудия
 #define FLAG_GOODS_TYPE_ALL 	        63		// все
 
-int gGoodsTypeFlags[MAX_GOODS_TYPES] = {1, 2, 4, 8, 16, 32, 64}
+//int gGoodsTypeFlags[MAX_GOODS_TYPES] = {1, 2, 4, 8, 16, 32, 64}
+int GetGoodTypeFlag(int idx)
+{
+     return shl(1, idx);
+}
 
 // боеприпасы
 #define GOOD_BALLS	    	0
@@ -105,6 +109,12 @@ int FindGood(string sGood)
 	return -1;
 }
 
+// Получить товар по ссылке/id/индексу
+ref FindGood_VT(ref ref_Id_Idx)
+{
+	return FindObject_VT(ref_Id_Idx, "GetGoodByID", "GetGoodByType");
+}
+
 ref GetGoodByID(string sGood)
 {
 	for (int i=0; i<GetArraySize(&Goods); i++) 
@@ -172,7 +182,7 @@ int GetRandomGood(int typeFlags, int goodsFlags)
 
 		int type = sti(refGood.Type);
 
-		if (!and(typeFlags, gGoodsTypeFlags[type]))
+		if (!and(typeFlags, GetGoodTypeFlag(type)))
 		{
 			continue;
 		}

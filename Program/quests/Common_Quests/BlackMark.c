@@ -254,18 +254,9 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("BlackMark_6");
 		sld.rank = 12;
 		sld.CanTakeMushket = true;
-		SetPriorityMode(sld, 2);
+		sld.PriorityMode = 2;
 		sld.MusketerDistance = 0;
 		SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
-		SetSelfSkill(sld, 15, 15, 50, 60, 20);
-		SetShipSkill(sld, 5, 1, 4, 6, 1, 1, 7, 1, 10);
-		SetCharacterPerk(sld, "Energaiser");
-		SetCharacterPerk(sld, "Tireless");
-		SetCharacterPerk(sld, "BasicDefense");
-		SetCharacterPerk(sld, "CriticalHit");
-		SetCharacterPerk(sld, "Gunman");
-		SetCharacterPerk(sld, "Jager"); //Егерь
-		SetCharacterPerk(sld, "Sniper"); //Снайпер
 		GiveItem2Character(sld, "cirass10");
 		EquipCharacterByItem(sld, "cirass10");
 		GiveItem2Character(sld, "blade_42");
@@ -279,6 +270,8 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.SaveItemsForDead = true;
 		sld.DontClearDead = true;
+		InitHeroRebalance(sld, 0.6, GEN_ARCHETYPE_GUNMAN, GEN_ARCHETYPE_BOATSWAIN); // RB Квестовые офицеры
+		SetCharacterPerk(sld, "Sniper"); //Снайпер
 		
 		sld = GetCharacter(CreateCharacterClone(CharacterFromID("Irons"), 0));	//Создание клона важного персонажа
 		sld.id = "IronsClone";
@@ -532,7 +525,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_SeaVariant") {	//Морской вариант
 		chrDisableReloadToLocation = false;
 		bDisableLandEncounters = false;
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 		
 		// Сюда прописываем продолжение морского варианта
 		AddQuestRecord("BlackMark", "7");
@@ -558,7 +551,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 					sld.name = StringFromKey("BlackMark_11");
 					sld.lastname = StringFromKey("BlackMark_12");
 					FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
-					FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "cartridge", 50);
+					FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "bullet", 50);
 					GiveItem2Character(sld, "indian_2");
 					sld.DontRansackCaptain = true;
 					sld.AnalizeShips = true;
@@ -702,7 +695,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_PinkZahvatil_SetMusic") {
-		Start_TrackNonStop("music_SeaDogs1_MainTheme_Sea", 145)
+		Start_TrackNonStop("music_SeaDogs1_MainTheme_Sea", 145);
 	}
 	
 	else if (sQuestName == "BM_PinkPotopil") {
@@ -756,7 +749,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_LandVariant") {	//Сухопутный вариант
 		chrDisableReloadToLocation = false;
 		bDisableLandEncounters = false;
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 		
 		// Сюда прописываем продолжение сухопутного варианта
 		AddQuestRecord("BlackMark", "8");
@@ -837,7 +830,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			sld.dialog.filename = "Quest\BlackMark.c";
 			if (sti(pchar.reputation.nobility) > 61) sld.dialog.currentnode = "BM_GabeHouseGood1";
 			else sld.dialog.currentnode = "BM_GabeHouseNeutral1";
-			FantomMakeCoolFighter(sld, 10, 50, 50, "blade_14", "pistol14", "cartridge", 50);
+			FantomMakeCoolFighter(sld, 10, 50, 50, "blade_14", "pistol14", "bullet", 50);
 			ChangeCharacterAddressGroup(sld, "PortRoyal_houseSp3", "barmen", "bar1");
 			GiveItem2Character(sld, "indian_2");
 			sld.SaveItemsForDead = true;
@@ -915,7 +908,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_CreateGabeInJungle2") {
 		sld = characterFromID("Irons");
 		ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "goto", "goto13");
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 		if (CharacterIsAlive("BM_GabeCallow"))
 		{
 			sld = characterFromID("BM_GabeCallow");
@@ -932,7 +925,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 			sld.lastname = StringFromKey("BlackMark_12");
 			sld.dialog.filename = "Quest\BlackMark.c";
 			sld.dialog.currentnode = "BM_GabeJungle1";
-			FantomMakeCoolFighter(sld, 10, 50, 50, "blade_14", "pistol14", "cartridge", 50);
+			FantomMakeCoolFighter(sld, 10, 50, 50, "blade_14", "pistol14", "bullet", 50);
 			ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "reload", "reload3_back");
 			GiveItem2Character(sld, "indian_2");
 			sld.SaveItemsForDead = true;
@@ -945,7 +938,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 2; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("BM_GabeJungleSoldier" + i, "mush_eng_" + (rand(5) + 1), "man", "mushketer", 5, ENGLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "cartridge", 0);
+			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "bullet", 0);
 			ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "reload", "reload3_back");
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
@@ -986,7 +979,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld = characterFromID("Irons");
 		LAi_SetCheckMinHP(sld, 1, true, "");
 		//sld.MusketerDistance = 10;
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 	
 		sld = characterFromID("BM_GabeCallow");
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1018,7 +1011,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		LAi_SetImmortal(sld, false);
 		DeleteAttribute(pchar, "questTemp.IronsItemsBlock");
 		AddPassenger(pchar, sld, false);
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 		
 		AddQuestRecord("BlackMark", "14");
 		AddQuestUserData("BlackMark", "sSex1", GetSexPhrase(StringFromKey("BlackMark_9"),StringFromKey("BlackMark_10")));
@@ -1095,7 +1088,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 2; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("BM_GabeJungleSoldier" + i, "mush_eng_" + (rand(5) + 1), "man", "mushketer", 5, ENGLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "cartridge", 0);
+			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "bullet", 0);
 			ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "reload", "reload3_back");
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
@@ -1199,7 +1192,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "BM_GabePlan_GazgovorTommiAndGabe2") {
 		sld = characterFromID("Irons");
 		ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "goto", "goto13");
-		Return_IronsOfficer();
+		ReturnOfficer_Irons();
 		sld = characterFromID("BM_GabeCallow");
 		sld.dialog.currentnode = "BM_GabePlan_GazgovorTommiAndGabe_1";
 		ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "reload", "reload3_back");
@@ -1209,7 +1202,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 2; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("BM_GabeJungleSoldier" + i, "mush_eng_" + (rand(5) + 1), "man", "mushketer", 5, ENGLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "cartridge", 0);
+			FantomMakeCoolFighter(sld, 5, 25, 25, "", "mushket1", "bullet", 0);
 			ChangeCharacterAddressGroup(sld, "Jamaica_jungle_02", "reload", "reload3_back");
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);

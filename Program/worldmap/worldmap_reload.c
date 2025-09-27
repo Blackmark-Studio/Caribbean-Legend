@@ -1,5 +1,4 @@
 
-
 object wdmLoginToSea;
 object wdm_fader;
 bool wdmLockReload = false;
@@ -223,21 +222,81 @@ void WdmAddPlayerGroup()
 bool WdmAddEncountersData()
 {
 	bool isShipEncounter = false;
+
 	//Удалим все существующие записи об морских энкоунтерах
 	ReleaseMapEncounters();
+
 	//Количество корабельных энкоунтеров в карте
+	int i, idx;
+    int numShips = 0;
+    for(i = 0; i < COMPANION_MAX; i++)
+    {
+        idx = GetCompanionIndex(PChar, i);
+        if (idx != -1) numShips++;
+    }
 	int numEncounters = wdmGetNumberShipEncounters();
+
+    int  iPlayer = SendMessage(&worldMap, "l", MSG_GET_PLAYERSHIP_IDX);
+    int  iMapTarget = -1;
+    int  iSort[2];
+    bool bSort[2];
+
+    if (CheckAttribute(&TEV, "iTarget"))
+    {
+        iMapTarget = sti(TEV.iTarget);
+        DeleteAttribute(&TEV, "iTarget");
+        if (iMapTarget >= 0)
+        {
+            idx = 1;
+            iSort[0] = iMapTarget; // Здесь он уже откалиброван
+        }
+        else idx = 0;
+    }
+    else idx = 0;
+
+    if (numEncounters > 0)
+    {
+        SetArraySize(&iSort, numEncounters);
+        SetArraySize(&bSort, numEncounters);
+        int j = 0;
+        int numEncountersReal = numEncounters + (iPlayer != -1);
+        // В этом цикле скипаем игрока
+        for (i = 0; i < numEncountersReal; i++)
+        {
+            if (i == iPlayer) continue;
+
+            bSort[j] = SendMessage(&worldMap, "ll", MSG_WORLDMAP_IS_ENEMY, i);
+            if (j != iMapTarget && bSort[j])
+            {
+                iSort[idx] = j;
+                idx++;
+            }
+            j++;
+        }
+        // В предыдущем уже скипали, поэтому здесь сразу проверяем
+        for (i = 0; i < numEncounters; i++)
+        {
+            if (i != iMapTarget && !bSort[i])
+            {
+                iSort[idx] = i;
+                idx++;
+            }
+        }
+    }
+
 	//Позиция игрока на карте
 	float mpsX = MakeFloat(worldMap.playerShipX);
 	float mpsZ = MakeFloat(worldMap.playerShipZ);
 	//Позиция игрока в мире
 	float wpsX = MakeFloat(wdmLoginToSea.playerGroup.x);
 	float wpsZ = MakeFloat(wdmLoginToSea.playerGroup.z);
+
 	//Перебираем все энкоунтеры карты
-	for(int i = 0; i < numEncounters; i++)
+	for(i = 0; i < numEncounters; i++)
 	{
 		//Получим информацию о данном энкоунтере
-		if(wdmSetCurrentShipData(i))
+        if(numShips > MAX_SHIPS_LOAD_FROM_WDM) break;
+		if(wdmSetCurrentShipData(iSort[i]))
 		{
 			//Если не активен, то пропустим его
 			if(MakeInt(worldMap.encounter.select) == 0) continue;
@@ -245,12 +304,27 @@ bool WdmAddEncountersData()
 			string encStringID = worldMap.encounter.id;
 			if(encStringID == "") continue;
 			encStringID = "encounters." + encStringID + ".encdata";
-			if(CheckAttribute(&worldMap, encStringID) == 0) continue;
+			if(!CheckAttribute(&worldMap, encStringID)) continue;
 			int mapEncSlot = FindFreeMapEncounterSlot();
 			if(mapEncSlot < 0) continue;
 			ref mapEncSlotRef = GetMapEncounterRef(mapEncSlot);
+
 			aref encDataForSlot;
 			makearef(encDataForSlot, worldMap.(encStringID));
+			if (CheckAttribute(encDataForSlot, "CharacterID"))
+			{
+                idx = GetCharacterIndex(encDataForSlot.CharacterID);
+                if (idx != -1 && CheckAttribute(&Characters[idx], "SeaAI.Group.Name"))
+                    numShips += Group_GetLiveCharactersNum(Characters[idx].SeaAI.Group.Name);
+			}
+            else
+            {
+                if(CheckAttribute(encDataForSlot, "NumMerchantShips"))
+                    numShips += sti(encDataForSlot.NumMerchantShips);
+                if(CheckAttribute(encDataForSlot, "NumWarShips"))
+                    numShips += sti(encDataForSlot.NumWarShips);
+            }
+
 			CopyAttributes(mapEncSlotRef, encDataForSlot);
 			//Отмечаем свершение корабельного энкоунтера
 			isShipEncounter = true;
@@ -269,13 +343,8 @@ bool WdmAddEncountersData()
 			encStringID = worldMap.encounter.id;
 			encStringID = "encounters." + encStringID;
 			if(CheckAttribute(&worldMap, encStringID + ".quest") == 0)
-			{			
-				worldMap.(encStringID).needDelete = "Reload delete non quest encounter";
-			}
-			if(CheckAttribute(encDataForSlot,"Task.Target") && encDataForSlot.Task.Target == PLAYER_GROUP)
 			{
-				DeleteAttribute(pchar, "worldmap.FollowCounter");
-				log_testinfo("worldmap преследователь Task Target "+encDataForSlot.Task.Target+" удалён");
+				worldMap.(encStringID).needDelete = "Reload delete non quest encounter";
 			}
 		}
 	}

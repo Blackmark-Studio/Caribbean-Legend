@@ -1,9 +1,12 @@
+int iBenuaPseudoGlobal;
+
 // аббат Бенуа
 void ProcessDialogEvent()
 {
 	ref NPChar, sld;
 	aref Link, NextDiag;
 	int rate;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -52,6 +55,26 @@ void ProcessDialogEvent()
 				link.l1 = "Oui, père. J'ai besoin d'un navire pour aider Michel, mais je viens d'arriver aux Caraïbes et ma bourse est vide. Mon frère m'a dit que vous pourriez me prêter de l'argent...";
 				link.l1.go = "FastStart_2";
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua"))
+			{
+				link.l1 = "Bonjour, mon père. Nous avons besoin de votre aide — pour une affaire assez inhabituelle.";
+				link.l1.go = "WildRose_Abb_2";
+				break;
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2") && PCharDublonsTotal() >= 800)
+			{
+				link.l3 = "Mon père, j’ai réuni la somme. Huit cents pièces d’or.";
+				link.l3.go = "WildRose_Abb_14_pay";
+			}
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3"))
+			{
+				dialog.text = "Bonjour, mon enfant. Je suppose que tu es venu pour connaître le résultat de ton... hum, de votre affaire ?";
+				link.l1 = "Toujours aussi perspicace, mon père. Ne me faites pas languir — qu’a découvert votre homme ?";
+				link.l1.go = "WildRose_Abb_16";
+				break;
+			}
+			//<-- Дикая Роза
 			if (CheckAttribute(npchar, "quest.help") && CheckAttribute(npchar, "quest.meet"))
 			{
 				link.l1 = "Oui, père. J'ai besoin de votre aide.";
@@ -204,22 +227,7 @@ void ProcessDialogEvent()
 		case "escape_10":
 			DialogExit();
 			NextDiag.CurrentNode = "first time";
-			pchar.questTemp.Sharlie = "escape";
-			CloseQuestHeader("Sharlie");
-			AddQuestRecord("Guardoftruth", "1");
-			pchar.questTemp.Guardoftruth = "begin";
-			DeleteAttribute(pchar, "questTemp.GoldenGirl_Block");	// Разрешаем квест Дороже Золота
-			SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
-			// ставим пленного испанца
-			sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);
-			sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
-			sld.dialog.currentnode = "spa_prisoner";
-			RemoveAllCharacterItems(sld, true);
-			LAi_SetStayType(sld);
-			LAi_SetImmortal(sld, true);
-			ChangeCharacterAddressGroup(sld, "Fortfrance_dungeon", "quest", "quest1");
-			LAi_CharacterDisableDialog(sld);//запрет диалога
+			AddDialogExitQuestFunction("Sharlie_Benua_BrotherEscape");
 		break;
 		
 		// уменьшение награды за голову
@@ -280,41 +288,40 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
+			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
+			if (rate < 2)
 			{
-				dialog.text = "Oui, ces rumeurs sont parvenues jusqu'à notre église aussi. Je peux vous aider avec votre dilemme. C'est quelque chose qui peut être résolu. J'ai besoin de deux cent cinquante doublons d'or pour arranger votre situation.";
-				if (PCharDublonsTotal() >= 250) // Sinistra legendary edition
+				dialog.text = "Oui, ces rumeurs sont parvenues jusqu'à notre église aussi. Je peux vous aider avec votre dilemme. C'est quelque chose qui peut être résolu. J'ai besoin de deux " + sTemp + " d'or pour arranger votre situation.";
+				if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 				{
 					link.l1 = "Super ! Voici l'or.";
 					link.l1.go = "agree";
-					iTotalTemp = 250;
 				}
 				link.l2 = "Alors c'est le moment idéal pour moi de trouver les doublons.";
 				link.l2.go = "exit";
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
-					dialog.text = "Oui, des rumeurs sur tes 'exploits' sont parvenues jusqu'à notre église aussi. Tu as terni ta réputation, mon fils. Tu devrais être plus prudent. Mais je peux t'aider. J'ai besoin de cinq cents doublons d'or pour arranger ta situation.";
-					if (PCharDublonsTotal() >= 500) // Sinistra legendary edition
+					dialog.text = "Oui, des rumeurs sur tes 'exploits' sont parvenues jusqu'à notre église aussi. Tu as terni ta réputation, mon fils. Tu devrais être plus prudent. Mais je peux t'aider. J'ai besoin de " + sTemp + " d'or pour arranger ta situation.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Superbe ! Voici l'or.";
 						link.l1.go = "agree";
-						iTotalTemp = 500;
 					}
 					link.l2 = "Alors, c'est le moment idéal pour moi de trouver les doublons.";
 					link.l2.go = "exit";
 				}
 				else
 				{
-					dialog.text = "Oui, mon fils. Tu es tout aussi désespéré que ton frère... C'est probablement un trait de famille. Je ne peux pas complètement corriger la situation, mais néanmoins, je crois que je peux atténuer ton sombre sort. Et plus tard, nous pourrons faire d'autres offrandes si tu le souhaites. J'ai besoin de six cents doublons d'or pour l'instant et je commencerai à résoudre ton dilemme immédiatement.";
-					if (PCharDublonsTotal() >= 600) // Sinistra legendary edition
+					dialog.text = "Oui, mon fils. Tu es tout aussi désespéré que ton frère... C'est probablement un trait de famille. Je ne peux pas complètement corriger la situation, mais néanmoins, je crois que je peux atténuer ton sombre sort. Et plus tard, nous pourrons faire d'autres offrandes si tu le souhaites. J'ai besoin de " + sTemp + " d'or pour l'instant et je commencerai à résoudre ton dilemme immédiatement.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Superbe ! Voici l'or.";
 						link.l1.go = "agree";
-						iTotalTemp = 600;
 					}
 					link.l2 = "Alors c'est le bon moment pour moi de trouver les doublons.";
 					link.l2.go = "exit";
@@ -323,8 +330,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "agree":
-			RemoveDublonsFromPCharTotal(iTotalTemp); // Sinistra legendary edition
-			Log_Info("You've given "+iTotalTemp+" doubloons");
+			RemoveDublonsFromPCharTotal(iBenuaPseudoGlobal); // Sinistra legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Maintenant, vous devrez attendre au moins deux semaines. Je pense qu'au cours de ce temps, je pourrai rencontrer et discuter avec les bonnes personnes.";
 			link.l1 = "Merci, père ! Je vais attendre...";
@@ -333,10 +339,11 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-            rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            bOk = HasShipTrait(pchar, "trait23");
+            rate = 10 + hrand(5);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
-			pchar.GenQuest.BenuaNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.BenuaNation), 0));
+			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
 			npchar.quest.relation = "true";
 		break;
 		

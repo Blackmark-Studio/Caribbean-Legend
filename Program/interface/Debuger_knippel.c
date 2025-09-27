@@ -433,7 +433,7 @@ void CalculateInfoDataF5()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
     SetCharacterPerk(sld, "ByWorker2");

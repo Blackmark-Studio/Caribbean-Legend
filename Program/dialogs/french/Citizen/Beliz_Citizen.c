@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = RandPhraseSimple("J'ai changé d'avis.","Je n'ai rien à dire maintenant.");
 		    link.l1.go = "exit";
 			// Rebbebion, квест "Путеводная звезда" ==>
-			if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter"))
+			if (CheckAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.PZ_Sotta") && !CheckAttribute(npchar, "questTemp.PZ_Lutter"))
 			{
 				if (rand(1) == 0)
 				{
@@ -26,6 +26,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}
 			}
 			// <== квест "Путеводная звезда"
+			//--> Дикая Роза
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "Il y a environ un mois et demi, un certain Jérôme Sauvernier est arrivé à Belize. Il a été blessé lors d’une rixe à la 'Œil de Verre', mais il a survécu. Pourriez-vous me dire où je pourrais le trouver ?";
+				link.l1.go = "WildRose_Beliz_Citizen_1";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "Il y a environ un mois et demi, un certain gentleman est apparu à Belize. Il s’appelait Jérôme Sauvernier. Il cherchait quelqu’un — donc il a dû parler avec les habitants. Plus tard, il a été blessé dans une bagarre de taverne, mais il a eu la chance de survivre. Pourriez-vous me dire où je pourrais le trouver ?";
+				link.l1.go = "WildRose_Beliz_Citizen_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "Je cherche un homme arrivé à Belize il y a environ deux mois. Il s’appelle Jérôme Sauvernier. Il cherchait un certain monsieur, et je suppose qu’il en a parlé aux gens du coin...";
+				link.l1.go = "WildRose_Beliz_Citizen_3";
+			}
+			//<-- Дикая Роза
 		break;
 		
 		case "info":
@@ -53,7 +70,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Probablement à la recherche de la moindre pièce d'or et en réduisant les coûts partout où il le peut. Eh bien, je ne vais pas vous retenir. Bonne journée.";
 			link.l1.go = "Exit";
 			
-			npchar.questTemp.Sotta = true;
+			npchar.questTemp.PZ_Sotta = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -63,7 +80,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Intéressant. Eh bien, chacun a ses secrets. Je ferais mieux d'y aller. Merci pour l'éclaircissement.";
 			link.l1.go = "Exit";
 			
-			npchar.questTemp.Sotta = true;
+			npchar.questTemp.PZ_Sotta = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -73,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Peut-être que la défaite et la réalité de sa mort imminente ont été trop fortes pour lui. Mais peu importe. Au revoir !";
 			link.l1.go = "Exit";
 			
-			npchar.questTemp.Lutter = true;
+			npchar.questTemp.PZ_Lutter = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -83,11 +100,44 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "La chance finit toujours par tourner. À la prochaine.";
 			link.l1.go = "Exit";
 			
-			npchar.questTemp.Lutter = true;
+			npchar.questTemp.PZ_Lutter = true;
 			pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		// <== Квест "Путеводная звезда"
+		//--> Дикая Роза
+		case "WildRose_Beliz_Citizen_1":
+    		dialog.text = "Je ne connais pas cet homme, monsieur. Les bagarres à la taverne, c’est presque quotidien ici, alors se souvenir de chaque blessé... ce n’est pas évident.";
+    		link.l1 = "Je vois, merci. Bonne journée.";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen");
+			pchar.questTemp.WildRose_Beliz_Citizen_2 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+
+		case "WildRose_Beliz_Citizen_2":
+    		dialog.text = "Sauvernier ? Un Français... Oui, bien sûr. Il m’a abordé, mais je n’avais rien pour l’aider. Je ne l’ai plus revu depuis, désolé.";
+    		link.l1 = "Merci. Dans ce cas, je vais continuer mes recherches.";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");
+			pchar.questTemp.WildRose_Beliz_Citizen_3 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+
+		case "WildRose_Beliz_Citizen_3":
+			dialog.text = "Monsieur Jérôme ! Bien sûr que je m’en souviens. Il a été blessé lors d’une bagarre à la taverne. Depuis, il ne sort presque plus de chez lui — il soigne une blessure à la jambe.";
+			link.l1 = "Et où se trouve sa maison ?";
+    		link.l1.go = "WildRose_Beliz_Citizen_3_1";
+ 		break;
+
+		case "WildRose_Beliz_Citizen_3_1":
+    		dialog.text = "C’est juste ici, tout près, à côté de l’administration portuaire. Une maison au toit rouge. Vous le trouverez là.";
+    		link.l1 = "Merci, vous m’avez été d’une grande aide ! Passez une excellente journée.";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3");
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_citizen");
+ 		break;
+		//<-- Дикая Роза
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

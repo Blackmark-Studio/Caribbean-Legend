@@ -166,9 +166,9 @@ void ProcessDialogEvent()
 		
 		case "blade_3":
 			dialog.text = "很好。 把达布隆给我吧。 ";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.blade_pay = GetCharacterItem(pchar, "gold_dublon");
+				npchar.quest.blade_pay = PCharDublonsTotal();
 				link.l1 = "给你。 我有" + FindRussianQtyString(sti(npchar.quest.blade_pay)) + "枚。 ";
 				link.l1.go = "blade_pay";
 			}
@@ -191,7 +191,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.blade_dublon)-sti(npchar.quest.blade_pay);
 			npchar.quest.blade_dublon = iTemp; // 记录余额
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.blade_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.blade_pay));
 			Log_Info("你给了" + sti(npchar.quest.blade_pay) + "枚达布隆");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)

@@ -4,11 +4,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat("All the rumors of "+ GetCityName(npchar.city) +" at your service. What would you like to find out?",
-                          "We were just talking about that. You must have forgotten...", "This is the third time you're bothering me now...",
-                          "You're repeating all the same like a parrot...", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("You know, " + NPChar.name + ", maybe next time.", "Right, I've forgotten for some reason...",
-                      "Yes, it really is the third time...", "Yup...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("All the rumours of "+GetCityName(npchar.city)+" at your service. What would you like to know?","We were just talking about that. You must have forgotten...","This is the third time you've bothered me now...","You're repeating the same things like a parrot...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("You know, "+NPChar.name+", perhaps next time.","Right, I've forgotten for some reason...","Yes, it really is the third time...","Yup...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if(CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "cartahena" && !CheckAttribute(npchar, "quest.gonsales"))
 			{
@@ -18,14 +15,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 			
 		case "saga":
-			dialog.text = "Everybody knows Senor Gonzales! His house is next to the port authority.";
+			dialog.text = "Everybody knows Señor Gonzales! His house is next to the port authority.";
 			link.l1 = "How old is he?";
 			link.l1.go = "saga_1";
 		break;
 		
 		case "saga_1":
-			dialog.text = "Well, I don't know for sure, but he looks to be at least fifty. He's been living in that house for quite some time. He likes to tell all kinds of tall tales about pirates that he probably came across only in his dreams.";
-			link.l1 = "Looks like he's the man I need. Thank you, "+npchar.name+", you've been a big help!";
+			dialog.text = "Well, I can't say for certain, but he looks to be at least fifty. He's been living in that house for quite some time. He likes to tell all sorts of tall tales about pirates he probably only ever met in his dreams.";
+			link.l1 = "Looks like he's the man I need. Thank you, "+npchar.name+", you've been a great help!";
 			link.l1.go = "saga_2";
 		break;
 		

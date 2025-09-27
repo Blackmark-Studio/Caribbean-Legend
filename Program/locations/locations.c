@@ -1,7 +1,7 @@
 
 #include "locations\locations_loader.c"
 #include "locations\locations_camera.c"
-
+#include "locations\utility.c"
 
 extern void InitLocations();
 
@@ -355,6 +355,7 @@ void InitAddLoc(int index)
 		loc.locators_radius.patrol = 0.5;
 		loc.locators_radius.Smugglers = 0.5;
 		loc.locators_radius.monsters = 0.5;
+        loc.locators_radius.sound = 0.4;
 	}
 	
 	//Day dynamic light
@@ -390,4 +391,91 @@ void InitAddLoc(int index)
 	loc.models.night.lights.redteleport = "redteleport";
 	loc.models.night.lights.greenteleport = "greenteleport";
 	loc.models.night.lights.magsteleport = "magsteleport";
+}
+
+// belamour применить после удаления атрибутов моделей
+void SetDefaultLightingModels(int n)
+{
+	ref loc;
+	
+	makeref(loc, Locations[n]);
+	//Day dynamic light
+	loc.models.day.lights.candles = "candle";
+	loc.models.day.lights.candles_medium = "candelabrum";
+	loc.models.day.lights.chandeliers = "chandelier";
+	loc.models.day.lights.heaters = "heater";
+	loc.models.day.lights.torchlightes = "torchlight";		
+	loc.models.day.lights.fireglows = "fireglow";		
+	loc.models.day.lights.outside = "outside_day";
+	loc.models.day.lights.incas_light = "incas";
+	loc.models.day.lights.incas_sky = "incasskyday";
+	loc.models.day.lights.lamp = "lamp";
+	loc.models.day.lights.blueteleport = "blueteleport";
+	loc.models.day.lights.redteleport = "redteleport";
+	loc.models.day.lights.greenteleport = "greenteleport";
+	loc.models.day.lights.magsteleport = "magsteleport";
+
+	//Night dynamic light
+	loc.models.night.lights.candles = "candle";
+	loc.models.night.lights.candles_medium = "candelabrum";
+	loc.models.night.lights.chandeliers = "chandelier";
+	loc.models.night.lights.heaters = "heater";
+	loc.models.night.lights.torchlightes = "torchlight";
+	loc.models.night.lights.torchlightes_o = "torchlight";
+	loc.models.night.lights.fireglows = "fireglow";		
+	loc.models.night.lights.fonar = "lamp";
+	loc.models.night.lights.outside = "outside_night";		
+	loc.models.night.lights.incas_light = "incas";
+	loc.models.night.lights.incas_sky = "incasskynight";
+	loc.models.night.lights.lamp = "lamp";
+	loc.models.night.lights.blueteleport = "blueteleport";
+	loc.models.night.lights.redteleport = "redteleport";
+	loc.models.night.lights.greenteleport = "greenteleport";
+	loc.models.night.lights.magsteleport = "magsteleport";
+}
+
+#event_handler("GetCharacterMarksParams", "GetCharacterMarksParams");
+void GetCharacterMarksParams()
+{
+	aref loc = GetEventData();
+	loc.dialog_mark.height = 2.25;
+	loc.dialog_mark.color = argb(255, 255, 255, 255);
+	loc.dialog_mark.scale = 0.4;
+	loc.attack_mark.height = 2.25;
+	loc.attack_mark.color = argb(255, 255, 55, 55);
+	loc.attack_mark.scale = 0.4;
+	loc.dead_mark.height = 2.25;
+	loc.dead_mark.color = argb(255, 255, 55, 55);
+	loc.dead_mark.scale = 0.4;
+	loc.dead_mark.timer = BLI_KILL_MARKER_TIMER;
+}
+
+void SetLocationCharacterMarksMode()
+{
+	bool bDialog = false;
+	bool bAttack = false;
+	bool bDead = false;
+	switch(iGlobalTarget)
+	{
+		case 1:
+			bAttack = true;
+			bDead = true;
+		break;
+		case 2:
+			bDialog = true;
+		break;
+		case 3:
+			bDialog = true;
+			bAttack = true;
+			bDead = true;
+		break;
+	}
+	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetDialogMarkMode", bDialog);
+	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetAttackMarkMode", bAttack);
+	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetDeadMarkMode", bDead);
+}
+
+void SetLocationArchetypeMarksMode()
+{
+	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetArchetypeMarkMode", iGlobalEnemyType);
 }

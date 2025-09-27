@@ -1,56 +1,12 @@
-IslaMona_1
-{
-Родриго
-}
-IslaMona_2
-{
-Хименес
-}
-
-IslaMona_3
-{
-Настало утро следующего дня...
-}
-
-IslaMona_4
-{
-Родриго Хименес подготовил очередную партию бакаута на Исла Мона
-}
-
-IslaMona_5
-{
-Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок рома
-}
-
-IslaMona_6
-{
-Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок вина
-}
-
-IslaMona_7
-{
-На ваш склад загружено @<sti(pchar.questTemp.IslaMona.Factory.Goods)> бревен бакаута
-}
-
-IslaMona_8
-{
-Алонсо
-}
-IslaMona_9
-{
-
-}
-
-IslaMona_10
-{
-Франсиско
-}
-IslaMona_11
-{
-де Альба
-}
-
-IslaMona_12
-{
-Судя по звукам, ловушка удалась! Пора в посёлок!
-}
+IslaMona_1 {Родриго}
+IslaMona_2 {Хименес}
+IslaMona_3 {Настало утро следующего дня...}
+IslaMona_4 {Родриго Хименес подготовил очередную партию бакаута на Исла Мона}
+IslaMona_5 {Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок рома}
+IslaMona_6 {Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок вина}
+IslaMona_7 {На ваш склад загружено @<sti(pchar.questTemp.IslaMona.Factory.Goods)> бревен бакаута}
+IslaMona_8 {Алонсо}
+IslaMona_9 { }
+IslaMona_10 {Франсиско}
+IslaMona_11 {де Альба}
+IslaMona_12 {Судя по звукам, ловушка удалась! Пора в посёлок!}

@@ -1146,7 +1146,7 @@ void ProcessDialogEvent()
 			// 改造皮卡德
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1154,8 +1154,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2437,7 +2438,7 @@ case "mtraxx_111":
         break;
         
         // Rebbebion, 任务'导航星'
-        case "PZ1":
+        case "PZ_1":
             DelLandQuestMark(npchar);
             
             if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2457,28 +2458,28 @@ case "mtraxx_111":
         case "PZ_Prince1":
             dialog.text = "我看恰恰相反。 你来这里做什么? ";
             link.l1 = "你听说托尔图加新开的妓院了吗? ";
-            link.l1.go = "PZ2";
+            link.l1.go = "PZ_2";
         break;
         
         case "PZ_DeMaure1":
             dialog.text = "那就问吧。 你知道我不喜欢客套, 有话直说。 ";
             link.l1 = "你听说托尔图加新开的妓院了吗? ";
-            link.l1.go = "PZ2";
+            link.l1.go = "PZ_2";
         break;
         
-        case "PZ2":
+        case "PZ_2":
             dialog.text = "你喝醉了吗? 这算什么问题? 如果这就是你真正想谈的, 别浪费我的时间。 ";
             link.l1 = "我猜你没听说? 那里最近开了一家新妓院 —非常昂贵, 只雇最漂亮。 健康。 穿着得体的姑娘。 ";
-            link.l1.go = "PZ3";
+            link.l1.go = "PZ_3";
         break;
         
-        case "PZ3":
+        case "PZ_3":
             dialog.text = "哦, 那个! 我当然听说了 —谁没听说过? ";
             link.l1 = "嗯, 我前几天才知道。 ";
-            link.l1.go = "PZ4";
+            link.l1.go = "PZ_4";
         break;
         
-        case "PZ4":
+        case "PZ_4":
             dialog.text = "哈哈哈哈, 你这个无赖, 真没想到! 不过, 你为什么要和我讨论这个? 为什么不先试试霍克斯? 呵呵。 不过... 你已经在那里玩得开心了吗? ";
             if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
             {
@@ -2495,34 +2496,34 @@ case "mtraxx_111":
         case "PZ_Fucked1":
             dialog.text = "所以你是来炫耀的! 哈, 真是个无赖。 ";
             link.l1 = "其实不是。 我真的想问你点事, 马库斯。 ";
-            link.l1.go = "PZ5";
+            link.l1.go = "PZ_5";
         break;
         
         case "PZ_NoFucked1":
             dialog.text = "你没去? ! 你个蠢货, 德莫尔。 如果我是你... ";
             link.l1 = "我知道你肯定会好好放纵一番。 但这不是我想和你讨论的事。 ";
-            link.l1.go = "PZ5";
+            link.l1.go = "PZ_5";
         break;
         
-        case "PZ5":
+        case "PZ_5":
             dialog.text = "到底什么事? 快点, 别让我悬着心。 ";
             link.l1 = "我在找那个地方的老板。 有人说她想见你, 并提供一个投资她生意的机会。 你不会认错的 —她是中国人。 ";
-            link.l1.go = "PZ6";
+            link.l1.go = "PZ_6";
         break;
         
-        case "PZ6":
+        case "PZ_6":
             dialog.text = "嗬嗬。 最近我还没荣幸见过中国女人。 但我不介意见见她并投资她的生意。 毕竟, 你不能大摇大摆进入莱瓦瑟的地盘, 而作为你国王的臣民, 他一旦发现我的‘龙’号, 就会被迫用海岸船只向它开火。 ";
             link.l1 = "看来她首先在考虑太子港... ";
-            link.l1.go = "PZ7";
+            link.l1.go = "PZ_7";
         break;
         
-        case "PZ7":
+        case "PZ_7":
             dialog.text = "你这么认为? 那是个错误。 即使德.穆萨克比我有钱 —我对此表示怀疑 —他也不能把任何城市预算拨给妓院, 不管它能带来多少金子。 ";
             link.l1 = "有道理。 显然她没好好想过自己的野心。 ";
-            link.l1.go = "PZ8";
+            link.l1.go = "PZ_8";
         break;
         
-        case "PZ8":
+        case "PZ_8":
             dialog.text = "你知道, 我一直想知道其他妓院是怎么维持下去的。 这不是女人的思考能力, 尤其是统治能力 —记住我的话。 ";
             link.l1 = "好吧, 你这话错了。 谢谢你的时间, 马库斯! 如果我先见到她, 我会告诉她你愿意见她。 ";
             link.l1.go = "Exit";

@@ -1,322 +1,90 @@
-﻿new_string        {
-
-
-}
-
-Tartane
+new_string
 {
-Una barca de pesca no es el mejor barco para un capitán que brilla en la alta sociedad. Pero si el destino te ha privado de tu barco favorito, esta triste embarcación es bastante adecuada para un viaje rápido entre islas, aunque debes recordarte a ti mismo: ¡esto es solo temporal!
-}
 
-WarTartane
-{
-Las tartanas son las mismas barcas de pesca adaptadas apresuradamente para trabajos costeros en las peligrosas aguas del Caribe. Su modesto armamento y construcción improvisada no inspiran respeto, pero son capaces de ahuyentar a un pirata inexperto o a un contrabandista pobre. Una solución temporal cuando no hay muchas opciones.
 }
-
-Barque
-{
-Un bergantín es ideal para viajes largos. Con una bodega espaciosa y buenas cualidades de navegación, el bergantín se considera uno de los barcos mercantes más equilibrados. Sin embargo, su tamaño impresionante y su armamento relativamente débil lo convierten en un objetivo fácil para los saqueadores del mar.
-}
-
-Schooner
-{
-Buenas cualidades de navegación, una bodega espaciosa, poco calado y un armamento decente han hecho del bergantín goleta uno de los barcos más populares de las clases pequeñas. Es igualmente adecuado para el comercio, la navegación costera y el combate.
-}
-
-Barkentine
-{
-La aparición de la barquentina se debió al deseo de simplificar la gestión de un barco mercante por una tripulación inexperta y poco numerosa. Para ello, las velas cuadradas del palo mayor del bergantín se sustituyeron por velas de cuchillo y el casco se hizo un poco más pequeño. Gracias a su aparejo mixto, la barquentina navega con confianza tanto a favor como en contra del viento.
-}
-
-Shnyava
-{
-La shniava y la bergantina fueron los predecesores del bergantín. Gracias a su exitoso diseño de casco, buena velocidad y capacidad para llevar cañones pesados, estos barcos se hicieron muy populares tanto en el Caribe como en Europa. A menudo se utilizan para escoltar convoyes mercantes de clases pequeñas.
-}
-
-Fleut
-{
-El fluyt es una rama única en el desarrollo de los barcos mercantes. Su cubierta característicamente estrecha permitía reducir los aranceles, que se calculaban según el ancho de la cubierta superior. Una bodega espaciosa, gran velocidad y buen rendimiento contra el viento hicieron del fluyt uno de los barcos mercantes más populares.
-}
-
-Caravel
-{
-El aparejo característico de la carabela permite reconocer fácilmente este barco desde lejos. Su diseño anticuado le da cualidades de navegación bastante mediocres, lo que le impide competir en igualdad de condiciones con los barcos modernos, a pesar de tener suficientes cañones.
-}
-
-Pinnace
-{
-Junto con el fluyt, la pinaza se hizo muy popular como barco mercante. Es lo suficientemente grande y resistente para largos viajes por mar, y su capacidad de bodega permite transportar una gran cantidad de carga. Gracias a las líneas afiladas de su proa, incluso con un casco pesado, la pinaza alcanza una velocidad decente.
-}
-
-Navio
-{
-Un barco así solo está al alcance de un comerciante verdaderamente rico. Un casco grande y fuerte, una bodega espaciosa y un aparejo avanzado permiten realizar los viajes más largos, y no menos de tres docenas de cañones pesados lo protegen de piratas y corsarios.
-}
-
-EastIndiaMan
-{
-Los barcos de la Compañía de las Indias Orientales reunieron las mejores cualidades de las pinazas y eliminaron sus defectos, convirtiéndose en barcos universales casi perfectos. Con cañones de gran calibre, pueden competir con barcos de guerra de tamaño comparable, y su espaciosa bodega permite utilizarlos eficazmente para el comercio.
-}
-
-LuggerQuest
-{
-El lugre de mensajería fue construido especialmente para las necesidades del servicio de mensajería. Excelentes cualidades de navegación, gran rendimiento contra el viento y un armamento bastante fuerte garantizan la entrega fiable de despachos importantes y pequeñas cargas valiosas.
-}
-
+Tartane {Una barca de pesca no es el mejor barco para un capitán que brilla en la alta sociedad. Pero si el destino te ha privado de tu barco favorito, esta triste embarcación es bastante adecuada para un viaje rápido entre islas, aunque debes recordarte a ti mismo: ¡esto es solo temporal!}
+WarTartane {Las tartanas son las mismas barcas de pesca adaptadas apresuradamente para trabajos costeros en las peligrosas aguas del Caribe. Su modesto armamento y construcción improvisada no inspiran respeto, pero son capaces de ahuyentar a un pirata inexperto o a un contrabandista pobre. Una solución temporal cuando no hay muchas opciones.}
+Barque {Un bergantín es ideal para viajes largos. Con una bodega espaciosa y buenas cualidades de navegación, el bergantín se considera uno de los barcos mercantes más equilibrados. Sin embargo, su tamaño impresionante y su armamento relativamente débil lo convierten en un objetivo fácil para los saqueadores del mar.}
+Schooner {Buenas cualidades de navegación, una bodega espaciosa, poco calado y un armamento decente han hecho del bergantín goleta uno de los barcos más populares de las clases pequeñas. Es igualmente adecuado para el comercio, la navegación costera y el combate.}
+Barkentine {La aparición de la barquentina se debió al deseo de simplificar la gestión de un barco mercante por una tripulación inexperta y poco numerosa. Para ello, las velas cuadradas del palo mayor del bergantín se sustituyeron por velas de cuchillo y el casco se hizo un poco más pequeño. Gracias a su aparejo mixto, la barquentina navega con confianza tanto a favor como en contra del viento.}
+Shnyava {La shniava y la bergantina fueron los predecesores del bergantín. Gracias a su exitoso diseño de casco, buena velocidad y capacidad para llevar cañones pesados, estos barcos se hicieron muy populares tanto en el Caribe como en Europa. A menudo se utilizan para escoltar convoyes mercantes de clases pequeñas.}
+Fleut {El fluyt es una rama única en el desarrollo de los barcos mercantes. Su cubierta característicamente estrecha permitía reducir los aranceles, que se calculaban según el ancho de la cubierta superior. Una bodega espaciosa, gran velocidad y buen rendimiento contra el viento hicieron del fluyt uno de los barcos mercantes más populares.}
+Caravel {El aparejo característico de la carabela permite reconocer fácilmente este barco desde lejos. Su diseño anticuado le da cualidades de navegación bastante mediocres, lo que le impide competir en igualdad de condiciones con los barcos modernos, a pesar de tener suficientes cañones.}
+Pinnace {Junto con el fluyt, la pinaza se hizo muy popular como barco mercante. Es lo suficientemente grande y resistente para largos viajes por mar, y su capacidad de bodega permite transportar una gran cantidad de carga. Gracias a las líneas afiladas de su proa, incluso con un casco pesado, la pinaza alcanza una velocidad decente.}
+Navio {Un barco así solo está al alcance de un comerciante verdaderamente rico. Un casco grande y fuerte, una bodega espaciosa y un aparejo avanzado permiten realizar los viajes más largos, y no menos de tres docenas de cañones pesados lo protegen de piratas y corsarios.}
+EastIndiaMan {Los barcos de la Compañía de las Indias Orientales reunieron las mejores cualidades de las pinazas y eliminaron sus defectos, convirtiéndose en barcos universales casi perfectos. Con cañones de gran calibre, pueden competir con barcos de guerra de tamaño comparable, y su espaciosa bodega permite utilizarlos eficazmente para el comercio.}
+LuggerQuest {El lugre de mensajería fue construido especialmente para las necesidades del servicio de mensajería. Excelentes cualidades de navegación, gran rendimiento contra el viento y un armamento bastante fuerte garantizan la entrega fiable de despachos importantes y pequeñas cargas valiosas.}
 Lugger
 {
-El lugre es un pequeño velero que muchos marineros, especialmente contrabandistas, valoran por su maniobrabilidad y versatilidad. Los lugres compensan su falta de velocidad a toda vela con excelentes ángulos de ceñida.
-A pesar de su pequeño tamaño, los lugres tienen buena navegabilidad y pueden realizar largos viajes.
+El lugre es un pequeño velero que muchos marineros, especialmente contrabandistas, valoran por su maniobrabilidad y versatilidad. Los lugres compensan su falta de velocidad a toda vela con excelentes ángulos de ceñida.A pesar de su pequeño tamaño, los lugres tienen buena navegabilidad y pueden realizar largos viajes.
 }
-
-Sloop
-{
-Con buena velocidad y maniobrabilidad y un armamento sólido para su tamaño, la balandra es un barco patrullero fiable, también adecuado para el reconocimiento.
-}
-
-Brigantine
-{
-Un tipo legendario de velero. Rápida y maniobrable como una golondrina, la bergantina es especialmente valorada por piratas y aventureros de todo tipo. Su exitoso diseño la hace adecuada para cualquier tarea, desde el combate hasta el comercio.
-}
-
-Brig
-{
-Las bricbarcas se utilizan ampliamente en la marina para el reconocimiento. Poco calado, líneas de casco afiladas y un aparejo avanzado hacen de la bricbarca uno de los barcos más rápidos, y sus cañones de calibre decente la convierten en un oponente muy peligroso.
-}
-
-Schooner_W
-{
-Los marineros del Nuevo Mundo fueron los primeros en apreciar las goletas y comenzaron a utilizarlas con fines militares. Para ello, fue necesario modificar un poco el casco, reducir el espacio útil de la bodega y añadir cañones, pero el resultado valió la pena. Bien armada, rápida y maniobrable, la goleta de guerra es una seria amenaza para cualquier barco mercante.
-}
-
-Galeon_l
-{
-El galeón fue creado a principios del siglo XVI sobre la base de la carraca y fue diseñado desde el principio como barco de guerra. A mediados del siglo XVII, el galeón había alcanzado la cima de su desarrollo y cedió el testigo a barcos más avanzados, pero aún no ha desaparecido y sigue sirviendo fielmente a los marineros.
-}
-
-Galeon_sm
-{
-Un símbolo del poder y la ambición españoles. Las cubiertas brillan con adornos dorados y en la popa se alza la imagen de la Virgen de la Misericordia, patrona del barco. Para algunos, 'Santa Misericordia' es la encarnación del orden, para otros, un temido símbolo de la opresión real. Y algunos incluso ven en ella la verdadera Providencia Divina.
-}
-
+Sloop {Con buena velocidad y maniobrabilidad y un armamento sólido para su tamaño, la balandra es un barco patrullero fiable, también adecuado para el reconocimiento.}
+Brigantine {Un tipo legendario de velero. Rápida y maniobrable como una golondrina, la bergantina es especialmente valorada por piratas y aventureros de todo tipo. Su exitoso diseño la hace adecuada para cualquier tarea, desde el combate hasta el comercio.}
+Brig {Las bricbarcas se utilizan ampliamente en la marina para el reconocimiento. Poco calado, líneas de casco afiladas y un aparejo avanzado hacen de la bricbarca uno de los barcos más rápidos, y sus cañones de calibre decente la convierten en un oponente muy peligroso.}
+Schooner_W {Los marineros del Nuevo Mundo fueron los primeros en apreciar las goletas y comenzaron a utilizarlas con fines militares. Para ello, fue necesario modificar un poco el casco, reducir el espacio útil de la bodega y añadir cañones, pero el resultado valió la pena. Bien armada, rápida y maniobrable, la goleta de guerra es una seria amenaza para cualquier barco mercante.}
+Galeon_l {El galeón fue creado a principios del siglo XVI sobre la base de la carraca y fue diseñado desde el principio como barco de guerra. A mediados del siglo XVII, el galeón había alcanzado la cima de su desarrollo y cedió el testigo a barcos más avanzados, pero aún no ha desaparecido y sigue sirviendo fielmente a los marineros.}
+Galeon_sm {Un símbolo del poder y la ambición españoles. Las cubiertas brillan con adornos dorados y en la popa se alza la imagen de la Virgen de la Misericordia, patrona del barco. Para algunos, 'Santa Misericordia' es la encarnación del orden, para otros, un temido símbolo de la opresión real. Y algunos incluso ven en ella la verdadera Providencia Divina.}
 LadyBeth
 {
-Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio de patrulla independiente en aguas peligrosas. Esta shniava tiene excelentes cualidades de navegación y un armamento impresionante para su tamaño, lo que le permite competir con barcos de clases superiores.
-Sus años de servicio militar quedaron atrás, y la gloria de su antiguo dueño ahora atrae más a comerciantes de antigüedades y mapas del tesoro que a lobos de mar.
+Un magnífico ejemplo de la construcción naval inglesa, creado para el servicio de patrulla independiente en aguas peligrosas. Esta shniava tiene excelentes cualidades de navegación y un armamento impresionante para su tamaño, lo que le permite competir con barcos de clases superiores.Sus años de servicio militar quedaron atrás, y la gloria de su antiguo dueño ahora atrae más a comerciantes de antigüedades y mapas del tesoro que a lobos de mar.
 }
-
-Memento
-{
-En este barco, es difícil reconocer el antiguo diseño de una goleta inglesa, que compensa su escasa capacidad de navegación con una potente artillería y un casco pesado y duradero. Cubierto de amuletos nativos y empapado de muerte, asusta no solo a los enemigos, sino también a su propia tripulación.
-}
-
-Corvette
-{
-Las corbetas están diseñadas para el reconocimiento, el servicio de mensajería y las operaciones de crucero. Con buena velocidad y maniobrabilidad, una corbeta puede alcanzar barcos más ligeros y evitar con éxito el combate con barcos más pesados.
-}
-
-XebekVML
-{
-El xebec es el tipo de barco mediterráneo más famoso. Su casco estrecho y sus grandes velas latinas en todos los mástiles le permiten navegar en ángulos extremos al viento, lo que lo convierte en un oponente muy molesto. Desafortunadamente, la baja velocidad con viento de popa limita el uso del xebec principalmente a la piratería y el contrabando.
-}
-
-Polacre
-{
-La polacra es el pariente más cercano del xebec. A diferencia de este, lleva velas cuadradas en el palo mayor, lo que le permite mantener el rumbo con viento a favor. Sin embargo, este aparejo reduce la maniobrabilidad, empeora el rendimiento contra el viento y aumenta significativamente las exigencias a las habilidades y coordinación de la tripulación.
-}
-
-Galeon_h
-{
-El galeón pesado es un poderoso barco de guerra diseñado para proteger convoyes y transportar de forma independiente cargas especialmente valiosas. Es inferior a los barcos modernos en velocidad y maniobrabilidad, pero sus cañones de gran calibre, su casco fuerte y su numerosa tripulación proporcionan una protección fiable para cualquier carga. Una flota de galeones pesados es una fuerza a tener en cuenta en el Caribe.
-}
-
-Elcasador
-{
-Un brillante ejemplo de barco de guerra diseñado para operaciones especiales en mar abierto. Este galeón fue construido por encargo de la Casa de Contratación para destruir a los piratas más peligrosos que representan una amenaza real para el comercio en la región y los intereses de la Corona española.
-}
-
-Frigate
-{
-Las fragatas tienen excelentes cualidades de navegación, buena potencia de fuego y fueron creadas especialmente para el reconocimiento a larga distancia, la escolta de transportes y el combate como parte de un escuadrón. Hoy en día, se encuentran más a menudo como barcos de crucero independientes en las rutas enemigas, para capturar o destruir barcos mercantes enemigos.
-}
-
-Frigate_h
-{
-Las fragatas pesadas se convirtieron en un compromiso para aquellos capitanes a los que les faltaba la potencia de fuego de las fragatas normales. Los cascos reforzados y los cañones de mayor calibre las acercan a los barcos de línea de cuarta clase, pero a costa de una menor velocidad y maniobrabilidad.
-}
-
-LineShip
-{
-Los barcos de línea de cuarta clase no pueden competir en potencia de fuego con sus hermanos mayores, por lo que no tiene sentido ponerlos en la línea de batalla. Su mejor uso es la protección de convoyes, ya que su velocidad y maniobrabilidad los hacen más eficaces para esta tarea.
-}
-
-Warship
-{
-Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.
-}
-
-Ecliaton
-{
-Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.
-}
-
-Pink
-{
-El pink es un barco pequeño diseñado para transportar carga y proteger pequeños convoyes. Aunque su armamento es débil y su tripulación pequeña, el pink está especialmente diseñado tanto para el comercio como para el combate, y muchos capitanes lo valoran por su velocidad y maniobrabilidad. El pequeño tamaño del pink no le permite realizar largos viajes por mar.
-}
-
-Battleship
-{
-Los barcos de línea de tercera clase son muy numerosos y los más equilibrados en cualidades de combate, diseñados para la batalla en línea. Tienen suficiente potencia de fuego para desafiar incluso a los leviatanes de 100 cañones. Al mismo tiempo, los superan notablemente en velocidad y maniobrabilidad.
-}
-
-Manowar
-{
-Los barcos de línea de segunda clase son la columna vertebral del poder naval de cualquier nación. Junto con los barcos de tercera clase, forman una flota que combina fuerza y maniobrabilidad. Y en ausencia de barcos de primera clase en el escuadrón, algunos de ellos sirven como buques insignia.
-}
-
-Manowar_e
-{
-Un barco de línea de primera clase es una verdadera fortaleza flotante. Gracias a su aterradora potencia de fuego, puede enviar al fondo a cualquier oponente con solo unos pocos disparos precisos. Pero incluso las mayores potencias navales no tienen muchos de estos barcos, y se utilizan como buques insignia en las grandes batallas navales.
-}
-
+Memento {En este barco, es difícil reconocer el antiguo diseño de una goleta inglesa, que compensa su escasa capacidad de navegación con una potente artillería y un casco pesado y duradero. Cubierto de amuletos nativos y empapado de muerte, asusta no solo a los enemigos, sino también a su propia tripulación.}
+Corvette {Las corbetas están diseñadas para el reconocimiento, el servicio de mensajería y las operaciones de crucero. Con buena velocidad y maniobrabilidad, una corbeta puede alcanzar barcos más ligeros y evitar con éxito el combate con barcos más pesados.}
+XebekVML {El xebec es el tipo de barco mediterráneo más famoso. Su casco estrecho y sus grandes velas latinas en todos los mástiles le permiten navegar en ángulos extremos al viento, lo que lo convierte en un oponente muy molesto. Desafortunadamente, la baja velocidad con viento de popa limita el uso del xebec principalmente a la piratería y el contrabando.}
+Polacre {La polacra es el pariente más cercano del xebec. A diferencia de este, lleva velas cuadradas en el palo mayor, lo que le permite mantener el rumbo con viento a favor. Sin embargo, este aparejo reduce la maniobrabilidad, empeora el rendimiento contra el viento y aumenta significativamente las exigencias a las habilidades y coordinación de la tripulación.}
+Galeon_h {El galeón pesado es un poderoso barco de guerra diseñado para proteger convoyes y transportar de forma independiente cargas especialmente valiosas. Es inferior a los barcos modernos en velocidad y maniobrabilidad, pero sus cañones de gran calibre, su casco fuerte y su numerosa tripulación proporcionan una protección fiable para cualquier carga. Una flota de galeones pesados es una fuerza a tener en cuenta en el Caribe.}
+Elcasador {Un brillante ejemplo de barco de guerra diseñado para operaciones especiales en mar abierto. Este galeón fue construido por encargo de la Casa de Contratación para destruir a los piratas más peligrosos que representan una amenaza real para el comercio en la región y los intereses de la Corona española.}
+Frigate {Las fragatas tienen excelentes cualidades de navegación, buena potencia de fuego y fueron creadas especialmente para el reconocimiento a larga distancia, la escolta de transportes y el combate como parte de un escuadrón. Hoy en día, se encuentran más a menudo como barcos de crucero independientes en las rutas enemigas, para capturar o destruir barcos mercantes enemigos.}
+Frigate_h {Las fragatas pesadas se convirtieron en un compromiso para aquellos capitanes a los que les faltaba la potencia de fuego de las fragatas normales. Los cascos reforzados y los cañones de mayor calibre las acercan a los barcos de línea de cuarta clase, pero a costa de una menor velocidad y maniobrabilidad.}
+LineShip {Los barcos de línea de cuarta clase no pueden competir en potencia de fuego con sus hermanos mayores, por lo que no tiene sentido ponerlos en la línea de batalla. Su mejor uso es la protección de convoyes, ya que su velocidad y maniobrabilidad los hacen más eficaces para esta tarea.}
+Warship {Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.}
+Ecliaton {Los barcos de este tipo se construyeron en la época del cardenal Richelieu y hoy en día están estructuralmente obsoletos. Pero tienen buenas cualidades de navegación y pueden llevar los cañones más pesados, lo que los convierte en una fuerza formidable.}
+Pink {El pink es un barco pequeño diseñado para transportar carga y proteger pequeños convoyes. Aunque su armamento es débil y su tripulación pequeña, el pink está especialmente diseñado tanto para el comercio como para el combate, y muchos capitanes lo valoran por su velocidad y maniobrabilidad. El pequeño tamaño del pink no le permite realizar largos viajes por mar.}
+Battleship {Los barcos de línea de tercera clase son muy numerosos y los más equilibrados en cualidades de combate, diseñados para la batalla en línea. Tienen suficiente potencia de fuego para desafiar incluso a los leviatanes de 100 cañones. Al mismo tiempo, los superan notablemente en velocidad y maniobrabilidad.}
+Manowar {Los barcos de línea de segunda clase son la columna vertebral del poder naval de cualquier nación. Junto con los barcos de tercera clase, forman una flota que combina fuerza y maniobrabilidad. Y en ausencia de barcos de primera clase en el escuadrón, algunos de ellos sirven como buques insignia.}
+Manowar_e {Un barco de línea de primera clase es una verdadera fortaleza flotante. Gracias a su aterradora potencia de fuego, puede enviar al fondo a cualquier oponente con solo unos pocos disparos precisos. Pero incluso las mayores potencias navales no tienen muchos de estos barcos, y se utilizan como buques insignia en las grandes batallas navales.}
 MayFang
 {
-Este xebec tiene un casco aligerado a costa de la resistencia, pero eso lo convierte en un navegante inigualable: ¡en todo el Caribe no hay otro barco capaz de navegar casi contra el viento!
-Y veinte cañones de calibre medio son un argumento de peso en la competencia marítima.
+Este xebec tiene un casco aligerado a costa de la resistencia, pero eso lo convierte en un navegante inigualable: ¡en todo el Caribe no hay otro barco capaz de navegar casi contra el viento!Y veinte cañones de calibre medio son un argumento de peso en la competencia marítima.
 }
-
-Mirage
-{
-A diferencia de los queches bombarderos, los queches corsarios no llevan morteros gigantes diseñados para bombardear fortalezas, sino que tienen un casco más ligero y aerodinámico, lo que mejora sus cualidades de navegación. Incluso los yates de los príncipes envidiarían la velocidad de este queche corsario.
-}
-
-Himera
-{
-Un barco obra maestra, creado especialmente para las necesidades de la inteligencia naval británica. Por sus características es comparable a los barcos de guerra de tercera clase, manteniendo la facilidad de manejo de los de cuarta clase.
-}
-
-Valciria
-{
-Un excelente bergantín inglés. Gran velocidad y maniobrabilidad, buen rendimiento contra el viento y dos docenas de cañones en cubierta hacen de este velero un sueño.
-}
-
-CORVETTE_QUEST
-{
-Un barco único, obra maestra de los constructores navales franceses. La profunda modernización del diseño de la corbeta ha mejorado casi todas sus características sin sacrificar la velocidad. El aumento de la superficie vélica y el calibre de los cañones requieren una tripulación más experimentada y numerosa, pero si las pruebas en el Caribe tienen éxito, las tecnologías aplicadas aquí pueden suponer un verdadero avance en la construcción naval.
-}
-
-Polacre_q
-{
-Un maestro que combinó con éxito elementos del xebec y la fragata creó una polacra con un casco inusual, fuerte y espacioso, caracterizado por altos costados, poco calado y un armamento muy potente. Tres mástiles y un bauprés con velas de diferentes tipos la hacen rápida y muy maniobrable. Todas estas características son buenas por separado, pero juntas son excelentes: solo el propietario decidirá si será un barco de guerra, pirata o mercante el que zarpe.
-}
-
-ArabellaShip
-{
-Este barco único combina las mejores características de las fragatas y los barcos de línea. Sus asombrosas cualidades de navegación se combinan con una batería de cañones de gran calibre, y los interiores pueden albergar a toda una compañía de infantería de marina. En manos expertas, Fortuna puede enfrentarse sola a un oponente mucho más fuerte.
-}
-
-Flyingdutchman
-{
-"Caleuche". El terror de todos los que navegan...
-}
-
-Flyingdutchman_l
-{
-Una copia del "Caleuche".
-}
-
-NewFlyingdutchman
-{
-Este fue una vez el infame "barco fantasma". Ahora ha sido completamente reconstruido y es un poderoso galeón de guerra, capaz de luchar en igualdad de condiciones incluso con barcos de línea. Con una velocidad impresionante para su tamaño, una gran bodega y un armamento formidable, es un barco totalmente autosuficiente, capaz de hundir barcos enemigos, abordarlos e incluso asediar colonias enteras.
-}
-
-Santisima
-{
-Este barco fue botado en el famoso astillero de La Habana. Su casco es un poco más ligero y débil que el de otros barcos de primera clase, pero esto se compensa con creces con mejores cualidades de navegación.
-}
-
-NoneBoat
-{
-Sin barco. El héroe se ha convertido en un rata de tierra y no puede llamarse capitán hasta que consiga un barco.
-}
-
-Hull
-{
-Casco: muestra la cantidad actual y máxima de daño que puede soportar el casco del barco.
-}
-
-Sails
-{
-Velas: muestran el daño actual y máximo que pueden soportar las velas del barco.
-}
-
-Speed
-{
-Velocidad: muestra la velocidad máxima actual del barco, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la velocidad máxima alcanzable.
-}
-
-Maneuver
-{
-Maniobrabilidad: muestra la maniobrabilidad del barco en este momento, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la maniobrabilidad máxima alcanzable.
-}
-
+Mirage {A diferencia de los queches bombarderos, los queches corsarios no llevan morteros gigantes diseñados para bombardear fortalezas, sino que tienen un casco más ligero y aerodinámico, lo que mejora sus cualidades de navegación. Incluso los yates de los príncipes envidiarían la velocidad de este queche corsario.}
+Himera {Un barco obra maestra, creado especialmente para las necesidades de la inteligencia naval británica. Por sus características es comparable a los barcos de guerra de tercera clase, manteniendo la facilidad de manejo de los de cuarta clase.}
+Valciria {Un excelente bergantín inglés. Gran velocidad y maniobrabilidad, buen rendimiento contra el viento y dos docenas de cañones en cubierta hacen de este velero un sueño.}
+CORVETTE_QUEST {Un barco único, obra maestra de los constructores navales franceses. La profunda modernización del diseño de la corbeta ha mejorado casi todas sus características sin sacrificar la velocidad. El aumento de la superficie vélica y el calibre de los cañones requieren una tripulación más experimentada y numerosa, pero si las pruebas en el Caribe tienen éxito, las tecnologías aplicadas aquí pueden suponer un verdadero avance en la construcción naval.}
+Polacre_q {Un maestro que combinó con éxito elementos del xebec y la fragata creó una polacra con un casco inusual, fuerte y espacioso, caracterizado por altos costados, poco calado y un armamento muy potente. Tres mástiles y un bauprés con velas de diferentes tipos la hacen rápida y muy maniobrable. Todas estas características son buenas por separado, pero juntas son excelentes: solo el propietario decidirá si será un barco de guerra, pirata o mercante el que zarpe.}
+ArabellaShip {Este barco único combina las mejores características de las fragatas y los barcos de línea. Sus asombrosas cualidades de navegación se combinan con una batería de cañones de gran calibre, y los interiores pueden albergar a toda una compañía de infantería de marina. En manos expertas, Fortuna puede enfrentarse sola a un oponente mucho más fuerte.}
+Flyingdutchman {"Caleuche". El terror de todos los que navegan...}
+Flyingdutchman_l {Una copia del "Caleuche".}
+NewFlyingdutchman {Este fue una vez el infame "barco fantasma". Ahora ha sido completamente reconstruido y es un poderoso galeón de guerra, capaz de luchar en igualdad de condiciones incluso con barcos de línea. Con una velocidad impresionante para su tamaño, una gran bodega y un armamento formidable, es un barco totalmente autosuficiente, capaz de hundir barcos enemigos, abordarlos e incluso asediar colonias enteras.}
+Santisima {Este barco fue botado en el famoso astillero de La Habana. Su casco es un poco más ligero y débil que el de otros barcos de primera clase, pero esto se compensa con creces con mejores cualidades de navegación.}
+NoneBoat {Sin barco. El héroe se ha convertido en un rata de tierra y no puede llamarse capitán hasta que consiga un barco.}
+Hull {Casco: muestra la cantidad actual y máxima de daño que puede soportar el casco del barco.}
+Sails {Velas: muestran el daño actual y máximo que pueden soportar las velas del barco.}
+Speed {Velocidad: muestra la velocidad máxima actual del barco, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la velocidad máxima alcanzable.}
+Maneuver {Maniobrabilidad: muestra la maniobrabilidad del barco en este momento, teniendo en cuenta todos los factores (carga, habilidades del capitán, daños al barco) y la maniobrabilidad máxima alcanzable.}
 AgainstWind
 {
-El mejor rumbo del barco respecto al viento, en el que puede alcanzar la velocidad máxima. Los valores se expresan en grados.
-El segundo valor muestra la diferencia entre la dirección actual del viento y el mejor ángulo de rumbo para este barco.
+El mejor rumbo del barco respecto al viento, en el que puede alcanzar la velocidad máxima. Los valores se expresan en grados.El segundo valor muestra la diferencia entre la dirección actual del viento y el mejor ángulo de rumbo para este barco.
 }
-
 Capacity
 {
-Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.
-Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
+Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
 }
-
-Crew
-{
-Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.
-}
-
-CannonType
-{
-Tipo de cañón: muestra el tipo (cañones o culverinas), el calibre actual y el número de cañones instalados
-}
-
-sCannons
-{
-Muestra el calibre máximo permitido y el número máximo posible de cañones en el barco.
-}
-
+Crew {Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.}
+CannonType {Tipo de cañón: muestra el tipo (cañones o culverinas), el calibre actual y el número de cañones instalados}
+sCannons {Muestra el calibre máximo permitido y el número máximo posible de cañones en el barco.}
 Crew_Exp {Experiencia de la tripulación}
-
 Crew_Exp_hint
 {
-La experiencia de la tripulación se divide en tres categorías: marinería (afecta el manejo del barco), artillería (velocidad de recarga y precisión de puntería) y abordaje (eficacia de la tripulación en combate cuerpo a cuerpo).
-Una tripulación experimentada en menor número puede ser más eficaz que un barco sobrecargado de novatos.
-La experiencia en las tres categorías se adquiere durante la realización de las acciones correspondientes (maniobras, disparos, abordajes), pero también se pierde si las habilidades adquiridas no se practican durante mucho tiempo.
+La experiencia de la tripulación se divide en tres categorías: marinería (afecta el manejo del barco), artillería (velocidad de recarga y precisión de puntería) y abordaje (eficacia de la tripulación en combate cuerpo a cuerpo).Una tripulación experimentada en menor número puede ser más eficaz que un barco sobrecargado de novatos.La experiencia en las tres categorías se adquiere durante la realización de las acciones correspondientes (maniobras, disparos, abordajes), pero también se pierde si las habilidades adquiridas no se practican durante mucho tiempo.
 }
-
-TakeAllGoods_hint
-{
-El botón "Transferir todas las mercancías" transfiere mercancías al barco del personaje según su valor específico promedio. Primero se transfieren las mercancías más valiosas, luego las menos valiosas, y así sucesivamente hasta que no quede espacio libre en la bodega.
-}
-
+TakeAllGoods_hint {El botón "Transferir todas las mercancías" transfiere mercancías al barco del personaje según su valor específico promedio. Primero se transfieren las mercancías más valiosas, luego las menos valiosas, y así sucesivamente hasta que no quede espacio libre en la bodega.}
 GoodsKeys_hint
 {
-Las teclas de flecha "Izquierda" y "Derecha" en el teclado mueven las mercancías en la fila seleccionada de la tabla por un lote. Si mantiene presionada la tecla Shift, las mercancías se moverán por completo.
-Al hacer clic derecho en las flechas de la fila con la mercancía en la interfaz, se transfieren diez lotes a la vez.
+Las teclas de flecha "Izquierda" y "Derecha" en el teclado mueven las mercancías en la fila seleccionada de la tabla por un lote. Si mantiene presionada la tecla Shift, las mercancías se moverán por completo.Al hacer clic derecho en las flechas de la fila con la mercancía en la interfaz, se transfieren diez lotes a la vez.
 }
-
 Shipyard_hint
 {
-En el astillero puedes comprar, reparar o vender barcos.
-El héroe no puede vender su barco si tiene compañeros. Tampoco puedes comprar un barco para un compañero si el héroe no tiene su propio barco.
-Para cambiar el barco del héroe o del compañero, manteniendo todo el contenido de la bodega y la tripulación, seleccione en la lista de barcos del escuadrón del héroe (en la parte izquierda de la interfaz) el barco que se va a reemplazar por uno nuevo, y en la lista de barcos a la venta en el astillero (en la parte derecha de la interfaz) el deseado, luego haga clic en el botón "Comprar".
-Para comprar un barco nuevo (asignar un nuevo compañero), primero seleccione una ranura vacía en la lista de la izquierda antes de comprar.
+En el astillero puedes comprar, reparar o vender barcos.El héroe no puede vender su barco si tiene compañeros. Tampoco puedes comprar un barco para un compañero si el héroe no tiene su propio barco.Para cambiar el barco del héroe o del compañero, manteniendo todo el contenido de la bodega y la tripulación, seleccione en la lista de barcos del escuadrón del héroe (en la parte izquierda de la interfaz) el barco que se va a reemplazar por uno nuevo, y en la lista de barcos a la venta en el astillero (en la parte derecha de la interfaz) el deseado, luego haga clic en el botón "Comprar".Para comprar un barco nuevo (asignar un nuevo compañero), primero seleccione una ranura vacía en la lista de la izquierda antes de comprar.
 }
-
-NoneBoat2
-{
-Sin barco.
-}
+NoneBoat2 {Sin barco.}

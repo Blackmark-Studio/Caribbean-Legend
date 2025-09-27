@@ -1,0 +1,269 @@
+info
+{
+Универсальный создатель героев адд-она SLiB    Скрипт создан ALexusB 09.10.04    Путь к файлу \RESOURCE\INI\TEXTS\RUSSIAN\HeroDescribe.txt        версия 02.07.06    hero_qty - количество героев    ps_hero_qty - количество псевдо-героев (могут встретиться как квестовые персонажи в игре, в ПГГ берутся строго персонажы мужского пола)    heroName_Х        - имя героя    heroLastname_Х    - фамилия героя    heroNameGen_ и heroLastnameGen_ - родительный падеж,   heroLastnameDat_  - дательный падеж.    heroFace_Х        - номер портрета    heroModel_Х       - список моделей через зяпятую без пробелов, может быть меньше, чем полный список, тогда первая возмется            (без брони, лёгкая, средняя, крутая, золотая, одежда_1, одежда_2, одежда_3)    heroType_Х        - тип героя (влияет на стартовые параметры)        значения только: Corsair, Merchant, Adventurerили (для русской версии)Корсар,Торговец,Авантюрист    heroNation_Х      - стартовая нация героя (нейтральные отношения)        значения только: ENGLAND, FRANCE, SPAIN, HOLLAND            или (для русской версии)Англия            Франция            Испания            Голландия    sex_X             - пол (man, woman, skeleton)    animation_X       - анимация (man, woman, towngirl)    hero_Х            - краткая биография героя (не более 5-7 строк, что бы помещалось в поле текста)    Х - порядковый номер героя в списке        Где что:    Текстуры портретов \RESOURCE\Textures\INTERFACES\PORTRAITS  (64, 128, 256)    Скины              \RESOURCE\Textures\Characters    Модели             \RESOURCE\MODELS\Characters    Головы             \RESOURCE\MODELS\Heads    Анимация головы    \RESOURCE\animation\Heads и \RESOURCE\animation\Heads\AN        Обязательно сохраните исходный файл до редактирования. Иначе обновления могут не установится.    Перед установкой верните его на место, установите обновление. После чего повторите настройку своего героя (героев).        _______________               С заботой о Вас, ALexusB
+}
+Merchant {Aki kereskedni merészel a Karib-tengeri szigetvilág vizeiben, amelyek hemzsegnek a mindenféle kalózoktól, kalózoktól és banditáktól, annak nem csak a szigetek árait kell figyelnie a profit maximalizálása érdekében, hanem meg kell tanulnia keményen fogni a pengét, hogy megtarthassa ezt a profitot.}
+Corsair {Korsár - rabló vagy romantikus? Attól függ, hogy mivé teszed a GG-t. De vannak olyan tulajdonságok, amelyek nélkül lehetetlen korzózóvá válni, ez - a rettenthetetlenség, a kitartás és a gyors döntéshozatal. Hajrá!}
+Adventurer {Kalandok - ez a szabad kalandor igazi élete. És ha a hajszolásuk során jó osztalékot kaphatsz, miért ne használnád ki teljes mértékben?}
+hero_qty {5}
+ps_hero_qty {20}
+heroName_1 {Charles}
+heroNameGen_1 {Charles}
+heroNameDat_1 {Charles}
+heroLastname_1 {de Maure}
+heroLastnameGen_1 {de Maure}
+heroLastNameDat_1 {de Maure}
+heroFace_1 {201}
+heroModel_1 {Sharle_1,Sharle_2,Sharle_3,Sharle_4,Sharle_5,protocusto,Sharle_6,Sharle_8,Sharle_7,Sharle_9,Sharle_1,Sharle_11,Sharle_12,Sharle_13,Sharle_14}
+heroType_1 {Corsair}
+heroNation_1 {Franciaország}
+sex_1 {férfi}
+animation_1 {férfi}
+hero_1 {Egy francia nemes fia, gondtalan mûvész és hírhedt sármôr, aki a Karib-tengerre érkezik, hogy eltûnt bátyját keresse. Ám ez az utazás több mint családkeresés, ez az utazás formálja ôt. Itt szembe kell néznie a megtévesztéssel és a veszéllyel, a tudás és a szerelem után kell kutatnia, és végül szembe kell néznie az akadályokkal, amelyek közte és a sorsa között állnak.}
+heroName_2 {Diego}
+heroLastname_2 {de Montoya}
+heroNameGen_2 {Diego}
+heroLastnameGen_2 {de Montoya}
+heroNameDat_2 {Diego}
+heroLastNameDat_2 {de Montoya}
+heroFace_2 {203}
+heroModel_2 {Diego_1,Diego_2,Diego_3,Diego_4,Diego_5,protocusto,Diego_6,Diego_8,Diego_1,Diego_9,Diego_1,Diego_11,Diego_12,Diego_13,Diego_14}
+heroType_2 {Kalandor}
+heroNation_2 {Spanyolország}
+sex_2 {férfi}
+animation_2 {férfi}
+hero_2 {A távoli Aragóniából származó zsoldos a saját túlzott önbizalmának áldozatául esett, és csak hajszál híján menekült meg a haláltól Madrid éjszakai utcáin. Az Újvilágban kap egy második esélyt, hogy bárói címet szerezzen, és végre kezébe vegye az irányítást az élete felett.}
+heroName_3 {William}
+heroLastname_3 {Paterson}
+heroNameGen_3 {William}
+heroLastnameGen_3 {Paterson}
+heroNameDat_3 {William}
+heroLastNameDat_3 {Paterson}
+heroFace_3 {202}
+heroModel_3 {Willy_1,Willy_2,Willy_3,Willy_4,Willy_5,protocusto,Willy_6,Willy_8,Willy_1,Willy_9,Willy_1,Willy_11,Willy_12,Willy_13,Willy_14}
+heroType_3 {Kereskedô}
+heroNation_3 {Anglia}
+sex_3 {férfi}
+animation_3 {férfi}
+hero_3 {Ennek a fiatal nemesnek nemes szándékai, hogy tisztességes kereskedelmet folytasson a nemzet és saját pénztárcája javára, a kegyetlen valósággal szembesültek. Hadlevélre kellett szert tennie, és ágyúkkal és pengékkel kellett megdolgoznia a jólétért, megfeledkezve az Óvilág hivalkodó modoráról...}
+heroName_4 {Helen}
+heroLastname_4 {McArthur}
+heroNameGen_4 {Helen}
+heroLastnameGen_4 {McArthur}
+heroNameDat_4 {Helen}
+heroLastNameDat_4 {McArthur}
+heroFace_4 {250}
+heroModel_4 {Rumba}
+heroType_4 {Corsair}
+heroNation_4 {Tengerparti testvériség.}
+sex_4 {nô}
+animation_4 {rumba}
+hero_4 {Egy fiatal kalóz, az Erdei Ördög pártfogoltja - a Parti Testvérek bárója. A báró azonban megóvja ôt attól a kíméletlen valóságtól, hogy milyenek az igazi kalózok, és milyen kegyetlenségeket képesek elkövetni. Helen számára a kalózkodás a romantikáról, a kisstílû csempészetrôl, a szabadságról... és szeretett hadihajója, a Rainbow fedélzetérôl szól.}
+heroName_5 {Jessica}
+heroLastname_5 {Brudford}
+heroNameGen_5 {Jessika}
+heroLastnameGen_5 {Brudford}
+heroNameDat_5 {Jessika}
+heroLastNameDat_5 {Brudford}
+heroFace_5 {244}
+heroModel_5 {jessika}
+heroType_5 {Corsair}
+heroNation_5 {Anglia}
+sex_5 {nô}
+animation_5 {Jessika}
+hero_5 {Beltrop árulása után megesküdött, hogy többé nem enged a férfiaknak, és sikeres kalózflotta kapitány lesz. El kell ismerni, hogy ez nem is megy rosszul neki, és számos ország kormánya már jutalmat tûzött ki a gyönyörû fejéért.}
+heroName_6 {Ingacio}
+heroLastname_6 {Marco}
+heroNameGen_6 {Ingacio}
+heroLastnameGen_6 {Marco}
+heroNameDat_6 {Ingacio}
+heroLastNameDat_6 {Marco}
+heroFace_6 {212}
+heroModel_6 {Chard2}
+heroType_6 {Kalandor}
+heroNation_6 {Spanyolország}
+sex_6 {férfi}
+animation_6 {férfi}
+hero_6 {PGG}
+heroName_7 {Gorazio}
+heroLastname_7 {Hornblower}
+heroNameGen_7 {Gorazio}
+heroLastnameGen_7 {Hornblower}
+heroNameDat_7 {Gorazio}
+heroLastNameDat_7 {Hornblower}
+heroFace_7 {220}
+heroModel_7 {Fiatalember}
+heroType_7 {Kalandor}
+heroNation_7 {Anglia}
+sex_7 {férfi}
+animation_7 {férfi}
+hero_7 {PGG}
+heroName_8 {John}
+heroLastname_8 {Isterling}
+heroNameGen_8 {Jona}
+heroLastnameGen_8 {Isterling}
+heroNameDat_8 {Jonu}
+heroLastNameDat_8 {Isterling}
+heroFace_8 {216}
+heroModel_8 {Isterling}
+heroType_8 {Kalandor}
+heroNation_8 {Anglia}
+sex_8 {férfi}
+animation_8 {férfi}
+hero_8 {PGG}
+heroName_9 {Sanchos}
+heroLastname_9 {Esteban}
+heroNameGen_9 {Sanchosa}
+heroLastnameGen_9 {Esteban}
+heroNameDat_9 {Sanchos}
+heroLastnameDat_9 {Esteban}
+heroFace_9 {30}
+heroModel_9 {officer_13}
+heroType_9 {Kalandor}
+heroNation_9 {Spanyolország}
+sex_9 {férfi}
+animation_9 {férfi}
+hero_9 {PGG}
+heroName_10 {Kirk}
+heroLastname_10 {Zander}
+heroNameGen_10 {Kirk}
+heroLastnameGen_10 {Zander}
+heroNameDat_10 {Kirk}
+heroLastnameDat_10 {Zander}
+heroFace_10 {31}
+heroModel_10 {officer_14}
+heroType_10 {Kalandor}
+heroNation_10 {Hollandia}
+sex_10 {férfi}
+animation_10 {férfi}
+hero_10 {PGG}
+heroName_11 {Alfonso}
+heroLastname_11 {Salvatore}
+heroNameGen_11 {Alfonso}
+heroLastnameGen_11 {Salvatore}
+heroNameDat_11 {Alfonso}
+heroLastnameDat_11 {Salvatore}
+heroFace_11 {32}
+heroModel_11 {officer_15}
+heroType_11 {Kalandor}
+heroNation_11 {Spanyolország}
+sex_11 {férfi}
+animation_11 {férfi}
+hero_11 {PGG}
+heroName_12 {Delvin}
+heroNameGen_12 {Delvina}
+heroNameDat_12 {Delvin}
+heroLastname_12 {Bliz}
+heroLastnameGen_12 {Bliza}
+heroLastNameDat_12 {Blýzu}
+heroFace_12 {1}
+heroModel_12 {Devlin}
+heroType_12 {Kereskedô}
+heroNation_12 {Hollandia}
+sex_12 {férfi}
+animation_12 {férfi}
+hero_12 {PGG}
+heroName_13 {John}
+heroLastname_13 {Silver}
+heroNameGen_13 {Jona}
+heroLastnameGen_13 {Silvera}
+heroNameDat_13 {Jonu}
+heroLastNameDat_13 {Silveru}
+heroFace_13 {22}
+heroModel_13 {officer_5}
+heroType_13 {Corsair}
+heroNation_13 {Anglia}
+sex_13 {férfi}
+animation_13 {férfi}
+hero_13 {PGG}
+heroName_14 {Franzisk}
+heroLastname_14 {Dubois}
+heroNameGen_14 {Franziska}
+heroLastnameGen_14 {Dubois}
+heroNameDat_14 {Franzisku}
+heroLastNameDat_14 {Dubois}
+heroFace_14 {24}
+heroModel_14 {officer_7}
+heroType_14 {Kalandor}
+heroNation_14 {Franciaország}
+sex_14 {férfi}
+animation_14 {férfi}
+hero_14 {PGG}
+heroName_15 {Arthur}
+heroLastname_15 {Cornel}
+heroNameGen_15 {Artura}
+heroLastnameGen_15 {Cornela}
+heroNameDat_15 {Arturu}
+heroLastNameDat_15 {Cornelu}
+heroFace_15 {25}
+heroModel_15 {officer_8}
+heroType_15 {Kalandor}
+heroNation_15 {Anglia}
+sex_15 {férfi}
+animation_15 {férfi}
+hero_15 {PGG}
+heroName_16 {Mark}
+heroLastname_16 {Vanderborg}
+heroNameGen_16 {Marka}
+heroLastnameGen_16 {Vanderborg}
+heroNameDat_16 {Marku}
+heroLastNameDat_16 {Vanderborgu}
+heroFace_16 {27}
+heroModel_16 {officer_10}
+heroType_16 {Kalandor}
+heroNation_16 {Hollandia}
+sex_16 {férfi}
+animation_16 {férfi}
+hero_16 {PGG}
+heroName_17 {Cecil}
+heroLastname_17 {Forester}
+heroNameGen_17 {Cecila}
+heroLastnameGen_17 {Forester}
+heroNameDat_17 {Cecilu}
+heroLastNameDat_17 {Foresteru}
+heroFace_17 {28}
+heroModel_17 {officer_11}
+heroType_17 {Kalandor}
+heroNation_17 {Anglia}
+sex_17 {férfi}
+animation_17 {férfi}
+hero_17 {PGG}
+heroName_18 {Jose}
+heroLastname_18 {Dasco}
+heroNameGen_18 {Jose}
+heroLastnameGen_18 {Dasco}
+heroNameDat_18 {Jose}
+heroLastNameDat_18 {Dasco}
+heroFace_18 {26}
+heroModel_18 {officer_9}
+heroType_18 {Kalandor}
+heroNation_18 {Spanyolország}
+sex_18 {férfi}
+animation_18 {férfi}
+hero_18 {PGG}
+heroName_19 {Johan}
+heroLastname_19 {Daring}
+heroNameGen_19 {Johana}
+heroLastnameGen_19 {Daringa}
+heroNameDat_19 {Johanu}
+heroLastNameDat_19 {Daringu}
+heroFace_19 {213}
+heroModel_19 {Chard3}
+heroType_19 {Kalandor}
+heroNation_19 {Hollandia}
+sex_19 {férfi}
+animation_19 {férfi}
+hero_19 {PGG}
+heroName_20 {Michael}
+heroLastname_20 {Chard}
+heroNameGen_20 {Michaela}
+heroLastnameGen_20 {Charda}
+heroNameDat_20 {Michaelu}
+heroLastNameDat_20 {Chardu}
+heroFace_20 {211}
+heroModel_20 {Chard}
+heroType_20 {Kalandor}
+heroNation_20 {Anglia}
+sex_20 {férfi}
+animation_20 {férfi}
+hero_20 {PGG}

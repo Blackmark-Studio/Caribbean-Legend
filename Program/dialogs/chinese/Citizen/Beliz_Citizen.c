@@ -8,7 +8,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = RandPhraseSimple("我改变主意了。 ", "我现在没什么可说的。 ");
             link.l1.go = "exit";
             // 雷贝比恩, 任务"导航星"==>
-            if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter"))
+            if (CheckAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.PZ_Sotta") && !CheckAttribute(npchar, "questTemp.PZ_Lutter"))
             {
                 if (rand(1) == 0)
                 {
@@ -26,6 +26,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 }
             }
             // <== 任务"导航星"
+			//--> Дикая Роза
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "大约一个半月前, 有个叫热罗姆·索韦涅的人来到伯利兹。 他在'玻璃之眼'的斗殴中受伤, 但幸存下来。您知道在哪儿能找到他吗? ";
+				link.l1.go = "WildRose_Beliz_Citizen_1";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "大约一个半月前, 有位先生出现在伯利兹。 他叫热罗姆·索韦涅。他在寻找另一个人, 想必和城里人聊过。 后来他在酒馆斗殴中受了伤, 但幸运活了下来。 您能告诉我在哪里能找到他吗? ";
+				link.l1.go = "WildRose_Beliz_Citizen_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "我正在寻找一个大约两个月前来到伯利兹的人。 他叫热罗姆·索韦涅。 他在找一位先生, 我想他一定和城里人谈过这件事……";
+				link.l1.go = "WildRose_Beliz_Citizen_3";
+			}
+			//<-- Дикая Роза
         break;
         
         case "info":
@@ -53,7 +70,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "可能是在追逐每一枚金币, 能省则省吧。 好了, 不打扰你了。 日安。 ";
             link.l1.go = "Exit";
             
-            npchar.questTemp.Sotta = true;
+            npchar.questTemp.PZ_Sotta = true;
             pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
@@ -63,7 +80,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "有意思。 好吧, 每个人都有自己的秘密。 我该走了。 谢谢你的见解。 ";
             link.l1.go = "Exit";
             
-            npchar.questTemp.Sotta = true;
+            npchar.questTemp.PZ_Sotta = true;
             pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
@@ -73,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "也许失败和即将到来的死亡对他来说太沉重了。 但没关系。 再见! ";
             link.l1.go = "Exit";
             
-            npchar.questTemp.Lutter = true;
+            npchar.questTemp.PZ_Lutter = true;
             pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
@@ -83,11 +100,45 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1 = "运气迟早会用完的。 回头见。 ";
             link.l1.go = "Exit";
             
-            npchar.questTemp.Lutter = true;
+            npchar.questTemp.PZ_Lutter = true;
             pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
             AddDialogExitQuest("PZ_LongwayBelizDialog");
         break;
         // <== 任务"导航星"
+		//--> Дикая Роза
+		case "WildRose_Beliz_Citizen_1":
+    		dialog.text = "不认识啊, 先生。 酒馆斗殴几乎天天有, 要记住每个受伤的人可不容易。";
+    		link.l1 = "明白了, 谢谢。 祝一切顺利。";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen");
+			pchar.questTemp.WildRose_Beliz_Citizen_2 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_2":
+    		dialog.text = "索韦涅? 法国人……对, 有这么一个。 他来找过我, 但我帮不上忙。 后来我就再也没见过他了, 抱歉。";
+    		link.l1 = "多谢。 那么我再去打听打听。";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");
+			pchar.questTemp.WildRose_Beliz_Citizen_3 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_3":
+			dialog.text = "热罗姆先生! 当然, 当然, 我记得他。 他在酒馆斗殴里受了伤。 之后几乎不出门, 一直在家养腿伤。";
+			link.l1 = "他的家在哪儿? ";
+    		link.l1.go = "WildRose_Beliz_Citizen_3_1";
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_3_1":
+    		dialog.text = "就在这附近, 靠近港口管理局。 红屋顶的房子。 你能在那里找到他。";
+    		link.l1 = "谢谢, 你帮了我大忙! 祝你万事如意! ";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3");
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_citizen");
+ 		break;
+		//<-- Дикая Роза
+
     }
     UnloadSegment(NPChar.FileDialog2);  // 若switch内部某处通过return退出, 切记执行卸载
 }

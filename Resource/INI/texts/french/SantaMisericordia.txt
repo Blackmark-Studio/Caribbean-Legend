@@ -1,68 +1,37 @@
-
 new_string
 {
 
 }
-
 Ship_Name {Santa Misericordia}
-
 Cap_Name {Fernando}
-
 Cap_lastname {de Alamida}
-
 City_Rum1 {Toute la ville est sur les dents - Don Fernando de Alamida, l'inspecteur royal, est arrivé. Vous savez, j'ai vu beaucoup de choses ici, mais ça... Ce n'est pas le chagrin qui change les gens, mais la façon dont ils y font face. On dit qu'il est devenu un autre homme après la mort de son père. Vous ne trouverez pas de serviteur de la Couronne plus incorruptible et... plus impitoyable dans tout l'archipel.}
-
 City_Rum2 {Il suffit de regarder le "Santa Misericordia" ! On dit que c'est le roi lui-même qui l'a fait construire selon des plans spéciaux. Et remarquez - pas une seule égratignure. Comme si la Vierge Marie elle-même le protégeait. Mais j'ai entendu des rumeurs... peut-être que ce n'est pas du tout la Vierge.}
-
 City_Rum3 {Vous savez combien de fois ils ont essayé de tuer Don Fernando ? Douze attaques en pleine mer - et ce, rien que l'année dernière ! Eh bien, avec un équipage aussi loyal et entraîné, et sous la protection du Seigneur, il survivra aussi à la treizième attaque !}
-
 City_Rum4 {Vous avez entendu ? Don Fernando de Alamida est arrivé dans notre ville, et on dit qu'il est quelque part dans les rues en ce moment. J'aimerais le voir de mes propres yeux...}
-
 City_Rum5 {Un homme compliqué, ce Don Fernando. Certains disent qu'il est un sauveur, qu'il nettoie la mère patrie de la souillure. D'autres murmurent que quelque chose s'est brisé en lui après la mort de son père et que bientôt nous pleurerons tous. Mais je vous le dis : ne le craignez pas. Craignez plutôt ceux qui ont fait de lui ce qu'il est.}
-
 City_Rum6 {Quel bel homme, ce Don Fernando ! Mais tu sais ce qui est étrange ? C'est comme s'il ne remarquait personne. Il n'est que devoir et service. J'ai entendu dire qu'il y avait une fille... mais après avoir rencontré un prêtre, il a complètement rejeté les plaisirs du monde. Comme s'il avait fait un serment.}
-
 City_Rum7 {Maudit inspecteur ! Tant qu'il est là, la ville est comme morte. Pas de commerce, pas de plaisir. Même respirer, semble-t-il, doit être plus silencieux. Et vous savez ce qui est le plus effrayant ? C'est la même chose dans tous les ports. Comme une horloge. Sa Majesté Royale n'a pas pu inventer délibérément cette torture pour nous tous !}
-
 City_Rum8 {Don Fernando a de nouveau visité l'orphelinat. Il fait des dons généreux, prie pendant des heures. Un homme aussi digne devrait être cité en exemple à ces maudits détourneurs de fonds !}
-
 City_Rum9 {Ha ! Le "Saint" Fernando a encore fermé tous les bordels. Qu'à cela ne tienne, il repartira bientôt en mer et les maisons closes ouvriront à nouveau.}
-
 City_Rum10 {L'insp... inspecteur est arrivé ! Don Fernando de Almeyda, ou, comment s'appelle-t-il, Alamida ! Si important que le gouverneur lui-même le contourne sur la pointe des pieds. On dit qu'il vous regarde dans les yeux et qu'il voit tout de suite tous vos péchés. C'est terrifiant !}
-
 Pop_Name {Diego}
-
 Pop_lastname {de Landa}
-
-SM_WorldMap 
+Took_LiberMisericordiae {Reçu : Liber Misericordiae}
+SM_WorldMap
 {
-Tout le monde sur le pont ! Le Santa Misericordia approche ! 
-Adversaire redoutable, sommes-nous vraiment prêts à l'affronter ? 
-Peut-être devrions-nous l'intercepter en pleine mer, loin des colonies ?
+Tout le monde sur le pont ! Le Santa Misericordia approche ! Adversaire redoutable, sommes-nous vraiment prêts à l'affronter ? Peut-être devrions-nous l'intercepter en pleine mer, loin des colonies ?
 }
-
 City_Rum11 {J'ai appris que la cible du Santa Misericordia était cette fois-ci le ~}
-
 City_Rum12 {. Une fois de plus, nous courberons la tête sous le joug de l'Escurial. Avons-nous vraiment mérité ce sort ?}
-
 City_Rum13 {Un nouvel inspecteur est arrivé à ~}
-
 City_Rum14 {~ - le Santa Misericordia est au mouillage. Une fois de plus, Alamida fait de la vie une misère pour les gens ordinaires - pas de boissons joyeuses, pas de bordels ! Quel est le diable qui nous a infligé cela ?}
-
 City_Rum15 {On ne peut pas envier le gouverneur de ~}
-
 City_Rum16 {~ - Señor Alamida a débarqué dans le port et a commencé son inspection. La dernière fois, dit-on, ~}
-
 City_Rum17 {~ a failli perdre son titre. Oh... Je prie pour que le Santa Misericordia ne s'aventure pas à nouveau ici bientôt...}
-
 City_Rum18 {Avez-vous entendu dire que l'envoyé de la couronne parcourt désormais personnellement l'archipel ? Quels sont les méfaits commis par les colons devant l'Escurial ? Un ami m'a dit que le Santa Misericordia est actuellement au mouillage à ~}
-
 City_Rum19 {. Je me demande si c'est vrai ?}
-
 City_Rum20 {Il semble qu'un superviseur soit tombé sur des têtes espagnoles, envoyé d'Europe pour superviser ! Je pensais que le pouvoir de leur roi régnait en maître même dans les Caraïbes. Je dois me renseigner pour savoir si la gouvernance en ~}
-
 City_Rum21 {~ pourrait changer dans les mois à venir, car le Santa Misericordia y est actuellement amarré.}
-
 City_Rum22 {De curieuses nouvelles nous parviennent des colonies espagnoles. On dit que lorsque Señor Alamida arrive en ville, la peur s'empare de tout le monde et l'on marche sur la pointe des pieds. Je serais ravi d'entendre quelqu'un en ~}
-
 City_Rum23 {, on dit en effet que le Santa Misericordia s'y trouve actuellement.}

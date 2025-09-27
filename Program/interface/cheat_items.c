@@ -938,7 +938,6 @@ void CalculateInfoDataF22()
 	totalInfo = descF22;
 	
     SetCharacterPerk(pchar, "HT1");
-	SetCharacterPerk(pchar, "FencingMaster");
 	SetCharacterPerk(pchar, "TannedLeather");
 
     totalInfo = totalInfo + NewStr() + NewStr() + LanguageConvertString(idLngFile, "Cheat_success");
@@ -973,8 +972,7 @@ void CalculateInfoDataF24()
     totalInfo = descF24;
 	
 	SetCharacterPerk(pchar, "HT3");
-	SetCharacterPerk(pchar, "Dragoon");
-	SetCharacterPerk(pchar, "SecondWind");
+	SetCharacterPerk(pchar, "Mule");
 	
     totalInfo = totalInfo + NewStr() + NewStr() +
                 LanguageConvertString(idLngFile, "Cheat_success");
@@ -990,7 +988,6 @@ void CalculateInfoDataF25()
     totalInfo = descF25;
     // -->
 	SetCharacterPerk(pchar, "HT4");
-	SetCharacterPerk(pchar, "Jager");
 	SetCharacterPerk(pchar, "Bombardier");
 	SetCharacterPerk(pchar, "Sniper");
     // <--

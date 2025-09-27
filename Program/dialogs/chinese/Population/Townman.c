@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipLetters_8":
-			dialog.text = LinkRandPhrase("我他妈才不在乎什么随机文件, 而且我也不知道怎么读。 去找放债人吧, 他们说他知道怎么处理信件, 哈! ",
+			dialog.text = LinkRandPhrase("我他妈才不在乎什么随机文件, 而且我也不知道怎么读。 去找放贷人吧, 他们说他知道怎么处理信件, 哈! ",
 			"我不清楚你在说什么, 去问别人吧, " +GetFullName(pchar)+ "船长。 ", 
 			"我不知该如何帮你, " +GetFullName(pchar)+ "船长。 你可以试试去找放贷人, 他或许知道。 ");
 			link.l1 = "谢谢。 ";

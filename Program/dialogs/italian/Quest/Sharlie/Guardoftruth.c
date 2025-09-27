@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_5":
 			dialog.text = "Barone Ramon de Mendosa y Riba, il comandante della guarnigione dell’Isola di Providence. Ha mandato uno squadrone a saccheggiare la città e a portar via ogni ben di Dio che ci capitasse sotto mano.";
-			link.l1 = "Qual era il tuo compito immediato durante l’assalto? Dillo chiaro: quali ordini ti дали?";
+			link.l1 = "Qual è stato il tuo compito immediato durante l'assalto? Dillo chiaramente: quali ordini ti ha dato?";
 			link.l1.go = "spa_prisoner_6";			
 		break;
 		
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 		
 		case "spa_prisoner_10":
 			dialog.text = "Ascolto.";
-			link.l1 = "Non credo proprio che l’unico scopo della vostra incursione fosse una semplice rapina. St.Pierre è una colonia modesta e piuttosto povera — non vale того, чтобы сюда слали целую эскадру во главе с линейным кораблём первого ранга. Scommetto che tu, il tuo comandante o qualcun altro avevate ordini o istruzioni aggiuntive. Cosa ti hanno detto davvero? Pensaci bene prima di rispondere...";
+			link.l1 = "Non credo proprio che l’unico scopo della vostra incursione fosse una semplice rapina. St.Pierre è una colonia modesta e piuttosto povera, non vale inviare un intero squadrone, guidato da una nave da guerra di primo rango. Scommetto che tu, il tuo comandante o qualcun altro avevate ordini o istruzioni aggiuntive. Cosa ti hanno detto davvero? Pensaci bene prima di rispondere...";
 			link.l1.go = "spa_prisoner_11";			
 		break;
 		
@@ -587,7 +587,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gevarra_2":
-			dialog.text = "Ho portato mercanzia da L’Avana e l’ho smerciata qui al mercato locale. Ora aspetto un carico redditizio, ché tornare a casa con la stiva vuota non для gente моего звания.";
+			dialog.text = "Ho portato merce dall'Avana e l'ho venduta al mercato locale. Ora sono in attesa di un carico redditizio per evitare di tornare a casa con la stiva vuota..";
 			link.l1 = "Señor, ho una proposta d’affari per voi! Potreste guadagnare una bella somma se mi date una mano. Ne parliamo? Ah, come vi chiamate, di grazia?";
 			link.l1.go = "gevarra_3";			
 		break;
@@ -816,7 +816,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "dominica_hunter_1":
-			dialog.text = "Potrei avere qualche legame coi Gatti di Mare. Non t’impicciare, non serve a nulla saperlo. Non è il momento di ficcare il носe ovunque. Hai trovato il mio tesoro, per questo ti dobbiamo una gran bella riconoscenza...";
+			dialog.text = "Potrei avere qualche legame coi Gatti di Mare. Non t’impicciare, non serve a nulla saperlo. Non è il momento di ficcare il naso ovunque. Hai trovato il mio tesoro, per questo ti dobbiamo una gran bella riconoscenza...";
 			link.l1 = "Capisco. Non sei una Volpe del Mare, piuttosto un cane... o una iena dei mari. Cosa ti calza meglio?";
 			link.l1.go = "dominica_hunter_2";
 		break;

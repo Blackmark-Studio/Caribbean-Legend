@@ -25,7 +25,7 @@ void Set_inDialog_Attributes()
     else
     {
 		Address_Form.Spa = "сеньорита";
-		Address_Form.Fra = "мадмуазэль";
+		Address_Form.Fra = "мадемуазель";
 		Address_Form.Eng = "мисс";
 		Address_Form.Hol = "мефрау";
 		Address_Form.Pir = "мисс";
@@ -1223,4 +1223,23 @@ string GetIndianName(int Sex) //Jason имена индейцев
 	else nameid = "l" + (100+rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle() //Титул ГГ
+{
+	string Title;
+
+	if (PChar.sex == "man")
+	{
+		Title = "капитан";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = "капитан";
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "генерал-губернатор";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "вице-адмирал";
+
+	return Title;
 }

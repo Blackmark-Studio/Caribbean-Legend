@@ -1,393 +1,249 @@
-newline{
+newline
+{
 
 }
-
 Balls {Kanonenkugeln}
 Balls_descr
 {
-Die billigste, einfachste und zuverlässigste Art von Munition. Kanonenkugeln werden in der Regel eingesetzt, um den Rumpf eines Schiffes zu beschädigen und Verteidigungsanlagen an der Küste aus großer Entfernung anzugreifen, aber sie sind nicht sehr effektiv, um die gegnerische Besatzung zu verletzen.
-Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
+Die billigste, einfachste und zuverlässigste Art von Munition. Kanonenkugeln werden in der Regel eingesetzt, um den Rumpf eines Schiffes zu beschädigen und Verteidigungsanlagen an der Küste aus großer Entfernung anzugreifen, aber sie sind nicht sehr effektiv, um die gegnerische Besatzung zu verletzen.Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
 }
-
-
 Grapes {Kartätsche}
 Grapes_descr
 {
-Eine Ladung von kleinen geschmiedeten Blei- oder Eisenkugeln, die durch einen Leinensack zusammengehalten werden.
-Hat eine sehr kurze effektive Reichweite. Beschädigt den Rumpf beim Aufprall kaum, fügt aber der gegnerischen Besatzung verheerenden Schaden zu. Es wird häufig im Seekampf eingesetzt, um ein feindliches Schiff vor dem Entern zu schwächen.
-Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
+Eine Ladung von kleinen geschmiedeten Blei- oder Eisenkugeln, die durch einen Leinensack zusammengehalten werden.Hat eine sehr kurze effektive Reichweite. Beschädigt den Rumpf beim Aufprall kaum, fügt aber der gegnerischen Besatzung verheerenden Schaden zu. Es wird häufig im Seekampf eingesetzt, um ein feindliches Schiff vor dem Entern zu schwächen.Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
 }
-
-
 Knippels {Knippel}
 Knippels_descr
 {
-Ein Knippel - oder Kettengeschoss - ist ein Geschoss, das aus zwei Kanonenkugeln besteht, die mit einer Eisenkette oder -stange verbunden sind. Diese Munition wird verwendet, um Masten, Spieren und Takelage zu beschädigen.
-Im Allgemeinen sind Knippel auf mittlere und große Entfernungen wenig effektiv, da die Kette dazu neigt, den Knippel ungenau fallen zu lassen. Sie haben eine unvorhersehbare Flugbahn und richten nur wenig Schaden am Schiffsrumpf an. Sie zerreißen jedoch Segel und Takelage und können Masten umwerfen und feindliche Schiffe lahm legen.
-Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
+Ein Knippel - oder Kettengeschoss - ist ein Geschoss, das aus zwei Kanonenkugeln besteht, die mit einer Eisenkette oder -stange verbunden sind. Diese Munition wird verwendet, um Masten, Spieren und Takelage zu beschädigen.Im Allgemeinen sind Knippel auf mittlere und große Entfernungen wenig effektiv, da die Kette dazu neigt, den Knippel ungenau fallen zu lassen. Sie haben eine unvorhersehbare Flugbahn und richten nur wenig Schaden am Schiffsrumpf an. Sie zerreißen jedoch Segel und Takelage und können Masten umwerfen und feindliche Schiffe lahm legen.Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
 }
-
-
 Bombs {Bomben}
 Bombs_descr
 {
-Bomben sind die teuerste und zerstörerischste Art von Munition. Diese Bomben bestehen aus einer gusseisernen Hohlkugel, die mit Schießpulver gefüllt und mit einem Holzzünder versehen ist. Nach der Zündung explodiert die Kugel beim Aufprall und trifft die Besatzungsmitglieder mit Schrapnellen, zerstört Masten, setzt die Takelage in Brand und zerschmettert den Rumpf mit der Schockwelle.
-Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
+Bomben sind die teuerste und zerstörerischste Art von Munition. Diese Bomben bestehen aus einer gusseisernen Hohlkugel, die mit Schießpulver gefüllt und mit einem Holzzünder versehen ist. Nach der Zündung explodiert die Kugel beim Aufprall und trifft die Besatzungsmitglieder mit Schrapnellen, zerstört Masten, setzt die Takelage in Brand und zerschmettert den Rumpf mit der Schockwelle.Grundschaden: Rumpf - #f.2DamageHull#, Segel - #f.2DamageRig#, Crew - #f.2DamageCrew#
 }
-
-
 Sailcloth {Segeltuch}
 Sailcloth_descr
 {
-Dickes, dichtes Leinen, das bei der Herstellung von Segeln verwendet wird.
-Die englischen Kolonien in Nordamerika produzieren hochwertige Baumwolle und Hanf und weben aus den beiden unterschiedlichen Fasern das Segeltuch. Die Querfasern bestehen aus Baumwolle, die Längsfasern (die Basis) aus Hanf. Es hat eine cremefarbene Farbe, ist heller und trocknet schneller als das traditionelle graue europäische Segeltuch aus nicht geweißtem Flachs.
+Dickes, dichtes Leinen, das bei der Herstellung von Segeln verwendet wird.Die englischen Kolonien in Nordamerika produzieren hochwertige Baumwolle und Hanf und weben aus den beiden unterschiedlichen Fasern das Segeltuch. Die Querfasern bestehen aus Baumwolle, die Längsfasern (die Basis) aus Hanf. Es hat eine cremefarbene Farbe, ist heller und trocknet schneller als das traditionelle graue europäische Segeltuch aus nicht geweißtem Flachs.
 }
-
-
 Planks {Planken}
 Planks_descr
 {
-Trockene Bretter aus ausgesuchtem Holz der Güteklasse 2, das durch das Spalten alter Baumstämme mit Keilen gewonnen wird. Diese sind im Vergleich zu gesägten Brettern stabiler, trocknen nicht so schnell aus und werfen auch nicht so viele Risse.
-Das beste Material für Notreparaturen an einem Schiffsrumpf.
+Trockene Bretter aus ausgesuchtem Holz der Güteklasse 2, das durch das Spalten alter Baumstämme mit Keilen gewonnen wird. Diese sind im Vergleich zu gesägten Brettern stabiler, trocknen nicht so schnell aus und werfen auch nicht so viele Risse.Das beste Material für Notreparaturen an einem Schiffsrumpf.
 }
-
-
 Wheat {Weizen}
 Wheat_descr
 {
-Die lokalen Weizensorten werden wegen ihres Mehls sehr geschätzt, aus dem die Bäcker köstliche Brote mit einer wunderbaren Kruste backen.
-In Anbetracht der hohen Ernteerträge und des Reifezeitpunkts außerhalb der Saison (Januar) lässt sich mit dem Import von Weizen für den europäischen Winter gutes Geld verdienen.
+Die lokalen Weizensorten werden wegen ihres Mehls sehr geschätzt, aus dem die Bäcker köstliche Brote mit einer wunderbaren Kruste backen.In Anbetracht der hohen Ernteerträge und des Reifezeitpunkts außerhalb der Saison (Januar) lässt sich mit dem Import von Weizen für den europäischen Winter gutes Geld verdienen.
 }
-
-
 Ebony {Ebenholz}
 Ebony_descr
 {
-Ebenholz (schwarzes Holz) hat seit jeher Tischler und Bürger gleichermaßen durch seine Schönheit und Härte fasziniert: Dieses Holz ist doppelt so hart wie Eiche. In Verbindung mit der einzigartigen Farbe des Holzes ist es ein Favorit des europäischen Adels, der damit seine Mitmenschen beeindrucken will.
-Jede Ebenholzsorte hat ihre eigene Farbe, die von grünlich-braun bis samtig schwarz reicht. Mit der Zeit wird das Holz dunkler, härter - und teurer.
+Ebenholz (schwarzes Holz) hat seit jeher Tischler und Bürger gleichermaßen durch seine Schönheit und Härte fasziniert: Dieses Holz ist doppelt so hart wie Eiche. In Verbindung mit der einzigartigen Farbe des Holzes ist es ein Favorit des europäischen Adels, der damit seine Mitmenschen beeindrucken will.Jede Ebenholzsorte hat ihre eigene Farbe, die von grünlich-braun bis samtig schwarz reicht. Mit der Zeit wird das Holz dunkler, härter - und teurer.
 }
-
-
 Chocolate {Kakao}
 Chocolate_descr
 {
-Die reifen Kakaofrüchte werden gepflückt und geknackt, um die Bohnen zu gewinnen. Diese Kakaobohnen sind - einmal fermentiert und getrocknet - lange lagerfähig.
-Die große Nachfrage nach Kakao unter den Indianern und wohlhabenden Einheimischen diktiert bereits hohe Preise für diese Ware, aber die Spanier und Italiener sind bereit, dafür in Gold zu zahlen, was die Preise exorbitant macht.
+Die reifen Kakaofrüchte werden gepflückt und geknackt, um die Bohnen zu gewinnen. Diese Kakaobohnen sind - einmal fermentiert und getrocknet - lange lagerfähig.Die große Nachfrage nach Kakao unter den Indianern und wohlhabenden Einheimischen diktiert bereits hohe Preise für diese Ware, aber die Spanier und Italiener sind bereit, dafür in Gold zu zahlen, was die Preise exorbitant macht.
 }
-
-
 Sugar {Zucker}
 Sugar_descr
 {
-Durch stundenlanges Kochen des Zuckerrohrsaftes in großen Kupferkesseln wird der süße Sirup zu großen braunen Rohzuckerkristallen reduziert, die getrocknet und für den Transport nach Europa vorbereitet werden, wo sie raffiniert werden sollen.
-Der Brauch, den Gästen mit Zucker gesüßten Tee oder Kaffee anzubieten - eine immerwährende Mode und ein aristokratisches Symbol des Wohlbefindens - ist eine sichere Garantie dafür, dass Rohzucker immer sehr gefragt ist.
+Durch stundenlanges Kochen des Zuckerrohrsaftes in großen Kupferkesseln wird der süße Sirup zu großen braunen Rohzuckerkristallen reduziert, die getrocknet und für den Transport nach Europa vorbereitet werden, wo sie raffiniert werden sollen.Der Brauch, den Gästen mit Zucker gesüßten Tee oder Kaffee anzubieten - eine immerwährende Mode und ein aristokratisches Symbol des Wohlbefindens - ist eine sichere Garantie dafür, dass Rohzucker immer sehr gefragt ist.
 }
-
-
 Wine {Wein}
 Wine_descr
 {
-Obwohl es in der Neuen Welt viele gescheiterte (und meist erfolglose) Versuche des Weinanbaus gab, werden importierte Weine aus Frankreich, Spanien, Italien und Portugal noch immer sowohl für sakrale als auch für Freizeitzwecke hoch geschätzt!
-Guter europäischer Wein ist in jeder Siedlung sehr gefragt und wird von den örtlichen Händlern in großen Mengen gekauft.
+Obwohl es in der Neuen Welt viele gescheiterte (und meist erfolglose) Versuche des Weinanbaus gab, werden importierte Weine aus Frankreich, Spanien, Italien und Portugal noch immer sowohl für sakrale als auch für Freizeitzwecke hoch geschätzt!Guter europäischer Wein ist in jeder Siedlung sehr gefragt und wird von den örtlichen Händlern in großen Mengen gekauft.
 }
-
-
 ShipSilk {Schiffsseide}
 ShipSilk_descr
 {
-Ein Meisterwerk der Lyoner Textilfabriken - dichtes seidenes Segeltuch.
-Die Seide ist extrem widerstandsfähig, die Fäden sind stark, elastisch und gleichmäßig dick. Dieser Stoff ist leicht und atmungsaktiv; er nimmt Feuchtigkeit schnell auf, trocknet aber noch schneller. Es behält die Form und ist resistent gegen Dehnung.
-Trotz all seiner Vorteile hat Seidenstoff einen entscheidenden Nachteil: Wenn er dem Sonnenlicht ausgesetzt ist, neigt das Material dazu, sich zu zersetzen.
+Ein Meisterwerk der Lyoner Textilfabriken - dichtes seidenes Segeltuch.Die Seide ist extrem widerstandsfähig, die Fäden sind stark, elastisch und gleichmäßig dick. Dieser Stoff ist leicht und atmungsaktiv; er nimmt Feuchtigkeit schnell auf, trocknet aber noch schneller. Es behält die Form und ist resistent gegen Dehnung.Trotz all seiner Vorteile hat Seidenstoff einen entscheidenden Nachteil: Wenn er dem Sonnenlicht ausgesetzt ist, neigt das Material dazu, sich zu zersetzen.
 }
-
-
 Rum {Rum}
 Rum_descr
 {
-Ein starkes alkoholisches Getränk, das aus vergorenem Zuckerrohrsaft destilliert wird und einen leicht eigenartigen Geschmack und Geruch hat. Jede Karibikinsel beansprucht für sich, den besten Rum herzustellen. Er ist ein wertvolles Gut, das immer gewinnbringend verkauft werden kann.
-Es kann auch für den beabsichtigten Zweck verwendet werden, denn es hebt die Moral der Seeleute, wärmt sie auf und stillt den Hunger.
-Rum wird auch dem Frischwasser auf Schiffen zugesetzt, um Grog herzustellen, der das Wasser desinfiziert und seinen Geschmack verbessert, so dass es länger gelagert werden kann. Ein Mangel an Rum auf dem Schiff kann zu Unruhe unter den Matrosen führen und sogar der Grund für eine Meuterei sein.
+Ein starkes alkoholisches Getränk, das aus vergorenem Zuckerrohrsaft destilliert wird und einen leicht eigenartigen Geschmack und Geruch hat. Jede Karibikinsel beansprucht für sich, den besten Rum herzustellen. Er ist ein wertvolles Gut, das immer gewinnbringend verkauft werden kann.Es kann auch für den beabsichtigten Zweck verwendet werden, denn es hebt die Moral der Seeleute, wärmt sie auf und stillt den Hunger.Rum wird auch dem Frischwasser auf Schiffen zugesetzt, um Grog herzustellen, der das Wasser desinfiziert und seinen Geschmack verbessert, so dass es länger gelagert werden kann. Ein Mangel an Rum auf dem Schiff kann zu Unruhe unter den Matrosen führen und sogar der Grund für eine Meuterei sein.
 }
-
-
 Tobacco {Tabak}
 Tobacco_descr
 {
-Im fernen Europa, in den örtlichen Siedlungen und in den engen Mannschaftsquartieren unter Deck ist Tabak ein Genuss für jeden Mann. Sie gilt auch als zuverlässige vorbeugende Maßnahme gegen viele Krankheiten - zumindest glaubt man das.
-Es gibt drei Arten von Tabak, die zum Verzehr geeignet sind: Rauchtabak, Schnupftabak und Kautabak. Tabakblätter in Leinensäcken sind für viele Kaufleute eine begehrte Fracht.
+Im fernen Europa, in den örtlichen Siedlungen und in den engen Mannschaftsquartieren unter Deck ist Tabak ein Genuss für jeden Mann. Sie gilt auch als zuverlässige vorbeugende Maßnahme gegen viele Krankheiten - zumindest glaubt man das.Es gibt drei Arten von Tabak, die zum Verzehr geeignet sind: Rauchtabak, Schnupftabak und Kautabak. Tabakblätter in Leinensäcken sind für viele Kaufleute eine begehrte Fracht.
 }
-
-
 Coffee {Kaffee}
 Coffee_descr
 {
-Ein duftendes, belebendes Getränk aus Kaffeebohnen, Honig und Zimt ist heute bei den Bewohnern der Neuen Welt sehr beliebt - nicht nur wegen der zahlreichen Kaffeeplantagen, die für viele reiche Europäer zur Haupteinnahmequelle wurden, sondern auch, weil Tee aus Indien und China nur schwer zu bekommen ist.
-Grüne, ungeröstete Kaffeebohnen, die lange Zeit ihre Handelsfähigkeit und ihre nützlichen Eigenschaften behalten, sind in Kontinentaleuropa immer sehr gefragt, denn Kaffee ist heute ein Muss in jedem reichen Haushalt.
+Ein duftendes, belebendes Getränk aus Kaffeebohnen, Honig und Zimt ist heute bei den Bewohnern der Neuen Welt sehr beliebt - nicht nur wegen der zahlreichen Kaffeeplantagen, die für viele reiche Europäer zur Haupteinnahmequelle wurden, sondern auch, weil Tee aus Indien und China nur schwer zu bekommen ist.Grüne, ungeröstete Kaffeebohnen, die lange Zeit ihre Handelsfähigkeit und ihre nützlichen Eigenschaften behalten, sind in Kontinentaleuropa immer sehr gefragt, denn Kaffee ist heute ein Muss in jedem reichen Haushalt.
 }
-
-
 Mahogany {Mahagoni}
 Mahogany_descr
 {
-Das Holz dieser Mammutbäume hat eine sehr ausgeprägte und schöne Zeichnung und ist zudem sehr robust, feuerfest und langlebig. Es lässt sich sehr leicht polieren und wird von Holzschädlingen nicht angegriffen. Die Spanier waren die ersten, die es zu schätzen wussten - heute wird Mahagoni häufig für den Bau von Schiffen, Kirchen und Palästen verwendet.
-Möbel aus Mahagoni sind ein Beispiel für klassischen Luxus, guten Geschmack und das Wohlbefinden ihres Besitzers.
+Das Holz dieser Mammutbäume hat eine sehr ausgeprägte und schöne Zeichnung und ist zudem sehr robust, feuerfest und langlebig. Es lässt sich sehr leicht polieren und wird von Holzschädlingen nicht angegriffen. Die Spanier waren die ersten, die es zu schätzen wussten - heute wird Mahagoni häufig für den Bau von Schiffen, Kirchen und Palästen verwendet.Möbel aus Mahagoni sind ein Beispiel für klassischen Luxus, guten Geschmack und das Wohlbefinden ihres Besitzers.
 }
-
-
 Cinnamon {Vanille}
 Cinnamon_descr
 {
-Die getrockneten und fermentierten Schoten dieser aus Mexiko stammenden immergrünen Rebe haben ein süßes Aroma, aber einen bitteren Geschmack.
-Vanille wird in Europa für die Herstellung von Kakao und heißer Schokolade verwendet. Sie wird auch als Aromastoff für Tabak verwendet; andere kauen sie einfach, obwohl das meist nur dazu dient, ihren Status zu zeigen!
+Die getrockneten und fermentierten Schoten dieser aus Mexiko stammenden immergrünen Rebe haben ein süßes Aroma, aber einen bitteren Geschmack.Vanille wird in Europa für die Herstellung von Kakao und heißer Schokolade verwendet. Sie wird auch als Aromastoff für Tabak verwendet; andere kauen sie einfach, obwohl das meist nur dazu dient, ihren Status zu zeigen!
 }
-
-
 Copra {Kopra}
 Copra_descr
 {
-Getrocknetes Kokosnussfleisch.
-Kopra wird für die Herstellung von Kopraöl und Seife verwendet. Diese Seife riecht nicht nur gut, sondern färbt auch die Haare und überdeckt graues Haar mit einem edlen Blondton.
+Getrocknetes Kokosnussfleisch.Kopra wird für die Herstellung von Kopraöl und Seife verwendet. Diese Seife riecht nicht nur gut, sondern färbt auch die Haare und überdeckt graues Haar mit einem edlen Blondton.
 }
-
-
 Paprika {Paprika}
 Paprika_descr
 {
-Gemahlene und getrocknete rote Chilischoten, ein süß-scharfes Gewürz, das in der Küche als Geschmacksgeber sehr beliebt ist.
-Paprika ist bei Deutschen, Spaniern und im mediterranen Europa sehr beliebt, da er zu praktisch allem passt: zu Fleisch, Geflügel, Fisch, Meeresfrüchten, Gemüse und Käse.
+Gemahlene und getrocknete rote Chilischoten, ein süß-scharfes Gewürz, das in der Küche als Geschmacksgeber sehr beliebt ist.Paprika ist bei Deutschen, Spaniern und im mediterranen Europa sehr beliebt, da er zu praktisch allem passt: zu Fleisch, Geflügel, Fisch, Meeresfrüchten, Gemüse und Käse.
 }
-
-
 Fruits {Früchte}
 Fruits_descr
 {
-Essbare tropische Früchte, die von der örtlichen Flora gepflückt werden. Hervorragend geeignet, um Skorbut zu bekämpfen oder billigen Wein zu aromatisieren.
-Obst kann in jeder Siedlung verkauft werden - selbst für seltene Delikatessen gibt es Käufer.
+Essbare tropische Früchte, die von der örtlichen Flora gepflückt werden. Hervorragend geeignet, um Skorbut zu bekämpfen oder billigen Wein zu aromatisieren.Obst kann in jeder Siedlung verkauft werden - selbst für seltene Delikatessen gibt es Käufer.
 }
-
-
 Ale {Bier}
 Ale_descr
 {
-Ein gebrautes Getränk mit niedrigem Alkoholgehalt, das durch Obergärung hergestellt wird. 
-Bier gilt zusammen mit Brot als Grundnahrungsmittel und ist Bestandteil der Rationen der örtlichen Garnisonen (insbesondere der englischen). Bier kann lange gelagert werden; außerdem besitzt es dank der Gruit (einer Mischung aus Kräutern und Gewürzen, die anstelle von Hopfen verwendet wird) antibiotische Eigenschaften.
+Ein gebrautes Getränk mit niedrigem Alkoholgehalt, das durch Obergärung hergestellt wird. Bier gilt zusammen mit Brot als Grundnahrungsmittel und ist Bestandteil der Rationen der örtlichen Garnisonen (insbesondere der englischen). Bier kann lange gelagert werden; außerdem besitzt es dank der Gruit (einer Mischung aus Kräutern und Gewürzen, die anstelle von Hopfen verwendet wird) antibiotische Eigenschaften.
 }
-
-
 Ropes {Seile}
 Ropes_descr
 {
-Starke Seile aus Hanf. Sie sind salzwasserbeständig und die besten Seile für die Takelage.
-Die allerbesten und berühmtesten Seile werden im Zarenreich von Russland hergestellt.
+Starke Seile aus Hanf. Sie sind salzwasserbeständig und die besten Seile für die Takelage.Die allerbesten und berühmtesten Seile werden im Zarenreich von Russland hergestellt.
 }
-
-
 Clothes {Kleidung}
 Clothes_descr
 {
-Praktische konservative Kleidung aus dunklem Stoff, einfaches Kambrikleinen, umgeschlagene Kragen und Manschetten - eine bequeme Kleidung für jeden ehrlichen, fleißigen, bescheidenen und sparsamen Mann.
-Günstige Ware, die immer gefragt ist.
+Praktische konservative Kleidung aus dunklem Stoff, einfaches Kambrikleinen, umgeschlagene Kragen und Manschetten - eine bequeme Kleidung für jeden ehrlichen, fleißigen, bescheidenen und sparsamen Mann.Günstige Ware, die immer gefragt ist.
 }
-
-
 Cotton {Baumwolle}
 Cotton_descr
 {
-Die Baumwolle reift spät und die Ernteerträge sind auf den karibischen Inselplantagen im Vergleich zu den nordamerikanischen Kolonien eher gering, aber ihre Fasern sind dennoch sehr wertvoll, da sie ungewöhnlich lang und dünn sind. Aus diesen seidig-cremigen Fasern werden Fäden für die dünnsten Stoffe von höchster Qualität hergestellt.
-Diese aufwendige Herstellung erfordert die Einrichtung einer relativ großen Plantage und mindestens 20 Sklaven, die dort arbeiten.
+Die Baumwolle reift spät und die Ernteerträge sind auf den karibischen Inselplantagen im Vergleich zu den nordamerikanischen Kolonien eher gering, aber ihre Fasern sind dennoch sehr wertvoll, da sie ungewöhnlich lang und dünn sind. Aus diesen seidig-cremigen Fasern werden Fäden für die dünnsten Stoffe von höchster Qualität hergestellt.Diese aufwendige Herstellung erfordert die Einrichtung einer relativ großen Plantage und mindestens 20 Sklaven, die dort arbeiten.
 }
-
-
 Sandal {Eisenholz}
 Sandal_descr
 {
-Eisenholz ist auch als "Lignum vitae" bekannt. Dieses dichte, harte und robuste Holz ist fast unmöglich zu knacken. Es ist sehr schwer und sinkt im Gegensatz zu den meisten Hölzern im Wasser eher ein, als dass es schwimmt.
-Wie der Name schon sagt, ist es ein sehr robustes Holz, das allerdings schwer zu bearbeiten ist. Es hat auch selbstschmierende Eigenschaften, besonders in Wasser.
-Aufgrund der Robustheit und der natürlichen Schmierung benötigen Schiffselemente aus Eisenholz selbst unter den schlimmsten Seebedingungen kaum Wartung.
+Eisenholz ist auch als "Lignum vitae" bekannt. Dieses dichte, harte und robuste Holz ist fast unmöglich zu knacken. Es ist sehr schwer und sinkt im Gegensatz zu den meisten Hölzern im Wasser eher ein, als dass es schwimmt.Wie der Name schon sagt, ist es ein sehr robustes Holz, das allerdings schwer zu bearbeiten ist. Es hat auch selbstschmierende Eigenschaften, besonders in Wasser.Aufgrund der Robustheit und der natürlichen Schmierung benötigen Schiffselemente aus Eisenholz selbst unter den schlimmsten Seebedingungen kaum Wartung.
 }
-
-
 Oil {Teer}
 Oil_descr
 {
-Dieser natürliche Asphaltteer ist ein klebriges grauschwarzes Gemisch aus Bitumen, fein verteiltem Ton und Salzwasser. Das berühmteste Exportgut von Trinidad - wenn auch sicher nicht das schönste.
-Dieser Teer wird verwendet, um die Fugen eines Schiffsrumpfes abzudichten und zu versiegeln.
-Es wird angenommen, dass dieser Teer dem Teer, der in den nordeuropäischen Ländern aus Kiefern hergestellt wird, weit überlegen ist.
+Dieser natürliche Asphaltteer ist ein klebriges grauschwarzes Gemisch aus Bitumen, fein verteiltem Ton und Salzwasser. Das berühmteste Exportgut von Trinidad - wenn auch sicher nicht das schönste.Dieser Teer wird verwendet, um die Fugen eines Schiffsrumpfes abzudichten und zu versiegeln.Es wird angenommen, dass dieser Teer dem Teer, der in den nordeuropäischen Ländern aus Kiefern hergestellt wird, weit überlegen ist.
 }
-
-
 Leather {Leder}
 Leather_descr
 {
-Die getrockneten und aufbereiteten Häute von Rindern sind ein universelles Handelsgut, das in Europa immer gefragt ist. Auf diese Weise verdienten die ursprünglichen Seeräuber ihren Lebensunterhalt, indem sie die Häute und das Fleisch der Wildrinder auf Hispaniola verkauften.
-Obwohl nicht viele Händler ihre Schiffe allein mit Leder beladen würden, eignet es sich hervorragend, um leeren Frachtraum zu füllen, da es sehr robust ist und allen Transportbedingungen standhält.
+Die getrockneten und aufbereiteten Häute von Rindern sind ein universelles Handelsgut, das in Europa immer gefragt ist. Auf diese Weise verdienten die ursprünglichen Seeräuber ihren Lebensunterhalt, indem sie die Häute und das Fleisch der Wildrinder auf Hispaniola verkauften.Obwohl nicht viele Händler ihre Schiffe allein mit Leder beladen würden, eignet es sich hervorragend, um leeren Frachtraum zu füllen, da es sehr robust ist und allen Transportbedingungen standhält.
 }
-
-
 Slaves {Sklaven}
 Slaves_descr
 {
-Weiße, schwarze, Männer oder Frauen, die als Folge verlorener Schlachten, als Strafe für begangene Verbrechen oder aufgrund von Schulden in die Sklaverei verkauft wurden. Aus der Sicht des Plantagen- oder Minenbesitzers handelt es sich dabei um eine völlig legitime Ware, da die Person zum Zeitpunkt des Kaufs bereits ein Sklave war.
-Das Leben eines Sklaven ist in der Regel hässlich, brutal und kurz - die meisten von ihnen sterben in den ersten sieben Jahren nach dem Verkauf zur Arbeit auf den Plantagen. 
+Weiße, schwarze, Männer oder Frauen, die als Folge verlorener Schlachten, als Strafe für begangene Verbrechen oder aufgrund von Schulden in die Sklaverei verkauft wurden. Aus der Sicht des Plantagen- oder Minenbesitzers handelt es sich dabei um eine völlig legitime Ware, da die Person zum Zeitpunkt des Kaufs bereits ein Sklave war.Das Leben eines Sklaven ist in der Regel hässlich, brutal und kurz - die meisten von ihnen sterben in den ersten sieben Jahren nach dem Verkauf zur Arbeit auf den Plantagen.
 }
-
-
 Powder {Schießpulver}
 Powder_descr
 {
-Importierte strategische Waren, die in schmutzigen, lauten, stinkenden und gefährlichen Schießpulverfabriken hergestellt werden.
-"Halte dein Pulver trocken", sagen die erfahrenen Kanoniere. Das kann man nicht oft genug betonen: Ohne Schießpulver sind die Kanonen für ein Schiff nur Totgewicht.
-Ein kluger Kapitän wird immer reichlich Schießpulver im trockensten und sichersten Teil des Laderaums aufbewahren.
+Importierte strategische Waren, die in schmutzigen, lauten, stinkenden und gefährlichen Schießpulverfabriken hergestellt werden."Halte dein Pulver trocken", sagen die erfahrenen Kanoniere. Das kann man nicht oft genug betonen: Ohne Schießpulver sind die Kanonen für ein Schiff nur Totgewicht.Ein kluger Kapitän wird immer reichlich Schießpulver im trockensten und sichersten Teil des Laderaums aufbewahren.
 }
-
-
 Food {Nahrungsmittel}
 Food_descr
 {
-Ein Standardsatz an konservierten Rationen und frischem Wasser, der für die Verpflegung von Crew und Sklaven während einer Reise benötigt wird.
-Der Mangel an Lebensmitteln an Bord führt zu Hungersnöten, Todesfällen und einem Rückgang der Moral. 
-Täglicher Verbrauch: Matrosen - 0.1 Einheiten, Sklaven - 0.05 Einheiten.
+Ein Standardsatz an konservierten Rationen und frischem Wasser, der für die Verpflegung von Crew und Sklaven während einer Reise benötigt wird.Der Mangel an Lebensmitteln an Bord führt zu Hungersnöten, Todesfällen und einem Rückgang der Moral. Täglicher Verbrauch: Matrosen - 0.1 Einheiten, Sklaven - 0.05 Einheiten.
 }
-
-
 Weapon {Waffen}
 Weapon_descr
 {
-Eine Waffensammlung: von Säbeln und Schwertern bis zu Pistolen und Musketen.
-Beim Entern muss jeder Teilnehmer des Kampfes bewaffnet sein. Ein Mangel an Waffen wird die Zahl der Opfer in die Höhe treiben.
-Wenn Matrosen im Kampf sterben, nimmt die Anzahl der Waffen an Bord ab.
+Eine Waffensammlung: von Säbeln und Schwertern bis zu Pistolen und Musketen.Beim Entern muss jeder Teilnehmer des Kampfes bewaffnet sein. Ein Mangel an Waffen wird die Zahl der Opfer in die Höhe treiben.Wenn Matrosen im Kampf sterben, nimmt die Anzahl der Waffen an Bord ab.
 }
-
-
 Gold {Gold}
 Gold_descr
 {
-Massive Goldbarren, gekennzeichnet durch das Schatzamt von Spanien.
-Ein mit Gold beladenes Schatzschiff zu kapern ist der Traum eines jeden Piraten und Freibeuter.
+Massive Goldbarren, gekennzeichnet durch das Schatzamt von Spanien.Ein mit Gold beladenes Schatzschiff zu kapern ist der Traum eines jeden Piraten und Freibeuter.
 }
-
-
 Silver {Silber}
 Silver_descr
 {
-Massive Silberbarren, gekennzeichnet durch das Schatzamt von Spanien.
-Ein begehrter Preis, denn Silber hat einen anständigen Wert und war für die spanische Staatskasse die zweite Wahl, um Reichtum zu halten und zu transportieren. Es wird geschätzt, dass die spanische Krone im 16. Jahrhundert Silber im Wert von über 210 Millionen Pesos aus der Neuen Welt nach Europa importierte.
+Massive Silberbarren, gekennzeichnet durch das Schatzamt von Spanien.Ein begehrter Preis, denn Silber hat einen anständigen Wert und war für die spanische Staatskasse die zweite Wahl, um Reichtum zu halten und zu transportieren. Es wird geschätzt, dass die spanische Krone im 16. Jahrhundert Silber im Wert von über 210 Millionen Pesos aus der Neuen Welt nach Europa importierte.
 }
-
-
 Brick {Steine}
 Brick_descr
 {
-Gepflegte Blöcke und Dachziegel aus Terrakotta. Diese werden häufig beim Bau von Städten verwendet, da Holz in der feuchten Karibik schnell verrottet.
-Wegen der häufigen Brände wird die Verwendung von Ziegeln im Bauwesen von den Behörden gefördert, weshalb diese Ware immer gefragt ist.
+Gepflegte Blöcke und Dachziegel aus Terrakotta. Diese werden häufig beim Bau von Städten verwendet, da Holz in der feuchten Karibik schnell verrottet.Wegen der häufigen Brände wird die Verwendung von Ziegeln im Bauwesen von den Behörden gefördert, weshalb diese Ware immer gefragt ist.
 }
-
-
 Medicament {Medizin}
 Medicament_descr
 {
-Eine Reihe von Medikamenten und Instrumenten für die Behandlung der häufigsten Krankheiten und die erste Hilfe für Verwundete und Verletzte.
-Medikamente an Bord tragen dazu bei, Verletzte zu retten, Verluste an Bord zu verringern und Kranke auf See zu heilen.
+Eine Reihe von Medikamenten und Instrumenten für die Behandlung der häufigsten Krankheiten und die erste Hilfe für Verwundete und Verletzte.Medikamente an Bord tragen dazu bei, Verletzte zu retten, Verluste an Bord zu verringern und Kranke auf See zu heilen.
 }
-
 Cannon_3 {Falkonetten}
 Cannon_3_descr
 {
-Deckgeschütze mit Lafette. Sie bieten die größte Beweglichkeit und haben aufgrund ihrer geringen Größe die geringste Feuerkraft und Reichweite.
-Oft sind sie mit einem austauschbaren Verschluss ausgestattet, der ein schnelles Nachladen ermöglicht.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Deckgeschütze mit Lafette. Sie bieten die größte Beweglichkeit und haben aufgrund ihrer geringen Größe die geringste Feuerkraft und Reichweite.Oft sind sie mit einem austauschbaren Verschluss ausgestattet, der ein schnelles Nachladen ermöglicht.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_6 {6-Pfund-Halbkanonen}
 Cannon_6_descr
 {
-Kleine Geschütze, sehr beliebt auf Kurier- und Handelsschiffen wegen ihres geringen Gewichts, niedrigen Preises und ihrer Langlebigkeit. Sie sind pflegeleicht und erfordern keine erfahrene Besatzung.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Kleine Geschütze, sehr beliebt auf Kurier- und Handelsschiffen wegen ihres geringen Gewichts, niedrigen Preises und ihrer Langlebigkeit. Sie sind pflegeleicht und erfordern keine erfahrene Besatzung.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_8 {8-Pfund-Halbkanonen}
 Cannon_8_descr
 {
-Einer der beliebtesten Kaliber auf kleinen Schiffen, zu finden sowohl auf Handels- als auch auf Patrouillenschiffen. Sie werden für ihre hervorragende Kombination aus Größe, Gewicht und Feuerkraft geschätzt.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Einer der beliebtesten Kaliber auf kleinen Schiffen, zu finden sowohl auf Handels- als auch auf Patrouillenschiffen. Sie werden für ihre hervorragende Kombination aus Größe, Gewicht und Feuerkraft geschätzt.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_12 {12-Pfund-Halbkanonen}
 Cannon_12_descr
 {
-Ein weit verbreitetes Kaliber bei kleinen Kriegsschiffen. Für ihre Größe und ihr Gewicht bieten sie beeindruckende Feuerkraft, erfordern jedoch vollständige Geschützmannschaften, was die Besatzungszahl erhöht.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Ein weit verbreitetes Kaliber bei kleinen Kriegsschiffen. Für ihre Größe und ihr Gewicht bieten sie beeindruckende Feuerkraft, erfordern jedoch vollständige Geschützmannschaften, was die Besatzungszahl erhöht.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_16 {16-Pfund-Halbkanonen}
 Cannon_16_descr
 {
-Moderne Geschütze französischen Typs. Dank ihrer fortschrittlichen Konstruktion bieten sie ausgezeichnete Reichweite, Zuverlässigkeit und Feuerkraft. Ein sehr verbreitetes Kaliber bei Patrouillen- und Aufklärungsschiffen.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Moderne Geschütze französischen Typs. Dank ihrer fortschrittlichen Konstruktion bieten sie ausgezeichnete Reichweite, Zuverlässigkeit und Feuerkraft. Ein sehr verbreitetes Kaliber bei Patrouillen- und Aufklärungsschiffen.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_18 {18-Pfund-Halbkanonen}
 Cannon_18_descr
 {
-Leistungsstarke Universalgeschütze, die früher häufig auf Kriegsschiffen installiert wurden. Im Archipel recht verbreitet und für ihre Einfachheit und Zuverlässigkeit geschätzt, obwohl ihre veraltete Konstruktion die Reichweite etwas einschränkt.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Leistungsstarke Universalgeschütze, die früher häufig auf Kriegsschiffen installiert wurden. Im Archipel recht verbreitet und für ihre Einfachheit und Zuverlässigkeit geschätzt, obwohl ihre veraltete Konstruktion die Reichweite etwas einschränkt.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_20 {20-Pfund-Kanonen}
 Cannon_20_descr
 {
-Langrohrige Artilleriegeschütze, die auf Kreuzern und Hilfsschiffen von Militärkonvois eingesetzt werden. Für effektives Feuer ist eine koordinierte Arbeit der Geschützmannschaft erforderlich.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige Artilleriegeschütze, die auf Kreuzern und Hilfsschiffen von Militärkonvois eingesetzt werden. Für effektives Feuer ist eine koordinierte Arbeit der Geschützmannschaft erforderlich.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_24 {24-Pfund-Kanonen}
 Cannon_24_descr
 {
-Das Hauptkaliber auf Kriegsschiffen, der Höhepunkt der Entwicklung der Schiffsartillerie. Sie bieten ein perfektes Gleichgewicht zwischen Reichweite und Feuerkraft, und ihre gelungene Konstruktion ermöglicht es, lange Seeschlachten ohne kritische Schäden zu überstehen.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Das Hauptkaliber auf Kriegsschiffen, der Höhepunkt der Entwicklung der Schiffsartillerie. Sie bieten ein perfektes Gleichgewicht zwischen Reichweite und Feuerkraft, und ihre gelungene Konstruktion ermöglicht es, lange Seeschlachten ohne kritische Schäden zu überstehen.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_32 {32-Pfund-Kanonen}
 Cannon_32_descr
 {
-Großkalibrige schwere Geschütze, die enormen Schaden anrichten und sich zur Bombardierung von Festungen eignen. Aufgrund der Materialgrenzen wird eine reduzierte Pulverladung verwendet, was die Reichweite einschränkt.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Großkalibrige schwere Geschütze, die enormen Schaden anrichten und sich zur Bombardierung von Festungen eignen. Aufgrund der Materialgrenzen wird eine reduzierte Pulverladung verwendet, was die Reichweite einschränkt.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_36 {36-Pfund-Kanonen}
 Cannon_36_descr
 {
-Langrohrige Kanonen, selten auf dem Geschützdeck zu finden. Die langsame Nachladezeit und begrenzte Reichweite werden durch den verheerenden Schaden ausgeglichen, den die langsam fliegenden schweren Kugeln verursachen. Erfordern große Geschützmannschaften.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige Kanonen, selten auf dem Geschützdeck zu finden. Die langsame Nachladezeit und begrenzte Reichweite werden durch den verheerenden Schaden ausgeglichen, den die langsam fliegenden schweren Kugeln verursachen. Erfordern große Geschützmannschaften.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Cannon_42 {42-Pfund-Bombarden}
 Cannon_42_descr
 {
-Furchterregende Geschütze, der Höhepunkt der Schiffsfeuerkraft. Sie werden ausschließlich auf Linienschiffen, in Festungen und bei großen europäischen Schlachten eingesetzt. Erfordern eine große und gut ausgebildete Besatzung.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Furchterregende Geschütze, der Höhepunkt der Schiffsfeuerkraft. Sie werden ausschließlich auf Linienschiffen, in Festungen und bei großen europäischen Schlachten eingesetzt. Erfordern eine große und gut ausgebildete Besatzung.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Culverine_8 {Halbkartaunen}
 Culverine_8_descr
 {
-Langrohrige 8-Pfund-Geschütze auf einem speziellen Gestell mit kräftigem Unterbau und Vollholzrädern.
-Sie bieten erhöhte Schussweite. Üblicherweise für Sperrfeuer verwendet.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Langrohrige 8-Pfund-Geschütze auf einem speziellen Gestell mit kräftigem Unterbau und Vollholzrädern.Sie bieten erhöhte Schussweite. Üblicherweise für Sperrfeuer verwendet.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Culverine_18 {Kartaunen}
 Culverine_18_descr
 {
-Mittlere 18-Pfund-Geschütze mit erhöhter Reichweite, geeignet für den Einsatz auf relativ kleinen Schiffen.
-Trotz ihrer beeindruckenden Schussweite sind sie äußerst schwer und benötigen lange zum Laden.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Mittlere 18-Pfund-Geschütze mit erhöhter Reichweite, geeignet für den Einsatz auf relativ kleinen Schiffen.Trotz ihrer beeindruckenden Schussweite sind sie äußerst schwer und benötigen lange zum Laden.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }
-
 Culverine_36 {Vollkartaunen}
 Culverine_36_descr
 {
-Festungsgeschütze mit 36 Pfund, ausgelegt für Breschfeuer: Derjenige, der zuerst schießt, gewinnt!
-Aufgrund ihrer großen Länge können sie nur in Häfen installiert werden, die für 42-Pfund-Kanonen ausgelegt sind.
-Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
+Festungsgeschütze mit 36 Pfund, ausgelegt für Breschfeuer: Derjenige, der zuerst schießt, gewinnt!Aufgrund ihrer großen Länge können sie nur in Häfen installiert werden, die für 42-Pfund-Kanonen ausgelegt sind.Reichweite - #dFireRange#, Schaden - x#f.1DamageMultiply#, Nachladezeit - #dReloadTime# Sek.
 }

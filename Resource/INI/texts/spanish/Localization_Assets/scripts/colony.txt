@@ -1,109 +1,22 @@
-colony_1
-{
-Por falta de medicinas, murieron @<iTemp> marineros.
-}
-
-colony_2
-{
-Quedan pocas medicinas en el barco:  @<Pchar.Ship.Name>.
-}
-
-colony_3
-{
-Preparar la ciudad para la batalla.
-}
-
-colony_4
-{
-ERROR: Не задан обход города при захвате!!!
-}
-
-colony_5
-{
-¡Las fuerzas enemigas han sido neutralizadas! El camino está despejado.
-}
-
-colony_6
-{
-Has recibido ~
-}
-
-colony_7
-{
-Has recibido ~
-}
-
-colony_8
-{
-Has recibido: Hacha
-}
-
-colony_9
-{
-Has recibido: Pluma
-}
-
-colony_10
-{
-Has recibido: Madonna
-}
-
-colony_11
-{
-Chevalier Philippe
-}
-
-colony_12
-{
-de Poincy
-}
-
-colony_13
-{
-lord Thomas
-}
-
-colony_14
-{
-Vindzor
-}
-
-colony_15
-{
-don Juan
-}
-
-colony_16
-{
-de Cordova
-}
-
-colony_17
-{
-colonel
-}
-
-colony_18
-{
-Jonathan Fox
-}
-
-colony_19
-{
-¡Nuestra ciudad @<GetCityName(city)> está bajo asedio!
-}
-
-colony_20
-{
-¡El asedio ha terminado!
-}
-
-colony_21
-{
-¡Nuestra ciudad @<GetCityName(city)> está bajo asedio!
-}
-
-colony_22
-{
-¡Nuestra ciudad @<GetCityName(city)> ha sido capturada!
-}
+colony_1 {Por falta de medicinas, murieron @<iTemp> marineros.}
+colony_2 {Quedan pocas medicinas en el barco:  @<Pchar.Ship.Name>.}
+colony_3 {Preparar la ciudad para la batalla.}
+colony_4 {ERROR: Не задан обход города при захвате!!!}
+colony_5 {¡Las fuerzas enemigas han sido neutralizadas! El camino está despejado.}
+colony_6 {Has recibido ~}
+colony_7 {Has recibido ~}
+colony_8 {Has recibido: Hacha}
+colony_9 {Has recibido: Pluma}
+colony_10 {Has recibido: Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {colonel}
+colony_18 {Jonathan Fox}
+colony_19 {¡Nuestra ciudad @<GetCityName(city)> está bajo asedio!}
+colony_20 {¡El asedio ha terminado!}
+colony_21 {¡Nuestra ciudad @<GetCityName(city)> está bajo asedio!}
+colony_22 {¡Nuestra ciudad @<GetCityName(city)> ha sido capturada!}

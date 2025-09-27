@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 		// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 		if (CheckAttribute(pchar, "questTemp.FMQN.Choose") && pchar.location == "shore40")
 		{
-			dialog.text = "Mmm. Esta historia no parece correcta. Creo que esa balandra de St. John's nunca debió existir. El teniente me está arrastrando a su operación militar. ¿Por qué necesitaría eso? No estoy en guerra con los holandeses... ¿Qué debería hacer? ¿Debería irme y dejar que los británicos se diviertan por su cuenta? ¿O debería quedarme?";
+			dialog.text = "Mmm. Esta historia no parece correcta. Creo que esa balandra de St. John's nunca debió existir. El teniente me está arrastrando a su operación militar. ¿Por qué necesitaría eso? No estoy en guerra con los holandeses... ¿Qué debería hacer? Irme de aquí y mandarlos todos al infierno, ¿o quedarme?";
 			link.l1 = "Vete.";
 			link.l1.go = "FMQN_1";
 			link.l2 = "Quédate.";
@@ -381,7 +381,7 @@ void ProcessDialogEvent()
 
 			DeleteAttribute(pchar, "questTemp.PZ_OsmatrivaemSunduk");
 
-			AddDialogExitQuest("PZ_OsmatrivaemSunduk_3");
+			AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_4");
 		}
 
 		if (CheckAttribute(pchar, "questTemp.PZ_GotovimShlupki"))
@@ -563,13 +563,6 @@ void ProcessDialogEvent()
 			Link.l18 = "Prepara la celebración.";
 			Link.l18.go = "LH_marry_4";
 		}
-		// -->Авторемонт
-		if (Pchar.Location == Pchar.location.from_sea && CheckOfficersPerk(pchar, "SelfRepair") && CheckSelfRepairConditions())
-		{
-			Link.l14 = "Comienza a reparar los barcos";
-			Link.l14.go = "StartSelfRepair";
-		}
-		// <--Авторемонт
 		//--> завершение игры
 		if (CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
 		{
@@ -584,13 +577,7 @@ void ProcessDialogEvent()
 	case "tonzag_exit":
 		DialogExit_Self();
 		AddDialogExitQuestFunction("Tonzag_CreateKiller");
-		break;
-
-	case "StartSelfRepair":
-		NextDiag.CurrentNode = NextDiag.TempNode;
-		DialogExit_Self();
-		LaunchRepair(pchar);
-		break;
+	break;
 
 	case "SetGunBullets":
 		Dialog.Text = "Selecciona el tipo de munición:";
@@ -603,7 +590,7 @@ void ProcessDialogEvent()
 			sBullet = rItm.type.(sAttr).bullet;
 			rItem = ItemsFromID(sBullet);
 			attrL = "l" + i;
-			Link.(attrL) = GetItemName(rItem);
+			Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 			;
 			Link.(attrL).go = "SetGunBullets1_" + i;
 		}
@@ -633,7 +620,7 @@ void ProcessDialogEvent()
 			sBullet = rItm.type.(sAttr).bullet;
 			rItem = ItemsFromID(sBullet);
 			attrL = "l" + i;
-			Link.(attrL) = GetItemName(rItem);
+			Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 			;
 			Link.(attrL).go = "SetMusketBullets1_" + i;
 		}
@@ -661,12 +648,12 @@ void ProcessDialogEvent()
 		break;
 
 	case "BladePriorityMode":
-		SetPriorityMode(pchar, 1);
+		pchar.PriorityMode = 1;
 		DialogExit_Self();
 		break;
 
 	case "MusketPriorityMode":
-		SetPriorityMode(pchar, 2);
+		pchar.PriorityMode = 2;
 		DialogExit_Self();
 		break;
 
@@ -1129,7 +1116,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "FMQN_2":
-		dialog.text = "Nah, de ninguna manera, me quedo. Pero diablos, no me quedaré aquí esperando a Dios sabe qué. Debería navegar al puerto de Philipsburg e investigar la situación. No me agrada la idea de ser una herramienta en manos de algún maldito inglés mentiroso.";
+		dialog.text = "Nah, de ninguna manera, me quedo. Pero diablos, no me quedaré aquí esperando a Dios sabe qué. Debería navegar al puerto de Philipsburg e investigar la situación. No pienso convertirme en una herramienta ciega en sus manos.";
 		link.l1 = "";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("FMQN_ChooseContinue");

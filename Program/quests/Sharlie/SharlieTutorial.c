@@ -19,8 +19,6 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	DeleteAttribute(pchar, "TutorialToDeck_1");
 	Achievment_Set("Test_Ach");
 	
-	// убираем корабль
-	pchar.Ship.Type = SHIP_NOTUSED;
 	// прописываем локации
 	sld = &Locations[FindLocation("Quest_Ship_deck_Medium_trade")];
 	LocatorReloadEnterDisable("Quest_Ship_deck_Medium_trade", "reload_cabin", true);
@@ -266,6 +264,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 
 void SharlieTutorial_StartKino()
 {
+	pchar.Ship.Type = SHIP_NOTUSED;
 	DontRefreshBLI = false;
 	StartQuestMovie(true, false, true);
 	pchar.questTemp.NoFast = true;
@@ -575,11 +574,8 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].SpeedRate = 15.5;
-	realships[sti(pchar.ship.type)].TurnRate = 52.5;
 	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
-	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.1;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -770,11 +766,11 @@ void SharlieTutorial_ActThree()
 	LAi_SetPlayerType(pchar);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_0", "citiz_48", "man", "man", 1, PIRATE, -1, false, "pirate"));
+	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 	sld.name 	= StringFromKey("SharlieTutorial_5");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "EnemyPirate_1";
-	LAi_SetHP(sld, 25.0, 25.0);
 	GiveItem2Character(sld, "blade_05");
 	EquipCharacterByItem(sld, "blade_05");
 	AddMoneyToCharacter(sld, 20);
@@ -791,7 +787,7 @@ void SharlieTutorial_TrumBitva_2()
 {
 	LAi_LocationFightDisable(loadedLocation, false);
 	LAi_SetFightMode(pchar, true);
-	LAi_SetCheckMinHP(pchar, 1, true, "SkritoeBessmertie");
+	LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 	
 	sld = CharacterFromID("SharlieTutorial_EnemyPirate_0");
 	LAi_SetWarriorType(sld);
@@ -866,11 +862,11 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	GiveItem2Character(sld, "chest_open");
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Alonso", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));	// раненый Алонсо
+	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, true, 0.6); // RB Пролог Алонсо
 	sld.name 	= StringFromKey("HollandGambit_23");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "SailorAlive_1";
-	LAi_SetHP(sld, 50.0, 50.0);
 	LAi_SetCheckMinHP(sld, 10, true, "SharlieTutorial_AlonsoSkritoeBessmertie");
 	ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "goto", "goto5");
 	//TeleportCharacterToPosAy(sld, -5.80, 14.32, 1.53, 1.50);
@@ -901,6 +897,7 @@ void SharlieTutorial_TrumBitva_5()
 	for (i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+i, "man", "man", 1, PIRATE, 0, true, "pirate"));
+		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		if(i==1)
 		{
@@ -914,8 +911,7 @@ void SharlieTutorial_TrumBitva_5()
 			pchar.quest.SharlieTutorial_TrumBitva_5_1.win_condition = "SharlieTutorial_TrumBitva_5_1"; */
 			//LAi_SetCheckMinHP(sld, 1, true, "SharlieTutorial_TrumBitva_5_1");
 		}
-		LAi_SetHP(sld, 10.0, 10.0);
-		sld.MultiFighter = 0.3;
+		// sld.MultiFighter = 0.3;
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -989,8 +985,8 @@ void SharlieTutorial_TrumBitva_8_1(string qName)
 	for (i=4; i<=6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
+		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
-		LAi_SetHP(sld, 20.0, 20.0);
 		sld.lifeday = 0;
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1038,8 +1034,8 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	for (i=7; i<=10; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
+		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
-		LAi_SetHP(sld, 20.0, 20.0);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 	}
@@ -1068,8 +1064,8 @@ void SharlieTutorial_TrumBitva_10_1(string qName)
 	for (i=11; i<=15; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
+		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Пролог враг 3 волна
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
-		LAi_SetHP(sld, 40.0, 40.0);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 	}
@@ -1902,11 +1898,8 @@ void SharlieTutorial_SeaNearMartinique()
 	SetBaseShipData(pchar);
 	RealShips[sti(pchar.Ship.Type)].ship.upgrades.hull = 2;
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
-	realships[sti(pchar.ship.type)].SpeedRate = 15.5;
-	realships[sti(pchar.ship.type)].TurnRate = 52.5;
 	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
-	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.1;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -2075,7 +2068,9 @@ void SharlieTutorial_ShowLogo_Start()
 	makearef(arLogo, ILogAndActions.TutorialLogo);
 	makearef(arImage, arLogo.images.logo);
 	
-	arImage.texture = "interfaces\le\cle_logo2.tga";
+	string sAdd = "";
+	if(LanguageGetLanguage() == "Chinese") sAdd = "_cn";
+	arImage.texture = "interfaces\le\cle_logo2"+sAdd+".tga";
 	arImage.uv = "0.0,0.0,1.0,1.0";
 	
 	arImage.pos = "560,140,1360,940";
@@ -2202,6 +2197,8 @@ void SharlieTutorial_GenerateTreasureMap(ref item)
     // Уже заполнена
     if(CheckAttribute(PChar, "quest.SetTreasureFromMap")) return;
 
+	bTrHash = false;
+	sTrTag  = "";
     string sIsland = GetIslandForTreasure();
     while (sIsland == "Martinique") 
            sIsland = GetIslandForTreasure();
@@ -2219,4 +2216,6 @@ void SharlieTutorial_GenerateTreasureMap(ref item)
     PChar.quest.SetTreasureFromMap.win_condition             = "SetTreasureFromMap";
     PChar.GenQuest.Treasure.Vario = rand(5); // Определяем событие (33% скип)
     locations[FindLocation(item.MapLocId)].DisableEncounters = true;
+
+	sTrSubTag = "";
 }

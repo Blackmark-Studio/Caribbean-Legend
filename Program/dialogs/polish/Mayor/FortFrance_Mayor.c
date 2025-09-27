@@ -32,7 +32,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Przybyłem na rozkaz gubernatora generalnego Philippe de Poincy, aby objąć dowództwo nad waszą uzbrojoną fregatą.";
                 link.l1.go = "patria";
 			}
-			if (CheckAttribute(npchar, "quest.frigate.wait") && GetCompanionQuantity(pchar) < 5)
+			if (CheckAttribute(npchar, "quest.frigate.wait") && GetCompanionQuantity(pchar) < COMPANION_MAX)
 			{
 				link.l1 = "Jestem gotów włączyć fregatę do mojej eskadry.";
                 link.l1.go = "patria_2";

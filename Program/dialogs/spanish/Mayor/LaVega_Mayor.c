@@ -108,32 +108,32 @@ void ProcessDialogEvent()
 	// <<<<<<<<<<<<============= блок нод angry =============================
 
 	// Rebbebion, квест "Путеводная звезда"
-	case "PZ1":
+	case "PZ_1":
 		dialog.text = "Ah, eres tú, de Maure. Bueno, qué sorpresa. Por el diablo del mar, tu llegada es lo más interesante que ha pasado en mucho tiempo, maldita sea.";
 		link.l1 = "Me alegra verte también, Vensan. ¿Disfrutando de gobernar el pueblo?";
-		link.l1.go = "PZ2";
+		link.l1.go = "PZ_2";
 		DelLandQuestMark(npchar);
 		break;
 
-	case "PZ2":
+	case "PZ_2":
 		dialog.text = "¿Cómo podría? Soy un capitán, ¡un maldito buen capitán, para eso, no algún condenadamente contable! Y he estado esperando a que los mensajeros de Marcus me convoquen para un nuevo viaje más tiempo del que he esperado la Navidad, ¡malditas maldiciones!";
 		link.l1 = "Navidad y maldiciones en una sola frase, eso sí que es algo. ¡Ay, no te envidio! Aunque, muchos desearían estar en tu posición actual. Pero he venido a verte por negocios, Vensan.";
-		link.l1.go = "PZ3";
+		link.l1.go = "PZ_3";
 		break;
 
-	case "PZ3":
+	case "PZ_3":
 		dialog.text = "¿Negocios?! Bueno, escúpelo entonces, ¿has pensado en algo? ¿Tienes una buena pista? Estoy a punto de vaciar la bodega por puro aburrimiento y todos estos malditos cálculos.";
 		link.l1 = "Bueno, es más que tengo una pregunta para usted, nada más.";
-		link.l1.go = "PZ4";
+		link.l1.go = "PZ_4";
 		break;
 
-	case "PZ4":
+	case "PZ_4":
 		dialog.text = "¡Maldita sea! Pero bueno, te escucho, Charles.";
 		link.l1 = "¿Ha venido a verte una mujer? ¿O tal vez la has visto en La Vega? Se hace llamar Belle Étoile, aunque ese es solo un alias, así que podría haberse presentado con otro nombre. Lo importante es que ella... tiene la piel amarilla. Pero no es una esclava ni una trabajadora, es una mujer adinerada.";
-		link.l1.go = "PZ5";
+		link.l1.go = "PZ_5";
 		break;
 
-	case "PZ5":
+	case "PZ_5":
 		dialog.text = "¿Piel amarilla, pero rico? ¡Nunca hemos tenido a alguien así aquí, jamás! Parece que sigues llevando esa vida interesante tuya, ¡de Maure! Casi te envidio.";
 		link.l1 = "¿Es eso así...? Bueno, gracias por tu tiempo, Vensan. No te distraeré más de tu contabilidad, je-je.";
 		link.l1.go = "Exit";

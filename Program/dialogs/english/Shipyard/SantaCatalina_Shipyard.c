@@ -4,16 +4,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?", "How can I help you?"), "You tried to ask me a question a little while ago...", "I have never met people with such curiosity in my shipyard or anywhere else in this town.",
-                          "What's with all the questions? My job is to build ships. Let's take care about that.", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...", "I've got nothing to talk about at the moment."), "Umph, where has my memory gone...",
-                      "Hm, well...", "Go ahead...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?","How can I help you?"),"You tried to ask me a question a little while ago...","I have never met people with such curiosity in my shipyard or anywhere else in this town.","What's with all the questions? My job is to build ships. Let's take care of that.","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...","I've got nothing to talk about at the moment."),"Umph, where has my memory gone...","Hm, well...","Go ahead...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 		break;
 		
 		case "helendrinking_buy_rainbow":
 			dialog.text = "... a worthy choice, sir. So, is it a deal?";
-			link.l1 = "Y-yes! Cheers! Wrap it up and send to the pier. And make it quick, a lady is waiting for me on the street!";
+			link.l1 = "Y-yes! Cheers! Wrap it up and send it to the pier. And make it quick, a lady is waiting for me in the street!";
 			link.l1.go = "helendrinking_buy_rainbow_1";
 			locCameraFromToPos(0.36, 1.86, 1.15, true, 2.06, -0.20, -4.38);
 		break;
@@ -43,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "helendrinking_buy_rainbow_no":
-			dialog.text = "Yeah, get lost, rich guy. We closed three hours ago.";
+			dialog.text = "Yeah, get lost, rich boy. We closed three hours ago.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			

@@ -58,8 +58,9 @@ bool Duran_QuestComplete(string sQuestName, string qname)
             EquipCharacterbyItem(sld, sTemp);
 			GiveItem2Character(sld, "pistol2");
 			EquipCharacterByItem(sld, "pistol2");
-			AddItems(sld, "cartridge", rand(10)+20);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			AddItems(sld, "bullet", rand(10)+20);
+			AddItems(sld, "gunpowder", rand(10)+20);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "amulet_3");
 			GiveItem2Character(sld, "purse1");
 			GiveItem2Character(sld, "cirass3");

@@ -477,7 +477,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_8":
-			dialog.text = "Capisco. E desidero davvero aiutarti! Ascolta bene: devi farti un po’ di esperienza e mettere da parte qualche moneta prima di impelagarti in faccende più serie. Buttarsi a capofоро senza preparazione è pura follia, roba da volersi trovare con la gola tagliata. Non vorrei che questa terra ti schiacciasse ancor prima, ragazzo.";
+			dialog.text = "Capisco. E desidero davvero aiutarvi! Ascoltami bene: devi fare un po' di esperienza e mettere da parte qualche soldo prima di lanciarti in questioni più serie. Buttarsi a capofitto senza preparazione è pura follia, la sostanza di chi vuole ritrovarsi con la gola tagliata. Non vorrei che questa terra ti schiacciasse ancora prima, ragazzo.";
 			link.l1 = "Molto edificante. Su quali avventure vai farneticando, Michel? Ho perso il filo dei tuoi sproloqui, chissà perché.";
 			link.l1.go = "trial_9";
 		break;
@@ -890,7 +890,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_3_1":
-			dialog.text = "Eccellente! Allora presto smetterò di г marcire in questa dannata prigione... Vai subito a Capsterville, si trova su Saint Christopher, e chiedi udienza a de Poincy. Dovrebbe trovarsi nel palazzo del governatore, dove risiede. Dopodiché, valuta in base alla situazione e rammenta: Poincy è furbo, dannatamente furbo... Ho una brutta sensazione, tutta questa faccenda non andrà liscia come il rum. Vai, fratello, e fa’ attenzione!";
+			dialog.text = "Eccellente! Allora presto smetterò di marcire in questa dannata prigione... Vai subito a Capsterville, si trova su Saint Christopher, e chiedi udienza a de Poincy. Dovrebbe trovarsi nel palazzo del governatore, dove risiede. Dopodiché, valuta in base alla situazione e rammenta: Poincy è furbo, dannatamente furbo... Ho una brutta sensazione, tutta questa faccenda non andrà liscia come il rum. Vai, fratello, e fa’ attenzione!";
 			link.l1 = "Terrò a mente le tue cautele, Michel. Non ti agitare, non sono nato ieri nemmeno io. Ora vado da quella vecchia volpe. A dopo!";
 			link.l1.go = "saga_4";			
 		break;
@@ -923,7 +923,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_7":
-			dialog.text = "Non c’è nemmeno bisogno di cercarlo! Non mette mai piede fuori из Tortuga, se ne sta rintanato nella sua roccaforte circondato da orde di Ugonotti fedelissimi che gli fanno da guarnigione. Ogni soldato lo serve con devozione. Poincy si riferiva proprio a François Levasseur, il governatore di Tortuga. \nGli spagnoli ancora non sono riusciti a schiodarlo di lì, e de Poincy, con tutta la sua serietà, crede davvero che proprio io possa farcela da solo, senza nessun aiuto della marina, solo perché scatenare una guerra civile, con la guarnigione di Santo Domingo così vicina, sarebbe una catastrofe politica. \nQuel vecchio cane pensa troppo alla propria carriera immacolata e alla pensione che sogna per rischiare tutto in questo modo. Eppure, Levasseur ha passato il segno ed è diventato una minaccia per la Corona. \nDe Poincy, che l’ha messo lui stesso su quella poltrona, ormai vede quest’Ugonotto feroce come un nemico personale, e freme dalla voglia di sostituirlo col Cavaliere Maltese de Fontenay, il mio diretto superiore, sotto il cui comando sono arrivato qui da Malta.";
+			dialog.text = "Non c’è nemmeno bisogno di cercarlo! Non mette mai piede fuori da Tortuga, se ne sta rintanato nella sua roccaforte circondato da orde di Ugonotti fedelissimi che gli fanno da guarnigione. Ogni soldato lo serve con devozione. Poincy si riferiva proprio a François Levasseur, il governatore di Tortuga. \nGli spagnoli ancora non sono riusciti a schiodarlo di lì, e de Poincy, con tutta la sua serietà, crede davvero che proprio io possa farcela da solo, senza nessun aiuto della marina, solo perché scatenare una guerra civile, con la guarnigione di Santo Domingo così vicina, sarebbe una catastrofe politica. \nQuel vecchio cane pensa troppo alla propria carriera immacolata e alla pensione che sogna per rischiare tutto in questo modo. Eppure, Levasseur ha passato il segno ed è diventato una minaccia per la Corona. \nDe Poincy, che l’ha messo lui stesso su quella poltrona, ormai vede quest’Ugonotto feroce come un nemico personale, e freme dalla voglia di sostituirlo col Cavaliere Maltese de Fontenay, il mio diretto superiore, sotto il cui comando sono arrivato qui da Malta.";
 			link.l1 = "Glorioso! Prima fai un milione, poi ammazzi il governatore di Tortuga. Quale sarà il mio prossimo incarico? Organizzare un complotto all'Escorial? Maledizione! Non mi stupisce che tu abbia fatto fiasco con quella faccenda. Far fuori il governatore non è come sfilare la borsa ai mercanti spagnoli. Spero che almeno una mezza idea ce l’avevi, quando hai giurato di togliere le castagne dal fuoco?";
 			link.l1.go = "saga_8";
 		break;
@@ -985,7 +985,7 @@ void ProcessDialogEvent()
 		
 		// Addon 2016-1 Jason Пиратская линейка
 		case "saga_17a":
-            dialog.text = "Aspetta un attimo! Prima di andare da Jan Svenson, passa a trovare Marcus Tyrex – lui è il Custode del Codice. Comanda La Vega su Hispaniola. Ha un’autorità senza limiti tra i filibustieri e perfino gli spagnoli tremano solo при его имени.";
+            dialog.text = "Aspetta un attimo! Prima di andare da Jan Svenson, passa a trovare Marcus Tyrex – lui è il Custode del Codice. Comanda La Vega su Hispaniola. Ha un’autorità senza limiti tra i filibustieri e perfino gli spagnoli tremano solo a sentire il suo nome.";
 			link.l1 = "Potrebbe darmi una mano con la nostra faccenda?";
 			link.l1.go = "saga_17b";
 		break;
@@ -1020,7 +1020,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_17f":
-            dialog.text = "Contento che ti sia fermato, fratello. Ti dissi una volta che esser pirata o far affari con пиратами — son due giochi ben diversi. E tu hai perso la rotta. Spero tu non commetta lo stesso errore con lo Squalo e Svenson. Porta a termine il lavoro, ma resta a distanza da loro. Sei pur sempre un nobile francese, dunque mantieni il tuo rango. Ora va’ da Jan Svenson, si trova a Blueweld. Cerca di fartelo alleato, altrimenti la nostra faccenda con Levasseur finirà in un bagno di sangue.";
+            dialog.text = "Contento che ti sia fermato, fratello. Ti dissi una volta che esser pirata o far affari con i pirati, son due giochi ben diversi. E tu hai perso la rotta. Spero tu non commetta lo stesso errore con lo Squalo e Svenson. Porta a termine il lavoro, ma resta a distanza da loro. Sei pur sempre un nobile francese, dunque mantieni il tuo rango. Ora va’ da Jan Svenson, si trova a Blueweld. Cerca di fartelo alleato, altrimenti la nostra faccenda con Levasseur finirà in un bagno di sangue.";
 			link.l1 = "Va bene. Mi metto subito in cammino.";
 			link.l1.go = "saga_17";
 			pchar.questTemp.Mtraxx = "fail_end";
@@ -1538,7 +1538,7 @@ void ProcessDialogEvent()
 		
 		case "kukulkan_win_5":
 			dialog.text = "Tu tradisci la tua gente, Urakan! Hai tremato dinnanzi a tali mutamenti grandiosi! Guerrieri, vi ordino di catturare e mettere a morte non solo quest’uomo che si spaccia per mio fratello, ma anche Urakan il traditore!";
-			link.l1 = "Guerrieri, in nome di Cavil e Hurakan vi ordino di restare fermi dove siete, se tenete alla vostra pellaccia! Nessuno di voi sopravviverebbe a схватке с Cavil! Che siano gli dèi stessi a decidere chi tra loro è il più possente su questa terra!";
+			link.l1 = "Guerrieri, in nome di Cavil e Hurakan vi ordino di restare fermi dove siete, se tenete alla vostra pellaccia! Nessuno di voi sopravviverebbe a un incontro con Cavil! Che siano gli dèi stessi a decidere chi tra loro è il più possente su questa terra!";
 			link.l1.go = "kukulkan_win_6";
 		break;
 		

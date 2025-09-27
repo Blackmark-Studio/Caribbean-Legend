@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 		case "result_grabbing":
 			// 计算从箱子里拿的钱和金币
 			iPeso = sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money);
-			iDubl = GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon);
+			iDubl = PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon);
 			if (iPeso <= 0) sPeso = "一个比索都没有";
 			else sPeso = ""+FindRussianMoneyString(iPeso)+"";
 			if (iDubl <= 0) sDubl = "一个杜布隆都没有";
@@ -242,9 +242,9 @@ void ProcessDialogEvent()
 		
 		case "grabbing_part":
 			iPeso = makeint((sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money))/2);
-			iDubl = makeint((GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
+			iDubl = makeint((PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
 			AddMoneyToCharacter(pchar, -iPeso);
-			RemoveItems(pchar, "gold_dublon", iDubl);
+			RemoveDublonsFromPCharTotal(iDubl);
 			Log_Info("你给了" + iDubl + "个杜布隆");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "好吧, 把钥匙给我, 我会在他发现之前把它还给主人。 再见, 伙计... ";

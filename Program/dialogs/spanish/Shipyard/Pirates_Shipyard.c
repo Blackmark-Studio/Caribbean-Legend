@@ -8,19 +8,6 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	ref shTo;
 	string s1;
 
-	int Matherial1;
-	int Matherial2;
-	int Matherial3;
-	int Matherial4;
-	int HPPrice;
-
-	if (sti(pchar.Ship.Type) != SHIP_NOTUSED)
-	{
-		int shipCurHP = sti(RealShips[sti(pchar.Ship.Type)].HP);
-		int shipBaseHP = sti(RealShips[sti(pchar.Ship.Type)].BaseHP);
-		int shipClass = sti(RealShips[sti(pchar.Ship.Type)].Class);
-	}
-
 	switch (Dialog.CurrentNode)
 	{
 	// -----------------------------------Диалог первый - первая встреча
@@ -101,16 +88,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "shipyard_dlg":
-		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
-		{
-			dialog.Text = "Puedo ofrecerte una reparación capital del marco de tu casco. La gente aquí no tiene ni idea de cómo construir barcos decentes, todos se deshacen con un solo disparo...";
-			Link.l1 = "¡Genial! Resulta que tengo un barco que necesita reparación. ¿Quizás puedas echar un vistazo a ver qué puedes hacer?";
-			Link.l1.go = "ship_repair_start";
-		}
-		else
-		{
-			dialog.Text = "Vamos, ¿qué quieres? No acoses a un viejo...";
-		}
+		dialog.Text = "Vamos, ¿qué quieres? No acoses a un viejo...";
 		link.l2 = "Solo quiero utilizar los servicios del astillero.";
 		link.l2.go = "shipyard";
 		link.l3 = "Necesito armas para el barco.";
@@ -120,18 +98,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l4 = "Quiero cambiar el aspecto de mis velas.";
 			link.l4.go = "SailsGerald";
 		}
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
+		if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_cabin"))
 		{
 			link.l50 = "Mi barco es bastante... especial. Me gustaría hacer algunos cambios.";
 			link.l50.go = "FDM";
 		}
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_full") && npchar.quest.FDM_full == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+		if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 		{
 			link.l50 = "Tengo más cofres para la reconstrucción de la cabina.";
 			link.l50.go = "FDM_cabin_pay";
 		}
 		// Xenon -->
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+		/*if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 		{
 			link.l50 = "Estoy aquí por la reconstrucción del barco.";
 			link.l50.go = "FDM_hull_givemoney";
@@ -142,268 +120,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l50 = "Estoy aquí por la reconstrucción del barco.";
 			link.l50.go = "FDM_hull_checkmaterials";
 		}
-		// <-- Xenon
+		// <-- Xenon*/
 		link.l9 = pcharrepphrase("Mierda, tengo un par de asuntos urgentes que atender, adiós.", "Es hora de que me vaya. Lo siento.");
 		Link.l9.go = "ship_tunning_not_now";
-		break;
-
-	case "ship_repair_again":
-		if ((shipBaseHP - shipCurHP > 0) && (shipClass < 7))
-		{
-			dialog.Text = RandPhraseSimple("Ah... tú otra vez. ¿Quieres reparar tu navío de nuevo?", RandPhraseSimple("Saludos, a un capitán famoso. ¿Qué, necesitas otra reparación capital?", "Caray... Ni un minuto de paz y tranquilidad. No dejas que un viejo se concentre... ¿Otra reparación?"));
-			Link.l1 = "Sí. Tienes razón. ¿Echaremos un vistazo a lo que podemos hacer?";
-			Link.l1.go = "ship_repair_start";
-		}
-		else
-		{
-			dialog.Text = "¿Qué ha pasado esta vez? Simplemente no quieres dejarme en paz...";
-		}
-		link.l2 = "Solo quiero utilizar los servicios del astillero.";
-		link.l2.go = "shipyard";
-		link.l3 = "Necesito armas para el barco.";
-		link.l3.go = "Cannons";
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType != SHIP_CURSED_FDM)
-		{
-			link.l31 = "Quiero cambiar el aspecto de mis velas.";
-			link.l31.go = "SailsGerald";
-		}
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
-		{
-			link.l50 = "Mi barco es bastante... especial. Me gustaría hacer algunos cambios.";
-			link.l50.go = "FDM";
-		}
-		if (RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_full") && npchar.quest.FDM_full == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
-		{
-			link.l50 = "Tengo más cofres para la reconstrucción de la cabina.";
-			link.l50.go = "FDM_cabin_pay";
-		}
-		Link.l4 = "Tengo una pregunta.";
-		Link.l4.go = "quests"; //(пересылка в файл города)
-		// -->
-		if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
-		{
-			link.l5 = "Me gustaría hablar sobre finanzas.";
-			link.l5.go = "LoanForAll"; //(пересылка в файл города)
-		}
-		Link.l9 = "No. Estoy contento con lo que tengo.";
-		Link.l9.go = "ship_tunning_not_now_2";
-		break;
-
-	case "ship_tunning_not_now_2":
-		dialog.Text = "¡Oh, veo que sigues pensando! ¡Llegarás lejos! Vuelve cuando decidas lo que quieres y no me molestes con tonterías triviales.";
-		Link.l1 = RandPhraseSimple("¡Gracias! Todo lo mejor.", "Adiós, maestro. Y menos sarcasmo.");
-		Link.l1.go = "ship_tunning_not_now";
-		break;
-
-	case "ship_repair_start":
-		if (sti(Pchar.Ship.Type) == SHIP_NOTUSED || Pchar.location.from_sea != "Pirates_town")
-		{
-			dialog.Text = "¿Dónde está el barco? ¿Qué es todo este abracadabra?!";
-			Link.l1 = "Sí, tienes razón... yo... Lo siento.";
-			Link.l1.go = "ship_tunning_not_now";
-		}
-		else
-		{
-			if (GetHour() == 13)
-			{
-				dialog.Text = "Puede que sea un adicto al trabajo, pero también tengo mi hora de almuerzo. ¡Vuelve más tarde!";
-				Link.l1 = "Bien...";
-				Link.l1.go = "ship_tunning_not_now";
-			}
-			else
-			{
-				if (makefloat(shipCurHP) / makefloat(shipBaseHP) < 0.10)
-				{
-					dialog.Text = "¡Caramba... Tu barco está completamente destrozado. No haré una reparación capital, ni me lo pidas... Si hubieras venido un poco antes...";
-					Link.l1 = "Está bien... Eso es una lástima...";
-					Link.l1.go = "ship_tunning_not_now";
-					break;
-				}
-				if (makefloat(shipCurHP) / makefloat(shipBaseHP) > 0.95)
-				{
-					dialog.Text = "¿Qué es todo este hocus pocus...? Tu barco parece como nuevo... El armazón prácticamente brilla intensamente. No hay nada que reparar aquí.";
-					Link.l1 = "Bien... Bueno, vendré más tarde...";
-					Link.l1.go = "ship_tunning_not_now";
-					break;
-				}
-				s1 = "Bien, de acuerdo... ¿Qué tenemos aquí...? Ajá, " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + ".";
-				if (sti(RealShips[sti(Pchar.Ship.Type)].Stolen) == true && !CheckAttribute(&RealShips[sti(Pchar.Ship.Type)], "Tuning"))
-				{
-					s1 = s1 + " ¡Bah! Este barco ha estado en demasiadas manos. Sí y hay un montón de rasguños. ¿Tiene patente de corsario? Sólo bromeaba... de todos modos, volviendo al asunto.";
-				}
-				dialog.Text = s1;
-				Link.l1 = "Echemos un vistazo a lo que podemos hacer.";
-				Link.l1.go = "ship_repair_HP";
-				Link.l2 = "¡Detente! He cambiado de opinión.";
-				Link.l2.go = "ship_tunning_not_now_2";
-			}
-		}
-		break;
-
-	case "ship_repair_HP":
-		HPPrice = GetMaterialQtyRepair(pchar, 0);
-		Matherial1 = GetMaterialQtyRepair(pchar, 1);
-		Matherial2 = GetMaterialQtyRepair(pchar, 2);
-		Matherial3 = GetMaterialQtyRepair(pchar, 3);
-		Matherial4 = GetMaterialQtyRepair(pchar, 4);
-
-		s1 = "Veamos lo que podemos hacer. En este momento, la estructura de la nave es " + shipCurHP + ". . El valor más alto posible es " + shipBaseHP;
-		s1 = s1 + ". Para hacer una reparación completa, necesito de sándalo:, " + Matherial1 + ", resina, " + Matherial2 + ", seda de barco, " + Matherial3 + " cuerdas, " + Matherial4 + ".";
-		s1 = s1 + " Por este trabajo cobraré: " + HPPrice + " doblones por el trabajo... Hace tiempo que mis nietos me llaman para que vuelva a Europa. No quiero volver con las manos vacías... Así que, eso será todo. Y sí, el dinero por adelantado.";
-		dialog.Text = s1;
-		Link.l1 = "Suena bien. Aceptaré las condiciones. Todo será entregado según lo acordado.";
-		if (CheckItemMyCabin("gold_dublon") >= HPPrice)
-		{
-			Link.l1.go = "ship_repair_HP_start_0";
-		}
-		else
-		{
-			Link.l1.go = "ship_repair_HP_start";
-		}
-		Link.l2 = "No. No estoy satisfecho con eso.";
-		Link.l2.go = "ship_tunning_not_now";
-		break;
-
-	case "ship_repair_HP_start_0":
-		dialog.Text = "Sí... El pago... Puedes pagar ahora mismo o puedes enviar a un chico de los recados a la nave por la cantidad necesaria... ¿Qué te gustaría hacer?";
-		link.l1 = "Pagaré ahora mismo.";
-		link.l1.go = "ship_repair_HP_start";
-		link.l2 = "Enviaré a un chico de los recados. Creo que tenía un poco de oro en mis cofres...";
-		link.l2.go = "ship_repair_HP_start_1";
-		break;
-
-	case "ship_repair_HP_start":
-		HPPrice = GetMaterialQtyRepair(pchar, 0);
-		Matherial1 = GetMaterialQtyRepair(pchar, 1);
-		Matherial2 = GetMaterialQtyRepair(pchar, 2);
-		Matherial3 = GetMaterialQtyRepair(pchar, 3);
-		Matherial4 = GetMaterialQtyRepair(pchar, 4);
-		amount = HPPrice;
-		if (GetCharacterItem(pchar, "gold_dublon") >= amount)
-		{
-			TakeNItems(pchar, "gold_dublon", -amount);
-			NPChar.Repair.Money = amount;
-			NPChar.Repair.Matherial1 = Matherial1;
-			NPChar.Repair.Matherial2 = Matherial2;
-			NPChar.Repair.Matherial3 = Matherial3;
-			NPChar.Repair.Matherial4 = Matherial4;
-			NPChar.Repair.ShipType = Pchar.Ship.Type;
-			NPChar.Repair.ShipName = RealShips[sti(Pchar.Ship.Type)].BaseName;
-			NPChar.Repair.Delta = shipBaseHP - shipCurHP;
-
-			NextDiag.TempNode = "ship_repair_HP_again";
-			dialog.text = "Espléndido. Estaré esperando los materiales.";
-			link.l1 = "Voy a reunirlos...";
-			link.l1.go = "Exit";
-
-			ReOpenQuestHeader("ShipRepair");
-			AddQuestRecord("ShipRepair", "t1");
-			AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación de capital de  " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita de sándalo, " + NPChar.Repair.Matherial1 + ", resina, " + NPChar.Repair.Matherial2 + ", seda de barco, " + NPChar.Repair.Matherial3 + " cuerdas, " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
-		}
-		else
-		{
-			NextDiag.TempNode = "ship_tunning_not_now";
-			dialog.text = RandPhraseSimple("No veo el depósito...", "¿Qué es este hocus pocus...?");
-			link.l1 = "Regresaré más tarde.";
-			link.l1.go = "Exit";
-		}
-		break;
-
-	case "ship_repair_HP_start_1":
-		HPPrice = GetMaterialQtyRepair(pchar, 0);
-		Matherial1 = GetMaterialQtyRepair(pchar, 1);
-		Matherial2 = GetMaterialQtyRepair(pchar, 2);
-		Matherial3 = GetMaterialQtyRepair(pchar, 3);
-		Matherial4 = GetMaterialQtyRepair(pchar, 4);
-		AddTimeToCurrent(0, 30);
-		amount = HPPrice;
-		GetItemMyCabin("gold_dublon", amount);
-
-		NPChar.Repair.Money = amount;
-		NPChar.Repair.Matherial1 = Matherial1;
-		NPChar.Repair.Matherial2 = Matherial2;
-		NPChar.Repair.Matherial3 = Matherial3;
-		NPChar.Repair.Matherial4 = Matherial4;
-		NPChar.Repair.ShipType = Pchar.Ship.Type;
-		NPChar.Repair.ShipName = RealShips[sti(Pchar.Ship.Type)].BaseName;
-		NPChar.Repair.Delta = shipBaseHP - shipCurHP;
-
-		NextDiag.TempNode = "ship_repair_HP_again";
-		dialog.text = "Espléndido. Estaré esperando los materiales.";
-		link.l1 = "Me voy...";
-		link.l1.go = "Exit";
-
-		ReOpenQuestHeader("ShipRepair");
-		AddQuestRecord("ShipRepair", "t1");
-		AddQuestUserData("ShipRepair", "sText", "Para las medidas de reparación del " + XI_ConvertString(RealShips[sti(Pchar.Ship.Type)].BaseName) + " el capitán del barco necesita: sándalo, " + NPChar.Repair.Matherial1 + ", resina, " + NPChar.Repair.Matherial2 + ", seda de barco, " + NPChar.Repair.Matherial3 + " cuerdas, " + NPChar.Repair.Matherial4 + ". Como depósito entregamos " + NPChar.Repair.Money + " doblones... Dice que está a punto de despegar hacia Europa. Creo que ese viejo diablo miente.");
-
-		break;
-
-	case "ship_repair_HP_again":
-		if (sti(NPChar.Repair.ShipType) == sti(Pchar.Ship.Type) && NPChar.Repair.ShipName == RealShips[sti(Pchar.Ship.Type)].BaseName)
-		{
-			NextDiag.TempNode = "ship_repair_HP_again";
-			dialog.Text = "El tiempo corre. ¿Tienes lo que pedí?";
-			Link.l1 = "Sí. Logré conseguir algo.";
-			Link.l1.go = "ship_repair_HP_again_2";
-			Link.l2 = "No. Todavía estoy en mis búsquedas.";
-			Link.l2.go = "Exit";
-		}
-		else
-		{
-			DeleteAttribute(NPChar, "Repair");
-			NextDiag.TempNode = "ship_repair_again";
-			dialog.Text = "Me parece, señor, que ha cambiado su barco desde la última vez que acordamos. Tendremos que volver a contar todo desde el principio...";
-			Link.l1 = "Sí, es cierto. Qué lástima que el depósito se haya ido...";
-			Link.l1.go = "Exit";
-			AddQuestRecord("ShipRepait", "Lose");
-			CloseQuestHeader("ShipRepair");
-		}
-		break;
-
-	case "ship_repair_HP_again_2":
-		checkMatherial_repair(Pchar, NPChar, GOOD_SANDAL, 1);
-		checkMatherial_repair(Pchar, NPChar, GOOD_OIL, 2);
-		checkMatherial_repair(Pchar, NPChar, GOOD_SHIPSILK, 3);
-		checkMatherial_repair(Pchar, NPChar, GOOD_ROPES, 4);
-		if (sti(NPChar.Repair.Matherial1) < 1 &&
-			sti(NPChar.Repair.Matherial2) < 1 &&
-			sti(NPChar.Repair.Matherial3) < 1 &&
-			sti(NPChar.Repair.Matherial4) < 1)
-		{
-			NextDiag.TempNode = "ship_repair_again";
-			dialog.text = "Todo lo que necesitaba. ¡Bien! Hora de trabajar...";
-			link.l1 = "De acuerdo, esperaré.";
-			link.l1.go = "ship_repair_HP_complite";
-		}
-		else
-		{
-			NextDiag.TempNode = "ship_repair_HP_again";
-			dialog.Text = "Ahora lo que aún te queda por traerme es: " + sti(NPChar.Repair.Matherial1) + " de sándalo, " + sti(NPChar.Repair.Matherial2) + " resina, " + NPChar.Repair.Matherial3 + " de seda de barco, " + NPChar.Repair.Matherial4 + "cuerdas.";
-			link.l1 = "Está bien.";
-			link.l1.go = "Exit";
-
-			AddQuestRecord("ShipRepair", "t1");
-			AddQuestUserData("ShipRepair", "sText", "Materials left: ironwood, " + NPChar.Repair.Matherial1 + ", resin, " + NPChar.Repair.Matherial2 + ", ship silk, " + NPChar.Repair.Matherial3 + " ropes, " + NPChar.Repair.Matherial4 + ".");
-		}
-		break;
-
-	case "ship_repair_HP_complite":
-		AddTimeToCurrent(6, 30);
-		shTo = &RealShips[sti(Pchar.Ship.Type)];
-		shTo.HP = sti(shTo.HP) + sti(NPChar.Repair.Delta);
-		DeleteAttribute(NPChar, "Repair");
-
-		pchar.ship.hp = GetCharacterShipBaseHP(pchar);
-		DeleteAttribute(pchar, "ship.hulls");
-		DeleteAttribute(pchar, "ship.blots");
-
-		NextDiag.TempNode = "node_3";
-		dialog.Text = "... Bueno, eso es todo... ¡Te garantizo que ahora será bastante difícil destrozar este barco!";
-		Link.l1 = "¡Gracias! Preferiría no experimentar, pero confiaré en ti.";
-		Link.l1.go = "Exit";
-		AddQuestRecord("ShipRepair", "End");
-		CloseQuestHeader("ShipRepair");
 		break;
 
 	///////////////////////////////  квестовые ветки
@@ -879,7 +598,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Me gusta la idea de pequeños cobardes que están cagados de miedo. Pero el interior me pone triste. ¿Has visto la cabina? Se siente como un ataúd. Todo ese moho y polvo. Quiero arreglarlo. ¿Puedes hacer eso, maestro?";
 			link.l1.go = "FDM_cabin";
 		}
-		if (!CheckAttribute(npchar, "quest.FDM_sails"))
+		/* if (!CheckAttribute(npchar, "quest.FDM_sails"))
 		{
 			link.l2 = "Estoy harto de estos harapos negros desgarrados. Lo admito, atrapan el viento tan bien como las velas normales, pero la vista... Repugnante. Quiero velas blancas como la nieve. ¿Estás de acuerdo, maestro?";
 			link.l2.go = "FDM_sails";
@@ -889,15 +608,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		{
 			link.l3 = "Bueno, creo que es hora de convertirla en algo decente. El barco es bueno, la tripulación está acostumbrada, pero simplemente no es digno de un respetable capitán navegar en una embarcación que puede hacer que los adultos se caguen de miedo, ni hablar de los niños. Quiero reconstruirla completamente para que otros capitanes la envidien cuando vean mi barco, en lugar de santiguarse. ¿Y a quién más debería acudir para esto sino al mejor constructor naval del archipiélago?";
 			link.l3.go = "FDM_hull";
-		}
+		} */
 		break;
 
 	case "FDM_cabin":
-		dialog.text = "¿Por qué no? Mis manos todavía son firmes. Tu galeón es enorme, así que incluso puedo hacer una cabina real como las que construyen en los navíos de línea y en los barcos de guerra. O podemos mantener una cabina estándar. ¿La elección es tuya?";
-		link.l1 = "¡Construyan el camarote del navío de línea! Todos morirán de envidia...";
-		link.l1.go = "FDM_cabin_m";
-		link.l2 = "De nada sirven los lujos excesivos. Mantén el estándar.";
-		link.l2.go = "FDM_cabin_s";
+		dialog.text = "¿Por qué no? Mis manos todavía son firmes.";
+		link.l1 = "...";
+		link.l1.go = "FDM_cabin_s";
+		//link.l2 = "De nada sirven los lujos excesivos. Mantén el estándar.";
+		//link.l2.go = "FDM_cabin_s";
 		break;
 
 	case "FDM_cabin_m":
@@ -909,7 +628,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 	case "FDM_cabin_s":
-		dialog.text = "Bien. Siete arcones de doblones y estará hecho en cinco días.";
+		dialog.text = "Siete arcones de doblones y estará hecho en cinco días.";
 		link.l1 = "¡Trato hecho!";
 		link.l1.go = "FDM_cabin_s1";
 		link.l2 = "Siete cofres? ¿Más de mil doblones? Hm, necesito tiempo para considerar tales gastos...";
@@ -935,7 +654,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "FDM_cabin_s1":
 		iTemp = GetCharacterItem(pchar, "Chest");
-		npchar.quest.FDM_cabin = 7;
+		npchar.quest.FDM_cabin.chest = 7;
 		npchar.quest.FDM_cabin.type = "Cabin";
 		dialog.text = "Bien, estaré esperando un pago.";
 		if (iTemp > 0)
@@ -957,23 +676,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 	case "FDM_cabin_pay":
 		iTemp = GetCharacterItem(pchar, "Chest");
-		amount = sti(npchar.quest.FDM_cabin) - iTemp;
+		amount = sti(npchar.quest.FDM_cabin.chest) - iTemp;
 		Log_Info("Has entregado los cofres al Maestro Alexus");
 		PlaySound("interface\important_item.wav");
 		if (amount <= 0) // всё принес
 		{
-			RemoveItems(pchar, "chest", sti(npchar.quest.FDM_cabin));
-			dialog.text = "Entonces, tenías que traerme " + FindRussianQtyString(sti(npchar.quest.FDM_cabin)) + " cofres, has traído " + FindRussianQtyString(iTemp) + ". Tengo el pago. Ahora es mi turno. Ve y da un paseo. No te preocupes, haré lo mejor que pueda.";
+			RemoveItems(pchar, "chest", sti(npchar.quest.FDM_cabin.chest));
+			dialog.text = "Entonces, tenías que traerme " + FindRussianQtyString(sti(npchar.quest.FDM_cabin.chest)) + " cofres, has traído " + FindRussianQtyString(iTemp) + ". Tengo el pago. Ahora es mi turno. Ve y da un paseo. No te preocupes, haré lo mejor que pueda.";
 			link.l1 = "Bueno...";
 			link.l1.go = "FDM_cabin_do";
 		}
 		else
 		{
 			RemoveItems(pchar, "chest", iTemp);
-			dialog.text = "Entonces, tenías que traerme " + FindRussianQtyString(sti(npchar.quest.FDM_cabin)) + " cofres, has traído " + FindRussianQtyString(iTemp) + ". " + FindRussianQtyString(amount) + " cofres restantes.";
+			dialog.text = "Entonces, tenías que traerme " + FindRussianQtyString(sti(npchar.quest.FDM_cabin.chest)) + " cofres, has traído " + FindRussianQtyString(iTemp) + ". " + FindRussianQtyString(amount) + " cofres restantes.";
 			link.l1 = "Muy bien, maestro.";
 			link.l1.go = "FDM_cabin_wait";
-			npchar.quest.FDM_cabin = amount;
+			npchar.quest.FDM_cabin.chest = amount;
 		}
 		break;
 
@@ -991,6 +710,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.FDM_full = "done";
 		else
 			DeleteAttribute(npchar, "quest.FDM_full");
+		npchar.quest.FDM_cabin = "done";
 		break;
 
 	case "FDM_sails":
@@ -1271,8 +991,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin_Huge";
 		SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 		SetSailsColor(pchar, 0); // White cotton sail
-		RealShips[sti(Pchar.Ship.Type)].HP = GetCharacterShipBaseHP(pchar);
-		pchar.ship.hp = GetCharacterShipBaseHP(pchar);
+		pchar.ship.hp = GetCharacterShipMaxHP(pchar);
 		DeleteAttribute(pchar, "ship.hulls");
 		DeleteAttribute(pchar, "ship.blots");
 		CloseQuestHeader("renovate_fdm");
@@ -1280,60 +999,4 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		//<-- Xenon
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
-}
-
-void checkMatherial_repair(ref Pchar, ref NPChar, int good, int goodType)
-{
-	int amount;
-	string Matherial = "Matherial" + goodType;
-	amount = GetSquadronGoods(Pchar, good) - sti(NPChar.Repair.(Matherial));
-
-	if (amount < 0)
-	{
-		amount = amount + sti(NPChar.Repair.(Matherial));
-	}
-	else
-	{
-		amount = sti(NPChar.Repair.(Matherial));
-	}
-	RemoveCharacterGoods(Pchar, good, amount);
-	NPChar.Repair.(Matherial) = sti(NPChar.Repair.(Matherial)) - amount;
-}
-
-int GetMaterialQtyRepair(ref _chr, int MaterialNum)
-{
-	if (sti(_chr.Ship.Type) == SHIP_NOTUSED)
-		return 0;
-
-	int shipCurHP = sti(RealShips[sti(_chr.Ship.Type)].HP);
-	int shipBaseHP = sti(RealShips[sti(_chr.Ship.Type)].BaseHP);
-	int shipClass = sti(RealShips[sti(_chr.Ship.Type)].Class);
-	int shipWeight = CWT2Tonnes(sti(RealShips[sti(_chr.Ship.Type)].Weight));
-	int HPPrice = shipWeight * (1.2 - makefloat(shipCurHP) / makefloat(shipBaseHP));
-	int modifier = (2 * MOD_SKILL_ENEMY_RATE) + sti(RealShips[sti(_chr.Ship.Type)].MinCrew) / 2 + 1;
-
-	float fQuest = 1.0;
-	if (CheckAttribute(&RealShips[sti(_chr.Ship.Type)], "QuestShip"))
-	{
-		fQuest = 1.3;
-		HPPrice = HPPrice * 2;
-	}
-
-	int Matherial1 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
-	int Matherial2 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
-	int Matherial3 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
-	int Matherial4 = makeint(fQuest * (10 + MOD_SKILL_ENEMY_RATE) * (7 - shipClass) / 2) + rand(modifier);
-
-	if (MaterialNum == 0)
-		return HPPrice;
-	if (MaterialNum == 1)
-		return Matherial1;
-	if (MaterialNum == 2)
-		return Matherial2;
-	if (MaterialNum == 3)
-		return Matherial3;
-	if (MaterialNum == 4)
-		return Matherial4;
-
-	return 0;
 }

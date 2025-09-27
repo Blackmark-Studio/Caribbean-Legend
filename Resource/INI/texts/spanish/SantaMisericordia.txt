@@ -1,68 +1,37 @@
-
 new_string
 {
 
 }
-
 Ship_Name {Holy Mercy}
-
 Cap_Name {Fernando}
-
 Cap_lastname {de Alamida}
-
 City_Rum1 {Toda la ciudad está en vilo: ha llegado don Fernando de Alamida, el inspector real. Sabes, he visto mucho aquí, pero esto... No es el dolor lo que cambia a la gente, sino cómo lo afrontan. Dicen que se convirtió en un hombre diferente después de la muerte de su padre. Ahora no encontrarás un sirviente de la Corona más incorruptible y... despiadado en todo el Archipiélago.}
-
 City_Rum2 {¡Sólo mira la "Santa Misericordia"! Dicen que el rey mismo la mandó construir según diseños especiales. Y fíjate: ni un solo rasguño. Como si la mismísima Virgen María lo protegiera. Aunque he oído rumores... tal vez no sea la Virgen en absoluto.}
-
 City_Rum3 {¿Sabes cuántas veces han intentado matar a don Fernando? Doce ataques en aguas abiertas, ¡y eso sólo en el último año! Bueno, con una tripulación tan leal y entrenada, y bajo la protección del Señor... ¡sobrevivirá al decimotercero también!}
-
 City_Rum4 {¿Te has enterado? Don Fernando de Alamida ha llegado a nuestra ciudad, y dicen que ahora mismo está por las calles. Me encantaría verlo con mis propios ojos...}
-
 City_Rum5 {Un hombre complicado, este don Fernando. Algunos dicen que es un salvador, limpiando la Madre Patria de mugre. Otros susurran que algo se rompió en él tras la muerte de su padre y que pronto todos lloraremos. Pero te diré esto: no le temas. Teman a quienes lo convirtieron en lo que es.}
-
 City_Rum6 {¡Qué hombre tan guapo, este don Fernando! ¿Pero sabes qué es lo extraño? Es como si no se fijara en nadie. Todo deber y servicio. Oí que había una chica... pero después de reunirse con un sacerdote, rechazó por completo los placeres mundanos. Como si hubiera hecho un voto.}
-
 City_Rum7 {¡Maldito inspector! Mientras él está aquí la ciudad está como muerta. Sin comercio, sin diversión. Incluso respirar, parece, debe ser más silencioso. ¿Y sabes lo que es más aterrador? Es lo mismo en todos los puertos. Como un reloj. ¡Su Majestad Real no pudo haber inventado deliberadamente esta tortura para todos nosotros!}
-
 City_Rum8 {Don Fernando visita de nuevo el orfanato. Dona generosamente, reza durante horas. ¡Un hombre tan digno debería servir de ejemplo a esos malditos malversadores!}
-
 City_Rum9 {¡Ha! "San" Fernando volvió a cerrar todos los burdeles. Bueno, no importa, pronto zarpará y volverán a abrir.}
-
 City_Rum10 {¡Ha llegado el insp... inspector, eso es! ¡Don Fernando de Almeyda, o como se llame, Alamida! Tan importante que el propio gobernador anda de puntillas a su alrededor. Dicen que te mira a los ojos y ve enseguida todos tus pecados. ¡Aterrador!}
-
 Pop_Name {Diego}
-
 Pop_lastname {de Landa}
-
-SM_WorldMap 
+Took_LiberMisericordiae {Recibido: Liber Misericordiae}
+SM_WorldMap
 {
-¡Todos a cubierta! ¡Se acerca la Santa Misericordia!
-Un adversario feroz. ¿Estamos realmente preparados para hacerle frente?
-¿Quizás deberíamos interceptarlo en mar abierto, lejos de las colonias?
+¡Todos a cubierta! ¡Se acerca la Santa Misericordia!Un adversario feroz. ¿Estamos realmente preparados para hacerle frente?¿Quizás deberíamos interceptarlo en mar abierto, lejos de las colonias?
 }
-
 City_Rum11 {Ha llegado a mis oídos la noticia de que el objetivo de la Santa Misericordia esta vez es el  ~}
-
 City_Rum12 {. Una vez más, todos inclinaremos la cabeza bajo el yugo del Escorial. ¿De verdad nos hemos ganado este destino?}
-
 City_Rum13 {Ha llegado un nuevo inspector a ~}
-
 City_Rum14 {~  la Santa Misericordia yace anclada. Una vez más, Alamida hace la vida imposible a la gente corriente: ¡Nada de bebidas alegres ni burdeles! ¿Qué demonio nos ha traído esto?}
-
 City_Rum15 {No se puede envidiar al gobernador de ~}
-
 City_Rum16 {~ El Señor Alamida ha atracado en el puerto y ha comenzado su inspección. La última vez, dicen, ~}
-
 City_Rum17 {~ estuvo a punto de perder su título. Oh... Rezo para que la Santa Misericordia no se aventure aquí de nuevo pronto...}
-
 City_Rum18 {¿Te has enterado de que el enviado de la corona recorre ahora personalmente el archipiélago? ¿Qué fechorías han cometido los colonos ante el Escorial? Un compañero me ha dicho que el Holy Mercy está anclado actualmente en ~}
-
 City_Rum19 {. Me pregunto si hay algo de cierto en esto.}
-
 City_Rum20 {Parece que ha caído un supervisor sobre las cabezas españolas, ¡enviado desde Europa para supervisar! Yo creía que el poder de su rey reinaba incluso en el Caribe. Debo preguntar si el gobierno en  ~}
-
 City_Rum21 {~  podría cambiar en los próximos meses, ya que el Holy Mercy está actualmente atracado allí.}
-
 City_Rum22 {Desde las colonias españolas llegan noticias curiosas. Dicen que cuando el señor Alamide llega a la ciudad, el miedo se apodera de todos y caminan de puntillas. Me gustaría saber de alguien en ~}
-
 City_Rum23 {, porque se dice que la Santa Misericordia está actualmente allí.}

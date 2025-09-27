@@ -37,13 +37,13 @@ void ProcessDialogEvent()
         case "FraOff_HireCheck":
             if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 80)
             {
-                notification("Za mało rozwinięta umiejętność (80)", SKILL_LEADERSHIP);
+                notification("Zbyt niska umiejętność (80)", SKILL_LEADERSHIP);
                 dialog.text = "Zdrajców wszędzie traktuje się tak samo. I ja nim nie będę.";
                 link.l1 = "Miałeś swoją szansę i ją zmarnowałeś. Do broni!";
                 link.l1.go = "FraOff_ExitFight";
                 break;
             }
-            notification("Test zaliczony", SKILL_LEADERSHIP);
+            notification("Sukces!", SKILL_LEADERSHIP);
             dialog.text = "Przysięgałem wierność koronie, a nie nadętym biurokratom, którzy wysyłają nas na śmierć, by ukryć własne błędy. Ale ty — jesteś wrogiem mojego króla i nie mogę tego zignorować.";
 			link.l1 = "Mógłbym odkupić swoje winy wobec twojego kraju choćby jutro — wystarczy zapłacić odpowiedniemu pośrednikowi. To więcej mówi o twoich przełożonych niż o mnie.";
 			link.l1.go = "FraOff_Sucess";
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Failed":
-            notification("Za mało rozwinięta umiejętność (50)", SKILL_LEADERSHIP);
+            notification("Zbyt niska umiejętność (50)", SKILL_LEADERSHIP);
 			dialog.text = "Wolność to nie coś, co się dostaje. To coś, co się bierze. I nie każdy, kto mówi o wyborze, potrafi go dać. Są drogi, których nie da się ominąć. Są rozkazy, których nie można zostawić niewykonanych. Moja droga jest tutaj. Mój rozkaz — to wytrwać do końca.";
 			link.l1 = "Więc wybierasz śmierć?";
 			link.l1.go = "Longway_Failed_over";
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Success":
-            notification("Test zaliczony", SKILL_LEADERSHIP);
+            notification("Sukces!", SKILL_LEADERSHIP);
 			dialog.text = "Nie jesteś jak Rodenburg. On widział we mnie narzędzie. Ty — równego sobie. Poświęcenie nie jest cnotą. Jestem gotów wysłuchać twoich warunków.";
 			link.l1 = "To proste. Bądź nawigatorem na moim okręcie flagowym. Albo, jeśli wolisz, dostaniesz własny statek i popłyniesz pod moją banderą. Nie będziesz już musiał sprzątać po Kompanii ani ukrywać ich szkieletów w szafie. Jestem wolny — a tobie proponuję tę wolność razem ze mną.";
 			link.l1.go = "Longway_Success_over";
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");

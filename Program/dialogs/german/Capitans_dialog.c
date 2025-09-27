@@ -1,6 +1,10 @@
 // разговор с капитаном на палубе  Boal
 //homo 25/06/06
 #include "DIALOGS\%language%\Rumours\Common_rumours.c"
+
+int iEncPow = -1;
+int iCapBattleDifficulty = -1; // Действует, пока не выгружен этот диалог
+
 void ProcessDialogEvent()
 {
 	ref NPChar;
@@ -104,7 +108,9 @@ void ProcessDialogEvent()
 				
 				if(CheckAttribute(NPChar, "surrendered"))
 				{
-					Pchar.GenQuest.MoneyForCaptureShip = makeint(Group_GetLiveCharactersNum( GetGroupIDFromCharacter(NPChar)))*(8 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+                    CalcBattleDifficulty();
+                    if(iEncPow == -1) iEncPow = 0;
+					Pchar.GenQuest.MoneyForCaptureShip = (70 + hrand(60, "&CapSur"+NPChar.id)) * iEncPow;
 					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
 					dialog.text = "Halt ein, du könntest mich auf diese Weise töten. Was willst du von mir?";
 					//выкуп
@@ -265,7 +271,8 @@ void ProcessDialogEvent()
 				bOk = bOk1 || bOk2;
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
                 {
-                    link.l2 = RandPhraseSimple("Hast du eine Ahnung, wer ich bin? Ich denke, es ist völlig klar, dass meine Kanonen aus deinem alten Kahn ein Sieb machen können. Lassen wir das auf friedliche Weise klären. Ein Lösegeld ist für mich eine gute Entscheidung.","Nur wir... und das Meer... Was hältst du davon, meine Männer zu besänftigen... für deine eigene Sicherheit?");
+                    iCapBattleDifficulty = CalcBattleDifficulty();
+                    link.l2 = "(Einschüchterungschance: " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Weißt du überhaupt, wer ich bin? Meine Kanonen könnten dein Kahn in ein Sieb verwandeln. Also, regeln wir das friedlich – ein Lösegeld reicht mir.", "Siehst du? Nur wir hier draußen... Wie wäre es, wenn du meinen Jungs etwas spendierst, nur zur Sicherheit deiner Leute?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -584,15 +591,17 @@ void ProcessDialogEvent()
 		break;
 		
         case "Talk_board":
-            if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
+            bOk = iCapBattleDifficulty > hrand(98);
+            //if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
+            if(!bOk && iCapBattleDifficulty <= 33)
             {
-                Dialog.text = "Ha-ha-ha! Großer Witz, ich habe mehr Schiffe. Kehre zu deinem Schiff zurück und ertrinke damit.";
-                link.l1 = "Mehr bedeutet nicht stärker, Kumpel.";
+                Dialog.text = "Ha-ha! Ein guter Witz. Zumal ich klar im Vorteil bin. Geh zurück auf dein Schiff und sink mit ihm.";
+                link.l1 = "...";
                 link.l1.go = "Boarding";
             }
             else
             {
-                if(rand(21) > (GetSummonSkillFromNameToOld(PChar, SKILL_GRAPPLING) + GetSummonSkillFromNameToOld(PChar, SKILL_LEADERSHIP)) )
+                if(!bOk)
                 {
                     Dialog.text = "Kapitän, Sie hätten Ihr schmutziges Geschäft nicht an Bord meines Schiffes machen sollen. Aber ich werde Gnade zeigen und Sie zu Ihrem Schiff zurückkehren lassen, um mit ihm zu ertrinken.";
                     link.l1 = "Wir werden sehen, wer heute zum Hai-Futter wird!";
@@ -600,7 +609,8 @@ void ProcessDialogEvent()
                 }
                 else
                 {
-                    Pchar.GenQuest.MoneyForCaptureShip = makeint(100 + (Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName))*(8 - sti(RealShips[sti(NPChar.Ship.Type)].Class))*(1+rand(10))*500);
+                    if(iEncPow == -1) iEncPow = 0;
+                    Pchar.GenQuest.MoneyForCaptureShip = (70 + hrand(60, "&CapSur"+NPChar.id)) * iEncPow;
 					if(HasShipTrait(pchar, "trait14")) Pchar.GenQuest.MoneyForCaptureShip = makeint(sti(Pchar.GenQuest.MoneyForCaptureShip) * 1.35);
                     Dialog.text = RandSwear()+"Ja, ich habe viel von deinen Empörungen gehört. So sei es, aber erinnere dich "+XI_ConvertString(NationShortName(sti(NPChar.nation))+"hunter")+" wird es nicht ungestraft lassen!";
                     link.l1 = "Ausgezeichnet. Eine Summe von "+Pchar.GenQuest.MoneyForCaptureShip+" Pesos werden mir gut passen, "+GetAddress_FormToNPC(NPChar)+".";
@@ -1683,7 +1693,7 @@ void ProcessDialogEvent()
 					case 31: sTemp = "obereg_10"; break;	
 				}
 				pchar.GenQuest.FishingBoatSTemp = sTemp;
-				dialog.text = "Es ist "+GetConvertStr("itmname_"+sTemp,"ItemsDescribe.txt")+". Hat es geschafft zu bekommen ... nun, egal woher. Dachte, es an einen Kenner zu verkaufen. Ich gebe es Ihnen für nur 10.000 Pesos! Nehmen Sie es?";
+				dialog.text = "Es ist "+GetConvertStr("itmname_"+sTemp,"ItemsBeschreiben.txt")+". Hat es geschafft zu bekommen ... nun, egal woher. Dachte, es an einen Kenner zu verkaufen. Ich gebe es Ihnen für nur 10.000 Pesos! Nehmen Sie es?";
 				if(sti(pchar.money) > 9999)
 				{
 					link.l1 = "Ich nehme es natürlich! Das Ding steht. ";
@@ -1786,4 +1796,66 @@ int findPriceStoreMan(ref NPChar)
     {
         return storeArray[rand(howStore-1)];
     }
+}
+
+int CalcBattleDifficulty()
+{
+    UpdatePlayerSquadronPower();
+
+    float encPow = 0.0;
+    float pchPow = stf(PChar.Squadron.RawPower);
+
+    string sTemp;
+    if(CheckAttribute(CharacterRef, "SeaAI.Group.Name"))
+        sTemp = CharacterRef.SeaAI.Group.Name;
+    else return 0;
+
+    int	iGroupIndex = Group_FindGroup(sTemp);
+    if (iGroupIndex < 0)
+    {
+        Log_TestInfo("НЕТ ГРУППЫ В CalcBattleDifficulty");
+        trace("НЕТ ГРУППЫ В CalcBattleDifficulty");
+        return 0;
+    }
+
+    ref rGroup = Group_GetGroupByIndex(iGroupIndex);
+    if (!CheckAttribute(rGroup, "Quest")) return 0;
+
+    aref aCompanions, aCharInfo;
+    makearef(aCompanions, rGroup.Quest);
+    int qty = GetAttributesNum(aCompanions);
+
+    ref rChar, rShip;
+    int iShipType, idx;
+    for(int i = 0; i < qty; i++)
+    {
+        aCharInfo = GetAttributeN(aCompanions, i);
+        idx = sti(aCharInfo.index);
+        if(idx == -1) continue;
+        rChar = GetCharacter(idx);
+        if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
+        iShipType = sti(rChar.Ship.Type);
+        if(iShipType == SHIP_NOTUSED) continue;
+        rShip = GetRealShip(iShipType);
+        encPow += GetRealShipPower(rChar);
+    }
+
+    iEncPow = encPow;
+
+    if(pchPow == 0.0)
+    {
+        if(encPow == 0.0) return 50;
+        return 0;
+    }
+
+    float fRatio = (encPow * 0.9) / pchPow;
+
+    if(fRatio >= 1.7) return 0; // Кирдык
+    // От 50 шанс быстро падает к 0
+    if(fRatio >= 1.0)
+    {
+        return MakeInt(100 * 0.5 * pow((1.7 - fRatio) / 0.7, 2.5));
+    }
+    // От 50 шанс медленно растёт к 100
+    return MakeInt(100 * (0.5 + 0.5 * pow((1 - fRatio), 0.5)));
 }

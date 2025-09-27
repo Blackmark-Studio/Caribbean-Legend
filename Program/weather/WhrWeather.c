@@ -12,6 +12,8 @@ int	wRain = 0;
 #include "weather\WhrAstronomy.c"
 
 #define WIND_NORMAL_POWER		20.0
+#define WIND_MAX_POWER			18.0
+#define WIND_MIN_POWER			7.0
 #define MAX_WEATHERS   			50
 
 object	Weather, WeatherParams, WhrCommonParams;
@@ -225,7 +227,8 @@ void Whr_OnWindChange()
 
 	float fSpd = fWeatherSpeed + (fWeatherSpeed / 8.0) * 0.1 * (sin(fWeatherDelta) + sin(0.2 * fWeatherDelta) + sin(PI + 0.8 * fWeatherDelta) + cos(1.5 * fWeatherDelta));
 	float fAng = fWeatherAngle + 0.02 * (sin(fWeatherDelta) + sin(0.2 * fWeatherDelta) + sin(PI + 0.8 * fWeatherDelta) + cos(1.5 * fWeatherDelta));
-
+	
+	if(fSpd < WIND_MIN_POWER) fSpd = WIND_MIN_POWER);
 	Weather.Wind.Angle = fAng;
 	Weather.Wind.Speed = fSpd;
 }
@@ -603,7 +606,7 @@ float Whr_GetWindAngle()
 
 float Whr_GetWindSpeed()
 {
-	if (!CheckAttribute(&Weather,"Wind.Speed")) { return 3.0; }
+	if (!CheckAttribute(&Weather,"Wind.Speed")) { return WIND_MIN_POWER; }
 	return stf(Weather.Wind.Speed);
 }
 
@@ -777,7 +780,7 @@ void Whr_WindChange()
 			if(wRain == 2) fRainSpeed = frand(2.0) + 2.0;
 		}
 		if(Whr_CheckStorm()) Weather.Wind.Speed = fCurSpeed; // в шторм не меняем ветер
-		else Weather.Wind.Speed = fClamp(3.0, 18.0, fCurSpeed + fSpeedChange + fRainSpeed);
+		else Weather.Wind.Speed = fClamp(WIND_MIN_POWER, WIND_MAX_POWER, fCurSpeed + fSpeedChange + fRainSpeed);
 	}
 	else
 	{
@@ -856,7 +859,7 @@ float Whr_SetWindSpeed()
 		speed = stf(pchar.quest.weather.windSpeed); 
 		DeleteAttribute(pchar, "quest.weather.windSpeed");
 	}
-	Weather.Wind.Speed = wRangeFloat(speed, 3.9, 19.9);
+	Weather.Wind.Speed = wRangeFloat(speed, WIND_MIN_POWER, WIND_NORMAL_POWER);
 	return stf(Weather.Wind.Speed);
 }
 
@@ -1029,7 +1032,8 @@ void Whr_TimeUpdate()
 		if(CheckAttribute(&WeatherParams,"Rain.Type"))
 		{	
 			if(sti(WeatherParams.Rain.Type) == 0)	Whr_SetRainExt1(iCurWeatherNum, iBlendWeatherNum, bRain);
-			else									Whr_SetRainExt2(iCurWeatherNum, iBlendWeatherNum, bRain);			
+			if(sti(WeatherParams.Rain.Type) == 1)	Whr_SetRainExt2(iCurWeatherNum, iBlendWeatherNum, bRain);
+			if(sti(WeatherParams.Rain.Type) == 2)	Whr_SetRainExt3(iCurWeatherNum, iBlendWeatherNum, bRain);
 		}
 		else
 		{		
@@ -1527,6 +1531,7 @@ bool Whr_CheckInsideLoc() // фильтр внутренних локаций б
 				|| loc.type == "LSC_inside"
 				|| loc.type == "fort_attack"
                 || loc.type == "boarding_cabine"
+                || loc.type == "quest_deck"
 				|| loc.type == "ammo"
 				|| loc.type == "europe"
 				|| loc.type == "teno_inside"
@@ -1613,4 +1618,65 @@ bool Whr_CheckNewBoardingDeck()
 		}
 	}
 	return false;
+}
+
+void CreateSky(int SkyOption)
+{
+	WeatherParams.weather_sky = SkyOption;
+	Whr_UpdateWeather();
+}
+
+void CreateRain(int DurationTime, bool WhrLight, bool WhrRainbow)
+{
+	if (WhrLight == true) WeatherParams.Rain.WhrLight = true;
+	if (WhrRainbow == true) WeatherParams.Rain.WhrRainbow = true;
+	
+	WeatherParams.Rain.ThisDay 		= true;
+	WeatherParams.Rain.StartTime = stf(Environment.time);
+	WeatherParams.Rain.Duration  = DurationTime;
+	WeatherParams.Rain.sDay			= rand(8);
+	WeatherParams.Rain.sMorning		= rand(5);
+	WeatherParams.Rain.sEvening		= rand(7);
+	WeatherParams.Rain.sNight		= rand(6);
+	WeatherParams.Rain.sTwilight 	= sti(WeatherParams.Rain.sNight);
+	WeatherParams.Rain.Type			= 2;
+	WeatherParams.Rain.year 		= GetDataYear();
+	WeatherParams.Rain.month 		= GetDataMonth();
+	WeatherParams.Rain.day 			= GetDataDay();
+	WeatherParams.Rain.time 		= stf(WeatherParams.Rain.StartTime);
+	Whr_UpdateWeather();
+}
+
+void CreateRainSky(int RainSkyOption)
+{
+	WeatherParams.Rain.sDay			= RainSkyOption;
+	WeatherParams.Rain.sMorning		= RainSkyOption;
+	WeatherParams.Rain.sEvening		= RainSkyOption;
+	WeatherParams.Rain.sNight		= RainSkyOption;
+	Whr_UpdateWeather();
+}
+
+void CreateWind(int WindSide, int WindSpeed)
+{
+	pchar.wind.angle = WindSide;
+	fWeatherAngle = stf(WindSide);
+	pchar.wind.speed = WindSpeed;
+	fWeatherSpeed = stf(WindSpeed);
+	Whr_UpdateWeather();
+}
+
+void CreateFogMorning()
+{
+	WeatherParams.Fog 			= true;
+	WeatherParams.Fog.ThisDay 	= true;
+	WeatherParams.Fog.Type		= 0;
+	Whr_UpdateWeather();
+}
+
+void CreateFogEvening()
+{
+	WeatherParams.Fog 			= true;
+	WeatherParams.Fog.ThisDay 	= true;
+	WeatherParams.Fog.Type		= 1;
+	Whr_UpdateWeather();
 }

@@ -90,7 +90,6 @@ void UpgradeShipZPQ(ref chr)
 		DeleteAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity");
 	}
 	RealShips[sti(sld.Ship.Type)].Capacity = 950;
-	RealShips[sti(sld.Ship.Type)].BaseHP = RealShips[sti(sld.Ship.Type)].HP;
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "HP");
 	UpgradeShipParameter(sld, "MaxCrew");

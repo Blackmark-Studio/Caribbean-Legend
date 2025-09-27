@@ -366,35 +366,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "A któż to taki, którego Dichoso za ciebie wytropił, że teraz go szukasz, co, kamracie? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "To kogo załatwił Dichoso, że ruszyłeś jego tropem, co, koleżko?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Papieża";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "Co masz na myśli? Którego dokładnie Sharp'a zabił? Wiesz, jest ich sporo.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Ciii... (rozgląda się) Czyli też uważasz, że to Dichoso zabił Blaze’a Sharpa?";
+			link.l1 = "Tak. I to nie tylko podejrzenia — mam dowody. Zapisy w dzienniku pokładowym...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Żarty sobie stroisz? Zero szacunku! No dalej, podejdź bliżej...";
+			link.l1 = "Nie ma mowy.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "S-s-s...(rozglądając się) Więc ty też myślisz, że Blaze Sharp został zabity przez Dichoso?";
-				link.l1 = "Tak. Mam nie tylko swoje podejrzenia, ale i solidne dowody. Wpisy w jego dzienniku pokładowym...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Mów dalej, mały Żeglarzu...";
-				link.l1 = "Co masz na myśli? Opowiedz mi więcej.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "Ah...Cóż. Zabił go i tyle w temacie. Wiesz, ilu morderców tutaj się kręci? Co drugi człowiek! Nie, Żeglarzu. Nie widziałem Dichoso od dłuższego czasu. Nie mogę ci w niczym pomóc.";
 			link.l1 = "Szkoda...";
 			link.l1.go = "exit";

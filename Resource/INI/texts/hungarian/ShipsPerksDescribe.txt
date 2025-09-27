@@ -1,0 +1,110 @@
+new_string
+{
+
+}
+special0 {Kereskedô}
+special0_desc {Egy kereskedelmi hajó általában feláldozza a kalibert, a sebességet és az ágyúk számát a nagy raktér javára. Csak egy nagyon képzett kapitány engedheti meg magának, hogy egy ilyen hajóval egyedül induljon útnak.}
+special0_desc2 {Flotta teljesítménybónusz: alacsony}
+special1 {Harcos}
+special1_desc {A hadihajókat kifejezetten tengeri csatákra tervezték. Ezek rendelkeznek a legerôsebb hajótesttel és a legnagyobb kaliberû ágyúkkal, de ez a tûzerô korlátozza a sebességi jellemzôket.}
+special1_desc2 {Flottaerô bónusz: nagyon magas.}
+special2 {Raider}
+special2_desc {A Raider hajók ideálisak portyázásra és kalózkodásra - fürgék, manôverezôképesek és jól felfegyverzettek, félelmetes erôt képviselnek, de ezt kis raktérrel és szerény hajótest-erôsséggel fizetik meg.}
+special2_desc2 {Flottaerô bónusz: magas.}
+special3 {Többcélú}
+special3_desc {A többcélú hajók azoknak a kapitányoknak a választása, akik egyszerre akarnak mindent csinálni. Egyformán alkalmasak kereskedelemre, kalózkodásra és háborúra, de ez a rugalmasság viszonylag rosszabbá teszi ôket, mint bármelyik specializált hajó. Legalábbis addig, amíg ezek a hajók nem kerülnek egy ügyes hajóépítô kezébe.}
+special3_desc2
+{
+Flotta teljesítménybónusz: közepesBónusz a statisztikák javításához: 15%
+}
+trait01 {Jelenlegi térkép}
+trait01_desc {Az európai mesteremberek által megrendelésre készített bonyolult navigációs eszközök és a szigetvilág víz alatti áramlatainak pontos térképe lehetôvé teszi, hogy jelentôs utazási idôt takaríts meg.}
+trait01_desc2
+{
+5%-kal növeli a vitorlázás sebességét a globális térképen.Minden más bónusszal halmozódik.
+}
+trait02 {Minôségi csomagolás}
+trait02_desc {A raktér alapos felújítása, a válaszfalak vastagsága és a rakománytároló rendszer szabványosítása lehetôvé teszi, hogy több rakományt szállíts, és hatékonyabban oszd el a hajón anélkül, hogy egyensúlytalanságot okozna.}
+trait02_desc2 {Csökkenti a raktérterhelésbôl eredô sebességhátrányt: 15%.}
+trait03 {A minôség jele}
+trait03_desc {A glifák, pecsétek és szabadalmak sorozata felismerhetôvé teszi ennek a hajónak a rakományát, a kikötôbe való érkezése pedig jó jel a helyi kereskedôk számára. A sikeres kereskedelmi ügyletek javítják a kikötô népével való kapcsolatokat, a jó kapcsolatok pedig jövedelmezôbbé teszik a kereskedelmet.}
+trait03_desc2
+{
+Csökkenti az értékesítési büntetést: 3% kapcsolati szintenként.A nemzethez fûzôdô kapcsolatok növeléséhez szükséges nyereségküszöb: 25000.
+}
+trait04 {Vészhelyzeti Studding vitorlák}
+trait04_desc {A hajót fenyegetô kritikus veszély esetén a matrózok speciális, gyorsan összeszerelhetô szegecselô vitorlákat állítanak fel a yardokon, és felhúzzák ôket, ezzel ideiglenesen megnövelve a hajó sebességét.}
+trait04_desc2
+{
+A hajótest erôsségének küszöbértéke az aktiváláshoz: 40%.Sebességnövekedés: 20%.Hatás késleltetése a küszöbérték feletti javításnál: 20 másodperc.
+}
+trait05 {Hamis dokumentumok}
+trait05_desc {A szabadalmak, dokumentumok és névtáblák lenyûgözô készlete lehetôvé teszi, hogy ez a hajó szinte bármilyen kikötôbe inkognitóban lépjen be, és a feltûnésmentes hajótest csökkenti annak kockázatát, hogy csempészügyletek során járôrökkel találkozzon.}
+trait05_desc2
+{
+Növeli a megtévesztés esélyét: 15%.Csökkenti az ôrjárattal való találkozás esélyét: 50%.
+}
+trait11 {Forgatható kocsik}
+trait11_desc {Az ágyúnyílásokat és a kocsikat speciálisan átépítették, növelve az ágyúk tüzelôszektorát.}
+trait11_desc2 {Növeli a tüzelôszektort: 7 fokkal.}
+trait12 {Továbbfejlesztett visszahúzó rendszer}
+trait12_desc {A blokkok és kompenzátorok továbbfejlesztett rendszere lehetôvé teszi a gyors tüzelést ugyanabból a széles oldalról, a visszarúgás tehetetlenségét kihasználva az újratöltés és a célzás felgyorsítására.}
+trait12_desc2
+{
+Növeli a sebzést és az újratöltési sebességet: 6% salvónként.Maximális bónusz: 35%.A bónusz eltûnik, ha bármelyik másik oldalról tüzelsz.
+}
+trait13 {Gyors leszállás}
+trait13_desc {A hajó tervezési jellemzôi és csörlôrendszere lehetôvé teszi a csapatok menet közbeni leszállását, így a támadás sokkal hamarabb megkezdhetô a legénység veszélyeztetése nélkül.}
+trait13_desc2 {Csökkenti a megsemmisített ágyúk küszöbét az erôdök megtámadásához: 15%.}
+trait14 {Háborús festék}
+trait14_desc {A sikeres rajtaütések fényes nyomai a hajótesten és a megfelelô embereknek való rendszeres megvesztegetés sokkal könnyebbé teszi a zsarolást, így a hajó félelmetes legendává válik. A kormányzók hajlandóbbak pénzt és javakat megosztani, a nemzetek pedig magasabb váltságdíjat szabnak ki a kapitányokért.}
+trait14_desc2
+{
+Váltságdíjérték-bónusz: 35%.Raktárérték-bónusz a gyarmatrablások során: 15%.
+}
+trait21 {Ütés és menekülés}
+trait21_desc {Az eltolt súlypont, az éles törzsvonalak és az ágyúnyílások különleges átrendezése növeli a hajó hullámtörô képességét és stabilitását az ágyúvisszarúgás során, emelve a megengedett sebességhatárokat csata közben.}
+trait21_desc2
+{
+A hajó sebességének bónusza egy töltetlen szélsô lövedékhez: 5%.A bónusz fokozatosan csökken töltéskor.
+}
+trait22 {Fosztogatás}
+trait22_desc {A hajó speciális szabályok szerint mûködik a behajózott hajókról való anyagkivonás során. Egy hajó elsüllyesztése a deszkázással helyreállítja a hajótest és a vitorla erejét. A helyreállított mennyiség az anyagok mennyiségétôl és minôségétôl, a sérülés mértékétôl és az osztálykülönbségtôl függ.}
+trait22_desc2
+{
+A hajótest helyreállítása: 5-15%.Vitorla felújítás: (Vitorlák nem kerülnek helyreállításra ).
+}
+trait23 {A gyors és a halott}
+trait23_desc {A legénységnek a nyomok eltüntetésére és a lopakodásra vonatkozó képzésen kell részt vennie. Csökkenti a kalózkodás hatását a nemzetekkel való kapcsolatokra, és a hírnév visszaszerzése hatékonyabbá válik.}
+trait23_desc2
+{
+Csökkenti a kapcsolatokra vonatkozó büntetéseket: 50%.Növeli az ügyvédek hatékonyságát: 50%.
+}
+trait24 {Brandskugel}
+trait24_desc
+{
+Az üldözési és visszavonulási ágyúk speciálisan edzettek, hogy ellenálljanak a magas hômérsékletnek, és a nyílásaikat speciális vegyülettel kezelik a tüzek ellen.Ez lehetôvé teszi a gyújtókeverékek használatát bármilyen univerzális lôszerrel, idôszakos károkat okozva az ellenséges hajóknak.
+}
+trait24_desc2
+{
+További károkat okoz a hajótestben és a vitorlákban: 200%.Hatás idôtartama: 15 másodperc.Megnöveli a tûz esélyét: 200%
+}
+sp1 {Zealot}
+sp1_desc {Egy felszerelt fedélzeti kápolna Szûz Mária ikonjaival együtt titokzatos módon növeli a templomi amulettek hatását és idôtartamát.}
+sp1_desc2
+{
+Minden amulett fokozása: egyedi.Idôtartam-növelés: 15 nap.
+}
+sp2 {Üdvözöljük a vendéget}
+sp2_desc {Ezt a legendás hajót a karibi szigetvilág minden szegletében ismerik, és mindenütt tisztelettel és csodálattal fogadják. A Lady Beth tartózkodási helye azonnal ismertté válik a térképárusok körében, és a helyi kereskedôk igyekeznek minden lehetséges tôkét összegyûjteni, hogy értéktárgyakat vásárolhassanak.}
+sp2_desc2
+{
+Bónusz a térképkereskedôk megjelenésének esélye: 5-12%.Pesótartalék növekedése: 100%.Doubloon tartalék növelése: ~30%.
+}
+sp3 {Tégely}
+sp3_desc {Ezen a hajón az emberi életet csak egy rövid szakasznak tekintik, mielôtt az igazi hatalom megmutatkozna. Csak kevesen lépik át a Fátylat és térnek vissza, de akik mégis, azok már nem félnek a haláltól.}
+sp3_desc2 {Az elesett matrózok növelik a legénység tapasztalatát és morálját.}
+sp3_SailorsBoardingBonus_desc {Bónusz a fedélzeti tapasztalatért: #dSailorsBoardingBonus#%}
+sp3_SailorsBoardingBonus1_desc {~ (#dDeadSailors#/500 elesett tengerészek)}
+sp3_SurrenderChanceBonus_desc {A megadás esélyének növekedése: #dSurrenderChanceBonus#%}
+sp3_SurrenderChanceBonus1_desc {~ (#dDeadSailors#/2000 elesett tengerészek)}

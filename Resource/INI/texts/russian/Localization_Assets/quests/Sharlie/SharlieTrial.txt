@@ -1,252 +1,54 @@
-SharlieTrial_1
-{
-Срок вашего займа у аббата Бенуа истек!
-}
-
-SharlieTrial_2
-{
-Гийом
-}
-SharlieTrial_3
-{
-Лавуа
-}
-
-SharlieTrial_4
-{
-Лодка
-}
-
-SharlieTrial_5
-{
-Ваш баркас готов! Отправляйтесь на пирс и выходите в море!
-}
-
-SharlieTrial_6
-{
-Призрак
-}
-
-SharlieTrial_7
-{
-Цель вашего задания на другой стороне острова. Выходите из бухты направо и держитесь берега!
-}
-
-SharlieTrial_8
-{
-Управление в море можно посмотреть в настройках.
-}
-
-SharlieTrial_9
-{
-Вы опоздали прибыть на встречу!
-}
-
-SharlieTrial_10
-{
-Прошёл час@<NewStr()>Ром погружен на ваш баркас
-}
-
-SharlieTrial_11
-{
-Используйте меню действий для выхода в море (enter).
-}
-SharlieTrial_12
-{
-Вам нужно сгрузить ром в посёлке Ле Франсуа. Продолжайте обплывать остров.
-}
-
-SharlieTrial_13
-{
-Люсиль
-}
-SharlieTrial_14
-{
-Монтань
-}
-
-SharlieTrial_15
-{
-Скоро бой! Сохранитесь!
-}
-
-SharlieTrial_16
-{
-Рядом кого-то убили! Вы можете обыскивать убитых персонажей через меню действий (ENTER) или назначенную горячую клавишу.
-}
-
-SharlieTrial_17
-{
-Проспер
-}
-SharlieTrial_18
-{
-Трубаль
-}
-
-SharlieTrial_19
-{
-Селина
-}
-SharlieTrial_20
-{
-Трубаль
-}
-
-SharlieTrial_21
-{
-Жильберт
-}
-SharlieTrial_22
-{
-Курси
-}
-
-SharlieTrial_23
-{
-Уолтер
-}
-SharlieTrial_24
-{
-Катчер
-}
-
-SharlieTrial_25
-{
-Потопите противника бомбами, или сходу возьмите его на абордаж если ветер позволяет.
-}
-
-SharlieTrial_26
-{
-Отлично! Теперь вы можете выйти на глобальную карту через меню действий и отправиться на север, на Гваделупу!
-}
-
-SharlieTrial_27
-{
-Тичингиту
-}
-SharlieTrial_28
-{
-
-}
-
-SharlieTrial_29
-{
-Алонсо
-}
-SharlieTrial_30
-{
-
-}
-
-SharlieTrial_31
-{
-Жерар
-}
-SharlieTrial_32
-{
-Лекруа
-}
-
-SharlieTrial_33
-{
-Воинственный
-}
-
-SharlieTrial_34
-{
-Флориан
-}
-SharlieTrial_35
-{
-Шоке
-}
-
-SharlieTrial_36
-{
-Прошло три часа...@<NewStr()>Орудия перегружены на фрегат
-}
-
-SharlieTrial_37
-{
-Артуро
-}
-SharlieTrial_38
-{
-Каскос
-}
-
-SharlieTrial_39
-{
-Пуэбла
-}
-SharlieTrial_40
-{
-'Пуэбла'
-}
-
-SharlieTrial_41
-{
-Жерар
-}
-SharlieTrial_42
-{
-Артуа
-}
-
-SharlieTrial_43
-{
-Грегуар
-}
-SharlieTrial_44
-{
-Валинье
-}
-
-SharlieTrial_45
-{
-Нажмите F3 для доступа к окну персонажа и журналу заданий.
-}
-
-SharlieTrial_46
-{
-Теперь вы остались один в этом жестоком мире.
-}
-
-SharlieTrial_47
-{
-Тичингиту передумал.
-}
-
-SharlieTrial_48
-{
-Шарль
-}
-SharlieTrial_49
-{
-Барбье
-}
-
-SharlieTrial_50
-{
-Генрих
-}
-
-SharlieTrial_51
-{
-барк 'Генрих'
-}
-
-SharlieTrial_52
-{
-Не забудьте обыскать убитых и собрать трофеи!
-}
-
-SharlieTrial_53
-{
-Гийом
-}
-SharlieTrial_54
-{
-Дюбуа
-}
+SharlieTrial_1 {Срок вашего займа у аббата Бенуа истек!}
+SharlieTrial_2 {Гийом}
+SharlieTrial_3 {Лавуа}
+SharlieTrial_4 {Лодка}
+SharlieTrial_5 {Ваш баркас готов! Отправляйтесь на пирс и выходите в море!}
+SharlieTrial_6 {Призрак}
+SharlieTrial_7 {Цель вашего задания на другой стороне острова. Выходите из бухты направо и держитесь берега!}
+SharlieTrial_8 {Управление в море можно посмотреть в настройках.}
+SharlieTrial_9 {Вы опоздали прибыть на встречу!}
+SharlieTrial_10 {Прошёл час@<NewStr()>Ром погружен на ваш баркас}
+SharlieTrial_11 {Используйте меню действий для выхода в море (enter).}
+SharlieTrial_12 {Вам нужно сгрузить ром в посёлке Ле Франсуа. Продолжайте обплывать остров.}
+SharlieTrial_13 {Люсиль}
+SharlieTrial_14 {Монтань}
+SharlieTrial_15 {Скоро бой! Сохранитесь!}
+SharlieTrial_16 {Рядом кого-то убили! Вы можете обыскивать убитых персонажей через меню действий (ENTER) или назначенную горячую клавишу.}
+SharlieTrial_17 {Проспер}
+SharlieTrial_18 {Трубаль}
+SharlieTrial_19 {Селина}
+SharlieTrial_20 {Трубаль}
+SharlieTrial_21 {Жильберт}
+SharlieTrial_22 {Курси}
+SharlieTrial_23 {Уолтер}
+SharlieTrial_24 {Катчер}
+SharlieTrial_25 {Потопите противника бомбами, или сходу возьмите его на абордаж если ветер позволяет.}
+SharlieTrial_26 {Отлично! Теперь вы можете выйти на глобальную карту через меню действий и отправиться на север, на Гваделупу!}
+SharlieTrial_27 {Тичингиту}
+SharlieTrial_28 { }
+SharlieTrial_29 {Алонсо}
+SharlieTrial_30 { }
+SharlieTrial_31 {Жерар}
+SharlieTrial_32 {Лекруа}
+SharlieTrial_33 {Воинственный}
+SharlieTrial_34 {Флориан}
+SharlieTrial_35 {Шоке}
+SharlieTrial_36 {Прошло три часа...@<NewStr()>Орудия перегружены на фрегат}
+SharlieTrial_37 {Артуро}
+SharlieTrial_38 {Каскос}
+SharlieTrial_39 {Пуэбла}
+SharlieTrial_40 {'Пуэбла'}
+SharlieTrial_41 {Жерар}
+SharlieTrial_42 {Артуа}
+SharlieTrial_43 {Грегуар}
+SharlieTrial_44 {Валинье}
+SharlieTrial_45 {Нажмите F3 для доступа к окну персонажа и журналу заданий.}
+SharlieTrial_46 {Теперь вы остались один в этом жестоком мире.}
+SharlieTrial_47 {Тичингиту передумал.}
+SharlieTrial_48 {Шарль}
+SharlieTrial_49 {Барбье}
+SharlieTrial_50 {Генрих}
+SharlieTrial_51 {барк 'Генрих'}
+SharlieTrial_52 {Не забудьте обыскать убитых и собрать трофеи!}
+SharlieTrial_53 {Гийом}
+SharlieTrial_54 {Дюбуа}

@@ -1,0 +1,269 @@
+itm_stat_weight {Waga}
+itm_stat_descr_weight {Ile funtów waży ten przedmiot. Przedmioty zbyt ciężkie można wyrzucić.}
+itm_stat_rat_poison {Trutka na szczury}
+itm_stat_descr_rat_poison {Zapobiega psuciu towarów przez szczury.}
+itm_stat_clock2 {Przydatne narzędzie}
+itm_stat_descr_clock2 {Przyspiesza wzrost umiejętności Nawigacji, gdy jest wyposażony.}
+itm_stat_duration {Czas trwania}
+itm_stat_descr_duration {Czas trwania efektu tego przedmiotu.}
+itm_stat_damageReduction {Redukcja obrażeń}
+itm_stat_descr_damageReduction {Ten procent jest odejmowany od otrzymanych obrażeń przed wszystkimi innymi obliczeniami.}
+itm_stat_attack {Obrażenia}
+itm_stat_descr_attack
+{
+Atak zwykły: #sattack.force.min#–#sattack.force.max# obrażeń
+Atak szybki: #sattack.fast.min#–#sattack.fast.max# obrażeń
+Atak grupowy: #sattack.round.min#–#sattack.round.max# obrażeń
+Atak ciężki: #sattack.break.min#–#sattack.break.max# obrażeń
+}
+itm_stat_healAmount {Leczenie}
+itm_stat_descr_healAmount {Ilość Życia przywracana po użyciu.}
+itm_stat_worldMapBonus {Promień obserwacji}
+itm_stat_descr_worldMapBonus {Procentowy bonus do zasięgu wykrywania flot na mapie świata.}
+itm_stat_radius {Zasięg żeglugi}
+itm_stat_descr_radius {Liczba jardów, o którą zwiększa się zasięg szybkiej podróży między statkami a zatokami.}
+itm_stat_mainEffect {Główny}
+itm_stat_secondaryEffect {Poboczny}
+itm_stat_hat9 {Co martwe}
+itm_stat_descr_hat9 {Zmniejsza karę za uszkodzenia statku na siłę o 30%}
+itm_stat_secondary_hat9 {Nie może umrzeć}
+itm_stat_descr_secondary_hat9 {Pozwala uniknąć obrażeń od strzału w 10% przypadków}
+itm_stat_durability {Wytrzymałość}
+itm_stat_hat1 {Ciągła praktyka}
+itm_stat_descr_hat1 {Zwiększa zdobywanie doświadczenia z Bronią Lekką, Wyważoną i Ciężką o 10%}
+itm_stat_hat2 {Seryjny zabójca}
+itm_stat_descr_hat2 {Zabicie wroga bronią białą przywraca 25% energii.}
+itm_stat_hat3 {Podstawy żeglarstwa}
+itm_stat_descr_hat3 {Zwiększa zdobywanie doświadczenia w Nawigacji, Celności i Naprawach o 10%.}
+itm_stat_hat4 {Życie na morzu}
+itm_stat_descr_hat4 {Zwiększa zdobywanie doświadczenia we wszystkich umiejętnościach morskich o 15%}
+itm_stat_hat5 {Mentor}
+itm_stat_descr_hat5 {Dzieli się twoimi umiejętnościami morskimi ze wszystkimi kapitanami w flocie, obniżając żołd załogi i oficerów na wszystkich okrętach poza okrętem flagowym o 15%.}
+itm_stat_hat6 {Zmysł zysku}
+itm_stat_descr_hat6 {Raz na 3 dni automatycznie zawierasz drobną transakcję handlową po wejściu do portu.}
+itm_stat_hat7 {Zabłąkana kula}
+itm_stat_descr_hat7 {10% szans na niezużycie amunicji przy strzale}
+itm_stat_hat8 {Podchmielony}
+itm_stat_descr_hat8 {Rum i wino przywracają o 50% więcej zdrowia}
+itm_stat_hat10 {Żołnierski spryt}
+itm_stat_descr_hat10 {Za każdym razem, gdy ten kapelusz blokuje obrażenia, traci jeden punkt wytrzymałości.}
+itm_stat_secondary_hat10 {Recykling}
+itm_stat_descr_secondary_hat10 {Po zniszczeniu przedmiot zwraca swój podstawowy składnik, co pozwala na jego ponowne stworzenie.}
+itm_stat_hat11 {Uścisk}
+itm_stat_descr_hat11
+{
+Wytrzymałość +2
+Zabicie wroga bronią białą przywraca 25% energii.
+}
+itm_stat_potion6 {Wytrzymałość}
+itm_stat_descr_potion6 {Wypicie tej mikstury chroni przed ogłuszeniem w walce.}
+itm_stat_berserker_potion {Pierwotna furia}
+itm_stat_descr_berserker_potion
+{
+Powoduje natychmiastowy przypływ ogromnej siły i wytrzymałości, znacznie zwiększa zręczność i szybkość reakcji, tłumi ból i podnosi agresję.
+Działa maksymalnie dwanaście sekund i może być użyte tylko raz na minutę.
+}
+itm_stat_mangarosafast {Trąba}
+itm_stat_descr_mangarosafast {Użycie tej mikstury zwiększa szybkość ataku dowolną bronią o 5%.}
+itm_stat_mangarosapower {Sokoli wzrok}
+itm_stat_descr_mangarosapower {Wypicie tej mikstury przyspiesza ładowanie dział.}
+itm_stat_mangarosatotal {Wywyższenie}
+itm_stat_descr_mangarosatotal {Użycie tej mikstury zwiększa Siłę Floty o 15%.}
+itm_stat_vodka {Bijatyka wręcz}
+itm_stat_descr_vodka {Zwiększa obrażenia w walce wręcz zadawane bronią palną o 20%, a bagnetami o dodatkowe 20%. Ataki bronią palną wyczerpują wytrzymałość wroga. Skraca czas ogłuszenia.}
+itm_stat_amulet_1 {Chityna}
+itm_stat_descr_amulet_1 {Tkanina i skóra chronią dwa razy lepiej, a Wzmocniona zbroja dodatkowo zmniejsza obrażenia krytyczne od wroga o 10%.}
+itm_stat_amulet_10 {Druga szansa}
+itm_stat_descr_amulet_10 {Zmniejsza obrażenia załogi od wrogich armat o 10%.}
+itm_stat_amulet_11 {Plemienna ochrona}
+itm_stat_descr_amulet_11 {Zmniejsza obrażenia załogi od salwy muszkietowej o 10%.}
+itm_stat_amulet_2 {Kryjówka}
+itm_stat_descr_amulet_2 {Każdy aktywny chrześcijański amulet i artefakt, w tym ten, zmniejsza otrzymywane obrażenia od broni palnej o 5%.}
+itm_stat_amulet_3 {Obrona}
+itm_stat_descr_amulet_3 {Zwiększa obronę przed obrażeniami krytycznymi o 15%.}
+itm_stat_amulet_4 {Taniec śmierci}
+itm_stat_descr_amulet_4 {Każdy pogański amulet i talizman, w tym ten, zwiększa szybkość ataku bronią o 2,5%.}
+itm_stat_amulet_5 {Pośpiech}
+itm_stat_descr_amulet_5 {Skraca czas przeładowania dział okrętowych o 15%.}
+itm_stat_amulet_6 {Nakładanie rąk}
+itm_stat_descr_amulet_6 {Przyspiesza leczenie o 15%.}
+itm_stat_amulet_7 {Ruchliwy}
+itm_stat_descr_amulet_7 {Zwiększa zdrowie o 15% i podwaja jego pasywną regenerację.}
+itm_stat_amulet_8 {Umocnienie}
+itm_stat_descr_amulet_8 {Zmniejsza uszkodzenia kadłuba o 10%.}
+itm_stat_amulet_9 {Łata}
+itm_stat_descr_amulet_9 {Zmniejsza obrażenia zadawane żaglom statku o 10%.}
+itm_stat_indian_1 {Podatność}
+itm_stat_descr_indian_1 {Zwiększa obrażenia od strzałów w głowę o 20%.}
+itm_stat_indian_10 {Trucizna}
+itm_stat_descr_indian_10 {Każde cięcie ma 15% szans na zatrucie wroga.}
+itm_stat_indian_11 {Dym i iluzje}
+itm_stat_descr_indian_11 {Każdy Wyszukany przedmiot zwiększa szansę na Oszustwo o 5%.}
+itm_stat_indian_2 {Sprawdź}
+itm_stat_descr_indian_2 {Umiejętność precyzyjnego odmierzania prochu zwiększa obrażenia Kuli i Kartacza o 10%, a dodatkowo o 5% dla Przeładowanej i Przeciwpancernej amunicji.}
+itm_stat_indian_3 {Żądza krwi}
+itm_stat_descr_indian_3 {Zwiększa zadawane obrażenia krytyczne o 15%.}
+itm_stat_indian_4 {Zamach}
+itm_stat_descr_indian_4 {Broń Ciężka zadaje 15% więcej obrażeń ciężkimi atakami.}
+itm_stat_indian_5 {Wyrównywacz}
+itm_stat_descr_indian_5 {Różnica w załodze wpływa na abordaż o 30% mniej.}
+itm_stat_indian_6 {Sito}
+itm_stat_descr_indian_6 {Obrażenia zadane wrogowi salwą z muszkietów przed abordażem zwiększone o 10%.}
+itm_stat_indian_9 {Celuj!}
+itm_stat_descr_indian_9 {Zwiększa prędkość ruchu statku i celowanie dział o 15%.}
+itm_stat_indian_8 {Ognia!}
+itm_stat_descr_indian_8 {Zwiększa obrażenia dział o 10%}
+itm_stat_obereg_1 {Młot...}
+itm_stat_descr_obereg_1 {Zmniejsza zużycie desek i płótna żaglowego o 15% podczas napraw na morzu lub w walce. Efekty się kumulują.}
+itm_stat_obereg_2 {...i gwoździe}
+itm_stat_descr_obereg_2 {zmniejsza zużycie desek i płótna żaglowego o 15% podczas napraw na morzu lub w walce. Efekt się kumuluje.}
+itm_stat_indian_7 {Skupienie}
+itm_stat_descr_indian_7 {Zwiększa energię i szybkość jej regeneracji o 12%.}
+itm_stat_obereg_10 {Zręczne ręce}
+itm_stat_descr_obereg_10 {Zwiększa manewrowość statku o 15%.}
+itm_stat_obereg_11 {Boreasz}
+itm_stat_descr_obereg_11 {Zmienia kąt kursu statku o 15%, pozwalając płynąć bliżej pod wiatr.}
+itm_stat_obereg_3 {Podnoszenie ciężarów}
+itm_stat_descr_obereg_3 {Zwiększa udźwig o 15%.}
+itm_stat_obereg_4 {Incognito}
+itm_stat_descr_obereg_4 {Skradanie postaci zwiększone o 10.}
+itm_stat_obereg_5 {Artefakt}
+itm_stat_descr_obereg_5 {Szczęście postaci wzrasta o 15.}
+itm_stat_obereg_6 {Perswazja}
+itm_stat_descr_obereg_6 {Dowodzenie postaci wzrasta o 10 punktów.}
+itm_stat_obereg_7 {Zrodzony z morza}
+itm_stat_descr_obereg_7 {Nawigacja postaci zwiększa się o 10 punktów.}
+itm_stat_obereg_8 {Korzyść}
+itm_stat_descr_obereg_8 {Handel postaci zwiększa się o 15 punktów.}
+itm_stat_obereg_9 {Bóg Wiatru}
+itm_stat_descr_obereg_9 {Prędkość statku wzrasta o 10%.}
+itm_stat_totem_01 {Żelazny żołądek}
+itm_stat_descr_totem_01 {Chroni przed urwanym filmem w podejrzanych miejscach i burzliwym towarzystwie. Użycie mikstur leczenia nie obniża Zdrowia.}
+itm_stat_totem_02 {Władca}
+itm_stat_descr_totem_02 {Zmniejsza ryzyko i straty podczas buntów niewolników, zwiększa liczbę jeńców przy poddaniu się.}
+itm_stat_totem_03 {Gracz}
+itm_stat_descr_totem_03 {Podwaja efekt leczenia z rozkoszy miłosnych.}
+itm_stat_totem_04 {Urodzony przywódca}
+itm_stat_descr_totem_04 {Blokuje lojalność oficera na cały czas trwania.}
+itm_stat_totem_05 {Niezniszczalność}
+itm_stat_descr_totem_05 {Zmniejsza obrażenia krytyczne zadawane przez wroga o 25%.}
+itm_stat_totem_06 {Koń juczny}
+itm_stat_descr_totem_06 {Przekroczenie limitu udźwigu nie spowalnia postaci ani nie nakłada kar.}
+itm_stat_totem_07 {Przyzwanie}
+itm_stat_descr_totem_07
+{
+Nowi ochotnicy dołączą za niższą cenę, nawet jeśli mają długi wobec załogi.
+Może użyć tylko główny bohater. Zwiększa liczbę rekrutów w tawernie o 5%.
+}
+itm_stat_totem_08 {Osobiste zaangażowanie}
+itm_stat_descr_totem_08 {Zwiększa obrażenia przy celowanym ogniu morskim o 10%.}
+itm_stat_totem_09 {Alarmy treningowe}
+itm_stat_descr_totem_09 {Podwaja szybkość szkolenia załogi.}
+itm_stat_totem_10 {Diabeł tasmański}
+itm_stat_descr_totem_10 {Broń Wyważona zadaje o 15% więcej obrażeń atakiem grupowym.}
+itm_stat_totem_11 {Wampiryzm}
+itm_stat_descr_totem_11 {Ciosy wysysają energię z wroga.}
+itm_stat_totem_12 {Kły}
+itm_stat_descr_totem_12 {Broń Lekka zadaje 15% więcej obrażeń szybkimi atakami.}
+itm_stat_totem_13 {Szuler}
+itm_stat_descr_totem_13
+{
+Znacząco zwiększa szansę na dobranie właściwej karty i wyrzucenie potrzebnej liczby.
+Daje +1 do Sukcesu.
+}
+itm_stat_knife_01 {Tajemnica}
+itm_stat_descr_knife_01 {Ten sztylet skrywa wielką moc. Noszony na piersi jako talizman, potrafi pokonać śmierć.}
+itm_stat_knife_02 {Strażnik}
+itm_stat_descr_knife_02 {Daje 12% szansy na uniknięcie strzału. Efekt kumuluje się.}
+itm_stat_knife_03 {Szczęściarz}
+itm_stat_descr_knife_03 {Zwiększa bazową szansę na trafienie krytyczne o 3% i obrażenia krytyczne o 10%.}
+itm_stat_talisman1 {Porządek}
+itm_stat_descr_talisman1 {Chroni towary przed zepsuciem przez gryzonie.}
+itm_stat_talisman2 {Cisza}
+itm_stat_descr_talisman2 {Pomaga uniknąć wejścia w strefę sztormu lub zmniejsza uszkodzenia żagli i kadłuba podczas burzy.}
+itm_stat_talisman3 {Chłodzenie wodą}
+itm_stat_descr_talisman3 {Zapobiega wybuchowi armat.}
+itm_stat_talisman4 {Dyktatura}
+itm_stat_descr_talisman4 {Zmniejsza spadek morale załogi przy przeciążeniu i obniża dzienne zużycie rumu przez załogę.}
+itm_stat_talisman6 {Pokora}
+itm_stat_descr_talisman6 {Pomaga oszczędzać prowiant na statku, zmniejszając jego zużycie o jedną czwartą.}
+itm_stat_talisman7 {Twardy Pancerz}
+itm_stat_descr_talisman7
+{
+Podwaja szybkość naprawy statku i oszczędza 30% zasobów.
+Zmniejsza uszkodzenia żagli i kadłuba o 5%.
+}
+itm_stat_talisman8 {Mitridat}
+itm_stat_descr_talisman8 {Chroni przed zatruciem bronią wroga.}
+itm_stat_talisman9 {Służba}
+itm_stat_descr_talisman9
+{
+Daje +15% do rekrutacji marynarzy w francuskich koloniach.
+Umożliwia darmowy wstęp do francuskich burdeli i zwiększa Dowodzenie o +1.
+}
+itm_stat_talisman10 {Posejdon}
+itm_stat_descr_talisman10 {Pozwala długo wstrzymywać oddech pod wodą i chroni przed wrzątkiem.}
+itm_stat_talisman11 {Antystres}
+itm_stat_descr_talisman11 {Zwiększa wszystkie umiejętności osobiste i okrętowe o 2 punkty.}
+itm_stat_talisman12 {Odporność}
+itm_stat_descr_talisman12 {Blokuje bieżącą wartość zdrowia.}
+itm_stat_talisman13 {Gromadzenie}
+itm_stat_descr_talisman13 {Dziwnie zwiększa zdolność noszenia ciężarów.}
+itm_stat_talisman14 {Latarnia}
+itm_stat_descr_talisman14 {Zwiększa umiejętność Nawigacja o 15 punktów.}
+itm_stat_talisman15 {Złowroga reputacja}
+itm_stat_descr_talisman15 {Zwiększa Siłę Floty o 15%. Wykonana z chusty Żelaznobokich, kawalerii Cromwella.}
+itm_stat_talisman16 {Wojownik dżungli}
+itm_stat_descr_talisman16 {Broń Egzotyczna zadaje o 15% więcej obrażeń}
+itm_stat_talisman17 {Tarcza Wiary}
+itm_stat_descr_talisman17 {Zmniejsza obrażenia zadawane załodze i kapitanowi o 5%, a na pokładzie Świętego Miłosierdzia zwiększa umiejętność Obrona o 10.}
+itm_stat_talisman18 {Poszukiwanie prawdy}
+itm_stat_descr_talisman18 {Każdy znaleziony skarb zwiększa siłę salwy muszkietowej załogi o 1% i obrażenia od kartacza o 2%.}
+itm_stat_talisman19 {Pamiętaj}
+itm_stat_descr_talisman19 {Za każde 2% utraty kadłuba prędkość statku rośnie o 0,75%, a obrażenia dział o 0,5%.}
+itm_stat_talisman20 {W pogotowiu}
+itm_stat_descr_talisman20 {Szybkość celowania bronią palną wzrasta o 15%, maksymalne obrażenia przy celowaniu o 20%, szybkość przeładowania o 10%, a obrażenia za trafienie w głowę o 20%.}
+itm_stat_talisman21 {Wspólna odpowiedzialność}
+itm_stat_descr_talisman21 {Umożliwia handel z przemytnikami na statkach do 2. rangi włącznie.}
+itm_stat_secondary_hat1 {Adaptacja}
+itm_stat_descr_secondary_hat1 {Szybkie ataki bronią prostą i cięcia bronią zakrzywioną zadają o 5% więcej obrażeń.}
+itm_stat_secondary_hat2 {Bezwładność}
+itm_stat_descr_secondary_hat2 {Ataki grupowe Krótką bronią i ciężkie ataki Długą bronią są wykonywane o 7% szybciej.}
+itm_stat_secondary_hat3 {Srebrny Język}
+itm_stat_descr_secondary_hat3 {Zwiększa liczbę marynarzy w tawernach i obniża koszt ich najmu o 5%.}
+itm_stat_secondary_hat4 {Pruski dryl}
+itm_stat_descr_secondary_hat4 {Celność ognia artyleryjskiego wzrasta o 10%.}
+itm_stat_secondary_hat5 {Premier League}
+itm_stat_descr_secondary_hat5 {Kończy wrogość narodów wobec odpowiednich okrętów liniowych.}
+itm_stat_secondary_hat7 {Poszukiwacz skarbów}
+itm_stat_descr_secondary_hat7 {Zwiększa wartość skarbu o 10%.}
+itm_stat_secondary_hat8 {Klątwa Karaibów}
+itm_stat_descr_secondary_hat8 {Każdy poziom Zagrożenia zmniejsza utrzymanie statku o 2% i zwiększa prędkość na mapie świata o 0,25%.}
+itm_stat_secondary_hat11 {Afekt}
+itm_stat_descr_secondary_hat11 {Szybkość ataku wzrasta o 5%, jeśli postać miała intymność w ciągu ostatnich dwóch tygodni.}
+itm_stat_blade_SP_3low {Niewykorzystany potencjał}
+itm_stat_descr_blade_SP_3low {To ostrze nie jest u szczytu swojej mocy — czegoś mu brakuje...}
+itm_stat_blade_SP_3 {Żniwiarz}
+itm_stat_descr_blade_SP_3 {Blokuje leczenie ze wszystkich źródeł. Za każde 2% brakującego Zdrowia zadajesz o 1,5% więcej obrażeń i regenerujesz 1,75% więcej energii.}
+itm_stat_blade_41 {Elastyczność}
+itm_stat_descr_blade_41 {Zyskuje premię do obrażeń z najwyżej rozwiniętej umiejętności broni białej.}
+itm_stat_lacrima_patris {Droga Sprawiedliwego}
+itm_stat_descr_lacrima_patris {Za każde 10 zabitych bandytów i łotrów obrażenia rosną o 2, a zasięg dział Mercy o 1%.}
+itm_stat_blade_WR {Pilność}
+itm_stat_descr_blade_WR {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}
+itm_stat_suit5 {Epolety}
+itm_stat_descr_suit5 {Zasługi dla Francji dają darmowy wstęp do burdeli i zwiększają liczbę rekrutów we francuskich koloniach o 15%.}
+itm_stat_suit4 {Zła reputacja}
+itm_stat_descr_suit4 {Wszyscy wiedzą, że ten strój zwiastuje kłopoty, a w każdym bucie właściciela kryje się nóż. Zwiększa Siłę Floty o 13%. Przy obliczaniu siły do zastraszania każdy statek traktowany jest jak Wojenny.}
+itm_stat_cirass10 {Ekwipunek}
+itm_stat_descr_cirass10 {Ta zbroja ma praktyczne ładownice na amunicję. Szybkość przeładowania zwiększona o 15%.}
+itm_stat_underwater {Nieporęczność}
+itm_stat_descr_underwater {Ta zbroja jest tak ciężka, że możesz się w niej poruszać tylko krokiem.}
+itm_stat_pistol11 {Piekielny pomiot}
+itm_stat_descr_pistol11 {Ta broń zadziwia nie tyle swoimi cechami, co samym faktem istnienia. Zwiększa umiejętność Broni Ciężkiej o 20.}
+itm_stat_pistol12 {Rozkładane}
+itm_stat_descr_pistol12 {Ta broń palna może być składana i rozkładana, przechodząc z trybu jednoręcznego na dwuręczny.}
+itm_stat_mushket8 {Rozkładane}
+itm_stat_descr_mushket8 {Ta broń palna może być składana i rozkładana, przechodząc z trybu jednoręcznego na dwuręczny.}
+itm_stat_spyglassSP3 {Karzące spojrzenie}
+itm_stat_descr_spyglassSP3 {Ta luneta pozwala dostrzec strach w oczach wrogiego kapitana i sprawdzić, czy jest gotów się poddać.}

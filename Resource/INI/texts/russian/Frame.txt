@@ -1,0 +1,25 @@
+Frame_HourPassed {Прошёл час...}
+Frame_HourPassed_2 {Прошло два часа...}
+Frame_HourPassed_3 {Прошло три часа...}
+Frame_HourPassed_4 {Прошло четыре часа...}
+Frame_HourPassed_5 {Прошло пять часов...}
+Frame_HourPassed_? {Прошло несколько часов...}
+Frame_BeenWhile {Прошло немного времени...}
+Frame_MinutePassed {Прошла минута...}
+Frame_MinutePassed_2 {Прошло две минуты...}
+Frame_MinutePassed_3 {Прошло три минуты...}
+Frame_MinutePassed_5 {Прошло пять минут...}
+Frame_MinutePassed_10 {Прошло десять минут...}
+Frame_MinutePassed_20 {Прошло двадцать минут...}
+Frame_MinutePassed_? {Прошло несколько минут...}
+Frame_NextMorning {На следующее утро...}
+Frame_NextDay {На следующий день...}
+Frame_NextEvening {На следующий вечер...}
+Frame_NextNight {На следующую ночь...}
+Frame_DayPassed {Прошёл день...}
+Frame_DayPassed_2 {Прошло два дня...}
+Frame_DayPassed_3 {Прошло три дня...}
+Frame_DayPassed_4 {Прошло четыре дня...}
+Frame_DayPassed_5 {Прошло пять дней...}
+Frame_DayPassed_6 {Прошло шесть дней...}
+Frame_WeekPassed {Прошла неделя...}

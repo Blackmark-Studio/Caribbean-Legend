@@ -103,7 +103,7 @@ void ProcessDialogEvent()
 		// горожанин знает Мишеля
 		case "Benuatalker":
 			DelLandQuestMark(npchar);
-			link.l1 = "Przepraszam, "+GetAddress_FormToNPC(NPChar)+", mógłbyś mi powiedzieć, gdzie mogę znaleźć Michela de Monpera? Musi być gdzieś w twoim mieście.";
+			link.l1 = "Przepraszam, "+GetAddress_FormToNPC(NPChar)+", mógłbyś mi powiedzieć, gdzie mogę znaleźć Michela de Monper? Musi być gdzieś w twoim mieście.";
             link.l1.go = "Benuatalker_1";
 		break;
 		
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 		// --> арест в резиденции
 		case "Sharlie_arest":
 			dialog.text = "Stój! Oddaj broń natychmiast, monsieur, i chodź z nami!";
-			link.l1 = "Co to, do diabła, jest?";
+			link.l1 = "Co to ma być, do diabła?";
 			link.l1.go = "Sharlie_arest_1";
 			if (CheckCharacterItem(PChar, "knife_03")) pchar.Sharlie.KnifeMonpe = true;
 		break;
@@ -145,14 +145,14 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "begin")
 			{
 				dialog.text = "Miło cię widzieć, Monsieur de Maure. Jaka to okazja?";
-				link.l1 = TimeGreeting()+" , oficerze. Chciałbym porozmawiać z moim bratem, Michelem de Monper. Oczywiście nieoficjalnie. Próbuję dowiedzieć się o jego służbie tutaj na Karaibach.";
+				link.l1 = TimeGreeting()+", oficerze. Chciałbym porozmawiać z moim bratem, Michelem de Monper. Oczywiście nieoficjalnie. Próbuję dowiedzieć się o jego służbie tutaj na Karaibach.";
 				link.l1.go = "spanish";
 				break;
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "think")
 			{
-				dialog.text = "Jak poszło przesłuchanie? Czy znalazłeś coś wartościowego?";
-				link.l1 = "O, tak. Tak bardzo, że zabieram tego Hiszpana ze sobą na mój statek. Jest ważnym świadkiem i musi zostać dostarczony do St. Christopher na dalsze przesłuchanie.";
+				dialog.text = "Jak poszło przesłuchanie? Czy odkryłeś coś wartościowego?";
+				link.l1 = "O, tak. Wartościowego tak bardzo, że zabieram tego Hiszpana ze sobą na mój statek. Jest ważnym świadkiem i musi zostać dostarczony na wyspe Św. Krzysztofa na dalsze przesłuchanie.";
 				link.l1.go = "spanish_10";
 				break;
 			}
@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 		
 		case "Maltie_officer_1":
 			DelLandQuestMark(npchar);
-			dialog.text = "Michel de Monper jest obecnie pod strażą w jednej z naszych kazamat, trzymany na osobisty rozkaz Kawalera Philippe de Poincy. Zejdź na dół na niższy poziom. Znajdziesz tam kazamaty, które używamy do przechowywania i jako cele. Myślę, że dasz sobie radę.";
+			dialog.text = "Michel de Monper jest obecnie pod strażą w jednej z naszych kazamat, trzymany na osobisty rozkaz Chevaliera Philippe de Poincy. Zejdź na dół na niższy poziom. Znajdziesz tam kazamaty, które używamy do przechowywania i jako cele. Myślę, że dasz sobie radę.";
 			link.l1 = "Dziękuję!";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Maltie_officer";
@@ -207,7 +207,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_maltie_1":
-			dialog.text = "Niestety tak jest, monsieur. Michel jest zamknięty w jednym z kazamatów poniżej. Chevalier de Poincy, gubernator generalny francuskich kolonii w Nowym Świecie, osobiście podpisał rozkaz jego aresztowania. Wszyscy byliśmy w szoku. Twój brat to wzór męskiej cnoty, dyscypliny i odwagi, duma naszego Zakonu! Najgorsze jest to, że my, jego przyjaciele, musimy go zamknąć za kratami i pilnować jak pospolitego przestępcę! Robimy wszystko, co w naszej mocy, by uczynić jego pobyt wygodnym, ale... więzienie to wciąż więzienie.";
+			dialog.text = "Niestety tak, monsieur. Michel jest zamknięty w jednym z kazamatów poniżej. Chevalier de Poincy, gubernator generalny francuskich kolonii w Nowym Świecie, osobiście podpisał rozkaz jego aresztowania. Wszyscy byliśmy w szoku. Twój brat to wzór męskiej cnoty, dyscypliny i odwagi, duma naszego Zakonu! Najgorsze jest to, że my, jego przyjaciele, musimy go zamknąć za kratami i pilnować jak pospolitego przestępcę! Robimy wszystko, co w naszej mocy, by uczynić jego pobyt wygodnym, ale... więzienie to wciąż więzienie.";
 			link.l1 = "O co jest oskarżony? Czy popełnił zbrodnię?";
 			link.l1.go = "Sharlie_maltie_1_1";			
 		break;
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_maltie_1a":
-			dialog.text = "Niestety, ma, Monsieur. Michel jest aresztowany i zamknięty w naszej więzieniu. Sam Kawaler de Poincy, generalny gubernator francuskich kolonii, wydał i podpisał rozkazy. Wszyscy byliśmy w szoku.\nTwój brat jest przykładem męskości, stanowczości i odwagi, dumą naszego Zakonu! Najgorsze jest to, że my, jego przyjaciele, musimy zamknąć jego celę i strzec go jak przestępcę! Robimy wszystko, by złagodzić jego stan, ale... więzienie to więzienie.";
+			dialog.text = "Niestety tak, Monsieur. Michel jest aresztowany i zamknięty w naszym więzieniu. Sam Chevalier de Poincy, generalny gubernator francuskich kolonii, wydał i podpisał rozkazy. Wszyscy byliśmy w szoku.\nTwój brat jest przykładem męskości, stanowczości i odwagi, dumą naszego Zakonu! Najgorsze jest to, że my, jego przyjaciele, musimy zamknąć jego celę i strzec go jak przestępcę! Robimy wszystko, by złagodzić jego stan, ale... więzienie to więzienie.";
 			link.l1 = "Więc o co jest oskarżany? Czy popełnił zbrodnię?";
 			link.l1.go = "Sharlie_maltie_1_1a";			
 		break;
@@ -301,14 +301,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_sailor_3":
-			dialog.text = "Gdyby chodziło tylko o mnie, dołączyłbym od razu. Ale mam ze sobą czterdziestu ludzi z Ulysse. Powierzyli mi swoją przyszłość, muszę być pewien, że ich nie zawiedziesz\n"+
+			dialog.text = "Gdyby chodziło tylko o mnie, dołączyłbym od razu. Ale mam ze sobą czterdziestu ludzi z 'Ulysse'. Powierzyli mi swoją przyszłość, muszę być pewien, że ich nie zawiedziesz\n"+
 			"Jaki ma pan statek?";
 			link.l1 = "Statek jak każdy inny, "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")))+". To aż tak istotne?";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		
 		case "Sharlie_sailor_4":
-			dialog.text = "Wie pan, po Ulysse nie chcielibyśmy służyć na byle barce czy tartanie. Twój statek już widzieliśmy i chłopakom się podoba\n"+
+			dialog.text = "Wie pan, po 'Ulysse' nie chcielibyśmy służyć na byle barce czy tartanie. Twój statek już widzieliśmy i chłopakom się podoba\n"+
 			"Teraz kwestia pieniędzy. Bierzemy 4800 peso zaliczki. Potem – jak wszędzie, podział łupów. Nie prosimy o więcej, proszę się nie martwić. Dasz radę?";
 			if (sti(Pchar.money) >= 4800)
 			{
@@ -356,7 +356,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sharlie_sailor_nomoney":
-			dialog.text = "Cóż, jak tylko znajdziesz wystarczająco pieniędzy, wracaj. Znajdziesz nas tutaj w tawernie. I tak nie ma innych statków w pobliżu. Będziemy po prostu dalej pić i trwonić nasze pieniądze na dziwki, harhar!";
+			dialog.text = "Cóż, jak tylko znajdziesz wystarczająco pieniędzy, wracaj. Znajdziesz nas tutaj w karczmie. I tak nie ma innych statków w pobliżu. Będziemy po prostu dalej pić i trwonić nasze pieniądze na dziwki, harhar!";
 			link.l1 = "Postaram się wrócić tak szybko, jak to możliwe.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Sharlie_sailor_again";
@@ -442,7 +442,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak jest, kapitanie! Poczekam na ciebie w twojej kajucie. *Użyj menu akcji podczas żeglugi, aby uzyskać dostęp do kajuty i innych obszarów statku*";
 			link.l1 = "Dziękuję, Folke. Do zobaczenia na pokładzie.";
 			link.l1.go = "Folke_5";
-			Log_Info("You have received amulet 'Merchant's Rosary'");
+			Log_Info("Otrzymałeś amulet 'Kupieckie Koraliki'");
 			PlaySound("interface\important_item.wav");
 			GiveItem2Character(pchar, "obereg_8");
 			if(CheckAttribute(pchar,"systeminfo.tutorial.Amulet"))
@@ -470,19 +470,19 @@ void ProcessDialogEvent()
 			pchar.quest.NewGameTip2.win_condition.l1 = "location";
 			pchar.quest.NewGameTip2.win_condition.l1.location = "Martinique";
 			pchar.quest.NewGameTip2.function = "ShowNewGameTip";
-			pchar.quest.NewGameTip2.text = "Your first officer is waiting for you. Use the action menu (ENTER) to go to the cabin.";
+			pchar.quest.NewGameTip2.text = "Twój pierwszy oficer czeka na Ciebie. Użyj menu akcji (ENTER), aby przejść do kajuty.";
 		break;
 		
 		case "Folke_6":
 			pchar.GenQuest.StoreGoods.StoreIdx = Fortfrance_STORE;
 			pchar.GenQuest.StoreGoods.Starting = true; // заполняем магазин 250912
-			dialog.text = "Piękna lugger, kapitanie! Całkiem przyzwoity mały statek z doskonałym takielunkiem i solidnym drewnem. Z takim statkiem nie tylko bezpiecznie dotrzemy na Gwadelupę, ale nawet przemierzymy całe Karaiby, jeśli zechcemy.";
+			dialog.text = "Piękny lugier, kapitanie! Całkiem przyzwoity mały statek z doskonałym takielunkiem i solidnym drewnem. Z takim statkiem nie tylko bezpiecznie dotrzemy na Gwadelupę, ale nawet przemierzymy całe Karaiby, jeśli zechcemy.";
 			link.l1 = "Wyśmienicie. Przynajmniej nie wyrzuciłem pieniędzy na dziurawą łajbę... Masz jakieś rady, zanim wyruszymy, Folke?";
 			link.l1.go = "Folke_8";
 		break;
 		
 		case "Folke_7":
-			dialog.text = "Do diabła, ten slup cieknie jak sito, kapitanie. Będzie blisko, żebyśmy przeprawili się na Gwadelupę. Jeśli chcesz dotrzeć do Basse-Terre w jednym kawałku, trzeba go natychmiast oddać do naprawy w stoczni.";
+			dialog.text = "Do diabła, ten slup jest cienki jak sito, kapitanie. Będzie blisko, żebyśmy przeprawili się na Gwadelupę. Jeśli chcesz dotrzeć do Basse-Terre w jednym kawałku, trzeba go natychmiast oddać do naprawy w stoczni.";
 			link.l1 = "Nie miałem wyboru, to był jedyny statek na sprzedaż! I kazali mi za nią słono zapłacić. Jak wiesz, nie mamy teraz czasu, by ją naprawić... Masz jakieś rady, zanim wyruszymy w morze?";
 			link.l1.go = "Folke_8";
 		break;
@@ -502,7 +502,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Nie mamy wystarczająco amunicji w magazynie, kapitanie. Musimy mieć co najmniej sto kul armatnich, kartaczy i bomb, a także sto worków z grapeshotem i dwieście beczek prochu strzelniczego. Kup niezbędny materiał, kapitanie. To nie będzie kosztować dużo, ale uratuje nasze życie, jeśli zostaniemy zaatakowani przez piratów lub Hiszpanów.";
+				dialog.text = "Nie mamy wystarczająco amunicji w magazynie, kapitanie. Musimy mieć co najmniej sto kul armatnich, kartaczy i bomb, a także sto worków z kartaczem i dwieście beczek prochu strzelniczego. Kup niezbędny materiał, kapitanie. To nie będzie kosztować dużo, ale uratuje nasze życie, jeśli zostaniemy zaatakowani przez piratów lub Hiszpanów.";
 				link.l1 = "Godna inwestycja. Wyruszam do kupca.";
 				link.l1.go = "Folke_9";
 			}
@@ -519,12 +519,12 @@ void ProcessDialogEvent()
 		
 		case "Folke_8_2":
 			dialog.text = "Ale... po co, kapitanie?!";
-			link.l1 = "Lubię zbierać różne rzeczy. Nigdy nie wiadomo, co się przyda.";
+			link.l1 = "Lubię zbierać różne rzeczy. Nigdy nie wiadomo, kiedy się przydadzą.";
 			link.l1.go = "Folke_8_3";
 		break;
 		
 		case "Folke_8_3":
-			dialog.text = "Cóż, szkoda, że te kule nigdy nie wejdą do naszych dział. Nigdy nie widziałem takich dużych kul. Jedna taka posłałaby Adeline na dno.";
+			dialog.text = "Cóż, szkoda, że te kule nigdy nie wejdą do naszych dział. Nigdy nie widziałem takich dużych kul. Jedna taka posłałaby 'Adeline' na dno.";
 			link.l1 = "... Cholera.";
 			link.l1.go = "Folke_10";
 		break;
@@ -704,8 +704,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Seabattle_pirate_1":
-			dialog.text = "Pozwól, że się przedstawię - "+GetFullName(npchar)+" . Przysłał mnie tu Cesar Craig. Musisz go znać. Jest właścicielem tawerny w Le Francois. Jak on twierdzi, zamierzasz wypłynąć na Gwadelupę. Chciałby zaoferować ci łatwe pieniądze.";
-			link.l1 = "Hm... Interesujące! A jak to się stało, że Cesar Craig jest tak dobrze poinformowany?";
+			dialog.text = "Pozwól, że się przedstawię - "+GetFullName(npchar)+" . Przysłał mnie tu Cesare Craig. Musisz go znać. Jest właścicielem karczmy w Le Francois. Jak on twierdzi, zamierzasz wypłynąć na Gwadelupę. Chciałby zaoferować ci łatwe pieniądze.";
+			link.l1 = "Hm... Interesujące! A jak to się stało, że Cesare Craig jest tak dobrze poinformowany?";
 			link.l1.go = "Seabattle_pirate_2";
 		break;
 		
@@ -716,19 +716,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Seabattle_pirate_3":
-			dialog.text = "Teraz rozmawiamy, kamracie! Widzę, że masz wyczulony nos do interesów. Oto umowa. Cesar pilnie potrzebuje dostarczenia partii wina na Gwadelupę. Dwieście beczek, twój statek łatwo to pomieści. Zapłata wynosi dziesięć tysięcy peso za łatwą robotę - Cesar się spieszy, a twój statek jest jedynym w porcie w tej chwili. Musisz się zgodzić, takie opłacalne propozycje są rzadkie.";
+			dialog.text = "Teraz rozmawiamy, kamracie! Widzę, że masz wyczulony nos do interesów. Oto umowa. Cesare pilnie potrzebuje dostarczenia partii wina na Gwadelupę. Dwieście beczek, twój statek łatwo to pomieści. Zapłata wynosi dziesięć tysięcy peso za łatwą robotę - Cesar się spieszy, a twój statek jest jedynym w porcie w tej chwili. Musisz się zgodzić, takie opłacalne propozycje są rzadkie.";
 			link.l1 = "Cholera, dziesięć tysięcy pesos? Cóż, mamy umowę!";
 			link.l1.go = "Seabattle_pirate_4";
 		break;
 		
 		case "Seabattle_pirate_4":
-			dialog.text = "Udaj się do Le Francois i porozmawiaj z Cesarem. On zajmie się wszystkim. Ty tylko musisz zakotwiczyć w zatoce tuż przed Le Francois. Nie zawiedź mnie, kamracie, Cesar obiecał mi tysiąc pesos, jeśli cię przekonam...";
+			dialog.text = "Udaj się do Le Francois i porozmawiaj z Cesare. On zajmie się wszystkim. Ty tylko musisz zakotwiczyć w zatoce tuż przed Le Francois. Nie zawiedź mnie, kamracie, Cesare obiecał mi tysiąc pesos, jeśli cię przekonam...";
 			link.l1 = "Nie martw się, uznaj mnie za przekonanego. Jak tylko będę gotowy do wyjazdu, popłynę prosto do Le Francois.";
 			link.l1.go = "Seabattle_pirate_5";
 		break;
 		
 		case "Seabattle_pirate_5":
-			dialog.text = "Hurra! Ruszam po moje tysiąc. Dzięki, kumplu!";
+			dialog.text = "Hurra! Ruszam po moje tysiąc. Dzięki, kolego!";
 			link.l1 = "Proszę bardzo...";
 			link.l1.go = "Seabattle_pirate_6";
 		break;
@@ -837,7 +837,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spanish_2":
-			dialog.text = "Michel de Monper negocjował z jakimiś baronami pirackimi, aby zorganizować zmianę reżimu na Tortudze.";
+			dialog.text = "Michel de Monper negocjował z jakimiś pirackimi baronami, aby zorganizować zmianę reżimu na Tortudze.";
 			link.l1 = "To już wiem. Co jeszcze?";
 			link.l1.go = "spanish_3";
 		break;
@@ -850,13 +850,13 @@ void ProcessDialogEvent()
 		
 		case "spanish_4":
 			dialog.text = "Niestety, nie ma nic więcej do powiedzenia. Szczegóły operacji twojego brata były znane tylko jemu i Chevalierowi de Poincy. Jesteśmy rycerzami Zakonu Świętego Jana z Malty. Wykonujemy nasze rozkazy.";
-			link.l1 = "Jeśli Kawaler tak bardzo ufa Michelowi, musiał wcześniej pomyślnie realizować swoje sekretne plany. Czy wiesz o jakichkolwiek udanych akcjach, które Michel przeprowadził?";
+			link.l1 = "Jeśli Chevalier tak bardzo ufa Michelowi, musiał wcześniej pomyślnie realizować swoje sekretne plany. Czy wiesz o jakichkolwiek udanych akcjach, które Michel przeprowadził?";
 			link.l1.go = "spanish_5";
 		break;
 		
 		case "spanish_5":
-			dialog.text = "Zdecydowanie. Ta ostatnia porażka Michela de Monper była również jego pierwszą porażką, dlatego byliśmy zszokowani reakcją Kawalera. Niedawno 'Gryffindor' pojmał hiszpańską galeonę skarbów pełną srebra dzięki starannemu planowaniu Michela. To samo w sobie powinno zrekompensować dziesiątki przyszłych niepowodzeń. A jednak, twój brat został aresztowany.";
-			link.l1 = "Rozumiem. Czy masz jakieś pojęcie, dlaczego Michel uciekł ze St. Pierre?";
+			dialog.text = "Zdecydowanie. Ta ostatnia porażka Michela de Monper była również jego pierwszą porażką, dlatego byliśmy zszokowani reakcją Chevaliera. Niedawno 'Gryffondor' pojmał hiszpański galeon pełen srebra, dzięki starannemu planowaniu Michela. To samo w sobie powinno zrekompensować dziesiątki przyszłych niepowodzeń. A jednak, twój brat został aresztowany.";
+			link.l1 = "Rozumiem. Czy masz jakieś pojęcie, dlaczego Michel uciekł z St. Pierre?";
 			link.l1.go = "spanish_6";
 		break;
 		
@@ -889,13 +889,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spanish_10":
-			dialog.text = "Cóż, cóż za niespodzianka! Rozumiesz, że nie mogę uwolnić tego więźnia, prawda? Ten łotr pomógł w ataku na St. Pierre!";
+			dialog.text = "Prosze prosze, cóż za niespodzianka! Rozumiesz, że nie mogę uwolnić tego więźnia, prawda? Ten łotr pomógł w ataku na St. Pierre!";
 			link.l1 = "Oficerze, to ważny świadek. Atak na St. Pierre nie był prostym najazdem w poszukiwaniu łupów. Don Ramon Mendosa szukał czegoś innego. Musimy poznać ostateczny motyw. Więc czy zwolnisz mi tego Hiszpana, czy będę musiał żądać pozwolenia od de Poincy?";
 			link.l1.go = "spanish_11";
 		break;
 		
 		case "spanish_11":
-			dialog.text = "Na Boga Wszechmogącego... Dobrze, zabierzcie go. I tak miałem powiesić tego drania na placu w St. Pierre jak pospolitego pirata, którym jest... Teraz to wasz problem. Dopilnujcie, by nie uszedł sprawiedliwości!";
+			dialog.text = "Na Boga Wszechmogącego... Dobrze, zabierz go. I tak miałem powiesić tego drania na placu w St. Pierre jak pospolitego pirata, którym jest... Teraz to twój problem. Dopilnuj, by nie uszedł sprawiedliwości!";
 			link.l1 = "Bez wątpienia. Odpowiem za tego Hiszpana przed de Poincy. Zakuć tego jeńca w kajdany i dostarczyć do mojej łodzi przy miejskim nabrzeżu.";
 			link.l1.go = "spanish_12";
 		break;
@@ -943,12 +943,12 @@ void ProcessDialogEvent()
 		
 		case "monk_vinsento_1":
 			dialog.text = "Witaj, kapitanie. Zostałem do ciebie wysłany przez ojca Vincento. Mam coś dla ciebie...";
-			link.l1 = "Ojciec Vincento? Nie pracuję już dla Jego Łaski. Nie po tym, jak wysłał Alonso de Maldonado, przysięgłego człowieka Diego de Montoya, żeby mnie zabił. Możesz przekazać ten komunikat Czcigodnemu Ojcu: nie udało mu się.";
+			link.l1 = "Ojciec Vincento? Nie pracuję już dla Jego Łaskawości. Nie po tym, jak wysłał Alonso de Maldonado, przysięgłego człowieka Diego de Montoya, żeby mnie zabił. Możesz przekazać ten komunikat Czcigodnemu Ojcu: nie udało mu się.";
 			link.l1.go = "monk_vinsento_2";
 		break;
 		
 		case "monk_vinsento_2":
-			dialog.text = "Poczekaj, kapitanie. Ojciec Vincento spodziewał się takiej reakcji z twojej strony i mnie przed tym ostrzegł. Zapewniam cię, że Jego Łaska nie życzy ci źle. Proszę, przeczytaj ten list. To bardzo, bardzo ważne.";
+			dialog.text = "Poczekaj, kapitanie. Ojciec Vincento spodziewał się takiej reakcji z twojej strony i mnie przed tym ostrzegł. Zapewniam cię, że Jego Łaskawość nie życzy ci źle. Proszę, przeczytaj ten list. To bardzo, bardzo ważne.";
 			link.l1 = "Ojciec Vincento nie życzy mi nic złego? Hm. Może również nie powiedział ci nic o mnie i Don de Maldonado? Rozumiem, dlaczego miałbym ci wierzyć.";
 			link.l1.go = "monk_vinsento_3";
 		break;
@@ -1134,13 +1134,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dichoso_agent_2":
-			dialog.text = "Kapitan Dichoso chciałby to zmienić. Chce spotkać się z tobą twarzą w twarz. Ma dla ciebie propozycję dotyczącą wyprawy w głąb hiszpańskiego Main do zaginionego indiańskiego miasta Tayasal. Powiedział mi, że twoje doświadczenie połączone z jego wiedzą przyniesie zadowalające rezultaty.";
+			dialog.text = "Kapitan Dichoso chciałby to zmienić. Chce spotkać się z tobą twarzą w twarz. Ma dla ciebie propozycję dotyczącą wyprawy w głąb hiszpańskiego kontynentu do zaginionego indiańskiego miasta Tayasal. Powiedział mi, że twoje doświadczenie połączone z jego wiedzą przyniesie zadowalające rezultaty.";
 			link.l1 = "To były jego dokładne słowa?";
 			link.l1.go = "Dichoso_agent_3";
 		break;
 		
 		case "Dichoso_agent_3":
-			dialog.text = "Zgadza się. Kapitan Dichoso będzie czekał na ciebie na St. Christopher. Będzie cię oczekiwał w dużej krypcie cmentarza Capsterville, aby uniknąć ciekawskich oczu i uszu.";
+			dialog.text = "Zgadza się. Kapitan Dichoso będzie czekał na ciebie na wyspie Św. Krzysztofa. Będzie cię oczekiwał w dużej krypcie cmentarza Capsterville, aby uniknąć ciekawskich oczu i uszu.";
 			link.l1 = "Hm...";
 			link.l1.go = "Dichoso_agent_4";
 		break;
@@ -1152,7 +1152,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dichoso_agent_5":
-			dialog.text = "Don Dichoso najpierw szukał cię na Isla Tesoro, potem tutaj, a teraz zmierza do St. Christopher z nadzieją, że cię tam znajdzie. Jesteś oficerem samego Philippe'a de Poincy, prawda? Miałem na ciebie czekać tutaj na wypadek, gdybyś przybył do Blueweld.";
+			dialog.text = "Don Dichoso najpierw szukał cię na Isla Tesoro, potem tutaj, a teraz zmierza do Św. Krzysztofa z nadzieją, że cię tam znajdzie. Jesteś oficerem samego Philippe'a de Poincy, prawda? Miałem na ciebie czekać tutaj na wypadek, gdybyś przybył do Blueweld.";
 			link.l1 = "Wszystko jasne. No dobrze. Nie będę marnował czasu, powinienem udać się do Capsterville.";
 			link.l1.go = "Dichoso_agent_6";
 		break;
@@ -1193,7 +1193,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dichoso_crypt_agent_2":
-			dialog.text = "Ha!  Nie ma sensu kontynuować tej farsy. Miguel ostrzegł mnie, że jesteś przebiegłym łajdakiem...";
+			dialog.text = "Ha! Nie ma sensu kontynuować tej farsy. Miguel ostrzegł mnie, że jesteś przebiegłym łajdakiem...";
 			link.l1 = "Gdzie jest Miguel Dichoso?";
 			link.l1.go = "Dichoso_crypt_agent_3";
 		break;
@@ -1434,7 +1434,7 @@ case "Europe":
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_2":
-			dialog.text = "O rety! Czy Syn Morza ma muszkiet? Zapłać wysoką cenę za muszkiet!";
+			dialog.text = "O rety! Czy Syn Morza ma muszkiet? Zapłaci wysoką cenę za muszkiet!";
 			link.l1 = "Nie, ale czy działo z mojego statku wystarczy? Wynoś się teraz, Liściu Kakaowca, zanim nas zauważą i aresztują.";
 			link.l1.go = "ZsI_ListKakao_Soglasen_3";
 			AddCharacterExpToSkill(pchar, "Commerce", 50);
@@ -1467,12 +1467,12 @@ case "Europe":
 			bDisableFastReload = false;
 			chrDisableReloadToLocation = false;
 			
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 			LaunchTutorial("Fighter", 1);
 		break;
 		
 		case "ZsI_ListKakao_Soglasen_5":
-			dialog.text = "Liść kakao poczeka.";
+			dialog.text = "Liść kakaowca poczeka.";
 			link.l1 = "";
 			link.l1.go = "ZsI_ListKakao_Soglasen_6";
 		break;
@@ -2314,7 +2314,7 @@ case "Europe":
 		break;
 		
 		case "TK_Kapitan_1":
-			dialog.text = "To więc to... Skąd wiedziałeś, gdzie mnie znaleźć?";
+			dialog.text = "Czyli tak to wygląda... Skąd wiedziałeś, gdzie mnie znaleźć?";
 			link.l1 = "Gubernator osobiście poinformował mnie o sytuacji.";
 			link.l1.go = "TK_Kapitan_2";
 		break;
@@ -2460,15 +2460,8 @@ case "Europe":
 		case "VsD_DiegoAndErnat_3":
 			dialog.text = "Panie, przepraszam, ale troche nam przeszkadzasz.";
 			link.l1 = "Tak, oczywiście. Życzę miłego dnia, panowie.";
-			link.l1.go = "VsD_DiegoAndErnat_4";
-		break;
-		
-		case "VsD_DiegoAndErnat_4":
-			DialogExit();
-			sld = CharacterFromID("Diego");
-			LAi_CharacterDisableDialog(sld);
-			sld = CharacterFromID("GiumDyubua");
-			LAi_CharacterDisableDialog(sld);
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("VsD_DiegoInTaverna_3");
 		break;
 		
 		//Гийом Дюбуа по квесту "Встреча с Диего"
@@ -2492,7 +2485,7 @@ case "Europe":
 		break;
 		
 		case "VsD_GiumDyubua_4":
-			dialog.text = "Doskonale! Dowództwo chce wesprzeć operację w Portobelo na wszelkie możliwe sposoby, więc zamówili dodatkowe dwieście beczek prochu do dostarczenia na Wojowniczy. Może się wydawać, że to niewiele, ale kilka dodatkowych salw może przechylić szalę bitwy!";
+			dialog.text = "Doskonale! Dowództwo chce wesprzeć operację w Portobelo na wszelkie możliwe sposoby, więc zamówili dodatkowe dwieście beczek prochu do dostarczenia na 'Wojowniczy'. Może się wydawać, że to niewiele, ale kilka dodatkowych salw może przechylić szalę bitwy!";
 			link.l1 = "Bardzo dobrze, poruczniku. Jestem gotów zrobić swoją część. Ładuj proch - wcale mi to nie przeszkadza.";
 			link.l1.go = "VsD_GiumDyubua_5";
 		break;
@@ -2527,34 +2520,20 @@ case "Europe":
 			dialog.text = "Czy ona?! Moje przeprosiny, Kapitanie. Trudno powiedzieć na pewno, ale wygląda na to, że eksplozja miała miejsce na górnym pokładzie, a nie poniżej. Nie widzę żadnych aktywnych pożarów i wygląda na to, że uniknęliśmy większych uszkodzeń.";
 			link.l1 = "... ";
 			link.l1.go = "VsD_FolkeAlonso_5";
-			sld = GetCharacter(CreateCharacterClone(CharacterFromID("PortPaxAmmoOff"), 0));
-			sld.id = "PortPaxAmmoOff_clone";
-			LAi_LoginInCaptureTown(sld, true);
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "quest", "quest1");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
+			
+			VsD_AfterVzriv_1();
 		break;
 		
 		case "VsD_FolkeAlonso_5":
 			DialogExit();
-			LAi_SetStayType(pchar);
-			sld = CharacterFromID("PortPaxAmmoOff_clone");
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "VsD_Komendant";
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 3, 0);
+			AddDialogExitQuestFunction("VsD_AfterVzriv_2");
 		break;
 		
 		case "VsD_Komendant":
 			dialog.text = "Co do diabła, kapitanie?!";
 			link.l1 = "Chce się zapytać o to samo, pułkowniku!";
 			link.l1.go = "VsD_Komendant_1";
-			sld = CharacterFromID("Tichingitu");
-			if (sld.location == pchar.location && !LAi_IsDead(sld))
-			{
-				LAi_SetActorType(sld);
-				LAi_ActorGoToLocator(sld, "reload", "reload1", "", -1);
-			}
+			VsD_AfterVzriv_3();
 		break;
 		
 		case "VsD_Komendant_1":
@@ -2586,45 +2565,21 @@ case "Europe":
 			dialog.text = "Nie ma na to czasu, Kapitanie. Wypływaj natychmiast i wykonaj misję. Stawka jest zbyt wysoka, by zwlekać.";
 			link.l1 = "Czyż nie możemy mieć choćby jednego dnia, na miłość boską? Miejscowa stocznia mogłaby dokonać niezbędnych napraw! A co z moją załogą?! Z pewnością są ranni!";
 			link.l1.go = "VsD_Komendant_6";
-			sld = CharacterFromID("Tichingitu");
-			if (sld.location == pchar.location && !LAi_IsDead(sld))
-			{
-				LAi_SetOfficerType(sld);
-				sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-				sld.Dialog.CurrentNode = "Tichingitu_officer";
-			}
-			if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
-			{
-				sld = CharacterFromID("Folke");
-				ChangeCharacterAddressGroup(sld, "none", "", "");
-				sld.Dialog.Filename = "Enc_Officer_dialog.c";
-				sld.Dialog.CurrentNode = "hired";
-			}
-			else
-			{
-				sld = CharacterFromID("Alonso");
-				ChangeCharacterAddressGroup(sld, "none", "", "");
-			}
+			VsD_AfterVzriv_4();
 		break;
 		
 		case "VsD_Komendant_6":
 			dialog.text = "Jeśli nie zauważyłeś, stocznia stoi w płomieniach. Wciąż ustalamy, czy to było celowe działanie, czy skutek eksplozji. Mogę jedynie obiecać, że twoi ranni otrzymają opiekę medyczną, a Korona pokryje koszty pochówku zmarłych.";
 			link.l1 = "Jesteś poważny? To najlepsze, co możesz zaoferować?";
 			link.l1.go = "VsD_Komendant_7";
-			sld = CharacterFromID("VsD_Tsyganka");
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload5_back");
-			LAi_CharacterEnableDialog(sld);
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
+			VsD_AfterVzriv_5();
 		break;
 		
 		case "VsD_Komendant_7":
 			dialog.text = "Kapitanie, Francja pilnie potrzebuje Twojej pomocy. Dostarczę Ci deski, a jeśli rozegrasz to sprytnie, Twój statek będzie prawie w pełni naprawiony, zanim dotrzesz na Jamajkę.";
 			link.l1 = "Przepraszam, ale jakie deski? I dlaczego Jamajka?";
 			link.l1.go = "VsD_Komendant_8";
-			pchar.ship.HP = sti(pchar.ship.HP) / 2;
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) - sti(pchar.ship.Crew.Quantity) / 7;
-			AddCharacterGoodsSimple(pchar, GOOD_PLANKS, 100);
+			VsD_AfterVzriv_6();
 		break;
 		
 		case "VsD_Komendant_8":
@@ -2632,26 +2587,12 @@ case "Europe":
 			link.l1 = "Dobrze, zatem. Wypływam natychmiast, pułkowniku.";
 			link.l1.go = "VsD_Komendant_9";
 			
-			sld = CharacterFromID("PortRoyal_shipyarder");
-			sld.TrialDelQuestMark = true;
-			AddLandQuestMark(sld, "questmarkmain");
-			AddMapQuestMarkCity("PortRoyal", false);
+			VsD_AfterVzriv_7();
 		break;
 		
 		case "VsD_Komendant_9":
 			DialogExit();
-			LAi_SetStayType(pchar);
-			
-			sld = CharacterFromID("VsD_Tsyganka");
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "VsD_Tsyganka";
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 3, 0);
-			
-			sld = CharacterFromID("PortPaxAmmoOff_clone");
-			sld.lifeday = 0;
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "gate_back", "none", "", "", "", -1);
+			AddDialogExitQuestFunction("VsD_AfterVzriv_8");
 		break;
 		
 		case "VsD_Tsyganka":
@@ -2671,50 +2612,7 @@ case "Europe":
 			link.l1 = "Nie wiedziałem, że wasza cygańska brać ma ambicje w stolarstwie.";
 			link.l1.go = "VsD_Tsyganka_3";
 			
-			for (i=3; i<=8; i++)
-			{				
-				sld = CharacterFromID("VsD_MirnyeMan_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			for (i=3; i<=6; i++)
-			{				
-				sld = CharacterFromID("VsD_MirnyeWoman_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			for (i=1; i<=6; i++)
-			{				
-				sld = CharacterFromID("VsD_Sold_"+i);
-				LAi_SetCitizenType(sld);
-			}
-			//Возвращаем всё обратно
-			chrDisableReloadToLocation = false;
-			bDisableFastReload = false;
-			bDisableCharacterMenu = false;
-			SetLocationCapturedState("PortPax_town", false);
-			Locations[FindLocation("PortPax_town")].locators_radius.quest.quest1 = 1.0;
-			Locations[FindLocation("PortPax_town")].locators_radius.patrol.patrol14 = 0.5;
-			LocatorReloadEnterDisable("PortPax_ExitTown", "reload2_back", false);
-			LocatorReloadEnterDisable("PortPax_ExitTown", "reload1_back", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_Fort")], false);
-			
-			for (i=1; i<=5; i++)
-			{
-				sld = CharacterFromID("VsD_Guard_"+i);
-				sld.lifeday = 0;
-			}
-			//Диего исчезает
-			sld = CharacterFromID("Diego");
-			LAi_CharacterEnableDialog(sld);
-			sld.location = "None";
-			//Верфь закрывается
-			LocatorReloadEnterDisable("PortPax_Town", "reload5_back", true);
-			SetTimerCondition("VsD_VerfOtkryt", 0, 0, 7, false);
-			//Труп предателя в джунглях
-			PChar.quest.VsD_TrupPredatelya.win_condition.l1 = "location";
-			PChar.quest.VsD_TrupPredatelya.win_condition.l1.location = "PortPax_ExitTown";
-			PChar.quest.VsD_TrupPredatelya.win_condition = "VsD_TrupPredatelya";
-			SetTimerCondition("VsD_TrupPredatelya_3", 0, 0, 60, false);
+			VsD_Final_1();
 		break;
 		
 		case "VsD_Tsyganka_3":
@@ -2737,22 +2635,13 @@ case "Europe":
 		
 		case "VsD_Tsyganka_Net":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			AddQuestRecord("Trial", "7_1");
-			LAi_SetCitizenType(npchar);
-			LAi_CharacterDisableDialog(npchar);
+			AddDialogExitQuestFunction("VsD_Tsyganka_Net");
 		break;
 		
 		case "VsD_Tsyganka_Da":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			AddQuestRecord("Trial", "7_1");
-			AddCharacterExpToSkill(pchar, "Repair", 20);
-			AddMoneyToCharacter(pchar, -1000);
-			GiveItem2Character(PChar, "obereg_1");
+			AddDialogExitQuestFunction("VsD_Tsyganka_Da");
 			Log_info("Otrzymałeś Amulet „Teredo”");
-			LAi_SetCitizenType(npchar);
-			LAi_CharacterDisableDialog(npchar);
 		break;
 		
 		//замечание по обнажённому оружию от персонажей типа citizen

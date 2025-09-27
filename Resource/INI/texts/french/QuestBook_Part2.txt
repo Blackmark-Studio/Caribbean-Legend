@@ -1358,6 +1358,9 @@ J’ai réussi à négocier une augmentation des livraisons avec Christian. Il m
 #TEXT   6
 ************************************************************
 À la taverne de Puerto Principe, j’ai droit à un logement gratuit, des boissons offertes par l’établissement, et l’aubergiste m’a promis que, grâce à lui, davantage de marins voudront servir sous mes ordres.
+#TEXT   7
+************************************************************
+Chez le forgeron de San José, je pourrai acheter les matériaux et objets dont j’ai besoin. Ses livraisons ont lieu une fois par mois.
 
 
 #QUEST FMQ_Guadeloupe
@@ -1477,7 +1480,9 @@ J'ai trop pris mon temps pendant le voyage, et les Britanniques ont déclenché 
 #TEXT 3
 Le lieutenant Caspar Gratton a décidé que je devais l'aider dans son opération militaire contre la Hollande. Il n'en est pas question. S'échapper de Saint-Martin est son problème maintenant.
 #TEXT 4
-J'ai conduit le lieutenant Caspar Gratton et ses soldats à Saint-Martin, mais je n'ai pas été payé. Le lieutenant m'a demandé de l'attendre quelques jours, puis d'emmener son escouade à Antigua, où le colonel Fox me paiera généreusement en totalité. Sans déconner, monsieur. J'espère que les Hollandais ne l'apprendront pas, car aider et encourager les opérations militaires britanniques n'est pas considéré comme une bonne action dans leur pays... Je devrais me rendre à Philipsburg et enquêter sur la situation. Je me demande aussi ce que font les marines.
+Le lieutenant Kaspar Gratton et ses soldats ont été déposés à Saint-Martin, mais aucun paiement n’a suivi. À la place, le lieutenant m’a demandé d’attendre deux ou trois jours, puis de les conduire à Antigua, où son commandant, le colonel Fox, me paierait généreusement. Mouais… J’espère juste que ça ne me causera pas d’ennuis avec les Hollandais. Je me rends au port de Philipsburg : d’abord pour détourner les soupçons potentiels des Hollandais, ensuite pour essayer de savoir pourquoi ces marines britanniques sont venus ici.
+#TEXT   4_1
+Le lieutenant Kaspar Gratton et ses soldats ont été amenés à Saint-Martin, mais aucun paiement n’a suivi. À la place, il m’a demandé d’attendre deux ou trois jours, puis de les emmener à Antigua, où son commandant, le colonel Fox, me paierait généreusement. Hmmm... Espérons que cela ne m’attire pas d’ennuis avec les Hollandais. Je me rends au port de Philipsburg : d’abord pour détourner les soupçons hollandais, ensuite pour enquêter sur la raison de la présence des marines britanniques ici — alors que l’Angleterre et les Pays-Bas sont en paix.
 #TEXT 5
 Trois jours ont passé et je n'ai rien appris. Je devrais retourner à la plage de Grand Case - peut-être que le lieutenant y est déjà ?
 #TEXT 6

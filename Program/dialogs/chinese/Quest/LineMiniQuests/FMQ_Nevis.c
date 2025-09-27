@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_2":
-			dialog.text = "别担心。 法国和荷兰没有交战, 所以应该没有任何危险。 只需把我们送到海滩就可以了。 我们只是想在岛上四处看看。 成交吗? ";
+			dialog.text = "先生, 这不该让您操心。 您没有危险。 您只需把我们送到海湾就好。 怎么样,成交?";
 			link.l1 = "好吧, 我加入。 离这里不远。 让我听听报酬是多少。 ";
 			link.l1.go = "seafox_3";
 			link.l2 = "对不起, 但我在另一个方向有紧急事务, 而且我不想惹恼荷兰人。 ";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 		case "seafox_6":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
 			dialog.text = "感谢你平稳的航行, 船长! 非常抱歉, 但我现在无法支付你... 我们本应在这个区域有一艘纵帆船, 但她不在这里。 如你所见。 我必须再请你帮一次忙。 你能在这个海湾等待两三天吗? 我们必须去四处看看。 一旦我们回来, 把我们送到安提瓜。 福克斯上校会慷慨地奖励你。 ";
-			link.l1 = "他当然会。 我还以为这会顺利进行呢。 ";
+			link.l1 = "嗯……这好像和我们之前说好的不太一样……";
 			link.l1.go = "seafox_7";
 		break;
 		
@@ -233,7 +233,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_25":
-			PlaySound("Voice\English\LE\SeaFox\SeaFox_04.wav");
+			if (pchar.sex == "man") {PlaySound("VOICE\English\LE\SeaFox\SeaFox_04.wav");}
 			dialog.text = "天哪, 外面有人! 你! 你把荷兰人带回这里了, 恶棍! 叛徒! ";
 			link.l1 = ""+RandSwear()+"!!!";
 			link.l1.go = "exit";
@@ -317,14 +317,14 @@ void ProcessDialogEvent()
 		
 		case "seafox_35":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_05.wav");
-			dialog.text = "德莫尔船长... 先生, 感谢你的协助! 我恳求你, 请不要立即离开港口, 而是在这里再待一天, 让我向福克斯上校汇报。 明天拜访他, 他的办公室在总督府。 ";
+			dialog.text = "谢谢您的帮助, 船长! 我请求您在我们殖民地停留一天, 期间我会向福克斯上校汇报。 明天请您前往会见他。 如果您不清楚——福克斯上校的指挥部就在总督府, 往左边走。";
 			link.l1 = "很好, 格雷顿中尉。 请让我觉得值得。 由于你的冒险, 我需要很长时间才能修复与荷兰人的声誉。 ";
 			link.l1.go = "seafox_36";
 		break;
 		
 		case "seafox_35x":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_05.wav");
-			dialog.text = "感谢你的协助, 船长! 你是真正的英雄! 格雷顿中尉没能成功, 真是悲剧。 他作为真正的绅士和英国之子去世了。 我想请你在这里再待一天, 让我向福克斯上校汇报。 明天拜访他, 他的办公室在总督府。 ";
+			dialog.text = "感谢你的协助, 船长! 您"+GetSexPhrase("表现得就像个真正的英雄","真是位非常勇敢的姑娘")+", "+GetAddress_Form(NPChar)+"! 格雷顿中尉没能成功, 真是悲剧。 他作为真正的绅士和英国之子去世了。 我想请你在这里再待一天, 让我向福克斯上校汇报。 明天拜访他, 他的办公室在总督府。 ";
 			link.l1 = "很好。 请让我觉得值得。 由于你的冒险, 我需要很长时间才能修复与荷兰人的声誉。 ";
 			link.l1.go = "seafox_36";
 		break;
@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 		
 		case "soldier":
 			PlaySound("Voice\English\soldier_common_2.wav");
-			dialog.text = GetFullName(pchar)+"船长? ";
+			dialog.text = ""GetFullName(pchar)+"船长? ";
 			link.l1 = "嗯... 是的, 我能为你做什么? ";
 			link.l1.go = "soldier_1";
 		break;

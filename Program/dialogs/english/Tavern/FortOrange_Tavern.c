@@ -4,20 +4,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?", "How can I help you, " + GetAddress_Form(NPChar) + "?"), "You tried to ask me some question not long ago, " + GetAddress_Form(NPChar) + "...", "Over this whole day, this is the third time you're talking about some question...",
-                          "More questions, I presume?", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...", "I've got nothing to talk about at the moment."), "Umph, where has my memory gone...",
-                      "Yes, it really is the third time...", "No, what questions?...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?","How can I help you, "+GetAddress_Form(NPChar)+"?"),"You tried to ask me a question not long ago, "+GetAddress_Form(NPChar)+"...","Over the course of this whole day, this is the third time you've brought up that question...","More questions, I presume?","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...","I've got nothing to talk about at the moment."),"Umph, where has my memory gone...","Yes, it really is the third time...","No, what questions?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (pchar.questTemp.Slavetrader == "FindRatJamaica")
             {
-                link.l1 = "Has a man named Francois Gontier stopped by in your town? I really need him.";
+                link.l1 = "Has a man named François Gontier stopped by in your town? I really need him.";
                 link.l1.go = "Jamaica_ratF_1";
             }
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "silk_4")
             {
-                link.l1 = "Listen mate, there's a ship out of Port Royal who is purchasing some silk for his shipyard... some very special silk, you surely've heard of it. They say a seller of such silk is residing somewhere in this settlement. Do you have any clues on how to find him? I have a business proposal for him.";
+                link.l1 = "Listen mate, there's a ship out of Port Royal that's purchasing some silk for its shipyard... some very special silk, you surely have heard of it. They say a seller of such silk is residing somewhere in this settlement. Do you have any clues on how to find him? I have a business proposal for him.";
                 link.l1.go = "mtraxx";
 			}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "silk_5" && (PCharDublonsTotal() >= 50))
@@ -28,8 +26,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "Jamaica_ratF_1":
-			dialog.text = "He has. He'd been renting a room for a few days. Not the most pleasant fellow, I'll tell you. Besides that, he was obsessively paranoid of being searched for. He was always afraid and looking around. Are you the man that he was so afraid of?";
-			link.l1 = "No, it's not me. You know, privateers have a lot of enemies though. So, where can I find him? He and I decided to make an agreement, but seems like the ground has swallowed him up.";
+			dialog.text = "He has. He'd been renting a room for a few days. Not the most pleasant fellow, I'll tell you. Besides that, he was obsessively paranoid about being searched for. He was always afraid and looking around. Are you the man he was so afraid of?";
+			link.l1 = "No, it's not me. You know, privateers have a lot of enemies though. So, where can I find him? He and I decided to make an agreement, but it seems as if the ground has swallowed him up.";
 			link.l1.go = "Jamaica_ratF_2";
 		break;
 		
@@ -41,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Jamaica_ratF_3":
 			dialog.text = "I don't know, mate. I'd tell you if I knew.";
-			link.l1 = "All right, I see. I'll go ask some other people...";
+			link.l1 = "All right, I see. I'll go ask someone else...";
 			link.l1.go = "exit";
 			AddQuestRecord("Slavetrader", "21_4");
 			pchar.questTemp.Slavetrader = "FindRatJamaica_H";
@@ -49,25 +47,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// Addon 2016-1 Jason пиратская линейка
 		case "mtraxx":
-            dialog.text = "Huh, if you suspect our merchant, the one that keeps the store, I can tell it's not him, he doesn't deal in silk sailcloth. Smugglers don't come here neither, no need for them when there's no customs house. And besides no one else, except our merchant, trades here anyways. Have a look around, we aren't that sort of people, ha-ha!";
-			link.l1 = "But someone is supplying the silk to Port Royal - that's irrefutable. Do you have any clue on who could be the supplier?";
+            dialog.text = "Huh, if you suspect our merchant, the one who keeps the store, I can tell you it's not him, he doesn't deal in silk sailcloth. Smugglers don't come here either, no need for them when there's no customs house. And besides, no one else except our merchant trades here anyway. Have a look around, we aren't that sort of people, ha-ha!";
+			link.l1 = "But someone is supplying the silk to Port Royal - that's irrefutable. Do you have any clue who the supplier could be?";
 			link.l1.go = "mtraxx_1";
 		break;
 		
 		case "mtraxx_1":
-            dialog.text = "Smugglers from Port Royal, maybe? Or rogue pirates? Must be unloading their loot in some hidden cove... Ha! I have an idea, pal. There is one local, he knows all that's going on in these waters. If he won't have any assumptions then there are no merchants of silk.";
-			link.l1 = "Splendid! What's the guy's name?";
+            dialog.text = "Smugglers from Port Royal, maybe? Or rogue pirates? Must be unloading their loot in some hidden cove... Ha! I have an idea, pal. There's a local who knows everything that goes on in these waters. If he has no suspicions, then there are no merchants of silk.";
+			link.l1 = "Splendid! What's the fellow's name?";
 			link.l1.go = "mtraxx_2";
 		break;
 		
 		case "mtraxx_2":
-            dialog.text = "Hm... I am trying to recall his name but it just doesn't come up for some reason...";
-			link.l1 = "How 'bout a few coins to aid your memory?";
+            dialog.text = "Hm... I'm trying to recall his name, but for some reason it just won't come to me...";
+			link.l1 = "How about a few coins to aid your memory?";
 			link.l1.go = "mtraxx_3";
 		break;
 		
 		case "mtraxx_3":
-            dialog.text = "I guess that might help... Fifty gold doubloons will surely illuminate this old head.";
+            dialog.text = "I suppose that might help... Fifty gold doubloons will surely enlighten this old head.";
 			if (PCharDublonsTotal() >= 50) // Rebbebion, учёт количества дублонов из рундука
 			{
 				link.l1 = "I see. Here, take the coins.";
@@ -83,13 +81,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "mtraxx_4_1":
 			RemoveDublonsFromPCharTotal(50);
 			PlaySound("interface\important_item.wav");
-            dialog.text = "Husky Billy is the man you need. He has been living on Jamaica like forever, knows every dog on the streets. Used to be a pirate and a pain in the brits asses until he got wounded some three years ago. Now he mostly fishes, hunts sharks and gathers amber in Jamaica's bays. He leaves his old long boat only to buy more rum and crackers\nYou should look for him within waters around Jamaica. They say he's sailing at the northern side, all the way to the east-most point. But chasing a long boat is a fool's errand, you better stake out around the south-west corner, they say he's been seen near Cape Negril about once a week. His cockleboat is called 'The Fly Fish'.";
+            dialog.text = "Husky Billy is the man you need. He has been living on Jamaica for ages, knows every dog on the streets. Used to be a pirate and a pain in the Brits' asses until he got wounded about three years ago. Now he mostly fishes, hunts sharks, and gathers amber in Jamaica's bays. He leaves his old longboat only to buy more rum and crackers\nYou should look for him in the waters around Jamaica. They say he's sailing on the northern side, all the way to the easternmost point. But chasing a longboat is a fool's errand; you'd better stake out around the southwest corner—they say he's been seen near Cape Negril about once a week. His cockleboat is called 'The Fly Fish'.";
 			link.l1 = "Thanks, mate. You've earned your gold.";
 			link.l1.go = "mtraxx_5";
 		break;
 		
 		case "mtraxx_5":
-            dialog.text = "Good luck, mate! I hope you'll find what you are looking for!";
+            dialog.text = "Good luck, mate! I hope you find what you're looking for!";
 			link.l1 = "...";
 			link.l1.go = "mtraxx_6";
 		break;

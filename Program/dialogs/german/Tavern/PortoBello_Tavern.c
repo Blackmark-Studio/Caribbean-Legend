@@ -24,6 +24,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "Schau, ich suche einen Mann namens Bertrand Pinette, hast du von ihm gehört? Er kam vor kurzem nach Portobello. Ein eindrucksvoller Herr mit einer lockigen Perücke. Ein Händler. Er könnte hier gewesen sein...";
                 link.l1.go = "FMQG";
             }
+			//--> Письмо от покойника
+			if (CheckAttribute(pchar, "questTemp.LFD_Tavern_1"))
+            {
+                link.l1 = "Kannst du mir sagen, wo ich Marisa Caldera finden kann?";
+                link.l1.go = "LFD_Tavern_1_1";
+            }
+			//<-- Письмо от покойника
 		break;
 		
 		case "Portobello_rat_1":
@@ -59,6 +66,37 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("FMQ_Guadeloupe", "9");
 			npchar.quest.FMQG = true;
 		break;
+		//--> Письмо от покойника
+		case "LFD_Tavern_1_1":
+			dialog.text = "Marisa? Hm... Ich habe sie schon lange nicht mehr gesehen. Seit sie vom Tod ihres Mannes erfahren hat, zeigt sie sich nicht mehr in der Stadt.";
+			link.l1 = "Also ist sie eine Witwe?";
+			link.l1.go = "LFD_Tavern_1_2";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "LFD_Tavern_1_2":
+			dialog.text = "Ja. Ihr Mann war Kapitän des Handelspinas 'Wellenbrecher'. Dank einer Lizenz der Niederländischen Westindien-Kompanie standen ihm fast alle Häfen des Archipels offen. Man sagt, er überlebte einen Piratenüberfall auf dem Weg von Belize nach Capsterville nicht. So etwas ist hier nicht ungewöhnlich, aber für sie war es ein harter Schlag.";
+			link.l1 = "Und sie ist einfach verschwunden?";
+			link.l1.go = "LFD_Tavern_1_3";
+		break;
+		
+		case "LFD_Tavern_1_3":
+			dialog.text = "Na ja, verschwunden ist vielleicht zu viel gesagt. Aber seitdem sieht man sie kaum noch in der Stadt. Seltsam ist nur... von Zeit zu Zeit fragen verschiedene Männer nach ihr. So wie Ihr, Kapitän. Wäre sie nicht so fromm gewesen, hätte ich gedacht, sie hätte sich zurückgezogen und verdient ihr Geld... auf andere Weise. Doch Marisa hat vor dem Tod ihres Mannes keine einzige Heilige Messe verpasst – sie hat praktisch in der Kirche gelebt. Also wohl kaum.";
+			link.l1 = "Das ist alles? Weißt du sonst nichts?";
+			link.l1.go = "LFD_Tavern_1_4";
+		break;
+		
+		case "LFD_Tavern_1_4":
+			dialog.text = "Alles, was ich weiß, habe ich Euch bereits erzählt, Kapitän.";
+			link.l1 = "...";
+			link.l1.go = "LFD_Tavern_1_5";
+		break;
+		
+		case "LFD_Tavern_1_5":
+			DialogExit();
+			AddDialogExitQuestFunction("LFD_Tavern_1");
+		break;
+		//<-- Письмо от покойника
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

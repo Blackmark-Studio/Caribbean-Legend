@@ -1,8 +1,7 @@
-newLine {
-
+newLine
+{
 
 }
-
 HelpChooser {Sélection d'aide}
 MainInterface {Commandes d'interface}
 DialogControls {Dialogue}
@@ -12,885 +11,181 @@ Sailing1Pers {Navigation 1ère personne}
 Sailing3Pers {Navigation 3ème personne}
 FightModeControls {Mode combat}
 PrimaryLand {Commandes sur terre}
-
-
-
-ChrCamTurnV
-{
-Mouvement vertical de la caméra du personnage
-}
-
-ChrCamTurnH
-{
-Mouvement horizontal de la caméra du personnage
-}
-
-ChrCamCameraSwitch
-{
-Mode de la caméra
-}
-
-SwitchCameraOffset
-{
-Vue de la caméra
-}
-
-CharacterCamera_Forward
-{
-Zoomer la caméra
-}
-
-CharacterCamera_Backward
-{
-Dézoomer la caméra
-}
-
-ChrAiming
-{
-Mode tireur d'élite (maintenir)
-}
-
-ChrAimingShot
-{
-Tirer
-}
-
-ChrCamCameraRadius
-{
-Zoom de la caméra
-}
-
-ChrCamNormalize
-{
-Centrer la caméra
-}
-
-ShipCamera_Turn_V
-{
-Mouvement vertical de la caméra du navire
-}
-
-ShipCamera_Turn_H
-{
-Mouvement horizontal de la caméra du navire
-}
-
-ShipCamera_Forward
-{
-Zoomer la caméra
-}
-
-ShipCamera_Backward
-{
-Dézoomer la caméra
-}
-
-DeckCamera_Turn_V
-{
-Rotation verticale de la caméra (vue sur le pont)
-}
-
-DeckCamera_Turn_H
-{
-Rotation horizontale de la caméra (vue sur du pont)
-}
-
-DeckCamera_Forward
-{
-Avancer sur le pont
-}
-
-DeckCamera_Backward
-{
-Reculez sur le pont
-}
-
-DeckCamera_Left
-{
-Déplacer la caméra sur la gauche (vue sur le pont)
-}
-
-DeckCamera_Right
-{
-Déplacer la caméra sur la droite (vue sur le pont)
-}
-
-ChrTurnH
-{
-Pivoter le personnage
-}
-
-ChrTurnV
-{
-Déplacer le personnage
-}
-
-ChrTurnHL
-{
-Faire pivoter le personnage à gauche
-}
-
-ChrTurnHR
-{
-Faire pivoter le personnage à droite
-}
-
-ChrAction
-{
-Effectuer une action
-}
-
-ChrForward
-{
-Avancer
-}
-
-ChrForward1
-{
-Avancer
-}
-
-ChrForward2
-{
-Avancer (alt.)
-}
-
-ChrBackward
-{
-Reculer
-}
-
-ChrBackward1
-{
-Reculer
-}
-
-ChrSwitchWalk
-{
-Marche/course
-}
-
-ChrSprint
-{
-Sprinter
-}
-
-ChrRunStick
-{
-Marche/course
-}
-
-ChrBlock
-{
-Bloquer
-}
-
-ChrRecoil
-{
-Esquive
-}
-
-ChrParry
-{
-Parade (alt.)
-}
-
-ChrAttackForce
-{
-Attaque rapide
-}
-
-ChrAttackFast
-{
-Attaque tranchante
-}
-
-ChrAttackRound
-{
-Attaque de groupe 
-}
-
-ChrAttackBreak
-{
-Attaque lourde
-}
-
-ChrAttackFient
-{
-Feinte (alt.)
-}
-
-ChrAttackBreakBase
-{
-Attaque lourde / Feinte
-}
-
-ChrAttackRoundBase
-{
-Attaque de groupe
-}
-
-ChrAttackChoseBase
-{
-Contrôle du combo
-}
-
-ChrBlockBase
-{
-Bloquer
-}
-
-ChrAttackBase
-{
-Attaque rapide / Parade
-}
-
-ChrAltAttackBase
-{
-Attaque tranchante  / Attaque de groupe
-}
-
-ChrFire
-{
-Tirer
-}
-
-ChrFightMode
-{
-Dégainer / Rengainer
-}
-
-ChrSwitchFightMode
-{
-Changer de mode de combat
-}
-
-BulletChanger
-{
-Changer de munitions
-}
-
-PotionChanger
-{
-Changer de potion de soin
-}
-
-BOAL_UsePotion
-{
-Utiliser une potion de soin
-}
-
-BOAL_ActivateRush
-{
-Utiliser la concoction Ometochtli 
-}
-
-BOAL_DeadSearch
-{
-Fouiller
-}
-
-UseAntidote
-{
-Utiliser un antidote
-}
-
-Alchemy
-{
-Alchimie
-}
-
-Inventory
-{
-Inventaire
-}
-
-ShipState
-{
-Flotte
-}
-
-QuestBook
-{
-Journal de bord
-}
-
-MapView
-{
-Cartes
-}
-
-Abilities
-{
-Personnage
-}
-
-Nations
-{
-Nations
-}
-
-Dolly
-{
-Activer l'idole Maya
-}
-
-Ultimate_potion
-{
-Boire une potion indienne
-}
-
-Ship_TurnLeft
-{
-Virer le navire à gauche
-}
-
-Ship_TurnRight
-{
-Virer le navire à droite
-}
-
-Ship_SailUp
-{
-Lever les voiles
-}
-
-Ship_SailDown
-{
-Baisser les voiles
-}
-
-Ship_Fire
-{
-Feu !
-}
-
-Sea_CameraSwitch
-{
-Mode de caméra navale
-}
-
-TelescopeMode
-{
-Activer la longue-vue
-}
-
-TelescopeZoomIn
-{
-Zoomer avec la longue-vue
-}
-
-TelescopeZoomOut
-{
-Dézoomer avec la longue-vue
-}
-
-BI_MapEnter
-{
-Carte globale
-}
-
-WMapTurnH
-{
-Rotation de la caméra autour du navire (carte du monde)
-}
-
-WMapTurnV
-{
-Hauteur de la caméra (carte du monde)
-}
-
-WMapCameraRotate
-{
-Glissement / rotation de la caméra activé
-}
-
-WMapForward
-{
-Zoom avant de la caméra
-}
-
-WMapBackward
-{
-Zoom arrière de la caméra
-}
-
-WMapCameraSwitch
-{
-Changer de mode de caméra
-}
-
-WMapShipSailUp
-{
-Naviguer vers l'avant
-}
-
-WMapShipSailDown
-{
-Naviguer vers l'arrière
-}
-
-WMapShipTurnLeft
-{
-Tourner à gauche
-}
-
-WMapShipTurnRight
-{
-Tourner à droite
-}
-
-WMapCancel
-{
-Quitter la carte du monde vers la mer
-}
-
-Interface
-{
-Paramètres d'interface
-}
-
-MainMenu
-{
-Menu principal
-}
-
-MainMenuDouble
-{
-Menu principal
-}
-
-Help
-{
-Aide
-}
-
-BICommandsActivate
-{
-Menu d'action
-}
-
-LICommandsActivate
-{
-Menu d'action
-}
-
-BICommandsConfirm
-{
-Confirmer commande  
-}
-
-BICommandsCancel
-{
-Annuler la commande 
-}
-
-BICommandsUp
-{
-Menu d'action - naviguer vers le haut
-}
-
-BICommandsDown
-{
-Menu d'action - naviguer vers le bas
-}
-
-BICommandsLeft
-{
-Menu d'action - naviguer vers la gauche
-}
-
-BICommandsRight
-{
-Menu d'action - naviguer vers la droite
-}
-
-MiniMapZoomIn
-{
-Zoomer sur la mini-carte
-}
-
-MiniMapZoomOut
-{
-Dézoomer sur la mini-carte
-}
-
-BIFastCommand
-{
-Action rapide
-}
-
-HelpChooser_Cancel
-{
-Quitter menu d'aide
-}
-
-HelpChooser_Action
-{
-Afficher l’aide pour l’ElEment actuel
-}
-
-HelpChooser_Next
-{
-Info suivante
-}
-
-HelpChooser_Prev
-{
-Info prEcEdente
-}
-
-HelpChooser_Left
-{
-Gauche (menu d'aide)
-}
-
-HelpChooser_Right
-{
-Droite (menu d'aide)
-}
-
-HelpChooser_Up
-{
-Haut (menu d'aide)
-}
-
-HelpChooser_Down
-{
-Bas (menu d'aide)
-}
-
-DlgAction
-{
-Obtion; Selection de rEponse
-}
-
-DlgAction1
-{
-Obtion; Selection de rEponse
-}
-
-DlgUp
-{
-Obtion; du dialogue prEcEdent
-}
-
-DlgDown
-{
-Obtion; du dialogue suivant
-}
-
-DlgScrollUp
-{
-Descendre le texte de dialogue
-}
-
-DlgScrollDown
-{
-Remonter le texte de dialogue
-}
-
-hk_charge1
-{
-Charger les boulets ronds
-}
-
-hk_charge2
-{
-Charger la mitraille
-}
-
-hk_charge3
-{
-Charger les boulets chaînés
-}
-
-hk_charge4
-{
-Charger les bombes
-}
-
-hk_Cure
-{
-Utiliser Elixir de santE
-}
-
-hk_Rush
-{
-Utiliser la capacitE Furie
-}
-
-hk_ImmediateReload
-{
-Rechargement préparé
-}
-
-hk_LightRepair
-{
-Réparation d'urgence
-}
-
-hk_InstantRepair
-{
-Réparation en combat
-}
-
-hk_Turn180
-{
-Rotation rapide
-}
-
-hk_SandbankManeuver
-{
-Manoeuvre d'esquive de banc de sable
-}
-
-ChrStrafeLeft
-{
-Aller vers la gauche
-}
-
-ChrStrafeRight
-{
-Aller vers la droite
-}
-
-OfficersCharge
-{
-Ordre pour les officiers : Attaquez
-}
-
-OfficersHold
-{
-Ordre pour les officiers : Restez où vous êtes
-}
-
-OfficersFollow
-{
-Ordre pour les officiers : Suivez-moi
-}
-
-FLT_LoadBalls
-{
-Ordre pour la flotte : chargez les canons avec des boulets ronds
-}
-
-FLT_LoadGrapes
-{
-Ordre pour la flotte : chargez les canons avec de la mitraille
-}
-
-FLT_LoadChain
-{
-Ordre pour la flotte : chargez les canons avec des boulets chaînés
-}
-
-FLT_LoadBombs
-{
-Ordre pour la flotte : chargez les canons avec des bombes
-}
-
-FLT_SailAway
-{
-Ordre pour la flotte : naviguez au loin
-}
-
-FLT_LowerSails
-{
-Ordre pour la flotte : baissez les voiles
-}
-
-FLT_ProtFlagship
-{
-Ordre pour la flotte : protégez le navire amiral
-}
-
-Fast_store
-{
-Voyage rapide : Magasin
-}
-
-Fast_shipyard
-{
-Voyage rapide : Chantier naval
-}
-
-Fast_tavern
-{
-Voyage rapide : Taverne
-}
-
-Fast_townhall
-{
-Voyage rapide : Résidence du gouverneur
-}
-
-Fast_bank
-{
-Voyage rapide : Banque
-}
-
-Fast_church
-{
-Voyage rapide : Église
-}
-
-Fast_brothel
-{
-Voyage rapide : Bordel
-}
-
-Fast_portoffice
-{
-Voyage rapide : Office portuaire
-}
-
-Fast_prison
-{
-Voyage rapide : Prison
-}
-
-Fast_port
-{
-Voyage rapide : Port
-}
-
-LI_Fast_store
-{
-Magasin
-}
-
-LI_Fast_shipyard
-{
-Chantier naval
-}
-
-LI_Fast_tavern
-{
-Taverne
-}
-
-LI_Fast_townhall
-{
-Résidence du gouverneur
-}
-
-LI_Fast_bank
-{
-Banque
-}
-
-LI_Fast_church
-{
-Église
-}
-
-LI_Fast_brothel
-{
-Bordel
-}
-
-LI_Fast_portoffice
-{
-Office portuaire
-}
-
-LI_Fast_prison
-{
-Prison
-}
-
-LI_Fast_port
-{
-Port
-}
-
-HK_Musket
-{
-Équiper une arme d'épaule
-}
-
-HK_FencingL
-{
-Équiper une arme légère
-}
-
-HK_FencingS
-{
-Équiper une arme moyenne
-}
-
-HK_FencingH
-{
-Équiper une arme lourde
-}
-
-HK_bullet
-{
-Charger une balle (modificateur)
-}
-
-HK_cartridge
-{
-Charger une cartouche de papier (modificateur)
-}
-
-HK_grapeshot
-{
-Charger une chevrotine (modificateur)
-}
-
-HK_harpoon
-{
-Charger une flèche (modificateur)
-}
-
-HK_GunEchin
-{
-Charger une charge d'hérisson (modificateur)
-}
-
-HK_grenade
-{
-Charger une grenade (modificateur)
-}
-
-hk_Cabin
-{
-Cabine du capitaine
-}
-
-CannonsRange
-{
-Afficher la zone de tir
-}
-
-ChangeShowInterface
-{
-Masquer/afficher l'interface utilisateur
-}
-
-FreeCam
-{
-Caméra libre
-}
-
-TimeScale
-{
-Le temps s'accélère/ralentit
-}
-
-TimeScaleFasterBA
-{
-Le temps s'accélère
-}
-
-TimeScaleSlowerBA
-{
-Le temps ralentit
-}
-
-FireCamera_Set
-{
-Vue de visée
-}
+ChrCamTurnV {Mouvement vertical de la caméra du personnage}
+ChrCamTurnH {Mouvement horizontal de la caméra du personnage}
+ChrCamCameraSwitch {Mode de la caméra}
+SwitchCameraOffset {Vue de la caméra}
+CharacterCamera_Forward {Zoomer la caméra}
+CharacterCamera_Backward {Dézoomer la caméra}
+ChrAiming {Mode tireur d'élite (maintenir)}
+ChrAimingShot {Tirer}
+ChrCamCameraRadius {Zoom de la caméra}
+ChrCamNormalize {Centrer la caméra}
+ShipCamera_Turn_V {Mouvement vertical de la caméra du navire}
+ShipCamera_Turn_H {Mouvement horizontal de la caméra du navire}
+ShipCamera_Forward {Zoomer la caméra}
+ShipCamera_Backward {Dézoomer la caméra}
+DeckCamera_Turn_V {Rotation verticale de la caméra (vue sur le pont)}
+DeckCamera_Turn_H {Rotation horizontale de la caméra (vue sur du pont)}
+DeckCamera_Forward {Avancer sur le pont}
+DeckCamera_Backward {Reculez sur le pont}
+DeckCamera_Left {Déplacer la caméra sur la gauche (vue sur le pont)}
+DeckCamera_Right {Déplacer la caméra sur la droite (vue sur le pont)}
+ChrTurnH {Pivoter le personnage}
+ChrTurnV {Déplacer le personnage}
+ChrTurnHL {Faire pivoter le personnage à gauche}
+ChrTurnHR {Faire pivoter le personnage à droite}
+ChrAction {Effectuer une action}
+ChrForward {Avancer}
+ChrForward1 {Avancer}
+ChrForward2 {Avancer (alt.)}
+ChrBackward {Reculer}
+ChrBackward1 {Reculer}
+ChrSwitchWalk {Marche/course}
+ChrSprint {Sprinter}
+ChrRunStick {Marche/course}
+ChrBlock {Bloquer}
+ChrRecoil {Esquive}
+ChrParry {Parade (alt.)}
+ChrAttackForce {Attaque rapide}
+ChrAttackFast {Attaque tranchante}
+ChrAttackRound {Attaque de groupe}
+ChrAttackBreak {Attaque lourde}
+ChrAttackFient {Feinte (alt.)}
+ChrAttackBreakBase {Attaque lourde}
+ChrAttackRoundBase {Attaque de groupe}
+ChrAttackChoseBase {Contrôle du combo}
+ChrBlockBase {Bloquer}
+ChrAttackBase {Attaque rapide / Parade}
+ChrAltAttackBase {Attaque tranchante  / Attaque de groupe}
+ChrFire {Tirer}
+ChrFightMode {Dégainer / Rengainer}
+ChrSwitchFightMode {Changer de mode de combat}
+BulletChanger {Changer de munitions}
+PotionChanger {Changer de potion de soin}
+BOAL_UsePotion {Utiliser une potion de soin}
+BOAL_ActivateRush {Utiliser la concoction Ometochtli}
+BOAL_DeadSearch {Fouiller}
+UseAntidote {Utiliser un antidote}
+Alchemy {Alchimie}
+Inventory {Inventaire}
+ShipState {Flotte}
+QuestBook {Journal de bord}
+MapView {Cartes}
+Abilities {Personnage}
+Nations {Nations}
+Dolly {Activer l'idole Maya}
+Ultimate_potion {Boire une potion indienne}
+Ship_TurnLeft {Virer le navire à gauche}
+Ship_TurnRight {Virer le navire à droite}
+Ship_SailUp {Lever les voiles}
+Ship_SailDown {Baisser les voiles}
+Ship_Fire {Feu !}
+Sea_CameraSwitch {Mode de caméra navale}
+TelescopeMode {Activer la longue-vue}
+TelescopeZoomIn {Zoomer avec la longue-vue}
+TelescopeZoomOut {Dézoomer avec la longue-vue}
+BI_MapEnter {Carte globale}
+WMapTurnH {Rotation de la caméra autour du navire (carte du monde)}
+WMapTurnV {Hauteur de la caméra (carte du monde)}
+WMapCameraRotate {Glissement / rotation de la caméra activé}
+WMapForward {Zoom avant de la caméra}
+WMapBackward {Zoom arrière de la caméra}
+WMapCameraSwitch {Changer de mode de caméra}
+WMapShipSailUp {Naviguer vers l'avant}
+WMapShipSailDown {Naviguer vers l'arrière}
+WMapShipTurnLeft {Tourner à gauche}
+WMapShipTurnRight {Tourner à droite}
+WMapCancel {Quitter la carte du monde vers la mer}
+TimeScaleOn {Accélérer le temps}
+TimeScaleOff {Désactiver l’accélération}
+Interface {Paramètres d'interface}
+MainMenu {Menu principal}
+MainMenuDouble {Menu principal}
+Help {Aide}
+BICommandsActivate {Menu d'action}
+LICommandsActivate {Menu d'action}
+BICommandsConfirm {Confirmer commande}
+BICommandsCancel {Annuler la commande}
+BICommandsUp {Menu d'action - naviguer vers le haut}
+BICommandsDown {Menu d'action - naviguer vers le bas}
+BICommandsLeft {Menu d'action - naviguer vers la gauche}
+BICommandsRight {Menu d'action - naviguer vers la droite}
+MiniMapZoomIn {Zoomer sur la mini-carte}
+MiniMapZoomOut {Dézoomer sur la mini-carte}
+BIFastCommand {Action rapide}
+HelpChooser_Cancel {Quitter menu d'aide}
+HelpChooser_Action {Afficher l’aide pour l’ElEment actuel}
+HelpChooser_Next {Info suivante}
+HelpChooser_Prev {Info prEcEdente}
+HelpChooser_Left {Gauche (menu d'aide)}
+HelpChooser_Right {Droite (menu d'aide)}
+HelpChooser_Up {Haut (menu d'aide)}
+HelpChooser_Down {Bas (menu d'aide)}
+DlgAction {Obtion; Selection de rEponse}
+DlgAction1 {Obtion; Selection de rEponse}
+DlgUp {Obtion; du dialogue prEcEdent}
+DlgDown {Obtion; du dialogue suivant}
+DlgScrollUp {Descendre le texte de dialogue}
+DlgScrollDown {Remonter le texte de dialogue}
+hk_charge1 {Charger les boulets ronds}
+hk_charge2 {Charger la mitraille}
+hk_charge3 {Charger les boulets chaînés}
+hk_charge4 {Charger les bombes}
+hk_Cure {Utiliser Elixir de santE}
+hk_Rush {Utiliser la capacitE Furie}
+hk_ImmediateReload {Rechargement préparé}
+hk_LightRepair {Réparation d'urgence}
+hk_InstantRepair {Réparation en combat}
+hk_Turn180 {Rotation rapide}
+hk_SandbankManeuver {Manoeuvre d'esquive de banc de sable}
+ChrStrafeLeft {Aller vers la gauche}
+ChrStrafeRight {Aller vers la droite}
+OfficersCharge {Ordre pour les officiers : Attaquez}
+OfficersHold {Ordre pour les officiers : Restez où vous êtes}
+OfficersFollow {Ordre pour les officiers : Suivez-moi}
+FLT_LoadBalls {Ordre pour la flotte : chargez les canons avec des boulets ronds}
+FLT_LoadGrapes {Ordre pour la flotte : chargez les canons avec de la mitraille}
+FLT_LoadChain {Ordre pour la flotte : chargez les canons avec des boulets chaînés}
+FLT_LoadBombs {Ordre pour la flotte : chargez les canons avec des bombes}
+FLT_SailAway {Ordre pour la flotte : naviguez au loin}
+FLT_LowerSails {Ordre pour la flotte : baissez les voiles}
+FLT_ProtFlagship {Ordre pour la flotte : protégez le navire amiral}
+Fast_store {Voyage rapide : Magasin}
+Fast_shipyard {Voyage rapide : Chantier naval}
+Fast_tavern {Voyage rapide : Taverne}
+Fast_townhall {Voyage rapide : Résidence du gouverneur}
+Fast_bank {Voyage rapide : Banque}
+Fast_church {Voyage rapide : Église}
+Fast_brothel {Voyage rapide : Bordel}
+Fast_portoffice {Voyage rapide : Office portuaire}
+Fast_prison {Voyage rapide : Prison}
+Fast_port {Voyage rapide : Port}
+LI_Fast_store {Magasin}
+LI_Fast_shipyard {Chantier naval}
+LI_Fast_tavern {Taverne}
+LI_Fast_townhall {Résidence du gouverneur}
+LI_Fast_bank {Banque}
+LI_Fast_church {Église}
+LI_Fast_brothel {Bordel}
+LI_Fast_portoffice {Office portuaire}
+LI_Fast_prison {Prison}
+LI_Fast_port {Port}
+HK_Musket {Équiper une arme d'épaule}
+HK_FencingL {Équiper une arme légère}
+HK_FencingS {Équiper une arme moyenne}
+HK_FencingH {Équiper une arme lourde}
+HK_bullet {Charger une balle (modificateur)}
+HK_cartridge {Charger une cartouche de papier (modificateur)}
+HK_grapeshot {Charger une chevrotine (modificateur)}
+HK_harpoon {Charger une flèche (modificateur)}
+HK_GunEchin {Charger une charge d'hérisson (modificateur)}
+HK_grenade {Charger une grenade (modificateur)}
+hk_Cabin {Cabine du capitaine}
+CannonsRange {Afficher la zone de tir}
+ChangeShowInterface {Masquer/afficher l'interface utilisateur}
+FreeCam {Caméra libre}
+TimeScale {Le temps s'accélère/ralentit}
+TimeScaleFasterBA {Le temps s'accélère}
+TimeScaleSlowerBA {Le temps ralentit}
+FireCamera_Set {Vue de visée}

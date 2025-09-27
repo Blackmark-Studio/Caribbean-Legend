@@ -1,68 +1,37 @@
-
 new_string
 {
 
 }
-
 Ship_Name {Holy Mercy}
-
 Cap_Name {Fernando}
-
 Cap_lastname {de Alamida}
-
 City_Rum1 {The whole city is on edge - don Fernando de Alamida, the royal inspector, has arrived. You know, I've seen a lot here, but this... It's not grief that changes people, but how they deal with it. They say he became a different man after his father's death. Now you won't find a more incorruptible and... merciless servant of the Crown in the entire Archipelago.}
-
 City_Rum2 {Just look at the "Holy Mercy"! They say the king himself ordered it built according to special designs. And notice - not a single scratch. As if the Virgin Mary herself protects it. Though I've heard rumors... maybe it's not the Virgin at all.}
-
 City_Rum3 {You know how many times they've tried to kill don Fernando? Twelve attacks in open waters - and that's just in the last year! Well, with such a loyal and trained crew, and under the Lord's protection - he'll survive the thirteenth too!}
-
 City_Rum4 {Have you heard? Don Fernando de Alamida has arrived in our city, and they say he's somewhere in the streets right now. Would love to see him with my own eyes...}
-
 City_Rum5 {A complicated man, this don Fernando. Some say he's a savior, cleansing the Motherland of filth. Others whisper that something broke in him after his father's death and soon we'll all be weeping. But I'll tell you this: don't fear him. Fear those who made him what he is.}
-
 City_Rum6 {Such a handsome man, this don Fernando! But you know what's strange? It's like he doesn't notice anyone. All duty and service. I heard there was a girl... but after meeting with some priest, he completely rejected worldly pleasures. As if he took a vow.}
-
 City_Rum7 {Damn inspector! While he's here - the city's like dead. No trade, no fun. Even breathing, it seems, must be quieter. And you know what's most frightening? It's the same in every port. Like clockwork. His Royal Majesty couldn't have deliberately invented this torture for all of us!}
-
 City_Rum8 {Don Fernando visited the orphanage again. Donates generously, prays for hours. Such a worthy man should be held up as an example to those cursed embezzlers!}
-
 City_Rum9 {Ha! "Saint" Fernando closed all the brothels again. Well, never mind, he'll sail away soon and they'll open right back up.}
-
 City_Rum10 {The insp... inspector has arrived, that's what! Don Fernando de Almeyda, or, what's his name, Alamida! So important that the governor himself tiptoes around him. They say he looks into your eyes and sees all your sins right away. Terrifying!}
-
 Pop_Name {Diego}
-
 Pop_lastname {de Landa}
-
-SM_WorldMap 
+Took_LiberMisericordiae {Received: Liber Misericordiae}
+SM_WorldMap
 {
-All hands to the deck! The Holy Mercy is approaching! 
-A fierce adversary, are we truly ready to confront it? 
-Perhaps we should intercept it on the open sea, far from the colonies?
+All hands to the deck! The Holy Mercy is approaching! A fierce adversary, are we truly ready to confront it? Perhaps we should intercept it on the open sea, far from the colonies?
 }
-
 City_Rum11 {Word has reached mine ears that the target of the Holy Mercy this time is the  ~}
-
 City_Rum12 {. Once more, we shall all bow our heads under the yoke of Escorial. Have we truly earned this fate?}
-
 City_Rum13 {A new inspector has arrived at ~}
-
 City_Rum14 {~  - the Holy Mercy lies at anchor. Once again, Alamida is making life a misery for ordinary folk - no mirthful drinks, no brothels! What devil brought this upon us?}
-
 City_Rum15 {One cannot envy the governor of ~}
-
 City_Rum16 {~ - Señor Alamida has docked in port and commenced his inspection. Last time, they say, ~}
-
 City_Rum17 {~ nearly lost his title. Oh... I pray the Holy Mercy does not venture here again soon...}
-
 City_Rum18 {Have you heard that the crown's envoy is now personally roaming the archipelago? What foul deeds have the colonists committed before the Escorial? A mate of mine told me that the Holy Mercy is currently anchored in ~}
-
 City_Rum19 {. I wonder if there's truth to this?}
-
 City_Rum20 {It appears that a supervisor has fallen upon Spanish heads, sent from Europe to oversee! I had thought that the power of their king reigned supreme even in the Caribbean. I must inquire whether the governance in  ~}
-
 City_Rum21 {~  might change in the coming months, for the Holy Mercy is currently docked there.}
-
 City_Rum22 {Curious tidings drift from the Spanish colonies. They say when Señor Alamide arrives in town, fear grips everyone, and they walk on tiptoes. I would be keen to hear from someone in ~}
-
 City_Rum23 {, for word has it that the Holy Mercy is currently there.}

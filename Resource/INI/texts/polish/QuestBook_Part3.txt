@@ -1917,6 +1917,13 @@ Spędziłem za dużo czasu na poszukiwaniach wyspy, a amulety Tuttuathapak strac
 #TEXT 44
 Znalazłem dość ciekawą salę w głębi świątyni. Są tam kamienne płyty podłogowe i filary. Wyjście, które prowadzi ponoć do sanktuarium, blokuje ogromne kamienne drzwi. Powinienem znaleźć sposób, by je otworzyć. Badanie tej sali będzie dobrym początkiem.
 
+#TEXT   45
+Wygląda na to, że pod tymi płytami ukryty jest jakiś mechanizm otwierający przejście. Będę musiał stąpać po nich kolejno, aż uda mi się znaleźć właściwą sekwencję. Każdy poprawny krok wydaje charakterystyczny dźwięk – przynajmniej tak mi się wydaje. Nie mam innego pomysłu, jak iść dalej, więc będę próbować różnych kombinacji i nasłuchiwać bardzo uważnie...
+
+#TEXT   46
+Do diabła... W kolumnach też chyba jest ukryty mechanizm, na dodatek chroniony przez magię Chavínów. Ale teraz stawka jest znacznie wyższa: zła kombinacja przyzywa indiańskie szkielety. Muszę być maksymalnie ostrożny – i zapamiętywać każdą próbę, by się nie powtarzać. Kto wie, ile takich fal jeszcze zdołam przetrwać...
+
+
 #QUEST Patria
 Bohater Narodu
 #TEXT 1
@@ -2144,7 +2151,7 @@ Nie ma odpoczynku dla złych, jak mówi Księga. Noc zabawy szybko zamieniła si
 Zabawy wyższych sfer okazały się dla mnie zbyt wyrafinowane. Straciłem sporą sumę i musiałem z honoru opuścić towarzystwo. Cóż, chyba część mojego życia w salonach odeszła bezpowrotnie.
 #TEXT 6
 Słodka noc zamieniła się w prawdziwą dramę. Zakłady na statki i kobiety – całkowicie zapomniałem, jak daleko mogą posunąć się wyższe sfery.
-Mimo to wygrałem wojenną fregatę mojego nowego przyjaciela Angerrana de Chievous. Wygrałem również flet pełen srebra, który nasz drogi gubernator zapomniał sprzedać Holendrom. Na końcu wygrałem Markizę Julianne de Botot. Od teraz jestem patronem luksusowej, pięknej i dobrze skontaktowanej kurtyzany, która kiedyś była kochanką najpotężniejszego człowieka Nowej Francji - hrabiego de Levy Vantadur. To skomplikowana sytuacja, nawet jeśli zapomnimy o uczuciu, które dzielili dwaj mężczyźni, których dziś pozbawiłem ich statków.
+Mimo to wygrałem wojenną fregatę mojego nowego przyjaciela Angerrana de Chievous. Wygrałem również fluite pełną srebra, którą nasz drogi gubernator zapomniał sprzedać Holendrom. Na końcu wygrałem Markizę Julianne de Botot. Od teraz jestem patronem luksusowej, pięknej i dobrze skontaktowanej kurtyzany, która kiedyś była kochanką najpotężniejszego człowieka Nowej Francji - hrabiego de Levy Vantadur. To skomplikowana sytuacja, nawet jeśli zapomnimy o uczuciu, które dzielili dwaj mężczyźni, których dziś pozbawiłem ich statków.
 A, i jest jeszcze sprawa mojego pojedynku z de Chievous. Ten drań hrabiego de Levy Vantadur wyzwał mnie na pojedynek, oskarżając mnie publicznie o oszustwa. Powinienem udać się do gubernatora i omówić warunki, ale najpierw powinienem podziękować madame Botot za gościnność. I zdecydować, co zrobić z moimi... wygranymi.
 #TEXT 7
 De Chievous zamierza zakończyć nasze nieporozumienia mieczem. Gubernator jest strasznie zaniepokojony możliwymi konsekwencjami. Włożył wiele wysiłku, żeby mnie przekonać, żebym nie zabił tego draństwa, i nawet przydzielił kilku szlachetnych oficerów jako moich sekundantów. Pojedynek odbędzie się dziś, tuż za bramami o dziesiątej wieczorem. To nie jest idealne, choć Angerran nie będzie pierwszym szlachetnym draniem, który stanie przede mną, on na pewno wie, jak trzymać miecz! To nie będzie łatwa walka.
@@ -2156,10 +2163,10 @@ De Chievous zadał mi jednak mocny cios! Martwiłem się o niewłaściwą osobę
 #TEXT 10
 Czas minął. Nigdy jej już nie zobaczę ani nie dowiem się, co się z nią stało. Ten pieprzony drań wiedział, gdzie mnie uderzyć. Będę żył z tą raną do końca moich dni.
 #TEXT 11
-Moje najciemniejsze obawy się spełniły. Angerran de Chievous porwał moją kobietę i zostawił list, proponując spotkanie na Guadeloupe za dziesięć dni. Zgodnie z tym, co mówiła madame Botot, gubernator pozostanie po jego stronie, co oznacza, że muszę być bardzo ostrożny przy załatwianiu sprawy z tym człowiekiem. Przynajmniej ona jeszcze żyje! Jeśli położy na nią ręce, przysięgam, że zniszczę Bass-Terre i jego gubernatora!
+Moje najciemniejsze obawy się spełniły. Angerran de Chievous porwał moją kobietę i zostawił list, proponując spotkanie na Gwadelupie za dziesięć dni. Zgodnie z tym, co mówiła madame Botot, gubernator pozostanie po jego stronie, co oznacza, że muszę być bardzo ostrożny przy załatwianiu sprawy z tym człowiekiem. Przynajmniej ona jeszcze żyje! Jeśli położy na nią ręce, przysięgam, że zniszczę Basse-Terre i jego gubernatora!
 Kurwa! Nie miałem pojęcia, że to wszystko potoczy się w ten sposób.
 #TEXT 12
-Widziałem fregatę w porcie Bass-Terre. Angerran nie martwi się ukrywaniem! Ale nie mogę walczyć z nim tutaj. Choć mam gdzieś, co myśli gubernator, bezpośredni atak naraziłby ją na niebezpieczeństwo. Drań może ją ukryć gdzie indziej. Nie mam innego wyboru, muszę odwiedzić de Chievousa, licząc na to, że gubernator będzie na tyle rozsądny.
+Widziałem fregatę w porcie Basse-Terre. Angerran nie martwi się ukrywaniem! Ale nie mogę walczyć z nim tutaj. Choć mam gdzieś, co myśli gubernator, bezpośredni atak naraziłby ją na niebezpieczeństwo. Drań może ją ukryć gdzie indziej. Nie mam innego wyboru, muszę odwiedzić de Chievousa, licząc na to, że gubernator będzie na tyle rozsądny.
 #TEXT 13
 Tym razem bez strzelaniny, ale de Chievous dba tylko o Marquise de Botot. Nie zadowoli się żadnym innym okupiłem. Żąda, żebym oddał ją jemu za dwa tygodnie u przylądka Scotts Head. Jakby była jakimś cennym drobiazgiem. Nie mam pojęcia, co z tym zrobić. De Lyon uważa Angerrana za człowieka wartościowego, a nawet jeśli przekonałbym go w przeciwnym razie, nasze ręce i tak byłyby związane. Drań jest pewny swojej pozycji, pewny, że ujdzie mu to na sucho. Nie! Dlaczego miałby porwać Julianne Botot, jeśli mógłby zrobić to sam? Ponieważ nie może. Czegoś się boi. Muszę udać się do Saint-Pierre i omówić to z markizą!
 #TEXT 14
@@ -2167,7 +2174,7 @@ Moje nadzieje okazały się fałszywe. Markiza nie wie niczego, co mogłoby mi p
 #TEXT 15
 Musiałem walczyć, ale udało mi się na czas. Fregata de Chievousa jest zacumowana tuż przed nami. Czas przygotować łódź. Nadszedł czas.
 #TEXT 16
-Wreszcie! Znowu jest w moich ramionach! Wszystko skończyło się dobrze, głównie. Nie wiem, co stanie się z madame Botot, ale nie żałuję podjętej decyzji i na pewno podjąłbym ją ponownie. W ciągu ostatnich tygodni doznałem kilku objawień i teraz wiem, że jest dla mnie więcej wartą niż cały złoto na świecie. Poradzę sobie ze wszystkimi konsekwencjami. To samo stare, łapówka tu, przysługa tam. W końcu zawsze mogę podnieść moją czarną flagę i wypłynąć na Isla Tesoro. Tylko życzę sobie spotkać de Chievousa jeszcze raz. Mamy do załatwienia rachunki...
+Wreszcie! Znowu jest w moich ramionach! Wszystko skończyło się dobrze, głównie. Nie wiem, co stanie się z madame Botot, ale nie żałuję podjętej decyzji i na pewno podjąłbym ją ponownie. W ciągu ostatnich tygodni doznałem kilku objawień i teraz wiem, że jest dla mnie więcej wartą niż całe złoto na świecie. Poradzę sobie ze wszystkimi konsekwencjami. To samo, łapówka tu, przysługa tam. W końcu zawsze mogę podnieść moją czarną flagę i wypłynąć na Isla Tesoro. Tylko życzę sobie spotkać de Chievousa jeszcze raz. Mamy do załatwienia rachunki...
 #TEXT 17
 To na pewno staje się niemożliwe i coraz bardziej skomplikowane. Spotkałem baroneta Cortneya, który sprawia wrażenie człowieka o ogromnej władzy oficjalnej. Szuka zaginionego statku kurierskiego, Reginy. Zaginionego gdzieś głęboko w terytorium Francji, zaufanego sojusznika Brytyjczyków. Statek transportował legendarne czarne perły, dokładnie takie, jak perła w naszyjniku, którą de Chievous podarował markizie Botot. Musiał mieć coś wspólnego z zaginięciem Reginy, to chyba moja jedyna szansa, żeby go naprawdę ukarać! Muszę zbadać sprawę dalej. Jacques the Kind nic mi nie powie, ale baronet może go zmusić do rozmowy. Jutro wieczorem, w domu markizy, dowiem się na pewno. Właściwie nie mam tu zbyt dużego wyboru.
 #TEXT 18
@@ -2176,6 +2183,8 @@ Opóźniłem spotkanie z baronetem Cortneyem, przez co straciłem swoją jedyną
 Opóźniłem spotkanie, przez co straciłem swoją jedyną szansę, by uwolnić się od de Chievousa. Wiem, że ci się to nie spodoba, ale mam tylko jedną opcję. Muszę cię odzyskać za wszelką cenę.
 #TEXT 19
 Baronet Cortney nie żyje. Moja jedyna szansa, by uwolnić się od de Chievousa, zginęła razem z nim. Wiem, że ci się to nie spodoba, ale mam tylko jedną opcję. Muszę cię odzyskać za wszelką cenę.
+#TEXT 20
+De Chievous jest w to zamieszany po uszy – ja również. Historia Reginy i skradzionych pereł, które rzekomo przewoziła, okazała się tylko zasłoną dymną zastawioną przez samych Hiszpanów, aby osłabić sojusz brytyjsko-francuski. Baronet Cortney zgodził się mi pomóc, po tym jak razem odparliśmy próbę zamachu zorganizowaną przez Jacques’a Barbosona. Uda się ze mną na Dominikę, gdzie aresztujemy statek de Chievousa. Mam tylko nadzieję, że Cortney się nie myli i nie spróbują stawiać oporu. Wybacz, moja droga, że ryzykuję – ale nie widzę innego wyjścia.
 #TEXT 21
 To chyba już koniec. Baron Cortney aresztował statek de Chievousa, a teraz zabiera się za samego mężczyznę. Nie mam ochoty go znowu zobaczyć. Od tego momentu to problem państwa, nie mój. Ona jest znowu przy moim boku, żywa i zdrowa, nie mogłem sobie wymarzyć niczego więcej! Kocham tę kobietę i chyba nadszedł odpowiedni czas, by... Później, może. Jesteśmy znowu razem i jestem szczęśliwy. Chyba powinienem podziękować markizie Botot za pomoc, jednak jestem pewien, że zrozumiałaby, gdybym się nie pojawił.
 #TEXT 22
@@ -2227,16 +2236,16 @@ Powiedziała "tak". Cholera, jesteśmy razem tak długo, a ja martwiłem się ja
 Aby uniknąć niepotrzebnych komplikacji, takich jak zdobycie miasta przez Braci Wybrzeża, @<sName> i ja postanowiliśmy podzielić uroczystość na część oficjalną – w kościele na Martynice, i przyjacielską ucztę w Sharptown. @<sName> zgodziła się zorganizować przyjęcie i zaproszenia na Isla Tessoro. Muszę ją tam zabrać i zabrać: @<sGoods>.
 Mam nadzieję, że to wystarczy. Jednak jeśli napój się skończy – zawsze mogę udać się na morze i... Dobrze, mam nadzieję, że do tego nie dojdzie. Ale muszę porozmawiać z ojcem Benoitem i wybrać gości, którzy wezmą udział w oficjalnej części w kościele.
 #TEXT 10_1
-Mary proponuje, aby załoga wylądowała w dniu ślubu na lądzie i zorganizowała dobrą ucztę dla nich. To dobry pomysł, ale muszę zebrać @<sGoods>, by morskie wilki nie umarły z pragnienia i nudów. Gdy zbiorę wszystko, czego potrzebuję, muszę udać się do lokalnej tawerny i wszystko przekazać właścicielowi. Mary wcześniej zgodzi się z nim.
+Mary proponuje, aby załoga wylądowała w dniu ślubu na lądzie i zorganizowała dobrą ucztę dla nich. To dobry pomysł, ale muszę zebrać @<sGoods>, by morskie wilki nie umarły z pragnienia i nudów. Gdy zbiorę wszystko, czego potrzebuję, muszę udać się do lokalnej karczmy i wszystko przekazać właścicielowi. Mary wcześniej zgodzi się z nim.
 #TEXT 11
-Zorganizowałem ślub w kościele Saint Pierre. Odbędzie się dokładnie za miesiąc, aby wszyscy mogli przyjechać. Mam jeszcze czas na ukończenie wszystkich przygotowań – goście raczej nie będą czekać długo.
+Zorganizowałem ślub w kościele Saint Pierre. Odbędzie się dokładnie za miesiąc, aby wszyscy mogli się zjawić. Mam jeszcze czas na ukończenie wszystkich przygotowań – goście raczej nie będą czekać długo.
 #TEXT 12
 Nie było łatwo, ale się udało. Wszystkie zapasy zostały zakupione, wszystkie niezbędne łapówki i kwoty zapłacone, goście otrzymali zaproszenia. Pozostaje czekać na wyznaczony dzień. A desperacki kapitan i awanturnik Charles de Maure stanie się szanowanym i żonatym Chevalierem de Monper.
 #TEXT 13
 Minął miesiąc, goście pewnie przybyli do Saint-Pierre. Czas udać się do kościoła na Martynice na mój ślub! @<sText>
 #TEXT 14
 Cóż, nadszedł decydujący moment – wszyscy goście przybyli, a ja powinienem udać się do kościoła do ojca Benoita i uzgodnić początek ceremonii.
-Szczerze mówiąc, łatwiej byłoby mi przeżyć pół tuzina boardingu, ale ten dzień musiał nadejść, i jestem wdzięczny losowi, że moją wybranką jest @<sName>, a nie jakiś "godny kandydat" z dwoma winnicami na duszę. Małżeństwo z miłości to rzadkość, a wzajemna miłość to rzadkość bezcenną.
+Szczerze mówiąc, łatwiej byłoby mi przeżyć pół tuzina boardingu, ale ten dzień musiał nadejść, i jestem wdzięczny losowi, że moją wybranką jest @<sName>, a nie jakiś "godny kandydat" z dwoma winnicami na duszę. Małżeństwo z miłości to rzadkość, a wzajemna miłość to rzadkość bezcenna.
 Tak, jestem szczęśliwy, a mój ojciec będzie musiał zaakceptować mój wybór.
 #TEXT 15
 Ślub trwa, obszedłem gości, pora wrócić do Jana i dowiedzieć się, czy potrzebna jest pomoc w organizacji.
@@ -2829,3 +2838,24 @@ Regaty się skończyły. Zająłem piąte miejsce. Choć nie ma dla mnie nagrody
 Do cholery! Przybyłem ostatni. Co za gafa. Powinienem był nie brać udziału w tych regatach.
 #TEXT   45
 Moja przygoda z regatą dobiegła końca. Złamałem zasady i zostałem zdyskwalifikowany z zawodów.
+
+#QUEST LoyaltyPack
+Głos Załogi
+#TEXT 1
+Alonso Pimentel, starszy marynarz i głos mojej załogi, chce ze mną porozmawiać. Mogę go znaleźć w ładowni.
+#TEXT 2
+Choć Alonso docenił moje skromne sukcesy jako kapitana, wyraźnie się o mnie martwi. Wsparł radą, obdarował przydatnym sprzętem i podzielił się historią. Może jeśli będę kontynuował w tym samym duchu, usłyszę dalszy ciąg.
+#TEXT 3
+Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
+#TEXT 4
+Minął prawie rok, a załoga wreszcie nabrała do mnie zaufania. Alonso mistrzowsko uniknął moich pytań o swoją przeszłość, ale podzielił się kolejną ze swoich wojennych historii. Wyraźnie poważnie traktuje tę część swoich obowiązków, która dotyczy morale załogi. Prawie jak spowiednik, choć wątpię, by księża obdarowywali swoją trzódkę przepisami na moskiewską nalewkę i wysokiej jakości broń palną. Ciąg dalszy nastąpi?
+#TEXT 5
+Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
+#TEXT 6
+Teraz jestem posiadaczem nie tylko pewnej sławy na Karaibach, ale także idiotycznie wyglądającego kapelusza. Choć może chronić głowę perspektywicznego kapitana, na pewno rozpadnie się po paru solidnych uderzeniach. Niemniej mój triumf został nieco zepsuty tragiczną historią, którą opowiedział mi dziś Alonso. Nie wiem, czego ma mnie nauczyć, ale chciałbym poznać jego "moskiewskiego przyjaciela".
+#TEXT 7
+Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
+#TEXT 8
+Fadey? Ten sam Fadey z Basse-Terre? Ależ ten świat jest mały! Powinienem go odwiedzić.
+#TEXT 9
+Spotkanie z Fadejem zmusiło mnie do przemyśleń o wielu rzeczach. Ilu jeszcze takich "Alonso" jest w mojej załodze? Ile historii i osobliwych ludzkich losów? Usłyszałem tylko jeden głos, a teraz mam ich setki. Nie wiem, jak zakończy się moja karaibska odyseja, ale dzięki trosce Alonso i jego prostym prezentom jestem w pełni wyposażony, przygotowany i gotowy spotkać swój los.

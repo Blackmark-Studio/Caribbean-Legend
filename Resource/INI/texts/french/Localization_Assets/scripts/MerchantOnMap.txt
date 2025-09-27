@@ -1,146 +1,30 @@
-MerchantOnMap_1
-{
-marchand
-}
-
-MerchantOnMap_2
-{
-Il y avait une rumeur selon laquelle 
-}
-
-MerchantOnMap_3
-{
-un fringant pirate
-}
-
-MerchantOnMap_4
-{
-un fringant pirate
-}
-
-MerchantOnMap_5
-{
- s'est retrouvé
-}
-
-MerchantOnMap_6
-{
-
-}
-
-MerchantOnMap_7
-{
-
-}
-
-MerchantOnMap_8
-{
-~ dans un piège, dans lequel ~
-}
-
-MerchantOnMap_9
-{
-il a été attiré
-}
-
-MerchantOnMap_10
-{
-elle a été attirée
-}
-
-MerchantOnMap_11
-{
-~ par les autorités @<NationNameSK(sti(MerPrm.ination))>es. Elles ~
-}
-
-MerchantOnMap_12
-{
-lui ont envoyé
-}
-
-MerchantOnMap_13
-{
-lui ont envoyé
-}
-
-MerchantOnMap_14
-{
-~ un navire "marchand" avec des soldats @<NationNameSK(sti(MerPrm.ination))> entièrement armés dans la cale. Mais @<pchar.name> n'était pas déstabilisé ~
-}
-
-MerchantOnMap_15
-{
-
-}
-
-MerchantOnMap_16
-{
-
-}
-
-MerchantOnMap_17
-{
-, ~
-}
-
-MerchantOnMap_18
-{
-il
-}
-
-MerchantOnMap_19
-{
-elle
-}
-
-MerchantOnMap_20
-{
-~ les a simplement tous tués !
-}
-
-MerchantOnMap_21
-{
-
-}
-MerchantOnMap_22
-{
-
-}
-
-MerchantOnMap_23
-{
-
-}
-MerchantOnMap_24
-{
-
-}
-MerchantOnMap_25
-{
-
-}
-
-MerchantOnMap_26
-{
-
-}
-
-MerchantOnMap_27
-{
-
-}
-
-MerchantOnMap_28
-{
-
-}
-
-MerchantOnMap_29
-{
-~ Voilà à quoi ressemble notre audacieux pirate @<GetFullName(pchar)>.
-}
-
-MerchantOnMap_30
-{
-On raconte que l'audacieux pirate @<GetFullName(pchar)> a commencé à piller les navires marchands @<NationNameSK(sti(MerPrm.ination))>. C'est alors que notre gouverneur général décida d'en finir avec lui. Il équipa un navire camouflé en navire marchand de plusieurs dizaines de soldats européens bien entraînés et l'envoya vers lui. Mais le pirate sanguinaire les tua tous et échappa de nouveau à la justice !
-}
+MerchantOnMap_1 {marchand}
+MerchantOnMap_2 {Il y avait une rumeur selon laquelle}
+MerchantOnMap_3 {un fringant pirate}
+MerchantOnMap_4 {un fringant pirate}
+MerchantOnMap_5 {s'est retrouvé}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ dans un piège, dans lequel ~}
+MerchantOnMap_9 {il a été attiré}
+MerchantOnMap_10 {elle a été attirée}
+MerchantOnMap_11 {~ par les autorités @<NationNameSK(sti(MerPrm.ination))>es. Elles ~}
+MerchantOnMap_12 {lui ont envoyé}
+MerchantOnMap_13 {lui ont envoyé}
+MerchantOnMap_14 {~ un navire "marchand" avec des soldats @<NationNameSK(sti(MerPrm.ination))> entièrement armés dans la cale. Mais @<pchar.name> n'était pas déstabilisé ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {il}
+MerchantOnMap_19 {elle}
+MerchantOnMap_20 {~ les a simplement tous tués !}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ Voilà à quoi ressemble notre audacieux pirate @<GetFullName(pchar)>.}
+MerchantOnMap_30 {On raconte que l'audacieux pirate @<GetFullName(pchar)> a commencé à piller les navires marchands @<NationNameSK(sti(MerPrm.ination))>. C'est alors que notre gouverneur général décida d'en finir avec lui. Il équipa un navire camouflé en navire marchand de plusieurs dizaines de soldats européens bien entraînés et l'envoya vers lui. Mais le pirate sanguinaire les tua tous et échappa de nouveau à la justice !}

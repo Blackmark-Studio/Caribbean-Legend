@@ -58,7 +58,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	SetCharacterPerk(sld, "Builder");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "SailingProfessional");
@@ -209,8 +209,8 @@ void Patria_SanJoseMayak(string qName) // на маяке Тринидада
 		if (i > 8) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, "mush_fra_"+(i-8), "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "", "mushket1", "cartridge", 150);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 80, 80, "", "mushket1", "bullet", 150);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		}
 		else
 		{
@@ -1624,7 +1624,7 @@ void Patria_SiegeCreateSquadron() // осада
 			SetCharacterPerk(sld, "Builder");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -2458,8 +2458,8 @@ void Patria_BastionShore(string qName) // в бухте, ставим штурм
 		if (i < 4) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "cartridge", 170);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
@@ -3316,8 +3316,8 @@ void Patria_CuracaoMarch(string qName) // наш отряд в бухте
 		if (i < 4) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "cartridge", 170);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
@@ -3368,8 +3368,8 @@ void Patria_CuracaoJungleMushketer(string qName) // первая боевка
 	for (i=1; i<=9; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Curacao_hol1_soldier_"+i, "mush_hol_"+(rand(2)+4), "man", "mushketer", iRank, HOLLAND, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 65, 65, "", "mushket2", "cartridge", 220);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, 65, 65, "", "mushket2", "bullet", 220);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.cirassId = Items_FindItemIdx("cirass1");
 		sld.MusketerDistance = 0;
 		if (i < 7) ChangeCharacterAddressGroup(sld, "Curacao_jungle_02", "rld", "aloc"+(i+4));
@@ -4136,7 +4136,7 @@ void Patria_CondotierOnTerks(string qName) // на Терксе
 	ChangeCharacterAddressGroup(sld, "Shore56", "goto", "goto12");
 	LAi_SetActorType(sld);
 	sld = GetCharacter(NPC_GenerateCharacter("Terks_pirat", "mush_ctz_9", "man", "mushketer", 30, PIRATE, 2, false, "soldier"));
-	FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "cartridge", 170);
+	FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "bullet", 170);
 	ChangeCharacterAddressGroup(sld, "Shore56", "goto", "goto6");
 	LAi_SetActorType(sld);
 }
@@ -4739,8 +4739,8 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 			if (i < 7) // мушкетеры, 6 шт
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Curacao_eng_soldier_"+i, "mush_eng_"+i, "man", "mushketer", 35, ENGLAND, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket2", "cartridge", 200);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket2", "bullet", 200);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				sld.cirassId = Items_FindItemIdx("cirass1");
 			}
 			else
@@ -4978,8 +4978,8 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 			if (i < 3) // мушкетеры, 2 шт
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Marigo_eng_soldier_"+i, "mush_eng_"+i, "man", "mushketer", 25, ENGLAND, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, 25, 50, 50, "", "mushket1", "cartridge", 150);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, 25, 50, 50, "", "mushket1", "bullet", 150);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				if (MOD_SKILL_ENEMY_RATE > 4) sld.cirassId = Items_FindItemIdx("cirass1");
 			}
 			else

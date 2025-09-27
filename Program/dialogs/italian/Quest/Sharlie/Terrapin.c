@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rober_7":
-			dialog.text = "La gente della taverna ti può indicare la via per casa sua. Henri è un tipo che si fa notare. Minaccialo di sputтанare tutto e fallo portare la ragazza da me. Quello stesso giorno farò sapere a Levasseur che suo nipote nasconde una vera bellezza nelle segrete cittadine. \nIl mio corriere ti troverà in taverna. Quando non riuscirà a scovare Henri, il governatore andrà alle prigioni con una piccola scorta, e tu avrai un'occasione d'oro per scambiare due parole con lui.";
+			dialog.text = "La gente della taverna ti può indicare la via per casa sua. Henri è un tipo che si fa notare. Minaccialo di sputtanare tutto e fallo portare la ragazza da me. Quello stesso giorno farò sapere a Levasseur che suo nipote nasconde una vera bellezza nelle segrete cittadine. \nIl mio corriere ti troverà in taverna. Quando non riuscirà a scovare Henri, il governatore andrà alle prigioni con una piccola scorta, e tu avrai un'occasione d'oro per scambiare due parole con lui.";
 			link.l1 = "Dove devo consegnare la ragazza?";
 			link.l1.go = "rober_8";
 		break;
@@ -183,7 +183,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			sld.MultiFighter = 1.0+fMft; // мультифайтер
@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		
 		case "rober_abordage_3":
 			dialog.text = "Aspetta un attimo... Facciamo un patto! Ti pagherò di più!";
-			link.l1 = "Con quali soldi, Robert? Sono più che certo che stai mentendo. Non hai tutti quei dobloni che Henry mi aveva promesso. E poi, non è nemmeno questo il punto. Se не fosse per un certo dettaglio, avrei già rifiutato la sua proposta di darti la caccia e chiudere i tuoi sporchi traffici con Thibaut.";
+			link.l1 = "Con quali soldi, Robert? Sono più che certo che stai mentendo. Non hai tutti quei dobloni che Henry mi aveva promesso. E poi, non è nemmeno questo il punto. Se non fosse per un certo dettaglio, avrei già rifiutato la sua proposta di darti la caccia e chiudere i tuoi sporchi traffici con Thibaut.";
 			link.l1.go = "rober_abordage_4";
 		break;
 		
@@ -450,7 +450,7 @@ void ProcessDialogEvent()
 		
 		case "tibo_28":
 			dialog.text = "È morta. Spaventata dalla punizione imminente di Fox per l’attacco alla goletta inglese, Martene ha deciso di far sparire nell’acqua l’ultima prova rimasta. Era l’ultima testimone del suo assalto all’‘Albatross’.";
-			link.l1 = "Allora tanto valeva che facesse fuori tutta la sua ciurma... Proprio come Fernand Luc. Altrimenti, un bel giorno si uбрiacano e straparlano in qualche bettola...";
+			link.l1 = "Allora tanto valeva che facesse fuori tutta la sua ciurma... Proprio come Fernand Luc. Altrimenti, un bel giorno si ubriacano e straparlano in qualche bettola...";
 			link.l1.go = "tibo_29";
 		break;
 		
@@ -467,7 +467,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_31":
-			dialog.text = "Non chiudo occhio da quel giorno. Davanti agli occhi ho sempre Molly... Anzi, Catherine. L’ho condotta dritta alla tomba, io."+GetFullName(pchar)+"Non potrò mai perdonarmi per questo. E oltre a tutto, non mi faccio illusioni su Fox. Quell’uomo non si lascia mai andare, e dubito perfino che chiuda occhio la notte. Prima o poi, troverà la pista di Martene, farà cantare qualcuno, e quando scoprirà chi ha ucciso sua figlia, sarà l’inferno. Chiunque sia stato coinvolto, anche solo di краем, la pagherà cara.";
+			dialog.text = "Non chiudo occhio da quel giorno. Davanti agli occhi ho sempre Molly... Anzi, Catherine. L’ho condotta dritta alla tomba, io."+GetFullName(pchar)+"Non potrò mai perdonarmi per questo. E oltre a tutto, non mi faccio illusioni su Fox. Quell’uomo non si lascia mai andare, e dubito perfino che chiuda occhio la notte. Prima o poi, troverà la pista di Martene, farà cantare qualcuno, e quando scoprirà chi ha ucciso sua figlia, sarà l’inferno. Chiunque sia stato coinvolto, anche solo di striscio, la pagherà cara.";
 			link.l1 = "Questo mi comprende pure me.";
 			link.l1.go = "tibo_32";
 		break;

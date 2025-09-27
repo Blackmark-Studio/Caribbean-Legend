@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "Total_wait";
 			pchar.questTemp.LSC.rvd_friend = "true"; // 里瓦多斯船只通行标志
-			pchar.rvd_friend = true; // 里瓦多斯不会在需要密码的地方阻拦
+			// // 里瓦多斯不会在需要密码的地方阻拦
 			sld = characterFromId("Chimiset");
 			sld.dialog.currentnode = "Friend"; // 给奇米塞特的节点
 			pchar.quest.LSC_Eddy.win_condition.l1 = "location";
@@ -574,25 +574,8 @@ void ProcessDialogEvent()
 		case "caroline_3":
 			dialog.text = "该死! 你说得对。 看来我们有麻烦了, "+pchar.name+"。 ";
 			link.l1 = "... ";
-			link.l1.go = "caroline_4";
-		break;
-		
-		case "caroline_4":
-			DialogExit();
-			LAi_SetPlayerType(pchar);
-			// 启动玛丽。 查德和独角鲸 - 将会有激烈战斗
-			sld = characterFromId("Capper");
-			sld.cirassId = Items_FindItemIdx("cirass1");
-			LAi_SetActorType(sld);
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload3");
-			sld = characterFromId("Mary");
-			sld.greeting = "mary_4";
-			int iScl = MOD_SKILL_ENEMY_RATE*10 + 2*sti(pchar.rank);
-			LAi_SetHP(sld, 250+iScl, 250+iScl); // 强化
-			sld.dialog.currentnode = "caroline";
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload2");
-			LAi_SetActorType(sld);
-			LAi_ActorDialogNow(sld, pchar, "", -1);
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Caroline_DlgExit_3");
 		break;
 		
 		case "caroline_5":
@@ -1676,7 +1659,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			SetCharacterPerk(sld, "MusketsShoot");

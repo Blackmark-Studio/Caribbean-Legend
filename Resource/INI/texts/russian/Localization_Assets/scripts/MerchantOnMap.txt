@@ -1,146 +1,30 @@
-MerchantOnMap_1
-{
-торговец
-}
-
-MerchantOnMap_2
-{
-Прошёл слух, что лих
-}
-
-MerchantOnMap_3
-{
-ой пират
-}
-
-MerchantOnMap_4
-{
-ая морская разбойница
-}
-
-MerchantOnMap_5
-{
-, угодил
-}
-
-MerchantOnMap_6
-{
-
-}
-
-MerchantOnMap_7
-{
-а
-}
-
-MerchantOnMap_8
-{
-~ в западню, в которую ~
-}
-
-MerchantOnMap_9
-{
-его
-}
-
-MerchantOnMap_10
-{
-её
-}
-
-MerchantOnMap_11
-{
-~ заманили @<NationNameSK(sti(MerPrm.ination))>ие власти. Они подослали к ~
-}
-
-MerchantOnMap_12
-{
-нему
-}
-
-MerchantOnMap_13
-{
-ней
-}
-
-MerchantOnMap_14
-{
-~ ''торговое'' судно, в трюме которого спрятались вооружённые до зубов @<NationNameSK(sti(MerPrm.ination))>ие солдаты. Но @<pchar.name> не растерял
-}
-
-MerchantOnMap_15
-{
-ся
-}
-
-MerchantOnMap_16
-{
-ась
-}
-
-MerchantOnMap_17
-{
-, ~
-}
-
-MerchantOnMap_18
-{
-он
-}
-
-MerchantOnMap_19
-{
-она
-}
-
-MerchantOnMap_20
-{
-~ их попросту перебил
-}
-
-MerchantOnMap_21
-{
-
-}
-MerchantOnMap_22
-{
-а
-}
-
-MerchantOnMap_23
-{
-ой
-}
-MerchantOnMap_24
-{
-ая
-}
-MerchantOnMap_25
-{
-~ - всех до единого! Вот как
-}
-
-MerchantOnMap_26
-{
-~ удал
-}
-
-MerchantOnMap_27
-{
-ой пират наш
-}
-
-MerchantOnMap_28
-{
-ая деваха наша
-}
-
-MerchantOnMap_29
-{
-~ @<GetFullName(pchar)>.
-}
-
-MerchantOnMap_30
-{
-Люди говорят, что дерзкий пират - @<GetFullName(pchar)>, повадился грабить @<NationNameSK(sti(MerPrm.ination))>ие торговые корабли. И тогда наш Генерал-губернатор решил покончить с ним. Он снарядил  корабль, замаскированный под торговца с несколькими десятками хорошо обученных солдат, из Европы, и подослал к нему. Но кровожадный пират перебилих всех и вновь улизнул от правосудия!
-}
+MerchantOnMap_1 {торговец}
+MerchantOnMap_2 {Прошёл слух, что лих}
+MerchantOnMap_3 {ой пират}
+MerchantOnMap_4 {ая морская разбойница}
+MerchantOnMap_5 {, угодил}
+MerchantOnMap_6 { }
+MerchantOnMap_7 {а}
+MerchantOnMap_8 {~ в западню, в которую ~}
+MerchantOnMap_9 {его}
+MerchantOnMap_10 {её}
+MerchantOnMap_11 {~ заманили @<NationNameSK(sti(MerPrm.ination))>ие власти. Они подослали к ~}
+MerchantOnMap_12 {нему}
+MerchantOnMap_13 {ней}
+MerchantOnMap_14 {~ ''торговое'' судно, в трюме которого спрятались вооружённые до зубов @<NationNameSK(sti(MerPrm.ination))>ие солдаты. Но @<pchar.name> не растерял}
+MerchantOnMap_15 {ся}
+MerchantOnMap_16 {ась}
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {он}
+MerchantOnMap_19 {она}
+MerchantOnMap_20 {~ их попросту перебил}
+MerchantOnMap_21 { }
+MerchantOnMap_22 {а}
+MerchantOnMap_23 {ой}
+MerchantOnMap_24 {ая}
+MerchantOnMap_25 {~ - всех до единого! Вот как}
+MerchantOnMap_26 {~ удал}
+MerchantOnMap_27 {ой пират наш}
+MerchantOnMap_28 {ая деваха наша}
+MerchantOnMap_29 {~ @<GetFullName(pchar)>.}
+MerchantOnMap_30 {Люди говорят, что дерзкий пират - @<GetFullName(pchar)>, повадился грабить @<NationNameSK(sti(MerPrm.ination))>ие торговые корабли. И тогда наш Генерал-губернатор решил покончить с ним. Он снарядил  корабль, замаскированный под торговца с несколькими десятками хорошо обученных солдат, из Европы, и подослал к нему. Но кровожадный пират перебилих всех и вновь улизнул от правосудия!}

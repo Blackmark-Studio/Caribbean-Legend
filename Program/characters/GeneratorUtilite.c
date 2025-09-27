@@ -354,55 +354,6 @@ void SetMonsterLoginHP(ref _pchar) // жизнь у монстров больш�
 	}
 }
 
-/// метод расчета от опыта солдат, даёт бонус в НР (или пенальти)
-bool GetBoardingHP(ref mchr, ref echr, ref float_boarding_player_hp, ref float_boarding_enemy_hp)
-{
-	float b_p_hp, b_e_hp;
-	float moral;
-	float exp;
-	float fShipBonus = 0.0;
-	b_p_hp = LAi_GetCharacterMaxHP(mchr) / 3.0;  // треть от НР кэпа идет в базу бонуса
-	
-	exp = GetCrewExp(mchr, "Soldiers") / GetCrewExpRate() - 0.7;
-	
-	if(ShipBonus2Artefact(mchr, SHIP_MEMENTO))
-	{
-		if(CheckAttribute(&RealShips[sti(mchr.Ship.Type)], "DeadSailors.SailorsBoardingBonus"))
-		{
-			fShipBonus = stf(RealShips[sti(mchr.Ship.Type)].DeadSailors.SailorsBoardingBonus) / 100.0;
-		}
-	}
-	
-	exp += fShipBonus;
-	moral = 0;
-	if(CheckAttribute(mchr, "ship.crew.morale"))
-	{
-		moral = (stf(mchr.ship.crew.morale) - MORALE_NORMAL)/(MORALE_MAX - MORALE_MIN);
-		if(moral < -0.5) moral = -0.5;
-		if(moral > 0.5) moral = 0.5;
-	}
-	exp = exp + moral;  // может быть минус
-	b_p_hp = b_p_hp*exp; 
-	
-	b_e_hp = 0;  // не будем рандом городить рандомом, опыт и еще скилы кэпа, все это не зависит от ГГ, а вот ГГ бонус от опыта даем
-	/*
-	b_e_hp = LAi_GetCharacterMaxHP(echr) / 3.0;
-	exp = GetCrewExp(echr, "Soldiers") / GetCrewExpRate();
-	moral = 0;
-	if(CheckAttribute(echr, "ship.crew.morale"))
-	{
-		moral = (stf(echr.ship.crew.morale) - MORALE_NORMAL)/(MORALE_MAX - MORALE_MIN);
-		if(moral < -0.5) moral = -0.5;
-		if(moral > 0.5) moral = 0.5;
-	}
-	exp = exp + moral;
-	b_e_hp = b_e_hp*exp;
-	 */
-	float_boarding_player_hp   =  b_p_hp;
-	float_boarding_enemy_hp    =  b_e_hp;
-	
-	return true;
-}
 void AddCharHP(ref _pchar, int _bonus)
 {
 	int hp = LAi_GetCharacterMaxHP(_pchar) + _bonus;

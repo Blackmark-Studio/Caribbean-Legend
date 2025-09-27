@@ -1,530 +1,109 @@
-GenQuests_1
-{
-Schmuggler
-}
-
-GenQuests_2
-{
-Offizier
-}
-
-GenQuests_3
-{
-Soldat
-}
-
-GenQuests_4
-{
-Ich habe den Ehering des Mädchens aus @<sCity> gefunden. Ich muss ihn ihr zurückbringen.
-}
-
-GenQuests_16
-{
-Schätze befinden sich irgendwo in der Nähe!
-}
-
-GenQuests_17
-{
-Die Zeit für die Suche nach dem Schiff ist abgelaufen
-}
-
-GenQuests_18
-{
-Die Zeit für die Suche nach dem Schiff ist vorbei, der Kapitän ist an Land gegangen
-}
-
-GenQuests_19
-{
-Kapitän ging an Land
-}
-
-GenQuests_20
-{
-Kapitän! Wir haben eine Epidemie!
-}
-
-GenQuests_21
-{
-An Bord des Schiffes @<chref.Ship.Name> sind bereits @<crew> Menschen gestorben
-}
-
-GenQuests_22
-{
-explodiert
-}
-
-GenQuests_23
-{
-explodiert
-}
-
-GenQuests_24
-{
-~ die Kamera fixieren.
-}
-
-GenQuests_25
-{
-Schiff leer
-}
-
-GenQuests_26
-{
-Habt ihr gehört, dass die Herrin eine Magd namens @<pchar.GenQuest.EncGirl.name> hinausgeworfen hat, nur weil sie ihre verstreuten Perlen im Dschungel nicht einsammeln konnte? Die Leute haben ihr Schamgefühl völlig verloren!... und hatten nie ein Gewissen.
-}
-
-GenQuests_27
-{
-Haben Sie gehört, dass eine Hure versucht hat, ohne Papiere auf das Schiff zu kommen? Sie wurde erwischt und ins Bordell zurückgebracht. Es heißt, sie schulde dem Besitzer eine hübsche Summe.
-}
-
-GenQuests_28
-{
-Haben Sie es schon gehört? Eine Hure ohne Papiere wurde in unserem Hafen gefasst. Es heißt, sie sei aus einem Bordell geflohen, nachdem sie die Truhen des dortigen Besitzers ausgeräumt hatte. Diese Brutstätte der Ansteckung und des Diebstahls hätte schon längst beseitigt werden müssen. Immerhin sehen unsere Kinder das alles, was sollen sie da lernen?
-}
-
-GenQuests_29
-{
-George
-}
-
-GenQuests_30
-{
-Bush
-}
-
-GenQuests_31
-{
-Rabak
-}
-
-GenQuests_32
-{
-Maboa
-}
-
-GenQuests_33
-{
-Abraham
-}
-
-GenQuests_34
-{
-Lincoln
-}
-
-GenQuests_35
-{
-im Schiffbau
-}
-
-GenQuests_36
-{
-bei der Artillerie
-}
-
-GenQuests_37
-{
-in der Navigation
-}
-
-GenQuests_38
-{
-Kapitän, wie ist Ihre Reise auf einem Piratenschiff? Ist es normal? Wurden Sie dort beleidigt? Ha ha ha!
-}
-
-GenQuests_39
-{
-Oh-oh-oh, Kapitän, ich hörte, Sie hatten kürzlich eine Menge Spaß.... Ihr, mein Freund, seid jetzt ein armer Mann! Ha-ha-ha!!
-}
-
-GenQuests_40
-{
-Sie können in der Bucht anlegen.
-}
-
-GenQuests_41
-{
-Habt Ihr schon gehört, @<GetAddress_Form(pchar)>, dass der Patrouillen-Kapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. kürzlich verhaftet wurde. Es hat sich herausgestellt, dass er nebenbei als Schmuggler gearbeitet hat. Überlegt doch mal, was der jetzige Gouverneur in die Kolonie gebracht hat! Diejenigen, die Piraten fangen sollen, rauben uns selbst aus!... Man munkelt, dass er in einer Woche hingerichtet wird. Das geschieht ihm recht.
-}
-
-GenQuests_42
-{
-Gerüchten zufolge hat sich der Patrouillen-Kapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name> als Organisator einer Schmugglerbande entpuppt. Er wurde gefasst und wird bald gehängt werden. Es sieht so aus, als ob @<GetAddress_Form(pchar)>, unser Gouverneur, ernsthaft die Führung der Ordnung in der Kolonie übernommen hat.
-}
-
-GenQuests_43
-{
-Können Sie sich das vorstellen? Der Kommandant des Forts hat eine geheime Organisation von Schmugglern aufgedeckt, die es geschafft hat, sogar Marineoffiziere in ihre Reihen zu rekrutieren. Einer von ihnen, dessen Name @<pchar.GenQuest.CaptainComission.Name> ist, wurde bereits gefasst und wird bald gehängt werden. Oh, @<GetAddress_Form(pchar)>, ich habe immer gesagt, dass unser Gouverneur früher oder später die Ordnung in der Siedlung wiederherstellen wird.
-}
-
-GenQuests_44
-{
-Wisst ihr schon, dass der Kapitän der Patrouille @<sShipType> @<pchar.GenQuest.CaptainComission.Name> verhaftet wurde? Die Behörden haben herausgefunden, dass er eine große Ladung von Waren versteckt hat, die er von Schiffen beschlagnahmt hat, die in den Gewässern unterwegs waren. Es scheint, dass er nicht gehängt werden wird. Aber ich sage euch, er war einer der Besten in der Patrouillenstaffel. Wer hätte das gedacht...
-}
-
-GenQuests_45
-{
-Verflucht! Der Gefangene ist entkommen!
-}
-
-GenQuests_46
-{
-Habt Ihr gehört, @<GetAddress_Form(pchar)>, dass ein Patrouillenkapitän kürzlich gehängt wurde @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Es heißt, er habe einen Händler ausgeraubt. Hier kann man ja schließlich niemandem mehr trauen... Und die ganze Mannschaft, die bei ihm war, wurde gemeinsam hingerichtet. Komplizenschaft bedeutet...
-}
-
-GenQuests_47
-{
-Wisst Ihr schon, @<GetAddress_Form(pchar)>, dass der ehemalige Patrouillenkapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name> hingerichtet wurde? Man munkelt, dass er ein wichtiges Schiff versenkt und die Ware versteckt hat. Und keiner aus der Mannschaft gab zu, wo das Versteck war. Also wurden sie alle gehängt...
-}
-
-GenQuests_48
-{
-Können Sie sich das vorstellen, @<GetAddress_Form(pchar)>? Einer der Kapitäne des Patrouillengeschwaders war in Seeräuberei verwickelt. Deshalb wurde er kürzlich zusammen mit seiner gesamten Mannschaft hingerichtet. Es heißt, sie hätten Handelsschiffe ausgeraubt und versenkt.
-}
-
-GenQuests_49
-{
-Sie haben vor kurzem einen ehemaligen Kapitän namens @<pchar.GenQuest.CaptainComission.Name> zusammen mit der Mannschaft seiner Patrouille @<sShipType> hingerichtet. Gerüchten zufolge versteckten sie eine große Ladung von Waren, die von Schiffen, die die Gewässer passierten, beschlagnahmt wurden. Aber dies war eine der besten Patrouillenmannschaften. Ich glaube, @<GetAddress_Form(pchar)>, dass sie absichtlich verleumdet wurden. Schließlich wurden die Waren nie gefunden...
-}
-
-GenQuests_50
-{
-Alle Waren werden in den Laderaum verladen
-}
-
-GenQuests_51
-{
-die drei
-}
-GenQuests_52
-{
-die vier
-}
-GenQuests_53
-{
-die fünf
-}
-GenQuests_54
-{
-die sechs
-}
-GenQuests_55
-{
-die sieben
-}
-GenQuests_56
-{
-die acht
-}
-GenQuests_57
-{
-die neun
-}
-GenQuests_58
-{
-die zehn
-}
-
-GenQuests_59
-{
-Die Schiffbrüchigen wurden in der Siedlung abgesetzt
-}
-
-GenQuests_60
-{
-Der Schmuggler hatte Angst, in die Waffenkammer des Forts zu gehen, und lief weg.
-}
-
-GenQuests_61
-{
-Sie haben die richtige Höhle gefunden
-}
-
-GenQuests_62
-{
-
-}
-GenQuests_63
-{
-
-}
-
-GenQuests_64
-{
-
-}
-
-GenQuests_65
-{
-
-}
-
-GenQuests_66
-{
-
-}
-GenQuests_67
-{
-
-}
-
-GenQuests_68
-{
-nicht vornehm
-}
-
-GenQuests_69
-{
-ungehörig
-}
-
-GenQuests_70
-{
-
-}
-GenQuests_71
-{
-
-}
-
-GenQuests_72
-{
-ein Ehrenwort
-}
-GenQuests_73
-{
-'sein Wort zu halten'
-}
-
-GenQuests_74
-{
-sank, und mit ihm
-}
-GenQuests_75
-{
-sank, und mit ihm
-}
-
-GenQuests_76
-{
-
-}
-GenQuests_77
-{
-
-}
-
-GenQuests_78
-{
-Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+„Gen“))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString(" Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_79
-{
-Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_80
-{
-Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")> gehen. @<GetFullName(sld)> ging dorthin.
-}
-
-GenQuests_81
-{
-Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_82
-{
-Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_83
-{
-Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")> gehen. @<GetFullName(sld)> ging dorthin.
-}
-
-GenQuests_84
-{
-Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_85
-{
-Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_86
-{
-Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ging dorthin.
-}
-
-GenQuests_87
-{
-Offizier @<GetFullName(sld)> ist mit @<sld.ship.name> geflohen.
-}
-
-GenQuests_88
-{
-Offizier @<GetFullName(sld)> ist von @<pchar.ship.name> geflohen.
-}
-
-GenQuests_89
-{
-Abfangjäger
-}
-
-GenQuests_90
-{
-Fünf Tage sind vergangen...
-}
-
-GenQuests_91
-{
-55 Seeleute haben sich Ihrer Mannschaft angeschlossen
-}
-
-GenQuests_92
-{
-
-}
-GenQuests_93
-{
-
-}
-
-GenQuests_94
-{
-Hört, hört, Kapitän @<GetFullName(pchar)> hatte einen Kampf mit einem Banditen namens @<pchar.GenQuest.(Gun).name>. Sie wollten ihn ausrauben, aber er war nicht bereit zu zahlen. Tapferer Mann, dieser Kapitän, er hat den Abschaum einfach erschlagen.
-}
-
-GenQuests_95
-{
-Vor nicht allzu langer Zeit gab es einen Kampf im Dschungel - Banditen griffen Kapitän @<GetFullName(pchar)> an, wollten das Gold des Mannes holen... A-ha, du warst es, der @<pchar.GenQuest.(Gun).name> losgeworden ist! Ich sage: Gut gemacht...
-}
-
-GenQuests_96
-{
-Habt ihr gehört, wie eine örtliche Bande von @<pchar.GenQuest.(Gun).name> versucht hat, einen Kapitän namens @<GetFullName(pchar)> auszurauben? Er weigerte sich zu zahlen und schlachtete sie alle ab.
-}
-
-GenQuests_97
-{
-Habt Ihr von einem Mord an @<pchar.GenQuest.EncGirl.name> gehört? Das arme Mädchen wurde vor kurzem im Dschungel getötet. Sie sollten den Mörder finden und ihn hängen!
-}
-
-GenQuests_98
-{
-Wissen Sie, Kapitän @<GetFullName(pchar)>, jemand hat ein armes Mädchen namens @<pchar.GenQuest.EncGirl.name> ermordet? Schade, sie war ein wirklich nettes Mädchen...
-}
-
-GenQuests_99
-{
-Ihr Name war @<pchar.GenQuest.EncGirl.name>, und sie starb im Dschungel. Das ist nichts Besonderes, ich sage euch, es ist nicht sicher da draußen...
-}
-
-GenQuests_100
-{
-Habt ihr gehört, dass ein Kapitän ein Mädchen namens @<pchar.GenQuest.EncGirl.name> vor Banditen gerettet hat, sie buchstäblich aus ihren Fängen befreit hat! Was für ein feiner und aufrichtiger Mann!
-}
-
-GenQuests_101
-{
-Wisst Ihr, Kapitän @<GetFullName(pchar)> hat ein Mädchen namens @<pchar.GenQuest.EncGirl.name> vor Vergewaltigern im Dschungel gerettet... Oh, das sind Sie! Ich bewundere Euch...
-}
-
-GenQuests_102
-{
-Ein Mädchen namens @<pchar.GenQuest.EncGirl.name> ist ein glückliches Mädchen - vor kurzem wurde sie im Dschungel von Banditen angegriffen, die sie vergewaltigen wollten. Aber es ist ihnen nicht gelungen, hehehe, und das hat sie dem Kapitän @<GetMainCharacterNameGen()> zu verdanken!
-}
-
-GenQuests_103
-{
-Nun, Kapitän @<GetFullName(pchar)>, niemand hätte je gedacht, dass Ihr eine hilflose Frau in den Händen von Banditen lassen würdet, damit sie deren Spielball wird. Arme @<pchar.GenQuest.EncGirl.name>, wenn ich nur Worte dafür finden könnte...
-}
-
-GenQuests_104
-{
-Wissen Sie, Kapitän, Sie sind ein echter Mistkerl. Wie konnten Sie sich von einem hilflosen Mädchen im Dschungel abwenden? Habt Ihr eine Ahnung, was sie ihr angetan haben? Arme @<pchar.GenQuest.EncGirl.name>, niemand wird sie jemals heiraten...
-}
-
-GenQuests_105
-{
-Habt Ihr von dem Mord an @<pchar.GenQuest.EncGirlF.name> gehört? Das arme Mädchen wurde vor kurzem im Dschungel getötet. Sie sollten den Mörder finden und ihn hängen!
-}
-
-GenQuests_106
-{
-Wisst Ihr, Kapitän @<GetFullName(pchar)>, jemand hat ein armes Mädchen namens @<pchar.GenQuest.EncGirlF.name> ermordet? Schade, sie war ein wirklich nettes Mädchen...
-}
-
-GenQuests_107
-{
-Ihr Name war @<pchar.GenQuest.EncGirlF.name>, und sie starb im Dschungel. Das ist nichts Besonderes, ich sage euch, es ist nicht sicher da draußen...
-}
-
-GenQuests_108
-{
-Vor kurzem hatten sie unseren Offizier und seine gesamte Einheit tot aufgefunden. Wer sollte sie töten? Und warum?
-}
-
-GenQuests_109
-{
-Unser Kommandant schickt regelmäßig Patrouillen in den Dschungel, aber ich habe keine Ahnung, was er jetzt tun wird. Vor nicht allzu langer Zeit wurden dort tote Soldaten gefunden...
-}
-
-GenQuests_110
-{
-Verdammt, jemand hat eine ganze Einheit unserer Soldaten außerhalb der Stadt abgeschlachtet...
-}
-
-GenQuests_111
-{
-Es heißt, dass Kapitän @<GetFullName(pchar)> im Dschungel gegen Soldaten von @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> antrat und sie alle eliminierte. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> sind unfähige Kämpfer...
-}
-
-GenQuests_112
-{
-Ich habe wohl gehört, dass irgendein Kapitän @<GetMainCharacterNameGen()> außerhalb der Stadt von einer Patrouille durchsucht wurde...
-}
-
-GenQuests_113
-{
-Hm, soweit ich weiß, wurdet Ihr von unserer Patrouille außerhalb der Stadt kontrolliert. Ich weiß nicht, wie effektiv sie war...
-}
-
-GenQuests_114
-{
-Unser Kommandant wird die Patrouillen im Dschungel verstärken. Das müsst ihr ja bereits wissen, ihr wurdet erst vor kurzem durchsucht...
-}
-
-GenQuests_115
-{
-Wisst Ihr, Gouverneur @<sTemp> hat einen gewissen Kapitän @<GetMainCharacterNameDat()> beauftragt, einen bekannten Banditen namens @<GetFullName(arAll)> zur Strecke zu bringen. Und es scheint, dass der Kapitän den Auftrag des Gouverneurs erfüllt hat....
-}
-
-GenQuests_116
-{
-Ein tapferer Kapitän hat sich freiwillig gemeldet, um einen örtlichen Banditen namens @<GetFullName(arAll)> zu finden und zu vernichten. Und wie es aussieht, hat er es geschafft!
-}
-
-GenQuests_117
-{
-Ha, endlich hat unser Gouverneur die Aufgabe übernommen, Ordnung in den Dschungel zu bringen - er hat Kapitän @<GetMainCharacterNameDat()> damit beauftragt, den berüchtigtsten Banditen im Dschungel aufzuspüren und ihn zu töten. Und wisst ihr, dieser Bandit, @<GetFullName(arAll)> ist tot!
-}
-
-GenQuests_118
-{
-Karte
-}
-
-GenQuests_119
-{
-Schatz
-}
-
-GenQuests_120
-{
-Geld
-}
+GenQuests_1 {Schmuggler}
+GenQuests_2 {Offizier}
+GenQuests_3 {Soldat}
+GenQuests_4 {Ich habe den Ehering des Mädchens aus @<sCity> gefunden. Ich muss ihn ihr zurückbringen.}
+GenQuests_16 {Schätze befinden sich irgendwo in der Nähe!}
+GenQuests_17 {Die Zeit für die Suche nach dem Schiff ist abgelaufen}
+GenQuests_18 {Die Zeit für die Suche nach dem Schiff ist vorbei, der Kapitän ist an Land gegangen}
+GenQuests_19 {Kapitän ging an Land}
+GenQuests_20 {Kapitän! Wir haben eine Epidemie!}
+GenQuests_21 {An Bord des Schiffes @<chref.Ship.Name> sind bereits @<crew> Menschen gestorben}
+GenQuests_22 {explodiert}
+GenQuests_23 {explodiert}
+GenQuests_24 {~ die Kamera fixieren.}
+GenQuests_25 {Schiff leer}
+GenQuests_26 {Habt ihr gehört, dass die Herrin eine Magd namens @<pchar.GenQuest.EncGirl.name> hinausgeworfen hat, nur weil sie ihre verstreuten Perlen im Dschungel nicht einsammeln konnte? Die Leute haben ihr Schamgefühl völlig verloren!... und hatten nie ein Gewissen.}
+GenQuests_27 {Haben Sie gehört, dass eine Hure versucht hat, ohne Papiere auf das Schiff zu kommen? Sie wurde erwischt und ins Bordell zurückgebracht. Es heißt, sie schulde dem Besitzer eine hübsche Summe.}
+GenQuests_28 {Haben Sie es schon gehört? Eine Hure ohne Papiere wurde in unserem Hafen gefasst. Es heißt, sie sei aus einem Bordell geflohen, nachdem sie die Truhen des dortigen Besitzers ausgeräumt hatte. Diese Brutstätte der Ansteckung und des Diebstahls hätte schon längst beseitigt werden müssen. Immerhin sehen unsere Kinder das alles, was sollen sie da lernen?}
+GenQuests_29 {George}
+GenQuests_30 {Bush}
+GenQuests_31 {Rabak}
+GenQuests_32 {Maboa}
+GenQuests_33 {Abraham}
+GenQuests_34 {Lincoln}
+GenQuests_35 {im Schiffbau}
+GenQuests_36 {bei der Artillerie}
+GenQuests_37 {in der Navigation}
+GenQuests_38 {Kapitän, wie ist Ihre Reise auf einem Piratenschiff? Ist es normal? Wurden Sie dort beleidigt? Ha ha ha!}
+GenQuests_39 {Oh-oh-oh, Kapitän, ich hörte, Sie hatten kürzlich eine Menge Spaß.... Ihr, mein Freund, seid jetzt ein armer Mann! Ha-ha-ha!!}
+GenQuests_40 {Sie können in der Bucht anlegen.}
+GenQuests_41 {Habt Ihr schon gehört, @<GetAddress_Form(pchar)>, dass der Patrouillen-Kapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. kürzlich verhaftet wurde. Es hat sich herausgestellt, dass er nebenbei als Schmuggler gearbeitet hat. Überlegt doch mal, was der jetzige Gouverneur in die Kolonie gebracht hat! Diejenigen, die Piraten fangen sollen, rauben uns selbst aus!... Man munkelt, dass er in einer Woche hingerichtet wird. Das geschieht ihm recht.}
+GenQuests_42 {Gerüchten zufolge hat sich der Patrouillen-Kapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name> als Organisator einer Schmugglerbande entpuppt. Er wurde gefasst und wird bald gehängt werden. Es sieht so aus, als ob @<GetAddress_Form(pchar)>, unser Gouverneur, ernsthaft die Führung der Ordnung in der Kolonie übernommen hat.}
+GenQuests_43 {Können Sie sich das vorstellen? Der Kommandant des Forts hat eine geheime Organisation von Schmugglern aufgedeckt, die es geschafft hat, sogar Marineoffiziere in ihre Reihen zu rekrutieren. Einer von ihnen, dessen Name @<pchar.GenQuest.CaptainComission.Name> ist, wurde bereits gefasst und wird bald gehängt werden. Oh, @<GetAddress_Form(pchar)>, ich habe immer gesagt, dass unser Gouverneur früher oder später die Ordnung in der Siedlung wiederherstellen wird.}
+GenQuests_44 {Wisst ihr schon, dass der Kapitän der Patrouille @<sShipType> @<pchar.GenQuest.CaptainComission.Name> verhaftet wurde? Die Behörden haben herausgefunden, dass er eine große Ladung von Waren versteckt hat, die er von Schiffen beschlagnahmt hat, die in den Gewässern unterwegs waren. Es scheint, dass er nicht gehängt werden wird. Aber ich sage euch, er war einer der Besten in der Patrouillenstaffel. Wer hätte das gedacht...}
+GenQuests_45 {Verflucht! Der Gefangene ist entkommen!}
+GenQuests_46 {Habt Ihr gehört, @<GetAddress_Form(pchar)>, dass ein Patrouillenkapitän kürzlich gehängt wurde @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Es heißt, er habe einen Händler ausgeraubt. Hier kann man ja schließlich niemandem mehr trauen... Und die ganze Mannschaft, die bei ihm war, wurde gemeinsam hingerichtet. Komplizenschaft bedeutet...}
+GenQuests_47 {Wisst Ihr schon, @<GetAddress_Form(pchar)>, dass der ehemalige Patrouillenkapitän @<sShipType> @<pchar.GenQuest.CaptainComission.Name> hingerichtet wurde? Man munkelt, dass er ein wichtiges Schiff versenkt und die Ware versteckt hat. Und keiner aus der Mannschaft gab zu, wo das Versteck war. Also wurden sie alle gehängt...}
+GenQuests_48 {Können Sie sich das vorstellen, @<GetAddress_Form(pchar)>? Einer der Kapitäne des Patrouillengeschwaders war in Seeräuberei verwickelt. Deshalb wurde er kürzlich zusammen mit seiner gesamten Mannschaft hingerichtet. Es heißt, sie hätten Handelsschiffe ausgeraubt und versenkt.}
+GenQuests_49 {Sie haben vor kurzem einen ehemaligen Kapitän namens @<pchar.GenQuest.CaptainComission.Name> zusammen mit der Mannschaft seiner Patrouille @<sShipType> hingerichtet. Gerüchten zufolge versteckten sie eine große Ladung von Waren, die von Schiffen, die die Gewässer passierten, beschlagnahmt wurden. Aber dies war eine der besten Patrouillenmannschaften. Ich glaube, @<GetAddress_Form(pchar)>, dass sie absichtlich verleumdet wurden. Schließlich wurden die Waren nie gefunden...}
+GenQuests_50 {Alle Waren werden in den Laderaum verladen}
+GenQuests_51 {die drei}
+GenQuests_52 {die vier}
+GenQuests_53 {die fünf}
+GenQuests_54 {die sechs}
+GenQuests_55 {die sieben}
+GenQuests_56 {die acht}
+GenQuests_57 {die neun}
+GenQuests_58 {die zehn}
+GenQuests_59 {Die Schiffbrüchigen wurden in der Siedlung abgesetzt}
+GenQuests_60 {Der Schmuggler hatte Angst, in die Waffenkammer des Forts zu gehen, und lief weg.}
+GenQuests_61 {Sie haben die richtige Höhle gefunden}
+GenQuests_62 { }
+GenQuests_63 { }
+GenQuests_64 { }
+GenQuests_65 { }
+GenQuests_66 { }
+GenQuests_67 { }
+GenQuests_68 {nicht vornehm}
+GenQuests_69 {ungehörig}
+GenQuests_70 { }
+GenQuests_71 { }
+GenQuests_72 {ein Ehrenwort}
+GenQuests_73 {'sein Wort zu halten'}
+GenQuests_74 {sank, und mit ihm}
+GenQuests_75 {sank, und mit ihm}
+GenQuests_76 { }
+GenQuests_77 { }
+GenQuests_78 {Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+„Gen“))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString(" Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_79 {Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_80 {Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")> gehen. @<GetFullName(sld)> ging dorthin.}
+GenQuests_81 {Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_82 {Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_83 {Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")> gehen. @<GetFullName(sld)> ging dorthin.}
+GenQuests_84 {Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', dessen Name @<GetFullName(sld)> ist, ist wieder zur See gefahren. Gerüchten zufolge zog er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_85 {Kennen Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Also ging er nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_86 {Wenn Sie Kapitän @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' brauchen, dann müssen Sie nach @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ging dorthin.}
+GenQuests_87 {Offizier @<GetFullName(sld)> ist mit @<sld.ship.name> geflohen.}
+GenQuests_88 {Offizier @<GetFullName(sld)> ist von @<pchar.ship.name> geflohen.}
+GenQuests_89 {Abfangjäger}
+GenQuests_90 {Fünf Tage sind vergangen...}
+GenQuests_91 {55 Seeleute haben sich Ihrer Mannschaft angeschlossen}
+GenQuests_92 { }
+GenQuests_93 { }
+GenQuests_94 {Hört, hört, Kapitän @<GetFullName(pchar)> hatte einen Kampf mit einem Banditen namens @<pchar.GenQuest.(Gun).name>. Sie wollten ihn ausrauben, aber er war nicht bereit zu zahlen. Tapferer Mann, dieser Kapitän, er hat den Abschaum einfach erschlagen.}
+GenQuests_95 {Vor nicht allzu langer Zeit gab es einen Kampf im Dschungel - Banditen griffen Kapitän @<GetFullName(pchar)> an, wollten das Gold des Mannes holen... A-ha, du warst es, der @<pchar.GenQuest.(Gun).name> losgeworden ist! Ich sage: Gut gemacht...}
+GenQuests_96 {Habt ihr gehört, wie eine örtliche Bande von @<pchar.GenQuest.(Gun).name> versucht hat, einen Kapitän namens @<GetFullName(pchar)> auszurauben? Er weigerte sich zu zahlen und schlachtete sie alle ab.}
+GenQuests_97 {Habt Ihr von einem Mord an @<pchar.GenQuest.EncGirl.name> gehört? Das arme Mädchen wurde vor kurzem im Dschungel getötet. Sie sollten den Mörder finden und ihn hängen!}
+GenQuests_98 {Wissen Sie, Kapitän @<GetFullName(pchar)>, jemand hat ein armes Mädchen namens @<pchar.GenQuest.EncGirl.name> ermordet? Schade, sie war ein wirklich nettes Mädchen...}
+GenQuests_99 {Ihr Name war @<pchar.GenQuest.EncGirl.name>, und sie starb im Dschungel. Das ist nichts Besonderes, ich sage euch, es ist nicht sicher da draußen...}
+GenQuests_100 {Habt ihr gehört, dass ein Kapitän ein Mädchen namens @<pchar.GenQuest.EncGirl.name> vor Banditen gerettet hat, sie buchstäblich aus ihren Fängen befreit hat! Was für ein feiner und aufrichtiger Mann!}
+GenQuests_101 {Wisst Ihr, Kapitän @<GetFullName(pchar)> hat ein Mädchen namens @<pchar.GenQuest.EncGirl.name> vor Vergewaltigern im Dschungel gerettet... Oh, das sind Sie! Ich bewundere Euch...}
+GenQuests_102 {Ein Mädchen namens @<pchar.GenQuest.EncGirl.name> ist ein glückliches Mädchen - vor kurzem wurde sie im Dschungel von Banditen angegriffen, die sie vergewaltigen wollten. Aber es ist ihnen nicht gelungen, hehehe, und das hat sie dem Kapitän @<GetMainCharacterNameGen()> zu verdanken!}
+GenQuests_103 {Nun, Kapitän @<GetFullName(pchar)>, niemand hätte je gedacht, dass Ihr eine hilflose Frau in den Händen von Banditen lassen würdet, damit sie deren Spielball wird. Arme @<pchar.GenQuest.EncGirl.name>, wenn ich nur Worte dafür finden könnte...}
+GenQuests_104 {Wissen Sie, Kapitän, Sie sind ein echter Mistkerl. Wie konnten Sie sich von einem hilflosen Mädchen im Dschungel abwenden? Habt Ihr eine Ahnung, was sie ihr angetan haben? Arme @<pchar.GenQuest.EncGirl.name>, niemand wird sie jemals heiraten...}
+GenQuests_105 {Habt Ihr von dem Mord an @<pchar.GenQuest.EncGirlF.name> gehört? Das arme Mädchen wurde vor kurzem im Dschungel getötet. Sie sollten den Mörder finden und ihn hängen!}
+GenQuests_106 {Wisst Ihr, Kapitän @<GetFullName(pchar)>, jemand hat ein armes Mädchen namens @<pchar.GenQuest.EncGirlF.name> ermordet? Schade, sie war ein wirklich nettes Mädchen...}
+GenQuests_107 {Ihr Name war @<pchar.GenQuest.EncGirlF.name>, und sie starb im Dschungel. Das ist nichts Besonderes, ich sage euch, es ist nicht sicher da draußen...}
+GenQuests_108 {Vor kurzem hatten sie unseren Offizier und seine gesamte Einheit tot aufgefunden. Wer sollte sie töten? Und warum?}
+GenQuests_109 {Unser Kommandant schickt regelmäßig Patrouillen in den Dschungel, aber ich habe keine Ahnung, was er jetzt tun wird. Vor nicht allzu langer Zeit wurden dort tote Soldaten gefunden...}
+GenQuests_110 {Verdammt, jemand hat eine ganze Einheit unserer Soldaten außerhalb der Stadt abgeschlachtet...}
+GenQuests_111 {Es heißt, dass Kapitän @<GetFullName(pchar)> im Dschungel gegen Soldaten von @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> antrat und sie alle eliminierte. Ha, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> sind unfähige Kämpfer...}
+GenQuests_112 {Ich habe wohl gehört, dass irgendein Kapitän @<GetMainCharacterNameGen()> außerhalb der Stadt von einer Patrouille durchsucht wurde...}
+GenQuests_113 {Hm, soweit ich weiß, wurdet Ihr von unserer Patrouille außerhalb der Stadt kontrolliert. Ich weiß nicht, wie effektiv sie war...}
+GenQuests_114 {Unser Kommandant wird die Patrouillen im Dschungel verstärken. Das müsst ihr ja bereits wissen, ihr wurdet erst vor kurzem durchsucht...}
+GenQuests_115 {Wisst Ihr, Gouverneur @<sTemp> hat einen gewissen Kapitän @<GetMainCharacterNameDat()> beauftragt, einen bekannten Banditen namens @<GetFullName(arAll)> zur Strecke zu bringen. Und es scheint, dass der Kapitän den Auftrag des Gouverneurs erfüllt hat....}
+GenQuests_116 {Ein tapferer Kapitän hat sich freiwillig gemeldet, um einen örtlichen Banditen namens @<GetFullName(arAll)> zu finden und zu vernichten. Und wie es aussieht, hat er es geschafft!}
+GenQuests_117 {Ha, endlich hat unser Gouverneur die Aufgabe übernommen, Ordnung in den Dschungel zu bringen - er hat Kapitän @<GetMainCharacterNameDat()> damit beauftragt, den berüchtigtsten Banditen im Dschungel aufzuspüren und ihn zu töten. Und wisst ihr, dieser Bandit, @<GetFullName(arAll)> ist tot!}
+GenQuests_118 {Karte}
+GenQuests_119 {Schatz}
+GenQuests_120 {Geld}

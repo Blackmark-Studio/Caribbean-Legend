@@ -730,3 +730,15 @@ void LAi_SetDrinkerSitBenchTypeNoGroup(aref chr)
 	//Установим сидячую анимацию персонажу
 	//LAi_SetDrinkerSitAnimation(chr);
 }
+
+// Установить персонажу тип сидящего и сдавшегося
+void SetSurrenderedType(aref chr)
+{
+	DeleteAttribute(chr, "location.follower");
+	DeleteAttribute(chr, "chr_ai.type");
+	chr.chr_ai.type = LAI_TYPE_GROUNDSIT;
+	LAi_tmpl_stay_InitTemplate(chr);
+
+	SetSurrenderedAnimation(chr);
+	SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "SetFightWOWeapon", false);
+}

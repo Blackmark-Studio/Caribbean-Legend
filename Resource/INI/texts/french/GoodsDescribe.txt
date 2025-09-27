@@ -1,390 +1,246 @@
-newline{
+newline
+{
 
 }
-
 Balls {Boulets ronds}
 Balls_descr
 {
-Le type de munitions le moins cher, le plus facile à utiliser et le plus fiable. Les boulets ronds sont généralement utilisés pour infliger des dommages à la coque du navire et pour attaquer les structures défensives côtières à de grandes distances, mais manquent d'efficacité contre l'équipage ennemi.
-Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
+Le type de munitions le moins cher, le plus facile à utiliser et le plus fiable. Les boulets ronds sont généralement utilisés pour infliger des dommages à la coque du navire et pour attaquer les structures défensives côtières à de grandes distances, mais manquent d'efficacité contre l'équipage ennemi.Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
 }
-
-
 Grapes {Mitraille}
 Grapes_descr
 {
-Une charge de balles forgées en plomb ou en fer placées dans un sac en lin. 
-Possède une efficacité à courte portée. Peu efficace sur la coque en terme de dommage, mais provoque des pertes dévastatrices dans l'équipage afin de faciliter un abordage.
-Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
+Une charge de balles forgées en plomb ou en fer placées dans un sac en lin. Possède une efficacité à courte portée. Peu efficace sur la coque en terme de dommage, mais provoque des pertes dévastatrices dans l'équipage afin de faciliter un abordage.Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
 }
-
-
 Knippels {Boulets chaînés}
 Knippels_descr
 {
-Projectile composé de deux boulets reliés par une chaîne de fer ou une tige. Ces munitions sont utilisées pour endommager les mâts, les espars et le gréement.
-En général, les boulets chaînés ont une faible efficacité sur les moyennes et grandes distances. Ils ont une trajectoire imprévisible et ils ne font presque aucun dommage à la coque du navire. Cependant, ils déchirent voiles et gréement et peuvent même abattre le mât et immobiliser le navire ennemi.
-Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
+Projectile composé de deux boulets reliés par une chaîne de fer ou une tige. Ces munitions sont utilisées pour endommager les mâts, les espars et le gréement.En général, les boulets chaînés ont une faible efficacité sur les moyennes et grandes distances. Ils ont une trajectoire imprévisible et ils ne font presque aucun dommage à la coque du navire. Cependant, ils déchirent voiles et gréement et peuvent même abattre le mât et immobiliser le navire ennemi.Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
 }
-
-
 Bombs {Bombes}
 Bombs_descr
 {
-Les bombes sont les munitions les plus coûteuses et les plus destructrices. Ces bombes sont constituées d'une sphère creuse en fonte. Remplie de poudre à canon et munie d'une mèche en bois, une fois allumée, elle explose au moment de l'impact. Ses éclats frappent les hommes d'équipage, détruisent les mâts, mettent le feu au gréement et brisent les coques sous l'effet de l'onde de choc.
-Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
+Les bombes sont les munitions les plus coûteuses et les plus destructrices. Ces bombes sont constituées d'une sphère creuse en fonte. Remplie de poudre à canon et munie d'une mèche en bois, une fois allumée, elle explose au moment de l'impact. Ses éclats frappent les hommes d'équipage, détruisent les mâts, mettent le feu au gréement et brisent les coques sous l'effet de l'onde de choc.Dégâts de base : coque - #f.2DamageHull#, voiles-#f.2DamageRig#, équipage-#f.2DamageCrew#
 }
-
-
 Sailcloth {Toile à voile}
 Sailcloth_descr
 {
-Toile épaisse et dense utilisée pour la fabrication des voiles.
-Les colonies anglaises d'Amérique du Nord produisent du coton et du chanvre de haute qualité et tissent des toiles à partir de ces deux fibres. Les fibres transversales sont en coton et les fibres longitudinales (la base) en chanvre. Cette toile, d'une couleur "blanc cassé", est plus légère et sèche plus rapidement que la toile européenne traditionnelle de couleur grise faite de lin non blanchi.
+Toile épaisse et dense utilisée pour la fabrication des voiles.Les colonies anglaises d'Amérique du Nord produisent du coton et du chanvre de haute qualité et tissent des toiles à partir de ces deux fibres. Les fibres transversales sont en coton et les fibres longitudinales (la base) en chanvre. Cette toile, d'une couleur "blanc cassé", est plus légère et sèche plus rapidement que la toile européenne traditionnelle de couleur grise faite de lin non blanchi.
 }
-
-
 Planks {Planches}
 Planks_descr
 {
-Planches de bois de seconde qualité, obtenues en fendant des troncs d'arbres anciens à l'aide de coins. Elles sont plus robustes que les planches sciées, moins susceptibles de se dessécher et moins sujettes à la déformation et aux fissures.
-C'est le meilleur matériau pour les réparations d'urgence de la coque d'un navire.
+Planches de bois de seconde qualité, obtenues en fendant des troncs d'arbres anciens à l'aide de coins. Elles sont plus robustes que les planches sciées, moins susceptibles de se dessécher et moins sujettes à la déformation et aux fissures.C'est le meilleur matériau pour les réparations d'urgence de la coque d'un navire.
 }
-
-
 Wheat {Blé}
 Wheat_descr
 {
-Les variétés locales de blé sont très appréciées pour leur farine, qui est utilisée par les boulangers pour fabriquer de délicieuses miches de pain à la croûte remarquable.
-Compte tenu du rendement élevé de la récolte et de la période hors saison de maturation (janvier), l'importation de blé vers l'Europe hivernale peut rapporter beaucoup d'argent.
+Les variétés locales de blé sont très appréciées pour leur farine, qui est utilisée par les boulangers pour fabriquer de délicieuses miches de pain à la croûte remarquable.Compte tenu du rendement élevé de la récolte et de la période hors saison de maturation (janvier), l'importation de blé vers l'Europe hivernale peut rapporter beaucoup d'argent.
 }
-
-
 Ebony {Ébène}
 Ebony_descr
 {
-Le bois d'ébène (noir) a toujours fasciné les charpentiers et les roturiers par sa beauté et sa dureté : ce bois est deux fois plus dur que le chêne. Combiné à la couleur unique du bois, il est le préféré de la noblesse européenne qui cherche à impressionner ses pairs.
-Chaque espèce d'ébène a sa propre couleur, qui va du brun verdâtre au noir velouté. Avec le temps, le bois devient plus sombre, plus dur et plus cher.
+Le bois d'ébène (noir) a toujours fasciné les charpentiers et les roturiers par sa beauté et sa dureté : ce bois est deux fois plus dur que le chêne. Combiné à la couleur unique du bois, il est le préféré de la noblesse européenne qui cherche à impressionner ses pairs.Chaque espèce d'ébène a sa propre couleur, qui va du brun verdâtre au noir velouté. Avec le temps, le bois devient plus sombre, plus dur et plus cher.
 }
-
-
 Chocolate {Cacao}
 Chocolate_descr
 {
-Les cabosses de cacao mûres sont cueillies et cassées pour en extraire les fèves. Ces dernières, une fois fermentées et séchées, peuvent être conservées longtemps. Elle sont utilisée comme monnaie dans l’empire aztèque. Seul les élites peuvent préparer la fameux «xocoatl» en mélangeant fèves, piment, vanille et roucou. Bien trop amère pour les Européens qui ajoutent rapidement du lait et du sucre.
-La forte demande de cacao de la part des Indiens et des élites coloniales tire à la hausse des prix déjà élevés. Espagnols et Italiens étant prêts à la payer en or, les prix peuvent devenir exorbitants.
+Les cabosses de cacao mûres sont cueillies et cassées pour en extraire les fèves. Ces dernières, une fois fermentées et séchées, peuvent être conservées longtemps. Elle sont utilisée comme monnaie dans l’empire aztèque. Seul les élites peuvent préparer la fameux «xocoatl» en mélangeant fèves, piment, vanille et roucou. Bien trop amère pour les Européens qui ajoutent rapidement du lait et du sucre.La forte demande de cacao de la part des Indiens et des élites coloniales tire à la hausse des prix déjà élevés. Espagnols et Italiens étant prêts à la payer en or, les prix peuvent devenir exorbitants.
 }
-
-
 Sugar {Sucre}
 Sugar_descr
 {
-En faisant bouillir le jus de canne à sucre pendant des heures dans de grandes bouilloires en cuivre, le sirop sucré se transforme en gros cristaux bruns de sucre brut. Séchés et préparés pour le transport, ils seront raffinés En Europe.
-La coutume d'offrir à ses invités du thé ou du café sucré - une mode éternelle et un symbole aristocratique de bien-être - garantit une demande solide pour le sucre brut.
+En faisant bouillir le jus de canne à sucre pendant des heures dans de grandes bouilloires en cuivre, le sirop sucré se transforme en gros cristaux bruns de sucre brut. Séchés et préparés pour le transport, ils seront raffinés En Europe.La coutume d'offrir à ses invités du thé ou du café sucré - une mode éternelle et un symbole aristocratique de bien-être - garantit une demande solide pour le sucre brut.
 }
-
-
 Wine {Vin}
 Wine_descr
 {
-Les vins importés de France, d'Espagne, d'Italie et du Portugal sont toujours très appréciés, d'autant plus que la plupart des tentatives de viticulture ont échoué dans le Nouveau Monde.
-Que ce soit à des fins sacramentelles ou récréatives, les vins européens de qualité sont très demandés dans toutes les colonies et les marchands locaux les achètent en grandes quantités.
+Les vins importés de France, d'Espagne, d'Italie et du Portugal sont toujours très appréciés, d'autant plus que la plupart des tentatives de viticulture ont échoué dans le Nouveau Monde.Que ce soit à des fins sacramentelles ou récréatives, les vins européens de qualité sont très demandés dans toutes les colonies et les marchands locaux les achètent en grandes quantités.
 }
-
-
 ShipSilk {Soie de navire}
 ShipSilk_descr
 {
-Chef-d'oeuvre des usines textiles lyonnaises, la toile à voile en soie dense.
-La soie est extrêmement résistante, les filaments sont solides, élastiques et d'épaisseur uniforme. Ce tissu est léger et respirant ; il absorbe rapidement l'humidité, mais sèche encore plus vite. Il conserve sa forme et résiste à l'étirement.
-Malgré tous ses avantages, le tissu de soie présente un inconvénient de taille : l'exposition à la lumière du soleil a tendance à dégrader le matériau.
+Chef-d'oeuvre des usines textiles lyonnaises, la toile à voile en soie dense.La soie est extrêmement résistante, les filaments sont solides, élastiques et d'épaisseur uniforme. Ce tissu est léger et respirant ; il absorbe rapidement l'humidité, mais sèche encore plus vite. Il conserve sa forme et résiste à l'étirement.Malgré tous ses avantages, le tissu de soie présente un inconvénient de taille : l'exposition à la lumière du soleil a tendance à dégrader le matériau.
 }
-
-
 Rum {Rhum}
 Rum_descr
 {
-Une boisson alcoolisée forte, distillée à partir de jus de canne à sucre fermenté, au goût et à la saveur légèrement excentriques. C'est une denrée précieuse, qui peut toujours être vendue avec profit, mais qui remonte aussi le moral de vos marins tant que vous en avez. Le rhum est également ajouté à l'eau douce des navires pour faire du grog, ce qui désinfecte l'eau et en améliore le goût. 
-Une pénurie de rhum sur le navire peut provoquer des troubles parmi vos marins et même être à l'origine d'une mutinerie.
+Une boisson alcoolisée forte, distillée à partir de jus de canne à sucre fermenté, au goût et à la saveur légèrement excentriques. C'est une denrée précieuse, qui peut toujours être vendue avec profit, mais qui remonte aussi le moral de vos marins tant que vous en avez. Le rhum est également ajouté à l'eau douce des navires pour faire du grog, ce qui désinfecte l'eau et en améliore le goût. Une pénurie de rhum sur le navire peut provoquer des troubles parmi vos marins et même être à l'origine d'une mutinerie.
 }
-
-
 Tobacco {Tabac}
 Tobacco_descr
 {
-Le tabac fait le bonheur de tous les hommes. De l'Europe lointaine, aux colonies locales en passant par les quartiers exigus de l'équipage sous le pont. Il est également considéré comme une mesure prophylactique fiable contre de nombreuses maladies - du moins, c'est ce que l'on croit.
-Il existe trois types de tabac prêts à être consommés : le tabac à fumer, le tabac à priser et le tabac à chiquer. Les feuilles de tabac emballées dans des sacs de lin constituent une cargaison précieuse pour de nombreux marchands.
+Le tabac fait le bonheur de tous les hommes. De l'Europe lointaine, aux colonies locales en passant par les quartiers exigus de l'équipage sous le pont. Il est également considéré comme une mesure prophylactique fiable contre de nombreuses maladies - du moins, c'est ce que l'on croit.Il existe trois types de tabac prêts à être consommés : le tabac à fumer, le tabac à priser et le tabac à chiquer. Les feuilles de tabac emballées dans des sacs de lin constituent une cargaison précieuse pour de nombreux marchands.
 }
-
-
 Coffee {Café}
 Coffee_descr
 {
-Cette boisson parfumée et énergisante à base de grains de café, de miel et de cannelle est très populaire parmi les habitants du Nouveau Monde. Non seulement en raison du grand nombre de plantations de café qui sont devenues la principale source de revenus de nombreux riches Européens, mais aussi parce que le thé en provenance de l'Inde et de la Chine est assez difficile à trouver.
-Les grains de café verts et non torréfiés, qui conservent longtemps leurs qualités marchandes et leurs propriétés utiles, sont toujours très recherchés en Europe continentale, car le café est un produit indispensable dans tous les foyers riches.
+Cette boisson parfumée et énergisante à base de grains de café, de miel et de cannelle est très populaire parmi les habitants du Nouveau Monde. Non seulement en raison du grand nombre de plantations de café qui sont devenues la principale source de revenus de nombreux riches Européens, mais aussi parce que le thé en provenance de l'Inde et de la Chine est assez difficile à trouver.Les grains de café verts et non torréfiés, qui conservent longtemps leurs qualités marchandes et leurs propriétés utiles, sont toujours très recherchés en Europe continentale, car le café est un produit indispensable dans tous les foyers riches.
 }
-
-
 Mahogany {Acajou}
 Mahogany_descr
 {
-Le bois de ces arbres présente un motif très distinct et magnifique, tout en étant très robuste, résistant au feu et durable. Il peut être poli très facilement et n'est pas attaqué par les parasites du bois. Les Espagnols ont été les premiers à l'apprécier. Aujourd'hui, l'acajou est largement utilisé dans la construction de navires, d'églises et de palais.
-Les meubles en acajou sont un exemple de luxe classique, de bon goût et de bien-être pour leur propriétaire.
+Le bois de ces arbres présente un motif très distinct et magnifique, tout en étant très robuste, résistant au feu et durable. Il peut être poli très facilement et n'est pas attaqué par les parasites du bois. Les Espagnols ont été les premiers à l'apprécier. Aujourd'hui, l'acajou est largement utilisé dans la construction de navires, d'églises et de palais.Les meubles en acajou sont un exemple de luxe classique, de bon goût et de bien-être pour leur propriétaire.
 }
-
-
 Cinnamon {Vanille}
 Cinnamon_descr
 {
-Les gousses séchées et fermentées de cette liane à feuilles persistantes originaire du Mexique ont un arôme doux, mais un goût amer.
-La vanille est utilisée en Europe dans la fabrication du cacao et du chocolat chaud. Elle est également utilisée comme aromatisant pour le tabac ; d'autres la mâchent simplement, mais c'est surtout pour montrer leur statut !
+Les gousses séchées et fermentées de cette liane à feuilles persistantes originaire du Mexique ont un arôme doux, mais un goût amer.La vanille est utilisée en Europe dans la fabrication du cacao et du chocolat chaud. Elle est également utilisée comme aromatisant pour le tabac ; d'autres la mâchent simplement, mais c'est surtout pour montrer leur statut !
 }
-
-
 Copra {Copra}
 Copra_descr
 {
-Chair de coco séchée. Le coprah est utilisé pour fabriquer de l'huile de coprah et du savon. 
-En plus de sentir bon, ce savon masque les nobles et grisonnantes chevelures d'une teinte blonde.
+Chair de coco séchée. Le coprah est utilisé pour fabriquer de l'huile de coprah et du savon. En plus de sentir bon, ce savon masque les nobles et grisonnantes chevelures d'une teinte blonde.
 }
-
-
 Paprika {Paprika}
 Paprika_descr
 {
-Piments rouges moulus et séchés. Une épice douce et piquante très appréciée en cuisine en tant pour aromatiser. 
-Le paprika est très apprécié des Allemands, des Espagnols et de l'Europe méditerranéenne, car il se marie parfaitement avec pratiquement tout : viande, volaille, poisson, fruits de mer, légumes et fromage.
+Piments rouges moulus et séchés. Une épice douce et piquante très appréciée en cuisine en tant pour aromatiser. Le paprika est très apprécié des Allemands, des Espagnols et de l'Europe méditerranéenne, car il se marie parfaitement avec pratiquement tout : viande, volaille, poisson, fruits de mer, légumes et fromage.
 }
-
-
 Fruits {Fruits}
 Fruits_descr
 {
-Fruits tropicaux comestibles provenant de la flore locale. Ils sont parfaits pour prévenir le scorbut ou aromatiser le vin bon marché.
-Les fruits peuvent être vendus dans n'importe quel village.
+Fruits tropicaux comestibles provenant de la flore locale. Ils sont parfaits pour prévenir le scorbut ou aromatiser le vin bon marché.Les fruits peuvent être vendus dans n'importe quel village.
 }
-
-
 Ale {Bière}
 Ale_descr
 {
-Une boisson brassée, à faible teneur en alcool, préparée par fermentation haute. 
-Avec le pain, la bière est considérée, comme un aliment de base. Ayant l'avantage de se conserver longtemps, elle fait partie des rations des garnisons locales (notamment anglaises). Brassée avec du gruyt (mélange d'herbes et d'épices remplaçant le houblon), elle devient "la cervoise" et obtient alors, des propriétés antiseptiques.
+Une boisson brassée, à faible teneur en alcool, préparée par fermentation haute. Avec le pain, la bière est considérée, comme un aliment de base. Ayant l'avantage de se conserver longtemps, elle fait partie des rations des garnisons locales (notamment anglaises). Brassée avec du gruyt (mélange d'herbes et d'épices remplaçant le houblon), elle devient "la cervoise" et obtient alors, des propriétés antiseptiques.
 }
-
-
 Ropes {cordes}
 Ropes_descr
 {
-Cordes solides en chanvre. Résistants à l'eau salée, ce sont les meilleurs cordages pour le gréement.
-Les cordes les meilleures et les plus célèbres sont fabriquées dans le Tsarat de Russie.
+Cordes solides en chanvre. Résistants à l'eau salée, ce sont les meilleurs cordages pour le gréement.Les cordes les meilleures et les plus célèbres sont fabriquées dans le Tsarat de Russie.
 }
-
-
 Clothes {Vêtements}
 Clothes_descr
 {
-Vêtements pratiques et confortables en simple lin. Le style est conservateur: baptiste sombre, cols et poignets rabattus. Une tenue adéquate pour un honnête travailleur, modeste et économe.
-Une marchandise bon marché, toujours demandée.
+Vêtements pratiques et confortables en simple lin. Le style est conservateur: baptiste sombre, cols et poignets rabattus. Une tenue adéquate pour un honnête travailleur, modeste et économe.Une marchandise bon marché, toujours demandée.
 }
-
-
 Cotton {Coton}
 Cotton_descr
 {
-Le coton mûrit tardivement et le rendement de la récolte est plutôt faible dans les plantations des îles des Caraïbes par rapport aux colonies nord-américaines, mais ses fibres sont toujours très précieuses, car elles sont exceptionnellement longues et fines. Ces fibres crémeuses et soyeuses sont utilisées pour fabriquer des fils pour les tissus les plus fins et de la plus haute qualité.
-Cette fabrication laborieuse nécessite la mise en place d'une plantation relativement importante et l'emploi d'au moins 20 esclaves.
+Le coton mûrit tardivement et le rendement de la récolte est plutôt faible dans les plantations des îles des Caraïbes par rapport aux colonies nord-américaines, mais ses fibres sont toujours très précieuses, car elles sont exceptionnellement longues et fines. Ces fibres crémeuses et soyeuses sont utilisées pour fabriquer des fils pour les tissus les plus fins et de la plus haute qualité.Cette fabrication laborieuse nécessite la mise en place d'une plantation relativement importante et l'emploi d'au moins 20 esclaves.
 }
-
-
 Sandal {Bois de fer}
 Sandal_descr
 {
-Le bois de fer est également connu sous le nom de "lignum vitae". Ce bois dense, dur et robuste est presque impossible à fissurer. Il est très lourd et, contrairement à la plupart des bois, il s'enfonce dans l'eau au lieu d'y flotter.
-Comme son nom l'indique, c'est un bois très robuste, mais difficile à travailler. Il possède également des propriétés autolubrifiantes, en particulier dans l'eau.
-En raison de leur robustesse et de leur lubrification naturelle, les éléments de navire en bois de fer ne nécessitent pas beaucoup d'entretien, même dans les pires conditions en mer.
+Le bois de fer est également connu sous le nom de "lignum vitae". Ce bois dense, dur et robuste est presque impossible à fissurer. Il est très lourd et, contrairement à la plupart des bois, il s'enfonce dans l'eau au lieu d'y flotter.Comme son nom l'indique, c'est un bois très robuste, mais difficile à travailler. Il possède également des propriétés autolubrifiantes, en particulier dans l'eau.En raison de leur robustesse et de leur lubrification naturelle, les éléments de navire en bois de fer ne nécessitent pas beaucoup d'entretien, même dans les pires conditions en mer.
 }
-
-
 Oil {Résine}
 Oil_descr
 {
-Ce goudron naturel est un mélange collant gris-noir de bitume, d'argile finement dispersée et d'eau salée. Il s'agit de l'exportation la plus demandée de Trinidad, même si ce n'est certainement pas la plus belle.
-Ce goudron est utilisé pour imperméabiliser et calfeutrer les joints de la coque des navires.
-On pense que ce goudron est de loin supérieur au goudron produit dans les pays d'Europe du Nord à partir de pins.
+Ce goudron naturel est un mélange collant gris-noir de bitume, d'argile finement dispersée et d'eau salée. Il s'agit de l'exportation la plus demandée de Trinidad, même si ce n'est certainement pas la plus belle.Ce goudron est utilisé pour imperméabiliser et calfeutrer les joints de la coque des navires.On pense que ce goudron est de loin supérieur au goudron produit dans les pays d'Europe du Nord à partir de pins.
 }
-
-
 Leather {Cuir}
 Leather_descr
 {
-Les peaux de bovins séchées et apprêtées sont une marchandise universelle, toujours demandée en Europe. C'est ainsi que les premiers boucaniers gagnaient leur vie en vendant les peaux et la viande des bovins sauvages d'Hispaniola.
-Bien que peu de marchands chargeraient leurs navires uniquement avec du cuir, celui-ci est idéal pour remplir les espaces de chargement vides, car il est très résistant et peut supporter n'importe quelles conditions de transport.
+Les peaux de bovins séchées et apprêtées sont une marchandise universelle, toujours demandée en Europe. C'est ainsi que les premiers boucaniers gagnaient leur vie en vendant les peaux et la viande des bovins sauvages d'Hispaniola.Bien que peu de marchands chargeraient leurs navires uniquement avec du cuir, celui-ci est idéal pour remplir les espaces de chargement vides, car il est très résistant et peut supporter n'importe quelles conditions de transport.
 }
-
-
 Slaves {Esclaves}
-Slaves_descr
-{
-Entre 4.8 millions et 8 millions d'hommes et femmes ont été déportés de force d'Afrique vers les Caraïbes. Ils remplacent les esclaves amérindiens et les dizaine de milliers de misérables venus d'Europe pour travailler, sous contrat, dans les plantations. Tandis que les premiers avaient tendance à être décimés par les maladies, les seconds s'enfuyaient en raison de condition de travail extrêmement difficiles. C'est une marchandise légale, son commerce étant garanti et encouragé par les nations coloniales. Dans les plantations, la vie d'un esclave est faite de violences et d'humiliations. Leur espérance de vie ne dépasse, pas 10 ans.  
-}
-
-
+Slaves_descr {Entre 4.8 millions et 8 millions d'hommes et femmes ont été déportés de force d'Afrique vers les Caraïbes. Ils remplacent les esclaves amérindiens et les dizaine de milliers de misérables venus d'Europe pour travailler, sous contrat, dans les plantations. Tandis que les premiers avaient tendance à être décimés par les maladies, les seconds s'enfuyaient en raison de condition de travail extrêmement difficiles. C'est une marchandise légale, son commerce étant garanti et encouragé par les nations coloniales. Dans les plantations, la vie d'un esclave est faite de violences et d'humiliations. Leur espérance de vie ne dépasse, pas 10 ans.}
 Powder {Poudre à canon}
 Powder_descr
 {
-Une marchandise stratégique, produite dans des moulins à poudre européens sales, bruyants, malodorants et dangereux. "Gardez votre poudre sèche", disent les canonniers expérimentés. On ne le dira jamais assez : sans poudre, les canons ne sont qu'un poids mort pour un navire.
-Un capitaine avisé gardera toujours une bonne quantité de poudre à canon dans la partie la plus sèche et la plus sûre de sa cale.
+Une marchandise stratégique, produite dans des moulins à poudre européens sales, bruyants, malodorants et dangereux. "Gardez votre poudre sèche", disent les canonniers expérimentés. On ne le dira jamais assez : sans poudre, les canons ne sont qu'un poids mort pour un navire.Un capitaine avisé gardera toujours une bonne quantité de poudre à canon dans la partie la plus sèche et la plus sûre de sa cale.
 }
-
-
 Food {Nourriture}
 Food_descr
 {
-Ensemble standard de rations conservées et d'eau douce, nécessaire pour nourrir l'équipage et les esclaves au cours d'un voyage.
-Le manque de nourriture à bord entraîne la disette, des décès et une baisse du moral.
-Consommation quotidienne : marins - 0,1 unite, esclaves - 0,05 unite.
+Ensemble standard de rations conservées et d'eau douce, nécessaire pour nourrir l'équipage et les esclaves au cours d'un voyage.Le manque de nourriture à bord entraîne la disette, des décès et une baisse du moral.Consommation quotidienne : marins - 0,1 unite, esclaves - 0,05 unite.
 }
-
-
 Weapon {Armes}
 Weapon_descr
 {
-Ensemble d'armes : des sabres et épées aux pistolets et mousquets.
-Lors des abordages, chaque participant à la bataille doit être armé. Un manque d'armes entraîne une augmentation des pertes.
-Au fur et à mesure que les marins meurent au combat, la quantité d'armes à bord diminue.
+Ensemble d'armes : des sabres et épées aux pistolets et mousquets.Lors des abordages, chaque participant à la bataille doit être armé. Un manque d'armes entraîne une augmentation des pertes.Au fur et à mesure que les marins meurent au combat, la quantité d'armes à bord diminue.
 }
-
-
 Gold {Or}
 Gold_descr
 {
-Lingots d'or massif issus tout d'abord des mines d'Hispaniola et de Colombie. A la chute de l'empire Aztèque (Mexique,1521), et de l'empire inca (Pérou, 1537), les flux s'intensifient en direction des Caraïbes. Ces lingots marqués par le Trésor d'Espagne à Mexico ou à Lima, sont débarqués dans le port de Cadix. 
-Capturer un navire au trésor chargé d'or est le rêve de tout pirate et corsaire.
+Lingots d'or massif issus tout d'abord des mines d'Hispaniola et de Colombie. A la chute de l'empire Aztèque (Mexique,1521), et de l'empire inca (Pérou, 1537), les flux s'intensifient en direction des Caraïbes. Ces lingots marqués par le Trésor d'Espagne à Mexico ou à Lima, sont débarqués dans le port de Cadix. Capturer un navire au trésor chargé d'or est le rêve de tout pirate et corsaire.
 }
-
-
 Silver {Argent}
 Silver_descr
 {
-Lingots d'argent massif issus des nombreuses mines du Pérou et du Mexique. Très abondant, l'argent représente rapidement 85% des exportations de minerai précieux vers l'Europe. 
-Ces lingots marqués par le Trésor d'Espagne à Mexico ou à Lima, sont débarqués dans le port de Cadix. 
+Lingots d'argent massif issus des nombreuses mines du Pérou et du Mexique. Très abondant, l'argent représente rapidement 85% des exportations de minerai précieux vers l'Europe. Ces lingots marqués par le Trésor d'Espagne à Mexico ou à Lima, sont débarqués dans le port de Cadix.
 }
-
-
 Brick {Briques}
 Brick_descr
 {
-Des blocs soignés et des tuiles en terre cuite. Ils sont largement utilisés dans la construction des villes, car l'humidité des Caraïbes a tendance à pourrir le bois rapidement.
-En raison de fréquents incendies, les autorités encouragent l'utilisation de briques dans la construction, et cette marchandise est donc toujours très demandée.
+Des blocs soignés et des tuiles en terre cuite. Ils sont largement utilisés dans la construction des villes, car l'humidité des Caraïbes a tendance à pourrir le bois rapidement.En raison de fréquents incendies, les autorités encouragent l'utilisation de briques dans la construction, et cette marchandise est donc toujours très demandée.
 }
-
-
 Medicament {Médicaments}
 Medicament_descr
 {
-Ensemble de médicaments et d'instruments destinés à traiter les maladies les plus courantes et à apporter les premiers soins aux blessés.
-La présence de médicaments à bord permet de sauver les blessés, de réduire les pertes à l'embarquement et de soigner les malades en mer.
+Ensemble de médicaments et d'instruments destinés à traiter les maladies les plus courantes et à apporter les premiers soins aux blessés.La présence de médicaments à bord permet de sauver les blessés, de réduire les pertes à l'embarquement et de soigner les malades en mer.
 }
-
 Cannon_3 {Fauconneaux}
 Cannon_3_descr
 {
-Canons de pont équipés d'une tourelle. Ils offrent la plus grande mobilité et, en raison de leur petite taille, la plus faible puissance et portée.
-Ils sont souvent équipés d'une culasse interchangeable, permettant un rechargement rapide.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons de pont équipés d'une tourelle. Ils offrent la plus grande mobilité et, en raison de leur petite taille, la plus faible puissance et portée.Ils sont souvent équipés d'une culasse interchangeable, permettant un rechargement rapide.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_6 {Demi-canons de 6 livres}
 Cannon_6_descr
 {
-Petits canons, très populaires sur les navires de messagerie et de commerce en raison de leur faible poids, de leur bas prix et de leur durabilité. Faciles à entretenir et ne nécessitent pas d'équipage expérimenté.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Petits canons, très populaires sur les navires de messagerie et de commerce en raison de leur faible poids, de leur bas prix et de leur durabilité. Faciles à entretenir et ne nécessitent pas d'équipage expérimenté.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_8 {Demi-canons de 8 livres}
 Cannon_8_descr
 {
-L'un des calibres les plus populaires sur les petits navires, que l'on trouve aussi bien sur les navires marchands que sur les patrouilleurs. Appréciés pour leur excellente combinaison de taille, de poids et de puissance de feu.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+L'un des calibres les plus populaires sur les petits navires, que l'on trouve aussi bien sur les navires marchands que sur les patrouilleurs. Appréciés pour leur excellente combinaison de taille, de poids et de puissance de feu.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_12 {Demi-canons de 12 livres}
 Cannon_12_descr
 {
-Un calibre courant parmi les petits navires de guerre. Pour leur taille et leur poids, ils offrent une puissance de feu impressionnante, mais nécessitent des équipes complètes, ce qui augmente le nombre de membres d'équipage à bord.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Un calibre courant parmi les petits navires de guerre. Pour leur taille et leur poids, ils offrent une puissance de feu impressionnante, mais nécessitent des équipes complètes, ce qui augmente le nombre de membres d'équipage à bord.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_16 {Demi-canons de 16 livres}
 Cannon_16_descr
 {
-Canons modernes de type français. Grâce à leur conception avancée, ils offrent une excellente portée, fiabilité et puissance de feu. Un calibre très courant parmi les navires de patrouille et de reconnaissance.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons modernes de type français. Grâce à leur conception avancée, ils offrent une excellente portée, fiabilité et puissance de feu. Un calibre très courant parmi les navires de patrouille et de reconnaissance.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_18 {Demi-canons de 18 livres}
 Cannon_18_descr
 {
-Canons universels puissants qui étaient autrefois souvent installés sur les navires de guerre. Assez courants dans l'archipel et appréciés pour leur simplicité et leur fiabilité, bien que leur conception obsolète limite quelque peu leur portée.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons universels puissants qui étaient autrefois souvent installés sur les navires de guerre. Assez courants dans l'archipel et appréciés pour leur simplicité et leur fiabilité, bien que leur conception obsolète limite quelque peu leur portée.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_20 {Canons de 20 livres}
 Cannon_20_descr
 {
-Canons d'artillerie à long canon utilisés sur les croiseurs et les navires auxiliaires des convois militaires. Nécessitent un travail d'équipe coordonné pour un tir efficace.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons d'artillerie à long canon utilisés sur les croiseurs et les navires auxiliaires des convois militaires. Nécessitent un travail d'équipe coordonné pour un tir efficace.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_24 {Canons de 24 livres}
 Cannon_24_descr
 {
-Le calibre principal sur les navires de guerre, le sommet de l'évolution de l'artillerie navale. Ils offrent un équilibre parfait entre portée et puissance de feu, et leur conception réussie leur permet de résister à de longues batailles navales sans dommages critiques.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Le calibre principal sur les navires de guerre, le sommet de l'évolution de l'artillerie navale. Ils offrent un équilibre parfait entre portée et puissance de feu, et leur conception réussie leur permet de résister à de longues batailles navales sans dommages critiques.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_32 {Canons de 32 livres}
 Cannon_32_descr
 {
-Canons lourds de gros calibre qui infligent d'énormes dégâts et conviennent au bombardement des forts. En raison des limites de résistance des matériaux, une charge de poudre réduite est utilisée, ce qui limite la portée.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons lourds de gros calibre qui infligent d'énormes dégâts et conviennent au bombardement des forts. En raison des limites de résistance des matériaux, une charge de poudre réduite est utilisée, ce qui limite la portée.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_36 {Canons de 36 livres}
 Cannon_36_descr
 {
-Canons à long canon, rares sur le pont d'artillerie. Leur rechargement lent et leur portée limitée sont compensés par les dégâts dévastateurs infligés par leurs boulets lourds. Nécessitent de grandes équipes.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons à long canon, rares sur le pont d'artillerie. Leur rechargement lent et leur portée limitée sont compensés par les dégâts dévastateurs infligés par leurs boulets lourds. Nécessitent de grandes équipes.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Cannon_42 {Bombardes de 42 livres}
 Cannon_42_descr
 {
-Canons redoutables, le summum de la puissance de feu navale. Utilisés exclusivement sur les navires de ligne, dans les forts et lors des grandes batailles européennes. Nécessitent une grande équipe bien entraînée.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons redoutables, le summum de la puissance de feu navale. Utilisés exclusivement sur les navires de ligne, dans les forts et lors des grandes batailles européennes. Nécessitent une grande équipe bien entraînée.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Culverine_8 {Demi-culverines}
 Culverine_8_descr
 {
-Canons de 8 livres à long canon sur un support spécial avec une base solide et des roues en bois massif.
-Ils ont une portée de tir accrue. Couramment utilisés pour le tir de barrage.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons de 8 livres à long canon sur un support spécial avec une base solide et des roues en bois massif.Ils ont une portée de tir accrue. Couramment utilisés pour le tir de barrage.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Culverine_18 {Culverines}
 Culverine_18_descr
 {
-Canons moyens de 18 livres à portée accrue, adaptés à une utilisation sur des navires relativement petits.
-Malgré leur impressionnante distance de tir, ils sont extrêmement lourds et prennent beaucoup de temps à recharger.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons moyens de 18 livres à portée accrue, adaptés à une utilisation sur des navires relativement petits.Malgré leur impressionnante distance de tir, ils sont extrêmement lourds et prennent beaucoup de temps à recharger.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }
-
 Culverine_36 {Culverines complètes}
 Culverine_36_descr
 {
-Canons de forteresse de 36 livres conçus pour le tir de brèche : le gagnant est celui qui tire le premier !
-En raison de leur grande longueur, ils ne peuvent être installés que dans des ports conçus pour des canons de 42 livres.
-Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
+Canons de forteresse de 36 livres conçus pour le tir de brèche : le gagnant est celui qui tire le premier !En raison de leur grande longueur, ils ne peuvent être installés que dans des ports conçus pour des canons de 42 livres.Portée - #dFireRange#, dégâts - x#f.1DamageMultiply#, rechargement - #dReloadTime# sec.
 }

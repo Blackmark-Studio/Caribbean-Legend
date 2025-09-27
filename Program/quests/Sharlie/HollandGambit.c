@@ -3051,7 +3051,7 @@ void CreateVanbergSailors(string qName)//напали ванберговцы в 
 	for (i=1; i<=3; i++)//3 мушкетера
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("vanberg_mushketer_"+i, "mush_ctz_"+(6+i), "man", "mushketer", 20, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 20, 50, 50, "", "mushket1", "cartridge", 50);
+		FantomMakeCoolFighter(sld, 20, 50, 50, "", "mushket1", "bullet", 50);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		ChangeCharacterAddressGroup(sld, pchar.location.from_sea, "goto", "goto"+i);

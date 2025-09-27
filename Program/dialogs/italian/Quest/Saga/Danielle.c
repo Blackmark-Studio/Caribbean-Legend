@@ -376,7 +376,7 @@ void ProcessDialogEvent()
 		
 		case "arrive_7":
 			dialog.text = "Dimmi, che altro dovevo fare? Dopo che la statua ti aveva inghiottito, potevo solo sperare che un giorno ti risputasse fuori. Inoltre, Occhio di Serpente aveva detto che era la cosa più probabile.\nSono vissuto coi Miskito e ho sorvegliato l’idolo ogni giorno. Ma perché stiamo cianciando di queste fandonie? Dimmi! Cos’è successo laggiù? Dove sei stato?";
-			link.l1 = "Dannie, questa storia è lunga come una traversata oceanica, ne ho viste di tutti i цветов... Ma per toglierti il peso dal cuore, ti dirò che ho trovato Nathaniel!";
+			link.l1 = "Dannie, questa storia è lunga come una traversata oceanica, ne ho viste di tutti i colori... Ma per toglierti il peso dal cuore, ti dirò che ho trovato Nathaniel!";
 			link.l1.go = "arrive_8";
 		break;
 		
@@ -983,7 +983,7 @@ void ProcessDialogEvent()
 				sBullet = rItm.type.(sAttr).bullet;
 				rItem = ItemsFromID(sBullet);								
 				attrL = "l" + i;
-				Link.(attrL) = GetItemName(rItem);
+				Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 				Link.(attrL).go = "SetGunBullets1_" + i;
 			}
 		break;	
@@ -998,7 +998,7 @@ void ProcessDialogEvent()
 			LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			rItem = ItemsFromID(sBullet);
-			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(rItem)+"", "AmmoSelect");
+			notification(GetFullName(NPChar)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(rItem.name, "ItemsDescribe.txt")+"", "AmmoSelect");
 			DeleteAttribute(NPChar,"SetGunBullets");
 			DialogExit();
 		break;		

@@ -135,7 +135,7 @@ int CreateStoryCharacters(int n)
 	SetCharacterPerk(ch, "ShipDefenseProfessional");
 	SetCharacterPerk(ch, "ShipSpeedUp");
 	SetCharacterPerk(ch, "ShipTurnRateUp");
-	SetCharacterPerk(ch, "SwordplayProfessional");
+
 	SetCharacterPerk(ch, "AdvancedDefense");
 	SetCharacterPerk(ch, "CriticalHit");
 	SetCharacterPerk(ch, "Sliding");

@@ -555,7 +555,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_72": // нода Хименеса строителя и управляющего факторией
-			if (CheckAttribute(pchar, "questTemp.IslaMona.RecordPart")) // после защиты Исла Моны - нужно еще 10 рабов
+			if (CheckAttribute(pchar, "questTemp.IslaMona.RecordPart")) // после защиты Исла Моны - нужно ещё 10 рабов
 			{
 				dialog.text = "Seigneur Capitaine, nous avons besoin de 10 esclaves pour travailler dans l'usine - je vous l'ai dit, vous n'avez pas oublié, n'est-ce pas ?";
 				if (GetSquadronGoods(pchar, GOOD_SLAVES) >= 10)

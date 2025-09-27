@@ -1,0 +1,22 @@
+CONTRABAND {Kontrabanda}
+EXPORT {Eksportuj}
+IMPORT {Import}
+Trade_assistant {Asystent handlowy}
+No_price {Brak cennika}
+No_profit {Brak opłacalnych transakcji}
+Distance {Dystans}
+To {Tam}
+From {Wstecz}
+day {dzień}
+day2 {dzień}
+days {dni}
+hour {godzina}
+hour2 {godzina}
+hours {godzin}
+hours2 {godziny}
+nautical_mile {mila morska}
+nautical_mile2 {mila morska}
+nautical_miles {mil morskich}
+nautical_miles2 {mile morskie}
+TRAVEL_from {od}
+TRAVEL_to {do}

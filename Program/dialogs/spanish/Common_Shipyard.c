@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_Capacity_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -824,7 +824,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_SpeedRate_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -924,7 +924,7 @@ void ProcessDialogEvent()
 		{
 			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
-				shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+				shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 			}
 			else
 			{
@@ -964,7 +964,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_TurnRate_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока
+		// belamour legendary edition туда сюда бегать - та ещё морока
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -1087,7 +1087,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_MaxCrew_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -1215,7 +1215,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_MinCrew_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -1345,7 +1345,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_HP_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -1435,12 +1435,10 @@ void ProcessDialogEvent()
 			if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 			{
 				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-				shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 			}
 			else
 			{
 				shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-				shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 			}
 		}
 		else
@@ -1451,7 +1449,6 @@ void ProcessDialogEvent()
 				{
 					shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
-				shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 			}
 			else
 			{
@@ -1459,11 +1456,9 @@ void ProcessDialogEvent()
 				{
 					shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
-				shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 			}
 		}
 		shTo.Tuning.HP = true;
-		//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
 		ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 
 		if (!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo, "Tuning.MaxCrew") && CheckAttribute(shTo, "Tuning.HP"))
@@ -1502,7 +1497,7 @@ void ProcessDialogEvent()
 
 	case "ship_tunning_WindAgainst_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -1633,7 +1628,7 @@ void ProcessDialogEvent()
 
 	case "ship_c_quantity_start":
 		amount = GetMaterialQtyUpgrade(pchar, NPChar, 2);
-		// belamour legendary edition туда сюда бегать - та еще морока -->
+		// belamour legendary edition туда сюда бегать - та ещё морока -->
 		if (GetCharacterItem(pchar, "chest") + CheckItemMyCabin("chest") >= amount)
 		{
 			if (GetCharacterItem(pchar, "chest") >= amount)
@@ -2665,14 +2660,14 @@ void ProcessDialogEvent()
 
 	case "IslaMona_7":
 		dialog.text = "Entonces, me debes " + sti(pchar.questTemp.IslaMona.Shipyarder.Money) + " escudos.";
-		if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+		if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 		{
 			link.l1 = "Aquí, te doy lo último, no me queda nada.";
 			link.l1.go = "IslaMona_8";
 		}
 		else
 		{
-			if (GetCharacterItem(pchar, "gold_dublon") < 1)
+			if (PCharDublonsTotal() < 1)
 			{
 				link.l1 = "Espera, voy a ir al usurero para endeudarme.";
 				link.l1.go = "IslaMona_money_exit";
@@ -2686,9 +2681,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "IslaMona_money":
-		pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money) - GetCharacterItem(pchar, "gold_dublon");
-		Log_Info("Has entregado " + FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon")) + "");
-		RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+		pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money) - PCharDublonsTotal();
+		Log_Info("Has entregado " + FindRussianDublonString(PCharDublonsTotal()) + "");
+		RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 		PlaySound("interface\important_item.wav");
 		dialog.text = "No sientas lástima por mí, tienes un cofre de camarote lleno de oro. Me deberás " + FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money)) + ".";
 		link.l1 = "";
@@ -2704,7 +2699,7 @@ void ProcessDialogEvent()
 
 	case "IslaMona_8":
 		Log_Info("Has entregado " + FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money)) + "");
-		RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+		RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Eso es estupendo. La cantidad completa está en su lugar. Las herramientas serán entregadas a su barco. Estas son algunas cajas pesadas.";
 		link.l1 = "Gracias, " + npchar.name + ".";

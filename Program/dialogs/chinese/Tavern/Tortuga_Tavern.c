@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && !CheckAttribute(npchar, "quest.PZ.Ask.Block"))
             {
                 link.l1 = "伙计, 你能帮我个忙吗? 我在找一个叫乔普.范德温克的人。 你认识他吗? ";
-                link.l1.go = "PZ1";
+                link.l1.go = "PZ_1";
             }
         break;
         
@@ -159,19 +159,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             AddDialogExitQuestFunction("Mtraxx_WolfreekJewellerHouse");
         break;
         
-        case "PZ1":
+        case "PZ_1":
             dialog.text = "从没听说过他。 ";
             link.l1 = "也许他用的是另一个名字。 也许你听说过他是‘班坦’号双桅横帆船的船长? ";
-            link.l1.go = "PZ2";
+            link.l1.go = "PZ_2";
         break;
         
-        case "PZ2":
+        case "PZ_2":
             dialog.text = "也从没听说过那艘双桅横帆船。 ";
             link.l1 = "我听说他最近在这里。 也许一点银币能让你想起什么? ";
-            link.l1.go = "PZ3";
+            link.l1.go = "PZ_3";
         break;
         
-        case "PZ3":
+        case "PZ_3":
             npchar.quest.PZ.Ask.Block = true;
             
             dialog.text = "嗯, 问问你是从哪里听说的。 不过我不介意拿你的银币。 ";

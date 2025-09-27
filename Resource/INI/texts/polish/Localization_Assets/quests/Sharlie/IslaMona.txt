@@ -1,56 +1,12 @@
-IslaMona_1
-{
-Rodrigo
-}
-IslaMona_2
-{
-Jiménez
-}
-
-IslaMona_3
-{
-Następnego ranka...
-}
-
-IslaMona_4
-{
-Rodrigo Jimenez przygotował kolejną partię drewna twardego na Isla Mona
-}
-
-IslaMona_5
-{
-Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek rumu
-}
-
-IslaMona_6
-{
-Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek wina
-}
-
-IslaMona_7
-{
-Dodano @<sti(pchar.questTemp.IslaMona.Factory.Goods)> drewna twardego do Twojego magazynu
-}
-
-IslaMona_8
-{
-Alonso
-}
-IslaMona_9
-{
-
-}
-
-IslaMona_10
-{
-Francisco
-}
-IslaMona_11
-{
-de Alba
-}
-
-IslaMona_12
-{
-Sądząc po dźwiękach, pułapka okazała się sukcesem! Czas wracać do wioski!
-}
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {Następnego ranka...}
+IslaMona_4 {Rodrigo Jimenez przygotował kolejną partię drewna twardego na Isla Mona}
+IslaMona_5 {Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek rumu}
+IslaMona_6 {Dostarczyłeś @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> butelek wina}
+IslaMona_7 {Dodano @<sti(pchar.questTemp.IslaMona.Factory.Goods)> drewna twardego do Twojego magazynu}
+IslaMona_8 {Alonso}
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {Sądząc po dźwiękach, pułapka okazała się sukcesem! Czas wracać do wioski!}

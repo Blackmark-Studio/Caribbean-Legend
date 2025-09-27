@@ -1224,3 +1224,22 @@ string GetIndianName(int Sex) //Jason имена индейцев
 
 	return Names.Indian.(nameId);
 }
+
+string GetTitle() //Титул ГГ
+{
+	string Title;
+
+	if (PChar.sex == "man")
+	{
+		Title = "captain";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = "captain";
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "Governor-General";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "Vice Admiral";
+
+	return Title;
+}

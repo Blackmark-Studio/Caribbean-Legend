@@ -1,0 +1,328 @@
+QuestsUtilite_1 {Wheel of Fortune}
+QuestsUtilite_2 {I don't want to discuss same things over and over again.}
+QuestsUtilite_3 {We have already had this discussion.}
+QuestsUtilite_4 {We talked this through already.}
+QuestsUtilite_5 {I repeat, I do not want to talk about same topic over and over again.}
+QuestsUtilite_6 {I said, there is nothing more to discuss!}
+QuestsUtilite_7 {I am telling you that we talked this through already. Memory problems?}
+QuestsUtilite_8 {I don't want to talk to you again.}
+QuestsUtilite_9 {I will not speak to you ever again!}
+QuestsUtilite_10 {Now I am angry as hell}
+QuestsUtilite_11 { }
+QuestsUtilite_12 { }
+QuestsUtilite_13 {, get lost.}
+QuestsUtilite_14 {Fine, pal.}
+QuestsUtilite_15 {Whatever you say.}
+QuestsUtilite_16 {Sorry}
+QuestsUtilite_17 { }
+QuestsUtilite_18 { }
+QuestsUtilite_19 {, my bad...}
+QuestsUtilite_20 {Fine, fine. Calm down.}
+QuestsUtilite_21 {As you say, just stop roaring at me.}
+QuestsUtilite_22 {Pardon me, suffering from terrible headache...}
+QuestsUtilite_23 {Whatever.}
+QuestsUtilite_24 {Pity...}
+QuestsUtilite_25 {What a shame.}
+QuestsUtilite_26 {Lucas}
+QuestsUtilite_27 {Rodenburg}
+QuestsUtilite_28 {Abigail}
+QuestsUtilite_29 {Shneur}
+QuestsUtilite_30 {Solomon}
+QuestsUtilite_31 {Shneur}
+QuestsUtilite_32 {John}
+QuestsUtilite_33 {Murdock}
+QuestsUtilite_34 {Gino}
+QuestsUtilite_35 {Gvineili}
+QuestsUtilite_36 {Charlie}
+QuestsUtilite_37 {Knippel}
+QuestsUtilite_38 {Richard}
+QuestsUtilite_39 {Fleetwood}
+QuestsUtilite_40 {Jacob}
+QuestsUtilite_41 {van Berg}
+QuestsUtilite_42 {Longway}
+QuestsUtilite_43 { }
+QuestsUtilite_44 {Joachim}
+QuestsUtilite_45 {Merriman}
+QuestsUtilite_46 {Hercule}
+QuestsUtilite_47 {Tonzag}
+QuestsUtilite_48 {Michel}
+QuestsUtilite_49 {de Monper}
+QuestsUtilite_50 {abbot}
+QuestsUtilite_51 {Benoit}
+QuestsUtilite_52 {Fadey}
+QuestsUtilite_53 { }
+QuestsUtilite_54 {Diego}
+QuestsUtilite_55 {de Montoya}
+QuestsUtilite_56 {Alonso}
+QuestsUtilite_57 {de Maldonado}
+QuestsUtilite_58 {William}
+QuestsUtilite_59 {Paterson}
+QuestsUtilite_60 {Archibald}
+QuestsUtilite_61 {Colhaun}
+QuestsUtilite_62 {Jan}
+QuestsUtilite_63 {Svensson}
+QuestsUtilite_64 {Joanna}
+QuestsUtilite_65 {Svensson}
+QuestsUtilite_66 {Nathaniel}
+QuestsUtilite_67 {Hawk}
+QuestsUtilite_68 {Danielle}
+QuestsUtilite_69 {Hawk}
+QuestsUtilite_70 {Eduard}
+QuestsUtilite_71 {Doylie}
+QuestsUtilite_72 {Lawrence}
+QuestsUtilite_73 {Beltrop}
+QuestsUtilite_74 {Gladys}
+QuestsUtilite_75 {McArthur}
+QuestsUtilite_76 {Helen}
+QuestsUtilite_77 {McArthur}
+QuestsUtilite_78 {Jose}
+QuestsUtilite_79 {Dios}
+QuestsUtilite_80 {Albert}
+QuestsUtilite_81 {Loxley}
+QuestsUtilite_82 {Steven}
+QuestsUtilite_83 {Dodson}
+QuestsUtilite_84 {Chad}
+QuestsUtilite_85 {Kapper}
+QuestsUtilite_86 {Layton}
+QuestsUtilite_87 {Dexter}
+QuestsUtilite_88 {Eduard}
+QuestsUtilite_89 {Black}
+QuestsUtilite_90 {Chimiset}
+QuestsUtilite_91 { }
+QuestsUtilite_92 {Zicomo}
+QuestsUtilite_93 { }
+QuestsUtilite_94 {Giuseppe}
+QuestsUtilite_95 {Fazio}
+QuestsUtilite_96 {Axel}
+QuestsUtilite_97 {Yost}
+QuestsUtilite_98 {Sancho}
+QuestsUtilite_99 {Carpentero}
+QuestsUtilite_100 {brother}
+QuestsUtilite_101 {Julian}
+QuestsUtilite_102 {Mary}
+QuestsUtilite_103 {Casper}
+QuestsUtilite_104 {Henrick}
+QuestsUtilite_105 {Vedecker}
+QuestsUtilite_106 {Jurgen}
+QuestsUtilite_107 {Schmidt}
+QuestsUtilite_108 {Donald}
+QuestsUtilite_109 {Greenspen}
+QuestsUtilite_110 {Ole}
+QuestsUtilite_111 {Christiansen}
+QuestsUtilite_112 {Marcello}
+QuestsUtilite_113 { }
+QuestsUtilite_114 {Dougall}
+QuestsUtilite_115 {Abbot}
+QuestsUtilite_116 {Lionell}
+QuestsUtilite_117 {Maskered}
+QuestsUtilite_118 {Gerard}
+QuestsUtilite_119 {Smeets}
+QuestsUtilite_120 {Richard}
+QuestsUtilite_121 {Shambon}
+QuestsUtilite_122 {Alvaro}
+QuestsUtilite_123 {Gomez}
+QuestsUtilite_124 {Victor}
+QuestsUtilite_125 {Cassel}
+QuestsUtilite_126 {Adolf}
+QuestsUtilite_127 {Barbier}
+QuestsUtilite_128 {Curanai}
+QuestsUtilite_129 { }
+QuestsUtilite_130 {Ramona}
+QuestsUtilite_131 {Lozano}
+QuestsUtilite_132 {Oelart}
+QuestsUtilite_133 {Koteel}
+QuestsUtilite_134 {Jasper}
+QuestsUtilite_135 {Prutt}
+QuestsUtilite_136 {Leonard}
+QuestsUtilite_137 {Musket}
+QuestsUtilite_138 {Josef}
+QuestsUtilite_139 {Loderdale}
+QuestsUtilite_140 {Lorenzo}
+QuestsUtilite_141 {Solderra}
+QuestsUtilite_142 {Jacqueline}
+QuestsUtilite_143 {Turam}
+QuestsUtilite_144 {Jillian}
+QuestsUtilite_145 {Steiner}
+QuestsUtilite_146 {Tanneke}
+QuestsUtilite_147 {Aevers}
+QuestsUtilite_148 {Orelie}
+QuestsUtilite_149 {Bertine}
+QuestsUtilite_150 {Antonio}
+QuestsUtilite_151 {Betancourt}
+QuestsUtilite_152 {Cecille}
+QuestsUtilite_153 {Halard}
+QuestsUtilite_154 {Nathalie}
+QuestsUtilite_155 {Booshell}
+QuestsUtilite_156 {It appears that this is a treasure you were looking for}
+QuestsUtilite_157 { }
+QuestsUtilite_158 { }
+QuestsUtilite_159 { }
+QuestsUtilite_160 { }
+QuestsUtilite_161 {Warder}
+QuestsUtilite_162 { }
+QuestsUtilite_163 {Gone are the long days...}
+QuestsUtilite_164 {Amphitrité}
+QuestsUtilite_165 {Fuerte}
+QuestsUtilite_166 {Imperiális}
+QuestsUtilite_167 {Bonnet}
+QuestsUtilite_168 {Trafalgar}
+QuestsUtilite_169 {Gloucester}
+QuestsUtilite_170 {Griff}
+QuestsUtilite_171 {Languedoc}
+QuestsUtilite_172 {Leiden}
+QuestsUtilite_173 {Moloch}
+QuestsUtilite_174 {Cristóbal}
+QuestsUtilite_175 {Szuverén}
+QuestsUtilite_176 {Alcántara}
+QuestsUtilite_177 {Előörs}
+QuestsUtilite_178 {Torbay}
+QuestsUtilite_179 {Russell}
+QuestsUtilite_180 {Barford}
+QuestsUtilite_181 {Pelikán}
+QuestsUtilite_182 {Montebello}
+QuestsUtilite_183 {Zélandia}
+QuestsUtilite_184 {Limenói}
+QuestsUtilite_185 {Leviatán}
+QuestsUtilite_186 {Főnix}
+QuestsUtilite_187 {Neptun}
+QuestsUtilite_188 {Burgundia}
+QuestsUtilite_189 {Pandóra}
+QuestsUtilite_190 {Rotterdam}
+QuestsUtilite_191 {Meerman}
+QuestsUtilite_192 {Bucentaure}
+QuestsUtilite_193 {Konkordia}
+QuestsUtilite_194 {A Comanche potion is used}
+QuestsUtilite_195 {You are feeling that your health is restored!}
+QuestsUtilite_196 {Marlin}
+QuestsUtilite_197 {interceptors}
+QuestsUtilite_198 {Aurora Bardot, 1612-1637, Servant}
+QuestsUtilite_199 {You puke the whole table, you bloody pirate!}
+QuestsUtilite_200 {Jules Couvier, 1591-1640, roofer}
+QuestsUtilite_201 {There seems to be a strong wind coming up...}
+QuestsUtilite_202 {Gerard Lesbro, 1555-1596, alchemist}
+QuestsUtilite_203 {And now let's slightly heat this liquid...}
+QuestsUtilite_204 {Judith Boson, 1589-1618, governess}
+QuestsUtilite_205 {What a fool his Lordship's wife is!}
+QuestsUtilite_206 {Auguste Poitier, 1567-1624, gunsmith}
+QuestsUtilite_207 {Well, well, this gun is defective. Let's take a closer look...}
+QuestsUtilite_208 {Marc Romari, 1544-1599, usurer}
+QuestsUtilite_209 {Monsieur, I swear I really got robbed!}
+QuestsUtilite_210 {Marcel d'Aubet, 1611-1650, porter}
+QuestsUtilite_211 {It looks like these ropes are really rotten...}
+QuestsUtilite_212 {Rose Duplan, 1621-1649, maid}
+QuestsUtilite_213 {And what does the owner keep in this box? Now let's see, while he's gone...}
+QuestsUtilite_214 {Victor Marion, 1577-1608, watchman}
+QuestsUtilite_215 {Hey, who's there?}
+QuestsUtilite_216 {Alvaro Lopez, 1587-1633, pearl diver}
+QuestsUtilite_217 {Sharks have never swum in this lagoon!}
+QuestsUtilite_218 {Gaspar Ibanez, 1599-1640, carpenter}
+QuestsUtilite_219 {Juan, throw me that big ax!}
+QuestsUtilite_220 {Lorenzo Perdoso, 1581-1630, artilleryman}
+QuestsUtilite_221 {Rash more gunpowder in the mouth! Even more! Like this...}
+QuestsUtilite_222 {Simon Zorrita, 1602-1645, detective}
+QuestsUtilite_223 {Commandant, I solved the crime. You are the killer!}
+QuestsUtilite_224 {Lolita Cheka, 1610-1639, dressmaker}
+QuestsUtilite_225 {Don't worry, dear, my husband won't be back from swimming soon...}
+QuestsUtilite_226 {Ricardo Cazares, 1590-1633, hunter}
+QuestsUtilite_227 {I know this snake. It's completely harmless!}
+QuestsUtilite_228 {Isidro Davilla, 1588-1624, miller}
+QuestsUtilite_229 {Tomorrow morning I'm changing the cracked steps on this staircase...}
+QuestsUtilite_230 {Teodoro Bello, 1599-1646, adjutant}
+QuestsUtilite_231 {You scoundrel, sir! If you please, expose your stupid rusty piece of iron!}
+QuestsUtilite_232 {Gelvira Cheka, 1605-1648, merchant}
+QuestsUtilite_233 {My items are non-returnable and non-refundable!}
+QuestsUtilite_234 {Jacob Black, 1608-1631, fisherman}
+QuestsUtilite_235 {Father's longboat has seen a lot of storms. It will survive this time too...}
+QuestsUtilite_236 {Ralph Chaplin, 1602-1649, lumberjack}
+QuestsUtilite_237 {John, did you securely fasten the ax to the handle?}
+QuestsUtilite_238 {Kermit Filler, 1615-1653, bartender}
+QuestsUtilite_239 {Morgan, the rum was undiluted, I swear on my mother!}
+QuestsUtilite_240 {Laura Hart, 1605-1627, whore}
+QuestsUtilite_241 {How dare you! I check with the healer every week!}
+QuestsUtilite_242 {Simon Luther, 1598-1639, physician}
+QuestsUtilite_243 {White powder, odorless...tastes bitter...}
+QuestsUtilite_244 {Oscar Marker, 1611-1642, thief}
+QuestsUtilite_245 {So, but the dog's chain doesn't reach here...}
+QuestsUtilite_246 {Macolm Camley, 1545-1587, actor}
+QuestsUtilite_247 {In this red-nosed mask, I'm just the spitting image of a fort commander!}
+QuestsUtilite_248 {Tobias Filler, 1567-1599, trapper}
+QuestsUtilite_249 {John, this jaguar seems quite tame to me, open the cage...}
+QuestsUtilite_250 {Camille Rutter, 1571-1596, peasant woman}
+QuestsUtilite_251 {Something our goby is restless today...}
+QuestsUtilite_252 {Fritz Loots, 1587-1631, cook}
+QuestsUtilite_253 {Pickles are for officers, and the sailor girl will eat what they give!}
+QuestsUtilite_254 {Rupert Hofmeyr, 1601-1649, clerk}
+QuestsUtilite_255 {For the tenth time, you dumbass! Minheer Gerritz won't see you today!}
+QuestsUtilite_256 {Paul Wlecke, 1577-1622, pilot}
+QuestsUtilite_257 {Don't worry, cap: I know how to get through these reefs like the back of my hand!}
+QuestsUtilite_258 {Yedam Uustgen, 1589-1635, blacksmith}
+QuestsUtilite_259 {You don't need a better saber, but you should trim your hands on the anvil!}
+QuestsUtilite_260 {Katrina Erb, 1610-1644, washerwoman}
+QuestsUtilite_261 {Lisbeth, where did you run? These are peaceful Indians, they don't touch whites...}
+QuestsUtilite_262 {Peter Konnink, 1561-1615, Musketeer}
+QuestsUtilite_263 {I'll drive the charge into the muzzle tightly...}
+QuestsUtilite_264 {Tanna Graaff, 1588-1607, maid}
+QuestsUtilite_265 {Looks like someone is walking downstairs. And who did you bring in in the middle of the night? I'll go and have a look...}
+QuestsUtilite_266 {Krelis van Eck, 1572-1611, boatswain}
+QuestsUtilite_267 {Pour in twenty lashes! No - thirty! Each one!}
+QuestsUtilite_268 {Jacob de Haez, 1611-1651, traveler}
+QuestsUtilite_269 {Caimans don't attack people. Only when they are very hungry. This one is obviously full...}
+QuestsUtilite_270 {Eclatant}
+QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_272 {The poison didn't work!}
+QuestsUtilite_273 {Poisoned by taino poison!}
+QuestsUtilite_274 {@<GetFullName(chref)> poisoned by taino poison}
+QuestsUtilite_275 {Use the Action Menu (ENTER) to Fast Travel to Le Franсois.}
+QuestsUtilite_276 {The waters are becoming more dangerous, the pirate threat has increased}
+QuestsUtilite_277 {Chimera}
+QuestsUtilite_278 {~ We really made them mad! The squadron's flagship is ~}
+QuestsUtilite_279 {Diego}
+QuestsUtilite_280 {de Landa}
+QuestsUtilite_281 {Jaguar}
+QuestsUtilite_282 {Bellona}
+QuestsUtilite_283 {Minerva}
+QuestsUtilite_284 {Manati}
+QuestsUtilite_285 {Mangrove}
+QuestsUtilite_286 {Passat}
+QuestsUtilite_287 {Triton}
+QuestsUtilite_288 {Cacao}
+QuestsUtilite_289 {Kolibri}
+QuestsUtilite_290 {Szibilla}
+QuestsUtilite_291 {Juno}
+QuestsUtilite_292 {Orpheus}
+QuestsUtilite_293 {Guava}
+QuestsUtilite_294 {Morena}
+QuestsUtilite_295 {Poseidon}
+QuestsUtilite_296 {Barrakuda}
+QuestsUtilite_297 {Hydra}
+QuestsUtilite_298 {Manati}
+QuestsUtilite_299 {Citadella}
+QuestsUtilite_300 {Anathema}
+QuestsUtilite_301 {Chimera}
+QuestsUtilite_302 {Nemesis}
+QuestsUtilite_303 {Iguána}
+QuestsUtilite_304 {Cecropia}
+QuestsUtilite_305 {Esztuárium}
+QuestsUtilite_306 {Dionüszosz}
+QuestsUtilite_307 {Astarté}
+QuestsUtilite_308 {Charon}
+QuestsUtilite_309 {Guacamayo}
+QuestsUtilite_310 {Heliáda}
+QuestsUtilite_311 {Kerberosz}
+QuestsUtilite_312 {Bellerophon}
+QuestsUtilite_313 {Morfeusz}
+QuestsUtilite_314 {Perseusz}
+QuestsUtilite_315 {Tapír}
+QuestsUtilite_316 {Curtina}
+QuestsUtilite_317 {Phalanx}
+QuestsUtilite_318 {Légió}
+QuestsUtilite_319 {Előőrs}
+QuestsUtilite_320 {Driász}
+QuestsUtilite_321 {Gorgóna}
+QuestsUtilite_322 {Obeliszk}
+QuestsUtilite_323 {Arabella}
+QuestsUtilite_324 {Légionista}
+QuestsUtilite_325 {Vulkán}
+QuestsUtilite_326 {Heliadon}
+QuestsUtilite_327 {Héphaisztosz}
+QuestsUtilite_328 {Centurion}

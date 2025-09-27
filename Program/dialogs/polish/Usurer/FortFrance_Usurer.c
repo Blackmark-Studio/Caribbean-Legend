@@ -283,7 +283,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Doskonale! Wiesz, co robić dalej - tak samo, jak ostatnim razem. Oto dokumenty - przedstaw je komendantowi więzienia. To była przyjemność robić z Tobą interesy, Kapitanie.";
 			link.l1 = "Nie ma w tej sytuacji zbyt wiele do radości. Żegnaj.";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("Otrzymałeś rachunek za dług");
 			PlaySound("interface\important_item.wav");

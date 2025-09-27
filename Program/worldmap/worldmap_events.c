@@ -18,7 +18,6 @@ void wdmEvent_EncounterCreate()
 	worldMap.playerShipX = playerShipX;
 	worldMap.playerShipZ = playerShipZ;
 	worldMap.playerShipAY = playerShipAY;
-	//DeleteAttribute(pchar, "SkipEshipIndex");// boal
 	//Generate encounters		
 	wdmStormGen(dltTime, playerShipX, playerShipZ, playerShipAY);
 	wdmShipEncounter(dltTime, playerShipX, playerShipZ, playerShipAY);	// даёт тормоза
@@ -38,11 +37,12 @@ void wdmEvent_ShipEncounter()
 	float playerShipX = GetEventData();
 	float playerShipZ = GetEventData();
 	float playerShipAY = GetEventData();
-	int eshipIndex = GetEventData();	
-	if (CheckAttribute(pchar, "SkipEshipIndex") && pchar.SkipEshipIndex == eshipIndex) return; // boal
-	pchar.eshipIndex = eshipIndex;
-	LaunchMapScreen();
 
+    // Выделенный игроком корабль, либо догнавший преследователь
+    // То есть тот, из-за кого открылся интерфейс
+	int eshipIndex = GetEventData();
+
+	LaunchMapScreen(eshipIndex);
 }
 
 void wdmEvent_UpdateDate()
@@ -178,18 +178,10 @@ void wdmEvent_AddQuestEncounters()
 }
 
 #event_handler("WorldMap_IsSkipEnable", "wdmIsSkipEnable");
-bool wdmSkipReturnBool = false;
 bool wdmIsSkipEnable()
 {
-	wdmSkipReturnBool = false;
-	if(CheckOfficersPerk(pchar, "SailingProfessional")) //to_do del
-	{
-		if(rand(100) <= 50)
-		{
-			wdmSkipReturnBool = true;
-		}
-	}
-	return wdmSkipReturnBool;
+	// НЕ ИСПОЛЬЗУЕТСЯ
+	return false;
 }
 
 void wdmDeleteLoginEncounter(string encID)
@@ -211,11 +203,7 @@ ref wdmEncounterDelete()
 
 	aref enc;
 	makearef(enc, worldMap.(encPath));
-	if(CheckAttribute(enc,"encdata.Task.Target") && enc.encdata.Task.Target == PLAYER_GROUP)
-	{
-		DeleteAttribute(pchar, "worldmap.FollowCounter");
-		log_testinfo("worldmap преследователь Task Target "+enc.encdata.Task.Target+" удалён");
-	}
+
 	//Сохраняем событие
 	bool needEvent = false;
 	string eventName = "";
@@ -294,7 +282,7 @@ float wdmGetRum()
 	return makefloat(CalculateShipRum(pchar));
 }
 
-//  квестовый отлов входа в море по начилию НПС в случайке
+//  квестовый отлов входа в море по наличию НПС в случайке
 void wdmEnterSeaQuest(string _chrId)
 {
 	ref NPChar = characterFromID(_chrId);

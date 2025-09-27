@@ -1,78 +1,16 @@
-quests_reaction_1
-{
-Offizier @<GetFullName(npchar)> ist an Bord.
-}
-
-quests_reaction_2
-{
-@<GetFullName(npchar)> hat sich ergeben.
-}
-
-quests_reaction_3
-{
-Die Leichen der Rebellen wurden über Bord geworfen, um ihre letzte Reise anzutreten.
-}
-
-quests_reaction_4
-{
-Der Meuterei wurde ein Ende gesetzt
-}
-
-quests_reaction_5
-{
-@<GetCityName(sld.City)> ist unser!
-}
-
-quests_reaction_6
-{
-Jemand hat in Ihren Taschen herumgestöbert.
-}
-
-quests_reaction_7
-{
-Vor kurzem gab es in der Nähe des Leuchtturms einen Kampf. Ein Kapitän hatte versucht, Waren zu schmuggeln, aber unsere Patrouille hat ihn auf frischer Tat ertappt. ~
-}
-
-quests_reaction_8
-{
-Ein höllisches Feuergefecht, bei dem das Dach des Ladens von einer zufälligen Kanonenkugel getroffen wurde! Aber es war alles umsonst. Die Schmuggler haben sich im Dschungel versteckt und der Kapitän ist weggesegelt. Er hat unsere Soldaten leicht getäuscht, das kann ich euch sagen! Und ein toller Steuermann, der wie ein König aus der Bucht entkam!
-}
-
-quests_reaction_9
-{
-
-}
-quests_reaction_10
-{
-
-}
-
-quests_reaction_11
-{
-, die am ~
-}
-
-quests_reaction_12
-{
-Die Lieferfrist ist abgelaufen.
-}
-
-quests_reaction_13
-{
-Einige Stunden vergingen...
-}
-
-quests_reaction_14
-{
-Eine Stunde verging...
-}
-
-quests_reaction_15
-{
-Ein Tag verging...
-}
-
-quests_reaction_16
-{
-Einige Tage vergingen...
-}
+quests_reaction_1 {Offizier @<GetFullName(npchar)> ist an Bord.}
+quests_reaction_2 {@<GetFullName(npchar)> hat sich ergeben.}
+quests_reaction_3 {Die Leichen der Rebellen wurden über Bord geworfen, um ihre letzte Reise anzutreten.}
+quests_reaction_4 {Der Meuterei wurde ein Ende gesetzt}
+quests_reaction_5 {@<GetCityName(sld.City)> ist unser!}
+quests_reaction_6 {Jemand hat in Ihren Taschen herumgestöbert.}
+quests_reaction_7 {Vor kurzem gab es in der Nähe des Leuchtturms einen Kampf. Ein Kapitän hatte versucht, Waren zu schmuggeln, aber unsere Patrouille hat ihn auf frischer Tat ertappt. ~}
+quests_reaction_8 {Ein höllisches Feuergefecht, bei dem das Dach des Ladens von einer zufälligen Kanonenkugel getroffen wurde! Aber es war alles umsonst. Die Schmuggler haben sich im Dschungel versteckt und der Kapitän ist weggesegelt. Er hat unsere Soldaten leicht getäuscht, das kann ich euch sagen! Und ein toller Steuermann, der wie ein König aus der Bucht entkam!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, die am ~}
+quests_reaction_12 {Die Lieferfrist ist abgelaufen.}
+quests_reaction_13 {Einige Stunden vergingen...}
+quests_reaction_14 {Eine Stunde verging...}
+quests_reaction_15 {Ein Tag verging...}
+quests_reaction_16 {Einige Tage vergingen...}

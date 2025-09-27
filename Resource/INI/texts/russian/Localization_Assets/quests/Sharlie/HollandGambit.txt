@@ -1,213 +1,45 @@
-HollandGambit_1
-{
-Бальтазар
-}
-
-HollandGambit_2
-{
-Риддербок
-}
-
-HollandGambit_3
-{
-Режим исследования: таймер продлён. Выполните квест!
-}
-
-HollandGambit_4
-{
-Мигель
-}
-HollandGambit_5
-{
-
-}
-
-HollandGambit_6
-{
-Мираж
-}
-
-HollandGambit_7
-{
-Режим исследования: срок квеста увеличен в два раза
-}
-
-HollandGambit_8
-{
-Валькирия
-}
-
-HollandGambit_9
-{
-Валькирия на горизонте!
-}
-
-HollandGambit_10
-{
-Хейнрих
-}
-HollandGambit_11
-{
-Клаус
-}
-
-HollandGambit_12
-{
-Мейфенг
-}
-
-HollandGambit_13
-{
-Вот и грот. Следует искать схрон Соломона именно здесь.
-}
-
-HollandGambit_14
-{
-Гарри
-}
-HollandGambit_15
-{
-Флетчер
-}
-
-HollandGambit_16
-{
-cеребряный конвой
-}
-
-HollandGambit_17
-{
-Лодка
-}
-
-HollandGambit_18
-{
-Фернандо
-}
-HollandGambit_19
-{
-Родригес
-}
-
-HollandGambit_20
-{
-Зеекалф
-}
-
-HollandGambit_21
-{
-Чарли
-}
-HollandGambit_22
-{
-Книппель
-}
-
-HollandGambit_23
-{
-Алонсо
-}
-HollandGambit_24
-{
-
-}
-
-HollandGambit_25
-{
-Абигайль заболела тропической лихорадкой и умерла!
-}
-
-HollandGambit_26
-{
-Чарли Книппель умер от полученных ран!
-}
-
-HollandGambit_27
-{
-Лонгвэй умер от тропической лихорадки!
-}
-
-HollandGambit_28
-{
-Лонгвэй умер от полученных ран!
-}
-
-HollandGambit_29
-{
-Прошёл час...
-}
-
-HollandGambit_30
-{
-Джек
-}
-HollandGambit_31
-{
-Гаррисон
-}
-
-HollandGambit_32
-{
-бригантина 'Хооп'
-}
-
-HollandGambit_33
-{
-Хооп
-}
-
-HollandGambit_34
-{
-Лонгвэй
-}
-HollandGambit_35
-{
-
-}
-
-HollandGambit_36
-{
-Питер
-}
-HollandGambit_37
-{
-Стайвесант
-}
-
-HollandGambit_38
-{
-Фредерик
-}
-
-HollandGambit_39
-{
-Лейден
-}
-
-HollandGambit_40
-{
-Тофф
-}
-HollandGambit_41
-{
-Келлер
-}
-
-HollandGambit_42
-{
-Вы потеряли сознание от полученных ран...
-}
-
-HollandGambit_43
-{
-Вы не вернули деньги Абигайль и обрекли её на нищету
-}
-
-HollandGambit_44
-{
-Чавинави
-}
-HollandGambit_45
-{
-
-}
+HollandGambit_1 {Бальтазар}
+HollandGambit_2 {Риддербок}
+HollandGambit_3 {Режим исследования: таймер продлён. Выполните квест!}
+HollandGambit_4 {Мигель}
+HollandGambit_5 { }
+HollandGambit_6 {Мираж}
+HollandGambit_7 {Режим исследования: срок квеста увеличен в два раза}
+HollandGambit_8 {Валькирия}
+HollandGambit_9 {Валькирия на горизонте!}
+HollandGambit_10 {Хейнрих}
+HollandGambit_11 {Клаус}
+HollandGambit_12 {Мейфенг}
+HollandGambit_13 {Вот и грот. Следует искать схрон Соломона именно здесь.}
+HollandGambit_14 {Гарри}
+HollandGambit_15 {Флетчер}
+HollandGambit_16 {cеребряный конвой}
+HollandGambit_17 {Лодка}
+HollandGambit_18 {Фернандо}
+HollandGambit_19 {Родригес}
+HollandGambit_20 {Зеекалф}
+HollandGambit_21 {Чарли}
+HollandGambit_22 {Книппель}
+HollandGambit_23 {Алонсо}
+HollandGambit_24 { }
+HollandGambit_25 {Абигайль заболела тропической лихорадкой и умерла!}
+HollandGambit_26 {Чарли Книппель умер от полученных ран!}
+HollandGambit_27 {Лонгвэй умер от тропической лихорадки!}
+HollandGambit_28 {Лонгвэй умер от полученных ран!}
+HollandGambit_29 {Прошёл час...}
+HollandGambit_30 {Джек}
+HollandGambit_31 {Гаррисон}
+HollandGambit_32 {бригантина 'Хооп'}
+HollandGambit_33 {Хооп}
+HollandGambit_34 {Лонгвэй}
+HollandGambit_35 { }
+HollandGambit_36 {Питер}
+HollandGambit_37 {Стайвесант}
+HollandGambit_38 {Фредерик}
+HollandGambit_39 {Лейден}
+HollandGambit_40 {Тофф}
+HollandGambit_41 {Келлер}
+HollandGambit_42 {Вы потеряли сознание от полученных ран...}
+HollandGambit_43 {Вы не вернули деньги Абигайль и обрекли её на нищету}
+HollandGambit_44 {Чавинави}
+HollandGambit_45 { }

@@ -30,7 +30,7 @@ void InitInterface(string iniName)
 		// Это к магазину никакого отношения не имеет
 		if(HasSubStr(sGood, "Cannon") || HasSubStr(sGood, "Culverine")) continue;
 				
-		GameInterface.GOODS_ICONS.imagelist.(sGood).group = GetGoodImageGroup(&goods[i]);
+		GameInterface.GOODS_ICONS.imagelist.(sGood).group = "GOODS";
 		GameInterface.GOODS_ICONS.imagelist.(sGood).width = 94;
 		GameInterface.GOODS_ICONS.imagelist.(sGood).height = 94;
 		GameInterface.GOODS_ICONS.imagelist.(sGood).x = X;
@@ -223,11 +223,11 @@ void ShowTransferGoods(int iGood)
 	
 	GameInterface.TG_EDIT.str = buyCount;
 	
-	string sHeader = GetGoodName(&Goods[iGood]);
+	string sHeader = GetGoodName(iGood);
 	SetFormatedText("TG_GOODS_CAPTION", sHeader);
 	
-	SendMessage(&GameInterface, "lslss", MSG_INTERFACE_MSG_TO_NODE, "TG_GOODS_PICTURE", 6, GetGoodImageGroup(&Goods[iGood]), sGood); // Ставим картинку
-	sText = GetAssembledString(GetGoodDescr(&Goods[iGood]), &Goods[iGood]);
+	SendMessage(&GameInterface, "lslss", MSG_INTERFACE_MSG_TO_NODE, "TG_GOODS_PICTURE", 6, "GOODS", sGood); // Ставим картинку
+	sText = GetAssembledString(GetConvertStr(sGood + "_descr", "GoodsDescribe.txt"), &Goods[iGood]);
 	SetFormatedText("TG_GOODS_INFO", sText);
 	
 }

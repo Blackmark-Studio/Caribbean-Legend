@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 					link.l5 = "Джузеппе, тут про вас ходят презанятные слухи. Говорят, что никакой ром не может свалить вас с ног.";
 					link.l5.go = "drink";
 				}
-				if (CheckAttribute(pchar, "questTemp.LSC.Drink") && GetCharacterItem(pchar, "gold_dublon") >= 100 && pchar.questTemp.LSC.Drink == "wait")
+				if (CheckAttribute(pchar, "questTemp.LSC.Drink") && PCharDublonsTotal() >= 100 && pchar.questTemp.LSC.Drink == "wait")
 				{
 					link.l5 = "Я готов сыграть в вашу игру. Вот моя ставка.";
 					link.l5.go = "drink_4";
@@ -106,7 +106,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "Конечно, мой мальчик. Цену вы знаете. У вас есть с собой пятьдесят дублонов?";
-				if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+				if (PCharDublonsTotal() >= 50)
 				{
 					link.l1 = "Да. Вот, держите ваши монеты.";
 					link.l1.go = "parol_pay";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 		
 		case "parol_1":
 			dialog.text = "Ну-ну, мой мальчик, не стоит так горячиться. Не жадничайте, поверьте: я отлично знаю цену своей информации. Ведь вы на корабли "+pchar.questTemp.LSC.parol+" не на прогулку собрались, верно? Верно. Значит, должны были быть готовы к тому, что вам придётся расстаться с некоторой суммой денег... Так вы готовы заплатить пятьдесят дублонов?";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 50)
+			if (PCharDublonsTotal() >= 50)
 			{
 				link.l1 = "Да. Вот, держите ваши монеты.";
 				link.l1.go = "parol_pay";
@@ -131,7 +131,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "parol_pay":
-			RemoveItems(pchar, "gold_dublon", 50);
+			RemoveDublonsFromPCharTotal(50);
 			dialog.text = "Отлично! Приятно иметь с вами дело. Текущий пароль "+pchar.questTemp.LSC.parol+": '"+sTotalTemp+"'. Запомните хорошенько, и не ошибитесь, когда будете называть, в противном случае я не дам за вашу жизнь и медного гроша.";
 			link.l1 = "Да знаю я, знаю... Спасибо за информацию!";
 			link.l1.go = "exit";
@@ -304,7 +304,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.NarvalConflict) >= 3 && sti(pchar.GenQuest.NarvalConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -321,7 +321,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.RivadosConflict) >= 3 && sti(pchar.GenQuest.RivadosConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -338,7 +338,7 @@ void ProcessDialogEvent()
 				if (sti(pchar.GenQuest.SharkConflict) >= 3 && sti(pchar.GenQuest.SharkConflict) < 10) dialog.text = "Как же, как же, наслышан. Драку вы учинили знатную, мой дорогой. Но выход есть. "+sti(npchar.quest.price)+" дублонов - и ваша проблема будет решена через сутки.";
 				else dialog.text = "Уже весь Остров знает о резне, которую вы учинили. Сложно будет вам помочь, но ситуация не безвыходная. "+sti(npchar.quest.price)+" дублонов - и я попробую решить вашу проблему.";
 			}
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.price))
+			if (PCharDublonsTotal() >= sti(npchar.quest.price))
 			{
 				link.l1 = "Вот, держите ваши монеты и уладьте все разногласия.";
 				link.l1.go = "pay";
@@ -348,7 +348,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pay":
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.price));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.price));
 			PlaySound("interface\important_item.wav");
 			Log_Info("Вы отдали "+sti(npchar.quest.price)+" дублонов");
 			dialog.text = "Замечательно! Теперь присаживайтесь, отдохните. До тех пор, пока я не улажу все вопросы, вам лучше побыть в моей каюте. А то не дай Бог, опять бед натворите, любезнейший.";
@@ -415,7 +415,7 @@ void ProcessDialogEvent()
 		
 		case "drink_3":
 			dialog.text = "Да, и проигравший оплачивает всё выпитое. Согласны?";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 100)
+			if (PCharDublonsTotal() >= 100)
 			{
 				link.l1 = "Да, согласен. Вот моя ставка.";
 				link.l1.go = "drink_4";
@@ -432,7 +432,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "drink_4":
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			Log_Info("Вы отдали 100 дублонов");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Отлично, мой драгоценнейший! Тогда встречаемся в девять вечера в таверне у милейшего Санчо и сыграем! Да, если вы вдруг передумаете, или паче чаяния вас отвлекут неотложные дела - то ваша ставка останется у меня, это одно из правил. Но вы ведь придёте, так, мой мальчик?";

@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "GenQuest.CitizenConflict") && sti(pchar.GenQuest.CitizenConflict) > 3)
 			{
-				dialog.text = "I have no wish to talk with you. You attack peaceful locals with no reason and provoke them to fight. Get lost, atheist!";
+				dialog.text = "I have no wish to talk to you. You attack peaceful locals for no reason and provoke them to fight. Get lost, atheist!";
 				link.l1 = "As you wish...";
 				link.l1.go = "exit";
 				break;
@@ -27,15 +27,15 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 			{
 				dialog.text = "I am not surprised that you have survived. Mysterious are the ways of the Lord. Life and death are in His hands.";
-				link.l1 = "I completely agree with you, brother Julian.";
+				link.l1 = "I completely agree with you, Brother Julian.";
 				link.l1.go = "exit";
 				npchar.quest.return_isl = "true";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Welcome to the saint church of our Island, my son. The doors are always opened for you. I am brother Julian and I am glad to see any servant of our great Lord.";
-				link.l1 = TimeGreeting()+". My name is "+GetFullName(pchar)+". Glad to meet you, brother Julian.";
+				dialog.text = "Welcome to the holy church of our island, my son. The doors are always open to you. I am Brother Julian, and I am glad to see any servant of our great Lord.";
+				link.l1 = TimeGreeting()+". My name is "+GetFullName(pchar)+". Glad to meet you, Brother Julian.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
@@ -46,29 +46,29 @@ void ProcessDialogEvent()
 				link.l1.go = "int_quests"; //информационный блок
 				link.l2 = "Can I buy some potions from you?";
 				link.l2.go = "potion";
-				link.l3 = "Do you have any holy items to sell?";
+				link.l3 = "Do you have any sacred items for sale?";
 				link.l3.go = "amulet";
-				link.l5 = "Just wanted to pray here and to see how you're doing. See you!";
+				link.l5 = "Just wanted to pray here and see how you're doing. See you!";
 				link.l5.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "I hope that you will visit our church more often. Take care of your soul, my son. I am also able to heal your body, I work here not only as a pastor, but also as a doctor.";
+			dialog.text = "I hope that you will visit our church more often. Take care of your soul, my child. I am also able to heal your body; I work here not only as a pastor, but also as a doctor.";
 			link.l1 = "I want to ask you a few questions about the island.";
 			link.l1.go = "int_quests"; //информационный блок
 			link.l2 = "Can I buy some potions from you?";
 			link.l2.go = "potion";
-			link.l3 = "Do you have any holy items to sell?";
+			link.l3 = "Do you have any sacred items for sale?";
 			link.l3.go = "amulet";
-			link.l4 = "I have to go, brother Julian. See you!";
+			link.l4 = "I have to go, Brother Julian. See you!";
 			link.l4.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "potion":
-			dialog.text = "Sure, my son. What potion do you need?";
+			dialog.text = "Of course, my son. Which potion do you need?";
 			if (!CheckAttribute(npchar, "potion1_date") || GetNpcQuestPastDayParam(npchar, "potion1_date") >= 1)
 			{
 				link.l1 = "A simple healing potion.";
@@ -89,22 +89,22 @@ void ProcessDialogEvent()
 				link.l4 = "A herbal mixture.";
 				link.l4.go = "potion4";
 			}
-			link.l5 = "I am sorry, brother Julian, I have changed my mind.";
+			link.l5 = "I am sorry, Brother Julian, I have changed my mind.";
 			link.l5.go = "exit";
 		break;
 		
 		case "potion1":
 			npchar.quest.price = 90;
 			npchar.quest.type = 1;
-			dialog.text = "A potion? 90 pesos, my son.";
+			dialog.text = "A potion? 90 pesos, my child.";
 			if (sti(Pchar.money) >= 90)
 			{
-				link.l1 = "Take them, brother Julian.";
+				link.l1 = "Take them, Brother Julian.";
 				link.l1.go = "potion_pay";
 			}
 			else
 			{
-				link.l1 = "I don't have enough coins now... I will be back later.";
+				link.l1 = "I don't have enough coins right now... I'll be back later.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -112,15 +112,15 @@ void ProcessDialogEvent()
 		case "potion2":
 			npchar.quest.price = 500;
 			npchar.quest.type = 2;
-			dialog.text = "An elixir? 500 pesos, my son.";
+			dialog.text = "An elixir? 500 pesos, my child.";
 			if (sti(Pchar.money) >= 500)
 			{
-				link.l1 = "Take them, brother Julian.";
+				link.l1 = "Take them, Brother Julian.";
 				link.l1.go = "potion_pay";
 			}
 			else
 			{
-				link.l1 = "I don't have enough coins now... I will be back later.";
+				link.l1 = "I don't have enough coins right now... I'll be back later.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -128,15 +128,15 @@ void ProcessDialogEvent()
 		case "potion3":
 			npchar.quest.price = 200;
 			npchar.quest.type = 3;
-			dialog.text = "An antidote? 200 pesos, my son.";
+			dialog.text = "An antidote? 200 pesos, my child.";
 			if (sti(Pchar.money) >= 200)
 			{
-				link.l1 = "Take them, brother Julian.";
+				link.l1 = "Take them, Brother Julian.";
 				link.l1.go = "potion_pay";
 			}
 			else
 			{
-				link.l1 = "I don't have enough coins now... I will be back later.";
+				link.l1 = "I don't have enough coins right now... I'll be back later.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -147,12 +147,12 @@ void ProcessDialogEvent()
 			dialog.text = "A mixture? 900 pesos, my son.";
 			if (sti(Pchar.money) >= 900)
 			{
-				link.l1 = "Take them, brother Julian.";
+				link.l1 = "Take them, Brother Julian.";
 				link.l1.go = "potion_pay";
 			}
 			else
 			{
-				link.l1 = "I don't have enough coins now... I will be back later.";
+				link.l1 = "I don't have enough coins right now... I'll be back later.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -162,8 +162,8 @@ void ProcessDialogEvent()
 			iTemp = sti(npchar.quest.type);
 			GiveItem2Character(pchar, "potion"+iTemp);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Here. Take your medicine. May the God guide you!";
-			link.l1 = "Thank you, brother Julian.";
+			dialog.text = "Here. Take your medicine. May God guide you!";
+			link.l1 = "Thank you, Brother Julian.";
 			link.l1.go = "exit";
 			SaveCurrentNpcQuestDateParam(npchar, "potion"+iTemp+"_date");
 		break;
@@ -173,25 +173,25 @@ void ProcessDialogEvent()
 			if (bOk && GetSummonSkillFromName(pchar, SKILL_FORTUNE) > (10+hrand(110)))
 			{
 				npchar.quest.amulet = SelectLSCChurchAmulet();
-				dialog.text = "Yes, I can give you some holy amulets which protect people from wounds and illnesses. The price is same for any amulet - ten golden doubloons. I can offer you "+XI_ConvertString(npchar.quest.amulet)+" today.";
+				dialog.text = "Yes, I can give you some holy amulets which protect people from wounds and illnesses. The price is the same for any amulet - ten golden doubloons. I can offer you "+XI_ConvertString(npchar.quest.amulet)+" today.";
 				if (PCharDublonsTotal() >= 10)
 				{
-					link.l1 = "Yes, I want buy this amulet. Here is your gold.";
+					link.l1 = "Yes, I want to buy this amulet. Here is your gold.";
 					link.l1.go = "amulet_pay";
-					link.l2 = "I don't need this amulet, brother Julian. I will wait until you've got what I need.";
+					link.l2 = "I don't need this amulet, Brother Julian. I will wait until you've got what I need.";
 					link.l2.go = "exit";
 					SaveCurrentNpcQuestDateParam(npchar, "amulet_date");
 				}
 				else
 				{
-					link.l1 = "I don't have enough coins now... I will be back later.";
+					link.l1 = "I don't have enough coins right now... I'll be back later.";
 					link.l1.go = "exit";
 				}
 			}
 			else
 			{
-				dialog.text = "No, my son, unfortunately I have nothing else. Come and see me some other day, perhaps I will find something for you.";
-				link.l1 = "Deal, brother Julian.";
+				dialog.text = "No, my son, unfortunately I have nothing else. Come and see me another day, perhaps I will find something for you.";
+				link.l1 = "Deal, Brother Julian.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -201,8 +201,8 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, npchar.quest.amulet);
 			Log_Info("You have received an amulet");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Thank you, my son. Your money will serve well. Take your amulet and may the God bless you!";
-			link.l1 = "Gratitude, brother Julian.";
+			dialog.text = "Thank you, my son. Your money will serve well. Take your amulet and may God bless you!";
+			link.l1 = "Thank you, Brother Julian.";
 			link.l1.go = "exit";
 		break;
 		
@@ -211,7 +211,7 @@ void ProcessDialogEvent()
 			dialog.text = "I am listening.";
 			if (!CheckAttribute(npchar, "quest.answer_1"))
 			{
-				link.l1 = "How did you get here, brother Julian?";
+				link.l1 = "How did you get here, Brother Julian?";
 				link.l1.go = "ansewer_1";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_2"))
@@ -221,42 +221,42 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.answer_3"))
 			{
-				link.l3 = "Who sells things here?";
+				link.l3 = "Who sells goods here?";
 				link.l3.go = "ansewer_3";
 			}
 			if (!CheckAttribute(npchar, "quest.answer_4"))
 			{
-				link.l4 = "Is there any risk of destruction for the Island? Storms, perhaps?";
+				link.l4 = "Is there any risk of destruction for the island? Storms, perhaps?";
 				link.l4.go = "ansewer_4";
 			}
-			link.l10 = "No questions. I am sorry...";
+			link.l10 = "No questions. I'm sorry...";
 			link.l10.go = "exit";
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "The same way as many of locals, my son. My ship was sunk by a storm during my voyage from Havana to the New Spain. Thank God, I survived it and now I serve Him here, helping poor souls to find their true path.";
+			dialog.text = "The same way as many of the locals, my son. My ship was sunk by a storm during my voyage from Havana to New Spain. Thank God, I survived and now I serve Him here, helping poor souls to find their true path.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Less than I want. Most of Narwhals prefer violence than mercy and Rivados are poor and lost sheep. They blindly perform their pagan rituals and putting their immortal souls at risk. There is one dangerous wizard among them and he must be purified by the Holy Inquisition.";
+			dialog.text = "Less than I would like. Most of the Narwhals prefer violence to mercy, and the Rivados are poor, lost sheep. They blindly perform their pagan rituals, putting their immortal souls at risk. There is one dangerous wizard among them, and he must be purified by the Holy Inquisition.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "Sancho Carpentero owns tavern on the Fleron, you can find there food, drinks and a warm bed. Axel Yost sells a big variety of goods on the 'Esmeralda'. Ask people on the streets, my son, a lot of them are finding interesting things at the outer ring.";
+			dialog.text = "Sancho Carpentero owns a tavern on the Fleron, where you can find food, drinks, and a warm bed. Axel Yost sells a wide variety of goods on the 'Esmeralda'. Ask people on the streets, my son; many of them find interesting things in the outer ring.";
 			link.l1 = "Thank you!";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "It is all in the hand of our Lord, my son. We believe in Him and we trust Him. Serious troubles have always been staying away from our Island - storms often happen outside of it, but it is always quiet here.";
-			link.l1 = "Thanks. You have reassured me.";
+			dialog.text = "It is all in the hands of our Lord, my son. We believe in Him and we trust Him. Serious troubles have always stayed away from our island - storms often happen outside of it, but it is always quiet here.";
+			link.l1 = "Thank you. You have reassured me.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
 		break;
@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, huh? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chests!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("What are you doing there, huh? Thief!","Just look at that! The moment I was lost in contemplation, you decided to check my chests!","Decided to check my chests? You won't get away with it!");
 			link.l1 = "Shit!";
 			link.l1.go = "fight";
 		break;
@@ -293,8 +293,8 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapon away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running with a sword around. Take it away, it doesn't suit you...");
-			link.l1 = LinkRandPhrase("Fine.", "Alright.", "As you say...");
+			dialog.text = LinkRandPhrase("Listen, you'd better put your weapon away. It makes me nervous.","You know, running around with a blade is not tolerated here. Put it away.","Listen, don't act like a medieval knight running around with a sword. Put it away, it doesn't suit you...");
+			link.l1 = LinkRandPhrase("Fine.","Alright.","As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;	
@@ -302,13 +302,13 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of this city and I'd ask you to sheathe your blade.", "Listen, I am the citizen of this city and I'd ask you sheathe your blade.");
-				link.l1 = LinkRandPhrase("Fine.", "Alright.", "As you say...");
+				dialog.text = NPCharSexPhrase(NPChar,"Listen, I am a citizen of this city and I'd ask you to sheathe your blade.","Listen, I am a citizen of this city and I'd ask you to sheathe your blade.");
+				link.l1 = LinkRandPhrase("Fine.","Alright.","As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like it when people are walking in front of me with their weapon ready. It scares me...");
-				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
+				dialog.text = NPCharSexPhrase(NPChar,"Be careful, pal, running around with a weapon. It makes me nervous...","I don't like it when people walk in front of me with their weapons drawn. It scares me...");
+				link.l1 = RandPhraseSimple("Got it.","I am taking it away.");
 			}
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";

@@ -1,581 +1,122 @@
-Saga_1
-{
-Jimmy
-}
-Saga_2
-{
-Higgins
-}
-
-Saga_3
-{
-Arbutus
-}
-
-Saga_4
-{
-Arthur
-}
-Saga_5
-{
-Donovan
-}
-
-Saga_6
-{
-Modo exploración: temporizador extendido. ¡Completa la misión!
-}
-
-Saga_7
-{
-¡Helen McArthur ha muerto por las fiebres!
-}
-
-Saga_8
-{
-Enrique
-}
-Saga_9
-{
-Gonzales
-}
-
-Saga_10
-{
-Enrique
-}
-Saga_11
-{
-Galliardo
-}
-
-Saga_12
-{
-Alvares
-}
-Saga_13
-{
-Ortega
-}
-
-Saga_14
-{
-Snake Eye
-}
-Saga_15
-{
-
-}
-
-Saga_16
-{
-Cangrejo gigante
-}
-Saga_17
-{
-
-}
-
-Saga_18
-{
-Adolf
-}
-Saga_19
-{
-Barbier
-}
-
-Saga_20
-{
-Hay rumores de que el carcelero del Almirante, Chad Capper, ha desaparecido sin dejar rastro. ¿Quizás Shark le asignó una misión secreta?
-}
-
-Saga_21
-{
-Hay rumores de que el carcelero del Almirante, Chad Capper, ha desaparecido sin dejar rastro. ¿Quizás Shark le encomendó una misión secreta?
-}
-
-Saga_22
-{
-¿Has oído las noticias? El hechicero de Rivados, el viejo Chimiset, fue asesinado a hachazos en la jaula de la cárcel. Dicen que lo hicieron los hombres del Almirante. Black Eddie está furioso...
-}
-
-Saga_23
-{
-El hechicero Rivados, Chimiset, fue asesinado. Curiosamente, no sospechan de los Narwhals, sino de la gente de Shark. Los Rivados están muy enojados con el almirante ...
-}
-
-Saga_24
-{
-La prisión del almirante se está convirtiendo en un escenario de asesinatos: primero Alan Milrow, ahora Chimiset. Sí, el almirante reprime duramente a sus oponentes.
-}
-
-Saga_25
-{
-Red Mary está en peligro. Solo tienes 100 segundos para encontrarla y ayudarla.
-}
-
-Saga_26
-{
-¡Espera! Debería hablar con Mary antes de dejar la Isla. No me perdonará si desaparezco sin avisarla.
-}
-
-Saga_27
-{
-Debería hablar con Mary antes de dejar la isla. No me perdonará que desaparezca sin avisarla.
-}
-
-Saga_28
-{
-No se puede pasar por los arrecifes de la isla sin instrucciones de navegación.
-}
-
-Saga_29
-{
-¡No puedes acercarte a la isla, tus barcos son demasiado grandes!
-}
-
-Saga_30
-{
-Pasó una hora...@<NewStr()> La seda se cargó en su buque
-}
-
-Saga_31
-{
-Simon
-}
-Saga_32
-{
-Morelle
-}
-
-Saga_33
-{
-Has descubierto el escondite de Morel
-}
-
-Saga_34
-{
-Las mercancías se cargaron en el barco
-}
-
-Saga_35
-{
-David
-}
-Saga_36
-{
-Fackman
-}
-
-Saga_37
-{
-Marlin
-}
-
-Saga_38
-{
-Homewrecker
-}
-
-Saga_39
-{
-Bernar
-}
-Saga_40
-{
-Vensan
-}
-
-Saga_41
-{
-Cuttlefish
-}
-
-Saga_42
-{
-Vagrant
-}
-Saga_43
-{
-
-}
-
-Saga_44
-{
-Merciless
-}
-
-Saga_45
-{
-Vampire
-}
-Saga_46
-{
-
-}
-
-Saga_47
-{
-¡Han soltado una mina!
-}
-Saga_48
-{
-¡Sólo tienes @<sti(fTemp)> para escapar!
-}
-
-Saga_49
-{
-¡No has podido evitar la explosión!
-}
-
-Saga_50
-{
-¡Sí, no nos hemos pasado con la pólvora! retumbó tan fuerte que probablemente lo oyeron incluso en Tortuga. A la fragata le detonaron las provisiones de pólvora y su capitán se fue al fondo junto con su barco en un santiamén.
-}
-
-Saga_51
-{
-Centurion
-}
-
-Saga_52
-{
-¡Espera! ¡No estará de más pedir consejo a Mary, ella te ayudó con la bomba la última vez! Su brillante cabeza puede aportar alguna idea nuevamente...
-}
-
-Saga_53
-{
-Eh, ojalá Mary estuviera aquí... Seguro que se habría inventado algo...
-}
-
-Saga_54
-{
-¡Espera! ¡No estaría mal pedir consejo a Helen, ella te ayudó con las bombas la última vez! Su brillante cabeza puede aportar alguna idea de nuevo...
-}
-
-Saga_55
-{
-¡Los piratas te han reconocido!
-}
-
-Saga_56
-{
-¡Las cargas se han lanzado!
-}
-
-Saga_57
-{
-¡Las cargas explotarán en @<sti(fTemp)> segundos!
-}
-
-Saga_58
-{
-Randolf
-}
-Saga_59
-{
-Berns
-}
-
-Saga_60
-{
-Gregory
-}
-Saga_61
-{
-Couper
-}
-
-Saga_62
-{
-Paul
-}
-Saga_63
-{
-Molligan
-}
-
-Saga_64
-{
-Oyster
-}
-
-Saga_65
-{
-'Oyster'
-}
-
-Saga_66
-{
-¡Un golpe crítico de disparos en cadena!
-}
-
-Saga_67
-{
-He encontrado una nota con coordenadas en la cabaña de Milligan. Hay un misterioso comprador esperando. Puedo navegar hasta él y, tal vez, hacer un buen negocio. O puedo entregar el cargamento a Svensson.
-}
-
-Saga_68
-{
-Es hora de volver con Jan Svensson.
-}
-
-Saga_69
-{
-Boat
-}
-
-Saga_70
-{
-¡Pole Molligan te está atacando!
-}
-
-Saga_71
-{
-Mikhael
-}
-Saga_72
-{
-Rozencraft
-}
-
-Saga_73
-{
-Jim
-}
-Saga_74
-{
-Benson
-}
-
-Saga_75
-{
-Bald Maggy
-}
-
-Saga_76
-{
-Raymond Baker está a bordo
-}
-
-Saga_77
-{
-Raymond
-}
-Saga_78
-{
-Baсker
-}
-
-Saga_79
-{
-Jessica
-}
-Saga_80
-{
-Rose
-}
-
-Saga_81
-{
-David
-}
-Saga_82
-{
-Fackman
-}
-
-Saga_83
-{
-Lugre de mensajería de Caracas
-}
-
-Saga_84
-{
-Modo exploración: el temporizador está desactivado.
-}
-
-Saga_85
-{
-Steven
-}
-Saga_86
-{
-Dodson
-}
-
-Saga_87
-{
-La flota dorada española está en el horizonte.
-}
-
-Saga_88
-{
-El Carnivoro
-}
-
-Saga_89
-{
-San Raphael
-}
-
-Saga_90
-{
-¡Conseguimos escapar de la escuadra de escolta española y dejarles con un palmo de narices! No pasa nada, ya sufrirán: aún tienen mucha riqueza...
-}
-
-Saga_91
-{
-¡Conseguimos escapar del escuadrón de escolta español y dejarles con un palmo de narices! Sin embargo, antes les dimos una paliza, jeje. No importa,  todavía tienen un montón de riqueza ...
-}
-
-Saga_92
-{
-¡Hundimos todo el escuadrón de escolta! ¡Que se lo piensen bien antes de meterse con nosotros!
-}
-
-Saga_93
-{
-José Dios ha hecho copias de esos excelentes mapas.
-}
-
-Saga_94
-{
-José Dios hizo una copia del 'Excelente Mapa del Archipiélago'.
-}
-
-Saga_95
-{
-Pasó un día...@<NewStr()> La plata queda en tu poder
-}
-
-Saga_96
-{
-Moknitekuvry
-}
-Saga_97
-{
-
-}
-
-Saga_98
-{
-@<iTemp> las horas pasan...
-}
-
-Saga_99
-{
-Dicen que nuestro almirante ha matado a Alan Milrow, un jefe de Narwals. Ahora están muy enfadados con los piratas...
-}
-
-Saga_100
-{
-Red Mary se rindió por completo tras la trágica muerte de su novio Alan Milrow. Está sentada en su camarote de 'Ceres Smithy' y llora todas las noches... Pobre chica.
-}
-
-Saga_101
-{
-Han asesinado a un jefe de Narwals justo en la prisión. Un acto espeluznante, te lo aseguro. Matar a un hombre indefenso así como así...
-}
-
-Saga_102
-{
-¡Escuchad, escuchad! Alan entró en la prisión del almirante, pasó unos meses en una jaula y luego fue asesinado sin juicio. Y nuestra excéntrica Red Mary está completamente perdida en su camarote de 'Ceres Smithy'. Pobre chica, está llorando todas las noches. ¡Solía ser un pájaro tan alegre!
-}
-
-Saga_103
-{
-Has usado una poción comanche
-}
-Saga_104
-{
-¡Estás completamente curado!
-}
-
-Saga_105
-{
-Dicen que Adolf Barbier está perdido. Sí, el dinero fácil no le hace bien al hombre...
-}
-
-Saga_106
-{
-¿Sabes dónde está Adolf Barbier? Desapareció justo después de conseguir dinero y un nuevo camarote...
-}
-
-Saga_107
-{
-Aquí pasan cosas raras. La loca de Red Mary ha desaparecido junto con Chad Kapper. Estoy seguro de que fue obra de Rivados. Ellos vengaron a su hechicero...
-}
-
-Saga_108
-{
-Ahora se ha perdido Red May. Probablemente muerta, eso es lo que pasa cuando te metes con Rivados. Estoy seguro de que son responsables de la desaparición de Chad y Mary.
-}
-
-Saga_109
-{
-Dicen que anoche se oyeron ruidos extraños en el 'Caroline', alguien se peleaba allí y que oyeron el llanto de una mujer antes de morir. Creo que eso explica la desaparición de May Casper. ¡Pobre chica! Estoy seguro de que no volveremos a verla...
-}
-
-Saga_110
-{
-Pasaron tres horas...
-}
-
-Saga_111
-{
-A la mañana siguiente...
-}
-
-Saga_112
-{
-Cangrejo gigante
-}
-Saga_113
-{
-
-}
-
-Saga_114
-{
-Has encontrado la jaula adecuada @<NewStr()>¡Has descubierto el oro del capitán!
-}
-
-Saga_115
-{
-¡Jessica te ha quitado la capacidad de correr!
-}
-
-Saga_116
-{
-¡Jessica ha absorbido tu fuerza! ¡Todas las habilidades de armas han bajado 30 puntos!
-}
-
-Saga_117
-{
-¡Jessica ha absorbido tu agilidad! ¡La energía ha bajado 20 puntos!
-}
-
-Saga_118
-{
-Has pasado horas rezando...@<NewStr()>Las velas se apagaron...
-}
-
-Saga_119
-{
-Jessica
-}
-Saga_120
-{
-Rose
-}
-
-Saga_121
-{
-Se ha celebrado el juicio.
-}
-Saga_122
-{
-Ha pasado una hora...@<NewStr()>Has llegado al barco naufragado
-}
+Saga_1 {Jimmy}
+Saga_2 {Higgins}
+Saga_3 {Arbutus}
+Saga_4 {Arthur}
+Saga_5 {Donovan}
+Saga_6 {Modo exploración: temporizador extendido. ¡Completa la misión!}
+Saga_7 {¡Helen McArthur ha muerto por las fiebres!}
+Saga_8 {Enrique}
+Saga_9 {Gonzales}
+Saga_10 {Enrique}
+Saga_11 {Galliardo}
+Saga_12 {Alvares}
+Saga_13 {Ortega}
+Saga_14 {Snake Eye}
+Saga_15 { }
+Saga_16 {Cangrejo gigante}
+Saga_17 { }
+Saga_18 {Adolf}
+Saga_19 {Barbier}
+Saga_20 {Hay rumores de que el carcelero del Almirante, Chad Capper, ha desaparecido sin dejar rastro. ¿Quizás Shark le asignó una misión secreta?}
+Saga_21 {Hay rumores de que el carcelero del Almirante, Chad Capper, ha desaparecido sin dejar rastro. ¿Quizás Shark le encomendó una misión secreta?}
+Saga_22 {¿Has oído las noticias? El hechicero de Rivados, el viejo Chimiset, fue asesinado a hachazos en la jaula de la cárcel. Dicen que lo hicieron los hombres del Almirante. Black Eddie está furioso...}
+Saga_23 {El hechicero Rivados, Chimiset, fue asesinado. Curiosamente, no sospechan de los Narwhals, sino de la gente de Shark. Los Rivados están muy enojados con el almirante ...}
+Saga_24 {La prisión del almirante se está convirtiendo en un escenario de asesinatos: primero Alan Milrow, ahora Chimiset. Sí, el almirante reprime duramente a sus oponentes.}
+Saga_25 {Red Mary está en peligro. Solo tienes 100 segundos para encontrarla y ayudarla.}
+Saga_26 {¡Espera! Debería hablar con Mary antes de dejar la Isla. No me perdonará si desaparezco sin avisarla.}
+Saga_27 {Debería hablar con Mary antes de dejar la isla. No me perdonará que desaparezca sin avisarla.}
+Saga_28 {No se puede pasar por los arrecifes de la isla sin instrucciones de navegación.}
+Saga_29 {¡No puedes acercarte a la isla, tus barcos son demasiado grandes!}
+Saga_30 {Pasó una hora...@<NewStr()> La seda se cargó en su buque}
+Saga_31 {Simon}
+Saga_32 {Morelle}
+Saga_33 {Has descubierto el escondite de Morel}
+Saga_34 {Las mercancías se cargaron en el barco}
+Saga_35 {David}
+Saga_36 {Fackman}
+Saga_37 {Marlin}
+Saga_38 {Homewrecker}
+Saga_39 {Bernar}
+Saga_40 {Vensan}
+Saga_41 {Cuttlefish}
+Saga_42 {Vagrant}
+Saga_43 { }
+Saga_44 {Merciless}
+Saga_45 {Vampire}
+Saga_46 { }
+Saga_47 {¡Han soltado una mina!}
+Saga_48 {¡Sólo tienes @<sti(fTemp)> para escapar!}
+Saga_49 {¡No has podido evitar la explosión!}
+Saga_50 {¡Sí, no nos hemos pasado con la pólvora! retumbó tan fuerte que probablemente lo oyeron incluso en Tortuga. A la fragata le detonaron las provisiones de pólvora y su capitán se fue al fondo junto con su barco en un santiamén.}
+Saga_51 {Centurion}
+Saga_52 {¡Espera! ¡No estará de más pedir consejo a Mary, ella te ayudó con la bomba la última vez! Su brillante cabeza puede aportar alguna idea nuevamente...}
+Saga_53 {Eh, ojalá Mary estuviera aquí... Seguro que se habría inventado algo...}
+Saga_54 {¡Espera! ¡No estaría mal pedir consejo a Helen, ella te ayudó con las bombas la última vez! Su brillante cabeza puede aportar alguna idea de nuevo...}
+Saga_55 {¡Los piratas te han reconocido!}
+Saga_56 {¡Las cargas se han lanzado!}
+Saga_57 {¡Las cargas explotarán en @<sti(fTemp)> segundos!}
+Saga_58 {Randolf}
+Saga_59 {Berns}
+Saga_60 {Gregory}
+Saga_61 {Couper}
+Saga_62 {Paul}
+Saga_63 {Molligan}
+Saga_64 {Oyster}
+Saga_65 {'Oyster'}
+Saga_66 {¡Un golpe crítico de disparos en cadena!}
+Saga_67 {He encontrado una nota con coordenadas en la cabaña de Milligan. Hay un misterioso comprador esperando. Puedo navegar hasta él y, tal vez, hacer un buen negocio. O puedo entregar el cargamento a Svensson.}
+Saga_68 {Es hora de volver con Jan Svensson.}
+Saga_69 {Boat}
+Saga_70 {¡Pole Molligan te está atacando!}
+Saga_71 {Mikhael}
+Saga_72 {Rozencraft}
+Saga_73 {Jim}
+Saga_74 {Benson}
+Saga_75 {Bald Maggy}
+Saga_76 {Raymond Baker está a bordo}
+Saga_77 {Raymond}
+Saga_78 {Baсker}
+Saga_79 {Jessica}
+Saga_80 {Rose}
+Saga_81 {David}
+Saga_82 {Fackman}
+Saga_83 {Lugre de mensajería de Caracas}
+Saga_84 {Modo exploración: el temporizador está desactivado.}
+Saga_85 {Steven}
+Saga_86 {Dodson}
+Saga_87 {La flota dorada española está en el horizonte.}
+Saga_88 {El Carnivoro}
+Saga_89 {San Raphael}
+Saga_90 {¡Conseguimos escapar de la escuadra de escolta española y dejarles con un palmo de narices! No pasa nada, ya sufrirán: aún tienen mucha riqueza...}
+Saga_91 {¡Conseguimos escapar del escuadrón de escolta español y dejarles con un palmo de narices! Sin embargo, antes les dimos una paliza, jeje. No importa,  todavía tienen un montón de riqueza ...}
+Saga_92 {¡Hundimos todo el escuadrón de escolta! ¡Que se lo piensen bien antes de meterse con nosotros!}
+Saga_93 {José Dios ha hecho copias de esos excelentes mapas.}
+Saga_94 {José Dios hizo una copia del 'Excelente Mapa del Archipiélago'.}
+Saga_95 {Pasó un día...@<NewStr()> La plata queda en tu poder}
+Saga_96 {Moknitekuvry}
+Saga_97 { }
+Saga_98 {@<iTemp> las horas pasan...}
+Saga_99 {Dicen que nuestro almirante ha matado a Alan Milrow, un jefe de Narwals. Ahora están muy enfadados con los piratas...}
+Saga_100 {Red Mary se rindió por completo tras la trágica muerte de su novio Alan Milrow. Está sentada en su camarote de 'Ceres Smithy' y llora todas las noches... Pobre chica.}
+Saga_101 {Han asesinado a un jefe de Narwals justo en la prisión. Un acto espeluznante, te lo aseguro. Matar a un hombre indefenso así como así...}
+Saga_102 {¡Escuchad, escuchad! Alan entró en la prisión del almirante, pasó unos meses en una jaula y luego fue asesinado sin juicio. Y nuestra excéntrica Red Mary está completamente perdida en su camarote de 'Ceres Smithy'. Pobre chica, está llorando todas las noches. ¡Solía ser un pájaro tan alegre!}
+Saga_103 {Has usado una poción comanche}
+Saga_104 {¡Estás completamente curado!}
+Saga_105 {Dicen que Adolf Barbier está perdido. Sí, el dinero fácil no le hace bien al hombre...}
+Saga_106 {¿Sabes dónde está Adolf Barbier? Desapareció justo después de conseguir dinero y un nuevo camarote...}
+Saga_107 {Aquí pasan cosas raras. La loca de Red Mary ha desaparecido junto con Chad Kapper. Estoy seguro de que fue obra de Rivados. Ellos vengaron a su hechicero...}
+Saga_108 {Ahora se ha perdido Red May. Probablemente muerta, eso es lo que pasa cuando te metes con Rivados. Estoy seguro de que son responsables de la desaparición de Chad y Mary.}
+Saga_109 {Dicen que anoche se oyeron ruidos extraños en el 'Caroline', alguien se peleaba allí y que oyeron el llanto de una mujer antes de morir. Creo que eso explica la desaparición de May Casper. ¡Pobre chica! Estoy seguro de que no volveremos a verla...}
+Saga_110 {Pasaron tres horas...}
+Saga_111 {A la mañana siguiente...}
+Saga_112 {Cangrejo gigante}
+Saga_113 { }
+Saga_114 {Has encontrado la jaula adecuada @<NewStr()>¡Has descubierto el oro del capitán!}
+Saga_115 {¡Jessica te ha quitado la capacidad de correr!}
+Saga_116 {¡Jessica ha absorbido tu fuerza! ¡Todas las habilidades de armas han bajado 30 puntos!}
+Saga_117 {¡Jessica ha absorbido tu agilidad! ¡La energía ha bajado 20 puntos!}
+Saga_118 {Has pasado horas rezando...@<NewStr()>Las velas se apagaron...}
+Saga_119 {Jessica}
+Saga_120 {Rose}
+Saga_121 {Se ha celebrado el juicio.}
+Saga_122 {Ha pasado una hora...@<NewStr()>Has llegado al barco naufragado}

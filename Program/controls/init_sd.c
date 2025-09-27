@@ -83,8 +83,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
     MapControlToGroup("ChrFire","BattleInterfaceControls");
 
 	// evganat - камера
-	CI_CreateAndSetControls("PrimaryLand", "SwitchCameraOffset", CI_GetKeyCode("VK_TAB"), 0, true);
-	MapControlToGroup("SwitchCameraOffset", "FightModeControls");
+	// CI_CreateAndSetControls("PrimaryLand", "SwitchCameraOffset", CI_GetKeyCode("VK_TAB"), 0, true);
+	// MapControlToGroup("SwitchCameraOffset", "FightModeControls");
 
 	CI_CreateAndSetControls("PrimaryLand", "CharacterCamera_Forward", CI_GetKeyCode("VK_MWHEEL_UP"), 0, true);
 	MapControlToGroup("CharacterCamera_Forward", "FightModeControls");
@@ -163,8 +163,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	// <-- JA
 	CI_CreateAndSetControls("", "LanternOnOff", CI_GetKeyCode("KEY_L"), 0, true); // включить/выключить фонарь
 	
-	CI_CreateAndSetControls("PrimaryLand", "Dolly", CI_GetKeyCode("KEY_T"), 0, true); // активировать телепортацию
-	MapControlToGroup("Dolly","BattleInterfaceControls");
+	//CI_CreateAndSetControls("PrimaryLand", "Dolly", CI_GetKeyCode("KEY_T"), 0, true); // активировать телепортацию
+	//MapControlToGroup("Dolly","BattleInterfaceControls");
 	
 	//CI_CreateContainer("", "ChrTurnH1", 15.0);
 	//MapControlToGroup("ChrTurnH1","FightModeControls");
@@ -325,6 +325,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("", "IAction", CI_GetKeyCode("VK_SPACE"), 0, false);
 	CI_CreateAndSetControls("", "ILeftShift", CI_GetKeyCode("VK_SHIFT"), 0, false);
 	CI_CreateAndSetControls("", "IRightShift", CI_GetKeyCode("VK_SHIFT"), 0, false);
+	CI_CreateAndSetControls("", "ILeftCtrl", CI_GetKeyCode("VK_CONTROL"), 0, false);
+	CI_CreateAndSetControls("", "IRightCtrl", CI_GetKeyCode("VK_CONTROL"), 0, false);
 	CI_CreateAndSetControls("", "ShiftUp", CI_GetKeyCode("VK_SHIFT"), INVERSE_CONTROL, false);
 	CI_CreateAndSetControls("", "IUp", CI_GetKeyCode("VK_UP"), 0, false);
 	CI_CreateAndSetControls("", "IDown", CI_GetKeyCode("VK_DOWN"), 0, false);
@@ -398,7 +400,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("", "ChrCamTurnV", 257, 0, false);
 	SetControlForInverting("ChrCamTurnV",false);
 	CI_CreateAndSetControls("", "ChrCamTurnH", 256, 0, false);
-	CI_CreateAndSetControls("", "ChrCamSpecMode", CI_GetKeyCode("VK_CONTROL"), 0, false);
+//	CI_CreateAndSetControls("", "ChrCamSpecMode", CI_GetKeyCode("VK_CONTROL"), 0, false);
 	CI_CreateAndSetControls("", "Turn V", 257, INVERSE_CONTROL, false);
 	SetControlForInverting("Turn V",true);
 	CI_CreateAndSetControls("", "Turn H", 256, 0, false);

@@ -23,7 +23,7 @@ void ProcessDialogEvent()
 		// капитан-нежить Санта-Квитерии
 		case "SQC_skeletcap":
 			PlaySound("Types\skel.wav");
-			dialog.text = "You... will still.... have... to die. He will come... and kill you... as he has killed all of us... as he has killed everyone here...";
+			dialog.text = "You... will still... have... to die. He will come... and kill you... as he has killed all of us... as he has killed everyone here...";
 			link.l1 = "What? Who are you? Who are you talking about?";
 			link.l1.go = "SQC_skeletcap_1";
 		break;
@@ -58,7 +58,7 @@ void ProcessDialogEvent()
 		case "guardmask":
 			PlaySound("Voice\English\sharlie\Hranitel Maski Kukulkana.wav");
 			dialog.text = "I've been waiting for you for so long!..";
-			link.l1 = "Erm!.. Stunning!... That's quite a skeleton!";
+			link.l1 = "Erm!.. Astonishing!... That's quite a skeleton!";
 			link.l1.go = "guardmask_1";
 		break;
 		
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_2":
-			dialog.text = "I am the Guardian of Ksocheatem, the keeper of the mask of Kukulcan... and your eminent death!..";
+			dialog.text = "I am the Guardian of Ksocheatem, the keeper of the mask of Kukulcan... and your imminent death!..";
 			link.l1 = "...";
 			link.l1.go = "guardmask_3";
 		break;
@@ -101,38 +101,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_5":
-			dialog.text = "No. You won't be able to kill me, ever. Not even with that magical dagger. Our duel may last a long, long time until you completely run out of strength and die.";
+			dialog.text = "No. You will never be able to kill me. Not even with that magical dagger. Our duel may last a very, very long time, until you are utterly spent and die.";
 			link.l1 = "Is that so? And why is it that you can't strike me?";
 			link.l1.go = "guardmask_6";
 		break;
 		
 		case "guardmask_6":
-			dialog.text = "You're a courageous, strong warrior and you wield the Chief's Claw. I'm obliged to let you live, for he or she who possesses this dagger, who dares to stand against me in battle, receives what he has come for.";
+			dialog.text = "You're a courageous, strong warrior and you wield the Chief's Claw. I'm obliged to let you live, for he or she who possesses this dagger, who dares to stand against me in battle, receives what they have come for.";
 			link.l1 = "Who are you? Who are you really, Guardian?";
 			link.l1.go = "guardmask_7";
 		break;
 		
 		case "guardmask_7":
-			dialog.text = "They used to call me Alberto Casco. I was a soldier in Alonso de Maldonado's squad. We had found the ancient Tayasal, but they caught us and sacrificed us. Because of my height and my strength pagan Kanek turned me into the Guardian of Ksocheatem, the keeper of Kukulcan's mask. Everyone who ever stood on Ksocheatem was found by me and slaughtered by my hand and then turned into an undead.\nThe Chief's Claw dagger was used to carve a map of this place out of my flesh. I will watch the mask's safety forever and I will be restless, until I hold the dagger in my hands.";
+			dialog.text = "They used to call me Alberto Casco. I was a soldier in Alonso de Maldonado's squad. We found the ancient Tayasal, but they caught us and sacrificed us. Because of my height and my strength, the pagan Kanek turned me into the Guardian of Ksocheatem, the keeper of Kukulcan's mask. Everyone who ever set foot on Ksocheatem was found by me, slaughtered by my hand, and then turned into an undead.\nThe Chief's Claw dagger was used to carve a map of this place out of my flesh. I will watch over the mask's safety forever, and I will be restless until I hold the dagger in my hands.";
 			link.l1 = "Do you need the Chief's Claw?";
 			link.l1.go = "guardmask_8";
 		break;
 		
 		case "guardmask_8":
-			dialog.text = "Yes. Since you need the mask. Give me the dagger. I'll find my long-awaited peace and you'll receive the mask. I swear to you that you'll be able to take it with you and leave Ksocheatem alive.";
+			dialog.text = "Yes. Since you need the mask, give me the dagger. I'll find my long-awaited peace and you'll receive the mask. I swear to you that you'll be able to take it with you and leave Ksocheatem alive.";
 			link.l1 = "I accept your offer, Guardian. I've seen the mask on that pedestal behind the baptistry fountain. Is that it?";
 			link.l1.go = "guardmask_9";
 		break;
 		
 		case "guardmask_9":
-			dialog.text = "It is. This is the mighty artifact of Kukulcan himself, the flying snake. After we finish this conversation, you can walk over there and take it.";
+			dialog.text = "It is. This is the mighty artefact of Kukulcan himself, the flying serpent. After we finish this conversation, you can walk over there and take it.";
 			link.l1 = "Well, I hope you keep your word, Guardian...";
 			link.l1.go = "guardmask_10";
 		break;
 		
 		case "guardmask_10":
 			dialog.text = "I've sworn...";
-			link.l1 = "Then take the Chief's Claw. I hope it will bring tranquillity on your soul.";
+			link.l1 = "Then take the Chief's Claw. I hope it will bring tranquillity to your soul.";
 			link.l1.go = "guardmask_11";
 		break;
 		
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 			PlaySound("interface\important_item.wav");
 			Log_Info("You've given the Chief's Claw");
 			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
-			dialog.text = "Oh, how long I have awaited this moment! Now I can finally leave... But as a farewell gift, I would like to pass on a particle of my power to you. This will be the last present that Alberto Casco will ever give.";
+			dialog.text = "Oh, how long I have awaited this moment! Now I can finally leave... But as a farewell gift, I would like to pass on a fragment of my power to you. This will be the last present that Alberto Casco will ever give.";
 			link.l1 = "...";
 			link.l1.go = "guardmask_12";
 		break;
@@ -153,37 +153,37 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guardmask_13":
-			dialog.text = "Now it's time for me to leave. Don't take your time, without its Guardian and the Kukulcan mask, the island will soon disappear forever.";
-			link.l1 = "There's nothing to regret about that. One hellhole less in the world... But wait, Guardian! You've been in Tayasal! Please, tell me what that place is.";
+			dialog.text = "Now it's time for me to leave. Don't waste any time; without its Guardian and the Kukulcan mask, the island will soon disappear forever.";
+			link.l1 = "There's nothing to regret about that. One hellhole less in the world... But wait, Guardian! You've been to Tayasal! Please, tell me what that place is like.";
 			link.l1.go = "guardmask_14";
 		break;
 		
 		case "guardmask_14":
-			dialog.text = "It's an old Mayan city. Its appearance has been conserved from back when people used to still reside there. Majestic temples, high pyramids... Now, the Itza tribe live there, claiming to be the direct descendants of the Maya. They try to mimic them in every way, in religion, culture, and their way of life.";
-			link.l1 = "How can I get there?";
+			dialog.text = "It's an ancient Mayan city. Its appearance has been preserved from the time when people still lived there. Majestic temples, towering pyramids... Now, the Itza tribe live there, claiming to be the direct descendants of the Maya. They try to imitate them in every way: in religion, culture, and their way of life.";
+			link.l1 = "How do I get there?";
 			link.l1.go = "guardmask_15";
 		break;
 		
 		case "guardmask_15":
-			dialog.text = "Our commander knew the way, Alonso de Maldonado. We just followed him through the jungle. I only remember that we disembarked at Mosquito bay, north of Cape Perlas, and moved deep into the selva to the West.";
+			dialog.text = "Our commander knew the way, Alonso de Maldonado. We just followed him through the jungle. I only remember that we disembarked at Mosquito Bay, north of Cape Perlas, and moved deep into the selva to the west.";
 			link.l1 = "What's noteworthy in Tayasal?";
 			link.l1.go = "guardmask_16";
 		break;
 		
 		case "guardmask_16":
-			dialog.text = "Everything is noteworthy there. Absolutely everything. But we were interested in nothing other than the Mayan treasures. And we found them. And we paid dearly for them, especially me. But now, I'm finally free!";
-			link.l1 = "What do I need to know before heading to Tayasal?";
+			dialog.text = "Everything is noteworthy there. Absolutely everything. But we were interested in nothing but the Mayan treasures. And we found them. And we paid dearly for them, especially me. But now, I'm finally free!";
+			link.l1 = "What should I know before heading to Tayasal?";
 			link.l1.go = "guardmask_17";
 		break;
 		
 		case "guardmask_17":
-			dialog.text = "Itza people possess great strength and wit. They hate white people no matter their nationality and will destroy any outsider invading their territory. Simple Itza warriors will not engage in any sort of communication, but Kanek or his son Urakan, if they see the mask... they might. If you manage to get to Tayasal alive, you'll see for yourself. But will you be able to leave it...";
-			link.l1 = "Does Kanek offer up all white people coming to Tayasal as a sacrifice?";
+			dialog.text = "Itza people possess great strength and wit. They hate white people, regardless of nationality, and will destroy any outsider invading their territory. Ordinary Itza warriors will not engage in any sort of communication, but Kanek or his son Urakan, if they see the mask... they might. If you manage to reach Tayasal alive, you'll see for yourself. But will you be able to leave it...";
+			link.l1 = "Does Kanek offer up all white people who come to Tayasal as a sacrifice?";
 			link.l1.go = "guardmask_18";
 		break;
 		
 		case "guardmask_18":
-			dialog.text = "I would suppose so. But that might not include the man who bears the Kukulcan mask.";
+			dialog.text = "I would suppose so. But that might not include the man who wears the Kukulcan mask.";
 			link.l1 = "All right. I'll be counting on that.";
 			link.l1.go = "guardmask_19";
 		break;

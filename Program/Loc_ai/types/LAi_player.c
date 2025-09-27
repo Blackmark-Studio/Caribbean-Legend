@@ -216,7 +216,7 @@ void LAi_type_player_StartDialog(aref chr, aref by)
 void LAi_type_player_EndDialog(aref chr, aref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
-	LAi_CharacterRestoreAy(chr);
+//	LAi_CharacterRestoreAy(chr);	// evganat - отключил, это не сочетается с камерой
 	LAi_tmpl_player_InitTemplate(chr);
 }
 

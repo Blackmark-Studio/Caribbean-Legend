@@ -30,8 +30,8 @@ void ProcessDialogEvent()
 			// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 			if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
 			{
-				dialog.text = "Se ho capito bene, sei il Capitano francese che ha assistito i miei uomini nella loro missione a Sint-Maarten?"+TimeGreeting()+"!";
-				link.l1 = TimeGreeting()+", Colonnello. Sì, sarei io.";
+				dialog.text = "Se non sbaglio, lei è "+GetSexPhrase("quel famoso capitano","quella famosa capitana")+" che ha aiutato i miei uomini nella missione a Sint Maarten? "+TimeGreeting()+"!";
+				link.l1 = ""TimeGreeting()+", Colonnello. Sì, sarei io.";
 				link.l1.go = "FMQN";
 				break;
 			}
@@ -114,11 +114,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrapin_3":
-			Log_Info("You have received a blunderbuss");
-			Log_Info("You have received 10 arrows");
-			Log_Info("You have received 10 charges of nails");
-			Log_Info("You have received instructions for creating the harpoon arrows");
-			Log_Info("You have received instructions for creating the charge of nails");
+			Log_Info("Hai ricevuto un archibugio");
+			Log_Info("Hai ricevuto 10 frecce");
+			Log_Info("Hai ricevuto 10 cariche di chiodi");
+			Log_Info("Hai ricevuto istruzioni per la creazione delle frecce arpione");
+			Log_Info("Hai ricevuto istruzioni per la creazione della carica di chiodi");
 			GiveItem2Character(pchar, "pistol8");
 			TakeNItems(pchar, "harpoon", 10);
 			TakeNItems(pchar, "GunEchin", 10);
@@ -161,8 +161,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FMQN_2":
-			dialog.text = "Ora, mi scusi, ho altre faccende di cui occuparmi. Dio vi assista, Capitano.";
-			link.l1 = "Arrivederci, Signore.";
+			dialog.text = "Ora, mi scusi, ho altre faccende di cui occuparmi. Dio vi assista, Capitano "+pchar.lastname+".";
+			link.l1 = "Arrivederci, "+GetAddress_Form(NPChar)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_EnglandComplete");
 		break;

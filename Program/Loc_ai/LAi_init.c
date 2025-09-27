@@ -7,7 +7,6 @@
 #include "Loc_ai\LAi_templates.c"
 #include "Loc_ai\LAi_types.c"
 #include "Loc_ai\LAi_groups.c"
-#include "Loc_ai\LAi_fightparams.c"
 #include "Loc_ai\LAi_boarding.c"
 #include "Loc_ai\LAi_monsters.c"
 #include "Loc_ai\LAi_location.c"
@@ -15,6 +14,7 @@
 #include "Loc_ai\LAi_sounds.c"
 #include "Loc_ai\LAi_utilites.c"
 #include "Loc_ai\LAi_zLoadUtils.c" 
+#include "Loc_ai\fightparams\common.c"
 
 bool LAi_IsInitedAI = false;
 bool LAi_IsCapturedLocation = false;

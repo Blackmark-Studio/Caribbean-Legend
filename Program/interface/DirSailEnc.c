@@ -3,9 +3,11 @@
 #define DSENC_SECONDS_TIMEOUT 	8
 
 string totalInfo = "";
+string powerInfo = "";
 bool isSkipable = false;
 bool bEncType   = false;
-string  sQuestSeaCharId = "";
+string sQuestSeaCharId[10] = {"", "", "", "", "", "", "", "", "", ""};
+int iQuestSeaCharQty = 0;
 int nTimeout = 0;
 int DSENC_TIMEOUT = 90;
 int DSENC_TIMEOUT2 = 45;
@@ -41,7 +43,8 @@ void InitInterface(string iniName)
 
     SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
-    SetFormatedText("MAP_CAPTION", XI_ConvertString("title_map"));
+    // SetFormatedText("MAP_CAPTION", XI_ConvertString("title_map"));
+    SetFormatedText("MAP_CAPTION", XI_ConvertString("NavalSignal"));
 
 	SetEventHandler("InterfaceBreak","ProcessBreakExit",0);
 	SetEventHandler("exitCancel","ProcessCancelExit",0);
@@ -103,6 +106,7 @@ void IProcessFrame()
             }
 
             SetFormatedText("INFO_TEXT",totalInfo);
+			SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT", 5);
         }
         else 
 		{
@@ -181,7 +185,8 @@ void assignByID(string eID)
 int doDescribe(int gNum)
 {
 	string loadScr = "";
-    ref rChar;
+	powerInfo = "";
+	ref rChar;
     int mapEncSlot = FindFreeMapEncounterSlot();
     if(mapEncSlot < 0) return;
     rEncounter = GetMapEncounterRef(mapEncSlot);
@@ -197,6 +202,7 @@ int doDescribe(int gNum)
     iEncounterType = sti(rEncounter.RealEncounterType);
     iRealEncounterType = iEncounterType;
 	bool bPowerCompare = true;
+	SetNodeUsing("POWER_LINES",false);
 	string sOkBtn = XI_ConvertString("map_attack");
     //Get description
     if (isShipEncounterType > 1 && gNum > 0 && iRealEncounterType < ENCOUNTER_TYPE_BARREL)
@@ -209,14 +215,15 @@ int doDescribe(int gNum)
         if (nEncChar != -1)
         {
             rChar = &characters[nEncChar];
-            sQuestSeaCharId = rChar.id;
+            iQuestSeaCharQty++;
+            sQuestSeaCharId[iQuestSeaCharQty - 1] = rChar.id;
             if (CheckAttribute(rChar, "mapEnc.Name"))
             {
-                totalInfo = totalInfo + characters[nEncChar].mapEnc.Name;
+                totalInfo = totalInfo + rChar.mapEnc.Name;
             }
             else
             {
-                totalInfo = totalInfo + "'" + characters[nEncChar].ship.name + "'."
+                totalInfo = totalInfo + "'" + rChar.ship.name + "'."
             }
         }
     }
@@ -327,16 +334,16 @@ int doDescribe(int gNum)
 		switch (rand(1))
 		{
 			case 0 :
-				if(IsDay()) loadScr = "interfaces\le\loading\sea_1.tga";
-				else		loadScr = "interfaces\le\loading\sea_2.tga";
+				if(IsDay()) loadScr = "interfaces\le\worldmapenc\1.tga";
+				else		loadScr = "interfaces\le\worldmapenc\2.tga";
 			break;
 			case 1 :
-				loadScr = "interfaces\le\loading\sea_3.tga";
+				loadScr = "interfaces\le\worldmapenc\3.tga";
 			break;
 		}
         bPowerCompare = false;
 		SetNewPicture("INFO_PICTURE", loadScr); 
-		totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail battle on course") + totalInfo;
+		totalInfo = dirOff + XI_ConvertString("dir sail battle on course") + totalInfo;
 	}
 	else
 	{
@@ -344,78 +351,103 @@ int doDescribe(int gNum)
 		{		
 			if(iRealEncounterType == ENCOUNTER_TYPE_BARREL) 
 			{
-				SetNewPicture("INFO_PICTURE", "interfaces\le\loading\polundra.tga"); 
+				SetNewPicture("INFO_PICTURE", "interfaces\le\polundra.tga"); 
 			}	
 			if(iRealEncounterType == ENCOUNTER_TYPE_BOAT) 
 			{
-				SetNewPicture("INFO_PICTURE", "interfaces\le\loading\flplndra.tga"); 
+				SetNewPicture("INFO_PICTURE", "interfaces\le\flplndra.tga"); 
 			}			
-			totalInfo = XI_ConvertString("NavalSignal") + dirOff + XI_ConvertString("dir sail SpecialSituation") + totalInfo;
+			totalInfo = dirOff + XI_ConvertString("dir sail SpecialSituation") + totalInfo;
 		}
 		else
 		{
 			switch (rand(1))
 			{
 				case 0 :
-					if(IsDay()) loadScr = "interfaces\le\loading\sea_1.tga";
-					else		loadScr = "interfaces\le\loading\sea_2.tga";
+					if(IsDay()) loadScr = "interfaces\le\worldmapenc\1.tga";
+					else		loadScr = "interfaces\le\worldmapenc\2.tga";
 				break;
 				case 1 :
-					loadScr = "interfaces\le\loading\sea_3.tga";
+					loadScr = "interfaces\le\worldmapenc\3.tga";
 				break;
 			}
-			if(sQuestSeaCharId != "")
+			if(sQuestSeaCharId[0] != "")
 			{
-				switch (sQuestSeaCharId)
+				switch (sQuestSeaCharId[0])
 				{
 					case "SantaMisericordia_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_sm.tga");
+						SetNewPicture("INFO_PICTURE", "interfaces\le\worldmapenc\sm.tga");
 						totalInfo = GetConvertStr("SM_WorldMap", "SantaMisericordia.txt");
 						sOkBtn = XI_ConvertString("map_attack");
 					break;
 
 					case "LadyBeth_cap":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_lb.tga");
+						SetNewPicture("INFO_PICTURE", "interfaces\le\worldmapenc\lb.tga");
 						totalInfo = GetConvertStr("LadyBeth_WorldMap", "LadyBeth.txt");
 						sOkBtn = XI_ConvertString("map_ok");
 					break;
 					
 					case "Memento_cap":
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_mem.tga");
+						SetNewPicture("INFO_PICTURE", "interfaces\le\worldmapenc\mem.tga");
 						totalInfo = StringFromKey("Memento_4");
 						sOkBtn = XI_ConvertString("map_ok");
 					break;
 
                     case "MaryCelesteCapitan":
                         bPowerCompare = false;
-						SetNewPicture("INFO_PICTURE", "interfaces\le\sea_cel.tga");
-                        totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+						SetNewPicture("INFO_PICTURE", "interfaces\le\worldmapenc\cel.tga");
+                        totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     break;
 
                     //default:
                         SetNewPicture("INFO_PICTURE", loadScr); 
-                        if(CheckAttribute(rChar, "Brigadier"))
+                        if(CheckAttribute(rChar, "Brigadier")) // TO_DO: Тут всё устарело, переделать по образцу map.c
                         {
-                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone follows") + totalInfo + 
+                            totalInfo = XI_ConvertString("someone follows") + totalInfo + 
                                         StringFromKey("QuestsUtilite_278") + GetStrSmallRegister(XI_ConvertString(GetShipTypeName(rChar))) + 
                                         " '" + rChar.Ship.Name + "'.";
                         }
                         else
-                            totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+                            totalInfo = XI_ConvertString("someone sails") + totalInfo;
                     //break;
 				}
-				//sQuestSeaCharId = ""; ~!~ WTF
 			}
 			else
 			{
 				SetNewPicture("INFO_PICTURE", loadScr); 
-				totalInfo = XI_ConvertString("NavalSignal") + XI_ConvertString("someone sails") + totalInfo;
+				totalInfo = XI_ConvertString("someone sails") + totalInfo;
 			}
 		}
 
         // Механика мощи
-        if(bPowerCompare) totalInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter);
+		if(bPowerCompare)
+		{
+			int iBattleDifficulty = GetBattleDifficulty(rEncounter); // инт сложности
+			string sBattleDifficulty = XI_ConvertString("Unknown dif");
+			switch(iBattleDifficulty)
+			{
+				case 1: // Elementary dif
+					sBattleDifficulty = "<color=255,255,255,255>" + XI_ConvertString("Elementary dif") + "</color>"; //обычный
+				break;
+				case 2: // Low dif
+					sBattleDifficulty = "<color=255,128,255,128>" + XI_ConvertString("Low dif") + "</color>"; //зелёный
+				break;
+				case 3:// Medium dif
+					sBattleDifficulty = "<color=255,255,245,155>" + XI_ConvertString("Medium dif") + "</color>"; //желтый
+				break;
+				case 4:// High dif
+					sBattleDifficulty = "<color=255,240,175,95>" + XI_ConvertString("High dif") + "</color>"; //оранжевый
+				break;
+				case 5:// Fatal dif
+					sBattleDifficulty = "<color=255,255,128,128>" + XI_ConvertString("Fatal dif") + "</color>"; //красный
+				break;
+			}
+			SetNodeUsing("POWER_LINES",true);
+			powerInfo = XI_ConvertString("Battle difficulty") + sBattleDifficulty; // Механика мощи
+			SetFormatedText("POWER_TEXT",powerInfo);
+			// SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"POWER_TEXT", 8,-1,iColor); // покраска всей строчки
+		}
 	}
 
     return mapEncSlot;
@@ -527,7 +559,8 @@ void locDirSail(int evtID)
         
         if (CheckAttribute(rGroup, "AlreadyLoaded") || nCheckShipCnt > MAX_SHIPS_IN_LOCATION)
         {
-            sQuestSeaCharId = "";
+            iQuestSeaCharQty = 0;
+            sQuestSeaCharId[0] = "";
             ProcessCancelExit();
             return;
         }
@@ -558,7 +591,8 @@ void locDirSail(int evtID)
         nCheckShipCnt += iNumMerchantShips;
         if (nCheckShipCnt > MAX_SHIPS_IN_LOCATION)
         {
-            sQuestSeaCharId = "";
+            iQuestSeaCharQty = 0;
+            sQuestSeaCharId[0] = "";
             ProcessCancelExit();
             return;
         }
@@ -764,9 +798,13 @@ void IDoExit(int exitCode)
 	DelEventHandler("evntDoPostExit","DoPostExit");
 	DelEventHandler("frame","IProcessFrame");
 
-	if (sQuestSeaCharId != "")
+	if (iQuestSeaCharQty != 0)
     {
-        wdmEnterSeaQuest(sQuestSeaCharId);
+        // TO_DO: Скип для Леди Бет?
+        for(int i = 0; i < iQuestSeaCharQty; i++)
+        {
+            wdmEnterSeaQuest(sQuestSeaCharId[i]);
+        }
     }
     SetTimeScale(1.0);
 	TimeScaleCounter = 0;

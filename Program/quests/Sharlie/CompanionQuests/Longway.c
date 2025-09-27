@@ -1,3 +1,73 @@
+void PZ_OsmatrivaemSunduk_0()
+{
+	if (CharacterIsAlive("Tichingitu") != -1 && CheckPassengerInCharacter(pchar, "Tichingitu"))
+	{
+		sld = CharacterFromID("Tichingitu");
+		LAi_SetActorType(pchar);
+		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_OsmatrivaemSunduk_0_1", 5);
+		return;
+	}
+	if (CharacterIsAlive("Duran") != -1 && CheckPassengerInCharacter(pchar, "Duran"))
+	{
+		sld = CharacterFromID("Duran");
+		LAi_SetActorType(pchar);
+		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_OsmatrivaemSunduk_0_1", 5);
+		return;
+	}
+	if (CharacterIsAlive("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
+	{
+		sld = CharacterFromID("Folke");
+		LAi_SetActorType(pchar);
+		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_OsmatrivaemSunduk_0_1", 5);
+		return;
+	}
+}
+
+void PZ_OsmatrivaemSunduk_1()
+{
+	LAi_SetActorType(pchar);
+	LAi_ActorGoToLocator(pchar, "rld", "aloc1", "PZ_OsmatrivaemSunduk_1_1", -1);
+}
+
+void PZ_OsmatrivaemSunduk_2()
+{
+	LAi_SetActorType(pchar);
+	LAi_ActorTurnToLocator(PChar, "box", "box1");
+	LAi_ActorAnimation(pchar, "Barman_idle", "PZ_OsmatrivaemSunduk_2_1", 5);
+	
+	if (CharacterIsAlive("Tichingitu") != -1 && CheckPassengerInCharacter(pchar, "Tichingitu"))
+	{
+		ReturnOfficer_Tichingitu();
+		return;
+	}
+	if (CharacterIsAlive("Duran") != -1 && CheckPassengerInCharacter(pchar, "Duran"))
+	{
+		ReturnOfficer_Duran();
+		return;
+	}
+	if (CharacterIsAlive("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
+	{
+		ReturnOfficer_Folke();
+		return;
+	}
+}
+
+void PZ_OsmatrivaemSunduk_3()
+{
+	pchar.questTemp.PZ_OsmatrivaemSunduk = true;
+	DoQuestCheckDelay("TalkSelf_Quest", 0.5);
+}
+
+void PZ_OsmatrivaemSunduk_4()
+{
+	pchar.questTemp.PZ_RodenburgUkradenaStranitsa = true;
+	AddQuestRecord("Holl_Gambit", "1-48");
+	DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
+	Island_SetReloadEnableGlobal("Curacao", true);
+	bQuestDisableMapEnter = false;
+	chrDisableReloadToLocation = false;
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -69,7 +139,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Tichingitu_1";
 			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 0, 0);
+			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
 		if (GetCharacterIndex("Duran") != -1 && CheckPassengerInCharacter(pchar, "Duran"))
@@ -79,7 +149,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Duran_1";
 			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 0, 0);
+			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
 		if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
@@ -89,7 +159,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Folke_1";
 			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", 0, 0);
+			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
@@ -99,28 +169,20 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_Alonso_1";
 		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0);
+		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		sld.location = "None";
 	}
 	
-	else if (sQuestName == "PZ_OsmatrivaemSunduk") {
-		LAi_SetActorType(pchar);
-		LAi_ActorTurnToLocator(PChar, "box", "box1");
-		LAi_ActorAnimation(pchar, "Barman_idle", "PZ_OsmatrivaemSunduk_2", 5);
+	else if (sQuestName == "PZ_OsmatrivaemSunduk_0_1") {
+		PZ_OsmatrivaemSunduk_1();
 	}
 	
-	else if (sQuestName == "PZ_OsmatrivaemSunduk_2") {
-		pchar.questTemp.PZ_OsmatrivaemSunduk = true;
-		DoQuestCheckDelay("TalkSelf_Quest", 0.5);
+	else if (sQuestName == "PZ_OsmatrivaemSunduk_1_1") {
+		PZ_OsmatrivaemSunduk_2();
 	}
 	
-	else if (sQuestName == "PZ_OsmatrivaemSunduk_3") {
-		pchar.questTemp.PZ_RodenburgUkradenaStranitsa = true;
-		AddQuestRecord("Holl_Gambit", "1-48");
-		DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
-		Island_SetReloadEnableGlobal("Curacao", true);
-		bQuestDisableMapEnter = false;
-		chrDisableReloadToLocation = false;
+	else if (sQuestName == "PZ_OsmatrivaemSunduk_2_1") {
+		PZ_OsmatrivaemSunduk_3();
 	}
 	
 	else if (sQuestName == "PZ_LigaInJungle") {
@@ -529,8 +591,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		GiveItem2Character(sld, "mushket5");
 		EquipCharacterByItem(sld, "mushket5");
-		AddItems(sld, "cartridge", 20);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		AddItems(sld, "bullet", 20);
+		AddItems(sld, "gunpowder", 20);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.MusketerDistance = 0;
 		
 		DoQuestCheckDelay("PZ_IshemLongway_VPesheru_4", 25.0);
@@ -688,7 +751,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		//InterfaceStates.Buttons.Save.enable = false;
 		//bDisableCharacterMenu = true;
 		LAi_SetCurHPMax(pchar);
-		LAi_SetCheckMinHP(pchar, 1, true, "SkritoeBessmertie");
+		LAi_SetCheckMinHP(pchar, 1, true, "HiddenImmortality");
 		pchar.GenQuest.CannotWait = true;
 		pchar.GenQuest.BlockTalkSelf = true;
 		pchar.BaseNation = HOLLAND;
@@ -1012,10 +1075,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorRunToLocator(pchar, "quest", "detector4", "PZ_Batavia_plantation_selfdialog", -1);
 		
-		// для ношения мушкета в будущем (доступно только в этом варианте)
 		if (!CheckCharacterPerk(pchar, "Gunman")) SetCharacterPerk(pchar, "Gunman");
 		pchar.CanTakeMushket = true;
-		SetPriorityMode(pchar, 2);
+		pchar.PriorityMode = 2;
 		
 		//Димен
 		sld = GetCharacter(NPC_GenerateCharacter("PZ_AntoniOneDimen", "banker_1_2", "man", "man", sti(pchar.rank), HOLLAND, -1, false, "quest"));
@@ -1443,8 +1505,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_SetCurHPMax(pchar);
 		GiveItem2Character(pchar, "pistol1");
 		EquipCharacterByItem(pchar, "pistol1");
-		AddItems(pchar, "cartridge", 10);
-		LAi_SetCharacterUseBullet(pchar, GUN_ITEM_TYPE, "cartridge");
+		AddItems(pchar, "bullet", 10);
+		AddItems(pchar, "gunpowder", 10);
+		LAi_SetCharacterUseBullet(pchar, GUN_ITEM_TYPE, "bullet");
 		
 		sld = GetCharacter(NPC_GenerateCharacter("PZ_Kapstervil_priest", "priest_2", "man", "man", 1, FRANCE, 14, false, "quest"));
 		SaveCurrentNpcQuestDateParam(sld, "LifeTimeCreate");
@@ -2099,14 +2162,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_BelizPrisonLongwayBack") {
 		LAi_SetPlayerType(pchar);
-		Return_LongwayOfficer();
-		pchar.questTemp.Beliz.AskForLatterAndSotta = true; // флаг для расспроса горожан и пьяниц
+		ReturnOfficer_Longway();
+		pchar.questTemp.PZ_Beliz.AskForLatterAndSotta = true; // флаг для расспроса горожан и пьяниц
 	}
 	
 	else if (sQuestName == "PZ_LongwayBelizDialog") {
 		if (sti(pchar.questTemp.PZ_BelizAskCitizens) >= 3)
 		{
-			DeleteAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta");
+			DeleteAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta");
 			
 			sld = CharacterFromID("Longway");
 			ChangeCharacterAddressGroup(sld, PChar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"));
@@ -2119,7 +2182,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_LongwayBelizDialogBack") {
 		AddQuestRecord("PZ", "19");
-		Return_LongwayOfficer();
+		ReturnOfficer_Longway();
 		
 		sld = characterFromID("Charles_Priest");
 		sld.name = StringFromKey("Longway_35");
@@ -2242,7 +2305,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 4; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_OurMush" + i, "mush_ctz_" + (4 + rand(2)), "man", "mushketer", 15, FRANCE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, 15, 10, 70, "", "mushket1", "cartridge", 140);
+			FantomMakeCoolFighter(sld, 15, 10, 70, "", "mushket1", "bullet", 140);
 			switch (i)
 			{
 				case 1:
@@ -2271,7 +2334,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 4; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("PZ_MorningStar_EnemyMush" + i, "mush_ctz_" + (rand(2) + 7), "man", "mushketer", 15, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, 15, 10, 70, "", "mushket1", "cartridge", 140);
+			FantomMakeCoolFighter(sld, 15, 10, 70, "", "mushket1", "bullet", 140);
 			switch (i)
 			{
 				case 1:
@@ -2617,7 +2680,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.Health.HP       = 60.0;
 		sld.Health.maxHP    = 60.0;
 		SetCharacterPerk(sld, "ShipEscape");
-		Return_LongwayOfficer();
+		ReturnOfficer_Longway();
 		
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition.l1 = "location";
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition.l1.location = "Charles_town";
@@ -2655,7 +2718,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 	else if (sQuestName == "PZ_ToCapstervilleChurch") {
 		chrDisableReloadToLocation = false;
-		Return_LongwayOfficer();
+		ReturnOfficer_Longway();
 		QuestSetCurrentNode("Charles_Priest", "Gravel1");
 	}
 	
@@ -2838,8 +2901,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_NeedToTortuga") {
 		chrDisableReloadToLocation = false;
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		
 		sld = characterFromID("Longway");
 		LAi_SetActorType(sld);
@@ -2854,8 +2917,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_LongwayToPiratesShipyard") {
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		sld = characterFromID("Longway");
 		LAi_SetActorType(sld);
 		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_LongwayToPiratesShipyard2", 4);
@@ -2870,8 +2933,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_LongwayToLaVegaTavern") {
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		sld = characterFromID("Longway");
 		LAi_SetActorType(sld);
 		LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "PZ_LongwayToLaVegaTavern2", 4);
@@ -3311,7 +3374,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		SetCharacterPerk(sld, "HardHitter");
 		SetCharacterPerk(sld, "Sliding");
 		SetCharacterPerk(sld, "BladeDancer");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 		ChangeCharacterAddressGroup(sld, "PortPax_town", "quest", "quest1");
@@ -3850,14 +3913,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		{
 			sld = CharacterFromID("Longway");
 			ChangeCharacterAddressGroup(sld, PChar.location, "officers", "reload2_2");
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			AddQuestRecord("PZ", "46");
 		}
 		else
 		{
 			sld = CharacterFromID("Longway");
 			ChangeCharacterAddressGroup(sld, "none", "", "");
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			RemovePassenger(pchar, sld);
 			AddQuestRecord("PZ", "47");
 		}
@@ -3965,7 +4028,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		if (CheckAttribute(pchar, "questTemp.FMQT_ObchistilSunduk")) AddQuestUserData("PZ", "sText1", StringFromKey("Longway_64"));
 		
 		pchar.questTemp.PZ_LongwayRyadom = true;
-		Return_LongwayOfficer();
+		ReturnOfficer_Longway();
 		
 		sld = CharacterFromID("Longway");
 		LAi_SetActorType(sld);
@@ -3988,7 +4051,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		{
 			sld = characterFromID("Longway");
 			ChangeCharacterAddressGroup(sld, "Tortuga_BrothelElite", "officers", "reload1_3");
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 		}
 		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Legko") && !CheckAttribute(pchar, "questTemp.PZ_DevushkaMertva"))
 		{
@@ -3997,14 +4060,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 				sld = CharacterFromID("Mary");
 				EquipCharacterByItem(sld, "blade_31");
 				ChangeCharacterAddressGroup(sld, "Tortuga_BrothelElite", "officers", "reload1_2");
-				Return_MaryOfficer();
+				ReturnOfficer_Mary();
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				sld = CharacterFromID("Helena");
 				EquipCharacterByItem(sld, "pirate_cutlass");
 				ChangeCharacterAddressGroup(sld, "Tortuga_BrothelElite", "officers", "reload1_2");
-				Return_HelenaOfficer();
+				ReturnOfficer_Helena();
 			}
 		}
 		
@@ -4093,7 +4156,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		SetCharacterPerk(sld, "GunProfessional");
 		SetCharacterPerk(sld, "Sliding");
 		SetCharacterPerk(sld, "HardHitter");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		AddItems(sld, "potion2", 1);
 		
 		PChar.quest.PZ_EliteBrothelCreateChangShin2.win_condition.l1 = "location";
@@ -4115,7 +4178,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		{
 			sld = CharacterFromID("Longway");
 			ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto1");
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			sld = characterFromID("PZ_ChangShin");
 			LAi_SetStayType(sld);
@@ -4137,13 +4200,13 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			{
 				sld = CharacterFromID("Mary");
 				ChangeCharacterAddressGroup(sld, PChar.location, "barmen", "bar2");
-				Return_MaryOfficer();
+				ReturnOfficer_Mary();
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				sld = CharacterFromID("Helena");
 				ChangeCharacterAddressGroup(sld, PChar.location, "barmen", "bar2");
-				Return_HelenaOfficer();
+				ReturnOfficer_Helena();
 			}
 		}
 		
@@ -4186,7 +4249,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_ChangShinFightWithLongway") {
-		Return_LongwayOfficer();
+		ReturnOfficer_Longway();
 		
 		sld = characterFromID("PZ_ChangShin");
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -4197,8 +4260,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_ChangShinAndLongwayFightMe") {
 		if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Legko") && !CheckAttribute(pchar, "questTemp.PZ_DevushkaMertva"))
 		{
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		}
 		
 		sld = characterFromID("Longway");
@@ -4274,9 +4337,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		
 		LAi_SetPlayerType(pchar);
 		
-		if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) Return_LongwayOfficer();
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+		if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) ReturnOfficer_Longway();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		
 		PChar.quest.PZ_EliteBrothelFinalDialog.win_condition.l1 = "location";
 		PChar.quest.PZ_EliteBrothelFinalDialog.win_condition.l1.location = "Tortuga_brothelElite";
@@ -4697,9 +4760,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_TortureRoom_Levasser_Mertv2") {
 		LAi_SetPlayerType(pchar);
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
-		if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) Return_LongwayOfficer();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
+		if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) ReturnOfficer_Longway();
 		pchar.questTemp.PZ_LevasserMertv = true;
 		pchar.questTemp.PZ_LevasserPobezhden = true;
 		sld = CharacterFromID("Levasser");
@@ -4858,8 +4921,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_SDevushkoyKShin") {
 		LAi_SetPlayerType(pchar);
 		chrDisableReloadToLocation = false;
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		AddQuestRecord("PZ", "49");
 		PChar.quest.PZ_Etap6_BrothelPoiskSestry.win_condition.l1 = "location";
 		PChar.quest.PZ_Etap6_BrothelPoiskSestry.win_condition.l1.location = "Tortuga_brothelElite";
@@ -4886,7 +4949,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		Island_SetReloadEnableGlobal("Tortuga", true);
 		bQuestDisableMapEnter = false;
 		LAi_SetPlayerType(pchar);
-		QuestSetCurrentNode("Puancie", "PZ1");	//На Капстервиль
+		QuestSetCurrentNode("Puancie", "PZ_1");	//На Капстервиль
 		AddMapQuestMarkCity("Charles", true);
 		AddLandQuestMark(characterFromId("Puancie"), "questmarkmain");
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
@@ -4894,7 +4957,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			sld = characterFromID("Mary");
 			LAi_SetImmortal(sld, false);
 			LAi_RemoveCheckMinHP(sld);
-			Return_MaryOfficer();
+			ReturnOfficer_Mary();
 			
 			pchar.questTemp.MarySexBlock = true;
 			pchar.quest.Mary_giveme_sex.over = "yes";
@@ -4905,14 +4968,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			sld = characterFromID("Helena");
 			LAi_SetImmortal(sld, false);
 			LAi_RemoveCheckMinHP(sld);
-			Return_HelenaOfficer();
+			ReturnOfficer_Helena();
 		}
 		if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
 		{
 			sld = characterFromID("Longway");
 			LAi_SetImmortal(sld, false);
 			LAi_RemoveCheckMinHP(sld);
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 		}
 		AddQuestRecord("PZ", "48");
 		if (!CheckAttribute(pchar, "questTemp.PZ_DevushkaMertva"))
@@ -4968,7 +5031,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		chrDisableReloadToLocation = false;
 		pchar.questTemp.GoldenGirl_Block = true;	// Запрещаем квест Дороже Золота
 		
-		Return_BakerOfficer();
+		ReturnOfficer_Baker();
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = CharacterFromID("Helena");
 		RemovePassenger(pchar, sld);
@@ -5062,14 +5125,14 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_DevushkaSnovaOfficer3") {
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
 		{
-			Return_MaryOfficer();
+			ReturnOfficer_Mary();
 			sld = CharacterFromID("Mary");
 			EquipCharacterByItem(sld, "blade_31");
 			DeleteAttribute(pchar, "questTemp.MarySexBlock");
 		}
 		if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 		{
-			Return_HelenaOfficer();
+			ReturnOfficer_Helena();
 			sld = CharacterFromID("Helena");
 			EquipCharacterByItem(sld, "pirate_cutlass");
 		}
@@ -5152,7 +5215,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		locCameraFollow();
 		sld = characterFromID("Puancie");
 		sld.dialog.filename = "Governor\Puancie.c";
-		sld.dialog.currentnode = "PZ5";
+		sld.dialog.currentnode = "PZ_5";
 		LAi_SetActorType(sld);
 		LAi_ActorSetHuberMode(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);

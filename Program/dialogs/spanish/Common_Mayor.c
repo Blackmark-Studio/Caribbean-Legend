@@ -2423,7 +2423,7 @@ void ProcessDialogEvent()
 	case "TakePirateship_agree":
 		npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_complete";
 		pchar.GenQuest.TakePirateship.MayorId = npchar.id; // Id мэра, чтобы знать, кто дал квест
-		dialog.text = "En el más cercano " + FindRussianDaysString(pchar.GenQuest.TakePirateship.Terms) + " su barco llamado '" + pchar.GenQuest.TakePirateship.ShipName + "' estará navegando por las costas cerca de " + XI_ConvertString("Colony" + pchar.GenQuest.TakePirateship.City + "Gen") + ". Encuéntralo y mátalo. Manda alimentar a los peces con el barco, aborda el barco, no me importa. Solo me importa que ese maldito pirata deje de profanar nuestro mar con su presencia\nPor esta tarea estoy dispuesto a pagarte " + FindRussianMoneyString(sti(pchar.GenQuest.TakePirateship.Money)) + ". No pierda tiempo, capitán: este canalla no le estará esperando en " + XI_ConvertString("Colony" + pchar.GenQuest.TakePirateship.City + "Gen") + "Ve, y ¡que Dios te ayude!";
+		dialog.text = "En los próximos " + FindRussianDaysString(pchar.GenQuest.TakePirateship.Terms) + " su barco llamado '" + pchar.GenQuest.TakePirateship.ShipName + "' navegará por las costas cercanas de " + XI_ConvertString("Colony" + pchar.GenQuest.TakePirateship.City + "Gen") + ". Encuéntralo y hazlo desaparecer, alimenta a los peces con el barco, aborda el barco, no me importa. Solo quiero que ese maldito pirata deje de profanar nuestro mar con su presencia\nPor esta tarea estoy dispuesto a pagarte " + FindRussianMoneyString(sti(pchar.GenQuest.TakePirateship.Money)) + ". No pierda tiempo, capitán: este canalla no le estará esperando en " + XI_ConvertString("Colony" + pchar.GenQuest.TakePirateship.City + "Gen") + "Ve, y ¡que Dios te ayude!";
 		link.l1 = "¿Levantando anclas ya, " + GetAddress_FormToNPC(NPChar) + "? ¡No esperarás mucho tiempo!";
 		link.l1.go = "exit";
 		pchar.quest.TakePirateship.win_condition.l1 = "location";
@@ -2696,7 +2696,7 @@ void ProcessDialogEvent()
 		DeleteAttribute(pchar, "GenQuest." + QuestName);
 		DeleteAttribute(pchar, "GenQuest.questName");
 		npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; // реплику вертаем
-		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу еще один не даем
+		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу ещё один не даем
 		CloseQuestHeader("MayorsQuestsList");
 		break;
 	case "All_Found":
@@ -2715,7 +2715,7 @@ void ProcessDialogEvent()
 		DeleteAttribute(pchar, "GenQuest." + QuestName);
 		DeleteAttribute(pchar, "GenQuest.questName");
 		npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; // реплику вертаем
-		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу еще один не даем
+		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу ещё один не даем
 		CloseQuestHeader("MayorsQuestsList");
 		AddQuestRecord("MayorsQuestsList", "21");
 		AddQuestUserData("MayorsQuestsList", "ColonyName", XI_ConvertString("Colony" + npchar.city + "Gen"));
@@ -2748,7 +2748,7 @@ void ProcessDialogEvent()
 		DeleteAttribute(pchar, "GenQuest." + QuestName);
 		DeleteAttribute(pchar, "GenQuest.questName");
 		npchar.greeting = NationShortName(sti(npchar.nation)) + "_gov_common"; // реплику вертаем
-		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу еще один не даем
+		SaveCurrentNpcQuestDateParam(npchar, "work_date");					   // сразу ещё один не даем
 		// инкремент в базу заданий мэров
 		sTemp = npchar.City;
 		if (!CheckAttribute(pchar, "GenQuest.MayorQuestsList." + sTemp))
@@ -3031,19 +3031,9 @@ void ProcessDialogEvent()
 	case "JusticeOnSale_2":
 		dialog.text = "Por supuesto, capitán. Aquí, por favor, acepte esta modesta recompensa personalmente de mi parte.";
 		link.l1 = "Gracias.";
-		link.l1.go = "JusticeOnSale_3";
-		break;
-
-	case "JusticeOnSale_3":
-		AddQuestRecord("JusticeOnSale", "5");
-		CloseQuestHeader("JusticeOnSale");
-
-		AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
-
-		DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
-
-		DialogExit();
-		break;
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_1");
+	break;
 
 	case "JusticeOnSale_4":
 		dialog.text = "¡Tienes razón, capitán! ¡No podemos dejarlo así! Te pediría que te dirigieras a " + XI_ConvertString(PChar.GenQuest.JusticeOnSale.ShoreId + "Dat") + ", ¡encuentra su barco y arresta a toda su banda! Si se resisten, usa la fuerza y no dudes en hacerlo!";
@@ -3054,57 +3044,9 @@ void ProcessDialogEvent()
 	case "JusticeOnSale_5":
 		dialog.text = "Ahora ve. Navega hasta allí y asegúrate de que nadie escape de la justicia. Creo que primero necesitarás desembarcar en la orilla, y luego podrás encargarte del barco.";
 		link.l1 = "...";
-		link.l1.go = "JusticeOnSale_6";
-		break;
-
-	case "JusticeOnSale_6":
-		sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", sti(PChar.rank) + 5, PIRATE, -1, true, "quest"));
-		sld.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
-		sld.Ship.Name = PChar.GenQuest.JusticeOnSale.ShipName;
-		SetBaseShipData(sld);
-		SetCrewQuantityFull(sld);
-		Fantom_SetCannons(sld, "pirate");
-		Fantom_SetBalls(sld, "pirate");
-		Fantom_SetUpgrade(sld, "pirate");
-		SetCaptanModelByEncType(sld, "pirate");
-		SetRandGeraldSail(sld, PIRATE);
-
-		Character_SetAbordageEnable(sld, false);
-
-		Group_FindOrCreateGroup("JusticeOnSaleGroup");
-		Group_AddCharacter("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-		Group_SetGroupCommander("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-		Group_SetAddress("JusticeOnSaleGroup", PChar.curislandid, "reload", Island_GetLocationReloadLocator(PChar.curislandid, PChar.GenQuest.JusticeOnSale.ShoreId));
-		Group_SetTaskNone("JusticeOnSaleGroup");
-		Group_LockTask("JusticeOnSaleGroup");
-
-		sld.AlwaysFriend = true;
-		SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
-
-		SetCharacterShipLocation(sld, PChar.GenQuest.JusticeOnSale.ShoreId);
-
-		DeleteAttribute(sld, "SinkTenPercent");
-		DeleteAttribute(sld, "SaveItemsForDead");
-		DeleteAttribute(sld, "DontClearDead");
-		DeleteAttribute(sld, "AboardToFinalDeck");
-
-		sld.AlwaysSandbankManeuver = true;
-		sld.AnalizeShips = true;
-		sld.DontRansackCaptain = true;
-
-		sld = &Locations[FindLocation(PChar.GenQuest.JusticeOnSale.ShoreId)];
-		sld.DisableEncounters = true;
-
-		PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1 = "location";
-		PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1.location = PChar.GenQuest.JusticeOnSale.ShoreId;
-		PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.function = "JusticeOnSale_ShoreEnterFromMayor";
-
-		PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1 = "Character_sink";
-		PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1.character = "JusticeOnSale_ShipPirate";
-		PChar.Quest.JusticeOnSale_PirateShip_Sink.function = "JusticeOnSale_PirateShip_Sink";
-
-		DialogExit();
-		break;
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_2");
+	break;
 
 	case "JusticeOnSale_7":
 		dialog.text = "Gracias por tu ayuda. Esos sinvergüenzas recibieron su merecido. Por favor, permíteme presentarte esta modesta recompensa personalmente de mi parte. Aprecio enormemente el orden y la paz en mi ciudad.";

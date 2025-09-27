@@ -1,4 +1,3 @@
-
 sea_Cancel {Отмена}
 sea_Moor {Причалить}
 sea_Cabin {Каюта}
@@ -32,14 +31,12 @@ sea_SailSW {Юго-Запад}
 sea_SailW {Запад}
 sea_Boat {Выслать шлюпку}
 sea_Bomb {Спустить мину}
-
 sea_Brander {Брандер}
 sea_ImmediateReload {Перезарядка}
 sea_LightRepair {Неотложный ремонт}
 sea_InstantRepair {Ремонт в бою}
 sea_SandbankManeuver {Манёвры на мелководье}
 sea_Turn180 {Быстрый разворот}
-
 land_TalkSelf {Мысли вслух}
 land_ItemsDead {Обыскать труп}
 land_FastReload {Переход}
@@ -59,21 +56,19 @@ land_SelfRepair {Ремонт}
 land_Alchemy {Алхимия}
 land_MapAtlas {Картографический атлас}
 land_Rest {Отдохнуть}
-
 go_store {Магазин}
 go_shipyard {Верфь}
 go_tavern {Таверна}
 go_residence {Резиденция}
 go_port {Порт}
 go_loanshark {Ростовщик}
-go_church {Церковь}	  
+go_church {Церковь}
 go_prison {Тюрьма}
 go_brothel {Бордель}
 go_usurer {Ростовщик}
 go_portman {Портовое управление}
 go_duel {Дуэль}
 go_exittown {Городские ворота}
-
 go_Caroline {Фрегат 'Каролина'}
 go_CeresSmithy_Mary {Мэри Каспер}
 go_CeresSmithy_Jurgen {Юрген Шмидт}
@@ -86,7 +81,6 @@ go_ProtectorFisher {Эдвард Блэк}
 go_SanAugustineResidence {Стивен Додсон}
 go_SanGabrielMechanic {Хенрик Ведекер}
 go_TartarusPrison {Бэттлшип 'Тартарус'}
-
 worldmap_toisland {Выйти в море}
 worldmap_tosea {Выйти в море}
 worldmap_toship {Атаковать}

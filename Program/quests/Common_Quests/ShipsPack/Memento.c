@@ -10,22 +10,18 @@ void Memento_init()
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_cap", "mercen_19", "man", "man", 30, PIRATE, -1, false, "governor"));
 	FantomMakeCoolSailor(sld, SHIP_MEMENTO, StringFromKey("Memento_1"), CANNON_TYPE_CANNON_LBS18, 105, 105, 105);
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_SP_3low", "pistol4", "bullet", 200);
+	InitChrRebalance(sld, GEN_TYPE_CAPTAIN, GEN_BOSS, true, 0.6); // RB Грим
 	// SetSailsColor(sld, 8);
 	sld.ship.Crew.Morale = 100;
 	ChangeCrewExp(sld, "Sailors",   100);
 	ChangeCrewExp(sld, "Cannoners", 100);
 	ChangeCrewExp(sld, "Soldiers",  100); 
-	LAi_SetHP(sld, 470.0, 470.0);
-	SetAllPerksToChar(sld, true);
 	sld.name = StringFromKey("Memento_2");
 	sld.lastname = StringFromKey("Memento_3");
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull  = "q";
 	RealShips[sti(sld.Ship.Type)].EmblemedSails.normalTex = "ships/parus_black0.tga";
 	RealShips[sti(sld.Ship.Type)].ShipSails.Gerald_Name = "pir6.tga.tx";
 	sld.DontRansackCaptain = true; //квестовые не сдаются
-	SetSPECIAL(sld, 10, 10, 10, 10, 10, 10, 10);
-	SetSelfSkill(sld, 100, 100, 100, 100, 100);
-	SetShipSkill(sld, 75, 75, 75, 75, 75, 75, 75, 75, 75);
 	AddBonusEnergyToCharacter(sld, 50000);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
@@ -235,6 +231,16 @@ void Memento_Book(string qName)
 }
 
 //===============Абордаж Мементо, в каюте==============
+void Memento_MortimerGrimDead_function()
+{
+	if (CharacterIsAlive(&Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]))
+	{
+		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+		LAi_KillCharacter(sld);
+	}
+	DoQuestFunctionDelay("Memento_MortimerGrimDead_Alonso", 0.5);
+}
+
 void Memento_MortimerGrimDead_Alonso(string qName)
 {
 	DoQuestCheckDelay("hide_weapon", 1.2);
@@ -378,7 +384,6 @@ void Memento_Dich_EtapTwo_Paluba_3(string qName)
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-	//LAi_ActorGoToLocator(sld, "rld", "aloc2", "Memento_Dich_EtapTwo_Paluba_4", -1);
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
 	sld.dialog.currentnode = "Memento_Dich_EtapOne_Alonso_1";
 	LAi_SetActorType(sld);
@@ -523,14 +528,16 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 	for (i=1; i<=6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Memento_Skelet_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", sti(pchar.rank), PIRATE, -1, true, "soldier"));
+		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Скелеты Грима
 		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc"+i);
 		LAi_SetLayType(sld);
 		LAi_CharacterEnableDialog(sld);
 		sld.CantLoot = true;
 		LAi_CharacterDisableDialog(sld);
 		sld.BlockSnore = true;
-	}
+	}	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
+	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Скелеты Грима
 	sld.name 	= StringFromKey("SharlieTrial_29");
 	sld.lastname = StringFromKey("SharlieTrial_30");
 	GiveItem2Character(sld, "blade_10");
@@ -545,15 +552,33 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 
 void Memento_Dich_EtapThree_Paluba_6()
 {
-	pchar.questTemp.Memento_BitvaSkeletMusic = true;
+	pchar.questTemp.Quest_BitvaSkeletMusic = true;
 	LAi_SetCheckMinHP(pchar, 1, true, "");
 	for (i=1; i<=6; i++)
 	{
 		sld = CharacterFromID("Memento_Skelet_"+i);
 		LAi_SetActorType(sld);
 		LAi_ActorSetGroundSitMode(sld);
-		LAi_ActorAnimation(sld, "ground_standup", "Memento_Dich_EtapThree_Paluba_7", 7);
+		LAi_ActorAnimation(sld, "ground_standup", "Memento_Dich_EtapThree_Paluba_6_1", 7);
 	}
+}
+
+void Memento_Dich_EtapThree_Paluba_7()
+{
+	LAi_LocationFightDisable(loadedLocation, false);
+	LAi_SetFightMode(pchar, true);
+	sld = CharacterFromID("Memento_Alonso");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	for (i=1; i<=6; i++)
+	{
+		sld = CharacterFromID("Memento_Skelet_"+i);
+		LAi_SetWarriorType(sld);
+		LAi_group_MoveCharacter(sld, "EnemyFight");
+	}
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheckFunction("EnemyFight", "Memento_Dich_EtapThree_Paluba_8");
 }
 
 void Memento_Dich_EtapThree_Paluba_8(string qName)
@@ -572,8 +597,9 @@ void Memento_Dich_EtapThree_Paluba_9(string qName)
 
 void Memento_Dich_EtapThree_Paluba_10()
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Memento_Cap_phantom", "mercen_19", "man", "man", sti(pchar.rank), PIRATE, -1, true, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("Memento_Cap_phantom", "mercen_19", "man", "man", sti(pchar.rank), PIRATE, -1, true, "soldier"));	
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_SP_3low", "pistol4", "bullet", 0);
+	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_BOSS, true, 0.6); // RB Грим
 	sld.name = StringFromKey("Memento_2");
 	sld.lastname = StringFromKey("Memento_3");
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -587,11 +613,6 @@ void Memento_Dich_EtapThree_Paluba_10()
 	//LAi_ActorFollow(sld, pchar, "ActorDialog_Any2Pchar", 2.0);
 	LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 2.0);
 	
-	
-	LAi_SetHP(sld, 300.0, 300.0);
-	SetAllPerksToChar(sld, true);
-	SetSPECIAL(sld, 10, 10, 10, 10, 10, 10, 10);
-	SetSelfSkill(sld, 100, 100, 100, 100, 100);
 	AddBonusEnergyToCharacter(sld, 50000);
 	LAi_SetCurHPMax(sld);
 	sld.viper = true;
@@ -607,8 +628,20 @@ void Memento_Dich_EtapThree_Paluba_11()
 	LAi_SetImmortal(sld, false);
 	LAi_SetWarriorType(sld);
     LAi_group_MoveCharacter(sld, "EnemyFight");
-	LAi_SetCheckMinHP(sld, 1, true, "Memento_Dich_EtapThree_Paluba_12");
+	LAi_SetCheckMinHP(sld, 1, true, "Memento_Dich_EtapThree_Paluba_11_1");
 	sld.lifeday = 0;
+}
+
+void Memento_Dich_EtapThree_Paluba_12()
+{
+	LAi_LocationFightDisable(loadedLocation, true);
+	DoQuestCheckDelay("hide_weapon", 1.2);
+	
+	sld = CharacterFromID("Memento_Cap_phantom");
+	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
+	sld.dialog.currentnode = "Memento_MortimerGrim_phantom_21";
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
 void Memento_Dich_EtapThree_Paluba_13()
@@ -631,7 +664,7 @@ void Memento_Dich_EtapThree_Paluba_14()
 {
 	//CreateSea(EXECUTE, REALIZE);
 	//CreateWeather(EXECUTE,REALIZE);
-	DeleteAttribute(pchar, "questTemp.Memento_BitvaSkeletMusic");
+	DeleteAttribute(pchar, "questTemp.Quest_BitvaSkeletMusic");
 	SetCurrentTime(8, 00);
 	CreateWeatherEnvironment();
 	StartQuestMovie(true, false, true);
@@ -874,53 +907,16 @@ bool Memento_QuestComplete(string sQuestName, string qname)
 	
 	if (sQuestName == "Memento_MortimerGrimDead")
 	{
-		if (CharacterIsAlive(&Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)]))
-		{
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
-			LAi_KillCharacter(sld);
-		}
-		DoQuestFunctionDelay("Memento_MortimerGrimDead_Alonso", 0.5);
+		Memento_MortimerGrimDead_function();
 	}
-	else if (sQuestName == "Memento_Dich_EtapTwo_Paluba_4")
+	else if (sQuestName == "Memento_Dich_EtapThree_Paluba_6_1")
 	{
-		sld = CharacterFromID("Memento_Alonso");
-		sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
-		sld.dialog.currentnode = "Memento_Dich_EtapOne_Alonso_1";
-		//LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", 0, 0);
+		Memento_Dich_EtapThree_Paluba_7();
 	}
-	else if (sQuestName == "Memento_Dich_EtapThree_Paluba_7")
+	else if (sQuestName == "Memento_Dich_EtapThree_Paluba_11_1")
 	{
-		LAi_LocationFightDisable(loadedLocation, false);
-		LAi_SetFightMode(pchar, true);
-		sld = CharacterFromID("Memento_Alonso");
-		LAi_SetWarriorType(sld);
-		LAi_group_MoveCharacter(sld, "EnemyFight");
-		for (i=1; i<=6; i++)
-		{
-			sld = GetCharacter(NPC_GenerateCharacter("Memento_Skelet_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", sti(pchar.rank), PIRATE, -1, true, "soldier"));
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-		}
-		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-		LAi_group_SetCheckFunction("EnemyFight", "Memento_Dich_EtapThree_Paluba_8");
+		Memento_Dich_EtapThree_Paluba_12();
 	}
-	else if (sQuestName == "Memento_Dich_EtapThree_Paluba_12")
-	{
-		LAi_LocationFightDisable(loadedLocation, true);
-		DoQuestCheckDelay("hide_weapon", 1.2);
-		
-		sld = CharacterFromID("Memento_Cap_phantom");
-		sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
-		sld.dialog.currentnode = "Memento_MortimerGrim_phantom_21";
-		LAi_SetActorType(sld);
-		LAi_ActorDialog(sld, pchar, "", -1, 0);
-	}
-	/*else if (sQuestName == "Memento_Dich_EtapThree_Paluba_19")
-	{
-		CharacterTurnByLoc(pchar, "quest", "quest3");
-	}*/
 	else
 	{
 		condition = false;

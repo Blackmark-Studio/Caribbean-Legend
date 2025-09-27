@@ -1,69 +1,35 @@
-
 new_string
 {
 
 }
-
 Cheat_success {Done!}
-
 Cheat_on {Cheat Enabled}
-
 Cheat_off {Cheat Disabled}
-
 Cheat_Comming_soon {Coming soon!}
-
 f1 {Add 35 skill points}
-
 f2 {Add one Naval Perk point}
-
 f3 {Add one Personal Perk point}
-
-f4 {+ 10 Max HP }
-
+f4 {+ 10 Max HP}
 f5 {+10 Max Energy}
-
 f6 {Inrease Honour}
-
 f7 {Decrease Honour}
-
 f8 {Increase Fame}
-
 f9 {Decrease Fame}
-
 f10 {God Mode on/off}
-
 f11 {Increase Authority}
-
 f12 {Improve Vitality}
-
 f13 {+1000 Max Inventory Capacity}
-
 f14 {х10 equipped cold arm's damage}
-
 f15 {х10 equipped fire arm's damage}
-
 f16 {х10 equipped fire arm's reload time}
-
-f17 {Set 100% blocking break chance }
-
+f17 {Set 100% blocking break chance}
 f18 {x10 Eneregy Regen}
-
 f19 {x10 HP Regen}
-
 f20 {Set 100% blocking chance}
-
 f21 {Taino Poison on/off}
-
 f22 {Unlock Duelist background perks}
-
 f23 {Unlock Accountant background perks}
-
 f24 {Unlock Athlete background perks}
-
 f25 {Unlock Sharpshooter background perks}
-
 f26 {Disable Navigation requirements}
-
 f27 {Sober the hero up if drunk}
-
-

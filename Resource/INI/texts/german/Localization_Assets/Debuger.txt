@@ -1,4 +1,1 @@
-Debuger_1
-{
-Unsere Stadt @<GetCN(city)> wird belagert!
-}
+Debuger_1 {Unsere Stadt @<GetCN(city)> wird belagert!}

@@ -1,106 +1,23 @@
-HelenDrinking_1
-{
-Francois
-}
-HelenDrinking_2
-{
-de Tavann
-}
-
-HelenDrinking_3
-{
-Vit
-}
-HelenDrinking_4
-{
-Needles
-}
-
-HelenDrinking_5
-{
-Rainbow
-}
-
-HelenDrinking_6
-{
-Czy ja śnię? Gdzie się wszyscy podziali?
-}
-
-HelenDrinking_7
-{
-Powinienem widzieć się z Janem i przeprosić.
-}
-
-HelenDrinking_8
-{
-Amelia
-}
-HelenDrinking_9
-{
-
-}
-
-HelenDrinking_10
-{
-Dane
-}
-HelenDrinking_11
-{
-
-}
-
-HelenDrinking_12
-{
-Lucky
-}
-HelenDrinking_13
-{
-
-}
-
-HelenDrinking_14
-{
-I jak okropne jest mieć dwa domy. Och, Mary... Po wszystkim, co się wydarzyło, co powinniśmy teraz zrobić, my troje?
-}
-
-HelenDrinking_15
-{
-Alonso
-}
-HelenDrinking_16
-{
-
-}
-
-HelenDrinking_17
-{
-Richard
-}
-HelenDrinking_18
-{
-Small
-}
-
-HelenDrinking_19
-{
-Helen zgadza się
-}
-HelenDrinking_20
-{
-Helen nie zgadza się
-}
-
-HelenDrinking_21
-{
-Drewno twarde dostarczone do Twojej ładowni!
-}
-
-HelenDrinking_22
-{
-~ zdobywa +1 do ~
-}
-
-HelenDrinking_23
-{
-~ zdobywa +1 do ~
-}
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {Czy ja śnię? Gdzie się wszyscy podziali?}
+HelenDrinking_7 {Powinienem widzieć się z Janem i przeprosić.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {I jak okropne jest mieć dwa domy. Och, Mary... Po wszystkim, co się wydarzyło, co powinniśmy teraz zrobić, my troje?}
+HelenDrinking_15 {Alonso}
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 {Helen zgadza się}
+HelenDrinking_20 {Helen nie zgadza się}
+HelenDrinking_21 {Drewno twarde dostarczone do Twojej ładowni!}
+HelenDrinking_22 {~ zdobywa +1 do ~}
+HelenDrinking_23 {~ zdobywa +1 do ~}

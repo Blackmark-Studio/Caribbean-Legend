@@ -373,7 +373,6 @@ void ReloadStartFade()
 			mc.location.from_sea = "";
 		}
 		Partition_SetValue("after");// Дележ добычи и уход на сушу
-		ProcessHullDecrease(); // учет безвозвратной убыли корпуса
 	}
 }
 

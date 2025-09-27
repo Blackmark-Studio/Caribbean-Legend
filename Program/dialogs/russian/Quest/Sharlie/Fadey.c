@@ -1,3 +1,5 @@
+int iFadeyPseudoGlobal;
+
 // Фадей Московит
 void ProcessDialogEvent()
 {
@@ -5,6 +7,7 @@ void ProcessDialogEvent()
 	aref Link, NextDiag;
 	int rate;
 	string sTemp;
+    bool bOk;
 
 	DeleteAttribute(&Dialog,"Links");
 
@@ -15,6 +18,21 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
+			//--> LoyaltyPack
+			if (GetDLCenabled(DLC_APPID_1))
+			{
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "ready"))
+				{
+					link.l32 = "Фадей, вам знаком человек по имени Алонсо?";
+					link.l32.go = "LoyaltyPack_Fadey_1";
+				}
+				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "money") && PCharDublonsTotal() >= 1000)
+				{
+					link.l32 = "Фадей, я готов выкупить ваш зерцальный нагрудник.";
+					link.l32.go = "LoyaltyPack_Fadey_1000";
+				}
+			}
+			//<-- LoyaltyPack
 			if (CheckAttribute(pchar, "questTemp.Sharlie"))
 			{
 				if (pchar.questTemp.Sharlie == "fadey")
@@ -133,9 +151,9 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar,"questTemp.Mtraxx.MagicBox") && pchar.questTemp.Mtraxx.MagicBox == "FindMoney")
 				{
 					dialog.text = "А, это опять вы, мой дорогой друг! Ну что, нашли деньги?";
-					if(PCharDublonsTotal() >= 300)
+					if(PCharDublonsTotal() >= 75)
 					{
-						link.l1 = "Пожалуйте, месье Фадей! Вот ваши 300 дублонов.";
+						link.l1 = "Пожалуйте, месье Фадей! Вот ваши 75 дублонов.";
 						link.l1.go = "pistols_4D";
 					}
 					if(sti(Pchar.money) >= 40000)
@@ -143,7 +161,7 @@ void ProcessDialogEvent()
 						link.l2 = "Пожалуйте, месье Фадей! Вот ваши 40 000 песо.";
 						link.l2.go = "pistols_4P";
 					}
-					if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) 
+					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) 
 					{
 						link.l3 = "Нет, просто зашёл. Я ещё в поисках нужной суммы.";
 						link.l3.go = "exit";
@@ -162,9 +180,9 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar,"questTemp.Mtraxx.MagicBox") && pchar.questTemp.Mtraxx.MagicBox == "FindMoney")
 				{
 					dialog.text = "А, это опять вы, мой дорогой друг! Ну что, нашли деньги?";
-					if(PCharDublonsTotal() >= 300)
+					if(PCharDublonsTotal() >= 75)
 					{
-						link.l1 = "Держите 300 дублонов. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей. Вы просто не представляете, как меня выручили?!";
+						link.l1 = "Держите 75 дублонов. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей. Вы просто не представляете, как меня выручили?!";
 						link.l1.go = "pistols_5D";
 					}
 					if(sti(Pchar.money) >= 40000)
@@ -172,7 +190,7 @@ void ProcessDialogEvent()
 						link.l2 = "Держите 40 000 песо. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей?! Вы просто не представляете, как меня выручили?!";
 						link.l2.go = "pistols_5P";
 					}
-					if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 					{
 						link.l3 = "Нет, просто зашёл. Я ещё в поисках нужной суммы.";
 						link.l3.go = "exit";
@@ -182,6 +200,27 @@ void ProcessDialogEvent()
 					break;
 				}
 				// <-- legendary edition
+				//--> Дикая Роза
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey"))
+				{
+					dialog.text = "А вот и вы, мил человек! Как узнал я, что бросил ваш корабль якорь в нашей гавани, вознадеялся, что пожалуете ко мне с визитом.";
+					link.l1 = "Здравствуйте, "+npchar.name+". Не буду утомлять вас долгим рассказом. Я, со своей спутницей, Мэри, разыскиваем её отца, бесследно исчезнувшего двадцать лет назад...";
+					link.l1.go = "WildRose_Fadey_4";
+					break;
+				}
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_2")) 
+				{
+					link.l31 = "Что до отца Мэри...";
+					link.l31.go = "WildRose_Fadey_return";
+				}
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_3"))
+				{
+					dialog.text = "А вот и вы, "+pchar.name+"!";
+					link.l1 = "Вы прямо-таки светитесь, "+npchar.name+". Ну, рассказывайте, удалось ли что-то выяснить?";
+					link.l1.go = "WildRose_Fadey_16";
+					break;
+				}
+				//<-- Дикая Роза
 				if (CheckAttribute(pchar, "questTemp.Guardoftruth.Baster_church") && pchar.questTemp.Guardoftruth.Baster_church == "seek")
 				{
 					dialog.text = "А-а, мой старый друг! Проходите-проходите, "+pchar.name+"! Как ваши дела?";
@@ -812,6 +851,228 @@ void ProcessDialogEvent()
 		break;
 		// <-- legendary edition
 		
+		//--> Дикая Роза
+		case "WildRose_Fadey_4":
+			dialog.text = "Экое дело вы затеяли, "+pchar.name+"! Замысел, знамо, добрый, да вот только разве выполнимый? Это же ж что угодно за двадцать-то лет могло с ним статься...";
+			link.l1 = "Вы правы, Фадей. Но мы потратили много времени и усилий, проделали большой путь - и уже почти у цели. Мы разузнали о нём практически всё: как его звали, о службе в английском Королевском флоте, название корабля, на котором он ходил... и некоторые другие подробности его биографии. След обрывается на кораблекрушении, которое произошло у мыса Каточе в июне 1638 года.";
+			link.l1.go = "WildRose_Fadey_5";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey");
+		break;
+
+		case "WildRose_Fadey_5":
+			dialog.text = "Каточе? Ох-х, мил человек, меня бы в те края и палкой не загнали бы - там же орды дикарей окаянных шастают. Ежели там он оказался и не сгинул в пучине морской, то, ясно как Божий день, отобедали им аборигены проклятые...";
+			link.l1 = "У нас есть свидетельства, что этот человек пережил кораблекрушение, а после - сумел добраться до Кубы. Возможно, там он и встретил свой конец, но, судя по тому, что мы о нём слышали - он был достаточно... ловок и хитёр, чтобы суметь избежать цепких лап Инквизиции. Вряд ли он остался на Кубе - скорее всего, обжился в одном из поселений Архипелага...";
+			link.l1.go = "WildRose_Fadey_6";
+		break;
+
+		case "WildRose_Fadey_6":
+			dialog.text = "В мире случается много чудес, друг мой, и возможно, стало быть, всякое. Но я пока не разумею, с какой целью вы мне обо всём этом поведали.";
+			link.l1 = ""+npchar.name+", у вас связей побольше чем у иного губернатора. Уверен, у вас на примете есть толковые парни, способные выполнять незамысловатые задачи...";
+			link.l1.go = "WildRose_Fadey_7_1";
+			link.l2 = ""+npchar.name+", вы - человек уважаемый и влиятельный. Вхожи в высший свет, имеете связи. Уверен, ваши деловые интересы выходят далеко за пределы Гваделупы. Но так как в одиночку заниматься всем вам явно не под силу, вы наверняка прибегаете к услугам доверенных лиц и просто неглупых людей, способных выполнять не самые сложные поручения...";
+			link.l2.go = "WildRose_Fadey_7_2";
+		break;
+
+		case "WildRose_Fadey_7_1":
+			dialog.text = "Вы умный и проницательный человек, "+pchar.name+". Знамо дело, вам не раз уже это говорили. Люди у меня имеются способные да знающие, тут вы истину глаголете. Но поведайте же, что вам от них требуется.";
+			link.l1 = "Я бы хотел попросить вас направить их в несколько колоний Архипелага, чтобы они попытались разузнать что-нибудь об интересующем нас человеке. Возможно, кто-то что-то о нём да слышал, или даже лично знаком. Расходы я готов покрыть в полном объёме, разумеется. "+npchar.name+", для Мэри это очень важно, и больше обратиться нам не к кому.";
+			link.l1.go = "WildRose_Fadey_8";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+		break;
+
+		case "WildRose_Fadey_7_2":
+			dialog.text = "Вы умный и проницательный человек, "+pchar.name+". Знамо дело, вам не раз уже это говорили. Люди у меня имеются способные да знающие, тут вы истину глаголете. Но поведайте же, что вам от них требуется.";
+			link.l1 = "Я бы хотел попросить вас направить их в несколько колоний Архипелага, чтобы они попытались разузнать что-нибудь об интересующем нас человеке. Возможно, кто-то что-то о нём да слышал, или даже лично знаком. Расходы я готов покрыть в полном объёме, разумеется. "+npchar.name+", для Мэри это очень важно, и больше обратиться нам не к кому.";
+			link.l1.go = "WildRose_Fadey_8";
+			AddCharacterExpToSkill(pchar, "sneak", 100);
+		break;
+
+		case "WildRose_Fadey_8":
+			dialog.text = "Разве могу я отказать такому доброму другу, как вы, "+pchar.name+"? Тем паче, коль скоро вы готовы на дело это богоугодное раскошелиться. А ежели так, назовите имя того, кого изыскать так страстно желаете.";
+			link.l1 = "Что до имени, я не уверен, но думаю, что он мог назваться Рупертом Каспером или Джошуа Нортвудом.";
+			link.l1.go = "WildRose_Fadey_9";
+			link.l2 = "Что до имени, я не уверен, но думаю, что он мог назваться Рупертом Каспером или Джошуа Нортвудом.";
+			link.l2.go = "WildRose_Fadey_9";
+		break;
+
+		case "WildRose_Fadey_9":
+			dialog.text = "Что ж, найдём молодца доброго, коли назвался он так, как вы молвите...";
+			link.l1 = "Прекрасно, "+npchar.name+". Обсудим оплату ваших услуг?";
+			link.l1.go = "WildRose_Fadey_10";
+		break;
+
+		case "WildRose_Fadey_10":
+			dialog.text = "Неприятное это дело, но, увы, необходимое.";
+			link.l1 = "Тогда давайте приступим. К испанцам и голландцам он бы вряд ли рискнул сунуться. Искомый человек немного... наследил на Антигуа, так что не имеет смысла разыскивать его там, как и, наверное, на Барбадосе. Он мог осесть на Западном Мэйне, на Ямайке, когда оттуда выбили испанцев, во французских колониях и, может, даже в пиратских поселениях.";
+			link.l1.go = "WildRose_Fadey_11";
+		break;
+
+		case "WildRose_Fadey_11":
+			dialog.text = "Скажу сразу, дорогой друг, сколько в Бас-Тере я живу, никогда о господине ни с одним из этих имён слыхивал. Стало быть, здесь и искать его не надобно. На Мартинике и Сент-Кристофере я знаю аглицких джентльменов, и его среди них также не имеется.";
+			link.l1 = "Значит, район поисков значительно сужается.";
+			link.l1.go = "WildRose_Fadey_12";
+		break;
+
+		case "WildRose_Fadey_12":
+			dialog.text = "На Тортуге, вестимо, проверить придётся - и этому же молодцу я поручу побывать в Ла-Веге, Пуэрто-Принсипе и Порт-о-Пренсе. Направлю я господ умелых в Белиз и Блювельд, а также на Ямайку да Исла-Тесоро.";
+			link.l1 = "И во сколько же мне всё это обойдётся?";
+			link.l1.go = "WildRose_Fadey_13";
+		break;
+
+		case "WildRose_Fadey_13":
+			dialog.text = "Люди это знающие, работать любящие и умеющие, а потому за услуги каждого из них придётся заплатить полторы сотенки дублонов. Посланника же, что на Тортугу, да Эспаньолу с Кубой отправится, поощрить будет надобно - полусотней золотых монет сверху. Всё-таки, четыре поселения - не одно.";
+			link.l1 = "Итого 800 дублонов... Ну, приступим к расчёту?";
+			link.l1.go = "WildRose_Fadey_14";
+		break;
+		
+		case "WildRose_Fadey_14":
+			dialog.text = "И то верно, к чему же время терять попусту? У вас при себе нужное количество золота, мил человек?";
+			if (PCharDublonsTotal() >= 800)
+			{
+				link.l1 = "Разумеется. Вот, возьмите.";
+				link.l1.go = "WildRose_Fadey_14_pay";
+			}
+			else
+			{
+				link.l1 = "Хм... У меня нет всей суммы с собой.";
+				link.l1.go = "WildRose_Fadey_14_nopay";
+			}
+		break;
+		
+		case "WildRose_Fadey_14_pay":
+			RemoveDublonsFromPCharTotal(800);
+			dialog.text = "Великолепно, мой дорогой друг! Я отправлю послания письменные своим порученцам немедля, и они тут же возьмутся за дело. Им придётся подыскать корабли, в те края направляющиеся, что времени некоторого потребует. Сам же путь от силы ветра зависит, а это в руках Господа нашего. Но так я разумею, что через месяц должны мои молодцы уже воротиться.";
+			link.l1 = "Значит, встретимся через месяц, "+npchar.name+". Спасибо вам ещё раз. Вы нас очень выручили. До встречи!";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap5_Fadey_1");
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_2");
+		break;
+		
+		case "WildRose_Fadey_14_nopay":
+			dialog.text = "Понимаю, "+pchar.name+", сумма-то, знамо, немалая. Буду ждать вас у себя, как только вы её добудете.";
+			link.l1 = "Скоро вернусь.";
+			link.l1.go = "exit";
+			pchar.questTemp.WildRose_Etap5_Fadey_2 = true;
+		break;
+		
+		case "WildRose_Fadey_return":
+			dialog.text = "Памятую, о деле вашем, дорогой друг. Полагаю, вы нашли восемь сотен дублонов?";
+			if (PCharDublonsTotal() >= 800)
+				{
+					link.l21 = "Пожалуйте, месье Фадей! Вот ваше золото. Здесь всё, как и договаривались.";
+					link.l21.go = "WildRose_Fadey_14_pay";
+				}
+			link.l31 = "Я ещё в поисках нужной суммы, но не волнуйтесь, я не заставлю себя долго ждать.";
+			link.l31.go = "exit";
+		break;
+		
+		case "WildRose_Fadey_16":
+			dialog.text = "Удалось, друг мой - ох, как удалось! Все мои люди воротились ни с чем, кроме одного. Жером Совернье, которого я отправил в Белиз, не вернулся - но прислал весточку. С добрыми для вас новостями.";
+			link.l1 = "Он отправил вам письмо? Можем мы с ним ознакомиться?";
+			link.l1.go = "WildRose_Fadey_17";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_3");
+		break;
+
+		case "WildRose_Fadey_17":
+			dialog.text = "Разумеется, "+pchar.name+". Я специально сберёг его для вас, знал, что вы захотите прочесть. Прошу вас, друг мой.";
+			link.l1 = "Спасибо, сейчас прочтём его.";
+			link.l1.go = "WildRose_Fadey_18";
+			AddQuestRecordInfo("WildRose_Records_6", "1");
+		break;
+		
+		case "WildRose_Fadey_18":
+			dialog.text = "Давненько я не наблюдал такой улыбки на вашем лице, мил человек!";
+			link.l1 = "Ещё бы, "+npchar.name+"! Мы так долго этого ждали! Но, знаете, мы верили в успех! И я не знаю, как благодарить вас за то, что вы стали важнейшей его частью.";
+			link.l1.go = "WildRose_Fadey_19";
+		break;
+
+		case "WildRose_Fadey_19":
+			dialog.text = "Ох-х, прекращайте вы это, добрый молодец! Вы - мой друг, а друзьям, вестимо, всегда помогать надобно. Возвращайтесь ко мне в скором времени - уверен, месье Жером быстро поправится и сядет на первое же судно...";
+			link.l1 = "Думаю, мы ускорим развитие событий. Отправимся в Белиз сами и пообщаемся с вашим порученцем. Ещё раз спасибо, "+npchar.name+". Вы не представляете, что вы сделали для нас! Ещё увидимся!";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap5_Fadey_5");
+		break;
+		//<-- Дикая Роза
+		
+		//--> LoyaltyPack
+		case "LoyaltyPack_Fadey_1":
+			dialog.text = "Мой дорогой друг Алонсо Пименталь, что служит на вашем судне? Ба! Ну разумеется. Каждый раз, когда ваш корабль заходит в порт, сей добрый молодец обязательно заходит ко мне на кружечку. Мало у меня друзей осталось, "+pchar.name+". И дорожу я каждым.";
+			link.l1 = "Алонсо рассказывал удивительные истории о ваших похождениях на войне. И даже подарил вашу берендейку.";
+			link.l1.go = "LoyaltyPack_Fadey_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "LoyaltyPack_Fadey_2":
+			dialog.text = "Надеюсь и уповаю на то, что самые удивительные из них он сберёг и вам не раскрыл. Но коли уж поделился Алонсо нашей дружбой с вами, будет вам и от меня диковинка. Смотрите же!";
+			link.l1 = "Это… доспех?";
+			link.l1.go = "LoyaltyPack_Fadey_3";
+		break;
+
+		case "LoyaltyPack_Fadey_3":
+			dialog.text = "Эх, друг мой. Это всё, что осталось от моего зерцального доспеха, что я носил во времена войны той проклятой. И потом, под Смоленщиной ещё приходилось\n"+
+			"Как бы то ни было, даже в таком виде он выглядит восхитительно, а защищает — ещё лучше. И совершенно на меня не налезает!";
+			link.l1 = "Выглядит экзотически… даже для наших краёв. Роскошный подарок, Фадей. Спасибо вам.";
+			link.l1.go = "LoyaltyPack_Fadey_4";
+		break;
+		
+		case "LoyaltyPack_Fadey_4":
+			dialog.text = "Для вас, друг мой, всего одна тысяча дублонов.";
+			if (PCharDublonsTotal() >= 600)
+			{
+				if (GetSummonSkillFromName(pchar, SKILL_Commerce) >= 60)
+				{
+					link.l1 = "Разрешите вас поправить, дорогой Фадей. Тысяча дублонов — это цена за полный доспех. А за один нагрудник?";
+					link.l1.go = "LoyaltyPack_Fadey_5";
+					Notification_Skill(true, 60, SKILL_COMMERCE);
+				}
+				else if (PCharDublonsTotal() >= 1000)
+				{
+					link.l1 = "Неудивительно, что вы с Алонсо спелись. Держите ваше золото.";
+					link.l1.go = "LoyaltyPack_Fadey_1000";
+					Notification_Skill(false, 60, SKILL_COMMERCE);
+				}
+			}
+			link.l2 = "Ха! Вы почти меня подловили, Фадей! Может, в другой раз.";
+			link.l2.go = "LoyaltyPack_Fadey_MoneyLater";
+		break;
+		
+		case "LoyaltyPack_Fadey_MoneyLater":
+			dialog.text = "Разумеется, не спешите. Зерцало моё вас завсегда ждать будет.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			pchar.questTemp.LoyaltyPack.Fadey = "money";
+		break;
+		
+		case "LoyaltyPack_Fadey_5":
+			dialog.text = "Ох ловки, ох пронырливы! Так уж и быть, расстанусь и за шестьсот золотых.";
+			link.l1 = "Неудивительно, что вы с Алонсо спелись. Держите ваше золото.";
+			link.l1.go = "LoyaltyPack_Fadey_600";
+		break;
+		
+		case "LoyaltyPack_Fadey_1000":
+			dialog.text = "Добрая сделка. Благодарствую и отдаю своё зерцало в добрые руки. И берегите Алонсо, капитан.";
+			link.l1 = "Это кто кого ещё бережёт...";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(1000);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_600":
+			dialog.text = "Добрая сделка. Благодарствую и отдаю своё зерцало в добрые руки. И берегите Алонсо, капитан.";
+			link.l1 = "Это кто кого ещё бережёт...";
+			link.l1.go = "LoyaltyPack_Fadey_end";
+			RemoveDublonsFromPCharTotal(600);
+			GiveItem2Character(PChar, "cirass11");
+		break;
+		
+		case "LoyaltyPack_Fadey_end":
+			DialogExit();
+			AddDialogExitQuestFunction("LoyaltyPack_Fadey_DlgExit");
+		break;
+		//<-- LoyaltyPack
+		
 		case "guardoftruth":
 			dialog.text = "Ну кто бы сумневался, что вы по делу, мой друг! Водочки не предлагаю - нет её, родимой, у меня нонче. Рассказывайте, что за невзгода с вами приключилась.";
 			link.l1 = "Местному приходу один капер подарил за отпущение грехов наперсный золотой крест с лазуритом. Уникальная и дорогая вещь. Беда в том, что этот крест был похищен из другого прихода. Причём при грабеже был убит священник.";
@@ -1231,41 +1492,40 @@ void ProcessDialogEvent()
 		break;
 		
 		case "relation":
-			rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
-			if (rate <= 10)
+			rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", false);
+			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
+			if (rate < 2)
 			{
-				dialog.text = "Как же, слыхал, слыхал. Смогу я помочь вашему горюшку, это дело поправимое. Три сотни золотых дублонов - и уладим все неприятности.";
-				if (PCharDublonsTotal() >= 300) // belamour legendary edition
+				dialog.text = "Как же, слыхал, слыхал. Смогу я помочь вашему горюшку, это дело поправимое. " + sTemp + " - и уладим все неприятности.";
+				if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 				{
 					link.l1 = "Отлично! Вот, держите золотые.";
 					link.l1.go = "agree";
-					iTotalTemp = 300;
 				}
 				link.l2 = "Тогда мне самое время отправиться за монетами.";
 				link.l2.go = "exit";
 			}
 			else
 			{
-				if (rate <= 20)
+				if (rate < 4)
 				{
-					dialog.text = "Как же, слыхал, слыхал. Подмочили вы свою репутацию. Однако дело поправимое. Шесть сотен золотых дублонов - и уладим все неприятности.";
-					if (PCharDublonsTotal() >= 600) // belamour legendary edition
+					dialog.text = "Как же, слыхал, слыхал. Подмочили вы свою репутацию. Однако дело поправимое. " + sTemp + " - и уладим все неприятности.";
+					if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 					{
 						link.l1 = "Отлично! Вот, держите золотые.";
 						link.l1.go = "agree";
-						iTotalTemp = 600;
 					}
 					link.l2 = "Тогда мне самое время отправиться за монетами.";
 					link.l2.go = "exit";
 				}
 				else
 				{
-					dialog.text = "Да, неприятности у вас основательные. Полностью ситуацию я выправить не сумею, но облегчить бремя грехов ваших тяжких - смогу. А там, глядишь, ещё разок мзду поднесём, коли будут у вас деньги и желание. Семь сотен золотых дублонов - и будем решать ваши проблемы.";
-					if (PCharDublonsTotal() >= 700) // belamour legendary edition
+					dialog.text = "Да, неприятности у вас основательные. Полностью ситуацию я выправить не сумею, но облегчить бремя грехов ваших тяжких - смогу. А там, глядишь, ещё разок мзду поднесём, коли будут у вас деньги и желание. " + sTemp + " - и будем решать ваши проблемы.";
+					if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 					{
 						link.l1 = "Отлично! Вот, держите золотые.";
 						link.l1.go = "agree";
-						iTotalTemp = 700;
 					}
 					link.l2 = "Тогда мне самое время отправиться за монетами.";
 					link.l2.go = "exit";
@@ -1274,7 +1534,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "agree":
-			RemoveDublonsFromPCharTotal(iTotalTemp); // belamour legendary edition
+			RemoveDublonsFromPCharTotal(iFadeyPseudoGlobal);
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Денечков так десять-пятнадцать подождите. Пока я на приём попаду, пока пятое, десятое. Недельки через две будет результат.";
 			link.l1 = "Спасибо, Фадей! Буду ждать...";
@@ -1283,16 +1543,19 @@ void ProcessDialogEvent()
 		
 		case "agree_1":
 			DialogExit();
-            rate = 10 + rand(5);
-            rate = GetIntByCondition(HasShipTrait(pchar, "trait23"), rate, rate / 2);
+            bOk = HasShipTrait(pchar, "trait23");
+            rate = 10 + hrand(5);
+            rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
-			pchar.GenQuest.FadeyNation.Rate = abs(ChangeCharacterNationReputation(pchar, sti(pchar.GenQuest.FadeyNation), 0));
+			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
 			npchar.quest.relation = "true";
 		break;
 		
 		case "contraband":
-			dialog.Text = "Ну зачем же вы так поступили, мил человек? Контрабандисты - они не самые плохие люди в нашем мире, и доход могут вам солидный обеспечить. Ладно, помогу я вам, так и быть - умаслю кого следует... Готовьте семь сотен дублонов, мой друг, дешевле никак не получится.";
-			if (PCharDublonsTotal() >= 700) // belamour legendary edition
+			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", true);
+			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
+			dialog.Text = "Ну зачем же вы так поступили, мил человек? Контрабандисты - они не самые плохие люди в нашем мире, и доход могут вам солидный обеспечить. Ладно, помогу я вам, так и быть - умаслю кого следует... Готовьте " + sTemp + ", мой друг, дешевле никак не получится.";
+			if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 			{
 				Link.l1 = "Хорошо, Фадей, я согласен. Вот ваши золотые.";
 				Link.l1.go = "Contraband_Agreed";
@@ -1306,7 +1569,7 @@ void ProcessDialogEvent()
 			Link.l1 = "Спасибо!";
 			Link.l1.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
+			RemoveDublonsFromPCharTotal(iFadeyPseudoGlobal); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 		break;
 		

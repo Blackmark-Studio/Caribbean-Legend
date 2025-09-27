@@ -286,7 +286,7 @@ void SelectColony(int iColony)
 
 	iGood = Colonies[iColony].Trade.Import.id1;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("IMPORT1_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("IMPORT1_PICTURE", "GOODS", sGood);
 
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"IMPORT_INFO", 0,&sGood);
@@ -294,7 +294,7 @@ void SelectColony(int iColony)
 
 	iGood = Colonies[iColony].Trade.Import.id2;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("IMPORT2_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("IMPORT2_PICTURE", "GOODS", sGood);
 	
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"IMPORT_INFO", 0,&sGood);
@@ -302,7 +302,7 @@ void SelectColony(int iColony)
 	
 	iGood = Colonies[iColony].Trade.Import.id3;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("IMPORT3_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("IMPORT3_PICTURE", "GOODS", sGood);
 
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"IMPORT_INFO", 0,&sGood);
@@ -312,7 +312,7 @@ void SelectColony(int iColony)
 
 	iGood = Colonies[iColony].Trade.Export.id1;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("EXPORT1_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("EXPORT1_PICTURE", "GOODS", sGood);
 
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"EXPORT_INFO", 0,&sGood);
@@ -320,7 +320,7 @@ void SelectColony(int iColony)
 
 	iGood = Colonies[iColony].Trade.Export.id2;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("EXPORT2_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("EXPORT2_PICTURE", "GOODS", sGood);
 
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"EXPORT_INFO", 0,&sGood);
@@ -328,7 +328,7 @@ void SelectColony(int iColony)
 	
 	iGood = Colonies[iColony].Trade.Export.id3;
 	sGood = goods[iGood].name;
-	SetNewGroupPicture("EXPORT3_PICTURE", GetGoodImageGroup(&goods[iGood]), sGood);
+	SetNewGroupPicture("EXPORT3_PICTURE", "GOODS", sGood);
 
 	sGood = XI_ConvertString(sGood);
 	SendMessage(&GameInterface,"lsle",MSG_INTERFACE_MSG_TO_NODE,"EXPORT_INFO", 0,&sGood);

@@ -1,0 +1,9 @@
+Notification_ReputationCheckPassed {Reputation Check Passed}
+Notification_ReputationCheckFailed {Reputation Too Low}
+Notification_PerkCheckPassed {Perk Check Passed}
+Notification_PerkCheckFailed {Perk Check Failed}
+Notification_SkillCheckPassed {Skill Check Passed}
+Notification_SkillCheckFailed {Skill Check Failed}
+Notification_LevelCheckPassed {Level Check Passed}
+Notification_LevelCheckFailed {Level Required}
+CanBeCaptain {$attr($context.name) no puede manejar un barco en mar abierto (requiere la habilidad 'Capitán')}

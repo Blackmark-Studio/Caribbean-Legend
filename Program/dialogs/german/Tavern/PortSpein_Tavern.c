@@ -28,6 +28,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Hör zu, im April 1654 legte eine Fregatte unter dem Kommando von Kapitän Miguel Dichoso in deinem Hafen an und er verschwand danach. Gibt es etwas, was du mir darüber erzählen kannst?";
 				link.l1.go = "guardoftruth";
 			}
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "Sag mir, "+npchar.name+", was ist das für ein Vogel, dieser Javier Castillo?";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "Kehren wir zurück zu dem Gespräch über den Mann, der Einfluss auf Javier haben könnte.";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
 		break;
 		
 		//--> Цена чахотки
@@ -136,6 +148,56 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.Consumption_1 = "true";
 		break;
 		//<-- Цена чахотки
+		
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "Javier ist ein Kartenspieler, ein Gauner und ein Betrüger. Er hängt ständig in der Taverne herum und sucht jemanden, dem er ein paar Pesos abluchsen kann.";
+			link.l1 = "Also war er in anderen zwielichtigen Geschäften nicht auffällig? Hat er vielleicht Feinde?";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+
+		case "OZ_Tavern_2":
+			dialog.text = "Nun, sagen wir es so: Freunde hat er deutlich weniger als Leute, die davon träumen, ihm den Hals umzudrehen. Aber wenn Sie den Namen einer Person wollen, die wirklich Einfluss auf ihn ausüben kann, wird das tausend Pesos kosten. Zahlen Sie – und ich erzähle Ihnen alles.";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Na gut, hier hast du dein Geld, alter Erpresser.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Kommen wir später darauf zurück. Momentan habe ich die Summe nicht.";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+
+		case "OZ_Tavern_2_1":
+			dialog.text = "Kapitän, haben Sie die tausend Pesos mitgebracht?";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Ja. Hier, alter Erpresser.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Verdammt. Ich komme bald zurück.";
+				link.l1.go = "exit";
+			}
+		break;
+
+		case "OZ_Tavern_3":
+			dialog.text = "So reden wir schon ganz anders. Sehen Sie, Javier hat nicht nur Kartenschulden. Einmal versuchte er sich im Antiquitätenhandel, aber wie zu erwarten, endete das nicht gut für ihn. Anfangs lief es sogar ganz ordentlich, doch dann bot sich ihm die Gelegenheit, ein seltenes Stück zu erwerben.\nEr war so begeistert von der Idee, dass er alle Geldverleiher abklapperte. Natürlich gab ihm keiner auch nur einen Peso. Schließlich fand er einen ebenso antiquitätenverrückten Mann und lieh sich bei ihm hundertfünfzigtausend Pesos. Den Rest können Sie sich wohl denken.\nEr wurde hereingelegt, und nun hängt diese Schuld wie ein Mühlstein um seinen Hals. Er hat nur einen lächerlichen Betrag zurückgezahlt und scheint den Rest überhaupt nicht begleichen zu wollen, obwohl sein Gläubiger sogar Leute angeheuert hat, um ihn einzuschüchtern.\nDer Mann, dem er das Geld schuldet, ist Felipe Alarcón. Sein Haus steht gegenüber der Bank – Sie werden es leicht erkennen, es ist ein prächtiges Anwesen mit Säulen am Eingang.";
+			link.l1 = "Danke!";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
 		
 		case "guardoftruth":
 			dialog.text = "Ich erinnere mich an ihn. Kam oft in meine Taverne, sprach aber nicht viel. Hatte ein paar Schluck Rum, flüsterte ein paar Worte mit einigen Kunden und ging. Sehr düster und ernst wie alle auf dieser Fregatte. Gefährlich aussehende Söldner, die ihre Klingen bereithielten\nEs gab Gerüchte, dass die Fregatte voller Schätze war, aber ich glaube an solche Geschichten nicht. Wertvolle Ladung wird niemals auf einem einzelnen Schiff ohne Konvoi transportiert. Sie verbrachten einen Tag hier und dann gingen sie. Nach Europa, hörte ich. Das ist alles, was ich weiß.";

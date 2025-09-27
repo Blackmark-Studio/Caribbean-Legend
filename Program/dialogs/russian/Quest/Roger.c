@@ -3566,7 +3566,7 @@ void ProcessDialogEvent()
 				link.l1.go = "IslaMona_20";
 				break;
 			}
-			if (CheckAttribute(pchar, "questTemp.IslaMona") && pchar.questTemp.IslaMona == "dublon_wait" && GetCharacterItem(pchar, "gold_dublon") >=600)
+			if (CheckAttribute(pchar, "questTemp.IslaMona") && pchar.questTemp.IslaMona == "dublon_wait" && PCharDublonsTotal() >=600)
 			{
 				link.l1 = "Я принес тебе и ребятам ваши дублоны. Только не пропейте все сразу.";
 				link.l1.go = "IslaMona_24";
@@ -4380,7 +4380,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+				if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 				{
 					sld = characterFromId("Mary");
 					sld.dialog.currentnode = "IslaMona_2";
@@ -4389,7 +4389,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+					if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 					{
 						sld = characterFromId("Helena");
 						sld.dialog.currentnode = "IslaMona_2";
@@ -4710,7 +4710,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Кэп, на корабле должен быть только один вахтённый офицер и больше никого. Переведи команду на флагман.";
 				Link.l1 = "Ах, да, точно, сейчас сделаем!";
@@ -4725,21 +4725,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+			LeaveShipIslaMona(&NPChar);
 			dialog.text = "Хорошо, отгоним его в защищённую от ветров бухту. Заберёшь, когда понадобится.";
 			Link.l1 = "Отлично!";
 			Link.l1.go = "carpenter_exit";
@@ -4776,7 +4762,13 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			if (FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "[Слишком много офицеров].";
+				link.l1 = "[Ща решим]";
+				link.l1.go = "exit";
+				break;
+			}
+			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "Забираешь?";
 			link.l1 = "Да.";
 			link.l1.go = "ShipStockManBack2";
@@ -5306,7 +5298,7 @@ void ProcessDialogEvent()
 		case "mirabelle_47":
             DialogExit();
 		    npchar.dialog.currentnode = "mirabelle_42";
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && CheckPassengerInCharacter(pchar, "Mary"))
 			{
 				sld = characterFromId("Mary");
 				sld.dialog.currentnode = "IslaMona_2";
@@ -5315,7 +5307,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+				if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
 				{
 					sld = characterFromId("Helena");
 					sld.dialog.currentnode = "IslaMona_2";

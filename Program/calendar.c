@@ -293,6 +293,20 @@ void SetCurrentTime(int hour, int minutes)
 	Environment.time = makefloat(hour) + makefloat(minutes)/60.0;
 	worldMap.date.hour = makefloat(hour);
 	worldMap.date.min = makefloat(minutes);
+	CreateWeatherEnvironment();
+	RefreshLandTime();
+}
+
+void SetCurrentYear(int day, int month, int year)
+{
+	Environment.date.year = year;
+	Environment.date.month = month;
+	Environment.date.day = day;
+	worldMap.date.year = year;
+	worldMap.date.month = month;
+	worldMap.date.day   = day;
+	CreateWeatherEnvironment();
+	RefreshLandTime();
 }
 
 // belamour legendary edition прибавить дни к текущей дате
@@ -372,3 +386,33 @@ int GetFuterTime(string timeUnit,
 	if(timeUnit=="minute") return dayCount*1440 + makeint(dtime*60.0);
 	return dayCount;
 } */
+
+// 18:30 20.04.1667 → 5232135343
+int DateStringToInt(string dateString) {
+  int pos;
+  string time, date;
+  int totalTime = 0;
+
+  pos = findSubStr(&dateString, " ", 0);
+  if (pos < 0) return -1;
+
+  time = strcut(&dateString, 0, pos - 1);
+  if (HasSubStr(&dateString, "M")) pos += 3; // AM/PM
+  date = strcut(&dateString, pos + 1, strlen(&dateString) - 1);
+
+  totalTime += sti(strcut(&date, 6, 9)) - STARTGAME_YEAR;
+  totalTime *= 365;
+
+  for (int i=1;i <= sti(strcut(&date, 3, 4)); i++) totalTime += GetMonthDays(i); // заливаем дни за прошедшие месяцы
+
+  totalTime += sti(strcut(&date, 0, 1));
+  totalTime *= 24;
+
+  totalTime += sti(strcut(&time, 0, 1));
+  if (HasSubStr(&dateString, "P")) totalTime += 12; // после полудня, накидываем ещё 12 часов
+  totalTime *= 60;
+
+  totalTime += sti(strcut(&time, 3, 4));
+
+  return totalTime;
+}

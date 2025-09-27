@@ -17,57 +17,57 @@ void ProcessDialogEvent()
 			// Jason НСО
 			if(CheckAttribute(pchar, "questTemp.Patria.DodsonFail"))
 			{
-				dialog.text = "Charles, what the hell!";
-				link.l1 = "Steven, there was an overlap. I could neither come nor inform you about my abscence...";
+				dialog.text = "Charles, what the hell?";
+				link.l1 = "Steven, there was a problem. I could neither come nor inform you about my absence...";
 				link.l1.go = "patria_33";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Patria.DodsonAgain"))
 			{
-				dialog.text = "Glad to see you, pal! How can I help you? ";
-				link.l1 = "Glad to see you too. I wanted to thank you for the perfectly conducted spectacle!";
+				dialog.text = "Good to see you, pal! How can I help you? ";
+				link.l1 = "Good to see you too, Steve. I want to thank you for that perfectly conducted spectacle!";
 				link.l1.go = "patria_29";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Patria.Saga.Shark") && pchar.questTemp.Patria == "epizode_12_pirates")
 			{
-				dialog.text = "Glad to see you, pal! How can I help you?";
-				link.l1 = "I have a proposal for you. Piratical one, you know!";
+				dialog.text = "Good to see you, pal! How can I help you?";
+				link.l1 = "I have a proposal for you, Steven. A piratical one.";
 				link.l1.go = "patria";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Patria.Saga.Shark") && pchar.questTemp.Patria == "epizode_12_talk")
 			{
-				dialog.text = "That's our customer! The job is done, your baron is sitting in a well-guarded dungeon. Perhaps you'd like to take a look, he-he?!";
-				link.l1 = "I will have plenty of time to do that, ha-ha. Is he well-treated?";
+				dialog.text = "There's our man! The job is done; your baron is sitting in a well-guarded dungeon. Perhaps you'd like to take a look? He-he!";
+				link.l1 = "Ha, plenty of time for that later. Is he being well-treated?";
 				link.l1.go = "patria_10";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Tieyasal") && pchar.questTemp.Tieyasal == "begin" && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				dialog.text = "Glad to see you, pal! How can I help you?";
-				link.l1 = "I've come again to ask for your help.";
+				dialog.text = "Good to see you, pal! How can I help you?";
+				link.l1 = "I need something, Steven...";
 				link.l1.go = "tieyasal";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Guardoftruth.Archy") && pchar.questTemp.Guardoftruth.Archy == "islatesoro")
 			{
-				dialog.text = "Glad to see you, pal! How can I help you?";
+				dialog.text = "Good to see you, pal! How can I help you?";
 				link.l1 = "Steven, I've got something for you.";
 				link.l1.go = "guardoftruth";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Saga.Shadows") && pchar.questTemp.Saga.Shadows == "islatesoro")
 			{
-				dialog.text = "Glad to see you, pal! How can I help you?";
-				link.l1 = "Steven, I have to ask you something. You might not like it, but I need your help.";
+				dialog.text = "Good to see you, pal! How can I help you?";
+				link.l1 = "Steven, I have to ask you something. You might not like it... but I need your help.";
 				link.l1.go = "shadows";
 				break;
 			}
 			if(CheckAttribute(pchar, "questTemp.Terrapin") && pchar.questTemp.Terrapin == "islatesoro")
 			{
-				dialog.text = "Ha, here you are, "+pchar.name+". I was expecting your arrival. Forest Devil told me about your trouble with Tortuga...";
-				link.l1 = "He also told me that you had already found a solution. Is it true?";
+				dialog.text = "Ah, there you are, "+pchar.name+". I was expecting you; Forest Devil told me about your trouble with Tortuga...";
+				link.l1 = "He also told me that you've already found a solution. Is it true?";
 				link.l1.go = "terrapin";
 				break;
 			}
@@ -81,157 +81,157 @@ void ProcessDialogEvent()
 			// belamour legendary edition хвастовство "Фортуной"
 			if(CheckShipTypeInSquadron(SHIP_FRIGATE_L) > 0 && !CheckAttribute(pchar,"questTemp.SharkFrigate"))
 			{
-				link.l2 = "Yes, I want to show you something... Would you like to walk with me to the pier?";
+				link.l2 = "I want to show you something... Would you walk with me to the pier?";
 				link.l2.go = "check_out_my_frigate";
 			}
 			
 			// belamour legendary edition на пару с Акулой
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "toDodson")
 			{
-				dialog.text = "Ah, my friend "+GetFullName(pchar)+"! Come in, it's good to see you! Why did you come?";
-				link.l1 = "Hi, Steven! Well, I showed up as promised. Is your ship ready?";
+				dialog.text = "Ah, my friend "+GetFullName(pchar)+"! Come in, come in, it's good to see you!";
+				link.l1 = "Hello, Steven! Well, I'm here as promised. Is your ship ready?";
 				link.l1.go = "SharkGoldFleet";
 				break;
 			}
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && pchar.questTemp.SharkGoldFleet == "RUinDeal")
 			{
-				link.l2 = "So what's up with your business? Didn't give up this venture regarding the 'Golden Fleet'?";
+				link.l2 = "So, how's your business? Still after the 'Golden Fleet'?";
 				link.l2.go = "SharkGoldFleet_10";
 			}
-			dialog.text = "Ah, my friend "+GetFullName(pchar)+"! Come in, it's good to see you! Why did you come?";
-			link.l1 = "Yes, I visited Isla Tesoro on business, and decided to drop by for a minute.";
+			dialog.text = "Ah, my friend "+GetFullName(pchar)+"! Come in, come in, it's good to see you!";
+			link.l1 = "Hello, Steven. I'm in Sharptown on business and I decided to drop by for a minute.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 		// --------------------------------------вариант R-----------------------------------------------
 		case "Chad_die":
-			dialog.text = "Ha! I take it that you are our night visitor? I was informed about this accident too late. I checked you belongings and found a letter from Forest Devil. Hell, it almost smelled of Main's jungles\nYour name is "+GetFullName(pchar)+"? Don't be surprised, I read it from the letter. My name is Steven Dodson. Or simply Shark. The Shark. I think, that you have already heard about me. I currently occupy a position of admiral in this city or island, whatever\nI apologize for the actions of my men last night. It was my order to capture everyone who sneaks inside the hold. Too many thieves among Narwhals and Rivados\nChad let you go, I assume? Odd. I was only going to send him an order to release you. Where is your ship? I hope she is fine?";
-			link.l1 = "Chad? As far as I understand, your boatswain would never let me leave the prison alive. I did it myself and I also set free one black guy of these... Rivados.";
+			dialog.text = "Ha! I take it you're our night visitor? I was informed about this incident only a moment ago. I checked you belongings and found the letter from Forest Devil. Hell, it almost smelled of New Spain's jungles!\nYour name is "+GetFullName(pchar)+"? I'm Steven Dodson, better known to some as Shark. Svenson must've told you about me. Around Justice Island, however, I'm known as the Admiral.\nI apologize for the actions of my men last night. They were acting on orders from me to capture anyone who snuck into the hold; the Narwhals and Rivados routinely send thieves to steal provisions from us.\nChad let you go, I assume? Odd... I was just about to order him to release you.\nWhere's your ship? Is she intact?";
+			link.l1 = "Chad? As far as I understand, your boatswain would never have let me leave the prison alive. I freed myself, along with one of those... those Rivados.";
 			link.l1.go = "Chad_die_1";
 		break;
 		
 		case "Chad_die_1":
-			dialog.text = "You are telling me interesting things, pal. And how did you make it out of 'Tartarus'? It looks like I will have a nice chat with Chad and his prison guards...";
-			link.l1 = "You won't have any chat with them. They will never be talking again, I'm afraid. Chad threatened to keep me in the cage forever. He blamed me for being Rivados and he demanded that I prove it otherwise by killing the black wizard Chimiset...";
+			dialog.text = "Now that's interesting. And how did you make it out of Tartarus? Seems I'll have to have a chat with Chad and his lads...";
+			link.l1 = "It'll be a one-sided conversation, I'm afraid. They're all dead. Chad threatened to leave me in the cage forever. He called me a Rivados, said the only way I could prove otherwise to him was by killing the black wizard Chimiset.";
 			link.l1.go = "Chad_die_2";
 		break;
 		
 		case "Chad_die_2":
-			dialog.text = "What the hell?! Such a foolish self-will! We need Chimiset alive, and Chad perfectly knew that! And why would he assume that you were Rivados, if all of them are black? What is he up for, damn him?";
-			link.l1 = "He is up for something you surely won't like, Steven. Chad gave me a machete and sent me downstairs to kill Chimiset. But the old Black has told me something important, and I realized that if I kill Chimiset, I'll be the next...";
+			dialog.text = "What?! Oh, Kapper you stupid fuck...\nWe needed Chimiset alive, and Chad knew that! And why would he assume that you were Rivados, when all of them are black?!";
+			link.l1 = "Chimiset's not dead, Steven. The old wizard convinced me that even if I killed him, Chad would never let me leave Tartarus alive...";
 			link.l1.go = "Chad_die_3";
 		break;
 		
 		case "Chad_die_3":
 			dialog.text = "";
-			link.l1 = "Instead of killing the old man I have opened a chest with ammunition and fought with Chad and his buddies. Do you see now why you can't talk to them anymore? They are all dead.";
+			link.l1 = "Instead of killing Chimiset, I broke open a chest of weapons and ammunition and cut down Chad and his buddies.";
 			link.l1.go = "Chad_die_4";
 		break;
 		
 		case "Chad_die_4":
-			dialog.text = "Fuck! The news just gets more and more terrifying! And what should I do with all of that mess?";
-			link.l1 = "Listen to me, Steve. Chimiset told me that Chad had a deal with some Narwhals - this is the other clan as far as I understand. Chad was planning to kill you and take your position. Narwhals are eager to see you dead, because they are certain that you had killed their leader Allen... or Alan, I don't remember.";
+			dialog.text = "Great! That is just fucking great! But I still can't figure... why would Chad do all this?";
+			link.l1 = "I'm getting there! Chimiset told me that Chad made a deal with the Narwhals - another clan, I understand - to kill you and take your place as head of the pirates. The Narwhals want you dead, because they're certain that you murdered their leader Alan... Alan Milton? Miller?";
 			link.l1.go = "Chad_die_5";
 		break;
 		
 		case "Chad_die_5":
-			dialog.text = "Bullshit! I didn't kill Alan! Someone else did that, even Narwhals, perhaps. I think that their current leader - Donald Greenspen - killed Alan!";
-			link.l1 = "No. Chad murdered him. Chimiset had witnessed the crime - that is why they wanted to kill him, too. Chad didn't want to do that himself for some reason - it looks like he was afraid of a curse of some sort. That is why he wanted me to do the job.";
+			dialog.text = "Bullshit! I didn't kill Alan Milrow! Someone else did that - maybe even one of the Narwhals! I thought it might even be their current leader, Donald Greenspan.";
+			link.l1 = "No. Chad murdered him. Chimiset witnessed the crime - that's why Chad wanted to kill him, too. He didn't want to do it himself because he was afraid Chimiset would haunt him, or... or something, I don't know. Anyway, that's why he wanted me to do the job.";
 			link.l1.go = "Chad_die_6";
 		break;
 		
 		case "Chad_die_6":
-			dialog.text = "I can't believe it... Chad killed Alan? But why?";
-			link.l1 = "To leave you the blame and to make you enemies with Narwhals. I suppose that he was the one spreading rumours, because why would Narwhals blame you and you only? Steven, they are planning to kill you. And the Rivados clan would be blamed for that - I don't know how they are going to do it though. Chimiset told me about that.";
+			dialog.text = "And... why would Chad kill Alan?";
+			link.l1 = "To frame you and make you an enemy of the Narwhals. He spread rumours that ensured the blame would land at your doorstep, and make it unsafe for you to show your face in public. And once you were dead, he was going to blame the Rivados for your murder, so your pirates would turn on them.";
 			link.l1.go = "Chad_die_7";
 		break;
 		
 		case "Chad_die_7":
 			dialog.text = "";
-			link.l1 = "Besides, I have found this letter in Chad's chest. Read it. It looks like a solid proof, though it is indirect.";
+			link.l1 = "I found this letter in Chad's chest. Read it. It looks like solid proof, however indirect.";
 			link.l1.go = "Chad_die_8";
 		break;
 		
 		case "Chad_die_8":
 			RemoveItems(pchar, "letter_chad", 1);
-			dialog.text = "...(reading)... heh! I am not surprised of Chad's betrayal. Son of a bitch always wanted power on this island. But Narwhals! To seriously believe that it was me who killed Alan! This will cost them a double price for provisions\nI was planning to release Chimiset anyway, it's high time to make peace with them. You have shocked me, mate, to be honest...";
-			link.l1 = "I understand, Steven. I don't like it, either, I got in the middle of some political mess since I have reached the Island. I came here only to find you and Nathaniel Hawk...";
+			dialog.text = "...(reading)... heh! In hindsight I'm not surprised at Chad's betrayal. The whoreson always wanted more power.\nBut the Narwhals! To seriously think I killed Alan! This will cost them double their current price on provisions!\nAs for Chimiset... I was planning to release him anyway; it's high time we made peace with the Rivados. You have shocked me, mate, truly...";
+			link.l1 = "I understand, Steven. I don't like it, either. I didn't come here to be part of these political intrigues, I came here to find you and Nathaniel Hawk--";
 			link.l1.go = "Chad_die_9";
 		break;
 		
 		// ноды пересечения
 		case "Chad_die_9":
-			dialog.text = "What? Hawk? Isn't he on Jamaica? He is a baron of Maroon town, why would he be here?";
-			link.l1 = "No. Jackman is in command there now. I was able to find out that Hawk had gotten there the same way I did - through the portal of Kukulcan.";
+			dialog.text = "Hawk? Isn't he on Jamaica?";
+			link.l1 = "No. Jackman rules Maroon Town, now. I learned that Hawk arrived here the same way I did: the idol of Kukulcan.";
 			link.l1.go = "Chad_die_10";
 		break;
 		
 		case "Chad_die_10":
-			dialog.text = "What's all this nonsense? What portal? And you still haven't answered - where is your ship?";
-			link.l1 = "There is no ship. I understand, Steve, that it is difficult to believe, but I really got here through the Indian idol from the Main... don't look at me like that - I am not crazy! I myself don't understand how is it possible, but it is!";
+			dialog.text = "... What the fuck are you talking about?";
+			link.l1 = "I didn't get here via ship, Steven. I know this is hard to believe, but there is an Indian idol on the Spanish Main that acts as some kind of doorway - don't look at me like that, I am not mad, or drunk! I don't understand how any of this is possible, but it is!";
 			link.l1.go = "Chad_die_11";
 		break;
 		
 		case "Chad_die_11":
-			dialog.text = "";
-			link.l1 = "The shaman in Miskito village has seen how Nathaniel Hawk, who was escaping from the chasers, ran to the Indian idol, which is known as a statue of Kukulcan, and suddenly disappeared. This shaman told me that he had been on this Island himself, and that he went there the same way through the statue...";
+			dialog.text = "...";
+			link.l1 = "A shaman called Snake Eye in the Miskito village south of Amatique Cove helped Hawk escape some men who were trying to kill him. He showed Hawk the Indian idol - an icon of Kukulcan - and it transported him to this island. Snake Eye told me that he'd once travelled to this island himself the exact same way, and told me how I could do it myself.";
 			link.l1.go = "Chad_die_12";
 		break;
 		
 		case "Chad_die_12":
-			dialog.text = "";
-			link.l1 = "I'm looking for Nathan, so that is why I had to walk in his footsteps. I came to the statue at midnight, just as the shaman told me. You won't believe it, but the top of stone statue was golden that night, and a mysterious light was glowing above it!";
+			dialog.text = "...";
+			link.l1 = "I came to the idol at midnight, just as he told me. And this idol, which had been made of ordinary stone all day, had turned solid gold! And a weird light shone from it.";
 			link.l1.go = "Chad_die_13";
 		break;
 		
 		case "Chad_die_13":
-			dialog.text = "";
-			link.l1 = "As soon as I had touched the statue, a circle of light formed around the idol, fire blazed up, and then I was drawned into the statue. I was thrown out here, in your ship's cargo hold, downstairs near the bow, at the breach...";
+			dialog.text = "...";
+			link.l1 = "When I touched the idol, a circle of light formed around the idol, fire blazed everywhere, and then I was drawn into the idol. I was thrown out here, in your ship's cargo hold, downstairs near the bow, at the breach...";
 			link.l1.go = "Chad_die_14";
 		break;
 		
 		case "Chad_die_14":
-			dialog.text = "";
-			link.l1 = "I barely survived that, thanks to the shaman, who had given me a special potion. In the end I was attacked by some monster - a giant crab. I hope that now you trust me?";
+			dialog.text = "...";
+			link.l1 = "It was horrible, though - I felt sick and worn out after the crossing. Snake Eye gave me a special potion to counteract that effect, though. And to cap everything off, I was attacked by a giant fucking crab! (deep breath) ";
 			link.l1.go = "Chad_die_15";
 		break;
 		
 		case "Chad_die_15":
-			dialog.text = "You mean the part about crab? I believe you in that. There are lot of these monsters around the island. We bait them with a dead fish, so they often guard our back door. Scares thieves shitless. And what you've told about the idol - I am not crazy yet\nBut I will not reject you story either, locals have been gossiping about such things for several dozens of years, plus I saw strange things myself long ago at Rivados' ships... nevermind.";
-			link.l1 = "I swear that it is all truth.";
+			dialog.text = "... All right, I believe you.\nThat is, I believe the part about the crab. There are lot of those monsters around the island. We bait them with dead fish, so they hang around the submerged breaches in the hull.\nWonderful guards - scare thieves shitless. But all this about the idol...\nI won't reject that part of your story out of hand; I've heard about the strange rituals the Rivados used to conduct aboard their ships... There was talk of human sacrifices to a... to an Indian idol...";
+			link.l1 = "I swear it's all true.";
 			link.l1.go = "Chad_die_16";
 		break;
 		
 		case "Chad_die_16":
-			dialog.text = "Fine. So be it. Tell me, why have you been looking for me and Nathan? According to Jan's letter, you wanted me to become the head of the Brethren of the Coast?";
-			link.l1 = "Exactly. Many things have changed after your and Hawk's disappearance. Jackman is trying to play the central role among the pirates. He is planning to become their leader, and he will succeed, if Jan and me don't stop him.";
+			dialog.text = "I believe that you believe it. But let's set aside magical idols for now.\nAccording to Jan's letter, you want me to become head of the Brethren of the Coast?";
+			link.l1 = "Exactly. Many things changed after you and Hawk disappeared. Jackman wants to become leader of the Brethren, and he will be, if Jan and I don't stop him.";
 			link.l1.go = "Chad_die_17";
 		break;
 		
 		case "Chad_die_17":
 			dialog.text = "";
-			link.l1 = "Jackman is up for a serious and bloody game. I am sure that it was him, who had organized the ambush and hunt for Nathaniel. I also think that he killed Blaze. Making you the leader of the Brethren of the Coast is the only way to stop him.";
+			link.l1 = "Jackman is up for a serious and bloody game. I am sure that it was him who organized Hawk's ambush. I also think he killed Blaze Sharp. Making you the leader of the Brethren is the only way to stop him.";
 			link.l1.go = "Chad_die_18";
 		break;
 		
 		case "Chad_die_18":
-			dialog.text = "Look, I'd be glad, but we need to leave this island first. I had enough of it. All the more so that I can leave Dexter here, he can manage doing business in my absence. I didn't intend to stay here for that long, but my ship was burnt down in a fight against the clans\nI am not going to travel through those portals, don't even try to persuade me, I need a ship.";
-			link.l1 = "I won't... Steven, the Miskito shaman told me that there was a statue of Kukulcan here, on the Island. It looks like an ordinary stone idol. Do you know where I can find it?";
+			dialog.text = "Hey, I'd be glad to take up the crown, but we need to leave this island first.\nI've had enough of it. The plan was to leave Dexter in charge of our base here - I never intended to stay here for long - but my ship was burnt in a battle with the clans.\nAnd don't even think about suggesting we use some mystic Indian bullshit to get off the island. It's a ship or nothing, for me.";
+			link.l1 = "Steven... (sigh) I still need to find that idol! Snake Eye swore it would be here. Now, you said you knew something about the Rivados conducting rituals using an idol. What else can you tell me?";
 			link.l1.go = "Chad_die_19";
 		break;
 		
 		case "Chad_die_19":
-			dialog.text = "I don't. I have never seen any statues like that. Ask somebody else.";
-			link.l1 = "See, if I find this statue, I will be able to get away from this island without a ship. The trip doesn't scare me anymore. And then I would return here in a normal way and take you from here.";
+			dialog.text = "Nothing. That was all before I arrived here - long before.";
+			link.l1 = "Taking a trip through these... these portals of Kukulcan doesn't scare me anymore - and it'll be the fastest way for me to get off the island, get a ship, and get you home. If you believe nothing else, believe that I want to help you.";
 			if (pchar.questTemp.LSC == "entrance" || pchar.questTemp.LSC == "mary") link.l1.go = "entrance_4";
 			else link.l1.go = "Chad_die_20";
 		break;
 		// ноды пересечения
 		
 		case "Chad_die_20":
-			dialog.text = "I understand, but I can not help you. Plus, this assassination thing is quite disturbing. Chad is dead, but I doubt that Narwhals will drop their plan. I do not want to live expecting to be shot in the back every day. Since you need me alive and you are already involved in this mess, I offer you to investigate this conspiracy\nYour are a newcomer, it's an advantage. Find Chad's partners and bring them to me or kill them where they stand, I don't care. Talk to Chimiset, old black knows more than he's told us already\nBe careful with Narwhals, don't cross their borders unless you have got a password. They change passwords every week.\nOnce the threat is eliminated, I will provide you with sailing directions and all information you need\nGo and find those who responsible. Restore order. I will make sure they clean prison after you. And we need a new jailer. And I need some rum, I don't feel well.";
-			link.l1 = "Fine, Steven. Let's do that...";
+			dialog.text = "I understand... but I. Can't. Help. You. Aside from the rumours, I know sweet fuck-all about this idol.\nAnd you know, call me selfish, but I'm a little more preoccupied with this assassination business; Chad is dead, but I doubt the Narwhals will give up on trying to kill me.\nSince you need me alive and you're already involved in this mess, I want you to investigate this conspiracy.\nAs a newcomer, you can go places and talk to people that my lads could never reach. Find Chad's partners and bring them to me - or kill them, I don't care.\nTalk to Chimiset; the old black knows more than he lets on. And he may know more about your idol...\nBe careful with the Narwhals, and don't cross their borders unless you have the current password - they change it every week.\nOnce this whole thing's put to bed, I'll give you my rutters. They contain sailing directions and information you'll need to sail to and from Justice Island.\nGo. Find the conspirators. Restore order. Keep me alive.\nNow... Dexter needs to clean the bodies out of the gaol... Tartarus needs a new gaoler... and I need some rum. Fuck me, what a day.";
+			link.l1 = "...";
 			link.l1.go = "Chad_die_21";
 		break;
 		
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "Total_wait";
 			pchar.questTemp.LSC.rvd_friend = "true"; //флаг на проход по кораблям ривадос
-			pchar.rvd_friend = true; // ривадосы не будут останавливать где просят пароль
+			// // ривадосы не будут останавливать где просят пароль
 			sld = characterFromId("Chimiset");
 			sld.dialog.currentnode = "Friend"; //ноду Чимисету
 			pchar.quest.LSC_Eddy.win_condition.l1 = "location";
@@ -260,91 +260,91 @@ void ProcessDialogEvent()
 				LAi_SetWarriorType(sld);
 				LAi_warrior_SetStay(sld, true);
 			}
-			AddSimpleRumourCityTip("Just imagine: someone has killed the admiral's jailer, Chad Kapper. Impossible! No doubt, that was the Rivados wizard's job...", "LostShipsCity", 7, 2, "LSC", "");
-			AddSimpleRumourCityTip("I heard that Chad Kapper is dead. There was no official statement; his body was never found, either. Perhaps, the admiral had simply given him a secret mission?", "LostShipsCity", 7, 2, "LSC", "");
-			AddSimpleRumourCityTip("I don't see our jailer Chad Kapper. Some people say that he was killed and some disagree. Anyway, no one has seen him dead.", "LostShipsCity", 7, 2, "LSC", "");
-			AddSimpleRumourCityTip("They say that the admiral has doubled provision prices for Narwhals! That pirate is truly reckless!", "LostShipsCity", 7, 3, "LSC", "");
+			AddSimpleRumourCityTip("Would you believe it? Someone has killed the Admiral's gaoler, Chad Kapper! No doubt the work of that Rivados wizard he locked up, Chimiset...", "LostShipsCity", 7, 2, "LSC", "");
+			AddSimpleRumourCityTip("I heard that Chad Kapper is dead, but there's been no official statement and his body hasn't turned up. Perhaps, the Admiral simply gave him a secret mission...?", "LostShipsCity", 7, 2, "LSC", "");
+			AddSimpleRumourCityTip("I haven't seen our gaoler, Chad Kapper, lately. Some say he was killed, some say he's still alive. The only thing people agree on is that no one has seen him...", "LostShipsCity", 7, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that the Admiral doubled provision prices for the Narwhals! That pirate is truly reckless!", "LostShipsCity", 7, 3, "LSC", "");
 		break;
 		
 			case "Mary_Die":
-			dialog.text = "Well, what do you have, "+pchar.name+"? Any news about Narwhals?";
-			link.l1 = "Yes. You will be glad to know, Steve, that the conspiracy was unveiled and the plotters are dead. I have all the proofs.";
+			dialog.text = "Well, what do you have, "+pchar.name+"? Any news about the Narwhals?";
+			link.l1 = "Yes. You'll be glad to know, Steven, that the conspiracy was unveiled and the conspirators are dead. I know everything, now.";
 			link.l1.go = "Mary_Die_1";
 		break;
 		
 		case "Mary_Die_1":
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack")) dialog.text = "I thought so when I heard the gunfight... Tell me more, I am listening.";
-			else dialog.text = "Is that so? I am really glad to hear that! Tell me more, I am listening.";
-			link.l1 = "It was all planned by your boatswain, Chad Kapper. He killed Alan Milrow in the 'Tartarus' prison, and he was spreading gossips about your involvement. I think that Narwhals were really angry, and it was a hard blow for Alan's girlfriend, Red Mary...";
+			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack")) dialog.text = "I thought so when I heard the gunfight... Talk to me.";
+			else dialog.text = "Is that so? Well, that's a relief! Tell me.";
+			link.l1 = "It was all planned by your boatswain, Chad Kapper. He murdered Alan Milrow in the cells of Tartarus and spread a lie that you did it. The Narwhals were furious - especially Alan's girlfriend, Red Mary...";
 			link.l1.go = "Mary_Die_2";
 		break;
 		
 		case "Mary_Die_2":
 			dialog.text = "";
-			link.l1 = "Mary was eager to take vengeance and Chad Kapper used it for his own ends. They made a cunning plan of an attempt on your life. Everyone here knows about your habit of walking around on the stern of the 'San Augustine' every evening.";
+			link.l1 = "Mary was hungry for revenge and Chad Kapper preyed upon her anger. They made a plan to assassinate you. I understand you have a habit of walking around the stern gallery of the San Augustine every evening...";
 			link.l1.go = "Mary_Die_3";
 		break;
 		
 		case "Mary_Die_3":
-			dialog.text = "Heh! I will reconsider my habits... Go on.";
-			link.l1 = "They needed a long-range and accurate musket to perform their plan, and so some Adolf Barbier provided it. But his stutzen was pawned to Giuseppe Fazio, so Mary and Chad gave him enough money to buy it back. Adolf got it out of pawn...";
+			dialog.text = "Heh! That's one habit I'll have to break... Go on.";
+			link.l1 = "They needed a long-range and accurate rifle to perform their plan, and so one Adolf Barbier provided it. But his stutzen was pawned to Giuseppe Fazio, so Mary and Chad had to buy it back - Adolf redeemed the stutzen...";
 			link.l1.go = "Mary_Die_4";
 		break;
 		
 		case "Mary_Die_4":
 			dialog.text = "";
-			link.l1 = "They hired Cyclops Marcello, an ex royal huntsman, to kill you. He had to receive the rifle and shoot you dead. After that Mary would have killed him and used his corpse and rifle as a proof that Rivados were responsible for the attack. Cyclops Marcello is a mulatto, you know...";
+			link.l1 = "They hired Marcello Cyclops, a former royal hunter, to take the shot. After that, Mary would kill him and use his corpse and rifle as proof the Rivados were responsible for the attack; Cyclops was a mulatto.";
 			link.l1.go = "Mary_Die_5";
 		break;
 		
 		case "Mary_Die_5":
-			dialog.text = "Such a smart bastard!";
-			link.l1 = "After that, Narwhals and pirates would attack Rivados and destroyed them. Chad would become an admiral and Mary would be his lover. Perhaps, though, he would have cut her throat instead, since she knew too much. Quite probably...";
+			dialog.text = "And all from Chad's devious mind... clever fucker!";
+			link.l1 = "And finally, the Narwhals and pirates would attack the Rivados clan and destroy them. Chad would become Admiral and Mary would be his lover. Although... after a few tumbles he'd probably have just cut her throat, since she knew too much.";
 			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack")) link.l1.go = "Mary_Die_6a";
 			else link.l1.go = "Mary_Die_6";
 		break;
 		
 		case "Mary_Die_6":
 			dialog.text = "";
-			link.l1 = "Anyway, it is over now. Adolf wasn't talkative enough, and I had to kill him right in his cabin. I also had to deal with Mary and Cyclops, who had come to get the stutzen from Adolf. They realized, who I was at once, and attacked me immediately.";
+			link.l1 = "Anyway, it's over now. Adolf wasn't very talkative, so I had to kill him right in his cabin. I also dealt with Mary and Cyclops when they came to get the stutzen from Adolf.";
 			link.l1.go = "Mary_Die_7";
 		break;
 		
 		case "Mary_Die_7":
-			dialog.text = "So they are lying down inside 'Santa Florentina', right?";
-			link.l1 = "Yes. All three of them.";
+			dialog.text = "So, they're all lying dead inside the Santa Florentina, then? And no one knows?";
+			link.l1 = "Yes. All three of them - and no one knows except us.";
 			link.l1.go = "Mary_Die_8";
 		break;
 		
 		case "Mary_Die_8":
-			dialog.text = "That is good that no witnesses were involved in this mess. I will take care of the bodies. You did a good job, "+pchar.name+"! Were you in my crew, I'd definitely have made you my first mate.";
-			link.l1 = "Thanks for such a high response! And, finally, take a look at these letters. I took them from the bodies of Cyclops and poor Mary...";
+			dialog.text = "Good. Witnesses would complicate things. I'll take care of the bodies. You did a good job, "+pchar.name+"! Were you in my crew, I'd make you first mate.";
+			link.l1 = "High praise, Shark. Thank you. Oh, take a look at these letters. I took them from the bodies of Cyclops and Mary...";
 			link.l1.go = "Mary_Die_9";
-			AddSimpleRumourCityTip("Have you heard that? Our squabbler and madcap Red Mary has disappeared. I won't be surprised if she is dead...", "LostShipsCity", 10, 1, "LSC", "");
-			AddSimpleRumourCityTip("They say that Red Mary has disappeared. Have you heard about it?", "LostShipsCity", 10, 1, "LSC", "");
-			AddSimpleRumourCityTip("Mary Casper has vanished. Some people say that she is still inside her cabin but I don't believe it. It's been too long since there last was light in it.", "LostShipsCity", 10, 1, "LSC", "");
-			AddSimpleRumourCityTip("They say that Red Mary was murdered. Poor girl! Yes, she had tough character, but everybody loved her. Who could have done such a terrible thing?", "LostShipsCity", 10, 1, "LSC", "");
+			AddSimpleRumourCityTip("Have you heard that? Our scrappy madcap Red Mary has disappeared. I wouldn't be surprised if she's dead...", "LostShipsCity", 10, 1, "LSC", "");
+			AddSimpleRumourCityTip("They say that Red Mary has disappeared. You heard about that?", "LostShipsCity", 10, 1, "LSC", "");
+			AddSimpleRumourCityTip("Mary Casper has vanished. Some people say that she's still inside her cabin, but I don't believe it; it's been a long time since I saw a light in her window.", "LostShipsCity", 10, 1, "LSC", "");
+			AddSimpleRumourCityTip("They say that Red Mary was murdered. Poor girl! Yes, she was a tough sort, but everybody loved her. Who could have done such a thing?", "LostShipsCity", 10, 1, "LSC", "");
 		break;
 		
 		case "Mary_Die_6a":
 			dialog.text = "";
-			link.l1 = "Anyway, it is over now. Adolf wasn't talkative enough, and I had to kill him right in his cabin. I also had to deal with Mary and Cyclops, who had come to get the stutzen from Adolf. They realized, who I was, at once, and attacked me immediately.";
+			link.l1 = "Anyway, it's over now. Adolf wasn't very talkative, so I had to kill him right in his cabin. I also dealt with Mary and Cyclops when they came to get the stutzen from Adolf.";
 			link.l1.go = "Mary_Die_7a";
 		break;
 		
 		case "Mary_Die_7a":
-			dialog.text = "Too bad that you have started a fight on 'Eva'. Now Narwhals are aware that you are responsible for killing their men, such actions won't improve your reputation. Same can be said about mine. Don't pay them a visit until you fix this conflict\nIn general, you did good, "+pchar.name+"! Were you in my crew, I'd definitely have made you my first mate.";
-			link.l1 = "Thanks for such a high response! And, finally, take a look at these letters. I took them from the bodies of Cyclops and poor Mary...";
+			dialog.text = "Too bad you started a fight on the Eva. You'll be in shit with the Narwhals for killing their people. Stay away from them until you can make peace.\nIn general, you did all right, "+pchar.name+"! Were you in my crew, I'd make you my first mate.";
+			link.l1 = "High praise, Shark. Thank you. Oh, take a look at these letters. I took them from the bodies of Cyclops and Mary...";
 			link.l1.go = "Mary_Die_9";
-			AddSimpleRumourCityTip("Such a massacre you have performed here! Narwhals won't forget about it!", "LostShipsCity", 5, 2, "LSC", "");
-			AddSimpleRumourCityTip("I understand killing Cyclops and two Narwhal bandits... But the girl, why have you killed the girl? Poor Mary...", "LostShipsCity", 7, 5, "LSC", "");
+			AddSimpleRumourCityTip("Such a massacre you've committed! The Narwhals won't forget it!", "LostShipsCity", 5, 2, "LSC", "");
+			AddSimpleRumourCityTip("I understand killing Cyclops and two Narwhal bandits, but... the girl. Why did you have to kill poor Mary?", "LostShipsCity", 7, 5, "LSC", "");
 		break;
 		
 		case "Mary_Die_9":
 			RemoveItems(pchar, "letter_chad", 1);
 			RemoveItems(pchar, "letter_chad_1", 1);
-			dialog.text = "Poor Mary? Are you feeling sorry for that whore?";
-			link.l1 = "I really am. See, Chad deceived her and used her. She couldn't resist her feelings and natural hotheadedness... and that's where it got her.";
+			dialog.text = "Poor Mary? Don't tell me you feel sorry for that whore.";
+			link.l1 = "I do. Chad deceived her, manipulated her feelings and natural hotheadedness... She shouldn't have had to die for his ambitions.";
 			link.l1.go = "Mary_Die_10";
 		break;
 		
@@ -354,68 +354,68 @@ void ProcessDialogEvent()
 			PlaySound("interface\important_item.wav");
 			CloseQuestHeader("SharkHunt");
 			bDisableFastReload = false; // belamour legendary edition
-			dialog.text = "Well, go see brother Julian and light a candle... I won't do that myself, though. Alright, let's drop the subject. I am grateful to you, "+pchar.name+", for your help. You can count on my support now. I want to pay you for your excellent work. Here, take five hundred doubloons.";
-			link.l1 = "Nice, thanks!";
+			dialog.text = "Well, go see Brother Julian and light a candle, if you feel that badly about it. Personally, I'm damn glad the bitch is dead.\nAlright, let's drop the subject. I'm grateful for your help, "+pchar.name+". You can count on my support now. I want to pay you for your excellent work. Here's five hundred doubloons.";
+			link.l1 = "Thanks, Steven...";
 			link.l1.go = "LSC_navy";
-			AddSimpleRumourCityTip("They say that the admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
-			AddSimpleRumourCityTip("They say that you are the admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say the Admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that you're the Admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
 		break;
 		
 		// ----------------------------------------вариант N---------------------------------------------------
 		case "entrance":
-			dialog.text = "What do you want? I don't remember you...";
-			link.l1 = "Of course, you don't - we have never met before, and I've come here just recently. Hello, Steven. Such a rare luck! I have found you after all, I've been looking for you though I didn't expect to find you here!";
+			dialog.text = "I don't know you. What do you want?";
+			link.l1 = "Of course, you don't. We've never met, and I've only just arrived. Hello, Steven. I've been looking for you.";
 			link.l1.go = "entrance_1";
 		break;
 		
 		case "entrance_1":
-			dialog.text = "Wait, pal, calm down. Looking for me? I don't like it. Why the hell have you been looking for me?";
-			link.l1 = "I see. Let's try again then. Here, take the letter. It is written by Jan Svenson for you. I suppose that all your suspicions will be wiped away after you read it.";
+			dialog.text = "A lot of people have come looking for me. Most of them are in cemetaries now. If you don't want to join them, maybe try telling me why you've been looking for me.";
+			link.l1 = "We have a friend in common. Here, take this letter. It was written by Jan Svenson. Old Forest Devil can explain things far better than me.";
 			link.l1.go = "entrance_2";
 		break;
 		
 		case "entrance_2":
 			RemoveItems(pchar, "letter_svenson", 1);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "(reading)... Hm. That explains a lot. And I thought that you were going to give me a black mark for Blaze's death. You know, recently there have been many guys eager to do that. Did you leave your ship at the outer ring? And how did you know that I was here?";
-			link.l1 = "I didn't. That was a lucky chance. And about Blaze... Jan and me think that you are not responsible for his death.";
+			dialog.text = "(reading)... Hm. That does explain things. And here I thought you'd come to give me a black spot for killing Blaze - recently there've been many pirates eager to do that.\nDid you leave your ship at the outer ring? And how'd you know I was here?";
+			link.l1 = "I didn't. That was pure chance. And about Blaze... me and Jan don't think you're responsible for his death.";
 			link.l1.go = "entrance_3";
 		break;
 		
 		case "entrance_3":
-			dialog.text = "And you are right. I am not. Someone is trying to blame me, that is true. But I didn't kill him.";
-			link.l1 = "That is good. Interesting, I came here to find Nathaniel Hawk, but I have found you instead, ha-ha!";
+			dialog.text = "You're right, I'm not. But someone wants the Brethren to think I did.";
+			link.l1 = "Interesting... you know, I came here to find Nathaniel Hawk, but here you are instead, heh!";
 			link.l1.go = "Chad_die_9";
 		break;
 		
 		case "entrance_4":
-			dialog.text = "I understand but I can't help you. You have to talk about it with the old-timers of this Island. Talk to Rivados wizard Chimiset. The old black man knows much more than he says.";
+			dialog.text = "You'll have to talk about it with the old-timers of the island. Try the Rivados wizard, Chimiset. The old black knows much more than he lets on.";
 			link.l1 = "And where can I find this wizard?";
 			if (pchar.questTemp.LSC == "mary") link.l1.go = "mary";
 			else link.l1.go = "entrance_5";
 		break;
 		
 		case "entrance_5":
-			dialog.text = "In my prison, on 'Tartarus'. I was planning to release him anyway, it's time to improve our relations with Rivados. Right! Go to the prison, tell Chad Kapper, he is a jailer, that I have ordered to release Chimiset\nTell the black man why I sent you, tell him that I will release him if he is talkative enough. I am sure this will make him talk.";
-			link.l1 = "Hm... I am a newbie here. Where is the prison?";
+			dialog.text = "In my prison, aboard the Tartarus. I was planning to release him soon; it's time to improve our relations with the Rivados.\nYou can deliver the order yourself! Go to the Tartarus, tell Chad Kapper, the gaoler, that I want Chimiset freed.\nBetter yet, ask to see Chimiset first. Tell him I sent you, that I'll release him if he's talkative enough. I'm sure he'll tell you what you want to know.";
+			link.l1 = "Hmm... where is the Tartarus?";
 			link.l1.go = "entrance_6";
 		break;
 		
 		case "entrance_6":
-			dialog.text = "Keep the following in mind. Leave my residence, cross the bridge, turn left, go through frigate Carolina to galleon Gloria and you will get to Esmeralda. Look for a sign of store and enter the doors beneath it. Get through the door in the bow part of the ship and you will reach Tartarus\nBe careful at Esmeralda, it is a property of Narwhals clan, even though, others can visit it. Do not cross their fighters and avoid any troubles.";
+			dialog.text = "Leave my residence, cross the bridge, turn left, go through the frigate Caroline to the galleon Gloria and arrive at the Esmeralda. Look for sign that says 'store' and enter the doors beneath. Go through the door in the bow of the ship and you'll reach Tartarus.\nBe careful at the Esmeralda, that's Narwhal territory, even though others can visit it. Do not piss off their guards and don't make trouble.";
 			link.l1 = "Who are these Rivados and Narwhals?";
 			link.l1.go = "entrance_7";
 		break;
 		
 		case "entrance_7":
-			dialog.text = "The clans have been living here for a very long time. They represent offsprings of first settlers. Narwhals are mostly English, Dutch and French, Rivados are all Negro. Every clan has a leader, they hold several ships and don't let others into their territory\nYou must know passwords in order to visit them. They change passwords every week.";
-			link.l1 = "Fine. I will deal with that. Will they let me get inside the prison?";
+			dialog.text = "They're clans who're descended from the first settlers of Justice Island. The Narwhals are of mostly English, Dutch, and French stock. The Rivados are all Negroes.\nEach clan has a leader, and each holds several ships that constitute a territory which is restricted to outsiders.\nYou must know the correct passwords in order to visit either Narwhal or Rivados territory, and they change the passwords every week.";
+			link.l1 = "Good to know, but will they let me inside the prison?";
 			link.l1.go = "entrance_8";
 		break;
 		
 		case "entrance_8":
-			dialog.text = "They will. Here is the key, so Chad will know that I have sent you there. Take it.";
-			link.l1 = "Fine. Then I will talk with that... Chimiset and then I will be back with the results.";
+			dialog.text = "They will. Here's the key, so Chad will know I sent you. Don't lose it.";
+			link.l1 = "Thanks. I'll talk with that... that Chimiset and be back with the results.";
 			link.l1.go = "entrance_9";
 		break;
 		
@@ -450,55 +450,55 @@ void ProcessDialogEvent()
 		break;
 		
 		case "entrance_10":
-			dialog.text = "So, have you been on 'Tartarus'?";
-			link.l1 = "Yes. I have given your orders to Chad and I had a talk with the black man.";
+			dialog.text = "You've been to Tartarus?";
+			link.l1 = "Yes. I gave your orders to Chad and talked with Chimiset.";
 			link.l1.go = "entrance_11";
 		break;
 		
 		case "entrance_11":
-			dialog.text = "Did the wizard tell you anything interesting?";
-			link.l1 = "Oh, yes. He told me where to find the teleportation idol of Kukulcan. It was on 'San Geronimo' ship, which had sunk at the shoal near the Narwhals' territory.";
+			dialog.text = "Did the wizard tell you anything?";
+			link.l1 = "Oh, yes. He told me where to find the idol I'm looking for. It was on the San Geronimo, near Narwhal territory, which sank some years ago.";
 			link.l1.go = "entrance_12";
 		break;
 		
 		case "entrance_12":
-			dialog.text = "Ha-ha-ha, great! So your 'portal' is at the bottom now? Well, pal, I'm afraid that you are locked up on this island. So join me and my men...";
-			link.l1 = " I will figure out a way to get to the idol. I will find the way. Now. Chimiset told me that you should not trust Kapper, because he saw Chad killing some Alan Milrow, the head of Narwhals, with his own eyes.";
+			dialog.text = "Ha-ha-ha! So, your magic idol's now on the seabed, huh? Well, pal, looks like you're stuck with us.";
+			link.l1 = " I'll figure out a way to get to the idol. Now, Chimiset said you shouldn't trust Kapper, because he saw Chad murder someone named Alan Milrow--";
 			link.l1.go = "entrance_13";
 		break;
 		
 		case "entrance_13":
-			dialog.text = "What?! Chad killed Alan? That wizard is insane! It simply cannot be true!";
-			link.l1 = "You know, Steve, Chimiset is really scared. I don't think that he was lying to me.";
+			dialog.text = "What?! Chad killed Alan? Chimiset's lying, it can't be true!";
+			link.l1 = "Steve, Chimiset was terrified. If he was lying, he did a bloody good job of it...";
 			link.l1.go = "entrance_14";
 		break;
 		
 		case "entrance_14":
-			dialog.text = "Damn it, now that is really bad news! Alan's murder has already spoiled my reputation among Narwhals - some of them decided that I was responsible for it, and now it turns out that one of my officers could have done that!";
-			link.l1 = "It seems that people like blameing you for the sins which are not yours...";
+			dialog.text = "Damn it all, now that's just terrific!\nAlan's murder soured my relationship with the Narwhals - some of them even think that I was responsible for it - and now it turns out that one of my own officers committed the murder?!";
+			link.l1 = "You seem to attract a lot of blame for things you didn't do.";
 			link.l1.go = "entrance_15";
 		break;
 		
 		case "entrance_15":
-			dialog.text = "Yeah, that is troubling...";
-			link.l1 = "And now, the 'nicest' news for you - the old man told me that he had overheard several conversations and figured out that some of your men were planning to kill you. He will tell you more only after you release him, and in private.";
+			dialog.text = "I've noticed.";
+			link.l1 = "Well, I'm afraid it gets better: Chimiset overheard that some of your men were planning to kill you. He'll only tell you more after you release him, and only in private.";
 			link.l1.go = "entrance_16";
 		break;
 		
 		case "entrance_16":
-			dialog.text = "Great! And all of this because of you! No offence, I am just joking. My head is going round: Chad killed Alan, my men are planning an attempt on my life... Has the old black man told you any details?";
-			link.l1 = "No. He fears Chad too much, as far as I understood.";
+			dialog.text = "Great. I knew this day was going too smoothly.\nDid Chimiset give you any details?";
+			link.l1 = "No. He fears Chad too much. He wants his own safety guaranteed first.";
 			link.l1.go = "entrance_17";
 		break;
 		
 		case "entrance_17":
-			dialog.text = "Fine. I will tell Rivados that I want to meet with Chimiset. We'll see what he tells me. And concerning the attempt... fine, I will be careful. So, what are you going to do now, "+pchar.name+"?";
-			link.l1 = "Nothing in particular yet. I will walk around the Island and get to know the locals - perhaps I will come up with an idea how to get out of this place. And I need to find Nathan Hawk first, he is the reason why I am here.";
+			dialog.text = "All right. Let's tell the Rivados that I want to meet with Chimiset. We'll see what he has to say. And concerning the attempt on my life... nothing for it but to be careful.\nSo, what are you going to do now, "+pchar.name+"?";
+			link.l1 = "Nothing in particular yet. I'll walk around the island and get to know the locals - perhaps I'll come up with some idea how to get out of here. And I need to find Nathaniel Hawk, he's the reason I came here.";
 			link.l1.go = "entrance_18";
 		break;
 		
 		case "entrance_18":
-			dialog.text = "I see. Don't forget to visit me when you find a way out of this island - I will give you the sailing directions, you won't be able to get back here without them. I will also tell you some important details.";
+			dialog.text = "Right. Don't forget to see me once you find a way off this island, I'll give you the rutters with my sailing directions so you can sail a ship back here. I'll also have other information you'll need.";
 			link.l1 = "Fine. I will visit you for sure, Steve!";
 			link.l1.go = "entrance_19";
 		break;
@@ -521,26 +521,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "entrance_20":
-			dialog.text = "It is good that you have come, "+pchar.name+". I have been waiting for you. Bad news. Chimiset is dead, Chad Kapper has vanished without a trace.";
-			link.l1 = "Fuck... I am sure that Chad has killed Chimiset! The old black man was so scared not without a reason.";
+			dialog.text = ""+pchar.name+", bad news: Chimiset's dead and Chad Kapper has vanished.";
+			link.l1 = "Damnation! So, Chad finally killed the old wizard...";
 			link.l1.go = "entrance_21";
 		break;
 		
 		case "entrance_21":
-			dialog.text = "I have no doubt in that. Crap, the situation is getting worse every hour. I have almost arranged solid and straight contacts with Black Eddie and now this. Well, we can forget about friendship with Rivados\nThey know that you were talking to Chimiset before he died, and they consider you as one of my men, so avoid contacting them.";
-			link.l1 = "Yeah, what a pity...";
+			dialog.text = "Seems so. This situation's getting worse by the hour. I had a truce all ready to go with Black Eddie, and now...\nWell, we can forget about peace with the Rivados. By the way, they know you talked to Chimiset before he died, and they consider you to be one of my men, so stay away from them.";
+			link.l1 = "Wonderful.";
 			link.l1.go = "entrance_22";
 		break;
 		
 		case "entrance_22":
-			dialog.text = "I have asked you to come not only to tell news. I have received a letter from our mediator and diplomat, Giuseppe Fazio, he invites me to visit his cabin in Carolina at midnight. He also mentions that I must come alone, because this is my life at stake and no one can be trusted\nThis makes sense, Chimiset warned us about a traitor close to me. Yet it smells too suspicious... alone, at midnight... Normally, the fat man himself comes to me. Anyway, I am going to ask for your help\nTechnically, you are not one of my men and you are new here. Jan characterized you as a resourceful and brave man with good skills in fencing. I want you to escort me to the meeting at midnight...";
-			link.l1 = "You don't need to ask me, Steven. I'm in. I don't like this invitation either - it smells like a trap.";
+			dialog.text = "There's more. I received a letter from the island's mediator and diplomat, Giuseppe Fazio. He invited me to visit his cabin aboard the Caroline at midnight.\nHe also said I must come alone, because my life is at stake and my men can't be trusted.\nThis would make sense - Chimiset warned us about a traitor in our crew - yet it still smells so suspicious. Alone, at midnight...\nNormally, the fat man comes to me. I'm going to ask for your help, "+pchar.name+". Jan called you as a resourceful and brave man, and an excellent fighter. I want you to escort me to the meeting at midnight.";
+			link.l1 = "No need to ask, Steven; I'm in. I don't like this invitation either - it's almost certainly a trap.";
 			link.l1.go = "entrance_23";
 		break;
 		
 		case "entrance_23":
-			dialog.text = "Perhaps, I am wrong and there is no trap, but I'd better be ready. I am glad that you have agreed. Come at the deck of the 'San Augustine' at midnight, and we will go see Fazio, his old tub is not far from here.";
-			link.l1 = "Deal. I will be at the deck of 'San Augustine' at midnight and well-armed.";
+			dialog.text = "Maybe. I hope I'm wrong but I'd rather be ready. I'm glad to have you with me\nCome to the main deck of the San Augustine at midnight and we'll go see Fazio. It's a short walk to the Caroline.";
+			link.l1 = "Midnight, then. And I'll be well-armed.";
 			link.l1.go = "entrance_24";
 		break;
 		
@@ -553,8 +553,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "caroline":
-			dialog.text = "Glad to see you, "+pchar.name+". Let's not waste time and see, what that fat man Fazio has to say. Follow me!";
-			link.l1 = "Let's go, Steve. Keep your weapon ready...";
+			dialog.text = "All right, "+pchar.name+", let's not waste any time. Let's see what old fat Fazio has to say. Stay close to me.";
+			link.l1 = "I'm with you, Steve. Keep your weapon ready...";
 			link.l1.go = "caroline_1";
 		break;
 		
@@ -566,62 +566,45 @@ void ProcessDialogEvent()
 		break;
 		
 		case "caroline_2":
-			dialog.text = "And where is that fucking fat man? Where did he go? We are his guests and he is not welcoming us. Do you see him, "+pchar.name+"? Perhaps, we should check his chests, he might be in them...";
-			link.l1 = "He won't be able to get inside any chest in the world anyway. Hush! Steven! There's noise outside...";
+			dialog.text = "Where's that fat man? Where did he go? What a way to treat one's guests! Do you see him, "+pchar.name+"? I don't.\nPerhaps, we should check his chests, he might be in them... if nothing else we'll get compensation for our troubles, ha-ha!";
+			link.l1 = "Heh, I doubt there's a chest in the world he'd be able to fold himself into - hush! Steven! I heard something...";
 			link.l1.go = "caroline_3";
 		break;
 		
 		case "caroline_3":
-			dialog.text = "Fuck! You are right. It seems that we are in trouble."+pchar.name+".";
+			dialog.text = "... get ready, "+pchar.name+".";
 			link.l1 = "...";
-			link.l1.go = "caroline_4";
-		break;
-		
-		case "caroline_4":
-			DialogExit();
-			LAi_SetPlayerType(pchar);
-			// запускаем Мэри, Чада и нарвалов - будет лютое рубилово
-			sld = characterFromId("Capper");
-			sld.cirassId = Items_FindItemIdx("cirass1");
-			LAi_SetActorType(sld);
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload3");
-			sld = characterFromId("Mary");
-			sld.greeting = "mary_4";
-			int iScl = MOD_SKILL_ENEMY_RATE*10 + 2*sti(pchar.rank);
-			LAi_SetHP(sld, 250+iScl, 250+iScl); // усилим
-			sld.dialog.currentnode = "caroline";
-			ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload2");
-			LAi_SetActorType(sld);
-			LAi_ActorDialogNow(sld, pchar, "", -1);
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Caroline_DlgExit_3");
 		break;
 		
 		case "caroline_5":
-			dialog.text = "Argh! We did it... To be honest, I thought that we were dead for sure.";
-			link.l1 = "I've been in troubles worse than this. But I admit, those bastards were tough. Chimiset was right to warn us - Chad is a traitor. Who was the girl commanding them?";
+			dialog.text = "Argh! We did it... God damn, I thought they had us.";
+			link.l1 = "I've been in scrapes worse than this, but even I'll admit, that was too close. Chimiset was right: Chad was a traitor. Who was that girl commanding them?";
 			link.l1.go = "caroline_6";
 		break;
 		
 		case "caroline_6":
-			dialog.text = "Her name is Mary Casper, also known as Red Mary, the ex girlfriend of late Alan Milrow. I understand why Chad  has come here, he wanted to gain my position but what was she doing here?";
-			link.l1 = "It's clear enough. You said that she was his lover, her intentions are clear - revenge. Poor girl didn't know that she was fighting on the same side with her boyfriend's murderer.";
+			dialog.text = "Mary Casper, also known as Red Mary. The late Alan Milrow's lover.\nI understand why Chad was here - he wanted to take over my position - but what was Mary doing here?";
+			link.l1 = "If she was Alan's lover, then it's obvious: she wanted revenge for his death. Poor girl didn't realize she was fighting alongside the very man who murdered Alan...";
 			link.l1.go = "caroline_7";
 		break;
 		
 		case "caroline_7":
-			dialog.text = "Makes sense. Well, now they will pay for everything! I will stop selling them supplies and provision - let them starve to death. My men can stand any siege, in case Narwhals try to storm the San Augustine, we will shoot them like dogs\nThey are going to regret for acting against me in such low manner. I will nail Fazio's fat ass to the wall behind by chair!";
-			link.l1 = "Wait, Steve. It seems that it is not that clear. Give me one day and I will try to investigate this mess. I am sure that Chad is the only man responsible. He killed Milrow, spread the rumour that it was you, used Alan's girlfriend...";
+			dialog.text = "Makes sense. Oh, I'm going to make the Narwhals pay for this! I'll stop selling them provisions, let them starve to death!\nAnd what can they do about it? If they attack us, the San Augustine can withstand any siege! They're going to regret this. And I'll nail Fazio's fat ass to the wall behind my chair!";
+			link.l1 = "Steve, Steve, wait! What if... what if the Narwhals had no part in this? Chad was one of your pirates, not the Narwhals. Chad murdered Alan, Chad murdered Chimiset, and Chad spread the rumours about you. What if all this begins and ends with Chad?";
 			link.l1.go = "caroline_8";
 		break;
 		
 		case "caroline_8":
-			dialog.text = "Fine. Investigate. Perhaps, we haven't found all the plotters yet. And I will go and have some rum. And, "+pchar.name+": I owe you. You can count on me in everything. You would get a position of boatswain if you would have been in my crew.";
-			link.l1 = "Thanks for such a high response! We will work together when you become head of Brethren of the Coast anyway. Go and have some rest and I will check this cabin, perhaps I will find something useful.";
+			dialog.text = "... Damn you, "+pchar.name+", but... you may have a point.\nFine, I owe you, so I'll give you a chance to look into this. If you can prove the Narwhals played no part in this, I'll call off the war.\nYou've earned my trust, and you can count on my help in anything you do. I'd make you my boatswain, if I still had a ship.";
+			link.l1 = "You can repay me by taking up the leadership of the Brethren of the Coast, when we get out of here. Go get some rest, I'll look around this cabin for any more clues - and don't go dying on me in my absence!";
 			link.l1.go = "caroline_9";
 		break;
 		
 		case "caroline_9":
-			dialog.text = "Good. I will send my men here to clean up before morning - we don't want to scare people with dead bodies. Well, crabs will get a fine meal tonight! See you!";
-			link.l1 = "See you...";
+			dialog.text = "Heh, wouldn't dream of it. I'll send someone to clean up these bodies. The crabs will eat well tonight! (spits) 'Bye, my friend.";
+			link.l1 = "Goodnight.";
 			link.l1.go = "caroline_10";
 		break;
 		
@@ -633,38 +616,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "narval":
-			dialog.text = "Well, "+pchar.name+", I take it that your investigation was fruitful?";
-			link.l1 = "You can say so. Narwhals are not involved in the attempt on your life. Except for Mary and those guys who had met us 0n the 'Carolina'. I think that she instigated them to attack us. Fazio was forced to send you the invitation. I have found the letter in his cabin which explains a lot. Read it.";
+			dialog.text = "Well, "+pchar.name+", learn anything new?";
+			link.l1 = "You can call off your vendetta, Steven. The Narwhals weren't involved in the plot against you, with the exception of Mary and the lads we fought on the Caroline - I think she talked them into attacking us. Fazio was forced to send you the invitation. I have found a letter in his cabin which explains a lot. Read it.";
 			link.l1.go = "narval_1";
 		break;
 		
 		case "narval_1":
 			RemoveItems(pchar, "letter_chad_1", 1);
-			dialog.text = "(reading)... Hm. That looks like a Fazio's type. Sure, what could he do against Chad... he was saving his fat skin. It seems that it was all because of my boatswain...";
-			link.l1 = "You see it for yourself now. The motives are clear, and we know why Chad killed Chimiset and Alan. Kapper wanted to become the admiral of the island. I have visited the head of Narwhals - Donald Greenspen. He swore that neither him, nor anyone of his men were plotting against you.";
+			dialog.text = "(reading)... Hmm... that's Fazio all over: saving his own skin. So, it was really all Chad, beginning to end...";
+			link.l1 = "And all because he wanted to be Admiral. I visited Donald Greenspan. He swore that neither him nor anyone of his men were plotting against you.";
 			link.l1.go = "narval_2";
 		break;
 		
 		case "narval_2":
 			dialog.text = "Do you trust him?";
-			link.l1 = "I do. Donald will clear your name of accusations of Alan's death. He is ready to visit you personally and to bring you official excuses. You were blamed for nothing too, remember?";
+			link.l1 = "I do. Donald will clear you of Alan's murder. He's ready to visit you personally and talk things out.";
 			link.l1.go = "narval_3";
 		break;
 		
 		case "narval_3":
-			dialog.text = "Fine, declaring a war would be a bit too much. We are not in position to start a bloodshed. Plus, it looks like only a few scums are responsible for this, not the whole clan\nYou say that Donald is ready to apologize? Fine, let's use it to establish positive relations with Narwhals, Rivados are lost to us anyway.";
-			link.l1 = "That is a good point, Steven. Now it's a perfect time for it.";
+			dialog.text = "Good. Much as I love a dustup, a war at this stage would be pointless. Too many have died already, and the ones who set all this in motion are crab food.\nYou say Donald is ready to apologize? Fine, let's salvage what relations we can with the Narwhals; I think the Rivados are lost to us because of Chimiset.";
+			link.l1 = "This may be the only chance you get for peace.";
 			link.l1.go = "narval_4";
 		break;
 		
 		case "narval_4":
-			dialog.text = "Fine. Tell Donald that I am ready to see him and make peace.";
+			dialog.text = "You've already convinced me. Tell Donald I'm ready to see him and make peace.";
 			link.l1 = "I am on my way.";
 			link.l1.go = "narval_5";
 		break;
 		
 		case "narval_5":
-			dialog.text = "Wait, "+pchar.name+". You did well and I want to pay you with fine coin. Here, take these five hundred doubloons.";
+			dialog.text = "Wait, "+pchar.name+". You did well and you should be paid well. Here's five hundred doubloons.";
 			link.l1 = "Thank you!";
 			link.l1.go = "LSC_navy";
 			TakeNItems(pchar, "gold_dublon", 500);
@@ -675,76 +658,76 @@ void ProcessDialogEvent()
 			sld = characterFromId("Grinspy");
 			sld.dialog.currentnode = "shark_16"; // ноду Дональду Гринспи
 			SetFunctionTimerCondition("LSC_FacioReturn", 0, 0, 1, false); // вертаем на место Фацио через сутки
-			AddSimpleRumourCityTip("They say that admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
-			AddSimpleRumourCityTip("They say that you are the admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that the Admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that you are the Admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
 		break;
 		
 		// ----------------------------------------вариант M----------------------------------------------------
 		case "mary":
-			dialog.text = "In my prison 'Tartarus'. You can go there and see him. I will give you the key and Chad Kapper won't put obstacles in your way...";
-			link.l1 = "Wait, Steven. I think that I shouldn't go to Chad Kapper yet...";
+			dialog.text = "In my prison Tartarus. You can go there and see him. I'll give you the key. Talk to Chad Kapper, our gaoler--";
+			link.l1 = "Wait, Steven. There's something you need to know about Kapper...";
 			link.l1.go = "mary_1";
 		break;
 		
 		case "mary_1":
-			dialog.text = "And why shouldn't you? What, don't you like him?";
-			link.l1 = "Actually, it's you whom he doesn't like. I've got bad news for you. Chad Kapper is planning to make an attempt on your life.";
+			dialog.text = "... I'm listening...";
+			link.l1 = "I don't know how else to say this, but... Kapper is plotting to kill you.";
 			link.l1.go = "mary_2";
 		break;
 		
 		case "mary_2":
-			dialog.text = "What?! Explain yourself. Who said that?";
-			link.l1 = "Let me tell you the whole story. That would be better.";
+			dialog.text = "... You'd better have a damn good reason for accusing one of my oldest mates of treachery.";
+			link.l1 = "Let me tell you the whole story--";
 			link.l1.go = "mary_3";
 		break;
 		
 		case "mary_3":
-			dialog.text = "Well, tell me, then...";
-			link.l1 = "After I had found myself in the drowned cargo hold, I got out through the hole and swam among the ship wrecks to find a safe place. Finally, I climbed on the old flute and got inside the ship. There was a fight between some girl in red jacket and two big guys...";
+			dialog.text = "Talk fast.";
+			link.l1 = "After I found myself in the flooded cargo hold, I got out through a hole in the hull and swam among the shipwrecks looking for a place to climb out. I finally found a wreck where I could get through a door in the bow. There was a fight between some girl in a red jacket and two tough lads--";
 			if (pchar.questTemp.LSC.Mary == "alive") link.l1.go = "mary_4"; // Мэри жива
 			else link.l1.go = "mary_15";
 		break;
 		
 		case "mary_4":
-			dialog.text = "Heh, it seems that Red Mary has finally pissed someone off.";
-			link.l1 = "I helped her and we finished those bastards. We had an interesting chat after that... Tell me, Steve, who are these Narwhals and Rivados, she was using these words so often that I was too shy to ask her what did they actually mean.";
+			dialog.text = "Someone was trying to kill Red Mary?";
+			link.l1 = "Apparently. I helped her finish off those bastards and we had an interesting chat afterwards... Tell me, Steve, who are the 'Narwhals' and 'Rivados'? She mentioned them several times.";
 			link.l1.go = "mary_5";
 		break;
 		
 		case "mary_5":
-			dialog.text = "The groups of local inhabitants who have been living here for a long time. They are the offsprings of the very first settlers of the Island. Narwhals are mostly English, Dutch and French, Rivados are all black. These clans have their own leaders, their own several ships and they don't let others on their territories. You have to know their passwords in case you want to visit clans' ships. They change them every week.";
-			link.l1 = "I see now. I take it that Mary is with Narwhals?";
+			dialog.text = "They're clans who're descended from the first settlers of Justice Island. The Narwhals are of mostly English, Dutch, and French stock. The Rivados are all Negroes.\nEach clan has a leader, and each holds several ships that constitute a territory which is restricted to outsiders.\nYou must know the correct passwords in order to visit either Narwhal or Rivados territory, and they change the passwords every week.";
+			link.l1 = "A-ah, I see... and Mary is a Narwhal?";
 			link.l1.go = "mary_6";
 		break;
 		
 		case "mary_6":
-			dialog.text = "Yes, that expressive girl is from their clan. So what did she tell you?";
-			link.l1 = "Chad Kapper killed Alan Milrow, her lover, who was captured by you. After that, he spread gossips about your involvement in this. Chad deceived Mary and tried to use her craving for revenge.";
+			dialog.text = "Yes. So, what did she tell you?";
+			link.l1 = "Chad Kapper killed Alan Milrow, her lover, who was captured by you. After that, he spread a rumour that you committed the murder. He tried to manipulate Mary's lust for revenge for his own ends.";
 			link.l1.go = "mary_7";
 		break;
 		
 		case "mary_7":
-			dialog.text = "Damn it! He killed Alan? But why? To leave me the blame?";
-			link.l1 = "To make Narwhals hostile to you and to gain their trust. Kapper's final goal is to eliminate you and take your position. Mary has refused to take part in his plan and to become his lover - that is why he ordered Narwhals to kill her.";
+			dialog.text = "Chad killed Alan?! But why?";
+			link.l1 = "To leave the blame at your doorstep and make the Narwhals hostile to you. Kapper's ultimate goal is to eliminate you and take your place as Admiral. Mary refused to take part in his plan - and to become his lover - so he ordered his men to kill her.";
 			link.l1.go = "mary_8";
 		break;
 		
 		case "mary_8":
-			dialog.text = "Did she tell you that?";
-			link.l1 = "Yes. And it didn't look like she was lying. Besides, she gave me a letter from Chad Kapper. I have already read it so you should do the same.";
+			dialog.text = "And she told you all this?";
+			link.l1 = "Yes. I don't think she was lying. Besides, she gave me a letter from Chad Kapper. I've already read it. Here.";
 			link.l1.go = "mary_9";
 		break;
 		
 		case "mary_9":
 			RemoveItems(pchar, "letter_chad_1", 1);
-			dialog.text = "Hm. Yes, these are Chad's writings. I am very familiar with his peasant handwriting (reading) Argh! Unbelievable! Bastard! Traitor! Well, I am going to hang him on his own guts! Layton! Gather five men! On the second thought, Layton, wait, dismissed!\nWe will do it in a smart way. I have been planning to improve our relations with Rivados, this is a chance. Their wizard Chimiset is being held in Tartarus. A prison. We are going to let Rivados free their man themselves and in the act, they will kill the traitor\nLayton! Go to Tartarus and take all our guards from her upper deck! "+pchar.name+", you will also take part in this and I am about to assign a very important role to you. Find the leader of Rivados, Black Eddie, and negotiate with him...";
-			link.l1 = "Me? Hm. But I don't know anyone here!";
+			dialog.text = " (reading) ... Yes, this is Chad's handwriting, all right. Argh! Unbelievable! Bastard! Traitor!\nI'm going to hang him by his own entrails! Layton! Get five men and--\nOn second thought... belay that, Layton. Dismissed! We'll do this smart-like.\nI've been looking for a way to improve our relations with the Rivados, and this could be it.\nTheir wizard, Chimiset, is being held in Tartarus, the local prison. We're going to let the Rivados free their man, and in the act, they'll kill Chad for us.\nLayton! Go to Tartarus and take all our guards off her upper deck! "+pchar.name+", I have an important job for you. Find the leader of the Rivados, Black Eddie, and negotiate with him--";
+			link.l1 = "Me? But I don't know anyone here!";
 			link.l1.go = "mary_10";
 		break;
 		
 		case "mary_10":
-			dialog.text = "So you will get to know some people soon - actually you will get to know the very first man of the entire Rivados clan. You are the most suitable candidate to perform the diplomatic part of my plan. My pirates won't be able to come through Rivados territories easily; also I don't have men with decent oratory skills.";
-			link.l1 = "Well, fine. I am on it. What should I do?";
+			dialog.text = "You're about to, starting with Eddie: he's the head of the entire Rivados clan.\nYou're the best man to do diplomacy on our behalf. None of my pirates would be granted an audience with Eddie... and to be perfectly honest, none of them have great oratory skills.";
+			link.l1 = "(sigh) All right, I'll go see this... Black Eddie.";
 			link.l1.go = "mary_11";
 		break;
 		
@@ -753,34 +736,34 @@ void ProcessDialogEvent()
 			Log_Info("You have received 50 doubloons");
 			PlaySound("interface\important_item.wav");
 			TakeNItems(pchar, "gold_dublon", 50);
-			dialog.text = "Take this key. It opens every door on 'Tartarus'. Also, take these fifty doubloons. First you should go to 'Carolina', buy a password in order to access Rivados territory. Talk to Fazio, he is our mediator, a password will cost you fifty doubloons. Then you should go to the 'Protector'\nIt's a residence of Black Eddie. Tell him that Chad Kapper is on the side of Narwhals, stopped following my orders and going to murder Chimiset. Give him the key, tell him to take a decent number of his fighters and to attack 'Tartarus'\nWe will kill two birds with one stone: Rivados will consider us their allies and Kapper will die by the hands of Negros. Can't say I envy the man. Got it?";
+			dialog.text = "Take this key and give it to him. It opens every door on the Tartarus - the Negroes will need it if they're to rescue Chimiset.\nAlso, take these fifty doubloons. Another local you're about to know is Giuseppe Fazio, a mediator and diplomat on the Caroline. Take the doubloons and buy this week's password to Rivados territory - Fazio makes it his business to acquire the passwords as they're selected.\nNext, go to the Protector. It's Black Eddie's residence. Tell him that Chad Kapper has joined the Narwhals, stopped following my orders, and is going to murder Chimiset today.\nGive him the key, tell him to take a strong force and attack the Tartarus.\nWe'll kill two birds with one stone: the Rivados will consider us their allies and Kapper will die at the hands of Negroes. Got everything?";
 			if (pchar.questTemp.LSC.Mary == "alive")// Мэри жива
 			{
-				link.l1 = "I understand - but where to find 'Protector' and 'Carolina'?";
+				link.l1 = "I think so, but where do I find the Protector and Caroline?";
 				link.l1.go = "mary_12";
 			}
 			else
 			{
-				link.l1 = "Listen, Steve, tell me who are those Rivados and Narwhals. You are talking about them all the time, but I still have no idea, who they are.";
+				link.l1 = "Listen, Steve, tell me who these Rivados and Narwhals are. I still don't know anything about them.";
 				link.l1.go = "mary_12_1";
 			}
 		break;
 		
 		case "mary_12_1":
-			dialog.text = "Narvals and Rivados are the local clans. The clans have been living here for a very long time. They represent offsprings of first settlers. Narvals are mostly English, Dutch and French, Rivados are all Negro. Every clan has a leader, they hold several ships and don't let others into their territory\nYou must know passwords in order to visit them. They change passwords every week.";
-			link.l1 = "Now I see. Tell me - where to find 'Protector' and 'Carolina'?";
+			dialog.text = "They're clans who're descended from the first settlers of Justice Island. The Narwhals are of mostly English, Dutch, and French stock. The Rivados are all Negroes.\nEach clan has a leader, and each holds several ships that constitute a territory which is restricted to outsiders.\nYou must know the correct passwords in order to visit either Narwhal or Rivados territory, and they change the passwords every week.";
+			link.l1 = "Now I see. But where do I find the Protector and Caroline?";
 			link.l1.go = "mary_12";
 		break;
 		
 		case "mary_12":
-			dialog.text = "Easy as pie. Leave my residence, pass a bridge and turn left. This will be Carolina. Finding Protector is a bit trickier: after you have passed a bridge, turn right and go to Santa Florentina over boards\nFind Rivados soldiers there. They will ask for a password. Say it loud and clear. Then go inside Fury and enter Protector through the stern.";
-			link.l1 = "Well, I see now. I think that I won't miss them.";
+			dialog.text = "Leave my residence, cross the rope bridge, and turn left. This will be the Caroline.\Getting to the Protector is a bit trickier: after you cross the bridge, turn right and go to the Santa Florentina - other side of the board bridge.\nFind the Rivados soldiers - as I said, they're all black. They'll ask for the password. Say it loud and clear. Then go inside the Fury and enter the Protector through the stern.";
+			link.l1 = "All right... I think I've got it.";
 			link.l1.go = "mary_13";
 		break;
 		
 		case "mary_13":
-			dialog.text = "Very well, then. Get to it, friend!";
-			link.l1 = "See you!";
+			dialog.text = "Well, then get to it, friend!";
+			link.l1 = "I'll be back soon.";
 			link.l1.go = "mary_14";
 		break;
 		
@@ -796,40 +779,40 @@ void ProcessDialogEvent()
 		break;
 		
 		case "dodson_warwait":
-			dialog.text = "Are you still here? Go to Rivados now!";
-			link.l1 = "I am on my way!";
+			dialog.text = "Are you still here? Go see Black Eddie right now!";
+			link.l1 = "I am on my way.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "dodson_warwait";
 		break;
 		
 		case "mary_15":
-			dialog.text = "Heh, it seems that Red Mary has finally pissed someone off.";
-			link.l1 = "Yes. She pissed Chad Kapper off. I had joined the fight, but, unfortunately, I wasn't able to save the girl, one of the attacker has cut her with his saber.";
+			dialog.text = "Someone was trying to kill Red Mary?.";
+			link.l1 = "Was that her name? I tried to save her, but one of her attackers got her with a sabre cut.";
 			link.l1.go = "mary_16";
 		break;
 		
 		case "mary_16":
-			dialog.text = "I am sorry for her, sure, but it was her fault no doubt. Mary had always been looking for trouble. And what about Chad Kapper? This is my boatswain, actually.";
-			link.l1 = "Your boatswain? He-he... Here, read this letter. I have found it on the girl's body. You will see now, who had ordered to kill her and for what. Kapper is planning an attempt on your life.";
+			dialog.text = "I'm sorry for the girl, but I'm not surprised. Mary was always a troublemaker.\nAnd what about Chad? He's my boatswain.";
+			link.l1 = "Your boatswain? Oh... um, here, read this letter. I found it on the girl's body. Kapper is planning an attempt on your life, Steven.";
 			link.l1.go = "mary_9";
 		break;
 		
 		// Каппер сбежал
 		case "Chad_escape":
-			dialog.text = "Where have you been for so long? I've been told that Rivados freed their wizard...";
-			link.l1 = "I was held as a hostage on 'Protector' to ensure their safety from an ambush. They have freed Chimiset, yes, but Chad managed to escape.";
+			dialog.text = "Where have you been?! I've been told the Rivados freed their wizard, but no one's seen you in hours!";
+			link.l1 = "I'm sorry, Steven. The blacks held me hostage on the Protector to ensure their safety in case you double-crossed them. They freed Chimiset, yes, but Chad escaped.";
 			link.l1.go = "Chad_escape_1";
 		break;
 		
 		case "Chad_escape_1":
-			dialog.text = "Shit! Never deal with black, they say... They were unable to do even such a simple task! Fuck those Rivados!";
-			link.l1 = "Chad has hidden among the Narwhals...";
+			dialog.text = "Shit! Never trust a Negro to do a white man's job... Fucking up even a simple task... God damn those Rivados!";
+			link.l1 = "Chad's hidden among the Narwhals...";
 			link.l1.go = "Chad_escape_2";
 		break;
 		
 		case "Chad_escape_2":
-			dialog.text = "Sure, he has! He is not a fool and he realized that Rivados couldn't have got inside Tartarus without my help. Now he will hide and attack from the shadows. Layton! Fortify the posts! Keep your eyes open all the time! I will pay a fortune to the man who will deal with Kapper!";
-			link.l1 = "Fine, Steven. I need to think about it. Perhaps, I will be able to track Chad down. See you.";
+			dialog.text = "Of course he has! He's no fool - he knows the Rivados couldn't have got inside the Tartarus without my help! Now he'll hide and plot from the shadows.\nLayton! Double the guards! Keep your eyes open at all times! A fortune goes to the man who sends Chad Kapper to hell!!";
+			link.l1 = "Steven, I'm going to go. Maybe I'll be able to track Chad down. I'll come back when I've news.";
 			link.l1.go = "Chad_escape_3";
 			NextDiag.TempNode = "Total_wait";
 		break;
@@ -861,38 +844,38 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey":
-			dialog.text = "What happened, "+pchar.name+"? You look like you're being chased by Lucefer himself.";
-			link.l1 = "Have they brought you a barrel of whiskey?";
+			dialog.text = "What happened, "+pchar.name+"? You look like you're being chased by the Devil himself!";
+			link.l1 = "Did you get a barrel of whiskey?";
 			link.l1.go = "whiskey_1";
 		break;
 		
 		case "whiskey_1":
-			dialog.text = "What barrel?";
-			link.l1 = "HAVE THEY BROUGHT YOU A BARREL OF WHISKEY?!";
+			dialog.text = "What whiskey--?";
+			link.l1 = "Did you get a barrel of whiskey?!";
 			link.l1.go = "whiskey_2";
 		break;
 		
 		case "whiskey_2":
-			dialog.text = "Why are you shouting like that, pal? No, they haven't. What is the matter?";
-			link.l1 = "Thank God I've come in time... Chad Kapper bought a barrel of Bushmills from Axel Yost...";
+			dialog.text = "Lower your voice, man! I haven't got any whiskey! What's wrong?";
+			link.l1 = "Thank God I've come in time... Chad Kapper bought a barrel of Bushmills from Axel Yost--";
 			link.l1.go = "whiskey_3";
 		break;
 		
 		case "whiskey_3":
-			dialog.text = "Bushmills? This is my favorite one! I haven't drunk it for ages!";
-			link.l1 = "Yes-yes. And Kapper knows that, too. He also asked his pal, Marcello Cyclops, to buy some arsenic from Sancho Carpentero. See why?";
+			dialog.text = "Bushmills? That's my favourite drop! I haven't drunk it for ages!";
+			link.l1 = "Yes-yes, and Kapper knows that; he asked his pal, Marcello Cyclops, to buy some arsenic from Sancho Carpentero. You get it now?";
 			link.l1.go = "whiskey_4";
 		break;
 		
 		case "whiskey_4":
-			dialog.text = "Do you think that he is going to poison me?";
-			link.l1 = "No doubt! That is why I was in such a hurry. If they bring you a barrel of whiskey - don't drink it. It is poisoned.";
+			dialog.text = "He was going to poison me...?";
+			link.l1 = "Yes! That's why I was in such a hurry. Fuck, my heart... Listen, if anyone brings you a barrel of whiskey, don't drink it! It'll be poisoned.";
 			link.l1.go = "whiskey_5";
 		break;
 		
 		case "whiskey_5":
-			dialog.text = "Heh, thanks for the warning! I will be careful. Wait, where are you going now?";
-			link.l1 = "I need to find Kapper and Cyclops. I have an idea where to find them. See you!";
+			dialog.text = ""+pchar.name+", thanks for the warning, I will be careful - wait, where are you off to now?";
+			link.l1 = "I need to find Kapper and Cyclops. I think I know where they are. I'll talk to you soon!";
 			link.l1.go = "whiskey_6";
 		break;
 		
@@ -904,26 +887,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whiskey_7":
-			dialog.text = "Ha! I am glad to see you, pal! It looks like I owe you my life.";
-			link.l1 = "Have they brought whiskey?";
+			dialog.text = "Ha! Just the man I was looking for! Seems like I owe you my life.";
+			link.l1 = "Did the whiskey show up?";
 			link.l1.go = "whiskey_8";
 		break;
 		
 		case "whiskey_8":
-			dialog.text = "They have! Bushmills, just as you said. Our dear Fazio was so kind... I have arrested him to investigate...";
+			dialog.text = "It did! Bushmills, just as you said. Our dear Fazio was so kind - presented it as a gift. Naturally, I arrested him.";
 			link.l1 = "Has he confessed?";
 			link.l1.go = "whiskey_9";
 		break;
 		
 		case "whiskey_9":
-			dialog.text = "Yes. He says that Kapper forced him to do that. He was scared and... brought me the barrel as a present from Narwhals.";
-			link.l1 = "Kapper is dead. I have eliminated him and his Narwhal friends. Now there's just one bastard left - Cyclops Marcello... I am confident that this fat pig is aware of his whereabouts. Let me push him a bit!";
+			dialog.text = "He has. Says Kapper forced him into this, told him to tell me that the whiskey was a present from the Narwhals..";
+			link.l1 = "Kapper is dead. So are his Narwhal friends. Now there's just one bastard left - Marcello Cyclops... I'm sure Fazio knows his whereabouts. Let me push him a bit!";
 			link.l1.go = "whiskey_10";
 		break;
 		
 		case "whiskey_10":
-			dialog.text = "Sure. Just try not to kill him, our poor Fazio is in rather poor health.";
-			link.l1 = "I will be gentle... very gentle, damn it!";
+			dialog.text = "Be my guest - but take care not to kill him, our dear Fazio is in rather poor health.";
+			link.l1 = "I will be gentle... mostly.";
 			link.l1.go = "whiskey_11";
 		break;
 		
@@ -937,27 +920,27 @@ void ProcessDialogEvent()
 		
 		case "poison":
 			pchar.questTemp.LSC.Dodson_poison = "true"; // разговор состоялся
-			dialog.text = "Argh... "+pchar.name+", friend, something is very wrong with me..";
-			link.l1 = "Steven! Did you drink the whiskey? Fuck, did you really drink it?!";
+			dialog.text = "Argh... "+pchar.name+", friend, something is very wrong with me...";
+			link.l1 = "Steven! Did you drink this whiskey?!";
 			link.l1.go = "poison_1";
 		break;
 		
 		case "poison_1":
-			dialog.text = "Yes... This is the best Irish whiskey... Giuseppe Fazio brought it for me today. He said that it was a present from Narwhal leader... a token of peace... oh, that hurts... Looks like it is the end of me.";
-			link.l1 = "Damn it! The whiskey was poisoned with arsenic! Chad Kapper and Marcello Cyclops did that!";
+			dialog.text = "Yes... Bushmills... Giuseppe Fazio brought it for me today, said it was a present from the Narwhal leader... a token of peace...\nAck, fuck it hurts!";
+			link.l1 = "That whiskey was poisoned with arsenic!! Chad and Cyclops did it!";
 			link.l1.go = "poison_2";
 		break;
 		
 		case "poison_2":
-			dialog.text = "Argh... boatswain has finally got me... fuck!";
+			dialog.text = "Argh... fucker finally got me...";
 			if (CheckCharacterItem(pchar, "ultimate_potion"))
 			{
-				link.l1 = "You are not going to die! Hear me? You won't die! Quickly, take this flask. This is the most powerful healing potion in the world, it cures everything. Drink it... now!";
+				link.l1 = "You are not going to die! Hear me? You're not! Quickly, take this flask. This is the most powerful healing potion in the world, it cures everything. Drink it... now!";
 				link.l1.go = "poison_3";
 			}
 			else
 			{
-				link.l1 = "Steven!";
+				link.l1 = "Steven...!";
 				link.l1.go = "dodson_poison";
 			}
 		break;
@@ -984,29 +967,29 @@ void ProcessDialogEvent()
 			Log_Info("Comanche potion was used");
 			Log_Info("Poison was cured!");
 			PlaySound("interface\notebook.wav");
-			dialog.text = "Oh... "+pchar.name+", it really helped. Still feeling sick a bit, but the pain is almost gone...";
-			link.l1 = "This potion neutralizes even the most lethal poisons. Drink it all! Yes...";
+			dialog.text = "Oh... "+pchar.name+", that stuff's incredible. Still feeling a bit sick, but the pain is almost gone...";
+			link.l1 = "An Indian shaman gave it to me. Drink it all, quickly! There we go...";
 			link.l1.go = "poison_4";
 		break;
 		
 		case "poison_4":
 			LAi_SetStayType(npchar);
-			dialog.text = "A miracle... I am fine now. Thank you, friend, I will never forget it...";
+			dialog.text = "A miracle... I feel fine! Thank you, friend... I'll remember this!";
 			if (CheckAttribute(pchar, "questTemp.LSC.CapperDie_Aeva"))
 			{
-				link.l1 = "You'd better rest now. You look like a dead man. That bastard Kapper won't be able to threat us anymore - I have dealt with him and with a few Narwhals, too. Only Marcello Cyclops is left. You said that Fazio brought you the whiskey, right?";
+				link.l1 = "You'd better rest now. You look like Death. That bastard Kapper won't be able to threaten you anymore - I've dealt with him and some of his Narwhal friends, too. Only Marcello Cyclops is left. You said that Fazio brought you the whiskey, right?";
 				link.l1.go = "poison_5";
 			}
 			else
 			{
-				link.l1 = "You'd better rest now. You look like a dead man. You said that Fazio had brought you the whiskey, right?";
+				link.l1 = "You'd better rest now. You look like a dead man. You said Fazio brought you the whiskey?";
 				link.l1.go = "poison_7";
 			}
 		break;
 		
 		case "poison_5":
-			dialog.text = "Yes. I really had to have paid attention to his pale face and shaking hands...";
-			link.l1 = "It seems that he was forced to do that. Fine, I am going to visit that fat pig and get the information from him. I am sure that he knows what I need. Get well!";
+			dialog.text = "Yes. I wondered why he looked nervous... thought it was just because he was standing in my august presence, he-he...";
+			link.l1 = "Kapper must've forced him into this. All right, I'm going to pay that fat pig a visit and get some information out of him. Rest now, Steven!";
 			link.l1.go = "poison_6";
 		break;
 		
@@ -1021,8 +1004,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "poison_7":
-			dialog.text = "Yes. I really had to have paid attention to his pale face and shaking hands...";
-			link.l1 = "It seems that he was forced to do that. Fine, I will get that fat pig eventually, but now I have to deal with Kapper and Cyclops. I know where they are hiding. Get well!";
+			dialog.text = "Yes. I wondered why he looked nervous... thought it was just because he was standing in my august presence, he-he...";
+			link.l1 = "Kapper must've forced him into this. I'll get that fat pig eventually, but right now I have to deal with Kapper and Cyclops. I know where they're hiding. Rest now, Steven!";
 			link.l1.go = "poison_8";
 		break;
 		
@@ -1033,33 +1016,33 @@ void ProcessDialogEvent()
 		break;
 		
 		case "clear":
-			dialog.text = "What do you say, "+pchar.name+"? I already know that you have dealt with Kapper on 'Eva'. And you haven't even cleaned up there, ha-ha! To be honest, I am admired! To kill Chad and his men, isn't that something! Yes, Jan was right to praise you.";
-			link.l1 = "Not only have I dealt with Kapper, but I also prevented an attempt on your life. You were going to be poisoned, Steven, but I have stopped the bastards from doing that.";
+			dialog.text = "Ahoy, "+pchar.name+"! I heard about your dustup with Kapper on the Eva, ha-ha! I'm amazed! To kill Chad and his men, all by yourself... Jan was right about your fighting skills.";
+			link.l1 = "Not only have I dealt with Kapper, I also prevented an attempt on your life. You were going to be poisoned, Steven. But it's all right, I took care of it.";
 			link.l1.go = "clear_1";
 		break;
 		
 		case "clear_1":
-			dialog.text = "To poison me? But how?";
-			link.l1 = "Chad bought a barrel of Irish Bushmills whiskey from Axel...";
+			dialog.text = "Poison me? How?";
+			link.l1 = "Chad bought a barrel of Irish Bushmills whiskey from Axel--";
 			link.l1.go = "clear_2";
 		break;
 		
 		case "clear_2":
 			dialog.text = "Bushmills? This is my favorite one! I haven't drunk it for ages!";
-			link.l1 = "Yes-yes. And Kapper knows that, too. He also asked his pal, Marcello Cyclops, to buy some arsenic from Sancho Carpentero.  Then he and his pals took Fazio and went down the cargo hold of 'Eva'. He was going to poison the whiskey and force Fazio to bring it to you as a gift from Narwhals.";
+			link.l1 = "And Kapper knew that. He asked his pal, Marcello Cyclops, to buy some arsenic from Sancho Carpentero. Then he and his friends grabbed Fazio and went down into the cargo hold of the Eva. He was going to poison the whiskey and force Fazio to bring it to you as a 'gift from the Narwhals'.";
 			link.l1.go = "clear_3";
 		break;
 		
 		case "clear_3":
-			dialog.text = "Ha! Of course, I would have drink a pint of the whiskey immediately...";
+			dialog.text = "Damn... it would've worked, too; I'd have drink a pint of that whiskey in a heartbeat.";
 			if (CheckCharacterItem(pchar, "cask_whisky"))
 			{
-				link.l1 = "Chad was counting on that. But he failed - he didn't even have time to put an arsenic in it. Yes, and I took the barrel with me. You can have it as a gift.";
+				link.l1 = "Chad was counting on that. But he failed - he didn't even have time to put the arsenic in it. So... I took the barrel with me. You can have it, unspoiled.";
 				link.l1.go = "clear_4";
 			}
 			else
 			{
-				link.l1 = "Chad was counting on that. But he failed - he didn't even have time to put an arsenic in it.";
+				link.l1 = "Chad was counting on that. But he failed - he didn't even have time to put the arsenic in it.";
 				link.l1.go = "clear_7";
 			}
 		break;
@@ -1067,8 +1050,8 @@ void ProcessDialogEvent()
 		case "clear_4":
 			RemoveItems(pchar, "cask_whisky", 1);
 			PlaySound("interface\notebook.wav");
-			dialog.text = "Show me... "+pchar.name+", this is a real Bushmills! The best Irish whiskey! Argh, I've been a dreaming of it for years! You, you.. Damn it! You have eliminated Chad and you found such lovely whiskey!\nI will give you one of my best talismans. This is Thor's Hammer, it's everlasting. Your cannoneer is going to love it!";
-			link.l1 = "Thanks! I am very glad, too.";
+			dialog.text = "Show me... "+pchar.name+", this is real Bushmills! The best Irish whiskey! Argh, I've been a dreaming of it for years!\nYou, my friend.. Damn it, you're a miracle worker! You eliminate Chad, save my life, and bring me a barrel of my favourite whiskey as if it's nothing!\nThis demands a suitable reward.\n (rummaging around) The fuck is it...? Ah! Here, take this. It's called Thor's Hammer, and it's everlasting. Nevermore need you fear your cannons exploding in your face! Your cannoneer is going to love it!";
+			link.l1 = "Good God, Steven... thank you! I'm sure he will.";
 			link.l1.go = "clear_5";
 		break;
 		
@@ -1076,8 +1059,8 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "talisman3"); 
 			PlaySound("interface\notebook.wav");
 			Log_Info("You have received a 'Thor's hammer' amulet");
-			dialog.text = "I am looking forward to drink a pint of this magnificent whiskey... "+pchar.name+", we will have a party tonight! And you come and see me tomorrow. In the meantime, I will think about your words and Chad's actions...";
-			link.l1 = "Fine, Steven, I won't bother you from... relaxing, ha-ha!";
+			dialog.text = "Now, if you'll excuse me, it's time for me to get friendly with this magnificent whiskey... "+pchar.name+", come and see me tomorrow. In the meantime, I have some thinking to do...";
+			link.l1 = "Fine, Steven, I won't keep you from your whiskey, ha-ha!";
 			link.l1.go = "clear_6";
 			AddQuestRecord("SharkHunt", "53");
 		break;
@@ -1094,20 +1077,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "clear_7":
-			dialog.text = "You have told me something very important. I will think about your words and Chad's actions... and then I will call you.";
-			link.l1 = "Fine, Steven. I will be waiting!";
+			dialog.text = "You did me a good turn, telling me all this. I need to think about your words and Chad's actions... and then I'll call you.";
+			link.l1 = "I'll be waiting!";
 			link.l1.go = "clear_6";
 			AddQuestRecord("SharkHunt", "54");
 		break;
 		
 		case "whyskey_final":
-			dialog.text = "Ha, there you are, "+pchar.name+". Now everybody is here and we can start. I have summoned you and Layton to discuss the situation and to decide what to do with Narwhals.";
-			link.l1 = "What do you mean - what to do with Narwhals?";
+			dialog.text = "Ha, there you are, "+pchar.name+". Now that everybody's here, we can start. I summoned you and Layton to discuss the situation and to decide what to do about the Narwhals.";
+			link.l1 = "What do you mean, 'what to do about the Narwhals'?";
 			link.l1.go = "whyskey_final_1";
 		break;
 		
 		case "whyskey_final_1":
-			dialog.text = "An attempt on my life was organized by Chad who had a direct support from Narwhals. I recognize it as an open act of aggression. Considering the fact, that we have a short-term alliance with Rivados, I offer the following\nWe form an alliance with Rivados, prepare an operation and wipe out Narwhal clan once and for all. I had enough of their bandit attitude. You, "+pchar.name+", are going to play a role of diplomat once again\nTalk to Black Eddie and Chimiset, convince them to join us in battle against our mutual enemy. I think that they will listen to you, they believe you to be their ally\nDexter will develop a plan of attack, he knows everything about the Island's geography. Layton, do you have any thoughts already?";
+			dialog.text = "What do you mean, 'what do you mean?' Chad made an attempt on my life with the help of the Narwhals.\nI recognize this as an open act of aggression. That can't go unanswered. Considering that we're on friendly terms with the Rivados, I suggest the following...\nWe formalize our alliance with the Negroes, get our lads together, and wipe out the Narwhals for good and all.\nYou, "+pchar.name+", are going to be our diplomat once again. Talk to Black Eddie and Chimiset, convince them to accept my offer of friendship. Dexter will formulate our battleplans, he knows the island better than anyone. Layton?";
 			link.l1 = "";
 			link.l1.go = "whyskey_final_2";
 		break;
@@ -1123,52 +1106,52 @@ void ProcessDialogEvent()
 		break;
 		
 		case "whyskey_final_3":
-			dialog.text = "A wise idea. Forced to retreat to the San Gabriel, Narwhals, perhaps, won't yield to our troops too soon - but they will die quickly without any provision supply or they will be forced to launch a desperate attack. What do you say, "+pchar.name+"?";
-			link.l1 = "What do I say... I say that declaring a war against Narwhals is a politically wrong step.";
+			dialog.text = "No need to exterminate the Narwhals at the first stroke; we control the island's food.\nForce them to retreat to the San Gabriel, and we can pen them up and starve them. What do you say, "+pchar.name+"?";
+			link.l1 = "What do I say? ... I say that you should let the Narwhals off the hook, Steven.";
 			link.l1.go = "whyskey_final_4";
 		break;
 		
 		case "whyskey_final_4":
-			dialog.text = "And you say that after you have killed all Chad's men? Don't forget that all of them were Narwhals!";
-			link.l1 = "Not all of them. One of the first of those bastards, Marcello Cyclops, wasn't a Narwhal. Actually, he was loyal to Rivados and, perhaps, he was planning to join them. He is a mulatto, after all. I think that Narwhals are not responsible for an attempt on your life - only a few bastards, who were recruited by Kapper.";
+			dialog.text = "... did you get hit on the head before coming here? Did you forget that the men who fought with Chad were Narwhals?";
+			link.l1 = "Not all of them. Marcello Cyclops wasn't. Actually, he was loyal to the Rivados - he was a mulatto, after all. I think the only Narwhals that joined Chad were those he could buy with money, or with the lie that you murdered Alan Milrow.";
 			link.l1.go = "whyskey_final_5";
 		break;
 		
 		case "whyskey_final_5":
-			dialog.text = "And what do you suggest? Ignore all this?";
-			link.l1 = "I suggest keeping me to my role of being a diplomat - but this time I will negotiate with the leader of Narwhals, Donald. Besides, let me tell you my point of view concerning the possible outcome of attacking Narwhals.";
+			dialog.text = "And what do you suggest, that I ignore all this?";
+			link.l1 = "I suggest I play my role of diplomat... but with the head of the Narwhals, Donald Greenspan. Will you hear me out, Steven?";
 			link.l1.go = "whyskey_final_6";
 		break;
 		
 		case "whyskey_final_6":
-			dialog.text = "Go on.";
-			link.l1 = "As far as I see, the peace on the Island is possible only because of rivalry between two clans who are almost equal in their strengths. Your fighters are the third power, and they can help either of them to achieve victory. But both Rivados and Narwhals are strong and a victory will cost the winner too much in any case.";
+			dialog.text = "... Go on...";
+			link.l1 = "I've learned a lot about the City of Abandoned Ships since I arrived here. The townsfolk made it clear that when it was just the two clans on the island, war was constant. The arrival of your pirates introduced a third power to the island, creating balance and peace for the first time ever. But the Narwhals and Rivados remain strong and a victory will be extremely costly.";
 			link.l1.go = "whyskey_final_7";
 		break;
 		
 		case "whyskey_final_7":
 			dialog.text = "";
-			link.l1 = "The price for the destruction of the Narwhals will be many lives of your and Rivados men. Besides, Layton said that the siege of San Gabriel will take a long time, and also we may face possible aggression from Rivados in case we loose to many men...";
+			link.l1 = "The price of the Narwhals' destruction will be the lives of many pirates and Rivados. Besides, Layton said that the siege of San Gabriel will take a long time, and if the Rivados began to feel as if they'd lost too much on the campaign, they'd back out... possibly even turn on us.";
 			link.l1.go = "whyskey_final_8";
 		break;
 		
 		case "whyskey_final_8":
 			dialog.text = "";
-			link.l1 = "Don't forget that both clans are eager to dominate on the Island and not long ago they were your enemies. So, in my opinion, the slaughter would be a real plague for the common inhabitants.";
+			link.l1 = "Don't forget that both clans are still eager to dominate the island, and not long ago, they were united in fighting you. This war may not end as quickly or predictably as you think. And in the middle of it all are the common folk. Do you truly want to rule over a graveyard?";
 			link.l1.go = "whyskey_final_9";
 		break;
 		
 		case "whyskey_final_9":
-			dialog.text = "Hm. Your words sound wise, but you haven't persuaded me yet.";
-			link.l1 = "I also need to leave the Island somehow, so I have to reach the statue of Kukulcan at the bottom of the sea. Rivados are unable to help me - perhaps, Narwhals are? Fighting them will not help me either.";
+			dialog.text = "... You make some good points... but you haven't persuaded me yet.";
+			link.l1 = "I also need to leave the island somehow; I have to reach the idol of Kukulcan on the seabed. The Rivados can't help me... but maybe the Narwhals can. I've heard they have some smart, talented men among them. They won't help me if they're at war with me.";
 			link.l1.go = "whyskey_final_10";
 		break;
 		
 		case "whyskey_final_10":
-			if (pchar.questTemp.LSC.Mary != "die") sTemp = "Ha! And I guess that there is one more reason why you don't want to make Narwhals our enemies. That red-haired girl of Ceres Smithy, right, friend? Am I right? Don't worry about her, "+pchar.name+", since you care about her this much - we will take her in the safe place before fighting starts.\n";
+			if (pchar.questTemp.LSC.Mary != "die") sTemp = "A-ha! I knew you had selfish reasons for wanting peace! And I guess that one of them is that redhead on the Ceres, eh, my friend? Am I right? Don't worry about her, "+pchar.name+", we'll find a safe place for her before the fighting starts.\n";
 			else sTemp = "";
-			dialog.text = ""+sTemp+" But I agree if you are so determined. Go and see Donald Greenspen, the head of Narwhals. His residence is in the rear of Esmeralda. Let's see what that scoundrel will tell us.";
-			link.l1 = "Good. I am on my way.";
+			dialog.text = ""+sTemp+" But if you're so determined, fine. Go and see Donald. His residence is in the rear of the Esmeralda. See what the scoundrel has to say.\nIf you're convinced that he and his clan had no part of Chad's scheme... I'll consider peace.";
+			link.l1 = "Thank you, Steven. I'm sure this is the right decision.";
 			link.l1.go = "whyskey_final_11";
 		break;
 		
@@ -1185,42 +1168,42 @@ void ProcessDialogEvent()
 		break;
 		
 		case "negotiations_wait":
-			dialog.text = "Go to Donald, pal, and make him lick your boots, ha-ha! I will be waiting for you.";
-			link.l1 = "I am on my way.";
+			dialog.text = "But don't let him off the hook too easily, eh! Those were still his lads with Chad - still Narwhals! Make him lick your boots, get his contrition good and proper!";
+			link.l1 = "I will, I will.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "negotiations_wait";
 		break;
 		
 		case "peace":
-			dialog.text = "So what, have you spoken to Donald? I see that you have...";
-			link.l1 = "Yes. He didn't order his men to harm you. All Narwhals, who had participated in the attempt, were recruited by Chad Kapper. He is very upset and he assures us that Narwhals have no bad intentions towards you. He is ready to bring you his personal apologies for this attempt on your life and for suspecting you of Alan's murder.";
+			dialog.text = "So, have you spoken to Donald?";
+			link.l1 = "I have, and he confirmed my suspicions. Neither he, nor the clan at large, had anything to do with Chad's plan. All the Narwhals who participated in it were recruited by Kapper. He's very upset and he assures me that he holds you blameless for Alan Milrow's murder, and all that happened after.";
 			link.l1.go = "peace_1";
 		break;
 		
 		case "peace_1":
-			dialog.text = "Is he ready to come here and say all these things?";
-			link.l1 = "He swore on the Bible.";
+			dialog.text = "Is he prepared to stand before me and say all this to my face?";
+			link.l1 = "He swore on the Bible that he would.";
 			link.l1.go = "peace_2";
 		break;
 		
 		case "peace_2":
-			dialog.text = "Heh, perhaps, that will do. It seems that the only one bastard to be blamed is my ex boatswain.";
-			link.l1 = "I am completely sure of that, Steven. We don't need this war. Nobody needs it.";
+			dialog.text = "Heh, well I'll be damned... So it really does seem like the only bastard to be blamed is my traitorous boatswain...";
+			link.l1 = "I am convinced of that, Steven. We don't need this war, nobody does. It'd be no good for business.";
 			link.l1.go = "peace_3";
 		break;
 		
 		case "peace_3":
-			dialog.text = "Fine! Deal. I am ready to accept Donald with his apologies, but he'd better hurry up. Go and tell him that.";
-			link.l1 = "At once, Steven.";
+			dialog.text = "(slaps the table) All right, then! It's a deal. If Greenspan comes and kisses my arse, all is forgiven... and there'll be peace.";
+			link.l1 = "I'll tell him at once. Steven... I'm glad we averted this war.";
 			link.l1.go = "peace_4";
 		break;
 		
 		case "peace_4":
-			if (pchar.questTemp.LSC.Mary == "alive") sTemp = "Take your Mary there and live your lives together, there is plenty of free space.";
+			if (pchar.questTemp.LSC.Mary == "alive") sTemp = "Feel free to bring your Mary over to the San Augustine, I can set aside some quarters for the two of you.";
 			else sTemp = "";
-			dialog.text = "Wait! "+pchar.name+", I am very glad that you've shown up here, on the Island. Jan holds you on a very high esteem, but you have surpassed all expectations. If you were in my crew... actually, I offer you Kapper's position, while you are here. You will command my garrison on 'Tartarus'. "+sTemp+".";
-			if (pchar.questTemp.LSC.Mary == "alive") link.l1 = "No, Steven, thanks a lot, but I am not going to stay here for a long time. Find someone else for it. And concerning Mary - we are doing fine on 'Ceres Smithy'.";
-			else link.l1 = "No, Steven, thanks a lot, but I am not going to stay here for a long time. Find someone else for it.";
+			dialog.text = "Wait... "+pchar.name+", I am very glad you showed up here, on this godforsaken Island.\nJan spoke highly of you in his letter... but any expectations I had of you have been well and truly surpassed.\nIf you were in my crew... actually! I offer you Kapper's position, while you're here. You will command my garrison on the Tartarus. "+sTemp+".";
+			if (pchar.questTemp.LSC.Mary == "alive") link.l1 = "No, Steven, thank you, but I'm not going to be here much longer. Give the job to some trustworthy lad who's more deserving. And concerning Mary... we're doing fine on the Ceres.";
+			else link.l1 = "No, Steven, thank you, but I'm not going to be here much longer. Give the job to some trustworthy lad who's more deserving.";
 			link.l1.go = "peace_5";
 		break;
 		
@@ -1228,27 +1211,27 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "gold_dublon", 500);
 			Log_Info("You have received 500 doubloons");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Whatever, friend. So be it. Please accept this present from me. I think that you will find these five hundred doubloons useful.";
+			dialog.text = "Hard to think of a more deserving or trustworthy lad than you, and despite what you say, I don't think getting off this island will be as easy as you hope.\nBut so be it. Now, I can't let you walk out of here without some reward, so shut up and take these five hundred doubloons.";
 			link.l1 = "Thanks!";
 			link.l1.go = "LSC_navy";
 			AddQuestRecord("SharkHunt", "57");
 			pchar.questTemp.Saga.SharkHunt = "find"; //флаг - покушение предотвращено
 			sld = characterFromId("Grinspy");
 			sld.dialog.currentnode = "negotiations_17"; // ноду Дональду Гринспи
-			AddSimpleRumourCityTip("They say that admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
-			AddSimpleRumourCityTip("They say that you are the admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that the Admiral respects you, mister...", "LostShipsCity", 15, 2, "LSC", "");
+			AddSimpleRumourCityTip("They say that you are the Admiral's loyal friend. Is that true?", "LostShipsCity", 15, 2, "LSC", "");
 		break;
 		
 		case "LSC_navy":
-			dialog.text = "Let's talk about our business... Take these sailing directions. Use them to return here on ship and in one piece\nWithout it you will either fail to find a passage here because of reefs and storms around Island, so your ship will probably join her sisters here. Remember that you must use relatively small vessel in order to pass the reefs. Lugger, schooner, brigantine, brig... Fourth class, not bigger\nYour goal is to leave this place with these sailing directions in a pocket and then to return back for me on a ship. Once I am back, I will join you and Svenson in your game. I have no idea how you can leave the island, though. Only you can help yourself in this matter, and, perhaps, that Kukulcan of yours...";
-			link.l1 = "Funny, but I am actually counting on its help. Thanks for the sailing instructions, Steven. I will yet find the way out of this island.";
+			dialog.text = "Let's talk about our business... Take my rutters. They contain sailing directions that'll let you sail a ship to the island in one piece.\nDon't lose them! Without them, your ship will founder on the reefs or get ripped apart by storms. And remember that you can only approach the island with a relatively small vessel! Longboat, tartane, lugger, schooner, nothing bigger.\nOnce you come back for me, I'll join you and Svenson in your game.\nI still don't believe some sunken Indian idol is going to help you, but... Godspeed, my friend.";
+			link.l1 = "It's not God we need to count on, Steven, but Kukulcan. Until we meet again.";
 			link.l1.go = "LSC_navy_1";
 		break;
 		
 		case "LSC_navy_1":
 			GiveItem2Character(pchar, "LSC_navigation_map");
-			dialog.text = "I wish you luck, then. Hurry up if you can, my storehouses are running low quite fast, and soon there will be no provision at all. You know what hungry and armed men are capable of, don't you?";
-			link.l1 = "I do. Now I have to go. See you!";
+			dialog.text = ""+pchar.name+"... return as quickly as you can. My storehouses are running low; soon there will be no provision at all. You know what armed, hungry men are capable of?";
+			link.l1 = "I have some idea. Farewell.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Dodson_wait";
 			AddQuestRecord("LSC", "5");
@@ -1259,8 +1242,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dodson_wait":
-			dialog.text = "Have you found the way out from the island, "+pchar.name+"?";
-			link.l1 = "Not yet, Steven. I am still on it.";
+			dialog.text = "Have you found a way off the island, "+pchar.name+"?";
+			link.l1 = "Not yet, Steven, I'm still working on it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Dodson_wait";
 		break;
@@ -1271,7 +1254,7 @@ void ProcessDialogEvent()
 			
 			if (!CheckAttribute(npchar, "quest.items") && CheckAttribute(npchar, "quest.takeitems"))
 			{
-				link.l1 = "Steven, I'd like to ask you to give me back my confiscated belongings.";
+				link.l1 = "Steven, I'd like to ask you to give me back my belongings you confiscated.";
 				link.l1.go = "Items";
 			}
 			if (!CheckAttribute(npchar, "quest.story"))
@@ -1281,41 +1264,41 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "quest.natan"))
 			{
-				link.l3 = "Are you sure that Hawk is not on the island? He came through the portal, so he must be here.";
+				link.l3 = "Are you sure that Hawk isn't on the island? He came through the idol, so he must be here.";
 				link.l3.go = "Natan";
 			}
 			if (!CheckAttribute(npchar, "quest.whiteboy"))
 			{
-				link.l4 = "Do you know a man nicknamed White Boy?";
+				link.l4 = "Do you know a man named White Boy?";
 				link.l4.go = "Whiteboy";
 			}
 			if (!CheckAttribute(npchar, "quest.ships"))
 			{
-				link.l5 = "What territories here belong to Narwhals and Rivados?";
+				link.l5 = "What territories belong to the Narwhals and Rivados?";
 				link.l5.go = "ships";
 			}
 			if (!CheckAttribute(npchar, "quest.parol"))
 			{
-				link.l6 = "How can I learn the passwords to get on board the clan ships?";
+				link.l6 = "How can I learn the passwords to get on board the clans' ships?";
 				link.l6.go = "parol";
 			}
 			if (!CheckAttribute(npchar, "quest.map"))
 			{
-				link.l7 = "Listen, is there any map of the Island?";
+				link.l7 = "Listen, is there a map of the island?";
 				link.l7.go = "map";
 			}
 			if (!CheckAttribute(npchar, "quest.blade"))
 			{
-				link.l8 = "You have got such an interesting broadsword. I have never seen anything like it before...";
+				link.l8 = "You have such a beautiful broadsword. I've never seen anything like it before...";
 				link.l8.go = "blade";
 			}
-			link.l9 = "No questions yet. But I may have some soon...";
+			link.l9 = "No questions yet. Maybe soon...";
 			link.l9.go = "exit";
 			NextDiag.TempNode = "Total_wait";
 		break;
 		
 		case "Items":
-			dialog.text = "Ah, yes, sure! I have completely forgotten about it... Your things are upstairs in the chest. You can take them. Layton won't stop you.";
+			dialog.text = "Ah, yes! Completely forgot about them... Your things are upstairs in a chest. You can get them, Layton won't stop you.";
 			link.l1 = "Thanks!";
 			link.l1.go = "exit";
 			npchar.quest.items = "true";
@@ -1330,33 +1313,33 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Story_island":
-			dialog.text = "This Island must be very old. I've seen old caravels at the outer ring, they are more than a hundred years old. Its existence is possible because of a large shallow waters and strong current which brings ship frames here. People has been living here for a long time. There are those who were born here and never left.\nClans were formed right after de Betancourt's expedition ended up here. By the way, the San Augustine and the Tartarus were part of that expedition. The Tartarus had a lot of black salves in her holds. They founded Rivados clan in honour of Pedro Rivados, their leader. He had started an uprising and tried to capture Tartarus, but they failed. The man was sentenced to a slow death\nSlaves got their freedom here and immediately opposed themselves to the rest of locals. Their request for dominance and African traditions made most of the Christians to unite, forming a Narwhal clan\nNarwhal clan had a lot of mercenaries, soldiers, officers and adventurers within it's ranks, they were gathering supplies and building a small, professional army ready to fight Rivados with their advantage in numbers. Since then Narwhals has become very selective in accepting new recruits and Rivados has limited their ambitions. You can see the results now.";
-			link.l1 = "Were there any connections between the Island and the outer world?";
+			dialog.text = "This island is over a hundred years old; I've seen caravels on the outer ring whose keels must've been laid in 1550 or earlier.\nThere's a shoal beneath our feet that buttresses the wrecks that founder here, keeps them above water. And even though many ships rot to dust each year, storms and a powerful sea current bring more.\nJustice Island shits, eats, and grows like a thing alive.\nThe first settlers arrived here on de Betancourt's expedition, of which the San Augustine and Tartarus were part. The Tartarus carried a lot of black slaves in her hold, one of whom was a man named Pedro Rivados. He led an uprising against his Spanish captors which failed, and he was sentenced to a slow death: tied to a mast and left to cook in the sun.\nBut his attempt at freedom weakened de Betancourt's crews such that a second uprising succeeded, and they formed the Rivados clan in his honour.\nFearing Rivados dominance of the island, with their savage African ways, the white Christian settlers miraculously managed to rise above their various nationalities and united to form the Narwhal clan.\nHeh, few things'll make white men set aside their differences faster than the threat of playing second fiddle to Negroes.\nThe Narwhals have a lot of mercenaries, soldiers, officers and adventurers in their ranks. Year on year they gather supplies and selectively recruit new men from the shipwrecks that arrive here. You can see the results today: they are a disciplined, professional army - and that's been enough to curb Rivados ambitions about ruling the island.";
+			link.l1 = "Are there any connections between the island and the rest of the Caribbean?";
 			link.l1.go = "Story_island_1";
 		break;
 		
 		case "Story_island_1":
-			dialog.text = "There have been no connections for the last ten years. The locals had been trading with Cuba at one time, exchanging gold and valuable goods for food. But they don't do it anymore.";
-			link.l1 = "Hm. So it seems that Svenson and Black Pastor were both right... And why didn't people leave the Island, while they still had the opportunity?";
+			dialog.text = "None for the last ten years. To hear people around here tell it, it seems like the weather surrounding the island changed: storms grew more frequent, and the current grew more powerful.\nIt's as if, one day, the island was sealed off from the rest of the Caribbean.\nThe islanders used to trade with the buccaneers of Cuba, buying food with gold and valuables salvaged from the shipwrecks, but no buccaneer has visited Justice Island for a decade.\nWell, none that ever returned, anyway.";
+			link.l1 = "Hm. So it seems that Forest Devil and Black Pastor were both right... And why didn't people leave the island when they had the chance?";
 			link.l1.go = "Story_island_2";
 		break;
 		
 		case "Story_island_2":
-			dialog.text = "Some people did, but the majority decided to stay. A lot of them have found home here, many others were born here. They don't want to return. This place seems to be much better for them... Some folks are too scared to travel through the zone of storms on old boats. As for Rivados - they have no choice but to stay here.";
-			link.l1 = "And why did you come here? You abandoned your excellent frigate, picking a brig instead...";
+			dialog.text = "Some did, but the majority wanted to stay. A lot of them have made a home here, others were born here and know nothing else.\nSome folks want to leave but are too scared to risk sailing the zone of storms on old, cobbled-together boats.\nAs for the Rivados... well, they're Negroes, and last I checked, it's a white man's world out there. Can you blame them for wanting to stay?";
+			link.l1 = "And why did you come here, Dodson? You had a frigate, you were a respected pirate--";
 			link.l1.go = "Story_island_3";
 		break;
 		
 		case "Story_island_3":
-			dialog.text = "I was blamed in a murder of Blaze Sharp. I have no clue why. Obviously, someone is playing dirty. Number of my enemies started to grow rapidly, so I had to leave Isla Tesoro and wait here. I have been knowing about this place for a very long time. I have left my frigate, because she was too big to bypass local reefs\nI was attacked by Narwhals and Rivados as soon as I got here. They didn't appreciate my arrival. They came close to my ship at night on longboats and set her on fire. We have crushed their tubs with our cannons and muskets. But the fire did it's work - my brig was burnt down\nWe got mad as hell, invaded the Island, stormed the San Augustine and showed them how corsairs fight. They could not bear our pressure and soon shown their backs like cowards. We had captured San Augustine, turned out that these morons used her as provision warehouse. Now they have to buy it from me for a price I name\nWe also captured local leaders: a head of Narwhals Alan Milrow and a spiritual leader of Rivados Chimiset. Layton had spent next few days to scout the area and we attacked Tartarus - a weak spot in their defences\nNow we hold two of these ships and clans have to get used to our presence. Now days, we have got some sort of peace here. As for the other locals, they seem to like the idea of third force.";
-			link.l1 = "Now I see. Thanks for the story!";
+			dialog.text = "(slams the table) I was being hunted!!\nI was blamed for the murder of Blaze Sharp! By whom, or for what reason, I've no idea.\nSomeone made me a pawn in their game and I was surrounded by enemies, abandoned by my friends, so I had to leave Isla Tesoro and lay low.\nI'd known of this island for a long time, but I couldn't reach it on my frigate; she was too big to bypass the reefs. So, I traded her for a brig.\nI was attacked by the Narwhals and Rivados as soon as I got here - guess the only people Negroes and white men hate more than each other are pirates, he-he. They rowed longboats to my ship at night and fired her.\nWe blasted their tubs to matchwood with our cannons, but the fire did its work - my poor brig was burnt to her frames.\nWe got mad as hell and struck back: we stormed the San Augustine and showed them how corsairs fight! They couldn't hold her and showed us their cowardly backs.\nWe captured San Augustine and discovered that the whole island used her as their storehouse! Overnight, we became the most important clan on the island.\nNow, every fucking Justice Islander has to buy back their own food at a price we name, ha-ha-ha!\nWe also captured two of the clan leaders: Alan Milrow of the Narwhals and a Rivados voodoo man name of Chimiset. My mate Layton spent the next few days scouting the island and then we attacked the Tartarus, the old slave ship.\nNow we hold two vessels and the clans have to deal with us... or starve. Nowadays, we have something like peace, here.\nAs for the citizens... we sell food to them proper cheap - they didn't take up arms against us. Anyway, they seem to like the fact that we balance out the other two clans, somewhat.";
+			link.l1 = "Incredible... that's quite a tale!";
 			link.l1.go = "exit";
 			npchar.quest.story = "true";
 			NextDiag.TempNode = "Total_wait";
 		break;
 		
 		case "Natan":
-			dialog.text = "I can't say for sure, but I haven't seen him here, anyway. Not at the streets, neither in the tavern nor on clan ships. You are the first man who told me that Hawk should be somewhere around. But as I have already said - I doubt it.";
+			dialog.text = "I haven't seen him. This is the first I've heard that Hawk is anywhere but Maroon Town.\nIt's possible he could be somewhere on the island or the outer ring without having been seen - certainly enough places to hide - but you'd think he'd have come see me by now...";
 			link.l1 = "I see...";
 			link.l1.go = "exit";
 			npchar.quest.natan = "true";
@@ -1364,16 +1347,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Whiteboy":
-			dialog.text = "White boy? Hm... No, I haven't heard about him before. But it doesn't mean that he is not here. I don't have to know all the local scum, do you agree?";
-			link.l1 = "I do. Fine, I'd ask someone else.";
+			dialog.text = "White boy? Hm... no, I haven't heard the name. But it doesn't mean he's not here - is it my job to know all the local muck?";
+			link.l1 = "No, no. All right, I'll ask someone else.";
 			link.l1.go = "exit";
 			npchar.quest.whiteboy = "true";
 			NextDiag.TempNode = "Total_wait";
 		break;
 		
 		case "ships":
-			dialog.text = "The Island is divided by Narwhals, Rivados and my men. There is also a neutral area. I control San Augustine and Tartarus\nRivados hold Protector which is their residence, Fury - barracks, Velasco - warehouse. Strangers are forbidden to pass, you must say a special password in order to get there\nNarwhals has a lot of ships in their possession. Esmeralda is a residence of their leader and a store. So called 'Science centre San Gabriel' and a Phoenix platform. Last but not least, Ceres Smithy - their workshop. Every ship except of Esmeralda is a restricted area, you must say a password before they let you in\nThe rest of ships are considered to be neutral, local citizens live inside them. Sancho's tavern is located in caravel Fleron and brother Julian is a head of local church in galleon Gloria.";
-			link.l1 = "Thanks for the information!";
+			dialog.text = "The island is divided between the Narwhals, Rivados and my pirates, with a neutral area between us.\nI control the San Augustine and Tartarus.\nRivados hold Protector, which is their leader's residence, Fury, their barracks, and Velasco, their warehouse. Strangers are forbidden to pass, you must say a special password in order to get there.\nNarwhals hold a lot of ships: Esmeralda is a shop and the residence of their leader; the San Gabriel and Phoenix, run by some kind of scientist; and the Ceres, their smithy.\nEvery ship except the Esmeralda is a restricted area; you must say a password before they let you in. Same goes for the Rivados. And the passwords change every week.\nThe rest of the ships are considered neutral territory, and are where the citizens live.\nWho am I forgetting...? Oh, the Fleuron is a tavern run by a man named Sancho Carpentero, and the Gloria is the local church - Brother Julian is the pastor there.";
+			link.l1 = "That's a lot to remember... I guess I'll have to learn the city by walking it.";
 			link.l1.go = "exit";
 			npchar.quest.ships = "true";
 			NextDiag.TempNode = "Total_wait";
@@ -1381,8 +1364,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "parol":
-			dialog.text = "Actually, they give them to people they take interest in themselves. Alas, you are not one of them. But it is hardly an issue. Go to an old frigate named Carolinea. That's where a fat sly dog Giuseppe Fazio live. He is some sort of diplomat here. I don't know what did he do before he got here, but the man has skill\nHe does business with everyone. Clans use him as a mediator. Greedy. Ready to eat himself for a single doubloon, but he never shows it. Ask him for a current password, though it will cost you.";
-			link.l1 = "Thanks! I will remember that.";
+			dialog.text = "By getting in bed with the clans. But since you're not tough enough for the Narwhals or black enough for the Rivados, go to an old frigate called the Caroline and find a fat bastard named Giuseppe Fazio. He's some sort of diplomat here.\nI don't know what he did before arriving on the island, but the man's a proper scoundrel. He does business with everyone. The clans use him as a mediator, so he's always given the weekly passwords.\nFazio's greedy, ready to eat himself for a single doubloon. You can ask him for the current password to either Rivados or Narwhal territory, but be prepared to pay with gold.";
+			link.l1 = "Caroline... Fazio... all right, thanks.";
 			link.l1.go = "exit";
 			npchar.quest.parol = "true";
 			NextDiag.TempNode = "Total_wait";
@@ -1390,7 +1373,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map":
-			dialog.text = "Dexter owns one. He is my second in command. He had made a detailed map right after our arrival. Go upstairs and talk to him in case you need it.";
+			dialog.text = "Dexter owns one. He's my first mate. He made a detailed map right after our arrival. Go upstairs and talk to him, see if he'll sell it to you.";
 			link.l1 = "Got it. Thanks!";
 			link.l1.go = "exit";
 			npchar.quest.map = "true";
@@ -1400,14 +1383,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "blade":
-			dialog.text = "Ha! A fine broadsword. A unique blade of some sort.. A trophy from Alan Milrow, head of Narwhal clan. That is how I named it. Jurgen, a Narwhal gunsmith, made it from some amazing metal they found at the bottom of the sea\nIt doesn't rust, never grow blunt and cut everything and everyone at once. I am very pleased with this weapon and I am not going to leave it behind.";
-			link.l1 = "I am curious, if Jurgen is able to make another broadsword like this? For good money, of course...";
+			dialog.text = "Ha! A trophy from Alan Milrow, head of the Narwhal clan.\nJurgen, the Narwhal smith, made it from some rare iron they found at the bottom of the sea. It doesn't rust, never grows blunt, and can cut two bodies in half with a single swing.\nThis sword's one of the few good things to come of this expedition, and for that reason, I'll not part with it. Not for any price.";
+			link.l1 = "Is Jurgen able to make another broadsword like this?";
 			link.l1.go = "blade_1";
 		break;
 		
 		case "blade_1":
-			dialog.text = "Well, he can make another one for sure. But he won't. Jurgen is Narwhal, he is loyal to his clan and he will never make anything for outsiders. Besides, you will need very special iron to make the second sword. This iron can be found only at the bottom - and how can anyone get there? So forget about it.";
-			link.l1 = "I see. Pity.";
+			dialog.text = "Pfft! Not likely. Jurgen is a Narwhal; he's loyal to his clan and never makes weapons for outsiders.\n Besides, you'd need some of that special iron to make a second sword. That iron can only be found at the bottom of the sea, and unless you've got gills, how are you going to reach it? So, forget about it.";
+			link.l1 = "I see... pity...";
 			link.l1.go = "exit";
 			npchar.quest.blade = "true";
 			NextDiag.TempNode = "Total_wait";
@@ -1421,25 +1404,25 @@ void ProcessDialogEvent()
 		
 		case "return":
 			chrDisableReloadToLocation = true;//закрыть локацию
-			dialog.text = "Ha, I saw your sails on the horizon, "+pchar.name+". Glad to see you, friend! How was the trip?";
-			link.l1 = "It was fine.";
+			dialog.text = ""+pchar.name+"! You mad bastard, ha-ha-ha, you made it!! I saw your sails on the horizon! How are you, friend? How was the trip?";
+			link.l1 = "Heh, good to see you too, Steven. I lived.";
 			link.l1.go = "return_1";
 		break;
 		
 		case "return_1":
-			dialog.text = "Good. Well, I am ready to get on your ship and sail to Jan Svenson. Layton will stay here as admiral, he has already taken the chair, ha-ha! It looks like he is not going to leave the Island, he likes this place.";
-			link.l1 = "You said once that he is doing really well.";
+			dialog.text = "Good! God's teeth, I'm ready to be off this island and share a drink with Forest Devil.\nLayton will stay on as Admiral - he has already taken my chair, ha-ha! I think he genuinely likes this place.";
+			link.l1 = "You once said that many people who land here end up preferring life here to the outside world. Are you surprised Dexter's no different?";
 			link.l1.go = "return_2";
 		break;
 		
 		case "return_2":
-			dialog.text = "Yes, he certainly is. Well, I am ready. Let's go?";
-			link.l1 = "Get on my ship, Steven. We will set sail as soon as I finish my business here.";
+			dialog.text = "Eh, not 'surprised'... just sad to lose him. You couldn't ask for a finer first mate.\nWell... when do you plan to weigh anchor?";
+			link.l1 = "Soon. Get on my ship, Steven. We'll set sail as soon as I finish my business here.";
 			link.l1.go = "return_3";
 		break;
 		
 		case "return_3":
-			dialog.text = "Deal! Eh, it's been too long since I was feeling the deck of a decent ship under my feet!";
+			dialog.text = "You're the skipper! Oh it'll be good to feel the swaying of a deck beneath my feet again!";
 			link.l1 = "...";
 			link.l1.go = "return_4";
 		break;
@@ -1451,8 +1434,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "return_5":
-			dialog.text = "Here we are, friend. Well, I will go and see Svenson. You should also see him and discuss our future plans. Ha-ha! Hot days await us, eh?";
-			link.l1 = "No doubt. See you, Steven!";
+			dialog.text = "Blueweld... strange... part of me thought I'd never see green trees and fields again...\n...\n ... Ahem, well... I'll go see Svenson. You should also see him and talk about the future. Hot days await us, eh?";
+			link.l1 = "No doubt, Steven. Fair winds to you!";
 			link.l1.go = "return_6";
 		break;
 		
@@ -1477,25 +1460,25 @@ void ProcessDialogEvent()
 		
 		case "shadows_1":
 			RemoveItems(pchar, "shark_teeth", 1);
-			dialog.text = "Ha! You are smart! Yes, it is my tooth. Well, it's the tooth of a shark which I killed to impress one beauty. They call me Shark since then. Only a few were able to do so underwater with a simple saber, but I was young and foolish, and Beatrice Sharp was the most beautiful girl in the Caribbean... How did you get it?";
-			link.l1 = "The former executioner of St. John's gave it to me. A man was butchered with it. His name was... Joshua Leadbeater.";
+			dialog.text = "Ha! You're right, it is my tooth - or rather, it's the tooth of a shark I killed to impress a girl. That's why they call me 'Shark' Dodson.\nFew are able to accomplish such a feat underwater with a simple sabre, but I was young and stupid, and Beatrice Sharp was the most beautiful girl in the Caribbean...\nHow did you get it?";
+			link.l1 = "A former executioner of St. John's gave it to me. A man was butchered with it; his name was Joshua Leadbeater.";
 			link.l1.go = "shadows_2";
 		break;
 		
 		case "shadows_2":
-			dialog.text = "Yes, I did it. I cut his throat with this tooth. I was horrified by the death of Beatrice and I believed Leadbeater to be the only responsible who left alive. I read papers that I found on him later. Well, he had every right for the revenge\nBlaze's sister was just at the wrong place in the wrong time. Mask is not to be blamed for her death, he didn't want it, only Butcher was his target. I regret murdering him. Truth is, that bitch Jessica set the whole thing up.";
-			link.l1 = "Have you saved those papers?";
+			dialog.text = "Mm-hmm, you've found your butcher; I cut his throat with this tooth.\nI was heartbroken by Beatrice's death, and I believed Leadbeater to be the only guilty man within my reach.\nI found some papers on him after he'd gurgled his last that clarified a few things. He had every right to crave revenge.\nBlaze's sister was just in the wrong place at the wrong time. Mask shouldn't have been blamed for her death - he was only interested in Butcher. Truthfully... I regret murdering him.\nThat bitch Jessica set the whole thing up.";
+			link.l1 = "You still have those papers?";
 			link.l1.go = "shadows_3";
 		break;
 		
 		case "shadows_3":
-			dialog.text = "Why should I? Of course, I haven't. I didn't need them. But I can tell you why Mask had been chasing Butcher, if you have time.";
-			link.l1 = "I have. Know that it is not some curiosity, I am really interested. I am even ready to write your story down.";
+			dialog.text = "Of course not. I had no need of them. But I can tell you why Mask was chasing Butcher, if you're interested.";
+			link.l1 = "I am, very much so. Here, give me ink and a quill and I'll write it all down.";
 			link.l1.go = "shadows_4";
 		break;
 		
 		case "shadows_4":
-			dialog.text = "I know, you never waste your time. Listen then. Joshua Leadbeater was an ordinary British Navy captain and he was commanding frigate 'Neptune', which has become a legend later...";
+			dialog.text = "Sure. Listen, then. Joshua Leadbeater was a British captain in command of the frigate Neptune, which has since become legend...";
 			link.l1 = "...";
 			link.l1.go = "shadows_5";
 		break;
@@ -1510,74 +1493,74 @@ void ProcessDialogEvent()
 		
 		case "shadows_6":
 			AddQuestRecordInfo("Mask", "1");
-			dialog.text = "... However Leadbeater survived and he was saved by a passing ship. His wounds made his face ugly, and he had been wearing a mask since then. Finding and punishing the culprit of all his missfortunes had become his life's meaning.";
-			link.l1 = "I see... I have it written down. I think I should read it to see what I got. It is a very sad story. Have you seen that Jessica?";
+			dialog.text = "... however, Leadbeater survived and was saved by a passing ship - albeit disfigured by his wounds.\nHe wore a mask ever since, and finding and punishing the author of his misfortunes became his life's goal.";
+			link.l1 = "I see... all right, I think I've gotten every word down. I'll re-read later. It's a sad story. Did you know Jessica?";
 			link.l1.go = "shadows_7";
 		break;
 		
 		case "shadows_7":
-			dialog.text = "Sure! She accompanied Butcher in all his voyages until he dumped her for Beatrice. Jess couldn't forgive him that. They called her the Butcher's talisman, because he always had luck while she was there with him\nBelieve it or not, but as soon as he got rid of her on Barbados, his business went bad, booty got poor and the 'Neptune' became an often guest at the shipyard of Isla Tesoro. Though it can be explained by the fact that Butcher had been spending most of his time with Beatrice in the cabin rather then at the quarterdeck\nBeatrice was not like Jessica, she wasn't addicted to adventures and war, although Nicolas taught her fencing and seamanship. Yes, she was fond of sea romance but she didn't have enough hardness of character. Butcher's 'Neptune' wasn't the right place for her. In the end, she killed her.";
+			dialog.text = "Sure! She accompanied Butcher on all his voyages until he dumped her for Beatrice. Jess never forgave him.\nThey called her Butcher's talisman, because as long as she was with him, she brought him luck.\nAs soon as he left her on Barbados, his business went bad; the booty dried up and the Neptune became a frequent guest at the Isla Tesoror shipyard. Though that can be better explained by the fact that Butcher spent all his time in his cabin with Beatrice instead of on his quarterdeck.\nBeatrice wasn't like Jessica: she didn't crave adventure and battle- though Nicolas taught her fencing and seamanship. She was a romantic, wasn't hard enough to be a pirate.\nThis life wasn't for her, and in the end, it killed her.";
 			link.l1 = "And what about Jessica?";
 			link.l1.go = "shadows_8";
 		break;
 		
 		case "shadows_8":
-			dialog.text = "Oh, she was something. Every sailor of the 'Neptune' obeyed her orders and not just because she was a captain's girlfriend. Jess had mastered fencing and seamanship, Butcher's efforts were not wasted. She was tough and reckless, and also was gifted with a good look\nA lot of men wanted to have sex with her, but she wanted Butcher only, bothering her was really risky - many tested the results on their own backs literally, and for the most persistent her fencing lessons turned to be the last in their lives\nJess owned a very special sword, the only of it's kind in the Caribbean, I have no clue where did she get it. Flame-bladed sword. No one can grab it's blade and even the slightest touch leaves a terrible wound\nJess was an adventurer not by birth, but by vocation. By the way, if you need to learn more about her, you can talk to an acquaintance of yours. He can tell you about her much more than I can.";
+			dialog.text = "Oh, she was something! Every sailor on the Neptune obeyed her orders without question, and not just because she was the captain's girl.\nJess was a master fencer and navigator - learned everything she knew from Butcher, and even exceeded him. She was tough and fearless, and blessed with looks that would make angels blush.\nA lot of men wanted her, but she only wanted Butcher. Chasing her was risky; she was likely to reward unwanted interest with a free fencing lesson, and for many, it was the last they ever received.\nJess owned a very special sword, the only one of it's kind in the Caribbean. I have no clue where she got it. The flame-bladed sword. The slightest touch of its blade leaves the most terrible wound.\nJess was an adventurer - not by birth, but by vocation. If you want to learn more about her, there's a friend of yours can tell you much more about her than.";
 			link.l1 = "Really? And who is that man?";
 			link.l1.go = "shadows_9";
 		break;
 		
 		case "shadows_9":
-			dialog.text = "Jan Svenson. Forest Devil will never admit it, but he had plans about Jessica. That was the time when he had already taken Western Main for himself and his fame was something to envy for, so the tigress was as good as him\nAfter Butcher got rid of Jess, Jan started to visit Barbados suspiciously often giving a shake to English garrison. As you know, Jessica was a daughter of Bridgetown's planter\nAll in all, his plans were well known in private circles, yet no one dared to speak one's mind about it, Jan may sit on his backsides in Blueweld now days, but back then any wrong word in his address could result badly\nIn the end, it didn't work out for them. Jess couldn't live with the way Butcher treated her and she had her revenge a year later with a help of the Mask. This vengeance ended terrible for everyone: for Butcher, for Beatrice, for the Mask and for herself. They all died.";
-			link.l1 = "Not all of them. Butcher is still alive.";
+			dialog.text = "Jan Svenson.\nOld Forest Devil will never admit it, but he had plans for Jessica. This was just after he'd claimed the Spanish Main for himself and his fame was known throughout the Caribbean, so he figured the tigress was as good as his.\nAfter Butcher got rid of Jess, Jan started visiting Barbados on a regular basis. That set the Englanders' nerves on edge; as you know, Jessica was the daughter of a Bridgetown planter.\nWe all knew what he intended, and we knew it could end very badly, but we didn't say anything. Jan may sit on his arse in Blueweld these days, but speak the slightest ill of him back then and he'd turn up at your door with a poison blade and a band of hard buccaneers, he he...\nJan's plans came to naught: Jess couldn't live with the way Butcher treated her, so she took her revenge a year later with a help of Mask.\nIn the end, her vengeance destroyed her, along with Mask, Beatrice, and Butcher.";
+			link.l1 = "Butcher's still alive.";
 			link.l1.go = "shadows_10";
 		break;
 		
 		case "shadows_10":
-			dialog.text = "What? Have I misheard you? He is alive?!";
-			link.l1 = "Yes. Captain Butcher wasn't executed. Well, he should have been, but he survived thanks to Jacob Jackman and Henry the Hangeman, who had intimidated the executioner. The execution was a fake. I have got evidence.";
+			dialog.text = "... Bullshit...";
+			link.l1 = "Steven, Captain Butcher is still alive. Jacob Jackman and Henry the Hangman paid the executioner a visit. The hanging was faked. I have proof.";
 			link.l1.go = "shadows_11";
 		break;
 		
 		case "shadows_11":
-			dialog.text = "Impossible! And where is he now?";
-			link.l1 = "He is known as Lawrence Beltrope and he lives in Port Royal. He is still dangerous though. Jackman, who caused that much trouble among the Brethren of the Coast, had been acting under his command.";
+			dialog.text = "Faked... So, where's Butcher now?!";
+			link.l1 = "He calls himself Lawrence Beltrope now, and he lives in Port Royal. He's still dangerous though; Jackman, who caused so much trouble for the Brethren, was acting under Butcher's command.";
 			link.l1.go = "shadows_12";
 		break;
 		
 		case "shadows_12":
-			dialog.text = "Damn it! The quartermaster had found his captain after so long! Beltrope, you say... wait! Now I see why there was a strange record of interrogation among Blaze's papers... It looks like Blaze had also found out about Butcher-Beltrope...";
+			dialog.text = "Damn me! The quartermaster rejoined his captain at long last!\nBeltrope, you say... wait! Now I see why there was a strange record of an interrogation among Blaze's papers... It looks like Blaze also found out about Butcher-Beltrope...";
 			link.l1 = "What are you talking about?";
 			link.l1.go = "shadows_13";
 		break;
 		
 		case "shadows_13":
-			dialog.text = "After I had taken this residence, I rummaged through old Blaze's papers. I have found an interrogation record of some Samuel Brooks. There was a lot about adventures of Thomas Beltrope and that he is known as a pirate and a close friend of Nicolas Sharp. It seems that he was Butcher's father.";
-			link.l1 = "Interesting. It looks like Sharp's and Beltrope's kids continued their parents' line of work...";
+			dialog.text = "After I took this residence, I rummaged through Blaze's old papers. I found the record of an interrogation of some Samuel Brooks.\nThere was mention of the 'adventures of Thomas Beltrope,' and that he was known as a pirate and a close friend of Nicolas Sharp!\nIt seems that Thomas was Butcher's father.";
+			link.l1 = "Interesting... looks like Sharp's and Beltrope's children continued their parents' line of work...";
 			link.l1.go = "shadows_14";
 		break;
 		
 		case "shadows_14":
-			dialog.text = "It seems so... But tell me, friend, why are you so interested in late people's deeds? What is your concern?";
-			link.l1 = "I need papers, which would confirm that Helen McArthur is the daughter of Beatrice Sharp and that she has all rights to this surname. I don't care that she is also Beltrope.";
+			dialog.text = "Seems so... But tell me, my friend, why are you so interested in the deeds of the dead?";
+			link.l1 = "I need papers - papers which would confirm that Helen MacArthur is the daughter of Beatrice Sharp and that she has all rights to her estate. I don't care that she is also Beltrope's daughter.";
 			link.l1.go = "shadows_15";
 		break;
 		
 		case "shadows_15":
-			dialog.text = "There is nothing about Helen McArthur neither in Leadbeater's papers nor in Blaze's archives. It is strange that Beatrice didn't tell Blaze about the birth of his niece. It doesn't look like her.";
-			link.l1 = "Listen, perhaps, there is something else in Sharp's papers? I need every detail!";
+			dialog.text = "There's nothing about Helen MacArthur in either Leadbeater's papers or Blaze's archives.\nIt's strange that Beatrice didn't tell Blaze about the birth of his niece, that's not like her...";
+			link.l1 = "Listen, perhaps there's something else in Sharp's papers? I need every detail!";
 			link.l1.go = "shadows_16";
 		break;
 		
 		case "shadows_16":
-			dialog.text = "Hm, I guess. According to Blaze's notes, he had been trying to find the island where his sister died. There are papers concerning Leadbeater's punitive expedition. Nothing interesting, except for a few numbers of latitude\nThis parallel crosses Caribbean sea in it's Northern part. But there is no sign of longitude. Obviously, Blaze's searches failed, you can not even imaging how many small islands at that latitude.";
-			link.l1 = "And what is it?";
+			dialog.text = "Hm, I guess... According to Blaze's notes, he'd been trying to find the island where his sister died.\nThere're papers concerning Leadbeater's punitive expedition... Nothing interesting, except for latitude numbers.\nThis parallel crosses the northern Caribbean sea. But there's no longitude.\nObviously, Blaze's search failed; you can't imagine how many small islands there are along that latitude.";
+			link.l1 = "Tell me the numbers.";
 			link.l1.go = "shadows_17";
 		break;
 		
 		case "shadows_17":
-			dialog.text = "Let's see... here: latitude 21 degrees 32' North. I don't know how it can help you.";
-			link.l1 = "It will. Fine, Steven, thank you very much for your honest story. See you!";
+			dialog.text = "Let's see... here: latitude 21 degrees 32 minutes North.\nBut I don't see what use it is without a longitude.";
+			link.l1 = "Let me worry about that. Thank you, Steven, for your story. 'Till next time!";
 			link.l1.go = "shadows_18";
 		break;
 		
@@ -1605,44 +1588,44 @@ void ProcessDialogEvent()
 		
 		// суп из черепахи
 		case "terrapin":
-			dialog.text = "You could say that. Now, about Tortuga\nThe island was named like this because it looks almost like a turtle. Levasseur had been thickening turtle's shell for twelve years - fort La Roche. A frontal attack is suicidal, fort's heavy cannons will leave no chance. So, cooking a soup of this beauty won't be easy. Spanish have been trying for a very long time and they never succeeded.";
-			link.l1 = "That is why I went to Svenson. So what is your plan? Come on, Steven!";
+			dialog.text = "You could say that. Now, about Tortuga.\nThe island was named such because it resembles a turtle. Well, Levasseur's been thickening turtle's shell for twelve years.\nHis crowning achievement is Fort La Roche. A frontal attack is suicidal; the fort's heavy cannons can smash even ships-of-the-line.\nMaking a soup out of this beauty won't be easy. The Spanish have been trying for a very long time and they've not yet succeeded.";
+			link.l1 = "Svenson promised me his aid in taking down Levasseur. He said you'd have a plan so what is is?";
 			link.l1.go = "terrapin_1";
 		break;
 		
 		case "terrapin_1":
-			dialog.text = "My men had done decent work on Tortuga for the last few weeks, and they obtained a lot of interesting information. So I have good news for you, pal! It seems that you don't have to deal with the cannons of La Roche, since we are not the only ones fed up with Levasseur. There are people among his friends, who want him dead, too.";
+			dialog.text = "I've had men walking the streets of Tortuga for the last few weeks and they've obtained a lot of interesting information. I have good news for you, pal: it seems you won't have to face the cannons of La Roche. We're not the only ones fed up with Levasseur; he has friends who want him dead.";
 			link.l1 = "Go on...";
 			link.l1.go = "terrapin_2";
 		break;
 		
 		case "terrapin_2":
-			dialog.text = "It is known that Levasseur is fond of young colonist girls. They disappear after he finishes having fun with them. The main slave supplier of Tortuga is called Robert Marten of galleon Voltigeur\nHis mate, Levasseur's nephew Henri Thibaut picks the prettiest white girls right in the port for his patron. So, not long ago, Marten got into his hands on a very beautiful girl from English brig. Name's Molly Jones. He delivered her not to Levasseur, but to his nephew, at night to some secret grotto on Tortuga\nThe crew was told that the girl died of heart attack and her 'body' was thrown aboard. Looks like our buddies decided to leave a pretty thing to themselves. If Levasseur will find out about Molly, these two will have problems.";
-			link.l1 = "And how can we trust that information? It is obvious that both of them understand that they are playing with fire...";
+			dialog.text = "It's pretty well known that Levasseur is fond of young girls. Once he's had his fun, they disappear.\nThe main supplier of slaves on Tortuga is Robert Marten of the galleon Voltigeur. His mate, Levasseur's nephew Henri Thibaut, picks out the prettiest girls in the port for his patron.\nNot long ago, Marten got his hands on a beauty from an English brig name of Molly Jones. He delivered her to Levasseur's nephew, Thibaut, at night in some secret grotto on Tortuga.\nThe crew was told that the girl died of a heart attack and her body was thrown overboard, though of course that body probably belonged to some poor harbour doxy they paid for and then murdered.\nAll in all, it looks like Marten and Thibaut decided to keep Molly to themselves instead of handing her over to Levasseur. If Levasseur finds out, there'll be hell to pay.";
+			link.l1 = "Are you sure we can exploit this? I'm sure Marten and Thibaut realize the risk they're running; they'll have taken precautions.";
 			link.l1.go = "terrapin_3";
 		break;
 		
 		case "terrapin_3":
-			dialog.text = "True. But every chain has a weak spot. And have found such for you. Three days ago, an ex sailor of 'Voltigeur' named Fernand Lucas drank too much and told a lot of interesting thing in Basse-Terre's tavern\nTurned out that Molly Jones had asked him to ask her brother in St John's for help. But Lucas never reached the goal, he escaped from his captain and he is sitting his ass in Guadeloupe and drowning his cowardliness in rum\nAntigua is not a safe place for French pirates. Remember that! Colonel Fox is ready to hang them on every palm of the island after his wife died by the hand of French corsair. And his fearsome marines will do everything their commander orders.";
-			link.l1 = "I don't yet understand how it is connected with our business... Let's talk about our guys, Marten and Thibaut. What is the point of such a risk? Was the woman's charm that strong or did these slavers show mercy?";
+			dialog.text = "True. But every chain has a weak link.\nThree days ago, a former Voltigeur crewman named Fernand Lucas drank too much in Basse-Terre's tavern and said a lot of interesting things...\nTurns out Molly Jones asked him to ask her brother in St John's for help. But Lucas never reached him.\nHe escaped his captain and is now in Guadeloupe drinking to forget his cowardice.\nAntigua is not a safe place for French pirates - remember that! Colonel Fox swore to hang one on every palm tree on the island after his wife died at the hands of a French corsair, and his marines will do everything in their power to fulfill that desire.";
+			link.l1 = "Stay focused, Steven... Tell me about Marten and Thibaut. Why would they take such a risk? Were Molly's charms so strong, or did these slavers actually show mercy for a change?";
 			link.l1.go = "terrapin_4";
 		break;
 		
 		case "terrapin_4":
-			dialog.text = "I know that scum Marten very well. If he is taking risks, that means that there is either gold involved or fear for his skin. I don't know what our prisoner has to do with this\nMaybe Robert is expecting to get a huge ransom for her, which is unlikely, the girl was looking like a servant. Or maybe... Ha! I wonder who might be more frightful for Marten than Levasseur!";
-			link.l1 = "And why do you think that miss Jones is still being hidden from the governor? Perhaps they had got what they wanted from her and delivered her to Levasseur? Yes, do you have anything specific to tell about this Thibaut?";
+			dialog.text = "I know that scum Marten very well. If he's taking this risk, that means there's either gold or self-preservation involved.\nMaybe Marten thinks he can get a huge ransom for her - which is unlikely; the girl arrived on Tortuga in servant's garb.\nOr maybe... Ha! I wonder who Marten would be more afraid of than Levasseur...?";
+			link.l1 = "Hmm... tell me more about Thibaut.";
 			link.l1.go = "terrapin_5";
 		break;
 		
 		case "terrapin_5":
-			dialog.text = "Don't know much about the man. I only know that the uncle trusts this pup enough to make him his heir. He still has a girl, otherwise why would they need all this conspiracy?\nIt's unclear where the girl is held and why Thibaut allows Marten to take lead. There is a mystery which can help us to win this game without storming Tortuga. You are French, so I guess, you would prefer it that way\nBut you should hurry, Lucas's drunk talks could be heard by agents of Marten and Levasseur, you can imagine the consequences!";
-			link.l1 = "I get it. So, Thibaut is an heir of Levasseur? And he hides a slave girl from his uncle? Damn, I guess the young man is eager to see uncle dead as soon as possible!";
+			dialog.text = "Don't know much about the man, only that Levasseur trusts him enough to make him his heir.\nIt's unclear where the girl is being held and why Thibaut allows Marten such a long leash, but the answer to this little riddle might help us win this game without storming Tortuga. You are French, so I guessed you would prefer it this way.\nBut you should hurry, there's no telling when Lucas's drunken ramblings will catch a ship bound for Tortuga, and if Levasseur gets wind of this before we can act on it... we're fucked!";
+			link.l1 = "I'll leave immediately.";
 			link.l1.go = "terrapin_6";
 		break;
 		
 		case "terrapin_6":
-			dialog.text = "True. According to Lucas's words, this Molly is a rare piece of beauty, our brave Thibaut might fall in love with her. You know what people can do for the sake of love. Go to Basse-Terre\nFind this drunken idiot and make him speak. Plus, you should also learn anything about Molly and her brother. You might want visit Antigua first, Molly had sent Lucas there for purpose. But what's the purpose?";
-			link.l1 = "I see. Let's not waste time. Thank you, Steven.";
+			dialog.text = "Here's what you do: visit Antigua first. Molly sent Lucas there to find her brother; maybe the brother has information that can help you.\nAfter that, get your arse to Guadaloupe. Find Lucas and learn everything you can about Marten, Thibaut, Voltigeur, and Molly.";
+			link.l1 = "Thanks, Steven. Antigua, then Guadaloupe.";
 			link.l1.go = "terrapin_7";
 		break;
 		
@@ -1676,7 +1659,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			SetCharacterPerk(sld, "MusketsShoot");
@@ -1726,55 +1709,55 @@ void ProcessDialogEvent()
 		
 		case "terrapin_8":
 			dialog.text = "Go on!";
-			link.l1 = "I have found Molly's brother in St. John's. It is Fox's batman. But there is something strange. His sister Molly is a well known ugly hag about as tall as you. She is the maid of Fox's daughter, Catherine, and she had been in England with her until recently...";
+			link.l1 = "I found Molly's brother in St. John's. It's Colonel Fox's clerk. But something's strange... He described his sister Molly as a well known hag about as tall as you - but not as pretty. She is the maid of Fox's daughter, Catherine, and she was with her in England until recently...";
 			link.l1.go = "terrapin_9";
 		break;
 		
 		case "terrapin_9":
 			dialog.text = "";
-			link.l1 = "As for Catherine, she indeed is known for her beauty and she was going to visit her father on his birthday, but she was late due to the squadron's delay in London...";
+			link.l1 = "As for Catherine, she's indeed known for her beauty and she was going to visit her father on his birthday, but the squadron carrying her was delayed...";
 			link.l1.go = "terrapin_10";
 		break;
 		
 		case "terrapin_10":
 			dialog.text = "";
-			link.l1 = "Her father, who took hard the death of his wife due the French corsair's attack, strictly has forbidden her from leaving England on a solitary ship. So Molly Jones can't be Thibaut's prisoner. Then who is she?";
+			link.l1 = "Colonel Fox forbade her from leaving England without an escort squadron, so Molly Jones can't be Thibaut's prisoner. So who is she...?";
 			link.l1.go = "terrapin_11";
 		break;
 		
 		case "terrapin_11":
-			dialog.text = "Hm... Damn if I know. Perhaps she is some other Molly Jones, not the one you've been asking about. Though... there are too many coincidences. I don't believe that it is all just an accident! I've got some unclear suspicions but... though many strange things can happen!";
+			dialog.text = "Hm... Damned if I know. Maybe she's some other Molly Jones - not the one you've been asking about.\nThough... there are too many coincidences. I don't believe this is all an accident!\nYou know... I have a suspicion, but...";
 			link.l1 = "What do you mean? Tell me!";
 			link.l1.go = "terrapin_12";
 		break;
 		
 		case "terrapin_12":
-			dialog.text = "And what if the daughter disobeyed father's orders and set sail without an escort? Last month was quite stormy, Albatross could get damaged and became an easy pray for Marten. I suspect that Catherine didn't tell her real name, you should understand why, and she is being kept in Tortuga under Molly's name\nYou know what awaits her if her true name is compromised. This is starting to make sense!";
-			link.l1 = "Damn it! I would have never thought about it! Molly... Catherine... But it is all coinciding!";
+			dialog.text = "... What if Catherine disobeyed her father's orders and set sail without an escort? Last month was quite stormy, the Albatross could've gotten damaged and became easy prey for Marten.\nI suspect Catherine withheld her real name from Marten - you can understand why - and gave him Molly's name instead!";
+			link.l1 = "Damnation! If that's the case, then everything adds up... but it's a hell of a supposition!";
 			link.l1.go = "terrapin_13";
 		break;
 		
 		case "terrapin_13":
-			dialog.text = "That is what I am talking about, pal. Not sure that we are right, but...";
-			link.l1 = "But it changes everything! Perhaps we should ask the English for support? To let the bayonets of the marines clear the way for us!";
+			dialog.text = "That's what I mean, pal. I could be wrong, but...";
+			link.l1 = "... but if it's true, it changes everything! We could ask the English for support, let the bayonets of the Sea Foxes clear the way for us!";
 			link.l1.go = "terrapin_14";
 		break;
 		
 		case "terrapin_14":
-			dialog.text = "Calm down, "+pchar.name+"! We need more solid proofs. We can not know for sure. Real Catherine might be in London, waiting for a squadron to set sail. Brits have got problems of their own, they won't risk attacking La Roche. But if our suspicions are true and colonel Fox will find out what has happened to his daughter...\n He will set up a blockade around the island and will wait for the squadron's arrival. Then he will attack the city. Sea foxes are a fearsome force in close quarters fighting. I am sure that he will raise the English flag above ruins of Tortuga in three days. Do you really want this?";
-			link.l1 = "No, it is not our way. Now I see what ransom Marten is talking about.";
+			dialog.text = "Calm down, "+pchar.name+"! We need proofs. As I said, I could be wrong, and Catherine could still be in London, waiting for an escort to set sail.\nThe English have problems of their own; they won't risk attacking La Roche. But if we're right, and Colonel Fox finds out what's happened to his daughter...\nHe'll set up a blockade around Tortuga and wait for reinforcements. Then he'll attack the city. Sea Foxes are fearsome in close-quarters, so there'll be lots of casualties - army and civilian.\n And in the end, I'm sure he'll raise the English flag above the ruins of Tortuga three days later. Do you really want that?";
+			link.l1 = "No... no I don't. Now I see what ransom Marten is talking about.";
 			link.l1.go = "terrapin_15";
 		break;
 		
 		case "terrapin_15":
-			dialog.text = "We must act carefully. We are not even sure that Marten is aware of true Molly's true identity. Blackmailing colonel Fox would be a suicidal idea. Especially when Cromwell's squadron is arriving shortly\nIf Catherine dies, we shall loose too. Our Brotherhood is not interested to make colonel Fox more angry than usual. This man can cause a lot of troubles. If Catherine has to die after all, we must make sure she dies not by our hands and after she plays her role in our game\nBut it would be much better to deliver poor girl to her father. Her saviour will be rewarded. If not in this world, than in the other.";
-			link.l1 = "For God's will... Steven, you are genius! I am going to Tortuga immediately! I will find out, who that Molly Jones is! I am damn sure that she is Catie Fox!";
+			dialog.text = "We need to be careful. We're not even sure Marten is aware of Catherine's true identity. Blackmailing Colonel Fox would be suicide, especially with Cromwell's squadron arriving in the Caribbean.\nIf Catherine dies because of us, we would be in the deepest of shit. Colonel Fox could destroy the Brethren of the Coast if he believed we killed his daughter.\nBut if, in the end, Catherine has to die, we need to make sure it doesn't look like our doing, and that she helps us achieve our goals.\nThe best outcome would be to deliver the girl to her father. Her saviour will be well rewarded, he-he...";
+			link.l1 = "Steven, you're a genius! I'm off to Tortuga. I'll confirm whether Molly is Catherine Fox.";
 			link.l1.go = "terrapin_16";
 		break;
 		
 		case "terrapin_16":
-			dialog.text = "Perhaps... Don't waste time, "+pchar.name+". And if I was right - make sure she stays alive.";
-			link.l1 = "I will do what I can. See you!";
+			dialog.text = "Don't waste time, "+pchar.name+". And if it turns out I'm right, make sure that girl stays alive.";
+			link.l1 = "I'll do all I can.";
 			link.l1.go = "terrapin_17";
 		break;
 		
@@ -2205,7 +2188,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "check_out_my_frigate_06":
-			dialog.text = "Wow... I have long lost hope of seeing my swallow again. Well, I hope this ship will serve you faithfully. Really happy for you, friend!";
+			dialog.text = "Shiver me timbers... I have long lost hope of seeing my swallow again. Well, I hope this ship will serve you faithfully. Really happy for you, friend!";
 			link.l1 = "What? Don't you need him? I wanted to return it to its rightful owner...";
 			link.l1.go = "check_out_my_frigate_07";
 		break;

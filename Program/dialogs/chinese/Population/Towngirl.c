@@ -197,9 +197,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipLetters_8":
-			dialog.text = LinkRandPhrase("我他妈不在乎什么陌生文件, 而且我也不识字。 去找高利贷者吧, 据说他知道怎么读那些鬼画符。 ",
+			dialog.text = LinkRandPhrase("我他妈不在乎什么陌生文件, 而且我也不识字。 去找放贷人吧, 据说他知道怎么读那些鬼画符。 ",
 			"我不知道你在说什么, 问问镇上的其他市民吧, " +GetFullName(Pchar)+ "船长。 ", 
-			"我甚至不知道怎么帮你, " +GetFullName(Pchar)+ "船长。 试试去找高利贷者谈谈, 他可能知道。 ");
+			"我甚至不知道怎么帮你, " +GetFullName(Pchar)+ "船长。 试试去找放贷人谈谈, 他可能知道。 ");
 			link.l1 = "我会很乐意接受你的建议! ";
 			link.l1.go = "exit";
 		break;

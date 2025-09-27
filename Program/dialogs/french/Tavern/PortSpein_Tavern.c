@@ -28,6 +28,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Ecoutez, en avril 1654, une frégate a accosté dans votre port sous le commandement du capitaine Miguel Dichoso et il a disparu ensuite. Y a-t-il quelque chose que vous puissiez me dire à ce sujet ?";
 				link.l1.go = "guardoftruth";
 			}
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "Dis-moi, "+npchar.name+", qui est donc cet oiseau nommé Javier Castillo?";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "Revenons à la conversation au sujet de la personne qui peut influencer Javier.";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
 		break;
 		
 		//--> Цена чахотки
@@ -136,6 +148,56 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.Consumption_1 = "true";
 		break;
 		//<-- Цена чахотки
+		
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "Javier est un joueur de cartes, un tricheur et un escroc. Il traîne toujours à la taverne, à la recherche de quelqu’un à qui soutirer quelques pesos.";
+			link.l1 = "Donc, il n’a pas été remarqué dans d’autres affaires louches? Peut-être a-t-il des ennemis?";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "OZ_Tavern_2":
+			dialog.text = "Disons que ses amis sont bien moins nombreux que ceux qui rêvent de lui tordre le cou. Mais si vous voulez le nom d’une personne qui pourrait réellement avoir de l’influence sur lui, cela vous coûtera mille pesos. Payez, et je vous dirai tout.";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "D’accord, prends ton argent, vieux maître-chanteur.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Nous reprendrons cette conversation plus tard. Je n’ai pas la somme pour l’instant.";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+		
+		case "OZ_Tavern_2_1":
+			dialog.text = "Capitaine, avez-vous apporté les mille pesos?";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Oui. Tiens, vieux maître-chanteur.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Diable. Je reviendrai bientôt.";
+				link.l1.go = "exit";
+			}
+		break;
+		
+		case "OZ_Tavern_3":
+			dialog.text = "Voilà qui est mieux. Voyez-vous, Javier n’a pas seulement des dettes de jeu. Un jour, il a voulu se lancer dans le commerce d’antiquités, mais, comme on pouvait s’y attendre, cela ne s’est pas terminé de la meilleure façon pour lui. Au début, les affaires marchaient plutôt bien, puis il a eu l’occasion d’acquérir une pièce rare\nIl s’est tellement emballé qu’il a fait le tour de tous les prêteurs pour trouver de l’argent. Bien sûr, personne ne lui a donné un sou. Alors, il a trouvé un autre passionné d’antiquités et lui a emprunté cent cinquante mille pesos. La suite, je crois que vous la devinez\nIl s’est fait rouler, et maintenant cette dette lui pèse comme une pierre autour du cou. Il n’a remboursé qu’une somme dérisoire et, à en juger par son comportement, il n’a pas l’intention de payer le reste, même si son créancier a engagé des hommes pour l’intimider\nL’homme à qui il doit s’appelle Felipe Alarcón. Sa maison se trouve en face de la banque, vous la reconnaîtrez facilement : c’est un magnifique manoir avec des colonnes à l’entrée.";
+			link.l1 = "Merci!";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
 		
 		case "guardoftruth":
 			dialog.text = "Je me souviens de lui. Souvent passé par ma taverne, mais ne parlait pas beaucoup. Prenait quelques verres de rhum, partageait un murmure avec certains clients et partait. Très sombre et sérieux comme tout le monde sur cette frégate. Des mercenaires d'apparence dangereuse qui gardaient leurs lames prêtes\nIl y avait une rumeur que la frégate était pleine de trésors, mais je ne crois pas à ces contes. Une cargaison précieuse n'est jamais transportée sur un seul navire sans convoi. Ils ont passé une journée ici, puis sont partis. Vers l'Europe, j'ai entendu. C'est tout ce que je sais.";

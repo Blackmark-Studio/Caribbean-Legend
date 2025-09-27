@@ -495,7 +495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("你已支付100杜布隆");
 			dialog.text = "一切似乎没问题。 这是你的护身符。 祝你好运! ";
 			link.l1 = "谢谢你, " + npchar.name+ "! ";
@@ -587,6 +587,7 @@ void ProcessDialogEvent()
 			dialog.text = "是吗? 你和Tuttuathapak谈过了, 对吗? ";
 			link.l1 = "正是。 现在我想找到另外两个护身符。 你说我是第三个给你看这个神器的人。 另外两个是谁? ";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -621,6 +622,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":

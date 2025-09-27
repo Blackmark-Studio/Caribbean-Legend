@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_Capacity_start":
 		    amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -805,7 +805,7 @@ void ProcessDialogEvent()
 			TuningAvailable();
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_COMMERCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -825,7 +825,7 @@ void ProcessDialogEvent()
 			
 		case "ship_tunning_SpeedRate_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -926,7 +926,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 				}
 				else
 				{
@@ -946,7 +946,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -966,7 +966,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_TurnRate_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока
+			// belamour legendary edition туда сюда бегать - та ещё морока
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1072,7 +1072,7 @@ void ProcessDialogEvent()
 			Link.l1.go = "Exit";
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 		
@@ -1092,7 +1092,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MaxCrew_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1200,7 +1200,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1222,7 +1222,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MinCrew_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1331,7 +1331,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_GRAPPLING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1352,7 +1352,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_HP_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1453,15 +1453,21 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
+					{
+						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
+					}
 				}
 				else
 				{
-					shTo.HP        = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					if(sti(shTo.HP) > sti(shTo.Bonus_HP)) // иначе апгрейд будет умножать отрицательное значение
+					{
+						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
+					}
 				}
 			}
 	        shTo.Tuning.HP = true;
-			shTo.BaseHP = sti(shTo.HP);
+			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
 			{
@@ -1476,7 +1482,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_DEFENCE, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_REPAIR, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -1499,7 +1505,7 @@ void ProcessDialogEvent()
 
 		case "ship_tunning_WindAgainst_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1610,7 +1616,7 @@ void ProcessDialogEvent()
 
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_SAILING, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
 						
@@ -1630,7 +1636,7 @@ void ProcessDialogEvent()
 		
 		case "ship_c_quantity_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1767,7 +1773,7 @@ void ProcessDialogEvent()
 			
 			AddQuestRecord("ShipTuning", "End");
 			CloseQuestHeader("ShipTuning");
-			notification("Вы узнали много нового о строении корабля!", "none");
+			notification("Nauczyłeś się wiele o budowie tego statku!", "none");
 			AddCharacterExpToSkill(pchar, SKILL_ACCURACY, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 			AddCharacterExpToSkill(pchar, SKILL_CANNONS, 5.0 * makefloat(GetMaterialQtyUpgrade(pchar, NPChar, 2 )));
 		break;
@@ -2660,14 +2666,14 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_7":
             dialog.text = "Więc jesteś mi winien "+sti(pchar.questTemp.IslaMona.Shipyarder.Money)+"  дублоны.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 			{
 				link.l1 = "Oto, daję ci ostatnie, nic już nie mam.";
 				link.l1.go = "IslaMona_8";
 			}
 			else
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") < 1)
+				if (PCharDublonsTotal() < 1)
 				{
 					link.l1 = "Poczekaj, idę do lichwiarza, by zaciągnąć dług.";
 					link.l1.go = "IslaMona_money_exit";
@@ -2681,9 +2687,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "IslaMona_money":
-			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("Przekazałeś "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+"");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-PCharDublonsTotal();
+			Log_Info("Przekazałeś "+FindRussianDublonString(PCharDublonsTotal())+"");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
             dialog.text = "Nie współczuj mi, masz w kajucie skrzynię pełną złota. Będziesz mi winien "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+".";
 			link.l1 = "";
@@ -2699,7 +2705,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_8":
 			Log_Info("Przekazałeś "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+"");
-			RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 			PlaySound("interface\important_item.wav");
             dialog.text = "To świetnie. Wszysko jest gotowe. Narzędzia zostaną dostarczone na twój statek. To są te ciężkie skrzynie.";
 			link.l1 = "Dziękuję, "+npchar.name+"!";

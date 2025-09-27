@@ -1,4 +1,4 @@
-#define DIPLOMAT_SUM 80000
+int iDiplomatPseudoGlobal;
 
 void ProcessDialogEvent()
 {
@@ -55,11 +55,7 @@ void ProcessDialogEvent()
 		{
 		    Dialog.CurrentNode = "RelationYet";
 		}
-		else
-		{
- 	    	Dialog.CurrentNode = "RelationAny_Done";
- 	    	npchar.quest.relation.summ = CalculateRelationSum(sti(npchar.quest.relation));
- 	    }
+		else Dialog.CurrentNode = "RelationAny_Done";
  	}
  	
  	if (findsubstr(attrLoc, "CityPay_" , 0) != -1)
@@ -339,10 +335,10 @@ void ProcessDialogEvent()
 		break;
 
 		case "Contraband":
-			Pchar.questTemp.Relations.sum = makeint(0.3 * stf(Pchar.rank)/stf(Pchar.reputation.nobility)*DIPLOMAT_SUM);
-			dialog.Text = "Bene. Ti costerà "+Pchar.questTemp.Relations.sum+" pesos.";
+			iDiplomatPseudoGlobal = CalculateRelationContraSum(false);
+			dialog.Text = "Bene. Ti costerà "+iDiplomatPseudoGlobal+" pesos.";
 			Link.l1 = "Sono d'accordo.";
-			if(makeint(Pchar.money) < makeint(Pchar.questTemp.Relations.sum))
+			if(makeint(Pchar.money) < iDiplomatPseudoGlobal)
 			{
 				Link.l1.go = "No_money";
 			}
@@ -359,13 +355,14 @@ void ProcessDialogEvent()
 			Link.l99 = "Grazie.";
 			Link.l99.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
 		break;
         // boal <--
 		case "RelationAny_Done":
-			iSumm = sti(npchar.quest.relation.summ);
-			dialog.text = "Mh... Non so nemmeno cosa dire. Certo che posso esaudire la tua richiesta di fare pace con "+XI_ConvertString(Nations[sti(npchar.quest.relation)].Name+"Abl")+", ti costerà "+FindRussianMoneyString(iSumm)+".";
-			if(sti(pchar.money) >= iSumm)
+			i = sti(npchar.quest.relation);
+			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
+			dialog.text = "Mh... Non so nemmeno cosa dire. Certo che posso esaudire la tua richiesta di fare pace con "+XI_ConvertString(Nations[i].Name+"Abl")+", ti costerà "+FindRussianMoneyString(iDiplomatPseudoGlobal)+".";
+			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
 			{
 				link.l1 = "Non credo di avere una scelta. Prendi i miei soldi.";
 				link.l1.go = "relation3";
@@ -378,9 +375,9 @@ void ProcessDialogEvent()
 			dialog.text = "Splendido! È sorprendentemente facile trattare con te. Non preoccuparti, risolverò il tuo problema in 15 giorni.";
 			link.l1 = "Bene.";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.relation.summ));
-			ChangeNationRelationFromRelationAgent(npchar);
-			attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
+			ChangeNationRelationFromRelationAgent(i);
+			attrLoc = "RelationAgent" + GetNationNameByType(i);
             Pchar.GenQuest.(attrLoc) = true;
 		break;
 		

@@ -28,6 +28,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Ascolta, nell'aprile 1654 una fregata ha attraccato al tuo porto sotto il comando del Capitano Miguel Dichoso e poi è sparito. C'è qualcosa che puoi dirmi al riguardo?";
 				link.l1.go = "guardoftruth";
 			}
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "Dimmi, "+npchar.name+", che tipo d’uomo è questo Javier Castillo?";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "Torniamo a parlare di quella persona che può influenzare Javier.";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
 		break;
 		
 		//--> Цена чахотки
@@ -136,6 +148,56 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.Consumption_1 = "true";
 		break;
 		//<-- Цена чахотки
+		
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "Javier è un giocatore di carte, un baro e un truffatore. Sta sempre in taverna a cercare qualcuno da spennare di qualche peso.";
+			link.l1 = "Quindi non è stato visto in altri affari loschi? Forse ha dei nemici?";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "OZ_Tavern_2":
+			dialog.text = "Diciamo che ha molti più nemici di quanti amici. Ma se volete il nome di una persona che può davvero influenzarlo, vi costerà mille pesos. Pagate – e vi dirò tutto.";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Va bene, prendi i tuoi soldi, vecchio scroccone.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Torniamo a questa conversazione più tardi. Ora non ho la somma necessaria.";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+		
+		case "OZ_Tavern_2_1":
+			dialog.text = "Capitano, mi avete portato i mille pesos?";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Sì. Tieni, vecchio scroccone.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Dannazione. Tornerò presto.";
+				link.l1.go = "exit";
+			}
+		break;
+		
+		case "OZ_Tavern_3":
+			dialog.text = "Così va meglio. Vedete, Javier non ha solo debiti di gioco. Una volta ha deciso di darsi al commercio di antiquariato, ma, come prevedibile, non è finita bene per lui. All’inizio le cose andavano persino abbastanza bene, ma poi gli capitò l’occasione di acquistare un pezzo raro\nSi infiammò talmente all’idea che fece il giro di tutti gli usurai in cerca di soldi. Naturalmente, nessuno gli diede un soldo. Allora trovò un’altra persona appassionata di antiquariato e gli chiese in prestito centocinquantamila pesos. Poi, penso, potete immaginare il resto \nFu raggirato, e ora quel debito gli pesa come un macigno. Ha restituito una miseria, e a quanto pare non intende dare il resto, nonostante il suo creditore abbia persino assunto della gente per intimidirlo\nLa persona a cui deve è Felipe Alarcón. La sua casa si trova di fronte alla banca, la riconoscerete facilmente: è una magnifica villa con colonne all’ingresso.";
+			link.l1 = "Grazie!";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
 		
 		case "guardoftruth":
 			dialog.text = "Lo ricordo. Spesso passava dalla mia taverna, ma non parlava molto. Beveva qualche bicchiere di rum, sussurrava qualcosa ad alcuni clienti e se ne andava. Molto cupo e serio come tutti su quella fregata. Mercenari dall'aspetto pericoloso che tenevano le loro lame pronte\nC'era una voce che la fregata fosse piena di tesori, ma non credo a tali storie. Il carico prezioso non viene mai trasportato su una sola nave senza una scorta. Sono rimasti qui un giorno, poi se ne sono andati. Verso l'Europa, ho sentito. Questo è tutto quello che so.";

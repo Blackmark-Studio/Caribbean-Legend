@@ -1,0 +1,1 @@
+LAi_events_1 {La ceinture de streltsy est détruite.}

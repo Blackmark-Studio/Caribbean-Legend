@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 	case "result_grabbing":
 		// считаем деньги и дублоны взятые из сундука
 		iPeso = sti(pchar.money) - sti(pchar.questTemp.LSC.Drink.Money);
-		iDubl = GetCharacterItem(pchar, "gold_dublon") - sti(pchar.questTemp.LSC.Drink.Dublon);
+		iDubl = PCharDublonsTotal() - sti(pchar.questTemp.LSC.Drink.Dublon);
 		if (iPeso <= 0)
 			sPeso = "ni un solo peso";
 		else
@@ -251,9 +251,9 @@ void ProcessDialogEvent()
 
 	case "grabbing_part":
 		iPeso = makeint((sti(pchar.money) - sti(pchar.questTemp.LSC.Drink.Money)) / 2);
-		iDubl = makeint((GetCharacterItem(pchar, "gold_dublon") - sti(pchar.questTemp.LSC.Drink.Dublon)) / 2);
+		iDubl = makeint((PCharDublonsTotal() - sti(pchar.questTemp.LSC.Drink.Dublon)) / 2);
 		AddMoneyToCharacter(pchar, -iPeso);
-		RemoveItems(pchar, "gold_dublon", iDubl);
+		RemoveDublonsFromPCharTotal(iDubl);
 		Log_Info("Has entregado " + iDubl + " doblones");
 		PlaySound("interface\important_item.wav");
 		dialog.text = "Está bien, dame la llave y la devolveré a su dueño antes de que la eche de menos. Adiós, camarada...";

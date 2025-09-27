@@ -1,390 +1,85 @@
-SharlieFinal_1
-{
-Cathrin
-}
-SharlieFinal_2
-{
-Fox
-}
-
-SharlieFinal_3
-{
-Erkundungsmodus: Timer verlängert. Schließe die Quest ab!"
-}
-SharlieFinal_4
-{
-Catherine Fox starb an einer Lungenentzündung!
-}
-
-SharlieFinal_5
-{
-chevalier Timoleon
-}
-SharlieFinal_6
-{
-de Fontene
-}
-
-SharlieFinal_7
-{
-Griffondor
-}
-
-SharlieFinal_8
-{
-Rober
-}
-SharlieFinal_9
-{
-Marten
-}
-
-SharlieFinal_10
-{
-Enphanta
-}
-
-SharlieFinal_11
-{
-Spanischer Konvoi
-}
-
-SharlieFinal_12
-{
-Sieg
-}
-SharlieFinal_13
-{
-Vindzor Castle
-}
-SharlieFinal_14
-{
-Royal Katherine
-}
-SharlieFinal_15
-{
-Loyal London
-}
-SharlieFinal_16
-{
-Hochmütig
-}
-
-SharlieFinal_17
-{
-San Felipe
-}
-SharlieFinal_18
-{
-San Isidro
-}
-SharlieFinal_19
-{
-Santa Magdalena
-}
-SharlieFinal_20
-{
-Santa Anna
-}
-SharlieFinal_21
-{
-Apostle
-}
-
-SharlieFinal_22
-{
-Der Käfig wurde geöffnet!
-}
-
-SharlieFinal_23
-{
-Michel
-}
-SharlieFinal_24
-{
-de Monper
-}
-
-SharlieFinal_25
-{
-Anry
-}
-SharlieFinal_26
-{
-Duble
-}
-
-SharlieFinal_27
-{
-Köstlich
-}
-
-SharlieFinal_28
-{
-Bootsmann Serge
-}
-SharlieFinal_29
-{
-Dega
-}
-
-SharlieFinal_30
-{
-San Gregorio
-}
-
-SharlieFinal_31
-{
-Carlos
-}
-SharlieFinal_32
-{
-Gevarra
-}
-
-SharlieFinal_33
-{
-Guy
-}
-SharlieFinal_34
-{
-Marshe
-}
-
-SharlieFinal_35
-{
-Ein Tag verging...@<NewStr()>Vanille wurde auf die Karacke verladen...
-}
-
-SharlieFinal_36
-{
-Barty
-}
-SharlieFinal_37
-{
-Flayer
-}
-
-SharlieFinal_38
-{
-Vater Vincento
-}
-SharlieFinal_39
-{
-
-}
-
-SharlieFinal_40
-{
-Pedro
-}
-SharlieFinal_41
-{
-Lopez
-}
-
-SharlieFinal_42
-{
-San Markos
-}
-
-SharlieFinal_43
-{
-Shadow
-}
-SharlieFinal_44
-{
-Diego
-}
-SharlieFinal_45
-{
-de Montoya
-}
-
-SharlieFinal_46
-{
-Carrier lugger 'Shadow'
-}
-
-SharlieFinal_47
-{
-Ein ganzer Pulvervorrat ist auf der 'Shadow' explodiert!
-}
-
-SharlieFinal_48
-{
-Fortune
-}
-
-SharlieFinal_49
-{
-Kapitän
-}
-SharlieFinal_50
-{
-der 'Santa Quiteria'
-}
-
-SharlieFinal_51
-{
-Vater Adrian
-}
-SharlieFinal_52
-{
-
-}
-
-SharlieFinal_53
-{
-Fremder
-}
-SharlieFinal_54
-{
-
-}
-
-SharlieFinal_55
-{
-Feinde aus dem Hinterhalt - @<n>
-}
-
-SharlieFinal_56
-{
-Ich sollte in meine Kajüte gehen
-}
-
-SharlieFinal_57
-{
-Urakan
-}
-SharlieFinal_58
-{
-
-}
-
-SharlieFinal_59
-{
-Kanek
-}
-SharlieFinal_60
-{
-
-}
-
-SharlieFinal_61
-{
-Itzha's Schatzkammer wurde geöffnet
-}
-
-SharlieFinal_62
-{
-Die Maske von Kukulcan ist zerstört@<NewStr()>Portale sind eliminiert!
-}
-
-SharlieFinal_63
-{
-Einige Tage sind vergangen...@<NewStr()>Das Schiff ist in der Bucht angekommen
-}
-
-SharlieFinal_64
-{
-Gaetano
-}
-SharlieFinal_65
-{
-Rosetty
-}
-
-SharlieFinal_66
-{
-Es hat eine halbe Stunde gedauert@<NewStr()>Sie haben den richtigen Kurs eingeschlagen
-}
-
-SharlieFinal_67
-{
-Wächter der Maske
-}
-SharlieFinal_68
-{
-
-}
-
-SharlieFinal_69
-{
-Der Wächter hat sich vollständig erholt!
-}
-
-SharlieFinal_70
-{
-Sie fühlen sich stärker
-}
-
-SharlieFinal_71
-{
-Sie haben mehr Ausdauer
-}
-
-SharlieFinal_72
-{
-Sie fühlen sich beweglicher
-}
-
-SharlieFinal_73
-{
-
-}
-SharlieFinal_74
-{
-
-}
-
-SharlieFinal_75
-{
-Enteroffizier @<GetFullName(sld)> hat@<sTemp> einen Komantschentrankes benutzt
-}
-
-SharlieFinal_76
-{
-
-}
-SharlieFinal_77
-{
-
-}
-
-SharlieFinal_78
-{
-Enteroffizier @<GetFullName(sld)> starb@<sTemp> wegen des Fehlens eines Komantschentrankes
-}
-
-SharlieFinal_79
-{
-Kukulcan hat es geschafft, in die Vergangenheit zu gelangen@<NewStr()>Sie haben es nicht geschafft, ihn aufzuhalten...
-}
-
-SharlieFinal_80
-{
-Kapitän
-}
-SharlieFinal_81
-{
-Gobart
-}
-
-SharlieFinal_82
-{
-Colonel
-}
-SharlieFinal_83
-{
-Kirk
-}
-
-SharlieFinal_84
-{
-Die Welt hat sich verändert und euer Held@<NewStr()> auch, aber das ist eine andere Geschichte...
-}
-SharlieFinal_85
-{
-Alonso
-}
+SharlieFinal_1 {Cathrin}
+SharlieFinal_2 {Fox}
+SharlieFinal_3 {Erkundungsmodus: Timer verlängert. Schließe die Quest ab!"}
+SharlieFinal_4 {Catherine Fox starb an einer Lungenentzündung!}
+SharlieFinal_5 {chevalier Timoleon}
+SharlieFinal_6 {de Fontene}
+SharlieFinal_7 {Griffondor}
+SharlieFinal_8 {Rober}
+SharlieFinal_9 {Marten}
+SharlieFinal_10 {Enphanta}
+SharlieFinal_11 {Spanischer Konvoi}
+SharlieFinal_12 {Sieg}
+SharlieFinal_13 {Vindzor Castle}
+SharlieFinal_14 {Royal Katherine}
+SharlieFinal_15 {Loyal London}
+SharlieFinal_16 {Hochmütig}
+SharlieFinal_17 {San Felipe}
+SharlieFinal_18 {San Isidro}
+SharlieFinal_19 {Santa Magdalena}
+SharlieFinal_20 {Santa Anna}
+SharlieFinal_21 {Apostle}
+SharlieFinal_22 {Der Käfig wurde geöffnet!}
+SharlieFinal_23 {Michel}
+SharlieFinal_24 {de Monper}
+SharlieFinal_25 {Anry}
+SharlieFinal_26 {Duble}
+SharlieFinal_27 {Köstlich}
+SharlieFinal_28 {Bootsmann Serge}
+SharlieFinal_29 {Dega}
+SharlieFinal_30 {San Gregorio}
+SharlieFinal_31 {Carlos}
+SharlieFinal_32 {Gevarra}
+SharlieFinal_33 {Guy}
+SharlieFinal_34 {Marshe}
+SharlieFinal_35 {Ein Tag verging...@<NewStr()>Vanille wurde auf die Karacke verladen...}
+SharlieFinal_36 {Barty}
+SharlieFinal_37 {Flayer}
+SharlieFinal_38 {Vater Vincento}
+SharlieFinal_39 { }
+SharlieFinal_40 {Pedro}
+SharlieFinal_41 {Lopez}
+SharlieFinal_42 {San Markos}
+SharlieFinal_43 {Shadow}
+SharlieFinal_44 {Diego}
+SharlieFinal_45 {de Montoya}
+SharlieFinal_46 {Carrier lugger 'Shadow'}
+SharlieFinal_47 {Ein ganzer Pulvervorrat ist auf der 'Shadow' explodiert!}
+SharlieFinal_48 {Fortune}
+SharlieFinal_49 {Kapitän}
+SharlieFinal_50 {der 'Santa Quiteria'}
+SharlieFinal_51 {Vater Adrian}
+SharlieFinal_52 { }
+SharlieFinal_53 {Fremder}
+SharlieFinal_54 { }
+SharlieFinal_55 {Feinde aus dem Hinterhalt - @<n>}
+SharlieFinal_56 {Ich sollte in meine Kajüte gehen}
+SharlieFinal_57 {Urakan}
+SharlieFinal_58 { }
+SharlieFinal_59 {Kanek}
+SharlieFinal_60 { }
+SharlieFinal_61 {Itzha's Schatzkammer wurde geöffnet}
+SharlieFinal_62 {Die Maske von Kukulcan ist zerstört@<NewStr()>Portale sind eliminiert!}
+SharlieFinal_63 {Einige Tage sind vergangen...@<NewStr()>Das Schiff ist in der Bucht angekommen}
+SharlieFinal_64 {Gaetano}
+SharlieFinal_65 {Rosetty}
+SharlieFinal_66 {Es hat eine halbe Stunde gedauert@<NewStr()>Sie haben den richtigen Kurs eingeschlagen}
+SharlieFinal_67 {Wächter der Maske}
+SharlieFinal_68 { }
+SharlieFinal_69 {Der Wächter hat sich vollständig erholt!}
+SharlieFinal_70 {Sie fühlen sich stärker}
+SharlieFinal_71 {Sie haben mehr Ausdauer}
+SharlieFinal_72 {Sie fühlen sich beweglicher}
+SharlieFinal_73 { }
+SharlieFinal_74 { }
+SharlieFinal_75 {Enteroffizier @<GetFullName(sld)> hat@<sTemp> einen Komantschentrankes benutzt}
+SharlieFinal_76 { }
+SharlieFinal_77 { }
+SharlieFinal_78 {Enteroffizier @<GetFullName(sld)> starb@<sTemp> wegen des Fehlens eines Komantschentrankes}
+SharlieFinal_79 {Kukulcan hat es geschafft, in die Vergangenheit zu gelangen@<NewStr()>Sie haben es nicht geschafft, ihn aufzuhalten...}
+SharlieFinal_80 {Kapitän}
+SharlieFinal_81 {Gobart}
+SharlieFinal_82 {Colonel}
+SharlieFinal_83 {Kirk}
+SharlieFinal_84 {Die Welt hat sich verändert und euer Held@<NewStr()> auch, aber das ist eine andere Geschichte...}
+SharlieFinal_85 {Alonso}

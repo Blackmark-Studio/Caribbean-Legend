@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 			location = &Locations[FindLocation(pchar.location)];
 			if (rand(4) == 4 && GetNpcQuestPastDayParam(location, "gun_date") > 365 && !CheckAttribute(pchar, "questTemp.PrisonGun"))
 			{
-				dialog.text = RandPhraseSimple(RandPhraseSimple("Listen, I have an important business with you. I do hope you'd be able to help.","Captain, may I interest you with one quite a profitable offer?"), RandPhraseSimple("I think that you could help us in one important affair.","Captain, I have a delicate offer for you, which could be quite profitable for both of us."));					
+				dialog.text = RandPhraseSimple(RandPhraseSimple("Listen, I have important business with you. I do hope you'll be able to help.","Captain, may I interest you in a rather profitable offer?"),RandPhraseSimple("I think you could help us with an important matter.","Captain, I have a delicate offer for you, which could be quite profitable for both of us."));					
 				link.l1 = "Well, speak your mind, and we'll see...";
 				link.l1.go = "GiveTaskGun";
 				location.quest.PrisonGun = "Target"; 
@@ -58,40 +58,40 @@ void ProcessDialogEvent()
 				break;
 			}
 		
-			dialog.text = RandPhraseSimple("I am the commandant of the fort. What do you need here?", "What do you need? Why have you come here?");
-			link.l1 = "Oh, nothing, just looking around the town and its vicinity. I came here just by a lucky chance.";
+			dialog.text = RandPhraseSimple("I am the commandant of the fort. What do you need here?","What do you need? Why have you come here?");
+			link.l1 = "Oh, nothing, just looking around the town and its surroundings. I came here purely by chance.";
 			//belamour legendary edition диалоги, если герой имеет звания и заслуги перед отечеством -->
 			// Офицер с патентом
 			if(IsOfficerFullEquip())
 			{
 				dialog.text = "Welcome to the fort, captain. Do you need anything?";
-				link.l1 = "No, nothing, just randomly dropped by.";
+				link.l1 = "No, nothing, just dropped by randomly.";
 			}
 			// вице-адмирал
 			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "Greetings Vice Admiral! Do you have any orders?";
+				dialog.text = "Greetings, Vice Admiral! Do you have any orders?";
 				link.l1 = "No, officer, no orders. I just came to see the fort.";
 			}
 			// генерал-губернатор
 			if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE)
 			{
-				dialog.text = "Governor General, Your Grace! I have complete order in the fort. Will there be any orders?";
-				link.l1 = "I'm glad you're all right, officer. No orders, I just dropped in to check on the fort.";
+				dialog.text = "Governor General, Your Grace! The fort is in perfect order. Do you have any orders?";
+				link.l1 = "I'm glad you're all right, officer. No orders, I just dropped by to check on the fort.";
 			}
 			// <-- legendary edition
 			link.l1.go = "exit";
 			//Jason --> мини-квест Дефицитный товар
 			if (CheckAttribute(pchar, "questTemp.Wine.bottle") && NPChar.location == pchar.questTemp.Wine.City + "_ammo" && GetQuestPastDayParam("questTemp.Wine_bottle") < 5)
 			{
-				link.l11 = "I have one interesting information for you, officer. One of your soldiers, "+pchar.questTemp.Wine.SName+" asked me to purchase wine in the town through my mediation. Considering your orders...";
+				link.l11 = "I have some interesting information for you, officer. One of your soldiers, "+pchar.questTemp.Wine.SName+" asked me to purchase wine in town through my mediation. Considering your orders...";
 				link.l11.go = "Wine_prison";
 			}
 			// <-- мини-квест Дефицитный товар
 			// Карибские нравы
 			if (CheckAttribute(pchar, "questTemp.Trial") && pchar.questTemp.Trial == "fraht" && NPChar.location == "portpax_ammo")
 			{
-				link.l11 = "Hello, officer. I come from the colony of Basse-Terre, on orders from a man by the name of Gerard LeCroix. There is a cargo of gunpowder and bombs for you in my hold...";
+				link.l11 = "Hello, officer. I come from the colony of Basse-Terre, on orders from a man named Gerard LeCroix. There is a cargo of gunpowder and bombs for you in my hold...";
 				link.l11.go = "trial";
 			}
 			// Опасный груз -->
@@ -104,12 +104,12 @@ void ProcessDialogEvent()
 				}
 				if (pchar.questTemp.zpq == "begin" && GetSquadronGoods(pchar, GOOD_POWDER) >= 15000 && GetQuestPastDayParam("pchar.questTemp.zpq") >= 7)
 				{
-					link.l3 = "I'm ready to report that the whole load of gunpowder is delivered. My ship is ready for unloading.";
+					link.l3 = "I'm ready to report that the entire load of gunpowder has been delivered. My ship is ready for unloading.";
 					link.l3.go = "zpq_ex";
 				}
 				if (pchar.questTemp.zpq == "begin")
 				{
-					link.l4 = "I want to reject our gunpowder deal. This is too troublesome.";
+					link.l4 = "I want to cancel our gunpowder deal. This is too troublesome.";
 					link.l4.go = "zpq_fld2";
 				}
 			}
@@ -119,8 +119,8 @@ void ProcessDialogEvent()
 
 		// --> Орудия для форта
 		case "GiveTaskGun":
-			dialog.Text = LinkRandPhrase("You see, the fort cannons are quite worn out. The treasury assigned funds to replace them, but I simply have no idea where to purchase the new ones: there's simply no way to find them in our colony in the amount required. So, I thought that the guns from ships you'd boarded could be quite useful for us here.","I need to replace the gun battery of the fort. The funds have already been allocated, but, you know... It's just impossible to purchase the necessary amount in our colony.","I was tasked with the replacement of the worn fort cannons, but I just don't seem to be able to find enough anywhere.");
-			Link.l1 = "Hmm... Can you go into a little bit more detail? Calibre, amount, price?";
+			dialog.Text = LinkRandPhrase("You see, the fort's cannons are quite worn out. The treasury assigned funds to replace them, but I simply have no idea where to purchase new ones: there's simply no way to find them in our colony in the amount required. So, I thought that the guns from ships you've boarded could be quite useful for us here.","I need to replace the fort's gun battery. The funds have already been allocated, but, you know... It's simply impossible to purchase the required amount in our colony.","I was tasked with replacing the worn fort cannons, but I just can't seem to find enough anywhere.");
+			Link.l1 = "Hmm... Could you go into a little more detail? Calibre, quantity, price?";
 			Link.l1.go = "GiveTaskGun_1";
 			pchar.questTemp.PrisonGun = true;
 			SaveCurrentQuestDateParam("pchar.questTemp.PrisonGun");
@@ -131,24 +131,24 @@ void ProcessDialogEvent()
 			pchar.questTemp.PrisonGun.Sum = makeint(sti(pchar.questTemp.PrisonGun.Price)*sti(pchar.questTemp.PrisonGun.Qty));
 			pchar.questTemp.PrisonGun.Luck = rand(4);
 			pchar.questTemp.PrisonGun.Id = npchar.location;
-			dialog.Text = "I need "+ pchar.questTemp.PrisonGun.Text +", in the amount of " + sti(pchar.questTemp.PrisonGun.Qty) + "  units exactly. I'll be paying in golden doubloons, "+ sti(pchar.questTemp.PrisonGun.Price) +" for a piece. That will amount to " + FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum)) + " in total. What will you say? Oh, and one more thing - I will accept the entire batch, but no sooner than in a month - the money has not arrived yet.";
-			Link.l1 = RandPhraseSimple("No, officer, your offer didn't interest me at all... I am sorry.","It's tempting, but I think I'm out. Allow me to keep my reasoning to myself.");
+			dialog.Text = "I need "+pchar.questTemp.PrisonGun.Text+", in the amount of "+sti(pchar.questTemp.PrisonGun.Qty)+"  units exactly. I'll pay in golden doubloons, "+sti(pchar.questTemp.PrisonGun.Price)+" for a piece. That will amount to "+FindRussianDublonString(sti(pchar.questTemp.PrisonGun.Sum))+" in total. What do you say? Oh, and one more thing - I will take the entire batch, but not before a month has passed - the money hasn't arrived yet.";
+			Link.l1 = RandPhraseSimple("No, officer, your offer doesn't interest me at all... I am sorry.","It's tempting, but I think I'll pass. Allow me to keep my reasoning to myself.");
 			Link.l1.go = "exit_gun";
-			Link.l2 = RandPhraseSimple("Well, that offer is certainly an interesting one. Consider it a deal.","I guess I'll take it. It's not that hard and clearly profitable.");
+			Link.l2 = RandPhraseSimple("Well, that offer is certainly an interesting one. Consider it a deal.","I suppose I'll take it. It's not that difficult and clearly profitable.");
 			Link.l2.go = "GiveTaskGun_2";
 		break;
 			
 		case "exit_gun":
-			dialog.Text = "Such a pity, captain, I was counting on you. And... I do hope that this conversation stays inside the fort?";
-			Link.l1 = "You don't have to remind me about that. Best  regards.";
+			dialog.Text = "Such a pity, captain, I was counting on you. And... I do hope that this conversation stays within the fort?";
+			Link.l1 = "You don't have to remind me about that. Best regards.";
 			Link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.PrisonGun");
 			NextDiag.TempNode = "First time";
 		break;
 			
 		case "GiveTaskGun_2":
-			dialog.Text = "Well, then that's a deal! I am not restricting you to certain terms, but please, try not to prolong it over a half a year. And I hope you understand that this is strictly confidential?";
-			Link.l1 = "Of course I do. See you, commandant.";
+			dialog.Text = "Well, then that's a deal! I am not restricting you to any specific terms, but please, try not to prolong it beyond half a year. And I hope you understand that this is strictly confidential?";
+			Link.l1 = "Of course I do. See you, Commandant.";
 			Link.l1.go = "exit";
 			ReOpenQuestHeader("PrisonGun");
 			AddQuestRecord("PrisonGun", "1");
@@ -164,15 +164,15 @@ void ProcessDialogEvent()
 		case "CheckGun":
 			if (GetQuestPastDayParam("pchar.questTemp.PrisonGun") < 30)
 			{
-				dialog.Text = "I told you not to come sooner than in a month!";
-				Link.l1 = "Damn it! I was so busy"+ GetSexPhrase("","") +", that I lost a"+ GetSexPhrase("","") +" track of time ... Sorry, I will come later, as agreed.";
+				dialog.Text = "I told you not to come back before a month had passed!";
+				Link.l1 = "Damn it! I was so busy"+GetSexPhrase("","")+", that I lost a"+GetSexPhrase("","")+" track of time ... Sorry, I'll come back later, as agreed.";
 				Link.l1.go = "exit";
 				NextDiag.TempNode = "First time";
 				break;
 			}
 			if (GetQuestPastDayParam("pchar.questTemp.PrisonGun") > 180)
 			{
-				dialog.Text = "Hmm... You know, it's been over half a year since the day we've stricken our 'deal'. I have already purchased the cannons. Did you really think that I'd be waiting for you forever?";
+				dialog.Text = "Hmm... You know, it's been over half a year since the day we struck our 'deal'. I have already purchased the cannons. Did you really think that I'd be waiting for you forever?";
 				Link.l1 = "Damn it! And what am I supposed to do with them now?";
 				Link.l1.go = "TakeGun_late";
 				break;
@@ -192,19 +192,19 @@ void ProcessDialogEvent()
 				dialog.Text = "Yes, are you ready to help me?";
 				if (amount < 0)
 				{
-					Link.l1 = "No, still in progress. Just wanted to make sure that our deal still stands.";
+					Link.l1 = "No, still in progress. Just wanted to make sure our deal still stands.";
 					Link.l1.go = "exit";
 				}
 				else
 				{
-					Link.l1 = "I am. The entire batch is in the hold - "+ sTemp +" units, as was agreed upon.";
+					Link.l1 = "I am. The entire batch is in the hold - "+sTemp+" units, as agreed.";
 					Link.l1.go = "TakeGun";
 				}
 			}
 			else 
 			{
-				dialog.text = "I don't see your ship in the harbor. Are you suggesting dragging those cannons through the jungle? Make haste to our harbor and come back.";
-				link.l1 = "My ship is at the other side of the island. I'll take it to the port.";
+				dialog.text = "I don't see your ship in the harbour. Are you suggesting we drag those cannons through the jungle? Make haste to our harbour and return.";
+				link.l1 = "My ship is on the other side of the island. I'll bring it to the port.";
 				link.l1.go = "exit";
 			}
 		break;
@@ -212,7 +212,7 @@ void ProcessDialogEvent()
 		case "TakeGun":
 			if (pchar.questTemp.PrisonGun.Luck == 4)
 			{
-				dialog.Text = RandPhraseSimple("You know, it's really awkward, but I have to denounce our deal. We've just had a financial inspection, and you know how scrupulous they are in such things. I just can't do anything. Sorry.","Captain, you know... Well, cannons have been sent to us from the metropolis, and I was forced to buy them out, of course. Extortionate prices, but... I am really sorry that I let you down... I don't feel good about it, either.");
+				dialog.Text = RandPhraseSimple("You know, it's really awkward, but I have to withdraw from our deal. We've just had a financial inspection, and you know how scrupulous they are about such things. I just can't do anything. Sorry.","Captain, you know... Well, cannons have been sent to us from the metropolis, and I was forced to buy them, of course. Extortionate prices, but... I am truly sorry that I let you down... I don't feel good about it, either.");
 				Link.l1 = "Damn it! And what am I supposed to do with them now?";
 				Link.l1.go = "TakeGun_no";
 			}
@@ -225,8 +225,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeGun_no":
-			dialog.Text = "I don't know. Sell them at the shipyard, equip a trading vessel, sink them... I really have no idea. And please, don't tell anyone about this deal.";
-			Link.l1 = "Oh, you say so! I just have no words!";
+			dialog.Text = "I don't know. Sell them at the shipyard, outfit a trading vessel, sink them... I really have no idea. And please, don't tell anyone about this deal.";
+			Link.l1 = "Oh, you don't say! I'm simply lost for words!";
             Link.l1.go = "exit";
 			AddQuestRecord("PrisonGun", "3");
 			CloseQuestHeader("PrisonGun");
@@ -235,7 +235,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeGun_late":
-			dialog.Text = "I have no idea. It's your problem. Sell them, throw them away, sink them - I really don't care.";
+			dialog.Text = "I have no idea. It's your problem. Sell them, throw them away, sink them – I really don't care.";
 			Link.l1 = "Oh, that was simply a waste of time...";
             Link.l1.go = "exit";
 			AddQuestRecord("PrisonGun", "4");
@@ -251,7 +251,7 @@ void ProcessDialogEvent()
 			amount = sti(pchar.questTemp.PrisonGun.Qty);
 			iTemp = sti(pchar.questTemp.PrisonGun.Sum);
 			dialog.Text = "Of course. Here is your gold - suit yourself.";
-			Link.l1 = "Thanks! It was a pleasure doing business with you!";
+			Link.l1 = "Thank you! It was a pleasure doing business with you!";
             Link.l1.go = "TakeGun_2";
 			TakeNItems(pchar, "gold_dublon", iTemp);
 			Log_Info("You have received "+FindRussianDublonString(sti(pchar.questTemp.WPU.Escort.Money))+"");
@@ -260,7 +260,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "TakeGun_2":
-			dialog.Text = "The feeling is mutual. You've been very helpful. And, I beg you, keep that deal in this room.";
+			dialog.Text = "The feeling is mutual. You've been very helpful. And, I beg you, keep this deal in this room.";
 			Link.l1 = "Of course. Best wishes to you.";
             Link.l1.go = "exit";
 			AddQuestRecord("PrisonGun", "2");
@@ -273,8 +273,8 @@ void ProcessDialogEvent()
 
 		//Jason --> мини-квест Дефицитный товар
 		case "Wine_prison":
-			dialog.text = "What?! I have strictly prohibited any drinking on the territory of the fort! Well, he will have to pay for this. I will deduct 1000 pesos from his payment and will hand them to you as a reward for your vigilance. And this guy will sit in detention for three days.";
-			link.l1 = "Thank you, " + GetAddress_FormToNPC(NPChar) + ". Stopping such violations is our common duty.";
+			dialog.text = "What?! I have strictly prohibited any drinking within the fort! Well, he will have to pay for this. I will deduct 1000 pesos from his payment and hand them to you as a reward for your vigilance. And this man will spend three days in detention.";
+			link.l1 = "Thank you, "+GetAddress_FormToNPC(NPChar)+". Stopping such violations is our shared duty.";
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, 1000);
 			ChangeCharacterComplexReputation(pchar,"nobility", -1); 
@@ -304,28 +304,28 @@ void ProcessDialogEvent()
 			{
 				if (GetSquadronGoods(pchar, GOOD_BOMBS) < 2500 || GetSquadronGoods(pchar, GOOD_POWDER) < 2500)
 				{
-					dialog.text = "Hmm. But this batch is not full! How did it happen?";
-					link.l1 = "Damn it! Please pardon me, it's my fault. I will immediately purchase the missing amount and will hand you in the entire batch, as we agreed.";
+					dialog.text = "Hmm. But this batch isn't full! How did that happen?";
+					link.l1 = "Damn it! Please pardon me, it's my fault. I will immediately purchase the missing amount and hand over the entire batch to you, as we agreed.";
 					link.l1.go = "exit";
 				}
 				else
 				{
-					dialog.text = "So you are our courier? Fine. Let's sort the things out with the cargo, and then you will receive further instructions.";
+					dialog.text = "So you are our courier? Fine. Let's sort things out with the cargo, and then you will receive further instructions.";
 					link.l1 = "Fine.";
 					link.l1.go = "trial_1";
 				}
 			}
 			else
 			{
-				dialog.text = "I don't see your ship in the harbor. Are you suggesting dragging the cargo through the jungle? Make haste to our harbor and come back.";
-				link.l1 = "My ship is at the other side of the island. I'll take it to the port.";
+				dialog.text = "I don't see your ship in the harbour. Are you suggesting we drag the cargo through the jungle? Make haste to our harbour and return.";
+				link.l1 = "My ship is on the other side of the island. I'll bring it to the port.";
 				link.l1.go = "exit";
 			}
 		break;
 		
 		case "trial_1":
 			if(!bImCasual) pchar.quest.Trial_FrahtFail.over = "yes"; // belamour legendary edition если был - снять таймер
-			dialog.text = "Alright, bombs and gunpowder, 2500 units each... Good. The soldiers will unload the cargo, your men can take a break. Here's your payment for the freight - five thousand pesos.";
+			dialog.text = "Alright, bombs and gunpowder, 2,500 units each... Good. The soldiers will unload the cargo, your men can take a break. Here's your payment for the freight - five thousand pesos.";
 			link.l1 = "Thanks! What should I do next? Monsieur LeCroix said...";
 			link.l1.go = "trial_2";
 			DelLandQuestMark(npchar);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		
 		case "trial_3":
 			dialog.text = "So, our military ship 'Warlike' is cruising near the Spanish colony Porto Bello, in the southern part of the Spanish Main. This vessel is under the command of Florian Shoke, who is preparing an ambush of a Spanish heavy galleon set to leave Porto Bello in two weeks.\nThe problem is that our frigate's cannons are suffering from a casting defect, and we need to replace fifteen cannons to save the mission; otherwise, the galleon will outnumber 'Warlike' in both guns and men. \nWithout the replacement, Florian Shoke will be forced to sail away with no result. Such a sequence of events is highly undesirable. Your task is to save the mission by delivering fifteen cannons within fourteen days.";
-			link.l1 = "So, I need to take aboard fifteen cannons, head to Portobello, seek out frigate 'Militant' and hand over the cannons to captain Florian Shoke?";
+			link.l1 = "So, I need to take aboard fifteen cannons, head to Portobello, seek out the frigate 'Militant' and hand over the cannons to Captain Florian Shoke?";
 			link.l1.go = "trial_4";
 		break;
 		
@@ -355,7 +355,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_exit":
-			dialog.text = "You're in your own right, but I was counting on your agreement. Now I'll have to find another courier, although I don't have much time left... Well, I am not keeping you any longer, captain.";
+			dialog.text = "You're within your rights, but I was counting on your agreement. Now I'll have to find another courier, though I don't have much time left... Well, I won't keep you any longer, captain.";
 			link.l1 = "Best regards.";
 			link.l1.go = "trial_exit_1";
 		break;
@@ -369,14 +369,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_5":
-			dialog.text = "Don't worry about that. Florian Shoke will pay you two hundred golden doubloons from the ship's treasury. Besides, I am certain that he'd want to use you and your ship for his own goals - with your consent, of course.";
-			link.l1 = "Alright, I am on this mission! Where are the cannons?";
+			dialog.text = "Don't worry about that. Florian Shoke will pay you two hundred golden doubloons from the ship's treasury. Besides, I am certain that he would want to use you and your ship for his own goals - with your consent, of course.";
+			link.l1 = "Alright, I'm on this mission! Where are the cannons?";
 			link.l1.go = "trial_6";
 		break;
 		
 		case "trial_6":
-			dialog.text = "I will give an order to the soldiers to load them onto your ship immediately. Set sail as soon as you can, monsieur! Best of luck!";
-			link.l1 = "Thanks. Luck will surely not hurt, and neither will tail wind...";
+			dialog.text = "I will give the order to the soldiers to load them onto your ship immediately. Set sail as soon as you can, monsieur! Best of luck!";
+			link.l1 = "Thanks. Luck surely won't hurt, nor will a tailwind...";
 			link.l1.go = "trial_7";
 		break;
 		
@@ -407,24 +407,24 @@ void ProcessDialogEvent()
 		case "zpq_prs1":
 			if(!isBadReputation(pchar, 70))
 			{
-				dialog.text = "Hm, perhaps. Well, because of your good reputation, I'll take my chances to trust you. In another case, I wouldn't even talk about it with you. The thing is, we need a quite large batch of special cargo, so you will need a large load vessel and a will to risk. Also, you must give me a word not to tell anybody about it.\nIf you find it embarrassing, then tell me about it right now. I think that I have made my point...";
-				link.l1 = "Sounds intriguing. I am in if the payment is fine, though I have no idea what cargo you are talking about. You have my word anyway.";
+				dialog.text = "Hm, perhaps. Well, because of your good reputation, I'll take my chances and trust you. Otherwise, I wouldn't even discuss this with you. The thing is, we need quite a large batch of special cargo, so you'll need a large vessel and a willingness to take risks. Also, you must give me your word not to tell anyone about it.\nIf you find this troubling, then tell me right now. I think I've made myself clear...";
+				link.l1 = "Sounds intriguing. I'm in if the payment is fair, though I have no idea what cargo you're talking about. You have my word, anyway.";
 				link.l1.go = "zpq_prs2";
-				link.l2 = "I'd say no, I suppose... if I would give you my word I would have to do work which seems quite troublesome. I won't do this.";
+				link.l2 = "I'd say no, I suppose... If I gave you my word, I'd have to do work, which seems quite troublesome. I won't do it.";
 				link.l2.go = "zpq_fld";
 				notification("Reputation Check Passed", "None");
 			}
 			else
 			{
-				dialog.text = "Your reputation is unacceptable to me. I ask you to leave the room. We are able to solve our problems by ourselves.";
-				link.l1 = "Whatever, solve them then...";
+				dialog.text = "Your reputation is unacceptable to me. I ask you to leave the room. We are able to solve our problems ourselves.";
+				link.l1 = "Whatever, then solve them...";
 				link.l1.go = "exit";
 				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
 			}		
 		break;
 		
 		case "zpq_fld":
-			dialog.text = "Well, at least you've rejected in honest way... I'm not keeping you anymore.";
+			dialog.text = "Well, at least you've rejected me in an honest way... I'm not keeping you any longer.";
 			link.l1 = "Farewell.";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "failed";
@@ -433,7 +433,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_fld2":
-			dialog.text = "Hm, actually I didn't expect that from you. I have to ask you to leave... And remember about your promise to not divulge any information.";
+			dialog.text = "Hm, actually I didn't expect that from you. I have to ask you to leave... And remember your promise not to divulge any information.";
 			link.l1 = "I am sorry...";
 			link.l1.go = "exit";
     		ChangeCharacterComplexReputation(pchar,"nobility", -3);
@@ -447,30 +447,30 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_prs2":
-			dialog.text = "Splendid. Splendid. The problem is that the recent storm has damaged our gunpowder supply in the fort's arsenal. I hope that I don't need to explain you that we have a delicate trouble here. In case of a long siege the fort won't be able to do anything. We won't last long.";
-			link.l1 = "Now I see. What cargo do you need - and what amount?";
+			dialog.text = "Splendid. Splendid. The problem is that the recent storm has damaged our gunpowder supply in the fort's arsenal. I hope that I don't need to explain to you that we have a delicate trouble here. In case of a long siege the fort won't be able to do anything. We won't last long.";
+			link.l1 = "Now I see. What cargo do you need – and how much?";
 			link.l1.go = "zpq_prs3";
 			DelLandQuestMark(npchar);
 			DelMapQuestMarkCity("Cumana");
 		break;
 		
 		case "zpq_prs3":
-			dialog.text = "We need 15 000 gunpowder barrels. I will pay you 100 000 pesos... You must understand that it's a very good price. Our current state forces me to go with such costs though it was troubling to convince the governor's purser to that... The storm season won't allow us to use our own supply lines and we don't want everyone to know about this trouble...";
-			link.l1 = "I see... the price is really nice. You've mentioned risks...";
+			dialog.text = "We need 15,000 barrels of gunpowder. I will pay you 100,000 pesos... You must understand that it's a very good price. Our current situation forces me to accept such costs, though it was difficult to convince the governor's purser... The storm season won't allow us to use our own supply lines, and we don't want everyone to know about this trouble...";
+			link.l1 = "I see... the price is really good. You mentioned risks...";
 			link.l1.go = "zpq_prs4";
 		break;
 		
 		case "zpq_prs4":
-			dialog.text = "I meant that such a large amount of gunpowder can be very dangerous during the transportation. I have seen a few explosions with my own eyes, sometimes a single spark can do the job. But if you face the storm... The whole convoys usually keep a distance from the potential brander. If it explodes, then everyone is dead!";
-			link.l1 = "I see... But I always keep my word, consider it's done.";
+			dialog.text = "I meant that such a large amount of gunpowder can be very dangerous during transportation. I have seen a few explosions with my own eyes; sometimes a single spark is enough. But if you face a storm... Whole convoys usually keep their distance from a potential brander. If it explodes, then everyone is dead!";
+			link.l1 = "I see... But I always keep my word, consider it done.";
 			link.l1.go = "zpq_prs5";
-			link.l2 = "Well, senor... You've been telling me such terrible things, that I have lost any wish to do that job.";
+			link.l2 = "Well, señor... You've been telling me such terrible things, that I have lost any wish to do that job.";
 			link.l2.go = "zpq_fld2";
 		break;
 		
 		case "zpq_prs5":
-			dialog.text = "Good, I am very glad that we made a deal. I will pay you as soon as you bring me the cargo.\nI will have money in a week, not earlier, so take your time but I'd ask you to try not to delay too much.";
-			link.l1 = "I understand, senor. I am on it.";
+			dialog.text = "Good, I'm very glad we've struck a deal. I'll pay you as soon as you bring me the cargo.\nI'll have the money in a week, not before, so take your time, but I'd ask you not to delay too much.";
+			link.l1 = "I understand, señor. I am on it.";
 			link.l1.go = "zpq_prs5_ok";
 		break;
 		
@@ -485,8 +485,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex":
-			dialog.text = "At last! I thought that you've already forgotten about our deal. I will immediately order my soldiers to start unloading your ship. Working with gunpowder is a very delicate business, ha-ha!";
-			link.l1 = "It is great, senor, but I have to remind you of payment.";
+			dialog.text = "At last! I thought you'd already forgotten about our deal. I'll have my soldiers start unloading your ship at once. Working with gunpowder is a very delicate business, ha-ha!";
+			link.l1 = "It is great, señor, but I have to remind you of payment.";
 			link.l1.go = "zpq_ex2";
 			RemoveCharacterGoods(pchar, GOOD_POWDER, 15000);
 			AddCharacterExpToSkill(pchar, "Sailing", 500);
@@ -498,16 +498,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex2":
-			dialog.text = "Yes, of course. You will be paid 50 000 pesos as we agreed.";
-			link.l1 = "You're probably kidding me, senor?! We had a deal on 100 000 pesos!";
+			dialog.text = "Yes, of course. You will be paid 50,000 pesos as we agreed.";
+			link.l1 = "You're probably kidding me, señor?! We had a deal for 100,000 pesos!";
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
 				notification("Trustworthy", "Trustworthy");
-				link.l2 = "(Trustworthy) I am starting to think that you are going to cheat on me so I won't go away from here without my 125 000 pesos!";
+				link.l2 = "(Trustworthy) I'm starting to think you're going to cheat me, so I won't leave until I get my 125,000 pesos!";
 				link.l2.go = "zpq_ex4";
 			}
-			link.l3 = "Hm.. I see that the circumstances have changed. Well, I'd better take money and leave...";
+			link.l3 = "Hm... I see that circumstances have changed. Well, I'd better take the money and leave...";
 			link.l3.go = "zpq_ex5";
 		break;
 		
@@ -515,8 +515,8 @@ void ProcessDialogEvent()
 			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
 			{
 				notification("Skill Check Passed", "Leadership");
-				dialog.text = "Ah, yes... Exactly! 100 000 pesos. I have forgotten, pardon me. It's my age to be blamed, sclerosis you know... Sure, here are your coins. It was a pleasure to do business with you, captain. Now I am sorry, but I've got a lot of work to do...";
-				link.l1 = "The same to you, senor. See you.";
+				dialog.text = "Ah, yes... Exactly! 100,000 pesos. I had forgotten, pardon me. It's my age to blame, sclerosis you know... Of course, here are your coins. It was a pleasure doing business with you, captain. Now, I'm sorry, but I've got a lot of work to do...";
+				link.l1 = "The same to you, señor. See you.";
 				link.l1.go = "exit";
 				pchar.questTemp.zpq = "completed";
 				AddQuestRecord("zpq", "2");
@@ -528,24 +528,24 @@ void ProcessDialogEvent()
 			else
 			{
 				notification("Skill Check Failed (36)", "Leadership");
-				dialog.text = "What?! Take your money and get lost, or you will rot in this casemate!";
-				link.l1 = "You are such a liar, senor! I advise you to give me my money in a good way, or I will take away the cargo!";
+				dialog.text = "What?! Take your money and get lost, or you'll rot in this casemate!";
+				link.l1 = "You are such a liar, señor! I advise you to return my money willingly, or I will seize the cargo!";
 				link.l1.go = "zpq_ex_agry";
-				link.l2 = "Pardon me... Fine, I'll take the sum you offer and we are done.";
+				link.l2 = "Pardon me... Fine, I'll take the sum you offer and we're done.";
 				link.l2.go = "zpq_ex5";
 				Log_info("Leadership skill is not sufficient");
 			}
 		break;
 		
 		case "zpq_ex4":
-				dialog.text = "Such a rudeness! I am not mentally diseased and I precisely remember offering 100 000 pesos.\n Damn it! I'm not gonna play your games!";
-				link.l1 = "Calm down. Think about the ready brander filled with gunpowder right in front of your fort. If I say just a word, your fort will turn into ruins.";
+				dialog.text = "Such rudeness! I am not mentally ill, and I distinctly remember offering 100,000 pesos.\n Damn it! I'm not going to play your games!";
+				link.l1 = "Calm down. Think about the loaded fire ship filled with gunpowder right in front of your fort. If I say just a word, your fort will be reduced to ruins.";
 				link.l1.go = "zpq_ex6";
 		break;
 		
 		case "zpq_ex6":
-			dialog.text = "Hm-Hm... strong argument. 125 000 pesos, you say? Here, take them, and pardon me now but I have a work to do...";
-			link.l1 = "Farewell, senor. See you.";
+			dialog.text = "Hm-Hm... strong argument. 125,000 pesos, you say? Here, take them, and pardon me now, but I have work to do...";
+			link.l1 = "Farewell, señor. See you.";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "completed";
             AddQuestRecord("zpq", "5");
@@ -554,14 +554,14 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, makeint(pchar.questTemp.zpq.sum));
 			/*else
 			{
-				dialog.text = "What?! I am a military officer! You think that you can scare me, kid?! Guards, take "+ GetSexPhrase("him","her") +"!";
-				link.l1 = "Good luck in trying, rats of casemates...";
+				dialog.text = "What?! I am a military officer! Do you think you can scare me, kid?! Guards, take "+GetSexPhrase("him","her")+"!";
+				link.l1 = "Good luck trying, rats of the casemates...";
 				link.l1.go = "zpq_ex_war";
 			}*/
 		break;
 		
 		case "zpq_ex5":
-			dialog.text = "Splendid! You have made the right choice. Take you coins and goodbye. It was a pleasure!";
+			dialog.text = "Splendid! You have made the right choice. Take your coins and goodbye. It was a pleasure!";
 			link.l1 = "Farewell...";
 			link.l1.go = "exit";
 			pchar.questTemp.zpq = "completed";
@@ -573,8 +573,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex_agry":
-			dialog.text = "Ah you bastard! Guards, take "+ GetSexPhrase("him","her") +"!";
-			link.l1 = "Argh! It seems that I have to take my money from your breathless body...";
+			dialog.text = "Ah, you bastard! Guards, seize "+GetSexPhrase("him","her")+"!";
+			link.l1 = "Argh! It seems I'll have to take my money from your lifeless body...";
 			link.l1.go = "zpq_ex_war";
 		break;
 		
@@ -596,7 +596,7 @@ void ProcessDialogEvent()
 			string slai_group = GetNationNameByType(sti(npchar.nation))  + "_citizens";
 			LAi_group_AttackGroup(slai_group, LAI_GROUP_PLAYER);
 			LAi_group_SetCheck(slai_group, "OpenTheDoors");
-			AddSimpleRumour("Such terrible things happen here! They say that some prisoner has escaped from the casemates! He slaughtered all the guards, stole the treasury, and just went away! Wow!", SPAIN, 5, 1);
+			AddSimpleRumour("Such terrible things happen here! They say that some prisoner has escaped from the casemates! He slaughtered all the guards, stole the treasury, and just went away! Shiver me timbers!", SPAIN, 5, 1);
 		break;
 		// <-- Опасный груз
 	}

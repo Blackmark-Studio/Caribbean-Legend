@@ -23,50 +23,50 @@ void ProcessDialogEvent()
 		break;
 
 		case "zpq_sld2":
-			dialog.text = "Just a minute, senor, are you "+ GetFullName (pchar) +"?";
-			link.l1 = "Yes.. How can I help you??";
+			dialog.text = "Just a minute, señor, are you "+GetFullName(pchar)+"?";
+			link.l1 = "Yes... How can I help you?";
 			link.l1.go = "zpq_sld2_1";
 		break;
 		case "zpq_sld2_1":
-			dialog.text = "We need you. Your money to be more specific. And don't try to play stubborn because I am not in a good mood today, I can get angry.";
-			link.l1 = "Oh, please, what money are you talking about? Do you really think that I will carry the treasure with me?";
+			dialog.text = "We need you. Or rather, your money. And don't try to be stubborn, because I'm not in a good mood today. I can get angry.";
+			link.l1 = "Oh, please, what money are you talking about? Do you really think I would carry the treasure with me?";
 			link.l1.go = "zpq_sld2_2";
 		break;
 		case "zpq_sld2_2":
-			dialog.text = "Don't try to fool me. Just give me the money - " + FindRussianMoneyString(sti(pchar.questTemp.zpq.sum)) + " and you may walk your way. Or we will take it by force.";
+			dialog.text = "Don't try to fool me. Just give me the money - "+FindRussianMoneyString(sti(pchar.questTemp.zpq.sum))+" and you may go your way. Or we will take it by force.";
 			if (pchar.questTemp.zpq == "failed")
 			{
-				link.l1 = "Don't you work for this fort rat? I have got good news for you then, I sent him to hell.";
+				link.l1 = "Don't you work for that fort rat? Well, I have good news for you then, I've sent him to hell.";
 				link.l1.go = "zpq_sld2_3_1";
 			}
 			else
 			{
-				link.l1 = "Don't you work for this fort rat? Tell him that the money was given to reliable hands, so he may forget about them.";
+				link.l1 = "Don't you work for that fort rat? Tell him the money was given to trustworthy hands, so he can forget about it.";
 			link.l1.go = "zpq_sld2_3";
 			}
 			if(makeint(Pchar.money) >= sti(pchar.questTemp.zpq.sum))
 			{
-				link.l2 = "Fine, take your dirty money, bastard!";
+				link.l2 = "Fine, take your filthy money, bastard!";
 				link.l2.go = "zpq_sld2_6";
 			}
 			else
 			{
-				link.l2 = "I don't  have them...";
+				link.l2 = "I don't have them...";
 				link.l2.go = "zpq_sld2_3";
 			}
 		break;
 		case "zpq_sld2_3":
-			dialog.text = "That's your fate then - to die young because of your greed. It is too dangerous to let you stay alive.";
-			link.l1 = "Such a self confidence.";
+			dialog.text = "That's your fate then - to die young because of your greed. It is too dangerous to let you live.";
+			link.l1 = "Such self-confidence.";
 			link.l1.go = "zpq_sld2_4";
 		break;
 		case "zpq_sld2_3_1":
-			dialog.text = "He-he, your fate is to die because of your greed then. It works for us, we don't want to share.";
-			link.l1 = "It's your greed which will kill you...";
+			dialog.text = "Heh, your fate is to die because of your greed then. It works for us, we don't want to share.";
+			link.l1 = "It's your greed that will kill you...";
 			link.l1.go = "zpq_sld2_4";
 		break;
 		case "zpq_sld2_4":
-			dialog.text = "Hey, guys!! Put a bag on his head!";
+			dialog.text = "Hey, guys! Put a bag over his head!";
 			link.l1 = "Well, it was your choice...";
 			link.l1.go = "zpq_sld2_5";
 		break;
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			pchar.quest.zpq_seaBattle.function = "zpq_seaBattle";
 		break;
 		case "zpq_sld2_6":
-			dialog.text = "Nice. Give them and get lost, captain!";
+			dialog.text = "Nice. Hand them over and get lost, captain!";
 			link.l1 = "...";
 			link.l1.go = "zpq_sld2_7";
 			AddMoneyToCharacter(Pchar, -makeint(pchar.questTemp.zpq.sum));

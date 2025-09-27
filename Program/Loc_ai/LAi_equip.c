@@ -60,6 +60,10 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		   TakeNItems(chr, "potion1", rand(makeint(rank/(11-MOD_SKILL_ENEMY_RATE) +0.5))); // даю меньше
 		}
 		// boal <--
+		if(CheckAttribute(chr, "PhantomType") && chr.PhantomType == "soldier")
+		{
+			if(rand(9) == 3) AddItems(chr, "ArmoryPaper", 2 + rand(2));
+		}
 	}
     else
     {
@@ -197,7 +201,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 	switch (sMush)
 	{
 		case "mushket1"		:
-			AddItems(chr, "cartridge", 	50);
+			AddItems(chr, "cartridge", 	5);
 			AddItems(chr, "bullet", 	50);
 			AddItems(chr, "gunpowder", 	50);
 			if(CheckAttribute(chr, "MushketType") && 
@@ -205,7 +209,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
 		break;
 		case "mushket2"		:
-			AddItems(chr, "cartridge", 	50);
+			AddItems(chr, "cartridge", 	5);
 			AddItems(chr, "bullet", 	50);
 			AddItems(chr, "gunpowder", 	50);
 			if(CheckAttribute(chr, "MushketType") && 
@@ -218,7 +222,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 			LAi_SetCharacterUseBullet(chr, "musket", "grapeshot");
 		break;
 		case "mushket5"		:
-			AddItems(chr, "cartridge", 	50);
+			AddItems(chr, "cartridge", 	5);
 			AddItems(chr, "bullet", 	50);
 			AddItems(chr, "gunpowder", 	50);
 			if(CheckAttribute(chr, "MushketType") && 
@@ -262,7 +266,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 		break;
 		
 		case "mushket2x2"	:
-			AddItems(chr, "cartridge", 	50);
+			AddItems(chr, "cartridge", 	5);
 			AddItems(chr, "bullet", 	50);
 			AddItems(chr, "gunpowder", 	50);
 			if(CheckAttribute(chr, "MushketType") && 
@@ -270,7 +274,9 @@ void LAi_NPC_MushketerEquip(ref chr)
 			else											LAi_SetCharacterDefaultBulletType(chr, "musket");
 		break;
 	}
-			
+
+	if(rand(9) == 5) AddItems(chr, "ArmoryPaper", 3 + rand(2));
+	
 	chr.isMusketer = true;
 	chr.isMusketer.weapon = true; // Jason: а пули с порохом кто удалять будет? И вообще, что за муть - менять мушкет при каждой установке типа?
 	if (!CheckAttribute(chr, "MusketerDistance")) chr.MusketerDistance = 10.0 + frand(10.0);
@@ -546,7 +552,6 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 			chr.perks.list.ShipTurnRateUp = "1";
 			if (PerkTemplates[PERK_TEMPLATE_SAILING] >= 3)
 			{
-				chr.perks.list.StormProfessional = "1";
 				if (PerkTemplates[PERK_TEMPLATE_SAILING] >= 4)
 				{
 					chr.perks.list.SailsMan = "1";
@@ -599,7 +604,6 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 		}
 		if (PerkTemplates[PERK_TEMPLATE_GRAPPLING] >= 4)
 		{
-			chr.perks.list.Brander = "1";
 		}
 		if (PerkTemplates[PERK_TEMPLATE_GRAPPLING] >= 5)
 		{
@@ -639,7 +643,6 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 			}
 			if (PerkTemplates[PERK_TEMPLATE_MELEE] >= 9)
 			{
-				chr.perks.list.SwordplayProfessional = "1";
 			}
 			if (PerkTemplates[PERK_TEMPLATE_MELEE] >= 10)
 			{
@@ -658,10 +661,6 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 		if (PerkTemplates[PERK_TEMPLATE_PERSONAL] >= 2)
 		{
 			chr.perks.list.IronWill = "1";
-		}
-		if (PerkTemplates[PERK_TEMPLATE_PERSONAL] >= 3)
-		{
-			chr.perks.list.ByWorker2 = "1";
 		}
 		if (PerkTemplates[PERK_TEMPLATE_PERSONAL] >= 4)
 		{

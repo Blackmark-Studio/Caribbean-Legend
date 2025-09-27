@@ -1,41 +1,9 @@
-FalseTrace_1
-{
-Adam
-}
-FalseTrace_2
-{
-Rayner
-}
-
-FalseTrace_3
-{
-双桅帆船'@<pchar.questTemp.FalseTrace.ShipName>'
-}
-
-FalseTrace_4
-{
-Adam Rayner 偷了一艘划艇, 和他的妻子一起逃走了! 
-}
-
-FalseTrace_5
-{
-斗鸡眼
-}
-FalseTrace_6
-{
-Solly
-}
-
-FalseTrace_7
-{
-载有金矿石的双桅帆船
-}
-
-FalseTrace_8
-{
-Katerine
-}
-FalseTrace_9
-{
-Rayner
-}
+FalseTrace_1 {Adam}
+FalseTrace_2 {Rayner}
+FalseTrace_3 {双桅帆船'@<pchar.questTemp.FalseTrace.ShipName>'}
+FalseTrace_4 {Adam Rayner 偷了一艘划艇, 和他的妻子一起逃走了!}
+FalseTrace_5 {斗鸡眼}
+FalseTrace_6 {Solly}
+FalseTrace_7 {载有金矿石的双桅帆船}
+FalseTrace_8 {Katerine}
+FalseTrace_9 {Rayner}

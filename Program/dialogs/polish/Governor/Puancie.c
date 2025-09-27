@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 					link.l1.go = "patria_59";
 					break;
 				}
-				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < 5)
+				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < COMPANION_MAX)
 				{
 					dialog.text = "Czy jesteś gotów wziąć naszego lugra kurierskiego?";
 					link.l1 = "Jestem.";
@@ -503,7 +503,6 @@ void ProcessDialogEvent()
 			pchar.quest.DefendSP_prepare.function = "DefendSP_PrepareMartinique";
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);
 			AddCharacterExpToSkill(pchar, "Fortune", 500);
-			pchar.questTemp.GoldenGirl_Block = true;	// Запрещаем квест Дороже Золота
 		break;
 		
 		case "serve_wait":
@@ -855,7 +854,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_27":
-			dialog.text = "Przypuszczam, że pamiętasz moją rozmowę z Monsieur Forget na temat Saint Martin? Musimy zapewnić barona, że kolonia została skontrolowana, a ty popłyniesz na Kurakao, do Willemstad, do dyrektora Kompanii Petera Stuyvesanta. Jest tam teraz i będzie jeszcze przez trzy tygodnie. Ponadto, będziesz musiał eskortować fluite z towarami Kompanii na Kurakao i przekazać Mynheerowi Stuyvesantowi list ode mnie.";
+			dialog.text = "Przypuszczam, że pamiętasz moją rozmowę z Monsieur Forget na temat Saint Martin? Musimy zapewnić barona, że kolonia została skontrolowana, a ty pojedziesz na Curacao, do Willemstad, do dyrektora Kompanii Petera Stuyvesanta. Jest tam teraz i będzie jeszcze przez trzy tygodnie. Ponadto, będziesz musiał eskortować fluit z towarami Kompanii na Curacao i przekazać Mynheerowi Stuyvesantowi list ode mnie.";
 			link.l1 = "Czy to wszystkie zadania?";
 			link.l1.go = "patria_28";
 		break;
@@ -963,7 +962,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "patria_39":
-			dialog.text = "Baronie, błagam... Zajmę się tym. Natychmiast wyślemy naszego drogiego kapitana, Charlesa de Maure, ponownie na Kurakao, by spotkał się ze Stuyvesantem. Kapitan ma długą historię radzenia sobie z delikatnymi sytuacjami... A teraz poproszę służbę, by przygotowała kąpiel i dobry obiad dla ciebie.";
+			dialog.text = "Baronie, błagam... Zajmę się tym. Natychmiast wyślemy naszego drogiego kapitana, Charlesa de Maure, ponownie na Curacao, by spotkał się ze Stuyvesantem. Kapitan ma długą historię radzenia sobie z delikatnymi sytuacjami... A teraz poproszę służbę, by przygotowała kąpiel i dobry obiad dla ciebie.";
 			link.l1 = "...";
 			link.l1.go = "patria_40";
 		break;
@@ -1832,7 +1831,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			SetTimerCondition("PZ_NormanBackToStreets", 0, 0, 1, false);	//Вовзращаем Акулу или Тиракса в Шарптаун
 			// ставим сразу прерывание, чтобы потом по тысячу раз не копировать
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
@@ -1851,7 +1850,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.PZ_LevasserPlenen"))
 				{
 					link.l1 = "To nie wszystko, Wasza Ekscelencjo.";
-					link.l1.go = "PZ2";
+					link.l1.go = "PZ_2";
 				}
 				else
 				{
@@ -1869,13 +1868,13 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube");
 		break;
 					
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Czyżby? Co masz na myśli, kapitanie?";
 			link.l1 = "Udało mi się schwytać Levasseura żywcem i przyprowadzić go do ciebie. Jak tylko skończymy, rozkażę ci go przyprowadzić.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Nie sądziłem, że coś takiego jest w ogóle możliwe! Naprawdę, świetna robota, Charles! Wątpię, czy nawet twój znakomity brat mógłby zrobić to lepiej. Twój ojciec byłby z ciebie dumny, mój przyjacielu.";
 			link.l1 = "Dziękuję za miłe słowa, Monsieur Philippe.";
 			link.l1.go = "exit";
@@ -1883,7 +1882,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("PZ_LevasserVGostyahUPuansie");
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Bardzo dobrze, Charles. Jestem z ciebie zadowolony.";
 			link.l1 = "Czy mogę otrzymać od Ciebie pisemny rozkaz o natychmiastowym uwolnieniu mojego brata z aresztu?";
 			link.l1.go = "serve";

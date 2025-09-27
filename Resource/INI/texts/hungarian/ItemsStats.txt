@@ -1,0 +1,269 @@
+itm_stat_weight {Súly}
+itm_stat_descr_weight {Hány fontot nyom ez a tárgy. A túl nehéz tárgyakat el lehet dobni.}
+itm_stat_rat_poison {Rat poison}
+itm_stat_descr_rat_poison {Prevents goods from being spoiled by rats.}
+itm_stat_clock2 {A useful tool}
+itm_stat_descr_clock2 {Accelerates Navigation skill growth while equipped.}
+itm_stat_duration {Duration}
+itm_stat_descr_duration {Duration of this item's effect.}
+itm_stat_damageReduction {Sebzéscsökkentés}
+itm_stat_descr_damageReduction {Ez a százalék a bejövő sebzésből kerül levonásra minden más számítás előtt.}
+itm_stat_attack {Damage}
+itm_stat_descr_attack
+{
+Normal attack: #sattack.force.min#–#sattack.force.max# dmg 
+Fast attack: #sattack.fast.min#–#sattack.fast.max# dmg 
+Group attack: #sattack.round.min#–#sattack.round.max# dmg 
+Heavy attack: #sattack.break.min#–#sattack.break.max# dmg
+}
+itm_stat_healAmount {Healing}
+itm_stat_descr_healAmount {Amount of Health restored on use.}
+itm_stat_worldMapBonus {Surveying Radius}
+itm_stat_descr_worldMapBonus {Percentage bonus to the radius at which fleets become visible on the world map.}
+itm_stat_radius {Sailing Range}
+itm_stat_descr_radius {The number of yards by which the range of fast travel between ships and coves is increased.}
+itm_stat_mainEffect {Main}
+itm_stat_secondaryEffect {Side}
+itm_stat_hat9 {What is dead}
+itm_stat_descr_hat9 {30%-kal csökkenti a hajó sérüléseinek hatását az erőre}
+itm_stat_secondary_hat9 {Nem halhat meg}
+itm_stat_descr_secondary_hat9 {10%-ban elkerülhető a lövésből származó sebzés}
+itm_stat_durability {Durability}
+itm_stat_hat1 {Constant Practice}
+itm_stat_descr_hat1 {Increases experience gain with Light, Medium, and Heavy Weapons by 10%}
+itm_stat_hat2 {Serial Killer}
+itm_stat_descr_hat2 {Killing an enemy with a coldarm restores 25% energy.}
+itm_stat_hat3 {Basics of Seamanship}
+itm_stat_descr_hat3 {Increases experience gain in Navigation, Accuracy, and Repair by 10%.}
+itm_stat_hat4 {Life by the Sea}
+itm_stat_descr_hat4 {Increases experience gain in all naval skills by 15%}
+itm_stat_hat5 {Mentor}
+itm_stat_descr_hat5 {Shares your naval skills with all ship captains in your fleet, reducing crew and officer wages on all ships except the flagship by 15%.}
+itm_stat_hat6 {Sense of Profit}
+itm_stat_descr_hat6 {Once every 3 days, you automatically make a small trade deal upon arriving at a port.}
+itm_stat_hat7 {Stray Ball}
+itm_stat_descr_hat7 {10% chance to not consume ammo when firing}
+itm_stat_hat8 {Tipsy}
+itm_stat_descr_hat8 {Rum and wine restore 50% more health}
+itm_stat_hat10 {Soldiery Wit}
+itm_stat_descr_hat10 {Every time this hat blocks damage, it loses one durability point.}
+itm_stat_secondary_hat10 {Recycling}
+itm_stat_descr_secondary_hat10 {When destroyed, this item returns its primary ingredient, allowing it to be crafted again.}
+itm_stat_hat11 {Embrace}
+itm_stat_descr_hat11
+{
+Endurance +2 
+Killing an enemy with a coldarm restores 25% energy.
+}
+itm_stat_potion6 {Resilience}
+itm_stat_descr_potion6 {Drinking this potion prevents stun in combat.}
+itm_stat_berserker_potion {Primal Fury}
+itm_stat_descr_berserker_potion
+{
+Promotes an instant surge of immense power and endurance, greatly boosts agility and reaction speed, dulls pain, and increases aggression.
+Lasts no more than twelve seconds and can be used only once per minute.
+}
+itm_stat_mangarosafast {Whirlwind}
+itm_stat_descr_mangarosafast {Using this potion increases attack speed with any weapon by 5%.}
+itm_stat_mangarosapower {Eagle Eye}
+itm_stat_descr_mangarosapower {Drinking this potion speeds up cannon reload.}
+itm_stat_mangarosatotal {Exaltation}
+itm_stat_descr_mangarosatotal {Using this potion increases Fleet Power by 15%.}
+itm_stat_vodka {Melee Brawl}
+itm_stat_descr_vodka {Increases melee damage with firearms by 20%, and with bayonets by an additional 20%. Firearm attacks drain enemy stamina. Reduces stun duration.}
+itm_stat_amulet_1 {Chitin}
+itm_stat_descr_amulet_1 {Cloth and leather protect twice as well, and Reinforced armor further reduces enemy critical damage by 10%.}
+itm_stat_amulet_10 {Second Chance}
+itm_stat_descr_amulet_10 {Reduces crew damage from enemy cannons to your ship by 10%.}
+itm_stat_amulet_11 {Tribal Protection}
+itm_stat_descr_amulet_11 {Reduces crew damage taken from musket volley by 10%.}
+itm_stat_amulet_2 {Hideout}
+itm_stat_descr_amulet_2 {Each active Christian amulet and talisman, including this one, reduces firearm damage taken by 5%.}
+itm_stat_amulet_3 {Defense}
+itm_stat_descr_amulet_3 {Increases defense against critical damage by 15%.}
+itm_stat_amulet_4 {Dance of Death}
+itm_stat_descr_amulet_4 {Each Pagan amulet and talisman, including this one, increases weapon attack speed by 2.5%.}
+itm_stat_amulet_5 {Haste}
+itm_stat_descr_amulet_5 {Reduces ship cannon reload time by 15%.}
+itm_stat_amulet_6 {Laying on Hands}
+itm_stat_descr_amulet_6 {Speeds up healing by 15%.}
+itm_stat_amulet_7 {Lively One}
+itm_stat_descr_amulet_7 {Increases health by 15% and doubles its passive regeneration.}
+itm_stat_amulet_8 {Fortification}
+itm_stat_descr_amulet_8 {Reduces hull damage by 10%.}
+itm_stat_amulet_9 {Patch}
+itm_stat_descr_amulet_9 {Reduces damage to ship sails by 10%.}
+itm_stat_indian_1 {Vulnerability}
+itm_stat_descr_indian_1 {Increases headshot damage by 20%.}
+itm_stat_indian_10 {Poison}
+itm_stat_descr_indian_10 {Each slash attack has a 15% chance to poison the enemy.}
+itm_stat_indian_11 {Smoke and Mirrors}
+itm_stat_descr_indian_11 {Each Trinket increases your Deception chance by 5%.}
+itm_stat_indian_2 {Check}
+itm_stat_descr_indian_2 {The skill of measuring out the right amount of gunpowder increases Ball and Grapeshot damage by 10%, and by an additional 5% for Overcharged and Armor-Piercing ammo.}
+itm_stat_indian_3 {Bloodlust}
+itm_stat_descr_indian_3 {Increases outgoing critical damage by 15%.}
+itm_stat_indian_4 {Wind-up}
+itm_stat_descr_indian_4 {Heavy Weapons deal 15% more damage with heavy attacks.}
+itm_stat_indian_5 {Equalizer}
+itm_stat_descr_indian_5 {The crew difference affects boarding 30% less.}
+itm_stat_indian_6 {Sieve}
+itm_stat_descr_indian_6 {Damage to the enemy from a musket volley before boarding is increased by 10%.}
+itm_stat_indian_9 {Aim!}
+itm_stat_descr_indian_9 {Increases ship movement speed and cannon aiming by 15%.}
+itm_stat_indian_8 {Fire!}
+itm_stat_descr_indian_8 {Increases cannon damage by 10%}
+itm_stat_obereg_1 {Hammer...}
+itm_stat_descr_obereg_1 {Reduces plank and sailcloth consumption by 15% when repairing at sea or in battle. Effects stack.}
+itm_stat_obereg_2 {...and nails}
+itm_stat_descr_obereg_2 {reduces plank and sailcloth consumption by 15% when repairing at sea or in battle. Effect stacks.}
+itm_stat_indian_7 {Focus}
+itm_stat_descr_indian_7 {Increases energy and its recovery rate by 12%.}
+itm_stat_obereg_10 {Sleight of Hand}
+itm_stat_descr_obereg_10 {Increases ship maneuverability by 15%.}
+itm_stat_obereg_11 {Boreas}
+itm_stat_descr_obereg_11 {Changes the ship’s heading angle by 15%, allowing you to sail closer to the wind.}
+itm_stat_obereg_3 {Weightlifting}
+itm_stat_descr_obereg_3 {Increases Carry Weight by 15%.}
+itm_stat_obereg_4 {Incognito}
+itm_stat_descr_obereg_4 {Character Stealth increases by 10.}
+itm_stat_obereg_5 {Talisman}
+itm_stat_descr_obereg_5 {The character’s Opportunism increases by 15.}
+itm_stat_obereg_6 {Persuasion}
+itm_stat_descr_obereg_6 {Character Leadership increases by 10 points.}
+itm_stat_obereg_7 {Sea-born}
+itm_stat_descr_obereg_7 {Character Navigation increases by 10 points.}
+itm_stat_obereg_8 {Benefit}
+itm_stat_descr_obereg_8 {The character’s Trading increases by 15 points.}
+itm_stat_obereg_9 {God of the Wind}
+itm_stat_descr_obereg_9 {Ship speed increases by 10%.}
+itm_stat_totem_01 {Iron Stomach}
+itm_stat_descr_totem_01 {Prevents drunken blackouts in shady places or rowdy company. Using healing potions does not reduce Health.}
+itm_stat_totem_02 {Overlord}
+itm_stat_descr_totem_02 {Reduces the chance and losses from slave uprisings, increases the number of captives when surrendering.}
+itm_stat_totem_03 {Player}
+itm_stat_descr_totem_03 {Doubles the healing effect from amorous pleasures.}
+itm_stat_totem_04 {Born Leader}
+itm_stat_descr_totem_04 {Locks the officer’s loyalty for the entire duration.}
+itm_stat_totem_05 {Invulnerability}
+itm_stat_descr_totem_05 {Reduces enemy critical damage by 25%.}
+itm_stat_totem_06 {Pack Horse}
+itm_stat_descr_totem_06 {Exceeding carry weight does not slow the character or apply penalties.}
+itm_stat_totem_07 {Summon}
+itm_stat_descr_totem_07
+{
+New volunteers will join for a lower price, even if they owe debts to the crew.
+Can only be used by the main character. Increases the number of recruits in the tavern by 5%.
+}
+itm_stat_totem_08 {Personal involvement}
+itm_stat_descr_totem_08 {Increases damage with aimed naval fire by 10%.}
+itm_stat_totem_09 {Training Alarms}
+itm_stat_descr_totem_09 {Doubles crew training speed.}
+itm_stat_totem_10 {Tasmanian Devil}
+itm_stat_descr_totem_10 {Medium Weapons deal 15% more damage with group attacks.}
+itm_stat_totem_11 {Vampirism}
+itm_stat_descr_totem_11 {Strikes drain energy from the enemy.}
+itm_stat_totem_12 {Fangs}
+itm_stat_descr_totem_12 {Light Weapons deal 15% more damage with fast attacks.}
+itm_stat_totem_13 {Cardsharp}
+itm_stat_descr_totem_13
+{
+Significantly increases your chance to draw the right card and roll the number you need.
+Grants +1 Success.
+}
+itm_stat_knife_01 {Secret}
+itm_stat_descr_knife_01 {This dagger holds great hidden power. Worn on the chest as a talisman, it can defeat the death.}
+itm_stat_knife_02 {Keeper}
+itm_stat_descr_knife_02 {Grants a 12% chance to dodge a shot. Effect stacks.}
+itm_stat_knife_03 {Lucky Devil}
+itm_stat_descr_knife_03 {Increases base critical hit chance by 3% and critical damage by 10%.}
+itm_stat_talisman1 {Order}
+itm_stat_descr_talisman1 {Prevents goods from being spoiled by rodents.}
+itm_stat_talisman2 {Calm}
+itm_stat_descr_talisman2 {Helps avoid entering a storm zone or reduces damage to sails and hull during a storm.}
+itm_stat_talisman3 {Water Cooling}
+itm_stat_descr_talisman3 {Prevents cannons from exploding.}
+itm_stat_talisman4 {Dictatorship}
+itm_stat_descr_talisman4 {Reduces crew morale loss from overloading and lowers the daily rum ration consumed by the crew.}
+itm_stat_talisman6 {Humility}
+itm_stat_descr_talisman6 {Helps save provisions on the ship, reducing their consumption rate by a quarter.}
+itm_stat_talisman7 {Hard Shell}
+itm_stat_descr_talisman7
+{
+Doubles ship repair speed and saves 30% on resources. 
+Reduces sail and hull damage by 5%.
+}
+itm_stat_talisman8 {Mithridate}
+itm_stat_descr_talisman8 {Prevents poisoning from enemy weapons.}
+itm_stat_talisman9 {Service}
+itm_stat_descr_talisman9
+{
+Grants +15% to sailor recruitment in French colonies.
+Allows free entry to French brothels and increases Leadership by +1.
+}
+itm_stat_talisman10 {Poseidon}
+itm_stat_descr_talisman10 {Allows you to hold your breath underwater for a long time and protects against boiling water.}
+itm_stat_talisman11 {Anti-Stress}
+itm_stat_descr_talisman11 {Increases all personal and ship skills by 2 points.}
+itm_stat_talisman12 {Immunity}
+itm_stat_descr_talisman12 {Locks the current health value.}
+itm_stat_talisman13 {Hoarding}
+itm_stat_descr_talisman13 {Strangely increases your ability to carry heavy weight.}
+itm_stat_talisman14 {Beacon}
+itm_stat_descr_talisman14 {Increases Navigation skill by 15 points.}
+itm_stat_talisman15 {Dreaded Reputation}
+itm_stat_descr_talisman15 {Increases Fleet Power by 15%. Made from the neckerchief of the Ironsides, Cromwell’s cavalry.}
+itm_stat_talisman16 {Jungle Warrior}
+itm_stat_descr_talisman16 {Exotic weapons deal 15% more damage}
+itm_stat_talisman17 {Shield of Faith}
+itm_stat_descr_talisman17 {Reduces damage to crew and captain by 5%, and increases Defense skill by 10 when aboard the Holy Mercy.}
+itm_stat_talisman18 {Seeking the Truth}
+itm_stat_descr_talisman18 {Each treasure found increases crew musket volley power by 1% and grapeshot damage by 2%.}
+itm_stat_talisman19 {Remember}
+itm_stat_descr_talisman19 {For every 2% of hull lost, ship speed increases by 0.75% and cannon damage by 0.5%.}
+itm_stat_talisman20 {At the Ready}
+itm_stat_descr_talisman20 {Aiming speed with firearms increases by 15%, maximum aimed damage increases by 20%, reload speed increases by 10%, and headshot damage increases by 20%.}
+itm_stat_talisman21 {Mutual Responsibility}
+itm_stat_descr_talisman21 {Allows trading with smugglers on ships up to and including rank 2.}
+itm_stat_secondary_hat1 {Adaptation}
+itm_stat_descr_secondary_hat1 {Fast attacks with Straight weapons and slash attacks with Curved weapons deal 5% more damage.}
+itm_stat_secondary_hat2 {Inertia}
+itm_stat_descr_secondary_hat2 {Group attacks with Short weapons and heavy attacks with Long weapons are performed 7% faster.}
+itm_stat_secondary_hat3 {Silver Tongue}
+itm_stat_descr_secondary_hat3 {Increases the number of sailors in taverns and reduces their hiring cost by 5%.}
+itm_stat_secondary_hat4 {Prussian Drill}
+itm_stat_descr_secondary_hat4 {Artillery fire accuracy increases by 10%.}
+itm_stat_secondary_hat5 {Premier League}
+itm_stat_descr_secondary_hat5 {Ends hostility of nations toward corresponding ships of the line.}
+itm_stat_secondary_hat7 {Treasure Hunter}
+itm_stat_descr_secondary_hat7 {Increases treasure value by 10%.}
+itm_stat_secondary_hat8 {Curse of the Caribs}
+itm_stat_descr_secondary_hat8 {Each level of Threat reduces ship upkeep by 2% and increases speed on the world map by 0.25%.}
+itm_stat_secondary_hat11 {Affect}
+itm_stat_descr_secondary_hat11 {Attack speed increases by 5% if the character has had intimacy within the past two weeks.}
+itm_stat_blade_SP_3low {Untapped Potential}
+itm_stat_descr_blade_SP_3low {This blade is not at the height of its power—something is missing...}
+itm_stat_blade_SP_3 {Reaper}
+itm_stat_descr_blade_SP_3 {Prevents healing from any source. For every 2% missing Health, outgoing damage increases by 1.5% and energy regeneration by 1.75%.}
+itm_stat_blade_41 {Flexibility}
+itm_stat_descr_blade_41 {Gains a damage bonus from your highest Coldarm skill.}
+itm_stat_lacrima_patris {Path of the Righteous}
+itm_stat_descr_lacrima_patris {Every 10 bandits and scoundrels killed increase damage by 2, and the range of the Mercy cannons by 1%.}
+itm_stat_blade_WR {Diligence}
+itm_stat_descr_blade_WR {Increases health regeneration speed in combat fivefold.}
+itm_stat_suit5 {Epaulette}
+itm_stat_descr_suit5 {Merits for France grant free access to brothels and increase recruit numbers in French colonies by 15%.}
+itm_stat_suit4 {Bad Reputation}
+itm_stat_descr_suit4 {Everyone knows this outfit means trouble, and each of its owner’s boots hides a knife. Increases Fleet Power by 13%. When calculating power for intimidation, any ship is treated as a Warrior.}
+itm_stat_cirass10 {Loadout}
+itm_stat_descr_cirass10 {This armor is fitted with handy ammo pouches. Reload speed increased by 15%.}
+itm_stat_underwater {Bulkiness}
+itm_stat_descr_underwater {This armor is so heavy that you can only move at a walking pace while wearing it.}
+itm_stat_pistol11 {Hellspawn}
+itm_stat_descr_pistol11 {This weapon is remarkable less for its qualities than for the fact that it exists at all. Increases Heavy Weapons skill by 20.}
+itm_stat_pistol12 {Dismountable}
+itm_stat_descr_pistol12 {This firearm can be assembled and disassembled, switching between one-handed and two-handed use.}
+itm_stat_mushket8 {Take-apart}
+itm_stat_descr_mushket8 {This firearm can be assembled and disassembled, switching between one-handed and two-handed use.}
+itm_stat_spyglassSP3 {Punishing Gaze}
+itm_stat_descr_spyglassSP3 {This spyglass lets you see the fear in an enemy captain’s eyes—and tells you if he’s ready to surrender.}

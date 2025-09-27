@@ -1,40 +1,20 @@
 LadyBeth_Ship_Name {Lady Beth}
-
 LadyBeth_Cap_Name {Albert}
-
 LadyBeth_Cap_lastname {Blackwood}
-
 LadyBeth_Pop_Name {Diego}
-
 LadyBeth_Pop_lastname {de Landa}
-
 LadyBeth_Elizabeth_Name {Elizabeth}
-
 LadyBeth_Elizabeth_lastname {Bishop}
-
 LadyBeth_WorldMap {Kapitän, ich sehe die 'Lady Beth'. Was für eine Schönheit! Aber wir können sie nicht abfangen - ihr Kapitän ist zu gut!}
-
 LadyBeth_Rum1 {Haben Sie von Kapitän Albert Blackwood gehört? Ehemaliger Offizier der königlichen Marine und jetzt der erfolgreichste Schatzsucher im gesamten Archipel! Seine Schnau 'Lady Beth' ist ein wahres Kunstwerk. Seine Mannschaft lebt wie Lords, und er selbst trägt Seide. Die französischen Behörden ziehen vor ihm den Hut, obwohl er Engländer ist. Man sagt, im letzten Jahr habe er so viel Gold gefunden, dass er einen Titel und mehrere Plantagen in Barbados kaufen könnte.}
-
 LadyBeth_Rum2 {Haben Sie es schon gehört? Blackwood ist nicht mehr! Man sagt, es gab ein regelrechtes Massaker - sein Lager wurde vollständig zerstört. Niemand weiß, wer es getan hat, aber ein Fischer schwört, er habe einen Kampf am Ufer gesehen. Ein Profi wie Blackwood ist nicht leicht zu besiegen... Was wird jetzt aus seinen Schätzen? Das Meer hat eine weitere Legende gefordert...}
-
 LadyBeth_Rum3 {Haben Sie gesehen? Blackwood selbst ist in der Stadt! Er ist jedoch seltsam. Diesmal hat er so viele Vorräte gesammelt, als würde er in den Krieg ziehen. Er geht immer wieder nach Cayman und gräbt dort nach etwas. Man würde denken, mit so viel Geld könnte er leben und das Leben genießen, aber er gräbt und gräbt weiter. Die Matrosen sagen, dass sie das letzte Mal mit Verlusten von dort zurückkehrten. Das ist ein Novum.}
-
 LadyBeth_Rum4 {Schaut, Kapitän Blackwood selbst ist angekommen! Wisst ihr, warum er die Franzosen so liebt? Man sagt, er hatte eine Verlobte in Barbados, aus wohlhabender Familie. Ihr Vater gab seinen Segen nicht - sagte, ein armer Offizier sei keine Partie für seine Tochter. Und jetzt! Jetzt könnte er die reichste Plantage auf der Insel kaufen! Aber es ist zu spät... sie soll Bishop geheiratet haben.}
-
 LadyBeth_Rum5 {Kapitän Blackwood ist im Hafen eingetroffen! Wissen Sie, er diente früher in der königlichen Marine. Und nicht als einfacher Matrose - als Offizier! So fähig, dass man ihm eine Admiralszukunft voraussagte. Und dann plötzlich - desertierte er. Nahm das Schiff und die halbe Besatzung mit. Jetzt bieten die Engländer ein Vermögen für seinen Kopf. Aber was kümmert es ihn? Er überholt sie und lacht sogar darüber!}
-
 LadyBeth_Rum6 {Haben Sie gehört? Blackwood hat mit seiner 'Lady Beth' in unserem Hafen Anker geworfen! Früher brauchte man, um zu ihm zu kommen, Empfehlungen, Erfahrung und Referenzen. Und jetzt? Er nimmt fast jeden ohne Sortierung. Jüngste Expeditionen sind nicht gut verlaufen, er hat Leute verloren. Ich sah seine Matrosen in der Taverne - sie trinken nicht wie früher, sie haben ihren Geist verloren. Etwas hat sich verändert.}
-
 LadyBeth_Rum7 {Schaut, Blackwood selbst ist in die Stadt gekommen! Wisst ihr, warum sie ihn hier nicht anrühren? Er bezahlt unsere Beamten gut! Jeder bekommt einen Anteil an seinen Funden. Deshalb drücken sie ein Auge zu, dass er ein englischer Deserteur ist. Geld stinkt nicht! Sogar der Gouverneur kommt persönlich, um ihm die Hand zu schütteln, wenn er in den Hafen einläuft.}
-
 LadyBeth_Rum8 {Habt ihr gesehen? Blackwood und seine 'Lady Beth' sind im Hafen! Ich verstehe diesen Kapitän nicht. Reich wie Krösus, aber er will immer mehr. Wonach sucht er? Woran denkt er, wenn er aufs Meer blickt? Er hat alles, wovon ein Seemann träumen könnte. Aber ich glaube, in seinem Kopf sitzt ein Dämon, der ihm etwas zuflüstert...}
-
 LadyBeth_Rum9 {Leise! Blackwood ist in der Stadt, und dieser Priester ist bei ihm. Habt ihr ihn gesehen? Seltsamer Kerl. Nicht von hier, das ist sicher. Wenn er in der Nähe des Kapitäns ist, wird dieser wie eine andere Person - angespannt wie eine Saite.}
-
 LadyBeth_Rum10 {Blackwood selbst hat unseren Hafen beehrt! Erstaunlicher Mann. Er hat alles: Geld, Erfolg, Respekt. Seine Mannschaft würde ihm durch Feuer und Wasser folgen. Aber seine Augen sind immer noch hungrig, suchend. Als ob ihm etwas Wichtiges in diesem Leben fehlt. Wenn ich an seiner Stelle wäre, hätte ich mich längst beruhigt, ein Anwesen gekauft und glücklich gelebt.}
-
 LadyBeth_Rum11 {Schaut! Blackwood mit seiner Mannschaft ist in der Stadt! Sein Erscheinen ist ein echtes Fest für unseren Hafen. Seine Matrosen kaufen alles ohne zu handeln. Und er selbst! Ein so eleganter Herr, wenn auch mit schwieligen Händen. Jedes Mal bestellt er die besten Stoffe und Weine bei uns. Und zahlt in Gold, reinem Gold!}
-
 LadyBeth_Rum12 {Habt ihr gehört? Kapitän Blackwood ist in der Stadt! Oh, was für ein gut aussehender Mann, und so hoffnungslos verliebt... Man sagt, er habe eine Liebste in Barbados, aber ihr Vater willigte nicht in die Ehe ein. Jetzt ist er reich wie ein Prinz, aber aus irgendeinem Grund eilt er nicht dorthin zurück. Vielleicht hat er sich entliebt? Ich würde ihn gerne trösten...}
-

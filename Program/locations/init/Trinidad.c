@@ -151,13 +151,14 @@ int LocationInitTrinidad(int n)
 	locations[n].reload.l11.autoreload = "0";
 	locations[n].reload.l11.label = "Comendant_House";
 	locations[n].reload.l11.close_for_night = 1;
-
-    // --> Комоны, загрушки. Номера с начинаются с 20.
+	
 	locations[n].reload.l20.name = "houseS1";
-	locations[n].reload.l20.go = "CommonCobHouse";
+	locations[n].reload.l20.go = "PortSpein_houseS1";
 	locations[n].reload.l20.emerge = "reload1";
 	locations[n].reload.l20.autoreload = "0";
 	locations[n].reload.l20.label = "House";
+	locations[n].reload.l20.close_for_night = 1;
+    // --> Комоны, загрушки. Номера с начинаются с 20.
 
 	locations[n].reload.l21.name = "houseSp1";
 	locations[n].reload.l21.go = "CommonPirateHouse";
@@ -643,6 +644,47 @@ int LocationInitTrinidad(int n)
 	locations[n].reload.l1.name = "reload1";
 	locations[n].reload.l1.go = "PortSpein_town";
 	locations[n].reload.l1.emerge = "houseF2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// квестовый дом
+	////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "PortSpein_houseS1";
+	locations[n].filespath.models = "locations\inside\CobHouse";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\CobHouse.tga";
+	//Town sack
+	locations[n].townsack = "PortSpein";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+ 	locations[n].islandId = "Trinidad";
+	//Models
+	//Always
+	locations[n].models.always.tavern = "CobHouse";
+	locations[n].models.always.tavern.level = 65538;
+	locations[n].models.always.window = "CobHouse_window";
+	locations[n].models.always.window.tech = "LocationWindows";
+	locations[n].models.always.window.level = 65539;
+	locations[n].models.day.locators = "CobHouse_locators";
+	locations[n].models.night.locators = "CobHouse_Nlocators";
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	locations[n].models.day.charactersPatch = "CobHouse_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "CobHouse_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "PortSpein_town";
+	locations[n].reload.l1.emerge = "houseS1";
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "Street";
 	LAi_LocationFightDisable(&locations[n], true);

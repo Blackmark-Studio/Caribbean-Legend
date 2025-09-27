@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Замечательно! Дальнейшие действия вы уже знаете. Держите документы - покажете их коменданту тюрьмы. Приятно было иметь с вами дело, капитан.";
 			link.l1 = "Приятного во всей этой ситуации довольно мало, месье. Прощайте.";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(100);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			//Log_Info("Вы получили долговые расписки");
 			PlaySound("interface\important_item.wav");

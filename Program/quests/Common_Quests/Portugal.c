@@ -338,7 +338,7 @@ void CreateFranzGarke(string qName)//создаем Франца Гарке в �
 	ChangeCharacterAddressGroup(sld, "LeFransua_tavern_upstairs", "goto", "goto2");//ставим Португальца
 	sld = GetCharacter(NPC_GenerateCharacter("FranzGarke", "Garke", "man", "man", 30, PIRATE, -1, true, "quest"));
 	FantomMakeCoolFighter(sld, 25+MOD_SKILL_ENEMY_RATE, 90, 90, "blade_17", "pistol6", "bullet", 150);
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	sld.name = StringFromKey("Portugal_8");
 	sld.lastname = StringFromKey("Portugal_9");
 	GiveItem2Character(sld, "cirass2");
@@ -469,7 +469,7 @@ void CreateHollIndBattle(string qName)//массовая драка в джун�
 		if (i >= 1 && i <= 3)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("PortHol_"+i, "mush_hol_"+i, "man", "mushketer", iRank, HOLLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 			sld.MusketerDistance = 0;
 			ChangeCharacterAddressGroup(sld, "Terks_Jungle_01", "rld", "aloc"+(4+i));
 		}
@@ -623,7 +623,7 @@ void CreateErnandoVaskez()//появился Васкез
 	sld.dialog.FileName = "Quest\Portugal_dialog.c";
 	sld.dialog.currentnode = "Vaskez";
 	sld.greeting = "vaskez";
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	LAi_SetActorType(sld);
 	ChangeCharacterAddressGroup(sld, "Villemstad_prison", "reload", "reload9");
 	LAi_ActorDialogNow(sld, pchar, "", -1);

@@ -1,0 +1,8 @@
+perks_1 {Prices updated}
+perks_2 {The hull breach on the ship '@<_ShipName>' has been patched.}
+perks_3 {@<_ShipName> – breach below the waterline!}
+perks_4 {$rand(There must be something valuable in the hold of '$attr($context.ship.name)'|They're clearly carrying something important on '$attr($context.ship.name)')}
+perks_5 {$rand(There’s not much to catch in the hold of '$attr($context.ship.name)'|It seems there’s nothing of value in the hold of '$attr($context.ship.name)')}
+perks_6 {On the ship @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> died in the crush.}
+perks_7 {According to calculations, @<_ShipName> has arrived at @<_PortName>.}
+perks_8 {Still en route.}

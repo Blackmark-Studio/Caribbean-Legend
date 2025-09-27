@@ -19,7 +19,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk"))
 			{
 				link.l1 = "Ваша Светлость, вы хотели меня видеть?";
-				link.l1.go = "PZ1";
+				link.l1.go = "PZ_1";
 			}
 			// Украденное воспоминание
 			if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
@@ -71,33 +71,33 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.patria = "true";
 		break;
 		
-		case "PZ1":
+		case "PZ_1":
 			DeleteAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk");
 			dialog.text = "Нет, я вас не вызывал, месье. Вы что-то хотели?";
 			link.l1 = "Как же? Но ведь нас встретил ваш посыльный, сказал, вы приготовили для меня один из домов города...";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 			DelLandQuestMark(npchar);
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Какой дом, какой посыльный, что за самоуправство?!";
 			link.l1 = "Ну, как это - какой... Его зовут Анри Тибо, и...";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "ЧТО?.. Вы хоть знаете, кто это?.. Видимо, нет. Но это и неважно. Что племянник Левассера забыл в моём городе...";
 			link.l1 = "О Боже...";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Месье де Мор, вы меня слышите? Месье?";
 			link.l1 = "...";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			DialogExit();
 			LAi_SetActorType(pchar);
 			LAi_ActorRunToLocator(pchar, "reload", "reload1", "PZ_SharleBezhitObratno", -1);

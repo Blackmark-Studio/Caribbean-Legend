@@ -10,13 +10,11 @@ QUEST_MESSAGE9 {¡Ahora estás de puntillas ante este mundo cruel!}
 QUEST_MESSAGE10 {Un pirata despiadado}
 QUEST_MESSAGE11 {¡Te mereces una recompensa especial!}
 QUEST_MESSAGE12 {¡Desafortunadamente, has contratado demasiados oficiales! ¡Puedes contratar a otro si despides a uno de los tuyos!}
-
 Address_Form_Spa {Señor}
 Address_Form_Fra {Monsieur}
 Address_Form_Eng {Sir}
 Address_Form_Por {Señor}
 Address_Form_Hol {Mynheer}
-
 Swear_1 {¡Maldita sea!}
 Swear_2 {¡Maldición!}
 Swear_3 {¡Dios mío!}
@@ -27,9 +25,7 @@ Swear_7 {¡Rayos, truenos y centellas!}
 Swear_8 {¡¡¡Arrghhh!!!}
 Swear_9 {¡Malditos sean todos los pecados!}
 Swear_10 {¡Cielos!}
-
 TimeGreeting {Buenas tardes}
-
 Antigua {Antigua}
 Barbados {Barbados}
 Curacao {Curaçao}
@@ -54,17 +50,14 @@ PetitGoave {Petit Goave}
 Bridgetown {Bridgetown}
 SanJuan {San Juan}
 SantiagoVega {Santiago Vega}
-
-
 OFFIC_TYPE_BOATSWAIN {contramaestre}
 OFFIC_TYPE_CANNONEER {artillero}
 OFFIC_TYPE_QMASTER {timonel}
 OFFIC_TYPE_NAVIGATOR {navegante}
 OFFIC_TYPE_FIRSTMATE {primer oficial}
-
-Pirate	{Pirata}
-Spain	{Español}
-France	{Francés}
-Smuggler	{Contrabandista}
-Holland	{Holandés}
-England	{Inglés}
+Pirate {Pirata}
+Spain {Español}
+France {Francés}
+Smuggler {Contrabandista}
+Holland {Holandés}
+England {Inglés}

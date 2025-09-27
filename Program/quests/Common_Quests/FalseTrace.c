@@ -75,7 +75,7 @@ void FalseTrace_Begin(string qName)//инициализация квестода
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	sld.HalfImmortal = true;//полубессмертен
@@ -328,7 +328,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 		if (i == 3)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, "mush_ctz_5", "man", "mushketer", iRank, sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -348,7 +348,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 		if (i == 1)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTEnemy_crew_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -375,7 +375,7 @@ void FalseTrace_SollyBonanzaAdd()//ещё выскочили из засады
 		if (i == 2)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTAEnemy_crew_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl+5, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl+5, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{

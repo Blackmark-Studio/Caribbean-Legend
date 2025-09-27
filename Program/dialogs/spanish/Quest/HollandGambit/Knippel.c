@@ -419,7 +419,7 @@ void ProcessDialogEvent()
 		NextDiag.CurrentNode = "OnCuracao_4";
 		AddMoneyToCharacter(pchar, 200000);
 		LAi_SetCitizenType(npchar);
-		npchar.lifeday = 1; // еще денек пусть погуляет по пляжу
+		npchar.lifeday = 1; // ещё денек пусть погуляет по пляжу
 		pchar.quest.Holland_ShoreAttack.win_condition.l1 = "location";
 		pchar.quest.Holland_ShoreAttack.win_condition.l1.location = "Curacao";
 		pchar.quest.Holland_ShoreAttack.function = "CreateHollandShorePatrol"; // патруль в прибрежных водах
@@ -659,7 +659,7 @@ void ProcessDialogEvent()
 			sBullet = rItm.type.(sAttr).bullet;
 			rItem = ItemsFromID(sBullet);
 			attrL = "l" + i;
-			Link.(attrL) = GetItemName(rItem);
+			Link.(attrL) = GetConvertStr(rItem.name, "ItemsDescribe.txt");
 			;
 			Link.(attrL).go = "SetGunBullets1_" + i;
 		}
@@ -675,7 +675,7 @@ void ProcessDialogEvent()
 		LAi_GunSetUnload(NPChar, GUN_ITEM_TYPE);
 		NextDiag.CurrentNode = NextDiag.TempNode;
 		rItem = ItemsFromID(sBullet);
-		notification(GetFullName(NPChar) + " " + XI_ConvertString("AmmoSelectNotif") + GetItemName(rItem) + "", "AmmoSelect");
+		notification(GetFullName(NPChar) + " " + XI_ConvertString("AmmoSelectNotif") + GetConvertStr(rItem.name, "ItemsDescribe.txt") + "", "AmmoSelect");
 		DeleteAttribute(NPChar, "SetGunBullets");
 		DialogExit();
 		break;

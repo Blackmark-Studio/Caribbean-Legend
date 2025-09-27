@@ -56,6 +56,11 @@ int iControlsMode = 0;		// 0 classic, 1 alternative
 int iControlsTips = 0;		// 0 off, 1 base, 2 extended, 3 all
 int iCompassPos = 0;		// 0 bottom, 1 top
 
+int iGlobalHelpTime = 1;    // 0 off, 1 slow, 2 medium, 3 fast
+int iGlobalCamera = 0;      // 0 side, 1 classic
+int iGlobalEnemyType = 1;   // 0 off, 1 target, 2 all
+int iGlobalTarget = 2;      // 0 off, 1 fight, 2 non fight, 3 always
+
 //bool isLoaded = false;
 
 #define KVL_MODS_FILE "Mods_On_Off_File.txt" // Warship. Глоб. файл для включения/выключения всяких фич игры
@@ -112,7 +117,7 @@ int     MAX_CHARACTERS   = 10;
 int storeArray[2];
 SetArraySize(&storeArray, MAX_LOCATIONS);*/
 
-int MAX_LOCATIONS = 1096;
+int MAX_LOCATIONS = 1104;
 int MAX_ISLANDS = 38;
 int MAX_COLONIES = 43;
 
@@ -147,13 +152,14 @@ string 	sSpManGenNames[21], sSpWomenGenNames[9], sSpGenFamilies[54];
 #define NAMETYPE_VIP  "Vip"
 #define NAMETYPE_MAIN "Main"
 
-object  Names;
+object Names;
 
-object  NullCharacter;
-object	Characters[TOTAL_CHARACTERS];
-object	Locations[1096];
-object	Islands[38];
-object	Colonies[43];
+object NullCharacter;
+object Characters[TOTAL_CHARACTERS];
+object Locations[1104];
+object Islands[38];
+object Colonies[43];
+object Atlas;
 
 object  Environment;
 int		nMainCharacterIndex = 1;//-1;

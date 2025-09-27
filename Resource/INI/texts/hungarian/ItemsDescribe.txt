@@ -1,0 +1,1405 @@
+info
+{
+Файл описания предметов в ККСВерсия 0.0.1 от 21.11.2010 (ред. Metazot), belamour ред. кирас и амулетов 29.09.2020belamour обновлено 20.09.2021 для legendary editionПорядок размещения записей для лучшего ориентирования по тексту:1. Амуниция1.1 Холодное оружие1.2 Огнестрельное оружие1.3 Доспехи, одежда1.4 Оптические приборы1.5 Навигационные приборы1.6 Обереги1.7 Талисманы1.8 Амулеты2. МОНЕТЫ, ДРАГОЦЕННОСТИ2.1 Валюта, сундуки2.2 Камни, металлы2.3 Ювелирные изделия3. БУМАГИ3.1 Патенты3.2 Лицензии3.3 Карты3.4 Письма3.5 Рецепты4. ИНВЕНТАРЬ4.1 Инструменты4.2 Снадобья, зелья, травы4.3 Боекомплект4.4 Обычные предметы4.5 Квестовые предметы5. УТИЛЬ
+}
+new_string
+{
+
+}
+Potion parameters {Mennyiség}
+health value {hp}
+weapon blade parameters {Támadás: #f.1WeightAttack# Balance: #f.1Balance#}
+weapon blade type {Típus: #sFencingTypeName#}
+weapon gun parameters {Kár: #ddmg_min#-#ddmg_max#}
+weapon gun parameters equipped {Kár: #ddmg_min#-#ddmg_max#, újratöltési sebesség: #dchargespeed# sec.}
+mushket parameters {Kár: #ddmg_min#-#ddmg_max#}
+mushket parameters equipped {Kár: #ddmgmin#-#ddmgmax#, újratöltési sebesség: #dchargespeed# sec.}
+weapon grape parameters {Kár: #dbasedmg#x#dshards#, Spread: #sarea#}
+weapon grape parameters equipped {Kár: #dbasedmg#x#dshards#, Spread: #sarea#, Újratöltési idô: #dchargespeed# sec.}
+youve_got {Talált tárgy -}
+used_item {Felhasznált tárgy -}
+youve_gotNotif {Új tárgy:}
+used_itemNotif {Elveszett tétel:}
+flower_find {Szerencsés lelet!}
+itmname_unarmed {Fegyvertelen}
+itmdescr_unarmed {Ha nincs fegyvered, bármikor arcon ütheted ellenfeledet. Remélhetôleg ez eléggé megijeszti ahhoz, hogy elmenekülhess.}
+itmname_rabble {Póker}
+itmdescr_rabble {Egy kovácsolt vas tûz piszkavas. Fegyvernek tekinthetô, ha az ellenfeled hagyja, hogy hátulról fejbe vágd.}
+itmname_slave_01 {Szigony}
+itmdescr_slave_01 {Egy bálnavadász szigonya, de csak egy találat kell ahhoz, hogy felnyársaljon egy embert, és felcsévélje. Ha a szigony tüskéi megakadnak, csak úgy lehet eltávolítani, hogy kivágod a testbôl.}
+itmname_slave_02 {Machete}
+itmdescr_slave_02 {A helyi specialitás. Alacsony minôségû acélból készült hosszú vágópenge, amelyet széles körben használnak cukornád, szôlô... és végtagok vágására.}
+itmname_blade_01 {Naab 'Te}
+itmdescr_blade_01 {Az Itza törzs indiánjai által használt rövid, egykezes szúró dárda, melynek keresztvasa és acélhegye egy törött európai halberdából készült.}
+itmname_blade_02 {Háborús bunkó}
+itmdescr_blade_02 {Egy Itza-bunkósbot, amely nagyjából úgy néz ki, mint egy puskacsô. A domború forma lehetôvé teszi a kezelô számára, hogy az erôt a hegyére összpontosítsa, és a tüskével átszúrja az acélbôröndöt.}
+itmname_blade_03 {Stocco}
+itmdescr_blade_03 {Az olasz városlakók körében népszerû fólia. A háromélû, nem hajló stocco penge ideális szúró támadásokhoz, és az összetett kézvédô lehetôvé teszi az ügyes párbajozó számára, hogy elkapja az ellenfél pengéjét.}
+itmname_blade_04 {Messer}
+itmdescr_blade_04 {Megbízható és egyszerûen elkészíthetô egypengéjû kard, Németországban igen népszerû a városi milíciák és a szerény jövedelemmel rendelkezô zsoldosok körében. A legjobbakat Kölnben készítik.}
+itmname_blade_05 {Cutlass}
+itmdescr_blade_05 {A tengerész legjobb barátja, amikor partraszálláskor vagy a határok elhárításakor. Ívelt pengéje és széles kézvédôje lehetôvé teszi a szúró és vágó támadásokat, de rövid hatótávolsága és egyetlen éle korlátozza hasznosságát a hajós harcok zsúfolt keretein kívül.}
+itmname_blade_06 {Schiavona}
+itmdescr_blade_06 {A velencei dózse dalmát gárdájának legendás pengéje. Kétélû pengéje tökéletesen alkalmas szúró és vágó támadásokra egyaránt, védôjét pedig a népnyelvben 'bölcsônek' nevezik, mert biztonságot nyújt a kezének.}
+itmname_blade_07 {Ritterschwert}
+itmdescr_blade_07 {A múlt században a nehézlovasság által használt széles kard. Nehéz pengéje szinte bármilyen páncélt képes átvágni. Súlya és egyensúlya azonban nagyon alkalmatlanná teszi a gyalogos harcban.}
+itmname_blade_08 {Bilbó}
+itmdescr_blade_08 {A spanyol tengerészek körében széles körben használt rövid, széles vágópengéjû, csésze alakú védôkéssel ellátott spanyol rapír. Nevét a városról, ahonnan származik, Bilbaóról kapta.}
+itmname_blade_09 {Cazoleta}
+itmdescr_blade_09 {Könnyû, csésze alakú védôkéssel ellátott folia, a spanyol nemesek öltözékének szerves része. Enélkül az úriember még csak nem is hozhat ügyet vagy tanúskodhat a bíróságon.}
+itmname_blade_10 {Akasztott ember}
+itmdescr_blade_10 {A tengerészeti bicska, amelyet a 'felakasztott ember' neveztek, mivel a kézvédôn lévô kampót a fegyver rögzítésére használták a magasba mászás közben. Akasztott embert vinni és akasztott emberré válni - ez volt a kalózok többségének sorsa.}
+itmname_blade_11 {Akasztó}
+itmdescr_blade_11 {Egyfajta rövid kard, amely a bicskához hasonlít, és arra készült, hogy 'katonák, felderítôk, tüzérek és más szárazföldi csapatok övérôl lógjon le' , akiknek másodlagos fegyverre van szükségük.}
+itmname_blade_12 {Rövid szablya}
+itmdescr_blade_12 {Ez a kard valamivel hosszabb, mint a szablya, de rövidebb, mint a szablya, és a muskétások és tüzérek kényelmes és kompakt fegyvere. Jól használható tengeri és szárazföldi harcokban.}
+itmname_blade_13 {Broadsword}
+itmdescr_blade_13 {Ez a kardtípus az utóbbi idôben meglehetôsen népszerûvé vált a francia haditengerészet tisztjei körében, nemcsak rangjelzésként, hanem megbízható harci pengeként is. A széles kard pusztító erejû lehet egy erôs és képzett ember kezében. Mégis, párbajozáshoz egy kicsit nehéz.}
+itmname_blade_14 {Vallon kard}
+itmdescr_blade_14 {A spanyolországi Hollandiában a katonák körében népszerû rapír. Nem igényel annyi ügyességet, mint amennyi mozgékonyságot, fürgeséget és erôt. Segítségével könnyedén át lehet vágni az elegáns vívás bármelyik hívének alkarját, aki kihívni merészel.}
+itmname_blade_15 {Capodimonte}
+itmdescr_blade_15 {Hajlított pengéjû tengeri vívófegyver, amely egyformán alkalmas a csipkedô és a vágó támadásokra. Egy leegyszerûsített védekezés még mindig elegendô a legtöbb vágócsapás kivédésére.}
+itmname_blade_16 {Kis kard}
+itmdescr_blade_16 {Rövidített rapír elegáns, lapos védôvel, amelyet formális ruhákhoz való viselésre szántak. Ez a fegyver nemrégiben jelent meg a francia vívóiskola hatására. Vágáshoz túl könnyû, de villámgyors szúrásokat tesz lehetôvé.}
+itmname_blade_17 {Kupa-markolatú Rapier}
+itmdescr_blade_17 {Ennek a spanyol párbajtôrözôk által kedvelt vívófegyver rövidített markolata a szúrásoknak kedvez, de a penge alkalmas vágásra is. A harang alakú, lefelé fordított élekkel ellátott védôkar védi a kezet az ellenséges támadásoktól.}
+itmname_blade_18 {Pappenheimer}
+itmdescr_blade_18 {Ezt a jellegzetes ôrzéssel ellátott lovassági kardot Gottfried Heinrich Graf zu Pappenheim kurirasszusai tették híressé a nagy harmincéves háború idején. Hírneve népszerûvé tette a lovassági karrierre törekvô fiatal nemesek körében.}
+itmname_blade_19 {Tengerészeti szablya}
+itmdescr_blade_19 {A tengerésztisztek számára készült szablya. Ez a fegyver éppúgy alkalmas parádézásra, mint a kusza kötélzet átvágására, és arra, hogy a legváratlanabb helyzetbôl halálos csapást mérjen.}
+itmname_blade_20 {Madonna}
+itmdescr_blade_20 {A rettegett magyar huszárok szablyája. Ez a penge csak nemrég jelent meg a nyugat-európai csatamezôkön, de máris nagy tiszteletet vívott ki magának egyensúlya és ereje miatt. Egyértelmûen fényes jövô áll elôtte.}
+itmname_blade_21 {Felföldi hátaskard}
+itmdescr_blade_21 {Ez a hagyományos skót kosárfogantyús kard a felföldi nemesség egyik kedvenc fegyvere. Megengedheti magának, hogy vad és impulzív felföldi harcosként küzdjön, ha keze biztonságosan védve van, és pengéje hûen csapódik.}
+itmname_blade_22 {Próféta haragja}
+itmdescr_blade_22 {Régi, majdnem egyenes fénykard ívelt markolattal, amely egyaránt alkalmas vágó és szúró csapásokra. A borotvaéles penge könnyedén becsúszik mind a páncéllemezek, mind a bordák közé.}
+itmname_blade_23 {Scimitar}
+itmdescr_blade_23 {Gazdagon díszített, ívelt penge, gyors csetepatékra szánva. A penge formája lehetôvé teszi a legerôteljesebb vágócsapásokat. Ennek a szablyának a markolatába ôsi talizmánok vannak beágyazva, hogy elûzzék a barátságtalan dzsinneket.}
+itmname_blade_24 {Patissa Khanda}
+itmdescr_blade_24 {A távoli India fékezhetetlen szikhjeinek szent fegyvere. A kiváló minôségû acél lehetôvé teszi az ellenséges pengék hasítását. A markolat az európai kardforgatók számára kissé szokatlan, mivel lehetôvé teszi, hogy a sarkantyúval is lehessen találatokat elérni.}
+itmname_blade_25 {Flamberge Rapier}
+itmdescr_blade_25 {Ez a spanyol stílusú, hullámos pengéjû, csésze markolatú rapír nagyon veszélyes fegyver - mind az ellenfélre, mind a kezelôjére nézve. Állítólag még az ezzel a pengével ejtett könnyû sebek is nagyon lassan gyógyulnak. Az ilyen pengék tulajdonosai gyakran... rossz hírnévre tesznek szert.}
+itmname_blade_26 {Asoleda}
+itmdescr_blade_26 {Verdunban készült hosszú párbajfegyver, könnyû és nagyon keskeny pengével. A penge lehetetlenné teszi a vágócsapásokat, de a hossza miatt az ellenséget távol tartja.}
+itmname_blade_27 {Suhintott markolatú rapier}
+itmdescr_blade_27 {Ezt a pengét a 'Saxon Feather' nevet kapta legendás egyensúlya miatt, amely lehetôvé teszi, hogy használója könnyedén tudjon vágó és szúró csapásokat mérni. A penge a kéz legkisebb mozdulatára is engedelmeskedik. A bonyolult védelem megfelelô védelmet nyújt a kéznek.}
+itmname_blade_28 {Katana}
+itmdescr_blade_28
+{
+A legendás Cipangu szigetérôl származó különös kard, amelynek pengéje kiváló minôségû acélból készült, és hosszú markolata lehetôvé teszi, hogy egy vagy mindkét kézzel lehessen vele bánni.Milyen történetet mesélhetne ez a kard az egzotikus Keletrôl a Karib-tengerre vezetô útjáról... hogyan került ide?
+}
+itmname_blade_29 {Storta}
+itmdescr_blade_29 {Agostino Barbarigo’s boarding sabre — the blade of a legendary Venetian admiral who never knew defeat. Perhaps it was thanks to this unique sword, his faithful companion in every battle.}
+itmname_blade_30 {Tengerészeti Klewang}
+itmdescr_blade_30 {A Kelet-indiai Társaság kapitányának megbízásából készült bicska. E penge alkotójának sikerült egyesítenie számos különbözô fegyver elônyeit, miközben elkerülte azok legtöbb hátrányát.}
+itmname_blade_31 {Narvál}
+itmdescr_blade_31 {Mestermû deszantkard, kagyló alakú védôrésszel és narválszarvból készült markolattal. A penge kiváló minôségû acélból készült, és tökéletesen kiegyensúlyozott.}
+itmname_blade_32 {Thanatosz}
+itmdescr_blade_32 {Egy ôsi fegyverzetû kard a harmadik keresztes hadjárat idejébôl. Ez a kard nem múzeumba való. Valahogy közel 400 év után is borotvaéles az éle.}
+itmname_blade_33 {Az ôrzô kardja}
+itmdescr_blade_33 {Egy régi lovag kétkezes kardja.}
+itmname_topor_01 {Macuahuitl}
+itmdescr_topor_01 {Az aztékok és a maják nehéz kardkardja, amely vasfából készült, és az oldalába ragasztott borotvaéles obszidiánforgácsokkal van ellátva. A konkvisztádorok tanúsága szerint az indiánok e félelmetes fegyver egyetlen csapásával levágták a spanyol lovak fejét.}
+itmname_topor_02 {Háborús fejsze}
+itmdescr_topor_02 {A hosszú nyél és a szakállas penge olyan félelmetes fegyvert alkot, amely képes feldarabolni az enyhén páncélozott ellenfeleket. A penge biztonságosan védi a használó kezét, ha rövid markolatot használ.}
+itmname_topor_03 {Goedendag}
+itmdescr_topor_03 {A holland Geuzen egyszerû, de fenyegetô fegyvere. Ezernyi példányának látványa máris megfutamította nemes ellenségeiket az Aranysarkantyús csatában.}
+itmname_topor_04 {Lovasbalta}
+itmdescr_topor_04 {Ennek a fegyvernek a használata nagy erôt igényel, de az eredmény megéri. Az éles penge pusztító erejû vágócsapásokat mér, a csôr bármilyen páncélt képes átütni, az acél fejsze nyele pedig áthatolhatatlan az ellenséges fegyverekkel szemben.}
+itmname_topor_05 {Csatabárdgood}
+itmdescr_topor_05 {Keskeny balta, hátán csôrrel, amely közelharcban halálos, és nagyon hasznos a szelva kirándulásokhoz. Ez a fejsze nagy keresletnek örvend a telepesek körében, bár eredetileg kifejezetten a helyi indiánokkal való kereskedéshez készítették, akik nem tudták, hogyan kell megmunkálni a vasat.}
+itmname_topor_06 {A keselyû}
+itmdescr_topor_06 {Boarding axe with a lavish “beard” and a hefty “beak.” The perfect choice for those who like to separate the trivial—or put an end to any fight.}
+itmname_blade_36 {Máltai kard}
+itmdescr_blade_36 {A Máltai Lovagrend ünnepi kardja, amelyet maga Chevalier de Poincy fôkormányzó adott Charles de Maure-nak kiemelkedô szolgálataiért. A pengébe az A.S betûk vannak vésve.}
+itmname_knife_01 {Tôr 'Chieftains talon'}
+itmdescr_knife_01
+{
+Ez egy közönséges tôrnek tûnik... A moszkvai Fadey azt állítja, hogy ezt a tôrt az indiai sámánok elvarázsolták, és számos rejtett titokkal rendelkezik. De melyiket?
+}
+itmname_knife_02 {Maria}
+itmdescr_knife_02 {A fine daga belonging to Diego de Montoya. It is clear the weapon was carefully maintained — as if it held some sentimental value for its former owner.}
+itmname_knife_03 {Családi tôr}
+itmdescr_knife_03 {The de Monpe family weapon, also known as 'the toothpick'. A valuable piece, easily sold in times of need — after all, what's the point of family insignia?}
+itmname_khopesh1 {Khopesh}
+itmdescr_khopesh1 {A ritual weapon from the days when the gods still walked the earth.}
+itmname_khopesh2 {Arubai Khopesh}
+itmdescr_khopesh2 {You are not supposed to see this.}
+itmname_khopesh3 {Elszenesedett Khopesh}
+itmdescr_khopesh3 {Ritual weapon from the days when gods still walked the earth. It thirsts for blood, and an enlightened captain should not bear such a thing.}
+itmname_machete2 {Hódító machete}
+itmdescr_machete2 {A well-crafted machete made from an unknown alloy—fit for both polite society and ancient pyramids.}
+itmname_topor_07 {Katonai fejsze}
+itmdescr_topor_07 {Egy alap balta, amely képzetlen milicisták számára is alkalmas, bár korlátozott hatékonyságú. Blokkolásra alkalmatlan.}
+itmname_pirate_cutlass {Lángoló kard}
+itmdescr_pirate_cutlass {A true legend, one of the most revered regalia among New World pirates—and simply a captain’s splendid weapon.}
+itmname_blade_38 {Párbajkard}
+itmdescr_blade_38 {A fine example of a dueling weapon, popular across Europe. Though in the jungle, it might look a bit out of place.}
+itmname_blade_39 {Scrapper's Rapier}
+itmdescr_blade_39 {An excellent rapier, clearly custom-made for a seasoned duelist. In other words, the perfect weapon for legal killing.}
+itmname_blade_40 {Olasz Rapier}
+itmdescr_blade_40 {The weight and excessive ornamentation of the rapier clearly indicate that this is a ceremonial, not a combat, weapon.}
+itmname_blade_41 {Jian}
+itmdescr_blade_41 {A weapon from a distant civilization, brought to foreign seas by tragic fate. Its unique design allows for confident use of any fencing style.}
+itmname_blade_42 {Sereges széles kard}
+itmdescr_blade_42 {A simple soldier's weapon, requiring only minimal military training from its owner.}
+itmname_saber {Lovassági kard}
+itmdescr_saber {A weapon worthy of a true patriot and officer, forged in many glorious battles. It was never meant to end up in a place like this.}
+itmname_q_blade_10 {Jurgen Schmidt függesztôje}
+itmdescr_q_blade_10
+{
+Boarding cutlass crafted by Jürgen Schmidt. 
+The blade is made of fine steel and boasts excellent balance.
+}
+itmname_q_blade_13 {Jurgen Schmidt kardja}
+itmdescr_q_blade_13
+{
+Officer’s sabre crafted by Jürgen Schmidt. 
+The blade is made of fine steel and perfectly balanced.
+}
+itmname_q_blade_16 {Jurgen Schmidt kiskardja}
+itmdescr_q_blade_16
+{
+Smallsword crafted by Master Jürgen Schmidt. 
+The blade is made of fine steel 
+and boasts excellent balance.
+}
+itmname_q_blade_18 {Jurgen Schmidt Pappenheimer}
+itmdescr_q_blade_18
+{
+Pappenheimer crafted by Master Jürgen Schmidt. 
+The blade is made of fine steel 
+and is superbly balanced.
+}
+itmname_q_blade_19 {Jurgen Schmidt szablyája}
+itmdescr_q_blade_19
+{
+A naval sabre crafted by master Jürgen Schmidt. 
+The blade is made of fine steel and perfectly balanced.
+}
+itmname_q_blade_21 {Jurgen Schmidt hátaskardja}
+itmdescr_q_blade_21
+{
+Kleeblattsäbel crafted by Master Jürgen Schmidt. 
+The blade is made of fine steel 
+and boasts superb balance.
+}
+itmname_shamshir {Shamshir}
+itmdescr_shamshir {Lovas harcra szánt perzsa sámshir, a sivatagi kíméletlen háborúk igazi megtestesítôje. Egyesíti a vágás hatékonyságát és az aprítás egyszerûségét. A legjobb választás azoknak, akik szeretik a kör alakú vágásokat.}
+itmname_lacrima_patris {Lacrima Patris}
+itmdescr_lacrima_patris {A richly decorated sword that, despite its ceremonial appearance, boasts excellent combat qualities. In the hands of a pious captain punishing criminals and heretics, it grows sharper.}
+lacrima_patris_parameters {Az ágyú tûz hatótávolságának növelése: #f.1RangeBonus#%}
+itmname_blade_SP_3low {Hóhér}
+itmdescr_blade_SP_3low {Ez a kard a török szablyák és az európai falchionok jellemzôit ötvözi - kiszélesített pengéje még a legkeményebb páncélzatot is képes átvágni. A Hóhérral bármilyen fedélzeti harc gyorsan és brutálisan ér véget.}
+itmname_blade_SP_3 {Hóhér}
+itmdescr_blade_SP_3 {The skull of Yorick, set in place of the guard, urges its bearer to cast aside the fear of death and look the Reaper in the eye, unlocking true martial power.}
+itmname_pistol1 {Közönséges pisztoly}
+itmdescr_pistol1 {Egy katonai pisztoly közönséges kovás zárral és övön hordható kampóval. Viszonylag olcsó, könnyen kezelhetô és ezért széles körben használt.}
+itmname_pistol2 {Sörétes puska revolver}
+itmdescr_pistol2 {Triple-barreled side grapeshot gun. Extremely complex to make, rare, and expensive.}
+itmname_pistol3 {Harsona}
+itmdescr_pistol3 {A boarding grapeshot gun. The trombone is of little use against nimble single opponents or men-at-arms, but a shot into a crowd of ragamuffins will make the proper impression.}
+itmname_pistol4 {Négycsövű pisztoly}
+itmdescr_pistol4 {Four-barreled pistol, a marvel of engineering. Reloads slowly, but four shots can turn the tide of any fight.}
+itmname_pistol5 {Párbajpisztoly}
+itmdescr_pistol5 {A rare example of a dueling pistol with a wheellock mechanism. Exquisite craftsmanship leaves the enemy little chance, though the slow reload somewhat mars the impression.}
+itmname_pistol6 {Kétcsövû pisztoly}
+itmdescr_pistol6 {Kétcsövû pisztoly - nagyon szép azok számára, akik szeretik a második lövés nyújtotta biztonságot.}
+itmname_pistol7 {Colt revolver}
+itmdescr_pistol7 {Caplock revolver from the first half of the 19th century, bearing Colt factory marks. Briefly confuses opponents when fired. Requires special ammunition to use.}
+itmname_pistol8 {Blunderbuss}
+itmdescr_pistol8 {A unique naval musketoon, suitable for one-handed firing. It uses steel shot that easily deals with any armor.}
+itmname_pistol9 {Szuperpisztoly 2 töltésû pisztoly}
+itmdescr_pistol9 {Single-barrel Saxon pistol of exceptional rarity, firing two balls in succession. Notable for its long reload time.}
+itmname_pistol10 {Arany sas}
+itmdescr_pistol10 {Third time’s the charm, and this fine-quality pistol proves it. A reliable choice for a seasoned soldier or any skilled marksman.}
+itmname_pistol11 {Undorító}
+itmdescr_pistol11 {Boarding pistol-axe, the creation of an unknown weapons genius. Poor as a pistol and poor as an axe. But in the chaos of a swift boarding fight, where every second counts, it’s just what you need.}
+itmname_pistol12 {Lefûrészelt puska}
+itmdescr_pistol12 {Disassembled four-shot carbine. Its accuracy may be lower now, but it’s suitable for close combat and still reloads quickly. An excellent alternative to a standard four-shot pistol.}
+itmname_pistol13 {Kôpuskás revolver}
+itmdescr_pistol13 {A masterpiece of gunsmithing. Custom-made in Europe for a prominent military leader over 30 years ago. Quite possibly the finest multi-shot pistol of our age.}
+itmname_pistol14 {Kétcsövû párbajpisztoly}
+itmdescr_pistol14 {An extremely expensive, deadly, and utterly impractical work of art.}
+itmname_mortairgun {Kézi aknavetô}
+itmdescr_mortairgun {Hand Mortar – an excellent tool for attacking small enemy groups. Most effective when used from ambush.}
+itmname_mushket1 {Matchlock muskéta}
+itmdescr_mushket1 {A powerful, heavy infantry musket with a time-tested matchlock.}
+itmname_mushket2 {Tengerészeti karabély}
+itmdescr_mushket2 {A shortened version of the latest English fusil, equipped with a bayonet. Standard issue for colonial and naval infantry.}
+itmname_mushket3 {Arquebus}
+itmdescr_mushket3
+{
+Boarding Matchlock Blunderbuss 
+It may be long past its prime, but foes staring down its barrel have other things on their minds.
+}
+itmname_mushket5 {Célzott puska}
+itmdescr_mushket5 {A custom-made wheellock rifle with a rifled barrel and a diopter spyglass. The weapon of a wealthy hunter or sportsman.}
+itmname_mushket6 {Dobos sörétes puska}
+itmdescr_mushket6 {Portuguese musketoon with a removable multi-chamber cylinder. Unfortunately, the interchangeable mechanism is damaged, which slows down reloading.}
+itmname_mushket7 {Jó muskéta}
+itmdescr_mushket7 {Unlike soldiers’ muskets, which are built for cheap mass production, this weapon was crafted by gunsmiths who spared no quality materials—resulting in noticeably superior characteristics.}
+itmname_mushket8 {Négycsövû puska}
+itmdescr_mushket8 {Handcrafted four-shot rifle. Features a revolutionary system for disassembling the barrel and stock, turning it into a pistol in under a minute. Its reloading mechanism lets you unleash a hail of bullets on your foes!}
+itmname_m8_barrel {Töltény és csô}
+itmdescr_m8_barrel {Egy szétszerelt négylövetû puska szárát és csövét.}
+itmname_mushket9 {Régi arquebuse}
+itmdescr_mushket9 {Ôsi, de megbízható arquebuse. Ha hinni lehet a történeteknek, maga Cortés használta arra, hogy a dzsungeleket grapeshotokkal bombázza, rettegést keltve a bennszülöttekben.}
+UpgradeStageInfo_mushket9_1 {Jelenleg elég rosszul néz ki, de a megfelelô ápolás és a jó szerszámok átalakíthatják.}
+UpgradeStageInfo_mushket9_2 {A szár cseréje és egy alapos tisztítás után már nem úgy néz ki, mint egy rozsdás vasdarab. Most már nem szégyellne ilyen fegyverrel a hátán végigsétálni az utcán.}
+UpgradeStageInfo_mushket9_3 {A kicserélt zárral kezdett hasonlítani a modern fegyverekhez. A csontolajjal megkent fém úgy csillog a napon, mintha a fegyvert éppen most vették volna ki a mester kezébôl.}
+UpgradeStageInfo_mushket9_4
+{
+A kezedben ez a fegyver elérte a csúcspontját - egyszerûen nincs hová továbbfejlesztened. Az utolsó simítás - egy kibôvített csô - leegyszerûsítette és felgyorsította a töltést, jelentôsen növelve a hatékonyságot. Büszke lehetsz magadra.  Minden oka megvan rá, hogy büszke legyen.
+}
+itmname_FirearmStockPart_1 {Töltôszár és rakétapálca}
+itmdescr_FirearmStockPart_1 {Gyönyörûen faragott szár a régimódi puskákhoz és kefés rúd a csô tisztításához. Ezeket vászonruhába csomagolták, és gondosan egy sarokba helyezték, távol a kincs egyéb tartalmától, mintha érezhetôen késôbb kerültek volna oda.}
+itmname_FirearmStockPart_2 {Zár és csontolaj}
+itmdescr_FirearmStockPart_2 {Egy modern rugós zár, rongyok és egy fiola csontolaj a fegyver karbantartásához, gyanúsan alkalmas a Blackwoodnál talált arquebuse-hoz. Ezeket hasonlóképpen a többi értéktárgytól elkülönítve helyezték el a kincsestárban.}
+itmname_FirearmStockPart_3 {Csô és lôporos flaska}
+itmdescr_FirearmStockPart_3 {Ez a készlet nagymértékben felgyorsítja bármely hosszúcsövû fegyver töltését, de valamiért úgy érzed, hogy leginkább éppen ezzel az arquebuse-zal használható. Egy kis papírkötegbe csomagolták ôket, nyilván azért, hogy megvédjék ôket a nedvességtôl, ellentétben a kincsben lévô összes többi tárggyal.}
+itmname_grape_mushket {Kézi aknavetô}
+itmdescr_grape_mushket {A kézi aknavető kiváló segítő a kis ellenségcsoportok megtámadásához. Praktikusabb rejtekből használni. Lövéskor petárdákat vagy gránátokat használnak.}
+itmname_Mushket2x2 {Duplacsövû karabély}
+itmdescr_Mushket2x2 {A gift double-barreled shotgun favored by nobles for their beloved ambush hunts of the noble stag. Still, it must be said—its rifled barrels will reliably bring down any target.}
+itmname_mushket10 {Császári muskéta}
+itmdescr_mushket10 {Single-Shot noble musket from the Thirty Years’ War era. Equipped with a Bayonet and decorated with motifs common in the Holy Roman Empire.}
+itmname_howdah {Howdah}
+itmdescr_howdah {Double-barreled large-caliber pistol, the best companion for a hunter in the African bush or Indian jungle. Reliably fells boars, tigers, and hostile natives.}
+itmname_nocirass {Nincs mellény}
+itmdescr_nocirass {Hosszú ideig tartó páncél viselése esetén az ember kimerülhet. Vegyél le egy terhet, tedd fel a lábad, és igyál egy csésze forró kávét fahéjjal vagy valami erôsebbel.}
+itmname_cirass1 {Trench Cuirass}
+itmdescr_cirass1 {Infantry cuirass used during fortress sieges. Offers excellent protection against steel and lead, but restricts movement, making the wearer clumsy in close combat.}
+itmname_cirass2 {Lovassági köpeny}
+itmdescr_cirass2 {Stamped cuirass of heavy cavalry. Offers good protection for chest and back while mounted, but its weight and poor fit hinder speed and agility on foot.}
+itmname_cirass3 {Parádés köpeny}
+itmdescr_cirass3 {Light cuirass made of fine quality steel. Can be worn under a doublet. Restricts movement only slightly, reliably protecting only against stray bullets and glancing blows.}
+itmname_cirass4 {Milano Cuirass}
+itmdescr_cirass4 {Rare armor of the highest quality. Easily stops both blade and bullet, yet is surprisingly light. Its secret lies in the many grooves that give it resilience and strength.}
+itmname_cirass5 {Bôröv}
+itmdescr_cirass5 {A corset made of thick leather, covering vital organs that are least protected by the skeleton. It offers poor defense against a rapier or bullet, but it’s still better than nothing.}
+itmname_cirass6 {Bôrkabát}
+itmdescr_cirass6 {Vest of a seasoned duelist, made from soft, boiled leather. Worn discreetly, it protects the entire torso from slashing attacks with coldarms.}
+itmname_cirass7 {Brigandine}
+itmdescr_cirass7 {A leather vest reinforced with metal plates — decent protection, though the weight is inevitably felt when worn.}
+itmname_cirass8 {Fonott páncél}
+itmdescr_cirass8 {A unique cuirass of leather and metal that protects the entire torso, including the sides and collarbones. Numerous adjustment buckles reduce discomfort when worn under clothing.}
+itmname_cirass9 {Megerôsített brigandin}
+itmdescr_cirass9 {Armor of a professional mercenary and the top choice for a duelist. Offers protection and weight close to a cuirass, but its superb tailoring allows complete freedom of movement.}
+itmname_cirass10 {Vaskos mellvért}
+itmdescr_cirass10 {A rather worn and incomplete set of parliamentarian cavalry equipment. It offers poor protection, but the abundance of pockets and pouches greatly simplifies shooting and reloading.}
+itmname_cirass11 {Mirror Breastplate}
+itmdescr_cirass11 {Such armor is common in the Tsardom of Russia and the Ottoman Empire. This piece has traveled a long road before ending up in your hands.}
+itmname_suit1 {Francia egyenruha}
+itmdescr_suit1 {Royal Navy officer’s uniform.}
+itmname_suit2 {Angol egyenruha}
+itmdescr_suit2 {Uniform of a Black Guard officer — from the elite company of Scottish Guards.}
+itmname_suit3 {Spanyol egyenruha}
+itmdescr_suit3 {Uniform of a Catalan Guard officer.}
+itmname_suit4 {Liga öltöny}
+itmdescr_suit4
+{
+League Mercenary Outfit 
+Sewn-on metal plates and adjustable straps—everything for swift, brutal combat. The half-mask helps keep your identity hidden.
+}
+itmname_suit5 {Admirális egyenruhája}
+itmdescr_suit5 {Uniform of a senior French naval officer. A true work of art, no less.}
+itmname_underwater {Búvárruha}
+itmdescr_underwater {Henrik Wedeker’s unique suit for moving along the seabed at shallow depths. Offers better protection than the finest armor!}
+itmname_lantern {Lámpás}
+itmdescr_lantern {Egy kis lámpa nélkülözhetetlen társ a sötétben. Rögzítsd az övedre, hogy megvilágítsd az utadat éjszaka, valamint barlangokban, barlangokban és tömlöcökben. Könnyen aktiválható és deaktiválható a 'L' billentyûzeten történô megnyomásával.}
+itmname_hat1 {Condottiere kalapja}
+itmdescr_hat1 {A favorite headwear of duelists and fencers, this hat inspires its wearer to constantly hone their coldarm skills to truly look the part.}
+itmname_hat2 {Lovagi kalap}
+itmdescr_hat2 {A richly decorated, colorful hat once favored by nobles, but in the Caribbean it has gained a notorious reputation. Here, its wearers are not pampered European aristocrats, but seasoned duelists and adventurers, able to fight tirelessly with any weapon in hand.}
+itmname_hat3 {Tengerész trikornis}
+itmdescr_hat3 {A rather ordinary tricorne, widely worn by sailors. According to old maritime tradition, this hat is given to a crew member who has passed three harsh trials: swimming through a storm, surviving their first sea battle, and patching up the ship afterward.}
+itmname_hat4 {Tengerésztiszt háromszarvúja}
+itmdescr_hat4 {Tricorn hat, popular among naval officers. At the sight of one, ordinary sailors tend to work with remarkable speed. Whether out of respect or fear of punishment—that’s a rhetorical question.}
+itmname_hat5 {Admirális kalapja}
+itmdescr_hat5 {Few sailors ever get to see a hat like this even once in their lives. It inspires and motivates everyone around. Serving in the same fleet as its owner is a great honor—every crewman and officer alike would follow them to hell and back.}
+itmname_hat6 {Holland kalap}
+itmdescr_hat6 {An expensive and elegant hat, much favored by middling merchants. Its unusual shape makes it easy to spot a negotiator from afar—and prepare for fierce bargaining.}
+itmname_hat7 {Szerencsés kalap}
+itmdescr_hat7 {They say this dashing hat brings good fortune. Weathered and worn by time, it still carries a noble air. If you come by such a hat, rest assured: when things get tough, you’ll slip past the guard, draw the right card from the deck, and find a stray ball at the bottom of your pocket.}
+itmname_hat8 {Charlie Prince trikornisa}
+itmdescr_hat8 {This hat frightens merchants—especially Spanish ones—more than the Jolly Roger itself. The reputation of its wearer makes even the toughest sea dog turn pale and shiver. Cursed be the day Charlie Prince was born.}
+itmname_hat9 {Grim's Hat}
+itmdescr_hat9 {This hat is known in every corner of the Caribbean, and everywhere it is remembered with a shudder. Only a madman would dare attack the ship of its owner, and meeting them in person, fear will make you forget how to hold sword or pistol. And remember: it’s easy to cross to the other side. Coming back is the hard part.}
+itmname_hat10 {Mercenary’s Hat}
+itmdescr_hat10 {Ez a terepen készített páncélozott kalap nem mutatós, de képes megállítani egy golyót és életet menteni.}
+itmname_hat10_part {Tanned Leather}
+itmdescr_hat10_part {Egy jó darab cserzett bikabőr. Tökéletes kalapkészítéshez.}
+itmname_spyglass1 {Olcsó távcsô}
+itmdescr_spyglass1 {An almost useless spyglass. No self-respecting captain would carry such junk.}
+itmname_spyglass2 {Hétköznapi kémszemüveg}
+itmdescr_spyglass2 {A standard spyglass. The lenses are decent, though finer ones exist.}
+itmname_spyglass3 {Jó kémszemüveg}
+itmdescr_spyglass3 {Spyglass with brilliantly polished lenses.}
+itmname_spyglass4 {Kiváló kémszemüveg}
+itmdescr_spyglass4 {Spyglass with “beryl” lenses. Only the exclusive version is better.}
+itmname_spyglass5 {Tengerészeti távcsô}
+itmdescr_spyglass5 {A unique optical device. Perfectly fitted lenses made of the purest rock crystal, combined with a tripod, let you see absolutely everything.}
+itmname_spyglassSP3 {Távcsô 'Holtak szeme'}
+itmdescr_spyglassSP3 {This spyglass adorned with bones features surprisingly high-quality lenses.}
+itmname_sand_clock {Homokóra}
+itmdescr_sand_clock {A homokóra lehetôvé teszi a kapitány számára, hogy 'hordozza' a Forro és Greenwich pontos idejét, hogy beállítsa a hajó kronométerét, ha van ilyen.}
+itmname_astrolab {Asztrolábium}
+itmdescr_astrolab {Ez az eszköz lehetôvé teszi a navigátor számára az égitestek helyzetének meghatározását.}
+itmname_compass1 {Hajóiránytû}
+itmdescr_compass1 {Ez az eszköz lehetôvé teszi a navigátor számára az északi irány meghatározását, még akkor is, ha az égitestek homályosak. Azt az elképzelést, hogy maga a Föld lényegében egy óriási mágnesként mûködik, elôször 1600-ban vetette fel William Gilbert angol orvos és természetfilozófus.}
+itmname_clock1 {Kronométer}
+itmdescr_clock1 {Hajókronométer. Ezt a készüléket a földrajzi hosszúság meghatározására használják, de egy homokórával rendszeresen pontos idôre kell kalibrálni. Ezt a pontos idômérést késôbb greenwichi középidônek nevezik.}
+itmname_clock2 {Mûködô kronométer}
+itmdescr_clock2 {Egy Forro-szigeti hajó kronométere. Lehetôvé teszi, hogy 30 napig minimális hibával meghatározd a hajó földrajzi hosszúságát.}
+itmname_sextant1 {Szextáns}
+itmdescr_sextant1 {Egyedi eszköz, amelyet a földrajzi koordináták meghatározására használnak. A szextáns eredeti tulajdonosa messze maga mögött hagyta a saját idejét, mivel a készülék mûködéséhez szükséges pontos órát még nem találták fel. Ezért ez a szextáns jelenleg használhatatlan.}
+itmname_sextant2 {Mûködô szextáns}
+itmdescr_sextant2
+{
+Egyedi eszköz a geokoordináták meghatározására. Most, hogy birtokában van egy kronográf a jövôbôl, folyamatosan képes meghatározni a szélességi és hosszúsági fokokat.Nagy pontosságának köszönhetôen 5%-os növekedést érhetsz el a hajó sebességében.Felszerelés esetén növeli a navigációs képesség növekedését.
+}
+itmname_bussol {Iránytû}
+itmdescr_bussol
+{
+Az asztrolábiumot és a hajóiránytût ötvözô hajómûszer. Többek között lehetôvé teszi a földrajzi szélesség folyamatos meghatározását.Felszerelés esetén növeli a navigációs képesség növekedését.
+}
+itmname_clock3 {Alexus' chronometer}
+itmdescr_clock3 {A 20. század közepérôl származó, precíz, automata felhúzással mûködô tengeri kronométer Alexus mester gyûjteményébôl.}
+itmname_talisman1 {Talisman "Rat God"}
+itmdescr_talisman1 {Rats, dogs, and timid children flee from this mask as if from a fire!}
+itmname_talisman2 {Védelmezô 'Jónás'}
+itmdescr_talisman2 {Celtic round cross, named after the prophet who was sacrificed to the raging sea and survived.}
+itmname_talisman3 {Védelmezô 'Thor kalapácsa'}
+itmdescr_talisman3 {A golden pendant shaped like Mjölnir—the hammer of Thor, the Norse god of thunder and lightning.}
+itmname_talisman4 {Védelmezô 'Janicsár'}
+itmdescr_talisman4
+{
+Ottoman Bracer of the Janissary Senior. 
+Increases crew discipline.
+}
+itmname_talisman6 {Védelmezô 'Istennő'}
+itmdescr_talisman6 {Statuette of the goddess Tlazolteotl, the devourer of filth.}
+itmname_talisman7 {Védelmezô 'Skarabeusz'}
+itmdescr_talisman7 {A massive ancient Egyptian ring shaped like a diligent scarab.}
+itmname_talisman8 {Védelmezô 'Skorpió'}
+itmdescr_talisman8
+{
+Medici family brooch shaped like a scorpion. 
+Contains a hidden compartment with a potent antidote.
+}
+itmname_talisman9 {Szent Lajos-rend}
+itmdescr_talisman9 {The most coveted prize of any French captain.}
+itmname_talisman10 {Védelmezô 'Elkapó'}
+itmdescr_talisman10 {Amulet of the Pearl Divers.}
+itmname_talisman11 {Védelmezô 'Varázstárgy'}
+itmdescr_talisman11 {Just a stone with a hole. For luck!}
+itmname_talisman12 {Az ellenálló képesség varázsa}
+itmdescr_talisman12 {A Taíno idol figurine said to ward off illness and the evil eye.}
+itmname_talisman13 {Taino figura}
+itmdescr_talisman13 {A figurine of a Taíno deity, patron of wealth and accumulation.}
+itmname_talisman14 {Védelmezô 'Ranyi'}
+itmdescr_talisman14 {A brooch enchanted by Daoist monks, shaped like a fish with a serpent’s head, helps you travel much faster.}
+itmname_talisman15 {Talisman 'Fekete Piac'}
+itmdescr_talisman15 {The bearer of the Black Spot is instantly surrounded by superstition, legends, and rumors.}
+itmname_talisman16 {Védelmezô 'arany rituális kés'}
+itmdescr_talisman16 {An Aztec golden ritual knife that miraculously escaped being melted down in a Spanish furnace. Perhaps the exquisite craftsmanship of an ancient master gave pause to whoever found this treasure.}
+itmname_talisman17 {Védelmezô 'Liber Misericordiae'}
+itmdescr_talisman17 {A copy of the Holy Scripture that served its owner as something deeply personal, almost like a diary. Many carry a Bible as a beacon and guide, but this book is a literal code of honor.}
+talisman17_quests {Egyházi küldetések: #dQBonus# / 5}
+talisman17_questsNoBonus {Egyházi küldetések: 0 / 5}
+itmname_talisman18 {Védelmezô 'Blackwood's Charter}
+itmdescr_talisman18 {Albert Blackwood’s Personal Code. Details the structure of the Lady Beth, the positioning of marksmen, and the Sea Foxes’ battle tactics. A separate section covers treasure hunting and rewarding skilled shooters with recovered loot.}
+talisman18_Bonus {Talált kincsek : #dQBonus# / 10}
+talisman18_NoBonus {Talált kincsek : 0 / 10}
+itmname_talisman19 {Talisman 'Yorick’s Skull'}
+itmdescr_talisman19
+{
+Mortimer Grim kapitány koponyája a 'Memento', , aki soha nem ismerte fel teljesen a saját halálát. Ismerte ôt, #sName#.
+A holtak tanítják az élôket, és ez az ereklye alkalmazkodik tulajdonosa vágyaihoz.
+Ha a leltáradban van, minden tisztet halhatatlanná tesz.
+}
+talisman19_InSlot
+{
+Egy hajó egyszerre létezik a fátyol mindkét oldalán. A fa élô volt és holt, hogy az élôket szolgálja. A kapitány koponyája 'Memento' emlékeztet minden hajót, hogy a halál nem létezik, és a végsôkig kell harcolni.~Minden 2% of hull lost, ship speed and cannon damage increase by 0.75% és 0,5% után.~Nincs büntetés, többször is aktiválható.
+}
+itmname_talisman20 {Streltsy Sash}
+itmdescr_talisman20 {A bandolier made of several straps, a powder flask, and numerous paper cartridges. It comes in many shapes and uses across European battlefields, but this particular one is a guest from a distant land, adorned with images of fantastical beasts from the harsh Siberian forests.}
+itmname_talisman20_part {Musketeer's Powder Flask}
+itmdescr_talisman20_part {A fanciful powder flask of unusual shape, stamped with images of exotic animals from a distant land. The edges are embroidered with an Eastern European pattern.}
+itmname_totem_01 {Talizmán 'Torkát öntöttvasból'}
+itmdescr_totem_01 {A mug enchanted against drunkenness with a silver bottom.}
+itmname_totem_02 {Talizmán 'Gerincharapó'}
+itmdescr_totem_02 {A fearsome-looking scourge for executions.}
+itmname_totem_03 {Talizmán 'Ámor balzsam'}
+itmdescr_totem_03 {A special ointment in an expensive boutonniere.}
+itmname_totem_04 {Talizmán 'Csatlós'}
+itmdescr_totem_04 {A hand-worn silver bracelet set with turquoise.}
+itmname_totem_05 {Talizmán 'Vashas'}
+itmdescr_totem_05 {A leather belt adorned with protective plates.}
+itmname_totem_06 {Talizmán 'Erősember'}
+itmdescr_totem_06 {Fatigue-relieving boots.}
+itmname_totem_07 {Talizmán 'Vándorénekes'}
+itmdescr_totem_07 {A sweet-voiced lute that sings of sea romance and sets hearts aflame!}
+itmname_totem_08 {Talizmán 'Tûz ura'}
+itmdescr_totem_08 {Megduplázza az ágyúsok kiképzési sebességét.}
+itmname_totem_09 {Talizmán 'Arguzin'}
+itmdescr_totem_09 {A horn whose signals are clearly heard even during a cannonade.}
+itmname_totem_10 {Talizmán 'Özvegycsináló'}
+itmdescr_totem_10 {A merciless, unerring swift Catalan navaja.}
+itmname_totem_11 {Talizmán 'Vámpír'}
+itmdescr_totem_11 {An enchanted copper ring on the right hand steals energy from an opponent through the blade during a duel.}
+itmname_totem_12 {Talizmán 'Egy jaguár fia'}
+itmdescr_totem_12 {A jaguar's claw on a cord worn at the neck will enhance your night vision.}
+itmname_totem_13 {Talizmán 'Joker'}
+itmdescr_totem_13 {A handy card that's always at hand increases the chance of winning at games of chance.}
+itmname_indian_1 {Amulet 'Voodoo baba'}
+itmdescr_indian_1 {A ritual doll — a creepy indigenous artifact.}
+itmname_indian_2 {Amulet 'Lőporvizsgáló'}
+itmdescr_indian_2 {A device for testing the quality of gunpowder.}
+itmname_indian_3 {Amulett 'Rituális Kés'}
+itmdescr_indian_3 {An obsidian sacrificial knife.}
+itmname_indian_4 {Amulet 'Fejsze'}
+itmdescr_indian_4 {A pendant covered in runes.}
+itmname_indian_5 {Amulet 'Tsantsa'}
+itmdescr_indian_5 {A head dried by a special method.}
+itmname_indian_6 {Amulett 'Korallfej'}
+itmdescr_indian_6 {A carved idol made from a piece of coral.}
+itmname_indian_7 {Amulett 'Púpos Ember'}
+itmdescr_indian_7 {A terracotta figurine of a hunchback.}
+itmname_indian_8 {Amulet 'Xiuhtecuhtli'}
+itmdescr_indian_8 {A totem figurine of an Aztec god, lord of fire and master of volcanoes.}
+itmname_indian_9 {Amulet 'Baldo'}
+itmdescr_indian_9 {A Celtic brooch in the shape of a raven.}
+itmname_indian_10 {Amulet 'Cascavella'}
+itmdescr_indian_10 {An enchanted rattlesnake skull.}
+itmname_indian_11 {Amulet 'Ngombo maszk'}
+itmdescr_indian_11 {A ritual mask of the Sibonei people.}
+itmname_amulet_1 {Amulett 'Ngombo pajzs'}
+itmdescr_amulet_1 {A necklace of bones and corals, strengthened by an ngombo spell.}
+itmname_amulet_2 {Amulet 'Euchologion'}
+itmdescr_amulet_2 {A prayer book in a silvered cover.}
+itmname_amulet_3 {Amulett 'Feszület'}
+itmdescr_amulet_3 {A blessed Catholic cross.}
+itmname_amulet_4 {Amulet 'El trozo'}
+itmdescr_amulet_4 {A shard of a rapier extracted from a dead body.}
+itmname_amulet_5 {Amulet 'Sogbo'}
+itmdescr_amulet_5 {A spirit of lightning from the Voodoo pantheon.}
+itmname_amulet_6 {Amulet 'Madonna'}
+itmdescr_amulet_6 {A consecrated locket bearing the image of the Virgin Mary.}
+itmname_amulet_7 {Amulett 'Szentett víz'}
+itmdescr_amulet_7 {A silver flask-pendant filled with holy water.}
+itmname_amulet_8 {Amulett 'Hormon'}
+itmdescr_amulet_8 {A silver charm with an incantation.}
+itmname_amulet_9 {Amulet 'Encolpion'}
+itmdescr_amulet_9 {A massive silver cross with relics of Saint Christopher.}
+itmname_amulet_10 {Amulett 'Csodatevő'}
+itmdescr_amulet_10 {An icon of Saint Nicholas, patron of sailors.}
+itmname_amulet_11 {Amulet 'Cimaruta'}
+itmdescr_amulet_11 {An amulet breathing ancient magic.}
+itmname_obereg_1 {Amulet 'Teredo'}
+itmdescr_obereg_1 {A cypress mask that keeps shipworms away.}
+itmname_obereg_2 {Amulet 'Xochipilli'}
+itmdescr_obereg_2 {A ritual clay vessel of Xochipilli, patron of weavers.}
+itmname_obereg_3 {Amulett 'Majom'}
+itmdescr_obereg_3 {"According to local belief, this alabaster vessel grants strength."}
+itmname_obereg_4 {Amulett 'Cigánys rajongó'}
+itmdescr_obereg_4 {A special Andalusian charm that averts the gaze of interlocutors, allowing one to deceive guards and patrols on land.}
+itmname_obereg_5 {Amulett 'Jáde teknős'}
+itmdescr_obereg_5 {An ancient amulet of the first conquistadors.}
+itmname_obereg_6 {Amulett 'Majmok ökle'}
+itmdescr_obereg_6 {An intricate knot of sturdy rope with a hand-loop.}
+itmname_obereg_7 {Amulett 'Halász'}
+itmdescr_obereg_7 {A charmed fishing hook worn by sailors for luck.}
+itmname_obereg_8 {Amulett 'Kereskedô gyöngyei'}
+itmdescr_obereg_8 {Monastic counting rosary beads made of noble coral.}
+itmname_obereg_9 {Amulet 'Ehecatl'}
+itmdescr_obereg_9 {An ancient bowl shaped like the head of the Aztec wind god.}
+itmname_obereg_10 {Amulett 'Tengerész fülbevaló'}
+itmdescr_obereg_10 {An earring of the helmsman who rounded Cape Horn.}
+itmname_obereg_11 {Amulett 'Zarándok'}
+itmdescr_obereg_11 {Brendan the Sailor's cross.}
+itmname_rat_poison {Arzén}
+itmdescr_rat_poison {Arsenic — a powder smelling of sulfur and resembling talc, used for temporarily exterminating rats aboard ship.}
+itmname_gold {Pezó}
+itmdescr_gold {Az Újvilág ezüstbányáiból vert spanyol dollár volt az elsô világpénz, amelyet mindenütt elfogadtak - de különösen az Újvilágban. Történelmileg a pezó nyolc reálra osztható volt, innen ered a népszerû elnevezésük: 'nyolc darab',.}
+itmname_gold_dublon {Arany dublón}
+itmdescr_gold_dublon {Az Újvilágban bányászott tiszta aranyból vert spanyol dupla escudo érmék. 'Dupla', vagy 'doubloon' rendkívüli módon 100 pesoért kapható Európában, de nem feltétlenül itt a világ végén. Itt a Karib-tengeren a dublónok ritka és értékes árucikknek számítanak. Egy láda dublonnal minden kalóz álma.}
+itmname_chest {Láda}
+itmdescr_chest {Egy lezárt láda, benne 150 spanyol aranydublonnal.}
+itmname_chest_open {Üres láda}
+itmdescr_chest_open {Tipikus láda, amelyet érmék szállítására és biztonságos megôrzésére szántak. Jelenleg sajnos teljesen üres.}
+itmname_icollection {Kincsek}
+itmdescr_icollection {Egy változatos készlet drága aranyból készült, drágakövekkel díszített tárgyakból, amelyek minden ember számára értékesnek számítanak.}
+itmname_purse1 {Táska}
+itmdescr_purse1 {Egy erszény, benne számos aranypénzzel.}
+itmname_purse2 {Nehéz erszény}
+itmdescr_purse2 {Vászon erszény, benne egy jókora halom dublonnal.}
+itmname_purse3 {Szorosan tömött erszény}
+itmdescr_purse3 {Bôséges bôr erszény, tele aranyérmékkel.}
+itmname_jewelry1 {Ametiszt}
+itmdescr_jewelry1 {A recifei bányákból származó drágakô. Az öreg sók szerint megvédi az embert a kemény ivástól, de ha már felemelte a könyökét - a másnaposságtól is.}
+itmname_jewelry2 {Gyémánt}
+itmdescr_jewelry2 {A Dél-Amerika portugál partjainál lévô bányákból származó gyémánt segít a tisztességes embernek az üzletben, de a tolvajoknak, gyilkosoknak és gazembereknek csak bajt hoz.}
+itmname_jewelry3 {Rubin}
+itmdescr_jewelry3 {A rubin ritka lelet a Karib-tengeren. Az egyetlen drágakô, amely ritkaságban és keménységben is felveszi a versenyt a gyémánttal.}
+itmname_jewelry4 {Smaragd}
+itmdescr_jewelry4 {Egy smaragd a híres kolumbiai bányákból. Egyetlen európai vagy afrikai drágakô sem versenyezhet vele tisztaságban.}
+itmname_jewelry5 {Aranyrög}
+itmdescr_jewelry5 {Igazi aranyrög. Hogyan csempészték ki ezt a bányából?! Ha jobban belegondolok... jobb, ha nem gondolkodom ezen túl sokat.}
+itmname_jewelry6 {Ezüströg}
+itmdescr_jewelry6 {Egy ezüströg, amit valami spanyol bányából loptak el az Andokban.}
+itmname_jewelry7 {Kék borostyán}
+itmdescr_jewelry7 {Egy hihetetlenül ritka borostyánfajta, amely csak Hispaniola szigetén található. Az európai ékszerészek hajlandóak túlzó árat fizetni érte.}
+itmname_jewelry8 {Borostyán}
+itmdescr_jewelry8 {A borostyán elég szép a megkövesedett fa nedvének. A múltat tanulmányozó emberek számára is hasznos, feltéve, hogy nem esnek túlságosan bele a kísérletezésbe.}
+itmname_jewelry9 {Füstös kvarc}
+itmdescr_jewelry9 {Gyakran használják az alkimisták a bölcsek kövének keresése során. Ez a gyászkô megteremti a kapcsolatot a túlvilággal, és jelentôsen kiemeli a jellemvonásokat - a jókat és a rosszakat egyaránt.}
+itmname_jewelry10 {Platina rúd}
+itmdescr_jewelry10 {Tiszta perui platinából készült rúd. A spanyolok alábecsülték ezt a fantasztikusan értékes fémet, mivel magas az olvadáspontja, és általában 'tisztaságú' aranyban találták meg, amit bányásztak, innen a neve - 'kicsi ezüst'..}
+itmname_jewelry11 {Meteorit}
+itmdescr_jewelry11 {Ritka szerencse! Egy vendég a világûrbôl, amelynek sikerült túlélnie a Föld sûrû légkörét.}
+itmname_jewelry12 {Rézrög}
+itmdescr_jewelry12 {A nyugat-spanyolországi Main bányáiból kiolvasztott rézrúd.}
+itmname_jewelry13 {Vasrúd}
+itmdescr_jewelry13 {Egy vasrúd. Egy kés vagy egy patkó gyakori kezdete.}
+itmname_jewelry14 {Tûzopál}
+itmdescr_jewelry14 {Új-Spanyolországban bányászott tûzopál. Csak az Újvilágban található meg, ezért Európában nagy becsben tartják.}
+itmname_jewelry15 {Akvamarin}
+itmdescr_jewelry15 {A tengerészek úgy vélik, hogy ez a tengervíz színû drágakô képes lecsendesíteni a viharokat és gyôzelmet hozhat a tengeri csatákban. Arany foglalatban is nagyon szépen mutat.}
+itmname_jewelry16 {Opál}
+itmdescr_jewelry16 {Az igazi opálok nagyon ritkán fordulnak elô, ezért más drágakövekhez képest drágábbak lehetnek.}
+itmname_jewelry17 {Jacinth}
+itmdescr_jewelry17 {A vérvörös cirkon a boldogtalan, szívszorító szerelem köve. A régi asszonyok állítása szerint ez a kô a színészi tehetség kibontakozását is segíti tulajdonosának.}
+itmname_jewelry18 {Krizopráz}
+itmdescr_jewelry18 {Tízbôl kilenc orvos azt állítja, hogy ez a kô növelheti a férfi állóképességét.}
+itmname_jewelry19 {Korall}
+itmdescr_jewelry19 {Úgy tartják, hogy a vörös korall megvédi tulajdonosát az esetleges erôszakos cselekményektôl. Csiszolva és foglalva a korall nagyon népszerû a Földközi-tenger partvidékérôl származók körében.}
+itmname_jewelry20 {Türkiz}
+itmdescr_jewelry20 {A türkiz a hûség és a nemesség köve. Az ôsi harcosok kardjaik markolatát díszítették vele, a maják és az aztékok pedig ugyanolyan nagyra becsülték, mint a jádét.}
+itmname_jewelry21 {Azurit}
+itmdescr_jewelry21 {Azurit az új-spanyolországi bányákból. Nevezik az 'celestial' kônek is, mert a sötétkék háttérben aranyszínû pirit-besülések bonyolult játéka olyan, mint a csillagok csillogása az éjszakai égbolton. Sok indián törzs szentnek tartotta ezt a követ.}
+itmname_jewelry22 {Jáde}
+itmdescr_jewelry22 {A jáde a harcosok nemes köve. Az aztékok és a maják az európaiak érkezése elôtt a jádét tartották a gazdagság igazi szimbólumának - nem az ezüstöt vagy az aranyat.}
+itmname_jewelry23 {Krizoberil}
+itmdescr_jewelry23 {Portugál bányákból származó értékes sárga kô. A szerencsejátékosok kövének tartják, amely szerencsét hozhat nekik.}
+itmname_jewelry24 {Medál kámeával}
+itmdescr_jewelry24 {Rendkívül szép medál kameával, gyönggyel és gyémántokkal. A munka bonyolultsága arra enged következtetni, hogy ezt egy ismert európai ékszerész készítette. Ilyen magas színvonalú mesterek még nincsenek itt a Karib-térségben.}
+itmname_jewelry25 {Fülbevaló kameával}
+itmdescr_jewelry25 {Gyönyörû fülbevaló kameával, gyönggyel és gyémántokkal. A munka bonyolultsága arra enged következtetni, hogy ezt egy ismert európai ékszerész készítette. Itt a Karib-térségben még nincsenek ilyen magas színvonalú mesterek.}
+itmname_jewelry26 {Karkötô kameával}
+itmdescr_jewelry26 {Rendkívül szép karkötô kámeával, gyönggyel és gyémántokkal. A munka bonyolultsága arra enged következtetni, hogy ezt egy ismert európai ékszerész készítette. Ilyen magas színvonalú mesterek még nincsenek itt a Karib-térségben.}
+itmname_jewelry27 {Rubin gyûrû}
+itmdescr_jewelry27 {Egy masszív ezüst gyûrû, amelyet egy nagy rubin díszít. Úgy néz ki, mintha az egyik régi mester munkája lenne. Talán valakinek a családi öröksége.}
+itmname_jewelry28 {Zafír gyûrû}
+itmdescr_jewelry28 {Egy hatalmas zafírral díszített masszív ezüstgyûrû. Úgy néz ki, mintha az egyik régi mester munkája lenne. Talán valakinek a családi öröksége.}
+itmname_jewelry29 {Türkiz gyûrû}
+itmdescr_jewelry29 {Egy hatalmas türkizkékkel díszített masszív ezüstgyûrû. Úgy néz ki, mintha az egyik régi mester munkája lenne. Talán valakinek a családi öröksége.}
+itmname_jewelry30 {Arany rituális kés}
+itmdescr_jewelry30 {Egy arany azték rituális kés, amely a véletlen folytán megmenekült attól, hogy a spanyolok beolvasztják. Talán a konquistadort, aki megtalálta, ugyanúgy lenyûgözte ennek az ôsi mesternek a csodálatra méltó munkája, mint téged.}
+itmname_jewelry31 {Arany temetési maszk}
+itmdescr_jewelry31 {Egy arany maja rituális maszk, amely egy szerencsés véletlennek köszönhetôen elkerülte az olvadást. Talán a hódítót, aki megtalálta, ugyanúgy lenyûgözte ennek az ôsi mesternek a csodálatra méltó munkája, mint Önt.}
+itmname_jewelry32 {Arany karkötô}
+itmdescr_jewelry32 {Egy arany azték karkötô tollas kígyó alakban, amely egy szerencsés véletlennek köszönhetôen elkerülte az olvadást. Talán a hódítót, aki megtalálta, ugyanúgy lenyûgözte ennek az ôsi mesternek a csodálatra méltó munkája, mint Önt.}
+itmname_jewelry33 {Arany kehely}
+itmdescr_jewelry33 {Egy csodálatra méltó kézmûvesmunkával készült arany kehely, amely a szentségtartónak készült. Bármelyik katedrális szívesen tartana ilyet.}
+itmname_jewelry34 {Azurit feszület}
+itmdescr_jewelry34 {Egy masszív arany feszület, közepén egy nagy azurittal. Egy ilyen értékes darab csakis egy püspök vagy érsek tulajdonában lehet.}
+itmname_jewelry35 {Arany füstölô}
+itmdescr_jewelry35 {Tiszta aranyból készült nehéz füstölô. Egy gyarmati plébánián egy ilyen gyönyörû edény eléggé oda nem illônek tûnne.}
+itmname_jewelry36 {Drága gyûrû}
+itmdescr_jewelry36 {Aranygyûrû, nagy akvamarin, amelyet drágakövek által ábrázolt virágokból álló bonyolult díszítés díszít. Ez az egyedi ékszer egy vagyonba kerülhetett. Királyi ajándék lenne.}
+itmname_jewelry37 {Drága bross}
+itmdescr_jewelry37
+{
+Arany bross, amelyet szôlôfürtöt ábrázoló drágakövek díszítenek. Ez az egyedi ékszer egy vagyonba kerülhet. Királyi ajándék lenne.itmname_jewelry38
+}
+itmname_jewelry38 {A precious ring.}
+itmdescr_jewelry38 {Nagy gyémánttal és smaragdokkal díszített aranygyûrû. Ez az egyedi ékszer egy vagyonba kerülhet. Királyi ajándék lenne.}
+itmname_jewelry39 {Drága medál}
+itmdescr_jewelry39 {Egy arany medál, amelyet gyémántok és egy antik témájú zománcfestmény díszít. Ez az egyedi ékszer egy vagyonba kerülhetett. Királyi ajándék lenne.}
+itmname_jewelry40 {Smaragdgyûrû}
+itmdescr_jewelry40 {Egy hatalmas aranygyûrû, amelyet egy nagy nyers smaragd díszít. Kissé nyers, de mégis drága termék. A helyi ékszerészek készíthették egy fontos szívességért cserébe.}
+itmname_jewelry41 {Rubin szalag}
+itmdescr_jewelry41 {Egy gyönyörû aranygyûrû rubinnal nagyon boldoggá tehet egy igénytelen ízlésû lányt.}
+itmname_jewelry42 {Smaragd gyöngyök}
+itmdescr_jewelry42 {A kabokokból készült gyöngyök, amelyek nem mentek át a Spanyolországba való szállításhoz szükséges minôségi ellenôrzésen, akár egy tehetôs hölgy mellkasát is díszíthetik.}
+itmname_jewelry43 {Drágaköves medál}
+itmdescr_jewelry43 {Egy nagy, csiszolatlan drágakövekkel díszített arany medál remekmûnek tûnhet egy ízlés és ékszerkészítési ismeretek nélküli, faragatlan férfi számára.}
+itmname_jewelry44 {Hódító karkötô}
+itmdescr_jewelry44 {Aranydarabokból készült karkötô, amelyet egy lószôrbôl szôtt zsinórra kötöttek össze. Azt mondják, hogy az arany ilyen hordozásának szokását a konkvisztádorok találták ki célszerûségbôl.}
+itmname_jewelry45 {Arany feszület}
+itmdescr_jewelry45 {Egy ilyen arany feszület türkizkékkel jól állna egy szép szôke, kék szemû, tisztességes családból származó lánynak.}
+itmname_jewelry46 {Arany szalag}
+itmdescr_jewelry46 {Egy aranygyûrû egy kis szodalit kristállyal. Szerény, de ízléses.}
+itmname_jewelry47 {Korall karkötô}
+itmdescr_jewelry47 {Egy vörös korallokból készült karkötô ezüst betétekkel díszíthetné valakinek a szôrös csuklóját.}
+itmname_jewelry48 {Ezüst szalag}
+itmdescr_jewelry48 {Egy egyszerû ezüst gyûrû virágos díszítéssel. Jobb, mint a semmi.}
+itmname_jewelry49 {Jáde gyöngyök}
+itmdescr_jewelry49 {A jáde gyöngyök az indián squaw-k álma, akik ritkán kapják meg a törzsük férfitagjaitól a kívánt figyelmet.}
+itmname_jewelry50 {Jáde szalag}
+itmdescr_jewelry50 {Egy tömör jáde darabból vágott gyûrû. A kézmûves, aki ezt készítette, olyan türelmes lehetett, mint a bibliai Jób.}
+itmname_jewelry51 {Pezó fülbevaló}
+itmdescr_jewelry51 {Rögtönzött fülbevaló, amely egy átlyuggatott ezüst pezóból készült. Kalózos hangulatot kölcsönöz viselôjének. Ráadásul a kocsmában a számlát is ki lehet vele fizetni!}
+itmname_jewelry52 {Nagy gyöngy}
+itmdescr_jewelry52 {Tökéletes formájú és csillogású nagy gyöngy; ritka ajándék a tengerbôl. Ez az irizáló ékszer több mint száz éves lehet.}
+itmname_jewelry53 {Kis gyöngy}
+itmdescr_jewelry53 {Egy kedves kis gyöngy.}
+itmname_meteorite {Nagy meteorit szilánk}
+itmdescr_meteorite {Ritka szerencse! Egy vendég az ûrbôl, amelynek sikerült túlélnie a Föld sûrû légkörét. Nagy és nagyon nehéz...}
+itmname_patent_england {Angol szabadalom}
+itmdescr_patent_england {A Lord Protektor gyarmati hivatala által kiadott szabadalom, amely igazolja, hogy Anglia szolgálatában állsz. Ez bizonyos kötelezettségeket ró rád, amelyek az országod érdekeinek védelmével és a hajód szabályszerû karbantartásával kapcsolatosak.}
+itmname_patent_holland {Holland szabadalom}
+itmdescr_patent_holland {A Holland Nyugat-indiai Társaság igazgatótanácsa által kiállított szabadalom, amely megerôsíti, hogy Ön a Holland Egyesült Tartományok szolgálatában áll. Ez bizonyos kötelezettségeket ró Önre az országa érdekeinek védelmével és hajójának szabályszerû karbantartásával kapcsolatban.}
+itmname_patent_france {Francia szabadalom}
+itmdescr_patent_france {XIV. Lajos Lajos ôfelsége gyarmati hivatala által kiállított szabadalom, amely megerôsíti, hogy Ön Franciaország szolgálatában áll. Ez bizonyos kötelezettségeket ró Önre az országa érdekeinek védelmével és hajója szabályszerû fenntartásával kapcsolatban.}
+itmname_patent_spain {Spanyol szabadalom}
+itmdescr_patent_spain {A IV. Fülöp Fülöp ôfelsége gyarmati hivatala által kiállított szabadalom megerôsíti, hogy Ön Spanyolország szolgálatában áll. Ez bizonyos kötelezettségeket ró Önre az országa érdekeinek védelmével és hajójának szabályszerû fenntartásával kapcsolatban.}
+itmname_map_bad {Olcsó térkép}
+itmdescr_map_bad {Az Újvilág korai felfedezôi által készített térkép, amelyet Genovában nyomtattak évtizedekkel ezelôtt. A pergamenre rajzolt szigetek homályos körvonalai az idô múlásával megsárgultak, és nem teszik lehetôvé a pontos helyük meghatározását.}
+itmname_EngTradeLicence {Angol kereskedelmi engedély}
+itmdescr_EngTradeLicence {Lehetôvé teszi, hogy angol városokat és kikötôket látogass meg kereskedelmi és egyéb békés célokra. Kiadva #sAction_date# és érvényes #sValidity#.}
+itmname_FraTradeLicence {Francia kereskedelmi engedély}
+itmdescr_FraTradeLicence {Lehetôvé teszi a francia városok és kikötôk felkeresését kereskedelmi és egyéb békés célokra. Kiadva #sAction_date# és érvényes #sValidity#.}
+itmname_SpaTradeLicence {Spanyol kereskedelmi engedély}
+itmdescr_SpaTradeLicence {Lehetôvé teszi, hogy spanyol városokat és kikötôket látogass meg az Újvilágban kereskedelmi és egyéb békés céllal. Kiadva #sAction_date# és érvényes #sValidity#.}
+itmname_HolTradeLicence {A Holland Nyugat-indiai Társaság engedélye}
+itmdescr_HolTradeLicence {Lehetôvé teszi, hogy minden kolónia városait és kikötôit meglátogasd kereskedelmi és egyéb békés célokra. Kiadva #sAction_date# és érvényes #sValidity#.}
+itmname_MapsAtlas {Térképészeti atlasz}
+itmdescr_MapsAtlas {A Karib-tenger és a spanyol fôsziget különbözô területeinek térképeinek válogatása. Ezen értékes pergamendarabok nélkül szinte lehetetlen az Újvilágban utazni.}
+itmname_Map_Best {Kiváló térkép}
+itmdescr_Map_Best {A legendás angol kalandor, Sir Francis Drake rendkívül pontos térképének másolata. Szinte minden rajta van, amire egy tengeri kutyának szüksége lehet.}
+itmname_map_normal {Hétköznapi térkép}
+itmdescr_map_normal {Ezt a térképet egy kereskedôcsoport állította össze. A nagyobb városok nevei és a szigetek pontos koordinátái mindaz, amire egy közönséges kapitánynak szüksége van a karibi térségben folytatott kereskedelemhez.}
+itmname_map_beliz {Beliz térképe}
+itmdescr_map_beliz {Beliz városát és környékét ábrázoló térkép.}
+itmname_map_santa {Blueweld térképe}
+itmdescr_map_santa {Blueweld városát és környékét ábrázoló térkép.}
+itmname_map_bermudas {Isla del Tesoro térképe}
+itmdescr_map_bermudas {Az Isla del Tesoro összes útvonalát és települését ábrázoló térkép.}
+itmname_map_jam {Jamaica térképe}
+itmdescr_map_jam {Jamaica szigetének összes útvonalát és települését ábrázoló térkép.}
+itmname_map_cuba {Kuba térképe}
+itmdescr_map_cuba {A Kuba szigetén található összes útvonalat és települést ábrázoló térkép.}
+itmname_map_hisp {Hispaniola térképe}
+itmdescr_map_hisp {A Hispaniola kalózsziget városait és eldugott helyeit ábrázoló térkép.}
+itmname_map_antigua {Antigua térképe}
+itmdescr_map_antigua {Antigua szigetének vázlatos, használatra elég jó térképe.}
+itmname_map_barbados {Barbados térképe}
+itmdescr_map_barbados {Barbados szigetének alaprajzát ábrázoló térkép.}
+itmname_map_cayman {Kajmán-szigetek térképe}
+itmdescr_map_cayman {A lakatlan Kajmán-szigetek térképe.}
+itmname_map_Curacao {Curacao térképe}
+itmdescr_map_Curacao {Curacao szigetének durva, de utazásra még alkalmas térképe.}
+itmname_map_guad {Guadeloupe térképe}
+itmdescr_map_guad {Guadeloupe pontos térképe.}
+itmname_map_TORTUGA {Tortuga térképe}
+itmdescr_map_TORTUGA {Tortuga részletes térképe.}
+itmname_map_dominica {Dominika térképe}
+itmdescr_map_dominica {Dominika lakatlan szigetének térképe.}
+itmname_map_martiniqua {Martinique térképe}
+itmdescr_map_martiniqua {Martinique szigetének kiváló térképe.}
+itmname_map_trinidad {Trinidad térképe}
+itmdescr_map_trinidad {Trinidad ikerszigetének térképe.}
+itmname_map_nevis {Szent Kristóf térképe}
+itmdescr_map_nevis {Szent Kristóf térképe.}
+itmname_map_sm {St. Martin térképe}
+itmdescr_map_sm {Szent Márton térképe.}
+itmname_map_terks {Törökország térképe}
+itmdescr_map_terks {Ismeretlen kéz által rajzolt térkép a vad Turks-szigetekrôl.}
+itmname_map_maine_1 {Új-Granada térképe, központ}
+itmdescr_map_maine_1 {Térkép Új-Granada egy részének térképérôl a spanyol fôfolyón, amelyen Gartagena és Maracaibo városok kiemelkedô helyen szerepelnek.}
+itmname_map_maine_2 {Caracas térképe}
+itmdescr_map_maine_2 {A spanyol fôfolyó nagy részét ábrázoló térkép .}
+itmname_map_panama {New Granada, Nyugat térképe}
+itmdescr_map_panama {A panamai földszoros térkép.}
+itmname_map_cumana {Cumana térképe}
+itmdescr_map_cumana {A spanyol fôfolyó egy részleges térképe Cumana városával a középpontban.}
+itmname_map_puerto {Puerto Rico térképe}
+itmdescr_map_puerto {Puerto Rico szigetét ábrázoló térkép.}
+itmname_mapQuest {Kincses térkép}
+itmdescr_mapQuest {Ez a térkép jelzi az elásott kincsek helyét. Tényleg ott van? Csak úgy lehet megtudni, ha megtaláljuk, hol 'X' jelöli a helyet.}
+itmname_map_full {Kincses térkép}
+itmdescr_map_full {Ez a térkép jelzi az elásott kincsek helyét. Tényleg ott van? Csak úgy lehet megtudni, ha megtaláljuk, hol 'X' jelöli a helyet.}
+itmname_map_part1 {Egy kincses térkép része}
+itmdescr_map_part1 {Egy kincses térkép egy része. Ahhoz, hogy kiderítsük, hová vezet, meg kell találnunk a térkép többi darabját.}
+itmname_map_part2 {Egy kincses térkép része}
+itmdescr_map_part2 {Egy kincses térkép egy része. Ahhoz, hogy kiderítsük, hová vezet, meg kell találnunk a térkép többi darabját.}
+itmname_map_LSC {Az elhagyott hajók városának térképe}
+itmdescr_map_LSC {Az Elhagyott Hajók Városában minden újonnan érkezett reménytelenül elveszett egy ilyen térkép nélkül.}
+itmname_A_map_beliz {Excellent map of Belize}
+itmdescr_A_map_beliz {Egy rendkívül pontos térkép Beliz környékérôl. A hátoldalon a térképész neve szerepel - Jose Dios.}
+itmname_A_map_santa {Blueweld kiváló térképe}
+itmdescr_A_map_santa {Blueweld környékének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_bermudas {Isla del Tesoro kiváló térképe}
+itmdescr_A_map_bermudas {Isla del Tesoro rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_jam {Jamaika kiváló térképe}
+itmdescr_A_map_jam {Jamaica szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_cuba {Kuba kiváló térképe}
+itmdescr_A_map_cuba {Kuba szigetének rendkívül pontos térképe. A hátoldalon a térképész neve: Jose Dios.}
+itmname_A_map_hisp {Hispaniola kitûnô térképe}
+itmdescr_A_map_hisp {Hispaniola szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_antigua {Antigua kiváló térképe}
+itmdescr_A_map_antigua {Antigua szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_barbados {Barbados kiváló térképe}
+itmdescr_A_map_barbados {Barbados szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_cayman {Kajmán-szigetek kiváló térképe}
+itmdescr_A_map_cayman {A Kajmán-szigetek rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_Curacao {Curacao kiváló térképe}
+itmdescr_A_map_Curacao {Curacao szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_guad {Guadeloupe kiváló térképe}
+itmdescr_A_map_guad {Guadeloupe szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_TORTUGA {Tortuga kiváló térképe}
+itmdescr_A_map_TORTUGA {Tortuga szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_dominica {Dominika kiváló térképe}
+itmdescr_A_map_dominica {Dominika szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_martiniqua {Martinique kiváló térképe}
+itmdescr_A_map_martiniqua {Martinique szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_trinidad {Trinidad kiváló térképe}
+itmdescr_A_map_trinidad {Trinidad szigeteinek rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_nevis {Szent Kristóf kiváló térképe}
+itmdescr_A_map_nevis {Szent Kristóf szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_sm {Szent Márton kitûnô térképe}
+itmdescr_A_map_sm {Szent Márton szigetének rendkívül pontos térképe. A hátoldalon a térképész neve: Jose Dios.}
+itmname_A_map_terks {Törökország kiváló térképe}
+itmdescr_A_map_terks {Egy rendkívül pontos térkép Turks szigetérôl. A hátoldalon a térképész neve: Jose Dios.}
+itmname_A_map_maine_1 {Új-Granada kiváló térképe, központ}
+itmdescr_A_map_maine_1 {Egy rendkívül pontos térkép Új-Granada központjáról. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_maine_2 {Caracas kiváló térképe}
+itmdescr_A_map_maine_2 {Caracas környékének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_panama {New Granada kitûnô térképe, Nyugat}
+itmdescr_A_map_panama {Rendkívül pontos térkép a Panamai földszorosról. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_cumana {Cumana kiváló térképe}
+itmdescr_A_map_cumana {Egy rendkívül pontos térkép Cumana környékérôl. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_puerto {Puerto Rico kiváló térképe}
+itmdescr_A_map_puerto {Puerto Rico szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_A_map_perl {Providence kiváló térképe}
+itmdescr_A_map_perl {Providence szigetének rendkívül pontos térképe. A hátoldalon a térképész neve - Jose Dios.}
+itmname_map_half_beatriss {Sharp térképének fele}
+itmdescr_map_half_beatriss {A legendás térkép fele, amely egykor Beatrice, Helen McArthur édesanyja tulajdonában volt.}
+itmname_map_half_blaze {Sharp térképének fele}
+itmdescr_map_half_blaze {A legendás térkép fele, amely egykor Blaze Sharpé volt.}
+itmname_map_sharp_full {Nicholas Sharp térképe}
+itmdescr_map_sharp_full {Isla del Tesoro teljes térképe, amelyet a két fél egyesítésével állítottak össze. A birtokos birtokában van a sziget tulajdonjogának bizonyítéka.}
+itmname_LSC_navigation_map {Útvonal az elhagyott hajók városába.}
+itmdescr_LSC_navigation_map
+{
+Ezen térképek nélkül lehetetlen eljutni az Igazság Szigetére.Észak 24`21 és nyugat 84`50.
+}
+itmname_RingCapBook {'Santa Lucia' hajónapló}
+itmdescr_RingCapBook
+{
+Hajónapló a csipkébôl 'Santa Lucia'. Érdemes elolvasni - a bejegyzések a hajó haláláig tartanak.
+}
+itmname_leather_bag {Grippack}
+itmdescr_leather_bag {Egy bordélyházból megszökött lány bôröndje. Tartalmaz némi pénzt, iratokat, egy tisztességes ruhát és néhány más személyes holmit. Meglehetôsen szánalmas módon maga a bôrönd nehezebb, mint a tartalma.}
+itmname_sicretLetter {Titkos küldemény.}
+itmdescr_sicretLetter {A #sCity#kormányzója számára összeállított dokumentumcsomag. #sMayor# a lehetô leghamarabb várja.}
+itmname_letter_1 {Lepecsételt levél}
+itmdescr_letter_1 {A levél le van pecsételve. Ahhoz, hogy megtudjuk a tartalmát, el kell olvasni, de elôbb fel kell törni a pecsétet.}
+itmdescr_letter_1_Fadey {Fadey, a moszkovita kérvénye, melyben az indián bûnözô, Tichingitu kegyelmét kéri.}
+itmdescr_letter_SharkGoldFleet_1 {A caracasi kikötôi hatóság vezetôjének lepecsételt levelezése. Személyesen kell átadni a Porto Bello-i kikötôi hatóság vezetôjének.}
+itmname_letter_2 {Lepecsételt levél}
+itmdescr_letter_2 {A levél le van pecsételve. Ahhoz, hogy megtudjuk a tartalmát, el kell olvasni, de elôbb fel kell törni a pecsétet.}
+itmdescr_letter_SharkGoldFleet_2 {A Porto Bello kikötôi hatóság vezetôjének lepecsételt válasza - visszaigazolás. Személyesen kell átadni a caracasi kikötôi hatóság vezetôjének.}
+itmdescr_letter_2_PortmanLevelUp1 {Fontos kormányzati küldemény.}
+itmdescr_letter_2_PortmanLevelUp2 {Friss árlista a karibi térség összes boltja számára.}
+itmdescr_letter_2_PortmanLevelUp3 {Üzleti dokumentáció, amely információkat tartalmaz a folyamatban lévô valutaárfolyamokról és a készletekrôl.}
+itmname_letter_open {Megnyílt levél}
+itmdescr_letter_open {A levél úgy néz ki, mintha már felbontották és elolvasták volna. Remélhetôleg a címzett nem veszi észre.}
+itmdescr_letter_open_usurer {Kötelezô levél Folke Deluc számára.}
+itmname_Malyava {Levél a börtönbôl}
+itmdescr_Malyava {A tolvaj levele.}
+itmname_PostLetters {Posta kézbesítésre}
+itmdescr_PostLetters {Lepecsételt levelek és egyéb iratok.}
+itmname_letter_consumption {Levél a San Jose-i parancsnok részére}
+itmdescr_letter_consumption
+{
+A termést nagyrészt betakarították - ez a megállapodásunk második része. A harmadik részt majd a végén intézzük el, a szokásos módon. Öröm volt önnel üzletelni - remélem, nem utoljára.J.
+}
+itmname_letter_church {Lezárt levél}
+itmdescr_letter_church {Egy egyházi küldemény. Ezt minél hamarabb kézbesíteni kell a címzettnek.}
+itmname_prayer_book {Imakönyvek}
+itmdescr_prayer_book {Egy halom imakönyv. Ezeket a lehetô leghamarabb el kell juttatni a címzetthez.}
+itmname_ContraPostLetters {Postai levelezés}
+itmdescr_ContraPostLetters {Lezárt levelek és egyéb dokumentumok. Ezeket a lehetô leghamarabb el kell juttatni Ôkegyelmességének.}
+itmname_letter_svenson {Jan Svenson levele}
+itmdescr_letter_svenson {Jan Svenson lepecsételt levele Steve Dodson-Shark számára.}
+itmname_letter_chad {Megnyílt levél}
+itmdescr_letter_chad {Találtunk egy megbízható mesterlövészt. Most már csak a megígért puskaporos csövet várjuk, és az engedélyt a célpont likvidálására.}
+itmdescr_letter_adolf
+{
+'Amikor végeztél mindennel, amiben megállapodtunk, térj vissza az új kabinodba, és várj meg minket. Éjfélkor jövünk a kulcsért.M.'
+}
+itmdescr_letter_adolf_1
+{
+'Marcello, kétszer akkora összegben állapodtunk meg, mint amekkorát átadtál nekem. A karabély sokkal többet ér, és ezt te is tudod. Ha nem fizeted ki a maradékot, az admirális azonnal tudomást szerez a Kapperrel való üzletelésedrôl a 'Eva'.oldalon.Adolf.'
+}
+itmdescr_letter_aeva
+{
+Nincs is jobb hely, mint 'Eva'. Mostanában Cecille állandóan a másik öreggel, Orelie-vel lóg, vagy a kocsmában van, így a raktér üres. És ha valaki hirtelen felbukkan, akkor egy kis ivászat sem árt, nem igaz?Marcello.
+}
+itmdescr_letter_valet {Egy szórakoztató levél David Fackmannak, alias 'Knave-nek címezve.'.}
+itmname_letter_chad_1 {Megnyílt levél}
+itmdescr_letter_chad_1 {Chad Kapper levele Mary Caspernek címezve.}
+itmdescr_letter_facio {Giuseppe Fazio magyarázó levele.}
+itmdescr_letter_axel
+{
+Chad, megnéztem a készletemet, ahogy kérted. Csak egy hordó ír whiskyt találtam. Ez egy régi maláta, a neve 'Bushmills'. Ha a 100 dublonnás ár megfelel neked, gyere át és vedd meg.Axel.
+}
+itmdescr_letter_vargant
+{
+Ha a terv nem válik be, megvárlak téged és Dávidot a Sabu-Matila öbölben a 'Centurion'. fedélzetén, a bátyámért a fejeddel felelsz. Tedd, amit mond, mintha a helyemben lenne. Eszedbe se jusson kihívni magát Tyrexet - ô mindkettôtöket pillanatok alatt darabokra vág.Jackman.
+}
+itmname_letter_parol {Megjegyzés}
+itmdescr_letter_parol {Felhívjuk figyelmét, hogy a tulajdonos megváltoztatta a jelszót, hogy bejusson a bányába. Az új jelszó 'NeptunNeptun'..}
+itmdescr_letter_ouster
+{
+A régi hely már nem biztonságos. Az angolok rájöttek valamire. Egy hétig várom a rakománnyal az északi 12 fok 1 perc és nyugati 60 fok 11 perc alatt. Ezúttal ne hagyj cserben! M.R.
+}
+itmdescr_letter_parol_FMQP {Ugo befejezetlen levele Don Domingo Albalate-nek.}
+itmname_letter_mine {Dokumentumok a bányához}
+itmdescr_letter_mine {Dokumentumok, amelyek szerint egy bizonyos 'Sir Lawrence Beltrop' nevû Port Royal-i fickó hivatalosan is birtokolja az elhagyott bányát.}
+itmname_letter_jess {Letépett oldal}
+itmdescr_letter_jess {Egy oldal Jessica Rose naplójából.}
+itmname_letter_beatriss {Régi levél}
+itmdescr_letter_beatriss {Beatrice Sharp levele a bátyjának, Blaze-nek.}
+itmname_letter_baker {Írásos tanúvallomás}
+itmdescr_letter_baker {Raymond Baker, St. Jones egykori hóhérjának dokumentált vallomása.}
+itmdescr_letter_pinett {Bertrand Pinette végrendelete a Basse-Terre-i bankár illegális mûveleteirôl.}
+itmname_Cromvel_depeshe {Cromwell küldeménye}
+itmdescr_Cromvel_depeshe
+{
+...parancs, hogy találkozzanak a konvojjal, erôsítsék meg és kísérjék Új-Hollandia partjaihoz. A röghöz kötött hollandok saját szemükkel gyôzôdjenek meg az angol haditengerészet erejérôl.A századnak a #sDay#.#sMonth#.#sYear# 18 gr. 40' északra és 72 gr. 10' nyugatra kell érkeznie.
+}
+itmname_specialletter {Levél}
+itmdescr_specialletter {Egy lepecsételt levél. Az olvasáshoz elôbb fel kell törni a pecsétet.}
+itmdescr_specialletter_mishelle {Michel de Monper levele Charles de Maure-nak.}
+itmdescr_specialletter_vinsento {Vincento atya, Santiago inkvizítora levele Charles de Maure-nak.}
+itmdescr_specialletter_dichoso {Miguel Dichoso levele Arturo Lopezhez.}
+itmname_recipe_powder_pellet {Utasítás}
+itmdescr_recipe_powder_pellet {Utasítás a villanófegyveres petárdák készítésére.}
+itmname_recipe_grenade {Utasítás}
+itmdescr_recipe_grenade {Utasítás egy gránát elkészítésére.}
+itmname_recipe_harpoon {Utasítás}
+itmdescr_recipe_harpoon {Utasítás a szigonynyíl készítésére.}
+itmname_recipe_GunEchin {Utasítás}
+itmdescr_recipe_GunEchin {Útmutató arra vonatkozóan, hogyan kell szögszerû repesztöltetet készíteni a szögek fejének és darabjainak felhasználásával.}
+itmname_recipe_potion2 {Elixír recept}
+itmdescr_recipe_potion2 {A gyógyító elixír elkészítéséhez szükséges összes információt tartalmazó recept.}
+itmname_recipe_potion3 {Ellenszer recept}
+itmdescr_recipe_potion3 {Az ellenszer elkészítéséhez szükséges összes információt tartalmazó recept.}
+itmname_recipe_potion4 {Keverék recept}
+itmdescr_recipe_potion4 {Egy recept, amely tartalmazza a keverék elkészítéséhez szükséges összes információt.}
+itmname_recipe_berserker_potion {Ometochli tinktúra receptje}
+itmdescr_recipe_berserker_potion {Az Ometochli tinktúra elkészítéséhez szükséges összes információt tartalmazó recept.}
+itmname_recipe_totem_01 {Talizmán recept}
+itmdescr_recipe_totem_01 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Vasöntvény torka'.}
+itmname_recipe_totem_02 {Talizmán recept}
+itmdescr_recipe_totem_02 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Spinebiter'.}
+itmname_recipe_totem_03 {Talizmán recept}
+itmdescr_recipe_totem_03 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Cupid's Balm'.}
+itmname_recipe_totem_04 {Talizmán recept}
+itmdescr_recipe_totem_04 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Myrmidon'.}
+itmname_recipe_totem_05 {Talizmán recept}
+itmdescr_recipe_totem_05 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Vas köldök'.}
+itmname_recipe_totem_06 {Talizmán recept}
+itmdescr_recipe_totem_06 {Egy recept, amely minden szükséges információt tartalmaz a talizmán elkészítéséhez 'Stayer'.}
+itmname_recipe_totem_07 {Talizmán recept}
+itmdescr_recipe_totem_07 {Egy recept, amely minden szükséges információt tartalmaz a talizmán elkészítéséhez 'Minstrel'.}
+itmname_recipe_totem_08 {Talizmán recept}
+itmdescr_recipe_totem_08 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Tûz ura'.}
+itmname_recipe_totem_09 {Talizmán recept}
+itmdescr_recipe_totem_09 {Egy recept, amely minden szükséges információt tartalmaz a talizmán elkészítéséhez 'Arguzin'.}
+itmname_recipe_totem_10 {Talizmán recept}
+itmdescr_recipe_totem_10 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Widowmaker'.}
+itmname_recipe_totem_11 {Talizmán recept}
+itmdescr_recipe_totem_11 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Ghoul'.}
+itmname_recipe_totem_12 {Talizmán recept}
+itmdescr_recipe_totem_12 {Egy recept, amely tartalmazza a talizmán elkészítéséhez szükséges összes információt 'Son of a Jaguar'.}
+itmname_recipe_totem_13 {Talizmán recept}
+itmdescr_recipe_totem_13 {Egy recept, amely minden szükséges információt tartalmaz a talizmán elkészítéséhez 'Joker'.}
+itmname_alchemy_tool {Alkimista ládája}
+itmdescr_alchemy_tool {Egy láda tele furcsa szerkezetekkel, fiolákkal és reagensekkel. Felbecsülhetetlen értékû szerzemény egy kezdô alkimista számára.}
+itmname_Tool {Ács szerszámosláda}
+itmdescr_Tool {A hajógyárból lopott hajóépítô szerszámok.}
+itmname_Tailor_Tool {Szabószerszámok}
+itmdescr_Tailor_Tool
+{
+Egy tapasztalt vándor utazó varrószerszáma, amellyel minden nehézséget egyedül szokott leküzdeni.Ügyes kezekben az olló, a tûk, a horgok és a gyûszû igazi csodákra képesek!
+}
+itmname_Mechanic_Tool {Pad és szerszámosláda}
+itmdescr_Mechanic_Tool {A kisebb javításokhoz szükséges felszerelések mindegyike egy praktikus táskában - nagy segítség mindenkinek, aki szabadidejében szívesen barkácsol.}
+itmname_Tigel {Tégely}
+itmdescr_Tigel {Fémek nagyon magas hômérsékleten történô megolvasztásához készült tégely.}
+itmname_potion1 {Gyógyítófôzet}
+itmdescr_potion1 {Gyógynövényekbôl álló fôzet, amely képes gyorsan gyógyítani a könnyû sebeket.}
+itmname_potion2 {Elixír}
+itmdescr_potion2 {Ez a több mint száz ritka gyógynövénybôl készült elixír a legsúlyosabb sebeket is képes meggyógyítani.}
+itmname_potion3 {Antidotum}
+itmdescr_potion3 {Ez az ellenszer ritka összetevôkbôl álló fôzetbôl készül. Az íze borzalmas, de bárki megmondja, hogy az íze jobb, mint szörnyû mérgezésben meghalni.}
+itmname_potion4 {Keverék}
+itmdescr_potion4 {Ez a keverék a gyógyító fôzet és az ellenszer kombinációja, amely gyógyítja a mérget, miközben sebeket is gyógyít.}
+itmname_potionrum {Egy üveg rum}
+itmdescr_potionrum {Egyetlen tengerész sem teljes egy üveg rum nélkül. A grog és a jó emlékek készítéséhez nélkülözhetetlen. Ha megsebesültél, az alkohol segít elzsibbasztani a fájdalmat és elôsegíti a gyógyulást.}
+itmname_potionwine {Kiváló bor}
+itmdescr_potionwine {Kiváló francia bor. Nyugtató hatása segít helyreállítani az erôdet és megelôzni a fertôzéseket.}
+itmname_potion5 {Gyömbérgyökér}
+itmdescr_potion5 {Erôsítô gyógynövény negatív mellékhatások nélkül.}
+itmname_potion6 {Inka fôzet}
+itmdescr_potion6 {Ezt a fôzetet az inka templomok harcosai találták ki, hogy harci agressziójukat összpontosítsák. Megakadályozza, hogy elkábuljanak a harcban. Károsítja az egészségedet.}
+itmname_potion7 {Ixchel könnyei}
+itmdescr_potion7 {Megkérdôjelezhetôen sûrû, tejszerû, szag és íz nélküli anyag, amelyet a maja papok készítettek a Holdistennô imádatához. A pletykák szerint (a helyi indiánok máig ôrzik titkukat), képes visszaadni az elvesztett egészséget.}
+itmname_Ultimate_potion {Komancs bájital}
+itmdescr_Ultimate_potion {Csodálatos bájital, amely képes a legsúlyosabb betegségeket is meggyógyítani, vagy a leghalálosabb mérgeket gyógyítani.}
+itmname_berserker_potion {Ometochli tinktúra}
+itmdescr_berserker_potion
+{
+Egy legendás fôzet, amely emberfeletti erôt és kitartást szabadít fel, növeli a mozgékonyságot és a reakcióidôt, és aki elfogyasztja, az áthatolhatatlanná válik a fájdalomtól.Ez a hatás percenként egyszer legfeljebb 12 másodpercig tart. Károsítja az egészségedet.
+}
+itmname_mangarosapower {Szökôár fôzet}
+itmdescr_mangarosapower {Potion brewed from mangarosa, following Amelia’s recipe. It gives off the scent of black powder and smoked wood, with sharp notes of sulfur. The aroma calls you to the gun decks—where thunder roars and smoke veils the sky.}
+itmname_mangarosafast {Squall fôzet}
+itmdescr_mangarosafast
+{
+A potion brewed from mangarosa, following Amelia’s recipe.
+It smells of bitter smoke from freshly snapped branches and heated iron, like a forge at sunset. This scent stirs a battle frenzy, evoking the clash of blades and the heat of combat.
+}
+itmname_mangarosatotal {Tengeri ölelés bájital}
+itmdescr_mangarosatotal {A potion brewed from mangarosa, following Amelia’s recipe. It carries the scent of salty wind and wet wood, like a deck after a storm. The aroma of sea air with a faint bitterness of seaweed brings a feeling of lightness and freedom, as if the sea itself has opened within your chest.}
+itmname_vodka {Tsar Vodka}
+itmdescr_vodka {An infusion of grain spirit with juniper and St. John’s wort, distilled and aged with a drop of rose water and galangal root. Used by the streltsy of the Russian Tsardom on the battlefield as a warming and invigorating drink.}
+itmname_cannabis1 {Datura}
+itmdescr_cannabis1 {Gyógyító italokban használatos.}
+itmname_cannabis2 {Sabadilla}
+itmdescr_cannabis2 {Gyógyító italokban használatos.}
+itmname_cannabis3 {Verbena}
+itmdescr_cannabis3 {Misztikus gyógynövény. Sokféle hiedelem kapcsolódik hozzá. Bájitalokban használják.}
+itmname_cannabis4 {Ipecacuanha}
+itmdescr_cannabis4 {Ez a gyógynövény szörnyû ízû és szagú, de ennek ellenére széles körben használják a bájitalok készítésében.}
+itmname_cannabis5 {Guarana}
+itmdescr_cannabis5 {Bájitalokban használják.}
+itmname_cannabis6 {Jamaikai bors}
+itmdescr_cannabis6 {Bájitalokban használják.}
+itmname_cannabis7 {Rózsaszín Mangó}
+itmdescr_cannabis7
+{
+Ennek a cserjének a leveleit a helyi bennszülöttek nagyon nagyra értékelik.Egyesek szerint ez a növény misztikus tulajdonságokkal rendelkezik, amelyeket csak néhány megvilágosodott egyén ért meg.
+}
+itmname_GunPowder {Puskapor}
+itmdescr_GunPowder {Kén, faszén és salétrom keveréke (kálium-nitrát). Minden lôfegyver mûködéséhez szükséges. A lôporfogyasztás a fegyver típusától függôen változik.}
+itmname_bullet {Ólomgolyó}
+itmdescr_bullet {Az univerzális muskéta- és pisztolylövedék. A golyó által okozott sebzés az azt kilövô fegyvertôl függ.}
+itmname_grapeshot {Kartács}
+itmdescr_grapeshot
+{
+Ólom sörét vagy nagy sörét. Kizárólag grapeshot ágyúkból való kilövéskor használatos. Egyszerre több célpontnak okoz kárt.A csôbe pakolható grapeshot mennyisége a használt fegyvertôl függ.
+}
+itmname_cartridge {Papírpatron}
+itmdescr_cartridge {A cartridge combining a powder charge, lead ball, and wad. Wrapped in oiled paper to keep the powder dry. Using it greatly speeds up reloading and increases damage thanks to more even powder burn.}
+itmname_powder_pellet {Petard}
+itmdescr_powder_pellet {Kézi mozsárágyúból kilôhetô petárda. Robbanáskor fényes villanást kelt, amely egyszerre több célpontot is elkábíthat. Baráti tûz lehetséges.}
+itmname_grenade {Gránát}
+itmdescr_grenade {Kézi aknavetôbôl kilôhetô gránát. Egyszerre több célpontnak is nagy kárt tud okozni. Baráti tûz lehetséges.}
+itmname_harpoon {Nyílvillám}
+itmdescr_harpoon {Szigonyból készült rövid, nehéz vasnyíl, amelyet egy blunderbussból lehet kilôni. Súlya és megerôsített hegye komolyan tönkreteheti egy páncélozott ellenség napját.}
+itmname_GunPowder_colt {Füstmentes puskapor}
+itmdescr_GunPowder_colt {Továbbfejlesztett lôpor, amely gyorsabban és tisztábban ég. A Colt revolverek töltényeinek készítéséhez szükséges.}
+itmname_shotgun_bullet {Ólomgolyó}
+itmdescr_shotgun_bullet {A revolverpatronok töltéséhez szükséges töltények. Golyóformával készül.}
+itmname_shotgun_cartridge {Revolverpatron}
+itmdescr_shotgun_cartridge {Puskapor- és lövedéktöltet vízálló sárgaréz hüvelyben.}
+itmname_OxyHydSilver {Ezüst fulminát}
+itmdescr_OxyHydSilver {Ezüst fulminát. Nagyon érzékeny. Hajlamos felrobbanni, ha leejtik.}
+itmname_GunCap_colt {Ütôsapka}
+itmdescr_GunCap_colt {Ezüst fulmináttal készített réz ütôszerszám. A Colt revolver töltényeinek elsütéséhez szükséges.}
+itmname_GunEchin {Szöges repesz}
+itmdescr_GunEchin
+{
+Durvára vágott szögek a nagy kaliberû grapeshot pisztolyokban való használatra. Pusztító hatással vannak az emberi testekre és a fegyverek csöveire.Formájuknak köszönhetôen csökkentik a fegyver szórását.
+}
+itmname_bullet_double {Dupla tölténytöltet}
+itmdescr_bullet_double {Dupla lôpor- és golyótöltet, amelyhez szerencsét hozó, apróra vágott dublont mellékelnek. Lôporpróba, amely a csôrepedések megelôzéséhez szükséges.}
+itmname_grapeshot_double {Kettôs lôszertöltet}
+itmdescr_grapeshot_double
+{
+Megnövelt lôpor töltet és grapeshot, szerencsét hozó apróra vágott dublonnal. Hatékonysága attól függ, hogy milyen fegyverrel használják.Lôporpróba nélkül megnô a csôrepedés kockázata.
+}
+itmname_ArmoryPaper {Gunpaper}
+itmdescr_ArmoryPaper {This paper is made by impregnating a paper base with paraffin. In the Caribbean, it’s quite rare and expensive, mainly used for wrapping food, but in skilled hands it can serve other purposes as well.}
+itmname_argbullet {Ezüstgolyó}
+itmdescr_argbullet {A helyi kétkardos szakértôk szerint az ezüstgolyók rendkívül hatékonyak a szörnyek, anyósok és a démoni vudu mágiával életre keltett halottak ellen.}
+itmname_Mineral1 {Rézkorsó}
+itmdescr_Mineral1 {Nagyon praktikus korsó víz vagy bor kiöntésére.}
+itmname_Mineral2 {Teknôsbôr-fésû}
+itmdescr_Mineral2 {Drága, de nélkülözhetetlen piperecikk egy dús hajú férfi vagy nô számára.}
+itmname_Mineral3 {Gyertya}
+itmdescr_Mineral3 {Viaszgyertya.}
+itmname_Mineral4 {Herkulesbogár}
+itmdescr_Mineral4 {Az ember által ismert legnagyobb bogárfaj szárított példánya (akár 20 hüvelyk hosszúságú). A Herkulesbogarak a súlyukhoz képest legerôsebb élôlények is a Földön, testsúlyuk több mint százszorosát képesek elszállítani.}
+itmname_Mineral5 {Ikon lámpa}
+itmdescr_Mineral5 {A bronz ikonlámpa lehetôvé teszi, hogy az ember kedvenc könyvével töltse az éjszakát, vagy fôzze a reggeli kávét.}
+itmname_Mineral6 {Tükör}
+itmdescr_Mineral6 {Egy kis zsebtükör. Még az orrod hegyét is alig látod benne.}
+itmname_Mineral7 {Porceláncsô}
+itmdescr_Mineral7 {Holland kézimunkával, a kínaiaktól lopott technikával készült. Finomabb, mint az olcsó agyagpipák, és ezért népszerû a helyi dohányfüstölôk körében.}
+itmname_Mineral8 {Cipô}
+itmdescr_Mineral8
+{
+Egy cipô a párja nélkül. Rossz ómen.(-10 a Szerencsére)
+}
+itmname_Mineral9 {Öreg bögre}
+itmdescr_Mineral9 {Egy kopottas, régi ónbögre.}
+itmname_Mineral10 {Kovakô}
+itmdescr_Mineral10 {Egy kovakô, amivel tüzet lehet gyújtani az acélra ütve. A 17. századi öngyújtó.}
+itmname_Mineral11 {Ezüst kancsó}
+itmdescr_Mineral11 {Gyönyörû ezüstkorsó.}
+itmname_Mineral12 {Jaguár karma}
+itmdescr_Mineral12 {Egy jaguár levágott karma, amelybôl nyakláncot készítettek. Népszerû a dzsungel indián harcosai körében.}
+itmname_Mineral13 {Ostor}
+itmdescr_Mineral13 {Bôrszalagokból készült ostor. A hajósok felszerelésének elengedhetetlen része. Kóbor kutyák elkergetésére is használható, vagy annak megverésére, aki rossz szemmel néz rád.}
+itmname_Mineral14 {Vámpírszárny}
+itmdescr_Mineral14 {A helyi vérszívó Desmodus rotundus, közismert nevén a vámpírdenevér szárnya. Az emberek azt suttogják, hogy boszorkányok és indián sámánok használják ôket ördögi rítusaikban.}
+itmname_Mineral15 {Összecsukható kés}
+itmdescr_Mineral15 {A tengerész pótolhatatlan társa.}
+itmname_Mineral16 {Köszörûkô}
+itmdescr_Mineral16 {Egy darab csiszolókô, amellyel a pengét élezik.}
+itmname_Mineral17 {Üres fiola}
+itmdescr_Mineral17 {Üres üvegpalack.}
+itmname_Mineral18 {Dohány}
+itmdescr_Mineral18 {Egy doboz pácolt pipadohány. Az újvilági gyarmatosítóknak az indiánoktól átvett divatos szokása. A 16. századi spanyol orvos, Nicolas Monardes azt írta, hogy a dohány enyhíti a székrekedést, izomlazítóként hat, és megnyitja a test pórusait.}
+itmname_Mineral19 {Ezüstkanál}
+itmdescr_Mineral19 {Egy gyönyörû ezüstkanál, amelyet szinte biztosan egy elôkelô házból lopott el a segéd.}
+itmname_Mineral20 {Fakanál}
+itmdescr_Mineral20 {Minden tengerésznek kell egy ilyen, mielôtt leül az ebédlôbe.}
+itmname_Mineral21 {Íróeszközök}
+itmdescr_Mineral21 {A libatoll és a tintatartó a jól képzett ember megkülönböztetô jelei.}
+itmname_Mineral22 {Zsinór}
+itmdescr_Mineral22 {Egy köteg vékony zsinór.}
+itmname_Mineral23 {Köröm}
+itmdescr_Mineral23 {Vasszög. Bármit meg lehet vele javítani: cipôt, tetôt vagy hajót.}
+itmname_Mineral24 {Szalag}
+itmdescr_Mineral24 {Egy közönséges bôröv. Segít fent tartani a nadrágot, és hasznos tárgyakat hordoz.}
+itmname_Mineral25 {Csónakos pipája}
+itmdescr_Mineral25 {Minden magára valamit is adó hajóskapitány ezt használja, hogy parancsokat adjon a legénységnek.}
+itmname_Mineral26 {Kártyapakli}
+itmdescr_Mineral26 {Egy szakadt pakli játékkártya.}
+itmname_Mineral27 {Mozsár és pestis}
+itmdescr_Mineral27 {Lehetôvé teszi a gyógynövények és egyéb összetevôk porrá zúzását különbözô bájitalok készítéséhez. Nem alkalmas a dióhéjnál keményebb dolgok aprítására.}
+itmname_Mineral28 {Etil-alkohol}
+itmdescr_Mineral28 {Néhány ôrült alkimista ezt a tiszta etil-alkoholt ezüst fulminát készítéséhez használja, ahelyett, hogy meginná, mint a normális emberek.}
+itmname_Mineral29 {Salétromsav}
+itmdescr_Mineral29 {A salétromsav a 8. század óta ismert. Ezüst fulminát készítéséhez használható, feltéve, hogy van tûzálló és nem fémes tégelyed. Nagyon reaktív. Kerülje a bôrrel való érintkezést, és az Isten szerelmére, ne kóstolja meg.}
+itmname_Mineral30 {Rabszolga bilincsek}
+itmdescr_Mineral30
+{
+Rabszolgatartók által használt kézi bilincsek, hogy megakadályozzák tulajdonuk elkóborlását.(-10 karizma)
+}
+itmname_Mineral31 {Elvarázsolt csont}
+itmdescr_Mineral31
+{
+Egy emberi ujjcsont rézpánttal. Woodoo boszorkányok használják varázslatokhoz.(-10 a Karizmához, -10 a Szerencséhez).
+}
+itmname_Mineral32 {Golyóforma}
+itmdescr_Mineral32 {Ez a szerkezet lehetôvé teszi a Colt revolverhez megfelelô alakú és méretû töltények öntését.}
+itmname_Mineral33 {Tetováló festék}
+itmdescr_Mineral33 {Festék a tetoválásokhoz.}
+itmname_Mineral34 {Üres fiola}
+itmdescr_Mineral34 {Nem éppen a legtisztább fiola a világon, de azért folyadékot is képes tárolni.}
+itmname_Mineral35 {Lant}
+itmdescr_Mineral35 {Egy hangszer, a modern gitár ôse.}
+itmname_crab_pincers {Rákfogó}
+itmdescr_crab_pincers {Egy óriási ellenséges rák csipája.}
+itmname_crab_jaw {Rák állkapcsa}
+itmdescr_crab_jaw {Egy óriásrák állkapcsa, amely egy mérgezô méregmirigyet tartalmaz.}
+itmname_ShipyardsMap {Rajz}
+itmdescr_ShipyardsMap {Tervezet egy #sShipName#.}
+itmdescr_ShipyardsMap_PortmanLevelUp4 {Egy hajó tervrajza, amely tartalmazza a legújabb technikai újításokat.}
+itmname_MayorsRing {Jegygyûrû}
+itmdescr_MayorsRing {A kormányzó jegygyûrûje #sCityName#. Ezt vissza akarja majd kapni.}
+itmname_UsurersJew {Drágakô}
+itmdescr_UsurersJew {Csodálatos #sJevelType# az uzsorás #sCityName#.}
+itmname_Key1 {Egyszerû kulcs}
+itmdescr_Key1 {Egy egyszerû zárhoz való kulcs.}
+itmname_Key2 {Hétköznapi kulcs}
+itmdescr_Key2 {Közepesen bonyolult, közönséges zárakhoz való kulcs.}
+itmname_Key3 {Összetett kulcs}
+itmdescr_Key3 {Összetett zárakhoz való kulcs.}
+itmname_key_capper {Key to 'Tartarus'}
+itmdescr_key_capper {Kulcs a hajón lévô ajtókhoz és ládákhoz 'Tartarus'.}
+itmname_key_gun {Bronzkulcs}
+itmdescr_key_gun {Adolf Barbier holttestén talált kulcs. De mit nyit ki a kulcs?}
+itmname_keys_skel {Lakatolóvesszô-készlet}
+itmdescr_keys_skel {Mindenféle zárat ki lehet nyitni ezzel a lakatfogó készlettel.}
+itmname_sant_anna_key {Kiváló kulcs}
+itmdescr_sant_anna_key {Egy bonyolult kulcsbetûkkel készült, gyönyörû kulcs. Ezt csak egy európai mester készíthette. Most keressünk egy zárat, amit kinyithatunk vele!}
+itmname_key_betancur {Régi kulcs}
+itmdescr_key_betancur {Egy kopott sárgaréz kulcs. Nem világos, hogy mit nyit ki. A helybôl ítélve, ahol ezt a kulcsot találták, valószínûleg valami nagyon értékeset lehet vele nyitni.}
+itmname_key_mary {Mary Casper kulcsa}
+itmdescr_key_mary {Kulcs Mária kunyhójához a folyosón 'Ceres Smithy'.}
+itmname_key_facio {Sárgaréz kulcs}
+itmdescr_key_facio {Giuseppe Fazio kulcsa.}
+itmdescr_key_facioQ {A hajó ajtaját nyitó kulcs 'Carolina' és az egyik láda Giuseppe Fazio kabinjában.}
+itmname_key_levasser {Levasseur kulcsa}
+itmdescr_key_levasser {Francois Levasseur holttestébôl kivett kulcs. Most pedig keressük meg a ládát, amit kinyit.}
+itmname_PortmansBook {Hajónapló}
+itmdescr_PortmansBook {Egy hajónapló, amelyet egy szórakozott kapitány felejtett el. Vissza kell adnunk neki.}
+itmname_CaptainBook {A hajó dokumentumai}
+itmdescr_CaptainBook {Hajódokumentumok, amelyeket egy szétszórt kapitány elfelejtett. Vissza kell adni neki.}
+itmname_bible {Biblia}
+itmdescr_bible {Az Ó- és Újszövetség szépen bekötött és kinyomtatott példánya a helyi nyelven. A katolikus egyház az 1500-as évek végén engedélyezte a népnyelvû fordításokat, hogy versenyre keljen a reformáció során széles körben elterjedt protestáns fordításokkal.}
+itmname_ChurchGenQuest1Bible {Egyházi kézirat}
+itmdescr_ChurchGenQuest1Bible {Fontos egyházi kéziratok, amelyeket a papnak kell átadni a #sCity#.}
+itmname_ChurchGenQuest2Cup {Áldozó kehely}
+itmdescr_ChurchGenQuest2Cup {Egy áldozó kehely, amelyet a papnak kell átadni a #sCity#. Az egyház úgy tartja, hogy minden megszentelt kehelynek aranyból vagy ezüstbôl kell készülnie, hogy a szentséget befogadja. Mint ilyen, ez meglehetôsen nehéz.}
+itmname_MerdokArchive {John Murdock archívuma}
+itmdescr_MerdokArchive {Van Merden naplója, lejegyezve egy cifra betûvel. Össze nem illô betûk és számok érthetetlen összevisszaságának tûnik. Meg kell találnod a titkosírást, hogy el tudd olvasni.}
+itmname_MineArchive {Titkosított dokumentum}
+itmdescr_MineArchive {A szöveg titkosítva van, és a dokumentum sokáig feküdt üresen. Nyilvánvaló, hogy egy szenion ligás tiszt személyes biztosításáról van szó.}
+itmname_Cipher {Az archívum kódja}
+itmdescr_Cipher {John Murdock archívumát ezzel a titkosírással lehet elolvasni.}
+itmname_JacobJournal {Jacob van Berg hajónaplója}
+itmdescr_JacobJournal {Jacob van Berg, a 'Mirage kapitányának hajónaplója.'.}
+itmname_FleetwoodJournal {Richard Fleetwood hajónaplója}
+itmdescr_FleetwoodJournal {Richard Fleetwood, a 'Valkyrie kapitányának hajónaplója.'.}
+itmname_ClementLebrunJournal {Clement Lebran hajónaplója}
+itmdescr_ClementLebrunJournal {A merész típus hajónaplója a Tortugáról. Teljesen az összes oldalt kitépték.}
+itmname_FernandoDeAlavidaJournal {Fernando de Alavida hajónaplója}
+itmdescr_FernandoDeAlavidaJournal {Fernando de Alavida hajónaplója.}
+itmname_FernandoDeAlavidaPismo {Gyûrött levél}
+itmdescr_FernandoDeAlavidaPismo
+{
+Egy gyûrött papírdarab, amelyet láthatóan dühében dobott el, és hanyagul a kabin egy távoli sarkába dobott. A tinta elmosódott, csak az utolsó sorok olvashatók:  '... és mégis erôsen tanácsolom, hogy ne tároljunk kincseket a kriptában. Az utóbbi idôben egyre több pletyka terjed a szigeten pogány sírrablókról, és attól tartok, hogy az Úr nyughelye veszélybe kerülhet.'
+}
+itmname_MC_Letter {Lepecsételt levél}
+itmdescr_MC_Letter {Egy levél Richard Fleetwoodnak Abigail váltságdíjának feltételeit tartalmazó levél.}
+itmdescr_MC_Letter1 {Richard Fleetwood válasza.}
+itmdescr_MC_Letter2 {Fleetwood levele Lucas Rodenburg számára.}
+itmdescr_MC_Letter3 {Lucas Rodenburg levele van Merdennek.}
+itmname_NPC_Letter {Lepecsételt levél}
+itmdescr_NPC_Letter {Richard Fleetwood levele Abigailnek.}
+itmdescr_NPC_Letter1 {Richard Fleetwood levele.}
+itmdescr_NPC_Letter2 {Hercule Tonzag búcsúlevele.}
+itmdescr_NPC_Letter3 {Egy boríték egy sziget térképével, amelyen egy 'X' jelez egy bizonyos helyet - úgy néz ki, mint egy barlang.}
+itmdescr_NPC_Letter4 {Egy levél Lucas Rodenburgtól a santiagói bankárnak.}
+itmname_DTSG_letter1 {Scrap of a half-burned letter}
+itmdescr_DTSG_letter1 {Az égési nyomokból ítélve a levelet nemrég gyújtották fel.}
+itmdescr_DTSG_letter2 {Egy levél, amely részletesen ismerteti Charlie Knippel külsejét.}
+itmname_Drugstore_keys {A gyógyszertár kulcsai}
+itmdescr_Drugstore_keys {Ezek a kulcsok nyitják John Murdock házának összes ajtaját.}
+itmname_MaltieBase_keys {Kulcsok a tömlöcökhöz}
+itmdescr_MaltieBase_keys {Ezek a kulcsok nyitják a Máltai Lovagok földalatti kazamatáinak celláit St. Pierre-ben.}
+itmname_Finger {Levágott ujj}
+itmdescr_Finger {Egy ujj egy gyûrûvel. Fernando halálának bizonyítéka.}
+itmdescr_finger_rober {Egy ujj egy szalaggal. Robert Martene halálának bizonyítéka.}
+itmname_GastonHead {Emberi fej}
+itmdescr_GastonHead {Egy levágott emberi fej. Egy borzalmas társ.}
+itmname_SkullAztec {Jáde koponya}
+itmdescr_SkullAztec {Egy gyönyörû és titokzatos ôsi ereklye, látszólag egyetlen darab tömör jádéból faragva.}
+itmname_suit_1 {Drága ruházat}
+itmdescr_suit_1 {Elég finom ruhák ahhoz, hogy maga a fôkormányzó által adott ünnepélyes partin viseljék.}
+itmname_crowbar {Fém feszítôvas}
+itmdescr_crowbar {Egy kis feszítôvas, amellyel ládákat, fejeket vagy rákokat lehet feltörni. Ez a jelzett 'G.F.'.}
+itmname_bucher_ring {Hatalmas gyûrû}
+itmdescr_bucher_ring {Mészáros kapitány gyûrûje.}
+itmname_cask_whisky {Ír whiskyvel teli láda}
+itmdescr_cask_whisky {Egy fakoporsó, melyben több üveg finom 'Bushmills' Ír whisky található, melyet Dublin Townban pároltak.}
+itmname_cask_gin {Hordó gin}
+itmdescr_cask_gin {Egy hordó kiváló európai gin. Itt a Karib-tengeren ilyen ital csak a kiváltságosok számára elérhetô.}
+itmname_buben {Sámán tamburin}
+itmdescr_buben {Indián tamburin, amelyet sámánjaik használtak a szellemekkel való beszélgetésre. Legalábbis ezt mondják a gyarmatosítóknak...}
+itmname_smoking_tube {Füstölgô pipa}
+itmdescr_smoking_tube {Az észak-amerikai síksági indiánok kitûnô dohányzó pipája. Hogyan került ide?}
+itmname_chemistry {Lavoisier kémiai alapjai}
+itmdescr_chemistry {Egy nyomtatott könyv, amelynek címe 'Traite Elementaire de Chimie' és amely laikusok számára érthetetlen jegyzeteket és definíciókat tartalmaz. Ezt a könyvet egy 'Monsieur Lavoisier', írta, és az elôlapján az áll 'Printed in Paris, 1789 AD'. Ez bizonyára nyomdai hiba.}
+itmname_shark_teeth {Cápafog}
+itmdescr_shark_teeth {Egy nagy fehér cápa foga, rajta a vésett S.D. monogram.}
+itmname_witches_hammer {'Malleus Maleficarum'}
+itmdescr_witches_hammer {A boszorkányságról szóló értekezés, amelyet a 'Hammer of Witches' angolul Heinrich Kramer és Jacob Sprenger német lelkészek írtak a késô középkorban. Annak ellenére, hogy a katolikus egyház vadul pontatlannak ítélte, a laikusok és a világi bíróságok körében igen népszerû.}
+itmname_calendar_maya {Maya naptár}
+itmdescr_calendar_maya {Öt töredékbôl összeállított maja naptár.}
+itmname_splinter_js {Díszített szilánk}
+itmdescr_splinter_js {Egy kôszilánk gyönyörû indiai díszítéssel, amely Jan Svensoné volt.}
+itmname_splinter_nh {Díszített szilánk}
+itmdescr_splinter_nh {Nathaniel Hawk tulajdonát képezô kôszilánk gyönyörû indián díszítéssel.}
+itmname_splinter_mt {Díszített szilánk}
+itmdescr_splinter_mt {Egy kôszilánk gyönyörû indián díszítéssel, Marcus Tyrex tulajdona.}
+itmname_splinter_zm {Díszített szilánk}
+itmdescr_splinter_zm {Zachary Marlow tulajdonát képezô kôszilánk gyönyörû indián díszítéssel.}
+itmname_splinter_jb {Díszített szilánk}
+itmdescr_splinter_jb {Egy kôszilánk gyönyörû indián díszítéssel, Jacques Barbazoné.}
+itmname_Almanac {Almanach}
+itmdescr_Almanac {Egy vastag kötet.}
+itmdescr_jinobook {Gino Guineily almanachja.}
+itmdescr_Almanac_FMQP {Luis Ortiz számviteli könyve.}
+itmname_VerifyPaper {Letter of Marque}
+itmdescr_VerifyPaper {Letter of Marque.}
+itmdescr_VincentoPaper {Engedélyezi a birtokosának, hogy szabadon látogathassa Santiago spanyol gyarmatát. Vincento atya inkvizítor személyes aláírása.}
+itmdescr_VincentoPaper_A {Engedélyezi a birtokosnak, hogy szabadon látogathassa Santiago és San Jose spanyol gyarmatait. Vincento atya inkvizítor személyes aláírásával.}
+itmname_skinmap {Térkép 'Two Manifestations'}
+itmdescr_skinmap {Egy cserzett bôrdarab a Karib-tenger homályos körvonalaival.}
+itmname_arrowway {Iránytû 'Az út nyila'}
+itmdescr_arrowway {Egy hajóiránytû. Tûje vadul forog, és mindenhová mutat, kivéve északra.}
+itmname_ArchyBook {Napló}
+itmdescr_ArchyBook {Archibald Colhoun naplója. Érdekes lehet elolvasni.}
+itmname_key_archy {Vaskulcs}
+itmdescr_key_archy {Archibald Colhoun kulcsa. Úgy tûnik, egy ládát nyit.}
+itmdescr_key_mask {Egy kulcs, amelyet a 'Santa Quiteria'. kapitány csontvázán találtak, a jelek szerint egy ládát nyit.}
+itmname_SQCapBook {Hajónapló}
+itmdescr_SQCapBook {A 'Santa Quiteria kapitányának hajónaplója'. Érdekes lesz olvasni.}
+itmname_mark_map {Térkép jegyzetekkel}
+itmdescr_mark_map {Egy térkép, amelyet Ksocheatem elveszett szigetének felkutatásához használtak.}
+itmname_mask_false {Ôsi indián maszk}
+itmdescr_mask_false {Egy baljós ôsi indián maszk, amelyet Ksocheatem szigetén találtak.}
+itmname_mask_true {Kukulcan maszkja}
+itmdescr_mask_true {A 'szárnyas kígyó' - a maja isten, Kukulcan hatalmas ereklyéje.}
+itmname_stonekey {Kôkulcs}
+itmdescr_stonekey {Kanek Itza pap kulcsa.}
+itmname_Tablet_1 {Ôsi tábla}
+itmdescr_Tablet_1 {Itzamna, az ég maja istenének kôtáblája.}
+itmname_Tablet_2 {Ôsi tábla}
+itmdescr_Tablet_2 {Kinich Ahaw, a maja napisten kôtáblája.}
+itmname_Tablet_3 {Ôsi tábla}
+itmdescr_Tablet_3 {Chaac, a víz és az esô maja istenének kôtáblája.}
+itmname_Tablet_4 {Ôsi tábla}
+itmdescr_Tablet_4 {Tohil, a tûz és a vihar maja istenének kôtáblája.}
+itmname_Tablet_5 {Ôsi tábla}
+itmdescr_Tablet_5 {Kauil, a háború maja istenének kôtáblája.}
+itmname_Tablet_6 {Ôsi tábla}
+itmdescr_Tablet_6 {Ek Chuah, a kereskedelem maja istenének kôtáblája.}
+itmname_alexs_chest {Acéldoboz}
+itmdescr_alexs_chest {Alexus mester fémdoboza, biztonságosan lezárva.}
+itmname_treasure_note {Kincsjegyzet}
+itmdescr_treasure_note {Ezt a cetlit egy kincs belsejében találták. Valószínû, hogy a szerzôje már régen elhagyta ezt a halandó világot. Tartalmát gondosan be kell másolni a hajónapló speciális részébe.}
+itmname_PR_Letter {Valaki hátrahagyott jegyzete}
+itmdescr_PR_Letter {Régi, kopott papírra írt feljegyzés. Tartalma nyilvánvalóan nem a kíváncsi szemek számára készült.}
+itmname_quest_potion {Gyógynövényes fôzet}
+itmdescr_quest_potion {Ennek a fôzetnek a valódi tulajdonságait csak az ismeri, akinek a keze készítette.}
+itmname_GS_letters {A zsoldos által szállított jegyzetek}
+itmdescr_GS_letters {A kikötôi hatóság vezetôjének keze által írt tippek. Információkat tartalmaznak ügyfelei útvonaláról és indulási idejérôl, akiket kalózok támadtak meg.}
+itmname_SM_necklace_Julie {Julie d'Armagnac nyaklánca}
+itmdescr_SM_necklace_Julie {Julie szívéhez közel álló ékszer. Elegáns és kifinomult, úgy tûnik, hogy magát az emlékeit ôrzi. Ha vannak olyan tárgyak, amelyek képesek titkokat ôrizni, ez a nyaklánc biztosan közéjük tartozik.}
+itmname_TBP_letter {Megnyitott levél}
+itmdescr_TBP_letter {"Azt hitted, hogy megzsarolhatsz és büntetlenül maradhatsz? Tévedtél. Hamarosan meg fogja bánni a vakmerôségét. A halálod hosszú és fájdalmas lesz, és senki sem fog megmenteni."}
+itmname_kaleuche_amulet1 {Különös amulett}
+itmdescr_kaleuche_amulet1 {Sima kavicsból készült, rikítóan festett indián amulett.}
+itmname_kaleuche_amulet1_potion {Tuttuathapak bájitala}
+itmdescr_kaleuche_amulet1_potion {Egy fôzet, amelyet Tuttuathapak, a karibi indiánok sámánja fôzött Rózsaszín Mangó-ból. Állandó növekedést ad a reakciósebességben és javítja a könnyûfegyverek készséget.}
+itmname_kaleuche_amulet2 {Indián amulett}
+itmdescr_kaleuche_amulet2 {Sima kavicsból készült, rikítóan festett, eredeti indián amulett.}
+itmdescr_kaleuche_amulet2_sword {Egy amulett, amelyet Tuttuathapak, a karibi indiánok sámánja varázsolt. Sebezhetôvé teszi a templomi chavinavikat a fegyvereiddel szemben, és védelmet nyújt a támadásaik ellen. 25%-kal növeli az összes fegyverkészséget.}
+itmname_kaleuche_amulet2_potion {Tuttuathapak bájitala}
+itmdescr_kaleuche_amulet2_potion {Egy bájital, amelyet Tuttuathapak, a karibi indiánok sámánja fôzött Rózsaszín Mangó-ból. Állandó állóképesség-növekedést ad és javítja a közepes fegyverek készséget.}
+itmname_kaleuche_amulet3 {Indián amulett}
+itmdescr_kaleuche_amulet3 {Sima kavicsból készült, rikítóan festett, eredeti indián amulett.}
+itmdescr_kaleuche_amulet3_shield {Tuttuathapak, a karibi indiánok sámánja által varázsolt amulett. Sebezhetôvé teszi a templomi chavinavikat a fegyvereiddel szemben, és védelmet nyújt a támadásaik ellen. 25%-kal csökkenti az összes bejövô sebzést, és megakadályozza a mérgezést.}
+itmname_kaleuche_amulet3_potion {Tuttuathapak bájitala}
+itmdescr_kaleuche_amulet31_potion {Egy bájital, amelyet Tuttuathapak, a karibi indiánok sámánja fôzött Rózsaszín Mangó-ból. Állandó erônövekedést ad és javítja a nehézfegyverek készséget.}
+itmdescr_kaleuche_amulet32_potion {Tuttuathapak, a karibi indiánok sámánja által a Manga Rosából fôzött fôzet. Állandó növekedést ad az érzékelésben és javítja a pisztolyokkal és muskétákkal való ügyességet.}
+itmdescr_kaleuche_amulet33_potion {Tuttuathapak, a karibi indiánok sámánja által a Manga Rosából fôzött fôzet. Állandó növekedést ad az értelemben és javítja a lopakodás képességét.}
+itmdescr_kaleuche_amulet34_potion {Tuttuathapak, a karibi indiánok sámánja által a Manga Rosából fôzött fôzet. Állandó növekedést ad a vezetôi képességekben és növeli a karizmát.}
+itmdescr_kaleuche_amulet35_potion {Tuttuathapak, a karibi indiánok sámánja által a Manga Rosából fôzött fôzet. Állandó szerencsét és szerencsehozó képességet ad.}
+itmname_kaleuche_letter {Összetekert cetli}
+itmdescr_kaleuche_letter
+{
+Keressétek a címzettet, követve éjfélkor a városkaputól a dzsungelbe vezetô ösvényen....három nap múlva a hajó megérkezik a Chetumal-öbölbe. A rakományt éjszaka két mentôcsónakra rakodják. A második hajó csak egy nappal a kirakodás után érkezik...
+}
+itmname_kaleuche_key {Acélkulcs}
+itmdescr_kaleuche_key {Reginald Jackson kulcsa a barbadosi világítótoronyban lévô ládához.}
+itmdescr_kaleuche_key_crypt {Kulcs a temetô kriptájában lévô ajtóhoz.}
+itmdescr_kaleuche_key_FMQT {Levasseur ládájának másodkulcsa.}
+itmname_MerrimanBook {Fémdoboz}
+itmdescr_MerrimanBook {Joachim Merriman búvóhelyérôl származó fémdoboz.}
+itmname_KhaelRoa_item {Jaguárbôr}
+itmdescr_KhaelRoa_item
+{
+A chavinavi törzsfônök csodálatos ajándéka - egy gyönyörû jaguárbunda, amelyet maga Yum Cimil isten varázsolt el.Tízszeresére növeli a lôfegyverekkel okozott sebzést. A hatás legfeljebb 2 napig tart.
+}
+itmname_key_candlestick_PortRoyal {Kulcs}
+itmdescr_key_candlestick_PortRoyal {Egy régi, kopott kulcs. Még nem világos, hogy mit nyit ki.}
+itmname_key_candlestick_FortFrance {Kulcs}
+itmdescr_key_candlestick_FortFrance {Egy régi, kopott kulcs. Még nem világos, hogy mit nyit ki.}
+itmname_key_candlestick_Villemstad {A titkos rend gyûrûje}
+itmdescr_key_candlestick_Villemstad {Egy masszív antik gyûrû rubinnal. Úgy tûnik, kulcsként kell szolgálnia.}
+itmname_LadyBeth_Book {Blackwood naplója}
+itmdescr_LadyBeth_Book {Egy szerencsétlen ember gondolatai.}
+itmname_LadyBeth_Map {Blackwood térképe}
+itmdescr_LadyBeth_Map {A legnagyobb kincsvadász legértékesebb kincséhez vezetô út.}
+itmname_BoxOfBalls {Doboznyi ágyúgolyó}
+itmdescr_BoxOfBalls {Ez a doboz csak szalmát és nyolc ágyúgolyót tartalmaz.}
+itmname_Tutorial_key {Kulcs}
+itmdescr_Tutorial_key {Vaskulcs.}
+itmname_Tutorial_journal {A kapitány naplója. IV. kötet.}
+itmdescr_Tutorial_journal {A kapitány "Ulysse kapitány" naplójának negyedik kötete. Még csak most kezdôdött, így csak néhány bejegyzés van.}
+itmname_Suspicious_Potion {Gyanús bájital}
+itmdescr_Suspicious_Potion {Ajánlom, hogy mûködjön.}
+itmname_LFD_letter {Levél Marisa Calderának}
+itmdescr_LFD_letter {A megbarnult tinta és az időtől megsárgult papír a levél tiszteletre méltó koráról árulkodik. Tartalma biztonságosan rejtőzik a viaszpecsét alatt. Az ilyen levelek általában különös értéket képviselnek. A címzett – egy bizonyos Marisa Caldera Portobellóból.}
+itmname_OZ_book {Kovácsmesterség könyve}
+itmdescr_OZ_book {Sebastián tudásának kincstára, amelyet sikerült kártyán elveszítenie. Nehéz, régi könyv, tele rajzokkal és jegyzetekkel – igazi kincs minden kovács számára.}
+itmname_OZ_letter {Cédula}
+itmdescr_OZ_letter {Éjfélkor találkozunk a barlangban. Elvisszük a holminkat, és elindulunk a Galera-fokra. Onnan felvesznek minket, és végre elhagyjuk ezt a lepukkant szigetet. Alig várom, hogy kifogjak egy sokkal nagyobb halat, mint ezek a nyomorult együgyűek.}
+itmname_wolfreeks_book {Hajónapló}
+itmdescr_wolfreeks_book {Wulfric Iogansen hajónaplója.}
+itmdescr_ignasio_book {Ignacio Marco hajónaplója.}
+itmname_Bunch {Csomag hideg fegyverek}
+itmdescr_Bunch {Egy csomag 30 közönséges fejszébôl és kardból.}
+itmname_Dove {Hírvivô galamb}
+itmdescr_Dove {Egy Spike nevû hírvivô postagalamb. Ez a bátor tollas barát a Karib-tenger bármely pontjáról képes visszatalálni La Vegára.}
+itmname_key_scotland {Rozsdás kulcs}
+itmdescr_key_scotland {Régi kulcs, amelyet egy rég halott skót megkopott csontvázán találtak.}
+itmname_key_ruins {Ezüst kulcs}
+itmdescr_key_ruins {A romok között talált kopott ezüstkulcs.}
+itmname_indian_poison {A taino nép mérge}
+itmdescr_indian_poison
+{
+Titkos növényekbôl és mérges békák nyálkájából készült halálos méreg. A legkisebb karcolás is halálos lehet, és ellenszerrel nem gyógyítható. Ez a méreg pengék és lövedékek olajaként használható.Hatása két napig tart.
+}
+itmname_mapEnrico {Camilla térképe}
+itmdescr_mapEnrico {Egy 20 éve elveszett és elhagyott spanyol bányászfalu kincseihez vezet.}
+itmname_Reserve_item_01 {Lepecsételt levél}
+itmdescr_Reserve_item_01 {Az Eclatant kapitányának címzett levél.}
+itmdescr_Reserve_item_01_1 {A Holland Nyugat-indiai Társaság igazgatójának, Peter Stuyvesantnak írt levél Philippe de Poincy lovagtól.}
+itmdescr_Reserve_item_01_2 {A Holland Nyugat-indiai Társaság igazgatójának, Peter Stuyvesantnak írt levél Philippe de Poincy lovagtól.}
+itmdescr_Reserve_item_01_3 {Levél Edward Doily ezredesnek, Jamaica kormányzójának, Chevalier Philippe de Poincy-nak írt levele.}
+itmname_Reserve_item_01_1 {Vastag fôkönyv}
+itmdescr_Reserve_item_01_4 {Számlakönyv.}
+itmname_blackpearl {Fekete gyöngy}
+itmdescr_blackpearl {Egy legendás fekete gyöngy. Remekül el lehetne róla nevezni egy hajót.}
+itmname_islamona_toolbox {Eszköztár}
+itmdescr_islamona_toolbox {Kiváló minôségû szerszámok hajók és házak építéséhez. Európában készült.}
+itmname_Memento_Book {Grim naplója}
+itmdescr_Memento_Book {Tragédia három felvonásban}
+itmname_Memento_letter {Memento levél}
+itmdescr_Memento_letter {Memento levél}
+itmname_LEDR_Book { }
+itmdescr_LEDR_Book { }
+itmtype_gun {Firearm}
+itmtype_blade {Coldarm}
+itmtype_spyglass {Spyglass}
+itmtype_patent {Patent}
+itmtype_cirass {Armor}
+itmtype_maps {Map}
+itmtype_tool {Tool}
+itmtype_talisman {Amulet}
+itmtype_slot {Amulet}
+itmtype_special {Special}
+itmtype_ammo {Ammo}
+itmtype_lantern {Tool}
+itmtype_hat {Hat}
+itmtype_musket {Firearm}
+itmname_LEDR_key { }
+itmdescr_LEDR_key { }
+itmname_recipe_potion1 {Healing Potion Recipe}
+itmdescr_recipe_potion1 {A recipe containing all the instructions needed to brew a healing potion.}
+itmname_blade_WR {Reborn}
+itmdescr_blade_WR
+{
+Rupert Northwood’s Magnificent Sabre. 
+A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+}
+itmname_hat11 {Theresa’s Hat}
+itmdescr_hat11 {Mary’s mother’s headpiece, preserved by Aurélie Bertin. Despite its age, it still retains its former elegance and charm.}
+itmname_talisman21 {Smuggler’s Talisman}
+itmdescr_talisman21 {A pouch of herbs and ash, a vial of dark liquid, and a skull medallion—a strange set to outsiders, but a prized talisman for those versed in the shadow trade. Only true smugglers wear such a talisman.}

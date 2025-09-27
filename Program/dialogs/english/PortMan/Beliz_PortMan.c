@@ -11,15 +11,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//регата
 			if (CheckAttribute(pchar, "questTemp.Regata.Go") && !CheckAttribute(npchar, "quest.regatatalk"))
 			{
-				dialog.text = "What do you want? A-ha, you are the participant of the regatta! Am I right?";
-				link.l1 = "Exactly, mister. I need to get registered here according to the rules.";
+				dialog.text = "What do you want? Ah, you are a participant in the regatta! Am I right?";
+				link.l1 = "Exactly, sir. I need to get registered here according to the rules.";
 				link.l1.go = "Regata_check";
 				break;
 			}
 			//регата
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions?", "What do you want, " + GetAddress_Form(NPChar) + "?"), "You've already tried to ask me a question " + GetAddress_Form(NPChar) + "...", "You have been talking about some question for the third time today...",
-                          "Look, if you have nothing to tell me about the port's matters then don't bother me with your questions.", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I have changed my mind.", "I've got nothing to talk about."), "Nevermind.", "Indeed, the third time already...", "Sorry, but I'm not interested in the port's matters for now.", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions?","What do you want, "+GetAddress_Form(NPChar)+"?"),"You've already tried to ask me a question "+GetAddress_Form(NPChar)+"...","You've brought up the same question for the third time today...","Look, if you have nothing to tell me about the port's affairs then don't bother me with your questions.","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I have changed my mind.","I've got nothing to talk about."),"Never mind.","Indeed, the third time already...","Sorry, but I'm not interested in port matters for now.",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//--> Грани справедливости
 			if (CheckAttribute(pchar, "questTemp.GS_Portman"))
@@ -49,8 +48,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			bool bRegLugger = sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_LUGGER || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_CAREERLUGGER;
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
-			dialog.text = "Hm... You have broken the rules of the regatta and I have to disqualify you. I am sorry. You are not participating in the next voyage. I have already prepared a dispatch to Port-Royal.";
-			link.l1 = "Oops... what a pity! But I can't do anything here, you were too vigilant. Farewell!";
+			dialog.text = "Hm... You have broken the rules of the regatta and I have to disqualify you. I am sorry. You will not participate in the next voyage. I have already prepared a dispatch to Port Royal.";
+			link.l1 = "Oops... what a pity! But there's nothing I can do here, you were too vigilant. Farewell!";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.Regata");
 			pchar.quest.Regata_PU.over = "yes"; // mitrokosta снимаем прерывание
@@ -60,7 +59,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 			pchar.questTemp.Regata.FirstTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1 переход
-			dialog.text = "Let's register: captain "+ GetFullName(pchar) +", ship is "+pchar.Ship.Name+"... the regatta's time in hours is "+sti(pchar.questTemp.Regata.FirstTransitionTime)+". Done, your result is registered, you can continue your way.";
+			dialog.text = "Let's register: Captain "+GetFullName(pchar)+", ship is "+pchar.Ship.Name+"... the regatta's duration in hours is "+sti(pchar.questTemp.Regata.FirstTransitionTime)+". Done, your result has been recorded, you may continue on your way.";
 			link.l1 = "Tell me my rank.";
 			link.l1.go = "Regata_info";
 			}
@@ -101,7 +100,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				if (n==6)
 				{
-				dialog.text = "You are the last. You should hurry up.";
+				dialog.text = "You are the last. You should hurry.";
 				link.l1 = "I am on my way!";
 				link.l1.go = "exit";
 				AddQuestRecord("Regata", "9");
@@ -110,14 +109,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					if (n==2)
 					{
-					dialog.text = "You are the second. The leader is "+sName+" on the ship "+sShip+". I suppose that you can still outrun him.";
-					link.l1 = "Thanks! I'll be trying!";
+					dialog.text = "You are the second. The leader is "+sName+" on the ship "+sShip+". I suppose you can still outrun him.";
+					link.l1 = "Thanks! I'll give it a try!";
 					link.l1.go = "exit";
 					AddQuestRecord("Regata", "5");
 					}
 					else
 					{
-					dialog.text = "You rank is "+n+". Your closest opponent is "+sName+" on the ship "+sShip+".";
+					dialog.text = "Your rank is "+n+". Your closest opponent is "+sName+" on the ship "+sShip+".";
 					link.l1 = "Thanks!";
 					link.l1.go = "exit";
 					if (n==3) AddQuestRecord("Regata", "6");
@@ -180,13 +179,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "GS_Portman_3":
 			dialog.text = "Argh... Forgive me, "+GetAddress_Form(NPChar)+", my nerves are frayed... What exactly do you want to know?";
-			Link.l1 = "Did you notice any features that could help identify him? Was he alone, or backed by someone more powerful? The more you tell me, the sooner you'll be able to sleep peacefully.";
+			Link.l1 = "Did you notice any features that could help identify him? Was he alone, or was he backed by someone more powerful? The more you tell me, the sooner you'll be able to sleep peacefully.";
 			Link.l1.go = "GS_Portman_4";
 		break;
 		
 		case "GS_Portman_4":
 			dialog.text = "What foe?! I have no enemies! Never have! I’ve done nothing to deserve death in the middle of the street in broad daylight\nThat villain... he’s just a bitter madman, the kind you find everywhere in these colonial towns\nAs for where to look... I think he’s hiding in the jungle. It's easy to disappear in those cursed woods, but I'm sure he'll head for the grottos or coves — easier to hide there\nAs for appearance, his face was covered with a scarf, a hat on his head, and he carried more weapons than His Majesty’s own guards. There was no time to notice anything else.";
-			Link.l1 = "Well, it's not much, but it's enough to begin the search. I'm heading out at once. Keep that gold close — I’ll be back soon.";
+			Link.l1 = "Well, it's not much, but it's enough to begin the search. I'm heading out at once. Keep that gold close — I'll be back soon.";
 			Link.l1.go = "GS_Portman_5";
 		break;
 		
@@ -207,26 +206,26 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "GS_Portman_6":
 			dialog.text = "Magnificent, "+GetFullName(pchar)+"! Utterly magnificent! You have proven your prowess unmatched. Here lies your reward – two hundred doubloons. Please, take it!";
-			Link.l1 = "My thanks to you! But tell me, have you any reason to suspect that the killer was hired by one of your former clients?";
+			Link.l1 = "My thanks to you! But tell me, do you have any reason to suspect that the killer was hired by one of your former clients?";
 			Link.l1.go = "GS_Portman_7";
 			AddItems(pchar, "gold_dublon", 200);
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "GS_Portman_7":
-			dialog.text = "Former clients?.. What nonsense!... I am an honest man, and my dealings have always been aboveboard! But since you've aided me, I shall share something. Not long ago, pirates came to me\nThey offered money for tips on merchant vessels. I refused, and they hurled threats and curses before storming out. I believe the assassin was their doing. They do not take 'no' kindly.";
-			Link.l1 = "In that case, take care of yourself. Who knows how many more hired blades these 'pirates' may send? With that, I must take my leave — business calls.";
+			dialog.text = "Former clients?.. What nonsense!... I am an honest man, and my dealings have always been above board! But since you've aided me, I shall share something. Not long ago, pirates came to me\nThey offered money for tips on merchant vessels. I refused, and they hurled threats and curses before storming out. I believe the assassin was their doing. They do not take 'no' kindly.";
+			Link.l1 = "In that case, take care of yourself. Who knows how many more hired blades these 'pirates' may send? With that, I must take my leave — duty calls.";
 			Link.l1.go = "GS_Portman_8";
 		break;
 		
 		case "GS_Portman_8":
-			dialog.text = "Wait, Captain. I want to thank you once again. Beyond gold, you've earned my favor. As long as I'm Port Chief here, you may leave any of your ships moored here for any length of time at a fifty percent discount. How does that sound?";
+			dialog.text = "Wait, Captain. I want to thank you once again. Beyond gold, you've earned my favour. As long as I'm Port Chief here, you may leave any of your ships moored here for any length of time at a fifty percent discount. How does that sound?";
 			Link.l1 = "A most generous offer! Thank you once again!";
 			Link.l1.go = "GS_Portman_9";
 		break;
 		
 		case "GS_Portman_9":
-			dialog.text = "And I thank you once more for your efforts. I'm certain that as long as you keep focused on what matters, your affairs will continue to prosper as they did today. Farewell, Captain.";
+			dialog.text = "And I thank you once more for your efforts. I'm certain that as long as you stay focused on what matters, your affairs will continue to prosper as they did today. Farewell, Captain.";
 			Link.l1 = "Goodbye.";
 			Link.l1.go = "GS_Portman_10";
 		break;

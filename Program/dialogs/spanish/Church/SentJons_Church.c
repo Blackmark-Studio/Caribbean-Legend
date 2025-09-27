@@ -30,7 +30,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "dwh_pastor_2":
-			dialog.text = "Hij"+GetSexPhrase("o mío","a mía")", solo el Señor puede sanar a la niña. La fe en Su providencia es lo que nos guía a través de las pruebas. Si Thomas reza con diligencia, sigue la palabra de Dios y dona generosamente a la iglesia, el Señor escuchará sus oraciones y mostrará misericordia.";
+			dialog.text = "Hijo mí"+GetSexPhrase("o","a")," solo el Señor puede sanar a la niña. La fe en Su providencia es lo que nos guía a través de las pruebas. Si Thomas reza con diligencia, sigue la palabra de Dios y dona generosamente a la iglesia, el Señor escuchará sus oraciones y mostrará misericordia.";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
 				link.l1 = "(Confiable) Pero seguramente incluso usted debe reconocer que el Señor actúa a través de las personas. ¿Y si la gitana es simplemente un instrumento en las manos de Dios? ¿Y si Su designio es tan profundo que nosotros, simples mortales, no podemos comprenderlo? Los caminos del Señor son misteriosos, ¿no es así?";
@@ -87,7 +87,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "dwh_pastor_bez_VD_3":
-			dialog.text = "Lo que ustedes llaman salvación puede ser un camino directo hacia la perdición. Hablo por experiencia. Una vez, contra mi voluntad, una curandera así trató a mi sobrina. La niña murió entre sufrimientos, y solo el Señor sabe si los ritos brujeriles condenaron su alma a un tormento eterno. Así que no intenten convencerme, es inutil.";
+			dialog.text = "Lo que ustedes llaman salvación puede ser un camino directo hacia la perdición. Hablo por experiencia. Una vez, contra mi voluntad, una curandera así trató a mi sobrina. La niña murió entre sufrimientos, y solo el Señor sabe si los ritos brujeriles condenaron su alma a un tormento eterno. Así que no intenten convencerme - es útil.";
 			link.l1 = "Está bien. Si esa es su decisión final, no discutiré. Que el Señor le guarde.";
 			link.l1.go = "dwh_pastor_bez_VD_4";
 		break;

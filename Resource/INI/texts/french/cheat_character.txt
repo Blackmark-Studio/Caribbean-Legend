@@ -1,69 +1,35 @@
-
 new_string
 {
 
 }
-
 Cheat_success {C'est fait !}
-
 Cheat_on {Triche activée}
-
 Cheat_off {Triche désactivée}
-
 Cheat_Comming_soon {Bientôt disponible !}
-
 f1 {Ajouter 35 points de compétence}
-
 f2 {Ajouter un point d'avantage naval}
-
 f3 {Ajouter un point d'avantage personnel}
-
 f4 {+ 10 PV maximum}
-
 f5 {+10 Énergie maximale}
-
 f6 {Augmenter l'Honneur}
-
 f7 {Diminuer l'Honneur}
-
 f8 {Augmenter la notoriété}
-
 f9 {Diminuer la notoriété}
-
 f10 {Invincibilité activée/désactivée}
-
 f11 {Augmenter l'Autorité}
-
 f12 {Améliorer la vitalité}
-
 f13 {+1000 Capacité d'inventaire maximale}
-
 f14 {х10 dégâts de l'arme blanche équipée}
-
 f15 {х10 dégâts de l'arme à feu équipée}
-
 f16 {х10 temps de recharge de l'arme à feu équipée}
-
 f17 {Mettre à 100% les chances de briser le blocage}
-
 f18 {x10 Régénération de l'énergie}
-
 f19 {x10 Régénération des PV}
-
 f20 {Mettre à 100 % de chances de blocage}
-
 f21 {Poison Taino activé/désactivé}
-
 f22 {Débloquer les avantages du profil de Duelliste}
-
 f23 {Débloquer les avantages du profil de Comptable}
-
 f24 {Débloquer les avantages du profil d'Athlète}
-
 f25 {Débloquer les avantages du profil de Tireur d'Élite}
-
 f26 {Désactiver les exigences de Navigation}
-
 f27 {Dégriser le héros s'il est ivre}
-
-

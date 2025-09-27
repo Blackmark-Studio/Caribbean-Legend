@@ -1332,6 +1332,74 @@ P.P.S. Si vous méritez vraiment de faire partie de notre fraternité, vous sere
 ************************************************************
 Vous avez passé les épreuves que seuls quelques élus peuvent surmonter. Vous avez prouvé que vous saviez observer, vous cacher, tenir des conversations secrètes et planifier chacun de vos pas. Maintenant, vous êtes l'un des nôtres. Le contenu de ce coffre est votre réserve personnelle pour les jours de pluie, et cette pièce est votre cachette sécurisée. Souvenez-vous de ce moment. À partir de ce jour, vous n'êtes plus un visage parmi d'autres, vous faites partie de la confrérie.
 
+#QUEST LeFransua_town_Letter
+Les secrets de Le Fransua
+
+#TEXT 1
+************************************************************
+Anne, mon tourment et ma muse...
+Tu es sûrement en train d’errer dans la ville à ma recherche... Ne te donne pas cette peine. Je suis déjà en mer.
+Et, bon sang, ne crois pas que ça m’a été facile. Ces idiots ne m’ont laissé aucun choix – soit ils te tolèrent et ne partagent rien avec une pute, soit ils partagent, mais tu ne fais plus partie de l’équipage... J’étais furieux, Anne, mais discuter avec une bande d’abrutis armés, c’est de la folie.
+Si je leur avais coupé les pistes, j’aurais perdu mon poste de capitaine aussitôt obtenu. Alors je vais d’abord gagner leur confiance, et ensuite tu reviendras. Et là, on mènera ces chiens ensemble, je te le jure sur ma dernière chemise.
+Je t’ai laissé tout ce que j’avais sur moi. C’est suffisant pour atteindre Nassau... sauf si tu décides encore de finir dans un lit avec quelqu’un en chemin. Les notes sont cachées en ville. Récupère-les – et tu sauras où aller. J’ai choisi des endroits où seule toi aurais l’idée de fouiller.
+
+#TEXT 2
+************************************************************
+Oui, oui, "Va te faire foutre, Jack !" – je t’entends déjà le dire. "D’abord tu m’abandonnes, et maintenant je dois courir après des foutus bouts de papier ?!"
+Qu’est-ce que je pouvais faire d’autre ? Ici, je ne confierais même pas un sou pourri à qui que ce soit. Et les roquets de Barbazon, comme Marco – ils livreraient leur propre mère pour deux doublons. Alors crois-moi, parmi toutes les options merdiques, c’était la meilleure.
+
+P.S. Sur la colline la plus haute de l’île. Mais ne te précipite pas là-bas tant que tu n’as pas tout récupéré.
+
+#TEXT 3
+************************************************************
+Nassau change à chaque putain de minute. Quand tu reviendras, glisse à ton "amie" que je veux tout savoir sur ce qui se passe en ville. Chaque rumeur, chaque mot.
+En attendant – il te faut une clé. Elle est bien planquée. Cherche un passage étroit derrière un tonneau – là où les sentinelles rôdent au-dessus de ta tête.
+P.S. Tout ce qu’il te faut est caché sous cette misérable fortification. J’aurais fait mieux.
+
+#TEXT 4
+************************************************************
+Avec ce butin, tu atteindras Nassau.
+On y arrivera, Anne. Et on sera à nouveau ensemble, comme avant. Je suis convaincu que le destin me réserve la grandeur d’un capitaine, et cette grandeur ne se gagne pas facilement. Mais je te le promets, chaque fois que les gens parleront du capitaine Jack Rackham, ils prononceront aussi ton nom.
+Attends-moi à Nassau. Je reviendrai avec un trésor. Et si ce n’est pas le cas, tu devras trouver quelqu’un d’autre prêt à supporter ton fichu caractère. Bonne chance avec ça.
+
+#QUEST FortFrance_town_Letter
+Les secrets de Saint-Pierre
+
+#TEXT 1
+************************************************************
+Mon ami. J’ai dû quitter Saint-Pierre à la hâte. Je ne peux plus faire partie d’un jeu où il n’y a plus de place pour l’honneur, et où la vie d’un frère devient une monnaie d’échange. Tant qu’il restera des hommes dans l’Ordre ayant vendu leur conscience, je refuse de servir sa cause.
+Michel a été arrêté. Pietro a été tué. Il savait à quoi il s’exposait, et avant de partir pour une nouvelle mission, il nous a légué tout ce qu’il possédait. J’aurais voulu te le remettre en main propre, mais cela m’a été impossible.
+J’ai caché pour toi plusieurs notes dans des endroits que tu connais bien. Elles contiennent des indices. Rassemble-les. Elles te mèneront là où tout sera révélé.
+P.S. Tous les coffres se ressemblent. Mais un seul contient ce dont tu as réellement besoin.
+
+#TEXT 2
+************************************************************
+Tu me condamneras peut-être pour mon départ. Mais je n’avais pas le choix. Je resterai fidèle à mes frères et à Dieu jusqu’à la fin de mes jours – mais pas à ceux qui ont trahi leur serment par cupidité. Et jamais je ne mettrai Alicia en danger. Perdre tout valait la peine pour trouver l’amour de ma vie au bout du monde !
+P.S. Cherche la porte à travers laquelle on voit l’intérieur.
+
+#TEXT 3
+************************************************************
+Je devais accomplir la même mission que Pietro. Mais à la maison, ils m’attendaient. Trois hommes. Des mercenaires. Nous nous sommes affrontés, et j’ai eu la chance de m’en sortir vivant.
+Avant de sortir leurs armes, les mercenaires m’ont transmis un "salut" de la part de Levasseur. Après la mort de Pietro et l’arrestation de Michel, il a dû deviner que quelqu’un avait lancé une chasse à sa tête. Mais il ne pouvait pas savoir qui exactement serait envoyé – seuls les officiers les plus hauts gradés et le commandeur connaissaient son nom.
+Des traîtres dans les rangs de la Fraternité !
+P.S. Descends. Jusqu’à ce qu’il ne reste plus une seule marche vers le bas.
+
+#TEXT 4
+************************************************************
+Quand tout fut terminé et que je suis sorti de la maison, j’ai croisé Valigny. Son sourire en disait long : c’est lui qui a indiqué ma maison aux mercenaires. Et aucun de ses beaux discours pieux ne pourra me convaincre du contraire.
+P.S. Ton chemin mène à l’endroit que j’ai quitté.
+P.S.S. Pour atteindre ce qui est caché, il te faudra une clé. Cherche-la là où chacun de nous puise force et inspiration, en s’adressant au Créateur.
+
+#TEXT 5
+************************************************************
+Tu connais la vérité sur le complot. Tu sais ce qu’il se passe dans la mine de Saint-Martin. Tu sais qu’on traque "Henri".
+D’abord, Michel a été enfermé sans procès – tu sais qui a donné l’ordre. Ensuite, Pietro est mort. Et maintenant, c’est mon tour.
+La vie de nos frères n’est qu’une monnaie pour ces gens – un moyen de garder le pouvoir et de régler leurs problèmes. Les meilleurs d’entre nous meurent ou finissent en prison. Et à cause de tu-sais-qui, l’Ordre va bientôt devenir une bande de mercenaires – aussi brutale que les tueurs de Rodenburg.
+Très bientôt, j’enverrai une lettre au Grand Maître – je suis certain qu’il comprendra et prendra la seule décision juste.
+Je pars avec Alicia vers Port-Royal.
+Que le Seigneur te protège.
+Et si un jour nos chemins se croisent à nouveau – j’espère que tu m’appelleras encore ton ami.
+
 #QUEST LadyBeth_Book
 Journal de Blackwood
 #TEXT 1
@@ -1443,3 +1511,91 @@ Le chaman a arraché le crâne et l'a caché quelque part ! Idiot à plumes ! Je
 Je lui ai tout raconté. Sensation incroyable. Maintenant je sais quoi faire ! "Que le mort enseigne au vivant." Bien sûr ! Sauver les gens des chaînes ou de la potence ne suffit pas. Il faut les sauver de la mort elle-même ! Et on ne peut le faire qu'en forçant quelqu'un à traverser ce que j'ai traversé. Mourir et revenir. Est-ce que je les plains ? Bien sûr. Mais I. avait raison. Personne ne m'a jamais plaint.
 
 J'ai déjà trouvé un nouveau crâne—tout le monde ne peut pas passer l'épreuve de la mort. C'est même mieux ainsi. Que les orbites de Mortimer restent à la Dominique et ne voient pas ce qui se passe sur son navire. Il ne comprendrait pas.
+
+#QUEST WildRose_Records
+Extraits des registres des navires échoués près de l’Île de la Justice en juin 1638
+#TEXT 1
+...15 juin. Brick « Wrangler ». Navire de Sa Majesté le roi Charles Ier.
+Échoué sur le côté sud-est de l’anneau extérieur. Ont été récupérés à bord :
+- 11 fûts de bière écossaise
+- 20 fûts d’eau douce
+- 17 caisses de provisions
+- 3 canons de 16 livres
+- 18 mousquets
+- 29 armes blanches
+- 4 caisses de munitions
+- 15 rouleaux de toile à voile
+4 survivants :
+- Joshua Casper (capitaine)
+- Thérèse Casper
+- Anthony Young
+- Peter Friddicks...
+
+#QUEST WildRose_Records_2
+Extraits du registre ecclésiastique du padre Domingo De la Cruz pour l’été 1638
+#TEXT 1
+« 7 juin. Cérémonie funéraire célébrée pour le serviteur de Dieu Maximilian van Ekkus.
+
+18 juin. Cérémonie funéraire célébrée pour les serviteurs de Dieu Anthony Young et Peter Friddicks.
+
+25 juin. Cérémonie funéraire célébrée pour la servante de Dieu Thérèse V. Casper. Prières prononcées pour le repos des serviteurs de Dieu Jean-Pierre R. Soren et Umberto Rojas (corps non retrouvés).
+
+5 juillet. Baptême du serviteur de Dieu Thierry G. Legros (né le 27 février).
+
+3 août. Baptême des serviteurs de Dieu Fabian O. Gallard (né le 10 juin) et Mary J. Casper (née le 22 juin).
+
+#QUEST WildRose_Records_3
+Détails extraits du dossier personnel de Joshua Casper
+#TEXT 1
+Joshua Anthony Casper est né en l’an de grâce 1586 à Portsmouth.
+Inscrit dans la Marine de Sa Majesté depuis juin 1611.
+A passé l’examen de lieutenant en 1619, affecté à la frégate 'Reversible'...
+En 1625, transféré sur la frégate 'Triumph' au poste de premier officier...
+En 1630, nommé capitaine du brick 'Cornwall'... Porté disparu avec son navire et son équipage en 1638.
+Non marié. Sans enfants.
+Officier exemplaire, décoré à plusieurs reprises. Aucun blâme ni sanction disciplinaire...
+
+#QUEST WildRose_Records_4
+Contenu de l’ordre donné au capitaine Joshua Casper concernant la livraison de la solde à Antigua et Providence
+#TEXT 1
+Au capitaine du brick 'Cornwall', Joshua Anthony Casper — se rendre dans la ville de Dundalk pour le déchargement des munitions militaires, puis traverser l’océan Atlantique afin de livrer la solde destinée aux garnisons des îles d’Antigua et de Providence. Une fois la mission accomplie, faire rapport au gouverneur de l’île d’Antigua Thomas Warner, accorder un repos à l’équipage, puis rentrer en Angleterre au port d’attache.
+La responsabilité de la préparation du brick 'Cornwall' pour l’expédition, de l’instruction de l’équipage, ainsi que du chargement des vivres et des marchandises susmentionnées — incombe au capitaine Joshua Anthony Casper.
+
+Signé de ma main,
+Vice-amiral Robert Bertie, 3e comte de Lindsey
+8 janvier 1638
+Londres, Angleterre
+
+#QUEST WildRose_Records_5
+Détails extraits du rapport du capitaine Joshua Casper sur la traversée de l’Atlantique
+#TEXT 1
+...Nous avons quitté Londres le 14 janvier 1638, cap sur Dundalk...
+...Arrivés à Dundalk le 19 janvier 1638, déchargement des munitions militaires entamé...
+...Départ de Dundalk le 21 janvier 1638, cap sud-ouest...
+...Le 10 février 1638, au large de l’île de São Miguel (Açores), affrontement avec le galion espagnol « Toro ». Armement estimé à 50 canons lourds. Après avoir abattu le mât principal ennemi, décision prise de ne pas compromettre la mission confiée par l’Amirauté et de quitter la zone de combat en prenant cap à l’ouest. Pertes : 32 hommes, dont les officiers suivants : le premier officier Rupert Northwood, le lieutenant Edward Matts, le lieutenant Samuel Downes. Les défunts ont été inhumés en mer, conformément aux traditions de la Royal Navy.
+...Arrivée à l’île d’Antigua le 1er juin 1638, remise au gouverneur Sir Thomas Warner du coffre contenant la solde destinée à la garnison...
+
+Signé de ma main,
+Capitaine du navire de Sa Majesté « Cornwall » Joshua Anthony Casper
+2 juin 1638
+Saint John’s, île d’Antigua
+
+#QUEST WildRose_Records_6
+Lettre de Jérôme Sauvergne à Fadey le Moscovite
+#TEXT 1
+Monsieur Fadey, j’espère que ma lettre vous trouvera en bonne santé. Hélas, je ne peux en dire autant de moi-même. Une violente rixe a éclaté au « Œil de Verre », et j’ai eu le malheur d’y être impliqué. J’ai été grièvement blessé, mais ma vie n’est heureusement pas en danger. Cette blessure m’oblige néanmoins à prolonger mon séjour dans cette ville peu hospitalière.
+Concernant la mission que vous m’avez confiée — j’ai de bonnes nouvelles. J’ai réussi à retrouver la trace d’un certain Rupert Casper. Je vous communiquerai les détails à mon retour à Basse-Terre. Je suis navré de vous faire attendre.
+Jérôme Sauvergne
+
+#QUEST LEDR_Book_1
+Extraits du journal de Diego Velázquez de Cuéllar
+#TEXT 1
+"Aujourd’hui, nous avons détruit un autre village de sauvages. Aucun d’eux n’a résisté à nos lames. Les hommes qui ont osé lutter furent tués sur place, les autres enchaînés. Leurs huttes ont été réduites en cendres, les greniers vidés, et tout ce qui avait de la valeur est devenu notre butin. Ceux qui ont tenté de cacher des enfants furent égorgés devant ceux qui avaient survécu. Leurs larmes coulaient comme des rivières, lavant le triomphe de nos bannières. Ces terres appartiennent maintenant à l’Espagne. Nous avons apporté ici l’ordre et la volonté du Seigneur, même au prix du sang."
+
+"Mon dessein est accompli. Les barbares sont venus pour des négociations. Leurs chefs étaient assis autour du feu, croyant naïvement en la paix. Mais la vraie paix ne vient que par le sang. Nous avons entouré la hutte, barricadé la porte et y mis le feu. D’abord vinrent les cris — furieux, désespérés. Puis tout se tut, seul le crépitement du feu rompit le silence. L’odeur de chair roussie emplit l’air, comme la bénédiction du Seigneur lui-même. Ces sauvages ne relèveront jamais plus la tête."
+
+"Le cacique Atuéy reçut ce qu’il méritait. Je le fis regarder l’exécution de son peuple : les femmes jetées dans les flammes, les têtes des jeunes tranchées, et les enfants criaient de peur. On l’attacha à un poteau au centre d’un grand bûcher. J’ai vu de mes yeux le feu embraser son corps. Mais il ne criait pas de douleur. Non, sa voix était pleine de mépris pour nous. Même mourant, il trouva la force de lancer des malédictions dans notre direction. Sauvage idiot ! Il croyait que ses mots pourraient nous effrayer. Le vent dispersera ces insanités avec la cendre de son corps."
+
+"Après cette exécution je commençai à remarquer des choses étranges. Le jour, les moines prêchaient la grâce de Dieu, mais la nuit, des ombres reprenaient vie autour. Il me semblait entendre les pleurs des femmes, les cris des enfants et les malédictions des sauvages résonner à mes oreilles. La nuit passée un des matelots mourut. Son corps fut retrouvé déchiré comme par des bêtes sauvages. J’ordonnai à tous de prier, mais les prières étaient vaines. Maintenant je suis convaincu : c’est Atuéy. Il nous a jeté une malédiction. Ces barbares ne pardonnent jamais."
+
+"La malédiction… Elle ne me quitte pas. Elle nichant à l’intérieur, comme un serpent enroulé autour du cœur. Chaque nuit je vois des huttes en flammes, j’entends des cris et des gémissements des morts qui m’appellent à rendre des comptes. Leurs squelettes calcinés se dressent des cendres, leurs orbites vides me regardent avec haine. Même maintenant, dans cette chambre, j’entends leurs pas. La porte grince lentement, comme si quelqu’un entrait, mais je ne vois personne. Mes mains tremblent si fort que la plume obéit à peine. Il n’y a pas de salut. Le Seigneur m’a abandonné, comme j’ai abandonné la miséricorde. Ils sont déjà proches. Bientôt ils viendront me chercher..."

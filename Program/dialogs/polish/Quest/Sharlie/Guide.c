@@ -22,14 +22,14 @@ void ProcessDialogEvent()
 		
 		case "guide_0":
 			PlaySound("Voice\English\LE\Greguar\Greguar_01.wav");
-			dialog.text = "Miło powitać pana w koloniach, panie! Pozwolę sobie się przedstawić: "+GetFullName(npchar)+". Czy przybywa pan z Europy? Pierwszy raz u nas?";
+			dialog.text = "Miło mi powitać pana w koloniach, panie! Pozwolę sobie się przedstawić: "+GetFullName(npchar)+". Czy przybywa pan z Europy? Pierwszy raz u nas?";
 			link.l1 = "Dzień dobry, monsieur. Nazywam się "+GetFullName(pchar)+". Tak, właśnie zsedłem ze statku.";
 			link.l1.go = "guide_1";
 		break;
 		
 		case "guide_1":
 			DelLandQuestMark(npchar);
-			dialog.text = "Widząc szlachetnego dworzan, uznałem za swój obowiązek zaoferować pomoc. Tutaj, w Nowym Świecie, panują swoje porządki — a ich nieznajomość może drogo kosztować, szlachetni ludzie tacy jak my powinni sobie pomagać. Nie uwierzyliby państwo, ile tutaj zebrało się wszelkiej maści szumowin, gotowych zdradzić bliźniego za garść monet\n"+
+			dialog.text = "Widząc szlachetnego dworzanina, uznałem za swój obowiązek zaoferować pomoc. Tutaj, w Nowym Świecie, panują swoje porządki — a ich nieznajomość może drogo kosztować, szlachetni ludzie tacy jak my powinni sobie pomagać. Nie uwierzyłby pan, ile tutaj zebrało się wszelkiej maści szumowin, gotowych zdradzić bliźniego za garść monet\n"+
 			"Czy mogę oprowadzić pana po mieście i krótko wprowadzić w sprawę?";
 			link.l1 = "To bardzo szlachetne z pana strony, monsieur! Z radością przyjmę pana propozycję.";
 			link.l1.go = "guide_2";
@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_exit":
-			dialog.text = "Jak pan sobie życzy, monsieur. W każdym razie cieszyłem się z naszej znajomości. Szlachetni ludzie są tak rzadcy w tej głuszy. Wszystkiego dobrego i powodzenia!";
+			dialog.text = "Jak pan sobie życzy, monsieur. W każdym razie ciesze się z naszej znajomości. Szlachetni ludzie są tak rzadcy w tej głuszy. Wszystkiego dobrego i powodzenia!";
 			link.l1 = "I panu również, "+GetFullName(npchar)+"!";
 			link.l1.go = "guide_exit_1";			
 		break;
@@ -59,21 +59,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_tavern":
-			dialog.text = "Tawerna — serce portu. Tutaj znajdzie pan nocleg, rum, plotki i będzie mógł najmować marynarzy i oficerów. A także — grać w karty, znaleźć pracę lub skorzystać z usług przemytników i handlarzy mapami skarbów.";
+			dialog.text = "Karczma — serce portu. Tutaj znajdzie pan nocleg, rum, plotki i będzie mógł najmować marynarzy i oficerów. A także — grać w karty, znaleźć pracę lub skorzystać z usług przemytników i handlarzy mapami skarbów.";
 			link.l1 = "";
 			link.l1.go = "guide_market";
 			locCameraFromToPos(-2.08, 5.32, 68.88, true, -15.00, 0.90, 55.00);
 		break;
 		
 		case "guide_market":
-			dialog.text = "Rynek. Towary do użytku osobistego zawsze można kupić na rynku. U zbrojmistrza — broń, zbroje i amunicja, u zielarki — lecznicze mikstury. Cyganki i mnisi handlują amuletami, a starociarz sprzedaje wszelkie graty, przydatne tym, którzy nie stronią od majsterkowania własnymi rękami.";
+			dialog.text = "Rynek. Towary do użytku osobistego zawsze można kupić na rynku. U zbrojmistrza — broń, zbroje i amunicje, u zielarki — lecznicze mikstury. Cyganki i mnisi handlują amuletami, a starociarz sprzedaje wszelkie graty, przydatne tym, którzy nie stronią od majsterkowania własnymi rękami.";
 			link.l1 = "";
 			link.l1.go = "guide_brothel";
 			locCameraFromToPos(-13.58, 4.11, 69.06, true, -45.00, -6.00, 52.00);
 		break;
 		
 		case "guide_brothel":
-			dialog.text = "Burdel. Nie ma lepszego lekarstwa dla ciała niż miłosne uciech w objęciach wprawnej kobiety. Jeśli zdrowie się zachwiało — zajrzyj tutaj, rozerwij się, otrzymaj porcję pieszczot i poczujesz się jak inny człowiek.";
+			dialog.text = "Zamtuz. Nie ma nic lepszego dla ciała niż miłosne uciechy w objęciach wprawnej kobiety. Jeśli zdrowie się zachwiało — zajrzyj tutaj, rozerwij się, otrzymaj porcję pieszczot i poczujesz się jak inny człowiek.";
 			link.l1 = "";
 			link.l1.go = "guide_bank";
 			locCameraFromToPos(-2.75, 7.07, 61.10, true, 60.00, -6.60, 42.65);
@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_prison":
-			dialog.text = "Więzienie. Prawdziwych przestępców jest tu niewielu — głównie wszelkie szumowiny. Jeśli chce pan znaleźć pracę wśród szumowin społecznych — porozmawiaj z komendantem. Za niewielką łapówkę może przepuścić do cel.";
+			dialog.text = "Więzienie. Prawdziwych przestępców jest tu niewielu — głównie wszelkie szumowiny. Jeśli chce pan znaleźć pracę wśród szumowin społecznych — porozmawiaj z komendantem. Za niewielką łapówkę może pana przepuścić do cel.";
 			link.l1 = "";
 			link.l1.go = "guide_townhall";
 			locCameraFromToPos(-50.52, 5.79, 38.60, true, -47.65, 3.95, 33.52);
@@ -154,7 +154,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_24":
-			dialog.text = "Z pieniędzmi, niestety, nie mogę pomóc — sam jestem teraz spłukany. Ale w pozostałych kwestiach — jestem do usług. Gotów pan kontynuować wycieczkę?";
+			dialog.text = "Z pieniędzmi, niestety, nie mogę pomóc — sam jestem teraz spłukany. Ale w pozostałych kwestiach — jestem do usług. Gotów pan jest kontynuować wycieczkę?";
 			link.l1 = "Tak, chyba tak, przecież nie bez powodu mówią: wiedza to potęga.";
 			link.l1.go = "guide_25";
 			link.l2 = "Dziękuję z całego serca, monsieur, ale dalej poradzę sobie sam.";
@@ -162,8 +162,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_exit_11":
-			dialog.text = "È stato un piacere conoscervi. E per quanto riguarda i soldi per la nave — parlate con le persone influenti della città. Per esempio, con il mercante nel negozio.\n"+
-			"Buona fortuna, "+pchar.name+" — siate audace e ce la farete.";
+			dialog.text = "Rozumiem. Aby uzyskać fundusze, porozmawiaj z przedsiębiorcami w mieście – na przykład ze sprzedawcą w sklepie.\n"+
+			"Powodzenia, "+pchar.name+" — bądź odważny i dasz radę.";
 			link.l1 = "";
 			link.l1.go = "guide_exit_12";			
 		break;
@@ -196,14 +196,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_portoffice":
-			dialog.text = "Biuro portowe. Tutaj możesz zostawić statek na postoju, a także znaleźć uczciwą pracę dla kapitana: fracht, eskortę, dostawę poczty. Im więcej zadań wykonasz - tym bardziej opłacalne się staną.";
+			dialog.text = "Portowa administracja. Tutaj możesz zostawić statek na postoju, a także znaleźć uczciwą pracę dla kapitana: fracht, eskortę, dostawę poczty. Im więcej zadań wykonasz - tym bardziej opłacalne się staną.";
 			link.l1 = "";
 			link.l1.go = "guide_store";
 			locCameraFromToPos(48.38, 9.48, 43.95, true, 43.69, 5.47, 48.13);
 		break;
 		
 		case "guide_store":
-			dialog.text = "Sklep. Kapitanowie bywają tu najczęściej - po zapasy, rum, lekarstwa, proch i amunicję. Jeśli czegoś brakuje - szukaj przemytników w tawernie. Ale pamiętaj: bez dobrego skarbnika handel to strata czasu i pieniędzy.";
+			dialog.text = "Sklep. Kapitanowie bywają tu najczęściej - po zapasy, rum, lekarstwa, proch i amunicję. Jeśli czegoś brakuje - szukaj przemytników w karczmie. Ale pamiętaj: bez dobrego skarbnika handel to strata czasu i pieniędzy.";
 			link.l1 = "";
 			link.l1.go = "guide_gate";
 			locCameraFromToPos(-21.10, 6.60, 45.21, true, -30.00, 3.70, 45.00);
@@ -218,7 +218,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_45":
-			dialog.text = "Pamiętaj, że nie we wszystkich koloniach będziesz mile widziany. Jeśli nie chcesz czekać na noc, by przeniknąć wrogą kolonię, najpierw podnieś inny sztandar na statku, a potem polegaj na umiejętności skradania się lub kup licencję handlową.";
+			dialog.text = "Pamiętaj, że nie we wszystkich koloniach będziesz mile widziany. Jeśli nie chcesz czekać na noc, by przeniknąć do wrogiej kolonii, najpierw podnieś inny sztandar na statku, a potem polegaj na umiejętności skradania się lub kup licencję handlową.";
 			link.l1 = "";
 			link.l1.go = "guide_46";
 		break;
@@ -238,8 +238,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_49":
-			dialog.text = "Amico mio, suppongo che non siate un principiante nella scherma?";
-			link.l1 = "Ah! Ho già superato un abbordaggio e persino...";
+			dialog.text = "Przyjacielu, zakładam, że nie jesteś nowicjuszem w szermierce?";
+			link.l1 = "Ach! Już przeżyłem jeden abordaż i nawet...";
 			link.l1.go = "guide_50";
 			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
 			{
@@ -249,8 +249,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_50":
-			dialog.text = "Ottimo. Iniziamo?";
-			link.l1 = "Balliamo!";
+			dialog.text = "Świetnie. Możemy zaczynać?";
+			link.l1 = "Zatańczmy!";
 			link.l1.go = "guide_56";
 			npchar.quest.guide_win = 0;
 		break;
@@ -303,7 +303,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_59": // побили первый раз
-			dialog.text = "Wygrałem, Monsieur. Ruchy szybciej, paruj moje pchnięcia, odskocz. Rewanż?";
+			dialog.text = "Wygrałem, Monsieur. Pamiętaj, szybsze ruchy, paruj moje pchnięcia, odskakuj. Rewanż?";
 			link.l1 = "Oui! Bez litości, Monsieur!";
 			link.l1.go = "guide_56";
 			link.l2 = "Nie, wystarczy. Skończmy lekcję. Co teraz?";
@@ -319,8 +319,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_61": // побили третий раз
-			dialog.text = "Musisz się jeszcze wiele nauczyć, "+pchar.name+"Nie martw się, masz jeszcze dużo czasu, aby opanować szermierkę. Ale bądź ostrożny, nie ryzykuj, dopóki nie nauczysz się trzymać broni.";
-			link.l1 = "Rozważę to, Monsieur, ale muszę przyznać, że miałeś po prostu za dużo szczęścia! To przeklęte upał... jedyny powód, dla którego nie obiłem cię po pysku. Merde, zakończmy naszą lekcję szermierki. Co teraz?";
+			dialog.text = "Musisz się jeszcze wiele nauczyć, "+pchar.name+". Nie martw się, masz jeszcze dużo czasu, aby opanować szermierkę. Ale bądź ostrożny, nie ryzykuj, dopóki nie nauczysz się trzymać broni.";
+			link.l1 = "Rozważę to, Monsieur, ale muszę przyznać, że miałeś po prostu za dużo szczęścia! Ten przeklęty upał... jedyny powód, dla którego nie obiłem cię po pysku. Merde, zakończmy naszą lekcję szermierki. Co teraz?";
 			link.l1.go = "guide_62"; // нода на выход
 		break;
 		
@@ -340,57 +340,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "guide_64": // решили убить Валинье
-			dialog.text = "Trzymaj język za zębami, Monsieur! Nie będę dłużej tolerować takiej bezczelności. Jednakże, rozumiem twoją reakcję na nowe otoczenie, dlatego tym razem wybaczam twoje wybuchy. Ale od teraz pilnuj swoich słów. Żegnaj, Monsieur de Maure.";
-			link.l1 = "Bez obrazy, Monsieur Valinnie. Gdybyśmy byli teraz w Luwrze, uważałbyś na swój ton! Czas nauczyć prowincję ostatniej lekcji. Broń się!";
-			link.l1.go = "guide_65";
-		break;
-		
-		case "guide_65":
-			DialogExit();
-			
-			npchar.rank = 25;
-			int iHp = MOD_SKILL_ENEMY_RATE*10+300;
-			LAi_SetHP(npchar, iHp, iHp);
-			SetSelfSkill(npchar, 80, 80, 80, 80, 50);
-			SetShipSkill(npchar, 50, 80, 35, 30, 50, 20, 30, 20, 80);
-			SetSPECIAL(npchar, 9, 5, 8, 6, 5, 10, 8);
-			SetCharacterPerk(npchar, "Energaiser");
-			SetCharacterPerk(npchar, "BasicDefense");
-			SetCharacterPerk(npchar, "AdvancedDefense");
-			SetCharacterPerk(npchar, "CriticalHit");
-			SetCharacterPerk(npchar, "Tireless");
-			SetCharacterPerk(npchar, "HardHitter");
-			SetCharacterPerk(npchar, "Sliding");
-			SetCharacterPerk(npchar, "BladeDancer");
-			SetCharacterPerk(npchar, "SwordplayProfessional");
-			SetCharacterPerk(npchar, "Gunman");
-			SetCharacterPerk(npchar, "GunProfessional");
-			GiveItem2Character(npchar, "blade_30");
-			EquipCharacterbyItem(npchar, "blade_30");
-			GiveItem2Character(npchar, "cirass7");
-			GiveItem2Character(npchar, "obereg_7");
-			GiveItem2Character(npchar, "talisman11");
-			AddMoneyToCharacter(npchar, 10000);
-			AddItems(npchar, "gold_dublon", 25);
-			AddItems(npchar, "bullet", 5);
-			AddItems(npchar, "grapeshot", 5);
-			AddItems(npchar, "GunPowder", 10);
-			TakeItemFromCharacter(npchar, "blade_12");
-			npchar.cirassId = Items_FindItemIdx("cirass4");
-			LAi_SetCurHPMax(npchar);
-			LAi_GetCharacterMaxEnergy(npchar);
-			LAi_SetCurHPMax(pchar); 
-			LAi_GetCharacterMaxEnergy(pchar);
-			LAi_SetImmortal(npchar, false);
-			LAi_group_Delete("EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			npchar.SaveItemsForDead = true;
-			npchar.DontClearDead = true;
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "Guide_HeroKill");
-			AddDialogExitQuest("MainHeroFightModeOn");
+			dialog.text = "Trzymaj język za zębami, Monsieur! Nie będę dłużej tolerować takiej bezczelności. Jednakże, rozumiem twoją reakcję na nowe otoczenie, dlatego tym razem wybacze twój ton. Ale od teraz pilnuj swoich słów. Żegnaj, Monsieur de Maure.";
+			link.l1 = "Bez obrazy, Monsieur Valinnie. Gdybyśmy byli teraz w Luwrze, to ty uważałbyś na swój ton! Czas nauczyć prowincję ostatniej lekcji. Broń się!";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Guide_DlgExit_64");
 		break;
 		
 		case "Exit":

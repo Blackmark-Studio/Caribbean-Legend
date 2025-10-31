@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Tissu}
 descriptor_ArmorMaterial_1 {Cuir}
 descriptor_ArmorMaterial_2 {Plates}
 descriptor_ArmorMaterial_3 {Estampé}
-descriptor_ArmorMaterial_4 {Coulé}
+descriptor_ArmorMaterial_4 {Forgé}
 descriptor_AmuletType_0 {Ordinaire}
 descriptor_AmuletType_1 {Païen}
 descriptor_AmuletType_2 {Chrétien}
@@ -40,6 +40,7 @@ descriptor_Special {Spécial}
 descriptor_Tool {Outil}
 descriptor_Valuable {Précieux}
 descriptor_BulletNeedPowder {Poudre noire}
+descriptor_descr_BulletNeedPowder {Cette munition ne sortira pas du canon sans une dose de poudre.}
 descriptor_GrapeAmmo {Mitraille}
 descriptor_BulletAmmo {Balle}
 descriptor_BombAmmo {Grenade}
@@ -64,8 +65,8 @@ Cet objet n’a rien à faire entre les mains d’un bon chrétien, et d’effra
 Augmente la Puissance de la Flotte de $percent($DescriptorBaseValue(Exotic)) ; effets cumulables.
 }
 descriptor_descr_HighQuality {Cette arme est si bien conçue que ses dégâts critiques sont augmentés de $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {Cette armure s’ajuste parfaitement, augmentant la vitesse d’attaque de toute arme de 5 %.}
-descriptor_descr_HeartDefence {Cette armure est renforcée aux points vitaux, réduisant les dégâts critiques ennemis de 20 %.}
+descriptor_descr_GoodFit {Cette armure s’ajuste parfaitement, augmentant la vitesse d’attaque de toute arme de $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Cette armure est renforcée aux points vitaux, réduisant les dégâts critiques ennemis de $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Tout le monde possède ce genre d’objet. Avec, vous passez inaperçu.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 L’armure estampée est produite en masse pour équiper les troupes et utilisée dans les guerres européennes.
 Réduit les dégâts subis de 22 %.
 }
-descriptor_descr_ArmorMaterial_4 {La fabrication d’une armure coulée est complexe et coûteuse, ce qui la rend rare aux Caraïbes. Réduit les dégâts subis de 35 %.}
+descriptor_descr_ArmorMaterial_4 {La fabrication d'une armure forgée de haute qualité est un processus complexe et coûteux, ce qui en fait une rareté dans les Caraïbes. Réduit les dégâts subis de 35 %.}
 descriptor_descr_AmuletType_0 {Puise dans les présages, les superstitions maritimes et de vrais liens de cause à effet.}
 descriptor_descr_AmuletType_1 {Puise dans la puissance des dieux païens et des rituels indigènes.}
 descriptor_descr_AmuletType_2 {Puise dans la puissance des saints chrétiens et de la foi juste.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Diverses babioles abondent dans les Caraïbes. Précieuse
 descriptor_Alchemy {Alchimie}
 descriptor_descr_Alchemy {Cet objet peut être fabriqué ou modifié grâce à l'Alchimie.}
 descriptor_Quest {Quête}
+descriptor_descr_Quest {Cet objet est nécessaire pour une quête. Il ne peut pas être déposé ni vendu.}
 descriptor_Map {Carte}
+descriptor_descr_Map {Un morceau de papier portant les indications d'une localité. Tous ces objets sont immédiatement copiés dans l'atlas.}
 descriptor_Fragile {Fragile}
 descriptor_descr_Fragile {Cet objet se casse après un certain nombre d’utilisations.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {L'effet s'applique au canonnier.}
+descriptor_descr_Boatswain {L'effet s'applique au maître d'équipage.}
+descriptor_descr_Carpenter {L'effet s'applique au charpentier.}
+descriptor_descr_Navigator {L'effet s'applique au navigateur.}
+descriptor_descr_Treasurer {L'effet s'applique au trésorier.}
+descriptor_descr_Doctor {L'effet s'applique au médecin.}
 descriptor_Ingredient {Ingrédient}
 descriptor_Jewelery {Bijou}
 descriptor_descr_Jewelery {Pierres précieuses et semi-précieuses. À vendre ou à utiliser en alchimie.}
 descriptor_descr_Ingredient {Cet objet est utilisé en alchimie.}
+descriptor_Alternate {Ajustement}
+descriptor_descr_Alternate {La compétence a un effet pour le héros principal et un autre effet pour tous les autres personnages.}
+descriptor_IntoxicatingPotion {Enivrant}
+descriptor_descr_IntoxicatingPotion {Délie les langues, allège l’esprit, mais inflige des malus aux compétences.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {L'effet est utile aux Combattants.}

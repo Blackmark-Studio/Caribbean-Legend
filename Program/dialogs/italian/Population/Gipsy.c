@@ -185,14 +185,14 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Oh, non sono sicura, bello! C'era un tipo poco tempo fa che chiedeva aiuto per uccidere i ratti e poi qualcuno ha avvelenato i soldati nel forte. Le cose si sono fatte piuttosto calde per la mia gente sull'isola mentre le guardie ci interrogavano per due settimane fino a quando hanno trovato l'assassino. Era una spia nemica.","E come posso essere certo del tuo intento? Forse vuoi solo avvelenare un nobile che sei troppo codardo per sfidare in un duello onorevole??","Mi è stato detto che qualcuno ha avvelenato un commerciante nella taverna e ha rubato tutti i suoi averi. L'uomo ha sofferto a lungo prima di spirare. La schiuma gli usciva dalla bocca e si è trasformato in viola come una melanzana.. Sei responsabile di questo, amore mio?");
 				link.l1 = "Voi zingare sicuramente amate condividere le vostre opinioni! Non preoccuparti ragazza, non ho intenzione di avvelenare la gente. Questo è un modo femminile di uccidere, non fa per me. Per gli uomini ho la mia spada, ma non riesco a gestire quei maledetti ratti.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "Stai cercando di intrappolarmi! No signore, non ho nessun veleno. Ho piante e pozioni, ma niente veleni.";
 				link.l1 = "Come vuoi. Non mi portare sfortuna.";
 				link.l1.go = "exit";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

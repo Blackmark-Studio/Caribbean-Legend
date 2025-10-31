@@ -21,21 +21,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallottad? Azt mondják, Thomas Morrison lánya már hat hónapja ágyhoz van kötve. Az orvosok teljesen tehetetlenek a betegségével szemben. Az egyetlen, aki segíthet rajta, az a cigányasszony, aki a súlyos betegeket is meggyógyító bájitalairól ismert. Ám a nô határozottan elutasítja, hogy bármit is tegyen a szegény lányért.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 			break;
         }
 		//<-- Тёмные воды исцеления
@@ -47,14 +33,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Két nappal ezelôtt szemtelen merényletet követtek el a kikötôi fônök ellen! A merénylô az irodája ajtajánál leselkedett, de a fônöknek sikerült segítségért kiáltania. Egy muskétás sietve érkezett, és megsebesítette a gazembert, bár a gazembernek sikerült elmenekülnie a város kapuján\nAz a hír járja, hogy a kikötôi fônök szép vérdíjat tûzött ki a gazember fejére! Eddig még nem jelentkeztek elég bátor lelkek.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -66,13 +45,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallottad a híreket?! Ez egy véres felháborodás! Egy csepp rum vagy bor sem maradt a kocsmában - hogyan is találhatna egy test enyhülést ebben az átkozott hôségben? A fogadós egy hete üres ígéretekkel etet minket, hogy az ital újra folyni fog, de semmi sem történt! Azt várják tôlünk, hogy az Ítélet Napjáig pergessük a torkunkat?";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -84,24 +57,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "A kikötôben az a hír járja, hogy Julie d'Armagnac, a kormányzó unokahúga már csak árnyéka önmagának. Egykor ragyogó és élettel teli volt, most azonban összetéveszthetetlen szomorúsággal az arcán kóborol az utcákon. A városlakók suttognak és azon tûnôdnek, mi történhetett vele, de senki sem tudja az igazságot. Talán egy gazember törte össze a szívét?"+GetSexPhrase(" Talán te voltál az, kapitány?","")+"";
 			link.l1 = ""+GetSexPhrase("Kétlem, hogy ","")+". Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -113,13 +69,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Azt beszélik, hogy Pierre Carno halász nyomtalanul eltûnt. Két hajnalban elhajózott a kékbe, és azóta semmi nyoma. A felesége, Lea, magán kívül van a bánattól. Nappal és lámpafénynél is virraszt a mólónál, tekintetét a végtelen vízre szegezve, imádkozik, hogy megpillantsa szerelme vitorláját.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова 
@@ -131,14 +81,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Kapitány, hallottad? Új pincérnô dolgozik a kocsmánkban. Azt mondják, nagyon szép. A férfiak mindenhonnan rohannak be, csak hogy megpillanthassák. De három nappal ezelôtt nem jelent meg a munkában, ami nagyon felzaklatta a kocsmárost, aki az érkezése óta hatalmas nyereséget termelt. Állítólag még fizetni is hajlandó annak, aki megtalálja a lányt.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -150,24 +93,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallotta? A mi kovácsunk kártyán elvesztett mindent Javier Castillo ellen, úgy, hogy az teljesen kifosztotta, és rákényszerítette, hogy valami nagyon értékeset tegyen fel. Azóta a kovács sehogy sem tud magához térni, és nem vállal új megrendeléseket – csak azon bánkódik, hogy az admirális három bőrt lehúz róla. Kár ezért a jámbor emberért, minden helybéli tudja, hogy ezzel a csaló Castillo-val nem szabad játszani!";
 			link.l1 = "Köszönöm, most "+ GetSexPhrase("távoznom kell","távoznom kell") +".";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -179,21 +105,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallotta? Az 'Águila' nevű flöjt kapitánya olyan patáliát csapott a fogadóban a hadnagyának, hogy a falak is beleremegtek! Kiderült, hogy a kapitány dagálykor akart kifutni a tengerre, de a hadnagy az egész legénységet partra engedte. Most a matrózok szétszéledtek a városban, és ha nem térnek vissza időben, a hajó nélkülük fog elindulni – a kapitány nem szándékozik várni! Vajon miért ez a nagy sietség? Jó fuvardíj, előnyös üzlet, sürgős megbízás a kormányzótól?";
 			link.l1 = "Köszönöm, most "+ GetSexPhrase("távoznom kell","távoznom kell") +".";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -247,21 +159,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallottad? Azt mondják, Thomas Morrison lánya már hat hónapja ágyhoz van kötve. Az orvosok teljesen tehetetlenek a betegségével szemben. Az egyetlen, aki segíthet rajta, az a cigányasszony, aki a súlyos betegeket is meggyógyító bájitalairól ismert. Ám a nô határozottan elutasítja, hogy bármit is tegyen a szegény lányért.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 			break;
         }
 		//<-- Тёмные воды исцеления
@@ -273,14 +171,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Két nappal ezelôtt szemtelen merényletet követtek el a kikötôi fônök ellen! A merénylô az irodája ajtajánál leselkedett, de a fônöknek sikerült segítségért kiáltania. Egy muskétás sietve érkezett, és megsebesítette a gazembert, bár a gazembernek sikerült elmenekülnie a város kapuján\nAz a hír járja, hogy a kikötôi fônök szép vérdíjat tûzött ki a gazember fejére! Eddig még nem jelentkeztek elég bátor lelkek. Jól jegyezd meg, még ezer dublonnáért sem kockáztatnám a nyakamat...";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -293,13 +184,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallottad a híreket?! Ez egy véres felháborodás! Egy csepp rum vagy bor sem maradt a kocsmában - hogyan is találhatna egy test enyhülést ebben az átkozott hôségben? A fogadós egy hete üres ígéretekkel etet minket, hogy az ital újra folyni fog, de semmi sem történt! Azt várják tôlünk, hogy az Ítélet Napjáig pergessük a torkunkat?";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -312,24 +197,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "A kikötôben az a hír járja, hogy Julie d'Armagnac, a kormányzó unokahúga már csak árnyéka önmagának. Egykor ragyogó és élettel teli volt, most azonban összetéveszthetetlen szomorúsággal az arcán kóborol az utcákon. A városlakók suttognak és azon tûnôdnek, mi történhetett vele, de senki sem tudja az igazságot. Talán egy gazember törte össze a szívét?"+GetSexPhrase(" Talán te voltál az, kapitány?","")+"";
 			link.l1 = ""+GetSexPhrase("Kétlem, hogy ","")+". Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -342,13 +210,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Azt beszélik, hogy Pierre Carno halász nyomtalanul eltûnt. Két hajnalban elhajózott a kékbe, és azóta semmi nyoma. A felesége, Lea, magán kívül van a bánattól. Nappal és lámpafénynél is virraszt a mólónál, tekintetét a végtelen vízre szegezve, imádkozik, hogy megpillantsa szerelme vitorláját.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова 
@@ -360,14 +222,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Kapitány, hallottad? Új pincérnô dolgozik a kocsmánkban. Azt mondják, nagyon szép. A férfiak mindenhonnan rohannak be, csak hogy megpillanthassák. De három nappal ezelôtt nem jelent meg a munkában, ami nagyon felzaklatta a kocsmárost, aki az érkezése óta hatalmas nyereséget termelt. Állítólag még fizetni is hajlandó annak, aki megtalálja a lányt.";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -379,24 +234,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallotta? A mi kovácsunk kártyán elvesztett mindent Javier Castillo ellen, úgy, hogy az teljesen kifosztotta, és rákényszerítette, hogy valami nagyon értékeset tegyen fel. Azóta a kovács sehogy sem tud magához térni, és nem vállal új megrendeléseket – csak azon bánkódik, hogy az admirális három bőrt lehúz róla. Kár ezért a jámbor emberért, minden helybéli tudja, hogy ezzel a csaló Castillo-val nem szabad játszani!";
 			link.l1 = "Köszönöm, most "+ GetSexPhrase("távoznom kell","távoznom kell") +".";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -408,21 +246,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallotta? Az 'Águila' nevű flöjt kapitánya olyan patáliát csapott a fogadóban a hadnagyának, hogy a falak is beleremegtek! Kiderült, hogy a kapitány dagálykor akart kifutni a tengerre, de a hadnagy az egész legénységet partra engedte. Most a matrózok szétszéledtek a városban, és ha nem térnek vissza időben, a hajó nélkülük fog elindulni – a kapitány nem szándékozik várni! Vajon miért ez a nagy sietség? Jó fuvardíj, előnyös üzlet, sürgős megbízás a kormányzótól?";
 			link.l1 = "Köszönöm, most "+ GetSexPhrase("távoznom kell","távoznom kell") +".";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -514,24 +338,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "A kikötôben az a hír járja, hogy Julie d'Armagnac, a kormányzó unokahúga már csak árnyéka önmagának. Egykor ragyogó és élettel teli volt, most azonban összetéveszthetetlen szomorúsággal az arcán kóborol az utcákon. A városlakók suttognak és azon tûnôdnek, mi történhetett vele, de senki sem tudja az igazságot. Talán egy gazember törte össze a szívét?"+GetSexPhrase(" Talán te voltál az, kapitány?","")+"";
 			link.l1 = ""+GetSexPhrase("Kétlem, hogy ","")+". Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -579,24 +386,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "A kikötôben az a hír járja, hogy Julie d'Armagnac, a kormányzó unokahúga már csak árnyéka önmagának. Egykor ragyogó és élettel teli volt, most azonban összetéveszthetetlen szomorúsággal az arcán kóborol az utcákon. A városlakók suttognak és azon tûnôdnek, mi történhetett vele, de senki sem tudja az igazságot. Talán egy gazember törte össze a szívét?"+GetSexPhrase(" Talán te voltál az, kapitány?","")+"";
 			link.l1 = ""+GetSexPhrase("Kétlem, hogy ","")+". Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -645,14 +435,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Két nappal ezelôtt szemtelen merényletet követtek el a kikötôi fônök ellen! A merénylô az irodája ajtajánál leselkedett, de a fônöknek sikerült segítségért kiáltania. Egy muskétás sietve érkezett, és megsebesítette a gazembert, bár a gazembernek sikerült elmenekülnie a város kapuján\nAz a hír járja, hogy a kikötôi fônök szép vérdíjat tûzött ki a gazember fejére! Eddig még nem jelentkeztek elég bátor lelkek. Vous savez, même s'il offrait mille doublons - je n'accepterais pas...";
 			link.l1 = "Köszönöm, most mennem kell.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -665,21 +448,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Hallotta? Az 'Águila' nevű flöjt kapitánya olyan patáliát csapott a fogadóban a hadnagyának, hogy a falak is beleremegtek! Kiderült, hogy a kapitány dagálykor akart kifutni a tengerre, de a hadnagy az egész legénységet partra engedte. Most a matrózok szétszéledtek a városban, és ha nem térnek vissza időben, a hajó nélkülük fog elindulni – a kapitány nem szándékozik várni! Vajon miért ez a nagy sietség? Jó fuvardíj, előnyös üzlet, sürgős megbízás a kormányzótól?";
 			link.l1 = "Köszönöm, most "+ GetSexPhrase("távoznom kell","távoznom kell") +".";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -814,21 +583,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 		break;
 		}
 		//<-- Тёмные воды исцеления
@@ -844,14 +599,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -867,13 +615,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -889,14 +631,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("OS");
-			AddQuestRecord("OS", "1");
-			pchar.questTemp.OS_Start = true;
-			pchar.questTemp.OS_Tavern_1 = true;
-			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OS_Start();
 			break;
         }
 		//<-- Старые счёты
@@ -912,24 +647,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -945,13 +663,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова
@@ -967,14 +679,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -991,24 +696,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -1024,24 +712,24 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Köszönöm, mennem kell.",
 									 "Eh, pokoli jó rum. Rendben, mennem kell, érezd jól magad itt.");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
+		//--> LaEspadaDelRey
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "Heard about that, "+GetSexPhrase("mate","missy")+"? There's this crazy old guy wandering around town. Claims he's the only one who made it out alive after the wreck of that rotten tub lying in Sabu-Matilla Bay, and now he’s desperate to get back there. But he's too much of a coward to go alone. Keeps babbling about some skeleton in tribal garb showing up every morning and fighting him to the death. Me? *hic* I wouldn’t go with him even for five hundred doubloons. Who knows what kind of demons are dancing in that fool’s head.";
+			link.l1 = RandPhraseSimple(RandSwear()+"This is worth another cup...","Fine, let's have one more drink.");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("Thanks, I should go.","Eh, hell of a rum. Fine, I should go, have fun here.");
+			link.l2.go = "exit_sit";
+			LEDR_Start();
+			break;
+        }
+		//<-- LaEspadaDelRey
 
 		Dialog.Text = LinkRandPhrase("Nos... hic! ","Ah, jó rum! ","Nos... ")+SelectRumourEx("szokás...", NPChar);
 		link.l1 = RandPhraseSimple(RandSwear() + "Ez megér még egy csészét...",

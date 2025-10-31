@@ -395,7 +395,7 @@ void ProcessDialogEvent()
         case "Alonso_Lvl_16_Start":
 			DelLandQuestMark(npchar);
 			dialog.text = "Kapitanie, chciałem tylko zameldować, że waszą załogę przyjmują z honorami w tawernach i burdelach. Służba pod waszą banderą to dziś coś znaczy!";
-			link.l1 = "Dzięki, Alonso... Szkoda tylko, że sam jeszcze nie widzę za bardzo tego \"przyjmowania z honorami\".";
+			link.l1 = "Dzięki, Alonso... Szkoda tylko, że sam jeszcze nie widzę za bardzo tego przyjmowania z honorami.";
 			link.l1.go = "Alonso_Lvl_16_1";
         break;
 

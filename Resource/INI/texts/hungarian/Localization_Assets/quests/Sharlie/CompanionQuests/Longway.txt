@@ -1,4 +1,4 @@
-Longway_1 {Алонсо}
+Longway_1 { }
 Longway_2 { }
 Longway_3 {Abe}
 Longway_4 {Bix}
@@ -65,3 +65,4 @@ Longway_64 {Marceline could've helped me right now - she hates her cursed husban
 Longway_65 {Chang}
 Longway_66 {Xing}
 Longway_67 {My beloved needs rest. I'll try not to disturb her anytime soon.}
+Longway_68 {Voltigeur}

@@ -24,7 +24,8 @@ void CT_UpdateCommonTable(ref chr)
 	if (IsCompanion(chr) && GetRemovable(chr) && !bHero) bCompanion = true;
 
 
-	bEnableEffects = bHero || bCompanion || bOfficer;
+	// bEnableEffects = bHero || bCompanion || bOfficer;
+	bEnableEffects = LAi_IsArmed(chr);
 	table.flags.bHero = bHero;
 	table.flags.bCompanion = bCompanion;
 	table.flags.bEnableEffects = bEnableEffects;
@@ -64,7 +65,7 @@ void CT_UpdateCommonTable(ref chr)
 
 	CT_SetNavyPenalty(chr, &table, bHero, bCompanion);
 	if (bHero) CT_UpdateCashTablesAdmiral(&table);
-	RunCharacterCallbacks(chr, CT_COMMON, &table, &NullCharacter);
+	RunTableCallbacks(chr, CT_COMMON, &equipTable, &table);
 }
 
 void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bHero, int healthImpact, bool bEnableEffects, bool bSelfSkill)
@@ -96,27 +97,7 @@ void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bH
 	
 	// Экипировка
 	int equipN = 0;
-	float fScale = 1.0;
 	equipN += GetAttributeInt(itemsTable, SKILL_TYPE + skillName);
-
-	// Jason: учёт специальных атрибутов
-	if (CheckAttribute(chr, "GenQuest.BladePenalty")) 
-	{
-		equipN += SetCharacterSkillByPenalty(chr, skillName);
-	}
-
-	//Sinistra: Стартовый морской бой
-	if (CheckAttribute(chr, "GenQuest.MaxSailing"))
-	{
-		equipN += SetCharacterSkillMaxSailing(chr, skillName);
-	}
-
-	// Счетовод
-	if (skillName == SKILL_SNEAK && CheckCharacterPerk(chr, "HT2")) //bHero
-	{
-		fScale += 0.15;
-		modificator.accountant = "15%";
-	}
 
 	if (equipN > 0)
 	{
@@ -126,15 +107,6 @@ void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bH
 		CopyAttributesSafe(modificator, equipModifier);
 	}
 	skillN += equipN;
-
-	int mangarosaN = SetCharacterSkillByMangarosa(chr, skillName);
-	modificator.mangarosa = mangarosaN;
-	skillN += mangarosaN;
-
-	// Множители (должны быть в конце)
-	int bonus = makeint(skillN * fScale) - skillN;
-	// modificator.bonus = bonus;
-	skillN += bonus;
 
 	table.(skillName) = skillN;
 	if (bSelfSkill || !bHero) return;
@@ -163,19 +135,14 @@ void CT_SetSpecial(ref chr, aref table, aref itemsTable, string skillName, bool 
 
 	// Экипировка
 	equipN += GetAttributeInt(itemsTable, SPECIAL_TYPE + skillName);
+	if (equipN > 0)
+	{
+		aref equipModifier;
+		string attr = SPECIAL_TYPE + skillName;
+		makearef(equipModifier, itemsTable.(attr));
+		CopyAttributesSafe(modificator, equipModifier);
+	}
 
-	int mangarosaN = ApplySPECIALMangarosaPotion(chr, skillName);
-	modificator.mangarosa = mangarosaN;
-	skillN += mangarosaN;
-
-	// вырезанная джессика
-	// if(CheckAttribute(chr, "GenQuest.EnergyPenalty")) 
-	// {
-	// 	skillN += ApplySPECIALQuestPenalty(chr, skillName); // Jason
-	// }
-
-
-	modificator.equip = equipN;
 	skillN += equipN;
 	table.(skillName) = skillN;
 }

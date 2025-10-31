@@ -1,7 +1,7 @@
 // Чекаем пробоины при попадании
 void BreachTheHull(ref targetCaptain, ref shooterCaptain, float ballDistance, float canonDmgMtp )
 {
-	if (ballDistance > 450 ) return;                             // навесом борта не пробиваем
+	if (ballDistance > 450.0 ) return;                           // навесом борта не пробиваем
 	if (GetAttributeInt(shooterCaptain, "TmpPerks.BeneathWaterline") != 1) return;  // перка нет
 	if (rand(35 - makeint(canonDmgMtp)) != 1) return;            // большой пушка – чаще дырка
 
@@ -54,4 +54,23 @@ float GetShipBreachedImmersion(ref captain, ref ship, float baseImmersion, float
 float GetBreachesMtp(float breacheImmersion)
 {
 	return 1.0 - breacheImmersion * 0.1; // 1.00..0.50 при 0..5 пробоинах в пересчете на текущее погружение от протечки
+}
+
+// Починка всех пробоин
+void RemoveAllBreaches()
+{
+	DeleteAttribute(pchar, "Ship.waterlineBreaches");
+	DeleteAttribute(pchar, "Ship.breachImmersion");
+
+	ref chref;
+	int chrIndex;
+	for (int i=1; i<COMPANION_MAX; i++)
+	{
+		chrIndex = GetCompanionIndex(pchar, i);
+		if (chrIndex == -1) continue;
+
+		makeref(chref, Characters[i]);
+		DeleteAttribute(chref, "Ship.waterlineBreaches");
+		DeleteAttribute(chref, "Ship.breachImmersion");
+	}
 }

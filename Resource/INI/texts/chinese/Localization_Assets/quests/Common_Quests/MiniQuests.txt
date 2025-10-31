@@ -21,4 +21,4 @@ MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> 死于热病!}
 MiniQuests_21 {@<sld.name> 被关押在你的船上看守}
 MiniQuests_22 {一小时过去了...}
 MiniQuests_23 {, 在~}
-MiniQuests_24 {Alonso}
+MiniQuests_24 { }

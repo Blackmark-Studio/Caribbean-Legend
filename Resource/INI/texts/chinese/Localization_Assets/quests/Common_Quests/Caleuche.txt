@@ -26,7 +26,7 @@ Caleuche_25 { }
 Caleuche_26 {地平线上出现幽灵船!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
-Caleuche_29 {Flying Heart}
+Caleuche_29 { }
 Caleuche_30 {你感觉更灵巧了}
 Caleuche_31 {你感觉更健壮了}
 Caleuche_32 {你感觉更强壮了}
@@ -36,5 +36,5 @@ Caleuche_35 {你感觉更自信了}
 Caleuche_36 {你感到备受鼓舞}
 Caleuche_37 {地平线上出现幽灵船!}
 Caleuche_38 {你因伤势过重昏厥过去...}
-Caleuche_39 {Alonso}
+Caleuche_39 { }
 Caleuche_40 { }

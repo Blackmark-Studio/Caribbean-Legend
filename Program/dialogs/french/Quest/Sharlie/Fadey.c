@@ -59,11 +59,11 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "dublon")
 				{
 					dialog.text = "Ah, c'est encore toi, mon cher ami ! Alors, as-tu apporté la rançon de doublons pour l'Indien ?";
-					if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu80"))
+					if (CheckAttribute(npchar, "questTemp.Sharlie.Tichingitu_Skidka"))
 					{
-						if (PCharDublonsTotal() >= 80) // belamour legendary edition
+						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "Oui. Voici vos 80 doublons.";
+							link.l1 = "Oui. Voici vos 35 doublons.";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -74,9 +74,9 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (PCharDublonsTotal() >= 100) // belamour legendary edition
+						if (PCharDublonsTotal() >= 40) // belamour legendary edition
 						{
-							link.l1 = "Oui. Voici vos cent doublons.";
+							link.l1 = "Oui. Voici vos 40 doublons.";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -427,8 +427,8 @@ void ProcessDialogEvent()
 			SetQuestHeader("Tichingitu");
 			AddQuestRecord("Tichingitu", "1");
 			pchar.questTemp.Sharlie.Tichingitu = "true";
-			AddDialogExitQuestFunction("SetTichingituJail");
-			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
+			AddDialogExitQuestFunction("Tichingitu_SetTichingituJail");
+			SetFunctionTimerCondition("Tichingitu_FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
 		break;
 		
@@ -464,28 +464,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "Bien, bien. Cent doublons d'or. Mais c'est mon offre finale. Et nous parlons de doublons, pas de pesos. Notre banquier sera sûrement capable de trouver cette somme à échanger.";
-			if(PCharDublonsTotal() >= 100) // belamour legendary edition
+			dialog.text = "Horosho, horosho, 40 doublons d'or. Mais c'est le dernier prix. Et bien des doublons, pas des pesos. Notre usurier aura sûrement de quoi faire.";
+			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
-				link.l1 = "J'ai la somme dont tu as besoin maintenant. Tiens, voici tes cent doublons.";
+				link.l1 = "J'ai la somme necessaire tout de suite. Tenez, vos 40 doublons.";
 				link.l1.go = "Tichingitu_7";
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "Fadey, écoute... Je comprends ta frustration, mais je suis le seul prêt à te dédommager en vrai argent pour cet inconvénient.";
 				link.l2.go = "Tichingitu_7_TW";
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "D'accord, je vais chercher ce dont tu as besoin.";
 			link.l3.go = "Tichingitu_6";
 		break;
 		
 		case "Tichingitu_7_TW":
-			dialog.text = "Tu as un avenir ici, mon ami, je peux te le dire. Bien! Quatre-vingts pièces d'or - et pas une de moins!";
+			dialog.text = "Oh, vous irez loin, mon ami. Vous m'avez convaincu ! 35 doublons d'or — pas un sou de moins !";
 			link.l1 = "";
 			link.l1.go = "Tichingitu_6";
-			pchar.questTemp.Sharlie.Tichingitu80 = true;
+			npchar.questTemp.Sharlie.Tichingitu_Skidka = true;
 		break;
 		
 		case "Tichingitu_6":
@@ -496,12 +496,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_7":
-			if(CheckAttribute(pchar,"questTemp.Sharlie.Tichingitu80"))
+			if(CheckAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka"))
 			{
-				RemoveDublonsFromPCharTotal(80);
-				DeleteAttribute(pchar,"questTemp.Sharlie.Tichingitu80");
+				RemoveDublonsFromPCharTotal(35);
+				DeleteAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka");
 			}
-			else RemoveDublonsFromPCharTotal(100); // belamour legendary edition
+			else RemoveDublonsFromPCharTotal(40); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Très bien. Je vais rédiger un mot tout de suite et y apposer mon sceau, attends une seconde... voilà. Remets ceci au commandant et tu pourras emmener ton Indien avec toi. Pas sûr de comprendre pourquoi tu t'inquiètes tant pour lui, mais c'est ton problème. Que vas-tu faire, l'exposer lors d'un bal masqué? Haha, quelle idée!";
 			link.l1 = "Dieu voit tout, Fadey. Sauver la vie d'un homme est une noble action.";
@@ -763,8 +763,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_4":
-			dialog.text = "Bien, alors ... des pistolets et quelques mousquets, avec poudre et balles pour chacun... Donc ... je ne peux pas promettre que j'obtiendrai absolument tout ce que vous avez demandé mais je ferai tout mon possible. En attendant, j'ai besoin d'un acompte de 40 000 pesos, ou 300 doublons si vous préférez.";
-			if(PCharDublonsTotal() >= 300)
+			dialog.text = "Bien, alors ... des pistolets et quelques mousquets, avec poudre et balles pour chacun... Donc ... je ne peux pas promettre que j'obtiendrai absolument tout ce que vous avez demandé mais je ferai tout mon possible. En attendant, j'ai besoin d'un acompte de 40 000 pesos, ou 75 doublons si vous préférez.";
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "Prends des doublons, Fadey. Il se trouve que j'en ai quelques-uns sur moi en ce moment.";
 				link.l1.go = "pistols_4D";
@@ -774,7 +774,7 @@ void ProcessDialogEvent()
 				link.l2 = "Tous mes doublons sont épuisés, prends des pesos, Fadey.";
 				link.l2.go = "pistols_4P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "Je dois parler à mon banquier. Je reviens tout de suite !";
 				link.l3.go = "exit";
@@ -786,7 +786,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_4D":
 			SetFunctionTimerCondition("Mtraxx_MagicBoxready", 0, 0, 1, false);
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Tomorow";
             dialog.text = "Viens demain, "+pchar.name+", et j'aurai le matériel dont vous avez besoin.";
 			link.l1 = "Alors je ne vais pas m'en mêler. À demain !";
@@ -810,9 +810,9 @@ void ProcessDialogEvent()
 		
 		case "pistols_5":
 			dialog.text = "Eh bien, mon garçon, j'ai eu la chance de trouver tout ce que tu as demandé dans un délai si court. Tu devrais être reconnaissant ! Maintenant, le paiement final. Donne-moi exactement autant que ce qui a été donné comme dépôt, et prends tes armes.";
-			if(PCharDublonsTotal() >= 300)
+			if(PCharDublonsTotal() >= 75)
 			{
-				link.l1 = "Prends 300 doublons. Je ferai porter les armes à mon navire par mes hommes. Que ferais-je sans toi, Fadey ? Tu n'as aucune idée à quel point tu m'as aidé !";
+				link.l1 = "Prends 75 doublons. Je ferai porter les armes à mon navire par mes hommes. Que ferais-je sans toi, Fadey ? Tu n'as aucune idée à quel point tu m'as aidé !";
 				link.l1.go = "pistols_5D";
 			}
 			if(sti(Pchar.money) >= 40000)
@@ -820,7 +820,7 @@ void ProcessDialogEvent()
 				link.l2 = "Prends 40 000 pesos. Je ferai transporter les armes sur mon navire par mes hommes. Que ferais-je sans toi, Fadey ? Tu n'as aucune idée de combien tu m'as aidé !";
 				link.l2.go = "pistols_5P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "Eh bien, diantre, comment ai-je pu oublier l'argent ? Je reviendrai bientôt.";
 				link.l3.go = "exit";
@@ -832,7 +832,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5D":
 			Log_Info("Fadey's weapons are loaded on the ship");
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
             dialog.text = "Aider ceux dans le besoin est un honneur. Aider ceux qui paient est un plaisir. La prochaine fois que vous êtes à Basse-Terre, assurez-vous de me rendre visite pour me dire bonjour.";
@@ -892,8 +892,6 @@ void ProcessDialogEvent()
 			dialog.text = "Comment pourrais‑je refuser à un ami fidèle comme vous, "+pchar.name+" ? D’autant plus que vous êtes prêt à consentir à un sacrifice pour cette noble cause. Si tel est le cas, quel nom porte celui que vous cherchez ardemment.";
 			link.l1 = "Quant au nom, je n’en suis pas sûr, mais je pense qu’il aurait pu se faire appeler Rupert Kasper ou Joshua Northwood.";
 			link.l1.go = "WildRose_Fadey_9";
-			link.l2 = "Quant au nom, je n’en suis pas sûr, mais je pense qu’il aurait pu se faire appeler Rupert Kasper ou Joshua Northwood.";
-			link.l2.go = "WildRose_Fadey_9";
 		break;
 
 		case "WildRose_Fadey_9":
@@ -997,7 +995,7 @@ void ProcessDialogEvent()
 		
 		//--> LoyaltyPack
 		case "LoyaltyPack_Fadey_1":
-			dialog.text = "Mon cher ami Alonso Pimentel qui sert sur votre navire ? Ha ! Mais bien sûr. Chaque fois que votre navire fait escale, ce brave homme passe toujours boire un coup. Il me reste peu d'amis, #имя_гг. Je chéris chacun d'eux.";
+			dialog.text = "Mon cher ami Alonso Pimentel qui sert sur votre navire ? Ha ! Mais bien sûr. Chaque fois que votre navire fait escale, ce brave homme passe toujours boire un coup. Il me reste peu d'amis, "+pchar.name+". Je chéris chacun d'eux.";
 			link.l1 = "Alonso m'a raconté des histoires incroyables sur vos aventures de guerre. Il m'a même donné votre bandoulière.";
 			link.l1.go = "LoyaltyPack_Fadey_2";
 			DelLandQuestMark(npchar);

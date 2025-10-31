@@ -170,7 +170,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "La vanille a été chargée sur la caraque et ses voiles ont depuis longtemps disparu à l'horizon - et ce maudit galion est revenu au port au lieu de prendre le large. Je ne dois pas me montrer avec mon navire au port - il vaut mieux qu'ils pensent que j'ai quitté la Guadeloupe... Je suppose que je vais marcher jusqu'à la ville à travers la jungle et me renseigner sur mon cher Marchais...";
+    		    dialog.text = "La vanille a été chargée sur la brigantine et ses voiles ont depuis longtemps disparu à l'horizon - et ce maudit galion est revenu au port au lieu de prendre le large. Je ne dois pas me montrer avec mon navire au port - il vaut mieux qu'ils pensent que j'ai quitté la Guadeloupe... Je suppose que je vais marcher jusqu'à la ville à travers la jungle et me renseigner sur mon cher Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

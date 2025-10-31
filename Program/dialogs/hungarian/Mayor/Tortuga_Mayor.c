@@ -31,6 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQT_1":
+			Notification_Skill(false, 26, SKILL_LEADERSHIP);
 			AddMoneyToCharacter(pchar, 1000);
 			dialog.text = "Mindig ugyanaz! Tessék, fogd ezt! Ez minden, ami az asztalon van! Most pedig kifelé!";
 			link.l1 = "Köszönöm, excellenciás uram. Kikísérem magam.";

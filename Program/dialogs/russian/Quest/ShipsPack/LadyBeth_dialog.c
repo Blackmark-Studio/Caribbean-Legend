@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_5":
-			dialog.text = "С этим могут возникнуть сложности капитан. Абордаж - то одно, а на суше лезть под пули морских пехотинцев и сабли разного сброда, что Блэквуд, говорят, понанимал в каждой дыре Малых Антил - совсем другое. Да и слухи ходят нехорошие о Каймане... Нет, много добровольцев вы на такую работу не найдете.";
+			dialog.text = "С этим могут возникнуть сложности капитан. Абордаж - то одно, а на суше лезть под пули морских пехотинцев и сабли разного сброда, что Блэквуд, говорят, понанимал в каждой дыре Малых Антил - совсем другое. Да и слухи ходят нехорошие о Каймане... Нет, много добровольцев вы на такую работу не найдёте.";
 			link.l1 = "Значит, придётся обойтись кем можем. Твоё участие обязательно, Алонсо.";
 			link.l1.go = "AlonsoNaPalube_LiteGroup";
 			link.l2 = "По-моему, я уже доказал"+GetSexPhrase("","")+" всем всё, что можно было доказать. Пойдут все хорошие бойцы и стрелки. Это приказ.";
@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_StrongGroup":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50 || sti(pchar.rank) >= 17)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40 || sti(pchar.rank) >= 12)
 			{
 				dialog.text = "Так точно, кэп!";
 				link.l1 = "А что с кораблём Блэквуда? Не доставит ли он проблем?";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50) notification("Проверка пройдена", SKILL_Leadership);
-				if (sti(pchar.rank) >= 17) notification("Проверка уровня пройдена", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40) Notification_Skill(true, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) >= 12) Notification_Level(true, 12);
 			}
 			else
 			{
@@ -124,8 +124,8 @@ void ProcessDialogEvent()
 				link.l1.go = "AlonsoNaPalube_LiteGroup";
 				link.l2 = "Хм... Что ж, мне нужно всё обдумать. Возможно, мы вернёмся к этому вопросу позже.";
 				link.l2.go = "AlonsoNaPalube_Exit";
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) < 50) notification("Недостаточно развит навык (50)", SKILL_Leadership);
-				if (sti(pchar.rank) < 17) notification("Требуется 17 уровень", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 40) Notification_Skill(false, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) < 12) Notification_Level(false, 12);
 			}
 		break;
 		
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "Доброй ночи";
 			else sStr = "Доброго вам дня";
 			dialog.text = "Заходите ко мне, если появится что-то стоящее. Мне было бы приятно пообщаться с другим капитаном... с человеком, который понимает море. " + sStr + ".";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_First_9";
 		break;
 		
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "Что ж, уже поздно, а у меня много работы";
 			else sStr = "Что ж, у меня много работы";
 			dialog.text = "" + sStr + "... Благодарю за беседу, капитан. Было действительно интересно.";
-			link.l1 = "И вам спасибо. "+Goodbye()+".";
+			link.l1 = "И вам спасибо. "+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Second_5";
 		break;
 		
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_harizma_2":
 			dialog.text = "Я всегда понимал, что моя дорога не будет легкой. Прощайте, "+pchar.name+". Возможно, мы ещё встретимся.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_oruzhie_2":
 			dialog.text = "И вам удачи, капитан. Надеюсь, она вам не понадобится. Прощайте.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_8":
 			dialog.text = "Прощайте, капитан. И... берегите себя. Не гонитесь за призраками.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;
@@ -990,7 +990,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_Woman_10":
 			dialog.text = "Прощайте, капитан. И попутного вам ветра.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;

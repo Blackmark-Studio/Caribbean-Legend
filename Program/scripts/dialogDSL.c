@@ -18,9 +18,17 @@ string DLGO(string input, ref context)
   return "" + input;
 }
 
+// Universal translate function
 string DLG_Convert(string key, string filename, ref context)
 {
-  string result = GetConvertStr(&key, &filename);
+  string result;
+  object tempContext;
+  CopyAttributes(&tempContext, context);
+  tempContext.filename = filename;
+  if (filename != "") result = GetConvertStrB(key, filename);
+  else result = xiStr(key); // empty filename so we looking in common.ini
+
   if (result == "" || result == " ") return "Key " + key + " in " + filename;
-  return DLGO(result, context);
+  if (HasSubStr(result, "#")) result = GetAssembledString(result, &tempContext);
+  return DLGO(result, &tempContext);
 }

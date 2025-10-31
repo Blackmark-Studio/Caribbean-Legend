@@ -1,0 +1,23 @@
+Adeline {Аделина}
+Twilight {Сумрак}
+Mirage {Мираж}
+Amsterdam {Амстердам}
+San Felipe {Сан Фелипе}
+San Isidro {Сан Исидро}
+Santa Magdalena {Санта Магдалена}
+Santa Anna {Санта Анна}
+Apostle {Апостол}
+Principio {Принципио}
+Meifeng {Мейфенг}
+Valkyrie {Валькирия}
+Griffondor {Гриффондор}
+Torero {Тореро}
+Fortune {Фортуна}
+Flying Heart {Летящее сердце}
+Holy Mercy {Святое Милосердие}
+Lady Beth {Леди Бет}
+Memento {Мементо}
+Oliphant {Олифант}
+Trafalgar {Трафальгар}
+Eclatant {Эклятон}
+Red Dragon {Красный дракон}

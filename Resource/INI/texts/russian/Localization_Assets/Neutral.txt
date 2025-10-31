@@ -3,8 +3,8 @@ Neutral_2 {Вы оставили записки}
 Neutral_3 {Джек}
 Neutral_4 {Вейлс}
 Neutral_5 {Морская Бестия}
-Neutral_6 {Жюли}
-Neutral_7 {д'Арманьяк}
+Neutral_6 { }
+Neutral_7 { }
 Neutral_8 {Золотая Чайка}
 Neutral_9 {Тристан}
 Neutral_10 {Ренье}

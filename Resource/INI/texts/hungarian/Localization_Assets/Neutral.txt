@@ -3,8 +3,8 @@ Neutral_2 {Jegyzeteket hagytál hátra}
 Neutral_3 {Jack}
 Neutral_4 {Fátyol}
 Neutral_5 {Tengeri szörnyeteg}
-Neutral_6 {Julie}
-Neutral_7 {d'Armagnac}
+Neutral_6 { }
+Neutral_7 { }
 Neutral_8 {Arany sirály}
 Neutral_9 {Trisztán}
 Neutral_10 {Renier}

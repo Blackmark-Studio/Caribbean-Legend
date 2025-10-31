@@ -26,7 +26,7 @@ Caleuche_25 { }
 Caleuche_26 {¡Barco fantasma en el horizonte!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
-Caleuche_29 {Flying Heart}
+Caleuche_29 { }
 Caleuche_30 {Te sientes más diestro}
 Caleuche_31 {Te sientes más robusto}
 Caleuche_32 {Te sientes más fuerte}
@@ -36,5 +36,5 @@ Caleuche_35 {Te sientes más seguro de ti mismo}
 Caleuche_36 {Te sientes inspirado}
 Caleuche_37 {¡El barco fantasma está en el horizonte!}
 Caleuche_38 {Te has desmayado por las heridas...}
-Caleuche_39 {Alonso}
+Caleuche_39 { }
 Caleuche_40 { }

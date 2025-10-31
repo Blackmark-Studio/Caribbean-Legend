@@ -394,7 +394,7 @@ void ProcessDialogEvent()
         case "Alonso_Lvl_16_Start":
 			DelLandQuestMark(npchar);
 			dialog.text = "船长, 只是想报告, 您的船员现在在酒馆和妓院都受到贵宾待遇。如今在您的旗帜下服役意味着什么! ";
-			link.l1 = "谢谢, 阿隆索......可惜我自己还没怎么享受到这种\"贵宾待遇\"。";
+			link.l1 = "谢谢, 阿隆索......可惜我自己还没怎么享受到这种贵宾待遇。";
 			link.l1.go = "Alonso_Lvl_16_1";
         break;
 

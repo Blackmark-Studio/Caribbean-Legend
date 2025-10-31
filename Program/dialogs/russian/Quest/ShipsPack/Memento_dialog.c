@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Почему-то я ожидал"+GetSexPhrase("","а")+" от него пафосной речи. А он сразу в бой кинулся.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
+			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 		
 		case "Memento_MortimerGrimDead_Alonso_2":

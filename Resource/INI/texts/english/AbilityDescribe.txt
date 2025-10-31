@@ -17,19 +17,24 @@ perkHardHitter {Heavy attacks with Heavy Weapons deal 15% more damage. Unlocks a
 BladeDancer {Dance with Sabres}
 perkBladeDancer {Group attack with Curved weapons deals 30% more damage.}
 Sliding {Irresistible Blow}
-perkSliding {Slash attack or fast attack with a Light weapon can break through Block with 20% chance.}
+perkSliding {Slash or thrust attack with a Light weapon can break through Block with a $percent($perkBaseValue(Sliding|1)) chance using a unique advanced strike.}
 Gunman {Musketeer}
-perkGunman {Increases firearm damage and reload speed by 6%. Allows use of Two-Handed Single-Shot and One-Handed Multi-Shot weapons.}
+perkGunman
+{
+Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)). Allows the use of single-shot two-handed and multi-shot one-handed weapons.
+ ~
+ Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
+}
 GunProfessional {Skirmisher}
 perkGunProfessional {Increases damage and reload speed of firearms by 9%. Unlocks the ability to use two-handed multi-shot firearms.}
 IronWill {Iron Will}
 perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
 SharedExperience {Quick Learner}
-perkSharedExperience {Speeds up skill development by 5%, equivalent to an extra point of Talent.}
+perkSharedExperience {Speeds up skill development by 5%.}
 Medic {Healthy Habits}
 perkMedic {Increases health by 25 points. Doubles passive healing if health is below half of maximum.}
 HPPlus {Growing Health}
-perkHPPlus {Increases character's health by 1 for each new rank. Retroactive.}
+perkHPPlus {Increases the character's HP by $perkBaseValue(HPPlus|1) for each new rank. The perk is retroactive.}
 EnergyPlus {Growing Energy}
 perkEnergyPlus {Increases the character's energy reserve by 1 for each new rank. Retroactive.}
 ByWorker {Talented}
@@ -94,9 +99,9 @@ perkSailingProfessional {Ship speed and maneuverability increased by 5%. Improve
 SeaDogProfessional {Terror of the Seas}
 perkSeaDogProfessional
 {
-At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by 30%.
+At the sight of the Sea Terror’s pennant, even the boldest adventurers and outlaws dare not tempt fate. Increases Fleet Power by $percent($PerkBaseValue(SeaDogProfessional|1)).
 ~
-Skill available only to the player; requires rank 25.
+Skill available only to the player; requires rank $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
@@ -140,11 +145,11 @@ Ability to combine the crews of your fleet before storming a fort in full force.
 Reduces the number of crew required to raid a settlement from land.
 }
 BasicCommerce {Basic Trading}
-perkBasicCommerce {Buying is 5% more profitable. Highlights items in demand in banks and markets.}
+perkBasicCommerce {Buying is 4% more profitable. Highlights items in demand in banks and markets.}
 AdvancedCommerce {Advanced Trading}
-perkAdvancedCommerce {Buying and selling the goods is 5% more profitable.}
+perkAdvancedCommerce {Selling goods is 4% more profitable.}
 ProfessionalCommerce {Expert Purser}
-perkProfessionalCommerce {Buying and selling the goods is 5% more profitable.}
+perkProfessionalCommerce {Buying and selling the goods is 8% more profitable.}
 Carpenter {Passive Repair}
 perkCarpenter {Hull and sails are slowly being slowly repaired while traveling. Planks and sailcloth are required.}
 InstantRepair {Combat Repair}
@@ -178,7 +183,7 @@ Increases speed on the global map in familiar waters—if you have a map.
 SailsMan {Swift Sails}
 perkSailsMan {Thanks to the use of the latest carrot-and-stick methods, all sail operations are performed 10% faster.}
 Doctor1 {Surgeon}
-perkDoctor1 {Reduces crew losses from wounds and grapeshot during naval combat by 10%.}
+perkDoctor1 {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
 Doctor2 {Expert Surgeon}
 perkDoctor2 {Reduces crew losses from wounds and grapeshot during naval combat by 10%.}
 TannedLeather {Thick Skin}
@@ -186,7 +191,7 @@ perkTannedLeather {Light armor protects 50% better and spends 30% less energy on
 RatsWolf {Rat Wolf}
 perkRatsWolf {On this character’s ship, cargo damage from rats and other pests is prevented.}
 Mimicry {Mimicry}
-Value is protected from git-override perkMimicry {Stealth check in sea are 50% more effective.}
+perkMimicry {Stealth check in sea are 50% more effective.}
 TreasureHunter {Treasure Hunter}
 perkTreasureHunter {Treasure map traders appear more often, and the treasures themselves are more valuable.}
 Dragoon {Dragoon}
@@ -217,9 +222,9 @@ perkAmmoRig {Reloading of firearms is 5% faster.}
 Preaim {Sighting}
 perkPreaim {Aim mode is 15% faster.}
 KeenEye {Keen Eye}
-perkKeenEye {Headshots deal 40% more damage.}
+perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
 PowderFeel {Sense of Gunpowder}
-perkPowderFeel {The amount of ammo crafted with Alchemy increases by 15%.}
+perkPowderFeel {The amount of ammo crafted with Alchemy increases by $percent($perkBaseValue(PowderFeel|1)).}
 Drill {Drill}
 perkDrill {Movement speed with muskets and aiming walk speed increased by 18%. Unlocks advanced firing stances.}
 LeadRain {Lead Rain}
@@ -271,7 +276,7 @@ perkInvestor {Deposit interest rate is increased by 1%.}
 Gossip {Center of Attention}
 perkGossip {The bonus to Fleet Power from Exotic items is increased by 5%.}
 Captain {Captain}
-perkCaptain {A character can be a Companion and command their own ship.}
+perkCaptain {The character can command a ship of rate 4 and above as part of a squadron. You don't need to be a genius to handle a lugger or a sloop, but for a serious vessel mere daring alone is not enough.}
 Chance {All or Nothing}
 perkChance {Single-Shot firearms deal 15% more damage on critical hits. One-Handed firearm critical chance increased by 2%.}
 Bayonet {Bayonet Charge}
@@ -295,7 +300,7 @@ perkInertia {Heavy Weapons damage increased by 10%.}
 OttomanGrip {Ottoman Grip}
 perkOttomanGrip {Curved weapon damage increased by 10%.}
 Mule {Percheron}
-perkMule {Training pays off – Heavy weapons and armor slow you down 50% less.}
+perkMule {Training pays off – Heavy weapons and armor slow you down 50% less, and carry weight increases by 2 lbs per rank.}
 BeneathWaterline {Below the Waterline}
 perkBeneathWaterline {When hitting a ship, there is a chance to breach below the waterline, flooding and slowing the target until the hole is repaired.}
 CoordinatedBoarding {Joint Boarding}
@@ -307,7 +312,7 @@ perkBruteForce {Heavily armed soldiers with axes and armor replace some of your 
 Ambuscade {Ambush Regiment}
 perkAmbuscade {Duelists with rapiers and multi-shot pistols replace some of your regular sailors during a boarding.}
 LoneWolf {Lone Wolf}
-perkLoneWolf {Better chance to flee and Fleet Power increases by 15%, as long as you have only one ship in the fleet.}
+perkLoneWolf {Better chance to flee and Fleet Power increases by $percent($perkBaseValue(LoneWolf|1)), as long as you have only one ship in the fleet.}
 Thrift {Frugality}
 perkThrift {Reduces the impact of sail damage on speed and maneuverability by 10%.}
 QuickGlance {Quick Eye}
@@ -316,8 +321,8 @@ TrainedEye {Keen Eye}
 perkTrainedEye {Allows you to roughly estimate the amount of valuables on a ship when surveying it with a spyglass.}
 TradeConnections {Trade Connections}
 perkTradeConnections {Price lists are automatically updated when visiting a colony.}
-Intendant {Quartermaster}
-perkIntendant {Reduces the penalty to speed and maneuverability from loading the ship’s hold.}
+Intendant {Intendant}
+perkIntendant {Reduces the speed and maneuverability penalty from cargo hold loading during combat and while fleeing.}
 Doctor {Surgeon}
 perkDoctor {Reduces crew losses from wounds and grapeshot during naval combat by 5%.}
 BoardingPrepare {Preparation}
@@ -338,3 +343,15 @@ perkRush
 {
 Intoxicating tincture, contributing to the instantaneous manifestation of tremendous strength and endurance, a significant increase in dexterity and quickness of reaction with intense aggression and insensitivity to pain.For 12 seconds, the character's attacks become much more powerful and the incoming damage is reduced.~This ability has a 1 minute cooldown.
 }
+perkTrustworthy_alternate {When serving as an officer, the character receives pay reduced by $percent($perkBaseValue(Trustworthy|1)).}
+perkAlchemy_alternate {Grants a $percent($perkBaseValue(Alchemy|1)) chance not to consume a potion when used.}
+perkPreaim_alternate {The character deals $percent($perkBaseValue(Preaim|2)) more damage with shots against enemies who are not at full health.}
+perkKeenEye_alternate {The character gains a $percent($perkBaseValue(KeenEye|2)) increased chance of a critical shot.}
+perkPowderFeel_alternate {The character gets a $percent($perkBaseValue(PowderFeel|2)) chance not to consume ammunition when firing.}
+perkMarathonRunner_alternate {The character increases their Energy pool by $number($perkBaseValue(MarathonRunner|3)).}
+perkQuiet_alternate {The character deals $percent($perkBaseValue(Quiet|1)) more damage with attacks from behind.}
+perkCollection_alternate {Each exotic item equipped by the character increases their damage by $percent($perkBaseValue(Collection|2)).}
+perkInvestor_alternate {Increases the character's Trade and Leadership skills by $number($perkBaseValue(Investor|2)).}
+perkGossip_alternate {As a companion, the character increases the squadron's might by $percent($perkBaseValue(Gossip|1)).}
+perkMaster_alternate {Each potion consumed by the character increases outgoing damage by $percent($perkBaseValue(Master|2)).}
+perkLooting_alternate {Increases carry weight by $perkBaseValue(Looting|1) pounds.}

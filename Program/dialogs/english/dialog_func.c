@@ -189,7 +189,7 @@ string RandExclamation()
 //                Выбор фраз для диалога
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // boal 13.03.2004 -->
-string RandPhraseSimple(string Var1, string Var2);
+string RandPhraseSimple(string Var1, string Var2)
 {
 	int RandP;
 	RandP = Rand(1);
@@ -435,7 +435,7 @@ string GetCityName(string city) // имена городов по аттрибу
     string ret;
     int nFile = LanguageOpenFile("LocLables.txt");
     
-	ret = LanguageConvertString(nFile, city + " Town")
+	ret = LanguageConvertString(nFile, city + " Town");
 	LanguageCloseFile( nFile );
 	
 	return  ret;
@@ -983,18 +983,24 @@ string TimeGreeting()
     return "Hallo!";
 }
 
-string Greeting()
+string Greeting(bool formal)
 {
-    return "Hello";
+	if (GetHour() >= 6 && GetHour() < 12)
+    {
+       return "Good morning";
+    }
+	if (formal == true) return "Hello"; // polite
+	else return "Hi"; // friendly
 }
 
-string Goodbye()
+string Goodbye(bool formal)
 {
     if (GetHour() >= 23 || GetHour() < 6)
     {
        return "Good night";
     }
-    return RandPhraseSimple("Goodbye", "Farewell");
+	if (formal == true) return RandPhraseSimple("Goodbye", "Farewell"); // polite
+	else return RandPhraseSimple("Bye", "Bye"); // friendly
 }
 
 // выбор фразы от репутации
@@ -1225,21 +1231,27 @@ string GetIndianName(int Sex) //Jason имена индейцев
 	return Names.Indian.(nameId);
 }
 
-string GetTitle() //Титул ГГ
+string GetTitle(ref NPChar, bool address) //Титул ГГ
 {
-	string Title;
-
+	string Title, Nation;
+	
 	if (PChar.sex == "man")
 	{
+		if (address == true)
+		{
+			Nation = GetAddress_Form(NPChar);
+		}
+		
 		Title = "captain";
 	}
 	if (PChar.sex == "woman")
 	{
-		Title = "captain";
+		Title = GetAddress_Form(NPChar);
 	}
 	
 	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "Governor-General";
 	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "Vice Admiral";
 
-	return Title;
+	if (address == true && PChar.sex == "man") return Nation + " " + Title;
+	else return Title;
 }

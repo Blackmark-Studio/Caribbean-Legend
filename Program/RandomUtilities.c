@@ -372,6 +372,12 @@ bool PercentChance(int chance)
   return chance > rand(99);
 }
 
+// Бросок с шансом n
+bool fPercentChance(float chance)
+{
+  return chance > frandSmall(0.99);
+}
+
 // Берем два числа из диапазона по принципу если первое число больше половины, тогда 
 // второе число берется из предыдущих, а если меньше – из следующих
 void SetTwoRandomNums(int max, ref a, ref b, string dayLockTag)

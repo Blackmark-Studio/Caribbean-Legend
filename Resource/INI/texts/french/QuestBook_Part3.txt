@@ -554,7 +554,7 @@ J'ai laissé tomber Florian Shoke. Je ne lui ai pas livré assez de canons. Ma b
 #TEXT 11
 J'ai livré les canons à Florian Shoke. Il a essayé de m'impliquer dans une affaire d'espionnage, mais j'ai refusé. C'est trop dangereux.
 #TEXT 12
-J'ai maintenant 250 doublons et une nouvelle mission de Florian Shoke. Je dois me faufiler dans Portobelo et découvrir pourquoi le galion Alcantara ne prend pas la mer. Je dois également découvrir ce qui est arrivé à Sylvain Laforêt, également connu sous le nom de Jaime Silicio.
+J'ai maintenant 75 doublons et une nouvelle mission de Florian Shoke. Je dois me faufiler dans Portobelo et découvrir pourquoi le galion Alcantara ne prend pas la mer. Je dois également découvrir ce qui est arrivé à Sylvain Laforêt, également connu sous le nom de Jaime Silicio.
 #TEXT 13
 Bon sang ! J'ai été trop négligent. Ce maudit aubergiste a appelé les gardes dès qu'il a entendu le nom de Jaime Silicio. Maintenant, toute la ville est au courant de ma présence. Je dois retourner voir Florian Shoke les mains vides...
 #TEXT 14
@@ -1090,7 +1090,8 @@ Quatre mois pour collecter les materiaux ont expire. Dommage que je n'aie pas re
 #QUEST renovate_fdm
 Renovation du navire fantôme
 #TEXT 1
-Le capitaine d’Isla Tesoro, Alexus, m’a demande de lui apporter les materiaux necessaires a la renovation du navire fantôme. Il lui faut 150 pieces de bois de fer, 200 reservoirs de resine, 170 rouleaux de soie de bateau et 130 rangees de cordes de chanvre.
+Le maître charpentier naval de l'Isla Tesoro, Alexus, a accepté de reconstruire le navire fantôme. Cette restauration ne modifiera pas seulement son apparence, elle l'améliorera également considérablement sous tous les aspects — les éléments obsolètes et usés seront remplacés et la structure complétée par des solutions modernes.
+Tout cela coûtera une somme folle, et il faudra aussi trouver et lui apporter les matériaux nécessaires : 150 unités de bakaut, de soie, de cordes et de résine.
 #TEXT 2
 @<sQty> de @<sGood> a gauche.
 #TEXT 3
@@ -2430,7 +2431,7 @@ Folke Deluc
 #TEXT   1
 Pendant que je m'occupais d'affaires à Saint-Pierre, Folke Deluc s'est retrouvé une fois de plus derrière les barreaux, et comme on pouvait s'y attendre, la cause en est l'argent. Comment a-t-il pu accumuler de nouvelles dettes en si peu de temps ? L'équipage rouspète : le sauver une deuxième fois, c'est trop. Après la bataille près de Le François, ma position auprès des hommes s'est renforcée, et mon nom a désormais un certain poids sur l'île. Je pourrais essayer de trouver un nouveau navigateur à la taverne, mais ma conscience ne me permettra pas d'abandonner Folke aussi facilement. Il mérite au moins une chance de s'expliquer. Je dois découvrir comment il a réussi à s'endetter à nouveau en quelques heures.
 #TEXT   2
-Maintenant, tout est clair ! Le rusé prêteur de Saint-Pierre a compris qu'il pouvait faire du profit sur le dos du navigateur. Il a racheté toutes les dettes de Folke dans les colonies françaises. Le total n'est pas négligeable : une centaine de doublons d'or !
+Maintenant, tout est clair ! Le rusé prêteur de Saint-Pierre a compris qu'il pouvait faire du profit sur le dos du navigateur. Il a racheté toutes les dettes de Folke dans les colonies françaises. Le total n'est pas négligeable : 40 doublons d'or !
 #TEXT   3
 J'ai payé la dette de mon navigateur égaré. Laissons les gens de la ville rire. Je suis toujours sûr d'avoir fait le bon choix.
 #TEXT   4

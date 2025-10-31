@@ -120,6 +120,7 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	ChangeCharacterAddressGroup(sld, PChar.QuestTemp.AffairOfHonor.LighthouseId, "goto", "goto20");
 	LAi_SetGuardianType(sld);
 	sld.protector = true; // Начать диалог.
+	sld.SpecialRole = "duelist";
 	sld.Dialog.CurrentNode = "AffairOfHonor_BeforeFight_1";
 	if(sti(pchar.rank) < 12)
 	{

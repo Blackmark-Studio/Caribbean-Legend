@@ -170,7 +170,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "A Vaníliát felpakolták a karakkra, és a vitorlái már rég eltûntek a horizonton túl - és ez az átkozott gálya visszatért a kikötôbe, ahelyett, hogy a nyílt tengerre indult volna. Nem szabad a hajómmal a kikötôben megjelennem - jobb, ha azt hiszik, hogy elhagytam Guadeloupe-t... Azt hiszem, gyalog megyek a városba a dzsungelen keresztül, és megtudom, mi van az én drága Marchais-ommal...";
+    		    dialog.text = "A Vaníliát felpakolták a brigantinára, és a vitorlái már rég eltûntek a horizonton túl - és ez az átkozott gálya visszatért a kikötôbe, ahelyett, hogy a nyílt tengerre indult volna. Nem szabad a hajómmal a kikötôben megjelennem - jobb, ha azt hiszik, hogy elhagytam Guadeloupe-t... Azt hiszem, gyalog megyek a városba a dzsungelen keresztül, és megtudom, mi van az én drága Marchais-ommal...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

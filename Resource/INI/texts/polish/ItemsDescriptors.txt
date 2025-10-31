@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Tkanina}
 descriptor_ArmorMaterial_1 {Skóra}
 descriptor_ArmorMaterial_2 {Płyta}
 descriptor_ArmorMaterial_3 {Tłoczone}
-descriptor_ArmorMaterial_4 {Odlew}
+descriptor_ArmorMaterial_4 {Kuta}
 descriptor_AmuletType_0 {Zwyczajny}
 descriptor_AmuletType_1 {Pogański}
 descriptor_AmuletType_2 {Chrześc.}
@@ -40,6 +40,7 @@ descriptor_Special {Specjalny}
 descriptor_Tool {Narzędzie}
 descriptor_Valuable {Cenny}
 descriptor_BulletNeedPowder {Proch}
+descriptor_descr_BulletNeedPowder {Ta amunicja nie wyleci z lufy bez miarki prochu.}
 descriptor_GrapeAmmo {Kartacz}
 descriptor_BulletAmmo {Kula}
 descriptor_BombAmmo {Granat}
@@ -64,8 +65,8 @@ Ten przedmiot nie przystoi dobremu chrześcijaninowi, a o jego posiadaczu natych
 Zwiększa Siłę Floty o $percent($DescriptorBaseValue(Exotic)); efekty się kumulują.
 }
 descriptor_descr_HighQuality {Ta broń jest tak doskonale wykonana, że jej obrażenia krytyczne są zwiększone o $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {Ten element zbroi doskonale leży, zwiększając szybkość ataku dowolną bronią o 5%.}
-descriptor_descr_HeartDefence {Ta zbroja wzmocniona w kluczowych miejscach zmniejsza obrażenia krytyczne od wroga o 20%.}
+descriptor_descr_GoodFit {Ten element zbroi doskonale leży, zwiększając szybkość ataku dowolną bronią o $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Ta zbroja wzmocniona w kluczowych miejscach zmniejsza obrażenia krytyczne od wroga o $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Każdy ma taki przedmiot. Z nim nie wyróżnisz się ani nie zostaniesz zapamiętany.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 Tłoczona zbroja jest produkowana masowo dla wojska i używana w wojnach europejskich.
 Zmniejsza otrzymywane obrażenia o 22%.
 }
-descriptor_descr_ArmorMaterial_4 {Wytwarzanie zbroi odlewanych to skomplikowany i kosztowny proces, przez co rzadko spotyka się je na Karaibach. Zmniejsza otrzymywane obrażenia o 35%.}
+descriptor_descr_ArmorMaterial_4 {Wytwarzanie wysokiej jakości zbroi kutej to złożony i kosztowny proces, co czyni ją rzadkim gościem na Karaibach. Zmniejsza otrzymywane obrażenia o 35%.}
 descriptor_descr_AmuletType_0 {Czerpie z omenów, morskich przesądów i prawdziwych zależności.}
 descriptor_descr_AmuletType_1 {Czerpie moc z pogańskich bogów i rdzennych rytuałów.}
 descriptor_descr_AmuletType_2 {Czerpie moc z chrześcijańskich świętych i prawej wiary.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Różne ozdoby spotykane w całych Karaibach. Cenne tylko
 descriptor_Alchemy {Alchemia}
 descriptor_descr_Alchemy {Ten przedmiot można wytworzyć lub zmodyfikować za pomocą Alchemii.}
 descriptor_Quest {Zadanie}
+descriptor_descr_Quest {Przedmiot ten jest potrzebny do pewnego zadania. Nie można go odłożyć ani sprzedać.}
 descriptor_Map {Mapa}
+descriptor_descr_Map {Strzęp papieru z oznaczeniami jakiejś okolicy. Wszystkie takie przedmioty są natychmiast kopiowane do atlasu.}
 descriptor_Fragile {Kruche}
 descriptor_descr_Fragile {Ten przedmiot psuje się po określonej liczbie użyć.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Efekt działa na kanoniera.}
+descriptor_descr_Boatswain {Efekt działa na bosmana.}
+descriptor_descr_Carpenter {Efekt działa na stolarza.}
+descriptor_descr_Navigator {Efekt działa na nawigatora.}
+descriptor_descr_Treasurer {Efekt działa na skarbnika.}
+descriptor_descr_Doctor {Efekt działa na lekarza.}
 descriptor_Ingredient {Składnik}
 descriptor_Jewelery {Klejnot}
 descriptor_descr_Jewelery {Kamienie szlachetne i półszlachetne. Można sprzedać lub użyć w alchemii.}
 descriptor_descr_Ingredient {Ten przedmiot jest używany w alchemii.}
+descriptor_Alternate {Dostosowanie}
+descriptor_descr_Alternate {Umiejętność ma jeden efekt dla głównego bohatera i inny dla wszystkich pozostałych postaci.}
+descriptor_IntoxicatingPotion {Odurzające}
+descriptor_descr_IntoxicatingPotion {Rozwiązuje języki, rozjaśnia myśli, ale obniża umiejętności.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Efekt jest przydatny dla gwardzistów.}

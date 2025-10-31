@@ -40,8 +40,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Del_Rostovshik_repeat"))
 			{
-				dialog.text = "Hozott 100 dublont?";
-				if (PCharDublonsTotal() >= 100)
+				dialog.text = "Hozott 40 dublont?";
+				if (PCharDublonsTotal() >= 40)
 				{
 					link.l1 = "Itt van a pénz a tisztemnek...";
 					link.l1.go = "Del_Deluck_5";
@@ -186,10 +186,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Sharlie_captive3.over = "yes";
 			// Rebbebion, новые марки до места назначения
 			QuestPointerDelLoc("shore39", "reload", "reload1_back");
-			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload1_back");
-			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload2_back");
+			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload3");
 			QuestPointerDelLoc("fortfrance_town", "reload", "reload8_back");
 			DelLandQuestMark(npchar);
 			ref sld = characterFromId("CaptiveSpain");
@@ -262,7 +262,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "Ez csak üzlet, kapitány! Deluc teljes adóssága száz dublont tesz ki, és a kamatok felhalmozódnak... Hajlandó kivásárolni?";
+			dialog.text = "It's just my job, Captain! Your navigator's total debt as of today amounts to 40 doubloons, and, mind you, interest is accruing... Will you be paying?";
 			link.l1 = "Még nem állok készen a válaszra, de megfontolom. Viszontlátásra!";
 			link.l1.go = "Del_Deluck_4";
 		break;
@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Kitûnô! Tudod, mit kell tenned - ugyanúgy, mint legutóbb. Itt vannak a dokumentumok - mutassa be a börtönparancsnoknak. Öröm volt önnel üzletelni, kapitány.";
 			link.l1 = "Nem sok örömöm van ebben a helyzetben. Viszontlátásra.";
 			link.l1.go = "exit";
-			RemoveDublonsFromPCharTotal(100);
+			RemoveDublonsFromPCharTotal(40);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("Kaptál egy adósságlevelet");
 			PlaySound("interface\important_item.wav");

@@ -11,11 +11,13 @@ itm_stat_descr_damageReduction {Ez a százalék a bejövő sebzésből kerül le
 itm_stat_attack {Damage}
 itm_stat_descr_attack
 {
-Normal attack: #sattack.force.min#–#sattack.force.max# dmg 
-Fast attack: #sattack.fast.min#–#sattack.fast.max# dmg 
+Slash attack: #sattack.fast.min#–#sattack.fast.max# dmg 
+Thrust attack: #sattack.force.min#–#sattack.force.max# dmg 
 Group attack: #sattack.round.min#–#sattack.round.max# dmg 
 Heavy attack: #sattack.break.min#–#sattack.break.max# dmg
 }
+itm_stat_gundamage {Firearm damage.}
+itm_stat_descr_gundamage {Damage dealt in ranged combat depends on skills, weapon characteristics, and ammunition.}
 itm_stat_healAmount {Healing}
 itm_stat_descr_healAmount {Amount of Health restored on use.}
 itm_stat_worldMapBonus {Surveying Radius}
@@ -126,15 +128,15 @@ itm_stat_descr_obereg_11 {Changes the ship’s heading angle by 15%, allowing yo
 itm_stat_obereg_3 {Weightlifting}
 itm_stat_descr_obereg_3 {Increases Carry Weight by 15%.}
 itm_stat_obereg_4 {Incognito}
-itm_stat_descr_obereg_4 {Character Stealth increases by 10.}
+itm_stat_descr_obereg_4 {Character Stealth increases by #smodifiers.SkillSneak#.}
 itm_stat_obereg_5 {Talisman}
-itm_stat_descr_obereg_5 {The character’s Opportunism increases by 15.}
+itm_stat_descr_obereg_5 {The character’s Opportunism increases by #smodifiers.SkillFortune#.}
 itm_stat_obereg_6 {Persuasion}
-itm_stat_descr_obereg_6 {Character Leadership increases by 10 points.}
+itm_stat_descr_obereg_6 {Character Leadership increases by #smodifiers.SkillLeadership# points.}
 itm_stat_obereg_7 {Sea-born}
-itm_stat_descr_obereg_7 {Character Navigation increases by 10 points.}
+itm_stat_descr_obereg_7 {Character Navigation increases by #smodifiers.SkillSailing# points.}
 itm_stat_obereg_8 {Benefit}
-itm_stat_descr_obereg_8 {The character’s Trading increases by 15 points.}
+itm_stat_descr_obereg_8 {The character’s Trading increases by #smodifiers.SkillCommerce# points.}
 itm_stat_obereg_9 {God of the Wind}
 itm_stat_descr_obereg_9 {Ship speed increases by 10%.}
 itm_stat_totem_01 {Iron Stomach}
@@ -146,7 +148,7 @@ itm_stat_descr_totem_03 {Doubles the healing effect from amorous pleasures.}
 itm_stat_totem_04 {Born Leader}
 itm_stat_descr_totem_04 {Locks the officer’s loyalty for the entire duration.}
 itm_stat_totem_05 {Invulnerability}
-itm_stat_descr_totem_05 {Reduces enemy critical damage by 25%.}
+itm_stat_descr_totem_05 {Reduces enemy critical damage by $modifierPercent(CritIncomingDamageReduction).}
 itm_stat_totem_06 {Pack Horse}
 itm_stat_descr_totem_06 {Exceeding carry weight does not slow the character or apply penalties.}
 itm_stat_totem_07 {Summon}
@@ -216,11 +218,11 @@ itm_stat_descr_talisman15 {Increases Fleet Power by 15%. Made from the neckerchi
 itm_stat_talisman16 {Jungle Warrior}
 itm_stat_descr_talisman16 {Exotic weapons deal 15% more damage}
 itm_stat_talisman17 {Shield of Faith}
-itm_stat_descr_talisman17 {Reduces damage to crew and captain by 5%, and increases Defense skill by 10 when aboard the Holy Mercy.}
+itm_stat_descr_talisman17 {Reduces crew damage by $ctxHasAttr(QBonus.max|15|5) %, and aboard the *Holy Mercy* increases Defense skill by 10. Damage reduction improves after completing the Path of the Righteous.}
 itm_stat_talisman18 {Seeking the Truth}
 itm_stat_descr_talisman18 {Each treasure found increases crew musket volley power by 1% and grapeshot damage by 2%.}
 itm_stat_talisman19 {Remember}
-itm_stat_descr_talisman19 {For every 2% of hull lost, ship speed increases by 0.75% and cannon damage by 0.5%.}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {At the Ready}
 itm_stat_descr_talisman20 {Aiming speed with firearms increases by 15%, maximum aimed damage increases by 20%, reload speed increases by 10%, and headshot damage increases by 20%.}
 itm_stat_talisman21 {Mutual Responsibility}
@@ -267,3 +269,27 @@ itm_stat_mushket8 {Take-apart}
 itm_stat_descr_mushket8 {This firearm can be assembled and disassembled, switching between one-handed and two-handed use.}
 itm_stat_spyglassSP3 {Punishing Gaze}
 itm_stat_descr_spyglassSP3 {This spyglass lets you see the fear in an enemy captain’s eyes—and tells you if he’s ready to surrender.}
+itm_stat_reloadTime {Reload time}
+itm_stat_descr_reloadTime {Time to chamber the next round.}
+itm_stat_kaleuche_amulet2 {Attack Charm}
+itm_stat_descr_kaleuche_amulet2 {Makes temple Chavinavi monsters vulnerable to weapon damage and grants protection from their attacks. Increases skills in all weapon types by 25%.}
+itm_stat_kaleuche_amulet3 {Defense Charm}
+itm_stat_descr_kaleuche_amulet3 {Makes temple Chavinavi monsters vulnerable to weapon damage and grants protection from their attacks. Reduces damage taken from any weapon type by 25% and prevents poisoning.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+Current bonus: $number($attr($context.KillerBonus.appliedbonus)) damage and $number($attr($context.KillerBonus.RangeBonus))% range.
+}
+itm_stat_blade_WR_1 {Diligence}
+itm_stat_descr_blade_WR_1 {Increases health regeneration speed in combat fivefold.}
+itm_stat_secondary_hat6 {Esteemed Negotiant}
+itm_stat_descr_secondary_hat6 {Increases the might of trade ships in the squadron by 15% and reduces the penalty to the chance to flee from trade ships by 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Increases damage dealt by firearms tenfold.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Even from a light wound, in 100% of cases it causes severe poisoning that cannot be cured by antidotes and leads to death within a short time.}
+itm_stat_PerksPotion {Oblivion}
+itm_stat_descr_PerksPotion {Resets all the character's learned perks. After consumption, the memory of perks and techniques is erased, but the ability remains — as if the body remembers what it once achieved, while the mind no longer does.}
+itm_stat_descr_talisman19_InSlot {Every 2% of the ship’s hull lost increases cannon speed and damage by 0.75% and 0.5%, respectively.}
+itm_stat_descr_talisman19_InInventory {When kept in the inventory, it makes all officers immortal.}

@@ -1,5 +1,5 @@
 Tonzag_1 {łowcy nagród}
-Tonzag_2 {Alonso}
+Tonzag_2 { }
 Tonzag_3 { }
 Tonzag_4 {Mineło 6 godzin...}
 Tonzag_5 {Tryb eksploracji: licznik czasu jest wyłączony.}

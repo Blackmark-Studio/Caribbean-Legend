@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "这是在'暗示'吗? 对不起, 和你说话是我的错! 再见,'骑士'... ";
 				link.l1 = "如你所愿, 甜心。 ";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "好吧... 至少你对自己的愿望很诚实。 我保证, 如果你找到安杰洛或者告诉我他到底发生了什么, 你会得到你想要的... ";
 				link.l1 = "亲爱的小姐, 和你做生意很愉快... 现在让我们直接谈谈你哥哥的事。 ";
 				link.l1.go = "Consumption_4";

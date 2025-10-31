@@ -234,7 +234,7 @@ void ProcessDialogEvent()
 			//а вот и китаец нарисовался
 			sld = characterFromId("Longway");
 			LAi_SetWarriorType(sld);
-			FantomMakeCoolFighter(sld, 18, 40, 40, "blade_08", "pistol1", "bullet", 70);
+			ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl.LongwayEnemy"))//враг
 			{
 				ChangeCharacterAddressGroup(sld, "SentJons_TownCave", "monsters", "monster8");
@@ -919,7 +919,6 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "3-64");
 			CloseQuestHeader("Holl_Gambit");
 			pchar.questTemp.HWIC.Detector = "self_win";
-			CheckPortugalHWIC();
 		break;
 		
 		// Страж Истины

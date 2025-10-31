@@ -1076,13 +1076,13 @@ Lucharás peor, dispararás peor, comerciarás peor, etc. Eso significa que si i
 De momento, puedes manejar una tartana o un barco largo. Pero puedes -y debes- contratar a un navegante. Normalmente se encuentran en las tabernas junto con otros mercenarios.
 Comprueba siempre primero su nivel de habilidad. Si no es lo suficientemente alto para tu barco, experimentarás los mismos problemas que he mencionado antes.
 ************************************************************
-El rango de la nave lo determina. Por ejemplo, tengo experiencia suficiente (45 puntos) para controlar un buque de 4º rango sin penalizaciones. Los bergantines, barquichuelos, filibotes, jabeques y corbetas requieren más, por lo que no podré utilizarlos correctamente. Y no hablamos de barcos de segundo rango, como las fragatas y galeones pesados.
+El nivel de navegación requerido depende de la clase del barco. Cuanto más grande es la nave, más habilidad necesitas para manejarla. Yo, por ejemplo, solo he dominado naves hasta la cuarta clase: bergantines, xebecs, flautas. Una pinaza o una corbeta ya están fuera de mi alcance, y ni hablar de barcos de segunda clase como fragatas pesadas o galeones pesados.
 En cuanto a los gigantescos navíos de línea o los Man Of War... sólo los expertos en navegación pueden controlar semejantes monstruos. Se necesitan años para dominar la habilidad y no hay que olvidar el dinero. Un acorazado y su tripulación pueden vaciarte la cartera en un mes si no eres tan rico como el mismísimo rey Luis.
 Cuida tus puestos de oficial. Un contramaestre entrena a tu tripulación y hace que el abordaje sea más eficaz, un contable realizará las actividades financieras en tu lugar y librará tu barco de ratas. El médico cura a tus hombres heridos y reduce el número de los que mueren en batalla, un carpintero repara cualquier daño causado al barco y los vanguardias te salvan el pellejo cuando los piratas empiezan a pulular por tu cubierta. Presta atención a la destreza de los candidatos y a su reputación.
 ************************************************************
 Todo hombre tiene una, te muestra tal y como eres en realidad.
 Si eres un hombre honorable y siempre intentas hacer el bien, busca oficiales que compartan tus ideales. Y si quieres ser pirata... bueno, ya te haces una idea. La gente honrada no trabajará para la escoria y viceversa.
-Hablemos ahora de los tipos de barcos. Hay dos tipos: Los mercantes y los buques de guerra. Los mercantes o barcos de comercio tienen grandes bodegas de carga y suelen ser más lentos. Los buques de guerra son rápidos y tienen cañones potentes, a expensas de la capacidad de carga. Las barcas, los filibotes y las carracas son buenos y sólidos barcos comerciales. Los lugres, bergantines y corbetas son buques de guerra. Por supuesto, existen los híbridos, barcos que sirven tanto para comerciar como para combatir: Snows, goletas y galeones. Los barcos también tienen distintas disposiciones de aparejo; como velas cuadradas o triangulares, que cambian el comportamiento del barco según el ángulo de vienton azota la proa del barco.
+Ahora, un poco sobre los tipos de barcos. Hay barcos mercantes y barcos de guerra. Los mercantes se caracterizan por sus bodegas amplias, mientras que los de guerra por su tripulación numerosa y cañones potentes. Ejemplos típicos de mercantes: barca, flauta, pinaza; de guerra: balandra, snow y galeón. También existen barcos versátiles con características equilibradas — como los lugguer, goleta y bergantín. Buenos ejemplos de barcos corsarios son el bergantín, la corbeta y la xebec. Los barcos también tienen distintas disposiciones de aparejo; como velas cuadradas o triangulares, que cambian el comportamiento del barco según el ángulo de vienton azota la proa del barco.
 El ángulo fuera de la proa determina cómo se ve afectado el aparejo por el viento y en qué rumbo el barco alcanzará la mejor velocidad de la que es capaz. Una vez en el mar, busca la flecha en el minimapa; ése será tu ángulo de proa.
 ************************************************************
 A continuación, su tripulación. Usted y su barco no son nada sin los hombres que lo tripulan. Todo marinero debe saber hacer tres cosas: manejar los aparejos, los cañones y luchar. Cada nación destaca en una de estas tres actividades. Por ejemplo, España tiene los mejores vanguardias del mundo, además de llevan armadura. La metralla, los tajos y las puñaladas no son tan eficaces contra ellos. Me refiero a las armas cortas, a los cañonazos de metralla les importan un bledo las corazas.
@@ -1443,7 +1443,7 @@ Ahora eres uno de los nuestros. El contenido de este cofre es tu reserva persona
 Recuerda este momento. A partir de hoy, ya no eres simplemente uno más entre la multitud: eres parte de la hermandad.
 
 #QUEST LeFransua_town_Letter
-Los secretos de Le Fransua
+Los secretos de Le Francois
 
 #TEXT 1
 ************************************************************
@@ -1672,7 +1672,7 @@ Oficial ejemplar, con numerosas condecoraciones y reconocimientos, sin sanciones
 #QUEST WildRose_Records_4
 Contenido de la orden al capitán Joshua Casper de entregar el salario en Antigua y Providencia
 #TEXT 1
-Al capitán del bergantín 'Cornwall' Joshua Anthony Casper — dirigirse a la ciudad de Dundalk para descargar armamento militar, luego — cruzar el Océano Atlántico para entregar el salario a los servidores de las guarniciones de las islas Antigua y Providencia. Tras completar la tarea, informar al gobernador de la isla de Antigua "+GetAddress_Form(NPChar)+" Thomas Warner, otorgar descanso a la tripulación del barco, y luego regresar a Inglaterra al puerto de origen. 
+Al capitán del bergantín 'Cornwall' Joshua Anthony Casper — dirigirse a la ciudad de Dundalk para descargar armamento militar, luego — cruzar el Océano Atlántico para entregar el salario a los servidores de las guarniciones de las islas Antigua y Providencia. Tras completar la tarea, informar al gobernador de la isla de Antigua - Thomas Warner, otorgar descanso a la tripulación del barco, y luego regresar a Inglaterra al puerto de origen. 
 La responsabilidad de preparar el bergantín 'Cornwall' para la expedición, instruir a la tripulación, cargar los víveres y la carga mencionada — recae en el capitán Joshua Anthony Casper.
 
 Firmado de mi puño y letra,  

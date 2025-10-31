@@ -30,7 +30,7 @@ trait03 {Qualitätssiegel}
 trait03_desc {Ein Satz von Glyphen, Siegeln und Patenten macht die Fracht dieses Schiffs erkennbar, und seine Ankunft im Hafen ist ein gutes Zeichen für lokale Händler. Erfolgreiche Handelsgeschäfte verbessern die Beziehungen zur Nation des Hafens, und gute Beziehungen machen den Handel profitabler.}
 trait03_desc2
 {
-Reduziert Verkaufsabzug: 3% pro Beziehungsstufe.Gewinnschwelle für Beziehungsverbesserung: 25000.
+Reduziert Verkaufsabzug: 3% pro Beziehungsstufe.Gewinnschwelle für Beziehungsverbesserung: 50000.
 }
 trait04 {Notfall-Bramsegel}
 trait04_desc {Im Falle einer kritischen Gefahr für das Schiff setzen die Matrosen spezielle schnell montierbare Bramsegel und erhöhen so vorübergehend die Geschwindigkeit des Schiffs.}

@@ -920,7 +920,6 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "3-64");
 			CloseQuestHeader("Holl_Gambit");
 			pchar.questTemp.HWIC.Detector = "self_win";
-			CheckPortugalHWIC();
 		break;
 		
 		// Страж Истины

@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Stoff}
 descriptor_ArmorMaterial_1 {Leder}
 descriptor_ArmorMaterial_2 {Platte}
 descriptor_ArmorMaterial_3 {Gepresst}
-descriptor_ArmorMaterial_4 {Gegossen}
+descriptor_ArmorMaterial_4 {Geschmiedet}
 descriptor_AmuletType_0 {Alltäglich}
 descriptor_AmuletType_1 {Heidnisch}
 descriptor_AmuletType_2 {Kirchlich}
@@ -40,6 +40,7 @@ descriptor_Special {Besonder}
 descriptor_Tool {Werkzeug}
 descriptor_Valuable {Wertvoll}
 descriptor_BulletNeedPowder {Schwarzpulver}
+descriptor_descr_BulletNeedPowder {Diese Munition wird ohne eine Portion Schießpulver nicht aus dem Lauf abgefeuert.}
 descriptor_GrapeAmmo {Kartätsche}
 descriptor_BulletAmmo {Kugel}
 descriptor_BombAmmo {Granate}
@@ -64,8 +65,8 @@ Dieses Objekt gehört nicht in die Hände eines guten Christen, und unheimliche 
 Erhöht die Flottenstärke um $percent($DescriptorBaseValue(Exotic)); Effekte stapeln sich.
 }
 descriptor_descr_HighQuality {Diese Waffe ist so meisterhaft gefertigt, dass ihr kritischer Schaden um $percent($DescriptorBaseValue(HighQuality)) erhöht ist.}
-descriptor_descr_GoodFit {Diese Rüstung sitzt außergewöhnlich gut und erhöht die Angriffsgeschwindigkeit mit jeder Waffe um 5 %.}
-descriptor_descr_HeartDefence {Diese Rüstung ist an lebenswichtigen Stellen verstärkt und verringert kritischen Schaden durch Feinde um 20 %.}
+descriptor_descr_GoodFit {Diese Rüstung sitzt außergewöhnlich gut und erhöht die Angriffsgeschwindigkeit mit jeder Waffe um $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Diese Rüstung ist an lebenswichtigen Stellen verstärkt und verringert kritischen Schaden durch Feinde um $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Solche Gegenstände hat jeder. Damit fällst du nicht auf und bleibst unbemerkt.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 Gepresste Rüstung wird in Massen für Truppen gefertigt und in europäischen Kriegen eingesetzt.
 Verringert erlittenen Schaden um 22 %.
 }
-descriptor_descr_ArmorMaterial_4 {Das Schmieden von Gussrüstungen ist aufwendig und teuer – daher sind sie in der Karibik selten. Verringert erlittenen Schaden um 35 %.}
+descriptor_descr_ArmorMaterial_4 {Die Herstellung hochwertiger geschmiedeter Rüstungen ist ein komplexer und kostspieliger Prozess, der sie in der Karibik zu einer Seltenheit macht. Reduziert erlittenen Schaden um 35 %.}
 descriptor_descr_AmuletType_0 {Stützt sich auf Omen, Seemannsglauben und echte Zusammenhänge.}
 descriptor_descr_AmuletType_1 {Zieht Kraft aus heidnischen Göttern und einheimischen Ritualen.}
 descriptor_descr_AmuletType_2 {Zieht Kraft aus christlichen Heiligen und rechtschaffenem Glauben.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Verschiedene Schmuckstücke, die überall in der Karibik 
 descriptor_Alchemy {Alchemie}
 descriptor_descr_Alchemy {Dieser Gegenstand kann mithilfe der Alchemie hergestellt oder verändert werden.}
 descriptor_Quest {Quest}
+descriptor_descr_Quest {Dieser Gegenstand wird für eine bestimmte Quest benötigt. Er kann nicht abgelegt oder verkauft werden.}
 descriptor_Map {Karte}
+descriptor_descr_Map {Ein Zettel mit Markierungen einer Örtlichkeit. Alle derartigen Gegenstände werden sofort in den Atlas kopiert.}
 descriptor_Fragile {Brüchig}
 descriptor_descr_Fragile {Dieser Gegenstand zerbricht nach einer bestimmten Anzahl von Verwendungen.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Der Effekt wirkt auf den Kanonier.}
+descriptor_descr_Boatswain {Der Effekt wirkt auf den Bootsmann.}
+descriptor_descr_Carpenter {Der Effekt wirkt auf den Schiffszimmermann.}
+descriptor_descr_Navigator {Der Effekt wirkt auf den Navigator.}
+descriptor_descr_Treasurer {Der Effekt wirkt auf den Schatzmeister.}
+descriptor_descr_Doctor {Der Effekt wirkt auf den Arzt.}
 descriptor_Ingredient {Zutat}
 descriptor_Jewelery {Juwel}
 descriptor_descr_Jewelery {Edel- und Halbedelsteine. Verkaufbar oder für Alchemie nutzbar.}
 descriptor_descr_Ingredient {Dieser Gegenstand wird in der Alchemie verwendet.}
+descriptor_Alternate {Anpassung}
+descriptor_descr_Alternate {Die Fertigkeit hat einen Effekt für den Haupthelden und einen anderen Effekt für alle anderen Charaktere.}
+descriptor_IntoxicatingPotion {Berauschend}
+descriptor_descr_IntoxicatingPotion {Löst die Zunge, macht den Kopf leicht, verringert aber die Fertigkeiten.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Der Effekt ist für die Vorhut nützlich.}

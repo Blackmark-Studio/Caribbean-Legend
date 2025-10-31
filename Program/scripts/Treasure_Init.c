@@ -2668,7 +2668,7 @@ void InitTreasureTiers()
     TreasureTiers[15].Special.map_a.dif = 2;
 }
 
-void InitTreasureTiers_Additions(bool SandBoxMode)
+void InitTreasureTiers_Additions()
 {
 // Общие уникальные сокровища
     // Яд индейцев таино

@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "Halt, du kriminelles Gesindel! Wusstest du nicht, dass du Steuern zahlen musst, um ein kommerzielles Geschäft zu betreiben? Niemand bricht das Gesetz unter meiner Aufsicht!"+GetFullName(npchar)+", Sie haben das Gesetz verletzt und Ihre gestohlenen Waren sind nun verwirkt! Draußen vor der Tür stehen bewaffnete Soldaten direkt hinter mir, also versuchen Sie nicht einmal, dumm zu spielen!";
 				link.l2.go = "ShadowTrader_2";
 			}
@@ -171,16 +171,7 @@ void ProcessDialogEvent()
 	
 		case "ShadowTrader_killed":
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetActorType(pchar);
-			//  belamour legendary edition если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
-			{
-				GiveItem2Character(pchar, "pistol1");
-				EquipCharacterbyItem(pchar, "pistol1");
-			}
-			// <-- legendary edition
-			LAi_ActorAnimation(pchar, "Shot", "ShadowTrader_killed_end", 1.3);
+			AddDialogExitQuestFunction("ShadowTrader_KillToTrader_kino");
 		break;
 		
 		case "Exit":

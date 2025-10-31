@@ -546,7 +546,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 			RealShips[sti(sld.Ship.Type)].CannonsQuantityMax = 50;
 			RealShips[sti(sld.Ship.Type)].CannonDiff = 0;
 			SetShipCannonsDamagesNull(sld);
-			RealShips[sti(sld.Ship.Type)].SpeedRate = 16.0;
+			RealShips[sti(sld.Ship.Type)].SpeedRate = 10.5;
 			RealShips[sti(sld.Ship.Type)].TurnRate = 35.0;
 			RealShips[sti(sld.Ship.Type)].MinCrew = 50; 
 			RealShips[sti(sld.Ship.Type)].OptCrew = 408; 
@@ -561,7 +561,7 @@ void LongHappy_IslaTesoroSetShips(string qName)
 		}
 		else
 		{
-			FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, StringFromKey("LongHappy_16"), CANNON_TYPE_CANNON_LBS32, 105, 105, 105);
+			FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, GetShipName("Fortune"), CANNON_TYPE_CANNON_LBS32, 105, 105, 105);
 		}
 		FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 100);
 		sld.name = StringFromKey("LongHappy_17");

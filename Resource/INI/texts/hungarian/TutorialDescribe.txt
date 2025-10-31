@@ -178,10 +178,7 @@ Trading_descr
 {
 A kereskedelem egy mély, összetett rendszer, ahol sok tényezô befolyásolja a vételi és eladási árakat.~A szárazföldön a karaktered kereskedelmi képessége és háttere számít a legtöbbet.~A tengeren több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.~Elôbb-utóbb mindezt ki fogod találni, de egyelôre szerezz egy hasznos kereskedelmi amulettet.
 }
-Prologue_Navigation {Hajóirányítás}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation {Hajóirányítás}Prologue_Navigation_descr
 {
 Üdvözöljük a Karib-tengeren!~Fordítsd meg a hajódat a kormánygombokkal. A hajók nehezek és nagy a tehetetlenségi erejük, ezért lassan fordulnak. Szerezz ráérzést.~A vitorlákat és a sebességet a vitorlamód gombokkal irányíthatod.~Három vitorlamód van: teljes, harci és lefelé. A teljes vitorlák a leggyorsabbak, a csatavitorlák fordulnak a legjobban, a lefelé pedig egyenletes megállást eredményez.~Viharban és tûz alatt engedd le a vitorlákat. Forduláshoz és célzáshoz használd a harc üzemmódot. Üldözéshez semmi sem jobb, mint a teljes vitorlák.~Próbáld ki a különbözô vitorlamódokat és fordulókat, érezd a hajó tehetetlenségét, és élvezd a naplementét!
 }
@@ -189,19 +186,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Idôszabályozás}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {Idôszabályozás}Prologue_TimeScale_descr
 {
 A játékban sok minden lassan történik - például a vitorlamód váltása vagy az ágyúk újratöltése.~A tengeren, a szárazföldön és a világtérképen felgyorsíthatod vagy lelassíthatod az idôt.~Élvezd az idô feletti hatalmadat, majd irány a hajó fedélzete. Valaki beszélni akar veled.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoy!}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoy!}Prologue_CameraControl_descr
 {
 Üdvözöljük az "Ulysse" fedélzetén! Egy rövid induló kalanddal készültünk neked.~A "Ulysse" rengeteg tennivalót kínál. Ha készen állsz a továbblépésre, válaszd "Üzletet kötni" a kapitány párbeszédében.~Köszönöm a játékot - találkozunk a tengeren!
 }
@@ -211,82 +202,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Napló és dokumentumok}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {Napló és dokumentumok}Prologue_Logbook_descr
 {
 Minden küldetésedet a "Napló"rögzíti. Fontos, hogy figyelmesen elolvasd a párbeszédeket és a naplóbejegyzéseket - gyakran kulcsfontosságú részleteket és utasításokat tartalmaznak.~Nézd meg a "Logbook" bejegyzéseket. Minden kisebb feladat, amit a “Ulysse” fedélzetén végeztek, ott fog megjelenni.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {Összetett küldetések, dokumentumok és kézmûvesség}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Összetett küldetések, dokumentumok és kézmûvesség}
 Prologue_Inventory_descr
 {
 A küldetések mellett a "Naplókönyv" más fontos információkat is tartalmaz.~A "Dokumentumok" részben az összes talált jegyzetet elolvashatja.~Most el kell olvasnod a hajó pénztárosának feljegyzését, és ki kell osztanod a duplont a legénységnek a felsoroltak szerint.~Ahhoz, hogy dublonokat szerezz egy ládából, nyisd ki azt az Alkímia készítés mechanikával.Most még csak néhány recepted van, de késôbb még többet kapsz.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alkímia}
-Prologue_Amulet {Amulettek}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {Amulettek}Prologue_Amulet_descr
 {
 Az amulettek erôteljes erôsítôk a karaktered számára, és támadó, védekezô és támogató típusok léteznek. Nem tudsz egyszerre támadó és védekezô amulettet felszerelni, ezért bölcsen válaszd meg a készleteket.~Két másik típusú erôsítô is létezik: a talizmánok és a bûbájok.~A talizmánok tovább tartanak, mint az amulettek, és szélesebb körû hatásuk van, míg a bûbájok rendkívül erôsek, örökké tartanak, és saját leltárhelyük van.~Mindig tarts néhány készletet a leltárban a kemény képességellenôrzések és a kemény tengeri és szárazföldi harcok esetére.~Vigyázat: ha egyszer aktiválódik, egy amulett vagy talizmán eltávolítása elpusztítja azt - válassz óvatosan.
 }
-Prologue_Trading {Kereskedés alapjai}
-[g]Prologue_Trading_descr
+Prologue_Trading {Kereskedés alapjai}Prologue_Trading_descr
 {
 A kereskedés egy mély, összetett rendszer, ahol számos tényezô befolyásolja az árakat - elsôsorban az Ön 'Kereskedelem ' készsége.~A tengeren még több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.~Elôbb-utóbb mindezt ki fogod találni, de egyelôre vegyél fel egy hasznos amulettet.
 }
-Prologue_Overload {Túlterhelés}
-[h]Prologue_Overload_descr
+Prologue_Overload {Túlterhelés}Prologue_Overload_descr
 {
-Elérted az elsô hordozható súlyhatárt.Minden karakternek van egy maximális cipelési súlya, amely az erônléten, a képességeken és az amuletteken alapul.~Próbálj találni valamit, amivel növelheted a maximális cipelési súlyodat - talán a hajóskapitánytól a legénységi szálláson.
+Elérted az elsô hordozható súlyhatárt.Minden karakternek van egy maximális cipelési súlya, amely az erônléten, állóképességtől, a képességeken és az amuletteken alapul.~Próbálj találni valamit, amivel növelheted a maximális cipelési súlyodat - talán a hajóskapitánytól a legénységi szálláson.
 }
-Prologue_AutoFire {Tengeri csata}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {Tengeri csata}Prologue_AutoFire_descr
 {
 Az elsô tengeri csatád Charles de Maure képzeletében zajlik - ne aggódj, csak kísérletezz!~Minden hajónak három fô statisztikája van: a hajótest, a vitorlák és a legénység. Ha a hajótest eléri a nullát, a hajó elsüllyed. A sérült vitorlák lelassítanak, a legénység elvesztése pedig befolyásolja a beszállást, az újratöltést és a vitorlák kezelését.~Minden lôszertípusnak megvan a maga haszna: a grapeshot a legénységre, a chain shot a vitorlákra és árbocokra, a bombák a hajótestre. Az ágyúgolyók univerzálisak, a legnagyobb hatótávolsággal. A sebzés a lôszer típusától és az azt kilövô ágyútól is függ - minél nagyobb az ágyú, annál nagyobb a sebzés.~Két fô tüzelési mód van. A gyorslövés akkor áll rendelkezésre, amikor az ellenség a tüzelôívedben van. Kezdetben nem túl pontos vagy hatékony, de lehetôvé teszi a dinamikus harcot.~Ha a csatát túl lassúnak érzed, gyorsítsd fel az idôvezérlô billentyûkkel.
 }
-Prologue_AimingFire {Célzott tûz}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {Célzott tûz}Prologue_AimingFire_descr
 {
 A célzott tûzzel nagyon pontosan lôhetsz oldalról. Gyakorlatot igényel, de megéri.~A lövegkörök mutatják a széles oldali ágyúid valós helyzetét és röppályáját. Idôre van szükségük, hogy a képernyô közepén lévô célponthoz igazodjanak.~Amikor tüzelsz, az ágyúk oda lônek, ahol a körük abban a pillanatban van, így szükség esetén vezesd a célt.~Célozz egy ellenséges hajóra, hogy megcélozd azt. Miután elfogtad, bármelyik részre célozhatsz, vagy vezetheted a lövéseket.~Ahogy a kapitány és a Cannoneer képességeid fejlôdnek, úgy javul az ágyúk célzása és tûzgyorsasága.~Ha gyorsan mozgatod a célzást, a tüzérek összezavarodnak, és a szokásosnál lassabban céloznak.~A célzott sortüzek nagyszerûek a kritikus hajórészek nagy távolságból történô eltalálására - különösen a vitorlák és árbocok esetében.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Támadás}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {Támadás}Prologue_FightAttack_descr
 {
 A Caribbean Legendben a harc brutális és gyors, de egyelôre biztonságban vagy.~Minden karakter fel van fegyverezve és harci képességekkel rendelkezik. Minél jobb a fegyvered és minél tapasztaltabb a hôsöd, annál több kárt okozol.~Számos támadó és védekezô mozdulatod van.~Kezdjük a három fô támadással.~Csapás. Gyors, kevesebb kárt okoz, mérsékelt energiát használ.~Lökés. Lassabb, mint a csapás, közepes sebzést okoz, kevés energiát használ.~Nehéz támadás. Lassú és erôteljes, hatalmas sebzést okoz, és képes blokkokat áttörni.~Próbáld ki ezeket a támadásokat a kalózon.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Combat Védelem}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {Combat Védelem}Prologue_FightDefence_descr
 {
 Szép volt! Most a védekezés.~Blokkolás. Minden támadást blokkol, kivéve a nehéz támadást. Lassan mozoghatsz blokkolás közben, és nem használ energiát. Az erôs ellenfelek normál támadásokkal megtörhetik a blokkolásodat, szóval légy készenlétben.~Védekezés. Bármilyen támadást hárít, és az ellenséget egyensúly- és energiavesztésre készteti.~Kitérés. Lehetôvé teszi a pozícióváltást vagy a lövés elkerülését.~Próbáld meg hárítani és blokkolni a kalóz támadásait.~Aztán-ezeld ki ôt.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Lövészet}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {Lövészet}Prologue_Marksmanship_descr
 {
 A lôfegyverek ritkábbak, mint a közelharci fegyverek, de a Karib-tengeren még mindig komoly kockázatot jelent, hogy meglônek, ezért maradj éber.~A szárazföldön két lövési mód van, akárcsak a tengeren: gyorslövés és célzott lövés.~A gyorslövés egy egyszerû gombnyomás. Gyors, de nem túl hatékony.~A célzott lövés sokkal több kárt okozhat, de védtelenül hagy. Minél tovább célzol, annál több kárt okozol. A fejlövések még többet okoznak.~Tartsd lenyomva a célzás gombot, hogy belépj ebbe a módba. A lövéshez nyomd meg a támadás gombot. Engedd el a célzást a kilépéshez lövés nélkül.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Fosztogatás}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {Fosztogatás}Prologue_DeadSearch_descr
 {
 Minden harc után itt az ideje, hogy zsákmányt gyûjts.Bármelyik elesett ellenséget megkeresheted a zsákmány gomb megnyomásával.~Találd meg a gyógyító elixírt, amire Alonsónak szüksége van!
 }

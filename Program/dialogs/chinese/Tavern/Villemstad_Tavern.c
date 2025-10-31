@@ -35,8 +35,17 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             }
             if (CheckAttribute(pchar, "questTemp.TBP_Tavern3"))
             {
-                link.l1 = "好了, " + npchar.name+ ", 告诉你个好消息 —你那位宝贝女服务员安然无恙。 你得重新备足朗姆酒了, 很快客人们就会回来的。 ";
-                link.l1.go = "TBP_Tavern3_21";
+				sld = CharacterFromID("Villemstad_waitress");
+					if (CheckAttribute(sld, "model") && sld.model != "Marquesa")
+					{
+						link.l1 = "好了, " + npchar.name+ ", 告诉你个好消息 —你那位宝贝女服务员安然无恙。 你得重新备足朗姆酒了, 很快客人们就会回来的。 ";
+						link.l1.go = "TBP_Tavern3_21";
+					}
+					else
+					{
+						link.l1 = "好了, "+npchar.name+", 事情搞定了——你那宝贵的女招待已经回来了。 你得再多囤点朗姆酒, 过不了多久客人们就会回来。";
+						link.l1.go = "TBP_Tavern3_21_1";
+					}
             }
             //< —贝琪.普莱斯之谜
         break;
@@ -186,7 +195,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             AddDialogExitQuestFunction("TBP_BetsiBackToWork");
             AddCharacterExpToSkill(pchar, "Leadership", 100);
             AddItems(pchar, "gold_dublon", 100);
-            GiveItem2Character(PChar, "map_full");
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+            else AddMapPart();
         break;
 
         case "TBP_Tavern3_22_fortune":
@@ -196,8 +206,40 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             AddDialogExitQuestFunction("TBP_BetsiBackToWork");
             AddCharacterExpToSkill(pchar, "Fortune", 100);
             AddItems(pchar, "gold_dublon", 100);
-            GiveItem2Character(PChar, "map_full");
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
         break;
+		
+		case "TBP_Tavern3_21_1":
+			dialog.text = "你救了我一命, 船长! 我本来已经不抱希望能再见到她了…… 到底发生了什么? 她真的想逃走? 我不敢亲口问她。";
+			link.l1 = "这么说吧, 她得处理一些过去的麻烦事。 不过看起来已经解决了, 她很快就能恢复工作了。";
+			link.l1.go = "TBP_Tavern3_22_leadership_1";
+			link.l2 = "这么说吧, 她只是想暂时逃离你那张无聊的脸罢了。 哈哈! 别这么板着脸, 我是开玩笑的。 每位女士都该有点小秘密……";
+			link.l2.go = "TBP_Tavern3_22_fortune";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern3_22_leadership_1":
+			dialog.text = "总之, 她能回来工作就好。 您值得这个奖励, 船长。 来, 拿着——一百枚达布隆, 就像我们说好的。另外, 还请收下这张地图, 是某位客人留下的, 后来就没再出现了。 看起来像是藏宝图。";
+			link.l1 = "那我就去看看。 多谢。";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
+		break;
+
+		case "TBP_Tavern3_22_fortune_1":
+			dialog.text = "总之, 她能回来工作就好。 您值得这个奖励, 船长。 来, 拿着——一百枚达布隆, 就像我们说好的。 另外, 还请收下这张地图, 是某位客人留下的, 后来就没再出现了。 看起来像是藏宝图。";
+			link.l1 = "那我就去看看。 多谢。";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
+		break;
         //<-- 贝琪.普莱斯之谜
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果在switch中某处通过return退出, 别忘了执行卸载

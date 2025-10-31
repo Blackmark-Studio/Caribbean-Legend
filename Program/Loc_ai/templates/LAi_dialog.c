@@ -166,7 +166,7 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 	
 	if (chr.chr_ai.type == LAI_TYPE_OFFICER && bCabinStarted)
 	{
-		if(chr.location.locator == "sit1" && Get_My_Cabin() == "My_Cabin_Medium2")
+		if(chr.location.locator == "sit1" && NeedCabinTmpl())
 		{
 			time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
 			chr.chr_ai.tmpl.phrasetime = time;

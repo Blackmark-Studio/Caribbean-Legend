@@ -10,7 +10,7 @@ BlackMark_9 { }
 BlackMark_10 {а}
 BlackMark_11 {Гэбриэл}
 BlackMark_12 {Кэллоу}
-BlackMark_13 {Принципио}
+BlackMark_13 { }
 BlackMark_14 {му}
 BlackMark_15 {й}
 BlackMark_16 {Готово. Теперь надо сматываться, да побыстрее, пока Гейб не нагрянул}

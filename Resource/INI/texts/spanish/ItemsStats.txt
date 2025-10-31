@@ -11,11 +11,13 @@ itm_stat_descr_damageReduction {Este porcentaje se resta del daño recibido ante
 itm_stat_attack {Daño}
 itm_stat_descr_attack
 {
-Ataque normal: #sattack.force.min#–#sattack.force.max# de daño
-Ataque rápido: #sattack.fast.min#–#sattack.fast.max# de daño
-Ataque grupal: #sattack.round.min#–#sattack.round.max# de daño
-Ataque pesado: #sattack.break.min#–#sattack.break.max# de daño
+Ataque cortante: #sattack.fast.min#–#sattack.fast.max# daño
+Ataque de estocada: #sattack.force.min#–#sattack.force.max# daño
+Ataque circular: #sattack.round.min#–#sattack.round.max# daño
+Ataque penetrante: #sattack.break.min#–#sattack.break.max# daño
 }
+itm_stat_gundamage {Daño por armas de fuego.}
+itm_stat_descr_gundamage {El daño infligido en combate a distancia depende de las habilidades, las características del arma y de la munición.}
 itm_stat_healAmount {Curación}
 itm_stat_descr_healAmount {Cantidad de Salud restaurada al usar.}
 itm_stat_worldMapBonus {Radio de observación}
@@ -126,15 +128,15 @@ itm_stat_descr_obereg_11 {Cambia el ángulo de rumbo del barco en un 15%, permit
 itm_stat_obereg_3 {Levantamiento de pesas}
 itm_stat_descr_obereg_3 {Aumenta el peso de carga en un 15%.}
 itm_stat_obereg_4 {Incógnito}
-itm_stat_descr_obereg_4 {La sigilo del personaje aumenta en 10.}
+itm_stat_descr_obereg_4 {La sigilo del personaje aumenta en #smodifiers.SkillSneak#.}
 itm_stat_obereg_5 {Talismán}
-itm_stat_descr_obereg_5 {La Fortuna del personaje aumenta en 15.}
+itm_stat_descr_obereg_5 {La Fortuna del personaje aumenta en #smodifiers.SkillFortune#.}
 itm_stat_obereg_6 {Persuasión}
-itm_stat_descr_obereg_6 {El Liderazgo del personaje aumenta en 10 puntos.}
+itm_stat_descr_obereg_6 {El Liderazgo del personaje aumenta en #smodifiers.SkillLeadership# puntos.}
 itm_stat_obereg_7 {Nacido del mar}
-itm_stat_descr_obereg_7 {La Navegación del personaje aumenta en 10 puntos.}
+itm_stat_descr_obereg_7 {La Navegación del personaje aumenta en #smodifiers.SkillSailing# puntos.}
 itm_stat_obereg_8 {Beneficio}
-itm_stat_descr_obereg_8 {El Comercio del personaje aumenta en 15 puntos.}
+itm_stat_descr_obereg_8 {El Comercio del personaje aumenta en #smodifiers.SkillCommerce# puntos.}
 itm_stat_obereg_9 {Dios del Viento}
 itm_stat_descr_obereg_9 {La velocidad del barco aumenta un 10%.}
 itm_stat_totem_01 {Estómago de hierro}
@@ -146,7 +148,7 @@ itm_stat_descr_totem_03 {Duplica el efecto curativo de los placeres amorosos.}
 itm_stat_totem_04 {Líder nato}
 itm_stat_descr_totem_04 {Bloquea la lealtad del oficial durante toda la duración.}
 itm_stat_totem_05 {Invulnerabilidad}
-itm_stat_descr_totem_05 {Reduce el daño crítico enemigo un 25%.}
+itm_stat_descr_totem_05 {Reduce el daño crítico enemigo un $modifierPercent(CritIncomingDamageReduction).}
 itm_stat_totem_06 {Caballo de carga}
 itm_stat_descr_totem_06 {Superar el peso de carga no ralentiza al personaje ni aplica penalizaciones.}
 itm_stat_totem_07 {Invocar}
@@ -216,11 +218,11 @@ itm_stat_descr_talisman15 {Aumenta el Poder de la Flota un 15%. Hecho con el pa�
 itm_stat_talisman16 {Guerrero de la jungla}
 itm_stat_descr_talisman16 {Las armas Exóticas infligen un 15% más de daño}
 itm_stat_talisman17 {Escudo de fe}
-itm_stat_descr_talisman17 {Reduce el daño a la tripulación y al capitán en un 5%, y aumenta la habilidad de Defensa en 10 al estar a bordo del Santa Misericordia.}
+itm_stat_descr_talisman17 {Reduce el daño a la tripulación en $ctxHasAttr(QBonus.max|15|5) %, y a bordo del *Santo Misericordia* aumenta la habilidad de Defensa en 10. La reducción de daño mejora tras completar el Camino del Justo.}
 itm_stat_talisman18 {En busca de la verdad}
 itm_stat_descr_talisman18 {Cada tesoro encontrado aumenta el poder de la descarga de mosquetes de la tripulación en un 1% y el daño de metralla en un 2%.}
 itm_stat_talisman19 {Recuerda}
-itm_stat_descr_talisman19 {Por cada 2% de casco perdido, la velocidad del barco aumenta un 0,75% y el daño de los cañones un 0,5%.}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {Listo para actuar}
 itm_stat_descr_talisman20 {La velocidad de apuntado con armas de fuego aumenta un 15%, el daño máximo al apuntar un 20%, la recarga un 10% y el daño por disparo a la cabeza un 20%.}
 itm_stat_talisman21 {Responsabilidad mutua}
@@ -267,3 +269,27 @@ itm_stat_mushket8 {Desmontable}
 itm_stat_descr_mushket8 {Esta arma de fuego puede montarse y desmontarse, alternando entre uso a una mano y a dos manos.}
 itm_stat_spyglassSP3 {Mirada castigadora}
 itm_stat_descr_spyglassSP3 {Este catalejo te permite ver el miedo en los ojos del capitán enemigo y saber si está listo para rendirse.}
+itm_stat_reloadTime {Tiempo de recarga}
+itm_stat_descr_reloadTime {Tiempo para cargar el siguiente cartucho.}
+itm_stat_kaleuche_amulet2 {Encantamiento de ataque}
+itm_stat_descr_kaleuche_amulet2 {Hace que los monstruos del templo Chavinavi sean vulnerables al daño por arma y otorga protección contra sus ataques. Aumenta las habilidades en todos los tipos de armas en un 25%.}
+itm_stat_kaleuche_amulet3 {Encantamiento de protección}
+itm_stat_descr_kaleuche_amulet3 {Hace que los monstruos del templo Chavinavi sean vulnerables al daño por arma y otorga protección contra sus ataques. Reduce el daño recibido por cualquier tipo de arma en un 25% y previene el envenenamiento.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+ ~
+ Bono actual: $number($attr($context.KillerBonus.appliedbonus)) de daño y $number($attr($context.KillerBonus.RangeBonus))% de alcance.
+}
+itm_stat_blade_WR_1 {Diligencia}
+itm_stat_descr_blade_WR_1 {Aumenta por cinco la velocidad de regeneración de salud en combate.}
+itm_stat_secondary_hat6 {Estimado negociante}
+itm_stat_descr_secondary_hat6 {Aumenta la potencia de los barcos mercantes en la escuadra en un 15 % y reduce la penalización a la probabilidad de huir de los barcos mercantes en 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Aumenta el daño infligido por armas de fuego diez veces.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Incluso con una herida leve, en el 100 % de los casos provoca un envenenamiento grave que no puede curarse con antídotos y que conduce a la muerte en poco tiempo.}
+itm_stat_PerksPotion {Olvido}
+itm_stat_descr_PerksPotion {Restablece todos los Perks aprendidos del personaje. Tras consumirla, la memoria de los Perks y las técnicas se borra, pero la habilidad permanece — como si el cuerpo recordara lo que alcanzó y la mente ya no.}
+itm_stat_descr_talisman19_InSlot {Cada 2% del casco del barco perdido aumenta la velocidad y el daño de los cañones en un 0.75% y un 0.5% respectivamente.}
+itm_stat_descr_talisman19_InInventory {Cuando está en el inventario, hace que todos los oficiales sean inmortales.}

@@ -2654,23 +2654,12 @@ void ProcessDialogEvent()
 		
 		case "Noblelombard_7":
 			DialogExit();
-			AddQuestRecord("Noblelombard", "6");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard"); // лесник с нпчара на пчара
+			AddDialogExitQuestFunction("Noblelombard_Usurer_bad");
 		break;
 		
 		case "Noblelombard_9":
 			DialogExit();
-			iTemp = sti(pchar.GenQuest.Noblelombard.Regard); // Addon-2016 Jason уменьшаем раздачу дублонов
-			AddMoneyToCharacter(pchar, iTemp);
-			PlaySound("interface\important_item.wav");
-			AddQuestRecord("Noblelombard", "7");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard");// с нпчара на пчара  лесник
+			AddDialogExitQuestFunction("Noblelombard_Usurer_good");
 		break;
 //<-- семейная реликвия
 

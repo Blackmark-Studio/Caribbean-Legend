@@ -31,6 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         break;
         
         case "FMQT_1":
+			Notification_Skill(false, 26, SKILL_LEADERSHIP);
             AddMoneyToCharacter(pchar, 1000);
             dialog.text = "总是这样! 拿着这个! 这是我桌子里所有的钱了! 现在滚! ";
             link.l1 = "谢谢您, 大人。 我这就告辞。 ";

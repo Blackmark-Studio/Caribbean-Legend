@@ -365,9 +365,34 @@ void LAi_SetPriestTypeNoGroup(aref chr)
 //Actor
 //------------------------------------------------------------------------------------------
 
+void LAi_ReturnBackupTmpl(string quest)
+{
+	aref idxs;
+	makearef(idxs, PChar.quest.(quest).officers);
+	for (int i = 0; i < GetAttributesNum(idxs); i++)
+	{
+		int chrIdx = sti(GetAttributeName((GetAttributeN(idxs, i))));
+		ref chr = GetCharacter(chrIdx);
+		LAi_SetOfficerType(chr);
+	}
+
+	DeleteAttribute(pchar, "quest.LAi_ReturnBackupTmpl.officers");
+}
+
+//Установить персонажу тип актёра, который сбросится к офицеру при смене локации
+void LAi_SetOneTimeActorTypeForOfficer(aref chr)
+{
+	LAi_SetActorType(chr);
+	SetFunctionExitFromLocationCondition("LAi_ReturnBackupTmpl", pchar.location, false);
+	string chrIdx = chr.index;
+	pchar.quest.LAi_ReturnBackupTmpl.officers.(chrIdx) = true;
+}
+
 //Установить персонажу тип актёра
 void LAi_SetActorType(aref chr)
 {
+	if (!CheckAttribute(chr, "ai_backup") && CheckAttribute(chr, "chr_ai.tmpl"))  chr.ai_backup.back_tmpl = chr.chr_ai.tmpl;
+	if (!CheckAttribute(chr, "ai_backup") && CheckAttribute(chr, "musketerdistance")) chr.ai_backup.musketerdistance = chr.musketerdistance;
 	chr.chr_ai.type = LAI_DEFAULT_TYPE;
 	LAi_type_actor_Init(chr);
 	LAi_group_MoveCharacter(chr, LAI_GROUP_ACTOR);

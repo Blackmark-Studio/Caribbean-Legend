@@ -268,10 +268,10 @@ itmname_howdah {Howdah}
 itmdescr_howdah {Double-barreled large-caliber pistol, the best companion for a hunter in the African bush or Indian jungle. Reliably fells boars, tigers, and hostile natives.}
 itmname_nocirass {No cuirass}
 itmdescr_nocirass {When wearing armor for a long time, one can become exhausted. Take a load off, put your feet up, and drink a cup of hot coffee with cinnamon or something stronger.}
-itmname_cirass1 {Trench Cuirass}
-itmdescr_cirass1 {Infantry cuirass used during fortress sieges. Offers excellent protection against steel and lead, but restricts movement, making the wearer clumsy in close combat.}
-itmname_cirass2 {Cavalry Cuirass}
-itmdescr_cirass2 {Stamped cuirass of heavy cavalry. Offers good protection for chest and back while mounted, but its weight and poor fit hinder speed and agility on foot.}
+itmname_cirass1 {Infantry Armor}
+itmdescr_cirass1 {An infantry cuirass used during fortress sieges. It provides excellent protection against steel and lead, but restricts mobility, making the wearer clumsy in close combat. It became widespread in both Europe and the Caribbean.}
+itmname_cirass2 {Reiter Cuirass}
+itmdescr_cirass2 {A well-forged cuirass of heavy cavalry. It provides excellent protection for the chest and back, but in infantry formation its weight and poor fit hamper the wearer's speed and agility.}
 itmname_cirass3 {Parade Cuirass}
 itmdescr_cirass3 {Light cuirass made of fine quality steel. Can be worn under a doublet. Restricts movement only slightly, reliably protecting only against stray bullets and glancing blows.}
 itmname_cirass4 {Milano Cuirass}
@@ -287,7 +287,7 @@ itmdescr_cirass8 {A unique cuirass of leather and metal that protects the entire
 itmname_cirass9 {Reinforced Brigandine}
 itmdescr_cirass9 {Armor of a professional mercenary and the top choice for a duelist. Offers protection and weight close to a cuirass, but its superb tailoring allows complete freedom of movement.}
 itmname_cirass10 {Ironside Breastplate}
-itmdescr_cirass10 {A rather worn and incomplete set of parliamentarian cavalry equipment. It offers poor protection, but the abundance of pockets and pouches greatly simplifies shooting and reloading.}
+itmdescr_cirass10 {A rather worn and incomplete set of parliamentary cavalry equipment. It still provides good protection, and the abundance of pockets and cartridge pouches makes shooting and reloading much easier.}
 itmname_cirass11 {Mirror Breastplate}
 itmdescr_cirass11 {Such armor is common in the Tsardom of Russia and the Ottoman Empire. This piece has traveled a long road before ending up in your hands.}
 itmname_suit1 {French Uniform}
@@ -321,7 +321,7 @@ itmdescr_hat5 {Few sailors ever get to see a hat like this even once in their li
 itmname_hat6 {Dutch Hat}
 itmdescr_hat6 {An expensive and elegant hat, much favored by middling merchants. Its unusual shape makes it easy to spot a negotiator from afar—and prepare for fierce bargaining.}
 itmname_hat7 {Lucky Hat}
-itmdescr_hat7 {They say this dashing hat brings good fortune. Weathered and worn by time, it still carries a noble air. If you come by such a hat, rest assured: when things get tough, you’ll slip past the guard, draw the right card from the deck, and find a stray ball at the bottom of your pocket.}
+itmdescr_hat7 {They say this daring hat brings good luck. Worn and battered by time, it still looks noble. If you happen to own one, rest assured — in the toughest moment, you’ll never be left without an ace up your sleeve.}
 itmname_hat8 {Charlie Prince’s Tricorn}
 itmdescr_hat8 {This hat frightens merchants—especially Spanish ones—more than the Jolly Roger itself. The reputation of its wearer makes even the toughest sea dog turn pale and shiver. Cursed be the day Charlie Prince was born.}
 itmname_hat9 {Grim’s Hat}
@@ -454,71 +454,115 @@ itmdescr_totem_12 {A jaguar's claw on a cord worn at the neck will enhance your 
 itmname_totem_13 {Talisman 'Joker'}
 itmdescr_totem_13 {A handy card that's always at hand increases the chance of winning at games of chance.}
 itmname_indian_1 {Amulet 'Voodoo doll'}
-itmdescr_indian_1 {A ritual doll — a creepy indigenous artifact.}
+itmdescr_indian_1
+{
+Ritual doll — a gruesome indigenous artifact said to bind itself to the victim’s soul.
+ ~Can increase damage dealt to vulnerable spots — for example, the head.
+}
 itmname_indian_2 {Amulet 'Gunpowder tester'}
-itmdescr_indian_2 {A device for testing the quality of gunpowder.}
+itmdescr_indian_2
+{
+Device for testing the quality of gunpowder. ~
+ High-quality gunpowder increases the damage of any projectiles due to more uniform burning, but is especially useful when crafting your own ammunition.
+}
 itmname_indian_3 {Amulet 'Ritual Knife'}
-itmdescr_indian_3 {An obsidian sacrificial knife.}
+itmdescr_indian_3
+{
+An obsidian sacrificial knife. How many souls it has claimed in attempts to win the blessings of heretical Aztec gods is unknown, but the obsidian edge has not dulled to this day.
+ ~Increases critical damage against enemies; may God rest their souls.
+}
 itmname_indian_4 {Amulet 'Axe'}
-itmdescr_indian_4 {A pendant covered in runes.}
+itmdescr_indian_4
+{
+Pendant covered in Asatru runes. No one knows how it found its way to the Caribbean, but it stirs a strange urge toward axes.
+ ~Fosters a surge of unexpected strength in the arms, increasing the power of heavy weapon strikes.
+}
 itmname_indian_5 {Amulet 'Tsantsa'}
-itmdescr_indian_5 {A head dried by a special method.}
+itmdescr_indian_5
+{
+A head dried by hideous rituals. Crafting such an amulet requires a foul pagan rite.
+ ~Seeing one at a captain’s belt makes any boarding party cautious and fearful — friend or foe alike.
+}
 itmname_indian_6 {Amulet 'Coral head'}
-itmdescr_indian_6 {A carved idol made from a piece of coral.}
+itmdescr_indian_6
+{
+A carved idol made from a fragment of coral. They say it brings luck and steadies the hand.
+ ~At any rate, a musket volley fired with it becomes far more disciplined.
+}
 itmname_indian_7 {Amulet 'Humpback'}
-itmdescr_indian_7 {A terracotta figurine of a hunchback.}
+itmdescr_indian_7
+{
+A terracotta figurine of a hunchback — not the one from Notre Dame, but the patron of diligence.
+ ~With it you more easily endure grueling jungle treks and boarding melees.
+}
 itmname_indian_8 {Amulet 'Xiuhtecuhtli'}
-itmdescr_indian_8 {A totem figurine of an Aztec god, lord of fire and master of volcanoes.}
+itmdescr_indian_8
+{
+A totem figurine of an Aztec god, lord of fire and master of volcanoes. You would swear that, had the Aztecs possessed gunpowder, he would have claimed it as his charge.
+ ~Mysteriously makes cannon shots deadlier.
+}
 itmname_indian_9 {Amulet 'Baldo'}
-itmdescr_indian_9 {A Celtic brooch in the shape of a raven.}
+itmdescr_indian_9
+{
+A Celtic brooch in the shape of a raven. They say the most skilled island seafarers among the Celtic clans wore such things.
+ ~It most impresses the gun crew, causing them to begin mounting and aiming the guns much faster.
+}
 itmname_indian_10 {Amulet 'Cascavella'}
-itmdescr_indian_10 {An enchanted rattlesnake skull.}
+itmdescr_indian_10
+{
+An enchanted rattlesnake skull.
+ ~Likely there is still venom in the set fangs; otherwise its ability to poison on strike is hard to explain.
+}
 itmname_indian_11 {Amulet 'Ngombo mask'}
-itmdescr_indian_11 {A ritual mask of the Sibonei people.}
+itmdescr_indian_11
+{
+Ritual mask of the Sibonei people. Rumor has it it can instill false memories in a person.
+ ~Useful for making an impression with trinkets, or conversely, for disappearing into a crowd.
+}
 itmname_amulet_1 {Amulet 'Ngombo shield'}
-itmdescr_amulet_1 {A necklace of bones and corals, strengthened by an ngombo spell.}
+itmdescr_amulet_1 {Necklace of bones and coral strengthened by an Ngombo charm. ~Even the lightest armor starts to turn blades aside with it.}
 itmname_amulet_2 {Amulet 'Euchologion'}
-itmdescr_amulet_2 {A prayer book in a silvered cover.}
+itmdescr_amulet_2 {Prayer book in a silvered cover. ~Protects the righteous from the enemies of Christ, especially from lead.}
 itmname_amulet_3 {Amulet 'Crucifix'}
-itmdescr_amulet_3 {A blessed Catholic cross.}
+itmdescr_amulet_3 {Blessed Catholic crucifix. ~Brings miraculous salvation — where a sinner would die, the righteous will only be wounded.}
 itmname_amulet_4 {Amulet 'El trozo'}
-itmdescr_amulet_4 {A shard of a rapier extracted from a dead body.}
+itmdescr_amulet_4 {Fragment of a rapier drawn from a dead body. ~Grants frenzy and plunges the wearer into a pagan trance.}
 itmname_amulet_5 {Amulet 'Sogbo'}
-itmdescr_amulet_5 {A spirit of lightning from the Voodoo pantheon.}
+itmdescr_amulet_5 {Spirit of lightning from the Voodoo pantheon. ~Makes gunners far quicker, speeding up cannon reloads.}
 itmname_amulet_6 {Amulet 'Madonna'}
-itmdescr_amulet_6 {A consecrated locket bearing the image of the Virgin Mary.}
+itmdescr_amulet_6 {Consecrated reliquary bearing the image of the Virgin Mary. ~Helps avoid death and crippling wounds.}
 itmname_amulet_7 {Amulet 'Holy water'}
-itmdescr_amulet_7 {A silver flask-pendant filled with holy water.}
+itmdescr_amulet_7 {Silver flask pendant filled with holy water. ~Protects against illnesses and wounds, both spiritual and physical.}
 itmname_amulet_8 {Amulet 'Anchor'}
-itmdescr_amulet_8 {A silver charm with an incantation.}
+itmdescr_amulet_8 {Silver pendant with an incantation. ~Sailors believe it saves a ship’s hull from stray cannonballs below the waterline.}
 itmname_amulet_9 {Amulet 'Encolpion'}
-itmdescr_amulet_9 {A massive silver cross with relics of Saint Christopher.}
+itmdescr_amulet_9 {Massive silver cross containing relics of Saint Christopher. ~Protects pilgrims on their journey and helps preserve sails in battle.}
 itmname_amulet_10 {Amulet 'Wonderworker'}
-itmdescr_amulet_10 {An icon of Saint Nicholas, patron of sailors.}
+itmdescr_amulet_10 {Medallion of Saint Nicholas, patron of sailors. ~With it, every sailor has a better chance of returning home alive and unscathed.}
 itmname_amulet_11 {Amulet 'Cimaruta'}
-itmdescr_amulet_11 {An amulet breathing ancient magic.}
+itmdescr_amulet_11 {Amulet breathing ancient magic. ~Brings otherworldly luck, shielding the crew from musket fire before boarding.}
 itmname_obereg_1 {Amulet 'Teredo'}
-itmdescr_obereg_1 {A cypress mask that keeps shipworms away.}
+itmdescr_obereg_1 {Cypress mask shunned by shipworms. ~Leads to more economical hull repairs.}
 itmname_obereg_2 {Amulet 'Xochipilli'}
-itmdescr_obereg_2 {A ritual clay vessel of Xochipilli, patron of weavers.}
+itmdescr_obereg_2 {Ritual clay vessel of Xochipilli, patron of weavers. Promotes more economical ship repairs.}
 itmname_obereg_3 {Amulet 'Monkey'}
-itmdescr_obereg_3 {"According to local belief, this alabaster vessel grants strength."}
+itmdescr_obereg_3 {By local belief, this alabaster vessel lends strength. ~With it, bearing heavy loads becomes markedly easier.}
 itmname_obereg_4 {Amulet 'Gypsy's fan'}
-itmdescr_obereg_4 {A special Andalusian charm that averts the gaze of interlocutors, allowing one to deceive guards and patrols on land.}
+itmdescr_obereg_4 {A special Andalusian charm that turns prying eyes, letting you fool guards and patrols ashore. ~Aids clandestine entry into towns and ports.}
 itmname_obereg_5 {Amulet 'Jade turtle'}
-itmdescr_obereg_5 {An ancient amulet of the first conquistadors.}
+itmdescr_obereg_5 {An old amulet of the first conquistadors. ~They wore it for luck, and with it fortune truly begins to favor you.}
 itmname_obereg_6 {Amulet 'Monkey's fist'}
-itmdescr_obereg_6 {An intricate knot of sturdy rope with a hand-loop.}
+itmdescr_obereg_6 {An intricate knot of stout rope with a wrist loop. ~Usually worn by seasoned sailors, which makes your words carry far more weight.}
 itmname_obereg_7 {Amulet 'Fisherman'}
-itmdescr_obereg_7 {A charmed fishing hook worn by sailors for luck.}
+itmdescr_obereg_7 {An enchanted fishhook sailors wear for luck. ~Improves ship-handling skill, especially for inexperienced navigators.}
 itmname_obereg_8 {Amulet 'Merchant's beads'}
-itmdescr_obereg_8 {Monastic counting rosary beads made of noble coral.}
+itmdescr_obereg_8 {Monastic rosary beads made of noble coral for counting. ~Help you focus and keep your tally straight in trade, raising your chance of success.}
 itmname_obereg_9 {Amulet 'Ehecatl'}
-itmdescr_obereg_9 {An ancient bowl shaped like the head of the Aztec wind god.}
+itmdescr_obereg_9 {An ancient bowl shaped like the head of the Aztec god of winds. ~With it, the wind is ever fair, increasing a vessel’s speed.}
 itmname_obereg_10 {Amulet 'Seafarer's earring'}
-itmdescr_obereg_10 {An earring of the helmsman who rounded Cape Horn.}
+itmdescr_obereg_10 {The helmsman’s earring of one who has rounded Cape Horn. ~Helps you thread reefs and tack in shallows, increasing a ship’s agility.}
 itmname_obereg_11 {Amulet 'Pilgrim'}
-itmdescr_obereg_11 {Brendan the Sailor's cross.}
+itmdescr_obereg_11 {The cross of Brendan the Navigator. ~Lets you catch the slightest shifts of wind, making the vessel more responsive.}
 itmname_rat_poison {Arsenic}
 itmdescr_rat_poison {Arsenic — a powder smelling of sulfur and resembling talc, used for temporarily exterminating rats aboard ship.}
 itmname_gold {Peso}
@@ -894,6 +938,8 @@ itmname_recipe_potion4 {Mixture recipe}
 itmdescr_recipe_potion4 {A recipe containing all the information needed to prepare a mixture.}
 itmname_recipe_berserker_potion {Ometochli Tincture recipe}
 itmdescr_recipe_berserker_potion {A recipe containing all the information needed to prepare the Ometochli tincture.}
+itmname_recipe_PerksPotion {Recipe for the Potion of Oblivion}
+itmdescr_recipe_PerksPotion {A complex, costly and lengthy potion recipe. Judging by its description, it should allow one to renounce the past and change one's fate.}
 itmname_recipe_totem_01 {Talisman recipe}
 itmdescr_recipe_totem_01 {A recipe containing all the information needed to make the talisman 'Throat of cast iron'.}
 itmname_recipe_totem_02 {Talisman recipe}
@@ -970,6 +1016,8 @@ itmname_mangarosatotal {Sea Hug potion}
 itmdescr_mangarosatotal {A potion brewed from mangarosa, following Amelia’s recipe. It carries the scent of salty wind and wet wood, like a deck after a storm. The aroma of sea air with a faint bitterness of seaweed brings a feeling of lightness and freedom, as if the sea itself has opened within your chest.}
 itmname_vodka {Tsar Vodka}
 itmdescr_vodka {An infusion of grain spirit with juniper and St. John’s wort, distilled and aged with a drop of rose water and galangal root. Used by the streltsy of the Russian Tsardom on the battlefield as a warming and invigorating drink.}
+itmname_PerksPotion {Potion of Oblivion}
+itmdescr_PerksPotion {A vial shaped like a molten skull with a twisted neck. The viscous, oily liquid gleams gold and crimson as if a living flame pulses within. Contains three sacrifices: Flesh, Memory and Wealth.}
 itmname_cannabis1 {Datura}
 itmdescr_cannabis1 {Used in healing potions.}
 itmname_cannabis2 {Sabadilla}
@@ -1045,10 +1093,7 @@ itmdescr_Mineral6 {A small pocket mirror. You can barely even see the tip of you
 itmname_Mineral7 {Porcelain Pipe}
 itmdescr_Mineral7 {Dutch handiwork, made by techniques stolen from the Chinese. Finer than cheap clay pipes and thus popular among local tobacco smokers.}
 itmname_Mineral8 {Shoe}
-itmdescr_Mineral8
-{
-A shoe without its mate. A bad omen.(-10 to Opportunism)
-}
+itmdescr_Mineral8 {A shoe without its mate. A bad omen.}
 itmname_Mineral9 {Old Mug}
 itmdescr_Mineral9 {A tarnished old pewter mug.}
 itmname_Mineral10 {Flint}
@@ -1092,15 +1137,9 @@ itmdescr_Mineral28 {Some crazy alchemists use this pure ethyl alcohol to prepare
 itmname_Mineral29 {Nitric acid}
 itmdescr_Mineral29 {Nitric acid has known since the 8th century. It can be used to make silver fulminate assuming that you have a fire-resistant and non-metallic crucible. Highly reactive. Avoid contact with skin and for God's sake don't taste it.}
 itmname_Mineral30 {Slave Manacles}
-itmdescr_Mineral30
-{
-Hand manacles used by slavers to keep their property from wandering off.(-10 to charisma)
-}
+itmdescr_Mineral30 {Hand manacles used by slavers to keep their property from wandering off.}
 itmname_Mineral31 {Enchanted Bone}
-itmdescr_Mineral31
-{
-A human fingerbone with a copper band. Used by woodoo witches for spells.(-10 to charisma, -10 to Opportunism).
-}
+itmdescr_Mineral31 {A human fingerbone with a copper band. Used by woodoo witches for spells.}
 itmname_Mineral32 {Bullet Mold}
 itmdescr_Mineral32 {This contraption allows the casting of bullets sized to the correct shape and size for the Colt revolver.}
 itmname_Mineral33 {Tattoo Dye}
@@ -1143,6 +1182,8 @@ itmdescr_key_facio {Key of Giuseppe Fazio.}
 itmdescr_key_facioQ {A key opening the door on the ship 'Carolina' and one of the chests in Giuseppe Fazio's cabin.}
 itmname_key_levasser {Levasseur's key}
 itmdescr_key_levasser {A key taken from the body of Francois Levasseur. Now let's find the chest it unlocks.}
+itmname_key_candlestick_LeFransua {Key}
+itmdescr_key_candlestick_LeFransua {An old, worn key. It's not yet clear what it unlocks.}
 itmname_PortmansBook {Ship's log}
 itmdescr_PortmansBook {A ship's log, forgotten by an absent-minded captain. It should be returned to him.}
 itmname_CaptainBook {Vessel Documents}
@@ -1403,3 +1444,9 @@ itmname_hat11 {Theresa’s Hat}
 itmdescr_hat11 {Mary’s mother’s headpiece, preserved by Aurélie Bertin. Despite its age, it still retains its former elegance and charm.}
 itmname_talisman21 {Smuggler’s Talisman}
 itmdescr_talisman21 {A pouch of herbs and ash, a vial of dark liquid, and a skull medallion—a strange set to outsiders, but a prized talisman for those versed in the shadow trade. Only true smugglers wear such a talisman.}
+itmname_blade_WR_1 {Reborn}
+itmdescr_blade_WR_1
+{
+Rupert Northwood’s Magnificent Sabre. 
+A massive guard adorned with a golden phoenix bears witness to pain and rebirth. The blade gleams with a mirror shine, and along its fuller is engraved: VULNERATUS NON VICTUS — “Wounded but undefeated.” Only God knows how many souls this sword has claimed…
+}

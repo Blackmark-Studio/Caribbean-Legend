@@ -479,7 +479,7 @@ void Fort_CannonDestroy()
 	
 	Ship_ApplyCrewHitpoints(rFortCharacter, 15.0);
 	
-	Play3DSound("fort_cann_explode", x, y, z);
+	Play3DSoundEvent("ShipEMB/Explosion_Cannon_fort", x, y, z);
 	CreateBlast(x, y, z);
 	CreateParticleSystem("blast_inv", x, y, z, 0.0, 0.0, 0.0, 0);
 	CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);

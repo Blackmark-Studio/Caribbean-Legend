@@ -21,21 +21,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Mówią, że córka Thomasa Morrisona od pół roku nie wstaje z łóżka. Lekarze są całkowicie bezradni wobec jej choroby. Jedyną osobą, która mogłaby jej pomóc, jest cyganka słynąca z mikstur, które stawiają na nogi nawet ciężko chorych. Ale stanowczo odmówiła zrobienia czegokolwiek dla biedaczki.";
 			link.l1 = "Interesujące, dziękuje za informacje.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 			break;
         }
 		//<-- Тёмные воды исцеления
@@ -48,14 +34,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Przedwczoraj miała miejsce zuchwała próba zamachu na naczelnika portu! Zabójca czekał na niego przy wyjściu z biura, ale zdążył wezwać pomoc. Muszkieter przybył na czas i ranił napastnika, ale przestępcy udało się uciec z miasta\nMówią, że naczelnik portu oferuje hojną nagrodę za jego głowę! Jak dotąd, żadne odważne dusze się nie zgłosiły.";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -68,13 +47,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście te wieści?! To istne bezprawie! Ani kropli rumu czy wina w tawernie - jak człowiek ma znaleźć ulgę w ten przeklęty upał? Karczmarz już tydzień karmi nas pustymi obietnicami, że trunek znów popłynie, ale jak dotąd nic! Czy mamy chodzić z wysuszonymi gardłami aż do Sądu Ostatecznego?";
 			link.l1 = "Myślałem, że każdy trzyma jakieś ukryte zapasy na czarną godzine. Wasz problem najwyraźniej.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -87,24 +60,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Wieści krążące po porcie mówią, że Julie d'Armagnac, siostrzenica gubernatora, stała się jedynie cieniem dawnej siebie. Niegdyś promieniejąca i pełna życia, teraz snuje się po ulicach z wyraźnym smutkiem wypisanym na twarzy. Mieszkańcy szepczą i zastanawiają się, co mogło ją spotkać, ale nikt nie zna prawdy. Być może jakiś niegodziwiec złamał jej serce?"+GetSexPhrase(" Może to był pan, kapitanie?","")+"";
 			link.l1 = ""+GetSexPhrase("Wątpię w to. ","")+"Dziękuję za informację.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -117,13 +73,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Krążą słuchy, że rybak Pierre Carno zniknął bez śladu. Dwa świty temu wypłynął w morze i dotąd nie ma po nim śladu. Jego żona, Lea, jest zrozpaczona. Dniem i nocą pełni wartę na molo, wpatrując się w bezkresne wody, modląc się o choćby cień żagla ukochanego.";
 			link.l1 = "Hm, może warto się tym zainteresować?... Dziękuję za informację.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова 
@@ -135,14 +85,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Kapitanie, słyszałeś? W naszej tawernie pracuje nowa kelnerka. Mówią, że to prawdziwa piękność. Mężczyźni z całej okolicy zbiegali się, by na nią spojrzeć. Ale trzy dni temu nie przyszła do pracy, co bardzo zasmuciło właściciela tawerny, który od jej pojawienia się zaczął osiągać ogromne zyski. Mówią, że jest nawet gotów zapłacić temu, kto zdoła znaleźć dziewczynę.​";
 			link.l1 = "Doprawdy? Chyba nie zaszkodzi spróbować.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -155,24 +98,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Nasz kowal przegrał w karty z Javierem Castillo, i to tak, że ten obedrzał go do nitki, zmuszając go postawić coś bardzo cennego. Od tego czasu kowal nie może dojść do siebie i nie przyjmuje nowych zamówień - wciąż się zamartwia, że admirał obedrze go ze skóry. Szkoda tego prostaka, wszyscy miejscowi wiedzą, że z tym szulerem Castillo nie wolno grać!";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -184,21 +110,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Kapitan fregaty 'Águila' urządził w tawernie taką reprymendę swojemu kwatermistrzowi, że aż ściany drżały! Okazuje się, że kapitan zamierzał wyjść w morze z przypływem, a kwatermistrz puścił całą załogę na ląd. Teraz marynarze rozeszli się po mieście i jeśli nie wrócą na czas, statek odpłynie bez nich - kapitan czekać nie zamierza! Ciekawe, skąd ten pośpiech? Korzystny fracht, udany targ, pilne zlecenie od gubernatora?";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -252,21 +164,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Mówią, że córka Thomasa Morrisona od pół roku nie wstaje z łóżka. Lekarze są całkowicie bezradni wobec jej choroby. Jedyną osobą, która mogłaby jej pomóc, jest cyganka słynąca z mikstur, które stawiają na nogi nawet ciężko chorych. Ale stanowczo odmówiła zrobienia czegokolwiek dla biedaczki.";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 			break;
         }
 		//<-- Тёмные воды исцеления
@@ -279,14 +177,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Przedwczoraj miała miejsce zuchwała próba zamachu na naczelnika portu! Zabójca czekał na niego przy wyjściu z biura, ale zdążył wezwać pomoc. Muszkieter przybył na czas i ranił napastnika, ale przestępcy udało się uciec z miasta\nMówią, że naczelnik portu oferuje hojną nagrodę za jego głowę! Jak dotąd, żadne odważne dusze się nie zgłosiły. Wiecie co, nawet gdyby zaoferował tysiąc dubonów - nie zgodziłbym się...";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -299,13 +190,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście te wieści?! To istne bezprawie! Ani kropli rumu czy wina w tawernie - jak człowiek ma znaleźć ulgę w ten przeklęty upał? Karczmarz już tydzień karmi nas pustymi obietnicami, że trunek znów popłynie, ale jak dotąd nic! Czy mamy wysuszyć gardła aż do Sądu Ostatecznego?";
 			link.l1 = "Myślałem, że każdy trzyma jakieś ukryte zapasy na czarną godzine. Wasz problem najwyraźniej.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -318,24 +203,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Wieści krążące po porcie mówią, że Julie d'Armagnac, siostrzenica gubernatora, stała się jedynie cieniem dawnej siebie. Niegdyś promieniejąca i pełna życia, teraz snuje się po ulicach z wyraźnym smutkiem wypisanym na twarzy. Mieszkańcy szepczą i zastanawiają się, co mogło ją spotkać, ale nikt nie zna prawdy. Być może jakiś niegodziwiec złamał jej serce?"+GetSexPhrase(" Może to był pan, kapitanie?","")+"";
 			link.l1 = ""+GetSexPhrase("Wątpię w to. ","")+"Dziękuję za informacje.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -348,13 +216,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Krążą słuchy, że rybak Pierre Carno zniknął bez śladu. Dwa świty temu wypłynął w morze i dotąd nie ma po nim śladu. Jego żona, Lea, jest zrozpaczona. Dniem i nocą pełni wartę na molo, wpatrując się w bezkresne wody, modląc się o choćby cień żagla ukochanego.";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова 
@@ -367,14 +229,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Kapitanie, słyszałeś? W naszej tawernie pracuje nowa kelnerka. Mówią, że to prawdziwa piękność. Mężczyźni z całej okolicy zbiegali się, by na nią spojrzeć. Ale trzy dni temu nie przyszła do pracy, co bardzo zasmuciło właściciela tawerny, który od jej pojawienia się zaczął osiągać ogromne zyski. Mówią, że jest nawet gotów zapłacić temu, kto zdoła znaleźć dziewczynę.​";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -386,24 +241,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Nasz kowal przegrał w karty z Javierem Castillo, i to tak, że ten obedrzał go do nitki, zmuszając go postawić coś bardzo cennego. Od tego czasu kowal nie może dojść do siebie i nie przyjmuje nowych zamówień - wciąż się zamartwia, że admirał obedrze go ze skóry. Szkoda tego prostaka, wszyscy miejscowi wiedzą, że z tym szulerem Castillo nie wolno grać!";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -415,21 +253,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Kapitan fregaty 'Águila' urządził w tawernie taką reprymendę swojemu kwatermistrzowi, że aż ściany drżały! Okazuje się, że kapitan zamierzał wyjść w morze z przypływem, a kwatermistrz puścił całą załogę na ląd. Teraz marynarze rozeszli się po mieście i jeśli nie wrócą na czas, statek odpłynie bez nich - kapitan czekać nie zamierza! Ciekawe, skąd ten pośpiech? Korzystny fracht, udany targ, pilne zlecenie od gubernatora?";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -520,24 +344,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Wieści krążące po porcie mówią, że Julie d'Armagnac, siostrzenica gubernatora, stała się jedynie cieniem dawnej siebie. Niegdyś promieniejąca i pełna życia, teraz snuje się po ulicach z wyraźnym smutkiem wypisanym na twarzy. Mieszkańcy szepczą i zastanawiają się, co mogło ją spotkać, ale nikt nie zna prawdy. Być może jakiś niegodziwiec złamał jej serce?"+GetSexPhrase(" Może to był pan, kapitanie?","")+"";
 			link.l1 = ""+GetSexPhrase("Wątpię w to. ","")+"Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -585,24 +392,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Wieści krążące po porcie mówią, że Julie d'Armagnac, siostrzenica gubernatora, stała się jedynie cieniem dawnej siebie. Niegdyś promieniejąca i pełna życia, teraz snuje się po ulicach z wyraźnym smutkiem wypisanym na twarzy. Mieszkańcy szepczą i zastanawiają się, co mogło ją spotkać, ale nikt nie zna prawdy. Być może jakiś niegodziwiec złamał jej serce?"+GetSexPhrase(" Może to był pan, kapitanie?","")+"";
 			link.l1 = ""+GetSexPhrase("Wątpię w to. ","")+"Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -651,14 +441,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Przedwczoraj miała miejsce zuchwała próba zamachu na naczelnika portu! Zabójca czekał na niego przy wyjściu z biura, ale zdążył wezwać pomoc. Muszkieter przybył na czas i ranił napastnika, ale przestępcy udało się uciec z miasta\nMówią, że naczelnik portu oferuje hojną nagrodę za jego głowę! Jak dotąd, żadne odważne dusze się nie zgłosiły. Wiecie co, nawet gdyby zaoferował tysiąc dubonów - nie zgodziłbym się...";
 			link.l1 = "Dziękuję, muszę się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -670,21 +453,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "Słyszeliście? Kapitan fregaty 'Águila' urządził w tawernie taką reprymendę swojemu kwatermistrzowi, że aż ściany drżały! Okazuje się, że kapitan zamierzał wyjść w morze z przypływem, a kwatermistrz puścił całą załogę na ląd. Teraz marynarze rozeszli się po mieście i jeśli nie wrócą na czas, statek odpłynie bez nich - kapitan czekać nie zamierza! Ciekawe, skąd ten pośpiech? Korzystny fracht, udany targ, pilne zlecenie od gubernatora?";
 			link.l1 = "Dziękuję, powinien"+ GetSexPhrase("em","am") +" się pożegnać.";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника
@@ -819,21 +588,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			DWH_Start();
 			break;
         }
 		//<-- Тёмные воды исцеления
@@ -850,14 +605,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			GS_Start();
 			break;
         }
 		//<-- Грани справедливости
@@ -874,13 +622,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TPZ_Start();
 			break;
         }
 		//<-- Торговля по закону
@@ -897,14 +639,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("OS");
-			AddQuestRecord("OS", "1");
-			pchar.questTemp.OS_Start = true;
-			pchar.questTemp.OS_Tavern_1 = true;
-			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OS_Start();
 			break;
         }
 		//<-- Старые счёты
@@ -921,24 +656,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			UV_Start();
 			break;
         }
 		//<-- Украденное воспоминание
@@ -955,13 +673,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora mi już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			VPVL_Start();
 			break;
         }
 		//<-- В плену великого улова
@@ -978,14 +690,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			TBP_Start();
 			break;
         }
 		//<-- Тайна Бетси Прайс
@@ -1002,24 +707,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("OZ");
-			AddQuestRecord("OZ", "1");
-			pchar.questTemp.OZ_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_31");
-			sld.lastname = StringFromKey("Neutral_32");
-			sld.City = "PortSpein";
-			ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
-			sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-			sld.dialog.currentnode = "OZ_Kuznets_1";
-			LAi_SetStayType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			OZ_Start();
 			break;
         }
 		//<-- Оковы азарта
@@ -1035,21 +723,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("Dziękuję, muszę się pożegnać.",
 									 "Ech, mocny rum... No dobrze, pora już iść. Miłego wieczoru!");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("LFD");
-			AddQuestRecord("LFD", "1");
-			pchar.questTemp.LFD_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", LAi_FindFarLocator2Pchar("goto"));
-			sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
-			sld.dialog.currentnode = "Sailor_1";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			//LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+			LFD_Start();
 			break;
         }
 		//<-- Письмо от покойника

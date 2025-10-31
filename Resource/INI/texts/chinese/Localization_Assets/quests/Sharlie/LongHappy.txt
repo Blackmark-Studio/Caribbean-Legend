@@ -13,7 +13,7 @@ LongHappy_12 {Svensson}
 LongHappy_13 {Sperm Whale}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
-LongHappy_16 {Fortune}
+LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {一段时间过去了... @<NewStr()> 派对正进行得如火如荼...}

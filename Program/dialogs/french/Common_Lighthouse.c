@@ -651,16 +651,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "Ah, donc vous êtes ce capitaine ! Oui, je vous attendais. Gerard aussi vous attendait, mais il devait partir de toute urgence pour une sorte d'expédition, alors il m'a demandé de vous transférer le paiement. Il a dit que vous deviez venir. Il y a ici quatre cents doubloons, si cela vous convient.");
+			dialog.text = "Ah, donc vous êtes ce capitaine ! Oui, je vous attendais. Gerard aussi vous attendait, mais il devait partir de toute urgence pour une sorte d'expédition, alors il m'a demandé de vous transférer le paiement. Il a dit que vous deviez venir. Il y a ici 90 cents doubloons, si cela vous convient.");
 			link.l1 = "Merci! C'est agréable de traiter avec des gens honnêtes.";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("You have received 400 doubloons");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

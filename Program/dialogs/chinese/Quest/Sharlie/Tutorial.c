@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "唉, 我狡猾的计划失败了。 再见, 水手。 ";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -568,14 +568,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "嗯... 您有道理。 而且您已经在船长的舱室吃过不止一次饭了。 请进, 德.莫尔先生。 ";
 					link.l1 = "这才像话! ";
 					link.l1.go = "OhrannikCabin_4";
-					notification("检查通过", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("技能不足 (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 			dialog.text = "呃... 好吧。 我想这也不会有什么大碍。 ";
 			link.l1 = "这才像话! ";
 			link.l1.go = "OhrannikCabin_4";
-			notification("检查通过", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -1073,17 +1073,17 @@ void ProcessDialogEvent()
 		
 		case "OldSailor_9":
 			dialog.text = "现在告诉我: 船长最重要的技能是什么? ";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "航海技术。 它决定了他能指挥的船只大小。 ";
 				link.l1.go = "OldSailor_10";
-				notification("检查通过", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "我不想撒谎 —我不知道。 ";
 				link.l1.go = "OldSailor_9_1";
-				notification("技能等级不足 (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1167,18 +1167,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "已经找到答案了? 船长最重要的技能是什么? ";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "航海技术。 它决定了他能指挥的船只大小。 ";
 				link.l1.go = "OldSailor_10";
-				notification("检查通过", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "还没有。 ";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("技能等级不足 (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		

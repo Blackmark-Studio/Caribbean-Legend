@@ -87,7 +87,7 @@ void ProcessDialogEvent()
 		case "Town_7":
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "Qu'as-tu dit ?... Bon sang, tu n'es pas un simple bandit ! Il travaille pour l'amiral ! Abattez-le, les gars !";
-			link.l1 = "I think we make a great team, don't you, alright?";
+			link.l1 = "Je pense qu’on forme une super équipe, non ? Ça te va ?";
 			link.l1.go = "Cabin_fight";
 		break;
 		
@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Quel est tout ce vacarme cette fois, Capitaine ? Espagnols, pirates ou pire ?";
 			link.l1 = "C'est pire, Mary, bien pire. Le gouverneur a l'intention de rendre visite à une courtisane extrêmement coûteuse et je suis censé l'accompagner en tant que personne d'intérêt, comme promis à la maîtresse. Des discours ennuyeux, du vin hors de prix et des nobles sans intérêt.";
 			link.l1.go = "GoldenGirl_1";

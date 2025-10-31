@@ -948,7 +948,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text = "Oh! I was just about to ask you for a favour. You see, I need to deliver the cargo of "+GetGoodsNameAlt(iTradeGoods)+" in the amount of "+FindRussianQtyString(iQuantityGoods)+" to the town of "+sNation+sTemp+", and the sooner the better. If you manage to do it by "+FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired))+", then upon arrival you will receive "+FindRussianMoneyString(iMoney)+" as your reward. What do you say?";
     							link.l1 = "I think I agree.";
@@ -1461,7 +1461,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "My 'friend' is currently at his home in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". You don't need him - you need his ship, which, as I found out after about "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" will be passing near "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". You can sink it, or take it by boarding - it does not matter. The main thing is to make sure the ship and the cargo are no longer the property of "+pchar.GenQuest.Sunplace.Trader.Enemyname+". And I don't care who claims it - you or the sea. For that job, I will pay you "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "My 'friend' is currently at his home in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". You don't need him - you need his ship, which, as I found out after about "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" will be passing near "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". You can sink it, or take it by boarding - it does not matter. The main thing is to make sure the ship and the cargo are no longer the property of "+pchar.GenQuest.Sunplace.Trader.Enemyname+". And I don't care who claims it - you or the sea. For that job, I will pay you "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "I got it. Well, time to set off then!";
 			link.l1.go = "Sunplace_3";
 		break;

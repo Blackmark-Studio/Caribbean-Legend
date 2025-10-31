@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 				link.l1 = "Благодарю вас. Вы сделали правильный выбор.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie");
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				GiveItem2Character(pchar, "SM_necklace_Julie");
 				ChangeCharacterComplexReputation(pchar, "nobility", 2);
 				AddMoneyToCharacter(pchar, -5000);

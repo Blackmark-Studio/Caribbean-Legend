@@ -810,7 +810,7 @@ void ProcessDialogEvent()
 				SetRandomNameToCharacter(sld);
 				SetMerchantShip(sld, rand(GOOD_PAPRIKA));
 				SetFantomParamHunter(sld);
-				InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Контрабандисты
+				ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Контрабандисты
 				SetCaptanModelByEncType(sld, "pirate");
 				SetCharacterShipLocation(sld, PChar.GenQuest.contraTravel.CurrentPlace);
 

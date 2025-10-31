@@ -2229,6 +2229,7 @@ void FMQT_WifeMeeting(string qName) //
 	SetFantomParamFromRank(sld, 5, true);
 	sld.name = StringFromKey("FMQ_47");
 	sld.lastname = StringFromKey("FMQ_48");
+	sld.SpecialRole = "hovernon_wife";
 	sld.Dialog.Filename = "Quest\LineMiniQuests\FMQ_Tortuga.c";
 	if (pchar.questTemp.FMQT == "begin_serveroom") sld.Dialog.currentnode = "wife";
 	else sld.Dialog.currentnode = "wife_8";
@@ -2335,15 +2336,7 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	pchar.questTemp.FMQT = "chest_open";
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 	LAi_group_Delete("EnemyFight");
-	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 1, FRANCE, -1, false, "soldier"));
-	sld.name = StringFromKey("FMQ_49");
-	sld.lastname = StringFromKey("FMQ_50");
-	sld.Dialog.Filename = "Quest\LineMiniQuests\FMQ_Tortuga.c";
-	sld.Dialog.currentnode = "mercen";
-	sld.rank = 15;
-	sld.reputation = 25;
-	sld.alignment = "bad";
-	SetSPECIAL(sld, 8, 5, 8, 4, 6, 8, 5);
+	sld = InitDuran();
 	if (MOD_SKILL_ENEMY_RATE > 4)
 	{
 		SetCharacterPerk(sld, "Sliding");
@@ -2351,7 +2344,6 @@ void FMQT_MercenEnter(string qName) // входит наемник
 		sld.MultiFighter = 1.5;
 		sld.MultiShooter = 2.0;
 	}
-	sld.SuperShooter = true;
 	EquipCharacterByArtefact(sld, "indian_1");
 	EquipCharacterByArtefact(sld, "indian_7");
 	EquipCharacterByArtefact(sld, "indian_4");
@@ -2360,8 +2352,10 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	GiveItem2Character(sld, "pistol1");
 	EquipCharacterbyItem(sld, "pistol1");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
-    TakeNItems(sld, "bullet", 20);
+	TakeNItems(sld, "bullet", 20);
 	AddItems(sld, "gunpowder", 20);
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	
 	int i = makeint(MOD_SKILL_ENEMY_RATE/3);
 	int n = 1+i;
 	TakeNItems(sld, "potion1", n);
@@ -2374,7 +2368,6 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	LAi_group_MoveCharacter(sld, "EnemyFight");
 	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-	InitHeroRebalance(sld, 0.6, GEN_ARCHETYPE_PIRATE, GEN_ARCHETYPE_CANNONER); // RB Квестовые офицеры
 	// таймер сутки на отдачу
 	SetFunctionTimerCondition("FMQT_GemsTimeOver", 0, 0, 1, false);
 }
@@ -2925,7 +2918,8 @@ void FMQL_Start() // накручиваем гида и выдаем ему шн
 	EquipCharacterbyItem(sld, "blade_30");
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
-	InitChrRebalance(sld, GEN_TYPE_CAPTAIN, GEN_BOSS, true, 0.6); // RB Валинье на острове
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+	GiveCaptainOfficers(sld, true);
 	sld.cirassId = Items_FindItemIdx("cirass4");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 30);
@@ -3817,7 +3811,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		RemoveAllCharacterItems(sld, true);
 		GiveItem2Character(sld, "blade_12");
 		EquipCharacterbyItem(sld, "blade_12");
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_BOSS, true, 0.6); // RB Валинье на острове
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 		sld.name = StringFromKey("FMQ_59");
 		sld.lastname = StringFromKey("FMQ_60");
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Martinique.c";
@@ -4330,6 +4324,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 	{
 		chrDisableReloadToLocation = false;
 		sld = CharacterFromID("Duran");
+		ForceHeroAutoLevel(sld);
 		LAi_SetImmortal(sld, false);
 		sld.quest.OfficerPrice = sti(pchar.rank)*2000;
 		Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
@@ -4893,6 +4888,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		}
 		sld = CharacterFromID("Guide_y");
 		sld.dialog.currentnode = "greguar_20";
+		sld.SpecialRole = "enemy";
 		LAi_SetActorType(sld);
 		LAi_ActorDialogDelay(sld, pchar, "", 2.0);
 	}

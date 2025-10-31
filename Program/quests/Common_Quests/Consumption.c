@@ -1,6 +1,12 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Jason ----------------------------------------Цена чахотки--------------------------------------------
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
+void Consumption_QuestMark(string qName)//квестмарка
+{
+	AddMapQuestMarkCity("PortSpein", false);
+	AddLandQuestMark(characterFromId("PortSpein_waitress"), "questmarkmain");
+}
+
 void Consumption_CommandantHouse(string qName)//создаем слугу и заполняем сундуки
 {
 	pchar.questTemp.Consumption.House = "true";//атрибут, что пришёл

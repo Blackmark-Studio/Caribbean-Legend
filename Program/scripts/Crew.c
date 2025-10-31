@@ -86,7 +86,7 @@ int GetMoneyForOfficer(ref Npchar)
 	        sum += GetSkillValue(Npchar, SKILL_TYPE, GetSkillNameByIdx(i));
 	    }
 			float mtp = 1;
-			if (HasPerk(Npchar, "Trustworthy")) mtp = 0.75;
+			if (HasPerk(Npchar, "Trustworthy")) mtp -= PERK_VALUE_TRUSTWORTHY;
 	    return makeint(MOD_SKILL_ENEMY_RATE*4*sum*mtp);
     }
 
@@ -182,8 +182,14 @@ int GetSalaryForShip(ref chref)
             }
         }
 	}
-	
-    return nPaymentQ;
+
+	if (IsEquipCharacterByItem(chref, "hat8"))
+	{
+		int iThreat = wdmGetSummaryThreat();
+		nPaymentQ = makeint(nPaymentQ * (1 - 0.02 * iThreat));
+	}
+
+	return nPaymentQ;
 }
 // boal новый учёт зп <--
 
@@ -308,8 +314,8 @@ float GetBaseCrewMtpForTavern()
 	float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
 	float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
 	float fSpecial = 1.0;
-	if (CheckCharacterPerk(pchar, "Trustworthy")) fSpecial += 0.1;
 	if (CheckAttribute(pchar, "GenQuest.Shipshine")) fSpecial += 1.25;
+	if (IsEquipCharacterByItem(pchar, "hat3")) fSpecial += 0.05;
 	return fKrank * fKcharisma * fKrep * fSpecial;
 }
 
@@ -441,7 +447,8 @@ int GetCrewPriceForTavern(string sColony)
 	float fExp = (GetCrewExp(rTown, "Sailors") + GetCrewExp(rTown, "Cannoners") + GetCrewExp(rTown, "Soldiers")) / 100.00; // средний коэф опыта 0..3
 	float fSkill = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP) + GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // 0-20
 	int   nCrewCost = makeint((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*50 * (1.0 - fSkill / 40.0));
-	
+	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = makeint(nCrewCost * 0.95);
+
 	nCrewCost = makeint(fExp*nCrewCost + 0.5);
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 

@@ -189,3 +189,5 @@ TimeScale {Ускорение/замедление времени}
 TimeScaleFasterBA {Ускорение времени}
 TimeScaleSlowerBA {Замедление времени}
 FireCamera_Set {Режим прицеливания}
+WMapDrawCircle {Область сражения}
+InterfaceTakeAll {Взять всё}

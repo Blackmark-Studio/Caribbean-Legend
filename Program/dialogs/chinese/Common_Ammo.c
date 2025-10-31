@@ -412,14 +412,14 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "我想我会拒绝... 如果我向你保证, 我就必须做看起来很麻烦的工作。 我不会这么做。 ";
 				link.l2.go = "zpq_fld";
-				notification("声誉检查通过", "无");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
 				dialog.text = "你的声誉我无法接受。 请你离开房间。 我们能够自己解决问题。 ";
 				link.l1 = "随便, 那你们自己解决吧... ";
 				link.l1.go = "exit";
-				notification("声誉太低! ("+XI_ConvertString(GetReputationName(71))+")", "无");
+				Notification_Reputation(false, 71, "low");
 			}		
 		break;
 		
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(值得信赖) 我开始认为你要欺骗我, 所以没有我的12.5万比索, 我不会离开这里! ";
 				link.l2.go = "zpq_ex4";
 			}
@@ -512,9 +512,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex3":
-			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 			{
-				notification("技能检查通过", "领导力");
+				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "啊, 是的... 正是! 10万比索。 我忘了, 请原谅。 都怪我年纪大了, 你知道... sclerosis... 当然, 这是你的硬币。 和你做生意很愉快, 船长。 现在对不起, 我有很多工作要做... ";
 				link.l1 = "我也一样, 先生。 再见。 ";
 				link.l1.go = "exit";
@@ -527,13 +527,12 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查失败 (36)", "领导力");
+				Notification_Skill(false, 36, SKILL_LEADERSHIP);
 				dialog.text = "什么? ! 拿着你的钱滚蛋, 否则你会在这个炮台里腐烂! ";
 				link.l1 = "你这个骗子, 先生! 我建议你好好把钱给我, 否则我就把货物拿走! ";
 				link.l1.go = "zpq_ex_agry";
 				link.l2 = "原谅我... 好吧, 我接受你提供的金额, 我们两清。 ";
 				link.l2.go = "zpq_ex5";
-				Log_info("领导力技能不足");
 			}
 		break;
 		

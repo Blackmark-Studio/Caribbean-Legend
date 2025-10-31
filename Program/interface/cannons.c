@@ -75,7 +75,7 @@ void InitInterface_R(string iniName, ref pStore)
 
 	SetEventHandler("OnTableClick", "OnTableClick", 0);
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
-	SetEventHandler("HideInfoWindow","EndTooltip",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
 	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
@@ -136,7 +136,7 @@ void IDoExit(int exitCode)
 
 	DelEventHandler("OnTableClick", "OnTableClick");
 	DelEventHandler("OnHeaderClick", "OnHeaderClick");
-	DelEventHandler("HideInfoWindow","EndTooltip");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
@@ -356,7 +356,6 @@ void ShowHelpHint()
 }
 void EndTooltip()
 {
-	CloseTooltipNew(); // всегда убирать, если был
     GameInterface.qty_edit.str = 0;
 	SetShipWeight();
 	SetVariable();
@@ -367,6 +366,11 @@ void EndTooltip()
 	SendMessage( &GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"QTY_BUYSELL_BUTTON", 0, "");	
  	SetNodeUsing("QTY_BUYSELL_BUTTON", false);
 	ShowGoodsInfo(iCurGoodsIdx); //сбросим все состояния
+}
+
+void HideInfoWindow()
+{
+	CloseTooltipNew();
 }
 
 void ShowItemInfo()

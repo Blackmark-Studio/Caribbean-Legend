@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
 		{
-			dialog.text = "La vainilla ha sido cargada en la carraca y sus velas hace mucho que desaparecieron más allá del horizonte, y este maldito galeón ha vuelto al puerto en lugar de tomar alta mar. No debo aparecer con mi barco en el puerto, es mejor si piensan que me fui de Guadalupe... Supongo que caminaré a la ciudad a través de la jungla y me informaré sobre mi querido Marchais...";
+			dialog.text = "La vainilla ha sido cargada en la bergantina y sus velas hace mucho que desaparecieron más allá del horizonte, y este maldito galeón ha vuelto al puerto en lugar de tomar alta mar. No debo aparecer con mi barco en el puerto, es mejor si piensan que me fui de Guadalupe... Supongo que caminaré a la ciudad a través de la jungla y me informaré sobre mi querido Marchais...";
 			link.l1 = "";
 			link.l1.go = "exit";
 		}

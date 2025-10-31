@@ -1,3 +1,5 @@
+#include "battle_interface\ispyglass\helpers.c"
+
 // Sith Переделка для CLE
 #define ISG_CHARGE_BALLS		0
 #define ISG_CHARGE_GRAPES		1
@@ -49,7 +51,7 @@ void SetSpyGlassData()
 
 	int	shipHull = -1;
 	int shipSail = -1;
-	int shipCrew = -1;
+	string shipCrew = "";
 	int shipCannons = -1;
 	int shipMaxCannons = -1;
 	int shipCharge = -1;
@@ -58,6 +60,10 @@ void SetSpyGlassData()
 	float shipSpeed = -1.0;
 	string shipName = "";
 	string shipType = "";
+	int nSpec = -1;
+	int nTrait = -1;
+	int nWealth = -1;
+	string sWealth = "";
 	bool isFort;
 
 	object tmpobj;
@@ -102,6 +108,12 @@ void SetSpyGlassData()
 		nNavigationSkill = -1;
 		nBoardingSkill = -1;
 	}
+	
+	// TO_DO: выставить номера картинок в атласах и текст богатства
+	// nSpec = 0;
+	// nTrait = 1;
+	// nWealth = 2;
+	sWealth = "";
 
 	// Warship 08.07.09 Запрет спуска парусов
 	// Показываем всегда иконку полных парусов, без этого - прыгает
@@ -146,8 +158,7 @@ void SetSpyGlassData()
 					if( !CheckAttribute(chref, "fort.Cannons.Quantity") ) {shipMaxCannons=0;}
 					else {shipMaxCannons = sti(chref.Fort.Cannons.Quantity);}
 				}
-				if(CheckAttribute(arScopeItm,"scope.show.crew") && sti(arScopeItm.scope.show.crew)!=0 )
-					{	shipCrew = GetCrewQuantity(chref);	}
+				shipCrew = SPGL_GetAproximateCrewQuantity(chref, arScopeItm);
 				if( !CheckAttribute(arScopeItm,"scope.show.hull") || sti(arScopeItm.scope.show.hull)!=0 ) {
 					if( CheckAttribute(chref,"ship.hp") && CheckAttribute(chref,"fort.hp") && stf(chref.Fort.hp)>0.0 ) {
 						shipHull = makeint( stf(chref.ship.hp)/stf(chref.Fort.hp) * 100.0 );
@@ -223,10 +234,9 @@ void SetSpyGlassData()
 				{
 					shipSail = makeint(GetSailPercent(chref));
 				}
-				if (CheckAttribute(arScopeItm,"scope.show.crew") && sti(arScopeItm.scope.show.crew) == true )
-				{
-					shipCrew = GetCrewQuantity(chref);
-				}
+
+				shipCrew = SPGL_GetAproximateCrewQuantity(chref, arScopeItm);
+
 				if (CheckAttribute(arScopeItm,"scope.show.speed") && sti(arScopeItm.scope.show.speed) == true)
 				{
 					shipSpeed = stf(chref.Ship.speed.z) * stf(BattleInterface.ShipSpeedScaler);
@@ -282,7 +292,8 @@ void SetSpyGlassData()
 		}
 	}	
 	
-	if (CheckAttribute(arScopeItm,"scope.show.mushketshot") && sti(arScopeItm.scope.show.mushketshot) != 0  && CheckCharacterPerk(chref, "MusketsShoot") && !isFort)	
+	bool spyglassMusketer = HasDescriptor(arScopeItm, "SpyGlass_Crew_1") || HasDescriptor(arScopeItm, "SpyGlass_Crew_2");
+	if (spyglassMusketer && CheckCharacterPerk(chref, "MusketsShoot") && !isFort)	
 	{
 		sCaptainName = sCaptainName;
 		sCaptainPerk = XI_ConvertString("MushketVolley");
@@ -303,12 +314,15 @@ void SetSpyGlassData()
 	}	
     //sCaptainName = XI_ConvertString("Distance") + ": " + FloatToString(Ship_GetDistance2D(GetMainCharacter(), chref), 1) + "       " + sCaptainName;
     float fDistance = stf(FloatToString(Ship_GetDistance2D(GetMainCharacter(), chref), 1)); //boal
-	SendMessage(&objISpyGlass,"lsslllfflllllllllllssslssl",MSG_ISG_UPDATE, shipName,shipType,  //boal
-		shipHull,shipSail,shipCrew,	shipSpeed, fDistance,
-		shipCannons,shipMaxCannons,
-		shipCharge,shipNation, nSailState,nFace,
-		nDefenceSkill,nCannonSkill,nAccuracySkill,nNavigationSkill,nBoardingSkill,
-		sCaptainName,sCaptainPerk,"",shipClass,CannonTypeName, sChargeName, bSurrender);
+	SendMessage(&objISpyGlass, "lssllsfflllllllllllssslsslllls", MSG_ISG_UPDATE, shipName, shipType,  //boal
+		shipHull, shipSail, shipCrew,
+		shipSpeed, fDistance,
+		shipCannons, shipMaxCannons, shipCharge,
+		shipNation, nSailState,
+		nFace, nDefenceSkill, nCannonSkill, nAccuracySkill, nNavigationSkill, nBoardingSkill,
+		sCaptainName, sCaptainPerk, "",
+		shipClass, CannonTypeName, sChargeName, bSurrender,
+		nSpec, nTrait, nWealth, sWealth);
 	SendMessage(&objISpyGlass,"lsffff",MSG_ISG_SET_SHIPICON, sTextureName, uvLeft,uvTop,uvRight,uvBottom);
 	uvLeft = 0;
 	uvTop = 0;
@@ -322,15 +336,28 @@ void SetSpyGlassData()
 		ClearAllLogStrings();
 		if (CheckAttribute(chref, "SeaAI.Task"))
 		{
-		    Log_SetStringToLog("shipType=" + GetCharacterShipType(chref) +
-		                               " SeaAI.Task=" + chref.SeaAI.Task);
+            switch (sti(chref.SeaAI.Task))
+            {
+                case "-1": sCaptainName = "AITASK_NONE"; break;
+                case 0: sCaptainName = "AITASK_DRIFT";   break;
+                case 1: sCaptainName = "AITASK_ATTACK";  break;
+                case 2: sCaptainName = "AITASK_FOLLOW";  break;
+                case 3: sCaptainName = "AITASK_DEFEND";  break;
+                case 4: sCaptainName = "AITASK_DEFEND_GROUP"; break;
+                case 5: sCaptainName = "AITASK_ABORDAGE"; break;
+                case 6: sCaptainName = "AITASK_RUNAWAY";  break;
+                case 7: sCaptainName = "AITASK_MOVE";     break;
+                case 8: sCaptainName = "AITASK_BRANDER";  break;
+            }
+		    Log_SetStringToLog("shipType =" + GetCharacterShipType(chref) + " SeaAI.Task = " + sCaptainName);
 			if (CheckAttribute(chref, "SeaAI.Task.Target"))		                               
 			{
 		        sCaptainName = "none";
 				if (sti(chref.SeaAI.Task.Target) != -1)  sCaptainName = Characters[sti(chref.SeaAI.Task.Target)].id;
 		        
 				Log_Info("SeaAI.Task.Target = " + chref.SeaAI.Task.Target + " id npc = " + sCaptainName);
-			}		        
+			}
+            Log_Info("SeaAI.Group.Name = " + chref.SeaAI.Group.Name);
 		}
 		if (TestRansackCaptain && !bQuestLogShow && rand(20) == 4) // иначе не отжать кнопку
 		{
@@ -368,7 +395,6 @@ void SetSpyGlassData()
 //		Log_Info("ShipEnemyDisable = " + CheckAttribute(chref, "ShipEnemyDisable"));
 		Log_Info("AlwaysFriend = " + CheckAttribute(chref, "AlwaysFriend"));
 //		Log_Info("Coastal_Captain = " + CheckAttribute(chref, "Coastal_Captain"));
-		
 	}
 	// boal <--
 	if (!isFort) ShowShipCargoEstimateCost(&objISpyGlass, chref);
@@ -702,6 +728,50 @@ void FillISpyGlassParameters()
 	objISpyGlass.sailuvarray.uv0 = "0.5625,0.0,0.625,0.125"; // down
 	objISpyGlass.sailuvarray.uv1 = "0.5,0.0,0.5625,0.125"; // middle
 	objISpyGlass.sailuvarray.uv2 = "0.4375,0.0,0.5,0.125"; // up
+	
+	// TO_DO: выставить параметры картинок и текста
+	objISpyGlass.info.spec.texture = "interfaces\le\battle_interface\list_icons.tga";
+	fTmp = nleft + fOffX + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint(fAddX * 2 * fHtRatio);
+	fTmp2 = ntop + fOffY + makeint(128 * fHtRatio) - makeint(128 * fRes * fHtRatio) + makeint((128 + fAddY*1) * fHtRatio);
+	fTmp3 = fTmp + makeint(128 * fRes * fHtRatio);
+	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);	
+	objISpyGlass.info.spec.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
+	objISpyGlass.info.spec.uv = "0.75,0.25,0.8125,0.375";
+	
+	objISpyGlass.specuvarray.uv0 = "0.0,0,0.125,1.0";
+	objISpyGlass.specuvarray.uv1 = "0.125,0,0.25,1.0";
+	objISpyGlass.specuvarray.uv2 = "0.25,0,0.375,1.0";
+	objISpyGlass.specuvarray.uv3 = "0.375,0,0.5,1.0";
+	objISpyGlass.specuvarray.uv4 = "0.5,0,0.625,1.0";
+	objISpyGlass.specuvarray.uv5 = "0.5,0,0.625,1.0";
+	
+	objISpyGlass.info.trait.texture = "interfaces\le\battle_interface\list_icons.tga";
+	fTmp2 = fTmp4 + fAddY;
+	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);
+	objISpyGlass.info.trait.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
+	objISpyGlass.info.trait.uv = "0.75,0.25,0.8125,0.375";
+	
+	objISpyGlass.traituvarray.uv0 = "0.1875,0.0,0.25,0.125";
+	objISpyGlass.traituvarray.uv1 = "0.25,0.0,0.3125,0.125";
+	objISpyGlass.traituvarray.uv2 = "0.3125,0.0,0.375,0.125";
+	objISpyGlass.traituvarray.uv3 = "0.125,0.0,0.1875,0.125";
+	
+	objISpyGlass.info.wealth.texture = "interfaces\le\battle_interface\list_icons.tga";
+	fTmp2 = fTmp4 + fAddY;
+	fTmp4 = fTmp2 + makeint(128 * fRes * fHtRatio);
+	objISpyGlass.info.wealth.pos = fTmp + "," + fTmp2 + "," + fTmp3 + "," + fTmp4;
+	objISpyGlass.info.wealth.uv = "0.75,0.25,0.8125,0.375";
+	
+	objISpyGlass.wealthuvarray.uv0 = "0.5625,0.0,0.625,0.125";
+	objISpyGlass.wealthuvarray.uv1 = "0.5,0.0,0.5625,0.125";
+	objISpyGlass.wealthuvarray.uv2 = "0.4375,0.0,0.5,0.125";
+	
+	fTmp2 = fTmp4 + fAddY;
+	objISpyGlass.text.wealth.font = "interface_normal";
+	objISpyGlass.text.wealth.pos = fTmp + "," + fTmp2;
+	objISpyGlass.text.wealth.align = "left";
+	objISpyGlass.text.wealth.color = argb(255,255,255,255);
+	objISpyGlass.text.wealth.scale = 2.0 * fHtRatio;
 }
 
 void TelescopeInitParameters(ref fTelescope)

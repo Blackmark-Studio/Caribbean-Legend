@@ -4,14 +4,14 @@ string sTrTag, sTrSubTag;
 object TreasureTiers[16]; // Пуллы (тиры); 0-ой это SingleTreasures + QuestSlot + Флаги проверок
 
 extern void InitTreasureTiers();
-extern void InitTreasureTiers_Additions(bool SandBoxMode);
+extern void InitTreasureTiers_Additions();
 
-void TreasureTiersInit(bool SandBoxMode)
+void TreasureTiersInit()
 {
 	if(LoadSegment("scripts\Treasure_Init.c"))
 	{
 		InitTreasureTiers();
-        InitTreasureTiers_Additions(SandBoxMode)
+        InitTreasureTiers_Additions()
 		UnloadSegment("scripts\Treasure_Init.c");
 	}
 }
@@ -236,6 +236,8 @@ void FillBoxForTreasure(ref item)
 {
     int iTier = 0;
     aref aTier;
+    bool HasLuckyHat = GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat7"; // Счастливая шляпа
+    bool HasTreasureHunter = CheckCharacterPerk(PChar,"TreasureHunter");         // Счетовод
 
     if(!CheckAttribute(PChar, "Statistic.Treasure"))
         PChar.Statistic.Treasure = 0;
@@ -244,7 +246,12 @@ void FillBoxForTreasure(ref item)
     iTier += GetCharacterSkill(PChar,SKILL_FORTUNE)*3;                //Везение (min 1)
     iTier += iClamp(0, 12, sti(PChar.Statistic.Treasure))*16;         //Количество найденных кладов
     if(CheckAttribute(PChar,"GenQuest.TreasureBuild")) iTier += 200;  //Сборная карта
-    if(CheckCharacterPerk(PChar,"HT2")) iTier += MakeInt(iTier*0.15); //Счетовод
+
+    float mtp = 1;
+    if (HasTreasureHunter) mtp += 0.15;
+    if (HasLuckyHat) mtp += 0.10;
+
+    iTier = MakeInt(iTier*mtp);
     iTier = iClamp(0, 14, iTier/47);    // Неполное частное от 0 до 14 (ниже +1 будет от 1 до 15)
     iTier = GetTresuareTier(iTier + 1); // Среди соседей взять рандомом по весу
     item.TreasureTier = iTier;          // Сохраним для ачивки и опыта
@@ -253,7 +260,9 @@ void FillBoxForTreasure(ref item)
 
     // Заполняем
     int iBonus = 0;
-    if(CheckCharacterPerk(PChar,"HT2")) iBonus = 25;
+    if (HasTreasureHunter) iBonus = 25;
+    if (HasLuckyHat) iBonus += 10;
+
     FillBoxForNotes(item);                        //Записки
     FillBoxForQuest(item, iTier, iBonus);         //Квестовое
     FillBoxForEquip(item, aTier, iBonus, true);   //Экипировка
@@ -677,7 +686,7 @@ void SetTreasureHunter(string temp)
     {
         sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 5, PIRATE, 0, true, "hunter"));
         SetFantomParamHunter(sld); //крутые парни
-        InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Говоруны охотники за кладами
+        ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Говоруны охотники за кладами
         sld.Dialog.CurrentNode = "TreasureHunter";
         sld.dialog.filename = "Hunter_dialog.c";
         sld.greeting = "hunter";
@@ -820,7 +829,7 @@ void Treasure_SetCaribWarrior()
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_carib_"+i, "canib_"+(rand(5)+1), "man", "man", iRank, PIRATE, 1, true, "native"));
 		SetFantomParamFromRank(sld, iRank, true);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Молчуны охотники за кладами
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Молчуны охотники за кладами
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		LAi_CharacterDisableDialog(sld);
@@ -842,7 +851,7 @@ void Treasure_SetBandosWarrior()
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_bandos_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, 1, true, "marginal"));
 		SetFantomParamFromRank(sld, iRank, true);
-        InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Молчуны охотники за кладами
+        ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Молчуны охотники за кладами
 		LAi_CharacterDisableDialog(sld);
 		GetCharacterPos(pchar, &locx, &locy, &locz);
 		ChangeCharacterAddressGroup(sld, pchar.location, "monsters", LAi_FindNearestFreeLocator("monsters", locx, locy, locz));
@@ -943,7 +952,7 @@ string SelectFixAdmiralMap()
 	string map[24];
 	string leftMaps[2];
 	int n = 1;
-	int mapQty = FillAdmiralMaps(map);
+	int mapQty = FillAdmiralMaps(&map);
 
 	for (int i = 0; i < mapQty; i++) {
 		mapId = map[i];

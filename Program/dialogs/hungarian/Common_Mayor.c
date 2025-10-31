@@ -3084,9 +3084,9 @@ void ProcessDialogEvent()
 			//--> Jason регата
 		case "Regata":
 			// belamour legendary edition -->
-			if(sti(pchar.rank) < 20)
+			if(sti(pchar.rank) < 15)
 			{
-				notification("20. szint szükséges", "None");
+				Notification_Level(false, 15);
 				dialog.text = "Ah, csodálatos, örülök, hogy látom, kapitány! Hallottam a tehetségedrôl, de gyere, ha tényleg készen állsz.";
 				link.l1 = "Igen, persze. Ahogy óhajtja.";
 				link.l1.go = "exit";

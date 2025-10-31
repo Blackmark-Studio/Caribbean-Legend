@@ -650,46 +650,7 @@ void ProcessDialogEvent()
 			dialog.text = "那是不言而喻的! 我告诉你, 那肯定是值得关注的东西! 哦, 人们说渔民在这些水域看到了一艘外国军舰... 很可能是护卫舰。 也许那就是间谍来的地方? ";
 			link.l1 = "是的, 可能... 好吧, 朋友, 谢谢你的陪伴, 但我得走了! ";
 			link.l1.go = "exit_sit";
-			pchar.questTemp.Trial = "spy_drink";
-			
-			if(CheckAttribute(pchar,"questTemp.trialHabitueId"))
-			{
-				if (GetCharacterIndex(pchar.questTemp.trialHabitueId) != -1)
-				{
-					sld = characterFromId(pchar.questTemp.trialHabitueId);
-					sld.lifeday = 0;
-					DeleteAttribute(pchar,"questTemp.trialHabitueId");
-					LAi_CharacterDisableDialog(sld);
-					DelLandQuestMark(sld);
-				}
-			}
-			// belamour 传奇版 -->
-			if (GetCharacterIndex("PortoBello_Poorman") < 0)
-			{
-				// 新乞丐
-				sld = GetCharacter(NPC_GenerateCharacter("PortoBello_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, SPAIN, -1, false, "slave"));
-				sld.city = "PortoBello";
-				sld.location	= "PortoBello_town";
-				sld.location.group = "goto";
-				sld.location.locator = "goto15";
-				sld.forStay.locator = "goto15"; //停留时生成的位置
-				sld.forSit.locator0 = "goto3";
-				sld.forSit.locator1 = "goto25"; //三种坐下时生成的位置
-				sld.forSit.locator2 = "goto12";
-				LAi_SetLoginTime(sld, 9.0, 21.99);
-				sld.Dialog.Filename = "Common_poorman.c";
-				LAi_SetPoorType(sld);
-				LAi_SetHP(sld, 50.0, 50.0);
-				sld.greeting = "poorman_male";
-				LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			}
-			sld = characterFromId("PortoBello_Poorman");
-			LAi_RemoveLoginTime(sld);
-			ChangeCharacterAddressGroup(sld, "Portobello_town", "goto", "goto15");
-			AddLandQuestMark(sld, "questmarkmain");
-			DelLandQuestMark(characterFromId("portobello_tavernkeeper"));
-			// < —传奇版
-			AddQuestRecord("Trial", "14");
+			Trial_Habitue_DlgExit();
 		break;
 		
 		case "sit_2":

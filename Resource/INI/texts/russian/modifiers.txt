@@ -1,0 +1,10 @@
+blade_critDamage {Крит-урон холодного оружия}
+gun_critDamage {Крит-урон пистолета}
+musket_critDamage {Крит-урон мушкета}
+blade_critChance {Крит-шанс холодного оружия}
+gun_critChance {Крит-шанс пистолета}
+musket_critChance {Крит-шанс мушкета}
+incomingDamageReduction {Защита от урона}
+RangeIncomingDamageReduction {Защита от урона огнестрела}
+Shot_Damage {Урон огнестрела}
+HeadshotDamage {Урон от попадания в голову}

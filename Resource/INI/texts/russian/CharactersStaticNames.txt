@@ -102,3 +102,45 @@ Chavinavi {Чавинави}
 TempleSkeleton {храмовая нежить}
 Danielle {Даниэль}
 Hawk {Хоук}
+Smuggler_0 {Таинственный пьяница}
+Smuggler_1 {Аноним}
+Smuggler_2 {Некто}
+Smuggler_3 {Персона инкогнито}
+Smuggler_4 {Джон Доу}
+Smuggler_5 {Незнакомец}
+Smuggler_6 {Неизвестный}
+Smuggler_7 {Подозрительный посетитель}
+Sharle {Шарль}
+de Maure {де Мор}
+de Montoya {де Монтойя}
+Willy {Вильям}
+Paterson {Патерсон}
+Mary {Мэри}
+Kasper {Каспер}
+Helena {Элен}
+McArthur {МакАртур}
+Tichingitu {Тичингиту}
+Hercule {Эркюль}
+Tonzag {Тонзаг}
+Charlie {Чарли}
+Knippel {Книппель}
+Longway {Лонгвэй}
+Folke {Фульк}
+Deluc {Делюк}
+Claude {Клод}
+Duran {Дюран}
+Hugo {Хьюго}
+Avendel {Авендел}
+Raymond {Раймонд}
+Baker {Бейкер}
+Tommy {Томми}
+Irons {Айронс}
+Alonso {Алонсо}
+Morrison {Моррисон}
+Julie {Жюли}
+d'Armagnac {д'Арманьяк}
+Henri {Анри}
+d'Aubuisson {д'Обюссон}
+Alicia {Алисия}
+Chardon {Шардон}
+de Maldonado {де Мальдонадо}

@@ -64,7 +64,7 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 		if (bGrapplingProfessional || bAngleTest)
 		{
 			bSuccess = true;
-			PlayStereoSound("Interface\abordage.wav");
+			//PlayStereoSound("Interface\abordage.wav");
 
             if (fOurCrewFencing >= fEnCrewFencing)
             { // победа
@@ -329,7 +329,7 @@ void PlaceCompanionCloneNearMChr(int _index, bool _isCampus)
 		}
 		else
 		{
-			if(Get_My_Cabin() == "My_Cabin_Medium2" || Get_My_Cabin() == "My_Cabin")
+			if(NeedCabinTmpl())
 			{
 				if(chr.id == "Helena" && CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
 				{
@@ -351,9 +351,11 @@ void PlaceCompanionCloneNearMChr(int _index, bool _isCampus)
 				PlaceCharacter(sld, "rld", PChar.location);
 			}
 		}
+		
 		LAi_SetImmortal(sld, true); //неубиваемый.
 		sld.IsCompanionClone = true; //флаг для диалога, т.к. он не компаньон все таки...
         sld.RealCompanionIdx = chr.index;
+        sld.SpecialRole = GetJobsList(chr, " / ");
         
 		chr.Tasks.Clone = iTemp; //признак, что клон уже вызван.
 	}

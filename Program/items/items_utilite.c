@@ -10,10 +10,12 @@ void DoCharacterUsedItem(ref chref, string itmID)
 {
 	aref arItm;
 	if( Items_FindItem(itmID,&arItm)<0 ) return;
-	if (!HasDescriptor(arItm, "HealPotion") || !HasPerk(chref, "Alchemy") || PercentChance(PERK_VALUE_ALCHEMY))
-	{
-		TakeItemFromCharacter(chref,itmID);
-	}
+	bool isPotion = HasDescriptor(arItm, "HealPotion");
+	bool savePotion = isPotion && HasPerk(chref, "Alchemy") && fPercentChance(PERK_VALUE_ALCHEMY);
+	if (isPotion && !savePotion) TakeItemFromCharacter(chref, itmID);
+	else TakeItemFromCharacter(chref, itmID);
+
+	if (isPotion) Perk_MasterAlternate(chref);
 
 	 // Warship 13.06.09 fix - если только отравлен, а жизни полные (а такое бывает), то нечего и строку в лог выводить об прибавлении жизней
 	if(CheckAttribute(arItm,"potion.health") && LAi_GetCharacterHP(chref) < LAi_GetCharacterMaxHP(chref))
@@ -1454,28 +1456,39 @@ void addBonusToBlade(aref _attack, aref _enemy)
 	if(name == "Pirate" || name == "Marginal")
 	{
 		ref Blade = ItemsFromID("lacrima_patris");
-		if(!CheckAttribute(Blade,"KillerBonus"))
+		if (!CheckAttribute(Blade, "KillerBonus"))
 		{
 			Blade.KillerBonus = 0;
 			Blade.KillerBonus.Attack = 0.0;
-            Blade.KillerBonus.RangeBonus = 0.0;
+			Blade.KillerBonus.RangeBonus = 0.0;
 			Blade.KillerBonus.DefAttack = stf(Blade.Attack); // сохраним дефолтную атаку
 		}
-		
-		Blade.KillerBonus = sti(Blade.KillerBonus) + 1;
-		
-		if(sti(Blade.KillerBonus) % 10 == 0)
-		{
-            Blade.KillerBonus.Attack = stf(Blade.KillerBonus.Attack) + 2.0;
-			
-			if(stf(Blade.KillerBonus.Attack) > 30.0)
-                Blade.KillerBonus.Attack = 30.0;
-			
-			Blade.KillerBonus.RangeBonus = stf(Blade.KillerBonus.RangeBonus) + 1.0;
 
-            if(stf(Blade.KillerBonus.RangeBonus) > 15.0)
-                Blade.KillerBonus.RangeBonus = 15.0;
+		Blade.KillerBonus = sti(Blade.KillerBonus) + 1;
+
+		if (sti(Blade.KillerBonus) % 10 == 0)
+		{
+			Blade.KillerBonus.Attack     = fClamp(0, 30, stf(Blade.KillerBonus.Attack) + 2.0);
+			Blade.KillerBonus.RangeBonus = fClamp(0, 15, stf(Blade.KillerBonus.RangeBonus) + 1.0);
 			Blade.Attack = stf(Blade.KillerBonus.DefAttack) + stf(Blade.KillerBonus.Attack);
+
+			int currentDifference = sti(Blade.Attack) - sti(Blade.KillerBonus.DefAttack);
+			int addValue = currentDifference - GetAttributeInt(Blade, "KillerBonus.appliedBonus");
+			if (addValue == 0) return;
+
+			AddToAttributeInt(Blade, "KillerBonus.appliedBonus", addValue);
+			AddToAttributeInt(Blade, "attack.min", addValue);
+			AddToAttributeInt(Blade, "attack.max", addValue);
+			AddToAttributeInt(Blade, "attack.force.min", addValue);
+			AddToAttributeInt(Blade, "attack.force.max", addValue);
+			AddToAttributeInt(Blade, "attack.fast.min", addValue);
+			AddToAttributeInt(Blade, "attack.fast.max", addValue); 
+			AddToAttributeInt(Blade, "attack.round.min", addValue);
+			AddToAttributeInt(Blade, "attack.round.max", addValue);
+			AddToAttributeInt(Blade, "attack.break.min", addValue);
+			AddToAttributeInt(Blade, "attack.break.max", addValue);
+			AddToAttributeInt(Blade, "attack.shot.min", addValue);
+			AddToAttributeInt(Blade, "attack.shot.max", addValue);
 		}
 	}
 }
@@ -1499,14 +1512,10 @@ void addLiberMisBonus()
 
 float fLiberMisBonus(ref chr)
 {
-	if(!IsMainCharacter(chr)) return 1.0;
-	if(!IsEquipCharacterByArtefact(pchar, "talisman17")) return 1.0;
 	ref Liber = ItemsFromID("talisman17");
-	
-	if(CheckAttribute(Liber,"QBonus.max")) return 0.85;
-	else return 0.95;
+	if (!IsCharacterEquippedArtefact(chr, "talisman17")) return 1.0;
 
-	return 1.0;
+	return GetFloatByCondition(CheckAttribute(Liber,"QBonus.max"), 0.95, 0.85);
 }
 
 void addArticlesBonus()

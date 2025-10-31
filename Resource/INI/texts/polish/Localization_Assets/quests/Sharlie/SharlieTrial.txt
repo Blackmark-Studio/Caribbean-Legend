@@ -26,7 +26,7 @@ SharlieTrial_25 {Zatop go bombami, lub, jeśli wiatr na to pozwoli, natychmiast 
 SharlieTrial_26 {Świetna robota! Otwórz Mapę Globalną poprzez Menu Akcji i popłyń na północ w kierunku Gwadelupy!}
 SharlieTrial_27 {Tichingitu}
 SharlieTrial_28 { }
-SharlieTrial_29 {Alonso}
+SharlieTrial_29 { }
 SharlieTrial_30 { }
 SharlieTrial_31 {Gerar}
 SharlieTrial_32 {Lecrua}
@@ -52,3 +52,5 @@ SharlieTrial_51 {barka 'Henry'}
 SharlieTrial_52 {Okazja do ograbienia zmarłych w celu zdobycia cennych przedmiotów!}
 SharlieTrial_53 {Guillaume}
 SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

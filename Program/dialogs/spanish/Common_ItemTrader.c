@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 		}
 		if (CheckCharacterPerk(pchar, "Trustworthy"))
 		{
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 			link.l2 = "(Confiable) Hagamos un trato. Proporcionas una recomendación ahora, sin costo alguno, y yo te devolveré el favor con una recomendación para ti más tarde, también sin costo. Este trato de vino es solo el comienzo.";
 			link.l2.go = "Wine_Bottles_free";
 		}
@@ -379,7 +379,7 @@ void ProcessDialogEvent()
 	case "ZsI_Torg":
 		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 18)
 		{
-			notification("Skill Check Passed", SKILL_COMMERCE);
+			Notification_Skill(true, 19, SKILL_COMMERCE);
 			dialog.text = "Ciertamente, Capitán. Los amigos de Fadey siempre son bienvenidos aquí. ¿Dos mil trescientos por el lote?";
 			link.l1 = "Eso suena mejor. Lo tomaré.";
 			link.l1.go = "ZsI_Torg_2";
@@ -387,7 +387,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			notification("Skill Check Failed (19)", SKILL_COMMERCE);
+			Notification_Skill(false, 19, SKILL_COMMERCE);
 			dialog.text = "Los amigos del señor Fadey siempre son bienvenidos, pero los precios no tienen amigos. Serán tres mil pesos, Capitán.";
 			if (sti(pchar.Money) > 2999)
 			{

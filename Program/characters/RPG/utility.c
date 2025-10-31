@@ -334,6 +334,21 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 			DeleteAttribute(CopyChref, "greeting");
 		}
 	}
+
+	if (CheckAttribute(PastChref,"сt"))
+	{
+		makearef(arToChar, CopyChref.сt);
+		makearef(arFromChar, PastChref.сt);
+		CopyAttributes(arToChar, arFromChar);
+	}
+
+	if (CheckAttribute(PastChref,"personality"))
+	{
+		makearef(arToChar, CopyChref.personality);
+		makearef(arFromChar, PastChref.personality);
+		CopyAttributes(arToChar, arFromChar);
+	}
+
 	SetEnergyToCharacter(CopyChref);
 	//SetNewModelToChar(CopyChref);  // чтоб сабли были правильные
 }
@@ -355,4 +370,12 @@ float GetSquadronPowerMtp(ref chr)
 {
 	aref table = CT_GetTable(chr, CT_EQUIP);
 	return GetAttributeFloat(table, M_SQUADRON_POWER);
+}
+
+// Число = число * (Пиратес 1 * множитель + Пиратес 2 * множитель)
+// JOKERTODO: добавить в метод выбор типа пиратес, сейчас тут с эффектами, кроме навигации
+void NormalizeByPirates(ref value, ref chr, string pirA, string pirB, int mtpA, int mtpB)
+{
+	value *= (mtpA * GetSpecialWithEffects(chr, pirA) + mtpB * GetSpecialWithEffects(chr, pirB));
+	value *= 0.01;
 }

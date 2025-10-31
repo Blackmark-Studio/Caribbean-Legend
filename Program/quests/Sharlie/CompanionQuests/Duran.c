@@ -1,3 +1,141 @@
+void Duran_Anri_DlgExit_1()
+{
+	locCameraFromToPos(3.47, 2.41, 0.10, false, -1.05, 0.20, -0.07);
+			
+	sld = CharacterFromID("SKD_Anri");
+	CharacterTurnByLoc(sld, "barmen", "stay");
+	
+	sld = CharacterFromID("SKD_Alisia");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload2", "", "", "", "", -1);
+	sld.location = "None";
+	sld.lifeday = 0;
+	LAi_SetActorType(pchar);
+	DoQuestCheckDelay("SKD_DomAnri_2", 4.0);
+}
+
+void Duran_Anri_DlgExit_2()
+{
+	EndQuestMovie();
+			
+	sld = CharacterFromID("Duran");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	
+	sld = CharacterFromID("SKD_Anri");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	
+	LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
+	LAi_SetFightMode(pchar, true);
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheck("EnemyFight", "SKD_DomAnri_6");
+}
+
+void Duran_Duran_DlgExit_1()
+{
+	sld = CharacterFromID("Duran");
+	chrDisableReloadToLocation = false;
+	sld.loyality = makeint(sld.loyality) + 10;
+	ReturnOfficer_Duran();
+}
+
+void Duran_Duran_DlgExit_2()
+{
+	SetQuestHeader("TheFormerKnight");
+	AddQuestRecord("TheFormerKnight", "1");
+	chrDisableReloadToLocation = false;
+	sld = CharacterFromID("Duran");
+	sld.loyality = makeint(sld.loyality) + 15;
+	ReturnOfficer_Duran();
+	PChar.quest.SKD_DomAnri.win_condition.l1 = "location";
+	PChar.quest.SKD_DomAnri.win_condition.l1.location = "PortRoyal_houseSp1";
+	PChar.quest.SKD_DomAnri.win_condition = "SKD_DomAnri";
+	pchar.GenQuestBox.PortRoyal_houseSp1.box1.items.chest = 1;
+}
+
+void Duran_Duran_DlgExit_3()
+{
+	sld = CharacterFromID("Duran");
+	LAi_SetCurHPMax(sld);
+	LAi_GetCharacterMaxEnergy(sld);
+	RemovePassenger(pchar, sld);
+	sld.SaveItemsForDead = true;
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	
+	LAi_SetFightMode(pchar, true);
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheck("EnemyFight", "SKD_DomAnri_DuranDraka");
+}
+
+void Duran_Duran_DlgExit_4()
+{
+	LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
+	chrDisableReloadToLocation = false;
+	LAi_LocationDisableOfficersGen("PortRoyal_town", true);
+	
+	sld = CharacterFromID("Duran");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload2", "none", "", "", "", -1);
+	
+	PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition.l1 = "location";
+	PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition.l1.location = "PortRoyal_town";
+	PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition = "SKD_DomAnri_DuranDruzhba";
+}
+
+void Duran_Duran_DlgExit_5()
+{
+	EndQuestMovie();
+	locCameraTarget(PChar);
+	locCameraFollow();
+	LAi_LocationDisableOfficersGen("PortRoyal_town", false);
+	chrDisableReloadToLocation = false;
+	AddQuestRecord("TheFormerKnight", "3");
+	CloseQuestHeader("TheFormerKnight");
+	ChangeCharacterComplexReputation(pchar, "nobility", -1);
+	
+	sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	LAi_SetOfficerType(sld);
+	sld.Dialog.Filename = "Enc_Officer_dialog.c";
+	sld.Dialog.CurrentNode = "hired";
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0;
+	sld.Health.maxHP    = 60.0;
+
+	pchar.questTemp.SKD_DuranDruzhba = true;
+	pchar.questTemp.SKD_DevushkaUbita = true;
+	sld.reputation = sti(sld.reputation) - 15;
+	OfficersFollow();
+}
+
+void Duran_Duran_DlgExit_6()
+{
+	AddQuestRecord("TheFormerKnight", "2");
+	CloseQuestHeader("TheFormerKnight");
+	chrDisableReloadToLocation = false;
+	ChangeCharacterComplexReputation(pchar, "nobility", 1);
+	LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
+	
+	sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	LAi_SetOfficerType(sld);
+	sld.Dialog.Filename = "Enc_Officer_dialog.c";
+	sld.Dialog.CurrentNode = "hired";
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0;
+	sld.Health.maxHP    = 60.0;
+
+	pchar.questTemp.SKD_DuranDruzhba = true;
+	sld.reputation = 60;
+	OfficersFollow();
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -51,8 +189,8 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 			TeleportCharacterToPosAy(sld, -2.64, 1.02, -1.51, 0.50);
 			
 			sld = GetCharacter(NPC_GenerateCharacter("SKD_Anri", "citiz_12", "man", "man", 25, FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Duran_1");
-			sld.lastname = StringFromKey("Duran_2");
+			sld.name = GetCharacterName("Henri");
+			sld.lastname = GetCharacterName("d'Aubuisson");
             sTemp = GetGeneratedItem("blade_38");
             GiveItem2Character(sld, sTemp);
             EquipCharacterbyItem(sld, sTemp);
@@ -68,7 +206,7 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 			AddItems(sld, "potion4", 5);
 			sld.SaveItemsForDead = true;
 			sld.DontClearDead = true;
-			SetSelfSkill(sld, 80, 80, 80, 80, 80);
+			ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			ChangeCharacterAddressGroup(sld, "PortRoyal_houseSp1", "barmen", "stay");
 			sld.dialog.filename = "Quest\CompanionQuests\Duran.c";
 			sld.dialog.currentnode = "SKD_DomAnri";
@@ -76,8 +214,8 @@ bool Duran_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", 0, 0);
 			
 			sld = GetCharacter(NPC_GenerateCharacter("SKD_Alisia", "Women_13", "woman", "woman", 5, ENGLAND, -1, false, "quest"));
-			sld.name = StringFromKey("Duran_3");
-			sld.lastname = StringFromKey("Duran_4");
+			sld.name = GetCharacterName("Alicia");
+			sld.lastname = GetCharacterName("Chardon");
 			ChangeCharacterAddressGroup(sld, "PortRoyal_houseSp1", "goto", "goto1");
 			LAi_SetActorType(sld);
 			

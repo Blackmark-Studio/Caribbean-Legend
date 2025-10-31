@@ -169,15 +169,15 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_6_No_Money":
 			DialogExit();
-			notification("Not enough money (100,000)", "Money");
+			Notification_Money(false, 100000, "peso");
 			LAi_CharacterDisableDialog(npchar);
 			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
-			notification("Check passed (30)", SKILL_SNEAK);
+			Notification_Skill(true, 30, SKILL_SNEAK);
 			}
 			else
 			{
-			notification("Skill not developed enough (30)", SKILL_SNEAK);
+			Notification_Skill(false, 30, SKILL_SNEAK);
 			}
 		break;
 		
@@ -185,8 +185,8 @@ void ProcessDialogEvent()
 			dialog.text = "Ha! Nem kell meggazdagodnom – már most is gazdag vagyok! Miért kockáztatnék valamit, ami úgyis egy rakás pénzt hoz nekem?";
 			link.l1 = "Nos, nos, maga Javier Castillo fél játszani? És én azt hittem"+GetSexPhrase(""," te")+", te egy tapasztalt játékos voltál, nem csak egy szélhámos, aki részeg balekokat húz le a pénzükről.";
 			link.l1.go = "OZ_Shuler_7";
-			notification("Check passed (100,000)", "Money");
-			notification("Check passed (30)", SKILL_SNEAK);
+			Notification_Money(true, 100000, "peso");
+			Notification_Skill(true, 30, SKILL_SNEAK);
 		break;
 		
 		case "OZ_Shuler_7":

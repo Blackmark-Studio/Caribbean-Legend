@@ -554,7 +554,7 @@ Cserbenhagytam Florian Shoke-ot. Nem szállítottam neki elég ágyút. Az én o
 #TEXT 11
 Átadtam az ágyúkat Florian Shoke-nak. Megpróbált belekeverni valami kémügybe, de én visszautasítottam. Túl veszélyes volt.
 #TEXT 12
-Most 250 dublont és egy új küldetést kaptam Florian Shoke-tól. Portobellóba kell lopakodnom, és kiderítenem, hogy az Alcantara gálya miért nem hajózik ki. Azt is ki kell derítenem, mi történt Sylvan Laforet-val, más néven Jaime Silicio-val.
+Most 75 dublont és egy új küldetést kaptam Florian Shoke-tól. Portobellóba kell lopakodnom, és kiderítenem, hogy az Alcantara gálya miért nem hajózik ki. Azt is ki kell derítenem, mi történt Sylvan Laforet-val, más néven Jaime Silicio-val.
 #TEXT 13
 A fenébe! Túl óvatlan voltam. Az átkozott fogadós ôröket hívott, amint meghallotta Jaime Silicio nevét. Most már az egész város tud a jelenlétemrôl. Üres kézzel kell visszatérnem Florian Shoke-ba...
 #TEXT 14
@@ -1090,7 +1090,8 @@ Négy hónap telt el az anyaggyûjtésre. Kár, hogy ezt nem sikerült idôben m
 #QUEST renovate_fdm
 A szellemhajó felújítása
 #TEXT   1
-Az Isla Tesoro hajóparancsnoka, Alexus megkért, hogy gyûjtsem össze és hozzam el neki a szellemhajó felújításához szükséges anyagokat. Szüksége van 150 darab vasfára, 200 tartály gyantára, 170 tekercs hajóselyemre és 130 réteg kenderkötélre.
+The master shipwright of Isla Tesoro, Alexus, has agreed to rebuild the ghost ship. This restoration will not only change its appearance but also significantly improve it in every respect — outdated and worn fittings will be replaced and the structure supplemented with modern solutions.
+All of this will cost a crazy sum, and you'll also have to hunt down and bring him the necessary materials: 150 units each of bakaut, silk, ropes and resin.
 #TEXT   2
 @<sQty> a @<sGood> balra.
 #TEXT   3
@@ -2430,7 +2431,7 @@ Folke Deluc
 #TEXT   1
 Amíg én Saint-Pierre-ben intéztem az ügyeket, Folke Deluc ismét rács mögött találta magát, és elôreláthatóan a pénz volt az oka. A fene egye meg, hogyan tudott ilyen rövid idô alatt újabb adósságokat felhalmozni? A legénység morgolódik: másodszor is túl soknak tûnik megmenteni ôt. A Le François melletti csata után megerôsödött a tekintélyem az emberek között, és a nevemnek most már van némi súlya a szigeten. Megpróbálhatnék új navigátort keresni a kocsmában, de a lelkiismeretem nem engedi, hogy ilyen könnyen magára hagyjam Folke-ot. Legalább egy esélyt megérdemel, hogy magyarázatot adjon. Ki kell derítenem, hogyan sikerült néhány óra alatt újra adósságba keverednie.
 #TEXT   2
-Nos, most már minden világos! A ravasz pénzkölcsönzô Saint-Pierre-bôl rájött, hogy hasznot húzhat a navigátorból. Felvásárolta az összes Folke' adósságot a francia gyarmatokon. A végösszeg nem volt kevés - lenyûgözô száz aranydublon!
+Nos, most már minden világos! A ravasz pénzkölcsönzô Saint-Pierre-bôl rájött, hogy hasznot húzhat a navigátorból. Felvásárolta az összes Folke' adósságot a francia gyarmatokon. A végösszeg nem volt kevés - 40 aranydublon!
 #TEXT   3
 Kifizettem az adósságot az én szeszélyes navigátoromnak. Hadd nevessenek a városlakók. Még mindig biztos vagyok benne, hogy helyesen cselekedtem.
 #TEXT   4

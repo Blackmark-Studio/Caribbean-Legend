@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 			dialog.text = "Very well. Then we'll split it down the middle.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Here you go. I've got "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1223,7 +1223,7 @@ void ProcessDialogEvent()
 			dialog.text = "Jolly good. How much did you bring?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Here you go. I've got "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1686,7 +1686,7 @@ void ProcessDialogEvent()
 				dialog.text = "Glad you're taking a liking to the ironwood, "+sStr+". Increasing shipments isn't a problem, but there's a catch, as you understand. With larger volumes comes a trail that might attract unwanted attention, especially from the English authorities. But if we add reliable hands, trustworthy ears, and people in the residence who'll help us stay in the shadows, everything can be arranged. Though it won't come cheap – three thousand doubloons to bypass the city treasury and England's needs. Then I can supply you with five times more. What do you say?";
 				link.l1 = "Three thousand doubloons? Jan, that's daylight robbery! Couldn't we manage with lower expenses? Perhaps there's a way to settle the matter without such extravagant sums?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

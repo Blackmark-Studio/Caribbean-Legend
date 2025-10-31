@@ -321,8 +321,9 @@ void Notification(string strLog, string ability)
 		case "spahunter": IconIndex = 44; break;
 		case "frahunter": IconIndex = 45; break;
 		case "pirhunter": IconIndex = 46; break;
-		case "CoordinatedBoarding": IconIndex = 207; break; //JOKERTODO добавить иконки в messages.tga
-		case "TrainedEye": IconIndex = 208; break;  //JOKERTODO добавить иконки в messages.tga
+		case "Sailor": IconIndex = 206; break;
+		case "CoordinatedBoarding": IconIndex = 207; break;
+		case "TrainedEye": IconIndex = 208; break;
 		case "None": IconIndex = 239; break;
 	}
 

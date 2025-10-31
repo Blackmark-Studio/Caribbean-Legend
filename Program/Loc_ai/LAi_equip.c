@@ -62,7 +62,7 @@ void LAi_NPC_Equip(ref chr, int rank, bool isWeapons, bool isGun)
 		// boal <--
 		if(CheckAttribute(chr, "PhantomType") && chr.PhantomType == "soldier")
 		{
-			if(rand(9) == 3) AddItems(chr, "ArmoryPaper", 2 + rand(2));
+			if(rand(9) == 3) AddItems(chr, "ArmoryPaper", 2 + rand(4));
 		}
 	}
     else
@@ -275,7 +275,7 @@ void LAi_NPC_MushketerEquip(ref chr)
 		break;
 	}
 
-	if(rand(9) == 5) AddItems(chr, "ArmoryPaper", 3 + rand(2));
+	if(rand(9) == 5) AddItems(chr, "ArmoryPaper", 3 + rand(4));
 	
 	chr.isMusketer = true;
 	chr.isMusketer.weapon = true; // Jason: а пули с порохом кто удалять будет? И вообще, что за муть - менять мушкет при каждой установке типа?
@@ -667,9 +667,4 @@ void LAi_NPC_EquipPerk(ref chr, string kind)
 			chr.perks.list.ShipEscape = "1";
 		}
 	}
-}
-bool isMushket(string name)
-{
-	if(HasSubStr(name, "mushket")) return true;
-	return false;
 }

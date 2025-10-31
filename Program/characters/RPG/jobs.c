@@ -41,3 +41,21 @@ string GetJobBySkillName(string skillName)
 	trace("Can't find job by skill name: " + skillName);
 	return "error";
 }
+
+// Для канонира нужно делать исключение для пушек
+string GetSkillNameByJob(string skillName)
+{
+	switch (skillName)
+	{
+		case JOB_NAVIGATOR: return SKILL_SAILING;   break;
+		// case JOB_CANNONER:  return SKILL_CANNONS;   break;
+		case JOB_CANNONER:  return SKILL_ACCURACY;  break;
+		case JOB_BOATSWAIN: return SKILL_GRAPPLING; break;
+		case JOB_DOCTOR:    return SKILL_DEFENCE;   break;
+		case JOB_CARPENTER: return SKILL_REPAIR;    break;
+		case JOB_TREASURER: return SKILL_COMMERCE;  break;
+	}
+
+	trace("Can't find skillName by job: " + skillName);
+	return "error";
+}

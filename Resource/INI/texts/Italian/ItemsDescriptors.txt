@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Stoffa}
 descriptor_ArmorMaterial_1 {Cuoio}
 descriptor_ArmorMaterial_2 {Piastre}
 descriptor_ArmorMaterial_3 {Stampato}
-descriptor_ArmorMaterial_4 {Fuso}
+descriptor_ArmorMaterial_4 {Forgiato}
 descriptor_AmuletType_0 {Comune}
 descriptor_AmuletType_1 {Pagano}
 descriptor_AmuletType_2 {Cristiano}
@@ -40,6 +40,7 @@ descriptor_Special {Speciale}
 descriptor_Tool {Attrezzo}
 descriptor_Valuable {Prezioso}
 descriptor_BulletNeedPowder {Polvere nera}
+descriptor_descr_BulletNeedPowder {Questa munizione non uscirà dalla canna senza una dose di polvere da sparo.}
 descriptor_GrapeAmmo {Mitraglia}
 descriptor_BulletAmmo {Palla}
 descriptor_BombAmmo {Granata}
@@ -64,8 +65,8 @@ Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo po
 Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
 }
 descriptor_descr_HighQuality {Quest’arma è realizzata con tale maestria che i suoi danni critici aumentano di $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {Questa armatura calza alla perfezione, aumentando la velocità d’attacco con qualsiasi arma del 5%.}
-descriptor_descr_HeartDefence {Questa armatura è rinforzata nei punti vitali, riduce i danni critici nemici del 20%.}
+descriptor_descr_GoodFit {Questa armatura calza alla perfezione, aumentando la velocità d’attacco con qualsiasi arma del $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Questa armatura è rinforzata nei punti vitali, riduce i danni critici nemici del $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.
 Riduce i danni subiti del 22%.
 }
-descriptor_descr_ArmorMaterial_4 {Forgiare un’armatura fusa è un processo complesso e costoso, raro nei Caraibi. Riduce i danni subiti del 35%.}
+descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del 35%.}
 descriptor_descr_AmuletType_0 {Si basa su presagi, superstizioni marinare e reali rapporti di causa-effetto.}
 descriptor_descr_AmuletType_1 {Attinge al potere degli dèi pagani e ai rituali nativi.}
 descriptor_descr_AmuletType_2 {Attinge al potere dei santi cristiani e della fede giusta.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Varie cianfrusaglie diffuse nei Caraibi. Preziose solo pe
 descriptor_Alchemy {Alchimia}
 descriptor_descr_Alchemy {Questo oggetto può essere creato o modificato mediante l'Alchimia.}
 descriptor_Quest {Quest}
+descriptor_descr_Quest {Questo oggetto è necessario per una missione. Non può essere abbandonato né venduto.}
 descriptor_Map {Mappa}
+descriptor_descr_Map {Un pezzo di carta con le indicazioni di una località. Tutti questi oggetti vengono immediatamente copiati nell'atlante.}
 descriptor_Fragile {Fragile}
 descriptor_descr_Fragile {Questo oggetto si rompe dopo un certo numero di utilizzi.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {L'effetto si applica al cannoniere.}
+descriptor_descr_Boatswain {L'effetto si applica al nostromo.}
+descriptor_descr_Carpenter {L'effetto si applica al carpentiere.}
+descriptor_descr_Navigator {L'effetto si applica al navigatore.}
+descriptor_descr_Treasurer {L'effetto si applica al tesoriere.}
+descriptor_descr_Doctor {L'effetto si applica al medico.}
 descriptor_Ingredient {Ingrediente}
 descriptor_Jewelery {Gioiello}
 descriptor_descr_Jewelery {Pietre preziose e semipreziose. Vendibili o utili in alchimia.}
 descriptor_descr_Ingredient {Questo oggetto è usato in alchimia.}
+descriptor_Alternate {Regolazione}
+descriptor_descr_Alternate {L'abilità ha un effetto per l'eroe principale e un effetto diverso per tutti gli altri personaggi.}
+descriptor_IntoxicatingPotion {InEbriante}
+descriptor_descr_IntoxicatingPotion {Scioglie la lingua, alleggerisce la mente, ma riduce le abilità.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {L'effetto è utile per gli armigeri.}

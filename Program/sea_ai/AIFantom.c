@@ -23,54 +23,12 @@ void ClearSeaFantoms() {
 
 int Fantom_SetEncounterShips(ref rEnc, string sGroupName)
 {
-	int iShipSum = 0;
+    ref rFantom;
 
-	aref arShipTypes, arShipModes;
-	makearef(arShipTypes, rEnc.ShipTypes);
-	makearef(arShipModes, rEnc.ShipModes);
-
-	int iShipType, i, q = GetAttributesNum(arShipTypes);
-	string sFantomType;
-
-	for (i = 0; i < q; i++)
+    // ENCOUNTER_TYPE_BARREL, ENCOUNTER_TYPE_BOAT
+	if (!CheckAttribute(rEnc, "FixedShips"))
 	{
-		ref rFantom = CreateSeaFantom();
-
-		DeleteAttribute(rFantom, "relation");
-		DeleteAttribute(rFantom, "abordage_twice");
-		DeleteAttribute(rFantom, "QuestDate");
-		DeleteAttribute(rFantom, "ransom");
-
-		iShipType   = GetAttributeValue(GetAttributeN(arShipTypes, i));
-		sFantomType = GetAttributeValue(GetAttributeN(arShipModes, i));
-
-		rFantom.Ship.Type = GenerateShipExt(iShipType, 0, rFantom);
-		rFantom.Ship.Mode = sFantomType;
-		rFantom.SeaAI.Group.Name = sGroupName;
-		rFantom.Charge.Type = GOOD_BALLS;
-
-		iShipSum++;
-	}
-
-    DeleteAttribute(rEnc, "FixedTypes");
-	return iShipSum;
-}
-
-// ~!~ TO_DO: DEL
-int Fantom_GenerateEncounterExt(string sGroupName, int iEType, int iNumWarShips, int iNumMerchantShips, int iNation) 
-{
-	aref aWar, aMerchant;
-	ref  rEnc;
-	int  i;
-	int  iWarClassMax, iWarClassMin, iMerchantClassMax, iMerchantClassMin;
-
-	makeref(rEnc, EncountersTypes[iEType]);
-	makearef(aWar, rEnc.War);
-	makearef(aMerchant, rEnc.Merchant);
-
-	if(iEType == ENCOUNTER_TYPE_BARREL || iEType == ENCOUNTER_TYPE_BOAT)
-	{
-		ref rFantom = CreateSeaFantom();
+		rFantom = CreateSeaFantom();
 
 		DeleteAttribute(rFantom, "relation");
 		DeleteAttribute(rFantom, "abordage_twice");
@@ -81,95 +39,77 @@ int Fantom_GenerateEncounterExt(string sGroupName, int iEType, int iNumWarShips,
 		return 0;
 	}
 
-    // Далее не используется
-	int iRank = sti(PChar.Rank);
-	Encounter_GetClassesFromRank(iEType, iRank, &iMerchantClassMin, &iMerchantClassMax, &iWarClassMin, &iWarClassMax);
+	int iShipSum = 0;
 
-	int iShipType;
+	aref arShip, arShips;
+	makearef(arShips, rEnc.FixedShips);
 
-	for (i=0; i<iNumMerchantShips; i++)
+	int i, q = GetAttributesNum(arShips);
+    int Commanders[2]; SetArraySize(&Commanders, q);
+    int iShipTypes[2]; SetArraySize(&iShipTypes, q);
+    string ShipModes[2]; SetArraySize(&ShipModes, q);
+
+    // Найти подходящего командира и поставить его первым (флагман)
+    int iCurClass, iBestClass = INT_MAX;
+    int numCandidates = 1;
+    bool bTrade = (rEnc.Type == "trade");
+    Commanders[0] = 0;
+	for (i = 0; i < q; i++)
 	{
-		if(iNumShips + i >= MAX_SHIPS_ON_SEA) return i;
-		iShipType = Fantom_GetShipTypeExt(iMerchantClassMin, iMerchantClassMax, "Merchant", sGroupName, "Trade", iEType, iNation);
-		if (iShipType == INVALID_SHIP_TYPE) continue;
+        arShip = GetAttributeN(arShips, i);
+		iShipTypes[i] = arShip.type;
+		 ShipModes[i] = arShip.mode;
+
+        // Проверяем кандидатуру
+        if (or(bTrade && ShipModes[i] == "trade", !bTrade && ShipModes[i] != "trade"))
+        {
+            iCurClass = ShipsTypes[iShipTypes[i]].Class;
+            if (iCurClass < iBestClass)
+            {
+                iBestClass = iCurClass;
+                numCandidates = 1;
+                Commanders[0] = i;
+            }
+            else if (iCurClass == iBestClass)
+            {
+                Commanders[numCandidates] = i;
+                numCandidates++;
+            }
+        }
+	}
+    // Перетасовать остальных, чтобы убрать чёткий порядок по специализациям
+    int j, tmp;
+    int iSort[2]; SetArraySize(&iSort, q);
+    for (i = 0; i < q; i++) iSort[i] = i;
+    iSort[0] = Commanders[rand(numCandidates-1)]; // Флагман
+    iSort[iSort[0]] = 0;
+    for (i = q-1; i > 1; i--)
+    {
+        j = rand(i-1) + 1;
+        tmp = iSort[i];
+        iSort[i] = iSort[j];
+        iSort[j] = tmp;
+    }
+    // В итоге в блоке "load ship to sea" из SeaLogin
+    // корабли будет выгружать именно в таком порядке
+	for (i = 0; i < q; i++)
+	{
+		rFantom = CreateSeaFantom();
+
+		DeleteAttribute(rFantom, "relation");
+		DeleteAttribute(rFantom, "abordage_twice");
+		DeleteAttribute(rFantom, "QuestDate");
+		DeleteAttribute(rFantom, "ransom");
+
+		rFantom.Ship.Type = GenerateShipExt(iShipTypes[iSort[i]], 0, rFantom);
+		rFantom.Ship.Mode = ShipModes[iSort[i]];
+		rFantom.SeaAI.Group.Name = sGroupName;
+		rFantom.Charge.Type = GOOD_BALLS;
+
+		iShipSum++;
 	}
 
-	for (i=0; i<iNumWarShips; i++)
-	{
-		if(iNumShips + iNumMerchantShips + i >= MAX_SHIPS_ON_SEA) return iNumMerchantShips + i; 
-		iShipType = Fantom_GetShipTypeExt(iWarClassMin, iWarClassMax, "War", sGroupName, "War", iEType, iNation);
-		if (iShipType == INVALID_SHIP_TYPE) continue;
-	}
-
-	return iNumWarShips + iNumMerchantShips;
-}
-
-int Fantom_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sGroupName, string sFantomType, int iEncounterType, int iNation)
-{
-	int iShips[60];
-	int i, iShipsNum;
-	iShipsNum = 0;
-	aref aNation;
-	string sAttr;
-	bool bOk;
-
-	for (i = SHIP_TARTANE; i <= SHIP_LSHIP_ENG; i++)  //энкаунтеры только до линкора, квестовые корабли отдельно
-	{
-		object rShip = GetShipByType(i);
-		if (!CheckAttribute(rship, "class"))
-		{
-			trace ("bad ship is: " + rship.name);
-		}
-		int iClass = MakeInt(rShip.Class);
-		
-		if (iClass > iClassMin) continue;
-		if (iClass < iClassMax) continue;
-		if (sti(rShip.CanEncounter) != true) continue;
-		if (sti(rShip.Type.(sShipType)) != true) continue;
-
-		bOk = false;
-		if(CheckAttribute(rShip, "nation"))
-		{
-			makearef(aNation, rShip.nation);
-			int q = GetAttributesNum(aNation);
-			for(int j = 0; j < q; j++)
-			{
-				sAttr = GetAttributeName(GetAttributeN(aNation, j)); 
-				if(GetNationTypeByName(sAttr) == iNation && rShip.nation.(sAttr) == true ) {
-                    bOk = true;
-                    break;
-                }
-			}
-		}	
-		if(!bOk) continue;
-		iShips[iShipsNum] = i;
-		iShipsNum++;
-	}
-	if (iShipsNum == 0 ) 
-	{
-		Trace("Can't find ship type '" + sShipType + "' with ClassMin = " + iClassMin + " and ClassMax = " + iClassMax);
-		return INVALID_SHIP_TYPE;
-	}
-
-	int iBaseShipType = iShips[rand(iShipsNum - 1)];
-
-	ref rFantom = CreateSeaFantom();
-
-	DeleteAttribute(rFantom, "relation");
-	DeleteAttribute(rFantom, "abordage_twice");
-	DeleteAttribute(rFantom, "QuestDate");
-	DeleteAttribute(rFantom, "ransom");
-
-	rFantom.SeaAI.Group.Name = sGroupName;
-	rFantom.Ship.Mode = sFantomType;
-	rFantom.Charge.Type = GOOD_BALLS;
-
-	int iRealShipType = GenerateShipExt( iBaseShipType, 0, rFantom );
-
-	rFantom.Ship.Type = iRealShipType;
-
-	return iRealShipType;
-	
+	return iShipSum;
 }
 
 // на деле этот метод бесполезен, тк золото в сундуке генерится в др месте, а в к3 тут были распределения опыта и команды вообще - позорище
@@ -524,11 +464,14 @@ void Fantom_SetGoods(ref rFantom, string sFantomType)
 				switch (sti(rFantom.RealEncounterType))
 				{
 					case ENCOUNTER_TYPE_PIRATE: // TO_DO: REF
-                        i = sti(EncountersTypes[ENCOUNTER_TYPE_PIRATE].Stage);
-                        if(i == 1) i = rand(1);
-                        else if(i == 2) i = 1 + rand(1);
-                        else if(i == 3) i = 2;
-                        else if(i == 4) i = 2 + rand(1);
+                        switch (iGPThreatMax)
+                        {
+                            case THREAT_LVL_1: i = 0;           break;
+                            case THREAT_LVL_2: i = rand(1);     break;
+                            case THREAT_LVL_3: i = 1 + rand(1); break;
+                            case THREAT_LVL_4: i = 2;           break;
+                            case THREAT_LVL_5: i = 2 + rand(1); break;
+                        }
                         switch(i)
                         {
                             case 0:
@@ -1250,6 +1193,15 @@ void UpgradeShipParameter(ref _chr, string _param)
 					shTo.Tuning.Cannon = true;
 				}
 			}
+		break;
+		
+		// belamour только для методов с использованием GetAttributeName shTo.Tuning.XXX
+		case "WindAgainst":
+			if(!CheckAttribute(shTo, "Tuning.WindAgainst"))
+			{
+				shTo.WindAgainstSpeed   = FloatToString(stf(shTo.WindAgainstSpeed) +  0.20 * stf(shTo.WindAgainstSpeed), 2);
+				shTo.Tuning.WindAgainst = true;
+			}				
 		break;
 	}
 }

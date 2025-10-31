@@ -12,12 +12,12 @@ HelenDrinking_11 { }
 HelenDrinking_12 {Счастливчик}
 HelenDrinking_13 { }
 HelenDrinking_14 {И до чего же мерзко на душе, когда дома у тебя два. Мэри, Мэри... После всего что случилось - что же нам теперь делать?}
-HelenDrinking_15 {Алонсо}
+HelenDrinking_15 { }
 HelenDrinking_16 { }
 HelenDrinking_17 {Ричард}
 HelenDrinking_18 {Смолл}
-HelenDrinking_19 {Элен одобряет}
-HelenDrinking_20 {Элен не одобряет}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
 HelenDrinking_21 {Матросы перенесли бакаут на корабль!}
 HelenDrinking_22 {~ получил +1 к умению ~}
 HelenDrinking_23 {~ получила +1 к умению ~}

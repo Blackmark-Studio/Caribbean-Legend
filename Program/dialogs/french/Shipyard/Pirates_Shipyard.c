@@ -107,18 +107,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l4 = "Je veux changer l'apparence de mes voiles.";
 					link.l4.go = "SailsGerald";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_cabin"))
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 					link.l50 = "Mon navire est assez... spécial. J'aimerais apporter quelques modifications.";
 					link.l50.go = "FDM";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+			/* if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 			{
 					link.l50 = "J'ai plus de coffres pour la reconstruction de la cabine.";
 					link.l50.go = "FDM_cabin_pay";
-			}
+			} */
 			// Xenon -->
-			/*if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 			{
 					link.l50 = "Je suis ici pour parler de la reconstruction du navire.";
 					link.l50.go = "FDM_hull_givemoney";
@@ -129,7 +129,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l50 = "Je suis ici pour parler de la reconstruction du navire.";
 					link.l50.go = "FDM_hull_checkmaterials";
 			}
-			// <-- Xenon*/
+			// <-- Xenon
 			link.l9 = pcharrepphrase("Merde, j'ai quelques affaires urgentes à régler, adieu.","Il est temps pour moi de partir. Désolé.");
 			Link.l9.go = "ship_tunning_not_now";
 		break;
@@ -601,22 +601,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Encore avec ton 'navire fantôme'... Sache ceci - je ne travaille dessus que dans l'espoir qu'il devienne quelque chose de décent. Sinon, je ne l'aurais même pas touché. Je pense que tout le monde en mer partage un avis similaire. Que veux-tu en faire cette fois-ci ?";
 			else	
 				dialog.text = "Ah, le 'navire fantôme'! Les mères utilisent ton galion pour effrayer les garnements. Et tu as décidé de garder ce maudit vaisseau au lieu de le couler! Les marins tremblent lorsqu'ils voient ton navire à l'horizon... Alors, que veux-tu en faire?";
-			if (!CheckAttribute(npchar, "quest.FDM_cabin"))
+			/* if (!CheckAttribute(npchar, "quest.FDM_cabin"))
 			{
 				link.l1 = "J'aime l'idée des petits lâches qui ont la frousse. Mais l'intérieur me rend triste. As-tu vu la cabine ? On dirait un cercueil. Toute cette moisissure et cette poussière. Je veux la réparer. Pouvez-vous faire cela, maître ?";
 				link.l1.go = "FDM_cabin";
 			}
-			/* if (!CheckAttribute(npchar, "quest.FDM_sails"))
+			if (!CheckAttribute(npchar, "quest.FDM_sails"))
 			{
 				link.l2 = "J'en ai assez de ces haillons noirs déchirés. Je l'admets, ils attrapent le vent aussi bien que les voiles ordinaires mais la vue... Dégueulasse. Je veux des voiles blanches comme neige. Vous êtes partant, maître?";
 				link.l2.go = "FDM_sails";
-			}
+			} */
 			
 			if (!CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 				link.l3 = "Eh bien, je pense qu'il est temps de la transformer en quelque chose de convenable. Le navire est bon, l'équipage y est habitué, mais ce n'est tout simplement pas digne pour un capitaine respectable de naviguer sur un vaisseau qui peut faire peur aux adultes, sans parler des enfants. Je veux le reconstruire complètement pour que les autres capitaines l'envient quand ils voient mon navire, au lieu de se signer. Et à qui d'autre devrais-je m'adresser pour cela, sinon au meilleur constructeur naval de l'archipel ?";
 				link.l3.go = "FDM_hull";
-			} */
+			}
 		break;
 		
 		case "FDM_cabin":
@@ -758,8 +758,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "D'accord, calculons... Pour une révision complète de la coque du navire, j'aurai besoin de 150 unités de bois de fer, 130 cordages, 170 rouleaux de soie de navire, et 200 barils de résine. Je prendrai 250 mille pesos pour tout cela. Et ne me regarde pas comme ça - la plupart de cet argent ira de toute façon au travail ! Après tout, nous ne reconstruisons pas une tartane.";
-			link.l1 = "Je ne pense pas. Je ne suis pas prêt à transporter une telle quantité de matériaux tout en payant un quart de million pour le travail. Je suppose que je vais continuer à naviguer dessus tel quel.";
+			dialog.text = "Très bien, faisons les comptes... Pour une reconstruction complète de la coque, il me faudra 150 unités de bakaut, de cordes, de soie de navire et de résine — ainsi que 10 000 doublons d'or. Ne me regardez pas comme ça ; la majeure partie de l'argent ira aux matériaux. Ce travail équivaut à démonter le navire et à le reconstruire entièrement.";
+			link.l1 = "Non, je ne crois pas. Je ne suis pas prêt à apporter autant de ressources et à verser une montagne d'or pour la reconstruction. Je resterai avec ce que j'ai.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, que ne ferions-nous pas pour notre navire...Très bien, c'est un marché.";
 			link.l2.go = "FDM_hull_02";
@@ -767,7 +767,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_02":
 			dialog.text = "Bien, moins de paroles, plus d'action. J'attendrai l'argent de ta part pour pouvoir commencer à acheter tout ce dont j'ai besoin. Une fois que j'aurai l'argent, tu pourras commencer à m'apporter les matériaux. Et je me mettrai à travailler sur ton navire.";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
     			link.l1 = "Eh bien, l'argent n'est pas un problème. Je l'ai sur moi. Tenez, maître.";
     			link.l1.go = "FDM_hull_waitmaterials";
@@ -780,7 +780,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_waitmaterials":
-			addMoneyToCharacter(pchar, -250000);
+			RemoveDublonsFromPCharTotal(10000);
 			npchar.quest.FDMsandal = 0;
 			npchar.quest.FDMoil = 0;
 			npchar.quest.FDMshipsilk = 0;
@@ -788,7 +788,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("renovate_fdm", "1");
 
 			npchar.quest.FDM_hull = "hull_waitmaterials";
-			dialog.text = "Pas peur de te promener dans une colonie de pirates avec une telle somme, hehe ? Bon, je plaisante, ce sont tous des gens honnêtes, à leur manière. Maintenant, j'attends les matériaux. Pour rappel, tu devras apporter un total de 150 bois de fer, 130 rouleaux de cordages, 170 rouleaux de soie de navire, et 200 barils de résine.";
+			dialog.text = "Pas peur de te promener dans une colonie de pirates avec une telle somme, hehe ? Bon, je plaisante, ce sont tous des gens honnêtes, à leur manière. Maintenant, j'attends les matériaux. Pour rappel, tu devras apporter un total de 150 bois de fer, 150 rouleaux de cordages, 150 rouleaux de soie de navire, et 150 barils de résine.";
 			link.l1 = "Tiens bon, je t'apporterai tes matériaux.";
 			link.l1.go = "exit";
 		break;
@@ -801,19 +801,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Bois de fer en quantité de "+FindRussianQtyString(iSan)+".";
 				link.l1.go = "FDM_sandal";
 			}
-			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 200)
+			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 150)
 			{
 				iOil = GetSquadronGoods(pchar, GOOD_OIL);
 				link.l2 = "Résine en quantité de "+FindRussianQtyString(iOil)+".";
 				link.l2.go = "FDM_oil";
 			}
-			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 170)
+			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 150)
 			{
 				iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 				link.l3 = "Envoyer de la soie à hauteur de "+FindRussianQtyString(iSil)+".";
 				link.l3.go = "FDM_shipsilk";
 			}
-			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 130)
+			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 150)
 			{
 				iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 				link.l4 = "Cordages en quantité de "+FindRussianQtyString(iRop)+".";
@@ -824,7 +824,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_checkmaterials_1":
-			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 199 && sti(npchar.quest.FDMshipsilk) > 169 && sti(npchar.quest.FDMropes) > 129)
+			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 149 && sti(npchar.quest.FDMshipsilk) > 149 && sti(npchar.quest.FDMropes) > 149)
 			{
 				dialog.text = "Magnifique ! Tous les matériaux sont comptabilisés. Maintenant, laissez-moi vous débarrasser de ce monstre. Enfin, il aura l'aspect qu'il mérite.";
 				link.l1 = "D'accord, assez de grognements, maître. J'attends impatiemment le résultat.";
@@ -868,7 +868,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_oil": // смолы
-			amount = 200 - sti(npchar.quest.FDMoil);
+			amount = 150 - sti(npchar.quest.FDMoil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) 
@@ -895,7 +895,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_shipsilk": // шёлк
-			amount = 170 - sti(npchar.quest.FDMshipsilk);
+			amount = 150 - sti(npchar.quest.FDMshipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) 
@@ -922,7 +922,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_ropes": // канаты
-			amount = 170 - sti(npchar.quest.FDMropes);
+			amount = 150 - sti(npchar.quest.FDMropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) 
@@ -960,9 +960,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_givemoney":
 			dialog.text = "Eh bien, as-tu apporté l'argent";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
-    			link.l2 = "Oui, je l'ai fait. 250 000 pesos, comme convenu.";
+    			link.l2 = "Oui, je l'ai apporté. 10 000 doublons pleins, comme convenu.";
     			link.l2.go = "FDM_hull_waitmaterials";
             }
             else
@@ -980,24 +980,31 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RefreshLandTime();
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
-			RealShips[sti(Pchar.Ship.Type)].BaseType = SHIP_RENOVATED_FDM;
-			RealShips[sti(Pchar.Ship.Type)].Name = "NewFlyingdutchman1";
-			RealShips[sti(Pchar.Ship.Type)].BaseName = "NewFlyingdutchman";
-			/* RealShips[sti(Pchar.Ship.Type)].CannonsQuantity = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMax = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMin = 58;
-			RealShips[sti(Pchar.Ship.Type)].rcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].lcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].fcannon = 6;
-			RealShips[sti(Pchar.Ship.Type)].bcannon = 4; */
-			if(Get_My_Cabin() == "My_Cabin") RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin";	
-			else RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin_Huge";
+			
+			shTo = &RealShips[sti(pchar.Ship.Type)];
+			object newShip;
+			aref arTuning;
+			CopyAttributes(&newShip, shTo);
+			
+			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, 0, pchar);
+			
+			if(CheckAttribute(newShip, "Tuning"))
+			{
+				makearef(arTuning, newShip.tuning);
+				for (int iQty = 0; iQty < GetAttributesNum(arTuning); iQty++)
+				{
+					aref realTuning = GetAttributeN(arTuning, iQty);
+					string tuningName = GetAttributeName(realTuning);
+					UpgradeShipParameter(pchar, tuningName);
+				}
+			}
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0);//White cotton sail
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);
 			DeleteAttribute(pchar, "ship.hulls");
 			DeleteAttribute(pchar, "ship.blots");	
 			CloseQuestHeader("renovate_fdm");
+			Achievment_Set("ach_CL_178");
 		break;
 		//<-- Xenon
 	}

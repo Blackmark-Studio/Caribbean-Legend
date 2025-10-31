@@ -1,5 +1,5 @@
 itm_stat_weight {重量}
-itm_stat_descr_weight {该物品的重量是多少磅。过重的物品可以丢弃。}
+itm_stat_descr_weight {该物品的重量是多少磅。过重的物 品可以丢弃。}
 itm_stat_rat_poison {鼠药}
 itm_stat_descr_rat_poison {防止货物被老鼠破坏。}
 itm_stat_clock2 {有用的工具}
@@ -7,19 +7,21 @@ itm_stat_descr_clock2 {装备时加速航海技能的增长。}
 itm_stat_duration {持续时间}
 itm_stat_descr_duration {该物品效果的持续时间。}
 itm_stat_damageReduction {伤害减免}
-itm_stat_descr_damageReduction {该百分比在所有其他计算之前从受到的伤害中扣除。}
+itm_stat_descr_damageReduction {该百分比在所有其他计算之前从受 到的伤害中扣除。}
 itm_stat_attack {伤害}
 itm_stat_descr_attack
 {
-普通攻击: #sattack.force.min#–#sattack.force.max# 伤害
-快速攻击: #sattack.fast.min#–#sattack.fast.max# 伤害
-群体攻击: #sattack.round.min#–#sattack.round.max# 伤害
-重击攻击: #sattack.break.min#–#sattack.break.max# 伤害
+斩击: #sattack.fast.min#–#sattack.fast.max# 伤害
+突刺: #sattack.force.min#–#sattack.force.max# 伤害
+旋风斩: #sattack.round.min#–#sattack.round.max# 伤害
+破甲击: #sattack.break.min#–#sattack.break.max# 伤害
 }
+itm_stat_gundamage {火器伤害。}
+itm_stat_descr_gundamage {远程战斗中造成的伤害取决于技能 、武器属性和弹药。}
 itm_stat_healAmount {治疗}
 itm_stat_descr_healAmount {使用时恢复的生命值。}
 itm_stat_worldMapBonus {勘察半径}
-itm_stat_descr_worldMapBonus {舰队在世界地图上可见范围的百分比加成。}
+itm_stat_descr_worldMapBonus {舰队在世界地图上可见范围的百分 比加成。}
 itm_stat_radius {航行距离}
 itm_stat_descr_radius {提升船只与海湾间快速移动的距离 码) 。}
 itm_stat_mainEffect {主}
@@ -30,7 +32,7 @@ itm_stat_secondary_hat9 {无法死亡}
 itm_stat_descr_secondary_hat9 {在10%的情况下可以避免射击伤害}
 itm_stat_durability {耐久度}
 itm_stat_hat1 {持续训练}
-itm_stat_descr_hat1 {轻型、中型和重型武器获得经验提升10%}
+itm_stat_descr_hat1 {轻型、中型和重型武器获得经验提 升10%}
 itm_stat_hat2 {连环杀手}
 itm_stat_descr_hat2 {用冷兵器击杀敌人可恢复25%能量。}
 itm_stat_hat3 {航海基础}
@@ -38,9 +40,9 @@ itm_stat_descr_hat3 {导航、精准和修理经验获取提高10%。}
 itm_stat_hat4 {海上人生}
 itm_stat_descr_hat4 {所有航海技能获得经验提高15%}
 itm_stat_hat5 {导师}
-itm_stat_descr_hat5 {将你的航海技能传授给舰队中所有船长, 除旗舰外, 所有船只的船员与军官薪资降低15%。}
+itm_stat_descr_hat5 {将你的航海技能传授给舰队中所有 船长, 除旗舰外, 所有船只的船员与军官薪资降低15%。}
 itm_stat_hat6 {逐利直觉}
-itm_stat_descr_hat6 {每隔3天, 抵达港口时会自动完成一笔小额交易。}
+itm_stat_descr_hat6 {每隔3天, 抵达港口时会自动完成一笔小额交 易。}
 itm_stat_hat7 {遗落弹丸}
 itm_stat_descr_hat7 {射击时有10%概率不消耗弹药}
 itm_stat_hat8 {微醺}
@@ -48,7 +50,7 @@ itm_stat_descr_hat8 {朗姆酒和葡萄酒恢复的生命值提高50%}
 itm_stat_hat10 {士兵机智}
 itm_stat_descr_hat10 {每当这顶帽子格挡伤害时, 会损失一点耐久度。}
 itm_stat_secondary_hat10 {回收}
-itm_stat_descr_secondary_hat10 {在摧毁时，该物品会返还其主要材料，从而可以重新制造。}
+itm_stat_descr_secondary_hat10 {在摧毁时, 该物品会返还其主要材料, 从而可以重新制造。}
 itm_stat_hat11 {拥抱}
 itm_stat_descr_hat11
 {
@@ -64,13 +66,13 @@ itm_stat_descr_berserker_potion
 效果持续不超过12秒, 每分钟仅可使用一次。
 }
 itm_stat_mangarosafast {旋风}
-itm_stat_descr_mangarosafast {使用此药剂可使任意武器的攻击速度提升5%。}
+itm_stat_descr_mangarosafast {使用此药剂可使任意武器的攻击速 度提升5%。}
 itm_stat_mangarosapower {鹰眼}
 itm_stat_descr_mangarosapower {饮用此药剂可加快火炮装填速度。}
 itm_stat_mangarosatotal {荣耀}
 itm_stat_descr_mangarosatotal {使用此药剂可使舰队力量提升15%。}
 itm_stat_vodka {近战混战}
-itm_stat_descr_vodka {火器近战伤害提高20%, 刺刀再额外提高20%。火器攻击会消耗敌人耐力。减少眩晕持续时间。}
+itm_stat_descr_vodka {火器近战伤害提高20%, 刺刀再额外提高20%。火器攻击会消耗敌人耐力。减少 眩晕持续时间。}
 itm_stat_amulet_1 {几丁质}
 itm_stat_descr_amulet_1 {布甲和皮甲防护效果提升一倍, 强化护甲额外减少10%敌方暴击伤害。}
 itm_stat_amulet_10 {第二次机会}
@@ -100,7 +102,7 @@ itm_stat_descr_indian_10 {每次劈砍攻击有15%概率使敌人中毒。}
 itm_stat_indian_11 {障眼法}
 itm_stat_descr_indian_11 {每件华丽物品使你的欺骗几率提高5%。}
 itm_stat_indian_2 {检测}
-itm_stat_descr_indian_2 {精准配装火药可使弹丸和霰弹伤害提高10%, 对超装填和穿甲弹药额外提升5%。}
+itm_stat_descr_indian_2 {精准配装火药可使弹丸和霰弹伤害 提高10%, 对超装填和穿甲弹药额外提升5%。}
 itm_stat_indian_3 {嗜血}
 itm_stat_descr_indian_3 {使自身造成的暴击伤害提高15%。}
 itm_stat_indian_4 {蓄力}
@@ -108,7 +110,7 @@ itm_stat_descr_indian_4 {重型武器的重击攻击伤害提高15%。}
 itm_stat_indian_5 {平衡者}
 itm_stat_descr_indian_5 {船员差异对登船影响降低30%。}
 itm_stat_indian_6 {筛子}
-itm_stat_descr_indian_6 {登船前的火枪齐射对敌人造成的伤害提高10%。}
+itm_stat_descr_indian_6 {登船前的火枪齐射对敌人造成的伤 害提高10%。}
 itm_stat_indian_9 {瞄准!}
 itm_stat_descr_indian_9 {提升船只移动速度和火炮瞄准速度15%。}
 itm_stat_indian_8 {开火!}
@@ -126,29 +128,29 @@ itm_stat_descr_obereg_11 {将船只航向角度调整15%, 使你能更贴近风�
 itm_stat_obereg_3 {举重}
 itm_stat_descr_obereg_3 {携带重量提升15%。}
 itm_stat_obereg_4 {隐身}
-itm_stat_descr_obereg_4 {角色潜行提高10点。}
+itm_stat_descr_obereg_4 {角色潜行提高#smodifiers.SkillSneak#点。}
 itm_stat_obereg_5 {幸运符}
-itm_stat_descr_obereg_5 {角色的机会主义提高15。}
+itm_stat_descr_obereg_5 {角色的机会主义提高#smodifiers.SkillFortune#。}
 itm_stat_obereg_6 {说服}
-itm_stat_descr_obereg_6 {角色领导力提升10点。}
+itm_stat_descr_obereg_6 {角色领导力提升#smodifiers.SkillLeadership#点。}
 itm_stat_obereg_7 {海生者}
-itm_stat_descr_obereg_7 {角色航海提升10点。}
+itm_stat_descr_obereg_7 {角色航海提升#smodifiers.SkillSailing#点。}
 itm_stat_obereg_8 {收益}
-itm_stat_descr_obereg_8 {角色的贸易提升15点。}
+itm_stat_descr_obereg_8 {角色的贸易提升#smodifiers.SkillCommerce#点。}
 itm_stat_obereg_9 {风之神}
 itm_stat_descr_obereg_9 {船速提升10%。}
 itm_stat_totem_01 {钢铁胃}
-itm_stat_descr_totem_01 {防止在混乱场所或喧闹人群中醉酒断片。使用治疗药剂不会降低生命值。}
+itm_stat_descr_totem_01 {防止在混乱场所或喧闹人群中醉酒 断片。 使用治疗药剂不会降低生命值。}
 itm_stat_totem_02 {霸主}
 itm_stat_descr_totem_02 {降低奴隶起义的概率和损失, 投降时增加俘虏人数。}
 itm_stat_totem_03 {玩家}
 itm_stat_descr_totem_03 {使情爱欢愉的治疗效果翻倍。}
 itm_stat_totem_04 {天生领袖}
-itm_stat_descr_totem_04 {在整个持续时间内锁定军官的忠诚度。}
+itm_stat_descr_totem_04 {在整个持续时间内锁定军官的忠诚 度。}
 itm_stat_totem_05 {无敌}
-itm_stat_descr_totem_05 {使敌方暴击伤害降低25%。}
+itm_stat_descr_totem_05 {使敌方暴击伤害降低$modifierPercent(CritIncomingDamageReduction)。}
 itm_stat_totem_06 {驮马}
-itm_stat_descr_totem_06 {超出负重不会减慢角色速度或带来惩罚。}
+itm_stat_descr_totem_06 {超出负重不会减慢角色速度或带来 惩罚。}
 itm_stat_totem_07 {召唤}
 itm_stat_descr_totem_07
 {
@@ -168,11 +170,11 @@ itm_stat_descr_totem_12 {轻型武器的快速攻击伤害提高15%。}
 itm_stat_totem_13 {老千}
 itm_stat_descr_totem_13
 {
-大幅提升抽中所需牌和掷出目标点数的概率。
+大幅提升抽中所需牌和掷出目标点 数的概率。
 获得+1成功。
 }
 itm_stat_knife_01 {秘密}
-itm_stat_descr_knife_01 {这把匕首蕴藏着强大的隐秘力量。佩戴在胸前作为护身符, 可战胜死亡。}
+itm_stat_descr_knife_01 {这把匕首蕴藏着强大的隐秘力量。 佩戴在胸前作为护身符, 可战胜死亡。}
 itm_stat_knife_02 {守护者}
 itm_stat_descr_knife_02 {有12%几率闪避射击, 效果可叠加。}
 itm_stat_knife_03 {幸运鬼}
@@ -208,19 +210,19 @@ itm_stat_descr_talisman15 {舰队力量提升15%。由克伦威尔铁甲骑兵�
 itm_stat_talisman16 {丛林战士}
 itm_stat_descr_talisman16 {异域武器造成15%额外伤害}
 itm_stat_talisman17 {信仰之盾}
-itm_stat_descr_talisman17 {使船员和船长受到的伤害降低5%, 在圣恩号上时防御技能提升10。}
+itm_stat_descr_talisman17 {使船员受到的伤害减少 $ctxHasAttr(QBonus.max|15|5) %，在“圣慈号”上防御技能提高 10。完成“正义之路”后伤害减免会进一步提高。}
 itm_stat_talisman18 {追寻真相}
 itm_stat_descr_talisman18 {每发现一处宝藏, 船员火枪齐射威力提升1%, 霰弹伤害提升2%。}
 itm_stat_talisman19 {铭记}
-itm_stat_descr_talisman19 {每损失2%船体, 航速提升0.75%, 火炮伤害提升0.5%。}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {备战}
 itm_stat_descr_talisman20 {火器瞄准速度提升15%, 最大瞄准伤害提升20%, 装填速度提升10%, 爆头伤害提升20%。}
 itm_stat_talisman21 {连带责任}
 itm_stat_descr_talisman21 {允许在最高2级的船只上与走私商进行交易。}
 itm_stat_secondary_hat1 {适应}
-itm_stat_descr_secondary_hat1 {直武器的快速攻击和弯曲武器的劈砍攻击造成5%额外伤害。}
+itm_stat_descr_secondary_hat1 {直武器的快速攻击和弯曲武器的劈 砍攻击造成5%额外伤害。}
 itm_stat_secondary_hat2 {惯性}
-itm_stat_descr_secondary_hat2 {短武器的群体攻击和长武器的重击攻击速度提升7%。}
+itm_stat_descr_secondary_hat2 {短武器的群体攻击和长武器的重击 攻击速度提升7%。}
 itm_stat_secondary_hat3 {巧舌如簧}
 itm_stat_descr_secondary_hat3 {增加酒馆水手数量, 并将雇佣费用降低5%。}
 itm_stat_secondary_hat4 {普鲁士操练}
@@ -234,11 +236,11 @@ itm_stat_descr_secondary_hat8 {每提升一级威胁, 舰船维护费降低2%, �
 itm_stat_secondary_hat11 {情绪失控}
 itm_stat_descr_secondary_hat11 {若角色在过去两周内有过亲密行为, 攻击速度提升5%。}
 itm_stat_blade_SP_3low {未被激发的潜力}
-itm_stat_descr_blade_SP_3low {这把刀尚未达到巅峰——似乎还缺了点什么……}
+itm_stat_descr_blade_SP_3low {这把刀尚未达到巅峰—似乎还缺了点什么……}
 itm_stat_blade_SP_3 {死神}
 itm_stat_descr_blade_SP_3 {无法从任何来源获得治疗。每缺失2%生命值, 造成的伤害提升1.5%, 能量恢复提升1.75%。}
 itm_stat_blade_41 {灵活}
-itm_stat_descr_blade_41 {根据你最高的冷兵器技能获得伤害加成。}
+itm_stat_descr_blade_41 {根据你最高的冷兵器技能获得伤害 加成。}
 itm_stat_lacrima_patris {正义之路}
 itm_stat_descr_lacrima_patris {每击杀10名强盗和恶棍, 伤害提升2点, “仁慈”火炮射程提升1%。}
 itm_stat_blade_WR {勤勉}
@@ -248,14 +250,38 @@ itm_stat_descr_suit5 {获得法国功勋可免费进入妓院, 并使法国殖�
 itm_stat_suit4 {恶名昭彰}
 itm_stat_descr_suit4 {众所周知, 这身装束代表麻烦, 鞋靴里都藏着刀。舰队力量提升13%。威慑时, 任意船只都视为战士。}
 itm_stat_cirass10 {装备配置}
-itm_stat_descr_cirass10 {这件护甲配有实用的弹药袋。换弹速度提升15%。}
+itm_stat_descr_cirass10 {这件护甲配有实用的弹药袋。换弹 速度提升15%。}
 itm_stat_underwater {体积}
 itm_stat_descr_underwater {这副护甲太重, 穿上后只能步行移动。}
 itm_stat_pistol11 {地狱孽种}
-itm_stat_descr_pistol11 {这件武器的存在本身就足够令人惊讶, 其性能反倒无足轻重。重型武器技能提升20。}
+itm_stat_descr_pistol11 {这件武器的存在本身就足够令人惊 讶, 其性能反倒无足轻重。重型武器技 能提升20。}
 itm_stat_pistol12 {可拆卸}
 itm_stat_descr_pistol12 {此火器可组装或拆解, 可在单手与双手模式间切换。}
 itm_stat_mushket8 {可拆卸}
 itm_stat_descr_mushket8 {这把火器可组装或拆卸, 可在单手和双手模式间切换。}
 itm_stat_spyglassSP3 {惩罚凝视}
-itm_stat_descr_spyglassSP3 {这只望远镜能让你看清敌方船长眼中的恐惧, 还能判断他是否准备投降。}
+itm_stat_descr_spyglassSP3 {这只望远镜能让你看清敌方船长眼 中的恐惧, 还能判断他是否准备投降。}
+itm_stat_reloadTime {重新装填时间}
+itm_stat_descr_reloadTime {装填下一发子弹的时间。}
+itm_stat_kaleuche_amulet2 {攻击咒语}
+itm_stat_descr_kaleuche_amulet2 {使寺庙中的查维纳维 (Chavinavi) 怪物对武器伤害更为脆弱, 并对它们的攻击提供防护。提高所 有武器类型的技能25%。}
+itm_stat_kaleuche_amulet3 {防御咒语}
+itm_stat_descr_kaleuche_amulet3 {使寺庙中的查维纳维 (Chavinavi) 怪物对武器伤害更为脆弱, 并对它们的攻击提供防护。将来自 任何武器类型的所受伤害降低25%, 并防止中毒。}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+当前加成: $number($attr($context.KillerBonus.appliedbonus)) 伤害, 和 $number($attr($context.KillerBonus.RangeBonus))% 射程。
+}
+itm_stat_blade_WR_1 {勤勉}
+itm_stat_descr_blade_WR_1 {战斗中生命恢复速度提升五倍。}
+itm_stat_secondary_hat6 {尊敬的商人}
+itm_stat_descr_secondary_hat6 {将舰队中商船的力量提高15%, 并将从商船逃离成功率的惩罚减少3。}
+itm_stat_KhaelRoa_item {美洲虎}
+itm_stat_descr_KhaelRoa_item {将火器造成的伤害提高十倍。}
+itm_stat_indian_poison {泰诺}
+itm_stat_descr_indian_poison {即使是轻伤, 在100%的情况下也会导致无法用解毒剂治 愈的严重中毒, 并在短时间内导致死亡。}
+itm_stat_PerksPotion {遗忘}
+itm_stat_descr_PerksPotion {重置角色所有已学的Perks。服用后, 关于Perks和技法的记忆被抹去, 但能力保留—仿佛身体记得曾经达成的事, 而心智不再记得。}
+itm_stat_descr_talisman19_InSlot {每损失2%的船体会分别使炮弹速度和伤害提高0.75%和0.5%。}
+itm_stat_descr_talisman19_InInventory {在物品栏中时，它会让所有军官变得不死。}

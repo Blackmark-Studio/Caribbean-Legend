@@ -267,8 +267,8 @@ QuestsUtilite_266 {Крелис ван Екк, 1572-1611, боцман}
 QuestsUtilite_267 {Всыпать по двадцать ударов плетью! Нет - по тридцать! Каждому!}
 QuestsUtilite_268 {Якоб де Хаез, 1611-1651, путешественник}
 QuestsUtilite_269 {Кайманы не нападают на людей. Только когда очень голодны. А этот явно сыт...}
-QuestsUtilite_270 {Эклятон}
-QuestsUtilite_271 {Трафальгар}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {Яд не подействовал!}
 QuestsUtilite_273 {Отравлен ядом таино!}
 QuestsUtilite_274 {@<GetFullName(chref)> отравлен ядом таино}
@@ -322,7 +322,9 @@ QuestsUtilite_321 {Горгона}
 QuestsUtilite_322 {Обелиск}
 QuestsUtilite_323 {Арабелла}
 QuestsUtilite_324 {Легионер}
-QuestsUtilite_325 { }
-QuestsUtilite_326 { }
-QuestsUtilite_327 { }
-QuestsUtilite_328 { }
+QuestsUtilite_325 {Вулкан}
+QuestsUtilite_326 {Гелиадон}
+QuestsUtilite_327 {Гефест}
+QuestsUtilite_328 {Центурион}
+QuestsUtilite_329 {Пираты разбиты, воды стали безопаснее}
+QuestsUtilite_330 {Пираты окрепли, в море стало опаснее}

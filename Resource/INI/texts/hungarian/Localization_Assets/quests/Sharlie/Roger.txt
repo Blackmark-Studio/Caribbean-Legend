@@ -63,7 +63,7 @@ Roger_62 {Két nappal késôbb...@<NewStr()>Six longboat épült...}
 Roger_63 {Demetrio}
 Roger_64 {Rojas}
 Roger_65 {Kitty}
-Roger_66 {Torero}
+Roger_66 { }
 Roger_67 {Ignacio}
 Roger_68 {Marco}
 Roger_69 {Felfedezô mód: az idôzítô ki van kapcsolva.}
@@ -91,7 +91,7 @@ Roger_90 {Felfedezô mód: Corrida - a koordináták helyesek}
 Roger_91 {Felfedezô mód: Corrida - a koordináták nem helyesek}
 Roger_92 {Spanyol konvoj a láthatáron!}
 Roger_93 {Toro de Oro}
-Roger_94 {Vörös Sárkány}
+Roger_94 { }
 Roger_95 {Egy hatalmas robbanás @<pchar.ship.name>!}
 Roger_96 {Megérkeztünk Cartagenába! Tyrex parancsot adott, hogy hajózzunk a Covenas-öbölbe.}
 Roger_97 {A partraszálló csapatok készen állnak Cartagena ostromára!}
@@ -104,7 +104,7 @@ Roger_103 {Tonneur}
 Roger_104 {Libre}
 Roger_105 {Myutin}
 Roger_106 {Inconnu}
-Roger_107 {Alonso}
+Roger_107 { }
 Roger_108 { }
 Roger_109 {Három órával késôbb...}
 Roger_110 {Rodgar}

@@ -307,7 +307,7 @@ void CreatUnderwater(aref loc) // под водой
 					sld.lastname = "";
 					GiveItem2Character(sld, "unarmed");
 					EquipCharacterbyItem(sld, "unarmed");
-					InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Крабы
+					SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 					sld.SaveItemsForDead = true;
 					if (bPincers()) TakeNItems(sld, "crab_pincers", 2); // клешни
 					//if (rand(2) == 1) TakeNItems(sld, "crab_jaw", rand(1)); // жвалы

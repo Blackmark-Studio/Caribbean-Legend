@@ -402,11 +402,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Azt hiszed, csak úgy besétálhatsz, megsérthetsz egy hölgyet, rám se hederítesz, és sértetlenül kisétálsz innen, ráadásul a doblonokkal? Úgy látom, nem vagy valami okos. De nem fogok verekedést kezdeni egy nő előtt. Szóval itt az ajánlatom: bocsánatot kérsz Caldera asszonytól, elviszed a doblonjaidat, és szépen eltakarodsz innen. Vagy végül tényleg megtanítalak egy kis jó modorra.";
 					link.l1.go = "Naemnik_5";
-					notification("Ellenőrzés sikeres (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Nincs elég arany (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -416,11 +416,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Nos, hajlandó vagyok elnézni a nyers modorodat, sőt, még azt is, ahogy velem beszéltél. De ha tényleg szeretnéd megkapni a dublonjaidat és épségben távozni innen, bocsánatot kell kérned Lady Calderától. Különben majd meglátjuk, ki bánik jobban a fegyverrel. És hidd el, én nem csak dísznek hordom a sajátomat.";
 					link.l1.go = "Naemnik_5";
-					notification("Ellenőrzés sikeres (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Nincs elég arany (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "Nyilvánvaló, hogy nem vagy túl eszes, ha azt hitted, hogy majd szépen kivárom a sorom. És még kevésbé, ha azt gondoltad, hogy szemet hunyok mindazok felett a bajok felett, amiket te és a fajtád Lady Calderára zúdítottatok.";

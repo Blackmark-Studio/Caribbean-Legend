@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 		case "rat_torg":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Skill Check Failed (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", under different circumstances, I would demand five thousand. The Admiral himself has shown interest - and he is not the only one, believe me. But take your time deciding; the armor will be waiting for you for as long as you need. I'll only sell it to you.";
 				link.l1 = "I'll think about it, Sancho.";
 				link.l1.go = "rat_yes_1";
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", under different circumstances, I would demand five thousand. The Admiral himself has shown interest - and he is not the only one, believe me.\nFine, I'll knock off five hundred, considering you didn't forget about me and my problem. It must've been a difficult adventure.";
 				link.l1 = "That's better... but I still don't get why I should pay extra in this trade of equally unique items. Maybe you should be the one paying me, eh Sancho, he-he?";
 				link.l1.go = "rat_yes_1500";
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		case "rat_yes_1500":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 90)
 			{
-				notification("Skill Check Failed (90)", SKILL_COMMERCE);
+				Notification_Skill(false, 90, SKILL_COMMERCE);
 				dialog.text = "No, "+pchar.name+", not a chance. I can deal with rats using arsenic, but this armour could save your life one day. And you'll look like an Italian duke wearing it! One thousand five hundred, that's my final offer. Take your time to think about it, and let me know. The armour will be waiting for you as long as you need, I'll only sell it to you.";
 				link.l1 = "Sancho, if you weren't the only tavern keeper in this dreary graveyard... I'll think about your offer.";
 				link.l1.go = "rat_yes_1500exit";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = "For a military captain and a pirate, you sure know how to negotiate! Remember Jost? He once managed to buy all my arsenic at a discount, while the rats were already tormenting me.\nAlright, "+pchar.name+", you win. I'll knock off another five hundred for you! But that's my final offer!";
 				link.l1 = "This still feels like a rip-off, but at least now I won't feel like a typical damsel in distress in the jungle. Wait for me, I'll bring the money soon.";
 				link.l1.go = "rat_yes_1000exit";

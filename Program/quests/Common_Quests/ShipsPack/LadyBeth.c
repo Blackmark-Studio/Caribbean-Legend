@@ -1,14 +1,14 @@
 void LadyBeth_init()
 {
 	pchar.questTemp.LadyBeth = true;
-	log_testinfo("Инициализация ШНЯВЫ");
+	log_testinfo("Квест 'Леди Бет' стартовал");
 	pchar.questTemp.LadyBeth.stage = 1; // стадии меняем при выходе на карту
 	pchar.questTemp.LadyBeth.colony = LadyBeth_findColony(sti(pchar.questTemp.LadyBeth.stage)); // колонии меняем при заходе в порт
     ref sld, itm;
 	
 	// характеристики запишем после ТЗ
 	sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_cap", "quest_off_eng", "man", "man", 30, ENGLAND, -1, false, "governor"));
-	FantomMakeCoolSailor(sld, SHIP_LADYBETH, GetConvertStr("LadyBeth_Ship_Name", "LadyBeth.txt"), CANNON_TYPE_CANNON_LBS16, 105, 105, 105);
+	FantomMakeCoolSailor(sld, SHIP_LADYBETH, GetShipName("Lady Beth"), CANNON_TYPE_CANNON_LBS16, 105, 105, 105);
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_15", "pistol6", "bullet", 200);
 	sld.ship.Crew.Morale = 100;
 	ChangeCrewExp(sld, "Sailors",   100);
@@ -20,7 +20,8 @@ void LadyBeth_init()
 	UpgradeShipParameter(sld, "SpeedRate");	//апгрейдить скорость
 	UpgradeShipParameter(sld, "TurnRate");	//манёвренность 
 	sld.DontRansackCaptain = true; //квестовые не сдаются
-	InitChrRebalance(sld, GEN_TYPE_CAPTAIN, GEN_BOSS, true, 0.6); // RB Блэквуд
+	ForceAdaptivelevel(sld, 14, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.55); // RB Блэквуд
+	GiveCaptainOfficers(sld, true);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
 	sld.DontHitInStorm = true;
@@ -53,7 +54,7 @@ void LadyBeth_init()
 	sld.quest.targetCity = LadyBeth_findColony(sti(pchar.questTemp.LadyBeth.stage)+1);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "shnyava_sp2";
-	sld.mapEnc.Name = GetConvertStr("LadyBeth_Ship_Name", "LadyBeth.txt");
+	sld.mapEnc.Name = GetShipName("Lady Beth");
 	Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, 30);
 	
 	//общий слух
@@ -187,7 +188,7 @@ void LadyBeth_ToMap(string sQuest)
 	Log_testInfo("Капитан ШНЯВЫ направился в колонию: "+sld.quest.targetCity + " из колонии : "+sld.city);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "shnyava_sp2";
-	sld.mapEnc.Name = GetConvertStr("LadyBeth_Ship_Name", "LadyBeth.txt");
+	sld.mapEnc.Name = GetShipName("Lady Beth");
 	Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, 30);
 	
 	//если шнява вышла из Каймана, то чистим
@@ -301,6 +302,7 @@ void LadyBeth_Lovushka_3(string qName)
 //===============Битва на Каймане==============
 void LadyBeth_CaimanSea(string qName)
 {
+	if(CheckAttributeEqualTo(pchar, "questTemp.HWIC.Eng", "MerdokDie")) return;
 	pchar.GenQuest.CabinLock = true;
 	Island_SetReloadEnableGlobal("Caiman", false);
 	bQuestDisableMapEnter = true;
@@ -328,8 +330,8 @@ void LadyBeth_CaimanSea_3(string qName)
 	TeleportCharacterToPosAy(pchar, -7.70, 8.01, -22.31, 1.50);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\LadyBeth_dialog.c";
 	sld.dialog.currentnode = "AlonsoNaPalube";
 	LAi_SetImmortal(sld, true);
@@ -491,21 +493,21 @@ void LadyBeth_CaimanBuhta_3(string qName)
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_LiteGroup"))
 	{
 		//ставим наших бойцов
-		for (i=1; i<=14; i++)
+		for (i=1; i<=18; i++)
 		{
-			if (i > 11)
+			if (i > 15)
 			{
-				if (i == 12)
+				if (i == 16)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_4", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 6, 30, 30, "", "mushket3", "grapeshot", 30);
 				}
-				if (i == 13)
+				if (i == 17)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_6", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "grape_mushket", "grenade", 0);
 				}
-				if (i == 14)
+				if (i == 18)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_5", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 6, 30, 30, "", "mushket1", "bullet", 30);
@@ -526,21 +528,21 @@ void LadyBeth_CaimanBuhta_3(string qName)
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_StrongGroup"))
 	{
 		//ставим наших бойцов
-		for (i=1; i<=20; i++)
+		for (i=1; i<=26; i++)
 		{
-			if (i > 15)
+			if (i > 21)
 			{
-				if (i == 16)
+				if (i == 22)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_4", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "grape_mushket", "grenade", 0);
 				}
-				if (i >= 17 && i <= 18)
+				if (i >= 23 && i <= 24)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_4", "man", "mushketer", 5, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket3", "grapeshot", 0);
 				}
-				if (i >= 19 && i <= 20)
+				if (i >= 25 && i <= 26)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_5", "man", "mushketer", 5, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket1", "bullet", 0);
@@ -565,12 +567,55 @@ void LadyBeth_CaimanBuhta_3(string qName)
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "bruteForce"))
+		{
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_1", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			BRD_UpgradeToPerkChar(sld, "bruteForce");
+			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
+			LAi_CharacterDisableDialog(sld);
+			LAi_SetActorType(sld);
+			LAi_ActorFollow(sld, pchar, "", -1);
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Bruteforce_2", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			BRD_UpgradeToPerkChar(sld, "bruteForce");
+			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
+			LAi_CharacterDisableDialog(sld);
+			LAi_SetActorType(sld);
+			LAi_ActorFollow(sld, pchar, "", -1);
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+		}
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "ambuscade"))
+		{
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_1", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			BRD_UpgradeToPerkChar(sld, "ambuscade");
+			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
+			LAi_CharacterDisableDialog(sld);
+			LAi_SetActorType(sld);
+			LAi_ActorFollow(sld, pchar, "", -1);
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Ambuscade_2", "citiz_60", "man", "man", 15, pchar.nation, 0, false, "pirate"));
+			BRD_UpgradeToPerkChar(sld, "ambuscade");
+			ForceAdaptivelevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+			ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
+			LAi_CharacterDisableDialog(sld);
+			LAi_SetActorType(sld);
+			LAi_ActorFollow(sld, pchar, "", -1);
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+		}
+
 	}
 	// Алонсо
 	sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
 	FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	ChangeCharacterAddressGroup(sld, "Shore17", "goto", "goto6");
 	LAi_CharacterDisableDialog(sld);
 	LAi_SetActorType(sld);
@@ -580,6 +625,7 @@ void LadyBeth_CaimanBuhta_3(string qName)
 
 void LadyBeth_CaimanBitva_1(string qName)
 {
+	if (!CheckAttribute(pchar, "TestMode.OFFCutscenes")) LAi_FadeToBlackStartInstantly();
 	chrDisableReloadToLocation = true;
 	LAi_SetStayType(pchar);
 	SetFunctionNPCDeathCondition("LadyBeth_HeadShotBoos", "LadyBeth_Blackwood", false);
@@ -607,38 +653,42 @@ void LadyBeth_CaimanBitva_1(string qName)
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_LiteGroup"))
 	{
 		//ставим наших бойцов
-		for (i=1; i<=14; i++)
+		for (i=1; i<=18; i++)
 		{
-			if (i > 11)
+			if (i > 15)
 			{
-				if (i == 12)
+				if (i == 16)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_4", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket3", "grapeshot", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 				}
-				if (i == 13)
+				if (i == 17)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_6", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "grape_mushket", "grenade", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 					TeleportCharacterToPos(sld, 48.21, 9.5, -154.17);
 				}
-				if (i == 14)
+				if (i == 18)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_5", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket1", "bullet", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 				}
 			}
 			else
-			{
+			{	// RB Союзные матросы Леди Бет
 				sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "citiz_3"+(rand(8)+1), "man", "man", 6, sti(pchar.nation), 0, false, "soldier"));
 				FantomMakeCoolFighter(sld, 6, 30, 30, "blade_10", "pistol1", "bullet", 30);
+				ForceAdaptiveLevel(sld, 7, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 				if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 				if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_2");
 				if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
-				if (i >= 13 && i <= 14) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_4");
+				if (i >= 13 && i <= 15) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_4");
 			}
 			LAi_CharacterDisableDialog(sld);
 			//LAi_SetActorType(sld);
@@ -651,8 +701,9 @@ void LadyBeth_CaimanBitva_1(string qName)
 		// Алонсо
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 50, 50, "blade_13", "pistol6", "bullet", 300);
-		sld.name 	= StringFromKey("SharlieTrial_29");
-		sld.lastname = StringFromKey("SharlieTrial_30");
+		ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 		sld.MultiFighter = 2.5;
 		AddItems(sld, "potion4", 1);
@@ -667,38 +718,43 @@ void LadyBeth_CaimanBitva_1(string qName)
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_StrongGroup"))
 	{
 		//ставим наших бойцов
-		for (i=1; i<=20; i++)
+		for (i=1; i<=26; i++)
 		{
-			if (i > 15)
+			if (i > 21)
 			{
-				if (i == 16)
+				if (i == 22)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_6", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "grape_mushket", "grenade", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 					TeleportCharacterToPos(sld, 48.21, 9.5, -154.17);
 				}
-				if (i >= 17 && i <= 18)
+				if (i >= 23 && i <= 24)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_4", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket3", "grapeshot", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 				}
-				if (i >= 19 && i <= 20)
+				if (i >= 25 && i <= 26)
 				{
 					sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "mush_ctz_5", "man", "mushketer", 6, sti(pchar.nation), 0, false, "soldier"));
 					FantomMakeCoolFighter(sld, 12, 50, 50, "", "mushket1", "bullet", 0);
+					ForceAdaptiveLevel(sld, 12, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 					ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 				}
 			}
 			else
-			{
+			{	// RB Союзные матросы Леди Бет
 				sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "citiz_3"+(rand(8)+1), "man", "man", 6, sti(pchar.nation), 0, false, "soldier"));
 				FantomMakeCoolFighter(sld, 6, 30, 30, "blade_10", "pistol1", "bullet", 30);
+				ForceAdaptiveLevel(sld, 7, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 				if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 				if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_2");
 				if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
-				if (i >= 13 && i <= 15) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_4");
+				if (i >= 13 && i <= 16) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_4");
+				if (i >= 17 && i <= 21) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "ourmush_1");
 			}
 			LAi_CharacterDisableDialog(sld);
 			//LAi_SetOfficerType(sld);
@@ -710,8 +766,9 @@ void LadyBeth_CaimanBitva_1(string qName)
 		// Алонсо
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, -1, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
-		sld.name 	= StringFromKey("SharlieTrial_29");
-		sld.lastname = StringFromKey("SharlieTrial_30");
+		ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 		sld.MultiFighter = 2.5;
 		AddItems(sld, "potion4", 1);
@@ -731,6 +788,28 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
 		//LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "bruteForce"))
+		{
+			sld = CharacterFromID("LadyBeth_Bruteforce_1");
+			ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
+			LAi_SetWarriorType(sld);
+			sld = CharacterFromID("LadyBeth_Bruteforce_2");
+			ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
+			LAi_SetWarriorType(sld);
+		}
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "ambuscade"))
+		{
+			sld = CharacterFromID("LadyBeth_Ambuscade_1");
+			ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
+			LAi_SetWarriorType(sld);
+			sld = CharacterFromID("LadyBeth_Ambuscade_2");
+			ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
+			LAi_SetWarriorType(sld);
+		}
+
 	}
 	// наши потери будут учитываться
 	int iSailors;
@@ -750,9 +829,9 @@ void LadyBeth_CaimanBitva_1(string qName)
 		}
 	}
 	// усиление армий
-	int LadyBeth_SilaEnemy;
+	float LadyBeth_SilaEnemy;
 	LadyBeth_SilaEnemy = 1;
-	if (GetCrewQuantity(pchar) <= 8+4*MOD_SKILL_ENEMY_RATE) LadyBeth_SilaEnemy = 10.00;
+	if (GetCrewQuantity(pchar) <= 8+4*MOD_SKILL_ENEMY_RATE) LadyBeth_SilaEnemy = 4.00;
 	if (GetCrewQuantity(pchar) >= 9+4*MOD_SKILL_ENEMY_RATE) LadyBeth_SilaEnemy = 1.40;
 	if (GetCrewQuantity(pchar) >= 26+4*MOD_SKILL_ENEMY_RATE) LadyBeth_SilaEnemy = 1.25;
 	if (GetCrewQuantity(pchar) >= 35+4*MOD_SKILL_ENEMY_RATE) LadyBeth_SilaEnemy = 1.00;
@@ -766,7 +845,6 @@ void LadyBeth_CaimanBitva_1(string qName)
 	sld.name = GetConvertStr("LadyBeth_Cap_Name", "LadyBeth.txt");
 	sld.lastname = GetConvertStr("LadyBeth_Cap_lastname", "LadyBeth.txt");
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_15", "pistol6", "bullet", 200);
-	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_BOSS, true, 0.6); // RB Блэквуд (БОСС)
 	GiveItem2Character(sld, "cirass1");
 	EquipCharacterByItem(sld, "cirass1");
 	AddItems(sld, "bullet", 30);
@@ -792,12 +870,17 @@ void LadyBeth_CaimanBitva_1(string qName)
 	//LAi_CharacterDisableDialog(sld);
 	//LAi_SetWarriorType(sld);
 	LAi_SetActorType(sld);
+	//генерация зерна контрольного уровня для очередняр
+	float tweakLevel = 9*LadyBeth_SilaEnemy; //смещение контрольного уровня в зависимости от соотношения команды. 
+	int commonerLevel = 2 + tweakLevel; // дает от 6 до 13
+	int eliteLevel = 4 + tweakLevel*1.5;
+
 	// Отряд 1
 	for (i=1; i<=13; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup1_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Матросы Леди Бет
+		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc1_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc1_2");
 		if (i >= 9 && i <= 13) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc1_3");
@@ -812,7 +895,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup2_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Матросы Леди Бет
+		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc2_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc2_2");
 		if (i >= 9 && i <= 13) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc2_3");
@@ -822,14 +905,14 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_group_MoveCharacter(sld, "LadyBeth_Enemy");
 	}
 	// Отряд 3
-	for (i=1; i<=13; i++)
+	for (i=1; i<=12; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup3_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Матросы Леди Бет
+		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_2");
-		if (i >= 9 && i <= 13) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_3");
+		if (i >= 9 && i <= 12) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc3_3");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
@@ -837,14 +920,14 @@ void LadyBeth_CaimanBitva_1(string qName)
 		LAi_group_MoveCharacter(sld, "LadyBeth_Enemy");
 	}
 	// Отряд 4
-	for (i=1; i<=13; i++)
+	for (i=1; i<=14; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGroup4_"+i, "citiz_4"+(rand(8)+1), "man", "man", 3, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 3, 30, 30, "blade_10", "pistol1", "bullet", 0);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Матросы Леди Бет
+		ForceAdaptiveLevel(sld, CommonerLevel, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 1 && i <= 4) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_1");
 		if (i >= 5 && i <= 8) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_2");
-		if (i >= 9 && i <= 13) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_3");
+		if (i >= 9 && i <= 14) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "enc4_3");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
@@ -871,6 +954,7 @@ void LadyBeth_CaimanBitva_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyGolovorez_"+i, "sold_eng_"+i, "man", "man", 15, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 15*LadyBeth_SilaEnemy, 70*LadyBeth_SilaEnemy, 70*LadyBeth_SilaEnemy, "blade_13", "pistol3", "grapeshot", 150*LadyBeth_SilaEnemy);
+		ForceAdaptiveLevel(sld, eliteLevel, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "encdetector", "enc"+i);
 		LAi_SetCheckMinHP(sld, 1, false, "LadyBeth_IronWill");
 		sld.MultiFighter = 1.0+LadyBeth_SilaEnemy;
@@ -885,10 +969,10 @@ void LadyBeth_CaimanBitva_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyMushket_"+i, "mush_eng_"+(rand(2)+1), "man", "mushketer", 12, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 12*LadyBeth_SilaEnemy, 50*LadyBeth_SilaEnemy, 50*LadyBeth_SilaEnemy, "", "mushket2", "bullet", 30*LadyBeth_SilaEnemy);
+		ForceAdaptiveLevel(sld, eliteLevel, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "mushket"+i);
 		sld.MultiFighter = 1.0+LadyBeth_SilaEnemy;
 		LAi_CharacterDisableDialog(sld);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Стрелки с Леди Бет
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
 		sld.MusketerDistance = 0;
@@ -898,10 +982,10 @@ void LadyBeth_CaimanBitva_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_EnemyMushket_"+i, "mush_eng_"+(rand(2)+1), "man", "mushketer", 12, ENGLAND, 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 12*LadyBeth_SilaEnemy, 50*LadyBeth_SilaEnemy, 50*LadyBeth_SilaEnemy, "", "mushket2", "bullet", 30*LadyBeth_SilaEnemy);
+		ForceAdaptiveLevel(sld, eliteLevel, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "mushket"+i);
 		sld.MultiFighter = 1.0+LadyBeth_SilaEnemy;
 		LAi_CharacterDisableDialog(sld);
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Стрелки с Леди Бет
 		LAi_SetWarriorType(sld);
 		LAi_warrior_SetStay(sld, true);
 		sld.MusketerDistance = 0;
@@ -968,11 +1052,12 @@ void LadyBeth_CaimanKino_0(string qName)
 	StartQuestMovie(true, false, true);
 	pchar.questTemp.NoFast = true;
 	locCameraFromToPos(50.97, 11.66, -157.50, true, 49.86, 9.70, -152.36);
-	DoQuestFunctionDelay("LadyBeth_CaimanKino_1", 3.5);
+	DoQuestFunctionDelay("LadyBeth_CaimanKino_1", 1.5);
 }
 
 void LadyBeth_CaimanKino_1(string qName)
 {
+	LAi_FadeToBlackEnd();
 	locCameraFlyToPositionLookToPoint(44.03, 11.38, -102.28, 44.74, 10.98, -105.80, 48.30, 6.68, -122.86, -1, 6500/GetDeltaTime());
 	Pchar.FuncCameraFly = "LadyBeth_CaimanKino_2";
 }
@@ -1055,8 +1140,6 @@ void LadyBeth_CaimanKino_12(string qName)
 
 void LadyBeth_CaimanKino_13(string qName)
 {
-	//locCameraSleep(false);
-	//locCameraFromToPos(50.78, 11.49, -150.20, true, 50.48, 9.00, -155.15);
 	locCameraFromToPos(49.47, 11.50, -149.98, true, 49.85, 9.00, -154.90);
 	DoQuestFunctionDelay("LadyBeth_CaimanKino_14", 0.8);
 }
@@ -1066,68 +1149,70 @@ void LadyBeth_CaimanKino_14(string qName)
 	sld = CharacterFromID("LadyBeth_Blackwood_clone");
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	sld = CharacterFromID("LadyBeth_Our_crew_3");
-	LAi_SetActorType(sld);
-	LAi_ActorAnimation(sld, "death_8", "1", 4.5);
 	LaunchBlood(sld, 1.0, true, "fight");
 	LaunchBlood(sld, 1.0, true, "fight");
-	//LAi_KillCharacter(sld);
+	SetCharacterActionAnimation(sld, "dead", "death_8");
+	LAi_KillCharacter(sld);
 	sld = CharacterFromID("LadyBeth_Our_crew_4");
-	LAi_SetActorType(sld);
-	LAi_ActorAnimation(sld, "death_5", "1", 5.3);
 	LaunchBlood(sld, 1.0, true, "fight");
 	LaunchBlood(sld, 1.0, true, "fight");
-	//LAi_KillCharacter(sld);
+	SetCharacterActionAnimation(sld, "dead", "death_5");
+	LAi_KillCharacter(sld);
 	PlaySound("People Fight\Death_NPC_03.wav");
 	//LAi_SetActorType(pchar);
 	//LAi_ActorAnimation(pchar, "hit_fire", "1", 1.8);
 	//LaunchBlood(pchar, 1.0, true, "fight");
 	//LaunchBlood(pchar, 1.0, true, "fight");
 	//Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp) - stf(Pchar.chr_ai.hp)/10;
-	DoQuestFunctionDelay("LadyBeth_CaimanKino_15", 2.0);
-	DoQuestFunctionDelay("LadyBeth_CaimanBitva_2", 2.5);
-}
-
-void LadyBeth_CaimanKino_15(string qName)
-{
-	locCameraFromToPos(50.21, 11.67, -166.00, true, 47.52, 8.41, -140.27);
+	DoQuestFunctionDelay("LadyBeth_CaimanBitva_2", 2.2);
 }
 
 void LadyBeth_CaimanBitva_2(string qName)
 {
 	EndQuestMovie();
-	locCameraTarget(PChar);
-	locCameraFollow();
+	locCameraFollowEx(true);
 	LAi_SetPlayerType(pchar);
 	LAi_SetFightMode(pchar, true);
 	DeleteAttribute(pchar, "questTemp.NoFast");
 	PlaySound("interface\abordage_wining.wav");
 	PlaySound("interface\abordage_wining.wav");
-	DoQuestFunctionDelay("LadyBeth_Souzniki_1", 90.0);
+	DoQuestFunctionDelay("LadyBeth_Souzniki_1", 45.0);
 	
 	sld = CharacterFromID("LadyBeth_Blackwood");
 	ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "boss");
 	
-	if (CheckAttribute(pchar, "questTemp.LadyBeth_LiteGroup"))
+	for (i=1; i<=60; i++)
 	{
-		for (i=1; i<=14; i++)
+		if (CharacterIsAlive("LadyBeth_Our_crew_"+i))
 		{
 			sld = CharacterFromID("LadyBeth_Our_crew_"+i);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		}
-		sld = CharacterFromID("LadyBeth_Alonso");
-		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
+	sld = CharacterFromID("LadyBeth_Alonso");
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	
 	if (CheckAttribute(pchar, "questTemp.LadyBeth_StrongGroup"))
 	{
-		for (i=1; i<=20; i++)
-		{
-			sld = CharacterFromID("LadyBeth_Our_crew_"+i);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-		}
-		sld = CharacterFromID("LadyBeth_Alonso");
-		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		sld = CharacterFromID("LadyBeth_Our_Golovorez");
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "bruteForce"))
+		{
+			sld = CharacterFromID("LadyBeth_Bruteforce_1");
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = CharacterFromID("LadyBeth_Bruteforce_2");
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+		}
+		// Чуваки от перков боцмана
+		if (CheckOfficersPerk(pchar, "ambuscade"))
+		{
+			sld = CharacterFromID("LadyBeth_Ambuscade_1");
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = CharacterFromID("LadyBeth_Ambuscade_2");
+			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+		}
 	}
 	for(int i=1; i<=3; i++)
 	{
@@ -1136,15 +1221,6 @@ void LadyBeth_CaimanBitva_2(string qName)
 		sld = &Characters[idx];
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
-	//трупы убитых
-	sld = CharacterFromID("LadyBeth_Our_crew_3");
-	sld.model.animation = "man_dead";
-	Characters_RefreshModel(sld);
-	LAi_KillCharacter(sld);
-	sld = CharacterFromID("LadyBeth_Our_crew_4");
-	sld.model.animation = "man_dead";
-	Characters_RefreshModel(sld);
-	LAi_KillCharacter(sld);
 	
 	AutoSave();
 }
@@ -1152,16 +1228,16 @@ void LadyBeth_CaimanBitva_2(string qName)
 void LadyBeth_Souzniki_1(string qName)
 {
 	//союзное подкрепление
-	for (i=31; i<=42; i++)
+	for (i=31; i<=43; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Our_crew_"+i, "citiz_3"+(rand(8)+1), "man", "man", 6, sti(pchar.nation), 0, false, "soldier"));
 		FantomMakeCoolFighter(sld, 6, 30, 30, "blade_10", "pistol1", "bullet", 30);
+		ForceAdaptiveLevel(sld, 7, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		if (i >= 31 && i <= 34) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_1");
 		if (i >= 35 && i <= 38) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_2");
-		if (i >= 39 && i <= 42) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
+		if (i >= 39 && i <= 43) ChangeCharacterAddressGroup(sld, "Caiman_Jungle_01", "quest", "our_3");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
-		RemoveItems(sld, "potion1", 10);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
 	PlaySound("interface\abordage_wining.wav");
@@ -1369,7 +1445,7 @@ void LadyBeth_BossEtap(string qName)
 			LAi_CharacterDisableDialog(sld);
 			LAi_SetWarriorType(sld);
 			LAi_warrior_SetStay(sld, true);
-			LAi_SetHP(sld, 40.0, 40.0);
+			LAi_SetHP(sld, 80.0, 80.0);
 			RemoveItems(sld, "potion1", 10);
 			LAi_group_MoveCharacter(sld, "LadyBeth_Enemy");
 		}
@@ -1496,8 +1572,8 @@ void LadyBeth_PobedaInJungles_3(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, 0, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
-		sld.name 	= StringFromKey("SharlieTrial_29");
-		sld.lastname = StringFromKey("SharlieTrial_30");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
 		TeleportCharacterToPosAy(sld, 20.23, 17.00, -110.28, 2.50);
 		LAi_CharacterEnableDialog(sld);
@@ -1840,8 +1916,8 @@ void LadyBeth_ShipInShore_17(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Alonso", "Alonso", "man", "man", 15, pchar.nation, -1, false, "pirate"));
 		FantomMakeCoolFighter(sld, 15, 70, 70, "blade_13", "pistol6", "bullet", 300);
-		sld.name 	= StringFromKey("SharlieTrial_29");
-		sld.lastname = StringFromKey("SharlieTrial_30");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, pchar.location, "officers", "reload3_1");
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetActorType(sld);
@@ -1985,7 +2061,7 @@ void LadyBeth_ShipInShore_Vnutri_3(string qName)
 {
 	// Леди Бет входит в нашу эскадру
 	sld = GetCharacter(NPC_GenerateCharacter("LadyBeth_Companion", "mercen_15", "man", "man", 1, ENGLAND, -1, false, "quest"));
-	FantomMakeCoolSailor(sld, SHIP_LADYBETH, GetConvertStr("LadyBeth_Ship_Name", "LadyBeth.txt"), CANNON_TYPE_CANNON_LBS16, 70, 70, 70);
+	FantomMakeCoolSailor(sld, SHIP_LADYBETH, GetShipName("Lady Beth"), CANNON_TYPE_CANNON_LBS16, 70, 70, 70);
 	sld.Ship.Crew.Quantity = sti(sld.ship.Crew.Quantity) / 4;
 	sld.ship.Crew.Morale = 100;
 	SetSPECIAL(sld, 4, 2, 3, 4, 4, 2, 1);
@@ -2062,7 +2138,7 @@ void LadyBeth_ShipInShore_Vnutri_3(string qName)
 	SetTimerFunction("LadyBeth_CaimanReset", 0, 0, 1);
 	//ачивки
 	Achievment_Set("ach_CL_147");
-	if (sti(pchar.rank) <= 10) Achievment_Set("ach_CL_150");
+	if (sti(pchar.rank) <= 8) Achievment_Set("ach_CL_150");
 	//офицеры в норму
 	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary"))
 	{
@@ -2237,6 +2313,177 @@ void LadyBeth_VistrelSnizu2_function()
 	LAi_SetActorType(sld);
 	LAi_ActorSetGroundSitMode(sld);
 	LAi_SetCurHPMax(sld);
+}
+
+void LadyBeth_Test_Start_CaimanBitvaStrong()
+{
+	LAi_SetPlayerType(pchar);
+	InterfaceStates.Buttons.Save.enable = true;
+	bGameMenuStart = false;
+	RemoveAllCharacterItems(pchar, true);
+	AddMoneyToCharacter(pchar, 10000000);
+	pchar.rank = 8;
+	AddCharacterExpToSkill(pchar, "Sailing", 50000);
+	pchar.skill.FreeSPECIAL = sti(pchar.skill.FreeSPECIAL) + 25;
+	pchar.Skill.FreeSkill = sti(pchar.Skill.FreeSkill) + 1000;
+	pchar.perks.FreePoints_self = sti(pchar.perks.FreePoints_self) + 30;
+	pchar.perks.FreePoints_ship = sti(pchar.perks.FreePoints_ship) + 30;
+	GiveItem2Character(PChar, "blade_16");
+	GiveItem2Character(PChar, "blade_13");
+	EquipCharacterByItem(Pchar, "blade_13");
+	GiveItem2Character(PChar, "pistol5");
+	EquipCharacterByItem(Pchar, "pistol5");
+	GiveItem2Character(PChar, "cirass8");
+	GiveItem2Character(PChar, "cirass1");
+	EquipCharacterByItem(Pchar, "cirass1");
+	GiveItem2Character(PChar, "spyglass4");
+	EquipCharacterByItem(Pchar, "spyglass4");
+	GiveItem2Character(PChar, "talisman2");
+	GiveItem2Character(PChar, "talisman13");
+	EquipCharacterByItem(Pchar, "talisman13");
+	GiveItem2Character(PChar, "mushket3");
+	GiveItem2Character(PChar, "mushket5");
+	GiveItem2Character(PChar, "mushket8");
+	AddItems(Pchar, "cartridge", 50);
+	AddItems(Pchar, "grapeshot", 50);
+	AddItems(Pchar, "GunPowder", 50);
+	AddItems(Pchar, "potion4", 20);
+	LAi_SetCharacterUseBullet(Pchar, GUN_ITEM_TYPE, "cartridge");
+	AddItems(pchar, "gold_dublon", 500);
+	// Мой корабль
+	pchar.Ship.Type = GenerateShipExt(SHIP_PINK, true, pchar);
+	pchar.Ship.name = GetShipName("Principio");
+	SetSailsColor(pchar, 0); //белый хлопковый парус
+	SetBaseShipData(pchar);
+	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
+	SetCrewQuantityFull(pchar);
+	pchar.Ship.Crew.Morale = 100;
+	pchar.Ship.Crew.Exp.Sailors = 100;
+	pchar.Ship.Crew.Exp.Cannoners = 100;
+	pchar.Ship.Crew.Exp.Soldiers = 100;
+	SetCrewQuantityOverMax(pchar, 170);
+	UpgradeShipParameter(pchar, "SpeedRate"); //апгрейдить скорость
+	UpgradeShipParameter(pchar, "TurnRate");  //маневренность
+	UpgradeShipParameter(pchar, "HP");        //корпус
+	ChangeCrewExp(pchar, "Sailors", 100);
+	ChangeCrewExp(pchar, "Cannoners", 100);
+	ChangeCrewExp(pchar, "Soldiers", 100);
+	SetCharacterGoods(pchar, GOOD_BALLS, 400);
+	SetCharacterGoods(pchar, GOOD_GRAPES, 400);
+	SetCharacterGoods(pchar, GOOD_KNIPPELS, 400);
+	SetCharacterGoods(pchar, GOOD_BOMBS, 500);
+	SetCharacterGoods(pchar, GOOD_FOOD, 3000);
+	SetCharacterGoods(pchar, GOOD_POWDER, 2000);
+	SetCharacterGoods(pchar, GOOD_WEAPON, 500);
+	SetCharacterGoods(pchar, GOOD_MEDICAMENT, 500);
+	SetCharacterGoods(pchar, GOOD_RUM, 500);
+	setCharacterShipLocation(pchar, "Shore35");
+	setWDMPointXZ("Shore35");
+	// Томми
+	sld = InitTommy();
+	sld.quest.OfficerPrice = 15000;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.CompanionDisable = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+
+	sld.CanTakeMushket = true;
+	LAi_SetOfficerType(sld);
+	sld.dialog.filename = "Quest\BlackMark.c";
+	sld.Dialog.CurrentNode = "Irons_officer";
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	LAi_SetHP(sld, 170.0, 170.0);
+	// Тичингиту
+	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 20, FRANCE, -1, false, "quest"));
+	sld.name = GetCharacterName("Tichingitu");
+	sld.lastname = "";
+	sld.greeting = "Tichingitu";
+	sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
+	sld.dialog.currentnode = "Tichingitu";
+	sld.rank = 20;
+	LAi_SetHP(sld, 200.0, 200.0);
+	SetSPECIAL(sld, 4, 9, 5, 5, 10, 8, 8);
+	SetSelfSkill(sld, 50, 50, 50, 70, 50);
+	SetShipSkill(sld, 30, 30, 30, 30, 50, 30, 50, 50, 30);
+	SetCharacterPerk(sld, "Energaiser");
+	SetCharacterPerk(sld, "BasicDefense");
+	SetCharacterPerk(sld, "AdvancedDefense");
+	SetCharacterPerk(sld, "CriticalHit");
+	SetCharacterPerk(sld, "Tireless");
+	SetCharacterPerk(sld, "HardHitter");
+	SetCharacterPerk(sld, "Gunman");
+	SetCharacterPerk(sld, "GunProfessional");
+	AddItems(sld, "mushket1", 1);
+	sld.CanTakeMushket = true;
+	GiveItem2Character(sld, "blade_10");
+	sld.equip.blade = "blade_10";
+	GiveItem2Character(sld, "pistol1");
+	sld.equip.gun = "pistol1";
+	GiveItem2Character(sld, "cirass1");
+	EquipCharacterbyItem(sld, "cirass1");
+	AddItems(sld, "cartridge", 50);
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.CompanionDisable = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	LAi_SetOfficerType(sld);
+	sld.dialog.currentnode = "Tichingitu_officer";
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	AddItems(sld, "potion2", 10);
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+
+	// Дюран
+	sld = InitDuran();
+	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	EquipCharacterByArtefact(sld, "indian_1");
+	EquipCharacterByArtefact(sld, "indian_7");
+	EquipCharacterByArtefact(sld, "indian_4");
+	GiveItem2Character(sld, "blade_12");
+	sld.equip.blade = "blade_12";
+	GiveItem2Character(sld, "pistol1");
+	EquipCharacterbyItem(sld, "pistol1");
+	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
+	TakeNItems(sld, "bullet", 20);
+	AddItems(sld, "gunpowder", 20);
+	sld.greeting = "Duran_officer";
+	LAi_SetOfficerType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+
+	ForceHeroAutolevel(sld);
+
+	//Телепорт
+	pchar.questTemp.LadyBeth_StrongGroup = true;
+	setCharacterShipLocation(pchar, "Shore17");
+	DoFunctionReloadToLocation("Shore17", "reload", "sea", "LadyBeth_CaimanBuhta_3");
+	//выключить сторонние квесты
+	PChar.quest.Red_Chieftain.over = "yes";
+	PChar.quest.False_Trace.over = "yes";
+	PChar.quest.FalseTrace_Prepare.over = "yes";
+	//Остальное
+	locations[FindLocation("Caiman_Jungle_01")].DisableEncounters = true;
+	locations[FindLocation("Shore16")].DisableEncounters = true;
+	locations[FindLocation("Shore17")].DisableEncounters = true;
+	pchar.TestMode.OFFCutscenes = true;
 }
 
 //=======================================================

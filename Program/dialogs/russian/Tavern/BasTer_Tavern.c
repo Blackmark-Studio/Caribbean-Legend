@@ -125,7 +125,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "С документами? Разумеется, всё в полном порядке. Вы же не собираетесь в них заглядывать?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
@@ -156,7 +156,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Пожалуй, я смогу сделать вам скидку. Но это ещё не всё. Я хочу стать вашим поставщиком на постоянной основе. Гарантирую - никаких накладок с поставками не будет. Я арендую склад в Бас-Тере, и вы будете получать товар прямо оттуда, без задержек. Там всегда будет достаточно спиртного, чтобы предвосхитить любого рода перебои. Что до суммы - с учётом скидки она составит двести сорок дублонов. Что скажете?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{
@@ -222,7 +222,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Конечно, капитан! Итак, сколько вы хотите за вашу партию?";
 				link.l1 = "За каждую десятку бутылок вина я хочу получить по тридцать дублонов, за ром - по пять дублонов. Вся партия из ста бутылок рома и такого же количества вина обойдётся вам в триста пятьдесят дублонов.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{

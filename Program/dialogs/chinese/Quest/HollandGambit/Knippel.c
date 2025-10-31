@@ -310,6 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Knippel_ToOfficer_1":
+			ForceHeroAutolevel(npchar);
 			LocatorReloadEnterDisable("SentJons_town", "reload1_back", false);
 			LocatorReloadEnterDisable("SentJons_town", "reload2_back", false);
 			LocatorReloadEnterDisable("SentJons_town", "gate_back", false);//打开定位器
@@ -449,7 +450,7 @@ void ProcessDialogEvent()
 			npchar.OfficerImmortal = true;
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			AddPassenger(pchar, npchar, false);
 			SetCharacterRemovable(npchar, true);
 			npchar.Payment = true;
@@ -460,6 +461,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "Knippel_officer";
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
+			ForceHeroAutolevel(npchar);
 			
 			// Sinistra - 两个月后启动查理.克尼佩尔的个人任务"旧罪的长影"
 			SetTimerCondition("DTSG_Start", 0, 0, 60, false);

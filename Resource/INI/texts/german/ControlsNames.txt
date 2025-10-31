@@ -189,3 +189,5 @@ TimeScale {Zeit beschleunigen/verlangsamen}
 TimeScaleFasterBA {Zeit beschleunigen}
 TimeScaleSlowerBA {Zeit verlangsamen}
 FireCamera_Set {Zielansicht}
+WMapDrawCircle {Gefechtsgebiet}
+InterfaceTakeAll {Nehmt alles}

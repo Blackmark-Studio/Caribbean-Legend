@@ -77,7 +77,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_officer_5":
-            dialog.text = "I'm sorry, there seems to be nothing to translate as the original text is empty. Could you please provide the text that needs translation?"+GetFullName(pchar)+"wspaniale. Idź zobaczyć się z don Diegiem de Toledo i poproś go o radę. Pamiętaj, masz tylko trzy dni, pogoń za 'Cantavro' będzie bezcelowa po tym czasie. Uwolnij mnie, a dam ci wszystko, czego potrzebujesz, by rozprawić się z tym łajdakiem, Cabanasem.";
+            dialog.text = ""+GetFullName(pchar)+" wspaniale. Idź zobaczyć się z don Diegiem de Toledo i poproś go o radę. Pamiętaj, masz tylko trzy dni, pogoń za 'Cantavro' będzie bezcelowa po tym czasie. Uwolnij mnie, a dam ci wszystko, czego potrzebujesz, by rozprawić się z tym łajdakiem, Cabanasem.";
 			link.l1 = "Natychmiast udam się do gubernatora, don Lope. Zrobię wszystko, co w mojej mocy, aby rozwiązać tę sytuację dla naszego wspólnego dobra.";
 			link.l1.go = "Mtr_officer_6";
 		break;
@@ -88,7 +88,7 @@ void ProcessDialogEvent()
 			LAi_CharacterDisableDialog(npchar);
 			AddQuestRecord("Roger_1", "8");
 			SetFunctionTimerCondition("Mtraxx_TimeclearPrison", 0, 0, 4, false); // таймер
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			AddLandQuestMark(characterFromId("Havana_Mayor"), "questmarkmain");
 		break;
 		
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_officer_8":
-            dialog.text = "Dobrze. Podczas naszego poprzedniego patrolu natknęliśmy się na sztorm, który zmusił nas do porzucenia kursu. Wylądowaliśmy na plaży Zachodniego Lądu, niedaleko Wybrzeża Komarów, aby zdobyć trochę świeżej wody. Znaleźliśmy tam dobre złoże niebieskiego bursztynu. Zrobiłem trochę rozpoznania i znalazłem jego stos pod wodą. Potrzebowaliśmy lepszego sprzętu, aby go zebrać, dlatego postanowiliśmy wrócić później.\nEsberdo kupił pięć długich łodzi w Hawanie dla Indian, aby nurkowali i zbierali bursztyn. Resztę historii znasz - drań się mnie pozbył i odpłynął. Znajdź go na Wybrzeżu Komarów na północ od Blueweld i pośpiesz się - według moich obliczeń masz tylko około siedmiu dni, aby tam dotrzeć. Mam nadzieję, że złapiesz tego sukinsyna w trakcie zbierania, zabierzesz cały jego bursztyn i zadźgasz go w brzuch wielokrotnie. Ale bądź ostrożny, mój były kapitan to doświadczony wojownik i marynarz. Powodzenia, señor.";
+            dialog.text = "Dobrze. Podczas naszego poprzedniego patrolu natknęliśmy się na sztorm, który zmusił nas do porzucenia kursu. Wylądowaliśmy na plaży Zachodniego Kontynentu, niedaleko Wybrzeża Komarów, aby zdobyć trochę świeżej wody. Znaleźliśmy tam dobre złoże niebieskiego bursztynu. Zrobiłem trochę rozpoznania i znalazłem jego stos pod wodą. Potrzebowaliśmy lepszego sprzętu, aby go zebrać, dlatego postanowiliśmy wrócić później.\nEsberdo kupił pięć szalup w Hawanie dla Indian, aby nurkowali i zbierali bursztyn. Resztę historii znasz - drań się mnie pozbył i odpłynął. Znajdź go na Wybrzeżu Komarów na północ od Blueweld i pośpiesz się - według moich obliczeń masz tylko około siedmiu dni, aby tam dotrzeć. Mam nadzieję, że złapiesz tego sukinsyna w trakcie zbierania, zabierzesz cały jego bursztyn i zadźgasz go w brzuch wielokrotnie. Ale bądź ostrożny, mój były kapitan to doświadczony wojownik i marynarz. Powodzenia, señor.";
 			link.l1 = "Nawzajem, Lope. Żegnaj!";
 			link.l1.go = "Mtr_officer_9";
 		break;
@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "1300 pesos za rzut. Myślę, że to dobra cena.";
-			link.l1 = "Tak, a Tyrex chce dwadzieścia złotych monet za beczkę. Ani grosza mniej. I mam na myśli dubloony. Dał mi zadanie znaleźć odpowiedniego kupca za tę cenę.";
+			link.l1 = "Tak, a Tyrex chce 4 złotych monet za beczkę. Ani grosza mniej. I mam na myśli dublony. Dał mi zadanie znaleźć odpowiedniego kupca za tę cenę.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -248,7 +248,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_5":
-            dialog.text = "Dwa miesiące?! Co do diabła? A, do cholery z tym. 'Wąż' rzeczywiście potrzebuje naprawy i czyszczenia, bo inaczej nie dogoni nawet barki. Hej, francuskie dziwki! Załoga Łysego Geffreya zostaje w Capsterville na dwa miesiące! Ha-ha-ha!... No, powodzenia, przyjacielu, w tych bezsensownych poszukiwaniach. Jeśli znajdziesz idiotę gotowego zapłacić cenę Marcusa za ten cholerny jedwab - wiesz, gdzie mnie znaleźć.";
+            dialog.text = "Dwa miesiące?! Co do diabła? A, do cholery z tym. 'Snake' rzeczywiście potrzebuje naprawy i czyszczenia, bo inaczej nie dogoni nawet barki. Hej, francuskie dziwki! Załoga Łysego Geffreya zostaje w Capsterville na dwa miesiące! Ha-ha-ha!... No, powodzenia, przyjacielu, w tych bezsensownych poszukiwaniach. Jeśli znajdziesz idiotę gotowego zapłacić cenę Marcusa za ten cholerny jedwab - wiesz, gdzie mnie znaleźć.";
 			link.l1 = "Czekaj! Daj mi jedną rolkę tego jedwabiu. Muszę pokazać towar potencjalnym kupcom.";
 			link.l1.go = "Jeffry_6";
 		break;
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Jeffry_8";
 			pchar.questTemp.Mtraxx = "silk_2";
 			AddCharacterGoods(pchar, GOOD_SHIPSILK, 1);
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			SetFunctionTimerCondition("Mtraxx_SilkTimeOver", 0, 0, 61, false); // таймер
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "Jak się masz, kumplu?";
-			link.l1 = "Świetnie sobie radzę. Znalazłem nam kupca. Dwadzieścia pięć doblonów za beczkę. Wierzę, że Tyrexowi się spodoba.";
+			link.l1 = "Świetnie sobie radzę. Znalazłem nam kupca. 5 dublonów za beczkę. Wierzę, że Tyrexowi się spodoba.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -296,7 +296,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_11":
-            dialog.text = "Handlarz z Lyonu. Rozumiem. Powinienem powiedzieć mojemu kwatermistrzowi, by to zapisał, tylko on tutaj potrafi pisać. Ha-ha!";
+            dialog.text = "Kupiec z Lyonu. Rozumiem. Powinienem powiedzieć mojemu kwatermistrzowi, by to zapisał, tylko on tutaj potrafi pisać. Ha-ha!";
 			link.l1 = "Czy masz sto rulonów w ładowni?";
 			link.l1.go = "Jeffry_12";
 		break;
@@ -308,7 +308,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_13":
-            dialog.text = "Odpocznij, kumplu, wszystko będzie zrobione tak, jak powinno być zrobione.";
+            dialog.text = "Spokojnie, kumplu, wszystko będzie zrobione tak, jak powinno być zrobione.";
 			link.l1 = "Szczęśliwej drogi, Geffrey. Być może, spotkamy się ponownie.";
 			link.l1.go = "Jeffry_14";
 		break;
@@ -324,8 +324,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_15":
-            dialog.text = "Ho-ho-ho! Przebiegły Charlie Prince, we własnej osobie! Miło cię znowu widzieć, stary druhu!";
-			link.l1 = "Łysy Geffrey! Mówiłeś, że Charlie Prince? Ha!";
+            dialog.text = "Ho-ho-ho! Przebiegły Charlie Książe, we własnej osobie! Miło cię znowu widzieć, stary druhu!";
+			link.l1 = "Łysy Geffrey! Mówiłeś, że Charlie Książe? Ha!";
 			link.l1.go = "Jeffry_15x";
 		break;
 		
@@ -404,7 +404,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_25":
-            dialog.text = "Nah. To było Barbados? Książę, czemu się tak martwisz? Im nas więcej, tym szybciej przeniesiemy skarby!";
+            dialog.text = "Nah. To było na Barbadosie? Książę, czemu się tak martwisz? Im nas więcej, tym szybciej przeniesiemy skarby!";
 			link.l1 = "To mi się nie podoba. Nie wierzę w takie przypadki. Czyżby to ojciec Camilli napisał ten dziennik?";
 			link.l1.go = "Jeffry_26";
 		break;
@@ -417,12 +417,12 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_27":
             dialog.text = "Heh... Książę, za dużo myślisz. Chodźmy na poszukiwanie skarbów. No dalej!";
-			link.l1 = "Nie trzeba. Już ich znalazłem... Są na dole w lochu, za żelaznymi kratami. Będziemy musieli je złamać. Posłuchaj Geffrey, jest jeszcze jedna rzecz! Pelly Szabla też tu był!";
+			link.l1 = "Nie trzeba. Już ich znalazłem... Są na dole w lochu, za żelaznymi kratami. Będziemy musieli je złamać. Posłuchaj Geffrey, jest jeszcze jedna rzecz! Pelly Tasak też tu był!";
 			link.l1.go = "Jeffry_28";
 		break;
 		
 		case "Jeffry_28":
-            dialog.text = "Szabla? No to mamy szczęśliwy dzień! Ale gdzie on teraz jest?";
+            dialog.text = "Tasak? No to mamy szczęśliwy dzień! Ale gdzie on teraz jest?";
 			link.l1 = "Na dole... martwy. Spotkałem go niedaleko skarbu. Oszalał, zaczął krzyczeć z chciwości. Potem on i jego towarzysze zaatakowali mnie.";
 			link.l1.go = "Jeffry_29";
 		break;
@@ -447,8 +447,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jeffry_32":
-            //PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
-			dialog.text = "Co za spektakl! To ogromna kupa złota! Teraz rozumiem, dlaczego Cutlass oszalał. Mamy wielkie szczęście, książę! Jak myślisz, ile złota tu znajdziemy?";
+            PlaySound("Voice\English\LE\Jeffry\Jeffry_gold.wav");
+			dialog.text = "Co za spektakl! To ogromna kupa złota! Teraz rozumiem, dlaczego Tasak oszalał. Mamy wielkie szczęście, książę! Jak myślisz, ile złota tu znajdziemy?";
 			link.l1 = "Wiele. Dowiemy się na pewno, gdy uporamy się z tymi kratami.";
 			link.l1.go = "Jeffry_33";
 		break;
@@ -467,7 +467,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_35":
             PlaySound("Voice\English\LE\Jeffry\Jeffry_mozila.wav");
-			dialog.text = RandSwear()+"Co za cholerny cymbał!";
+			dialog.text = RandSwear()+" Co za cholerny cymbał!";
 			link.l1 = "Ty pieprzona żmijo!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_RetributionJeffryFight");
@@ -477,13 +477,13 @@ void ProcessDialogEvent()
 		case "Billy":
 			pchar.quest.Mtraxx_BillySeaTimeOver.over = "yes"; //снять таймер
 			PlaySound("VOICE\English\LE\Billy\Billy_01.wav");
-            dialog.text = "Niech mnie rekin pożre, jeśli to się wydarzyło na 'Latającej Rybce' w tym roku... chłopcy, mamy tu gościa! Co takiego złego w twym życiu, że postanowiłeś odwiedzić mój stary koryto?";
+            dialog.text = "Niech mnie rekin pożre, jeśli to się wydarzyło na 'Latającej Rybce' w tym roku... chłopcy, mamy tu gościa! Co takiego złego w twym życiu, że postanowiłeś odwiedzić moje stare koryto?";
 			link.l1 = "Witaj! Ty jesteś tym, którego zwą Husky Billy, prawda?";
 			link.l1.go = "Billy_1";
 		break;
 		
 		case "Billy_1":
-            dialog.text = "Nie poznajesz głosu, kapitanie? Dawno temu potrafił sprawić, że brytyjscy i hiszpańscy kupcy trzęśli portkami. To były wspaniałe czasy!... Teraz stary Billy czeka na koniec swojego życia u wybrzeży swojej ulubionej wyspy na swojej cennej łodzi...";
+            dialog.text = "Nie poznajesz głosu, kapitanie? Dawno temu potrafiłem sprawić, że brytyjscy i hiszpańscy kupcy trzęśli portkami. To były wspaniałe czasy!... Teraz stary Billy czeka na koniec swojego życia u wybrzeży swojej ulubionej wyspy na swojej cennej łodzi...";
 			link.l1 = "Mam dla ciebie interes, Billy. Powiedziano mi, że znasz wszystko, co dzieje się tutaj wokół Jamajki. Czy to prawda?";
 			link.l1.go = "Billy_2";
 		break;
@@ -529,7 +529,7 @@ void ProcessDialogEvent()
 			pchar.quest.mtr_billy_coast.function = "Mtraxx_BillyOnCoast";
 			locations[FindLocation("shore35")].DisableEncounters = true; //энкаутеры закрыть
 			npchar.DontDeskTalk = true;
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 		break;
 		
 		case "Billy_8":
@@ -540,7 +540,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Billy_9":
-            dialog.text = "Więc, kapitanie, co z moją nowiutką łodzią długą?";
+            dialog.text = "Więc, kapitanie, co z moją nowiutką szalupą?";
 			if(Companion_CheckShipType(SHIP_TARTANE) && GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0)
 			{
 				link.l1 = "Zrobione, Husky. Jest dostarczona wraz z belą jedwabiu okrętowego w jej ładowni. Jesteś wolny, by zatopić swoją starą łódź.";
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Billy_12":
-            dialog.text = "Szkoda, mogliśmy wypić za mój świeżo zdobyty 'Latający Ryba'! Nieważne... Słuchaj, synu\nBrygantyna pod angielską banderą przypływa do Portland Cove w środku każdego miesiąca, gdzieś pomiędzy 10 a 15 dniem. Żadnego rumu dla mnie aż do śmierci, jeśli ona naprawdę jest angielska! Nazywa się 'Utrecht' i przypływa z południowego-zachodu, gdzie leży Curacao. To wyraźnie holenderski statek kapitanie, możesz to zobaczyć\nZawsze ta sama grupa ludzi spotyka ich na brzegu, prowadzona przez głównego mistrza tego przebiegłego szkutnika. On jest odbiorcą jedwabiu okrętowego, który Holendrzy tam rozładowują. Jestem pewien, że to jedwab okrętowy, ponieważ tylko Holendrzy pakują go w ten sposób.";
+            dialog.text = "Szkoda, mogliśmy wypić za moją świeżą zdobytą 'Latający Ryba'! Nieważne... Słuchaj, synu\nBrygantyna pod angielską banderą przypływa do Portland Cove w środku każdego miesiąca, gdzieś pomiędzy 10 a 15 dniem. Żadnego rumu dla mnie aż do śmierci, jeśli ona naprawdę jest angielska! Nazywa się 'Utrecht' i przypływa z południowego-zachodu, gdzie leży Kurakao. To wyraźnie holenderski statek kapitanie, możesz to zobaczyć\nZawsze ta sama grupa ludzi spotyka ich na brzegu, prowadzona przez głównego mistrza tego przebiegłego szkutnika. On jest odbiorcą jedwabiu okrętowego, który Holendrzy tam rozładowują. Jestem pewien, że to jedwab okrętowy, ponieważ tylko Holendrzy pakują go w ten sposób.";
 			link.l1 = "Co miesiąc, powiadasz?";
 			link.l1.go = "Billy_13";
 		break;
@@ -678,13 +678,13 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_1":
             dialog.text = "Widziałeś coś, co się wydarzyło na pobliskim morzu?";
-			link.l1 = "Aj, mam. Jakaś brygantyna wdała się w bój z angielskim patrolowym korwetą. Brytyjczycy mocno ich uderzyli, Holendrzy pozbyli się ładunku próbując uciec.";
+			link.l1 = "Aj, mam. Jakaś brygantyna wdała się w bój z angielskim patrolowym okrętem. Brytyjczycy mocno ich uderzyli, Holendrzy pozbyli się ładunku próbując uciec.";
 			link.l1.go = "Mtr_acceptor_2";
 		break;
 		
 		case "Mtr_acceptor_2":
-            dialog.text = "Skąd ta pewność, że była Holenderką? Żaden Holender przy zdrowych zmysłach nawet nie pomyśli o zbliżeniu się tak blisko Port Royal...";
-			link.l1 = " Miała angielskie barwy, lecz nazwa... 'Utrecht'. Niezbyt brytyjska, co? Mówię ci, byli to Holendrzy, może nawet przemytnicy. Patrol zapewne się ich spodziewał.";
+            dialog.text = "Skąd ta pewność, że byli Holendrami? Żaden Holender przy zdrowych zmysłach nawet nie pomyśli o zbliżeniu się tak blisko Port Royal...";
+			link.l1 = " Miał angielskie barwy, lecz nazwa... 'Utrecht'. Niezbyt brytyjska, co? Mówię ci, byli to Holendrzy, może nawet przemytnicy. Patrol zapewne się ich spodziewał.";
 			link.l1.go = "Mtr_acceptor_3";
 		break;
 		
@@ -743,7 +743,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_4_6":
             dialog.text = "Czekaj!";
-			link.l1 = "Caramba!  Co teraz?";
+			link.l1 = "Karamba!  Co teraz?";
 			link.l1.go = "Mtr_acceptor_4_7";
 		break;
 		
@@ -762,7 +762,7 @@ void ProcessDialogEvent()
 		case "Mtr_acceptor_4_9":
 			i = GetSquadronGoods(pchar, GOOD_SHIPSILK);
             dialog.text = "Dwa tysiące pięćset za rolkę. To dobra cena, lepszej nie znajdziesz.";
-			link.l1 = "Wygląda na to, że mi się poszczęściło! Mam "+FindRussianQtyString(i)+"Pokaż mi pieniądze, a rozkażę dostarczyć je na brzeg natychmiast.";
+			link.l1 = "Wygląda na to, że mi się poszczęściło! Mam "+FindRussianQtyString(i)+". Pokaż mi pieniądze, a rozkażę dostarczyć je na brzeg natychmiast.";
 			if (i > 80) link.l1.go = "Mtr_acceptor_4_11";
 			else link.l1.go = "Mtr_acceptor_4_10";
 		break;
@@ -796,13 +796,13 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_2":
             dialog.text = "Naprawdę? A jak sobie wyobrażasz, że nam pomożesz? Będziesz dostarczał nam co miesiąc partię stu bochenków?";
-			link.l1 = "„Ja? Hmm, raczej nie, ale Marcus Tyrex by tak zrobił. Słyszałeś o nim?”";
+			link.l1 = "Ja? Hmm, raczej nie, ale Marcus Tyrex by tak zrobił. Słyszałeś o nim?";
 			link.l1.go = "Mtr_acceptor_5_3";
 		break;
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "K-ha! Więc, jesteś piratem?";
-			link.l1 = "Nie, tylko załatwiam z nimi interesy przy specjalnych okazjach. Wiem na pewno, że Marcus regularnie otrzymuje partie jedwabiu okrętowego i sprzedaje je każdemu, kto może sobie na to pozwolić. I nie mówię tutaj o 2500 peso za rolkę, powiedziałbym, że jeśli możesz zapłacić mu 25 dublonów w złocie za każdą rolkę, to cię w nich utopi, możesz na to liczyć.";
+			link.l1 = "Nie, tylko załatwiam z nimi interesy przy specjalnych okazjach. Wiem na pewno, że Marcus regularnie otrzymuje partie jedwabiu okrętowego i sprzedaje je każdemu, kto może sobie na to pozwolić. I nie mówię tutaj o 2500 peso za rolkę, powiedziałbym, że jeśli możesz zapłacić mu 5 dublonów w złocie za każdą rolkę, to cię w nich utopi, możesz na to liczyć.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -813,8 +813,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_5_5":
-            dialog.text = "Bardzo dobrze. Zróbmy interes. Oto nasze warunki: partia stu zwojów co miesiąc między 10 a 15. Będziemy tu czekać... czekaj, zmieńmy miejsce spotkania, to miejsce jest teraz zagrożone. Będziemy czekać na Przylądku Negril, w pobliżu miasta Maroon, tam powinno być bezpieczniej. Hasło - 'Kupiec z Lyonu'.";
-			link.l1 = "Umowa stoi, przyjacielu. Co za piekielna podróż to była! Tyrax zapłaci mi dukata lub dwa za takiego kupca! Ha-ha! Bardzo dobrze, muszę iść. Czekaj na statek Tyraxa w przyszłym miesiącu. Powodzenia tobie i twojej rodzinie!";
+            dialog.text = "Bardzo dobrze. Zróbmy interes. Oto nasze warunki: partia stu zwojów co miesiąc między 10 a 15. Będziemy tu czekać... czekaj, zmieńmy miejsce spotkania, to miejsce jest teraz zagrożone. Będziemy czekać na Przylądku Negril, w pobliżu miasta Bordowego, tam powinno być bezpieczniej. Hasło - 'Kupiec z Lyonu'.";
+			link.l1 = "Umowa stoi, przyjacielu. Co za piekielna podróż to była! Tyrex zapłaci mi dukata lub dwa za takiego kupca! Ha-ha! Bardzo dobrze, muszę iść. Czekaj na statek Tyrexa w przyszłym miesiącu. Powodzenia tobie i twojej rodzinie!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_CargoSilkWin");
 		break;
@@ -874,7 +874,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_7_5":
             dialog.text = "A kimże jest ten człowiek?";
-			link.l1 = "Marcus Tyrex, baron La Vega, lepiej znany jako Strażnik Kodu. Stale otrzymuje partie jedwabiu okrętowego, więc zawsze ma coś na sprzedaż. Przypuszczam, że rozważy sprzedaż tobie również, jeśli zapłacisz wystarczająco dużo.";
+			link.l1 = "Marcus Tyrex, baron La Vega, lepiej znany jako Strażnik Kodeksu. Stale otrzymuje partie jedwabiu okrętowego, więc zawsze ma coś na sprzedaż. Przypuszczam, że rozważy sprzedaż tobie również, jeśli zapłacisz wystarczająco dużo.";
 			link.l1.go = "Mtr_acceptor_7_6";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Dwadzieścia pięć doublonów za rzut. To najlepsza cena, jaką możesz dostać, uwierz mi na słowo.";
-			link.l1 = "Dwadzieścia pięć złotych monet? Hm. Nieźle. Wierzę, że Tyrex będzie mi dużo winien za takiego kupca. Bardzo dobrze, powiadomię go. Jednakże, jeśli skłamałeś mi o cenie, to twoja dupa będzie na szali.";
+            dialog.text = "5 pięć doublonów za rzut. To najlepsza cena, jaką możesz dostać, uwierz mi na słowo.";
+			link.l1 = "5 pięć złotych monet? Hm. Nieźle. Wierzę, że Tyrex będzie mi dużo winien za takiego kupca. Bardzo dobrze, powiadomię go. Jednakże, jeśli skłamałeś mi o cenie, to twoja dupa będzie na szali.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -903,7 +903,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_10":
-            dialog.text = "Powiedz Tyreksowi, że może przywieźć więcej ładunku tym razem, zostaliśmy bez jedwabiu na ten miesiąc.";
+            dialog.text = "Powiedz Tyrexowi, że może przywieźć więcej ładunku tym razem, zostaliśmy bez jedwabiu na ten miesiąc.";
 			link.l1 = "Zrobię to. Niech ci sprzyja wiatr, przyjacielu.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_CargoSilkWin");
@@ -913,7 +913,7 @@ void ProcessDialogEvent()
 		// Тесак Пелли
 		case "Pelly":
             dialog.text = "Ahoy! Co cię sprowadza na pokład mojej łajby, przyjacielu?";
-			link.l1 = "Hej, Szabla. Marcus Tyrex mnie przysłał. Marsz do Maracaibo na nas czeka.";
+			link.l1 = "Hej, Tasak. Marcus Tyrex mnie przysłał. Marsz do Marakaibo na nas czeka.";
 			link.l1.go = "Pelly_1";
 		break;
 		
@@ -925,12 +925,12 @@ void ProcessDialogEvent()
 		
 		case "Pelly_2":
             dialog.text = "Rozkazy, Admirale "+GetFullName(pchar)+"?";
-			link.l1 = "Popłyniemy osobno do Jeziora Maracaibo. Powinieneś tam dotrzeć nocą i potajemnie wylądować w Zatoce Guajira. Poczekaj tam na mnie, a w międzyczasie załóż mały obóz. Ja natomiast wyląduję w hiszpańskim porcie.";
+			link.l1 = "Popłyniemy osobno do Jeziora Marakaibo. Powinieneś tam dotrzeć nocą i potajemnie wylądować w Zatoce Guajira. Poczekaj tam na mnie, a w międzyczasie załóż mały obóz. Ja natomiast wyląduję w hiszpańskim porcie.";
 			link.l1.go = "Pelly_3";
 		break;
 		
 		case "Pelly_3":
-            dialog.text = "Aye-aye, Admiral!";
+            dialog.text = "Aye-aye, Admirale!";
 			link.l1 = "Ile czasu zajmie ci dotarcie tam?";
 			link.l1.go = "Pelly_4";
 		break;
@@ -986,13 +986,13 @@ void ProcessDialogEvent()
 		
 		case "Pelly_7_1":
             dialog.text = "Słuchaj, Admirale, myślałem...";
-			link.l1 = "Co to, Terrax płaci ci za myślenie zamiast machania tą szablą, co, Cutlass?";
+			link.l1 = "Co to, Tyrex płaci ci za myślenie zamiast machania tą szablą, co, Tasak?";
 			link.l1.go = "Pelly_35";
 		break;
 		
 		case "Pelly_8":
             dialog.text = "Ho! Bunt na plantacji, czyż nie, admirale? Płomienie! Zdobędziemy z tego trochę złota!..";
-			link.l1 = "Potrzebuję skrzyni na brzegu, Cutlass.";
+			link.l1 = "Potrzebuję skrzyni na brzegu, Tasak.";
 			link.l1.go = "Pelly_9";
 		break;
 		
@@ -1045,7 +1045,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_15":
-            dialog.text = "Admirale, Marcus będzie na ciebie wściekły. Nie idź do niego teraz. Ja odlatuję. Ty też powinieneś.";
+            dialog.text = "Admirale, Marcus będzie na ciebie wściekły. Nie idź do niego teraz. Ja spadam. Ty też powinieneś.";
 			link.l1 = "Tak...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_PlantFailFinal");
@@ -1059,7 +1059,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_17":
             dialog.text = "Trzy statki. Mnóstwo dział. Jesteśmy w dupie."; // лесникПОСЛЕДНЕЕ
-			link.l1 = "Zobaczymy.";// Жан, ты отправляйся на борт к Тесаку. Тесак, поднимешь испанский флаг и на всех парусах прочь отсюда - глядишь, за торговца сойдёшь. А я пойду прямо на испанцев - отвлеку их от вас. Увидимся в Ла Веге у Тиракса.";
+			link.l1 = "Zobaczymy." //Jean, ty wsiadasz na pokład Tasaka. Tasak, podnieś hiszpańską banderę i odpłyń stąd – możesz nawet uchodzić za kupca. A ja od razu popłynę do Hiszpanów – odciągnę ich od ciebie. Do zobaczenia w La Vega;
 			link.l1.go = "Pelly_181";
 		break;
 		case "Pelly_181":
@@ -1071,7 +1071,7 @@ void ProcessDialogEvent()
 		break;
 		case "Pelly_182":
 		   dialog.text = ""; 
-		   link.l1 = "Jean, idź na statek Cutlassa.";
+		   link.l1 = "Jean, idź na statek Tasaka.";
 		   link.l1.go = "Pelly_183"; 
 		break;
 		case "Pelly_183":
@@ -1089,7 +1089,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_19":
             dialog.text = "Ale...";
-			link.l1 = "Żadnych ale! Szabla, to twoja skóra na szali, jeśli Picard nie dotrze na miejsce Tyrexa. Wszyscy na pokład!";
+			link.l1 = "Żadnych ale! Tasak, to twoja głowa będzie na szali, jeśli Picard nie dotrze na miejsce Tyrexa. Wszyscy na pokład!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_PlantSeaEscape");
 		break;
@@ -1116,7 +1116,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_23":
             dialog.text = "Ho-ho! Witaj, Książę. Co cię sprowadza na Tortugę?";
-			link.l1 = "Zadanie od Markusa znowu. Słuchaj, Szabliński, dlaczego ten drań, co mieszka w tym domu, nie wpuszcza mnie?";
+			link.l1 = "Zadanie od Markusa znowu. Słuchaj, Tasaku, dlaczego ten drań, co mieszka w tym domu, nie wpuszcza mnie?";
 			link.l1.go = "Pelly_24";
 		break;
 		
@@ -1134,7 +1134,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_26":
             dialog.text = "Ha-ha! To kłamca ci to powiedział, idź i napluj mu w bezwstydne oczy. Gaspard zajmuje się tylko biżuterią, zawsze tak było. Po co mu kłopoty z cudzymi pieniędzmi?";
-			link.l1 = "Rozumiem. Dziękuję, Szabla, do zobaczenia na morzu!";
+			link.l1 = "Rozumiem. Dziękuję, Tasak, do zobaczenia na morzu!";
 			link.l1.go = "Pelly_27";
 			link.l2 = "Hmm, rzeczywiście. Więc, kupuje błyskotki? Interesujące... Mówisz, że możesz za mną poręczyć?";
 			link.l2.go = "Pelly_27z";
@@ -1155,14 +1155,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_28z":
-            dialog.text = "Wszystko jest załatwione! Teraz Złotozębny wie, że Charlie Prince może do niego przyjść, aby sprzedać świecidełka. Pamiętaj tylko, że jego cena, choć dobra, jest wciąż niższa niż to, co płacą ci skąpi lichwiarze. Ale on kupuje wszystko na tony! I bez zbędnych pytań, jak już mówiłem.";
+            dialog.text = "Wszystko jest załatwione! Teraz Złotozębny wie, że Charlie Książe może do niego przyjść, aby sprzedać świecidełka. Pamiętaj tylko, że jego cena, choć dobra, jest wciąż niższa niż to, co płacą ci skąpi lichwiarze. Ale on kupuje wszystko na tony! I bez zbędnych pytań, jak już mówiłem.";
 			link.l1 = "To mój przystojny chłopak! Świetna robota, Paul! Teraz mam miejsce, żeby wyładować cały łup!";
 			link.l1.go = "Pelly_29z";
 		break;
 		
 		case "Pelly_29z":
-            dialog.text = "Nie, Jean Picard to 'Przystojniak', ja jestem 'Szabla', haha! Żegnaj, Książę!";
-			link.l1 = "Dzięki, Szabla, powodzenia na morzu!";
+            dialog.text = "Nie, Jean Picard to 'Przystojniak', ja jestem 'Tasak', haha! Żegnaj, Książę!";
+			link.l1 = "Dzięki, Tasak, powodzenia na morzu!";
 			link.l1.go = "Pelly_27";
 		break;
 		
@@ -1184,7 +1184,7 @@ void ProcessDialogEvent()
 		case "Pelly_30":
 			PlaySound("VOICE\English\LE\Pelly\Pelly_04.wav");
             dialog.text = "Alle hagel! Co do cholery robisz tutaj, Książę?";
-			link.l1 = "Szabla?.. Podążałem za głosami i hałasem, ale nigdy bym nie pomyślał, że to będziesz ty. Jak do diabła tutaj trafiłeś?";
+			link.l1 = "Tasak?.. Podążałem za głosami i hałasem, ale nigdy bym nie pomyślał, że to będziesz ty. Jak do diabła tutaj trafiłeś?";
 			link.l1.go = "Pelly_31";
 			QuestPointerDelLoc("Judgement_dungeon_01", "reload", "reload2_back");
 			QuestPointerDelLoc("Judgement_dungeon_02", "reload", "reload2");
@@ -1194,14 +1194,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_31":
-            dialog.text = "Nie, dlaczego tu jesteś! Zawsze kręcisz się wokół! Tyrax musiał cię wysłać po ten skarb, prawda? Caramba, znowu jestem spóźniony...";
-			link.l1 = "Tyrax? Nie... Kupiłem mapę od jednej dziewki. Pewnie sprzedała ci kopię, co? Na Tortudze? Co za przebiegła suka. Ale nie kłamała - spójrz na tę kupę złota! Wrócę z większą ekipą, żeby to wszystko przetransportować...";
+            dialog.text = "Nie, dlaczego tu jesteś! Zawsze kręcisz się wokół! Tyrex musiał cię wysłać po ten skarb, prawda? Karamba, znowu jestem spóźniony...";
+			link.l1 = "Tyrex? Nie... Kupiłem mapę od jednej dziewki. Pewnie sprzedała ci kopię, co? Na Tortudze? Co za przebiegła suka. Ale nie kłamała - spójrz na tę kupę złota! Wrócę z większą ekipą, żeby to wszystko przetransportować...";
 			link.l1.go = "Pelly_32";
 		break;
 		
 		case "Pelly_32":
-            dialog.text = "Do diabła, to kupa złota! Ale nie twoja ani Tyreksa! To ja ją znalazłem pierwszy! Jest moja! Nie ma znaczenia, jak się o niej dowiedziałem! To nie twoja sprawa!";
-			link.l1 = "Spokojnie, Szablo, czemuś tak wściekły? Spójrz na tę kupę - musi tam być milion. Może nawet więcej! Wystarczy dla nas obu!";
+            dialog.text = "Do diabła, to kupa złota! Ale nie twoja ani Tyrexa! To ja ją znalazłem pierwszy! Jest moja! Nie ma znaczenia, jak się o niej dowiedziałem! To nie twoja sprawa!";
+			link.l1 = "Spokojnie, Tasaku, czemuś tak wściekły? Spójrz na tę kupę - musi tam być milion. Może nawet więcej! Wystarczy dla nas obu!";
 			link.l1.go = "Pelly_33";
 		break;
 		
@@ -1212,7 +1212,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_34":
-            dialog.text = "Chcesz mnie rozwalić, Książę? Nie ma mowy! Nie dam ci ani monety, ani jednego ginea! Jesteś spóźniony!\nA-ah, widzę, co kombinujesz! Nie ma mowy, że dostaniesz to złoto!!!";
+            dialog.text = "Chcesz mnie rozwalić, Książę? Nie ma mowy! Nie dam ci ani monety, ani jednego! Jesteś spóźniony!\nA-ah, widzę, co kombinujesz! Nie ma mowy, że dostaniesz tego złota!!!";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_RetributionPellyFight");
@@ -1238,7 +1238,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_38":
             dialog.text = "Mamy. Dlatego... dlaczego go nie kupić? Oficjalnie, to jest. Garść złota może kupić każdego z tych drani - nawet ich własne matki. Co tu mówić o biednym Jeanie?";
-			link.l1 = "Ha! Szabla, czy naprawdę sugerujesz, że mam wejść na plantację i zapytać o kupno Picarda? Czy powinienem też powiedzieć im, dla kogo pracuję, dla zabawy? Straciłeś rozum?";
+			link.l1 = "Ha! Tasak, czy naprawdę sugerujesz, że mam wejść na plantację i zapytać o kupno Picarda? Czy powinienem też powiedzieć im, dla kogo pracuję, dla zabawy? Straciłeś rozum?";
 			link.l1.go = "Pelly_39";
 		break;
 		
@@ -1250,7 +1250,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_40":
             dialog.text = "Może i tak. Ale lepiej rozstać się ze złotem niż z głową. Nie próżnowałem, gdy byłeś na lądzie - przebrałem się w coś mniej pirackiego i wypytałem o plantację i jej skromnego właściciela.";
-			link.l1 = "A co znalazłeś, Szablo?";
+			link.l1 = "A co znalazłeś, Tasaku?";
 			link.l1.go = "Pelly_41";
 		break;
 		
@@ -1267,7 +1267,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_43":
-            dialog.text = "Plantatorzy, czego się spodziewaliście?";
+            dialog.text = "Plantatorzy, czego się spodziewałeś?";
 			link.l1 = "Za tę cenę mógłbym wyposażyć małą armię! Czemu do diabła gromadzę na statku arsenał na bunt? Tego wystarczy na małą wojnę.";
 			link.l1.go = "Pelly_44";
 		break;
@@ -1278,15 +1278,15 @@ void ProcessDialogEvent()
 			{
 				if (PCharDublonsTotal() >= 500)
 				{
-					link.l1 = "(Godny zaufania) Powiem tylko, że będzie zabawnie, jeśli nagroda od Terraxa będzie mniejsza niż to, co tu wydajemy. Ale masz rację - nasze życie jest warte więcej. Mam dubloony.";
+					link.l1 = "(Godny zaufania) Powiem tylko, że będzie zabawnie, jeśli nagroda od Tyrexa będzie mniejsza niż to, co tu wydajemy. Ale masz rację - nasze życie jest warte więcej. Mam dubloony.";
 					link.l1.go = "Pelly_45";
 				}
 				link.l2 = "Nie mam teraz takiej złotej góry.";
 				link.l2.go = "Pelly_44_1";
-				notification("Trustworthy", "Trustworthy");
+				notification("Jesteś godny zaufania", "Trustworthy");
 			}
-			else notification("Perk Check Failed", "Trustworthy");
-			link.l3 = "Wiesz co, Cutlass? Zapomnij o tym. Jesteśmy piratami, czy nie? A Jean? Czy jego ładna buźka to jedyny jego atut? Przygotuj skrzynię - trzymamy się oryginalnego planu.";
+			else notification("Nie jesteś godny zaufania", "Trustworthy");
+			link.l3 = "Wiesz co, Tasak? Zapomnij o tym. Jesteśmy piratami, czy nie? A Jean? Czy jego ładna buźka to jedyny jego atut? Przygotuj skrzynię - trzymamy się oryginalnego planu.";
 			link.l3.go = "Pelly_62";
 		break;
 		
@@ -1306,14 +1306,14 @@ void ProcessDialogEvent()
 			}
 			link.l2 = "Jeszcze nad tym pracuję, Szabla.";
 			link.l2.go = "exit";
-			link.l3 = "Nie oddam moich ciężko zarobionych pieniędzy tym chciwym plantatorom! Przygotujcie skrzynię - będziemy działać jak Dżentelmeni Fortuny. To moja decyzja.";
+			link.l3 = "Nie oddam moich ciężko zarobionych pieniędzy tym chciwym plantatorom! Przygotujcie skrzynię - będziemy działać jak Panowie Fortuny. To moja decyzja.";
 			link.l3.go = "Pelly_9";
 			NextDiag.TempNode = "Pelly_44_2";
 		break;
 		
 		case "Pelly_45":
             dialog.text = "Oho. Jesteś nowy w naszej załodze, a już rzucasz się na takie pieniądze!";
-			link.l1 = "Pieniądze to nie wszystko. Ale pławić się w chwale Terraxa? Bezcenne.";
+			link.l1 = "Pieniądze to nie wszystko. Ale pławić się w chwale Tyrexa? Bezcenne.";
 			link.l1.go = "Pelly_46";
 			pchar.questTemp.mtraxx_PlantVykup = true;
 		break;
@@ -1465,7 +1465,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_62":
-            dialog.text = "Hmm, jak sobie życzysz, Admirale. Ale jeśli coś się stanie Przystojnemu, upewnię się, że Terrax dowie się, że zignorowałeś moją radę. Wszystko gotowe do ucieczki?";
+            dialog.text = "Hmm, jak sobie życzysz, Admirale. Ale jeśli coś się stanie Przystojnemu, upewnię się, że Tyrex dowie się, że zignorowałeś moją radę. Wszystko gotowe do ucieczki?";
 			link.l1 = "Pozwól, że jeszcze raz sprawdzę i policzę, co mam w skrzyni.";
 			link.l1.go = "Pelly_63";
 		break;
@@ -1477,14 +1477,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Pelly_64":
-            dialog.text = "Mam kontakt, handlarza bronią w Maracaibo. Przebiorę się, wkradnę, zapłacę mu i zorganizuję przemyt broni tutaj. Ale to cię będzie kosztować - złote dublony, żeby być dokładnym.";
+            dialog.text = "Mam kontakt, handlarza bronią w Marakaibo. Przebiorę się, wkradnę, zapłacę mu i zorganizuję przemyt broni tutaj. Ale to cię będzie kosztować - złote dublony, żeby być dokładnym.";
 			link.l1 = "A dlaczego nie przedstawiłeś mi tego gościa wcześniej? Ile mnie to będzie kosztować?";
 			link.l1.go = "Pelly_65";
 		break;
 		
 		case "Pelly_65":
             dialog.text = "Czy powinienem przedstawić ci wszystkich moich informatorów również? Dobrze. Z wydatkami, ryzykiem i moim udziałem... to kosztuje mniej więcej tyle samo co okup za Przystojnego.";
-			link.l1 = "Szabla, bój się Boga...";
+			link.l1 = "Tasak, bój się Boga...";
 			link.l1.go = "Pelly_66";
 		break;
 		
@@ -1521,7 +1521,7 @@ void ProcessDialogEvent()
 				link.l1 = "W końcu wystarczy! Weź to i załatw to już - działa mi to na nerwy.";
 				link.l1.go = "Pelly_68";
 			}
-			link.l2 = "Zważaj na ton, Cutlass. Jestem gotów, ale potrzebuję więcej czasu, aby zebrać pieniądze.";
+			link.l2 = "Zważaj na ton, Tasak. Jestem gotów, ale potrzebuję więcej czasu, aby zebrać pieniądze.";
 			link.l2.go = "Pelly_67";
 			link.l3 = "To zbyt drogie za niewielką partię broni, którą mogę kupić hurtowo znacznie taniej! Nie, dzięki, poradzę sobie sam.";
 			link.l3.go = "Pelly_67_1";
@@ -1582,12 +1582,12 @@ void ProcessDialogEvent()
 		
 		case "rocur_4":
             dialog.text = "Cóż, tutaj jest bezpiecznie... Jak masz na imię, bracie?";
-			link.l1 = "Kapitanie "+GetFullName(pchar)+"Teraz powiedz mi, jak wpakowałeś się w to gówno. Tyrex chce wiedzieć wszystko.";
+			link.l1 = "Kapitanie "+GetFullName(pchar)+". Teraz powiedz mi, jak wpakowałeś się w to gówno. Tyrex chce wiedzieć wszystko.";
 			link.l1.go = "rocur_5";
 		break;
 		
 		case "rocur_5":
-            dialog.text = "Podszedł do mnie nieznajomy w tawernie w Willemstad... Poprosił mnie, bym został jego towarzyszem w grabieniu jakiegoś holenderskiego karawanu. Miałem brygantynę, on miał polakrę, bardzo wyjątkową zresztą. Więc ścigaliśmy karawanę niedaleko Caracas i ją splądrowaliśmy... Była noc, dzieliliśmy łupy, gdy w ciemności pojawiła się ogromna hiszpańska galeona\nMój towarzysz uciekł i ja również. Ale nie było szans, by moja uszkodzona brygantyna uciekła przed galeoną i dwoma innymi okrętami. Zajęli nas i sprzedali wszystkich ocalałych do tego miejsca jak bydło.";
+            dialog.text = "Podszedł do mnie nieznajomy w tawernie w Willemstad... Poprosił mnie, bym został jego towarzyszem w grabieniu jakiegoś holenderskiego karawanu. Miałem brygantynę, on miał polakrę, bardzo wyjątkową zresztą. Więc ścigaliśmy karawanę niedaleko Karakas i ją splądrowaliśmy... Była noc, dzieliliśmy łupy, gdy w ciemności pojawiła się ogromny hiszpański galeon\nMój towarzysz uciekł i ja również. Ale nie było szans, by moja uszkodzona brygantyna uciekła przed galeonem i dwoma innymi okrętami. Zajęli nas i sprzedali wszystkich ocalałych do tego miejsca jak bydło.";
 			link.l1 = "Rozumiem. Myślisz, że to był wypadek? Mówię o galeonie.";
 			link.l1.go = "rocur_6";
 		break;
@@ -1611,14 +1611,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rocur_9":
-            dialog.text = "Jakie są twoje liczby?";
-			link.l1 = "Moja łajba, barkentyna i ludzie Pelly'ego Szabli. Moja jednostka stacjonuje w porcie Maracaibo. Szabla wylądował w Zatoce Guajira i założył tam obóz.";
+            dialog.text = "Jakie są twoje siły?";
+			link.l1 = "Moja łajba, barkentyna i ludzie Pelly'ego Tasaka. Moja jednostka stacjonuje w porcie Maracaibo. Tasak wylądował w Zatoce Guajira i założył tam obóz.";
 			link.l1.go = "rocur_10";
 		break;
 		
 		case "rocur_10":
             dialog.text = "Hmm...";
-			link.l1 = "Cóż, spodziewałeś się, że Tyrex wyśle tutaj okręt liniowy?";
+			link.l1 = "Co? Zawiedziony? Spodziewałeś się, że Tyrex wyśle tutaj okręt liniowy?";
 			link.l1.go = "rocur_11";
 		break;
 		
@@ -1630,7 +1630,7 @@ void ProcessDialogEvent()
 		
 		case "rocur_12":
             dialog.text = "Nie ma szans na ucieczkę stąd - ta plantacja jest zbyt dobrze strzeżona, a wokół są dzikie dżungle. Nie ma sensu jej szturmować, nie masz wystarczająco ludzi, a w pobliżu jest fort.";
-			link.l1 = "Może ty i twoi chłopcy możecie nam pomóc od środka? Uderzcie ich mocno od tyłu.";
+			link.l1 = "Może ty i twoi chłopcy możecie nam pomóc od środka? Uderzyć ich mocno od tyłu.";
 			link.l1.go = "rocur_13";
 		break;
 		
@@ -1653,7 +1653,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rocur_16":
-            dialog.text = "Kapitánie, czy naprawdę masz zamiar to zrobić?";
+            dialog.text = "Kapitanie, czy naprawdę masz zamiar to zrobić?";
 			link.l1 = "Jestem. Przybyłem tutaj celowo, żarty nie są częścią tego. Czego jeszcze mógłbyś potrzebować?";
 			link.l1.go = "rocur_17";
 		break;
@@ -1819,7 +1819,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rocur_35":
-            dialog.text = "Kapitanie, bardzo przepraszam za moje słowa, ale dlaczego, do cholery, nie jesteśmy jeszcze w Meridzie? Co? Splunąłeś na naszą wspólną sprawę! Leprechaun i ja odchodzimy bez ciebie. Wyjaśnię wszystko Tyreksowi, a ty powinieneś iść. Oto, weź 50 000 pesos za twoją pomoc w Maracaibo, pożyczyłem je od przyjaciół. Pożegnanie, cholerny wstyd, myślałem o tobie lepiej.";
+            dialog.text = "Kapitanie, bardzo przepraszam za moje słowa, ale dlaczego, do cholery, nie jesteśmy jeszcze w Meridzie? Co? Splunąłeś na naszą wspólną sprawę! Leprechaun i ja odchodzimy bez ciebie. Wyjaśnię wszystko Tyrexowi, a ty powinieneś iść. Oto, weź 50 000 pesos za twoją pomoc w Marakaibo, pożyczyłem je od przyjaciół. Pożegnanie, cholerny wstyd, myślałem o tobie lepiej.";
 			link.l1 = "Hmm... Przykro mi.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_MeridaTimeOverFail");
@@ -2064,26 +2064,26 @@ void ProcessDialogEvent()
 			pchar.quest.mtraxx_pasq_gonaiv.function = "Mtraxx_PasqualeJanGonaiv";
 			SetFunctionTimerCondition("Mtraxx_PasqualeJanTimer", 0, 0, 10, false); // правки прогона 3
 			SetFunctionTimerCondition("Mtraxx_PasqualeJanTimeOver", 0, 0, 15, false);
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			pchar.questTemp.Mtraxx.Pasquale.Grabbing = "true";
 		break;
 		
 		case "rocur_57":
 			if (pchar.location.from_sea != "Shore34")
 			{
-				dialog.text = RandSwear()+"Gdzie jest twój statek? Przybyłeś tu z La Vega? Merde! Prosiłem cię, byś przybył tu niepostrzeżenie i w tajemnicy. Mój plan jest teraz zrujnowany. Cholera!";
+				dialog.text = RandSwear()+" Gdzie jest twój statek? Przybyłeś tu z La Vega? Merde! Prosiłem cię, byś przybył tu niepostrzeżenie i w tajemnicy. Mój plan jest teraz zrujnowany. Cholera!";
 				link.l1 = "Hm...";
 				link.l1.go = "rocur_58";
 			}
 			if (GetOfficersQuantity(pchar) > 0)
 			{
-				dialog.text = "Jesteś tu, "+pchar.name+" . Dobrze, że jesteś tutaj. Odeślij swoich ludzi z powrotem na statek. To prywatna rozmowa.";
+				dialog.text = "Jesteś tu, "+pchar.name+". Dobrze, że jesteś tutaj. Odeślij swoich ludzi z powrotem na statek. To prywatna rozmowa.";
 				link.l1 = "Bardzo dobrze.";
 				link.l1.go = "rocur_59";
 			}
 			else
 			{
-				dialog.text = "O, jesteś , "+pchar.name+" . Dobrze, że jesteś tutaj. Mam dla ciebie pewną sprawę. Gotów, by jej wysłuchać?";
+				dialog.text = "O, jesteś , "+pchar.name+". Dobrze, że jesteś tutaj. Mam dla ciebie pewną sprawę. Gotów, by jej wysłuchać?";
 				link.l1 = "Jasne!";
 				link.l1.go = "rocur_61";
 			}
@@ -3015,13 +3015,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Godny zaufania) (Honor) (Przywództwo) Wystarczy krwi na dzisiaj, Jean. Zajmę się tym sam.";
 				link.l1.go = "merida_head_dobro_1";
-				notification("Trustworthy", "Trustworthy");
-				notification("Reputation Check Passed", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 71, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
@@ -3380,7 +3380,7 @@ void ProcessDialogEvent()
 		
 		case "spy_sailor":
             dialog.text = "Kapitanie! Kapitanie! Pośpiesz się! Hiszpańska eskadra wojskowa nas ściga!";
-			link.l1 = RandSwear()+"Spodziewałem się tego... To samo przydarzyło się Picardowi. Widziałeś, ilu z nich tam było?";
+			link.l1 = RandSwear()+" Spodziewałem się tego... To samo przydarzyło się Picardowi. Widziałeś, ilu z nich tam było?";
 			link.l1.go = "spy_sailor_1";
 		break;
 		
@@ -3421,7 +3421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "carpenter_2":
-            dialog.text = "Co ty tu robisz, kapitanie "+GetFullName(pchar)+"Nie zapraszamy gości do tego miejsca!";
+            dialog.text = "Co ty tu robisz, kapitanie "+GetFullName(pchar)+". Nie zapraszamy gości do tego miejsca!";
 			link.l1 = "Jak się zwiesz? Chcę wiedzieć, z kim rozmawiam.";
 			link.l1.go = "carpenter_3";
 		break;
@@ -3433,7 +3433,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "carpenter_4":
-            dialog.text = RandSwear()+"Wulfric... Aahhh-ghhhhh!!! ... Ale jak mogę wiedzieć, że mówisz prawdę?";
+            dialog.text = RandSwear()+" Wulfric... Aahhh-ghhhhh!!! ... Ale jak mogę wiedzieć, że mówisz prawdę?";
 			link.l1 = "Mam dziennik twojego byłego kapitana! Mamy kilka przedmiotów z wraku Freyi. Dzięki dziennikowi znalazłem tę wyspę i te... twoje skarby.";
 			link.l1.go = "carpenter_5";
 		break;
@@ -3561,7 +3561,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.IslaMona") && pchar.questTemp.IslaMona == "dublon_wait" && PCharDublonsTotal() >=600)
 			{
-				link.l1 = "Przyniosłem dubloony dla ciebie, tylko nie przepij ich wszystkich od razu.";
+				link.l1 = "Przyniosłem dublony dla ciebie, tylko nie przepij ich wszystkich od razu.";
 				link.l1.go = "IslaMona_24";
 				break;
 			}
@@ -3659,8 +3659,8 @@ void ProcessDialogEvent()
 		//------------------------------------------------------------ Исла Мона ------------------------------------
 		case "IslaMona":
 			sTemp = "";
-			if (GetCharacterIndex("Mirabella") != -1) sTemp = ", not accounting for your woman";
-            dialog.text = "Trudno powiedzieć, Kapitanie. Świętej pamięci Wulfric nigdy nie zostawiał tu więcej niż dwudziestu ludzi. Teraz jest nas tylko trzech,"+sTemp+"Niewiele możemy zrobić.";
+			if (GetCharacterIndex("Mirabella") != -1) sTemp = ", nie biorąc pod uwagę twojej kobiety, ";
+            dialog.text = "Trudno powiedzieć, Kapitanie. Świętej pamięci Wulfric nigdy nie zostawiał tu więcej niż dwudziestu ludzi. Teraz jest nas tylko trzech,"+sTemp+"niewiele możemy zrobić.";
 			link.l1 = "Czy chcesz powiedzieć, że gdyby mieszkało tu więcej ludzi, mógłbyś przekształcić to miejsce w pełnoprawną osadę?";
 			link.l1.go = "IslaMona_1";
 		break;
@@ -3771,7 +3771,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("IslaMona", "3");
 			RemoveItems(pchar, "islamona_toolbox", 1);
 			pchar.questTemp.IslaMona = "rumours";
-			AddRumor("They say some criminals have been cast out to one of the uninhabited islands! It seems they're such fierce monsters that even the executioner and the holy fathers wouldn't want to deal with them! But why do they always bring such people to us?!", 1, "all", "none", 0, (2022 - STARTGAME_YEAR) * 365, "IslaMona_TerksRumour", "none");
+			AddRumor("Podobno kilku przestępców wypędzono na jedną z bezludnych wysp! Wygląda na to, że to tak dzikie potwory, że nawet kat i święci ojcowie nie chcieliby mieć z nimi do czynienia! Ale dlaczego zawsze przyprowadzają do nas takich ludzi?!", 1, "all", "none", 0, (2022 - STARTGAME_YEAR) * 365, "IslaMona_TerksRumour", "none");
 		break;
 		
 		case "IslaMona_12":
@@ -3867,7 +3867,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "nobility", 10);
 			AddCharacterExpToSkill(pchar, "Leadership", 500);
 			AddQuestRecord("IslaMona", "7");
-            dialog.text = "Kapitanie, jestem gotów zacząć od razu, ale moi ludzie będą pracować znacznie ciężej, gdy zobaczą dubloony w swoich rękach. Obiecuję, że nie zostawimy ani kawałka niezbadanej ziemi na tej wyspie.";
+            dialog.text = "Kapitanie, jestem gotów zacząć od razu, ale moi ludzie będą pracować znacznie ciężej, gdy zobaczą dublony w swoich rękach. Obiecuję, że nie zostawimy ani kawałka niezbadanej ziemi na tej wyspie.";
 			if (PCharDublonsTotal() >= 600)
 			{
 				link.l1 = "Dobrze. Oto twoje złoto. Tylko nie zmarnuj go od razu na trunki.";
@@ -3888,7 +3888,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_24":
 			RemoveDublonsFromPCharTotal(600);
-			Log_Info("You gave away 600 doubloons");
+			Log_Info("Oddałeś 600 dublonów");
 			PlaySound("interface\important_item.wav");
             dialog.text = "Ha-ha! Masz rację, kapitanie! Och, prawie zapomniałem. Teraz mieszka tu całkiem sporo ludzi i potrzebują czegoś do jedzenia. Widziałeś te damy? Nie są przyzwyczajone do przetrwania i żywienia się z ziemi. Nie będą żadną pomocą.";
 			link.l1 = "Tylko nie mów mi, że będę musiał znaleźć więcej bukanierów, żeby ci pomóc.";
@@ -4036,8 +4036,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "IslaMona_44":
-            dialog.text = "Captain, when you build the factory, the slaves will need protection. My guys will take care of that. One of them even shoots like Thor with lightning. Nothing motivates work like a hunting scope. We already have one gun; now we need a second. Any musket will do.";
-			link.l1 = "I'm sorry, I need the English text to perform the translation. Could you provide the text you want translated?";
+            dialog.text = "Kapitanie, kiedy zbudujesz fabrykę, niewolnicy będą potrzebować ochrony. Moi ludzie się tym zajmą. Jeden z nich strzela nawet tak dobrze, jak Thor piorunami. Nic tak nie motywuje do pracy jak luneta myśliwska. Mamy już jedną broń; teraz potrzebujemy drugiej. Każdy muszkiet się nada.";
+			link.l1 = "Dobrze, poszukam wam czegoś z prywatnej skrytki...";
 			link.l1.go = "IslaMona_45";
 		break;
 		
@@ -4124,7 +4124,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_57":
             dialog.text = "Co się stało, k-k-kapitanie? Nie podoba ci się kolor ścian?";
-			link.l1 = "Dopiero teraz uświadomiłem sobie, że wy dwaj macie takie samo imię! Ha-ha-ha! Hiszpan i pirat, z tym samym imieniem, zbudowali tawernę na bezludnej wyspie i piją razem, jakby bogowie indyjscy mieli pożreć wszystkich i zakończyć świat o wschodzie słońca! Ha-ha! Jestem z wami!";
+			link.l1 = "Dopiero teraz uświadomiłem sobie, że wy dwaj macie takie samo imię! Ha-ha-ha! Hiszpan i pirat, z tym samym imieniem, zbudowali karczmę na bezludnej wyspie i piją razem, jakby bogowie indyjscy mieli pożreć wszystkich i zakończyć świat o wschodzie słońca! Ha-ha! Jestem z wami!";
 			link.l1.go = "IslaMona_58";
 		break;
 		
@@ -4153,7 +4153,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "IslaMona_62":
-            dialog.text = "Proste - zbudujemy kilka chat na plaży. W ten sposób będą biegać z tawerny do brzegu. Przypomnienie, ta wyspa nie pomieści więcej niż trzysta osób, więc miej to na uwadze na przyszłość. Czasami poprosimy cię, byś przyniósł rum i wino, więc byłoby wspaniale, gdybyś ty, Kapitanie, mógł z wyprzedzeniem zaopatrzyć magazyn w te towary.";
+            dialog.text = "Proste - zbudujemy kilka chat na plaży. W ten sposób będą biegać z karczmy do brzegu. Przypomnienie, ta wyspa nie pomieści więcej niż trzysta osób, więc miej to na uwadze na przyszłość. Czasami poprosimy cię, byś przyniósł rum i wino, więc byłoby wspaniale, gdybyś ty, Kapitanie, mógł z wyprzedzeniem zaopatrzyć magazyn w te towary.";
 			link.l1 = "Zapamiętam to. No cóż, compadre. Zabaw Hiszpanów i odpocznij. Tylko proszę, nie pij do momentu, aż cała wioska spłonie - nie zniosłabym tego widoku!";
 			link.l1.go = "IslaMona_63";
 		break;
@@ -4695,7 +4695,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Kapitanie, zabierz całą jej załogę na swój okręt flagowy, z wyjątkiem oficera.";
 				Link.l1 = "Ach, racja! Zrobię to!";
@@ -4710,21 +4710,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+            LeaveShipIslaMona(&NPChar);
 			dialog.text = "Bardzo dobrze, dostarczymy ją do bezpiecznej przystani.";
 			Link.l1 = "Doskonale!";
 			Link.l1.go = "carpenter_exit";
@@ -4761,6 +4747,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Cap, wygląda na to, że nie masz miejsca na kolejnego oficera.";
+				link.l1 = "Może masz rację. Wpadnę później — pilnuj tu, by nikt nie objął mojego okrętu.";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "Zabierasz ją?";
 			link.l1 = "Tak.";
@@ -5676,7 +5668,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "camilla_29":
-            dialog.text = "Chciałbym, książę, ale przygotowuję się do spowiedzi przed moim księdzem, więc muszę unikać wszelkich pokus teraz. Zróbmy to następnym razem.";
+            dialog.text = "Chciałabym, książę, ale przygotowuję się do spowiedzi przed moim księdzem, więc muszę unikać wszelkich pokus teraz. Zróbmy to następnym razem.";
 			link.l1 = "Ach, droczysz się ze mną, dziewczyno. Dobrze! Nie ma czasu do stracenia: zaraz podnosimy żagle. Przysięgam, podwoję twój udział, jeśli mapa twego ojca rzeczywiście doprowadzi mnie do złota.";
 			link.l1.go = "camilla_30";
 		break;
@@ -5717,13 +5709,13 @@ void ProcessDialogEvent()
 		
 		case "enrico_1":
 			PlaySound("Voice\English\LE\Zorro\Don_Enriko_02.wav");
-            dialog.text = "Jestem don Enrico. Angielska hołota nazywa mnie Lisem, Holendrzy mówią Vos, Francuzi Renaud. Lecz ja wolę moje hiszpańskie domowe przezwisko - Zorro. Karzę zło, które dręczy i terroryzuje pospólstwo, najmniej chronioną część ludu\nDzisiejszy proces osądzi czterech piratów Marcusa Tyrexa: Śmiałego Jeffry'ego, Pelly'ego Szabla, Luke'a Skrzata i Charlie'go Księcia - ci bandyci są odpowiedzialni za masakrę w Meridzie i Cartagenie. Ostatni drań, zwany Przystojnym Jeanem, nie pojawił się tutaj, musi być najmądrzejszy z waszej bandy.";
+            dialog.text = "Jestem don Enrico. Angielska hołota nazywa mnie Lisem, Holendrzy mówią Vos, Francuzi Renaud. Lecz ja wolę moje hiszpańskie domowe przezwisko - Zorro. Karzę zło, które dręczy i terroryzuje pospólstwo, najmniej chronioną część ludu\nDzisiejszy proces osądzi czterech piratów Marcusa Tyrexa: Śmiałego Jeffry'ego, Pelly'ego Tasaka, Luke'a Leprekuna i Charlie'go Księcia - ci bandyci są odpowiedzialni za masakrę w Meridzie i Kartagenie. Ostatni drań, zwany Przystojnym Jeanem, nie pojawił się tutaj, musi być najmądrzejszy z waszej bandy.";
 			link.l1 = "Co?!";
 			link.l1.go = "enrico_2";
 		break;
 		
 		case "enrico_2":
-            dialog.text = "Ty jesteś szumowiną, Charlie Prince, ale nie jesteś idiotą. Już to rozgryzłem, myślę. To pułapka na ciebie, ustawiona przeze mnie przy pomocy fałszywych map, dokumentów, słów i obietnic złota i srebra. Zwabiłem was wszystkich do tych lochów, gdzie zniszczyliście się nawzajem pod wpływem waszych obrzydliwych cech: zazdrości, chciwości, nikczemności i bezwzględności. To była prawdziwa i sprawiedliwa zemsta!";
+            dialog.text = "Ty jesteś szumowiną, Charlie Książe, ale nie jesteś idiotą. Już to rozgryzłem, myślę. To pułapka na ciebie, ustawiona przeze mnie przy pomocy fałszywych map, dokumentów, słów i obietnic złota i srebra. Zwabiłem was wszystkich do tych lochów, gdzie zniszczyliście się nawzajem pod wpływem waszych obrzydliwych cech: zazdrości, chciwości, nikczemności i bezwzględności. To była prawdziwa i sprawiedliwa zemsta!";
 			link.l1 = "Camilla... Powinienem był wiedzieć, że z tą dziewczyną coś jest nie tak!";
 			link.l1.go = "enrico_3";
 		break;
@@ -5744,14 +5736,14 @@ void ProcessDialogEvent()
             PlaySound("Voice\English\LE\Zorro\Don_Enriko_03.wav");
             if (CharacterIsAlive("Tonzag") && CheckPassengerInCharacter(pchar, "Tonzag"))
 			{
-				dialog.text = "Nie, Charlie Prince. Nie sięgaj po broń, to bezcelowe... Mógłbym cię łatwo zabić, jednak szybka śmierć to za mało dla takiego drania jak ty. Zostaniesz w tym lochu na zawsze. Drzwi, przez które tu wszedłeś, są zablokowane kamieniem z zewnątrz, drzwi za mną również będą zablokowane, a poza tym chronią je solidne kraty. To wszystko, nie ma wyjścia poza tymi dwoma drzwiami\nCo do... Zamknąłem wszystkie drzwi!";
+				dialog.text = "Nie, Charlie Książe. Nie sięgaj po broń, to bezcelowe... Mógłbym cię łatwo zabić, jednak szybka śmierć to za mało dla takiego drania jak ty. Zostaniesz w tym lochu na zawsze. Drzwi, przez które tu wszedłeś, są zablokowane kamieniem z zewnątrz, drzwi za mną również będą zablokowane, a poza tym chronią je solidne kraty. To wszystko, nie ma wyjścia poza tymi dwoma drzwiami\nCo do... Zamknąłem wszystkie drzwi!";
 				link.l1 = "Co się dzieje...";
 				link.l1.go = "exit";
 				AddDialogExitQuest("Mtraxx_RetributionEnricoAndTonzag");
 			}
 			else
 			{
-				dialog.text = "Nie, Charlie Prince. Nie chwytaj za broń, to bezcelowe... Mógłbym cię zabić łatwo, jednak szybka śmierć to za mało dla takiego drania jak ty. Zostaniesz w tej loch na zawsze. Drzwi, którymi tu wszedłeś, są zablokowane kamieniem z zewnątrz, drzwi za mną też będą zablokowane, poza tym chronią je solidne kraty. To wszystko, nie ma wyjścia poza tymi dwoma drzwiami\nPoniżej jest woda, więc będziesz miał dość czasu, by pomyśleć o swoich czynach. Samotny tutaj, w ciemności, być może pokutujesz za to, co zrobiłeś, zanim umrzesz z głodu lub oszalejesz\nJeszcze jedna rzecz - skarb poniżej to podróbka. Złote sztabki to nic innego jak kolorowany ołów. Doubloony są prawdziwe, ale jest ich tylko tyle, by pokryć kamienie w skrzyniach. Godny koniec dla piratów, co? Zabiliście się nawzajem dla fałszywego skarbu, Prince. Żegnaj teraz. Módl się za swoją grzeszną duszę, Charlie Prince, jeśli jeszcze pamiętasz jak...";
+				dialog.text = "Nie, Charlie Książe. Nie chwytaj za broń, to bezcelowe... Mógłbym cię zabić łatwo, jednak szybka śmierć to za mało dla takiego drania jak ty. Zostaniesz w tej loch na zawsze. Drzwi, którymi tu wszedłeś, są zablokowane kamieniem z zewnątrz, drzwi za mną też będą zablokowane, poza tym chronią je solidne kraty. To wszystko, nie ma wyjścia poza tymi dwoma drzwiami\nPoniżej jest woda, więc będziesz miał dość czasu, by pomyśleć o swoich czynach. Samotny tutaj, w ciemności, być może pokutujesz za to, co zrobiłeś, zanim umrzesz z głodu lub oszalejesz\nJeszcze jedna rzecz - skarb poniżej to podróbka. Złote sztabki to nic innego jak kolorowany ołów. Dublony są prawdziwe, ale jest ich tylko tyle, by pokryć kamienie w skrzyniach. Godny koniec dla piratów, co? Zabiliście się nawzajem dla fałszywego skarbu, Książe. Żegnaj teraz. Módl się za swoją grzeszną duszę, Charlie Książe, jeśli jeszcze pamiętasz jak...";
 		// belamour legendary edition -->
 				link.l1 = " Właśnie zabiłem całą awangardę Marcusa Tyrexa! Myślisz, że te zardzewiałe kraty mnie powstrzymają?! Roztrzaskam je twoją własną głową!";
 				link.l1.go = "enrico_5a";
@@ -5787,14 +5779,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "enrico_Tonzag_2":
-			dialog.text = "Szczęśliwy, powiadasz? Cóż, jeśli spieszno ci umierać... Chociaż myślałem, że nie, skoro zostawiłeś go, by zginął z głodu, zamiast stawić mu czoła.";
+			dialog.text = "Szczęście, powiadasz? Cóż, jeśli spieszno ci umierać... Chociaż myślałem, że nie, skoro zostawiłeś go, by zginął z głodu, zamiast stawić mu czoła.";
 			link.l1 = "Oskarżasz mnie o tchórzostwo? Jakże głupio z twojej strony. Jak powiedziałem Księciu, śmierć to zbyt łatwa kara dla niego. On nie ma ze mną szans.";
 			link.l1.go = "enrico_Tonzag_3";
 		break;
 		
 		case "enrico_Tonzag_3":
-			dialog.text = "A nie dasz mi rady, Donie.";
-			link.l1 = " Dziesięć lat temu? Z pewnością. Teraz? Trudno. Co więcej...";
+			dialog.text = "A nie dasz mi rady, Donie?";
+			link.l1 = " Dziesięć lat temu? Z pewnością. Teraz? Wątpie. Ponadto...";
 			link.l1.go = "enrico_Tonzag_4";
 		break;
 		
@@ -5806,18 +5798,18 @@ void ProcessDialogEvent()
 		
 		case "enrico_Tonzag_5":
 			dialog.text = "Cóż, na razie, w każdym razie. Heh-heh.";
-			link.l1 = "Dla Porto Bello zasługujesz na gorsze męki niż książę!";
+			link.l1 = "Za Portobelo zasługujesz na gorsze męki niż książę!";
 			link.l1.go = "enrico_Tonzag_6";
 		break;
 		
 		case "enrico_Tonzag_6":
 			dialog.text = "O, więc słyszałeś, co zrobiłem? Chyba będą o tym plotkować wśród was jeszcze przez jakiś czas. Więc wiesz, przez co przeszedłem.";
-			link.l1 = "Jesteś stary, Tonzag, a tym razem twoja arogancja będzie twoim upadkiem. I tak, nie tylko o tym słyszałem - Cartagena, Merida to twoje dzieło. Tak samo jak Porto Bello.";
+			link.l1 = "Jesteś stary, Tonzag, a tym razem twoja arogancja będzie twoim upadkiem. I tak, nie tylko o tym słyszałem - Kartagena, Merida to też twoje dzieło. Tak samo jak Portobelo.";
 			link.l1.go = "enrico_Tonzag_7";
 		break;
 		
 		case "enrico_Tonzag_7":
-			dialog.text = "Uznałbym to za pochlebstwo, ale nie, to nie moje dzieło. Choć z daleka może wyglądać podobnie. Zbyt amatorskie. Z drugiej strony, nawet w Porto Bello, były... incydenty.";
+			dialog.text = "Uznałbym to za pochlebstwo, ale nie, to nie moje dzieło. Choć z daleka może wyglądać podobnie. Zbyt amatorskie. Z drugiej strony, nawet w Portobelo, były... incydenty.";
 			link.l1 = "Incydenty?! Tego dnia zginęła jedna osoba... A biorąc pod uwagę, że to ty rozpocząłeś tę masakrę, wciąż cię za to winię, nawet jeśli nie zabiłeś wszystkich sam. Obwiniam cię za każdy 'incydent'.";
 			link.l1.go = "enrico_Tonzag_8";
 		break;
@@ -5836,12 +5828,12 @@ void ProcessDialogEvent()
 		
 		case "enrico_Tonzag_10":
 			dialog.text = "Och, te dramaty o moim sercu. Mylisz się, jeśli sądzisz, że widziałeś gorsze rzeczy niż ja.";
-			link.l1 = "Czy myślisz, że jestem tylko rozpieszczonym bogaczem marnującym pieniądze? Wiedz to: nie wydałem ani dubloona na hazard czy kobiety! Wszystko wrzuciłem w walkę przeciwko takim jak ty i poświęciłem temu swoje życie!";
+			link.l1 = "Czy myślisz, że jestem tylko rozpieszczonym bogaczem marnującym pieniądze? Wiedz to: nie wydałem ani dublona na hazard czy kobiety! Wszystko wrzuciłem w walkę przeciwko takim jak ty i poświęciłem temu swoje życie!";
 			link.l1.go = "enrico_Tonzag_11";
 		break;
 		
 		case "enrico_Tonzag_11":
-			dialog.text = "A po co? Nie wydaje się to zbyt udane. Szlaki handlowe wciąż roją się od piratów. Jesteś sam w swojej krucjacie. A oni to cała legion.";
+			dialog.text = "A po co? Nie wydaje się to zbyt udane. Szlaki handlowe wciąż roją się od piratów. Jesteś sam w swojej krucjacie. A ich są całe legiony.";
 			link.l1 = "Ktoś musi. Przynajmniej ktoś. A może, zabijając tylko jednego kapitana piratów, uratuję kilka żyć.";
 			link.l1.go = "enrico_Tonzag_12";
 		break;
@@ -5861,7 +5853,7 @@ void ProcessDialogEvent()
 		
 		case "enrico_Tonzag_14": // после выстрела в Зорро в подземелье
             dialog.text = "Czy wszystko w porządku, kapitanie? Ostrzegałem cię, byś był ostrożny. Powinienem był posłuchać swojego instynktu.";
-			link.l1 = "Tak, wszystko w porządku. Dzięki, Hercule. Tylko trochę...";
+			link.l1 = "Tak, wszystko w porządku. Dzięki, Hercule. Jestem tylko trochę...";
 			link.l1.go = "enrico_Tonzag_15";
 		break;
 		
@@ -5872,7 +5864,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "enrico_Tonzag_16":
-            dialog.text = "Żywy, ale oszołomiony. Dochodzi do siebie. Powinienem celować w głowę, a nie w tors - okazuje się, że nasz szlachetny hidalgo nosi pod płaszczem lekką, ale solidną kirysę. Heh, nawet Fleetwood ograniczył się do prostego pourpoint. W przeciwnym razie, już byłaby tutaj kałuża krwi.";
+            dialog.text = "Żywy, ale oszołomiony. Dochodzi do siebie. Powinienem celować w głowę, a nie w tors - okazuje się, że nasz szlachetny hidalgo nosi pod płaszczem lekki, ale solidny kirys. Heh, nawet Fleetwood ograniczył się do prostego pourpoint. W przeciwnym razie, już byłaby tutaj kałuża krwi.";
 			link.l1 = "I jak się tu znalazłeś? W tym samym miejscu co on?";
 			link.l1.go = "enrico_Tonzag_17";
 		break;
@@ -5897,7 +5889,7 @@ void ProcessDialogEvent()
 		
 		case "enrico_Tonzag_20": // окружили Зорро
             dialog.text = "Czy myślisz, że zrujnowałeś wszystkie moje plany i wygrałeś? To było nieoczekiwane, oczywiście, ale wciąż wiele przewidziałem!";
-			link.l1 = "Podobnie jak ta lekka kirys pod twoimi ubraniami. Czemu to, a nie pełna na wierzchu? Po prostu, aby się popisać swoim płaszczem?";
+			link.l1 = "Podobnie jak ten lekki kirys pod twoimi ubraniami. Czemu to, a nie pełna na wierzchu? Po prostu, aby się popisać swoim płaszczem?";
 			link.l1.go = "enrico_Tonzag_21";
 		break;
 		
@@ -6023,7 +6015,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "terrax_sleep":
-            dialog.text = "Ha-ha-ha, witaj mój dzielny rzezimieszku! Czemu jesteś taki smutny? Morze, złoto, rum i kobiety - czego ci jeszcze brakuje? Pamiętasz nasze pierwsze spotkanie? Powiedziałem ci wtedy - potrzebuję ludzi, którzy nie boją się zapachu prochu ani krwawienia do ostatniej kropli. Przewyższyłeś moje wszelkie nadzieje! Stałeś się prawdziwym piratem, Charlie Prince! Ha-ha-ha!";
+            dialog.text = "Ha-ha-ha, witaj mój dzielny rzezimieszku! Czemu jesteś taki smutny? Morze, złoto, rum i kobiety - czego ci jeszcze brakuje? Pamiętasz nasze pierwsze spotkanie? Powiedziałem ci wtedy - potrzebuję ludzi, którzy nie boją się zapachu prochu ani krwawienia do ostatniej kropli. Przewyższyłeś moje wszelkie nadzieje! Stałeś się prawdziwym piratem, Charlie Książe! Ha-ha-ha!";
 			link.l1 = "";
 			link.l1.go = "terrax_sleep_1";
 			locCameraSleep(false);
@@ -6085,7 +6077,7 @@ void ProcessDialogEvent()
 			AddQuestRecord("Roger_3", "25");
             pchar.questTemp.Mtraxx.GiveMeSlaves = "Deal";
 			SetCharacterGoods(pchar, GOOD_SLAVES, (GetCargoGoods(pchar, GOOD_SLAVES) + 50));
-			Log_Info("Fifty slaves shipped to "+PChar.Ship.Name);
+			Log_Info("Pięćdziesięciu niewolników zostało wysłanych do "+PChar.Ship.Name);
 			for(i=1; i<=3; i++)
 			{
 				sld = characterFromId("Mtraxx_SlavesSeller"+i);
@@ -6151,7 +6143,7 @@ void ProcessDialogEvent()
 		
 		case "GasparGold_01":
             dialog.text = "Cóż, dokonajmy wymiany. Dublony czy peso?";
-			link.l1 = "Przejdźmy na pesos - nie potrzeba dubloonów. Zwykłe pieniądze są powszechnie akceptowane wszędzie.";
+			link.l1 = "Przejdźmy na pesos - nie potrzeba dublonów. Zwykłe pieniądze są powszechnie akceptowane wszędzie.";
 			link.l1.go = "GasparGold_peso";
 			link.l2 = "Zgadłeś - szczególnie potrzebuję dublonów. Więc będę sprzedawał tylko za nie.";
 			link.l2.go = "GasparGold_dub";
@@ -6331,7 +6323,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Tonzag_7": // на берегу
             dialog.text = "Chcesz coś powiedzieć, Kapitanie? Byłeś pogrążony w myślach przez całą naszą drogę do statku.";
-			link.l1 = "Zgadza się. Myślałem ostatnio o tym, co robiłem. O Terraxie i... dokąd mnie to doprowadziło. Czy jestem bliżej uratowania mojego brata? Albo powrotu do domu?..";
+			link.l1 = "Zgadza się. Myślałem ostatnio o tym, co robiłem. O Tyrexie i... dokąd mnie to doprowadziło. Czy jestem bliżej uratowania mojego brata? Albo powrotu do domu?..";
 			link.l1.go = "Nemezida_Tonzag_8";
 		break;
 		
@@ -6354,13 +6346,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Nemezida_Tonzag_11":
-            dialog.text = "Zdecydowałeś się zakończyć współpracę z Terraxem?";
+            dialog.text = "Zdecydowałeś się zakończyć współpracę z Tyraxem?";
 			link.l1 = "Tak. Mam ważniejsze rzeczy do zrobienia. Rodzina, przyjaciele. Z nimi osiągnę swoje cele. I nie w ten sposób. A nawet jeśli... to nie z Markusem. Będę swoim własnym panem. Sam podejmę decyzje.";
 			link.l1.go = "Nemezida_Tonzag_12";
 		break;
 		
 		case "Nemezida_Tonzag_12":
-            dialog.text = "  Człowiek, którego kiedyś śledziłem, znów przemawia. Nie wikłaj się znowu z nieodpowiednimi ludźmi. Nie marnuj potencjału, który kiedyś mnie zaintrygował. ";
+            dialog.text = "Człowiek, którego kiedyś śledziłem, znów przemawia. Nie wikłaj się znowu z nieodpowiednimi ludźmi. Nie marnuj potencjału, który kiedyś mnie zaintrygował. ";
 			link.l1 = "Zrozumiałem, Hercule. I jeszcze raz dziękuję. Tym razem za to, że pomogłeś mi to w pełni zrozumieć. Nie jestem już Księciem, pachołkiem. Jestem Charles de Maure, dumnym szlachcicem. Wchodźmy na pokład statku - obaj jesteśmy zmęczeni.";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Mtraxx_RetributionFinal_Tonzag");
@@ -6435,7 +6427,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Nemezida_Knippel_11":
-            dialog.text = "Jakie wnioski, panie? Nie zawsze rozumiem twoje rozumowanie. Moja filozofia jest prosta - dobry culverin i knippels na maszt.";
+            dialog.text = "Jakie wnioski, panie? Nie zawsze rozumiem twoje rozumowanie. Moja filozofia jest prosta - dobry kulweryna i knipel na maszt.";
 			link.l1 = "Powiedz mi, musiałeś już wcześniej zabijać Hiszpanów, tak jak ja ostatnio. Jeszcze za czasów służby w Królewskiej Marynarce. I później, z Fleetwoodem.";
 			link.l1.go = "Nemezida_Knippel_12";
 		break;
@@ -6466,7 +6458,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Knippel_16":
             dialog.text = "Nie wiem, panie...";
-			link.l1 = "Ani ja. Ale to nie ma znaczenia. Liczy się to, że nie chcę mieć już nic wspólnego z Terraxem. Dość tego. Koniec z Charliem Princem. Tylko Charles de Maure.";
+			link.l1 = "Ani ja. Ale to nie ma znaczenia. Liczy się to, że nie chcę mieć już nic wspólnego z Tyrexem. Dość tego. Koniec z Charliem Księciem. Tylko Charles de Maure.";
 			link.l1.go = "Nemezida_Knippel_17";
 		break;
 		
@@ -6477,7 +6469,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Nemezida_Knippel_18":
-            dialog.text = "Mam nadzieję, że wiesz, co robisz, Kapitanie. I że nie skończysz jak Terrax. Albo na szubienicy.";
+            dialog.text = "Mam nadzieję, że wiesz, co robisz, Kapitanie. I że nie skończysz jak Tyrex. Albo na szubienicy.";
 			link.l1 = "Też mam taką nadzieję. Ale jestem pewien, że od teraz moje cele i interesy będą na pierwszym miejscu. Teraz zajmijmy się twoimi ranami.";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Mtraxx_RetributionFinal_Officers");
@@ -6550,7 +6542,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Nemezida_Longway_11":
-            dialog.text = "Jesteśmy piratami. Pracujemy dla waszego nowego pana, Lorda Terraxa. Przemycanie, plądrowanie miast, zabijanie, ratowanie i pomaganie jego ludziom.";
+            dialog.text = "Jesteśmy piratami. Pracujemy dla waszego nowego pana, Lorda Tyrexa. Przemycanie, plądrowanie miast, zabijanie, ratowanie i pomaganie jego ludziom.";
 			link.l1 = "On nie jest moim panem, wiesz. Ale do licha, opisałeś to wszystko tak doskonale! Zapomniałem o dumie, szacunku do siebie i biegałem za nim jak piesek na smyczy.";
 			link.l1.go = "Nemezida_Longway_12";
 		break;
@@ -6569,18 +6561,18 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Longway_14":
             dialog.text = "Pozwól, że podzielę się z tobą kolejną mądrością z Cesarstwa Niebios. Nie ma ludzi całkowicie dobrych ani złych. Każdy człowiek posiada zarówno Yin - ciemność i ignorancję - jak i Yang - światło i mądrość. Równowaga zmienia się w każdym z nas.";
-			link.l1 = "A więc, moim Yang jest Charles de Maure. A moim Yin jest Charlie Prince. Chociaż może nawet Charles de Maure będzie musiał pewnego dnia podjąć mroczne i trudne decyzje.";
+			link.l1 = "A więc, moim Yang jest Charles de Maure. A moim Yin jest Charlie Książe. Chociaż może nawet Charles de Maure będzie musiał pewnego dnia podjąć mroczne i trudne decyzje.";
 			link.l1.go = "Nemezida_Longway_15";
 		break;
 		
 		case "Nemezida_Longway_15":
             dialog.text = "Takie jest życie, Panie Kapitanie. Każdy człowiek jest skazany na podejmowanie zarówno mrocznych, jak i jasnych wyborów.";
-			link.l1 = "Jednak maska Księcia niemal się ze mną zrosła. Ale ją zrzucę. Charles de Mort jest szlachcicem, nie posłańcem. Od tej pory, tylko tak będzie. Odzyskuję swoją dumę i godność. Od teraz, jestem swoim własnym panem.";
+			link.l1 = "Jednak maska Księcia niemal się ze mną zrosła. Ale ją zrzucę. Charles de Maure jest szlachcicem, nie posłańcem. Od tej pory, tylko tak będzie. Odzyskuję swoją dumę i godność. Od teraz, jestem swoim własnym panem.";
 			link.l1.go = "Nemezida_Longway_16";
 		break;
 		
 		case "Nemezida_Longway_16":
-            dialog.text = "Długodystansowy aprobuje twoją decyzję, Panie Kapitanie.";
+            dialog.text = "Longway aprobuje twoją decyzję, Panie Kapitanie.";
 			link.l1 = "Dzięki, Longway. A tak przy okazji, czy nie żałujesz, że nie jesteś wolnym kapitanem? Służąc mi, jak mówisz, 'waszemu panu'?";
 			link.l1.go = "Nemezida_Longway_17";
 		break;
@@ -6592,7 +6584,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Nemezida_Longway_18":
-            dialog.text = "Tak, to prawda. Mam nadzieję, że od teraz podążysz dużo lepszą drogą.";
+            dialog.text = "Tak, to prawda. Mam nadzieję, że od teraz podążysz dużo lepszą dao.";
 			link.l1 = "Dao?";
 			link.l1.go = "Nemezida_Longway_19";
 		break;
@@ -6641,7 +6633,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Tichingitu_6":
             dialog.text = "Próbujemy! Idź!";
-			link.l1 = "Liczyłem na ciebie!";
+			link.l1 = "Licze na ciebie!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Mtraxx_RetributionZasada6");
 		break;
@@ -6757,25 +6749,25 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Irons_12":
             dialog.text = "Powiem to tak. Czy jestem piratem, czy nie, zawsze cholernie uwielbiałem przygodę! Widzę, że moja odpowiedź cię nie satysfakcjonuje. Te rzeczy, te wielkie sprawy, to nie moja bajka.";
-			link.l1 = "To nie to, że mnie to nie satysfakcjonuje. Ale nie o tym chciałem rozmawiać. Wiesz... Zrozumiałem, że z Tiraqsem całkowicie zboczyłem z moich celów. Poza tym... Charlie Prince był jakimś pachołkiem, a nie odważnym kapitanem piratów, rozumiesz, Tom? Mam tego dość.";
+			link.l1 = "To nie to, że mnie to nie satysfakcjonuje. Ale nie o tym chciałem rozmawiać. Wiesz... Zrozumiałem, że z Tyrexem całkowicie zboczyłem z moich celów. Poza tym... Charlie Książe był jakimś pachołkiem, a nie odważnym kapitanem piratów, rozumiesz, Tom? Mam tego dość.";
 			link.l1.go = "Nemezida_Irons_13";
 		break;
 		
 		case "Nemezida_Irons_13":
-            dialog.text = "Rozumiem. Dlatego byłem zaskoczony, że pozwoliłeś, by Terrax tak tobą sterował. To nawet nie wyglądało na ciebie.";
-			link.l1 = "Może rzeczywiście byłem wtedy Charliem Princem. Ale czy wrócimy do piractwa, czy nie, to ja zdecyduję! I tylko wtedy, gdy naprawdę będzie to służyć moim interesom i przybliży mnie do celu!";
+            dialog.text = "Rozumiem. Dlatego byłem zaskoczony, że pozwoliłeś, by Tyrex tak tobą sterował. To nawet nie wyglądało na ciebie.";
+			link.l1 = "Może rzeczywiście byłem wtedy Charliem Księciem. Ale czy wrócimy do piractwa, czy nie, to ja zdecyduję! I tylko wtedy, gdy naprawdę będzie to służyć moim interesom i przybliży mnie do celu!";
 			link.l1.go = "Nemezida_Irons_14";
 		break;
 		
 		case "Nemezida_Irons_14":
-            dialog.text = "To mi się podoba! Ale chcę powiedzieć, czy to Charlie Prince czy Charles de Maure - to wciąż ty. A z tobą zawsze było cholernie interesująco!";
+            dialog.text = "To mi się podoba! Ale chcę powiedzieć, czy to Charlie Książe czy Charles de Maure - to wciąż ty. A z tobą zawsze było cholernie interesująco!";
 			link.l1 = "Cieszę się, że to słyszę, Tommy.";
 			link.l1.go = "Nemezida_Irons_15";
 		break;
 		
 		case "Nemezida_Irons_15":
             dialog.text = "Pamiętaj, prawie nikt nie pomoże ci poza tobą samym. Lepiej robić to, co kochasz, nawet w pojedynkę, niż pozwolić innym podejmować za ciebie decyzje!";
-			link.l1 = "Prawda. Dokładnie to czułem z Terraxem. Nawet jeśli znów komuś podążę, to tylko na godnych warunkach, a nie jak jakiś cholerny goniec!";
+			link.l1 = "Prawda. Dokładnie to czułem z Tyrexem. Nawet jeśli znów komuś podążę, to tylko na godnych warunkach, a nie jak jakiś cholerny goniec!";
 			link.l1.go = "Nemezida_Irons_16";
 		break;
 		
@@ -6795,7 +6787,7 @@ void ProcessDialogEvent()
 		
 		case "Nemezida_Alonso_2":
             dialog.text = "Oj, Kapitanie.";
-			link.l1 = "Gotów się szykuj!";
+			link.l1 = "Szykuj się!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Mtraxx_RetributionZasada2");
 		break;
@@ -6830,7 +6822,7 @@ void ProcessDialogEvent()
 		
 		//--> блок реагирования на попытку залезть в сундук
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("Jesteś "+GetSexPhrase("widzę, złodziej! Strażnicy, chwytajcie go","widzę, złodziejka! Strażnicy, schwytajcie ją")+"!!!","Nie mogę w to uwierzyć! Odwróciłem się na sekundę - a ty już grzebiesz w moich rzeczach! Stój, złodzieju!!!","Strażnicy! Napad! Zatrzymać złodzieja!!!");
+			dialog.text = LinkRandPhrase("Jesteś "+GetSexPhrase("złodziejem! Strażnicy, łapcie go","złodziejką! Strażnicy, łapcie ją")+"!!!","Nie mogę w to uwierzyć! Odwróciłem się na sekundę - a ty już grzebiesz w moich rzeczach! Stój, złodzieju!!!","Strażnicy! Napad! Zatrzymać złodzieja!!!");
 			link.l1 = "Aaaah, diable!!!";
 			link.l1.go = "fight";
 		break;

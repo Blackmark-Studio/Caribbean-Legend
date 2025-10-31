@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
 			Log_Info("Вы отдали дагу 'Коготь вождя'");
-			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 			dialog.text = "Как долго я ждал этого момента! Теперь я могу уходить... Но на прощание я хочу передать тебе частицу своей силы. Это будет последний подарок, который когда-либо делал Альберто Каскос.";
 			link.l1 = "...";
 			link.l1.go = "guardmask_12";

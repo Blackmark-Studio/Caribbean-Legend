@@ -192,7 +192,7 @@ void ProcessDialogEvent()
 		case "result_grabbing":
 			// считаем деньги и дублоны взятые из сундука
 			iPeso = sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money);
-			iDubl = PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon);
+			iDubl = GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon);
 			if (iPeso <= 0) sPeso = "ни одного песо";
 			else sPeso = ""+FindRussianMoneyString(iPeso)+"";
 			if (iDubl <= 0) sDubl = "ни одного дублона";
@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 		
 		case "grabbing_part":
 			iPeso = makeint((sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money))/2);
-			iDubl = makeint((PCharDublonsTotal()-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
+			iDubl = makeint((GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
 			AddMoneyToCharacter(pchar, -iPeso);
 			RemoveItems(pchar, "gold_dublon", iDubl);
 			Log_Info("Вы отдали "+iDubl+" дублонов");

@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 				dialog.text = "Senor"+GetSexPhrase("","ita")+", az Ön vágya, hogy több gyantát vásároljon, bizonyára bizalmat mutat az üzletünk iránt. Van azonban egy bonyolult\nA megnövekedett mennyiséggel együtt jár a szigetországi hatóságok' figyelmének nagyobb kockázata, és az ilyen szállítmányok ellenôrzése embereket és biztonsági intézkedéseket igényel, ami, elismerem, nem olcsó. Ha hajlandó vagy háromezer dublont hozzáadni az árhoz, egyszeri fizetésként, akkor megbízható embereket alkalmazok, akik megvédik a rakományt és megakadályozzák az információ kiszivárgását. Akkor az útvonalunk biztonságosabbá válik, és havonta háromszáz hordó gyantát tudok szállítani. A befektetésed ellentételezéseként, mint nagybani vásárlónak, tizenöt százalékos kedvezményt kínálok neked minden jövôbeli szállítmányra.";
 				link.l1 = "Háromezer dublont a szállítmányok biztosítására? Senor Sergio, nem titkolom, ez az ár hihetetlennek tûnik - mintha inkább összeesküvést javasolna az Escorialban, minthogy csak a szurokszállítmányt biztosítsa!";
 				link.l1.go = "UpgradeOil_1";
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

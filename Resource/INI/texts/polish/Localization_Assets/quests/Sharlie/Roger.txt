@@ -63,7 +63,7 @@ Roger_62 {Po dwóch dniach...@<NewStr()>Zbudowano łącznie sześć szalup...}
 Roger_63 {Demetrio}
 Roger_64 {Rojas}
 Roger_65 {Kitty}
-Roger_66 {Torero}
+Roger_66 { }
 Roger_67 {Ignacio}
 Roger_68 {Marco}
 Roger_69 {Tryb eksploracji: licznik czasu jest wyłączony.}
@@ -91,7 +91,7 @@ Roger_90 {Tryb eksploracji: Corrida - współrzędne są poprawne}
 Roger_91 {Tryb eksploracji: Corrida – współrzędne są nieprawidłowe}
 Roger_92 {Hiszpański konwój na horyzoncie!}
 Roger_93 {Toro de Oro}
-Roger_94 {Red Dragon}
+Roger_94 { }
 Roger_95 {Doszło do potężnej eksplozji na @<pchar.ship.name>!}
 Roger_96 {Dotarliśmy do Kartageny! Tyrex rozkazuje popłynąć do zatoki Covenas}
 Roger_97 {Oddziały desantowe są gotowe do szturmu na Kartagenę!}
@@ -104,7 +104,7 @@ Roger_103 {Tonneur}
 Roger_104 {Libre}
 Roger_105 {Myutin}
 Roger_106 {Inconnu}
-Roger_107 {Alonso}
+Roger_107 { }
 Roger_108 { }
 Roger_109 {Trzy godziny później...}
 Roger_110 {Rodgar}

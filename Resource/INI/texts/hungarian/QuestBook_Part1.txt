@@ -962,13 +962,13 @@ Rosszabbul fogtok harcolni, rosszabbul lôni, rosszabbul kereskedni, és így to
 Jelenleg egy tartánt vagy egy hosszú hajót tudsz kezelni. De fel tudsz - és fel is kell - bérelni egy navigátort. Általában a kocsmákban találod ôket más zsoldosokkal együtt.
 Elôször mindig ellenôrizd a képzettségi szintjüket. Ha nem elég magas a hajódhoz, pontosan ugyanazokat a problémákat fogod tapasztalni, amiket már említettem.
 ************************************************************
-Ezt a hajó rangja határozza meg. Én például elég tapasztalt vagyok (45 pont) ahhoz, hogy büntetés nélkül irányítsak egy 4. rangú hajót. A briggek, barkentinek, fluytok, xebecek és korvettek többre szorulnak, így nem fogom tudni megfelelôen használni ôket. Ezek még csak nem is olyan másodrendû hajók, mint a fregattok és nehéz gályák.
+A szükséges navigációs szintet a hajó osztálya határozza meg. Minél nagyobb a hajó, annál nagyobb tudás kell a vezetéséhez. Én például csak a negyedik osztályig jutottam: briggek, xebekek, fluytok. Egy pinasz vagy korvett már túl sok nekem, nem is beszélve a másodosztályú hajókról, mint a nehéz fregattok vagy galeonok.
 Ami az óriás vonalhajókat vagy a hadihajókat illeti... az ilyen szörnyetegeket csak a navigáció szakértôi tudják irányítani. Évekbe telik, mire elsajátítják a képességet, és ne feledkezzünk meg a pénzrôl sem. Egy csatahajó és legénysége egy hónap alatt kiürítheti a pénztárcádat, ha nem vagy olyan gazdag, mint maga Lajos király.
 Vigyázzatok a tiszti pozícióitokra. Egy hajóskapitány kiképzi a legénységedet és hatékonyabbá teszi a beszállásodat, egy pénztáros pedig pénzügyi tevékenységet végez helyetted, és megszabadítja a hajódat a patkányoktól. Egy sebész meggyógyítja a sebesültjeidet és csökkenti a csatában elhalálozók számát, egy ács kijavítja a hajón keletkezett károkat, az elôôrsök pedig megmentik a bôrödet, ha kalózok kezdik ellepni a fedélzetedet. Figyelj a jelöltek képességeire és hírnevükre.
 ************************************************************
 Minden embernek van egy. Ez mutatja meg az embert, hogy milyen is valójában.
 Ha becsületes ember vagy, és mindig igyekszel jót tenni, akkor keress olyan tiszteket, akik osztják az eszményeidet. Ha pedig kalóz akarsz lenni... nos, érted a lényeget. A becsületes emberek nem fognak söpredéknek dolgozni; ennek az ellenkezôje is igaz.
-Most beszéljünk a hajótípusokról. Két típus van: Kereskedôhajók és hadihajók. A kereskedôhajóknak vagy kereskedelmi hajóknak nagy rakterük van, és általában lassabbak. A hadihajók gyorsak és erôs ágyúkkal rendelkeznek, ami a rakománykapacitás rovására megy. A bárkák, fluyts és carracks jó, szilárd kereskedelmi hajók. A luggerek, briggek és korvettek hadihajók. Vannak persze hibridek is, olyan hajók, amelyek egyaránt alkalmasak kereskedelemre és harcra: hóhajók, szkúnárok és gályák. A hajóknak különbözô a kötélzetük is; vannak, amelyek többnyire négyszögletes kötélzetûek, és vannak, amelyek többnyire orr-hajó kötélzetûek, amelyek a hajó legjobb orr-szögét képezik.
+Most egy kicsit a hajótípusokról. Vannak kereskedelmi és hadihajók. A kereskedelmi hajókat tágas rakterük jellemzi, míg a hadihajókat a nagy legénység és erős ágyúk. Tipikus kereskedelmi hajók: bark, fluyt, pinasz; katonaiak: sloop, snauw, galleon. Vannak sokoldalú hajók is, kiegyensúlyozott jellemzőkkel — például lugger, szkúner, brigantin. Jó példák portyázó hajókra: brigg, korvett, xebek. A hajóknak különbözô a kötélzetük is; vannak, amelyek többnyire négyszögletes kötélzetûek, és vannak, amelyek többnyire orr-hajó kötélzetûek, amelyek a hajó legjobb orr-szögét képezik.
 Az off-bow szög határozza meg, hogy a kötélzetet hogyan befolyásolja a szél, és hogy a hajó milyen irányban fogja elérni a legjobb sebességet, amire képes. Ha már a tengeren vagy, keresd meg a nyilat a minitérképen; ez lesz az off-bow szöged.
 ************************************************************
 Ezután következik a legénységed. Te és a hajód semmit sem érsz az embereid nélkül. Minden tengerésznek három dologhoz kell értenie: a kötélzet kezeléséhez, az ágyúk kezeléséhez és a harchoz. Minden nemzet csak e három tevékenység egyikében jeleskedik. Spanyolországnak például a világ legjobb harcosai vannak, a fedélzeteseik viszont páncélzatot viselnek, így a grabancslövés, a szeletelés és a szúrás nem egészen olyan hatékony ellenük. Természetesen a kézifegyverekrôl beszélek, az ágyúgolyó grabanclövések fütyülnek a testpáncélokra.
@@ -1513,3 +1513,91 @@ A sámán letépte a koponyát és elrejtette valahol! Tollas idióta! Levágtam
 Mindent elmondtam neki. Hihetetlen érzés. Most már tudom, mit kell tennem! "Hagyd, hogy a holtak tanítsák az élôket." Természetesen! Nem elég megmenteni az embereket a láncoktól vagy a huroktól. Magától a haláltól is meg kell menteni ôket! És ezt csak úgy tudod megtenni, ha egy másik embert is keresztülviszel azon, amin én. Meghalni és visszatérni. Sajnálom ôket? Persze, hogy sajnálom. De igazam volt. Soha senki nem sajnált engem.
 
 Már találtam egy új koponyát - nem mindenki képes átvészelni a halál próbáját. Így még jobb is. Maradjon Mortimer szemgödre Dominikán, és ne lássa, mi történik a hajóján. Nem értené meg.
+
+#QUEST WildRose_Records
+Excerpts from records of ships wrecked at Justice Island in June 1638
+#TEXT 1
+“...15 June. Brig 'Wrangler'. A ship of His Majesty King Charles I.  
+Driven ashore on the southeast side of the outer ring. Salvaged from the wreck:  
+- 11 casks of Scotch ale  
+- 20 casks of fresh water  
+- 17 crates of provisions  
+- 3 guns, 16-pounders  
+- 18 muskets  
+- 29 pieces of edged weapons  
+- 4 crates of ammunition  
+- 15 rolls of canvas  
+Four survivors:  
+- Joshua Casper (captain)  
+- Teresa Casper  
+- Anthony Young  
+- Pieter Friddiks...”
+
+#QUEST WildRose_Records_2
+Extracts from the church book of Padre Domingo De la Cruz, summer 1638
+#TEXT 1
+“7 June. Funeral service for the newly departed servant of God Maximilian van Ekkus.  
+
+18 June. Funeral service for the newly departed servants of God Anthony Young and Pieter Friddiks.  
+
+25 June. Funeral service for the newly departed servant of God Teresa V. Casper. Prayers for the repose of the servants of God Jean-Pierre R. Sorren and Umberto Rojas (bodies not found).  
+
+5 July. Baptism of the servant of God Thierry G. Legros (born 27 February).  
+
+3 August. Baptism of the servant of God Fabian O. Galard (born 10 June) and the servant of God Mary J. Casper (born 22 June).”
+
+#QUEST WildRose_Records_3
+Certain details from the personal file of Joshua Casper
+#TEXT 1
+Joshua Anthony Casper, born 1586 AD in the city of Portsmouth.  
+In service of His Majesty’s Navy since June 1611.  
+1619: passed exam for lieutenant, appointed to the frigate 'Reversible'...  
+1625: transferred to the frigate 'Triumph' as first officer...  
+1630: appointed captain of the brig 'Cornwall'... Lost at sea with ship and crew in 1638.  
+Unmarried. No children.  
+Exemplary officer, recipient of many awards and commendations, no censures or reprimands recorded...
+
+#QUEST WildRose_Records_4
+Contents of the order to Captain Joshua Casper to deliver wages to Antigua and Providence
+#TEXT 1
+To Captain of the brig 'Cornwall', Joshua Anthony Casper — proceed to the town of Dundalk for unloading of military stores, thereafter cross the Atlantic Ocean to deliver wages to the garrisons of the islands of Antigua and Providence. Upon completion of the task, report to the Governor of Antigua - Thomas Warner, grant the crew leave, then return to England to the home port.  
+Responsibility for preparing the brig 'Cornwall' for the voyage, instructing the crew, loading provisions and the mentioned cargo rests with Captain Joshua Anthony Casper.  
+
+Signed in my own hand,  
+Vice Admiral Robert Bertie, 3rd Earl of Lindsey  
+8 January 1638  
+London, England
+
+#QUEST WildRose_Records_5
+Certain details from the report of Captain Joshua Casper on the Atlantic crossing
+#TEXT 1
+...Departed London, 14 January 1638, course set for Dundalk...  
+...Arrived in Dundalk, 19 January 1638, began unloading military stores...  
+...Departed Dundalk, 21 January 1638, set course southwest...  
+...10 February 1638, off the island of São Miguel (Azores), engaged in battle with the Spanish galleon 'Toro'. Estimated armament: about 50 heavy guns. Having shot away the enemy’s mainmast, I resolved not to endanger the mission entrusted by the Admiralty and withdrew, steering west. Casualties: 32 men, including the following officers: First Mate Rupert Northwood, Lieutenant Edward Matts, Lieutenant Samuel Downes. The dead were buried at sea according to the traditions of His Majesty’s Navy.  
+...Arrived at the island of Antigua, 1 June 1638, delivered to Governor Sir Thomas Warner the chest with wages for the garrison...  
+
+Signed in my own hand,  
+Captain of His Majesty’s ship 'Cornwall', Joshua Anthony Casper  
+2 June 1638  
+St. John’s, island of Antigua
+
+#QUEST WildRose_Records_6
+Letter from Jerome Sauvernier to Fadey the Muscovite
+#TEXT 1
+Monsieur Fadey, I hope this letter finds you in good health. Alas, I cannot say the same of myself. In the “Glass Eye” a violent brawl broke out, in which I was unlucky enough to be caught. A serious wound, though not life-threatening, forces me to remain for some time in this most inhospitable town.  
+As for your commission — I have good news. I have managed to pick up the trail of a man named Rupert Casper. I will give you the details on my return to Basse-Terre. I regret to keep you waiting.  
+Jerome Sauvernier
+
+#QUEST LEDR_Book_1
+Excerpts from the diary of Diego Velázquez de Cuéllar
+#TEXT 1
+"Today we destroyed yet another village of savages. Not one of them withstood our blades. The men who dared resist we killed on the spot, the rest we fettered in chains. Their huts were burned to cinders, the granaries emptied, and all valuables became our spoil. Those who tried to hide their children were slain before the eyes of those who survived. Their tears flowed like rivers, washing the triumph of our standards. These lands now belong to Spain. We brought here order and the will of the Lord, even if by the price of blood."
+
+"My design was fulfilled. The savages came to parley. Their chiefs sat about the fire, naively believing in the possibility of peace. But true peace comes only through blood. We surrounded the hut, barred the door and set it alight. At first there were cries — furious, doomed. Then all fell quiet, only the crackle of the fire breaking the silence. The smell of scorched flesh filled the air like a blessing from the Lord himself. These savages will never raise their heads again."
+
+"Cacique Atuay received his due. I forced him to watch the execution of his people: women were thrown into the flames, youths had their heads cleft, and children screamed in terror. He was bound to a post in the center of the great pyre. I watched as the flame embraced his body. Yet he did not cry out from pain. No, his voice was calm and full of scorn toward us. He begged for nothing, instead hurling curses in our direction. Foolish savage! He believed his words could frighten us. The wind will scatter that delusion along with the ash of his body."
+
+"After that execution I began to notice strange things. By day the monks intoned of God’s grace, but at night shadows would seem to come alive around us. It felt as if the women’s weeping, the children’s screams, and the savages’ curses echoed in my very ears. Last night one of the sailors died. His body was found torn to pieces, as if wild beasts had fallen upon him. I ordered all to pray, but the prayers were useless. Now I am convinced: it is Atuay. He has laid a curse upon us."
+
+"The curse… It will not leave me. It nests within like a serpent coiling round the heart. Each night I see the burning huts, hear the cries and moans of the dead, calling me to answer. Their charred skeletons rise from the ashes, their hollow sockets stare at me with hatred. Even now, in this room, I hear their steps. The doors creak slowly, as if someone enters, yet I see no one. My hands shake so badly the quill scarcely obeys. There is no salvation. The Lord has forsaken me, as I forsook mercy. They are near. Soon they will take me..."

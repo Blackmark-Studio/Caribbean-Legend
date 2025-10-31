@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 				dialog.text = "Herr"+GetSexPhrase("","es")+", Ihr Wunsch, mehr Harz zu kaufen, zeigt sicherlich Vertrauen in unser Geschäft. Es gibt jedoch eine Komplexität\nMit steigenden Mengen besteht ein größeres Risiko, die Aufmerksamkeit der Inselbehörden zu erregen, und die Kontrolle solcher Sendungen erfordert Menschen und Sicherheitsmaßnahmen, was, ich gebe es zu, nicht billig ist. Wenn Sie bereit sind, den Preis um drei Tausend Dublonen zu erhöhen, als einmalige Zahlung, werde ich zuverlässige Leute einstellen, die die Ladung schützen und Informationslecks verhindern können. Dann wird unsere Route sicherer und ich kann Ihnen monatlich dreihundert Fässer Harz liefern. Um Ihre Investition auszugleichen, biete ich Ihnen als Großkäufer einen fünfzehnprozentigen Rabatt auf alle zukünftigen Sendungen.";
 				link.l1 = "Dreitausend Dublonen, um die Lieferungen zu sichern? Señor Sergio, ich werde es nicht verbergen, dieser Preis scheint unglaublich - als ob Sie eine Verschwörung im Escorial vorschlagen würden, anstatt nur eine Pechladung zu sichern!";
 				link.l1.go = "UpgradeOil_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

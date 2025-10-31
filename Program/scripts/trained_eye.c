@@ -1,32 +1,30 @@
 // Оцениваем трюм
 void ShowShipCargoEstimateCost(ref spyglass, ref captain)
 {
-	if (!CheckOfficersPerkEnable("TrainedEye")) return;
-
+	if (!CheckOfficersPerkEnable("QuickGlance")) return;
+	string curkUniqueStr = GetQuestBookDataDigit() + captain.Ship.Name;
+	if (CheckAttribute(spyglass, "checkUniqueStr") && spyglass.checkUniqueStr == curkUniqueStr) return;
+	string text;
 	string typeName = GetConvertStr(GetShipSpecDesc(&captain), "ShipsPerksDescribe.txt");
 	string traitName = GetShipTraitDesc(&captain);
-	string curkUniqueStr = GetQuestBookDataDigit() + captain.Ship.Name;
-	if (CheckAttribute(&spyglass, "checkUniqueStr") && spyglass.checkUniqueStr == curkUniqueStr)  return;
 
-	int maxPoints = 50 * GetCargoMaxSpace(captain); // 50 –  условно среднее значение
-	int sumPoints;
-	for (int i=0; i<GOODS_QUANTITY; i++) sumPoints = sumPoints + GetCargoGoods(captain,i) * GetCargoPoints(i);
+	string traitPart;
+	if (traitName == "") traitPart = "";
+	else traitPart = GetConvertStr(traitName, "ShipsPerksDescribe.txt");
 
-	string text;
-	if (sumPoints > maxPoints) text = "perks_4";
-	else text = "perks_5";
+	text = typeName + ", " + traitPart;
 
-	text = DLGO(StringFromKey(text), captain);
-	if (CheckOfficersPerkEnable("QuickGlance")) 
+	if (CheckOfficersPerkEnable("TrainedEye"))
 	{
-		string traitPart;
-		if (traitName == "") traitPart = "";
-		else traitPart = GetConvertStr(traitName, "ShipsPerksDescribe.txt") + ", ";
-		
-		text = typeName + ", " + traitPart + LowerFirst(text);
+		int maxPoints = 50 * GetCargoMaxSpace(captain); // 50 –  условно среднее значение
+		int sumPoints;
+		for (int i=0; i<GOODS_QUANTITY; i++) sumPoints = sumPoints + GetCargoGoods(captain,i) * GetCargoPoints(i);
+		if (sumPoints > maxPoints) text += ". " + StringFromKey("perks_4");
+		else text += ". " + StringFromKey("perks_5");
 	}
-	Notification(text, "TrainedEye");
 
+	text = DLGO(text, captain);
+	Notification(text, "TrainedEye");
 	spyglass.checkUniqueStr = curkUniqueStr;
 }
 

@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 						link.l1.go = "silk_info";
 						break;
 					}
-					else notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+					else Notification_Reputation(false, 61, "low");
 				}
 			}
 			dialog.text = "Здравствуйте, капитан " + GetFullName(pchar) + "! Чем могу служить?";
@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 				dialog.text = "Я ценю ваш деловой подход и готов рассмотреть вашу просьбу. Пожалуй, мы могли бы увеличить объём, скажем в пять раз. Однако организация таких поставок потребует значительных ресурсов. Нужно будет расширить складские площади, усилить охрану и обеспечить надёжные пути для доставки. Поскольку это выгодно и вам, я предлагаю разделить между нами эти расходы.";
 				link.l1 = "Всё это звучит разумно. Какую сумму вы считаете необходимой для покрытия этих расходов?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

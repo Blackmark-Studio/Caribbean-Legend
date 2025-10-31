@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_114":
-			dialog.text = "Exactly. As far as I know, when you entered the service of France, you were given the light frigate 'Gryffondor' at your disposal. This is a wonderful ship, no doubt, but still it is only fit for an officer, and not for a vice admiral and now, a governor general. You are the face of France here. And your flagship should be appropriate. So we have decided that the ship which fought its first battles here in the Caribbean will be added to your squadron...";
+			dialog.text = "Exactly. As far as I know, when you entered the service of France, you were given the heavy corvette 'Gryffondor' at your disposal. This is a wonderful ship, no doubt, but still it is only fit for an officer, and not for a vice admiral and now, a governor general. You are the face of France here. And your flagship should be appropriate. So we have decided that the ship which fought its first battles here in the Caribbean will be added to your squadron...";
 			link.l1 = "Monsieur Forget, are you trying to say...";
 			link.l1.go = "noel_115";
 		break;

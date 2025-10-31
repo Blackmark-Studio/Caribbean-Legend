@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_60":
-			dialog.text = "Természetesen a gyár karbantartást igényel. Az építésével ez a sziget olyan gazdasággal fog rendelkezni, ahol önök lesznek a fô kereskedelmi partnerek. A rabszolgákat mi magunk fogjuk etetni, de a biztonságot és a termelést a saját zsebükbôl kell majd fizetniük. A telepesek száz dublont és öt üveg bort vesznek minden egyes tételért. A biztonsági kérdésekben tárgyaljatok Senor Janssennel.";
+			dialog.text = "Természetesen a gyár karbantartást igényel. Az építésével ez a sziget olyan gazdasággal fog rendelkezni, ahol önök lesznek a fô kereskedelmi partnerek. A rabszolgákat mi magunk fogjuk etetni, de a biztonságot és a termelést a saját zsebükbôl kell majd fizetniük. A telepesek 20 dublont és öt üveg bort vesznek minden egyes tételért. A biztonsági kérdésekben tárgyaljatok Senor Janssennel.";
 			link.l1 = "";
 			link.l1.go = "Himenes_61";
 		break;
@@ -1612,14 +1612,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_1":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 80)
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Skill(true, 80, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ, és igazad volt, itt nincs okunk késlekedni. Az embereim mind itt vannak, erôsek, kiképzettek és készen állunk. Fél órán belül mindennek vége lesz. Kapitány, kérem, készüljön fel az emberek, a foglyok és a rakomány fogadására a hajóján. Nem fogunk itt sokáig idôzni.";
 				link.l1 = "Minden készen áll, hadnagy. Csak önre vártunk. Viszlát késôbb!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Képességpróba Sikertelen (80)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 80, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ. Ebben az esetben menjen a dokkhoz, és készítse elô a beszálló csapatot. Együtt és azonnal megrohamozzuk a banditák fészkét. Az én és a te embereid közül a legjobbak fogják vezetni az elôôrsöt - ôk lesznek azok, akik elfoglalják a kapukat. A többit majd megbeszéljük, miután közösen ellenôriztük az erôinket. Ne hagyj cserben engem és az országodat, "+GetFullName(pchar)+".";
 				link.l1 = "...úgy legyen. Viszlát késôbb, hadnagy.";
 				link.l1.go = "FraOfficer_17";
@@ -1629,16 +1629,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_2":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputáció ellenôrzés átment", "None");
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ, és igazad volt, itt nincs okunk késlekedni. Az embereim mind itt vannak, erôsek, kiképzettek és készen állunk. Fél órán belül mindennek vége lesz. Kapitány, kérem, készüljön fel az emberek, a foglyok és a rakomány fogadására a hajóján. Nem fogunk itt sokáig idôzni.";
 				link.l1 = "Minden készen áll, hadnagy. Csak önre vártunk. Viszlát késôbb!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Képességpróba Sikertelen (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ. Ebben az esetben menjen a dokkhoz, és készítse elô a beszálló csapatot. Együtt és azonnal megrohamozzuk a banditák fészkét. Az én és a te embereid közül a legjobbak fogják vezetni az elôôrsöt - ôk lesznek azok, akik elfoglalják a kapukat. A többit majd megbeszéljük, miután közösen ellenôriztük az erôinket. Ne hagyj cserben engem és az országodat, "+GetFullName(pchar)+".";
 				link.l1 = "...úgy legyen. Viszlát késôbb, hadnagy.";
 				link.l1.go = "FraOfficer_17";
@@ -1648,16 +1648,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_3":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputáció ellenôrzés átment", "None");
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 70, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ, és igazad volt, itt nincs okunk késlekedni. Az embereim mind itt vannak, erôsek, kiképzettek és készen állunk. Fél órán belül mindennek vége lesz. Kapitány, kérem, készüljön fel az emberek, a foglyok és a rakomány fogadására a hajóján. Nem fogunk itt sokáig idôzni.";
 				link.l1 = "Minden készen áll, hadnagy. Csak önre vártunk. Viszlát késôbb!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Képességpróba Sikertelen (70)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 70, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ. Ebben az esetben menjen a dokkhoz, és készítse elô a beszálló csapatot. Együtt és azonnal megrohamozzuk a banditák fészkét. Az én és a te embereid közül a legjobbak fogják vezetni az elôôrsöt - ôk lesznek azok, akik elfoglalják a kapukat. A többit majd megbeszéljük, miután közösen ellenôriztük az erôinket. Ne hagyj cserben engem és az országodat, "+GetFullName(pchar)+".";
 				link.l1 = "...úgy legyen. Viszlát késôbb, hadnagy.";
 				link.l1.go = "FraOfficer_17";
@@ -1667,16 +1667,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_4":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputáció ellenôrzés átment", "None");
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ, és igazad volt, itt nincs okunk késlekedni. Az embereim mind itt vannak, erôsek, kiképzettek és készen állunk. Fél órán belül mindennek vége lesz. Kapitány, kérem, készüljön fel az emberek, a foglyok és a rakomány fogadására a hajóján. Nem fogunk itt sokáig idôzni.";
 				link.l1 = "Minden készen áll, hadnagy. Csak önre vártunk. Viszlát késôbb!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Képességpróba Sikertelen (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ. Ebben az esetben menjen a dokkhoz, és készítse elô a beszálló csapatot. Együtt és azonnal megrohamozzuk a banditák fészkét. Az én és a te embereid közül a legjobbak fogják vezetni az elôôrsöt - ôk lesznek azok, akik elfoglalják a kapukat. A többit majd megbeszéljük, miután közösen ellenôriztük az erôinket. Ne hagyj cserben engem és az országodat, "+GetFullName(pchar)+".";
 				link.l1 = "...úgy legyen. Viszlát késôbb, hadnagy.";
 				link.l1.go = "FraOfficer_17";
@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_5":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 90)
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Skill(true, 90, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ, és igazad volt, itt nincs okunk késlekedni. Az embereim mind itt vannak, erôsek, kiképzettek és készen állunk. Fél órán belül mindennek vége lesz. Kapitány, kérem, készüljön fel az emberek, a foglyok és a rakomány fogadására a hajóján. Nem fogunk itt sokáig idôzni.";
 				link.l1 = "Minden készen áll, hadnagy. Csak önre vártunk. Viszlát késôbb!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Képességpróba Sikertelen (90)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 90, SKILL_LEADERSHIP);
 				dialog.text = "Köszönöm, kapitány. Ez értékes információ. Ebben az esetben menjen a dokkhoz, és készítse elô a beszálló csapatot. Együtt és azonnal megrohamozzuk a banditák fészkét. Az én és a te embereid közül a legjobbak fogják vezetni az elôôrsöt - ôk lesznek azok, akik elfoglalják a kapukat. A többit majd megbeszéljük, miután közösen ellenôriztük az erôinket. Ne hagyj cserben engem és az országodat, "+GetFullName(pchar)+".";
 				link.l1 = "...úgy legyen. Viszlát késôbb, hadnagy.";
 				link.l1.go = "FraOfficer_17";

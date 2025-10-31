@@ -1208,7 +1208,7 @@ void ProcessDialogEvent()
 			dialog.text = "很好。 那么我们将它平分。 ";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // 口袋里的杜布隆
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
 				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1224,7 +1224,7 @@ void ProcessDialogEvent()
 			dialog.text = "太好了。 你带来了多少? ";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // 口袋里的杜布隆
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // 口袋里的杜布隆
 				link.l1 = "给你。 我有"+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+"。 ";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1687,7 +1687,7 @@ void ProcessDialogEvent()
 				dialog.text = "很高兴你喜欢铁木, " + sStr + "。 增加供应不是问题, 但如你所知, 有个陷阱。 数量越大, 越容易吸引不必要的注意, 尤其是英国当局的注意。 但如果我们增加可靠的人手。 值得信赖的耳目, 以及在官邸里帮助我们保持隐蔽的人, 一切都可以安排。 不过这并不便宜 —需要三千杜布隆来绕过城市金库和英国的需求。 这样我就可以为你提供五倍的供应量。 你觉得怎么样? ";
 				link.l1 = "三千杜布隆? 扬, 这简直是抢劫! 我们能不能用更低的费用解决? 也许有办法不用花这么多钱就能解决问题? ";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 					{
 						link.l2 = "(Digno de confianza) Honorables señores, estoy aquí para un comercio justo y mutuamente beneficioso. Por favor, permítanme ver al dueño de la plantación.";
 						link.l2.go = "mtraxx_soldier_1";
-						notification("Trustworthy", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 					}
 				}
 				else
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Digno de confianza) Estimado señor, ¡permítame objetar! Le he traído mercancías de la más alta calidad. Conozco el valor de cada unidad, tanto de lo que ofrezco como de lo que usted ofrece a cambio. Merezco una carga un poco más grande de su parte, y este trato seguirá siendo rentable para usted, eso lo sabe muy bien.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Confiable) Estimado señor, ¡permítame objetar! Le he traído mercancías de la más alta calidad. Conozco el valor de cada unidad, tanto de lo que ofrezco como de lo que usted ofrece a cambio. Merezco una carga ligeramente mayor de su parte, y este trato seguirá siendo rentable para usted, lo sabe muy bien.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Confiable) Estimado señor, ¡permítame objetar! Le he traído mercancías de la más alta calidad. Conozco el valor de cada unidad, tanto de lo que ofrezco como de lo que usted ofrece a cambio. Merezco una carga ligeramente mayor de su parte, y este trato seguirá siendo rentable para usted, usted lo sabe muy bien.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 				dialog.text = "Sí, hay demanda por Jean Picard, y no solo para servir vino. Un influyente inglés ya me ha contactado. Un hombre llamado, ¿cómo era... Pattornson? Me entregó una carta.";
 				link.l1 = "Pero ni Pattornson ni su cliente han aparecido aún. Estoy listo para comprarte a Jean aquí y ahora. Nombra tu precio, las damas están esperando.";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

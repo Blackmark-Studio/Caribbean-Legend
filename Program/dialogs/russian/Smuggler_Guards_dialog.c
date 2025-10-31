@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition включим обаяние ГГ, если оно есть
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				Link.l2.go = "GiveMeSomeMoneyToo";
 			}
 			else

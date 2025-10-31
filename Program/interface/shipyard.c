@@ -317,6 +317,7 @@ void FillShipsScroll()
 	for(int i = 0; i < COMPANION_MAX; i++)
 	{
 		cn = GetCompanionIndex(pchar, i);
+		if (cn < 0) continue;
 		if (FirstTime)
 		{
 			cn = GetCompanionIndex(pchar, i);
@@ -1191,7 +1192,8 @@ bool DoSellShip(bool _refresh)
 			for (i=sti(GameInterface.SHIPS_SCROLL.current); i<COMPANION_MAX-1; i++)
 				CompanionIdx[i] = CompanionIdx[i+1];
 			CompanionIdx[COMPANION_MAX-1] = -1;
-    		RefreshShipLists();
+			FirstTime = true;
+			RefreshShipLists();
 			GameInterface.SHIPS_SCROLL.current = GetCompanionQuantity(pchar) - 1;
 			SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"SHIPS_SCROLL",-1);
     	}

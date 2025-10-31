@@ -32,7 +32,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("Fox");
 			if (sld.location == pchar.location)
 			{
-				dialog.text = "If you're on your way to Colonel Fox, then turn around and walk away. He's not receiving guests.";
+				dialog.text = "If you're here to see Colonel Fox, go on in — he'll receive you..";
 				link.l1 = "Very well then.";
 				link.l1.go = "exit";
 			}

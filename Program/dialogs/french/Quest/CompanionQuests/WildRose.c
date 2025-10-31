@@ -89,7 +89,7 @@ void ProcessDialogEvent()
 			case "Naemnik_3":
 			dialog.text = "À toutes tes questions — oui. Ça fait plus de deux jours qu'on les pourchasse sur toute l'île avec les troufions. Puis ces salopards se sont divisés. Une partie a fui vers la grotte — la garde les a suivis. Les autres ont filé vers la crique. Dans leur embuscade à un demi-mille à l'ouest d'ici, on a perdu plusieurs gars. Et pendant qu'on se reprenait et se regroupait, ils se sont bien amusés avec cette idiote...";
 			link.l1 = "...";
-			link.l1.go = "Naemnik_7";
+			link.l1.go = "Naemnik_6_add";
 		break;
 
 		case "Naemnik_4":
@@ -286,7 +286,7 @@ void ProcessDialogEvent()
 		
 		case "Djerry_6":
 			dialog.text = "Tu es un sacré farceur – on te l'a déjà dit, ouais, hein ? "+GetAddress_Form(NPChar)+"?";
-			link.l1 = "Pas de blague, +npchar.name+. Tu crois que je suis arrivé ici par hasard ? Je suis allé dans la selva pour retrouver votre groupe, vous ramener à la plantation — et me faire un peu d'or au passage. Mais au final, il ne reste que toi. Tu ne vas pas me rapporter grand-chose, alors peut-être que je vais te laisser partir. Mais dis-moi — à quoi tu pensais, bon sang ? Tu es seul. Tous les autres sont morts. À quoi tu espères ? Te cacher dans les montagnes et les buissons jusqu'à ce qu'une balle t'atteigne, que la fièvre t'emporte, ou que tu finisses bouffé par des jaguars ?";
+			link.l1 = "Pas de blague, "+npchar.name+". Tu crois que je suis arrivé ici par hasard ? Je suis allé dans la selva pour retrouver votre groupe, vous ramener à la plantation — et me faire un peu d'or au passage. Mais au final, il ne reste que toi. Tu ne vas pas me rapporter grand-chose, alors peut-être que je vais te laisser partir. Mais dis-moi — à quoi tu pensais, bon sang ? Tu es seul. Tous les autres sont morts. À quoi tu espères ? Te cacher dans les montagnes et les buissons jusqu'à ce qu'une balle t'atteigne, que la fièvre t'emporte, ou que tu finisses bouffé par des jaguars ?";
 			link.l1.go = "Djerry_8";
 			AddCharacterExpToSkill(pchar, "Sneak", 100);
 		break;
@@ -2414,7 +2414,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Betancur_17_add":
-			StartInstantDialog("LSC_Betancur", "WildRose_Betancur_18", "Quest\CompanionQuests\WildRose.c");
+			if (PChar.location == "PlutoStoreSmall") StartInstantDialog("LSC_Betancur", "WildRose_Betancur_18", "Quest\CompanionQuests\WildRose.c");
+			else StartInstantDialog("LSC_Betancur", "WildRose_Betancur_19", "Quest\CompanionQuests\WildRose.c");
 		break;
 		
 		case "WildRose_Betancur_18":
@@ -2685,7 +2686,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_44":
-			dialog.text = "Ça n'a aucun sens, Mary. Il te suffit de te regarder dans un miroir – vous vous ressemblez comme deux gouttes d'eau. Seuls tes yeux viennent de ton père.";
+			dialog.text = "Ça n'a aucun sens, Mary. Il te suffit de te regarder dans un miroir – vous vous ressemblez comme deux gouttes d'eau. Seul ce regard perçant te vient de ton père.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_44_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));
@@ -3182,7 +3183,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Sesil_18_2":
-			dialog.text = "Il n'a jamais parlé de rien de tel. Et puis, réfléchis toi-même, ouais, hein ? "+npchar.name+",   si vous comptiez vous évader de prison, est-ce que vous en parleriez au premier venu ? Ce type-là, il ne l'aurait sûrement pas fait, moi je vous le dis.";
+			dialog.text = "Il n'a jamais parlé de rien de tel. Et puis, réfléchis toi-même, ouais, hein ? "+pchar.name+",   si vous comptiez vous évader de prison, est-ce que vous en parleriez au premier venu ? Ce type-là, il ne l'aurait sûrement pas fait, moi je vous le dis.";
 			link.l1 = "Donc, ce fil nous a menés nulle part, hein ? Eh bien, merci de nous avoir accordé de votre temps, madame "+npchar.lastname+". On se reverra.";
 			link.l1.go = "WildRose_Sesil_19";
 			ChangeCharacterComplexReputation(pchar, "honor", 1);
@@ -3524,27 +3525,23 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_62_add":
-			StartInstantDialog("Mary", "WildRose_Oreli_63", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("Mary", "WildRose_Oreli_63", "Quest\CompanionQuests\WildRose.c", "LSC_Oreli");
 		break;
 
 		case "WildRose_Oreli_63":
 			dialog.text = "S'il te plaît, Aurélie. Je comprends que c'est difficile pour toi de t'en souvenir après tout ce temps, mais essaie encore une fois, d'accord, ouais, hein ?";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_63_add";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_63_add":
-			StartInstantDialog("LSC_Oreli", "WildRose_Oreli_64", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("LSC_Oreli", "WildRose_Oreli_64", "Quest\CompanionQuests\WildRose.c", "Mary");
 		break;
 
 		case "WildRose_Oreli_64":
 			dialog.text = "Je vous ai déjà tout raconté, tout ce dont je me souviens. Je ne comprends vraiment pas ce que vous voulez encore me soutirer.";
 			link.l1 = "On va vous poser quelques questions, "+npchar.name+". Essayez, s'il vous plaît, de vous souvenir de quelque chose – des détails ou des précisions. Nous n'allons pas vous mettre la pression...";
 			link.l1.go = "WildRose_Oreli_65";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_65":
@@ -3553,6 +3550,7 @@ void ProcessDialogEvent()
 			link.l1.go = "WildRose_Oreli_66_1";
 			link.l2 = "On a fait un long chemin, "+npchar.name+". Vous n'imaginez même pas combien d'efforts et de temps il nous a coûté. Mais nous nous sommes égarés, et il n'y a que vous et votre mémoire pour nous remettre sur le chemin de la vérité.";
 			link.l2.go = "WildRose_Oreli_66_2";
+			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), pchar);
 		break;
 
 		case "WildRose_Oreli_66_1":
@@ -3597,8 +3595,7 @@ void ProcessDialogEvent()
 			dialog.text = "Attendez, les jeunes gens ! J'ai encore quelque chose pour vous… Enfin, plutôt pour toi, Mary.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_72_a";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
+			NPCsLookEachOther("LSC_Oreli", "Mary");
 		break;
 		
 		case "WildRose_Oreli_72_a": //
@@ -3608,55 +3605,47 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Oreli_72_add":
-			StartInstantDialog("Mary", "WildRose_Oreli_73", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("Mary", "WildRose_Oreli_73", "Quest\CompanionQuests\WildRose.c", "LSC_Oreli");
 		break;
 
 		case "WildRose_Oreli_73":
 			dialog.text = "Qu'est-ce que c'est, Aurélie ? Un chapeau ?..";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_73_add";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_73_add":
-			StartInstantDialog("LSC_Oreli", "WildRose_Oreli_74", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("LSC_Oreli", "WildRose_Oreli_74", "Quest\CompanionQuests\WildRose.c", "Mary");
 		break;
 
 		case "WildRose_Oreli_74":
 			dialog.text = "Le chapeau de ta mère, Thérèse. Elle l'avait avec elle quand les survivants du naufrage ont été amenés sur le 'Cérès Smitty'. Quand Thérèse est morte, j'ai ramassé ce chapeau par terre, près de son lit – puis je l'ai oublié… Je ne m'en suis souvenue qu'aujourd'hui, pendant notre conversation.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_74_add";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_74_add":
-			StartInstantDialog("Mary", "WildRose_Oreli_75", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("Mary", "WildRose_Oreli_75", "Quest\CompanionQuests\WildRose.c", "LSC_Oreli");
 		break;
 
 		case "WildRose_Oreli_75":
 			dialog.text = " Aurélie... Tu l'as gardée toutes ces années ! Et... et tu ne l'as ni jetée, ni vendue... Merci, merci à toi ! Tu n'imagines même pas à quel point c'est... précieux et important pour moi, ouais, hein !";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_75_add";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_75_add":
-			StartInstantDialog("LSC_Oreli", "WildRose_Oreli_76", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("LSC_Oreli", "WildRose_Oreli_76", "Quest\CompanionQuests\WildRose.c", "Mary");
 		break;
 
 		case "WildRose_Oreli_76":
 			dialog.text = "Pardon, Mary – j'aurais dû te la rendre depuis belle lurette… Mais ma mémoire, c'est un vieux tamis percé, tu vois… ";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Oreli_76_add";
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 
 		case "WildRose_Oreli_76_add":
-			StartInstantDialog("Mary", "WildRose_Oreli_77", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("Mary", "WildRose_Oreli_77", "Quest\CompanionQuests\WildRose.c", "LSC_Oreli");
 		break;
 
 		case "WildRose_Oreli_77":
@@ -3664,8 +3653,6 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap4_PathToLight_hat_1");
-			CharacterTurnByChr(CharacterFromID("LSC_Oreli"), CharacterFromID("Mary"));
-			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("LSC_Oreli"));
 		break;
 		
 		case "WildRose_Mary_166":
@@ -3681,7 +3668,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "WildRose_Mary_167_add":
-			StartInstantDialog("LSC_Oreli", "WildRose_Mary_168", "Quest\CompanionQuests\WildRose.c");
+			StartInstantDialogTurnToNPC("LSC_Oreli", "WildRose_Mary_168", "Quest\CompanionQuests\WildRose.c", "Mary");
 		break;
 		
 		case "WildRose_Mary_168":
@@ -3887,7 +3874,7 @@ void ProcessDialogEvent()
 
 		case "WildRose_Chimiset_68_1":
 			dialog.text = "Parce que j'ai décidé de t'aider, mon ami, à découvrir ce que vous deviez savoir, et à elle — d'accomplir sa destinée. Si je t'avais parlé de ce qui l'attendait, peut-être n'aurais-tu pas osé aller jusqu'au bout — et Aurélie aurait emporté ses secrets dans l'au-delà. Quel aurait été l'intérêt ? Elle serait morte en vain. Comme une antilope tuée par un lion, mais non dévorée, laissée aux vautours.";
-			link.l1 = "Destinée, utilité... Tu es carrément un faiseur de destinées, "+npchar.name+". Un dieu sous une apparence humaine.";
+			link.l1 = "Destinée, utilité... Tu es carrément un faiseur de destins, "+npchar.name+". Un dieu sous une apparence humaine.";
 			link.l1.go = "WildRose_Chimiset_69";
 			AddComplexSelfExpToScill(100, 100, 100, 100);
 		break;
@@ -4441,7 +4428,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_3":
-			if (CheckCharacterItem(sld, "MarysHat")) // У Мэри есть своя шляпа
+			sld = CharacterFromID("Mary");
+			if (CheckCharacterItem(sld, "hat11")) // У Мэри есть своя шляпа
 			{
 				dialog.text = "Ah, j'ai vu pas mal de choses au cours de ma longue et difficile vie. À chaque fois je me dis que rien ne pourra plus m'étonner — et à chaque fois je me trompe. Donc, tu as quand même survécu là-bas... Et tu as même gardé le chapeau de Teresa. Je ne pensais pas revoir ça un jour.";
 				link.l1 = "...";
@@ -4734,7 +4722,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_36":
-			dialog.text = "Fais pas le malin, grenouille. Thérèse pleurait sur mon épaule, pendant que je me demandais quoi faire. Je voulais rester avec elle, vraiment — mais je sentais déjà que cet enfant n'apporterait rien de bon.\nJ'ai essayé de convaincre Thérèse de s'en débarrasser, tant qu'il était encore temps — mais ça n'a fait qu'aggraver sa crise. On n'a pas su quoi faire — alors on a décidé d'attendre deux mois de plus, jusqu'au prochain retour du 'Cornwall' à Dundalk, car à ce moment-là, l'Amirauté n'avait pas encore pardonné à Casper.";
+			dialog.text = "Fais pas le malin, grenouille. Thérèse pleurait sur mon épaule, pendant que je me demandais quoi faire. Je voulais rester avec elle, vraiment — mais je sentais déjà que cet enfant n'apporterait rien de bon.\nJ'ai essayé de convaincre Thérèse de s'en débarrasser, tant qu'il était encore temps — mais ça n'a fait qu'aggraver sa crise. On n'a pas su quoi faire — alors on a décidé d'attendre deux mois de plus, jusqu'au prochain retour du 'Cornwall' à Dundalk, car à ce moment-là, l'Amirauté n'avait pas encore pardonné à Casper\nAfter our return I didn’t find her immediately — Theresa’s pregnancy had grown obvious, and, as the owner of the tavern where she worked told me, her scoundrel of a father beat her and locked her up in the house. Needless to say, I dealt with that scoundrel so severely that he nearly vomited his own guts. Obviously, there was no question of her continuing to live in that house.";
 			link.l1 = "Et vous l'avez amenée sur le 'Cornwall' ?";
 			link.l1.go = "WildRose_Rupert_37";
 		break;
@@ -4746,7 +4734,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_38":
-			dialog.text = "Thérèse a été découverte avant. Casper s'était déjà enfilé sa dose de whisky, alors il n'écoutait rien. Il a simplement ordonné de jeter la fille par-dessus bord. J'ai beau l'avoir supplié, il ne faisait que rire comme un fou — bordel, j'te raconte ça et j'ai encore son rire en tête...";
+			dialog.text = "Exactement. Casper s'était déjà enfilé sa dose de whisky, alors il n'écoutait rien. Il a simplement ordonné de jeter la fille par-dessus bord. J'ai beau l'avoir supplié, il ne faisait que rire comme un fou — bordel, j'te raconte ça et j'ai encore son rire en tête...";
 			link.l1 = "Et alors vous avez décidé de vous mutiner ?";
 			link.l1.go = "WildRose_Rupert_39";
 		break;
@@ -4758,10 +4746,11 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Rupert_40":
-			dialog.text = "J'étais sûr de pouvoir mener le 'Cornwall' de l'autre côté de l'océan. Là-bas, personne ne connaissait nos tronches, et ça nous laissait une chance de tout recommencer. Convaincre les autres officiers n'a pas été difficile — ce n'était pas tant mon autorité que le contenu de deux coffres, que les matelots ignoraient. On a décidé que Joshua Casper devait rester en vie. Avec une poignée d'officiers, on a voulu gagner un peu de temps en sacrifiant l'un des coffres. Mais un enfoiré a ouvert sa gueule au sujet du deuxième — et ça a foutu la zizanie dans l'équipage.";
-			link.l1 = "Ils se sont rebellés contre vous, maintenant ?";
+			dialog.text = "J’étais certain que je pourrais conduire 'Cornwell' à travers l’océan. Ici, nos visages étaient inconnus, et cela nous donnait l’occasion de commencer une nouvelle vie. Convaincre les autres officiers n’a pas été difficile — ce n’était pas tant mon autorité que le contenu de quelques coffres, que les simples matelots ignoraient. L’équipage a décidé que Joshua Kasper devait rester en vie. Nous, les officiers de montagne, avons décidé de gagner du temps, sacrifier un des coffres et accoster à Antigua, où je prendrais son nom. Ensuite, nous avions l’intention de mettre le cap sur Providence.\n Et voilà : personne ne soupçonna la substitution. Mais quand il ne restait que quelques jours jusqu’à Providence, un salaud parla du second coffre — et cela provoqua une rupture au sein de l’équipage.";
+			link.l1 = "Ils ont donc fomenté une mutinerie contre vous ?";
 			link.l1.go = "WildRose_Rupert_45";
 		break;
+
 
 		case "WildRose_Rupert_45":
 			dialog.text = "Non, mais le nombre de ceux qui voulaient continuer à servir notre glorieux roi a brusquement diminué. Ceux qui étaient prêts à devenir pirates n'étaient pas nombreux non plus. Alors on a trouvé une solution intermédiaire : on a décidé de jeter l'ancre dans l'un des ports français. Là, on comptait vendre le navire, partager l'argent obtenu pour lui et celui qui était dans le coffre, puis chacun partirait de son côté.";
@@ -5049,6 +5038,150 @@ void ProcessDialogEvent()
 			link.l1 = "Bien sûr, ma chérie. J'allais justement te le proposer.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_38");
+		break;
+		
+		// Тичингиту
+		case "WildRose_Tichingitu_Final_1":  
+			dialog.text = npchar.name+", arriver à temps, capitaine "+pchar.name+".";
+			link.l1 = "Je savais que je pouvais compter sur toi, mon ami. Merci — personne n’aurait pu faire mieux.";
+			link.l1.go = "WildRose_Tichingitu_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Tichingitu_Final_2":
+			dialog.text = "La jungle est la maison de "+npchar.name+". "+npchar.name+" content de se battre dans la jungle. La jungle donne force à "+npchar.name+".";
+			link.l1 = "C’est exactement pour ça que je t’ai envoyé diriger l’escouade. Et j’ai bien fait — comme tu vois, on nous attendait ici à bras ouverts.";
+			link.l1.go = "WildRose_Tichingitu_Final_3";
+		break;
+
+		case "WildRose_Tichingitu_Final_3":
+			dialog.text = "Qu’est-ce que le capitaine "+pchar.name+" compte faire maintenant ?";
+			link.l1 = "Mary et moi avons besoin d’un moment à deux. Rassemble les blessés et conduis-les au navire, prenez aussi les morts — nous les confierons à la mer. Et, "+npchar.name+"... dis à Alonso que le père de Mary doit être enterré comme il se doit, selon les rites protestants, quelque part ici. Lui seul et toi devez savoir où. N’en parle à personne, pas même à Mary. Elle n’a pas besoin de raviver ces souvenirs.";
+			link.l1.go = "WildRose_Tichingitu_Final_4";
+		break;
+
+		case "WildRose_Tichingitu_Final_4":
+			dialog.text = npchar.name+" comprendre, capitaine "+pchar.name+". Tichingitu faire tout.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
+		break;
+
+		// Дюран
+		case "WildRose_Duran_Final_1":   
+			dialog.text = "Des sales types, solides... Mais on les a bien eus, ha ha. Qu’ils pourrissent ici à se demander si ça valait le coup de s’en prendre à nous.";
+			link.l1 = "Merci, "+npchar.name+", excellent travail. Je n’ose imaginer ce qui serait arrivé à Mary... et à moi... si je ne vous avais pas envoyés couvrir nos arrières...";
+			link.l1.go = "WildRose_Duran_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Duran_Final_2":
+			dialog.text = "Ha, cap’, tu t’en serais sorti, je te connais. T’as vu la machette de leur chef ? J’ai pas lâché son regard. Si elle te plaît pas, je serais pas vexé si tu me l’offrais.";
+			link.l1 = "Hmm... On verra, mon pote, on verra. Pour l’instant, rassemble ceux qui ont survécu et retournez au navire. Prenez aussi les morts — on les confiera à la mer. Et... ce chef — c’était le père de Mary. Prends Alonso et enterrez-le selon les rites protestants, quelque part ici. Que personne ne sache où se trouve la tombe. Surtout pas Mary. Elle n’a pas besoin de raviver ces souvenirs.";
+			link.l1.go = "WildRose_Duran_Final_3";
+		break;
+
+		case "WildRose_Duran_Final_3":
+			dialog.text = "Ce sera fait, cap’. Attends... Enfin, non... J’y vais.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
+		break;
+
+		// Тонзаг
+		case "WildRose_Tonzag_Final_1": 
+			dialog.text = "Il faisait chaud ici, cap’. Ces salopards ont eu ce qu’ils méritaient. T’as vu la tête de ce nabot quand on est arrivés ?";
+			link.l1 = "Il ne s’attendait clairement pas à ça. Tout comme Mary et moi ne nous attendions pas à ce que ce soit un tel salaud. Mais bon, j’ai bien fait de suivre mon instinct en décidant de couvrir nos arrières.";
+			link.l1.go = "WildRose_Tonzag_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Tonzag_Final_2":
+			dialog.text = "T’es pas un nouveau dans les Caraïbes. T’as dû t’habituer à toute la racaille qui traîne ici, au point de sentir l’embrouille avec ton cul. Alors, qu’est-ce qu’on fait ? On retourne au navire ?";
+			link.l1 = "Récupère les blessés, les morts aussi, et remontez à bord. Ceux qui sont tombés, on les confiera à la mer, comme les fils fidèles qu’ils étaient. Mary et moi on viendra après — on a besoin d’un moment à nous. Et encore une chose : enterrez le père de Mary selon le rite protestant. Tu peux demander de l’aide à Alonso. Mais veille à ce que personne ne sache où est la tombe. Surtout pas Mary. Elle n’a pas besoin de raviver ces souvenirs.";
+			link.l1.go = "WildRose_Tonzag_Final_3";
+		break;
+
+		case "WildRose_Tonzag_Final_3":
+			dialog.text = "T’as raison. Elle n’a rien à faire ici à pleurer sur une tombe. T’inquiète, on fera tout comme il faut — et personne n’en saura rien.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
+		break;
+
+		// Айронс
+		case "WildRose_Irons_Final_1":
+			dialog.text = "Capitaine, monsieur, rapport : l’embuscade a fonctionné, les vauriens sont morts, le capitaine est sain et sauf.";
+			link.l1 = "Tu crois que c’est le moment de faire de l’esprit ? Mauvaise idée. Tu veux frotter le pont devant les matelots ? Ils se fendraient bien la poire... Je te conseille de ne plus tester ma patience. Surtout aujourd’hui.";
+			link.l1.go = "WildRose_Irons_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Irons_Final_2":
+			dialog.text = "Euh... en fait, je suis officier, et...";
+			link.l1 = "Pour l’instant. Aujourd’hui officier — demain mousse, et après-demain mendiant.";
+			link.l1.go = "WildRose_Irons_Final_3";
+		break;
+
+		case "WildRose_Irons_Final_3":
+			dialog.text = "Compris : " + GetFullName(pchar) + " est le capitaine sérieux. Fini les blagues. Vos ordres, monsieur ?";
+			link.l1 = "Rassemble les blessés et emmène-les au navire. Dis à Alonso de prendre une équipe et de récupérer les corps de nos gars — on les remettra à la mer. Qu’il enterre aussi le père de Mary selon les traditions protestantes. Lui seul et celui qui l’aide doivent savoir où se trouve la tombe. Mary ne doit rien savoir. Je ne veux pas qu’elle se torture avec ça.";
+			link.l1.go = "WildRose_Irons_Final_4";
+		break;
+
+		case "WildRose_Irons_Final_4":
+			dialog.text = "Très bien... Ce sera fait. Et t’en fais pas, je sais tenir ma langue.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
+		break;
+
+		// Лонгвэй
+		case "WildRose_Longway_Final_1":
+			dialog.text = "Monsieur le capitaine, nous avons gagné. Pas un seul chien ne s’est échappé.";
+			link.l1 = "Beau travail, "+npchar.name+", merci. Je savais que je pouvais compter sur toi. Rassemble tous les survivants et retournez au navire. Mary et moi resterons un moment à terre.";
+			link.l1.go = "WildRose_Longway_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Longway_Final_2":
+			dialog.text = "Et pour les corps des morts, que devons-nous faire ?";
+			link.l1 = "Nous les confierons à la mer. Dis à Alonso de s’occuper de la préparation des corps. Et dis-lui aussi que le père de Mary doit être enterré selon les traditions protestantes, ici, dans la jungle, loin des regards. Personne ne doit savoir où est la tombe — surtout pas Mary. La connaissant, elle voudrait revenir ici, et cela ne lui ferait aucun bien.";
+			link.l1.go = "WildRose_Longway_Final_3";
+		break;
+
+		case "WildRose_Longway_Final_3":
+			dialog.text = "Je transmettrai tout. Autre chose, capitaine ?";
+			link.l1 = "C’est tout, mon ami. Va te reposer et soigne tes blessures.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
+		break;
+		
+		// Алонсо
+		case "WildRose_Alonso_Final_1":
+			dialog.text = "Quel carnage... Ça va, cap’ ?";
+			link.l1 = "J’irais bien... si Mary et moi n’avions pas dû tuer son père...";
+			link.l1.go = "WildRose_Alonso_Final_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Alonso_Final_2":
+			dialog.text = "On dirait bien que c’était un sacré salopard...";
+			link.l1 = "Là-dessus, tu as raison, "+npchar.name+". Mais quoi qu’il ait fait, il doit être enterré dignement — selon les rites protestants. Tu t’en charges toi-même. Personne ne doit savoir où est cette tombe. Surtout pas Mary.";
+			link.l1.go = "WildRose_Alonso_Final_3";
+		break;
+
+		case "WildRose_Alonso_Final_3":
+			dialog.text = "Tu veux l’épargner de mauvais souvenirs ?";
+			link.l1 = "Et de tourments inutiles. Envoie les autres au navire pour soigner leurs blessures. Ramenez aussi les morts à bord — on leur rendra hommage en mer, dès que Mary et moi reviendrons. Pour l’instant, on a besoin d’un moment seul à seul.";
+			link.l1.go = "WildRose_Alonso_Final_4";
+		break;
+
+		case "WildRose_Alonso_Final_4":
+			dialog.text = "Je dirai aux gars de ne pas venir vous chercher.";
+			link.l1 = "Merci, "+npchar.name+".";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_31");
 		break;
 	}
 } 

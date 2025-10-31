@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "¿Fue una 'pista'? ¡Disculpe, fue mi error hablar con usted! Adiós 'caballero'...";
 				link.l1 = "Como desees, cariño.";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Bueno, entonces... Al menos es honesto en sus deseos. Le prometo que si encuentra a Angelo, o me dice lo que realmente le sucedió, obtendrá lo que pide...";
 				link.l1 = "Querida señorita, es un placer hacer negocios contigo... Ahora vayamos directo a la historia de tu hermano.";
 				link.l1.go = "Consumption_4";

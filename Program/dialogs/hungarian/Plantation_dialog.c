@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 				dialog.text = "Igen, van kereslet Jean Picardra - nem csak a bor felszolgálásában. Egy befolyásos angol már felvette velem a kapcsolatot. Egy férfi, hogy is hívják... Pattornson? Átadott nekem egy levelet.";
 				link.l1 = "De sem Pattornson, sem az ügyfele nem jelentkezett még. Kész vagyok megvenni Jean-t magától itt és most. Nevezze meg az árát - a hölgyek várnak!";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

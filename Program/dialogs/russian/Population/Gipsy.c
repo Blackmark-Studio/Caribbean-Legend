@@ -186,14 +186,14 @@ void ProcessDialogEvent()
 											 "Сказывали мне, что в прошлом месяце кто-то отравил в таверне заезжего купца и обобрал до нитки. А купец тот ещё долго мучился пока представился, весь пеной изошёл и синий стал, как баклажан. Не твоих ли рук дело, яхонтов"+GetSexPhrase("ый","ая")+" мо"+GetSexPhrase("й","я")+"?");
 				link.l1 = "Вот значит, как ты обо мне подумала! Не волнуйся, людей травить не в моих привычках. Для людей у меня другие средства имеются, а вот против крыс ничего не помогает.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Вызывающий доверие", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "Ишь, чего удумал"+GetSexPhrase("","а")+"! Нет у меня никакой отравы! Травы есть, отвары есть, а отравы нет.";
 				link.l1 = "Ну да ладно..";
 				link.l1.go = "exit";
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

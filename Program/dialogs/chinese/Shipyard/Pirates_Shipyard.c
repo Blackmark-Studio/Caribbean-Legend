@@ -106,18 +106,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l4 = "我想更换船帆的外观。 ";
 					link.l4.go = "SailsGerald";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_cabin"))
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 					link.l50 = "我的船很... 特别。 我想做些改动。 ";
 					link.l50.go = "FDM";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+			/* if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 			{
 					link.l50 = "我有更多箱子用于船舱改造。 ";
 					link.l50.go = "FDM_cabin_pay";
-			}
+			} */
 			// Xenon -->
-			/*if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 			{
 					link.l50 = "我来处理船只改造的事。 ";
 					link.l50.go = "FDM_hull_givemoney";
@@ -128,7 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l50 = "我来处理船只改造的事。 ";
 					link.l50.go = "FDM_hull_checkmaterials";
 			}
-			// < —Xenon*/
+			// < —Xenon
 			link.l9 = pcharrepphrase("该死, 我有几件急事要处理, 再见。 ", "我该走了。 抱歉。 ");
 			Link.l9.go = "ship_tunning_not_now";
 		break;
@@ -602,22 +602,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "又来谈你的'幽灵船'... 听着, 我之所以还在处理它, 是希望它能变得像样点。 否则我根本不会碰它。 我想海上的人都有同感。 这次你想怎么改? ";
 			else	
 				dialog.text = "啊, 那艘'幽灵船'! 母亲们都用你的大帆船来吓唬调皮的孩子。 而你居然没把它沉了, 还留着这艘该死的船! 水手们在地平线看到它都会发抖... 你想对它做什么? ";
-			if (!CheckAttribute(npchar, "quest.FDM_cabin")) // 检查船舱改造状态
+			/*if (!CheckAttribute(npchar, "quest.FDM_cabin")) // 检查船舱改造状态
 			{
 				link.l1 = "我喜欢看胆小鬼被吓得屁滚尿流的样子。 但船舱内部太糟糕了。 你看过那船舱吗? 像口棺材似的, 全是霉菌和灰尘。 我想翻新一下, 你能做到吗, 大师? ";
 				link.l1.go = "FDM_cabin";
-			}
+			}*/
 			/* if (!CheckAttribute(npchar, "quest.FDM_sails")) // 检查船帆改造状态
 			{
 				link.l2 = "我受够了那些破烂的黑布帆。 虽说它们和普通帆一样能兜风, 但那外观... 恶心死了。 我想要普通的雪白船帆。 你能接这活吗, 大师? ";
 				link.l2.go = "FDM_sails";
-			}
+			}*/
 			
 			if (!CheckAttribute(npchar, "quest.FDM_hull")) // 检查船体改造状态
 			{
 				link.l3 = "嗯, 我觉得是时候让它变像样了。 船本身不错, 船员也习惯了, 但让一位体面的船长驾驶一艘能把成年人吓破胆的船 —更别说孩子了 —实在有失尊严。 我想彻底重建, 让其他船长看到我的船时只有羡慕的份, 而不是吓得画十字。 除了群岛上最棒的造船师, 我还能找谁呢? ";
 				link.l3.go = "FDM_hull";
-			} */
+			}
 		break;
 		
 		case "FDM_cabin":
@@ -759,8 +759,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "行, 我们算一下... 彻底翻新船壳需要150单位铁木。 130卷绳索。 170卷船用丝绸和200桶树脂。 全部费用25万比索。 别这么看我, 大部分钱都是花在工费上的! 毕竟我们不是在修小渔船。 ";
-			link.l1 = "我觉得不行。 我可不想拖着这么多材料, 还要付25万比索。 看来我还是继续用这艘船吧。 ";
+			dialog.text = "好吧，我们来算算……要彻底重建船体，我需要各150单位的bakaut、绳索、船用丝绸和树脂——以及10000枚金质双倍金币。别那样看我；大部分钱都用在材料上。这活等同于把船拆散再从头重建。";
+			link.l1 = "算了吧，我不行。把这么多资源运来，还要交出一山黄金去重建，我还没准备好。我 останусь с тем, что есть.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "唉, 为了我的船还有什么不能做的... 好吧, 成交。 ";
 			link.l2.go = "FDM_hull_02";
@@ -768,7 +768,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_02":
 			dialog.text = "好, 少说多做。 你把钱带来, 我就开始采购所需材料。 一旦收到钱, 你就可以开始送材料了, 我也会开始动工。 ";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
     			link.l1 = "钱不是问题, 我现在就有。 给你, 大师。 ";
     			link.l1.go = "FDM_hull_waitmaterials";
@@ -781,7 +781,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_waitmaterials":
-			addMoneyToCharacter(pchar, -250000);
+			RemoveDublonsFromPCharTotal(10000);
 			npchar.quest.FDMsandal = 0;
 			npchar.quest.FDMoil = 0;
 			npchar.quest.FDMshipsilk = 0;
@@ -789,7 +789,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("renovate_fdm", "1");
 
 			npchar.quest.FDM_hull = "hull_waitmaterials";
-			dialog.text = "带着这么一大笔钱在海盗定居点走动不害怕吗, 呵呵? 开玩笑的, 他们都是些守规矩的人。 现在我等你送材料来。 提醒一下, 你需要带150铁木。 130卷绳索。 170卷船用丝绸和200桶树脂。 ";
+			dialog.text = "带着这么一大笔钱在海盗定居点走动不害怕吗, 呵呵? 开玩笑的, 他们都是些守规矩的人。 现在我等你送材料来。 提醒一下, 你需要带150铁木。 150卷绳索。 150卷船用丝绸和150桶树脂。 ";
 			link.l1 = "等着吧, 我会把材料带来的。 ";
 			link.l1.go = "exit";
 		break;
@@ -802,19 +802,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "铁木, 数量为" + FindRussianQtyString(iSan) + "。 ";
 				link.l1.go = "FDM_sandal";
 			}
-			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 200)
+			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 150)
 			{
 				iOil = GetSquadronGoods(pchar, GOOD_OIL);
 				link.l2 = "树脂, 数量为" + FindRussianQtyString(iOil) + "。 ";
 				link.l2.go = "FDM_oil";
 			}
-			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 170)
+			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 150)
 			{
 				iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 				link.l3 = "船用丝绸, 数量为" + FindRussianQtyString(iSil) + "。 ";
 				link.l3.go = "FDM_shipsilk";
 			}
-			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 130)
+			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 150)
 			{
 				iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 				link.l4 = "绳索, 数量为" + FindRussianQtyString(iRop) + "。 ";
@@ -825,7 +825,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_checkmaterials_1":
-			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 199 && sti(npchar.quest.FDMshipsilk) > 169 && sti(npchar.quest.FDMropes) > 129)
+			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 149 && sti(npchar.quest.FDMshipsilk) > 149 && sti(npchar.quest.FDMropes) > 149)
 			{
 				dialog.text = "太棒了! 所有材料都已收齐。 现在, 让我来处理这艘船吧。 它终于要焕然一新了。 ";
 				link.l1 = "好了, 别唠叨了, 大师。 我迫不及待想看到结果了。 ";
@@ -869,7 +869,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_oil": // 树脂
-			amount = 200 - sti(npchar.quest.FDMoil);
+			amount = 150 - sti(npchar.quest.FDMoil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) 
@@ -896,7 +896,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_shipsilk": // 船用丝绸
-			amount = 170 - sti(npchar.quest.FDMshipsilk);
+			amount = 150 - sti(npchar.quest.FDMshipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) 
@@ -923,7 +923,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_ropes": // 绳索
-			amount = 170 - sti(npchar.quest.FDMropes);
+			amount = 150 - sti(npchar.quest.FDMropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) 
@@ -961,9 +961,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_givemoney":
 			dialog.text = "那么, 你把钱带来了吗? ";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
-    			link.l2 = "是的, 带来了。 25万比索, 按约定。 ";
+    			link.l2 = "是的，我带来了。按约定的那10 000枚足重的双倍金币。";
     			link.l2.go = "FDM_hull_waitmaterials";
             }
             else
@@ -981,24 +981,31 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RefreshLandTime();
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
-			RealShips[sti(Pchar.Ship.Type)].BaseType = SHIP_RENOVATED_FDM;
-			RealShips[sti(Pchar.Ship.Type)].Name = "NewFlyingdutchman1";
-			RealShips[sti(Pchar.Ship.Type)].BaseName = "NewFlyingdutchman";
-			/* RealShips[sti(Pchar.Ship.Type)].CannonsQuantity = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMax = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMin = 58;
-			RealShips[sti(Pchar.Ship.Type)].rcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].lcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].fcannon = 6;
-			RealShips[sti(Pchar.Ship.Type)].bcannon = 4; */
-			if(Get_My_Cabin() == "My_Cabin") RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin";	
-			else RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin_Huge";
+			
+			shTo = &RealShips[sti(pchar.Ship.Type)];
+			object newShip;
+			aref arTuning;
+			CopyAttributes(&newShip, shTo);
+			
+			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, 0, pchar);
+			
+			if(CheckAttribute(newShip, "Tuning"))
+			{
+				makearef(arTuning, newShip.tuning);
+				for (int iQty = 0; iQty < GetAttributesNum(arTuning); iQty++)
+				{
+					aref realTuning = GetAttributeN(arTuning, iQty);
+					string tuningName = GetAttributeName(realTuning);
+					UpgradeShipParameter(pchar, tuningName);
+				}
+			}
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0); // 白色棉质船帆
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);
 			DeleteAttribute(pchar, "ship.hulls");
 			DeleteAttribute(pchar, "ship.blots");	
 			CloseQuestHeader("renovate_fdm");
+			Achievment_Set("ach_CL_178");
 		break;
 		//< —Xenon
 	}

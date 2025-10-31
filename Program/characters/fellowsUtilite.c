@@ -1,9 +1,27 @@
-// Собрать индексы всей команды капитана с сортировкой абордажники => офицеры => компаньоны => пассажиры
+// Собрать индексы всей команды капитана с сортировкой абордажники => офицеры => компаньоны => пассажиры/пленники
 // Fellow -- член экипажа ГГ в любом статусе, будь то абордажник, офицер, компаньон или пассажир
+// [!] Этот метод возвращает в том числе квестовых персонажей
 object GetAllFellows(ref captain, bool includeCaptain)
 {
 	object result;
 	AddAllFellows(&result, captain, includeCaptain);
+	return result;
+}
+
+// Получить уникальные индексы всех персонажей, имеющих корабельные должности
+object GetAllFellowsManagers(ref captain)
+{
+	object result;
+	aref passengers;
+	makearef(passengers, captain.fellows.passengers);
+
+	for (int i=0; i < JOBS_MAX-1; i++)
+	{
+		string job = JobByIdx(i);
+		if (!CheckAttribute(passengers, job)) continue;
+		AddFellow(&result, sti(passengers.(job)));
+	}
+
 	return result;
 }
 
@@ -54,6 +72,8 @@ void AddFellow(ref result, int chrIdx)
 }
 
 // Братишка не квестовый, пленник, короче действительно наш братишка
+// Метод предназначен для фильтра персонажей из функций типа GetAllFellows, то есть мы уже предполагаем
+// что передаём сюда кого-то из списка пассажиров, а не любого персонажа в принципе
 bool IsFellowOurCrew(ref chr)
 {
 	if (AttributeIsTrue(chr, "prisoned")) return false;
@@ -82,7 +102,7 @@ bool IsFellowAbleToLoot(ref chr)
 	if (!IsFellowOurCrew(chr)) return false;
 	if (bAbordageStarted && IsOfficer(chr)) return true;
 	if (IsInSeaNow()) return true;
-	if (!IsMainCharacter(chr) && !CheckAttribute(&loadedLocation, "locators.officers")) return false; // костыль для кражи в локациях, куда не спавнятся офицеры
+	if (!IsMainCharacter(chr) && !IsShipInside(loadedLocation.id) && !CheckAttribute(&loadedLocation, "locators.officers")) return false; // костыль для кражи в локациях, куда не спавнятся офицеры
 	if (IsShipSafeReachableNow()) return true;
 
 	return pchar.location == chr.location;
@@ -99,7 +119,7 @@ bool IsFellowAbleToBeCompanion(ref chr)
 }
 
 // Может ли братишка сейчас занять новую должность
-bool IsFellowAbleToGetJob(ref chr)
+bool IsFellowAbleToGetShipJob(ref chr)
 {
 	if (!IsFellowOurCrew(chr)) return false;
 	if (IsCompanion(chr)) return false;
@@ -109,10 +129,50 @@ bool IsFellowAbleToGetJob(ref chr)
 	return GetAttributeInt(chr, "isbusy") < jobLimit;
 }
 
+// Может ли братишка сейчас стать абордажником
+bool IsFellowAbleToGetBoarderJob(ref chr)
+{
+	if (!IsFellowAbleToGetShipJob(chr)) return false;
+	return !IsOfficer(chr);
+}
+
 // Является ли чар братишкой, не совсем надёжная проверка, но хотя бы её тут потом можно будет поменять в одном месте
 bool IsFellow(ref chr)
 {
 	if (!CheckAttribute(&chr, "Payment")) return false;
 	if (chr.chr_ai.group != LAI_GROUP_PLAYER) return false;
 	return true;
+}
+
+// Все должности офицера
+void FillFellowJobs(ref chrVT, ref result)
+{
+	ref chr = FindChar_VT(&chrVT);
+	int chrIdx = sti(chr.index);
+	aref passengers;
+	makearef(passengers, pchar.Fellows.Passengers);
+
+	for (int i=0; i < JOBS_MAX-1; i++)
+	{
+		string job = JobByIdx(i);
+		if (!CheckAttribute(passengers, job)) continue;
+		if (chr.index != passengers.(job)) continue;
+
+		result.(job) = true;
+	}
+
+	for (i=1; i<4; i++)
+	{
+		if (GetOfficersIndex(pchar, i) != chrIdx) continue;
+		result.fighter = true;
+	}
+
+	for (i=0; i<COMPANION_MAX; i++)
+	{
+		if (GetCompanionIndex(pchar, i) == chrIdx) 
+		{
+			result.companion = true;
+			return;
+		}
+	}
 }

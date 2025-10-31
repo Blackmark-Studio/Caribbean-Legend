@@ -166,7 +166,7 @@ void Terrapin_OwrInGrot() // пришли свои
 		else
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("TerrapinOurChar", "Alonso", "man", "man", 20, FRANCE, 0, true, "quest"));
-			sld.name = StringFromKey("SharlieFinal_85");
+			sld.name = GetCharacterName("Alonso");
 			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 20, 50, 50, "blade_10", "pistol1", "bullet", 100);
 			sld.dialog.FileName = "Quest\Sharlie\Terrapin.c";
@@ -341,24 +341,11 @@ void CreateGriffondor() // малый фрегат Гриффондор
 {
 	sld = GetCharacter(NPC_GenerateCharacter("GriffOfficer", "off_fra_2", "man", "man", 10, FRANCE, -1, true, "soldier"));
 	SetFantomParamFromRank(sld, 10, true);
-	FantomMakeSmallSailor(sld, SHIP_CORVETTE_QUEST, StringFromKey("SharlieFinal_7"), CANNON_TYPE_CANNON_LBS32, 30, 30, 30, 30, 30);
-	SetShipSkill(sld, 30, 40, 50, 50, 65, 40, 45, 48, 20);
-	SetSelfSkill(sld, 20, 22, 18, 25, 30);
+	FantomMakeSmallSailor(sld, SHIP_CORVETTE_QUEST, GetShipName("Griffondor"), CANNON_TYPE_CANNON_LBS32, 30, 30, 30, 30, 30);
+	ForceHeroAutolevel(sld);
 	sld.dialog.FileName = "Quest\Sharlie\OtherNPC.c";
 	sld.dialog.currentnode = "griffondor_officer";
 	sld.greeting = "patrol";
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "Gunman");
-	SetCharacterPerk(sld, "LongRangeGrappling");
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "SailsDamageUp");
-	SetCharacterPerk(sld, "CrewDamageUp");
-	SetCharacterPerk(sld, "BasicBattleState");
-	SetCharacterPerk(sld, "ShipSpeedUp");
-	SetCharacterPerk(sld, "ShipTurnRateUp");
-
-	SetCharacterPerk(sld, "Doctor1");
 	sld.ship.Crew.Morale = 100;
 	sld.Ship.Crew.Exp.Sailors = 100;
 	sld.Ship.Crew.Exp.Cannoners = 100;
@@ -737,7 +724,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			case 1:
 				iShip = SHIP_LSHIP_SPA;
 				iCannon = CANNON_TYPE_CULVERINE_LBS36;
-				sName = StringFromKey("SharlieFinal_17");
+				sName = GetShipName("San Felipe");
 				fSpace = 1.5;
 				fDamage = 1.0;
 			break;
@@ -745,7 +732,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			case 2:
 				iShip = SHIP_CORVETTE;
 				iCannon = CANNON_TYPE_CULVERINE_LBS18;
-				sName = StringFromKey("SharlieFinal_18");
+				sName = GetShipName("San Isidro");
 				fSpace = 2.3;
 				fDamage = 1.2;
 			break;
@@ -753,7 +740,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			case 3:
 				iShip = SHIP_GALEON_H;
 				iCannon = CANNON_TYPE_CANNON_LBS32;
-				sName = StringFromKey("SharlieFinal_19");
+				sName = GetShipName("Santa Magdalena");
 				fSpace = 2.0;
 				fDamage = 1.3;
 			break;
@@ -761,7 +748,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			case 4:
 				iShip = SHIP_GALEON_L;
 				iCannon = CANNON_TYPE_CANNON_LBS20;
-				sName = StringFromKey("SharlieFinal_20");
+				sName = GetShipName("Santa Anna");
 				fSpace = 1.7;
 				fDamage = 1.2;
 			break;
@@ -769,7 +756,7 @@ void DefendSP_PrepareMartinique(string qName) // готовим Мартиник
 			case 5:
 				iShip = SHIP_POLACRE;
 				iCannon = CANNON_TYPE_CULVERINE_LBS18;
-				sName = StringFromKey("SharlieFinal_21");
+				sName = GetShipName("Apostle");
 				fSpace = 2.1;
 				fDamage = 1.3;
 			break;
@@ -1610,6 +1597,31 @@ void GuardOT_VinsentoNextLetterRead() // прочли письмо Винсен�
 	AddQuestRecord("Guardoftruth", "22");
 }
 
+void GuardOT_Fox_DlgExit() // после разговора с Фоксом
+{
+	sld = CharacterFromID("Fox");
+	sld.quest.utensil = "true";
+	AddQuestRecord("Guardoftruth", "24");
+	Island_SetReloadEnableGlobal("Dominica", true);//patch-7
+	// заполняем сундук
+	pchar.GenQuestBox.Shore27 = true;
+	pchar.GenQuestBox.Shore27.box1.money = 30000;
+	pchar.GenQuestBox.Shore27.box1.items.gold_dublon = 100;
+	pchar.GenQuestBox.Shore27.box1.items.chest = 1;
+	pchar.GenQuestBox.Shore27.box1.items.icollection = 1;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry40 = 15;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry41 = 22;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry42 = 8;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry43 = 20;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry44 = 33;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry45 = 16;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry46 = 58;
+	pchar.GenQuestBox.Shore27.box1.items.jewelry35 = 1; // кадило
+	pchar.quest.GuardOT_finddominicachest.win_condition.l1 = "item";
+	pchar.quest.GuardOT_finddominicachest.win_condition.l1.item = "jewelry35";
+	pchar.quest.GuardOT_finddominicachest.function = "GuardOT_DominicaChest";
+}
+
 void GuardOT_DominicaChest(string qName) // нашли сундук в бухте
 {
 	chrDisableReloadToLocation = true;//закрыть локацию
@@ -2440,7 +2452,7 @@ void GuardOT_SetWillySquadron(string qName) // ставим эскадру Па�
 	Group_FindOrCreateGroup("Willy_group");
 	Group_SetType("Willy_group", "war");//тип группы
 	sld = CharacterFromID("Willy");
-	FantomMakeCoolSailor(sld, SHIP_FRIGATE_L, StringFromKey("SharlieFinal_48"), CANNON_TYPE_CANNON_LBS24, 90, 90, 90);
+	FantomMakeCoolSailor(sld, SHIP_FRIGATE_L, GetShipName("Fortune"), CANNON_TYPE_CANNON_LBS24, 90, 90, 90);
 	sld.DontRansackCaptain = true;
 	sld.watchfort = true;
 	sld.DontDeskTalk = true;
@@ -2802,6 +2814,7 @@ void GuardOT_SetWillyOutHouse(string qName) //ставим Патерсона и
 	sld.model = "Willy_6_mush";
 	sld.model.animation = "mushketer";
 	sld.dialog.currentnode = "isladevieques";
+	sld.SpecialRole = "enemy";
 	GiveItem2Character(sld, "mushket2x2");
 	EquipCharacterbyItem(sld, "mushket2x2");
 	sld.MushketType = "mushket2x2";
@@ -3978,6 +3991,7 @@ void Tieyasal_InGreatTemple(string qName) // внутри большого хр�
 	int iTemp = MOD_SKILL_ENEMY_RATE;
 	sld = characterFromId("Mishelle");
 	sld.model = "migel_2":
+	sld.SpecialRole = "kukulkan";
 	sld.dialog.currentnode = "kukulkan";
 	LAi_SetHP(sld, 1000+MOD_SKILL_ENEMY_RATE*200, 1000+MOD_SKILL_ENEMY_RATE*200);
 	LAi_SetImmortal(sld, true);
@@ -4342,6 +4356,7 @@ void Tieyasal_MishelleDie3(string qName) //
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	PlaySound("Ambient\Teno_inside\teleporter.wav");
 	DoQuestFunctionDelay("Tieyasal_MishelleDisappear", 6.0);
+	if(!CheckAttribute(pchar, "questTemp.PerksPotionEffect")) Achievment_Set("ach_CL_172");
 }
 
 void Tieyasal_MishelleDisappear(string qName) //
@@ -4850,7 +4865,6 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LocatorReloadEnterDisable("Shore38", "boat", true); // закрыть выход в море
 		pchar.GenQuest.Hunter2Pause = true; // ОЗГи на паузу
 		pchar.GenQuest.CannotWait = true;//запрет ожидания
-		pchar.questTemp.GoldenGirl_Block = true;// Запрещаем квест Дороже Золота
 		// устанавливаем солдат ГГ, 12 рыл+офицер
 		iRank = 25+MOD_SKILL_ENEMY_RATE*2;
 		iScl = 60;
@@ -5866,6 +5880,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		sld.lastname = StringFromKey("SharlieFinal_68");
 		sld.dialog.FileName = "Quest\Sharlie\Ksochitam.c";
 		sld.dialog.currentnode = "guardmask";
+		sld.SpecialRole = "monster";
 		SetSPECIAL(sld, 10, 10, 10, 10, 10, 10, 10);
 		SetAllPerksToChar(sld, false);
 		LAi_SetHP(sld, iTemp, iTemp);

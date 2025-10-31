@@ -1208,7 +1208,7 @@ void ProcessDialogEvent()
 			dialog.text = "Очень хорошо. Тогда поделим их по-братски.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal());
 				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1224,7 +1224,7 @@ void ProcessDialogEvent()
 			dialog.text = "Очень хорошо. Сколько ты принёс?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal());
 				link.l1 = "Вот, пожалуйста. У меня есть с собой "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1690,7 +1690,7 @@ void ProcessDialogEvent()
 				dialog.text = "Рад, что бакаут тебе по вкусу, " + sStr + ". Увеличить партии - не проблема, но есть тут одно 'но', сам"+GetSexPhrase("","а")+" понимаешь. С увеличением объёмов появляется и след, который может привлечь ненужное внимание, особенно со стороны английских властей. Но если добавить к делу надёжные руки, верные уши, и людей в резиденции, которые помогут остаться в тени, всё можно устроить. Правда, обойдётся это недёшево - три тысячи дублонов, за обход казны города и нужд Англии. Тогда и в пять раз больше смогу тебе поставить. Что скажешь?";
 				link.l1 = "Три тысячи дублонов? Ян, да это же грабёж средь бела дня! Нельзя ли как-то обойтись меньшими затратами? Может, есть способ уладить дело без таких баснословных сумм?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

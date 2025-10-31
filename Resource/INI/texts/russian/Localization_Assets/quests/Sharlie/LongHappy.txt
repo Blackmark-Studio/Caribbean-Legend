@@ -13,7 +13,7 @@ LongHappy_12 {Свенсон}
 LongHappy_13 {Кашалот}
 LongHappy_14 {Маркус}
 LongHappy_15 {Тиракс}
-LongHappy_16 {Фортуна}
+LongHappy_16 { }
 LongHappy_17 {Стивен}
 LongHappy_18 {Додсон}
 LongHappy_19 {Прошло некоторое время...@<NewStr()>Праздник был в самом разгаре...}

@@ -532,10 +532,16 @@ void FillShipList(string strAccess, ref chref)
 	int n;
 	string sShip;
 
-	for(n = 0; n < GetArraySize(&ShipsTypes) - 1; n++)
+	for(n = 0; n < GetArraySize(&ShipsTypes); n++)
 	{
-		if(CheckAttribute(ShipsTypes[n], "name"))
-		sShip = ShipsTypes[n].name;
+		ref refShip;
+		makeref(refShip, ShipsTypes[n]);
+		if (CheckAttribute(refShip, "ShipHolder") && sti(refShip.ShipHolder))
+		{
+			continue;
+		}
+		if(CheckAttribute(refShip, "name"))
+			sShip = refShip.name;
 		else
 			sShip = "";
 		// AddFaceGroup(strAccess,"SHIPS_"+sShip);
@@ -1148,9 +1154,9 @@ float Event_GetTriggerDelay()
 	{
 		// при отрицательном значении подсказки выключены
 		case 0:		fDelay = -1.0;		break;
-		case 1:		fDelay = 1.5;		break;
-		case 2: 	fDelay = 1.0;		break;
-		case 3: 	fDelay = 0.5;		break;
+		case 1:		fDelay = 0.65;		break;
+		case 2: 	fDelay = 0.3;		break;
+		case 3: 	fDelay = 0.0;		break;
 	}
 	return fDelay;
 }
@@ -1183,14 +1189,24 @@ void Event_ChangeTableTriggerFrame()
 	int top = GetEventData();
 	int right = GetEventData();
 	int bottom = GetEventData();
-	if(line >= 0 && col < 0)
+	if(line >= 0)
 	{
-		if(!CheckAttribute(&GameInterface, sNode + ".tr" + line))
-			GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);
+		if(col < 0)
+		{
+			if(!CheckAttribute(&GameInterface, sNode + ".tr" + line))
+				GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);
+		}
+		else
+		{
+			line++;
+			col++;
+			if(!CheckAttribute(&GameInterface, sNode + ".tr" + line + ".td" + col))
+				GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);
+		}
 	}
-	else if(line >= 0)
+	else
 	{
-		line++;
+		line = 1;
 		col++;
 		if(!CheckAttribute(&GameInterface, sNode + ".tr" + line + ".td" + col))
 			GetTriggerFramePosition(sNode, &left, &top, &right, &bottom);

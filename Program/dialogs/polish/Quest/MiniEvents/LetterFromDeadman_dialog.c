@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Myślisz, że możesz tu po prostu wejść, obrazić damę, zignorować mnie i wyjść stąd w jednym kawałku, jeszcze z tymi dublonami? Wygląda na to, że nie grzeszysz rozumem. Ale nie zamierzam wszczynać bójki przy kobiecie. Mam więc dla ciebie propozycję: przeproś panią Calderę, zabierz swoje dublony i wynoś się stąd. W przeciwnym razie będę musiał nauczyć cię trochę ogłady.";
 					link.l1.go = "Naemnik_5";
-					notification("Sprawdzenie zakończone pomyślnie (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Za mało złota (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Cóż, jestem gotów wybaczyć ci twoje szorstkie maniery, a nawet nieuprzejmość wobec mnie. Ale jeśli chcesz dostać swoje dublony i wyjść stąd w jednym kawałku, będziesz musiał przeprosić Lady Calderę. W przeciwnym razie przekonamy się, kto lepiej włada bronią. I uwierz mi, nie noszę swojej tylko na pokaz.";
 					link.l1.go = "Naemnik_5";
-					notification("Sprawdzenie zakończone pomyślnie (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Za mało złota (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "Najwyraźniej nie masz zbyt wiele rozumu, skoro myślałeś, że będę czekać na swoją kolej. A jeszcze mniej, jeśli wierzyłeś, że przymknę oko na wszystkie kłopoty, które ty i twoi ludzie sprowadziliście na Lady Calderę.";

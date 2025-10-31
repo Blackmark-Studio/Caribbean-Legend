@@ -11,188 +11,14 @@
 #include "characters\RPG\status_effects.c"
 #include "characters\RPG\jobs.c"
 #include "characters\RPG\fightparams.c"
+#include "characters\RPG\energy.c"
+#include "characters\RPG\hp.c"
+#include "characters\RPG\personality.c"
 #include "characters\RPG\perks\perks.c"
-
-#define MAX_ACHIEVMENTS		73
-#define MAIN_HP_BONUS		30.0
-#define MAIN_ENERGY_BONUS	15.0
-
-// имя персонажа
-string GetCharacterName(string _param)
-{
-    int    idLngFile = -1;
-    string totalInfo;
-
-    idLngFile = LanguageOpenFile("CharactersStaticNames.txt");
-    totalInfo = LanguageConvertString(idLngFile, _param);
-    LanguageCloseFile(idLngFile);
-
-    return totalInfo;
-}
-
-
-int GetCharacterBaseHPValue(ref _refCharacter)
-{
-	int ret = makeint(30.0 + GetCharacterSPECIALSimple(_refCharacter, SPECIAL_S)*GetCharacterSPECIALSimple(_refCharacter, SPECIAL_E)*0.5);
-	if(IsMainCharacter(_refCharacter))	// бонус хп у ГГ
-	{
-		_refCharacter.chr_ai.main_hp_bonus = MAIN_HP_BONUS;
-		ret += makeint(MAIN_HP_BONUS);
-	}
-	return ret;
-}
-
-float GetCharacterMaxEnergyValue(ref _refCharacter)
-{
-	if (!CheckAttribute(_refCharacter, "equip.blade")) return 100.0; // невооруженные пофигу
-
-	float ret = (30.0 + GetCharacterSPECIAL(_refCharacter, SPECIAL_A)*10);
-	if (CheckAttribute(_refCharacter, "PerkValue.EnergyPlus"))
-	{
-  		ret = ret + stf(_refCharacter.PerkValue.EnergyPlus);
-	}
-	if (CheckAttribute(_refCharacter, "questTemp.ChickenGod.EnergyMod")) {
-		ret += stf(_refCharacter.questTemp.ChickenGod.EnergyMod);
-	}
-	if(IsEquipCharacterByArtefact(_refCharacter, "indian_7"))
-	{
-		ret *= 1.12; // JOKERTODO переписать на суммирование модификаторов и добавить восстановление
-	}
-	if(CheckAttribute(_refCharacter, "cheats.energyplus"))
-	{
-		ret += stf(_refCharacter.cheats.energyplus);
-	}
-	if(CheckAttribute(_refCharacter, "bonusEnergy"))
-	{
-		ret = ret + stf(_refCharacter.bonusEnergy);
-	}
-	if(IsMainCharacter(_refCharacter))	// бонус энергии у ГГ
-	{
-		_refCharacter.chr_ai.main_energy_bonus = MAIN_ENERGY_BONUS;
-		ret += makeint(MAIN_ENERGY_BONUS);
-	}
-	return ret;
-}
-
-float GetCharacterMaxEnergyABSValue(ref _refCharacter)
-{
-    // проверки перков to_do
-	float ret = (30.0 + GetCharacterSPECIALSimple(_refCharacter, SPECIAL_A)*10);
-	if (CheckAttribute(_refCharacter, "PerkValue.EnergyPlus"))
-	{
-  		ret = ret + stf(_refCharacter.PerkValue.EnergyPlus);
-	}
-	if (CheckAttribute(_refCharacter, "questTemp.ChickenGod.EnergyMod")) {
-		ret += stf(_refCharacter.questTemp.ChickenGod.EnergyMod);
-	}
-	if(IsMainCharacter(_refCharacter))	// бонус энергии у ГГ
-	{
-		_refCharacter.chr_ai.main_energy_bonus = MAIN_ENERGY_BONUS;
-		ret += makeint(MAIN_ENERGY_BONUS);
-	}
-	return ret;
-}
-
-void AddBonusEnergyToCharacter(ref _refCharacter, int iEnrg)
-{
-	if(CheckAttribute(_refCharacter, "bonusEnergy"))
-	{
-		_refCharacter.bonusEnergy = sti(_refCharacter.bonusEnergy) + iEnrg;
-	}
-	else
-	{
-		_refCharacter.bonusEnergy = iEnrg;
-	}
-	SetEnergyToCharacter(_refCharacter);
-}
-
-void RemoveBonusEnergyFromCharacter(ref _refCharacter, int howMuch)
-{
-	_refCharacter.bonusEnergy = sti(_refCharacter.bonusEnergy) - howMuch;
-	if (sti(_refCharacter.bonusEnergy) <= 0)
-	{
-		DeleteAttribute(_refCharacter, "bonusEnergy");
-	}
-	SetEnergyToCharacter(_refCharacter);
-}
-
-void SetEnergyToCharacter(ref _refCharacter)
-{
-	_refCharacter.chr_ai.energyMax = GetCharacterMaxEnergyValue(_refCharacter);
-	if (!CheckAttribute(_refCharacter, "chr_ai.energy"))
-	{
-		_refCharacter.chr_ai.energy    = _refCharacter.chr_ai.energyMax;
-	}
-	else
-	{
-	    if (sti(_refCharacter.chr_ai.energy) > sti(_refCharacter.chr_ai.energyMax))
-	    {
-	        _refCharacter.chr_ai.energy    = _refCharacter.chr_ai.energyMax;
-	    }
-	}
-}
 
 int GetCharacterMaxOfficersQty(ref _refCharacter)
 {
     return GetCharacterSPECIAL(_refCharacter, SPECIAL_C)*2;
-}
-
-/// влияет только на СПЕЦИАЛ
-int ApplayNavyPenalty(ref _refCharacter, string skillName, int sumSkill)
-{
-    if (IsCompanion(_refCharacter) && GetRemovable(_refCharacter))//пусть будет для компаньонов тоже sti(_refCharacter.index) == GetMainCharacterIndex()) // только для главного, чтоб не тормозить всю игру
-    {
-        int sailSkill;
-        int needSkill;
-        // общее умение навигации
-        if(CheckAttribute(_refCharacter, "TempSailing"))
-             sailSkill = _refCharacter.TempSailing;
-        else sailSkill = GetSummonSkillFromNameSimple(_refCharacter, SKILL_SAILING);
-
-        int shipClass = GetCharacterShipClass(_refCharacter);
-        needSkill = GetShipClassNavySkill(shipClass);
-		
-		if (CheckAttribute(_refCharacter, "NoNavyPenalty")) needSkill = 1;
-
-        if (sailSkill < needSkill)
-        {
-			sailSkill = makeint((needSkill - sailSkill)/10.0 + 0.9); // округление до мах всегда
-			sumSkill = sumSkill - sailSkill;
-	        if (sumSkill < 1) sumSkill = 1;
-			if(CheckAttribute(_refCharacter,"systeminfo.tutorial.navigator"))
-			{
-				pchar.quest.Tutorial_Navigator.win_condition.l1 = "EnterToSea";
-				pchar.quest.Tutorial_Navigator.function = "Tutorial_Navigator";
-			}
-        }
-    }
-    return  sumSkill;
-}
-// пенальти в скилы
-int ApplayNavyPenaltyToSkill(ref _refCharacter, string skillName, int sumSkill)
-{
-    if (IsCompanion(_refCharacter) && GetRemovable(_refCharacter))//пусть будет для компаньонов тоже sti(_refCharacter.index) == GetMainCharacterIndex()) // только для главного, чтоб не тормозить всю игру
-    {
-        int sailSkill;
-        int needSkill;
-
-        // общее умение навигации
-        if(CheckAttribute(_refCharacter, "TempSailing"))
-             sailSkill = _refCharacter.TempSailing;
-        else sailSkill = GetSummonSkillFromNameSimple(_refCharacter, SKILL_SAILING);
-        int shipClass = GetCharacterShipClass(_refCharacter);
-        needSkill = GetShipClassNavySkill(shipClass);
-		
-		if (CheckAttribute(_refCharacter, "NoNavyPenalty")) needSkill = 1;
-		
-        if (sailSkill < needSkill)
-        {
-			sailSkill = needSkill - sailSkill;
-			sumSkill = sumSkill - sailSkill;
-	        if (sumSkill < 1) sumSkill = 1;
-        }
-    }
-    return  sumSkill;
 }
 
 int NavyPenalty(ref _refCharacter)
@@ -214,110 +40,6 @@ int NavyPenalty(ref _refCharacter)
 	return 0;
 }
 
-// boal 15/01/04 учёт вещей выношу в спец метод для простоты работы далее -->
-int SetCharacterSkillByItem(ref _refCharacter, string _skillName, string _itemSkillName, string _item, int _addValue)
-{
-	int iRetValue = 0;
-
-	if(_skillName == _itemSkillName && GetCharacterItem(_refCharacter, _item) > 0)
-	{
-		iRetValue = _addValue;
-	}
-
-	return iRetValue;
-}
-
-int SetCharacterSkillByEquippedItem(ref _refCharacter, string _skillName, string _itemSkillName, string _item, int _addValue)
-{
-	int iRetValue = 0;
-	
-	if(_skillName == _itemSkillName && IsEquipCharacterByArtefact(_refCharacter, _item))
-	{
-		iRetValue = _addValue;
-	}
-	
-	return iRetValue;
-}
-
-float AddMultiplySkillByEquippedItem(ref _refCharacter, string _skillName, string _itemSkillName, string _item, float _addValue)
-{
-	float fRetValue = 1.0;
-	
-	if(_skillName == _itemSkillName && IsEquipCharacterByArtefact(_refCharacter, _item))
-	{
-		fRetValue = _addValue;
-	}
-	
-	return fRetValue;
-}
-
-// Jason: спец.атрибут
-int SetCharacterSkillByPenalty(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	int iPenalty = sti(rChar.GenQuest.BladePenalty);
-	
-	if(sSkillName == SKILL_F_LIGHT)      iValue = -iPenalty;
-	else if(sSkillName == SKILL_FENCING) iValue = -iPenalty;
-	else if(sSkillName == SKILL_F_HEAVY) iValue = -iPenalty;
-	
-	return iValue;
-}
-
-int SetCharacterSkillByMangarosa(ref rChar, String sSkillName) // 280313
-{
-	int iValue = 0;
-	if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion"))
-	{
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Power"))
-		{
-			if(sSkillName == SKILL_F_HEAVY) iValue = 15;
-			else if(sSkillName == SKILL_FENCING) iValue = 5;
-		}
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Fast"))
-		{
-			if(sSkillName == SKILL_F_LIGHT) iValue = 10;
-			else if(sSkillName == SKILL_PISTOL) iValue = 10;
-		}
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Total"))
-		{
-			if(sSkillName == SKILL_F_HEAVY)         iValue = 5;
-			else if(sSkillName == SKILL_F_LIGHT)    iValue = 5;
-			else if(sSkillName == SKILL_PISTOL)     iValue = 5;
-			else if(sSkillName == SKILL_LEADERSHIP) iValue = 5;
-			else if(sSkillName == SKILL_FORTUNE)    iValue = 5;
-		}
-	}
-	
-	return iValue;
-}
-
-// Jason: Калеуче - амулеты Туттуатхапака
-int SetCharacterSkillByTuttuat(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	
-	if(sSkillName == SKILL_F_LIGHT)      iValue = 25;
-	else if(sSkillName == SKILL_FENCING) iValue = 25;
-	else if(sSkillName == SKILL_F_HEAVY) iValue = 25;
-	else if(sSkillName == SKILL_PISTOL)  iValue = 25;
-	
-	return iValue;
-}
-
-//Sinistra: Стартовый морской бой
-int SetCharacterSkillMaxSailing(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-
-	if(sSkillName == SKILL_SAILING)       iValue = 100;
-	else if(sSkillName == SKILL_ACCURACY) iValue = 100;
-	else if(sSkillName == SKILL_CANNONS)  iValue = 100;
-
-	return iValue;
-}
-
-
 // boal 20.03.2004 -->
 int GetShipClassNavySkill(int shipClass)
 {
@@ -325,13 +47,13 @@ int GetShipClassNavySkill(int shipClass)
 
     switch (shipClass)
     {
-            case 1 : needSkill = 95; break;
-            case 2 : needSkill = 80; break;
-            case 3 : needSkill = 65; break;			
-            case 4 : needSkill = 45; break;			
-			case 5 : needSkill = 25; break;
-            case 6 : needSkill = 5; break;
-            case 7 : needSkill = 1; break;
+            case 1 : needSkill = 90; break; //переработал пороги с учетом новой скорости прогрессии и будущего отказа от бонусов к умениям, а также с учетом механики убегания - теперь запас превышения класса более равномерный
+            case 2 : needSkill = 70; break;
+            case 3 : needSkill = 55; break;			
+            case 4 : needSkill = 40; break;			
+            case 5 : needSkill = 20; break;
+            case 6 : needSkill = 1;  break;
+            case 7 : needSkill = 1;  break; // технический класс для всяких контрабандистов и баркасов - у них тоже найдется применение
     }
     return needSkill;
 }
@@ -340,35 +62,6 @@ void DelBakSkillAttr(ref _refCharacter) // boal оптимизация скил�
 {
     DeleteAttribute(_refCharacter, "BakSkill");
     DeleteAttribute(_refCharacter, "BakSkillCount");
-}
-
-string GetPerkListText(ref _chref, string _type)
-{
-    int    perksQ,i;
-    int    lngFilePerkID = -1;
-	string perkName;
-	string ret;
-	aref   arPerksRoot;
-
-    lngFilePerkID = LanguageOpenFile("AbilityDescribe.txt");
-	// Варианты перков, которые можно добавить
-	makearef(arPerksRoot, _chref.perks.list);
-	perksQ = GetAttributesNum(arPerksRoot);
-	ret = "";
-	for(i=0; i<perksQ; i++)
-	{
-		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
-
-        if (CheckAttribute(&ChrPerksList, "list." + perkName) && CheckAttribute(&ChrPerksList, "list." + perkName + ".BaseType"))
-        {
-            if (ChrPerksList.list.(perkName).BaseType == _type)
-            {
-                ret += "* " + LanguageConvertString(lngFilePerkID, perkName) + " ";
-            }
-        }
-	}
-	LanguageCloseFile(lngFilePerkID);
-	return ret;
 }
 
 // увеличение счетчика награды за голову -->

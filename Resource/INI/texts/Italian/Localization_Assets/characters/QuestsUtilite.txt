@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, nostromo}
 QuestsUtilite_267 {Frustate con venti colpi! No - trenta! Ogni singolo colpo!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, viaggiatore}
 QuestsUtilite_269 {I caimani non attaccano le persone. Solo quando hanno molta fame. Questo è ovviamente sazio...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {Il veleno non ha funzionato!}
 QuestsUtilite_273 {Avvelenato dal veleno taino!}
 QuestsUtilite_274 {@<GetFullName(chref)> avvelenato da veleno taino}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {Vulkán}
 QuestsUtilite_326 {Heliadón}
 QuestsUtilite_327 {Héphaisztosz}
 QuestsUtilite_328 {Centurio}
+QuestsUtilite_329 {I pirati sono stati sconfitti, le acque sono diventate più sicure.}
+QuestsUtilite_330 {I pirati si sono rafforzati, il mare è diventato più pericoloso.}

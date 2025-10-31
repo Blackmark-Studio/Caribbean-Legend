@@ -6,7 +6,6 @@ void Duel_Prepare_Fight()
 	ref npchar, rLoc, sld;
 
 	npchar = CharacterFromID(pchar.questTemp.duel.enemy);
-	InitChrRebalance(npchar, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Алкаши-драчуны
 	DeleteAttribute(npchar, "City"); // чтоб не было ругани с нацией
 	makeref(rLoc, Locations[FindLoadedLocation()]);
 
@@ -80,7 +79,7 @@ void Duel_Move_Opponent2Place(string qName)
 	string sTemp, attrName;
 
 	npchar = CharacterFromID(pchar.questTemp.duel.enemy);
-	InitChrRebalance(npchar, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Дуэлянты по квесту
+	SetAutolevel(npchar, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Дуэлянты по квесту
     
 	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") < sti(pchar.questTemp.Duel.WaitTime))
 	{

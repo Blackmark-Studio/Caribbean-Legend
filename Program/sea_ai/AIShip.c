@@ -101,6 +101,9 @@ void DeleteShipEnvironment()
 	DelEventHandler(SHIP_SET_BLOT, "Ship_SetBlot");
 	DelEventHandler(SHIP_FAKE_FIRE, "Ship_EventFakeFire");
 
+    // Sounds
+    DelEventHandler("NextHour", "ShipBells");
+
 	for (int i=0; i<iNumShips; i++) 
 	{ 
 		// delete particles from ship/etc
@@ -171,7 +174,7 @@ void CreateShipEnvironment()
 	for (int i = 0; i < MAX_SHIPS_ON_SEA; i++) Ships[i] = -1;
 
 	aref arCurWeather = GetCurrentWeather();
-	sSeaSoundPostfix = arCurWeather.Sounds.Sea.Postfix;
+	sSeaSoundPostfix = arCurWeather.Sounds.Sea.Postfix; // TO_DO: в погоде обновлять
 
 	CreateRiggingEnvironment();
 
@@ -215,6 +218,9 @@ void CreateShipEnvironment()
 	SetEventHandler("event_sail_dot", "Ship_SailDot", 0);
 	SetEventHandler(SHIP_SET_BLOT, "Ship_SetBlot", 0);
 	SetEventHandler(SHIP_FAKE_FIRE, "Ship_EventFakeFire", 0);
+
+    // Sounds
+    SetEventHandler("NextHour", "ShipBells", 0);
 }	
 
 float Ship_GetBortFireDelta()
@@ -223,31 +229,18 @@ float Ship_GetBortFireDelta()
 	float x = GetEventData();
 	float y = GetEventData();
 	float z = GetEventData();
+	
+	// коэффициент меткости
+	float fAccuracy = stf(aCharacter.TmpSkill.Accuracy);
+	float accRandMin = 0.25 - 0.15 * pow(fAccuracy, 0.35);
+	float accRandMax = 4.0 - 3.8 * pow(fAccuracy, 0.75);
+	float kAccuracy = (1.2 - pow(fAccuracy, 0.45)) * uniform(accRandMin, accRandMax);
+	
+	// коэффициент дистанции
 	float fDistance = GetDistance2D(x, z, stf(aCharacter.Ship.Pos.x), stf(aCharacter.Ship.Pos.z));
+	float kDistance = Bring2Range(0.0, 35.0, 0.0, 1000.0, fDistance);
 	
-	float fAccuracy = 1.3 - stf(aCharacter.TmpSkill.Accuracy);
-	
-	// to_do
-	if (iArcadeSails == 1)// && aCharacter.id == characters[nMainCharacterIndex].id)
-	{
-		fAccuracy  = fAccuracy - 0.2;
-		if (fAccuracy < 0.1)
-		{
-			fAccuracy = 0.1;
-		}
-	}
-	/*
-	if (aCharacter.id != characters[nMainCharacterIndex].id)
-	{
-		fAccuracy  = fAccuracy - 0.2;
-		if (fAccuracy < 0.1)
-		{
-			fAccuracy = 0.1;
-		}
-	} */
-	
-
-	float fRadius = fAccuracy * Bring2Range(0.0, 120.0, 0.0, 1000.0, fDistance);
+	float fRadius = kAccuracy * kDistance;
 	return fRadius;
 }
 
@@ -328,7 +321,7 @@ void Ship_NationAgressive(ref rMainGroupCharacter, ref rCharacter)// ком гр
 	    Ship_NationAgressivePatent(rCharacter); // патент отнимаем всегда, когда палим по другу патента
 		
 	    // clear group temporary task status
-		for (int i=0; i<MAX_SHIP_GROUPS; i++) { AIGroups[i].TempTask = false; } // новая хрень к3
+		// for (int i=0; i<MAX_SHIP_GROUPS; i++) { AIGroups[i].TempTask = false; } // новая хрень к3
 
 	    SetNationRelation2MainCharacter(sti(rMainGroupCharacter.nation), RELATION_ENEMY);
 	    SetCharacterRelationBoth(sti(rMainGroupCharacter.index), GetMainCharacterIndex(), RELATION_ENEMY);
@@ -403,7 +396,7 @@ void Ship_FireAction()
 	ref rGroup;
 
 	// clear group temporary task status
-	for (i=0; i<MAX_SHIP_GROUPS; i++) { AIGroups[i].TempTask = false; }
+	// for (i=0; i<MAX_SHIP_GROUPS; i++) { AIGroups[i].TempTask = false; }
 
 	// looking for enemy war/trade ships around
 	for (i=0; i<iNumShips; i++)
@@ -503,12 +496,12 @@ float Ship_MastDamage()
 			
 		break;
 	}
-	
+
 	fDamage = Clampf(fDamage);
 
 	if (fDamage >= 1.0)
 	{
-		Play3DSound("mast_fall", x, y, z);	// if mast fall - play sound
+		Play3DSoundEvent("ShipEMB/MastFall", x, y, z); // if mast fall - play sound
 		rCharacter.Tmp.SpeedRecall = 0; 	// чтоб пересчитался маневр
 		RefreshBattleInterface();
 	}
@@ -569,7 +562,7 @@ float Ship_HullDamage()
 	{
 		CreateBlast(x,y,z);
 		CreateParticleSystem("blast_inv", x, y, z, 0.0, 0.0, 0.0, 0);
-		Play3DSound("cannon_explosion", x, y, z); 	
+		Play3DSound("cannon_explosion", x, y, z); // to_do
 		RefreshBattleInterface();
 		
 		if(HasSubStr(HullName, "baller")) // потеряли перо руля
@@ -590,19 +583,24 @@ float Ship_GetSailState(ref rCharacter)
 	return fSailState;
 }
 // boal 27.09.05 -->
-void Ship_SetExplosion(ref rCharacter, ref	rShipObject)
+void Ship_SetExplosion(ref rCharacter, ref rShipObject)
 {
-    int i = 0;
     // fire ship
-	//int iNumFirePlaces = rand(2);
-	//SendMessage(rShipObject, "le", MSG_SHIP_GET_NUM_FIRE_PLACES, &iNumFirePlaces);
-	//for (i=0; i<=iNumFirePlaces; i++)
-	//{
-		//PostEvent(SHIP_ACTIVATE_FIRE_PLACE, rand(300), "ialsfl", rShipObject, rCharacter, i, "ship_onfire", 3, -1);
-	//}
-	//PostEvent(SHIP_ACTIVATE_FIRE_PLACE, 100, "ialsfl", rShipObject, rCharacter, i, "ship_onfire", 3, -1);  // даёт вылет
+    /*
+	int iNumFirePlaces = rand(2);
+	SendMessage(rShipObject, "le", MSG_SHIP_GET_NUM_FIRE_PLACES, &iNumFirePlaces);
+	for (int i=0; i<=iNumFirePlaces; i++)
+	{
+		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, rand(300), "ialsfl", rShipObject, rCharacter, i, "ShipEMB/ShipDamage_Fire", 3, -1);
+	}
+    */
+	//PostEvent(SHIP_ACTIVATE_FIRE_PLACE, 100, "ialsfl", rShipObject, rCharacter, i, "ShipEMB/ShipDamage_Fire", 3, -1);  // даёт вылет
+    float x, y, z;
+    x = stf(rCharacter.ship.pos.x);
+    y = stf(rCharacter.ship.pos.y);
+    z = stf(rCharacter.ship.pos.z);
 	PostEvent(SHIP_BRANDER_DETONATE, 800, "l", sti(rCharacter.index));
-    PlaySound("Sea Battles\Vzriv_fort_001.wav");
+    Play3DSoundEvent("ShipEMB/Explosion_kruyt", x, y, z);
 	Ship_SetTaskNone(SECONDARY_TASK, sti(rCharacter.index));
 }
 // boal <--
@@ -621,7 +619,7 @@ void Ship_SetTaskAbordage(int iTaskPriority, int iCharacterIndex, int iCharacter
 {
 	ref rCharacter = GetCharacter(iCharacterIndex);
 	rCharacter.SeaAI.Task = AITASK_ABORDAGE;
-	rCharacter.SeaAI.Task.Target = iCharacterIndexAbordageTo;																																															   
+	rCharacter.SeaAI.Task.Target = iCharacterIndexAbordageTo;
 	SendMessage(&AISea, "lllaa", AI_MESSAGE_SHIP_SET_TASK, AITASK_ABORDAGE, iTaskPriority, &Characters[iCharacterIndex], &Characters[iCharacterIndexAbordageTo]);
 }
 
@@ -646,7 +644,6 @@ void Ship_SetTaskMove(int iTaskPriority, int iCharacterIndex, float x, float z)
 void Ship_SetTaskRunaway(int iTaskPriority, int iCharacterIndex, int iFromIndex)
 {
 	ref rCharacter = GetCharacter(iCharacterIndex);
-	Log_TestInfo("runaway " + rCharacter.id);
 	rCharacter.SeaAI.Task = AITASK_RUNAWAY;
 	rCharacter.SeaAI.Task.Target = iFromIndex;
 	SendMessage(&AISea, "llla", AI_MESSAGE_SHIP_SET_TASK, AITASK_RUNAWAY, iTaskPriority, &Characters[iCharacterIndex]);	
@@ -797,7 +794,7 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 		if (MOD_BETTATESTMODE == "On") Log_Info("Ship_Add2Sea ERROR : SHIP " + iShipType + ", have no name!   NPCid = "+ rCharacter.id);
 		return;
 	}
-	if (iRealShip >= GetArraySize(&ShipsTypes) - 1)
+	if (iRealShip >= GetArraySize(&ShipsTypes))
 	{
 		Trace("Character.id = " + rCharacter.id + ", have invalid ship type = " + iShipType + ", and try load to sea");
 		return;
@@ -947,81 +944,6 @@ void Ship_Add2Sea(int iCharacterIndex, bool bFromCoast, string sFantomType, bool
 	
 	Ships[iNumShips] = iCharacterIndex;
 	iNumShips++;
-}
-
-void Ship_RecreateStaticSounds()
-{
-	for (int i=0; i<iNumShips; i++) {
-	     if (makeint(Ships[i]) > -1 && makeint(&Characters[Ships[i]]) > -1)
-			Ship_CreateStaticSounds(&Characters[Ships[i]]);
-	}
-	
-	if (CheckAttribute(&WeatherParams, "Rain.Sound") && sti(WeatherParams.Rain.Sound))
-        Whr_SetRainSound(true, sti(Weathers[iCurWeatherNum].Night));
-
-}
-
-void Ship_CreateStaticSounds(ref rCharacter)
-{
-    if (!CheckAttribute(rCharacter, "Ship.Pos.x")) return; // fix
-	if (GetCharacterShipType(rCharacter) == SHIP_NOTUSED) return; // может уже не быть
-	
-    ref refBaseShip = GetRealShip(GetCharacterShipType(rCharacter));
-	// create water sound
-	float fX = stf(rCharacter.Ship.Pos.x);
-	float fY = stf(rCharacter.Ship.Pos.y);
-	float fZ = stf(rCharacter.Ship.Pos.z);
-	rCharacter.Ship.Sounds.WaterID.x = 0.0;
-	rCharacter.Ship.Sounds.WaterID.y = 0.0;
-	rCharacter.Ship.Sounds.WaterID.z = 0.12;
-	rCharacter.Ship.Sounds.WaterID = Play3DSoundComplex("ship_water_" + refBaseShip.Soundtype, fX, fY, fZ, true, false);
-	if (sti(rCharacter.Ship.Sounds.WaterID) > 0) { Sound_SetVolume(sti(rCharacter.Ship.Sounds.WaterID), 0.0); }
-	rCharacter.Ship.Sounds.WaterSpeed = 30.0;
-
-	// create sails sound
-	rCharacter.Ship.Sounds.SailsID.x = 0.0;
-	rCharacter.Ship.Sounds.SailsID.y = 0.5;
-	rCharacter.Ship.Sounds.SailsID.z = 0.0;
-	rCharacter.Ship.Sounds.SailsID = Play3DSoundComplex("sails_up_" + refBaseShip.Soundtype, fX, fY, fZ, true, false);
-	if (sti(rCharacter.Ship.Sounds.SailsID) > 0) { Sound_SetVolume(sti(rCharacter.Ship.Sounds.SailsID), 0.0); }
-	rCharacter.Ship.Sounds.SailsMove = 0.0;
-
-	// create turn sound
-	rCharacter.Ship.Sounds.TurnID.x = 0.0;
-	rCharacter.Ship.Sounds.TurnID.y = 0.0;
-	rCharacter.Ship.Sounds.TurnID.z = 0.0;
-	rCharacter.Ship.Sounds.TurnID = Play3DSoundComplex("ship_turn_" + refBaseShip.Soundtype, fX, fY, fZ, true, false);
-	if (sti(rCharacter.Ship.Sounds.TurnID) > 0) { Sound_SetVolume(sti(rCharacter.Ship.Sounds.TurnID), 0.0); }
-	rCharacter.Ship.Sounds.TurnSpeed = 0.05;
-}
-
-void Ship_PlaySound3DComplex(ref rCharacter, string sSoundID, float fVolume, float fX, float fY, float fZ)
-{
-	//return;
-	float x = stf(rCharacter.Ship.Pos.x);
-	float y = stf(rCharacter.Ship.Pos.y);
-	float z = stf(rCharacter.Ship.Pos.z);
-
-	float aY = stf(rCharacter.Ship.Ang.y);
-
-    if (!CheckAttribute(rCharacter, "Ship.BoxSize.x")) return; // fix габаритов
-     
-	float x1 = fX * stf(rCharacter.Ship.BoxSize.x) / 2.0;
-	float z1 = fZ * stf(rCharacter.Ship.BoxSize.z) / 2.0;
-	RotateAroundY(&x1, &z1, cos(aY), sin(aY));
-
-	int iSoundID = Play3DSound(sSoundID, x + x1, y + fY * stf(rCharacter.Ship.BoxSize.y) / 2.0, z + z1);
-	if (iSoundID > 0) { Sound_SetVolume(iSoundID, fVolume); }
-}
-
-void Ship_PlaySound3D(ref rCharacter, string sSoundID, float fVolume)
-{
-	float x = stf(rCharacter.Ship.Pos.x);
-	float y = stf(rCharacter.Ship.Pos.y);
-	float z = stf(rCharacter.Ship.Pos.z);
-
-	int iSoundID = Play3DSound(sSoundID, x, y, z);
-	if (iSoundID > 0) { Sound_SetVolume(iSoundID, fVolume); }
 }
 
 void Ship_OnBortReloaded()
@@ -1719,7 +1641,7 @@ void Ship_CheckSituation()
 		        else
 		        {
 					// --> Калеуче
-					if (findsubstr(rCharacter.id, "Caleuche_seacap" , 0) != -1)
+					if (findsubstr(rCharacter.id, "Caleuche" , 0) != -1)
 					{	
 						if (rCharacter.id == "Caleuche_seacap") // у Доминики
 						{
@@ -1732,7 +1654,7 @@ void Ship_CheckSituation()
 								Caleuche_GhostshipBoarding(); // активизация квестового абордажа
 							}
 						}
-						else // на карте
+						if (rCharacter.id == "Map_Caleuche") // на карте
 						{
 							if (Ship_GetDistance2D(GetMainCharacter(), rCharacter) < 900)
 							{
@@ -2113,8 +2035,10 @@ void Ship_ActivateFirePlace()
 
 	if (!bAbordageStarted) // fix
 	{
-		if(rand(5) < 4) 	SendMessage(arShipObject, "llsssfl", MSG_SHIP_ACTIVATE_FIRE_PLACE, iFirePlaceIndex, "ship_smoke", "ship_fire", sSoundName, fFireTime, iBallCharacterIndex);
-		else				SendMessage(arShipObject, "llsssfl", MSG_SHIP_ACTIVATE_FIRE_PLACE, iFirePlaceIndex, "sea_smoke", "ship_fire", sSoundName, fFireTime, iBallCharacterIndex);
+		if(rand(5) < 4)
+            SendMessage(arShipObject, "llsssfl", MSG_SHIP_ACTIVATE_FIRE_PLACE, iFirePlaceIndex, "ship_smoke", "ship_fire", sSoundName, fFireTime, iBallCharacterIndex);
+		else
+            SendMessage(arShipObject, "llsssfl", MSG_SHIP_ACTIVATE_FIRE_PLACE, iFirePlaceIndex, "sea_smoke", "ship_fire", sSoundName, fFireTime, iBallCharacterIndex);
 	}
 }
 
@@ -2301,17 +2225,17 @@ void Ship_SailDamage()
 	int	iBallType = sti(AIBalls.CurrentBallType);
 	switch (iBallType)
 	{
-		case GOOD_BALLS:	sSound = "ball2sail";		break;
-		case GOOD_GRAPES:	sSound = "grapes2sail";		break;
-		case GOOD_KNIPPELS:	sSound = "knippel2sail";	break;
-		case GOOD_BOMBS:	sSound = "ball2sail"; 		break;
+		case GOOD_BALLS:	sSound = "ShipEMB/SailDamage_ball";    break;
+		case GOOD_GRAPES:	sSound = "ShipEMB/SailDamage_grapes";  break;
+		case GOOD_KNIPPELS:	sSound = "ShipEMB/SailDamage_knippel"; break;
+		case GOOD_BOMBS:	sSound = "ShipEMB/SailDamage_bomb";    break;
 	}
 	//log_testinfo("From bort " + AIBalls.FromBort);
-	Play3DSound(sSound, x, y, z);
-	if (rand(100) < 15) { Play3DSound("fly_ball_misc", x, y, z); }
-	
-	bool    isOurCompanion   = IsCompanion(rOurCharacter);
-	
+	Play3DSoundEvent(sSound, x, y, z);
+	if (rand(100) < 15) Play3DSound("fly_ball_misc", x, y, z);
+
+	bool isOurCompanion = IsCompanion(rOurCharacter);
+
 	if (sti(rOurCharacter.Ship.LastBallCharacter) == GetMainCharacterIndex() 
 	        && GetNationRelation2MainCharacter(sti(rOurCharacter.nation)) != RELATION_ENEMY)
     {	
@@ -2420,11 +2344,11 @@ void Ship_ApplyCrewHitpoints(ref rOurCharacter, float fCrewHP)
 
 	if(ShipBonus2Artefact(rOurCharacter, SHIP_GALEON_SM))
 	{
-		fMultiply = fMultiply * isEquippedArtefactUse(rOurCharacter, "amulet_10", 1.0, 0.90 );
+		fMultiply = fMultiply * isEquippedArtefactUse(rOurCharacter, "amulet_10", 1.0, 0.85 );
 	}
 	else
 	{
-		fMultiply = fMultiply * isEquippedArtefactUse(rOurCharacter, "amulet_10", 1.0, 0.95 ); //belamour isEquippedAmuletUse не работает на офицерах, только на ГГ
+		fMultiply = fMultiply * isEquippedArtefactUse(rOurCharacter, "amulet_10", 1.0, 0.90 ); //belamour isEquippedAmuletUse не работает на офицерах, только на ГГ
 	}
 	fMultiply *= fLiberMisBonus(rOurCharacter);
 	float fDamage = fCrewHP * fMultiply; 
@@ -2555,6 +2479,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
         if (MOD_BETTATESTMODE == "On") Log_Info("Error: ShipDead Нет корабля у iDeadCharacterIndex = "+iDeadCharacterIndex);
         return;
     }
+    int  iDeadNation = sti(rDead.nation);
     bool bDeadCompanion = IsCompanion(rDead);
 	rBaseShip = GetRealShip(sti(rDead.Ship.Type));
 
@@ -2627,10 +2552,10 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 		        AddCharacterExpToSkill(rKillerCharacter, "Leadership", stf(rKillerBaseShip.Class) / stf(rBaseShip.Class) * 25);
 
 	            // статистка по нации
-		    	Statistic_AddValue(rKillerCharacter, NationShortName(sti(rDead.nation))+"_KillShip", 1);
-		    	if (rand(8) < 3 && sti(rDead.nation) != PIRATE)  // 30% повышаем награду
+		    	Statistic_AddValue(rKillerCharacter, NationShortName(iDeadNation)+"_KillShip", 1);
+		    	if (rand(8) < 3 && iDeadNation != PIRATE)  // 30% повышаем награду
 		    	{
-					ChangeCharacterHunterScore(rKillerCharacter, NationShortName(sti(rDead.nation)) + "hunter", GetIntByCondition(HasShipTrait(rKillerCharacter, "trait23"), 1 + rand(1), 1));
+					ChangeCharacterHunterScore(rKillerCharacter, NationShortName(iDeadNation) + "hunter", GetIntByCondition(HasShipTrait(rKillerCharacter, "trait23"), 1 + rand(1), 1));
 				}
 			}
         }
@@ -2661,15 +2586,20 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 		bCompanion = IsCompanion(rKillerCharacter); 
 	}
 
- 	if (bCompanion && bDeadCompanion)
+ 	if (bCompanion)
 	{
-		iExp = 0;
-		// boal -->
-		if (iKillerCharacterIndex == GetMainCharacterIndex())
-		{
-			ChangeCharacterComplexReputation(pchar,"nobility", -15);
-		}
-		// boal <--
+        if (bDeadCompanion)
+        {
+            iExp = 0;
+            if (iKillerCharacterIndex == GetMainCharacterIndex())
+            {
+                ChangeCharacterComplexReputation(pchar,"nobility", -15);
+            }
+        }
+        else if (iDeadNation == PIRATE && !CheckAttribute(rDead, "AlwaysFriend"))
+        {   // Мы или наш компаньон потопили вражеского пирата
+            ChangePirateThreat(sti(rBaseShip.Class) - 7);
+        }
 	}      
     
 	bool bRealKill = false;
@@ -2720,7 +2650,7 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 		notification(sSunkString, "DeadShip");
 	}
 
- 	if (rand(10) >= 6) // глупое условие... это все классы :)  && sti(rBaseShip.Class) <= 6)
+ 	if (rand(10) >= 6)
 	{ 
 		bool bDetonate = false;
 		switch (iKillStatus)
@@ -2768,7 +2698,6 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
 			PostEvent(GAME_OVER_EVENT, 15000);
 		}
 	}
-    // спасем офицеров boal 07/02/05
 	else
 	{
         if (bDeadCompanion && CheckOfficersPerk(rDead, "ShipEscape") && GetRemovable(rDead)) // выживаем
@@ -2781,8 +2710,8 @@ void ShipDead(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacterInde
             Log_Info(GetFullName(rDead) + XI_ConvertString("SurvivedBoat"));
         }
 	}
-	// спасем офицеров boal 07/02/05
-	Play3DSound("ship_sink", fX, fY, fZ);
+
+    Play3DSoundEvent("ShipEMB/Ship_sinking", fX, fY, fZ);
 	
 	// TUTOR-ВСТАВКА
 	if(TW_IsActive() && objTask.sea_battle == "3_WinBattle" && Ship_GetGroupID(rDead) == "SharlieTutorial_SeaAttack")
@@ -2914,28 +2843,6 @@ void ShipTakenFree(int iDeadCharacterIndex, int iKillStatus, int iKillerCharacte
 }
 // boal <--
 
-void Ship_PlayVictory(string sSound, int iSoundTime)
-{
-	FadeOutMusic(3); // boal 3000
-	PlayStereoOgg(sSound);
-
-	iVicSoundTime = iSoundTime;
-}
-  /// странные методы ??? не было их в ПКМ и все было гут
-void Ship_VicSoundTime()
-{
-	if (bAbordageStarted || sti(InterfaceStates.Launched)) { return; }
-
-	if (iVicSoundTime > 0)
-	{
-		iVicSoundTime = iVicSoundTime - iRealDeltaTime;
-		if (iVicSoundTime <= 0)
-		{
-			bUpdatePosMode = true;
-		}
-	}
-}
-
 void Ship_SailHitEvent()
 {
 }
@@ -2981,35 +2888,35 @@ void Ship_HullHitEvent()
 
     if (sti(rBallCharacter.TmpPerks.CriticalShoot) && rand(19)==10) { bSeriousBoom = true; }		// +5%
 	if (sti(rBallCharacter.TmpPerks.CannonProfessional) && rand(9)==4) { bSeriousBoom = true; }		// +10%
-	
+
 	ref rBall = GetGoodByType(iBallType);
 	switch (iBallType)
 	{
 		case GOOD_BALLS:
 			breachTheHull(rOurCharacter, rBallCharacter, stf(AIBalls.CurrentBallDistance), fCannonDamageMultiply);
-			if (rand(85) == 17) { bSeriousBoom = true; }  // boal 35
-			if (rand(30) == 15) { bInflame = true; }
-			Play3DSound("ball2bort", x, y, z);
+			if (rand(85) == 17) bSeriousBoom = true; // boal 35
+			if (rand(30) == 15) bInflame = true;
+            Play3DSoundEvent("ShipEMB/ShipDamage_ball", x, y, z);
 		break;
 		case GOOD_GRAPES:
 			bSeriousBoom = false;
-			Play3DSound("grapes2bort", x, y, z);
-            if (rand(100) < 30) {Play3DSound("episode_boom", x, y, z);}
+			Play3DSoundEvent("ShipEMB/ShipDamage_grapes", x, y, z);
+            if (rand(100) < 30) Play3DSoundEvent("sounds of sailors/SailorGroan", x, y, z); // Play3DSound("episode_boom", x, y, z);
 		break;
 		case GOOD_KNIPPELS:
 			bSeriousBoom = false;
-			Play3DSound("ball2bort", x, y, z);
+            Play3DSoundEvent("ShipEMB/ShipDamage_knippel", x, y, z);
 		break;
 		case GOOD_BOMBS:
-			if (rand(50) == 10) { bSeriousBoom = true; }  // boal 20
-			if (rand(5) == 1) { bInflame = true; }
-			Play3DSound("bomb2bort", x, y, z);
+			if (rand(50) == 10) bSeriousBoom = true; // boal 20
+			if (rand(5) == 1)   bInflame = true;
+			Play3DSoundEvent("ShipEMB/ShipDamage_bomb", x, y, z);
 		break;
 	}
 	fTmpCannonDamage = fCannonDamageMultiply * stf(rBall.DamageHull);
 	if (rand(2) == 1) CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);// boal fix
 
-    if (sti(rOurCharacter.TmpPerks.ShipDefenseProfessional) && rand(1000) < 700) { bSeriousBoom = false; }				// no seriouse boom
+    if (sti(rOurCharacter.TmpPerks.ShipDefenseProfessional) && rand(1000) < 700) bSeriousBoom = false; // no seriouse boom
 
     float fCrewDamage = stf(rBall.DamageCrew) * fCannonDamageMultiply * AIShip_isPerksUse(rBallCharacter.TmpPerks.CrewDamageUp, 1.0, PERK_VALUE_CREW_DAMAGE_UP);
 	
@@ -3024,6 +2931,7 @@ void Ship_HullHitEvent()
 		fHP = fDistanceDamageMultiply * fCannonDamageMultiply * stf(rBall.DamageHull) * (8.0 + frnd() * 4.0); // 4.0
 		Ship_ApplyHullHitpoints(rOurCharacter, fHP, KILL_BY_BALL, iBallCharacterIndex);
 
+        if (iBallCharacterIndex == nMainCharacterIndex) PlayShipSoundEvent(PChar, "sounds of sailors/SailorJubilation_Battle", true);
 		notification("'"+rOurCharacter.Ship.Name+LanguageConvertString(iSeaSectionLang, "Ship_critical_notif"), "Brander");
 		/* if (iBallCharacterIndex == nMainCharacterIndex)
 		{
@@ -3086,7 +2994,7 @@ void Ship_HullHitEvent()
 			rBallCharacter.AIShipFireDamage = fHP * 2.0 / 15.0;
 		}
 
-		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rShipObject, rOurCharacter, iFirePlaceIndex, "ship_onfire", fTotalFireTime, iBallCharacterIndex);
+		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rShipObject, rOurCharacter, iFirePlaceIndex, "ShipEMB/ShipDamage_Fire", fTotalFireTime, iBallCharacterIndex);
 		PostEvent(SHIP_FIRE_DAMAGE, iRandStartTime, "lllf", iOurCharacterIndex, iBallCharacterIndex, iFirePlaceIndex, fTotalFireTime);
 	}
 
@@ -3264,7 +3172,7 @@ void Ship_Serious_Boom(float x, float y, float z)
 {
 	CreateBlast(x,y,z);
 	CreateParticleSystem("ShipExplode", x, y, z, 0.0, 0.0, 0.0, 0);
-	Play3DSound("ship_explosion", x, y, z);
+	Play3DSoundEvent("ShipEMB/Explosion_Ship", x, y, z);
 }
 
 void Ship_SetFantomData(ref rFantom)
@@ -3779,11 +3687,12 @@ void Ship_CheckMainCharacter()
 	}
 
 	// new music
+    oldSeaAlarmed = seaAlarmed;
 	bool bMakeCurrentUpdate = bUpdatePosMode;
-	if( iVicSoundTime<=0 && sti(rCharacter.Ship.POS.Mode) != iPrevShipPOSMode ) {
+	if (iVicSoundTime<=0 && sti(rCharacter.Ship.POS.Mode) != iPrevShipPOSMode) {
 		bMakeCurrentUpdate = true;
 	}
-	if( bMakeCurrentUpdate )
+	if (bMakeCurrentUpdate)
 	{
 		switch (sti(rCharacter.Ship.POS.Mode))
 		{
@@ -3791,6 +3700,8 @@ void Ship_CheckMainCharacter()
 				if (!Whr_IsStorm()) 
 				{ 
 					seaAlarmed = false;
+                    if (oldSeaAlarmed != seaAlarmed)
+                        UpdateSailorsChatter();
 					if (iPrevShipPOSMode == SHIP_WAR)
 					{
                    		Ship_PlayVictory("music_ship_victory", 8500);
@@ -3800,8 +3711,6 @@ void Ship_CheckMainCharacter()
 					//PlayStereoOGG(sSeaStartMusicName); 
 					if (Whr_IsDay()) SetMusic("music_sea_day");
 					else SetMusic("music_sea_night");
-					//Sound_OnSeaAlarm555(false, bUpdatePosMode); 
-
 				}
 				else
 				{ 
@@ -3813,6 +3722,8 @@ void Ship_CheckMainCharacter()
 				FadeOutMusic(3); // fix
 				//PlayStereoOGG("music_sea_battle"); 
 				seaAlarmed = true;
+                if (oldSeaAlarmed != seaAlarmed)
+                    UpdateSailorsChatter();
 				string ClassicSoundScene = "";
 				if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
 				if(bGlobalTutor)
@@ -3829,7 +3740,6 @@ void Ship_CheckMainCharacter()
 					SetMusic(ClassicSoundScene+"SantaMisericordia");
 				else
 					SetMusic(ClassicSoundScene+"music_sea_battle");
-				//Sound_OnSeaAlarm555(true, bUpdatePosMode);
 			break;
 		}
 		ControlsDesc();
@@ -3915,11 +3825,11 @@ void Ship_OnStrand()
 // Small boom
 void Ship_DetonateSmall()
 {
-	ref		rCharacter = GetCharacter(GetEventData());
-	aref	arCharShip; makearef(arCharShip, rCharacter.Ship);
+	ref  rCharacter = GetCharacter(GetEventData());
+	aref arCharShip; makearef(arCharShip, rCharacter.Ship);
 
-    if (bAbordageStarted) { return; }
-	if (sti(InterfaceStates.Launched)) { return; }
+    if (bAbordageStarted) return;
+	if (sti(InterfaceStates.Launched)) return;
 	
 	float x = stf(arCharShip.Pos.x);
 	float y = stf(arCharShip.Pos.y);
@@ -4000,9 +3910,9 @@ void Ship_Detonate(ref rCharacter, bool bMakeSmallBoom, bool bMakeDead)
 		isBoomAlready = true;
 		CreateParticleSystem("blast_inv", x1 + x, y1, z1 + z, 0.0, 0.0, 0.0, 0);
 	}
-	if (bMakeDead) { ShipDead(sti(rCharacter.Index), KILL_BY_SPY, -1); }
+	if (bMakeDead) ShipDead(sti(rCharacter.Index), KILL_BY_SPY, -1);
 
-	if (bMakeSmallBoom) { PostEvent(SHIP_DETONATE_SMALL, 600 + rand(1000), "l", sti(rCharacter.index)); } 
+	if (bMakeSmallBoom) PostEvent(SHIP_DETONATE_SMALL, 600 + rand(1000), "l", sti(rCharacter.index));
 }
 
 float AIShip_isPerksUse(string sPerk, float fOff, float fOn)
@@ -4522,21 +4432,18 @@ void Ship_UpdateParameters()
 		}
 	}
 	//  to_do <--
-	// start random sounds :: SAILS
-	if (rand(40) <= fSailState * 5.0) { Ship_PlaySound3DComplex(rCharacter, "sails_ambient", fSailState * 0.5, 0.0, 0.0, 0.5 + frnd() * 0.0); }
+    // start random sounds :: SAILS TO_DO ~!~
+    /*if (rand(40) <= fSailState * 5.0)
+    {
+        Ship_PlaySound3DComplex(rCharacter, "sails_ambient", fSailState * 0.5, 0.0, 0.0, 0.5 + frnd() * 0.0);
+    }*/
 
-	// start random sounds :: SHIPS
-	if (rand(2) == 1) { Ship_PlaySound3DComplex(rCharacter, "squeak_sea"+sSeaSoundPostfix, 0.9, frnd() * 1.2 - 0.6, 0.0, frnd() * 1.6 - 0.8); }
-}
-
-void Ship_SailsMoveSound()
-{
-	aref arCharacter = GetEventData();
-	bool bMove = GetEventData();
-
-	// update sounds :: SAILS - moving
-	if (CheckAttribute(arCharacter, "Ship.Sounds") && sti(arCharacter.Ship.Sounds.SailsID) > 0) 
-		{ Sound_SetVolume(sti(arCharacter.Ship.Sounds.SailsID), 0.75 * bMove); }
+    // start random sounds :: SHIPS
+    if (rand(2) == 1)
+    {
+        Ship_PlaySoundEvent(rCharacter, "ShipEMB/Creak_Rigging", frnd() * 1.2 - 0.6, 0.0, frnd() * 1.6 - 0.8);
+        //Ship_PlaySound3DComplex(rCharacter, "squeak_sea" + sSeaSoundPostfix, 0.9, frnd() * 1.2 - 0.6, 0.0, frnd() * 1.6 - 0.8);
+    }
 }
 
 void Ship_PrintExp(int iExp)
@@ -4634,6 +4541,7 @@ void Ship_UpdatePerks()
 	//if (!CheckAttribute(rCharacter, "TmpPerks.Turn")) {	rCharacter.TmpPerks.Turn = 0; }
       // to_do
 	aTmpPerks.Thrift	  	    = CheckOfficersPerk(rCharacter, "Thrift");
+	aTmpPerks.BeneathWaterline = CheckOfficersPerk(rCharacter, "BeneathWaterline");
     aTmpPerks.FastReload				= CheckOfficersPerk(rCharacter, "FastReload");
 	aTmpPerks.ImmediateReload			= CheckOfficersPerk(rCharacter, "ImmediateReload");
 	aTmpPerks.HullDamageUp			 	= CheckOfficersPerk(rCharacter, "HullDamageUp");
@@ -4705,13 +4613,13 @@ void Ship_Lightning()
 			for (int j=0; j<iNumFirePlaces; j++)
 			{
 				fCurr = fCurr + 1.0;
-				if (fCurr < fTest) { continue; }
+				if (fCurr < fTest) continue;
 	
 				fCurr = 0.0;
 				int iRandStartTime = rand(10000);
 				float fTotalFireTime = Ship_GetTotalFireTime(rCharacter);
 
-				PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, j, "ship_onfire", fTotalFireTime, -1);
+				PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, j, "ShipEMB/ShipDamage_Fire", fTotalFireTime, -1);
 				PostEvent(SHIP_FIRE_DAMAGE, iRandStartTime, "lllf", Ships[i], -1, j, fTotalFireTime);
 			}
 		}
@@ -5066,46 +4974,30 @@ float Sea_ApplyMaxSpeedZ(aref arCharShip, float fWindDotShip, ref rCharacter)
 	float BtWindR = 1.0 - fWindAgainstSpeed;
 	arCharShip.WindAgainstSpeed = Radian2Degree(acos(1.0 - fWindAgainstSpeed)); // В движок для GetWindAgainst()
 
-	float MagicNumberBase1 = 1.9;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.base1"))
-	//	MagicNumberBase1 = stf(pchar.test.WindAgainstSpeed.base1);
+	float MagicNumberBase1 = 2.25;
 	
-	float MagicNumberBaseShift = 0.3;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.baseshift"))
-	//	MagicNumberBaseShift = stf(pchar.test.WindAgainstSpeed.baseshift);
+	float MagicNumberBaseShift = 0.15;
 	
-	float MagicNumberFactor1 = 1.0;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.factor1"))
-	//	MagicNumberFactor1 = stf(pchar.test.WindAgainstSpeed.factor1);
-	
+	float MagicNumberFactor1 = 0.25;
+
 	float MagicNumberPower = 0.2;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.power"))
-//MagicNumberPower = stf(pchar.test.WindAgainstSpeed.power);
 	
-	float MagicNumberBase2 = 1.55;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.base2"))
-	//	MagicNumberBase2 = stf(pchar.test.WindAgainstSpeed.base2);
+	float MagicNumberBase2 = 2.15;
 	
-	float MagicNumberDivider = 3.0;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.divider"))
-		//MagicNumberDivider = stf(pchar.test.WindAgainstSpeed.divider);
+	float MagicNumberDivider = 1.75;
 	
-	float MagicNumberFactor2 = 8.0;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.factor2"))
-		//MagicNumberFactor2 = stf(pchar.test.WindAgainstSpeed.factor2);
+	float MagicNumberFactor2 = 2.6;
 	
-	float MagicNumberArcade = 1.0;
-	//if(CheckAttribute(pchar, "test.WindAgainstSpeed.arcade"))
-		//MagicNumberArcade = stf(pchar.test.WindAgainstSpeed.arcade);
+	float MagicNumberArcade = 1.20;
 	
 	float fCoeff = 1.0;
 	
 	if(fWindAgainstSpeed < 1.0)
 	{
 		if(fWindDotShip < BtWindR)
-			fCoeff = 0.85 + MagicNumberArcade * (fWindDotShip - BtWindR) / (1.0 + BtWindR);
+			fCoeff = 1.41 + MagicNumberArcade * (fWindDotShip - BtWindR) / (1.0 + BtWindR);
 		else
-			fCoeff = 1.24 - (fWindDotShip - BtWindR) / 2.2;
+			fCoeff = 1.52 - (fWindDotShip - BtWindR) / 2.00;
 	}
 	else
 	{

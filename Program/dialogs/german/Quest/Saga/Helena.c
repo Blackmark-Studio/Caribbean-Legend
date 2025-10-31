@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Helena_hire_3";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-			notification("Helen approves", "Helena");
+			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
 		
@@ -530,6 +530,7 @@ void ProcessDialogEvent()
 			LaunchFrameForm();
 			DoQuestCheckDelay("Saga_HelenaRomantic_5", 4.0);
 			pchar.questTemp.Saga.Helena_officer = "true"; // показатель, что Элен - наша навсегда
+			npchar.SpecialRole = "fgirl";
 			
 			pchar.GenQuest.BrothelCount = 0;
 			
@@ -2436,7 +2437,7 @@ void ProcessDialogEvent()
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-				notification("Helen disapproves", "Helena");
+				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
 		break;
@@ -2657,7 +2658,7 @@ void ProcessDialogEvent()
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "Musstest du das tun, Kapitän? Warum so schnell zum Kampf? Nun, man sollte nicht nur einen Gewinner haben, denke ich. Kommen Sie, wir sehen uns die Residenz an, hier gibt es sowieso nichts Sehenswertes mehr.";
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-						notification("Helen disapproves", "Helena");
+						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "Hut ab, mein Kapitän, dass Sie versucht haben, das Problem klug zu lösen, bevor Sie sich auf einen Kampf einlassen. Komm wir sehen uns die Residenz an, hier gibt es sowieso nichts Sehenswertes mehr.";
 					}
@@ -2669,7 +2670,7 @@ void ProcessDialogEvent()
 				case "B":
 					dialog.text = "Du hast diese Narren gekonnt getäuscht, mein Kapitän! Ich habe mich fast kaputtgelacht, ehrlich! Komm wir sehen uns die Residenz an, hier gibt es sowieso nichts Sehenswertes mehr.";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen approves", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Was ist mit diesem riesigen Schiff, das an Land gezogen wurde?";
 					link.l1.go = "after_ambush_1";
@@ -2678,7 +2679,7 @@ void ProcessDialogEvent()
 				case "C":
 					dialog.text = "Halt ein, lass ein Mädchen Luft holen! Bist du wirklich der Charlie Prinz?";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen approves", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Ja, es gab eine solche Zeit in meiner Biographie. Bist du beeindruckt?";
 					link.l1.go = "after_ambush_c";
@@ -2724,7 +2725,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "Danke, mein Kapitän. Es freut mich, das zu hören. Besonders schön ist es, es zum zweiten Mal zu hören. Du kennst mich gut.";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-				notification("Helen approves", "Helena");
+				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "Danke dir, mein Kapitän. Es freut mich, das zu hören.";
 			}
@@ -2747,7 +2748,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "Glaubst du, dass ich es verdiene? Ich habe noch nie Geld für solche Kleinigkeiten ausgegeben, aber ich vermute, es gibt ein erstes Mal für alles. Ich sehe, du hörst nicht auf zu versuchen, mich das Meer vergessen zu lassen, hm, Kapitän? Vielleicht hast du recht...";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
-				notification("Helen disapproves", "Helena");
+				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "Glaubst du, ich verdiene es? Ich habe noch nie Geld für solche Kleinigkeiten ausgegeben, aber ich denke, es gibt ein erstes Mal für alles.";
 			}

@@ -4,6 +4,7 @@
 #include "Loc_ai\boarding\utility_helpers.c"
 #include "Loc_ai\boarding\fight_helpers.c"
 #include "Loc_ai\boarding\looting.c"
+#include "Loc_ai\boarding\balance.c"
 
 bool   IsFort = false; 
 int    boarding_location = -1;
@@ -205,6 +206,8 @@ void LAi_StartBoarding(int locType, ref echr, bool _isMCAttack)
 			LAi_SetOfficerType(&characters[passq]);
 		}
 	}
+
+	BRD_InjectBalanceWithGenerator(pchar, boarding_enemy, boarding_player_base_crew, boarding_enemy_base_crew);
 
 	boarding_player_crew_per_chr = makefloat(boarding_player_base_crew / makefloat(mcrew)); //приведение типа
 	boarding_enemy_crew_per_chr = makefloat(boarding_enemy_base_crew / makefloat(ecrew)); // Stone-D : For calculating final crew numbers

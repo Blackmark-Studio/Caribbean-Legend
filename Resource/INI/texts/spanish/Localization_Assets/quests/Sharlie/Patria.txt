@@ -1,6 +1,6 @@
 Patria_1 {Noel}
 Patria_2 {Forget}
-Patria_3 {Eclatant}
+Patria_3 { }
 Patria_4 {Hubert}
 Patria_5 {Dassien}
 Patria_6 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
@@ -14,12 +14,12 @@ Patria_13 {Peter}
 Patria_14 {Stuyvesant}
 Patria_15 {El convoy comercial de la Compañía}
 Patria_16 {¡El Ost-Indian de la Compañía ha sido capturado!}
-Patria_17 {Oliphant}
+Patria_17 { }
 Patria_18 {Lenart}
 Patria_19 {Klap}
 Patria_20 {Edward}
 Patria_21 {Doily}
-Patria_22 {Trafalgar}
+Patria_22 { }
 Patria_23 {Kristian}
 Patria_24 {Beusson}
 Patria_25 {El convoy de la Compañía hacia África}
@@ -29,10 +29,10 @@ Patria_28 {¡El coronel Doily ha dado una señal para aterrizar en laguna Blanca
 Patria_29 {Después de dos horas de bombardeo,@<NewStr()>los holandeses han enviado un grupo parlamentario.}
 Patria_30 {Christian}
 Patria_31 {Tior}
-Patria_32 {Fortune}
+Patria_32 { }
 Patria_33 {Steven}
 Patria_34 {Dodson}
-Patria_35 {Red Dragon}
+Patria_35 { }
 Patria_36 {Marcus}
 Patria_37 {Tyrex}
 Patria_38 {Dos horas despues...@<NewStr()>}

@@ -3,6 +3,8 @@
 // Мушкетный залп
 void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realmcrew, int realecrew)
 {
+	if (BRD_IsCrewGiveUpCaptain(echr, 1)) return;
+
 	float 	mShipClassCoeff, eShipClassCoeff;
 	int   ecrewBak;
 	int   	mCrewShot = 0;
@@ -22,8 +24,6 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realm
 		mShipClassCoeff = (eclass - mclass) * 0.15; // считаем коэффицент классности для ГГ
 		mCrewShot = makeint(tempMCrew / 4);				// количество стрелков ГГ
 
-		if(IsCharacterEquippedArtefact(pchar, "indian_5")) tempECrew = makeint(tempECrew / 1.1);
-		
 		mCoeff = 0.5 + 0.1 * OffQty;
 		// это базовая величина потенциального урона, который может нанести команда протагониста.
 		mDamage = tempMCrew * mCoeff/4 + rand( makeint(tempMCrew * (1 - mCoeff)/4 ) );
@@ -47,8 +47,6 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realm
 	if (CheckOfficersPerk(echr, "MusketsShoot")) // для противника
 	{
 		bOk = true;
-		if(IsCharacterEquippedArtefact(echr, "indian_5")) tempMCrew = makeint(tempMCrew / 1.1);
-	
 		eShipClassCoeff = (mclass - eclass) * 0.15; 				// считаем коэффицент классности для противника
 		eCrewShot = makeint(tempECrew / 4);								// количество стрелков противника
 		eDamage = tempECrew * 0.2 + rand(makeint(tempECrew/20)); 			// базовая величина потенциального урона, который может нанести противник
@@ -84,7 +82,6 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realm
 	realecrew = func_max(0, tempECrew);
 }
 
-
 //Расставить персонажей для боя
 void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 {
@@ -93,6 +90,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	string model, ani, sTemp;
 	int    xhp;
 	int    locIndex = FindLocation(locID);
+	ref    location = &Locations[locIndex];
 	int    mclass = GetCharacterShipClass(pchar);
 	int    eclass = GetCharacterShipClass(boarding_enemy);
 	int    locMChar;
@@ -100,8 +98,23 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	limit = MAX_GROUP_SIZE;
 	// локаторов разное число на моделях :( Переделал все на инфу из кода boal 01.01.05  +1 всегда для ГГ
 	chr = &Locations[locIndex];
-	
-	if(CheckAttribute(chr, "boarding.locatorNum")) limit = sti(chr.boarding.locatorNum);
+	aref boardingObject;
+	makearef(boardingObject, TEV.boarding);
+
+	object temp;
+	aref perkChars, enemyPerkChars, realPerkChars, realEnemyPerkChars;
+	makearef(perkChars, temp.perkChars);
+	makearef(enemyPerkChars, temp.enemyPerkChars);
+	makearef(realPerkChars, boardingObject.perkChars.player);
+	makearef(realEnemyPerkChars, boardingObject.perkChars.brdenemy);
+	CopyAttributes(&perkChars, realPerkChars);
+	CopyAttributes(&enemyPerkChars, realEnemyPerkChars);
+	int attackerRankOffset = sti(boardingObject.attacker.rank);
+	int defenderRankOffset = sti(boardingObject.defender.rank);
+	bool attackerElixir = GetAttributeInt(&boardingObject, "attacker.elixir");
+	bool defenderElixir = GetAttributeInt(&boardingObject, "defender.elixir");
+
+	if(CheckAttribute(location, "boarding.locatorNum")) limit = sti(location.boarding.locatorNum);
 
 	Log_TestInfo("Location: " + locID + " Limit: " + limit);
 	Log_TestInfo("Player: " + boarding_player_crew + " х " + boarding_player_crew_per_chr + " Enemy: " + boarding_enemy_crew + " х " + boarding_enemy_crew_per_chr);
@@ -110,7 +123,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 	// определение стороны на палубе
 	sLocType = ChooseShipUpDeck(pchar, boarding_enemy);
 
-	if (!CheckAttribute(&Locations[locIndex], "CabinType"))
+	if (!CheckAttribute(location, "CabinType"))
 	{ // не грузим матросов в каюту
 		for(i = LAi_numloginedcharacters; i < limit; i++)
 		{
@@ -137,9 +150,11 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 			if (IsFort) SetFantomParamFortOur(chr);
 			else SetFantomParamAbordOur(chr);
 
+			AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
+			BRD_InjectPerks(chr, i, &perkChars, location, attackerElixir);
+			BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 			SetNewModelToChar(chr); //иначе сабли не те, что реально
 			chr.AboardFantom = true;
-			AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
 		}
 		//ставим своих мушкетеров -->
 		if (CheckOfficersPerk(pchar, "MusketsShoot") && CheckAttribute(&Locations[locIndex], "UpDeckType") && !CheckAttribute(boarding_enemy, "GenQuest.CrewSkelMode"))
@@ -194,6 +209,7 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 			else SetMushketerParamAbordOur(chr);
 
 			AddCharHP(chr, boarding_player_hp); // влияение опыта и морали в НР
+			BRD_InjectBalance(chr, attackerRankOffset, boardingObject, location);
 			if(!IsFort && mush_officers > 0)
 			{
 				if(CheckAttribute(pchar, "GenQuest.boarding.n2"))
@@ -259,7 +275,11 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 
 		if (IsFort) SetFantomParamFortEnemy(&chr);
 		else if (i == capIdx) BRD_PlaceCaptain(&chr, &boarding_enemy, locIndex, sLocType);
-		else SetFantomParamAbordEnemy(&chr);
+		else 
+		{
+			SetFantomParamAbordEnemy(&chr);
+			BRD_InjectPerks(chr, i, &enemyPerkChars, location, defenderElixir);
+		}
 
 		chr.nation = sti(boarding_enemy.nation);
 		boarding_enemy_crew = boarding_enemy_crew - 1;
@@ -267,19 +287,8 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 		SetNewModelToChar(&chr); //иначе сабли не те, что реально
 		chr.AboardFantom = true;
 		AddCharHP(&chr, boarding_enemy_hp); // влияение опыта и морали в НР
+		BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
 		
-		// Jason: на палубе уменьшаем хитпоинты вражеским тушкам до 85% от расчетного
-		if (CheckAttribute(&Locations[locIndex], "UpDeckType"))
-		{
-			int ihp = LAi_GetCharacterHP(chr)*0.85+0.5;
-			LAi_SetHP(chr, ihp, ihp);
-		}
-		// Jason: в инсайдах уменьшаем хитпоинты вражеским тушкам, т.к. возросло вдвое их количество
-		if (CheckAttribute(&Locations[locIndex], "InsideDeckType") || CheckAttribute(&Locations[locIndex], "AddFortType"))
-		{
-			ihp = LAi_GetCharacterHP(chr)/1.5;
-			LAi_SetHP(chr, ihp, ihp);
-		}
 		if(boarding_enemy.id == "Memento_Cap" && !CheckAttribute(&Locations[locIndex], "CabinType"))
 		{
 			chr.QuestCorpseLoot = "Memento_Cap";
@@ -316,15 +325,23 @@ void LAi_SetBoardingActors(string locID, ref boarding_enemy)
 					ChangeCharacterAddressGroup(chr, locID, "rld", sLocType+"mush"+i);
 					boarding_enemy_crew = boarding_enemy_crew - 1; // to_do: если сухопутных нет, уйдёт в минус
 				}
-			}
+			
 			if (IsFort) SetMushketerParamFortEnemy(chr);
 			else SetMushketerParamAbordEnemy(chr); 
 
-			AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР			
+			AddCharHP(chr, boarding_enemy_hp); // влияение опыта и морали в НР
+			BRD_InjectBalance(chr, defenderRankOffset, boardingObject, location);
+			}	
 		}
 	}
 	//<-- ставим вражеских мушкетеров
 	if(boarding_enemy.id == "Memento_Cap") chr.QuestCorpseLoot = "Memento_Cap";
+	if (bBettaTestMode)
+	{
+		trace("============Абордажный положняк=================");
+		DumpAttributes(boardingObject);
+		trace("============Абордажный положняк=================");
+	}
 	BRD_StartFight(locIndex, boarding_enemy, isCabin);
 }
 
@@ -339,7 +356,7 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, bool surrender)
 	}
 
 	// Завершаем с другим интерфейсом, если команда предала капитана
-	if (BRD_IsCrewGiveUpCaptain(chr)) return BRD_CrewGiveUpCaptain(chr, leftCrew);
+	if (BRD_IsCrewGiveUpCaptain(chr, leftCrew)) return BRD_CrewGiveUpCaptain(chr, leftCrew);
 
 	if (surrender)
 	{
@@ -375,7 +392,7 @@ bool BRD_ExitToInterface(ref chr, int leftCrew, bool IsFort, bool surrender)
 void BRD_StartFight(int locIndex, ref boarding_enemy, bool isCabin)
 {
 	ref location = &Locations[locIndex];
-	if (!isCabin && BRD_IsCrewGiveUpCaptain(boarding_enemy)) 
+	if (!isCabin && BRD_IsCrewGiveUpCaptain(boarding_enemy, 1))
 	{
 		if (CheckAttribute(location, "UpDeckType")) notification(StringFromKey("boarding_2"), "IronWill");// первая палуба
 		PostEvent("LAi_event_boarding_EnableReload", 200);

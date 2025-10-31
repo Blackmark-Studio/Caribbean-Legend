@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "一卷1300比索。 我觉得价格不错。 ";
-			link.l1 = "是啊, 可泰瑞克斯要一卷20金币, 一分不能少。 我说的是杜布朗。 他让我找能出这个价的买家。 ";
+			link.l1 = "是啊, 可泰瑞克斯要一卷4金币, 一分不能少。 我说的是杜布朗。 他让我找能出这个价的买家。 ";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "最近怎么样, 兄弟? ";
-			link.l1 = "不错。 找到买家了, 一卷25杜布朗。 我想泰瑞克斯会满意的。 ";
+			link.l1 = "不错。 找到买家了, 一卷5杜布朗。 我想泰瑞克斯会满意的。 ";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "哈! 这么说你是海盗? ";
-			link.l1 = "不, 只是特殊情况下和他们做生意。 我知道马库斯经常收到船用丝绸, 可以卖给任何付得起钱的人。 我说的不是一卷2500比索, 如果你能付每卷25杜布朗, 他能让你淹没在丝绸里, 说话算数。 ";
+			link.l1 = "不, 只是特殊情况下和他们做生意。 我知道马库斯经常收到船用丝绸, 可以卖给任何付得起钱的人。 我说的不是一卷2500比索, 如果你能付每卷5杜布朗, 他能让你淹没在丝绸里, 说话算数。 ";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "一卷25杜布朗, 这是你能得到的最高价, 相信我。 ";
-			link.l1 = "25金币? 嗯, 不错。 我想泰瑞克斯会因为找到这样的买家欠我个人情。 很好, 成交, 我会告诉他。 但如果你骗了我, 后果自负。 ";
+            dialog.text = "一卷5杜布朗, 这是你能得到的最高价, 相信我。 ";
+			link.l1 = "5金币? 嗯, 不错。 我想泰瑞克斯会因为找到这样的买家欠我个人情。 很好, 成交, 我会告诉他。 但如果你骗了我, 后果自负。 ";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "我现在没有那么多金山。 ";
 				link.l2.go = "Pelly_44_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "你知道吗, 卡特尔? 忘了它吧。 我们还是海盗吗? 还有让? 或者他漂亮的脸蛋是他唯一的资产? 准备好箱子 —我们坚持原计划。 ";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3022,7 +3022,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("特质检查失败", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("技能检查失败 (50)", SKILL_LEADERSHIP);
 			}
@@ -4696,7 +4696,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "船长, 除了一名军官外, 把她的所有船员都带到你的旗舰上。 ";
 				Link.l1 = "啊, 对! 我会的! ";
@@ -4762,6 +4762,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "船长, 看起来你没有位置容纳另一名军官。";
+				link.l1 = "也许你说得对。 我晚点再来, 你先在这儿看着, 别让我的船被别人占了。";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "你要带走她吗? ";
 			link.l1 = "是的。 ";

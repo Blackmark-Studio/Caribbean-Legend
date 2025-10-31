@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "You think you can just walk in, insult a lady, ignore me, and walk out of here in one piece, with the doubloons no less? Seems you’re not particularly bright. But I won’t start a brawl in front of a woman. So here’s my offer: you apologise to Madam Caldera, take your doubloons, and get the hell out of here. Or I’ll have to teach you some proper manners after all.";
 					link.l1.go = "Naemnik_5";
-					notification("Check passed (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Not enough gold (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Well, I'm willing to forgive your rough manners and even your rudeness towards me. But if you want to get your doubloons and leave here in one piece, you'll have to apologise to Lady Caldera. Otherwise, we'll see who handles a weapon better. And believe me, I don't carry mine just for show.";
 					link.l1.go = "Naemnik_5";
-					notification("Check passed (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Not enough gold (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "Clearly, you’re not burdened with much wit if you thought I’d wait my turn. And even less so if you believed I’d turn a blind eye to all the trouble you and your kind have brought upon Lady Caldera.";

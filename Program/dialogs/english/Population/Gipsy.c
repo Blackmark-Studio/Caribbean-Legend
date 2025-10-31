@@ -185,14 +185,14 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Oh, I'm not sure, handsome! Not long ago, there was a fellow asking for help killing rats, and then someone poisoned the soldiers at the fort. Things got pretty heated for my people on the island while the guards interrogated us for two weeks until they found the murderer. He was an enemy spy.","And how can I be sure of your purpose? Maybe you just want to poison a nobleman whom you are too cowardly to face in an honourable duel?","I've heard that someone poisoned a tradesman in the tavern and stole all his belongings. The man suffered for a long time before dying. Foam came out of his mouth and he turned purple like an aubergine.. Are you responsible for that, my love?");
 				link.l1 = "You gypsy wenches certainly like to share your opinions! Don't worry, lass, I'm not going to poison anyone. That's a woman's way to kill, not my style. For men, I have my sword, but I can't handle those accursed rats.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "You're trying to entrap me! No, sir, I don't have any poison. I've got plants and potions, but no poisons.";
 				link.l1 = "Whatever then. Don't put the evil eye on me.";
 				link.l1.go = "exit";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

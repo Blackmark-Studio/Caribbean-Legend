@@ -232,7 +232,7 @@ void ProcessDialogEvent()
 
 	case "Jeffry_2":
 		dialog.text = "1300 pesos por un rollo. Creo que es un buen precio.";
-		link.l1 = "Sí, y Tyrex quiere veinte piezas de oro por un rollo. Ni una moneda menos. Y me refiero a doblones. Me dio un trabajo para encontrar un comprador adecuado por ese precio.";
+		link.l1 = "Sí, y Tyrex quiere 4 piezas de oro por un rollo. Ni una moneda menos. Y me refiero a doblones. Me dio un trabajo para encontrar un comprador adecuado por ese precio.";
 		link.l1.go = "Jeffry_3";
 		break;
 
@@ -287,7 +287,7 @@ void ProcessDialogEvent()
 	case "Jeffry_9":
 		pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
 		dialog.text = "¿Cómo te va, amigo?";
-		link.l1 = "Haciendo muy bien. He encontrado un comprador. Veinticinco doblones por un rollo. Creo que a Tyrex le gustará.";
+		link.l1 = "Haciendo muy bien. He encontrado un comprador. 5 doblones por un rollo. Creo que a Tyrex le gustará.";
 		link.l1.go = "Jeffry_10";
 		break;
 
@@ -809,7 +809,7 @@ void ProcessDialogEvent()
 
 	case "Mtr_acceptor_5_3":
 		dialog.text = "¡K-ja! Entonces, ¿eres un pirata?";
-		link.l1 = "No, solo hago negocios con ellos en ocasiones especiales. Sé con certeza que Marcus recibe lotes de seda de barco de manera constante y se la vende a cualquiera que pueda pagarla. Y no estoy hablando de 2500 pesos por un rollo aquí, diría que si puedes pagarle 25 doblones de oro por cada rollo, te ahogará en ellos, puedes contar con eso.";
+		link.l1 = "No, solo hago negocios con ellos en ocasiones especiales. Sé con certeza que Marcus recibe lotes de seda de barco de manera constante y se la vende a cualquiera que pueda pagarla. Y no estoy hablando de 2500 pesos por un rollo aquí, diría que si puedes pagarle 5 doblones de oro por cada rollo, te ahogará en ellos, puedes contar con eso.";
 		link.l1.go = "Mtr_acceptor_5_4";
 		break;
 
@@ -898,8 +898,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "Mtr_acceptor_7_8":
-		dialog.text = "Veinticinco doblones por un rollo. Ese es el mejor precio que puedes conseguir, confía en mí.";
-		link.l1 = "¿Veinticinco monedas de oro? Hm. No está mal. Creo que Tyrex me deberá mucho por semejante comprador. Muy buen trato, se lo haré saber. Sin embargo, si me mentiste sobre el precio, entonces tu pellejo estará en juego.";
+		dialog.text = "5 doblones por un rollo. Ese es el mejor precio que puedes conseguir, confía en mí.";
+		link.l1 = "¿5 monedas de oro? Hm. No está mal. Creo que Tyrex me deberá mucho por semejante comprador. Muy buen trato, se lo haré saber. Sin embargo, si me mentiste sobre el precio, entonces tu pellejo estará en juego.";
 		link.l1.go = "Mtr_acceptor_7_9";
 		break;
 
@@ -1290,7 +1290,7 @@ void ProcessDialogEvent()
 			}
 			link.l2 = "No tengo ese tipo de montaña dorada ahora mismo.";
 			link.l2.go = "Pelly_44_1";
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		}
 		else
 			notification("¡Comprobación de beneficios fallida!", "Trustworthy");
@@ -3028,7 +3028,7 @@ void ProcessDialogEvent()
 		{
 			link.l1 = "(Confiable) (Honor) (Liderazgo) Ya es suficiente sangre por hoy, Jean. Me encargaré de esto yo mismo.";
 			link.l1.go = "merida_head_dobro_1";
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 			notification("¡Comprobación de reputación aprobada!", "None");
 			notification("¡Prueba de habilidad aprobada!", SKILL_Leadership);
 		}
@@ -4718,7 +4718,7 @@ void ProcessDialogEvent()
 				break;
 			}
 		}
-		if (sti(chref.Ship.Crew.Quantity) > 0)
+		if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 		{
 			dialog.text = "Capitán, lleva a toda su tripulación a tu buque insignia excepto a un oficial.";
 			Link.l1 = "¡Ah, cierto! ¡Haré eso!";
@@ -4733,21 +4733,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "ShipStock_3":
-		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-		chref.ShipInStockMan = NPChar.id;
-		chref.ShipInStockMan.MoneyForShip = 0;
-		chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-		SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-		RemoveCharacterCompanion(pchar, chref);
-		chref.location = "";
-		chref.location.group = "";
-		chref.location.locator = "";
-		if (sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-		{
-			npchar.FstClassInHarbour = 1;
-		}
-		npchar.portman = sti(npchar.portman) + 1;
-		pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
+		LeaveShipIslaMona(&NPChar);
 		dialog.text = "Muy bien, la llevaremos a un puerto seguro.";
 		Link.l1 = "¡Excelente!";
 		Link.l1.go = "carpenter_exit";
@@ -4784,6 +4770,12 @@ void ProcessDialogEvent()
 		break;
 
 	case "ShipStockManBack":
+		if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Cap, parece que no tienes espacio para otro oficial.";
+				link.l1 = "Quizás tienes razón. Volveré luego — mientras tanto, cuida esto aquí para que nadie reclame mi barco.";
+				link.l1.go = "exit";
+				break;
+		}
 		chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 		dialog.Text = "¿La estás llevando?";
 		link.l1 = "Sí.";

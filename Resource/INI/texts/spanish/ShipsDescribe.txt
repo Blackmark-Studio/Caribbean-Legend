@@ -71,7 +71,7 @@ Capacity
 Porte: muestra la capacidad actual y máxima del barco. Cuanto más cargado esté el barco, más lento y torpe será.Los cañones instalados en el barco también se tienen en cuenta al calcular el porte. Se pueden quitar del barco para liberar espacio adicional para la carga. Para ello, seleccione los cañones actuales en la lista de parámetros del barco en la interfaz "Barco".
 }
 Crew {Tripulación: muestra el número actual de tripulantes, así como el mínimo y máximo para este barco.}
-CannonType {Tipo de cañón: muestra el tipo (cañones o culverinas), el calibre actual y el número de cañones instalados}
+CannonType {Tipo de cañón: muestra el tipo (cañones o culebrinas), el calibre actual y el número de cañones instalados}
 sCannons {Muestra el calibre máximo permitido y el número máximo posible de cañones en el barco.}
 Crew_Exp {Experiencia de la tripulación}
 Crew_Exp_hint

@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 				dialog.text = "Señor"+GetSexPhrase("","ita")+", your desire to purchase more resin certainly shows trust in our business. However, there's one complication\nWith increased volumes comes a greater risk of attracting the attention of the island authorities, and controlling such shipments requires people and security measures, which, I admit, aren't cheap. If you're willing to add three thousand doubloons to the price, as a one-time payment, I'll hire reliable people who can protect the cargo and prevent information leaks. Then our route will become safer, and I can supply you with three hundred barrels of resin monthly. To compensate for your investment, I'll offer you, as a wholesale buyer, a fifteen percent discount on all future shipments.";
 				link.l1 = "Three thousand doubloons to secure the shipments? Señor Sergio, I won't hide it, this price seems incredible – as if you're proposing a conspiracy in the Escorial rather than just securing a cargo of pitch!";
 				link.l1.go = "UpgradeOil_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

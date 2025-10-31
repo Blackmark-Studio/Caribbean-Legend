@@ -11,11 +11,13 @@ itm_stat_descr_damageReduction {Dieser Prozentsatz wird vom eingehenden Schaden 
 itm_stat_attack {Schaden}
 itm_stat_descr_attack
 {
-Normaler Angriff: #sattack.force.min#–#sattack.force.max# Schaden
-Schneller Angriff: #sattack.fast.min#–#sattack.fast.max# Schaden
+Hieb: #sattack.fast.min#–#sattack.fast.max# Schaden
+Stich: #sattack.force.min#–#sattack.force.max# Schaden
 Rundumschlag: #sattack.round.min#–#sattack.round.max# Schaden
-Schwerer Angriff: #sattack.break.min#–#sattack.break.max# Schaden
+Durchschlagender Schlag: #sattack.break.min#–#sattack.break.max# Schaden
 }
+itm_stat_gundamage {Schusswaffenschaden.}
+itm_stat_descr_gundamage {Der im Fernkampf verursachte Schaden hängt von den Fertigkeiten, den Eigenschaften der Waffe und der Munition ab.}
 itm_stat_healAmount {Heilung}
 itm_stat_descr_healAmount {Wiederhergestellte Lebenspunkte bei Anwendung.}
 itm_stat_worldMapBonus {Übersichtsreichweite}
@@ -126,15 +128,15 @@ itm_stat_descr_obereg_11 {Ändert den Kurswinkel des Schiffs um 15 % und ermögl
 itm_stat_obereg_3 {Gewichtheben}
 itm_stat_descr_obereg_3 {Erhöht die Traglast um 15 %.}
 itm_stat_obereg_4 {Inkognito}
-itm_stat_descr_obereg_4 {Charakter-Tarnung steigt um 10.}
+itm_stat_descr_obereg_4 {Charakter-Tarnung steigt um #smodifiers.SkillSneak#.}
 itm_stat_obereg_5 {Talisman}
-itm_stat_descr_obereg_5 {Der Opportunismus des Charakters steigt um 15.}
+itm_stat_descr_obereg_5 {Der Opportunismus des Charakters steigt um #smodifiers.SkillFortune#.}
 itm_stat_obereg_6 {Überreden}
-itm_stat_descr_obereg_6 {Charisma des Charakters steigt um 10 Punkte.}
+itm_stat_descr_obereg_6 {Charisma des Charakters steigt um #smodifiers.SkillLeadership# Punkte.}
 itm_stat_obereg_7 {Seegeboren}
-itm_stat_descr_obereg_7 {Charakter-Navigation steigt um 10 Punkte.}
+itm_stat_descr_obereg_7 {Charakter-Navigation steigt um #smodifiers.SkillSailing# Punkte.}
 itm_stat_obereg_8 {Vorteil}
-itm_stat_descr_obereg_8 {Der Handel des Charakters steigt um 15 Punkte.}
+itm_stat_descr_obereg_8 {Der Handel des Charakters steigt um #smodifiers.SkillCommerce# Punkte.}
 itm_stat_obereg_9 {Gott des Windes}
 itm_stat_descr_obereg_9 {Schiffsgeschwindigkeit steigt um 10 %.}
 itm_stat_totem_01 {Eiserner Magen}
@@ -146,7 +148,7 @@ itm_stat_descr_totem_03 {Verdoppelt die Heilwirkung von Liebesfreuden.}
 itm_stat_totem_04 {Geborener Anführer}
 itm_stat_descr_totem_04 {Sperrt die Loyalität des Offiziers für die gesamte Dauer.}
 itm_stat_totem_05 {Unverwundbarkeit}
-itm_stat_descr_totem_05 {Verringert den kritischen Schaden von Feinden um 25 %.}
+itm_stat_descr_totem_05 {Verringert den kritischen Schaden von Feinden um $modifierPercent(CritIncomingDamageReduction).}
 itm_stat_totem_06 {Packpferd}
 itm_stat_descr_totem_06 {Überschreitet das Traggewicht, wird der Charakter weder langsamer noch erhält er Abzüge.}
 itm_stat_totem_07 {Beschwören}
@@ -216,11 +218,11 @@ itm_stat_descr_talisman15 {Erhöht die Flottenstärke um 15 %. Gefertigt aus dem
 itm_stat_talisman16 {Dschungelkrieger}
 itm_stat_descr_talisman16 {Exotische Waffen verursachen 15 % mehr Schaden}
 itm_stat_talisman17 {Schild des Glaubens}
-itm_stat_descr_talisman17 {Verringert Schaden an Crew und Kapitän um 5 % und erhöht an Bord der Holy Mercy die Verteidigung um 10.}
+itm_stat_descr_talisman17 {Verringert den Schaden an der Mannschaft um $ctxHasAttr(QBonus.max|15|5) %, und an Bord der *Heiligen Barmherzigkeit* erhöht sich die Verteidigungsfähigkeit um 10. Die Schadensminderung steigt nach dem Abschluss des Pfads des Gerechten.}
 itm_stat_talisman18 {Auf der Suche nach der Wahrheit}
 itm_stat_descr_talisman18 {Jeder gefundene Schatz erhöht die Musketensalve der Crew um 1 % und den Kartätschen-Schaden um 2 %.}
 itm_stat_talisman19 {Merke dir}
-itm_stat_descr_talisman19 {Für je 2 % verlorene Hülle steigen Schiffsgeschwindigkeit um 0,75 % und Kanonenschaden um 0,5 %.}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {Bereit zum Einsatz}
 itm_stat_descr_talisman20 {Zielgeschwindigkeit mit Schusswaffen steigt um 15 %, maximaler Zielschaden um 20 %, Nachladegeschwindigkeit um 10 % und Kopfschussschaden um 20 %.}
 itm_stat_talisman21 {Gemeinschaftliche Verantwortung}
@@ -267,3 +269,27 @@ itm_stat_mushket8 {Zerlegbar}
 itm_stat_descr_mushket8 {Diese Schusswaffe lässt sich zusammen- und auseinanderbauen und wechselt so zwischen Einhand- und Zweihandnutzung.}
 itm_stat_spyglassSP3 {Strafender Blick}
 itm_stat_descr_spyglassSP3 {Mit diesem Fernrohr erkennst du die Angst in den Augen des feindlichen Kapitäns – und ob er zur Aufgabe bereit ist.}
+itm_stat_reloadTime {Nachladezeit}
+itm_stat_descr_reloadTime {Zeit zum Nachladen der nächsten Patrone.}
+itm_stat_kaleuche_amulet2 {Angriffszauber}
+itm_stat_descr_kaleuche_amulet2 {Macht Tempel-Monster Chavinavi verwundbar gegenüber Waffen und gewährt Schutz vor ihren Angriffen. Erhöht die Fertigkeiten in allen Waffentypen um 25 %.}
+itm_stat_kaleuche_amulet3 {Schutzzauber}
+itm_stat_descr_kaleuche_amulet3 {Macht Tempel-Monster Chavinavi verwundbar gegenüber Waffen und gewährt Schutz vor ihren Angriffen. Reduziert den erlittenen Schaden durch alle Waffentypen um 25 % und verhindert Vergiftung.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+Aktueller Bonus: $number($attr($context.KillerBonus.appliedbonus)) Schaden und $number($attr($context.KillerBonus.RangeBonus) % Reichweite.
+}
+itm_stat_blade_WR_1 {Fleiß}
+itm_stat_descr_blade_WR_1 {Erhöht die Regeneration im Kampf auf das Fünffache.}
+itm_stat_secondary_hat6 {Geschätzter Händler}
+itm_stat_descr_secondary_hat6 {Erhöht die Schlagkraft der Handelsschiffe in der Eskadre um 15 % und verringert die Penalisierung der Fluchtchance vor Handelsschiffen um 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Erhöht den von Schusswaffen verursachten Schaden um das Zehnfache.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Selbst bei leichter Verwundung verursacht es in 100 % der Fälle eine schwere Vergiftung, die durch Gegengifte nicht geheilt werden kann und innerhalb kurzer Zeit zum Tod führt.}
+itm_stat_PerksPotion {Vergessenheit}
+itm_stat_descr_PerksPotion {Setzt alle erlernten Perks des Charakters zurück. Nach der Einnahme werden die Erinnerungen an Perks und Techniken gelöscht, doch die Fähigkeit bleibt — als erinnere sich der Körper daran, was er erreicht hat, während der Verstand es nicht mehr tut.}
+itm_stat_descr_talisman19_InSlot {Alle 2% verlorene Schiffshülle erhöhen die Geschwindigkeit und den Schaden der Kanonen um 0.75% bzw. 0.5%.}
+itm_stat_descr_talisman19_InInventory {Befindet sich dieser Gegenstand im Inventar, macht er alle Offiziere unsterblich.}

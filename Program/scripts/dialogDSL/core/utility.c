@@ -20,22 +20,28 @@ string DLG_A(ref args, int index)
   return DLG_GetObjectAttributeSafe(&args, &argName);
 }
 
-//Syntax sugar for first argument
+// Syntax sugar for consistency
+bool DLG_HasArgument(ref args, int index)
+{
+  return CheckAttribute(args, "var" + index);
+}
+
+// Syntax sugar for first argument
 string DLG_A0(ref args)
 {
-  return DLG_A(&args, 0);
+  return DLG_A(args, 0);
 }
 
-//Syntax sugar for second argument
+// Syntax sugar for second argument
 string DLG_A1(ref args)
 {
-  return DLG_A(&args, 1);
+  return DLG_A(args, 1);
 }
 
-//Syntax sugar for third argument
+// Syntax sugar for third argument
 string DLG_A2(ref args)
 {
-  return DLG_A(&args, 2);
+  return DLG_A(args, 2);
 }
 
 // func("aXbXcX", "X", "Y", 0) → "aYbYcY"
@@ -45,11 +51,13 @@ void DLG_ReplaceAllMatches(string input, string key, string replace, int curPos)
   int markPos = FindSubStr(&input, key, curPos);
   if (markPos < 0) return;
   int keyLength = strlen(&key);
+  int len = strlen(&input);
 
   string start   = "";
   string end     = "";
   if (markPos > 0) start = strcut(input, 0, markPos-1);
-  end = strcut(input, markPos+keyLength, strlen(&input)-1);
+  if (markPos + 1 == len) end = "";
+  else if (markPos+keyLength < len) end = strcut(input, markPos+keyLength, len-1);
 
   input = start + replace + end;
   DLG_ReplaceAllMatches(input, &key, &replace, markPos); // looking for the next replacement
@@ -62,12 +70,14 @@ void DLG_ReplaceAllMatches(string input, string key, string replace, int curPos)
 void DLG_SplitString(ref result, string input, string bySym, int iteration)
 {
   string varName = "var" + iteration;
-  int iPos = findsubstr(input, "|", 0);
+  int iPos = findsubstr(&input, bySym, 0);
   result.(varName) = input;
   if (iPos < 0) return;
+  int len = strlen(&input);
 
   if (iPos == 0) result.(varName) = "";
-  else result.(varName) = strcut(input, 0, iPos-1);
+  else result.(varName) = strcut(&input, 0, iPos-1);
 
-  DLG_SplitString(&result, strcut(&input, iPos+1, strlen(&input)-1), &bySym, iteration+1);
+  if (iPos +1 == len) return;
+  DLG_SplitString(result, strcut(&input, iPos+1, len-1), &bySym, iteration+1);
 }

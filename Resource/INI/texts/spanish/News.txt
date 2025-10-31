@@ -1,16 +1,20 @@
-News {Beta Abierta 1.6.0}
+News {Actualización 1.6}
 News_descr
 {
 ************************   ¡Ahoy!   ***********************
-¡Bienvenido a la versión 1.6.0!
+¡Bienvenido a la versión 1.6!
 ------------------------------------------------------------------------------------------------
-— Juego nuevo - no es obligatorio
-— Hemos cambiado completamente el sistema de combate y nivelación. Los cambios son tan grandes que realmente necesitamos tus comentarios
-— Comparte tus impresiones en los canales oficiales de Discord y Telegram, así como en Steam
-— Si cargas una partida guardada de otra versión, no olvides reasignar las ventajas del héroe y los oficiales
-— Desactiva cualquier modificación hasta que los autores del Steam Workshop actualicen su trabajo
-— Puedes encontrar una lista detallada de cambios en las noticias haciendo clic en el botón de abajo
-— ¡Gracias por jugar!
+— Ya está disponible el parche 1.6
+— Puedes encontrar la lista completa de cambios en las noticias haciendo clic en el botón de abajo
+— Se han añadido construcción de personajes y rejugabilidad al juego
+— Si cargas una partida de otra versión, no olvides reasignar las habilidades del héroe y los oficiales
+— Sistema de combate completamente renovado
+— Una docena de nuevas mecánicas y más de cien mejoras
+— Lanzado el DLC "Supporter Pack"
+— No es necesario empezar una nueva partida
+— Por favor, desactiva todos los mods
+— Siempre puedes volver a cualquier parche principal anterior desde la Biblioteca de Steam
 }
 News_Attention { }
-[News]IsRead = false { }
+[News]
+IsRead = false

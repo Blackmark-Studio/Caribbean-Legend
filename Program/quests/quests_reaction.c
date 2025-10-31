@@ -216,17 +216,7 @@ void QuestComplete(string sQuestName, string qname)
             sld.name = StringFromKey("QuestsUtilite_36");
             sld.lastname = StringFromKey("QuestsUtilite_37");
             sld.greeting = "knippel_1";
-            LAi_SetHP(sld, 120, 120);
-            SetSelfSkill(sld, 10, 12, 10, 10, 70);
-            SetShipSkill(sld, 50, 20, 75, 75, 45, 20, 20, 10, 15);
             SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
-            SetCharacterPerk(sld, "HullDamageUp");
-            SetCharacterPerk(sld, "SailsDamageUp");
-            SetCharacterPerk(sld, "CrewDamageUp");
-            SetCharacterPerk(sld, "CriticalShoot");
-            SetCharacterPerk(sld, "LongRangeShoot");
-            SetCharacterPerk(sld, "CannonProfessional");
-            SetCharacterPerk(sld, "FastReload");
             sld.Dialog.Filename = "Quest\FireBrigade.c";
             sld.dialog.currentnode = "Kneepel";
             sTemp = GetGeneratedItem("blade_12");
@@ -236,6 +226,7 @@ void QuestComplete(string sQuestName, string qname)
             EquipCharacterbyItem(sld, "pistol1");
             TakeNItems(sld, "bullet", 50);
             AddItems(sld, "gunpowder", 50);
+						ForceHeroAutolevel(sld);
             ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
             LAi_SetActorType(sld);
             LAi_ActorDialog(sld, pchar, "", -1.0, 0.0);

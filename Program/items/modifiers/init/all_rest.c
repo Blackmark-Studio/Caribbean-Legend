@@ -162,6 +162,13 @@ bool InitRestModifiers(ref item)
 			AddDescriptor(item, "Ingredient", -1);
 		}
 		break;
+		case "Alchemy_Tool":
+		{
+			AddDescriptor(item, "Tool", -1);
+			AddDescriptor(item, "Valuable", -1);
+			AddDescriptor(item, "Ingredient", -1);
+		}
+		break;
 		case "Mechanic_Tool":
 		{
 			AddDescriptor(item, "Tool", -1);

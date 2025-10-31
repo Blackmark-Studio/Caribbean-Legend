@@ -14,7 +14,7 @@ void CT_UpdateEquipTable(ref chr)
 
 	aref staticTable = CT_GetTable(chr, CT_STATIC);
 	CT_MergeTables(&table, &staticTable); // подливаем статические модификаторы
-	RunCharacterCallbacks(chr, CT_EQUIP, &table, &NullCharacter);
+	RunTableCallbacks(chr, CT_EQUIP, &table, &NullCharacter);
 }
 
 void ApplyEquipModifiers(ref chr, ref table, ref equipment)
@@ -30,7 +30,7 @@ void ApplyEquipModifiers(ref chr, ref table, ref equipment)
 			trace("ApplyEquipModifiers warning - can't find " + itemID + " item");
 			continue;
 		}
-		string itemType = GetItemEquipmentType(item);
+		string itemType = GetAttributeOrDefault(item, "groupId", "rest");
 		ApplyItemModifiers(chr, &table, &item, itemType);
 		ApplyItemDescriptors(chr, &table, &item, itemType);
 	}
@@ -60,30 +60,8 @@ void ApplyItemModifiers(ref chr, ref table, ref item, string itemType)
 	{
 		modifier = GetAttributeN(modifiers, i);
 		string modifierName = GetAttributeName(modifier);
-		if (modifierName == "callbacks") MergeCallbacks(chr, &modifier);
+		if (modifierName == "callbacks") MergeCallbacks(&table, &modifier);
+		else if (modifierName == "has") MergeFlags(&table, &modifier);
 		else MergeModifier(&table, &modifier, modifierName, itemType);
 	}
-}
-
-string GetItemEquipmentType(ref item)
-{
-	if (CheckAttribute(item, "groupId")) return item.groupId;
-	return "rest";
-}
-
-// Складываем значения модификаторов
-void MergeModifier(ref rObject, ref modifier, string modifierName, string sourceName)
-{
-	string modifierValue = GetAttributeValue(modifier);
-	rObject.(modifierName) = GetAttributeFloat(rObject, modifierName) + stf(modifierValue);
-
-	if (strleft(modifierName, 4) != HAS) rObject.(modifierName).(sourceName) = modifierValue;
-}
-
-// Коллбэки дописываем
-void MergeCallbacks(ref rObject, ref modifier)
-{
-	aref callbacks;
-	makearef(callbacks, rObject.callbacks);
-	CopyAttributesSafe(callbacks, modifier);
 }

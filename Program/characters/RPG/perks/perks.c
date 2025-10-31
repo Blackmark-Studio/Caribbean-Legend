@@ -1,5 +1,6 @@
 #include "characters\RPG\perks\perks.h"
 #include "characters\RPG\perks\self_effects.c"
+#include "characters\RPG\perks\self_callbacks.c"
 #include "characters\RPG\perks\ship_effects.c"
 #include "characters\RPG\perks\trees.c"
 
@@ -32,75 +33,182 @@ bool HasPerk(ref chr, string perkName)
 	return CheckAttribute(chr, "perks.list."+ perkName);
 }
 
-bool SetCharacterPerk(ref chref, string perkName)
+// Естьи ли перк у персонажа без учёта перков от фантомных офицеров
+bool HasPerkNatural(ref chr, string perkName)
 {
-	chref.perks.list.(perkName) = true;
+	if (!HasPerk(chr, perkName)) return false;
+	return !CheckAttribute(chr, "perks.list."+perkName + ".fromOfficer");
+}
+
+// Прокачать перк и все требуемые для него перки без обновления таблицы
+bool SetCharacterPerkWithRequiredNoCash(ref chr, string perkName)
+{
+	bool refresh = false;
+	aref chrPerks;
+	makearef(chrPerks, chr.perks.list);
+	int i = 0;
+	while (i < 5)
+	{
+		string nextPerk = GetPerkOrRequired(chrPerks, perkName);
+		if (SetCharacterPerkNoCash(chr, nextPerk, false)) refresh = true;
+		if (nextPerk == perkName) break;
+	}
+
+	return refresh;
+}
+
+// Прокачать перк и все требуемые для него перки
+bool SetCharacterPerkWithRequired(ref chr, string perkName)
+{
+	bool result = SetCharacterPerkWithRequiredNoCash(chr, perkName);
+	CT_UpdateCashTables(chr);
+	return result;
+}
+
+// Проверяем, надо ли взять другой перк, чтобы взять этот и возвращаем соответствующий
+string GetPerkOrRequired(ref chrPerks, string perkName)
+{
+	if (!CheckAttribute(&ChrPerksList, "list." + perkName + ".condition")) return perkName;
+
+	aref conditions;
+	makearef(conditions, ChrPerksList.list.(perkName).condition);
+
+	for(int i=0; i < GetAttributesNum(conditions); i++)
+	{
+		string tempPerkName = GetAttributeName(GetAttributeN(conditions, i));
+		if (!CheckAttribute(chrPerks, tempPerkName)) return GetPerkOrRequired(chrPerks, tempPerkName);
+	}
+
+	return perkName;
+}
+
+// Применить эффекты от перка
+bool ApplyPerkEffects(ref chr, string perkName, bool fromOfficer)
+{
+	bool refresh = false;
+	aref perks;
+	makearef(perks, chr.perks.list);
+
+	perks.(perkName) = true;
+	if (fromOfficer) perks.(perkName).fromOfficer = true;
+	else DeleteAttribute(perks, perkName + ".fromOfficer");
+
 	aref perk;
 	makearef(perk, ChrPerksList.list.(perkName));
-	// разовые применения при назначении -->
+
 	switch (perkName)
 	{
-		case "EnergyPlus":
-			chref.PerkValue.EnergyPlus = sti(chref.rank);
-			return true; // нужен рефрешь		
-		break; 
-		// <--
 		case "Grus":
-			return true; // нужен рефрешь
+			refresh = true; // нужен рефрешь
 		break;
 
-		case "FastHands": 
+		case "FastHands":
 		{
-			SetCharacterActionSpeed(chref, "fire", 1.0 + PERK_VALUE_FAST_HANDS);
+			SetCharacterActionSpeed(chr, "fire", 1.0 + PERK_VALUE_FAST_HANDS); //JOKERTODO убрать в общие модификаторы в таблице
 		}
 		break;
 	
-		case "MarathonRunner": 
+		case "MarathonRunner":
 		{
-			//JOKERTODO: бонус энергии if (!IsMainCharacter(chref))
+			if (!IsMainCharacter(chr)) SetChrModifier(chr, M_ENERGY_MAX, PERK_VALUE3_MARATHON_RUNNER, "MarathonRunner");
 		}
 		break;
 
-		case "Investor": 
+		case "KeenEye":
 		{
-			if (!IsMainCharacter(chref))
+			if (IsMainCharacter(chr)) break;
+			SetChrModifier(chr, M_CRIT_CHANCE, GUN_ITEM_TYPE    + "_" + PERK_VALUE2_KEEN_EYE, "KeenEye");
+			SetChrModifier(chr, M_CRIT_CHANCE, MUSKET_ITEM_TYPE + "_" + PERK_VALUE2_KEEN_EYE, "KeenEye");
+		}
+		break;
+
+		case "Investor":
+		{
+			if (!IsMainCharacter(chr))
 			{
-				SetChrModifier(chref, SKILL_TYPE + SKILL_LEADERSHIP, PERK_VALUE2_INVESTOR, "Investor");
-				SetChrModifier(chref, SKILL_TYPE + SKILL_COMMERCE, PERK_VALUE2_INVESTOR, "Investor");
+				SetChrModifier(chr, SKILL_TYPE + SKILL_LEADERSHIP, PERK_VALUE2_INVESTOR, "Investor");
+				SetChrModifier(chr, SKILL_TYPE + SKILL_COMMERCE, PERK_VALUE2_INVESTOR, "Investor");
+				refresh = true;
 			}
 		}
 		break;
-		case "Muscles": 
-		{
-			SetCharacterActionSpeed(chref, "hit", 1.0 - PERK_VALUE3_MUSCLES);
-		}
-		break;
+		case "Captain": DeleteAttribute(chr, "CompanionDisable"); break; // есливыдали кэп-перк, значит может
 	}
 
 	aref modifiers;
 	makearef(modifiers, perk.modifiers);
+	aref table = CT_GetTable(chr, CT_STATIC);
 	for (int i = 0; i < GetAttributesNum(modifiers); i++)
 	{
 		aref modifier = GetAttributeN(modifiers, i);
 		string modifierName = GetAttributeName(modifier);
-		if (modifierName == "callbacks") MergeCallbacks(chref, modifier);
-		else SetChrModifier(chref, GetAttributeName(modifier), stf(GetAttributeValue(modifier)), perkName);
+		if (modifierName == "callbacks") MergeCallbacks(&table, &modifier);
+		else if (modifierName == "has") MergeFlags(&table, &modifier);
+		else SetModifierFromSourceDirect(&table, GetAttributeName(modifier), stf(GetAttributeValue(modifier)), perkName);
 	}
 
-	CT_UpdateEquipTable(chref);
-	CT_UpdateLandTable(chref);
-	// разовые применения при назначении <--
-	return false; // нужен рефрешь
+	return refresh;
 }
 
-void DelCharacterPerk(ref chref, string perkName)
+// Выдача перка NPC от фантомного офицера, не буду совать тут проверку на главного героя и его офицеров
+// т. к. применять к ним этот метод нигде не должно, а вызывать его будет много
+void SetCharacterPerkFromOfficer(ref captain, string perkName, ref officer)
 {
-	if(CheckAttribute(chref,"perks.list."+perkName))
-	{
-		DeleteAttribute(chref,"perks.list."+perkName);
-	}
+	if (HasPerkNatural(captain, perkName)) return;
 
+	ApplyPerkEffects(captain, perkName, true);
+}
+
+// Выдача одиночного перка с применением модификаторов, но без обновления таблицы
+// Полезно если выдаем много перков циклами и планируем обновить таблицы в конце
+bool SetCharacterPerkNoCash(ref chr, string perkName, bool fromOfficer)
+{
+	bool refresh = ApplyPerkEffects(chr, perkName, fromOfficer);
+	return refresh; // нужен рефрешь
+}
+
+// Выдача одиночного перка с применением модификаторов
+bool SetCharacterPerk(ref chr, string perkName)
+{
+	bool refresh = SetCharacterPerkNoCash(chr, perkName, false);
+
+	CT_UpdateCashTables(chr);
+	return refresh; // нужен рефрешь
+}
+
+// Правильное удаление перка, со сносом модификаторов и коллбэков
+void DelCharacterPerk(ref chr, string perkName)
+{
+	DelCharacterPerkNoCash(chr, perkName);
+	CT_UpdateCashTables(chr);
+}
+
+// Правильное удаление перка, со сносом модификаторов и коллбэков, но без обновления таблиц
+// Полезно если забираем много перков циклами и планируем обновить таблицы в конце
+void DelCharacterPerkNoCash(ref chref, string perkName)
+{
+	DeleteAttribute(chref,"perks.list."+perkName);
 	RemoveChrModifier(chref, perkName);
+	aref callbacks = GetPerkCallbacks(perkName);
+	makearef(callbacks, ChrPerksList.list.(perkName).modifiers.callbacks);
+	for (int i = 0; i < GetAttributesNum(callbacks); i++)
+	{
+		aref functionsList = GetAttributeN(callbacks, i);
+		string listName = GetAttributeName(functionsList);
+		for (int j = 0; j < GetAttributesNum(functionsList); j++)
+		{
+			aref function = GetAttributeN(functionsList, j);
+			string funcName = GetAttributeName(function);
+			RemoveChrCallback(chref, listName + "." + funcName);
+		}
+	}
+}
+
+aref GetPerkCallbacks(string perkName)
+{
+	aref callbacks;
+	makearef(callbacks, ChrPerksList.list.(perkName).modifiers.callbacks);
+	return callbacks;
 }
 
 void ActivateCharacterPerk(ref chref, string perkName)
@@ -143,6 +251,7 @@ void ActivateCharacterPerk(ref chref, string perkName)
 		AddPerkToActiveList(perkName);
 	}
 
+	ApplyStatusEffect(chref, perkName);
 	if(timeDelay>0) PostEvent("evntChrPerkDelay",1000,"sl",perkName,sti(chref.index));
 	Event("eSwitchPerks","l",sti(chref.index));
 	// fix boal всегда для ГГ
@@ -334,6 +443,7 @@ void procChrPerkDelay()
 		}
 		else
 		{
+			RemoveStatusEffect(&Characters[chrIdx], perkName);
 			CharacterPerkOff(GetCharacter(chrIdx),perkName);
 		}
 	}
@@ -473,9 +583,9 @@ void AcceptWindCatcherPerk(ref refCharacter)
 		
 	if (CheckOfficersPerk(refCharacter, "WindCatcher"))
 	{
-		refRealShip.InertiaAccelerationX	= stf(refBaseShip.InertiaAccelerationX) + stf(refBaseShip.InertiaAccelerationX) / PERK_VALUE_WIND_CATCHER;
-		refRealShip.InertiaAccelerationY	= stf(refBaseShip.InertiaAccelerationY) + stf(refBaseShip.InertiaAccelerationY) / PERK_VALUE_WIND_CATCHER;
-		refRealShip.InertiaAccelerationZ	= stf(refBaseShip.InertiaAccelerationZ) + stf(refBaseShip.InertiaAccelerationZ) / PERK_VALUE_WIND_CATCHER;
+		refRealShip.InertiaAccelerationX	= stf(refBaseShip.InertiaAccelerationX) + stf(refBaseShip.InertiaAccelerationX) * PERK_VALUE_WIND_CATCHER;
+		refRealShip.InertiaAccelerationY	= stf(refBaseShip.InertiaAccelerationY) + stf(refBaseShip.InertiaAccelerationY) * PERK_VALUE_WIND_CATCHER;
+		refRealShip.InertiaAccelerationZ	= stf(refBaseShip.InertiaAccelerationZ) + stf(refBaseShip.InertiaAccelerationZ) * PERK_VALUE_WIND_CATCHER;
 		// потмоу что перк помогает только быстрее набирать скорость, нет торможения
 	}
 	else
@@ -516,7 +626,7 @@ int СharacterPerksEnb(ref chr, string perkType)
         if(CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;
 		if(!CheckAttribute(chr, "perks.list."+perkName)) continue;
         if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) arPerksRoot.(perkName).BaseType = "self";
-		if(CheckAttribute(arPerksRoot, perkName + ".BaseType") && arPerksRoot.(perkName).BaseType == perkType) total++;
+		if(CheckAttributeEqualTo(arPerksRoot, perkName + ".BaseType", perkType)) total++;
 	} 
 	return total;
 }
@@ -615,42 +725,19 @@ bool bPerksMaxShip(ref chr)
 	return false;
 }
 
-bool HaveAllPerks(ref chr, string type) // any, self, ship
+// Есть ли перк, который можно вкачать
+bool HaveAllPerks(ref chr, string _type) // any, self, ship
 {
-    bool bFreeSelf, bFreeShip;
-    bool bAny  = (type == "any");
-    if (bAny)
-    {
-        bFreeSelf = GetAttributeInt(chr, "perks.FreePoints_self") > 0;
-        bFreeShip = GetAttributeInt(chr, "perks.FreePoints_ship") > 0;
-        if(!bFreeSelf && !bFreeShip) return true; // Нечего прокачивать
-    }
-
-	string perkName, perkType;
 	aref arPerksRoot;
 	makearef(arPerksRoot, ChrPerksList.list);
-	int perksQ = GetAttributesNum(arPerksRoot);
-    bool bHero = (sti(chr.index) == GetMainCharacterIndex());
 
-	for(int i = 0; i < perksQ; i++)
+	for (int i = 0; i < GetAttributesNum(arPerksRoot); i++)
 	{
-		perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
-        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) continue;   // Предыстории
-        perkType = ChrPerksList.list.(perkName).BaseType;
-		if(!bAny && perkType != type) continue; // Не тот тип
-        if(bAny)
-        {
-            if(!bFreeSelf && perkType == "self") continue;
-            if(!bFreeShip && perkType == "ship") continue;
-        }
-        if(CheckAttribute(arPerksRoot, perkName + ".HeroType")) continue;    // Личные спецперки
-        if(!bHero && CheckAttribute(arPerksRoot, perkName + ".PlayerOnly")) continue; // Не ГГ
-        if(bHero && CheckAttribute(arPerksRoot, perkName + ".NPCOnly")) continue;     // Не НПЦ
-        if(CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;       // Скрытые
-
-		if(!CheckCharacterPerk(chr, perkName)) return false; // Перк доступен, но не прокачан
+		aref perk = GetAttributeN(arPerksRoot, i);
+		if (CanTakePerk(chr, perk, "")) return false;
 	}
-    return true;
+
+	return true;
 }
 // <-- подсчёт перков для интерфейса
 
@@ -672,6 +759,12 @@ int GetPerkPrice(ref entity)
 	return GetAttributeInt(perk, "cost");
 }
 
+string GetPerkJob(ref entity)
+{
+	aref perk = FindPerk_VT(&entity);
+	return GetAttributeOrDefault(perk, "officerType", "None");
+}
+
 int GetFreePerkPoints(ref chr, string type)
 {
 	return GetAttributeInt(chr, "perks.FreePoints_" + type);
@@ -684,7 +777,23 @@ void SetFreePerkPoints(ref chr, int value, string type)
 	SetAttribute(chr, "perks.FreePoints_" + type, value);
 }
 
-void RemoveAllPerks(ref chr)
+void RemoveAllPerksNoCash(ref chr)
+{
+	aref perks, perk;
+	makearef(perks, chr.perks.list);
+
+	for (int i=GetAttributesNum(perks)-1; i > -1; i--)
+	{
+		string perkName = GetAttributeName(GetAttributeN(perks, i));
+		perk = FindPerk_VT(perkName);
+		if (CheckAttribute(perk, "HeroType")) continue;
+		if (CheckAttribute(perk, "Hidden")) continue;
+		
+		DelCharacterPerkNoCash(chr, perkName);
+	}
+}
+
+void ReapplyAllPerks(ref chr)
 {
 	aref perks, perk;
 	makearef(perks, chr.perks.list);
@@ -693,10 +802,24 @@ void RemoveAllPerks(ref chr)
 	{
 		aref charPerk = GetAttributeN(perks, i);
 		string perkName = GetAttributeName(charPerk);
-		makearef(perk, ChrPerksList.list.(perkName));
-		if (CheckAttribute(perk, "HeroType")) continue;
-		if (CheckAttribute(perk, "Hidden")) continue;
-		
-		DelCharacterPerk(chr, perkName);
+		SetCharacterPerkNoCash(chr, perkName, false);
 	}
+
+	CT_UpdateCashTables(chr);
+}
+
+string GetPerkDescribe(ref ref_Id_Idx, ref chr)
+{
+	aref perk = FindPerk_VT(&ref_Id_Idx);
+	string perkName = GetAttributeName(perk);
+	string descrKey = "perk" + perkName;
+	if (!IsMainCharacter(chr) && HasDescriptor(perk, "Alternate")) descrKey += "_alternate";
+	return DLG_Convert(descrKey, "AbilityDescribe.txt", &perk);
+}
+
+string GetPerkName(ref ref_Id_Idx)
+{
+	aref perk = FindPerk_VT(&ref_Id_Idx);
+	string perkName = GetAttributeName(perk);
+	return DLG_Convert(perkName, "AbilityDescribe.txt", &perk);
 }

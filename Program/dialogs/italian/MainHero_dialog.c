@@ -168,7 +168,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "La vaniglia è stata caricata sulla caracca e le sue vele sono sparite all'orizzonte da un pezzo - e questa maledetta galea è tornata al porto invece di prendere il largo. Non devo mostrarmi con la mia nave nel porto - è meglio se pensano che io sia partito da Guadalupa... Credo che andrò in città attraverso la giungla e mi informerò sul mio caro Marchais...";
+    		    dialog.text = "La vaniglia è stata caricata sulla brigantina e le sue vele sono sparite all'orizzonte da un pezzo - e questa maledetta galea è tornata al porto invece di prendere il largo. Non devo mostrarmi con la mia nave nel porto - è meglio se pensano che io sia partito da Guadalupa... Credo che andrò in città attraverso la giungla e mi informerò sul mio caro Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

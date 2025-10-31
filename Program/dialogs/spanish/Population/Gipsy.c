@@ -189,14 +189,14 @@ void ProcessDialogEvent()
 			link.l1 = "¡Vosotras, gitanas, ciertamente os gusta compartir vuestras opiniones! No te preocupes, muchacha, no voy a envenenar a la gente. Esa es una manera femenina de matar, no es mi estilo. Para los hombres tengo mi espada, pero no puedo manejar a esas malditas ratas.";
 			link.l1.go = "get_poison_2";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 		}
 		else
 		{
 			dialog.text = "¡Estás tratando de atraparme! No señor, no tengo ningún veneno. Tengo plantas y pociones, pero no venenos.";
 			link.l1 = "Lo que sea entonces. No me eches el mal de ojo.";
 			link.l1.go = "exit";
-			notification("Perk Check Failed", "Trustworthy");
+			Notification_Perk(false, "Trustworthy");
 		}
 		break;
 

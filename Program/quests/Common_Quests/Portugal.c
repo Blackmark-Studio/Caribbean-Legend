@@ -1,6 +1,12 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 ///Jason-----------------------------------Португалец начало-----------------------------------------------
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
+void Portugal_QuestMark(string qName)//квестмарка
+{
+	AddMapQuestMarkCity("marigo", false);
+	AddLandQuestMark(characterFromId("Marigo_Hostess"), "questmarkmain");
+}
+
 void Portugal_BeginOver(string qName)//не пришли
 {
 	sld = characterFromId("Avendel");

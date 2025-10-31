@@ -7,46 +7,50 @@ void initSelfPerks(ref list)
 
 	// Мушкетёр
 	perks.FastHands.cost = 1;
-	AddArefModifier(perks, "FastHands", M_CROSSHAIR_UPDATE_SPEED, PERK_VALUE_FAST_HANDS);
+	SetArefModifier(perks, "FastHands", M_CROSSHAIR_UPDATE_SPEED, PERK_VALUE_FAST_HANDS);
 	SetAttribute(perks,"FastHands.descriptors.OneHanded", true);	
 	SetAttribute(perks,"FastHands.descriptors.TwoHanded", true);
 
 	perks.AmmoRig.cost = 1;
-	AddArefModifier(perks, "AmmoRig", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_AMMO_RIG);
-	AddArefModifier(perks, "AmmoRig", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_AMMO_RIG);
+	SetArefModifier(perks, "AmmoRig", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_AMMO_RIG);
+	SetArefModifier(perks, "AmmoRig", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_AMMO_RIG);
 	SetAttribute(perks,"AmmoRig.descriptors.OneHanded", true);	
 	SetAttribute(perks,"AmmoRig.descriptors.TwoHanded", true);
 
 	perks.Preaim.cost = 1;
 	SetAttribute(perks,"Preaim.descriptors.OneHanded", true);	
 	SetAttribute(perks,"Preaim.descriptors.TwoHanded", true);
+	SetAttribute(perks,"Preaim.descriptors.Alternate", true);
 
 	perks.Gunman.cost = 2;
 	perks.Gunman.condition.ammoRig = true;
 	perks.Gunman.condition.preaim = true;
-	AddArefModifier(perks, "Gunman", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_GUNMAN);
-	AddArefModifier(perks, "Gunman", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_GUNMAN);
-	AddArefModifier(perks, "Gunman", SHOT_STRIKE      + "_" + M_DAMAGE, PERK_VALUE_GUNMAN);
+	SetArefModifier(perks, "Gunman", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_GUNMAN);
+	SetArefModifier(perks, "Gunman", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_GUNMAN);
+	SetArefModifier(perks, "Gunman", SHOT_STRIKE      + "_" + M_DAMAGE, PERK_VALUE_GUNMAN);
 	SetAttribute(perks,"Gunman.descriptors.OneHanded", true);	
 	SetAttribute(perks,"Gunman.descriptors.MultiCharge", true);	
 	SetAttribute(perks,"Gunman.descriptors.TwoHanded", true);
 
 	perks.KeenEye.cost = 2;
 	perks.KeenEye.condition.fastHands = true;
-	perks.KeenEye.condition.preaim = true;
-	AddArefModifier(perks, "KeenEye", M_HEADSHOT_DAMAGE, PERK_VALUE_KEEN_EYE);
-	SetAttribute(perks,"KeenEye.descriptors.OneHanded", true);	
+	perks.KeenEye.condition.ammoRig = true;
+	SetArefModifier(perks, "KeenEye", M_HEADSHOT_DAMAGE, PERK_VALUE_KEEN_EYE);
+	SetAttribute(perks,"KeenEye.descriptors.OneHanded", true);
 	SetAttribute(perks,"KeenEye.descriptors.TwoHanded", true);
+	SetAttribute(perks,"KeenEye.descriptors.Alternate", true);
+
 
 
 	perks.PowderFeel.cost = 2;
 	perks.PowderFeel.condition.keenEye = true;
-	SetAttribute(perks,"PowderFeel.descriptors.Alchemy", true);	
+	SetAttribute(perks,"PowderFeel.descriptors.Alchemy", true);
+	SetAttribute(perks,"PowderFeel.descriptors.Alternate", true);
 
 	perks.Drill.cost = 2;
 	perks.Drill.condition.Gunman = true;
-	AddArefModifier(perks, "Drill", MUSKET_RUN_MOVE  + "_" + M_ACTION_SPEED, PERK_VALUE_DRILL);
-	AddArefModifier(perks, "Drill", AIMING_WALK_MOVE + "_" + M_ACTION_SPEED, PERK_VALUE_DRILL);
+	SetArefModifier(perks, "Drill", MUSKET_RUN_MOVE  + "_" + M_ACTION_SPEED, PERK_VALUE_DRILL);
+	SetArefModifier(perks, "Drill", AIMING_WALK_MOVE + "_" + M_ACTION_SPEED, PERK_VALUE_DRILL);
 	SetAttribute(perks,"Drill.descriptors.TwoHanded", true);
 
 
@@ -64,53 +68,69 @@ void initSelfPerks(ref list)
 	perks.GunProfessional.cost = 3;
 	perks.GunProfessional.condition.shootToKill = true;
 	perks.GunProfessional.condition.leadRain = true;
-	AddArefModifier(perks, "GunProfessional", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_GUN_PROFESSIONAL);
-	AddArefModifier(perks, "GunProfessional", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_GUN_PROFESSIONAL);
-	AddArefModifier(perks, "GunProfessional", SHOT_STRIKE  + "_" + M_DAMAGE, PERK_VALUE_GUN_PROFESSIONAL);
+	SetArefModifier(perks, "GunProfessional", GUN_ITEM_TYPE    + "_" + M_RELOAD_SPEED, PERK_VALUE_GUN_PROFESSIONAL);
+	SetArefModifier(perks, "GunProfessional", MUSKET_ITEM_TYPE + "_" + M_RELOAD_SPEED, PERK_VALUE_GUN_PROFESSIONAL);
+	SetArefModifier(perks, "GunProfessional", SHOT_STRIKE  + "_" + M_DAMAGE, PERK_VALUE_GUN_PROFESSIONAL);
 	SetAttribute(perks,"GunProfessional.descriptors.TwoHanded", true);	
 	SetAttribute(perks,"GunProfessional.descriptors.MultiCharge", true);
 
 
 	// Солдат
+	// 1 cлой
+
 	perks.BasicDefense.cost = 1;
-	AddArefModifier(perks, "BasicDefense", M_REDUCE_DAMAGE, PERK_VALUE_BASIC_DEFENSE);
+	SetArefModifier(perks, "BasicDefense", M_REDUCE_DAMAGE, PERK_VALUE_BASIC_DEFENSE);
+	
+	perks.Medic.cost = 1;
+	SetArefModifier(perks, "Medic", M_HP_MAX, PERK_VALUE_MEDIC);
+	
+	//2 слой
 
-	perks.AdvancedDefense.cost = 2;
-	perks.AdvancedDefense.condition.BasicDefense = true;
-	AddArefModifier(perks, "AdvancedDefense", M_REDUCE_DAMAGE, PERK_VALUE_ADVANCED_DEFENSE);
-	AddArefModifier(perks, "AdvancedDefense", M_REDUCE_CRIT_DAMAGE, PERK_VALUE2_ADVANCED_DEFENSE);
-
-	perks.HPPlus.cost = 1;
-
-	perks.Medic.cost = 2;
-	perks.Medic.condition.HPPlus = true;
-	AddArefModifier(perks, "Medic", M_HP_MAX, PERK_VALUE_MEDIC);
+	perks.PalaceGuard.cost = 2;
+	perks.PalaceGuard.condition.BasicDefense = true;
+	AddArefCallback(perks, "PalaceGuard", CT_EQUIP, "Perk_PalaceGuard");
+	SetAttribute(perks,"PalaceGuard.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
+	SetAttribute(perks,"PalaceGuard.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
 
 	perks.IronWill.cost = 2;
 	perks.IronWill.condition.BasicDefense = true;
-
-	perks.Muscles.cost = 2;
-	perks.Muscles.condition.HPPlus = true;
-	AddArefCallback(perks, "Muscles", CT_EQUIP, "Perk_Muscles");
-	SetAttribute(perks,"Muscles.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
-
-	perks.HardHitter.cost = 2;
-	perks.HardHitter.condition.AdvancedDefense = true;
-	AddArefCallback(perks, "HardHitter", CT_EQUIP, "Perk_HardHitter");
-	SetAttribute(perks, "HardHitter.descriptors." + M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
+	perks.IronWill.TimeDelay    = 180; 
+	perks.IronWill.TimeDuration = 180;
 
 	perks.Conquest.cost = 2;
-	perks.Conquest.condition.Muscles = true;
+	perks.Conquest.condition.Medic = true;
 	AddArefCallback(perks, "Conquest", CT_EQUIP, "Perk_Conquest");
 	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_STRAIGHT, true);	
 	SetAttribute(perks,"Conquest.descriptors." +M_WEAPON_LENGTH + "_" +  WEAPON_LONG, true);
 
-	perks.PalaceGuard.cost = 3;
-	perks.PalaceGuard.condition.Muscles = true;
-	perks.PalaceGuard.condition.Conquest = true;
-	AddArefCallback(perks, "PalaceGuard", CT_EQUIP, "Perk_PalaceGuard");
-	SetAttribute(perks,"PalaceGuard.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
-	SetAttribute(perks,"PalaceGuard.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
+	perks.Muscles.cost = 2;
+	perks.Muscles.condition.Medic = true;
+	AddArefCallback(perks, "Muscles", CT_EQUIP, "Perk_Muscles");
+	SetArefModifier(perks, "Muscles", M_STAGGER_SPEED, PERK_VALUE3_MUSCLES);
+	SetAttribute(perks,"Muscles.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
+
+	//3 слой
+
+	perks.AdvancedDefense.cost = 3;
+	perks.AdvancedDefense.condition.IronWill = true;
+	SetArefModifier(perks, "AdvancedDefense", M_REDUCE_DAMAGE, PERK_VALUE_ADVANCED_DEFENSE);
+	SetArefModifier(perks, "AdvancedDefense", M_REDUCE_CRIT_DAMAGE, PERK_VALUE2_ADVANCED_DEFENSE);
+
+	perks.HPPlus.cost = 3;
+	perks.HPPlus.condition.Conquest = true;
+	SetArefModifier(perks, "HPPlus", M_HP_PER_RANK, PERK_VALUE_HP_PLUS);
+
+	//4 слой (мастер-перк)
+	
+	perks.HardHitter.cost = 3;
+	perks.HardHitter.condition.HPPlus = true;
+	perks.HardHitter.condition.AdvancedDefense = true;
+	AddArefCallback(perks, "HardHitter", CT_EQUIP, "Perk_HardHitter");
+	SetAttribute(perks, "HardHitter.descriptors." + M_WEAPON_TYPE + "_" +  WEAPON_HEAVY, true);
+
+	
+
+	
 
 	// Фехтовальщик
 	perks.CunningStrike.cost = 1;
@@ -128,9 +148,9 @@ void initSelfPerks(ref list)
 
 	perks.CriticalHit.cost = 3;
 	perks.CriticalHit.condition.CunningStrike = true;
-	AddArefModifier(perks, "CriticalHit", BLADE_ITEM_TYPE  + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
-	AddArefModifier(perks, "CriticalHit", GUN_ITEM_TYPE    + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
-	AddArefModifier(perks, "CriticalHit", MUSKET_ITEM_TYPE + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
+	SetArefModifier(perks, "CriticalHit", BLADE_ITEM_TYPE  + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
+	SetArefModifier(perks, "CriticalHit", GUN_ITEM_TYPE    + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
+	SetArefModifier(perks, "CriticalHit", MUSKET_ITEM_TYPE + "_" + M_CRIT_CHANCE, PERK_VALUE_CRITICAL_HIT);
 
 
 	perks.Sliding.cost = 3;
@@ -146,39 +166,49 @@ void initSelfPerks(ref list)
 	perks.Reaper.cost = 3;
 	perks.Reaper.condition.Exhaustion = true;
 	perks.Reaper.condition.Sliding = true;
-	AddArefModifier(perks, "Reaper", BLADE_ITEM_TYPE  + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
-	AddArefModifier(perks, "Reaper", GUN_ITEM_TYPE    + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
-	AddArefModifier(perks, "Reaper", MUSKET_ITEM_TYPE + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
+	SetArefModifier(perks, "Reaper", BLADE_ITEM_TYPE  + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
+	SetArefModifier(perks, "Reaper", GUN_ITEM_TYPE    + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
+	SetArefModifier(perks, "Reaper", MUSKET_ITEM_TYPE + "_" + M_CRIT_DAMAGE, PERK_VALUE_REAPER);
 
 
 
 	// Пират
+	// 1 cлой
+
 	perks.Tireless.cost = 1;
 
-	perks.EnergyPlus.cost = 2;
-	perks.EnergyPlus.condition.Tireless = true;
+	// 2 cлой 
 
-	perks.MarathonRunner.cost = 2;
-	perks.MarathonRunner.condition.Tireless = true;
-	AddArefModifier(perks, "MarathonRunner", SPRINT_MOVE + "_" + M_ACTION_SPEED, PERK_VALUE2_MARATHON_RUNNER);
-
-	perks.PerfectBalance.cost = 3;
-	perks.PerfectBalance.condition.EnergyPlus = true;
+	perks.PerfectBalance.cost = 2;
+	perks.PerfectBalance.condition.Tireless = true;
 	AddArefCallback(perks, "PerfectBalance", CT_EQUIP, "Perk_PerfectBalance");
 	SetAttribute(perks,"PerfectBalance.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_MEDIUM, true);
 
-	perks.Flanking.cost = 3;
-	perks.Flanking.condition.MarathonRunner = true;
-	AddArefCallback(perks, "Flanking", CT_EQUIP, "Perk_Flanking");
-	SetAttribute(perks,"Flanking.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
+	perks.MarathonRunner.cost = 2;
+	perks.MarathonRunner.condition.Tireless = true;
+	SetArefModifier(perks, "MarathonRunner", SPRINT_MOVE + "_" + M_ACTION_SPEED, PERK_VALUE2_MARATHON_RUNNER);
+	SetAttribute(perks,"MarathonRunner.descriptors.Alternate", true);
 
+	//3 слой
 	perks.BladeDancer.cost = 3;
 	perks.BladeDancer.condition.PerfectBalance = true;
 	AddArefCallback(perks, "BladeDancer", CT_EQUIP, "Perk_BladeDancer");
 	SetAttribute(perks,"BladeDancer.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
 
+	perks.EnergyPlus.cost = 3;
+	perks.EnergyPlus.condition.MarathonRunner = true;
+	SetArefModifier(perks, "EnergyPlus", M_ENERGY_PER_RANK, PERK_VALUE_ENERGY_PLUS);
+
+	
+	//4 слой (мастер-перки)
+	perks.Flanking.cost = 3;
+	perks.Flanking.condition.BladeDancer = true;
+	AddArefCallback(perks, "Flanking", CT_EQUIP, "Perk_Flanking");
+	SetAttribute(perks,"Flanking.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
+
+	
 	perks.SabreHurricane.cost = 3;
-	perks.SabreHurricane.condition.Flanking = true;
+	perks.SabreHurricane.condition.EnergyPlus = true;
 	AddArefCallback(perks, "SabreHurricane", CT_EQUIP, "Perk_SabreHurricane");
 	SetAttribute(perks,"SabreHurricane.descriptors." +M_WEAPON_TYPE + "_" +  WEAPON_MEDIUM, true);	
 	SetAttribute(perks,"SabreHurricane.descriptors." +M_WEAPON_CURVATURE + "_" +  WEAPON_CURVE, true);
@@ -186,6 +216,7 @@ void initSelfPerks(ref list)
 	// Авантюрист
 	perks.Alchemy.cost = 1;
 	SetAttribute(perks,"Alchemy.descriptors.Alchemy", true);
+	SetAttribute(perks,"Alchemy.descriptors.Alternate", true);
 
 	perks.Practice.cost = 2;
 	perks.Practice.condition.Alchemy = true;
@@ -194,7 +225,7 @@ void initSelfPerks(ref list)
 
 	perks.Strychnine.cost = 2;
 	perks.Strychnine.condition.Practice = true;
-	AddArefModifier(perks, "Strychnine", M_POISON_CHANCE, PERK_VALUE_STRYCHNINE);
+	SetArefModifier(perks, "Strychnine", M_POISON_CHANCE, PERK_VALUE_STRYCHNINE);
 
 	perks.DarkHorse.cost = 2;
 	perks.DarkHorse.condition.Practice = true;
@@ -204,35 +235,44 @@ void initSelfPerks(ref list)
 	perks.Master.condition.DarkHorse = true;
 	perks.Master.condition.Strychnine = true;
 	SetAttribute(perks,"Master.descriptors.Alchemy", true);
+	SetAttribute(perks,"Master.descriptors.Alternate", true);
 
 	perks.Grus.cost = 1;
 
 	perks.Quiet.cost = 2;
 	perks.Quiet.condition.Grus = true;
+	SetAttribute(perks,"Quiet.descriptors.Alternate", true);
 
 	perks.Looting.cost = 2;
 	perks.Looting.condition.Quiet = true;
+	SetAttribute(perks,"Looting.descriptors.Alternate", true);
 
 	perks.Collection.cost = 3;
 	perks.Collection.condition.Looting = true;
 	SetAttribute(perks,"Collection.descriptors.Exotic", true);
+	SetAttribute(perks,"Collection.descriptors.Alternate", true);
+	AddArefCallback(perks, "Collection", CT_EQUIP, "Perk_Collection");
 
 	perks.Trustworthy.cost = 1;
+	SetAttribute(perks,"Trustworthy.descriptors.Alternate", true);
 
 	perks.TieFit.cost = 2;
 	perks.TieFit.condition.Trustworthy = true;
 	AddArefCallback(perks, "TieFit", CT_EQUIP, "Perk_TieFit");
+	AddArefCallback(perks, "TieFit", CT_EQUIP, "Perk_TieFitAlternate");
 	SetAttribute(perks,"Tiefit.descriptors.Unremarkable", true);	
 	SetAttribute(perks,"Tiefit.descriptors.Fancy", true);
 
 	perks.Investor.cost = 2;
 	perks.Investor.condition.Trustworthy = true;
+	SetAttribute(perks,"Investor.descriptors.Alternate", true);
 
 	perks.Gossip.cost = 3;
 	perks.Gossip.condition.TieFit = true;
 	perks.Gossip.condition.Investor = true;
 	AddArefCallback(perks, "Gossip", CT_EQUIP, "Perk_Gossip");
 	SetAttribute(perks,"Gossip.descriptors.Exotic", true);
+	SetAttribute(perks,"Gossip.descriptors.Alternate", true);
 
 	// Офицерская ветка
 	perks.SharedExperience.cost = 1;
@@ -248,8 +288,8 @@ void initSelfPerks(ref list)
 	perks.Chance.cost = 1;
 	SetAttribute(perks,"Chance.descriptors.OneHanded", true);
 	SetAttribute(perks,"Chance.descriptors.SingleCharge", true);
-	AddArefModifier(perks, "Chance", GUN_ITEM_TYPE + "_" + M_CRIT_DAMAGE, PERK_VALUE_CHANCE);
-	AddArefModifier(perks, "Chance", GUN_ITEM_TYPE + "_" + M_CRIT_CHANCE, PERK_VALUE_CHANCE2);
+	SetArefModifier(perks, "Chance", GUN_ITEM_TYPE + "_" + M_CRIT_DAMAGE, PERK_VALUE_CHANCE);
+	SetArefModifier(perks, "Chance", GUN_ITEM_TYPE + "_" + M_CRIT_CHANCE, PERK_VALUE_CHANCE2);
 
 	
 	perks.Bayonet.cost = 2;
@@ -319,6 +359,7 @@ void initSelfPerks(ref list)
 	perks.Mule.cost = -1;
 	SetAttribute(perks,"Mule.descriptors."+M_WEAPON_TYPE + "_" + WEAPON_HEAVY, true);
 	SetAttribute(perks,"Mule.descriptors."+M_ARMOR_TYPE + "_" + ARMOR_HEAVY, true);
+	AddArefCallback(perks, "Mule", CT_EQUIP, "Perk_Mule");
 
 	perks.Sniper.PlayerOnly = true;
 	perks.Sniper.HeroType = "HT4";

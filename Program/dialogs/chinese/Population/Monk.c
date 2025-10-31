@@ -379,20 +379,11 @@ void ProcessDialogEvent()
             link.l1.go = "capellan_3";
         break;
         
-        case "capellan_3":
-            DialogExit();
-            LAi_SetActorType(npchar);
-            LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "My_Campus", "rld", "loc1", "Monk_Capellan", -1);
-            pchar.questTemp.ShipCapellan.id = npchar.id;
-            DeleteAttribute(npchar, "LifeDay");
-            DeleteAttribute(npchar, "CityType");//删除幽灵标志
-            AddPassenger(pchar, npchar, false);
-            SetCharacterRemovable(npchar, false);
-            pchar.questTemp.ShipCapellan.Yes = "true";//牧师在队伍中
-            Achievment_Set("ach_69");
-            ChangeCharacterComplexReputation(pchar, "authority", 5);
-            npchar.reputation = 60;
-        break;
+		case "capellan_3":
+			DialogExit();
+			pchar.questTemp.ShipCapellan.id = npchar.id;
+			AddDialogExitQuestFunction("Monk_Capellan_DlgExit");
+		break;
         
         case "capellan_4":
             dialog.text = "需要什么吗, 我的孩子? ";

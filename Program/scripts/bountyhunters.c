@@ -185,7 +185,6 @@ void LandHunterReactionResult(ref loc)  // отработает после вх�
 	            {
 	                sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, j, 0, true, "hunter"));
 	                SetFantomParamHunter(sld); //крутые парни
-				    InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Охотники за головами
 	                sld.name 		= XI_ConvertString("BountyHunter");
 	                sld.lastname 	= "";
 	                sld.Dialog.CurrentNode = "First time";
@@ -345,14 +344,14 @@ void FireBrigadeCheck(int iNation)
                     sld.model = "off_fra_2";
                     //sld.greeting = "";
                     sld.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, sld);
-                    sld.Ship.Name = StringFromKey("SharlieFinal_7");
+                    sld.Ship.Name = GetShipName("Griffondor");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
                 }
                 else if(iNation == SPAIN) {
                     if(SandBoxMode)
                     {
-                        sld.name = StringFromKey("QuestsUtilite_56");
-                        sld.lastname = StringFromKey("QuestsUtilite_57");
+                        sld.name = GetCharacterName("Alonso");
+                        sld.lastname = GetCharacterName("de Maldonado");
                         sld.model = "Maldonado";
                         //sld.greeting = "Alonso";
                     }
@@ -373,7 +372,7 @@ void FireBrigadeCheck(int iNation)
                     sld.model.animation = "Longway";
                     sld.greeting = "Longway";
                     sld.Ship.Type = GenerateShipExt(SHIP_MAYFANG, true, sld);
-                    sld.Ship.Name = StringFromKey("HollandGambit_12");
+                    sld.Ship.Name = GetShipName("Meifeng");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
                 }
                 sld.QuestHandler = "FireBrigadeInterruption";

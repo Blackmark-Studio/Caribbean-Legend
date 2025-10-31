@@ -274,14 +274,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
-				notification("Слишком высокий уровень чести! ("+XI_ConvertString(GetReputationName(35))+")", "None");
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "Это что - намёк? Простите, я, видимо, ошиблась, заведя с вами этот разговор! Прощайте, '"+GetSexPhrase("кабальеро","сеньорита")+"'.";
 				link.l1 = "Как пожелаешь, дорогуша.";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Ну что же... Вы, по крайней мере, честны в своих запросах. Обещаю, если вы найдёте Анджело, или узнаете, что с ним случилось - вы получите то, что просите, ради моего брата...";
 				link.l1 = "Милая сеньорита, с тобой необыкновенно приятно иметь дело... Теперь - давай перейдём непосредственно к истории вашего брата.";
 				link.l1.go = "Consumption_4";

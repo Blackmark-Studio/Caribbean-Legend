@@ -35,7 +35,7 @@
 #include "ITEMS\itemLogic.c"
 #include "ITEMS\init_helpers.c"
 #include "ITEMS\items_utilite.c"
-#include "ITEMS\modifiers\modifiers.c"
+#include "modifiers\modifiers.c"
 #include "store\store.h"
 #include "interface\interface.c"
 #include "fleet_cmds.c"
@@ -847,6 +847,8 @@ void OnLoad()
 			Log_TestInfo("Обновлен партикл огня");
 		}
 	}
+
+	UpdateCashTablesFellows();
 }
 
 void NewGame()

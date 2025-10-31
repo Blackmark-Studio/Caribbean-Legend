@@ -155,7 +155,7 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_05":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_STRAIGHT, 0.65, 1.35);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.65, 1.35);
 			AddDescriptor(item, "Unremarkable", -1);
 		}
 		break;
@@ -173,8 +173,7 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_10":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_STRAIGHT, 0.85, 1.15);
-			AddDescriptor(item, "HighQuality", -1);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_CURVE, 0.85, 1.15);
 		}
 		break;
 		case "blade_23":
@@ -197,21 +196,22 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_SP_3low":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_CURVE, 0.75, 1.25);
 			AddSpecialDescriptor(item, "Hungman");
 			AddDescriptor(item, "Special", -1);
 		}
 		break;
 		case "blade_SP_3":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_CURVE, 0.75, 1.25);
 			AddSpecialDescriptor(item, "Hungman");
 			AddDescriptor(item, "Special", -1);
 		}
 		break;
 		case "blade_20":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_CURVE, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			AddDescriptor(item, "HighQuality", -1);
 		}
 		break;
 		case "blade_28":
@@ -233,7 +233,7 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "pirate_cutlass":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.65, 1.35);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_CURVE, 0.65, 1.35);
 			AddDescriptor(item, "HighQuality", -1);
 		}
 		break;
@@ -245,12 +245,13 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_19":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_STRAIGHT, 0.85, 1.15);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_CURVE, 0.85, 1.15);
+			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "blade_41":
 		{
-			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_SHORT, WEAPON_STRAIGHT, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_STRAIGHT, 0.75, 1.25);
 			AddSpecialDescriptor(item, "Jian");
 			AddDescriptor(item, "Special", -1);
 		}
@@ -272,7 +273,7 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "topor_03":
 		{
-			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_STRAIGHT, 0.65, 1.35);
+			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.65, 1.35);
 		}
 		break;
 		case "blade_06":
@@ -282,7 +283,7 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_13":
 		{
-			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_SHORT, WEAPON_CURVE, 0.65, 1.35);
+			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.65, 1.35);
 		}
 		break;
 		case "blade_42":
@@ -302,7 +303,8 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "topor_06":
 		{
-			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_SHORT, WEAPON_CURVE, 0.75, 1.25);
+			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "lacrima_patris":
@@ -313,7 +315,8 @@ bool InitWeaponModifiers(ref item)
 		break;
 		case "blade_24":
 		{
-			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_SHORT, WEAPON_CURVE, 0.85, 1.15);
+			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.85, 1.15);
+			AddDescriptor(item, "Exotic", -1);
 		}
 		break;
 		case "blade_31":
@@ -355,11 +358,13 @@ bool InitWeaponModifiers(ref item)
 		case "q_blade_19":
 		{
 			SetWeaponDescriptors(item, WEAPON_MEDIUM, WEAPON_LONG, WEAPON_STRAIGHT, 0.85, 1.15);
+			AddDescriptor(item, "Fancy", -1);
 		}
 		break;
 		case "blade_32":
 		{
-			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_STRAIGHT, 0.75, 1.25);
+			SetWeaponDescriptors(item, WEAPON_HEAVY, WEAPON_LONG, WEAPON_CURVE, 0.75, 1.25);
+			AddDescriptor(item, "HighQuality", -1);
 		}
 		break;
 		case "blade_07":

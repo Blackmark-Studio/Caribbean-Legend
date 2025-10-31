@@ -51,8 +51,8 @@
 
 // indexes for items` array
 //#define TOTAL_ITEMS				  1008 // Warship 08.05.09 - Новая система предметов
-int TOTAL_ITEMS = 1132;   //
-int ITEMS_QUANTITY = 604; // не забываем менять номер
+int TOTAL_ITEMS = 1134;   //
+int ITEMS_QUANTITY = 606; // не забываем менять номер
 #define MAX_BUTTONS               64
 #define RANDITEMS_QUANTITY    	  45
 #define BUTTON_ACTIVATION_TIME	  1000
@@ -95,22 +95,18 @@ int ITEMS_QUANTITY = 604; // не забываем менять номер
 #define WEAPON_LIGHT_FORCE_STRIKE_MTP 1.1
 #define WEAPON_LIGHT_ROUND_STRIKE_MTP 0.75
 #define WEAPON_LIGHT_BREAK_STRIKE_MTP 0.8
-#define WEAPON_LIGHT_FEINT_STRIKE_MTP 0.9
 #define WEAPON_MEDIUM_FAST_STRIKE_MTP  1.1
 #define WEAPON_MEDIUM_FORCE_STRIKE_MTP 0.75
 #define WEAPON_MEDIUM_ROUND_STRIKE_MTP 0.9
 #define WEAPON_MEDIUM_BREAK_STRIKE_MTP 0.85
-#define WEAPON_MEDIUM_FEINT_STRIKE_MTP 0.65
 #define WEAPON_HEAVY_FAST_STRIKE_MTP  0.9
 #define WEAPON_HEAVY_FORCE_STRIKE_MTP 0.65
 #define WEAPON_HEAVY_ROUND_STRIKE_MTP 0.8
 #define WEAPON_HEAVY_BREAK_STRIKE_MTP 1.1
-#define WEAPON_HEAVY_FEINT_STRIKE_MTP 0.6
 #define MUSKET_FAST_STRIKE_MTP  0.65
 #define MUSKET_FORCE_STRIKE_MTP 0.9
 #define MUSKET_ROUND_STRIKE_MTP 0.6
 #define MUSKET_BREAK_STRIKE_MTP 1.2
-#define MUSKET_FEINT_STRIKE_MTP 0.7
 
 // Влияение веса по типам оружия
 #define WEAPON_LIGHT_WEIGHT_MTP_1 0.5
@@ -136,5 +132,5 @@ int ITEMS_QUANTITY = 604; // не забываем менять номер
 #define ARMOR_HEAVY_MOVE_SPEED_MTP  -0.10
 
 
-object Items[1132];
+object Items[1134];
 object RandItems[RANDITEMS_QUANTITY];

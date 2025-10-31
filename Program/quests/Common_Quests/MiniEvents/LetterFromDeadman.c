@@ -1,3 +1,19 @@
+void LFD_Start()
+{
+	SetQuestHeader("LFD");
+	AddQuestRecord("LFD", "1");
+	pchar.questTemp.LFD_Start = true;
+	
+	sld = GetCharacter(NPC_GenerateCharacter("LFD_sailor", "citiz_33", "man", "man", 10, SPAIN, -1, true, "citizen"));
+	ChangeCharacterAddressGroup(sld, "PortoBello_town", "goto", "goto10");
+	sld.dialog.filename = "Quest\MiniEvents\LetterFromDeadman_dialog.c";
+	sld.dialog.currentnode = "Sailor_1";
+	LAi_SetCitizenType(sld);
+	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	//LAi_SetLoginTime(sld, 07.00, 21.99);
+	AddLandQuestMark(sld, "questmarkmain");
+}
+
 void LFD_Sailor_end()
 {
 	sld = CharacterFromID("LFD_sailor");
@@ -29,6 +45,7 @@ void LFD_Church_1()
 {
 	AddQuestRecord("LFD", "4");
 	DeleteAttribute(pchar, "questTemp.LFD_Church_1");
+	LocatorReloadEnterDisable("PortoBello_town", "houseSp1", false);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("LFD_Dolores", "girl_6", "woman", "woman", 5, SPAIN, -1, false, "quest"));
 	sld.name = StringFromKey("Neutral_25");
@@ -285,6 +302,10 @@ void LFD_Marisa_In_Church()
 	CloseQuestHeader("LFD");
 	QuestOpenSeaExit();
 	SetFunctionExitFromLocationCondition("LFD_Marisa_In_Church_2", PChar.location, false);
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void LFD_Marisa_In_Church_2(string qName)

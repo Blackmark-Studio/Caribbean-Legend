@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		RemovePassenger(pchar, compref);
 		// снимем пассажира <--
 		SetCompanionIndex(pchar, -1, iChar);
-		DelBakSkill(compref);
+		PortmanDelBakSkill(compref);
 		DeleteAttribute(chref, "ShipInStockMan");
 		if(CheckAttribute(chref, "DontNullShip"))
 		{
@@ -879,7 +879,7 @@ void ProcessDialogEvent()
 		
 		if (hrand(5) > 1)
 		{
-			if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
+			if (GetCompanionQuantity(pchar) < 3 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
 			{
 				if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) 
 				{ // если заняты
@@ -3143,10 +3143,10 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "I am ready to pay you your reward. It consists of "+FindRussianMoneyString(makeint(sti(npchar.quest.chest)*15000))+" in chests. Unfortunately, I cannot pay you more than that.";
+			dialog.text = "I am ready to pay you your reward. It consists of " + makeint(sti(npchar.quest.money)) + " in doubloons. Unfortunately, I cannot pay you more than that.";
 			link.l1 = "Well, that's enough. Thank you and best regards.";
 			link.l1.go = "exit";
-			TakeNItems(pchar, "chest", sti(npchar.quest.chest));
+			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));
 			sTitle = npchar.id + "Portmans_SeekShip";
 			AddQuestRecordEx(sTitle, "Portmans_SeekShip", "6");
 			CloseQuestHeader(sTitle);
@@ -3360,66 +3360,44 @@ void ProcessDialogEvent()
 			}
 		break;
 
-/*  //////////   hasert уже не надо но пусть висит ////////////////////////////////////
-		case "ShipStockMan_1":
-            NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, 1);
-			dialog.text = "Let's take a look at that ship.";
-			Link.l1 = "Fine.";
-			Link.l1.go = "ShipStock_2";
-			Link.l2 = "No, I've changed my mind.";
-			Link.l2.go = "exit";
-		break;
-
-		case "ShipStockMan_2":
-            NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, 2);
-			dialog.text = "Let's take a look at that ship.";
-			Link.l1 = "Fine.";
-			Link.l1.go = "ShipStock_2";
-			Link.l2 = "No, I've changed my mind.";
-			Link.l2.go = "exit";
-		break;
-
-		case "ShipStockMan_3":
-            NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, 3);
-			dialog.text = "Let's take a look at that ship.";
-			Link.l1 = "Fine.";
-			Link.l1.go = "ShipStock_2";
-			Link.l2 = "No, I've changed my mind.";
-			Link.l2.go = "exit";
-		break;
-		
-		case "ShipStockMan_4":
-            NPChar.ShipToStoreIdx = GetCompanionIndex(PChar, 4);
-			dialog.text = "Let's take a look at that ship.";
-			Link.l1 = "Fine.";
-			Link.l1.go = "ShipStock_2";
-			Link.l2 = "No, I've changed my mind.";
-			Link.l2.go = "exit";
-		break;
-*/		
 		case "ShipStock_2":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
-			{
-				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
-			}
-			else
-			{
-				if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = MOD_SKILL_ENEMY_RATE/2*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
-				else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
-			}
-			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName)+" '"+chref.Ship.Name+"', class "+RealShips[sti(chref.Ship.Type)].Class+", mooring costs are "+FindRussianMoneyString(sti(NPChar.MoneyForShip))+" per month, payment one month in advance.";
-			Link.l1 = "Yes, that suits me.";
-			if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip))
-			{
-			    Link.l1.go = "ShipStock_3";
-			}
-			else
-			{
-                Link.l1.go = "ShipStock_NoMoney";
-			}
-			Link.l2 = "No, I've changed my mind.";
-			Link.l2.go = "exit";
+			// --> andre270925 оставаил тут комментом старый код чтобы забрать куски перевода, если нужно
+      //       chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			// if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
+			// {
+			// 	NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
+			// }
+			// else
+			// {
+			// 	if (MOD_SKILL_ENEMY_RATE >= 6) NPChar.MoneyForShip = MOD_SKILL_ENEMY_RATE/2*GetPortManPriceExt(NPChar, chref); // для высокой сложности - 5x цена
+			// 	else NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref);
+			// }
+			// dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName)+" '"+chref.Ship.Name+"', class "+RealShips[sti(chref.Ship.Type)].Class+", mooring costs are "+FindRussianMoneyString(sti(NPChar.MoneyForShip))+" per month, payment one month in advance.";
+			// Link.l1 = "Yes, that suits me.";
+			// if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip))
+			// {
+			//     Link.l1.go = "ShipStock_3";
+			// }
+			// else
+			// {
+      //           Link.l1.go = "ShipStock_NoMoney";
+			// }
+			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			PortmanCalculatePrices(NPChar, chref);
+			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', class " + RealShips[sti(chref.Ship.Type)].Class +
+                     ", docking cost " + FindRussianMoneyString(sti(NPChar.MoneyForShip)) + " per month, paid in advance.";
+			dialog.Text = dialog.Text + " If you leave it with an officer and crew, then together with them " + FindRussianMoneyString(sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew));
+
+			Link.l1 = "Yes. That works for me.";
+			if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip)) Link.l1.go = "ShipStock_3";
+			else  Link.l2.go = "ShipStock_NoMoney";
+
+			Link.l2 = "Yes. That works for me. Leave it with the captain and crew";
+			if (sti(Pchar.Money) >= (sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew))) Link.l2.go = "ShipStock_4";
+			else Link.l2.go = "ShipStock_NoMoney";
+
+			Link.l3 = "No, I've changed my mind.";  
+			Link.l3.go = "exit";
 		break;
 
 		case "ShipStock_NoMoney":
@@ -3428,61 +3406,15 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit";
 		break;
 
-		case "ShipStock_3": // hasert новый кейс выбора для оффов
-			//AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			if (sti(NPChar.StoreWithOff))
-			{
-				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			chref.ShipInStockMan = NPChar.id;
-			// Warship 22.03.09 fix Не перенеслось с КВЛ 1.2.3
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			chref.Ship.Crew.Quantity  = 0;
-			RemoveCharacterCompanion(pchar, chref);
-			}
-			else
-			{
-				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
-			chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
-			chref.loyality = MAX_LOYALITY; 
-			chref.name = "";
-			chref.lastname = "";
-			 chref.Ship.Crew.Quantity  = 0;
-			DeleteAttribute(chref,"ship");
-			chref.ship = "";
-			
-			chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			//  chref.Ship.Crew.Quantity  = 0;
-			compref = GetCharacter(sti(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
-			compref.Ship.Crew.Quantity  = 0;
-            RemoveCharacterCompanion(pchar, compref);
-			makearef(arTo, chref.ship);
-			makearef(arFrom, compref.Ship);
-			CopyAttributes(arTo, arFrom);
+		case "ShipStock_3":
+		 	LeaveShipInPort(NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
+			dialog.text = "Alright. You can take your ship back whenever you need.";
+			Link.l1 = "Thanks.";
+			Link.l1.go = "exit";
+		break;
 
-			compref.ship.type = SHIP_NOTUSED;
-			RemoveCharacterCompanion(pchar, compref);
-			AddPassenger(pchar, compref, false);
-			DelBakSkill(compref);
-			}
-
-			chref.location = "";
-			chref.location.group = "";
-			chref.location.locator = "";
-			NPChar.Portman	= sti(NPChar.Portman) + 1;
-			pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
-			if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
-			{
-				chref.DontNullShip = true;
-				NPChar.DontNullShipBeliz = true;
-			}
-
+		case "ShipStock_4":
+		 	LeaveShipInPortWithCrew(NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
 			dialog.text = "Alright. You can take your ship back whenever you need.";
 			Link.l1 = "Thanks.";
 			Link.l1.go = "exit";
@@ -3537,8 +3469,16 @@ void ProcessDialogEvent()
 			}
 		break;
 
-        case "ShipStockManBack":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+		case "ShipStockManBack":
+			// Лимит офицеров не позволяет забрать  
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Captain, it seems there's no room in your crew for another officer.";  
+				link.l1 = "Hmm... Then I’ll come back later.";  
+				link.l1.go = "exit";  
+				break;  
+			}
+			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			
 			// --> mitrokosta сюрприз для хитрецов поставивших бунтовщика в ПУ
 			if (CheckAttribute(chref, "quest.Mutiny.date")) {
 				dialog.text = "Let's see... This ship left port at "+chref.quest.Mutiny.date+".";
@@ -4145,8 +4085,8 @@ void SetSeekShipCapParam(ref npchar)
 	npchar.quest.PortmansSeekShip.shipName = sld.Ship.name; //имя украденного корабля
 	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название украденного корабля
 	npchar.quest.PortmansSeekShip.shipTape = RealShips[sti(sld.Ship.Type)].basetype; //тип украденного корабля
-	//npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 1000) + (sti(pchar.rank)*500); //вознаграждение
-	npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
+	npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 10) + (sti(pchar.rank)*5); //вознаграждение
+	// npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
 	sld.quest = "InMap"; //личный флаг кэпа-вора
 	sld.city = SelectAnyColony(npchar.city); //определим колонию, откуда кэп-вор выйдет
 	sld.quest.targetCity = SelectAnyColony2(npchar.city, sld.city); //определим колонию, куда он придёт
@@ -4286,18 +4226,7 @@ int Escort_ShipType()
 }
 //<-- новые мини-квесты
 
-void DelBakSkill(ref _compref) // hasert
-{
-	DelBakSkillAttr(pchar);
-	ClearCharacterExpRate(pchar);
-	RefreshCharacterSkillExpRate(pchar);
-	SetEnergyToCharacter(pchar);
 
-	DelBakSkillAttr(_compref);
-	ClearCharacterExpRate(_compref);
-	RefreshCharacterSkillExpRate(_compref);
-	SetEnergyToCharacter(_compref);
-}
 
 void SetSeekCapShip(ref _chr)
 {

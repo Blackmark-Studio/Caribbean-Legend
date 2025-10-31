@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_4":
-			dialog.text = "轻型护卫舰'格里芬多'号现在由你指挥。 从这一刻起, 这艘出色的船属于你了。 利用它的优良性能, 为陛下的荣耀和加强法国在加勒比群岛的影响力服务吧! ";
+			dialog.text = "重型护卫舰'格里芬多'号现在由你指挥。 从这一刻起, 这艘出色的船属于你了。 利用它的优良性能, 为陛下的荣耀和加强法国在加勒比群岛的影响力服务吧! ";
 			link.l1 = "马上! ";
 			link.l1.go = "serve_5";
 			LAi_Fade("SharlePutsSuit", "");

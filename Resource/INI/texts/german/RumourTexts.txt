@@ -40,7 +40,7 @@ WorkWithContra_t1 {Es heißt, dass #sPsHero_Name# eine volle Ladung Schmuggelwar
 WorkWithContra_t2 {Ich hörte zufällig, wie #sPsHero_Name# mit unserem Schmuggler sprach. Sie vereinbarten ein Treffen an einem Ort mit dem Namen #sContraPlace#.}
 DuelCoward_t0 {Was für eine Schande! #sName# ist nicht zu einem Duell erschienen. Jetzt sagen alle, dass er ein Feigling ist!}
 DuelCoward_t1 {Ha-ha, #sName# ist nicht zum Duell erschienen! Ich glaube nicht, dass er bei Frauen den gleichen Erfolg haben wird wie bisher.}
-DuelCoward_t2 {Haben Sie es gehört? #sName# ist nicht zu einem Duell erschienen! Es heißt, er sei sturzbetrunken und könne sich einfach nicht auf den Beinen halten.}
-DuelHero_t0 {Wisst Ihr, dass #sName# ein erstklassiger Duellant ist? Er hat bereits #sKill# Männer getötet. Ich würde mich ihm nicht in den Weg stellen wollen.}
+DuelCoward_t2 {Haben Sie gehört? #sName# ist nicht zum Duell erschienen! Man sagt, er war letzte Nacht so betrunken, dass er nicht einmal aufstehen konnte.}
+DuelHero_t0 {Wissen Sie, dass #sName# ein erfahrener Duellant ist? Er hat bereits #sKill# Menschen getötet. Ich möchte ihm nicht in die Quere kommen.}
 DuelHero_t1 {Man sagt, dass #sName# seine Seele an den Teufel verkauft hat, und deshalb kann er in einem Duell nicht besiegt werden! Und die Seelen derer, die er tötet... er hat bereits #sKill# Männer getötet, und sie werden direkt in die Hölle gehen! Sie sagen auch, dass der Teufel seine eigene Seele einfordern wird, wenn er seine Mordserie beendet.}
 DuelHero_t2 {Dieser Emporkömmling #sName# hat unglaubliches Glück! Er hat bereits #sKill# Männer in einem Duell getötet und nie einen Kratzer abbekommen! Wirklich, kannst du das überhaupt glauben?}

@@ -23,6 +23,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "caleuche";
 				DelLandQuestMark(npchar);
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz"))
+			{
+				link.l1 = "About a month and a half ago a certain Jerome Sauvernier arrived in your town. Do you recall him?";
+				link.l1.go = "WildRose_Tavern_1";
+			}
+			//<-- Дикая Роза
 		break;
 		
 		case "guardoftruth":
@@ -58,6 +65,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetFunctionTimerCondition("Caleuche_FergusCome", 0, 0, iTerms, false);
 			npchar.quest.Caleuche = "true";
 		break;
+		
+		//--> Дикая Роза
+		case "WildRose_Tavern_1":
+			dialog.text = "Uh... I think so. Yes, I remember that gentleman. Not dressed to the nines, but he had money.";
+			link.l1 = "He was hurt in a brawl in your tavern.";
+			link.l1.go = "WildRose_Tavern_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Tavern_2":
+			dialog.text = "So what of it? Fights break out here every other day. Sailors get drunk, words are exchanged – and then you can’t stop them. You look like a seasoned man – surely such things don’t surprise you?";
+			link.l1 = "Not at all. The thing is, this man is an old acquaintance of mine. We agreed to meet here, but I was a bit late. Could you tell me where I might find him?";
+			link.l1.go = "WildRose_Tavern_3";
+		break;
+
+		case "WildRose_Tavern_3":
+			dialog.text = "Why shouldn’t I tell you, sir? As I said, he had enough coin – so he rented a house near the port authority. A notable one, with a red roof. He’s holed up there, barely goes out, mending his leg. From time to time he drops in here for a drink. But it’s never certain – some days he comes, some days he doesn’t.";
+			link.l1 = "Then I’ll call on him at his house. Thank you for the information. Farewell.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_tavern");
+		break;
+		//<-- Дикая Роза
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

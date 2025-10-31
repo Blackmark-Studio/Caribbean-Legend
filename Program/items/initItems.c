@@ -4,6 +4,7 @@ int InitItems()
 {
 	InitRandItems();
 	ref itm;
+	aref callback;
 	int n, i;
 
 	for(n=0; n<ITEMS_QUANTITY; n++)
@@ -217,7 +218,7 @@ int InitItems()
 	//Jason: номер модели задействован при смене модели перснажа и сопоставляется со списком моделей по очереди из ХероМейкера: 0 - без кирасы, 1-4 - тяжёлые кирасы. Номером 5 пойдёт для всех водолазное снаряжение. Дальше прописываем мундиры под номером 6 для всех, т.к. в игре они выдаются строго под конкретного перса своей нации, т.е. Шарль английский мундир в игре не встретит по определению. Номер 7 - бонусный костюм Лампорта. Это учтем в ХироМейкере. Легкие доспехи, под которые уникальных моделей не предусмотрено, будут иметь модель 0 - дефолтная модель персонажа.
 	//n = InitStdSuit( индекс, идентификатор, модель, текстура, картинка, цена, вес, редкость, мин.уровень, одежда?, защита ХО, защита PM, вер-ть крита);
 	// тяжёлые доспехи
-	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  58000, 40,   0.01,  1, false, 0.35, 0.35, 0.2 ); // траншейный доспех
+	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  21000, 27,   0.01,  1, false, 0.35, 0.35, 0.2 ); // траншейный доспех
 	n = InitStdSuit(n, "cirass2",     	"2", "ITEMS_32",  2,  38500, 30,   0.01,  5, false, 0.25, 0.25, 0.3 ); // рейтарская кираса
 	n = InitStdSuit(n, "cirass3",     	"3", "ITEMS_32",  3,  77000, 12,   0.01, 11, false, 0.20, 0.20, 0.5 ); // парадная кираса
 	n = InitStdSuit(n, "cirass4",     	"4", "ITEMS_32",  4, 230000, 18,   0.01, 20, false, 0.30, 0.30, 0.0 ); // миланский панцирь
@@ -2426,7 +2427,7 @@ int InitItems()
 	itm.model = "";
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_41";
-	itm.Weight = 127.0;
+	itm.Weight = 161.7;
 	itm.price = 100;
 	itm.ItemType = "QUESTITEMS";
 	n++;
@@ -2771,7 +2772,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "spyglass4";
-	itm.radius = 250.0;
+	itm.radius = 350.0;
+	itm.worldMapBonus = 0;
 	itm.scope.texture = "eye_BadTub.tga";
 	itm.scope.zoom = 2.5;
 	itm.scope.time_activate = 500;
@@ -2808,6 +2810,7 @@ int InitItems()
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.radius = 500.0;
+	itm.worldMapBonus = 10;
 	itm.scope.texture = "eye_CommonTub.tga";
 	itm.scope.zoom = 4.0;
 	itm.scope.time_activate = 500;
@@ -2843,7 +2846,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "spyglass4";
-	itm.radius = 750.0;
+	itm.radius = 650.0;
+	itm.worldMapBonus = 10;
 	itm.scope.texture = "eye_GoodTub.tga";
 	itm.scope.zoom = 7.0;
 	itm.scope.time_activate = 500;
@@ -2876,6 +2880,7 @@ int InitItems()
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.radius = 1000.0;
+	itm.worldMapBonus = 18;
 	itm.price = 12000;
 	// boal 19.01.2004 -->
 	itm.Weight = 2.5;
@@ -2914,7 +2919,8 @@ int InitItems()
 	itm.price = 75000;
 	// boal 19.01.2004 -->
 	itm.Weight = 4.0;
-	itm.radius = 1250.0;
+	itm.radius = 1609.0;
+	itm.worldMapBonus = 25;
     // boal 19.01.2004 <--
 	itm.scope.texture = "eye_BestTub.tga";
 	itm.scope.zoom = 15.0;
@@ -2951,7 +2957,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "Spyglass_SP3";
-	itm.radius = 850.0;
+	itm.radius = 666.0;
+	itm.worldMapBonus = 14;
 	itm.scope.texture = "eye_GoodTub.tga";
 	itm.scope.zoom = 7.0;
 	itm.scope.time_activate = 500;
@@ -3414,6 +3421,7 @@ int InitItems()
 	itm.SortIndex = 2;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_POTION;
+	itm.time = 50;
 	n++;
 
 	makeref(itm,Items[n]);
@@ -3538,6 +3546,7 @@ int InitItems()
 	itm.picTexture = "ITEMS_35";
 	itm.price = 8000;
 	itm.Weight = 1;
+	itm.time = 50;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
@@ -3558,6 +3567,7 @@ int InitItems()
 	itm.price = 8000;
 	itm.Weight = 1;
 	itm.minlevel = 1;
+	itm.time = 50;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
 	itm.multiobject = true;		
@@ -3576,6 +3586,7 @@ int InitItems()
 	itm.picTexture = "ITEMS_35";
 	itm.price = 8000;
 	itm.Weight = 1;
+	itm.time = 50;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
@@ -3603,6 +3614,30 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	n++;
+
+	makeref(itm,Items[n]);
+	itm.id = "PerksPotion";
+	itm.groupID		= SPECIAL_ITEM_TYPE;
+	itm.name = "itmname_PerksPotion";
+	itm.describe = "itmdescr_PerksPotion";
+    itm.model = "balsam";
+	itm.picIndex = 16;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 20000;
+	itm.Weight = 0.1;
+	itm.minlevel = 1;
+	itm.rare = 0.001;
+	itm.SortIndex = 2;
+	itm.multiobject = true;		
+	itm.multiobject.qty = 1;
+	itm.multiobject.alchemy = true;
+	itm.ItemType = "SUPPORT";
+	AddOnUseCallback(itm, "RevokePerksPotionEffect");
+	AddOnUseCallback(itm, "NotifyPlayerUse");
+	callback = AddCanBeUsedCallback(itm, "IsFellowOurCrew");
+	callback.argumentsConfig = "chr";
+	n++;
+	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Jason: РЕЦЕПТЫ
@@ -3622,6 +3657,7 @@ int InitItems()
 	// belamour legendary edition рецепт Микстуры
 	n = InitStdRecipies(n, "recipe_potion4", "potion4", 7000);
 	n = InitStdRecipies(n, "recipe_berserker_potion", "berserker_potion", 77000);
+	n = InitStdRecipies(n, "recipe_PerksPotion", "PerksPotion", 20000);
 	n = InitStdRecipies(n, "recipe_totem_01", "totem_01", 22000);
 	n = InitStdRecipies(n, "recipe_totem_02", "totem_02", 21000);
 	n = InitStdRecipies(n, "recipe_totem_03", "totem_03", 22500);
@@ -3655,7 +3691,7 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman14", "", "ITEMS_39",  6, rand(5000), 0.5,    "navigator"); // Оберег 'Жаньи' cle 1.3
 	n = InitStdTalisman(n, "talisman15", "", "ITEMS_39",  7, rand(5000), 0.5,             ""); // Оберег 'Чёрная метка' cle 1.3 DLC
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
-	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,             ""); // Оберег Liber Misericordiae cle 1.5 DLC SP1
+	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,       "doctor"); // Оберег Liber Misericordiae cle 1.5 DLC SP1
 	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
 	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7,  rand(5000), 2.2,             ""); // Оберег Череп
 	n = InitStdTalisman(n, "talisman20", "", "ITEMS_41", 10,       4200, 1.2,             ""); // Берендейка стрельца
@@ -5037,6 +5073,22 @@ void InitMultiObjectAmulets()
 	InitMultiObject(  		"vodka",        "t7",     "cannabis7", 	  "Component", 	  1); // Мангароса
 	InitMultiObject(  		"vodka",        "t8",     "mineral10",  "AlchemyTool", 	  1); // огниво
 	InitMultiObject(  		"vodka",        "t9",     "mineral1",   "AlchemyTool", 	  1); // Медный кувшин
+
+		// Зелье забвения
+	InitMultiObject(		"PerksPotion",	    "t1",     "gold_dublon",  "Component", 	666); // дублон
+	InitMultiObject(		"PerksPotion",	    "t2",     "cannabis1",   "Component", 	  5); // дурман
+	InitMultiObject(		"PerksPotion",	    "t3",     "cannabis2", 	  "Component", 	  5); // Сабадилла
+	InitMultiObject(		"PerksPotion",	    "t4",     "cannabis3", 	  "Component", 	  5); // вербена
+	InitMultiObject(		"PerksPotion",	    "t5",     "cannabis4", 	  "Component", 	  5); // Ипекакуана
+	InitMultiObject(  		"PerksPotion",	    "t6",  	  "cannabis5",    "Component", 	  5); // гуарана
+	InitMultiObject(  		"PerksPotion",      "t7",     "cannabis7", 	  "Component", 	 10); // Мангароса
+	InitMultiObject(  		"PerksPotion",      "t8",     "cannabis6",    "Component", 	  5); // ямайский перец
+	InitMultiObject(  		"PerksPotion",      "t9",     "mineral14",   "Component", 	  2); // крыло вампира
+	InitMultiObject(  		"PerksPotion",     "t10",     "jewelry19",   "Component", 	  2); // коралл
+	InitMultiObject(  		"PerksPotion",     "t11",     "mineral17",   "Component", 	  1); // флакон
+	InitMultiObject(  		"PerksPotion",     "t12",     "mineral31",   "Component", 	  2); // заговоренная кость
+	InitMultiObject(  		"PerksPotion",     "t13",     "mineral4",   "Component", 	  3); // Жук-Геркулес
+	InitMultiObject(  		"PerksPotion",     "t14",   "alchemy_tool", "AlchemyTool", 	  1); // Алхимический набор
 		
 	// Бумажный патрон
 	InitMultiObject(  	  	"cartridge",	"t1",  	     "bullet",    "Component", 	  1); // пуля

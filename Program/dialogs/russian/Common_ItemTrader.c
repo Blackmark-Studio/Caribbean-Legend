@@ -234,13 +234,13 @@ void ProcessDialogEvent()
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Вызывающий доверие) Давайте пойдём на компромисс. Эта сделка с вином - только начало. Вы напишите рекомендацию сейчас и бесплатно, а я, в свою очередь, рекомендую однажды уже вас - и на тех же условиях.";
 				link.l2.go = "Wine_Bottles_free";
 			}
 			else
 			{
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 			link.l3 = "Ну это уже ни в какие ворота не лезет. Да я лучше брошу всем этим заниматься, но не стану обогощать так"+ NPCharSexPhrase(npchar, "ого","ую") +" хитр"+ NPCharSexPhrase(npchar, "ого","ую") +" скрягу. Я имею в виду вас. Прощайте.";
 			link.l3.go = "Wine_Repeat1_goaway";
@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 		case "ZsI_Torg":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 18)
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 19, SKILL_COMMERCE);
 				dialog.text = "И правда, друзьям месье Фадея у нас всегда рады. Возьмёте за две триста?";
 				link.l1 = "Вот это уже другое дело. Беру.";
 				link.l1.go = "ZsI_Torg_2";
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Недостаточно развит навык (19)", SKILL_COMMERCE); 
+				Notification_Skill(false, 19, SKILL_COMMERCE); 
 				dialog.text = "Друзьям месье Фадея у нас всегда рады, но у цен друзей нет. С вас три тысячи песо, месье.";
 				if (sti(pchar.Money) > 2999)
 				{

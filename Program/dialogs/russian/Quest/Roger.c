@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "По тысяче триста песо за рулон. По-моему, недурственная цена.";
-			link.l1 = "Тиракс хочет выручить за рулон не меньше двух десятков золотых. Да, именно дублонов. И озадачил меня вопросом найти такого покупателя.";
+			link.l1 = "Тиракс хочет выручить за рулон не меньше 4 золотых. Да, именно дублонов. И озадачил меня вопросом найти такого покупателя.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "Ну, как успехи, приятель?";
-			link.l1 = "Отлично, дружище. Я нашёл покупателя на шёлк. Цена - 25 дублонов за рулон. Так что Тиракс будет доволен.";
+			link.l1 = "Отлично, дружище. Я нашёл покупателя на шёлк. Цена - 5 дублонов за рулон. Так что Тиракс будет доволен.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "Кха! Ты что - пират?";
-			link.l1 = "Нет, я просто веду с ним кое-какие делишки. И точно знаю, что Маркус постоянно 'получает' партии корабельного шёлка и продает их, но точно не по 2500 песо. А если ты ещё будешь платить ему не песо, а дублонами, по 25 золотых за рулон - он тебя завалит шёлком, не сомневайся.";
+			link.l1 = "Нет, я просто веду с ним кое-какие делишки. И точно знаю, что Маркус постоянно 'получает' партии корабельного шёлка и продает их, но точно не по 2500 песо. А если ты ещё будешь платить ему не песо, а дублонами, по 5 золотых за рулон - он тебя завалит шёлком, не сомневайся.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Двадцать пять дублонов золотом за рулон. Больше никто не заплатит, будь уверен.";
-			link.l1 = "Двадцать пять золотых? Хм. Неплохо. Пожалуй, Тираксу придётся раскошелиться за такого покупателя. По рукам, я договорюсь с ним. Но если ты меня обманул с ценой - пеняй на себя.";
+            dialog.text = "5 дублонов золотом за рулон. Больше никто не заплатит, будь уверен.";
+			link.l1 = "5 золотых? Хм. Неплохо. Пожалуй, Тираксу придётся раскошелиться за такого покупателя. По рукам, я договорюсь с ним. Но если ты меня обманул с ценой - пеняй на себя.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "Нет у меня сейчас такой горы золота.";
 				link.l2.go = "Pelly_44_1";
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Не открыта способность", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "А знаешь, что, Тесак? К чёрту. Ты пират, или кто? А Жан? Или мордашка - единственное, чем он может похвастаться? Приготовь-ка ты сундук - будем придерживаться изначального плана.";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3023,13 +3023,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Вызывающий доверие) (Честь) (Харизма) На сегодня хватит крови, Жан. Я сам.";
 				link.l1.go = "merida_head_dobro_1";
-				notification("Вызывающий доверие", "Trustworthy");
-				notification("Проверка чести пройдена", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 71, "low");
 				notification("Проверка пройдена", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Не открыта способность", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Недостаточно развит навык (50)", SKILL_LEADERSHIP);
 			}
@@ -4762,9 +4762,9 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
-			if (FindFreeRandomOfficer() < 1 ) {
-				dialog.text = "[Слишком много офицеров].";
-				link.l1 = "[Ща решим]";
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Кэп, похоже, у тебя нет места для ещё одного офицера.";
+				link.l1 = "Пожалуй, ты прав. Загляну позже, а ты пока присматривай здесь, чтобы у у моей посудины не завёлся новый хозяин.";
 				link.l1.go = "exit";
 				break;
 			}

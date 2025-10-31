@@ -106,17 +106,17 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l4 = "Хочу изменить внешний вид парусов.";
 					link.l4.go = "SailsGerald";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_cabin"))
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 					link.l50 = "У меня несколько... особенный корабль. Я бы хотел внести в его конструкцию парочку изменений.";
 					link.l50.go = "FDM";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+			/* if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 			{
 					link.l50 = "Я принес ещё сундуков для реконструкции каюты.";
 					link.l50.go = "FDM_cabin_pay";
-			}
-			/*if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+			} */
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 			{
 					link.l50 = "Я по поводу перестройки корабля.";
 					link.l50.go = "FDM_hull_givemoney";
@@ -126,7 +126,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 					link.l50 = "Я по поводу перестройки корабля.";
 					link.l50.go = "FDM_hull_checkmaterials";
-			}*/
+			}
 			link.l9 = pcharrepphrase("Чёрт, у меня есть пара неотложных дел, до свидания.", "Мне уже пора, извините.");
 			Link.l9.go = "ship_tunning_not_now";
 		break;
@@ -607,21 +607,21 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else	
 				dialog.text = "А-а, 'корабль-призрак'! Вашим галеоном матери пугают непослушных детей. Нет чтобы затопить эту чёртову посудину, далась она вам! Моряков в дрожь бросает, когда они видят ваше судно на горизонте... Так что вы хотите с ним сделать?";
 			
-			if (!CheckAttribute(npchar, "quest.FDM_cabin"))
+			/*if (!CheckAttribute(npchar, "quest.FDM_cabin"))
 			{
 				link.l1 = "То, что от его внешнего вида трусливые мозгляки в штаны себе накладывают, это меня как раз устраивает. А вот внутреннее убранство каюты меня огорчает. Там не убирались полвека, всё покрылось плесенью и протухло. На кровати спать жутко - словно в гроб укладываешься. Хочу обстановку полностью обновить, труху и гниль выбросить, всё свежее поставить. Возьмётесь, мастер?";
 				link.l1.go = "FDM_cabin";
-			}
+			}*/
 			/* if (!CheckAttribute(npchar, "quest.FDM_sails"))
 			{
 				link.l2 = "Надоела эта древняя рванина, что болтается у меня вместо парусов. Ветер она ловит не хуже обычных полотнищ, но вид - просто омерзительный. Хочу нормальные белые паруса, как на всех кораблях. Сделаем, мастер?";
 				link.l2.go = "FDM_sails";
-			}
+			}*/
 			if (!CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 				link.l3 = "Да вот и я думаю, что надо бы превратить его во что-то нормальное. Корабль-то хороший, команда тоже привыкла уже, но как-то уж слишком не солидно приличному капитану ходить на посудине, которой не то что детей - кого угодно перепугать можно. Хочу полностью перестроить его, чтобы другие капитаны при виде моего корабля завидовали, а не крестились. А к кому мне ещё обратиться с этим, как не к лучшему корабелу на архипелаге?";
 				link.l3.go = "FDM_hull";
-			} */
+			}
 		break;
 		
 		case "FDM_cabin":
@@ -763,8 +763,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_hull_01":
-			dialog.text = "Ну, давайте посчитаем... Для полной перестройки корпуса корабля мне понадобится 150 единиц бакаута, 130 бухт пеньковых канатов, 170 рулонов корабельного шёлка и 200 бочек смолы. Возьму я за всё это 250 тысяч песо. И не смотрите так на меня - большая часть денег всё равно уйдёт на работы! Вы же не тартану перестраиваете.";
-			link.l1 = "Ну нет, пожалуй. Привезти такое количество ресурсов, да ещё и четверть миллиона за перестройку отдать, я не готов. Похожу на том, что есть.";
+			dialog.text = "Ну, давайте посчитаем... Для полной перестройки корпуса корабля мне понадобится по 150 единиц бакаута, канатов, корабельного шёлка и смолы. А также 10000 золотых дублонов. И не смотрите на меня так - большая часть денег уйдет на материалы. Эта работа равносильна разбору корабля на части и постройке его с нуля.";
+			link.l1 = "Ну нет, пожалуй. Привезти такое количество ресурсов, да ещё и гору золота за перестройку отдать, я не готов. Останусь с тем, что есть.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Эх, на что только не пойдёшь ради корабля... Ладно, я согласен.";
 			link.l2.go = "FDM_hull_02";
@@ -772,7 +772,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FDM_hull_02":
 			dialog.text = "Ладно, меньше слов, больше дела. Жду от вас денег, чтобы я уже начал закупать всё необходимое. Как принесёте - тащите материалы. И я займусь перестройкой вашей посудины.";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
     			link.l1 = "Ну, за деньгами далеко ходить не надо: они у меня с собой. Держите, мастер.";
     			link.l1.go = "FDM_hull_waitmaterials";
@@ -785,7 +785,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_hull_waitmaterials":
-			addMoneyToCharacter(pchar, -250000);
+			RemoveDublonsFromPCharTotal(10000);
 			npchar.quest.FDMsandal = 0;
 			npchar.quest.FDMoil = 0;
 			npchar.quest.FDMshipsilk = 0;
@@ -793,7 +793,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("renovate_fdm", "1");
 			
 			npchar.quest.FDM_hull = "hull_waitmaterials";
-			dialog.text = "И не страшно вам с такой суммой ходить по пиратскому поселению, хе-хе? Ладно, шучу. Теперь жду материалы. Напоминаю: вам в общей сложности нужно привезти 150 единиц бакаута, 130 бухт пеньковых канатов, 170 рулонов корабельного шёлка и 200 бочек смолы.";
+			dialog.text = "И не страшно вам с такой суммой ходить по пиратскому поселению, хе-хе? Ладно, шучу. Теперь жду материалы. Напоминаю: вам в общей сложности нужно привезти 150 единиц бакаута, 150 бухт пеньковых канатов, 150 рулонов корабельного шёлка и 150 бочек смолы.";
 			link.l1 = "Ждите, привезу я вам ваши материалы.";
 			link.l1.go = "exit";
 		break;
@@ -806,19 +806,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Бакаут, в количестве "+FindRussianQtyString(iSan)+".";
 				link.l1.go = "FDM_sandal";
 			}
-			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 200)
+			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 150)
 			{
 				iOil = GetSquadronGoods(pchar, GOOD_OIL);
 				link.l2 = "Смолы, в количестве "+FindRussianQtyString(iOil)+".";
 				link.l2.go = "FDM_oil";
 			}
-			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 170)
+			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 150)
 			{
 				iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 				link.l3 = "Корабельный шёлк, в количестве "+FindRussianQtyString(iSil)+".";
 				link.l3.go = "FDM_shipsilk";
 			}
-			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 130)
+			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 150)
 			{
 				iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 				link.l4 = "Пеньковые канаты, в количестве "+FindRussianQtyString(iRop)+".";
@@ -829,7 +829,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_hull_checkmaterials_1":
-			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 199 && sti(npchar.quest.FDMshipsilk) > 169 && sti(npchar.quest.FDMropes) > 129)
+			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 149 && sti(npchar.quest.FDMshipsilk) > 149 && sti(npchar.quest.FDMropes) > 149)
 			{
 				dialog.text = "Отлично! Все материалы готовы. Теперь я забираю у вас ваше страшилище. Наконец-то оно обретёт нормальный вид.";
 				link.l1 = "Ну хватит вам ворчать, мастер. С нетерпением жду результата.";
@@ -873,7 +873,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_oil": // смолы
-			amount = 200 - sti(npchar.quest.FDMoil);
+			amount = 150 - sti(npchar.quest.FDMoil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) 
@@ -900,7 +900,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_shipsilk": // шёлк
-			amount = 170 - sti(npchar.quest.FDMshipsilk);
+			amount = 150 - sti(npchar.quest.FDMshipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) 
@@ -927,7 +927,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FDM_ropes": // канаты
-			amount = 170 - sti(npchar.quest.FDMropes);
+			amount = 150 - sti(npchar.quest.FDMropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) 
@@ -965,9 +965,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "FDM_hull_givemoney":
 			dialog.text = "Ну что, принесли деньги?";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
-    			link.l2 = "Да, принёс. 250 тысяч песо, как и договаривались.";
+    			link.l2 = "Да, принёс. 10000 полновесных дублонов, как и договаривались.";
     			link.l2.go = "FDM_hull_waitmaterials";
             }
             else
@@ -985,24 +985,31 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RefreshLandTime();
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
-			RealShips[sti(Pchar.Ship.Type)].BaseType = SHIP_RENOVATED_FDM;
-			RealShips[sti(Pchar.Ship.Type)].Name = "NewFlyingdutchman1";
-			RealShips[sti(Pchar.Ship.Type)].BaseName = "NewFlyingdutchman";
-			/* RealShips[sti(Pchar.Ship.Type)].CannonsQuantity = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMax = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMin = 58;
-			RealShips[sti(Pchar.Ship.Type)].rcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].lcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].fcannon = 6;
-			RealShips[sti(Pchar.Ship.Type)].bcannon = 4; */
-			if(Get_My_Cabin() == "My_Cabin") RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin";	
-			else RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin_Huge";
+			
+			shTo = &RealShips[sti(pchar.Ship.Type)];
+			object newShip;
+			aref arTuning;
+			CopyAttributes(&newShip, shTo);
+			
+			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, 0, pchar);
+			
+			if(CheckAttribute(newShip, "Tuning"))
+			{
+				makearef(arTuning, newShip.tuning);
+				for (int iQty = 0; iQty < GetAttributesNum(arTuning); iQty++)
+				{
+					aref realTuning = GetAttributeN(arTuning, iQty);
+					string tuningName = GetAttributeName(realTuning);
+					UpgradeShipParameter(pchar, tuningName);
+				}
+			}
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0);//белый хлопковый парус
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);
 			DeleteAttribute(pchar, "ship.hulls");
 			DeleteAttribute(pchar, "ship.blots");	
 			CloseQuestHeader("renovate_fdm");
+			Achievment_Set("ach_CL_178");
 		break;
 		
 	}

@@ -102,3 +102,45 @@ Chavinavi {Chavinavi}
 TempleSkeleton {Szkielet}
 Danielle {Danielle}
 Hawk {Hawk}
+Smuggler_0 {Tajemniczy pijak}
+Smuggler_1 {Anonim}
+Smuggler_2 {Ktoś}
+Smuggler_3 {Osoba incognito}
+Smuggler_4 {Jan Kowalski}
+Smuggler_5 {Nieznajomy}
+Smuggler_6 {Nieznany}
+Smuggler_7 {Podejrzany gość}
+Sharle {Sharle}
+de Maure {de Maure}
+de Montoya {de Montoya}
+Willy {Willy}
+Paterson {Paterson}
+Mary {Mary}
+Kasper {Kasper}
+Helena {Helen}
+McArthur {McArthur}
+Tichingitu {Tichingitu}
+Hercule {Hercule}
+Tonzag {Tonzag}
+Charlie {Charlie}
+Knippel {Knippel}
+Longway {Longway}
+Folke {Folke}
+Deluc {Deluc}
+Claude {Claude}
+Duran {Durand}
+Hugo {Hugo}
+Avendel {Avendel}
+Raymond {Raymond}
+Baker {Baker}
+Tommy {Tommy}
+Irons {Irons}
+Alonso {Alonso}
+Morrison {Morrison}
+Julie {Julie}
+d'Armagnac {d'Armagnac}
+Henri {Henri}
+d'Aubuisson {d'Aubuisson}
+Alicia {Alicia}
+Chardon {Chardon}
+de Maldonado {de Maldonado}

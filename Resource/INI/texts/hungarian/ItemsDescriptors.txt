@@ -1,7 +1,7 @@
 descriptor_Fancy {Fancy}
 descriptor_Exotic {Exotic}
 descriptor_HighQuality {Superior}
-descriptor_GoodFit {Plain}
+descriptor_GoodFit { }
 descriptor_HeartDefence { }
 descriptor_Unremarkable {Plain}
 descriptor_WeaponType_0 { }
@@ -40,6 +40,7 @@ descriptor_Special {Special}
 descriptor_Tool { }
 descriptor_Valuable { }
 descriptor_BulletNeedPowder { }
+descriptor_descr_BulletNeedPowder { }
 descriptor_GrapeAmmo { }
 descriptor_BulletAmmo { }
 descriptor_BombAmmo { }
@@ -64,8 +65,8 @@ This item has no place in the hands of a good Christian, and chilling rumors abo
 Increases Fleet Power by $percent($DescriptorBaseValue(Exotic)); effects stack.
 }
 descriptor_descr_HighQuality {This weapon is crafted so well that its critical damage is increased by $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {This piece of armor fits remarkably well, increasing attack speed with any weapon by 5%.}
-descriptor_descr_HeartDefence {This armor is reinforced at vital points, reducing enemy critical damage by 20%.}
+descriptor_descr_GoodFit {This piece of armor fits remarkably well, increasing attack speed with any weapon by $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {This armor is reinforced at vital points, reducing enemy critical damage by $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Everyone has items like this. With it, you won’t stand out or be remembered.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 Stamped armor is mass-produced to equip troops and is used in European wars. 
 Reduces incoming damage by 22%.
 }
-descriptor_descr_ArmorMaterial_4 {Forging cast armor is a complex and costly process, making it a rare sight in the Caribbean. Reduces incoming damage by 35%.}
+descriptor_descr_ArmorMaterial_4 {Producing high-quality forged armor is a complex and costly process, which makes it a rare sight in the Caribbean. Reduces incoming damage by 35%.}
 descriptor_descr_AmuletType_0 {Draws on omens, sea superstitions, and real cause-and-effect.}
 descriptor_descr_AmuletType_1 {Draws on the power of pagan gods and native rituals.}
 descriptor_descr_AmuletType_2 {Draws on the power of Christian saints and righteous faith.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Various trinkets found in abundance across the Caribbean.
 descriptor_Alchemy { }
 descriptor_descr_Alchemy {This item can be crafted or modified using Alchemy.}
 descriptor_Quest { }
+descriptor_descr_Quest {This item is required for a quest. It cannot be dropped or sold.}
 descriptor_Map { }
+descriptor_descr_Map {A scrap of paper bearing markings of some locality. All such items are immediately copied into the atlas.}
 descriptor_Fragile { }
 descriptor_descr_Fragile {This item breaks after a certain number of uses.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Effect applies to the Cannoneer.}
+descriptor_descr_Boatswain {Effect applies to the Boatswain.}
+descriptor_descr_Carpenter {Effect applies to the Carpenter.}
+descriptor_descr_Navigator {Effect applies to the Navigator.}
+descriptor_descr_Treasurer {Effect applies to the Treasurer.}
+descriptor_descr_Doctor {Effect applies to the Doctor.}
 descriptor_Ingredient {Ingredient}
 descriptor_Jewelery { }
 descriptor_descr_Jewelery {Precious and semi-precious stones. Can be sold or used in alchemy.}
 descriptor_descr_Ingredient {This item is used in alchemy.}
+descriptor_Alternate {Adjustment}
+descriptor_descr_Alternate {The skill has one effect for the main hero and a different effect for all other characters.}
+descriptor_IntoxicatingPotion { }
+descriptor_descr_IntoxicatingPotion {Loosens tongues, lightens thoughts, but imposes penalties to skills.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Effect is useful for Vanguards.}

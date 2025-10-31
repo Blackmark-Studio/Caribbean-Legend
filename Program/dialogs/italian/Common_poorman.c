@@ -212,25 +212,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_5":
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload5_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_poorman";
-			pchar.quest.trial_spy_poorman.win_condition.l1 = "Timer";
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.hour  = 22.00;
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
-			pchar.quest.trial_spy_poorman.function = "Trial_SetPoormanInPort";
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1 = "Timer";
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.hour  = 6.00;
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition = "Trial_ReturnPoormanNorm";
-			//SetTimerCondition("Trial_ReturnPoormanNorm", 0, 0, 1, false);
-			AddQuestRecord("Trial", "15");
+			AddDialogExitQuestFunction("Trial_Poorman_DlgExit");
 		break;
 		
 		case "trial_6":
@@ -261,14 +244,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_fail_1":
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_fail";
-			AddQuestRecord("Trial", "16");
-			sld = characterFromId("Florian");
-			sld.DeckDialogNode = "florian_failspy_5";
+			AddDialogExitQuestFunction("Trial_FailPoormanInPort");
 		break;
 		
 		case "trial_8":
@@ -282,49 +259,24 @@ void ProcessDialogEvent()
 			dialog.text = "Uno dei marinai dell''Alacantara' - Felipe Dabinho... Ma in realtà non è affatto un segreto, e lo stesso Sua Grazia il governatore aveva ordinato...";
 			link.l1 = "Capisco. È quello che mi aspettavo. Spie francesi sono in città, ma questi idioti stanno chiacchierando come ragazze di mercato, incredibile! Qualsiasi arrivato può scoprire tutto ciò che vuole sui piani di Sua Grazia. Oh, quel Felipe Dabinho è nei guai seri ora! E anche il nostromo dell''Alacantara'! È colpa sua se il suo equipaggio non sa nulla sulla disciplina!";
 			link.l1.go = "trial_10";
-			QuestPointerToLoc("PortoBello_Town", "reload", "gate_back");
-			QuestPointerToLoc("PortoBello_ExitTown", "reload", "reload1_back");
-			QuestPointerToLoc("PortoBello_Jungle_01", "reload", "reload2_back");
-			QuestPointerToLoc("PortoBello_Jungle_02", "reload", "reload3_back");
-			QuestPointerToLoc("shore47", "reload", "boat");
 		break;
 		
 		case "trial_10":
 			dialog.text = "Oh... Quindi, lo sapevi fin dall'inizio? Ma perché... Non è colpa mia! Mi hai detto di farlo!";
 			link.l1 = "Non è stata colpa tua, non dovresti preoccuparti, nessuno ti punirà. Ora sappiamo che l'equipaggio dell' 'Alacantara' può sparare qualsiasi informazione al nemico - anche ciò che dovrebbe essere tenuto segreto. Va bene, ora puoi andare. Grazie per il tuo aiuto. Vai a spendere i tuoi soldi.";
 			link.l1.go = "trial_11";
-			// belamour legendary edition -->
 			link.l2 = "Addio. (Uccidilo)";
 			link.l2.go = "trial_11a";
 		break;
 		
 		case "trial_11a":
 			DialogExit();
-			AddMoneyToCharacter(npchar, 5000);
-			npchar.SaveItemsForDead  = true; 
-			LAi_SetActorType(pchar);
-			// если не надет пистоль или мушкет, то выдадим строевой 
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
-			{
-				GiveItem2Character(pchar, "pistol1");
-				EquipCharacterbyItem(pchar, "pistol1");
-			}
-			LAi_ActorAnimation(pchar, "Shot", "RIP_Bomzh", 1.0); 
+			AddDialogExitQuestFunction("Trial_KillPoormanInPort");
 		break;
 		
 		case "trial_11":
-			AddCharacterExpToSkill(pchar, "Leadership", 100);
-			AddCharacterExpToSkill(pchar, "Sneak", 50);
-			// <-- legendary edition
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_win";
-			AddQuestRecord("Trial", "17");
-			sld = characterFromId("Florian");
-			sld.DeckDialogNode = "florian_12";
-			AddLandQuestMark(sld, "questmarkmain");
+			AddDialogExitQuestFunction("Trial_PeacePoormanInPort");
 		break;
 		
 		// --> калеуче

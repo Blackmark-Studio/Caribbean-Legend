@@ -21,4 +21,4 @@ MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> заболел тропиче
 MiniQuests_21 {@<sld.name> помещен на ваш корабль под стражу}
 MiniQuests_22 {Прошёл час...}
 MiniQuests_23 {, что на ~}
-MiniQuests_24 {Алонсо}
+MiniQuests_24 { }

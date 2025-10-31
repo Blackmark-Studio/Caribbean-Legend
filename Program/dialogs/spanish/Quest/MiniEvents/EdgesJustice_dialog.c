@@ -219,17 +219,7 @@ void ProcessDialogEvent()
 
 		case "Naemnik_29":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
-			LAi_SetPlayerType(pchar);
-
-			LAi_SetWarriorType(npchar);
-			npchar.lifeday = 0;
-			LAi_CharacterDisableDialog(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PEACE);
-
-			AddQuestRecord("GS", "7");
-			CloseQuestHeader("GS");
+			AddDialogExitQuestFunction("Naemnik_29");
 
 			AddSimpleRumourCity("Dicen que encontraron al jefe del puerto muerto en su propia casa. Junto a él se hallaron notas que demuestran su implicación en las desapariciones de barcos. Qué vergüenza para nuestra ciudad...", "Beliz", 30, 1, "");
 			AddSimpleRumourCity("¿Ya lo oíste? Alguien se metió en la casa del jefe del puerto, mató a la guardia y lo ejecutó. En el cadáver se encontraron notas con rutas de barcos desaparecidos — ¡escritas por él mismo! ¡Un servidor de la corona y en realidad, un traidor! ¡Recibió lo que merecía! ¿Y el gobernador? ¿Dónde ha estado todo este tiempo?", "Beliz", 30, 1, "");

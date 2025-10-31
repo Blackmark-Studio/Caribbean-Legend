@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Helena_hire_3";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-			notification("Элен одобряет", "Helena");
+			Notification_Approve(true, "Helena");
 			npchar.lastname = "Шарп";
 		break;
 		
@@ -529,6 +529,7 @@ void ProcessDialogEvent()
 			LaunchFrameForm();
 			DoQuestCheckDelay("Saga_HelenaRomantic_5", 4.0);
 			pchar.questTemp.Saga.Helena_officer = "true"; // показатель, что Элен - наша навсегда
+			npchar.SpecialRole = "fgirl";
 			
 			pchar.GenQuest.BrothelCount = 0;
 			
@@ -1111,13 +1112,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "GoldenGirl_16":
-			dialog.text = "Давай-ка уточним, правильно ли я поняла. Ты пропал почти на сутки, выиграл в карты баснословно дорогую... даму. Теперь идёшь драться из-за неё с могущественным благородным выродком, которого даже нельзя убивать, а я... мы все, должны сидеть на заднице и ждать, чем всё закончится? Интересно, что я должна думать по этому поводу? Как считаешь?";
+			dialog.text = "Давай-ка уточним, правильно ли я поняла. Ты пропал почти на сутки, выиграл в карты баснословно дорогую... даму. Теперь идёшь драться из-за неё с могущественным благородным выродком, которого даже нельзя убивать, а я... мы все, должны сидеть и ждать, чем всё закончится? Интересно, что я должна думать по этому поводу? Как считаешь?";
 			link.l1 = "Элен, послушай, ты имеешь право злиться, и мне очень жаль, но всё не так просто...";
 			link.l1.go = "GoldenGirl_17";
 		break;
 		
 		case "GoldenGirl_17":
-			dialog.text = "Знаешь что, хватит. Иди и делай то, что считаешь нужным. Мне здесь, судя по всему, места нет, но об этом мы поговорим, когда всё закончится. А я, пока, пойду и попытаюсь это как следует запить. За твоим новым фрегатом я присмотрю, не беспокойся. И капитан, постарайся выжить... чтоб я сама могла тебя прибить.";
+			dialog.text = "Знаешь что, хватит. Иди и делай то, что считаешь нужным. Мне здесь, судя по всему, места нет, но об этом мы поговорим, когда всё закончится. А я, пока, пойду и попытаюсь это как следует запить. За твоим новым фрегатом я присмотрю, не беспокойся. И, капитан, постарайся выжить... чтоб я сама могла тебя придушить.";
 			link.l1 = "Элен, да позволь мне всё объяснить, наконец! Проклятье... Опять?!";
 			link.l1.go = "GoldenGirl_23";
 		break;
@@ -2436,7 +2437,7 @@ void ProcessDialogEvent()
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-				notification("Элен не одобряет", "Helena");
+				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
 		break;
@@ -2657,7 +2658,7 @@ void ProcessDialogEvent()
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "Зря ты так, кэп. Всегда так скор на драку? Ну да ладно, победителей не судят. Пошли, заглянем в резиденцию, больше тут всё равно ничего стоящего не наблюдается.";
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-						notification("Элен не одобряет", "Helena");
+						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "Молодец, мой капитан, что попытался решить вопрос по уму, прежде чем лезть в драку. Пошли, заглянем в резиденцию, больше тут всё равно ничего стоящего не наблюдается.";
 					}
@@ -2669,7 +2670,7 @@ void ProcessDialogEvent()
 				case "B":
 					dialog.text = "Красиво ты развёл этих придурков, мой капитан! Я чуть не расхохоталась, честное слово! Пошли, заглянем в резиденцию, больше тут всё равно ничего стоящего не наблюдается.";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Элен одобряет", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "А как же тот огромный, вытащенный на сушу, корабль?";
 					link.l1.go = "after_ambush_1";
@@ -2678,7 +2679,7 @@ void ProcessDialogEvent()
 				case "C":
 					dialog.text = "Подожди-подожди, дай девке отдышаться! Ты и правда тот самый Чарли Принц?";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Элен одобряет", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Был такой период в моей биографии, да. Ты впечатлена?";
 					link.l1.go = "after_ambush_c";
@@ -2724,7 +2725,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "Спасибо, мой капитан. Мне приятно это слышать. Особенно приятно слышать это во второй раз. Ты хорошо меня знаешь.";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-				notification("Элен одобряет", "Helena");
+				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "Спасибо, мой капитан. Мне приятно это слышать.";
 			}
@@ -2747,7 +2748,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "Думаешь, заслуживаю? Никогда не тратила деньги на такие безделушки, но всё бывает в первый раз, а? Смотрю, ты не прекращаешь попытки заставить меня забыть о море, да, кэп? Может, ты и прав...";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
-				notification("Элен не одобряет", "Helena");
+				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "Думаешь, заслуживаю? Никогда не тратила деньги на такие безделушки, но всё бывает в первый раз, а?";
 			}

@@ -502,8 +502,8 @@ void Tonzag_LoadDeck() {
 				GiveItem2Character(sld, "blade_10");
 				EquipCharacterByItem(sld, "blade_10");
 				
-				sld.name = StringFromKey("Tonzag_2");
-				sld.lastname = StringFromKey("Tonzag_3");
+				sld.name = GetCharacterName("Alonso");
+				sld.lastname = "";
 				sld.greeting = "hambit_other_4";
 				sld.dialog.FileName = "Quest\CompanionQuests\Tonzag.c";
 				
@@ -1461,8 +1461,8 @@ void Tonzag_EnterAlonso() {
 	LAi_ActorTurnToCharacter(CharacterFromID("Tonzag"), CharacterFromID("Tonzag_Captive"));
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Tonzag_Alonso", "Alonso", "man", "man", 25, FRANCE, -1, true, "pirate"));
-	sld.name = StringFromKey("Tonzag_2");
-	sld.lastname = StringFromKey("Tonzag_3");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.greeting = "hambit_other_4";
 	sld.Dialog.Filename = "Quest\CompanionQuests\Tonzag.c";
 	sld.dialog.currentnode = "alonso";
@@ -1653,7 +1653,7 @@ void Tonzag_LateCaracas(string qName) {
 	
 	CloseQuestHeader("Tonzag");
 	//Открыт 'Медный всадник'
-	notification(StringFromKey("Tonzag_6"), "Tonzag");
+	notification(DLGO(StringFromKey("Tonzag_6"), &NullCharacter), "Tonzag");
 	Tonzag_UnlockTortuga();
 }
 
@@ -1809,7 +1809,7 @@ void Tonzag_ResetTonzag() {
 	
 	DeleteAttribute(pchar, "GenQuest.CannotWait");
 	sld = CharacterFromID("Tonzag");
-	SetCharacterPerk(sld, "Dragoon");
+	SetCharacterPerk(sld, "Mule");
 	ReturnOfficer_Tonzag();
 	
 	Achievment_Set("ach_CL_91");
@@ -2086,6 +2086,7 @@ void Tonzag_WinInChurch(string qName) {
 	
 	LAi_SetActorType(sld);
 	sld.dialog.currentnode = "tonzag_afterchurchfight";
+	sld.SpecialRole = "deadman";
 	SetActorDialogAny2Pchar(sld.id, "pchar_back_to_player", 0.0, 1.0);
 	LAi_ActorFollow(sld, pchar, "ActorDialog_Any2Pchar", -1);
 }

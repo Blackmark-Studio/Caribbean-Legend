@@ -16,8 +16,6 @@ void LEDR_Start()
 	LAi_SetImmortal(sld, true);
 	GiveItem2Character(sld, "blade_05");
 	EquipCharacterByItem(sld, "blade_05");
-	
-	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
 }
 
 void LEDR_End()
@@ -196,6 +194,7 @@ void LEDR_6_kino_10(string qName)
 	for (i=1; i<=4; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("LEDR_Skel_"+i, "Chavinavi_1", "man", "skeleton", 10, PIRATE, -1, true, "pirate"));
+		sld.monster = true;
 		LAi_SetActorType(sld);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto",  "goto2");
 	}
@@ -377,6 +376,11 @@ void LEDR_14()
 	
 	CloseQuestHeader("LEDR");
 	AddQuestRecord("LEDR", "4");
+	pchar.questTemp.LEDR_QuestCompleted = true;
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	Achievment_Set("ach_CL_179"); // ачивка за LaEspadaDelRey
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 bool LaEspadaDelRey_QuestComplete(string sQuestName, string qname)

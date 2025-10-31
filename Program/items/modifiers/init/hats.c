@@ -62,12 +62,14 @@ bool InitHatModifiers(ref item)
 			AddDescriptor(item, "Alchemy", -1);
 			AddDescriptor(item, "ArmorMaterial_2", -1);
 			AddDescriptor(item, "Fragile", -1);
+			SetModifier(item, M_REDUCE_DAMAGE, 0.18);
 		}
 		break;
 		case "hat11":
 		{
 			AddDescriptor(item, "Exotic", -1);
 			AddDescriptor(item, "Special", -1);
+			SetModifier(item, SPECIAL_TYPE + SPECIAL_E, 2);
 		}
 		break;
 	}

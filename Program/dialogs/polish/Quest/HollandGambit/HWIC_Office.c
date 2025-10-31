@@ -487,7 +487,7 @@ void ProcessDialogEvent()
 				dialog.text = "Doceniam pańskie podejście do biznesu i jestem gotów rozważyć pańską prośbę. Być może moglibyśmy zwiększyć wolumen, powiedzmy, pięciokrotnie. Jednak organizacja takich dostaw będzie wymagać znacznych zasobów. Będziemy musieli rozszerzyć powierzchnię magazynową, wzmocnić ochronę i zapewnić niezawodne trasy dostaw. Ponieważ przynosi to korzyści również panu, proponuję, abyśmy podzielili między sobą te wydatki.";
 				link.l1 = "To wszystko brzmi rozsądnie. Jaką kwotę uważa pan za niezbędną do pokrycia tych wydatków?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Test umiejętności zaliczony", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

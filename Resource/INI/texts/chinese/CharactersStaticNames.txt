@@ -102,3 +102,45 @@ Chavinavi {Chavinavi}
 TempleSkeleton {temple skeleton}
 Danielle {Danielle}
 Hawk {Hawk}
+Smuggler_0 {神秘的醉汉}
+Smuggler_1 {匿名者}
+Smuggler_2 {某人}
+Smuggler_3 {身份不明者}
+Smuggler_4 {张三}
+Smuggler_5 {陌生人}
+Smuggler_6 {未知者}
+Smuggler_7 {可疑来访者}
+Sharle {Sharle}
+de Maure {de Maure}
+de Montoya {de Montoya}
+Willy {Willy}
+Paterson {Paterson}
+Mary {Mary}
+Kasper {Kasper}
+Helena {Helen}
+McArthur {McArthur}
+Tichingitu {Tichingitu}
+Hercule {Hercule}
+Tonzag {Tonzag}
+Charlie {Charlie}
+Knippel {Knippel}
+Longway {Longway}
+Folke {Folke}
+Deluc {Deluc}
+Claude {Claude}
+Duran {Durand}
+Hugo {Hugo}
+Avendel {Avendel}
+Raymond {Raymond}
+Baker {Baker}
+Tommy {Tommy}
+Irons {Irons}
+Alonso {Alonso}
+Morrison {Morrison}
+Julie {Julie}
+d'Armagnac {d'Armagnac}
+Henri {Henri}
+d'Aubuisson {d'Aubuisson}
+Alicia {Alicia}
+Chardon {Chardon}
+de Maldonado {de Maldonado}

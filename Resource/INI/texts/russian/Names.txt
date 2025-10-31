@@ -1,0 +1,35 @@
+Sharle {Шарль}
+Diego {Диего}
+Willy {Вильям}
+Mary {Мэри}
+Helena {Элен}
+Tichingitu {Тичингиту}
+Tonzag {Тонзаг}
+Knippel {Книппель}
+Longway {Лонгвэй}
+Folke {Фульк}
+Duran {Дюран}
+Avendel {Авендел}
+Baker {Бейкер}
+Irons {Айронс}
+Alonso {Алонсо}
+de Maure {де Мор}
+de Montoya {де Монтойя}
+Paterson {Патерсон}
+Kasper {Каспер}
+McArthur {МакАртур}
+Hercule {Эркюль}
+Charlie {Чарли}
+Deluc {Делюк}
+Claude {Клод}
+Hugo {Хьюго}
+Raymond {Раймонд}
+Tommy {Томми}
+Thomas {Томас}
+Morrison {Моррисон}
+Julie {Жюли}
+d'Armagnac {д'Арманьяк}
+Henri {Анри}
+d'Aubuisson {д'Обюссон}
+Alicia {Алисия}
+Chardon {Шардон}

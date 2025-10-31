@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 			dialog.text = "Bien. Entonces lo dividiremos por la mitad.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Aquí tienes. He conseguido "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1223,7 +1223,7 @@ void ProcessDialogEvent()
 			dialog.text = "Qué alegría. ¿Cuánto has traído?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Aquí tienes. Tengo "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1686,7 +1686,7 @@ void ProcessDialogEvent()
 				dialog.text = "Me alegra que el guayacán sea de tu agrado, " + sStr + ". Aumentar los envíos no es problema, pero hay un 'pero', ya sabes. Con el aumento de volumen aparece también un rastro que puede atraer atención indeseada, especialmente de las autoridades inglesas. Pero si añadimos al negocio manos confiables, oídos fieles y personas en la residencia que ayuden a permanecer en las sombras, todo se puede arreglar. Claro que no saldrá barato - tres mil doblones para evitar el tesoro de la ciudad y las necesidades de Inglaterra. Entonces podré suministrarte cinco veces más. ¿Qué dices?";
 				link.l1 = "¿Tres mil doblones? ¡Jan, eso es un robo a plena luz del día! ¿No podríamos arreglárnoslas con menos gastos? ¿Quizás haya una manera de resolver el asunto sin tales sumas fabulosas?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

@@ -1,8 +1,8 @@
 LongHappy_1 {Para tomar decisiones de boda, USE LA OPCIÓN DE PENSAR EN VOZ ALTA}
 LongHappy_2 {¡El abad Benoit ha desembarcado!}
 LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barriles de ron y @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 barriles de ron, 20 barriles de ron son 300.000 pesos.}
-LongHappy_5 {100 barriles de ron, 50 barriles de ron son 500.000 pesos.}
+LongHappy_4 {50 barriles de ron, 20 barriles de vino son 300.000 pesos.}
+LongHappy_5 {100 barriles de ron, 50 barriles de vino son 500.000 pesos.}
 LongHappy_6 {Pero antes tengo que organizar una fiesta en la taberna de Saint-Pierre. ¡Date prisa!}
 LongHappy_7 {Pero antes tengo que organizar una celebración en Isla Tesoro. ¡Date prisa!}
 LongHappy_8 {¡Lo primero que tienes que hacer es organizar una fiesta en la taberna de Saint-Pierre!}
@@ -13,7 +13,7 @@ LongHappy_12 {Svensson}
 LongHappy_13 {Cachalote}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
-LongHappy_16 {Fortune}
+LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Ha pasado algún tiempo...@<NewStr()>La fiesta está en pleno apogeo...}

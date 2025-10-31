@@ -63,7 +63,7 @@ Roger_62 {Two days later...@<NewStr()>Six longboats has been built...}
 Roger_63 {Demetrio}
 Roger_64 {Rojas}
 Roger_65 {Kitty}
-Roger_66 {Torero}
+Roger_66 { }
 Roger_67 {Ignacio}
 Roger_68 {Marco}
 Roger_69 {Exploration mode: timer is disabled.}
@@ -91,7 +91,7 @@ Roger_90 {Exploration mode: Corrida - the coordinates are correct}
 Roger_91 {Exploration mode: Corrida - the coordinates are not correct}
 Roger_92 {Spanish convoy on the horizon!}
 Roger_93 {Toro de Oro}
-Roger_94 {Red Dragon}
+Roger_94 { }
 Roger_95 {A huge explosion on @<pchar.ship.name>!}
 Roger_96 {We've arrived to Cartagena! Tyrex orders to sail to Covenas Bay}
 Roger_97 {Landing parties are ready to storm Cartagena!}
@@ -104,7 +104,7 @@ Roger_103 {Tonneur}
 Roger_104 {Libre}
 Roger_105 {Myutin}
 Roger_106 {Inconnu}
-Roger_107 {Alonso}
+Roger_107 { }
 Roger_108 { }
 Roger_109 {Three hours later...}
 Roger_110 {Rodgar}

@@ -30,7 +30,7 @@ trait03 {Znak jakości}
 trait03_desc {Zestaw glifów, pieczęci i patentów sprawia, że ładunek z tego statku jest rozpoznawalny, a jego przybycie do portu to dobry znak dla lokalnych kupców. Udane transakcje handlowe poprawiają relacje z narodem portu, a dobre relacje czynią handel bardziej opłacalnym.}
 trait03_desc2
 {
-Zmniejsza karę do sprzedaży: 3% za poziom relacji.Próg zysku do poprawy relacji z narodem: 25000.
+Zmniejsza karę do sprzedaży: 3% za poziom relacji.Próg zysku do poprawy relacji z narodem: 50000.
 }
 trait04 {Awaryjne żagle}
 trait04_desc {W przypadku krytycznego zagrożenia dla statku marynarze stawiają na rejach specjalne szybkomontażowe żagle, tymczasowo zwiększając prędkość statku.}

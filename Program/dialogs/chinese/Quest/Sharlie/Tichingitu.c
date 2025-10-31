@@ -71,9 +71,7 @@ void ProcessDialogEvent()
 			link.l1 = "唉, 我说啊……一个饿肚子的可怜人偷了点零钱, 就要上绞刑架……Tichingitu, 俺会尽力帮你的。俺认识Fadey, 就是你溜进他家的那个壮汉。也许俺能想点办法……俺这就去找指挥官谈谈。";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
-			pchar.questTemp.Sharlie.Tichingitu = "commandante";
-			AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
-			AddQuestRecord("Tichingitu", "2");
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_1");
 		break;
 		
 		case "Tichingitu_wait":
@@ -93,29 +91,8 @@ void ProcessDialogEvent()
 		case "Tichingitu_7":
 			dialog.text = "白脸的笑话? Tichingitu自由了吗? ";
 			link.l1 = "不, 我不是在开玩笑。他们马上就要打开你的牢房, 把你放出来。跟我走, 我带你离开这监狱。";
-			link.l1.go = "Tichingitu_8";
-		break;
-		
-		case "Tichingitu_8":
-			DialogExit();
-			chrDisableReloadToLocation = true;
-			bDisableFastReload = true;
-			DoQuestReloadToLocation("BasTer_exittown", "rld", "aloc9", "TichingituFree"); // 170712
-			pchar.quest.FreeTichingituOver.over = "yes"; //снять таймер
-			if (GetHour() > 17.0)
-			{
-				WaitDate("", 0, 0, 0, 13, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
-			if (GetHour() < 8.0)
-			{
-				WaitDate("", 0, 0, 0, 7, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_2");
 		break;
 		
 		case "Tichingitu_9":
@@ -146,14 +123,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_exit":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			AddQuestRecord("Tichingitu", "5");
-			CloseQuestHeader("Tichingitu");
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload2_back", "none", "", "", "", 10.0);
-			npchar.lifeday = 0;
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.systeminfo.tutorial.Fighter = true;
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_3");
 		break;
 		
 		case "Tichingitu_13":
@@ -164,49 +134,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_hire":
 			DialogExit();
-			DeleteAttribute(npchar, "LifeDay");
-			LAi_SetImmortal(npchar, false);
-			npchar.quest.OfficerPrice = sti(pchar.rank)*20;
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.CompanionDisable = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			SetCharacterRemovable(npchar, true);
-			npchar.Payment = true;
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.CanTakeMushket = true;
-			LAi_SetOfficerType(npchar);
-			NextDiag.CurrentNode = "Tichingitu_officer";
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
-			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.OfficerAttRange = 35.0;
-			
-			AddQuestRecord("Tichingitu", "4");
-			CloseQuestHeader("Tichingitu");
-			// Sinistra - Начало квеста "Знакомство с индейцами"
-			string sModel = "Miskito_"+(rand(5)+1);
-			sld = GetCharacter(NPC_GenerateCharacter("ListKakao", sModel, "man", "man", 1, PIRATE, -1, false, "quest"));
-			sld.name = "Cocoa";
-			sld.lastname = "Leaf";
-			GiveItem2Character(sld, "blade_01");
-			EquipCharacterByItem(sld, "blade_01");
-			AddItems(sld, "jewelry53", rand(20)+180);
-			AddItems(sld, "cannabis1", 3);
-			GiveItem2Character(sld, "indian_10");
-			GiveItem2Character(sld, "talisman11");
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			LAi_SetImmortal(sld, true);
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "ZsI_ListKakao";
-			ChangeCharacterAddressGroup(sld, "BasTer_ExitTown", "item", "item3");
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", -1, 0);
-			//LaunchTutorial("Fighter", 1);
+			AddDialogExitQuestFunction("Tichingitu_Hire");
 		break;
 		
 	//--> ----------------------------------- офицерский блок ------------------------------------------
@@ -484,7 +412,7 @@ void ProcessDialogEvent()
 		
 	// Тичингиту говорит о том, что нужно спасти Делюка
 		case "Del_Deluck":
-			dialog.text = "还要再加一百金币? ";
+			dialog.text = "再来40个双龙? ";
 			link.l1 = "嗯? 你是问我是不是又要为Deluc的保释金买单? ";
 			link.l1.go = "Del_Deluck_1";
 		break;

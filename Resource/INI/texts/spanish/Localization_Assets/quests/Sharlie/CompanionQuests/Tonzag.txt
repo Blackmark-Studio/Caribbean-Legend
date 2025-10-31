@@ -1,5 +1,5 @@
 Tonzag_1 {Cazadores de recompensas}
-Tonzag_2 {Alonso}
+Tonzag_2 { }
 Tonzag_3 { }
 Tonzag_4 {Han pasado 6 horas...}
 Tonzag_5 {Modo de exploración: el temporizador está desactivado.}

@@ -26,7 +26,7 @@ Caleuche_25 { }
 Caleuche_26 {Nave fantasma all'orizzonte!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
-Caleuche_29 {Flying Heart}
+Caleuche_29 { }
 Caleuche_30 {Vi sentite più agili}
 Caleuche_31 {Ti senti più robusto}
 Caleuche_32 {Ti senti più forte}
@@ -36,5 +36,5 @@ Caleuche_35 {Ti senti più sicuro}
 Caleuche_36 {Ti senti ispirato}
 Caleuche_37 {la nave fantasma è all'orizzonte!}
 Caleuche_38 {Siete svenuti per le ferite...}
-Caleuche_39 {Alonso}
+Caleuche_39 { }
 Caleuche_40 { }

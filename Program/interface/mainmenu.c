@@ -470,9 +470,9 @@ void MainMenu_CreateShip()
 	aref aTmpPerks; makearef(aTmpPerks, rCharacter.TmpPerks);
 	
 	SendMessage(&InterfaceBackScene, "lsa", 2, "ship", &rCharacter); // set ship position
-	CreateEntity( rCharacter, "ship" );
+	CreateEntity(rCharacter, "ship");
 	ref rBaseShip = GetRealShip(sti(rCharacter.ship.type));
-	SendMessage( rCharacter, "laa", MSG_SHIP_CREATE, &rCharacter, &rBaseShip );
+	SendMessage(rCharacter, "laa", MSG_SHIP_CREATE, &rCharacter, &rBaseShip);
 }
 
 void MainMenu_CreateLocation() {

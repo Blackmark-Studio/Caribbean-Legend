@@ -59,7 +59,7 @@ void ApplyMigration(ref migrationState)
     {
         DeleteAttribute(&TreasureTiers[i], "");
     }
-	TreasureTiersInit(SandBoxMode);
+	TreasureTiersInit();
 	if(!bSingleItems[0])  DeleteUniqTreasure("Special", "indian_poison");
 	if(!bSingleItems[1])  DeleteUniqTreasure("Equip", "blade_29");
 	if(!bSingleItems[2])  DeleteUniqTreasure("Equip", "suit4");

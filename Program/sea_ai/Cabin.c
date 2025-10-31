@@ -179,7 +179,7 @@ void SetOfficersInCabin()
     int i;
     int idx;
 	
-	bool bFirstOfficerIsWoman;
+	bool bFirstOfficerIsWoman = false;
     
     mchr = GetMainCharacter();
 	for (i = 1; i < 4; i++)
@@ -187,7 +187,7 @@ void SetOfficersInCabin()
 		idx = GetOfficersIndex(mchr, i);
 		if (idx < 1) continue;
 		chr = &Characters[idx];
-		if(Get_My_Cabin() == "My_Cabin_Medium2" || Get_My_Cabin() == "My_Cabin")
+		if(NeedCabinTmpl())
 		{
 			if(chr.id == "Helena" && CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) 
 			{
@@ -377,7 +377,7 @@ void Cabin_ReloadEndFadeAfter()
 
 	bSeaReloadStarted = false;
 
-	Ship_RecreateStaticSounds();
+	Ship_RecreateStaticSounds(true);
 	
 	DoQuestCheckDelay("update_sea_after_cabin", 0.1);
 
@@ -902,7 +902,7 @@ void SetPrisonerInHold()
 	if(GetDLCenabled(DLC_APPID_1) && !RemoveAlonsoFromHold())
 	{
 		offref = GetCharacter(NPC_GenerateCharacter("Alonso_LP", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));
-		offref.name = StringFromKey("HollandGambit_23");
+		offref.name = GetCharacterName("Alonso");
 		offref.lastname = "";
 		offref.Dialog.Filename = "Quest\LoyaltyPack.c";
 		offref.Dialog.currentnode = "Alonso";
@@ -979,4 +979,15 @@ void SetOfficersInCampus()
 		}
 	}*/ //С какой целью это делалось?
 	//navy <-- 19.02.08
+}
+
+bool NeedCabinTmpl()
+{
+	if(Get_My_Cabin() == "My_Cabin_Medium2") return true;
+	else if(Get_My_Cabin() == "My_Cabin") return true;
+	else if(Get_My_Cabin() == "My_CabineFDM") return true;
+	else if(Get_My_Cabin() == "My_CabineFDMR") return true;
+	else if(Get_My_Cabin() == "My_Cabin_Huge") return true;
+	
+	return false;
 }

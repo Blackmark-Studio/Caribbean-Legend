@@ -2329,7 +2329,7 @@ void ProcessDialogEvent()
 			int iDay = 3-sti(GetQuestPastDayParam("questTemp.Sharlie_ship"));
 			sTemp = "У вас осталось "+FindRussianDaysString(iDay)+"";
 			if (iDay == 0) sTemp = "Сегодня - последний день";
-			dialog.text = "Ну, раз такое дело, тогда продолжим нашу беседу, месье. Как вы правильно заметили, было внесено за корабль пять тысяч песо. Но полную стоимость корабля я оцениваю в пятнадцать тысячи песо, вместе с боеприпасом. Так что с вас ещё десять тысяч - и корабль ваш\nПричём, согласно договору, вы должны выплатить эти деньги не позднее, чем через неделю после спуска корабля на воду. "+sTemp+", после чего я имею право продать этот корабль другому лицу. Кстати, покупатель уже есть, так что вам следует поторопиться.";
+			dialog.text = "Ну, раз такое дело, тогда продолжим нашу беседу, месье. Как вы правильно заметили, было внесено за корабль пять тысяч песо. Но полную стоимость корабля я оцениваю в пятнадцать тысяч песо, вместе с боеприпасом. Так что с вас ещё десять тысяч - и корабль ваш\nПричём, согласно договору, вы должны выплатить эти деньги не позднее, чем через неделю после спуска корабля на воду. "+sTemp+", после чего я имею право продать этот корабль другому лицу. Кстати, покупатель уже есть, так что вам следует поторопиться.";
 			if (sti(Pchar.money) >= 10000)
 			{
 				link.l1 = "Никуда мне торопиться не надо. У меня есть нужная сумма прямо сейчас. Вот, держите.";
@@ -2410,7 +2410,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Аделина";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2645,7 +2645,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Недостаточно развит навык (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Гарантирую, что найдётся. Цену не меняю. Ну так как? Ждать долго не буду.";
 				link.l1 = "Ладно-ладно. Согласен.";
 				link.l1.go = "IslaMona_7";
@@ -2653,7 +2653,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "Ладно, отнимем соточку. Девятьсот. Ниже не скину. И не проси.";
 				link.l1 = "И не буду. Согласен.";
@@ -2667,7 +2667,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Недостаточно развит навык (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Да хоть живую бабу туда закажи. Девятьсот.";
 				link.l1 = "Ладно-ладно. Согласен.";
 				link.l1.go = "IslaMona_7";
@@ -2675,7 +2675,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Точно? Не забудешь? Ладно, давай ещё сотню срежем. Но на этом все!";
 				link.l1 = "Не забуду. Договорились!";
@@ -2697,7 +2697,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Недостаточно развит навык (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "Дети от бордельных девок в зачет не идут, "+pchar.name+". Ты меня достал. Тысячу дублонов на бочку, или мы прощаемся.";
 				link.l1 = "То есть как это, не идут? Эх... Согласен, хапуга.";
@@ -2706,7 +2706,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Не знал, что у тебя дети есть... И что у тебя всё так плохо. Ладно, не жалостись. Семьсот. Почти себе в убыток.";
 				link.l1 = "Не забуду. Договорились!";

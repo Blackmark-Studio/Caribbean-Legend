@@ -81,14 +81,11 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Sharlie_6":
 			DialogExit();
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
-			// замораживаем ГГ
-			LAi_SetActorType(pchar);
-			LAi_ActorTurnToLocator(pchar, "goto", "goto17"); // 170712
 			// создаем штурмана
-			ref sld;
-			InitFolke("Folke", "Deluc");
+			sld = InitFolke("Folke", "Deluc");
+			pchar.questTemp.Sharlie = "takeskiper";	
+			ForceHeroAutolevel(sld);
+			AddDialogExitQuestFunction("Del_Turma");
 		break;
 		//<-- Бремя гасконца
 		
@@ -97,14 +94,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			DelLandQuestMark(npchar);
 			dialog.text = "Ha! Mondom, a pletykák a helyzetedrôl sokáig fogják Saint-Pierre-t szórakoztatni. De ne vegye magára, kapitány. Ön egyértelmûen a balszerencse áldozata. Jöjjön be, és ne aggódjon: a navigátora nem fogja megúszni ezt a beszélgetést, ha-ha!";
 			link.l1 = "Fergeteges. Köszönöm, tiszt úr.";
-            link.l1.go = "Del_Deluck_2";
-		break;
-		
-		case "Del_Deluck_2":
-			DialogExit();
-			DeleteAttribute(pchar, "questTemp.Del_Deluck");
-			pchar.questTemp.jailCanMove = true;
-			AddLandQuestMark(characterFromId("Folke"), "questmarkmain");
+            link.l1.go = "exit";
+			AddDialogExitQuestFunction("Del_prison");
 		break;
 		
 		case "Del_DeluckSvoboda":
@@ -120,27 +111,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "Del_DeluckSvoboda_2":
 			DialogExit();
 			DeleteAttribute(pchar, "questTemp.Del_DeluckSvoboda");
-			chrDisableReloadToLocation = true;
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
-			LAi_SetActorType(pchar);
-			LAi_ActorTurnToLocator(pchar, "goto", "goto17");
 			
 			sld = CharacterFromID("Folke");
-			LAi_CharacterEnableDialog(sld);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
 			sld.dialog.currentnode = "Del_Folke_10";
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-								
-			sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
 			
-			StartQuestMovie(true, false, true);
-			DoQuestCheckDelay("Del_Turma", 0.1);
+			AddDialogExitQuestFunction("Del_Turma");
 		break;
 		//<-- Миниквест "Делюк"
 	}

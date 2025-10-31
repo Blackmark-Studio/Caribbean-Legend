@@ -757,6 +757,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sld = characterFromId("Helena");
 			else sld = characterFromId("Mary");
 			sld.lastname = "де Мор";
+			sld.SpecialRole = "wife";
 			sld.dialog.currentnode = "LongHappy_31";
 			LAi_SetActorType(sld);
 			LAi_ActorDialogDelay(sld, pchar, "", 4.0);

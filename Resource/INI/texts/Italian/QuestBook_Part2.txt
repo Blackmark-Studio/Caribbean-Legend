@@ -1727,7 +1727,7 @@ Ho mancato la Utrecht. Ero così vicino, ma non sono riuscito a trovarla in mare
 #TEXT 14
 Un fallimento! Ho sprecato l'occasione di fare un accordo con il lavoratore; mi ha scambiato per una guardia, si è spaventato e mi ha attaccato come uno sciocco. Idiota. Ho dovuto ucciderli tutti. Peccato, ma ormai è finita.
 #TEXT 15
-È fatta. Sono riuscito a concludere un accordo con l'operaio: 25 dobloni per una balla. Ora devo salpare verso St. Christopher e incontrare Calvo Geffrey.
+È fatta. Sono riuscito a concludere un accordo con l'operaio: 5 dobloni per una balla. Ora devo salpare verso St. Christopher e incontrare Calvo Geffrey.
 #TEXT 16
 Sono già passati due mesi. Geffrey il Calvo avrà sicuramente già venduto la sua seta a qualcun altro. Peccato... ma credo di poter ancora riferire a Tyrex chi è stato l'acquirente. Dovrei arrivare a La Vega entro dieci giorni, così Tyrex avrà il tempo di procurarsi abbastanza seta. Spero che questo possa placare la sua possibile rabbia.
 #TEXT 17
@@ -1739,7 +1739,7 @@ Ho passato le informazioni ottenute da Husky Billy alle autorità locali. Ora as
 #TEXT 20
 È fatta. Il mio concorrente è stato eliminato da una pattuglia militare. Ho persino ricevuto una ricompensa di 10.000 pesos, niente male. Ora dovrei andare dal costruttore di navi; dopo questo, sarà sicuramente più accomodante.
 #TEXT 21
-È fatta. Sono riuscito a concludere un accordo con il costruttore di navi: 25 dobloni per una bobina. Ora devo salpare verso Saint Christopher e incontrare Calvo Geffrey.
+È fatta. Sono riuscito a concludere un accordo con il costruttore di navi: 5 dobloni per una bobina. Ora devo salpare verso Saint Christopher e incontrare Calvo Geffrey.
 #TEXT 22
 Bald Geffrey ha ricevuto le istruzioni: sta per salpare verso la Giamaica con il primo carico di seta per navi da parte di Marcus Tyrex. Io dovrei dirigermi a La Vega.
 #TEXT 23

@@ -1721,7 +1721,7 @@ J'ai raté l'Utrecht. J'étais si près du but, mais je n'ai pas réussi à le l
 #TEXT 14
 Un échec ! J'ai gâché ma chance de conclure un marché avec l'ouvrier ; il m'a pris pour un officier de patrouille, a pris peur et m'a bêtement attaqué. Imbécile. J'ai dû tous les tuer. C'est dommage, mais c'est fini.
 #TEXT 15
-C'est fait. J'ai réussi à trouver un accord avec l'ouvrier. 25 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
+C'est fait. J'ai réussi à trouver un accord avec l'ouvrier. 5 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
 #TEXT 16
 Cela fait déjà deux mois. Geffrey le Chauve a déjà dû vendre sa soie à quelqu'un d'autre. Dommage... mais je pense que je peux encore transmettre les informations sur l'acheteur à Tyrex. Je devrais arriver à La Vega dans dix jours pour donner à Tyrex le temps de rassembler suffisamment de soie. J'espère que cela apaisera sa colère éventuelle.
 #TEXT 17
@@ -1733,7 +1733,7 @@ J'ai transmis les informations que j'ai obtenues de Husky Billy aux autorités l
 #TEXT 20
 C'est fait. Mon concurrent a été éliminé par une patrouille militaire. J'ai même été récompensé par 10 000 pesos, ce qui est bien. Il faudrait que je voie le constructeur, il doit être plus influençable à l'heure qu'il est.
 #TEXT 21
-C'est fait. J'ai réussi à conclure un marché avec le constructeur de navires. 25 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
+C'est fait. J'ai réussi à conclure un marché avec le constructeur de navires. 5 doublons pour un rouleau. Maintenant, je devrais naviguer jusqu'à Saint-Christophe et voir Geffrey le Chauve.
 #TEXT 22
 Geffrey le Chauve a reçu des instructions - il est sur le point de partir pour la Jamaïque avec le premier lot de soie de navire de Marcus Tyrex. Je devrais aller à La Vega.
 #TEXT 23

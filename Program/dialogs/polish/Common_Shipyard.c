@@ -2358,7 +2358,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2593,7 +2593,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Zbyt niska umiejętność (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = " Gwarantuję, że się znajdzie. Cena bez zmian. Co ty na to? Nie będę czekał długo. ";
 				link.l1 = "Dobrze, dobrze, dobrze. Wezmę to.";
 				link.l1.go = "IslaMona_7";
@@ -2601,7 +2601,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Test umiejętności zaliczony", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "Dobrze, weźmiemy sto. Dziewięćset. Nie zejdę niżej. Nie proś mnie o to.";
 				link.l1 = " I nie będę. Zgadzam się.";
@@ -2623,7 +2623,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Test umiejętności zaliczony", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Jesteś pewien? Nie zapomnisz? Dobrze, zetnijmy kolejną setkę. Ale to już wszystko!";
 				link.l1 = "Nie zapomnę. Umowa stoi!";
@@ -2654,7 +2654,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Test umiejętności zaliczony", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Nie wiedziałem, że masz dzieci. I że sprawy mają się tak źle. Dobrze, nie narzekaj. Siedemset. To prawie strata.";
 				link.l1 = "Nie zapomnę. Umowa stoi!";

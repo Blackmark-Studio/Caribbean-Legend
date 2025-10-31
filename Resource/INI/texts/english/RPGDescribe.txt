@@ -14,18 +14,12 @@ Perception
 {
 Perceptive pirates can be marksmen, secret agents and Cannoneers.~Affects 'Accuracy' and 'Stealth' skills.
 }
-Agility
-{
-Agile pirates often make for the finest candidates for the Vanguard or Boatswain roles, with boarding being their forte.Affects 'Light Arms', 'Medium Arms', 'Boarding', 'Firearms'.~Determines the maximum amount of Energy.
-}
+Agility {Coordination of movements and dexterity of hands. ~ Affects: 'Boarding', 'Light Weapons', 'Medium Weapons', 'Pistols and Muskets', and the amount of energy gained per rank.}
 Charisma
 {
 Charismatic pirates are natural leaders, negotiators and Pursers. A natural leader has no need for violence in order to take goods from a merchant, they will give him everything without putting up a fight. The best sailors will follow him and the most beautiful women will wait for his arrival in every port.~Affects 'Leadership' and 'Trading'.Determines how many officers you can hire (A*2).
 }
-Intellect
-{
-Smart pirates learn fast and have a wide choice of career options: Surgeons, Cannoneers and Navigators.~Affects 'Trading', 'Cannons', and 'Navigation"Determines how fast you gain levels and perks.
-}
+Intellect {Innate tendencies and aptitudes, wit, and the ability to quickly adapt to situations. ~ Affects 'Commerce', 'Gunnery', 'Navigation', and the amount of energy gained per rank.}
 Endurance
 {
 Resilient pirates shine as Carpenters and Surgeons.~Affects 'Repairs' and 'Defence'.Same as (P), determines max HP and max inventory capacity.
@@ -36,35 +30,55 @@ Lucky pirates are perfect shooters, gamblers and adventurers.~'Firearms', 'Opp
 }
 Crit
 {
-The base probability of landing a critical hit depends on the combination of equipped items, perks, and stats.~(S) stat determines a chance of critical melee atack.(S) and (I) stats determine a chance of critical shot - but only for firearms of high quality.~Enemy's equipment and perks can alter your crit chance.
+Base chance to inflict a critical hit or shot on the enemy.
+~
+Depends on S and P.
+~
+Perks and equipment can increase this chance.
 }
 CharDefence
 {
-Base indicators of protection from cold weapons / firearms / enemy critical hit~Performance is affected by personal abilities and equipment~They do not adjust to the enemy's abilities and equipment.
+Base Damage Protection stats. Reduce all incoming damage by a specific percentage.
+ ~
+ These values are affected by personal Perks and equipment.
 }
 FencingL
 {
-Skill of wielding light blades, foils and the like. (R*0.9+I*0.1)
+Skill of wielding light blades, foils and the like.
+ (R*0.9+I*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 FencingS
 {
-Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility. (P*0.6+R*0.4)
+Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility.
+ (P*0.6+R*0.4)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 FencingH
 {
-Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength. (P*0.9+E*0.1)
+Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength.
+ (P*0.9+E*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 Pistol
 {
-Skill of using all kinds of firearms.(R*0.4+S*0.6)
+Skill of using all kinds of firearms.
+ (R*0.4+S*0.6)
+ ~
+ Affects damage and reloading speed.
 }
 Fortune
 {
-A little bit of proactive luck will come in handy in gambling and looting.Based on(S).
+A little bit of proactive luck will come in handy in gambling and looting.
+Based on(S).
 }
 Leadership
 {
-Affects the results of certain events and dialogues. Also the main skill when it comes to hiring new crew members.(A*0.8+T*0.2)
+Affects the results of certain events and dialogues. Also the main skill when it comes to hiring new crew members.
+(A*0.8+T*0.2)
 }
 Commerce
 {
@@ -80,7 +94,18 @@ Load the cannon quickly, roll it up and while the echo of the salvo is still roa
 }
 Sailing
 {
-The ability to guide a ship through storms and thick fog. The skill to use navigation instruments and command fleets. Even the largest and most formidable ship will fly like a bird, easily obeying the steady hand of an experienced skipper.Depends on Perception and Learnability (I*0.2+T*0.8)~To command a ship of a certain rate, a corresponding minimum Navigation level is required:rate 1 requires 95rate 2 requires 80rate 3 requires 65rate 4 requires 45rate 5 requires 25rate 6 requires 05Insufficient Navigation leads to penalties to all skills and hero characteristics. The greater the difference between the current and required Navigation value, the stronger the penalties.
+The ability to helm a vessel in any conditions, use instruments and command a squadron. Even the most capricious and unwieldy ship will obey the steady hand of an experienced skipper.
+ Depends on 'Perception' and 'Talent' (I0.2 + T0.8)
+ ~
+ To command a vessel of a given rate a corresponding minimum Navigation level is required:
+ rate 1 requires 90
+ rate 2 requires 70
+ rate 3 requires 55
+ rate 4 requires 40
+ rate 5 requires 20
+ rate 6 requires 01
+~
+ A lack of Navigation leads to penalties to all the hero's skills and attributes. The greater the difference between the current and required Navigation value, the stronger the penalties.
 }
 Repair
 {
@@ -88,7 +113,10 @@ When the enemy storms your ship with a volley of projectiles, splintering the si
 }
 Grappling
 {
-Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved price - this requires great agility and experience, but the loot will surely make up for all the effort. (R*0.7+T*0.3)
+Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved prize — this requires great agility and experience, but the loot will surely make up for all the effort.
+ (R*0.7+T*0.3)
+ ~
+ Affects boarding distance.
 }
 Defence
 {
@@ -110,25 +138,46 @@ Attention_abilities
 {
 Attention!Some abilities may not be available forcertain types of protagonists or officers.
 }
-Personal_abilities {Perks that are focused on the character.}
+Personal_abilities
+{
+Perks that expand the character’s personal abilities. You gain progress by leveling up personal skills.
+ ~
+ Upon reaching a threshold, you gain a new personal Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the perk tree.
+}
 Ship_abilities
 {
-Perks that are focused on the ship.Hired officers can take care of the most of them, letting the Captain to prioritize.
+Perks that affect ship management. You gain progress by leveling up ship skills.
+ ~
+ Upon reaching a threshold, you gain a new ship Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the perk tree.
+ ~
+ They can be inherited by the main character from officers assigned to ship positions who know their craft.
 }
 Abilities_available {The number indicates the amount of unallocated perk points.}
 Abilities_active {The number indicates perks a character has activated.}
 Rank
 {
-The rank indicates the level of progress of the character in the game. It increases with the hero's experience. As the rank of the hero increases, his Life also increases by a number based on the Endurance value.~As the rank of the hero increases, he will meet stronger adversaries and find better items more often.
+Rank is an indicator of a character’s progress in the game. You gain progress by leveling up skills.
+ ~
+ As the character’s Rank increases, their Health and Energy grow, and stronger enemies and new items begin to appear more often.
 }
 Life
 {
-Zero HP means death. One HP means the world of opportunities.~(E) determines how many bonus HP are granted with each new level.
+HP — a measure of a character's resistance to physical damage. Zero means death, one means a world of possibilities.
+ ~
+ Value depends on P and E and grows with rank.
 }
 Health {Vitality is the indicator of the physical state of the character. It drops each time you get severely wounded in a short period of time. It recovers, if you avoid combat for some time to let the wounds heal properly. Can severely debuff stats and skills if left unattended.}
 Energy
 {
-Energy is a vital parameter that dictates the hero's stamina during melee combat, as every attack draws upon it. Simply put, engaging in battle fatigues the character, necessitating rest to restore their stamina.~(R) determines your max amount of Energy.
+Energy - the pool of a character's physical endurance.
+ 
+  ~
+ 
+  All attacking actions and sprinting in melee consume Energy; during combat the character gets tired and needs a breather to recover.
+ 
+  ~
+ 
+  The Energy value depends on R and T and grows with rank.
 }
 Money {Money is the king of all men. Piastres, talers, guineas... What's the difference, if it's all liquid cash!}
 Reputation
@@ -141,7 +190,10 @@ Honor always tends to return to a neutral state.
 }
 Weight
 {
-The maximum weight a character can carry without losing movement speed and getting other penalties to his skills.Depends on (P) and (E).
+Weight is the maximum total mass of cargo a character can carry.
+ Depends on Power, Endurance, personal Perks, and active amulets.
+ ~
+ An overloaded character moves slower, suffers penalties, and cannot use fast travel.
 }
 Title {The title indicates how useful the character is for the state he is serving.}
 NextExp
@@ -222,9 +274,9 @@ CasualMode_desc
 {
 Classic mode is suitable for players who want to focus on the main character's story. It is a little more difficult than exploration mode and requires more attention and effort, but allows you to fully immerse yourself in the atmosphere created by the authors of the game.~Exploration mode is suitable for beginners, as well as players who want to have more free time to complete various side quests and freeplay. In this mode, ranking restrictions to start the main questlines have been removed, timers are disabled in cases without many options, and time on the global map slows down, depending on the selected difficulty level. Enemies in the main quests become less powerful, and the speed of the main character's ship on the global map increases by 5%.
 }
-SourceBase {Basic level}
+SourceBase {Base Value}
 SourceAdmiral {Admiral}
-SourceOfficer {Acting Officer}
+SourceOfficer {Officer Bonus}
 SourceAccountant {Purser}
 SourceMangarosa {Mangarosa Potion}
 SourceHealth {Vitality Status}
@@ -233,3 +285,17 @@ SourceQuest {Unique situation}
 SourceAlco {Intoxicating}
 SourceOverload {Burdened}
 SourceNavyPenalty {Navigation Skill check failed}
+CritDamage
+{
+Critical damage multiplier. Applied after all modifiers.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+CritCharDefence
+{
+Total reduction of enemy critical damage.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+SourceSkill {Skill}
+SourceChickenGod {Blessing of Aruba}

@@ -650,46 +650,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ez magától értetôdô! Ez valami igazán figyelemre méltó dolog lehet, én mondom neked! Ó, és az emberek azt mondták, hogy a halászok egy idegen katonai hajót láttak ezeken a vizeken... valószínûleg egy fregattot. Talán onnan jött az a kém?";
 			link.l1 = "Igen, lehet... Rendben, haver, köszönöm a társaságot, de most mennem kell!";
 			link.l1.go = "exit_sit";
-			pchar.questTemp.Trial = "spy_drink";
-			
-			if(CheckAttribute(pchar,"questTemp.trialHabitueId"))
-			{
-				if (GetCharacterIndex(pchar.questTemp.trialHabitueId) != -1)
-				{
-					sld = characterFromId(pchar.questTemp.trialHabitueId);
-					sld.lifeday = 0;
-					DeleteAttribute(pchar,"questTemp.trialHabitueId");
-					LAi_CharacterDisableDialog(sld);
-					DelLandQuestMark(sld);
-				}
-			}
-			// belamour legendary edtion -->
-			if (GetCharacterIndex("PortoBello_Poorman") < 0)
-			{
-				// новый нищий
-				sld = GetCharacter(NPC_GenerateCharacter("PortoBello_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, SPAIN, -1, false, "slave"));
-				sld.city = "PortoBello";
-				sld.location	= "PortoBello_town";
-				sld.location.group = "goto";
-				sld.location.locator = "goto15";
-				sld.forStay.locator = "goto15"; //где генеримся в случае стояния
-				sld.forSit.locator0 = "goto3";
-				sld.forSit.locator1 = "goto25"; //три локатора, где генеримся в случае сидения
-				sld.forSit.locator2 = "goto12";
-				LAi_SetLoginTime(sld, 9.0, 21.99);
-				sld.Dialog.Filename = "Common_poorman.c";
-				LAi_SetPoorType(sld);
-				LAi_SetHP(sld, 50.0, 50.0);
-				sld.greeting = "poorman_male";
-				LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			}
-			sld = characterFromId("PortoBello_Poorman");
-			LAi_RemoveLoginTime(sld);
-			ChangeCharacterAddressGroup(sld, "Portobello_town", "goto", "goto15");
-			AddLandQuestMark(sld, "questmarkmain");
-			DelLandQuestMark(characterFromId("portobello_tavernkeeper"));
-			// <-- legendary edtion
-			AddQuestRecord("Trial", "14");
+			Trial_Habitue_DlgExit();
 		break;
 		
 		case "sit_2":

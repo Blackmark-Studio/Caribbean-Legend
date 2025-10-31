@@ -1721,7 +1721,7 @@ I missed the Utrecht. I was so close, yet I failed to find her at sea.
 #TEXT 14
 A failure! I wasted my chance to strike a deal with the worker; he mistook me for a patrol officer, panicked, and foolishly attacked. Fool. I had to kill them all. It's a shame, but this business is finished.
 #TEXT 15
-It's done. I managed to strike a deal with the worker—25 doubloons for a roll. Now I should sail to St. Christopher and meet with Bald Geffrey.
+It's done. I managed to strike a deal with the worker—5 doubloons for a roll. Now I should sail to St. Christopher and meet with Bald Geffrey.
 #TEXT 16
 It's been two months already. Bald Geffrey has likely sold his silk to someone else by now. A pity... but I can still deliver the information about the buyer to Tyrex. I should reach La Vega within ten days to give Tyrex time to gather enough silk. Hopefully, that will ease any anger he might have.
 #TEXT 17
@@ -1733,7 +1733,7 @@ I passed the information I received from Husky Billy to the local authorities. N
 #TEXT 20
 It's done. My competitor was eliminated by a military patrol. I was even rewarded with 10,000 pesos, which is a pleasant bonus. I should visit the shipbuilder; he ought to be more cooperative now.
 #TEXT 21
-It's done. I managed to strike a deal with the shipbuilder—25 doubloons for a roll. Now I should sail to St. Christopher and meet with Bald Geffrey.
+It's done. I managed to strike a deal with the shipbuilder—5 doubloons for a roll. Now I should sail to St. Christopher and meet with Bald Geffrey.
 #TEXT 22
 Bald Geffrey has his orders—he's about to set sail for Jamaica with the first shipment of ship silk from Marcus Tyrex. I should make my way to La Vega.
 #TEXT 23

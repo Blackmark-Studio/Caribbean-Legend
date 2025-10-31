@@ -554,7 +554,7 @@ Dejé que Florian Shoke sucumbiera al no entregarle los suficientes cañones. Mi
 #TEXT	11
 He entregado los cañones a Florian Shoke. Intentó que me involucrara en algún negocio de espías, pero me negué. Era demasiado peligroso.
 #TEXT	12
-Ahora tengo 250 doblones y una nueva misión de Florian Shoke. Tengo que colarme en Portobello y averiguar porque el galeón Alcántara no se hace a la mar. También debo averiguar que le ha pasado a Sylvan Laforet, también conocido como Jaime Silicio. 
+Ahora tengo 75 doblones y una nueva misión de Florian Shoke. Tengo que colarme en Portobello y averiguar porque el galeón Alcántara no se hace a la mar. También debo averiguar que le ha pasado a Sylvan Laforet, también conocido como Jaime Silicio. 
 #TEXT	13
 ¡Maldición! Fui demasiado descuidado y ese tabernero sanguinario llamó a los guardias tan pronto escuchó el nombre de Jaime Silicio. Ahora toda la ciudad es consciente de mi presencia, tengo que volver donde está Florian Shoke con las manos vacías...
 #TEXT	14
@@ -1090,7 +1090,9 @@ Los cuatro meses para recoger los materiales han vencido y es una lástima no ha
 #QUEST renovate_fdm
 La renovación del barco fantasma
 #TEXT   1
-El maestro armador de Isla del Tesoro, Alexus, me ha pedido que recoja y le lleve los materiales que necesita para renovar el barco fantasma. Necesita 150 piezas de palo de hierro, 200 barriles de resina, 170 rollos de seda de barco y 130 hileras de cuerdas de cáñamo.
+El maestro carpintero naval de Isla Tesoro, Alexus, ha aceptado reconstruir el barco fantasma. Esta restauración no solo cambiará su apariencia, sino que también la mejorará significativamente en todos los aspectos: los ensamblajes anticuados y desgastados serán reemplazados y la estructura se completará con soluciones modernas.
+Todo esto costará una suma de locos, y también tendrás que buscar y llevarle los materiales necesarios: 150 unidades de bakaut, seda, cuerdas y resina.
+
 #TEXT   2
 @<sQty> de @<sGood> faltan.
 #TEXT   3
@@ -2431,7 +2433,7 @@ Folke Deluc
 #TEXT 1
 Mientras yo me ocupaba de los negocios en Saint-Pierre, Folke Deluc se encontraba de nuevo entre rejas, y como era de esperar, la causa era el dinero. Maldito sea, ¿cómo ha conseguido acumular nuevas deudas en tan poco tiempo? La tripulación se queja: rescatarlo por segunda vez parece demasiado. Tras la batalla cerca de Le François, mi prestigio entre los hombres se ha fortalecido, y mi nombre tiene ahora cierto peso en la isla. Podría intentar encontrar un nuevo navegante en la taberna, pero mi conciencia no me dejará abandonar a Folke tan fácilmente. Se merece al menos una oportunidad para explicarse. Tengo que averiguar cómo se las arregló para endeudarse de nuevo en tan sólo unas horas.
 #TEXT 2
-¡Bueno, ahora está todo claro! El astuto prestamista de Saint-Pierre se dio cuenta de que podía sacar provecho del navegante. Compró todas las deudas de Folke en las colonias francesas. El total no era pequeño: ¡un impresionante centenar de doblones de oro!
+¡Bueno, ahora está todo claro! El astuto prestamista de Saint-Pierre se dio cuenta de que podía sacar provecho del navegante. Compró todas las deudas de Folke en las colonias francesas. El total no era pequeño: ¡un impresionante 40 de doblones de oro!
 #TEXT 3
 Pagué la deuda de mi díscolo navegante. Deja que la gente del pueblo se ría. Aún estoy seguro de que hice lo correcto.
 #TEXT 4

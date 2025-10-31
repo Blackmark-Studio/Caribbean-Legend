@@ -1,16 +1,17 @@
 void Memento_init()
 {
 	pchar.questTemp.Memento = true;
-	log_testinfo("Инициализация БРИГА");
+	log_testinfo("Квест 'Мементо' стартовал");
 	pchar.questTemp.Memento.stage = 1; // стадии меняем при выходе на карту
 	pchar.questTemp.Memento.colony = Memento_findColony(sti(pchar.questTemp.Memento.stage)); // колонии меняем при заходе в порт
     ref sld, itm;
 	
 	// характеристики запишем после ТЗ
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_cap", "mercen_19", "man", "man", 30, PIRATE, -1, false, "governor"));
-	FantomMakeCoolSailor(sld, SHIP_MEMENTO, StringFromKey("Memento_1"), CANNON_TYPE_CANNON_LBS18, 105, 105, 105);
+	FantomMakeCoolSailor(sld, SHIP_MEMENTO, GetShipName("Memento"), CANNON_TYPE_CANNON_LBS18, 105, 105, 105);
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_SP_3low", "pistol4", "bullet", 200);
-	InitChrRebalance(sld, GEN_TYPE_CAPTAIN, GEN_BOSS, true, 0.6); // RB Грим
+	ForceAdaptivelevel(sld, 17, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.55); // RB Грим
+	GiveCaptainOfficers(sld, true);
 	// SetSailsColor(sld, 8);
 	sld.ship.Crew.Morale = 100;
 	ChangeCrewExp(sld, "Sailors",   100);
@@ -62,7 +63,7 @@ void Memento_init()
 	sld.quest.targetCity = Memento_findColony(sti(pchar.questTemp.Memento.stage)+1);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "memento";
-	sld.mapEnc.Name = StringFromKey("Memento_1");
+	sld.mapEnc.Name = GetShipName("Memento");
 	Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, 30);
 	
 	PChar.quest.Memento_Book.win_condition.l1 = "item";
@@ -141,7 +142,7 @@ void Memento_ToMap(string sQuest)
 	Log_testInfo("Капитан БРИГА направился в колонию: "+sld.quest.targetCity + " из колонии : "+sld.city);
 	sld.mapEnc.type = "trade";
 	sld.mapEnc.worldMapShip = "memento";
-	sld.mapEnc.Name = StringFromKey("Memento_1");
+	sld.mapEnc.Name = GetShipName("Memento");
 	Map_CreateTrader(sld.city, sld.quest.targetCity, sld.id, 30);
 }
 
@@ -246,8 +247,8 @@ void Memento_MortimerGrimDead_Alonso(string qName)
 	DoQuestCheckDelay("hide_weapon", 1.2);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
 	sld.dialog.currentnode = "Memento_MortimerGrimDead_Alonso_1";
 	GiveItem2Character(sld, "blade_10");
@@ -258,7 +259,7 @@ void Memento_MortimerGrimDead_Alonso(string qName)
 	
 	// Активируется этап: Дичь
 	pchar.questTemp.Memento_Dich = true;
-	SetTimerFunction("Memento_Dich", 0, 0, 1);
+	SetFunctionTimerCondition("Memento_Dich", 0, 0, 1, true);
 }
 
 void Memento_MortimerGrimDead_Alonso_2()
@@ -274,6 +275,7 @@ void Memento_Dich(string qName)
 {
 	if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_MEMENTO)
 	{
+		DeleteQuestCondition("Memento_Dich");
 		if (IsEntity(worldMap))
 		{
 			if (CheckAttribute(pchar, "questTemp.Memento_Dich_EtapThree"))
@@ -328,8 +330,8 @@ void Memento_Dich_EtapOne_Paluba_3(string qName)
 void Memento_Dich_EtapOne_Paluba_4(string qName)
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
 	sld.dialog.currentnode = "Memento_Dich_EtapOne_Alonso_1";
 	GiveItem2Character(sld, "blade_10");
@@ -343,7 +345,7 @@ void Memento_Dich_EtapOne_End()
 {
 	SetCrewQuantity(pchar, GetCrewQuantity(pchar) - 1);
 	AddCrewMorale(Pchar, -10);
-	SetTimerFunction("Memento_Dich", 0, 0, 3);
+	SetFunctionTimerCondition("Memento_Dich", 0, 0, 3, true);
 	pchar.questTemp.Memento_Dich_EtapTwo = true;
 	
 	DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
@@ -379,8 +381,8 @@ void Memento_Dich_EtapTwo_Paluba_2(string qName)
 void Memento_Dich_EtapTwo_Paluba_3(string qName)
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -403,7 +405,7 @@ void Memento_Dich_EtapTwo_End()
 		AddCrewMorale(Pchar, -20);
 		Land_MapLoad();
 		pchar.location = "";
-		SetTimerFunction("Memento_Dich", 0, 0, 3);
+		SetFunctionTimerCondition("Memento_Dich", 0, 0, 3, true);
 		pchar.questTemp.Memento_Dich_EtapThree = true;
 	}
 }
@@ -434,8 +436,8 @@ void Memento_Dich_EtapThree_Paluba_2(string qName)
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	ChangeCharacterAddressGroup(sld, PChar.location, "quest", "quest3");
@@ -528,7 +530,7 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 	for (i=1; i<=6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Memento_Skelet_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", sti(pchar.rank), PIRATE, -1, true, "soldier"));
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Скелеты Грима
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Грима
 		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc"+i);
 		LAi_SetLayType(sld);
 		LAi_CharacterEnableDialog(sld);
@@ -537,9 +539,9 @@ void Memento_Dich_EtapThree_Paluba_5(string qName)
 		sld.BlockSnore = true;
 	}	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, false, "soldier"));
-	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Скелеты Грима
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Грима
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -599,7 +601,7 @@ void Memento_Dich_EtapThree_Paluba_10()
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Cap_phantom", "mercen_19", "man", "man", sti(pchar.rank), PIRATE, -1, true, "soldier"));	
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_SP_3low", "pistol4", "bullet", 0);
-	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_BOSS, true, 0.6); // RB Грим
+	ForceAdaptivelevel(sld, 15, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.55); // RB Грим
 	sld.name = StringFromKey("Memento_2");
 	sld.lastname = StringFromKey("Memento_3");
 	sld.Dialog.Filename = "Quest\ShipsPack\Memento_dialog.c";
@@ -737,8 +739,8 @@ void Memento_Dich_EtapThree_Paluba_22()
 	LAi_ActorAnimation(pchar, "tablesleep_2", "1", -1);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("Memento_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, false, "soldier"));
-	sld.name 	= StringFromKey("SharlieTrial_29");
-	sld.lastname = StringFromKey("SharlieTrial_30");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	ChangeCharacterAddressGroup(sld, PChar.location, "quest", "quest3");

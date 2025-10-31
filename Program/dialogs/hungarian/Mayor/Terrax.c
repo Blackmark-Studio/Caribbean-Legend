@@ -133,12 +133,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 25 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Kopasz Geffrey már az elsô szállítmányt Jamaikába szállította.";
+				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 5 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Kopasz Geffrey már az elsô szállítmányt Jamaikába szállította.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 25 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Több mint két hónapba telt, mire ilyen vevôt találtam, Geffrey már biztosan eladta a selymet csempészeknek. Sajnálom, Marcus.";
+				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 5 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Több mint két hónapba telt, mire ilyen vevôt találtam, Geffrey már biztosan eladta a selymet csempészeknek. Sajnálom, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -803,7 +803,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Mindig vannak feladataim a hozzáértô fiúknak. Van egy kényes ügy, amivel szeretném, ha foglalkoznál. Capsterville-ben állomásozik egy hajó, a 'Snake', , Geffrey Brooke, más néven Kopasz Geffrey parancsnoksága alatt. Ô nekem dolgozik. Kitûnô harcos, mindent tud a fegyverekrôl és a pengékrôl, de az élet minden más területén komplett idióta. De ne legyünk durvák Kopasz Geffreyvel, senki sem tökéletes, ha-ha!\nSzóval. Ez a kemény fickó megtámadott egy holland konvojt Saint Martintól északra, és elfogott egy búzával teli zsákokkal teli kérget. A helyzet az, hogy a zsákok között sikerült rejtett hajóselymet találnia. Egy igazán nagy rakományt. Ez az áru rendkívül értékes és ritka, a hollandok kizárólag a hadseregük igényeihez hozzák Európából. Ezt a selymet speciális vitorlákhoz használják, amelyek növelik a hajó sebességét és a szél által való hajózási képességét.\nMegvenni szinte lehetetlen, eladni nem gond, de nehéz megtalálni a megfelelô árat. Ezek az istenverte kereskedôk mindig csökkentik az árat! Tisztában vagyok vele, hogy vannak olyan emberek a Karib-tengeren, akik készek jó áron dublont adni ezért a selyemért, és a célod az, hogy megtaláld ezeket az embereket.\nMi? Bármilyen bolond képes karavánokat kifosztani, de kereskedni csak olyan emberek tudnak, akiknek legalább egy koponyában van az ész' exisztencia jele. Azt tervezem, hogy havonta fogok hajóselymet árulni, így a célod az, hogy találj egy rendszeres vevôt, aki legalább húsz aranydublont fizet egy tekercsért. Erre két hónapotok van, nem tarthatom a kopasz Geffrey-t örökké Capsterville-ben.\nEz minden. Hajózz Capsterville-be, és beszélj Geffreyvel, mielôtt egy fillérért eladja a rakományt csempészeknek. Már mondtam neked, hogy ô egy kicsit 'egyszerû'..";
+            dialog.text = "Mindig vannak feladataim a hozzáértô fiúknak. Van egy kényes ügy, amivel szeretném, ha foglalkoznál. Capsterville-ben állomásozik egy hajó, a 'Snake', , Geffrey Brooke, más néven Kopasz Geffrey parancsnoksága alatt. Ô nekem dolgozik. Kitûnô harcos, mindent tud a fegyverekrôl és a pengékrôl, de az élet minden más területén komplett idióta. De ne legyünk durvák Kopasz Geffreyvel, senki sem tökéletes, ha-ha!\nSzóval. Ez a kemény fickó megtámadott egy holland konvojt Saint Martintól északra, és elfogott egy búzával teli zsákokkal teli kérget. A helyzet az, hogy a zsákok között sikerült rejtett hajóselymet találnia. Egy igazán nagy rakományt. Ez az áru rendkívül értékes és ritka, a hollandok kizárólag a hadseregük igényeihez hozzák Európából. Ezt a selymet speciális vitorlákhoz használják, amelyek növelik a hajó sebességét és a szél által való hajózási képességét.\nMegvenni szinte lehetetlen, eladni nem gond, de nehéz megtalálni a megfelelô árat. Ezek az istenverte kereskedôk mindig csökkentik az árat! Tisztában vagyok vele, hogy vannak olyan emberek a Karib-tengeren, akik készek jó áron dublont adni ezért a selyemért, és a célod az, hogy megtaláld ezeket az embereket.\nMi? Bármilyen bolond képes karavánokat kifosztani, de kereskedni csak olyan emberek tudnak, akiknek legalább egy koponyában van az ész' exisztencia jele. Azt tervezem, hogy havonta fogok hajóselymet árulni, így a célod az, hogy találj egy rendszeres vevôt, aki legalább 4 aranydublont fizet egy tekercsért. Erre két hónapotok van, nem tarthatom a kopasz Geffrey-t örökké Capsterville-ben.\nEz minden. Hajózz Capsterville-be, és beszélj Geffreyvel, mielôtt egy fillérért eladja a rakományt csempészeknek. Már mondtam neked, hogy ô egy kicsit 'egyszerû'..";
 			link.l1 = "Hm... Értem. Már úton vagyok.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -820,12 +820,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha! Itt a bátor kapitány "+GetFullName(pchar)+"! Mi a helyzet a vevôvel?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 25 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Több mint két hónapba telt, mire ilyen vevôt találtam, Geffrey már biztosan eladta a selymet csempészeknek. Sajnálom, Marcus.";
+				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 5 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Több mint két hónapba telt, mire ilyen vevôt találtam, Geffrey már biztosan eladta a selymet csempészeknek. Sajnálom, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 25 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Kopasz Geffrey már az elsô szállítmányt Jamaikába szállította.";
+				link.l1 = "Találtam neked egy vevôt. Egy Port Royal-i hajóépítô. Hajóselyemre van szüksége a termeléséhez, és havonta száz tekercsbôl álló tételeket tud majd vásárolni tekercsenként 5 dublonnáért. Az emberei 10. és 15. között, éjszaka fogják átvenni az árut, a helyszín Negril-fok. A jelszó - 'A lyoni kereskedô'. Kopasz Geffrey már az elsô szállítmányt Jamaikába szállította.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -871,14 +871,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Kopasz Geffrey eladta a vevôdnek az elsô adag 105 tekercs hajóselymet. Mivel arra számítottam, hogy húsz dublonnáért adom el egy tekercset, úgy gondolom, tisztességes lenne, ha a különbözetet neked adnám. Ez az én döntésem. A te részed 525 dublont plusz egy bónusz - egy dublont egy tekercsért. Ez összesen 630 dublont jelent. Tessék, vedd el.";
+            dialog.text = "Kopasz Geffrey eladta a vevôdnek az elsô adag 105 tekercs hajóselymet. Mivel arra számítottam, hogy 4 dublonnáért adom el egy tekercset, úgy gondolom, tisztességes lenne, ha a különbözetet neked adnám. Ez az én döntésem. A te részed 105 dublont plusz egy bónusz - egy dublont egy tekercsért. Ez összesen 210 dublont jelent. Tessék, vedd el.";
 			link.l1 = "Köszönöm, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("630 dublont kaptál.");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Még egy dolog. Ebbôl extra profitra tehetsz szert.";
 			link.l1 = "Érdekes... Folytasd.";
@@ -886,7 +885,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "A vevôd több mint 100 tekercs selymet akar szállítani a következô két hónapban. Ha van, akkor hozzon nekem 20-100 tekercset 24 dublonnáért. Az ajánlat két hónapig érvényes.";
+            dialog.text = "A vevôd több mint 100 tekercs selymet akar szállítani a következô két hónapban. Ha van, akkor hozzon nekem 20-100 tekercset 5 dublonnáért. Az ajánlat két hónapig érvényes.";
 			link.l1 = "Rendben! Hozok többet, ha van.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -904,16 +903,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Nagyon jó. Fogd az aranyat - 24 dublont egy tekercsért, ahogy megegyeztünk.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Nagyon jó. Fogd az aranyat - 5 dublont egy tekercsért, ahogy megegyeztünk.";
 			link.l1 = "Köszönetnyilvánítás!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Száz tekercset kérek. Vegye el az aranyat - 24 dublont egy tekercsért, ahogy megegyeztünk.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Száz tekercset kérek. Vegye el az aranyat - 5 dublont egy tekercsért, ahogy megegyeztünk.";
 			link.l1 = "Köszönetnyilvánítás!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;

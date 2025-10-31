@@ -4,7 +4,7 @@ SharlieFinal_3 {探索模式: 计时器延长。 完成任务!}
 SharlieFinal_4 {Catherine Fox 死于热病!}
 SharlieFinal_5 {Timoleon骑士}
 SharlieFinal_6 {de Fontene}
-SharlieFinal_7 {Griffondor}
+SharlieFinal_7 { }
 SharlieFinal_8 {Rober}
 SharlieFinal_9 {Marten}
 SharlieFinal_10 {Enphanta}
@@ -14,11 +14,11 @@ SharlieFinal_13 {Vindzor Castle}
 SharlieFinal_14 {Royal Katherine}
 SharlieFinal_15 {Loyal London}
 SharlieFinal_16 {Haughty}
-SharlieFinal_17 {San Felipe}
-SharlieFinal_18 {San Isidro}
-SharlieFinal_19 {Santa Magdalena}
-SharlieFinal_20 {Santa Anna}
-SharlieFinal_21 {Apostle}
+SharlieFinal_17 { }
+SharlieFinal_18 { }
+SharlieFinal_19 { }
+SharlieFinal_20 { }
+SharlieFinal_21 { }
 SharlieFinal_22 {牢笼已打开!}
 SharlieFinal_23 {Michel}
 SharlieFinal_24 {de Monper}
@@ -45,7 +45,7 @@ SharlieFinal_44 {Diego}
 SharlieFinal_45 {de Montoya}
 SharlieFinal_46 {"Shadow (阴影号)"舰载小帆船}
 SharlieFinal_47 {"Shadow"号上的全部火药储备爆炸了!}
-SharlieFinal_48 {Fortune}
+SharlieFinal_48 { }
 SharlieFinal_49 {船长}
 SharlieFinal_50 {"Santa Quiteria (圣基特里亚号)"}
 SharlieFinal_51 {Adrian神父}
@@ -82,4 +82,4 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {上校}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {世界已改变, 你的英雄也一样 @<NewStr()> 但那是另一个故事了...}
-SharlieFinal_85 {Alonso}
+SharlieFinal_85 { }

@@ -653,16 +653,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition 加勒比习俗
 		case "Trial":
-			dialog.text = "啊, 原来你就是那位船长! 是的, 我一直在等你。 热拉尔也在等, 但他需要紧急去参加某种探险, 所以他让我把报酬转给你。 他说你一定要来。 这里有四百杜布隆, 请收下。 ";
+			dialog.text = "啊, 原来你就是那位船长! 是的, 我一直在等你。 热拉尔也在等, 但他需要紧急去参加某种探险, 所以他让我把报酬转给你。 他说你一定要来。 这里有90杜布隆, 请收下。 ";
 			link.l1 = "谢谢你! 和诚实的人打交道真好。 ";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("你已获得400杜布隆");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

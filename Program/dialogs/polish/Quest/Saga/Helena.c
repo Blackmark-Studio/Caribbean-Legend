@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Helena_hire_3";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-			notification("Helen approves", "Helena");
+			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
 		
@@ -530,6 +530,7 @@ void ProcessDialogEvent()
 			LaunchFrameForm();
 			DoQuestCheckDelay("Saga_HelenaRomantic_5", 4.0);
 			pchar.questTemp.Saga.Helena_officer = "true"; // показатель, что Элен - наша навсегда
+			npchar.SpecialRole = "fgirl";
 			
 			pchar.GenQuest.BrothelCount = 0;
 			
@@ -2436,7 +2437,7 @@ void ProcessDialogEvent()
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-				notification("Helen disapproves", "Helena");
+				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
 		break;
@@ -2657,7 +2658,7 @@ void ProcessDialogEvent()
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "Did you have to, Captain? Why so quick to fight? Well, one should not just a winner, I guess. Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-						notification("Helen disapproves", "Helena");
+						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "Kudos, my Captain, for trying to resolve the issue wisely before getting into a fight. Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
 					}
@@ -2669,7 +2670,7 @@ void ProcessDialogEvent()
 				case "B":
 					dialog.text = "You skillfully fooled those fools, my Captain! I almost burst out laughing, honest! Come on, let's take a look at the residence; there's nothing else worth seeing here anyway.";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen approves", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "A co z tym ogromnym statkiem wyciągniętym na brzeg?";
 					link.l1.go = "after_ambush_1";
@@ -2678,7 +2679,7 @@ void ProcessDialogEvent()
 				case "C":
 					dialog.text = "Zaczekaj, pozwól dziewczynie złapać oddech! Czy ty naprawdę jesteś tym Charlie Prince?";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen approves", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Był taki okres w mojej biografii, tak. Czy jesteś pod wrażeniem?";
 					link.l1.go = "after_ambush_c";
@@ -2724,7 +2725,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "Dziękuję, mój kapitanie. Cieszę się, że to słyszę. Szczególnie miło słyszeć to po raz drugi. Znasz mnie dobrze.";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-				notification("Helen approves", "Helena");
+				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "Dziękuję, mój kapitanie. Cieszę się, że to słyszę.";
 			}
@@ -2747,7 +2748,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "Czy myślisz, że na to zasługuję? Nigdy nie wydawałam pieniędzy na takie drobiazgi, ale chyba na wszystko przychodzi pierwszy raz. Widzę, że nie przestaniesz próbować sprawić, bym zapomniała o morzu, co? Może masz rację...";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
-				notification("Helen disapproves", "Helena");
+				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "Czy myślisz, że na to zasługuję? Nigdy nie wydawałam pieniędzy na takie drobiazgi, ale chyba zawsze jest ten pierwszy raz.";
 			}

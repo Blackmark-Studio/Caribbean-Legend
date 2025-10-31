@@ -4,7 +4,7 @@ SharlieFinal_3 {Modalità di esplorazione: timer esteso. Completa la missione!"}
 SharlieFinal_4 {Catherine Fox è morta di calentura!}
 SharlieFinal_5 {cavaliere Timoleon}
 SharlieFinal_6 {de Fontene}
-SharlieFinal_7 {Griffondor}
+SharlieFinal_7 { }
 SharlieFinal_8 {Rober}
 SharlieFinal_9 {Marten}
 SharlieFinal_10 {Enphanta}
@@ -14,11 +14,11 @@ SharlieFinal_13 {Vindzor Castle}
 SharlieFinal_14 {Royal Katherine}
 SharlieFinal_15 {Loyal London}
 SharlieFinal_16 {Haughty}
-SharlieFinal_17 {San Felipe}
-SharlieFinal_18 {San Isidro}
-SharlieFinal_19 {Santa Magdalena}
-SharlieFinal_20 {Santa Anna}
-SharlieFinal_21 {Apostle}
+SharlieFinal_17 { }
+SharlieFinal_18 { }
+SharlieFinal_19 { }
+SharlieFinal_20 { }
+SharlieFinal_21 { }
 SharlieFinal_22 {Cage è stato aperto!}
 SharlieFinal_23 {Michel}
 SharlieFinal_24 {de Monper}
@@ -45,7 +45,7 @@ SharlieFinal_44 {Diego}
 SharlieFinal_45 {de Montoya}
 SharlieFinal_46 {Carrier lugger 'Shadow'}
 SharlieFinal_47 {L'intero rifornimento di polvere è esploso sullo 'Shadow'!}
-SharlieFinal_48 {Fortuna}
+SharlieFinal_48 { }
 SharlieFinal_49 {capitano}
 SharlieFinal_50 {di 'Santa Quiteria'}
 SharlieFinal_51 {father Adrian}
@@ -82,4 +82,4 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {colonel}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {Il mondo è cambiato e così ha fatto il tuo eroe@<NewStr()> Ma questa è un'altra storia...}
-SharlieFinal_85 {Alonso}
+SharlieFinal_85 { }

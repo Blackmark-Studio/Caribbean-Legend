@@ -203,9 +203,7 @@ void ProcessDialogEvent()
 		
 		case "florian_deck_5":
 			TakeNItems(pchar, "gold_dublon", 200);
-			Log_Info("200 dublont kapott.");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "De ez még nem minden, kapitány. Szeretne még kétszázötven arany dupla escudót?";
+			dialog.text = "De ez még nem minden, kapitány. Szeretne még 75 arany dupla escudót?";
 			link.l1 = "Ez ígéretesen hangzik, de attól függ, hogy mit kér tôlem érte, uram.";
 			link.l1.go = "florian_deck_6";
 		break;
@@ -409,9 +407,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_16":
-			TakeNItems(pchar, "gold_dublon", 250);
-			Log_Info("250 dublont kaptál.");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 75);
 			dialog.text = "Olvasol a gondolataimban, "+GetFullName(pchar)+"! Igen, a fenébe is! Mivel az Alacantarának kevés a puskapora, hagyhatom, hogy kihajózzon a nyílt tengerre, aztán rákényszeríthetem egy elhúzódó tengeri harcra, amelyben az ô puskaporuk elôbb fogy el, mint a miénk, haha!\nEl kell érned, hogy az utánpótlásbárka Puebla soha ne érje el Portobellót. Nem hajózhatok közel a parthoz, a járôrök könnyen észreveszik a fregattomat, és elkergetnek, mielôtt elkaphatnám Alacantarát\nA Pueblával egyedül is elbánsz. Találjátok meg és szabaduljatok meg tôle. Süllyesszék el, vagy vegyék el zsákmányként, nem érdekel. Csak akadályozza meg, hogy ideérjen!\nHa sikerül, akkor menjen Guadeloupe-ra, és keresse fel Gerard LeCroix-t. Azt hiszem, már ismeri ôt, nem igaz? Meg fogja fizetni neked a megérdemelt érmét.";
 			link.l1 = "Megegyeztünk! Máris indulok, hogy elvágjam a Pueblát!";
 			link.l1.go = "florian_19";

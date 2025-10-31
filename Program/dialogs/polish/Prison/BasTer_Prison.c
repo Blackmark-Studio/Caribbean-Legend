@@ -198,13 +198,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "A kto według ciebie mógł pokonać całą drużynę patrolową dowodzoną przez oficera?";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "Godni zaufania) Bandyci, kto inny? Wstyd przyznać, ale ledwo co uciekłem niedawno przed ogromną bandą.";
 				link.l1.go = "PZ_IshemLongway_Blef_2";
 			}
 			else
 			{
-				notification("Perk check failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "Ale skąd miałbym wiedzieć? To mógł być ktokolwiek – bandyci, piraci, szpiedzy...";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}

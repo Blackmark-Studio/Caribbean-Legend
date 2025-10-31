@@ -83,7 +83,7 @@ bool DialogMain(ref Character)
 	bool groundSitPoorman = (mainChr.chr_ai.type == LAI_TYPE_GROUNDSIT);
 	bool groundSitActor = (mainChr.chr_ai.type == LAI_TYPE_ACTOR) && (mainChr.chr_ai.type.mode == "groundSit");
     bool bLockCamAngle = CheckAttribute(loadedLocation, "lockCamAngle") && !Whr_CheckNewBoardingDeck();
-	if (locCameraCurMode == LOCCAMERA_FOLLOW && !bLockCamAngle && mainChr.location.group != "sit" && !groundSitPoorman && !groundSitActor && !CheckAttribute(pchar, "GenQuest.BlockDialogCamera")) // для квестов
+	if (locCameraCurMode == LOCCAMERA_FOLLOW && !locCameraIsFPVMode() && !bLockCamAngle && mainChr.location.group != "sit" && !groundSitPoorman && !groundSitActor && !CheckAttribute(pchar, "GenQuest.BlockDialogCamera")) // для квестов
 	{
 		SetCameraDialogMode(Character);  // boal
 	}
@@ -204,6 +204,7 @@ void SelfDialog(ref Character)
 	object persRef = GetCharacterModel(Characters[GetMainCharacterIndex()]);
 	SendMessage(&Dialog, "lii", 0, Character, &persRef);
 	SendMessage(&Dialog, "lii", 1, Character, &persRef);
+	Dialog.role = "";
 	
 	LayerSetRealize(REALIZE);
 	LayerAddObject(REALIZE,Dialog,-256);
@@ -484,14 +485,22 @@ void UpdateDynamicRole(ref Dialog, ref chr)
 	else if(HasSubStr(chr.id, "_Priest")) chr.role = "priest";
 	else if(HasSubStr(chr.id, "_usurer")) chr.role = "usurer";
 	else if(HasSubStr(chr.id, "_Poorman")) chr.role = "poorman";
+	else if(HasSubStr(chr.id, "_Hostess")) chr.role = "hostess";
+	else if(HasSubStr(chr.id, "_smuggler")) chr.role = "smuggler";
 	
 	// belamour return только в особых ситуациях
 	if(RoleFromID(chr))
 	{
 		Dialog.role = GetConvertStr(chr.role, "roles.txt");
+		if(chr.role == "friend")
+			Dialog.role = Dialog.role + " / " + GetJobsList(chr, " / ");
 		return;
 	}
-	
+	if (CheckAttribute(chr, "SpecialRole")) 
+	{
+		Dialog.role = GetConvertStr(chr.SpecialRole, "roles.txt");
+		return;
+	}
 	if (CheckAttribute(chr, "Payment")) Dialog.role = GetJobsList(chr, " / ");
 	else if (CheckAttributeHasValue(chr, "role")) Dialog.role = GetConvertStr(chr.role, "roles.txt");
 }
@@ -514,6 +523,50 @@ bool RoleFromID(ref chr)
 		case "SantaMisericordia_clone_church": role = "legend"; break;
 		case "SantaMisericordia_clone_city": role = "legend"; break;
 		case "SantaMisericordia_clone_guber": role = "legend"; break;
+		
+		if (CheckAttribute(pchar, "questTemp.FinishTutorial"))
+		{
+			case "Guide": role = "friend"; break;
+			case "Guide_y": role = "friend"; break;
+			case "Guide_x": role = "friend"; break;
+		}
+		
+		case "Tichingitu":
+			if (CheckAttribute(chr, "Payment")) 
+			{
+				chr.role = "friend";
+				return true;
+			}
+		break;
+		case "Irons":
+			if (CheckAttribute(chr, "Payment") && CheckAttribute(pchar, "questTemp.BlackMarkQuestCompleted")) 
+			{
+				chr.role = "friend";
+				return true;
+			}
+		break;
+		case "Folke":
+			if (CheckAttribute(chr, "FriendRole")) 
+			{
+				chr.role = "friend";
+				return true;
+			}
+		break;
+		case "Knippel":
+			if (IsCharacterPerkOn(chr, "Bombardier")) 
+			{
+				chr.role = "friend";
+				return true;
+			}
+		break;
+		case "Longway":
+			if (CheckAttribute(chr, "FriendRole")) 
+			{
+				chr.role = "friend";
+				return true;
+			}
+		break;
+		
 	}
 	if(role != "") chr.role = role;
 	

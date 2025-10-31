@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
-				notification("Túl alacsony a hírneve! (Rogue)", "None");
+				Notification_Reputation(false, 48, "high");
 				PlaySound("Voice\English\hambit\Ercule Tongzag-03.wav");
 				dialog.text = "Nincs szükségem egy gazember szolgálataira. Nincs semmilyen feladat, amit fel tudnék ajánlani.";
 				link.l1 = "Hé, hé, hé! Óvatosan a nyelvvel, haver!";
@@ -103,10 +103,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//слабое фехтование
 			{
 				// belamour legendary edition покажем критерии -->
-				notification("Képességpróba Sikertelen (35)", SKILL_F_LIGHT);
-				notification("Képességpróba Sikertelen (35)", SKILL_FENCING);
-				notification("Képességpróba Sikertelen (35)", SKILL_F_HEAVY);
-				notification("Képességpróba Sikertelen (35)", SKILL_PISTOL);
+				Notification_Skill(false, 35, SKILL_F_LIGHT);
+				Notification_Skill(false, 35, SKILL_FENCING);
+				Notification_Skill(false, 35, SKILL_F_HEAVY);
+				Notification_Skill(false, 35, SKILL_PISTOL);
 				// <--
 				dialog.text = "Kapitány, maga túl puhány. Nekem egy nálad jó hírûbb harcosra van szükségem. Jöjjön vissza, ha megtanulta, hogyan kell bánni az övén lógó acéllal. És egy kis pontosság a lövészetben sem ártana.";
 				link.l1 = "Értem. Akkor majd késôbb meglátogatom.";

@@ -1,3 +1,6 @@
+// Здесь функции корабельных перков, вызываемые в соответствующих местах кода
+// Они пока не переведены на модификаторы и большая часть кода корабельных перков по-прежнему не вынесена в функции и остается где-то в местах вызова
+
 // Кок/Старший кок
 float GetCookMtp(ref rchar)
 {
@@ -48,9 +51,19 @@ void DailyCheckIfQuartermaster(ref rchar)
 // Квартирмейстер
 int GetBonusCrewQuartermaster(ref rchar, int optCrew, int maxCrew)
 {
-	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return maxCrew + optCrew * PERK_VALUE_QUARTERMASTER;
-	else if (HasPerk(rchar, "Quartermaster")) return maxCrew + optCrew * PERK_VALUE_QUARTERMASTER;
+	if (IsMainCharacter(rchar) && CheckOfficersPerkEnable("Quartermaster")) return makeint(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
+	else if (HasPerk(rchar, "Quartermaster")) return makeint(maxCrew + optCrew * PERK_VALUE_QUARTERMASTER);
 	return maxCrew;
+}
+
+// Интендант
+float GetWeightMtpWithIntendant(ref chr)
+{
+	float intendantMtp;
+	if (IsMainCharacter(chr)) intendantMtp = GetFloatByCondition(CheckOfficersPerk(chr, "Intendant"), 1.0, PERK_VALUE2_INTENDANT);
+	else intendantMtp = GetFloatByCondition(HasPerk(chr, "Intendant"), 1.0, PERK_VALUE2_INTENDANT);
+
+	return intendantMtp;
 }
 
 void CheckTradeConnections(aref location)

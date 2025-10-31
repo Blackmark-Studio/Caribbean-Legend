@@ -11,11 +11,13 @@ itm_stat_descr_damageReduction {Ten procent jest odejmowany od otrzymanych obra�
 itm_stat_attack {Obrażenia}
 itm_stat_descr_attack
 {
-Atak zwykły: #sattack.force.min#–#sattack.force.max# obrażeń
-Atak szybki: #sattack.fast.min#–#sattack.fast.max# obrażeń
-Atak grupowy: #sattack.round.min#–#sattack.round.max# obrażeń
-Atak ciężki: #sattack.break.min#–#sattack.break.max# obrażeń
+Uderzenie: #sattack.fast.min#–#sattack.fast.max# obrażeń
+Pchnięcie: #sattack.force.min#–#sattack.force.max# obrażeń
+Atak okrężny: #sattack.round.min#–#sattack.round.max# obrażeń
+Uderzenie przebijające: #sattack.break.min#–#sattack.break.max# obrażeń
 }
+itm_stat_gundamage {Obrażenia od broni palnej.}
+itm_stat_descr_gundamage {Obrażenia zadawane w walce dystansowej zależą od umiejętności, parametrów broni i amunicji.}
 itm_stat_healAmount {Leczenie}
 itm_stat_descr_healAmount {Ilość Życia przywracana po użyciu.}
 itm_stat_worldMapBonus {Promień obserwacji}
@@ -126,15 +128,15 @@ itm_stat_descr_obereg_11 {Zmienia kąt kursu statku o 15%, pozwalając płynąć
 itm_stat_obereg_3 {Podnoszenie ciężarów}
 itm_stat_descr_obereg_3 {Zwiększa udźwig o 15%.}
 itm_stat_obereg_4 {Incognito}
-itm_stat_descr_obereg_4 {Skradanie postaci zwiększone o 10.}
+itm_stat_descr_obereg_4 {Skradanie postaci zwiększone o #smodifiers.SkillSneak#.}
 itm_stat_obereg_5 {Artefakt}
-itm_stat_descr_obereg_5 {Szczęście postaci wzrasta o 15.}
+itm_stat_descr_obereg_5 {Szczęście postaci wzrasta o #smodifiers.SkillFortune#.}
 itm_stat_obereg_6 {Perswazja}
-itm_stat_descr_obereg_6 {Dowodzenie postaci wzrasta o 10 punktów.}
+itm_stat_descr_obereg_6 {Dowodzenie postaci wzrasta o #smodifiers.SkillLeadership# punktów.}
 itm_stat_obereg_7 {Zrodzony z morza}
-itm_stat_descr_obereg_7 {Nawigacja postaci zwiększa się o 10 punktów.}
+itm_stat_descr_obereg_7 {Nawigacja postaci zwiększa się o #smodifiers.SkillSailing# punktów.}
 itm_stat_obereg_8 {Korzyść}
-itm_stat_descr_obereg_8 {Handel postaci zwiększa się o 15 punktów.}
+itm_stat_descr_obereg_8 {Handel postaci zwiększa się o #smodifiers.SkillCommerce# punktów.}
 itm_stat_obereg_9 {Bóg Wiatru}
 itm_stat_descr_obereg_9 {Prędkość statku wzrasta o 10%.}
 itm_stat_totem_01 {Żelazny żołądek}
@@ -146,7 +148,7 @@ itm_stat_descr_totem_03 {Podwaja efekt leczenia z rozkoszy miłosnych.}
 itm_stat_totem_04 {Urodzony przywódca}
 itm_stat_descr_totem_04 {Blokuje lojalność oficera na cały czas trwania.}
 itm_stat_totem_05 {Niezniszczalność}
-itm_stat_descr_totem_05 {Zmniejsza obrażenia krytyczne zadawane przez wroga o 25%.}
+itm_stat_descr_totem_05 {Zmniejsza obrażenia krytyczne zadawane przez wroga o $modifierPercent(CritIncomingDamageReduction).}
 itm_stat_totem_06 {Koń juczny}
 itm_stat_descr_totem_06 {Przekroczenie limitu udźwigu nie spowalnia postaci ani nie nakłada kar.}
 itm_stat_totem_07 {Przyzwanie}
@@ -216,11 +218,11 @@ itm_stat_descr_talisman15 {Zwiększa Siłę Floty o 15%. Wykonana z chusty Żela
 itm_stat_talisman16 {Wojownik dżungli}
 itm_stat_descr_talisman16 {Broń Egzotyczna zadaje o 15% więcej obrażeń}
 itm_stat_talisman17 {Tarcza Wiary}
-itm_stat_descr_talisman17 {Zmniejsza obrażenia zadawane załodze i kapitanowi o 5%, a na pokładzie Świętego Miłosierdzia zwiększa umiejętność Obrona o 10.}
+itm_stat_descr_talisman17 {Zmniejsza obrażenia zadawane załodze o $ctxHasAttr(QBonus.max|15|5) %, a na pokładzie *Świętego Miłosierdzia* zwiększa umiejętność obrony o 10. Redukcja obrażeń rośnie po ukończeniu Ścieżki Sprawiedliwego.}
 itm_stat_talisman18 {Poszukiwanie prawdy}
 itm_stat_descr_talisman18 {Każdy znaleziony skarb zwiększa siłę salwy muszkietowej załogi o 1% i obrażenia od kartacza o 2%.}
 itm_stat_talisman19 {Pamiętaj}
-itm_stat_descr_talisman19 {Za każde 2% utraty kadłuba prędkość statku rośnie o 0,75%, a obrażenia dział o 0,5%.}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {W pogotowiu}
 itm_stat_descr_talisman20 {Szybkość celowania bronią palną wzrasta o 15%, maksymalne obrażenia przy celowaniu o 20%, szybkość przeładowania o 10%, a obrażenia za trafienie w głowę o 20%.}
 itm_stat_talisman21 {Wspólna odpowiedzialność}
@@ -267,3 +269,27 @@ itm_stat_mushket8 {Rozkładane}
 itm_stat_descr_mushket8 {Ta broń palna może być składana i rozkładana, przechodząc z trybu jednoręcznego na dwuręczny.}
 itm_stat_spyglassSP3 {Karzące spojrzenie}
 itm_stat_descr_spyglassSP3 {Ta luneta pozwala dostrzec strach w oczach wrogiego kapitana i sprawdzić, czy jest gotów się poddać.}
+itm_stat_reloadTime {Czas przeładowania}
+itm_stat_descr_reloadTime {Czas załadowania następnego naboju.}
+itm_stat_kaleuche_amulet2 {Zaklęcie ataku}
+itm_stat_descr_kaleuche_amulet2 {Czyni monstra świątynnego Chavinavi podatnym na obrażenia zadawane bronią i zapewnia ochronę przed ich atakami. Zwiększa umiejętności we wszystkich rodzajach broni o 25%.}
+itm_stat_kaleuche_amulet3 {Zaklęcie obronne}
+itm_stat_descr_kaleuche_amulet3 {Czyni monstra świątynnego Chavinavi podatnym na obrażenia zadawane bronią i zapewnia ochronę przed ich atakami. Zmniejsza otrzymywane obrażenia od dowolnego rodzaju broni o 25% i zapobiega zatruciu.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+ ~
+ Aktualny bonus: $number($attr($context.KillerBonus.appliedbonus)) obrażeń i $number($attr($context.KillerBonus.RangeBonus))% zasięgu.
+}
+itm_stat_blade_WR_1 {Pilność}
+itm_stat_descr_blade_WR_1 {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}
+itm_stat_secondary_hat6 {Szanowny negocjant}
+itm_stat_descr_secondary_hat6 {Zwiększa siłę statków handlowych w eskadrze o 15% i zmniejsza karę do szansy ucieczki przed statkami handlowymi o 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Zwiększa obrażenia zadawane bronią palną dziesięciokrotnie.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Nawet przy lekkim zranieniu w 100% przypadków wywołuje ciężkie zatrucie, którego nie da się wyleczyć antidotami i które w krótkim czasie prowadzi do śmierci.}
+itm_stat_PerksPotion {Zapomnienie}
+itm_stat_descr_PerksPotion {Resetuje wszystkie opanowane Perki postaci. Po spożyciu pamięć o Perkach i technikach zostaje wymazana, ale umiejętność pozostaje — jakby ciało pamiętało, czego dokonało, a umysł już nie.}
+itm_stat_descr_talisman19_InSlot {Każde 2% utraconego kadłuba statku zwiększa prędkość i obrażenia dział odpowiednio o 0.75% i 0.5%.}
+itm_stat_descr_talisman19_InInventory {Gdy znajduje się w ekwipunku, czyni wszystkich oficerów nieśmiertelnymi.}

@@ -270,10 +270,10 @@ void ChickenGod_OpenTemple(string qName) {
 		
 		if (CheckAttribute(pchar, "questTemp.ChickenGod.SawJoruba")) {
 			AddQuestRecord("ChickenGod", "3");
-			AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_5"),StringFromKey("ChickenGod_6")));
+			if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("","а"));
 		} else {
 			AddQuestRecord("ChickenGod", "4");
-			AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_5"),StringFromKey("ChickenGod_6")));
+			if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("","а"));
 		}
 	}
 }
@@ -288,10 +288,10 @@ void ChickenGod_GiveFirstTask() {
 
 	if (CheckAttribute(pchar, "questTemp.ChickenGod.SawJoruba")) {
 		AddQuestRecord("ChickenGod", "5");
-		AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_7"),StringFromKey("ChickenGod_8")));
+		if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("ен","на"));
 	} else {
 		AddQuestRecord("ChickenGod", "5.1");
-		AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_7"),StringFromKey("ChickenGod_8")));
+		if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("ен","на"));
 	}
 	
 	AddQuestRecordInfo("ChickenGodOptionalQuests", "1");
@@ -305,8 +305,8 @@ void ChickenGod_GiveFirstTask() {
 void ChickenGod_GiveSecondTask() {
 	pchar.questTemp.ChickenGod.Tasks.p2 = true;
 	AddQuestRecord("ChickenGod", "6");
-	AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_5"),StringFromKey("ChickenGod_6")));
-	AddQuestUserData("ChickenGod", "sSex2", GetSexPhrase(StringFromKey("ChickenGod_5"),StringFromKey("ChickenGod_6")));
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("","а"));
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex2", GetSexPhrase("","а"));
 }
 
 void ChickenGod_GiveThirdTask() {
@@ -322,20 +322,14 @@ void ChickenGod_GiveFourthTask() {
 void ChickenGod_GiveFifthTask() {
 	pchar.questTemp.ChickenGod.Tasks.o6.Sacrifices = 0;
 	AddQuestRecord("ChickenGod", "9");
-	AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_5"),StringFromKey("ChickenGod_6")));
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("","а"));
 }
 
 void ChickenGod_ModifyStats(float mod) {
-	if (!CheckAttribute(pchar, "questTemp.ChickenGod.EnergyMod")) {
-		pchar.questTemp.ChickenGod.EnergyMod = 0.0;
-	}
-	
-	pchar.questTemp.ChickenGod.EnergyMod = stf(pchar.questTemp.ChickenGod.EnergyMod) + mod;
-	
-	float hp = LAi_GetCharacterMaxHP(pchar) + mod;
-	if (CheckAttribute(pchar, "chr_ai.hp_max_back")) {
-		pchar.chr_ai.hp_max_back = stf(pchar.chr_ai.hp_max_back) + mod;
-	}
+	IncreaseChrModifier(pchar, M_ENERGY_MAX, mod, "ChickenGod");
+	IncreaseChrModifier(pchar, M_HP_MAX, mod, "ChickenGod");
+	CT_UpdateCashTables(pchar);
+	float hp = LAi_GetCharacterMaxHP(pchar);
 	LAi_SetHP(pchar, hp, hp);
 }
 
@@ -459,10 +453,10 @@ void ChickenGod_FinalGood() {
 	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "OpenTheDoors", -1);
 	
 	AddQuestRecord("ChickenGod", "10");
-	AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase(StringFromKey("ChickenGod_7"),StringFromKey("ChickenGod_8")));
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("ChickenGod", "sSex1", GetSexPhrase("ен","на"));
 	CloseQuestHeader("ChickenGod");
 	Achievment_Set("ach_CL_86");
-	if (pchar.rank <= 21) Achievment_Set("ach_CL_117");
+	if (pchar.rank <= 17) Achievment_Set("ach_CL_117");
 	
 	SetItemInLocation("khopesh1",  "Temple_inside", "item1");
 	Item_OnUnLoadLocation();

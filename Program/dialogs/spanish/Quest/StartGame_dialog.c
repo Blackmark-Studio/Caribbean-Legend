@@ -204,6 +204,7 @@ void ProcessDialogEvent()
 		setWDMPointXZ("Pirates_town");
 		// Longway
 		sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Longway";
 		sld.lastname = "";
 		sld.greeting = "Longway";
@@ -239,7 +240,7 @@ void ProcessDialogEvent()
 		sld.OfficerImmortal = true;
 		sld.Health.HP = 60.0;
 		sld.Health.maxHP = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+	
 		AddPassenger(pchar, sld, false);
 		SetCharacterRemovable(sld, true);
 		sld.Payment = true;
@@ -248,6 +249,7 @@ void ProcessDialogEvent()
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		// Tichingitu
 		sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Tichingitu";
 		sld.lastname = "";
 		sld.greeting = "Tichingitu";
@@ -290,7 +292,7 @@ void ProcessDialogEvent()
 		sld.OfficerImmortal = true;
 		sld.Health.HP = 60.0;
 		sld.Health.maxHP = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+	
 		// Элен:
 		pchar.questTemp.Saga.Helena_officer = "true";
 		sld = characterFromId("Helena");
@@ -311,7 +313,7 @@ void ProcessDialogEvent()
 		SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 		SetCharacterPerk(sld, "HardHitter");
 		SetCharacterPerk(sld, "ByWorker");
-		SetCharacterPerk(sld, "ByWorker2");
+	
 		SetCharacterPerk(sld, "Grus");
 		GiveItem2Character(sld, "pirate_cutlass");
 		sld.equip.blade = "pirate_cutlass";
@@ -329,6 +331,7 @@ void ProcessDialogEvent()
 		LAi_SetImmortal(sld, false);
 		// Baсker
 		sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Raymond";
 		sld.lastname = "Backer";
 		sld.greeting = "baker";
@@ -470,6 +473,7 @@ void ProcessDialogEvent()
 		setWDMPointXZ("Pirates_town");
 		// Longway
 		sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Longway";
 		sld.lastname = "";
 		sld.greeting = "Longway";
@@ -513,6 +517,7 @@ void ProcessDialogEvent()
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		// Tichingitu
 		sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Tichingitu";
 		sld.lastname = "";
 		sld.greeting = "Tichingitu";
@@ -575,7 +580,7 @@ void ProcessDialogEvent()
 		SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 		SetCharacterPerk(sld, "HardHitter");
 		SetCharacterPerk(sld, "ByWorker");
-		SetCharacterPerk(sld, "ByWorker2");
+	
 		SetCharacterPerk(sld, "Grus");
 		GiveItem2Character(sld, "blade_31");
 		sld.equip.blade = "blade_31";
@@ -592,6 +597,7 @@ void ProcessDialogEvent()
 		sld.Health.maxHP = 60.0;
 		// Baсker
 		sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Raymond";
 		sld.lastname = "Backer";
 		sld.greeting = "baker";
@@ -725,6 +731,7 @@ void ProcessDialogEvent()
 		setWDMPointXZ("Shore9");
 		// Longway
 		sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Longway";
 		sld.lastname = "";
 		sld.greeting = "Longway";
@@ -769,6 +776,7 @@ void ProcessDialogEvent()
 
 		// Tichingitu
 		sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Tichingitu";
 		sld.lastname = "";
 		sld.greeting = "Tichingitu";
@@ -931,6 +939,7 @@ void ProcessDialogEvent()
 		setWDMPointXZ("SentJons_town");
 		// Longway
 		sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Longway";
 		sld.lastname = "";
 		sld.greeting = "Longway";
@@ -975,6 +984,7 @@ void ProcessDialogEvent()
 
 		// Tichingitu
 		sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Tichingitu";
 		sld.lastname = "";
 		sld.greeting = "Tichingitu";
@@ -1115,6 +1125,7 @@ void ProcessDialogEvent()
 		setWDMPointXZ("Mayak4");
 		// Longway
 		sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Longway";
 		sld.lastname = "";
 		sld.greeting = "Longway";
@@ -1159,6 +1170,7 @@ void ProcessDialogEvent()
 
 		// Tichingitu
 		sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+		SetHeroAutolevel(sld);
 		sld.name = "Tichingitu";
 		sld.lastname = "";
 		sld.greeting = "Tichingitu";

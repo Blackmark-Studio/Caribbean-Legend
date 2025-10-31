@@ -57,34 +57,32 @@ void initShipPerks(ref list)
 	perks.BasicCommerce.cost = 1; // казначей
 	perks.BasicCommerce.OfficerType = "treasurer";
 
-	perks.QuickGlance.cost = 1;
+	perks.QuickGlance.cost = 2;
 	perks.QuickGlance.OfficerType = "treasurer";
 	perks.QuickGlance.condition.BasicCommerce = true;
 
-	perks.TrainedEye.cost = 1;
+	perks.AdvancedCommerce.cost = 2; // казначей
+	perks.AdvancedCommerce.OfficerType = "treasurer";
+	perks.AdvancedCommerce.condition.BasicCommerce = true;
+
+	perks.TrainedEye.cost = 3;
 	perks.TrainedEye.OfficerType = "treasurer";
-	perks.TrainedEye.condition.BasicCommerce = true;
+	perks.TrainedEye.condition.QuickGlance = true;
 
 	perks.TradeConnections.cost = 3;
 	perks.TradeConnections.OfficerType = "treasurer";
 	perks.TradeConnections.condition.QuickGlance = true;
-	perks.TradeConnections.condition.TrainedEye = true;
+	perks.TradeConnections.condition.AdvancedCommerce = true;
 
-	perks.AdvancedCommerce.cost = 3; // казначей
-	perks.AdvancedCommerce.condition.QuickGlance = true;
-	perks.AdvancedCommerce.condition.TrainedEye = true;
-	perks.AdvancedCommerce.OfficerType = "treasurer";
-
-	perks.Intendant.cost = 3;
-	perks.Intendant.OfficerType = "treasurer";
-	perks.Intendant.condition.QuickGlance = true;
-	perks.Intendant.condition.TrainedEye = true;
-
-	perks.ProfessionalCommerce.cost = 4; // казначей
-	perks.ProfessionalCommerce.condition.Intendant = true;
-	perks.ProfessionalCommerce.condition.AdvancedCommerce = true;
-	perks.ProfessionalCommerce.condition.TradeConnections = true;
+	perks.ProfessionalCommerce.cost = 3; // казначей
 	perks.ProfessionalCommerce.OfficerType = "treasurer";
+	perks.ProfessionalCommerce.condition.AdvancedCommerce = true;
+
+	perks.Intendant.cost = 4;
+	perks.Intendant.condition.TrainedEye = true;
+	perks.Intendant.condition.TradeConnections = true;
+	perks.Intendant.condition.ProfessionalCommerce = true;
+	perks.Intendant.OfficerType = "treasurer";
 
 	/////////////////////////////////////////////////////////////
 	/// Перки для канонира
@@ -167,11 +165,14 @@ void initShipPerks(ref list)
 		perks.InstantRepair.TimeDelay = 120;
 		perks.InstantRepair.TimeDuration = 30;
 		perks.InstantRepair.OfficerType = "carpenter";
+		perks.ShipDefenseProfessional.condition.InstantRepair = true;
 	}
 
 	perks.ShipDefenseProfessional.cost = 4;
 	perks.ShipDefenseProfessional.condition.AdvancedBattleState = true;
+	perks.ShipDefenseProfessional.condition.Builder = true;
 	perks.ShipDefenseProfessional.OfficerType = "carpenter";
+	
 
 	/////////////////////////////////////////////////////////////
 	/// Перки для штурмана
@@ -251,6 +252,7 @@ void initShipPerks(ref list)
 	perks.SeaDogProfessional.cost = 3;
 	perks.SeaDogProfessional.rank = 15;
 	perks.SeaDogProfessional.PlayerOnly = true;
+	SetArefModifier(perks, "SeaDogProfessional", M_SQUADRON_POWER, PERK_VALUE_SEA_DOG_PROFESSIONAL);
 
 	perks.FlagPir.cost = 1; // лично ГГ
 	perks.FlagPir.PlayerOnly = true;

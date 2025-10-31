@@ -30,7 +30,7 @@ trait03 {Marchio di qualità}
 trait03_desc {Un insieme di glifi, sigilli e brevetti rende il carico di questa nave riconoscibile, e il suo arrivo in porto è un buon segno per i mercanti locali. Gli accordi commerciali di successo migliorano le relazioni con la nazione del porto, e buone relazioni rendono il commercio più redditizio.}
 trait03_desc2
 {
-Riduce la penalità di vendita: 3% per livello di relazione.Soglia di profitto per migliorare le relazioni con la nazione: 25000.
+Riduce la penalità di vendita: 3% per livello di relazione.Soglia di profitto per migliorare le relazioni con la nazione: 50000.
 }
 trait04 {Vele di emergenza}
 trait04_desc {In caso di pericolo critico per la nave, i marinai montano speciali vele a montaggio rapido sulle verghe e le issano, aumentando temporaneamente la velocità della nave.}

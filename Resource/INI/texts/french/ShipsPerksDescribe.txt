@@ -30,7 +30,7 @@ trait03 {Sceau de qualité}
 trait03_desc {Un ensemble de glyphes, de sceaux et de brevets rend la cargaison de ce navire reconnaissable, et son arrivée au port est un bon signe pour les commerçants locaux. Les accords commerciaux réussis améliorent les relations avec la nation du port, et de bonnes relations rendent le commerce plus rentable.}
 trait03_desc2
 {
-Réduit la pénalité de vente : 3% par niveau de relation.Seuil de profit pour améliorer les relations avec la nation : 25000.
+Réduit la pénalité de vente : 3% par niveau de relation.Seuil de profit pour améliorer les relations avec la nation : 50000.
 }
 trait04 {Voiles d'urgence}
 trait04_desc {En cas de danger critique pour le navire, les marins installent des voiles spéciales à montage rapide sur les vergues et les hissent, augmentant temporairement la vitesse du navire.}

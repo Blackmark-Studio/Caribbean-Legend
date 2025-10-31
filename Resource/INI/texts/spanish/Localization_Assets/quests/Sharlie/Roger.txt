@@ -63,7 +63,7 @@ Roger_62 {dos dias después...@<NewStr()>Se han construido seis botes...}
 Roger_63 {Demetrio}
 Roger_64 {Rojas}
 Roger_65 {Kitty}
-Roger_66 {Torero}
+Roger_66 { }
 Roger_67 {Ignacio}
 Roger_68 {Marco}
 Roger_69 {Modo de exploración: el temporizador está deshabilitado.}
@@ -91,7 +91,7 @@ Roger_90 {Modo de exploración: Corrida: las coordenadas son correctas}
 Roger_91 {Modo de exploración: Corrida: las coordenadas no son correctas}
 Roger_92 {¡Convoy español en el horizonte!}
 Roger_93 {Toro de Oro}
-Roger_94 {Dragón Rojo}
+Roger_94 { }
 Roger_95 {¡Una enorme explosión en @<pchar.ship.name>!}
 Roger_96 {¡Hemos llegado a Cartagena! Tyrex ordena zarpar hacia la Bahía de Covenas}
 Roger_97 {¡Los grupos de desembarco están listos para asaltar Cartagena!}
@@ -104,7 +104,7 @@ Roger_103 {Tonneur}
 Roger_104 {Libre}
 Roger_105 {Myutin}
 Roger_106 {Inconnu}
-Roger_107 {Alonso}
+Roger_107 { }
 Roger_108 { }
 Roger_109 {Tres horas después...}
 Roger_110 {Rodgar}

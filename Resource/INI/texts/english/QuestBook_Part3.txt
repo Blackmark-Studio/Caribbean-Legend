@@ -554,7 +554,7 @@ I've let Florian Shoke down. I failed to deliver enough cannons to him. My fooli
 #TEXT 11
 I delivered the cannons to Florian Shoke. He tried to involve me in some spy business, but I refused—far too dangerous for my liking.
 #TEXT 12
-I now have 250 doubloons and a new mission from Florian Shoke. I must sneak into Portobello and find out why the galleon Alcantara hasn't set sail. I should also discover what happened to Sylvan Laforet, also known as Jaime Silicio.
+I now have 75 doubloons and a new mission from Florian Shoke. I must sneak into Portobello and find out why the galleon Alcantara hasn't set sail. I should also discover what happened to Sylvan Laforet, also known as Jaime Silicio.
 #TEXT 13
 Damn it! I was too careless. The bloody innkeeper called the guards as soon as he heard the name Jaime Silicio. Now the whole town knows I'm here. I'll have to return to Florian Shoke empty-handed...
 #TEXT 14
@@ -1094,7 +1094,8 @@ The four months to gather materials have expired. It's a pity I didn't manage it
 #QUEST renovate_fdm
 Renovating the Ghost Ship
 #TEXT   1
-The shipmaster of Isla Tesoro, Alexus, has asked me to gather materials for the renovation of the ghost ship. He needs 150 pieces of ironwood, 200 barrels of resin, 170 rolls of ship silk, and 130 coils of hemp rope.
+The master shipwright of Isla Tesoro, Alexus, has agreed to rebuild the ghost ship. This restoration will not only change its appearance but also significantly improve it in every respect — outdated and worn fittings will be replaced and the structure supplemented with modern solutions.
+All of this will cost a crazy sum, and you'll also have to hunt down and bring him the necessary materials: 150 units each of bakaut, silk, ropes and resin.
 #TEXT   2
 @<sQty> of @<sGood> left.
 #TEXT   3
@@ -1308,7 +1309,7 @@ Sometimes I feel grateful to my brother... It's a good thing he introduced me to
 #TEXT   30
 I've acquired the golden cross with lazurite. It was rather expensive, but that's life.
 #TEXT   31
-Belinda de Ribero has mistaken me for a Jesuit and is prepared to give me the ostensory. But first, I must do this worthy señora a favor—deliver a ransom for her good friend. Let this service serve as payment for the ostensory. I need to go to the entrance of the cave between 11 p.m. and midnight. I know how to deal with outlaws.
+Belinda de Ribero has mistaken me for a Jesuit and is prepared to give me the ostensory. But first, I must do this worthy señora a favor—deliver a ransom for her good friend. Let this service serve as payment for the ostensory. I need to go to the entrance of the cave between 11 to 12 p.m. and midnight. I know how to deal with outlaws.
 #TEXT   32
 Esteban Sosa has managed to get himself kidnapped... what a rascal! I didn't kill him, which will disappoint señora Belinda, though she’ll be unhappy regardless. I need to claim my ostensory.
 #TEXT   33
@@ -2434,7 +2435,7 @@ Folke Deluc
 #TEXT   1
 While I was attending to business in Saint-Pierre, Folke Deluc managed to land himself behind bars once again—predictably, over money. Damn him, how did he rack up new debts so quickly? The crew is grumbling; rescuing him a second time seems too much. Still, after the battle near Le François, my standing with the men has improved, and my name carries some weight on the island. I could look for a new navigator at the tavern, but my conscience won't let me abandon Folke so easily. He deserves at least a chance to explain himself. I need to find out how he managed to get into debt again in just a few hours.
 #TEXT   2
-Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could profit from the navigator. He bought up all of Folke's debts across the French colonies. The total isn't small—an impressive one hundred gold doubloons!
+Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could profit from the navigator. He bought up all of Folke's debts across the French colonies. The total isn't small—an impressive 40 gold doubloons!
 #TEXT   3
 I've paid the debt for my wayward navigator. Let the townsfolk laugh; I'm still certain I did the right thing.
 #TEXT   4

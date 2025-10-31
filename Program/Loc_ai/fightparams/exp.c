@@ -67,7 +67,7 @@ void ApplyExpFromStrike(ref attack, ref enemy, bool isDead, string attackType, s
 
 	float kExpKill = EXP_FOR_KILL; // ИГРАЕМСЯ СКОРОСТЬЮ НАБОРА ОПЫТА ЗА УБИЙСТВО
 	
-	if (CharUseMusket(attack))
+	if (weaponType == MUSKET_ITEM_TYPE)
 	{
 		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
 		else AddCharacterExpToSkill(attack, SKILL_PISTOL, makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);
@@ -76,8 +76,8 @@ void ApplyExpFromStrike(ref attack, ref enemy, bool isDead, string attackType, s
 	{
 		if (CheckAttribute(enemy, "City")) AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat((10.0 + ((1 + re) / (1+ra))*6.5)/20) * kExpKill);
 		else AddCharacterExpToSkill(attack, LAi_GetBladeFencingType(attack), makefloat(10.0 + ((1 + re) / (1+ra))*6.5) * kExpKill);	
-		if(GetCharacterEquipByGroup(attack, BLADE_ITEM_TYPE) == "khopesh1") ChickenGod_KhopeshKill(attack);
 	}
+
 	AddCharacterExpToSkill(attack, SKILL_DEFENCE, 1);
 	AddCharacterExpToSkill(attack, SKILL_FORTUNE, 1);
 	AddCharacterExpToSkill(attack, SKILL_LEADERSHIP, 1);

@@ -664,9 +664,9 @@ int GetAttributeInt(ref rObject, string atrName)
 }
 
 // Получить int из атрибута, либо 0, если атрибута нет
-int GetAttributeIntOrDefault(ref rObject, string atrName, int default)
+int GetAttributeIntOrDefault(ref rObject, string atrName, int defaultValue)
 {
-	if (!CheckAttribute(rObject, &atrName)) return default;
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
 	return sti(rObject.(atrName));
 }
 
@@ -677,9 +677,9 @@ float GetAttributeFloat(ref rObject, string atrName)
 }
 
 // Получить float из атрибута, либо дефолт, если атрибута нет
-float GetAttributeFloatOrDefault(ref rObject, string atrName, float default)
+float GetAttributeFloatOrDefault(ref rObject, string atrName, float defaultValue)
 {
-	if (!CheckAttribute(rObject, &atrName)) return default;
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
 	return stf(rObject.(atrName));
 }
 
@@ -687,6 +687,13 @@ float GetAttributeFloatOrDefault(ref rObject, string atrName, float default)
 void SetAttribute(ref rObject, string atrName, ref value)
 {
 	rObject.(atrName) = value;
+}
+
+// Получить строковый атрибут или заглушку
+string GetAttributeOrDefault(ref rObject, string atrName, string defaultValue)
+{
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	return rObject.(atrName);
 }
 
 // Увеличить значение int атрибута на value
@@ -714,16 +721,30 @@ string AtributesToText(ref rObject)
 	return result;
 }
 
+string AtributesToTextAref(ref rObject, string attributeName)
+{
+	aref attribute;
+	makearef(attribute, rObject.(attributeName));
+	return AtributesToText(&attribute);
+}
+
 // Суровое приведение к строке
 string VarTypeToString(ref something)
 {
 	switch (VarType(&something))
 	{
-		case "float": return fts(something, 2); break;
+		case "float": return fts(something, 4); break; // вряд ли кому-то в строковых приколах понадобятся разряды дальше
 		case "int": return its(something); break;
 		case "string": return something; break;
 	}
 
 	trace("VartypeToString error with: " + something);
 	return "Error";
+}
+
+void DumpAttributesAref(ref rObject, string attributeName)
+{
+	aref attribute;
+	makearef(attribute, rObject.(attributeName));
+	DumpAttributes(attribute);
 }

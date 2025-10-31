@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "你以为自己能就这么闯进来, 侮辱一位女士, 无视我, 然后还能带着金币安然离开? 看起来你脑子不太灵光。不过我不会在女人面前动手。所以我的条件是: 你向Caldera夫人道歉, 拿上你的金币, 然后赶紧滚出去。否则, 老子就得好好教教你什么叫规矩了。";
 					link.l1.go = "Naemnik_5";
-					notification("检查通过 (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("金币不足 (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "好吧, 我可以原谅你粗鲁的举止, 甚至对我无礼的态度。但如果你想拿到你的金币并安然离开这里, 你必须向Caldera女士道歉。否则, 就看谁的武器更厉害了。相信我, 我可不是为了好看才带武器的。";
 					link.l1.go = "Naemnik_5";
-					notification("检查通过 (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("金币不足 (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "很明显, 你脑子不太灵光, 居然以为我会乖乖等着轮到我。更别说你还真以为我会对你和你那帮人给卡尔德拉夫人带来的麻烦视而不见。";

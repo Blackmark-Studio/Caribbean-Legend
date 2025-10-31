@@ -168,11 +168,12 @@ void BRD_PlaceCaptain(ref chr, ref boarding_enemy, int locIndex, string sLocType
 		return; // обычного матросика пилим
 	};
 
-	if (!isCabin) notification(StringFromKey("boarding_3"), "leadership")
+	if (!isCabin) notification(StringFromKey("boarding_3"), "leadership");
 
 	model = LAi_GetBoardingModel(boarding_enemy, &ani);
 	LAi_CreateFantomCharacterEx(model, ani, "rld", sLocType);
 	ChangeAttributesFromCharacter(chr, boarding_enemy, true);
+	GEN_OverrideAppearance(chr, 6);
 	chr.MainCaptanIdx = boarding_enemy.index;
 	chr.CaptanId = boarding_enemy.id; // на всякий случай нативное
 	boarding_enemy.CaptanId = boarding_enemy.id; // на всякий случай нативное
@@ -248,10 +249,10 @@ void BRD_SetCrewSurrendered()
 	}
 }
 
-bool BRD_IsCrewGiveUpCaptain(ref enemy)
+bool BRD_IsCrewGiveUpCaptain(ref enemy, int leftCrew)
 {
-	if (!CheckAttribute(enemy, "BoardingFaith.CrewGiveUpCaptain")) return false;;
-	return GetCrewQuantity(enemy) > 0; // кто-то же должен что-то решать
+	if (!CheckAttribute(enemy, "BoardingFaith.CrewGiveUpCaptain")) return false;
+	return leftCrew > 0; // кто-то же должен что-то решать
 }
 
 bool BRD_IsSurrenderBeforeCabin(ref enemy)
@@ -302,6 +303,50 @@ void BRD_BoardingCaptainKilled(ref clone)
 
 	notification(StringFromKey("boarding_5"), "IronWill");
 	LAi_SetFightMode(pchar, 0);
+
+	if(HasPerk(pchar, "Looting"))
+	{
+		SetEventHandler("BRD_InitLooting", "BRD_InitLooting", 1);
+		PostEvent("BRD_InitLooting", 500, "i", &Locations[boarding_location]);
+	}
+
 	PostEvent("LAi_event_boarding_EnableReload", 3000);
 	BRD_SetCrewSurrendered();
+}
+
+// Убили какого-то подменыша на абордаже
+void BRD_BoardingCloneKilled(ref clone)
+{
+	if (!CheckAttribute(clone, "PersonalityCloneType")) return;
+	string attr = clone.chr_ai.group;
+	string type = clone.PersonalityCloneType;
+	DeleteAttribute(&TEV, "boarding.perkChars." +attr + "." + type);
+	if (attr != LAI_GROUP_PLAYER) return;
+	if (type != "boatswain" && type != "companion") return;
+
+	ref chr = GetCharacter(sti(clone.PersonalityCloneIdx));
+	Notification(XI_ConvertString("OfficerWounded1") + XI_ConvertString("OfficerWounded2"), GetMessagePortrait(chr));
+	if (!CheckAttribute(chr, "OfficerImmortal")) return;
+
+	if(!bSeaActive)
+	{
+		SetFunctionExitFromLocationCondition("RestoreInjOfficerInLoc", pchar.location, false);
+	}
+	else
+	{
+		PChar.quest.RestoreInjOfficerInLoc.win_condition.l1 = "ExitFromSea";
+		PChar.quest.RestoreInjOfficerInLoc.function = "RestoreInjOfficerInLoc";
+	}
+
+	chr.chr_ai.hp = LAi_GetCharacterMaxHP(chr);
+	chr.OfficerImmortal = "Injury";
+	chr.Health.HP = makefloat(chr.Health.HP) - 10.0;
+	if(makefloat(chr.Health.HP) < 20.0) chr.Health.HP = 20.0;
+	string qName = "RestoreHealth_" + chr.index;
+	PChar.quest.(qName).win_condition.l1            = "Timer";
+	PChar.quest.(qName).win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
+	PChar.quest.(qName).win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
+	PChar.quest.(qName).win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
+	PChar.quest.(qName).function					= "AddOfficerHealth";
+	PChar.quest.(qName).again = true;
 }

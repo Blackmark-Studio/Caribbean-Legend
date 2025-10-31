@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 			dialog.text = "Dobrze więc. Podzielimy to na pół.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Oto i masz. Mam "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1223,7 +1223,7 @@ void ProcessDialogEvent()
 			dialog.text = "Wesoło, dobrze. Ile przyniosłeś?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Proszę bardzo. Mam "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1686,7 +1686,7 @@ void ProcessDialogEvent()
 				dialog.text = "Cieszę się, że gwajakowiec przypadł ci do gustu, " + sStr + ". Zwiększenie partii to nie problem, ale jest tu pewne 'ale', sam"+GetSexPhrase("","a")+" rozumiesz. Ze zwiększeniem objętości pojawia się też ślad, który może przyciągnąć niepotrzebną uwagę, szczególnie ze strony władz angielskich. Ale jeśli dodamy do interesu pewne ręce, wierne uszy i ludzi w rezydencji, którzy pomogą pozostać w cieniu, wszystko można zorganizować. Prawda, że to nie będzie tanie - trzy tysiące dublonów za ominięcie skarbca miasta i potrzeb Anglii. Wtedy będę mógł dostarczyć ci pięć razy więcej. Co ty na to?";
 				link.l1 = "Trzy tysiące dublonów? Jan, to przecież rabunek w biały dzień! Czy nie można jakoś poradzić sobie mniejszym kosztem? Może jest sposób załatwić sprawę bez takich bajońskich sum?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

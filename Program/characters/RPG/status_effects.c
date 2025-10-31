@@ -3,7 +3,7 @@
 int GetStatusIntValue(ref chr, string skillName)
 {
 	object null;
-	return GetStatusIntWithInfo(chr, &skillName, &null, false);
+	return GetStatusIntWithInfo(chr, skillName, &null, false);
 }
 
 int GetStatusIntWithInfo(ref chr, string skillName, ref infoObject, bool IsNededInfo)

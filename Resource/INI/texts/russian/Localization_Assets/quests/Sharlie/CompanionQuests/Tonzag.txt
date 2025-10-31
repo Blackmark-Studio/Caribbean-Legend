@@ -1,8 +1,8 @@
 Tonzag_1 {охотники за головами}
-Tonzag_2 {Алонсо}
+Tonzag_2 { }
 Tonzag_3 { }
 Tonzag_4 {Прошло 6 часов...}
 Tonzag_5 {Режим исследования: таймер отключён.}
-Tonzag_6 {Открыт 'Медный всадник'}
+Tonzag_6 {Открыт '$key(Mule|AbilityDescribe.txt)'}
 Tonzag_7 {Альберто}
 Tonzag_8 {Гаодио}

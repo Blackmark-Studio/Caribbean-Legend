@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_114":
-			dialog.text = "Exactamente. Hasta donde sé, cuando entraste al servicio de Francia, se te dio la fragata ligera 'Gryffondor' a tu disposición. Este es un barco maravilloso sin duda, pero aún así es solo para un oficial, y no para un vicealmirante y ahora, un gobernador general. Eres la cara de Francia aquí. Y tu buque insignia debe ser adecuado. Así que hemos decidido que el barco que pasó por sus primeras batallas aquí en el Caribe se añada a tu escuadrón...";
+			dialog.text = "Exactamente. Hasta donde sé, cuando entraste al servicio de Francia, se te dio la corbeta pesada 'Gryffondor' a tu disposición. Este es un barco maravilloso sin duda, pero aún así es solo para un oficial, y no para un vicealmirante y ahora, un gobernador general. Eres la cara de Francia aquí. Y tu buque insignia debe ser adecuado. Así que hemos decidido que el barco que pasó por sus primeras batallas aquí en el Caribe se añada a tu escuadrón...";
 			link.l1 = "Monsieur Forget, ¿estás tratando de decir...?";
 			link.l1.go = "noel_115";
 		break;

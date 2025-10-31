@@ -169,15 +169,15 @@ void ProcessDialogEvent()
 		
 		case "OZ_Shuler_6_No_Money":
 			DialogExit();
-			notification("Недостаточно денег (100 000)", "Money");
+			Notification_Money(false, 100000, "peso");
 			LAi_CharacterDisableDialog(npchar);
 			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
-			notification("Проверка пройдена (30)", SKILL_SNEAK);
+			Notification_Skill(true, 30, SKILL_SNEAK);
 			}
 			else
 			{
-			notification("Недостаточно развит навык (30)", SKILL_SNEAK);
+			Notification_Skill(false, 30, SKILL_SNEAK);
 			}
 		break;
 		
@@ -185,8 +185,8 @@ void ProcessDialogEvent()
 			dialog.text = "Ха! Мне не нужно становиться богачом - я уже в богач! Зачем мне рисковать тем, что принесёт мне кучу денег?";
 			link.l1 = "Ну надо же, сам Хавьер Кастильо боится сыграть? А я-то думал"+GetSexPhrase("","а")+", ты матёрый игрок, а не просто жулик, наживающийся на пьяных простаках.";
 			link.l1.go = "OZ_Shuler_7";
-			notification("Проверка пройдена (100 000)", "Money");
-			notification("Проверка пройдена (30)", SKILL_SNEAK);
+			Notification_Money(true, 100000, "peso");
+			Notification_Skill(true, 30, SKILL_SNEAK);
 		break;
 		
 		case "OZ_Shuler_7":

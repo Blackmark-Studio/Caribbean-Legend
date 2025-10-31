@@ -3,13 +3,13 @@ HollandGambit_2 {Ridderbok}
 HollandGambit_3 {Exploration mode: timer extended. Complete the quest!}
 HollandGambit_4 {Miguel}
 HollandGambit_5 { }
-HollandGambit_6 {Mirage}
+HollandGambit_6 { }
 HollandGambit_7 {Exploration mode: quest duration doubled}
-HollandGambit_8 {Valkyrie}
+HollandGambit_8 { }
 HollandGambit_9 {Valkyrie is on the horizon!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
-HollandGambit_12 {Meifeng}
+HollandGambit_12 { }
 HollandGambit_13 {Here is the grotto. I should look for Solomon's stash here.}
 HollandGambit_14 {Harry}
 HollandGambit_15 {Fletcher}
@@ -20,7 +20,7 @@ HollandGambit_19 {Rodriges}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
-HollandGambit_23 {Alonso}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Abigail died of calenture!}
 HollandGambit_26 {Charlie Knippel died of wounds!}
@@ -43,3 +43,4 @@ HollandGambit_42 {You have fainted of wounds...}
 HollandGambit_43 {You didn't return money to Abigail thus making her a beggar}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
+HollandGambit_46 { }

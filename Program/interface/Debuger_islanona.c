@@ -1162,6 +1162,7 @@ void CalculateInfoDataF14()
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Tichingitu";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -1406,6 +1407,7 @@ void CalculateInfoDataF15()
 	LAi_SetCharacterUseBullet(mc, "shotgun_cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Тичингиту";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -1427,7 +1429,7 @@ void CalculateInfoDataF15()
 
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	AddItems(sld, "mushket6", 1);
 	sld.CanTakeMushket = true;
@@ -1473,7 +1475,7 @@ void CalculateInfoDataF15()
     SetShipSkill(sld, 100, 90, 90, 90, 90, 90, 90, 90, 90);
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "blade_31");
 	sld.equip.blade = "blade_31";
@@ -1509,7 +1511,7 @@ void CalculateInfoDataF15()
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "topor_06");
 	sld.equip.blade = "topor_06";
@@ -1524,6 +1526,7 @@ void CalculateInfoDataF15()
 	AddItems(sld, "potion4", 10);
 	// Бейкер
 	sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Раймонд";
 	sld.lastname = "Бейкер";
 	sld.greeting = "baker";
@@ -2123,6 +2126,7 @@ void CalculateInfoDataF25()
 	LAi_SetCharacterUseBullet(mc, "shotgun_cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Тичингиту";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -2144,7 +2148,7 @@ void CalculateInfoDataF25()
 
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	AddItems(sld, "mushket6", 1);
 	sld.CanTakeMushket = true;
@@ -2190,7 +2194,7 @@ void CalculateInfoDataF25()
     SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "blade_31");
 	sld.equip.blade = "blade_31";
@@ -2226,7 +2230,7 @@ void CalculateInfoDataF25()
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "topor_06");
 	sld.equip.blade = "topor_06";

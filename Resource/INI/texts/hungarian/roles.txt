@@ -36,3 +36,23 @@ lightman_merchant {Lighthouse Keeper}
 cemeteryman_merchant {Graveyard Keeper}
 legend {Legend}
 soldier_town {Guard}
+banditos {Cutthroat}
+patrol {Patrol}
+comandante {Commander}
+prisonboss {Commandant}
+whore {Wench}
+hostess {Hostess}
+enemy {Enemy}
+wife {Wife}
+kukulkan {Kukulkan}
+mercen {Mercenary}
+monster {Undead}
+captain_trader {Free Trader}
+mtraxx_vanguard {Vanguard of Tirax}
+fgirl {Mistress}
+deadman {Living Dead}
+friend {Friend}
+duelist {Swashbuckler}
+smuggler {Smuggler}
+AffairOfHonor_tavern {Desperate Drunk}
+hovernon_wife {Governor's Wife}

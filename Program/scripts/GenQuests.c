@@ -5984,7 +5984,6 @@ void JusticeOnSale_ShoreEnterFromMayor(string _quest)
 		character = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShorePirate_" + i, "", "man", "man", sti(PChar.rank), PIRATE, 0, true, "marginal"));
 		SetModelPirate(character);
 		SetFantomParamFromRank(character, sti(PChar.rank) + 5, true);
-		InitChrRebalance(character, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Бандиты по квесту губернатора
 		ChangeCharacterAddressGroup(character, location.id, "goto", LAi_FindNearestFreeLocator2Pchar("goto"));
 		
 		LAi_SetWarriorTypeNoGroup(character);
@@ -8974,7 +8973,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 					else sld = GetCharacter(NPC_GenerateCharacter("MayorQuestGang_" + i, iModel[ShipType], "man", "man", Rank, PIRATE, 0, true, "marginal"));
 					LAi_SetActorType(sld);
 					SetFantomParamFromRank(sld, Rank, true);
-					InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Бандиты по квесту губернатора
+					SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Бандиты по квесту губернатора
 					//Получим локатор для логина
 					attrName = GetAttributeName(GetAttributeN(arAll, i));
 					ChangeCharacterAddressGroup(sld, location.id, encGroup, attrName);					

@@ -1,4 +1,4 @@
-Longway_1 {Alónso}
+Longway_1 { }
 Longway_2 { }
 Longway_3 {Abe}
 Longway_4 {Bix}
@@ -65,3 +65,4 @@ Longway_64 {Marceline podría haberme ayudado ahora mismo: odia a su maldito mar
 Longway_65 {Chang}
 Longway_66 {Xing}
 Longway_67 {Mi amada necesita descansar. Intentaré no molestarla por ahora.}
+Longway_68 {Voltigeur}

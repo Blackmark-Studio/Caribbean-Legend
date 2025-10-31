@@ -189,3 +189,5 @@ TimeScale {Le temps s'accélère/ralentit}
 TimeScaleFasterBA {Le temps s'accélère}
 TimeScaleSlowerBA {Le temps ralentit}
 FireCamera_Set {Vue de visée}
+WMapDrawCircle {Zone de combat}
+InterfaceTakeAll {Prendre tout}

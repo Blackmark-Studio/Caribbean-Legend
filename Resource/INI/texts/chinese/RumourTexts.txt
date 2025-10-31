@@ -40,7 +40,7 @@ WorkWithContra_t1 {据说#sPsHero_Name#运来了一整舱走私货物。 他可�
 WorkWithContra_t2 {我无意中听到#sPsHero_Name#和我们的走私犯谈话。 他们约定在一个叫#sContraPlace#的地方见面。}
 DuelCoward_t0 {真丢脸! #sName#没有来参加决斗。 现在大家都说他是个懦夫!}
 DuelCoward_t1 {哈哈, #sName#没有来参加决斗! 我想他以后在女人面前不会像以前 那么成功了。}
-DuelCoward_t2 {你听说了吗? #sName#没有来参加决斗! 据说他烂醉如泥, 根本站不起来。}
-DuelHero_t0 {你知道吗, #sName#是个一流的决斗者? 他已经杀了#sKill#个人。 我可不想挡他的道。}
+DuelCoward_t2 {你听说了吗？#sName# 没去参加决斗！据说他昨晚喝得烂醉如泥，连站都站不起来。}
+DuelHero_t0 {你知道吗？#sName# 是个老练的决斗者？他已经杀了 #sKill# 个人。可别挡他的路。}
 DuelHero_t1 {据说#sName#把灵魂卖给了魔鬼, 所以他在决斗中战无不胜! 而那些被他杀死的人的灵魂... 他已经杀了#sKill#个人, 他们都直接下了地狱! 还据说如果他停止杀戮, 魔鬼就会索取他自己的灵魂。}
 DuelHero_t2 {那个暴发户#sName#运气好得难以置信! 他已经在决斗中杀了#sKill#个人, 自己却毫发无损! 真的, 你能相信吗?}

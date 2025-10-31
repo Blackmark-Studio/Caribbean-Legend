@@ -443,7 +443,6 @@ void ProcessDialogEvent()
 			link.l1 = "Ну, Пьер, держитесь тут... а я... ик... я пойду, пока ноги ещё слушаются!";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 		
 		case "Exit2":

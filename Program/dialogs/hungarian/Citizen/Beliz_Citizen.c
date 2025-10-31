@@ -26,6 +26,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}
 			}
 			// <== квест "Путеводная звезда"
+			//--> Дикая Роза
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "About a month and a half ago a certain Jerome Sauvernier arrived in Belize. He was wounded in a brawl at the 'Glass Eye', but survived. Could you tell me where I might find him?";
+				link.l1.go = "WildRose_Beliz_Citizen_1";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "A month and a half ago, give or take, a gentleman appeared in Belize. His name was Jerome Sauvernier. He was searching for another man – so he must have spoken with townsfolk. Later he was injured in a tavern brawl, but fortunately survived. Can you tell me where I might find him?";
+				link.l1.go = "WildRose_Beliz_Citizen_2";
+			}
+			if(CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz") && CheckAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3") && !CheckAttribute(npchar, "quest.WildRose_Vopros") && npchar.city == "Beliz")
+			{
+				link.l1 = "I am trying to find a man who arrived in Belize about two months ago. His name is Jerome Sauvernier. He was looking for a certain gentleman, and I suppose he spoke with the townsfolk about it...";
+				link.l1.go = "WildRose_Beliz_Citizen_3";
+			}
+			//<-- Дикая Роза
 		break;
 		
 		case "info":
@@ -88,6 +105,40 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
 		// <== Квест "Путеводная звезда"
+		
+		//--> Дикая Роза
+		case "WildRose_Beliz_Citizen_1":
+    		dialog.text = "I don’t know such a man, sir. Brawls in the tavern are near daily business, and remembering every fellow who got hurt is a thankless task.";
+    		link.l1 = "I see, thank you. All the best.";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen");
+			pchar.questTemp.WildRose_Beliz_Citizen_2 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_2":
+    		dialog.text = "Sauvernier? A Frenchman... Yes, there was such a one. He came to me for help, but there was nothing I could do for him. I have not seen him since, forgive me.";
+    		link.l1 = "Thank you. Well then, I shall continue asking around.";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_2");
+			pchar.questTemp.WildRose_Beliz_Citizen_3 = true;
+			npchar.quest.WildRose_Vopros;
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_3":
+			dialog.text = "Mister Jerome! Of course, of course, I remember him. He was wounded in a tavern brawl. Since then he hardly leaves his house, tending to the wound on his leg.";
+			link.l1 = "And where is this house?";
+    		link.l1.go = "WildRose_Beliz_Citizen_3_1";
+ 		break;
+		
+		case "WildRose_Beliz_Citizen_3_1":
+    		dialog.text = "It’s right here, quite nearby, next to the port authority. The house with the red roof. That’s where you’ll find him.";
+    		link.l1 = "Thank you, you’ve been a great help! All the very best to you!";
+    		link.l1.go = "exit";
+			DeleteAttribute(pchar, "questTemp.WildRose_Beliz_Citizen_3");
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_citizen");
+ 		break;
+		//<-- Дикая Роза
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

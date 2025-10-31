@@ -26,7 +26,7 @@ SharlieTrial_25 {Sink her with bombs, or immediately board her if the wind allow
 SharlieTrial_26 {Excellent job! Open the Global Map via the Action Menu and set sail north towards Guadeloupe!}
 SharlieTrial_27 {Tichingitu}
 SharlieTrial_28 { }
-SharlieTrial_29 {Alonso}
+SharlieTrial_29 { }
 SharlieTrial_30 { }
 SharlieTrial_31 {Gerar}
 SharlieTrial_32 {Lecrua}
@@ -52,3 +52,5 @@ SharlieTrial_51 {barque 'Henry'}
 SharlieTrial_52 {An opportunity to loot the dead for valuable items!}
 SharlieTrial_53 {Guillaume}
 SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

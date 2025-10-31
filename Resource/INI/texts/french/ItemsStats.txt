@@ -11,11 +11,13 @@ itm_stat_descr_damageReduction {Ce pourcentage est soustrait des dégâts entran
 itm_stat_attack {Dégâts}
 itm_stat_descr_attack
 {
-Attaque normale : #sattack.force.min#–#sattack.force.max# dégâts
-Attaque rapide : #sattack.fast.min#–#sattack.fast.max# dégâts
-Attaque de groupe : #sattack.round.min#–#sattack.round.max# dégâts
-Attaque lourde : #sattack.break.min#–#sattack.break.max# dégâts
+Attaque tranchante : #sattack.fast.min#–#sattack.fast.max# pts de dégâts
+Attaque d'estoc : #sattack.force.min#–#sattack.force.max# pts de dégâts
+Attaque circulaire : #sattack.round.min#–#sattack.round.max# pts de dégâts
+Attaque lourde : #sattack.break.min#–#sattack.break.max# pts de dégâts
 }
+itm_stat_gundamage {Dégâts d'armes à feu.}
+itm_stat_descr_gundamage {Les dégâts infligés au combat à distance dépendent des compétences, des caractéristiques de l'arme et des munitions.}
 itm_stat_healAmount {Soin}
 itm_stat_descr_healAmount {Quantité de Vie restaurée à l’utilisation.}
 itm_stat_worldMapBonus {Rayon d’observation}
@@ -126,15 +128,15 @@ itm_stat_descr_obereg_11 {Modifie l’angle de cap du navire de 15 %, permettant
 itm_stat_obereg_3 {Haltérophilie}
 itm_stat_descr_obereg_3 {Augmente la charge transportable de 15 %.}
 itm_stat_obereg_4 {Incognito}
-itm_stat_descr_obereg_4 {La Furtivité du personnage augmente de 10.}
+itm_stat_descr_obereg_4 {La Furtivité du personnage augmente de #smodifiers.SkillSneak#.}
 itm_stat_obereg_5 {Talisman}
-itm_stat_descr_obereg_5 {L’Opportunisme du personnage augmente de 15.}
+itm_stat_descr_obereg_5 {L’Opportunisme du personnage augmente de #smodifiers.SkillFortune#.}
 itm_stat_obereg_6 {Persuasion}
-itm_stat_descr_obereg_6 {Le Leadership du personnage augmente de 10 points.}
+itm_stat_descr_obereg_6 {Le Leadership du personnage augmente de #smodifiers.SkillLeadership# points.}
 itm_stat_obereg_7 {Né des flots}
-itm_stat_descr_obereg_7 {La Navigation du personnage augmente de 10 points.}
+itm_stat_descr_obereg_7 {La Navigation du personnage augmente de #smodifiers.SkillSailing# points.}
 itm_stat_obereg_8 {Avantage}
-itm_stat_descr_obereg_8 {Le Commerce du personnage augmente de 15 points.}
+itm_stat_descr_obereg_8 {Le Commerce du personnage augmente de #smodifiers.SkillCommerce# points.}
 itm_stat_obereg_9 {Dieu du Vent}
 itm_stat_descr_obereg_9 {La vitesse du navire augmente de 10 %.}
 itm_stat_totem_01 {Estomac d’acier}
@@ -146,7 +148,7 @@ itm_stat_descr_totem_03 {Double l’effet de soin des plaisirs amoureux.}
 itm_stat_totem_04 {Chef-né}
 itm_stat_descr_totem_04 {Verrouille la loyauté de l’officier pendant toute la durée.}
 itm_stat_totem_05 {Invulnérabilité}
-itm_stat_descr_totem_05 {Réduit les dégâts critiques ennemis de 25 %.}
+itm_stat_descr_totem_05 {Réduit les dégâts critiques ennemis de $modifierPercent(CritIncomingDamageReduction).}
 itm_stat_totem_06 {Cheval de bât}
 itm_stat_descr_totem_06 {Le dépassement du poids transportable n’affecte ni la vitesse ni n’impose de pénalités.}
 itm_stat_totem_07 {Invocation}
@@ -216,11 +218,11 @@ itm_stat_descr_talisman15 {Augmente la Puissance de la Flotte de 15 %. Confectio
 itm_stat_talisman16 {Guerrier de la jungle}
 itm_stat_descr_talisman16 {Les armes Exotiques infligent 15 % de dégâts en plus}
 itm_stat_talisman17 {Bouclier de la foi}
-itm_stat_descr_talisman17 {Réduit les dégâts subis par l’équipage et le capitaine de 5 %, et augmente la compétence Défense de 10 à bord du Saint-Miséricorde.}
+itm_stat_descr_talisman17 {Réduit les dégâts subis par l’équipage de $ctxHasAttr(QBonus.max|15|5) %, et à bord du *Saint Miséricorde* augmente la compétence de Défense de 10. La réduction des dégâts s’améliore après avoir suivi la Voie du Juste.}
 itm_stat_talisman18 {À la recherche de la vérité}
 itm_stat_descr_talisman18 {Chaque trésor trouvé augmente la puissance de la salve de mousquets de l’équipage de 1 % et les dégâts de mitraille de 2 %.}
 itm_stat_talisman19 {Souviens-toi}
-itm_stat_descr_talisman19 {Pour chaque 2 % de coque perdue, la vitesse du navire augmente de 0,75 % et les dégâts des canons de 0,5 %.}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
 itm_stat_talisman20 {Prêt au combat}
 itm_stat_descr_talisman20 {La vitesse de visée avec les armes à feu augmente de 15 %, les dégâts maximum en visée de 20 %, la vitesse de rechargement de 10 % et les dégâts de tir à la tête de 20 %.}
 itm_stat_talisman21 {Responsabilité mutuelle}
@@ -267,3 +269,27 @@ itm_stat_mushket8 {Démontable}
 itm_stat_descr_mushket8 {Cette arme à feu peut être montée ou démontée, passant d'une utilisation à une main à deux mains.}
 itm_stat_spyglassSP3 {Regard punitif}
 itm_stat_descr_spyglassSP3 {Cette longue-vue révèle la peur dans les yeux d’un capitaine ennemi — et indique s’il est prêt à se rendre.}
+itm_stat_reloadTime {Temps de rechargement}
+itm_stat_descr_reloadTime {Temps pour charger la cartouche suivante.}
+itm_stat_kaleuche_amulet2 {Sort d'attaque}
+itm_stat_descr_kaleuche_amulet2 {Rend les monstres du temple Chavinavi vulnérables aux armes et offre une protection contre leurs attaques. Augmente les compétences dans tous les types d'armes de 25 %.}
+itm_stat_kaleuche_amulet3 {Sort de protection}
+itm_stat_descr_kaleuche_amulet3 {Rend les monstres du temple Chavinavi vulnérables aux armes et offre une protection contre leurs attaques. Réduit les dégâts subis par tout type d'arme de 25 % et prévient l'empoisonnement.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+Bonus actuel : $number($attr($context.KillerBonus.appliedbonus)) de dégâts et $number($attr($context.KillerBonus.RangeBonus)) % de portée.
+}
+itm_stat_blade_WR_1 {Diligence}
+itm_stat_descr_blade_WR_1 {Augmente la régénération de santé en combat par cinq.}
+itm_stat_secondary_hat6 {Négociant estimé}
+itm_stat_descr_secondary_hat6 {Augmente la puissance des navires marchands de l'escadre de 15 % et réduit la pénalité à la chance de fuir face aux navires marchands de 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Multiplie par dix les dégâts infligés par les armes à feu.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Même en cas de blessure légère, provoque dans 100 % des cas un empoisonnement sévère, incurable par antidotes, entraînant la mort en peu de temps.}
+itm_stat_PerksPotion {Oubli}
+itm_stat_descr_PerksPotion {Réinitialise tous les Perks appris du personnage. Après consommation, la mémoire des Perks et des techniques est effacée, mais la capacité demeure — comme si le corps se souvenait de ce qu'il avait accompli, tandis que l'esprit ne s'en souvenait plus.}
+itm_stat_descr_talisman19_InSlot {Chaque perte de 2% de la coque du navire augmente la vitesse et les dégâts des canons de 0.75% et 0.5% respectivement.}
+itm_stat_descr_talisman19_InInventory {Lorsqu’il est conservé dans l’inventaire, il rend tous les officiers immortels.}

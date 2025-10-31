@@ -218,17 +218,7 @@ void ProcessDialogEvent()
 		
 		case "Naemnik_29":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
-			LAi_SetPlayerType(pchar);
-			
-			LAi_SetWarriorType(npchar);
-			npchar.lifeday = 0;
-			LAi_CharacterDisableDialog(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PEACE);
-			
-			AddQuestRecord("GS", "7");
-			CloseQuestHeader("GS");
+			AddDialogExitQuestFunction("Naemnik_29");
 			
 			AddSimpleRumourCity("Azt beszélik, hogy a kikötôi fônököt holtan találták a saját házában. A holttestén olyan iratokat találtak, amelyek bizonyítják, hogy köze volt a hajók eltûnéséhez. Képzelje csak el, milyen szégyent hozott a városunkra...", "Beliz", 30, 1, "");
 			AddSimpleRumourCity("Hallottad a híreket? Valaki beosont a kikötôfônök házába, megölte az ôröket, és kivitte ôt. A holttestén feljegyzéseket találtak az eltûnt hajók útvonaláról - saját kezûleg írva! A korona szolgája, de valójában áruló! Azt kapta, amit megérdemelt! És hol volt a kormányzó ennyi éven át?", "Beliz", 30, 1, "");

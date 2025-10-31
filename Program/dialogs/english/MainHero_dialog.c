@@ -170,7 +170,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Vanilla has been loaded onto the carrack and her sails have long since disappeared beyond the horizon - and this damned galleon has returned to port instead of heading for the open sea. I must not show up with my ship in port - it's best if they think I have left Guadeloupe... I suppose I'll walk to town through the jungle and find out about my dear Marchais...";
+    		    dialog.text = "Vanilla has been loaded onto the brigantine and her sails have long since disappeared beyond the horizon - and this damned galleon has returned to port instead of heading for the open sea. I must not show up with my ship in port - it's best if they think I have left Guadeloupe... I suppose I'll walk to town through the jungle and find out about my dear Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

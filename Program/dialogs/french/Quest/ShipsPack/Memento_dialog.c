@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Je m’attendais à un discours pompeux de sa part. Mais non, il s’est jeté directement au combat.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
+			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":

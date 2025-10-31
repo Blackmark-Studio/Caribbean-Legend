@@ -60,18 +60,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_5":
 			DialogExit();
-			locCameraFromToPos(3.47, 2.41, 0.10, false, -1.05, 0.20, -0.07);
-			
-			sld = CharacterFromID("SKD_Anri");
-			CharacterTurnByLoc(sld, "barmen", "stay");
-			
-			sld = CharacterFromID("SKD_Alisia");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "reload2", "", "", "", "", -1);
-			sld.location = "None";
-			sld.lifeday = 0;
-			LAi_SetActorType(pchar);
-			DoQuestCheckDelay("SKD_DomAnri_2", 4.0);
+			AddDialogExitQuestFunction("Duran_Anri_DlgExit_1");
 		break;
 		
 		case "SKD_DomAnri_6":
@@ -114,20 +103,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_11":
 			DialogExit();
-			EndQuestMovie();
-			
-			sld = CharacterFromID("Duran");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			
-			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
-			LAi_SetFightMode(pchar, true);
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "SKD_DomAnri_6");
+			AddDialogExitQuestFunction("Duran_Anri_DlgExit_2");
 		break;
 		
 		case "SKD_DomAnri_12":
@@ -152,15 +128,15 @@ void ProcessDialogEvent()
 			dialog.text = "Heh! Ma faute, Capitaine. C'est vrai, les ordres de Levasseur disaient clairement de ne pas seulement éliminer le chevalier mais tous ses compagnons. Tous, vous comprenez ? Il ne faut pas plaisanter avec ces gens-là et leurs exigences doivent être prises au sérieux. Ne m'empêchez pas de faire mon travail, Cap. Un dernier sale boulot et ensuite je suis avec vous jusqu'à la fin, je le jure !";
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Trustworthy", "Trustworthy");
+				Notification_Reputation(true, 71, "low");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = " (Digne de confiance) (Honneur) Vous avez dit un jour que j'étais destiné à voler haut, et vous étiez heureux d'y contribuer.";
 				link.l1.go = "SKD_DomAnri_VD";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Reputation(false, 71, "low");
+				Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Que le diable t'emporte ! Fais ton sale boulot. J'accepte ton serment, et tu ferais mieux de le prendre très au sérieux. Nous sommes bien d'accord ?";
 			link.l2.go = "SKD_DomAnri_DuranDruzhba";
@@ -176,18 +152,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_DuranDraka_2":
 			DialogExit();
-			LAi_SetCurHPMax(npchar);
-			LAi_GetCharacterMaxEnergy(npchar);
-			
-			RemovePassenger(pchar, npchar);
-			npchar.SaveItemsForDead = true;
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			
-			LAi_SetFightMode(pchar, true);
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "SKD_DomAnri_DuranDraka");
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_3");
 		break;
 		
 		case "SKD_DomAnri_DuranDruzhba":
@@ -198,17 +163,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_DuranDruzhba_2":
 			DialogExit();
-			
-			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
-			sld = CharacterFromID("Duran");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "reload2", "none", "", "", "", -1);
-			chrDisableReloadToLocation = false;
-			LAi_LocationDisableOfficersGen("PortRoyal_town", true);
-			
-			PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition.l1 = "location";
-			PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition.l1.location = "PortRoyal_town";
-			PChar.quest.SKD_DomAnri_DuranDruzhba.win_condition = "SKD_DomAnri_DuranDruzhba";
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_4");
 		break;
 		
 		case "SKD_DomAnri_DuranDruzhba_3":
@@ -231,31 +186,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_DuranDruzhba_6":
 			DialogExit();
-			
-			EndQuestMovie();
-			locCameraTarget(PChar);
-			locCameraFollow();
-			LAi_LocationDisableOfficersGen("PortRoyal_town", false);
-			chrDisableReloadToLocation = false;
-			AddQuestRecord("TheFormerKnight", "3");
-			CloseQuestHeader("TheFormerKnight");
-			ChangeCharacterComplexReputation(pchar, "nobility", -1);
-			
-			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			LAi_SetOfficerType(sld);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.Dialog.CurrentNode = "hired";
-			sld.OfficerImmortal = true;
-			sld.Health.HP       = 60.0;
-			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
-			
-			pchar.questTemp.SKD_DuranDruzhba = true;
-			pchar.questTemp.SKD_DevushkaUbita = true;
-			sld.reputation = sti(sld.reputation) - 15;
-			OfficersFollow();
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_5");
 		break;
 		
 		case "SKD_DomAnri_VD":
@@ -278,26 +209,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_DomAnri_VD_4":
 			DialogExit();
-			AddQuestRecord("TheFormerKnight", "2");
-			CloseQuestHeader("TheFormerKnight");
-			chrDisableReloadToLocation = false;
-			ChangeCharacterComplexReputation(pchar, "nobility", 1);
-			LocatorReloadEnterDisable("PortRoyal_houseSp1", "reload2", true);
-			
-			sld = CharacterFromID("Duran");	//Клод Дюран становится постоянным офицером
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			LAi_SetOfficerType(sld);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.Dialog.CurrentNode = "hired";
-			sld.OfficerImmortal = true;
-			sld.Health.HP       = 60.0;
-			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
-			
-			pchar.questTemp.SKD_DuranDruzhba = true;
-			sld.reputation = 60;
-			OfficersFollow();
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_6");
 		break;
 		
 		case "SKD_KlodDuran":
@@ -364,9 +276,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_KlodDuran_9_1":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			npchar.loyality = makeint(npchar.loyality) + 10;
-			ReturnOfficer_Duran();
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_1");
 		break;
 		
 		case "SKD_KlodDuran_10":
@@ -395,15 +305,7 @@ void ProcessDialogEvent()
 		
 		case "SKD_KlodDuran_14":
 			DialogExit();
-			SetQuestHeader("TheFormerKnight");
-			AddQuestRecord("TheFormerKnight", "1");
-			chrDisableReloadToLocation = false;
-			npchar.loyality = makeint(npchar.loyality) + 15;
-			ReturnOfficer_Duran();
-			PChar.quest.SKD_DomAnri.win_condition.l1 = "location";
-			PChar.quest.SKD_DomAnri.win_condition.l1.location = "PortRoyal_houseSp1";
-			PChar.quest.SKD_DomAnri.win_condition = "SKD_DomAnri";
-			pchar.GenQuestBox.PortRoyal_houseSp1.box1.items.chest = 1;
+			AddDialogExitQuestFunction("Duran_Duran_DlgExit_2");
 		break;
 		
 	}

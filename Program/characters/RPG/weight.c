@@ -1,8 +1,9 @@
 #define OVERLOAD_NONE  0 // не перегружен, в норме
 #define OVERLOAD_LIGHT 1 // перегружен, медленно ходит, фаст-тревел не пашет
 #define OVERLOAD_HARD  2 // ходить нельзя вообще
-#define OverloadRunSlowMin 0.60 // ниже этого значения скорость движений не может упасть
-#define OverloadRunSlowMax 0.85 // даже при минимальной перегрузке будет снижение скорости до такого
+#define MIN_ACTION_SPEED 0.40 // ниже этого значения скорость движений не может упасть
+#define OVERLOAD_MIN_IMPACT_ACTION_SPEED 0.85 // даже при минимальной перегрузке будет снижение скорости до такого
+#define OVERLOAD_MAX_SKILL_IMPACT 50.0 // сколько умения максимум отбирает перегрузка
 
 // Получить вес предметов с оптимизацией
 float GetItemsWeight(ref _chref)
@@ -14,13 +15,14 @@ float GetItemsWeight(ref _chref)
 	return stf(_chref.ItemsWeight);
 }
 
- // Штраф перевеса, от -1 до -20 при 200% перегрузе
+ // Штраф перевеса, от -1 до -n при 200% перегрузе
 int GetWeightSkillImpact(ref chr)
 {
 	float fOverload = GetAttributeFloat(chr, "WeightLoadLevel");
 	if (fOverload <= 1) return 0;
 
-	int result = makeint((-20.0 * (fOverload-1)) - 0.5);
+	fOverload = fClamp(1, 2, fOverload);
+	int result = makeint((-OVERLOAD_MAX_SKILL_IMPACT * (fOverload-1)) - 0.5);
 	return func_min(-1, result);
 }
 
@@ -51,18 +53,14 @@ int GetMaxItemsWeightWithOverload(ref chr)
 // Сколько можно засунуть в персонажа без перегруза
 int GetMaxItemsWeight(ref chr)
 {
-	if (!CheckAttribute(chr, "Skill.FencingS")) return 10000; // сундук или труп не имееют скила и ограничения
-
-	int baseWeight = 0;
-	if (IsCharacterPerkOn(chr, "Grus")) baseWeight = PERK_VALUE_GRUS;
-	if (CheckAttribute(chr, "cheats.dopgrus")) baseWeight += 1000;
-	baseWeight = baseWeight + CHAR_ITEMS_WEIGHT + GetCharacterSPECIALSimple(chr, SPECIAL_S)*(GetCharacterSPECIALSimple(chr, SPECIAL_E) + 10);
-
-	float bonus = 1.0;
-	if (IsEquipCharacterByArtefact(chr, "obereg_3"))   bonus += 0.15; // Обезьяна
-	if (IsEquipCharacterByArtefact(chr, "talisman13")) bonus += 1.0;  // Оберег Таино
-
-	return makeint(makefloat(baseWeight) * bonus + 0.5);
+	if (!CheckAttribute(chr, "Skill.FencingS")) return 999999; // сундук или труп не имееют скила и ограничения
+	if (!CheckAttribute(chr, "ct.land.MaxWeight"))
+	{
+		aref landTable = CT_GetTable(chr, CT_LAND);
+		aref equipTable = CT_GetTable(chr, CT_EQUIP);
+		return CT_SetMaxWeight(&landTable, &equipTable, chr);
+	}
+	return GetAttributeInt(chr, "ct.land.MaxWeight");
 }
 
 // Общая проверка перегрузки персонажа предметами
@@ -79,12 +77,11 @@ void CheckAndSetOverloadMode(ref chr)
 	else fOverload = GetItemsWeight(chr) / GetMaxItemsWeight(chr);
 
 	//if (fOverload >= 2.0) overloadMode      = OVERLOAD_HARD;  // двигаться вообще нельзя при 200%
-	if (fOverload >= 2.0) overloadMode      = OVERLOAD_LIGHT; // инъекция костыля
-	else if (fOverload >= 1.5) overloadMode = OVERLOAD_LIGHT; // нельзя спринтовать
-	else overloadMode                       = OVERLOAD_NONE;  // всё можно до 150%
+	if (fOverload >= 1.5) overloadMode = OVERLOAD_LIGHT; // нельзя спринтовать
+	else overloadMode                  = OVERLOAD_NONE;  // всё можно до 150%
 
 	// начиная с 100% загрузки весом начинаем снижать скорость движений
-	if (fOverload > 1) fActionsSpeed = OverloadRunSlowMax - (OverloadRunSlowMax - OverloadRunSlowMin) * (fOverload-1);
+	if (fOverload > 1) fActionsSpeed = 1 - Bring2Range(0.0, MIN_ACTION_SPEED, 1.0, 2.0, fOverload);
 
 	// Особые ситуации с замедлением имитацией перегруза
 	if (IsMainCharacter(chr))
@@ -92,9 +89,11 @@ void CheckAndSetOverloadMode(ref chr)
 		if (chr.model == "protocusto" || CheckAttribute(chr, "GenQuest.CantRun"))
 		{
 			overloadMode = func_max(OVERLOAD_LIGHT, overloadMode);
-			fActionsSpeed = func_max(OverloadRunSlowMin, fActionsSpeed);
+			fActionsSpeed = func_fmin(OVERLOAD_MIN_IMPACT_ACTION_SPEED, fActionsSpeed);
 		}
 	}
+
+	if (fActionsSpeed < 1) fActionsSpeed = func_fmin(OVERLOAD_MIN_IMPACT_ACTION_SPEED, fActionsSpeed);
 
 	chr.WeightLoadLevel = fOverload; // это управляет штрафом к скиллам и возможностью быстрого перехода
 	SetCharacterActionsSpeed(chr, fActionsSpeed);

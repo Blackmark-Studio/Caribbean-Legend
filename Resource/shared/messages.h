@@ -49,6 +49,11 @@
 
 #define MSG_BLADE_GET_GUNFIRE_LOCATOR 21016
 
+#define MSG_BLADE_ITEM_ADD 21017
+#define MSG_BLADE_ITEM_REMOVE 21018
+#define MSG_BLADE_ITEMS_REMOVE_ALL 21019
+#define MSG_BLADE_ITEMS_ALPHA 21020
+
 //============================================================================================
 // Island Messages
 //============================================================================================
@@ -83,6 +88,7 @@
 #define MSG_SHIP_CURVES 50400
 #define MSG_SHIP_LIGHTSRESET 50402 // ugeen 25.12.19
 #define MSG_SHIP_DO_FAKE_FIRE 50403
+#define MSG_SHIP_BIND_SOUND 50404
 
 //============================================================================================
 // Weather Messages
@@ -211,12 +217,14 @@
 #define MSG_CHARACTER_GETCURANIMATION 30384	// "le"
 #define MSG_CHARACTER_STOPSTRAFE 30385 // "l"
 #define MSG_CHARACTER_VIEWSTRPOS 30386 // "lfffsfff"
+#define MSG_CHARACTER_SMOOTHDMG 30387
 
 // Setting tasks for the character
 #define MSG_NPCHARACTER_SETTASK 30400
 #define MSG_NPCHARACTER_PUSHTASK 30401
 #define MSG_NPCHARACTER_POPTASK 30402
 #define MSG_NPCHARACTER_GETTASK 30403
+#define MSG_NPCHARACTER_FIGHTPROBABILITIES_UPDATE 30404
 
 // Camera
 #define MSG_CAMERA_SETTARGET 30500 // "li" set the model to follow
@@ -351,6 +359,8 @@
 #define MSG_SOUND_EVENT_STOP 77019       //"ll"
 #define MSG_SOUND_EVENT_SET_VOLUME 77020 //"lf"
 #define MSG_SOUND_BANK_ADD   77023       //"sl"
+#define MSG_SOUND_UPDATE_POS 77024       //"lfffl"
+#define MSG_SOUND_EVENT_SET_PARAM 77025  //"lsfl"
 //============================================================================================
 
 //============================================================================================

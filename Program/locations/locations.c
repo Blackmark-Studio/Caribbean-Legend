@@ -450,8 +450,11 @@ void GetCharacterMarksParams()
 	loc.dead_mark.timer = BLI_KILL_MARKER_TIMER;
 }
 
-void SetLocationCharacterMarksMode()
+void SetLocationCharacterMarksOptions(ref loc)
 {
+	SendMessage(&loc, "ll", MSG_LOCATION_VIEWSTATEBARS, bDrawBars);
+	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetArchetypeMarkMode", iGlobalEnemyType);
+	
 	bool bDialog = false;
 	bool bAttack = false;
 	bool bDead = false;
@@ -470,12 +473,7 @@ void SetLocationCharacterMarksMode()
 			bDead = true;
 		break;
 	}
-	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetDialogMarkMode", bDialog);
-	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetAttackMarkMode", bAttack);
-	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetDeadMarkMode", bDead);
-}
-
-void SetLocationArchetypeMarksMode()
-{
-	SendMessage(&loadedLocation, "lsl", MSG_LOCATION_EX_MSG, "SetArchetypeMarkMode", iGlobalEnemyType);
+	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetDialogMarkMode", bDialog);
+	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetAttackMarkMode", bAttack);
+	SendMessage(&loc, "lsl", MSG_LOCATION_EX_MSG, "SetDeadMarkMode", bDead);
 }

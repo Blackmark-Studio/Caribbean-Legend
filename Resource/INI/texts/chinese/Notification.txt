@@ -6,4 +6,12 @@ Notification_SkillCheckPassed {Skill Check Passed}
 Notification_SkillCheckFailed {Skill Check Failed}
 Notification_LevelCheckPassed {Level Check Passed}
 Notification_LevelCheckFailed {Level Required}
-CanBeCaptain {$attr($context.name) 无法在公海上指挥船只 需要“船长”特长) }
+CanBeCaptain {$attr($context.name) 无法在公海上指挥船只 需要“船长”特长)}
+Notification_ApproveCheckPassed {approves}
+Notification_ApproveCheckFailed {disapproves}
+Notification_ReputationCheckFailed_High {Reputation Too High}
+Notification_ReputationNationCheckPassed {Relationship Check Passed}
+Notification_ReputationNationCheckFailed {Relationship Too Low}
+Notification_MoneyCheckPassed {Check passed}
+Notification_MoneyCheckFailed_Peso {Not enough peso}
+Notification_MoneyCheckFailed_Dublon {Not enough doubloons}

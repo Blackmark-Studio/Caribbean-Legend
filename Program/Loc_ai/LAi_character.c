@@ -153,7 +153,6 @@ void LAi_AlcoholSetDrunk(aref chr, float alcoholDegree, float time)
 {
 	//эффекты не суммируются.
 	if (CheckAttribute(chr, "chr_ai.drunk")) return;
-	//float energyMax;
 	if(sti(chr.index) == GetMainCharacterIndex()) notification(XI_ConvertString("Drunk note"),"Drunk");
 	chr.chr_ai.drunk = time;
 	bool bHat8 = GetCharacterEquipByGroup(chr, HAT_ITEM_TYPE) == "hat8";
@@ -260,83 +259,9 @@ bool LAi_IsImmortal(aref chr)
 // Персонаж вооружён?
 bool LAi_IsArmed(ref chr)
 {
-	return CheckAttribute(chr, "equip.blade");
-}
-
-//Получить хп персонажа
-float LAi_GetCharacterHP(aref chr)
-{
-	float curHp = 0.0;
-	if(CheckAttribute(chr, "chr_ai.hp"))
-	{
-		curHp = stf(chr.chr_ai.hp);
-	}
-	float maxHp = LAi_GetCharacterMaxHP(chr);
-	if(curHp > maxHp) curHp = maxHp;
-	chr.chr_ai.hp = curHp;
-	chr.chr_ai.hp_max = maxHp;
-	return curHp;
-}
-
-//Получить максимальные хп персонажа
-float LAi_GetCharacterMaxHP(aref chr)
-{
-	float max_hp = func_fmax(0.0, GetAttributeFloat(chr, "chr_ai.hp_max"));
-	chr.chr_ai.hp_max = max_hp;
-	return max_hp;
-}
-
-//Получить относительные хп персонажа 0..1
-float LAi_GetCharacterRelHP(aref chr)
-{
-	float hp = LAi_GetCharacterHP(chr);
-	float maxhp = LAi_GetCharacterMaxHP(chr);
-	if(maxhp <= 0.0) return 0.0;
-	if(maxhp > 0.0)
-	{
-		return hp/maxhp;
-	}
-	return 0.0;
-}
-
-//Получить относительную энергию персонажа 0..1
-float LAi_GetCharacterRelEnergy(aref chr)
-{
-	float energy = 0.0;
-	if(CheckAttribute(chr, "chr_ai.energy"))
-	{
-		energy = stf(chr.chr_ai.energy);
-		energy = energy / LAi_GetCharacterMaxEnergy(chr); // boal
-	}
-	return energy;
-}
-// boal
-float LAi_GetCharacterMaxEnergy(aref chr)
-{
-	if(!CheckAttribute(chr, "chr_ai.energyMax"))
-		return LAI_DEFAULT_ENERGY_MAX;
-	
-	float max_energy = stf(chr.chr_ai.energyMax);
-	if(IsMainCharacter(chr))	// бонус энергии у ГГ
-	{
-		float fMainAdd = 0.0;
-		if(!CheckAttribute(chr, "chr_ai.main_energy_bonus"))
-		{
-			chr.chr_ai.main_energy_bonus = MAIN_ENERGY_BONUS;
-			fMainAdd = MAIN_ENERGY_BONUS;
-		}
-		else if(stf(chr.chr_ai.main_energy_bonus) != MAIN_ENERGY_BONUS)
-		{
-			fMainAdd = MAIN_ENERGY_BONUS - stf(chr.chr_ai.main_energy_bonus);
-			chr.chr_ai.main_energy_bonus = MAIN_ENERGY_BONUS;
-		}
-		max_energy += fMainAdd;
-	}
-	if(max_energy < 0.0)
-		max_energy = 0.0;
-	chr.chr_ai.energyMax = max_energy;
-	
-	return max_energy;
+	if (CheckAttribute(chr, "equip.blade")) return true;
+	if (CheckAttribute(chr, "equip.musket")) return true;
+	return false;
 }
 
 //Установить проверяльщик хп, если их становиться меньше чем, вызвать квест
@@ -1064,6 +989,7 @@ void LAi_AllCharactersUpdate(float dltTime)
 			//Востоновление жизни
 			float dlthp = LAI_DEFAULT_DLTHP;
 			if(CheckAttribute(chr_ai, "hp_dlt")) dlthp = stf(chr_ai.hp_dlt);
+			if (IsEquipCharacterByArtefact(chr, "amulet_7")) dlthp *= 2.0;
 			if(idx == GetMainCharacterIndex() && CheckAttribute(chr, "cheats.hpupdate")) dlthp *= 10.0;
 			if(LAi_IsFightMode(chr) && GetCharacterEquipByGroup(chr, BLADE_ITEM_TYPE) == "blade_WR") dlthp *= 5.0;
 			float hp = stf(chr_ai.hp) + dlthp*dltTime;

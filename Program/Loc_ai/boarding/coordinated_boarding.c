@@ -62,13 +62,16 @@ void CoordinatedBoardingStart(ref player, ref enemy, ref boarding_player_hp, ref
 		return;
 	}
 
-	int iBonusCrew = GetWeaponCrew(companion, iClamp(0,2000,GetCrewQuantity(companion) - GetMinCrewQuantity(companion))); // учёт с оружием
-	if (iBonusCrew == 0) return; // жаль, подмога не пришла, подкрепление не прислали...
+	// подсчёт абордажной роты
+	int iBonusCrew = iClamp(0,2000,GetCrewQuantity(companion) - func_max(makeint(GetCrewQuantity(companion)*0.4), GetMinCrewQuantity(companion))); 
+	iBonusCrew = GetWeaponCrew(companion, iBonusCrew);
+
+	if (iBonusCrew <= 0) return; // жаль, подмога не пришла, подкрепление не прислали...
 	
 	if (MOD_BETTATESTMODE == "On") Log_Info("Команда " + playerCrew + " + " + iBonusCrew);
 	GetCoordinatedBoardingHP(player, companion, makeint(playerCrew), iBonusCrew, &boarding_player_hp); // считаем по новому хпшечку с учётом пропорции команд
 	RemoveCharacterGoodsSelf(companion, GOOD_WEAPON, makeint(iBonusCrew/2 + 0.5)); // минусуем оружие у компаньона
-	SetCrewQuantity(companion, GetCrewQuantity(companion) - iBonusCrew);           // оставляем минимальную команду
+	SetCrewQuantity(companion, GetCrewQuantity(companion) - iBonusCrew);           // оставшиеся на корабле
 	AddCharacterExpToSkill(companion, "Defence",   makeint(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
 	AddCharacterExpToSkill(companion, "Grappling", makeint(iBonusCrew / 2 + 0.5)); // опыт выдаётся по аналогии с GetTroopersCrewQuantity для нативного штурма форта
 	enemy.CoordinatedCharIdx = companion.index;

@@ -268,10 +268,10 @@ itmname_howdah {Howdah}
 itmdescr_howdah {Pistola a doppia canna di grosso calibro, il miglior compagno per un cacciatore nella savana africana o nella giungla indiana. Abbatte senza fallo cinghiali, tigri e nativi ostili.}
 itmname_nocirass {Senza corazza}
 itmdescr_nocirass {Quando si indossa un'armatura per molto tempo, ci si può spossare. Prendetevi una pausa, mettetevi comodi e bevete una tazza di caffè caldo con cannella o qualcosa di più forte.}
-itmname_cirass1 {Corazza da trincea}
-itmdescr_cirass1 {Corazza da fanteria usata negli assedi. Offre ottima protezione contro acciaio e piombo, ma limita i movimenti e rende goffi nei combattimenti ravvicinati.}
-itmname_cirass2 {Corazza da cavalleria}
-itmdescr_cirass2 {Corazza stampata da cavalleria pesante. Protegge bene torace e schiena a cavallo, ma peso e scarsa vestibilità limitano velocità e agilità a piedi.}
+itmname_cirass1 {Armatura da fanteria}
+itmdescr_cirass1 {Un pettorale da fanteria usato durante l'assedio di fortezze. Protegge ottimamente da acciaio e piombo, ma limita la mobilità, rendendo chi lo indossa goffo nel combattimento ravvicinato. Ha trovato ampia diffusione sia in Europa che nei Caraibi.}
+itmname_cirass2 {Corazza da cavalleria pesante}
+itmdescr_cirass2 {Una corazza forgiata di qualità della cavalleria pesante. Protegge ottimamente il petto e la schiena, ma in formazione di fanteria il suo peso e la scarsa adattabilità ostacolano la velocità e l'agilità di chi la indossa.}
 itmname_cirass3 {Corazza da parata}
 itmdescr_cirass3 {Cuirassa leggera in acciaio pregiato. Si può indossare sotto il farsetto. Limita poco i movimenti, offrendo protezione solo contro colpi di striscio e proiettili vaganti.}
 itmname_cirass4 {Corazza Milano}
@@ -287,7 +287,7 @@ itmdescr_cirass8 {Cuirassa unica in cuoio e metallo che protegge tutto il torso,
 itmname_cirass9 {Brigantina rinforzata}
 itmdescr_cirass9 {Armatura da mercenario professionista e scelta ideale per duellanti. Offre protezione e peso simili a una corazza, ma la sua eccellente fattura garantisce piena libertà di movimento.}
 itmname_cirass10 {Pettorale in ferro}
-itmdescr_cirass10 {Equipaggiamento piuttosto logoro e incompleto della cavalleria parlamentare. Protegge poco, tuttavia l'abbondanza di tasche e fondine semplifica notevolmente il tiro e il ricarico.}
+itmdescr_cirass10 {Un equipaggiamento da cavalleria parlamentare piuttosto logoro e incompleto. Offre ancora una buona protezione, e l'abbondanza di tasche e cartucciere semplifica notevolmente il tiro e il ricaricamento.}
 itmname_cirass11 {Corazza a specchio}
 itmdescr_cirass11 {Queste armature sono diffuse nello Zarato di Russia e nell’Impero Ottomano. Questo esemplare ha percorso molta strada prima di giungere nelle tue mani.}
 itmname_suit1 {Uniforme francese}
@@ -321,7 +321,7 @@ itmdescr_hat5 {Solo pochi marinai vedono un cappello simile anche una sola volta
 itmname_hat6 {Dutch Hat}
 itmdescr_hat6 {Un cappello elegante e costoso, molto apprezzato dai mercanti di medio rango. La sua forma insolita rende facile riconoscere un negoziatore da lontano—e prepararsi a una trattativa serrata.}
 itmname_hat7 {Lucky Hat}
-itmdescr_hat7 {Si dice che questo cappello audace porti fortuna. Logorato dal tempo, conserva ancora un’aria nobile. Se ne trovi uno, puoi star certo: nei momenti difficili sfilerai oltre la guardia, pescherai la carta giusta dal mazzo e troverai una palla dimenticata in fondo alla tasca.}
+itmdescr_hat7 {Si dice che questo cappello audace porti fortuna. Logoro e segnato dal tempo, mantiene comunque un aspetto nobile. Se ne possiedi uno, puoi star certo che nei momenti più difficili non resterai mai senza un asso nella manica.}
 itmname_hat8 {Charlie Prince’s Tricorn}
 itmdescr_hat8 {Questo cappello terrorizza i mercanti—soprattutto gli spagnoli—più della stessa Jolly Roger. La fama di chi lo indossa fa impallidire e tremare anche il più duro lupo di mare. Maledetto il giorno in cui nacque Charlie Prince.}
 itmname_hat9 {Cappello di Grim}
@@ -448,71 +448,115 @@ itmdescr_totem_12 {Artiglio di giaguaro al collo aumenterà la tua visione nottu
 itmname_totem_13 {Talismano 'Joker'}
 itmdescr_totem_13 {Una carta utile sempre a portata di mano che aumenta le probabilità di vincita nei giochi d'azzardo.}
 itmname_indian_1 {Amuleto 'Bambola Voodoo'}
-itmdescr_indian_1 {Bambola rituale — un inquietante manufatto indigeno.}
+itmdescr_indian_1
+{
+Bambola rituale — un artefatto indigeno raccapricciante che secondo la leggenda si lega all’anima della vittima.
+ ~Può aumentare il danno inflitto nei punti vulnerabili — ad esempio la testa.
+}
 itmname_indian_2 {Amuleto 'Sperimentatore di polvere nera'}
-itmdescr_indian_2 {Dispositivo per verificare la qualità della polvere da sparo.}
+itmdescr_indian_2
+{
+Dispositivo per verificare la qualità della polvere da sparo. ~
+ La polvere di buona qualità aumenta i danni di qualsiasi proiettile grazie a una combustione più uniforme, ma è particolarmente utile nella creazione delle proprie munizioni.
+}
 itmname_indian_3 {Amuleto 'Coltello rituale'}
-itmdescr_indian_3 {Coltello sacrificale in ossidiana.}
+itmdescr_indian_3
+{
+Coltello di ossidiana per sacrifici. Non si sa quante anime abbia mietuto nel tentativo di ottenere le benedizioni degli dèi aztechi eretici, ma la lama d’ossidiana non si è ancora smussata.
+ ~Aumenta i danni critici contro i nemici; possa Dio riposare le loro anime.
+}
 itmname_indian_4 {Amuleto 'Poleaxe'}
-itmdescr_indian_4 {Ciondolo coperto di rune.}
+itmdescr_indian_4
+{
+Ciondolo coperto di rune asatrú. Nessuno sa come sia arrivato ai Caraibi, ma suscita uno strano impulso verso le asce.
+ ~Favorisce l’apparire di una forza inattesa nelle braccia, aumentando la potenza dei colpi con armi pesanti.
+}
 itmname_indian_5 {Amuleto 'Zanza'}
-itmdescr_indian_5 {Testa essiccata con metodo particolare.}
+itmdescr_indian_5
+{
+Testa essiccata in modo particolare. La creazione di un tale amuleto richiede un rito pagano ripugnante.
+ ~Vedendone uno alla cintura del capitano, qualsiasi squadra d’abbordaggio diventa timorosa e prudente — amica o nemica.
+}
 itmname_indian_6 {Amuleto 'Testa di corallo'}
-itmdescr_indian_6 {Idolo intagliato da un frammento di corallo.}
+itmdescr_indian_6
+{
+Idolo intagliato in un frammento di corallo. Si dice porti fortuna e renda la mano più ferma.
+ ~In ogni caso, una salva di moschetti eseguita con esso risulta molto più ordinata.
+}
 itmname_indian_7 {Amuleto 'Gobbo'}
-itmdescr_indian_7 {Statuetta in terracotta di un gobbo.}
+itmdescr_indian_7
+{
+Statuetta in terracotta di un gobbo. Non quello di Notre‑Dame, ma il protettore dell’impegno.
+ ~Con essa sopporti meglio le corse estenuanti nella giungla e gli scontri d’abbordaggio.
+}
 itmname_indian_8 {Amuleto 'Xiuhtecuhtli'}
-itmdescr_indian_8 {Figurina-totem di un dio azteco, signore del fuoco e padrone dei vulcani.}
+itmdescr_indian_8
+{
+Figurina-totem di un dio azteco, signore del fuoco e padrone dei vulcani.
+ ~Rende misteriosamente più letali i colpi delle bocche da fuoco.
+}
 itmname_indian_9 {Amuleto 'Baldo'}
-itmdescr_indian_9 {Fibula celtica a forma di corvo.}
+itmdescr_indian_9
+{
+Fibula celtica a forma di corvo. Si dice che i marinai insulari più abili tra i Celti la portassero.
+ ~Impressiona soprattutto l’equipaggio d’artiglieria, che comincia a caricare e mirare i cannoni molto più rapidamente.
+}
 itmname_indian_10 {Amuleto 'Cascavella'}
-itmdescr_indian_10 {Teschio incantato di serpente a sonagli.}
+itmdescr_indian_10
+{
+Teschio incantato di serpente a sonagli.
+ ~Probabilmente nei denti induriti è rimasto del veleno; altrimenti la sua capacità di avvelenare al colpo sarebbe difficile da spiegare.
+}
 itmname_indian_11 {Amuleto 'Maschera Ngombo'}
-itmdescr_indian_11 {Maschera rituale del popolo Sibonei.}
+itmdescr_indian_11
+{
+Maschera rituale del popolo Sibonei. Si dice sia in grado di instillare falsi ricordi in una persona.
+ ~Utile per fare colpo con gingilli o, al contrario, per scomparire nella folla.
+}
 itmname_amulet_1 {Amuleto 'Scudo Ngombo'}
-itmdescr_amulet_1 {Collana di ossa e corallo, rinforzata dal sortilegio ngombo.}
+itmdescr_amulet_1 {Collana di ossa e coralli rinforzata da un incantesimo ngombo. ~Persino l’armatura più leggera inizia a deviare le lame.}
 itmname_amulet_2 {Amuleto 'Euchologion'}
-itmdescr_amulet_2 {Libro di preghiere in una copertina argentata.}
+itmdescr_amulet_2 {Libro di preghiere con coperta argentata. ~Protegge i giusti dai nemici di Cristo, specialmente dal piombo.}
 itmname_amulet_3 {Amuleto 'Crucifix'}
-itmdescr_amulet_3 {Croce cattolica benedetta.}
+itmdescr_amulet_3 {Crocifisso cattolico benedetto. ~Porta una salvezza miracolosa: dove il peccatore morirebbe, il giusto sarà solo ferito.}
 itmname_amulet_4 {Amuleto 'El trozo'}
-itmdescr_amulet_4 {Frammento di rapiera estratto da un cadavere.}
+itmdescr_amulet_4 {Frammento di spada estratto da un corpo morto. ~Dona furia e immerge in una trance pagana.}
 itmname_amulet_5 {Amuleto 'Sogbo'}
-itmdescr_amulet_5 {Spirito del fulmine del pantheon voodoo.}
+itmdescr_amulet_5 {Spirito del fulmine dal pantheon voodoo. ~Rende i cannonieri molto più rapidi, accelerando il ricarico dei cannoni.}
 itmname_amulet_6 {Amuleto 'Madonna'}
-itmdescr_amulet_6 {Medaglione consacrato con l'immagine della Vergine Maria.}
+itmdescr_amulet_6 {Reliquiario consacrato con l’immagine della Vergine Maria. ~Aiuta a evitare la morte e le ferite gravi.}
 itmname_amulet_7 {Amuleto 'Acqua santa'}
-itmdescr_amulet_7 {Fiaschetta-pendente d'argento riempita di acqua benedetta.}
+itmdescr_amulet_7 {Fiaschetta d’argento appesa, piena d’acqua santa. ~Protegge da malattie e ferite, sia spirituali che fisiche.}
 itmname_amulet_8 {Amuleto 'Ancora'}
-itmdescr_amulet_8 {Ciondolo d'argento con un incantesimo.}
+itmdescr_amulet_8 {Ciondolo d’argento con incantesimo. ~I marinai credono che salvi lo scafo dalle palle vaganti sotto la linea di galleggiamento.}
 itmname_amulet_9 {Amuleto 'Encolpion'}
-itmdescr_amulet_9 {Croce massiccia d'argento con reliquie di San Cristoforo.}
+itmdescr_amulet_9 {Massiva croce d’argento con le reliquie di San Cristoforo. ~Protegge i pellegrini in viaggio e aiuta a preservare le vele durante lo scontro.}
 itmname_amulet_10 {Amuleto 'Operaio prodigio'}
-itmdescr_amulet_10 {Icona di San Nicola, patrono dei marinai.}
+itmdescr_amulet_10 {Medaglione di San Nicola, patrono dei marinai. ~Con esso ogni marinaio ha più possibilità di tornare a casa vivo e illeso.}
 itmname_amulet_11 {Amuleto 'Cimaruta'}
-itmdescr_amulet_11 {Amuleto che respira antica magia.}
+itmdescr_amulet_11 {Amuleto che respira antica magia. ~Porta fortuna ultraterrena e protegge l’equipaggio dal fuoco di moschetto prima dell’abbordaggio.}
 itmname_obereg_1 {Amuleto 'Teredo'}
-itmdescr_obereg_1 {Maschera di cipresso che tiene lontani i vermi delle navi.}
+itmdescr_obereg_1 {Maschera di cipresso che perfino i tarli di mare evitano. ~Rende le riparazioni dello scafo più economiche.}
 itmname_obereg_2 {Amuleto 'Xochipilli'}
-itmdescr_obereg_2 {Vaso rituale di argilla di Xochipilli, protettore dei tessitori.}
+itmdescr_obereg_2 {Vaso rituale d’argilla di Xochipilli, patrono dei tessitori. Favorisce riparazioni della nave più economiche.}
 itmname_obereg_3 {Amuleto 'Scimmia'}
-itmdescr_obereg_3 {"Secondo la credenza locale, questo vaso di alabastro dona forza."}
+itmdescr_obereg_3 {Secondo la credenza locale, questo vaso d’alabastro dona forza. ~Con esso il trasporto dei carichi diventa sensibilmente più leggero.}
 itmname_obereg_4 {Amuleto 'Fan di Gypsy'}
-itmdescr_obereg_4 {Un particolare incantesimo andaluso che devia lo sguardo degli interlocutori, permettendo di ingannare guardie e pattuglie a terra.}
+itmdescr_obereg_4 {Un particolare incanto andaluso che distoglie gli sguardi, permettendo d’ingannare guardie e pattuglie a terra. ~Favorisce l’infiltrazione clandestina in città e porti.}
 itmname_obereg_5 {Amuleto 'Tartaruga di giada'}
-itmdescr_obereg_5 {Vecchio amuleto dei primi conquistadores.}
+itmdescr_obereg_5 {Antico amuleto dei primi conquistadores. ~Lo portavano per fortuna, e con esso la sorte davvero ti sorride più spesso.}
 itmname_obereg_6 {Amuleto 'Pugno di scimmia'}
-itmdescr_obereg_6 {Nodo intricato di corda resistente con un'asola per la mano.}
+itmdescr_obereg_6 {Nodo elaborato di corda robusta con passante per il polso. ~Di solito lo indossano marinai esperti, il che dà molto più peso alle tue parole.}
 itmname_obereg_7 {Amuleto 'Pescatore'}
-itmdescr_obereg_7 {Amo da pesca incantato indossato dai marinai per la fortuna.}
+itmdescr_obereg_7 {Amo da pesca incantato che i marinai portano per buon auspicio. ~Migliora la conduzione della nave, soprattutto per i navigatori inesperti.}
 itmname_obereg_8 {Amuleto 'Perle del mercante'}
-itmdescr_obereg_8 {Rosario monastico in corallo nobile, utile per il conteggio.}
+itmdescr_obereg_8 {Rosario monastico in corallo pregiato per contare. ~Aiuta a concentrarsi e a non sbagliare nei commerci, aumentando le probabilità di successo.}
 itmname_obereg_9 {Amuleto 'Ehecatl'}
-itmdescr_obereg_9 {Antica ciotola a forma di testa del dio azteco del vento.}
+itmdescr_obereg_9 {Antica coppa a forma di testa del dio azteco dei venti. ~Con essa il vento è sempre favorevole, aumentando la velocità dell’imbarcazione.}
 itmname_obereg_10 {Amuleto 'Orecchino da marinaio'}
-itmdescr_obereg_10 {Un orecchino del timoniere che ha doppiato Capo Horn.}
+itmdescr_obereg_10 {Orecchino del timoniere che ha doppiato Capo Horn. ~Aiuta a passare tra gli scogli e a bolinare in acque basse, aumentando l’agilità della nave.}
 itmname_obereg_11 {Amuleto 'Pilgrim'}
-itmdescr_obereg_11 {La croce di Brendan il navigatore.}
+itmdescr_obereg_11 {La croce di Brendano il Navigatore. ~Permette di cogliere i più piccoli cambi di vento, rendendo l’imbarcazione più docile.}
 itmname_rat_poison {Arsenico}
 itmdescr_rat_poison {Arsenico — una polvere dall'odore di zolfo e dall'aspetto simile al talco, usata per l'eliminazione temporanea dei topi a bordo.}
 itmname_gold {Peso}
@@ -888,6 +932,8 @@ itmname_recipe_potion4 {Ricetta per mistura}
 itmdescr_recipe_potion4 {Una ricetta contenente tutte le informazioni necessarie per preparare una mistura.}
 itmname_recipe_berserker_potion {Ricetta di tintura ometocli}
 itmdescr_recipe_berserker_potion {Una ricetta contenente tutte le informazioni necessarie per preparare la tintura di ometocli.}
+itmname_recipe_PerksPotion {Ricetta della Pozione dell'Oblio}
+itmdescr_recipe_PerksPotion {Una ricetta complessa, costosa e lunga. A giudicare dalla descrizione, dovrebbe permettere di rinunciare al passato e cambiare il proprio destino.}
 itmname_recipe_totem_01 {Ricetta Talismano}
 itmdescr_recipe_totem_01 {Una ricetta contenente tutte le informazioni necessarie per creare il talismano "gola di ghisa".}
 itmname_recipe_totem_02 {Ricetta Talismano}
@@ -964,6 +1010,8 @@ itmname_mangarosatotal {Pozione abbraccio di mare}
 itmdescr_mangarosatotal {Una pozione preparata con mangarosa secondo la ricetta di Amelia. Profuma di vento salmastro e legno bagnato, come un ponte dopo la tempesta. L’aroma di mare, con una lieve amarezza d’alga, dona leggerezza e libertà, come se il mare stesso si aprisse nel petto.}
 itmname_vodka {Vodka dello Zar}
 itmdescr_vodka {Infuso di spirito di grano con ginepro e iperico, distillato e affinato con una goccia d’acqua di rose e radice di galanga. Usato dagli streltsy dello Zar russo in battaglia come bevanda riscaldante e rinvigorente.}
+itmname_PerksPotion {Pozione dell'Oblio}
+itmdescr_PerksPotion {Una fiala a forma di teschio fuso con il collo contorto. Il liquido oleoso e viscoso luccica d'oro e cremisi, come se al suo interno pulsasse una fiamma viva. Contiene tre sacrifici: Carne, Memoria e Ricchezza.}
 itmname_cannabis1 {Datura}
 itmdescr_cannabis1 {Usato nelle pozioni curative.}
 itmname_cannabis2 {Sabadilla}
@@ -1030,10 +1078,7 @@ itmdescr_Mineral6 {Un piccolo specchio da tasca. Riesci a malapena a vedere la p
 itmname_Mineral7 {Pipa di porcellana}
 itmdescr_Mineral7 {Opera di artigianato olandese, realizzata con tecniche rubate ai cinesi. Più fini delle pipe di argilla a buon mercato e quindi popolari tra i fumatori di tabacco locali.}
 itmname_Mineral8 {Scarpa}
-itmdescr_Mineral8
-{
-Una scarpa senza compagna. Un cattivo presagio.(-10 a opportunismo)
-}
+itmdescr_Mineral8 {Una scarpa senza compagna. Un cattivo presagio.}
 itmname_Mineral9 {Vecchia tazza}
 itmdescr_Mineral9 {Una vecchia tazza di peltro offuscata.}
 itmname_Mineral10 {Selce}
@@ -1077,15 +1122,9 @@ itmdescr_Mineral28 {Alcuni alchimisti pazzi usavano l'alcool etilico per prepara
 itmname_Mineral29 {Acido nitrico}
 itmdescr_Mineral29 {L'acido nitrico è noto fin dall'VIII secolo. Può essere utilizzato per produrre fulminato d'argento, a condizione che si disponga di un crogiolo resistente al fuoco e non metallico. È altamente reattivo. Evitare il contatto con la pelle e, per carità, non assaggiarlo.}
 itmname_Mineral30 {Manette per schiavi}
-itmdescr_Mineral30
-{
-Manette usate dai negrieri per impedire che le loro proprietà si allontanino.(-10 al carisma)
-}
+itmdescr_Mineral30 {Manette usate dai negrieri per impedire che le loro proprietà si allontanino.}
 itmname_Mineral31 {Osso incantato}
-itmdescr_Mineral31
-{
-Un osso di dito umano con una fascia di rame. Usato dalle streghe woodoo per gli incantesimi.(-10 al carisma, -10 all'opportunismo).
-}
+itmdescr_Mineral31 {Un osso di dito umano con una fascia di rame. Usato dalle streghe woodoo per gli incantesimi.}
 itmname_Mineral32 {Stampo proiettile}
 itmdescr_Mineral32 {Questo dispositivo consente di fondere proiettili della forma e delle dimensioni corrette per il revolver Colt.}
 itmname_Mineral33 {Tintura per tatuaggi}
@@ -1128,6 +1167,8 @@ itmdescr_key_facio {Chiave di Giuseppe Fazio.}
 itmdescr_key_facioQ {Una chiave che apre la porta sulla nave 'Carolina' e una cassa nella cabina di Giuseppe Fazio.}
 itmname_key_levasser {Chiave di Levasseur}
 itmdescr_key_levasser {Una chiave presa dal corpo di Francois Levasseur. Ora cerchiamo di trovare il forziere che apre.}
+itmname_key_candlestick_LeFransua {Key}
+itmdescr_key_candlestick_LeFransua {An old, worn key. It's not yet clear what it unlocks.}
 itmname_PortmansBook {Diario di bordo}
 itmdescr_PortmansBook {Un diario di bordo, dimenticato da un capitano distratto. Dovrebbe essergli restituito.}
 itmname_CaptainBook {Documenti nave}
@@ -1388,3 +1429,9 @@ itmname_hat11 {Cappello di Teresa}
 itmdescr_hat11 {Copricapo della madre di Mary, conservato da Aurélie Bertin. Nonostante l’età, mantiene ancora la sua antica eleganza e fascino.}
 itmname_talisman21 {Talismano del Contrabbandiere}
 itmdescr_talisman21 {Un sacchetto di erbe e cenere, una fiala di liquido scuro e un medaglione a forma di teschio: un insieme curioso per chi non conosce il mestiere, ma un talismano prezioso per chi vive di traffici nell’ombra. Solo i veri contrabbandieri portano un talismano simile.}
+itmname_blade_WR_1 {Rinato}
+itmdescr_blade_WR_1
+{
+Magnifica sciabola di Rupert Northwood.
+L’imponente guardia con un fenice dorato racconta dolore e rinascita. La lama brilla come uno specchio, e lungo il solco reca inciso: VULNERATUS NON VICTUS — “Ferito ma mai sconfitto.” Solo Dio sa quante anime abbia reclamato questa spada…
+}

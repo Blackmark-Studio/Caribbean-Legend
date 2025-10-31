@@ -2,7 +2,7 @@
 #include "storm-engine\sea_ai\script_defines.h"
 #include "battle_interface\landinterface.c"
 #include "battle_interface\TaskWindow\TaskWindow.c"
-#include "battle_interface\ispyglass.c"
+#include "battle_interface\ispyglass\ispyglass.c"
 #include "battle_interface\reload_tables.c"
 #include "battle_interface\utils.c"
 #include "battle_interface\ActivePerksShow.c"
@@ -2596,7 +2596,7 @@ void ProcessDayRepair()
 			cn = GetCompanionIndex(mchar,i);
 			if(cn==-1) continue;
 			chref = GetCharacter(cn);
-			if(CheckRepairPerks(chref) || IsCharacterEquippedArtefact(chref, "obereg_1") || IsCharacterEquippedArtefact(chref, "obereg_2"))
+			if(CheckRepairPerks(chref))
 			{	
 				// расчёт починки корпуса
 				if (GetHullPercent(chref) < 100.0 )
@@ -2613,6 +2613,11 @@ void ProcessDayRepair()
 						// boal  check skill -->
 						AddCharacterExpToSkill(chref, "Repair", matQ / 3.0);
 						// boal <--
+						if(sti(chref.index) == GetMainCharacterIndex())
+						{
+							float repairedHP = repPercent * makefloat(GetCharacterShipHP(chref)) / 100.0;
+							Achievment_SetStat(64, makeint(repairedHP)); 
+						}
 					}
 				}
 				
@@ -3125,7 +3130,15 @@ float GetRigDamage(int shootIdx, int iBallType, ref damage_chr)
 	}
 	
 	fDmgRig = fDmgRig * isEquippedArtefactUse(shoot_chr, "indian_8", 1.0, 1.10 );
-	fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.90 ); // belamour 
+	if (ShipBonus2Artefact(damage_chr, SHIP_GALEON_SM))
+	{
+		fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.85 );
+	}
+	else
+	{
+		fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "amulet_9", 1.0, 0.90 ); // belamour 
+	}
+
     fDmgRig = fDmgRig * isEquippedArtefactUse(damage_chr, "talisman7", 1.0, 0.95 ); // belamour legendary edition скарабей
 	if(IsCharacterEquippedArtefact(shoot_chr, "talisman19")) 
 	{

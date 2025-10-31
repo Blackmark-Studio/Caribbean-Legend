@@ -678,7 +678,7 @@ void RepairOk()
 	{
 		mc.quest.waithours = ret;
 	}
-	Achievment_SetStat(64, 1); // ugeen 2016
+	//Achievment_SetStat(64, 1); // ugeen 2016
 }
 
 void RepairAll()

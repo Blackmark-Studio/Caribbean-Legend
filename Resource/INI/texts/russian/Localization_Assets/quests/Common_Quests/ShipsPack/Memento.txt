@@ -1,4 +1,4 @@
-Memento_1 {Мементо}
+Memento_1 { }
 Memento_2 {Мортимер}
 Memento_3 {Грим}
 Memento_4

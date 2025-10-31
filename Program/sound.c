@@ -700,7 +700,7 @@ void SetCaveStaticSounds (ref loc)
 	}
 }
 
-void SetSchemeForSea ()
+void SetSchemeForSea()
 {
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
 	ResetSoundScheme();
@@ -1022,11 +1022,13 @@ void Sound_OnAlarm(bool _alarmed)
 	oldAlarmed = alarmed;
 }
 
+/*
 void Sound_OnSeaAlarm(bool _seaAlarmed)
 {
 	seaAlarmed = _seaAlarmed;
 	if (seaAlarmed == oldSeaAlarmed)
 		return;
+    UpdateSailorsChatter();
 	string ClassicSoundScene = "";
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
 	if (seaAlarmed)
@@ -1052,14 +1054,7 @@ void Sound_OnSeaAlarm(bool _seaAlarmed)
 	}
 	oldSeaAlarmed = seaAlarmed;
 }
-
-// set music without any checks
-void Sound_OnSeaAlarm555(bool _seaAlarmed, bool bHardAlarm)
-{
-	if (bHardAlarm) { oldSeaAlarmed = !_seaAlarmed; }
-	
-	Sound_OnSeaAlarm(_seaAlarmed);
-}
+*/
 
 void InitSound()
 {
@@ -1173,4 +1168,18 @@ void End_TrackNonStop()
 	if(CheckAttribute(pchar,"questTemp.TrackNonStop")) DeleteAttribute(pchar,"questTemp.TrackNonStop");
 	if(CheckAttribute(pchar,"questTemp.NoFast")) DeleteAttribute(pchar,"questTemp.NoFast");
 	SetSchemeAfterFlagRise();
+}
+
+//////////////////////////////////////
+// SOUND EVENT SECTION
+//////////////////////////////////////
+int Play3DSoundEvent(string name, float x, float y, float z)
+{
+	InitSound();
+    return SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z);
+}
+
+void SoundEvent_SetVolume(int iEventID, float fVolume)
+{
+	SendMessage(Sound, "llf", MSG_SOUND_EVENT_SET_VOLUME, iEventID, fVolume);
 }

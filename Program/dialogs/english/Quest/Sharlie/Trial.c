@@ -203,9 +203,7 @@ void ProcessDialogEvent()
 		
 		case "florian_deck_5":
 			TakeNItems(pchar, "gold_dublon", 200);
-			Log_Info("You've received 200 doubloons.");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "But that's not all, captain. Would you like to earn another two hundred and fifty golden double escudos?";
+			dialog.text = "But that's not all, captain. Would you like to earn another 75 golden double escudos?";
 			link.l1 = "That sounds promising, but it depends on what you're going to ask me to do for it, sir.";
 			link.l1.go = "florian_deck_6";
 		break;
@@ -409,9 +407,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_16":
-			TakeNItems(pchar, "gold_dublon", 250);
-			Log_Info("You've received 250 doubloons");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 75);
 			dialog.text = "You are reading my mind, "+GetFullName(pchar)+"! Yes, damn it! Since Alacantara is low on gunpowder, I can let her sail into the open sea and then force her to engage in a protracted naval fight, in which their powder will run out before ours, haha!\nYou should make sure that the supply barkentine Puebla never reaches Portobello. I can't sail close to the shore; patrols will notice my frigate easily and drive me off before I can intercept Alacantara\nYou can deal with Puebla on your own. Find her and get rid of her. Sink her or take her as a prize, I don't care. Just prevent her from getting here!\nIf you succeed, then go to Guadeloupe and see Gerard LeCroix. I believe that you already know him, don't you? He will pay you the coin you deserve.";
 			link.l1 = "Deal! I'll be on my way to cut off the Puebla!";
 			link.l1.go = "florian_19";

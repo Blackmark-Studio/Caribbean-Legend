@@ -3034,9 +3034,9 @@ void ProcessDialogEvent()
 			//--> Jason регата
 		case "Regata":
 			// belamour legendary edition -->
-			if(sti(pchar.rank) < 20)
+			if(sti(pchar.rank) < 15)
 			{
-				notification("Level 20 required", "None");
+				Notification_Level(false, 15);
 				dialog.text = "Ah, wonderful, good to see you, captain! I've heard of your talents, but come back when you're truly ready.";
 				link.l1 = "Yes, of course. As you wish.";
 				link.l1.go = "exit";

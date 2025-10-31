@@ -249,7 +249,7 @@ void wdmRecalcReloadToSea()
     bool bTargetInBattle = false;
 	for(i = 0; i < numEncounters; i++)
 	{
-        if(numShips > MAX_SHIPS_LOAD_FROM_WDM) break;
+        if(numShips >= MAX_SHIPS_LOAD_FROM_WDM) break;
 		if(wdmSetCurrentShipData(iSort[i]))
 		{
 			if(MakeInt(worldMap.encounter.select) == 0) continue;
@@ -620,7 +620,7 @@ void CalculateInfoData()
 void MapEncInfo(ref rEncounter, int iRealEncounterType)
 {
     int i, qty;
-    string sInfo;
+    string sInfo, sTemp;
     ref rChar, rShip, rBaseShip;
 
     // БАЗОВАЯ ИНФА ПО ЭНКАУНТЕРУ
@@ -657,8 +657,8 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
     sInfo += NewStr() + XI_ConvertString("Battle difficulty") + GetBattleDifficulty(rEncounter);
 
     // ИНФА О ТЕКУЩЕМ СОСТОЯНИИ ШАБЛОНА ГЕНЕРАЦИИ
+    int iShipType, idx, num;
     ref rTmpl = &EncountersTypes[iRealEncounterType];
-    aref arShips, aShip;
     if(iRealEncounterType != ENCOUNTER_TYPE_ALONE)
     {
         sInfo += NewStr() + NewStr() + "TEMPLATE LOG" + NewStr();
@@ -666,42 +666,68 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
         sInfo += "Type: ";
         switch(sti(rTmpl.Type))
         {
-            case ENCOUNTER_TRADE: sInfo += "Trade"; break;
-            case ENCOUNTER_WAR:   sInfo += "War"; break;
+            case ENCOUNTER_TRADE:   sInfo += "Trade";   break;
+            case ENCOUNTER_WAR:     sInfo += "War";     break;
             case ENCOUNTER_SPECIAL: sInfo += "Special"; break;
             //default:
                 sInfo += "UNKNOWN";
         }
-        sInfo += NewStr() + "Chance: " + rTmpl.Chance + NewStr();
-        sInfo += "Слоты кораблей в шаблоне:";
-        makearef(arShips, rTmpl.Ships);
-        qty = GetAttributesNum(arShips);
-        for(i = 0; i<qty; i++)
+        // sInfo += NewStr() + "Chance: " + rTmpl.Chance + NewStr();
+        if (iRealEncounterType < WorldMapRandomEncQty)
         {
-            sInfo += NewStr() + "    " + (i) + ") ";
-            aShip = GetAttributeN(arShips, i);
-            sInfo += "Spec ";
-            switch(sti(aShip.ShipSpec))
+            int BitParams;
+            sInfo += NewStr() + "Слоты кораблей в шаблоне:";
+            for(i = 0; i < 4; i++)
             {
-                case SHIP_SPEC_UNIVERSAL: sInfo += "UNIVERSAL; "; break;
-                case SHIP_SPEC_MERCHANT: sInfo += "MERCHANT; "; break;
-                case SHIP_SPEC_RAIDER: sInfo += "RAIDER; "; break;
-                case SHIP_SPEC_WAR: sInfo += "WAR; "; break;
-                //default:
-                    sInfo += "UNKNOWN; ";
+                switch (i)
+                {
+                    case 0:
+                        BitParams = ENC_MERCHANT_SLOT[iRealEncounterType];
+                        if (!BitParams) continue;
+                        break;
+                    case 1:
+                        BitParams = ENC_WAR_SLOT[iRealEncounterType];
+                        if (!BitParams) continue;
+                        break;
+                    case 2:
+                        BitParams = ENC_RAIDER_SLOT[iRealEncounterType];
+                        if (!BitParams) continue;
+                        break;
+                    case 3:
+                        BitParams = ENC_UNIVERSAL_SLOT[iRealEncounterType];
+                        if (!BitParams) continue;
+                        break;
+                }
+                sInfo += NewStr() + "    " + (i) + ") ";
+                sInfo += "Spec ";
+                switch(i)
+                {
+                    case SHIP_SPEC_UNIVERSAL: sInfo += "UNIVERSAL; "; break;
+                    case SHIP_SPEC_MERCHANT:  sInfo += "MERCHANT; ";  break;
+                    case SHIP_SPEC_RAIDER:    sInfo += "RAIDER; ";    break;
+                    case SHIP_SPEC_WAR:       sInfo += "WAR; ";       break;
+                    //default:
+                        sInfo += "UNKNOWN; ";
+                }
+                sInfo += "Qty " + and(BitParams, 15) + " - " + and(shr(BitParams, 4), 15) + "; ";
+                sInfo += "Cls " + and(shr(BitParams, 8), 15) + " - " + and(shr(BitParams, 12), 15) + "; ";
             }
-            sInfo += "Qty " + aShip.qMin + " - " + (sti(aShip.qMin) + sti(aShip.qMax) - sti(aShip.qMin)) + "; ";
-            sInfo += "Cls " + aShip.cMin + " - " + (sti(aShip.cMin) + sti(aShip.cMax) - sti(aShip.cMin)) + "; ";
-            sInfo += "Type " + aShip.Type + "; ";
+            BitParams = ENC_RANDOM_PARAMS[iRealEncounterType];
+            if (BitParams)
+            {
+                sInfo += NewStr() + "    Есть рандом между слотами: ";
+                if (and(BitParams, 1)) sInfo += " торговый ";
+                if (and(shr(BitParams, 1), 1)) sInfo += " военный ";
+                if (and(shr(BitParams, 2), 1)) sInfo += " рейдер ";
+                if (and(shr(BitParams, 3), 1)) sInfo += " универсал ";
+            }
         }
     }
 
     // ИНФА О КОРАБЛЯХ ТЕКУЩЕЙ ЭНКИ
-    int iShipType, idx, num;
     sInfo += NewStr() + NewStr() + "Корабли текущей эночки:";
     if(CheckAttribute(rEncounter, "CharacterID"))
     {
-        string sTemp;
         ref chr = CharacterFromID(rEncounter.CharacterID);
         if(CheckAttribute(chr, "SeaAI.Group.Name"))
         {
@@ -722,7 +748,7 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
                         idx = sti(aCharInfo.index);
                         if(idx == -1) continue;
                         rChar = GetCharacter(idx);
-                        if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
+                        if(LAi_IsDead(rChar)) continue;
                         iShipType = sti(rChar.Ship.Type);
                         if(iShipType == SHIP_NOTUSED) continue;
                         rShip = GetRealShip(iShipType);
@@ -739,14 +765,16 @@ void MapEncInfo(ref rEncounter, int iRealEncounterType)
             }
         }
     }
-    else if(CheckAttribute(rEncounter, "ShipTypes"))
+    else if(CheckAttribute(rEncounter, "FixedShips"))
     {
         num = 0;
-        makearef(arShips, rEncounter.ShipTypes);
+        aref arShip, arShips;
+        makearef(arShips, rEncounter.FixedShips);
         qty = GetAttributesNum(arShips);
         for(i = 0; i < qty; i++)
         {
-            iShipType = GetAttributeValue(GetAttributeN(arShips, i));
+            arShip = GetAttributeN(arShips, i);
+            iShipType = arShip.type;
             rBaseShip = &ShipsTypes[iShipType];
 
             num++;
@@ -805,14 +833,19 @@ int CalculateEscapeChance()
     ref rChar, rShip;
     float fTemp;
     int i, idx, iShipType;
+    int iCompQty = 0;
     int iWar = 0;   int iUniv = 0;      int iRaider = 0;  int iTrade = 0;
     int iSails = 0; int iLoadLight = 0; int iLoadHard = 0;
+
+    int tradeShipModifier = -6;
+    if (GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat6") tradeShipModifier = -3;
 
     for(i = 0; i < COMPANION_MAX; i++)
     {
         idx = GetCompanionIndex(PChar, i);
         if (idx != -1)
         {
+            iCompQty++;
             rChar = &Characters[idx];
             iShipType = sti(rChar.Ship.Type);
             if(iShipType == SHIP_NOTUSED) continue;
@@ -820,8 +853,8 @@ int CalculateEscapeChance()
             // Тип
             switch (sti(rShip.Spec))
             {
-                case SHIP_SPEC_MERCHANT:  iTrade  += -6; break;
-                case SHIP_SPEC_UNIVERSAL: iUniv   += 8;  break;
+                case SHIP_SPEC_MERCHANT:  iTrade  += tradeShipModifier; break;
+                case SHIP_SPEC_UNIVERSAL: iUniv   += 8;   break;
                 case SHIP_SPEC_RAIDER:    iRaider += 12;  break;
                 case SHIP_SPEC_WAR:       iWar    += -10; break;
             }
@@ -830,8 +863,9 @@ int CalculateEscapeChance()
             iSails += (MakeInt(100.0 - (fTemp * 100.0)) / 10) * -4;
             // Загруженность
             fTemp = MakeFloat(GetCargoLoad(rChar)) / MakeFloat(GetCargoMaxSpace(rChar));
-            if (fTemp <= 0.4) iLoadLight += 10;
-            else if (fTemp >= 0.7) iLoadHard += -12; 
+            int indendantBonus = GetIntByCondition(CheckOfficersPerk(pchar, "Intendant"), 0, PERK_VALUE_INTENDANT);
+            if (fTemp <= 0.4) iLoadLight += 10 + indendantBonus;
+            else if (fTemp >= 0.7) iLoadHard += -12 + indendantBonus; 
         }
     }
 
@@ -918,6 +952,11 @@ int CalculateEscapeChance()
         iPositive += 14;
         sGreenText += NewStr() + XI_ConvertString("EscapePos_4") + 14;
     }
+    if (iCompQty == 1 && GetCharacterShipClass(PChar) > 5)
+    {
+        iPositive += 15;
+        sGreenText += NewStr() + XI_ConvertString("EscapePos_5") + 15;
+    }
 
     EscapeSummary = iPositive + iNegative;
     return iClamp(0, 100, EscapeSummary);
@@ -990,10 +1029,11 @@ void ManeuversResult()
 void SuccessEscape()
 {
     TEV.EscapeBlock = "";
-    SetFunctionTimerCondition("wdmEscapeRefresh", 0, 0, 2, false);
+    SetFunctionTimerCondition("wdmEscapeRefresh", 0, 0, 1, false);
 
     Notification(XI_ConvertString("map_escape_yes"), "Sneak");
     PlaySound("interface\s_korablami_001.wav");
+	Achievment_SetStat(188, 1);
 
     // Замедление
     if (sTargetId != "")

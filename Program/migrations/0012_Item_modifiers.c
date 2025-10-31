@@ -14,12 +14,6 @@ void ApplyMigration(ref migrationState) {
 	item.groupID = TALISMAN_ITEM_TYPE;
 
 
-	if(LoadSegment("items\modifiers\init\init.c"))
-	{
-		InitModifiers();
-		UnloadSegment("items\modifiers\init\init.c");
-	}
-
 	// Все амулеты, талисманы теперь длятся 50 дней
 	item = ItemsFromId("indian_1");
 	item.time = 50;
@@ -94,8 +88,6 @@ void ApplyMigration(ref migrationState) {
 	DubloonsPrice();
 
 	KukulklanStoleMyPerks();
-	InitPerks();
-	Log_TestInfo("Реворк перков");
 }
 
 
@@ -107,14 +99,24 @@ void KukulklanStoleMyPerks()
 	{
 		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
 		chr = GetCharacter(idx);
+		if (!IsFellowOurCrew(chr)) continue;
 		if (!CheckAttribute(chr, "perks.list")) continue;
-		RemoveAllPerks(chr);
+		RemoveAllPerksNoCash(chr);
 
 		object temp;
 		GEN_SummPerkPoints(chr, &temp);
 
-		SetFreePerkPoints(chr, GetFreePerkPoints(chr, "self") + sti(temp.self), "self");
-		SetFreePerkPoints(chr, GetFreePerkPoints(chr, "ship") + sti(temp.ship), "ship");
+		SetFreePerkPoints(chr, sti(temp.self), "self");
+		SetFreePerkPoints(chr, sti(temp.ship), "ship");
+
+		if (IsMainCharacter(chr))
+		{
+			SetCharacterPerkNoCash(chr, "FlagPir", false);
+			SetCharacterPerkNoCash(chr, "Flag" + NationShortName(GetBaseHeroNation()), false);
+		}
+		else ForceHeroPerks(chr);
+
+		CT_UpdateCashTables(chr);
 	}
 }
 

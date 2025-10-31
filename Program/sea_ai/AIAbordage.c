@@ -110,7 +110,7 @@ void Return2SeaAfterAbordage()
 
 	bSeaReloadStarted = false;
 
-	Ship_RecreateStaticSounds();
+	Ship_RecreateStaticSounds(true);
 	DeleteAttribute(pchar, "abordage_active");
 	Log_TestInfo("выход в море");
 	Whr_UpdateWeather();

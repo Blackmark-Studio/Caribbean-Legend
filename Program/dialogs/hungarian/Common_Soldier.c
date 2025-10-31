@@ -466,6 +466,16 @@ void ProcessDialogEvent()
 					link.l3.go = "quests";//(перессылка в файл города) */				
 				}
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier") && npchar.location.group == "soldiers" && npchar.city == "Bridgetown")
+			{
+				dialog.text = "Welcome to Bridgetown, "+GetAddress_Form(NPChar)+"...";
+				link.l1 = "I thought my face was known not only in the French colonies... My name is "+GetFullName(pchar)+".";
+				link.l1.go = "WildRose_Soldier_1";
+				DeleteAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier");
+				DelLandQuestMark(npchar);
+			}
+			//<-- Дикая Роза
 		break;
 		//============================== ноды на разборки при распознавании =========================
 		case "PegYou":
@@ -720,6 +730,66 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		// <-- ночной приключенец
+		
+		//--> Дикая Роза
+		case "WildRose_Soldier_1":
+			if (GetHour() >= 6 && GetHour() <= 21)
+			{
+				dialog.text = "Ah, it’s you, captain... The sun’s made me drowsy... Cursed heat!";
+			}
+			else
+			{
+				dialog.text = "Can’t argue with that. Still, at night everyone looks the same, you know.";
+			}
+			link.l1 = "What’s the matter, soldier? Normally your lot doesn’t bother me with talk.";
+			link.l1.go = "WildRose_Soldier_2";
+		break;
+		
+		case "WildRose_Soldier_2":
+			dialog.text = "Ahem, yes, "+GetAddress_Form(NPChar)+". But I have an order from Lord Willoughby: I must warn all newcomers to the island that a few days ago a bunch of slaves bolted from Bishop’s plantation. Damn overseers must’ve been fast asleep while they were breaking their chains. And today I should’ve been in the arms of my sweet Angelique...";
+			link.l1 = "Let me guess: they sent garrison soldiers to hunt down the planter’s property?";
+			link.l1.go = "WildRose_Soldier_3";
+		break;
+		
+		case "WildRose_Soldier_3":
+			dialog.text = "Of course... Bishop also sent a few bands of his mercenaries into the jungle, but even that wasn’t enough for him. He promised a fine reward to anyone who brings the slaves back. Alive. Usually it’s the blacks who bend their backs for him, but not long ago they delivered a batch of navy deserters – not much use in the stone quarry, but smart enough to slip off the plantation...";
+			link.l1 = "So they were whites?";
+			link.l1.go = "WildRose_Soldier_4";
+		break;
+		
+		case "WildRose_Soldier_4":
+			dialog.text = "White as they come, strike me down! The blacks would’ve just run, but these grabbed a few muskets and sabers off slain mercenaries – and already put them to use. Took down one of ours, and a couple of Bishop’s lackeys too – which drove the rest mad.\nThey almost gunned down our own men by mistake, thinking they were the fugitives. And a few civilians vanished without a trace in the jungle.";
+			link.l1 = "The city gates are locked?";
+			link.l1.go = "WildRose_Soldier_5";
+		break;
+		
+		case "WildRose_Soldier_5":
+			dialog.text = "No, of course not – the city isn’t under siege. You’re free to go wherever you wish. But if you decide to hunt the fugitives and get caught in crossfire, don’t come whining. And if you survive, don’t bother knocking at the residence to complain to His Lordship – after all, he’s shown enough goodwill to care not only for Bridgetown’s citizens but also its guests.";
+			link.l1 = "How... gracious of him. God save Francis Willoughby!";
+			link.l1.go = "WildRose_Soldier_6";
+			link.l2 = "Ah, if only all governors cared so much for newcomers as Sir Willoughby!..";
+			link.l2.go = "WildRose_Soldier_7";
+		break;
+		
+		case "WildRose_Soldier_6":
+			dialog.text = "Very funny. You may go, captain.";
+			link.l1 = "Farewell then, soldier.";
+			link.l1.go = "WildRose_Soldier_8";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+		break;
+		
+		case "WildRose_Soldier_7":
+			dialog.text = "Aye, we’d have a lot less work on our hands. I won’t keep you any longer, captain.";
+			link.l1 = "Good luck, soldier.";
+			link.l1.go = "WildRose_Soldier_8";
+			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+		break;
+		
+		case "WildRose_Soldier_8":
+			DialogExit();
+			AddDialogExitQuestFunction("WildRose_Etap1_EscapeSlaves");
+		break;
+		//<-- Дикая Роза
 		
 		//замечение по обнажённому оружию
 		case "SoldierNotBlade":

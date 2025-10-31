@@ -1040,7 +1040,12 @@ void ProcessDialogEvent()
 		
 		case "Portugal_2":
 			DialogExit();
-			InitHugo("Hugo","Avendell");
+			sld = InitHugo("Hugo","Avendell");
+			FreeSitLocator("Marigo_tavern", "sit_front1");
+			ChangeCharacterAddressGroup(sld, "Marigo_tavern", "sit", "sit_front1");
+			AddLandQuestMark(sld, "questmarkmain");
+			SetFunctionTimerCondition("Portugal_BeginOver", 0, 0, 2, false);
+			pchar.questTemp.Portugal = "begin";
 		break;
 		
 		case "Portugal_exit":

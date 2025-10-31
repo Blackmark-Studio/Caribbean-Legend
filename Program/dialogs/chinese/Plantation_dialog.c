@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 					{
 						link.l2 = "(值得信赖)尊敬的先生们, 我来此是为了公平互利的贸易, 请允许我见种植园主。 ";
 						link.l2.go = "mtraxx_soldier_1";
-						notification("Trustworthy", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 					}
 				}
 				else
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(值得信赖)尊敬的先生, 请允许我提出异议! 我给你带来了最高质量的商品。 我知道我提供的每一件商品的价值, 也知道你提供的每一件商品的价值。 我应该从你这边得到更多的货物, 而且这笔交易对你来说仍然是有利可图的 —你很清楚这一点。 ";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 				dialog.text = "是的, 让.皮卡德很抢手 —不只是为了斟酒。 一位有影响力的英国人已经联系过我。 一个叫... 帕托姆森的人? 他给我送了封信。 ";
 				link.l1 = "但帕托姆森和他的客户都还没出现。 我准备现在就从你这里买下让。 开个价吧 —女士们还在等着呢! ";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

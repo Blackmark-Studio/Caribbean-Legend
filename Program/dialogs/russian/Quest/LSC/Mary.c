@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Ну что там капитан, опять заваруха, да? Кто на этот раз, испанцы, пираты, или кто похуже?";
 			link.l1 = "Хуже, Мэри, хуже. Губернатор намерен посетить крайне дорогую куртизанку, а я при нём в качестве диковинки, обещанной хозяйке. Скучная болтовня, дорогое вино и унылые аристократы.";
 			link.l1.go = "GoldenGirl_1";

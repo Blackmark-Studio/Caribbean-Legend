@@ -1,5 +1,5 @@
 Tonzag_1 {Kopfgeldjäger}
-Tonzag_2 {Alonso}
+Tonzag_2 { }
 Tonzag_3 { }
 Tonzag_4 {6 Stunden sind vergangen...}
 Tonzag_5 {Erkundungsmodus: Der Timer ist deaktiviert.}

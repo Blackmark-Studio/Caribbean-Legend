@@ -627,10 +627,10 @@ void LaunchHelpScreen(string help_section)
 
 void LaunchCharacterItemChange(ref chref)
 {
-	if(procInterfacePrepare(INTERFACE_ITEMSBOX))
+	if(procInterfacePrepare(INTERFACE_ITEMS_EXCHANGE))
 	{
 		nPrevInterface = -1;
-		CurrentInterface = INTERFACE_ITEMSBOX;
+		CurrentInterface = INTERFACE_ITEMS_EXCHANGE;
 		aref charef; makearef(charef,chref);
 		InitInterface_RS(Interfaces[CurrentInterface].IniFile,&charef,chref.FaceID);
 	}
@@ -638,10 +638,10 @@ void LaunchCharacterItemChange(ref chref)
 
 void LaunchItemsBox(ref boxRef)
 {
-	if(procInterfacePrepare(INTERFACE_ITEMSBOX))
+	if(procInterfacePrepare(INTERFACE_ITEMS_EXCHANGE))
 	{
 		nPrevInterface = -1;
-		CurrentInterface = INTERFACE_ITEMSBOX;
+		CurrentInterface = INTERFACE_ITEMS_EXCHANGE;
 		InitInterface_RS(Interfaces[CurrentInterface].IniFile,boxRef,"");
 	}
 }

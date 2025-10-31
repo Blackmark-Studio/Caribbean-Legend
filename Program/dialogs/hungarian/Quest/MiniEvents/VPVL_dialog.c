@@ -426,7 +426,6 @@ void ProcessDialogEvent()
 			link.l1 = "Csak nyugodtan, Pierre! Jobb lesz, ha... hic... lehorgonyzok, mielôtt a tengeri lábaim kocsonyává válnak, és a kocsma padlóján sodródom! Szép szelek töltsék meg a vitorláidat!";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 
 		case "Exit2":

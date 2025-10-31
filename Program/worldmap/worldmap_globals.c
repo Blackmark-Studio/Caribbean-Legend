@@ -8,6 +8,13 @@
 #define WDM_ETYPE_WARRING	2
 #define WDM_ETYPE_SPECIAL	3
 
+#define THREAT_LVL_0    0
+#define THREAT_LVL_1    10
+#define THREAT_LVL_2    15
+#define THREAT_LVL_3    20
+#define THREAT_LVL_4    30
+#define THREAT_LVL_5    50
+
 object worldMap;
 
 //=========================================================================================
@@ -209,6 +216,13 @@ bool wdmChoseAndCreateShip()
     int  iType = i-1;
 	bool bTrade = (sti(EncountersTypes[iType].Type) == ENCOUNTER_TRADE);
 
+    if (bBettaTestMode && bGlobalVar4)
+    {
+        if (sti(TEV.LastEnc) != iType) bGlobalVar4 = 1;
+        else bGlobalVar4++;
+        TEV.LastEnc = iType;
+    }
+
 	// find free slot in dynamic encounter table for map
 	int iEncounterSlot = FindFreeMapEncounterSlot();
 	if (iEncounterSlot == -1) return false;
@@ -256,19 +270,21 @@ bool wdmChoseAndCreateShip()
 	rEncounter.bUse = true;
     WME_FixShipTypes(rEncounter, 12);
     if (!GenerateMapEncounter_SetMapShipModel(rEncounter)) return false;
-	rEncounter.GroupName = ENCOUNTER_GROUP + iEncounterSlot;
+	rEncounter.GroupName = ENCOUNTER_GROUP + GetEncStamp();
 
 	// Создаём энкоунтера
 	string encID = "";
 	if (bTrade)
 	{
 		kSpeed = 0.8 + rand(10)*0.03;
-		res = wdmCreateMerchantShipByIndex(kSpeed, iEncounterSlot, &encID, "", "", 5+rand(5));
+		res = wdmCreateMerchantShipByIndex(kSpeed, iEncounterSlot, &encID, "", "", 4+rand(4));
 	}
 	else
 	{
+        if (iNation != PIRATE) n = 3 + rand(5);
+        else n = 2 + rand(4);
 		kSpeed = 0.8 + rand(10)*0.05;
-		res = wdmCreateFollowShipByIndex(kSpeed, iEncounterSlot, &encID, 5+rand(5));
+		res = wdmCreateFollowShipByIndex(kSpeed, iEncounterSlot, &encID, n);
 	}
 
 	// Меняем веса, если создался
@@ -750,42 +766,9 @@ int GetBattleDifficulty(ref rEnc)
         ref chr = CharacterFromID(rEnc.CharacterID);
         if(CheckAttribute(chr, "SeaAI.Group.Name"))
             sTemp = chr.SeaAI.Group.Name;
-        else 
-            return 0;	// XI_ConvertString("Unknown dif");
-
-        // ВАЖНО: МЫ НИГДЕ НЕ НАЗНАЧАЕМ КОМПАНЬОНОВ СЕЙЧАС
-        // ДЛЯ NPC ТОЛЬКО ГРУППЫ
-
-        int	iGroupIndex = Group_FindGroup(sTemp);
-        if (iGroupIndex < 0)
-        {
-            Log_TestInfo("НЕТ ГРУППЫ В GetBattleDifficulty");
-            trace("НЕТ ГРУППЫ В GetBattleDifficulty");
-            return 0;	// XI_ConvertString("Unknown dif");
-        }
-
-        ref rGroup = Group_GetGroupByIndex(iGroupIndex);
-        if (!CheckAttribute(rGroup, "Quest")) return 0;	// XI_ConvertString("Unknown dif");
-
-        aref aCompanions, aCharInfo;
-        makearef(aCompanions, rGroup.Quest);
-        int qty = GetAttributesNum(aCompanions);
-
-        ref rChar, rShip;
-        int iShipType, idx;
-        for(int i = 0; i < qty; i++)
-        {
-            aCharInfo = GetAttributeN(aCompanions, i);
-            idx = sti(aCharInfo.index);
-            if(idx == -1) continue;
-            rChar = GetCharacter(idx);
-    		if(!CheckAttribute(rChar, "index") || rChar.index == "none" || LAi_IsDead(rChar)) continue;
-            iShipType = sti(rChar.Ship.Type);
-            if(iShipType == SHIP_NOTUSED) continue;
-            rShip = GetRealShip(iShipType);
-            encPow += GetRealShipPower(rChar);
-        }
-
+        else return 0;	// XI_ConvertString("Unknown dif");
+        encPow = CalculateGroupPower(sTemp);
+        if (encPow == -1.0) return 0;
         rEnc.CurPower = encPow;
     }
     else
@@ -808,25 +791,33 @@ int GetBattleDifficulty(ref rEnc)
     return 1;	// XI_ConvertString("Elementary dif");                  // -70% и ниже
 }
 
+// Получить суммарный уровень угрозы от пиратов и наций
+int wdmGetSummaryThreat()
+{
+	int result = 0;
+	for (int j=0; j< MAX_NATIONS; j++)
+	{
+		result += wdmGetNationThreat(j);
+	}
+	return result;
+}
+
+// iGP - int Global Pirate
+int iGPThreat = 0;
+int iGPThreatMax = THREAT_LVL_1;
+int iGPThreatRate = 0;
 int wdmGetNationThreat(int iNation)
 {
 	if(iNation == PIRATE)
-	{
-		int iRank = sti(pchar.rank);
-		if(iRank <= 8)       return 1;
-		else if(iRank <= 16) return 2;
-		else if(iRank <= 25) return 3;
-		else if(iRank <= 30) return 4;
-		else                 return 5;
-	}
+        return iGPThreat;
 
 	int iRel = ChangeCharacterNationReputation(PChar, iNation, 0);
-	if (iRel > -10)     return 0;
-	else if(iRel > -15) return 1;
-	else if(iRel > -20) return 2;
-	else if(iRel > -30) return 3;
-	else if(iRel > -50) return 4;
-	else                return 5;
+	if (iRel > -THREAT_LVL_1)     return 0;
+	else if(iRel > -THREAT_LVL_2) return 1;
+	else if(iRel > -THREAT_LVL_3) return 2;
+	else if(iRel > -THREAT_LVL_4) return 3;
+	else if(iRel > -THREAT_LVL_5) return 4;
+	else                          return 5;
 }
 
 int wdmGetPowerThreshold(int iNation)
@@ -838,4 +829,115 @@ int wdmGetPowerThreshold(int iNation)
     if(iThreat == 3) return 475;
     if(iThreat == 4) return 675;
     if(iThreat == 5) return 925;
+}
+
+float CalculateGroupPower(string sGroup)
+{
+    int	iGroupIndex = Group_FindGroup(sGroup);
+    if (iGroupIndex < 0)
+        return -1.0;
+
+    ref rGroup = Group_GetGroupByIndex(iGroupIndex);
+    if (!CheckAttribute(rGroup, "Quest"))
+        return -1.0;
+
+    return CalculateGroupPowerR(rGroup);
+}
+
+float CalculateGroupPowerR(ref rGroup)
+{
+    float encPow = 0.0;
+    aref aCompanions, aCharInfo;
+    makearef(aCompanions, rGroup.Quest);
+    int qty = GetAttributesNum(aCompanions);
+
+    ref rChar, rShip;
+    int iShipType, idx;
+    for(int i = 0; i < qty; i++)
+    {
+        aCharInfo = GetAttributeN(aCompanions, i);
+        idx = sti(aCharInfo.index);
+        if(idx == -1) continue;
+        rChar = GetCharacter(idx);
+        if(LAi_IsDead(rChar)) continue;
+        iShipType = sti(rChar.Ship.Type);
+        if(iShipType == SHIP_NOTUSED) continue;
+        rShip = GetRealShip(iShipType);
+        encPow += GetRealShipPower(rChar);
+    }
+
+    return encPow;
+}
+
+bool bFreezePirateThreat = false;
+void RaisePirateThreat()
+{
+    // Квестовые ситуативные фризы
+    if (bFreezePirateThreat)
+        return;
+    // Суточный инкремент
+    iGPThreatRate++;
+    // Проверяем взятие порога
+    bool bThreshold = (iGPThreatRate == THREAT_LVL_1) || (iGPThreatRate == THREAT_LVL_2) ||
+                      (iGPThreatRate == THREAT_LVL_3) || (iGPThreatRate == THREAT_LVL_4) ||
+                      (iGPThreatRate == THREAT_LVL_5);
+    if (bThreshold)
+    {
+        int iCurThreat;
+        switch (iGPThreatRate)
+        {
+            case THREAT_LVL_1: iCurThreat = 1; break;
+            case THREAT_LVL_2: iCurThreat = 2; break;
+            case THREAT_LVL_3: iCurThreat = 3; break;
+            case THREAT_LVL_4: iCurThreat = 4; break;
+            case THREAT_LVL_5: iCurThreat = 5; break;
+        }
+        if (iGPThreat != iCurThreat)
+        {
+            iGPThreat = iCurThreat;
+            PiratesIncreaseNotif("");
+        }
+    }
+    // Клампим   
+    if (iGPThreatRate > iGPThreatMax)
+        iGPThreatRate = iGPThreatMax;
+}
+
+void ChangePirateThreat(int add)
+{
+    iGPThreatRate = iClamp(0, iGPThreatMax, iGPThreatRate + add);
+
+    int iCurThreat;
+    // Для понижения нужно уйти до предыдущего порога или ниже
+    if (add < 0)
+    {
+        if (iGPThreatRate == THREAT_LVL_0)      iCurThreat = 0;
+        else if (iGPThreatRate <= THREAT_LVL_1) iCurThreat = 1;
+        else if (iGPThreatRate <= THREAT_LVL_2) iCurThreat = 2;
+        else if (iGPThreatRate <= THREAT_LVL_3) iCurThreat = 3;
+        else if (iGPThreatRate <= THREAT_LVL_4) iCurThreat = 4;
+        else                                    iCurThreat = 5;
+
+        if (iGPThreat > iCurThreat)
+        {
+            iGPThreat = iCurThreat;
+            SetFunctionMapEnterCondition("PiratesDecreaseNotif", false);
+        }
+        return;
+    }
+
+    // Для повышения достаточно перейти за порог
+    // (но пока что повышений вне ежесуточного апдейтера не предполагается)
+    if (iGPThreatRate < THREAT_LVL_1)      iCurThreat = 0;
+    else if (iGPThreatRate < THREAT_LVL_2) iCurThreat = 1;
+    else if (iGPThreatRate < THREAT_LVL_3) iCurThreat = 2;
+    else if (iGPThreatRate < THREAT_LVL_4) iCurThreat = 3;
+    else if (iGPThreatRate < THREAT_LVL_5) iCurThreat = 4;
+    else                                   iCurThreat = 5;
+
+    if (iGPThreat < iCurThreat)
+    {
+        iGPThreat = iCurThreat;
+        SetFunctionMapEnterCondition("PiratesIncreaseNotif", false);
+    }
 }

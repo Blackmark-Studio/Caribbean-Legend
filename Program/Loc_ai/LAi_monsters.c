@@ -403,7 +403,7 @@ bool LAi_CreateEncounters(ref location)
 				{
 					chr = GetCharacter(NPC_GenerateCharacter(str + i, model[iMassive], "man", "man", iRank, iNation, 1, true, "marginal"));
 					SetFantomParamFromRank(chr, iRank, true);
-					InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Бандиты в джунглях
+					ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Бандиты в джунглях
 					//Получим локатор для логина
 					if (iEncrnd == 0)
 					{
@@ -425,7 +425,8 @@ bool LAi_CreateEncounters(ref location)
 					}
 					if(rand(9) == 6) AddItems(chr, "ArmoryPaper", 1 + rand(1));
 					chr.dialog.filename = "Enc_Raiders_dialog.c";
-					chr.greeting = "banditos"; 
+					chr.greeting = "banditos";
+					chr.role = "banditos";
 					chr.EncQty = num;
 					LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, true, "LandEnc_RaidersBeforeDialog");
 					LAi_group_MoveCharacter(chr, "RaidersGroup_" + location.index);
@@ -519,7 +520,7 @@ bool LAi_CreateEncounters(ref location)
 				{
 					chr = GetCharacter(NPC_GenerateCharacter(str + i, model[iMassive], "man", "man", iRank, PIRATE, 1, true, "native"));
 					SetFantomParamFromRank(chr, iRank, true);
-					InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Генераторные индейцы
+					ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Генераторные индейцы
                     tag = chr.id + chr.name;
 					//Получим локатор для логина
 					if (iEncrnd > 0)
@@ -681,10 +682,11 @@ bool LAi_CreateEncounters(ref location)
 						}
 						chr = GetCharacter(NPC_GenerateCharacter("GangMan_" + i, model[iMassive], "man", "man", iRank, PIRATE, 100, true, "marginal"));
 						SetFantomParamFromRank(chr, iRank, true);
-						InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Бандиты в джунглях
+						ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Бандиты в джунглях
 						chr.dialog.filename = "Enc_Rapers_dialog.c";
 						chr.dialog.currentnode = "First time";
 						chr.greeting = "banditos";
+						chr.role = "banditos";
 						ChangeCharacterAddressGroup(chr, location.id, encGroup, locator);
 						LAi_SetActorType(chr);
 						LAi_group_MoveCharacter(chr, "EnemyFight");
@@ -747,7 +749,7 @@ bool LAi_CreateEncounters(ref location)
 			locator = GetAttributeName(GetAttributeN(grp, 0));
 			chr = GetCharacter(NPC_GenerateCharacter("Walker", "miskito_"+(rand(5)+1), "man", "man", sti(pchar.rank), PIRATE, 0, true, "native"));
 			SetFantomParamFromRank(chr, sti(pchar.rank), true);
-			InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Генераторные индейцы
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Генераторные индейцы
 			chr.name = GetIndianName(MAN);
 			chr.lastname = "";
 			chr.greeting = "item_indian";
@@ -794,10 +796,11 @@ bool LAi_CreateEncounters(ref location)
 						SetFantomParamFromRank(chr, iRank, true);
 					}
 				}
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Патруль
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Патруль
 				chr.City = sCity;
 				chr.CityType = "soldier";				
 				chr.greeting = "patrol";
+				chr.role = "patrol";
 				chr.dialog.filename = "Enc_Patrol.c";
 				chr.EncQty = num;
 				LAi_SetStayType(chr);
@@ -943,7 +946,7 @@ bool LAi_CreateEncounters(ref location)
 				{
 					chr = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_Jungle_" + i, model[iMassive], "man", "man", iRank, iNation, 0, true, "marginal"));
 					SetFantomParamFromRank(chr, iRank, true);
-					InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Бандиты в джунглях
+					ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Бандиты в джунглях
 					locator = GetAttributeName(GetAttributeN(grp, i));
 					ChangeCharacterAddressGroup(chr, location.id, encGroup, locator);
 					chr.dialog.filename = "GenQuests_Dialog.c";
@@ -1175,6 +1178,7 @@ bool LAi_CreateCaveEncounters(ref location) // Jason 061012 пещерные э�
 						SetFantomParamFromRank(chr, iRank, true);
 						chr.dialog.filename = "CaveEnc_dialog.c";
 						chr.greeting = "banditos";
+						chr.role = "banditos";
 						LAi_SetCheckMinHP(chr, LAi_GetCharacterHP(chr)-1, false, "CaveEnc_RaidersBeforeDialog"); 
 						if(!CheckAttribute(location, "nofire")) // вокруг костра
 						{

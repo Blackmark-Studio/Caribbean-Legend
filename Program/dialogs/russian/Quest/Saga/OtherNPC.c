@@ -37,15 +37,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jimmy_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "Saga_KillJimmy");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			AddDialogExitQuestFunction("Saga_Jimmy_fight");
 		break;
 		
 		case "Jimmy_1_2":
@@ -95,16 +88,13 @@ void ProcessDialogEvent()
 		case "Jimmy_8_1":
 			dialog.text = "Что... Что ты сказал?!";
 			link.l1 = "Больше ты это никому не расскажешь...";
-			link.l1.go = "Jimmy_fight";
-			pchar.questTemp.Saga.Jimmysecret = "true";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Saga_KillToJimmy_kino");
 		break;
 		
 		case "Jimmy_8_2":
 			DialogExit();
-			pchar.questTemp.Saga = "jackman";
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			AddQuestRecord("Saga", "4_1");
+			AddDialogExitQuestFunction("Saga_Jimmy_DlgExit");
 		break;
 // <-- Джимми 
 		
@@ -417,7 +407,7 @@ void ProcessDialogEvent()
 		case "GonsalesB_3_10":
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
 			{
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 				notification("Проверка пройдена", SKILL_LEADERSHIP);
 				dialog.text = "Дьявол! Сам Чарли Принц предлагает мне пойти к нему абордажником! Чёрт тебя подери, я согласен! Давай обратно мой клинок и десять тысяч песо впридачу. Вот уж не думал, что всё так обернётся!";
 				link.l1 = "Держи. И прикуси язык: никто в этом городе не должен знать, кто я такой, понял?";
@@ -1637,7 +1627,7 @@ void ProcessDialogEvent()
 			Log_Info("Получен талисман 'Бальзам Купидона'!");
 			PlaySound("interface\important_item.wav");
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Элен не одобряет", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
 		break;
@@ -2085,7 +2075,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Элен не одобряет", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
 		break;
@@ -2094,7 +2084,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Элен одобряет", "Helena");
+			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);
 			

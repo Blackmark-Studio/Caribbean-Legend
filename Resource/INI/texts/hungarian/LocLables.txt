@@ -393,4 +393,4 @@ Jungle Fort {Dzsungel erôd}
 Basement {Pince}
 Ruins {Romok}
 Ulysse {Az Ulysse fedélzetén}
-La Espada Del Rey { }
+La Espada Del Rey {Fluyt 'La Espada del Rey'}

@@ -216,7 +216,7 @@ void Caleuche_FindLetter(string qName) //
 
 void Caleuche_CreatePiratePinas(string qName)
 {
-	sld = GetCharacter(NPC_GenerateCharacter("Caleuche_PiratePinas", "mercen_11", "man", "man", 25, PIRATE, 1, true, "pirate"));
+	sld = GetCharacter(NPC_GenerateCharacter("Caleuche_PiratePinas", "mercen_11", "man", "man", 25, PIRATE, -1, true, "pirate"));
 	FantomMakeCoolSailor(sld, SHIP_PINNACE, "", CANNON_TYPE_CANNON_LBS12, 100, 100, 100);
 	sld.AlwaysEnemy = true;
 	sld.DontRansackCaptain = true;
@@ -234,6 +234,29 @@ void Caleuche_CreatePiratePinas(string qName)
 	Group_SetAddress("Caleuche_PiratePinas_ship", "Beliz", "quest_ships", "Quest_ship_4");
 	DelLandQuestMark(characterFromId("belizJailOff"));
 	DelLandQuestMarkToPhantom();
+	
+	// ачивка за захват пинаса
+	PChar.quest.Caleuche_PiratePinas_Achievment.win_condition.l1 = "Character_Capture";
+	PChar.quest.Caleuche_PiratePinas_Achievment.win_condition.l1.character = "Caleuche_PiratePinas";
+	PChar.quest.Caleuche_PiratePinas_Achievment.function = "Caleuche_PiratePinas_Achievment";
+	// таймер
+	SetFunctionTimerCondition("Caleuche_PiratePinas_Late", 0, 0, 1, false);
+}
+
+void Caleuche_PiratePinas_Achievment(string qName)
+{
+	Achievment_Set("ach_CL_176");
+	DeleteQuestCondition("Caleuche_PiratePinas_Late");
+}
+
+void Caleuche_PiratePinas_Late(string qName)
+{
+	if (CharacterIsAlive("Caleuche_PiratePinas"))
+	{
+		sld = CharacterFromID("Caleuche_PiratePinas");
+		sld.lifeday = 0;
+	}
+	DeleteQuestCondition("Caleuche_PiratePinas_Achievment");
 }
 
 void Caleuche_BelizComendantPrison()
@@ -648,6 +671,7 @@ void Caleuche_SpawnItemsInTheChest() // мы получили ключ, лут �
 
 void Caleuche_EndFightWithReginald() // Отпускаем Реджинальда
 {
+	Achievment_Set("ach_CL_177");
 	ChangeCharacterNationReputation(pchar, HOLLAND, -20);
 	LAi_SetPlayerType(pchar);
 	Caleuche_SpawnItemsInTheChest();
@@ -666,6 +690,7 @@ void Caleuche_EndFightWithReginald_2(string qName)
 
 void Caleuche_KillToReginald() // стреляем в Реджинальда в каюте
 {
+	Achievment_Set("ach_CL_177");
 	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
 	{
 		GiveItem2Character(pchar, "pistol1");
@@ -1159,6 +1184,8 @@ void Caleuche_TuttuatAmuletOver(string qName) // действие амулето
 	DeleteAttribute(sld, "groupID");
 	DeleteAttribute(sld, "unique");
 	DeleteAttribute(sld, "kind");
+	DeleteAttribute(sld, "modifiers");
+	DeleteAttribute(sld, "descriptors.AmuletType_1");
 	sld.ItemType = "QUESTITEMS";
 	sld = ItemsFromID("kaleuche_amulet3");
 	sld.picIndex = 11;
@@ -1166,8 +1193,11 @@ void Caleuche_TuttuatAmuletOver(string qName) // действие амулето
 	DeleteAttribute(sld, "groupID");
 	DeleteAttribute(sld, "unique");
 	DeleteAttribute(sld, "kind");
+	DeleteAttribute(sld, "modifiers");
+	DeleteAttribute(sld, "descriptors.AmuletType_1");
 	sld.ItemType = "QUESTITEMS";
 	pchar.questTemp.Caleuche.AmuletOver = "true";
+	CT_UpdateCashTables(pchar);
 }
 
 void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Роа
@@ -1785,7 +1815,7 @@ void Caleuche_CreateGhostshipKhalRoa(string qName)//подгружаем в мо
 	sld = GetCharacter(NPC_GenerateCharacter("Kaleuche_khaelroacap", "skeletcap", "man", "man", iRank, PIRATE, -1, true, "quest"));
 	sld.name = StringFromKey("Caleuche_27");
 	sld.lastname = StringFromKey("Caleuche_28");
-	FantomMakeCoolSailor(sld, SHIP_CURSED_FDM, StringFromKey("Caleuche_29"), CANNON_TYPE_CANNON_LBS36, 80, 80, 80);
+	FantomMakeCoolSailor(sld, SHIP_CURSED_FDM, GetShipName("Flying Heart"), CANNON_TYPE_CANNON_LBS36, 80, 80, 80);
 	FantomMakeCoolFighter(sld, iRank, 100, 100, "blade_21", "pistol5", "bullet", 400);
 	sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/10;
 	GiveItem2Character(sld, "kaleuche_amulet1");
@@ -1880,7 +1910,7 @@ void Caleuche_KhaelroaAbordage(string qName) //
 void Caleuche_AlonsoAfterWinOnShip_1(string qName)
 {
 	sld = GetCharacter(NPC_GenerateCharacter("Caleuche_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, 0, false, "soldier"));
-	sld.name = StringFromKey("Tonzag_2");
+	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
@@ -2206,8 +2236,8 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 			// }
 		// }
 		sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "Alonso", "man", "man", 25, FRANCE, 1, false, "soldier"));
-		sld.name = StringFromKey("Caleuche_39");
-		sld.lastname = StringFromKey("Caleuche_40");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		sld.dialog.FileName = "Quest\Caleuche_dialog.c";
 		sld.Dialog.currentnode = "on_coast";
 		ChangeCharacterAddressGroup(sld, "shore27", "goto", "goto2");
@@ -2517,7 +2547,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 	{
 		sld = characterFromId("Kaleuche_khaelroacap");
 		shTo = &RealShips[sti(sld.Ship.Type)];
-		shTo.SpeedRate = 15.2;
+		shTo.SpeedRate = 11.0;
 		shTo.TurnRate = 32.0;
 		
 		TEV.boardingReloadFreeze = "";

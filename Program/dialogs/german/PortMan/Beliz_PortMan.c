@@ -191,17 +191,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "GS_Portman_5":
 			DialogExit();
-			AddQuestRecord("GS", "2");
-			DeleteAttribute(pchar, "questTemp.GS_Portman");
-			
-			PChar.quest.GS_Peshera.win_condition.l1 = "location";
-			PChar.quest.GS_Peshera.win_condition.l1.location = "Beliz_Cave";
-			PChar.quest.GS_Peshera.function = "GS_Peshera";
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = true;
-			
-			PChar.quest.GS_Peshera_pusto.win_condition.l1 = "location";
-			PChar.quest.GS_Peshera_pusto.win_condition.l1.location = "Beliz_Cave_2";
-			PChar.quest.GS_Peshera_pusto.function = "GS_Peshera_pusto";
+			AddDialogExitQuestFunction("GS_Portman_5");
 		break;
 		
 		case "GS_Portman_6":
@@ -232,10 +222,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "GS_Portman_10":
 			DialogExit();
-			AddQuestRecord("GS", "4");
-			CloseQuestHeader("GS");
-			DeleteAttribute(pchar, "questTemp.GS_NaemnikMertv");
-			pchar.questTemp.GS_BelizSkidka = true;
+			AddDialogExitQuestFunction("GS_Portman_10");
 		break;
 		//<-- Грани справедливости
 	}

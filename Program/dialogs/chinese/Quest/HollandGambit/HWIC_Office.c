@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 				dialog.text = "我欣赏你的商业态度, 并愿意考虑你的请求。 也许我们可以把数量增加五倍。 然而, 组织这样的供应需要大量资源, 我们需要扩大存储空间, 加强安全保障, 并确保可靠的运输路线。 既然这对你也有好处, 我建议我们共同承担这些费用。 ";
 				link.l1 = "这一切听起来很合理, 你认为需要多少资金来支付这些费用? ";
 				link.l1.go = "UpgradeSilk_1";
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

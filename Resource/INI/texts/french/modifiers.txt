@@ -1,0 +1,10 @@
+blade_critDamage {Dégâts critiques (arme blanche)}
+gun_critDamage {Dégâts critiques (pistolet)}
+musket_critDamage {Dégâts critiques (mousquet)}
+blade_critChance {Chance de critique (arme blanche)}
+gun_critChance {Chance de critique (pistolet)}
+musket_critChance {Chance de critique (mousquet)}
+incomingDamageReduction {Protection contre les dégâts}
+RangeIncomingDamageReduction {Protection contre les tirs}
+Shot_Damage {Dégâts de tir}
+HeadshotDamage {Dégâts de tir à la tête}

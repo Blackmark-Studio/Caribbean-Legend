@@ -219,17 +219,7 @@ void ProcessDialogEvent()
 
 		case "Naemnik_29":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
-			LAi_SetPlayerType(pchar);
-			
-			LAi_SetWarriorType(npchar);
-			npchar.lifeday = 0;
-			LAi_CharacterDisableDialog(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PEACE);
-			
-			AddQuestRecord("GS", "7");
-			CloseQuestHeader("GS");
+			AddDialogExitQuestFunction("Naemnik_29");
 			
 			AddSimpleRumourCity("Mówią, że naczelnika portu znaleziono martwego w jego własnym domu. Znaleziono przy nim notatki, dowodzące jego udziału w zniknięciu statków. Pomyśleć tylko, co za wstyd dla naszego miasta...", "Beliz", 30, 1, "");
 			AddSimpleRumourCity("Słyszałeś już? Ktoś wślizgnął się do domu naczelnika portu, zabił straż i wykończył go. Znaleźli na zwłokach notatki z trasami zaginionych statków - napisane przez niego samego! Sługa korony, a w rzeczywistości - zdrajca! Dostał to, na co zasłużył! I gdzie patrzył gubernator przez wszystkie te lata?", "Beliz", 30, 1, "");

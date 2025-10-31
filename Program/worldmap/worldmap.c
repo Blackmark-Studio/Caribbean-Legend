@@ -59,6 +59,7 @@
 #include "worldmap\worldmap_coords.c"
 
 
+
 //=========================================================================================
 
 
@@ -111,6 +112,15 @@ void wdmTimeUpdate()
 	// boal <--
 }
 
+float GetWorldMapDistanceBonus(ref chr)
+{
+    string sSpyGlass = GetCharacterEquipByGroup(chr, SPYGLASS_ITEM_TYPE);
+    if (sSpyGlass == "") return 1.0;
+
+    ref rItm = ItemsFromID(sSpyGlass);
+    return 1.0 + stf(rItm.worldMapBonus) * 0.01;
+}
+
 void wdmCreateWorldMap()
 {
 	float fHtRatio = stf(Render.screen_y) / iHudScale;
@@ -126,15 +136,29 @@ void wdmCreateWorldMap()
 	}
 	if(sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FRIGATE_L) fSpeedBonus += 0.10;
 	if(CheckAttribute(pchar, "questTemp.ChickenGod.Tasks.p3.Completed")) fSpeedBonus += 0.05;
-    if(CheckAttribute(&RealShips[sti(pchar.ship.type)], "Tuning.All")) fSpeedBonus += 0.05;
+	if(CheckAttribute(&RealShips[sti(pchar.ship.type)], "Tuning.All")) fSpeedBonus += 0.05;
 	if(HasShipTrait(pchar, "trait01")) fSpeedBonus += 0.05;
+	if (HasAllMaps("common")) fSpeedBonus += PERK_VALUE3_WIND_CATCHER;
+	if (IsEquipCharacterByItem(pchar, "hat8"))
+	{
+		int iThreat = wdmGetSummaryThreat();
+		fSpeedBonus += 0.0025 * iThreat;
+	}
+
+	TEV.worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
 	worldMap.kPlayerMaxSpeed = 1.0 + fSpeedBonus;
-	worldMap.shipSpeedOppositeWind = 0.55;
-	bool IsEquipGlassSP3 = GetCharacterEquipByGroup(pchar, SPYGLASS_ITEM_TYPE) == "itmname_spyglassSP3";
-	worldMap.enemyshipViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 60.0, 69.0);
-	worldMap.enemyshipViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 120.0, 138.0);
-	worldMap.stormViewDistMin = GetFloatByCondition(IsEquipGlassSP3, 90.0, 103.5);
-	worldMap.stormViewDistMax = GetFloatByCondition(IsEquipGlassSP3, 180.0, 207.0);
+	worldMap.shipSpeedOppositeWind = 0.55;	
+	//бонусы дальности от труб
+	float worldMapDistanceBonus = GetWorldMapDistanceBonus(pchar);
+	worldMap.enemyshipViewDistMin = 60.0*worldMapDistanceBonus;
+	//ClearAllLogStrings();
+	//log_info(worldMap.enemyshipViewDistMin);
+	worldMap.enemyshipViewDistMax = 120.0*worldMapDistanceBonus;
+	//log_info(worldMap.enemyshipViewDistMax);
+	worldMap.stormViewDistMin = 90.0*worldMapDistanceBonus;
+	//log_info(worldMap.stormViewDistMin);
+	worldMap.stormViewDistMax = 180.0*worldMapDistanceBonus;
+	//log_info(worldMap.stormViewDistMax);
 	wdmLockReload = false;
     // Механика мощи
     UpdatePlayerSquadronPower();
@@ -480,4 +504,61 @@ void wdmEncSpeedUpdate(string qName)
 void wdmEscapeRefresh(string qName)
 {
     DeleteAttribute(&TEV, "EscapeBlock");
+}
+
+void LogEncWeightSwitch()
+{
+    bGlobalVar4 = !bGlobalVar4;
+    if (bGlobalVar4)
+    {
+        TEV.LastEnc = "-1";
+        SetEventHandler("frame", "LogEncWeight", 0);
+    }
+    else
+    {
+        DeleteAttribute(&TEV, "LastEnc");
+        ClearAllLogStrings();
+        DelEventHandler("frame", "LogEncWeight");
+    }
+}
+
+void LogEncWeight()
+{
+    ClearAllLogStrings();
+    Log_Info("Торговцы малые: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_SMALL]);
+    Log_Info("Торговцы средние: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_MEDIUM]);
+    Log_Info("Торговцы большие: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_LARGE]);
+    Log_Info("Коронный торговец: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_CROWN]);
+    Log_Info("Торговая экспедиция: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_EXPEDITION]);
+    Log_Info("Работорговцы: " + EncWeightCur[ENCOUNTER_TYPE_MERCHANT_SLAVES]);
+    Log_Info("Патруль малый: " + EncWeightCur[ENCOUNTER_TYPE_PATROL_SMALL]);
+    Log_Info("Патруль средний: " + EncWeightCur[ENCOUNTER_TYPE_PATROL_MEDIUM]);
+    Log_Info("Военные средние: " + EncWeightCur[ENCOUNTER_TYPE_NAVAL_MEDIUM]);
+    Log_Info("Военные большие: " + EncWeightCur[ENCOUNTER_TYPE_NAVAL_LARGE]);
+    Log_Info("Контрабандисты: " + EncWeightCur[ENCOUNTER_TYPE_SMUGGLERS]);
+    Log_Info("Пираты: " + EncWeightCur[ENCOUNTER_TYPE_PIRATE]);
+    Log_Info("");
+    string sEnc;
+    switch (sti(TEV.LastEnc))
+    {
+        case ENCOUNTER_TYPE_MERCHANT_SMALL: sEnc = "Торговцы малые"; break;
+        case ENCOUNTER_TYPE_MERCHANT_MEDIUM: sEnc = "Торговцы средние"; break;
+        case ENCOUNTER_TYPE_MERCHANT_LARGE: sEnc = "Торговцы большие"; break;
+        case ENCOUNTER_TYPE_MERCHANT_CROWN: sEnc = "Коронный торговец"; break;
+        case ENCOUNTER_TYPE_MERCHANT_EXPEDITION: sEnc = "Торговая экспедиция"; break;
+        case ENCOUNTER_TYPE_MERCHANT_SLAVES: sEnc = "Работорговцы"; break;
+        case ENCOUNTER_TYPE_PATROL_SMALL: sEnc = "Патруль малый"; break;
+        case ENCOUNTER_TYPE_PATROL_MEDIUM: sEnc = "Патруль средний"; break;
+        case ENCOUNTER_TYPE_NAVAL_MEDIUM: sEnc = "Военные средние"; break;
+        case ENCOUNTER_TYPE_NAVAL_LARGE: sEnc = "Военные большие"; break;
+        case ENCOUNTER_TYPE_SMUGGLERS: sEnc = "Контрабандисты"; break;
+        case ENCOUNTER_TYPE_PIRATE: sEnc = "Пираты"; break;
+        case "-1": sEnc = "Никто"; break;
+        case "-2": sEnc = "Сражение"; break;
+    }
+    Log_Info(sEnc + " " + bGlobalVar4 + " раз подряд");
+	int numShips = wdmGetNumberShipEncounters() - sti(pchar.worldmap.shipcounter);
+    Log_Info("Кол-во: " + numShips + " / 8");
+    Log_Info("Таймер (Сражения): " + wdmTimeOfLastWarring + " / 1000");
+    Log_Info("Таймер (Одиночки): " + wdmTimeOfLastRandom  + " / 1000");
 }

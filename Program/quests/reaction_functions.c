@@ -176,40 +176,73 @@ void Mangarosa_Start(string qName) //нашли первую травку
 
 void MangarosaEffect(string sEff)
 {
-	if (CheckAttribute(pchar, "questTemp.Mangarosa.Potion"))
+	Log_Info(StringFromKey("reaction_functions_3"));
+	pchar.questTemp.Mangarosa.Potion.(sEff) = true;
+	string questAttr = "Mangarosa_del_" + sEff;
+	ref item = ItemsFromID("mangarosa" + sEff);
+	int days = GetAttributeIntOrDefault(item, "time", 50);
+	pchar.quest.(questAttr).win_condition.l1 = "Timer";
+	pchar.quest.(questAttr).win_condition.l1.date.hour  = rand(24); // 021012
+	pchar.quest.(questAttr).win_condition.l1.date.day   = GetAddingDataDay(0, 0, days);
+	pchar.quest.(questAttr).win_condition.l1.date.month = GetAddingDataMonth(0, 0, days);
+	pchar.quest.(questAttr).win_condition.l1.date.year  = GetAddingDataYear(0, 0, days);
+	
+	switch (sEff)
 	{
-		DeleteAttribute(pchar, "questTemp.Mangarosa.Potion");
-		Log_Info(StringFromKey("reaction_functions_1"));
-		Log_Info(StringFromKey("reaction_functions_2"));
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)-50;
-		LAi_CheckKillCharacter(pchar);
-		AddCharacterHealth(pchar, -10); //сносим здоровье
-		pchar.chr_ai.poison = 500; // травим
-		if (stf(pchar.Health.HP) <= 1) LAi_KillCharacter(pchar);
+		case "Total":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			SetChrModifier(pchar, M_SQUADRON_POWER, 0.15, "MangarosaTotal");
+		}
+		break;
+		case "Fast":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			SetChrModifier(pchar, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED, 0.15, "MangarosaFast");
+		}
+		break;
+		case "Power":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			// сделано по-старому на if-else
+		}
+		break;
 	}
-	else
-	{
-		Log_Info(StringFromKey("reaction_functions_3"));
-		pchar.questTemp.Mangarosa.Potion.(sEff) = true;
-		AddCharacterHealth(pchar, 4);
-		pchar.quest.Mangarosa_del.win_condition.l1 = "Timer";
-		pchar.quest.Mangarosa_del.win_condition.l1.date.hour  = rand(24); // 021012
-		pchar.quest.Mangarosa_del.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-		pchar.quest.Mangarosa_del.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-		pchar.quest.Mangarosa_del.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-		pchar.quest.Mangarosa_del.function = "Mangarosa_DeleteEffect";
-	}
+
 	RemoveItems(pchar, "mangarosa"+sEff, 1);
-	//PlaySound("Ambient\Tavern\glotok_001.wav");
 	PlaySound("Ambient\Horror\Fear_breath_01.wav");
+}
+
+void Mangarosa_DeleteEffectPower(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaPower");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Power");
+	Log_Info("Mangarosa_DeleteEffectPower");
+}
+
+void Mangarosa_DeleteEffectFast(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaFast");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Fast");
+	Log_Info("Mangarosa_DeleteEffectFast");
+}
+
+void Mangarosa_DeleteEffectTotal(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaTotal");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Total");
+	Log_Info("Mangarosa_DeleteEffectTotal");
+	UpdatePlayerSquadronPower();
 }
 
 void Mangarosa_DeleteEffect(string qName) //
 {
 	PlaySound("interface\notebook.wav");
 	Log_Info(StringFromKey("reaction_functions_4"));
-	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion");
-	Event(EVENT_CT_UPDATE_FELLOW, "a", pchar);
+	CT_UpdateCashTables(pchar);
 }
 
 void VodkaEffect()
@@ -414,7 +447,7 @@ void InstantDialogNoType(string qName)
 void StartInstantDialog(string id, string node, string fileName)
 {
 	DialogExit();
-	sld = CharacterFromId(id);
+	ref sld = CharacterFromId(id);
 	sld.Dialog.Filename = fileName;
 	sld.dialog.currentnode = node;
 	pchar.InstantDialog = sld.id;
@@ -425,10 +458,43 @@ void StartInstantDialog(string id, string node, string fileName)
 
 void InstantDialog(string qName)
 {
-	sld = CharacterFromID(pchar.InstantDialog);
+	ref sld = CharacterFromID(pchar.InstantDialog);
 	LAi_SetStayTypeNoGroup(sld);
 	LAi_tmpl_SetDialog(sld, pchar, -1.0);
 	if (!questMovieIsLockPlayerCtrl) StartBattleLandInterface();
+}
+
+void StartInstantDialogTurnToNPC(string id, string node, string fileName, string by)
+{
+	DialogExit();
+	ref sld = CharacterFromId(id);
+	sld.Dialog.Filename = fileName;
+	sld.dialog.currentnode = node;
+	pchar.InstantDialog1 = sld.id;
+	ref chr = CharacterFromId(by);
+	pchar.InstantDialog2 = chr.id;
+	DoQuestFunctionDelay("InstantDialogTurnToNPC", 0);
+	if (pchar.chr_ai.type == LAI_TYPE_ACTOR) LAi_ActorWaitDialog(pchar, sld);
+	EndBattleLandInterface();
+}
+
+void InstantDialogTurnToNPC(string qName)
+{
+	ref sld = CharacterFromID(pchar.InstantDialog1);
+	ref chr = CharacterFromId(pchar.InstantDialog2);
+	LAi_SetStayTypeNoGroup(sld);
+	LAi_tmpl_SetDialog(sld, pchar, -1.0);
+	CharacterTurnByChr(sld, chr);
+	CharacterTurnByChr(chr, sld);
+	if (!questMovieIsLockPlayerCtrl) StartBattleLandInterface();
+}
+
+void NPCsLookEachOther(string id, string by)
+{
+	ref sld = CharacterFromId(id);
+	ref chr = CharacterFromId(by);
+	CharacterTurnByChr(sld, chr);
+	CharacterTurnByChr(chr, sld);
 }
 
 void DeleteAllOfficersFromLocation()
@@ -711,7 +777,7 @@ void OpenWardrobe_FortFrance_2(string qName)
 	LAi_SetPlayerType(pchar);
 	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.purse2 = 1;
 	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.gold = 2000;
-	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.blade_04 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.blade_03 = 1;
 	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.pistol3 = 1;
 	if (CheckAttribute(pchar, "questTemp.AdmiralMap"))
 	{
@@ -809,6 +875,10 @@ void PR_Letter_Reaction()
 			rItem.startLocator = "key1";
 			Item_OnLoadLocation("FortFrance_town");
 		}
+		else if (sti(rItem.(locId).find) == 5)
+		{
+			Achievment_Set("ach_CL_168");
+		}
 	}
 	
 	if(locId == "LeFransua_town")
@@ -847,6 +917,7 @@ void PR_Letter_Reaction()
 			rItem = &Locations[FindLocation("Martinique_jungle_04")];
 			DeleteAttribute(rItem, "box1.LeFransua_LetterTreasure");
 			DeleteAttribute(rItem,"box1.Treasure");
+			Achievment_Set("ach_CL_167");
 		}
 	}
 	
@@ -913,7 +984,7 @@ void AutoSaveDelay(string qName)
 	AutoSave();
 }
 
-void Notification_Reputation(bool check, int number)
+void Notification_Reputation(bool check, int number, string quality)
 {
 	if (check == true)
 	{
@@ -921,7 +992,8 @@ void Notification_Reputation(bool check, int number)
 	}
 	else
 	{
-		notification(GetConvertStr("Notification_ReputationCheckFailed", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
+		if (quality == "high") notification(GetConvertStr("Notification_ReputationCheckFailed_High", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
+		else notification(GetConvertStr("Notification_ReputationCheckFailed", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
 	}
 }
 
@@ -959,4 +1031,82 @@ void Notification_Level(bool check, int number)
 	{
 		notification(GetConvertStr("Notification_LevelCheckFailed", "Notification.txt") + " ("+number+") ", "None");
 	}
+}
+
+void Notification_Approve(bool check, string icon)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr(icon, "CharactersStaticNames.txt") + " " + GetConvertStr("Notification_ApproveCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr(icon, "CharactersStaticNames.txt") + " " + GetConvertStr("Notification_ApproveCheckFailed", "Notification.txt"), icon);
+	}
+}
+
+void Notification_ReputationNation(bool check, int number, string nation)
+{
+	string icon;
+	if (nation == ENGLAND) icon = "enghunter";
+	if (nation == FRANCE) icon = "frahunter";
+	if (nation == SPAIN) icon = "spahunter";
+	if (nation == HOLLAND) icon = "holhunter";
+	if (nation == PIRATE) icon = "pirhunter";
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_ReputationNationCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_ReputationNationCheckFailed", "Notification.txt") + " ("+GetNationReputationName(nation, number)+")", icon);
+	}
+}
+
+void Notification_Money(bool check, int number, string money)
+{
+	string icon;
+	if (check == true)
+	{
+		if (money == "peso") icon = "Money";
+		if (money == "dublon") icon = "Dubloon";
+		notification(GetConvertStr("Notification_MoneyCheckPassed", "Notification.txt") + " ("+number+") ", icon);
+	}
+	else
+	{
+		if (money == "peso")
+		{
+			icon = "Money";
+			notification(GetConvertStr("Notification_MoneyCheckFailed_Peso", "Notification.txt") + " ("+number+") ", icon);
+		}
+		if (money == "dublon")
+		{
+			icon = "Dubloon";
+			notification(GetConvertStr("Notification_MoneyCheckFailed_Dublon", "Notification.txt") + " ("+number+") ", icon);
+		}
+	}
+}
+
+#event_handler("Animation_hit_stab_1", "Blood_InBody");
+void Blood_InBody()
+{
+	aref chr = GetEventData();
+    float x, y, z;
+	GetCharacterPos(chr, &x, &y, &z);
+    CreateParticleSystem("blood", x, y + 1.0, z, 0.0, 1.0, 0.0, 0);
+    SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
+}
+
+#event_handler("Animation_hit_stab_2", "Blood_InNeck");
+void Blood_InNeck()
+{
+	aref chr = GetEventData();
+    float x, y, z, ay;
+    GetCharacterAy(chr, &ay);
+	GetCharacterPos(chr, &x, &y, &z);
+    float off_x = -0.1;
+    float off_z = -0.3;
+    RotateAroundY(&off_x, &off_z, cos(ay), sin(ay));
+    CreateParticleSystem("blood_fire2", x - off_x, y + 1.42, z - off_z, -Pid2*0.33, ay-Pid2, 0.0, 0);
+    SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
 }

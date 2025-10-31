@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "Volt egy 'hint'? Elnézést, az én hibám volt, hogy beszéltem veled! Farewell 'caballero'...";
 				link.l1 = "Ahogy óhajtja, édesem.";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Nos, akkor... Legalább ôszinte vagy a kívánságaiddal kapcsolatban. Ígérem, hogy ha megtalálod Angelót, vagy elmondod, mi történt vele, megkapod, amit kértél...";
 				link.l1 = "Kedves senorita, örülök, hogy üzletelhetek önnel... Most pedig térjünk rá a bátyja történetére.";
 				link.l1.go = "Consumption_4";

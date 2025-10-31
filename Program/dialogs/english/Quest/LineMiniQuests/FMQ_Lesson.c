@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "I am listening, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "We will give them a fight, boys! There are goods and money right behind this hill! We are here for them and we are not leaving. No way some bunch of redskins, even with muskets, can stop us! Let's bury the bastards and finish the job! We have enough men, there is a chance to ambush them. Four men will greet them with fire from the flanks and the rest of us will take positions here. Cut their numbers and finish them off!";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("Not enough people", "X");
 				if (n > 0)
 				{
 					link.l1 = "We'll give them a fight, boys! There's goods and money just beyond this hill! We're here for them and we're not leaving. No way some bunch of redskins, even with muskets, can stop us! Let's bury the bastards and finish the job!";

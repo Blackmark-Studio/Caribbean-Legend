@@ -30,7 +30,7 @@ trait03 {Sello de calidad}
 trait03_desc {Un conjunto de glifos, sellos y patentes hace que la carga de este barco sea reconocible, y su llegada al puerto es una buena señal para los comerciantes locales. Los acuerdos comerciales exitosos mejoran las relaciones con la nación del puerto, y unas buenas relaciones hacen el comercio más rentable.}
 trait03_desc2
 {
-Reduce la penalización de venta: 3% por nivel de relación.Umbral de beneficio para mejorar relaciones con la nación: 25000.
+Reduce la penalización de venta: 3% por nivel de relación.Umbral de beneficio para mejorar relaciones con la nación: 50000.
 }
 trait04 {Velas de emergencia}
 trait04_desc {En caso de peligro crítico para el barco, los marineros instalan velas especiales de montaje rápido en las vergas y las izan, aumentando temporalmente la velocidad del barco.}

@@ -18,7 +18,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			// Jason НСО
 			if (CheckAttribute(pchar, "questTemp.Patria") && pchar.questTemp.Patria == "epizode_2" && !CheckAttribute(npchar, "quest.patria") && !CheckAttribute(pchar, "questTemp.Patria.Visiter_Late"))
 			{
-				link.l1 = TimeGreeting()+", Ваша Светлость. Я прибыл по приказанию генерал-губернатора шевалье де Пуанси. В мою задачу входит доставить на Тортугу барона Ноэля Форже, прибывшего из метрополии с целью инспекции французских колоний для последующей огранизации Французской Вест-Индской торговой Компании. Позвольте представить вам барона... Всё дальнейшее изложит вам непосредственно он сам.";
+				link.l1 = TimeGreeting()+", Ваша Светлость. Я прибыл по приказанию генерал-губернатора шевалье де Пуанси. В мою задачу входит доставить на Тортугу барона Ноэля Форже, прибывшего из метрополии с целью инспекции французских колоний для последующей организации Французской Вест-Индской торговой Компании. Позвольте представить вам барона... Всё дальнейшее изложит вам непосредственно он сам.";
                 link.l1.go = "patria_tortuga";
 			}
 		break;
@@ -31,7 +31,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQT_1":
-			notification("Недостаточно развит навык (26)", SKILL_LEADERSHIP);
+			Notification_Skill(false, 26, SKILL_LEADERSHIP);
 			AddMoneyToCharacter(pchar, 1000);
 			dialog.text = "Всем вам нужно одно и то же! Держи, это всё, что лежит у меня в столе! А теперь проваливай!";
 			link.l1 = "Спасибо, ваша милость. Проваливаю.";
@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQT_2":
-			notification("Проверка пройдена", SKILL_LEADERSHIP);
+			Notification_Skill(true, 26, SKILL_LEADERSHIP);
 			AddMoneyToCharacter(pchar, 1000);
 			GiveItem2Character(pchar, "pistol6");
 			GiveItem2Character(pchar, "purse1");

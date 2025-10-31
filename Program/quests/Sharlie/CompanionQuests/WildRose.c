@@ -1,11 +1,14 @@
 void WildRose_Start(string qName)
 {
-	pchar.quest.WildRose_Start_2.win_condition.l1 = "location";
-	pchar.quest.WildRose_Start_2.win_condition.l1.location = "Bridgetown_town";
-	pchar.quest.WildRose_Start_2.function = "WildRose_Start_2";
-	AddMapQuestMarkCity("Bridgetown", true);
-	
-	pchar.questTemp.WildRose_Start = true;
+	if (!CheckAttribute(pchar, "questTemp.WildRose_Start"))
+	{
+		pchar.quest.WildRose_Start_2.win_condition.l1 = "location";
+		pchar.quest.WildRose_Start_2.win_condition.l1.location = "Bridgetown_town";
+		pchar.quest.WildRose_Start_2.function = "WildRose_Start_2";
+		AddMapQuestMarkCity("Bridgetown", true);
+		
+		pchar.questTemp.WildRose_Start = true;
+	}
 }
 
 void WildRose_Start_2(string qName)
@@ -15,7 +18,8 @@ void WildRose_Start_2(string qName)
 	// bOk2 = CheckAttribute(pchar, "questTemp.Saga") && pchar.questTemp.Saga == "end";
 	// bOk2 = CheckAttribute(pchar, "questTemp.GoldenGirl_Ready");
 	// if (bOk1 && bOk2 && bOk3)
-	if (CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && CheckAttribute(pchar, "questTemp.GoldenGirl_Ready") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= -5 && !CheckAttribute(pchar, "questTemp.Tieyasal_final"))
+	// if (CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && CheckAttribute(pchar, "questTemp.GoldenGirl_Ready") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= -5 && !CheckAttribute(pchar, "questTemp.Tieyasal_final"))
+	if (CheckAttributeEqualTo(pchar, "questTemp.Sharlie", "escape") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary") && CheckPassengerInCharacter(pchar, "Mary") && ChangeCharacterNationReputation(pchar, ENGLAND, 0) >= -5)
 	{
 		chrDisableReloadToLocation = true;
 		DeleteQuestCondition("WildRose_Start");
@@ -33,6 +37,7 @@ void WildRose_MaryFollowing()
 	sld = CharacterFromID("Mary");
 	LAi_SetActorType(sld);
 	LAi_ActorFollowEverywhere(sld, "", -1);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
 // =================================================================
@@ -44,6 +49,8 @@ void WildRose_Etap1_EscapeSlaves(string qName)
 	AddQuestRecord("WildRose", "1");
 	chrDisableReloadToLocation = false;
 	QuestCloseSeaExit();
+	pchar.questTemp.MarySexBlock = "true";
+	Achievment_Set("ach_CL_169");
 	
 	locations[FindLocation("Barbados_jungle_03")].DisableEncounters = true;
 	locations[FindLocation("Shore5")].DisableEncounters = true;
@@ -57,26 +64,24 @@ void WildRose_Etap1_EscapeSlaves_2(string qName)
 	chrDisableReloadToLocation = true;
 	LAi_LocationFightDisable(loadedLocation, true);
 	
-	sld = GetCharacter(NPC_GenerateCharacter("WildRose_DiedCitiz_1", "Citiz_12", "man", "man_dead", 1, ENGLAND, 0, false, "quest"));
+	sld = GetCharacter(NPC_GenerateCharacter("WildRose_DiedCitiz_1", "Citiz_12", "man", "man", 1, ENGLAND, 0, false, "quest"));
 	sld.name = StringFromKey("WildRose_6");
 	sld.lastname = StringFromKey("WildRose_7");
-	ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "goto", "goto8");
+	ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "goto", "goto5");
 	TeleportCharacterToPosAy(sld, 16.96, 0.00, 19.16, -0.00);
 	sld.DontClearDead = true;
+	sld.CantLoot = true;
+	SetCharacterActionAnimation(sld, "dead", "lay_1");
 	LAi_KillCharacter(sld);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("WildRose_DiedCitiz_2", "Women_15", "woman", "woman", 1, ENGLAND, 0, false, "quest"));
-	ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "goto", "goto8");
+	ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "goto", "goto5");
 	TeleportCharacterToPosAy(sld, 16.75, 0.00, 18.85, 2.50);
+	sld.DontClearDead = true;
+	sld.CantLoot = true;
 	LAi_SetActorType(sld);
 	LAi_ActorSetLayMode(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
-	//LAi_KillCharacter(sld);
-	
-	// sld = GetCharacter(NPC_GenerateCharacter("WildRose_DiedCitiz_2", "Women_15", "woman", "woman", 1, ENGLAND, -1, false, "quest"));
-	// ChangeCharacterAddressGroup(sld, "Barbados_jungle_03", "goto", "goto8");
-	// TeleportCharacterToPosAy(sld, 16.75, 0.00, 18.85, 2.50);
-	// LAi_KillCharacter(sld);
 	
 	pchar.questTemp.CameraDialogMode = true;
 	
@@ -100,7 +105,7 @@ void WildRose_Etap1_EscapeSlaves_3()
 {
 	// EndBattleLandInterface();
 	LAi_SetActorType(pchar);
-	LAi_ActorFollow(pchar, CharacterFromID("WildRose_DiedCitiz_2"), "WildRose_Etap1_EscapeSlaves_4", -1);
+	LAi_ActorFollow(pchar, CharacterFromID("WildRose_DiedCitiz_2"), "WildRose_Etap1_EscapeSlaves_4", 6);
 	sld = CharacterFromID("Mary");
 	LAi_SetActorType(sld);
 	LAi_ActorFollow(sld, CharacterFromID("WildRose_DiedCitiz_2"), "", -1);
@@ -176,6 +181,10 @@ void WildRose_Etap1_EscapeSlaves_7()
 	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
 	LAi_group_SetCheckFunction("EnemyFight", "WildRose_Etap1_EscapeSlaves_8");
+	
+	sld = CharacterFromID("WildRose_DiedCitiz_2");
+	SetCharacterActionAnimation(sld, "dead", "lay_1");
+	LAi_KillCharacter(sld);
 }
 
 void WildRose_Etap1_EscapeSlaves_8(string qName)
@@ -274,8 +283,8 @@ void WildRose_Etap1_EscapeSlaves_15()
 	LocatorReloadEnterDisable("Barbados_jungle_03", "reload1_back", false);
 	LocatorReloadEnterDisable("Barbados_jungle_03", "reload3_back", false);
 	LAi_LocationFightDisable(&Locations[FindLocation("Barbados_jungle_03")], false);
-	locations[FindLocation("Barbados_jungle_03")].DisableEncounters = false;;
-	locations[FindLocation("Shore5")].DisableEncounters = false;;
+	locations[FindLocation("Barbados_jungle_03")].DisableEncounters = false;
+	locations[FindLocation("Shore5")].DisableEncounters = false;
 	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) ReturnOfficer_Mary();
 	
 	SetFunctionLocationCondition("WildRose_Etap1_City_1", "Bridgetown_town", false);
@@ -386,7 +395,6 @@ void WildRose_Etap1_Morning_1()
 void WildRose_Etap1_Morning_2(string qName)
 {
 	TavernWaitDateEx(6);
-	
 	chrDisableReloadToLocation = false;
 	bDisableFastReload = true;
 	
@@ -445,13 +453,15 @@ void WildRose_Etap1_Morning_6()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0;
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
+
 	DeleteAttribute(sld, "QuestImmortal");
 	ReturnOfficer_Mary();
+	DeleteAttribute(pchar, "questTemp.MarySexBlock");
 	
 	AddQuestRecord("WildRose", "3");
 	DeleteAttribute(pchar, "questTemp.CameraDialogMode");
 	QuestOpenSeaExit();
+	bDisableFastReload = false;
 	
 	//
 	SetFunctionLocationCondition("WildRose_Etap2_IslandOfJustice_1", "LostShipsCity_town", false);
@@ -554,6 +564,7 @@ void WildRose_Etap2_IslandOfJustice_5()
 void WildRose_Etap2_IslandOfJustice_5_sex_1(string qName)
 {
     ref sld = CharacterFromID("Mary");
+	pchar.quest.sex_partner = sld.id;
     SyncPlaybackDlt(PChar, sld);
 	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "quest3");
     TeleportCharacterToLocatorIgnoreCollision(sld, "quest", "quest4");
@@ -586,24 +597,7 @@ void WildRose_Etap2_IslandOfJustice_5_sex_4(string qName)
 	// SetLaunchFrameRunFunctionParam("WildRose_Etap2_IslandOfJustice_6_1", 0.0);
 	// LaunchFrameForm();
 	TavernWaitDateEx(6);
-	
-	int addHealthQuantity = 12;
-	float addMaxHealthQuantity = 1;
-	
-	if(IsEquipCharacterByArtefact(pchar, "totem_03"))
-	{
-		addHealthQuantity *= 2;
-		addMaxHealthQuantity *= 2;
-	}
-	
-	AddCharacterHealth(pchar, addHealthQuantity);
-	AddCharacterMaxHealth(pchar, addMaxHealthQuantity);
-	
-	LAi_SetCurHPMax(pchar);
-	
-	pchar.quest.Mary_giveme_sex.over = "yes";
-	pchar.quest.Mary_giveme_sex1.over = "yes";
-	
+	LoveSex_Bonus();
 	WildRose_Etap2_IslandOfJustice_6();
 }
 
@@ -661,8 +655,9 @@ void WildRose_Etap2_IslandOfJustice_9()
 	
 	//на Плуто
 	sld = CharacterFromID("LSC_Oreli");
-	LAi_SetLayType(sld);
-	ChangeCharacterAddressGroup(sld, "PlutoStoreSmall", "lay", "lay1");
+	sld.location.hours = 999999;
+	LAi_RemoveLoginTime(sld);
+	ChangeCharacterAddressGroup(sld, "none", "", "");
 	
 	sld = GetCharacter(CreateCharacterClone(CharacterFromID("LSC_Jillian"), -1));
 	sld.id = "LSC_Jillian_clone";
@@ -683,13 +678,17 @@ void WildRose_Etap2_IslandOfJustice_10()
 	LAi_SetActorType(sld);
 	
 	WildRose_MaryFollowing();
+	
+	ref sld = &Locations[FindLocation("LostShipsCity_town")];
+	sld.reload.l47.close_for_night = 0;
 }
 
 void WildRose_Etap2_IslandOfJustice_10_1(string qName)
 {
 	sld = CharacterFromID("LSC_Oreli");
-	LAi_SetActorType(sld);
+	sld.location.hours = 999999;
 	LAi_RemoveLoginTime(sld);
+	LAi_SetActorType(sld);
 	ChangeCharacterAddressGroup(sld, "PlutoStoreSmall", "barmen", "bar1");
 	
 	sld = CharacterFromID("LSC_Jillian_clone");
@@ -716,6 +715,8 @@ void WildRose_Etap2_IslandOfJustice_10_4()
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto10_0");
 	
 	sld = CharacterFromID("LSC_Oreli");
+	sld.location.hours = 999999;
+	LAi_RemoveLoginTime(sld);
 	ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto10_0");
 	sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
 	sld.dialog.currentnode = "Oreli_1";
@@ -778,6 +779,9 @@ void WildRose_Etap2_IslandOfJustice_13()
 void WildRose_Etap2_IslandOfJustice_13_2()
 {
 	sld = CharacterFromID("LSC_Oreli");
+	LAi_SetActorType(sld);
+	LAi_type_actor_Reset(sld);
+	sld.location.hours = 999999;
 	ChangeCharacterAddressGroup(sld, "none", "", "");
 	
 	sld = CharacterFromID("Zikomo");
@@ -935,7 +939,7 @@ void WildRose_Etap2_IslandOfJustice_19_2()
 {
 	sld = CharacterFromID("LSC_Betancur");
 	LAi_SetActorType(sld);
-	LAi_ActorTurnToLocator(sld, "quest", "quest1");
+	CharacterTurnByLoc(sld, "barmen", "bar3");
 	LAi_ActorAnimation(sld, "Barman_idle", "WildRose_Etap2_Antonio_Finding_2", 2.0);
 }
 
@@ -1012,6 +1016,7 @@ void WildRose_Etap2_IslandOfJustice_23()
 
 void WildRose_Etap2_IslandOfJustice_24()
 {
+	chrDisableReloadToLocation = false;
 	WildRose_MaryFollowing();
 	AddQuestRecord("WildRose", "19");
 	
@@ -1045,6 +1050,8 @@ void WildRose_Etap2_IslandOfJustice_26(string qName)
 	QuestOpenSeaExit();
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload11", false);
 	LocatorReloadEnterDisable("LostShipsCity_town", "reload12", false);
+	ref sld = &Locations[FindLocation("LostShipsCity_town")];
+	sld.reload.l47.close_for_night = 1;
 	sld = CharacterFromID("Mary");
 	AddPassenger(pchar, sld, false);
 	ReturnOfficer_Mary();
@@ -1520,6 +1527,7 @@ void WildRose_Etap4_PathToLight_18_funeral_0(string qName)
 {
 	LAi_FadeToBlackEnd();
 	DoQuestFunctionDelay("WildRose_Etap4_PathToLight_18_funeral_1", 4.5);
+	Achievment_Set("ach_CL_170");
 }
 
 void WildRose_Etap4_PathToLight_18_funeral_1(string qName)
@@ -1722,7 +1730,7 @@ void WildRose_Etap4_PathToLight_20(string qName)
 	sld.OfficerImmortal = true;						
 	sld.Health.HP       = 60.0; 						
 	sld.Health.maxHP    = 60.0;						
-	SetCharacterPerk(sld, "ShipEscape");
+
 	ReturnOfficer_Mary();
 	
 	// Продолжение у Фадея
@@ -1849,6 +1857,7 @@ void WildRose_Etap6_LifeAfterDeath_3_next()
 	DelLandQuestMark(characterFromId("Beliz_tavernkeeper"));
 	
 	SetFunctionLocationCondition("WildRose_Etap6_LifeAfterDeath_4", "Beliz_houseSp1", false);
+	LocatorReloadEnterDisable("Beliz_town", "houseSp1", false);
 }
 
 void WildRose_Etap6_LifeAfterDeath_4(string qName)
@@ -1890,6 +1899,7 @@ void WildRose_Etap6_LifeAfterDeath_5()
 	sld = CharacterFromID("WildRose_Bandit_3");
 	LAi_SetWarriorType(sld);
 	LAi_group_MoveCharacter(sld, "EnemyFight");
+	LAi_CharacterDisableDialog(sld);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Bandit_2", "citiz_46", "man", "man", 15, PIRATE, -1, true, "pirate"));
 	ChangeCharacterAddressGroup(sld, "Beliz_houseSp1", "reload", "reload2");
@@ -1921,6 +1931,7 @@ void WildRose_Etap6_LifeAfterDeath_6_1(string qName)
 	sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
 	sld.dialog.currentnode = "WildRose_BanditBeliz_2";
 	LAi_SetGroundSitType(sld);
+	LAi_CharacterEnableDialog(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
 	AddLandQuestMark(sld, "questmarkmain");
 }
@@ -2047,7 +2058,7 @@ void WildRose_Etap6_LifeAfterDeath_12(string qName)
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Alonso"))
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("WildRose_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, -1, false, "soldier"));
-		sld.name = StringFromKey("Tonzag_2");
+		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		GiveItem2Character(sld, "blade_10");
 		EquipCharacterByItem(sld, "blade_10");
@@ -2596,11 +2607,8 @@ void WildRose_Etap6_LifeAfterDeath_29()
 			ReturnOfficer_Longway();
 		}
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload2");
-		AddPassenger(pchar, sld, false);
-		sld.OfficerImmortal = true;
-		sld.Health.HP       = 60.0;
-		sld.Health.maxHP    = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+		sld.QuestImmortal = true;
+	
 	}
 	pchar.OfficerAttRange = 35.0;
 	OfficersFollow();
@@ -2633,9 +2641,9 @@ void WildRose_Etap6_LifeAfterDeath_30(string qName)
 {
 	LAi_group_Delete("EnemyFight");
 	DoQuestCheckDelay("hide_weapon", 1.2);
+	LAi_LocationFightDisable(loadedLocation, true);
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_BadEnd"))
 	{
-		LAi_LocationFightDisable(loadedLocation, true);
 		sld = CharacterFromID("WildRose_Alonso");
 		sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
 		sld.dialog.currentnode = "WildRose_Alonso_11";
@@ -2645,7 +2653,45 @@ void WildRose_Etap6_LifeAfterDeath_30(string qName)
 	}
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
 	{
-		WildRose_Etap6_LifeAfterDeath_31();
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu"))
+		{
+			sld = CharacterFromID("Tichingitu");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Tichingitu_Final_1";
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran"))
+		{
+			sld = CharacterFromID("Duran");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Duran_Final_1";
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag"))
+		{
+			sld = CharacterFromID("Tonzag");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Tonzag_Final_1";
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons"))
+		{
+			sld = CharacterFromID("Irons");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Irons_Final_1";
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway"))
+		{
+			sld = CharacterFromID("Longway");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Longway_Final_1";
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Alonso"))
+		{
+			sld = CharacterFromID("WildRose_Alonso");
+			sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
+			sld.dialog.currentnode = "WildRose_Alonso_Final_1";
+		}
+		LAi_SetActorType(sld);
+		LAi_ActorDialog(sld, pchar, "", -1, 0);
+		AddLandQuestMark(sld, "questmarkmain");
 	}
 }
 
@@ -2663,6 +2709,16 @@ void WildRose_Etap6_LifeAfterDeath_31()
 			LAi_ActorFollow(sld, CharacterFromID("WildRose_Alonso"), "", -1);
 		}
 	}
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
+	{
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sld = CharacterFromID("Tichingitu");
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sld = CharacterFromID("Duran");
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sld = CharacterFromID("Tonzag");
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sld = CharacterFromID("Irons");
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sld = CharacterFromID("Longway");
+		LAi_SetActorType(sld);
+		LAi_ActorFollow(sld, CharacterFromID("WildRose_Alonso"), "", -1);
+	}
 }
 
 void WildRose_Etap6_LifeAfterDeath_32()
@@ -2675,10 +2731,13 @@ void WildRose_Etap6_LifeAfterDeath_32()
 			ChangeCharacterAddressGroup(sld, "none", "", "");
 		}
 	}
-	// chrDisableReloadToLocation = false;
-	// SetFunctionLocationCondition("WildRose_Etap6_LifeAfterDeath_33", "Shore8", false);
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu")) sld = CharacterFromID("Tichingitu");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran")) sld = CharacterFromID("Duran");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag")) sld = CharacterFromID("Tonzag");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons")) sld = CharacterFromID("Irons");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway")) sld = CharacterFromID("Longway");
+	ChangeCharacterAddressGroup(sld, "none", "", "");
 	SetFunctionLocatorCondition("WildRose_Etap6_LifeAfterDeath_33", "Beliz_jungle_03", "reload", "reload1_back", false);
-	// QuestsCheck();
 }
 
 void WildRose_Etap6_LifeAfterDeath_33(string qName)
@@ -2703,7 +2762,6 @@ void WildRose_Etap6_LifeAfterDeath_35()
 	TeleportCharacterToLocatorIgnoreCollision(pchar, "quest", "quest1");
 	CharacterTurnAy(pchar, 6.00);
 	LAi_SetActorType(pchar);
-	// LAi_ActorAnimation(pchar, "sharle_mary_sit", "", 50.0);
 	
 	sld = CharacterFromID("Mary");
 	sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
@@ -2715,10 +2773,8 @@ void WildRose_Etap6_LifeAfterDeath_35()
 	LAi_SetActorType(sld);
 	SetActorDialogAny2Pchar(sld.id, "", 0, 0.0);
 	LAi_ActorFollow(sld, pchar, "ActorDialog_Any2Pchar", 0.0);
-	// LAi_ActorAnimation(sld, "sharle_mary_sit", "", 50.0);
 	
 	DoQuestFunctionDelay("WildRose_Etap6_LifeAfterDeath_36", 1.0);
-	// DoQuestFunctionDelay("WildRose_Etap6_LifeAfterDeath_37", 1.0);
 }
 
 void WildRose_Etap6_LifeAfterDeath_36(string qName)
@@ -2726,11 +2782,6 @@ void WildRose_Etap6_LifeAfterDeath_36(string qName)
 	LAi_FadeToBlackEnd();
 	locCameraSleep(true);
 }
-
-// void WildRose_Etap6_LifeAfterDeath_37(string qName)
-// {
-	// locCameraSleep(true);
-// }
 
 void WildRose_Etap6_LifeAfterDeath_38()
 {
@@ -2747,6 +2798,37 @@ void WildRose_Etap6_LifeAfterDeath_39()
 	sld = CharacterFromID("Mary");
 	IgnoreCollision(sld, false);
 	ReturnOfficer_Mary();
+	
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd"))
+	{
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tichingitu"))
+		{
+			ReturnOfficer_Tichingitu();
+			sld = CharacterFromID("Tichingitu");
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Duran"))
+		{
+			ReturnOfficer_Duran();
+			sld = CharacterFromID("Duran");
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Tonzag"))
+		{
+			ReturnOfficer_Tonzag();
+			sld = CharacterFromID("Tonzag");
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Irons"))
+		{
+			ReturnOfficer_Irons();
+			sld = CharacterFromID("Irons");
+		}
+		if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Longway"))
+		{
+			ReturnOfficer_Longway();
+			sld = CharacterFromID("Longway");
+		}
+		AddPassenger(pchar, sld, false);
+		DeleteAttribute(sld, "QuestImmortal");	
+	}
 	
 	bQuestDisableMapEnter = true;
 	Island_SetReloadEnableGlobal("Beliz", false);
@@ -2798,6 +2880,7 @@ void WildRose_Etap6_LifeAfterDeath_40(string qName)
 	Island_SetReloadEnableGlobal("Beliz", true);
 	bQuestDisableMapEnter = false;
 	CloseQuestHeader("WildRose");
+	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_GoodEnd")) Achievment_Set("ach_CL_171");
 }
 
 void WildRose_Test()
@@ -2899,6 +2982,7 @@ void WildRose_Test()
 	SetCharacterRemovable(sld, true);
 	sld.Payment = true;
 	sld.DontClearDead = true;
+	sld.SpecialRole = "fgirl";
 	sld.dialog.currentnode = "Mary_officer";
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
@@ -2908,7 +2992,7 @@ void WildRose_Test()
 	SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "blade_31");
 	sld.equip.blade = "blade_31";
@@ -2922,8 +3006,7 @@ void WildRose_Test()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0;
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	
+
 	//выключить сторонние квесты
 	PChar.quest.Red_Chieftain.over = "yes";
 	PChar.quest.False_Trace.over = "yes";

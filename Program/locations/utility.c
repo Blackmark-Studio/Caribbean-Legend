@@ -17,7 +17,8 @@ bool IsShipSafeReachableNow()
 		if (CheckAttribute(&pchar, "questTemp.Guardoftruth.Trinidad") && CheckCharacterItem(&pchar, "VerifyPaper") && loadedLocation.fastreload == "portspein" && GetNationRelation2MainCharacter(StealthNat) != RELATION_ENEMY) return true;
 		
 		int iColony = FindColony(loadedLocation.fastreload);
-		return GetRelation2BaseNation(sti(Colonies[iColony].nation)) != RELATION_ENEMY;
+		int nation = sti(Colonies[iColony].nation);
+		return nation == PIRATE || GetRelation2BaseNation(nation) != RELATION_ENEMY;
 	}
 
 	if (loadedLocation.id == pchar.location.from_sea) return true; // в бухте высадки безопасно

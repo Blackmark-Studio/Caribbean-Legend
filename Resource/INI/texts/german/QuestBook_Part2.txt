@@ -1740,7 +1740,7 @@ Ich habe die Utrecht verpasst. Ich war so nah dran und konnte die Brigantine am 
 #TEXT   14
 Ein Fehlschlag! Ich habe meine Chance vertan, einen Deal mit dem Arbeiter zu machen, er hat mich für einen patrouillierenden Soldaten gehalten, bekam Angst und hat mich dummerweise angegriffen. Ich Idiot. Ich musste sie alle töten, schade, aber es ist vorbei.
 #TEXT   15
-Es ist vollbracht. Ich habe es geschafft, einen Deal mit dem Arbeiter zu machen. 25 Dublonen für eine Rolle. Jetzt sollte ich nach St. Cristopher segeln und den Glatzkopf Geffrey besuchen.
+Es ist vollbracht. Ich habe es geschafft, einen Deal mit dem Arbeiter zu machen. 5 Dublonen für eine Rolle. Jetzt sollte ich nach St. Cristopher segeln und den Glatzkopf Geffrey besuchen.
 #TEXT   16
 Es sind bereits zwei Monate vergangen. Der glatzköpfige Geffrey muss seine Seide bereits an jemand anderen verkauft haben. Schade ... aber ich denke, ich kann Tyrex immer noch die Informationen über den Käufer liefern. Ich sollte in zehn Tagen in La Vega sein, damit Tyrex Zeit hat, genug Seide zu sammeln. Ich hoffe, das wird seinen möglichen Zorn besänftigen.
 #TEXT   17
@@ -1752,7 +1752,7 @@ Ich habe die Informationen, die ich von Husky Billy erhalten habe, an die örtli
 #TEXT   20
 Es ist geschafft, mein Konkurrent wurde von einer Militärpatrouille eliminiert. Ich wurde sogar mit 10 000 Pesos belohnt, was sehr nett ist. Ich sollte den Schiffsbauer aufsuchen, er muss jetzt noch überzeugender sein.
 #TEXT   21
-Es ist vollbracht. Ich habe einen Deal mit dem Schiffsbauer ausgehandelt. 25 Dublonen für eine Rolle. Jetzt sollte ich nach St. Cristopher segeln und den Glatzkopf Geffrey besuchen.
+Es ist vollbracht. Ich habe einen Deal mit dem Schiffsbauer ausgehandelt. 5 Dublonen für eine Rolle. Jetzt sollte ich nach St. Cristopher segeln und den Glatzkopf Geffrey besuchen.
 #TEXT   22
 Glatzkopf Geffrey wurde instruiert - er ist dabei, mit einer ersten Ladung Schiffsseide von Marcus Tyrex nach Jamaika aufzubrechen. Ich sollte nach La Vega segeln.
 #TEXT   23

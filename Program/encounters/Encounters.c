@@ -223,255 +223,305 @@ void Enc_ExcludeNation(ref rEnc, int iNation)
 	rEnc.Nation.Exclude.(sNation) = true;
 }
 
-// Энкаунтер, специализация, количество, классы
-// Бонусы определяются отдельно циклом по рангам при логине
-void Enc_AddShips(ref rEnc,
-                  string ShipSpec, string Type,
-                  int qMin, int qMax,
-                  int cMin, int cMax)
-{
-    aref arEShips;
-    makearef(arEShips, rEnc.Ships);
-    string attr = "S" + (GetAttributesNum(arEShips)+1);
-    while(CheckAttribute(arEShips, attr)) attr += "_a";
+// Биты каждой ячейки справа налево:
+// 4 bit мин кол-во, 4 bit макc кол-во, 4 bit мин класс, 4 bit макс класс
+int ENC_MERCHANT_SLOT[12]   = {0,0,0,0,0,0,0,0,0,0,0,0};
+int ENC_WAR_SLOT[12]        = {0,0,0,0,0,0,0,0,0,0,0,0};
+int ENC_RAIDER_SLOT[12]     = {0,0,0,0,0,0,0,0,0,0,0,0};
+int ENC_UNIVERSAL_SLOT[12]  = {0,0,0,0,0,0,0,0,0,0,0,0};
+// Биты справа налево:
+// 4 bit маска участников рандома специализаций (cell >> SHIP_SPEC) & 1
+// Через (cell & 15 != 0) можно узнать есть ли рандом вообще
+// 4 bit кол-во участников рандома, offset = rand(((cell >> 4) & 15) - 1)
+// До 8 bit последовательность до 4 участников 2-битных масок (SHIP_SPEC от 0 до 3)
+// Через (cell >> (8 + offset * 2)) & 3 получаем двухбитную маску (кого-то из SHIP_SPEC)
+int ENC_RANDOM_PARAMS[12] = {0,0,0,0,0,0,0,0,0,0,0,0};
 
-    arEShips.(attr).qMin = qMin;
-    arEShips.(attr).qMax = qMax;
-    arEShips.(attr).cMin = cMin;
-    arEShips.(attr).cMax = cMax;
-    arEShips.(attr).Type = Type;         // War or Merchant
-    arEShips.(attr).ShipSpec = ShipSpec; // SHIP_SPEC_<>
-}
-
-void Enc_ConvertShipsCls(ref rEnc, string ShipSpec, int cMin, int cMax)
+// Установить параметры для слота специализации
+void SetEncSlot_Params(int iEncType, int iSpec, int qMin, int qMax, int cMin, int cMax)
 {
-    aref arEShips, aShip;
-    makearef(arEShips, rEnc.Ships);
-    int qty = GetAttributesNum(arEShips);
-    for(int i = 0; i < qty; i++)
+    int BitMask = qMin + shl(qMax, 4) + shl(cMin, 8) + shl(cMax, 12);
+    switch (iSpec)
     {
-        aShip = GetAttributeN(arEShips, i);
-        if(aShip.ShipSpec == ShipSpec || ShipSpec == "All")
-        {
-            aShip.cMin = cMin;
-            aShip.cMax = cMax;
-        }
+        case SHIP_SPEC_MERCHANT:  ENC_MERCHANT_SLOT[iEncType]  = BitMask; break;
+        case SHIP_SPEC_WAR:       ENC_WAR_SLOT[iEncType]       = BitMask; break;
+        case SHIP_SPEC_RAIDER:    ENC_RAIDER_SLOT[iEncType]    = BitMask; break;
+        case SHIP_SPEC_UNIVERSAL: ENC_UNIVERSAL_SLOT[iEncType] = BitMask; break;
     }
 }
 
-void Enc_ConvertShipsQty(ref rEnc, string ShipSpec, int qMin, int qMax)
+// Получить количество кораблей
+int GetEncSlotQty(int BitMask)
 {
-    aref arEShips, aShip;
-    makearef(arEShips, rEnc.Ships);
-    int qty = GetAttributesNum(arEShips);
-    for(int i = 0; i < qty; i++)
-    {
-        aShip = GetAttributeN(arEShips, i);
-        if(aShip.ShipSpec == ShipSpec || ShipSpec == "All")
-        {
-            aShip.qMin = qMin;
-            aShip.qMax = qMax;
-        }
-    }
+    int min = and(BitMask, 15);
+    int max = and(shr(BitMask, 4), 15);
+    return min + rand(max - min);
 }
 
-void Enc_ConvertSpec(ref rEnc, string ShipSpec_from, string ShipSpec_to)
+// Установить параметры для рандома между некоторыми специализациями
+void SetEncSlot_SpecRandom(int iEncType, bool bM, bool bW, bool bR, bool bU)
 {
-    aref arEShips, aShip;
-    makearef(arEShips, rEnc.Ships);
-    int qty = GetAttributesNum(arEShips);
-    for(int i = 0; i < qty; i++)
-    {
-        aShip = GetAttributeN(arEShips, i);
-        if(aShip.ShipSpec == ShipSpec_from)
-            aShip.ShipSpec = ShipSpec_to;
+    /*bM - SHIP_SPEC_MERCHANT  0
+      bW - SHIP_SPEC_WAR       1
+      bR - SHIP_SPEC_RAIDER    2
+      bU - SHIP_SPEC_UNIVERSAL 3*/
+
+    int qty = bM + bW + bR + bU;
+    int BitMask = bM + shl(bW, 1) + shl(bR, 2) + shl(bU, 3) + shl(qty, 4);
+    for (int i = 0; i < qty; i++) {
+        int offset = 8 + (i*2);
+        if (bM) {BitMask += shl(SHIP_SPEC_MERCHANT, offset); bM = 0;}
+        else if (bW) {BitMask += shl(SHIP_SPEC_WAR, offset); bW = 0;}
+        else if (bR) {BitMask += shl(SHIP_SPEC_RAIDER, offset); bR = 0;}
+        else if (bU) {BitMask += shl(SHIP_SPEC_UNIVERSAL, offset); bU = 0;}
     }
+
+    ENC_RANDOM_PARAMS[iEncType] = BitMask;
 }
 
-// Вернуть конкретный слот
-aref Enc_FindShip(ref rEnc,
-                  string ShipSpec, string Type,
-                  int qMin, int qMax,
-                  int cMin, int cMax)
+// Проверить, участвует ли конкретная специализация в рандоме
+bool CheckEncRand_Spec(int BitMask, int iSpec)
 {
-    aref arEShips, aShip;
-    makearef(arEShips, rEnc.Ships);
-    int qty = GetAttributesNum(arEShips);
-    for(int i = 0; i < qty; i++)
-    {
-        aShip = GetAttributeN(arEShips, i);
-        if(aShip.ShipSpec  == ShipSpec && aShip.Type  == Type &&
-           sti(aShip.qMin) == qMin && sti(aShip.qMax) == qMax &&
-           sti(aShip.cMin) == cMin && sti(aShip.cMin) == cMax)
-           {
-                return aShip;
-           }
-    }
-    return ErrorAttr();
+    return and(shr(BitMask, iSpec), 1);
 }
 
-// Сюда все апдейты, чтобы не переусложнять генерацию
-// Через >= на случай читерских повышений
+// Выбрать специализацию из участвующих в рандоме
+int GetEncRandSpec(int BitMask)
+{
+    int qty = and(shr(BitMask, 4), 15);
+    int offset = rand(qty-1);
+    return and(shr(BitMask, 8 + offset*2), 3);
+}
+
 bool EncProgress[60];
 #event_handler("PlayerLevelUp", "Encounter_Progress");
 void Encounter_Progress()
 {
     ref rEnc;
-    aref aShip;
     int Rank = sti(PChar.Rank);
+
+    if(Rank >= 3 && !EncProgress[3])
+    {
+        EncProgress[3] = true;
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_RAIDER,    0, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 2, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 5);
+        ENC_RANDOM_PARAMS[ENCOUNTER_TYPE_MERCHANT_MEDIUM] = 0; // off random
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_RAIDER,    0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_MERCHANT,  1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_WAR,       0, 1, 3, 4);
+    }
+
+    if(Rank >= 4 && !EncProgress[4])
+    {
+        EncProgress[4] = true;
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_MERCHANT,  1, 1, 5, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_UNIVERSAL, 0, 1, 5, 6);
+        ENC_RANDOM_PARAMS[ENCOUNTER_TYPE_MERCHANT_SMALL] = 0; // off random
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_RAIDER,    0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_MERCHANT,  1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_WAR,       1, 1, 3, 5);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_RAIDER,    0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_MERCHANT,  1, 1, 2, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_UNIVERSAL, 0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_WAR,       1, 2, 2, 3);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_SMALL, SHIP_SPEC_RAIDER,    1, 1, 5, 6);
+    }
+
+    if(Rank >= 5 && !EncProgress[5])
+    {
+        EncProgress[5] = true;
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_MERCHANT,  1, 1, 5, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 3, 4);
+    }
 
     if(Rank >= 8 && !EncProgress[8])
     {
         EncProgress[8] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SMALL];
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 5, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_RAIDER, 0, 1, 5, 6);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_MEDIUM];
-        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 3, 5);
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_UNIVERSAL, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_RAIDER,    0, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 2, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_WAR,       0, 1, 3, 5);
+
+        iGPThreatMax = THREAT_LVL_2;
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 1, 5, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 0, 1, 5, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 5, 6);
+        SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, 0, 1, 1, 0);
+        SetFunctionMapEnterCondition("PirateNotificationUPD", false);
     }
 
-    if(Rank >= 9 && !EncProgress[9])
+    if(Rank >= 11 && !EncProgress[11])
     {
-        EncProgress[9] = true;
+        EncProgress[11] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
-        rEnc.Stage = 1;
-        Enc_ConvertShipsCls(rEnc, "All", 5, 6);
-        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 5, 6);
-		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
-	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_RAIDER,    1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_MERCHANT,  1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_UNIVERSAL, 1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_WAR,       0, 2, 2, 4);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_RAIDER,    0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_MERCHANT,  1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_WAR,       1, 1, 3, 5);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_RAIDER,    1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_MERCHANT,  2, 2, 2, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_UNIVERSAL, 1, 1, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_WAR,       1, 2, 2, 3);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_MERCHANT,  1, 1, 5, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 3, 4);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_RAIDER,    1, 1, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_MERCHANT,  1, 2, 3, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_UNIVERSAL, 1, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_WAR,       2, 2, 2, 3);
     }
 
     if(Rank >= 12 && !EncProgress[12])
     {
         EncProgress[12] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_LARGE];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_RAIDER,    1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_MERCHANT,  1, 1, 2, 2);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_UNIVERSAL, 0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_WAR,       1, 1, 3, 4);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_CROWN];
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_SMALL, SHIP_SPEC_RAIDER,    2, 2, 5, 6);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_EXPEDITION];
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 2, 2);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 2, 2);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 4);
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_MERCHANT, 2, 2);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 5, 6);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_MEDIUM];
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 3, 4);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_MEDIUM];
-        Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_RAIDER,    1, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 4, 5);
     }
 
     if(Rank >= 13 && !EncProgress[13])
     {
         EncProgress[13] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SMALL];
-        Enc_ConvertShipsCls(rEnc, "All", 4, 6);
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War",        1, 1, 4, 6);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 4, 6);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_MEDIUM];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 3, 5);
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_RAIDER,    0, 1, 4, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_MERCHANT,  1, 2, 4, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_UNIVERSAL, 1, 1, 5, 6);
     }
 
-    if(Rank >= 17 && !EncProgress[17])
+    if(Rank >= 14 && !EncProgress[14])
     {
-        EncProgress[17] = true;
+        EncProgress[14] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
-        rEnc.Stage = 2;
-        rEnc.worldMapShip = "bark";
-        Enc_ConvertShipsCls(rEnc, "All", 4, 5);
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 4, 5);
-		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
-	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_RAIDER,    1, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 2, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 2, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_WAR,       1, 1, 3, 5);
+
+        iGPThreatMax = THREAT_LVL_3;
+        EncountersTypes[ENCOUNTER_TYPE_PIRATE].worldMapShip = "bark";
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 2, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 4, 5);
+        ENC_UNIVERSAL_SLOT[ENCOUNTER_TYPE_PIRATE] = 0;
+        ENC_RANDOM_PARAMS[ENCOUNTER_TYPE_PIRATE] = 0; // off random
+        SetFunctionMapEnterCondition("PirateNotificationUPD", false);
+    }
+
+    if(Rank >= 18 && !EncProgress[18])
+    {
+        EncProgress[18] = true;
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_RAIDER,    1, 1, 4, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_MERCHANT,  2, 2, 4, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 6);
+    }
+
+    if(Rank >= 19 && !EncProgress[19])
+    {
+        EncProgress[19] = true;
+
+        iGPThreatMax = THREAT_LVL_4;
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       0, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 4);
+        SetFunctionMapEnterCondition("PirateNotificationUPD", false);
     }
 
     if(Rank >= 20 && !EncProgress[20])
     {
         EncProgress[20] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_LARGE];
-        Enc_ConvertSpec(rEnc, SHIP_SPEC_UNIVERSAL, SHIP_SPEC_WAR);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_RAIDER,    1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_WAR,       1, 1, 3, 4);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_SMALL];
-        Enc_ConvertShipsCls(rEnc, "All", 4, 6);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_RAIDER,    1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_MERCHANT,  1, 1, 2, 2);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_UNIVERSAL, 0, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_WAR,       2, 2, 2, 2);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PATROL_MEDIUM];
-        Enc_AddShips(rEnc, SHIP_SPEC_RAIDER, "War", 1, 1, 2, 2);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_SMALL, SHIP_SPEC_RAIDER,    2, 3, 4, 5);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_RAIDER,    2, 2, 2, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 4, 5);
     }
 
     if(Rank >= 21 && !EncProgress[21])
     {
         EncProgress[21] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_MEDIUM];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
-        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War",           1, 1, 3, 5);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_RAIDER,    0, 1, 3, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_MERCHANT,  1, 1, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_WAR,       1, 1, 3, 5);
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_LARGE];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_RAIDER,    1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_MERCHANT,  2, 2, 2, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_UNIVERSAL, 1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_WAR,       2, 2, 2, 3);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_MERCHANT,  2, 2, 5, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 5);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_WAR,       2, 2, 3, 4);
+
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_RAIDER,    1, 1, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_MERCHANT,  2, 2, 3, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_UNIVERSAL, 1, 2, 3, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_WAR,       2, 2, 1, 3);
     }
 
     if(Rank >= 22 && !EncProgress[22])
     {
         EncProgress[22] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_CROWN];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 3, 5);
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_UNIVERSAL, 3, 5);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_EXPEDITION];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_RAIDER, 2, 4);
-        aShip = Enc_FindShip(rEnc, SHIP_SPEC_UNIVERSAL, "War", 1, 1, 2, 2);
-        aShip.ShipSpec = SHIP_SPEC_WAR;
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_RAIDER,    1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_MERCHANT,  1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_UNIVERSAL, 2, 2, 2, 3);
+        SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_WAR,       1, 2, 2, 4);
     }
 
-    if(Rank >= 26 && !EncProgress[26])
+    if(Rank >= 24 && !EncProgress[24])
     {
-        EncProgress[26] = true;
+        EncProgress[24] = true;
 
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
-        rEnc.Stage = 3;
-        Enc_ConvertShipsCls(rEnc, "All", 3, 4);
-		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
-	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
-    }
-
-    if(Rank >= 31 && !EncProgress[31])
-    {
-        EncProgress[31] = true;
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_NAVAL_LARGE];
-        Enc_ConvertShipsCls(rEnc, SHIP_SPEC_WAR, 1, 3);
-        Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT, "Merchant", 1, 1, 3, 3);
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_PIRATE];
-        rEnc.Stage = 4;
-        rEnc.worldMapShip = "frigate";
-        Enc_ConvertShipsCls(rEnc, "All", 2, 4);
-		PChar.quest.Pirate_Notification.win_condition.l1 = "MapEnter";
-	    PChar.quest.Pirate_Notification.function         = "PirateNotificationUPD";
-
-        rEnc = &EncountersTypes[ENCOUNTER_TYPE_MERCHANT_SLAVES];
-        Enc_AddShips(rEnc, SHIP_SPEC_WAR, "War", 1, 1, 2, 2);
+        iGPThreatMax = THREAT_LVL_5;
+        EncountersTypes[ENCOUNTER_TYPE_PIRATE].worldMapShip = "frigate";
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 2, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 2, 4);
+        SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 1, 2, 2, 4);
+        SetFunctionMapEnterCondition("PirateNotificationUPD", false);
     }
 }
 
-void PirateNotificationUPD(string qName)
-{
-    Notification(StringFromKey("QuestsUtilite_276"), "pirhunter");
-}
+void PirateNotificationUPD(string qName){Notification(StringFromKey("QuestsUtilite_276"), "pirhunter");}
+void PiratesIncreaseNotif(string qName){ Notification(StringFromKey("QuestsUtilite_330"), "pirhunter");}
+void PiratesDecreaseNotif(string qName){ Notification(StringFromKey("QuestsUtilite_329"), "pirhunter");}

@@ -182,9 +182,7 @@ Trading_descr
 交易是一个复杂系统, 许多因素会影响买卖价格。 ~在陆地上, 角色的交易技能和背景最为重要。 ~在海上, 影响因素更多 —货物类型、 原产地、 殖民地规模、 贸易路线和财务官技能。 ~你最终会弄清楚这一切, 但现在先获取一个实用的交易护身 符。
 }
 Prologue_Navigation {船只控制}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation_descr
 {
 欢迎来到加勒比海! ~使用转向键转动船只。 船只很重且惯性大, 因此转向缓慢。 感受一下。 ~使用帆模式键控制帆和速度。 ~有三种帆模式: 满帆、 战斗帆和落帆。 满帆最快, 战斗帆转向最佳, 落帆可让你平稳停止。 ~在风暴和交火中降下帆、 转向和瞄准时使用战斗模式。 追击时, 满帆无与伦比。 ~尝试不同的帆模式和转向, 感受船只的惯性, 享受日落!
 }
@@ -192,19 +190,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {时间控制}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {时间控制}Prologue_TimeScale_descr
 {
 游戏中许多事情发生得很慢 —如更改船帆模式或重新装填加农炮。 ~你可以在海上、 陆地和世界地图上加速或减速时间。 ~享受你对时间的掌控, 然后前往船只甲板。 有人想和你谈谈。
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {啊嘿!}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {啊嘿!}Prologue_CameraControl_descr
 {
 欢迎登上"Ulysse (尤利西斯号)"! 我们为你准备了简短的起始冒险。 ~"Ulysse (尤利西斯号)" 上有很多事情可做。 准备好继续时, 在船长对话中选择"完成事务"。 ~感谢游玩 —海上见!
 }
@@ -214,82 +206,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {日志与文件}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {日志与文件}Prologue_Logbook_descr
 {
 你接受的每个任务都会记录在"日志"中。 仔细阅读对话和日志条目非常重要  —其中通常包含关键细节和指示。 ~查看"日志"条目。 在"Ulysse (尤利西斯号)"上接受的所有小任务都会显示在那 里。
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {复杂任务、 文件与制作}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {复杂任务、 文件与制作}
 Prologue_Inventory_descr
 {
 除任务外, "日志"还包含其他重要信息。 ~在"文件"部分, 你可以阅读所有找到的笔记。 ~现在你需要阅读船只财务官的笔记 , 并按所列向船员分发达布隆金币。 ~要从箱子中获取达布隆, 需使用制作 —炼金术 —机械装置打开箱子。 你现在只有几个配方, 但以后会获得更多。
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {护身符}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {护身符}Prologue_Amulet_descr
 {
-护身符是角色的强大增益道具, 分为进攻、 防御和辅助类型。 无法同时装备进攻和防御护身符, 因此需明智选择套装。 ~还有两种其他类型的增益道具: 守护符和符咒。 ~护身符比护身符持续时间更长且效 果更广泛, 而符咒极其强大、 永久生效并拥有独立的物品栏位。 ~始终在物品栏中保留几套, 以应对海上和陆地的高难度技能检 定和激烈战斗。 ~注意: 激活后移除护身符或守护符会摧毁它  —谨慎选择。
+护身符是角色的强大增益道具, 分为进攻、 防御和辅助类型。 无法同时装备进攻和防御护身符, 因此需明智选择套装。 ~还有两种其他类型的增益道具: 守护符和符咒。 ~护身符比护身符持续时间更长且效 果更广泛, 而符咒极其强大、 永久生效并拥有独立的物品栏位。 ~始终在物品栏中保留几套, 以应对海上和陆地的高难度技能检 定和激烈战斗。 ~注意: 激活后移除护身符或守护符会摧毁 它  —谨慎选择。
 }
-Prologue_Trading {交易基础}
-[g]Prologue_Trading_descr
+Prologue_Trading {交易基础}Prologue_Trading_descr
 {
 交易是一个复杂系统, 许多因素会影响价格 —主要是你的"交易"技能。 ~在海上, 影响因素更多 —货物类型、 原产地、 殖民地规模、 贸易路线和财务官技能。 ~你最终会弄清楚这一切, 但现在先获取一个实用的护身符。
 }
-Prologue_Overload {超载}
-[h]Prologue_Overload_descr
+Prologue_Overload {超载}Prologue_Overload_descr
 {
 你遇到了第一个负重限制。 每个角色都有最大负重, 基于力量、 技能和护身符。 ~尝试寻找提高最大负重的方法 —也许可以去船员舱找水手长问问。
 }
-Prologue_AutoFire {海战}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {海战}Prologue_AutoFire_descr
 {
 你的第一次海战发生在 Charles de Maure 的想象中 —所以别担心, 尽情尝试! ~每艘船都有三项主要属性: 船体、 船帆和船员。 若船体值降至零, 船只沉没。 船帆受损会降低速度, 船员减少会影响登船、 重新装填和帆的操作。 ~每种弹药都有其用途: 葡萄弹针对船员, 链弹针对船帆和桅杆, 炸弹针对船体。 炮弹是具有最长射程的通用弹药。 伤害取决于弹药类型和发射的加农 炮 —加农炮越大, 伤害越高。 ~有两种主要射击模式。 当敌人在你的射击弧线内时可用快 速射击。 初期精度和效果不高, 但可让你动态战斗。 ~若感觉战斗太慢, 可使用时间控制键加速。
 }
-Prologue_AimingFire {瞄准射击}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {瞄准射击}Prologue_AimingFire_descr
 {
 瞄准射击可让你从侧面精确射击。 需要练习, 但值得一试。 ~加农炮圆圈显示侧舷加农炮的实际 位置和弹道。 它们需要时间与屏幕中心瞄准的位 置对齐。 ~射击时, 加农炮会射那一刻圆圈所在的位置, 因此需要根据目标提前瞄准。 ~瞄准敌船以锁定目标。 捕获后, 可瞄准任何部位或提前射击。 ~随着船长和炮手技能的增长, 加农炮瞄准和射速会提高。 ~若快速移动瞄准, 炮手会困惑并比平时瞄准更慢。 ~瞄准侧舷射击非常适合在长距离击 中船只关键部位 —尤其是船帆和桅杆。
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {攻击}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {攻击}Prologue_FightAttack_descr
 {
 加勒比传奇中的战斗残酷而快速, 但你现在是安全的。 ~每个角色都有武器并具备战斗技能。 武器越好、 英雄经验越丰富, 造成的伤害越高。 ~你有几种攻击和防御动作。 ~让我们从三个主要攻击开始。 ~劈砍。 快速, 伤害较低, 消耗中等能量。 ~刺击。 比劈砍慢, 造成中等伤害, 消耗少量能量。 ~重击。 缓慢而有力, 造成巨大伤害并可破防。 ~在海盗身上尝试所有这些攻击。
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {战斗防御}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {战斗防御}Prologue_FightDefence_descr
 {
 很好! 现在学习防御。 ~格挡、 阻挡除重击外的任何攻击。 格挡时可缓慢移动, 不消耗能量。 强大的敌人可通过普通攻击破防, 因此需保持警惕。 ~拨挡、 偏转任何攻击并使敌人失去平衡和 能量。 ~闪避、 让你改变位置或避开射击。 ~尝试拨挡和格挡海盗的攻击。 ~然后 —终结他。
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {射击术}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {射击术}Prologue_Marksmanship_descr
 {
 火器比近战武器稀有, 但在加勒比被枪击仍是真实风险, 因此保持警惕。 ~陆地上有两种射击模式, 就像在海上一样: 快速射击和瞄准射击。 ~快速射击是简单的按下按钮。 快速但效果不佳。 ~瞄准射击可造成更多伤害, 但会让你暴露。 瞄准时间越长, 伤害越高。 爆头伤害更高。 ~按住瞄准按钮进入此模式。 按攻击键射击。 释放瞄准以退出而不射击。
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {掠夺}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {掠夺}Prologue_DeadSearch_descr
 {
 每次战斗后, 都是收集战利品的时候。 你可以通过按掠夺按钮搜索任何倒 下的敌人。 ~找到 Alonso 需要的治疗灵药!
 }

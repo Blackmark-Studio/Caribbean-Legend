@@ -2408,7 +2408,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2643,7 +2643,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Képességpróba Sikertelen (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Garantálom, hogy elôkerül. Az ár nem változik. Mit szólsz hozzá? Nem várok sokáig.";
 				link.l1 = "Rendben, rendben, rendben. Elviszem.";
 				link.l1.go = "IslaMona_7";
@@ -2651,7 +2651,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "Rendben, akkor százért. Kilencszáz. Nem megyek lejjebb. Ne is kérdezze.";
 				link.l1 = "És nem is fogok. Egyetértek.";
@@ -2665,7 +2665,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Képességpróba Sikertelen (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Az sem érdekel, ha egy élô szajhát rendelsz. Kilencszáz.";
 				link.l1 = "Rendben, rendben, rendben. Elviszem.";
 				link.l1.go = "IslaMona_7";
@@ -2673,7 +2673,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Biztos vagy benne? Nem felejted el? Rendben, vágjunk le még egy százat. De ennyi!";
 				link.l1 = "Nem felejtem el. Megegyeztünk!";
@@ -2704,7 +2704,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Nem tudtam, hogy vannak gyerekeid. És hogy ennyire rosszul állnak a dolgok. Rendben, ne panaszkodj. Hétszáz. Ez majdnem veszteség.";
 				link.l1 = "Nem felejtem el. Megegyeztünk!";

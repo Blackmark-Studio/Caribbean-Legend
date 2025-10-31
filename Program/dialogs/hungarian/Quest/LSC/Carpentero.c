@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 		case "rat_torg":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Képességpróba Sikertelen (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", más körülmények között ötezret kérnék. Maga az admirális is érdeklôdést mutatott, és nem egyedül, higgye el. Ne siessenek a döntéssel. A páncélok addig várnak rád, ameddig szükséged van rá. Én csak neked adom el.";
 				link.l1 = "Majd meggondolom, Sancho. Hosszan és alaposan átgondolom.";
 				link.l1.go = "rat_yes_1";
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", más körülmények között ötezret kérnék. Maga az admirális is érdeklôdést mutatott, és nem ô az egyetlen, higgye el nekem. Rendben, levonok ötszázat, tekintve, hogy nem feledkeztél meg rólam és a problémámról. Úgy tûnik, volt néhány kaland az út során.";
 				link.l1 = "Így már jobb. De még mindig nem értem, miért kellene többet fizetnem az ugyanolyan egyedi tárgyak kereskedelmében. Talán neked kéne fizetned nekem, nem Sancho?";
 				link.l1.go = "rat_yes_1500";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = "Ahhoz képest, hogy katonai kapitány és kalóz, te aztán tudsz tárgyalni! Emlékszel Jostra? Egyszer sikerült neki kedvezményesen megvennie az összes arzénemet, miközben a patkányok már kínoztak. Rendben, "+pchar.name+", te nyertél. Lecsapok még ötszázat neked! De ez az utolsó ajánlatom!";
 				link.l1 = "Ez még mindig úgy érzem, mintha átverés lenne, de legalább most már nem fogom magam tipikus bajba jutott kislánynak érezni a dzsungelben. Várj a pénzre, hamarosan hozom.";
 				link.l1.go = "rat_yes_1000exit";

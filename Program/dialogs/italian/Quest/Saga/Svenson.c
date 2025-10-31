@@ -1207,7 +1207,7 @@ void ProcessDialogEvent()
 			dialog.text = "Benissimo. Allora lo dividiamo a metà.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Ecco qua. Ho preso "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1223,7 +1223,7 @@ void ProcessDialogEvent()
 			dialog.text = "Per mille balene! Quanto hai portato?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Ecco qua. Ho "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1686,7 +1686,7 @@ void ProcessDialogEvent()
 				dialog.text = "Felice che tu abbia preso gusto per il legno di ferro, "+sStr+"Aumentare i carichi non è un problema, ma c’è un tranello, come ben capisci. Più merci, più rischio di lasciare tracce che potrebbero attirare attenzioni sgradite, soprattutto quelle maledette autorità inglesi. Se però mettiamo gente affidabile, orecchie fidate e qualcuno nella residenza che ci aiuti a restare nell’ombra, tutto si può sistemare. Ma non sarà a buon mercato, tremila dobloni per svicolare dal tesoro cittadino e dalle grinfie d’Inghilterra. Dopodiché potrò fornirti cinque volte tanto. Che ne dici?";
 				link.l1 = " Tremila dobloni? Jan, questo è un furto alla luce del sole! Non potremmo cavarcela con meno spese? Forse c’è modo di risolvere la faccenda senza queste cifre da capogiro? ";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

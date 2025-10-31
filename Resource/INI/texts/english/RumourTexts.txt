@@ -43,7 +43,7 @@ DuelCoward_t1
 {
 Ha-ha, #sName# has not shown up for a duel! I don't think he'll have the same success with women as he had before now.DuelCoward_t2
 }
-DuelCoward_t2 { }
-DuelHero_t0 { }
+DuelCoward_t2 {Did you hear? #sName# didn’t show up for the duel! They say he got so drunk last night he couldn’t even stand.}
+DuelHero_t0 {Did you know that #sName# is a seasoned duelist? He’s already killed #sKill# people. You wouldn’t want to cross his path.}
 DuelHero_t1 {They say that #sName# has sold his soul to the devil, and that's why he cannot be beaten in a duel! And the souls of those he kills... he has already killed #sKill# men, and they are going straight to the Hell! They also say that if he ends his killing spree, the devil will claim his own soul.}
 DuelHero_t2 {That upstart #sName# is incredibly lucky! He has already killed #sKill# men in a duel and never got a scratch! Really, can you even believe it?}

@@ -430,7 +430,7 @@ void CreateCitizens(aref loc)
 					chr.talker = rand(9);
 					chr.role = "sailor";
 				}
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iGipsyQty; i++)//цыганки
 			{
@@ -482,7 +482,7 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Marginal.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "marginal";
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iCapQty; i++)//капитаны кораблей
 			{
@@ -508,7 +508,7 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Captain.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "captain";
-				InitChrRebalance(chr, GEN_TYPE_CAPTAIN, GEN_ELITE, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iCitizQty; i++)//мещане-бюргеры + посетители церкви
 			{
@@ -585,7 +585,7 @@ void CreateCitizens(aref loc)
 										FantomMakeCoolFighter(chr, Rank, Scl, Scl, RandPhraseSimple("blade_08","blade_09"), RandPhraseSimple("pistol1","pistol5"), "bullet", Scl*3);
 										float Mft = MOD_SKILL_ENEMY_RATE/20;
 										chr.MultiFighter = 1.0+Mft; // мультифайтер
-									InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_MINIBOSS, true, 0.6); // RB Одиночные кулфайтеры
+									ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Одиночные кулфайтеры
 									}
 									chr.dialog.filename = "Quest\ForAll_dialog.c";
 									chr.dialog.currentnode = "AffairOfHonor_1";
@@ -653,7 +653,7 @@ void CreateCitizens(aref loc)
 					chr.dialog.filename = "Population\Noblegirl.c";
 					chr.greeting = "noble_female";
 				}
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iIndianQty; i++)//индейцы
 			{
@@ -687,7 +687,7 @@ void CreateCitizens(aref loc)
 				PlaceCharacter(chr, "goto", "random_free");
 				chr.dialog.filename    = "Population\Indian.c";
 				chr.dialog.currentnode = "first time";
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iConvQty; i++)//каторжники на руднике
 			{
@@ -708,7 +708,7 @@ void CreateCitizens(aref loc)
 				chr.dialog.filename    = "Population\Convict.c";
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "convict";
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 			for(i=0; i<iMonkQty; i++)//монахи
 			{
@@ -770,7 +770,7 @@ void CreateCitizens(aref loc)
 				chr.dialog.currentnode = "first time";
 				chr.greeting = "town_pirate";
 				PlaceCharacter(chr, "goto", "random_free");
-				InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Мирные граждане
+				ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мирные граждане
 			}
 		}
 	}
@@ -803,7 +803,7 @@ void CreateCitizens(aref loc)
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
             SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 			LAi_SetLoginTime(chr, 6.0, 23.0); //а ночью будет беготня от патруля :)
-			InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6);  // RB Стража
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
 
 			//locatorName = PlaceCharacter(chr, "soldiers", "random_free"); // бага наложения была из-за правки рандома
 			solderLoc = GetAttributeN(st, i);
@@ -879,7 +879,7 @@ void CreateCitizens(aref loc)
 			LAi_CharacterReincarnation(chr, true, true);
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
 			LAi_SetLoginTime(chr, 0.0, 24.0);
-			InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6);  // RB Стража
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);  // RB Стража
 			
 			chr.dialog.filename = "Common_Soldier.c";
 			chr.dialog.currentnode = "first time";
@@ -929,7 +929,7 @@ void CreateCitizens(aref loc)
 			LAi_SetReincarnationRankStep(chr, MOD_SKILL_ENEMY_RATE+2); //задаем шаг на увеличение ранга фантомам на реинкарнацию
             SetFantomParamFromRank(chr, sti(pchar.rank)+MOD_SKILL_ENEMY_RATE, true); // бравые орлы
 			LAi_SetLoginTime(chr, 0.0, 24.0); //а ночью будет беготня от патруля :)
-			InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Стража
+			ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Стража
 
 			PlaceCharacter(chr, "patrol", "random_free");
 
@@ -1634,6 +1634,7 @@ void CreateHabitues(aref loc)
 					chr.dialog.filename = "Quest\QuestTrader_dialog.c";
 					chr.dialog.currentnode = "first time";
 					chr.greeting = "captain_trader";
+					chr.role = "captain_trader";
 					if (sti(Colonies[iColony].HeroOwn) == true)
 					{
 						LAi_group_MoveCharacter(chr, LAI_GROUP_PLAYER_OWN);
@@ -1778,6 +1779,7 @@ void CreateHabitues(aref loc)
 									chr.id = "AffairOfHonor_QuestMan";
 									chr.dialog.filename = "Quest\ForAll_dialog.c";
 									chr.dialog.currentnode = "AffairOfHonor_1";
+									chr.role = "AffairOfHonor_tavern";
 									LAi_SetImmortal(chr, true);
 									SetRandNationSoldierModel(chr);
 									Characters_RefreshModel(chr); // Jason: рефрешить модель обязательно
@@ -1853,9 +1855,9 @@ void CreateHabitues(aref loc)
 			if (!CheckAttribute(pchar, "questTemp.Sharlie.Lock"))//не идёт старт квеста Шарля
 			{
 				iCitizensQuantity = rand(8)-6;
-				if(CheckCharacterPerk(pchar, "Trustworthy")) iCitizensQuantity += 4;
 				if(iCitizensQuantity > 3) iCitizensQuantity = 3;
 				if(CheckAttribute(pchar, "cheats.lai_officers")) iCitizensQuantity = 2;
+				iCitizensQuantity = 2;
 				for (i = 0; i <iCitizensQuantity; i++)
 				{
 					iChar = NPC_GeneratePhantomCharacter("pofficer", iNation, MAN, 1);
@@ -1864,7 +1866,7 @@ void CreateHabitues(aref loc)
 					SetOfficerParam(chr, rand(4));
 					sTemp = PlaceCharacter(chr, "sit", "random_free");
 					ReSitCharacterOnFree(chr, loc.id, sTemp);
-					InitChrRebalance(chr, GEN_TYPE_OFFICER, GEN_ELITE, true, 0.6); // RB Генераторные офицеры
+					ForceAutolevel(chr, GEN_TYPE_OFFICER, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.5); // RB Генераторные офицеры
 
 					LAi_SetSitType(chr);
 					// без группы
@@ -1918,7 +1920,7 @@ void CreateHabitues(aref loc)
 		            Items_FindItem("map_full", &item);
 					sTemp = Colonies[iColony].id;
 					FillMapForTreasure(item, sTemp);
-					pchar.GenQuest.TreasureMoney = 80 + hrand(45, sTemp) * 3; // Addon-2016 Jason
+					pchar.GenQuest.TreasureMoney = 45 + hrand(75, sTemp); // Addon-2016 Jason
 		        }
           		if (sti(Colonies[iColony].HeroOwn) == true)
 				{
@@ -2542,7 +2544,7 @@ void CreateKsochitamSkeletons(aref loc) //Jason
 		        string sPistol = LinkRandPhrase("pistol6","pistol1","pistol5");
 				sld = GetCharacter(NPC_GenerateCharacter(sIdf+"_skeleton_"+i, sModel, "skeleton", "skeleton", iRank, PIRATE, 2, false, "soldier"));
 				FantomMakeCoolFighter(sld, iRank, iScl, iScl, sBlade, sPistol, "bullet", iScl*2+100);
-				InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Скелеты Ксочитем
+				ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Ксочитем
 				sld.MultiFighter = 0.9+fMft; // мультифайтер
 				ChangeCharacterAddressGroup(sld, sIdf, "monsters", "monster"+i);
 				LAi_SetWarriorType(sld);
@@ -2583,7 +2585,7 @@ void CreateKhaelRoaSkeletons(aref loc) //Jason
 					{
 						sld = GetCharacter(NPC_GenerateCharacter(sIdf+"_skeleton_"+i, "Chavinavi_1", "skeleton", "skeleton", iRank+5, PIRATE, 1, false, "soldier"));
 						FantomMakeCoolFighter(sld, iRank+5, 80, 80, "topor_01", "", "", 50);
-						InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, true, 0.6); // RB Скелеты Калеуче чавинави
+						ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Калеуче чавинави
 						sld.KhaelRoaMonster = true;
 						sld.name = GetCharacterName("Chavinavi");
 						sld.lastname = "";
@@ -2593,7 +2595,7 @@ void CreateKhaelRoaSkeletons(aref loc) //Jason
 					{
 						sld = GetCharacter(NPC_GenerateCharacter(sIdf+"_skeleton_"+i, "skel"+(rand(3)+1), "skeleton", "skeleton", iRank, PIRATE, 1, false, "soldier"));
 						FantomMakeCoolFighter(sld, iRank, 60, 60, LinkRandPhrase("blade_10","blade_06","blade_04"), sPistol, "bullet", 50);
-						InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Скелеты Калеуче обычные
+						ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Скелеты Калеуче обычные
 						sld.name = GetCharacterName("TempleSkeleton");
 						sld.lastname = "";
 					}
@@ -2858,6 +2860,7 @@ void CreateBrothels(aref loc)
 					sld.dialog.filename = "Common_Brothel.c";
 					sld.dialog.currentnode = "Horse_talk";
 					sld.greeting = "whore";
+					sld.role = "whore";
 					switch (location.fastreload)
 					{
 						case "Marigo": 			sld.quest.price = 40*(rand(5) + rand(5)); 			break;
@@ -3710,6 +3713,7 @@ void CreateJail(aref loc)
  			sld.Dialog.Filename = "Common_prison.c";
 			sld.dialog.currentnode = "First_officer";
 			sld.greeting = "prisonboss_"+(rand(3)+1);
+			sld.role = "prisonboss";
 			FantomMakeCoolFighter(sld, iRank+5, 70, 50, BLADE_LONG, "pistol3", "grapeshot", 30);//спецназ
 			LAi_SetLoginTime(sld, 0.0, 24.0);
 			LAi_SetHuberType(sld);
@@ -3721,6 +3725,7 @@ void CreateJail(aref loc)
 				sld = GetCharacter(NPC_GenerateCharacter(loc.parent_colony+"JailSold_"+i, "sold_"+nShortName+"_"+(rand(7)+1), "man", "man", iRank, iNation, 2, true, "soldier"));
 				sld.City = loc.parent_colony;
 				sld.CityType = "soldier";
+				sld.role = "soldier_town";
 				sld.rank = iRank;
 				sld.Dialog.Filename = "Common_prison.c";
 				LAi_SetLoginTime(sld, 0.0, 24.0);
@@ -3935,6 +3940,7 @@ void CreateAmmo(aref loc) // Jason, оружейная
 			sld.Dialog.Filename = "Common_Ammo.c";
 			sld.dialog.currentnode = "First time";
 			sld.greeting = "comandante";
+			sld.role = "comandante";
 			LAi_SetLoginTime(sld, 0.0, 24.0);
 			LAi_SetHuberType(sld);
 			LAi_group_MoveCharacter(sld, slai_group);

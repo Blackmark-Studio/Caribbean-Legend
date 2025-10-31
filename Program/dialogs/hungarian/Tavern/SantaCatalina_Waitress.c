@@ -39,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			NextDiag.TempNode = "exit";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen helyteleníti.", "Helena");
+			Notification_Approve(false, "Helena");
 			AddDialogExitQuestFunction("HelenDrinking_WaitressSex");
 		break;
 
@@ -51,7 +51,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			NextDiag.TempNode = "exit";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Helen helyesel", "Helena");
+			Notification_Approve(true, "Helena");
 			AddDialogExitQuestFunction("HelenDrinking_WaitressNoSex");
 		break;
 	}

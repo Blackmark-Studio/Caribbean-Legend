@@ -189,3 +189,5 @@ TimeScale {Az idô felgyorsítása/lelassítása}
 TimeScaleFasterBA {Idô felgyorsítása}
 TimeScaleSlowerBA {Idô lassítása}
 FireCamera_Set {Célzási nézet}
+WMapDrawCircle {Ships nearby}
+InterfaceTakeAll {Mindel elvesz}

@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Helena_hire_3";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-			notification("海伦认可", "Helen");
+			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
 		
@@ -530,6 +530,7 @@ void ProcessDialogEvent()
 			LaunchFrameForm();
 			DoQuestCheckDelay("Saga_HelenaRomantic_5", 4.0);
 			pchar.questTemp.Saga.Helena_officer = "true"; // 标志, 埃伦永远是我们的
+			npchar.SpecialRole = "fgirl";
 			
 			pchar.GenQuest.BrothelCount = 0;
 			
@@ -2437,7 +2438,7 @@ void ProcessDialogEvent()
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-				notification("海伦不认可", "Helena");
+				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
 		break;
@@ -2658,7 +2659,7 @@ void ProcessDialogEvent()
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "你必须这样做吗, 船长? 为什么这么快就动手? 好吧, 大概不该评判胜利者。 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-						notification("海伦不认可", "Helena");
+						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "恭喜你, 我的船长, 在动手之前尝试明智地解决问题。 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
 					}
@@ -2670,7 +2671,7 @@ void ProcessDialogEvent()
 				case "B":
 					dialog.text = "你巧妙地愚弄了那些傻瓜, 我的船长! 我差点笑出来, 说真的! 来吧, 我们去看看宅邸; 这里也没什么别的可看了。 ";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("海伦认可", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "那艘被拖上岸的大船呢? ";
 					link.l1.go = "after_ambush_1";
@@ -2679,7 +2680,7 @@ void ProcessDialogEvent()
 				case "C":
 					dialog.text = "等一下, 让女孩喘口气! 你真的是查理.普林斯吗? ";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("海伦认可", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "我的传记中确实有那个时期, 是的。 你印象深刻吗? ";
 					link.l1.go = "after_ambush_c";
@@ -2725,7 +2726,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "谢谢你, 我的船长。 很高兴听到你这么说。 第二次听到尤其开心。 你很了解我。 ";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-				notification("海伦认可", "Helena");
+				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "谢谢你, 我的船长。 很高兴听到你这么说。 ";
 			}
@@ -2748,7 +2749,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "你认为我值得吗? 我从未在这种琐事上花过钱, 但我想凡事都有第一次。 我看你不会停止试图让我忘记大海, 是吗, 船长? 也许你是对的... ";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
-				notification("海伦不认可", "Helena");
+				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "你认为我值得吗? 我从未在这种琐事上花过钱, 但我想凡事都有第一次。 ";
 			}

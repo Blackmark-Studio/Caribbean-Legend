@@ -1434,12 +1434,13 @@ void HelenDrinking_AtSHDN(string qName) {
 	}
 	
 	sld = GetCharacter(NPC_GenerateCharacter("HelenDrinking_SDHN_OwnMush_0", "Alonso", "man", "man", iRank, FRANCE, -1, false, "soldier"));
-	sld.name = StringFromKey("HelenDrinking_15");
-	sld.lastname = StringFromKey("HelenDrinking_16");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.greeting = "hambit_other_4";
 	sld.dialog.FileName = "Quest\Saga\OtherNPC.c";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
+	ChangeCharacterAddressGroup(sld, "Shore55", "goto", "goto2");
 	LAi_SetActorType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	LAi_ActorFollowEverywhere(sld, "", -1);
@@ -1632,7 +1633,7 @@ void HelenDrinking_HelenKillFrancois_2(string qName)
 {
 	locCameraSleep(true);
 	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-	notification(StringFromKey("HelenDrinking_19"), "Helena");
+	Notification_Approve(true, "Helena");
 	
 	ChangeCharacterComplexReputation(pchar, "nobility", -10);
 	ChangeCharacterComplexReputation(pchar, "authority", -10);
@@ -1723,7 +1724,7 @@ void HelenDrinking_SetupDuel() {
 	EndQuestMovie();
 	LAi_group_Delete("EnemyFight");
 	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-	notification(StringFromKey("HelenDrinking_20"), "Helena");
+	Notification_Approve(false, "Helena");
 	pchar.questTemp.HelenDrinking.Duel = true;
 	
 	LAi_Fade("", "");
@@ -2078,6 +2079,9 @@ void HelenDrinking_AfterCaveFin() {
 	
 	WaitDate("", 0, 0, 1, 0, 0);
 	DoReloadCharacterToLocation("SantaCatalina_town", "reload", "houseSp3");
+	// ачивка Путана, если переспали с Мэри и Элен за одно прохождение
+	pchar.questTemp.SexWithGirl_Helena = true;
+	if (CheckAttribute(pchar, "questTemp.SexWithGirl_Helena") && CheckAttribute(pchar, "questTemp.SexWithGirl_Mary")) Achievment_Set("ach_CL_192");
 }
 
 void HelenDrinking_GivePotionsDlg() {
@@ -2164,7 +2168,7 @@ void HelenUpgradeShip2() {
 
 void HelenDrinking_GiveCutlass() {
 	pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-	notification(StringFromKey("HelenDrinking_19"), "Helena");
+	Notification_Approve(true, "Helena");
 	pchar.questTemp.HelenDrinking.GaveCutlass = true;
 	string item = GetCharacterGenerableItem(pchar, "pirate_cutlass");
 	TakeItemFromCharacter(pchar, item);

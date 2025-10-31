@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 25 doubloons per roll. His men will collect the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons.' Bald Geffrey has already delivered the first batch to Jamaica.";
+				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 5 doubloons per roll. His men will collect the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons.' Bald Geffrey has already delivered the first batch to Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 25 doubloons a roll. His men will receive the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. It took me more than two months to find such a buyer; Geffrey must have already sold the silk to smugglers. I am sorry, Marcus.";
+				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 5 doubloons a roll. His men will receive the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. It took me more than two months to find such a buyer; Geffrey must have already sold the silk to smugglers. I am sorry, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "I always have tasks for capable lads. There is a delicate matter I want you to deal with. There is a ship stationed in Capsterville, called the 'Snake', under the command of Geffrey Brooke, also known as Bald Geffrey. He works for me. An excellent fighter, knows everything about guns and blades, yet a complete idiot in every other aspect of life. But let's not be too hard on Baldy, no one is perfect, ha-ha! So. This tough guy attacked a Dutch convoy north of Saint Martin and captured a bark filled with sacks of wheat. Thing is, he managed to find hidden ship silk among the sacks. A really big cargo. This merchandise is extremely valuable and rare; the Dutch bring it from Europe solely for their military needs. This silk is used for special sails which increase a ship's speed and ability to sail by the wind. It is almost impossible to buy, selling it is not a problem but it is hard to find the right price. These goddamn traders always reduce the price! I am aware that there are people in the Caribbean who are ready to give a good price in doubloons to buy this silk, and your goal is to find such people. What? Any fool can plunder caravans, but trade is only for people with at least a sign of brains' existence in their skull. I am planning to sell ship silk on a monthly basis, so your goal is to find a regular buyer who will pay at least twenty golden doubloons for a roll. You have two months to do that, I cannot keep Bald Geffrey in Capsterville forever. That's all. Set sail to Capsterville and talk to Geffrey before he sells the cargo to smugglers for a penny. I've already told you that he is a bit 'simple'.";
+            dialog.text = "I always have tasks for capable lads. There is a delicate matter I want you to deal with. There is a ship stationed in Capsterville, called the 'Snake', under the command of Geffrey Brooke, also known as Bald Geffrey. He works for me. An excellent fighter, knows everything about guns and blades, yet a complete idiot in every other aspect of life. But let's not be too hard on Baldy, no one is perfect, ha-ha! So. This tough guy attacked a Dutch convoy north of Saint Martin and captured a bark filled with sacks of wheat. Thing is, he managed to find hidden ship silk among the sacks. A really big cargo. This merchandise is extremely valuable and rare; the Dutch bring it from Europe solely for their military needs. This silk is used for special sails which increase a ship's speed and ability to sail by the wind. It is almost impossible to buy, selling it is not a problem but it is hard to find the right price. These goddamn traders always reduce the price! I am aware that there are people in the Caribbean who are ready to give a good price in doubloons to buy this silk, and your goal is to find such people. What? Any fool can plunder caravans, but trade is only for people with at least a sign of brains' existence in their skull. I am planning to sell ship silk on a monthly basis, so your goal is to find a regular buyer who will pay at least 4 golden doubloons for a roll. You have two months to do that, I cannot keep Bald Geffrey in Capsterville forever. That's all. Set sail to Capsterville and talk to Geffrey before he sells the cargo to smugglers for a penny. I've already told you that he is a bit 'simple'.";
 			link.l1 = "Hm... Got it. Already on my way.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha! Here's the brave captain "+GetFullName(pchar)+"! What about the buyer?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 25 doubloons a roll. His men will collect the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. It took me more than two months to find such a buyer; Geffrey must have already sold the silk to smugglers. I'm sorry, Marcus.";
+				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 5 doubloons a roll. His men will collect the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. It took me more than two months to find such a buyer; Geffrey must have already sold the silk to smugglers. I'm sorry, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 25 doubloons a roll. His men will receive the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. Bald Geffrey has already delivered the first batch to Jamaica.";
+				link.l1 = "I've found you a buyer. He's a shipbuilder from Port Royal. He needs ship silk for his production and will be able to buy batches of one hundred rolls every month for 5 doubloons a roll. His men will receive the goods from the 10th to the 15th, at night, at Negril Cape. The password is 'A merchant of Lyons'. Bald Geffrey has already delivered the first batch to Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Bald Geffrey has sold your buyer the first batch of 105 rolls of ship silk. Since I was expecting to sell it for twenty doubloons a roll, I think it would be fair to give you the difference. That's my decision. Your share is 525 doubloons plus a bonus - a doubloon per roll. That makes 630 doubloons in total. Here, take them.";
+            dialog.text = "Bald Geffrey has sold your buyer the first batch of 105 rolls of ship silk. Since I was expecting to sell it for 4 doubloons a roll, I think it would be fair to give you the difference. That's my decision. Your share is 105 doubloons plus a bonus - a doubloon per roll. That makes 210 doubloons in total. Here, take them.";
 			link.l1 = "Thank you, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("You have received 630 doubloons");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "One more thing. You can make some extra profit from this.";
 			link.l1 = "Interesting... Go on.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Your buyer wants more than 100 rolls of silk to be delivered over the next two months. If you have any, then bring me 20 to 100 rolls for a price of 24 doubloons. The offer will stand for two months.";
+            dialog.text = "Your buyer wants more than 100 rolls of silk to be delivered over the next two months. If you have any, then bring me 20 to 100 rolls for a price of 5 doubloons. The offer will stand for two months.";
 			link.l1 = "Fine! I'll bring more if I have any.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Very good. Take the gold - 24 doubloons for a roll, as we agreed.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Very good. Take the gold - 5 doubloons for a roll, as we agreed.";
 			link.l1 = "Gratitude!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "I'll take a hundred rolls. Take the gold - 24 doubloons per roll, as we agreed.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "I'll take a hundred rolls. Take the gold - 5 doubloons per roll, as we agreed.";
 			link.l1 = "Gratitude!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;

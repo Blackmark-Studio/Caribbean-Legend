@@ -14,18 +14,12 @@ Perception
 {
 Aufmerksame Piraten können Scharfschützen, Geheimagenten und Kanoniere sein.~Beeinflusst die Fertigkeiten 'Genauigkeit' und 'Tarnung'.
 }
-Agility
-{
-Flinke Piraten sind oft die besten Kandidaten für die Rolle der Vorhut oder des Bootsmannes, denn ihre Stärke ist das Entern.Beeinflusst 'Leichte Waffen', 'Mittlere Waffen', 'Entern' und 'Schusswaffen'.~Bestimmt die maximale Menge an Ausdauer.
-}
+Agility {Koordination der Bewegungen und Geschicklichkeit der Hände. ~ Beeinflusst: „Entern“, „Leichte Waffen“, „Mittlere Waffen“, „Pistolen und Musketen“ sowie die Energiemenge, die pro Rang gewonnen wird.}
 Charisma
 {
 Charismatische Piraten sind natürliche Anführer, Verhandlungsführer und Zahlmeister. Ein geborener Anführer braucht keine Gewalt, um den Händlern ihre Waren abzunehmen, sie werden ihm alles geben, ohne sich zu wehren. Die besten Seeleute werden ihm folgen und die schönsten Frauen werden in jedem Hafen auf seine Ankunft warten.~Wirkt sich auf 'Führung' und 'Handel' aus.Bestimmt, wie viele Offiziere Sie einstellen können (A*2).
 }
-Intellect
-{
-Kluge Piraten lernen schnell und haben eine große Auswahl an Karrieremöglichkeiten: Chirurgen, Kanoniere und Navigatoren.~Wirkt sich auf 'Handel', 'Kanonen' und 'Navigation' aus.Bestimmt, wie schnell ihr Stufen und Vorteile erhaltet.
-}
+Intellect {Angeborene Neigungen und Fähigkeiten, Scharfsinn und die Fähigkeit, sich schnell anzupassen. ~ Beeinflusst „Handel“, „Artillerie“, „Navigation“ und die Energiemenge, die pro Rang gewonnen wird.}
 Endurance
 {
 Unverwüstliche Piraten glänzen als Zimmerleute und Chirurgen.~Wirkt sich auf 'Reparaturen' und 'Verteidigung' aus.Wie (P), bestimmt die maximalen HP und die maximale Inventarkapazität.
@@ -36,27 +30,45 @@ Glückspiraten sind perfekte Schützen, Glücksspieler und Abenteurer.~'Feuerw
 }
 Crit
 {
-Die Wahrscheinlichkeit, einen kritischen Treffer zu landen, hängt von der Kombination aus ausgerüsteten Gegenständen, Vorteilen und Attributen ab.~(S) bestimmt die Chance auf einen kritischen Nahkampfangriff.Die (S)- und (I)-Werte bestimmen die Chance auf einen kritischen Schuss.~Die Ausrüstung des Gegners und seine Perks können deine kritische Trefferchance verändern.
+Grundwahrscheinlichkeit, dem Feind einen kritischen Treffer oder Schuss zuzufügen.
+~
+Hängt von S und P ab.
+~
+Perks und Ausrüstung können diese Chance erhöhen.
 }
 CharDefence
 {
-Basisindikatoren für den Schutz vor Nahkampfwaffen / Schusswaffen / kritischen Treffern des Gegners~Die Leistung hängt von den persönlichen Fähigkeiten und der Ausrüstung ab~Sie passen sich nicht an die Fähigkeiten und die Ausrüstung des Gegners an.
+Grundwerte der Schadensabwehr. Verringern den gesamten eingehenden Schaden um einen bestimmten Prozentsatz.
+ ~
+ Diese Werte werden von persönlichen Perks und Ausrüstung beeinflusst.
 }
 FencingL
 {
-Fähigkeit im Umgang mit leichten Klingen, Floretts und dergleichen. (R*0.9+I*0.1)
+Fertigkeit im Umgang mit leichten Klingen, Floretten und ähnlichen Waffen.
+ (R*0.9+I*0.1)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 FencingS
 {
-Fähigkeit im Umgang mit mittelgroßen, vielseitig ausbalancierten Klingen, wie z. B. Säbeln, die sowohl Kraft als auch Beweglichkeit erfordern. (P*0.6+R*0.4)
+Fertigkeit im Umgang mit mittelgroßen, ausgewogenen Klingen wie Säbeln, die Kraft und Geschicklichkeit erfordern.
+ (P*0.6+R*0.4)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 FencingH
 {
-Fähigkeit, mit schweren Waffen wie Breitschwertern und Äxten umzugehen. Erfordert viel körperliche Kraft. (P*0.9+E*0.1)
+Fertigkeit im Umgang mit schweren Waffen wie Breitschwertern und Äxten. Erfordert große körperliche Stärke.
+ (P*0.9+E*0.1)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
 Pistol
 {
-Beherrschung aller Arten von Feuerwaffen.(R*0.4+S*0.6)
+Fertigkeit im Umgang mit allen Arten von Schusswaffen.
+ (R*0.4+S*0.6)
+ ~
+ Beeinflusst Schaden und Nachladegeschwindigkeit.
 }
 Fortune
 {
@@ -80,7 +92,18 @@ Ladet die Kanone schnell, rollt sie auf und während das Echo der Salve noch zwi
 }
 Sailing
 {
-Die Fähigkeit, das Schiff durch Sturm und Nebel sicher in den Hafen zu bringen; die Fertigkeit, Navigationsgeräte zu benutzen und die Flotte zu steuern. Das größte und furchterregendste Schiff wird wie ein Vogel fliegen und der ruhigen Hand eines erfahrenen Navigators gehorchen. (I*0.2+T*0.8)~Fehlende Navigation führt zu Abzügen bei allen Fähigkeiten und Werten.Klasse 1 Schiffe erfordern 95Klasse 2 Schiffe erfordern 80Klasse 3 Schiffe erfordern 65Klasse 4 Schiffe erfordern 45Klasse 5 Schiffe erfordern 25Klasse 6 Schiffe erfordern 05Unzureichende Navigation führt zu Abzügen bei allen Fähigkeiten und Eigenschaften des Helden. Je größer der Unterschied zwischen aktuellem und erforderlichem Navigationswert, desto stärker die Abzüge.
+Fähigkeit, ein Schiff unter allen Bedingungen zu führen, Instrumente zu bedienen und eine Eskadron zu kommandieren. Selbst das launischste und unbeweglichste Schiff gehorcht der ruhigen Hand eines erfahrenen Skippers.
+ Hängt von 'Wahrnehmung' und 'Talent' ab (I0.2 + T0.8)
+ ~
+ Um ein Schiff einer bestimmten Klasse zu führen, ist ein entsprechendes Mindestniveau der Navigation erforderlich:
+ Klasse 1 erfordert 90
+ Klasse 2 erfordert 70
+ Klasse 3 erfordert 55
+ Klasse 4 erfordert 40
+ Klasse 5 erfordert 20
+ Klasse 6 erfordert 01
+ ~
+ Ein Mangel an Navigation führt zu Strafen auf alle Fertigkeiten und Attribute des Helden. Je größer die Differenz zwischen aktuellem und erforderlichem Navigationswert ist, desto stärker die Strafen.
 }
 Repair
 {
@@ -88,7 +111,10 @@ Wenn der Feind Ihr Schiff mit einer Salve von Kanonenkugeln stürmt, die Seitenw
 }
 Grappling
 {
-Ein Schiff auf das feindliche Schiff auszurichten, die Haken zu schleudern, um den zitternden Feind zu entern, die Decks zu säubern und das Schiff als wohlverdiente Beute an sich zu nehmen - das erfordert viel Geschick und Erfahrung, aber die Beute entschädigt sicher für alle Mühen. (R*0.7+T*0.3)
+Das eigene Schiff mit dem feindlichen ausrichten, die Enterhaken werfen, den zitternden Gegner entern, die Decks säubern und das Schiff als wohlverdiente Beute nehmen – das erfordert große Beweglichkeit und Erfahrung, aber die Beute wird die Mühe sicher wettmachen.
+ (R*0.7+T*0.3)
+ ~
+ Beeinflusst die Enterdistanz.
 }
 Defence
 {
@@ -110,25 +136,46 @@ Attention_abilities
 {
 Achtung!Einige Fähigkeiten sind möglicherweise nicht verfügbar für bestimmte Arten von Protagonisten oder Offizieren.
 }
-Personal_abilities {Vorteile, die auf den Charakter ausgerichtet sind.}
+Personal_abilities
+{
+Perks, die die persönlichen Fähigkeiten des Charakters erweitern. Fortschritt wird erzielt, wenn persönliche Fertigkeiten verbessert werden.
+ ~
+ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für persönliche Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
+}
 Ship_abilities
 {
-Vorteile, die sich auf das Schiff konzentrieren.Die angeheuerten Offiziere können sich um die meisten von ihnen kümmern, so dass der Kapitän Prioritäten setzen kann.
+Perks, die die Schiffsführung beeinflussen. Fortschritt wird erzielt, wenn Schiffsfertigkeiten verbessert werden.
+ ~
+ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für Schiffs-Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
+ ~
+ Sie können vom Hauptcharakter von Offizieren geerbt werden, die auf Schiffsposten eingesetzt sind und ihr Handwerk verstehen.
 }
 Abilities_available {Die Zahl gibt die Anzahl der nicht zugewiesenen Vorteilspunkte an.}
 Abilities_active {Die Zahl gibt an, welche Vorteile ein Charakter aktiviert hat.}
 Rank
 {
-Der Rang gibt an, wie weit die Spielfigur im Spiel fortgeschritten ist. Er steigt mit der Erfahrung des Helden. Wenn der Rang des Helden steigt, erhöht sich auch sein Leben um eine Zahl, die auf dem Ausdauerwert basiert.~Je höher der Rang des Helden ist, desto öfter trifft er auf stärkere Gegner und findet bessere Gegenstände.
+Der Rang ist ein Maß für das Entwicklungsniveau einer Figur im Spiel. Fortschritt wird erzielt, wenn Fertigkeiten verbessert werden.
+ ~
+ Mit steigendem Rang des Charakters erhöhen sich seine Lebenspunkte und Energie, und stärkere Gegner sowie neue Gegenstände treten häufiger auf.
 }
 Life
 {
-Null HP bedeutet den Tod. Ein HP bedeutet die Welt der Möglichkeiten.~(E) bestimmt, wie viele Bonus-HP mit jeder neuen Stufe gewährt werden.
+HP — ein Maß für die Widerstandsfähigkeit eines Charakters gegen physische Schäden. Null bedeutet Tod, eins bedeutet eine Welt voller Möglichkeiten.
+ ~
+ Der Wert hängt von P und E ab und wächst mit dem Rang.
 }
 Health {Die Vitalität ist der Indikator für den körperlichen Zustand des Charakters. Sie sinkt jedes Mal, wenn du in kurzer Zeit schwer verwundet wirst. Sie erholt sich wieder, wenn du den Kampf für einige Zeit meidest, damit die Wunden richtig heilen können. Sie kann die Werte und Fertigkeiten stark beeinträchtigen, wenn sie nicht beachtet wird.}
 Energy
 {
-Energie ist ein wichtiger Parameter, der die Ausdauer des Helden während des Nahkampfes bestimmt, da jeder Angriff auf sie zurückgreift. Einfach ausgedrückt: Der Kampf ermüdet den Charakter, so dass er sich ausruhen muss, um seine Ausdauer wiederherzustellen.~(R) bestimmt deine maximale Energiemenge.
+Energie - der Vorrat an körperlicher Ausdauer eines Charakters.
+ 
+  ~
+ 
+  Alle Angriffsaktionen und das Sprinten im Nahkampf verbrauchen Energie; im Kampf ermüdet der Charakter und benötigt eine Pause zur Erholung.
+ 
+  ~
+ 
+  Der Energie-Wert hängt von R und T ab und steigt mit dem Rang.
 }
 Money {Geld ist der König aller Menschen. Piaster, Taler, Guineen... Wo ist der Unterschied, wenn es sich um flüssiges Geld handelt!}
 Reputation
@@ -141,7 +188,10 @@ Ehre strebt immer zu einem neutralen Zustand.
 }
 Weight
 {
-Das maximale Gewicht, das ein Charakter tragen kann, ohne an Bewegungsgeschwindigkeit zu verlieren oder andere Abzüge bei seinen Fertigkeiten zu erhalten.Hängt von (P) und (E) ab.
+Das Gewicht ist die maximale Gesamtmasse an Fracht, die eine Figur tragen kann.
+ Hängt von Stärke, Ausdauer, persönlichen Perks und aktiven Amuletten ab.
+ ~
+ Ein überladener Charakter bewegt sich langsamer, erleidet Strafen und kann kein Schnellreisen verwenden.
 }
 Title {Der Titel gibt an, wie nützlich die Figur für den Staat ist, dem sie dient.}
 NextExp
@@ -224,7 +274,7 @@ Der klassische Modus ist für Spieler geeignet, die sich auf die Geschichte der 
 }
 SourceBase {Grundstufe}
 SourceAdmiral {Admiral}
-SourceOfficer {Vertretender Offizier}
+SourceOfficer {Offiziersbonus}
 SourceAccountant {Zahlmeister}
 SourceMangarosa {Mangarosa-Trank}
 SourceHealth {Vitalstatus}
@@ -233,3 +283,17 @@ SourceQuest {Einzigartige Situation}
 SourceAlco {Berauschend}
 SourceOverload {Überladen}
 SourceNavyPenalty {Navigationsfertigkeit unzureichend}
+CritDamage
+{
+Höhe des kritischen Schadens. Wird nach allen Modifikatoren angewendet.
+ ~
+ Kann durch persönliche Perks und Ausrüstung erhöht werden.
+}
+CritCharDefence
+{
+Gesamtreduktion des gegnerischen kritischen Schadens.
+ ~
+ Kann durch persönliche Perks und Ausrüstung erhöht werden.
+}
+SourceSkill {Fähigkeit}
+SourceChickenGod {Segen von Aruba}

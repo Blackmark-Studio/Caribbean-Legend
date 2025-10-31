@@ -14,18 +14,12 @@ Perception
 {
 (Intuición) Cómo ves y oyes. Si careces de esta característica, tus balas irán a cualquier lado menos a tu objetivo. ~Las destrezas "Precisión" y "Sigilo" requieren de esta característica.
 }
-Agility
-{
-(Reacción) La coordinación y agilidad. Los que carezcan de esta destreza no podrán sacar la espada lo suficientemente rápido. Esta característica es necesaria para la destreza de "Armas ligeras", "Armas medias", "Armas de fuego" y "Abordaje". ~Determina la cantidad máxima de "Energía".
-}
+Agility {Coordinación de movimientos y destreza de las manos. ~ Afecta a: 'Abordaje', 'Armas ligeras', 'Armas medias', 'Pistolas y Mosquetes' y la cantidad de energía ganada por rango.}
 Charisma
 {
 (Autoridad) Es el resultado de tener un rostro masculino y apuesto con cicatrices y una retórica persuasiva. Un líder no tiene que hacer uso de la violencia para apoderarse de los bienes de los mercaderes, se lo darán todo prácticamente gratis. Los mejores hombres lo seguirán y las mujeres más hermosas lo esperarán en cada puerto. ~Las destrezas "Liderazgo" y "Comercio" requieren de esta característica. Determina cuántos oficiales puedes contratar (Autoridad*2).
 }
-Intellect
-{
-(Talento) Es la capacidad de obtener conocimiento, sabiduría y tomar decisiones correctas en poco tiempo. Una persona talentosa necesita menos tiempo para recargar los cañones y no tendrá ningún problema para contratar más hombres a un menor precio. Podrás usar las herramientas de navegación de forma más sencilla.~Las destrezas "Comercio", "Cañones" y "Navegación" requieren de esta característica. Lo más importante es que determina la rapidez con la que ganas "Rango" y desbloqueas puntos de "habilidad".
-}
+Intellect {Inclinaciones y aptitudes innatas, ingenio y capacidad de adaptarse rápidamente a las situaciones. ~ Afecta al “Comercio”, “Artillería”, “Navegación” y la cantidad de energía ganada por rango.}
 Endurance
 {
 (Aguante) Es la clave para sobrevivir ante piratas, clientes y caza fortunas. ~Las destrezas "Reparación" y "Defensa" requieren de esta característica. Determina los puntos de "Vida" y el peso máximo.
@@ -36,27 +30,45 @@ Luck
 }
 Crit
 {
-Probabilidad básica de infligir un golpe/disparo crítico al enemigo.~Los indicadores están influidos por:Suerte, destrezas personales y equipo: golpe críticoSuerte e Intuición: disparo crítico (solo para armas raras y de alta calidad)~Las habilidades y el equipamiento del enemigo pueden reducir significativamente este parámetro.
+Probabilidad base de infligir un golpe o disparo crítico al enemigo.
+~
+Depende de S y P.
+~
+Los Perks y el equipo pueden aumentar esta probabilidad.
 }
 CharDefence
 {
-Indicadores básicos de protección contra armas blancas, armas de fuego y golpes críticos.~El rendimiento se ve afectado por las destrezass personales y el equipamiento.~No se ajustan a las destrezas y equipamiento del enemigo.
+Estadísticas básicas de Protección contra daño. Reducen todo el daño recibido en un porcentaje específico.
+ ~
+ Los valores se ven afectados por los Perks personales y el equipo.
 }
 FencingL
 {
-Capacidad para manejar armas ligeras, principalmente estoques y armas mortales pequeñas. Depende de: "Reacción" e "Intuición". (R*0,9+I*0,1)
+Habilidad para manejar espadas ligeras, floretes y similares.
+ (R*0.9+I*0.1)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 FencingS
 {
-Capacidad para manejar armas medias, como los sables, armas que no solo necesitan fuerza sino también pericia. Depende de: "Poder" y "Reacción". (P*0,6+R*0,4)
+Habilidad para manejar hojas medianas y equilibradas, como sables, que requieren fuerza y agilidad.
+ (P*0.6+R*0.4)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 FencingH
 {
-Capacidad para manejar armas pesadas, como espadas anchas y hachas. Se necesita de mucha fortaleza física. Depende de: "Poder" y "Aguante". (P*0,9+E*0,1)
+Habilidad para manejar armas pesadas como espadones y hachas. Requiere mucha fuerza física.
+ (P*0.9+E*0.1)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
 Pistol
 {
-Destreza en el uso de todo tipo de armas de fuego manuales. Depende de: 'Reacción' y 'Suerte' (R*0,5+S*0,6)
+Habilidad para usar todo tipo de armas de fuego.
+ (R*0.4+S*0.6)
+ ~
+ Afecta al daño y a la velocidad de recarga.
 }
 Fortune
 {
@@ -80,7 +92,18 @@ Cañones: ¡Venga, rápido! ¡Prepara y coloca el cañón! Antes de que te dejen
 }
 Sailing
 {
-Navegación: Saber llevar un barco a puerto, ya sea durante una tormenta o a través de la niebla. También consiste en leer los instrumentos de navegación y estar al mando de una escuadra. Cualquier barco en manos de un buen capitán volará como un pájaro. Depende de: "Talento" e "Intuición". (T*0,8+I*0,2)~Controlar un barco superior a tu destreza en navegación conlleva penalizaciones en todas las destrezas y características del héroe. La clase 1 necesita 95 puntos  La clase 2 necesita 80 puntos La clase 3 necesita 65 puntos La clase 4 necesita 45 puntos La clase 5 necesita 25 puntos La clase 6 necesita 05 puntoPenalización: La diferencia entre el nivel de navegación actual y el necesario para controlar el barco se restará de todas las "destrezas" del capitán. Además, la diferencia en la clase del barco se restará de las "características" del jugador.
+Capacidad para conducir una embarcación en cualquier condición, utilizar los instrumentos y comandar una escuadra. Incluso la embarcación más caprichosa y poco maniobrable obedecerá la mano firme de un patrón experimentado.
+ Depende de 'Percepción' y 'Talento' (I0.2 + T0.8)
+ ~
+ Para gobernar una embarcación de cierta clase se requiere un nivel mínimo de Navegación correspondiente:
+ clase 1 requiere 90
+ clase 2 requiere 70
+ clase 3 requiere 55
+ clase 4 requiere 40
+ clase 5 requiere 20
+ clase 6 requiere 01
+ ~
+ La falta de Navegación conduce a penalizaciones en todas las habilidades y atributos del héroe. Cuanto mayor sea la diferencia entre el valor actual y el requerido de Navegación, más severas serán las penalizaciones.
 }
 Repair
 {
@@ -88,7 +111,10 @@ Reparación. Cuando te llueven las balas enemigas que hacen polvo la cubierta y 
 }
 Grappling
 {
-Abordaje: Para saber colocar el barco cerca de la cubierta enemiga, lanzar la pasarela a la primera, arremeter contra el aterrorizado enemigo, arrasar las cubiertas con la fuerza de un huracán y conseguir el merecido premio, hacen falta maña y experiencia. Aun así, el tamaño del botín compensa el esfuerzo. Depende de: "Reacción" y "Talento". (R*0,7+T*0,3)
+Alinear el barco con el buque enemigo, lanzar los garfios para abordar al tembloroso adversario, limpiar las cubiertas y tomar el barco como premio merecido — todo esto requiere gran agilidad y experiencia, pero el botín sin duda compensará todo el esfuerzo.
+ (R*0.7+T*0.3)
+ ~
+ Afecta la distancia de abordaje.
 }
 Defence
 {
@@ -110,20 +136,33 @@ Attention_abilities
 {
 ¡Atención!Algunas habilidades pueden no estar disponibles para elarquetipo de protagonista u oficiales seleccionados.
 }
-Personal_abilities {Las habilidades amplían las capacidades de tu personaje.}
+Personal_abilities
+{
+Perks que amplían las capacidades personales del personaje. Se progresa al subir los niveles de habilidades personales.
+ ~
+ Al alcanzar un umbral, obtienes un nuevo punto de Perk personal. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
+}
 Ship_abilities
 {
-Habilidades que afectan a la eficacia del control de la nave.Pueden ser adquiridas por el protagonista si los oficiales se asignan a los puestos del barco que mejor se ajusten a sus habilidades.
+Perks que afectan a la gestión del barco. Se progresa al subir los niveles de habilidades navales.
+ ~
+ Al alcanzar un umbral, obtienes un nuevo punto de Perk naval. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
+ ~
+ Pueden heredarse por el protagonista de los oficiales asignados a los puestos del barco que dominan su oficio.
 }
 Abilities_available {El número muestra los puntos de habilidad no asignados.}
 Abilities_active {El número muestra el número de habilidades que tiene el personaje.}
 Rank
 {
-Rango: Es el nivel de desarrollo del personaje en el juego. A medida que aumentan la destreza, también lo hace el rango. Al subir el rango también aumenta la vida del personaje, dependiendo del "Aguante". ~Cuando el personaje suba de rango, atraerá a enemigos más fuertes y conseguirá objetos más sofisticados.
+El rango es un indicador del nivel de desarrollo del personaje en el juego. Se progresa al subir los niveles de habilidades.
+ ~
+ A medida que aumenta el rango del personaje, crecen su Salud y Energía, y comienzan a aparecer con mayor frecuencia enemigos más fuertes y nuevos objetos.
 }
 Life
 {
-La vida es un parámetro que determina la firmeza del personaje frente al daño físico. Cuanto mayor sea la vida del personaje, más heridas cortantes, perforantes y de bala podrá recibir antes de morir.~A medida que aumenta el rango del héroe, también aumenta su Vida, en función de su "Aguante".
+HP — medida de la resistencia de un personaje al daño físico. Cero significa muerte, uno significa un mundo de posibilidades.
+ ~
+ El valor depende de P y E y crece con el rango.
 }
 Health
 {
@@ -131,7 +170,15 @@ Salud: Es la condición física general del héroe. Cuanto peor sea la salud, m�
 }
 Energy
 {
-Energía: Es la resistencia del personaje en combate cuerpo a cuerpo. Todos los ataques gastan una cierta cantidad de energía. Si el personaje se cansa durante el combate, tendrá que tomarse un respiro para recuperar la energía.~La cantidad máxima de energía del héroe depende de su nivel de "Reacción".
+Energía - la reserva de resistencia física del personaje.
+ 
+  ~
+ 
+  Todas las acciones ofensivas y la carrera rápida en combate cuerpo a cuerpo consumen Energía; durante la lucha el personaje se cansa y necesita un respiro para recuperarse.
+ 
+  ~
+ 
+  El valor de Energía depende de R y T y aumenta con el rango.
 }
 Money {Dinero: ¡A todos nos gusta el dinero y por eso lo queremos! Doblones, piastras, táleros, guineas... ¿Qué más da? ¡Todo es oro!}
 Reputation
@@ -144,7 +191,10 @@ Siempre tiende a volver a un estado neutral.
 }
 Weight
 {
-Peso: Es el peso máximo que puede cargar el personaje antes de perder movilidad y sufrir penalizaciones a su destreza. Depende del "Poder" y el "Aguante", así como del nivel de dificultad del juego.~ Si vas sobrecargado te moverás a un ritmo extremadamente lento.
+El peso es la masa total máxima de carga que un personaje puede transportar.
+ Depende de Fuerza, Resistencia, Perks personales y amuletos activos.
+ ~
+ Un personaje sobrecargado se mueve más despacio, recibe penalizaciones y no puede usar el viaje rápido.
 }
 Title {Título honorífico que indica los beneficios que el personaje aporta a la nación que sirve.}
 NextExp
@@ -230,7 +280,7 @@ El modo Clásico es adecuado para los jugadores que quieran centrarse en la hist
 }
 SourceBase {Nivel básico}
 SourceAdmiral {Almirante}
-SourceOfficer {Oficial interino}
+SourceOfficer {Bono Oficial}
 SourceAccountant {Tesorero}
 SourceMangarosa {Poción de mangarosa}
 SourceHealth {Estado de salud}
@@ -239,3 +289,17 @@ SourceQuest {Situación única}
 SourceAlco {Embriagante}
 SourceOverload {Sobrecargado}
 SourceNavyPenalty {Prueba de Navegación fallida}
+CritDamage
+{
+Cantidad de daño crítico. Se aplica después de todos los modificadores.
+ ~
+ Puede aumentarse mediante Perks personales y equipo.
+}
+CritCharDefence
+{
+Reducción total del daño crítico enemigo.
+ ~
+ Puede aumentarse mediante Perks personales y equipo.
+}
+SourceSkill {Habilidad}
+SourceChickenGod {Bendición de Aruba}

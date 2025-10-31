@@ -40,7 +40,7 @@ WorkWithContra_t1 {Dicono che #sPsHero_Name# ha portato con sé l'intera merce d
 WorkWithContra_t2 {Ho sentito #sPsHero_Name# parlando con il nostro contrabbandiere. Hanno deciso di incontrarsi in un posto chiamato #sContraPlace#.}
 DuelCoward_t0 {Che peccato! #sName# non si è presentato al duello. Adesso tutti dicono che è un codardo!}
 DuelCoward_t1 {Ha-ha, #sName# non si è presentato al duello! Non credo che avrà lo stesso successo con le donne che aveva prima d'ora.}
-DuelCoward_t2 {L'hai sentito? #sName# non si è presentato al duello! Dicono che fosse mortalmente ubriaco e semplicemente non potesse reggersi sulle gambe.}
-DuelHero_t0 {Lo sai che #sName# è un duellante di prim'ordine? Ha già ucciso #sKill# uomini. Non vorrei mettermi sulla sua strada.}
+DuelCoward_t2 {Hai sentito? #sName# non si è presentato al duello! Si dice che ieri sera si sia ubriacato così tanto da non riuscire nemmeno ad alzarsi.}
+DuelHero_t0 {Sai che #sName# è un duellante esperto? Ha già ucciso #sKill# persone. Non vorresti trovarti sulla sua strada.}
 DuelHero_t1 {Dicono che #sName# ha venduto la sua anima al diavolo, ed è per questo che non può essere battuto in duello! E le anime di coloro che uccide... le ha già uccise #sKill# uomini, e andranno dritti all'Inferno! Dicono anche che se metterà fine alla sua follia omicida, il diavolo reclamerà la sua stessa anima.}
 DuelHero_t2 {Quel nuovo arrivato #sName# è incredibilmente fortunato! Ha già ucciso #sKill# uomini in un duello e non si sono mai fatti un graffio! Davvero, riesci a crederci?}

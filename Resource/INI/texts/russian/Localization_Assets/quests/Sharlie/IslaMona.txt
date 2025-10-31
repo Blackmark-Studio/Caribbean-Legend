@@ -5,7 +5,7 @@ IslaMona_4 {Родриго Хименес подготовил очередну�
 IslaMona_5 {Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок рома}
 IslaMona_6 {Вы отдали @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> бутылок вина}
 IslaMona_7 {На ваш склад загружено @<sti(pchar.questTemp.IslaMona.Factory.Goods)> бревен бакаута}
-IslaMona_8 {Алонсо}
+IslaMona_8 { }
 IslaMona_9 { }
 IslaMona_10 {Франсиско}
 IslaMona_11 {де Альба}

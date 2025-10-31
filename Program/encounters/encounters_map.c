@@ -1,4 +1,10 @@
 #define ENCOUNTER_GROUP		"egroup__"
+int iEncStamp = 0;
+int GetEncStamp()
+{
+    iEncStamp++; // overflow allowed
+    return iEncStamp;
+}
 
 int FindFreeMapEncounterSlot()
 {
@@ -37,6 +43,7 @@ void ManualReleaseMapEncounter(int iEncounterSlot)
 
 void ReleaseMapEncounters()
 {
+    if (wdmLockRelease) return;
 	for (int i=0;i<MAX_MAP_ENCOUNTERS;i++)
 	{
 		DeleteAttribute(&MapEncounters[i],"");
@@ -76,6 +83,7 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 	iEncounter1 = -1;
 	iEncounter2 = -1;
 
+    bool bSetGrp = true;
 	bool bReturn = false;
 
 	if (sIslandID != "" && !Island_IsEncountersEnable(sIslandID)) return false;
@@ -89,6 +97,7 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 			bReturn = GenerateMapEncounter_War(sIslandID, iEncounter1, true);
 		break;
 		case WDM_ETYPE_WARRING:			// war-war or war-trade ships in battle; TO_DO: trade-trade
+            bSetGrp = false;
 			bReturn = GenerateMapEncounter_Battle(sIslandID, iEncounter1, iEncounter2);
 		break;
 		case WDM_ETYPE_SPECIAL:			// barrel or shipwreck
@@ -106,7 +115,8 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 	if (iEncounter1 != -1)
 	{
 		rEncounter1 = &MapEncounters[iEncounter1];
-		rEncounter1.GroupName = ENCOUNTER_GROUP + iEncounter1;
+        if(bSetGrp)
+            rEncounter1.GroupName = ENCOUNTER_GROUP + GetEncStamp();
 		if(sti(rEncounter1.nation) == PIRATE)
 		{
             // ~!~
@@ -121,7 +131,8 @@ bool GenerateMapEncounter(int iMapEncounterType, string sIslandID, ref iEncounte
 	if (iEncounter2 != -1)
 	{
 		rEncounter2 = &MapEncounters[iEncounter2];
-		rEncounter2.GroupName = ENCOUNTER_GROUP + iEncounter2;
+        if(bSetGrp)
+            rEncounter2.GroupName = ENCOUNTER_GROUP + GetEncStamp();
 		if(sti(rEncounter2.nation) == PIRATE)
 		{
             // ~!~
@@ -224,6 +235,7 @@ bool GenerateMapEncounter_Merchant(string sIslandID, ref iEncounter)
 	rEncounter.Type = "trade";
 
 	rEncounter.Task = AITASK_MOVE;
+    DeleteAttribute(rEncounter, "Task.Target");
 	// create move point coordinates here
 
 	WME_FixShipTypes(rEncounter, 12); //boal
@@ -255,6 +267,7 @@ bool GenerateMapEncounter_Special(string sIslandID, ref iEncounter)
 	rEncounter.Type = "special";
 
 	rEncounter.Task = AITASK_MOVE;
+    DeleteAttribute(rEncounter, "Task.Target");
 
 	WME_FixShipTypes(rEncounter, 12); //boal
 	return GenerateMapEncounter_SetMapShipModel(rEncounter);
@@ -451,15 +464,18 @@ bool GenerateMapEncounter_Battle(string sIslandID, ref iEncounter1, ref iEncount
 	}
     WME_FixShipTypes(rEncounter2, 12);
 
+    rEncounter1.GroupName = ENCOUNTER_GROUP + GetEncStamp();
+    rEncounter2.GroupName = ENCOUNTER_GROUP + GetEncStamp();
+
 	rEncounter1.Lock = true;
 	rEncounter1.bUse = true;
 	rEncounter1.Task = AITASK_ATTACK;
-    rEncounter1.Task.Target = ENCOUNTER_GROUP + iEncounter2;
+    rEncounter1.Task.Target = rEncounter2.GroupName;
 
     rEncounter2.Lock = true;
     rEncounter2.bUse = true;
 	rEncounter2.Task = AITASK_ATTACK;
-    rEncounter2.Task.Target = ENCOUNTER_GROUP + iEncounter1;
+    rEncounter2.Task.Target = rEncounter1.GroupName;
 
 	GenerateMapEncounter_SetMapShipModel(rEncounter1);
 	GenerateMapEncounter_SetMapShipModel(rEncounter2);
@@ -471,7 +487,7 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
 {
     int iNation = sti(rEncounter.Nation);
     int iEType  = sti(rEncounter.RealEncounterType);
-    ref rEncTemplate = &EncountersTypes[iEType];
+    //ref rEncTemplate = &EncountersTypes[iEType];
 
     // Общая классификация для уведомлений
     int iNumMerchantShips = 0;
@@ -480,51 +496,95 @@ void WME_FixShipTypes(ref rEncounter, int iMaxShipNum)
     string sAttr;
     int count = 0;
     int cMin, cMax;
-    int iShipType, i, j, max_i, qty_j;
-    aref rEncShips, rShip;
+    int iShipType, i, j, qty_j;
+    //aref rEncShips, rShip;
     float fPower = 0.0;
 
-    makearef(rEncShips, rEncTemplate.Ships);
-    max_i = GetAttributesNum(rEncShips);
-    for(i = 0; i < max_i; i++)
+    //makearef(rEncShips, rEncTemplate.Ships);
+    //int max_i = GetAttributesNum(rEncShips);
+    
+    if (iEType < WorldMapRandomEncQty)
     {
-        rShip = GetAttributeN(rEncShips, i);
-        qty_j = sti(rShip.qMin) + rand(sti(rShip.qMax) - sti(rShip.qMin));
-        cMin = sti(rShip.cMin);
-        cMax = sti(rShip.cMax);
-        for(j = 0; j < qty_j; j++)
+        string sType, sCurSpec;
+        int BitParams;
+        int RandParams = ENC_RANDOM_PARAMS[iEType];
+        bool bRand = and(RandParams, 15); // Есть ли рандом
+        bool bWasRand = false; // Если есть рандом, то был ли он
+        for(i = 0; i < 4; i++)
         {
-            if(count+1 > iMaxShipNum) break;
-
-            iShipType = WME_GetShipTypeExt(cMin, cMax, rShip.Type, rShip.ShipSpec, iNation, false); // ~!~ TO_DO: true
-            if (iShipType == INVALID_SHIP_TYPE) continue;
-
-            count++;
-            sAttr = count;
-            rEncounter.ShipTypes.(sAttr) = iShipType;
-            fPower += GetBaseShipPower(iShipType);
-            bool bTrade = (sti(rShip.ShipSpec) == SHIP_SPEC_UNIVERSAL) && (rEncounter.type == "trade");
-            if(rShip.Type == "Merchant" || bTrade)
+            if (bRand && CheckEncRand_Spec(RandParams, i))
             {
-                rEncounter.ShipModes.(sAttr) = "trade";
-                iNumMerchantShips++;
+                if (bWasRand) continue;
+                bWasRand = true;
+                j = GetEncRandSpec(RandParams);
             }
-            else
+            else j = i;
+
+            switch (j)
             {
-                if (iEType >= ENCOUNTER_TYPE_SMUGGLERS && iEType <= ENCOUNTER_TYPE_PIRATE)
-                    rEncounter.ShipModes.(sAttr) = "pirate";
+                case 0:
+                    BitParams = ENC_MERCHANT_SLOT[iEType];
+                    if (!BitParams) continue;
+                    sType = "Merchant";
+                    sCurSpec = "0"; //SHIP_SPEC_MERCHANT;
+                    break;
+                case 1:
+                    BitParams = ENC_WAR_SLOT[iEType];
+                    if (!BitParams) continue;
+                    sType = "War";
+                    sCurSpec = "1"; //SHIP_SPEC_WAR;
+                    break;
+                case 2:
+                    BitParams = ENC_RAIDER_SLOT[iEType];
+                    if (!BitParams) continue;
+                    sType = "War";
+                    sCurSpec = "2"; //SHIP_SPEC_RAIDER;
+                    break;
+                case 3:
+                    BitParams = ENC_UNIVERSAL_SLOT[iEType];
+                    if (!BitParams) continue;
+                    sType = "War";
+                    sCurSpec = "3"; //SHIP_SPEC_UNIVERSAL;
+                    break;
+            }
+            // rShip = GetAttributeN(rEncShips, i);
+            qty_j = GetEncSlotQty(BitParams);
+            cMin = and(shr(BitParams, 8), 15);
+            cMax = and(shr(BitParams, 12),15);
+            for(j = 0; j < qty_j; j++)
+            {
+                if(count+1 > iMaxShipNum) break;
+
+                iShipType = WME_GetShipTypeExt(cMin, cMax, sType, sCurSpec, iNation, false); // ~!~ TO_DO: true
+                if (iShipType == INVALID_SHIP_TYPE) continue;
+
+                count++;
+                sAttr = "s" + count;
+                rEncounter.FixedShips.(sAttr).type = iShipType;
+                fPower += GetBaseShipPower(iShipType);
+                //             sCurSpec == SHIP_SPEC_UNIVERSAL
+                bool bTrade = (sCurSpec == "3") && (rEncounter.type == "trade");
+                if(sType == "Merchant" || bTrade)
+                {
+                    rEncounter.FixedShips.(sAttr).mode = "trade";
+                    iNumMerchantShips++;
+                }
                 else
-                    rEncounter.ShipModes.(sAttr) = "war";
-                iNumWarShips++;
+                {
+                    if (iEType >= ENCOUNTER_TYPE_SMUGGLERS && iEType <= ENCOUNTER_TYPE_PIRATE)
+                        rEncounter.FixedShips.(sAttr).mode = "pirate";
+                    else
+                        rEncounter.FixedShips.(sAttr).mode = "war";
+                    iNumWarShips++;
+                }
             }
+            if(count+1 > iMaxShipNum) break;
         }
-        if(count+1 > iMaxShipNum) break;
     }
 
     rEncounter.Power = fPower; // Механика мощи
     rEncounter.NumMerchantShips = iNumMerchantShips;
     rEncounter.NumWarShips = iNumWarShips;
-    if(max_i) rEncounter.FixedTypes = true; // iNumMerchantShips + iNumWarShips != 0
 }
 
 int WME_GetShipTypeExt(int iClassMin, int iClassMax, string sShipType, string sShipSpec, int iNation, bool bNationCheck)

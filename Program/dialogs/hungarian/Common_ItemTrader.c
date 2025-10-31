@@ -381,7 +381,7 @@ void ProcessDialogEvent()
 		case "ZsI_Torg":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 18)
 			{
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 19, SKILL_COMMERCE);
 				dialog.text = "Valóban, kapitány. Fadey barátait mindig szívesen látjuk itt. Kétezer-háromszáz a tételért?";
 				link.l1 = "Ez jobban hangzik. Elfogadom.";
 				link.l1.go = "ZsI_Torg_2";
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességpróba Sikertelen (19)", SKILL_COMMERCE); 
+				Notification_Skill(false, 19, SKILL_COMMERCE);
 				dialog.text = "Fadey úr barátai mindig szívesen látottak, de az áraknak nincsenek barátai. Háromezer pezó lesz, kapitány.";
 				if (sti(pchar.Money) > 2999)
 				{

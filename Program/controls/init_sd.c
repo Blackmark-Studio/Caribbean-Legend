@@ -284,7 +284,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("", "WMapTurnH", 256, 0, false);
 	CI_CreateAndSetControls("", "WMapTurnV", 257, INVERSE_CONTROL, false);
 	//SetControlForInverting("WMapTurnV",true);
-	CI_CreateAndSetControls("WorldMapControls", "WMapCameraRotate", CI_GetKeyCode("VK_CONTROL"), 0, true);
+	//CI_CreateAndSetControls("WorldMapControls", "WMapCameraRotate", CI_GetKeyCode("VK_CONTROL"), 0, true);
 	//CI_CreateAndSetControls("WorldMapControls", "WMapForward", CI_GetKeyCode("VK_LBUTTON"), 0, true);
 	CI_CreateAndSetControls("WorldMapControls", "WMapForward", CI_GetKeyCode("VK_MWHEEL_UP"), 0, true);
 	//CI_CreateAndSetControls("WorldMapControls", "WMapBackward", CI_GetKeyCode("VK_RBUTTON"), 0, true);
@@ -302,6 +302,7 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	// CI_CreateAndSetControls("WorldMapControls", "WMapSkipEncounter", CI_GetKeyCode("VK_RETURN"), 0, true);
 	// CI_CreateAndSetControls("WorldMapControls", "WMapGetCoords", CI_GetKeyCode("KEY_C"), 0, true);
 
+    CI_CreateAndSetControls("WorldMapControls", "WMapDrawCircle", CI_GetKeyCode("VK_CONTROL"), 0, true);
 
 // Interface ===================================================================
 	// Main interface
@@ -337,6 +338,8 @@ void ExternControlsInit(bool bFirst, bool bClassic)
 	CI_CreateAndSetControls("MainInterface", "InterfaceGoRight", CI_GetKeyCode("KEY_E"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceTabSwitch", CI_GetKeyCode("VK_TAB"), 0, false);
 	CI_CreateAndSetControls("MainInterface", "InterfaceInfoSwitch", CI_GetKeyCode("KEY_S"), 0, false);
+	CI_CreateAndSetControls("MainInterface", "InterfaceTakeAll", CI_GetKeyCode("KEY_F"), 0, true);
+	MapControlToGroup("InterfaceTakeAll","PrimaryLand");
 
 	// controls for instant exit from interface (used by function XI_RegistryExitKey() )
 	CI_CreateAndSetControls("", "IExit_F2", CI_GetKeyCode("VK_F2"), 0, false);
@@ -783,7 +786,8 @@ void ExternInitKeyCodes()
 	objControlsState.grouplist.AltPressedGroup  = true;
     objControlsState.grouplist.BattleInterfaceControls = true;
     objControlsState.grouplist.SailingFire = true;
-    // DialogControls, VideoPlayer, MainInterface
+	objControlsState.grouplist.MainInterface = true;
+    // DialogControls, VideoPlayer
 }
 
 void SetKeySyncParametres()

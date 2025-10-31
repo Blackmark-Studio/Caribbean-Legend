@@ -63,7 +63,7 @@ Roger_62 {两天后... @<NewStr()> 六艘长艇已建造完成...}
 Roger_63 {Demetrio}
 Roger_64 {Rojas}
 Roger_65 {Kitty}
-Roger_66 {Torero}
+Roger_66 { }
 Roger_67 {Ignacio}
 Roger_68 {Marco}
 Roger_69 {探索模式: 计时器已禁用。}
@@ -91,7 +91,7 @@ Roger_90 {探索模式: 斗牛场 - 坐标正确}
 Roger_91 {探索模式: 斗牛场 - 坐标不正确}
 Roger_92 {西班牙护航队出现在地平线上!}
 Roger_93 {Toro de Oro}
-Roger_94 {Red Dragon}
+Roger_94 { }
 Roger_95 {@<pchar.ship.name> 发生巨大爆炸!}
 Roger_96 {我们已抵达卡塔赫纳! Tyrex 命令驶向科维尼亚斯峡}
 Roger_97 {登陆部队准备突袭卡塔赫纳!}
@@ -104,7 +104,7 @@ Roger_103 {Tonneur}
 Roger_104 {Libre}
 Roger_105 {Myutin}
 Roger_106 {Inconnu}
-Roger_107 {Alonso}
+Roger_107 { }
 Roger_108 { }
 Roger_109 {三小时后...}
 Roger_110 {Rodgar}

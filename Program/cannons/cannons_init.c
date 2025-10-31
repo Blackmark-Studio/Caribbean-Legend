@@ -12,7 +12,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber3";
 	rCannon.picture = "cannons5";
-	rCannon.Sound = "cannon_fire_cannon_3";
+	rCannon.Sound = "Cannon_Shot/Cannon_small";
 	rCannon.caliber = 3;
 	rCannon.ReloadTime = 12;
 	rCannon.Cost = 105;
@@ -31,7 +31,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber6";
 	rCannon.picture = "cannons5";
-	rCannon.Sound = "cannon_fire_cannon_6";
+	rCannon.Sound = "Cannon_Shot/Cannon_small";
 	rCannon.caliber = 6;
 	rCannon.ReloadTime = 17;
 	rCannon.Cost = 215;
@@ -50,7 +50,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber8";
 	rCannon.picture = "cannons5";
-	rCannon.Sound = "cannon_fire_culverine_8";
+	rCannon.Sound = "Cannon_Shot/Cannon_small";
 	rCannon.caliber = 8;
 	rCannon.ReloadTime = 22;
 	rCannon.Cost = 320;
@@ -69,7 +69,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber12";
 	rCannon.picture = "cannons5";
-	rCannon.Sound = "cannon_fire_cannon_12";
+	rCannon.Sound = "Cannon_Shot/Cannon_small";
 	rCannon.caliber = 12;
 	rCannon.ReloadTime = 27;
 	rCannon.Cost = 425;
@@ -88,7 +88,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber16";
 	rCannon.picture = "cannons6";
-	rCannon.Sound = "cannon_fire_cannon_16";
+	rCannon.Sound = "Cannon_Shot/Cannon_middle";
 	rCannon.caliber = 16;
 	rCannon.ReloadTime = 32;
 	rCannon.Cost = 600;
@@ -107,7 +107,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber18";
 	rCannon.picture = "cannons6";
-	rCannon.Sound = "cannon_fire_culverine_18";
+	rCannon.Sound = "Cannon_Shot/Cannon_middle";
 	rCannon.caliber = 18;
 	rCannon.ReloadTime = 42;
 	rCannon.Cost = 725;
@@ -126,7 +126,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber20";
 	rCannon.picture = "cannons7";
-	rCannon.Sound = "cannon_fire_cannon_20";
+	rCannon.Sound = "Cannon_Shot/Cannon_middle";
 	rCannon.caliber = 20;
 	rCannon.ReloadTime = 46;
 	rCannon.Weight = 22;
@@ -145,7 +145,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CANNON;
 	rCannon.name = "caliber24";
 	rCannon.picture = "cannons7";
-	rCannon.Sound = "cannon_fire_cannon_24";
+	rCannon.Sound = "Cannon_Shot/Cannon_middle";
 	rCannon.caliber = 24;
 	rCannon.ReloadTime = 50;
 	rCannon.Weight = 29;
@@ -165,7 +165,7 @@ void InitCannons()
 	rCannon.caliber = 32;
 	rCannon.name = "caliber32";
 	rCannon.picture = "cannons8";
-	rCannon.Sound = "cannon_fire_cannon_32";
+	rCannon.Sound = "Cannon_Shot/Cannon_large";
 	rCannon.ReloadTime = 54;
 	rCannon.Cost = 1705;
 	rCannon.Weight = 40;
@@ -184,7 +184,7 @@ void InitCannons()
 	rCannon.caliber = 36;
 	rCannon.name = "caliber36";
 	rCannon.picture = "cannons8";
-	rCannon.Sound = "cannon_fire_cannon_36";
+	rCannon.Sound = "Cannon_Shot/Cannon_large";
 	rCannon.ReloadTime = 62;
 	rCannon.Cost = 2055;
 	rCannon.Weight = 46;
@@ -204,7 +204,7 @@ void InitCannons()
 	rCannon.caliber = 42;
 	rCannon.name = "caliber42";
 	rCannon.picture = "cannons11";
-	rCannon.Sound = "cannon_fire_cannon_42";
+	rCannon.Sound = "Cannon_Shot/Cannon_large";
 	rCannon.ReloadTime = 65;
 	rCannon.Cost = 2490;
 	rCannon.Weight = 50;
@@ -224,7 +224,7 @@ void InitCannons()
 	rCannon.caliber = 48;
 	rCannon.name = "caliber48";
 	rCannon.picture = "cannons12";
-	rCannon.Sound = "cannon_fire_cannon_48";
+	rCannon.Sound = "Cannon_Shot/Cannon_large";
 	rCannon.ReloadTime = 50;
 	rCannon.Cost = 21505;
 	rCannon.Weight = 80;
@@ -244,7 +244,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CULVERINE;
 	rCannon.name = "caliber8";
 	rCannon.picture = "cannons1";
-	rCannon.Sound = "cannon_fire_culverine_8";
+	rCannon.Sound = "Cannon_Shot/Cannon_small";
 	rCannon.caliber = 8;
 	rCannon.ReloadTime = 30;
 	rCannon.Cost = 345;
@@ -263,7 +263,7 @@ void InitCannons()
 	rCannon.type = CANNON_NAME_CULVERINE;
 	rCannon.name = "caliber18";
 	rCannon.picture = "cannons2";
-	rCannon.Sound = "cannon_fire_culverine_18";
+	rCannon.Sound = "Cannon_Shot/Cannon_middle";
 	rCannon.caliber = 18;
 	rCannon.ReloadTime = 52;
 	rCannon.Cost = 885;
@@ -284,7 +284,7 @@ void InitCannons()
 	rCannon.RealCaliber = 36;
 	rCannon.name = "caliber36";
 	rCannon.picture = "cannons4";
-	rCannon.Sound = "cannon_fire_culverine_36";
+	rCannon.Sound = "Cannon_Shot/Cannon_large";
 	rCannon.ReloadTime = 70;
 	rCannon.Cost = 2545;
 	rCannon.Weight = 50;

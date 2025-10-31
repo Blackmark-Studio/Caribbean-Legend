@@ -40,7 +40,7 @@ WorkWithContra_t1 {On dit que #sPsHero_Name# a apporté une pleine cale de march
 WorkWithContra_t2 {J'ai entendu #sPsHero_Name# parler avec notre contrebandier. Ils se sont mis d'accord pour se rencontrer dans un endroit nommé #sContraPlace#.}
 DuelCoward_t0 {Quel honte ! #sName# ne s'est pas présenté pour un duel. Maintenant, tout le monde dit que c'est un lâche !}
 DuelCoward_t1 {Ha-ha, #sName# ne s'est pas présenté pour un duel ! Je ne pense pas qu'il aura le même succès avec les femmes qu'avant.}
-DuelCoward_t2 {Vous avez entendu ? #sName# ne s'est pas présenté pour un duel ! On dit qu'il était complètement ivre et qu'il ne tenait pas sur ses jambes.}
-DuelHero_t0 {Savez-vous que #sName# est un duelliste de premier ordre ? Il a déjà tué #sKill# hommes. Je ne voudrais pas me trouver sur son chemin.}
+DuelCoward_t2 {Vous avez entendu ? #sName# ne s’est pas présenté au duel ! On dit qu’il s’est tellement saoulé cette nuit-là qu’il ne pouvait plus se lever.}
+DuelHero_t0 {Savez-vous que #sName# est un duelliste chevronné ? Il a déjà tué #sKill# personnes. Je ne voudrais pas me trouver sur son chemin.}
 DuelHero_t1 {On dit que #sName# a vendu son âme au diable, et c'est pourquoi il ne peut pas être battu en duel ! Et les âmes de ceux qu'il tue... il a déjà tué #sKill# hommes, et ils iront directement en enfer ! On dit aussi que s'il met fin à sa folie meurtrière, le diable s'emparera de son âme.}
 DuelHero_t2 {Ce parvenu #sName# a une chance inouïe ! Il a déjà tué #sKill# hommes en duel et n'a jamais eu la moindre égratignure ! Vraiment, vous n'arrivez pas à y croire ?}

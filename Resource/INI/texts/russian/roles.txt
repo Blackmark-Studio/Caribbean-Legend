@@ -36,3 +36,23 @@ lightman_merchant {Смотритель}
 cemeteryman_merchant {Сторож}
 legend {Легенда}
 soldier_town {Стражник}
+banditos {Головорез}
+patrol {Патруль}
+comandante {Командир}
+prisonboss {Комендант}
+whore {Девка}
+hostess {Хозяйка}
+enemy {Враг}
+wife {Жена}
+kukulkan {Кукулькан}
+mercen {Наёмник}
+monster {Нежить}
+captain_trader {Вольный торговец}
+mtraxx_vanguard {Авангард Тиракса}
+fgirl {Любовница}
+deadman {Живой мертвец}
+friend {Друг}
+duelist {Бретер}
+smuggler {Контрабандист}
+AffairOfHonor_tavern {Отчаянный пьяница}
+hovernon_wife {Жена губернатора}

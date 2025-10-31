@@ -26,7 +26,7 @@ SharlieTrial_25 {Hundirla con bombas o abordarla inmediatamente si el viento lo 
 SharlieTrial_26 {¡Excelente trabajo! ¡Abre el Mapa global a través del Menú de acciones y zarpa hacia el norte, rumbo a Guadalupe!}
 SharlieTrial_27 {Tichingitu}
 SharlieTrial_28 { }
-SharlieTrial_29 {Alonso}
+SharlieTrial_29 { }
 SharlieTrial_30 { }
 SharlieTrial_31 {Gerar}
 SharlieTrial_32 {Lecrua}
@@ -52,3 +52,5 @@ SharlieTrial_51 {Barcaza 'Henry'}
 SharlieTrial_52 {¡Una oportunidad de saquear a los muertos para conseguir objetos valiosos!}
 SharlieTrial_53 {Guillaume}
 SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

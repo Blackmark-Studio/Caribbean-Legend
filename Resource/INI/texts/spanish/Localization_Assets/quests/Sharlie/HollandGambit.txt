@@ -3,13 +3,13 @@ HollandGambit_2 {Ridderbok}
 HollandGambit_3 {Modo exploración: temporizador ampliado. ¡Completa la misión!}
 HollandGambit_4 {Miguel}
 HollandGambit_5 { }
-HollandGambit_6 {Mirage}
+HollandGambit_6 { }
 HollandGambit_7 {Modo exploración: duración de la misión duplicada}
-HollandGambit_8 {Valkyrie}
+HollandGambit_8 { }
 HollandGambit_9 {¡Valkyrie está en el horizonte!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
-HollandGambit_12 {Meifeng}
+HollandGambit_12 { }
 HollandGambit_13 {Aquí está la gruta. Debería buscar el escondite de Salomón aquí.}
 HollandGambit_14 {Harry}
 HollandGambit_15 {Fletcher}
@@ -20,7 +20,7 @@ HollandGambit_19 {Rodriges}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
-HollandGambit_23 {Alonso}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Abigail murió de fiebre!}
 HollandGambit_26 {¡Charlie Knippel murió por sus heridas!}
@@ -43,3 +43,4 @@ HollandGambit_42 {Te has desmayado por las heridas...}
 HollandGambit_43 {No le devolviste el dinero a Abigail, convirtiéndola así en mendiga.}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
+HollandGambit_46 { }

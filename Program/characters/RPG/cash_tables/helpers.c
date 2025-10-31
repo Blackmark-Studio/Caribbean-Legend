@@ -8,11 +8,20 @@ void CT_DumpTable(ref chr, string tableName)
 }
 
 // Получить таблицу в сыром виде
-ref CT_GetTable(ref chr, string tableName)
+aref CT_GetTable(ref chr, string tableName)
 {
 	aref result;
 	makearef(result, chr.ct.(tableName));
-	return &result;
+	return result;
+}
+
+// Получить таблицу с инициализацией, если ещё нет
+aref CT_GetTableOrInit(ref chr, string tableName)
+{
+	aref result;
+	if (!CheckAttribute(chr, "ct." + tableName)) CT_UpdateCashTables(chr);
+	makearef(result, chr.ct.(tableName));
+	return result;
 }
 
 // Получить интовое значение из таблицы
@@ -139,6 +148,6 @@ void CT_MergeTables(ref tableA, ref tableB)
 
 		aref modifierA;
 		makearef(modifierA, tableA.(modifierName));
-		CopyAttributes(modifierA, modifierB);
+		CopyAttributesSafe(modifierA, modifierB);
 	}
 }

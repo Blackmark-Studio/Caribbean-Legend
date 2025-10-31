@@ -40,11 +40,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_3":
 			DialogExit();
-			chrDisableReloadToLocation = true;
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", "", "", "", "DTSG_BasTerTavern", -1);
-			FreeSitLocator("BasTer_tavern", "sit_base2");
-			FreeSitLocator("BasTer_tavern", "sit_front2");
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_1");
 		break;
 		
 		case "DTSG_Ohotnik_1":
@@ -123,8 +119,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Ohotnik_8":
 			DialogExit();
-			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
-			LAi_FadeLong("DTSG_BasTerTavern_7", "");
+			AddDialogExitQuestFunction("DTSG_Ohotnik_DlgExit_1");
 		break;
 		
 		case "DTSG_Knippel_l0":
@@ -150,15 +145,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_l3":
 			DialogExit();
-			
-			bDisableCharacterMenu = false;
-			InterfaceStates.Buttons.Save.enable = true;
-			sld = CharacterFromID("Knippel");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
-			sld.location = "None";
-			pchar.questTemp.DTSG_BasTerTavern = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_2");
 		break;
 		
 		case "DTSG_Knippel_20":
@@ -181,12 +168,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_23":			//КОНЕЦ ЭТАПА 1
 			DialogExit();
-			ReturnOfficer_Knippel();
-
-			AddQuestRecord("DTSG", "2");
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			pchar.questTemp.DTSG_Nastoroje1 = true;
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_2_1");
 		break;
 		
 		case "DTSG_Ohotnik_10":
@@ -211,18 +193,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Ohotnik_Otpustil_2":			//ПРОВАЛ ЭТАПА 1
 			DialogExit();
-			
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "none", "", "", "", -1);
-			npchar.lifeday = 0;
-			LAi_LocationDisableOfficersGen("BasTer_tavern", false);
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			bDisableCharacterMenu = false;
-			InterfaceStates.Buttons.Save.enable = true;
-			ChangeCharacterComplexReputation(pchar, "nobility", 3);
-			ChangeCharacterComplexReputation(pchar, "authority", -3);
-			ChangeCharacterComplexReputation(pchar, "fame", -3);	
+			AddDialogExitQuestFunction("DTSG_Ohotnik_DlgExit_2");
 		break;
 		
 		case "DTSG_Ohotnik_Agressia_1":
@@ -233,16 +204,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Ohotnik_Agressia_2":
 			DialogExit();
-			
-			LAi_LocationFightDisable(&Locations[FindLocation(PChar.location)], false);
-			sld = CharacterFromID("DTSG_Ohotnik");
-			DeleteAttribute(sld, "CantLoot");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "DTSG_Ohotnik_Agressia_3");
-			LAi_SetFightMode(pchar, true);
+			AddDialogExitQuestFunction("DTSG_Ohotnik_DlgExit_3");
 		break;
 		
 		case "DTSG_PiterAdams_1":
@@ -356,14 +318,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdams_IdemKDomu":
 			DialogExit();
-			
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocator(npchar, "reload", "houseF1", "DTSG_PiterAdams_VDom", -1);
-			LAi_SetActorType(pchar);
-			LAi_ActorFollow(pchar, npchar, "", -1);
-			sld = CharacterFromID("Knippel");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_3");
 		break;
 		
 		case "DTSG_PiterAdamsRyadomSDomom_1":
@@ -395,33 +350,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_PiterAdamsRyadomSDomom_5":
 			DialogExit();
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false; 
-			
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "gate_back", "", "", "", "", -1);
-			npchar.location = "None";
-			
-			sld = CharacterFromID("Knippel");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, pchar, "", -1);
-			LAi_SetOfficerType(sld);
-			sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-			sld.Dialog.CurrentNode = "Knippel_officer";
-			sld.location = "None";
-			
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1 = "Timer";
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.hour = sti(GetTime() + 2);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.day = GetAddingDataDay(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition.l1.date.year = GetAddingDataYear(0, 0, 0);
-			PChar.quest.DTSG_PoP_DuelTime.win_condition = "DTSG_PoP_DuelTime";
-			
-			PChar.quest.DTSG_PoP_Duel.win_condition.l1 = "location";
-			PChar.quest.DTSG_PoP_Duel.win_condition.l1.location = "PortPax_ExitTown";
-			PChar.quest.DTSG_PoP_Duel.win_condition = "DTSG_PoP_Duel";
-			
-			AddQuestRecord("DTSG", "3");
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_4");
 		break;
 		
 		case "DTSG_JeinAdams_1":
@@ -534,10 +463,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_35":
 			DialogExit();
-			
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
-			npchar.location = "None";
-			AddDialogExitQuestFunction("DTSG_Knippel_36");
+			AddDialogExitQuestFunction("DTSG_Knippel_DlgExit_5");
 		break;
 		
 		case "DTSG_RalfFaggl":
@@ -1850,40 +1776,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Knippel_103":
 			DialogExit();
-			
-			LAi_SetPlayerType(pchar);
-			if (GetCharacterIndex("Helena") != -1 && CheckPassengerInCharacter(pchar, "Helena"))
-			{
-				sld = characterFromId("Helena");
-				ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-				sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-				sld.dialog.currentnode = "DTSG_Helena_1";
-				LAi_SetActorType(sld);
-				LAi_ActorDialog(sld, pchar, "", 0, 0);
-				break;
-			}
-			if (GetCharacterIndex("Tichingitu") != -1 && CheckPassengerInCharacter(pchar, "Tichingitu"))
-			{
-				sld = characterFromId("Tichingitu");
-				ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-				sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-				sld.dialog.currentnode = "DTSG_Tichingitu_1";
-				LAi_SetActorType(sld);
-				LAi_ActorDialog(sld, pchar, "", 0, 0);
-				break;
-			}
-			else
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
-				sld.name 	= "Алонсо";
-				sld.lastname = "";
-				ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-				sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-				sld.dialog.currentnode = "DTSG_Alonso_1";
-				LAi_SetActorType(sld);
-				LAi_ActorDialog(sld, pchar, "", 0, 0);
-				sld.location = "None";
-			}
+			AddDialogExitQuestFunction("DTSG_Knippel_103");
 		break;
 		
 		case "DTSG_Helena_1":
@@ -2174,12 +2067,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_PkCh_7":
 			DialogExit();
-			
-			LAi_SetActorType(pchar);
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "goto", "goto4", "", "", "", "DTSG_Kortni_Vyprygnul", 7);
-			npchar.lifeday = 0;
-			npchar.location = "None";
+			AddDialogExitQuestFunction("DTSG_Kortni_PkCh_7");
 		break;
 		
 		case "DTSG_Kortni_PkCh_8":
@@ -2226,9 +2114,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_PkCh_13":
 			DialogExit();
-			
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocator(npchar, "goto", "goto4", "DTSG_Kortni_Vyprygnul_5", 6);
+			AddDialogExitQuestFunction("DTSG_Kortni_PkCh_13");
 		break;
 		
 		case "DTSG_Kortni_PkCh_14":
@@ -2271,14 +2157,14 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_LT_2":
 			if (sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 				dialog.text = "Это... большой риск. И дело не только в том, могу ли я довериться вашему слову. А в том, поверят ли мне мои коллеги, увидев труп похожего на Чарли человека. И я не пойду на этот риск... просто так.";
 				link.l1 = "Сколько?";
 				link.l1.go = "DTSG_Kortni_LT_4";
 			}
 			else
 			{
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				Notification_Reputation(false, 71, "low");
 				dialog.text = "Слово человека вашей репутации? Вы, право, шутите. Одного лишь происхождения мало, чтобы вам доверяли.";
 				link.l1 = "Слышу это от другого человека с похожими и происхождением, и поступками, уж не обессудьте, полковник.";
 				link.l1.go = "DTSG_Kortni_LT_3";
@@ -2333,7 +2219,7 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_LT_9":
 			DialogExit();
 			
-			LAi_Fade("DTSG_Kortni_Otkup_1", "");
+			LAi_FadeLong("DTSG_Kortni_Otkup_1", "");
 		break;
 		
 		case "DTSG_Kortni_LT_10":
@@ -2454,18 +2340,7 @@ void ProcessDialogEvent()
 		
 		case "DTSG_Kortni_LT_25":
 			DialogExit();
-			
-			//sld = CharacterFromID("Knippel");
-			sld = GetCharacter(CreateCharacterClone(CharacterFromID("Knippel"), 0));
-			sld.id = "KnippelClone";
-			sld.dialog.filename = "Quest\CompanionQuests\Knippel.c";
-			sld.dialog.currentnode = "DTSG_Kortni_LT_26";
-			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
-			LAi_SetActorType(pchar);
-			LAi_SetActorType(sld);
-			SetActorDialogAny2Pchar(sld.id, "", -1, 0.0);
-			LAi_ActorFollow(sld, pchar, "ActorDialog_Any2Pchar", 2.0);
-			LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 2.0);
+			AddDialogExitQuestFunction("DTSG_Kortni_LT_25");
 		break;
 		
 		case "DTSG_Kortni_LT_26":
@@ -2540,8 +2415,8 @@ void ProcessDialogEvent()
 		case "DTSG_Kortni_Kech_2":
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Проверка чести пройдена", "None");
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Reputation(true, 71, "low");
+				Notification_Perk(true, "Trustworthy");
 				dialog.text = "А вам палец в рот не клади, иначе по локоть откусите. Вы хоть представляете, во сколько нам обошлось строительство одного такого?";
 				link.l1 = "(Вызывающий доверие) (Честь) Прекрасно представляю, потому и прошу. Ваша рука как раз по локоть в моей пасти. Можете, конечно, попытаться пристрелить этого волка. Но о руке придётся забыть. И не только о ней.";
 			}
@@ -2549,8 +2424,8 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Боюсь, что изготовление одного такого стоит куда больше, чем то золото, что мы для вас приготовили. Но вы меня позабавили, Шарль. В хорошем смысле.";
 				link.l1 = "Попытаться стоило.";
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Не открыта способность", "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 71) notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
+				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
 			}
 			link.l1.go = "DTSG_Kortni_Kech_3";
 		break;

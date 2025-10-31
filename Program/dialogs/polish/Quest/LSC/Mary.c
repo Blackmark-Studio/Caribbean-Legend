@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Co to za harmider tym razem, kapitanie? Hiszpanie, piraci czy coś gorszego?";
 			link.l1 = "„To gorzej, Mary, dużo gorzej. Gubernator zamierza odwiedzić niezwykle drogą kurtyzanę, a ja mam mu towarzyszyć jako osoba zainteresowana, jak obiecano gospodyni. Nudne rozmowy, przewartościowane wino i nudni szlachcice.”";
 			link.l1.go = "GoldenGirl_1";

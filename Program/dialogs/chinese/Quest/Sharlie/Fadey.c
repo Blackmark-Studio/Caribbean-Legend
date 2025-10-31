@@ -59,11 +59,11 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "dublon")
 				{
 					dialog.text = "啊, 又是你啊, 我亲爱的朋友! 怎么样, 你带来给印第安人的赎金金币了吗? ";
-					if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu80"))
+					if (CheckAttribute(npchar, "questTemp.Sharlie.Tichingitu_Skidka"))
 					{
-						if (PCharDublonsTotal() >= 80) // belamour legendary edition
+						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "是的。这是你的八十枚达布隆。";
+							link.l1 = "是的。给您，您的35达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -74,9 +74,9 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (PCharDublonsTotal() >= 100) // belamour legendary edition
+						if (PCharDublonsTotal() >= 40) // belamour legendary edition
 						{
-							link.l1 = "是的。这是一百枚达布隆。";
+							link.l1 = "是的。给您，您的40达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -428,8 +428,8 @@ void ProcessDialogEvent()
 			SetQuestHeader("Tichingitu");
 			AddQuestRecord("Tichingitu", "1");
 			pchar.questTemp.Sharlie.Tichingitu = "true";
-			AddDialogExitQuestFunction("SetTichingituJail");
-			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
+			AddDialogExitQuestFunction("Tichingitu_SetTichingituJail");
+			SetFunctionTimerCondition("Tichingitu_FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
 		break;
 		
@@ -465,19 +465,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "好吧, 好吧。一百枚金达布隆。这可是我的最终报价了。咱们说的是达布隆, 不是比索。我们的银行家肯定能凑出这么多钱来兑换。";
-			if(PCharDublonsTotal() >= 100) // belamour legendary edition
+			dialog.text = "好吧, 好吧, 40金达布隆。但这是最后的价格。而且必须是达布隆，不是比索。我们的放债人那里肯定有一些。";
+			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
-				link.l1 = "我现在就有你要的数目。拿去吧, 这是一百枚达布隆。";
+				link.l1 = "哦，你远大啊，我的朋友。你说服我了!35金——一文不减!";
 				link.l1.go = "Tichingitu_7";
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("值得信赖", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "值得信赖的Fadey, 听我说……我明白你有多郁闷, 但现在只有我愿意用真金白银补偿你这点麻烦。";
 				link.l2.go = "Tichingitu_7_TW";
 			}
-			else notification("特质检查失败", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "好吧, 我这就去拿你要的东西。";
 			link.l3.go = "Tichingitu_6";
 		break;
@@ -486,7 +486,7 @@ void ProcessDialogEvent()
 			dialog.text = "朋友, 你在这儿前途无量, 老子跟你说。好吧! 八十金币—一分都不能少! ";
 			link.l1 = "";
 			link.l1.go = "Tichingitu_6";
-			pchar.questTemp.Sharlie.Tichingitu80 = true;
+			npchar.questTemp.Sharlie.Tichingitu_Skidka = true;
 		break;
 		
 		case "Tichingitu_6":
@@ -497,12 +497,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_7":
-			if(CheckAttribute(pchar,"questTemp.Sharlie.Tichingitu80"))
+			if(CheckAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka"))
 			{
-				RemoveDublonsFromPCharTotal(80);
-				DeleteAttribute(pchar,"questTemp.Sharlie.Tichingitu80");
+				RemoveDublonsFromPCharTotal(35);
+				DeleteAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka");
 			}
-			else RemoveDublonsFromPCharTotal(100); // belamour legendary edition
+			else RemoveDublonsFromPCharTotal(40); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "很好。我这就写个便条盖上印章, 稍等片刻……给你。把这个交给指挥官, 你就能把你的印第安人带走了。我是真不明白你为啥这么操心他, 不过那是你的事。你打算干啥, 把他带去假面舞会当展品? 哈哈, 真有意思! ";
 			link.l1 = "上帝无所不见, Fadey。救人一命是高尚的行为。";
@@ -764,8 +764,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_4":
-			dialog.text = "好吧, 那么……手枪, 还有几支火枪, 每支都要配火药和弹丸……所以……我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付三百枚达布隆。";
-			if(PCharDublonsTotal() >= 300)
+			dialog.text = "好吧, 那么……手枪, 还有几支火枪, 每支都要配火药和弹丸……所以……我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付75枚达布隆。";
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "把金币拿去吧, Fadey。正好老子身上现在就有几枚。";
 				link.l1.go = "pistols_4D";
@@ -775,7 +775,7 @@ void ProcessDialogEvent()
 				link.l2 = "俺的达布隆全花光了, 拿比索吧, Fadey。";
 				link.l2.go = "pistols_4P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "我要去找我的银行家, 马上回来! ";
 				link.l3.go = "exit";
@@ -787,7 +787,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_4D":
 			SetFunctionTimerCondition("Mtraxx_MagicBoxready", 0, 0, 1, false);
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Tomorow";
             dialog.text = "明天再来, "+pchar.name+", 我就把你要的物资准备好。";
 			link.l1 = "那我就不打扰了。明天见! ";
@@ -811,7 +811,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5":
 			dialog.text = "小子, 老头我能在这么紧的时间里把你要的东西全都找齐, 算你走运! 你可得感恩戴德! 好了, 最后一笔钱。把之前押金同样数目的钱再给我一份, 然后拿走你的武器吧。";
-			if(PCharDublonsTotal() >= 300)
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "拿着这三百枚达布隆。我会让我的人把武器搬到我的船上。要不是有你, Fadey, 老子可怎么办啊? 你根本不知道你帮了我多大的忙! ";
 				link.l1.go = "pistols_5D";
@@ -821,7 +821,7 @@ void ProcessDialogEvent()
 				link.l2 = "拿上四万比索吧。我会让我的人把武器搬到我的船上。要不是你, Fadey, 俺还真不知道该怎么办! 你根本不知道你帮了俺多大的忙! ";
 				link.l2.go = "pistols_5P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "该死, 我怎么能把钱忘了? 我很快就回来。";
 				link.l3.go = "exit";
@@ -833,7 +833,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5D":
 			Log_Info("Fadey 的武器已装载到船上");
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
             dialog.text = "帮助有需要的人是荣誉, 帮助付钱的人是乐趣。下次你到巴斯特尔, 记得来找我打个招呼。";
@@ -893,8 +893,6 @@ void ProcessDialogEvent()
 			dialog.text = "我怎能拒绝像您这样的好朋友呢, "+pchar.name+"? 何况您愿意为这件善事慷慨解囊。 既如此, 请告诉我, 这人叫什么名字? ";
 			link.l1 = "关于名字, 我不太确定。他可能叫鲁珀特·卡斯珀, 也可能叫约书亚·诺斯伍德。";
 			link.l1.go = "WildRose_Fadey_9";
-			link.l2 = "关于名字, 我不太确定。 他可能叫鲁珀特·卡斯珀, 也可能叫约书亚·诺斯伍德。";
-			link.l2.go = "WildRose_Fadey_9";
 		break;
 
 		case "WildRose_Fadey_9":

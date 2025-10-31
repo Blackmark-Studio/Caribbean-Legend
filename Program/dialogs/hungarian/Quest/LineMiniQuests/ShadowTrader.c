@@ -171,16 +171,7 @@ void ProcessDialogEvent()
 	
 		case "ShadowTrader_killed":
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetActorType(pchar);
-			//  belamour legendary edition если не надет пистоль или мушкет, то выдадим строевой -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
-			{
-				GiveItem2Character(pchar, "pistol1");
-				EquipCharacterbyItem(pchar, "pistol1");
-			}
-			// <-- legendary edition
-			LAi_ActorAnimation(pchar, "Shot", "ShadowTrader_killed_end", 1.3);
+			AddDialogExitQuestFunction("ShadowTrader_KillToTrader_kino");
 		break;
 		
 		case "Exit":

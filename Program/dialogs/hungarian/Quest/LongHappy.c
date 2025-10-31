@@ -100,12 +100,15 @@ void ProcessDialogEvent()
 		case "spa_officer_1":
 			if(sti(pchar.reputation.nobility) > 80 || sti(pchar.reputation.nobility) < 20) // провести учёт чести и известности
 			{
+				Notification_Reputation(true, 81, "low");
 				dialog.text = "Igen, sokat hallottam rólad, és világos utasításom van, hogy ne változtassuk vérfürdôvé a várost, ha megmakacsolod magad. Átmehetsz. De Vincento atya... elégedetlen lesz. Ezt tartsd észben.";
 				link.l1 = "Ön ésszerûen cselekedett, monsieur. Túl fogom élni, valahogy, a szívemben lévô fájdalmat, amit az atya-inkvizítor elégedetlensége okozott. Kellemes estét!";
 				link.l1.go = "spa_officer_2";
 			}
 			else
 			{
+				Notification_Reputation(false, 81, "low");
+				Notification_Reputation(false, 19, "high");
 				dialog.text = "Igen, hallottam önrôl... sok érdekes dolgot. Az ilyen meghívások visszautasítása azonban veszélyes az egészségre, senor. Ahogy Vincento atya vendégeinek elrablása is. Tartsátok ôket!";
 				link.l1 = "Mindenki meghozta a döntését. Sajnálom, hogy így alakult. Fegyverbe, caballero!";
 				link.l1.go = "spa_officer_3";

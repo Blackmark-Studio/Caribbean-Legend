@@ -53,7 +53,6 @@ bool validLineClicked = false; // клик ПКМ на существующей 
 
 void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 {
-	CheckAdmiralMaps(itemsRef); // mitrokosta проверить отличные карты
 	sFaceID = faceID;
 	String sInterfaceType = sGetInterfaceType();
 	if(sInterfaceType == INTERFACETYPE_BARREL || IsInSeaNow())
@@ -95,23 +94,13 @@ void InitInterface_RS(string iniName, ref itemsRef, string faceID)
 		
 		iSetCharIDToCharactersArroy(itemsRef); // Не нужно это, но и не помешает
 		bBoxUsed = false;
-		
-		// boal -->
-		bool bOk = CheckAttribute(itemsRef, "CanTakeMushket") && CheckAttribute(itemsRef, "IsMushketer");
-		if(!CheckAttribute(itemsRef, "HoldEquip") && CheckAttribute(itemsRef, "rank") && !bOk)
+
+		if (CheckAttribute(itemsRef, "rank") && CheckAttributeEqualTo(pchar, "questTemp.FiringOfficerIDX", GetAttributeOrDefault(itemsRef, "index", "")))
 		{
-			if(sti(itemsRef.rank) < sti(refCharacter.rank)) // только, если ранг больше
-			{
-				RemoveCharacterEquip(itemsRef, GUN_ITEM_TYPE);
-				if(!IsEquipCharacterByItem(itemsRef, "unarmed"))
-				{
-					RemoveCharacterEquip(itemsRef, BLADE_ITEM_TYPE);
-				}
-				
-				RemoveCharacterEquip(itemsRef, CIRASS_ITEM_TYPE); //броня 081004 boal
-			}
+			RemoveCharacterEquip(itemsRef, GUN_ITEM_TYPE);
+			if(!IsEquipCharacterByItem(itemsRef, "unarmed")) RemoveCharacterEquip(itemsRef, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(itemsRef, CIRASS_ITEM_TYPE);
 		}
-		// boal <--
 	}
 	
 	if(sInterfaceType == INTERFACETYPE_CHEST || sInterfaceType == INTERFACETYPE_DEADMAN) // проверка квестовых ситуаций в каюте кэпа если сундук или обыск трупа
@@ -214,6 +203,17 @@ void ProcessInterfaceControls()
 	if (controlName == "InterfaceGoLeft") {
 		currentTab = (5 + currentTab - 2) % 5;
 		SetControlsTabMode(currentTab + 1);
+	}
+	
+	if (controlName == "InterfaceTakeAll")
+	{
+		onGetAllBtnClick();
+		string sInterfaceType = sGetInterfaceType();
+		if(sInterfaceType == INTERFACETYPE_DEADMAN && !CheckLastItemOnDead())
+		{
+			Dead_DelLoginedCharacter(refToChar);
+			IDoExit(RC_INTERFACE_FOOD_INFO_EXIT);
+		}
 	}
 }
 
@@ -998,7 +998,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST.(sList).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(sList).td1.textoffset = "70, 0";
 			GameInterface.TABLE_LIST.(sList).td1.line_space_modifier = 0.8;
-			GameInterface.TABLE_LIST.(sList).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			GameInterface.TABLE_LIST.(sList).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(sList).index = goldIndex;
 			GameInterface.TABLE_LIST.(sList).td2.str = "-";
 			GameInterface.TABLE_LIST.(sList).td3.str = iLeftQty;
@@ -1014,7 +1014,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST2.(sList2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(sList2).td1.textoffset = "70, 0";
 			GameInterface.TABLE_LIST2.(sList2).td1.line_space_modifier = 0.8;
-			GameInterface.TABLE_LIST2.(sList2).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			GameInterface.TABLE_LIST2.(sList2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(sList2).index = goldIndex;
 			GameInterface.TABLE_LIST2.(sList2).td2.str = "-";
 			GameInterface.TABLE_LIST2.(sList2).td3.str = iRightQty;
@@ -1046,7 +1046,7 @@ void AddToTable(ref rChar)
             GameInterface.TABLE_LIST.(sList).td1.icon.height = 50;
             GameInterface.TABLE_LIST.(sList).td1.textoffset = "70, 0";
             GameInterface.TABLE_LIST.(sList).td1.line_space_modifier = 0.9;
-            GameInterface.TABLE_LIST.(sList).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+            GameInterface.TABLE_LIST.(sList).td1.str = GetItemName(rItem);
             GameInterface.TABLE_LIST.(sList).index = i;
             GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(stf(rItem.Weight) * iLeftQty, 1);
             GameInterface.TABLE_LIST.(sList).td3.str = iLeftQty;
@@ -1065,7 +1065,7 @@ void AddToTable(ref rChar)
             GameInterface.TABLE_LIST2.(sList2).td1.icon.height = 50;
             GameInterface.TABLE_LIST2.(sList2).td1.textoffset = "70, 0";
             GameInterface.TABLE_LIST2.(sList2).td1.line_space_modifier = 0.9;
-            GameInterface.TABLE_LIST2.(sList2).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+            GameInterface.TABLE_LIST2.(sList2).td1.str = GetItemName(rItem);
             GameInterface.TABLE_LIST2.(sList2).index = i;
             GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
             GameInterface.TABLE_LIST2.(sList2).td3.str = iRightQty;
@@ -1097,7 +1097,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST.(sList).td1.icon.height = 50;
 			GameInterface.TABLE_LIST.(sList).td1.textoffset = "70, 0";
 			GameInterface.TABLE_LIST.(sList).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST.(sList).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			GameInterface.TABLE_LIST.(sList).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST.(sList).index = i;
 			GameInterface.TABLE_LIST.(sList).td2.str = FloatToString(stf(rItem.Weight) * iLeftQty, 1);
 			GameInterface.TABLE_LIST.(sList).td3.str = iLeftQty;
@@ -1114,7 +1114,7 @@ void AddToTable(ref rChar)
 			GameInterface.TABLE_LIST2.(sList2).td1.icon.height = 50;
 			GameInterface.TABLE_LIST2.(sList2).td1.textoffset = "70, 0";
 			GameInterface.TABLE_LIST2.(sList2).td1.line_space_modifier = 0.9;
-			GameInterface.TABLE_LIST2.(sList2).td1.str = GetConvertStr(rItem.name, "ItemsDescribe.txt");
+			GameInterface.TABLE_LIST2.(sList2).td1.str = GetItemName(rItem);
 			GameInterface.TABLE_LIST2.(sList2).index = i;
 			GameInterface.TABLE_LIST2.(sList2).td2.str = FloatToString(stf(rItem.Weight) * iRightQty, 1);
 			GameInterface.TABLE_LIST2.(sList2).td3.str = iRightQty;
@@ -1269,7 +1269,7 @@ void ShowItemInfo()
         {
             describeStr += "id = " + Items[iCurGoodsIdx].id + NewStr();
         }
-        describeStr += GetItemDescribe(iCurGoodsIdx);
+        describeStr += GetItemDescr(iCurGoodsIdx);
 		AddRecipeKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		AddMapKnownMarker(&Items[iCurGoodsIdx], &describeStr);
 		SetNewGroupPicture("INFO_ITEMS_PICTURE", Items[iCurGoodsIdx].picTexture, "itm" + Items[iCurGoodsIdx].picIndex);
@@ -1324,7 +1324,7 @@ void ShowInfoWindow()
 			sText1 = "";
 			if (bBettaTestMode)
 				sText1 += "id = " + Items[itemIdx].id + NewStr();
-			sText1 += GetAssembledString(LanguageConvertString(lngFileID, rItem.describe), rItem);
+			sText1 += GetItemDescr(rItem);
 			AddRecipeKnownMarker(rItem, &sText1);
 			AddMapKnownMarker(rItem, &sText1);
 			sGroup = rItem.picTexture;
@@ -1747,7 +1747,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	{
 		describeStr += "id = " + Items[iCurGoodsIdx].id + NewStr();
 	}
-	describeStr += GetItemDescribe(iCurGoodsIdx);
+	describeStr += GetItemDescr(iCurGoodsIdx);
 	AddRecipeKnownMarker(&arItm, &describeStr);
 	AddMapKnownMarker(&arItm, &describeStr);
 

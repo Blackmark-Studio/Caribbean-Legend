@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Mi ez a nagy felfordulás, kapitány? Spanyolok, kalózok vagy még rosszabb?";
 			link.l1 = "Ez rosszabb, Mary, sokkal rosszabb. A kormányzó egy rendkívül drága kurtizánnál szándékozik látogatást tenni, és nekem el kell kísérnem ôt, mint érdekszemélyt, ahogy azt a szeretônek megígérte. Unalmas beszélgetések, túlárazott bor és unalmas nemesek.";
 			link.l1.go = "GoldenGirl_1";

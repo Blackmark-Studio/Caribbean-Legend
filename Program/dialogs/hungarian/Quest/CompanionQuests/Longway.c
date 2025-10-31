@@ -826,7 +826,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0;
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			LAi_SetActorType(sld);
 			LAi_ActorFollowEverywhere(sld, "", -1);
 			sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "És hogyan sikerült ezt véghezvinned, Longway?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				notification("Reputáció ellenôrzés átment", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 		break;
 		
@@ -942,7 +942,7 @@ void ProcessDialogEvent()
 			link.l1 = "Remélem is. Most pedig mondd el, hogyan kerültél ebbe az életbe - milyen ígéretet tettél, mikor és kinek.";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_2";
 			if (CheckAttribute(pchar, "questTemp.PZ_NashliArhiv")) AddComplexSelfExpToScill(100, 100, 100, 100);
-			notification("Longway helyteleníti", "Longway");
+			Notification_Approve(false, "Longway");
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Grubim_2":
@@ -957,7 +957,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_2";
 			AddComplexLandExpToScill(200, 200, 0);
 			pchar.questTemp.PZ_FlagArhiv = true;
-			notification("Longway jóváhagyja", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Proshaem_2":
@@ -3907,7 +3907,7 @@ void ProcessDialogEvent()
 			}
 			RemoveDublonsFromPCharTotal(2500);
 			pchar.questTemp.PZ_FlagShipDublons = true;
-			notification("Longway jóváhagyja", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_Longway_Peso_1":
@@ -3941,7 +3941,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -50000);
 			
 			pchar.questTemp.PZ.LongwayBrig = true; // Лонгвэй будет на бриге
-			notification("Longway helyteleníti", "Longway");
+			Notification_Approve(false, "Longway");
 		break;
 		
 		case "PZ_Longway_Otkaz_2":
@@ -3994,7 +3994,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
 			AddQuestRecord("PZ", "59");
-			notification("Longway jóváhagyja", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		
@@ -4267,7 +4267,7 @@ void ProcessDialogEvent()
 			link.l1 = "Á, semmiség. Valaha a te hajód volt, erre mindig emlékezni fogok. Nos, menj csak. Öld meg a rohadékot. Elmegyek Tortugára.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
-			notification("Longway jóváhagyja", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_Longway_Caleuche1":
@@ -4308,7 +4308,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagShipDublons"))
 			{
 				pchar.questTemp.PZ_FlagShip = true;
-				notification("Longway jóváhagyja", "Longway");
+				Notification_Approve(true, "Longway");
 			}
 			
 			dialog.text = "Én magam még sosem vitorláztam polakreppel, amikor kapitány voltam. Érdekes, de most a sebesség a legfontosabb, nem a teljesítmény.";
@@ -4349,7 +4349,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagShipDublons"))
 			{
 				pchar.questTemp.PZ_FlagShip = true;
-				notification("Longway jóváhagyja", "Longway");
+				Notification_Approve(true, "Longway");
 			}
 			
 			dialog.text = "Hogy ez lehet a legszokatlanabb gálya a szigetvilágban, kapitány úr. Tudok vele bánni, de lassabb, mint a 'Banten'...";
@@ -5448,71 +5448,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_78":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", true);
-			SetCurrentTime(15, 00);
-			RecalculateJumpTable();
-			RefreshWeather();
-			RefreshLandTime();
-			pchar.GenQuest.AbordageInStorm = true;	//Разрешить абордаж во время шторма
-			SetLocationCapturedState("PortPax_town", false);
-
-			LAi_LoginInCaptureTown(npchar, false);
-			AddPassenger(pchar, npchar, false);
-			ReturnOfficer_Longway();
-			
-			if (GetCharacterIndex("Tichingitu") != -1)
-			{
-				sld = characterFromId("Tichingitu");
-				AddPassenger(pchar, sld, false);
-				ReturnOfficer_Tichingitu();
-			}
-			
-			PChar.quest.PZ_PoP_Pogonya.win_condition.l1 = "location";
-			PChar.quest.PZ_PoP_Pogonya.win_condition.l1.location = "Hispaniola2";
-			PChar.quest.PZ_PoP_Pogonya.win_condition = "PZ_PoP_Pogonya";
-			
-			SeaAI_SwapShipsAttributes(pchar, CharacterFromID("PZ_ShipStasis"));
-			AddCharacterGoodsSimple(pchar, GOOD_GRAPES, 300);
-			AddCharacterGoodsSimple(pchar, GOOD_BOMBS, 200);
-			AddCharacterGoodsSimple(pchar, GOOD_POWDER, 350);
-			AddCharacterGoodsSimple(pchar, GOOD_FOOD, 150);
-			AddCharacterGoodsSimple(pchar, GOOD_RUM, 50);
-			AddCharacterGoodsSimple(pchar, GOOD_FOOD, 700);
-			SetCrewQuantityFull(pchar);
-			pchar.ship.HP = sti(pchar.ship.HP) / 2;
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) / 2;
-			AddCrewMorale(Pchar, 100);
-			ChangeCrewExp(pchar, "Sailors", 100);
-			ChangeCrewExp(pchar, "Cannoners", 100);
-			ChangeCrewExp(pchar, "Soldiers", 100);
-			
-			//Вражина
-			sld = characterFromId("PZ_RobertMartin");
-			sld.nation = PIRATE;
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-			{
-				GiveItem2Character(sld, "blade_31");
-				EquipCharacterByItem(sld, "blade_31");
-			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-			{
-				GiveItem2Character(sld, "pirate_cutlass");
-				EquipCharacterByItem(sld, "pirate_cutlass");
-			}
-			FantomMakeCoolSailor(sld, SHIP_GALEON_L, "Voltigeur", CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
-			sld.AlwaysEnemy = true;
-			sld.AlwaysSandbankManeuver = true;
-			sld.DontRansackCaptain = true;
-			sld.ShipHideImmortal = 800;
-			Group_FindOrCreateGroup("PZ_RM_Attack");
-			Group_SetType("PZ_RM_Attack", "pirate");
-			Group_AddCharacter("PZ_RM_Attack", "PZ_RobertMartin");
-			Group_SetGroupCommander("PZ_RM_Attack", "PZ_RobertMartin");
-			Group_SetTaskAttack("PZ_RM_Attack", PLAYER_GROUP);
-			Group_SetAddress("PZ_RM_Attack", "Hispaniola2", "quest_ships", "Quest_ship_1");
-			Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+			AddDialogExitQuestFunction("PZ_Longway_78");
 		break;
 		
 		case "PZ_RobertMartin_8":
@@ -5547,7 +5483,6 @@ void ProcessDialogEvent()
 			dialog.text = "Ennyi?";
 			link.l1 = "Újra megkérdezem! Hol van a " + sStr + "?! Hol van a kínai nô?! Hol van Henri Thibaut?!";
 			link.l1.go = "PZ_RobertMartin_14";
-			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_1", "", 0.3);
 		break;
 		
@@ -5556,7 +5491,6 @@ void ProcessDialogEvent()
 			link.l1 = "Te ribanc! Minden szót kiverek belôled!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("PZ_DoprosRobertMartin_Trum_6");
-			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_1", "", 0.3);
 		break;
 		
@@ -5621,7 +5555,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin_22":
 			dialog.text = "Szóval tudsz a titkos helyérôl, a börtönrôl? Ó igen, ô az igazi börtönmester, ha-ha-ha-ha! De tényleg ki tudod hívni ôt? Kétlem. Le akarod gyôzni a szörnyeteget? Akkor legyél te magad a szörnyeteg. Lássuk, hogy meg tudsz-e törni engem, ahogy Francois megtöri azokat a lányokat. Ahogy hamarosan a tiédet is meg fogja törni...";
-			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
+			if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
 				link.l1 = "Alo-o-on-s-o-o!!!";
 				link.l1.go = "PZ_RobertMartin_23";
@@ -5630,9 +5564,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "...";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
-			}*/
-			link.l1 = "Alo-o-on-s-o-o!!!";
-			link.l1.go = "PZ_RobertMartin_23";
+			}
 		break;
 		
 		case "PZ_RobertMartin_23":
@@ -5688,11 +5620,7 @@ void ProcessDialogEvent()
 		case "PZ_LongwayKaznDialog_8":
 			DialogExit();
 			LAi_SetActorType(npchar);
-			CharacterTurnByChr(npchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_SetStayType(pchar);
-			CharacterTurnByChr(pchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_FadeToBlackStart();
-			DoQuestCheckDelay("PZ_LongwayKazn_4", 1.5);
+			LAi_ActorFollow(npchar, CharacterFromID("PZ_RobertMartinPlennik"), "PZ_LongwayKazn_3_1", -1);
 		break;
 		
 		case "PZ_LongwayKaznDialog_9":
@@ -5727,60 +5655,9 @@ void ProcessDialogEvent()
 		
 		case "PZ_LongwayKaznDialog_12":
 			DialogExit();
-			ResetSound();
-			chrDisableReloadToLocation = false;
-			EndQuestMovie();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			locCameraTarget(PChar);
-			locCameraFollow();
 			AddQuestRecord("PZ", "39");
-			
-			LAi_SetPlayerType(pchar);
-			npchar.greeting = "Longway";
-			ReturnOfficer_Longway();
-			
-			bQuestDisableMapEnter = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
-			DeleteAttribute(pchar, "GenQuest.CannotWait");
-			DeleteAttribute(pchar,"questTemp.TimeLock");
-			LocatorReloadEnterDisable("LaVega_ExitTown", "reload1_back", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", false);
-			LAi_LocationDisableOfficersGen("PortPax_town", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			DeleteAttribute(pchar, "GenQuest.AbordageInStorm");
-			
-			PChar.quest.PZ_Etap6_Start.win_condition.l1 = "location";
-			PChar.quest.PZ_Etap6_Start.win_condition.l1.location = "Tortuga";
-			PChar.quest.PZ_Etap6_Start.win_condition = "PZ_Etap6_Start";
-			locations[FindLocation("Shore58")].DisableEncounters = true;
-			SetTimerCondition("PZ_Etap6_Opozdal", 0, 0, 7, false);
-			DelMapQuestMarkCity("PortPax");
-			AddMapQuestMarkShore("Shore58", true);
 			pchar.questTemp.PZ_FlagMartinInfo = true;
-			
-			// Компаньон-заглушка входит в состав нашей экскадры
-			sld = CharacterFromID("PZ_ShipStasis");
-			SetCompanionIndex(pchar, -1, sti(sld.index));
-			SetCharacterRemovable(sld, true);
-			SetShipRemovable(sld, true);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.quest.meeting = true;
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.Dialog.CurrentNode = "hired";
-			sld.Payment = true;
-			sld.ship.HP = sti(sld.ship.HP) / 2;
-			
-			//
-			makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
-			QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
-			DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
-			QuestToSeaLogin_Launch();
+			AddDialogExitQuestFunction("PZ_FinalKaznOnShip_DlgExit");
 		break;
 		
 		case "PZ_AlonsoKaznDialog_1":
@@ -5841,61 +5718,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_AlonsoKaznDialog_9":
 			DialogExit();
-			ResetSound();
-			chrDisableReloadToLocation = false;
-			EndQuestMovie();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			locCameraTarget(PChar);
-			locCameraFollow();
 			AddQuestRecord("PZ", "38");
-			
-			LAi_SetPlayerType(pchar);
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
-			npchar.lifeday = 0;
-			npchar.location = "None";
-			
-			bQuestDisableMapEnter = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
-			DeleteAttribute(pchar, "GenQuest.CannotWait");
-			DeleteAttribute(pchar,"questTemp.TimeLock");
-			LocatorReloadEnterDisable("LaVega_ExitTown", "reload1_back", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", false);
-			LAi_LocationDisableOfficersGen("PortPax_town", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			DeleteAttribute(pchar, "GenQuest.AbordageInStorm");
-			
-			PChar.quest.PZ_Etap6_Start.win_condition.l1 = "location";
-			PChar.quest.PZ_Etap6_Start.win_condition.l1.location = "Tortuga";
-			PChar.quest.PZ_Etap6_Start.win_condition = "PZ_Etap6_Start";
-			locations[FindLocation("Shore58")].DisableEncounters = true;
-			SetTimerCondition("PZ_Etap6_Opozdal", 0, 0, 7, false);
-			DelMapQuestMarkCity("PortPax");
-			AddMapQuestMarkShore("Shore58", true);
-			
-			// Компаньон-заглушка входит в состав нашей экскадры
-			sld = CharacterFromID("PZ_ShipStasis");
-			SetCompanionIndex(pchar, -1, sti(sld.index));
-			SetCharacterRemovable(sld, true);
-			SetShipRemovable(sld, true);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.quest.meeting = true;
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.Dialog.CurrentNode = "hired";
-			sld.Payment = true;
-			sld.ship.HP = sti(sld.ship.HP) / 2;
-			
-			//
-			makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
-			QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
-			DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
-			QuestToSeaLogin_Launch();
+			AddDialogExitQuestFunction("PZ_FinalKaznOnShip_DlgExit");
 		break;
 		
 		case "PZ_Norman1":
@@ -6750,7 +6574,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Longway, én vagyok a kapitányod. Nem a családod és nem a bébiszittered. Parancsokat adok, és nem azon gondolkodom, hogy véletlenül megsértettelek-e. Úgy követelsz, mintha régi házastársak lennénk, az Isten szerelmére...";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet15";
-				if (!IsCharacterPerkOn(pchar, "Megbízható")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Megbízható")) Notification_Perk(false, "Trustworthy");
 				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 85) notification("Képességpróba Sikertelen (85)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Igen, uram. Most már látom. Te is ugyanolyan rohadt szemétláda vagy, aki csak magával törôdik... Hosszú út. Akárcsak a húgod. A családom túl fogja élni a napot. A tiéd nem. Menj a pokolba!";
@@ -7051,7 +6875,7 @@ void ProcessDialogEvent()
 					{
 						link.l1 = "Hallgassanak meg! A húgod biztonságban van. De " + sStr + " most egy perverz kezében van, aki most is kínozhatja ôt - vagy még rosszabb! Gondolod, hogy Levasseur megengedné a húgodnak, hogy egy ilyen elôkelô létesítmény tulajdonosa legyen, ha úgy bánna vele, mint a többi szegény lánnyal a börtönében?!";
 						link.l1.go = "PZ_Longway_FlagMartinInfo_netVD1";
-						if (!IsCharacterPerkOn(pchar, "Megbízható")) notification("Perk Check Failed", "Trustworthy");
+						if (!IsCharacterPerkOn(pchar, "Megbízható")) Notification_Perk(false, "Trustworthy");
 						if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 85) notification("Képességpróba Sikertelen (85)", SKILL_LEADERSHIP);
 					}
 				}

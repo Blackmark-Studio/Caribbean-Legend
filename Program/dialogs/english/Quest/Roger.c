@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "1,300 pesos for a roll. I think it's a good price.";
-			link.l1 = "Yeah, and Tyrex wants twenty gold pieces for a roll. Not a coin less. And I mean doubloons. He gave me a job to find the right buyer for that price.";
+			link.l1 = "Yeah, and Tyrex wants 4 gold pieces for a roll. Not a coin less. And I mean doubloons. He gave me a job to find the right buyer for that price.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "How are you doing, pal?";
-			link.l1 = "Doing well. I have found us a buyer. Twenty-five doubloons per roll. I believe Tyrex will like it.";
+			link.l1 = "Doing well. I have found us a buyer. 5 doubloons per roll. I believe Tyrex will like it.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "K-ha! So, you are a pirate?";
-			link.l1 = "No, I just do business with them on special occasions. I know for certain that Marcus receives batches of ship silk on a regular basis and sells it to anyone who can afford it. And I'm not talking about 2,500 pesos for a roll here. I'd say if you can pay him 25 doubloons in gold for each roll, he'll drown you in them, you can count on that.";
+			link.l1 = "No, I just do business with them on special occasions. I know for certain that Marcus receives batches of ship silk on a regular basis and sells it to anyone who can afford it. And I'm not talking about 2,500 pesos for a roll here. I'd say if you can pay him 5 doubloons in gold for each roll, he'll drown you in them, you can count on that.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Twenty-five doubloons for a roll. That is the best price you can get, trust me on that.";
-			link.l1 = "Twenty-five golden coins? Hm. Not bad. I believe Tyrex will owe me a lot for such a buyer. Very well, deal, I'll let him know. However, if you lied to me about the price, then it's your neck on the line.";
+            dialog.text = "5 doubloons for a roll. That is the best price you can get, trust me on that.";
+			link.l1 = "5 golden coins? Hm. Not bad. I believe Tyrex will owe me a lot for such a buyer. Very well, deal, I'll let him know. However, if you lied to me about the price, then it's your neck on the line.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "I don't have that kind of gold mountain right now.";
 				link.l2.go = "Pelly_44_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "You know what, Cutlass? Forget it. Are we pirates or not? And Jean? Or is his pretty face his only asset? Get a chest ready - we'll stick to the original plan.";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3016,13 +3016,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Trustworthy) (Honour) (Leadership) That's enough blood for today, Jean. I'll handle this myself.";
 				link.l1.go = "merida_head_dobro_1";
-				notification("Trustworthy", "Trustworthy");
-				notification("Reputation Check Passed", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 71, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
@@ -4696,7 +4696,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Captain, take all her crew to your flagship except for an officer.";
 				Link.l1 = "Ah, right! I'll do that!";
@@ -4711,21 +4711,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+            LeaveShipIslaMona(&NPChar);
 			dialog.text = "Very well, we'll see her delivered to a safe harbour.";
 			Link.l1 = "Excellent!";
 			Link.l1.go = "carpenter_exit";
@@ -4762,6 +4748,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Cap, it seems there’s no room for another officer in your crew.";
+				link.l1 = "You may be right. I’ll swing by later—meanwhile, keep an eye here so no new master claims my vessel.";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "Are you taking her?";
 			link.l1 = "Yes.";

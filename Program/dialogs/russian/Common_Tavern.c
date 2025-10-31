@@ -1122,7 +1122,7 @@ void ProcessDialogEvent()
 				link.l2.go = "room_day_next";
 			}
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && !CheckAttribute(pchar, "questTemp.MarySexBlock"))
 			{
 				pchar.questTemp.MarySexBlock = true;
 				SetTimerFunction("Mary_DeleteSexBlock", 0, 0, 1);
@@ -1650,7 +1650,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Sharlie = "sailor";
 			//усадим матроса Алонсо
 			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "Alonso", "man", "man", 10, FRANCE, -1, true, "quest"));
-			sld.name 	= StringFromKey("HollandGambit_23");
+			sld.name = GetCharacterName("Alonso");
 			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 10, 20, 20, "blade_05", "", "", 10);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";

@@ -1184,7 +1184,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", ...ami a " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", ...ami a " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text =  "Ó! Épp egy szívességet akartam kérni tôled. Tudja, el kell szállítanom a " +
                                                GetGoodsNameAlt(iTradeGoods)+ " mennyiségû " + FindRussianQtyString(iQuantityGoods) + " rakományt a " +
@@ -1712,7 +1712,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "Az én 'barátom' jelenleg az otthonában van "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Nem rá van szükséged - a hajójára van szükséged, ami, mint megtudtam, miután körülbelül "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" fog elhaladni a " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + "közelében . Elsüllyesztheted, elfoglalhatod a beszállással - mindegy. A lényeg, hogy a hajó és a rakomány már ne legyen a "+pchar.GenQuest.Sunplace.Trader.Enemyname +"tulajdona. És nem érdekel, hogy ki fogja igényt tartani rá - te vagy a tenger. Ezért a munkáért fizetni fogok neked " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "Az én 'barátom' jelenleg az otthonában van "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Nem rá van szükséged - a hajójára van szükséged, ami, mint megtudtam, miután körülbelül "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" fog elhaladni a " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + "közelében . Elsüllyesztheted, elfoglalhatod a beszállással - mindegy. A lényeg, hogy a hajó és a rakomány már ne legyen a "+pchar.GenQuest.Sunplace.Trader.Enemyname +"tulajdona. És nem érdekel, hogy ki fogja igényt tartani rá - te vagy a tenger. Ezért a munkáért fizetni fogok neked " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "Megvan. Nos, akkor ideje indulni!";
 			link.l1.go = "Sunplace_3";
 		break;

@@ -203,9 +203,7 @@ void ProcessDialogEvent()
 		
 		case "florian_deck_5":
 			TakeNItems(pchar, "gold_dublon", 200);
-			Log_Info("You've received 200 doubloons.");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "Ma non è tutto, capitano. Che ne direste di guadagnare altri duecentocinquanta doppi escudos d’oro?";
+			dialog.text = "Ma non è tutto, capitano. Che ne direste di guadagnare altri 75 doppi escudos d’oro?";
 			link.l1 = "Suona promettente, ma dipende da che diavolo volete che faccia per voi, signore.";
 			link.l1.go = "florian_deck_6";
 		break;
@@ -409,9 +407,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_16":
-			TakeNItems(pchar, "gold_dublon", 250);
-			Log_Info("You've received 250 doubloons");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 75);
 			dialog.text = "Mi leggi proprio nel pensiero, "+GetFullName(pchar)+"Sì, maledizione! Dal momento che l’Alacantara è a corto di polvere da sparo, posso lasciarla andare al largo e poi costringerla a una lunga battaglia navale, dove finiranno la polvere prima di noi, ahah!\nDevi assicurarti che la polacca di rifornimento Puebla non raggiunga mai Portobello. Io non posso avvicinarmi troppo alla costa, le pattuglie noterebbero subito la mia fregata e mi caccerebbero via prima che possa intercettare l’Alacantara.\nPuebla è affar tuo. Trovala e sbarazzatene. Affondala o prendila come bottino, poco mi importa. Basta che non arrivi mai qui!\nSe ci riesci, vai in Guadalupa da Gérard LeCroix, credo che tu lo conosca già, vero? Lui ti darà il compenso che meriti.";
 			link.l1 = "Affare fatto! Vado subito a tagliare la rotta per Puebla!";
 			link.l1.go = "florian_19";

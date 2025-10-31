@@ -297,7 +297,7 @@ void MakeMineBoom(int iCharacterIndex, int iGoodCharacterIndex, float damg)
 		int iRandStartTime = rand(1000);
 		float fTotalFireTime = Ship_GetTotalFireTime(rCharacter);
 
-		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, 0, "ship_onfire", fTotalFireTime, iGoodCharacterIndex);
+		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, 0, "ShipEMB/ShipDamage_Fire", fTotalFireTime, iGoodCharacterIndex);
 		PostEvent(SHIP_FIRE_DAMAGE, iRandStartTime, "lllf", iCharacterIndex, iGoodCharacterIndex, 0, fTotalFireTime);
 		//    PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	}

@@ -12,12 +12,12 @@ HelenDrinking_11 { }
 HelenDrinking_12 {Lucky}
 HelenDrinking_13 { }
 HelenDrinking_14 {And how sickening it is to have two homes. Oh, Mary... After everything that happened, what should we do now, the three of us?}
-HelenDrinking_15 {Alonso}
+HelenDrinking_15 { }
 HelenDrinking_16 { }
 HelenDrinking_17 {Richard}
 HelenDrinking_18 {Small}
-HelenDrinking_19 {Helen approves}
-HelenDrinking_20 {Helen disapproves}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
 HelenDrinking_21 {Ironwood delivered to your hold!}
 HelenDrinking_22 {~ got +1 to ~}
 HelenDrinking_23 {~ got +1 to ~}

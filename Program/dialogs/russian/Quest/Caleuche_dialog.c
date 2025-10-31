@@ -490,7 +490,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tuttuat_48":
-			dialog.text = "Из сказания моя понимать, что он малый и находиться от острова с эта деревня по направлению, который бледнолицые зовут 'север', посреди трёх островов, а с четвёртый стороа - большая вода, океан.";
+			dialog.text = "Из сказания моя понимать, что он малый и находиться от острова с эта деревня по направлению, который бледнолицые зовут 'север', посреди трёх островов, а с четвёртый сторона - большая вода, океан.";
 			link.l1 = "Хм. На север от Доминики в треугольнике из островов, на грани с океаном? Чёрт возьми, да это же немалый участок моря! Как там искать маленький островок, о котором до сих пор никто не слышал?";
 			link.l1.go = "Tuttuat_49";
 		break;
@@ -580,12 +580,18 @@ void ProcessDialogEvent()
 			ChangeItemDescribe("kaleuche_amulet2", "itmdescr_kaleuche_amulet2_sword");
 			ChangeItemDescribe("kaleuche_amulet3", "itmdescr_kaleuche_amulet3_shield");
 			sld = ItemsFromID("kaleuche_amulet2");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			aref modifier = AddCallback(sld, CT_COMMON, "KaleucheAmuletAttack");
+			modifier.arg0 = 0.25;
 			sld.picIndex = 13;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;
 			sld.unique = true;	
 			sld.ItemType = "ARTEFACT";
 			sld = ItemsFromID("kaleuche_amulet3");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			SetModifierFromSource(sld, HAS + M_CANT_BE_POISONED, true, TALISMAN_ITEM_TYPE);
+			SetModifier(sld, M_REDUCE_DAMAGE, 0.25);
 			sld.picIndex = 14;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;

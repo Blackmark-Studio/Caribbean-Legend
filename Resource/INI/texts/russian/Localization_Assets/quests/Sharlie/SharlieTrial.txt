@@ -22,11 +22,11 @@ SharlieTrial_21 {Жильберт}
 SharlieTrial_22 {Курси}
 SharlieTrial_23 {Уолтер}
 SharlieTrial_24 {Катчер}
-SharlieTrial_25 {Потопите противника бомбами, или сходу возьмите его на абордаж если ветер позволяет.}
+SharlieTrial_25 {Потопите противника бомбами или немедленно возьмите его на абордаж, если ветер позволит.}
 SharlieTrial_26 {Отлично! Теперь вы можете выйти на глобальную карту через меню действий и отправиться на север, на Гваделупу!}
 SharlieTrial_27 {Тичингиту}
 SharlieTrial_28 { }
-SharlieTrial_29 {Алонсо}
+SharlieTrial_29 { }
 SharlieTrial_30 { }
 SharlieTrial_31 {Жерар}
 SharlieTrial_32 {Лекруа}
@@ -52,3 +52,5 @@ SharlieTrial_51 {барк 'Генрих'}
 SharlieTrial_52 {Не забудьте обыскать убитых и собрать трофеи!}
 SharlieTrial_53 {Гийом}
 SharlieTrial_54 {Дюбуа}
+SharlieTrial_55 {Лист}
+SharlieTrial_56 {Какао}

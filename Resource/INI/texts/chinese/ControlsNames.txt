@@ -189,3 +189,5 @@ TimeScale {时间加速/减速}
 TimeScaleFasterBA {时间加速}
 TimeScaleSlowerBA {时间减速}
 FireCamera_Set {瞄准视角}
+WMapDrawCircle {战斗区域}
+InterfaceTakeAll {全部拿走}

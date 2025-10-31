@@ -1,8 +1,8 @@
 LongHappy_1 {To make a wedding decisions USE A THINKING OUT LOUD OPTION}
 LongHappy_2 {Abbot Benoit has come ashore!}
 LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> barrels of rum and @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 barrels of rum, 20 barrels of rum и 300 000 pesos.}
-LongHappy_5 {100 barrels of rum, 50 barrels of rum и 500 000 pesos.}
+LongHappy_4 {50 barrels of rum, 20 barrels of wine и 300 000 pesos.}
+LongHappy_5 {100 barrels of rum, 50 barrels of wine и 500 000 pesos.}
 LongHappy_6 {But before that, I have to organize a celebration at the tavern of Saint-Pierre. Hurry up!}
 LongHappy_7 {But before that, I have to organize a celebration on Isla Tesoro. Hurry up!}
 LongHappy_8 {First, you have to arrange a celebration at the tavern of Saint-Pierre!}
@@ -13,7 +13,7 @@ LongHappy_12 {Svensson}
 LongHappy_13 {Sperm Whale}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
-LongHappy_16 {Fortune}
+LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Some time has passed...@<NewStr()>The party is in full swing...}

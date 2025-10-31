@@ -3,8 +3,8 @@ Neutral_2 {Vous avez laissé des notes}
 Neutral_3 {Jack}
 Neutral_4 {Veils}
 Neutral_5 {Sea Beast}
-Neutral_6 {Julie}
-Neutral_7 {d'Armagnac}
+Neutral_6 { }
+Neutral_7 { }
 Neutral_8 {Golden Seagull}
 Neutral_9 {Tristan}
 Neutral_10 {Renier}

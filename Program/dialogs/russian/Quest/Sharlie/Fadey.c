@@ -59,11 +59,11 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "dublon")
 				{
 					dialog.text = "А, это опять вы, мой дорогой друг! Ну что, принесли дублоны за индейца?";
-					if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu80"))
+					if (CheckAttribute(npchar, "questTemp.Sharlie.Tichingitu_Skidka"))
 					{
-						if (PCharDublonsTotal() >= 80) // belamour legendary edition
+						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "Да. Вот, держите ваши 80 дублонов.";
+							link.l1 = "Да. Вот, держите ваши 35 дублонов.";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -74,9 +74,9 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (PCharDublonsTotal() >= 100) // belamour legendary edition
+						if (PCharDublonsTotal() >= 40) // belamour legendary edition
 						{
-							link.l1 = "Да. Вот, держите ваши сто дублонов.";
+							link.l1 = "Да. Вот, держите ваши 40 дублонов.";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -427,8 +427,8 @@ void ProcessDialogEvent()
 			SetQuestHeader("Tichingitu");
 			AddQuestRecord("Tichingitu", "1");
 			pchar.questTemp.Sharlie.Tichingitu = "true";
-			AddDialogExitQuestFunction("SetTichingituJail");
-			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
+			AddDialogExitQuestFunction("Tichingitu_SetTichingituJail");
+			SetFunctionTimerCondition("Tichingitu_FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
 		break;
 		
@@ -464,28 +464,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "Хорошо-хорошо, сто золотых дублонов. Но это последняя цена. Причём именно дублоны, а не песо. У нашего ростовщика наверняка найдётся некоторое количество.";
-			if(PCharDublonsTotal() >= 100) // belamour legendary edition
+			dialog.text = "Хорошо-хорошо, 40 золотых дублонов. Но это последняя цена. Причём именно дублоны, а не песо. У нашего ростовщика наверняка найдётся некоторое количество.";
+			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
-				link.l1 = "У меня есть нужное количество прямо сейчас. Вот, держите ваши сто дублонов.";
+				link.l1 = "У меня есть нужное количество прямо сейчас. Вот, держите ваши 40 дублонов.";
 				link.l1.go = "Tichingitu_7";
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Вызывающий доверие) Фадей, я - единственный, кто вообще может вам этот инцидент компенсировать звонкой монетой.";
 				link.l2.go = "Tichingitu_7_TW";
 			}
-			else notification("Не открыта способность", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "Хорошо, я принесу то, что вы требуете.";
 			link.l3.go = "Tichingitu_6";
 		break;
 		
 		case "Tichingitu_7_TW":
-			dialog.text = "Ох, далеко пойдёте, мой друг. Уговорили! Восемьдесят золотых - и ни монетой меньше!";
+			dialog.text = "Ох, далеко пойдёте, мой друг. Уговорили! 35 золотых - и ни монетой меньше!";
 			link.l1 = "";
 			link.l1.go = "Tichingitu_6";
-			pchar.questTemp.Sharlie.Tichingitu80 = true;
+			npchar.questTemp.Sharlie.Tichingitu_Skidka = true;
 		break;
 		
 		case "Tichingitu_6":
@@ -496,12 +496,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_7":
-			if(CheckAttribute(pchar,"questTemp.Sharlie.Tichingitu80"))
+			if(CheckAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka"))
 			{
-				RemoveDublonsFromPCharTotal(80);
-				DeleteAttribute(pchar,"questTemp.Sharlie.Tichingitu80");
+				RemoveDublonsFromPCharTotal(35);
+				DeleteAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka");
 			}
-			else RemoveDublonsFromPCharTotal(100); // belamour legendary edition
+			else RemoveDublonsFromPCharTotal(40); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Отлично! Вот это дело! Сейчас я напишу записку и приложу свою печать, подождите немного... вот, держите. Отдайте это коменданту и можете забирать своего индейца. Вот только зачем он вам понадобился - ума не приложу. Разве что на ярмарках за деньги показывать, ха-ха!";
 			link.l1 = "Бог всё видит, Фадей. Спасти жизнь человеку - благое дело.";
@@ -763,8 +763,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_4":
-			dialog.text = "Так, так... Строевые пистоли и пара мушкетов, стало быть... Обещать, что в полном объёме вашу нужду исполню, не буду, но сделаю всё, что в моих силах. А пока что мне нужен задаток в размере 40 000 песо, а ежели дублоны водятся, то 300 штук этих полновесных монет.";
-			if(PCharDublonsTotal() >= 300)
+			dialog.text = "Так, так... Строевые пистоли и пара мушкетов, стало быть... Обещать, что в полном объёме вашу нужду исполню, не буду, но сделаю всё, что в моих силах. А пока что мне нужен задаток в размере 40 000 песо, а ежели дублоны водятся, то 75 штук этих полновесных монет.";
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "Держите дублоны, Фадей. Так намного выгоднее.";
 				link.l1.go = "pistols_4D";
@@ -774,7 +774,7 @@ void ProcessDialogEvent()
 				link.l2 = "Перевелись все дублоны у меня, возьмите песо, Фадей.";
 				link.l2.go = "pistols_4P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "Мне нужно отлучиться к своему казначею. Я пулей! И глазом моргнуть не успеете.";
 				link.l3.go = "exit";
@@ -786,7 +786,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_4D":
 			SetFunctionTimerCondition("Mtraxx_MagicBoxready", 0, 0, 1, false);
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Tomorow";
             dialog.text = "Приходите завтра, "+pchar.name+", а я похлопочу за нужный вам товар.";
 			link.l1 = "Тогда не буду мешать. До завтра!";
@@ -810,9 +810,9 @@ void ProcessDialogEvent()
 		
 		case "pistols_5":
 			dialog.text = "Иначе и быть не могло, молодой человек. Мне сдюжило найти всё, что вы просили. Поэтому дело за малым - за оплатой родненькой. Передайте мне ещё ровно столько, сколько давали задатком, и забирайте свой ящик с оружием.";
-			if(PCharDublonsTotal() >= 300)
+			if(PCharDublonsTotal() >= 75)
 			{
-				link.l1 = "Держите 300 дублонов. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей?! Вы просто не представляете, как меня выручили!";
+				link.l1 = "Держите 75 дублонов. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей?! Вы просто не представляете, как меня выручили!";
 				link.l1.go = "pistols_5D";
 			}
 			if(sti(Pchar.money) >= 40000)
@@ -820,7 +820,7 @@ void ProcessDialogEvent()
 				link.l2 = "Держите 40 000 песо. Я попрошу матросов отнести этот ящик ко мне корабль. Ох, что бы я без вас делал, Фадей?! Вы просто не представляете, как меня выручили!";
 				link.l2.go = "pistols_5P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "Ну, вот как можно быть таким нерасторопным и забыть деньги. Я скоро вернусь.";
 				link.l3.go = "exit";
@@ -832,7 +832,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5D":
 			Log_Info("Сундук Фадея погружен на корабль");
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
             dialog.text = "Помогать нуждающимся - это дело чести. Будете в Бас-Тере, добрый молодец - обязательно навестите поздороваться.";
@@ -892,8 +892,6 @@ void ProcessDialogEvent()
 			dialog.text = "Разве могу я отказать такому доброму другу, как вы, "+pchar.name+"? Тем паче, коль скоро вы готовы на дело это богоугодное раскошелиться. А ежели так, назовите имя того, кого изыскать так страстно желаете.";
 			link.l1 = "Что до имени, я не уверен, но думаю, что он мог назваться Рупертом Каспером или Джошуа Нортвудом.";
 			link.l1.go = "WildRose_Fadey_9";
-			link.l2 = "Что до имени, я не уверен, но думаю, что он мог назваться Рупертом Каспером или Джошуа Нортвудом.";
-			link.l2.go = "WildRose_Fadey_9";
 		break;
 
 		case "WildRose_Fadey_9":

@@ -13,6 +13,7 @@ ref xi_refCharacter;
 int iSelected = 1;
 int colonyindex = -1;
 int  iGoodIndex;
+bool colonyIsShown = false;
 ///espkk. utils -->
 //cuz the game doesn't use built-in language mechanism
 #define LANG_FILE "activemap"
@@ -118,9 +119,9 @@ void InitInterface(string iniName)
 	SetEventHandler("DoTP","DoTP",0);
 
 	XI_RegistryExitKey("IExit_F2");
-	FillMapsTable();
 
 	bool atlasNotEmpty = IsAtlasNotEmpty();
+	if (atlasNotEmpty) FillMapsTable();
 	XI_WindowShow("MAIN_WINDOW", atlasNotEmpty);
 	SetNodeUsing("STR_NOMAP", !atlasNotEmpty);
 
@@ -195,6 +196,7 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+	if (comName == "click" && colonyIsShown) HideRColony();
 	switch(nodName)
 	{
 		/////////////////////// menu ///////////////
@@ -241,6 +243,8 @@ void ProcessCommandExecute()
 			}
 		break;
 		case "MAPS":
+			if (colonyIsShown) break;
+
 			if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
 				iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
 			}
@@ -295,15 +299,14 @@ void FillMapsTable()
 
 	n = 1;
 	idLngFile = LanguageOpenFile("ItemsDescribe.txt");
-	if (CheckAttribute(pchar, "showlastmap")) selectedId = pchar.showlastmap;
-	if (!CheckAttribute(pchar, "showlastmap.force"))
+
+	if (CheckAttribute(pchar, "showlastmap.force"))
 	{
-		if (IsEntity(&worldMap) && bestMapId != "") selectedId = bestMapId;
-		else if (FindAtlasMap(&selectedId) == "")
-		{
-			if (CheckAttribute(pchar, "showlastmap")) { selectedId = pchar.showlastmap; }
-		}
-	} else DeleteAttribute(pchar, "showlastmap.force");
+		selectedId = pchar.showlastmap;
+		DeleteAttribute(pchar, "showlastmap.force"); // будет показана карта из инвентаря
+	}
+	else if (IsEntity(&worldMap) && bestMapId != "") selectedId = bestMapId;                     // в море берем лучшую из доступных карту архипелага
+	else if (FindAtlasMap(&selectedId) == "") selectedId = bestMapId;                            // показываем карту архипелага, потому что у нас нет карты из атрибута showlastmap
 
 	mapsTable.hr.td1.str = XI_ConvertString("Select map");
 	Table_UpdateWindow("TABLE_MAPS");
@@ -319,23 +322,6 @@ void FillMapsTable()
 		n++;
 	}
 
-	// Затем какие-то остальные карты
-	aref restMaps, restMap;
-	makearef(restMaps, Atlas.rest);
-
-	for(i=0;i<GetAttributesNum(&restMaps);i++)
-	{
-		restMap = GetAttributeN(&restMaps, i);
-		Items_FindItem(GetAttributeName(&restMap), &arItem)
-		row = "tr" + n;
-		sGood = arItem.id;
-
-		if (selectedId == sGood) { iSelected = n; }
-		mapsTable.(row).index = arItem.index;
-		mapsTable.(row).td1.str = LanguageConvertString(idLngFile, "itmname_"+arItem.id);
-		n++;
-	}
-
 	// Теперь карты акваторий
 	string areaMapsIds[2];
 	int mapsQty = FillAreaMapsIds(&areaMapsIds);
@@ -345,7 +331,7 @@ void FillMapsTable()
 	{
 		Items_FindItem(areaMapsIds[i], &arItem);
 		row = "tr" + n;
-		if (GetMapArea(&selectedId) == GetMapArea(&arItem)) { iSelected = n; }
+		if (GetMapArea(selectedId) == GetMapArea(&arItem)) { iSelected = n; }
 		mapsTable.(row).index = arItem.index;
 		mapsTable.(row).td1.str = XiStr(GetMapShownKey(arItem));
 		n++;
@@ -353,7 +339,8 @@ void FillMapsTable()
 
 	CurRow   =  "tr" + (iSelected);
 	mapsTable.select = iSelected;
-	SetNewMapPicture(ItemsFromID(selectedId));
+	Items_FindItem(selectedId, &arItem);
+	SetNewMapPicture(&arItem);
 
 	Table_UpdateWindow("TABLE_MAPS");
 	LanguageCloseFile(idLngFile);
@@ -365,22 +352,15 @@ void TableSelectChange()
 	iSelected = GetEventData();
 	CurTable = sControl;
 	CurRow   =  "tr" + (iSelected);
-	if (CurTable != "TABLE_LOCS") SetNewMapPicture("");
+
+	if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
+		iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
+		SetNewMapPicture(&Items[iGoodIndex]);
+	}
 }
 
-void SetNewMapPicture(ref map)
+void SetNewMapPicture(ref itmRef)
 {
-	ref itmRef;
-
-	if (CheckAttribute(&map, "id")) itmRef = map;
-	else
-	{
-		if (CheckAttribute(&GameInterface, "TABLE_MAPS." + CurRow + ".index")){
-			iGoodIndex = sti(GameInterface.TABLE_MAPS.(CurRow).index);
-		}
-		itmRef = &Items[iGoodIndex];
-	}
-
 	if (!CheckAttribute(itmRef, "groupID")) return;
 	if (itmRef.groupID != MAPS_ITEM_TYPE) return;
 
@@ -411,6 +391,7 @@ void SetNewMapPicture(ref map)
 
 	ref switchMap = GetMapSwitch(itmRef);
 	SetNodeUsing("SWITCH_MAP_BUTTON", switchMap.id != itmRef.id);
+	HideRColony();
 }
 
 void ShowInfoWindow()
@@ -418,8 +399,33 @@ void ShowInfoWindow()
 	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
-	sHeader = XI_ConvertString("Atlas");
-	sText1 = XI_ConvertString("Atlas_Descr");
+
+	switch (sCurrentNode)
+	{
+		case "WEIGHT":
+			sHeader = XI_ConvertString("Weight");
+			sText1 = GetRPGText("Weight");
+		break;
+		case "MONEY":
+			sHeader = XI_ConvertString("Money");
+			sText1 = GetRPGText("Money");
+		break;
+		case "TABLE_MAPS":
+			int areasMap = CountAreasMapFromCharacter();
+			
+			string counterString = XiStr("AtlasCommonMapsCounter") + ": " + areasMap + " / " + MAPS_IN_ATLAS;
+			counterString += NewStr();
+			counterString += XiStr("AtlasAdmiralMapsCounter") + ": " + CountAdmiralMapFromCharacter() + " / " + MAPS_IN_ATLAS;
+			counterString += NewStr();
+			counterString += XiStr("AtlasMapsBonus") + ": ";
+			if (areasMap == MAPS_IN_ATLAS )counterString += xiStr("yes");
+			else counterString += xiStr("no");
+
+			sHeader = XI_ConvertString("Atlas");
+			sText1 = XI_ConvertString("Atlas_Descr");
+			sText3 = counterString;
+		break;
+	}
 
 	LanguageCloseFile(LanguageOpenFile("ItemsDescribe.txt"));
 	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 128, 128, false);
@@ -428,7 +434,6 @@ void ShowInfoWindow()
 void HideInfoWindow()
 {
 	CloseTooltipNew();
-	HideRColony();
 }
 
 /// bestmap section ===>
@@ -946,6 +951,7 @@ void HideRColony()
 	XI_WindowDisable("MAINBESTMAP_WINDOW", true);
 	XI_WindowDisable("INFO_WINDOW", true);
 	XI_WindowShow("INFO_WINDOW", false);
+	colonyIsShown = false;	
 	// телепорт на правую кнопку
 	// if (bBettaTestMode && colonyindex != -1)
 	// {
@@ -962,6 +968,7 @@ void ShowColonyInfo(int iColony)
 	rColony = &colonies[iColony];
 	string sColony = colonies[iColony].id;
 	int iColor;
+	colonyIsShown = true;
 
 	//Clean up -->
 	sText = XI_ConvertString("Colony" + sColony);

@@ -108,11 +108,11 @@ int GetDiplomatRate(bool bTrait, int iNation)
     int iRel;
     switch (iTargetThreat)
     {
-        case 0: iRel = 0;  break;
-        case 1: iRel = 10; break;
-        case 2: iRel = 15; break;
-        case 3: iRel = 20; break;
-        case 4: iRel = 30; break;
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
     }
     return iCurProblem - iRel;
 }
@@ -155,11 +155,11 @@ int CalculateRelationSum(int iNation, bool bLoyer)
 	// Сколько сбросит
     switch (iTargetThreat)
     {
-        case 0: iRel = 0;  break;
-        case 1: iRel = 10; break;
-        case 2: iRel = 15; break;
-        case 3: iRel = 20; break;
-        case 4: iRel = 30; break;
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
     }
 	string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
 	PChar.GenQuest.(sNation) = iCurProblem - iRel;
@@ -169,11 +169,11 @@ int CalculateRelationSum(int iNation, bool bLoyer)
 	if (iTargetThreat < 0) iTargetThreat = 0;
     switch (iTargetThreat)
     {
-        case 0: iRel = 0;  break;
-        case 1: iRel = 10; break;
-        case 2: iRel = 15; break;
-        case 3: iRel = 20; break;
-        case 4: iRel = 30; break;
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
     }
 	if (bLoyer) return (iCurProblem - iRel) * 1200 + makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*80000);
 	return (iCurProblem - iRel) * 1500 +  makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*100000);
@@ -339,8 +339,8 @@ void GiveItemToTrader(aref ch)
 	
 	switch (merType)
 	{
-		case "potion" 		: // лекарства и травы + обереги
-			AddItems(ch, "mineral17", 	Rand(1) + 2);	
+		case "potion" 		: // лекарства и травы + обереги 
+			AddItems(ch, "mineral17", 	Rand(6) + 2);	
 			AddItems(ch, "potion1", 	Rand(8) + 1);
 			if (ch.id == "Merdok")
 			{
@@ -386,6 +386,7 @@ void GiveItemToTrader(aref ch)
 			if(irand == 1)
 			{
 				if(GetDataDay() < 4) AddItems(ch, "recipe_potion2", 1);
+				if(GetDataDay() > 27) AddItems(ch, "recipe_PerksPotion", 1);
 				if(GetDataDay() % 2 == 0) AddItems(ch, "recipe_potion1", 1);
 			}
 			if(rank < 11)
@@ -483,29 +484,33 @@ void GiveItemToTrader(aref ch)
 			irand = hrand(5, tag);
 			if(irand == 1) AddItems(ch, "mineral3", 	Rand(4) + 5);
 			if(irand == 2) AddItems(ch, "mineral5", 	Rand(1) + 1);
+			if(irand == 3) AddItems(ch, "ArmoryPaper", 	Rand(6) + 3);
 			
 			irand = hrand(6, tag);
-			if(irand == 3) AddItems(ch, "mineral6", 	Rand(2) + 1);
-			if(irand == 4) AddItems(ch, "mineral7", 	Rand(2) + 1);				
-			if(irand == 5) AddItems(ch, "mineral9", 	Rand(2) + 1);
-			if(irand == 6) AddItems(ch, "mineral10", 	Rand(2) + 1);
+			if(irand == 2) AddItems(ch, "mineral6", 	Rand(2) + 1);
+			if(irand == 3) AddItems(ch, "mineral7", 	Rand(2) + 1);				
+			if(irand == 4) AddItems(ch, "mineral9", 	Rand(2) + 1);
+			if(irand == 5) AddItems(ch, "mineral10", 	Rand(2) + 1);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(3) + 2);
 
 			irand = hrand(4, tag);
 			if(irand == 0) AddItems(ch, "mineral13", 	Rand(1) + 1);		
 			if(irand == 1) AddItems(ch, "mineral15", 	Rand(1) + 1);
 			if(irand == 2) AddItems(ch, "mineral16", 	Rand(1) + 1);
+			if(irand == 3) AddItems(ch, "ArmoryPaper", 	Rand(8) + 1);
 			
 			irand = hrand(8, tag);
 			if(irand == 1) AddItems(ch, "mineral18", 	Rand(1) + 1);
 			if(irand == 8) AddItems(ch, "mineral19", 	Rand(1) + 1);
 			if(irand == 5) AddItems(ch, "mineral20", 	Rand(1) + 1);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(4) + 2);
 			
 			irand = hrand(9, tag);
 			if(irand == 9) AddItems(ch, "mineral21", 	Rand(1) + 1);
 			if(irand == 7) AddItems(ch, "mineral22", 	Rand(5) + 2);
 			if(irand == 5) AddItems(ch, "mineral23", 	Rand(9) + 5);
 			if(irand == 3) AddItems(ch, "mineral24", 	Rand(1) + 1);
-			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(4) + 5);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(5) + 4);
 			
 			irand = hrand(15, tag);
 			if(irand == 15)AddItems(ch, "mineral25", 	Rand(1) + 2);
@@ -856,7 +861,7 @@ void GiveItemToTrader(aref ch)
 				AddItems(ch, "gold_dublon", 35 + sti(pchar.rank) * 3 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(3 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 4)); // дублоны 
 			}
 			irand = rand(2);
-			if(irand == 1) AddItems(ch, "chest_open", Rand(1) + 1); // пустые сундуки
+			if(irand == 1) AddItems(ch, "chest_open", Rand(3) + 4); // пустые сундуки
 			
 			AddItems(ch, "jewelry1", Rand(4) + 1);
 			AddItems(ch, "jewelry2", Rand(4) + 1);
@@ -966,6 +971,7 @@ void GiveItemToTrader(aref ch)
 			if(irand == 95) AddItems(ch, "obereg_10", 1);
 			if(irand == 105) AddItems(ch, "obereg_11", 1);
 			if(irand == 115) AddItems(ch, "rat_poison", 1);
+			if(irand == 125) AddItems(ch, "recipe_PerksPotion", 1);
 			irand = hrand(120, tag);
 			if(irand == 9 && rank > 6) GenerateAndAddItems(ch, "blade_06", 1);
 			if(irand == 49 && rank > 6) GenerateAndAddItems(ch, "blade_10", 1);
@@ -1179,12 +1185,13 @@ void GiveItemToTrader(aref ch)
         	if(irand == 2) AddItems(ch, "alchemy_tool", 1);  // алхимический набор
 
     		// ===== (2) КАЖДЫЙ ДЕНЬ: случайный рецепт зелья (гарантированно 1 шт.) =====
-    		irand = hrand(4, tag); // 0..4
+    		irand = hrand(5, tag); // 0..5
     		if(irand == 0) AddItems(ch, "recipe_potion1", 1);
     		if(irand == 1) AddItems(ch, "recipe_potion2", 1);
     		if(irand == 2) AddItems(ch, "recipe_potion3", 1);
     		if(irand == 3) AddItems(ch, "recipe_potion4", 1);
     		if(irand == 4) AddItems(ch, "recipe_berserker_potion", 1);
+    		if(irand == 5) AddItems(ch, "recipe_PerksPotion", 1);
 
     		// ===== (3) СЛУЧАЙНЫЙ РЕЦЕПТ ТОТЕМА (гарантированно 1 шт.) =====
     		irand = hrand(12, tag); // 0..12
@@ -1926,8 +1933,9 @@ int GenerateCharacter(int iNation, int isShip, string sModel, int iSex, int isLo
 		else
 		{
 			characters[iChar].ship.type = SearchForMaxShip(&characters[iChar], isLock, CharacterType);
+			InitChrRebalance(&characters[iChar]);
 			Fantom_SetRandomCrewExp(&characters[iChar], "war");
-			
+			GiveCaptainOfficers(&characters[iChar], true);
 		}
 		
 		SetBaseShipData(&characters[iChar]);
@@ -2447,6 +2455,7 @@ int SetCharToPrisoner(ref refEnemyCharacter)
 	    LAi_NoRebirthEnable(rChTo);
 
 	    SetCharacterRemovable(rChTo, true);
+			if (CheckAttribute(rChTo, "personality.hasCrew")) RemoveCaptainOfficers(rChTo);
 	    AddPassenger(refMyCharacter,rChTo,true);
     }
     return iNextPrisoner;

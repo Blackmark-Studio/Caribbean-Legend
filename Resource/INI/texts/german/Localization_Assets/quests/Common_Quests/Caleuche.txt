@@ -26,7 +26,7 @@ Caleuche_25 { }
 Caleuche_26 {Ein Geisterschiff am Horizont zu sehen!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
-Caleuche_29 {Flying Heart}
+Caleuche_29 { }
 Caleuche_30 {Sie fühlen sich geschickter}
 Caleuche_31 {Sie fühlen sich robuster}
 Caleuche_32 {Sie fühlen sich stärker}
@@ -36,5 +36,5 @@ Caleuche_35 {Sie fühlen sich selbstbewusster}
 Caleuche_36 {Sie fühlen sich inspiriert}
 Caleuche_37 {Das Geisterschiff ist am Horizont zu sehen!}
 Caleuche_38 {Ihr seid ohnmächtig geworden vor Wunden...}
-Caleuche_39 {Alonso}
+Caleuche_39 { }
 Caleuche_40 { }

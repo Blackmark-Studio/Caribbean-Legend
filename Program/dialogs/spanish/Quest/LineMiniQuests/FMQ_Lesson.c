@@ -304,11 +304,14 @@ void ProcessDialogEvent()
 		dialog.text = "Estoy escuchando, " + pchar.name + ".";
 		if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 		{
+			Notification_Skill(true, 31, SKILL_SNEAK);
 			link.l1 = "¡Les daremos pelea, muchachos! ¡Hay bienes y dinero justo detrás de esta colina! Estamos aquí por ellos y no nos iremos. ¡De ninguna manera un grupo de pieles rojas, incluso con mosquetes, puede detenernos! ¡Enterremos a esos cabrones y terminemos el trabajo! Tenemos suficientes hombres, hay oportunidad de emboscarlos. Cuatro hombres los recibirán con fuego desde los flancos y el resto de nosotros tomaremos posiciones aquí. ¡Reduzcamos su número y acabemos con ellos!";
 			link.l1.go = "prosper_8";
 		}
 		else
 		{
+			if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+			if (n < 3) notification("Not enough people", "X");
 			if (n > 0)
 			{
 				link.l1 = "¡Les daremos pelea, muchachos! ¡Hay bienes y dinero justo detrás de esta colina! Estamos aquí por ellos y no nos iremos. ¡De ninguna manera un grupo de pieles rojas, incluso con mosquetes, puede detenernos! ¡Enterremos a esos cabrones y terminemos el trabajo!";

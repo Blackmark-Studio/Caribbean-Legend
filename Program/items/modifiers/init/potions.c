@@ -61,6 +61,11 @@ bool InitPotionModifiers(ref item)
 			AddDescriptor(item, "Alchemy", -1);
 		}
 		break;
+		case "PerksPotion":
+		{
+			AddDescriptor(item, "Alchemy", -1);
+		}
+		break;
 	}
 
 	// Трава
@@ -94,12 +99,6 @@ bool InitPotionModifiers(ref item)
 		case "cannabis6":
 		{
 			AddDescriptor(item, "Herb", -1);
-		}
-		break;
-		case "vodka":
-		{
-			AddDescriptor(item, "EmpoweredAmmo", -1);
-			AddDescriptor(item, "Ingredient", -1);
 		}
 		break;
 	}

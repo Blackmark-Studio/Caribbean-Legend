@@ -8,10 +8,22 @@ string GetItemDescriptorsToString(ref ref_Id_Idx)
 	for (int i = 0; i < GetAttributesNum(descriptors); i++)
 	{
 		aref attributeN = GetAttributeN(descriptors, i);
-		result += GetConvertStrB("descriptor_" + GetAttributeName(attributeN), "ItemsDescriptors.txt") + " ";
+		result += GetDescriptorName(attributeN, refItem) + " ";
 	}
 
 	return result;
+}
+
+string GetDescriptorName(aref descriptor, ref rObject)
+{
+	string name = GetAttributeName(descriptor);
+	return DLG_Convert("descriptor_" + name, "ItemsDescriptors.txt", rObject);
+}
+
+string GetDescriptorDescribe(aref descriptor, ref rObject)
+{
+	string name = GetAttributeName(descriptor);
+	return DLG_Convert("descriptor_descr_" + name, "ItemsDescriptors.txt", rObject);
 }
 
 aref GetItemDescriptors(ref ref_Id_Idx)
@@ -29,9 +41,8 @@ void SetDescriptorsTooltip(string sCurrentNode, string header, string text, stri
 	aref descriptors = GetItemDescriptors(rObject);
 	int descriptorNum = sti(FindStringAfterChar(sCurrentNode, "_")) - 1;
 	aref descriptor = GetAttributeN(descriptors, descriptorNum);
-	string descriptorId = GetAttributeName(descriptor);
-	header = DLG_Convert("descriptor_" + descriptorId, "ItemsDescriptors.txt", rObject);
-	text = DLG_Convert("descriptor_descr_" + descriptorId, "ItemsDescriptors.txt", rObject);
+	header = GetDescriptorName(descriptor, rObject);
+	text = GetDescriptorDescribe(descriptor, rObject)
 	badText = "";
 	goodText = "";
 }
@@ -50,9 +61,7 @@ int FillUpDescriptors(ref rObject)
 			SetNodeUsing(nodeName, true);
 			SetNodeUsing(nodeName2, true);
 			descriptor = GetAttributeN(descriptors, x);
-			string descriptorName = GetAttributeName(descriptor);
-			descriptorName = DLG_Convert("descriptor_" + descriptorName, "ItemsDescriptors.txt", rObject);
-			SetFormatedText(nodeName2, descriptorName);
+			SetFormatedText(nodeName2, GetDescriptorName(descriptor, rObject));
 			SetVAligmentFormatedText(nodeName2);
 		}
 		else

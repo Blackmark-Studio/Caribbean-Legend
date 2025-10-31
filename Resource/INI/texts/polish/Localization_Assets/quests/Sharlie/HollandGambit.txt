@@ -3,13 +3,13 @@ HollandGambit_2 {Ridderbok}
 HollandGambit_3 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
 HollandGambit_4 {Miguel}
 HollandGambit_5 { }
-HollandGambit_6 {Mirage}
+HollandGambit_6 { }
 HollandGambit_7 {Tryb eksploracji: podwojono czas trwania zadania}
-HollandGambit_8 {Walkiria}
+HollandGambit_8 { }
 HollandGambit_9 {Walkiria jest na horyzoncie!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
-HollandGambit_12 {Meifeng}
+HollandGambit_12 { }
 HollandGambit_13 {Jest i grota. Powinienem poszukać tu skrytki Salomona.}
 HollandGambit_14 {Harry}
 HollandGambit_15 {Fletcher}
@@ -20,7 +20,7 @@ HollandGambit_19 {Rodriges}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
-HollandGambit_23 {Alonso}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Abigail zmarła na gorączke tropikalną!}
 HollandGambit_26 {Charlie Knippel skonał z powodu odniesionych ran!}
@@ -43,3 +43,4 @@ HollandGambit_42 {Zemdlałeś z powodu ran...}
 HollandGambit_43 {Nie oddałeś pieniędzy Abigail, przez co stała się żebraczką}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
+HollandGambit_46 { }

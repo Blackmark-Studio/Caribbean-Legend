@@ -2408,7 +2408,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2643,7 +2643,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("技能检查失败 (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "我保证会出现的。 价格不变。 怎么样? 我不会等太久。 ";
 				link.l1 = "好吧, 好吧, 好吧。 我买了。 ";
 				link.l1.go = "IslaMona_7";
@@ -2651,7 +2651,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "好吧, 我们让一百。 九百。 我不能再低了。 别让我再让了。 ";
 				link.l1 = "我也不会。 我同意。 ";
@@ -2665,7 +2665,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("技能检查失败 (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "我不在乎你是否订购一个活的 wench。 九百。 ";
 				link.l1 = "好吧, 好吧, 好吧。 我买了。 ";
 				link.l1.go = "IslaMona_7";
@@ -2673,7 +2673,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "你确定吗? 你不会忘记吧? 好吧, 再减一百。 但就这样了! ";
 				link.l1 = "我不会忘记。 成交! ";
@@ -2695,7 +2695,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("技能检查失败 (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "妓院女孩的孩子不算数, " +pchar.name+ "。 我受够你了。 一千达布隆现金, 否则我们就道别。 ";
 				link.l1 = "你是什么意思, 他们不算? 呃。 我同意, 你是个骗子。 ";
@@ -2704,7 +2704,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "我不知道你有孩子。 而且情况这么糟。 好吧, 别抱怨了。 七百。 这几乎是亏损了。 ";
 				link.l1 = "我不会忘记。 成交! ";

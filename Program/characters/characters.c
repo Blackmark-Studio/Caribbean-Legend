@@ -194,9 +194,9 @@ bool CreateCharacter(ref character)
 	BeginChangeCharacterActions(character);
 	SetDefaultFight(character);
 	EndChangeCharacterActions(character);
-	//	SendMessage(character, "lss", MSG_CHARACTER_EX_MSG, "SetBarTexture", "Interfaces\\LE\\bms.tga");
 	// evganat - выставление кастомных баров и иконок архетипов при загрузке персонажа
-	GEN_OverrideAppearance(character);
+	SendMessage(character, "lss", MSG_CHARACTER_EX_MSG, "SetBarTexture", "LocEfx\\bars_back.tga");
+	GEN_OverrideAppearance(character, -1);
 	int iMass = 100;
 	if (HasPerk(character, "Dodgy")) iMass *= (1 + PERK_VALUE_DODGY);
 	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetMass", makeint(iMass));
@@ -486,12 +486,8 @@ void SetDefaultNormWalk(ref character)
     string tagVert = "";
     for(i=0; i<2; i++)
     {
-        sAttr = "walk_stairs_";
-        sAnim = "walk stairs ";
         if(i == 0)	tagVert = "up";
         else		tagVert = "down";
-        sAttr += tagVert;
-        sAnim += tagVert;
         for(j=0; j<2; j++)
         {
             for(k=0; k<4; k++)
@@ -503,13 +499,12 @@ void SetDefaultNormWalk(ref character)
                     case 2:	tagDirection = "right";		break;
                     case 3:	tagDirection = "left";		break;
                 }
-                sAttr = tagDirection + "_" + sAttr;
-                sAnim = tagDirection + " " + sAnim;
                 if(j == 1)
-                {
-                    sAttr = "fight_" + sAttr;
-                    sAnim = "fight " + sAnim;
-                }
+                    tagFightMode = "fight";
+				else
+					tagFightMode = "";
+				sAttr = StrConCheck(tagFightMode, "_") + tagDirection + "_walk_stairs_" + tagVert;
+				sAnim = StrConCheck(tagFightMode, " ") + tagDirection + " walk stairs " + tagVert; 
                 character.actions.(sAttr) = sAnim;
             }
         }
@@ -799,7 +794,7 @@ string StrConCheck(string str1, string str2)
 	return "";
 }
 
-// Модификаторы коллизий (to_do: мб это на битмаску посадить?)
+// Модификаторы коллизий
 void SetBonusPush(ref chr, bool bSet)
 {
     if(bSet) chr.col_modif.BonusPush = "";
@@ -848,7 +843,6 @@ void SetAttackSpeed(ref chr, float speed)
 	SetCharacterActionSpeed(chr, FAST_STRIKE,  speed);
 	SetCharacterActionSpeed(chr, ROUND_STRIKE, speed);
 	SetCharacterActionSpeed(chr, BREAK_STRIKE, speed);
-	SetCharacterActionSpeed(chr, FEINT_STRIKE, speed);
 }
 
 void SetCharacterActionAnimation(ref chr, string sAction, string sAnimation)
@@ -857,4 +851,12 @@ void SetCharacterActionAnimation(ref chr, string sAction, string sAnimation)
 	chr.actions.(sAction) = sAnimation;
 	chr.actions.(sAction).d1 = sAnimation;
 	EndChangeCharacterActions(chr);
+}
+
+// Для ручного управления
+void SetPCharRank(int val)
+{
+    int old = sti(PChar.rank);
+    PChar.rank = val;
+    if (old < val) Event("PlayerLevelUp");
 }

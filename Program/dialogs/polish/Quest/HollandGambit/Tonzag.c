@@ -123,31 +123,6 @@ void ProcessDialogEvent()
 			dialog.text = "Nie martw się o to. Kiedy twój stary statek został aresztowany, zabrałem wszystkich twoich oficerów i kilku marynarzy na pokład mojego 'Zmierzchu'. Wiedzą, że żyjesz i zgodzili się pozostać w służbie. A w nagrodę za dziennik, oddaję ci mój statek 'Zmierzch'.";
 			link.l1 = "Dziękuję! Zapamiętam to!";
 			link.l1.go = "SJ_talk_9";
-			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
-			{
-				pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5, 1.6);
-			}
-			else
-			{
-				pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 13.5, 55.0, 1.10);
-			}
-			pchar.Ship.name = "Twilight";
-			SetBaseShipData(pchar);
-			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46) pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
-			else pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
-			SetCrewQuantityFull(pchar);
-			pchar.Ship.Crew.Morale = 80;
-			pchar.Ship.Crew.Exp.Sailors = 90;
-			pchar.Ship.Crew.Exp.Cannoners = 70;
-			pchar.Ship.Crew.Exp.Soldiers = 70;
-			SetCharacterGoods(pchar, GOOD_BALLS, 100);
-			SetCharacterGoods(pchar, GOOD_GRAPES, 100);
-			SetCharacterGoods(pchar, GOOD_KNIPPELS, 100);
-			SetCharacterGoods(pchar, GOOD_BOMBS, 100);
-			SetCharacterGoods(pchar, GOOD_FOOD, 100);
-			SetCharacterGoods(pchar, GOOD_POWDER, 300);
-			SetCharacterGoods(pchar, GOOD_WEAPON, 60);
-			SetCharacterGoods(pchar, GOOD_MEDICAMENT, 60);
 		break;
 		
 		case "SJ_talk_8":
@@ -164,12 +139,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SJ_talk_10":
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 10);
 			DialogExit();
-			AddQuestRecord("Holl_Gambit", "3-13");
-			pchar.questTemp.HWIC.Self = "HuntFleetwood";
-			AddLandQuestMark(characterFromId("Merdok"), "questmarkmain");
+			AddDialogExitQuestFunction("HollandGambit_NewShipTwilight");
 		break;
 		
 		case "SJ_talk_11":
@@ -197,7 +168,8 @@ void ProcessDialogEvent()
 			link.l2.go = "Tonzag_exit";
 		break;
 		
-		case "Tonzag_hired_1"://Тонзага - в офицеры
+		case "Tonzag_hired_1":
+			ForceHeroAutolevel(npchar);//Тонзага - в офицеры
 			DialogExit();
 			DeleteAttribute(npchar, "LifeDay");
 			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
@@ -215,7 +187,7 @@ void ProcessDialogEvent()
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
 			LAi_SetImmortal(npchar, false);
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
 		break;

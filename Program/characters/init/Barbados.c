@@ -195,7 +195,7 @@ int CreateBarbadosCharacters(int n)
 	n = n + 1;
 
     makeref(ch,Characters[n]);
-	ch.name 	= GetCharacterName("Smuggler");	// Контрабандист
+	ch.name 	= GetCharacterName("Smuggler_" + rand(6));	// Контрабандист
 	ch.lastname = "";
 	ch.id		= "Bridgetown_Smuggler";
 	ch.model    = "citiz_29";

@@ -1,16 +1,16 @@
 void FillPersonTemplateTreasurer(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.BasicCommerce;
+		template.list.TrainedEye;
 		template.list.Intendant;
-		template.list.ProfessionalCommerce;
 	}
 	else
 	{
 		template.list.BasicCommerce;
-		template.list.AdvancedCommerce;
 		template.list.ProfessionalCommerce;
+		template.list.Intendant;
 	}
 }
 
@@ -27,7 +27,7 @@ void FillPersonTemplateLeftovers(ref template, string exclude1, string exclude2)
 
 void FillPersonTemplateCannoner(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.HullDamageUp;
 		template.list.SailsDamageUp;
@@ -42,10 +42,15 @@ void FillPersonTemplateCannoner(ref template)
 		template.list.CannonProfessional;
 	}
 }
+void FillPersonTemplateFree(ref template)
+{
+	template.free = true;
+	// тут ничего нет, очки остаются у персонажа
+}
 
 void FillPersonTemplateBoatswain(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.Ambuscade;
 		template.list.CoordinatedBoarding;
@@ -60,7 +65,7 @@ void FillPersonTemplateBoatswain(ref template)
 
 void FillPersonTemplateCarpenter(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.AdvancedBattleState;
 		template.list.ShipDefenseProfessional;
@@ -78,7 +83,7 @@ void FillPersonTemplateCarpenter(ref template)
 
 void FillPersonTemplateNavigator(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.ShipSpeedUp;
 		template.list.LoneWolf;
@@ -95,7 +100,7 @@ void FillPersonTemplateNavigator(ref template)
 
 void FillPersonTemplateDoctor(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.Moonshiner;
 		template.list.Quartermaster;
@@ -109,7 +114,7 @@ void FillPersonTemplateDoctor(ref template)
 
 void FillPersonTemplatePirate(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.PerfectBalance;
 		template.list.Dragoon;
@@ -129,7 +134,7 @@ void FillPersonTemplatePirate(ref template)
 
 void FillPersonTemplateSoldier(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.AdvancedDefense;
 		template.list.HardHitter;
@@ -147,7 +152,7 @@ void FillPersonTemplateSoldier(ref template)
 
 void FillPersonTemplateDuelist(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
 		template.list.HeartBreaker;
 		template.list.Virtuosity;
@@ -167,8 +172,9 @@ void FillPersonTemplateDuelist(ref template)
 
 void FillPersonTemplateGunman(ref template)
 {
-	if (sti(template.seed) < 2)
+	if (sti(template.seed) < 50)
 	{
+		template.list.Gunman;
 		template.list.KeenEye;
 		template.list.Chance;
 		template.list.LeadRain;
@@ -176,6 +182,7 @@ void FillPersonTemplateGunman(ref template)
 	}
 	else
 	{
+		template.list.Gunman;
 		template.list.Chance;
 		template.list.ShootToKill;
 		template.list.Kern;
@@ -185,23 +192,44 @@ void FillPersonTemplateGunman(ref template)
 
 void FillPersonTemplatePeasant(ref template)
 {
-	if (sti(template.seed) < 2)
+	int seed = sti(template.seed);
+	if (seed < 40)
 	{
 		template.list.HPPlus;
 		template.list.AdvancedDefense;
 		template.list.Dragoon;
+		template.list.ByWorker;
 		template.list.Inertia;
 		template.list.IronWill;
-		template.list.ByWorker;
+		template.list.Captain;
 	}
-	else
+	else if (seed < 80)
 	{
 		template.list.EnergyPlus;
 		template.list.CriticalHit;
 		template.list.Virtuosity;
 		template.list.Trustworthy;
-		template.list.Strychnine;
 		template.list.ByWorker;
+		template.list.Strychnine;
+		template.list.Captain;
+	}
+	else if (seed < 90)
+	{
+		template.list.Practice;
+		template.list.ByWorker;
+		template.list.DarkHorse;
+		template.list.Captain;
+		template.list.Master;
+		template.list.Collection;
+	}
+	else
+	{
+		template.list.SharedExperience;
+		template.list.Grus;
+		template.list.Tiefit;
+		template.list.Captain;
+		template.list.Gossip;
+		template.list.Looting;
 	}
 }
 

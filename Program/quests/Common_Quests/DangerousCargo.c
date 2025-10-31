@@ -78,7 +78,7 @@ void UpgradeShipZPQ(ref chr)
 	RealShips[sti(sld.Ship.Type)].MinCrew = 9;
 	RealShips[sti(sld.Ship.Type)].OptCrew = 40;
 	RealShips[sti(sld.Ship.Type)].MaxCrew = 50;
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 13.50;
+	RealShips[sti(sld.Ship.Type)].SpeedRate = 9.75;
 	RealShips[sti(sld.Ship.Type)].TurnRate = 70.70;
 	RealShips[sti(sld.Ship.Type)].HP = 750;
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;

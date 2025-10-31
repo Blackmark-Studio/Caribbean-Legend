@@ -351,7 +351,7 @@ void ProcessDialogEvent()
 		
 		case "soldier":
 			PlaySound("Voice\English\soldier_common_2.wav");
-			dialog.text = ""GetFullName(pchar)+"船长? ";
+			dialog.text = ""+GetFullName(pchar)+"船长? ";
 			link.l1 = "嗯... 是的, 我能为你做什么? ";
 			link.l1.go = "soldier_1";
 		break;

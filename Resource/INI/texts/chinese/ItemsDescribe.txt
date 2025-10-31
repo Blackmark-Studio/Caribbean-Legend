@@ -1,6 +1,35 @@
 info
 {
-物品描述文件 (加勒比传奇) 版本 0.0.1 于 21.11.2010 (修改 Metazot) , belamour 于 2020.09.29 修改护身符和护身符部分belamour 于 2021.09.20 为传奇版更新记录排列顺序便于文本定位: 1. 弹药1.1 冷兵器1.2 火器1.3 盔甲。 衣物1.4 光学仪器1.5 导航仪器1.6 护身符1.7  talisman1.8 护身符2. 货币。 贵重物品2.1 货币。 箱子2.2 宝石。 金属2.3 珠宝饰品3. 纸张3.1 许可证3.2 许可证3.3 地图3.4 信件3.5 配方4. 工具4.1 工具4.2 器皿。 药水。 草药4.3 战斗装备4.4 普通物品4.5 任务物品5. 杂物
+物品描述文件 (加勒比传奇) 
+版本 0.0.1 于 21.11.2010 (修改 Metazot), belamour 于 2020.09.29 修改护身符和护身符部分
+belamour 于 2021.09.20 为传奇版更新
+记录排列顺序便于文本定位: 
+1. 弹药
+1.1 冷兵器
+1.2 火器
+1.3 盔甲。 衣物
+1.4 光学仪器
+1.5 导航仪器
+1.6 护身符
+1.7  talisman
+1.8 护身符
+2. 货币。 贵重物品
+2.1 货币。 箱子
+2.2 宝石。 金属
+2.3 珠宝饰品
+3. 纸张
+3.1 许可证
+3.2 许可证
+3.3 地图
+3.4 信件
+3.5 配方
+4. 工具
+4.1 工具
+4.2 器皿。 药水。 草药
+4.3 战斗装备
+4.4 普通物品
+4.5 任务物品
+5. 杂物
 }
 new_string
 {
@@ -89,7 +118,7 @@ itmdescr_blade_28
 来自传奇锡潘古岛的奇怪剑, 由高品质钢材制成, 手柄长, 允许单手握或双手握持。 这把剑从异国东方到加勒比的旅程 能讲述怎样的故事... 它怎么会在这里?
 }
 itmname_blade_29 {斯托塔军刀}
-itmdescr_blade_29 {阿戈斯蒂诺·巴尔巴里戈的登船弯刀——这位传奇威尼斯人海军上将从未尝过败绩。也许正是这把独特的佩剑, 成为他每场战斗中忠实的伙伴。}
+itmdescr_blade_29 {阿戈斯蒂诺·巴尔巴里戈的登船弯刀—这位传奇威尼斯人海军上将从未尝 过败绩。 也许正是这把独特的佩剑, 成为他每场战斗中忠实的伙伴。}
 itmname_blade_30 {海军克莱旺弯刀}
 itmdescr_blade_30 {东印度公司船长的委任短弯刀。 这把刀的创造者设法结合了许多不 同武器的优点, 同时避免了它们的大多数缺点。}
 itmname_blade_31 {独角鲸剑}
@@ -109,7 +138,7 @@ itmdescr_topor_04 {挥舞这种武器需要巨大力量, 但结果值得。 锋�
 itmname_topor_05 {战斧}
 itmdescr_topor_05 {一种背面有喙的窄斧, 近战中致命, 进入丛林旅行非常有用。 这种斧头在殖民者中需求很高, 尽管最初是专门为与当地印第安人 交易而创造的, 他们不知道如何加工铁。}
 itmname_topor_06 {秃鹫斧}
-itmdescr_topor_06 {带有华丽“斧 beard”和厚重“斧 beak”的登船斧。最适合喜欢一斧分明、或一击终结纷争的人。}
+itmdescr_topor_06 {带有华丽“斧 beard”和厚重“斧 beak”的登船斧。最适合喜欢一斧分明、 或一击终结纷争的人。}
 itmname_blade_36 {马耳他剑}
 itmdescr_blade_36 {马耳他骑士团的礼仪剑, 因 Charles de Maure 的杰出服务, 由总督谢瓦利埃·德·潘西亲自授予。 剑身上刻有字母A.S.}
 itmname_knife_01 {匕首"酋长之爪"}
@@ -118,33 +147,33 @@ itmdescr_knife_01
 这看起来像一把普通匕首... 莫斯科人 Fadey 声称这把匕首被印第 安巫师附魔, 拥有许多隐藏秘密。 但是有哪些秘密呢?
 }
 itmname_knife_02 {玛丽亚匕首}
-itmdescr_knife_02 {属于迭戈·德·蒙托亚的精美短剑。显然这把武器被细心保养——仿佛对其前任主人有某种感情价值。}
+itmdescr_knife_02 {属于迭戈·德·蒙托亚的精美短剑。显然这把武器 被细心保养—仿佛对其前任主人有某种感情价值。}
 itmname_knife_03 {家族匕首}
-itmdescr_knife_03 {德·蒙佩家族的世袭武器, 也称为“牙签”。价值不菲, 困时可高价出售——毕竟家族徽章还有何用?}
+itmdescr_knife_03 {德·蒙佩家族的世袭武器, 也称为“牙签”。价值不菲, 困时可高价出售—毕竟家族徽章还有何用?}
 itmname_khopesh1 {克赫帕什剑}
-itmdescr_khopesh1 {一件来自诸神尚在人间时代的仪式武器。}
+itmdescr_khopesh1 {一件来自诸神尚在人间时代的仪式 武器。}
 itmname_khopesh2 {阿鲁巴霍佩什剑}
 itmdescr_khopesh2 {你不该看到这个。}
 itmname_khopesh3 {焦痕霍佩什剑}
-itmdescr_khopesh3 {来自诸神尚在人间时代的仪式武器。它渴望鲜血, 开明的船长不应佩戴此物。}
+itmdescr_khopesh3 {来自诸神尚在人间时代的仪式武器。 它渴望鲜血, 开明的船长不应佩戴此物。}
 itmname_machete2 {征服者大砍刀}
-itmdescr_machete2 {一把工艺精湛的马切刀, 由未知合金打造, 无论在上流社会还是古老金字塔中都游刃有余。}
+itmdescr_machete2 {一把工艺精湛的马切刀, 由未知合金打造, 无论在上流社会还是古老金字塔中 都游刃有余。}
 itmname_topor_07 {军用斧}
 itmdescr_topor_07 {适合未经训练的民兵的基本斧头, 尽管效果有限。 不适合格挡。}
 itmname_pirate_cutlass {烈焰短弯刀}
-itmdescr_pirate_cutlass {真正的传奇, 新世界海盗最受尊崇的权杖之一——也是船长手中的绝佳武器。}
+itmdescr_pirate_cutlass {真正的传奇, 新世界海盗最受尊崇的权杖之一—也是船长手中的绝佳武器。}
 itmname_blade_38 {决斗剑}
-itmdescr_blade_38 {这是一把在欧洲广受欢迎的优雅决斗武器, 只是在丛林里可能有些格格不入。}
+itmdescr_blade_38 {这是一把在欧洲广受欢迎的优雅决 斗武器, 只是在丛林里可能有些格格不入。}
 itmname_blade_39 {混战细剑}
-itmdescr_blade_39 {一把上乘的细剑, 显然为老练剑客量身打造。换句话说, 这是合法杀戮的完美武器。}
+itmdescr_blade_39 {一把上乘的细剑, 显然为老练剑客量身打造。换句话 说, 这是合法杀戮的完美武器。}
 itmname_blade_40 {意大利细剑}
-itmdescr_blade_40 {这把细剑的重量和过度装饰, 明显表明它是仪式用而非战斗用的武器。}
+itmdescr_blade_40 {这把细剑的重量和过度装饰, 明显表明它是仪式用而非战斗用的 武器。}
 itmname_blade_41 {太极剑}
-itmdescr_blade_41 {来自遥远文明的武器, 因命运多舛漂泊至异国海域。独特的造型让它能自如应对各种剑术风格。}
+itmdescr_blade_41 {来自遥远文明的武器, 因命运多舛漂泊至异国海域。独特 的造型让它能自如应对各种剑术风 格。}
 itmname_blade_42 {军用宽刃剑}
 itmdescr_blade_42 {普通士兵的武器, 仅需主人具备最低程度的军事训练。}
 itmname_saber {骑兵剑}
-itmdescr_saber {一把真正爱国者与军官才配拥有的武器, 历经无数辉煌战役。本不该流落至此。}
+itmdescr_saber {一把真正爱国者与军官才配拥有的 武器, 历经无数辉煌战役。本不该流落至 此。}
 itmname_q_blade_10 {于尔根·施密特的悬挂剑}
 itmdescr_q_blade_10
 {
@@ -187,7 +216,7 @@ itmdescr_q_blade_21
 itmname_shamshir {舍施尔弯刀}
 itmdescr_shamshir {波斯舍施尔弯刀, 专为骑兵战斗设计, 是沙漠中残酷战争的真实体现。 结合了切割效率和劈砍简单。 是喜欢圆周砍击者的最佳选择。}
 itmname_lacrima_patris {圣父之泪}
-itmdescr_lacrima_patris {这把华丽装饰的剑虽外观庄重, 却拥有出色的实战性能。若由虔诚的船长惩戒罪人和异教徒时, 其锋芒更胜一筹。}
+itmdescr_lacrima_patris {这把华丽装饰的剑虽外观庄重, 却拥有出色的实战性能。若由虔诚 的船长惩戒罪人和异教徒时, 其锋芒更胜一筹。}
 lacrima_patris_parameters {加农炮射程提升: #f.1RangeBonus#%}
 itmname_blade_SP_3low {绞刑者}
 itmdescr_blade_SP_3low {这把短弯刀结合了土耳其军刀和欧 洲弯刀的特点 —加宽的刀刃甚至可以砍穿最坚固的 盔甲。 有了绞刑者剑, 任何登船战斗都能快速而残酷地结 束。}
@@ -198,7 +227,7 @@ itmdescr_pistol1 {带有普通燧发机和腰带挂钩的军用 手枪。 相对
 itmname_pistol2 {霰弹左轮}
 itmdescr_pistol2 {三管侧装霰弹枪。制作极为复杂, 稀有且昂贵。}
 itmname_pistol3 {长号手枪}
-itmdescr_pistol3 {登舰用散弹枪。长号对灵活的单个对手或披甲者没多大用处, 但对一群乞丐开枪会留下深刻印象。}
+itmdescr_pistol3 {登舰用散弹枪。长号对灵活的单个 对手或披甲者没多大用处, 但对一群乞丐开枪会留下深刻印象。}
 itmname_pistol4 {四管手枪}
 itmdescr_pistol4 {四管手枪, 工程奇迹。装填缓慢, 但四发子弹足以扭转战局。}
 itmname_pistol5 {决斗手枪}
@@ -206,27 +235,27 @@ itmdescr_pistol5 {罕见的轮锁式决斗手枪, 工艺精湛, 让敌人几乎�
 itmname_pistol6 {双管手枪}
 itmdescr_pistol6 {双管手枪 —对于喜欢用第二枪提供安全感的人 来说非常好。}
 itmname_pistol7 {柯尔特左轮}
-itmdescr_pistol7 {19世纪上半叶的击发式左轮手枪, 带有柯尔特工厂标记。开火时可短暂迷惑敌人。需专用弹药。}
+itmdescr_pistol7 {19世纪上半叶的击发式左轮手枪, 带有柯尔特工厂标记。开火时可短 暂迷惑敌人。 需专用弹药。}
 itmname_pistol8 {滑膛手枪}
 itmdescr_pistol8 {独特的舰用短枪, 适合单手射击。使用钢制弹丸, 能轻易穿透任何护甲。}
 itmname_pistol9 {叠加双装手枪}
 itmdescr_pistol9 {极为罕见的萨克森单管手枪, 可连续发射两枚弹丸, 装填时间较长。}
 itmname_pistol10 {金鹰}
-itmdescr_pistol10 {事不过三, 这把优质手枪正是明证。无论老兵还是神枪手, 都是值得信赖的选择。}
+itmdescr_pistol10 {事不过三, 这把优质手枪正是明证。无论老兵 还是神枪手, 都是值得信赖的选择。}
 itmname_pistol11 {憎恶}
-itmdescr_pistol11 {登船用手斧手枪, 出自无名武器天才之手。既不像手枪, 也不像斧头。但在瞬息万变的登船混战中, 这正是你所需要的。}
+itmdescr_pistol11 {登船用手斧手枪, 出自无名武器天才之手。既不像手 枪, 也不像斧头。但在瞬息万变的登船 混战中, 这正是你所需要的。}
 itmname_pistol12 {锯短步枪}
-itmdescr_pistol12 {拆解过的四发卡宾枪。虽然精度有所下降, 但适合近战, 依然能快速装填。是标准四发手枪的绝佳替代品。}
+itmdescr_pistol12 {拆解过的四发卡宾枪。虽然精度有 所下降, 但适合近战, 依然能快速装填。是标准四发手枪 的绝佳替代品。}
 itmname_pistol13 {燧发左轮}
-itmdescr_pistol13 {枪械工艺的杰作。三十多年前为一位著名将领在欧洲定制。或许是当今最出色的多发手枪。}
+itmdescr_pistol13 {枪械工艺的杰作。三十多年前为一 位著名将领在欧洲定制。 或许是当今最出色的多发手枪。}
 itmname_pistol14 {双管决斗手枪}
 itmdescr_pistol14 {极其昂贵、致命, 却完全不实用的艺术品。}
 itmname_mortairgun {手持迫击炮}
-itmdescr_mortairgun {手持迫击炮——攻击小股敌人的利器, 伏击时效果最佳。}
+itmdescr_mortairgun {手持迫击炮—攻击小股敌人的利器, 伏击时效果最佳。}
 itmname_mushket1 {火绳滑膛枪}
 itmdescr_mushket1 {一把威力强大的重型步兵火枪, 配备久经考验的火绳枪机。}
 itmname_mushket2 {海军卡宾枪}
-itmdescr_mushket2 {最新英式燧发枪的短款, 配备刺刀。为殖民地和海军步兵的标准装备。}
+itmdescr_mushket2 {最新英式燧发枪的短款, 配备刺刀。为殖民地和海军步兵的 标准装备。}
 itmname_mushket3 {火绳枪}
 itmdescr_mushket3
 {
@@ -234,13 +263,13 @@ itmdescr_mushket3
 虽已过时, 但被其枪口锁定的敌人, 早已无暇顾及这些。
 }
 itmname_mushket5 {瞄准步枪}
-itmdescr_mushket5 {定制的轮式火枪, 配有膛线枪管和带孔瞄准镜。富有猎人或射手的武器。}
+itmdescr_mushket5 {定制的轮式火枪, 配有膛线枪管和带孔瞄准镜。富有 猎人或射手的武器。}
 itmname_mushket6 {鼓式霰弹枪}
-itmdescr_mushket6 {葡萄牙滑膛枪, 配有可拆卸多膛弹筒。可惜更换机构已损坏, 导致装填速度变慢。}
+itmdescr_mushket6 {葡萄牙滑膛枪, 配有可拆卸多膛弹筒。可惜更换机 构已损坏, 导致装填速度变慢。}
 itmname_mushket7 {优质滑膛枪}
 itmdescr_mushket7 {与士兵们为量产而造的火枪不同, 这把武器由枪匠精心打造, 选材上乘, 性能自然更胜一筹。}
 itmname_mushket8 {四管步枪}
-itmdescr_mushket8 {手工打造的四发步枪。配备革命性的枪管与枪托拆卸系统, 能在一分钟内变为手枪。独特的装填机制让你对敌人倾泻弹雨!}
+itmdescr_mushket8 {手工打造的四发步枪。配备革命性 的枪管与枪托拆卸系统, 能在一分钟内变为手枪。独特的装 填机制让你对敌人倾泻弹雨!}
 itmname_m8_barrel {枪托和枪管}
 itmdescr_m8_barrel {来自拆卸的四管步枪的枪托和枪管。}
 itmname_mushket9 {古老火绳枪}
@@ -259,25 +288,25 @@ itmdescr_FirearmStockPart_2 {现代弹簧锁、 破布和一小瓶用于武器�
 itmname_FirearmStockPart_3 {枪管和火药筒}
 itmdescr_FirearmStockPart_3 {这套物品将大大加快任何长管武器 的装填, 但出于某种原因, 你觉得它们最好与那把火绳枪一起 使用。 它们被包装在一个小纸包里, 显然是为了保护它们免受潮湿, 不像宝藏中的所有其他物品。}
 itmname_grape_mushket {手持迫击炮}
-itmdescr_grape_mushket {手持迫击炮是攻击小规模敌群的绝佳帮手。更适合在埋伏中使用。射击时使用炸药包或手榴弹。}
+itmdescr_grape_mushket {手持迫击炮是攻击小规模敌群的绝 佳帮手。 更适合在埋伏中使用。射击时使用 炸药包或手榴弹。}
 itmname_Mushket2x2 {双管卡宾枪}
-itmdescr_Mushket2x2 {贵族们偏爱的礼品双管猎枪, 专为埋伏猎取高贵雄鹿而设计。不过必须承认, 它的膛线枪管能稳稳击倒任何猎物。}
+itmdescr_Mushket2x2 {贵族们偏爱的礼品双管猎枪, 专为埋伏猎取高贵雄鹿而设计。不 过必须承认, 它的膛线枪管能稳稳击倒任何猎物。}
 itmname_mushket10 {帝国火枪}
 itmdescr_mushket10 {三十年战争时期的单发贵族火枪, 配有刺刀, 并饰以神圣罗马帝国常见的图案。}
 itmname_howdah {豪达手枪}
-itmdescr_howdah {双管大口径手枪, 是非洲丛林或印度密林猎人的最佳伙伴。能可靠地击倒野猪、老虎和敌对土著。}
+itmdescr_howdah {双管大口径手枪, 是非洲丛林或印度密林猎人的最佳 伙伴。 能可靠地击倒野猪、老虎和敌对土 著。}
 itmname_nocirass {无胸甲}
 itmdescr_nocirass {长时间穿戴盔甲会使人疲惫。 放松一下, 翘起脚, 喝一杯加肉桂或更烈的热咖啡。}
-itmname_cirass1 {战壕胸甲}
-itmdescr_cirass1 {攻城时步兵使用的胸甲, 对钢铁和铅弹有极佳防护, 但限制行动, 使穿戴者在近战中变得笨拙。}
-itmname_cirass2 {骑兵胸甲}
-itmdescr_cirass2 {重骑兵冲压胸甲。骑乘时能较好保护胸背, 但笨重且贴合度差, 步战时影响速度与灵活性。}
+itmname_cirass1 {步兵护甲}
+itmdescr_cirass1 {一件在围攻城堡时使用的步兵胸甲。 能很好地抵御钢铁和铅制武器的伤 害, 但限制机动性, 使佩戴者在近战中显得笨拙。该护 甲在欧洲和加勒比地区都广泛使用。}
+itmname_cirass2 {雷塔式骑兵胸甲}
+itmdescr_cirass2 {锻造精良的重骑兵胸甲。能很好地 保护胸部和背部, 但在步兵阵中, 其重量和不良的贴合会影响佩戴者 的速度和灵活性。}
 itmname_cirass3 {阅兵胸甲}
 itmdescr_cirass3 {优质钢制轻型胸甲, 可穿在外套下。仅略微影响行动, 主要防护流弹和擦伤。}
 itmname_cirass4 {米兰胸甲}
-itmdescr_cirass4 {顶级稀有护甲, 刀枪难入, 却异常轻盈。秘密在于遍布其上的沟槽, 赋予了它弹性与强度。}
+itmdescr_cirass4 {顶级稀有护甲, 刀枪难入, 却异常轻盈。秘密在于遍布其上的 沟槽, 赋予了它弹性与强度。}
 itmname_cirass5 {皮腰带}
-itmdescr_cirass5 {由厚皮革制成的束身衣, 保护骨骼最难覆盖的要害部位。虽然对细剑或子弹的防护效果很差, 但总比没有强。}
+itmdescr_cirass5 {由厚皮革制成的束身衣, 保护骨骼最难覆盖的要害部位。虽 然对细剑或子弹的防护效果很差, 但总比没有强。}
 itmname_cirass6 {皮夹克}
 itmdescr_cirass6 {老练决斗者的皮背心, 由柔软煮制皮革制成。可隐蔽穿着, 有效防御冷兵器的劈砍攻击, 保护整个躯干。}
 itmname_cirass7 {鳞甲}
@@ -285,25 +314,25 @@ itmdescr_cirass7 {皮革马甲缀有金属板, 防护力不错, 但穿着时难�
 itmname_cirass8 {柳条甲}
 itmdescr_cirass8 {独特的皮革与金属胸甲, 覆盖整个躯干, 包括两侧和锁骨。多处调节扣环, 便于贴身穿着时减少不适。}
 itmname_cirass9 {强化鳞甲}
-itmdescr_cirass9 {职业雇佣兵的护甲, 也是决斗者的首选。防护和重量接近胸甲, 但精良剪裁让行动毫无束缚。}
+itmdescr_cirass9 {职业雇佣兵的护甲, 也是决斗者的首选。防护和重量接 近胸甲, 但精良剪裁让行动毫无束缚。}
 itmname_cirass10 {铁骑军胸甲}
-itmdescr_cirass10 {一套相当破旧且不完整的议会派骑兵装备。防护性差, 但众多口袋与弹药袋极大便利了射击与装填。}
+itmdescr_cirass10 {一套相当破旧且不完整的议会骑兵 装备。 仍能提供良好保护, 众多口袋与弹药袋大大方便了射击 和装填。}
 itmname_cirass11 {镜面胸甲}
-itmdescr_cirass11 {这种护甲在俄罗斯沙皇国和奥斯曼帝国很常见。这件装备经历了漫长旅程, 最终落入你手中。}
+itmdescr_cirass11 {这种护甲在俄罗斯沙皇国和奥斯曼 帝国很常见。 这件装备经历了漫长旅程, 最终落入你手中。}
 itmname_suit1 {法国制服}
 itmdescr_suit1 {皇家海军军官制服。}
 itmname_suit2 {英国制服}
-itmdescr_suit2 {黑卫军官制服——苏格兰近卫精英部队专属。}
+itmdescr_suit2 {黑卫军官制服—苏格兰近卫精英部队专属。}
 itmname_suit3 {西班牙制服}
 itmdescr_suit3 {加泰罗尼亚卫队军官制服。}
 itmname_suit4 {联盟制服}
 itmdescr_suit4
 {
 联盟雇佣兵装束 
-缝制金属板和可调节带, 为迅捷残酷的战斗而生。半面罩助你隐藏身份。
+缝制金属板和可调节带, 为迅捷残酷的战斗而生。半面罩助 你隐藏身份。
 }
 itmname_suit5 {舰队司令制服}
-itmdescr_suit5 {法国高级海军军官制服。堪称艺术杰作。}
+itmdescr_suit5 {法国高级海军军官制服。堪称艺术 杰作。}
 itmname_underwater {潜水服}
 itmdescr_underwater {亨里克·韦德克尔的独特浅海潜行服, 比最优质的护甲还要防护!}
 itmname_lantern {灯笼}
@@ -311,27 +340,27 @@ itmdescr_lantern {小灯笼是黑暗中不可或缺的伙伴。 将其系在腰�
 itmname_hat1 {佣兵首领帽子}
 itmdescr_hat1 {这是决斗者和击剑手最爱的帽子, 激励佩戴者不断磨练冷兵器技艺, 真正展现行家风范。}
 itmname_hat2 {骑士帽}
-itmdescr_hat2 {一顶华丽多彩的帽子, 曾是贵族的宠爱之物, 在加勒比却声名狼藉。如今戴上它的, 不再是娇生惯养的欧洲贵族, 而是久经沙场的决斗者与冒险家, 手持任何武器都能奋战不息。}
+itmdescr_hat2 {一顶华丽多彩的帽子, 曾是贵族的宠爱之物, 在加勒比却声名狼藉。如今戴上它 的, 不再是娇生惯养的欧洲贵族, 而是久经沙场的决斗者与冒险家, 手持任何武器都能奋战不息。}
 itmname_hat3 {水手三角帽}
-itmdescr_hat3 {一顶普通的三角帽, 水手们常见的佩戴。按老海上传统, 只有经历过三重考验——风暴中游泳、首次海战幸存、并亲手修补船只——才会获得这顶帽子。}
+itmdescr_hat3 {一顶普通的三角帽, 水手们常见的佩戴。按老海上传统, 只有经历过三重考验—风暴中游泳、首次海战幸存、并亲 手修补船只—才会获得这顶帽子。}
 itmname_hat4 {海军军官三角帽}
-itmdescr_hat4 {三角帽, 海军军官中的流行之选。普通水手见到后, 总会格外卖力干活。是出于敬意, 还是害怕惩罚——这就不得而知了。}
+itmdescr_hat4 {三角帽, 海军军官中的流行之选。普通水手 见到后, 总会格外卖力干活。是出于敬意, 还是害怕惩罚—这就不得而知了。}
 itmname_hat5 {舰队司令帽子}
-itmdescr_hat5 {能见到这样一顶帽子的水手寥寥无几。它能激励和鼓舞周围所有人。能与帽主同舰队服役, 是莫大的荣耀——无论水手还是军官, 都会誓死追随。}
+itmdescr_hat5 {能见到这样一顶帽子的水手寥寥无 几。 它能激励和鼓舞周围所有人。能与 帽主同舰队服役, 是莫大的荣耀—无论水手还是军官, 都会誓死追随。}
 itmname_hat6 {荷兰帽}
-itmdescr_hat6 {一顶昂贵而优雅的帽子, 中等商人尤为喜爱。其独特造型让人远远就能认出谈判者, 提前准备迎接激烈的讨价还价。}
+itmdescr_hat6 {一顶昂贵而优雅的帽子, 中等商人尤为喜爱。其独特造型让 人远远就能认出谈判者, 提前准备迎接激烈的讨价还价。}
 itmname_hat7 {幸运帽}
-itmdescr_hat7 {据说这顶潇洒的帽子能带来好运。虽历经风雨, 依旧不失高贵气度。若你得此帽, 尽可放心: 危急时刻, 你能悄然避开守卫, 抽中那张关键的牌, 还能在口袋底部摸出一颗遗落的弹丸。}
+itmdescr_hat7 {据说这顶潇洒的帽子会带来好运。虽然饱经风霜，但仍显得高贵。如果你拥有这样一顶帽子，请放心——在最艰难的时刻，你不会缺少袖中的王牌。}
 itmname_hat8 {查理王子的三角帽}
-itmdescr_hat8 {这顶帽子比骷髅旗还要让商人——尤其是西班牙人——胆寒。它主人的名声, 足以让最强悍的水手都脸色发白、浑身发抖。诅咒查理·普林斯降生的那一天吧。}
+itmdescr_hat8 {这顶帽子比骷髅旗还要让商人—尤其是西班牙人—胆寒。它主人的名声, 足以让最强悍的水手都脸色发白、 浑身发抖。 诅咒查理·普林斯降生的那一天吧。}
 itmname_hat9 {格林的帽子}
-itmdescr_hat9 {这顶帽子在加勒比每个角落都声名远扬, 人人谈之色变。只有疯子才敢袭击它主人的船, 若是亲眼见到本人, 恐惧会让你忘了如何握剑持枪。记住: 去往彼岸很容易, 难的是归来。}
+itmdescr_hat9 {这顶帽子在加勒比每个角落都声名 远扬, 人人谈之色变。只有疯子才敢袭击 它主人的船, 若是亲眼见到本人, 恐惧会让你忘了如何握剑持枪。记 住: 去往彼岸很容易, 难的是归来。}
 itmname_hat10 {雇佣兵帽}
-itmdescr_hat10 {这顶在野外制作的装甲帽看起来不起眼, 但能够挡住子弹并救命。}
+itmdescr_hat10 {这顶在野外制作的装甲帽看起来不 起眼, 但能够挡住子弹并救命。}
 itmname_hat10_part {鞣制皮革}
 itmdescr_hat10_part {一块优质的牛皮, 非常适合制作帽子。}
 itmname_spyglass1 {廉价望远镜}
-itmdescr_spyglass1 {几乎毫无用处的望远镜。自尊的船长绝不会带这种破烂。}
+itmdescr_spyglass1 {几乎毫无用处的望远镜。自尊的船 长绝不会带这种破烂。}
 itmname_spyglass2 {普通望远镜}
 itmdescr_spyglass2 {一只普通的望远镜, 镜片还算不错, 但也有更精良的。}
 itmname_spyglass3 {优质望远镜}
@@ -339,7 +368,7 @@ itmdescr_spyglass3 {配有精致抛光镜片的望远镜。}
 itmname_spyglass4 {优秀望远镜}
 itmdescr_spyglass4 {配备“绿柱石”镜片的望远镜, 仅次于独家款。}
 itmname_spyglass5 {航海望远镜}
-itmdescr_spyglass5 {独特的光学仪器。纯净水晶精制的镜片与三脚架完美结合, 让你洞察一切。}
+itmdescr_spyglass5 {独特的光学仪器。纯净水晶精制的 镜片与三脚架完美结合, 让你洞察一切。}
 itmname_spyglassSP3 {望远镜"死者之眼"}
 itmdescr_spyglassSP3 {这只镶嵌骨饰的望远镜, 镜片出奇地优质。}
 itmname_sand_clock { }
@@ -351,7 +380,7 @@ itmdescr_compass1 {这种设备允许领航员确定北方, 即使天体被遮�
 itmname_clock1 {精密计时器}
 itmdescr_clock1 {船用精密计时器。 此设备用于确定经度, 但必须通过沙漏定期校准到精确时 间。 这种精确时间后来被称为格林尼治 标准时间。}
 itmname_clock2 {工作精密计时器}
-itmdescr_clock2 {福罗岛计时的船用精密计时器。 允许你以最小误差确定船只经度30天。 }
+itmdescr_clock2 {福罗岛计时的船用精密计时器。 允许你以最小误差确定船只经度30天。}
 itmname_sextant1 {六分仪}
 itmdescr_sextant1 {用于确定地理坐标的独特设备。 六分仪的原主人已将自己的时间远 远抛在身后, 因为此设备所需的精确时钟尚未发 明。 因此, 此六分仪目前无法使用。}
 itmname_sextant2 {工作六分仪}
@@ -367,11 +396,11 @@ itmdescr_bussol
 itmname_clock3 {亚历克苏斯的精密计时器}
 itmdescr_clock3 {20世纪中叶的精密航海计时器, 带有自动上链机制, 来自Alexus大师的收藏。}
 itmname_talisman1 {护身符“鼠神”}
-itmdescr_talisman1 {老鼠、狗和胆小的孩子见到这面具都像见了火一样逃跑!}
+itmdescr_talisman1 {老鼠、狗和胆小的孩子见到这面具 都像见了火一样逃跑!}
 itmname_talisman2 {守护符"约拿"}
-itmdescr_talisman2 {凯尔特圆形十字架, 以那位曾被献祭于怒海却幸存下来的先知命名。}
+itmdescr_talisman2 {凯尔特圆形十字架, 以那位曾被献祭于怒海却幸存下来 的先知命名。}
 itmname_talisman3 {守护符"雷神之锤"}
-itmdescr_talisman3 {一枚金质吊坠, 造型为北欧雷神托尔的锤子——妙尔尼尔。}
+itmdescr_talisman3 {一枚金质吊坠, 造型为北欧雷神托尔的锤子—妙尔尼尔。}
 itmname_talisman4 {守护符"禁卫军"}
 itmdescr_talisman4
 {
@@ -393,19 +422,19 @@ itmdescr_talisman11 {只是一块有洞的石头。图个好运!}
 itmname_talisman12 {韧性守护符}
 itmdescr_talisman12 {传说能驱病避邪的泰诺人偶像。}
 itmname_talisman13 {泰诺雕像}
-itmdescr_talisman13 {一尊泰诺族财富与积累守护神的雕像。}
+itmdescr_talisman13 {一尊泰诺族财富与积累守护神的雕 像。}
 itmname_talisman14 {守护符"冉毅"}
 itmdescr_talisman14 {一枚由道士加持、鱼身蛇首的胸针, 让你行路更为迅捷。}
 itmname_talisman15 {守护符"黑色标记"}
-itmdescr_talisman15 {持有黑点者立刻被迷信、传说和流言包围。}
+itmdescr_talisman15 {持有黑点者立刻被迷信、传说和流 言包围。}
 itmname_talisman16 {守护符"黄金仪式刀"}
-itmdescr_talisman16 {一把奇迹般未被西班牙人熔化的阿兹特克金质祭祀刀。或许古代工匠的精湛技艺让发现这件宝物的人犹豫了片刻。}
+itmdescr_talisman16 {一把奇迹般未被西班牙人熔化的阿 兹特克金质祭祀刀。 或许古代工匠的精湛技艺让发现这 件宝物的人犹豫了片刻。}
 itmname_talisman17 {守护符"慈悲经"}
-itmdescr_talisman17 {一本曾被主人视为极为私密之物、几乎如同日记的圣经。许多人随身携带圣经, 将其视为指引与灯塔, 但这本书更是他们的荣誉准则。}
+itmdescr_talisman17 {一本曾被主人视为极为私密之物、 几乎如同日记的圣经。 许多人随身携带圣经, 将其视为指引与灯塔, 但这本书更是他们的荣誉准则。}
 talisman17_quests {教堂任务: #dQBonus# / 5}
 talisman17_questsNoBonus {教堂任务: 0 / 5}
 itmname_talisman18 {守护符"布莱克伍德的章程"}
-itmdescr_talisman18 {阿尔伯特·布莱克伍德的个人守则。详述“贝丝女士”号的结构、神枪手的布置, 以及海狐的作战战术。另有专章介绍寻宝方法, 并规定以战利品奖励优秀射手。}
+itmdescr_talisman18 {阿尔伯特·布莱克伍德的个人守则。详述“贝丝女士”号的结构、神枪手的布置, 以及海狐的作战战术。另有专章介 绍寻宝方法, 并规定以战利品奖励优秀射手。}
 talisman18_Bonus {找到的宝藏: #dQBonus# / 10}
 talisman18_NoBonus {找到的宝藏: 0 / 10}
 itmname_talisman19 {守护符"尤里克的头骨"}
@@ -413,14 +442,14 @@ itmdescr_talisman19
 {
 "Memento (纪念品号)"船长 Mortimer Grim 的头骨, 他从未完全意识到自己的死亡。 你认识他, #sName#。 
 死者教导生者, 这件神器会适应主人的欲望。 
-在你的物品栏中时, 它使所有军官不朽。 
+在你的物品栏中时, 它使所有军官不朽。
 }
 talisman19_InSlot
 {
 一艘船同时存在于帷幕的两侧。 木材曾是活物, 然后变成死物来为活人服务。 "Memento (纪念品号)"船长的头骨提醒任何船只死亡不存 在, 你必须战斗到底。 ~每损失2%船体, 船只速度和加农炮伤害分别增加0.75%和0.5%. ~无惩罚, 可多次激活。
 }
 itmname_talisman20 {射手腰带}
-itmdescr_talisman20 {由多条皮带、火药瓶和大量纸质弹药组成的弹药带。它在欧洲战场上有各种形制和用途, 而这件则来自遥远的异乡, 上面饰有来自严酷西伯利亚森林的奇异兽纹。}
+itmdescr_talisman20 {由多条皮带、火药瓶和大量纸质弹 药组成的弹药带。 它在欧洲战场上有各种形制和用途, 而这件则来自遥远的异乡, 上面饰有来自严酷西伯利亚森林的 奇异兽纹。}
 itmname_talisman20_part {火枪手火药瓶}
 itmdescr_talisman20_part {一只造型奇特的火药瓶, 刻有来自异国的奇异动物图案, 边缘绣有东欧风格的花纹。}
 itmname_totem_01 {幸运符"铸铁之咙"}
@@ -436,87 +465,131 @@ itmdescr_totem_05 {饰有护甲片的皮带。}
 itmname_totem_06 {幸运符"大力士"}
 itmdescr_totem_06 {消除疲劳的靴子。}
 itmname_totem_07 {幸运符"吟游诗人"}
-itmdescr_totem_07 {甜美嗓音的鲁特琴将歌颂海上冒险的浪漫, 点燃心扉!}
+itmdescr_totem_07 {甜美嗓音的鲁特琴将歌颂海上冒险 的浪漫, 点燃心扉!}
 itmname_totem_08 {幸运符"火焰之主"}
-itmdescr_totem_08 {使炮手的训练速度翻倍。 }
+itmdescr_totem_08 {使炮手的训练速度翻倍。}
 itmname_totem_09 {幸运符"阿古津"}
-itmdescr_totem_09 {号角, 其信号声即便在炮火中也能清晰听见。}
+itmdescr_totem_09 {号角, 其信号声即便在炮火中也能清晰听 见。}
 itmname_totem_10 {幸运符"寡妇制造者"}
-itmdescr_totem_10 {无情且百发百中的迅捷加泰罗尼亚纳瓦哈。}
+itmdescr_totem_10 {无情且百发百中的迅捷加泰罗尼亚 纳瓦哈。}
 itmname_totem_11 {幸运符"食尸鬼"}
-itmdescr_totem_11 {右手上的被施了魔法的铜戒指在决斗中通过刀刃窃取对手的能量。}
+itmdescr_totem_11 {右手上的被施了魔法的铜戒指在决 斗中通过刀刃窃取对手的能量。}
 itmname_totem_12 {幸运符"美洲虎之子"}
-itmdescr_totem_12 {佩戴颈间的美洲虎爪能增强你的夜视。}
+itmdescr_totem_12 {佩戴颈间的美洲虎爪能增强你的夜 视。}
 itmname_totem_13 {幸运符"小丑"}
 itmdescr_totem_13 {随手的必备用牌, 始终在身边, 能提高在赌博中的获胜概率。}
 itmname_indian_1 {护身符"巫毒娃娃"}
-itmdescr_indian_1 {祭祀娃娃——令人毛骨悚然的土著文物。}
+itmdescr_indian_1
+{
+仪式玩偶—令人毛骨悚然的土著神器, 据说会与受害者的灵魂相连。
+ ~可在命中脆弱部位 (例如头部) 时增加伤害。
+}
 itmname_indian_2 {护身符"火药测试器"}
-itmdescr_indian_2 {用于检测火药质量的装置。}
+itmdescr_indian_2
+{
+用于检测火药质量的装置。 ~
+ 优质火药由于更均匀的燃烧会提高任何弹丸的伤害，但在自制弹药时尤其有用。
+}
 itmname_indian_3 {护身符"仪式刀"}
-itmdescr_indian_3 {用于献祭的黑曜石匕首。}
+itmdescr_indian_3
+{
+用于祭祀的黑曜石匕首。不知它在 为取悦阿兹特克异端诸神时带走了 多少灵魂, 但黑曜石的刃至今未曾钝化。
+ ~增加对敌人的暴击伤害, 愿上帝安息他们的灵魂。
+}
 itmname_indian_4 {护身符"斧头"}
-itmdescr_indian_4 {刻有符文的吊坠。}
+itmdescr_indian_4
+{
+刻有阿萨特鲁符文的吊坠。不知它 如何漂洋过海来到加勒比, 却能激起对斧头的奇异渴望。
+ ~促使双臂涌现意想不到的力量, 增强重型武器的攻击威力。
+}
 itmname_indian_5 {护身符"干缩头颅"}
-itmdescr_indian_5 {用特殊方式风干的头颅。}
+itmdescr_indian_5
+{
+以特殊方式风干的头颅。制作此类 护符需进行令人作呕的异教仪式。
+ ~见到船长腰间佩戴此物, 任何登船小队都会变得畏惧并谨慎—无论己方还是敌方。
+}
 itmname_indian_6 {护身符"珊瑚头"}
-itmdescr_indian_6 {由珊瑚碎片雕刻而成的偶像。}
+itmdescr_indian_6
+{
+用珊瑚碎片雕刻的偶像。据说它带 来好运并使手更稳。
+ ~无论如何, 携带它的火枪齐射变得更加整齐。
+}
 itmname_indian_7 {护身符"座头鲸"}
-itmdescr_indian_7 {驼背的陶土小像。}
+itmdescr_indian_7
+{
+一个驼背者的陶俑。不是圣母院的 那位, 而是勤勉的守护者。
+ ~有了它, 你能更轻松地承受丛林的疲劳奔袭 和登船的肉搏。
+}
 itmname_indian_8 {护身符"修特库特利"}
-itmdescr_indian_8 {阿兹特克火神的图腾小像, 火焰之主与火山的统治者。}
+itmdescr_indian_8
+{
+阿兹特克神的图腾小雕像, 火之主、火山的主宰。你会发誓如 果阿兹特克人有火药, 他也会成为它的守护者。
+ ~神秘地使火炮射击更致命。
+}
 itmname_indian_9 {护身符"巴尔多"}
-itmdescr_indian_9 {乌鸦形状的凯尔特胸针。}
+itmdescr_indian_9
+{
+乌鸦形的凯尔特胸针。据说岛上的 最巧妙的凯尔特航海者佩戴此物。
+ ~它最能打动炮手队, 使他们更快地装填并瞄准炮口。
+}
 itmname_indian_10 {护身符"卡斯卡维拉"}
-itmdescr_indian_10 {被施了魔法的响尾蛇头骨。}
+itmdescr_indian_10
+{
+被附魔的响尾蛇颅骨。
+ ~很可能在僵硬的獠牙中仍残留毒液, 否则其命中时的毒性能力难以解释。
+}
 itmname_indian_11 {护身符"恩戈姆博面具"}
-itmdescr_indian_11 {西博内民族的祭祀面具。}
+itmdescr_indian_11
+{
+西博内伊人的仪式面具。传闻能在 人体内植入虚假记忆。
+ ~适合用来以小饰品制造印象, 或相反, 融入人群消失。
+}
 itmname_amulet_1 {护身符"恩戈姆博盾牌"}
-itmdescr_amulet_1 {由骨头与珊瑚制成的项链, 经 ngombo 咒语加强。}
+itmdescr_amulet_1 {由骨头和珊瑚制成的项链, 强化了恩贡博的咒语。~即使是最轻的护甲, 有它也能偏转刀锋。}
 itmname_amulet_2 {护身符"尤克洛吉翁"}
-itmdescr_amulet_2 {银包祈祷书。}
+itmdescr_amulet_2 {镀银封皮的祈祷书。~保护正义之人免受基督的敌人侵害, 尤其防止铅弹。}
 itmname_amulet_3 {护身符"十字架"}
-itmdescr_amulet_3 {受祝福的天主教小十字架。}
+itmdescr_amulet_3 {祈祷加持的天主教十字架。~带来奇迹般的救赎—罪人会死, 而义人仅受伤。}
 itmname_amulet_4 {护身符"埃·特罗佐"}
-itmdescr_amulet_4 {从尸体中取出的佩剑残片。}
+itmdescr_amulet_4 {从尸体中取出的佩剑碎片。~赋予狂怒, 使佩戴者陷入异教狂热。}
 itmname_amulet_5 {护身符"索博"}
-itmdescr_amulet_5 {来自伏都教神系的闪电之灵。}
+itmdescr_amulet_5 {来自巫毒神系的雷之灵。~让炮手更迅捷, 加快火炮装填。}
 itmname_amulet_6 {护身符"麦当娜"}
-itmdescr_amulet_6 {印有圣母像的圣化护身符。}
+itmdescr_amulet_6 {奉献给圣母玛利亚像的圣香囊。~帮助避免死亡与致残。}
 itmname_amulet_7 {护身符"圣水"}
-itmdescr_amulet_7 {装有圣水的银质挂式小酒壶。}
+itmdescr_amulet_7 {装满圣水的银质挂壶。~抵御精神与肉体上的疾病与创伤。}
 itmname_amulet_8 {护身符"锚"}
-itmdescr_amulet_8 {带咒语的银色小护符。}
+itmdescr_amulet_8 {带有咒语的银吊坠。~水手们相信它能让船体免遭水线下 流弹破坏。}
 itmname_amulet_9 {护身符"恩科尔皮翁"}
-itmdescr_amulet_9 {内置圣·克里斯托弗遗物的巨大银十字架。}
+itmdescr_amulet_9 {圣克里斯托弗圣物的大银十字架。~庇护旅途中的朝圣者, 战斗中帮助保护风帆。}
 itmname_amulet_10 {护身符"奇迹创造者"}
-itmdescr_amulet_10 {水手守护圣尼古拉斯的圣像。}
+itmdescr_amulet_10 {圣尼古拉斯圣像, 水手的守护神。~有它在, 每个水手回家的几率都更高。}
 itmname_amulet_11 {护身符"西玛鲁塔"}
-itmdescr_amulet_11 {充满古老魔力的护身符。}
+itmdescr_amulet_11 {散发古老魔力的护身符。~带来异界的幸运, 保护船员在登船战前免受火枪伤害。}
 itmname_obereg_1 {护身符"船蛆"}
-itmdescr_obereg_1 {可驱除船蛀虫的柏树面具。}
+itmdescr_obereg_1 {柏木面具, 连船蛀虫都退避。~使船只维修更为省料省工。}
 itmname_obereg_2 {护身符"索奇皮利"}
-itmdescr_obereg_2 {织工之神 Xochipilli 的祭祀陶罐。}
+itmdescr_obereg_2 {织工守护神—索奇皮利的祭祀陶器。有助于更经 济地修理船只。}
 itmname_obereg_3 {护身符"猴子"}
-itmdescr_obereg_3 {“据当地传说, 这个雪花石膏器皿赋予力量。”}
+itmdescr_obereg_3 {按当地传说, 这只雪花石膏容器能赋予力量。~有了它, 搬运重物明显轻松许多。}
 itmname_obereg_4 {护身符"吉普赛人的扇子"}
-itmdescr_obereg_4 {一种特殊的安达卢西亚护符, 可转移对方目光, 使人在陆地上欺骗守卫与巡逻者。}
+itmdescr_obereg_4 {一种特别的安达卢西亚法术, 可“移人目光”, 让你在陆地上骗过守卫与巡逻。~有助于秘密潜入城镇与港口。}
 itmname_obereg_5 {护身符"玉龟"}
-itmdescr_obereg_5 {首批征服者的古老护身符。}
+itmdescr_obereg_5 {首批征服者的古老护符。~他们把它当作幸运物; 有了它, 运气的确更常眷顾你。}
 itmname_obereg_6 {护身符"猴子的拳头"}
-itmdescr_obereg_6 {带手环的结实绳索的复杂结。}
+itmdescr_obereg_6 {结实缆绳打成的繁复结, 带腕环。~通常由老练水手佩戴, 使你的言辞更具分量。}
 itmname_obereg_7 {护身符"渔夫"}
-itmdescr_obereg_7 {水手为求好运佩戴的受咒捕鱼钩。}
+itmdescr_obereg_7 {被加持的鱼钩, 水手为求好运而佩戴。~提升驾船本领, 尤其对缺乏经验的领航员。}
 itmname_obereg_8 {护身符"商人的珠子"}
-itmdescr_obereg_8 {用于计数的修道院珊瑚念珠。}
+itmdescr_obereg_8 {用于记数的修道院珊瑚念珠。~助你交易时专注不乱, 提高成功几率。}
 itmname_obereg_9 {护身符"埃赫卡特"}
-itmdescr_obereg_9 {呈阿兹特克风神头部形状的古老碗。}
+itmdescr_obereg_9 {古老的祭碗, 作成阿兹特克风神的首级。~有它在手, 常得顺风, 船速更快。}
 itmname_obereg_10 {护身符"海员的耳环"}
-itmdescr_obereg_10 {绕过合恩角的舵手的耳环。}
+itmdescr_obereg_10 {曾绕过合恩角的舵手耳环。~助你穿礁与浅水中换舷, 提升船只灵活度。}
 itmname_obereg_11 {护身符"朝圣者"}
-itmdescr_obereg_11 {布伦丹水手的十字架。}
+itmdescr_obereg_11 {航海家布伦丹的十字架。~让你捕捉到最细微的风向变化, 使船只更听使唤。}
 itmname_rat_poison {灭鼠药}
-itmdescr_rat_poison {砒霜——一种闻起来像硫磺、似滑石的粉末, 用于暂时消灭船上的老鼠。}
+itmdescr_rat_poison {砒霜—一种闻起来像硫磺、似滑石的粉末, 用于暂时消灭船上的老鼠。}
 itmname_gold {比索}
 itmdescr_gold {西班牙银元, 由新世界的银矿铸造, 是第一种世界货币, 到处都被接受 —但在新世界尤其如此。 从历史上看, 比索可以分成八个雷亚尔, 因此它们的俗称是: "八片"。}
 itmname_gold_dublon {金达布隆}
@@ -644,7 +717,7 @@ itmdescr_meteorite {罕见的幸运一击! 一位来自太空的客人, 设法�
 itmname_patent_england {英国私掠许可证}
 itmdescr_patent_england {由护国公殖民办公室颁发的私掠许 可证, 确认你为英国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。}
 itmname_patent_holland {荷兰私掠许可证}
-itmdescr_patent_holland {由荷兰西印度公司董事会颁发的私掠 许可证, 确认你为荷兰联合省服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。}
+itmdescr_patent_holland {由荷兰西印度公司董事会颁发的私 掠 许可证, 确认你为荷兰联合省服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。}
 itmname_patent_france {法国私掠许可证}
 itmdescr_patent_france {由路易十四陛下殖民办公室颁发的 私掠许可证, 确认你为法国服务。 这使你承担与保护国家利益和按规 定维护船只相关的某些义务。}
 itmname_patent_spain {西班牙私掠许可证}
@@ -668,7 +741,7 @@ itmdescr_map_normal {此地图由一群商人拼凑而成。 标注了主要城�
 itmname_map_beliz {伯利兹地图}
 itmdescr_map_beliz {一幅描绘伯利兹镇及周边地区的地 图。}
 itmname_map_santa {布鲁维尔德地图}
-itmdescr_map_santa {一幅描绘布鲁维尔德镇及周边地区的地图。}
+itmdescr_map_santa {一幅描绘布鲁维尔德镇及周边地区 的地图。}
 itmname_map_bermudas {宝藏岛地图}
 itmdescr_map_bermudas {一幅描绘宝藏岛上所有路线和定居 点的地图。}
 itmname_map_jam {牙买加地图}
@@ -724,7 +797,7 @@ itmdescr_map_LSC {任何初到弃船之城的人没有这样 一幅地图都会�
 itmname_A_map_beliz {伯利兹精良地图}
 itmdescr_A_map_beliz {一幅极其精确的伯利兹周边地区地 图。 背面有制图师的名字 - Jose Dios。}
 itmname_A_map_santa {布鲁维尔德精良地图}
-itmdescr_A_map_santa {一幅极其精确的布鲁维尔德周边地区地图。 背面有制图师的名字 - Jose Dios。}
+itmdescr_A_map_santa {一幅极其精确的布鲁维尔德周边地 区地图。 背面有制图师的名字 - Jose Dios。}
 itmname_A_map_bermudas {宝藏岛精良地图}
 itmdescr_A_map_bermudas {一幅极其精确的宝藏岛地图。 背面有制图师的名字 - Jose Dios。}
 itmname_A_map_jam {牙买加精良地图}
@@ -887,6 +960,8 @@ itmname_recipe_potion4 {混合剂配方}
 itmdescr_recipe_potion4 {包含制备混合剂所需的所有信息的 配方。}
 itmname_recipe_berserker_potion {奥美托奇利酊剂配方}
 itmdescr_recipe_berserker_potion {包含制备奥美托奇利酊剂所需的所 有信息的配方。}
+itmname_recipe_PerksPotion {遗忘药水配方}
+itmdescr_recipe_PerksPotion {复杂、昂贵且耗时的药剂配方。根 据其描述, 它应能让人断绝过去并改变命运。}
 itmname_recipe_totem_01 {幸运符配方}
 itmdescr_recipe_totem_01 {包含制作幸运符'铸铁之咙'所需的所有信息的配方。}
 itmname_recipe_totem_02 {幸运符配方}
@@ -952,17 +1027,19 @@ itmdescr_berserker_potion
 一种传奇药水, 可释放超人的力量和耐力, 提高敏捷性和反应速度, 并使服用者免受疼痛。 此效果每分钟持续不超过12秒。 会损害您的健康。
 }
 itmname_mangarosapower {巨浪药水}
-itmdescr_mangarosapower {用曼加罗萨依照阿梅莉娅的配方酿制的药剂。散发着火药与熏木的气息, 夹杂着硫磺的辛烈。其香仿佛召唤你前往炮甲板——雷鸣轰响, 硝烟遮天。}
+itmdescr_mangarosapower {用曼加罗萨依照阿梅莉娅的配方酿 制的药剂。 散发着火药与熏木的气息, 夹杂着硫磺的辛烈。其香仿佛召唤 你前往炮甲板—雷鸣轰响, 硝烟遮天。}
 itmname_mangarosafast {疾风药水}
 itmdescr_mangarosafast
 {
-用曼加罗莎按阿梅莉娅的配方酿制的药剂。
-带有新折树枝的苦涩烟气与炽热铁器的气息, 如同落日下的铁匠铺。这气味激起战意, 让人仿佛置身刀剑交鸣与战斗的炙热中。
+用曼加罗莎按阿梅莉娅的配方酿制 的药剂。
+带有新折树枝的苦涩烟气与炽热铁 器的气息, 如同落日下的铁匠铺。这气味激起 战意, 让人仿佛置身刀剑交鸣与战斗的炙 热中。
 }
 itmname_mangarosatotal {海之拥药水}
-itmdescr_mangarosatotal {用曼加罗莎按照阿梅莉亚的配方酿制的药剂。带有咸咸的海风和潮湿木头的气息, 仿佛风暴过后的甲板。海洋的清新夹杂着淡淡的海藻苦味, 让人感到轻盈与自由, 仿佛胸腔中敞开了一片大海。}
+itmdescr_mangarosatotal {用曼加罗莎按照阿梅莉亚的配方酿 制的药剂。 带有咸咸的海风和潮湿木头的气息, 仿佛风暴过后的甲板。海洋的清新 夹杂着淡淡的海藻苦味, 让人感到轻盈与自由, 仿佛胸腔中敞开了一片大海。}
 itmname_vodka {沙皇伏特加}
-itmdescr_vodka {以谷物酒精为基, 加入杜松和贯叶连翘, 蒸馏后与一滴玫瑰露和高良姜根一同陈酿。曾为沙皇俄国射手在战场上御寒提神之用。}
+itmdescr_vodka {以谷物酒精为基, 加入杜松和贯叶连翘, 蒸馏后与一滴玫瑰露和高良姜根一 同陈酿。 曾为沙皇俄国射手在战场上御寒提 神之用。}
+itmname_PerksPotion {遗忘药水}
+itmdescr_PerksPotion {瓶身呈熔化的骷髅形状, 瓶颈扭曲。黏稠油性液体闪烁着金 色与深红色的光泽, 仿佛内中脉动着活火。包含三重祭 献: 肉体、记忆与财富。}
 itmname_cannabis1 {曼陀罗}
 itmdescr_cannabis1 {用于治疗药水。}
 itmname_cannabis2 {墨西哥藜芦}
@@ -990,7 +1067,7 @@ itmdescr_grapeshot
 铅制葡萄弹或大型鹿弹。 仅在使用霰弹枪射击时使用。 可同时对多个目标造成伤害。 枪管能装填的葡萄弹数量取决于所 使用的武器。
 }
 itmname_cartridge {纸质弹药筒}
-itmdescr_cartridge {将火药、铅弹和垫纸组合在一起的弹药。用油纸包裹以防潮湿。使用后可大幅加快装填速度, 并因火药燃烧更均匀而提升伤害。}
+itmdescr_cartridge {将火药、铅弹和垫纸组合在一起的 弹药。 用油纸包裹以防潮湿。使用后可大 幅加快装填速度, 并因火药燃烧更均匀而提升伤害。}
 itmname_powder_pellet {爆破筒}
 itmdescr_powder_pellet {可从手持迫击炮发射的爆破筒。 爆炸时产生强光, 可同时眩晕多个目标。 可能造成友军伤害。}
 itmname_grenade {手榴弹}
@@ -1002,7 +1079,7 @@ itmdescr_GunPowder_colt {改进的火药, 燃烧更快更干净。 制作柯尔�
 itmname_shotgun_bullet {铅弹壳}
 itmdescr_shotgun_bullet {用于装填左轮手枪弹药的弹头。 用子弹模具制作。}
 itmname_shotgun_cartridge {左轮手枪子弹}
-itmdescr_shotgun_cartridge {防水黄铜弹壳内装有一定量的火药和一颗弹头。}
+itmdescr_shotgun_cartridge {防水黄铜弹壳内装有一定量的火药 和一颗弹头。}
 itmname_OxyHydSilver {雷酸银}
 itmdescr_OxyHydSilver {雷酸银。 非常敏感。 掉落时容易爆炸。}
 itmname_GunCap_colt {火帽}
@@ -1020,7 +1097,7 @@ itmdescr_grapeshot_double
 增量的火药装药和葡萄弹, 配有一枚切碎的杜布隆币以求好运。 其效果取决于使用的武器。 没有火药测试仪时, 枪管破裂的风险会增加。
 }
 itmname_ArmoryPaper {火药纸}
-itmdescr_ArmoryPaper {这种纸是用石蜡浸渍纸基制成的。在加勒比地区, 它相当稀有且昂贵, 主要用于包装食物, 但在巧手之下也能派上其他用场。}
+itmdescr_ArmoryPaper {这种纸是用石蜡浸渍纸基制成的。 在加勒比地区, 它相当稀有且昂贵, 主要用于包装食物, 但在巧手之下也能派上其他用场。}
 itmname_argbullet {银弹}
 itmdescr_argbullet {根据当地双刀专家的说法, 银弹对怪物、 岳母以及被恶魔伏都教魔法复活的 死者非常有效。}
 itmname_Mineral1 {铜水罐}
@@ -1032,16 +1109,13 @@ itmdescr_Mineral3 {一支蜂蜡蜡烛。}
 itmname_Mineral4 {赫拉克勒斯甲虫}
 itmdescr_Mineral4 {已知最大甲虫物种的干燥标本 (长度可达20英寸)。 赫拉克勒斯甲虫也是地球上相对于 其体重最强壮的生物, 能够承载超过自身体重100倍的重量。}
 itmname_Mineral5 {圣像油灯}
-itmdescr_Mineral5 {这盏青铜圣像油灯可以让你在夜晚借 着它阅读喜爱的书籍或煮早晨的咖 啡。}
+itmdescr_Mineral5 {这盏青铜圣像油灯可以让你在夜晚 借 着它阅读喜爱的书籍或煮早晨的咖 啡。}
 itmname_Mineral6 {镜子}
 itmdescr_Mineral6 {一个小巧的袖珍镜子。 在里面你几乎连自己的鼻尖都看不 清。}
 itmname_Mineral7 {瓷烟斗}
 itmdescr_Mineral7 {荷兰手工艺品, 采用从中国人那里偷来的技术制作。 比廉价的陶土烟斗更精致, 因此在当地吸烟者中很受欢迎。}
 itmname_Mineral8 {鞋子}
-itmdescr_Mineral8
-{
-一只没有配对的鞋子。 不祥之兆。  (机会主义-10)
-}
+itmdescr_Mineral8 {一只没有配对的鞋子。 不祥之兆。 }
 itmname_Mineral9 {旧杯子}
 itmdescr_Mineral9 {一个失去光泽的旧锡镴杯子。}
 itmname_Mineral10 {燧石}
@@ -1053,7 +1127,7 @@ itmdescr_Mineral12 {被制成项链的美洲豹断爪。 在丛林中的印第�
 itmname_Mineral13 {鞭子}
 itmdescr_Mineral13 {由皮革条制成的鞭子。 是水手长装备的重要组成部分。 也可用于驱赶流浪狗或殴打以不当 方式看你的人。}
 itmname_Mineral14 {吸血蝙蝠翼}
-itmdescr_Mineral14 {当地吸血的圆叶吸血蝠 —通常被称为吸血蝙蝠的干燥翅膀。 人们私下说女巫和印第安萨满在他 们的邪恶仪式中使用它们。 }
+itmdescr_Mineral14 {当地吸血的圆叶吸血蝠 —通常被称为吸血蝙蝠的干燥翅膀。 人们私下说女巫和印第安萨满在他 们的邪恶仪式中使用它们。}
 itmname_Mineral15 {折叠刀}
 itmdescr_Mineral15 {水手不可替代的伙伴。}
 itmname_Mineral16 {磨刀石}
@@ -1085,15 +1159,9 @@ itmdescr_Mineral28 {一些疯狂的炼金术士用这种纯酒精 来制备雷�
 itmname_Mineral29 {硝酸}
 itmdescr_Mineral29 {硝酸自8世纪起就为人所知。 假设你有一个耐火且非金属的坩埚 , 它可用于制备雷酸银。 反应性极强。 避免接触皮肤, 看在上帝的份上不要品尝。}
 itmname_Mineral30 {奴隶手铐}
-itmdescr_Mineral30
-{
-奴隶贩子用来防止他们的'财产' 逃跑的手铐。  (魅力-10)
-}
+itmdescr_Mineral30 {奴隶贩子用来防止他们的'财产' 逃跑的手铐。}
 itmname_Mineral31 {附魔骨头}
-itmdescr_Mineral31
-{
-一根带有铜环的人类指骨。 伏都教女巫用于施法。  (魅力-10, 机会主义-10)。
-}
+itmdescr_Mineral31 {一根带有铜环的人类指骨。 伏都教女巫用于施法。 }
 itmname_Mineral32 {子弹模具}
 itmdescr_Mineral32 {这个装置可以铸造出适合柯尔特左 轮手枪尺寸和形状的子弹。}
 itmname_Mineral33 {纹身染料}
@@ -1136,6 +1204,8 @@ itmdescr_key_facio {iuseppe Fazio 的钥匙。}
 itmdescr_key_facioQ {打开'Carolina (卡罗莱纳号) '船上的门和 Giuseppe Fazio 的舱室里一个箱子的钥匙。}
 itmname_key_levasser {Levasseur 的钥匙}
 itmdescr_key_levasser {从 Francois Levasseur 尸体上取下的钥匙。 现在让我们找到它能打开的箱子。}
+itmname_key_candlestick_LeFransua {钥匙}
+itmdescr_key_candlestick_LeFransua {一把旧而磨损的钥匙。 还不清楚它能打开什么。}
 itmname_PortmansBook {航海日志}
 itmdescr_PortmansBook {一本被心不在焉的船长遗忘的航海 日志。 应该把它还给他。}
 itmname_CaptainBook {船只文件}
@@ -1328,11 +1398,11 @@ itmdescr_Tutorial_journal {'Ulysse (尤利西斯号)' 船长日记的第四卷�
 itmname_Suspicious_Potion {可疑药水}
 itmdescr_Suspicious_Potion {它最好能起作用。}
 itmname_LFD_letter {给玛丽萨·卡尔德拉的信}
-itmdescr_LFD_letter {泛黄的纸张与褪色的墨迹, 显示出这封信按书信的标准来说已有相当年头。内容被牢牢封在蜡封之下。通常, 这类信件都有特别的价值。收信人——波多贝罗的玛丽萨·卡尔德拉。}
+itmdescr_LFD_letter {泛黄的纸张与褪色的墨迹, 显示出这封信按书信的标准来说已 有相当年头。 内容被牢牢封在蜡封之下。通常, 这类信件都有特别的价值。收信人—波多贝罗的玛丽萨·卡尔德拉。}
 itmname_OZ_book {锻造工艺书}
-itmdescr_OZ_book {塞巴斯蒂安的知识宝库, 却被他输在了牌桌上。厚重的旧书, 满是图纸与笔记——对任何铁匠来说都是一笔真正的财富。}
+itmdescr_OZ_book {塞巴斯蒂安的知识宝库, 却被他输在了牌桌上。厚重的旧书, 满是图纸与笔记—对任何铁匠来说都是一笔真正的财 富。}
 itmname_OZ_letter {字条}
-itmdescr_OZ_letter {午夜在洞穴碰面。取走我们的东西, 然后前往加莱拉角。从那里会有人接我们, 我们终于能离开这个破败的岛屿了。我迫不及待想去宰一条比这些可怜蠢货大得多的鱼。}
+itmdescr_OZ_letter {午夜在洞穴碰面。取走我们的东西, 然后前往加莱拉角。从那里会有人 接我们, 我们终于能离开这个破败的岛屿了。 我迫不及待想去宰一条比这些可怜 蠢货大得多的鱼。}
 itmname_wolfreeks_book {航海日志}
 itmdescr_wolfreeks_book {Wulfric Iogansen 的航海日志。}
 itmdescr_ignasio_book {Ignacio Marco 的航海日志。}
@@ -1383,16 +1453,22 @@ itmtype_lantern {工具}
 itmtype_hat {帽子}
 itmtype_musket {火器}
 itmname_LEDR_key {铁钥匙}
-itmdescr_LEDR_key {在主教遗骸旁找到的钥匙。 据冈萨洛所说, 他从未将其放下过 。看来是担心好奇的水手们打他财宝的主意——不然他何必随身带着钥匙?}
+itmdescr_LEDR_key {在主教遗骸旁找到的钥匙。 据冈萨洛所说, 他从未将其放下过 。看来是担心好奇的水手们打他财 宝的主意—不然他何必随身带着钥匙?}
 itmname_recipe_potion1 {治疗药剂配方}
-itmdescr_recipe_potion1 {包含所有酿制治疗药剂所需说明的配方。}
+itmdescr_recipe_potion1 {包含所有酿制治疗药剂所需说明的 配方。}
 itmname_blade_WR {重生}
 itmdescr_blade_WR
 {
 鲁珀特·诺斯伍德的华丽军刀。
-巨大的护手上镶嵌着金色凤凰, 见证痛苦与重生。刀身如镜闪耀, 槽内刻着: VULNERATUS NON VICTUS——“受伤却未被击败”。这把剑夺走了多少灵魂, 唯有上帝知晓……
+巨大的护手上镶嵌着金色凤凰, 见证痛苦与重生。刀身如镜闪耀, 槽内刻着: VULNERATUS NON VICTUS—“受伤却未被击败”。这把剑夺走了多少灵魂, 唯有上帝知晓……
 }
 itmname_hat11 {特蕾莎的帽子}
 itmdescr_hat11 {玛丽母亲的头饰, 由奥雷莉·贝尔坦珍藏。虽历经岁月, 依然优雅迷人。}
 itmname_talisman21 {走私护符}
-itmdescr_talisman21 {一袋草药和灰烬、一瓶黑色液体, 还有一枚骷髅吊坠——外人看来古怪, 却是行走暗道者珍视的护身符。唯有真正的走私者才会佩戴此类护符。}
+itmdescr_talisman21 {一袋草药和灰烬、一瓶黑色液体, 还有一枚骷髅吊坠—外人看来古怪, 却是行走暗道者珍视的护身符。唯 有真正的走私者才会佩戴此类护符。}
+itmname_blade_WR_1 {重生}
+itmdescr_blade_WR_1
+{
+鲁珀特·诺斯伍德的华丽军刀。
+巨大的护手上镶嵌着金色凤凰, 见证痛苦与重生。刀身如镜闪耀, 槽内刻着: VULNERATUS NON VICTUS—“受伤却未被击败”。这把剑夺走了多少灵魂, 唯有上帝知晓……
+}

@@ -42,7 +42,7 @@ void PrepareDefaultOption(ref optref)
 	optref.icompasspos = 0;
 	optref.icontrolstips = 2;
 	optref.ihelptime = 1;
-	optref.icamera = 0;
+	optref.icamera = 1;
 	optref.ienemytype = 1;
 	optref.itarget = 2;
 	optref.FoliageDrawDistance = 1000;
@@ -128,7 +128,7 @@ void GetRealOptions(ref optref)
 	if( CheckAttribute(&InterfaceStates,"Camera") ) {
 		optref.icamera = sti(InterfaceStates.Camera);
 	} else {
-		optref.icamera = 0;
+		optref.icamera = 1;
 	}
 
 	if( CheckAttribute(&InterfaceStates,"EnemyType") ) {
@@ -213,7 +213,7 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.EnabledShipMarks = 1;
 	}
-	if (sti(optref.cameramode.EnabledShipMarks)>0) bDrawBars = 1;
+	if (sti(optref.cameramode.EnabledShipMarks)>0) bDrawBars = true;
 	else bDrawBars = sti(optref.cameramode.EnabledShipMarks);
 
 	if( CheckAttribute(&InterfaceStates,"SimpleSea") ) {
@@ -498,7 +498,7 @@ void SetCurentOptions(ref optref)
 		iGlobalCamera = sti(optref.icamera);
 		InterfaceStates.Camera = iGlobalCamera;
 	} else {
-		InterfaceStates.Camera = 0;
+		InterfaceStates.Camera = 1;
 	}
 
 	if( CheckAttribute(optref,"ienemytype") ) {

@@ -642,12 +642,7 @@ void locDirSail(int evtID)
     if (CheckAttribute(rEncounter, "Lock") && sti(rEncounter.Lock)) Group_LockTask(sGName);
 
     int iNation = sti(rEncounter.Nation);
-
-    int iNumFantomShips;
-    if(CheckAttribute(rEncounter, "FixedTypes"))
-        iNumFantomShips = Fantom_SetEncounterShips(rEncounter, sGName);
-    else // Special: ENCOUNTER_TYPE_BARREL, ENCOUNTER_TYPE_BOAT; TO_DO: DEL
-        iNumFantomShips = Fantom_GenerateEncounterExt(sGName, iEncounterType, iNumWarShips, iNumMerchantShips, iNation);
+    int iNumFantomShips = Fantom_SetEncounterShips(rEncounter, sGName);
 
     if (iNumFantomShips)
     {

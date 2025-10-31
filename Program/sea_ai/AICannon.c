@@ -202,43 +202,61 @@ float Cannon_GetRechargeTime()
 float Cannon_GetFireTime()
 {
 	aref aCharacter = GetEventData();
+	string sBort = GetEventData();
+	bool isRandom = GetEventData();
 	ref refBaseShip = GetRealShip(sti(aCharacter.ship.Type));
 
 	// форт
 	if(refBaseShip.Name == ShipsTypes[SHIP_FORT].Name)
-		return frnd() * 20.0;
+		return frnd() * 13.0;
 
 	// количество пушек и навык орудий
-	float fBaseFireTime = 1.3;
-	if(refBaseShip.CannonsQuantity >= 31 && refBaseShip.CannonsQuantity <= 59)
-		fBaseFireTime = 3.0;
-	if(refBaseShip.CannonsQuantity >= 60)
-		fBaseFireTime = 4.3;
-	float fCannonSkill = stf(aCharacter.TmpSkill.Cannons);
-	float fBase = pow((fBaseFireTime - fCannonSkill), 0.6);
+	int nCannons = GetBortCannonsQty(aCharacter, sBort);
+	
+	// базовая задержка
+	float fBaseFireTime = 0.25; // до 3 пушек включительно (т.е. в основном нос или корма)
+
+	if      (nCannons >= 30) fBaseFireTime = 3.5; //линейники
+	else if (nCannons >= 20) fBaseFireTime = 2.5; //военные второклашки
+	else if (nCannons >= 11) fBaseFireTime = 1.7; //военные 3-классники и малые квестовики, малые второклашки
+	else if (nCannons >= 8)  fBaseFireTime = 1.3; //ранние военники и 4 класс
+	else if (nCannons >= 4)  fBaseFireTime = 0.55; //6 и 5 класс 
+
+
+
+		
+	float fCannonSkillNormalized = 1.8 - 1.0*pow(stf(aCharacter.TmpSkill.Cannons)/100, 0.65); //нормализация задержки по скиллу дает от +40% до -40% в зависимости от навыка, а не фиксу
+
+	float fBase = pow((fCannonSkillNormalized * fBaseFireTime), 0.65); //база получает +-40% к скорости в зависимости от скилла, с нормализацией
 	
 	// рандом
-	float fRandom = uniform(0.0, 6.0);
+	float rMin = 0.35;
+	float rMax = 4.85;
+	float fRandom;
+	if(isRandom)
+		fRandom = uniform(rMin, rMax);
+	else
+		fRandom = (rMax + rMin) * 0.5;
 	
 	// аркадный режим
 	float fArcade = 0.5;
 	if(!iArcadeSails)
-		fArcade = 1.0;
+		fArcade = 0.75;
 	
 	// мораль
-	float fMorale = Bring2Range(1.2, 0.8, 0.0, 100.0, GetCharacterCrewMorale(aCharacter));
+	float fMorale = Bring2Range(1.12, 0.88, 0.0, 100.0, GetCharacterCrewMorale(aCharacter));
 	
 	// опыт канониров и укомплектованность команды
 	float crewQ = GetCrewQuantity(aCharacter);
- 	float crewMax = stf(refBaseShip.MaxCrew);
- 	float crewOpt = stf(refBaseShip.OptCrew);
- 	if(crewMax < crewQ)
+	float crewMax = stf(refBaseShip.MaxCrew);
+	float crewOpt = stf(refBaseShip.OptCrew);
+	float fCannonersExp = GetCrewExp(aCharacter, "Cannoners");
+	if(crewMax < crewQ) // защита от напихивания по квестам экипажа выше нормы
 		crewQ = crewMax;
 	float fCrew = crewQ / crewOpt;
-	float fCannonersExp = GetCrewExp(aCharacter, "Cannoners");
-	float fExp = 1.93 - (fCannonersExp / GetCrewExpRate()) * (crewQ / crewOpt);
-	if(fExp < 1.0)
-		fExp = 1.0;
+	float BaseExpDelay = 1.65;
+	float curExpRate = fCannonersExp/(GetCrewExpRate()+150);
+	float fExp = BaseExpDelay - curExpRate * fCrew;
 	
 	return fBase * fRandom * fArcade * fMorale * fExp;
 }
@@ -312,7 +330,7 @@ float Cannon_DamageEvent()
 		fCurDamage = 1.0;
 		CreateBlast(x,y,z);
 		CreateParticleSystem("blast_inv", x, y, z, 0.0, 0.0, 0.0, 0);
-		Play3DSound("cannon_explosion", x, y, z);
+		Play3DSoundEvent("ShipEMB/Explosion_Cannon", x, y, z);
 		if (sti(aCharacter.index) == GetMainCharacterIndex())
 		{
 		    //Log_Info(XI_ConvertString("Cannon_DamageEvent"));

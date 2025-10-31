@@ -181,10 +181,7 @@ Trading_descr
 {
 Handel ist ein tiefes, komplexes System, bei dem viele Faktoren den Kauf- und Verkaufspreis beeinflussen.~An Land zählen vor allem die Handels-Fertigkeit und der Hintergrund deines Charakters.~Auf See gibt es noch mehr Faktoren – Warentyp, Herkunft, Koloniegröße, Handelswege und die Fertigkeiten deines Zahlmeisters.~Mit der Zeit wirst du alles verstehen – bis dahin lohnt sich ein nützliches Handelsamulett.
 }
-Prologue_Navigation {Schiffssteuerung}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation {Schiffssteuerung}Prologue_Navigation_descr
 {
 Willkommen in der Karibik!~Steuere das Schiff mit den Richtungstasten. Schiffe sind schwer und träge – spüre das Gewicht beim Drehen.~Segel und Geschwindigkeit steuerst du mit den Segelmodi-Tasten.~Es gibt drei Segelmodi: volle, Kampf- und eingeholte Segel. Volle Segel sind am schnellsten, im Kampfmodus drehst du besser, eingeholt stoppst du sanft.~Bei Sturm und unter Beschuss Segel einholen, beim Drehen und Zielen in den Kampfmodus schalten, beim Verfolgen volle Segel setzen.~Probiere verschiedene Segelmodi und Wendungen aus, spüre die Trägheit des Schiffs und genieße den Sonnenuntergang!
 }
@@ -192,19 +189,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Zeitkontrolle}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {Zeitkontrolle}Prologue_TimeScale_descr
 {
 Viele Dinge im Spiel laufen recht langsam ab – etwa das Wechseln des Segelmodus oder das Nachladen der Kanonen.~Du kannst die Zeit auf See, an Land und auf der Weltkarte beschleunigen oder verlangsamen.~Nutze deine Macht über die Zeit und geh dann aufs Deck – jemand möchte mit dir sprechen.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoi!}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoi!}Prologue_CameraControl_descr
 {
 Willkommen an Bord der „Ulysse“! Wir haben ein kleines Einstiegsabenteuer für dich vorbereitet.~An Bord der „Ulysse“ gibt es viel zu tun. Wenn du bereit bist, wähle im Dialog mit dem Kapitän „Geschäfte abschließen“.~Danke fürs Spielen – bis bald auf See!
 }
@@ -214,82 +205,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Logbuch & Dokumente}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {Logbuch & Dokumente}Prologue_Logbook_descr
 {
 Jede Quest, die du annimmst, wird im „Logbuch“ vermerkt. Lies Dialoge und Einträge aufmerksam – oft stehen dort wichtige Hinweise.~Sieh dir die Einträge im „Logbuch“ an. Alle kleinen Aufgaben, die du an Bord der „Ulysse“ bekommst, werden dort angezeigt.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {Komplexe Quests, Dokumente & Crafting}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Komplexe Quests, Dokumente & Crafting}
 Prologue_Inventory_descr
 {
 Neben Quests enthält das „Logbuch“ weitere wichtige Infos.~Im Bereich „Dokumente“ kannst du alle gefundenen Notizen lesen.~Jetzt musst du eine Notiz vom Zahlmeister lesen und Dublonen an die Crew verteilen, wie angegeben.~Um Dublonen aus der Truhe zu holen, öffne sie über das Crafting – Alchemie.Anfangs hast du nur wenige Rezepte, aber später werden es mehr.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {Amulette}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {Amulette}Prologue_Amulet_descr
 {
 Amulette sind mächtige Verstärker für deinen Charakter und werden in Angriffs-, Verteidigungs- und Unterstützungstypen unterteilt. Du kannst nicht gleichzeitig ein Angriffs- und ein Verteidigungsamulett tragen – wähle deine Sets also mit Bedacht.~Es gibt außerdem zwei weitere Verstärker: Talismane und Schutzamulette.~Talismane wirken länger als Amulette und haben umfassendere Effekte, Schutzamulette sind extrem stark, wirken unbegrenzt und haben einen eigenen Inventarplatz.~Halte immer mehrere Sets bereit – für besonders schwere Skill-Checks und harte Kämpfe auf See und an Land.~Achtung: Nach der Aktivierung wird ein Amulett oder Talisman beim Ablegen zerstört – entscheide mit Bedacht.
 }
-Prologue_Trading {Handelsgrundlagen}
-[g]Prologue_Trading_descr
+Prologue_Trading {Handelsgrundlagen}Prologue_Trading_descr
 {
 Handel ist ein tiefes, komplexes System, bei dem viele Faktoren den Preis beeinflussen – vor allem deine „Handel“-Fertigkeit.~Auf See gibt es noch mehr Faktoren – Warentyp, Herkunft, Koloniegröße, Handelswege und die Fertigkeiten deines Zahlmeisters.~Mit der Zeit wirst du alles verstehen – bis dahin lohnt sich ein nützliches Amulett.
 }
-Prologue_Overload {Überlastung}
-[h]Prologue_Overload_descr
+Prologue_Overload {Überlastung}Prologue_Overload_descr
 {
 Du bist zum ersten Mal an die Traglastgrenze gestoßen.Jeder Charakter hat ein Maximalgewicht, das er tragen kann – abhängig von Stärke, Fertigkeiten und Amuletten.~Versuche, etwas zu finden, das dein Maximalgewicht erhöht – vielleicht beim Bootsmann in der Mannschaftsunterkunft.
 }
-Prologue_AutoFire {Seekampf}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {Seekampf}Prologue_AutoFire_descr
 {
 Dein erster Seekampf findet in der Fantasie von Charles de Maure statt – du kannst also unbesorgt experimentieren.~Jedes Schiff hat drei Hauptwerte: Rumpf, Segel und Mannschaft. Sinkt der Rumpf auf null, geht das Schiff unter. Beschädigte Segel verlangsamen dich, weniger Mannschaft beeinflusst Entern, Nachladen und Segelsteuerung.~Jede Munition hat ihren Zweck: Kartätschen für die Mannschaft, Kettenkugeln für Segel und Masten, Bomben für den Rumpf. Kugeln sind Allrounder mit der größten Reichweite. Der Schaden hängt nicht nur vom Munitionstyp, sondern auch vom Geschütz ab – je größer, desto mehr Schaden.~Es gibt zwei Hauptfeuermodi. Der Schnellschuss ist verfügbar, wenn das Ziel im Schussfeld ist. Er ist anfangs nicht sehr präzise oder effektiv, ermöglicht aber dynamische Kämpfe.~Ist dir der Kampf zu langsam, beschleunige ihn mit den Zeitsteuerungstasten.
 }
-Prologue_AimingFire {Gezieltes Feuer}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {Gezieltes Feuer}Prologue_AimingFire_descr
 {
 Gezieltes Feuer erlaubt sehr präzises Schießen von der Seite. Das braucht Übung, lohnt sich aber.~Die Kanonenkreise zeigen die tatsächliche Position und Flugbahn der Breitseitenkanonen. Sie brauchen etwas Zeit, um sich auf den Zielpunkt in der Bildschirmmitte auszurichten.~Beim Schuss feuern die Kanonen dorthin, wo ihre Kreise gerade stehen – halte also ggf. vor.~Ziele auf ein feindliches Schiff, um es als Ziel zu markieren. Nach der Eroberung kannst du auf jeden Teil zielen oder vorhalten.~Mit steigenden Fertigkeiten des Kapitäns und Kanoniers werden Zielgeschwindigkeit und Feuerrate besser.~Bewegst du das Ziel schnell, werden die Kanoniere verwirrt und zielen langsamer als sonst.~Gezielte Breitseiten eignen sich hervorragend, um auf große Distanz kritische Schiffsteile – vor allem Segel und Masten – zu treffen.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Angriff}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {Angriff}Prologue_FightAttack_descr
 {
 Kämpfe in Caribbean Legend sind hart und schnell – aber jetzt bist du in Sicherheit.~Jeder Charakter ist bewaffnet und hat Kampffertigkeiten. Je besser deine Waffe und je erfahrener dein Held, desto mehr Schaden richtest du an.~Dir stehen mehrere Angriffs- und Verteidigungsmanöver zur Verfügung.~Beginnen wir mit den drei Hauptangriffen.~Hieb. Schnell, verursacht wenig Schaden, verbraucht mittlere Energie.~Stich. Langsamer als der Hieb, mittlerer Schaden, wenig Energieverbrauch.~Durchschlagender Angriff. Langsam und kraftvoll, verursacht massiven Schaden und kann Blocks durchbrechen.~Probiere alle Angriffe am Piraten aus.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Verteidigung im Kampf}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {Verteidigung im Kampf}Prologue_FightDefence_descr
 {
 Sehr gut! Jetzt zur Verteidigung.~Blocken. Blockt jeden Angriff außer durchschlagende. Während des Blocks kannst du dich langsam bewegen, und es kostet keine Energie. Starke Gegner können deinen Block auch mit normalen Angriffen durchbrechen – sei vorbereitet.~Parieren. Lenkt jeden Angriff ab und bringt den Gegner aus dem Gleichgewicht, er verliert Energie.~Ausweichen. Ermöglicht Positionswechsel oder das Ausweichen vor Schüssen.~Pariere und blocke die Angriffe des Piraten.~Und dann – besiege ihn.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Schusswaffen}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {Schusswaffen}Prologue_Marksmanship_descr
 {
 Schusswaffen sind seltener als Nahkampfwaffen, aber die Gefahr, in der Karibik eine Kugel abzubekommen, ist trotzdem groß – bleib wachsam.~An Land gibt es wie auf See zwei Schussmodi: Schnellschuss und gezielter Schuss.~Schnellschuss: Einfach Taste drücken. Schnell, aber wenig effektiv.~Gezielter Schuss kann viel mehr Schaden verursachen, macht dich aber verwundbar. Je länger du zielst, desto mehr Schaden. Kopfschüsse richten noch mehr an.~Halte die Ziel-Taste, um in diesen Modus zu wechseln. Angriffstaste zum Schießen. Ziel-Taste loslassen, um ohne Schuss zurückzukehren.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Plündern}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {Plündern}Prologue_DeadSearch_descr
 {
 Nach jedem Kampf ist Zeit für Beute.Jeden gefallenen Gegner kannst du mit der Plündern-Taste durchsuchen.~Finde das Heil-Elixier für Alonso!
 }

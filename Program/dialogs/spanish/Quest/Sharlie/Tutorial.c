@@ -546,7 +546,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Qué pena que mi pérfido plan haya fracasado. Hasta luego, marinero.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -569,14 +569,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "Bueno... tiene razón. Y ya ha comido en la cabina del capitán más de una vez. Pase, señor "+pchar.lastname+".";
 					link.l1 = "¡Así se habla!";
 					link.l1.go = "OhrannikCabin_4";
-					notification("Prueba superada", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -600,7 +600,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Habilidad insuficiente (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -608,7 +608,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ay... bueno, supongo que no pasará nada grave.";
 			link.l1 = "¡Así se habla!";
 			link.l1.go = "OhrannikCabin_4";
-			notification("Prueba superada", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 
 		case "OhrannikCabin_4":
@@ -1063,17 +1063,17 @@ void ProcessDialogEvent()
 
 		case "OldSailor_9":
 			dialog.text = "A ver, dígame: ¿cuál es la habilidad más importante para un capitán?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "La navegación. De ella depende el tamaño del barco que puede comandar.";
 				link.l1.go = "OldSailor_10";
-				notification("Prueba superada", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "No voy a mentir, no lo sé.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Habilidad insuficiente (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1157,18 +1157,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "¿Ya encontró la respuesta? ¿Cuál es la habilidad más importante para un capitán?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Navegación. De ella depende el tamaño del barco que puede comandar.";
 				link.l1.go = "OldSailor_10";
-				notification("Prueba superada", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Todavía no.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Habilidad insuficiente (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		

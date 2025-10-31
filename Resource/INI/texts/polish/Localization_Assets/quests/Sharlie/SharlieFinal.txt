@@ -4,7 +4,7 @@ SharlieFinal_3 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
 SharlieFinal_4 {Catherine Fox zmarła na gorączke tropikalną}
 SharlieFinal_5 {chevalier Timoleon}
 SharlieFinal_6 {de Fontene}
-SharlieFinal_7 {Griffondor}
+SharlieFinal_7 { }
 SharlieFinal_8 {Robert}
 SharlieFinal_9 {Marten}
 SharlieFinal_10 {Enphanta}
@@ -14,11 +14,11 @@ SharlieFinal_13 {Vindzor Castle}
 SharlieFinal_14 {Royal Katherine}
 SharlieFinal_15 {Loyal London}
 SharlieFinal_16 {Haughty}
-SharlieFinal_17 {San Felipe}
-SharlieFinal_18 {San Isidro}
-SharlieFinal_19 {Santa Magdalena}
-SharlieFinal_20 {Santa Anna}
-SharlieFinal_21 {Apostle}
+SharlieFinal_17 { }
+SharlieFinal_18 { }
+SharlieFinal_19 { }
+SharlieFinal_20 { }
+SharlieFinal_21 { }
 SharlieFinal_22 {Cela została otwarta!}
 SharlieFinal_23 {Michel}
 SharlieFinal_24 {de Monper}
@@ -45,7 +45,7 @@ SharlieFinal_44 {Diego}
 SharlieFinal_45 {de Montoya}
 SharlieFinal_46 {Lugier kurierski 'Shadow'}
 SharlieFinal_47 {Na pokładzie 'Shadow' eksplodował cały zapas prochu!}
-SharlieFinal_48 {Fortune}
+SharlieFinal_48 { }
 SharlieFinal_49 {kapitan}
 SharlieFinal_50 {z 'Santa Quiteria'}
 SharlieFinal_51 {ojciec Adrian}
@@ -82,4 +82,4 @@ SharlieFinal_81 {Gobart}
 SharlieFinal_82 {Pułkownik}
 SharlieFinal_83 {Kirk}
 SharlieFinal_84 {Świat się zmienił, a wraz z nim Twój bohater@<NewStr()>Ale to już inna historia...}
-SharlieFinal_85 {Alonso}
+SharlieFinal_85 { }

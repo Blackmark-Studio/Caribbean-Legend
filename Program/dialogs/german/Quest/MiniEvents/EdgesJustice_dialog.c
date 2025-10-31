@@ -219,17 +219,7 @@ void ProcessDialogEvent()
 
 		case "Naemnik_29":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
-			LAi_SetPlayerType(pchar);
-
-			LAi_SetWarriorType(npchar);
-			npchar.lifeday = 0;
-			LAi_CharacterDisableDialog(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PEACE);
-
-			AddQuestRecord("GS", "7");
-			CloseQuestHeader("GS");
+			AddDialogExitQuestFunction("Naemnik_29");
 
 			AddSimpleRumourCity("Man sagt, der Hafenmeister wurde tot in seinem eigenen Haus gefunden. Bei ihm fand man Notizen, die seine Beteiligung am Verschwinden von Schiffen beweisen. Welch eine Schande für unsere Stadt...", "Beliz", 30, 1, "");
 			AddSimpleRumourCity("Hast du schon gehört? Jemand ist ins Haus des Hafenmeisters eingebrochen, hat die Wachen getötet und ihn umgebracht. Auf der Leiche fand man Routenpläne verschwundener Schiffe – von ihm selbst geschrieben! Ein Diener der Krone, aber in Wahrheit ein Verräter! Er bekam, was er verdiente! Und wo hat der Gouverneur all die Jahre hingeschaut?", "Beliz", 30, 1, "");

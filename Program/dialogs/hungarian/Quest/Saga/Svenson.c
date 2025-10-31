@@ -1208,7 +1208,7 @@ void ProcessDialogEvent()
 			dialog.text = "Teljesen jól. Akkor majd felezzük el.";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Tessék. Van egy "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1224,7 +1224,7 @@ void ProcessDialogEvent()
 			dialog.text = "Remek. Mennyit hoztál?";
 			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = PCharDublonsTotal(); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Tessék. Van egy "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1687,7 +1687,7 @@ void ProcessDialogEvent()
 				dialog.text = "Örülök, hogy megkedvelted a vasfát, " + sStr + ". A szállítmányok növelése nem probléma, de van egy bökkenô, ahogy érted. A nagyobb mennyiséggel együtt jár egy olyan nyomvonal, ami nem kívánt figyelmet kelthet, különösen az angol hatóságok részérôl. De ha megbízható kezeket, megbízható füleket és olyan embereket adunk hozzá a rezidencián, akik segítenek nekünk az árnyékban maradni, minden megoldható. Bár nem lesz olcsó - háromezer dublont, hogy megkerüljük a város kincstárát és Anglia igényeit. Akkor én ötször ennyivel többet tudok neked adni. Mit szólsz hozzá?";
 				link.l1 = "Háromezer dublont? Jan, ez rablás! Nem tudnánk kevesebb kiadással is boldogulni? Talán van rá mód, hogy ilyen mesés összegek nélkül rendezzük az ügyet?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

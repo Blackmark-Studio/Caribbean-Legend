@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
 			Log_Info("Átadtad a fônök karmait.");
-			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 			dialog.text = "Ó, milyen régóta vártam ezt a pillanatot! Most végre elmehetek... De búcsúajándékként szeretném átadni neked erôm egy részecskéjét. Ez lesz az utolsó ajándék, amit Alberto Casco valaha is ad.";
 			link.l1 = "...";
 			link.l1.go = "guardmask_12";

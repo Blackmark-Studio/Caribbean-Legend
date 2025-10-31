@@ -106,18 +106,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l4 = "Meg akarom változtatni a vitorláim kinézetét.";
 					link.l4.go = "SailsGerald";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_cabin"))
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && !CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 					link.l50 = "A hajóm eléggé... különleges. Szeretnék néhány változtatást eszközölni.";
 					link.l50.go = "FDM";
 			}
-			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
+			/* if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_cabin") && npchar.quest.FDM_cabin == "cabin" && GetCharacterItem(pchar, "Chest") > 0)
 			{
 					link.l50 = "Több ládám van a kabin átépítéséhez.";
 					link.l50.go = "FDM_cabin_pay";
-			}
+			} */
 			// Xenon -->
-			/*if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
+			if(RealShips[sti(Pchar.Ship.Type)].BaseType == SHIP_CURSED_FDM && CheckAttribute(npchar, "quest.FDM_hull") && npchar.quest.FDM_hull == "hull_waitmoney")
 			{
 					link.l50 = "A hajó átépítése miatt vagyok itt.";
 					link.l50.go = "FDM_hull_givemoney";
@@ -128,7 +128,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					link.l50 = "A hajó átépítése miatt vagyok itt.";
 					link.l50.go = "FDM_hull_checkmaterials";
 			}
-			// <-- Xenon*/
+			// <-- Xenon
 			link.l9 = pcharrepphrase("A francba, van néhány sürgôs ügyem, amit el kell intéznem, viszlát.", "Ideje mennem. Bocsánat.");
 			Link.l9.go = "ship_tunning_not_now";
 		break;
@@ -602,22 +602,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Ismét a 'szellemhajóddal'... Tudniillik - csak abban a reményben dolgozom vele, hogy valami tisztességes lesz belôle. Egyébként hozzá sem nyúlnék. Szerintem a tengeren mindenki hasonló véleményen van. Mit akarsz ezúttal csinálni vele?";
 			else	
 				dialog.text = "Á, a 'szellemhajó'! anyák a gályáddal ijesztgetik a rosszcsont gyerekeket. És te úgy döntöttél, hogy megtartod azt az átkozott hajót ahelyett, hogy elsüllyesztenéd! A tengerészek reszketnek, amikor meglátják a hajódat a horizonton... Szóval, mit akarsz vele csinálni?";
-			if (!CheckAttribute(npchar, "quest.FDM_cabin"))
+			/*if (!CheckAttribute(npchar, "quest.FDM_cabin"))
 			{
 				link.l1 = "Tetszik az ötlet, hogy a kis gyávák halálra rémülnek. De a belseje elszomorít. Láttad a kabinját? Olyan, mint egy koporsó. Az a sok penész és por. Meg akarom javítani. Meg tudod csinálni, mester?";
 				link.l1.go = "FDM_cabin";
 			}
-			/* if (!CheckAttribute(npchar, "quest.FDM_sails"))
+			if (!CheckAttribute(npchar, "quest.FDM_sails"))
 			{
 				link.l2 = "Elegem van ezekbôl a szakadt fekete rongyokból. Elismerem, ugyanolyan jól fogják a szelet, mint a normális vitorlák, de a kilátás... Undorító. Hófehér vitorlákat akarok. Benne vagy, mester?";
 				link.l2.go = "FDM_sails";
-			}
+			}*/
 			
 			if (!CheckAttribute(npchar, "quest.FDM_hull"))
 			{
 				link.l3 = "Nos, azt hiszem, itt az ideje, hogy valami rendes vitorlát csináljunk belôle. A hajó jó, a legénység megszokta, de egy tiszteletreméltó kapitánynak egyszerûen nem méltó egy olyan hajón vitorlázni, ami a felnôtteket is halálra rémíti, nemhogy a gyerekeket. Teljesen át akarom építeni, hogy a többi kapitány irigyelje, amikor meglátja a hajómat, ahelyett, hogy keresztet vetne magára. És ki máshoz fordulhatnék ezzel, mint a szigetvilág legjobb hajóépítôjéhez?";
 				link.l3.go = "FDM_hull";
-			} */
+			}
 		break;
 		
 		case "FDM_cabin":
@@ -759,8 +759,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "Oké, számoljuk ki... A hajótest teljes felújításához 150 egység vasfára, 130 tekercs kötélre, 170 tekercs hajóselyemre és 200 hordó gyantára lesz szükségem. Mindezekért 250 ezer pezót kérek. És ne nézz így rám - ennek a pénznek a nagy része úgyis munkára megy! Elvégre nem egy tartánt építünk újra.";
-			link.l1 = "Szerintem nem. Nem vagyok hajlandó ekkora mennyiségû vagy anyagot elszállítani azzal együtt, hogy negyedmilliót fizetek a munkáért. Gondolom, úgy vitorlázom tovább, ahogy van.";
+			dialog.text = "Alright, let's do the math... For a full rebuild of the ship's hull I'll need 150 units each of bakaut, ropes, ship silk and resin — and 10,000 gold doubloons. Don't look at me like that; most of the money will go on materials. This job is equivalent to dismantling the ship and building it again from scratch.";
+			link.l1 = "No, I don't think so. I'm not ready to bring that many resources and hand over a pile of gold for the rebuild. I'll stick with what I have.";
 			link.l1.go = "FDM_hull_thinking";
 			link.l2 = "Eh, mit nem teszünk a hajónkért... Rendben, megegyeztünk.";
 			link.l2.go = "FDM_hull_02";
@@ -768,7 +768,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_02":
 			dialog.text = "Rendben, kevesebb beszélgetés, több cselekvés. Várom a pénzt tôled, hogy elkezdhessek megvenni mindent, amire szükségem van. Amint megvan a pénz, elkezdheted hozni nekem az anyagokat. Én pedig elkezdek dolgozni a hajóján.";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
     			link.l1 = "Nos, a pénz nem probléma. Nálam van. Tessék, mester.";
     			link.l1.go = "FDM_hull_waitmaterials";
@@ -781,7 +781,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_waitmaterials":
-			addMoneyToCharacter(pchar, -250000);
+			RemoveDublonsFromPCharTotal(10000);
 			npchar.quest.FDMsandal = 0;
 			npchar.quest.FDMoil = 0;
 			npchar.quest.FDMshipsilk = 0;
@@ -789,7 +789,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("renovate_fdm", "1");
 
 			npchar.quest.FDM_hull = "hull_waitmaterials";
-			dialog.text = "Nem félsz egy kalóztelepülésen sétálgatni egy ilyen szép összeggel, hehe? Jó, viccelek, ezek mind becsületes emberek, a maguk módján. Most pedig várom az anyagokat. Emlékeztetôül: összesen 150 vasfát, 130 tekercs kötelet, 170 tekercs hajóselymet és 200 hordó gyantát kell hoznod.";
+			dialog.text = "Nem félsz egy kalóztelepülésen sétálgatni egy ilyen szép összeggel, hehe? Jó, viccelek, ezek mind becsületes emberek, a maguk módján. Most pedig várom az anyagokat. Emlékeztetôül: összesen 150 vasfát, 150 tekercs kötelet, 150 tekercs hajóselymet és 150 hordó gyantát kell hoznod.";
 			link.l1 = "Tartsatok ki, elhozom nektek az anyagokat.";
 			link.l1.go = "exit";
 		break;
@@ -802,19 +802,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Vasfa a "+FindRussianQtyString(iSan)+"összegben.";
 				link.l1.go = "FDM_sandal";
 			}
-			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 200)
+			if (GetSquadronGoods(pchar, GOOD_OIL) > 0 && sti(npchar.quest.FDMoil) < 150)
 			{
 				iOil = GetSquadronGoods(pchar, GOOD_OIL);
 				link.l2 = "Gyanta a "+FindRussianQtyString(iOil)+"mennyiségben.";
 				link.l2.go = "FDM_oil";
 			}
-			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 170)
+			if (GetSquadronGoods(pchar, GOOD_SHIPSILK) > 0 && sti(npchar.quest.FDMshipsilk) < 150)
 			{
 				iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 				link.l3 = "Hajóselyem a "+FindRussianQtyString(iSil)+"összegben.";
 				link.l3.go = "FDM_shipsilk";
 			}
-			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 130)
+			if (GetSquadronGoods(pchar, GOOD_ROPES) > 0 && sti(npchar.quest.FDMropes) < 150)
 			{
 				iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 				link.l4 = "Kötelek a "+FindRussianQtyString(iRop)+"összegben.";
@@ -825,7 +825,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_checkmaterials_1":
-			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 199 && sti(npchar.quest.FDMshipsilk) > 169 && sti(npchar.quest.FDMropes) > 129)
+			if (sti(npchar.quest.FDMsandal) > 149 && sti(npchar.quest.FDMoil) > 149 && sti(npchar.quest.FDMshipsilk) > 149 && sti(npchar.quest.FDMropes) > 149)
 			{
 				dialog.text = "Csodálatos! Minden anyagot megkaptunk. Most pedig, hadd vegyem le a kezedrôl azt a szörnyeteget. Végre, végre megfelelô kinézetet kap.";
 				link.l1 = "Oké, elég a morgásból, mester. Kíváncsian várom az eredményt.";
@@ -869,7 +869,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_oil": // смолы
-			amount = 200 - sti(npchar.quest.FDMoil);
+			amount = 150 - sti(npchar.quest.FDMoil);
 			iOil = GetSquadronGoods(pchar, GOOD_OIL);
 			iTemp = amount-iOil;
 			if (iTemp > 0) 
@@ -896,7 +896,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_shipsilk": // шёлк
-			amount = 170 - sti(npchar.quest.FDMshipsilk);
+			amount = 150 - sti(npchar.quest.FDMshipsilk);
 			iSil = GetSquadronGoods(pchar, GOOD_SHIPSILK);
 			iTemp = amount-iSil;
 			if (iTemp > 0) 
@@ -923,7 +923,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_ropes": // канаты
-			amount = 170 - sti(npchar.quest.FDMropes);
+			amount = 150 - sti(npchar.quest.FDMropes);
 			iRop = GetSquadronGoods(pchar, GOOD_ROPES);
 			iTemp = amount-iRop;
 			if (iTemp > 0) 
@@ -961,9 +961,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "FDM_hull_givemoney":
 			dialog.text = "Nos, hoztál pénzt.";
-			if(sti(pchar.money) >= 250000)
+			if(PCharDublonsTotal() >= 10000)
 			{
-    			link.l2 = "Igen, így van. 250 000 pezó, ahogy megbeszéltük.";
+    			link.l2 = "Yes, I brought it. 10,000 full-weight doubloons, as agreed.";
     			link.l2.go = "FDM_hull_waitmaterials";
             }
             else
@@ -981,24 +981,31 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			RefreshLandTime();
 			RecalculateJumpTable();
 			Whr_UpdateWeather();
-			RealShips[sti(Pchar.Ship.Type)].BaseType = SHIP_RENOVATED_FDM;
-			RealShips[sti(Pchar.Ship.Type)].Name = "NewFlyingdutchman1";
-			RealShips[sti(Pchar.Ship.Type)].BaseName = "NewFlyingdutchman";
-			/* RealShips[sti(Pchar.Ship.Type)].CannonsQuantity = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMax = 58;
-			RealShips[sti(Pchar.Ship.Type)].CannonsQuantityMin = 58;
-			RealShips[sti(Pchar.Ship.Type)].rcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].lcannon = 24;
-			RealShips[sti(Pchar.Ship.Type)].fcannon = 6;
-			RealShips[sti(Pchar.Ship.Type)].bcannon = 4; */
-			if(Get_My_Cabin() == "My_Cabin") RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin";	
-			else RealShips[sti(Pchar.Ship.Type)].CabinType = "Cabin_Huge";
+			
+			shTo = &RealShips[sti(pchar.Ship.Type)];
+			object newShip;
+			aref arTuning;
+			CopyAttributes(&newShip, shTo);
+			
+			pchar.Ship.Type = GenerateShipExt(SHIP_RENOVATED_FDM, 0, pchar);
+			
+			if(CheckAttribute(newShip, "Tuning"))
+			{
+				makearef(arTuning, newShip.tuning);
+				for (int iQty = 0; iQty < GetAttributesNum(arTuning); iQty++)
+				{
+					aref realTuning = GetAttributeN(arTuning, iQty);
+					string tuningName = GetAttributeName(realTuning);
+					UpgradeShipParameter(pchar, tuningName);
+				}
+			}
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0);//White cotton sail
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);
 			DeleteAttribute(pchar, "ship.hulls");
 			DeleteAttribute(pchar, "ship.blots");	
 			CloseQuestHeader("renovate_fdm");
+			Achievment_Set("ach_CL_178");
 		break;
 		//<-- Xenon
 	}

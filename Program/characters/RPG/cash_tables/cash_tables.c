@@ -13,7 +13,6 @@
 #event_handler(EVENT_CT_UPDATE, "UpdateCashTables");                 // обновляем персонажа
 #event_handler(EVENT_CT_UPDATE_FELLOW, "UpdateCashTablesFellow");    // обновляем персонажа и ГГ
 #event_handler(EVENT_CT_UPDATE_FELLOWS, "UpdateCashTablesFellows");  // обновляем всю команду
-#event_handler(EVENT_LOCATION_LOAD, "CT_UpdateCharsInLocation");     // обновляем всех в локе
 #event_handler(EVENT_CT_UPDATE_LAND, "UpdateLandTable");             // сняли/надели шмотку, пересчитываем боевку
 #event_handler(EVENT_CT_APPLY_ADMIRAL, "UpdateCashTablesAdmiral");   // обновили табличку ГГ-адмирала
 #event_handler(EVENT_CHARACTER_DEAD, "UpdateCashTablesOnDead");      // может, убили офицера?
@@ -45,23 +44,23 @@ void UpdateLandTable()
 	CT_UpdateLandTable(&chr);
 }
 
-// Формирование/обновление таблицы для всех персонажей на локации
-void CT_UpdateCharsInLocation()
-{
-	CT_UpdateCashTables(pchar);
+// // Формирование/обновление таблицы для всех персонажей на локации
+// void CT_UpdateCharsInLocation()
+// {
+// 	CT_UpdateCashTables(pchar);
 
-	for(int i=0; i < LAi_numloginedcharacters; i++)
-	{
-		int index = LAi_loginedcharacters[i];
-		if (index < 0) continue;
-		if (GetMainCharacterIndex() == index) continue;
+// 	for(int i=0; i < LAi_numloginedcharacters; i++)
+// 	{
+// 		int index = LAi_loginedcharacters[i];
+// 		if (index < 0) continue;
+// 		if (GetMainCharacterIndex() == index) continue;
 
-		ref chr = &Characters[index];
-		if (LAi_IsDead(chr)) continue;
-		if (!LAi_IsArmed(chr)) continue; // невооруженные пофигу
-		PostEvent(EVENT_CT_UPDATE, 500+i*50, "a", chr); // чтобы не чпекать всех за один кадр
-	}
-}
+// 		ref chr = &Characters[index];
+// 		if (LAi_IsDead(chr)) continue;
+// 		if (!LAi_IsArmed(chr)) continue; // невооруженные пофигу
+// 		PostEvent(EVENT_CT_UPDATE, 500+i*50, "a", chr); // чтобы не чпекать всех за один кадр
+// 	}
+// }
 
 // Обновление братишки вызывает обновление ГГ из-за зависимых бонусов
 void UpdateCashTablesFellow()
@@ -70,11 +69,12 @@ void UpdateCashTablesFellow()
 	CT_UpdateCashTablesFellow(&chr);
 }
 
-// Основная функция обновления таблиц, пока оставляем только общую
+// Полное обновление таблиц
 void CT_UpdateCashTables(ref chr)
 {
 	CT_UpdateEquipTable(chr);
 	CT_UpdateCommonTable(chr);
+	CT_UpdateLandTable(chr);
 }
 
 // Обновить таблицы ГГ и офицеров
@@ -82,9 +82,9 @@ void UpdateCashTablesFellows()
 {
 	CT_UpdateCashTables(pchar); // гг на случай шляпы
 	object fellows = GetAllFellows(pchar, false);
-	for (int i=0; i < GetAttributesNum(fellows); i++)
+	for (int i=0; i < GetAttributesNum(&fellows); i++)
 	{
-		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(fellows, i))));
+		ref chr = GetCharacter(sti(GetAttributeValue(GetAttributeN(&fellows, i))));
 		CT_UpdateCashTables(chr);
 	}
 	CT_UpdateCashTables(pchar); // гг ещё раз из-за бонуса от оффов
@@ -113,8 +113,22 @@ void UpdateCashTablesCompanion()
 	CT_SetNavyPenalty(chr, &chrTable, true, false);
 }
 
-ref InitTableForFight(ref chr)
+aref InitTableForFight(ref chr)
 {
-	if (!CheckAttribute(chr, "ct." + CT_LAND)) CT_UpdateLandTable(chr);
+	if (!CheckAttribute(chr, "ct." + CT_COMMON)) 
+	{
+		trace("Missing table " + CT_COMMON + " for: " + chr.id);
+		CT_UpdateCommonTable(chr);
+	}
+	if (!CheckAttribute(chr, "ct." + CT_EQUIP)) 
+	{
+		trace("Missing table " + CT_EQUIP + " for: " + chr.id);
+		CT_UpdateEquipTable(chr);
+	}
+	if (!CheckAttribute(chr, "ct." + CT_LAND)) 
+	{
+		trace("Missing table " + CT_LAND + " for: " + chr.id);
+		CT_UpdateLandTable(chr);
+	}
 	return CT_GetTable(chr, CT_LAND);
 }

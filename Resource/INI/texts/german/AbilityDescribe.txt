@@ -17,19 +17,24 @@ perkHardHitter {Schwere Angriffe mit Schweren Waffen verursachen 15 % mehr Schad
 BladeDancer {Tanz mit Säbeln}
 perkBladeDancer {Rundumschlag mit gekrümmten Waffen verursacht 30 % mehr Schaden.}
 Sliding {Unwiderstehlicher Schlag}
-perkSliding {Hieb-Angriff oder schneller Angriff mit einer leichten Waffe kann mit 20 % Chance Blocken durchbrechen.}
+perkSliding {Hieb- oder Stichangriff mit einer leichten Waffe kann mit einer Chance von $percent($perkBaseValue(Sliding|1)) einen Block durchbrechen, indem ein einzigartiger fortgeschrittener Schlag eingesetzt wird.}
 Gunman {Musketier}
-perkGunman {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um 6 %. Ermöglicht die Nutzung von zweihändigen Einzellader- und einhändigen Repetierwaffen.}
+perkGunman
+{
+Erhöht den Schaden und die Nachladegeschwindigkeit von Feuerwaffen um $percent($perkBaseValue(Gunman|1)). Ermöglicht die Verwendung von zweihändigen Einzelschuss- und einhändigen Mehrschusswaffen.
+ ~
+ Offiziere können $key(descriptor_TwoHanded|ItemsDescriptors.txt) nur verwenden, wenn sie ausdrücklich dazu angewiesen werden.
+}
 GunProfessional {Plänkler}
 perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um 9 %. Ermöglicht die Nutzung von zweihändigen Repetier-Schusswaffen.}
 IronWill {Eiserner Wille}
 perkIronWill {Ermöglicht es dir, alle 3 Minuten eine tödliche Wunde zu überleben.}
 SharedExperience {Schnelllerner}
-perkSharedExperience {Beschleunigt die Fähigkeitsentwicklung um 5 %, entspricht einem zusätzlichen Punkt Lernfähigkeit.}
+perkSharedExperience {Beschleunigt die Fähigkeitsentwicklung um 5 %.}
 Medic {Gesunde Gewohnheiten}
 perkMedic {Erhöht die Gesundheit um 25 Punkte. Verdoppelt die passive Heilung, wenn die Gesundheit unter der Hälfte des Maximums liegt.}
 HPPlus {Wachsende Gesundheit}
-perkHPPlus {Erhöht die Gesundheit des Charakters um 1 pro neuem Rang. Rückwirkend.}
+perkHPPlus {Erhöht die HP des Charakters um $perkBaseValue(HPPlus|1) für jeden neuen Rang. Der Perk wirkt retroaktiv.}
 EnergyPlus {Wachsende Energie}
 perkEnergyPlus {Erhöht den Energievorrat des Charakters pro neuem Rang um 1. Rückwirkend.}
 ByWorker {Talentiert}
@@ -94,9 +99,9 @@ perkSailingProfessional {Schiffsgeschwindigkeit und Manövrierfähigkeit um 5 % 
 SeaDogProfessional {Schrecken der Meere}
 perkSeaDogProfessional
 {
-Beim Anblick des Banners der Meeresgeißel wagen selbst die kühnsten Abenteurer und Gesetzlosen nicht, ihr Schicksal herauszufordern. Erhöht die Flottenstärke um 30 %.
+Beim Anblick des Banners der Meeresgeißel wagen selbst die kühnsten Abenteurer und Gesetzlosen nicht, ihr Schicksal herauszufordern. Erhöht die Flottenstärke um $percent($PerkBaseValue(SeaDogProfessional|1)).
 ~
-Fähigkeit nur für den Spieler verfügbar; benötigt Rang 25.
+Fähigkeit nur für den Spieler verfügbar; benötigt Rang $attr($context.rank).
 }
 FlagPir {Jolly Roger}
 perkFlagPir
@@ -139,11 +144,11 @@ Möglichkeit, die Mannschaften deiner Flotte vor dem Sturm auf eine Festung zu v
 Reduziert die für einen Landangriff auf eine Siedlung benötigte Mannschaftszahl.
 }
 BasicCommerce {Grundlegendes Handeln}
-perkBasicCommerce {Einkäufe sind 5 % günstiger. Gefragte Waren werden in Banken und Märkten hervorgehoben.}
+perkBasicCommerce {Einkäufe sind 4% günstiger. Gefragte Waren werden in Banken und Märkten hervorgehoben.}
 AdvancedCommerce {Fortgeschrittener Handel}
-perkAdvancedCommerce {Der Handel mit Waren ist 5 % profitabler.}
+perkAdvancedCommerce {Der Verkauf von Waren ist 4 % profitabler.}
 ProfessionalCommerce {Erfahrener Zahlmeister}
-perkProfessionalCommerce {Der Handel mit Waren ist 5 % profitabler.}
+perkProfessionalCommerce {Der Handel mit Waren ist 8 % profitabler.}
 Carpenter {Passive Reparatur}
 perkCarpenter {Rumpf und Segel werden während der Reise langsam repariert. Planken und Segeltuch werden benötigt.}
 InstantRepair {Kampf-Reparatur}
@@ -177,7 +182,7 @@ Erhöht die Geschwindigkeit auf der Weltkarte in bekannten Gewässern – wenn d
 SailsMan {Schnelle Segel}
 perkSailsMan {Dank modernster Zuckerbrot-und-Peitsche-Methoden werden alle Segelmanöver 10 % schneller ausgeführt.}
 Doctor1 {Arzt}
-perkDoctor1 {Verringert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 10 %.}
+perkDoctor1 {Verringert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 5%.}
 Doctor2 {Experten-Arzt}
 perkDoctor2 {Reduziert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 10 %.}
 TannedLeather {Dickes Fell}
@@ -185,7 +190,7 @@ perkTannedLeather {Leichte Rüstung schützt 50 % besser und verbraucht 30 % wen
 RatsWolf {Rattenwolf}
 perkRatsWolf {Auf dem Schiff dieses Charakters wird die Ladung nicht von Ratten oder anderem Ungeziefer beschädigt.}
 Mimicry {Mimikry}
-Value is protected from git-override perkMimicry {Heimlichkeitsproben auf See sind 50 % effektiver.}
+perkMimicry {Heimlichkeitsproben auf See sind 50 % effektiver.}
 TreasureHunter {Schatzsucher}
 perkTreasureHunter {Schatzkartenhändler erscheinen häufiger und die Schätze selbst sind wertvoller.}
 Dragoon {Dragoner}
@@ -216,9 +221,9 @@ perkAmmoRig {Das Nachladen von Schusswaffen ist 5 % schneller.}
 Preaim {Einschießen}
 perkPreaim {Zielmodus ist 15 % schneller.}
 KeenEye {Scharfes Auge}
-perkKeenEye {Kopfschüsse verursachen 40 % mehr Schaden.}
+perkKeenEye {Kopfschüsse verursachen $percent($perkBaseValue(KeenEye|1)) mehr Schaden.}
 PowderFeel {Sinn für Schwarzpulver}
-perkPowderFeel {Die mit Alchemie hergestellte Munitionmenge steigt um 15 %.}
+perkPowderFeel {Die mit Alchemie hergestellte Munitionmenge steigt um $percent($perkBaseValue(PowderFeel|1)).}
 Drill {Drill}
 perkDrill {Bewegungsgeschwindigkeit mit Musketen und Zielgeschwindigkeit um 18 % erhöht. Schaltet fortgeschrittene Schussstellungen frei.}
 LeadRain {Bleiregen}
@@ -270,7 +275,7 @@ perkInvestor {Der Einlagenzinssatz wird um 1 % erhöht.}
 Gossip {Mittelpunkt der Aufmerksamkeit}
 perkGossip {Der Bonus auf Flottenstärke durch exotische Gegenstände steigt um 5 %.}
 Captain {Kapitän}
-perkCaptain {Ein Charakter kann Begleiter sein und ein eigenes Schiff befehligen.}
+perkCaptain {Der Charakter kann ein Schiff der Klasse 4 und höher als Teil einer Eskadre kommandieren. Man muss kein Genie sein, um einen Lugger oder eine Schaluppe zu steuern, aber für ein ernsthaftes Schiff reicht reine Kühnheit nicht aus.}
 Chance {Alles oder Nichts}
 perkChance {Einzellader-Schusswaffen verursachen 15 % mehr Schaden bei kritischen Treffern. Kritische Trefferchance von einhändigen Schusswaffen um 2 % erhöht.}
 Bayonet {Bajonettangriff}
@@ -294,7 +299,7 @@ perkInertia {Schwere Waffen verursachen 10 % mehr Schaden.}
 OttomanGrip {Osmanischer Griff}
 perkOttomanGrip {Gekrümmte Waffen verursachen 10 % mehr Schaden.}
 Mule {Percheron}
-perkMule {Training zahlt sich aus – schwere Waffen und Rüstung verlangsamen dich um 50 % weniger.}
+perkMule {Training zahlt sich aus – schwere Waffen und Rüstung verlangsamen dich um 50 % weniger, und die Traglast steigt pro Rang um 2 Pfund.}
 BeneathWaterline {Unter der Wasserlinie}
 perkBeneathWaterline {Beim Treffer auf ein Schiff besteht die Chance, unterhalb der Wasserlinie zu durchschlagen, wodurch das Ziel geflutet und verlangsamt wird, bis das Leck repariert ist.}
 CoordinatedBoarding {Gemeinsames Entern}
@@ -306,7 +311,7 @@ perkBruteForce {Schwer bewaffnete Soldaten mit Äxten und Rüstung ersetzen beim
 Ambuscade {Hinterhaltregiment}
 perkAmbuscade {Duelleure mit Rapiere und Repetierpistolen ersetzen einige deiner regulären Matrosen beim Entern.}
 LoneWolf {Einzelgänger}
-perkLoneWolf {Bessere Fluchtchance und Flottenstärke steigt um 15 %, solange du nur ein Schiff in der Flotte hast.}
+perkLoneWolf {Bessere Fluchtchance und Flottenstärke steigt um $percent($perkBaseValue(LoneWolf|1)), solange du nur ein Schiff in der Flotte hast.}
 Thrift {Sparsamkeit}
 perkThrift {Verringert den Einfluss von Segelschäden auf Geschwindigkeit und Manövrierbarkeit um 10 %.}
 QuickGlance {Schnelles Auge}
@@ -315,8 +320,8 @@ TrainedEye {Scharfes Auge}
 perkTrainedEye {Ermöglicht eine grobe Schätzung der Wertgegenstände auf einem Schiff beim Beobachten mit dem Fernrohr.}
 TradeConnections {Handelsverbindungen}
 perkTradeConnections {Preislisten werden beim Besuch einer Kolonie automatisch aktualisiert.}
-Intendant {Quartiermeister}
-perkIntendant {Reduziert das Tempo- und Manövrierstrafe durch Beladung des Laderaums.}
+Intendant {Intendant}
+perkIntendant {Reduziert die Geschwindigkeits‑ und Manövrierfähigkeitsstrafe durch Beladung des Laderaums während des Kampfes und bei der Flucht.}
 Doctor {Arzt}
 perkDoctor {Reduziert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 5 %.}
 BoardingPrepare {Vorbereitung}
@@ -337,3 +342,15 @@ perkRush
 {
 Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.~Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
 }
+perkTrustworthy_alternate {Als Offizier erhält der Charakter eine um $percent($perkBaseValue(Trustworthy|1)) verringerte Bezahlung.}
+perkAlchemy_alternate {Gewährt eine Chance von $percent($perkBaseValue(Alchemy|1)), beim Gebrauch einen Trank nicht zu verbrauchen.}
+perkPreaim_alternate {Der Charakter verursacht $percent($perkBaseValue(Preaim|2)) mehr Schaden mit Schüssen gegen Gegner, die nicht volle Gesundheit haben.}
+perkKeenEye_alternate {Der Charakter erhält eine um $percent($perkBaseValue(KeenEye|2)) erhöhte Chance auf kritische Schüsse.}
+perkPowderFeel_alternate {Der Charakter erhält eine Chance von $percent($perkBaseValue(PowderFeel|2)), beim Schuss keine Munition zu verbrauchen.}
+perkMarathonRunner_alternate {Der Charakter erhöht seinen Energievorrat um $number($perkBaseValue(MarathonRunner|3)).}
+perkQuiet_alternate {Der Charakter verursacht $percent($perkBaseValue(Quiet|1)) mehr Schaden bei Angriffen von hinten.}
+perkCollection_alternate {Jeder exotische Gegenstand, den der Charakter ausrüstet, erhöht seinen Schaden um $percent($perkBaseValue(Collection|2)).}
+perkInvestor_alternate {Erhöht die Fertigkeiten Handel und Führung des Charakters um $number($perkBaseValue(Investor|2)).}
+perkGossip_alternate {In der Rolle des Gefährten erhöht der Charakter die Macht der Eskadre um $percent($perkBaseValue(Gossip|1)).}
+perkMaster_alternate {Jeder vom Charakter getrunkene Trank erhöht den verursachten Schaden um $percent($perkBaseValue(Master|2)).}
+perkLooting_alternate {Erhöht die Traglast um $perkBaseValue(Looting|1) Pfund.}

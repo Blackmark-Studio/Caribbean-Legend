@@ -764,7 +764,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noel_114":
-			dialog.text = "Pontosan. Amennyire én tudom, amikor Franciaország szolgálatába állt, a könnyû fregatt 'Gryffondor' állt a rendelkezésére. Ez kétségtelenül csodálatos hajó, de mégis csak egy tisztnek való, nem pedig egy admirálishelyettesnek, és most már fôkormányzónak. Ön itt Franciaország arca. És a zászlóshajójának megfelelônek kell lennie. Ezért úgy döntöttünk, hogy az a hajó, amelyik az elsô csatáit itt a Karib-tengeren vívta, az ön századába kerül...";
+			dialog.text = "Pontosan. Amennyire én tudom, amikor Franciaország szolgálatába állt, a nehéz korvett 'Gryffondor' állt a rendelkezésére. Ez kétségtelenül csodálatos hajó, de mégis csak egy tisztnek való, nem pedig egy admirálishelyettesnek, és most már fôkormányzónak. Ön itt Franciaország arca. És a zászlóshajójának megfelelônek kell lennie. Ezért úgy döntöttünk, hogy az a hajó, amelyik az elsô csatáit itt a Karib-tengeren vívta, az ön századába kerül...";
 			link.l1 = "Monsieur Forget, azt akarja mondani...";
 			link.l1.go = "noel_115";
 		break;

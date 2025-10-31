@@ -3,13 +3,13 @@ HollandGambit_2 {Риддербок}
 HollandGambit_3 {Режим исследования: таймер продлён. Выполните квест!}
 HollandGambit_4 {Мигель}
 HollandGambit_5 { }
-HollandGambit_6 {Мираж}
+HollandGambit_6 { }
 HollandGambit_7 {Режим исследования: срок квеста увеличен в два раза}
-HollandGambit_8 {Валькирия}
+HollandGambit_8 { }
 HollandGambit_9 {Валькирия на горизонте!}
 HollandGambit_10 {Хейнрих}
 HollandGambit_11 {Клаус}
-HollandGambit_12 {Мейфенг}
+HollandGambit_12 { }
 HollandGambit_13 {Вот и грот. Следует искать схрон Соломона именно здесь.}
 HollandGambit_14 {Гарри}
 HollandGambit_15 {Флетчер}
@@ -20,7 +20,7 @@ HollandGambit_19 {Родригес}
 HollandGambit_20 {Зеекалф}
 HollandGambit_21 {Чарли}
 HollandGambit_22 {Книппель}
-HollandGambit_23 {Алонсо}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Абигайль заболела тропической лихорадкой и умерла!}
 HollandGambit_26 {Чарли Книппель умер от полученных ран!}
@@ -43,3 +43,4 @@ HollandGambit_42 {Вы потеряли сознание от полученны
 HollandGambit_43 {Вы не вернули деньги Абигайль и обрекли её на нищету}
 HollandGambit_44 {Чавинави}
 HollandGambit_45 { }
+HollandGambit_46 { }

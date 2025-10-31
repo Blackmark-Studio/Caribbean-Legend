@@ -178,7 +178,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Vanille wurde schon lange auf die Karracke geladen und ihre Segel sind schon lange am Horizont verschwunden - und dieses verdammte Galeon ist statt auf hoher See wieder im Hafen aufgetaucht. Ich darf mit meinem Schiff nicht im Hafen auftauchen - es ist am besten, wenn sie denken, dass ich Guadeloupe verlassen habe... Ich denke, ich werde durch den Dschungel in die Stadt gehen und nach meinem lieben Marchais fragen...";
+    		    dialog.text = "Vanille wurde schon lange auf die Briggantine geladen und ihre Segel sind schon lange am Horizont verschwunden - und dieses verdammte Galeon ist statt auf hoher See wieder im Hafen aufgetaucht. Ich darf mit meinem Schiff nicht im Hafen auftauchen - es ist am besten, wenn sie denken, dass ich Guadeloupe verlassen habe... Ich denke, ich werde durch den Dschungel in die Stadt gehen und nach meinem lieben Marchais fragen...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

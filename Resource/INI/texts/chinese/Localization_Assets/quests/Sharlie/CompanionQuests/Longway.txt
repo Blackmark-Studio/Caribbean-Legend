@@ -1,4 +1,4 @@
-Longway_1 {Alonso}
+Longway_1 { }
 Longway_2 { }
 Longway_3 {Abe}
 Longway_4 {Bix}
@@ -65,3 +65,4 @@ Longway_64 {Marceline 现在本可以帮我的 —她全心全意地恨着她那
 Longway_65 {Chang}
 Longway_66 {Xing}
 Longway_67 {我心爱的人需要休息。 我会尽量不打扰她。}
+Longway_68 {Voltigeur}

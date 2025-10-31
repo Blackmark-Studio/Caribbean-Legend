@@ -2121,6 +2121,8 @@ int LocationInitBoarding(int n)
 	Locations[n].models.night.fonar = "inside_cabin_2_fn";
 	// Locators
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
 
 	//Environment
 	locations[n].environment.weather = "true";
@@ -2139,26 +2141,47 @@ int LocationInitBoarding(int n)
 	//абордажная каюта ЛГ
   	Locations[n].id = "CabineFDM"; 
     locations[n].id.label = "cabine";
-	locations[n].filespath.models = "locations\inside\cabinFDM";
+	//locations[n].filespath.models = "locations\inside\cabinFDM";
 	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
 	//Sound
 	locations[n].type = "boarding_cabine";
 	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_C1"; // каюта Калеуче (проклятый)
 	//Always
-	locations[n].models.always.cabinFDM = "cabinFDM";
-	locations[n].models.always.cabinFDM.level = 65538;
-	locations[n].models.always.locators = "cabinFDM_locators";
-
-	locations[n].models.always.window = "cabinFDM_window";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	locations[n].models.always.window.level = 65539;
+	Locations[n].models.always.main = "inside_cabin_C1";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_C1_parts";
+	//Locations[n].models.always.outside = "inside_cabin_C1_outside";
+	Locations[n].models.always.locators = "inside_cabin_C1_locators";
+	Locations[n].models.always.bsp = "inside_cabin_C1_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_C1_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_C1_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
 	//Day
-	locations[n].models.day.charactersPatch = "cabinFDM_patch";
+	Locations[n].models.day.charactersPatch = "inside_cabin_C1_patch";
+	Locations[n].models.day.fonar = "inside_cabin_C1_fd";
+	Locations[n].models.day.rays = "inside_cabin_C1_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
 	//Night
-	locations[n].models.night.charactersPatch = "cabinFDM_patch";
+	Locations[n].models.night.charactersPatch = "inside_cabin_C1_patch";
+	Locations[n].models.night.fonar = "inside_cabin_C1_fn";
+	
 	//Environment
-	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 
 	Locations[n].boarding = "true";
 	Locations[n].boarding.nextdeck = "";
@@ -2167,34 +2190,107 @@ int LocationInitBoarding(int n)
 	Locations[n].CabinType = true;
 	locations[n].environment.weather.rain = false;
 	Locations[n].boarding.Loc.Hero = "loc0";
-    Locations[n].boarding.Loc.Capt = "aloc2";
+    Locations[n].boarding.Loc.Capt = "aloc1";
+	n = n + 1;
+	
+	//абордажная каюта ЛГ RENOVATED
+  	Locations[n].id = "CabineFDMR"; 
+    locations[n].id.label = "cabine";
+	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	locations[n].type = "boarding_cabine";
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_C2"; // каюта Калеуче (отремонтирован)
+	//Always
+	Locations[n].models.always.main = "inside_cabin_C2";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_C2_parts";
+	//Locations[n].models.always.outside = "inside_cabin_C2_outside";
+	Locations[n].models.always.locators = "inside_cabin_C2_locators";
+	Locations[n].models.always.bsp = "inside_cabin_C2_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_C2_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_C2_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_cabin_C2_patch";
+	Locations[n].models.day.fonar = "inside_cabin_C2_fd";
+	Locations[n].models.day.rays = "inside_cabin_C2_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_cabin_C2_patch";
+	Locations[n].models.night.fonar = "inside_cabin_C2_fn";
+	
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
+
+	Locations[n].boarding = "true";
+	Locations[n].boarding.nextdeck = "";
+	//Locations[n].camshuttle = 1;
+	Locations[n].boarding.locatorNum = 1;
+	Locations[n].CabinType = true;
+	locations[n].environment.weather.rain = false;
+	Locations[n].boarding.Loc.Hero = "loc0";
+    Locations[n].boarding.Loc.Capt = "aloc1";
 	n = n + 1;
 	
     ////////////////////////////////////
     Locations[n].id = "Cabin_Huge";   // совсем большая
     locations[n].id.label = "cabine2";
-	locations[n].filespath.models = "locations\inside\cabin02";
+	//locations[n].filespath.models = "locations\inside\cabin02";
 	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
 	//Sound
 	locations[n].type = "boarding_cabine";
 	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_2G"; // каюта галеона
 	//Always
-	locations[n].models.always.l1 = "cabin02";
-	locations[n].models.always.l1.level = 65538;
-	locations[n].models.always.locators = "cabin02_locators";
-	locations[n].models.always.window = "cabin02_fonar";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	locations[n].models.always.window.level = 65539;
-
+	Locations[n].models.always.main = "inside_cabin_2G";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_2G_parts";
+	//Locations[n].models.always.outside = "inside_cabin_2G_outside";
+	Locations[n].models.always.locators = "inside_cabin_2G_locators";
+	Locations[n].models.always.bsp = "inside_cabin_2G_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_2G_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_2G_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
 	//Day
-	locations[n].models.day.charactersPatch = "cabin02_patch";
-
+	Locations[n].models.day.charactersPatch = "inside_cabin_2G_patch";
+	Locations[n].models.day.fonar = "inside_cabin_2G_fd";
+	Locations[n].models.day.rays = "inside_cabin_2G_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
 	//Night
-	locations[n].models.night.charactersPatch = "cabin02_patch";
-
+	Locations[n].models.night.charactersPatch = "inside_cabin_2G_patch";
+	Locations[n].models.night.fonar = "inside_cabin_2G_fn";
+	
 	//Environment
-	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 
 	Locations[n].boarding = "true";
 	Locations[n].boarding.nextdeck = "";
@@ -2243,7 +2339,6 @@ int LocationInitBoarding(int n)
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
     Locations[n].locators_radius.box.box2 = 0.5; // дополнительный сундук
     Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
-    Locations[n].locators_radius.box.box4 = 0.5; // угол стола
 	
     Locations[n].locators_radius.interactive.bed = 0.8;
     Locations[n].locators_radius.interactive.bookcase = 0.5;
@@ -2260,6 +2355,7 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.randitem.randitem1 = 1;
 
     Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
     Locations[n].locators_radius.rld.loc0 = 0.5;
     Locations[n].locators_radius.rld.loc1 = 0.5;
 	Locations[n].locators_radius.rld.loc2 = 0.5;
@@ -2316,7 +2412,6 @@ int LocationInitBoarding(int n)
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
     Locations[n].locators_radius.box.box2 = 0.5; // дополнительный сундук
     Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
-    Locations[n].locators_radius.box.box4 = 0.5; // угол стола
 	
     Locations[n].locators_radius.interactive.bed = 0.8;
     Locations[n].locators_radius.interactive.bookcase = 0.5;
@@ -2334,6 +2429,7 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.randitem.randitem2 = 1;
 
     Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
     Locations[n].locators_radius.rld.loc0 = 0.5;
     Locations[n].locators_radius.rld.loc1 = 0.5;
 	Locations[n].locators_radius.rld.loc2 = 0.5;
@@ -2394,6 +2490,10 @@ int LocationInitBoarding(int n)
 	locations[n].box4 = Items_MakeTime(0, 1, 1, 2013);
 	locations[n].box5 = Items_MakeTime(0, 1, 1, 2013);
 	
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+	
     Locations[n].locators_radius.randitem.randitem1 = 1;
     Locations[n].locators_radius.randitem.randitem2 = 1;
 
@@ -2405,6 +2505,8 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.rld.aloc1 = 0.5;
     Locations[n].locators_radius.rld.aloc2 = 0.5;
 	Locations[n].locators_radius.rld.aloc3 = 0.5;
+	Locations[n].locators_radius.reload.reload1 = 0.8;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 	
 	Locations[n].items.randitem2 = "";
 	Locations[n].items.randitem1 = "";
@@ -2573,6 +2675,8 @@ int LocationInitBoarding(int n)
 	
 	 // Locators
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
 	
     Locations[n].locators_radius.interactive.bed = 0.8;
     Locations[n].locators_radius.interactive.bookcase = 0.5;
@@ -2621,26 +2725,47 @@ int LocationInitBoarding(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   	Locations[n].id = "My_CabineFDM"; 
     locations[n].id.label = "cabine";
-	locations[n].filespath.models = "locations\inside\cabinFDM\";
+	//locations[n].filespath.models = "locations\inside\cabinFDM\";
 	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
 	//Sound
 	locations[n].type = "residence";
 	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_C1"; // каюта Калеуче (проклятый)
 	//Always
-	locations[n].models.always.cabinFDM = "cabinFDM";
-	locations[n].models.always.cabinFDM.level = 65538;
-	locations[n].models.always.locators = "cabinFDM_locators";
-
-	locations[n].models.always.window = "cabinFDM_window";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	locations[n].models.always.window.level = 65539;
+	Locations[n].models.always.main = "inside_cabin_C1";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_C1_parts";
+	//Locations[n].models.always.outside = "inside_cabin_C1_outside";
+	Locations[n].models.always.locators = "inside_cabin_C1_locators";
+	Locations[n].models.always.bsp = "inside_cabin_C1_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_C1_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_C1_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
 	//Day
-	locations[n].models.day.charactersPatch = "cabinFDM_patch";
+	Locations[n].models.day.charactersPatch = "inside_cabin_C1_patch";
+	Locations[n].models.day.fonar = "inside_cabin_C1_fd";
+	Locations[n].models.day.rays = "inside_cabin_C1_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
 	//Night
-	locations[n].models.night.charactersPatch = "cabinFDM_patch";
+	Locations[n].models.night.charactersPatch = "inside_cabin_C1_patch";
+	Locations[n].models.night.fonar = "inside_cabin_C1_fn";
+	
 	//Environment
-	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 
 	Locations[n].boarding = "true";
 	//Locations[n].camshuttle = 1;
@@ -2648,7 +2773,69 @@ int LocationInitBoarding(int n)
 	locations[n].box1 = Items_MakeTime(0, 1, 1, 2003);
 	locations[n].box2 = Items_MakeTime(0, 1, 1, 2003);
 	locations[n].box3 = Items_MakeTime(0, 1, 1, 2003);
-	locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
+	//locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
+
+    LAi_LocationFightDisable(&Locations[n], true);
+	Locations[n].locators_radius.randitem.randitem1 = 1;
+    Locations[n].reload.l1.name = "reload1";
+	Locations[n].reload.l1.go = "My_Deck";
+	Locations[n].reload.l1.emerge = "reload1";
+	Locations[n].reload.l1.label = "Deck.";
+	Locations[n].items.randitem1 = "";
+	locations[n].environment.weather.rain = false;
+	n = n + 1;
+	
+	// RENOVATED
+	Locations[n].id = "My_CabineFDMR"; 
+    locations[n].id.label = "cabine";
+	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
+	//Sound
+	locations[n].type = "residence";
+	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_C2"; // каюта Калеуче (отремонтирован)
+	//Always
+	Locations[n].models.always.main = "inside_cabin_C2";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_C2_parts";
+	//Locations[n].models.always.outside = "inside_cabin_C2_outside";
+	Locations[n].models.always.locators = "inside_cabin_C2_locators";
+	Locations[n].models.always.bsp = "inside_cabin_C2_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_C2_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_C2_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
+	//Day
+	Locations[n].models.day.charactersPatch = "inside_cabin_C2_patch";
+	Locations[n].models.day.fonar = "inside_cabin_C2_fd";
+	Locations[n].models.day.rays = "inside_cabin_C2_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
+	//Night
+	Locations[n].models.night.charactersPatch = "inside_cabin_C2_patch";
+	Locations[n].models.night.fonar = "inside_cabin_C2_fn";
+	
+	//Environment
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
+
+	Locations[n].boarding = "true";
+	//Locations[n].camshuttle = 1;
+	
+	locations[n].box1 = Items_MakeTime(0, 1, 1, 2003);
+	locations[n].box2 = Items_MakeTime(0, 1, 1, 2003);
+	locations[n].box3 = Items_MakeTime(0, 1, 1, 2003);
+	//locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
 
     LAi_LocationFightDisable(&Locations[n], true);
 	Locations[n].locators_radius.randitem.randitem1 = 1;
@@ -2662,28 +2849,47 @@ int LocationInitBoarding(int n)
 	
 	Locations[n].id = "My_Cabin_Huge";   // совсем большая
     locations[n].id.label = "cabine2";
-	locations[n].filespath.models = "locations\inside\cabin02";
+	//locations[n].filespath.models = "locations\inside\cabin02";
 	locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
 	//Sound
 	locations[n].type = "residence";
 	//Models
+	Locations[n].filespath.models = "locations\decks\inside_cabin_2G"; // каюта галеона
 	//Always
-	locations[n].models.always.l1 = "cabin02";
-	locations[n].models.always.l1.level = 65538;
-	locations[n].models.always.locators = "cabin02_locators";
-	locations[n].models.always.window = "cabin02_fonar";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	locations[n].models.always.window.level = 65539;
-
+	Locations[n].models.always.main = "inside_cabin_2G";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_2G_parts";
+	//Locations[n].models.always.outside = "inside_cabin_2G_outside";
+	Locations[n].models.always.locators = "inside_cabin_2G_locators";
+	Locations[n].models.always.bsp = "inside_cabin_2G_bsp";
+	Locations[n].models.always.camcollider = "inside_cabin_2G_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.windows = "inside_cabin_2G_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
 	//Day
-	locations[n].models.day.charactersPatch = "cabin02_patch";
-
+	Locations[n].models.day.charactersPatch = "inside_cabin_2G_patch";
+	Locations[n].models.day.fonar = "inside_cabin_2G_fd";
+	Locations[n].models.day.rays = "inside_cabin_2G_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
 	//Night
-	locations[n].models.night.charactersPatch = "cabin02_patch";
-
+	Locations[n].models.night.charactersPatch = "inside_cabin_2G_patch";
+	Locations[n].models.night.fonar = "inside_cabin_2G_fn";
+	
 	//Environment
-	locations[n].environment.weather = "true";
-	locations[n].environment.sea = "true";
+	Locations[n].environment.sea = "true";
+	Locations[n].environment.weather = "true";
+
+    // Locators
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+    Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 
 	Locations[n].boarding = "true";
 	//Locations[n].camshuttle = 1;
@@ -2691,7 +2897,6 @@ int LocationInitBoarding(int n)
 	locations[n].box1 = Items_MakeTime(0, 1, 1, 2003);
 	locations[n].box2 = Items_MakeTime(0, 1, 1, 2003);
 	locations[n].box3 = Items_MakeTime(0, 1, 1, 2003);
-	locations[n].box4 = Items_MakeTime(0, 1, 1, 2003);
 
     LAi_LocationFightDisable(&Locations[n], true);
 	Locations[n].locators_radius.randitem.randitem1 = 1;
@@ -2744,7 +2949,6 @@ int LocationInitBoarding(int n)
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
     Locations[n].locators_radius.box.box2 = 0.5; // дополнительный сундук
     Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
-    Locations[n].locators_radius.box.box4 = 0.5; // угол стола
 	
     Locations[n].locators_radius.interactive.bed = 0.8;
     Locations[n].locators_radius.interactive.bookcase = 0.5;
@@ -2761,6 +2965,7 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.randitem.randitem1 = 1;
 
     Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
     Locations[n].locators_radius.rld.loc0 = 0.5;
     Locations[n].locators_radius.rld.loc1 = 0.5;
 	Locations[n].locators_radius.rld.loc2 = 0.5;
@@ -2824,7 +3029,6 @@ int LocationInitBoarding(int n)
 	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
     Locations[n].locators_radius.box.box2 = 0.5; // дополнительный сундук
     Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
-    Locations[n].locators_radius.box.box4 = 0.5; // угол стола
 	
     Locations[n].locators_radius.interactive.bed = 0.8;
     Locations[n].locators_radius.interactive.bookcase = 0.5;
@@ -2842,6 +3046,7 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.randitem.randitem2 = 1;
 
     Locations[n].locators_radius.reload.reload1 = 0.5;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
     Locations[n].locators_radius.rld.loc0 = 0.5;
     Locations[n].locators_radius.rld.loc1 = 0.5;
 	Locations[n].locators_radius.rld.loc2 = 0.5;
@@ -2912,6 +3117,10 @@ int LocationInitBoarding(int n)
 	locations[n].box4 = Items_MakeTime(0, 1, 1, 2013);
 	locations[n].box5 = Items_MakeTime(0, 1, 1, 2013);
 	
+	Locations[n].locators_radius.box.box1 = 0.5; // основной сундук
+	Locations[n].locators_radius.box.box2 = 0.5; // гардероб
+	Locations[n].locators_radius.box.box3 = 0.5; // тумбочка
+	
     Locations[n].locators_radius.randitem.randitem1 = 1;
     Locations[n].locators_radius.randitem.randitem2 = 1;
 
@@ -2923,6 +3132,8 @@ int LocationInitBoarding(int n)
     Locations[n].locators_radius.rld.aloc1 = 0.5;
     Locations[n].locators_radius.rld.aloc2 = 0.5;
 	Locations[n].locators_radius.rld.aloc3 = 0.5;
+	Locations[n].locators_radius.reload.reload1 = 0.8;
+    Locations[n].locators_radius.reload.reload2 = 0.5;
 
     LAi_LocationFightDisable(&Locations[n], true);
 

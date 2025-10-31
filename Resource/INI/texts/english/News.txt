@@ -1,16 +1,20 @@
-News {Open Beta 1.6.0}
+News {Patch 1.6}
 News_descr
 {
 ************************   Ahoy!   ***********************
-Welcome to version 1.6.0!
+Welcome to version 1.6!
 ------------------------------------------------------------------------------------------------
-— New game - not required
-— We've completely changed the combat and leveling system. The changes are so big that we really need your feedback
-— Share your impressions in the official Discord and Telegram channels, as well as on Steam
-— If loading a save from another version, don't forget to reassign the perks of the hero and officers
-— Disable any modifications until Steam Workshop authors update their work
+— Patch 1.6 is live
 — You can find a detailed list of changes in the news by clicking the button below
-— Thank you for playing!
+— Character builds and replayability added to the game
+— If loading a save from another version, don't forget to reassign the perks of the hero and officers
+— Combat system completely reworked
+— A dozen of new feautures and over a hundred of improvements
+— "Supporter Pack" DLC released
+— No need to start a new game
+— Please disable all mods
+— You can always return to any previous major patch via Steam Library
 }
 News_Attention { }
-[News]IsRead = false { }
+[News]
+IsRead = false

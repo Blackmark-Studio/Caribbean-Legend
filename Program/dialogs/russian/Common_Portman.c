@@ -902,7 +902,7 @@ void ProcessDialogEvent()
 		
 		if (hrand(5) > 1)
 		{
-			if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
+			if (GetCompanionQuantity(pchar) < 3 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
 			{
 				if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) 
 				{ // если заняты
@@ -3164,10 +3164,10 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "Я готов выплатить вам вознаграждение. Оно составляет " + FindRussianMoneyString(makeint(sti(npchar.quest.chest)*15000)) + " в сундуках. Больше я заплатить не могу, к сожалению.";
+			dialog.text = "Я готов выплатить вам вознаграждение. Оно составляет " + makeint(sti(npchar.quest.money)) + " дублонов. Больше я заплатить не могу, к сожалению.";
 			link.l1 = "Ну что же, этого тоже достаточно. Спасибо и всего хорошего.";
 			link.l1.go = "exit";
-			TakeNItems(pchar, "chest", sti(npchar.quest.chest));
+			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));
 			sTitle = npchar.id + "Portmans_SeekShip";
 			AddQuestRecordEx(sTitle, "Portmans_SeekShip", "6");
 			CloseQuestHeader(sTitle);
@@ -3477,9 +3477,9 @@ void ProcessDialogEvent()
 			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 
 			// Лимит офицеров не позволяет забрать
-			if (FindFreeRandomOfficer() < 1 ) {
-				dialog.text = "[Слишком много офицеров].";
-				link.l1 = "[Ща решим]";
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Капитан, похоже, в вашей команде нет места для ещё одного офицера.";
+				link.l1 = "Хм... Тогда я вернусь позже.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -4095,8 +4095,8 @@ void SetSeekShipCapParam(ref npchar)
 	npchar.quest.PortmansSeekShip.shipName = sld.Ship.name; //имя украденного корабля
 	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название украденного корабля
 	npchar.quest.PortmansSeekShip.shipTape = RealShips[sti(sld.Ship.Type)].basetype; //тип украденного корабля
-	//npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 1000) + (sti(pchar.rank)*500); //вознаграждение
-	npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
+	npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 10) + (sti(pchar.rank)*5); //вознаграждение
+	// npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
 	sld.quest = "InMap"; //личный флаг кэпа-вора
 	sld.city = SelectAnyColony(npchar.city); //определим колонию, откуда кэп-вор выйдет
 	sld.quest.targetCity = SelectAnyColony2(npchar.city, sld.city); //определим колонию, куда он придёт

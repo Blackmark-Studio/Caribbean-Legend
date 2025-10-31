@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 		case "rat_torg":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("技能检查失败 (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", 在不同的情况下, 我会要五千。 舰队司令本人也表示过兴趣, 相信我, 不止他一个。 慢慢考虑。 盔甲会等你多久都行。 我只卖给你。 ";
 				link.l1 = "我会考虑的, 桑乔。 我会好好考虑的。 ";
 				link.l1.go = "rat_yes_1";
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = ""+pchar.name+", 在不同的情况下, 我会要五千。 舰队司令本人也表示过兴趣, 相信我, 不止他一个。 好吧, 考虑到你没有忘记我和我的问题, 我会少要五百。 看来一路上你经历了一些冒险。 ";
 				link.l1 = "这就好多了。 但我还是不明白为什么在这个同样独特的物品交易中我应该多付钱。 也许你应该付我, 嗯桑乔? ";
 				link.l1.go = "rat_yes_1500";
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		case "rat_yes_1500":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 90)
 			{
-				notification("技能检查失败 (90)", SKILL_COMMERCE);
+				Notification_Skill(false, 90, SKILL_COMMERCE);
 				dialog.text = "不, "+pchar.name+", 不可能。 我可以用毒药对付老鼠, 但这件盔甲有一天可能会救你的命。 你穿上它会像个意大利公爵。 一千五, 这是我的最终报价。 慢慢考虑, 告诉我。 盔甲会等你多久都行, 我只卖给你。 ";
 				link.l1 = "桑乔, 如果你不是这个沉闷墓地里唯一的酒馆老板... 我会考虑你的提议。 ";
 				link.l1.go = "rat_yes_1500exit";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = "作为一名军事 captain 和海盗, 你确实很会谈判! 还记得约斯特吗? 有一次他设法以折扣价买了我所有的砒霜, 而那时老鼠已经在折磨我了。 好吧, "+pchar.name+", 你赢了。 我再给你少五百! 但这是最终报价! ";
 				link.l1 = "这仍然感觉像敲竹杠, 但至少现在我在丛林里不会像典型的落难少女了。 等我带钱来; 我很快就来。 ";
 				link.l1.go = "rat_yes_1000exit";

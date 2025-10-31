@@ -44,7 +44,6 @@ void SetAllPerksToChar(ref _ch, bool _isOfficer)
 	_ch.perks.list.HPPlus = "1";
 	_ch.perks.list.EnergyPlus = "1";
 	_ch.perks.list.Trustworthy = "1";
-	_ch.perks.list.ShipEscape = "1";
 	_ch.perks.list.Alchemy = "1";
 	
 	_ch.perks.list.FlagPir = "1";
@@ -123,7 +122,6 @@ void SetHalfPerksToChar(ref _ch, bool _isOfficer)
 	if(_isOfficer) // У офов есть доп. перки
 	{
 		_ch.perks.list.ByWorker = "1";
-		_ch.perks.list.ByWorker2 = "1";
 	}
 }
 
@@ -546,27 +544,62 @@ void initStartState2Character(ref ch)
 	LSC_NpcInit();
 	//==> Остальные ключевые персонажи
 	OtherNpcInit();
-	//--> Мини-квесты, инициализирующиеся по достижении ранга
+	
+	//==> Квесты, инициализирующиеся по достижении ранга
+	// Квест "Вождь краснокожих"
 	pchar.quest.Red_Chieftain.win_condition.l1 = "Rank";
 	pchar.quest.Red_Chieftain.win_condition.l1.value = 8; // 280313
 	pchar.quest.Red_Chieftain.win_condition.l1.operation = ">=";
 	pchar.quest.Red_Chieftain.function = "RedChieftain_Prepare";
+	// Квест "Ложный след"
 	pchar.quest.False_Trace.win_condition.l1 = "Rank";
 	pchar.quest.False_Trace.win_condition.l1.value = 15; // may-16
 	pchar.quest.False_Trace.win_condition.l1.operation = ">=";
 	pchar.quest.False_Trace.function = "FalseTrace_Prepare";
+	// Квест "Бесчестный конкурент"
 	pchar.quest.Shadowtrader.win_condition.l1 = "Rank";
 	pchar.quest.Shadowtrader.win_condition.l1.value = 1;
 	pchar.quest.Shadowtrader.win_condition.l1.operation = ">=";
 	pchar.quest.Shadowtrader.function = "ShadowTrader_Prepare";
+	// Квест "Опасный груз"
 	pchar.quest.zpq.win_condition.l1 = "Rank";
 	pchar.quest.zpq.win_condition.l1.value = 1;
 	pchar.quest.zpq.win_condition.l1.operation = ">=";
 	pchar.quest.zpq.function = "zpq_Prepare";
-	// --> мангароса
+	// Квест "Мангароса"
 	pchar.quest.Mangarosa.win_condition.l1 = "item";
 	pchar.quest.Mangarosa.win_condition.l1.item = "cannabis7";
 	pchar.quest.Mangarosa.function = "Mangarosa_Start";
+	// Квест "Старые счёты"
+	pchar.quest.OS_ShipWolf.win_condition.l1 = "Rank";
+	pchar.quest.OS_ShipWolf.win_condition.l1.value = 1; 
+	pchar.quest.OS_ShipWolf.win_condition.l1.operation = ">=";
+	pchar.quest.OS_ShipWolf.function = "OS_ShipWolf";
+	// Квест "Калеуче"
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1 = "Rank";
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1.value = 17;
+	pchar.quest.Caleuche_StartSandBox.win_condition.l1.operation = ">=";
+	PChar.quest.Caleuche_StartSandBox.function = "Caleuche_StartSandBox";
+	if (SandBoxMode)
+	{
+		// Квесты "Гранд Альбалате" и "В мышеловке"
+		pchar.quest.FMQ_SetConditions.win_condition.l1 = "Rank";
+		pchar.quest.FMQ_SetConditions.win_condition.l1.value = 4;
+		pchar.quest.FMQ_SetConditions.win_condition.l1.operation = ">=";
+		pchar.quest.FMQ_SetConditions.function = "FMQ_SetConditions";
+	}
+	// Квест "Долгий путь к виселице"
+	pchar.quest.Portugal_QuestMark.win_condition.l1 = "Rank";
+	pchar.quest.Portugal_QuestMark.win_condition.l1.value = 15;
+	pchar.quest.Portugal_QuestMark.win_condition.l1.operation = ">=";
+	PChar.quest.Portugal_QuestMark.function = "Portugal_QuestMark";
+	// Квест "Цена чахотки"
+	pchar.quest.Consumption_QuestMark.win_condition.l1 = "Rank";
+	pchar.quest.Consumption_QuestMark.win_condition.l1.value = 7;
+	pchar.quest.Consumption_QuestMark.win_condition.l1.operation = ">=";
+	PChar.quest.Consumption_QuestMark.function = "Consumption_QuestMark";
+	//<== Квесты, инициализирующиеся по достижении ранга
+	
 	// рецепт разборного ружья
 	pchar.quest.mushket8.win_condition.l1 = "item";
 	pchar.quest.mushket8.win_condition.l1.item = "mushket8";
@@ -593,11 +626,6 @@ void initStartState2Character(ref ch)
 	pchar.quest.FishingBoat.function = "FishingBoat_NextQuest";
 	// belamour наводка от контриков по опасному грузу
 	pchar.GenQuest.Smugglerzpq = true;
-	// Старые счёты
-	pchar.quest.OS_ShipWolf.win_condition.l1 = "Rank";
-	pchar.quest.OS_ShipWolf.win_condition.l1.value = 1; 
-	pchar.quest.OS_ShipWolf.win_condition.l1.operation = ">=";
-	pchar.quest.OS_ShipWolf.function = "OS_ShipWolf";
     // Атрибуты тутора
     objTask.sea  = "";
     objTask.land = "";
@@ -618,19 +646,6 @@ void initStartState2Character(ref ch)
 	{
 		TEV.FireBrigade_spa.name = GetRandSubString(sSpManNames[rand(GetArraySize(&sSpManNames) - 2)]);
 		TEV.FireBrigade_spa.lastname = GetRandSubString(sSpFamilies[rand(GetArraySize(&sSpFamilies) - 2)]);
-	}
-	// Калеуче
-	pchar.quest.Caleuche_StartSandBox.win_condition.l1 = "Rank";
-	pchar.quest.Caleuche_StartSandBox.win_condition.l1.value = 17;
-	pchar.quest.Caleuche_StartSandBox.win_condition.l1.operation = ">=";
-	PChar.quest.Caleuche_StartSandBox.function = "Caleuche_StartSandBox";
-	if (SandBoxMode)
-	{
-		// Французские миниквесты (ФМК)
-		pchar.quest.FMQ_SetConditions.win_condition.l1 = "Rank";
-		pchar.quest.FMQ_SetConditions.win_condition.l1.value = 4;
-		pchar.quest.FMQ_SetConditions.win_condition.l1.operation = ">=";
-		pchar.quest.FMQ_SetConditions.function = "FMQ_SetConditions";
 	}
 }
 

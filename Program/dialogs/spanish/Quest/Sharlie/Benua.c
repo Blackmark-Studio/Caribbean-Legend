@@ -775,6 +775,7 @@ void ProcessDialogEvent()
 		else
 			sld = characterFromId("Mary");
 		sld.lastname = "de Maure";
+		sld.SpecialRole = "wife";
 		sld.dialog.currentnode = "LongHappy_31";
 		LAi_SetActorType(sld);
 		LAi_ActorDialogDelay(sld, pchar, "", 4.0);

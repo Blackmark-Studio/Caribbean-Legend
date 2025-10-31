@@ -321,6 +321,7 @@ void Mtraxx_SilkCreateJeffry(string qName) // создаем Джеффри // 3
 	sld.lastname = StringFromKey("Roger_16");
 	sld.dialog.FileName = "Quest\Roger.c";
 	sld.DeckDialogNode = "Jeffry";
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.greeting = "Jeffry_01";
 	sld.rank = 28;
 	sld.reputation = 15;
@@ -815,6 +816,7 @@ void Mtraxx_PlantCreatePelly(string qName) // ставим Пелли
 	sld = GetCharacter(NPC_GenerateCharacter("Pelly_sea", "Tesak", "man", "man", iRank, ENGLAND, -1, true, "quest"));
 	FantomMakeCoolSailor(sld, SHIP_BARKENTINE, StringFromKey("Roger_26"), CANNON_TYPE_CANNON_LBS12, 65, 65, 65);
 	FantomMakeCoolFighter(sld, iRank, 65, 65, "blade_06", "pistol3", "grapeshot", 200);
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.name = StringFromKey("Roger_27");
 	sld.lastname = StringFromKey("Roger_28");
 	sld.dialog.FileName = "Quest\Roger.c";
@@ -910,6 +912,7 @@ void Mtraxx_PlantPellyArrive(string qName) // 3 прогона
 	sld.name = StringFromKey("Roger_27");
 	sld.lastname = StringFromKey("Roger_28");
 	sld.greeting = "Pelly_02";
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "Pelly_7";
 	sld.rank = 25;
@@ -1058,7 +1061,8 @@ void Mtraxx_PlantSetMaxRocur() // ставим Жана Пикара
 	sld.lastname = StringFromKey("Roger_30");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur";
-	sld.greeting = "Rocur_01"; 
+	sld.greeting = "Rocur_01";
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.rank = 20;
 	sld.reputation = 30;
 	LAi_SetHP(sld, 300.0, 300.0);
@@ -1101,6 +1105,7 @@ void Mtraxx_PlantMakeMaxRocurClone() // ставим клон Жана Пика�
 	sld.lastname = StringFromKey("Roger_30");
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.Dialog.currentnode = "rocur_4";
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.greeting = "Rocur_01";
 	sld.rank = 20;
 	LAi_SetHP(sld, 300.0, 300.0);
@@ -2616,6 +2621,7 @@ void Mtraxx_PasqualeMirabellaSex(string qName) // занялись любовь�
 	sld.model.animation = "towngirl";
 	Characters_RefreshModel(sld);
 	sld.dialog.currentnode = "mirabelle_22";
+	sld.SpecialRole = "fgirl";
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
@@ -2805,6 +2811,7 @@ void Mtraxx_MeridaCreateLepricon(string qName) // ставим Леприкон�
 	sld.dialog.FileName = "Quest\Roger.c";
 	sld.dialog.currentnode = "lepricon";
 	sld.greeting = "Lepricon_01";
+	sld.SpecialRole = "mtraxx_vanguard";
 	sld.rank = 30;
 	sld.reputation = 20;
 	LAi_SetHP(sld, 420, 420);
@@ -3857,7 +3864,7 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 {
 	float locx, locy, locz;
 	sld = GetCharacter(NPC_GenerateCharacter("Ignasio", "Marco", "man", "man", 30, ENGLAND, -1, false, "soldier"));
-	FantomMakeCoolSailor(sld, SHIP_POLACRE_QUEST, StringFromKey("Roger_66"), CANNON_TYPE_CANNON_LBS20, 60, 60, 60);
+	FantomMakeCoolSailor(sld, SHIP_POLACRE_QUEST, GetShipName("Torero"), CANNON_TYPE_CANNON_LBS20, 60, 60, 60);
 	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_10", "pistol6", "bullet", 150);
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "ignasio";
@@ -5573,7 +5580,7 @@ void Mtraxx_CorridaMarkus(string qName) //
 {
 	Group_FindOrCreateGroup("Terrax_SeaGroup");
 	sld = CharacterFromID("Terrax");
-	FantomMakeCoolSailor(sld, SHIP_LINESHIP, StringFromKey("Roger_94"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
+	FantomMakeCoolSailor(sld, SHIP_LINESHIP, GetShipName("Red Dragon"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
 	FantomMakeCoolFighter(sld, 50, 110, 110, "blade_19", "pistol4", "bullet", 300);
 	sld.DeckDialogNode = "mtraxx_board";
 	SetCharacterPerk(sld, "BasicDefense");
@@ -5660,7 +5667,7 @@ void Mtraxx_MarkusSetShipParameter()
 	RealShips[sti(sld.Ship.Type)].MaxCaliber = 36;
 	RealShips[sti(sld.Ship.Type)].CannonsQuantityMin = 56;
 	RealShips[sti(sld.Ship.Type)].MaxCrew = 800;
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 13.5;
+	RealShips[sti(sld.Ship.Type)].SpeedRate = 10.5;
 	RealShips[sti(sld.Ship.Type)].TurnRate = 29.5;
 	RealShips[sti(sld.Ship.Type)].MaxCrew = 800;
 	RealShips[sti(sld.Ship.Type)].HP = 8000;
@@ -7960,8 +7967,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "Mtraxx_IgnasioEscape") // 
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Ignasio_spy", "Alonso", "man", "man", 25, FRANCE, 0, false, "soldier"));
-		sld.name = StringFromKey("Roger_107");
-		sld.lastname = StringFromKey("Roger_108");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		FantomMakeCoolFighter(sld, 25, 30, 30, "blade_05", "pistol1", "bullet", 120);
 		sld.Dialog.Filename = "Quest\Roger.c";
 		sld.dialog.currentnode = "spy_sailor";
@@ -8368,7 +8375,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LocatorReloadEnterDisable("LaVega_port", "reload1_back", true);
 		// присоединяем эскадру к ГГ. Тиракс
 		sld = characterFromId("Terrax");
-		FantomMakeCoolSailor(sld, SHIP_LINESHIP, StringFromKey("Roger_94"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
+		FantomMakeCoolSailor(sld, SHIP_LINESHIP, GetShipName("Red Dragon"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
 		Mtraxx_MarkusSetShipParameter();
 		SetCharacterGoods(sld, GOOD_BALLS, 5000);
 		SetCharacterGoods(sld, GOOD_GRAPES, 2000);
@@ -8446,7 +8453,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		SetCharacterGoods(sld, GOOD_RUM, 100);
 		SetCharacterGoods(sld, GOOD_PLANKS, 50);
 		SetCharacterGoods(sld, GOOD_SAILCLOTH, 20);
-		RealShips[sti(sld.Ship.Type)].SpeedRate = 17.2;
+		RealShips[sti(sld.Ship.Type)].SpeedRate = 10.2;
 		SetRandGeraldSail(sld, PIRATE);
 		hcrew = GetMaxCrewQuantity(sld);
 		SetCrewQuantity(sld, hcrew);
@@ -9263,28 +9270,42 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_RetributionInBrothel") // в комнате с девочками
 	{
+		StartQuestMovie(true, false, true);
+		// locCameraFromToPos(-0.13, 1.07, 0.67, true, -0.09, -0.27, -1.47);
+		locCameraFromToPos(-0.13, 0.92, 0.67, true, -0.09, -0.17, -1.47);
+		TeleportCharacterToPos(pchar, -0.02, 0.35, -1.02);
+		pchar.nonTable = true;
 		LAi_SetSitType(pchar);
-		for (i = 1; i <= 6; i++)
+		LAi_FadeToBlackStartInstantly();
+		for (i = 1; i <= 2; i++)
 		{
-			if (i == 3 || i == 5) continue;
-			sld = GetCharacter(NPC_GenerateCharacter("Mtr_TortugaGirl_" + i, "women_" + (i + 19), "woman", "towngirl", 1, FRANCE, 0, true, "quest"));
+			// if (i == 3 || i == 5) continue;
+			sld = GetCharacter(NPC_GenerateCharacter("Mtr_TortugaGirl_" + i, "women_" + (i + 19), "woman", "woman", 1, FRANCE, 0, true, "quest"));
 			SetFantomParamFromRank(sld, 1, true);
-			if (i < 3) ChangeCharacterAddressGroup(sld, "Tortuga_Brothel_room", "goto", "goto" + i);
-			else ChangeCharacterAddressGroup(sld, "Tortuga_Brothel_room", "reload", "reload1_back");
-			LAi_SetCitizenType(sld);
+			ChangeCharacterAddressGroup(sld, "Tortuga_Brothel_room", "reload", "reload1_back");
+			if (i == 1)
+			{
+				LAi_SetHorseSitType(sld);
+				TeleportCharacterToPosAy(sld, 0.45, 0.35, -0.58, -0.00);
+			}
+			if (i == 2)
+			{
+				LAi_SetHorseSitType(sld);
+				TeleportCharacterToPosAy(sld, -0.45, 0.35, -0.58, -0.00);
+			}
 		}
 		DoQuestCheckDelay("Mtraxx_RetributionRestInBrothel", 1.3);
 	}
 	else if (sQuestName == "Mtraxx_RetributionRestInBrothel") // отдых в борделе
 	{
-		ChangeShowIntarface();
+		// ChangeShowIntarface();
+		LAi_FadeToBlackEnd();
 		ResetSound();
 		SetMusic("music_piratemusic");
 		InterfaceStates.Buttons.Save.enable = false;
 		bDisableCharacterMenu = true;
-		locCameraRotateAroundHero(0.0, 1.5, 0.0, 0.005, 0.0, 1.5, 0.0, 10000);
-		Pchar.FuncCameraFly = "";
-		DoQuestCheckDelay("Mtraxx_RetributionFrameInBrothel", 30.0);
+		// DoQuestCheckDelay("Mtraxx_RetributionFrameInBrothel_camera1", 15.0);
+		DoQuestCheckDelay("Mtraxx_RetributionFrameInBrothel", 20.0);
 		for (i = 1; i <= 3; i++)
 		{
 			DoQuestCheckDelay("Mtraxx_RetributionVoiceInBrothel_" + i, 2 + i * 6);
@@ -9308,6 +9329,10 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		PlaySound("ambient\tavern\krujki_005.wav");
 		PlaySound("ambient\tavern\naliv_003.wav");
 	}
+	// else if (sQuestName == "Mtraxx_RetributionFrameInBrothel_camera1")
+	// {
+		// locCameraFromToPos(1.21, 1.80, 3.07, true, 0.52, -0.07, 1.08);
+	// }
 	else if (sQuestName == "Mtraxx_RetributionFrameInBrothel") // нагулялся
 	{
 		PlaySound("ambient\tavern\orijka_003.wav");
@@ -9315,7 +9340,9 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		InterfaceStates.Buttons.Save.enable = true;
 		locCameraResetState();
 		iTime = sti(environment.time);
-		SetLaunchFrameFormParam(StringFromKey("Roger_122", NewStr()), "Mtraxx_RetributionTortugaReload", 0, 5);
+		WaitDate("", 0, 0, 2, 6, 5); // крутим время
+		SetLaunchFrameFormParam(StringFromKey("Roger_122", NewStr()), "Reload_To_Location", 0, 5);
+		SetLaunchFrameReloadLocationParam("Tortuga_town", "reload", "reload9", "Mtraxx_RetributionTortugaStreets");
 		if (IsEquipCharacterByArtefact(pchar, "totem_03")) 	
 		{
 			AddCharacterHealth(pchar, 16);
@@ -9327,16 +9354,14 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		StoreDayUpdate();
 		RefreshWeather();
 		RefreshLandTime();
-		LAi_SetPlayerType(pchar);
 		pchar.GenQuest.CamShuttle = 2;
-	}
-	else if (sQuestName == "Mtraxx_RetributionTortugaReload") // релоад на улицы
-	{
-		WaitDate("", 0, 0, 2, 6, 5); // крутим время
-		DoQuestReloadToLocation("Tortuga_town", "reload", "reload9", "Mtraxx_RetributionTortugaStreets");
 	}
 	else if (sQuestName == "Mtraxx_RetributionTortugaStreets") // ставим Камиллу
 	{
+		EndQuestMovie();
+		LAi_SetPlayerType(pchar);
+		DeleteAttribute(pchar, "nonTable");
+		StartBattleLandInterface();
 		pchar.questTemp.Mtraxx.Retribution = "tavern";
 		PlaySound("ambient\tavern\orijka_002.wav");
 		sld = GetCharacter(NPC_GenerateCharacter("Kamilla", "women_16", "woman", "towngirl", 15, FRANCE, -1, true, "quest"));
@@ -9498,8 +9523,8 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, -1, true, "soldier"));
 			LAi_SetImmortal(sld, true);
-			sld.name = StringFromKey("Roger_107");
-			sld.lastname = StringFromKey("Roger_108");
+			sld.name = GetCharacterName("Alonso");
+			sld.lastname = "";
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload2");
 			TeleportCharacterToPos(sld, -28.59, -2.12, -94.21);
 			sld.dialog.filename = "Quest\Roger.c";
@@ -10330,6 +10355,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 		sld = GetCharacter(NPC_GenerateCharacter("Sleep_Jeffry", "Jeffry", "man", "man", 35, PIRATE, 1, true, "marginal"));
+		sld.SpecialRole = "mtraxx_vanguard";
 		sld.name = StringFromKey("Roger_15");
 		sld.lastname = StringFromKey("Roger_16");
 		ChangeCharacterAddressGroup(sld, "Merida_town", "goto", "goto15");
@@ -10338,12 +10364,14 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		sld = GetCharacter(NPC_GenerateCharacter("Sleep_Pelly", "Tesak", "man", "man", 35, PIRATE, 1, true, "marginal"));
 		sld.name = StringFromKey("Roger_27");
 		sld.lastname = StringFromKey("Roger_28");
+		sld.SpecialRole = "mtraxx_vanguard";
 		ChangeCharacterAddressGroup(sld, "Merida_town", "goto", "goto15");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, characterFromId("Sleep_Terrax"), "", 8.0);
 		sld = GetCharacter(NPC_GenerateCharacter("Sleep_Lepricon", "Leprechaun", "man", "man", 35, PIRATE, 1, true, "marginal"));
 		sld.name = StringFromKey("Roger_54");
 		sld.lastname = StringFromKey("Roger_55");
+		sld.SpecialRole = "mtraxx_vanguard";
 		ChangeCharacterAddressGroup(sld, "Merida_town", "goto", "goto15");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, characterFromId("Sleep_Terrax"), "", 8.0);
@@ -10565,6 +10593,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 	}
 	else if (sQuestName == "Mtraxx_RetributionFinal_Tonzag") // завершение линейки квестов вместе с Тонзагом
 	{
+		if (CheckCharacterItem(PChar, "key_scotland")) RemoveItems(pchar, "key_scotland", 1);
 		Achievment_Set("ach_CL_97"); // не раскаились в грехах Чарли Принца
 		ReturnOfficer_Tonzag();
 		AddQuestRecord("Roger_10", "20");

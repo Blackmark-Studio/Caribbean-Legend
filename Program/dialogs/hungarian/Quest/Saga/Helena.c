@@ -152,7 +152,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Helena_hire_3";
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-			notification("Helen helyesel", "Helena");
+			Notification_Approve(true, "Helena");
 			npchar.lastname = "Sharp";
 		break;
 		
@@ -530,6 +530,7 @@ void ProcessDialogEvent()
 			LaunchFrameForm();
 			DoQuestCheckDelay("Saga_HelenaRomantic_5", 4.0);
 			pchar.questTemp.Saga.Helena_officer = "true"; // показатель, что Элен - наша навсегда
+			npchar.SpecialRole = "fgirl";
 			
 			pchar.GenQuest.BrothelCount = 0;
 			
@@ -2437,7 +2438,7 @@ void ProcessDialogEvent()
 			if (HelenDrinking_RobbedSvenson()) {
 				link.l2.go = "drinking_got_whiskey_notbelieve";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 2;
-				notification("Helen helyteleníti.", "Helena");
+				Notification_Approve(false, "Helena");
 				pchar.questTemp.HelenDrinking.RobbedSvenson = true;
 			}
 		break;
@@ -2658,7 +2659,7 @@ void ProcessDialogEvent()
 					if (!CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedB") && !CheckAttribute(pchar, "questTemp.HelenDrinking.IslaTesoroAmbush.TriedC")) {
 						dialog.text = "Muszáj volt, kapitány? Miért harcolsz ilyen gyorsan? Hát, azt hiszem, nem csak a gyôztesnek kell gyôznie. Gyerünk, nézzük meg a rezidenciát, amúgy sincs itt semmi más látnivaló.";
 						pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-						notification("Helen helyteleníti.", "Helena");
+						Notification_Approve(false, "Helena");
 					} else {
 						dialog.text = "Dicséret, kapitányom, hogy megpróbálta bölcsen megoldani a problémát, mielôtt verekedésbe keveredett volna. Gyerünk, nézzük meg a rezidenciát; amúgy sincs itt semmi más látnivaló.";
 					}
@@ -2670,7 +2671,7 @@ void ProcessDialogEvent()
 				case "B":
 					dialog.text = "Ügyesen átverted azokat a bolondokat, kapitányom! Majdnem kitört belôlem a nevetés, ôszintén! Gyerünk, nézzük meg a rezidenciát; amúgy sincs itt semmi más látnivaló.";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen helyesel", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Mi van azzal a hatalmas hajóval, amit partra húztak?";
 					link.l1.go = "after_ambush_1";
@@ -2679,7 +2680,7 @@ void ProcessDialogEvent()
 				case "C":
 					dialog.text = "Várjon, hadd szusszanjon egy lány! Tényleg te vagy az a Charlie Prince?";
 					pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-					notification("Helen helyesel", "Helena");
+					Notification_Approve(true, "Helena");
 					
 					link.l1 = "Volt egy ilyen idôszak az életrajzomban, igen. Le vagy nyûgözve?";
 					link.l1.go = "after_ambush_c";
@@ -2725,7 +2726,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "sea") {
 				dialog.text = "Köszönöm, kapitányom. Ezt örömmel hallom. Különösen jó másodszorra hallani. Jól ismersz engem.";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 3;
-				notification("Helen helyesel", "Helena");
+				Notification_Approve(true, "Helena");
 			} else {
 				dialog.text = "Köszönöm, kapitányom. Ezt örömmel hallom.";
 			}
@@ -2748,7 +2749,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.Background") && pchar.questTemp.HelenDrinking.Background == "land") {
 				dialog.text = "Gondolja, hogy megérdemlem? Soha nem költöttem pénzt ilyen apróságokra, de azt hiszem, mindennek megvan az elsô alkalom. Látom, nem hagyja abba, hogy elfeledtesse velem a tengert, ugye, kapitány? Talán igaza van...";
 				pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 3;
-				notification("Helen helyteleníti.", "Helena");
+				Notification_Approve(false, "Helena");
 			} else {
 				dialog.text = "Gondolja, hogy megérdemlem? Soha nem költöttem pénzt ilyen apróságokra, de azt hiszem, mindennek megvan az elsô alkalom.";
 			}

@@ -30,7 +30,7 @@ trait03 {A minôség jele}
 trait03_desc {A glifák, pecsétek és szabadalmak sorozata felismerhetôvé teszi ennek a hajónak a rakományát, a kikötôbe való érkezése pedig jó jel a helyi kereskedôk számára. A sikeres kereskedelmi ügyletek javítják a kikötô népével való kapcsolatokat, a jó kapcsolatok pedig jövedelmezôbbé teszik a kereskedelmet.}
 trait03_desc2
 {
-Csökkenti az értékesítési büntetést: 3% kapcsolati szintenként.A nemzethez fûzôdô kapcsolatok növeléséhez szükséges nyereségküszöb: 25000.
+Csökkenti az értékesítési büntetést: 3% kapcsolati szintenként.A nemzethez fûzôdô kapcsolatok növeléséhez szükséges nyereségküszöb: 50000.
 }
 trait04 {Vészhelyzeti Studding vitorlák}
 trait04_desc {A hajót fenyegetô kritikus veszély esetén a matrózok speciális, gyorsan összeszerelhetô szegecselô vitorlákat állítanak fel a yardokon, és felhúzzák ôket, ezzel ideiglenesen megnövelve a hajó sebességét.}

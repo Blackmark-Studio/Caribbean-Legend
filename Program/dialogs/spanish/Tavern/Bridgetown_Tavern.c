@@ -90,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (sti(pchar.reputation.nobility) > 48) // высокая репа
 		{
 			// belamour legendary edition покажем критерии
-			notification("¡Reputación demasiado baja! (Pícaro)", "None");
+			Notification_Reputation(false, 48, "high");
 			PlaySound("Voice\Spanish\hambit\Ercule Tongzag-03.wav");
 			dialog.text = "Ya veo. Así que eres un tipo heroico. Lo siento, capitán. Pero hoy en día pagan mal por las heroicidades.";
 			link.l1 = "¡Eh, eh! ¡Cuidado con ese sarcásmo, compañero!";
@@ -101,10 +101,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (!bOk) // слабое фехтование
 		{
 			// belamour legendary edition покажем критерии -->
-			notification("Skill Check Failed (35)", SKILL_F_LIGHT);
-			notification("Skill Check Failed (35)", SKILL_FENCING);
-			notification("Skill Check Failed (35)", SKILL_F_HEAVY);
-			notification("Skill Check Failed (35)", SKILL_PISTOL);
+			Notification_Skill(false, 35, SKILL_F_LIGHT);
+			Notification_Skill(false, 35, SKILL_FENCING);
+			Notification_Skill(false, 35, SKILL_F_HEAVY);
+			Notification_Skill(false, 35, SKILL_PISTOL);
 			// <--
 			dialog.text = "Capitán, eres demasiado blando. Necesito a un luchador un poco más reputado que tú. Vuelve cuando aprendas a manejar ese acero que cuelga de tu cinturón. Y un poco de precisión al disparar tampoco vendría mal.";
 			link.l1 = "Ya veo. Entonces te haré una visita más tarde.";

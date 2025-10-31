@@ -3,13 +3,13 @@ HollandGambit_2 {Ridderbok}
 HollandGambit_3 {Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!}
 HollandGambit_4 {Miguel}
 HollandGambit_5 { }
-HollandGambit_6 {Mirage}
+HollandGambit_6 { }
 HollandGambit_7 {Erkundungsmodus: Auftragsdauer verdoppelt}
-HollandGambit_8 {Valkyrie}
+HollandGambit_8 { }
 HollandGambit_9 {Die Valkyrie ist am Horizont zu sehen!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
-HollandGambit_12 {Meifeng}
+HollandGambit_12 { }
 HollandGambit_13 {Hier ist die Grotte. Ich sollte hier nach Salomons Versteck suchen.}
 HollandGambit_14 {Harry}
 HollandGambit_15 {Fletcher}
@@ -20,7 +20,7 @@ HollandGambit_19 {Rodriges}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
-HollandGambit_23 {Alonso}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Abigail starb an Fieber!}
 HollandGambit_26 {Charlie Knippel stab an seinen Wunden!}
@@ -43,3 +43,4 @@ HollandGambit_42 {Ihr wurdet wegen Eurer Wunden ohnmächtig...}
 HollandGambit_43 {Sie gaben Abigail kein Geld zurück und machten sie so zu einer Bettlerin.}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
+HollandGambit_46 { }

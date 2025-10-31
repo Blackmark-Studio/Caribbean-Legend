@@ -127,15 +127,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_arest_1":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			DoFunctionReloadToLocation("FortFrance_prison", "goto", "goto9", "Puancie_InJail");
-			WaitDate("", 0, 0, 2, 0, 10); //крутим время
-			RecalculateJumpTable();
-			RemoveAllCharacterItems(PChar, true);
-			sld = characterFromId("Puancie");
-			sld.dialog.currentnode = "Puancie_Jail"; 
-			LAi_SetActorTypeNoGroup(sld);
-			ChangeCharacterAddressGroup(sld, "FortFrance_prison", "goto", "goto13");
+			AddDialogExitQuestFunction("Sharlie_enterSoldiers_2");
 		break;
 		// арест в резиденции
 		
@@ -226,7 +218,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_maltie_2":
 			DialogExit();
-			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "FortFrance_town", "officers", "reload7_1", "Maltie_GoTown", -1);
+			AddDialogExitQuestFunction("Sharlie_Maltie_DlgExit_1");
 		break;
 		
 		case "Sharlie_maltie_3":
@@ -239,9 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_maltie_4":
 			DialogExit();
-			chrDisableReloadToLocation = false;//открыть локацию
-			npchar.lifeday = 0;
-			LAi_ActorGoToLocator(npchar, "goto", "goto1", "none", -1);
+			AddDialogExitQuestFunction("Sharlie_Maltie_DlgExit_2");
 		break;
 		
 		//belamour cle -->
@@ -271,11 +261,7 @@ void ProcessDialogEvent()
 		
 		case "Sharlie_maltie_2a":
 			DialogExit();
-			//LAi_ActorGoToLocation(npchar, "reload", "reloadPr1", "FortFrance_Dungeon", "reload", "reload1", "", -1);
-			Pchar.quest.Sharlie_Maltie.win_condition.l1 = "location";
-			Pchar.quest.Sharlie_Maltie.win_condition.l1.location = "FortFrance_town";
-			Pchar.quest.Sharlie_Maltie.win_condition = "Maltie_GoBasement";
-			QuestPointerDelLoc("FortFrance_prison", "reload", "reload1");
+			AddDialogExitQuestFunction("Sharlie_Maltie_DlgExit_3");
 		break;
 		//<-- cle
 		// мальтиец-проводник
@@ -843,7 +829,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "spanish_3":
-			dialog.text = "Il préparait également une autre opération contre les Espagnols. Pour être précis - la capture d'un navire espagnol avec une cargaison précieuse à bord. Michel devait attirer la cible sous les canons de la légère frégate 'Gryffondor'. Nous n'avons pas vu ni entendu parler de lui pendant un certain temps alors qu'il planifiait cela.\nMais le plan a échoué. Le transport espagnol n'est pas arrivé et Michel lui-même a été retrouvé par des pêcheurs locaux échoué sur les rives de la baie de Le Marin, à moitié mort. Il semble que l'opération ait été un échec.\nLa guerre est la guerre, et les choses tournent mal. C'était un miracle que Michel ait survécu, mais le Chevalier de Poincy est entré dans une rage folle. Il a accusé Michel de détournement de fonds de l'Ordre et l'a fait emprisonner. Bien sûr, nous ne croyions pas un mot de ces accusations. Michel est un homme honnête, un vrai chevalier de l'Ordre. Seul Dieu sait ce qui a mis le Gouverneur Général en colère. Peut-être que le Chevalier de Poincy vous le dira lui-même ?";
+			dialog.text = "Il préparait également une autre opération contre les Espagnols. Pour être précis - la capture d'un navire espagnol avec une cargaison précieuse à bord. Michel devait attirer la cible sous les canons de la сorvette lourde 'Gryffondor'. Nous n'avons pas vu ni entendu parler de lui pendant un certain temps alors qu'il planifiait cela.\nMais le plan a échoué. Le transport espagnol n'est pas arrivé et Michel lui-même a été retrouvé par des pêcheurs locaux échoué sur les rives de la baie de Le Marin, à moitié mort. Il semble que l'opération ait été un échec.\nLa guerre est la guerre, et les choses tournent mal. C'était un miracle que Michel ait survécu, mais le Chevalier de Poincy est entré dans une rage folle. Il a accusé Michel de détournement de fonds de l'Ordre et l'a fait emprisonner. Bien sûr, nous ne croyions pas un mot de ces accusations. Michel est un homme honnête, un vrai chevalier de l'Ordre. Seul Dieu sait ce qui a mis le Gouverneur Général en colère. Peut-être que le Chevalier de Poincy vous le dira lui-même ?";
 			link.l1 = "Peut-être. C'est tout ce que tu sais ?";
 			link.l1.go = "spanish_4";
 		break;
@@ -1544,7 +1530,7 @@ case "Europe":
 			dialog.text = "Quel est votre intérêt pour les Indiens, Monsieur ? Bien que... eh bien, oui, vous venez tout juste d'Europe\nComment va Paris ? Écrasent-ils encore les rats de la ville, ou ont-ils commencé à les inviter à la communion ? Vous voyez, ici, nous avons des indigènes au lieu de rats. Ils font des affaires avec les boucaniers, attaquent les bûcherons, ils mangent des gens, bon sang\nIl y a trois jours, un individu brillant avait déjà vendu un mousquet à des gens comme celui-ci. Et devinez quoi ? Ces salauds ont tué tous les soldats de la patrouille, dirigée, soit dit en passant, par mon ami et camarade. Nous avons trouvé le colon-traître et l'avons pendu à sécher au soleil, pour donner l'exemple. Donner des armes à feu aux Indiens ! C'est de la trahison ! Trahison contre la France ! Nous avons suivi ce singe coloré depuis un moment car il est déjà devenu une figure familière lors de divers événements\nEh bien, maintenant il rencontrera sa fin rapide et méritée. Vous pouvez avancer, Capitaine. Ne vous mêlez pas des affaires qui ne vous concernent pas. Vous ne faites pas partie de cette guerre... Pas encore... Ou bien êtes-vous ?!";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = " (Fiable) Vous voyez, officier... Je suis le Capitaine Charles de Maure, invité de Fadey le Moscovite. Nous avons un certain intérêt pour cet Indien... alors ne nous mêlons pas de nos devoirs respectifs. D'accord, Lieutenant ?";
 				link.l1.go = "ZsI_officer_Mir";
 			}
@@ -1751,7 +1737,7 @@ case "Europe":
 			dialog.text = "Ce n'est pas une faveur, Capitaine, mais une entreprise mutuellement bénéfique ! Je vous paierai quarante pièces d'or pour m'escorter à St. Pierre en temps voulu.";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "Comme je vais dans la direction opposée, Monsieur, je demanderai un paiement d'avance.";
 				link.l1.go = "MOT_Barbie_Torg";
 			}
@@ -1924,9 +1910,9 @@ case "Europe":
 		break;
 		
 		case "MOT_Barbie_ContraTorg":
-			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 30)
+			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) >= 25)
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 25, SKILL_COMMERCE);
 				dialog.text = "Ma gratitude, Charles ! Vous m'avez épargné de la ruine financière ! Les marchandises seront expédiées rapidement et avec la plus grande prudence\nPermettez-moi de vous offrir un conseil en tant que confrère marchand : une fois que vous aurez engagé un intendant compétent, procurez-vous du café à Saint-Pierre et vendez-le à profit à Willemstad. Les capitaux locaux paient généreusement pour les marchandises coloniales, les exportant vers l'Europe pour des profits substantiels. Bonne chance dans vos entreprises, ami !";
 				link.l1 = "Adieu, Monsieur.";
 				link.l1.go = "MOT_Barbie_ContraSoglasen_2";
@@ -1937,7 +1923,7 @@ case "Europe":
 			}
 			else
 			{
-				notification("Skill Check Failed (31)", SKILL_COMMERCE); 
+				Notification_Skill(false, 25, SKILL_COMMERCE);
 				dialog.text = "Je ne peux pas, Capitaine. Ma marchandise est sérieuse et mérite un traitement sérieux. La plupart des capitaines libres n'osent pas commercer en biens stratégiques. Malheureusement, marchander est ici injustifié.";
 				if (sti(pchar.Money) >= 10000)
 				{
@@ -2018,47 +2004,8 @@ case "Europe":
 		case "Del_Alonso_8":
 			dialog.text = "À vos ordres !";
 			link.l1 = "...";
-			link.l1.go = "Del_Alonso_9";
-		break;
-		
-		case "Del_Alonso_9":
-			DialogExit();
-			SetQuestHeader("FolkeDeluc");
-			AddQuestRecord("FolkeDeluc", "1");
-			
-			npchar.lifeday = 0;
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload1", "none", "", "", "", -1);
-			SetFunctionLocationCondition("FortfranceJailOff_AddQuestMark", "fortfrance_prison", false);
-			QuestCloseSeaExit();
-			sld = CharacterFromID("Folke");
-			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "Del_Folke_1";
-			RemovePassenger(pchar, sld);
-			LAi_SetStayType(sld);
-			ChangeCharacterAddressGroup(sld, "FortFrance_prison", "goto", "goto9");
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			pchar.questTemp.Del_Deluck = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("Del_shturman", "mercen_4", "man", "man", 5, FRANCE, 3, false, "quest"));
-			GiveItem2Character(sld, "blade_03");
-			EquipCharacterByItem(sld, "blade_03");
-			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "Del_shturman";
-			LAi_SetSitType(sld);
-			sld.greeting = "officer_hire";
-			SetSelfSkill(sld, 21, 23, 18, 33, 25);
-			SetShipSkill(sld, 25, 10, 8, 6, 35, 11, 13, 25, 14);
-			SetSPECIAL(sld, 7, 10, 6, 8, 7, 8, 4);
-			sld.rank = 5;
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "HullDamageUp");
-			SetCharacterPerk(sld, "BasicDefense");
-			//sld.quest.officertype = "navigator";
-			FreeSitLocator("FortFrance_tavern", "sit4");
-			ChangeCharacterAddressGroup(sld, "FortFrance_tavern", "sit", "sit4");
-			AddLandQuestMark(characterFromId("Del_shturman"), "questmarkmain");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Del_Alonso_DlgExit");
 		break;
 		
 		//Делюк
@@ -2095,15 +2042,8 @@ case "Europe":
 		case "Del_Folke_4":
 			dialog.text = "Ce n'est pas comme si j'avais un endroit où aller...";
 			link.l1 = "... ";
-			link.l1.go = "Del_Folke_5";
-		break;
-		
-		case "Del_Folke_5":
-			DialogExit();
-			
-			pchar.questTemp.Del_Rostovshik = true;
-			LAi_CharacterDisableDialog(npchar);
-			AddLandQuestMark(characterFromId("FortFrance_usurer"), "questmarkmain");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Del_Folke_DlgExit_1");
 		break;
 		
 		case "Del_Folke_10":
@@ -2112,16 +2052,7 @@ case "Europe":
 			link.l1.go = "Del_Folke_11a";
 			link.l2 = "N'oublie pas cela, Deluc. La prochaine fois, je te tirerai dessus.";
 			link.l2.go = "Del_Folke_11b";
-			
-			chrDisableReloadToLocation = false;
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
-			QuestOpenSeaExit()
-			sld = CharacterFromID("Del_shturman");
-			sld.lifeday = 0;
-			
-			sld = CharacterFromID("Del_Ohranik");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocation(sld, "reload", "reload3", "none", "", "", "", -1);
+			Del_Ohrannik();
 		break;
 		
 		case "Del_Folke_11a":
@@ -2141,29 +2072,7 @@ case "Europe":
 		
 		case "Del_Folke_12":
 			DialogExit();
-			EndQuestMovie();
-			AddQuestRecord("FolkeDeluc", "3");
-			CloseQuestHeader("FolkeDeluc");
-			
-			ChangeCharacterComplexReputation(pchar, "authority", -2);
-			AddCrewMorale(Pchar, -30);
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
-			npchar.Dialog.Filename = "Enc_Officer_dialog.c";
-			npchar.quest.meeting = true;
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(npchar.id);
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.location = "None";
-			npchar.Dialog.CurrentNode = "hired";
-			npchar.Payment = true;
-			SetCharacterPerk(npchar, "ByWorker");
-			DeleteAttribute(npchar, "CompanionDisable");
+			AddDialogExitQuestFunction("Del_Folke_DlgExit_2");
 		break;
 		
 		//Штурман из таверны. Стандартный диалог, но с некоторыми изменениями (обучение найма для новичков)
@@ -2277,32 +2186,8 @@ case "Europe":
 			Link.l1.go = "Exit";											
 		break;
 		case "Del_exit_hire":
-			npchar.Dialog.Filename = "Enc_Officer_dialog.c";
-			npchar.Dialog.CurrentNode = "hired";
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
-			AddDialogExitQuestFunction("LandEnc_OfficerHired");
-			NPChar.quest.meeting = true;
-			npchar.loyality = 18;
-			
-			ChangeCharacterComplexReputation(pchar, "authority", 2);
-			AddCrewMorale(Pchar, 30);
-			QuestOpenSeaExit();
-			DelLandQuestMark(npchar);
-			pchar.quest.FortfranceJailOff_AddQuestMark.over = "yes";
-			if (GetCharacterIndex("FortFranceJailOff") != -1)
-			{
-				DelLandQuestMark(characterFromId("FortFranceJailOff"));
-			}
-			sld = CharacterFromID("Folke");
-			LAi_CharacterDisableDialog(sld);
-			DeleteAttribute(pchar, "questTemp.Del_Deluck");
-			DeleteAttribute(pchar, "questTemp.Del_DeluckSvoboda");
-			DeleteAttribute(pchar, "questTemp.Del_Rostovshik");
-			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
-			pchar.questTemp.Del_DeluckSiditTurma = true;
-			AddQuestRecord("FolkeDeluc", "4");
-			CloseQuestHeader("FolkeDeluc");
 			DialogExit();
+			AddDialogExitQuestFunction("Del_shturman_DlgExit");
 		break;
 		
 		//Квест "Травля крысы"

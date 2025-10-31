@@ -239,9 +239,28 @@ void wdmCoordUpdate()
 		
 		// mitrokosta фикс после обновы движка
 		SendMessage(&worldMap,"ls",MSG_WORLDMAP_SET_COORDINATES, sCoordinates);
-		
+		UpdateWorldMapSpeed(worldMap.island)
+
 		PostEvent("EventCoordUpdate", 1000);	
 	}
+}
+
+// Апдейтим скорость на глобалке, если есть карта акватории
+void UpdateWorldMapSpeed(string islandId)
+{
+	if (CheckAttributeEqualTo(&TEV, "worldMap.islandId", islandId)) return;
+
+	float baseSpeed = GetAttributeFloatOrDefault(&TEV, "worldMap.kPlayerMaxSpeed", 1.0);
+	float bonusSpeed = 0;
+	if (islandId != "" && CheckOfficersPerk(pchar, "WindCatcher"))
+	{
+		string mapId = GetMapByArea(islandId);
+		if (mapId != "") bonusSpeed = PERK_VALUE2_WIND_CATCHER;
+		else trace("Can't found map for area: " + islandId);
+	}
+
+	TEV.worldMap.islandId = islandId;
+	worldMap.kPlayerMaxSpeed = baseSpeed + bonusSpeed;
 }
 
 //  строка координат долготы в режиме "море"

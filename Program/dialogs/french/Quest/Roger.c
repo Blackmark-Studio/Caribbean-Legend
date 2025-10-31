@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "1300 pesos pour un rouleau. Je pense que c'est un bon prix.";
-			link.l1 = "Ouais, et Tyrex veut vingt pièces en or pour un rouleau. Pas une pièce de moins. Et je parle de doublons. Il m'a donné pour mission de trouver l'acheteur idéal à ce prix-là.";
+			link.l1 = "Ouais, et Tyrex veut 4 pièces en or pour un rouleau. Pas une pièce de moins. Et je parle de doublons. Il m'a donné pour mission de trouver l'acheteur idéal à ce prix-là.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "Comment vas-tu, l'ami ?";
-			link.l1 = "Ça va bien. J'ai trouvé un acheteur pour nous. Vingt-cinq doublons pour un rouleau. Je crois que Tyrex va aimer ça.";
+			link.l1 = "Ça va bien. J'ai trouvé un acheteur pour nous. 5 doublons pour un rouleau. Je crois que Tyrex va aimer ça.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "Crévindiou ! Alors, tu es un pirate ?";
-			link.l1 = "Non, je fais juste affaire avec eux lors d'occasions spéciales. Je sais pertinemment que Marcus reçoit constamment des lots de soie de navire et il les vend à quiconque peut se le permettre. Et je ne parle pas de 2500 pesos pour un rouleau ici, je dirais que si vous pouvez lui payer 25 doublons en or pour chaque rouleau, il vous en inondera, vous pouvez en être sûr.";
+			link.l1 = "Non, je fais juste affaire avec eux lors d'occasions spéciales. Je sais pertinemment que Marcus reçoit constamment des lots de soie de navire et il les vend à quiconque peut se le permettre. Et je ne parle pas de 2500 pesos pour un rouleau ici, je dirais que si vous pouvez lui payer 5 doublons en or pour chaque rouleau, il vous en inondera, vous pouvez en être sûr.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Vingt-cinq doublons pour un rouleau. C'est le meilleur prix que vous pouvez obtenir, croyez-moi.";
-			link.l1 = "Vingt-cinq pièces d'or ? Hm. Pas mal. Je crois que Tyrex me devra beaucoup pour un tel acheteur. Très bien, marché conclu, je lui ferai savoir. Cependant, si tu m'as menti sur le prix, alors c'est ta peau qui est en jeu.";
+            dialog.text = "5 doublons pour un rouleau. C'est le meilleur prix que vous pouvez obtenir, croyez-moi.";
+			link.l1 = "5 pièces d'or ? Hm. Pas mal. Je crois que Tyrex me devra beaucoup pour un tel acheteur. Très bien, marché conclu, je lui ferai savoir. Cependant, si tu m'as menti sur le prix, alors c'est ta peau qui est en jeu.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "Je n'ai pas ce genre de montagne d'or en ce moment.";
 				link.l2.go = "Pelly_44_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "Tu sais quoi, Cutlass ? Oublie ça. Sommes-nous des pirates ou non ? Et Jean ? Ou son joli minois est-il son seul atout ? Prépare un coffre - nous nous en tiendrons au plan initial.";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3016,13 +3016,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Digne de confiance) (Honneur) (Leadership) Ça suffit de sang pour aujourd'hui, Jean. Je vais m'en occuper moi-même.";
 				link.l1.go = "merida_head_dobro_1";
-				notification("Trustworthy", "Trustworthy");
-				notification("Reputation Check Passed", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 71, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
@@ -4696,7 +4696,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Capitaine, emmenez tout son équipage sur votre vaisseau amiral sauf un officier.";
 				Link.l1 = "Ah, d'accord ! Je ferai ça !";
@@ -4711,21 +4711,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+            LeaveShipIslaMona(&NPChar);
 			dialog.text = "Très bien, nous veillerons à ce qu'elle soit livrée à un port sûr.";
 			Link.l1 = "Excellent !";
 			Link.l1.go = "carpenter_exit";
@@ -4762,6 +4748,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Cap, il semble que tu n’aies plus de place pour un autre officier.";
+				link.l1 = "Tu as peut‑être raison. Je passerai plus tard — veille ici pour que personne ne s’empare de ton navire.";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "La prends-tu ?";
 			link.l1 = "Oui.";

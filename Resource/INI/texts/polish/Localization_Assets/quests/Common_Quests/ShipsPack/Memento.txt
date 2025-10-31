@@ -1,4 +1,4 @@
-Memento_1 {Memento}
+Memento_1 { }
 Memento_2 {Mortimer}
 Memento_3 {Grim}
 Memento_4

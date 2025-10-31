@@ -1,3 +1,22 @@
+void OZ_Start()
+{
+	SetQuestHeader("OZ");
+	AddQuestRecord("OZ", "1");
+	pchar.questTemp.OZ_Start = true;
+	
+	sld = GetCharacter(NPC_GenerateCharacter("OZ_Blacksmith", "blacksmith_18", "man", "man", 5, SPAIN, -1, false, "quest"));
+	sld.name = StringFromKey("Neutral_31");
+	sld.lastname = StringFromKey("Neutral_32");
+	sld.City = "PortSpein";
+	ChangeCharacterAddressGroup(sld, "PortSpein_town", "quest", "quest3");
+	sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
+	sld.dialog.currentnode = "OZ_Kuznets_1";
+	LAi_SetStayType(sld);
+	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	LAi_SetImmortal(sld, true);
+	AddLandQuestMark(sld, "questmarkmain");
+}
+
 void OZ_Kuznets_NoAgree()
 {
 	CloseQuestHeader("OZ");
@@ -163,6 +182,9 @@ void OZ_Felip_1()
 	LAi_SetStayType(sld);
 	AddLandQuestMark(sld, "questmarkmain");
 	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
+	
+	// на всякий случай откроем дверь
+	LocatorReloadEnterDisable("PortSpein_town", "houseS1", false);
 }
 
 void OZ_Felip_2()
@@ -276,7 +298,13 @@ void OZ_Frantsuz_exit()
 void OZ_Kuznets_Nagrada()
 {
 	AddQuestRecord("OZ", "10");
-	if (!CheckAttribute(pchar, "questTemp.OZ_Dolg")){CloseQuestHeader("OZ");}
+	if (!CheckAttribute(pchar, "questTemp.OZ_Dolg"))
+	{
+		CloseQuestHeader("OZ");
+		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	}
 	sld = CharacterFromID("OZ_Blacksmith");
 	sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
 	sld.dialog.currentnode = "OZ_Kuznets_Tovar";
@@ -365,12 +393,14 @@ void OZ_Grot_5(string qName)
 	locations[FindLocation("Trinidad_Grot")].DisableEncounters = false;
 	DoQuestCheckDelay("hide_weapon", 1.2);
 	
-	sld = CharacterFromID("OZ_Felip");
-	sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
-	sld.dialog.currentnode = "OZ_Felip_11";
-	AddLandQuestMark(sld, "questmarkmain");
-	
-	SetFunctionTimerCondition("OZ_Felip_timer", 0, 0, 3, false);
+	if (CharacterIsAlive("OZ_Felip"))
+	{
+		sld = CharacterFromID("OZ_Felip");
+		sld.dialog.filename = "Quest\MiniEvents\OkoviAzarta_dialog.c";
+		sld.dialog.currentnode = "OZ_Felip_11";
+		AddLandQuestMark(sld, "questmarkmain");
+		SetFunctionTimerCondition("OZ_Felip_timer", 0, 0, 3, false);
+	}
 }
 
 void OZ_Felip_timer(string qName)
@@ -382,7 +412,13 @@ void OZ_Felip_timer(string qName)
 	sld.lifeday = 0;
 	LAi_CharacterDisableDialog(sld);
 	AddQuestRecord("OZ", "11");
-	if (!CheckCharacterItem(pchar, "OZ_book")){CloseQuestHeader("OZ");}
+	if (!CheckCharacterItem(pchar, "OZ_book"))
+	{
+		CloseQuestHeader("OZ");
+		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	}
 }
 
 void OZ_Felip_good()
@@ -391,7 +427,13 @@ void OZ_Felip_good()
 	sld.lifeday = 0;
 	LAi_CharacterDisableDialog(sld);
 	DeleteQuestCondition("OZ_Felip_timer");
-	if (!CheckCharacterItem(pchar, "OZ_book")){CloseQuestHeader("OZ");}
+	if (!CheckCharacterItem(pchar, "OZ_book"))
+	{
+		CloseQuestHeader("OZ");
+		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	}
 }
 
 void OZ_Felip_bad()
@@ -416,5 +458,11 @@ void OZ_Felip_bad_2(string qName)
 	ChangeCharacterHunterScore(pchar, "spahunter", 50);
 	LAi_group_AttackGroup("SPAIN_CITIZENS", LAI_GROUP_PLAYER);
 	AddQuestRecord("OZ", "12");
-	if (!CheckCharacterItem(pchar, "OZ_book")){CloseQuestHeader("OZ");}
+	if (!CheckCharacterItem(pchar, "OZ_book"))
+	{
+		CloseQuestHeader("OZ");
+		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+	}
 }

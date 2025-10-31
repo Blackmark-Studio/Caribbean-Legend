@@ -17,7 +17,7 @@ City_Rum9 {哈! "圣"Fernando 又把所有妓院都关了。 不过没关系, �
 City_Rum10 {那个... 监察官来了! Fernando de Almeyda, 还是叫什么? Alamida! 重要到总督都得小心翼翼。 据说他看着你的眼睛就能看穿你所 有的罪孽, 太可怕了!}
 Pop_Name {Diego}
 Pop_lastname {de Landa}
-Took_LiberMisericordiae {获得：Liber Misericordiae}
+Took_LiberMisericordiae {获得: Liber Misericordiae}
 SM_WorldMap
 {
 全体船员到甲板! "Holy Mercy"号正在接近! 这是个强劲的对手, 我们真的准备好面对它了吗? 也许我们该在远离殖民地的公海上 拦截它?

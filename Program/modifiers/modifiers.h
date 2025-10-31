@@ -5,6 +5,8 @@
 #define M_WEAPON_CURVATURE "WeaponCurvature"
 #define M_WEAPON_TYPE "WeaponType"
 
+#define M_CANT_BE_POISONED "CantBePoisoned"
+
 #define M_CROSSHAIR_UPDATE_SPEED "CrosshairUpdateSpeed"
 #define M_SQUADRON_POWER "SquadronPower"
 #define M_REDUCE_DAMAGE "IncomingDamageReduction"
@@ -19,10 +21,14 @@
 #define M_MOVE_SPEED "MoveSpeed"
 #define M_POISON_CHANCE "PoisonChance"     // шанс отравить с атакой
 #define M_STAGGER_SPEED "StaggerSpeed"
+#define M_STRIKE_ANGLE "StrikeAngle"
 
-#define M_HP_MAX "hpMax"                   // флет макс здоровье
-#define M_MTP_HP_MAX "mtpHpMax"            // процент макс здоровье
+#define M_HP_MAX "hpMax"                   // флет макс хп
+#define M_MTP_HP_MAX "mtpHpMax"            // процент макс хп
+#define M_HP_PER_RANK "hpPerRank"          // +хп за уровень
 #define M_ENERGY_MAX "energyMax"           // флет макс энергия
+#define M_MTP_ENERGY_MAX "mtpEnergyMax"    // процент макс энергия
+#define M_ENERGY_PER_RANK "energyPerRank"  // +энергия за уровень
 
 #define MELEE "Melee"
 #define RANGE "Range"
@@ -52,5 +58,5 @@
 #define AMULET_PAGAN  1
 #define AMULET_CHURCH 2
 
-#define SET "has_"   // модификатор установки состояния, равен целому числу
-#define HAS "has_"   // для консистентности нейминга в функциях получения модификатора
+#define SET "has."   // для консистентности нейминга
+#define HAS "has."   // модификатор установки состояния, такие модификаторы складываются в атрибут has и тупо копируются

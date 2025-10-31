@@ -1,0 +1,10 @@
+blade_critDamage {近战暴击伤害}
+gun_critDamage {手枪暴击伤害}
+musket_critDamage {火枪暴击伤害}
+blade_critChance {近战暴击几率}
+gun_critChance {手枪暴击几率}
+musket_critChance {火枪暴击几率}
+incomingDamageReduction {伤害防御}
+RangeIncomingDamageReduction {枪击防御}
+Shot_Damage {枪械伤害}
+HeadshotDamage {爆头伤害}

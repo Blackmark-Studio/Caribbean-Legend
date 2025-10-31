@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, boatswain}
 QuestsUtilite_267 {Pour in twenty lashes! No - thirty! Each one!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, traveler}
 QuestsUtilite_269 {Caimans don't attack people. Only when they are very hungry. This one is obviously full...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {The poison didn't work!}
 QuestsUtilite_273 {Poisoned by taino poison!}
 QuestsUtilite_274 {@<GetFullName(chref)> poisoned by taino poison}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {Vulcan}
 QuestsUtilite_326 {Heliadon}
 QuestsUtilite_327 {Hephaestus}
 QuestsUtilite_328 {Centurion}
+QuestsUtilite_329 {The pirates are defeated, the waters have become safer.}
+QuestsUtilite_330 {The pirates have grown stronger, the seas have become more dangerous.}

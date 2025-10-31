@@ -1,0 +1,12 @@
+Archetype_Title {职业}
+Archetype_Tooltip {角色的主要职业与爱好。}
+Duelist {$key(perkTreeFencing|AbilityDescribe.txt)}
+Pirate {$key(perkTreePirat|AbilityDescribe.txt)}
+Gunman {$key(Shooter)}
+Soldier {$key(perkTreeSoldier|AbilityDescribe.txt)}
+Cannoner {$key(Cannoner)}
+Boatswain {$key(Boatswain)}
+Carpenter {$key(Carpenter)}
+Navigator {$key(Navigator)}
+Treasurer {$key(Treasurer)}
+Doctor {$key(Doctor)}

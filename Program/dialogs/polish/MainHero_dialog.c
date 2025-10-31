@@ -170,7 +170,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Wanilia została załadowana na karawelę, a jej żagle dawno zniknęły za horyzontem - a te przeklęte galeony wróciły do portu zamiast wypłynąć na otwarte morze. Nie mogę pokazać się ze swoim statkiem w porcie - lepiej, jeśli myślą, że opuściłem Gwadelupę... Chyba przejdę do miasta przez dżunglę i dowiem się coś o moim drogim Marchais...";
+    		    dialog.text = "Wanilia została załadowana na brygantyny, a jej żagle dawno zniknęły za horyzontem - a te przeklęte galeony wróciły do portu zamiast wypłynąć na otwarte morze. Nie mogę pokazać się ze swoim statkiem w porcie - lepiej, jeśli myślą, że opuściłem Gwadelupę... Chyba przejdę do miasta przez dżunglę i dowiem się coś o moim drogim Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}

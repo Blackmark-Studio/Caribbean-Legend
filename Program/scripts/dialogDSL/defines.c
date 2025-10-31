@@ -26,8 +26,8 @@ string DLG_RunKnownFunction(string functionName, ref context, ref args, int args
     case "ctxShipClass":    return DLG_ShipClass(&args, &context);                              break;
     case "goodBad":         return DLG_GoodBad(&args, &pchar);                                  break;
     case "npcGoodBad":      return DLG_GoodBad(&args, &NPC);                                    break;
-    case "key":             return xiStr(DLG_A0(&args));                                        break;
-    case "link":            return DLG_Link(&args, &context);                                   break;
+    case "key":             return DLG_GetKey(args, context);                                   break;
+    case "link":            return DLG_Link(args, context);                                     break;
     case "shipManWoman":    return DLG_ShipManWoman(&args, &pchar);                             break;
     case "npcShipManWoman": return DLG_ShipManWoman(&args, &NPC);                               break;
     case "ctxShipManWoman": return DLG_ShipManWoman(&args, &context);                           break;
@@ -50,12 +50,12 @@ string DLG_RunReplace(string key, ref context)
 {
   switch(key)
   {
-    case "$sir":         return GetAddress_FormToNPC(&pchar);        break; // → Sir, Ledy for pchar sex
-    case "$npcSir":      return GetAddress_FormToNPC(&CharacterRef); break; // → Sir, Ledy for NPC sex
+    case "$sir":         return GetAddress_FormToNPC(pchar);         break; // → Sir, Ledy for pchar sex
+    case "$npcSir":      return GetAddress_FormToNPC(CharacterRef);  break; // → Sir, Ledy for NPC sex
     case "$name":        return pchar.name;                          break; // → Sharlie, Diego, Helen (pchar name)
     case "$npcName":     return CharacterRef.name;                   break; // → Robert, Carl, James (npcName)
     case "$swear":       return RandSwear();                         break; // → God damn it!
-    case "$bye":         return Goodbye();                           break; // → Good bye!
+    case "$bye":         return Goodbye(true);                       break; // → Good bye!
     case "$hello":       return TimeGreeting();                      break; // → Greetings!
     case "$city":        return GetCityName(CharacterRef.city);      break; // → VIllemstad
     case "$shipName":    return pchar.ship.name;                     break; // → Adelina

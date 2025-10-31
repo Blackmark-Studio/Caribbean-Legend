@@ -1,12 +1,13 @@
 string GetCharPerkInterfaceState(ref chr, ref perk)
 {
 	string reason = "";
-	string perkName = GetAttributeName(&perk);
-	CanTakePerk(&chr, &perk, &reason);
+	string perkName = GetAttributeName(perk);
+	CanTakePerk(chr, perk, &reason);
 
 	if (reason == "alreadyHave") return "active";
+	if (IsMainCharacter(chr) && GetOfficersPerkUsing(pchar, perkName)) return "officer";
+	else if (HasPerk(chr, perkName)) return "officer";
 	if (reason == "disabled") return "disabled";
-	if (IsMainCharacter(&chr) && GetOfficersPerkUsing(&pchar, perkName)) return "officer";
 	if (reason == "") return "available";
 	return "locked";
 }

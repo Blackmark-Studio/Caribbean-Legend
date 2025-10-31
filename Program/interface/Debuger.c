@@ -435,7 +435,7 @@ void CalculateInfoDataF1()
     Statistic_AddValue(PChar, "Cheats.F1", 1);
 }
 ////////////////////////////////////////////////////////////////////////
-string descF2 = "Настроить магические числа курсового угла";
+string descF2 = "Настроить бары над врагами";
 
 void CalculateInfoDataF2()
 {
@@ -478,13 +478,8 @@ void CalculateInfoDataF2()
 	SetCharacterActionSpeed(pchar, "round", 1.0);
 	SetCharacterActionSpeed(pchar, "feint", 1.0);	*/
 	
-	
-	// ОТРИСОВКА ИКОНОК АРХЕТИПОВ
-/*	float fBarSize = 4.0;
-	SendMessage(&loadedLocation, "lsf", MSG_LOCATION_EX_MSG, "SetEnemyBarSize", fBarSize);	
-*/
-
 	// МАГИЧЕСКИЕ ЧИСЛА КУРСОВОГО УГЛА
+	/*
 	pchar.test.WindAgainstSpeed.base1		= 1.0;		// База, из нее вычитаем
 	pchar.test.WindAgainstSpeed.baseshift	= 0.5;		// Базовое смещение	
 	pchar.test.WindAgainstSpeed.factor1		= 6.0;		// Множитель в скобках 1
@@ -493,7 +488,28 @@ void CalculateInfoDataF2()
 	pchar.test.WindAgainstSpeed.divider		= 6.0;		// Делитель в скобках
 	pchar.test.WindAgainstSpeed.factor2		= 6.0;		// Множитель в скобках
 	pchar.test.WindAgainstSpeed.arcade		= 0.974;	// Множитель прямопарусника по ветру	
-	
+	*/
+  
+	loadedLocation.bar_params.bar_scale = 0.7;				// скейл баров
+	loadedLocation.bar_params.archetype_scale = 2.2;		// скейл иконок архетипов
+	loadedLocation.bar_params.archetype_align = "center";	// выравнивание иконок архетипов относительно баров: top, center, bottom
+	loadedLocation.bar_params.archetype_offset = 0.25;		// сдвиг иконки архетипа по горизонтали относительно размера иконки
+	loadedLocation.bar_params.target_scale = 1.5;			// увеличение элементов для основной цели
+	loadedLocation.bar_params.scale_time = 0.3;				// время, за которое бар плавно меняет свой размер
+	loadedLocation.bar_params.text_scale = 1.5;				// размер текста
+	loadedLocation.bar_params.text_alpha_time = 0.35;		// время, за которое текст появляется/исчезает
+	loadedLocation.bar_params.text_offset = 0.06;			// вертикальный оффсет текста (в мировых координатах)
+	loadedLocation.bar_params.damage_time = 0.3;			// время плавного уменьшения полоски урона
+	loadedLocation.bar_params.damage_time_min = 0.3;		// время задержки полоски урона
+	// цвета (альфа игнорируется)
+/*	loadedLocation.bar_params.hp_color = argb(255, 128, 20, 20);		// хп
+	loadedLocation.bar_params.energy_color = argb(255, 20, 20, 128);	// энергия
+	loadedLocation.bar_params.poison_color = argb(255, 20, 128, 20);	// отравление
+	loadedLocation.bar_params.heal_color = argb(255, 80, 10, 10);		// полоска лечения
+	loadedLocation.bar_params.damage_color = argb(255, 255, 255, 255);	// замершая полоска урона
+	loadedLocation.bar_params.smoothdmg_color = argb(255, 80, 10, 10);	// убывающая полоска урона
+*/
+
     totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 
     SetFormatedText("INFO_TEXT", totalInfo);
@@ -631,8 +647,7 @@ string descF6 = "Уровень +5";
 
 void CalculateInfoDataF6()
 {
-	pchar.rank = sti(pchar.rank) + 5;
-    Event("PlayerLevelUp");
+	SetPCharRank(sti(pchar.rank) + 5);
 	
 	totalInfo = totalInfo + NewStr() + NewStr() + "Команда отработала успешно!";
 	
@@ -819,14 +834,14 @@ void CalculateInfoDataF13()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
+
     sld.rank = 35;
     LAi_SetHP(sld, 400.0, 400.0);
     SetSelfSkill(sld, 100, 90, 100, 100, 90);
     SetShipSkill(sld, 100, 90, 90, 90, 90, 90, 90, 90, 90);
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "ByWorker");
-    SetCharacterPerk(sld, "ByWorker2");
+
     SetCharacterPerk(sld, "Grus");
     GiveItem2Character(sld, "pirate_cutlass");
     sld.equip.blade = "pirate_cutlass";
@@ -863,7 +878,7 @@ void CalculateInfoDataF14()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
+
 	sld.rank = 30;
     LAi_SetHP(sld, 500.0, 500.0);
     SetSelfSkill(sld, 100, 90, 100, 100, 90);
@@ -887,6 +902,7 @@ void CalculateInfoDataF15()
 {
     // Тичингиту:
     sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+    SetHeroAutolevel(sld);
     sld.name = "Тичингиту";
     sld.lastname = "";
     sld.greeting = "Tichingitu";
@@ -905,7 +921,7 @@ void CalculateInfoDataF15()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
+
     sld.rank = 30;
     LAi_SetHP(sld, 380.0, 380.0);
     SetSPECIAL(sld, 4, 9, 5, 5, 10, 8, 8);
@@ -933,7 +949,7 @@ string descF16 = "Добавить офицера: Тонзага";
 void CalculateInfoDataF16() 
 {
 	// Тонзаг:
-	sld = characterFromId("Tonzag");
+	sld = initTonzag();
 	sld.Dialog.Filename = "Quest\HollandGambit\Tonzag.c";
 	sld.dialog.currentnode = "Tonzag_officer";
 	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
@@ -948,15 +964,10 @@ void CalculateInfoDataF16()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.rank = 30;
-	LAi_SetHP(sld, 450.0, 450.0);
 	SetSPECIAL(sld, 10, 3, 10, 3, 6, 10, 8);
-	SetSelfSkill(sld, 90, 90, 90, 50, 90);
-	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
-	SetHalfPerksToChar(sld, false);
 	GiveItem2Character(sld, "cirass2");
 	EquipCharacterbyItem(sld, "cirass2");
+	ForceHeroAutolevel(sld);
 	
 	ProcessCancelExit();
 }
@@ -965,15 +976,10 @@ string descF17 = "Добавить офицера: Книппеля";
 void CalculateInfoDataF17()
 {
 	// Чарли:
-	sld = GetCharacter(NPC_GenerateCharacter("Knippel", "Kneepel", "man", "man_B", 20, ENGLAND, -1, false, "quest"));
-	sld.name = "Чарли";
-	sld.lastname = "Книппель";
-	sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-	sld.Dialog.CurrentNode = "Knippel_officer";
+	sld = initKnippel();
+
 	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
 	sld.OfficerWantToGo.DontGo = true;
-	AddPassenger(pchar, sld, false);
-	SetCharacterRemovable(sld, true);
 	sld.Payment = true;
 	LAi_SetOfficerType(sld);
 	sld.greeting = "knippel_hire";
@@ -981,21 +987,10 @@ void CalculateInfoDataF17()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.rank = 30;
-	LAi_SetHP(sld, 120, 120);
-	SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
-	SetSelfSkill(sld, 50, 50, 50, 50, 50);
-	SetShipSkill(sld, 100, 50, 90, 90, 100, 50, 50, 50, 100);
-	SetHalfPerksToChar(sld, false);
-	GiveItem2Character(sld, "shamshir");
-	sld.equip.blade = "shamshir";
-	GiveItem2Character(sld, "pistol1");
-	EquipCharacterbyItem(sld, "pistol1");
-	AddItems(sld, "cartridge", 50);
-	TakeNItems(sld,"potion4", 20);
-	
-    ProcessCancelExit();
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	ForceHeroAutolevel(sld);
+	ProcessCancelExit();
 }
 
 string descF18 = "Добавить офицера: Лонгвэя";
@@ -1004,7 +999,7 @@ void CalculateInfoDataF18()
 {
 	DeleteAttribute(sld, "CompanionDisable");
 	// Лонгвэй:
-    sld = characterFromId("Longway");
+    sld = initLongway();
 	sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
 	sld.Dialog.CurrentNode = "Longway_officer";
 	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
@@ -1017,18 +1012,7 @@ void CalculateInfoDataF18()
     LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
     SaveCurrentNpcQuestDateParam(sld, "HiredDate");
 	sld.OfficerImmortal = true;
-	sld.Health.HP       = 60.0; 
-	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.rank = 30;
-	LAi_SetHP(sld, 250.0, 250.0);
-	SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-	SetSelfSkill(sld, 50, 50, 50, 50, 50);
-	SetShipSkill(sld, 100, 50, 90, 90, 100, 50, 50, 50, 100);
-	SetHalfPerksToChar(sld, false);
-	GiveItem2Character(sld, "cirass2");
-	EquipCharacterbyItem(sld, "cirass2");
-			
+	ForceHeroAutolevel(sld);
     ProcessCancelExit();
 }
 
@@ -1036,9 +1020,8 @@ string descF19 = "Добавить офицера: Томми";
 void CalculateInfoDataF19()
 {
 	// Томми:
-	sld = GetCharacter(NPC_GenerateCharacter("Irons", "Irons", "man", "Irons", 12, ENGLAND, -1, false, "quest"));
-	sld.name = StringFromKey("BlackMark_5");
-	sld.lastname = StringFromKey("BlackMark_6");
+	sld = InitTommy();
+	ForceHeroAutolevel(sld);
 	sld.dialog.filename = "Quest\BlackMark.c";
 	sld.Dialog.CurrentNode = "Irons_officer";
 	sld.quest.OfficerPrice = sti(pchar.rank) * 20;
@@ -1055,38 +1038,14 @@ void CalculateInfoDataF19()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.rank = 30;
-	LAi_SetHP(sld, 170.0, 170.0);
-	SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
-	SetSelfSkill(sld, 50, 50, 50, 100, 50);
-	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
-	SetHalfPerksToChar(sld, false);
-	sld.CanTakeMushket = true;
-	sld.PriorityMode = 2;
-	sld.MusketerDistance = 10;
-	GiveItem2Character(sld, "cirass10");
-	EquipCharacterByItem(sld, "cirass10");
-	GiveItem2Character(sld, "blade_42");
-	EquipCharacterByItem(sld, "blade_42");
-	GiveItem2Character(sld, "indian_2");
-	GiveItem2Character(sld, "mushket1");
-	EquipCharacterByItem(sld, "mushket1");
-	AddItems(sld, "potionrum", 5);
-	AddItems(sld, "GunPowder", 15);
-	AddItems(sld, "bullet", 15);
-	LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
-	
-    ProcessCancelExit();
+	ProcessCancelExit();
 }
 
 string descF20 = "Добавить офицера: Дюрана";
 void CalculateInfoDataF20()
 {
     // Дюран:
-	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 15, FRANCE, -1, false, "soldier"));
-	sld.name = StringFromKey("FMQ_49");
-	sld.lastname = StringFromKey("FMQ_50");
+	sld = initDuran();
 	sld.greeting = "Duran_officer";
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
 	sld.Dialog.CurrentNode = "hired";
@@ -1101,13 +1060,6 @@ void CalculateInfoDataF20()
 	sld.OfficerImmortal = true;
 	sld.Health.HP       = 60.0; 
 	sld.Health.maxHP    = 60.0;
-	SetCharacterPerk(sld, "ShipEscape");
-	sld.rank = 30;
-	LAi_SetHP(sld, 180, 180);
-	SetSPECIAL(sld, 8, 5, 8, 4, 6, 8, 5);
-	SetSelfSkill(sld, 50, 50, 50, 100, 50);
-	SetShipSkill(sld, 100, 50, 50, 50, 100, 50, 50, 50, 100);
-	SetHalfPerksToChar(sld, false);
 	GiveItem2Character(sld, "blade_12");
 	sld.equip.blade = "blade_12";
 	GiveItem2Character(sld, "pistol1");
@@ -1115,26 +1067,15 @@ void CalculateInfoDataF20()
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 	TakeNItems(sld, "bullet", 20);
 	AddItems(sld, "gunpowder", 20);
-	
+	ForceHeroAutolevel(sld);
 	ProcessCancelExit();
 }
 
-string descF21 = "Свободный полёт камеры";
+string descF21 = "Логирование весов энкаунтеров";
 void CalculateInfoDataF21()
 {
-    totalInfo = descF21;
-    // -->
-    //locCameraLockNearHero(-5.0, 2.0, -5.0, 200, true);
-    SendMessage(&locCamera, "l", MSG_CAMERA_FREE);
-    locCameraCurMode = LOCCAMERA_FREE;
-
-    // <--
-    totalInfo = totalInfo + NewStr() + NewStr() +
-                "Команда отработала успешно!";
-    SetFormatedText("INFO_TEXT", totalInfo);
-
-    // Статистика по читам
-    Statistic_AddValue(PChar, "Cheats.F21", 1);
+    LogEncWeightSwitch();
+    ProcessCancelExit();
 }
 
 string descF22 = "Сделать доступными все возможные рецепты алхимии";
@@ -1363,8 +1304,7 @@ void CalculateInfoDataF31()
     mc = GetMainCharacter();
     SetRandSelfSkill(mc, 100, 100);
     SetRandShipSkill(mc, 100, 100);
-    mc.rank = 20;
-    Event("PlayerLevelUp");
+    SetPCharRank(20);
     LAi_SetHP(mc, 250.0, 250.0);
 
     mc.Ship.Type = GenerateShipExt(SHIP_FRIGATE, true, mc);
@@ -1445,8 +1385,7 @@ void CalculateInfoDataF32()
     mc = GetMainCharacter();
     SetRandSelfSkill(mc, 60, 85);
     SetRandShipSkill(mc, 60, 85);
-    mc.rank = 22;
-    Event("PlayerLevelUp");
+    SetPCharRank(22);
     LAi_SetHP(mc, 250.0, 250.0);
 
     // mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, mc);
@@ -1588,8 +1527,7 @@ void CalculateInfoDataF33()
 
     /*SetRandSelfSkill(mc, 50, 85);
     SetRandShipSkill(mc, 50, 85);
-    mc.rank = 15;
-    Event("PlayerLevelUp");
+    SetPCharRank(15);
     LAi_SetHP(mc, 250.0, 250.0);
     mc.Ship.Type = GenerateShipExt(SHIP_CORVETTE, true, mc);    
     SetBaseShipData(mc);

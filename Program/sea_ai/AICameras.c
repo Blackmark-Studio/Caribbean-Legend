@@ -31,12 +31,7 @@ void SetPerspectiveSettings()
 
 float CalcSeaPerspective()
 {
-    float fCamPerspAdj = 0.0;
-    //fCamPerspAdj = SEA_CAM_PERSP / DEFAULT_CAM_PERSP_DEN;
-	// belamour
-	float fSCP = sti(InterfaceStates.SEACAMPERSP)/100.0;
-	fCamPerspAdj = fSCP / DEFAULT_CAM_PERSP_DEN;
-    return (DEFAULT_CAM_PERSP + fCamPerspAdj);
+    return DEFAULT_CAM_PERSP;
 }
 
 void CreateSeaCamerasEnvironment()
@@ -152,8 +147,8 @@ void CreateSeaCamerasEnvironment()
 	Crosshair.MaxDeltaHeight = 2.0;
 	
 	Crosshair.MaxTargetDeltaDist = 10.0;
-	Crosshair.TargetBoxIncreaseWidth = 2.2;
-	Crosshair.TargetBoxIncreaseLength = 1.8;
+	Crosshair.TargetBoxIncreaseWidth = 3.5;
+	Crosshair.TargetBoxIncreaseLength = 3.1;
 
 	SendMessage(&AISea, "la", AI_MESSAGE_SET_CAMERAS_ATTRIBUTE, &SeaCameras);
 
@@ -421,14 +416,22 @@ void FireCamera_UpdateAttributes()
 	float fCrewExp = stf(GetCrewExp(pchar, "Cannoners"));
 	float kCrewExp = Bring2Range(0.8, 1.2, 1.0, 100.0, fCrewExp);
 	
+	float fCannonPerk = 1.0; // увеличиваем скорость сведения от перка
+	if (CheckOfficersPerk(pchar, "CannonProfessional")) fCannonPerk += PERK_VALUE_CANNON_PROFESSIONAL;
+	float fMangarosa = 1.0; // увеличиваем скорость сведения от удара прибоя
+	if (CheckAttribute(pchar, "questTemp.Mangarosa.Potion.Power")) fMangarosa = 1.15;
+
 	//скорость движения прицельных кружков
-	Crosshair.DistSpeed = Bring2Range(45.0, 80.0, 0.01, 1.0, fCannons) * kCrewExp; //дистанция
-	Crosshair.AySpeed = Bring2Range(0.1, 0.15, 0.01, 1.0, fCannons) * kCrewExp; //угол (горизонталь)
-	Crosshair.HeightSpeed = Bring2Range(4.5, 8.0, 0.01, 1.0, fCannons) * kCrewExp; //высота
+	Crosshair.DistSpeed = Bring2Range(45.0, 80.0, 0.01, 1.0, fCannons) * kCrewExp * fCannonPerk * fMangarosa; //дистанция
+	Crosshair.AySpeed = Bring2Range(0.1, 0.15, 0.01, 1.0, fCannons) * kCrewExp * fCannonPerk * fMangarosa; //угол (горизонталь)
+	Crosshair.HeightSpeed = Bring2Range(4.5, 8.0, 0.01, 1.0, fCannons) * kCrewExp * fCannonPerk * fMangarosa; //высота
 	
 	//плотность сведения
-	Crosshair.Density = Bring2Range(0.2, 0.65, 0.01, 1.0, fAccuracy); //0 - не сводятся, 1 - в точку.
-	Crosshair.DensitySpeed = Bring2Range(0.45, 2.5, 0.01, 1.0, fAccuracy) * kCrewExp; //скорость досведения
+	float maxDensity = 0.65;
+	if (IsEquipCharacterByItem(pchar, "hat4")) maxDensity = 0.75;
+
+	Crosshair.Density = Bring2Range(0.2, maxDensity, 0.01, 1.0, fAccuracy); //0 - не сводятся, 1 - в точку.
+	Crosshair.DensitySpeed = Bring2Range(0.45, 2.5, 0.01, 1.0, fAccuracy) * kCrewExp * fMangarosa; //скорость досведения
 	
 	//флуктуации - коэффициенты влияния. Расчитываются на основе дельты при превышении порога
 	Crosshair.FluctuationDistToDist = Bring2Range(0.0022, 0.0007, 0.01, 1.0, fAccuracy);

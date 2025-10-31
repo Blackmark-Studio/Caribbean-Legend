@@ -797,11 +797,12 @@ void Whr_WindChange()
 	
 	fWeatherAngle = stf(Weather.Wind.Angle);
 	fWeatherSpeed = stf(Weather.Wind.Speed);
-	
-	if(sti(InterfaceStates.DIRECTSAIL) != 0 && bSeaActive && !bAbordageStarted)  // belamour по чекбоксу
-	{	
-		CheckIslandChange();
-	}
+
+	// убрал пока
+	// if(sti(InterfaceStates.DIRECTSAIL) != 0 && bSeaActive && !bAbordageStarted)  // belamour по чекбоксу
+	// {
+		// CheckIslandChange();
+	// }
 
     Event("event_WindChange");
 }
@@ -936,6 +937,8 @@ void Whr_TimeUpdate()
 		return;
 	}
 	float fTime 			= GetEventData();
+    if (makeint(fTime) == 24)  fTime -= 24.0; // ugeen фикс перескакивания времени в 24 часа
+
 	Environment.time 		= fTime;
 	int nOldHour 			= sti(Environment.date.hour);
 	int nNewHour 			= makeint(fTime);
@@ -954,12 +957,16 @@ void Whr_TimeUpdate()
 	
 	Whr_DebugLog("Whr_TimeUpdate : Hour : " + nNewHour + " min : " + nNewMin + " sec : " + nNewSec + " oldHour : " + nOldHour);
 	
-	if(nNewHour < nOldHour)
+	if (nNewHour < nOldHour)
 	{
 		AddDataToCurrent(0,0,1);
 		Weather.Time.time = GetTime();
 	}
-	if( iBlendWeatherNum < 0 ) return;
+
+    if (bSeaActive && nOldHour != nNewHour)
+        Event("NextHour", "l", nNewHour);
+
+	if(iBlendWeatherNum < 0) return;
 	//navy --> Rain
 	int iTmp, iTime;
 	bool bRain = false;

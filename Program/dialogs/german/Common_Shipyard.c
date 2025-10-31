@@ -2358,7 +2358,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2593,7 +2593,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Skill Check Failed (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Ich garantiere, es wird auftauchen. Keine Preisänderung. Wie wär's? Ich warte nicht lange.";
 				link.l1 = "Gut, in Ordnung, in Ordnung. Ich nehme es.";
 				link.l1.go = "IslaMona_7";
@@ -2601,7 +2601,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "In Ordnung, wir nehmen hundert. Neunhundert. Ich gehe nicht tiefer. Frag mich nicht danach.";
 				link.l1 = "Und ich werde nicht. Ich stimme zu.";
@@ -2615,7 +2615,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Skill Check Failed (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Es ist mir egal, ob du eine lebendige Dirne bestellst. Neunhundert.";
 				link.l1 = "Gut, gut, gut. Ich nehme es.";
 				link.l1.go = "IslaMona_7";
@@ -2623,7 +2623,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Bist du sicher? Du wirst es nicht vergessen? Gut, lass uns noch hundert abziehen. Aber das ist es!";
 				link.l1 = "Ich werde es nicht vergessen. Abgemacht!";
@@ -2645,7 +2645,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Skill Check Failed (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "Kinder von Bordellmädchen zählen nicht, "+pchar.name+". Ich habe genug von dir. Tausend Dublonen auf das Fass, oder wir sagen auf Wiedersehen.";
 				link.l1 = "Was meinst du, sie sind es nicht? Ah ja. Ich stimme zu, du bist ein Schurke.";
@@ -2654,7 +2654,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Ich wusste nicht, dass du Kinder hast. Und dass die Dinge so schlecht stehen. Gut, beschwere dich nicht. Siebenhundert. Es ist fast ein Verlust.";
 				link.l1 = "Ich werde es nicht vergessen. Es ist ein Deal!";

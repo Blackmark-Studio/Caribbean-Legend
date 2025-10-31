@@ -31,7 +31,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
 			{
 				dialog.text = "Se non sbaglio, lei è "+GetSexPhrase("quel famoso capitano","quella famosa capitana")+" che ha aiutato i miei uomini nella missione a Sint Maarten? "+TimeGreeting()+"!";
-				link.l1 = ""TimeGreeting()+", Colonnello. Sì, sarei io.";
+				link.l1 = TimeGreeting()+", Colonnello. Sì, sarei io.";
 				link.l1.go = "FMQN";
 				break;
 			}
@@ -68,31 +68,8 @@ void ProcessDialogEvent()
 		case "guardoftruth_4":
 			dialog.text = "L'ho fatto... e lui ha iniziato a ridere in faccia a me. Ma non mi importava davvero dei suoi nascondigli. Rollie il Cap è stato impiccato e questa è la cosa più importante.";
 			link.l1 = "Capisco. Grazie per il tuo racconto e il tuo tempo, Colonnello. Addio...";
-			link.l1.go = "guardoftruth_5";
-		break;
-		
-		case "guardoftruth_5":
-			DialogExit();
-			npchar.quest.utensil = "true";
-			AddQuestRecord("Guardoftruth", "24");
-			Island_SetReloadEnableGlobal("Dominica", true);//patch-7
-			// заполняем сундук
-			pchar.GenQuestBox.Shore27 = true;
-			pchar.GenQuestBox.Shore27.box1.money = 30000;
-			pchar.GenQuestBox.Shore27.box1.items.gold_dublon = 100;
-			pchar.GenQuestBox.Shore27.box1.items.chest = 1;
-			pchar.GenQuestBox.Shore27.box1.items.icollection = 1;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry40 = 15;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry41 = 22;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry42 = 8;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry43 = 20;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry44 = 33;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry45 = 16;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry46 = 58;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry35 = 1; // кадило
-			pchar.quest.GuardOT_finddominicachest.win_condition.l1 = "item";
-			pchar.quest.GuardOT_finddominicachest.win_condition.l1.item = "jewelry35";
-			pchar.quest.GuardOT_finddominicachest.function = "GuardOT_DominicaChest";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("GuardOT_Fox_DlgExit");
 		break;
 		
 		case "terrapin":

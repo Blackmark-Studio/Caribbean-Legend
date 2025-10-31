@@ -1,3 +1,19 @@
+void VPVL_Start()
+{
+	SetQuestHeader("VPVL");
+	AddQuestRecord("VPVL", "1");
+	pchar.questTemp.VPVL_Start = true;
+	
+	sld = GetCharacter(NPC_GenerateCharacter("VPVL_Lea_girl", "women_16", "woman", "towngirl", 10, ENGLAND, -1, false, "soldier"));
+	sld.name = StringFromKey("Neutral_17");
+	sld.lastname = StringFromKey("Neutral_18");
+	ChangeCharacterAddressGroup(sld, "FortFrance_town", "goto", "goto26"); 
+	LAi_SetStayType(sld); 
+	sld.dialog.Filename = "Quest\MiniEvents\VPVL_dialog.c"; 
+	sld.dialog.currentnode = "First Time"; 
+	LAi_SetImmortal(sld, true);
+	AddLandQuestMark(sld, "questmarkmain");
+}
 
 // andre39966
 bool VPVL_QuestComplete(string sQuestName, string qname)
@@ -10,20 +26,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 	bool condition = true;
 	
 	// Квест "В плену великого улова" ==>
-	
-	if (sQuestName == "VPVL_Gegerate_Lea") {
-		sld = GetCharacter(NPC_GenerateCharacter("VPVL_Lea_girl", "women_16", "woman", "towngirl", 10, ENGLAND, -1, false, "soldier"));
-		sld.name = StringFromKey("Neutral_17");
-		sld.lastname = StringFromKey("Neutral_18");
-		ChangeCharacterAddressGroup(sld, "FortFrance_town", "goto", "goto26"); 
-		LAi_SetStayType(sld); 
-		sld.dialog.Filename = "Quest\MiniEvents\VPVL_dialog.c"; 
-		sld.dialog.currentnode = "First Time"; 
-		LAi_SetImmortal(sld, true);
-		AddLandQuestMark(sld, "questmarkmain");
-	}
-
-	else if (sQuestName == "VPVL_Start") {
+	if (sQuestName == "VPVL_Start") {
 		pchar.quest.VPVL_SetFollowAfterLoad.win_condition.l1 = "location";
 		pchar.quest.VPVL_SetFollowAfterLoad.win_condition.l1.location = "Shore39"; 
 		pchar.quest.VPVL_SetFollowAfterLoad.win_condition = "VPVL_SetFollowAfterLoad";
@@ -304,6 +307,12 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		pchar.quest.RemovePierOnExit.win_condition.l1.location = pchar.location;
 		pchar.quest.RemovePierOnExit.win_condition = "VPVL_RemovePierFromTavern";
 		SetTimerCondition("VPVL_PierSpawnInTheCity", 0, 0, 1, false);
+		
+		CloseQuestHeader("VPVL");
+		
+		pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+		Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+		if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 	}
 	
 	else if (sQuestName == "VPVL_RemovePierFromTavern") {

@@ -26,7 +26,7 @@ Caleuche_25 { }
 Caleuche_26 {Statek widmo na horyzoncie!}
 Caleuche_27 {Baltazar}
 Caleuche_28 {de Cordes}
-Caleuche_29 {Latające Serce}
+Caleuche_29 { }
 Caleuche_30 {Czujesz się bardziej zręczny}
 Caleuche_31 {Czujesz się solidniejszy}
 Caleuche_32 {Czujesz się silniejszy}
@@ -36,5 +36,5 @@ Caleuche_35 {Czujesz się bardziej pewny siebie}
 Caleuche_36 {Czujesz inspiracje}
 Caleuche_37 {Statek widmo jest na horyzoncie!}
 Caleuche_38 {Zemdlałeś z powodu ran...}
-Caleuche_39 {Alonso}
+Caleuche_39 { }
 Caleuche_40 { }

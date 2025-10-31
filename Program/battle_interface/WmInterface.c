@@ -657,8 +657,8 @@ void ControlsMapDesc()
 		sAttrB = "Con"+numLine+"Back";
 		sAttr = "Con"+numLine;
 		sAttrDes = "Con"+numLine+"desc";
-		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("MapView");
-		BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("MapView","ControlsNames.txt");
+		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("WMapDrawCircle");
+		BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("WMapDrawCircle","ControlsNames.txt");
 		BattleInterface.textinfo.(sAttrB).text = "1";
 		
 		// выйти в море

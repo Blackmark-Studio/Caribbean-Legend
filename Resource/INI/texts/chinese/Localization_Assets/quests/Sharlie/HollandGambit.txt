@@ -3,13 +3,13 @@ HollandGambit_2 {Ridderbok}
 HollandGambit_3 {探索模式: 计时器延长。 完成任务!}
 HollandGambit_4 {Miguel}
 HollandGambit_5 { }
-HollandGambit_6 {Mirage}
+HollandGambit_6 { }
 HollandGambit_7 {探索模式: 任务持续时间加倍}
-HollandGambit_8 {Valkyrie}
+HollandGambit_8 { }
 HollandGambit_9 {"Valkyrie (瓦尔基里号)" 出现在地平线上!}
 HollandGambit_10 {Hainrih}
 HollandGambit_11 {Claus}
-HollandGambit_12 {Meifeng}
+HollandGambit_12 { }
 HollandGambit_13 {这里是洞穴。 我应该在这里寻找所罗门的藏匿处。}
 HollandGambit_14 {Harry}
 HollandGambit_15 {Fletcher}
@@ -20,7 +20,7 @@ HollandGambit_19 {Rodriges}
 HollandGambit_20 {Zeekalf}
 HollandGambit_21 {Charlie}
 HollandGambit_22 {Knippel}
-HollandGambit_23 {Alonso}
+HollandGambit_23 { }
 HollandGambit_24 { }
 HollandGambit_25 {Abigail 死于热病!}
 HollandGambit_26 {Charlie Knippel 因伤死亡!}
@@ -43,3 +43,4 @@ HollandGambit_42 {你因受伤而昏厥...}
 HollandGambit_43 {你未将钱还给 Abigail, 使她沦为乞丐}
 HollandGambit_44 {Chavinavy}
 HollandGambit_45 { }
+HollandGambit_46 { }

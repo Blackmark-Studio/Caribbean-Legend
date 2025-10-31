@@ -218,17 +218,7 @@ void ProcessDialogEvent()
 		
 		case "Naemnik_29":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
-			LAi_SetPlayerType(pchar);
-			
-			LAi_SetWarriorType(npchar);
-			npchar.lifeday = 0;
-			LAi_CharacterDisableDialog(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PEACE);
-			
-			AddQuestRecord("GS", "7");
-			CloseQuestHeader("GS");
+			AddDialogExitQuestFunction("Naemnik_29");
 			
 			AddSimpleRumourCity("听说港口主管被发现死在自己家里。 在他身上发现了文件, 证明他参与了船只失踪事件。 想想看 —这对我们镇是多大的耻辱... ", "Beliz", 30, 1, "");
 			AddSimpleRumourCity("你听到消息了吗? 有人潜入港口主管的房子, 杀了卫兵, 把他解决了。 在尸体上发现了笔记, 上面有失踪船只的航线 —是他自己的笔迹! 王室的仆人, 却是真正的叛徒! 罪有应得! 这些年总督在哪里? ", "Beliz", 30, 1, "");

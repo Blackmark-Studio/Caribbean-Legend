@@ -20,9 +20,17 @@ void LAi_type_officer_Init(aref chr)
 	chr.chr_ai.type = LAI_TYPE_OFFICER;
 	chr.chr_ai.type.bottle = rand(10)+2;
 	chr.chr_ai.type.checkTarget = 0;
+
+	if (CheckAttribute(chr, "ai_backup"))
+	{
+		chr.chr_ai.tmpl = chr.ai_backup.back_tmpl;
+		if (CheckAttribute(chr, "ai_backup.musketerdistance")) chr.musketerdistance = chr.ai_backup.musketerdistance;
+		DeleteAttribute(chr, "ai_backup");
+	}
+
 	if(CheckAttribute(chr, "chr_ai.tmpl"))
 	{
-		if(bCabinStarted && or(Get_My_Cabin() == "My_Cabin_Medium2", Get_My_Cabin() == "My_Cabin"))
+		if(bCabinStarted && NeedCabinTmpl())
 		{
 			chr.OldCabinTmpl = chr.chr_ai.tmpl;
 			chr.chr_ai.tmpl = LAI_TMPL_STAY;
@@ -316,7 +324,7 @@ void LAi_type_follower_StartDialog(aref chr, aref by)
 void LAi_type_officer_EndDialog(aref chr, aref by)
 {
 	LAi_CharacterRestoreAy(chr);
-	if(bCabinStarted && or(Get_My_Cabin() == "My_Cabin_Medium2", Get_My_Cabin() == "My_Cabin"))
+	if(bCabinStarted && NeedCabinTmpl())
 	{
 		chr.chr_ai.tmpl = LAI_TMPL_STAY;
 		return;

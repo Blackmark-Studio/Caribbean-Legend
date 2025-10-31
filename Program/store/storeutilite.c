@@ -313,7 +313,7 @@ bool GetStoreGoodsUsed(ref _refStore,int _Goods)
 */
 int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int _qty)
 {
-	float _TradeSkill = GetSummonSkillFromNameToOld(chref,SKILL_COMMERCE); // 0..10.0
+	float _TradeSkill = GetSkillAfterPenalty(chref,SKILL_COMMERCE); // 0..100.0
 	aref refGoods;
 	string tmpstr = Goods[_Goods].name;
 	int basePrice = MakeInt(Goods[_Goods].Cost);
@@ -359,20 +359,20 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	
 	if(_PriceType == PRICE_TYPE_BUY) // цена покупки товара игроком
 	{
-		skillModify = 1.25 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55); 
+		skillModify = 1.29 - 0.17 * pow(makefloat(_TradeSkill) / 100.0, 0.55); 
 		if(tradeType == T_TYPE_CANNONS) cModify = 3.0 + MOD_SKILL_ENEMY_RATE/5.0;
 		
-		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.9; }
-		else if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify *= 0.95; }
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.92; }
+		else if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify *= 0.96; }
 		
-		if(skillModify < 1.01) skillModify = 1.01;
+		if(skillModify < 1.05) skillModify = 1.05;
 	}
 	else	// цена продажи товара игроком
 	{
-		skillModify = 0.75 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55);  
+		skillModify = 0.73 + 0.16 * pow(makefloat(_TradeSkill) / 100.0, 0.55);  
 		
-		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.1;}
-		else if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify *= 1.05; }
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.08;}
+		else if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify *= 1.04; }
 		
 		skillModify *= 1.0 + GetShipTraitTransaction(chref, _refStore);
 						
@@ -380,7 +380,7 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 		{
 			costCoeff = stf(mc.Goods.(tmpstr).costCoeff);
 		}
-		if(skillModify > 0.99) skillModify = 0.99;
+		if(skillModify > 0.96) skillModify = 0.96;
 	}
 
 	// boal 23.01.2004 -->

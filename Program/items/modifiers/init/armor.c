@@ -9,13 +9,13 @@ bool InitArmorModifiers(ref item)
 	{
 		case "cirass1":
 		{
-			SetArmorDescriptors(item, ARMOR_HEAVY, ARMOR_MOLDED);
+			SetArmorDescriptors(item, ARMOR_HEAVY, ARMOR_STAMPS);
 			AddDescriptor(item, "Unremarkable", -1);
 		}
 		break;
 		case "cirass2":
 		{
-			SetArmorDescriptors(item, ARMOR_HEAVY, ARMOR_STAMPS);
+			SetArmorDescriptors(item, ARMOR_HEAVY, ARMOR_MOLDED);
 			AddDescriptor(item, "HeartDefence", -1);
 		}
 		break;
@@ -73,7 +73,7 @@ bool InitArmorModifiers(ref item)
 		break;
 		case "suit4":
 		{
-			SetArmorDescriptors(item, ARMOR_MEDIUM, ARMOR_LEATHER);
+			SetArmorDescriptors(item, ARMOR_MEDIUM, ARMOR_PLATES);
 			AddDescriptor(item, "Unremarkable", -1);
 			AddSpecialDescriptor(item, "LamportSuit");
 			AddDescriptor(item, "Special", -1);
@@ -84,6 +84,7 @@ bool InitArmorModifiers(ref item)
 			SetArmorDescriptors(item, ARMOR_LIGHT, ARMOR_FABRIC);
 			AddDescriptor(item, "Fancy", -1);
 			AddSpecialDescriptor(item, "FrenchAdmiralSuit");
+			SetModifier(item, SPECIAL_TYPE + SPECIAL_C, 1);
 		}
 		break;
 		case "cirass5":

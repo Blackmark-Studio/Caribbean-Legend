@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, Bootsmann}
 QuestsUtilite_267 {Gib mir zwanzig Wimpern! Nein - dreißig! Jeden einzelnen!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, Reisender}
 QuestsUtilite_269 {Kaimane greifen keine Menschen an. Nur wenn sie sehr hungrig sind. Dieser hier ist offensichtlich satt...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {Das Gift hat nicht gewirkt!}
 QuestsUtilite_273 {Vergiftet durch Taino-Gift!}
 QuestsUtilite_274 {@<GetFullName(chref)> vergiftet durch Taino-Gift}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {Vulkan}
 QuestsUtilite_326 {Heliadon}
 QuestsUtilite_327 {Hephaistos}
 QuestsUtilite_328 {Zenturio}
+QuestsUtilite_329 {Die Piraten sind besiegt, die Gewässer sind sicherer geworden.}
+QuestsUtilite_330 {Die Piraten sind stärker geworden, das Meer ist gefährlicher geworden.}

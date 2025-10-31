@@ -14,18 +14,12 @@ Perception
 {
 Az éleslátó kalózok lehetnek mesterlövészek, titkosügynökök és ágyúsok.~Hatással van a 'Pontosság' és a 'Lopakodás' képességekre.
 }
-Agility
-{
-Az agilis kalózok gyakran a legjobb jelöltek a Vanguard vagy a Boatswain szerepekre, a beszállás az erôsségük.Hatással van a 'Könnyûfegyverekre', 'Közepes fegyverekre', 'Megszállásra', és a 'Lôfegyverekre'.~Meghatározza az energia maximális mennyiségét.
-}
+Agility {Coordination of movements and dexterity of hands. ~ Affects: 'Boarding', 'Light Weapons', 'Medium Weapons', 'Pistols and Muskets', and the amount of energy gained per rank.}
 Charisma
 {
 A karizmatikus kalózok természetes vezetôk, tárgyalók és pénztárosok. Egy született vezetônek nincs szüksége erôszakra ahhoz, hogy árut vegyen el egy kereskedôtôl, mindent odaadnak neki, anélkül, hogy harcba szállnának. A legjobb matrózok követik ôt, és a legszebb nôk várják az érkezését minden kikötôben.~Hatással van a 'Vezetésre' és a 'Kereskedésre'.Meghatározza, hogy hány tisztet vehet fel (A*2).
 }
-Intellect
-{
-Az okos kalózok gyorsan tanulnak, és a karrierlehetôségek széles skáláján válogathatnak: Sebészek, ágyúsok és navigátorok.~A 'Kereskedelem', az 'Ágyúk' és a 'Navigáció' területére hat."Meghatározza, hogy milyen gyorsan szerzel szinteket és perkeket.
-}
+Intellect {Innate tendencies and aptitudes, wit, and the ability to quickly adapt to situations. ~ Affects 'Commerce', 'Gunnery', 'Navigation', and the amount of energy gained per rank.}
 Endurance
 {
 A rugalmas kalózok ácsként és sebészként tündökölnek.~Hatással van a 'Javításra' és a 'Védelemre'.Ugyanaz, mint (P), meghatározza a maximális HP-t és a maximális készletkapacitást.
@@ -36,27 +30,45 @@ A szerencsés kalózok tökéletes lövészek, szerencsejátékosok és kalandor
 }
 Crit
 {
-A kritikus találat elérésének alapvalószínûsége a felszerelt tárgyak, a perkek és a statisztikák kombinációjától függ.~(S) stat határozza meg a kritikus közelharci támadás esélyét.(S) és (I) statisztikák meghatározzák a kritikus lövés esélyét - de csak a magas minôségû lôfegyverek esetében.~Az ellenség felszerelése és perkjei megváltoztathatják a kritikus találat esélyét.
+Base chance to inflict a critical hit or shot on the enemy.
+~
+Depends on S and P.
+~
+Perks and equipment can increase this chance.
 }
 CharDefence
 {
-A hideg fegyverek / lôfegyverek / ellenséges kritikus találat elleni védelem alapmutatói~A teljesítményt a személyes képességek és a felszerelés befolyásolja~Nem igazodnak az ellenség képességeihez és felszereléséhez.
+Base Damage Protection stats. Reduce all incoming damage by a specific percentage.
+ ~
+ These values are affected by personal Perks and equipment.
 }
 FencingL
 {
-Könnyû pengék, fóliák és hasonlók kezelésének képessége. (R*0,9+I*0,1)
+Skill of wielding light blades, foils and the like.
+ (R*0.9+I*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 FencingS
 {
-Közepes, mindenre kiterjedô, kiegyensúlyozott pengék, mint például a szablyák, kezelésének képessége, amelyekhez erô és ügyesség egyaránt szükséges. (P*0,6+R*0,4)
+Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility.
+ (P*0.6+R*0.4)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 FencingH
 {
-Nehéz fegyverek, mint például széles kardok és fejszék kezelésének képessége. Nagy fizikai erôt igényel. (P*0,9+E*0,1)
+Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength.
+ (P*0.9+E*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
 Pistol
 {
-Mindenféle lôfegyver használatának képessége.(R*0.4+S*0.6)
+Skill of using all kinds of firearms.
+ (R*0.4+S*0.6)
+ ~
+ Affects damage and reloading speed.
 }
 Fortune
 {
@@ -80,7 +92,18 @@ Gyorsan töltsd meg az ágyút, tekerd fel, és amíg még a szalvéták visszha
 }
 Sailing
 {
-Az a képesség, hogy egy hajót viharokon és sûrû ködön át tudj vezetni. A navigációs mûszerek használatának és a flották irányításának képessége. Még a legnagyobb és legfélelmetesebb hajó is úgy repül, mint egy madár, és könnyen engedelmeskedik egy tapasztalt kapitány biztos kezének.Az érzékeléstôl és a tanulhatóságtól függ (I*0.2+T*0.8)~Egy bizonyos sebességû hajó irányításához megfelelô minimális Navigációs szint szükséges:Az 1. sebességhez 95a 2. sebességhez 80a 3. sebességhez 65a 4. sebességhez 45az 5. sebességhez 25a 6. sebességhez 05Az elégtelen navigáció minden képesség és hôsjellemzô esetében büntetést eredményez. Minél nagyobb a különbség az aktuális és a szükséges navigációs érték között, annál erôsebbek a büntetések.
+The ability to helm a vessel in any conditions, use instruments and command a squadron. Even the most capricious and unwieldy ship will obey the steady hand of an experienced skipper.
+ Depends on 'Perception' and 'Talent' (I0.2 + T0.8)
+ ~
+ To command a vessel of a given rate a corresponding minimum Navigation level is required:
+ rate 1 requires 90
+ rate 2 requires 70
+ rate 3 requires 55
+ rate 4 requires 40
+ rate 5 requires 20
+ rate 6 requires 01
+ ~
+ A lack of Navigation leads to penalties to all the hero's skills and attributes. The greater the difference between the current and required Navigation value, the stronger the penalties.
 }
 Repair
 {
@@ -88,7 +111,10 @@ Amikor az ellenség lövedékek sorozatával ostromolja a hajódat, szétrepeszt
 }
 Grappling
 {
-A hajó összehangolása az ellenséges hajóval, a horgok megdobása, hogy a reszketô ellenség fedélzetére léphess, a fedélzet lesöprése és a hajó elfoglalása jól megérdemelt zsákmányként - ez nagy ügyességet és tapasztalatot igényel, de a zsákmány biztosan kárpótol minden fáradságért. (R*0,7+T*0,3)
+Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved prize — this requires great agility and experience, but the loot will surely make up for all the effort.
+ (R*0.7+T*0.3)
+ ~
+ Affects boarding distance.
 }
 Defence
 {
@@ -110,25 +136,46 @@ Attention_abilities
 {
 Figyelem!Egyes képességek nem feltétlenül állnak rendelkezésrebizonyos típusú fôszereplôk vagy tisztek számára.
 }
-Personal_abilities {Perks, amelyek a karakterre összpontosítanak.}
+Personal_abilities
+{
+Perks that expand the character’s personal abilities. You gain progress by leveling up personal skills.
+ ~
+ Upon reaching a threshold, you gain a new personal Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the development tree.
+}
 Ship_abilities
 {
-Perkek, amelyek a hajóra összpontosítanak.A felbérelt tisztek a legtöbbjükkel foglalkozhatnak, hagyva, hogy a kapitány rangsoroljon.
+Perks that affect ship management. You gain progress by leveling up ship skills.
+ ~
+ Upon reaching a threshold, you gain a new ship Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the development tree.
+ ~
+ They can be inherited by the main character from officers assigned to ship positions who know their craft.
 }
 Abilities_available {A szám a fel nem osztott perk pontok mennyiségét jelzi.}
 Abilities_active {A szám a karakter által aktivált perkeket jelzi.}
 Rank
 {
-A rang azt jelzi, hogy a karakter milyen szinten van a játékban. A hôs tapasztalatával növekszik. Ahogy a hôs rangja nô, úgy nô az élete is egy, a kitartás értékén alapuló számmal.~A hôs rangjának növekedésével erôsebb ellenfelekkel találkozik, és gyakrabban talál jobb tárgyakat.
+Rank is an indicator of a character’s level of development in the game. You gain progress by leveling up skills.
+ ~
+ As the character’s Rank increases, their Health and Energy grow, and stronger enemies and new items begin to appear more often.
 }
 Life
 {
-A nulla HP a halált jelenti. Egy HP a lehetôségek világát jelenti.~(E) határozza meg, hogy hány bónusz HP-t kapunk minden egyes új szinten.
+HP — a measure of a character's resistance to physical damage. Zero means death, one means a world of possibilities.
+ ~
+ Value depends on P and E and grows with rank.
 }
 Health {Az életerô a karakter fizikai állapotának mutatója. Minden alkalommal csökken, amikor rövid idôn belül súlyosan megsebesülsz. Helyreáll, ha egy ideig elkerülöd a harcot, hogy a sebek megfelelôen begyógyuljanak. Súlyosan gyengítheti a statisztikákat és a képességeket, ha felügyelet nélkül hagyod.}
 Energy
 {
-Az energia egy létfontosságú paraméter, amely a hôs állóképességét diktálja a közelharc során, mivel minden támadás ebbôl merít. Egyszerûen fogalmazva, a harcban való részvétel kifárasztja a karaktert, és pihenésre van szükség az állóképesség helyreállításához.~(R) határozza meg a maximális energia mennyiségét.
+Energy - the pool of a character's physical endurance.
+ 
+  ~
+ 
+  All attacking actions and sprinting in melee consume Energy; during combat the character gets tired and needs a breather to recover.
+ 
+  ~
+ 
+  The Energy value depends on R and T and grows with rank.
 }
 Money {A pénz minden ember királya. Piaszterek, tallérok, guineák... Mi a különbség, ha mind folyékony pénz!}
 Reputation
@@ -141,7 +188,10 @@ Honor always tends to return to a neutral state.
 }
 Weight
 {
-A maximális súly, amit egy karakter cipelhet anélkül, hogy elveszítené a mozgási sebességét és egyéb büntetéseket kapna a képességeire.Függ a (P) és (E függvényében.).
+Weight is the maximum total mass of cargo a character can carry.
+ Depends on Power, Endurance, personal Perks, and active amulets.
+ ~
+ An overloaded character moves slower, suffers penalties, and cannot use fast travel.
 }
 Title {A cím azt jelzi, hogy a karakter mennyire hasznos az állam számára, amelyet szolgál.}
 NextExp
@@ -224,7 +274,7 @@ A klasszikus mód azoknak a játékosoknak alkalmas, akik a fôszereplô törté
 }
 SourceBase {Basic level}
 SourceAdmiral {Admiral}
-SourceOfficer {Acting Officer}
+SourceOfficer {Officer Bonus}
 SourceAccountant {Purser}
 SourceMangarosa {Mangarosa Potion}
 SourceHealth {Vitality Status}
@@ -233,3 +283,17 @@ SourceQuest {Unique situation}
 SourceAlco {Intoxicating}
 SourceOverload {Burdened}
 SourceNavyPenalty {Navigation Skill check failed}
+CritDamage
+{
+Critical damage multiplier. Applied after all modifiers.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+CritCharDefence
+{
+Total reduction of enemy critical damage.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+SourceSkill {Skill}
+SourceChickenGod {Blessing of Aruba}

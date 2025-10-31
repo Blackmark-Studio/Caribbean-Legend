@@ -433,8 +433,8 @@ int Whr_InitStdWeather( int		_index,
 		case "19 Hour" 			:
 			whr.Sun.Color 						= argb(  0,255,180, 85 );
 			whr.Sun.Ambient 					= argb(  0,113, 79, 54 );
+			whr.Fog.Color 						= argb(  0, 98, 82, 76 );
 			whr.Rain.DropsColor 				= argb( 60,255,255,255 );
-			                            
 			whr.Sun.Flares.f20 					= "0.2,1000.0,9,606060";
 		break;	
 

@@ -554,7 +554,7 @@ Ich habe Florian Shoke im Stich gelassen. Ich habe ihm nicht genug Kanonen gelie
 #TEXT	11
 Ich habe die Kanonen an Florian Shoke geliefert. Er hat versucht, mich in irgendwelche Spionagegeschäfte zu verwickeln, aber ich habe abgelehnt. Viel zu gefährlich.
 #TEXT	12
-Jetzt habe ich 250 Dublonen und einen neuen Auftrag von Florian Shoke. Ich muss mich nach Portobello schleichen und herausfinden, warum die Galeone Alcantara nicht in See sticht. Ich sollte auch herausfinden, was mit Sylvan Laforet, auch bekannt als Jaime Silicio, passiert ist.. 
+Jetzt habe ich 75 Dublonen und einen neuen Auftrag von Florian Shoke. Ich muss mich nach Portobello schleichen und herausfinden, warum die Galeone Alcantara nicht in See sticht. Ich sollte auch herausfinden, was mit Sylvan Laforet, auch bekannt als Jaime Silicio, passiert ist.. 
 #TEXT	13
 Verdammter Mist! Ich war zu unvorsichtig. Der verdammte Tavernenbesitzer hat die Wachen gerufen, sobald er den Namen Jaime Silicio hörte. Jetzt ist die ganze Stadt über meine Anwesenheit informiert. Ich muss mit leeren Händen zu Florian Shoke zurückkehren...
 #TEXT	14
@@ -1090,7 +1090,8 @@ Vier Monate, um Materialien zu sammeln, sind abgelaufen. Schade, dass ich es nic
 #QUEST renovate_fdm
 Instandsetzung des Geisterschiffs
 #TEXT   1
-Der Schiffskapitän der Isla Tesoro, Alexus, hat mich gebeten, die Materialien zu sammeln und ihm zu bringen, die er für die Instandsetzung des Geisterschiffs benötigt. Er braucht 150 Stück Eisenholz, 200 Behälter mit Harz, 170 Rollen Schiffsseide und 130 Lagen Hanfseile.
+Der Meisterschiffbauer von Isla Tesoro, Alexus, hat zugestimmt, das Geisterschiff umzubauen. Diese Restaurierung wird nicht nur sein Aussehen verändern, sondern es in jeder Hinsicht deutlich verbessern — veraltete und verschlissene Bauteile werden ersetzt und die Konstruktion um moderne Lösungen ergänzt.
+Das alles wird ein Vermögen kosten, und du musst außerdem die benötigten Materialien auftreiben und zu ihm bringen: je 150 Einheiten Bakaut, Seide, Taue und Harz.
 #TEXT   2
 @<sQty> von @<sGood> fehlen.
 #TEXT   3
@@ -2433,7 +2434,7 @@ Folke Deluc
 #TEXT   1
 While I was handling business in Saint-Pierre, Folke Deluc found himself behind bars once again, and predictably the cause was money. Damn him, how did he manage to rack up new debts in such a short time? The crew is grumbling: rescuing him a second time feels like too much. After the battle near Le François, my standing with the men has grown stronger, and my name now carries some weight on the island. I could try finding a new navigator at the tavern, but my conscience won't let me abandon Folke so easily. He deserves at least a chance to explain himself. I need to find out how he managed to land himself in debt again in just a few hours.
 #TEXT   2
-Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could make a profit off the navigator. He bought up all of Folke' debts across the French colonies. The total wasn't small - an impressive one hundred gold doubloons!
+Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could make a profit off the navigator. He bought up all of Folke' debts across the French colonies. The total wasn't small - an impressive 40 gold doubloons!
 #TEXT   3
 I paid the debt for my wayward navigator. Let the townsfolk laugh. I`m still sure I did the right thing.
 #TEXT   4

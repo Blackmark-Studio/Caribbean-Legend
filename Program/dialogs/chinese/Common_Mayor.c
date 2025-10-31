@@ -3084,9 +3084,9 @@ void ProcessDialogEvent()
 			//--> Jason 帆船赛
 		case "Regata":
 			// belamour legendary edition -->
-			if(sti(pchar.rank) < 20)
+			if(sti(pchar.rank) < 15)
 			{
-				notification("需要20级", "None");
+				Notification_Level(false, 15);
 				dialog.text = "啊, 太好了, 很高兴见到你, 船长! 我听说过你的才能, 但等你真正准备好再来吧。 ";
 				link.l1 = "是的, 当然。 如你所愿。 ";
 				link.l1.go = "exit";

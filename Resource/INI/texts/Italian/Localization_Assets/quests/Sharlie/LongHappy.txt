@@ -1,8 +1,8 @@
 LongHappy_1 {Per prendere decisioni sul matrimonio, USA L'OPZIONE PENSIERO AD ALTA VOCE}
 LongHappy_2 {L'abate Benoit è sbarcato!}
 LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> botti di rum e @<sti(pchar.questTemp.LongHappy.MarryMoney)> pesos.}
-LongHappy_4 {50 botti di rum, 20 barili di rum e 300.000 pesos.}
-LongHappy_5 {100 botti di rum, 50 barili di rum e 500 000 pesos.}
+LongHappy_4 {50 botti di rum, 20 barili di vino e 300.000 pesos.}
+LongHappy_5 {100 botti di rum, 50 barili di vino e 500 000 pesos.}
 LongHappy_6 {Ma prima di questo, devo organizzare una celebrazione presso la taverna di Saint-Pierre. Sbrigati!}
 LongHappy_7 {Ma prima di questo, devo organizzare una celebrazione sull' Isola del Tesoro. Sbrigati!}
 LongHappy_8 {In primo luogo, è necessario organizzare una celebrazione presso la taverna di Saint-Pierre!}
@@ -13,7 +13,7 @@ LongHappy_12 {Svensson}
 LongHappy_13 {Sperm Whale}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
-LongHappy_16 {Fortune}
+LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Qualche tempo è passato...@<NewStr()>La festa è in pieno svolgimento...}

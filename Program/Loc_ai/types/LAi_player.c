@@ -61,9 +61,9 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 				}
 				else
 				{
-			DoQuestFunctionDelay("LSC_underwaterDeathTimer", 0.1);
-		}
-		}
+                    DoQuestFunctionDelay("LSC_underwaterDeathTimer", 0.1);
+                }
+            }
 		}
 		else Log_SetEternalString("" + sti(chr.showTimer));
 	}

@@ -1,4 +1,4 @@
-float LAi_GunCalcDamage(aref attacker, aref enemy, string sBullet, string sType, int nShots)
+float LAi_GunCalcDamage(ref attacker, ref enemy, string sBullet, string sType, int nShots)
 {
 	float min = 10.0;
 	float max = 10.0;
@@ -27,7 +27,7 @@ float LAi_GunCalcDamage(aref attacker, aref enemy, string sBullet, string sType,
 }
 
 //Расчитать полученный опыт при попадании из пистолета - evganat - переделал
-float LAi_GunCalcDamageExperience(aref attack, aref enemy, float dmg, bool isHeadShot)
+float LAi_GunCalcDamageExperience(ref attack, ref enemy, float dmg, bool isHeadShot)
 {
 	float hp = stf(enemy.chr_ai.hp);
 	if(dmg > hp)
@@ -38,12 +38,12 @@ float LAi_GunCalcDamageExperience(aref attack, aref enemy, float dmg, bool isHea
 	return LAi_GunCalcExperience(attack, enemy, exp);
 }
 
-float LAi_GunCalcKillExperience(aref attack, aref enemy)
+float LAi_GunCalcKillExperience(ref attack, ref enemy)
 {
 	return LAi_GunCalcExperience(attack, enemy, 20.0);
 }
 
-float LAi_GunCalcExperience(aref attack, aref enemy, float exp)
+float LAi_GunCalcExperience(ref attack, ref enemy, float exp)
 {
 	int attackRank = sti(attack.rank);
 	int enemyRank = sti(enemy.rank);
@@ -63,7 +63,7 @@ float LAi_GunCalcExperience(aref attack, aref enemy, float exp)
 }
 
 //Расчитаем текущую скорость перезарядки пистолета
-float LAi_GunReloadSpeed(aref chr, string sType)
+float LAi_GunReloadSpeed(ref chr, string sType)
 {
 	float charge_dlt = LAI_DEFAULT_DLTCHRG;
 	if (CheckAttribute(chr, "chr_ai." + sType + ".charge_dlt"))
@@ -71,31 +71,28 @@ float LAi_GunReloadSpeed(aref chr, string sType)
 		charge_dlt = stf(chr.chr_ai.(sType).charge_dlt);
 	}
 
-	float skill = LAi_GetCharacterGunLevel(chr);
-	charge_dlt *= (1.0 + 0.3*skill);
-
 	aref landTable = CT_GetTable(chr, CT_LAND);
 	charge_dlt *= GetReloadSpeed(landTable, sType);
 	return charge_dlt;
 }
 
 //Начисление повреждений при попадании
-void LAi_ApplyCharacterFireDamage(aref attacker, aref enemy, int nEnemies, float fAimingTime, bool isHeadShot, int nShots)
+void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float fAimingTime, bool isHeadShot, int nShots)
 {
 	if (LAi_IsImmortal(enemy)) return; // Если неубиваемый, то нетрогаем его
 	if (GrimHatSecondary(enemy)) return;
 	if (TalismanMaria(enemy)) return;
 	string weaponType;
-	aref aTable = InitTableForFight(&attacker);
-	aref eTable = InitTableForFight(&enemy);
+	aref aTable = InitTableForFight(attacker);
+	aref eTable = InitTableForFight(enemy);
 
-	ref rItm = LAi_GetCurrentWeapon(&attacker, &weaponType, "range");
-	string sBullet = LAi_GetCharacterBulletType(&attacker, weaponType);              // получаем боеприпас
+	ref rItm = LAi_GetCurrentWeapon(attacker, &weaponType, "range");
+	string sBullet = LAi_GetCharacterBulletType(attacker, weaponType);              // получаем боеприпас
 	ref rAmmo = ItemsFromId(sBullet);
 	float damage = LAi_GunCalcDamage(attacker, enemy, sBullet, weaponType, nShots);  // базовый урон
 
 	//Аттака своей группы
-	if (!LAi_IsGroupDamagableEnemy(&attacker, &enemy)) return; // проверка ударов по своим
+	if (!LAi_IsGroupDamagableEnemy(attacker, enemy)) return; // проверка ударов по своим
 
 	if (stf(attacker.chr_ai.(weaponType).EnergyP) > 0.0)
 	{
@@ -106,75 +103,53 @@ void LAi_ApplyCharacterFireDamage(aref attacker, aref enemy, int nEnemies, float
 	float damageMtp = 1 + GetDamageMtp(&aTable, SHOT_STRIKE, weaponType); // множитель урона
 
 	GunpowderTester(attacker, &damageMtp, rAmmo);
-	ModifyGunDamageByPerks(&attacker, &enemy, &damageMtp, nEnemies);                    // перки, не вынесенные в модификаторы
+	ModifyGunDamageByPerks(attacker, enemy, &damageMtp, nEnemies);                    // перки, не вынесенные в модификаторы
 	ModifyGunDamageByAiming(fAimingTime, &damageMtp);                                   // прицеливание
-	ModifyGunDamageByQuestSituations(&attacker, &enemy, &damageMtp);                    // особые ситуации
-	ModifyDamageMtpByCrit(&attacker, &aTable, &eTable, weaponType, SHOT_STRIKE, &damageMtp); // крит попадание
-	if (isHeadShot) ModifyDamageMtpByHeadshot(&aTable, &enemy, weaponType, &damageMtp); // хедшот
+	ModifyGunDamageByQuestSituations(attacker, enemy, &damageMtp);                    // особые ситуации
+	ModifyDamageMtpByCrit(attacker, enemy, &aTable, &eTable, weaponType, SHOT_STRIKE, &damageMtp); // крит попадание
+	if (isHeadShot) ModifyDamageMtpByHeadshot(attacker, &aTable, enemy, weaponType, &damageMtp); // хедшот
 
 	if (!HasDescriptor(rAmmo, "PiercingAmmo")) damageMtp -= GetDamageReduction(&eTable); // вражеское снижение урона
 	damageMtp -= GetRangeDamageReduction(&eTable);                                      // вражеское снижение урона от огнестрела
 	int resultDamage = MakeInt(damage * func_fmax(0, damageMtp) + 0.5);                 // итого базовый урон * мультипликатор
 	if (resultDamage <= 0.0) return;
 
-	LAi_ApplyCharacterDamage(&enemy, resultDamage, "fire");
-	LAi_Achievments_ExtraDamage(&attacker, resultDamage);
+	LAi_ApplyCharacterDamage(enemy, resultDamage, "fire");
+	LAi_Achievments_ExtraDamage(attacker, resultDamage);
 
-	if (CheckAttributeEqualTo(&enemy,"model.animation", "man")) enemy.DamageFromShot = attacker.chr_ai.(weaponType).bullet;
+	if (CheckAttributeEqualTo(enemy,"model.animation", "man")) enemy.DamageFromShot = attacker.chr_ai.(weaponType).bullet;
 
-	LAi_CheckKillCharacter(&enemy); //Проверим на смерть
+	LAi_CheckKillCharacter(enemy); //Проверим на смерть
 	// яд таино // Addon 2016-1 Jason Пиратская линейка
-	if (IsCharacterEquippedArtefact(&attacker, "indian_poison")) MakeIndianPoisonAttack(&enemy, &attacker);
-	if (CheckAttribute(&attacker, "cheats.indian_poison")) MakeIndianPoisonAttack(&enemy, &attacker);
+	if (IsCharacterEquippedArtefact(attacker, "indian_poison")) MakeIndianPoisonAttack(enemy, attacker);
+	if (CheckAttribute(attacker, "cheats.indian_poison")) MakeIndianPoisonAttack(enemy, attacker);
 
-	bool isSetBlade = CheckAttribute(&enemy, "equip.blade");
-	if (isSetBlade) ApplyExpFromShot(&attacker, &enemy, fAimingTime, isHeadShot, damage); // расчёт опыта за урон
-	Perk_Sniper(&attacker, &enemy, sBullet, nShots);
-	if (!LAi_IsDead(&enemy)) return;
+	bool isSetBlade = CheckAttribute(enemy, "equip.blade");
+	Perk_Sniper(attacker, enemy, sBullet, nShots);
+	SoldiersHat(enemy);
+	bool isDead = LAi_IsDead(enemy);
+	if (isSetBlade) ApplyExpFromShot(attacker, enemy, isDead, isHeadShot, damage); // расчёт опыта за урон
+	if (!isDead) return;
 
-	Statistic_KillChar(&attacker, &enemy, "_g");
+	Statistic_KillChar(attacker, enemy, "_g");
 	Achievment_SetStat(27, 1);
-	LAi_SetResultOfDeath(&attacker, &enemy, isSetBlade);
+	LAi_SetResultOfDeath(attacker, enemy, isSetBlade);
 	if (fAimingTime >= 0.0)	pchar.chr_ai.kill_timer = BLI_KILL_MARKER_TIMER; // после убийства на короткое время меняем прицел
 }
 
 void ModifyGunDamageByPerks(ref attacker, ref enemy, ref damageMtp, int nEnemies)
 {
-	Perk_Preaim(&attacker, &enemy, &damageMtp);
-	Perk_LeadRain(&attacker, nEnemies, &damageMtp);
-	Perk_Kern(&attacker, &damageMtp);
+	Perk_Preaim(attacker, enemy, &damageMtp);
+	Perk_LeadRain(attacker, nEnemies, &damageMtp);
+	Perk_Kern(attacker, &damageMtp);
 }
 
 // Это можно было бы сделать модификаторами персонажей, но нужны уведомления
 // С появлением событий-на-персонаже можно будет убрать туда
 void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, float damageMtp)
 {
-	if(GetCharacterEquipByGroup(enemy, HAT_ITEM_TYPE) == "hat10")
-	{
-		ref hat10 = ItemsFromID("hat10");
-		if(CheckAttribute(hat10, "durability"))
-		{
-			
-			int durability = sti(hat10.durability);
-			if(durability < 2)
-			{
-				DeleteAttribute(hat10, "durability");
-				RemoveCharacterEquip(enemy, HAT_ITEM_TYPE);
-				SendMessage(enemy, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
-				RemoveItems(enemy, "hat10", 1)
-				GiveItem2Character(enemy, "hat10_part");
-				notification(StringFromKey("LAi_fightparams_2"), "ItemDestroy");
-			}
-			else
-			{
-				durability --;
-				hat10.durability = durability;
-			}
-		}
-		damageMtp -= 0.18;
-	}
 	// калеуче
-	if(IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3"))
+	if (IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3"))
 	{
 		damageMtp -= 0.25;
 	}
@@ -201,7 +176,7 @@ void ModifyGunDamageByQuestSituations(ref attacker, ref enemy, float damageMtp)
 	}
 }
 
-void ModifyDamageMtpByHeadshot(ref attackerTable, ref enemy, string weaponType, float damageMtp)
+void ModifyDamageMtpByHeadshot(ref attacker, ref attackerTable, ref enemy, string weaponType, float damageMtp)
 {
 	if (IsMainCharacter(enemy)) return; // ГГ не получает хедшотов
 
@@ -210,6 +185,7 @@ void ModifyDamageMtpByHeadshot(ref attackerTable, ref enemy, string weaponType, 
 
 	enemy.chr_ai.getheadshot = 0.1;
 	if (ShowCharString()) Log_Chr(enemy, XI_ConvertString("HeadShot"));
+	else if(IsMainCharacter(attacker)) log_info(XI_ConvertString("HeadShot"));
 }
 
 void ModifyGunDamageByAiming(float aimingTime, float damageMtp)

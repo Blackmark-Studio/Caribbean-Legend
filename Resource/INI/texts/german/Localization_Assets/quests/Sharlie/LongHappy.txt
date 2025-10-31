@@ -1,8 +1,8 @@
 LongHappy_1 {Um eine Entscheidung für eine Hochzeit zu treffen, BENUTZEN Sie die Option LAUTES DENKEN}
 LongHappy_2 {Abbot Benoit ist an Land gegangen!}
 LongHappy_3 {@<sti(pchar.questTemp.LongHappy.MarryRum)> Fässer Rum und @<sti(pchar.questTemp.LongHappy.MarryMoney)> Pesos.}
-LongHappy_4 {50 Fässer Rum, 20 Fässer Rum und 300 000 Pesos.}
-LongHappy_5 {100 Fässer Rum, 50 Fässer Rum und 500 000 Pesos.}
+LongHappy_4 {50 Fässer Rum, 20 Fässer Wein und 300 000 Pesos.}
+LongHappy_5 {100 Fässer Rum, 50 Fässer Wein und 500 000 Pesos.}
 LongHappy_6 {Aber vorher muss ich noch eine Feier in der Taverne von Saint-Pierre organisieren. Beeilen Sie sich!}
 LongHappy_7 {Aber vorher muss ich noch ein Fest auf der Isla Tesoro organisieren. Beeilt euch!}
 LongHappy_8 {Zuerst müssen Sie eine Feier in der Taverne von Saint-Pierre organisieren!}
@@ -13,7 +13,7 @@ LongHappy_12 {Svensson}
 LongHappy_13 {Pottwal}
 LongHappy_14 {Marcus}
 LongHappy_15 {Tyrex}
-LongHappy_16 {Fortune}
+LongHappy_16 { }
 LongHappy_17 {Steven}
 LongHappy_18 {Dodson}
 LongHappy_19 {Einige Zeit ist vergangen...@<NewStr()>Die Party ist in vollem Gange...}

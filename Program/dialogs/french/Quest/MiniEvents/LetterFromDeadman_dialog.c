@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Tu penses pouvoir entrer ici, insulter une dame, m’ignorer, et repartir d’ici entier, avec les doublons en plus ? On dirait que tu n’es pas très futé. Mais je ne vais pas déclencher une bagarre devant une femme. Voilà ce que je te propose : tu présentes tes excuses à Madame Caldera, tu prends tes doublons, et tu dégages d’ici. Sinon, je vais devoir t’apprendre les bonnes manières, finalement.";
 					link.l1.go = "Naemnik_5";
-					notification("Vérification réussie (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Pas assez d'or (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Eh bien, je suis prêt à pardonner tes manières brusques et même ton impolitesse envers moi. Mais si tu veux récupérer tes doublons et quitter cet endroit entier, il va falloir présenter tes excuses à Lady Caldera. Sinon, on verra bien qui manie mieux les armes. Et crois-moi, je ne porte pas la mienne pour faire joli.";
 					link.l1.go = "Naemnik_5";
-					notification("Vérification réussie (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Pas assez d'or (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "De toute évidence, tu n’es pas accablé par l’esprit si tu pensais que j’allais attendre mon tour. Et encore moins si tu croyais que je fermerais les yeux sur tous les ennuis que toi et les tiens avez causés à Lady Caldera.";

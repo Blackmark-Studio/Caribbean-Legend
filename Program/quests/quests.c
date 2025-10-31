@@ -1008,7 +1008,13 @@ string sQuestNameAfterReload = "_";
 void DoDeleteFakeLocation()
 {
 	DelEventHandler(EVENT_LOCATION_LOAD,"DoDeleteFakeLocation");
-	if(idxOldLocation!=-1)	DeleteAttribute(&Locations[idxOldLocation],"reload.fake1");
+	if(idxOldLocation!=-1)
+	{
+	//	aref aTempReload;
+	//	makearef(aTempReload, NullCharacter.id);
+	//	reload_locator_ref = aTempReload;
+		DeleteAttribute(&Locations[idxOldLocation],"reload.fake1");
+	}
 	if(sQuestNameAfterReload!="_")
 	{
 		CompleteQuestName(sQuestNameAfterReload, "");
@@ -1871,6 +1877,14 @@ void SetFunctionNPCDeathCondition(string _name, string _character, bool _again)
 	{
 		DeleteAttribute(Pchar, "quest."+_name+".again");
 	}
+}
+
+void SetFunctionMapEnterCondition(string _name, bool _again)
+{
+	PChar.quest.(_name).win_condition.l1 = "MapEnter";
+	PChar.quest.(_name).function = _name;
+	if (_again) PChar.quest.(_name).again = true;
+	else DeleteAttribute(PChar, "quest." + _name + ".again");
 }
 
 void SetFunctionLocatorCondition(string _name, string _location, string _group, string _locator, bool _again)

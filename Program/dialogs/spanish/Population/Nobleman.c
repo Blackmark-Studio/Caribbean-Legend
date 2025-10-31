@@ -330,26 +330,10 @@ void ProcessDialogEvent()
 		link.l1.go = "lombard_3";
 		break;
 
-	case "lombard_3":
-		DialogExit();
-		pchar.GenQuest.Noblelombard = "true" pchar.GenQuest.Noblelombard.Name = GetFullName(npchar);
-		pchar.GenQuest.Noblelombard.id = npchar.id;
-		pchar.GenQuest.Noblelombard.City = npchar.city;
-		pchar.GenQuest.Noblelombard.Money = 20000 + hrand(60) * 500;
-		pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money) * 0.3);
-		pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money) + sti(pchar.GenQuest.Noblelombard.Percent);
-		pchar.GenQuest.Noblelombard.Chance = hrand(9);
-		chrDisableReloadToLocation = true; // закрыть локацию
-		LAi_SetActorType(npchar);
-		LAi_RemoveLoginTime(npchar);
-		DeleteAttribute(npchar, "CityType"); // удалить признак фантома
-		FreeSitLocator(pchar.GenQuest.Noblelombard.City + "_tavern", "sit1");
-		LAi_ActorRunToLocation(npchar, "reload", "reload4_back", pchar.GenQuest.Noblelombard.City + "_tavern", "sit", "sit1", "Nobleman_lombardTavern", 10);
-		SetFunctionTimerCondition("Noblelombard_Over", 0, 0, 1, false); // таймер до конца суток
-		ReOpenQuestHeader("Noblelombard");
-		AddQuestRecord("Noblelombard", "1");
-		AddQuestUserData("Noblelombard", "sCity", XI_ConvertString("Colony" + pchar.GenQuest.Noblelombard.City));
-		AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+		case "lombard_3":
+			DialogExit();
+			pchar.GenQuest.Noblelombard.id = npchar.id;
+			AddDialogExitQuestFunction("Noblelombard_TookQuest");
 		break;
 
 	case "lombard_4":
@@ -390,15 +374,8 @@ void ProcessDialogEvent()
 
 	case "lombard_fail_1":
 		DialogExit();
-		LAi_CharacterDisableDialog(npchar);
-		npchar.lifeday = 0;
-		AddQuestRecord("Noblelombard", "4");
-		AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-		CloseQuestHeader("Noblelombard");
-		sld = characterFromId(pchar.GenQuest.Noblelombard.City + "_usurer");
-		DeleteAttribute(sld, "quest.noblelombard");
-		DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-		break;
+		AddDialogExitQuestFunction("Noblelombard_fail");
+	break;
 
 	case "lombard_5":
 		dialog.text = "¡Increíble! Me acabas de salvar, " + GetAddress_Form(NPChar) + "¡Nunca lo olvidaré! Te aseguro que todos tus gastos serán doblemente reembolsados. Ven a ver a nuestro banquero en tres meses. Abriré un depósito a tu nombre.";
@@ -414,14 +391,8 @@ void ProcessDialogEvent()
 
 	case "lombard_7":
 		DialogExit();
-		LAi_CharacterDisableDialog(npchar);
-		npchar.lifeday = 0;
-		ChangeCharacterComplexReputation(pchar, "authority", 2);
-		ChangeOfficersLoyality("good_all", 1);
-		AddQuestRecord("Noblelombard", "5");
-		AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-		SetFunctionTimerCondition("Noblelombard_Regard", 0, 0, 90, false); // таймер
-		break;
+		AddDialogExitQuestFunction("Noblelombard_success");
+	break;
 		//<-- семейная реликвия
 
 		//------------------------------------------привезти рабов под заказ--------------------------------------------

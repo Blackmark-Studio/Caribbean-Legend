@@ -1,5 +1,9 @@
 #include "items\items.h"
 #include "items\modifiers\helpers.c"
+#include "items\onuse.c"
+#include "items\callbacks_cash_tables.c"
+#include "items\callbacks_on_use.c"
+#include "items\effects.c"
 
 object randItemModels[MAX_LOADED_RANDITEMS];
 object itemModels[2];

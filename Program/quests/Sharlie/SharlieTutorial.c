@@ -198,7 +198,7 @@ void SharlieTutorial_StartGameInPaluba(string qName)
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
-	SetFunctionLocationCondition("SharlieTutorial_SailorCleansFloors", "Quest_Ship_deck_Medium_trade", true);
+	SetFunctionLocationCondition("SharlieTutorial_SailorCleansFloors", "Quest_Ship_deck_Medium_trade", false);
 	
 	// матрос, который разговаривал с Шарлем, отходит в сторону
 	sld = CharacterFromID("SharlieTutorial_Sailor_10");
@@ -296,7 +296,7 @@ void SharlieTutorial_StartKino_3(string qName)
 	//LAi_ActorAnimation(pchar, "tutorial_4", "1", 7.2);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Sailor_10", "Alonso", "man", "man", 5, FRANCE, -1, false, "pirate"));
-	sld.name 	= StringFromKey("HollandGambit_23");
+	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	ChangeCharacterAddressGroup(sld, "Quest_Ship_deck_Medium_trade", "quest", "quest7");
 	//TeleportCharacterToPos(sld, -11.73, 4.46, 5.60);
@@ -576,6 +576,9 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
+	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
+	realships[sti(pchar.ship.type)].TurnRate = 78.65;
+	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.75;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -589,7 +592,10 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	SetCharacterGoods(pchar, GOOD_BOMBS, 2000);
 	SetCharacterGoods(pchar, GOOD_POWDER, 2000);
 	Ship_ChangeCharge(pchar, GOOD_BOMBS);
-	pchar.GenQuest.MaxSailing = true;
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_SAILING, 100, "Tutorial");
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_CANNONS, 100, "Tutorial");
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_ACCURACY, 100, "Tutorial");
+	CT_UpdateCashTables(pchar);
 	bDisableCharacterMenu = true;
 	InterfaceStates.Buttons.Save.enable = false;
 	QuestToSeaLogin_Launch();
@@ -626,6 +632,7 @@ void SharlieTutorial_StartShip(string qName)//начинается морско�
 	CloseQuestHeader("SharlieTutorial");
 	DeleteQuestCondition("SharlieTutorial_journal");
 	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors");
+	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors_cancel");
 	sld = ItemsFromID("tutorial_key");
 	sld.shown = false;
 	sld = ItemsFromID("map_full");
@@ -664,7 +671,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 1
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_1", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_SHNYAVA, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate - 2.5;
+	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate * 0,6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0; 
 	SetSailsColor(sld, 8);
@@ -672,7 +679,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 2
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_2", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_BRIG, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate - 2.5;
+	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate * 0,6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0; 
 	SetSailsColor(sld, 8);
@@ -680,7 +687,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 3
     sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_3", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_BRIG, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate - 2.5;
+	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate * 0,6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -688,7 +695,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 4
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_4", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_GALEON_L, "", CANNON_TYPE_CANNON_LBS16, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate - 2.5;
+	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate * 0,6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -696,7 +703,7 @@ void SharlieTutorial_StartShip_4(string qName)
 	// корабль 5
 	sld = GetCharacter(NPC_GenerateCharacter("EnemyCaptainStart_5", "mercen_"+(rand(14)+14), "man", "man", 1, PIRATE, -1, true, "quest"));
 	FantomMakeSmallSailor(sld, SHIP_SCHOONER, "", CANNON_TYPE_CANNON_LBS3, 5, 5, 5, 5, 5);
-	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate - 2.5;
+	realships[sti(sld.ship.type)].SpeedRate = realships[sti(sld.ship.type)].SpeedRate * 0,6;
 	Character_SetAbordageEnable(sld, false);
 	sld.SeaBoss = -3.0;
 	SetSailsColor(sld, 8);
@@ -735,7 +742,8 @@ void SharlieTutorial_ActThree()
 {
 	// убираем корабль и запреты
 	pchar.Ship.Type = SHIP_NOTUSED;
-	DeleteAttribute(pchar, "GenQuest.MaxSailing");
+	RemoveChrModifier(pchar, "Tutorial");
+	CT_UpdateCashTables(pchar);
 	bDisableCharacterMenu = false;
 	InterfaceStates.Buttons.Save.enable = true;
 	chrDisableReloadToLocation = true;
@@ -766,7 +774,6 @@ void SharlieTutorial_ActThree()
 	LAi_SetPlayerType(pchar);
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_0", "citiz_48", "man", "man", 1, PIRATE, -1, false, "pirate"));
-	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 	sld.name 	= StringFromKey("SharlieTutorial_5");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
@@ -862,8 +869,8 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	GiveItem2Character(sld, "chest_open");
 	
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_Alonso", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));	// раненый Алонсо
-	InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, true, 0.6); // RB Пролог Алонсо
-	sld.name 	= StringFromKey("HollandGambit_23");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Пролог Алонсо
+	sld.name = GetCharacterName("Alonso");
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "SailorAlive_1";
@@ -897,7 +904,6 @@ void SharlieTutorial_TrumBitva_5()
 	for (i=1; i<=3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+i, "man", "man", 1, PIRATE, 0, true, "pirate"));
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		if(i==1)
 		{
@@ -911,7 +917,9 @@ void SharlieTutorial_TrumBitva_5()
 			pchar.quest.SharlieTutorial_TrumBitva_5_1.win_condition = "SharlieTutorial_TrumBitva_5_1"; */
 			//LAi_SetCheckMinHP(sld, 1, true, "SharlieTutorial_TrumBitva_5_1");
 		}
-		// sld.MultiFighter = 0.3;
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Пролог враг 1 волна
+		float hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.5, 1.0);
+		LAi_SetHP(sld, hp, hp);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -985,7 +993,9 @@ void SharlieTutorial_TrumBitva_8_1(string qName)
 	for (i=4; i<=6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Пролог враг 1 2 волна
+		float hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.5, 1.0);
+		LAi_SetHP(sld, hp, hp);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		sld.lifeday = 0;
 		LAi_SetWarriorType(sld);
@@ -1026,7 +1036,7 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	AddItems(sld, "GunPowder", 1);
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 	LAi_GunSetChargeQuant(sld, GUN_ITEM_TYPE, 1);
-	LAi_SetHP(sld, 10.0, 10.0);
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 	LAi_CharacterDisableDialog(sld);
 	LAi_SetWarriorType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -1034,7 +1044,7 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	for (i=7; i<=10; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Пролог враг 1 2 волна
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1055,7 +1065,7 @@ void SharlieTutorial_TrumBitva_10_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_AllySailor_"+i, "citiz_3"+i, "man", "man", 1, FRANCE, 0, true, "pirate"));
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
-		LAi_SetHP(sld, 25.0, 25.0);
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -1064,7 +1074,7 @@ void SharlieTutorial_TrumBitva_10_1(string qName)
 	for (i=11; i<=15; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
-		InitChrRebalance(sld, GEN_TYPE_ENEMY, GEN_ELITE, true, 0.6); // RB Пролог враг 3 волна
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1709,6 +1719,7 @@ void SharlieTutorial_StartGameInMartinique()
 	// убираем ключ с Туториала
 	sld = ItemsFromID("tutorial_key");
 	sld.shown = false;
+	if (CheckCharacterItem(PChar, "tutorial_key")) TakeItemFromCharacter(pchar, "tutorial_key");
 	// возвращаем ванильную цену за карту
 	sld = ItemsFromID("map_full");
 	sld.price = 0;
@@ -1734,6 +1745,7 @@ void SharlieTutorial_StartGameInMartinique()
 	DeleteQuestCondition("SharlieTutorial_PobedaPaluba");
 	DeleteQuestCondition("SharlieTutorial_AttackDead");
 	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors");
+	DeleteQuestCondition("SharlieTutorial_SailorCleansFloors_cancel");
 	DeleteQuestCondition("SharlieTutorial_FoundTheKey");
 	DeleteQuestCondition("SharlieTutorial_OpenBox");
 	// чистим сундуки и возвращаем стандартную музыку на палубах
@@ -1768,7 +1780,7 @@ void SharlieTutorial_StartGameInMartinique()
 	DeleteAttribute(sld, "private3");
 	DeleteAttribute(sld, "private4");
 	// удаляем лишние атрибуты
-	DeleteAttribute(pchar, "GenQuest.MaxSailing");
+	RemoveChrModifier(pchar, "Tutorial");
 	DeleteAttribute(pchar, "GenQuest.CabinLock");
 	DeleteAttribute(pchar, "GenQuest.NoExp");
 	DeleteAttribute(pchar, "questTemp.NoFast");
@@ -1847,6 +1859,12 @@ void SharlieTutorial_SailorCleansFloors(string qName)
 	SendMessage(sld, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("Brush_Props"), "Brush_Props", "Saber_hand", 1);
 	LAi_SetActorType(sld);
 	LAi_ActorAnimation(sld, "tutorial_4", "", -1.0);
+	SetFunctionExitFromLocationCondition("SharlieTutorial_SailorCleansFloors_cancel", PChar.location, false);
+}
+
+void SharlieTutorial_SailorCleansFloors_cancel(string qName)
+{
+	SetFunctionLocationCondition("SharlieTutorial_SailorCleansFloors", "Quest_Ship_deck_Medium_trade", false);
 }
 
 void SharlieTutorial_SailorSnore(string qName)
@@ -1900,6 +1918,9 @@ void SharlieTutorial_SeaNearMartinique()
 	SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 	realships[sti(pchar.ship.type)].WaterLine = 1.3;
 	realships[sti(pchar.ship.type)].Capacity = 6500;
+	realships[sti(pchar.ship.type)].SpeedRate = 11.65;
+	realships[sti(pchar.ship.type)].TurnRate = 78.65;
+	realships[sti(pchar.ship.type)].WindAgainstSpeed = 1.75;
 	pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
 	SetCrewQuantityFull(pchar);
 	pchar.ship.Crew.Morale = 100;
@@ -1912,7 +1933,10 @@ void SharlieTutorial_SeaNearMartinique()
 	SetCharacterGoods(pchar, GOOD_WEAPON, 0);
 	SetCharacterGoods(pchar, GOOD_BOMBS, 0);
 	SetCharacterGoods(pchar, GOOD_POWDER, 0);
-	pchar.GenQuest.MaxSailing = true;
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_SAILING, 100, "Tutorial");
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_CANNONS, 100, "Tutorial");
+	SetChrModifier(pchar, SKILL_TYPE + SKILL_ACCURACY, 100, "Tutorial");
+	CT_UpdateCashTables(pchar);
 	bDisableCharacterMenu = true;
 	bCannonsRangeShow = false;
 	

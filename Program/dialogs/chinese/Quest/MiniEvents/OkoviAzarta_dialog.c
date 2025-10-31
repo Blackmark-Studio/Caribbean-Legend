@@ -220,15 +220,15 @@ void ProcessDialogEvent()
 
 		case "OZ_Shuler_6_No_Money":
 			DialogExit();
-			notification("金钱不足 (100000) ", "Money");
+			Notification_Money(false, 100000, "peso");
 			LAi_CharacterDisableDialog(npchar);
 			if (GetSummonSkillFromName(pchar, SKILL_SNEAK) >= 30)
 			{
-				notification("通过检定 (30) ", SKILL_SNEAK);
+			Notification_Skill(true, 30, SKILL_SNEAK);
 			}
 			else
 			{
-				notification("技能不足 (30) ", SKILL_SNEAK);
+			Notification_Skill(false, 30, SKILL_SNEAK);
 			}
 		break;
 
@@ -236,8 +236,8 @@ void ProcessDialogEvent()
 			dialog.text = "哈!我不需要变成富人——我已经是了!我干嘛冒险赌掉这本能带来一大笔钱的书?";
 			link.l1 = "真没想到, 连哈维尔·卡斯蒂略也怕赌了?我还以为你是老牌高手呢, 结果不过是个靠醉汉赢钱的骗子罢了"+GetSexPhrase("","")+"。";
 			link.l1.go = "OZ_Shuler_7";
-			notification("通过检定 (100000) ", "Money");
-			notification("通过检定 (30) ", SKILL_SNEAK);
+			Notification_Money(true, 100000, "peso");
+			Notification_Skill(true, 30, SKILL_SNEAK);
 		break;
 
 		case "OZ_Shuler_7":

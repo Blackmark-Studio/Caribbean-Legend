@@ -21,4 +21,4 @@ MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> morto per calentura!}
 MiniQuests_21 {@<sld.name> è preso in custodia sulla vostra nave}
 MiniQuests_22 {Un'ora passata...}
 MiniQuests_23 {, che il ~}
-MiniQuests_24 {Alonso}
+MiniQuests_24 { }

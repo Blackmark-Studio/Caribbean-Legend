@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, Bosman}
 QuestsUtilite_267 {Wlej im dwadzieścia batów! Nie - trzydzieści! Każdemu!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, Podróżnik}
 QuestsUtilite_269 {Kajmany nie atakują ludzi. Tylko wtedy, gdy są bardzo głodne. Ten jest ewidentnie pełny...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {Trucizna nie zadziałała!}
 QuestsUtilite_273 {Otrucie trucizną taino!}
 QuestsUtilite_274 {@<GetFullName(chref)> otruty trucizną taino}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {Wulkan}
 QuestsUtilite_326 {Heliadon}
 QuestsUtilite_327 {Hefajstos}
 QuestsUtilite_328 {Centurion}
+QuestsUtilite_329 {Piraci zostali pokonani, wody stały się bezpieczniejsze.}
+QuestsUtilite_330 {Piraci się wzmocnili, morze stało się bardziej niebezpieczne.}

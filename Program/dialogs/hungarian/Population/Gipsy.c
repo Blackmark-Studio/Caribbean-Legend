@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 											 "Azt mondták, hogy valaki megmérgezett egy kereskedôt a kocsmában, és ellopta az összes holmiját. A férfi sokáig szenvedett, mielôtt meghalt. A szájából hab jött ki, és lila lett, mint a padlizsán. Te vagy a felelôs ezért, szerelmem?");
 				link.l1 = "Ti cigányasszonyok bizonyára szeretitek megosztani a véleményeteket! Ne aggódj kislány, nem fogom megmérgezni az embereket. Az egy nôies módja a gyilkolásnak, nem az én stílusom. A férfiaknak van kardom, de azokkal az átkozott patkányokkal nem tudok bánni.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Megbízható")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Megbízható")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{

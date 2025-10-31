@@ -36,3 +36,23 @@ lightman_merchant {Guardiano del faro}
 cemeteryman_merchant {Custode del cimitero}
 legend {Leggenda}
 soldier_town {Guardia}
+banditos {Tagliagole}
+patrol {Pattuglia}
+comandante {Comandante}
+prisonboss {Comandante di guarnigione}
+whore {Serva}
+hostess {Padrona}
+enemy {Nemico}
+wife {Moglie}
+kukulkan {Kukulkan}
+mercen {Mercenario}
+monster {Non-morto}
+captain_trader {Mercante indipendente}
+mtraxx_vanguard {Avanguardia di Tirax}
+fgirl {Amante}
+deadman {Morto vivente}
+friend {Amico}
+duelist {Spadaccino}
+smuggler {Contrabbandiere}
+AffairOfHonor_tavern {Ubriacone disperato}
+hovernon_wife {Moglie del governatore}

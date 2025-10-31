@@ -52,10 +52,10 @@ float GetHeadshotDamageMtp(ref table)
 	return GetAttributeFloat(table, M_HEADSHOT_DAMAGE);
 }
 
-int GetPoisonChance(ref chr, ref table)
+float GetPoisonChance(ref chr, ref table)
 {
-	if (chr.sex == "skeleton" || chr.sex == "crab" || CheckAttribute(chr, "viper")) return 15;
-	return makeint(GetAttributeFloat(table, M_POISON_CHANCE) * 100);
+	if (chr.sex == "skeleton" || chr.sex == "crab" || CheckAttribute(chr, "viper")) return 15.0;
+	return GetAttributeFloat(chr, "ct." + CT_LAND + "." + M_POISON_CHANCE);
 }
 
 float GetStabMtp(ref chr)

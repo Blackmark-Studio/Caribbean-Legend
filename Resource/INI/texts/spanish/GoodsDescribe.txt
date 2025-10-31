@@ -232,17 +232,17 @@ Cannon_42_descr
 {
 Cañones formidables, el pináculo de la potencia de fuego naval. Se utilizan exclusivamente en navíos de línea, fuertes y grandes batallas europeas. Requieren una dotación grande y bien entrenada.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
-Culverine_8 {Culverinas medias}
+Culverine_8 {Media culebrina}
 Culverine_8_descr
 {
 Cañones de 8 libras de cañón largo en un soporte especial con base robusta y ruedas de madera maciza.Tienen mayor alcance de disparo. Comúnmente usados para fuego de barrera.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
-Culverine_18 {Culverinas}
+Culverine_18 {Culebrinas}
 Culverine_18_descr
 {
 Cañones medianos de 18 libras con mayor alcance, adecuados para su uso en barcos relativamente pequeños.A pesar de su impresionante distancia de disparo, son extremadamente pesados y tardan mucho en recargarse.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.
 }
-Culverine_36 {Culverinas completas}
+Culverine_36 {Culebrinas completas}
 Culverine_36_descr
 {
 Cañones de fortaleza de 36 libras diseñados para fuego de brecha: ¡gana el que dispara primero!Debido a su gran longitud, solo pueden instalarse en puertos diseñados para cañones de 42 libras.Alcance - #dFireRange#, daño - x#f.1DamageMultiply#, recarga - #dReloadTime# seg.

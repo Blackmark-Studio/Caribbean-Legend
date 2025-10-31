@@ -43,18 +43,60 @@ void ShadowAgent(string qName)//активация агента Паскаля
 	pchar.questTemp.Shadowtrader.ClearHouse = "true"; // 240912
 }
 
-void ShadowTrader_final(string qName)//выход из коммона на улицу
-{
-	chrDisableReloadToLocation = false;//открыть локацию
-	DoQuestReloadToLocation(pchar.questTemp.Shadowtrader.City + "_town", "goto", "goto4", "");
-	DeleteAttribute(pchar, "questTemp.Shadowtrader.ClearHouse"); // 240912
-}
-
 void ShadowTrader_questmark(string qName)//квестмарка на торговце
 {
 	AddMapQuestMarkCity("BasTer", false);
 	AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
 	pchar.questTemp.Shadowtrader.EndFort = true;
+}
+
+void ShadowTrader_KillToTrader_kino()//убийство торговца кинжалом
+{
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(2.77, 2.07, 0.54, true, 1.09, -0.18, 2.16);
+	sld = characterFromID("ShadowTrader");
+	LAi_SetImmortal(sld, false);
+	SyncPlaybackDlt(PChar, sld);
+	TeleportCharacterToPosAy(sld, 1.24, 0.00, 2.49, 3.00);
+	LAi_SetActorType(sld);
+	SetCharacterActionAnimation(sld, "dead", "hit_stab");
+	LAi_KillCharacter(sld);
+	TeleportCharacterToPosAy(pchar, 1.24, 0.00, 1.59, 0.00);
+	LAi_SetActorType(pchar);
+	LAi_ActorAnimation(pchar, "stab", "", 12.0);
+	SendMessage(pchar, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("knife_01"), "knife_01", "Saber_hand", 1);
+	DoQuestFunctionDelay("ShadowTrader_KillToTrader_kino_2", 1.6);
+}
+
+void ShadowTrader_KillToTrader_kino_2(string qName)
+{
+	locCameraFromToPos(2.29, 2.07, 3.51, true, 0.92, -0.18, 1.80);
+	DoQuestFunctionDelay("ShadowTrader_KillToTrader_kino_3", 2.3);
+}
+
+void ShadowTrader_KillToTrader_kino_3(string qName)
+{
+	EndQuestMovie();
+	LAi_SetPlayerType(pchar);
+	locCameraFollowEx(true);
+	SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", FindItem("knife_01"));
+	
+	DoQuestFunctionDelay("ShadowTrader_final", 15.0);
+	pchar.questTemp.Shadowtrader.End.Kill = "true";
+	AddQuestRecord("Shadowtrader", "10");
+	AddQuestUserData("Shadowtrader", "sSex", GetSexPhrase(StringFromKey("MiniQuests_3"),StringFromKey("MiniQuests_4")));
+	AddQuestUserData("Shadowtrader", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_1"),StringFromKey("MiniQuests_2")));
+	ChangeCharacterComplexReputation(pchar,"nobility", -3); 
+	AddComplexSelfExpToScill(70, 70, 70, 70);
+	AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
+	AddCharacterExpToSkill(pchar, "Fortune", 100);//везение
+}
+
+void ShadowTrader_final(string qName)//выход из коммона на улицу
+{
+	chrDisableReloadToLocation = false;//открыть локацию
+	DoQuestReloadToLocation(pchar.questTemp.Shadowtrader.City + "_town", "goto", "goto4", "");
+	DeleteAttribute(pchar, "questTemp.Shadowtrader.ClearHouse"); // 240912
 }
 // <-- Бесчестный конкурент конец
 
@@ -1104,6 +1146,30 @@ void Noblepassenger_complete(string qName)//доставили пассажир�
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
+//--> семейная реликвия
+void Noblelombard_TookQuest()//взял квест
+{
+	ref sld = CharacterFromID(pchar.GenQuest.Noblelombard.id);
+	pchar.GenQuest.Noblelombard = "true"
+	pchar.GenQuest.Noblelombard.Name = GetFullName(sld);
+	pchar.GenQuest.Noblelombard.City = sld.city;
+	pchar.GenQuest.Noblelombard.Money = 20000+hrand(60)*500;
+	pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money)*0.3);
+	pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money)+sti(pchar.GenQuest.Noblelombard.Percent);
+	pchar.GenQuest.Noblelombard.Chance = hrand(9);
+	chrDisableReloadToLocation = true;//закрыть локацию
+	LAi_SetActorType(sld);
+	LAi_RemoveLoginTime(sld);
+	DeleteAttribute(sld, "CityType");//удалить признак фантома
+	FreeSitLocator(pchar.GenQuest.Noblelombard.City + "_tavern", "sit1");
+	LAi_ActorRunToLocation(sld, "reload", "reload4_back", pchar.GenQuest.Noblelombard.City+"_tavern", "sit", "sit1", "Nobleman_lombardTavern", 10);
+	SetFunctionTimerCondition("Noblelombard_Over", 0, 0, 1, false); //таймер до конца суток
+	ReOpenQuestHeader("Noblelombard");
+	AddQuestRecord("Noblelombard", "1");
+	AddQuestUserData("Noblelombard", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Noblelombard.City));
+	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+}
+
 void Noblelombard_Over(string qName)//время вышло
 {
 	sld = characterFromId(pchar.GenQuest.Noblelombard.id);
@@ -1111,15 +1177,58 @@ void Noblelombard_Over(string qName)//время вышло
 	if (CheckAttribute(pchar, "GenQuest.Noblelombard.Regard")) AddQuestRecord("Noblelombard", "3");
 	else AddQuestRecord("Noblelombard", "2");
 	CloseQuestHeader("Noblelombard");
-	//sld = characterFromId(pchar.GenQuest.Noblelombard.City+"_usurer");// лесник . из за этого вылет .
-	DeleteAttribute(pchar, "quest.noblelombard");// лесник . с нпчара на пчара. теперь ок
+	DeleteAttribute(pchar, "quest.noblelombard");
 	DeleteAttribute(Pchar, "GenQuest.Noblelombard");
+}
+
+void Noblelombard_fail()//провал
+{
+	sld = characterFromId(pchar.GenQuest.Noblelombard.id);
+	LAi_CharacterDisableDialog(sld);
+	sld.lifeday = 0;
+	AddQuestRecord("Noblelombard", "4");
+	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+	CloseQuestHeader("Noblelombard");
+	DeleteAttribute(pchar, "quest.noblelombard");
+	DeleteAttribute(Pchar, "GenQuest.Noblelombard");
+}
+
+void Noblelombard_success()//успех
+{
+	sld = characterFromId(pchar.GenQuest.Noblelombard.id);
+	LAi_CharacterDisableDialog(sld);
+	sld.lifeday = 0;
+	ChangeCharacterComplexReputation(pchar, "authority", 2);
+	ChangeOfficersLoyality("good_all", 1);
+	AddQuestRecord("Noblelombard", "5");
+	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+	SetFunctionTimerCondition("Noblelombard_Regard", 0, 0, 90, false); //таймер
+}
+
+void Noblelombard_Usurer_bad()//обманули нас
+{
+	AddQuestRecord("Noblelombard", "6");
+	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+	CloseQuestHeader("Noblelombard");
+	DeleteAttribute(Pchar, "GenQuest.Noblelombard");
+	DeleteAttribute(Pchar, "quest.noblelombard");
+}
+
+void Noblelombard_Usurer_good()//получили деньги
+{
+	AddMoneyToCharacter(pchar, sti(pchar.GenQuest.Noblelombard.Regard));
+	AddQuestRecord("Noblelombard", "7");
+	AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+	CloseQuestHeader("Noblelombard");
+	DeleteAttribute(Pchar, "GenQuest.Noblelombard");
+	DeleteAttribute(Pchar, "quest.noblelombard");
 }
 
 void Noblelombard_Regard(string qName)//можно идти за наградой
 {
 	pchar.GenQuest.Noblelombard.Giveregard = "true";
 }
+//<-- семейная реликвия
 //<-- мини-квесты дворян
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2124,6 +2233,54 @@ void FindFugitive_inResidence(string qName)//в резиденции
 }
 //<-- Дезертир
 
+//--> Капеллан на корабле
+void Monk_Capellan_DlgExit()
+{
+	ref sld = CharacterFromID(pchar.questTemp.ShipCapellan.id);
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload1_back", "My_Campus", "rld", "loc1", "Monk_Capellan", -1);
+	// pchar.questTemp.ShipCapellan.id = sld.id;
+	DeleteAttribute(sld, "LifeDay");
+	DeleteAttribute(sld, "CityType");//удалить признак фантома
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, false);
+	pchar.questTemp.ShipCapellan.Yes = "true";//капеллан в команде
+	Achievment_Set("ach_69");
+	ChangeCharacterComplexReputation(pchar, "authority", 5);
+	sld.reputation = 60;
+	DelLandQuestMark(sld);
+}
+
+void Monk_RemoveSlaves_function()//отпускание рабов через монаха
+{
+	RemoveCharacterGoods(pchar, GOOD_SLAVES, GetSquadronGoods(pchar, GOOD_SLAVES));
+	OfficersReaction("good");
+	ChangeCharacterComplexReputation(pchar, "nobility", 1);
+}
+
+void Monk_Shipshine_function()//освящение кораблей через монаха
+{
+	OfficersReaction("good");
+	ChangeCharacterComplexReputation(pchar, "nobility", 1);
+	ChangeCharacterComplexReputation(pchar, "authority", 2);
+	AddCrewMorale(pchar, 10);
+	pchar.quest.Shipshine.win_condition.l1 = "Timer";
+	pchar.quest.Shipshine.win_condition.l1.date.hour  = sti(GetTime());
+	pchar.quest.Shipshine.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 15);
+	pchar.quest.Shipshine.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 15);
+	pchar.quest.Shipshine.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 15);
+	pchar.quest.Shipshine.function = "Monkshipshine_Over";
+}
+
+void Monk_Capellan_function()//установка капеллана в кают-компанию
+{
+	chrDisableReloadToLocation = false;//открыть локацию
+	sld = characterFromId(pchar.questTemp.ShipCapellan.id);
+	sld.dialog.currentnode = "capellan_4";
+	LAi_SetStayType(sld);
+}
+//<-- Капеллан на корабле
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -2185,23 +2342,6 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("hide_weapon", 1.3);
 		sld = characterFromID("ShadowTrader"); 
 		sld.greeting = "ransack"; // 240912
-	}
-	
-	else if (sQuestName == "ShadowTrader_killed_end") {//убили Паскаля
-	sld = characterFromID("ShadowTrader"); 
-	LAi_SetActorType(sld);
-	LAi_KillCharacter(sld);
-	LAi_SetPlayerType(pchar);
-		DoQuestFunctionDelay("ShadowTrader_final", 15.0);
-	pchar.questTemp.Shadowtrader.End.Kill = "true";
-	AddQuestRecord("Shadowtrader", "10");
-	AddQuestUserData("Shadowtrader", "sSex", GetSexPhrase(StringFromKey("MiniQuests_3"),StringFromKey("MiniQuests_4")));
-	AddQuestUserData("Shadowtrader", "sSex1", GetSexPhrase(StringFromKey("MiniQuests_1"),StringFromKey("MiniQuests_2")));
-	ChangeCharacterComplexReputation(pchar,"nobility", -3); 
-	AddComplexSelfExpToScill(70, 70, 70, 70);
-	AddCharacterExpToSkill(pchar, "Leadership", 100);//авторитет
-	AddCharacterExpToSkill(pchar, "Fortune", 100);//везение
-	Achievment_SetStat(95, 1);
 	}
 //<-- Бесчестный конкурент конец
 
@@ -2306,33 +2446,16 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 //<-- ТТГ, почта 2 уровень, конец
 	
 //--> Jason, действия горожан по мини-квестам
-	//отпускание рабов через монаха
 	else if (sQuestName == "Monk_RemoveSlaves") {
-		RemoveCharacterGoods(pchar, GOOD_SLAVES, GetSquadronGoods(pchar, GOOD_SLAVES));
-		OfficersReaction("good");
-		ChangeCharacterComplexReputation(pchar, "nobility", 1);
+		Monk_RemoveSlaves_function();
 	}
 	
-	//освящение кораблей через монаха
 	else if (sQuestName == "Monk_Shipshine") {
-		OfficersReaction("good");
-		ChangeCharacterComplexReputation(pchar, "nobility", 1);
-		ChangeCharacterComplexReputation(pchar, "authority", 2);
-		AddCrewMorale(pchar, 10);
-		pchar.quest.Shipshine.win_condition.l1 = "Timer";
-		pchar.quest.Shipshine.win_condition.l1.date.hour  = sti(GetTime());
-		pchar.quest.Shipshine.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 15);
-		pchar.quest.Shipshine.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 15);
-		pchar.quest.Shipshine.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 15);
-		pchar.quest.Shipshine.function = "Monkshipshine_Over";
+		Monk_Shipshine_function();
 	}
 	
-	//установка капеллана в кают-компанию
 	else if (sQuestName == "Monk_Capellan") {
-		chrDisableReloadToLocation = false;//открыть локацию
-		sld = characterFromId(pchar.questTemp.ShipCapellan.id);
-		sld.dialog.currentnode = "capellan_4";
-		LAi_SetStayType(sld);
+		Monk_Capellan_function();
 	}
 
 	//установка дворянина с реликвией в таверну
@@ -2593,7 +2716,7 @@ bool MiniQuests_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "ContraPass_GivePrisoner") {
 		chrDisableReloadToLocation = true;//закрыть локацию
 		sld = GetCharacter(NPC_GenerateCharacter("ContraPassTempsailor", "Alonso", "man", "man", 10, sti(pchar.Mation), 0, true, "quest"));
-		sld.name 	= StringFromKey("MiniQuests_24");
+		sld.name = GetCharacterName("Alonso");
 		sld.lastname = "";
 		sld.Dialog.Filename = "MayorQuests_dialog.c";
 		sld.dialog.currentnode = "Tempsailor";

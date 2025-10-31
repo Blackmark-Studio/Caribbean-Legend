@@ -1033,7 +1033,7 @@ void GoldenGirl_OnMartinique(string qName)// на Мартинике
 
 void GoldenGirl_MaryBlockDelete() // fix 22-03-20 возвращаем Мэри её поведение
 {
-    DeleteAttribute(pchar, "questTemp.GoldenGirl.MaryBlock");
+    DeleteAttribute(pchar, "questTemp.MarySexBlock");
 	pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
@@ -1323,7 +1323,9 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, "FortFrance_SecBrRoom", "barmen", "stay");
 		LAi_SetOwnerType(sld);
 		LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-		sld = GetCharacter(NPC_GenerateCharacter("GG_sailor", "citiz_"+(rand(9)+31), "man", "man", 10, FRANCE, 1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("GG_sailor", "Alonso", "man", "man", 10, FRANCE, 1, true, "soldier"));
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		SetFantomParamFromRank(sld, 10, true);
 		sld.Dialog.Filename = "Quest\GoldenGirl.c";
 		sld.dialog.currentnode = "sailor";

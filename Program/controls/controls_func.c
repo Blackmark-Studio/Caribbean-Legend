@@ -234,9 +234,14 @@ void Process_Controls(string ControlName)
 				kZoom = 0.75;
 			else
 				kZoom = stf(locCamera.zoom);
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+				break;
 			kZoom -= 0.05;
-			if(kZoom < 0.5)
-				kZoom = 0.5;
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+			{
+				kZoom = LOCCAMERA_ZOOM_MIN;
+				locCameraSetFPVMode(true);
+			}
 			locCamera.zoom = kZoom;
 			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);
 		break;
@@ -248,10 +253,15 @@ void Process_Controls(string ControlName)
 				kZoom = 0.75;
 			else
 				kZoom = stf(locCamera.zoom);
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+			{
+				locCameraSetFPVMode(false);
+				kZoom = LOCCAMERA_ZOOM_MIN;
+			}
 			kZoom += 0.05;
 			if(!bBettaTestMode)
 			{
-				if(kZoom > 1.0) kZoom = 1.0;
+				if(kZoom > LOCCAMERA_ZOOM_MAX) kZoom = LOCCAMERA_ZOOM_MAX;
 			}
 			locCamera.zoom = kZoom;
 			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);

@@ -1754,7 +1754,7 @@ He perdido al Utrecht, estaba muy cerca, pero no pude otear al bergantín en el 
 #TEXT   14
 ¡He fracasado! He desperdiciado la oportunidad de hacer un trato con los trabajadores, me tomaron por un oficial de la patrulla, se asustaron y los muy idiotas me atacaron. Tuve que matarlos a todos, que lástima esto se acabó.
 #TEXT   15
-Está hecho, logré cerrar un acuerdo con el maestro por 25 doblones por rollo. Ahora debería navegar hacia St. Cristopher para ver a Bald Geffrey.
+Está hecho, logré cerrar un acuerdo con el maestro por 5 doblones por rollo. Ahora debería navegar hacia St. Cristopher para ver a Bald Geffrey.
 #TEXT   16
 Han pasado dos meses y Bald Geffrey habrá vendido su seda a otra persona. Qué lástima... pero creo que aun puedo entregar la información del comprador a Tyrex. Debería llegar a La Vega en diez días para dar tiempo a Tyrex para que recoja suficiente seda. Espero que esto alivie su posible ira.
 #TEXT   17
@@ -1766,7 +1766,7 @@ Pasé la información que obtuve de Husky Billy a las autoridades. No esperaré 
 #TEXT   20
 Ya está hecho, una patrulla militar ha eliminado a mi competidor. Incluso me recompensaron con 10 000 pesos, lo cual es bueno. Debería ver al constructor de barcos, será más permisivo.
 #TEXT   21
-Está hecho. Logré llegar a un acuerdo con el astillero de 25 doblones por rollo. Ahora debería navegar a St. Cristopher para ver a Bald Geffrey.
+Está hecho. Logré llegar a un acuerdo con el astillero de 5 doblones por rollo. Ahora debería navegar a St. Cristopher para ver a Bald Geffrey.
 #TEXT   22
 Bald Geffrey recibió las instrucciones y está a punto de partir a Jamaica con el primer lote de seda de Marcus Tyrex. Debería navegar a La Vega.
 #TEXT   23

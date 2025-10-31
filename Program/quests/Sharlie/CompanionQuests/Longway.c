@@ -68,6 +68,137 @@ void PZ_OsmatrivaemSunduk_4()
 	chrDisableReloadToLocation = false;
 }
 
+void PZ_Longway_78()
+{
+	chrDisableReloadToLocation = false;
+	Island_SetReloadEnableGlobal("Hispaniola2", false);
+	LocatorReloadEnterDisable("PortPax_town", "gate_back", true);
+	pchar.GenQuest.AbordageInStorm = true;	//Разрешить абордаж во время шторма
+	SetLocationCapturedState("PortPax_town", false);
+
+	sld = characterFromId("Longway");
+	LAi_LoginInCaptureTown(sld, false);
+	AddPassenger(pchar, sld, false);
+	ReturnOfficer_Longway();
+	
+	if (GetCharacterIndex("Tichingitu") != -1)
+	{
+		sld = characterFromId("Tichingitu");
+		AddPassenger(pchar, sld, false);
+		ReturnOfficer_Tichingitu();
+	}
+	
+	PChar.quest.PZ_PoP_Pogonya.win_condition.l1 = "location";
+	PChar.quest.PZ_PoP_Pogonya.win_condition.l1.location = "Hispaniola2";
+	PChar.quest.PZ_PoP_Pogonya.win_condition = "PZ_PoP_Pogonya";
+	
+	SeaAI_SwapShipsAttributes(pchar, CharacterFromID("PZ_ShipStasis"));
+	AddCharacterGoodsSimple(pchar, GOOD_GRAPES, 300);
+	AddCharacterGoodsSimple(pchar, GOOD_BOMBS, 200);
+	AddCharacterGoodsSimple(pchar, GOOD_POWDER, 500);
+	AddCharacterGoodsSimple(pchar, GOOD_WEAPON, 300);
+	AddCharacterGoodsSimple(pchar, GOOD_RUM, 50);
+	AddCharacterGoodsSimple(pchar, GOOD_FOOD, 700);
+	SetCrewQuantityFull(pchar);
+	pchar.ship.HP = sti(pchar.ship.HP) / 2;
+	pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) / 2;
+	AddCrewMorale(Pchar, 100);
+	ChangeCrewExp(pchar, "Sailors", 100);
+	ChangeCrewExp(pchar, "Cannoners", 100);
+	ChangeCrewExp(pchar, "Soldiers", 100);
+	
+	//Вражина
+	sld = characterFromId("PZ_RobertMartin");
+	sld.nation = PIRATE;
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+	{
+		GiveItem2Character(sld, "blade_31");
+		EquipCharacterByItem(sld, "blade_31");
+	}
+	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
+	{
+		GiveItem2Character(sld, "pirate_cutlass");
+		EquipCharacterByItem(sld, "pirate_cutlass");
+	}
+	FantomMakeCoolSailor(sld, SHIP_GALEON_L, StringFromKey("Longway_68"), CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
+	sld.AlwaysEnemy = true;
+	sld.AlwaysSandbankManeuver = true;
+	sld.DontRansackCaptain = true;
+	sld.ShipHideImmortal = 800;
+	Group_FindOrCreateGroup("PZ_RM_Attack");
+	Group_SetType("PZ_RM_Attack", "pirate");
+	Group_AddCharacter("PZ_RM_Attack", "PZ_RobertMartin");
+	Group_SetGroupCommander("PZ_RM_Attack", "PZ_RobertMartin");
+	Group_SetTaskAttack("PZ_RM_Attack", PLAYER_GROUP);
+	Group_SetAddress("PZ_RM_Attack", "Hispaniola2", "quest_ships", "Quest_ship_1");
+	Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+}
+
+void PZ_FinalKaznOnShip_DlgExit()
+{
+	ResetSound();
+	chrDisableReloadToLocation = false;
+	EndQuestMovie();
+	DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
+	locCameraTarget(PChar);
+	locCameraFollow();
+	LAi_SetPlayerType(pchar);
+	sld = CharacterFromID("Longway");
+	sld.greeting = "Longway";
+	ReturnOfficer_Longway();
+	if (CharacterIsHere("PZ_Alonso"))
+	{
+		sld = CharacterFromID("PZ_Alonso");
+		LAi_SetActorType(sld);
+		LAi_ActorGoToLocation(sld, "reload", "reload1", "", "", "", "", -1);
+		sld.lifeday = 0;
+		sld.location = "None";
+	}
+	
+	bQuestDisableMapEnter = false;
+	Island_SetReloadEnableGlobal("Hispaniola2", true);
+	Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
+	Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
+	Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
+	Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
+	DeleteAttribute(pchar, "GenQuest.CannotWait");
+	DeleteAttribute(pchar,"questTemp.TimeLock");
+	LocatorReloadEnterDisable("LaVega_ExitTown", "reload1_back", false);
+	LocatorReloadEnterDisable("PortPax_town", "gate_back", false);
+	LAi_LocationDisableOfficersGen("PortPax_town", false);
+	LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
+	DeleteAttribute(pchar, "GenQuest.AbordageInStorm");
+	
+	PChar.quest.PZ_Etap6_Start.win_condition.l1 = "location";
+	PChar.quest.PZ_Etap6_Start.win_condition.l1.location = "Tortuga";
+	PChar.quest.PZ_Etap6_Start.win_condition = "PZ_Etap6_Start";
+	locations[FindLocation("Shore58")].DisableEncounters = true;
+	SetTimerCondition("PZ_Etap6_Opozdal", 0, 0, 7, false);
+	DelMapQuestMarkCity("PortPax");
+	AddMapQuestMarkShore("Shore58", true);
+	
+	// Компаньон-заглушка входит в состав нашей экскадры
+	sld = CharacterFromID("PZ_ShipStasis");
+	SetCompanionIndex(pchar, -1, sti(sld.index));
+	SetCharacterRemovable(sld, true);
+	SetShipRemovable(sld, true);
+	sld.Dialog.Filename = "Enc_Officer_dialog.c";
+	sld.quest.meeting = true;
+	Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	sld.Dialog.CurrentNode = "hired";
+	sld.Payment = true;
+	sld.ship.HP = sti(sld.ship.HP) / 2;
+	
+	//
+	aref arTmp;
+	makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
+	QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
+	DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
+	QuestToSeaLogin_Launch();
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -162,9 +293,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 			LAi_ActorDialog(sld, pchar, "", -1, 0);
 			return true;
 		}
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
-		sld.name 	= StringFromKey("Longway_1");
-		sld.lastname = StringFromKey("Longway_2");
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_Alonso_1";
@@ -1925,7 +2056,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
+			sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", sti(pchar.rank), pchar.nation, 0, true, "soldier"));
 			sld.name = StringFromKey("Longway_1");
 			sld.lastname = StringFromKey("Longway_2");
 			ChangeCharacterAddressGroup(sld, PChar.location, "reload", "reload1");
@@ -1948,7 +2079,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		}
 		else
 		{
-			sld = CharacterFromID("Alonso");
+			sld = CharacterFromID("PZ_Alonso");
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Alonso_15";
 			LAi_SetActorType(sld);
@@ -2679,7 +2810,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.OfficerImmortal = true;
 		sld.Health.HP       = 60.0;
 		sld.Health.maxHP    = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+	
 		ReturnOfficer_Longway();
 		
 		PChar.quest.PZ_LongwayCapstervilleDialog.win_condition.l1 = "location";
@@ -3522,6 +3653,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_PoP_Pogonya") {
+		SetCurrentTime(15, 00);
 		DeleteAttribute(pchar, "Cheats.SeaTeleport");
 		AddQuestRecord("PZ", "37");
 		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) AddQuestUserData("PZ", "sText", StringFromKey("Longway_49"));
@@ -3602,7 +3734,8 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_5") {
 		TeleportCharacterToPosAy(pchar, 0.50, 5.60, 8.75, 3.00);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		LAi_SetActorType(sld);
+		SyncPlaybackDlt(PChar, sld);
+		// LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_1", "1", 3.8);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "beatmarten_1", "1", 3.8);
@@ -3624,7 +3757,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_DoprosRobertMartin_Trum_6") {
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		LAi_SetActorType(sld);
+		// LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_2", "1", 3.8);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "beatmarten_2", "1", 3.8);
@@ -3654,7 +3787,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		//TeleportCharacterToPosAy(pchar, -0.55, 12.00, -1.30, -2.20);
 		TeleportCharacterToPosAy(pchar, 0.35, 5.60, 6.30, 1.40);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		LAi_SetActorType(sld);
+		// LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_3", "1", 17.8);
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "beatmarten_3", "1", 17.8);
@@ -3683,7 +3816,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_AlonsoKazn") {
-		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("PZ_Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
 		sld.name = StringFromKey("Longway_1");
 		sld.lastname = StringFromKey("Longway_2");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
@@ -3696,7 +3829,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_AlonsoKazn_2") {
 		LAi_SetStayType(pchar);
-		sld = CharacterFromID("Alonso");
+		sld = CharacterFromID("PZ_Alonso");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_AlonsoKaznDialog_4";
 		LAi_SetActorType(sld);
@@ -3733,7 +3866,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_AlonsoKazn_7") {
 		LAi_SetStayType(pchar);
-		sld = CharacterFromID("Alonso");
+		sld = CharacterFromID("PZ_Alonso");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_AlonsoKaznDialog_6";
 		LAi_SetActorType(sld);
@@ -3762,9 +3895,19 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_LongwayKaznDialog_4";
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
-		TeleportCharacterToPosAy(sld, 1.26, 12.00, -2.10, -1.10);
+		// TeleportCharacterToPosAy(sld, 1.26, 12.00, -2.10, -1.10);
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
+	}
+	
+	else if (sQuestName == "PZ_LongwayKazn_3_1") {
+		sld = CharacterFromID("Longway");
+		LAi_SetActorType(sld);
+		CharacterTurnByChr(sld, CharacterFromID("PZ_RobertMartinPlennik"));
+		LAi_SetStayType(pchar);
+		CharacterTurnByChr(pchar, CharacterFromID("PZ_RobertMartinPlennik"));
+		LAi_FadeToBlackStart();
+		DoQuestCheckDelay("PZ_LongwayKazn_4", 1.5);
 	}
 	
 	else if (sQuestName == "PZ_LongwayKazn_4") {
@@ -3779,8 +3922,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	
 	else if (sQuestName == "PZ_LongwayKazn_6") {
 		sld = CharacterFromID("Longway");
+		TeleportCharacterToPos(pchar, 0.20, 6.50, 11.50);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
-		CharacterTurnByChr(sld, pchar);
+		CharacterTurnToLoc(sld, "rld", "loc0");
 		
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
 		LaunchBlood(sld, 1.0, true, "fight");
@@ -3788,7 +3932,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LaunchBlood(sld, 1.0, true, "fight");
 		LAi_SetActorType(sld);
 		LAi_ActorSetLayMode(sld);
-		TeleportCharacterToPosAy(sld, -0.33, 12.00, -5.64, 0.00);
+		// TeleportCharacterToPosAy(sld, -0.33, 12.00, -5.64, 0.00);
 		PlaySound("People Fight\Death_NPC_06.wav");
 		DoQuestCheckDelay("PZ_LongwayKazn_7", 1.2);
 	}
@@ -3797,7 +3941,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		//sld = CharacterFromID("PZ_RobertMartinPlennik");
 		//LAi_SetActorType(sld);
 		//LAi_ActorAnimation(sld, "beatmarten_4", "1", 5.8);
-		LAi_FadeToBlackEnd();
+		locCameraFromToPos(1.87, 6.31, 9.02, true, 0.96, 4.22, 8.00);
 		LAi_SetStayType(pchar);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
@@ -3805,14 +3949,29 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(sld);
 		LAi_ActorSetLayMode(sld);
 		LAi_ActorDialog(sld, pchar, "", 0, 0);
+		DoQuestCheckDelay("PZ_LongwayKazn_8", 1.5);
+	}
+	
+	else if (sQuestName == "PZ_LongwayKazn_8") {
+		LAi_FadeToBlackEnd();
 	}
 	
 	else if (sQuestName == "PZ_LongwayKazn_11") {
+		LAi_FadeLong("PZ_LongwayKazn_11_1", "");
+	}
+	
+	else if (sQuestName == "PZ_LongwayKazn_11_1") {
+		locCameraFromToPos(-0.82, 6.53, 7.00, true, 0.31, 4.41, 8.98);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		TeleportCharacterToPosAy(sld, -0.33, 12.00, -5.64, 0.00);
-		LAi_SetActorType(sld);
+		// TeleportCharacterToPosAy(sld, -0.33, 12.00, -5.64, 0.00);
+		// LAi_SetActorType(sld);
 		LAi_ActorAnimation(sld, "beatmarten_4", "1", 14.8);
+		DoQuestCheckDelay("PZ_LongwayKazn_11_2", 5.0);
 		DoQuestCheckDelay("PZ_LongwayKazn_12", 11.4);
+	}
+	
+	else if (sQuestName == "PZ_LongwayKazn_11_2") {
+		locCameraFromToPos(1.38, 7.57, 13.73, true, 0.80, 5.40, 11.81);
 	}
 	
 	else if (sQuestName == "PZ_LongwayKazn_12") {
@@ -3831,8 +3990,9 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "PZ_LongwayKazn_15") {
+		locCameraFromToPos(-0.61, 7.38, 9.19, true, 0.58, 5.62, 11.00);
 		sld = CharacterFromID("PZ_RobertMartinPlennik");
-		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
+		// ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto4");
 		sld.lifeday = 0;
 		sld.location = "None";
 		LAi_SetActorType(sld);
@@ -5149,6 +5309,7 @@ bool Longway_QuestComplete(string sQuestName, string qname)
 		if (!CharacterIsHere("Longway")) ChangeCharacterAddressGroup(sld, PChar.location, "goto", LAi_FindNearestFreeLocator2Pchar("goto"));
 		sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 		sld.dialog.currentnode = "PZ_Longway_101";
+		sld.FriendRole = true;
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}

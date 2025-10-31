@@ -487,7 +487,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ich schätze Ihren geschäftlichen Ansatz und bin bereit, Ihre Anfrage zu prüfen. Vielleicht könnten wir das Volumen, sagen wir, verfünffachen. Allerdings wird die Organisation solcher Lieferungen erhebliche Ressourcen erfordern. Wir müssen Lagerräume erweitern, die Sicherheit verstärken und zuverlässige Lieferwege gewährleisten. Da dies auch Ihnen zugute kommt, schlage ich vor, dass wir diese Kosten unter uns aufteilen.";
 				link.l1 = "Das klingt alles vernünftig. Welchen Betrag halten Sie für notwendig, um diese Ausgaben zu decken?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

@@ -156,15 +156,21 @@ void AddMapToPlayerAtlas(ref mapEntity)
 	int idLngFile = LanguageOpenFile("ItemsDescribe.txt");
 	aref areas;
 	makearef(areas, Atlas.areas);
+	bool notify = false;
 
 	if (CheckAttributeHasValue(map, "area")) {
+		notify = true;
 		string area = map.area;
 		string atlasType = map.atlasType;
 		areas.(area).(atlasType) = mapId;
 	}
-	else if (map.ImageType == "cabin_map") Atlas.region.(mapId) = true;
+	else if (map.ImageType == "cabin_map") 
+	{
+		Atlas.region.(mapId) = true;
+		notify = true;
+	}
 	else Atlas.rest.(mapId) = true;
-	notification(StringFromKey("characterUtilite_12", LanguageConvertString(idLngFile, map.name)), "MapsAtlas");
+	if (notify) Notification(StringFromKey("characterUtilite_12", LanguageConvertString(idLngFile, map.name)), "MapsAtlas");
 	LanguageCloseFile(idLngFile);
 
 	pchar.MapsAtlasCount = CountAreasMapFromCharacter();
@@ -238,7 +244,7 @@ string SelectAdmiralMaps()
 	string map[24];
 	string leftMaps[2];
 	int n = 1;
-	int mapQty = FillAdmiralMaps(map);
+	int mapQty = FillAdmiralMaps(&map);
 
 	for (int i = 0; i < mapQty; i++) {
 		mapId = map[i];
@@ -286,6 +292,12 @@ int CountAdmiralMapFromCharacter()
 	}
 
 	return n;
+}
+
+bool HasAllMaps(string type)
+{
+	if (type == "admiral") return CountAdmiralMapFromCharacter() == MAPS_IN_ATLAS;
+	return CountAreasMapFromCharacter() == MAPS_IN_ATLAS;
 }
 
 // Сосчитать карты акваторий
@@ -338,7 +350,7 @@ void RemoveAllAdmiralMap()
 	string mapId = "";
 	string map[24];
 	int n = 1;
-	int mapQty = FillAdmiralMaps(map);
+	int mapQty = FillAdmiralMaps(&map);
 	for (int i = 0; i < mapQty; i++) {
 		mapId = map[i];
 		if (!CheckMapForEquipped(pchar, mapId)) continue;
@@ -347,52 +359,9 @@ void RemoveAllAdmiralMap()
 }
 
 // Для совместимости
-bool IsEquipCharacterByMap(ref chref, string itemID)
-{
-	return false;
-}
-
-// Для совместимости
-int FindRealItem(string itemID, string handler) {
-	return 0;
-}
-
-// Для совместимости
-void CheckAdmiralMaps(ref chref) {
-	return;
-}
-
-// Для совместимости
-string IdentifyAdmiralMapLast()
-{
-	return "";
-}
-
-// Для совместимости
-void PrepareAdmiralMaps() {
-	return;
-}
-
-// Для совместимости
-void GiveAdmiralAtlasToCharacter(ref chr)
-{
-	return;
-}
-
-// Для совместимости
 bool CheckMainHeroMap(string itemName)
 {
 	return false;
-}
-
-void StoreEquippedMaps(ref refCh)
-{
-	return;
-}
-
-void RestoreEquippedMaps(ref refCh)
-{
-	return;
 }
 
 string GetMapByArea(string areaName)

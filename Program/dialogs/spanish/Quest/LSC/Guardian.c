@@ -121,6 +121,7 @@ void ProcessDialogEvent()
 
 	case "check_parol":
 		dialog.text = "Di una contraseña y hazlo claro y fuerte.";
+		sTotalTemp = sNrvParol;
 		if (CheckAttribute(pchar, "questTemp.LSC.NParol_bye"))
 			{
 				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));
@@ -408,6 +409,7 @@ void ProcessDialogEvent()
 
 	case "Rcheck_parol":
 		dialog.text = "Entonces di una contraseña y hazlo alto y claro.";
+		sTotalTemp = sRvdParol;
 		if (CheckAttribute(pchar, "questTemp.LSC.RParol_bye"))
 			{
 				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));

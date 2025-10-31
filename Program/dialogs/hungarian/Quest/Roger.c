@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "1300 pezó egy tekercs. Szerintem ez egy jó ár.";
-			link.l1 = "Igen, és Tyrex húsz aranyat kér egy tekercsért. Egy érmével sem kevesebbet. És úgy értem, dublont. Azt a feladatot adta, hogy találjak egy megfelelô vevôt ezért az árért.";
+			link.l1 = "Igen, és Tyrex 4 aranyat kér egy tekercsért. Egy érmével sem kevesebbet. És úgy értem, dublont. Azt a feladatot adta, hogy találjak egy megfelelô vevôt ezért az árért.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "Hogy vagy, haver?";
-			link.l1 = "Remekül. Találtam egy vevôt. Huszonöt dublont egy tekercsért. Azt hiszem, Tyrexnek tetszeni fog.";
+			link.l1 = "Remekül. Találtam egy vevôt. 5 dublont egy tekercsért. Azt hiszem, Tyrexnek tetszeni fog.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "K-ha! Szóval, te kalóz vagy?";
-			link.l1 = "Nem, csak különleges alkalmakkor üzletelek velük. Biztosan tudom, hogy Marcus állandóan kap egy csomó hajóselymet, és bárkinek eladja, aki megengedheti magának. És itt most nem 2500 pezóról beszélek egy tekercsért, azt mondanám, ha minden tekercsért 25 dublont tudsz neki aranyban fizetni, akkor belefojtja a vízbe, erre számíthatsz.";
+			link.l1 = "Nem, csak különleges alkalmakkor üzletelek velük. Biztosan tudom, hogy Marcus állandóan kap egy csomó hajóselymet, és bárkinek eladja, aki megengedheti magának. És itt most nem 2500 pezóról beszélek egy tekercsért, azt mondanám, ha minden tekercsért 5 dublont tudsz neki aranyban fizetni, akkor belefojtja a vízbe, erre számíthatsz.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Huszonöt dublont egy tekercsért. Ez a legjobb ár, amit kaphat, higgye el nekem.";
-			link.l1 = "Huszonöt aranyérme? Hm. Nem rossz. Azt hiszem, Tyrex sokat köszönhet nekem egy ilyen vevôért. Nagyon jó üzlet, majd szólok neki. Azonban, ha hazudtál nekem az árat illetôen, akkor a te segged a tét.";
+            dialog.text = "5 dublont egy tekercsért. Ez a legjobb ár, amit kaphat, higgye el nekem.";
+			link.l1 = "5 aranyérme? Hm. Nem rossz. Azt hiszem, Tyrex sokat köszönhet nekem egy ilyen vevôért. Nagyon jó üzlet, majd szólok neki. Azonban, ha hazudtál nekem az árat illetôen, akkor a te segged a tét.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -3017,12 +3017,12 @@ void ProcessDialogEvent()
 				link.l1 = "(megbízható) (becsület) (vezetés) Mára elég volt a vér, Jean. Majd én magam elintézem.";
 				link.l1.go = "merida_head_dobro_1";
 				notification("Megbízható", "Trustworthy");
-				notification("Reputáció ellenôrzés átment", "None");
+				Notification_Reputation(true, 71, "low");
 				notification("Képességellenôrzés megfelelt", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Megbízható")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Megbízható")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Képességpróba Sikertelen (50)", SKILL_LEADERSHIP);
 			}
@@ -4696,7 +4696,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Kapitány, vigye az egész legénységet a zászlóshajójára, kivéve egy tisztet.";
 				Link.l1 = "Á, igen! Megteszem!";
@@ -4711,21 +4711,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+            LeaveShipIslaMona(&NPChar);
 			dialog.text = "Rendben, elvisszük egy biztonságos kikötôbe.";
 			Link.l1 = "Kiváló!";
 			Link.l1.go = "carpenter_exit";
@@ -4762,6 +4748,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Kap, úgy tűnik, nincs hely még egy tiszt számára a legénységedben.";
+				link.l1 = "Lehet, hogy igazad van. Visszatérek később – addig vigyázz itt, hogy senki ne birtokolja át a hajómat.";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "Elviszi a hajót?";
 			link.l1 = "Igen.";

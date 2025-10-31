@@ -228,7 +228,13 @@ void ActiveF12Control()
 			Log_SetStringToLog("Пол: " + findCh.sex);
 			Log_SetStringToLog("Группа: " + findCh.chr_ai.group);
 			Log_SetStringToLog("Темплейт: " + findCh.chr_ai.tmpl);
+			Log_SetStringToLog("Архетип: " + findCh.personality.mainArchetype);
 
+			aref personality, equip;
+			makearef(personality, findCh.personality);
+			makearef(equip, findCh.equip);
+			DumpAttributes(personality);
+			DumpAttributes(equip);
 			//Log_SetStringToLog("Стейт: " + findCh.chr_ai.tmpl.state);
 		//	dumpattributes(findCh);
 

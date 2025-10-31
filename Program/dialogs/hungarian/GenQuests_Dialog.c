@@ -1275,7 +1275,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_11":
-			dialog.text = "Szökevények vagyunk... a " + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Dat")) + ". Hamarosan a volt gazda észreveszi... és akkor biztosan halottak vagyunk.";
+			dialog.text = "Szökevények vagyunk... a " + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Gen")) + ". Hamarosan a volt gazda észreveszi... és akkor biztosan halottak vagyunk.";
 			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
 			{
 				link.l1 = "Szóval tudod, hogy kell kezelni a vitorlákat?";
@@ -4756,14 +4756,14 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_5":
-			dialog.text = "Ne, ne, ne! Lehet, hogy ez a vén csirkefogó részeg, de az esze még mindig megvan. A könyveket és a tekercseket az atya adta nekem " + PChar.GenQuest.ChurchQuest_1.ToName + ", én vittem ôket " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + ". Reggel pedig elmentem a helyi templomba, és említettem ezeket a könyveket a helyi atyának. Természetesen látni akarta ôket, tudod, az ô fajtájuk, ôk egyszerûen megôrülnek a szentek' életükért, meg minden ilyesmiért. Így hát elküldtem egy kabinos fiút, hogy hozza el a ládát velük együtt. És amíg vártam, úgy döntöttem, hogy játszom egy kicsit... és valahogy elvesztettem az összes pénzemet. Mindent! Semmit, amivel ki tudtam volna fizetni a piát! Így hát a kocsmáros elvette a könyveket zálogba, majd odaadtam neki a tekercseket is...";
+			dialog.text = "Ne, ne, ne! Lehet, hogy ez a vén csirkefogó részeg, de az esze még mindig megvan. A könyveket és a tekercseket az atya adta nekem " + PChar.GenQuest.ChurchQuest_1.ToName + ", én vittem ôket " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ". Reggel pedig elmentem a helyi templomba, és említettem ezeket a könyveket a helyi atyának. Természetesen látni akarta ôket, tudod, az ô fajtájuk, ôk egyszerûen megôrülnek a szentek' életükért, meg minden ilyesmiért. Így hát elküldtem egy kabinos fiút, hogy hozza el a ládát velük együtt. És amíg vártam, úgy döntöttem, hogy játszom egy kicsit... és valahogy elvesztettem az összes pénzemet. Mindent! Semmit, amivel ki tudtam volna fizetni a piát! Így hát a kocsmáros elvette a könyveket zálogba, majd odaadtam neki a tekercseket is...";
 				link.l1 = "Tehát könyveket árultál, a pap által rád bízott szent könyveket  " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Gen") + "?";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_6";
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_6":
 			dialog.text = "Tudom, tudom... A pokolban fogok égni az örökkévalóságig. Most már nem mutathatom az arcom sem az Atyának, aki ezt a megbízást adta nekem, sem annak, aki a papírokat kézbesítette, sem a helyi... Ki fog most imádkozni a lelkemért? És mi lesz, ha kiátkoznak? Ó, jaj nekem... Innom kell valamit... ";
-				link.l1 = "Woah nyugi, nem olyan vészes. A tetteid pocsék és istentelenek voltak, mégis kész vagyok segíteni neked. Kifizetem az adósságodat, és megveszem ezeket a kéziratokat. Emellett, mivel már ismerem mindkét említett papot, egyenesen a  "+ XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + " hajózom, hogy ott átadjam a papírokat. Megegyeztünk?";
+				link.l1 = "Woah nyugi, nem olyan vészes. A tetteid pocsék és istentelenek voltak, mégis kész vagyok segíteni neked. Kifizetem az adósságodat, és megveszem ezeket a kéziratokat. Emellett, mivel már ismerem mindkét említett papot, egyenesen a  " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " hajózom, hogy ott átadjam a papírokat. Megegyeztünk?";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_7";
 			break;
 			
@@ -4786,7 +4786,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_1":
 			dialog.text = "...és a lepedô! A lepedôket is ki kell cserélnünk!... Ó, szia. Kérem, ne vegye sértésnek, mis"+ GetSexPhrase("ter","s") +" akárhogy is hívják, de most, mint látja, eléggé elfoglalt vagyok, úgyhogy ha dolga van velem, kérem, siessen.";
-				link.l1 = "Amennyire én tudom, atya " + PChar.GenQuest.ChurchQuest_1.ToName + " adott neked néhány szent papírt " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Voc") + ". Megígérted, hogy átadod ôket a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + " , mert úgyis arrafelé hajózol."; // belamour gen
+				link.l1 = "Amennyire én tudom, atya " + PChar.GenQuest.ChurchQuest_1.ToName + " adott neked néhány szent papírt " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Voc") + ". Megígérted, hogy átadod ôket a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " , mert úgyis arrafelé hajózol."; // belamour gen
 				link.l1.go = "ChurchGenQuest1_DialogShip_2";
 			break;
 			
@@ -4798,7 +4798,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_3":
 			dialog.text = "Senki, hall engem? Senki ne merészeljen engem hibáztatni ezeknek az átkozott papíroknak a késedelmes kézbesítéséért!";
-				link.l1 = "Ó, nem, természetesen nem úgy értettem. Csak könnyíteni akartam a terheit. A helyzet az, hogy " + PChar.GenQuest.ChurchQuest_1.ToName + " eléggé aggódik a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + "szállítandó könyvek és papírok miatt. Tulajdonképpen épp most fogok oda hajózni.";
+				link.l1 = "Ó, nem, természetesen nem úgy értettem. Csak könnyíteni akartam a terheit. A helyzet az, hogy " + PChar.GenQuest.ChurchQuest_1.ToName + " eléggé aggódik a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + "szállítandó könyvek és papírok miatt. Tulajdonképpen épp most fogok oda hajózni.";
 				link.l1.go = "ChurchGenQuest1_DialogShip_4";
 			break;
 			
@@ -4811,7 +4811,7 @@ void ProcessDialogEvent()
 		}
 		else // Свитки не отдает
 		{
-			dialog.text = "Ne aggódjatok emiatt, mis"+ GetSexPhrase("ter","s") +", és utazzatok " +  XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + " könnyedén, hiszen én voltam az, aki vállaltam, hogy azokat a papírokat kézbesítem, és én leszek az, aki ezt mindenáron megteszem, hogy senki ne kiabáljon minden sarkon, hogy a kapitány " + NPChar.name + " nem maradt hû a szavához!";
+			dialog.text = "Ne aggódjatok emiatt, mis"+ GetSexPhrase("ter","s") +", és utazzatok " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " könnyedén, hiszen én voltam az, aki vállaltam, hogy azokat a papírokat kézbesítem, és én leszek az, aki ezt mindenáron megteszem, hogy senki ne kiabáljon minden sarkon, hogy a kapitány " + NPChar.name + " nem maradt hû a szavához!";
 				link.l1 = "De kapitány úr, a lényeg valójában az...";
 				link.l1.go = "ChurchGenQuest1_DialogShip_5_2";
 		}
@@ -4833,7 +4833,7 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogShip_5_2":
-			dialog.text = "Valójában a lényeg az, hogy egyáltalán nincs dolgom veled. A Szentatya adott nekem egy feladatot, szállítsam el a könyveket a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + " és adjam át a helyi papnak. És ott nem látlak téged. Egyáltalán nem! Sok szerencsét!";
+			dialog.text = "Valójában a lényeg az, hogy egyáltalán nincs dolgom veled. A Szentatya adott nekem egy feladatot, szállítsam el a könyveket a " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " és adjam át a helyi papnak. És ott nem látlak téged. Egyáltalán nem! Sok szerencsét!";
 //				link.l1 = "Fine, then. You're a very responsible man, although it's your only merit. Good luck to you, my discourteous friend";
 //				link.l1.go = "ChurchGenQuest1_DialogShip_5_2_1"; // Сваливаем, поверили ему
 				link.l2 = "Elegem van a pimasz viselkedésedbôl. A buta szád még egy angyalt is képes erôszakra kényszeríteni. Teljesítenem kell szent atyám akaratát, és ha kell, használom a fegyveremet!";

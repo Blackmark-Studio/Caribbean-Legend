@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 						// belamour legendary edition вызываюий доверие даёт возможность обмануть стражу
 						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 						{
-							notification("Trustworthy", "Trustworthy");
+							Notification_Perk(true, "Trustworthy");
 							link.l1.go = "NotPegYou";
 						}
 						else

@@ -115,9 +115,9 @@ void WorldSituationsUpdate()
 			
 			if (GetDLCenabled(DLC_APPID_1) && !CheckAttribute(pchar, "questTemp.LoyaltyPack") && pchar.rank >= 4) DoQuestFunctionDelay("LoyaltyPack_Start", 1.0);
 			// Мерзкий Божок - без НИ
-			if (GetDLCenabled(DLC_APPID_2) && !CheckAttribute(pchar, "questTemp.CG_SpawnAguebana") && pchar.rank >= 9) DoQuestFunctionDelay("ChickenGod_BrothelCheck", 1.0);
+			if (GetDLCenabled(DLC_APPID_2) && !CheckAttribute(pchar, "questTemp.CG_SpawnAguebana") && pchar.rank >= 7) DoQuestFunctionDelay("ChickenGod_BrothelCheck", 1.0);
 			// Чёрная Метка - без НИ
-			if (GetDLCenabled(DLC_APPID_3) && !CheckAttribute(pchar, "questTemp.BM_StartQuest") && pchar.rank >= 5) DoQuestCheckDelay("BM_StartQuest", 1.0);
+			if (GetDLCenabled(DLC_APPID_3) && !CheckAttribute(pchar, "questTemp.BM_StartQuest") && pchar.rank >= 4) DoQuestCheckDelay("BM_StartQuest", 1.0);
 			if (GetDLCenabled(DLC_APPID_4))
 			{
 				if(!CheckAttribute(pchar, "questTemp.SantaMisericordia")) SantaMisericordia_init();
@@ -152,7 +152,8 @@ void WorldSituationsUpdate()
 			CheckAchievments();
 		break;
 		
-		case 2:				
+		case 2:
+            RaisePirateThreat();
 			ProcessDayRepair();
 			
 			// Addon 2016-1 Jason пиратская линейка
@@ -274,7 +275,7 @@ void Tut_Continue()
     LAi_LockFightMode(pchar, true);
     
 	sld = GetCharacter(NPC_GenerateCharacter("Sailor_1", "Alonso", "man", "man", 1, PIRATE, 0, false, "soldier"));
-    sld.name 	= StringFromKey("time_events_7");
+    sld.name = GetCharacterName("Alonso");
     sld.lastname 	= "";
     sld.Dialog.CurrentNode = "First time";
     sld.dialog.filename = "Quest\StartGame_dialog.c";

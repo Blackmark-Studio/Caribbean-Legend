@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 						link.l1.go = "silk_info";
 						break;
 					}
-					else notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+					else Notification_Reputation(false, 61, "low");
 				}
 			}
 			dialog.text = "Buongiorno, Kapitein "+GetFullName(pchar)+"! Come posso esserti utile?";
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 				dialog.text = "Apprezzo il tuo spirito d’affari e sono disposto a prendere in considerazione la tua richiesta. Forse potremmo aumentare le quantità, diciamo, di cinque volte. Tuttavia, mettere insieme simili forniture richiederà risorse notevoli. Dovremo ampliare i magazzini, rafforzare la sicurezza e assicurare rotte di consegna affidabili. Poiché ne trarrai vantaggio anche tu, propongo di dividere queste spese tra noi.";
 				link.l1 = "Tutto ciò mi sembra sensato. Quale somma riterresti necessaria per coprire queste spese?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

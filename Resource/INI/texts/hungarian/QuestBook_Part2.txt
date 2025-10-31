@@ -1720,7 +1720,7 @@ Lemaradtam az Utrechtrôl. Olyan közel voltam, mégsem sikerült megtalálnom a
 #TEXT 14
 Kudarc! Elvesztegettem az esélyt, hogy alkut kössek a munkással; ôrjárattisztnek nézett, megijedt, és ostoba módon megtámadott. Idióta. Mindet meg kellett ölnöm. Szégyen, de ennek vége.
 #TEXT 15
-Vége van. Sikerült alkut kötnöm a munkással. 25 dublont egy tekercsért. Most el kellene hajóznom Szent Kristófhoz, hogy meglátogassam a kopasz Geffrey-t.
+Vége van. Sikerült alkut kötnöm a munkással. 5 dublont egy tekercsért. Most el kellene hajóznom Szent Kristófhoz, hogy meglátogassam a kopasz Geffrey-t.
 #TEXT 16
 Már két hónap telt el. A kopasz Geffrey bizonyára már eladta a selymét valaki másnak. Kár... de azt hiszem, még mindig átadhatom a vevôre vonatkozó információkat Tyrexnek. Tíz napon belül La Vegába kell érnem, hogy Tyrexnek legyen ideje elegendô selymet gyûjteni. Remélem, ez enyhíti majd az esetleges haragját.
 #TEXT 17
@@ -1732,7 +1732,7 @@ A Husky Billytôl kapott információkat továbbítottam a helyi hatóságoknak.
 #TEXT 20
 Ez megtörtént. A versenytársamat egy katonai járôr likvidálta. Még 10.000 pezót is kaptam jutalmul, ami nagyon szép. Találkoznom kell a hajóépítôvel; mostanra már biztosan meggyôzôbb lett.
 #TEXT 21
-Megtörtént. Sikerült megegyeznem a hajóépítôvel. 25 dublont egy tekercsért. Most el kellene hajóznom Szent Kristófba, és meglátogatnom a kopasz Geffrey-t.
+Megtörtént. Sikerült megegyeznem a hajóépítôvel. 5 dublont egy tekercsért. Most el kellene hajóznom Szent Kristófba, és meglátogatnom a kopasz Geffrey-t.
 #TEXT 22
 Kopasz Geffrey utasítást kapott - hamarosan Jamaikába hajózik a Marcus Tyrex elsô adag hajóselyemmel. Nekem La Vegába kellene elhajóznom.
 #TEXT 23

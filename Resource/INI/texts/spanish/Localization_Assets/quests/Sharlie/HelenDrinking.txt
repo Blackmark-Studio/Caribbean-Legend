@@ -12,12 +12,12 @@ HelenDrinking_11 { }
 HelenDrinking_12 {Lucky}
 HelenDrinking_13 { }
 HelenDrinking_14 {Y qué asco es tener dos casas. Ay, Mary... Después de todo lo que pasó, ¿qué debemos hacer ahora los tres?}
-HelenDrinking_15 {Alonso}
+HelenDrinking_15 { }
 HelenDrinking_16 { }
 HelenDrinking_17 {Richard}
 HelenDrinking_18 {Small}
-HelenDrinking_19 {Helen lo aprueba}
-HelenDrinking_20 {Helen lo desaprueba}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
 HelenDrinking_21 {¡Sándalo entregada en tu bodega!}
 HelenDrinking_22 {~ obtuve +1 a ~}
 HelenDrinking_23 {~ obtuve +1 a ~}

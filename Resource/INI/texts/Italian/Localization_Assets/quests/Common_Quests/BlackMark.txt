@@ -10,7 +10,7 @@ BlackMark_9 { }
 BlackMark_10 { }
 BlackMark_11 {Gabriel}
 BlackMark_12 {Callow}
-BlackMark_13 {Principio}
+BlackMark_13 { }
 BlackMark_14 { }
 BlackMark_15 { }
 BlackMark_16 {Fatto e finito. È ora di andare prima che arrivi Gabe}

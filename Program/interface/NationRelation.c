@@ -237,7 +237,7 @@ void ShowInfoWindow()
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText = XI_Convertstring("Captain") + " - " + GetFullName(refChar);
 				sText1 = sText + "\n\n" + GetShipDescr(refBaseShip);
-				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetBaseShipPower(sti(refBaseShip.BaseType)));
+				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetModifiedBaseShipPower(refChar, sti(refBaseShip.BaseType)));
 			}
 		break; 
 		// sith --->
@@ -615,6 +615,7 @@ void SetPiratesThreatLevel()
 	x1 += makeint(x * width / 100.0) - makeint((xt2 - xt1)/2.0);
 	x2 = x1 + (xt2 - xt1);
 	SetNodePosition("PIRATESRISKSPIC", x1, y1, x2, y2);
+    if (iThreat == 0) SetNodeUsing("PIRATESRISKSPIC", false);
 }
 
 void SetSquadronTable()
@@ -649,7 +650,7 @@ void SetSquadronTable()
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).icon1.height = 80;
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).icon1.offset = "15, 0";
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).might = fMight;	// записываем мощь
-
+                // see wdmGetPowerThreshold
 				if(fMight < 200/5)
 					iMight = 1;
 				else if(fMight < 325/5)
@@ -702,6 +703,7 @@ void SetSquadronTable()
 	fBarLevel[3] = 0.38;
 	fBarLevel[4] = 0.64;
 	fBarLevel[5] = 1.0;
+    // see wdmGetPowerThreshold
 	float fRealLevel[6];
 	fRealLevel[0] = 0.0;
 	fRealLevel[1] = 200.0;
@@ -710,17 +712,17 @@ void SetSquadronTable()
 	fRealLevel[4] = 675.0;
 	fRealLevel[5] = 925.0;
 	
-	float fBarPower = fSquadronMight;
+	float fBarPower = stf(PChar.Squadron.ModPower);
 	for(int iLevel = 1; iLevel <= 5; iLevel++)
 	{
-		if(fSquadronMight > fRealLevel[iLevel - 1] && fSquadronMight <= fRealLevel[iLevel])
+		if(fBarPower > fRealLevel[iLevel - 1] && fBarPower <= fRealLevel[iLevel])
 		{
-			fBarPower = Bring2Range(fBarLevel[iLevel - 1] * 925, fBarLevel[iLevel] * 925, fRealLevel[iLevel - 1], fRealLevel[iLevel], fSquadronMight);
+			fBarPower = Bring2Range(fBarLevel[iLevel - 1] * 925, fBarLevel[iLevel] * 925, fRealLevel[iLevel - 1], fRealLevel[iLevel], fBarPower);
 			break;
 		}
 	}
 	
-    GameInterface.StatusLine.BAR_POWER.Value = fBarPower;
+	GameInterface.StatusLine.BAR_POWER.Value = fBarPower;
 
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "BAR_POWER", 0);
 

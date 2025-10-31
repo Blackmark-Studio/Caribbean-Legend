@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Sajnos, a ravasz tervem kudarcot vallott. Viszlát, matróz.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -568,14 +568,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "Nos... igaza van. És már nem egyszer vacsorázott a kapitány kabinjában. Folytassa, Monsieur de More.";
 					link.l1 = "Ez már jobban tetszik!";
 					link.l1.go = "OhrannikCabin_4";
-					notification("A csekk átadva", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Elégtelen készség (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 			dialog.text = "Eh... rendben. Gondolom, nem lesz belôle nagy baj.";
 			link.l1 = "Ez már jobban tetszik!";
 			link.l1.go = "OhrannikCabin_4";
-			notification("A csekk átadva", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -1073,17 +1073,17 @@ void ProcessDialogEvent()
 		
 		case "OldSailor_9":
 			dialog.text = "Most mondja meg nekem: mi a legfontosabb készség egy kapitány számára?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "A navigáció. Ez határozza meg a hajó méretét, amit irányítani tud.";
 				link.l1.go = "OldSailor_10";
-				notification("A csekk átadva", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Nem fogok hazudni - nem tudom.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Elégtelen készségszint (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1167,18 +1167,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "Máris megtaláltad a választ? Mi a legfontosabb képesség egy kapitány számára?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "A navigáció. Ez határozza meg a hajó méretét, amit irányítani tud.";
 				link.l1.go = "OldSailor_10";
-				notification("A csekk átadva", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Még nem.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Elégtelen készségszint (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		

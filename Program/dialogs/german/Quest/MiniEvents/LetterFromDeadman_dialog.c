@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Du glaubst wohl, du kannst einfach hier reinspazieren, eine Dame beleidigen, mich ignorieren und dann auch noch unversehrt mit den Dublonen verschwinden? Scheint, als wärst du nicht besonders schlau. Aber ich fange keinen Streit vor einer Frau an. Also hier mein Angebot: Du entschuldigst dich bei Madam Caldera, nimmst deine Dublonen und verschwindest hier. Oder ich bringe dir doch noch ein paar Manieren bei.";
 					link.l1.go = "Naemnik_5";
-					notification("Überprüfung bestanden (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Nicht genug Gold (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Also gut, ich bin bereit, dir deine groben Manieren und sogar deine Unhöflichkeit mir gegenüber zu verzeihen. Aber wenn du deine Dublonen bekommen und hier unversehrt verschwinden willst, musst du dich bei Lady Caldera entschuldigen. Andernfalls werden wir sehen, wer besser mit der Waffe umgeht. Und glaub mir, ich trage meine nicht nur zum Schein.";
 					link.l1.go = "Naemnik_5";
-					notification("Überprüfung bestanden (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Nicht genug Gold (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "Offensichtlich bist du nicht gerade mit viel Verstand gesegnet, wenn du dachtest, ich würde brav abwarten. Und noch weniger, wenn du glaubst, ich würde all das Unheil, das du und deinesgleichen über Lady Caldera gebracht habt, einfach ignorieren.";

@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "Ti ho trovato un compratore. È un costruttore di navi di Port Royal. Ha bisogno di seta per navi per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 25 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la location è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Il calvo Geffrey ha già consegnato il primo lotto a Giamaica.";
+				link.l1 = "Ti ho trovato un compratore. È un costruttore di navi di Port Royal. Ha bisogno di seta per navi per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 5 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la location è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Il calvo Geffrey ha già consegnato il primo lotto a Giamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta per nave per la sua produzione e sarà in grado di comprare lotti di cento rotoli ogni mese per 25 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la location è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Mi sono voluti più di due mesi per trovare un acquirente del genere, Geffrey deve aver già venduto la seta ai contrabbandieri. Mi dispiace, Marcus.";
+				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta per nave per la sua produzione e sarà in grado di comprare lotti di cento rotoli ogni mese per 5 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la location è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Mi sono voluti più di due mesi per trovare un acquirente del genere, Geffrey deve aver già venduto la seta ai contrabbandieri. Mi dispiace, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Ho sempre incarichi per i ragazzi capaci. C'è una questione delicata di cui voglio che tu ti occupi. C'è una nave ormeggiata a Capsterville, chiamata 'Snake', sotto il comando di Geffrey Brooke, noto anche come Geffrey il Calvo. Lavora per me. Un eccellente combattente, conosce tutto su pistole e lame ma è un completo idiota in ogni altro aspetto della vita. Ma non siamo duri con il Calvo, nessuno è perfetto, ah-ah! \n Quindi. Questo duro ha attaccato un convoglio olandese a nord di Saint Martin e ha catturato una barca piena di sacchi di grano. La cosa è, è riuscito a trovare della seta nascosta tra i sacchi. Un carico davvero grande. Questa merce è estremamente preziosa e rara, gli olandesi la portano dall'Europa solo per le esigenze delle loro forze armate. Questa seta viene utilizzata per vele speciali che aumentano la velocità della nave e la sua capacità di navigare controvento. \n È quasi impossibile da comprare, venderla non è un problema ma è difficile trovare il prezzo giusto. Questi maledetti commercianti riducono sempre il prezzo! So che ci sono persone nei Caraibi pronte a dare un buon prezzo in dobloni per comprare questa seta e il tuo obiettivo è trovare tali persone. \n Cosa? Qualsiasi sciocco può saccheggiare carovane ma il commercio è solo per persone con almeno un segno di esistenza di cervello in un cranio. Sto pensando di vendere seta per navi mensilmente quindi il tuo obiettivo è trovare un acquirente regolare che pagherà almeno venti dobloni d'oro per un rotolo. Hai due mesi per farlo, non posso tenere Geffrey il Calvo a Capsterville per sempre. \n Questo è tutto. Mettiti in rotta per Capsterville e parla con Geffrey prima che venda il carico ai contrabbandieri per un soldo. Ti ho già detto che è un po' 'semplice'.";
+            dialog.text = "Ho sempre incarichi per i ragazzi capaci. C'è una questione delicata di cui voglio che tu ti occupi. C'è una nave ormeggiata a Capsterville, chiamata 'Snake', sotto il comando di Geffrey Brooke, noto anche come Geffrey il Calvo. Lavora per me. Un eccellente combattente, conosce tutto su pistole e lame ma è un completo idiota in ogni altro aspetto della vita. Ma non siamo duri con il Calvo, nessuno è perfetto, ah-ah! \n Quindi. Questo duro ha attaccato un convoglio olandese a nord di Saint Martin e ha catturato una barca piena di sacchi di grano. La cosa è, è riuscito a trovare della seta nascosta tra i sacchi. Un carico davvero grande. Questa merce è estremamente preziosa e rara, gli olandesi la portano dall'Europa solo per le esigenze delle loro forze armate. Questa seta viene utilizzata per vele speciali che aumentano la velocità della nave e la sua capacità di navigare controvento. \n È quasi impossibile da comprare, venderla non è un problema ma è difficile trovare il prezzo giusto. Questi maledetti commercianti riducono sempre il prezzo! So che ci sono persone nei Caraibi pronte a dare un buon prezzo in dobloni per comprare questa seta e il tuo obiettivo è trovare tali persone. \n Cosa? Qualsiasi sciocco può saccheggiare carovane ma il commercio è solo per persone con almeno un segno di esistenza di cervello in un cranio. Sto pensando di vendere seta per navi mensilmente quindi il tuo obiettivo è trovare un acquirente regolare che pagherà almeno 4 dobloni d'oro per un rotolo. Hai due mesi per farlo, non posso tenere Geffrey il Calvo a Capsterville per sempre. \n Questo è tutto. Mettiti in rotta per Capsterville e parla con Geffrey prima che venda il carico ai contrabbandieri per un soldo. Ti ho già detto che è un po' 'semplice'.";
 			link.l1 = "Mh... Capito. Sono già in viaggio.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ah! Ecco l'audace capitano "+GetFullName(pchar)+"! Che ne sarà dell'acquirente?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta navale per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 25 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la posizione è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Mi ci sono voluti più di due mesi per trovare un tale acquirente, Geffrey deve aver già venduto la seta ai contrabbandieri. Mi dispiace, Marcus.";
+				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta navale per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 5 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la posizione è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Mi ci sono voluti più di due mesi per trovare un tale acquirente, Geffrey deve aver già venduto la seta ai contrabbandieri. Mi dispiace, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta marittima per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 25 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la località è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Il Calvo Geffrey ha già consegnato il primo lotto in Jamaica.";
+				link.l1 = "Ho trovato un acquirente per te. È un costruttore di navi di Port Royal. Ha bisogno di seta marittima per la sua produzione e sarà in grado di acquistare lotti di cento rotoli ogni mese per 5 dobloni a rotolo. I suoi uomini riceveranno la merce dal 10 al 15, di notte, la località è Capo Negril. La parola d'ordine - 'Un mercante di Lione'. Il Calvo Geffrey ha già consegnato il primo lotto in Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Geffrey il Calvo ha venduto al tuo acquirente il primo lotto di 105 rotoli di seta navale. Pensavo di venderla per venti dobloni a rotolo, quindi penso che sarebbe giusto darti la differenza. Questa è la mia decisione. La tua quota è di 525 dobloni più un bonus - un doblone a rotolo. In totale sono 630 dobloni. Ecco, prendili.";
+            dialog.text = "Geffrey il Calvo ha venduto al tuo acquirente il primo lotto di 105 rotoli di seta navale. Pensavo di venderla per 4 dobloni a rotolo, quindi penso che sarebbe giusto darti la differenza. Questa è la mia decisione. La tua quota è di 105 dobloni più un bonus - un doblone a rotolo. In totale sono 210 dobloni. Ecco, prendili.";
 			link.l1 = "Grazie, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("You have received 630 doubloons");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Un'altra cosa. Puoi ottenere un profitto extra da questo.";
 			link.l1 = "Interessante... Continua.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Il tuo acquirente vuole più di 100 rotoli di seta da consegnare per i prossimi due mesi. Se ne hai, portami da 20 a 100 rotoli per un prezzo di 24 dobloni. L'offerta sarà valida per due mesi.";
+            dialog.text = "Il tuo acquirente vuole più di 100 rotoli di seta da consegnare per i prossimi due mesi. Se ne hai, portami da 20 a 100 rotoli per un prezzo di 5 dobloni. L'offerta sarà valida per due mesi.";
 			link.l1 = "Bene! Porterò di più se ne ho.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Molto bene. Prendi l'oro - 24 dobloni per un rotolo come abbiamo concordato.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Molto bene. Prendi l'oro - 5 dobloni per un rotolo come abbiamo concordato.";
 			link.l1 = "Grazie!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Prenderò un centinaio di rotoli. Prendi l'oro - 24 dobloni per rotolo come abbiamo concordato.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Prenderò un centinaio di rotoli. Prendi l'oro - 5 dobloni per rotolo come abbiamo concordato.";
 			link.l1 = "Grazie!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;

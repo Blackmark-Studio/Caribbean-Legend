@@ -1684,7 +1684,7 @@ void ProcessDialogEvent()
 		// 杰森 比黄金更珍贵
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "这次又有什么骚动, 船长? 西班牙人。 海盗还是更糟? ";
 			link.l1 = "更糟, 玛丽, 糟得多。 总督打算拜访一位极其昂贵的交际花, 我应该按照承诺陪他去, 作为一个有趣的人。 无聊的谈话。 高价酒和乏味的贵族。 ";
 			link.l1.go = "GoldenGirl_1";

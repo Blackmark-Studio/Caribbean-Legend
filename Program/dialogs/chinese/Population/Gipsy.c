@@ -187,14 +187,14 @@ void ProcessDialogEvent()
 											 "我听说有人在酒馆里毒死了某个商人, 偷走了他所有的财物。 那个人在临死前痛苦了很久。 他口吐白沫, 脸色紫得像茄子... 亲爱的, 那是你干的吗? ");
 				link.l1 = "你们这些吉普赛女人确实喜欢分享观点! 别担心, 姑娘, 我不打算毒死人。 那是女人的杀人方式, 不是我的风格。 对付男人我有剑, 但我对付不了那些该死的老鼠。 ";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "你想陷害我! 不, 先生, 我没有任何毒药。 我只有植物和药水, 没有毒药。 ";
 				link.l1 = "那随便吧。 别对我施邪恶之眼。 ";
 				link.l1.go = "exit";
-				notification("特质检查失败", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

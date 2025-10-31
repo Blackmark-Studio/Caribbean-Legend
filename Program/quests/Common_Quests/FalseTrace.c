@@ -10,24 +10,6 @@ void FalseTrace_Prepare(string qName)//подготовка инициализа
 	pchar.quest.False_Trace_1.function = "FalseTrace_Begin";
 	log_testinfo("Ложный след в колонии: "+pchar.questTemp.FalseTrace.StartCity);
 	AddMapQuestMarkCity(pchar.questTemp.FalseTrace.StartCity, false);
-	CheckPortugalHWIC(); // для квест марков
-}
-
-void CheckPortugalHWIC()
-{
-	if(SandBoxMode || pchar.questTemp.HWIC.Detector == "holl_win"|| pchar.questTemp.HWIC.Detector == "eng_win" || pchar.questTemp.HWIC.Detector == "self_win")
-	{
-		if(sti(pchar.rank) > 14) 
-		{
-			AddMapQuestMarkCity("marigo", false);
-			AddLandQuestMark(characterFromId("Marigo_Hostess"), "questmarkmain");
-		}
-		if(!CheckAttribute(pchar, "questTemp.Consumption") && sti(pchar.rank) > 6)
-		{
-			AddMapQuestMarkCity("PortSpein", false);
-			AddLandQuestMark(characterFromId("PortSpein_waitress"), "questmarkmain");
-		}
-	}
 }
 
 void FalseTrace_Begin(string qName)//инициализация квестодателя

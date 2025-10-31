@@ -37,7 +37,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "(值得信赖) 但您也必须承认, 主通过人来行事。 如果那个吉普赛人只是祂意志的工具呢? 如果祂的设计如此深奥, 我们凡人无法理解呢? 主的作为总是神秘莫测, 不是吗? ";
                 link.l1.go = "dwh_pastor_VD_1";
-                notification("Trustworthy", "Trustworthy");
+                Notification_Perk(true, "Trustworthy");
             }
             else
             {

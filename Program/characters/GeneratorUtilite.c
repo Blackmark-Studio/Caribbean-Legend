@@ -5,13 +5,15 @@ int m_rank_bonus, e_rank_bonus;
 // Генерим НПС приблизительного ранга
 void SetFantomParamFromRank(ref NPchar, int  rank, bool setEquip)
 {
-    SetRandSPECIAL(Npchar);
-    CalculateSkillsFromRank(Npchar, rank);
-    SetFantomHP(NPchar);
-    if (setEquip)
-    {
-	    LAi_NPC_Equip(NPchar, sti(NPchar.rank), true, true);
-    }
+    // SetRandSPECIAL(Npchar);
+    // CalculateSkillsFromRank(Npchar, rank);
+    // SetFantomHP(NPchar);
+	if (setEquip)
+	{
+		LAi_NPC_Equip(NPchar, sti(NPchar.rank), true, true);
+	}
+
+	ForceOldGenerateToNew(NPchar, rank);
 }
 
 
@@ -197,15 +199,16 @@ void SetFantomParam(ref _pchar)
     SetFantomParamCommon(_pchar);
 }
 
-void SetFantomParamCommon(ref _pchar)
+void SetFantomParamCommon(ref chr)
 {
-    CalculateAppropriateSkills(_pchar);
-    SetFantomHP(_pchar);
+    CalculateAppropriateSkills(chr);
     // тут трем накопивщиеся сабли и корабли 290704 BOAL -->
-    DeleteAttribute(_pchar, "Items");
+    DeleteAttribute(chr, "Items");
     // тут трем накопивщиеся сабли и корабли 290704 BOAL <--
-    LAi_NPC_Equip(_pchar, sti(_pchar.rank), true, true);
+    LAi_NPC_Equip(chr, sti(chr.rank), true, true);
     //AntiCheat(_pchar);
+		ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+    SetFantomHP(chr);
 }
 
 void SetFantomParamEncout(ref _pchar)  // выдача сабель и НР отдельно
@@ -257,6 +260,8 @@ void SetSeaFantomParam(ref _pchar, string type)
 
 	SetFantomHP(_pchar);
 	LAi_NPC_Equip(_pchar, sti(_pchar.rank), true, true);
+	ForceAutolevel(_pchar, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB SetSeaFantomParam
+	GiveCaptainOfficers(_pchar, true);
 	//AntiCheat(_pchar);
 }
 /////////////////////////////////////////////////////
@@ -330,7 +335,7 @@ void Fantom_SetRandomSkills(ref rFantom, string sFantomType)
 void SetFantomHP(ref _pchar)
 {
 	int hp;
-	hp = GetCharacterBaseHPValue(_pchar) + (sti(_pchar.rank) * GetCharacterAddHPValue(_pchar));
+	hp = LAi_GetCharacterMaxHP(_pchar);
 	LAi_SetHP(_pchar, hp, hp);
 	LAi_SetCurHPMax(_pchar);
 }
@@ -424,14 +429,15 @@ void SetFantomParamAbordOur(ref _pchar)
 	DeleteAttribute(_pchar, "RankBonus");
 	DeleteAttribute(_pchar, "OurMan");
 }
-void SetMushketerParamAbordOur(ref _pchar)
+void SetMushketerParamAbordOur(ref chr)
 {
-	_pchar.RankBonus = m_rank_bonus;
-	_pchar.OurMan = true;
-    CalculateAppropriateSkills(_pchar);
-    SetFantomHP(_pchar);
-	DeleteAttribute(_pchar, "RankBonus");
-	DeleteAttribute(_pchar, "OurMan");
+	chr.RankBonus = m_rank_bonus;
+	chr.OurMan = true;
+	CalculateAppropriateSkills(chr);
+	DeleteAttribute(chr, "RankBonus");
+	DeleteAttribute(chr, "OurMan");
+	ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	SetFantomHP(chr);
 }
 // наши в форте НР не меняем
 void SetFantomParamFortOur(ref _pchar)
@@ -467,19 +473,15 @@ void SetFantomParamAbordEnemy(ref _pchar)
 	DeleteAttribute(_pchar, "BaseRank");
 	DeleteAttribute(_pchar, "RankBonus");
 }
-void SetMushketerParamAbordEnemy(ref _pchar)
+void SetMushketerParamAbordEnemy(ref chr)
 {
-	ref MChar;
-	MChar = GetMainCharacter();
-	if (CheckAttribute(MChar, "EnemyRank"))
-	{
-		_pchar.BaseRank = MChar.EnemyRank;
-	}
-	_pchar.RankBonus = e_rank_bonus;
-    CalculateAppropriateSkills(_pchar);
-    SetFantomHP(_pchar);
-	DeleteAttribute(_pchar, "BaseRank");
-	DeleteAttribute(_pchar, "RankBonus");
+	if (CheckAttribute(pchar, "EnemyRank")) chr.BaseRank = pchar.EnemyRank;
+	chr.RankBonus = e_rank_bonus;
+	CalculateAppropriateSkills(chr);
+	DeleteAttribute(chr, "BaseRank");
+	DeleteAttribute(chr, "RankBonus");
+	ForceAutolevel(chr, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	SetFantomHP(chr);
 }
 // враги в форте НР меняем потом на GetBoarding_enemy_hp(LAi_GetCharacterMaxHP(НПС))
 void SetFantomParamFortEnemy(ref _pchar)

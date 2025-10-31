@@ -488,7 +488,7 @@ void ProcessDialogEvent()
 				dialog.text = "Señor"+GetSexPhrase("","ita")+" "+GetSexPhrase("pańskie","pani")+" pragnienie zakupu większej ilości żywicy niewątpliwie świadczy o zaufaniu do naszego interesu. Jednak pojawia się pewna trudność: wraz ze zwiększeniem wydobycia rośnie ryzyko zwrócenia uwagi władz wyspy, a kontrola nad takimi partiami wymaga ludzi i środków bezpieczeństwa, co, przyznaję, nie jest tanie. Jeśli jest "+GetSexPhrase("pan","pani")+" "+GetSexPhrase("gotowy","gotowa")+" dodać do ceny trzy tysiące dublonów jako jednorazową opłatę, zatrudnię godnych zaufania ludzi, którzy będą w stanie chronić ładunki i zapobiec wyciekom informacji. Wtedy nasza trasa stanie się bezpieczniejsza, a ja będę mógł dostarczać "+GetSexPhrase("panu","pani")+" trzysta beczek żywicy miesięcznie. Jako rekompensatę za "+GetSexPhrase("pańską","pani")+" inwestycję, zaproponuję "+GetSexPhrase("panu","pani")+" jako klientowi hurtowemu piętnastoprocentową zniżkę na wszystkie przyszłe partie.";
 				link.l1 = "Trzy tysiące dublonów za bezpieczeństwo dostaw? Señor Sergio, nie ukrywam, ta cena wydaje mi się niewiarygodna - jakby proponował mi pan spisek w Eskorialu, a nie tylko zapewnienie ochrony ładunków żywicy!";
 				link.l1.go = "UpgradeOil_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

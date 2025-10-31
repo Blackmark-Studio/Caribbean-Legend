@@ -401,11 +401,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Pensi davvero di poter entrare qui, insultare una signora, ignorarmi e andartene via tutto intero, con i dobloni per giunta? Non sembri particolarmente sveglio. Ma non inizierò una rissa davanti a una donna. Quindi ecco la mia proposta: chiedi scusa a Madam Caldera, prendi i tuoi dobloni e sparisci da qui. Oppure dovrò insegnarti io come ci si comporta, dopotutto.";
 					link.l1.go = "Naemnik_5";
-					notification("Controllo superato (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Oro insufficiente (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			else
@@ -415,11 +415,11 @@ void ProcessDialogEvent()
 				{
 					link.l1 = "Bene, sono disposto a perdonare i tuoi modi bruschi e persino la tua maleducazione nei miei confronti. Ma se vuoi prendere i tuoi dobloni e andartene di qui sano e salvo, dovrai chiedere scusa a Lady Caldera. Altrimenti vedremo chi sa maneggiare meglio un'arma. E credimi, non porto la mia solo per bellezza.";
 					link.l1.go = "Naemnik_5";
-					notification("Controllo superato (525)", "Dubloon");
+					Notification_Money(true, 525, "dublon");
 				}
 				else
 				{
-					notification("Oro insufficiente (525)", "Dubloon");
+					Notification_Money(false, 525, "dublon");
 				}
 			}
 			link.l2 = "Chiaramente, non sei affatto gravato dall’ingegno se pensavi che avrei aspettato il mio turno. E ancor meno se credevi che avrei chiuso un occhio su tutti i guai che tu e i tuoi simili avete causato a Lady Caldera.";

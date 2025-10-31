@@ -4,7 +4,10 @@
 #include "interface\character_all.h"
 #include "interface\utils\items\stats.c"
 #include "interface\utils\items\descriptors.c"
+#include "interface\utils\common_exchange.c"
 #include "interface\utils\popup_confirmation.c"
+#include "interface\utils\character_stats.c"
+#include "interface\utils\modifiers.c"
 int iCharCapacity;
 int iTotalSpace;
 float fCharWeight, fStoreWeight;
@@ -46,7 +49,9 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 	GameInterface.TABLE_LIST2.hr.td4.str = XI_ConvertString("Cost");	
 
 
-	FillScrollWithCharacters(&refCharacter, "CHARACTERS_SCROLL", "IsFellowAbleToTrade", false, &nCurScrollNum, 1)
+	string filterFunc = "IsFellowAbleToTrade";
+	if (refStoreChar.Merchant.type == "GasparGold") filterFunc = "IsMainCharacter";
+	FillScrollWithCharacters(&refCharacter, "CHARACTERS_SCROLL", filterFunc, false, &nCurScrollNum, 1)
 
 	SendMessage(&GameInterface,"ls",MSG_INTERFACE_INIT,iniName);
 
@@ -86,16 +91,6 @@ void InitInterface_RI(string iniName, ref pTrader, int mode)
 	SetControlsTabModeManual(1); // ставим дефолтную вкладку все
 	CreateString(true, "CharName2", GetFullName(refCharacter), FONT_NORMAL, COLOR_MONEY, 960, 250, SCRIPT_ALIGN_CENTER, 1.5);
 	CreateString(true, "CharJob", "", FONT_NORMAL, COLOR_NORMAL, 960, 125, SCRIPT_ALIGN_CENTER, 1.3);
-}
-
-// метод на TAB переключает вкладки таблицы
-void ProcessInterfaceControls() 
-{
-    string controlName = GetEventData();
-	if (controlName == "InterfaceTabSwitch") {
-		currentTab = currentTab % 5;
-		SetControlsTabMode(currentTab + 1);
-	}
 }
 
 void ProcessBreakExit()
@@ -183,11 +178,11 @@ void ProcCommand()
 	switch(nodName)
 	{
 		case "QTY_BUYSELL_BUTTON":
-			if(comName=="leftstep")
+			if(comName=="leftstep" || comName=="ctrlleft")
 			{
 	            ADD_BUTTON();
 			}
-			if(comName=="rightstep")
+			if(comName=="rightstep" || comName=="ctrlright")
 			{
 	            REMOVE_BUTTON();
 			}
@@ -202,11 +197,11 @@ void ProcCommand()
 		break;
 
 		case "TABLE_LIST":
-			if(comName=="leftstep")
+			if(comName=="leftstep" || comName=="ctrlleft")
 			{
 	            ADD_BUTTON();
 			}
-			if(comName=="rightstep")
+			if(comName=="rightstep" || comName=="ctrlright")
 			{
 	            REMOVE_BUTTON();
 			}
@@ -221,11 +216,11 @@ void ProcCommand()
 		break;
 
 		case "TABLE_LIST2":
-			if(comName=="leftstep")
+			if(comName=="leftstep" || comName=="ctrlleft")
 			{
 	            ADD_BUTTON();
 			}
-			if(comName=="rightstep")
+			if(comName=="rightstep" || comName=="ctrlright")
 			{
 	            REMOVE_BUTTON();
 			}
@@ -581,13 +576,16 @@ void ShowHelpHint()
 	sGroup = "none";
 	sGroupPicture = "none";
 
-	sHeader = XI_ConvertString("titleItemsTrade");
-	sText1 = XI_ConvertString("ItemsTrade_d1");
-	sText3 = XI_ConvertString("ItemsTrade_d2");
+	if (sCurrentNode == "QTY_FRAME")
+	{
+		sHeader = XI_ConvertString("titleItemsTrade");
+		sText1 = XI_ConvertString("ItemsTrade_d1");
+		sText3 = XI_ConvertString("ItemsTrade_d2");
+	}
 
 	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
-	SetItemStatsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
-	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
+	SetItemStatsTooltip(refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
+	if (sHeader != "") CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 }
 
 void HideHelpHint()
@@ -747,9 +745,10 @@ void SetControlsTabMode(int nMode)
 	
 	currentTab = nMode;
 	// Выставим таблицы в начало
+	CurTable = "TABLE_LIST";
 	GameInterface.TABLE_LIST.select = 1;
 	GameInterface.TABLE_LIST.top = 0;
-	GameInterface.TABLE_LIST2.select = 1;
+	GameInterface.TABLE_LIST2.select = 0;
 	GameInterface.TABLE_LIST2.top = 0;
 	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLL_LIST",0);
 	SendMessage(&GameInterface,"lsf",MSG_INTERFACE_SET_SCROLLER,"SCROLL_LIST2",0);
@@ -914,7 +913,7 @@ void ShowGoodsInfo(int iGoodIndex)
 	SetFormatedText("QTY_INFO_SHIP_PRICE", XI_ConvertString("Price buy") + NewStr() + its(iCharPrice));
 
 	FillUpDescriptors(&arItm);
-	FillUpStats(&arItm);
+	FillUpStats(&arItm, &NullCharacter);
 }
 
 // Returns false if no correct good can be shown.
@@ -1247,48 +1246,6 @@ void ADD_ALL_BUTTON()  // купить все
 	ChangeQTY_EDIT();
 }
 
-void REMOVE_BUTTON()  // продать
-{
-	if (BuyOrSell == 0)
-    {
-        GameInterface.qty_edit.str = -1;
-    }
-    else
-    {
-		if (BuyOrSell == -1)
-		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) + 1);
-		}
-		else
-		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - 1);
-		}
-		BuyOrSell = 0;
-	}
-	ChangeQTY_EDIT();
-}
-
-void ADD_BUTTON()  // купить
-{
-	if (BuyOrSell == 0)
-    {
-        GameInterface.qty_edit.str = 1;
-    }
-    else
-    {
-  		if (BuyOrSell == 1)
-		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + 1);
-		}
-		else
-		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - 1);
-		}
-		BuyOrSell = 0;
-	}
-	ChangeQTY_EDIT();
-}
-
 int GetTradeItemPrice(int itmIdx, int tradeType, ref chr, ref modifier)
 {
 	int itmprice 		= 0;
@@ -1357,23 +1314,10 @@ int GetTradeItemPrice(int itmIdx, int tradeType, ref chr, ref modifier)
                 }
 			}
 		}
-		if(CheckCharacterPerk(pchar,"HT2")) // belamour legendary edition скидка 15%
-		{
-			if(CheckOfficersPerk(pchar,"ProfessionalCommerce"))	{ skillModify -= 0.30; }
-			else
-			{
-				if(CheckOfficersPerk(pchar,"BasicCommerce"))	{ skillModify -= 0.25; }
-				else {skillModify -= 0.15;}
-			}						
-		}
-		else
-		{
-			if(CheckOfficersPerk(pchar,"ProfessionalCommerce"))	{ skillModify -= 0.15; }
-			else
-			{
-				if(CheckOfficersPerk(pchar,"BasicCommerce"))	{ skillModify -= 0.10; }
-			}				
-		}		
+
+		if (CheckOfficersPerk(pchar,"ProfessionalCommerce")) skillModify -= 0.15;
+		else if (CheckOfficersPerk(pchar,"BasicCommerce")) skillModify -= 0.10;
+
 		if(skillModify < 1.01) skillModify = 1.01;
 		FinalItmPrice = makeint(makefloat(itmprice)*skillModify);
 	}
@@ -1384,26 +1328,16 @@ int GetTradeItemPrice(int itmIdx, int tradeType, ref chr, ref modifier)
 			modifier = 1;
 			return itmprice;
 		}
-		
-		skillModify = 0.675 + skillDelta * 0.005; 
-		if(CheckCharacterPerk(chr,"HT2")) // belamour legendary edition надбавка 15%
+		if(bGlobalTutor && chr.Merchant.type == "SharlieTurorialK")
 		{
-			if(CheckOfficersPerk(pchar,"ProfessionalCommerce"))	{skillModify += 0.30;}
-			else
-			{
-				if(CheckOfficersPerk(pchar,"AdvancedCommerce"))	{ skillModify += 0.25; }
-				else {skillModify += 0.15;}
-			}				
+			if(sItemid == "gold_dublon") return sti(chr.questTemp.GoldPrice) - 20;
 		}
-		else
-		{
-			if(CheckOfficersPerk(pchar,"ProfessionalCommerce"))	{skillModify += 0.15;}
-			else
-			{
-				if(CheckOfficersPerk(pchar,"AdvancedCommerce"))	{ skillModify += 0.10; }
-			}		
-		}			
-		if(skillModify > 0.99) skillModify = 0.99;		
+		
+		skillModify = 0.675 + skillDelta * 0.005;
+		if (CheckOfficersPerk(pchar,"ProfessionalCommerce")) skillModify += 0.15;
+		else if (CheckOfficersPerk(pchar,"BasicCommerce")) skillModify += 0.10;
+
+		if(skillModify > 0.99) skillModify = 0.99;
 		priceModify = GetPriceModify(itmIdx, itmtype, chr);
 		modifier = priceModify;
 		FinalItmPrice = makeint(makefloat(itmprice)*skillModify * priceModify);
@@ -1469,7 +1403,10 @@ int GetTradeItemPriceDublon(int itmIdx, int tradeType, ref chr)
 		}
 		if(skillModify > 0.99) skillModify = 0.99;
 	}
-	return makeint(makefloat(itmprice)*skillModify);
+	itmprice = makeint(makefloat(itmprice)*skillModify);
+	if(itmprice < 1) itmprice = 1;
+	
+	return itmprice;
 }
 
 

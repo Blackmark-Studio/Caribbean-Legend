@@ -74,32 +74,3 @@ int ApplySPECIALQuestPenalty(ref rChar, String sSkillName)
 	
 	return iValue;
 }
-
-// Jason: зелья мангаросы
-int ApplySPECIALMangarosaPotion(ref rChar, String sSkillName) // 280313
-{
-	int iValue = 0;
-	if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion"))
-	{
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Power"))
-		{
-			if(sSkillName == SPECIAL_S)			iValue = 2;
-			else if(sSkillName == SPECIAL_E)	iValue = 2;
-		}
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Fast"))
-		{
-			if(sSkillName == SPECIAL_A)			iValue = 2;
-			else if(sSkillName == SPECIAL_P)    iValue = 2;
-		}
-		if (CheckAttribute(rChar, "questTemp.Mangarosa.Potion.Total"))
-		{
-			if(sSkillName == SPECIAL_S)         iValue = 1;
-			else if(sSkillName == SPECIAL_E)    iValue = 1;
-			else if(sSkillName == SPECIAL_A)    iValue = 1;
-			else if(sSkillName == SPECIAL_P)    iValue = 1;
-			else if(sSkillName == SPECIAL_C)    iValue = 1;
-			else if(sSkillName == SPECIAL_L)    iValue = 2;
-		}
-	}
-	return iValue;
-}

@@ -2,7 +2,11 @@
 
 void FillPassengerScroll()
 {
-	FillScrollWithCharacters(&NullCharacter, "PASSENGERSLIST", "IsFellowAbleToGetJob", false, &nCurScrollOfficerNum, 1);
+	string func;
+	if (nCurScrollNum > 6 && nCurScrollNum < 10) func = "IsFellowAbleToGetBoarderJob";// слот абордажника
+	else func = "IsFellowAbleToGetShipJob";// слот абордажника
+
+	FillScrollWithCharacters(&NullCharacter, "PASSENGERSLIST", func, false, &nCurScrollOfficerNum, 1);
 }
 
 void OfficerChange()
@@ -33,6 +37,8 @@ void OfficerChange()
 		XI_WindowShow("OFFICERS_WINDOW", true);
 		XI_WindowDisable("OFFICERS_WINDOW", false);
 		XI_WindowDisable("MAIN_WINDOW", true);
+		SetCurrentNode("PASSENGERSLIST");
+
 		Event("PopupIsShown");
 	}
 }
@@ -201,4 +207,38 @@ void AcceptRemoveOfficer()
 	GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
 	SetVariable();
+}
+
+void SetOfficersSkills()
+{
+	string sCharacter = "pic" + (sti(GameInterface.PASSENGERSLIST.current) + 1);
+	if (checkAttribute(&GameInterface, "PASSENGERSLIST." + sCharacter))
+	{
+		if (checkAttribute(&GameInterface, "PASSENGERSLIST." + sCharacter + ".character"))
+		{
+			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
+			ref otherchr = &characters[sti(sCharacter)];
+			SetSPECIALMiniTable("TABLE_SMALLSKILL", otherchr);
+			SetOTHERMiniTable("TABLE_SMALLOTHER", otherchr);
+			SetFormatedText("OFFICER_NAME", GetFullName(otherchr));
+			SetFormatedText("OFFICER_JOB", GetJobsList(otherchr, " / "));
+			SetSelectable("ACCEPT_ADD_OFFICER", true);
+		}
+		else
+		{
+			Table_Clear("TABLE_SMALLSKILL", false, true, true);
+			Table_Clear("TABLE_SMALLOTHER", false, true, true);
+			SetFormatedText("OFFICER_NAME", "");
+			SetFormatedText("OFFICER_JOB", "");
+			SetSelectable("ACCEPT_ADD_OFFICER", false);
+		}
+	}
+	else
+	{
+		Table_Clear("TABLE_SMALLSKILL", false, true, true);
+		Table_Clear("TABLE_SMALLOTHER", false, true, true);
+		SetFormatedText("OFFICER_NAME", "");
+		SetFormatedText("OFFICER_JOB", "");
+		SetSelectable("ACCEPT_ADD_OFFICER", false);
+	}
 }

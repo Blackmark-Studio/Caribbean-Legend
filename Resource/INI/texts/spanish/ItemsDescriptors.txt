@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Tela}
 descriptor_ArmorMaterial_1 {Cuero}
 descriptor_ArmorMaterial_2 {Placas}
 descriptor_ArmorMaterial_3 {Estampado}
-descriptor_ArmorMaterial_4 {Fundido}
+descriptor_ArmorMaterial_4 {Forjado}
 descriptor_AmuletType_0 {Común}
 descriptor_AmuletType_1 {Pagano}
 descriptor_AmuletType_2 {Cristiano}
@@ -40,6 +40,7 @@ descriptor_Special {Especial}
 descriptor_Tool {Herramienta}
 descriptor_Valuable {Valioso}
 descriptor_BulletNeedPowder {Pólvora}
+descriptor_descr_BulletNeedPowder {Esta munición no saldrá del cañón sin una medida de pólvora.}
 descriptor_GrapeAmmo {Metralla}
 descriptor_BulletAmmo {Bala}
 descriptor_BombAmmo {Granada}
@@ -64,8 +65,8 @@ Este objeto no debería estar en manos de un buen cristiano, y pronto corren inq
 Aumenta el Poder de la Flota en $percent($DescriptorBaseValue(Exotic)); los efectos se acumulan.
 }
 descriptor_descr_HighQuality {Esta arma está tan bien fabricada que su daño crítico aumenta en $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {Esta armadura se ajusta de forma excepcional, aumentando la velocidad de ataque con cualquier arma un 5%.}
-descriptor_descr_HeartDefence {Esta armadura está reforzada en puntos vitales y reduce el daño crítico enemigo un 20%.}
+descriptor_descr_GoodFit {Esta armadura se ajusta de forma excepcional, aumentando la velocidad de ataque con cualquier arma un $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Esta armadura está reforzada en puntos vitales y reduce el daño crítico enemigo un $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Todos tienen objetos como este. Con él, pasarás desapercibido.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 La armadura estampada se fabrica en masa para equipar tropas y se usa en guerras europeas.
 Reduce el daño recibido un 22%.
 }
-descriptor_descr_ArmorMaterial_4 {Forjar armadura fundida es un proceso complejo y costoso, por lo que es poco común en el Caribe. Reduce el daño recibido un 35%.}
+descriptor_descr_ArmorMaterial_4 {La fabricación de armaduras forjadas de alta calidad es un proceso complejo y costoso, lo que la convierte en una rareza en el Caribe. Reduce el daño recibido en un 35%.}
 descriptor_descr_AmuletType_0 {Se basa en presagios, supersticiones marinas y causas reales.}
 descriptor_descr_AmuletType_1 {Invoca el poder de dioses paganos y rituales nativos.}
 descriptor_descr_AmuletType_2 {Invoca el poder de los santos cristianos y la fe justa.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Diversos adornos que abundan en el Caribe. Solo valiosos 
 descriptor_Alchemy {Alquimia}
 descriptor_descr_Alchemy {Este objeto puede ser fabricado o modificado mediante la Alquimia.}
 descriptor_Quest {Misión}
+descriptor_descr_Quest {Este objeto es necesario para cierta misión. No puede soltarse ni venderse.}
 descriptor_Map {Mapa}
+descriptor_descr_Map {Un trozo de papel con las marcas de alguna localidad. Todos esos objetos se copian inmediatamente en el atlas.}
 descriptor_Fragile {Frágil}
 descriptor_descr_Fragile {Este objeto se rompe tras cierto número de usos.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {El efecto se aplica al artillero.}
+descriptor_descr_Boatswain {El efecto se aplica al contramaestre.}
+descriptor_descr_Carpenter {El efecto se aplica al carpintero.}
+descriptor_descr_Navigator {El efecto se aplica al navegante.}
+descriptor_descr_Treasurer {El efecto se aplica al tesorero.}
+descriptor_descr_Doctor {El efecto se aplica al médico.}
 descriptor_Ingredient {Ingrediente}
 descriptor_Jewelery {Joya}
 descriptor_descr_Jewelery {Piedras preciosas y semipreciosas. Se pueden vender o usar en alquimia.}
 descriptor_descr_Ingredient {Este objeto se usa en alquimia.}
+descriptor_Alternate {Ajuste}
+descriptor_descr_Alternate {La habilidad tiene un efecto para el héroe principal y otro diferente para todos los demás personajes.}
+descriptor_IntoxicatingPotion {Embriagante}
+descriptor_descr_IntoxicatingPotion {Desata lenguas, aligera la mente, pero penaliza las habilidades.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {El efecto es útil para la Vanguardia.}

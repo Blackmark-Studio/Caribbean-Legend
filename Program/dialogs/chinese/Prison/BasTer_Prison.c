@@ -198,13 +198,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "你认为谁能打倒一整队由一名军官率领的巡逻兵? ";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(值得信赖) 土匪, 还能有谁? 我很惭愧地承认, 我最近才从一个大帮派手中勉强逃脱。 ";
 				link.l1.go = "PZ_IshemLongway_Blef_2";
 			}
 			else
 			{
-				notification("Perk check failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "但我怎么知道呢? 可能是任何人 —强盗。 海盗。 间谍... ";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}

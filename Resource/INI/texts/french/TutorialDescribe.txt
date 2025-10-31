@@ -181,10 +181,7 @@ Trading_descr
 {
 Le commerce est un système profond et complexe où de nombreux facteurs influencent le prix d’achat et de vente.~Pour le commerce terrestre, la compétence « Commerce » du personnage et son histoire sont les plus importantes.~En mer, il y a encore plus de facteurs : type de bien, origine, taille de la colonie, routes d’exportation et d’importation, et compétences du Trésorier.~Vous finirez par tout maîtriser, mais pour l’instant, procurez-vous un bon amulette de Commerce.
 }
-Prologue_Navigation {Contrôle du navire}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation {Contrôle du navire}Prologue_Navigation_descr
 {
 Bienvenue en mer des Caraïbes !~Tournez le navire avec les touches de direction. Les navires sont lourds et ont beaucoup d’inertie, donc ils tournent lentement. Sentez cette inertie.~Contrôlez les voiles et la vitesse avec les touches de mode de voiles.~Il y a trois modes de voiles : pleines, de combat et affalées. Avec les voiles pleines, le navire va plus vite, en mode combat il tourne mieux, et les voiles affalées permettent un arrêt en douceur.~En cas de tempête ou sous le feu ennemi, affalez les voiles ; pour tourner et viser, mettez-les en mode combat ; pour poursuivre, rien de mieux que les voiles pleines.~Essayez les différents modes de voiles et de virages, sentez l’inertie du navire et profitez du coucher de soleil !
 }
@@ -192,19 +189,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Contrôle du temps}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {Contrôle du temps}Prologue_TimeScale_descr
 {
 Beaucoup de choses dans le jeu se passent lentement, comme changer le mode de voiles ou recharger les canons.~Vous pouvez accélérer ou ralentir le temps en mer, sur terre et sur la carte du monde.~Profitez de votre pouvoir sur le temps, puis montez sur le pont : quelqu’un veut vous parler.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoy !}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoy !}Prologue_CameraControl_descr
 {
 Bienvenue à bord de l’« Ulysse » ! Nous avons préparé une petite aventure de départ pour vous.~Il y a beaucoup à faire à bord de l’« Ulysse ». Quand vous serez prêt à continuer, choisissez « Terminer les affaires » dans le dialogue avec le capitaine.~Merci de jouer, et à bientôt en mer !
 }
@@ -214,82 +205,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Journal de bord et documents}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {Journal de bord et documents}Prologue_Logbook_descr
 {
 Chaque quête que vous acceptez est enregistrée dans le « Journal ». Il est très important de lire attentivement les dialogues et les entrées du « Journal » : il s’y trouve souvent des détails et des instructions clés.~Consultez les entrées du « Journal ». Toutes les petites tâches prises à bord de l’« Ulysse » y seront affichées.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {Quêtes complexes, documents et fabrication}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Quêtes complexes, documents et fabrication}
 Prologue_Inventory_descr
 {
 En plus des quêtes, le « Journal » contient d’autres informations importantes.~Dans la section « Documents », vous pouvez lire toutes les notes trouvées.~Vous devez maintenant lire une note du Trésorier et distribuer les doubloons à l’équipage selon la liste.~Pour obtenir des doubloons d’un coffre, ouvrez-le avec la mécanique de fabrication – Alchimie.Vous n’avez que quelques recettes pour l’instant, mais vous en trouverez d’autres plus tard.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {Amulettes}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {Amulettes}Prologue_Amulet_descr
 {
 Les amulettes sont de puissants amplificateurs pour le personnage et se divisent en offensives, défensives et de soutien. Notez que vous ne pouvez pas équiper une amulette offensive et une défensive en même temps, alors choisissez vos ensembles avec soin.~En plus des amulettes, il existe deux autres types d’amplificateurs : les talismans et les porte-bonheurs.~Les talismans durent plus longtemps que les amulettes et ont des effets plus larges, tandis que les porte-bonheurs sont très puissants, durent indéfiniment et ont un emplacement dédié dans l’inventaire.~Gardez toujours plusieurs ensembles dans l’inventaire pour réussir les tests de compétence difficiles et les combats difficiles en mer et sur terre.~Attention : après activation, retirer une amulette ou un talisman le détruit, alors décidez bien.
 }
-Prologue_Trading {Bases du commerce}
-[g]Prologue_Trading_descr
+Prologue_Trading {Bases du commerce}Prologue_Trading_descr
 {
 Le commerce est un système profond et complexe où de nombreux facteurs influencent le prix, principalement votre compétence « Commerce ».~En mer, il y a encore plus de facteurs : type de bien, origine, taille de la colonie, routes d’exportation et d’importation, et compétences de votre Trésorier.~Vous finirez par tout maîtriser, mais pour l’instant, procurez-vous un bon amulette.
 }
-Prologue_Overload {Surcharge}
-[h]Prologue_Overload_descr
+Prologue_Overload {Surcharge}Prologue_Overload_descr
 {
-Vous avez atteint pour la première fois la limite de poids transportable.Chaque personnage a un poids maximal, qui dépend de la force, des compétences et des amulettes.~Essayez de trouver quelque chose qui augmente le poids maximal de votre personnage, par exemple auprès du maître d’équipage dans le quartier de l’équipage.
+Vous avez atteint pour la première fois la limite de poids transportable.Chaque personnage a un poids maximal, qui dépend de la force, son endurance, des compétences et des amulettes.~Essayez de trouver quelque chose qui augmente le poids maximal de votre personnage, par exemple auprès du maître d’équipage dans le quartier de l’équipage.
 }
-Prologue_AutoFire {Combat naval}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {Combat naval}Prologue_AutoFire_descr
 {
 Votre premier combat naval se déroule dans l’imagination de Charles de Maure – alors n’ayez pas peur d’expérimenter.~Chaque navire a trois caractéristiques principales : la coque, les voiles et l’équipage. Si la coque tombe à zéro, le navire coule. Les voiles endommagées réduisent la vitesse et la perte d’équipage affecte l’abordage, le rechargement et la gestion des voiles.~Chaque type de munition a son utilité : mitraille pour l’équipage, chaînes pour les voiles et les mâts, bombes pour la coque. Les boulets sont universels et ont la plus grande portée. Les dégâts dépendent non seulement du type de munition, mais aussi du canon : plus il est gros, plus il fait de dégâts.~Il existe deux modes de tir principaux. Le tir rapide est disponible si le navire ennemi est dans le secteur de tir. Il n’est pas très précis ni efficace au début, mais permet un combat dynamique.~Si le combat vous semble trop lent, accélérez-le avec les touches de contrôle du temps.
 }
-Prologue_AimingFire {Tir précis}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {Tir précis}Prologue_AimingFire_descr
 {
 Le tir précis permet de tirer très précisément depuis le flanc. Il faut s’y habituer, mais ça en vaut la peine.~Les cercles des canons indiquent la position réelle et la trajectoire des canons de bordée. Ils ont besoin de temps pour s’aligner sur le point que vous indiquez au centre de l’écran.~Lorsque vous tirez, les canons tirent là où se trouvent leurs cercles à ce moment-là, alors anticipez si besoin.~Visez un navire ennemi pour le cibler. Une fois capturé, vous pourrez viser n’importe quelle partie ou anticiper le tir.~À mesure que les compétences du capitaine et du Canonnier augmentent, la vitesse de visée et la cadence de tir s’améliorent.~Si vous déplacez rapidement la visée, les canonniers seront désorientés et viseront plus lentement que d’habitude.~Le tir précis est idéal pour toucher les parties critiques du navire à longue distance, surtout les voiles et les mâts.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Attaque}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {Attaque}Prologue_FightAttack_descr
 {
 Les combats dans Caribbean Legend sont rapides et intenses, mais pour l’instant vous êtes en sécurité.~Chaque personnage est armé et possède des compétences de combat. Plus votre arme est bonne et votre héros expérimenté, plus vous infligez de dégâts.~Vous disposez de plusieurs attaques et défenses.~Commençons par les trois attaques principales.~Attaque tranchante. Rapide, inflige peu de dégâts et consomme une énergie moyenne.~Estocade. Plus lente que l’attaque tranchante, inflige des dégâts moyens et consomme peu d’énergie.~Attaque lourde. Lente et puissante, inflige de gros dégâts et peut briser les blocages.~Essayez toutes ces attaques sur le pirate.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Défense en combat}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {Défense en combat}Prologue_FightDefence_descr
 {
 Bien ! Passons à la défense.~Blocage. Permet de bloquer toute attaque sauf la lourde. Vous pouvez vous déplacer lentement en bloquant, et cela ne consomme pas d’énergie. Les ennemis puissants peuvent briser votre blocage même avec des attaques normales, soyez prêt.~Parade. Permet de dévier toute attaque et de faire perdre l’équilibre et de l’énergie à l’ennemi.~Esquive. Permet de changer de position ou d’éviter un tir.~Entraînez-vous à parer et à bloquer les attaques du pirate.~Et ensuite... éliminez-le.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Tir}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {Tir}Prologue_Marksmanship_descr
 {
 Les armes à feu sont plus rares que les armes blanches, mais le risque de prendre une balle dans les Caraïbes reste élevé, alors restez vigilant.~Sur terre, comme en mer, il existe deux modes de tir : rapide et précis.~Le tir rapide s’active par une simple pression sur le bouton. Rapide, mais peu efficace.~Le tir précis peut infliger beaucoup plus de dégâts, mais vous rend vulnérable. Plus vous visez longtemps, plus vous infligez de dégâts. Un tir à la tête fait encore plus de dégâts.~Maintenez le bouton de visée pour entrer dans ce mode. Appuyez sur attaquer pour tirer. Relâchez la visée pour sortir sans tirer.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Fouille}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {Fouille}Prologue_DeadSearch_descr
 {
 Après chaque combat, il est temps de ramasser le butin.Vous pouvez fouiller n’importe quel ennemi vaincu en appuyant sur le bouton de fouille.~Trouvez l’élixir de soin dont Alonso a besoin !
 }

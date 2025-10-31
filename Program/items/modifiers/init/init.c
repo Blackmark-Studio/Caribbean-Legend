@@ -16,8 +16,10 @@ void InitModifiers()
 	{
 		item = &Items[i];
 		if (!CheckAttribute(&item, "id")) continue;
+		DeleteAttribute(item, "modifiers");
+		DeleteAttribute(item, "descriptors");
 
-		if (IsQuestUsedItem(item.id)) AddDescriptor(item, "Quest", -1);
+		if (IsQuestUsedItem(item.id) && item.id != "gold") AddDescriptor(item, "Quest", -1);
 
 		if (CheckAttribute(item, "groupID"))
 		{

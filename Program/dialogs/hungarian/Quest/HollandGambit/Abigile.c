@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		
 		case "Abigile_return_4":
 			dialog.text = "Ó...tönkrementem. Charles... kérlek... vigyél haza Willemstadba. Szükségem van a papámra...";
-			link.l1 = "Természetesen, kedves kisasszony. Sajnos, itt Bridgetownban nincs semmi az ön számára. Menj, pakolj össze, búcsúzz el Johntól, és azonnal indulunk.";
+			link.l1 = "Természetesen, kedves kisasszony. Sajnos, itt St. John's nincs semmi az ön számára. Menj, pakolj össze, búcsúzz el Johntól, és azonnal indulunk.";
 			link.l1.go = "Abigile_return_5";
 		break;
 		

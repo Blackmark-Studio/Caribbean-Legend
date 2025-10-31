@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, 水手长}
 QuestsUtilite_267 {给我抽二十鞭! 不 —三十鞭! 每个人都一样!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, 旅行者}
 QuestsUtilite_269 {凯门鳄不攻击人类。 除非它们非常饥饿。 这只显然吃饱了...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {毒药没起作用!}
 QuestsUtilite_273 {中了泰诺毒药!}
 QuestsUtilite_274 {@<GetFullName(chref)> 中了泰诺毒药}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {火神}
 QuestsUtilite_326 {赫利阿登}
 QuestsUtilite_327 {赫菲斯托斯}
 QuestsUtilite_328 {百夫长}
+QuestsUtilite_329 {海盗被击败，海域变得更安全了。}
+QuestsUtilite_330 {海盗变得更强了, 海上变得更加危险。}

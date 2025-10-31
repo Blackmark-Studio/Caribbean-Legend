@@ -203,9 +203,7 @@ void ProcessDialogEvent()
 		
 		case "florian_deck_5":
 			TakeNItems(pchar, "gold_dublon", 200);
-			Log_Info("你收到了200杜布隆。 ");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "但这还不是全部, 船长。 您想再赚二百五十金双埃斯库多吗? ";
+			dialog.text = "但这还不是全部, 船长。 您想再赚75金双埃斯库多吗? ";
 			link.l1 = "听起来很有希望, 但这取决于您要我做什么, 先生。 ";
 			link.l1.go = "florian_deck_6";
 		break;
@@ -409,9 +407,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_16":
-			TakeNItems(pchar, "gold_dublon", 250);
-			Log_Info("你收到了250杜布隆");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 75);
 			dialog.text = "您正在读我的心思, " +GetFullName(pchar)+ "! 是的, 该死的! 由于阿拉坎塔拉火药不足, 我可以让她驶入公海, 然后迫使她进行一场持久战, 他们的火药会比我们先耗尽, 哈哈! \n您应该确保补给双桅纵帆船普埃布拉永远不会到达贝洛港。 我不能靠近海岸, 巡逻队会很容易发现我的护卫舰, 并在我拦截阿拉坎塔拉之前将我赶走\n您可以自己处理普埃布拉。 找到她并摆脱她。 击沉她或夺取她作为战利品, 我不在乎。 只要阻止她到这里! \n如果您成功了, 就去瓜德罗普见热拉尔.勒克鲁阿, 我相信您已经认识他, 不是吗? 他会付给您应得的硬币。 ";
 			link.l1 = "成交! 我这就去拦截普埃布拉! ";
 			link.l1.go = "florian_19";

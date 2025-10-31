@@ -267,8 +267,8 @@ QuestsUtilite_266 {Krelis van Eck, 1572-1611, contramaestre}
 QuestsUtilite_267 {¡Veinte latigazos! ¡No, treinta! ¡Cada uno!}
 QuestsUtilite_268 {Jacob de Haez, 1611-1651, viajero}
 QuestsUtilite_269 {Los caimanes no atacan a la gente. Sólo cuando están muy hambrientos. Este obviamente está lleno...}
-QuestsUtilite_270 {Eclatant}
-QuestsUtilite_271 {Trafalgar}
+QuestsUtilite_270 { }
+QuestsUtilite_271 { }
 QuestsUtilite_272 {¡El veneno no funcionó!}
 QuestsUtilite_273 {¡Envenenado con veneno taíno!}
 QuestsUtilite_274 {@<GetFullName(chref)> ha sido envenenado con veneno taino}
@@ -326,3 +326,5 @@ QuestsUtilite_325 {Volcán}
 QuestsUtilite_326 {Heliadón}
 QuestsUtilite_327 {Hefesto}
 QuestsUtilite_328 {Centurión}
+QuestsUtilite_329 {Los piratas han sido derrotados, las aguas se han vuelto más seguras.}
+QuestsUtilite_330 {Los piratas se han fortalecido, el mar se ha vuelto más peligroso.}

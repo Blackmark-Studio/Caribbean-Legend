@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Trustworthy) But even you must admit, the Lord acts through people. What if the gypsy is merely an instrument of His will? What if His design is so profound that we mere mortals cannot understand? The Lord works in mysterious ways, does He not?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{

@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 						link.l1.go = "silk_info";
 						break;
 					}
-					else notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+					else Notification_Reputation(false, 61, "low");
 				}
 			}
 			dialog.text = "Good day, Kapitein "+GetFullName(pchar)+"! How can I be of service?";
@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 				dialog.text = "I appreciate your business approach and am willing to consider your request. Perhaps we could increase the volume, say, fivefold. However, organizing such supplies will require significant resources. We will need to expand storage space, strengthen security, and ensure reliable delivery routes. Since this benefits you as well, I suggest we share these expenses between us.";
 				link.l1 = "All this sounds reasonable. What amount do you consider necessary to cover these expenses?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

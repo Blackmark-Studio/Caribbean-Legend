@@ -22,13 +22,19 @@ bool LAi_IsHitCritical(ref attacker, ref table, string weaponType, string strike
 	return false;
 }
 
-void ModifyDamageMtpByCrit(ref attacker, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, float damageMtp)
+void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, float damageMtp)
 {
-	if (!LAi_IsHitCritical(&attacker, &attackerLandTable, weaponType, strikeType)) return; // если крит
+	if (!LAi_IsHitCritical(attacker, attackerLandTable, weaponType, strikeType)) return; // если крит
 
-	float criticalDamageMtp = GetCritDamageMtp(&attackerLandTable, weaponType);           // получаем наш + крит урона
-	criticalDamageMtp -= GetCritDefence(&enemyLandTable);                                 // вычитаем вражеское снижение крит урона
-	damageMtp += criticalDamageMtp;                                                       // добавляем модификатор
+	float criticalDamageMtp = GetCritDamageMtp(attackerLandTable, weaponType);           // получаем наш + крит урона
+	criticalDamageMtp -= GetCritDefence(enemyLandTable);                                 // вычитаем вражеское снижение крит урона
+	if (criticalDamageMtp > 0) damageMtp += criticalDamageMtp;                           // добавляем модификатор
+
+	string notifyKey = "Critical Hit";
+	if (strikeType == SHOT_STRIKE) notifyKey = "CriticalShot";
+	AddCharacterExpToSkill(attacker, SKILL_FORTUNE, 5);
+	if (ShowCharString()) Log_Chr(enemy, XI_ConvertString(notifyKey));
+	else if (IsMainCharacter(attacker)) Log_Info(XI_ConvertString(notifyKey));
 }
 
 bool LAi_IsGroupDamagableEnemy(ref attacker, ref enemy)
@@ -379,6 +385,53 @@ float LAi_NPC_GetActionEnergy()
 	return npc_return_tmp;
 }
 
+#event_handler("Npc_GetCurHP","LAi_NPC_GetCurHP");
+float LAi_NPC_GetCurHP()
+{
+	aref chr = GetEventData();
+	npc_return_tmp = LAi_GetCharacterHP(chr);
+	return npc_return_tmp;
+}
+
+#event_handler("Npc_GetMaxHP","LAi_NPC_GetMaxHP");
+float LAi_NPC_GetMaxHP()
+{
+	aref chr = GetEventData();
+	npc_return_tmp = LAi_GetCharacterMaxHP(chr);
+	return npc_return_tmp;
+}
+
+#event_handler("Npc_GetRelHeal","LAi_NPC_GetRelHeal");
+float LAi_NPC_GetRelHeal()
+{
+	aref chr = GetEventData();
+	if(!CheckAttribute(chr, "chr_ai.hp_bottle"))
+		return -1.0;
+	float heal = LAi_GetCharacterHP(chr) + stf(chr.chr_ai.hp_bottle);
+	float maxhp = LAi_GetCharacterMaxHP(chr);
+	if(heal > maxhp)
+		heal = maxhp;
+	npc_return_tmp = heal / maxhp;
+	return npc_return_tmp;
+}
+
+#event_handler("Npc_IsPoisoned","LAi_NPC_IsPoisoned");
+bool LAi_NPC_IsPoisoned()
+{
+	aref chr = GetEventData();
+	if(LAi_IsPoison(chr))
+		return true;
+	if(CheckAttribute(chr, "quest.indianpoisoned"))
+		return true;
+	return false;
+}
+
+#event_handler("Npc_GetSerifWidth","Npc_GetSerifWidth");
+float Npc_GetSerifWidth()
+{
+	return ENEMY_BARS_SERIF_WIDTH;
+}
+
 //Необходимо вернуть максимально быстро нормализованое значение жизни
 #event_handler("NpcEvtHP", "LAi_NPC_EvtGetHP");
 float LAi_NPC_EvtGetHP()
@@ -408,11 +461,13 @@ bool LAi_Chr_CheckEnergy()
 	float needEnergy = 3.0;
 	if (action == SPRINT_MOVE)
 	{
+		if (GetAttributeInt(pchar, "WeightLoadLevel") > OVERLOAD_NONE) return false;
 		if (!LAi_group_IsActivePlayerAlarm()) return true;
 		else needEnergy = SprintStartEnergyReq;
 	}
 	else if (action == STRAFE_L_MOVE || action == STRAFE_R_MOVE || action == STRAFE_B_MOVE)
 	{
+		if (GetAttributeInt(pchar, "WeightLoadLevel") > OVERLOAD_NONE) return false;
 		if (HasPerk(chr, "TannedLeather")) needEnergy = PERK_VALUE2_TANNED_LEATHER;
 	}
 
@@ -562,9 +617,7 @@ float LAi_GetAdditionalMeleeDist()
 {
 	aref attack = GetEventData();
 	string sAttackType = GetEventData();
-	if (sAttackType != FORCE_STRIKE || sAttackType != FAST_STRIKE) return 0.0;
-	if (HasPerk(&attack, "SabreHurricane")) return 30.0;
-	return 0.0;
+	return 0.0
 }
 
 #event_handler("Event_GetAdditionalMeleeAng", "LAi_GetAdditionalMeleeAng");
@@ -572,7 +625,10 @@ float LAi_GetAdditionalMeleeAng()
 {
 	aref attack = GetEventData();
 	string sAttackType = GetEventData();
-	if (sAttackType != FORCE_STRIKE || sAttackType != FAST_STRIKE) return 0.0;
-	if (HasPerk(&attack, "SabreHurricane")) return 30.0;
-	return 0.0;
+	return GetAttributeFloatOrDefault(&attack, "ct.land." + sAttackType + "_" + M_STRIKE_ANGLE, 0.0);
+}
+
+void UpdateNpcFightAI(ref chr)
+{
+	SendMessage(chr, "l", MSG_NPCHARACTER_FIGHTPROBABILITIES_UPDATE);
 }

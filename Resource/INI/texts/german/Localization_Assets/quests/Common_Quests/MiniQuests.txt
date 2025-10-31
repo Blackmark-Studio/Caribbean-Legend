@@ -21,4 +21,4 @@ MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> starb an Fieber!}
 MiniQuests_21 {@<sld.name> wurde auf Ihrem Schiff in Gewahrsam genommen}
 MiniQuests_22 {Eine Stunde verging...}
 MiniQuests_23 {, die am ~}
-MiniQuests_24 {Alonso}
+MiniQuests_24 { }

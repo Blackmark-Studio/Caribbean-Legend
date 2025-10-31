@@ -555,7 +555,7 @@ Zawiodłem Floriana Shoke. Nie dostarczyłem mu wystarczającej liczby dział. M
 #TEXT 11
 Działa dostarczone do Floriana Shoke. Próbował mnie wciągnąć w jakieś szpiegowskie intrygi, ale odmówiłem. Zbyt niebezpieczne.
 #TEXT 12
-Mam teraz 250 dublonów i nowe zadanie od Floriana Shoke. Muszę zakraść się do Portobello i dowiedzieć się, dlaczego galeon Alcantara nie wyruszył w morze. Powinienem także sprawdzić, co stało się z Sylvanem Laforetem, znanym również jako Jaime Silicio.
+Mam teraz 75 dublonów i nowe zadanie od Floriana Shoke. Muszę zakraść się do Portobello i dowiedzieć się, dlaczego galeon Alcantara nie wyruszył w morze. Powinienem także sprawdzić, co stało się z Sylvanem Laforetem, znanym również jako Jaime Silicio.
 #TEXT 13
 Cholera! Byłem zbyt nieostrożny. Przeklęty karczmarz wezwał straż, gdy tylko usłyszał imię Jaime Silicio. Teraz całe miasto wie, że tu jestem. Muszę wrócić do Floriana Shoke z pustymi rękami...
 #TEXT 14
@@ -1182,7 +1182,8 @@ Minęły cztery miesiące na zebranie materiałów. Szkoda, że nie udało mi si
 #QUEST renovate_fdm
 Renowacja Statku Duchów
 #TEXT 1
-Kapitan statku na Isla Tesoro, Alexus, poprosił mnie, abym zebrał i dostarczył mu materiały potrzebne do renowacji statku widmo. Potrzebuje 150 sztuk żelaznego drewna, 200 beczek żywicy, 170 zwój jedwabiu okrętowego oraz 130 warstw lin konopnych.
+Główny stoczniowiec z Isla Tesoro, Alexus, zgodził się przebudować statek-duch. Ta restauracja nie tylko zmieni jego wygląd, ale także znacznie go ulepszy pod każdym względem — przestarzałe i zużyte elementy zostaną wymienione, a konstrukcja uzupełniona nowoczesnymi rozwiązaniami.
+To wszystko będzie kosztować szaloną sumę, a dodatkowo będziesz musiał odnaleźć i przywieźć mu potrzebne materiały: po 150 jednostek bakautu, jedwabiu, lin i żywicy.
 
 #TEXT 2
 @<sQty> @<sGood> zostało.
@@ -2714,7 +2715,7 @@ Folke Deluc
 #TEXT   1
 Podczas gdy ja zajmowałem się interesami w Saint-Pierre, Folke Deluc znów znalazł się za kratkami, a przewidywalnie powodem były pieniądze. Cholera, jak udało mu się narobić nowych długów w tak krótkim czasie? Załoga narzeka: ratowanie go po raz drugi wydaje się zbyt trudne. Po bitwie pod Le François moja pozycja wśród ludzi wzrosła, a moje nazwisko ma teraz pewne znaczenie na wyspie. Mógłbym spróbować znaleźć nowego nawigatora w tawernie, ale moje sumienie nie pozwoli mi tak łatwo porzucić Folke'a. Zasługuje przynajmniej na szansę, żeby się wytłumaczyć. Muszę dowiedzieć się, jak udało mu się znowu wpaść w długi w ciągu zaledwie kilku godzin.
 #TEXT   2
-No cóż, teraz wszystko jasne! Sprytny lichwiarz z Saint-Pierre zdał sobie sprawę, że może zarobić na nawigatorze. Wykupił wszystkie długi Folke'a we francuskich koloniach. Suma nie była mała - imponujące sto złotych dublonów!
+No cóż, teraz wszystko jasne! Sprytny lichwiarz z Saint-Pierre zdał sobie sprawę, że może zarobić na nawigatorze. Wykupił wszystkie długi Folke'a we francuskich koloniach. Suma nie była mała - imponujące 40 złotych dublonów!
 #TEXT   3
 Zapłaciłem dług za mojego niegrzecznego nawigatora. Niech mieszkańcy się śmieją. Nadal jestem pewien, że postąpiłem słusznie.
 #TEXT   4

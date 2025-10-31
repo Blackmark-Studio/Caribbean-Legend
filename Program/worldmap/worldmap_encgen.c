@@ -14,7 +14,7 @@
 //Частота специальных событий  (бочка или шлюпка) в секунду
 #define WDM_SPECIAL_RATE  		0.0015
 //Частота Merch + Follow для рандома
-#define WDM_GENERAL_RATE  		0.095
+#define WDM_GENERAL_RATE  		0.085
 
 bool bEncOffGlobal = false;
 
@@ -94,6 +94,12 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 			if(rand(1001) + 1 < wdmTimeOfLastWarring)
 			{
 				// Сражения по обычной логике
+                if (bBettaTestMode && bGlobalVar4)
+                {
+                    if (TEV.LastEnc != "-2") bGlobalVar4 = 1;
+                    else bGlobalVar4++;
+                    TEV.LastEnc = "-2";
+                }
 				wdmTimeOfLastWarring = 0.0;
 				wdmCreateWarringShips();
 			}
@@ -154,7 +160,7 @@ void Map_WarriorEnd_quest(string sChar)
 void Map_TraderSucces()
 {
 	if(!CheckAttribute(pchar, "worldmap.shipcounter"))
-	{		
+	{
 		return;
 	}
 	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;

@@ -67,12 +67,7 @@ void ProcessDialogEvent()
 			link.l1 = "Ez mulatságos. Hát akkor vigyázz magadra, te vén részeges.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "OS_Matros_sluh";
-			
-			SetQuestHeader("OS");
-			AddQuestRecord("OS", "1");
-			pchar.questTemp.OS_Start = true;
-			pchar.questTemp.OS_Tavern_1 = true;
-			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+			OS_Start();
 		break;
 
 		case "OS_Matros_again":

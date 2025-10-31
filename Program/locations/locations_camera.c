@@ -18,6 +18,9 @@
 #define LOCCAMERA_LOOKTOPOINT "LookToPoint"
 #define LOCCAMERA_LOOKTOANGLE "LookToAngle"
 
+#define LOCCAMERA_ZOOM_MIN 0.5
+#define LOCCAMERA_ZOOM_MAX 1.0
+
 #event_handler("frame", "locCameraUpdate");
 
 Object objLocCameraStates[LOCCAMERA_MAX_STATES];
@@ -57,6 +60,23 @@ bool locCameraFollowEx(bool isTeleport)
 	locCameraCurMode = LOCCAMERA_FOLLOW;
 	locCameraSetFollowCamAngleToCharacterAngle();
 	return res;
+}
+
+void locCameraSetFPVMode(bool bEnable);
+{
+	if(IsEntity(&locCamera) == 0)
+		return;
+	if(bEnable)
+		SendMessage(&locCamera, "ls", -5, "fpv");
+	else
+		SendMessage(&locCamera, "ls", -5, "free");
+}
+
+bool locCameraIsFPVMode()
+{
+	if(IsEntity(&locCamera) == 0)
+		return false;
+	return SendMessage(&locCamera, "l", -9);
 }
 
 void locCameraSetFollowCamAngleToCharacterAngle()
@@ -106,7 +126,12 @@ void locCameraSleep(bool isSleep)
 
 void locCameraSwitch()
 {
-	if(locCameraEnableFree == false) return;
+	if(locCameraEnableFree == false)
+	{
+		LAi_CharacterEnableDialog(pchar);
+		return;
+	}
+	LAi_CharacterDisableDialog(pchar);
 	string controlName = GetEventData();
 	if(controlName != "ChrCamCameraSwitch") return;
 	if(locCameraCurMode != LOCCAMERA_FREE)
@@ -581,7 +606,7 @@ void AimingActive()
 		locCameraSetRadius(stf(locCamera.maxRadius)*0.75);
 		locCamera.zoom.lock = true;
 		BI_CrosshairSet();
-		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, 1);
+		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, true);
 	}
 	else
 	{
@@ -589,8 +614,10 @@ void AimingActive()
 			locCamera.zoom = 0.75;
 		if(CheckAttribute(locCamera, "zoom.lock"))
 			DeleteAttribute(&locCamera, "zoom.lock");
+		if(stf(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
+			locCameraSetFPVMode(true);
 		locCameraSetRadius(stf(locCamera.maxRadius)*stf(locCamera.zoom));
-		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, 0);
+		SendMessage(&objLandInterface, "ll", MSG_BATTLE_LAND_CROSSHAIR_SHOW, false);
 	}
 }
 

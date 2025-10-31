@@ -31,9 +31,7 @@ ref GetRealShip(int iType)
 	return &RealShips[iType]; 
 }
 
-// isLock - рудимент, можно выкидывать (26.05.06 boal)
-// новая жизнь isLock (04.07.06) теперь это признак ворованности (те цены на верфи)
-// если 1 - ворованный, цена копеешная, 0 - честно купленный - можно перепродать.
+//генерация кораблей в море
 int GenerateShip(int iBaseType, bool isLock)
 {
 	int iShip = CreateBaseShip(iBaseType);
@@ -102,11 +100,15 @@ int GenerateShip(int iBaseType, bool isLock)
 		    }
 		    rRealShip.MaxCaliber = iCaliber;						
 	    }
-	    rRealShip.SpeedRate	       = stf(rRealShip.SpeedRate) + frandSmall(stf(rRealShip.SpeedRate) / 5.0) - stf(rRealShip.SpeedRate) / 10.0;
-	    rRealShip.TurnRate         = stf(rRealShip.TurnRate) + frandSmall(stf(rRealShip.TurnRate) / 5.0) - stf(rRealShip.TurnRate) / 10.0;
-	    //rRealShip.Price            = sti(rRealShip.Price) + rand(makeint(sti(rRealShip.Price)/2)) - makeint(sti(rRealShip.Price)/4);
-	    rRealShip.HP               = sti(rRealShip.HP) + rand(makeint(sti(rRealShip.HP)/5)) - makeint(sti(rRealShip.HP)/10);
-	    rRealShip.WindAgainstSpeed = stf(rRealShip.WindAgainstSpeed) + frandSmall(stf(rRealShip.WindAgainstSpeed)/5.0) - stf(rRealShip.WindAgainstSpeed)/10.0;
+		//генерация статов кораблей, на море баланс чуть смещен в плюс, чтобы была мотивация искать корабли именно там.
+	    float fTemp = stf(rRealShip.SpeedRate) * (0.93 + frandSmall(0.16));
+		rRealShip.SpeedRate = fTemp;
+		fTemp = stf(rRealShip.TurnRate) * (0.93 + frandSmall(0.18));
+		rRealShip.TurnRate = fTemp;
+		fTemp = stf(rRealShip.HP) * (0.89 + frandSmall(0.24));
+		rRealShip.HP = makeInt(fTemp);
+		fTemp = stf(rRealShip.WindAgainstSpeed) * (0.94 + frandSmall(0.12));
+		rRealShip.WindAgainstSpeed = fTemp;
 	}
     rRealShip.Capacity        = sti(rRealShip.Capacity) + rand(makeint(sti(rRealShip.Capacity)/4)) - makeint(sti(rRealShip.Capacity)/8);
     rRealShip.OptCrew         = makeint(sti(rRealShip.OptCrew) + rand(makeint(sti(rRealShip.OptCrew)/3)) - makeint(sti(rRealShip.OptCrew)/6));
@@ -139,8 +141,7 @@ int GenerateShip(int iBaseType, bool isLock)
 	return iShip;
 }
 
-// -> added by ugeen 25.01.09 (на основе GenerateShip(.....)) - рандомизируем кол-во стволов на борту
-// 31.01.09 - добавил бонусы к корабельным статам если кол-во орудий на борту < базового
+//генерация кораблей на верфи
 int GenerateShipExt(int iBaseType, bool isLock, ref chr)
 {
 	string  attr, sCity;
@@ -683,7 +684,7 @@ float FindShipSpeed(aref refCharacter)
 	float fTRFromShipState = fSpeedFromHp * fTRFromSailDamage;
 	
 	float	fLoad = Clampf(stf(refCharacter.Ship.Cargo.Load) / stf(rShip.Capacity));
-	float	fTRFromWeight = Clampf(1.03 - stf(rShip.SpeedDependWeight) * fLoad * GetFloatByCondition(HasShipTrait(refCharacter, "trait02"), 1.0, 0.85));
+	float	fTRFromWeight = Clampf(1.03 - stf(rShip.SpeedDependWeight) * fLoad * GetFloatByCondition(HasShipTrait(refCharacter, "trait02"), 1.0, 0.85) * GetWeightMtpWithIntendant(refCharacter));
 	float   fTRFromSkill = SpeedBySkill(refCharacter);
 
 	float fTRFomBreaches = 1;
@@ -778,7 +779,7 @@ float FindShipWindAgainstSpeed(aref refCharacter)
 	
 	if(ShipBonus2Artefact(refCharacter, SHIP_GALEON_SM))
 	{
-		fWindAgainstSpeed *= isEquippedArtefactUse(refCharacter, "obereg_11", 1.0, 1.25);
+		fWindAgainstSpeed *= isEquippedArtefactUse(refCharacter, "obereg_11", 1.0, 1.22);
 	}
 	else
 	{
@@ -815,7 +816,7 @@ float FindShipTurnRate(aref refCharacter)
 	float fLoad = Clampf(stf(refCharacter.Ship.Cargo.Load) / stf(rShip.Capacity));
 	float fTRFromWeight;
 	
-	fTRFromWeight = Clampf(1.03 - 1.5 * stf(rShip.TurnDependWeight) * fLoad);
+	fTRFromWeight = Clampf(1.03 - 1.5 * stf(rShip.TurnDependWeight) * fLoad * GetWeightMtpWithIntendant(refCharacter));
 	
 	// не реализовано, всегда 1 float fTRFromSpeed = 1.0 - stf(rShip.TurnDependSpeed);
 	// от команды
@@ -900,7 +901,8 @@ void SetShipyardStore(ref NPChar)
     
     if (bBettaTestMode)
     {
-        for (i = 1; i < GetArraySize(&ShipsTypes); i++)
+        int num = 1;
+        for (i = 0; i < GetArraySize(&ShipsTypes); i++)
         {
 			ref refShip;
 			makeref(refShip,ShipsTypes[i]);
@@ -908,8 +910,13 @@ void SetShipyardStore(ref NPChar)
 			{
 				continue;
 			}
-            attrName = "ship" + i;
-			FillShipParamShipyard(NPChar, GenerateStoreShipExt(i-1, NPChar), attrName);
+			if (CheckAttribute(refShip, "ShipHolder") && sti(refShip.ShipHolder))
+			{
+				continue;
+			}
+            attrName = "ship" + num;
+			FillShipParamShipyard(NPChar, GenerateStoreShipExt(i, NPChar), attrName);
+			num++;
         }        
         return;
     }
@@ -1456,21 +1463,40 @@ float GetBaseShipPower(int iBaseType)
     return fPower;
 }
 
+// Увеличенная базовая мощь корабля засчёт эффектов персонажа
+float GetModifiedBaseShipPower(ref chr, int baseType)
+{
+	float fMaxPower = GetBaseShipPower(baseType);
+	if (!IsCompanion(chr)) return fMaxPower;
+	if (GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) != "hat6") return fMaxPower;
+	ref rBaseShip = &ShipsTypes[baseType];
+	if (sti(rBaseShip.Spec) == SHIP_SPEC_MERCHANT) fMaxPower *= 1.2;
+	return fMaxPower;
+}
+
 float GetRealShipPower(ref rChar)
 {
-    ref   rShip  = GetRealShip(sti(rChar.Ship.Type));
-    float fMaxPower = GetBaseShipPower(sti(rShip.BaseType));
+	ref rShip = GetRealShip(sti(rChar.Ship.Type));
+	float fMaxPower = GetModifiedBaseShipPower(rChar, sti(rShip.BaseType));
 	float fPower = fMaxPower;
-    float kCrew  = MakeFloat(GetCrewQuantity(rChar)) / stf(rShip.MaxCrew); // ~!~ OptCrew
-    if (kCrew > 1.0) kCrew = 1.0;
-    float kHull  = stf(rChar.ship.HP) / stf(rShip.HP);
-    float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
-    float kCannons = 1.0;
-    if(rShip.CannonsQuantity != "0") kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
-    fPower *= pow(kCrew, 2.25)*0.45 + pow(kSails, 2.25)*0.25 + pow(kHull, 2.25)*0.2 + pow(kCannons, 2.25)*0.1;
-	// belamour Шляпа Грима минус 30% штрафа
-	fPower = GetFloatByCondition(GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9", fPower, fPower + (fMaxPower - fPower) * 0.3);
-    return fPower;
+	float kCrew = MakeFloat(GetCrewQuantity(rChar)) / stf(rShip.MaxCrew); // ~!~ OptCrew
+	if (kCrew > 1.0) kCrew = 1.0;
+	float kHull = stf(rChar.ship.HP) / stf(rShip.HP);
+	float kSails = stf(rChar.ship.SP) / stf(rShip.SP);
+	float kCannons = 1.0;
+	if (rShip.CannonsQuantity != "0")
+		kCannons = MakeFloat(GetCannonsNum(rChar)) / stf(rShip.CannonsQuantity);
+
+	// Шляпа Грима
+	if (GetCharacterEquipByGroup(rChar, HAT_ITEM_TYPE) == "hat9")
+	{
+		kHull = kHull + (1.0 - kHull) * 0.3;
+		kSails = kSails + (1.0 - kSails) * 0.3;
+		kCannons = kCannons + (1.0 - kCannons) * 0.3;
+	}
+
+	fPower *= pow(kCrew, 2.25) * 0.45 + pow(kSails, 2.25) * 0.25 + pow(kHull, 2.25) * 0.2 + pow(kCannons, 2.25) * 0.1;
+	return fPower;
 }
 
 void UpdatePlayerSquadronPower() // Кэш
@@ -1491,13 +1517,13 @@ void UpdatePlayerSquadronPower() // Кэш
 	}
 	PChar.Squadron.RawPower = fPower;
 	PChar.Squadron.ModPower = SquadronPowerWithMods(fPower);
+	Achievments_SquadronPower();
 }
 
 float SquadronPowerWithMods(float rawPower)
 {
 	float fPowerMtp = 1 + GetSquadronPowerMtp(pchar);
-	if (CheckOfficersPerk(pchar, "LoneWolf") && GetCompanionQuantity(pchar) < 1) fPowerMtp += PERK_VALUE_LONE_WOLF;
-	if (CheckCharacterPerk(pchar, "SeaDogProfessional")) fPowerMtp += 0.3;
+	if (CheckOfficersPerk(pchar, "LoneWolf") && GetCompanionQuantity(pchar) < 2) fPowerMtp += PERK_VALUE_LONE_WOLF;
 	return rawPower * fPowerMtp;
 }
 // Механика мощи <--

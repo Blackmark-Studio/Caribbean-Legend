@@ -384,19 +384,10 @@ void ProcessDialogEvent()
 		link.l1.go = "capellan_3";
 		break;
 
-	case "capellan_3":
-		DialogExit();
-		LAi_SetActorType(npchar);
-		LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "My_Campus", "rld", "loc1", "Monk_Capellan", -1);
-		pchar.questTemp.ShipCapellan.id = npchar.id;
-		DeleteAttribute(npchar, "LifeDay");
-		DeleteAttribute(npchar, "CityType"); // удалить признак фантома
-		AddPassenger(pchar, npchar, false);
-		SetCharacterRemovable(npchar, false);
-		pchar.questTemp.ShipCapellan.Yes = "true"; // капеллан в команде
-		Achievment_Set("ach_69");
-		ChangeCharacterComplexReputation(pchar, "authority", 5);
-		npchar.reputation = 60;
+		case "capellan_3":
+			DialogExit();
+			pchar.questTemp.ShipCapellan.id = npchar.id;
+			AddDialogExitQuestFunction("Monk_Capellan_DlgExit");
 		break;
 
 	case "capellan_4":

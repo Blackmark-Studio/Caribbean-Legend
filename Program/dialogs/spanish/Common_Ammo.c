@@ -416,14 +416,14 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_prs2";
 			link.l2 = "Diría que no, supongo... si te diera mi palabra tendría que hacer un trabajo que parece bastante problemático. No lo haré.";
 			link.l2.go = "zpq_fld";
-			notification("Reputation Check Passed", "None");
+			Notification_Reputation(true, 71, "low");
 		}
 		else
 		{
 			dialog.text = "Tu reputación es inaceptable para mí. Te pido que abandones la sala. Somos capaces de resolver nuestros problemas por nosotros mismos.";
 			link.l1 = "Lo que sea, resuélvelos entonces...";
 			link.l1.go = "exit";
-			notification("Reputation Too Low! (" + XI_ConvertString(GetReputationName(71)) + ")", "None");
+			Notification_Reputation(false, 71, "low");
 		}
 		break;
 
@@ -507,7 +507,7 @@ void ProcessDialogEvent()
 		link.l1.go = "zpq_ex3";
 		if (CheckCharacterPerk(pchar, "Trustworthy"))
 		{
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 			link.l2 = "(Confiable) ¡Estoy empezando a pensar que vas a engañarme para que no me vaya de aquí sin mis 125 000 pesos!";
 			link.l2.go = "zpq_ex4";
 		}
@@ -516,9 +516,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "zpq_ex3":
-		if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+		if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 		{
-			notification("Skill Check Passed", "Leadership");
+			Notification_Skill(true, 36, SKILL_LEADERSHIP);
 			dialog.text = "Ah, sí... ¡Exactamente! 100 000 pesos. Lo había olvidado, perdóname. Es culpa de mi edad, esclerosis ya sabes... Claro, aquí están tus monedas. Fue un placer hacer negocios contigo, capitán. Ahora lo siento, pero tengo mucho trabajo que hacer...";
 			link.l1 = "Lo mismo para ti, señor. Nos vemos.";
 			link.l1.go = "exit";
@@ -531,13 +531,12 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			notification("Skill Check Failed (36)", "Leadership");
+			Notification_Skill(false, 36, SKILL_LEADERSHIP);
 			dialog.text = "¿¡Qué?! ¡Toma tu dinero y lárgate, o te pudrirás en este casamato!";
 			link.l1 = "¡Eres un mentiroso, señor! Te aconsejo que me des mi dinero de buena manera, ¡o quitaré la carga!";
 			link.l1.go = "zpq_ex_agry";
 			link.l2 = "Perdóneme... Bien, tomaré la suma que ofreces y estamos a mano.";
 			link.l2.go = "zpq_ex5";
-			Log_info("¡Tu capacidad de liderazgo no es suficiente!");
 		}
 		break;
 

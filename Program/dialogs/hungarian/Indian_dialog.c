@@ -504,7 +504,7 @@ void ProcessDialogEvent()
 			link.l1 = "Azt hiszed, csak a Kapongok miatt kell aggódnod? Nagyon tévedsz...";
 			link.l1.go = "hayamee_bad_4";
 			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("Az indiánok nem tisztelnek téged. "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			if (!IsCharacterPerkOn(pchar, "Megbízható")) notification("Perk Check Failed", "Trustworthy");
+			if (!IsCharacterPerkOn(pchar, "Megbízható")) Notification_Perk(false, "Trustworthy");
 		break;
 		
 		case "hayamee_bad_4":

@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_60":
-			dialog.text = "Natürlich wird die Fabrik Wartung benötigen. Mit ihrem Bau wird diese Insel eine Wirtschaft haben, in der Sie der Hauptgeschäftspartner sind. Wir werden die Sklaven selbst ernähren, aber Sie werden Sicherheit und Produktion aus eigener Tasche bezahlen müssen. Siedler nehmen hundert Dublonen und fünf Flaschen Wein für jede Charge. Verhandeln Sie über Sicherheitsfragen mit Senor Janssen.";
+			dialog.text = "Natürlich wird die Fabrik Wartung benötigen. Mit ihrem Bau wird diese Insel eine Wirtschaft haben, in der Sie der Hauptgeschäftspartner sind. Wir werden die Sklaven selbst ernähren, aber Sie werden Sicherheit und Produktion aus eigener Tasche bezahlen müssen. Siedler nehmen 20 Dublonen und fünf Flaschen Wein für jede Charge. Verhandeln Sie über Sicherheitsfragen mit Senor Janssen.";
 			link.l1 = "";
 			link.l1.go = "Himenes_61";
 		break;
@@ -1612,14 +1612,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_1":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 80)
 			{
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 80, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das sind wertvolle Informationen, und Sie hatten recht, es besteht kein Grund, hier zu zögern. Meine Männer sind alle hier, wir sind stark, ausgebildet und bereit. Alles wird in einer halben Stunde vorbei sein. Kapitän, bereiten Sie sich bitte darauf vor, Menschen, Gefangene und Fracht auf Ihrem Schiff zu empfangen. Wir werden hier nicht lange verweilen.";
 				link.l1 = "Alles ist bereit, Leutnant. Wir haben nur auf Sie gewartet. Bis später!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Skill Check Failed (80)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 80, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information. In diesem Fall, geh zum Dock und bereite dein Enterkommando vor. Wir werden gemeinsam und sofort das Räubernest stürmen. Die Besten meiner und deiner Männer werden die Vorhut führen - sie werden diejenigen sein, die die Tore erobern. Den Rest besprechen wir nach der gemeinsamen Überprüfung unserer Kräfte. Enttäusch mich und dein Land nicht, "+GetFullName(pchar)+".";
 				link.l1 = "...So sei es. Bis später, Leutnant.";
 				link.l1.go = "FraOfficer_17";
@@ -1629,16 +1629,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_2":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information, und Sie hatten recht, es gibt keinen Grund hier zu verweilen. Meine Männer sind alle hier, wir sind stark, ausgebildet und bereit. Alles wird in einer halben Stunde vorbei sein. Kapitän, bitte bereiten Sie sich darauf vor, Leute, Gefangene und Fracht auf Ihrem Schiff zu empfangen. Wir werden hier nicht lange verweilen.";
 				link.l1 = "Alles ist bereit, Leutnant. Wir haben nur auf Sie gewartet. Bis später!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information. In diesem Fall, begeben Sie sich zum Dock und bereiten Sie Ihr Enterteam vor. Wir werden zusammen und sofort das Banditennest stürmen. Die Besten meiner und Ihrer Männer werden die Vorhut anführen - sie werden diejenigen sein, die die Tore erobern. Den Rest besprechen wir, nachdem wir gemeinsam unsere Kräfte inspiziert haben. Enttäuschen Sie mich und Ihr Land nicht, "+GetFullName(pchar)+".";
 				link.l1 = "...So sei es. Bis später, Leutnant.";
 				link.l1.go = "FraOfficer_17";
@@ -1648,16 +1648,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_3":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 70, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information, und Sie hatten recht, es besteht keine Notwendigkeit hier zu verweilen. Meine Männer sind alle hier, wir sind stark, ausgebildet und bereit. Alles wird in einer halben Stunde vorüber sein. Kapitän, bereiten Sie sich bitte darauf vor, Menschen, Gefangene und Fracht auf Ihrem Schiff aufzunehmen. Wir werden hier nicht lange verweilen.";
 				link.l1 = "Alles ist bereit, Leutnant. Wir haben nur auf Sie gewartet. Bis später!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (70)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 70, SKILL_LEADERSHIP);
 				dialog.text = "Danke Ihnen, Kapitän. Das sind wertvolle Informationen. In diesem Fall, begeben Sie sich zum Dock und bereiten Sie Ihr Enterteam vor. Wir werden gemeinsam und sofort das Banditennest stürmen. Die Besten meiner und Ihrer Männer werden die Vorhut anführen - sie werden diejenigen sein, die die Tore erobern. Den Rest besprechen wir, nachdem wir unsere Kräfte gemeinsam inspiziert haben. Enttäuschen Sie mich und Ihr Land nicht, "+GetFullName(pchar)+".";
 				link.l1 = "...So sei es. Bis später, Leutnant.";
 				link.l1.go = "FraOfficer_17";
@@ -1667,16 +1667,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_4":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das sind wertvolle Informationen, und Sie hatten recht, es gibt keinen Grund, hier zu zögern. Meine Männer sind alle hier, wir sind stark, ausgebildet und bereit. Alles wird in einer halben Stunde vorbei sein. Kapitän, bereiten Sie bitte vor, Menschen, Gefangene und Ladung auf Ihrem Schiff zu empfangen. Wir werden hier nicht lange verweilen.";
 				link.l1 = "Alles ist bereit, Leutnant. Wir haben nur auf Sie gewartet. Bis später!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information. In diesem Fall, begeben Sie sich zum Dock und bereiten Sie Ihr Enterkommando vor. Wir werden das Banditennest gemeinsam und sofort stürmen. Die Besten meiner und Ihrer Männer werden die Vorhut anführen - sie werden es sein, die die Tore erobern. Den Rest besprechen wir, nachdem wir gemeinsam unsere Truppen inspiziert haben. Enttäuschen Sie mich und Ihr Land nicht, "+GetFullName(pchar)+".";
 				link.l1 = "...So sei es. Bis später, Leutnant.";
 				link.l1.go = "FraOfficer_17";
@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_5":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 90)
 			{
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 90, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das ist wertvolle Information, und Sie hatten recht, es gibt keinen Grund, hier zu verweilen. Meine Männer sind alle hier, wir sind stark, trainiert und bereit. Alles wird in einer halben Stunde vorbei sein. Kapitän, bitte bereiten Sie sich darauf vor, Menschen, Gefangene und Ladung auf Ihrem Schiff zu empfangen. Wir werden hier nicht lange verweilen.";
 				link.l1 = "Alles ist bereit, Leutnant. Wir haben nur auf Sie gewartet. Bis später!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Skill Check Failed (90)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 90, SKILL_LEADERSHIP);
 				dialog.text = "Danke, Kapitän. Das sind wertvolle Informationen. In diesem Fall, gehen Sie zum Dock und bereiten Sie Ihr Enterkommando vor. Wir werden gemeinsam und sofort das Räubernest stürmen. Die Besten meiner und Ihrer Männer werden die Vorhut bilden - sie werden es sein, die die Tore erobern. Den Rest besprechen wir, nachdem wir gemeinsam unsere Streitkräfte inspiziert haben. Enttäuschen Sie mich und Ihr Land nicht, "+GetFullName(pchar)+".";
 				link.l1 = "...So sei es. Bis später, Leutnant.";
 				link.l1.go = "FraOfficer_17";

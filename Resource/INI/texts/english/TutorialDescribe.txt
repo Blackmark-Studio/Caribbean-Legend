@@ -181,10 +181,7 @@ Trading_descr
 {
 Trading is a deep, complex system where many factors affect buying and selling prices.~On land, your character's Trading skill and background matter most.~At sea, there are more factors—goods type, origin, colony size, trade routes, and your Purser's skills.~You'll figure it all out eventually, but for now, pick up a useful Trading amulet.
 }
-Prologue_Navigation {Ship Control}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation {Ship Control}Prologue_Navigation_descr
 {
 Welcome to the Caribbean Sea!~Turn your ship with the steering keys. Ships are heavy and have a lot of inertia, so they turn slowly. Get a feel for it.~Control sails and speed with the sail mode keys.~There are three sail modes: full, battle, and down. Full sails are fastest, battle sails turn best, and down brings you to a smooth stop.~In storms and under fire, lower your sails. For turning and aiming, use battle mode. For chasing, nothing beats full sails.~Try out the different sail modes and turns, feel the ship's inertia, and enjoy the sunset!
 }
@@ -192,19 +189,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Time Control}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {Time Control}Prologue_TimeScale_descr
 {
 A lot of things in the game happen slowly—like changing sail mode or reloading cannons.~You can speed up or slow down time at sea, on land, and on the world map.~Enjoy your power over time, then head to the ship's deck. Someone wants to talk to you.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoy!}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoy!}Prologue_CameraControl_descr
 {
 Welcome aboard the "Ulysse"! We've prepared a short starting adventure for you.~There's plenty to do on the "Ulysse". When you're ready to move on, pick "Finish business" in the captain's dialogue.~Thanks for playing—see you at sea!
 }
@@ -214,82 +205,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Logbook & Documents}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {Logbook & Documents}Prologue_Logbook_descr
 {
 Every quest you take is recorded in the "Logbook". It's important to read dialogues and log entries carefully—there are often key details and instructions.~Check out the "Logbook" entries. All small tasks taken aboard the “Ulysse” will show up there.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {Complex Quests, Documents & Crafting}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Complex Quests, Documents & Crafting}
 Prologue_Inventory_descr
 {
 Besides quests, the "Logbook" has other important info.~In the "Documents" section, you can read all found notes.~Now you need to read a note from the ship's Purser and hand out doubloons to the crew as listed.~To get doubloons from a chest, open it using the crafting—Alchemy—mechanic.You only have a few recipes now, but you'll get more later.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {Amulets}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {Amulets}Prologue_Amulet_descr
 {
 Amulets are powerful boosters for your character and come in offensive, defensive, and support types. You can't equip an offensive and defensive amulet at the same time, so choose your sets wisely.~There are also two other types of boosters: talismans and charms.~Talismans last longer than amulets and have broader effects, while charms are extremely powerful, last forever, and have their own inventory slot.~Always keep a few sets in your inventory for tough skill checks and hard fights at sea and on land.~Caution: once activated, removing an amulet or talisman destroys it—choose carefully.
 }
-Prologue_Trading {Trading Basics}
-[g]Prologue_Trading_descr
+Prologue_Trading {Trading Basics}Prologue_Trading_descr
 {
 Trading is a deep, complex system where many factors affect prices—mainly your 'Trading' skill.~At sea, there are even more factors—goods type, origin, colony size, trade routes, and your Purser's skills.~You'll figure it all out eventually, but for now, pick up a useful amulet.
 }
-Prologue_Overload {Overload}
-[h]Prologue_Overload_descr
+Prologue_Overload {Overload}Prologue_Overload_descr
 {
-You've hit your first carry weight limit.Every character has a max carry weight, based on strength, skills, and amulets.~Try to find something to boost your max carry weight—maybe from the boatswain in the crew quarters.
+You've hit your first carry weight limit.Every character has a max carry weight, based on strength, еndurance, skills, and amulets.~Try to find something to boost your max carry weight—maybe from the boatswain in the crew quarters.
 }
-Prologue_AutoFire {Sea Battle}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {Sea Battle}Prologue_AutoFire_descr
 {
 Your first sea battle takes place in Charles de Maure's imagination—so don't worry, just experiment!~Every ship has three main stats: hull, sails, and crew. If the hull hits zero, the ship sinks. Damaged sails slow you down, and losing crew affects boarding, reloads, and sail handling.~Each ammo type has its use: grapeshot for crew, chain shot for sails and masts, bombs for the hull. Cannonballs are all-purpose with the longest range. Damage depends on both ammo type and the gun firing it—the bigger the gun, the more damage.~There are two main firing modes. Quick shot is available when the enemy is in your firing arc. It's not very accurate or effective early on, but lets you fight dynamically.~If the battle feels too slow, speed it up with the time control keys.
 }
-Prologue_AimingFire {Aimed Fire}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {Aimed Fire}Prologue_AimingFire_descr
 {
 Aimed fire lets you shoot very accurately from the side. It takes practice, but it's worth it.~Gun circles show the real position and trajectory of your broadside cannons. They need time to line up with the spot you aim at in the center of the screen.~When you fire, the guns shoot where their circles are at that moment, so lead your target if needed.~Aim at an enemy ship to target it. Once captured, you can aim at any part or lead your shots.~As your captain and Cannoneer skills grow, gun aiming and fire rate improve.~If you move the aim quickly, the gunners get confused and aim slower than usual.~Aimed broadsides are great for hitting critical ship parts at long range—especially sails and masts.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Attack}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {Attack}Prologue_FightAttack_descr
 {
 Combat in Caribbean Legend is brutal and fast, but you're safe for now.~Every character is armed and has combat skills. The better your weapon and the more experienced your hero, the more damage you deal.~You have several attack and defense moves.~Let's start with the three main attacks.~Slash. Fast, deals less damage, uses moderate energy.~Thrust. Slower than a slash, deals medium damage, uses little energy.~Heavy attack. Slow and powerful, deals massive damage and can break blocks.~Try all these attacks on the pirate.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Combat Defense}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {Combat Defense}Prologue_FightDefence_descr
 {
 Nice! Now for defense.~Block. Blocks any attack except heavy. You can move slowly while blocking, and it doesn't use energy. Strong enemies can break your block with normal attacks, so be ready.~Parry. Deflects any attack and makes the enemy lose balance and energy.~Dodge. Lets you change position or avoid a shot.~Try parrying and blocking the pirate's attacks.~Then—finish him.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Marksmanship}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {Marksmanship}Prologue_Marksmanship_descr
 {
 Firearms are rarer than melee weapons, but getting shot in the Caribbean is still a real risk, so stay sharp.~There are two shooting modes on land, just like at sea: quick shot and aimed shot.~Quick shot is a simple button press. Fast, but not very effective.~Aimed shots can deal much more damage, but leave you exposed. The longer you aim, the more damage you deal. Headshots do even more.~Hold the aim button to enter this mode. Press attack to shoot. Release aim to exit without firing.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Looting}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {Looting}Prologue_DeadSearch_descr
 {
 After every fight, it's time to collect loot.You can search any fallen enemy by pressing the loot button.~Find the healing elixir Alonso needs!
 }

@@ -8,14 +8,14 @@ float GetTalentEfficiency(int talent)
 // порог ранга
 int GetCharacterRankRate(ref _refCharacter)
 {
-    int talent = GetCharacterSPECIALSimple(_refCharacter, SPECIAL_I);
+    int talent = GetSpecialBase(_refCharacter, SPECIAL_I);
     float eff = GetTalentEfficiency(talent);
 
     if(CheckCharacterPerk(_refCharacter, "SharedExperience"))
     {
-        return makeint(40.0 / eff);
+        return makeint(44.0);
     }
-    return makeint(41.0 / eff);
+    return makeint(45.0);
 }
 int GetCharacterRankRateCur(ref _refCharacter)
 {
@@ -155,13 +155,13 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
             {
                if (isOfficerInShip(GetCharacter(cn), true))
                {
-                   if(bShare) div = 2.0;
-                   else div = 4.0;
+                   if(bShare) div = 1.5;
+                   else div = 1.5;
                }
                else
                {
-                   if(bShare) div = 10.0;
-                   else div = 20.0;
+                   if(bShare) div = 4.0;
+                   else div = 4.0;
                }
                AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue / div);
             }
@@ -171,8 +171,8 @@ void AddCharacterExpToSkill(ref _chref, string _skill, float _addValue)
             cn = GetCompanionIndex(_chref,i);
             if(cn!=-1)
             {
-               if(bShare) div = 3.0;
-               else div = 6.0;
+               if(bShare) div = 2.5;
+               else div = 2.5;
                AddCharacterExpToSkill(GetCharacter(cn), _skill, _addValue / div);
             }
         }
@@ -195,26 +195,13 @@ int CalculateExperienceFromRank(int _Rank)
 // личные перки
 int GetFreePoints_SelfRate(ref _chref)
 {
-    int talent = GetCharacterSPECIALSimple(_chref, SPECIAL_I);
-    float eff = GetTalentEfficiency(talent);
-
-    if (CheckCharacterPerk(_chref, "SharedExperience"))
-    {
-        return makeint(11.0 / eff);
-    }
-    return makeint(12.0 / eff);
+    return GetIntByCondition(CheckCharacterPerk(_chref, "SharedExperience"), 13, 12);
 }
+
 // корабельные перки 
 int GetFreePoints_ShipRate(ref _chref)
 {
-    int talent = GetCharacterSPECIALSimple(_chref, SPECIAL_I);
-    float eff = GetTalentEfficiency(talent);
-
-    if (CheckCharacterPerk(_chref, "SharedExperience"))
-    {
-        return makeint(15.0 / eff);
-    }
-    return makeint(16.0 / eff);
+    return GetIntByCondition(CheckCharacterPerk(_chref, "SharedExperience"), 21, 19);
 }
 
 // порог следующего скила (множитель)
@@ -230,47 +217,47 @@ float GetCharacterExpRate(ref _chref, string _skill)
         switch (_skill)
         {
             case SKILL_F_LIGHT:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_A)*0.9 + GetCharacterSPECIAL(_chref, SPECIAL_P)*0.1;
+                divBy = GetSpecialBase(_chref, SPECIAL_A)*0.9 + GetSpecialBase(_chref, SPECIAL_P)*0.1;
             break;
             case SKILL_FENCING:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_S)*0.6 + GetCharacterSPECIAL(_chref, SPECIAL_A)*0.4;
+                divBy = GetSpecialBase(_chref, SPECIAL_S)*0.6 + GetSpecialBase(_chref, SPECIAL_A)*0.4;
             break;
             case SKILL_F_HEAVY:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_S)*0.9 + GetCharacterSPECIAL(_chref, SPECIAL_E)*0.1;
+                divBy = GetSpecialBase(_chref, SPECIAL_S)*0.9 + GetSpecialBase(_chref, SPECIAL_E)*0.1;
             break;
             case SKILL_PISTOL:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_A)*0.4 + GetCharacterSPECIAL(_chref, SPECIAL_L)*0.6;
+                divBy = GetSpecialBase(_chref, SPECIAL_A)*0.4 + GetSpecialBase(_chref, SPECIAL_L)*0.6;
             break;
             case SKILL_FORTUNE:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_L);
+                divBy = GetSpecialBase(_chref, SPECIAL_L);
             break;
             
             case SKILL_LEADERSHIP:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_I)*0.2 + GetCharacterSPECIAL(_chref, SPECIAL_C)*0.8;
+                divBy = GetSpecialBase(_chref, SPECIAL_I)*0.2 + GetSpecialBase(_chref, SPECIAL_C)*0.8;
             break;
             case SKILL_COMMERCE:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_I)*0.8 + GetCharacterSPECIAL(_chref, SPECIAL_C)*0.2;
+                divBy = GetSpecialBase(_chref, SPECIAL_I)*0.8 + GetSpecialBase(_chref, SPECIAL_C)*0.2;
             break;
             case SKILL_ACCURACY:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_P)*0.8 + GetCharacterSPECIAL(_chref, SPECIAL_L)*0.2;
+                divBy = GetSpecialBase(_chref, SPECIAL_P)*0.8 + GetSpecialBase(_chref, SPECIAL_L)*0.2;
             break;
             case SKILL_CANNONS:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_I)*0.6 + GetCharacterSPECIAL(_chref, SPECIAL_S)*0.4;
+                divBy = GetSpecialBase(_chref, SPECIAL_I)*0.6 + GetSpecialBase(_chref, SPECIAL_S)*0.4;
             break;
             case SKILL_SAILING:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_P)*0.2 + GetCharacterSPECIAL(_chref, SPECIAL_I)*0.8;
+                divBy = GetSpecialBase(_chref, SPECIAL_P)*0.2 + GetSpecialBase(_chref, SPECIAL_I)*0.8;
             break;
             case SKILL_REPAIR:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_P)*0.2 + GetCharacterSPECIAL(_chref, SPECIAL_E)*0.8;
+                divBy = GetSpecialBase(_chref, SPECIAL_P)*0.2 + GetSpecialBase(_chref, SPECIAL_E)*0.8;
             break;
             case SKILL_GRAPPLING:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_A)*0.7 + GetCharacterSPECIAL(_chref, SPECIAL_I)*0.3;
+                divBy = GetSpecialBase(_chref, SPECIAL_A)*0.7 + GetSpecialBase(_chref, SPECIAL_I)*0.3;
             break;
             case SKILL_DEFENCE:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_C)*0.5 + GetCharacterSPECIAL(_chref, SPECIAL_E)*0.5;
+                divBy = GetSpecialBase(_chref, SPECIAL_C)*0.5 + GetSpecialBase(_chref, SPECIAL_E)*0.5;
             break;
             case SKILL_SNEAK:
-                divBy = GetCharacterSPECIAL(_chref, SPECIAL_P)*0.5 + GetCharacterSPECIAL(_chref, SPECIAL_L)*0.5;
+                divBy = GetSpecialBase(_chref, SPECIAL_P)*0.5 + GetSpecialBase(_chref, SPECIAL_L)*0.5;
             break;
         }
 		
@@ -294,7 +281,6 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
 {
     // трем кэш
     DeleteAttribute(_chref, "BakSkill." + _skill);
-    
 	// boal 05.05.04 разделение по группам -->
     if (isSelfTypeSkill(_skill))
     {
@@ -307,6 +293,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
        }
        if (sti(_chref.perks.FreePoints_self_exp) >= GetFreePoints_SelfRate(_chref))
        {
+            DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
            _chref.perks.FreePoints_self_exp = 0;
            if(CheckAttribute(_chref,"perks.FreePoints_self"))
            {
@@ -337,6 +324,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
        }
        if (sti(_chref.perks.FreePoints_ship_exp) >= GetFreePoints_ShipRate(_chref))
        {
+            DeleteAttribute(&InterfaceStates, "markers." + _chref.id);
            _chref.perks.FreePoints_ship_exp = 0;
            if(CheckAttribute(_chref,"perks.FreePoints_ship"))
            {
@@ -369,19 +357,21 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
     {
         _chref.rank_exp = 0;
         _chref.rank = sti(_chref.rank) + 1;
-        float mhp = LAi_GetCharacterMaxHP(_chref) + GetCharacterAddHPValue(_chref);
+        float mhp = LAi_GetCharacterMaxHP(_chref);
+        CT_UpdateCashTables(_chref);
         LAi_SetHP(_chref,mhp,mhp);
+        SetEnergyToCharacter(_chref);
 
-        if (CheckCharacterPerk(_chref, "EnergyPlus"))
-		{
-		    if (!CheckAttribute(_chref, "PerkValue.EnergyPlus"))
-			{
-		  		_chref.PerkValue.EnergyPlus = 0;
-			}
-			// belamour legendary edition новый бонус к энергии 
-			_chref.PerkValue.EnergyPlus = sti(_chref.rank);
-			SetEnergyToCharacter(_chref);
-		}
+        // if (CheckCharacterPerk(_chref, "EnergyPlus"))
+		// {
+		//     if (!CheckAttribute(_chref, "PerkValue.EnergyPlus"))
+		// 	{
+		//   		_chref.PerkValue.EnergyPlus = 0;
+		// 	}
+		// 	// belamour legendary edition новый бонус к энергии 
+		// 	_chref.PerkValue.EnergyPlus = sti(_chref.rank);
+		// 	SetEnergyToCharacter(_chref);
+		// }
 
         // сообщение в лог
         //if(IsOfficer(_chref) || IsCompanion(_chref))
@@ -394,6 +384,7 @@ void ApplayNewSkill(ref _chref, string _skill, int _addValue)
             //QuestsCheck();
         }
     }
+
     if (_addValue > 0 ) Event(EVENT_CT_UPDATE_FELLOW, "a", _chref);
 }
 
@@ -485,26 +476,3 @@ void AddCharacterSkillPoints(ref _chref, string _skill, int _addValue)
 }
 
 
-// прирост НР
-int GetCharacterAddHPValue(ref _refCharacter)
-{
-	int Ers = GetCharacterSPECIALSimple(_refCharacter, SPECIAL_E);
-	int ret = makeint(2 + Ers * 0.55 + 0.5);
-
-	if (CheckCharacterPerk(_refCharacter, "HPPlus"))
-	{
-		ret = ret + 1;
-		if(CheckAttribute(_refCharacter, "chr_ai.hp_max_back"))
-		{
-			_refCharacter.chr_ai.hp_max_back = stf(_refCharacter.chr_ai.hp_max_back) + ret;
-		}
-	}
-	else
-	{
-		if(CheckAttribute(_refCharacter, "chr_ai.hp_max_back"))
-		{
-			_refCharacter.chr_ai.hp_max_back = stf(_refCharacter.chr_ai.hp_max_back) + ret;
-		}
-	}
-	return ret;
-}

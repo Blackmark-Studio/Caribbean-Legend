@@ -1,6 +1,6 @@
 Patria_1 {Noel}
 Patria_2 {Elfelejt}
-Patria_3 {Eklatáns}
+Patria_3 { }
 Patria_4 {Hubert}
 Patria_5 {Dassien}
 Patria_6 {Felfedezô üzemmód: az idôzítô meghosszabbítva. Fejezd be a küldetést!}
@@ -14,12 +14,12 @@ Patria_13 {Péter}
 Patria_14 {Stuyvesant}
 Patria_15 {A Társaság kereskedelmi konvoja}
 Patria_16 {A Társaság Ost-Indiai hajóját elfogták!}
-Patria_17 {Oliphant}
+Patria_17 { }
 Patria_18 {Lenart}
 Patria_19 {Klap}
 Patria_20 {Edward}
 Patria_21 {Doily}
-Patria_22 {Trafalgar}
+Patria_22 { }
 Patria_23 {Kristian}
 Patria_24 {Beusson}
 Patria_25 {A vállalat afrikai konvoja}
@@ -29,10 +29,10 @@ Patria_28 {Doily ezredes jelzést adott a Blanca-lagúnában való partraszáll�
 Patria_29 {Kétórás bombázás után,@<NewStr()>a hollandok tárgyalócsoportot küldtek...}
 Patria_30 {Keresztény}
 Patria_31 {Tior}
-Patria_32 {Szerencse}
+Patria_32 { }
 Patria_33 {Steven}
 Patria_34 {Dodson}
-Patria_35 {Vörös Sárkány}
+Patria_35 { }
 Patria_36 {Marcus}
 Patria_37 {Tyrex}
 Patria_38 {Két órával késôbb...@<NewStr()>}

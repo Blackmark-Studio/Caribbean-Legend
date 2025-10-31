@@ -52,33 +52,6 @@ bool LAi_CharacterCanFrie(aref chr)
 	return false;
 }
 
-//Получить количество энергии у персонажа 0..100
-float Lai_CharacterGetEnergy(aref chr)
-{
-	if(CheckAttribute(chr, "chr_ai.energy"))
-	{
-		return stf(chr.chr_ai.energy);
-	}
-	return 0.0;
-}
-
-//Изменить количество энергии у персонажа 0..100
-void Lai_CharacterChangeEnergy(aref chr, float dlt)
-{
-	if(CheckAttribute(chr, "chr_ai.energy"))
-	{
-		float cur = stf(chr.chr_ai.energy);
-		cur = cur + dlt;
-		if(cur < 0.0) cur = 0.0;
-		if(cur > LAi_GetCharacterMaxEnergy(chr)) cur = LAi_GetCharacterMaxEnergy(chr); //boal
-		chr.chr_ai.energy = cur;
-	}else{
-		if(dlt < 0.0) dlt = 0.0;
-		if(dlt > LAi_GetCharacterMaxEnergy(chr)) dlt = LAi_GetCharacterMaxEnergy(chr);
-		chr.chr_ai.energy = dlt;
-	}
-}
-
 //Может ли сражаться персонаж в заданной локации
 bool LAi_LocationCanFight()
 {
@@ -354,6 +327,9 @@ void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType)
 	if(!CheckAttribute(chr, "chr_ai.hp_max")) chr.chr_ai.hp_max = LAI_DEFAULT_HP_MAX;
 	float maxhp = stf(chr.chr_ai.hp_max);
 	float hp    = stf(chr.chr_ai.hp);
+	// отображаем урон на полоске
+	if(bDrawBars)
+		SendMessage(chr, "lf", MSG_CHARACTER_SMOOTHDMG, hp);
 	//Пересчитываем
 	if (damage > hp)  damage = hp;
 	hp = hp - damage;
@@ -447,6 +423,7 @@ void LAi_CheckKillCharacter(aref chr)
 		}
 
 		BRD_BoardingCaptainKilled(chr);
+		BRD_BoardingCloneKilled(chr);
 
 		// бессмертные квестовые офицеры
 		if(CheckAttribute(chr, "OfficerImmortal"))
@@ -661,8 +638,6 @@ ref LAi_CreateFantomCharacterEx(string model, string ani, string group, string l
 	CirassMaker(chr);
 	//game params
  	CalculateAppropriateSkills(chr);
-	Log_TestInfo("Ребаланс фантома:" + chr.id);
-	InitChrRebalance(chr, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6);
 	chr.money = 100 + rand(500);
 	chr.reputation = 10 + rand(70);
 	chr.skill.freeskill = 0;
@@ -1401,7 +1376,7 @@ int Dead_FindCloseBodyExt(ref isEmpty)
 
 void Dead_OpenBoxProcedure()
 {
-    if (CheckAttribute(pchar, "GenQuest.Notsearchbody"))
+    if (CheckAttribute(pchar, "GenQuest.Notsearchbody") || pchar.chr_ai.type == LAI_TYPE_ACTOR)
         return; //Jason
 
 	ref chr = GetMainCharacter();
@@ -1454,7 +1429,7 @@ void Dead_LaunchCharacterItemChange(ref chref)
 }
 // boal dead can be searched 14.12.2003 <--
 
-void MakePoisonAttack(aref attack, aref enemy)
+void MakePoisonAttack(ref attack, ref enemy)
 {
 	if (!CheckAttribute(enemy, "chr_ai.poison"))
 	{
@@ -1475,18 +1450,16 @@ void MakePoisonAttack(aref attack, aref enemy)
 	enemy.chr_ai.poison = poison + 30 + rand(20);
 }
 
-void MakePoisonAttackCheckSex(aref attacker, aref enemy, aref attackerLandTable)
+void MakePoisonAttackCheckSex(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable)
 {
-	if (IsCharacterEquippedArtefact(enemy, "talisman8")) return;
-	if (IsCharacterEquippedArtefact(enemy, "kaleuche_amulet3")) return; // калеуче
+	if (CheckAttribute(enemyLandTable, HAS + M_CANT_BE_POISONED)) return;
 	if (rand(2) < 2 && CheckAttribute(attacker, "viper")) 
 	{
 		MakePoisonAttack(attacker, enemy);
 		return;
 	}
-
-	int chance = GetPoisonChance(&attacker, &attackerLandTable);
-	if (PercentChance(chance)) MakePoisonAttack(&attacker, &enemy);
+	float chance = GetPoisonChance(attacker, attackerLandTable);
+	if (fPercentChance(chance)) MakePoisonAttack(attacker, enemy);
 }
 
 string LAi_FindFreeRandomLocator(string group)

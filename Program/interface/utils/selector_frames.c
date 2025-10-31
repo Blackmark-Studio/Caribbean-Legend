@@ -1,5 +1,5 @@
 // Считываем текущее значение опции и показываем его в тексте
-void InitSelectors(string optionName, string selectorName, int curValue)
+void InitSelectors(string optionName, string selectorName, ref curValue)
 {
 	if (CheckAttribute(&InterfaceStates, optionName)) {
 		curValue = sti(InterfaceStates.(optionName));

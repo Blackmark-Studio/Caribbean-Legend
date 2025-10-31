@@ -310,7 +310,6 @@ void PlaceSmugglersOnShore(string LocationId)
         Model = "citiz_" + (rand(9)+21);
 		Smuggler = GetCharacter(NPC_GenerateCharacter("Rand_Smug0" + i, Model, "man", "man", 5, PIRATE, 4, true, "hunter")); // 4 дня, потом сами пропадут
 		SetFantomParam(Smuggler);
-		InitChrRebalance(Smuggler, GEN_TYPE_ENEMY, GEN_COMMONER, true, 0.6); // RB Контрабандисты
 		LAi_SetWarriorTypeNoGroup(Smuggler);
 		LAi_warrior_DialogEnable(Smuggler, true);
 		LAi_warrior_SetStay(Smuggler, true);

@@ -2654,23 +2654,12 @@ void ProcessDialogEvent()
 		
 		case "Noblelombard_7":
 			DialogExit();
-			AddQuestRecord("Noblelombard", "6");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard"); // 从NPC到玩家的樵夫
+			AddDialogExitQuestFunction("Noblelombard_Usurer_bad");
 		break;
 		
 		case "Noblelombard_9":
 			DialogExit();
-			iTemp = sti(pchar.GenQuest.Noblelombard.Regard); // Addon-2016 Jason 减少杜布隆的发放
-			AddMoneyToCharacter(pchar, iTemp);
-			PlaySound("interface\important_item.wav");
-			AddQuestRecord("Noblelombard", "7");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard");// 从NPC到玩家的樵夫  樵夫
+			AddDialogExitQuestFunction("Noblelombard_Usurer_good");
 		break;
 //< —家族遗物
 

@@ -2039,7 +2039,7 @@ void ProcessDialogEvent()
 		break;
 			
 		case "SlaveGalleon_3":
-			dialog.text = "Понимают, наверное, но открыто выступать, когда тебе тычут бумагу с оттиском большого пальца вождя, мало кто осмеливается. Конечно, подобная тактика чаще применяется в отношении мирных племён - таких как араваки, например, или мискито. С воинственными ица и акавоями, а тем более, караибами, такой ход не пройдёт - там и сила-то не всегда помогает\nНу, а теперь перейдём непосредственно к вашей задаче.";
+			dialog.text = "Понимают, наверное, но открыто выступать, когда тебе тычут бумагу с оттиском большого пальца вождя, мало кто осмеливается. Конечно, подобная тактика чаще применяется в отношении мирных племён - таких как араваки, например, или мискито. С воинственными ица и акавоями, а тем более, караибами, такое не пройдёт - там и сила-то не всегда помогает\nНу, а теперь перейдём непосредственно к вашей задаче.";
 			link.l1 = "Я уже чувствую запах больших денег! Слушаю вас, " + npchar.name + ".";
 			link.l1.go = "SlaveGalleon_4";
 		break;
@@ -2638,22 +2638,12 @@ void ProcessDialogEvent()
 		
 		case "Noblelombard_7":
 			DialogExit();
-			AddQuestRecord("Noblelombard", "6");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard"); // лесник с нпчара на пчара
+			AddDialogExitQuestFunction("Noblelombard_Usurer_bad");
 		break;
 		
 		case "Noblelombard_9":
 			DialogExit();
-			iTemp = sti(pchar.GenQuest.Noblelombard.Regard); // Addon-2016 Jason уменьшаем раздачу дублонов
-			AddMoneyToCharacter(pchar, iTemp);
-			AddQuestRecord("Noblelombard", "7");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
-			DeleteAttribute(Pchar, "quest.noblelombard");// с нпчара на пчара  лесник
+			AddDialogExitQuestFunction("Noblelombard_Usurer_good");
 		break;
 //<-- семейная реликвия
 

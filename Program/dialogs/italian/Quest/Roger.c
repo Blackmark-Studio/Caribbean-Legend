@@ -231,7 +231,7 @@ void ProcessDialogEvent()
 		
 		case "Jeffry_2":
             dialog.text = "1300 pesos per un rotolo. Credo sia un buon prezzo.";
-			link.l1 = "Sì, e Tyrex vuole venti pezzi d'oro per un rotolo. Non una moneta di meno. E intendo dobloni. Mi ha dato un lavoro per trovare un compratore adeguato per quel prezzo.";
+			link.l1 = "Sì, e Tyrex vuole 4 pezzi d'oro per un rotolo. Non una moneta di meno. E intendo dobloni. Mi ha dato un lavoro per trovare un compratore adeguato per quel prezzo.";
 			link.l1.go = "Jeffry_3";
 		break;
 		
@@ -285,7 +285,7 @@ void ProcessDialogEvent()
 		case "Jeffry_9":
 			pchar.quest.Mtraxx_SilkTimeOver.over = "yes";
             dialog.text = "Come stai, amico?";
-			link.l1 = "Sto andando alla grande. Ho trovato un compratore. Venticinque dobloni per rotolo. Credo che a Tyrex piacerà.";
+			link.l1 = "Sto andando alla grande. Ho trovato un compratore. 5 dobloni per rotolo. Credo che a Tyrex piacerà.";
 			link.l1.go = "Jeffry_10";
 		break;
 		
@@ -802,7 +802,7 @@ void ProcessDialogEvent()
 		
 		case "Mtr_acceptor_5_3":
             dialog.text = "K-ha! Quindi, sei un pirata?";
-			link.l1 = "No, faccio affari con loro solo in occasioni speciali. So per certo che Marcus riceve periodicamente lotti di seta navale e la vende a chiunque possa permettersela. E non sto parlando di 2500 pesos per un rotolo qui, direi che se puoi pagargli 25 dobloni d'oro per ogni rotolo, ti sommergerà di questi, puoi contarci.";
+			link.l1 = "No, faccio affari con loro solo in occasioni speciali. So per certo che Marcus riceve periodicamente lotti di seta navale e la vende a chiunque possa permettersela. E non sto parlando di 2500 pesos per un rotolo qui, direi che se puoi pagargli 5 dobloni d'oro per ogni rotolo, ti sommergerà di questi, puoi contarci.";
 			link.l1.go = "Mtr_acceptor_5_4";
 		break;
 		
@@ -891,8 +891,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Mtr_acceptor_7_8":
-            dialog.text = "Venticinque dobloni per un rotolo. Questo è il miglior prezzo che puoi ottenere, fidati di me su questo.";
-			link.l1 = "Venticinque monete d'oro? Hm. Non male. Credo che Tyrex mi sarà molto debitore per un compratore del genere. Trattato molto bene, lo farò sapere a lui. Tuttavia, se mi hai mentito sul prezzo, allora sarai tu a rispondere.";
+            dialog.text = "5 dobloni per un rotolo. Questo è il miglior prezzo che puoi ottenere, fidati di me su questo.";
+			link.l1 = "5 monete d'oro? Hm. Non male. Credo che Tyrex mi sarà molto debitore per un compratore del genere. Trattato molto bene, lo farò sapere a lui. Tuttavia, se mi hai mentito sul prezzo, allora sarai tu a rispondere.";
 			link.l1.go = "Mtr_acceptor_7_9";
 		break;
 		
@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "Non ho quel tipo di montagna d'oro al momento.";
 				link.l2.go = "Pelly_44_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Perk Check Failed", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "Sai cosa, Cutlass? Lascia stare. Siamo pirati o cosa? E Jean? O il suo bel viso è il suo unico pregio? Prepara un baule - ci atterremo al piano originale.";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3016,13 +3016,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Affidabile) (Onore) (Leadership) Basta sangue per oggi, Jean. Me ne occuperò io stesso.";
 				link.l1.go = "merida_head_dobro_1";
-				notification("Trustworthy", "Trustworthy");
-				notification("Reputation Check Passed", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 71, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
@@ -4696,7 +4696,7 @@ void ProcessDialogEvent()
 					break;
 				}
 			}
-			if (sti(chref.Ship.Crew.Quantity) > 0)
+			if (sti(chref.Ship.Crew.Quantity) > 0 && !CheckAttributeEqualTo(pchar, "questTemp.IslaMona.Tavern", "complete"))
 			{
 				dialog.text = "Capitano, porta tutto il suo equipaggio sulla tua nave ammiraglia tranne un ufficiale.";
 				Link.l1 = "Ah, giusto! Lo farò!";
@@ -4711,21 +4711,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipStock_3":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-            chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = 0;
-            chref.ShipInStockMan.AltDate = GetQuestBookDataDigit();
-            SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date");
-            RemoveCharacterCompanion(pchar, chref);
-            chref.location = "";
-            chref.location.group = "";
-            chref.location.locator = "";
-			if(sti(RealShips[sti(chref.Ship.Type)].Class) < 2)
-			{
-				npchar.FstClassInHarbour = 1;
-			}
-            npchar.portman = sti(npchar.portman)+1;
-            pchar.ShipInStock = sti(pchar.ShipInStock)+1;
+            LeaveShipIslaMona(&NPChar);
 			dialog.text = "Molto bene, ci assicureremo che sia consegnata a un porto sicuro.";
 			Link.l1 = "Eccellente!";
 			Link.l1.go = "carpenter_exit";
@@ -4762,6 +4748,12 @@ void ProcessDialogEvent()
 		break;
 		
 		 case "ShipStockManBack":
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "Cap, sembra che non ci sia spazio per un altro ufficiale nella tua ciurma.";
+				link.l1 = "Forse hai ragione. Passerò più tardi — per ora veglia qui che nessun nuovo padrone prenda possesso della mia nave.";
+				link.l1.go = "exit";
+				break;
+			}
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			dialog.Text = "La stai portando con te?";
 			link.l1 = "Sì.";

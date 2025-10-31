@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_4":
-			dialog.text = "Die leichte Fregatte 'Gryffondor' steht nun unter Ihrem Kommando. Von diesem Moment an gehört dieses hervorragende Schiff Ihnen. Nutzen Sie seine hohen Qualitäten für die Ehre Seiner Majestät und zur Stärkung des französischen Einflusses auf dem karibischen Archipel!";
+			dialog.text = "Die schwerer Korvette 'Gryffondor' steht nun unter Ihrem Kommando. Von diesem Moment an gehört dieses hervorragende Schiff Ihnen. Nutzen Sie seine hohen Qualitäten für die Ehre Seiner Majestät und zur Stärkung des französischen Einflusses auf dem karibischen Archipel!";
 			link.l1 = "Sofort!";
 			link.l1.go = "serve_5";
 			LAi_Fade("SharlePutsSuit", "");

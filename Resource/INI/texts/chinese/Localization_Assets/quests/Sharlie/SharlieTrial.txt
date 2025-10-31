@@ -26,7 +26,7 @@ SharlieTrial_25 {用炸弹击沉她, 或在风向允许时立即登船。}
 SharlieTrial_26 {干得好! 通过动作菜单打开世界地图, 向北驶向瓜德罗普!}
 SharlieTrial_27 {Tichingitu}
 SharlieTrial_28 { }
-SharlieTrial_29 {Alonso}
+SharlieTrial_29 { }
 SharlieTrial_30 { }
 SharlieTrial_31 {Gerar}
 SharlieTrial_32 {Lecrua}
@@ -52,3 +52,5 @@ SharlieTrial_51 {三桅帆船'Henry (亨利号)'}
 SharlieTrial_52 {有机会从死者身上掠夺贵重物品!}
 SharlieTrial_53 {Guillaume}
 SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

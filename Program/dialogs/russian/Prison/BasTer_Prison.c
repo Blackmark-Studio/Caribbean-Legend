@@ -198,13 +198,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "И кто же, по-вашему, мог перебить целый отряд патрульных во главе с офицером?";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Вызывающий доверие) Разбойники, кто ж ещё. Стыдно признаться, не хотел вам говорить, но недавно еле ноги унёс от какой-то огромной банды.";
 				link.l1.go = "PZ_IshemLongway_Blef_2";
 			}
 			else
 			{
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "Но мне-то откуда знать? Кто угодно - разбойники, пираты, лазутчики...";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}

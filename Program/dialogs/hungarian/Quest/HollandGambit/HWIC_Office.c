@@ -491,7 +491,7 @@ void ProcessDialogEvent()
 				dialog.text = "Nagyra értékelem az üzleti hozzáállásodat és hajlandó vagyok megfontolni a kérésedet. Talán növelhetnénk a mennyiséget, mondjuk, ötszörösére. Azonban az ilyen ellátmányok megszervezése jelentôs erôforrásokat igényel. Bôvítenünk kell a raktárhelyiséget, megerôsíteni a biztonságot, és biztosítani a megbízható szállítási útvonalakat. Mivel ez önöknek is elônyös, javaslom, hogy osszuk meg ezeket a kiadásokat egymás között.";
 				link.l1 = "Ez mind ésszerûnek hangzik. Mekkora összeget tart szükségesnek ezeknek a kiadásoknak a fedezéséhez?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Képességellenôrzés megfelelt", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

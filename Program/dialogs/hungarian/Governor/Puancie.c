@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_4":
-			dialog.text = "A könnyû fregatt 'Gryffondor' mostantól az ön parancsnoksága alatt áll. Ettôl a pillanattól kezdve ez a kiváló hajó a tiéd. Használja fel kiváló tulajdonságait ôfelsége dicsôségére és a francia befolyás megerôsítésére a Karib-tengeri szigetvilágban!";
+			dialog.text = "A nehéz korvett 'Gryffondor' mostantól az ön parancsnoksága alatt áll. Ettôl a pillanattól kezdve ez a kiváló hajó a tiéd. Használja fel kiváló tulajdonságait ôfelsége dicsôségére és a francia befolyás megerôsítésére a Karib-tengeri szigetvilágban!";
 			link.l1 = "Azonnal!";
 			link.l1.go = "serve_5";
 			LAi_Fade("SharlePutsSuit", "");

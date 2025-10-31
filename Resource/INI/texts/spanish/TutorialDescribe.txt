@@ -181,10 +181,7 @@ Trading_descr
 {
 El comercio es un sistema profundo y complejo donde muchos factores afectan el precio de compra y venta.~En el comercio terrestre, lo más importante es la habilidad de 'Comercio' del personaje y su historia.~En el comercio marítimo hay más factores: tipo de bien, origen, tamaño de la colonia, rutas de exportación e importación y las habilidades del Tesorero.~Tarde o temprano lo dominarás todo, pero por ahora conviene conseguir un buen amuleto de Comercio.
 }
-Prologue_Navigation {Control del barco}
-[a]
-
-Prologue_Navigation_descr
+Prologue_Navigation {Control del barco}Prologue_Navigation_descr
 {
 ¡Bienvenido al mar Caribe!~Gira el barco con las teclas de dirección. Los barcos son pesados y tienen mucha inercia, así que giran despacio. Siente esa inercia.~Controla las velas y la velocidad con las teclas de modo de velas.~Hay tres modos de velas: completas, de combate y arriadas. Con velas completas el barco va más rápido, en modo de combate gira mejor y con las velas arriadas se detiene suavemente.~En tormentas y bajo fuego enemigo conviene arriar las velas; para girar y apuntar, ponlas en modo de combate; para perseguir, nada mejor que las velas completas.~Prueba los diferentes modos de velas y giros, siente la inercia del barco y disfruta de la puesta de sol.
 }
@@ -192,19 +189,13 @@ Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Control del tiempo}
-[b]
-
-Prologue_TimeScale_descr
+Prologue_TimeScale {Control del tiempo}Prologue_TimeScale_descr
 {
 Muchas cosas en el juego suceden bastante despacio, como cambiar el modo de velas o recargar los cañones.~Puedes acelerar o ralentizar el tiempo en el mar, en tierra y en el mapa global.~Disfruta del control sobre el tiempo y sube a la cubierta: alguien quiere hablar contigo.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {¡Ahoy!}
-[c]
-
-Prologue_CameraControl_descr
+Prologue_CameraControl {¡Ahoy!}Prologue_CameraControl_descr
 {
 ¡Bienvenido a bordo del "Ulysse"! Hemos preparado una pequeña aventura inicial para ti.~En el "Ulysse" hay muchas cosas interesantes que hacer. Cuando creas que estás listo para continuar, elige la opción "Terminar asuntos" en el diálogo con el capitán.~¡Gracias por jugar y nos vemos en el mar!
 }
@@ -214,82 +205,59 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Diario de a bordo y documentos}
-[d]Prologue_Logbook_descr
+Prologue_Logbook {Diario de a bordo y documentos}Prologue_Logbook_descr
 {
 Cada misión que aceptes se registra en el "Diario". Es muy importante leer atentamente los diálogos y las entradas del "Diario", ya que a menudo contienen detalles clave e instrucciones.~Revisa las entradas del "Diario". Todas las pequeñas tareas que tomes a bordo del “Ulysse” aparecerán allí.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}
-[e]Prologue_Inventory {Misiones complejas, documentos y creación}
+Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Misiones complejas, documentos y creación}
 Prologue_Inventory_descr
 {
 Además de misiones, el "Diario" contiene otra información importante.~En la sección "Documentos" puedes leer todas las notas encontradas.~Ahora necesitas leer una nota del Tesorero y repartir los doblones a la tripulación según la lista.~Para sacar doblones de un cofre, ábrelo usando la mecánica de creación – Alquimia.Ahora tienes pocas recetas, pero en el futuro conseguirás más.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {Amuletos}
-[f]
-
-Prologue_Amulet_descr
+Prologue_Amulet {Amuletos}Prologue_Amulet_descr
 {
 Los amuletos son poderosos potenciadores del personaje y se dividen en ofensivos, defensivos y de apoyo. Ten en cuenta que no puedes equipar un amuleto ofensivo y uno defensivo al mismo tiempo, así que elige tus conjuntos con cuidado.~Además de los amuletos existen otros dos tipos de potenciadores: talismanes y amuletos protectores.~Los talismanes duran más que los amuletos y tienen efectos más amplios, mientras que los amuletos protectores son muy poderosos, duran indefinidamente y tienen una ranura propia en el inventario.~Lleva siempre varios conjuntos en el inventario para superar pruebas de habilidad difíciles y combates duros en el mar y en tierra.~Cuidado: tras activarlo, quitar un amuleto o talismán lo destruye, así que decide bien.
 }
-Prologue_Trading {Fundamentos del comercio}
-[g]Prologue_Trading_descr
+Prologue_Trading {Fundamentos del comercio}Prologue_Trading_descr
 {
 El comercio es un sistema profundo y complejo donde muchos factores afectan el precio, principalmente tu habilidad de 'Comercio'.~En el comercio marítimo hay aún más factores: tipo de bien, origen, tamaño de la colonia, rutas de exportación e importación y las habilidades de tu Tesorero.~Tarde o temprano lo dominarás todo, pero por ahora conviene conseguir un buen amuleto.
 }
-Prologue_Overload {Sobrecarga}
-[h]Prologue_Overload_descr
+Prologue_Overload {Sobrecarga}Prologue_Overload_descr
 {
-Te has topado por primera vez con el límite de peso que puedes llevar.Cada personaje tiene un peso máximo, que depende de la fuerza, las habilidades y los amuletos.~Intenta encontrar algo que aumente el peso máximo de tu personaje, por ejemplo, con el contramaestre en el camarote de la tripulación.
+Te has topado por primera vez con el límite de peso que puedes llevar.Cada personaje tiene un peso máximo, que depende de la fuerza, las habilidades, Resistencia, y los amuletos.~Intenta encontrar algo que aumente el peso máximo de tu personaje, por ejemplo, con el contramaestre en el camarote de la tripulación.
 }
-Prologue_AutoFire {Combate naval}
-[i]
-
-Prologue_AutoFire_descr
+Prologue_AutoFire {Combate naval}Prologue_AutoFire_descr
 {
 Tu primer combate naval ocurre en la imaginación de Charles de Maure, así que no temas y experimenta.~Cada barco tiene tres características principales: casco, velas y tripulación. Si el casco llega a cero, el barco se hunde. Los daños en las velas reducen la velocidad y la pérdida de tripulación afecta el abordaje, la recarga y el manejo de las velas.~Cada tipo de munición tiene su función: metralla para la tripulación, cadenas para las velas y mástiles, bombas para el casco. Las balas de cañón son universales y tienen el mayor alcance. El daño depende no solo del tipo de munición, sino también del cañón: cuanto más grande, más daño.~Hay dos modos principales de disparo. El disparo rápido está disponible si el barco enemigo está en el sector de tiro. No es muy preciso ni eficaz al principio, pero permite un combate dinámico.~Si el combate te parece demasiado lento, puedes acelerarlo con las teclas de control de tiempo.
 }
-Prologue_AimingFire {Disparo apuntado}
-[j]
-
-Prologue_AimingFire_descr
+Prologue_AimingFire {Disparo apuntado}Prologue_AimingFire_descr
 {
 El disparo apuntado permite disparar con gran precisión desde el costado. Hay que acostumbrarse, pero vale la pena.~Los círculos de los cañones muestran la posición real y la trayectoria de los cañones de banda. Necesitan tiempo para alinearse con el punto que indiques en el centro de la pantalla.~Al disparar, los cañones disparan donde estén sus círculos en ese momento, así que apunta por delante si es necesario.~Apunta a un barco enemigo para seleccionarlo como objetivo. Cuando lo captures, podrás apuntar a cualquier parte o anticipar el disparo.~A medida que aumenten las habilidades del capitán y el Canonnier, la velocidad de apuntado y la cadencia de fuego mejorarán.~Si mueves el punto de mira rápidamente, los artilleros se confundirán y apuntarán más lento de lo normal.~El disparo apuntado es ideal para dañar partes críticas del barco a larga distancia, sobre todo velas y mástiles.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Ataque}
-[k]
-
-Prologue_FightAttack_descr
+Prologue_FightAttack {Ataque}Prologue_FightAttack_descr
 {
 El combate en Caribbean Legend es duro y rápido, pero ahora estás a salvo.~Cada personaje está armado y tiene habilidades de combate. Cuanto mejor sea tu arma y más experimentado tu héroe, más daño harás.~Tienes varios movimientos de ataque y defensa.~Empecemos con los tres ataques principales.~Corte. Rápido, hace menos daño y consume energía media.~Estocada. Más lenta que el corte, hace daño medio y consume poca energía.~Ataque pesado. Lento y potente, hace mucho daño y puede romper bloqueos.~Prueba todos estos ataques con el pirata.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Defensa en combate}
-[l]
-
-Prologue_FightDefence_descr
+Prologue_FightDefence {Defensa en combate}Prologue_FightDefence_descr
 {
 ¡Bien! Ahora la defensa.~Bloqueo. Permite bloquear cualquier ataque excepto el pesado. Puedes moverte lentamente mientras bloqueas y no consume energía. Los enemigos fuertes pueden romper tu bloqueo incluso con ataques normales, así que prepárate.~Parada. Permite desviar cualquier ataque y hacer que el enemigo pierda el equilibrio y energía.~Esquiva. Permite cambiar de posición o evitar un disparo.~Practica parar y bloquear los ataques del pirata.~Y luego... elimínalo.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Tiro}
-[m]
-
-Prologue_Marksmanship_descr
+Prologue_Marksmanship {Tiro}Prologue_Marksmanship_descr
 {
 Las armas de fuego son menos comunes que las blancas, pero el riesgo de recibir una bala en el Caribe sigue siendo alto, así que mantente alerta.~En tierra, igual que en el mar, hay dos modos de disparo: rápido y apuntado.~El disparo rápido se activa con solo pulsar un botón. Es rápido, pero poco eficaz.~El disparo apuntado puede hacer mucho más daño, pero te deja indefenso. Cuanto más tiempo apuntes, más daño harás. Si disparas a la cabeza, el daño será aún mayor.~Mantén pulsado el botón de apuntar para entrar en este modo. Pulsa atacar para disparar. Suelta apuntar para salir sin disparar.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Saqueo}
-[n]Prologue_DeadSearch_descr
+Prologue_DeadSearch {Saqueo}Prologue_DeadSearch_descr
 {
 Después de cada combate, es hora de recoger botín.Puedes registrar a cualquier enemigo caído pulsando el botón de saqueo.~¡Encuentra el elixir curativo que necesita Alonso!
 }

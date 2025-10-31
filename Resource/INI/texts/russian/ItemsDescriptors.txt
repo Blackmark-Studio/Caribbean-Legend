@@ -2,7 +2,7 @@ descriptor_Fancy {Вычурное}
 descriptor_Exotic {Экзотическое}
 descriptor_HighQuality {Качественное}
 descriptor_GoodFit {Подгонка}
-descriptor_HeartDefence {Защита сердца}
+descriptor_HeartDefence {Укреплённая}
 descriptor_Unremarkable {Неприметное}
 descriptor_WeaponType_0 {Лёгкое}
 descriptor_WeaponType_1 {Среднее}
@@ -18,7 +18,7 @@ descriptor_ArmorMaterial_0 {Ткань}
 descriptor_ArmorMaterial_1 {Кожа}
 descriptor_ArmorMaterial_2 {Пластины}
 descriptor_ArmorMaterial_3 {Штамповка}
-descriptor_ArmorMaterial_4 {Литьё}
+descriptor_ArmorMaterial_4 {Ковка}
 descriptor_AmuletType_0 {Бытовой}
 descriptor_AmuletType_1 {Языческий}
 descriptor_AmuletType_2 {Церковный}
@@ -40,6 +40,7 @@ descriptor_Special {Особое свойство}
 descriptor_Tool {Инструмент}
 descriptor_Valuable {Высокая ценность}
 descriptor_BulletNeedPowder {Нужен порох}
+descriptor_descr_BulletNeedPowder {Этот боеприпас не вылетит из ствола без меры пороха.}
 descriptor_GrapeAmmo {Картечь}
 descriptor_BulletAmmo {Пуля}
 descriptor_BombAmmo {Бомба}
@@ -64,8 +65,8 @@ descriptor_descr_Exotic
 Увеличивает мощь эскадры на $percent($DescriptorBaseValue(Exotic)), эффекты складываются.
 }
 descriptor_descr_HighQuality {Этот экземпляр оружия настолько хорошо сделан, что его критический урон выше на $percent($DescriptorBaseValue(HighQuality)).}
-descriptor_descr_GoodFit {Этот экземпляр брони удивительно хорошо сидит, что увеличивает скорость атак любым оружием на 5%.}
-descriptor_descr_HeartDefence {Эта броня усилена в жизненно-важных местах, что уменьшает вражеский критический урон на 20%.}
+descriptor_descr_GoodFit {Этот экземпляр брони удивительно хорошо сидит, что увеличивает скорость атак любым оружием на $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Эта броня усилена в жизненно-важных местах, что уменьшает вражеский критический урон на $percent($DescriptorBaseValue(HeartDefence)).}
 descriptor_descr_Unremarkable
 {
 Подобные предметы есть у каждого второго. С этим вас не узнают и не запомнят.
@@ -89,7 +90,7 @@ descriptor_descr_ArmorMaterial_3
 Штампованая броня изготавливается массово для снаряжения войск и используется в европейских войнах. 
 Снижает получаемый урон на 22%.
 }
-descriptor_descr_ArmorMaterial_4 {Изготовление литой брони - сложный и дорогостоящий процесс, что делает ее редкой гостьей на Карибах. Снижает получаемый урон на 35%.}
+descriptor_descr_ArmorMaterial_4 {Изготовление качественной кованой брони - сложный и дорогостоящий процесс, что делает ее редкой гостьей на Карибах. Снижает получаемый урон на 35%.}
 descriptor_descr_AmuletType_0 {Использует силу примет, морских суеверий и реальные причинно-следственные связи.}
 descriptor_descr_AmuletType_1 {Использует силу языческих богов и индейских ритуалов.}
 descriptor_descr_AmuletType_2 {Использует силу христианских святых и праведной веры.}
@@ -119,7 +120,9 @@ descriptor_descr_Junk {Различная мелочёвка, встречающ
 descriptor_Alchemy {Алхимия}
 descriptor_descr_Alchemy {Этот предмет может быть изготовлен или изменен с помощью Алхимии}
 descriptor_Quest {Квестовый}
+descriptor_descr_Quest {Этот предмет нужен для какого-то задания. Его нельзя выложить или продать.}
 descriptor_Map {Карта}
+descriptor_descr_Map {Клочок бумаги с обозначениями какой-то местности. Все такие предметы сразу копируются в атлас.}
 descriptor_Fragile {Хрупкое}
 descriptor_descr_Fragile {Этот предмет разрушается после определенного количества использований.}
 descriptor_Cannoner {$key(Cannoner)}
@@ -128,7 +131,19 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Эффект работает на Канонира.}
+descriptor_descr_Boatswain {Эффект работает на Боцмана.}
+descriptor_descr_Carpenter {Эффект работает на Плотника.}
+descriptor_descr_Navigator {Эффект работает на Навигатора.}
+descriptor_descr_Treasurer {Эффект работает на Казначея.}
+descriptor_descr_Doctor {Эффект работает на Врача.}
 descriptor_Ingredient {Ингредиент}
 descriptor_Jewelery {Драгоценность}
 descriptor_descr_Jewelery {Драгоценные и полудрагоценные камни. Можно продать или использовать в алхимии.}
 descriptor_descr_Ingredient {Этот предмет используется в алхимии.}
+descriptor_Alternate {Подстройка}
+descriptor_descr_Alternate {Навык имеет один эффект для главного героя и другой для всех остальных персонажей.}
+descriptor_IntoxicatingPotion {Опьянение}
+descriptor_descr_IntoxicatingPotion {Развязывает языки, придаёт мыслям лёгкости, накладывает штрафы на умения.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Эффект полезен для Абордажников.}

@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 					{
 						link.l2 = "(Trustworthy) Honorable señores, I'm here for fair and mutually beneficial trade. Please, let me see the plantation owner.";
 						link.l2.go = "mtraxx_soldier_1";
-						notification("Trustworthy", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 					}
 				}
 				else
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Trustworthy) Esteemed sir, allow me to object! I have brought you goods of the highest quality. I know the value of every unit, both of what I offer and what you offer in return. I deserve a slightly larger share from your side, and this deal will still be profitable for you - you know that very well.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Trustworthy) Esteemed sir, allow me to object! I've brought you goods of the highest quality. I know the value of every unit, both of what I offer and what you offer in return. I deserve a slightly larger share from your side, and this deal will still be profitable for you - you know that very well.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Trustworthy) Esteemed sir, allow me to object! I have brought you goods of the highest quality. I know the value of every unit, both of what I offer and what you offer in return. I deserve a slightly larger share from your side, and this deal will still be profitable for you - you know that very well.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 				dialog.text = "Yes, there's demand for Jean Picard - not just for serving wine. An influential Englishman has already contacted me. A man named, what was it... Pattornson? He delivered me a letter.";
 				link.l1 = "But neither Pattornson nor his client has shown up yet. I'm ready to buy Jean from you here and now. Name your price – the ladies are waiting!";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

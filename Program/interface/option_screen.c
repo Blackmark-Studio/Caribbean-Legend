@@ -204,10 +204,10 @@ void ProcessOkExit()
     {
 		if(bSeaActive && !bAbordageStarted) Sea_UpdateIslandGrass(AISea.Island);
 	}
+	int iLocation = FindLocation(pchar.location);
 	// sith дальность прорисовки травы
 	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && sti(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance)
     {
-		int iLocation = FindLocation(pchar.location);
 		if(iLocation != -1)
         {
 			object objGrass;
@@ -233,8 +233,11 @@ void ProcessOkExit()
 		iGrassQuality = GetAttributeInt(&InterfaceStates, "HerbQuantity");
 	}
 	
-	SetLocationCharacterMarksMode();
-	SetLocationArchetypeMarksMode();
+	if(iEnabledShipMarks > 0) bDrawBars = true;
+	else bDrawBars = false;
+	
+	if(iLocation != -1)
+		SetLocationCharacterMarksOptions(&Locations[iLocation]);
 	Camera_CheckPreset();
 
 	SaveGameOptions();
@@ -333,25 +336,24 @@ void IReadVariableBeforeInit()
 
 void IReadVariableAfterInit()
 {
-	InitSelectors("ControlsMode", "CONTROLS_MODE", iControlsMode);
-	InitSelectors("HerbQuantity", "HERB", iGrassQuality); // не перемеиноввывал глоб. переменную для совместимости
+	InitSelectors("ControlsMode", "CONTROLS_MODE", &iControlsMode);
+	InitSelectors("HerbQuantity", "HERB", &iGrassQuality); // не перемеиноввывал глоб. переменную для совместимости
 	InitSelectors("MapLabelsMode", "MAP_LABELS", 0);      // нет глоб переменной
-	InitSelectors("FOV", "FOV", iFov);
-	InitSelectors("FontType", "FONT", iFontType);
-	InitSelectors("MoreInfo", "MOREINFO", iMoreInfo);
-	InitSelectors("CompassPos", "COMPASS_POS", iCompassPos);
-	InitSelectors("ControlsTips", "CONTROLS_TIPS", iControlsTips);
-	InitSelectors("EnabledShipMarks", "SHIPMARKS", iEnabledShipMarks);
-	InitSelectors("HelpTime", "HELPTIME", iGlobalHelpTime);
-	InitSelectors("Camera", "CAMERA", iGlobalCamera);
-	InitSelectors("EnemyType", "ENEMYTYPE", iGlobalEnemyType);
-	InitSelectors("Target", "TARGET", iGlobalTarget);
+	InitSelectors("FOV", "FOV", &iFov);
+	InitSelectors("FontType", "FONT", &iFontType);
+	InitSelectors("MoreInfo", "MOREINFO", &iMoreInfo);
+	InitSelectors("CompassPos", "COMPASS_POS", &iCompassPos);
+	InitSelectors("ControlsTips", "CONTROLS_TIPS", &iControlsTips);
+	InitSelectors("EnabledShipMarks", "SHIPMARKS", &iEnabledShipMarks);
+	InitSelectors("HelpTime", "HELPTIME", &iGlobalHelpTime);
+	InitSelectors("Camera", "CAMERA", &iGlobalCamera);
+	InitSelectors("EnemyType", "ENEMYTYPE", &iGlobalEnemyType);
+	InitSelectors("Target", "TARGET", &iGlobalTarget);
 
-	if(iEnabledShipMarks > 0) bDrawBars = 1;
-	else bDrawBars = iEnabledShipMarks;
+	if(iEnabledShipMarks > 0) bDrawBars = true;
+	else bDrawBars = false;
 
 	GetControlsStatesData();
-
 
 	int nClassicSoundScene = 0;
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene")) {
@@ -1720,11 +1722,11 @@ void RestoreDefaultSettings()
 	SetSelectorDefault("ControlsTips", "CONTROLS_TIPS", 2, &iControlsTips);
 	SetSelectorDefault("EnabledShipMarks", "SHIPMARKS", 1, &iEnabledShipMarks);
 	SetSelectorDefault("HelpTime", "HELPTIME", 1, &iGlobalHelpTime);
-	SetSelectorDefault("Camera", "CAMERA", 0, &iGlobalCamera);
+	SetSelectorDefault("Camera", "CAMERA", 1, &iGlobalCamera);
 	SetSelectorDefault("EnemyType", "ENEMYTYPE", 1, &iGlobalEnemyType);
 	SetSelectorDefault("Target", "TARGET", 2, &iGlobalTarget);
 	ControlSettings(iControlsMode);
-	bDrawBars = 1;
+	bDrawBars = true;
 
 	InterfaceStates.AdvancedChange =  0;
 	bAdvancedChange = false;

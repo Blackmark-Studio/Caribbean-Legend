@@ -412,14 +412,14 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Azt hiszem, nemet mondanék... ha a szavamat adnám, akkor munkát kellene végeznem, ami eléggé zavarónak tûnik. Ezt nem fogom megtenni.";
 				link.l2.go = "zpq_fld";
-				notification("Reputáció ellenôrzés átment", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
 				dialog.text = "Az ön hírneve elfogadhatatlan számomra. Kérem, hagyja el a szobát. Képesek vagyunk egyedül is megoldani a problémáinkat.";
 				link.l1 = "Mindegy, akkor oldja meg ôket...";
 				link.l1.go = "exit";
-				notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				Notification_Reputation(false, 71, "low");
 			}		
 		break;
 		
@@ -512,9 +512,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex3":
-			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 			{
-				notification("Képességellenôrzés megfelelt", "Leadership");
+				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "Ah, igen... Pontosan! 100 000 pezó. Elfelejtettem, bocsásson meg. Az én koromat kell hibáztatni, a szklerózis miatt, tudja... Persze, itt vannak az érméi. Öröm volt önnel üzletelni, kapitány. Most sajnálom, de rengeteg munkám van...";
 				link.l1 = "Önnek is, senor. Viszlát.";
 				link.l1.go = "exit";
@@ -527,13 +527,12 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Képességpróba Sikertelen (36)", "Leadership");
+				Notification_Skill(false, 36, SKILL_LEADERSHIP);
 				dialog.text = "Micsoda?! Fogd a pénzed és tûnj el, vagy megrohadsz ebben a kazamatában!";
 				link.l1 = "Maga egy hazug, senor! Azt tanácsolom, hogy adjon nekem rendesen pénzt, különben elviszem a rakományt!";
 				link.l1.go = "zpq_ex_agry";
 				link.l2 = "Bocsásson meg... Rendben, elfogadom az összeget, amit felajánl, és végeztünk.";
 				link.l2.go = "zpq_ex5";
-				Log_info("A vezetôi képesség nem elegendô");
 			}
 		break;
 		

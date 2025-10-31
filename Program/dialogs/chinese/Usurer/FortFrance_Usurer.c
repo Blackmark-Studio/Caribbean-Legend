@@ -40,8 +40,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Del_Rostovshik_repeat"))
 			{
-				dialog.text = "你带了100枚杜布隆吗? ";
-				if (PCharDublonsTotal() >= 100)
+				dialog.text = "你带了40枚杜布隆吗? ";
+				if (PCharDublonsTotal() >= 40)
 				{
 					link.l1 = "这是给我军官的钱... ";
 					link.l1.go = "Del_Deluck_5";
@@ -186,10 +186,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Sharlie_captive3.over = "yes";
 			// Rebbebion, 新的目的地标记
 			QuestPointerDelLoc("shore39", "reload", "reload1_back");
-			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload1_back");
-			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload2_back");
+			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload3");
 			QuestPointerDelLoc("fortfrance_town", "reload", "reload8_back");
 			DelLandQuestMark(npchar);
 			ref sld = characterFromId("CaptiveSpain");
@@ -262,7 +262,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "这只是生意, 船长! 德吕克的总债务是一百枚杜布隆, 而且利息还在累积... 你愿意买下它吗? ";
+			dialog.text = "这只是我的工作，船长！到今天为止，您航海士的总债务为40达布隆，而且别忘了，利息也在累积……您会支付吗？";
 			link.l1 = "我还没准备好回答, 但我会考虑的。 再见! ";
 			link.l1.go = "Del_Deluck_4";
 		break;
@@ -285,7 +285,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "太好了! 你知道接下来该怎么做 —和上次一样。 这是文件 —把它们交给监狱长。 和你做生意很愉快, 船长。 ";
 			link.l1 = "这种情况没什么愉快的。 再见。 ";
 			link.l1.go = "exit";
-			RemoveDublonsFromPCharTotal(100);
+			RemoveDublonsFromPCharTotal(40);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("你收到了一份债务账单");
 			PlaySound("interface\important_item.wav");

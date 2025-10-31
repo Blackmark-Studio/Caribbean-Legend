@@ -43,7 +43,7 @@ DuelCoward_t1
 {
 Ha-ha, #sName# has not shown up for a duel! I don't think he'll have the same success with women as he had before now.DuelCoward_t2
 }
-DuelCoward_t2 { }
-DuelHero_t0 { }
+DuelCoward_t2 {Did you hear? #sName# didn’t show up for the duel! They say he got so drunk last night he couldn’t even stand.}
+DuelHero_t0 {Did you know that #sName# is a seasoned duelist? He’s already killed #sKill# people. You wouldn’t want to cross his path.}
 DuelHero_t1 {Azt mondják, hogy #sName# eladta a lelkét az ördögnek, és ezért nem lehet ôt párbajban legyôzni! És azoknak a lelkét, akiket megöl... már megölt #sKill# embereket, és egyenesen a pokolba kerülnek! Azt is mondják, hogy ha befejezi a gyilkolászást, az ördög a saját lelkét követeli.}
 DuelHero_t2 {Az a felcsúti #sName# hihetetlenül szerencsés! Már megölt #sKill# embert párbajban, és egy karcolás sem érte! Tényleg, el tudod ezt hinni?}

@@ -186,7 +186,7 @@ void ProcessDialogEvent()
 		else
 		{
 			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("¡Oh! El terror de las aguas locales, Capitán " + GetFullName(pchar) + "¡Qué puedo hacer por ti?", "Vamos directo al grano, " + GetAddress_Form(NPChar) + ", No tengo tiempo para charlar. ¿Necesitas una reparación o solo quieres reemplazar tu bañera?", "¡Oh, no es eso " + GetFullName(pchar) + "¡ Qué pasa, " + GetAddress_Form(NPChar) + "¿Algo malo le pasó a tu bañera?"), LinkRandPhrase("¿Qué necesitas ahí, Capitán? Ni un solo minuto de paz, siempre todos estos bribones, qué día maldito...", "Hola, " + GetAddress_Form(NPChar) + ". Debo decir que tu visita espantó a todos mis clientes. ¿Espero que tu pedido cubra mis daños?", "¿Quiere hacer algún negocio, " + GetAddress_Form(NPChar) + "? ¿Bueno, sigue con ello y hazlo rápido?"), LinkRandPhrase("¿Qué te trae a mí, señor " + GetFullName(pchar) + "¿Puedo entender que tu barco pueda tener dificultades, considerando tu estilo de vida...?", "Me alegra saludar a un noble... oh, disculpe, " + GetAddress_Form(NPChar) + ", te confundí con otra persona. ¿Qué querías?", "No me gusta mucho tu tipo, Capitán, pero no te echaré, de todos modos. ¿Qué querías?")), LinkRandPhrase(LinkRandPhrase("Me alegra mucho verte, señor " + GetFullName(pchar) + "¡Entonces, cómo está funcionando? ¿Necesitas una reparación o careenado?", "Bienvenido, " + GetAddress_Form(NPChar) + "¡ Capitán " + GetFullName(pchar) + " ¡siempre es un huésped bienvenido en mi taller!", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Me has visitado de nuevo! Espero que tu belleza esté bien, ¿no es así?"), LinkRandPhrase("" + GetAddress_Form(NPChar) + ", ¡Me alegra tanto verte de nuevo! ¿Cómo está tu hermoso barco? ¿Necesitas ayuda?", "Oh, " + GetAddress_Form(NPChar) + ", ¡saludos! ¿Cómo va todo? ¿Quizás los mástiles crujen o necesitas limpiar la sentina? ¡Mis muchachos harán lo mejor para ti!", "Buenas tardes, Capitán " + GetFullName(pchar) + "Me alegra que hayas venido de nuevo, y siempre estoy dispuesto a ayudarte."), LinkRandPhrase("¡Me alegra tenerte aquí, Capitán! Eres un cliente muy amable, " + GetAddress_Form(NPChar) + ", y deseo que sigas siendo así.", "Oh, " + GetAddress_Form(NPChar) + " " + GetFullName(pchar) + "¡Estoy realmente feliz de tenerte aquí! ¿Qué puedo hacer por ti?", "Capitán, de nuevo has visitado " + XI_ConvertString("Colony" + npchar.City + "Acc") + "¡Créeme, estaremos encantados de ayudarte!")));
-			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Consigue tus instrumentos, maestro, y mantente en silencio, ¿de acuerdo? No estoy de humor.", "¡Deja de charlar, compañero! Necesito tu ayuda, y no tus tonterías."), RandPhraseSimple("Estoy pagando y tú estás trabajando. Silenciosamente. ¿Está claro?", "¡Eh, camarada, ahuyéntalos a todos, soy tu cliente preferido!")), RandPhraseSimple(RandPhraseSimple("También me alegra verte, maestro. Por desgracia, no tengo mucho tiempo, así que vayamos al grano.", "Y yo también estoy feliz de verte, camarada. ¿Quieres ayudar a tu cliente preferido?"), RandPhraseSimple("Buenas tardes, amigo. Vayamos al grano de inmediato. Prometo, la próxima vez nos sentaremos con una botella, seguro.", "Me alegra verte, maestro. Siempre es un placer verte, pero ahora mismo necesito tu ayuda.")));
+			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("Consigue tus instrumentos, maestro, y mantente en silencio, ¿de acuerdo? No estoy de humor.", "¡Deja de charlar, compañero! Necesito tu ayuda, y no tus tonterías."), RandPhraseSimple("Estoy pagando y tú estás trabajando. Silenciosamente. ¿Está claro?", "¡Eh, camarada, ahuyéntalos a todos, soy tu cliente preferido!")), RandPhraseSimple(RandPhraseSimple("También me alegra verte, maestro. Por desgracia, no tengo mucho tiempo, así que vayamos al grano.", "Y yo también estoy feliz de verte, camarada. ¿Quieres ayudar a tu cliente preferido?"), RandPhraseSimple("Buenas tardes, amigo, vayamos al grano. Te prometo que la próxima vez nos sentaremos con una botella.", "Me alegra verte, maestro. Siempre es un placer verte, pero ahora mismo necesito tu ayuda.")));
 			Link.l1.go = "Shipyard";
 			if (GetNationRelation2MainCharacter(sti(NPChar.nation)) != RELATION_ENEMY)
 			{
@@ -2352,7 +2352,7 @@ void ProcessDialogEvent()
 		AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 		AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 		AddCharacterGoods(pchar, GOOD_POWDER, 220);
-		pchar.Ship.name = "Adeline";
+		pchar.Ship.name = GetShipName("Adeline");
 		pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 		AddQuestRecord("Sharlie", "6");
 		bDisableFastReload = false;					   // открыть переход
@@ -2587,7 +2587,7 @@ void ProcessDialogEvent()
 	case "IslaMona_3":
 		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 		{
-			notification("Skill Check Failed (60)", SKILL_COMMERCE);
+			Notification_Skill(false, 60, SKILL_COMMERCE);
 			dialog.text = "Te garantizo que aparecerá. No hay cambio en el precio. ¿Qué te parece? No esperaré mucho.";
 			link.l1 = "Bien, está bien, está bien. Lo tomaré.";
 			link.l1.go = "IslaMona_7";
@@ -2595,7 +2595,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			notification("Skill Check Passed", SKILL_COMMERCE);
+			Notification_Skill(true, 60, SKILL_COMMERCE);
 			pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 			dialog.text = "Está bien, tomaremos cien. Novecientos. No bajaré más. No me pidas que lo haga.";
 			link.l1 = "Y no lo haré. Estoy de acuerdo.";
@@ -2609,7 +2609,7 @@ void ProcessDialogEvent()
 	case "IslaMona_4":
 		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 		{
-			notification("Skill Check Failed (85)", SKILL_COMMERCE);
+			Notification_Skill(false, 85, SKILL_COMMERCE);
 			dialog.text = "No me importa si ordenas una moza viva. Novecientos.";
 			link.l1 = "Está bien, de acuerdo, de acuerdo. Me lo llevo.";
 			link.l1.go = "IslaMona_7";
@@ -2617,7 +2617,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			notification("Skill Check Passed", SKILL_COMMERCE);
+			Notification_Skill(true, 60, SKILL_COMMERCE);
 			pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 			dialog.text = "¿Estás seguro? ¿No lo olvidarás? Está bien, cortemos otros cien. ¡Pero eso es todo!";
 			link.l1 = "No lo olvidaré. ¡Es un trato!";
@@ -2639,7 +2639,7 @@ void ProcessDialogEvent()
 	case "IslaMona_6":
 		if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 		{
-			notification("Skill Check Failed (100)", SKILL_COMMERCE);
+			Notification_Skill(false, 100, SKILL_COMMERCE);
 			pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 			dialog.text = "Los hijos de las chicas del burdel no cuentan, " + pchar.name + ". Estoy harto de ti. Mil doblones sobre el barril, o nos despedimos.";
 			link.l1 = "¿Qué quieres decir con que no lo son? Ajá. Estoy de acuerdo, eres un bribón.";
@@ -2648,7 +2648,7 @@ void ProcessDialogEvent()
 		}
 		else
 		{
-			notification("Skill Check Passed", SKILL_COMMERCE);
+			Notification_Skill(true, 60, SKILL_COMMERCE);
 			pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 			dialog.text = "No sabía que tenías hijos. Y que las cosas estaban tan mal. Está bien, no te quejes. Setecientos. Es casi una pérdida.";
 			link.l1 = "¡No lo olvidaré. Es un trato!";

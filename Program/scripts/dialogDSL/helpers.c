@@ -25,14 +25,28 @@ string DLG_ShipManWoman(ref args, ref chr)
   return GetShipSexWord(rBaseShip.BaseName, DLG_A0(&args), DLG_A1(&args));
 }
 
-// Return another localized key with the same context
+// Return another localized key with the same context in LocalizeAssets format
 string DLG_Link(ref args, ref context)
 {
   return DLGO(StringFromKey(DLG_A0(&args)), &context);
 }
 
+// Return another localized key with the same context
+string DLG_GetKey(ref args, ref context)
+{
+  string key = DLG_A0(args);
+  string filename = GetAttributeOrDefault(context, "filename", "");
+  if (DLG_HasArgument(args, 1)) filename = DLG_A1(args);
+
+  string result = xiStr(key);
+  if (result != "" && result != " ") return result;
+
+  return DLG_Convert(DLG_A0(args), filename, context);
+}
+
 string DLG_IfHasAttribute(ref args, ref context)
 {
-  if (CheckAttribute(&context, DLG_A0(&args))) return DLG_A1(&args);
-  return DLG_A2(&args);
+  if (CheckAttribute(context, DLG_A0(args))) return DLG_A1(args);
+  if (DLG_HasArgument(args, 2)) return DLG_A2(args);
+  return "";
 }

@@ -5,7 +5,7 @@
 #define EVENT_LOCATION_UNLOAD	"EventUnloadLocation"
 
 #define MAX_SHIPS_IN_LOCATION	32
-#define MAX_SHIPS_LOAD_FROM_WDM	17
+#define MAX_SHIPS_LOAD_FROM_WDM	16
 
 ref loadedLocation;
 object locWeather;
@@ -536,7 +536,8 @@ bool LoadLocation(ref loc)
 
 	ReloadProgressUpdate();
 	
-	SendMessage(loc, "ll", MSG_LOCATION_VIEWSTATEBARS, bDrawBars);
+	// применяем настройки отображения маркеров и баров над персонажами
+	SetLocationCharacterMarksOptions(loc);
 
  	//Camera===============================================================================
 	CreateEntity(&locCamera, "locationcamera");
@@ -563,6 +564,11 @@ bool LoadLocation(ref loc)
 	{
 		locCamera.zoom = 0.75;
 	}
+	if(stf(locCamera.zoom) <= LOCCAMERA_ZOOM_MIN)
+		locCameraSetFPVMode(true);
+	else
+		locCameraSetFPVMode(false);
+	
 	SendMessage(&locCamera, "lf", MSG_CAMERA_SET_RADIUS, stf(locCamera.maxRadius)*stf(locCamera.zoom)); // belamour высота камеры
 	SetEventHandler("Control Activation","locCameraSwitch",1);
 	/*if(isNoBoarding) мешало релоду на абордаже и каюте*/ SetEventHandler("Control Activation","chrCharacterKeys",1);
@@ -952,10 +958,6 @@ bool LoadLocation(ref loc)
 		}
 	}
 	
-	// применяем настройки отображения маркеров над персонажами
-	SetLocationCharacterMarksMode();
-	// применяем настройки отображения иконок архетипов
-	SetLocationArchetypeMarksMode();
 	// применяем настройки пресета камеры
 	Camera_CheckPreset();
 	

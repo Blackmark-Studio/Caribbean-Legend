@@ -21,4 +21,4 @@ MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> zmarł na gorączke tropikaln
 MiniQuests_21 {@<sld.name> został umieszczony w areszcie na twoim statku}
 MiniQuests_22 {Mineła godzina...}
 MiniQuests_23 {, na którym ~}
-MiniQuests_24 {Alonso}
+MiniQuests_24 { }

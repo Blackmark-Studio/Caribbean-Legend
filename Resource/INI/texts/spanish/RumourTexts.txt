@@ -40,7 +40,7 @@ WorkWithContra_t1 {Dicen que #sPsHero_Name# ha comprado un montón de contraband
 WorkWithContra_t2 {Conseguí escuchar la conversación entre #sPsHero_Name# y los contrabandistas. Quedaron en reunirse en un lugar llamado... ¿cómo era? Algo parecido a #sContraPlace#.}
 DuelCoward_t0 {¡Qué pena! ¡#sName# no se presentó al duelo! ¡Ahora todos piensan que es un cobarde!}
 DuelCoward_t1 {¡Ja, ja, #sName# tenía un duelo y ni apareció! Le deseo mucha suerte con las mujeres de aquí en adelante.}
-DuelCoward_t2 {¿Te has enterado? ¡#sName# no fue al duelo! Dicen que se puso tan ciego anoche que no se pudo despertar a tiempo.}
-DuelHero_t0 {¿Sabías que #sName# es un famoso duelista? Ya ha matado a #sKill# personas, yo que tú no me metía con él.}
+DuelCoward_t2 {¿Oíste? ¡#sName# no se presentó al duelo! Dicen que anoche se emborrachó tanto que no podía ni levantarse.}
+DuelHero_t0 {¿Sabías que #sName# es un duelista experimentado? Ya ha matado a #sKill# personas. No querrías cruzarte en su camino.}
 DuelHero_t1 {¡Dicen que #sName# ha vendido su alma al diablo y por eso lucha como un demonio! Dicen que las almas de los que ha matado, que creo que son unos #sKill#, van directas al infierno. Dicen que si deja de matar, el diablo se llevará su alma. Aunque no sé de dónde han sacado la información.}
 DuelHero_t2 {¡Ese bendito #sName# es increíblemente afortunado! Ya ha matado a #sKill# personas en un duelo y... ¡nunca ha salido herido! ¿De verdad, puedes creerlo?}

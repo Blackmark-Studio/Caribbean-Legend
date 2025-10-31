@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "Figyelek, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "Harcolni fogunk velük, fiúk! A domb mögött van áru és pénz! Itt vagyunk értük, és nem megyünk el. Kizárt, hogy egy csapat rézbôrû, még muskétával sem állíthat meg minket! Temessük el a rohadékokat és fejezzük be a munkát! Van elég emberünk, van esélyünk rajtaütni rajtuk. Négy ember fogadja ôket tûzzel az oldalról, mi többiek pedig itt foglaljuk el a pozíciónkat. Vágjuk le a létszámukat és végezzünk velük!";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("Not enough people", "X");
 				if (n > 0)
 				{
 					link.l1 = "Harcolni fogunk velük, fiúk! A domb mögött áru és pénz van! Mi miattuk vagyunk itt, és nem megyünk el. Kizárt, hogy egy csapat rézbôrû, még muskétával sem állíthat meg minket! Temessük el a rohadékokat és fejezzük be a munkát!";

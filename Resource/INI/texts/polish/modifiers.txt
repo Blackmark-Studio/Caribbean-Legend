@@ -1,0 +1,10 @@
+blade_critDamage {Obrażenia krytyczne w walce wręcz}
+gun_critDamage {Obrażenia krytyczne z pistoletu}
+musket_critDamage {Obrażenia krytyczne z muszkietu}
+blade_critChance {Szansa na trafienie krytyczne w walce wręcz}
+gun_critChance {Szansa na trafienie krytyczne z pistoletu}
+musket_critChance {Szansa na trafienie krytyczne z muszkietu}
+incomingDamageReduction {Ochrona przed obrażeniami}
+RangeIncomingDamageReduction {Ochrona przed obrażeniami od broni palnej}
+Shot_Damage {Obrażenia od broni palnej}
+HeadshotDamage {Obrażenia od trafienia w głowę}

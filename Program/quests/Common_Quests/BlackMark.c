@@ -1,4 +1,147 @@
 
+void BM_Irons_DlgExit_1()
+{
+	LAi_SetPlayerType(pchar);
+	LAi_SetFightMode(pchar, true);
+	sld = CharacterFromID("Irons");
+	LAi_SetImmortal(sld, false);
+	LAi_SetWarriorType(sld);
+	sld.MusketerDistance = 10;
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+}
+
+void BM_Irons_Hire()
+{
+	sld = CharacterFromID("Irons");
+	DeleteAttribute(sld, "LifeDay");
+	LAi_SetImmortal(sld, false);
+	sld.quest.OfficerPrice = 15000;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.CompanionDisable = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+	sld.CanTakeMushket = true;
+	pchar.questTemp.IronsItemsBlock = true;
+	LAi_SetOfficerType(sld);
+	sld.dialog.CurrentNode = "Irons_officer";
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	LAi_SetHP(sld, 170.0, 170.0);
+	
+	BM_Irons_Next_1();
+}
+
+void BM_Irons_Next_1()
+{
+	chrDisableReloadToLocation = false;
+	LAi_SetPlayerType(pchar);
+	
+	// Продолжение через неделю в джунглях
+	SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
+}
+
+void BM_IronsJungleUhodit()
+{
+	chrDisableReloadToLocation = false;
+	bDisableLandEncounters = false;
+	
+	sld = characterFromID("Irons");
+	RemovePassenger(pchar, sld);
+	LAi_SetWarriorType(sld);
+	DeleteAttribute(sld, "OfficerImmortal");
+	if(CheckAttribute(sld, "Health.HP")) DeleteAttribute(sld, "Health.HP");
+	if(CheckAttribute(sld, "Health.maxHP")) DeleteAttribute(sld, "Health.maxHP");
+	sTemp = "RestoreHealth_" + sld.index;
+	if(CheckAttribute(PChar, "quest.RestoreHealth_" + sld.index)) PChar.quest.(sTemp).over = "Yes";
+	sld.lifeday = 0;
+	LAi_CharacterDisableDialog(sld);
+	GiveItem2Character(sld, "blade_42");
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	
+	AddQuestRecord("BlackMark", "5");
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("","а"));
+	CloseQuestHeader("BlackMark");
+}
+
+void BM_IronsFirstJungle()
+{
+	chrDisableReloadToLocation = false;
+	bDisableLandEncounters = false;
+	ReturnOfficer_Irons();
+	SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
+}
+
+void BM_IronsSecondJungle()
+{
+	chrDisableReloadToLocation = false;
+	bDisableLandEncounters = false;
+	ReturnOfficer_Irons();
+	SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
+}
+
+void BM_IronsThirdJungle_Otkaz()
+{
+	chrDisableReloadToLocation = false;
+	bDisableLandEncounters = false;
+	
+	sld = characterFromID("Irons");
+	RemovePassenger(pchar, sld);
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload1", "", "", "", "", -1);
+	sld.location = "None";
+	AddQuestRecord("BlackMark", "6");
+	if (LanguageGetLanguage() == "russian")
+	{
+		AddQuestUserData("BlackMark", "sSex", GetSexPhrase("","а"));
+		AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("к","чка"));
+	}
+	CloseQuestHeader("BlackMark");
+}
+
+void BM_IronsClone5_function()
+{
+	LAi_SetPlayerType(pchar);
+	LAi_SetFightMode(pchar, true);
+	locCameraTarget(PChar);
+	locCameraFollow();
+	DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
+	
+	sld = CharacterFromID("IronsClone");
+	sld.QuestImmortal = true;
+	LAi_SetCurHPMax(sld);
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocator(sld, "quest", "lay1", "BM_IronsCloneMushket", -1);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	
+	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	LAi_SetImmortal(sld, false);
+	LAi_SetCurHPMax(sld);
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheck("EnemyFight", "BM_CabinDialog4");
+}
+
+void BM_Irons_tieyasal_otkaz()
+{
+	sld = characterFromID("Irons");
+	RemovePassenger(pchar, sld);
+	DeleteAttribute(sld, "OfficerImmortal");
+	sld.lifeday = 0;
+	LAi_SetWarriorType(sld);
+	LAi_CharacterDisableDialog(sld);
+}
+
 //=================================================================
 //======================кейсы из quests_reaction===================
 //=================================================================
@@ -249,29 +392,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		DoQuestCheckDelay("BM_BarbadosMayakSniper_Obnovka", 3.0);
 		
 		//Айронс - новый офицер
-		sld = GetCharacter(NPC_GenerateCharacter("Irons", "Irons", "man", "Irons", 12, ENGLAND, -1, false, "quest"));
-		sld.name = StringFromKey("BlackMark_5");
-		sld.lastname = StringFromKey("BlackMark_6");
-		sld.rank = 12;
-		sld.CanTakeMushket = true;
-		sld.PriorityMode = 2;
-		sld.MusketerDistance = 0;
-		SetSPECIAL(sld, 6, 9, 6, 3, 7, 6, 9);
-		GiveItem2Character(sld, "cirass10");
-		EquipCharacterByItem(sld, "cirass10");
-		GiveItem2Character(sld, "blade_42");
-		EquipCharacterByItem(sld, "blade_42");
-		GiveItem2Character(sld, "indian_2");
-		GiveItem2Character(sld, "mushket1");
-		EquipCharacterByItem(sld, "mushket1");
-		AddItems(sld, "potionrum", 5);
-		AddItems(sld, "GunPowder", 15);
-		AddItems(sld, "bullet", 15);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
-		sld.SaveItemsForDead = true;
-		sld.DontClearDead = true;
-		InitHeroRebalance(sld, 0.6, GEN_ARCHETYPE_GUNMAN, GEN_ARCHETYPE_BOATSWAIN); // RB Квестовые офицеры
-		SetCharacterPerk(sld, "Sniper"); //Снайпер
+		sld = InitTommy();
 		
 		sld = GetCharacter(CreateCharacterClone(CharacterFromID("Irons"), 0));	//Создание клона важного персонажа
 		sld.id = "IronsClone";
@@ -425,7 +546,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		LAi_warrior_SetStay(sld, true);
 		AddLandQuestMark(sld, "questmarkmain");
 		
-		SetTimerCondition("BM_IronsTimeOver", 0, 0, 2, false); // два дня на сбор дублонов
+		SetTimerCondition("BM_IronsTimeOver", 0, 0, 7, false); // неделя на сбор дублонов
 	}
 	
 	else if (sQuestName == "BM_IronsTimeOver") {
@@ -550,7 +671,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 					sld = GetCharacter(NPC_GenerateCharacter("BM_GabeCallow", "off_eng_1", "man", "man", 10, ENGLAND, -1, false, "quest"));
 					sld.name = StringFromKey("BlackMark_11");
 					sld.lastname = StringFromKey("BlackMark_12");
-					FantomMakeCoolSailor(sld, SHIP_PINK, StringFromKey("BlackMark_13"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
+					FantomMakeCoolSailor(sld, SHIP_PINK, GetShipName("Principio"), CANNON_TYPE_CANNON_LBS6, 50, 50, 50);
 					FantomMakeCoolFighter(sld, 50, 50, 50, "blade_14", "pistol14", "bullet", 50);
 					GiveItem2Character(sld, "indian_2");
 					sld.DontRansackCaptain = true;
@@ -618,12 +739,12 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 	}
 	
 	else if (sQuestName == "BM_CabinDialog2") {
-		locCameraFromToPos(1.15, 4.95, -0.93, true, -1.96, 2.83, 0.48);
+		locCameraFromToPos(0.09, 7.00, 0.29, true, -0.89, 5.18, -1.61);
 		pchar.GenQuest.BlockDialogCamera = true;
 		ChangeCharacterAddressGroup(pchar, PChar.location, "rld", "aloc0");
 		
 		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
-		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc2");
+		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "aloc1");
 		LAi_SetActorType(sld);
 		
 		DoQuestCheckDelay("BM_CabinDialog3", 1.0);
@@ -634,7 +755,6 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld = GetCharacter(CreateCharacterClone(CharacterFromID("Irons"), 0));
 		sld.id = "IronsClone";
 		ChangeCharacterAddressGroup(sld, PChar.location, "rld", "loc1");
-		sld.location = "None";
 		
 		sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
 		sld.dialog.filename = "Quest\BlackMark.c";
@@ -669,8 +789,6 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		DeleteQuestCondition("BM_PinkPotopil");
 		
 		sld = CharacterFromID("Irons");
-		LAi_RemoveCheckMinHP(sld);
-		LAi_SetImmortal(sld, false);
 		DeleteAttribute(pchar, "questTemp.IronsItemsBlock");
 		
 		// итальянская рапира в сундуке
@@ -718,7 +836,7 @@ bool BlackMark_QuestComplete(string sQuestName, string qname)
 		sld = CharacterFromID("Irons");
 		sld.dialog.filename = "Quest\BlackMark.c";
 		sld.dialog.currentnode = "BM_IronsPinkPotopil1";
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
 	

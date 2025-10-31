@@ -262,8 +262,8 @@ bool SeaAI_SetOfficer2ShipAfterAbordage(ref refMyCharacter, ref refEnemyCharacte
 
 int SeaAI_GetRelation(int iCharacterIndex1, int iCharacterIndex2)
 {
- 	int iRelation = RELATION_NEUTRAL;
-	/*if (bSeaActive)
+ 	/*int iRelation = RELATION_NEUTRAL;
+	if (bSeaActive)
 	{
 		SendMessage(&AISea, "laae", AI_MESSAGE_GET_RELATION, &Characters[iCharacterIndex1], &Characters[iCharacterIndex2], &iRelation);
 		return iRelation;

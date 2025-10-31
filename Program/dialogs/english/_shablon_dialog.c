@@ -33,14 +33,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "":
-			dialog.text = NPCStringReactionRepeat("", 
-				"", 
-				"",
-                "", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("", 
-				"",
-                "", 
-				"", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("","","","","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("","","","",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 

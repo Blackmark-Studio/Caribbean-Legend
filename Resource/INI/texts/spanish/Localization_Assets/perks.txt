@@ -1,0 +1,8 @@
+perks_1 {Precios actualizados}
+perks_2 {Se ha reparado la brecha en el casco del barco '@<_ShipName>'.}
+perks_3 {@<_ShipName> – ¡brecha bajo la línea de flotación!}
+perks_4 {$rand(Debe de haber algo valioso en la bodega del '$attr($context.ship.name)'|Está claro que llevan algo importante en '$attr($context.ship.name)')}
+perks_5 {$rand(No hay mucho que sacar de la bodega de '$attr($context.ship.name)'|Parece que no hay nada de valor en la bodega de '$attr($context.ship.name)')}
+perks_6 {En el barco @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> murió en la estampida.}
+perks_7 {Según los cálculos, @<_ShipName> ha llegado a @<_PortName>.}
+perks_8 {Aún en camino.}

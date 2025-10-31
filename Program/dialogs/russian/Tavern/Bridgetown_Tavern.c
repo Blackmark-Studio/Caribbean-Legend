@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
-				notification("Слишком высокий уровень чести! (Проходимец)", "None");
+				Notification_Reputation(false, 48, "high");
 				PlaySound("VOICE\Russian\hambit\Ercule Tongzag-03.wav");
 				dialog.text = "Я не нуждаюсь в услугах белоручек. Ничего не могу вам посоветовать.";
 				link.l1 = "Эй-эй, полегче, приятель, с выражениями!";
@@ -103,10 +103,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//слабое фехтование
 			{
 				// belamour legendary edition покажем критерии -->
-				notification("Недостаточно развит навык (35)", SKILL_F_LIGHT);
-				notification("Недостаточно развит навык (35)", SKILL_FENCING);
-				notification("Недостаточно развит навык (35)", SKILL_F_HEAVY);
-				notification("Недостаточно развит навык (35)", SKILL_PISTOL);
+				Notification_Skill(false, 35, SKILL_F_LIGHT);
+				Notification_Skill(false, 35, SKILL_FENCING);
+				Notification_Skill(false, 35, SKILL_F_HEAVY);
+				Notification_Skill(false, 35, SKILL_PISTOL);
 				// <--
 				dialog.text = "Капитан, для работы мне нужен боец посноровистее, чем вы. Приходите, когда научитесь лучше махать железкой, что у вас на поясе болтается. Да и меткости тоже подучиться не мешает.";
 				link.l1 = "Понятно. Тогда я навещу вас позже.";

@@ -48,7 +48,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("VOICE\Russian\Enc_RapersGirl_1.wav");
-				dialog.text = "Месье! Месье, помогите! Убивают!";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", помогите! Убивают!";
 				link.l1 = "А?.. Кого убивают? Где? Что за шутки, милочка?";
 				link.l1.go = "FMQP";
 				break;
@@ -274,14 +274,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
-				notification("Слишком высокий уровень чести! ("+XI_ConvertString(GetReputationName(35))+")", "None");
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "Это что - намёк? Простите, я, видимо, ошиблась, заведя с вами этот разговор! Прощайте, '"+GetSexPhrase("кабальеро","сеньорита")+"'.";
 				link.l1 = "Как пожелаешь, дорогуша.";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Ну что же... Вы, по крайней мере, честны в своих запросах. Обещаю, если вы найдёте Анджело, или узнаете, что с ним случилось - вы получите то, что просите, ради моего брата...";
 				link.l1 = "Милая сеньорита, с тобой необыкновенно приятно иметь дело... Теперь - давай перейдём непосредственно к истории вашего брата.";
 				link.l1.go = "Consumption_4";
@@ -339,7 +339,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, французские миниквесты (ФМК) Порт Пренс
 		case "FMQP":
-			dialog.text = "Это не шутки, месье! Наверху! Наверху, в комнате - два негодяя убивают благородного джентльмена! Помогите, капитан, вы один тут при оружии!";
+			dialog.text = "Это не шутки, "+GetAddress_Form(NPChar)+"! Наверху! Наверху, в комнате - два негодяя убивают благородного джентльмена! Помогите, капитан, кроме вас здесь нет никого при оружии!";
 			link.l1 = "Беги на улицу, зови стражников! Я наверх!!";
 			link.l1.go = "FMQP_1";
 			link.l2 = "Дорогуша, ты, кажется, перепутала меня со стражником. Если кого-то убивают - надо звать патрульных.";

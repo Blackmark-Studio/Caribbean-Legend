@@ -12,7 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && npchar.sex == "man")
 			{
 				link.l1 = "Czy przypadkiem nie znasz pewnego Joepa van der Vinka?";
-				link.l1.go = "PZ1";
+				link.l1.go = "PZ_1";
 			}
 		break;
 		
@@ -35,19 +35,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l2.go = "new question";
 		break;
 		
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "Cóż, nie znam go osobiście, ale widuję go tu od czasu do czasu. Dlaczego pytasz?";
 			link.l1 = "Zostałem przydzielony do dostarczenia mu przesyłki osobiście. Ale nikt nie chce o nim rozmawiać i nie wiem dlaczego. Czy ty wiesz? Czy to zły człowiek? Byłbym wdzięczny za uczciwą opinię.";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Znów, nie znamy się osobiście, więc wiem prawie nic. Ale ma bliskiego przyjaciela w mieście i często są widywani razem. Idź do niego - on zdecyduje, czy powiedzieć ci więcej, czy nie. Jego kumpel nazywa się Rober Martene.";
 			link.l1 = "Rober Martene, mówisz... A kimże on jest? Gdzie mogę go znaleźć?";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Różne miejsca, ale teraz jest przy naszej latarni morskiej - naprawia swoją galeon po strasznej burzy. Nazywa się 'Voltigeur'.";
 			link.l1 = "Dziękuję bardzo! Nie masz pojęcia, jak bardzo mi pomogłeś.";
 			link.l1.go = "Exit";

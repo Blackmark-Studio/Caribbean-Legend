@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 					link.l1.go = "exit";
 					break;
 				}
-				if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < 5)//боевые генераторные квесты 2015
+				if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < COMPANION_MAX)//боевые генераторные квесты 2015
 				{
 					dialog.text = "Ha ! Vous arrivez juste à temps, capitaine... J'ai une proposition d'affaire pour vous. Avez-vous quelques heures à me consacrer ?";
 					link.l1 = "Je ne peux pas. Je suis pressé, compagnon. Peut-être la prochaine fois.";

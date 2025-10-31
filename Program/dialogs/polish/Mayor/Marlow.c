@@ -52,7 +52,7 @@ void ProcessDialogEvent()
 			//--> Сага
 			if(CheckAttribute(pchar, "questTemp.Saga.SharkHunt") && !CheckAttribute(npchar, "quest.sharkbegin"))
 			{
-				link.l1 = "Próbuję znaleźć Rekina Dodsona. Mówią, że jesteś ostatnim, kto go widział. Czy możesz mi w tym pomóc?";
+				link.l1 = "Próbuję znaleźć Sharka Dodsona. Mówią, że jesteś ostatnim, kto go widział. Czy możesz mi w tym pomóc?";
 				link.l1.go = "Shark";
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation") && pchar.questTemp.Saga.BarbTemptation == "terrax" && CheckCharacterItem(pchar, "witches_hammer"))
@@ -84,14 +84,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "shark":
-			dialog.text = "Steven Dodson? Nie wiem, jak moja opowieść miałaby ci pomóc, bo Rekin zaginął na kilka ostatnich miesięcy i nikt go nie widział. Choć to nie jest zaskoczenie, zabił Blaze'a Sharpa i zdyskredytował swoje własne imię tym głupim czynem. Uczynił kilku potężnych korsarzy swoimi wrogami.";
-			link.l1 = "Mam wszelkie powody sądzić, że Rekin jest niewinny śmierci Sharpa. Nie mogę tego udowodnić, może sam Rekin to potrafi. Czy zamierzasz mi coś o nim powiedzieć?";
+			dialog.text = "Steven Dodson? Nie wiem, jak moja opowieść miałaby ci pomóc, bo Shark zaginął na kilka ostatnich miesięcy i nikt go nie widział. Choć to nie jest zaskoczenie, zabił Blaze'a Sharpa i zdyskredytował swoje własne imię tym głupim czynem. Uczynił kilku potężnych korsarzy swoimi wrogami.";
+			link.l1 = "Mam wszelkie powody sądzić, że Shark jest niewinny śmierci Sharpa. Nie mogę tego udowodnić, może sam Rekin to potrafi. Czy zamierzasz mi coś o nim powiedzieć?";
 			link.l1.go = "shark_1";
 		break;
 		
 		case "shark_1":
-			dialog.text = "Kilka miesięcy temu Steven przyszedł do mnie i zaproponował bardzo dziwny układ: zostawił swoją fregatę 'Fortune' w zastaw na miesiąc w zamian za bryg w pełni załadowany zaopatrzeniem. Potem albo zwraca mi bryg i pieniądze za zaopatrzenie, albo zatrzymuję jego fregatę. Miesiąc minął - ani śladu ani Rekina, ani mojego brygu, ani pieniędzy.\nPoza tym słyszałem plotki, że Blaze został zamordowany, a Rekin był podejrzanym. Co miałem myśleć? Oczywiście! Pomyślałem, że Steven uciekł od najgorszego. Sprzedałem jego fregatę jakiemuś Anglikowi o imieniu William Patterson, był bardzo zadowolony i zapłacił kupę dublonów za statek.\nZatem całkowicie zrekompensowałem swoje wydatki i nie żywię do niego urazy. Nie obchodzi mnie śmierć Sharpa, mam swoje własne problemy, o które muszę się martwić.";
-			link.l1 = "Czy nie sądzisz, że gdyby chciał uciec, nie potrzebowałby twojej brygantyny? Miał własny statek, sto razy lepszy niż jakakolwiek brygantyna. Wygląda na to, że Rekin miał plan, ale coś poszło nie tak i nie wrócił na czas.";
+			dialog.text = "Kilka miesięcy temu Steven przyszedł do mnie i zaproponował bardzo dziwny układ: zostawił swoją fregatę 'Fortune' w zastaw na miesiąc w zamian za bryg w pełni załadowany zaopatrzeniem. Potem albo zwraca mi bryg i pieniądze za zaopatrzenie, albo zatrzymuję jego fregatę. Miesiąc minął - ani śladu ani Sharka, ani mojego brygu, ani pieniędzy.\nPoza tym słyszałem plotki, że Blaze został zamordowany, a Shark był podejrzanym. Co miałem myśleć? Oczywiście! Pomyślałem, że Steven uciekł od najgorszego. Sprzedałem jego fregatę jakiemuś Anglikowi o imieniu William Patterson, był bardzo zadowolony i zapłacił kupę dublonów za statek.\nZatem całkowicie zrekompensowałem swoje wydatki i nie żywię do niego urazy. Nie obchodzi mnie śmierć Sharpa, mam swoje własne problemy, o które muszę się martwić.";
+			link.l1 = "Czy nie sądzisz, że gdyby chciał uciec, nie potrzebowałby twojej brygantyny? Miał własny statek, sto razy lepszy niż jakakolwiek brygantyna. Wygląda na to, że Shark miał plan, ale coś poszło nie tak i nie wrócił na czas.";
 			link.l1.go = "shark_2";
 		break;
 		
@@ -534,7 +534,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Marginpassenger_offer":
-			pchar.GenQuest.Marginpassenger.Goods = GOOD_EBONY + rand(makeint(GOOD_MAHOGANY - GOOD_EBONY));
+			pchar.GenQuest.Marginpassenger.Goods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, FLAG_GOODS_VALUABLE_WOOD);
 			pchar.GenQuest.Marginpassenger.GoodsQty = 200+rand(10)*10;
 			switch (hrand(1))
 			{

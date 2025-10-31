@@ -596,57 +596,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_27":
-			TakeNItems(pchar, "bullet", 5);
-			TakeNItems(pchar, "gunpowder", 5);
 			DialogExit();
 			NextDiag.TempNode = "First time";
-			pchar.questTemp.Sharlie = "trial";
-			if(bImCasual) NewGameTip("探索模式: 计时器未禁用。 遵守最后期限! ");
-			pchar.questTemp.Trial = "begin"; // 启动中间线
-			SetFunctionTimerCondition("Sharlie_TrialOver", 0, 0, 24, false); // 计时器
-			AddMapQuestMarkCity("Baster", false);
-			AddLandQuestMark(characterFromId("Fadey"), "questmarkmain");
-			AddQuestRecord("Sharlie", "19");
-			// 打开所有岛屿
-			for (i=0; i<MAX_ISLANDS; i++)
-			{				
-				if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
-			}
-			DeleteAttribute(pchar, "questTemp.Sharlie.Lock"); //移除锁定
-			LocatorReloadEnterDisable("FortFrance_store", "reload2", false); // 打开商店仓库
-			sld = characterFromId("Benua");
-			sld.quest.help = "true";
-			npchar.greeting = "mishelle_3";
-			i = FindIsland("Martinique");
-			Islands[i].EffectRadius = 5000;
-			// Addon-2016 Jason, 法国迷你任务 (FMK) 
-			pchar.quest.Sharlie_FMQ.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_FMQ.win_condition.l1.value = 4;
-			pchar.quest.Sharlie_FMQ.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_FMQ.function = "FMQ_SetConditions";
-			// Sinistra - 迷你任务'Delюк'
-			PChar.quest.Del_Alonso.win_condition.l1 = "location";
-			PChar.quest.Del_Alonso.win_condition.l1.location = "FortFrance_town";
-			PChar.quest.Del_Alonso.win_condition = "Del_Alonso";
-			// 达到等级时给予任务'荷兰甘比'的标志
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.value = 9;
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_GambitStage_level_9.function = "Sharlie_GambitStage_level_9";
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.value = 12;
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_GambitStage_level_12.function = "Sharlie_GambitStage_level_12";
-			// 任务'树上的钱'的走私者标记
-			AddLandQuestMark(characterFromId("FortFrance_Smuggler"), "questmarkmain");
-			PChar.quest.MOT_UbratMarku.win_condition.l1 = "MapEnter";
-			PChar.quest.MOT_UbratMarku.win_condition = "MOT_UbratMarku";
-			// Sinistra - 任务'捕鼠'开始
-			pchar.questTemp.TK_TravlyaKrys = true;
-			AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
-			SetTimerCondition("TK_Timer", 0, 0, 30, false);
-			// 任务'不公平的竞争对手'的巴斯特商人标记
-			AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
+			AddDialogExitQuestFunction("Sharlie_Mishelle_OpenWorld");
 		break;
 		
 		case "gambitA":

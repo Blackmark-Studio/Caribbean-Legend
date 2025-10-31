@@ -120,6 +120,7 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	ChangeCharacterAddressGroup(sld, PChar.QuestTemp.AffairOfHonor.LighthouseId, "goto", "goto20");
 	LAi_SetGuardianType(sld);
 	sld.protector = true; // Начать диалог.
+	sld.SpecialRole = "duelist";
 	sld.Dialog.CurrentNode = "AffairOfHonor_BeforeFight_1";
 	if(sti(pchar.rank) < 12)
 	{
@@ -129,6 +130,7 @@ void AffairOfHonor_LighthouseLocEnter(string _quest)
 	{
 		GiveItem2Character(sld, "hat2");
 	}
+	if(rand(9) == 6) AddItems(sld, "ArmoryPaper", 6 + rand(2));
 	LAi_SetImmortal(sld, false);
 	LAi_CharacterEnableDialog(sld);
 	LAi_RemoveLoginTime(sld);

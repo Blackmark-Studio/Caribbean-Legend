@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Por alguna razón esperaba un discurso pomposo de su parte. Pero se lanzó al combate de inmediato.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
+			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -718,7 +718,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Memento_MortimerGrim_phantom_23":
-			dialog.text = "Soy un cobarde, colega. Un cobarde miserable que temía a la muerte, como tantos otros. Cuando mi tripulación murió de peste por mi culpa, enloquecí de miedo. Estuve un mes a la deriva en un barco de muertos.";
+			dialog.text = "Soy un cobarde, colega. Un cobarde miserable que temía a la muerte, como tantos otros. Cuando mi tripulación murió de peste... y por mi culpa, enloquecí de miedo. Estuve un mes a la deriva en un barco de muertos.";
 			link.l1 = "¿Qué pasó en realidad?";
 			link.l1.go = "Memento_MortimerGrim_phantom_24";
 		break;

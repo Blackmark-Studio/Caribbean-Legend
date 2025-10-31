@@ -36,6 +36,7 @@ void InitInterface(string iniName)
 	SetEventHandler("evntDoPostExit","DoPostExit",0);
 
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
 	SetEventHandler("frame","ProcessFrame",1);
 	SetEventHandler("OnTableRClick", "OnTableRClick", 0);
@@ -231,6 +232,33 @@ void SetHireEffects()
 		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "louis";
 	}
 
+	// уволенные с кораблей
+	if (CheckAttribute(refTown, "Ship.Crew.HasExcess"))
+	{
+		int excessCrew = sti(refTown.Ship.Crew.HasExcess);
+		if (excessCrew > 300) sArrow = "arrowup3";
+		else if (excessCrew > 100) sArrow = "arrowup2";
+		else sArrow = "arrowup1";
+
+		nBonus++;
+		sRow = "tr1";
+		sCol = "td" + nBonus;
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon1.image = sArrow;
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.image = "excessCrew";
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "excessCrew";
+	}
+
+	// Треуголка моряка
+	if (IsEquipCharacterByItem(pchar, "hat3")) 
+	{
+		nBonus++;
+		sRow = "tr1";
+		sCol = "td" + nBonus;
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon1.image = "arrowup1";
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).icon2.image = "hat3";
+		GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID = "hat3";
+	}
+
 	int nCol;
 	for(iRow = 1; iRow <= 2; iRow++)
 	{
@@ -280,6 +308,7 @@ void IDoExit(int exitCode)
 	DelEventHandler("evntDoPostExit","DoPostExit");
 
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("OnTableRClick", "OnTableRClick");
@@ -311,26 +340,45 @@ void ProcCommand()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
+	string curNode = GetCurrentNode()
 
+	if (nodName == "QTY_HIREFIRE_BUTTON" || nodName ==  "QTY_EDIT")
+	{
+		if (comName == "deactivate") 
+		{
+			CancelQty();
+			SetCurrentNode("SHIPS_SCROLL");
+		}
+		if (comName == "activate") SetCurrentNode("QTY_HIREFIRE_BUTTON");
+		if(comName=="leftstep")
+		{
+						AddOrRemove(1);
+		}
+		if(comName=="rightstep")
+		{
+						AddOrRemove(-1);
+		}
+		if(comName=="ctrlleft")
+		{
+						AddOrRemove(10);
+		}
+		if(comName=="ctrlright")
+		{
+						AddOrRemove(-10);
+		}
+		if(comName=="speedleft")
+		{
+			ADD_ALL_BUTTON();
+		}
+		if(comName=="speedright")
+		{
+			REMOVE_ALL_BUTTON();
+		}
+	}
 	switch(nodName)
 	{
-		case "QTY_HIREFIRE_BUTTON":
-			if(comName=="leftstep")
-			{
-	            ADD_BUTTON();
-			}
-			if(comName=="rightstep")
-			{
-	            REMOVE_BUTTON();
-			}
-			if(comName=="speedleft")
-			{
-	      		ADD_ALL_BUTTON();
-			}
-			if(comName=="speedright")
-			{
-	            REMOVE_ALL_BUTTON();
-			}
+		case "SHIPS_SCROLL":
+			if (comName == "activate") SetCurrentNode("QTY_EDIT");
 		break;
 	}
 }
@@ -344,7 +392,7 @@ void DoPostExit()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{
@@ -397,7 +445,7 @@ void SetVariable()
 	}
 	else
 	{
-		iColor = argb(255,255,255,255);
+		iColor = ARGB_Color("white");
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY", 8,-1,iColor);
 	SetFormatedText("QTY_CREW_CAPACITY", "" + GetOptCrewQuantity(refCharacter));
@@ -429,7 +477,7 @@ void SetVariable()
 	SetFormatedText("QTY_CREW_QTY2", ""+GetCrewQuantity(refTown));
 	if(PosEffects()) iColor = argb(255,128,255,128);
 	else iColor = argb(255,255,128,128);
-	if(GetCrewQuantity(refTown)==0) iColor = argb(255,255,255,255);
+	if(GetCrewQuantity(refTown)==0) iColor = ARGB_Color("white");
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QTY_CREW_QTY2", 8,-1,iColor);	
 	SetNewGroupPicture("CREW_MORALE_PIC2", "MORALE_SMALL", GetMoraleGroupPicture(stf(refTown.ship.crew.morale)));
 	SetFormatedText("CREW_MORALE_TEXT2", XI_ConvertString("CrewMorale") + ": " + XI_ConvertString(GetMoraleName(sti(refTown.Ship.crew.morale))));
@@ -489,7 +537,7 @@ void SetShipWeight()
 
 void ShowInfoWindow()
 {
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	int iItem;
@@ -498,9 +546,10 @@ void ShowInfoWindow()
 	sPicture = "-1";
 	string sAttributeName;
 	int nChooseNum = -1;
+	int nChooseCol = -1;
 	int iShip;
 	ref refBaseShip;
-	
+	string sRow, sCol;
 	bool  bShowHint = true;
 	switch (sCurrentNode)
 	{
@@ -542,11 +591,17 @@ void ShowInfoWindow()
 			sText1 = GetConvertStr("Rum_descr", "GoodsDescribe.txt");
 		break;
 		case "TABLE_EFFECTS":
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 1);
+			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_EFFECTS", 3);
+			nChooseNum++;
+			nChooseCol++;
+			sRow = "tr" + nChooseNum;
+			sCol = "td" + nChooseCol;
 			sHeader = XI_Convertstring("HireEffects");
 			sText1 = XI_Convertstring("HireEffects_descr");
-			if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + "." + CurCol + ".effectID"))
+			if(CheckAttribute(&GameInterface, "TABLE_EFFECTS." + sRow + "." + sCol + ".effectID"))
 			{
-				sText = "E" + GameInterface.(CurTable).(CurRow).(CurCol).effectID;
+				sText = "E" + GameInterface.TABLE_EFFECTS.(sRow).(sCol).effectID;
 				sHeader = XI_Convertstring(sText);
 				sText1 = XI_Convertstring(sText + "_descr");
 			}
@@ -554,13 +609,13 @@ void ShowInfoWindow()
 	}
 	if (bShowHint)
 	{
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 160, 160);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false);
 	}
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 }
 // бакап значений, до применения
 void SetBackupQty()
@@ -640,6 +695,7 @@ void TransactionOK()
 	SetBackupQty(); // применим и согласимся
 	CancelQty();
 	SetVariable();
+	SetCurrentNode("SHIPS_SCROLL");
 }
 
 void confirmChangeQTY_EDIT()
@@ -710,9 +766,14 @@ void ChangeQTY_EDIT()
 				if(sti(GameInterface.qty_edit.str) >= QtyMax)
 				{
 					GameInterface.qty_edit.str = QtyMax;
+					notification(XI_ConvertString("CrewOverflow"), "sailor");
 				}
 			}
-			else GameInterface.qty_edit.str = 0;
+			else 
+			{
+				GameInterface.qty_edit.str = 0;
+				notification(XI_ConvertString("CrewOverflow"), "sailor");
+			}
 						
 		    // проверка на колво доступное <--
 
@@ -782,20 +843,27 @@ void ADD_ALL_BUTTON()  // купить все
 
 void REMOVE_BUTTON()  // продать
 {
+	if(XI_IsKeyPressed("shift"))
+		REMOVE_ALL_BUTTON();
+	int n = -1;
+	if(XI_IsKeyPressed("control"))
+		n = -10;
+	AddOrRemove(n);
+}
+
+void AddOrRemove(int value)
+{
 	if (!GetRemovable(refCharacter)) return;
-	if (BuyOrSell == 0)
-    {
-        GameInterface.qty_edit.str = -1;
-    }
-    else
-    {
-		if (BuyOrSell == -1)
+	if (BuyOrSell == 0) GameInterface.qty_edit.str = value;
+	else
+	{
+		if (BuyOrSell == 1)
 		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) + 1);
+			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + value);
 		}
 		else
 		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) - 1);
+			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - value);
 		}
 		BuyOrSell = 0;
 	}
@@ -804,24 +872,12 @@ void REMOVE_BUTTON()  // продать
 
 void ADD_BUTTON()  // купить
 {
-	if (!GetRemovable(refCharacter)) return;
-	if (BuyOrSell == 0)
-    {
-        GameInterface.qty_edit.str = 1;
-    }
-    else
-    {
-  		if (BuyOrSell == 1)
-		{
-			GameInterface.qty_edit.str = (sti(GameInterface.qty_edit.str) + 1);
-		}
-		else
-		{
-			GameInterface.qty_edit.str = -(sti(GameInterface.qty_edit.str) - 1);
-		}
-		BuyOrSell = 0;
-	}
-	ChangeQTY_EDIT();
+	if(XI_IsKeyPressed("shift"))
+		ADD_ALL_BUTTON();
+	int n = 1;
+	if(XI_IsKeyPressed("control"))
+		n = 10;
+	AddOrRemove(n);
 }
 
 bool PosEffects()

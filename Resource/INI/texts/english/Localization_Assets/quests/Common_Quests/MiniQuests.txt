@@ -1,113 +1,24 @@
-MiniQuests_1
-{
-
-}
-MiniQuests_2
-{
-
-}
-
-MiniQuests_3
-{
-
-}
-MiniQuests_4
-{
-
-}
-
-MiniQuests_5
-{
-
-}
-MiniQuests_6
-{
-
-}
-
-MiniQuests_7
-{
-
-}
-MiniQuests_8
-{
-
-}
-
-MiniQuests_9
-{
-The trader has raised the black flag and attacking us!
-}
-
-MiniQuests_10
-{
-Boatswain
-}
-
-MiniQuests_11
-{
-Passenger @<GetFullName(sld)> has left your ship!
-}
-
-MiniQuests_12
-{
-Chaplain @<GetFullName(sld)> has left your ship!
-}
-
-MiniQuests_13
-{
-barquentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'
-}
-
-MiniQuests_14
-{
-trading convoy
-}
-
-MiniQuests_15
-{
-
-}
-MiniQuests_16
-{
-
-}
-
-MiniQuests_17
-{
-Enemy vessel is on the horizon!
-}
-
-MiniQuests_18
-{
-Enemy convoy is on the horizon!
-}
-
-MiniQuests_19
-{
-Pirate vessel in on the horizon!
-}
-
-MiniQuests_20
-{
-@<pchar.GenQuest.FindFugitive.Name> died of calenture!
-}
-
-MiniQuests_21
-{
-@<sld.name> помещен на ваш корабль под стражу
-}
-
-MiniQuests_22
-{
-An hour passed...
-}
-
-MiniQuests_23
-{
-, which on ~
-}
-MiniQuests_24
-{
-Alonso
-}
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {The trader has raised the black flag and attacking us!}
+MiniQuests_10 {Boatswain}
+MiniQuests_11 {Passenger @<GetFullName(sld)> has left your ship!}
+MiniQuests_12 {Chaplain @<GetFullName(sld)> has left your ship!}
+MiniQuests_13 {barquentine '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {trading convoy}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {Enemy vessel is on the horizon!}
+MiniQuests_18 {Enemy convoy is on the horizon!}
+MiniQuests_19 {Pirate vessel in on the horizon!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> died of calenture!}
+MiniQuests_21 {@<sld.name> has been placed under guard on your ship}
+MiniQuests_22 {An hour passed...}
+MiniQuests_23 {, which on ~}
+MiniQuests_24 { }

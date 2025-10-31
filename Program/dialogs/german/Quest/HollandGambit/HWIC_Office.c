@@ -352,6 +352,8 @@ void ProcessDialogEvent()
 			dialog.text = "Lassen Sie mich die Manifestprotokolle überprüfen....Ikema, Immerzeel, Jacobs...Jackson, gefunden. Hmm, Kapitän Reginald Jackson betreibt derzeit regelmäßige Schifffahrtsoperationen zwischen Port Royal und Philipsburg. Suchen Sie ihn auf dieser Route. Nun Kapitän, ich muss Sie im Voraus warnen - wenn Sie etwas Unfug planen, sollten Sie es besser nicht tun, denn dieser Kapitän Jackson steht unter unserem Schutz. Verstehen wir uns, mein Herr?";
 			link.l1 = "Ich habe nur Geschäfte mit ihm. Ein gewöhnlicher Handel. Ich habe nicht vor, ihm in irgendeiner Weise zu schaden.";
 			link.l1.go = "caleuche_1";
+			DelLandQuestMark(npchar);
+			DelLandQuestMarkToPhantom();
 		break;
 		
 		case "caleuche_1":
@@ -362,10 +364,7 @@ void ProcessDialogEvent()
 		
 		case "caleuche_2":
 			DialogExit();
-			pchar.questTemp.Caleuche.Garpiya = "capitan";
-			pchar.questTemp.Garpiya = "to_portroyal";
-			AddQuestRecord("Caleuche", "19");
-			DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
+			AddDialogExitQuestFunction("Caleuche_PrepareCreateGarpiya");
 		break;
 		
 		// новый босс ГВИК
@@ -488,7 +487,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ich schätze Ihren geschäftlichen Ansatz und bin bereit, Ihre Anfrage zu prüfen. Vielleicht könnten wir das Volumen, sagen wir, verfünffachen. Allerdings wird die Organisation solcher Lieferungen erhebliche Ressourcen erfordern. Wir müssen Lagerräume erweitern, die Sicherheit verstärken und zuverlässige Lieferwege gewährleisten. Da dies auch Ihnen zugute kommt, schlage ich vor, dass wir diese Kosten unter uns aufteilen.";
 				link.l1 = "Das klingt alles vernünftig. Welchen Betrag halten Sie für notwendig, um diese Ausgaben zu decken?";
 				link.l1.go = "UpgradeSilk_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

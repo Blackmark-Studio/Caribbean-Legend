@@ -1,84 +1,18 @@
-GoldenGirl_1
-{
-Czy słyszałeś o tej kurtyzanie z Kolonii Północnych, która teraz prowadzi dom publiczny w St. Pierre? Mówią, że od czasu do czasu organizuje prywatne przyjęcia – mogą w nich uczestniczyć tylko najlepsi przedstawiciele wyższych sfer. Najlepsze wino, piękne kobiety i nieograniczony hazard, wszystko to prawdziwie szlachetne wartości. Warto jest zabić za takie zaproszenie.
-}
-
-GoldenGirl_2
-{
-Mówią, że sama Marquise Botot jest teraz gościem w St. Pierre. Najdroższa w utrzymaniu kobieta Nowej Francji. Czasami wydaje przyjęcia tylko dla śmietanki towarzyskiej. Mówią, że pewien bankier przegrał tam swój własny bank, wyobraź to sobie. Niestety, bez zaproszenia nawet najbogatsi są niemile widziani.
-}
-
-GoldenGirl_3
-{
-Zamtuz w St. Pierre jest teraz prowadzony przez elitarną kurtyzanę. Samo miejsce niewiele się zmieniło, ale prywatne przyjęcia, które tam urządza... Ludzie opowiadają historie. Że jest tam jak w starym dobrym Paryżu - najlepsze wino, najlepsze dziewki, najlepsze towarzystwo. I najbardziej osobliwi goście - jak hiszpańscy admirałowie i piraccy baronowie! Niewiarygodne, co?
-}
-
-GoldenGirl_4
-{
-Julianne
-}
-GoldenGirl_5
-{
-Botot
-}
-
-GoldenGirl_6
-{
-Angerran
-}
-GoldenGirl_7
-{
-de Chievous
-}
-
-GoldenGirl_8
-{
-William
-}
-GoldenGirl_9
-{
-Cortney
-}
-
-GoldenGirl_10
-{
-Bart
-}
-GoldenGirl_11
-{
-Portugal
-}
-
-GoldenGirl_12
-{
-Hernando
-}
-GoldenGirl_13
-{
-Vasces
-}
-
-GoldenGirl_14
-{
-Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!
-}
-
-GoldenGirl_15
-{
-Nayade
-}
-
-GoldenGirl_16
-{
-Mówią, że pani Botot zniknęła i zostawiła swój luksusowy dom zaufanemu menadżerowi. Wyobraź sobie, ile smutku spadło na szlachetnych młodzieńców!
-}
-
-GoldenGirl_17
-{
-Następnego ranka...
-}
-
-GoldenGirl_18
-{
-Minęło kilka dni....@<NewStr()>Ty i baronet Courtney przybyliście na Gwadelupę
-}
+GoldenGirl_1 {Czy słyszałeś o tej kurtyzanie z Kolonii Północnych, która teraz prowadzi dom publiczny w St. Pierre? Mówią, że od czasu do czasu organizuje prywatne przyjęcia – mogą w nich uczestniczyć tylko najlepsi przedstawiciele wyższych sfer. Najlepsze wino, piękne kobiety i nieograniczony hazard, wszystko to prawdziwie szlachetne wartości. Warto jest zabić za takie zaproszenie.}
+GoldenGirl_2 {Mówią, że sama Marquise Botot jest teraz gościem w St. Pierre. Najdroższa w utrzymaniu kobieta Nowej Francji. Czasami wydaje przyjęcia tylko dla śmietanki towarzyskiej. Mówią, że pewien bankier przegrał tam swój własny bank, wyobraź to sobie. Niestety, bez zaproszenia nawet najbogatsi są niemile widziani.}
+GoldenGirl_3 {Zamtuz w St. Pierre jest teraz prowadzony przez elitarną kurtyzanę. Samo miejsce niewiele się zmieniło, ale prywatne przyjęcia, które tam urządza... Ludzie opowiadają historie. Że jest tam jak w starym dobrym Paryżu - najlepsze wino, najlepsze dziewki, najlepsze towarzystwo. I najbardziej osobliwi goście - jak hiszpańscy admirałowie i piraccy baronowie! Niewiarygodne, co?}
+GoldenGirl_4 {Julianne}
+GoldenGirl_5 {Botot}
+GoldenGirl_6 {Angerran}
+GoldenGirl_7 {de Chievous}
+GoldenGirl_8 {William}
+GoldenGirl_9 {Cortney}
+GoldenGirl_10 {Bart}
+GoldenGirl_11 {Portugal}
+GoldenGirl_12 {Hernando}
+GoldenGirl_13 {Vasces}
+GoldenGirl_14 {Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!}
+GoldenGirl_15 {Nayade}
+GoldenGirl_16 {Mówią, że pani Botot zniknęła i zostawiła swój luksusowy dom zaufanemu menadżerowi. Wyobraź sobie, ile smutku spadło na szlachetnych młodzieńców!}
+GoldenGirl_17 {Następnego ranka...}
+GoldenGirl_18 {Minęło kilka dni....@<NewStr()>Ty i baronet Courtney przybyliście na Gwadelupę}

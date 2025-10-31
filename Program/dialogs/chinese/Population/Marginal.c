@@ -75,7 +75,7 @@ void ProcessDialogEvent()
         case "passenger_2":
             pchar.GenQuest.Marginpassenger.Dublon = 70+hrand(5)*10;
             dialog.text = "欺骗你是很不明智的, 水手。 我住在这个镇上, 不想惹麻烦。 只要" + sti(pchar.GenQuest.Marginpassenger.Dublon) + "个达布隆, 我就提供完整的信息。 你会赚得更多。 ";
-            if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+            if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
             {
                 link.l1 = "你说得有道理。 拿上金币, 开始说吧。 ";
                 link.l1.go = "passenger_4";
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 
         case "passenger_repeat":
             dialog.text = "你把我的金币带来了吗? ";
-            if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+            if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
             {
                 link.l1 = "是的。 拿着。 现在别想撒谎... ";
                 link.l1.go = "passenger_4";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
         
         case "passenger_4"://设置参数
             pchar.quest.Marginpassenger_Over.over = "yes"; //移除可能的计时器
-            RemoveItems(pchar, "gold_dublon", sti(pchar.GenQuest.Marginpassenger.Dublon));
+            RemoveDublonsFromPCharTotal(sti(pchar.GenQuest.Marginpassenger.Dublon));
             pchar.GenQuest.Marginpassenger.Name = GetFullName(npchar);
             pchar.GenQuest.Marginpassenger.City = npchar.city;
             pchar.GenQuest.Marginpassenger.Targetcity = SelectAnyColony(npchar.city); 

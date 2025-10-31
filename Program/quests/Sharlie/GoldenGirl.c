@@ -113,10 +113,10 @@ void GoldenGirl_Start(string qName) // инициализация
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -166,10 +166,10 @@ void GoldenGirl_Start(string qName) // инициализация
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -532,7 +532,7 @@ void GoldenGirl_DuelNext() //
 	for (int i=3; i<=5; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("GG_SecundantAG_"+i, "mush_ctz_"+(7+i), "man", "mushketer", 25, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 30, 70, 70, "", "mushket1", "cartridge", 150);
+		FantomMakeCoolFighter(sld, 30, 70, 70, "", "mushket1", "bullet", 150);
 		ChangeCharacterAddressGroup(sld, "FortFrance_ExitTown", "rld", "loc"+(i-3)); // найти нужные локаторы
 	}
 	for (i=1; i<=5; i++)
@@ -1033,7 +1033,7 @@ void GoldenGirl_OnMartinique(string qName)// на Мартинике
 
 void GoldenGirl_MaryBlockDelete() // fix 22-03-20 возвращаем Мэри её поведение
 {
-    DeleteAttribute(pchar, "questTemp.GoldenGirl.MaryBlock");
+    DeleteAttribute(pchar, "questTemp.MarySexBlock");
 	pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.hour  = sti(GetTime());
 	pchar.quest.Mary_giveme_sex.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 14);
@@ -1090,7 +1090,7 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 	else if (sQuestName == "GoldenGirl_CreateColonel") 
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("GG_Colonel", "off_fra_5", "man", "man", 35, FRANCE, -1, false, "quest"));
-		FantomMakeCoolFighter(sld, 35, 80, 80, "blade_20", "pistol5", "cartridge", 150);
+		FantomMakeCoolFighter(sld, 35, 80, 80, "blade_20", "pistol5", "bullet", 150);
 		ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
 		sld.Dialog.Filename = "Quest\GoldenGirl.c";
 		sld.dialog.currentnode = "comendant";
@@ -1323,7 +1323,9 @@ bool GoldenGirl_QuestComplete(string sQuestName, string qname)
 		ChangeCharacterAddressGroup(sld, "FortFrance_SecBrRoom", "barmen", "stay");
 		LAi_SetOwnerType(sld);
 		LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-		sld = GetCharacter(NPC_GenerateCharacter("GG_sailor", "citiz_"+(rand(9)+31), "man", "man", 10, FRANCE, 1, true, "soldier"));
+		sld = GetCharacter(NPC_GenerateCharacter("GG_sailor", "Alonso", "man", "man", 10, FRANCE, 1, true, "soldier"));
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		SetFantomParamFromRank(sld, 10, true);
 		sld.Dialog.Filename = "Quest\GoldenGirl.c";
 		sld.dialog.currentnode = "sailor";

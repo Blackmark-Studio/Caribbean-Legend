@@ -21,21 +21,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "你听说了吗? 据说托马斯.莫里森的女儿已经卧床六个月了。 医生对她的病完全束手无策。 唯一能帮助她的是一个吉普赛女人, 她以能治愈重病的药水闻名。 但她断然拒绝为这个可怜的女孩做任何事。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			DWH_Start();
 			break;
         }
 		//< —治愈的黑暗之水
@@ -47,14 +33,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 告诉你吧, 就算给一千达布隆 —我也不会拿脖子去冒险... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			GS_Start();
 			break;
         }
 		//< —正义的边界
@@ -66,13 +45,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 —在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TPZ_Start();
 			break;
         }
 		//< —依法贸易
@@ -84,24 +57,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "港口周围传言说, 总督的侄女朱莉.德.阿尔马尼亚克已经变得不像从前了。 她曾经容光焕发。 充满活力, 现在却在街上漫无目的地走着, 脸上刻着明显的悲伤。 镇上的人窃窃私语, 想知道她到底发生了什么, 但没有人知道真相。 也许是哪个无赖伤了她的心? " + GetSexPhrase(" 也许是你吧, 船长? ", "");
 			link.l1 = "" + GetSexPhrase("我怀疑不是 ", "") + "。 谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			UV_Start();
 			break;
         }
 		//< —被盗的记忆
@@ -113,13 +69,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "听说渔夫皮埃尔.卡诺失踪了, 无影无踪。 两天前, 他出海后就再也没有消息。 他的妻子莉娅悲痛欲绝。 无论白天还是夜晚, 她都在码头守着, 眼睛盯着无尽的海水, 祈祷能看到她心爱的人的船帆。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			VPVL_Start();
 			break;
         }
 		//< —伟大捕获的俘虏
@@ -131,17 +81,36 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "船长, 你听说了吗? 我们酒馆来了个新女招待。 据说她是个大美人。 附近的男人都争先恐后地来一睹她的芳容。 但三天前, 她没来上班, 这让酒馆老板很生气, 因为自从她来了之后, 老板赚了很多钱。 听说他甚至愿意付钱给找到这个女孩的人。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TBP_Start();
 			break;
         }
 		//< —贝齐.普莱斯的秘密
+		
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? 镇上的铁匠被哈维尔·卡斯蒂略骗得一干二净, 连押上的宝贝都输光了。从那以后他整天愁眉苦脸, 不接新活儿——怕那将军会把他剥三层皮。真可怜, 所有人都知道别和那个老千卡斯蒂略赌牌! ";
+			link.l1 = "谢谢, 我"+GetSexPhrase("应","应")+"该先告辞了。";
+			link.l1.go = "exit";
+			OZ_Start();
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? ‘雄鹰’号的船长昨天在酒馆里把他的事务长臭骂了一顿, 把墙都吼得直发抖! 原来船长准备趁涨潮出航, 结果事务长竟然把整支船员队伍都放去岸上了。现在那些水手们还散落在镇里, 要是赶不上时间, 船长可不会等他们! 啧, 不知道他这么着急是为什么? 运了什么值钱的货? 抢到好买卖? 还是总督给了什么紧急任务? ";
+			link.l1 = "谢谢, 我"+ GetSexPhrase("应","应") +"该先告辞了。";
+			link.l1.go = "exit";
+			LFD_Start();
+			break;
+        }
+		//<-- Письмо от покойника
+
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("towngirl", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
@@ -191,21 +160,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "你听说了吗? 据说托马斯.莫里森的女儿已经卧床六个月了。 医生对她的病完全束手无策。 唯一能帮助她的是一个吉普赛女人, 她以能治愈重病的药水闻名。 但她断然拒绝为这个可怜的女孩做任何事。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			DWH_Start();
 			break;
         }
 //< —治愈的黑暗之水
@@ -217,14 +172,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 请注意, 即使给一千达布隆 —我也不会拿脖子去冒险... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			GS_Start();
 			break;
         }
 		//< —正义的边界
@@ -237,13 +185,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "听到消息了吗? ! 这简直是血腥的暴行! 酒馆里一滴朗姆酒或葡萄酒都没有了 —在这该死的炎热天气里, 人们该如何解渴? 客栈老板一周来一直用空洞的承诺敷衍我们, 说酒很快就会再来, 但一直什么都没有! 难道要我们渴到审判日吗? ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TPZ_Start();
 			break;
         }
 		//< —依法贸易
@@ -256,24 +198,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "港口周围传言说, 总督的侄女朱莉.德.阿尔马尼亚克已经变得不像从前了。 她曾经容光焕发。 充满活力, 现在却在街上漫无目的地走着, 脸上刻着明显的悲伤。 镇上的人窃窃私语, 想知道她到底发生了什么, 但没有人知道真相。 也许是哪个无赖伤了她的心? " + GetSexPhrase(" 也许是你吧, 船长? ", "");
 			link.l1 = "" + GetSexPhrase("我怀疑不是 ", "") + "。 谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			UV_Start();
 			break;
         }
 		//< —被盗的记忆
@@ -286,13 +211,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "听说渔夫皮埃尔.卡诺失踪了, 无影无踪。 两天前, 他出海后就再也没有消息。 他的妻子莉娅悲痛欲绝。 无论白天还是夜晚, 她都在码头守着, 眼睛盯着无尽的海水, 祈祷能看到她心爱的人的船帆。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			VPVL_Start();
 			break;
         }
 		//< —伟大捕获的俘虏 
@@ -304,17 +223,36 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "船长, 你听说了吗? 我们酒馆来了个新女招待。 据说她是个大美人。 附近的男人都争先恐后地来一睹她的芳容。 但三天前, 她没来上班, 这让酒馆老板很生气, 因为自从她来了之后, 老板赚了很多钱。 听说他甚至愿意付钱给找到这个女孩的人。 ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TBP_Start();
 			break;
         }
 		//< —贝齐.普莱斯的秘密
+		
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? 镇上的铁匠被哈维尔·卡斯蒂略骗得一干二净, 连押上的宝贝都输光了。从那以后他整天愁眉苦脸, 不接新活儿——怕那将军会把他剥三层皮。真可怜, 所有人都知道别和那个老千卡斯蒂略赌牌! ";
+			link.l1 = "谢谢, 我"+GetSexPhrase("应","应")+"该先告辞了。";
+			link.l1.go = "exit";
+			OZ_Start();
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? ‘雄鹰’号的船长昨天在酒馆里把他的事务长臭骂了一顿, 把墙都吼得直发抖! 原来船长准备趁涨潮出航, 结果事务长竟然把整支船员队伍都放去岸上了。现在那些水手们还散落在镇里, 要是赶不上时间, 船长可不会等他们! 啧, 不知道他这么着急是为什么? 运了什么值钱的货? 抢到好买卖? 还是总督给了什么紧急任务? ";
+			link.l1 = "谢谢, 我"+ GetSexPhrase("应","应") +"该先告辞了。";
+			link.l1.go = "exit";
+			LFD_Start();
+			break;
+        }
+		//<-- Письмо от покойника
+		
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2 )
         srum = SelectRumourEx("townman", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
@@ -402,24 +340,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "港口周围传言说, 总督的侄女朱莉.德.阿尔马尼亚克已经变得不像从前了。 她曾经容光焕发。 充满活力, 现在却在街上漫无目的地走着, 脸上刻着明显的悲伤。 镇上的人窃窃私语, 想知道她到底发生了什么, 但没有人知道真相。 也许是哪个无赖伤了她的心? " + GetSexPhrase(" 也许是你吧, 船长? ", "");
 			link.l1 = "" + GetSexPhrase("我怀疑不是 ", "") + "。 谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			UV_Start();
 			break;
         }
 //< —被盗的记忆
@@ -467,24 +388,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "港口周围传言说, 总督的侄女朱莉.德.阿尔马尼亚克已经变得不像从前了。 她曾经容光焕发。 充满活力, 现在却在街上漫无目的地走着, 脸上刻着明显的悲伤。 镇上的人窃窃私语, 想知道她到底发生了什么, 但没有人知道真相。 也许是哪个无赖伤了她的心? " + GetSexPhrase(" 也许是你吧, 船长? ", "");
 			link.l1 = "" + GetSexPhrase("我怀疑不是 ", "") + "。 谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			UV_Start();
 			break;
         }
 		//< —被盗的记忆
@@ -533,17 +437,23 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			dialog.text = "两天前, 有人厚颜无耻地企图刺杀港口长官! 刺客在他的办公室门口埋伏, 但长官设法呼救。 一名火枪手迅速赶到并击伤了恶棍, 不过那家伙还是逃出了城门。 \n听说港口长官为这个无赖的脑袋开出了丰厚的赏金! 到目前为止, 还没有勇敢的人站出来。 你知道吗, 即使他出一千达布隆 —我也不会接受... ";
 			link.l1 = "谢谢你, 我得走了。 ";
 			link.l1.go = "exit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			GS_Start();
 			break;
         }
 		//< —正义的边界
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? ‘雄鹰’号的船长昨天在酒馆里把他的事务长臭骂了一顿, 把墙都吼得直发抖! 原来船长准备趁涨潮出航, 结果事务长竟然把整支船员队伍都放去岸上了。现在那些水手们还散落在镇里, 要是赶不上时间, 船长可不会等他们! 啧, 不知道他这么着急是为什么? 运了什么值钱的货? 抢到好买卖? 还是总督给了什么紧急任务? ";
+			link.l1 = "谢谢, 我"+ GetSexPhrase("应","应") +"该先告辞了。";
+			link.l1.go = "exit";
+			LFD_Start();
+			break;
+        }
+		//<-- Письмо от покойника
+		
 		if (!CheckAttribute(NPChar, "quest.repeat.rumours_citizen") || NPChar.quest.repeat.rumours_citizen != 2) srum = SelectRumourEx("sailor", NPChar);
         else srum = NO_RUMOUR_TEXT[rand(SIMPLE_RUMOUR_NUM - 1)]; // 修复
         if (RumourHasInformation(srum))
@@ -645,7 +555,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 		//< —旧罪的漫长阴影
 		
 		//--> Rebbebion, 任务'导航星'
-		if (CheckAttribute(pchar, "questTemp.Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.Sotta") && !CheckAttribute(npchar, "questTemp.Lutter") && npchar.city == "Beliz")
+		if (CheckAttribute(pchar, "questTemp.PZ_Beliz.AskForLatterAndSotta") && !CheckAttribute(npchar, "questTemp.PZ_Sotta") && !CheckAttribute(npchar, "questTemp.PZ_Lutter") && npchar.city == "Beliz")
 		{
 			link.l1 = "那么, 今天的英雄, 埃德加多.索塔船长。 人们怎么说他? 你又怎么看? 我一直期待见到这个人。 ";
 			link.l1.go = "Sotta1";
@@ -674,21 +584,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("DWH");
-			AddQuestRecord("DWH", "1");
-			pchar.questTemp.DWH_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
-			ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "dwh_gypsy_0";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetLoginTime(sld, 07.00, 21.99);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			DWH_Start();
 		break;
 		}
 		//< —治愈的黑暗之水
@@ -704,14 +600,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("GS");
-			AddQuestRecord("GS", "1");
-			pchar.questTemp.GS_Start = true;
-			pchar.questTemp.GS_Portman = true;
-			AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			GS_Start();
 			break;
         }
 		//< —正义的边界
@@ -727,13 +616,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TPZ");
-			AddQuestRecord("TPZ", "1");
-			pchar.questTemp.TPZ_Start = true;
-			AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TPZ_Start();
 			break;
         }
 		//< —依法贸易
@@ -749,14 +632,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("OS");
-			AddQuestRecord("OS", "1");
-			pchar.questTemp.OS_Start = true;
-			pchar.questTemp.OS_Tavern_1 = true;
-			AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			OS_Start();
 			break;
         }
 		//< —旧账
@@ -772,24 +648,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("UV");
-			AddQuestRecord("UV", "1");
-			pchar.questTemp.UV_Start = true;
-			
-			sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
-			sld.name = StringFromKey("Neutral_6");
-			sld.lastname = StringFromKey("Neutral_7");
-			sld.City = "PortPax";
-			ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto9");
-			sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
-			sld.dialog.currentnode = "Juli";
-			LAi_SetCitizenType(sld);
-			LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			UV_Start();
 			break;
         }
 //< —被盗的记忆
@@ -805,13 +664,7 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("VPVL");
-			AddQuestRecord("VPVL", "1");
-			pchar.questTemp.VPVL_Start = true;
-			AddDialogExitQuest("VPVL_Gegerate_Lea");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			VPVL_Start();
 			break;
         }
 		//< —在伟大捕获的囚禁中
@@ -827,17 +680,59 @@ void ProcessCommonDialogRumors(ref NPChar, aref Link, aref NextDiag);
 			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
 									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
 			link.l2.go = "exit_sit";
-			
-			SetQuestHeader("TBP");
-			AddQuestRecord("TBP", "1");
-			pchar.questTemp.TBP_Start = true;
-			pchar.questTemp.TBP_Tavern = true;
-			AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
-			
-			pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // 激活事件
+			TBP_Start();
 			break;
         }
 		//< —贝茜.普莱斯的秘密
+		//--> Оковы азарта
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein" && sti(pchar.rank) >= 1;
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.OZ_Start") && npchar.city == "PortSpein";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? 镇上的铁匠被哈维尔·卡斯蒂略骗得一干二净, 连押上的宝贝都输光了。从那以后他整天愁眉苦脸, 不接新活儿——怕那将军会把他剥三层皮。真可怜, 所有人都知道别和那个老千卡斯蒂略赌牌! ";
+			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
+                                 "好吧, 我们再喝一次。 ");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
+									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
+			link.l2.go = "exit_sit";
+			OZ_Start();
+			break;
+        }
+		//<-- Оковы азарта
+		//--> Письмо от покойника
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LFD_Start") && npchar.city == "PortoBello";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了吗? ‘雄鹰’号的船长昨天在酒馆里把他的事务长臭骂了一顿, 把墙都吼得直发抖! 原来船长准备趁涨潮出航, 结果事务长竟然把整支船员队伍都放去岸上了。现在那些水手们还散落在镇里, 要是赶不上时间, 船长可不会等他们! 啧, 不知道他这么着急是为什么? 运了什么值钱的货? 抢到好买卖? 还是总督给了什么紧急任务? ";
+			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
+                                 "好吧, 我们再喝一次。 ");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
+									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
+			link.l2.go = "exit_sit";
+			LFD_Start();
+			break;
+        }
+		//<-- Письмо от покойника
+		//--> LaEspadaDelRey
+		bOk1 = !SandBoxMode && CheckAttribute(pchar, "questTemp.TrialEnd") && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		bOk2 = SandBoxMode && sti(pchar.rank) >= 1 && !CheckAttribute(pchar, "questTemp.LEDR_Start") && npchar.city == "Pirates";
+		if (bOk1 || bOk2)
+        {
+			dialog.text = "听说了"+GetSexPhrase("","吗")+", "+GetSexPhrase("伙计","姑娘")+"? 我们这儿有个疯疯癫癫的老头子老在街上晃。 他说自己是从那艘沉在萨布-马蒂拉海湾的破船事故中唯一活下来的人? 现在啊, 他一心想回去。但他又不敢独自去, 说什么每天早上都会有个穿着印第安人打扮的骷髅找上门来, 要和他拼命。俺说, 咕噜... 就算给俺五百个达布隆, 俺也不陪他去。 谁知道他脑子里都蹦出些什么妖魔鬼怪来。";
+			link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
+                                 "好吧, 我们再喝一次。 ");
+			link.l1.go = "sit_3";
+			link.l2 = RandPhraseSimple("谢谢, 我该走了。 ",
+									 "嗯, 该死的朗姆酒。 好吧, 我该走了, 祝你在这里玩得开心。 ");
+			link.l2.go = "exit_sit";
+			LEDR_Start();
+			break;
+        }
+		//<-- LaEspadaDelRey
+
 		
 		Dialog.Text = LinkRandPhrase("嗯... 嗝! ", "啊, 好朗姆酒! ", "嗯... ") + SelectRumourEx("habitue", NPChar);
 		link.l1 = RandPhraseSimple(RandSwear() + "这值得再喝一杯... ",
@@ -1337,7 +1232,8 @@ pcharrepphrase(RandSwear() + "还有一件事, 说完我就走。 ", "你说得�
 		// Addon-2016 Jason FMK-圣克里斯托弗
 		case "FMQN_r":
 			DelLandQuestMark(npchar);
-			Dialog.Text =  "不久前, 一艘英国船只在圣马丁水域被俘, 船上载有几名高级军官。 原本决定将他们送往威廉斯塔德, 但目前他们被关押在我们舒适的地牢里。 据说其中一名被俘士兵告诉我们的指挥官, 英国人打算派一支突袭队来营救这些军官。 这就是为什么我们的老指挥官严阵以待。 全副武装。 如果囚犯不见了, 他会被降为普通士兵, 他怎么能不准备呢! ";
+			if (GetNationRelation(SPAIN, ENGLAND) == RELATION_NEUTRAL) {dialog.text = "不久前, 一艘英国船只在圣马丁海岸被拦下, 船上有几位高级军官。 他们被暂时关进监狱, 等候调查, 然后准备送往威廉斯塔德。 据说, 那船上的一个俘虏士兵为了换取自由, 告诉了指挥官英国人正打算派出破坏小队, 营救这些囚犯, 连逃跑计划都拟好了。 咱们那位英勇的指挥官这才提高了警惕。 毕竟要是这些重要人物给跑了, 他可就要被贬回当兵的命了。 就是这样! 怕就怕好日子没盼来, 倒是又要开战了。";}
+			else {Dialog.Text =  "不久前, 一艘英国船只在圣马丁水域被俘, 船上载有几名高级军官。 原本决定将他们送往威廉斯塔德, 但目前他们被关押在我们舒适的地牢里。 据说其中一名被俘士兵告诉我们的指挥官, 英国人打算派一支突袭队来营救这些军官。 这就是为什么我们的老指挥官严阵以待。 全副武装。 如果囚犯不见了, 他会被降为普通士兵, 他怎么能不准备呢! ";}
 			link.l1 = "有趣... 好吧, 钱给你。 拿着。 还有别的要告诉我吗? ";
 			link.l1.go = "rumours_tavern";
 			pchar.questTemp.FMQN = "governor";

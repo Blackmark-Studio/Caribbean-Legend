@@ -1076,35 +1076,7 @@ void ProcessDialogEvent()
 		
 		case "Portugal_2":
 			DialogExit();
-			//создаем Хьюго
-			sld = GetCharacter(NPC_GenerateCharacter("Avendel", "Hugh", "man", "man", 10, HOLLAND, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 20, 50, 50, "blade_04", "pistol1", "bullet", 50);
-			sld.name = "Хьюго";
-			sld.lastname = "Авендел";
-			sld.dialog.FileName = "Quest\Portugal_dialog.c";
-			sld.dialog.currentnode = "Avendel_tavern";
-			sld.greeting = "avendel_1";
-			sld.rank = 12;
-			LAi_SetHP(sld, 80, 80);
-			SetSelfSkill(sld, 10, 12, 10, 10, 70);
-			SetShipSkill(sld, 50, 75, 15, 15, 25, 55, 10, 15, 30);
-			SetSPECIAL(sld, 3, 8, 3, 10, 10, 3, 6);
-			SetCharacterPerk(sld, "BasicCommerce");
-			SetCharacterPerk(sld, "AdvancedCommerce");
-			SetCharacterPerk(sld, "BasicBattleState");
-			SetCharacterPerk(sld, "AdvancedBattleState");
-			SetCharacterPerk(sld, "BasicDefense");
-			SetCharacterPerk(sld, "Gunman");
-			GiveItem2Character(sld, "blade_12");
-			sld.equip.blade = "blade_12";
-			GiveItem2Character(sld, "pistol1");
-			EquipCharacterbyItem(sld, "pistol1");
-			TakeNItems(sld, "bullet", 10);
-			AddItems(sld, "gunpowder", 10);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
-			LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");
-			LAi_SetImmortal(sld, true);
-			LAi_SetSitType(sld);
+			sld = InitHugo("Хьюго","Авендел");
 			FreeSitLocator("Marigo_tavern", "sit_front1");
 			ChangeCharacterAddressGroup(sld, "Marigo_tavern", "sit", "sit_front1");
 			AddLandQuestMark(sld, "questmarkmain");

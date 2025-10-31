@@ -31,61 +31,61 @@ void ProcessDialogEvent()
 		
 		case "baker":
 			dialog.text = "Thank you, Captain! I can't even imagine what I would have done without you...";
-			link.l1 = "I can imagine. You would have died of starvation or ended up in the stomach of a savage from Dominica. But you've got a chance to repay me.";
+			link.l1 = "I can imagine. You would have died of starvation or ended up in the belly of a savage from Dominica. But you've got a chance to repay me.";
 			link.l1.go = "baker_1";
 		break;
 		
 		case "baker_1":
 			dialog.text = "How can I help you, Captain?";
-			link.l1 = "I want to know more about one man. He is our common friend, so to speak. A very close friend of yours actually. I mean captain Butcher. Yes, the one you hanged twenty years ago. Lord, why are you so pale? Do you want a sip of rum?";
+			link.l1 = "I want to know more about one man. He is our mutual acquaintance, so to speak. A very close friend of yours, actually. I mean Captain Butcher. Yes, the one you hanged twenty years ago. Good Lord, why are you so pale? Would you like a sip of rum?";
 			link.l1.go = "baker_2";
 		break;
 		
 		case "baker_2":
 			dialog.text = "Have... have you been sent by him?";
-			link.l1 = "Nonsense! How can I be 'sent by him' if he is dead! I am more interested in the things he has left rather than Butcher himself. Letters, documents, things like that. Perhaps you have found something in his pockets... Wait! I don't get it. Do you really think that Butcher is alive? You have executed him yourself!";
+			link.l1 = "Nonsense! How can I be 'sent by him' if he is dead! I am more interested in the things he has left behind rather than Butcher himself. Letters, documents, things like that. Perhaps you have found something in his pockets... Wait! I don't get it. Do you really think that Butcher is alive? You executed him yourself!";
 			link.l1.go = "baker_3";
 		break;
 		
 		case "baker_3":
-			dialog.text = "Fuck! You haven't got a clue. That means you have not been sent by Butcher like I thought...";
-			link.l1 = "Well, well. This is just getting more interesting. It seems that Henry had all the right reasons to be scared of Butcher and that's why he died from the heart attack... Is Butcher alive?";
+			dialog.text = "Fuck! You haven't got a clue. That means you haven't been sent by Butcher like I thought...";
+			link.l1 = "Well, well. This is just getting more interesting. It seems that Henry had every reason to be afraid of Butcher, and that's why he died of a heart attack... Is Butcher alive?";
 			link.l1.go = "baker_4";
 		break;
 		
 		case "baker_4":
 			dialog.text = "He is, Captain... And they are looking for me.";
-			link.l1 = "Raymond, they told me that you aren't a stupid man. Don't try to play games with me. You are safe of any threat here. Tell me everything you know and I will come up with something to help you. Perhaps we share common enemies. Let's start with Butcher.";
+			link.l1 = "Raymond, I've been told you're not a fool. Don't try to play games with me. You're safe from any threat here. Tell me everything you know and I'll think of something to help you. Perhaps we share common enemies. Let's start with Butcher.";
 			link.l1.go = "baker_5";
 		break;
 		
 		case "baker_5":
-			dialog.text = "He is alive, but his name is different now! His men paid me a visit the night of the execution. Jackman and another man with some odd nickname. As far as I remember it was the 'Drowned man'.";
+			dialog.text = "He is alive, but his name is different now! His men paid me a visit the night of the execution. Jackman and another man with some odd nickname. As far as I remember, it was the 'Drowned Man'.";
 			link.l1 = "Hangman. Henry the Hangman.";
 			link.l1.go = "baker_6";
 		break;
 		
 		case "baker_6":
-			dialog.text = "Right! They offered me a simple deal - to die in the most painful way or save their captain. So I had to fake the execution with special equipment I had created in my free time. You see, such a construction of belts and clamps can allocate the body's weight.\nAll I had to do was to link it with a secret hook in the loop. The 'corpse' had to play its role well though. I have to say that Lawrence's acting was most believable, he did everything right, except he refused to piss himself, because of...";
-			link.l1 = "Have you just called Butcher 'Lawrence'?";
+			dialog.text = "Right! They offered me a simple deal – die in the most painful way, or save their captain. So I had to fake the execution with some special equipment I had made in my spare time. You see, such an arrangement of belts and clamps can distribute the body's weight.\nAll I had to do was attach it to a secret hook in the noose. The 'corpse' had to play his part well, though. I must say, Lawrence's acting was most convincing; he did everything right, except he refused to piss himself, because of...";
+			link.l1 = "Did you just call Butcher 'Lawrence'?";
 			link.l1.go = "baker_7";
 		break;
 		
 		case "baker_7":
-			dialog.text = "That is his true name. I told you that he is called Lawrence Beltrope. I have been restless since he returned to the Caribbean a year ago. And when I found out that some bad people are looking for me...\nI have even written a confession for the authorities just in case. I am keeping it with me at all times as I am too afraid to give it away. They might think that I was a willing abettor. Please, let me stay with your crew. I swear, I am an excellent physician and can help you a lot.";
+			dialog.text = "That is his true name. I told you he is called Lawrence Beltrope. I have been uneasy since he returned to the Caribbean a year ago. And when I found out that some dangerous people are looking for me...\nI have even written a confession for the authorities just in case. I keep it with me at all times, as I am too afraid to hand it over. They might think I was a willing accomplice. Please, let me stay with your crew. I swear, I am an excellent physician and can be of great help to you.";
 			link.l1 = "Fine. And what about Butcher's... eh, Beltrope's personal items? Is he related to Thomas Beltrope?";
 			link.l1.go = "baker_8";
 		break;
 		
 		case "baker_8":
-			dialog.text = "No clue. Don't have anything special left from Beltrope himself. But I will give you everything I have, you are free to do whatever you want with it. All papers related to the subject are in my bag. I saved everything just in case and keep it close to myself.\nHere, take a look... this is the legend of captain Butcher, this is my confession... These are things that belonged to Joshua Leadbeater...";
+			dialog.text = "No clue. I don't have anything special left from Beltrope himself. But I will give you everything I have; you are free to do whatever you want with it. All papers related to the subject are in my bag. I saved everything just in case and keep it close to me.\nHere, take a look... this is the legend of Captain Butcher, this is my confession... These are things that belonged to Joshua Leadbeater...";
 			link.l1 = "Stop! Leadbeater? Who is that?";
 			link.l1.go = "baker_9";
 		break;
 		
 		case "baker_9":
-			dialog.text = "Oh! He was a very special man. He was the one who chased down Butcher himself. People remembered him as the 'masked man'. He was murdered shortly after Butcher's execution. Someone slit his throat with a shark's tooth! One cut and he was done. When he was still alive, he must have suffered a lot.\nIf you would've seen his face under the mask, it was nothing but meat! He had this journal page in his pocket when he died. It must have been from the writings of Jessica Rose. Creepy story! Read it, it will make things much more understandable.\nAnd this is the tooth itself. Can you see the letters? S.D.... Whatever that means. There are also some bloodstains left.";
-			link.l1 = "Enough! I need to read everything carefully and think about it. And you will be my passenger or ship doctor until I deal with all of this. You can breathe freely, Raymond, you are safe on my ship.";
+			dialog.text = "Oh! He was a very special man. He was the one who hunted down Butcher himself. People remembered him as the 'masked man'. He was murdered shortly after Butcher's execution. Someone slit his throat with a shark's tooth! One cut and it was over. When he was still alive, he must have suffered terribly.\nIf you had seen his face under the mask, it was nothing but flesh! He had this journal page in his pocket when he died. It must have been from the writings of Jessica Rose. Creepy story! Read it, it will make things much clearer.\nAnd this is the tooth itself. Can you see the letters? S.D.... Whatever that means. There are also some bloodstains left.";
+			link.l1 = "Enough! I need to read everything carefully and think it over. And you will be my passenger or ship's doctor until I have dealt with all of this. You can breathe freely, Raymond, you are safe on my ship.";
 			link.l1.go = "baker_10";
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessDialogEvent()
 			npchar.OfficerImmortal = true;
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
 			AddCharacterExpToSkill(pchar, "Sailing", 50);
@@ -128,18 +128,18 @@ void ProcessDialogEvent()
 		//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Baker_officer":
 			dialog.text = "Yes, captain?";
-			Link.l1 = "Listen to my order!";
+			Link.l1 = "Listen to my orders!";
             Link.l1.go = "stay_follow";
 			
 			////////////////////////казначей///////////////////////////////////////////////////////////
            	// boal отчёт о корабле
 			if(CheckAttribute(NPChar, "treasurer") && NPChar.treasurer == 1)
 			{
-			    Link.l11 = "Raymond, give me a full ship report.";
+			    Link.l11 = "Raymond, give me a full report on the ship.";
 			    Link.l11.go = "QMASTER_1";
 
 			    // Warship. Автозакупка товара
-				Link.l12 = "I want you to purchase certain goods every time we are docked.";
+				Link.l12 = "I want you to purchase certain goods every time we dock.";
 				Link.l12.go = "QMASTER_2";
 			}
 			
@@ -150,14 +150,14 @@ void ProcessDialogEvent()
 		
 		/////////////////////////// ответы для казначея ///////////////////////////////////
         case "QMASTER_1":
-			dialog.Text = "Come on, Captain, I am a physician, not a purser. Although, in the past, I used to work in a different capacity... nevermind. I really don't do accounting, sorry.";
-			Link.l1 = "Fine, so be it. You are my physician - as we agreed upon after you joined my crew.";
+			dialog.Text = "Come on, Captain, I am a physician, not a purser. Although, in the past, I used to work in a different capacity... never mind. I really don't do accounting, sorry.";
+			Link.l1 = "Fine, so be it. You are my physician - as we agreed after you joined my crew.";
 			Link.l1.go = "exit";
 		break;	
 
 		case "QMASTER_2":
-			dialog.text = "Captain, to be completely honest, I never gathered much experience with trade. Never bargained, never tracked price tags. Also... I'd rather keep staying on the ship if you don't mind. Some of those merchants might recognize me and before you know it - masked men come shortly.";
-			link.l1 = "So, you will go on living in fear of your past... Right, breathe out, I will do it myself.";
+			dialog.text = "Captain, to be completely honest, I never gained much experience with trade. Never bargained, never tracked prices. Also... I'd rather stay on the ship if you don't mind. Some of those merchants might recognise me and before you know it - masked men will come soon after.";
+			link.l1 = "So, you'll go on living in fear of your past... Right, breathe out, I'll do it myself.";
 			Link.l1.go = "exit";
         break;
 		
@@ -173,7 +173,7 @@ void ProcessDialogEvent()
 				rItm = ItemsFromID(sGun);
 				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
-					Link.l3 = "Change the type of ammo for your firearm.";
+					Link.l3 = "Change the type of ammunition for your firearm.";
 					Link.l3.go = "SetGunBullets";
 				}	
 			}		
@@ -213,7 +213,7 @@ void ProcessDialogEvent()
         case "Boal_Stay":
             Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
             AddDialogExitQuestFunction("LandEnc_OfficerStay");
-            dialog.Text = "There is change of disposition!";
+            dialog.Text = "There is a change of disposition!";
             Link.l1 = "Dismissed.";
             Link.l1.go = "Exit";
             Npchar.chr_ai.tmpl = LAI_TMPL_STAY;
@@ -221,7 +221,7 @@ void ProcessDialogEvent()
         
         case "Boal_Follow":
             SetCharacterTask_FollowCharacter(Npchar, PChar);
-            dialog.Text = "There is change of disposition!";
+            dialog.Text = "There is a change of disposition!";
             Link.l1 = "Dismissed.";
             Link.l1.go = "Exit";
         break;

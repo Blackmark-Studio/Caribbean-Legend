@@ -1117,13 +1117,13 @@ Sie werden schlechter kämpfen, schlechter schießen, schlechter handeln und so 
 Im Moment können Sie mit einer Tartane oder einem Langboot umgehen. Aber Sie können - und sollten - einen Steuermann anheuern. Normalerweise findet man sie in Tavernen zusammen mit anderen Söldnern.
 Prüfen Sie immer zuerst die Fertigkeitsstufe. Wenn sie nicht hoch genug für Ihr Schiff ist, werden Sie genau die gleichen Probleme haben, die ich bereits erwähnt habe.
 ************************************************************
-Der Rang des Schiffes bestimmt ihn. Ich bin zum Beispiel erfahren genug (45 Punkte), um ein Schiff des vierten Ranges ohne Abzüge zu steuern. Briggs, Barkentinen, Fleute, Xebecs und Korvetten erfordern mehr, so dass ich sie nicht richtig einsetzen kann. Dabei handelt es sich nicht einmal um Schiffe zweiten Ranges wie Fregatten und schwere Galeonen.
+Das erforderliche Navigationsniveau richtet sich nach der Schiffsklasse. Je größer das Schiff, desto mehr Können braucht man, um es zu führen. Ich zum Beispiel beherrsche nur Schiffe bis zur vierten Klasse: Briggs, Schebecken, Fleuten. Eine Pinasse oder eine Korvette ist schon zu viel für mich – von Schiffen der zweiten Klasse wie schweren Fregatten oder Galeonen ganz zu schweigen.
 Was riesige Linienschiffe oder Kriegsschiffe betrifft, so können nur Experten in der Navigation solche Ungetüme steuern. Es dauert Jahre, bis man das beherrscht, und vergessen Sie nicht das Geld. Ein Schlachtschiff und seine Besatzung können Ihren Geldbeutel in einem Monat leeren, wenn Sie nicht so reich sind wie König Ludwig selbst.
 Achten Sie auf Ihre Offiziere. Ein Bootsmann bildet Ihre Mannschaft aus und macht das Entern effektiver, ein Zahlmeister erledigt an Ihrer Stelle die finanziellen Angelegenheiten und befreit Ihr Schiff von Ratten. Ein Arzt heilt Ihre Verwundeten und senkt die Zahl derer, die im Kampf sterben, ein Zimmermann repariert Schäden am Schiff, und Vorhutoffiziere retten Ihre Haut, wenn Piraten Ihr Deck stürmen. Achten Sie auf die Fähigkeiten der Kandidaten und ihren Ruf.
 ************************************************************
 Jeder Mann hat eine. Sie zeigt einen Mann so, wie er wirklich ist.
 Wenn Sie ein ehrenwerter Mann sind und immer versuchen, Gutes zu tun, dann suchen Sie sich Offiziere, die Ihre Ideale teilen. Und wenn Sie ein Pirat sein wollen... nun, Sie verstehen schon. Ehrliche Leute werden nicht für Abschaum arbeiten; das Gegenteil ist auch der Fall.
-Lassen Sie uns nun über die Schiffstypen sprechen. Es gibt zwei Arten: Handelsschiffe und Kriegsschiffe. Handelsschiffe haben große Laderäume und sind in der Regel langsamer. Kriegsschiffe sind schnell und haben starke Kanonen, was auf Kosten der Ladekapazität geht. Barken, Fleuten und Karkassen sind gute, solide Handelsschiffe. Lugger, Briggs und Korvetten sind Kriegsschiffe. Es gibt natürlich auch Mischformen, also Schiffe, die sowohl für den Handel als auch für den Kampf geeignet sind: Snows, Schoner und Galeonen. Schiffe haben auch unterschiedliche Takelagen; einige sind überwiegend quadratisch getakelt, andere überwiegend vor- und achtern getakelt, was den besten Winkel des Schiffes vor dem Bug ergibt.
+Nun ein wenig zu den Schiffstypen. Es gibt Handelsschiffe und Kriegsschiffe. Handelsschiffe zeichnen sich durch geräumige Laderäume aus, während Kriegsschiffe durch große Besatzung und starke Kanonen definiert sind. Typische Handelsschiffe sind Bark, Fleute und Pinasse; Kriegsschiffe: Schaluppe, Schnau und Galeone. Es gibt auch vielseitige Schiffe mit ausgewogenen Eigenschaften — etwa Lugger, Schoner und Briggantine. Gute Beispiele für Kaperschiffe sind Brigg, Korvette und Schebecke. Schiffe haben auch unterschiedliche Takelagen; einige sind überwiegend quadratisch getakelt, andere überwiegend vor- und achtern getakelt, was den besten Winkel des Schiffes vor dem Bug ergibt.
 Der Vorschiffswinkel bestimmt, wie die Takelage vom Wind beeinflusst wird und auf welchem Kurs Ihr Schiff die bestmögliche Geschwindigkeit erreicht. Sobald Sie auf See sind, suchen Sie den Pfeil auf der Minikarte; das ist Ihr Bugwinkel.
 ************************************************************
 Als Nächstes: Ihre Mannschaft. Sie und Ihr Schiff sind nichts ohne die Männer, die es bemannen. Jeder Seemann muss drei Dinge können: mit der Takelage umgehen, die Kanonen bedienen und kämpfen. Jede Nation zeichnet sich nur in einer dieser drei Tätigkeiten aus. Spanien zum Beispiel hat die besten Kämpfer der Welt, und ihre Gegner tragen Panzerungen, so dass Enterhaken, Hieb- und Stichwaffen gegen sie nicht ganz so effektiv sind. Ich spreche natürlich von Handfeuerwaffen; Kartätschenschüsse aus Kanonen scheren sich einen Dreck um Körperpanzer.
@@ -1480,6 +1480,74 @@ P.P.S. Wenn du es wirklich verdienst, Teil unserer Bruderschaft zu sein, wirst d
 ************************************************************
 Du hast die Prüfungen bestanden, die nur wenige Auserwählte meistern können. Du hast bewiesen, dass du beobachten, dich verbergen, geheime Gespräche führen und jeden deiner Schritte planen kannst. Jetzt bist du einer von uns. Der Inhalt dieser Truhe ist dein persönlicher Vorrat für schwere Zeiten, und dieser Raum ist dein sicheres Versteck. Halte diesen Moment in Erinnerung. Von heute an bist du nicht mehr einfach ein Teil der grauen Masse – du gehörst zur Bruderschaft.
 
+#QUEST LeFransua_town_Letter
+Die Geheimnisse von Le Fransua
+
+#TEXT 1
+************************************************************
+Anne, mein Leid und meine Muse...
+Du streifst jetzt wahrscheinlich durch die Stadt, suchst nach mir... Mach dir die Mühe nicht. Ich bin schon auf See.
+Und verdammt, glaub nicht, dass es mir leichtgefallen ist. Diese Trottel haben mir keine Wahl gelassen – entweder sie dulden dich und teilen mit keiner Hure, oder sie teilen mit dir, aber du bist raus aus der Crew... Ich war wütend, Anne, aber sich mit einer Horde bewaffneter Idioten anzulegen, ist keine gute Idee.
+Hätte ich ihnen die Hinweise vorenthalten, wäre ich meinen frisch errungenen Kapitänsposten gleich wieder los gewesen. Also werde ich erst ihr Vertrauen gewinnen, und dann kommst du zurück. Und dann führen wir diese Köter gemeinsam, ich schwöre bei meinem letzten Hemd.
+Ich habe dir alles dagelassen, was ich bei mir hatte. Es reicht, um nach Nassau zu kommen... es sei denn, du landest unterwegs wieder im Bett mit irgendwem. Die Notizen sind in der Stadt versteckt. Sammle sie – dann weißt du, wohin du musst. Ich habe Orte gewählt, an die nur du denken würdest.
+
+#TEXT 2
+************************************************************
+Ja, ja, 'Verpiss dich, Jack!', – ich höre dich das gerade sagen. 'Erst haust du ab, und jetzt soll ich auch noch hinter ein paar beschissenen Zetteln herlaufen?!'
+Was hätte ich sonst tun sollen? Hier ist niemand, dem ich auch nur einen verrotteten Kupferling anvertrauen würde. Und Barbazons Köter wie Marco – die würden für ein paar Dublonen ihre eigene Mutter anketten. Glaub mir, von allen beschissenen Optionen war das die beste.
+
+P.S. Auf dem höchsten Hügel der Insel. Aber renn nicht gleich hin, bevor du nicht alles hast.
+
+#TEXT 3
+************************************************************
+Nassau ändert sich jede verdammte Minute. Wenn du zurückkommst, flüster deiner 'Freundin', dass ich alles wissen will, was in der Stadt passiert. Jedes Gerücht, jedes Wort.
+Aber jetzt – brauchst du einen Schlüssel. Er ist gut versteckt. Such nach einem engen Durchgang hinter einem Fass – dort, wo über deinem Kopf Wachen patrouillieren.
+P.S. Alles, was du brauchst, findest du unter diesem armseligen Festungsbau. Ich hätte es besser gebaut.
+
+#TEXT 4
+************************************************************
+Mit dem Zeug kommst du nach Nassau.
+Wir schaffen das, Anne. Und wir werden wieder zusammen sein wie früher. Ich glaube, das Schicksal hat mir Größe als Kapitän bestimmt, und Größe gibt es nicht umsonst. Aber ich schwöre dir, jedes Mal, wenn jemand den Namen von Kapitän Jack Rackham sagt, wird er auch deinen Namen nennen.
+Warte in Nassau. Ich komme mit Beute zurück. Und wenn nicht, musst du dir jemand anderen suchen, der deinen Charakter aushält. Viel Glück damit.
+
+#QUEST FortFrance_town_Letter
+Die Geheimnisse von Saint-Pierre
+
+#TEXT 1
+************************************************************
+Mein Freund. Ich musste Saint-Pierre überstürzt verlassen. Ich kann kein Teil eines Spiels mehr sein, in dem Ehre keinen Platz hat und das Leben eines Bruders nur eine Verhandlungsmasse ist. Solange es im Orden Männer gibt, die ihr Gewissen verkauft haben, weigere ich mich, ihm zu dienen.
+Michel wurde verhaftet. Pietro wurde getötet. Er wusste, welches Risiko er einging, und vor seiner letzten Mission hat er uns alles vermacht, was er hatte. Ich wollte es dir persönlich übergeben, aber das war mir nicht möglich.
+Ich habe dir ein paar Notizen an Orten versteckt, die du gut kennst. Darin findest du Hinweise. Sammle sie. Sie führen dich dorthin, wo sich alles offenbart.
+P.S. Alle Truhen sehen gleich aus. Doch nur eine enthält das, was du wirklich brauchst.
+
+#TEXT 2
+************************************************************
+Vielleicht wirst du mich für meinen Abschied verurteilen. Aber ich hatte keine Wahl. Ich werde meinen Brüdern und dem Herrn bis ans Ende meiner Tage treu bleiben – aber nicht denen, die ihren Eid aus Gier gebrochen haben. Und ich werde niemals Alicias Leben aufs Spiel setzen. Es war das Opfer wert, alles zu verlieren, um die Liebe meines Lebens am Ende der Welt zu finden!
+P.S. Suche die Tür, durch die man hineinsehen kann.
+
+#TEXT 3
+************************************************************
+Ich sollte denselben Auftrag erfüllen wie Pietro. Aber zu Hause warteten sie schon auf mich. Drei Mann. Söldner. Wir gerieten aneinander, und ich hatte Glück, lebend davon zu kommen.
+Bevor sie zu den Waffen griffen, überbrachten sie mir einen "Gruß" von Levasseur. Nach Pietros Tod und Michels Verhaftung konnte er sich denken, dass jemand Jagd auf ihn macht. Aber er konnte nicht wissen, wer genau geschickt wird – den Namen kannte nur die oberste Führung und der Kommandeur.
+Verräter in den Reihen der Bruderschaft!
+P.S. Geh nach unten. So lange, bis keine Stufe mehr tiefer führt.
+
+#TEXT 4
+************************************************************
+Als alles vorbei war und ich das Haus verließ, traf ich auf Valigny. Sein Grinsen sprach Bände: Er war es, der die Söldner zu meinem Haus geführt hat. Und kein noch so frommes Gerede wird mich vom Gegenteil überzeugen.
+P.S. Dein Weg führt zu dem Ort, den ich verlassen habe.
+P.S.S. Um zum Versteckten zu gelangen, brauchst du einen Schlüssel. Suche ihn dort, wo jeder von uns Kraft und Inspiration schöpft, wenn er zum Schöpfer spricht.
+
+#TEXT 5
+************************************************************
+Du kennst die Wahrheit über die Verschwörung. Du weißt von der Mine auf Sint Maarten. Von der Jagd auf "Heinrich".
+Zuerst kam Michel ohne Prozess ins Verlies – du weißt, wer den Befehl gab. Dann starb Pietro. Jetzt bin ich an der Reihe.
+Das Leben unserer Brüder ist für diese Leute nichts als ein Mittel zum Zweck – um an der Macht zu bleiben und ihre Probleme zu lösen. Die Besten unter uns sterben oder landen im Gefängnis. Durch jemanden, den du gut kennst, wird der Orden bald zu einer Söldnerbande – genauso wie Rodenburgs Schlächter.
+Bald werde ich dem Großmeister einen Brief schicken – ich bin sicher, er wird alles aufklären und die einzig richtige Entscheidung treffen.
+Ich nehme Alicia und gehe nach Port Royal.
+Gott schütze dich.
+Und wenn sich unsere Wege eines Tages wieder kreuzen – hoffe ich, du wirst mich noch einen Freund nennen.
+
 #QUEST LadyBeth_Book
 Blackwoods Tagebuch
 #TEXT 1
@@ -1522,7 +1590,7 @@ Der Wind bleibt günstig. Matrose Paul Lourie hat sich mit seinen Kameraden gest
 
 22. September 1654  
 Der Kurierlugger 'Augustin' aus dem Hafen von Capsterville hat eine Zollinspektion unseres Schiffes durchgeführt. Unsere Kolonialbehörden misstrauen einander so sehr, dass der Generalgouverneur nicht zögert, wichtige Handelsschiffe noch vor dem Einlaufen in den Zielhafen abzufangen und zu durchsuchen.  
-Nach Sichtung der Passagierliste befahl mir der Leutnant der “Augustin”, auf der Stelle zu treiben und auf weitere Anweisungen zu warten. Da wir nur einen Passagier an Bord haben, ist es nicht schwer zu erraten, wer mir all diesen Ärger eingebrockt hat.  
+Nach Sichtung der Passagierliste befahl mir der Leutnant der 'Augustin', auf der Stelle zu treiben und auf weitere Anweisungen zu warten. Da wir nur einen Passagier an Bord haben, ist es nicht schwer zu erraten, wer mir all diesen Ärger eingebrockt hat.  
 Zum Glück mussten wir ihnen nicht nach Capsterville folgen, aber dieser Unsinn wird mich trotzdem eine Menge Geld kosten.  
 Ich sollte mit diesem Gecken sprechen und ihn mal ordentlich durchrütteln.
 
@@ -1591,3 +1659,98 @@ Der Schamane hat den Schädel abgerissen und irgendwo versteckt! Ein Federnarr! 
 Ich habe ihm alles erzählt. Ein unglaubliches Gefühl. Jetzt weiß ich, was zu tun ist! "Lass den Toten den Lebenden lehren." Natürlich! Es reicht nicht, Menschen vor Ketten oder dem Strick zu retten. Man muss sie vor dem Tod selbst retten! Und das geht nur, wenn man einen anderen durch das schickt, was ich selbst erlebt habe. Sterben und zurückkehren. Tun sie mir leid? Natürlich. Aber I. hatte recht. Mich hat auch nie jemand bemitleidet.
 
 Einen neuen Schädel habe ich schon gefunden—nicht jeder besteht die Prüfung des Todes. So ist es sogar besser. Sollen Mortimers Augenhöhlen auf Dominica bleiben und nicht sehen, was auf seinem Schiff geschieht. Er würde es nicht verstehen.
+
+#QUEST WildRose_Records
+Auszüge aus den Aufzeichnungen über Schiffe, die im Juni 1638 an der Insel der Gerechtigkeit gesunken sind
+#TEXT 1
+'...15. Juni. Brigg 'Rangler'. Schiff Seiner königlichen Majestät Karl I.
+Angeschlagen an der Südostseite des äußeren Rings. Vom Bord entfernt:
+
+11 Fässer schottischen Ales
+
+20 Fässer Süßwasser
+
+17 Kisten Proviant
+
+3 16‑Pfünder-Kanonen
+
+18 Musketen
+
+29 Stück Hieb- und Stichwaffen
+
+4 Kisten Munition
+
+15 Rollen Segeltuch
+Gerettet wurden 4 Personen:
+
+Joshua Kasper (Kapitän)
+
+Theresa Kasper
+
+Anthony Young
+
+Peter Friddicks...'
+
+#QUEST WildRose_Records_2
+Auszüge aus dem Kirchenbuch von Pater Domingo De la Cruz für den Sommer 1638
+#TEXT 1
+'7. Juni. Die Totenmesse für den neu verstorbenen Knecht Gottes Maximilian van Ekkus gehalten.
+18. Juni. Die Totenmesse für die neu verstorbenen Knechte Gottes Anthony Young und Peter Friddicks gehalten.
+25. Juni. Die Totenmesse für die neu verstorbene Magd Gottes Theresa V. Kasper gehalten. Gebete für die Ruhe der Seelen der Knechte Gottes Jean‑Pierre R. Sorrens und Umberto Rojas gelesen (Leichen nicht gefunden).
+5. Juli. Die Taufe des Knechtes Gottes Thierry G. Legros (geboren am 27. Februar) gehalten.
+3. August. Die Taufe des Knechtes Gottes Fabian O. Galard (geboren am 10. Juni) und der Magd Gottes Mary J. Kasper (geboren am 22. Juni) gehalten.'
+
+#QUEST WildRose_Records_3
+Einige Details aus der Personalakte von Joshua Kasper
+#TEXT 1
+Joshua Anthony Kasper wurde im Jahre 1586 nach Christus in der Stadt Portsmouth geboren.
+In der königlichen Marine steht er seit Juni 1611.
+Im Jahre 1619 legte er die Prüfung zum Leutnant ab und wurde dem Fregatten-Schiff 'Obratimij' zugewiesen...
+Im Jahre 1625 wurde er auf die Fregatte 'Triumph' als leitender Offizier versetzt...
+1630 wurde er zum Kapitän der Brigg 'Cornwall' ernannt... Verschollen mit Schiff und Besatzung im Jahre 1638.
+Er war unverheiratet. Kinder hatte er keine.
+Ein mustergültiger Offizier, hatte zahlreiche Auszeichnungen und Belobigungen, keine Disziplinarmaßnahmen oder Rügen vermerkt...
+
+#QUEST WildRose_Records_4
+Inhalt des Befehls an Kapitän Joshua Kasper, das Gehalt nach Antigua und Providence zu bringen
+#TEXT 1
+Dem Kapitän der Brigg 'Cornwall', Joshua Anthony Kasper – befohlen, nach Dandalk zu segeln, um militärische Munition zu entladen, danach den Atlantik zu überqueren, um das Gehalt an die Garnisonen der Inseln Antigua und Providence zu liefern. Nach Erfüllung der Aufgabe soll er dem Gouverneur der Insel Antigua – Thomas Warner – Bericht erstatten, der Besatzung Ruhe gewähren und anschließend nach England in den Heimathafen zurückkehren.
+Die Verantwortung für die Vorbereitung der Brigg 'Cornwall' auf die Fahrt, die Unterweisung der Besatzung, das Beladen des Proviants und der genannten Fracht wird dem Kapitän Joshua Anthony Kasper übertragen.
+
+Eigenhändige Unterschrift,
+Vizeadmiral Robert Berty, 3. Graf von Lindsay
+8. Januar 1638
+London, England
+
+#QUEST WildRose_Records_5
+Einige Details aus dem Bericht von Kapitän Joshua Kasper über die Atlantiküberquerung
+#TEXT 1
+...Wir verließen London am 14. Januar 1638 und steuerten Kurs Dandalk...
+...Am 19. Januar 1638 in Dandalk angekommen, begannen wir mit der Entladung der militärischen Munition...
+...Am 21. Januar 1638 Dandalk verlassen, Kurs Südwest gesetzt...
+...Am 10. Februar 1638, bei der Breite der Insel São Miguel (Azoren), gerieten wir in einen Kampf mit dem spanischen Galeon 'Toro'. Die Bewaffnung schätzte ich auf etwa 50 schwere Geschütze. Nachdem wir dem Gegner das Großmast fiel, beschlossen wir, das Risiko nicht einzugehen und verließen das Schlachtfeld nach Westen. Verluste: 32 Mann, darunter folgende Offiziere: Leutnant Rupert Northwood, Leutnant Edward Matts, Leutnant Samuel Downs. Die Gefallenen wurden gemäß der Tradition der Marine Seiner Majestät auf See bestattet.
+...Am 1. Juni 1638 auf der Insel Antigua angekommen, übergaben wir Gouverneur Sir Thomas Warner eine Kiste mit Gehalt für die Garnison...
+
+Eigenhändig unterzeichnet,
+Kapitän Seiner Majestät 'Cornwall', Joshua Anthony Kasper
+2. Juni 1638
+St. John’s, Insel Antigua
+
+#QUEST WildRose_Records_6
+Brief von Jérôme Souvernier an Fadey Moskovit
+#TEXT 1
+Monsieur Fadey, ich hoffe, mein Schreiben erreicht Sie bei bester Gesundheit. Leider kann ich nicht dasselbe von mir sagen. In der 'Gläsernen Auge' ereignete sich eine heftige Schlägerei, an der ich unglücklicherweise beteiligt war. Eine schwere Verletzung, die glücklicherweise mein Leben nicht bedroht, zwingt mich, für eine Weile in dieser nicht sehr gastfreundlichen Stadt zu verweilen.
+Was Ihr Mandat betrifft – ich habe gute Nachrichten. Es gelang mir, eine Spur eines Mannes namens Rupert Kasper aufzunehmen. Details werde ich Ihnen nach meiner Rückkehr nach Bas‑Ter mitteilen. Ich bedaure, Sie warten zu lassen.
+
+#QUEST LEDR_Book_1
+Auszüge aus dem Tagebuch von Diego Velázquez de Cuéllar
+#TEXT 1
+"Heute haben wir ein weiteres Dorf von Wilden ausgelöscht. Keiner von ihnen hielt unseren Klingen stand. Männer, die Widerstand leisteten, töteten wir auf der Stelle, die anderen ketteten wir. Ihre Hütten verbrannten völlig, die Getreidespeicher lagen leer, und alles Wertvolle wurde unsere Beute. Diejenigen, die versuchten, Kinder zu verstecken, wurden erschlagen vor den Augen der Überlebenden. Ihre Tränen floßen wie Flüsse und wässerten den Triumph unserer Banner. Dieses Land gehört nun Spanien. Wir brachten hier Ordnung und den Willen des Herrn, auch wenn es Blut kostete."
+
+"Mein Plan ist erfüllt. Die Wilden kamen zu Verhandlungen. Ihre Häuptlinge saßen am Feuer und glaubten naiv an Frieden. Aber wahrer Frieden kommt nur durch Blut. Wir umzingelten die Hütte, verkeilten die Tür und entzündeten sie. Anfangs kamen Schreie – wütend, verzweifelt. Doch dann verstummte alles, nur das Knistern des Feuers durchbrach die Stille. Der Geruch verbrannten Fleisches erfüllte die Luft, wie ein Segen des Herrn selbst. Diese Wilden werden nie wieder ihre Köpfe erheben."
+
+"Cacique Atuéy erhielt seine gerechte Strafe. Ich zwang ihn zuzusehen, wie sein Volk hingerichtet wurde: Frauen in die Feuer geworfen, Jungen enthauptet, und Kinder schrien vor Furcht. Man band ihn an einen Pfahl in der Mitte eines großen Scheiterhaufens. Ich sah mit meinen eigenen Augen, wie die Flammen seinen Körper umarmten. Aber er schrie nicht aus Schmerz. Nein, seine Stimme war voller Verachtung uns gegenüber. Selbst im Sterben fand er die Kraft, Flüche gegen uns zu schleudern. Dummer Wilder! Er glaubte, seine Worte könnten uns erschrecken. Der Wind wird diesen Wahnsinn zusammen mit der Asche seines Körpers verwehen."
+
+"Nach dieser Hinrichtung begann ich Seltsames zu bemerken. Am Tag predigten die Mönche von Gottes Gnade, doch nachts begannen Schatten um uns herum zu leben. Ich glaubte, die Weinen der Frauen, die Schreie der Kinder und die Flüche der Wilden in meinen Ohren zu hören. Letzte Nacht starb einer der Matrosen. Sein Körper wurde zerrissen wie von wilden Tieren. Ich befahl allen zu beten, doch die Gebete waren nutzlos. Jetzt bin ich überzeugt: Es ist Atuéy. Er hat einen Fluch über uns gebracht. Diese Barbaren vergeben nicht. Niemals."
+
+"Der Fluch... Er verlässt mich nicht. Er nistet in mir wie eine Schlange, die mein Herz umschlingt. Jede Nacht sehe ich brennende Hütten, höre Schreie und Stöhnen der Toten, die mich zur Rechenschaft rufen. Ihre verkohlten Skelette erheben sich aus der Asche, ihre leeren Augenhöhlen blicken mich mit Hass an. Selbst jetzt, in diesem Zimmer, höre ich Schritte. Die Tür knarrt leise, als würde jemand eintreten, doch ich sehe niemanden. Meine Hände zittern so sehr, dass die Feder kaum gehorcht. Es gibt kein Heil. Der Herr hat mich verlassen, wie ich die Barmherzigkeit verließ. Sie sind schon nah. Bald werden sie mich holen..."

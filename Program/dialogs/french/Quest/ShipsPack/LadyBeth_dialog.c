@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_StrongGroup":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50 || sti(pchar.rank) >= 17)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40 || sti(pchar.rank) >= 12)
 			{
 				dialog.text = "Ce sera fait, cap.";
 				link.l1 = "Et qu'en est-il du navire de Blackwood ? Ne risque-t-il pas de poser problème ?";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50) notification("Contrôle réussi", SKILL_Leadership);
-				if (sti(pchar.rank) >= 17) notification("Vérification de niveau réussie", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40) Notification_Skill(true, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) >= 12) Notification_Level(true, 12);
 			}
 			else
 			{
@@ -124,8 +124,8 @@ void ProcessDialogEvent()
 				link.l1.go = "AlonsoNaPalube_LiteGroup";
 				link.l2 = "Hmm... Je dois y réfléchir. Il est possible que nous revenions sur cette question plus tard.";
 				link.l2.go = "AlonsoNaPalube_Exit";
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) < 50) notification("Compétence insuffisamment développée (50)", SKILL_Leadership);
-				if (sti(pchar.rank) < 17) notification("Niveau 17 requis", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 40) Notification_Skill(false, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) < 12) Notification_Level(false, 12);
 			}
 		break;
 		
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "Bonne nuit";
 			else sStr = "Une bonne journée à vous";
 			dialog.text = "Passez me voir si quelque chose d'intéressant se présente. Ce serait un plaisir de parler avec un autre capitaine... une personne qui comprend la mer. Bonne journée à vous. " + sStr + ".";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_First_9";
 		break;
 		
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "Eh bien, il se fait tard, et j'ai beaucoup de travail";
 			else sStr = "Eh bien, j'ai beaucoup de travail";
 			dialog.text = "" + sStr + ". Merci pour cette conversation, capitaine. C'était vraiment intéressant.";
-			link.l1 = "Merci à vous aussi. "+Goodbye()+".";
+			link.l1 = "Merci à vous aussi. "+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Second_5";
 		break;
 		
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_harizma_2":
 			dialog.text = "J'ai toujours su que ma route ne serait pas facile. Adieu, "+pchar.name+". Peut-être que nous nous reverrons.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_oruzhie_2":
 			dialog.text = "J'ai toujours su que ma route ne serait pas facile. Adieu, "+pchar.name+". Peut-être que nous nous reverrons.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Helena_7":
 			DialogExit();
-			Return_HelenaOfficer();
+			ReturnOfficer_Helena();
 		break;
 		
 		case "LadyBeth_Mary_1": // Мэри
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Mary_6":
 			DialogExit();
-			Return_MaryOfficer();
+			ReturnOfficer_Mary();
 		break;
 		
 		case "LadyBeth_Tichingitu_1": // Тичингиту
@@ -604,7 +604,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Tichingitu_6":
 			DialogExit();
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "LadyBeth_Irons_1": // Томми
@@ -640,7 +640,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Irons_6":
 			DialogExit();
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 		break;
 		
 		case "LadyBeth_Knippel_1": // Книппель
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Knippel_7":
 			DialogExit();
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 		break;
 		
 		case "LadyBeth_Alonso_1": // Алонсо
@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_8":
 			dialog.text = "Adieu, capitaine. Et... prenez soin de vous. Ne courez pas après des fantômes.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;
@@ -989,7 +989,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_Woman_10":
 			dialog.text = "Adieu, capitaine. Et que le vent vous soit favorable.";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;

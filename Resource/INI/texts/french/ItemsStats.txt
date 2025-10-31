@@ -1,0 +1,295 @@
+itm_stat_weight {Poids}
+itm_stat_descr_weight {Combien de livres pèse cet objet. Les objets trop lourds peuvent être jetés.}
+itm_stat_rat_poison {Poison pour rats}
+itm_stat_descr_rat_poison {Empêche la détérioration des marchandises par les rats.}
+itm_stat_clock2 {Un outil utile}
+itm_stat_descr_clock2 {Accélère la progression de la compétence Navigation tant qu'il est équipé.}
+itm_stat_duration {Durée}
+itm_stat_descr_duration {Durée de l'effet de cet objet.}
+itm_stat_damageReduction {Réduction des dégâts}
+itm_stat_descr_damageReduction {Ce pourcentage est soustrait des dégâts entrants avant tout autre calcul.}
+itm_stat_attack {Dégâts}
+itm_stat_descr_attack
+{
+Attaque tranchante : #sattack.fast.min#–#sattack.fast.max# pts de dégâts
+Attaque d'estoc : #sattack.force.min#–#sattack.force.max# pts de dégâts
+Attaque circulaire : #sattack.round.min#–#sattack.round.max# pts de dégâts
+Attaque lourde : #sattack.break.min#–#sattack.break.max# pts de dégâts
+}
+itm_stat_gundamage {Dégâts d'armes à feu.}
+itm_stat_descr_gundamage {Les dégâts infligés au combat à distance dépendent des compétences, des caractéristiques de l'arme et des munitions.}
+itm_stat_healAmount {Soin}
+itm_stat_descr_healAmount {Quantité de Vie restaurée à l’utilisation.}
+itm_stat_worldMapBonus {Rayon d’observation}
+itm_stat_descr_worldMapBonus {Bonus en pourcentage au rayon de détection des flottes sur la carte du monde.}
+itm_stat_radius {Portée de navigation}
+itm_stat_descr_radius {Nombre de yards ajoutés à la portée du voyage rapide entre navires et criques.}
+itm_stat_mainEffect {Principal}
+itm_stat_secondaryEffect {Secondaire}
+itm_stat_hat9 {Ce qui est mort}
+itm_stat_descr_hat9 {Réduit de 30% la pénalité des dégâts du navire sur la puissance}
+itm_stat_secondary_hat9 {Ne peut pas mourir}
+itm_stat_descr_secondary_hat9 {Permet d’éviter les dégâts d’un tir dans 10% des cas}
+itm_stat_durability {Durabilité}
+itm_stat_hat1 {Entraînement constant}
+itm_stat_descr_hat1 {Augmente de 10 % l’expérience gagnée avec les armes légères, moyennes et lourdes}
+itm_stat_hat2 {Tueur en série}
+itm_stat_descr_hat2 {Tuer un ennemi avec une arme blanche rend 25 % d’énergie.}
+itm_stat_hat3 {Bases de la navigation}
+itm_stat_descr_hat3 {Augmente de 10 % l’expérience gagnée en Navigation, Précision et Réparation.}
+itm_stat_hat4 {Vie de la mer}
+itm_stat_descr_hat4 {Augmente de 15 % l’expérience gagnée dans toutes les compétences navales}
+itm_stat_hat5 {Mentor}
+itm_stat_descr_hat5 {Partage vos compétences navales avec tous les capitaines de votre flotte, réduisant les soldes de l’équipage et des officiers de tous les navires sauf le vaisseau amiral de 15 %.}
+itm_stat_hat6 {Sens du profit}
+itm_stat_descr_hat6 {Une fois tous les 3 jours, vous concluez automatiquement une petite affaire en arrivant au port.}
+itm_stat_hat7 {Balle perdue}
+itm_stat_descr_hat7 {10 % de chance de ne pas consommer de munitions en tirant}
+itm_stat_hat8 {Éméché}
+itm_stat_descr_hat8 {Le rhum et le vin restaurent 50 % de santé en plus}
+itm_stat_hat10 {Astuce de soldat}
+itm_stat_descr_hat10 {Chaque fois que ce chapeau bloque des dégâts, il perd un point de durabilité.}
+itm_stat_secondary_hat10 {Recyclage}
+itm_stat_descr_secondary_hat10 {Lors de la destruction, cet objet restitue son ingrédient principal, ce qui permet de le fabriquer à nouveau.}
+itm_stat_hat11 {Étreinte}
+itm_stat_descr_hat11
+{
+Endurance +2
+Tuer un ennemi avec une arme blanche restaure 25 % d’énergie.
+}
+itm_stat_potion6 {Résilience}
+itm_stat_descr_potion6 {Boire cette potion empêche l’étourdissement en combat.}
+itm_stat_berserker_potion {Fureur primale}
+itm_stat_descr_berserker_potion
+{
+Provoque une montée immédiate de puissance et d’endurance, améliore fortement l’agilité et la vitesse de réaction, atténue la douleur et accroît l’agressivité.
+Effet de douze secondes maximum, utilisable une fois par minute.
+}
+itm_stat_mangarosafast {Tourbillon}
+itm_stat_descr_mangarosafast {Utiliser cette potion augmente la vitesse d’attaque de n’importe quelle arme de 5 %.}
+itm_stat_mangarosapower {Œil d’aigle}
+itm_stat_descr_mangarosapower {Boire cette potion accélère le rechargement des canons.}
+itm_stat_mangarosatotal {Exaltation}
+itm_stat_descr_mangarosatotal {Utiliser cette potion augmente la Puissance de la Flotte de 15 %.}
+itm_stat_vodka {Mêlée générale}
+itm_stat_descr_vodka {Augmente les dégâts de mêlée avec les armes à feu de 20 %, et de 20 % supplémentaires avec les baïonnettes. Les attaques à l’arme à feu épuisent l’endurance ennemie. Réduit la durée d’étourdissement.}
+itm_stat_amulet_1 {Chitine}
+itm_stat_descr_amulet_1 {Le tissu et le cuir protègent deux fois plus, et l’armure renforcée réduit encore les dégâts critiques ennemis de 10 %.}
+itm_stat_amulet_10 {Seconde chance}
+itm_stat_descr_amulet_10 {Réduit de 10 % les dégâts subis par l’équipage à cause des canons ennemis.}
+itm_stat_amulet_11 {Protection tribale}
+itm_stat_descr_amulet_11 {Réduit de 10 % les dégâts subis par l’équipage lors d’une volée de mousquets.}
+itm_stat_amulet_2 {Planque}
+itm_stat_descr_amulet_2 {Chaque amulette et talisman chrétien actif, y compris celui-ci, réduit les dégâts subis des armes à feu de 5 %.}
+itm_stat_amulet_3 {Défense}
+itm_stat_descr_amulet_3 {Augmente la défense contre les dégâts critiques de 15 %.}
+itm_stat_amulet_4 {Danse de la mort}
+itm_stat_descr_amulet_4 {Chaque amulette et talisman païen, y compris celui-ci, augmente la vitesse d’attaque des armes de 2,5 %.}
+itm_stat_amulet_5 {Hâte}
+itm_stat_descr_amulet_5 {Réduit le temps de rechargement des canons du navire de 15 %.}
+itm_stat_amulet_6 {Imposition des mains}
+itm_stat_descr_amulet_6 {Accélère la guérison de 15 %.}
+itm_stat_amulet_7 {Vif-Argent}
+itm_stat_descr_amulet_7 {Augmente la santé de 15 % et double sa régénération passive.}
+itm_stat_amulet_8 {Fortification}
+itm_stat_descr_amulet_8 {Réduit les dégâts à la coque de 10 %.}
+itm_stat_amulet_9 {Rapiéçage}
+itm_stat_descr_amulet_9 {Réduit les dégâts aux voiles du navire de 10 %.}
+itm_stat_indian_1 {Vulnérabilité}
+itm_stat_descr_indian_1 {Augmente les dégâts de tir à la tête de 20 %.}
+itm_stat_indian_10 {Poison}
+itm_stat_descr_indian_10 {Chaque attaque tranchante a 15 % de chances d’empoisonner l’ennemi.}
+itm_stat_indian_11 {Fumée et miroirs}
+itm_stat_descr_indian_11 {Chaque objet Raffiné augmente vos chances de Tromperie de 5%.}
+itm_stat_indian_2 {Vérifier}
+itm_stat_descr_indian_2 {L’art de doser la poudre augmente les dégâts de Balle et de Mitraille de 10 %, et de 5 % supplémentaires pour les munitions Surchargées et Perforantes.}
+itm_stat_indian_3 {Soif de sang}
+itm_stat_descr_indian_3 {Augmente les dégâts critiques infligés de 15 %.}
+itm_stat_indian_4 {Armement}
+itm_stat_descr_indian_4 {Les armes lourdes infligent 15 % de dégâts supplémentaires avec les attaques lourdes.}
+itm_stat_indian_5 {Équilibreur}
+itm_stat_descr_indian_5 {La différence d’équipage influe 30 % moins sur l’abordage.}
+itm_stat_indian_6 {Tamis}
+itm_stat_descr_indian_6 {Les dégâts infligés à l’ennemi par une salve de mousquets avant l’abordage augmentent de 10 %.}
+itm_stat_indian_9 {Vise !}
+itm_stat_descr_indian_9 {Augmente la vitesse du navire et la visée des canons de 15 %.}
+itm_stat_indian_8 {Feu !}
+itm_stat_descr_indian_8 {Augmente les dégâts des canons de 10 %}
+itm_stat_obereg_1 {Marteau...}
+itm_stat_descr_obereg_1 {Réduit de 15 % la consommation de planches et de toile lors des réparations en mer ou en combat. Effets cumulables.}
+itm_stat_obereg_2 {...et des clous}
+itm_stat_descr_obereg_2 {réduit de 15 % la consommation de planches et de toile lors des réparations en mer ou en combat. Effet cumulatif.}
+itm_stat_indian_7 {Concentration}
+itm_stat_descr_indian_7 {Augmente l’énergie et sa régénération de 12 %.}
+itm_stat_obereg_10 {Tour de main}
+itm_stat_descr_obereg_10 {Augmente la maniabilité du navire de 15 %.}
+itm_stat_obereg_11 {Borée}
+itm_stat_descr_obereg_11 {Modifie l’angle de cap du navire de 15 %, permettant de naviguer plus près du vent.}
+itm_stat_obereg_3 {Haltérophilie}
+itm_stat_descr_obereg_3 {Augmente la charge transportable de 15 %.}
+itm_stat_obereg_4 {Incognito}
+itm_stat_descr_obereg_4 {La Furtivité du personnage augmente de #smodifiers.SkillSneak#.}
+itm_stat_obereg_5 {Talisman}
+itm_stat_descr_obereg_5 {L’Opportunisme du personnage augmente de #smodifiers.SkillFortune#.}
+itm_stat_obereg_6 {Persuasion}
+itm_stat_descr_obereg_6 {Le Leadership du personnage augmente de #smodifiers.SkillLeadership# points.}
+itm_stat_obereg_7 {Né des flots}
+itm_stat_descr_obereg_7 {La Navigation du personnage augmente de #smodifiers.SkillSailing# points.}
+itm_stat_obereg_8 {Avantage}
+itm_stat_descr_obereg_8 {Le Commerce du personnage augmente de #smodifiers.SkillCommerce# points.}
+itm_stat_obereg_9 {Dieu du Vent}
+itm_stat_descr_obereg_9 {La vitesse du navire augmente de 10 %.}
+itm_stat_totem_01 {Estomac d’acier}
+itm_stat_descr_totem_01 {Évite les trous noirs d’ivresse dans les lieux louches ou les compagnies bruyantes. Utiliser des potions de soin ne réduit pas la Santé.}
+itm_stat_totem_02 {Seigneur}
+itm_stat_descr_totem_02 {Réduit le risque et les pertes lors des révoltes d’esclaves, augmente le nombre de captifs en cas de reddition.}
+itm_stat_totem_03 {Joueur}
+itm_stat_descr_totem_03 {Double l’effet de soin des plaisirs amoureux.}
+itm_stat_totem_04 {Chef-né}
+itm_stat_descr_totem_04 {Verrouille la loyauté de l’officier pendant toute la durée.}
+itm_stat_totem_05 {Invulnérabilité}
+itm_stat_descr_totem_05 {Réduit les dégâts critiques ennemis de $modifierPercent(CritIncomingDamageReduction).}
+itm_stat_totem_06 {Cheval de bât}
+itm_stat_descr_totem_06 {Le dépassement du poids transportable n’affecte ni la vitesse ni n’impose de pénalités.}
+itm_stat_totem_07 {Invocation}
+itm_stat_descr_totem_07
+{
+De nouveaux volontaires rejoindront l’équipage à moindre coût, même s’ils ont des dettes envers l’équipage.
+Utilisable uniquement par le personnage principal. Augmente de 5 % le nombre de recrues disponibles à la taverne.
+}
+itm_stat_totem_08 {Implication personnelle}
+itm_stat_descr_totem_08 {Augmente les dégâts des tirs navals ciblés de 10 %.}
+itm_stat_totem_09 {Alertes d’entraînement}
+itm_stat_descr_totem_09 {Double la vitesse d’entraînement de l’équipage.}
+itm_stat_totem_10 {Diable de Tasmanie}
+itm_stat_descr_totem_10 {Les armes moyennes infligent 15 % de dégâts supplémentaires avec les attaques de groupe.}
+itm_stat_totem_11 {Vampirisme}
+itm_stat_descr_totem_11 {Les coups volent de l’énergie à l’ennemi.}
+itm_stat_totem_12 {Crocs}
+itm_stat_descr_totem_12 {Les armes légères infligent 15 % de dégâts en plus avec les attaques rapides.}
+itm_stat_totem_13 {Tricheur}
+itm_stat_descr_totem_13
+{
+Augmente nettement vos chances de tirer la bonne carte et d’obtenir le résultat voulu au dé.
+Accorde +1 Succès.
+}
+itm_stat_knife_01 {Secret}
+itm_stat_descr_knife_01 {Ce poignard recèle un grand pouvoir caché. Porté sur la poitrine comme talisman, il peut vaincre la mort.}
+itm_stat_knife_02 {Gardien}
+itm_stat_descr_knife_02 {Confère 12 % de chance d’esquiver un tir. Effet cumulatif.}
+itm_stat_knife_03 {Petit veinard}
+itm_stat_descr_knife_03 {Augmente la chance de coup critique de base de 3 % et les dégâts critiques de 10 %.}
+itm_stat_talisman1 {Ordre}
+itm_stat_descr_talisman1 {Protège les marchandises des rongeurs.}
+itm_stat_talisman2 {Calme}
+itm_stat_descr_talisman2 {Permet d’éviter une zone de tempête ou réduit les dégâts aux voiles et à la coque pendant l’orage.}
+itm_stat_talisman3 {Refroidissement à l’eau}
+itm_stat_descr_talisman3 {Empêche les canons d’exploser.}
+itm_stat_talisman4 {Dictature}
+itm_stat_descr_talisman4 {Réduit la perte de moral due à la surcharge et diminue la ration quotidienne de rhum de l’équipage.}
+itm_stat_talisman6 {Humilité}
+itm_stat_descr_talisman6 {Permet d’économiser les vivres à bord, réduisant leur consommation d’un quart.}
+itm_stat_talisman7 {Carapace}
+itm_stat_descr_talisman7
+{
+Double la vitesse de réparation du navire et économise 30 % de ressources.
+Réduit les dégâts aux voiles et à la coque de 5 %.
+}
+itm_stat_talisman8 {Mithridate}
+itm_stat_descr_talisman8 {Empêche l’empoisonnement par les armes ennemies.}
+itm_stat_talisman9 {Ancienneté}
+itm_stat_descr_talisman9
+{
+Accorde +15 % au recrutement de marins dans les colonies françaises.
+Permet l’entrée gratuite dans les bordels français et augmente le Leadership de +1.
+}
+itm_stat_talisman10 {Poséidon}
+itm_stat_descr_talisman10 {Permet de retenir son souffle longtemps sous l’eau et protège de l’eau bouillante.}
+itm_stat_talisman11 {Anti-stress}
+itm_stat_descr_talisman11 {Augmente toutes les compétences personnelles et navales de 2 points.}
+itm_stat_talisman12 {Immunité}
+itm_stat_descr_talisman12 {Verrouille la valeur actuelle de santé.}
+itm_stat_talisman13 {Thésaurisation}
+itm_stat_descr_talisman13 {Augmente étrangement votre capacité à porter de lourdes charges.}
+itm_stat_talisman14 {Flambeau}
+itm_stat_descr_talisman14 {Augmente la compétence Navigation de 15 points.}
+itm_stat_talisman15 {Réputation redoutée}
+itm_stat_descr_talisman15 {Augmente la Puissance de la Flotte de 15 %. Confectionné à partir du foulard des Ironsides, la cavalerie de Cromwell.}
+itm_stat_talisman16 {Guerrier de la jungle}
+itm_stat_descr_talisman16 {Les armes Exotiques infligent 15 % de dégâts en plus}
+itm_stat_talisman17 {Bouclier de la foi}
+itm_stat_descr_talisman17 {Réduit les dégâts subis par l’équipage de $ctxHasAttr(QBonus.max|15|5) %, et à bord du *Saint Miséricorde* augmente la compétence de Défense de 10. La réduction des dégâts s’améliore après avoir suivi la Voie du Juste.}
+itm_stat_talisman18 {À la recherche de la vérité}
+itm_stat_descr_talisman18 {Chaque trésor trouvé augmente la puissance de la salve de mousquets de l’équipage de 1 % et les dégâts de mitraille de 2 %.}
+itm_stat_talisman19 {Souviens-toi}
+itm_stat_descr_talisman19 {$GetYorickLoc(_descr)}
+itm_stat_talisman20 {Prêt au combat}
+itm_stat_descr_talisman20 {La vitesse de visée avec les armes à feu augmente de 15 %, les dégâts maximum en visée de 20 %, la vitesse de rechargement de 10 % et les dégâts de tir à la tête de 20 %.}
+itm_stat_talisman21 {Responsabilité mutuelle}
+itm_stat_descr_talisman21 {Permet de commercer avec les contrebandiers sur des navires jusqu’au rang 2 inclus.}
+itm_stat_secondary_hat1 {Adaptation}
+itm_stat_descr_secondary_hat1 {Les attaques rapides avec des armes droites et les attaques tranchantes avec des armes courbées infligent 5 % de dégâts en plus.}
+itm_stat_secondary_hat2 {Inertie}
+itm_stat_descr_secondary_hat2 {Les attaques de groupe avec des armes courtes et les attaques lourdes avec des armes longues sont 7 % plus rapides.}
+itm_stat_secondary_hat3 {Langue d’argent}
+itm_stat_descr_secondary_hat3 {Augmente le nombre de marins dans les tavernes et réduit leur coût d’embauche de 5 %.}
+itm_stat_secondary_hat4 {Discipline prussienne}
+itm_stat_descr_secondary_hat4 {La précision du tir d’artillerie augmente de 10 %.}
+itm_stat_secondary_hat5 {Première Ligue}
+itm_stat_descr_secondary_hat5 {Met fin à l’hostilité des nations envers les vaisseaux de ligne correspondants.}
+itm_stat_secondary_hat7 {Chasseur de trésors}
+itm_stat_descr_secondary_hat7 {Augmente la valeur du trésor de 10 %.}
+itm_stat_secondary_hat8 {Malédiction des Caribes}
+itm_stat_descr_secondary_hat8 {Chaque niveau de Menace réduit l’entretien du navire de 2 % et augmente la vitesse sur la carte du monde de 0,25 %.}
+itm_stat_secondary_hat11 {Affect}
+itm_stat_descr_secondary_hat11 {La vitesse d’attaque augmente de 5 % si le personnage a eu une intimité au cours des deux dernières semaines.}
+itm_stat_blade_SP_3low {Potentiel inexploité}
+itm_stat_descr_blade_SP_3low {Cette lame n’a pas atteint toute sa puissance — il lui manque quelque chose…}
+itm_stat_blade_SP_3 {Faucheur}
+itm_stat_descr_blade_SP_3 {Empêche toute guérison. Pour chaque 2 % de Santé manquante, les dégâts infligés augmentent de 1,5 % et la régénération d’énergie de 1,75 %.}
+itm_stat_blade_41 {Souplesse}
+itm_stat_descr_blade_41 {Bénéficie d’un bonus de dégâts selon votre meilleure compétence en arme blanche.}
+itm_stat_lacrima_patris {Voie du Juste}
+itm_stat_descr_lacrima_patris {Tous les 10 bandits et vauriens tués, les dégâts augmentent de 2 et la portée des canons Mercy de 1 %.}
+itm_stat_blade_WR {Diligence}
+itm_stat_descr_blade_WR {Augmente la régénération de santé en combat par cinq.}
+itm_stat_suit5 {Épaulette}
+itm_stat_descr_suit5 {Les mérites pour la France offrent l’accès gratuit aux bordels et augmentent de 15 % le nombre de recrues dans les colonies françaises.}
+itm_stat_suit4 {Mauvaise réputation}
+itm_stat_descr_suit4 {Tout le monde sait que cette tenue annonce des ennuis, et chaque botte de son porteur cache une lame. Augmente la Puissance de la Flotte de 13 %. Lors des calculs de puissance pour l’intimidation, tout navire est considéré comme Militaire.}
+itm_stat_cirass10 {Équipement}
+itm_stat_descr_cirass10 {Cette armure est équipée de pochettes à munitions pratiques. Vitesse de rechargement augmentée de 15 %.}
+itm_stat_underwater {Encombrement}
+itm_stat_descr_underwater {Cette armure est si lourde que vous ne pouvez avancer qu’au pas en la portant.}
+itm_stat_pistol11 {Engeance infernale}
+itm_stat_descr_pistol11 {Cette arme étonne moins par ses qualités que par le simple fait qu’elle existe. Augmente la compétence Armes lourdes de 20.}
+itm_stat_pistol12 {Démontable}
+itm_stat_descr_pistol12 {Cette arme à feu peut être montée ou démontée, passant d’une utilisation à une main à deux mains.}
+itm_stat_mushket8 {Démontable}
+itm_stat_descr_mushket8 {Cette arme à feu peut être montée ou démontée, passant d'une utilisation à une main à deux mains.}
+itm_stat_spyglassSP3 {Regard punitif}
+itm_stat_descr_spyglassSP3 {Cette longue-vue révèle la peur dans les yeux d’un capitaine ennemi — et indique s’il est prêt à se rendre.}
+itm_stat_reloadTime {Temps de rechargement}
+itm_stat_descr_reloadTime {Temps pour charger la cartouche suivante.}
+itm_stat_kaleuche_amulet2 {Sort d'attaque}
+itm_stat_descr_kaleuche_amulet2 {Rend les monstres du temple Chavinavi vulnérables aux armes et offre une protection contre leurs attaques. Augmente les compétences dans tous les types d'armes de 25 %.}
+itm_stat_kaleuche_amulet3 {Sort de protection}
+itm_stat_descr_kaleuche_amulet3 {Rend les monstres du temple Chavinavi vulnérables aux armes et offre une protection contre leurs attaques. Réduit les dégâts subis par tout type d'arme de 25 % et prévient l'empoisonnement.}
+itm_stat_descr_lacrima_patris_bonus
+{
+~
+~
+Bonus actuel : $number($attr($context.KillerBonus.appliedbonus)) de dégâts et $number($attr($context.KillerBonus.RangeBonus)) % de portée.
+}
+itm_stat_blade_WR_1 {Diligence}
+itm_stat_descr_blade_WR_1 {Augmente la régénération de santé en combat par cinq.}
+itm_stat_secondary_hat6 {Négociant estimé}
+itm_stat_descr_secondary_hat6 {Augmente la puissance des navires marchands de l'escadre de 15 % et réduit la pénalité à la chance de fuir face aux navires marchands de 3.}
+itm_stat_KhaelRoa_item {Jaguar}
+itm_stat_descr_KhaelRoa_item {Multiplie par dix les dégâts infligés par les armes à feu.}
+itm_stat_indian_poison {Taíno}
+itm_stat_descr_indian_poison {Même en cas de blessure légère, provoque dans 100 % des cas un empoisonnement sévère, incurable par antidotes, entraînant la mort en peu de temps.}
+itm_stat_PerksPotion {Oubli}
+itm_stat_descr_PerksPotion {Réinitialise tous les Perks appris du personnage. Après consommation, la mémoire des Perks et des techniques est effacée, mais la capacité demeure — comme si le corps se souvenait de ce qu'il avait accompli, tandis que l'esprit ne s'en souvenait plus.}
+itm_stat_descr_talisman19_InSlot {Chaque perte de 2% de la coque du navire augmente la vitesse et les dégâts des canons de 0.75% et 0.5% respectivement.}
+itm_stat_descr_talisman19_InInventory {Lorsqu’il est conservé dans l’inventaire, il rend tous les officiers immortels.}

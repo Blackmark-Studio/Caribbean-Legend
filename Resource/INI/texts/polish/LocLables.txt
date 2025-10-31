@@ -1,145 +1,143 @@
-
-Antigua			{Antigua}
-Barbados		{Barbados}
-Bermudes		{Isla del Tesoro}
-Beliz			{Jukatan}
-Cuba   			{Kuba}
-Cuba1   		{Kuba}
-Cuba2   		{Kuba}
-Caiman 			{Kajman}
-Cumana 			{Wschodni Kontynent}
-Caracas 		{Kontynent}
-Curacao			{Kurakao}
-Cartahena 		{Kontynent}
-Dominica		{Dominika}
-Guadeloupe		{Gwadelupa}
-Hispaniola 		{Hispaniola}
-Hispaniola1		{Hispaniola}
-Hispaniola2 	{Hispaniola}
-Jamaica			{Jamajka}
-Maracaibo 		{Kontynent}
-Martinique		{Martynika}
-SentMartin		{Św. Marcina}
-Nevis			{Św. Krzysztofa}
-PuertoRico		{Portoryko}
-PortoBello 		{Kontynent}
-Pearl 			{Perłowa Plaża}
-Panama 			{Panama}
-SantaCatalina 	{Kontynent}
-Terks			{Turks}
-Tortuga			{Tortuga}
-Trinidad		{Trynidad}
-Tenotchitlan 	{Lago Peten}
-Mein 			{Zachodni Kontynent}
-KhaelRoa 		{Khael Roa}
-Ksochitam 		{Ksocheatem}
-RockIsland 		{Północne Rafy}
-Providence 		{Opatrzność}
-SantaQuiteria 	{Santa Quiteria}
-IslaDeVieques 	{Isla de Vieques}
-IslaMona 		{Isla Mona}
-IslaDeCoche 	{Isla de Coche}
-Tobago 			{Tobago}
-
-SentJons_town 	{St. John's}
-Pirates_town	{Sharptown}
-Bridge_town		{Bridgetown}
-Beliz_town		{Belize}
-Santiago_town	{Santiago}
-PuertoPrincipe_town	{Puerto del Principe}
-Havana_town		{Hawana}
-Cumana_town		{Kumana}
-Caracas_town	{Karakas}
-Villemstad_town	{Willemstad}
-Cartahena_town	{Kartagena}
-BasTer_town		{Basse-Terre}
-SantoDomingo_town	{Santo Domingo}
-LaVega_town		{La Vega}
-PortPax_town	{Port-au-Prince}
-PortRoyal_town	{Port Royal}
-Maracaibo_town	{Marakaibo}
-FortFrance_town	{Saint-Pierre}
-LeFransua_town	{Le Francois}
-Marigo_town		{Philipsburg}
-Charles_town	{Capsterville}
-SanJuan_town	{San Juan}
-PortoBello_town	{Portobelo}
-Panama_town		{Panama}
-SantaCatalina_town	{Blueweld}
-Tortuga_town	{Tortuga}
-PortSpein_town	{San Jose}
-Tenotchitlan_town	{Tayasal}
-FortOrange_town	{Maroon Town}
-Providence_town	{San Andres}
-Estate 			{Posiadłość Oglethorpe, Anglia}
-DesMoines 		{Des Moines}
-LosTeques_town 	{Kopalnia Los-Teques}
-ExitMine 		{Brama do kopalni}
-Factoria 		{Faktoria}						   
-
-Shore1	{Przylądek Boon}
-Shore2	{Zatoka Falmouth}
-Shore3	{Zatoka Benures}
-Shore4	{Przylądek Harrisona}
-Shore5	{Przylądek Ragged Point}
-Shore6	{Przylądek Catoche}
-Shore7	{Zatoka Cozumel}
-Shore8	{Zatoczka Chetumal}
-Shore9	{Zatoczka Amatique}
-Shore10	{Laguna Caratasca}
-Shore11	{Przylądek Camaguey}
-Shore12	{Zatoka Anny Marii}
-Shore13	{Zatoka Batabano}
-Shore14	{Zatoczka Juventud}
-Shore15	{Przylądek San Antonio}
-Shore16	{Pustynne Wybrzeże}
-Shore17	{Zatoka Esmeraldy}
-Shore18	{Wybrzeże Boca de la Serpienta}
-Shore19	{Zatoczka Carupano}
-Shore20	{Plaża Los Teques}
-Shore21	{Przylądek Aruba}
-Shore22	{Wybrzeże Van Hato}
-Shore23	{Przylądek Santa Maria}
-Shore24	{Laguna Blanca}
-Shore25	{Zatoczka Covenas}
-Shore26	{Plaża Castle Bruce}
-Shore27	{Przylądek Scott's Head}
-Shore28	{Zatoczka Morne-a-l'Eau}
-Shore29	{Plaża Capster}
-Shore30	{Zatoczka Grand-Bourg}
-Shore31	{Niedostępny przylądek}
-Shore32	{Przylądek Izabeli}
-Shore33	{Zatoka Samany}
-Shore34	{Zatoka Gonaives}
-Shore35	{Przylądek Negril}
-Shore36	{Zatoka Portlandzka}
-Shore37	{Zatoka Guajira}
-Shore38	{Zatoka Lamentin}
-Shore39	{Zatoczka Le Marin}
-Shore40	{Plaża Grand Case}
-Shore41	{Zatoka Simpsona}
-Shore42	{Zatoka Piaszczysta}
-Shore43	{Zatoka Półksiężyca}
-Shore44	{Zatoka Aguadilla}
-Shore45	{Plaża Fajardo}
-Shore46	{Laguna Chiriqui}
-Shore47	{Zatoka Komarów}
-Shore48	{Zatoka Darien}
-Shore49	{Zatoka Papagayo}
-Shore50	{Zatoka Nicoya}
-Shore51	{Zatoka Coronado}
-Shore52	{Zatoka Dulce}
-Shore53	{Wybrzeże Komarów}
-Shore54	{Przylądek Pereł}
-Shore55	{Zatoka San Juan del Norte}
-Shore56	{Zatoka Północna}
-Shore57	{Zatoka Południowa}
-Shore58	{Plaża Rybiego Oka}
-Shore59	{Zatoka Scarborough}
-Shore60	{Punkt Galera}
-Shore61	{Tepeyakak}
-Shore62	{Iztapalapa}
-Shore63	{Zatoka San Miguel}
+Antigua {Antigua}
+Barbados {Barbados}
+Bermudes {Isla del Tesoro}
+Beliz {Jukatan}
+Cuba {Kuba}
+Cuba1 {Kuba}
+Cuba2 {Kuba}
+Caiman {Kajman}
+Cumana {Wschodni Kontynent}
+Caracas {Kontynent}
+Curacao {Kurakao}
+Cartahena {Kontynent}
+Dominica {Dominika}
+Guadeloupe {Gwadelupa}
+Hispaniola {Hispaniola}
+Hispaniola1 {Hispaniola}
+Hispaniola2 {Hispaniola}
+Jamaica {Jamajka}
+Maracaibo {Kontynent}
+Martinique {Martynika}
+SentMartin {Św. Marcina}
+Nevis {Św. Krzysztofa}
+PuertoRico {Portoryko}
+PortoBello {Kontynent}
+Pearl {Perłowa Plaża}
+Panama {Panama}
+SantaCatalina {Kontynent}
+Terks {Turks}
+Tortuga {Tortuga}
+Trinidad {Trynidad}
+Tenotchitlan {Lago Peten}
+Mein {Zachodni Kontynent}
+KhaelRoa {Khael Roa}
+Ksochitam {Ksocheatem}
+RockIsland {Północne Rafy}
+Providence {Opatrzność}
+SantaQuiteria {Santa Quiteria}
+IslaDeVieques {Isla de Vieques}
+IslaMona {Isla Mona}
+IslaDeCoche {Isla de Coche}
+Tobago {Tobago}
+MarieGalante {Marie Galante}
+SentJons_town {St. John's}
+Pirates_town {Sharptown}
+Bridge_town {Bridgetown}
+Beliz_town {Belize}
+Santiago_town {Santiago}
+PuertoPrincipe_town {Puerto del Principe}
+Havana_town {Hawana}
+Cumana_town {Kumana}
+Caracas_town {Karakas}
+Villemstad_town {Willemstad}
+Cartahena_town {Kartagena}
+BasTer_town {Basse-Terre}
+SantoDomingo_town {Santo Domingo}
+LaVega_town {La Vega}
+PortPax_town {Port-au-Prince}
+PortRoyal_town {Port Royal}
+Maracaibo_town {Marakaibo}
+FortFrance_town {Saint-Pierre}
+LeFransua_town {Le Francois}
+Marigo_town {Philipsburg}
+Charles_town {Capsterville}
+SanJuan_town {San Juan}
+PortoBello_town {Portobelo}
+Panama_town {Panama}
+SantaCatalina_town {Blueweld}
+Tortuga_town {Tortuga}
+PortSpein_town {San Jose}
+Tenotchitlan_town {Tayasal}
+FortOrange_town {Maroon Town}
+Providence_town {San Andres}
+Estate {Posiadłość Oglethorpe, Anglia}
+DesMoines {Des Moines}
+LosTeques_town {Kopalnia Los-Teques}
+ExitMine {Brama do kopalni}
+Factoria {Faktoria}
+Shore1 {Przylądek Boon}
+Shore2 {Zatoka Falmouth}
+Shore3 {Zatoka Benures}
+Shore4 {Przylądek Harrisona}
+Shore5 {Przylądek Ragged Point}
+Shore6 {Przylądek Catoche}
+Shore7 {Zatoka Cozumel}
+Shore8 {Zatoczka Chetumal}
+Shore9 {Zatoczka Amatique}
+Shore10 {Laguna Caratasca}
+Shore11 {Przylądek Camaguey}
+Shore12 {Zatoka Anny Marii}
+Shore13 {Zatoka Batabano}
+Shore14 {Zatoczka Juventud}
+Shore15 {Przylądek San Antonio}
+Shore16 {Pustynne Wybrzeże}
+Shore17 {Zatoka Esmeraldy}
+Shore18 {Wybrzeże Boca de la Serpienta}
+Shore19 {Zatoczka Carupano}
+Shore20 {Plaża Los Teques}
+Shore21 {Przylądek Aruba}
+Shore22 {Wybrzeże Van Hato}
+Shore23 {Przylądek Santa Maria}
+Shore24 {Laguna Blanca}
+Shore25 {Zatoczka Covenas}
+Shore26 {Plaża Castle Bruce}
+Shore27 {Przylądek Scott's Head}
+Shore28 {Zatoczka Morne-a-l'Eau}
+Shore29 {Plaża Capster}
+Shore30 {Zatoczka Grand-Bourg}
+Shore31 {Niedostępny przylądek}
+Shore32 {Przylądek Izabeli}
+Shore33 {Zatoka Samany}
+Shore34 {Zatoka Gonaives}
+Shore35 {Przylądek Negril}
+Shore36 {Zatoka Portlandzka}
+Shore37 {Zatoka Guajira}
+Shore38 {Zatoka Lamentin}
+Shore39 {Zatoczka Le Marin}
+Shore40 {Plaża Grand Case}
+Shore41 {Zatoka Simpsona}
+Shore42 {Zatoka Piaszczysta}
+Shore43 {Zatoka Półksiężyca}
+Shore44 {Zatoka Aguadilla}
+Shore45 {Plaża Fajardo}
+Shore46 {Laguna Chiriqui}
+Shore47 {Zatoka Komarów}
+Shore48 {Zatoka Darien}
+Shore49 {Zatoka Papagayo}
+Shore50 {Zatoka Nicoya}
+Shore51 {Zatoka Coronado}
+Shore52 {Zatoka Dulce}
+Shore53 {Wybrzeże Komarów}
+Shore54 {Przylądek Pereł}
+Shore55 {Zatoka San Juan del Norte}
+Shore56 {Zatoka Północna}
+Shore57 {Zatoka Południowa}
+Shore58 {Plaża Rybiego Oka}
+Shore59 {Zatoka Scarborough}
+Shore60 {Punkt Galera}
+Shore61 {Tepeyakak}
+Shore62 {Iztapalapa}
+Shore63 {Zatoka San Miguel}
 Shore64 {Zatoka Rafowa}
 Shore65 {Skalista Zatoczka}
 Shore66 {Plaża Rekinów}
@@ -159,283 +157,240 @@ Shore76 {Przylądek Utopionego Człowieka}
 Shore77 {Zatoka Vieques}
 Shore78 {Zatoka Piratów}
 Shore79 {Przylądek Cabo Rojo}
-
-Shore_ship1	{Zatoczka Sabo-Matila}
-Shore_ship2	{Zatoka Grozy}
-Shore_ship3	{Przylądek złudnych nadziei}
-Shore_ship4	{Przeklęta Zatoka}
-
-Shore_mask	{Grota Strażnika}
-
-Mayak1	{Latarnia Morska na Trynidadzie}
-Mayak2	{Latarnia Morska na Barbados}
-Mayak3	{Latarnia Morska w Port Royal}
-Mayak4	{Latarnia Morska na Gwadelupie}
-Mayak5	{Latarnia Morska w Capsterville}
-Mayak6	{Latarnia Morska na Tortudze}
-Mayak7	{Latarnia Morska w Port-au-Prince}
-Mayak8	{Latarnia Morska w Santo Domingo}
-Mayak9	{Latarnia Morska w Santiago}
-Mayak10	{Latarnia Morska w Havanie}
-Mayak11	{Latarnia Morska w Kartagenie}
-
-Bridgetown		{Bridgetown}
-Bridgetown Town	{Bridgetown}
-Bridgetown Fort	{Fort w Bridgetown}
-Bridgetown Port	{Port w Bridgetown}
-
-SanJuan			{San Juan}
-SanJuan Town	{San Juan}
-SanJuan Fort	{Fort w San Juan}
-SanJuan Port	{Port w San Juan}
-
-Santiago		{Santiago}
-Santiago Town	{Santiago}
-Santiago Fort	{Fort w Santiago}
-Santiago Port	{Port w Santiago}
-
-PuertoPrincipe	{Puerto del Principe}
-PuertoPrincipe Town	{Puerto del Principe}
-PuertoPrincipe Fort	{Fort w Puerto del Principe}
-PuertoPrincipe Port	{Port w Puerto del Principe}
-
-SentJons		{St. John's}
-SentJons Town	{St. John's}
-SentJons Fort	{Fort w St. John's}
-SentJons Port	{Port w St. John's}
-
-PortRoyal		{Port Royal}
-PortRoyal Town	{Port Royal}
-PortRoyal Fort	{Fort w Port Royal}
-PortRoyal Port	{Port w Port Royal}
-
-FortOrange		{Bordowe miasteczko}
-FortOrange Town	{Bordowe miasteczko}
-
-Villemstad		{Willemstad}
-Villemstad Town	{Willemstad}
-Villemstad Fort	{Fort w Willemstad}
-Villemstad Port	{Port w Willemstad}
-
-BasTer			{Basse-Terre}
-BasTer Town		{Basse-Terre}
-BasTer Fort		{Fort w Basse-Terre}
-BasTer Port		{Port w Basse-Terre}
-
-LaVega			{La Vega}
-LaVega Town		{La Vega}
-LaVega Fort		{Fort w La Vega}
-LaVega Port		{Port w La Vega}
-
-SantoDomingo	{Santo Domingo}
-SantoDomingo Town	{Santo Domingo}
-SantoDomingo Fort	{Fort w Santo-Domingo}
-SantoDomingo Port	{Port w Santo-Domingo}
-
-PortPax			{Port-au-Prince}
-PortPax Town	{Port-au-Prince}
-PortPax Fort	{Fort w Port-au-Prince}
-PortPax Port	{Port w Port-au-Prince}
-
-Pirates			{Sharptown}
-Pirates Town	{Sharptown}
-Pirates Port	{Port w Sharptown}
-
-FortFrance		{Saint-Pierre}
-FortFrance Town	{Saint-Pierre}
-FortFrance Fort	{Fort w Saint-Pierre}
-FortFrance Port	{Port w Saint-Pierre}
-
-LeFransua		{Le Francois}
-LeFransua Town	{Le Francois}
-LeFransua Port	{Port w Le Francois}
-
-Havana			{Hawana}
-Havana Town		{Hawana}
-Havana Fort		{Fort w Hawanie}
-Havana Port		{Port w Hawanie}
-
-Charles			{Capsterville}
-Charles Town	{Capsterville}
-Charles Fort	{Fort w Capsterville}
-Charles Port	{Port w Capsterville}
-
-PortoBello Town	{Portobelo}
-PortoBello Fort	{Fort w Portobelo}
-PortoBello Port	{Port w Portobelo}
-
-PortSpein		{San Jose}
-PortSpein Town	{San Jose}
-PortSpein Fort	{Fort w San Jose}
-PortSpein Port	{Port w San Jose}
-
-Tortuga			{Tortuga}
-Tortuga Town	{Tortuga}
-Tortuga Fort	{Fort w Tortudze}
-Tortuga Port	{Port w Tortudze}
-
-Marigo			{Philipsburg}
-Marigo Town		{Philipsburg}
-Marigo Fort		{Fort w Philipsburgu}
-Marigo Port		{Port w Philipsburgu}
-
-Panama Town		{Panama}
-Panama Fort		{Fort w Panamie}
-Panama Port		{Port w Panamie}
-
-Cartahena Town	{Kartagena}
-Cartahena Fort	{Fort w Kartagenie}
-Cartahena Port	{Port w Kartagenie}
-
-Maracaibo Town	{Marakaibo}
-Maracaibo Fort	{Fort w Marakaibo}
-Maracaibo Port	{Port w Marakaibo}
-
-Caracas Town	{Karakas}
-Caracas Fort	{Fort w Karakas}
-Caracas Port	{Port w Karakas}
-
-Cumana Town		{Kumana}
-Cumana Fort		{Fort w Kumanie}
-Cumana Port		{Port w Kumanie}
-
-SantaCatalina Town	{Blueweld}
-SantaCatalina Fort	{Fort w Blueweld}
-SantaCatalina Port	{Port w Blueweld}
-
-Beliz Town		{Belize}
-Beliz Fort		{Fort w Belize}
-Beliz Port		{Port w Belize}
-
-SanAndres		{San Andres}
-SanAndres Town	{San Andres}
-SanAndres Fort	{Fort w San Andres}
-SanAndres Port	{Port w San Andres}
-
-IslaMona {Isla Mona}
+Shore_ship1 {Zatoczka Sabo-Matila}
+Shore_ship2 {Zatoka Grozy}
+Shore_ship3 {Przylądek złudnych nadziei}
+Shore_ship4 {Przeklęta Zatoka}
+Shore_mask {Grota Strażnika}
+Mayak1 {Latarnia Morska na Trynidadzie}
+Mayak2 {Latarnia Morska na Barbados}
+Mayak3 {Latarnia Morska w Port Royal}
+Mayak4 {Latarnia Morska na Gwadelupie}
+Mayak5 {Latarnia Morska w Capsterville}
+Mayak6 {Latarnia Morska na Tortudze}
+Mayak7 {Latarnia Morska w Port-au-Prince}
+Mayak8 {Latarnia Morska w Santo Domingo}
+Mayak9 {Latarnia Morska w Santiago}
+Mayak10 {Latarnia Morska w Havanie}
+Mayak11 {Latarnia Morska w Kartagenie}
+Bridgetown {Bridgetown}
+Bridgetown Town {Bridgetown}
+Bridgetown Fort {Fort w Bridgetown}
+Bridgetown Port {Port w Bridgetown}
+SanJuan {San Juan}
+SanJuan Town {San Juan}
+SanJuan Fort {Fort w San Juan}
+SanJuan Port {Port w San Juan}
+Santiago {Santiago}
+Santiago Town {Santiago}
+Santiago Fort {Fort w Santiago}
+Santiago Port {Port w Santiago}
+PuertoPrincipe {Puerto del Principe}
+PuertoPrincipe Town {Puerto del Principe}
+PuertoPrincipe Fort {Fort w Puerto del Principe}
+PuertoPrincipe Port {Port w Puerto del Principe}
+SentJons {St. John's}
+SentJons Town {St. John's}
+SentJons Fort {Fort w St. John's}
+SentJons Port {Port w St. John's}
+PortRoyal {Port Royal}
+PortRoyal Town {Port Royal}
+PortRoyal Fort {Fort w Port Royal}
+PortRoyal Port {Port w Port Royal}
+FortOrange {Bordowe miasteczko}
+FortOrange Town {Bordowe miasteczko}
+Villemstad {Willemstad}
+Villemstad Town {Willemstad}
+Villemstad Fort {Fort w Willemstad}
+Villemstad Port {Port w Willemstad}
+BasTer {Basse-Terre}
+BasTer Town {Basse-Terre}
+BasTer Fort {Fort w Basse-Terre}
+BasTer Port {Port w Basse-Terre}
+LaVega {La Vega}
+LaVega Town {La Vega}
+LaVega Fort {Fort w La Vega}
+LaVega Port {Port w La Vega}
+SantoDomingo {Santo Domingo}
+SantoDomingo Town {Santo Domingo}
+SantoDomingo Fort {Fort w Santo-Domingo}
+SantoDomingo Port {Port w Santo-Domingo}
+PortPax {Port-au-Prince}
+PortPax Town {Port-au-Prince}
+PortPax Fort {Fort w Port-au-Prince}
+PortPax Port {Port w Port-au-Prince}
+Pirates {Sharptown}
+Pirates Town {Sharptown}
+Pirates Port {Port w Sharptown}
+FortFrance {Saint-Pierre}
+FortFrance Town {Saint-Pierre}
+FortFrance Fort {Fort w Saint-Pierre}
+FortFrance Port {Port w Saint-Pierre}
+LeFransua {Le Francois}
+LeFransua Town {Le Francois}
+LeFransua Port {Port w Le Francois}
+Havana {Hawana}
+Havana Town {Hawana}
+Havana Fort {Fort w Hawanie}
+Havana Port {Port w Hawanie}
+Charles {Capsterville}
+Charles Town {Capsterville}
+Charles Fort {Fort w Capsterville}
+Charles Port {Port w Capsterville}
+PortoBello Town {Portobelo}
+PortoBello Fort {Fort w Portobelo}
+PortoBello Port {Port w Portobelo}
+PortSpein {San Jose}
+PortSpein Town {San Jose}
+PortSpein Fort {Fort w San Jose}
+PortSpein Port {Port w San Jose}
+Tortuga Town {Tortuga}
+Tortuga Fort {Fort w Tortudze}
+Tortuga Port {Port w Tortudze}
+Marigo {Philipsburg}
+Marigo Town {Philipsburg}
+Marigo Fort {Fort w Philipsburgu}
+Marigo Port {Port w Philipsburgu}
+Panama Town {Panama}
+Panama Fort {Fort w Panamie}
+Panama Port {Port w Panamie}
+Cartahena Town {Kartagena}
+Cartahena Fort {Fort w Kartagenie}
+Cartahena Port {Port w Kartagenie}
+Maracaibo Town {Marakaibo}
+Maracaibo Fort {Fort w Marakaibo}
+Maracaibo Port {Port w Marakaibo}
+Caracas Town {Karakas}
+Caracas Fort {Fort w Karakas}
+Caracas Port {Port w Karakas}
+Cumana Town {Kumana}
+Cumana Fort {Fort w Kumanie}
+Cumana Port {Port w Kumanie}
+SantaCatalina Town {Blueweld}
+SantaCatalina Fort {Fort w Blueweld}
+SantaCatalina Port {Port w Blueweld}
+Beliz Town {Belize}
+Beliz Fort {Fort w Belize}
+Beliz Port {Port w Belize}
+SanAndres {San Andres}
+SanAndres Town {San Andres}
+SanAndres Fort {Fort w San Andres}
+SanAndres Port {Port w San Andres}
 IslaMona Town {Isla Mona}
-
-LosTeques		{Kopalnia Los-Teques}
-LosTeques Town	{Kopalnia Los-Teques}
-
-Duel Field		{Pole Pojedynkowe}
-Boarding deck	{Pokład} 
-Orlop deck		{Pokład Orlopa} 
-Fort inside		{Fort}
-Sea				{Morze}
-Jungle			{Dżungla}
-Street			{Ulice}
-ExitTown		{Bramy Miasta}
-Graveyard		{Cmentarz}
-Port			{Port}
-Tavern			{Karczma}
+LosTeques {Kopalnia Los-Teques}
+LosTeques Town {Kopalnia Los-Teques}
+Duel Field {Pole Pojedynkowe}
+Boarding deck {Pokład}
+Orlop deck {Pokład Orlopa}
+Fort inside {Fort}
+Sea {Morze}
+Jungle {Dżungla}
+Street {Ulice}
+ExitTown {Bramy Miasta}
+Graveyard {Cmentarz}
+Port {Port}
+Tavern {Karczma}
 Tavern upstairs {Pokój w Karczmie}
-Store			{Sklep}
-Shipyard		{Stocznia}
-PackHouse		{Magazyn}
-Townhall		{Rezydencja Gubernatora}
-TownhallRoom	{Pokój w Rezydencji}
-Residence		{Rezydencja}
-PortOffice		{Portowa Administracja}
-Church			{Kosciół}
-Incquisitio		{Inkwizycja}
-Maltese Order	{Zakon Maltański}
-Incas Temple	{Swiątynia Inków}
-Usurer House	{Bank}
-House			{Dom}
-ammo			{Zbrojownia}
-shack			{Chatka}
-Room			{Pokój}
-Cabinet			{Study}
-Bedroom			{Sypialnia}
-Сhapel			{Kaplica}
-Crypt			{Krypta}
-Exit			{Quit}
-The cavern		{Jaskinia}
-?????			{?????}
-Passage			{Most}
-Beach			{Plaża}
-Cave			{Jaskinia}
-Cave			{Jaskinia}
-Cave entrance	{Wejście do Jaskini}
-FloodedCave		{Zalana Jaskinia}
-Grot			{Grota}
-Prison			{Więzienie}
-Lighthouse Inside	{Wnętrze Latarni}
-Mines			{Kopalnia}
-Dungeon			{Lochy}
-Gate			{Brama Miasta}
-Brothel			{Zamtuz}
-Brothel Room	{Prywatny Pokój}
-Village			{Osada}
-Plantation		{Plantacja}
-UnderWater		{Pod Wodą}
-Grotto			{Grota}
-Dunes house		{Dom na Wydmach}
-Torture room	{Pokój Tortur}
-Wine Cellar 	{Piwniczka z Winem}
-
-cabine			{Kajuta}
-My_Campus		{Pokoj Oficerski}
-My_Deck_Medium	{Pokład}
-My_Deck			{Ładownia}
-My_Ship			{Statek}
-Drugstore		{Apteka}
-HWIC_flat		{Siedziba Kompanii}
-Comendant's House	{Dom Komendanta Hawany}
-Tibo House		{Dom Henriego Thibauta}
-Gaspard_Gold House	{Dom Gasparda Goldenteetha}
-Ascold House	{Dom Fadey'a}
-Abby_House		{Dom Abigail Shneur}
-Knippel_House	{Dom Charley Knippel'a}
-Fleetwood_House	{Dom Richarda Fleetwood'a}
-Comendant_House	{Dom Komendanta San Jose}
-Svensons_house	{Dom Jana Svenson'a}
-Gladis_house	{Dom Gladys McArthur}
-Gonsales_house	{Dom Enrique Gonzales'a}
-Loxly_house		{Biuro Alberta Locksley'a}
-
-LostShipsCity	{Loco-Riferte}
-LostShipsCity Town	{Loco-Riferte}
-LSC South		{Island of Dead Ships - South}
-LSC North		{Island of Dead Ships - North}
-LSC Town		{Ulice Loco-Riferte}
-
-Ava Cabin		{Galeon 'Eva'}
-Caroline cabin	{Fregata 'Carolina'}
-CeresSmithy cabin	{Fleuta 'Ceres Smithy'}
-EsmeraldaStoreBig cabin	{Galeon 'Esmeralda'}
-FenixPlatform cabin	{Platforma 'Phoenix'}
-FernandaDiffIndoor cabin	{Fleuta 'Fernanda'}
-FleuronTavern cabin	{Karawela 'Fleron'}
-FurieShipInside2 cabin	{Pinasa 'Fury'}
-GloriaChurch cabin		{Galeon 'Gloria'}
-PlutoStoreSmall cabin	{Fleuta 'Pluto'}
-ProtectorFisher cabin	{Korweta 'Protector'}
-SanAugustineResidence cabin	{Okręt wojenny 'San Augustine'}
-SanGabrielMechanic cabin	{Barka 'San Gabriel'}
-SantaFlorentinaShipInside4 cabin	{Bryg 'Santa Florentina'}
-TartarusPrison cabin	{Okręt wojenny 'Tartarus'}
-VelascoShipInside1 cabin	{Galeon 'Velasco'}
-
-Tenochtitlan	{Tayasal}
-Temple_1		{Świątynia Tohila}
-Temple_2		{Świątynia Kauila}
-Temple_3		{Świątynia Chaka}
-Temple_4		{Świątynia Kinich Ahaw}
-Temple_5		{Świątynia Itzamny}
-Temple_6		{Świątynia Ek Chuah}
-TempleTreasure	{Skarbiec}
-TempleGreatInside	{Wielka Świątynia}
-TempleRoundInside	{Swiatynia Kukulcana}
-TempleUnderwater	{Podwodny labirynt}
-
-Maze			{Świątynia Chavinsów}
-Alcove			{Sanktuarium}
-Merrimancave	{Jaskinia Merrimana}
+Store {Sklep}
+Shipyard {Stocznia}
+PackHouse {Magazyn}
+Townhall {Rezydencja Gubernatora}
+TownhallRoom {Pokój w Rezydencji}
+Residence {Rezydencja}
+PortOffice {Portowa Administracja}
+Church {Kosciół}
+Incquisitio {Inkwizycja}
+Maltese Order {Zakon Maltański}
+Incas Temple {Swiątynia Inków}
+Usurer House {Bank}
+House {Dom}
+ammo {Zbrojownia}
+shack {Chatka}
+Room {Pokój}
+Cabinet {Study}
+Bedroom {Sypialnia}
+Сhapel {Kaplica}
+Crypt {Krypta}
+Exit {Quit}
+The cavern {Jaskinia}
+????? {?????}
+Passage (мост)Beach { }
+Cave {Jaskinia}
+Cave entrance {Wejście do Jaskini}
+FloodedCave {Zalana Jaskinia}
+Grot {Grota}
+Prison {Więzienie}
+Lighthouse Inside {Wnętrze Latarni}
+Mines {Kopalnia}
+Dungeon {Lochy}
+Gate {Brama Miasta}
+Brothel {Zamtuz}
+Brothel Room {Prywatny Pokój}
+Village {Osada}
+Plantation {Plantacja}
+UnderWater {Pod Wodą}
+Grotto {Grota}
+Dunes house {Dom na Wydmach}
+Torture room {Pokój Tortur}
+Wine Cellar {Piwniczka z Winem}
+cabine {Kajuta}
+My_Campus {Pokoj Oficerski}
+My_Deck_Medium {Pokład}
+My_Deck {Ładownia}
+My_Ship {Statek}
+Drugstore {Apteka}
+HWIC_flat {Siedziba Kompanii}
+Comendant's House {Dom Komendanta Hawany}
+Tibo House {Dom Henriego Thibauta}
+Gaspard_Gold House {Dom Gasparda Goldenteetha}
+Ascold House {Dom Fadey'a}
+Abby_House {Dom Abigail Shneur}
+Knippel_House {Dom Charley Knippel'a}
+Fleetwood_House {Dom Richarda Fleetwood'a}
+Comendant_House {Dom Komendanta San Jose}
+Svensons_house {Dom Jana Svenson'a}
+Gladis_house {Dom Gladys McArthur}
+Gonsales_house {Dom Enrique Gonzales'a}
+Loxly_house {Biuro Alberta Locksley'a}
+Kristian_house {Dom Christiana}
+LostShipsCity {Loco-Riferte}
+LostShipsCity Town {Loco-Riferte}
+LSC South {Island of Dead Ships - South}
+LSC North {Island of Dead Ships - North}
+LSC Town {Ulice Loco-Riferte}
+Ava Cabin {Galeon 'Eva'}
+Caroline cabin {Fregata 'Carolina'}
+CeresSmithy cabin {Fleuta 'Ceres Smithy'}
+EsmeraldaStoreBig cabin {Galeon 'Esmeralda'}
+FenixPlatform cabin {Platforma 'Phoenix'}
+FernandaDiffIndoor cabin {Fleuta 'Fernanda'}
+FleuronTavern cabin {Karawela 'Fleron'}
+FurieShipInside2 cabin {Pinasa 'Fury'}
+GloriaChurch cabin {Galeon 'Gloria'}
+PlutoStoreSmall cabin {Fleuta 'Pluto'}
+ProtectorFisher cabin {Korweta 'Protector'}
+SanAugustineResidence cabin {Okręt wojenny 'San Augustine'}
+SanGabrielMechanic cabin {Barka 'San Gabriel'}
+SantaFlorentinaShipInside4 cabin {Bryg 'Santa Florentina'}
+TartarusPrison cabin {Okręt wojenny 'Tartarus'}
+VelascoShipInside1 cabin {Galeon 'Velasco'}
+Tenochtitlan {Tayasal}
+Temple_1 {Świątynia Tohila}
+Temple_2 {Świątynia Kauila}
+Temple_3 {Świątynia Chaka}
+Temple_4 {Świątynia Kinich Ahaw}
+Temple_5 {Świątynia Itzamny}
+Temple_6 {Świątynia Ek Chuah}
+TempleTreasure {Skarbiec}
+TempleGreatInside {Wielka Świątynia}
+TempleRoundInside {Swiatynia Kukulcana}
+TempleUnderwater {Podwodny labirynt}
+Maze {Świątynia Chavinsów}
+Alcove {Sanktuarium}
+Merrimancave {Jaskinia Merrimana}
 River {Brzeg rzeki}
 Jungle Fort {Fort w Dzungli}
 Basement {Piwnica}
 Ruins {Ruiny}
-
 Ulysse {Pokład 'Ulysse'}
+La Espada Del Rey {Fluita 'La Espada del Rey'}

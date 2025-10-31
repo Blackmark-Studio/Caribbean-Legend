@@ -1258,7 +1258,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_11":
-			dialog.text = "Wir sind Flüchtlinge... aus "+GetStrSmallRegister(XI_ConvertString("Bergwerkstyp"+pchar.GenQuest.Convict.MineType+"Dat"))+". Bald wird der Ex-Meister es bemerken... und dann sind wir sicher tot.";
+			dialog.text = "Wir sind Flüchtlinge... aus "+GetStrSmallRegister(XI_ConvertString("Bergwerkstyp"+pchar.GenQuest.Convict.MineType+"Gen"))+". Bald wird der Ex-Meister es bemerken... und dann sind wir sicher tot.";
 			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
 			{
 				link.l1 = "Also weißt du, wie man die Segel bedient?";
@@ -4719,14 +4719,14 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_5":
-			dialog.text = "Nein, nein! Dieser alte Käppi mag betrunken sein, aber er behält immer noch seinen Verstand bei sich. Die Bücher und die Schriftrollen wurden mir vom Vater gegeben "+PChar.GenQuest.ChurchQuest_1.ToName+", ich brachte sie zu "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+". Und am Morgen bin ich zur örtlichen Kirche gegangen und habe dem dortigen Padre von diesen Büchern erzählt. Natürlich wollte er sie sehen, ihr wisst wie sie sind, sie sind einfach verrückt nach dem Leben ihrer Heiligen und all dem Zeug. Also schickte ich einen Kabinenjungen, um die Truhe mit ihnen zu holen. Und während ich wartete, beschloss ich ein bisschen zu zocken... und irgendwie habe ich all mein Geld verloren. Alles! Nichts, um den Schnaps zu bezahlen! Also, der Tavernenbesitzer nahm die Bücher als Pfand, und dann gab ich ihm auch noch die Schriftrollen...";
+			dialog.text = "Nein, nein! Dieser alte Käppi mag betrunken sein, aber er behält immer noch seinen Verstand bei sich. Die Bücher und die Schriftrollen wurden mir vom Vater gegeben "+PChar.GenQuest.ChurchQuest_1.ToName+", ich brachte sie zu " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ". Und am Morgen bin ich zur örtlichen Kirche gegangen und habe dem dortigen Padre von diesen Büchern erzählt. Natürlich wollte er sie sehen, ihr wisst wie sie sind, sie sind einfach verrückt nach dem Leben ihrer Heiligen und all dem Zeug. Also schickte ich einen Kabinenjungen, um die Truhe mit ihnen zu holen. Und während ich wartete, beschloss ich ein bisschen zu zocken... und irgendwie habe ich all mein Geld verloren. Alles! Nichts, um den Schnaps zu bezahlen! Also, der Tavernenbesitzer nahm die Bücher als Pfand, und dann gab ich ihm auch noch die Schriftrollen...";
 				link.l1 = "Also, du hast Bücher verkauft, die heiligen Bücher, die dir vom Priester anvertraut wurden  "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Gen")+"?";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_6";
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_6":
 			dialog.text = "Ich weiß, ich weiß... Ich werde in der Hölle für alle Ewigkeit brennen. Ich kann jetzt mein Gesicht weder dem Vater zeigen, der mir diesen Auftrag gab, noch dem, der die Papiere lieferte, noch dem Einheimischen... Wer wird jetzt für meine Seele beten? Und was ist, wenn sie mich exkommunizieren? Oh, wehe mir... Ich brauche einen Schluck... ";
-				link.l1 = "Woah entspann dich, es ist nicht so schlimm. Deine Taten waren mies und gotteslästerlich, und doch bin ich bereit, dir zu helfen. Ich werde deine Schulden begleichen und diese Manuskripte kaufen. Außerdem werde ich, da ich beide genannten Priester bereits kenne, direkt zu "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+" um die Papiere dort abzuliefern. Abgemacht?";
+				link.l1 = "Woah entspann dich, es ist nicht so schlimm. Deine Taten waren mies und gotteslästerlich, und doch bin ich bereit, dir zu helfen. Ich werde deine Schulden begleichen und diese Manuskripte kaufen. Außerdem werde ich, da ich beide genannten Priester bereits kenne, direkt zu " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " um die Papiere dort abzuliefern. Abgemacht?";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_7";
 			break;
 			
@@ -4749,7 +4749,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_1":
 			dialog.text = "...und die Segel! Wir müssen auch die Segel ersetzen!.. Oh, hallo. Bitte seien Sie nicht beleidigt, meine Dame"+GetSexPhrase("ter","s")+" was-auch-immer-dein-Name-ist, aber gerade jetzt, wie du sehen kannst, bin ich ziemlich beschäftigt, also wenn du Geschäfte mit mir hast, bitte mach schnell damit.";
-				link.l1 = "Soweit ich weiß, Vater "+PChar.GenQuest.ChurchQuest_1.ToName+" hat dir einige heilige Papiere in "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Voc")+". Du hast versprochen, sie zu liefern "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+" weil du sowieso in diese Richtung gesegelt bist."; // belamour gen
+				link.l1 = "Soweit ich weiß, Vater "+PChar.GenQuest.ChurchQuest_1.ToName+" hat dir einige heilige Papiere in "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.ToColony+"Voc")+". Du hast versprochen, sie zu liefern " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " weil du sowieso in diese Richtung gesegelt bist."; // belamour gen
 				link.l1.go = "ChurchGenQuest1_DialogShip_2";
 			break;
 			
@@ -4761,7 +4761,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_3":
 			dialog.text = "Niemand, hörst du mich? Niemand wagt es, mich für die Verspätung bei der Lieferung dieser verfluchten Papiere zu beschuldigen!";
-				link.l1 = "Oh, nein, das habe ich sicherlich nicht gemeint. Ich wollte nur deine Last erleichtern. Die Sache ist, dass "+PChar.GenQuest.ChurchQuest_1.ToName+" ist ziemlich besorgt um Bücher und Papiere, die geliefert werden sollen an "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+". Tatsächlich werde ich jetzt gleich dorthin segeln.";
+				link.l1 = "Oh, nein, das habe ich sicherlich nicht gemeint. Ich wollte nur deine Last erleichtern. Die Sache ist, dass "+PChar.GenQuest.ChurchQuest_1.ToName+" ist ziemlich besorgt um Bücher und Papiere, die geliefert werden sollen an " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ". Tatsächlich werde ich jetzt gleich dorthin segeln.";
 				link.l1.go = "ChurchGenQuest1_DialogShip_4";
 			break;
 			
@@ -4774,7 +4774,7 @@ void ProcessDialogEvent()
 		}
 		else // Свитки не отдает
 		{
-			dialog.text = "Mach dir darüber keine Sorgen, Fräulein"+GetSexPhrase("ter","s")+", und reise nach "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+" leichtfertig, denn ich war es, der sich verpflichtet hat, diese Papiere zu liefern, und ich werde es sein, der dies um jeden Preis tut, damit niemand an jeder Ecke schreit, dass Kapitän "+NPChar.name+" hielt nicht sein Wort!";
+			dialog.text = "Mach dir darüber keine Sorgen, Fräulein"+GetSexPhrase("ter","s")+", und reise nach " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " leichtfertig, denn ich war es, der sich verpflichtet hat, diese Papiere zu liefern, und ich werde es sein, der dies um jeden Preis tut, damit niemand an jeder Ecke schreit, dass Kapitän "+NPChar.name+" hielt nicht sein Wort!";
 				link.l1 = "Aber Herr Kapitän, der Punkt ist eigentlich...";
 				link.l1.go = "ChurchGenQuest1_DialogShip_5_2";
 		}
@@ -4796,7 +4796,7 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogShip_5_2":
-			dialog.text = "Eigentlich ist der Punkt, dass ich überhaupt keine Geschäfte mit dir habe. Der Heilige Vater hat mir eine Aufgabe gegeben, die Bücher zu liefern an "+XI_ConvertString("Colony"+PChar.GenQuest.ChurchQuest_1.QuestTown)+" und übergib sie dem örtlichen Priester. Und ich sehe dich dort nicht. Überhaupt nicht! Viel Glück.";
+			dialog.text = "Eigentlich ist der Punkt, dass ich überhaupt keine Geschäfte mit dir habe. Der Heilige Vater hat mir eine Aufgabe gegeben, die Bücher zu liefern an " + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + " und übergib sie dem örtlichen Priester. Und ich sehe dich dort nicht. Überhaupt nicht! Viel Glück.";
 //				link.l1 = "Gut, dann. Du bist ein sehr verantwortungsbewusster Mann, obwohl es dein einziges Verdienst ist. Viel Glück, mein unhöflicher Freund";
 //				link.l1.go = "ChurchGenQuest1_DialogShip_5_2_1"; // Сваливаем, поверили ему
 				link.l2 = "Ich habe genug von deinem frechen Verhalten. Dein dummer Mund könnte selbst einen Engel zur Gewalt zwingen. Ich muss den Willen meines heiligen Vaters erfüllen und ich werde meine Waffe benutzen, wenn ich muss!";

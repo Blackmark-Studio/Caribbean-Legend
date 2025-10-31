@@ -85,7 +85,7 @@ void SetAllContraGoods(ref _refStore, ref _refCharacter)
     string 	tmpstr;
 	int		qty;
 	
-	for (int i = 0; i < GOODS_QUANTITY; i++)
+	for (int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		tmpstr = Goods[i].name;
 		if( CheckAttribute(_refStore,"Goods."+tmpstr+".canbecontraband") )		
@@ -115,7 +115,7 @@ int FindContrabandGoods(ref _refCharacter)
 	if(curStoreIdx >= 0)
 	{
 		_refCharacter.FindContrabandGoods.StoreIdx = curStoreIdx;
-		for(i=0; i<GOODS_QUANTITY; i++)
+		for(i=0; i<GetArraySize(&Goods); i++)
 		{
 			if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME || GetContrabandGoods(&Stores[curStoreIdx],i) == CONTRA_SELL )
 			{
@@ -142,7 +142,7 @@ int FindFirstContrabandGoods(ref _refCharacter)
 	if(curStoreIdx>=0)
 	{
 		_refCharacter.FindContrabandGoods.StoreIdx = curStoreIdx;
-		for(i=0; i<GOODS_QUANTITY; i++)
+		for(i=0; i<GetArraySize(&Goods); i++)
 		{
 			if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME )
 			{
@@ -186,7 +186,7 @@ int FindNextContrabandGoods(ref _refCharacter)
 			int curStoreIdx = sti(_refCharacter.FindContrabandGoods.StoreIdx);
 			if(curStoreIdx>=0)
 			{
-				for(i=sti(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GOODS_QUANTITY; i++)
+				for(i=sti(_refCharacter.FindContrabandGoods.GoodsIdx)+1; i<GetArraySize(&Goods); i++)
 				{
 					if( GetStoreGoodsType(&Stores[curStoreIdx],i) == T_TYPE_CONTRABAND_NAME )
 					{
@@ -468,10 +468,10 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_EXPORT:
-			tradeModify = 0.80 + stf(refGoods.RndPriceModify); 
+			tradeModify = 0.75 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_IMPORT:
-			tradeModify = 1.20 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.30 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_AGGRESSIVE:
 			tradeModify = 1.40 + stf(refGoods.RndPriceModify); 
@@ -492,49 +492,26 @@ int GetContrabandGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref
 
 	if(_PriceType == PRICE_TYPE_BUY) // цена покупки товара игроком
 	{
-		skillModify = 1.325 - _TradeSkill * 0.005; 
+		skillModify = 1.25 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55); 
 		if(tradeType == T_TYPE_CANNONS) cModify = 2.0 - MOD_SKILL_ENEMY_RATE/20.0;
-		if(CheckCharacterPerk(chref,"HT2"))  // belamour legendary edition скидка 15%
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify -= 0.30; }
-			else
-			{
-				if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify -= 0.25; }
-				else skillModify -= 0.15;
-			}						
-		}
-		else
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify -= 0.15; }
-			else
-			{
-				if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify -= 0.10; }
-			}				
-		}
+		
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.9; }
+		else if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify *= 0.95; }
+		
+		if(skillModify < 1.01) skillModify = 1.01;
 
 		costModify = 1.05;
 	}
 	else	// цена продажи товара игроком
 	{
-		skillModify = 0.675 + _TradeSkill * 0.005; 
+		skillModify = 0.75 - 0.15 * pow(makefloat(_TradeSkill) / 10.0, 0.55);
 		if(tradeType == T_TYPE_CANNONS) cModify = 2.0 - MOD_SKILL_ENEMY_RATE/20.0;
-		if(CheckCharacterPerk(chref,"HT2"))  // belamour legendary edition надбавка 15%
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	skillModify += 0.30;
-			else
-			{
-				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.25; }
-				else skillModify += 0.15;
-			}				
-		}
-		else
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	skillModify += 0.15;
-			else
-			{
-				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.10; }
-			}		
-		}
+		
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.1;}
+		else if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify *= 1.05; }
+		
+		if(skillModify > 0.99) skillModify = 0.99;
+		
 		costModify = 0.85;
 	}
 

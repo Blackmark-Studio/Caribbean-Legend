@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoNaPalube_StrongGroup":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50 || sti(pchar.rank) >= 17)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40 || sti(pchar.rank) >= 12)
 			{
 				dialog.text = "是, 船长! ";
 				link.l1 = "布莱克伍德的船怎么办? 不会有问题吗? ";
 				link.l1.go = "AlonsoNaPalube_Vpered";
 				pchar.questTemp.LadyBeth_StrongGroup = true;
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 50) notification("领导力技能检查通过", SKILL_Leadership);
-				if (sti(pchar.rank) >= 17) notification("等级检查通过", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 40) Notification_Skill(true, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) >= 12) Notification_Level(true, 12);
 			}
 			else
 			{
@@ -124,8 +124,8 @@ void ProcessDialogEvent()
 				link.l1.go = "AlonsoNaPalube_LiteGroup";
 				link.l2 = "嗯... 我需要好好想想。 也许我们稍后再讨论这个问题。 ";
 				link.l2.go = "AlonsoNaPalube_Exit";
-				if (GetSummonSkillFromName(pchar, SKILL_Leadership) < 50) notification("领导力技能检查失败 (需要50点) ", SKILL_Leadership);
-				if (sti(pchar.rank) < 17) notification("需要17级", "None");
+				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 40) Notification_Skill(false, 40, SKILL_LEADERSHIP);
+				if (sti(pchar.rank) < 12) Notification_Level(false, 12);
 			}
 		break;
 		
@@ -227,7 +227,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "晚安";
 			else sStr = "祝你今天愉快";
 			dialog.text = "如果你找到任何有价值的东西, 来见我。 我很乐意与另一位船长交谈... 与懂海的人。 " + sStr + "。 ";
-			link.l1 = ""+Goodbye()+"。 ";
+			link.l1 = ""+Goodbye(true)+"。 ";
 			link.l1.go = "LadyBeth_DialogInCity_First_9";
 		break;
 		
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 			if (GetHour() >= 23 || GetHour() < 6) sStr = "嗯, 已经很晚了, 我还有很多工作要做";
 			else sStr = "嗯, 我有很多工作要做";
 			dialog.text = "" + sStr + "。 谢谢你的谈话, 船长。 真的很有趣。 ";
-			link.l1 = "我也谢谢你。 "+Goodbye()+"。 ";
+			link.l1 = "我也谢谢你。 "+Goodbye(true)+"。 ";
 			link.l1.go = "LadyBeth_DialogInCity_Second_5";
 		break;
 		
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_harizma_2":
 			dialog.text = "我一直明白我的路不会容易。 再见, "+pchar.name+"。 也许我们会再见面。 ";
-			link.l1 = ""+Goodbye()+"。 ";
+			link.l1 = ""+Goodbye(true)+"。 ";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -411,7 +411,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_DialogInCity_Third_3_oruzhie_2":
 			dialog.text = "也祝你好运, 船长。 希望你用不上。 再见。 ";
-			link.l1 = ""+Goodbye()+"。 ";
+			link.l1 = ""+Goodbye(true)+"。 ";
 			link.l1.go = "LadyBeth_DialogInCity_Third_4";
 		break;
 		
@@ -532,7 +532,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Helena_7":
 			DialogExit();
-			Return_HelenaOfficer();
+			ReturnOfficer_Helena();
 		break;
 		
 		case "LadyBeth_Mary_1": // 玛丽
@@ -568,7 +568,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Mary_6":
 			DialogExit();
-			Return_MaryOfficer();
+			ReturnOfficer_Mary();
 		break;
 		
 		case "LadyBeth_Tichingitu_1": // 蒂钦吉图
@@ -604,7 +604,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Tichingitu_6":
 			DialogExit();
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "LadyBeth_Irons_1": // 汤米
@@ -640,7 +640,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Irons_6":
 			DialogExit();
-			Return_IronsOfficer();
+			ReturnOfficer_Irons();
 		break;
 		
 		case "LadyBeth_Knippel_1": // 克尼佩尔
@@ -686,7 +686,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Knippel_7":
 			DialogExit();
-			Return_KnippelOfficer();
+			ReturnOfficer_Knippel();
 		break;
 		
 		case "LadyBeth_Alonso_1": // 阿隆索
@@ -934,7 +934,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_8":
 			dialog.text = "再见, 船长。 还有... 照顾好自己。 不要追逐幻影。 ";
-			link.l1 = ""+Goodbye()+"。 ";
+			link.l1 = ""+Goodbye(true)+"。 ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;
@@ -990,7 +990,7 @@ void ProcessDialogEvent()
 		
 		case "LadyBeth_Elizabeth_Woman_10":
 			dialog.text = "再见, 船长。 祝你一帆风顺。 ";
-			link.l1 = ""+Goodbye()+".";
+			link.l1 = ""+Goodbye(true)+".";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LadyBeth_Barbados_Elizabeth_2");
 		break;

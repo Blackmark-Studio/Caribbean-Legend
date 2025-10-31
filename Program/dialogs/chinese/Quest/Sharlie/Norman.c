@@ -366,35 +366,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "迪乔索杀了谁, 让你这么找他, 嗯伙计? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "嘿, 兄弟, 你追查迪乔索, 是他干掉了谁?";
+			link.l1 = "布雷兹·夏普";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "尼古拉斯·夏普";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "阿隆索·德·马尔多纳多";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "教皇";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "你什么意思? 他到底杀了哪个Sharp? 你知道, Sharp家的人很多。 ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "嘘…… (环顾四周) 你也觉得布雷兹·夏普是被迪乔索干掉的?";
+			link.l1 = "没错。我不只是怀疑, 我有证据。航海日志里的记录……";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "你是来开玩笑的吗? 一点敬意都没有! 过来点……";
+			link.l1 = "想得美。";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "嘘... (环顾四周) 所以你也认为Blaze Sharp是被迪乔索杀的? ";
-				link.l1 = "是的。 我不仅有怀疑, 还有确凿证据。 他日志里的记录... ";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "继续说, 小水手... ";
-				link.l1 = "你什么意思? 告诉我更多。 ";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "啊... 好吧。 他杀了人, 就这样。 你知道这里有多少杀手吗? 遍地都是! 不, 水手。 我很久没见过迪乔索了, 帮不了你。 ";
 			link.l1 = "可惜... ";
 			link.l1.go = "exit";

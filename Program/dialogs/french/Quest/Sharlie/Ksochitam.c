@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
 			Log_Info("You've given the Chief's Claw");
-			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 			dialog.text = "Oh, combien j'ai attendu ce moment ! Maintenant je peux enfin partir... Mais comme cadeau d'adieu, j'aimerais vous transmettre une parcelle de mon pouvoir. Ce sera le dernier présent qu'Alberto Casco offrira jamais.";
 			link.l1 = "...";
 			link.l1.go = "guardmask_12";

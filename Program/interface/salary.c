@@ -95,6 +95,7 @@ void ExecuteSailorPayment()
 	ChangeCharacterComplexReputation(pchar,"authority", 1);
 	DeleteAttribute(GetMainCharacter(),"CrewPayment");
 	if(nPaymentQ >= 3000) AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, makefloat(nPaymentQ) / 3000.0);
+	pchar.paymentdate = GetDateString() + " " + GetTimeString();
 }
 
 void SkipSailorPayment()

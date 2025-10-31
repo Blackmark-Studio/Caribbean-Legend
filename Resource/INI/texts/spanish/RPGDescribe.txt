@@ -1,498 +1,305 @@
-_info {
-Файл - описание РПГ системы
-Создан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
+_info
+{
+Файл - описание РПГ системыСоздан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
 }
-
-newline {
+newline
+{
 
 }
-
 Strength
 {
-(Poder) Permite golpear más fuerte y llevar más objetos en el inventario.
-Condiciona las destrezas que requieren esfuerzo físico, especialmente el manejo de "Armas medias", "Armas pesadas" y "Cañones".
-~
-Afecta también al peso que puedes cargar y la cantidad de puntos de "Vida".
+(Poder) Permite golpear más fuerte y llevar más objetos en el inventario.Condiciona las destrezas que requieren esfuerzo físico, especialmente el manejo de "Armas medias", "Armas pesadas" y "Cañones".~Afecta también al peso que puedes cargar y la cantidad de puntos de "Vida".
 }
-
 Perception
 {
-(Intuición) Cómo ves y oyes. 
-Si careces de esta característica, tus balas irán a cualquier lado menos a tu objetivo. 
-~
-Las destrezas "Precisión" y "Sigilo" requieren de esta característica.
+(Intuición) Cómo ves y oyes. Si careces de esta característica, tus balas irán a cualquier lado menos a tu objetivo. ~Las destrezas "Precisión" y "Sigilo" requieren de esta característica.
 }
-
-Agility
-{
-(Reacción) La coordinación y agilidad. 
-Los que carezcan de esta destreza no podrán sacar la espada lo suficientemente rápido. 
-Esta característica es necesaria para la destreza de "Armas ligeras", "Armas medias", "Armas de fuego" y "Abordaje". 
-~
-Determina la cantidad máxima de "Energía".
-}
-
+Agility {Coordinación de movimientos y destreza de las manos. ~ Afecta a: 'Abordaje', 'Armas ligeras', 'Armas medias', 'Pistolas y Mosquetes' y la cantidad de energía ganada por rango.}
 Charisma
 {
-(Autoridad) Es el resultado de tener un rostro masculino y apuesto con cicatrices y una retórica persuasiva. 
-Un líder no tiene que hacer uso de la violencia para apoderarse de los bienes de los mercaderes, se lo darán todo prácticamente gratis. Los mejores hombres lo seguirán y las mujeres más hermosas lo esperarán en cada puerto. 
-~
-Las destrezas "Liderazgo" y "Comercio" requieren de esta característica. Determina cuántos oficiales puedes contratar (Autoridad*2).
+(Autoridad) Es el resultado de tener un rostro masculino y apuesto con cicatrices y una retórica persuasiva. Un líder no tiene que hacer uso de la violencia para apoderarse de los bienes de los mercaderes, se lo darán todo prácticamente gratis. Los mejores hombres lo seguirán y las mujeres más hermosas lo esperarán en cada puerto. ~Las destrezas "Liderazgo" y "Comercio" requieren de esta característica. Determina cuántos oficiales puedes contratar (Autoridad*2).
 }
-
-Intellect
-{
-(Talento) Es la capacidad de obtener conocimiento, sabiduría y tomar decisiones correctas en poco tiempo. 
-Una persona talentosa necesita menos tiempo para recargar los cañones y no tendrá ningún problema para contratar más hombres a un menor precio. Podrás usar las herramientas de navegación de forma más sencilla.
-~
-Las destrezas "Comercio", "Cañones" y "Navegación" requieren de esta característica. 
-Lo más importante es que determina la rapidez con la que ganas "Rango" y desbloqueas puntos de "habilidad".
-}
-
+Intellect {Inclinaciones y aptitudes innatas, ingenio y capacidad de adaptarse rápidamente a las situaciones. ~ Afecta al “Comercio”, “Artillería”, “Navegación” y la cantidad de energía ganada por rango.}
 Endurance
 {
-(Aguante) Es la clave para sobrevivir ante piratas, clientes y caza fortunas. 
-~
-Las destrezas "Reparación" y "Defensa" requieren de esta característica. 
-Determina los puntos de "Vida" y el peso máximo.
+(Aguante) Es la clave para sobrevivir ante piratas, clientes y caza fortunas. ~Las destrezas "Reparación" y "Defensa" requieren de esta característica. Determina los puntos de "Vida" y el peso máximo.
 }
-
 Luck
 {
-(Suerte) Se dice que 'es mejor nacer con suerte que rico'.
-~
-Las destrezas "Armas de fuego", "Fortuna" y "Sigilo" requieren de esta característica. 
-Determina el resultado de algunos eventos del juego en las misiones que se generan y el valor de lo que encuentras (Premios).
+(Suerte) Se dice que 'es mejor nacer con suerte que rico'.~Las destrezas "Armas de fuego", "Fortuna" y "Sigilo" requieren de esta característica. Determina el resultado de algunos eventos del juego en las misiones que se generan y el valor de lo que encuentras (Premios).
 }
-
 Crit
 {
-Probabilidad básica de infligir un golpe/disparo crítico al enemigo.
+Probabilidad base de infligir un golpe o disparo crítico al enemigo.
 ~
-Los indicadores están influidos por:
-Suerte, destrezas personales y equipo: golpe crítico
-Suerte e Intuición: disparo crítico (solo para armas raras y de alta calidad)
+Depende de S y P.
 ~
-Las habilidades y el equipamiento del enemigo pueden reducir significativamente este parámetro.
+Los Perks y el equipo pueden aumentar esta probabilidad.
 }
-
 CharDefence
 {
-Indicadores básicos de protección contra armas blancas, armas de fuego y golpes críticos.
-~
-El rendimiento se ve afectado por las destrezass personales y el equipamiento.
-~
-No se ajustan a las destrezas y equipamiento del enemigo.
+Estadísticas básicas de Protección contra daño. Reducen todo el daño recibido en un porcentaje específico.
+ ~
+ Los valores se ven afectados por los Perks personales y el equipo.
 }
-
 FencingL
 {
-Capacidad para manejar armas ligeras, principalmente estoques y armas mortales pequeñas. 
-Depende de: "Reacción" e "Intuición". (R*0,9+I*0,1)
+Habilidad para manejar espadas ligeras, floretes y similares.
+ (R*0.9+I*0.1)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
-
 FencingS
 {
-Capacidad para manejar armas medias, como los sables, armas que no solo necesitan fuerza sino también pericia. 
-Depende de: "Poder" y "Reacción". (P*0,6+R*0,4)
+Habilidad para manejar hojas medianas y equilibradas, como sables, que requieren fuerza y agilidad.
+ (P*0.6+R*0.4)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
-
 FencingH
 {
-Capacidad para manejar armas pesadas, como espadas anchas y hachas. Se necesita de mucha fortaleza física. 
-Depende de: "Poder" y "Aguante". (P*0,9+E*0,1)
+Habilidad para manejar armas pesadas como espadones y hachas. Requiere mucha fuerza física.
+ (P*0.9+E*0.1)
+ ~
+ Afecta al daño del arma y al costo de Energía de los ataques.
 }
-
 Pistol
 {
-Destreza en el uso de todo tipo de armas de fuego manuales. 
-Depende de: 'Reacción' y 'Suerte' (R*0,5+S*0,6)
+Habilidad para usar todo tipo de armas de fuego.
+ (R*0.4+S*0.6)
+ ~
+ Afecta al daño y a la velocidad de recarga.
 }
-
 Fortune
 {
-Fortuna: En resumidas cuentas, tener moña. Hace falta para todo.
-Depende de: "Suerte" (S)
+Fortuna: En resumidas cuentas, tener moña. Hace falta para todo.Depende de: "Suerte" (S)
 }
-
 Leadership
 {
-El liderazgo es un don que sirve para persuadir y manipular a la gente. 
-Afecta a los resultados de los eventos en los que la reputación y el carisma personal del personaje desempeñan un papel importante. 
-Depende de: "Autoridad" y "Talento" (A*0,9+T*0,1)
+El liderazgo es un don que sirve para persuadir y manipular a la gente. Afecta a los resultados de los eventos en los que la reputación y el carisma personal del personaje desempeñan un papel importante. Depende de: "Autoridad" y "Talento" (A*0,9+T*0,1)
 }
-
 Commerce
 {
-Una destreza para obtener beneficios vendiendo hoy lo que se compró más barato ayer. A un hombre de negocios siempre le vendrá bien conocer las rutas comerciales rentables, hacer buen uso del espacio en la bodega y realizar cálculos precisos. 
-Depende de: "Talento" y "Autoridad" (T*0,8+A*0,2)
+Una destreza para obtener beneficios vendiendo hoy lo que se compró más barato ayer. A un hombre de negocios siempre le vendrá bien conocer las rutas comerciales rentables, hacer buen uso del espacio en la bodega y realizar cálculos precisos. Depende de: "Talento" y "Autoridad" (T*0,8+A*0,2)
 }
-
 Accuracy
 {
-La precisión. Una de las destrezas más importantes para quienes navegan en alta mar. Un capitán decente no malgastará pólvora y balas de cañón solo para asustar a los peces. ¡Cada salva debe dar en el blanco! Y cuando el viento salado dispersa el humo sobre el puente del capitán, ¡no deben quedar barcos enemigos en el horizonte! 
-Depende de: "Intuición" y "Suerte". (I*0,8+S*0,2)
+La precisión. Una de las destrezas más importantes para quienes navegan en alta mar. Un capitán decente no malgastará pólvora y balas de cañón solo para asustar a los peces. ¡Cada salva debe dar en el blanco! Y cuando el viento salado dispersa el humo sobre el puente del capitán, ¡no deben quedar barcos enemigos en el horizonte! Depende de: "Intuición" y "Suerte". (I*0,8+S*0,2)
 }
-
 Cannons
 {
-Cañones: ¡Venga, rápido! ¡Prepara y coloca el cañón! Antes de que te dejen de retumbar los oídos, limpia el cañón otra vez, carga y apunta. No te olvides de echar agua por encima para que no se recalienten. Entre el estruendo y el furor de la batalla no hay tiempo para relajarse. ¡Cargar, apuntar y disparar! 
-Depende de: "Talento" y "Poder". (T*0,6+P*0,4)
+Cañones: ¡Venga, rápido! ¡Prepara y coloca el cañón! Antes de que te dejen de retumbar los oídos, limpia el cañón otra vez, carga y apunta. No te olvides de echar agua por encima para que no se recalienten. Entre el estruendo y el furor de la batalla no hay tiempo para relajarse. ¡Cargar, apuntar y disparar! Depende de: "Talento" y "Poder". (T*0,6+P*0,4)
 }
-
 Sailing
 {
-Navegación: Saber llevar un barco a puerto, ya sea durante una tormenta o a través de la niebla. También consiste en leer los instrumentos de navegación y estar al mando de una escuadra. Cualquier barco en manos de un buen capitán volará como un pájaro. 
-Depende de: "Talento" e "Intuición". (T*0,8+I*0,2)
-~
-Controlar un barco superior a tu destreza en navegación conlleva penalizaciones en todas las destrezas y características del héroe.
- La clase 1 necesita 95 puntos 
- La clase 2 necesita 80 puntos
- La clase 3 necesita 65 puntos
- La clase 4 necesita 45 puntos
- La clase 5 necesita 25 puntos
- La clase 6 necesita 05 punto
-Penalización: La diferencia entre el nivel de navegación actual y el necesario para controlar el barco se restará de todas las "destrezas" del capitán. Además, la diferencia en la clase del barco se restará de las "características" del jugador.
+Capacidad para conducir una embarcación en cualquier condición, utilizar los instrumentos y comandar una escuadra. Incluso la embarcación más caprichosa y poco maniobrable obedecerá la mano firme de un patrón experimentado.
+ Depende de 'Percepción' y 'Talento' (I0.2 + T0.8)
+ ~
+ Para gobernar una embarcación de cierta clase se requiere un nivel mínimo de Navegación correspondiente:
+ clase 1 requiere 90
+ clase 2 requiere 70
+ clase 3 requiere 55
+ clase 4 requiere 40
+ clase 5 requiere 20
+ clase 6 requiere 01
+ ~
+ La falta de Navegación conduce a penalizaciones en todas las habilidades y atributos del héroe. Cuanto mayor sea la diferencia entre el valor actual y el requerido de Navegación, más severas serán las penalizaciones.
 }
-
 Repair
 {
-Reparación. Cuando te llueven las balas enemigas que hacen polvo la cubierta y destrozan las velas, cuando la tormenta te rompe el casco, cuando el viento arranca los cabos de golpe, entonces es cuando la destreza en reparaciones se convierte en la más importante. 
-Depende de: "Aguante" e "Intuición". (E*0,8+I*0,2)
+Reparación. Cuando te llueven las balas enemigas que hacen polvo la cubierta y destrozan las velas, cuando la tormenta te rompe el casco, cuando el viento arranca los cabos de golpe, entonces es cuando la destreza en reparaciones se convierte en la más importante. Depende de: "Aguante" e "Intuición". (E*0,8+I*0,2)
 }
-
 Grappling
 {
-Abordaje: Para saber colocar el barco cerca de la cubierta enemiga, lanzar la pasarela a la primera, arremeter contra el aterrorizado enemigo, arrasar las cubiertas con la fuerza de un huracán y conseguir el merecido premio, hacen falta maña y experiencia. Aun así, el tamaño del botín compensa el esfuerzo. 
-Depende de: "Reacción" y "Talento". (R*0,7+T*0,3)
+Alinear el barco con el buque enemigo, lanzar los garfios para abordar al tembloroso adversario, limpiar las cubiertas y tomar el barco como premio merecido — todo esto requiere gran agilidad y experiencia, pero el botín sin duda compensará todo el esfuerzo.
+ (R*0.7+T*0.3)
+ ~
+ Afecta la distancia de abordaje.
 }
-
 Defence
 {
-Defensa: Según van pasando los días, la tripulación se hace al barco, de modo que cada marinero curtido vale más que diez novatos de la taberna. Por lo tanto, un buen capitán hará lo posible por evitar que sus hombres mueran innecesariamente en combate. 
-Depende de: "Aguante" y "Autoridad". (E*0,5+A*0,5)
+Defensa: Según van pasando los días, la tripulación se hace al barco, de modo que cada marinero curtido vale más que diez novatos de la taberna. Por lo tanto, un buen capitán hará lo posible por evitar que sus hombres mueran innecesariamente en combate. Depende de: "Aguante" y "Autoridad". (E*0,5+A*0,5)
 }
-
 Sneak
 {
-Sigilo: Es una destreza totalmente necesaria si quieres pasar al lado de un fuerte enemigo sin ser visto, ocultarte de tus perseguidores en alta mar o atacar como un relámpago a un enemigo que no te ha visto. 
-Depende de: "Suerte" e "Intuición". (S*0,5+I*0,5)
+Sigilo: Es una destreza totalmente necesaria si quieres pasar al lado de un fuerte enemigo sin ser visto, ocultarte de tus perseguidores en alta mar o atacar como un relámpago a un enemigo que no te ha visto. Depende de: "Suerte" e "Intuición". (S*0,5+I*0,5)
 }
-
 Loyality
 {
-La lealtad de los oficiales la determinan tus acciones. Los oficiales de buena reputación no trabajan para un canalla durante mucho tiempo, mientras que los rufianes no tienen mucha paciencia al llevar una vida honesta.
-~
-Un alto nivel de "Autoridad" puede reducir significativamente la velocidad de caída de la lealtad de los oficiales en el caso de que tus acciones no sean de su agrado.
-~
-Mientras más extrema sea la reputación del oficial, más fuerte será su reacción ante tus acciones. Si la lealtad cae demasiado el oficial abandonará tu grupo.																																																																																			   
-~
-Los niveles de reputación son: Asesino despiadado, Canalla, Villano, Timador, Marinero corriente, Marinero de confianza, Honesto capitán, Hombre de honor, Héroe.
+La lealtad de los oficiales la determinan tus acciones. Los oficiales de buena reputación no trabajan para un canalla durante mucho tiempo, mientras que los rufianes no tienen mucha paciencia al llevar una vida honesta.~Un alto nivel de "Autoridad" puede reducir significativamente la velocidad de caída de la lealtad de los oficiales en el caso de que tus acciones no sean de su agrado.~Mientras más extrema sea la reputación del oficial, más fuerte será su reacción ante tus acciones. Si la lealtad cae demasiado el oficial abandonará tu grupo.   ~Los niveles de reputación son: Asesino despiadado, Canalla, Villano, Timador, Marinero corriente, Marinero de confianza, Honesto capitán, Hombre de honor, Héroe.
 }
-
 Authority
 {
-La autoridad, la fama y el honor distinguen al protagonista 
-del resto de los personajes del juego.
-~
-La autoridad es una evaluación del protagonista por parte de su entorno (principalmente las tripulaciones de los barcos en la escuadra del protagonista). Si tu autoridad cae en desgracia, se te dará la marca negra y se te ofrecerá renunciar voluntaria o forzosamente. ¡Si tu autoridad es alta, tu tripulación podrá soportar cualquier prueba de fe en el futuro!
-~
-La Fama muestra la popularidad del personaje principal. ¡Cualquier puerta se abrirá para una persona famosa, los fanáticos buscarán su atención y los oponentes temblarán ante la mera mención de su nombre!
-Los niveles de fama son: Desconocido, Ordinario, Conocido, Famoso, Legendario.
-~
-El Honor muestra hacia dónde se inclina con mayor frecuencia el protagonista. Crece cuando el héroe salva al mundo y a sus habitantes. O cae a las profundidades por las promesas rotas, violencia y si se perpetran villanías. El honor depende de tus acciones e influye en cómo te perciben los demás personajes del juego.
-Los niveles de honor son: Monstruo, Sinvergüenza, Pirata, Bribón, Aventurero, Honesto capitán, Hidalgo, Héroe, Santo.
-~
-Si el héroe vive una vida monótona y mesurada, elige las soluciones menos arriesgadas y viaja solo por los mares vacíos, su Honor y Fama desaparecerán como la arena entre sus dedos, tendiendo a un punto medio neutral y sin complicaciones. En el juego, la memoria de las comunidades es corta y como promedio no superan el medio año de juego.
+La autoridad, la fama y el honor distinguen al protagonista del resto de los personajes del juego.~La autoridad es una evaluación del protagonista por parte de su entorno (principalmente las tripulaciones de los barcos en la escuadra del protagonista). Si tu autoridad cae en desgracia, se te dará la marca negra y se te ofrecerá renunciar voluntaria o forzosamente. ¡Si tu autoridad es alta, tu tripulación podrá soportar cualquier prueba de fe en el futuro!~La Fama muestra la popularidad del personaje principal. ¡Cualquier puerta se abrirá para una persona famosa, los fanáticos buscarán su atención y los oponentes temblarán ante la mera mención de su nombre!Los niveles de fama son: Desconocido, Ordinario, Conocido, Famoso, Legendario.~El Honor muestra hacia dónde se inclina con mayor frecuencia el protagonista. Crece cuando el héroe salva al mundo y a sus habitantes. O cae a las profundidades por las promesas rotas, violencia y si se perpetran villanías. El honor depende de tus acciones e influye en cómo te perciben los demás personajes del juego.Los niveles de honor son: Monstruo, Sinvergüenza, Pirata, Bribón, Aventurero, Honesto capitán, Hidalgo, Héroe, Santo.~Si el héroe vive una vida monótona y mesurada, elige las soluciones menos arriesgadas y viaja solo por los mares vacíos, su Honor y Fama desaparecerán como la arena entre sus dedos, tendiendo a un punto medio neutral y sin complicaciones. En el juego, la memoria de las comunidades es corta y como promedio no superan el medio año de juego.
 }
-
 Attention_abilities
 {
-¡Atención!
-Algunas habilidades pueden no estar disponibles para el
-arquetipo de protagonista u oficiales seleccionados.
+¡Atención!Algunas habilidades pueden no estar disponibles para elarquetipo de protagonista u oficiales seleccionados.
 }
-
 Personal_abilities
 {
-Las habilidades amplían las capacidades de tu personaje.
+Perks que amplían las capacidades personales del personaje. Se progresa al subir los niveles de habilidades personales.
+ ~
+ Al alcanzar un umbral, obtienes un nuevo punto de Perk personal. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
 }
-
 Ship_abilities
 {
-Habilidades que afectan a la eficacia del control de la nave.
-Pueden ser adquiridas por el protagonista si los oficiales se asignan a los puestos del barco que mejor se ajusten a sus habilidades.
+Perks que afectan a la gestión del barco. Se progresa al subir los niveles de habilidades navales.
+ ~
+ Al alcanzar un umbral, obtienes un nuevo punto de Perk naval. Los diferentes Perks requieren una cantidad distinta de puntos. Normalmente, los más poderosos se encuentran al final del árbol de desarrollo.
+ ~
+ Pueden heredarse por el protagonista de los oficiales asignados a los puestos del barco que dominan su oficio.
 }
-
-Abilities_available
-{
-El número muestra los puntos de habilidad no asignados.
-}
-
-Abilities_active
-{
-El número muestra el número de habilidades que tiene el personaje.
-}
-
+Abilities_available {El número muestra los puntos de habilidad no asignados.}
+Abilities_active {El número muestra el número de habilidades que tiene el personaje.}
 Rank
 {
-Rango: Es el nivel de desarrollo del personaje en el juego. A medida que aumentan la destreza, también lo hace el rango. Al subir el rango también aumenta la vida del personaje, dependiendo del "Aguante". 
-~
-Cuando el personaje suba de rango, atraerá a enemigos más fuertes y conseguirá objetos más sofisticados.
+El rango es un indicador del nivel de desarrollo del personaje en el juego. Se progresa al subir los niveles de habilidades.
+ ~
+ A medida que aumenta el rango del personaje, crecen su Salud y Energía, y comienzan a aparecer con mayor frecuencia enemigos más fuertes y nuevos objetos.
 }
-
 Life
 {
-La vida es un parámetro que determina la firmeza del personaje frente al daño físico. Cuanto mayor sea la vida del personaje, más heridas cortantes, perforantes y de bala podrá recibir antes de morir.
-~
-A medida que aumenta el rango del héroe, también aumenta su Vida, en función de su "Aguante".
+HP — medida de la resistencia de un personaje al daño físico. Cero significa muerte, uno significa un mundo de posibilidades.
+ ~
+ El valor depende de P y E y crece con el rango.
 }
-
 Health
 {
-Salud: Es la condición física general del héroe. Cuanto peor sea la salud, más mermadas se verán tus capacidades. La salud empeora cada vez que te hieren o al consumir pociones con demasiada frecuencia. Se recupera si evitas los combates.
-Si cae por debajo de excelente, el personaje recibe penalizaciones en la destrezas de "PIRATAS".																																																																								   
-~
-La salud se recupera por sí sola, con bastante lentitud, especialmente al navegar. Los placeres amorosos restauran la salud más rápidamente. Dormir en una taberna ayuda un poco menos. La habilidad 'Salud excelente' duplica la recuperación de salud. 
-~
-El fondo dorado del indicador significa que el nivel actual se ha vuelto el máximo para el personaje y no mejorará por sí solo. El fondo blanco indica que el nivel de salud puede aumentar (la salud se recuperará). Los sacerdotes en las iglesias pueden restaurar la salud máxima, pero rara vez y a un costo muy alto. A veces se requiere visitar a 2 o 3 sacerdotes para que la salud "dorada" vuelva a ser "blanca" y pueda mejorar. Según los rumores, se puede mejorar la salud del personaje si se consume una rara poción especializada fabricada por los indios.
-Sin embargo, después de eso, aún se debe esperar a que la salud se recupere por sí sola hasta alcanzar el estado "dorado" excelente.																																																																																																																		   
+Salud: Es la condición física general del héroe. Cuanto peor sea la salud, más mermadas se verán tus capacidades. La salud empeora cada vez que te hieren o al consumir pociones con demasiada frecuencia. Se recupera si evitas los combates.Si cae por debajo de excelente, el personaje recibe penalizaciones en la destrezas de "PIRATAS".   ~La salud se recupera por sí sola, con bastante lentitud, especialmente al navegar. Los placeres amorosos restauran la salud más rápidamente. Dormir en una taberna ayuda un poco menos. La habilidad 'Salud excelente' duplica la recuperación de salud. ~El fondo dorado del indicador significa que el nivel actual se ha vuelto el máximo para el personaje y no mejorará por sí solo. El fondo blanco indica que el nivel de salud puede aumentar (la salud se recuperará). Los sacerdotes en las iglesias pueden restaurar la salud máxima, pero rara vez y a un costo muy alto. A veces se requiere visitar a 2 o 3 sacerdotes para que la salud "dorada" vuelva a ser "blanca" y pueda mejorar. Según los rumores, se puede mejorar la salud del personaje si se consume una rara poción especializada fabricada por los indios.Sin embargo, después de eso, aún se debe esperar a que la salud se recupere por sí sola hasta alcanzar el estado "dorado" excelente.
 }
-
 Energy
 {
-Energía: Es la resistencia del personaje en combate cuerpo a cuerpo. Todos los ataques gastan una cierta cantidad de energía. Si el personaje se cansa durante el combate, tendrá que tomarse un respiro para recuperar la energía.
-~
-La cantidad máxima de energía del héroe depende de su nivel de "Reacción".
+Energía - la reserva de resistencia física del personaje.
+ 
+  ~
+ 
+  Todas las acciones ofensivas y la carrera rápida en combate cuerpo a cuerpo consumen Energía; durante la lucha el personaje se cansa y necesita un respiro para recuperarse.
+ 
+  ~
+ 
+  El valor de Energía depende de R y T y aumenta con el rango.
 }
-
-Money
-{
-Dinero: ¡A todos nos gusta el dinero y por eso lo queremos! Doblones, piastras, táleros, guineas... ¿Qué más da? ¡Todo es oro!
-}
-
+Money {Dinero: ¡A todos nos gusta el dinero y por eso lo queremos! Doblones, piastras, táleros, guineas... ¿Qué más da? ¡Todo es oro!}
 Reputation
 {
-Reputación: Indica cómo te tratan los demás. Puedes tener una reputación alta (positiva), media o baja (negativa). Puedes cambiar tu reputación dependiendo de tus acciones y eso afectará al cómo interpreten los demás personajes el resto de cosas que hagas en el juego.
+El honor refleja cómo la sociedad ve al personaje.
 ~
-La reputación de los personajes comunes permanece sin cambios a lo largo del juego: se cree que su carácter ya está establecido y su comportamiento es bastante monótono.
+Cambia según cómo resuelvas los problemas.
 ~
-El protagonista se distingue de todos los demás personajes por la autoridad, la fama y el honor. La fama del protagonista va desapareciendo con el tiempo y la gente se olvida del pasado. Sin embargo, se acordarán más de lo malo, mientras que lo bueno se olvida deprisa. Si no haces nada, tu reputación bajará hasta "desconocido aventurero".
+Siempre tiende a volver a un estado neutral.
 }
-
 Weight
 {
-Peso: Es el peso máximo que puede cargar el personaje antes de perder movilidad y sufrir penalizaciones a su destreza. 
-Depende del "Poder" y el "Aguante", así como del nivel de dificultad del juego.
-~ 
-Si vas sobrecargado te moverás a un ritmo extremadamente lento.																																
+El peso es la masa total máxima de carga que un personaje puede transportar.
+ Depende de Fuerza, Resistencia, Perks personales y amuletos activos.
+ ~
+ Un personaje sobrecargado se mueve más despacio, recibe penalizaciones y no puede usar el viaje rápido.
 }
-
-Title
-{
-Título honorífico que indica los beneficios que el personaje aporta a la nación que sirve.
-}
-
+Title {Título honorífico que indica los beneficios que el personaje aporta a la nación que sirve.}
 NextExp
 {
-El umbral de experiencia muestra tu rango actual, la cantidad de destreza que has acumulado y las que faltan para pasar de nivel.
-~
-Puedes ganar puntos de destreza con las acciones. Por ejemplo, cada vez que realices un disparo certero con la pistola, ganarás experiencia en la destreza "Armas de fuego". Cada nuevo nivel de destreza conseguido se acumula en el medidor de Rango y en el de Habilidades personales o de barco (dependiendo del tipo de destreza).
-~
-Cada vez que pases el umbral de rango subirás de nivel, aumentando así tus puntos de vida. Cada vez que pases el umbral de habilidad ganarás puntos de habilidad que podrás usar como quieras.}
+El umbral de experiencia muestra tu rango actual, la cantidad de destreza que has acumulado y las que faltan para pasar de nivel.~Puedes ganar puntos de destreza con las acciones. Por ejemplo, cada vez que realices un disparo certero con la pistola, ganarás experiencia en la destreza "Armas de fuego". Cada nuevo nivel de destreza conseguido se acumula en el medidor de Rango y en el de Habilidades personales o de barco (dependiendo del tipo de destreza).~Cada vez que pases el umbral de rango subirás de nivel, aumentando así tus puntos de vida. Cada vez que pases el umbral de habilidad ganarás puntos de habilidad que podrás usar como quieras.
 }
-
 TABLE_PERKS {Habilidades del héroe}
-
 TABLE_PERKS_desc
 {
-Las habilidades son parámetros adicionales del personaje que le permiten obtener nuevas ventajas o abrir oportunidades de juego antes inaccesibles. Las habilidades pueden permitir al personaje convertirse en experto en una especialización concreta o en un profesional generalista que sabe un poco de todo.
-~
-Haga clic en una habilidad para leer su descripción y las condiciones adicionales para desbloquear (si las hay).
-~
-Debido a ciertas relaciones entre las habilidades, algunas no se pueden elegir al principio. Para empezar, tienes que seleccionar las habilidades más básicas y más tarde se desbloquearán las más avanzadas.
+Las habilidades son parámetros adicionales del personaje que le permiten obtener nuevas ventajas o abrir oportunidades de juego antes inaccesibles. Las habilidades pueden permitir al personaje convertirse en experto en una especialización concreta o en un profesional generalista que sabe un poco de todo.~Haga clic en una habilidad para leer su descripción y las condiciones adicionales para desbloquear (si las hay).~Debido a ciertas relaciones entre las habilidades, algunas no se pueden elegir al principio. Para empezar, tienes que seleccionar las habilidades más básicas y más tarde se desbloquearán las más avanzadas.
 }
-
 PERK_TABLE_NEED {Requisitos de habilidad}
-
-PERK_TABLE_NEED_desc
-{
-Para escoger la habilidad seleccionada, el héroe necesita tener desbloqueadas todas las de la lista.
-}
-
+PERK_TABLE_NEED_desc {Para escoger la habilidad seleccionada, el héroe necesita tener desbloqueadas todas las de la lista.}
 Nation_hint
 {
-Es la nación del héroe que tienes al comenzar el juego o la que te ha expedido la patente actual. Puedes verla en tu retrato en el menú 'Inventario'. En el menú 'Nación' y 'Barcos' puedes comprobar la bandera que llevas en el barco y cambiarla para ocultar tu verdadera identidad. Aun así, es posible que te descubran los barcos enemigos o los guardias del fuerte enemigo. El éxito del engaño dependerá del sigilo del héroe. Si la nación elegida ha puesto precio a tu cabeza, te considerará su enemigo.
-~
-La detección enemiga depende de la relación entre los países y las recompensas ofrecidas por el jugador.
-~
-El botón "Ir a" para viajar rápidamente a un sitio no funciona en las ciudades enemigas.
+Es la nación del héroe que tienes al comenzar el juego o la que te ha expedido la patente actual. Puedes verla en tu retrato en el menú 'Inventario'. En el menú 'Nación' y 'Barcos' puedes comprobar la bandera que llevas en el barco y cambiarla para ocultar tu verdadera identidad. Aun así, es posible que te descubran los barcos enemigos o los guardias del fuerte enemigo. El éxito del engaño dependerá del sigilo del héroe. Si la nación elegida ha puesto precio a tu cabeza, te considerará su enemigo.~La detección enemiga depende de la relación entre los países y las recompensas ofrecidas por el jugador.~El botón "Ir a" para viajar rápidamente a un sitio no funciona en las ciudades enemigas.
 }
-
-Drunk_hint
-{
-El alcohol afecta la destreza. Si estás borracho, no sentirás fatiga, pero tampoco podrás hacer trabajos delicados.
-}
-
-England_descr
-{
-Inglaterra: Si alguien conseguirá apartar a España del Nuevo Mundo, será Inglaterra. Mientras que en el Viejo Mundo Francia sigue dando problemas al Escorial con otra guerra de sucesión al trono español, Inglaterra se está haciendo con las colonias españolas una tras otra, en su intento por conseguir el mayor imperio naval de la historia.
-}
-
+Drunk_hint {El alcohol afecta la destreza. Si estás borracho, no sentirás fatiga, pero tampoco podrás hacer trabajos delicados.}
+England_descr {Inglaterra: Si alguien conseguirá apartar a España del Nuevo Mundo, será Inglaterra. Mientras que en el Viejo Mundo Francia sigue dando problemas al Escorial con otra guerra de sucesión al trono español, Inglaterra se está haciendo con las colonias españolas una tras otra, en su intento por conseguir el mayor imperio naval de la historia.}
 France_descr
 {
-El país aún está cubierto en algunos lugares por la Fronda, pero el apogeo del enfrentamiento de los franceses (bajo el patrocinio de España) con la dinastía reinante de los Borbones ya ha quedado atrás. El Rey del Sol de quince años, Luis XIV de Borbón ha tomado en sus manos, echando a su madre, las riendas del país. Más tarde se le conocerá como el artífice de la "Gran Edad" de Francia. El joven rey quiere continuar la empresa de Richelieu para fortalecer el Estado y comienza las primeras reformas. Su mano derecha al principio del juego se convierte en Jean-Baptiste Colbert, el fundador de la Marina francesa y el más famoso intendente de finanzas. Una nueva política fiscal rígida permite no solo pagar las deudas, sino también destinar fondos a las reformas del ejército. Las tropas no son tan numerosas como las británicas, pero ya reciben nuevo uniforme y armamento. En los astilleros se construyen nuevos barcos y las fábricas funden cañones modernos.
-~
-A diferencia de Cromwell, las nuevas colonias no son prioritarias para Luis, perdiendo ante el fortalecimiento de las largas fronteras terrestres y la creación de una flota militar en confrontación con las grandes potencias de Europa.
-~
-Parte de las Antillas fue vendida (por mediación de Philippe de Poincy) a la Orden de Malta, que secretamente persigue con esta compra la reposición de su mermado tesoro de formas poco dignas de los buenos cristianos. Para Jean de Lascaris-Castellar, el Gran Maestre de la Orden, con la pérdida de tierras en Europa del Este llegaron los "días oscuros" y el consejo del prometedor caballero Michel de Monper de utilizar el enfrentamiento secular de España contra los piratas para saquear el oro español le vino muy bien.
-~
-Parece que a los fundadores de la mejor academia naval del mundo no les cuesta nada enviar una expedición de experimentados caballeros franceses, aparentemente para proteger las nuevas colonias...
-~
+El país aún está cubierto en algunos lugares por la Fronda, pero el apogeo del enfrentamiento de los franceses (bajo el patrocinio de España) con la dinastía reinante de los Borbones ya ha quedado atrás. El Rey del Sol de quince años, Luis XIV de Borbón ha tomado en sus manos, echando a su madre, las riendas del país. Más tarde se le conocerá como el artífice de la "Gran Edad" de Francia. El joven rey quiere continuar la empresa de Richelieu para fortalecer el Estado y comienza las primeras reformas. Su mano derecha al principio del juego se convierte en Jean-Baptiste Colbert, el fundador de la Marina francesa y el más famoso intendente de finanzas. Una nueva política fiscal rígida permite no solo pagar las deudas, sino también destinar fondos a las reformas del ejército. Las tropas no son tan numerosas como las británicas, pero ya reciben nuevo uniforme y armamento. En los astilleros se construyen nuevos barcos y las fábricas funden cañones modernos.~A diferencia de Cromwell, las nuevas colonias no son prioritarias para Luis, perdiendo ante el fortalecimiento de las largas fronteras terrestres y la creación de una flota militar en confrontación con las grandes potencias de Europa.~Parte de las Antillas fue vendida (por mediación de Philippe de Poincy) a la Orden de Malta, que secretamente persigue con esta compra la reposición de su mermado tesoro de formas poco dignas de los buenos cristianos. Para Jean de Lascaris-Castellar, el Gran Maestre de la Orden, con la pérdida de tierras en Europa del Este llegaron los "días oscuros" y el consejo del prometedor caballero Michel de Monper de utilizar el enfrentamiento secular de España contra los piratas para saquear el oro español le vino muy bien.~Parece que a los fundadores de la mejor academia naval del mundo no les cuesta nada enviar una expedición de experimentados caballeros franceses, aparentemente para proteger las nuevas colonias...~
 }
-
-Holland_descr
-{
-Los también denominados 'Países Bajos' son una nación joven que se esfuerza en hacerse con el control del comercio. Está aliada con Francia en su lucha común contra los españoles. En cuanto a los demás, los holandeses se mantienen firmemente neutrales.
-}
-
-Spain_descr
-{
-España es una importante potencia colonial, dueña de la mayor parte del Nuevo Mundo. Siempre está bajo presión de las otras dos potencias más importantes, Francia e Inglaterra, que quieren extender sus dominios en esa parte del mundo.
-}
-
+Holland_descr {Los también denominados 'Países Bajos' son una nación joven que se esfuerza en hacerse con el control del comercio. Está aliada con Francia en su lucha común contra los españoles. En cuanto a los demás, los holandeses se mantienen firmemente neutrales.}
+Spain_descr {España es una importante potencia colonial, dueña de la mayor parte del Nuevo Mundo. Siempre está bajo presión de las otras dos potencias más importantes, Francia e Inglaterra, que quieren extender sus dominios en esa parte del mundo.}
 Pirate_descr
 {
-Los piratas son unos tipos que prefieren ignorar las diferencias entre naciones y se limitan a seguir las leyes de los 'Hermanos de la Costa'. Aun así, no dejan de merodear y vender sus botines en Port Royal o Tortuga. A veces les da por aliarse con algún país, pero a todos les une su odio a España. 
-~
-Sin embargo, cualquier patrulla en las colonias reaccionará ante la bandera pirata como un toro ante un trapo rojo. Ser un paria o llevar mercancías clandestinas son los destinos de un pirata.																																																		 
+Los piratas son unos tipos que prefieren ignorar las diferencias entre naciones y se limitan a seguir las leyes de los 'Hermanos de la Costa'. Aun así, no dejan de merodear y vender sus botines en Port Royal o Tortuga. A veces les da por aliarse con algún país, pero a todos les une su odio a España. ~Sin embargo, cualquier patrulla en las colonias reaccionará ante la bandera pirata como un toro ante un trapo rojo. Ser un paria o llevar mercancías clandestinas son los destinos de un pirata.
 }
-
 Hunter_hint
 {
-Es tu relación con el imperio, en lo que se refiere a soldados y ciudadanos. Si haces algo beneficioso por la nación, aumentará tu reputación. Si es al contrario, puede que pongan precio a tu cabeza, comenzando así una persecución sin descanso por tierra y mar. Los cazarrecompensas no faltan en el Caribe.
-~
-Sin embargo, puedes reducir el precio de tu cabeza si haces algo bueno o sobornas al tipo adecuado. Hoy por ti y mañana por mí.
+Es tu relación con el imperio, en lo que se refiere a soldados y ciudadanos. Si haces algo beneficioso por la nación, aumentará tu reputación. Si es al contrario, puede que pongan precio a tu cabeza, comenzando así una persecución sin descanso por tierra y mar. Los cazarrecompensas no faltan en el Caribe.~Sin embargo, puedes reducir el precio de tu cabeza si haces algo bueno o sobornas al tipo adecuado. Hoy por ti y mañana por mí.
 }
-
 LevelComplexity {Dificultad}
-
 LevelComplexity_desc
 {
-Este factor influye en la velocidad en que se incrementa el rango y destrezas de los héroes, en lo fuerte que serán los enemigos, tus ingresos y en muchos otros valores.
-~
-El nivel de dificultad varía desde "Fácil" hasta "Imposible".
+Este factor influye en la velocidad en que se incrementa el rango y destrezas de los héroes, en lo fuerte que serán los enemigos, tus ingresos y en muchos otros valores.~El nivel de dificultad varía desde "Fácil" hasta "Imposible".
 }
-
 RechargePistolOnLine {Recarga automática}
-
 RechargePistolOnLine_desc
 {
-Activas o desactivas la recarga automática de las armas de fuego durante el combate. Si está desactivada solo podrás recargar si envainas la espada.
-~
-Afecta a todos los personajes del juego.
+Activas o desactivas la recarga automática de las armas de fuego durante el combate. Si está desactivada solo podrás recargar si envainas la espada.~Afecta a todos los personajes del juego.
 }
-
 HardcoreGame {Modo Extremo}
-
-HardcoreGame_desc
-{
-¿No sientes suficiente adrenalina? ¿Quieres sentirte como un verdadero corsario y vivir con las consecuencias de las decisiones que tomes? Solo podrás guardar la partida en los santuarios, (iglesias). Tendrás que hacerlo bien sin poder guardar y cargar una y otra vez, con la esperanza de que las cosas vayan como quieres.
-}
-
+HardcoreGame_desc {¿No sientes suficiente adrenalina? ¿Quieres sentirte como un verdadero corsario y vivir con las consecuencias de las decisiones que tomes? Solo podrás guardar la partida en los santuarios, (iglesias). Tendrás que hacerlo bien sin poder guardar y cargar una y otra vez, con la esperanza de que las cosas vayan como quieres.}
 ArcadeSailMode_desc
 {
-Velocidad y dinámica del combate naval. O como valorar minuciosamente tu próximo movimiento táctico.
-Combate dinámico: Maniobras rápidas, alta velocidad del barco y recarga de los cañones. 																																																			
-Combate táctico: acciones mesuradas de todos los personajes, pensamiento pausado y ejecución de órdenes sin prisas.																																																			   
-~
-No se puede decir que uno de estos modos tenga claras ventajas sobre el otro. Más bien, es una elección de comodidad al jugar uno de los elementos principales del juego. 																																																																						   
+Velocidad y dinámica del combate naval. O como valorar minuciosamente tu próximo movimiento táctico.Combate dinámico: Maniobras rápidas, alta velocidad del barco y recarga de los cañones. Combate táctico: acciones mesuradas de todos los personajes, pensamiento pausado y ejecución de órdenes sin prisas.   ~No se puede decir que uno de estos modos tenga claras ventajas sobre el otro. Más bien, es una elección de comodidad al jugar uno de los elementos principales del juego.
 }
-
-EncountersRate_desc
-{
-La frecuencia de encuentros enemigos durante la partida, sobre todo en el mapa del mundo.
-}
-
+EncountersRate_desc {La frecuencia de encuentros enemigos durante la partida, sobre todo en el mapa del mundo.}
 WorldAlivePause {Misiones por países}
-
 WorldAlivePause_desc
 {
-Este modo deja al jugador completar una de las misiones de un imperio, pero a su vez detiene el 'mundo real' (desplazamientos de los gobernadores generales, invasiones de ciudades por otros países, que el héroe defienda la ciudad, etc.) antes de que se acabe la partida. 
-~
-El mundo real vuelve a la acción una vez que se ha completado la misión.
+Este modo deja al jugador completar una de las misiones de un imperio, pero a su vez detiene el 'mundo real' (desplazamientos de los gobernadores generales, invasiones de ciudades por otros países, que el héroe defienda la ciudad, etc.) antes de que se acabe la partida. ~El mundo real vuelve a la acción una vez que se ha completado la misión.
 }
-
 Prisoner {Prisionero}
-
 Prisoner_desc
 {
-Un prisionero es un personaje capturado y retenido en tu barco contra su voluntad. Cualquier prisionero puede ser interrogado en la bodega del barco, en ese caso averiguas su identidad. La mayoría de las veces, puedes conseguir un rescate por él, y si se trata de un pirata, reclutarlo para la campaña del héroe. Puedes encarcelar al pasajero que has llevado a entregar, cuando empieza a resentirse por el largo viaje mientras lo entregas a su destino. Los capitanes son los que se rinden después del abordaje o son secuestrados por ti mientras están en el barco en alta mar. La mayor cantidad del rescate la da el gobernador de la misma nación que el prisionero, pero fluctúa, al igual que la opinión de los propios gobernadores sobre el valor del prisionero.
-Los capitanes cautivos pueden apelar a tu héroe con diversas peticiones. No evites comunicarte con los prisioneros: de improviso te traerá beneficios, ¿quién sabe?
+Un prisionero es un personaje capturado y retenido en tu barco contra su voluntad. Cualquier prisionero puede ser interrogado en la bodega del barco, en ese caso averiguas su identidad. La mayoría de las veces, puedes conseguir un rescate por él, y si se trata de un pirata, reclutarlo para la campaña del héroe. Puedes encarcelar al pasajero que has llevado a entregar, cuando empieza a resentirse por el largo viaje mientras lo entregas a su destino. Los capitanes son los que se rinden después del abordaje o son secuestrados por ti mientras están en el barco en alta mar. La mayor cantidad del rescate la da el gobernador de la misma nación que el prisionero, pero fluctúa, al igual que la opinión de los propios gobernadores sobre el valor del prisionero.Los capitanes cautivos pueden apelar a tu héroe con diversas peticiones. No evites comunicarte con los prisioneros: de improviso te traerá beneficios, ¿quién sabe?
 }
-
 shipChoose_hint
 {
-Haz doble clic con el ratón (o pulsa la tecla "Intro") sobre la imagen de la nave del escolta para empezar a comerciar si las naves no participan en la batalla.
-~
-Puedes iniciar el comercio si pones los barcos aparejados en el mar y eliges el comando rápido 'Comercio'.
-Este método funciona en el modo combate.
+Haz doble clic con el ratón (o pulsa la tecla "Intro") sobre la imagen de la nave del escolta para empezar a comerciar si las naves no participan en la batalla.~Puedes iniciar el comercio si pones los barcos aparejados en el mar y eliges el comando rápido 'Comercio'.Este método funciona en el modo combate.
 }
-
 GoodsCargo_hint
 {
-Es una lista de las mercancías de la bodega.
-~
-Usa la barra deslizante a la derecha de la lista para desplazarte por ella.
-~
-Presione la tecla 'Enter' o haga doble clic en un objeto de la lista para ver la descripción del producto, arrojar una cantidad innecesaria por la borda o dejar caer una mina de pólvora.
+Es una lista de las mercancías de la bodega.~Usa la barra deslizante a la derecha de la lista para desplazarte por ella.~Presione la tecla 'Enter' o haga doble clic en un objeto de la lista para ver la descripción del producto, arrojar una cantidad innecesaria por la borda o dejar caer una mina de pólvora.
 }
-
 EXP_SLIDE {Incremento de la experiencia}
-
-EXP_SLIDE_desc
-{
-Aquí puedes cambiar la velocidad en la que el héroe y sus oficiales adquieren experiencia. Cuanto mayor sea la velocidad, más rápido acumularán puntos de destreza, adquiriendo nuevas destrezas y subiendo de nivel.
-}
-
+EXP_SLIDE_desc {Aquí puedes cambiar la velocidad en la que el héroe y sus oficiales adquieren experiencia. Cuanto mayor sea la velocidad, más rápido acumularán puntos de destreza, adquiriendo nuevas destrezas y subiendo de nivel.}
 Partition_hint
 {
-El Salario de la tripulación debe abonarse a más tardar el día uno de cada mes y se realizan los siguientes pagos:
-~
-Mantenimiento mensual: Los salarios combinados de los marineros y oficiales, compensaciones para los heridos y lesionados, mantenimiento del barco y equipamiento.
-~
-Reparto del botín: Se dividen los objetos de valor y se distribuyen las ganancias entre los miembros de la tripulación.
-~
-Todas las naves y mercancías capturadas son susceptibles de ser divididas. De acuerdo con el código de la "Cofradía de los Hermanos de la Costa", la parte de cualquier marino u oficial fallecido, se destina a sus familiares y amigos.
-~
-El reparto del botín entre los miembros de la tripulación será como sigue:
-- Marineros: 1 parte
-- Oficiales: 10 partes
-- Escoltas: 30 partes
-- Capitanes: 200-650 partes
-Además, el capitán como dueño de los barcos de su escuadra, recibe 20-120 partes por barco, dependiendo de la clase. Y también carga con los gastos relacionados con el mantenimiento y las posibles pérdidas.
-Si el capitán tiene una patente, el 10% de todo el botín se le pagará al tesoro de la nación.
-~
-Retrasar el pago del mes en curso provocará malestar en la tripulación hasta final de mes, mientras que el pago por adelantado aumentará la moral de la tripulación.
-~
-Retrasar el pago del último mes reducirá significativamente la moral de la tripulación y la lealtad de sus oficiales y escoltas.
-~
+El Salario de la tripulación debe abonarse a más tardar el día uno de cada mes y se realizan los siguientes pagos:~Mantenimiento mensual: Los salarios combinados de los marineros y oficiales, compensaciones para los heridos y lesionados, mantenimiento del barco y equipamiento.~Reparto del botín: Se dividen los objetos de valor y se distribuyen las ganancias entre los miembros de la tripulación.~Todas las naves y mercancías capturadas son susceptibles de ser divididas. De acuerdo con el código de la "Cofradía de los Hermanos de la Costa", la parte de cualquier marino u oficial fallecido, se destina a sus familiares y amigos.~El reparto del botín entre los miembros de la tripulación será como sigue:- Marineros: 1 parte- Oficiales: 10 partes- Escoltas: 30 partes- Capitanes: 200-650 partesAdemás, el capitán como dueño de los barcos de su escuadra, recibe 20-120 partes por barco, dependiendo de la clase. Y también carga con los gastos relacionados con el mantenimiento y las posibles pérdidas.Si el capitán tiene una patente, el 10% de todo el botín se le pagará al tesoro de la nación.~Retrasar el pago del mes en curso provocará malestar en la tripulación hasta final de mes, mientras que el pago por adelantado aumentará la moral de la tripulación.~Retrasar el pago del último mes reducirá significativamente la moral de la tripulación y la lealtad de sus oficiales y escoltas.~
 }
-
 SeaBattleSave_desc
 {
-Con esta opción puedes 'Guardar' durante los combates navales.
-¡Si desactivas esta opción bloquearás el guardado del juego durante las batallas en el mar!
+Con esta opción puedes 'Guardar' durante los combates navales.¡Si desactivas esta opción bloquearás el guardado del juego durante las batallas en el mar!
 }
-
-Rains_desc
-{
-Activar/desactivar lluvias y tormentas. Esta opción afecta a la estabilidad del juego.
-}
-
+Rains_desc {Activar/desactivar lluvias y tormentas. Esta opción afecta a la estabilidad del juego.}
 CasualMode_desc
 {
-El modo Clásico es adecuado para los jugadores que quieran centrarse en la historia del personaje principal. Es un poco más difícil que el modo exploración. Requiere más atención y esfuerzo, pero permite sumergirte por completo en la atmósfera creada por los autores del juego.
-~
-El modo Exploración es adecuado para principiantes, así como para jugadores que quieran disponer de más tiempo para completar diversas misiones secundarias y jugar libremente. En este modo, se desactivan o se aumentan los temporizadores en lugares donde no hay giros argumentales y el flujo del tiempo en el mapa global se ralentiza según el nivel de dificultad seleccionado. También se incrementa en un 5% la velocidad del barco del protagonista en el mapa global.
+El modo Clásico es adecuado para los jugadores que quieran centrarse en la historia del personaje principal. Es un poco más difícil que el modo exploración. Requiere más atención y esfuerzo, pero permite sumergirte por completo en la atmósfera creada por los autores del juego.~El modo Exploración es adecuado para principiantes, así como para jugadores que quieran disponer de más tiempo para completar diversas misiones secundarias y jugar libremente. En este modo, se desactivan o se aumentan los temporizadores en lugares donde no hay giros argumentales y el flujo del tiempo en el mapa global se ralentiza según el nivel de dificultad seleccionado. También se incrementa en un 5% la velocidad del barco del protagonista en el mapa global.
 }
+SourceBase {Nivel básico}
+SourceAdmiral {Almirante}
+SourceOfficer {Bono Oficial}
+SourceAccountant {Tesorero}
+SourceMangarosa {Poción de mangarosa}
+SourceHealth {Estado de salud}
+SourceEquip {Equipo}
+SourceQuest {Situación única}
+SourceAlco {Embriagante}
+SourceOverload {Sobrecargado}
+SourceNavyPenalty {Prueba de Navegación fallida}
+CritDamage
+{
+Cantidad de daño crítico. Se aplica después de todos los modificadores.
+ ~
+ Puede aumentarse mediante Perks personales y equipo.
+}
+CritCharDefence
+{
+Reducción total del daño crítico enemigo.
+ ~
+ Puede aumentarse mediante Perks personales y equipo.
+}
+SourceSkill {Habilidad}
+SourceChickenGod {Bendición de Aruba}

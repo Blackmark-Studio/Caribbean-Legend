@@ -37,13 +37,13 @@ void ProcessDialogEvent()
         case "FraOff_HireCheck":
             if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 80)
             {
-                notification("Za mało rozwinięta umiejętność (80)", SKILL_LEADERSHIP);
+                notification("Zbyt niska umiejętność (80)", SKILL_LEADERSHIP);
                 dialog.text = "Zdrajców wszędzie traktuje się tak samo. I ja nim nie będę.";
                 link.l1 = "Miałeś swoją szansę i ją zmarnowałeś. Do broni!";
                 link.l1.go = "FraOff_ExitFight";
                 break;
             }
-            notification("Test zaliczony", SKILL_LEADERSHIP);
+            notification("Sukces!", SKILL_LEADERSHIP);
             dialog.text = "Przysięgałem wierność koronie, a nie nadętym biurokratom, którzy wysyłają nas na śmierć, by ukryć własne błędy. Ale ty — jesteś wrogiem mojego króla i nie mogę tego zignorować.";
 			link.l1 = "Mógłbym odkupić swoje winy wobec twojego kraju choćby jutro — wystarczy zapłacić odpowiedniemu pośrednikowi. To więcej mówi o twoich przełożonych niż o mnie.";
 			link.l1.go = "FraOff_Sucess";
@@ -254,7 +254,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Failed":
-            notification("Za mało rozwinięta umiejętność (50)", SKILL_LEADERSHIP);
+            notification("Zbyt niska umiejętność (50)", SKILL_LEADERSHIP);
 			dialog.text = "Wolność to nie coś, co się dostaje. To coś, co się bierze. I nie każdy, kto mówi o wyborze, potrafi go dać. Są drogi, których nie da się ominąć. Są rozkazy, których nie można zostawić niewykonanych. Moja droga jest tutaj. Mój rozkaz — to wytrwać do końca.";
 			link.l1 = "Więc wybierasz śmierć?";
 			link.l1.go = "Longway_Failed_over";
@@ -267,7 +267,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Success":
-            notification("Test zaliczony", SKILL_LEADERSHIP);
+            notification("Sukces!", SKILL_LEADERSHIP);
 			dialog.text = "Nie jesteś jak Rodenburg. On widział we mnie narzędzie. Ty — równego sobie. Poświęcenie nie jest cnotą. Jestem gotów wysłuchać twoich warunków.";
 			link.l1 = "To proste. Bądź nawigatorem na moim okręcie flagowym. Albo, jeśli wolisz, dostaniesz własny statek i popłyniesz pod moją banderą. Nie będziesz już musiał sprzątać po Kompanii ani ukrywać ich szkieletów w szafie. Jestem wolny — a tobie proponuję tę wolność razem ze mną.";
 			link.l1.go = "Longway_Success_over";
@@ -280,63 +280,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Hired":
-            sld = GetCharacter(NPC_GenerateCharacter("Longway_FP", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
-			sld.name = StringFromKey("QuestsUtilite_42");
-			sld.lastname = StringFromKey("QuestsUtilite_43");
-			sld.greeting = "Longway";
-			sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
-			sld.Dialog.currentnode = "Longway_officer";
-			sld.rank = 20;
-			sld.money = 5000;
-			SetSelfSkill(sld, 45, 45, 45, 40, 50);
-			SetShipSkill(sld, 50, 20, 25, 25, 65, 20, 20, 50, 15);
-			SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-			LAi_SetHP(sld, 250, 250);
-			SetCharacterPerk(sld, "Energaiser");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
-			SetCharacterPerk(sld, "WindCatcher");
-			SetCharacterPerk(sld, "SailsMan");
-			SetCharacterPerk(sld, "SailingProfessional");
-            sTemp = GetGeneratedItem("blade_41");
-            GiveItem2Character(sld, sTemp);
-            EquipCharacterbyItem(sld, sTemp);
-            sTemp = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
-            if(sTemp != "")
-            {
-                GiveItem2Character(sld,   sTemp);
-                EquipCharacterbyItem(sld, sTemp);
-                sTemp = LAi_GetCharacterBulletType(NPChar, GUN_ITEM_TYPE);
-                LAi_SetCharacterBulletType(sld, sTemp);
-                LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, sTemp);
-                sTemp = LAi_GetCharacterGunpowderType(NPChar, GUN_ITEM_TYPE);
-                if(sTemp != "") AddItems(sld, sTemp, 30 + rand(20));
-            }
-			TakeNItems(sld, "potion2", 1);
-            sld.quest.meeting = true;
-			sld.quest.OfficerPrice = sti(pchar.rank)*200; // Артефакт
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.OfficerImmortal = true;
-			sld.Health.HP    = 60.0;
-			sld.Health.maxHP = 60.0;
-            sld.CanTakeMushket = true;
-			SetCharacterPerk(sld, "ShipEscape");
-			AddPassenger(pchar, sld, false);
-			SetCharacterRemovable(sld, true);
-			sld.Payment = true;
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = InitLongwayFP("Longway_FP", NPChar);
+			NPChar.lifeday = 0;
+			LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
+			LAi_SetActorType(NPChar);
+			LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
 
-            NPChar.lifeday = 0;
-            LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
-            LAi_SetActorType(NPChar);
-            LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
-
-            AddDialogExitQuest("pchar_back_to_player");
-            PostEvent("LAi_event_boarding_EnableReload", 5000);
-            DialogExit();
+			AddDialogExitQuest("pchar_back_to_player");
+			PostEvent("LAi_event_boarding_EnableReload", 5000);
+			DialogExit();
 		break;
 	}
 }

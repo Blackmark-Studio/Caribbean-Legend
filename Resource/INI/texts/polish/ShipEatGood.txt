@@ -1,38 +1,37 @@
-Ship_got_good 		{Załadowano %1 centenerów %2}
-Ship_cant_got_good 	{Brak miejsca dla %1}
-
-seg_Balls 		{kul armatnich}
-seg_Grapes 		{kartaczy}
-seg_Knippels 		{kul łańcuchowych}
-seg_Bombs 		{bomb}
-seg_Sailcloth 		{płótna żaglowego}
-seg_Planks 		{desek}
-seg_Slaves 		{niewolników}
-seg_Wheat 		{pszenicy}
-seg_Ebony 		{hebanu}
-seg_Chocolate 		{kakao}
-seg_Suga 		{cukru}
-seg_Wine 		{wina}
-seg_ShipSilk 		{jedwabiu}
-seg_Rum 		{rumu}
-seg_Tobacco 		{tytoniu}
-seg_Coffee 		{kawy}
-seg_Mahogany 		{mahoniu}
-seg_Cinnamon 		{wanilii}
-seg_Copra 		{kopry}
-seg_Paprika 		{papryki}
-seg_Fruits 		{owoców}
-seg_Ale 		{piwa}
-seg_Ropes 		{lin}
-seg_Clothes 		{ubrań}
-seg_Cotton 		{bawełny}
-seg_Sandal 		{drewna twardego}
-seg_Leather 		{skóry}
-seg_Oil 		{żywicy}
-seg_Food 		{jedzenia}
-seg_Weapon 		{broni}
-seg_Gold 		{złota}
-seg_Silver 		{srebra}
-seg_Powder 		{prochu strzelniczego}
-seg_Brick 		{cegieł}
-seg_Medicament 		{medykamentów}
+Ship_got_good {Załadowano %1 centenerów %2}
+Ship_cant_got_good {Brak miejsca dla %1}
+seg_Balls {kul armatnich}
+seg_Grapes {kartaczy}
+seg_Knippels {kul łańcuchowych}
+seg_Bombs {bomb}
+seg_Sailcloth {płótna żaglowego}
+seg_Planks {desek}
+seg_Slaves {niewolników}
+seg_Wheat {pszenicy}
+seg_Ebony {hebanu}
+seg_Chocolate {kakao}
+seg_Sugar { }
+seg_Wine {wina}
+seg_ShipSilk {jedwabiu}
+seg_Rum {rumu}
+seg_Tobacco {tytoniu}
+seg_Coffee {kawy}
+seg_Mahogany {mahoniu}
+seg_Cinnamon {wanilii}
+seg_Copra {kopry}
+seg_Paprika {papryki}
+seg_Fruits {owoców}
+seg_Ale {piwa}
+seg_Ropes {lin}
+seg_Clothes {ubrań}
+seg_Cotton {bawełny}
+seg_Sandal {drewna twardego}
+seg_Leather {skóry}
+seg_Oil {żywicy}
+seg_Food {jedzenia}
+seg_Weapon {broni}
+seg_Gold {złota}
+seg_Silver {srebra}
+seg_Powder {prochu strzelniczego}
+seg_Brick {cegieł}
+seg_Medicament {medykamentów}

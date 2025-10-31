@@ -217,22 +217,16 @@ void Process_Controls(string ControlName)
                 TW_FinishSea_2_TimeScale();
             }
         }
+		
+		if(IsEntity(&worldMap))
+			ControlsMapDesc();
+		else if(bSeaActive && !bAbordageStarted)
+			ControlsDesc();
 	}
 	// boal <--
 
 	switch(ControlName)
 	{
-		case "SwitchCameraOffset":
-			int iPreset = sti(locCamera.OffsetPreset.CurPreset);
-			iPreset++;
-			if(iPreset > 2)
-				iPreset = 1;
-			string sPreset = "preset"+iPreset;
-			locCamera.offsetX = locCamera.OffsetPreset.(sPreset).x;
-			locCamera.offsetY = locCamera.OffsetPreset.(sPreset).y;
-			locCamera.offsetZ = locCamera.OffsetPreset.(sPreset).z;
-			locCamera.OffsetPreset.CurPreset = iPreset;
-		break;
 		case "CharacterCamera_Forward":
 			if(CheckAttribute(locCamera, "zoom.lock"))
 				break;
@@ -240,9 +234,14 @@ void Process_Controls(string ControlName)
 				kZoom = 0.75;
 			else
 				kZoom = stf(locCamera.zoom);
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+				break;
 			kZoom -= 0.05;
-			if(kZoom < 0.5)
-				kZoom = 0.5;
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+			{
+				kZoom = LOCCAMERA_ZOOM_MIN;
+				locCameraSetFPVMode(true);
+			}
 			locCamera.zoom = kZoom;
 			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);
 		break;
@@ -254,10 +253,15 @@ void Process_Controls(string ControlName)
 				kZoom = 0.75;
 			else
 				kZoom = stf(locCamera.zoom);
+			if(kZoom <= LOCCAMERA_ZOOM_MIN)
+			{
+				locCameraSetFPVMode(false);
+				kZoom = LOCCAMERA_ZOOM_MIN;
+			}
 			kZoom += 0.05;
 			if(!bBettaTestMode)
 			{
-				if(kZoom > 1.0) kZoom = 1.0;
+				if(kZoom > LOCCAMERA_ZOOM_MAX) kZoom = LOCCAMERA_ZOOM_MAX;
 			}
 			locCamera.zoom = kZoom;
 			locCameraSetRadius(stf(locCamera.maxRadius)*kZoom);
@@ -305,6 +309,11 @@ void Process_Controls(string ControlName)
                     TW_FinishSea_2_TimeScale();
                 }
             }
+			
+			if(IsEntity(&worldMap))
+				ControlsMapDesc();
+			else if(bSeaActive && !bAbordageStarted)
+				ControlsDesc();
 		break;
 	
 		case "ChangeShowInterface":
@@ -353,7 +362,6 @@ void Process_Controls(string ControlName)
 			if(IsEntity(&worldMap))
 			{
 				pchar.space_press = 1;
-				DeleteAttribute(pchar, "SkipEshipIndex");// boal
 			}
 		break;
 		
@@ -573,7 +581,7 @@ void Process_Controls(string ControlName)
 			}
 		break;
 		
-		case "Dolly":
+		/* case "Dolly":
 			ref location = &Locations[FindLocation(pchar.location)];
 			if (CheckAttribute(location, "dolly"))
 			{
@@ -605,7 +613,7 @@ void Process_Controls(string ControlName)
 					Caleuche_TeleportStart();
 				}
 			}
-		break;
+		break; */
 		
 		case "Ultimate_potion":
 			if (CheckCharacterItem(pchar, "Ultimate_potion")) UltimatePotionEffect();
@@ -894,15 +902,23 @@ void HKT_Button(string sHKB) // быстрый переход
 		if(CheckNationLicence(HOLLAND)) bOk = true;
 	}
 	// <--
+
+	if (GetAttributeInt(pchar, "WeightLoadLevel") > 0)
+	{
+		Log_info(XI_ConvertString("CharacterOverload"));
+		PlaySound("interface\knock.wav");
+		return;
+	}
+
 	if(bOk)
 	{
 		if (sHKB == "Fast_port")
 			PlayerFastTravel(curLocIdx, pchar.location.from_sea, "reload1");
 			else PlayerFastTravel(curLocIdx, sCityID + locID, "");
-	}	
+	}
 	if(pchar.location == sCityID + locID) {Log_info(XI_ConvertString("You are already there")); PlaySound("interface\knock.wav");}
 	if (sHKB == "Fast_port" && pchar.location == pchar.location.from_sea) {Log_info(XI_ConvertString("You are already there")); PlaySound("interface\knock.wav");}
-}	
+}
 
 void HKE_Button(string sHKB) // мушкет и клинки
 {

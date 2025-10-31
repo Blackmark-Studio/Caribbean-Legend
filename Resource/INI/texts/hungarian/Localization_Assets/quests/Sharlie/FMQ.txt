@@ -1,0 +1,76 @@
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ Ami Pinette-et illeti... A pokolba vele, a söpredék bankár nem akarja ôt.}
+FMQ_12 {~ A söpredék bankár segít majd rendezni a dolgot a leleplezés veszélye alatt - Pinette levele nagyon komoly érvágás. Guadeloupe felé kell mennem, és éjszaka a városkapun keresztül bejutni a városba.}
+FMQ_13 {Benseсho}
+FMQ_14 {kereskedelmi konvoj San Joséból}
+FMQ_15 {Felfedezô üzemmód: az idôzítô meghosszabbítva. Fejezd be a küldetést!}
+FMQ_16 {Eljött az este...@<NewStr()>A gyantát kirakodták a hajógyárban...}
+FMQ_17 {Topáz}
+FMQ_18 {Riadóhangok a Topáz-tartánon!}
+FMQ_19 {Szabadon partra szállhatsz}
+FMQ_20 {Felfedezô mód: a küldetés nem sikertelen}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {Angol portyázó csapat próbált beszivárogni a börtönünkbe, de éber parancsnokunk által szervezett csapdába kerültek. Most minden angol rács mögé van zárva, ha-ha!}
+FMQ_25 {Halljuk, halljuk. Nemrég fogták el az angol portyázó csapatot. Ki akarták szabadítani a honfitársaikat a börtönünkbôl, de helyette ôk is oda kerültek!}
+FMQ_26 {Filippe}
+FMQ_27 {Jacobsen}
+FMQ_28 {Brit portyázó csapat érkezett a szigetünkre, de éber parancsnokunk megtalálta és megölte ôket. Ez nagy dolog!}
+FMQ_29 {Hallottátok? A városon kívül csetepaté volt. Megtalálták az angol fosztogató csapatot. A britek nem adták meg magukat és meghaltak a harcban. Szép munka, parancsnok!}
+FMQ_30 {Hajóselyem + 200}
+FMQ_31 {Ó, te vagy az! Bravó, kapitány! Elég bátor voltál ahhoz, hogy szembeszállj az állig felfegyverzett angol kémekkel!}
+FMQ_32 {A hatalmunk nagyra becsül téged, kapitány. És okkal: az angol kémek likvidálásában való segítség nagy dolog!}
+FMQ_33 {Angol partraszállás érkezett a szigetünkre, de éber parancsnokunk nem ásított, megtalálta az összes gazembert, és megölte ôket. Ez az!}
+FMQ_34 {Hallottátok már? A városon kívül harc volt. Angol szabotôröket találtunk. Nem voltak hajlandók megadni magukat, és a katonák megölték ôket. Szép munka a parancsnokunknak!}
+FMQ_35 {Riadó a városban!}
+FMQ_36 {Micsoda szemtelenség! Az angolok éjjel beszivárogtak a városunkba! És a parancsnokunk mégis megtalálta és megölte ôket. Nagy dolog!}
+FMQ_37 {Hallottátok? Volt egy csetepaté a városban. Megtalálták az angol fosztogató csapatot. Az angolok nem adták meg magukat és meghaltak a harcban. Szép munka, parancsnok!}
+FMQ_38 {Nem tetted a hajódat az öbölbe!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {A Zeepard korvett rajtunk van!}
+FMQ_42 {Hallottál már az itteni zûrzavarról? A kormányzó fel van háborodva. Angol kémek szabadították ki honfitársaikat a börtönünkbôl! Azt mondják, hogy néhány franciának köze van ehhez.}
+FMQ_43 {Hallottad? A kormányzó fel van háborodva. Angol kémek szabadították ki honfitársaikat a börtönünkbôl! Azt mondják, hogy néhány franciának köze van ehhez.}
+FMQ_44 {Felfedezô mód: idôzítô meghosszabbítva. Tegyétek ki az utasokat a célállomáson!}
+FMQ_45 {Ó, te vagy az! Bravó, kapitány! Elég bátor volt ahhoz, hogy segítsen a tengerészgyalogosainknak a hollandok barlangjában!}
+FMQ_46 {A kormányzó nagyon megdicséri önt, kapitány. És okkal: Fox embereinek segíteni a bebörtönzött tisztek megmentésében nagy dolog!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {interceptor}
+FMQ_54 {Domingo Albalate elhagyta a hajót.}
+FMQ_55 {Találtál egy nehéz könyvet.}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Jólét}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {20 000 pezót spóroltál Selina Trubalnak.}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Felfedezô mód: a küldetés idôtartama megduplázódott}
+FMQ_69 {Felfedezô mód: törölték az idôzítôt}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Néhány órával késôbb...@<NewStr()>Az árut a partra szállították...}

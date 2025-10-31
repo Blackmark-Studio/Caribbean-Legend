@@ -71,9 +71,7 @@ void ProcessDialogEvent()
 			link.l1 = "Ebbene, dico io... Una forca per qualche misera moneta rubata da un affamato... Tichingitu, cercherò di aiutarti. Conosco Fadey, quel marcantonio in casa del quale ti sei intrufolato. Forse riuscirò a combinare qualcosa... Andrò a parlare col comandante.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
-			pchar.questTemp.Sharlie.Tichingitu = "commandante";
-			AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
-			AddQuestRecord("Tichingitu", "2");
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_1");
 		break;
 		
 		case "Tichingitu_wait":
@@ -93,29 +91,8 @@ void ProcessDialogEvent()
 		case "Tichingitu_7":
 			dialog.text = "Scherzo da faccia pallida? Tichingitu è libero?";
 			link.l1 = "No, non sto scherzando. Stanno per aprire la tua cella e lasciarti andare. Seguimi, ti porterò fuori da questa lurida prigione.";
-			link.l1.go = "Tichingitu_8";
-		break;
-		
-		case "Tichingitu_8":
-			DialogExit();
-			chrDisableReloadToLocation = true;
-			bDisableFastReload = true;
-			DoQuestReloadToLocation("BasTer_exittown", "rld", "aloc9", "TichingituFree"); // 170712
-			pchar.quest.FreeTichingituOver.over = "yes"; //снять таймер
-			if (GetHour() > 17.0)
-			{
-				WaitDate("", 0, 0, 0, 13, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
-			if (GetHour() < 8.0)
-			{
-				WaitDate("", 0, 0, 0, 7, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_2");
 		break;
 		
 		case "Tichingitu_9":
@@ -146,14 +123,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_exit":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			AddQuestRecord("Tichingitu", "5");
-			CloseQuestHeader("Tichingitu");
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload2_back", "none", "", "", "", 10.0);
-			npchar.lifeday = 0;
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.systeminfo.tutorial.Fighter = true;
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_3");
 		break;
 		
 		case "Tichingitu_13":
@@ -164,49 +134,7 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_hire":
 			DialogExit();
-			DeleteAttribute(npchar, "LifeDay");
-			LAi_SetImmortal(npchar, false);
-			npchar.quest.OfficerPrice = sti(pchar.rank)*20;
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.CompanionDisable = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			SetCharacterRemovable(npchar, true);
-			npchar.Payment = true;
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.CanTakeMushket = true;
-			LAi_SetOfficerType(npchar);
-			NextDiag.CurrentNode = "Tichingitu_officer";
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
-			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.OfficerAttRange = 35.0;
-			
-			AddQuestRecord("Tichingitu", "4");
-			CloseQuestHeader("Tichingitu");
-			// Sinistra - Начало квеста "Знакомство с индейцами"
-			string sModel = "Miskito_"+(rand(5)+1);
-			sld = GetCharacter(NPC_GenerateCharacter("ListKakao", sModel, "man", "man", 1, PIRATE, -1, false, "quest"));
-			sld.name = "Cocoa";
-			sld.lastname = "Leaf";
-			GiveItem2Character(sld, "blade_01");
-			EquipCharacterByItem(sld, "blade_01");
-			AddItems(sld, "jewelry53", rand(20)+180);
-			AddItems(sld, "cannabis1", 3);
-			GiveItem2Character(sld, "indian_10");
-			GiveItem2Character(sld, "talisman11");
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			LAi_SetImmortal(sld, true);
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "ZsI_ListKakao";
-			ChangeCharacterAddressGroup(sld, "BasTer_ExitTown", "item", "item3");
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", -1, 0);
-			//LaunchTutorial("Fighter", 1);
+			AddDialogExitQuestFunction("Tichingitu_Hire");
 		break;
 		
 	//--> ----------------------------------- офицерский блок ------------------------------------------
@@ -484,7 +412,7 @@ void ProcessDialogEvent()
 		
 	// Тичингиту говорит о том, что нужно спасти Делюка
 		case "Del_Deluck":
-			dialog.text = "Ancora cento dobloni?";
+			dialog.text = "Ancora 40 dobloni?";
 			link.l1 = "Eh? Mi stai chiedendo se pagherò ancora per far uscire Deluc di prigione?";
 			link.l1.go = "Del_Deluck_1";
 		break;
@@ -522,7 +450,7 @@ void ProcessDialogEvent()
 		case "Del_Deluck_6":
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "Exit":

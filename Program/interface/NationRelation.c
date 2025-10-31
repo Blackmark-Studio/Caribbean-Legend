@@ -1,5 +1,6 @@
 /// Sith, EvgAnat меню наций
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q и E
+#include "interface\utils\common_header.c"
 ref xi_refCharacter
 int curNationIdx;
 
@@ -19,21 +20,11 @@ void InitInterface(string iniName)
     SetEventHandler("FlagsPress","FlagsProcess",0);
     SetEventHandler("ievnt_command","ProcessCommandExecute",0);
     SetEventHandler("MouseRClickUP","HideInfo",0);
+	SetEventHandler("HideInfoWindow","HideInfo",0);
 	SetEventHandler("OnTableRClick", "OnTableRClick", 0);
 	SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
-    
-	// доп инфа в шапку --->
-	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
-	SetFormatedText("Money", FindRussianMoneyString(sti(xi_refCharacter.money)));
-	SetFormatedText("Dublon", FindRussianDublonString(sti(xi_refCharacter.dublon)));
-	SetFormatedText("Rank", xi_refCharacter.rank);
-	SetFormatedText("Rank_progress", GetCharacterRankRateCur(xi_refCharacter) + " / " + GetCharacterRankRate(xi_refCharacter));
-	// порог уровня
-	GameInterface.StatusLine.BAR_RANK.Max   = GetCharacterRankRate(xi_refCharacter);
-	GameInterface.StatusLine.BAR_RANK.Min   = 0;
-	GameInterface.StatusLine.BAR_RANK.Value = GetCharacterRankRateCur(xi_refCharacter);	
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_RANK",0);
-	// <--- 	
+
+	SetCommonHeaderInfo();
     /////////////	
     CalculateHunter();
 
@@ -52,7 +43,6 @@ void InitInterface(string iniName)
     curNationIdx = sti(chref.nation);
     SetNewNation(0);
     XI_RegistryExitKey("IExit_F2");
-	SetAlertMarks(xi_refCharacter);
 	
 	SetNationWars();
 	SetNationThreatLevel();
@@ -86,6 +76,7 @@ void IDoExit(int exitCode)
     DelEventHandler("FlagsPress","FlagsProcess");
     DelEventHandler("ievnt_command","ProcessCommandExecute");
     DelEventHandler("MouseRClickUP","HideInfo");
+	DelEventHandler("HideInfoWindow","HideInfo");
 	DelEventHandler("OnTableRClick", "OnTableRClick");
 	DelEventHandler("ShowInfoWindow","ShowInfoWindow");
 
@@ -206,13 +197,16 @@ void ProcessCommandExecute()
 void ShowInfoWindow()
 {
 	// string sHeader = "TEST";
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	string sText;
 	int iShip, iChar;
 	ref refBaseShip, refChar;
-
+	int nChooseRow = -1;
+	int nChooseCol = -1;
+	string sRow, sCol;
+	sPicture = -1;
 	switch(sCurrentNode)
 	{
 		case "FLAGPIC":
@@ -224,19 +218,26 @@ void ShowInfoWindow()
 			sText1 = GetRPGText("Hunter_hint");
 		break;
 		case "TABLE_SQUADRON":
+			CloseTooltipNew();
+			nChooseRow = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 1);
+			nChooseCol = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_SQUADRON", 3);
+			nChooseRow++;
+			nChooseCol++;
+			sRow = "tr" + nChooseRow;
+			sCol = "td" + nChooseCol;
 			sHeader = XI_Convertstring("SquadPower");
 			sText1 = XI_Convertstring("Mechanics_descr");
-			if(CheckAttribute(GameInterface, CurTable + "." + CurRow + "." + CurCol + ".shipId"))
+			if(CheckAttribute(&GameInterface, "TABLE_SQUADRON." + sRow + "." + sCol + ".shipId"))
 			{
-				iShip = GameInterface.(CurTable).(CurRow).(CurCol).shipId;
+				iShip = GameInterface.TABLE_SQUADRON.(sRow).(sCol).shipId;
 			    refBaseShip = GetRealShip(iShip);
-				iChar = GameInterface.(CurTable).(CurRow).(CurCol).charId;
+				iChar = GameInterface.TABLE_SQUADRON.(sRow).(sCol).charId;
 				refChar = GetCharacter(iChar);
 			    sPicture = "interfaces\le\portraits\512\face_" + refChar.FaceId + ".tga"
 				sHeader = XI_ConvertString(refBaseShip.BaseName);
 				sText = XI_Convertstring("Captain") + " - " + GetFullName(refChar);
 				sText1 = sText + "\n\n" + GetShipDescr(refBaseShip);
-				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetBaseShipPower(sti(refBaseShip.BaseType)));
+				sText3 = XI_ConvertString("ShipPower") + ": " + makeint(GetRealShipPower(refChar)) + " / " + makeint(GetModifiedBaseShipPower(refChar, sti(refBaseShip.BaseType)));
 			}
 		break; 
 		// sith --->
@@ -262,12 +263,12 @@ void ShowInfoWindow()
 			sText1 = "Описание формулы";
 		break;
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 160, 160);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 160, 160, false);
 }
 
 void HideInfo()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 	SetCurrentNode("OK_BUTTON");
 }
 
@@ -614,6 +615,7 @@ void SetPiratesThreatLevel()
 	x1 += makeint(x * width / 100.0) - makeint((xt2 - xt1)/2.0);
 	x2 = x1 + (xt2 - xt1);
 	SetNodePosition("PIRATESRISKSPIC", x1, y1, x2, y2);
+    if (iThreat == 0) SetNodeUsing("PIRATESRISKSPIC", false);
 }
 
 void SetSquadronTable()
@@ -648,7 +650,7 @@ void SetSquadronTable()
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).icon1.height = 80;
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).icon1.offset = "15, 0";
 				GameInterface.TABLE_SQUADRON.tr1.(sCol).might = fMight;	// записываем мощь
-
+                // see wdmGetPowerThreshold
 				if(fMight < 200/5)
 					iMight = 1;
 				else if(fMight < 325/5)
@@ -690,11 +692,9 @@ void SetSquadronTable()
 	GameInterface.StatusLine.BAR_POWER.Max   = 925;
 	GameInterface.StatusLine.BAR_POWER.Min   = 0;
 
-    // Механика мощи
-    PChar.Squadron.RawPower = fSquadronMight; // Кэш
-    if(CheckCharacterPerk(PChar, "SeaDogProfessional")) fSquadronMight *= 1.3;
-    if(IsEquipCharacterByArtefact(PChar, "talisman15")) fSquadronMight *= 1.15;
-    PChar.Squadron.ModPower = fSquadronMight; // Кэш
+	// Механика мощи
+	PChar.Squadron.RawPower = fSquadronMight; // Кэш
+	PChar.Squadron.ModPower = SquadronPowerWithMods(fSquadronMight); // Кэш
 	
 	float fBarLevel[6];
 	fBarLevel[0] = 0.0;
@@ -703,6 +703,7 @@ void SetSquadronTable()
 	fBarLevel[3] = 0.38;
 	fBarLevel[4] = 0.64;
 	fBarLevel[5] = 1.0;
+    // see wdmGetPowerThreshold
 	float fRealLevel[6];
 	fRealLevel[0] = 0.0;
 	fRealLevel[1] = 200.0;
@@ -711,17 +712,17 @@ void SetSquadronTable()
 	fRealLevel[4] = 675.0;
 	fRealLevel[5] = 925.0;
 	
-	float fBarPower = fSquadronMight;
+	float fBarPower = stf(PChar.Squadron.ModPower);
 	for(int iLevel = 1; iLevel <= 5; iLevel++)
 	{
-		if(fSquadronMight > fRealLevel[iLevel - 1] && fSquadronMight <= fRealLevel[iLevel])
+		if(fBarPower > fRealLevel[iLevel - 1] && fBarPower <= fRealLevel[iLevel])
 		{
-			fBarPower = Bring2Range(fBarLevel[iLevel - 1] * 925, fBarLevel[iLevel] * 925, fRealLevel[iLevel - 1], fRealLevel[iLevel], fSquadronMight);
+			fBarPower = Bring2Range(fBarLevel[iLevel - 1] * 925, fBarLevel[iLevel] * 925, fRealLevel[iLevel - 1], fRealLevel[iLevel], fBarPower);
 			break;
 		}
 	}
 	
-    GameInterface.StatusLine.BAR_POWER.Value = fBarPower;
+	GameInterface.StatusLine.BAR_POWER.Value = fBarPower;
 
 	SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "BAR_POWER", 0);
 

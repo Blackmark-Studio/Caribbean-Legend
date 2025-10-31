@@ -1,0 +1,149 @@
+descriptor_Fancy {Stravagante}
+descriptor_Exotic {Esotico}
+descriptor_HighQuality {Superiore}
+descriptor_GoodFit {Semplice}
+descriptor_HeartDefence {Rinforz.}
+descriptor_Unremarkable {Semplice}
+descriptor_WeaponType_0 {Leggera}
+descriptor_WeaponType_1 {Media}
+descriptor_WeaponType_2 {Pesante}
+descriptor_WeaponLength_0 {Corto}
+descriptor_WeaponLength_1 {Lungo}
+descriptor_WeaponCurvature_0 {Dritto}
+descriptor_WeaponCurvature_1 {Ricurvo}
+descriptor_ArmorType_0 {Leggera}
+descriptor_ArmorType_1 {Media}
+descriptor_ArmorType_2 {Pesante}
+descriptor_ArmorMaterial_0 {Stoffa}
+descriptor_ArmorMaterial_1 {Cuoio}
+descriptor_ArmorMaterial_2 {Piastre}
+descriptor_ArmorMaterial_3 {Stampato}
+descriptor_ArmorMaterial_4 {Forgiato}
+descriptor_AmuletType_0 {Comune}
+descriptor_AmuletType_1 {Pagano}
+descriptor_AmuletType_2 {Cristiano}
+descriptor_SingleCharge {Colpo singolo}
+descriptor_MultiCharge {Multi-colpo}
+descriptor_OneHanded {A una mano}
+descriptor_TwoHanded {A due mani}
+descriptor_Bayonet {Baionetta}
+descriptor_PiercingAmmo {Perforante}
+descriptor_StunAmmo {Stordente}
+descriptor_EmpoweredAmmo {Potenziamento}
+descriptor_SpyGlass {Osservazione}
+descriptor_SpyGlass_Crew_0 {Stima equip.}
+descriptor_SpyGlass_Crew_1 {Valutazione}
+descriptor_SpyGlass_Crew_2 {Conteggio}
+descriptor_SpyGlass_Caliber_0 {Cannoni}
+descriptor_SpyGlass_Caliber_1 {Armamento}
+descriptor_Special {Speciale}
+descriptor_Tool {Attrezzo}
+descriptor_Valuable {Prezioso}
+descriptor_BulletNeedPowder {Polvere nera}
+descriptor_descr_BulletNeedPowder {Questa munizione non uscirà dalla canna senza una dose di polvere da sparo.}
+descriptor_GrapeAmmo {Mitraglia}
+descriptor_BulletAmmo {Palla}
+descriptor_BombAmmo {Granata}
+descriptor_HealPotion {Cura}
+descriptor_Alcohol {InEbriante}
+descriptor_EnhancingPotion {Potenziamento}
+descriptor_AntidotePotion {Antidoto}
+descriptor_Metal {Metallo}
+descriptor_Trinket {Gingillo}
+descriptor_descr_Alcohol {Scioglie la lingua, alleggerisce la mente, ma riduce le abilità.}
+descriptor_descr_EnhancingPotion {Possiede un effetto speciale potenziante.}
+descriptor_descr_AntidotePotion {Rimuove i veleni, blocca l’avvelenamento.}
+descriptor_descr_Metal {Estratto dalla terra e usato in alchimia.}
+descriptor_descr_Trinket {Oggetti raffinati e meno raffinati che distinguono chi ha gusto dalla gente di campagna. Possono essere scambiati con dobloni dai banchieri.}
+descriptor_Junk {Cianfrus.}
+descriptor_Herb {Erba}
+descriptor_descr_Herb {Dono della terra. Usato soprattutto in alchimia per preparare impiastri e pozioni.}
+descriptor_descr_Fancy {Questo oggetto si distingue per l’aspetto cerimoniale, le decorazioni e i materiali pregiati. Indossarlo aumenta il Carisma di $number($DescriptorBaseValue(Fancy)). Gli effetti si sommano.}
+descriptor_descr_Exotic
+{
+Questo oggetto non appartiene a un buon cristiano, e inquietanti voci sul suo possessore si diffondono subito.
+Aumenta la Potenza della Flotta di $percent($DescriptorBaseValue(Exotic)); gli effetti si sommano.
+}
+descriptor_descr_HighQuality {Quest’arma è realizzata con tale maestria che i suoi danni critici aumentano di $percent($DescriptorBaseValue(HighQuality)).}
+descriptor_descr_GoodFit {Questa armatura calza alla perfezione, aumentando la velocità d’attacco con qualsiasi arma del $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Questa armatura è rinforzata nei punti vitali, riduce i danni critici nemici del $percent($DescriptorBaseValue(HeartDefence)).}
+descriptor_descr_Unremarkable
+{
+Tutti possiedono oggetti simili. Con questo non attirerai l’attenzione né verrai ricordato.
+Aumenta Furtività di $number($DescriptorBaseValue(Unremarkable)). Gli effetti si sommano.
+}
+descriptor_descr_WeaponType_0 {Le armi leggere sono più maneggevoli, agili e pensate per i duelli uno contro uno. Gli attacchi con queste armi sono più rapidi del 5%.}
+descriptor_descr_WeaponType_1 {Le armi medie offrono un buon equilibrio tra peso e velocità, rendendole la scelta più versatile. Ideali per risse e combattimenti d’abbordaggio.}
+descriptor_descr_WeaponType_2 {Le armi pesanti infliggono danni enormi grazie al loro peso, ma riducono la velocità d’attacco del 5%.}
+descriptor_descr_WeaponLength_0 {Quest’arma richiede di avvicinarsi al nemico ed è più adatta agli scontri ravvicinati.}
+descriptor_descr_WeaponLength_1 {Quest’arma ha una buona portata e rende al meglio in spazi aperti.}
+descriptor_descr_WeaponCurvature_0 {Quest’arma è dritta o solo leggermente ricurva, ideale per affondi rapidi più che per colpi di taglio.}
+descriptor_descr_WeaponCurvature_1 {Quest’arma ha una curvatura marcata e il baricentro spostato in avanti, il che la rende più adatta ai colpi che agli affondi rapidi.}
+descriptor_descr_ArmorType_0 {L’armatura leggera è quasi identica a un abito normale e non limita i movimenti. In cambio, offre meno protezione.}
+descriptor_descr_ArmorType_1 {L’armatura media limita leggermente i movimenti, ma protegge bene gli organi vitali. Riduce la velocità di movimento del personaggio del 5%.}
+descriptor_descr_ArmorType_2 {L’armatura pesante è ingombrante e difficile da muovere, ma ti permette di assaltare una fortezza. Riduce la velocità di movimento del 10%.}
+descriptor_descr_ArmorMaterial_0 {La stoffa non resiste ai colpi forti, ma protegge da graffi e abrasioni. Riduce il danno subito del 4%.}
+descriptor_descr_ArmorMaterial_1 {L’armatura in cuoio può salvarti in una rissa da taverna, ma non ferma né un proiettile né una stoccata precisa. Riduce i danni subiti dell’8%.}
+descriptor_descr_ArmorMaterial_2 {Le piastre offrono un ottimo equilibrio tra peso e protezione. Possono salvarti la vita. Riduce i danni subiti del 15%.}
+descriptor_descr_ArmorMaterial_3
+{
+L’armatura stampata è prodotta in serie per equipaggiare le truppe ed è usata nelle guerre europee.
+Riduce i danni subiti del 22%.
+}
+descriptor_descr_ArmorMaterial_4 {La produzione di armature forgiata di alta qualità è un processo complesso e costoso, che le rende una rarità nei Caraibi. Riduce i danni subiti del 35%.}
+descriptor_descr_AmuletType_0 {Si basa su presagi, superstizioni marinare e reali rapporti di causa-effetto.}
+descriptor_descr_AmuletType_1 {Attinge al potere degli dèi pagani e ai rituali nativi.}
+descriptor_descr_AmuletType_2 {Attinge al potere dei santi cristiani e della fede giusta.}
+descriptor_descr_SingleCharge {Un solo colpo di riserva: non sprecarlo.}
+descriptor_descr_MultiCharge {Dispone di più canne, cilindro o camere, consentendo diversi colpi di seguito. Richiede abilità speciali.}
+descriptor_descr_OneHanded {Arma portatile da cintura o bandoliera. I modelli a colpo singolo non richiedono abilità particolari.}
+descriptor_descr_TwoHanded {Arma da fuoco pesante da impugnare a due mani durante il tiro. Richiede abilità speciali per l’uso.}
+descriptor_descr_Bayonet {Quest’arma da fuoco a canna lunga monta una baionetta, aumentando del 25% i danni dell’Affondo.}
+descriptor_descr_PiercingAmmo {Queste munizioni ignorano l’armatura all’impatto.}
+descriptor_descr_StunAmmo {Queste munizioni infliggono penalità ai nemici quando colpiscono.}
+descriptor_descr_EmpoweredAmmo {Queste munizioni migliorano le proprietà dell’arma.}
+descriptor_descr_SpyGlass {Qualsiasi cannocchiale rivela tipo, nome, stato, velocità e numero di cannoni di una nave.}
+descriptor_descr_SpyGlass_Crew_0 {Questo cannocchiale non permette di vedere bene l’equipaggio, quindi la stima è solo approssimativa.}
+descriptor_descr_SpyGlass_Crew_1 {Questo cannocchiale permette di contare con precisione l’equipaggio di una nave e individuare eventuali moschettieri a bordo.}
+descriptor_descr_SpyGlass_Crew_2 {Questo cannocchiale mostra il numero esatto di membri dell’equipaggio nemico, dei moschettieri e le abilità del capitano.}
+descriptor_descr_SpyGlass_Caliber_0 {Questo cannocchiale ha lenti abbastanza buone da mostrare non solo il numero dei cannoni, ma anche il loro calibro.}
+descriptor_descr_SpyGlass_Caliber_1 {Le ottiche di alta qualità di questo cannocchiale permettono di vedere il calibro dei cannoni e il tipo di munizioni caricate.}
+descriptor_descr_Special {Questo oggetto ha una proprietà unica.}
+descriptor_descr_Tool {Un set di strumenti complessi, inutili per chi non li sa usare. Ma tu non sei tra questi.}
+descriptor_descr_Valuable {Ha un alto valore di vendita.}
+descriptor_descr_BulletNeedPower {Non può essere sparato senza una dose di polvere nera.}
+descriptor_descr_GrapeAmmo {Numerosi piccoli proiettili. Efficace soprattutto contro gruppi di nemici o un singolo bersaglio a distanza ravvicinata.}
+descriptor_descr_BulletAmmo {Carica e spara un colpo alla volta. Efficace a media e lunga distanza, soprattutto con colpi alla testa.}
+descriptor_descr_BombAmmo {Esplode e colpisce tutti i bersagli vicini. Particolarmente efficace contro gruppi di nemici.}
+descriptor_descr_HealPotion {Questa pozione ripristina la salute.}
+descriptor_descr_Junk {Varie cianfrusaglie diffuse nei Caraibi. Preziose solo per chi sa sfruttarle; altrimenti restano a prendere polvere negli angoli bui.}
+descriptor_Alchemy {Alchimia}
+descriptor_descr_Alchemy {Questo oggetto può essere creato o modificato mediante l'Alchimia.}
+descriptor_Quest {Quest}
+descriptor_descr_Quest {Questo oggetto è necessario per una missione. Non può essere abbandonato né venduto.}
+descriptor_Map {Mappa}
+descriptor_descr_Map {Un pezzo di carta con le indicazioni di una località. Tutti questi oggetti vengono immediatamente copiati nell'atlante.}
+descriptor_Fragile {Fragile}
+descriptor_descr_Fragile {Questo oggetto si rompe dopo un certo numero di utilizzi.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {L'effetto si applica al cannoniere.}
+descriptor_descr_Boatswain {L'effetto si applica al nostromo.}
+descriptor_descr_Carpenter {L'effetto si applica al carpentiere.}
+descriptor_descr_Navigator {L'effetto si applica al navigatore.}
+descriptor_descr_Treasurer {L'effetto si applica al tesoriere.}
+descriptor_descr_Doctor {L'effetto si applica al medico.}
+descriptor_Ingredient {Ingrediente}
+descriptor_Jewelery {Gioiello}
+descriptor_descr_Jewelery {Pietre preziose e semipreziose. Vendibili o utili in alchimia.}
+descriptor_descr_Ingredient {Questo oggetto è usato in alchimia.}
+descriptor_Alternate {Regolazione}
+descriptor_descr_Alternate {L'abilità ha un effetto per l'eroe principale e un effetto diverso per tutti gli altri personaggi.}
+descriptor_IntoxicatingPotion {InEbriante}
+descriptor_descr_IntoxicatingPotion {Scioglie la lingua, alleggerisce la mente, ma riduce le abilità.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {L'effetto è utile per gli armigeri.}

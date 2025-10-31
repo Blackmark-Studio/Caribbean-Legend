@@ -36,16 +36,9 @@ void ProcessDialogEvent()
 		link.l1.go = "Jimmy_fight";
 		break;
 
-	case "Jimmy_fight":
-		chrDisableReloadToLocation = true; // закрыть локацию
-		DialogExit();
-		LAi_SetImmortal(npchar, false);
-		LAi_SetWarriorType(npchar);
-		LAi_group_MoveCharacter(npchar, "EnemyFight");
-		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-		LAi_group_SetCheck("EnemyFight", "Saga_KillJimmy");
-		AddDialogExitQuest("MainHeroFightModeOn");
+		case "Jimmy_fight":
+			DialogExit();
+			AddDialogExitQuestFunction("Saga_Jimmy_fight");
 		break;
 
 	case "Jimmy_1_2":
@@ -92,19 +85,16 @@ void ProcessDialogEvent()
 		link.l2.go = "Jimmy_8_2";
 		break;
 
-	case "Jimmy_8_1":
-		dialog.text = "¿Qué... qué dijiste?!";
-		link.l1 = "No podrás contárselo a nadie más...";
-		link.l1.go = "Jimmy_fight";
-		pchar.questTemp.Saga.Jimmysecret = "true";
+		case "Jimmy_8_1":
+			dialog.text = "¿Qué... qué dijiste?!";
+			link.l1 = "No podrás contárselo a nadie más...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Saga_KillToJimmy_kino");
 		break;
 
-	case "Jimmy_8_2":
-		DialogExit();
-		pchar.questTemp.Saga = "jackman";
-		LAi_CharacterDisableDialog(npchar);
-		npchar.lifeday = 0;
-		AddQuestRecord("Saga", "4_1");
+		case "Jimmy_8_2":
+			DialogExit();
+			AddDialogExitQuestFunction("Saga_Jimmy_DlgExit");
 		break;
 		// <-- Джимми
 
@@ -1133,29 +1123,30 @@ void ProcessDialogEvent()
 		DialogExit();
 		DoQuestCheckDelay("Saga_MineBanditsxFire", 0.6);
 		break;
-
+		
 	case "mine_attackx":
 		dialog.text = "¿En serio? Entonces debes saber la contraseña. Habla, pero lo lamentarás si estás mintiendo...";
-		link.l1.edit = 5;
-		link.l1 = "";
-		link.l1.go = "mine_attackx_1";
-		break;
-
+		link.l1 = "Tritón";
+		link.l1.go = "mine_wrongx_password";
+		link.l2 = "Neptuno";
+		link.l2.go = "mine_attackx_1";
+		link.l3 = "Centurión";
+		link.l3.go = "mine_wrongx_password";
+		link.l4 = "Arpón";
+		link.l4.go = "mine_wrongx_password";
+	break;
+		
 	case "mine_attackx_1":
-		sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-		if (sTemp == "neptune")
-		{
-			dialog.text = "Correcto. Pero tú, amigo, has llegado aquí desde el lado equivocado. ¿No te advirtieron? Regresa y toma el camino de la izquierda desde el pozo seco. Luego rodea la colina y allí verás la puerta principal.";
-			link.l1 = "¿No puedo entrar aquí?";
-			link.l1.go = "mine_attackx_2";
-		}
-		else
-		{
-			dialog.text = "¡Chicos, tenemos un sabueso! ¡Mosquetes listos! ¡Fuego!!";
-			link.l1 = "...";
-			link.l1.go = "mine_banditx_fire";
-		}
-		break;
+		dialog.text = "Correcto. Pero tú, amigo, has llegado aquí desde el lado equivocado. ¿No te advirtieron? Regresa y toma el camino de la izquierda desde el pozo seco. Luego rodea la colina y allí verás la puerta principal.";
+		link.l1 = "¿No puedo entrar aquí?";
+		link.l1.go = "mine_attackx_2";
+	break;
+		
+	case "mine_wrongx_password":
+		dialog.text = "¡Chicos, tenemos un sabueso! ¡Mosquetes listos! ¡Fuego!!";
+		link.l1 = "...";
+		link.l1.go = "mine_banditx_fire";
+	break;
 
 	case "mine_attackx_2":
 		dialog.text = "No. Solo por la entrada central.";
@@ -1175,29 +1166,30 @@ void ProcessDialogEvent()
 		LAi_ActorTurnToLocator(sld, "soldiers", "soldier1");
 		LAi_ActorAnimation(sld, "shot", "Saga_MineBanditxDie", 1.0);
 		break;
-
+		
 	case "mine_attack":
 		dialog.text = "¿De verdad? Entonces deberías saber la contraseña. Habla y dila para que pueda oírla. Y si intentas engañarme, esa será la última broma que le harás a alguien en tu vida.";
-		link.l1.edit = 5;
-		link.l1 = "";
-		link.l1.go = "mine_attack_1";
-		break;
-
+		link.l1 = "Tritón";
+		link.l1.go = "mine_wrong_password";
+		link.l2 = "Neptuno";
+		link.l2.go = "mine_attack_1";
+		link.l3 = "Centurión";
+		link.l3.go = "mine_wrong_password";
+		link.l4 = "Arpón";
+		link.l4.go = "mine_wrong_password";
+	break;
+		
 	case "mine_attack_1":
-		sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-		if (sTemp == "neptune")
-		{
-			dialog.text = "Correcto. Sigue adelante. El jefe del campamento está en la casa a la izquierda de la entrada de la mina. Ve a verlo.";
-			link.l1 = "Está bien, colega...";
-			link.l1.go = "mine_attack_2";
-		}
-		else
-		{
-			dialog.text = "¡Chicos, tenemos un sabueso! ¡Cañones, abran fuego!!";
-			link.l1 = "...";
-			link.l1.go = "mine_bandit_fire";
-		}
-		break;
+		dialog.text = "Correcto. Sigue adelante. El jefe del campamento está en la casa a la izquierda de la entrada de la mina. Ve a verlo.";
+		link.l1 = "Está bien, colega...";
+		link.l1.go = "mine_attack_2";
+	break;
+		
+	case "mine_wrong_password":
+		dialog.text = "¡Chicos, tenemos un sabueso! ¡Cañones, abran fuego!!";
+		link.l1 = "...";
+		link.l1.go = "mine_bandit_fire";
+	break;
 
 	case "mine_attack_2":
 		DialogExit();
@@ -1573,7 +1565,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -1639,7 +1631,7 @@ void ProcessDialogEvent()
 			Log_Info("Has conseguido el talismán 'Bálsamo de Cupido'.");
 			PlaySound("interface\important_item.wav");
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen disapproves", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
 		break;
@@ -2087,7 +2079,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen disapproves", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
 		break;
@@ -2096,7 +2088,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Helen approves", "Helena");
+			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);
 			

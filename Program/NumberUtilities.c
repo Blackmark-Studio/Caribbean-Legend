@@ -3,6 +3,9 @@
 #define PIm2 6.28318530
 #define PId2 1.57079632
 
+#define INT_MIN −2147483648
+#define INT_MAX  2147483647
+
 float Radian2Degree(float _rad) 
 {
 	return 180 / PI * _rad;
@@ -58,14 +61,6 @@ float fClamp(float min, float max, float val)
 		if(val > max) val = max;
 	}
 	return val;
-}
-
-int iabs(int num)
-{
-	if (num < 0)
-		return -num;
-	else
-		return num;
 }
 
 //Mett: универсальная функция для диапазона чисел

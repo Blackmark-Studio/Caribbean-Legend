@@ -192,14 +192,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_3":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			npchar.MusketerDistance = 10;
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+			AddDialogExitQuestFunction("BM_Irons_DlgExit_1");
 		break;
 		
 		case "BM_Irons_4":
@@ -297,16 +290,16 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_18":
-			dialog.text = "Zweihundertfünfzig Dublonen im Voraus! Damit ich weiß, dass du es ernst meinst und nicht nur ein Versager bist. Und danach eine monatliche Gebühr. Ich denke, wir können einen Deal machen.";
+			dialog.text = "150 Dublonen im Voraus! Damit ich weiß, dass du es ernst meinst und nicht nur ein Versager bist. Und danach eine monatliche Gebühr. Ich denke, wir können einen Deal machen.";
 			link.l1 = "Und du tust nicht...";
 			link.l1.go = "BM_Irons_19";
 		break;
 		
 		case "BM_Irons_19":
 			dialog.text = "... glaubst du, du hast den Mut? Heh, ich werde nicht einmal mit dir streiten - hast du gesehen, wie ich diesen Hahnrei vom Leuchtturm geschossen habe? Erster Schuss! Und auch kein Handeln, wenn das ist, was du denkst. Du musst zeigen, dass du dir einen Profi wie mich leisten kannst.";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
-				link.l1 = "Ja, das kann ich! Zweihundertfünfzig Goldstücke. Hier, nimm sie.";
+				link.l1 = "Ja, das kann ich! 150 Goldstücke. Hier, nimm sie.";
 				link.l1.go = "BM_Irons_Hire1";
 			}
 			link.l2 = "Du hattest Glück mit diesem Schuss. Und jetzt versuchst du, deinen Wert durch Prahlerei zu steigern. Ich kann auf einen Profi wie dich verzichten. Es ist zu viel Ehre und zu viel Geld.";
@@ -316,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(250);
+			RemoveDublonsFromPCharTotal(150);
 			
 			dialog.text = "Du bist nicht so schlimm wie ich dachte! Aber du solltest besser dafür sorgen, dass ich mich nicht langweile. Es wäre eine Verschwendung meines Talents, nicht wahr? Tommy und "+pchar.name+"! Lasst uns die Karibik aufmischen!";
 			link.l1 = "Lerne die Befehlskette zu respektieren, Tommy. Und zweitens, ich bin der Kapitän für dich. Verstanden?";
@@ -331,37 +324,7 @@ void ProcessDialogEvent()
 		
 		case "Irons_Hire":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			LAi_SetPlayerType(pchar);
-			DeleteAttribute(npchar, "LifeDay");
-			LAi_SetImmortal(npchar, false);
-			npchar.quest.OfficerPrice = 15000;
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.CompanionDisable = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			SetCharacterRemovable(npchar, true);
-			npchar.Payment = true;
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.CanTakeMushket = true;
-			pchar.questTemp.IronsItemsBlock = true;
-			LAi_SetOfficerType(npchar);
-			NextDiag.CurrentNode = "Irons_officer";
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
-			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
-			LAi_SetHP(npchar, 170.0, 170.0);
-			
-			// Костыли, нужно украсить интерфейс офицера ==>
-			//RemoveCharacterEquip(npchar, BLADE_ITEM_TYPE);
-			//TakeItemFromCharacter(npchar, "unarmed");
-			//GiveItem2Character(npchar, "blade_42");
-			//EquipCharacterByItem(npchar, "blade_42");
-			//EquipCharacterByItem(npchar, "mushket1");
-			//EquipCharacterByItem(npchar, "indian_2");
-			// <== Костыли, нужно украсить интерфейс офицера
+			AddDialogExitQuestFunction("BM_Irons_Hire");
 			
 			if (CheckAttribute(pchar, "questTemp.BM_hireInGrot"))
 			{
@@ -371,9 +334,6 @@ void ProcessDialogEvent()
 			{
 				AddQuestRecord("BlackMark", "1");
 			}
-			
-			// Продолжение через неделю в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -411,7 +371,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "Offensichtlich hast du noch nicht in Gruben während der Regenzeit in Irland versteckt, "+GetSexPhrase("Jüngling","mein Mädchen")+"! Aber mit dir zu gehen ist besser als hier zu verstecken. Nun, über dieses Gold...";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "Hier ist dein Gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -421,7 +381,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(250);
+			RemoveDublonsFromPCharTotal(150);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +406,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "Hast du das Gold mitgebracht?";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "Hier ist dein Gold.";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -457,26 +417,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsJungleUhodit":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			
-			sld = characterFromID("Irons");
-			RemovePassenger(pchar, sld);
-			LAi_SetWarriorType(sld);
-			DeleteAttribute(sld, "OfficerImmortal");
-			if(CheckAttribute(sld, "Health.HP")) DeleteAttribute(sld, "Health.HP");
-			if(CheckAttribute(sld, "Health.maxHP")) DeleteAttribute(sld, "Health.maxHP");
-			sTemp = "RestoreHealth_" + sld.index;
-			if(CheckAttribute(PChar, "quest.RestoreHealth_" + sld.index)) PChar.quest.(sTemp).over = "Yes";
-			sld.lifeday = 0;
-			LAi_CharacterDisableDialog(sld);
-			GiveItem2Character(sld, "blade_42");
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			//LAi_ActorRunToLocation(sld, "reload", "reload1", "", "", "", "", -1);
-			AddQuestRecord("BlackMark", "5");
-			AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("","а"));
-			CloseQuestHeader("BlackMark");
+			AddDialogExitQuestFunction("BM_IronsJungleUhodit");
 		break;
 		
 		case "BM_IronsFirstJungle_1":
@@ -493,7 +434,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsFirstJungle_3":
 			dialog.text = "Warum nimmst du meinen Wunsch so übel? Ich frage nicht nach verfluchten Perlen, nur nach einer Patrone. Ich hab sogar auf den richtigen Moment gewartet, um dich nicht von deinen Sachen abzulenken und dir nicht wie ein Irrer zwischen die Füße zu geraten, hehe. Also... hast du ’ne Patrone?";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "Ja, ich habe eine Runde. Hier, nimm sie. Mach nur keinen dummen Scherz mit dieser Kugel. Verstehst du, Tommy?";
 				link.l1.go = "BM_IronsFirstJungle_7";
@@ -524,15 +465,19 @@ void ProcessDialogEvent()
 			dialog.text = "Kann nichts versprechen, heh-heh. Ein guter Witz hält die Stimmung aufrecht. Aber danke, natürlich.";
 			link.l1 = "In Ordnung, los geht's, du Spaßvogel.";
 			link.l1.go = "BM_IronsFirstJungle_8";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+				TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+				TakeItemFromCharacter(PChar, "bullet");
+			}
 		break;
 		
 		case "BM_IronsFirstJungle_8":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
+			AddDialogExitQuestFunction("BM_IronsFirstJungle");
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -549,7 +494,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsSecondJungle_3":
 			dialog.text = "Oh, es wird ein Killerwitz, vertrau mir. Du wirst es lieben, hehe. Hab's nur noch nicht ganz zusammen. Und was ist mit der Patrone?";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "Hier hast du. Ich hoffe, ich genieße wirklich deinen kommenden Streich. Und wo hast du die letzte Runde hingelegt? Ich gebe dir viele davon. Oder bewahrst du Munition für den Kampf an einem Ort und Scherze an einem anderen auf?";
 				link.l1.go = "BM_IronsSecondJungle_7";
@@ -580,15 +525,19 @@ void ProcessDialogEvent()
 			dialog.text = "Du wirst es herausfinden. Alles zu seiner Zeit, hehe.";
 			link.l1 = "Oh, ich habe ein schlechtes Gefühl bei dieser Sache, Tommy...";
 			link.l1.go = "BM_IronsSecondJungle_8";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+				TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+				TakeItemFromCharacter(PChar, "bullet");
+			}
 		break;
 		
 		case "BM_IronsSecondJungle_8":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
+			AddDialogExitQuestFunction("BM_IronsSecondJungle");
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -599,7 +548,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_2":
 			dialog.text = "Du hast nicht geraten? Raten ist eine nützliche Fähigkeit, hehe. Du, ich, der Dschungel... Vor etwa zwei Wochen hatten wir dieses Gespräch. Ich brauche eine weitere Papierpatrone.";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "Das wird langsam zu einer lustigen Tradition, nicht wahr? Es sind zwei Wochen vergangen - Tommy bittet um eine Patrone. Bitte sehr. Wie viele mehr brauchst du für deinen Witz?";
 				link.l1.go = "BM_IronsThirdJungle_5";
@@ -624,7 +573,14 @@ void ProcessDialogEvent()
 			dialog.text = "Das wird tun, hehe.";
 			link.l1 = "Du hast es endlich zusammen, ja? Aber für was?";
 			link.l1.go = "BM_IronsThirdJungle_6";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+				TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+				TakeItemFromCharacter(PChar, "bullet");
+			}
 		break;
 		
 		case "BM_IronsThirdJungle_6":
@@ -827,18 +783,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_Otkaz3":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			
-			sld = characterFromID("Irons");
-			RemovePassenger(pchar, sld);
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocation(sld, "reload", "reload1", "", "", "", "", -1);
-			sld.location = "None";
-			AddQuestRecord("BlackMark", "6");
-			AddQuestUserData("BlackMark", "sSex", GetSexPhrase("","а"));
-			AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("к","чка"));
-			CloseQuestHeader("BlackMark");
+			AddDialogExitQuestFunction("BM_IronsThirdJungle_Otkaz");
 		break;
 		
 		case "BM_IronsJamaicaShore1":
@@ -1012,33 +957,8 @@ void ProcessDialogEvent()
 		case "BM_IronsClone5":
 			dialog.text = "Niemand hätte dir sowieso zugehört. Du warst schon immer ein... ramponierter, Thomas.";
 			link.l1 = "Oh, also versteckst du nicht, was du an dem Tag getan hast. Ich habe etwas für dich, Gabe. Ein schwarzer Fleck. Aber was bringt es dir jetzt, wo das Schiff geentert wurde und wir kurz davor sind, deine Eingeweide zu verschütten, hee hee hee hee hee hee...";
-			link.l1.go = "BM_IronsClone6"; // здесь переход на кейс с боёвкой
-		break;
-		
-		case "BM_IronsClone6":
-			DialogExit();
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			locCameraTarget(PChar);
-			locCameraFollow();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			
-			sld = CharacterFromID("IronsClone");
-			LAi_SetCheckMinHP(sld, 1, true, "");
-			LAi_SetCurHPMax(sld);
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocator(sld, "reload", "reload1", "BM_IronsCloneMushket", -1);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
-			LAi_SetImmortal(sld, false);
-			LAi_SetCurHPMax(sld);
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "BM_CabinDialog4");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("BM_IronsClone5_function"); // здесь переход на кейс с боёвкой
 		break;
 		
 		case "BM_IronsClone8":
@@ -1183,7 +1103,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseGood1":
-			notification("Reputation Check Passed", "None");
+			Notification_Reputation(true, 71, "low");
 			if (startHeroType == 4)
 			{
 				dialog.text = "Wer muss an so etwas glauben... Es tut mir leid, Fräulein. "+TimeGreeting()+". Wie kann ich Ihnen helfen? Sie sehen sehr besorgt aus.";
@@ -1286,7 +1206,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseNeutral1":
-			notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+			Notification_Reputation(false, 71, "low");
 			if (startHeroType == 4)
 			{
 				dialog.text = "Wer sind Sie, Fräulein? Sie müssen sich in der Adresse geirrt haben. Ich habe, äh, keine Übernachtdienste bestellt.";
@@ -1359,13 +1279,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Vertrauenswürdig) Ich bin nervös. Gabe ist ein Feigling, aber er ist nicht dumm. Was ist, wenn statt ihm ein ganzes Platoon Soldaten hierher kommt? Oder sie nähern sich der Bucht und versenken unser Schiff zuerst?";
 				link.l1.go = "BM_IronsJamaicaJungle_GabePlan_VD1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l2 = "Gabe hat mich gesehen. Ich musste weglaufen.";
 				link.l2.go = "BM_IronsJamaicaJungle_GabePlan_4";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		
@@ -2209,11 +2129,7 @@ void ProcessDialogEvent()
 		
 		case "tieyasal_10":
 			DialogExit();
-			RemovePassenger(pchar, npchar);
-			DeleteAttribute(npchar, "OfficerImmortal");
-			npchar.lifeday = 0;
-			LAi_SetWarriorType(npchar);
-			LAi_CharacterDisableDialog(npchar);
+			AddDialogExitQuestFunction("BM_Irons_tieyasal_otkaz");
 		break;
 	}
 } 

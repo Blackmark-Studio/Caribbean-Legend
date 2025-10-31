@@ -1,0 +1,25 @@
+Frame_HourPassed {È passata un'ora...}
+Frame_HourPassed_2 {Sono passate due ore...}
+Frame_HourPassed_3 {Sono passate tre ore...}
+Frame_HourPassed_4 {Sono passate quattro ore...}
+Frame_HourPassed_5 {Sono passate cinque ore...}
+Frame_HourPassed_? {Sono passate diverse ore...}
+Frame_BeenWhile {È passato un po' di tempo...}
+Frame_MinutePassed {È passato un minuto...}
+Frame_MinutePassed_2 {Sono passati due minuti...}
+Frame_MinutePassed_3 {Sono passati tre minuti...}
+Frame_MinutePassed_5 {Sono passati cinque minuti...}
+Frame_MinutePassed_10 {Sono passati dieci minuti...}
+Frame_MinutePassed_20 {Sono passati venti minuti...}
+Frame_MinutePassed_? {Sono passati alcuni minuti...}
+Frame_NextMorning {La mattina seguente...}
+Frame_NextDay {Il giorno seguente...}
+Frame_NextEvening {La sera seguente...}
+Frame_NextNight {La notte seguente...}
+Frame_DayPassed {È passato un giorno...}
+Frame_DayPassed_2 {Sono passati due giorni...}
+Frame_DayPassed_3 {Sono passati tre giorni...}
+Frame_DayPassed_4 {Sono passati quattro giorni...}
+Frame_DayPassed_5 {Sono passati cinque giorni...}
+Frame_DayPassed_6 {Sono passati sei giorni...}
+Frame_WeekPassed {È passata una settimana...}

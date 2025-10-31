@@ -85,7 +85,9 @@ int GetMoneyForOfficer(ref Npchar)
 	    {
 	        sum += GetSkillValue(Npchar, SKILL_TYPE, GetSkillNameByIdx(i));
 	    }
-	    return MOD_SKILL_ENEMY_RATE*4*sum;
+			float mtp = 1;
+			if (HasPerk(Npchar, "Trustworthy")) mtp -= PERK_VALUE_TRUSTWORTHY;
+	    return makeint(MOD_SKILL_ENEMY_RATE*4*sum*mtp);
     }
 
     return 0;
@@ -107,7 +109,13 @@ int GetSalaryForShip(ref chref)
     mchref = GetMainCharacter();
 
 	float nLeaderShip = GetSummonSkillFromNameToOld(mchref,SKILL_LEADERSHIP);
-	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);
+	float nCommerce   = GetSummonSkillFromNameToOld(mchref,SKILL_COMMERCE);	
+	// Влияния навыков (1..10 приводим к 0..1 аффинно) и степенная форма 0.55
+	float kCommerce   = pow((nCommerce) / 10.0, 0.55) * 0.65; // 65% вес
+	float kLeadership = pow((nLeaderShip) / 10.0, 0.55) * 0.35; // 35% вес
+	float mSkillCrew  = 1.0 - 0.55 * (kCommerce + kLeadership);      // границы: 1.0..0.45
+
+	
 
 	float shClass = GetCharacterShipClass(chref);
 	if (shClass   < 1) shClass   = 7;
@@ -115,7 +123,7 @@ int GetSalaryForShip(ref chref)
 		
 	// экипаж
 	fExp = (GetCrewExp(chref, "Sailors") + GetCrewExp(chref, "Cannoners") + GetCrewExp(chref, "Soldiers")) / 100.00; // средний коэф опыта 0..3
-	nPaymentQ += makeint( fExp * stf((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/stf(shClass) * (1.05 - (nLeaderShip + nCommerce)/ 40.0) );
+	nPaymentQ += makeint( fExp * stf((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*200*GetCrewQuantity(chref))/stf(shClass) * mSkillCrew );
     
     // теперь самого капитана и его офицеров (тут  главный герой не считается) так что пассажиров и оффицеров ниже
     if(sti(chref.index) != GetMainCharacterIndex())
@@ -174,8 +182,14 @@ int GetSalaryForShip(ref chref)
             }
         }
 	}
-	
-    return nPaymentQ;
+
+	if (IsEquipCharacterByItem(chref, "hat8"))
+	{
+		int iThreat = wdmGetSummaryThreat();
+		nPaymentQ = makeint(nPaymentQ * (1 - 0.02 * iThreat));
+	}
+
+	return nPaymentQ;
 }
 // boal новый учёт зп <--
 
@@ -218,20 +232,9 @@ int GetCharacterRaiseCrewMoraleMoney(ref chr)
 float ChangeCrewExp(ref chr, string sType, float fNewExp)
 {
 	if (!CheckAttribute(chr, "Ship.Crew.Exp." + sType)) chr.Ship.Crew.Exp.(sType) = (1 + rand(50));
-	
-	switch(sType)
-	{
-		case "Cannoners" 	:
-			fNewExp = fNewExp * isEquippedArtefactUse(chr, "totem_08", 1.0, 2.0);
-		break;
-		case "Sailors" 		:
-			fNewExp = fNewExp * isEquippedArtefactUse(chr, "totem_09", 1.0, 2.0);
-		break;
-		case "Soldiers" 	:
-			fNewExp = fNewExp * isEquippedArtefactUse(chr, "totem_10", 1.0, 2.0);
-		break;
-	}
-	
+
+	fNewExp *= isEquippedArtefactUse(chr, "totem_09", 1.0, 2.0);
+
 	chr.Ship.Crew.Exp.(sType) = (stf(chr.Ship.Crew.Exp.(sType)) + fNewExp);
 	if (stf(chr.Ship.Crew.Exp.(sType)) > 100) chr.Ship.Crew.Exp.(sType) = 100;
 	if (stf(chr.Ship.Crew.Exp.(sType)) < 1) chr.Ship.Crew.Exp.(sType)   = 1;
@@ -304,95 +307,135 @@ int GetCharacterCrewMorale(ref chr)
 	return sti(chr.ship.crew.morale);
 }
 
-// пересчет наёмников в городах
-void UpdateCrewInColonies()  
+// Получить базовый множитель рекрутов для таверны без учёта нации
+float GetBaseCrewMtpForTavern()
 {
-	int nNeedCrew = GetCurCrewEscadr(); // всего матросов
-	//int ableCrew = GetMaxCrewAble();   // допустимое число
-	ref rTown;    
+	float fKrank = 1.0 + (2.5 - 1.0) * (pow(stf(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
+	float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
+	float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+	float fSpecial = 1.0;
+	if (CheckAttribute(pchar, "GenQuest.Shipshine")) fSpecial += 1.25;
+	if (IsEquipCharacterByItem(pchar, "hat3")) fSpecial += 0.05;
+	return fKrank * fKcharisma * fKrep * fSpecial;
+}
+
+// Получить множитель рекрутов для нации
+float GetNationCrewMtpForTavern(int iNation)
+{
+	float fKrelation = GetNationRelationCoef(ChangeCharacterNationReputation(pchar, iNation, 0));
+	if (iNation != PIRATE) return fKrelation;
+
+	ref ship = &RealShips[sti(pchar.Ship.Type)];
+	if (CheckAttribute(pchar, "questTemp.CharleePrince")) fKrelation += 0.5;
+	if (ShipBonus2Artefact(pchar, SHIP_MEMENTO));
+	{
+		if (CheckAttribute(ship, "DeadSailors.RecruitPiratesBonus")) fKrelation += stf(ship.DeadSailors.RecruitPiratesBonus);
+	}
+
+	return fKrelation;
+}
+
+// пересчет наёмников в городах
+void UpdateCrewInColonies()
+{
+	int nNeedCrew = 0;
+	ref rTown;
 	int nPastQ, nPastM, iNation;
 	int eSailors, eCannoners, eSoldiers;
-    
-    int iRand = hrand(70);
-    float fKrank = 1.0 + (2.5 - 1.0) * (pow(stf(pchar.rank), 0.25) - 1.0) / (pow(40.0, 0.25) - 1.0);
-    float fKcharisma = 1.0 + (2.5 - 1.0) * (pow(stf(GetSummonSkillFromNameSimple(pchar, SKILL_LEADERSHIP)), 1.35) - 1.0) / (pow(100.0, 1.35) - 1.0);
-    float fKrep = GetReputationCoef(abs(COMPLEX_REPUTATION_NEUTRAL - sti(pchar.reputation.nobility)));
+	int processed = 0;
+	aref bonuses;
+	makearef(bonuses, TEV.CrewDate.bonuses);
 
-	for(int i = 0; i < MAX_COLONIES; i++)
+	// Раз в неделю обновляем множитель рекрутов в тавернах по нациям
+	if (GetNpcQuestPastDayParam(&TEV, "CrewDate") > 6 || !CheckAttribute(&TEV, "CrewDate.control_year"))
+	{
+		SaveCurrentNpcQuestDateParam(&TEV, "CrewDate");
+		float baseCrewMtp = GetBaseCrewMtpForTavern();
+		Log_TestInfo("Обновили модификатор рекрутов, теперь он " + baseCrewMtp + " до учёта нации");
+		for (int j=0; j < MAX_NATIONS; j++)
+		{
+			string nationAttr = "n"+j;
+			bonuses.(nationAttr) = baseCrewMtp * GetNationCrewMtpForTavern(j);
+		}
+	}
+
+	for(int i=0; i < MAX_COLONIES; i++)
 	{
 		rTown = &colonies[i];
-	    if (rTown.nation == "none") continue;
+		if (rTown.nation == "none") continue;
 		if (rTown.id == "IslaMona") continue;
+		if (rTown.id == "SanAndres") continue;
 
-        // belamour legendary edition 
+		// belamour legendary edition 
 		DeleteAttribute(rTown, "AdditionalCrew");
 		DeleteAttribute(rTown, "AddCrewTalisman9");
+		int daysPast = GetNpcQuestPastDayParam(rTown, "CrewDate");
 
-	    if (GetNpcQuestPastDayParam(rTown, "CrewDate") >= (2+rand(2)) || !CheckAttribute(rTown, "CrewDate.control_year"))
-	    {
-			SaveCurrentNpcQuestDateParam(rTown, "CrewDate");
-			nPastQ = 0;
-			if (CheckAttribute(rTown,"ship.crew.quantity"))	nPastQ = sti(rTown.ship.crew.quantity);
+		if (daysPast < (3 + rand(2)) && CheckAttribute(rTown, "CrewDate.control_year")) continue;
+		SaveCurrentNpcQuestDateParam(rTown, "CrewDate");
 
-            iNation = sti(rTown.nation);
-			float fKrelation = GetNationRelationCoef(ChangeCharacterNationReputation(pchar, iNation, 0)); // TO_DO: вынести наверх
-			nNeedCrew = makeint(fKrank * fKrelation * fKcharisma * fKrep * (iRand + 65) / 100 * 12); // В идеале hrand(70, rTown.id), но будет тормозить на частых вызовах
-			
-			// belamour legendary edition: вызывающий доверие повышает количество матросов
-			if(CheckCharacterPerk(pchar, "Trustworthy")) nNeedCrew *= 1.1;
-			if(CheckAttribute(pchar, "questTemp.CharleePrince") && iNation == PIRATE) nNeedCrew *= 1.5; // belamour legendary edition
-			if(ShipBonus2Artefact(pchar, SHIP_MEMENTO) && CheckAttribute(&RealShips[sti(pchar.Ship.Type)], "DeadSailors.RecruitPiratesBonus"))
-			{
-				if(iNation == PIRATE)
-					nNeedCrew *= 1.0 + stf(RealShips[sti(pchar.Ship.Type)].DeadSailors.RecruitPiratesBonus);
-			}
-		
-			if (nPastQ > nNeedCrew)
-                nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
-			else
-                nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
+		nPastQ = 0;
+		if (CheckAttribute(rTown,"ship.crew.quantity"))	nPastQ = sti(rTown.ship.crew.quantity);
+		iNation = sti(rTown.nation);
 
-			if (!CheckAttribute(pchar, "GenQuest.Shipshine")) rTown.Ship.crew.quantity = nNeedCrew;
-			else rTown.Ship.crew.quantity = nNeedCrew + (nNeedCrew / 4); //Jason
-			rTown.Ship.crew.morale = nPastM;
+		float cityMaxCrew = stf(GetAttributeValue(GetAttributeN(bonuses, iNation))) * 16.2; // Сколько было бы людей в таверне при идеальном броске кубика
+		nNeedCrew = makeint(cityMaxCrew * (0.6 + rand(40) * 0.01)); // hrand(40, rTown.id)  // фактическое от 60 до 100%
 
-			// пороги опыта от нации
-			switch (iNation)
-			{
-				case ENGLAND:	
-					eSailors   = 45; 
-					eCannoners = 5;
-					eSoldiers  = 20;
-				break;
-				case FRANCE:	
-					eSailors   = 20; 
-					eCannoners = 45;
-					eSoldiers  = 5; 
-				break;
-				case SPAIN:		
-					eSailors   = 5; 
-					eCannoners = 20;
-					eSoldiers  = 45; 
-				break;
-				case PIRATE:	
-					eSailors   = 25; 
-					eCannoners = 25;
-					eSoldiers  = 45; 
-				break;
-				case HOLLAND:	
-					eSailors   = 25; 
-					eCannoners = 25;
-					eSoldiers  = 5;
-				break;
-			}
-
-			rTown.Ship.Crew.Exp.Sailors   = eSailors   + rand(2*eSailors)   + rand(10);
-			rTown.Ship.Crew.Exp.Cannoners = eCannoners + rand(2*eCannoners) + rand(10);
-			rTown.Ship.Crew.Exp.Soldiers  = eSoldiers  + rand(2*eSoldiers)  + rand(10);
-			ChangeCrewExp(rTown, "Sailors", 0);  // приведение к 1-100
-			ChangeCrewExp(rTown, "Cannoners", 0);
-			ChangeCrewExp(rTown, "Soldiers", 0);
+		int excessCrew = nPastQ - makeint(cityMaxCrew);
+		if (excessCrew > 10)
+		{
+			nNeedCrew += makeint(makefloat(excessCrew) * 0.9);
+			rTown.Ship.Crew.HasExcess = true; // отметка, чтобы показать эффект присутствия лишних матросов
 		}
+		else DeleteAttribute(&rTown, "Ship.Crew.HasExcess");
+
+		rTown.Ship.crew.quantity = nNeedCrew;
+		processed++;
+		if (processed > 9) break;
+		if (daysPast < 5) continue;
+
+		if (nPastQ > nNeedCrew)
+			nPastM = MORALE_NORMAL/3 + rand(MORALE_MAX-MORALE_NORMAL/3);
+		else
+			nPastM = MORALE_NORMAL/5 + rand(makeint(MORALE_NORMAL*1.5));
+		rTown.Ship.crew.morale = nPastM;
+
+		// пороги опыта от нации
+		switch (iNation)
+		{
+			case ENGLAND:	
+				eSailors   = 45; 
+				eCannoners = 5;
+				eSoldiers  = 20;
+			break;
+			case FRANCE:	
+				eSailors   = 20; 
+				eCannoners = 45;
+				eSoldiers  = 5; 
+			break;
+			case SPAIN:		
+				eSailors   = 5; 
+				eCannoners = 20;
+				eSoldiers  = 45; 
+			break;
+			case PIRATE:	
+				eSailors   = 25; 
+				eCannoners = 25;
+				eSoldiers  = 45; 
+			break;
+			case HOLLAND:	
+				eSailors   = 25; 
+				eCannoners = 25;
+				eSoldiers  = 5;
+			break;
+		}
+
+		rTown.Ship.Crew.Exp.Sailors   = eSailors   + rand(2*eSailors)   + rand(10);
+		rTown.Ship.Crew.Exp.Cannoners = eCannoners + rand(2*eCannoners) + rand(10);
+		rTown.Ship.Crew.Exp.Soldiers  = eSoldiers  + rand(2*eSoldiers)  + rand(10);
+		ChangeCrewExp(rTown, "Sailors", 0);  // приведение к 1-100
+		ChangeCrewExp(rTown, "Cannoners", 0);
+		ChangeCrewExp(rTown, "Soldiers", 0);
 	}
 }
 
@@ -404,7 +447,8 @@ int GetCrewPriceForTavern(string sColony)
 	float fExp = (GetCrewExp(rTown, "Sailors") + GetCrewExp(rTown, "Cannoners") + GetCrewExp(rTown, "Soldiers")) / 100.00; // средний коэф опыта 0..3
 	float fSkill = GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_LEADERSHIP) + GetSummonSkillFromNameToOld(GetMainCharacter(),SKILL_COMMERCE); // 0-20
 	int   nCrewCost = makeint((0.5 + MOD_SKILL_ENEMY_RATE/5.0)*50 * (1.0 - fSkill / 40.0));
-	
+	if (IsEquipCharacterByItem(pchar, "hat3")) nCrewCost = makeint(nCrewCost * 0.95);
+
 	nCrewCost = makeint(fExp*nCrewCost + 0.5);
 	if (nCrewCost < 10) nCrewCost = 10; // не ниже!
 	if(rTown.id == "IslaMona") return 0; 
@@ -494,7 +538,7 @@ void Partition_SetValue(string state) // state = "before" || "after" - для с
 	HowComp = 0;
 	HowCrew = 0;
 	Partition_GetCargoCostCoeff(state);
-	part = Part_HeroPart + (10 - MOD_SKILL_ENEMY_RATE)*Part_HeroPart; // доля ГГ
+	part = Part_HeroPart + (9 - MOD_SKILL_ENEMY_RATE/2)*Part_HeroPart; // доля ГГ
 	for (i=0; i<COMPANION_MAX; i++)
 	{
 		cn = GetCompanionIndex(Pchar, i);
@@ -629,7 +673,7 @@ int Partition_GetCargoValue(ref chref)
 	{
 		shref = GetRealShip(st);
 		
-		ret += sti(shref.Price) * 0.2; // 0.2 - понижение стоимости корабля для грабежа
+		ret += sti(shref.Price) * 0.3; // 0.3 - понижение стоимости корабля для грабежа
 		// пушки считаем по бортам
 		if (sti(chref.Ship.Cannons.Type) != CANNON_TYPE_NONECANNON)
 		{
@@ -641,9 +685,9 @@ int Partition_GetCargoValue(ref chref)
 				costCoeff = stf(pchar.Goods.(sGood).costCoeff);
 			}
 			else costCoeff = 1.0;	
-		    ret += sti(Cannon.Cost) * 0.33 * costCoeff * GetCannonsNum(chref);
+		    ret += sti(Cannon.Cost) * 0.4 * costCoeff * GetCannonsNum(chref);
 		}
-		for (i=0; i<GOODS_QUANTITY; i++)
+		for (i=0; i<GetArraySize(&Goods); i++)
 		{
 			sGood = Goods[i].name;
 			costCoeff = 1.0;
@@ -668,7 +712,7 @@ void Partition_GetCargoCostCoeff(string state) // state = "before" || "after" - 
 	ref         chref, cannon;
 	
 	//trace("Partition_GetCargoCostCoeff    state :"+state);
-	for (i=0; i<GOODS_QUANTITY; i++)
+	for (i=0; i<GetArraySize(&Goods); i++)
 	{
 		sGood = Goods[i].name;
 		if(i > GOOD_CANNON_3 - 1) // учёт пушек - как установленных, так и в виде товара

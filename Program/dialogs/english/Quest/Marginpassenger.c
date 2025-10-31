@@ -14,7 +14,7 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "A bug. Make sure to let the devs know.";
+			dialog.text = "A bug. Be sure to let the devs know.";
 			link.l1 = "OK";
 			link.l1.go = "exit";
 		break;
@@ -22,13 +22,13 @@ void ProcessDialogEvent()
 		//разговор на палубе
 		case "MarginCap":
 			dialog.text = "Greetings, captain. Do you want anything from me?";
-			link.l1 = "Yes. Exactly, "+GetAddress_FormToNPC(NPChar)+". There is a passenger on your ship I am quite interested in. Name's "+pchar.GenQuest.Marginpassenger.q1Name+". I want your passenger to become my passenger. If you are alright with that, then we will part our ways and will never see each other again.";
+			link.l1 = "Yes. Exactly. "+GetAddress_FormToNPC(NPChar)+". There is a passenger on your ship I am quite interested in. The name is "+pchar.GenQuest.Marginpassenger.q1Name+". I want your passenger to become my passenger. If you are alright with that, then we shall part ways and never see each other again.";
 			link.l1.go = "MarginCap_1";
 		break;
 	
 		case "MarginCap_1":
 			dialog.text = "Is that so? And what if I say no?";
-			link.l1 = "Then I will have to make you rethink your decision with a few volleys of my guns, which are pointed in your direction at this very moment. Don't challenge your luck, "+GetAddress_FormToNPC(NPChar)+".";
+			link.l1 = "Then I will have to make you reconsider your decision with a few volleys from my guns, which are aimed in your direction at this very moment. Don't push your luck, "+GetAddress_FormToNPC(NPChar)+".";
 			link.l1.go = "MarginCap_2";
 		break;
 		
@@ -37,14 +37,14 @@ void ProcessDialogEvent()
 			int NPCparam = (7-sti(RealShips[sti(npchar.ship.type)].Class))*100+sti(npchar.ship.Crew.Morale)+sti(npchar.Ship.Crew.Exp.Sailors)+sti(npchar.Ship.Crew.Exp.Cannoners)+sti(npchar.Ship.Crew.Exp.Soldiers);
 			if (MCparam > NPCparam)//отдаст сам
 			{
-				dialog.text = "I don't have a choice then. The fate of my crew is more valuable to me than a fate of one man. But you won't get away with it just like that! I won't forget it!";
+				dialog.text = "I don't have a choice then. The fate of my crew is more valuable to me than the fate of one man. But you won't get away with it that easily! I won't forget this!";
 				link.l1 = "Calm down, and save yourself from a heart attack... Bring me my new passenger!";
 				link.l1.go = "MarginCap_3";
 			}
 			else
 			{
-				dialog.text = "You'd better leave my ship, sir, while I still allow you to. Don't try to scare me. And don't you dare to attack my ship, otherwise you will be repulsed at once. Get out, while I am still in the good mood!";
-				link.l1 = "I have warned you. I am on way. See you soon, "+GetAddress_FormToNPC(NPChar)+"!";
+				dialog.text = "You'd better leave my ship, sir, while I still allow you to. Don't try to scare me. And don't you dare attack my ship, or you will be repelled at once. Get out, while I'm still in a good mood!";
+				link.l1 = "I have warned you. I am on my way. See you soon, "+GetAddress_FormToNPC(NPChar)+"!";
 				link.l1.go = "MarginCap_4";
 			}
 		break;
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginCap_repeat":
-			dialog.text = "We have already had a talk, remember? Get away from my ship!";
+			dialog.text = "We've already had this conversation, remember? Get off my ship!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "MarginCap_repeat";
@@ -90,12 +90,12 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Marginpassenger.Mustboarding"))
 			{
 				dialog.text = "Argh, bastard! Burn in hell for your deeds!";
-				link.l1 = "I have offered you to give me the passenger peacefully... and you have rejected my offer. Now you alone are to be blamed!";
+				link.l1 = "I offered you the chance to hand over the passenger peacefully... and you rejected my offer. Now you alone are to blame!";
 				link.l1.go = "MarginCap_abordage_1";
 			}
 			else
 			{
-				dialog.text = "Argh, bastard! Why have you attacked the peaceful ship? We don't have gold or valuable goods!";
+				dialog.text = "Argh, bastard! Why have you attacked this peaceful ship? We have no gold or valuable goods!";
 				link.l1 = "But you have a valuable person aboard..."+pchar.GenQuest.Marginpassenger.q1Name+". I want your passenger.";
 				link.l1.go = "MarginCap_abordage_2";
 			}
@@ -108,7 +108,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginCap_abordage_2":
-			dialog.text = "And that is why you have committed a slaughter on my ship? A lot of men are dead! Pirate!";
+			dialog.text = "And that is why you have committed a massacre on my ship? A lot of men are dead! Pirate!";
 			link.l1 = "Less talking, my friend...";
 			link.l1.go = "MarginCap_abordage_3";
 		break;
@@ -130,8 +130,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginNeed_1":
-			dialog.text = "Yes, it is me. Do you want to submit an application? Then you should know that...";
-			link.l1 = "Wait a second, sir. I have a slightly different kind of application... Do you know someone named "+pchar.GenQuest.Marginpassenger.q1Name+"?";
+			dialog.text = "Yes, it's me. Do you want to submit an application? Then you should know that...";
+			link.l1 = "Wait a second, sir. I have a slightly different kind of request... Do you know someone named "+pchar.GenQuest.Marginpassenger.q1Name+"?";
 			link.l1.go = "MarginNeed_2";
 		break;
 		
@@ -139,45 +139,45 @@ void ProcessDialogEvent()
 			switch (pchar.GenQuest.Marginpassenger.sex)
 			{
 				case "woman":
-					dialog.text = "Yes, I know her... Sure I do! What's the matter?";
-					link.l1 = "She had gotten herself in a most unpleasant story: her ship was captured by pirates. Fortunately, I got a chance to board their ship and to save the poor soul. She has told me your name and here I am.";
+					dialog.text = "Yes, I know her... Of course I do! What's the matter?";
+					link.l1 = "She found herself in a most unpleasant situation: her ship was captured by pirates. Fortunately, I had the chance to board their ship and save the poor soul. She told me your name, and here I am.";
 					link.l1.go = "MarginNeed_woman";
 				break;
 				case "man":
 					dialog.text = "Yes, I know this man very well. What's the matter?";
-					link.l1 = "He had gotten himself in a most unpleasant story: his ship was captured by pirates. Fortunately, I got a chance to board their ship and to save this prisoner. He has told me your name and here I am.";
+					link.l1 = "He got himself into a most unpleasant situation: his ship was captured by pirates. Fortunately, I had a chance to board their ship and rescue this prisoner. He told me your name, and here I am.";
 					link.l1.go = "MarginNeed_man";
 				break;
 			}
 		break;
 		
 		case "MarginNeed_woman":
-			dialog.text = "Oh god! Where is she now? Why haven't you brought her here?";
-			link.l1 = "She is safe. And concerning your question... it is not that simple. I could have taken her back home myself, but I can give this opportunity to you. For a modest fee of course.";
+			dialog.text = "Oh God! Where is she now? Why haven't you brought her here?";
+			link.l1 = "She is safe. And as for your question... it is not that simple. I could have taken her back home myself, but I can give this opportunity to you. For a modest fee, of course.";
 			link.l1.go = "MarginNeed_woman_1";
 		break;
 		
 		case "MarginNeed_woman_1":
 			dialog.text = "Hm... I don't get it...";
-			link.l1 = "Why don't you? You pay me in gold, I will give you the girl and you will be able to use this situation in your interests... You want to marry her, am I right? And I will repair my ship with those coins, she was damaged during that fight with pirates.";
+			link.l1 = "Why don't you? You pay me in gold, I give you the girl, and you can use this situation to your advantage... You want to marry her, am I right? And I'll repair my ship with those coins; she was damaged during that fight with the pirates.";
 			link.l1.go = "MarginNeed_money";
 		break;
 		
 		case "MarginNeed_man":
-			dialog.text = "Oh god! Where is he now? Why haven't you brought him here?";
-			link.l1 = "He is safe. And about your question... it is not that simple. I could have taken him back home myself, but I can give this opportunity to you, concerning that you have your own interests in his family. For a modest fee of course.";
+			dialog.text = "Oh God! Where is he now? Why haven't you brought him here?";
+			link.l1 = "He is safe. And as for your question... it is not that simple. I could have taken him back home myself, but I can give you this opportunity, considering you have your own interests in his family. For a modest fee, of course.";
 			link.l1.go = "MarginNeed_man_1";
 		break;
 		
 		case "MarginNeed_man_1":
 			dialog.text = "Hm... I don't get it...";
-			link.l1 = "Why don't you? You pay me in gold, I will give you your friend and you will be able to use this situation in your interests. I have some information, you know... I will repair my ship with those coins, she was damaged during that fight with pirates.";
+			link.l1 = "Why don't you? You pay me in gold, I'll give you your friend, and you'll be able to use this situation to your advantage. I have some information, you know... I'll repair my ship with those coins; she was damaged during that fight with pirates.";
 			link.l1.go = "MarginNeed_money";
 		break;
 		
 		case "MarginNeed_money":
 			dialog.text = "Well, well... and how much do you want?";
-			link.l1 = "Consider that I want doubloons, not pesos.";
+			link.l1 = "Bear in mind, I want doubloons, not pesos.";
 			link.l1.go = "MarginNeed_money_1";
 		break;
 		
@@ -193,7 +193,7 @@ void ProcessDialogEvent()
 		int iSum = makeint(sti(pchar.GenQuest.Marginpassenger.Dublon)*5*stf(pchar.GenQuest.Marginpassenger.Chance));
 		if (iTemp <= 0)
 		{
-			dialog.text = "Very funny. Fine, let's pretend that your joke was funny. Farewell!";
+			dialog.text = "Very funny. Fine, let's pretend your joke was actually funny. Farewell!";
 			link.l1 = "Hm...";
 			link.l1.go = "MarginNeed_exit";
 			break;
@@ -202,14 +202,14 @@ void ProcessDialogEvent()
 		{
 			if (hrand(2) > 1) // Addon-2016 Jason уменьшаем раздачу дублонов
 			{
-				dialog.text = "Fine, I agree. I posses the required sum. Where is "+pchar.GenQuest.Marginpassenger.q1Name+"?";
-				link.l1 = "Must be on the pier by now. So you can go and get the passenger.";
+				dialog.text = "Fine, I agree. I possess the required sum. Where is "+pchar.GenQuest.Marginpassenger.q1Name+"?";
+				link.l1 = "Must be on the pier by now. So you can go and fetch the passenger.";
 				link.l1.go = "MarginNeed_dublon";
 			}
 			else
 			{
-				dialog.text = "I am sorry, but I don't have that many doubloons. Will pesos do fine?";
-				link.l1 = "I want doubloons, but I suppose that the ship master will accept pesos... Give them to me.";
+				dialog.text = "I am sorry, but I don't have that many doubloons. Will pesos do?";
+				link.l1 = "I want doubloons, but I suppose the shipmaster will accept pesos... Give them to me.";
 				link.l1.go = "MarginNeed_peso";
 				link.l2 = "No, I need doubloons only.";
 				link.l2.go = "MarginNeed_dublon_exit";
@@ -218,19 +218,19 @@ void ProcessDialogEvent()
 		}
 		if (iTemp > iSum && iTemp < 1000)
 		{
-			dialog.text = "Unfortunately, I don't have such sum. So I can't accept your proposal even with all of my wish to do that.";
+			dialog.text = "Unfortunately, I don't have such a sum. So I can't accept your proposal, much as I would like to.";
 			link.l1 = "Hm...";
 			link.l1.go = "MarginNeed_exit";
 			break;
 		}
 		if (iTemp > 1000 && iTemp < 3000)
 		{
-			dialog.text = "Sir, do you even understand what are you talking about? Are you aware that this sum is too huge? Get the hell out of here!";
+			dialog.text = "Sir, do you even understand what you're talking about? Are you aware that this sum is far too large? Get the hell out of here!";
 			link.l1 = "Hm...";
 			link.l1.go = "MarginNeed_exit";
 			break;
 		}
-			dialog.text = "Well... Sir, you have to go to the doctor and immediately. It looks like that you have a very strong fever or... anyway, you need a doctor. And I am too busy. Farewell!";
+			dialog.text = "Well... Sir, you must see a doctor at once. It seems you have a very high fever or... anyway, you need a doctor. And I am too busy. Farewell!";
 			link.l1 = "Hm...";
 			link.l1.go = "MarginNeed_exit";
 		break;
@@ -253,8 +253,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginNeed_peso":
-			dialog.text = "Here it is, the whole sum in pesos just what you have wanted... Where is "+pchar.GenQuest.Marginpassenger.q1Name+"?";
-			link.l1 = "Must be on the pier by now. So you can go and get the passenger..";
+			dialog.text = "Here it is, the whole sum in pesos, just as you wanted... Where is "+pchar.GenQuest.Marginpassenger.q1Name+"?";
+			link.l1 = "Must be on the pier by now. So you can go and get the passenger.";
 			link.l1.go = "MarginNeed_peso_1";
 		break;
 		
@@ -266,7 +266,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("MarginPass");
 			RemovePassenger(Pchar, sld);
 			sld.lifeday = 0;
-			iTemp = sti(dialogEditStrings[1])*100;
+			iTemp = sti(dialogEditStrings[1])*500;
 			AddMoneyToCharacter(pchar, iTemp);
 			AddQuestRecord("Marginpassenger", "10");
 			AddQuestUserData("Marginpassenger", "sSum", FindRussianMoneyString(iTemp));
@@ -276,7 +276,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MarginNeed_dublon_exit":
-			dialog.text = "I can't accept your proposal then, even with all of my wish to do that. Farewell!";
+			dialog.text = "I can't accept your proposal then, much as I wish I could. Farewell!";
 			link.l1 = "Hm...";
 			link.l1.go = "MarginNeed_exit";
 		break;
@@ -303,19 +303,19 @@ void ProcessDialogEvent()
 		
 		case "MarginPass":
 			dialog.text = "What is... What's going on here?!";
-			link.l1 = "It is very simple, "+NPCharSexPhrase(NPChar, "pal","girl")+". You are my dear passenger now. A guarded passenger. Don't try to resist or you will end up in the cargo deck.";
+			link.l1 = "It is very simple, "+NPCharSexPhrase(NPChar,"pal","girl")+". You are my dear passenger now. A guarded passenger. Don't try to resist or you'll end up in the cargo hold.";
 			link.l1.go = "MarginPass_1";
 		break;
 		
 		case "MarginPass_1":
 			dialog.text = "Do you mean that I am your prisoner?";
-			link.l1 = "Oh, no. Of course not. Not a prisoner, but a dear guest. A very valuable guest...";
+			link.l1 = "Oh, no. Of course not. Not a prisoner, but a dear guest. A most valuable guest...";
 			link.l1.go = "MarginPass_2";
 		break;
 		
 		case "MarginPass_2":
 			dialog.text = "You... you will pay for your actions!";
-			link.l1 = "You are wrong again,"+NPCharSexPhrase(NPChar, ", pal",", dear")+". I won't pay, but I will be paid. Enough talking, go to your cabin!";
+			link.l1 = "You are wrong again,"+NPCharSexPhrase(NPChar,", pal",", dear")+". I won't pay, but I will be paid. Enough talking, go to your cabin!";
 			link.l1.go = "MarginPass_3";
 		break;
 		

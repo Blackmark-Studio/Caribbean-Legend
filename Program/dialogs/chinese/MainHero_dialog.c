@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 				
 				DeleteAttribute(pchar, "questTemp.PZ_OsmatrivaemSunduk");
 
-				AddDialogExitQuest("PZ_OsmatrivaemSunduk_3");
+				AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_4");
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.PZ_GotovimShlupki")) {
@@ -551,13 +551,6 @@ void ProcessDialogEvent()
 	        	Link.l18 = "准备庆祝活动。 ";
 	    		Link.l18.go = "LH_marry_4";
 	    	}
-			// -->自动维修			
-			if(Pchar.Location == Pchar.location.from_sea && CheckOfficersPerk(pchar, "SelfRepair") && CheckSelfRepairConditions()) 
-			{
-				Link.l14 = "开始修理船只";
-				Link.l14.go = "StartSelfRepair";
-			}			
-			// <--自动维修
 			//--> 游戏结束
 			if(CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
 	        {
@@ -574,11 +567,6 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("Tonzag_CreateKiller");
 		break;
 		
-		case "StartSelfRepair":
-			NextDiag.CurrentNode = NextDiag.TempNode;
-			DialogExit_Self();
-			LaunchRepair(pchar);
-		break;
 		
 		case "SetGunBullets":
 			Dialog.Text = "选择弹药类型:";

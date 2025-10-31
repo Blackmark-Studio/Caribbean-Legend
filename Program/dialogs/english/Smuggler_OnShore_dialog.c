@@ -27,9 +27,15 @@ void ProcessDialogEvent()
 			{
 				int iTmp = false;
 				int iChIdx;
+				
+				float fMaxClass = ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5);
+				if (IsEquipCharacterByArtefact(pchar, "talisman21")) fMaxClass = 2.0;
+				
+				if (GetCompanionQuantity(pchar) > 1) iTmp = true;
+				if (GetCharacterShipClass(pchar) < fMaxClass) iTmp = true;
 
 				// поиск мин.  те старшего класса
-				for (i=0; i<COMPANION_MAX; i++)
+				/* for (i=0; i<COMPANION_MAX; i++)
 				{
 					iChIdx = GetCompanionIndex(GetMainCharacter(), i);
 					if (iChIdx>=0)
@@ -37,25 +43,18 @@ void ProcessDialogEvent()
 						sld = GetCharacter(iChIdx);
             			if (GetCharacterShipClass(sld) < ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5)) iTmp = true;
 					}
-				}
+				} */
 				
 				if (iTmp)
 				{
-					dialog.text = NPCStringReactionRepeat("Weren't you told not to come here on such noticeable ship! Why don't you bring a pair of man-of-wars? Get lost and come on a smaller ship.", 
-						"Get out! Or we will give you away to the patrol by ourselves.", 
-						"Go to your boat and get away.",
-						"So tired of you...", "block", 1, npchar, Dialog.CurrentNode);
-					link.l1 = HeroStringReactionRepeat("Alright, alright I am going to change my vessel.", 
-						"Calm yourself, I am on way.",
-						"Damn, I thought that it will work...", 
-						"Yes, I am really stubborn!", npchar, Dialog.CurrentNode);
+					dialog.text = NPCStringReactionRepeat("Weren't you told not to come here on such a noticeable ship! Why don't you bring a pair of men-of-war? Get lost and come back on a smaller ship.","Get out! Or we'll hand you over to the patrol ourselves.","Go to your boat and get away.","So tired of you...","block",1,npchar,Dialog.CurrentNode);
+					link.l1 = HeroStringReactionRepeat("Alright, alright, I am going to change my vessel.","Calm yourself, I am on my way.","Damn, I thought it would work...","Yes, I am really stubborn!",npchar,Dialog.CurrentNode);
 						link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);	
 					break;
 				}
 			
 				Dialog.snd = "voice\SMSH\SMSH001";
-				dialog.Text = RandPhraseSimple("Hey, what are doing here, "+ GetSexPhrase("pal","girl") +"?",
-                                          RandSwear() + "What's your business here?!");
+				dialog.Text = RandPhraseSimple("Hey, what are you doing here, "+GetSexPhrase("pal","girl")+"?",RandSwear()+"What's your business here?!");
 				Link.l1 = "Relax, mate, let's trade!";
 				Pchar.quest.Contraband.Counter = 0; // не торговали
 				if(Pchar.Location == Pchar.location.from_sea)
@@ -69,7 +68,7 @@ void ProcessDialogEvent()
 				//по заданию губернатора, истребление контры, только эта ветка.
 				if (CheckAttribute(pchar, "GenQuest.KillSmugglers") && pchar.GenQuest.KillSmugglers == "" && pchar.GenQuest.KillSmugglers.Areal == GiveArealByLocation(&locations[FindLocation(pchar.location)]))				
 				{
-					Link.l2 = "I am here by the orders of the governor of " + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen") + "! Drop down your weapons and follow me, you're arrested!";
+					Link.l2 = "I am here on the orders of the governor of "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen")+"! Drop your weapons and follow me, you're under arrest!";
 					Link.l2.go = "GenQuestKillContraband_1";
 				}
 			}
@@ -79,18 +78,18 @@ void ProcessDialogEvent()
 				//если заплатил, то разговаривают, иначе посылают
 				if (CheckAttribute(PChar, "GenQuest.contraTravel.payed") && sti(PChar.GenQuest.contraTravel.payed) == true)
 				{
-                    dialog.Text = RandPhraseSimple("Ah, at last! We have been waiting for you. Let's move, it's time to sail off.", "Let's do it fast. There are patrols everywhere. We need to get away from here!");
+                    dialog.Text = RandPhraseSimple("Ah, at last! We've been waiting for you. Let's move, it's time to set sail.","Let's do it quickly. There are patrols everywhere. We need to get away from here!");
 					//по заданию губернатора, истребление контры, только эта ветка.
 					if (CheckAttribute(pchar, "GenQuest.KillSmugglers") && pchar.GenQuest.KillSmugglers == "" && pchar.GenQuest.KillSmugglers.Areal == GiveArealByLocation(&locations[FindLocation(pchar.location)]))
 					{
-						Link.l1 = "I am here by the orders of the governor of " + XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen") + "! Drop down your weapons and follow me, you're arrested!";
+						Link.l1 = "I am here by order of the governor of "+XI_ConvertString("Colony"+characters[GetCharacterIndex(pchar.GenQuest.KillSmugglers.MayorId)].city+"Gen")+"! Drop your weapons and follow me, you're under arrest!";
 						Link.l1.go = "GenQuestKillContraband_1";
 						break;
 					}
 					//если набрал пассажиров, в сад..
 					if (GetPassengersQuantity(PChar) > 0)
 					{
-						dialog.Text = "And who are you? We were talking about only one passenger!";
+						dialog.Text = "And who are you? We were talking about just one passenger!";
 						Link.l1 = "Oops..";
 						Link.l1.go = "Exit";
 						break;
@@ -98,7 +97,7 @@ void ProcessDialogEvent()
 					//если набрал компаньонов или купил корабль себе уже :), в сад..
 					if (GetCompanionQuantity(PChar) > 1 || sti(PChar.ship.type) != SHIP_NOTUSED)
 					{
-						dialog.Text = RandPhraseSimple("Who are you? We have been waiting a passenger, not a captain.", "Get lost! Don't come back until you get rid of your ship.");
+						dialog.Text = RandPhraseSimple("Who are you? We have been expecting a passenger, not a captain.","Get lost! Don't come back until you've gotten rid of your ship.");
 						Link.l1 = "Crap!";
 						Link.l1.go = "Exit";
 						break;
@@ -113,7 +112,7 @@ void ProcessDialogEvent()
 							Link.l1.go = "Exit";
 							break;
 						}
-						dialog.Text = RandPhraseSimple("Thanks for your assistance. We won't forget that. Let's sail now.", "Well done! Good fighting. Let's move.");
+						dialog.Text = RandPhraseSimple("Thank you for your help. We won't forget it. Let's set sail now.","Well done! Good fighting. Let's move.");
 						ChangeContrabandRelation(PChar, 5);
 						PChar.GenQuest.contraTravel.PatrolFight = false;
 						AddCharacterExpToSkill(Pchar, "Sneak", 50);
@@ -155,16 +154,16 @@ void ProcessDialogEvent()
                     // если таможня уже бежит
 					if (CheckAttribute(NPChar, "ContrabandInterruption"))
 					{
-					    dialog.Text = RandSwear()+ "Patrol! We don't know you and you don't know us.";
+					    dialog.Text = RandSwear()+"Patrol! We don't know you and you don't know us.";
 						Link.l1 = "Fine!";
 						Link.l1.go = "Exit";
 					}
 					else
 					{
-						dialog.Text = "Get lost! We will rip your guts if you spoil our deal.";
-						Link.l1 = RandPhraseSimple("You dare to threaten me mutt!?", "You will choke on your words!");
+						dialog.Text = "Get lost! We'll rip your guts out if you spoil our deal.";
+						Link.l1 = RandPhraseSimple("You dare to threaten me, mutt!?","You will choke on your words!");
 						Link.l1.go = "Exit_fight";
-						Link.l2 = "Don't worry, I know what business is. Bye.";
+						Link.l2 = "Don't worry, I know how business works. Bye.";
 						Link.l2.go = "Exit";
 					}
 				}
@@ -173,8 +172,8 @@ void ProcessDialogEvent()
 
 		case "No_Ship":
 			Dialog.snd = "voice\SMSH\SMSH003";
-			dialog.Text = "Are you carrying it on your backbone? Where is your ship?";
-			Link.l1 = RandPhraseSimple("First, I'd like to see if there is any catch in it.", "Didn't want to risk the ship. I prefer seeing everything with my own eyes.");
+			dialog.Text = "Are you carrying it on your back? Where is your ship?";
+			Link.l1 = RandPhraseSimple("First, I'd like to see if there's any catch to it.","Didn't want to risk the ship. I prefer to see everything with my own eyes.");
 			Link.l1.go = "No_ship_1";
 			Link.l2 = "The deal is over!";
 			Link.l2.go = "Cancellation";
@@ -182,15 +181,15 @@ void ProcessDialogEvent()
 
 		case "No_ship_1":
 			Dialog.snd = "voice\SMSH\SMSH004";
-			dialog.Text = "We are honest men and we won't cheat on you. Bring your ship here, just don't make patrols follow you.";
-			Link.l1 = "Fine. Wait me here.";
+			dialog.Text = "We are honest men and we won't cheat you. Bring your ship here, just don't let the patrols follow you.";
+			Link.l1 = "Fine. Wait for me here.";
 			Link.l1.go = "Exit";
 		break;
 
 		case "Cancellation":
             if (sti(Pchar.quest.Contraband.Counter) == 0)
             {
-    			dialog.Text = "Over? You are probably kidding me!";
+    			dialog.Text = "Over? You must be joking!";
     			Link.l1 = "I am serious.";
     			Link.l1.go = "Cancellation_1";
 			}
@@ -209,7 +208,7 @@ void ProcessDialogEvent()
 				{
 					ChangeContrabandRelation(pchar, -30);
 					Dialog.snd = "voice\SMSH\SMSH006";
-					dialog.Text = "You bastard! You can't fool us just like that! You'll pay for it with your own head!";
+					dialog.Text = "You bastard! You can't fool us that easily! You'll pay for it with your own head!";
 					Link.l1 = "Doubt it!";
 					Link.l1.go = "Exit_fight";			
 				}
@@ -240,7 +239,7 @@ void ProcessDialogEvent()
 				ChangeContrabandRelation(pchar, -20); //репу контры вниз
 			}
 			dialog.Text = "You will answer for that!";
-			Link.l1 = "Then you are all dead. I've got a clear order - to eliminate all of you if you will resist.";
+			Link.l1 = "Then you are all dead. I've got clear orders - to eliminate all of you if you resist.";
 			Link.l1.go = "Exit_fight";
 		break;
 		
@@ -306,7 +305,7 @@ void ProcessDialogEvent()
 			// сама торговля -->
             if(FindContrabandGoods(Pchar) == -1 && sti(Pchar.quest.Contraband.Counter) == 0)
             {
-				dialog.Text = "And what are you doing here? You have nothing to sell! Every good in your cargo can be sold in the town!";
+				dialog.Text = "And what are you doing here? You have nothing to sell! Every item in your cargo can be sold in town!";
 				Link.l1 = "No luck this time.";
 				Link.l1.go = "NoGoods";
 			}
@@ -317,7 +316,7 @@ void ProcessDialogEvent()
                 {
                     if(hrand(11) == 3)
                     {
-        				dialog.Text = "I see.. You know, we'll take your goods for free. I doubt that you'll be able to complain anyway.";
+        				dialog.Text = "I see... You know, we'll take your goods for free. I doubt you'll be able to complain anyway.";
         				Link.l1 = "Try it, scum!";
         				Link.l1.go = "Exit_fight";
                         break;
@@ -334,7 +333,7 @@ void ProcessDialogEvent()
         			Pchar.quest.Rand_ContrabandAtSeaEnded.win_condition = "Rand_ContrabandAtSeaEnded";
     			}
     			// установим окружение <--
-				dialog.text = "Alright let's see what you've got.";										  
+				dialog.text = "Alright, let's see what you've got.";										  
 				Link.l1 = "Show us what you've got.";
 				Link.l1.go = "Exchange1"; 
 				if (sti(Pchar.quest.Contraband.Counter) == 0)
@@ -356,26 +355,26 @@ void ProcessDialogEvent()
 		break;				
 		// belamour legendary edition опасный груз -->
 		case "SmugglerZPQ":
-			dialog.text = "Good deal, captain! If there are any other interesting products - contact us!";										  
-			Link.l1 = "I agree, I am also satisfied with our trade. Oh, if only I could buy all the goods at such a good price...";
+			dialog.text = "Good deal, captain! If you have any other interesting goods, let us know!";										  
+			Link.l1 = "I agree, I am also satisfied with our trade. Oh, if only I could buy all my goods at such a good price...";
 			Link.l1.go = "SmugglerZPQ_1"; 
 		break;
 
 		case "SmugglerZPQ_1":
-			dialog.text = "Why do we need to buy ordinary goods at such prices, if they can be legally purchased in a store? But do not be discouraged: in fact, any product can be sold, even ordinary gunpowder! You could sell at a sky-high price one just needs to know the place.";										  
-			Link.l1 = "Come on. Who will buy gunpowder at a sky-high price?";
+			dialog.text = "Why should we buy ordinary goods at such prices, when they can be legally purchased in a store? But do not be discouraged: in fact, any product can be sold, even ordinary gunpowder! You could sell it at a sky-high price — one just needs to know the right place.";										  
+			Link.l1 = "Come on. Who would buy gunpowder at such a sky-high price?";
 			Link.l1.go = "SmugglerZPQ_2"; 
 		break;
 		
 		case "SmugglerZPQ_2":
-			dialog.text = "Well, that's what I told you, hehe ... Although ... You know, there really is such an opportunity to sell gunpowder for a fortune, but this deal still doesn't shine for us, for it you need to have a fairly good reputation, and we, as you understand, are not nobles.";										  
-			Link.l1 = "Well, maybe I can check it out. I can be good and kind when needed. Can you tell me about the deal?";
+			dialog.text = "Well, that's what I told you, hehe ... Although ... You know, there really is an opportunity to sell gunpowder for a fortune, but this deal still isn't for us; for that, you need to have a rather good reputation, and we, as you understand, are not nobles.";										  
+			Link.l1 = "Well, perhaps I can look into it. I can be good and kind when needed. Can you tell me about the deal?";
 			Link.l1.go = "SmugglerZPQ_3"; 
 		break;
 		
 		case "SmugglerZPQ_3":
-			dialog.text = "Everything costs money in this world, captain, even information. I would even say, especially information. I propose this: I will give you this tip for a symbolic amount of ... let's say five thousand pesos. Will that suit you?";										  
-			Link.l1 = "To pay five thousand pesos for dubious information about where you can sell gunpowder for a high price? No, I think I can somehow live without this tip.";
+			dialog.text = "Everything costs money in this world, captain, even information. I would even say, especially information. I propose this: I will give you this tip for a symbolic amount of... let's say five thousand pesos. Will that suit you?";										  
+			Link.l1 = "To pay five thousand pesos for dubious information about where you can sell gunpowder at a high price? No, I think I can manage without this tip.";
 			Link.l1.go = "SmugglerZPQ_NM"; 
 			if(sti(pchar.money) > 4999)
 			{
@@ -395,15 +394,15 @@ void ProcessDialogEvent()
 		
 		case "SmugglerZPQ_4":
 			AddMoneyToCharacter(pchar, -5000);
-			dialog.text = "Excellent, captain! You are an amazing customer you know. So listen. I was whispered in my ear that in some of the Spanish cities on the Maine there was a problem with gunpowder. Whether it's tropical showers, or something else - in general, in the fort that guards the colony, there are very few reserves. And the commandant of this fort is looking for someone who could help him in this difficult situation.\nThere are only two problems: first, this is a delicate matter, and the commandant will not talk about it with any crooks, and secondly, we are talking about a very large batch - not every ship will fit so much gunpowder, so you might need a fleet. Also not every captain will agree to turn his vessel into a floating bomb that can easily destroy an entire island if it's hit by a stray cannonball.";
+			dialog.text = "Excellent, captain! You are an exceptional customer, you know. So listen. I heard whispers that in some of the Spanish cities on the Main, there is a problem with gunpowder. Whether it's tropical downpours or something else – in short, the fort guarding the colony has very little in reserve. And the commandant of this fort is looking for someone who could help him in this difficult situation.\nThere are only two problems: first, this is a delicate matter, and the commandant will not discuss it with just any rogue; and secondly, we are talking about a very large shipment – not every ship can carry so much gunpowder, so you might need a fleet. Also, not every captain will agree to turn his vessel into a floating bomb that could easily destroy an entire island if struck by a stray cannonball.";
 			if(CheckAttribute(pchar,"questTemp.zpq"))
 			{
-				Link.l1 = "Sorry, but I already know about this deal. Anyway, the deal is worth more than money, so you deserve five thousand.";
+				Link.l1 = "Sorry, but I already know about this deal. Still, the deal is worth more than money, so you deserve five thousand.";
 				Link.l1.go = "SmugglerZPQ_5"; 
 			}
 			else
 			{
-				Link.l1 = "Valuable information, thank you. If I'm on Maine, I'll ask the local commandants of the forts about their misfortunes. And somehow I hope I will deal with these problems or abuse them he-he.";
+				Link.l1 = "Valuable information, thank you. If I'm in Maine, I'll ask the local commandants of the forts about their misfortunes. And somehow I hope I will deal with these problems or take advantage of them, he-he.";
 				Link.l1.go = "SmugglerZPQ_6"; 
 			}
 		break;
@@ -412,7 +411,7 @@ void ProcessDialogEvent()
 			npchar.Dialog.CurrentNode = "first time";
 			chrDisableReloadToLocation = false;
 			DeleteAttribute(pchar,"GenQuest.Smugglerzpq");
-			dialog.text = "That's how it happens. In any case, we had a good deal. Good luck... and don't run into a patrol!";										  
+			dialog.text = "That's how it goes. In any case, we had a good deal. Good luck... and don't run into a patrol!";										  
 			Link.l1 = "You too. Goodbye.";
 			Link.l1.go = "exit"; 
 		break;
@@ -422,7 +421,7 @@ void ProcessDialogEvent()
 			chrDisableReloadToLocation = false;
 			DeleteAttribute(pchar,"GenQuest.Smugglerzpq");
 			AddQuestRecord("zpq", "0");
-			dialog.text = "That's how it happens. In any case, we had a good deal. Good luck... and don't run into a patrol!";										  
+			dialog.text = "That's how it goes. In any case, we had a good deal. Good luck... and don't run into a patrol!";										  
 			Link.l1 = "You too. Goodbye.";
 			Link.l1.go = "exit"; 
 		break;

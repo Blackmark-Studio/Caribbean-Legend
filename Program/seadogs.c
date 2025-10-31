@@ -33,11 +33,14 @@
 #include "controls\controls.c"
 #include "ITEMS\items.h"
 #include "ITEMS\itemLogic.c"
+#include "ITEMS\init_helpers.c"
 #include "ITEMS\items_utilite.c"
+#include "modifiers\modifiers.c"
 #include "store\store.h"
 #include "interface\interface.c"
 #include "fleet_cmds.c"
 #include "controls\controls_func.c" // belamour процессирование контролок 
+#include "atlas.c"
 #include "migrations.c"
 #include "achievements.c"
 #include "ships\ships_generator.c"
@@ -51,6 +54,7 @@ extern void wdmInitWorldMap();
 extern void InitGoods();
 extern void InitStores();
 extern int  InitItems();
+extern void InitModifiers();
 extern void InitCharactersTables();
 extern void InitCharactersNames();
 extern void InitPiratesNames();
@@ -200,24 +204,9 @@ void ProcessCheat()
 
 		break;
 		case "Encounters":
-			if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-			{
-				mc.worldmapencountersoff = "1";
-				Log_SetStringToLog("Worldmap encounters OFF");
-			}
-			else
-			{
-				if(mc.worldmapencountersoff == "1") 
-				{
-					mc.worldmapencountersoff = "0";
-					Log_SetStringToLog("Worldmap encounters ON");
-				}
-				else 
-				{
-					mc.worldmapencountersoff = "1";
-					Log_SetStringToLog("Worldmap encounters OFF");
-				}
-			}
+			bEncOffGlobal = !bEncOffGlobal;
+			if (bEncOffGlobal) Log_SetStringToLog("Worldmap encounters OFF");
+			else Log_SetStringToLog("Worldmap encounters ON");
 		break;
 		case "MainCharacter":
 			mc.model	= "Danielle";
@@ -368,6 +357,11 @@ void Main_LogoVideo()
 	case 1:
 		InterfaceStates.videoIdx = 2;
 		StartPostVideo("Valkyrie",1);
+	break;
+
+	case 2:
+		InterfaceStates.videoIdx = 3;
+		StartPostVideo("Logos",1);
 	break;
 
 	//default:
@@ -853,6 +847,8 @@ void OnLoad()
 			Log_TestInfo("Обновлен партикл огня");
 		}
 	}
+
+	UpdateCashTablesFellows();
 }
 
 void NewGame()
@@ -942,7 +938,6 @@ void NewGame_continue()
 	}
     	
 	UpdateCrewInColonies(); // пересчет наёмников в городах
-	
 	ReloadProgressEnd();
 }
 
@@ -977,15 +972,23 @@ void InitGame()
 	InitParticles();
 	ReloadProgressUpdate();
 
-    if(LoadSegment("items\initItems.c"))
+	if(LoadSegment("items\initItems.c"))
 	{
 		InitItems();
 		UnloadSegment("items\initItems.c");
 	}
 	ReloadProgressUpdate();
 
+	ReloadProgressUpdate();
+
 	GenerateGenerableItems(); // <-- ugeen генерация предметов
 	ReloadProgressUpdate();
+
+	if(LoadSegment("items\modifiers\init\init.c"))
+	{
+		InitModifiers();
+		UnloadSegment("items\modifiers\init\init.c");
+	}
 	
 	CharactersInit();
 	ReloadProgressUpdate();
@@ -1004,9 +1007,6 @@ void InitGame()
 	ReloadProgressUpdate();
 	
 	SeaAIGroupsInit();
-	ReloadProgressUpdate();
-	
-	InitQuestMapEncounters();
 	ReloadProgressUpdate();
 
 	ResetQuestMovie();

@@ -29,8 +29,9 @@ void InitEncounters()
 	rEnc.worldMapShip = "sloop";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 5, 6);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 1, 5, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_MERCHANT,  1, 1, 6, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SMALL, SHIP_SPEC_UNIVERSAL, 1, 1, 6, 6);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_SMALL, 1, 0, 0, 1);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговый караван - Средний
@@ -40,9 +41,9 @@ void InitEncounters()
 	rEnc.worldMapShip = "bark";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 2, 3, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 1, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 3, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_MERCHANT,  1, 1, 5, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_MEDIUM, SHIP_SPEC_UNIVERSAL, 1, 1, 5, 5);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_MERCHANT_MEDIUM, 1, 0, 0, 1);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговый караван - Большой
@@ -52,9 +53,8 @@ void InitEncounters()
 	rEnc.worldMapShip = "galleon";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 4, 2, 3);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 2, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 2, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_MERCHANT,  1, 1, 4, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_LARGE, SHIP_SPEC_UNIVERSAL, 1, 1, 4, 4);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговая экспедиция - Средняя (Коронный торговец)
@@ -65,9 +65,8 @@ void InitEncounters()
 	rEnc.worldMapShip = "bark";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 2, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 1, 3, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_MERCHANT,  1, 1, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_CROWN, SHIP_SPEC_WAR,       1, 1, 3, 5);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Торговая экспедиция - Большая
@@ -78,10 +77,9 @@ void InitEncounters()
 	rEnc.worldMapShip = "galleon";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 2, 3);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 2, 2, 3);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_MERCHANT,  1, 1, 2, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_UNIVERSAL, 0, 1, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_EXPEDITION, SHIP_SPEC_WAR,       1, 1, 2, 3);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Работорговцы
@@ -92,10 +90,8 @@ void InitEncounters()
 	rEnc.worldMapShip = "galleon";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 2, 2, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 1, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_MERCHANT,  1, 1, 2, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_MERCHANT_SLAVES, SHIP_SPEC_WAR,       1, 1, 2, 4);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Военная эскадра - Средняя
@@ -105,10 +101,8 @@ void InitEncounters()
 	rEnc.worldMapShip = "frigate";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 2, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      0, 1, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 5, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_MERCHANT,  1, 1, 6, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 5, 5);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Военная эскадра - Большая
@@ -118,10 +112,10 @@ void InitEncounters()
 	rEnc.worldMapShip = "manowar";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      2, 3, 2, 3);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      1, 1, 3, 4);
-    Enc_AddShips(rEnc, SHIP_SPEC_MERCHANT,  "Merchant", 1, 1, 3, 3);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_RAIDER,    1, 1, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_MERCHANT,  1, 1, 3, 3);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_UNIVERSAL, 1, 1, 3, 4);
+    SetEncSlot_Params(ENCOUNTER_TYPE_NAVAL_LARGE, SHIP_SPEC_WAR,       2, 2, 2, 3);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Патруль - Малый
@@ -131,8 +125,7 @@ void InitEncounters()
 	rEnc.worldMapShip = "bark";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      0, 1, 5, 6);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 5, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_SMALL, SHIP_SPEC_RAIDER,    1, 1, 6, 6);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Патруль - Средний
@@ -142,8 +135,8 @@ void InitEncounters()
 	rEnc.worldMapShip = "frigate";
 	Enc_ExcludeNation(rEnc, PIRATE);
 
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      1, 1, 4, 5);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 2, 3, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_RAIDER,    1, 1, 3, 5);
+    SetEncSlot_Params(ENCOUNTER_TYPE_PATROL_MEDIUM, SHIP_SPEC_WAR,       1, 1, 4, 5);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Контрабандисты (TO_DO)
@@ -151,6 +144,7 @@ void InitEncounters()
 	makeref(rEnc, EncountersTypes[ENCOUNTER_TYPE_SMUGGLERS]);
  	rEnc.Chance = 0;
 	rEnc.Skip   = true;
+    rEnc.worldMapShip = "boat";
 	Enc_ExcludeNation(rEnc, ENGLAND);
 	Enc_ExcludeNation(rEnc, FRANCE);
 	Enc_ExcludeNation(rEnc, SPAIN);
@@ -162,14 +156,16 @@ void InitEncounters()
 	makeref(rEnc, EncountersTypes[ENCOUNTER_TYPE_PIRATE]);
  	rEnc.Type = ENCOUNTER_WAR;
     rEnc.worldMapShip = "sloop";
-    rEnc.Stage = 0;
-	Enc_ExcludeNation(rEnc, ENGLAND);
+    iGPThreatMax = THREAT_LVL_1;
+    Enc_ExcludeNation(rEnc, ENGLAND);
 	Enc_ExcludeNation(rEnc, FRANCE);
 	Enc_ExcludeNation(rEnc, SPAIN);
 	Enc_ExcludeNation(rEnc, HOLLAND);
-    Enc_AddShips(rEnc, SHIP_SPEC_RAIDER,    "War",      1, 1, 6, 6);
-    Enc_AddShips(rEnc, SHIP_SPEC_UNIVERSAL, "War",      0, 1, 6, 6);
-    Enc_AddShips(rEnc, SHIP_SPEC_WAR,       "War",      0, 1, 6, 6);
+
+    SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_RAIDER,    1, 1, 6, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_UNIVERSAL, 1, 1, 6, 6);
+    SetEncSlot_Params(ENCOUNTER_TYPE_PIRATE, SHIP_SPEC_WAR,       1, 1, 6, 6);
+    SetEncSlot_SpecRandom(ENCOUNTER_TYPE_PIRATE, 0, 1, 1, 1);
 
 	///////////////////////////////////////////////////////////////////////////////////////
 	/// Бочонок
@@ -189,4 +185,43 @@ void InitEncounters()
 	rEnc.worldMapShip = "boat";
 
 	Trace("Init encounters complete.");
+}
+
+void InitEncountersBaseWeight()
+{
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_SMALL]  = 27;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_SMALL] = 27;
+
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_MEDIUM]  = 17;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_MEDIUM] = 17;
+
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_LARGE]  = 11;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_LARGE] = 11;
+
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_CROWN]  = 5;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_CROWN] = 5;
+
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_EXPEDITION]  = 4;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_EXPEDITION] = 4;
+
+    EncWeightCur[ENCOUNTER_TYPE_MERCHANT_SLAVES]  = 6;
+    EncWeightBase[ENCOUNTER_TYPE_MERCHANT_SLAVES] = 6;
+
+    EncWeightCur[ENCOUNTER_TYPE_PATROL_SMALL]  = 9;
+    EncWeightBase[ENCOUNTER_TYPE_PATROL_SMALL] = 9;
+
+    EncWeightCur[ENCOUNTER_TYPE_PATROL_MEDIUM]  = 8;
+    EncWeightBase[ENCOUNTER_TYPE_PATROL_MEDIUM] = 8;
+
+    EncWeightCur[ENCOUNTER_TYPE_NAVAL_MEDIUM]  = 4;
+    EncWeightBase[ENCOUNTER_TYPE_NAVAL_MEDIUM] = 4;
+
+    EncWeightCur[ENCOUNTER_TYPE_NAVAL_LARGE]  = 3;
+    EncWeightBase[ENCOUNTER_TYPE_NAVAL_LARGE] = 3;
+
+    EncWeightCur[ENCOUNTER_TYPE_SMUGGLERS]  = 0;
+    EncWeightBase[ENCOUNTER_TYPE_SMUGGLERS] = 0;
+
+    EncWeightCur[ENCOUNTER_TYPE_PIRATE]  = 8;
+    EncWeightBase[ENCOUNTER_TYPE_PIRATE] = 8;
 }

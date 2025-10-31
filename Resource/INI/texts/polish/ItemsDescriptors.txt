@@ -1,0 +1,149 @@
+descriptor_Fancy {Wyszukany}
+descriptor_Exotic {Egzotyczny}
+descriptor_HighQuality {Doskonały}
+descriptor_GoodFit {Zwykły}
+descriptor_HeartDefence {Wzmocn.}
+descriptor_Unremarkable {Zwykły}
+descriptor_WeaponType_0 {Lekka}
+descriptor_WeaponType_1 {Średnia}
+descriptor_WeaponType_2 {Ciężka}
+descriptor_WeaponLength_0 {Krótki}
+descriptor_WeaponLength_1 {Długi}
+descriptor_WeaponCurvature_0 {Prosty}
+descriptor_WeaponCurvature_1 {Zakrzywiony}
+descriptor_ArmorType_0 {Lekka}
+descriptor_ArmorType_1 {Średnia}
+descriptor_ArmorType_2 {Ciężka}
+descriptor_ArmorMaterial_0 {Tkanina}
+descriptor_ArmorMaterial_1 {Skóra}
+descriptor_ArmorMaterial_2 {Płyta}
+descriptor_ArmorMaterial_3 {Tłoczone}
+descriptor_ArmorMaterial_4 {Kuta}
+descriptor_AmuletType_0 {Zwyczajny}
+descriptor_AmuletType_1 {Pogański}
+descriptor_AmuletType_2 {Chrześc.}
+descriptor_SingleCharge {Jednostrz.}
+descriptor_MultiCharge {Wielostrzał}
+descriptor_OneHanded {Jednoręczne}
+descriptor_TwoHanded {Dwuręczne}
+descriptor_Bayonet {Bagnet}
+descriptor_PiercingAmmo {Przeciwpanc.}
+descriptor_StunAmmo {Ogłuszające}
+descriptor_EmpoweredAmmo {Wzmacniające}
+descriptor_SpyGlass {Obserwacja}
+descriptor_SpyGlass_Crew_0 {Szacunek załogi}
+descriptor_SpyGlass_Crew_1 {Ocena załogi}
+descriptor_SpyGlass_Crew_2 {Liczba załogi}
+descriptor_SpyGlass_Caliber_0 {Armaty}
+descriptor_SpyGlass_Caliber_1 {Uzbrojenie}
+descriptor_Special {Specjalny}
+descriptor_Tool {Narzędzie}
+descriptor_Valuable {Cenny}
+descriptor_BulletNeedPowder {Proch}
+descriptor_descr_BulletNeedPowder {Ta amunicja nie wyleci z lufy bez miarki prochu.}
+descriptor_GrapeAmmo {Kartacz}
+descriptor_BulletAmmo {Kula}
+descriptor_BombAmmo {Granat}
+descriptor_HealPotion {Leczenie}
+descriptor_Alcohol {Odurzające}
+descriptor_EnhancingPotion {Wzmacniające}
+descriptor_AntidotePotion {Antidotum}
+descriptor_Metal {Metal}
+descriptor_Trinket {Ozdoba}
+descriptor_descr_Alcohol {Rozwiązuje języki, rozjaśnia myśli, ale obniża umiejętności.}
+descriptor_descr_EnhancingPotion {Posiada specjalny efekt wzmacniający.}
+descriptor_descr_AntidotePotion {Usuwa trucizny, zatrzymuje zatrucie.}
+descriptor_descr_Metal {Wydobywany z ziemi i używany w alchemii.}
+descriptor_descr_Trinket {Wykwintne i mniej wykwintne przedmioty, które odróżniają ludzi z gustem od prostaków. Można wymienić na dublony u lichwiarzy.}
+descriptor_Junk {Rupiecie}
+descriptor_Herb {Zioło}
+descriptor_descr_Herb {Dar ziemi. Głównie używany w alchemii do tworzenia maści i mikstur.}
+descriptor_descr_Fancy {Ten przedmiot wyróżnia się paradnym wyglądem, zdobieniami i kosztownymi materiałami. Noszenie go zwiększa Dowodzenie o $number($DescriptorBaseValue(Fancy)). Efekty się kumulują.}
+descriptor_descr_Exotic
+{
+Ten przedmiot nie przystoi dobremu chrześcijaninowi, a o jego posiadaczu natychmiast krążą mrożące krew w żyłach plotki.
+Zwiększa Siłę Floty o $percent($DescriptorBaseValue(Exotic)); efekty się kumulują.
+}
+descriptor_descr_HighQuality {Ta broń jest tak doskonale wykonana, że jej obrażenia krytyczne są zwiększone o $percent($DescriptorBaseValue(HighQuality)).}
+descriptor_descr_GoodFit {Ten element zbroi doskonale leży, zwiększając szybkość ataku dowolną bronią o $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Ta zbroja wzmocniona w kluczowych miejscach zmniejsza obrażenia krytyczne od wroga o $percent($DescriptorBaseValue(HeartDefence)).}
+descriptor_descr_Unremarkable
+{
+Każdy ma taki przedmiot. Z nim nie wyróżnisz się ani nie zostaniesz zapamiętany.
+Zwiększa Skrytność o $number($DescriptorBaseValue(Unremarkable)). Efekty się kumulują.
+}
+descriptor_descr_WeaponType_0 {Broń Lekka jest lżejsza, zwinniejsza i przeznaczona głównie do pojedynków. Ataki tą bronią są o 5% szybsze.}
+descriptor_descr_WeaponType_1 {Broń wyważona łączy wagę i szybkość, dzięki czemu jest najbardziej wszechstronna. Doskonała do bójek i walk abordażowych.}
+descriptor_descr_WeaponType_2 {Broń Ciężka ma ogromną wagę i zadaje równie potężne obrażenia. Wadą jest 5% wolniejsze tempo ataku.}
+descriptor_descr_WeaponLength_0 {Ta broń wymaga zbliżenia się do wroga i najlepiej sprawdza się w walce wręcz.}
+descriptor_descr_WeaponLength_1 {Ta broń ma dobry zasięg i wymaga otwartej przestrzeni, by być skuteczna.}
+descriptor_descr_WeaponCurvature_0 {Ta broń jest prosta lub lekko zakrzywiona, przez co lepiej nadaje się do szybkich ataków niż do cięć.}
+descriptor_descr_WeaponCurvature_1 {Ta broń ma wyraźne zakrzywienie i przesunięty do przodu środek ciężkości, przez co lepiej nadaje się do cięć niż do szybkich ataków.}
+descriptor_descr_ArmorType_0 {Lekka zbroja niemal nie różni się od zwykłych ubrań i wcale nie ogranicza ruchów. W zamian zapewnia mniejszą ochronę.}
+descriptor_descr_ArmorType_1 {Średnia zbroja lekko ogranicza ruchy, ale doskonale chroni najważniejsze organy. Zmniejsza szybkość poruszania się postaci o 5%.}
+descriptor_descr_ArmorType_2 {Ciężka zbroja jest masywna i niewygodna, ale pozwala szturmować twierdzę. Zmniejsza szybkość ruchu o 10%.}
+descriptor_descr_ArmorMaterial_0 {Tkanina nie chroni przed silnymi ciosami, ale zabezpiecza przed otarciami i zadrapaniami. Zmniejsza otrzymywane obrażenia o 4%.}
+descriptor_descr_ArmorMaterial_1 {Skórzana zbroja może uratować cię w pijackiej bójce, ale nie zatrzyma kuli ani wprawnego pchnięcia. Zmniejsza otrzymywane obrażenia o 8%.}
+descriptor_descr_ArmorMaterial_2 {Płyta to doskonały kompromis między wagą a ochroną. Może uratować życie. Zmniejsza otrzymywane obrażenia o 15%.}
+descriptor_descr_ArmorMaterial_3
+{
+Tłoczona zbroja jest produkowana masowo dla wojska i używana w wojnach europejskich.
+Zmniejsza otrzymywane obrażenia o 22%.
+}
+descriptor_descr_ArmorMaterial_4 {Wytwarzanie wysokiej jakości zbroi kutej to złożony i kosztowny proces, co czyni ją rzadkim gościem na Karaibach. Zmniejsza otrzymywane obrażenia o 35%.}
+descriptor_descr_AmuletType_0 {Czerpie z omenów, morskich przesądów i prawdziwych zależności.}
+descriptor_descr_AmuletType_1 {Czerpie moc z pogańskich bogów i rdzennych rytuałów.}
+descriptor_descr_AmuletType_2 {Czerpie moc z chrześcijańskich świętych i prawej wiary.}
+descriptor_descr_SingleCharge {Tylko jeden strzał w zapasie – wykorzystaj go dobrze.}
+descriptor_descr_MultiCharge {Posiada kilka luf, bęben lub komory, co pozwala oddać kilka strzałów z rzędu. Wymaga specjalnych umiejętności.}
+descriptor_descr_OneHanded {Broń ręczna noszona na pasie lub szarfie. Jednostrzałowe nie wymagają specjalnych umiejętności.}
+descriptor_descr_TwoHanded {Ciężka broń palna wymagająca użycia obu rąk podczas strzału. Wymaga specjalnych umiejętności.}
+descriptor_descr_Bayonet {Ta długa broń palna jest wyposażona w bagnet, zwiększając obrażenia Szybkiego ataku o 25%.}
+descriptor_descr_PiercingAmmo {Ta amunicja ignoruje zbroję przy trafieniu.}
+descriptor_descr_StunAmmo {Ta amunicja nakłada kary na wrogów po trafieniu.}
+descriptor_descr_EmpoweredAmmo {Ta amunicja korzystnie wpływa na właściwości broni.}
+descriptor_descr_SpyGlass {Każda luneta ujawnia typ, nazwę, stan, prędkość i liczbę armat statku.}
+descriptor_descr_SpyGlass_Crew_0 {Ta luneta nie pozwala dokładnie zobaczyć załogi, więc szacunek jest tylko orientacyjny.}
+descriptor_descr_SpyGlass_Crew_1 {Ta luneta pozwala dokładnie policzyć załogę statku i wykryć muszkieterów na pokładzie.}
+descriptor_descr_SpyGlass_Crew_2 {Ta luneta ujawnia dokładną liczbę wrogiej załogi i muszkieterów oraz umiejętności kapitana.}
+descriptor_descr_SpyGlass_Caliber_0 {Ta luneta ma soczewki na tyle dobre, że pozwalają zobaczyć nie tylko liczbę armat, ale i ich kaliber.}
+descriptor_descr_SpyGlass_Caliber_1 {Wysokiej jakości optyka tej lunety pozwala zobaczyć kaliber armat i rodzaj użytej amunicji.}
+descriptor_descr_Special {Ten przedmiot ma unikalną właściwość.}
+descriptor_descr_Tool {Zestaw złożonych przyrządów, bezużytecznych dla niewtajemniczonych. Ale ty do nich nie należysz.}
+descriptor_descr_Valuable {Ma wysoką wartość sprzedaży.}
+descriptor_descr_BulletNeedPower {Nie można wystrzelić bez porcji prochu.}
+descriptor_descr_GrapeAmmo {Wiele drobnych pocisków. Najskuteczniejsze przeciw grupom wrogów lub pojedynczemu celowi z bliska.}
+descriptor_descr_BulletAmmo {Ładowana i wystrzeliwana pojedynczo. Skuteczna na średnim i dalekim dystansie, zwłaszcza przy trafieniach w głowę.}
+descriptor_descr_BombAmmo {Wybucha i razi wszystkich w pobliżu. Szczególnie skuteczny przeciwko grupom wrogów.}
+descriptor_descr_HealPotion {Ten eliksir przywraca zdrowie.}
+descriptor_descr_Junk {Różne ozdoby spotykane w całych Karaibach. Cenne tylko dla tych, którzy potrafią je wykorzystać; w przeciwnym razie zalegają w ciemnych kątach.}
+descriptor_Alchemy {Alchemia}
+descriptor_descr_Alchemy {Ten przedmiot można wytworzyć lub zmodyfikować za pomocą Alchemii.}
+descriptor_Quest {Zadanie}
+descriptor_descr_Quest {Przedmiot ten jest potrzebny do pewnego zadania. Nie można go odłożyć ani sprzedać.}
+descriptor_Map {Mapa}
+descriptor_descr_Map {Strzęp papieru z oznaczeniami jakiejś okolicy. Wszystkie takie przedmioty są natychmiast kopiowane do atlasu.}
+descriptor_Fragile {Kruche}
+descriptor_descr_Fragile {Ten przedmiot psuje się po określonej liczbie użyć.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Efekt działa na kanoniera.}
+descriptor_descr_Boatswain {Efekt działa na bosmana.}
+descriptor_descr_Carpenter {Efekt działa na stolarza.}
+descriptor_descr_Navigator {Efekt działa na nawigatora.}
+descriptor_descr_Treasurer {Efekt działa na skarbnika.}
+descriptor_descr_Doctor {Efekt działa na lekarza.}
+descriptor_Ingredient {Składnik}
+descriptor_Jewelery {Klejnot}
+descriptor_descr_Jewelery {Kamienie szlachetne i półszlachetne. Można sprzedać lub użyć w alchemii.}
+descriptor_descr_Ingredient {Ten przedmiot jest używany w alchemii.}
+descriptor_Alternate {Dostosowanie}
+descriptor_descr_Alternate {Umiejętność ma jeden efekt dla głównego bohatera i inny dla wszystkich pozostałych postaci.}
+descriptor_IntoxicatingPotion {Odurzające}
+descriptor_descr_IntoxicatingPotion {Rozwiązuje języki, rozjaśnia myśli, ale obniża umiejętności.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Efekt jest przydatny dla gwardzistów.}

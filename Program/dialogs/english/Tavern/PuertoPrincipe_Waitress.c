@@ -4,15 +4,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Questions, " + GetAddress_Form(NPChar) + "?", "How can I help you, " + GetAddress_Form(NPChar) + "?"), ""+ GetSexPhrase("Hm, what's the big idea, " + GetAddress_Form(NPChar) + "? ","Again with the strange questions? Toots, go have some rum or something...") +"", "Over this whole day, this is the third time you're talking about some question..."+ GetSexPhrase(" Are these some signs of attention?","") +"",
-                          "More questions, I presume, " + GetAddress_Form(NPChar) + "?", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind", "I've got nothing to talk about at the moment."), "No, no beautiful...",
-                      "No way, dear...", "No, what questions?...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("Questions, "+GetAddress_Form(NPChar)+"?","How can I help you, "+GetAddress_Form(NPChar)+"?"),""+GetSexPhrase("Hm, what's the big idea, "+GetAddress_Form(NPChar)+"? ","Again with the strange questions? Darling, go have some rum or something...")+"","Over the course of this whole day, this is the third time you've brought up this question..."+GetSexPhrase(" Are these signs of affection?","")+"","More questions, I presume, "+GetAddress_Form(NPChar)+"?","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind","I've got nothing to talk about at the moment."),"No, no, beautiful...","No way, dear...","No, what questions?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//--> Старые счёты
 			if (CheckAttribute(pchar, "questTemp.OS_Tavern_2"))
 			{
-				link.l1 = "I need to ask you a few questions. You were working in the tavern the day the barrel of gin disappeared, weren't you? What can you tell me about the goings-on here that day?";
+				link.l1 = "I need to ask you a few questions. You were working in the tavern the day the barrel of gin disappeared, weren't you? What can you tell me about what happened here that day?";
 				link.l1.go = "OS_Tavern2_1";
 			}
 			//<-- Старые счёты
@@ -28,7 +26,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		case "OS_Tavern2_2":
 			dialog.text = "Oh, him! He... he just had a drop too much, that's all. It happens quite often here, you know. I certainly didn't encourage him, but he started making advances. So I put him in his place.";
-			link.l1 = "No encouragement? He tells a different tale. Why did you raise such a commotion this time, but not on other occasions?";
+			link.l1 = "No encouragement? He tells a different tale. Why did you cause such a commotion this time, but not on other occasions?";
 			link.l1.go = "OS_Tavern2_3";
 		break;
 
@@ -41,22 +39,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern2_4_HO":
-			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
-			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy the return visit.";
+			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he made his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him, after all...";
+			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy my return.";
 			link.l1.go = "OS_Tavern2_5";
 			AddComplexSelfExpToScill(40, 40, 40, 0);
 			ChangeCharacterComplexReputation(pchar, "nobility", -3);
 		break;
 
 		case "OS_Tavern2_4_harizma":
-			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he would make his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him after all...";
-			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy the return visit.";
+			dialog.text = "I... I... I'll tell you everything! It was all my... suitor, Jack. Jack Veils! He persuaded me to entice any sailor from the 'Sea Beast'. And when he made his advances, I was to cause a scene to lure the tavern keeper from behind the counter. As the commotion began to settle, two sailors would start a brawl to keep him occupied in the main room. That's exactly what happened\nDuring that time, the captain of the 'Sea Beast' managed to steal the barrel. That's... that's all I know, "+GetSexPhrase("sir","madam")+"! Please, don't turn me in! I just... I was only... I simply... wanted Jack to finally treat me with some respect! I did help him, after all...";
+			link.l1 = "You helped one man while throwing another to the wolves without a moment's hesitation?! Nevertheless, I keep my word — I won't expose your part in this. But you'll have to live with what you've done! Your foolishness could have landed the innkeeper in grave danger. Where can I find this Jack of yours? And remember: lie to me, and I'll be back. Trust me, you won't enjoy my return.";
 			link.l1.go = "OS_Tavern2_5";
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 		break;
 
 		case "OS_Tavern2_5":
-			dialog.text = "I didn't realize it was so serious! It's just a barrel after all... Jack lives across the street. He rents the house there, I... I don't know anything more! Please forgive me! Captain, I swear I'll never do anything like this again!";
+			dialog.text = "I didn't realize it was so serious! It's just a barrel, after all... Jack lives across the street. He rents the house there, I... I don't know anything more! Please forgive me! Captain, I swear I'll never do anything like this again!";
 			link.l1 = "Get back to your duties, and don't you dare start weeping — the tavern keeper mustn't suspect a thing.";
 			link.l1.go = "OS_Tavern2_6";
 		break;

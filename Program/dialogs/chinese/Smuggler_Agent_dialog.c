@@ -532,9 +532,15 @@ void ProcessDialogEvent()
 		case "Meeting_3":
 			int iTmp = false;
 			int iChIdx, i;
+			
+			float fMaxClass = ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5);
+			if (IsEquipCharacterByArtefact(pchar, "talisman21")) fMaxClass = 2.0;
+			
+			if (GetCompanionQuantity(pchar) > 1) iTmp = true;
+			if (GetCharacterShipClass(pchar) < fMaxClass) iTmp = true;
 
 			// 寻找最低等级以上的同伴
-			for (i=0; i<COMPANION_MAX; i++)
+			/* for (i=0; i<COMPANION_MAX; i++)
 			{
 				iChIdx = GetCompanionIndex(GetMainCharacter(), i);
 				if (iChIdx>=0)
@@ -542,7 +548,7 @@ void ProcessDialogEvent()
 					sld = GetCharacter(iChIdx);
             		if (GetCharacterShipClass(sld) < ((MOD_SKILL_ENEMY_RATE/5.0) + 1.5)) iTmp = true;
 				}
-			}
+			} */
 			
 			if (iTmp)
 			{

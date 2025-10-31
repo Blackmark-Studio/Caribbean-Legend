@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "He encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es el Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Bald Geffrey ya ha entregado el primer lote a Jamaica.";
+				link.l1 = "He encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 5 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es el Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Bald Geffrey ya ha entregado el primer lote a Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "He encontrado un comprador para ti. Es un constructor naval de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es Cabo Negril. La contraseña es: 'Un comerciante de Lyons'. Me tomó más de dos meses encontrar a tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
+				link.l1 = "He encontrado un comprador para ti. Es un constructor naval de Port Royal. Necesita seda de barco para su producción y podrá comprar lotes de cien rollos cada mes por 5 doblones por rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, la ubicación es Cabo Negril. La contraseña es: 'Un comerciante de Lyons'. Me tomó más de dos meses encontrar a tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Siempre tengo tareas para muchachos capaces. Hay un asunto delicado que quiero que manejes. Hay un barco estacionado en Capsterville, llamado 'Serpiente', bajo el mando de Geffrey Brooke, también conocido como Geffrey el Calvo. Trabaja para mí. Un excelente luchador, sabe todo sobre armas y espadas, pero un completo idiota en cualquier otro aspecto de la vida. Pero no seamos duros con Calvito, nadie es perfecto, ¡ja-ja!\nAsí que. Este tipo duro atacó un convoy holandés al norte de Saint Martin y capturó una barca llena de sacos de trigo. La cuestión es que logró encontrar seda de barco escondida entre los sacos. Una carga realmente grande. Esta mercancía es extremadamente valiosa y rara, los holandeses la traen de Europa solo para las necesidades de su ejército. Esta seda se usa para velas especiales que aumentan la velocidad del barco y la capacidad de navegar con el viento.\nEs casi imposible de comprar, venderla no es un problema, pero es difícil encontrar el precio adecuado. ¡Estos malditos comerciantes siempre reducen el precio! Sé que hay gente en el Caribe que está dispuesta a dar un buen precio en doblones para comprar esta seda y tu objetivo es encontrar a esas personas.\n¿Qué? Cualquier tonto puede saquear caravanas, pero el comercio es solo para personas con al menos una señal de existencia de cerebro en el cráneo. Planeo vender seda de barco mensualmente, así que tu objetivo es encontrar un comprador regular que pague al menos veinte doblones de oro por un rollo. Tienes dos meses para hacerlo, no puedo mantener a Geffrey el Calvo en Capsterville para siempre.\nEso es todo. Zarpa hacia Capsterville y habla con Geffrey antes de que venda la carga a los contrabandistas por una miseria. Ya te dije que es un poco 'simple'.";
+            dialog.text = "Siempre tengo tareas para muchachos capaces. Hay un asunto delicado que quiero que manejes. Hay un barco estacionado en Capsterville, llamado 'Serpiente', bajo el mando de Geffrey Brooke, también conocido como Geffrey el Calvo. Trabaja para mí. Un excelente luchador, sabe todo sobre armas y espadas, pero un completo idiota en cualquier otro aspecto de la vida. Pero no seamos duros con Calvito, nadie es perfecto, ¡ja-ja!\nAsí que. Este tipo duro atacó un convoy holandés al norte de Saint Martin y capturó una barca llena de sacos de trigo. La cuestión es que logró encontrar seda de barco escondida entre los sacos. Una carga realmente grande. Esta mercancía es extremadamente valiosa y rara, los holandeses la traen de Europa solo para las necesidades de su ejército. Esta seda se usa para velas especiales que aumentan la velocidad del barco y la capacidad de navegar con el viento.\nEs casi imposible de comprar, venderla no es un problema, pero es difícil encontrar el precio adecuado. ¡Estos malditos comerciantes siempre reducen el precio! Sé que hay gente en el Caribe que está dispuesta a dar un buen precio en doblones para comprar esta seda y tu objetivo es encontrar a esas personas.\n¿Qué? Cualquier tonto puede saquear caravanas, pero el comercio es solo para personas con al menos una señal de existencia de cerebro en el cráneo. Planeo vender seda de barco mensualmente, así que tu objetivo es encontrar un comprador regular que pague al menos 4 doblones de oro por un rollo. Tienes dos meses para hacerlo, no puedo mantener a Geffrey el Calvo en Capsterville para siempre.\nEso es todo. Zarpa hacia Capsterville y habla con Geffrey antes de que venda la carga a los contrabandistas por una miseria. Ya te dije que es un poco 'simple'.";
 			link.l1 = "Mm... Lo tengo. Ya estoy en camino.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "¡Ja! Aquí está el valiente capitán "+GetFullName(pchar)+". ¿Qué hay del comprador?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "He encontrado un comprador. Es un constructor naval de Port Royal. Necesita seda para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán la mercancía del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Me tomó más de dos meses encontrar tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
+				link.l1 = "He encontrado un comprador. Es un constructor naval de Port Royal. Necesita seda para su producción y podrá comprar lotes de cien rollos cada mes por 5 doblones el rollo. Sus hombres recibirán la mercancía del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un comerciante de Lyon'. Me tomó más de dos meses encontrar tal comprador, Geffrey ya debe haber vendido la seda a los contrabandistas. Lo siento, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Te he encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda para barcos para su producción y podrá comprar lotes de cien rollos cada mes por 25 doblones el rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un mercader de Lyons'. El Calvo Geffrey ya ha entregado el primer lote a Jamaica.";
+				link.l1 = "Te he encontrado un comprador. Es un constructor de barcos de Port Royal. Necesita seda para barcos para su producción y podrá comprar lotes de cien rollos cada mes por 5 doblones el rollo. Sus hombres recibirán las mercancías del 10 al 15, por la noche, el lugar es Cabo Negril. La contraseña es: 'Un mercader de Lyons'. El Calvo Geffrey ya ha entregado el primer lote a Jamaica.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Bald Geffrey ha vendido a tu comprador el primer lote de 105 rollos de seda de barco. Como esperaba venderlo por veinte doblones por rollo, creo que sería justo darte la diferencia. Esa es mi decisión. Tu parte es de 525 doblones más un bono: un doblón por rollo. Son 630 doblones en total. Aquí, tómalo.";
+            dialog.text = "Bald Geffrey ha vendido a tu comprador el primer lote de 105 rollos de seda de barco. Como esperaba venderlo por 4 doblones por rollo, creo que sería justo darte la diferencia. Esa es mi decisión. Tu parte es de 105 doblones más un bono: un doblón por rollo. Son 210 doblones en total. Aquí, tómalo.";
 			link.l1 = "¡Gracias, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("Has recibido 630 doblones");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Una cosa más. Puedes obtener un beneficio extra de esto.";
 			link.l1 = "Interesante... Continúa.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Tu comprador quiere más de 100 rollos de seda para ser entregados en los próximos dos meses. Si tienes alguno, tráeme de 20 a 100 rollos por un precio de 24 doblones. La oferta estará vigente por dos meses.";
+            dialog.text = "Tu comprador quiere más de 100 rollos de seda para ser entregados en los próximos dos meses. Si tienes alguno, tráeme de 20 a 100 rollos por un precio de 5 doblones. La oferta estará vigente por dos meses.";
 			link.l1 = "¡Está bien! Traeré más si tengo.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Muy bien. Toma el oro - 24 doblones por una tirada como acordamos.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Muy bien. Toma el oro - 5 doblones por una tirada como acordamos.";
 			link.l1 = "¡Gratitud!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Me llevaré cien rollos. Toma el oro - 24 doblones por rollo como acordamos.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Me llevaré cien rollos. Toma el oro - 5 doblones por rollo como acordamos.";
 			link.l1 = "¡Agradecimiento!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
@@ -1136,7 +1135,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1144,8 +1143,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2427,7 +2427,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2447,28 +2447,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Veo que es lo contrario. ¿Qué te trae por aquí?";
 			link.l1 = "¿Has oído sobre el nuevo burdel en Tortuga?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "Entonces, por supuesto, pregunta. Sabes que no me gustan las formalidades, así que ve al grano.";
 			link.l1 = "¿Has oído sobre el nuevo burdel en Tortuga?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "¿Estás borracho? ¿Qué clase de pregunta es esa? No me hagas perder el tiempo si de verdad querías hablar de eso.";
 			link.l1 = "¿Supongo que no escuchaste? Un nuevo burdel abrió recientemente allí - uno muy caro, donde sólo trabajan las chicas más bellas, sanas y bien vestidas.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "¡Oh, eso! Por supuesto que lo he oído, ¿quién no?";
 			link.l1 = "Bueno, solo me enteré el otro día.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "¡Ja-ja-ja-ja, bribón, que me condenen! Pero aún así, ¿por qué lo discutes conmigo? ¿Por qué no pruebas con Hawks primero? Je je. Aunque... ¿ya te has divertido un poco allí?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2485,34 +2485,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "¡Así que has venido a presumir! Ja, qué bribón.";
 			link.l1 = "En realidad, no. Realmente quería preguntarte algo, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "¿No lo hiciste?! Eres un idiota, De Maure. Si yo fuera tú...";
 			link.l1 = "Hubieras comenzado una verdadera orgía, lo sé. Pero eso no es exactamente lo que quería discutir contigo.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "¿Qué pasa? Vamos, no me tengas en suspenso.";
 			link.l1 = "Estoy buscando a la dueña de ese lugar. Me dijeron que quería conocerte y ofrecerte una oportunidad de inversión en su comercio. No puedes confundirla, es china.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Jo jo. No, no he tenido el placer de conocer a ninguna mujer china últimamente. Pero no me importaría conocerla e invertir en su negocio. Después de todo, no se puede simplemente pasear por el territorio de Levasseur, y como súbdito de tu rey, se vería obligado a disparar sus embarcaciones costeras contra mi 'Dragón' en el momento en que la vea.";
 			link.l1 = "Parece que está considerando Puerto Príncipe primero...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "¿Eso crees? Eso es un error. Incluso si de Mussac tiene más dinero que yo, lo cual dudo, no puede permitirse asignar ninguna parte del presupuesto de la ciudad a un burdel, sin importar cuánto oro genere.";
 			link.l1 = "Buen punto. Claramente no ha pensado bien esta ambición suya.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Sabes, siempre me pregunté cómo otros burdeles se mantienen a flote. No es la capacidad de una mujer para pensar y, especialmente, para gobernar - marca mis palabras.";
 			link.l1 = "Bueno, te equivocas en eso. ¡Gracias por tu tiempo, Marcus! Si me encuentro con ella primero, le haré saber que te alegraría verla.";
 			link.l1.go = "Exit";

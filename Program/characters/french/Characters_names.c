@@ -595,7 +595,7 @@ void InitCharactersNames()
 	n = AddStr2Array(&sSpFamilies, n, "Carrion,Casado,Casares,Casas,Cascos,Castano");
 	n = AddStr2Array(&sSpFamilies, n, "Castro,Catalano,Cayetano,Cazarez,Ceballos,Cedillo,Centeno,Cerrato,Chapado,Chaparro");
 	n = AddStr2Array(&sSpFamilies, n, "Chavera,Chavez,Chirinos,Ciervo,Cifuentes,Clavijo,Cobo,Colindres,Colmenares,Contreras");
-	n = AddStr2Array(&sSpFamilies, n, "Cordero,Кордона,Cordova,Cornejo,Coronado,Corrales,Correa,Cortez,Corzo");
+	n = AddStr2Array(&sSpFamilies, n, "Cordero,Cordona,Cordova,Cornejo,Coronado,Corrales,Correa,Cortez,Corzo");
 	n = AddStr2Array(&sSpFamilies, n, "Costales,Costillas,Crespo,Criado,Cruz,Cubero,Cuellar,Cuello,Cuervo,Cuesta,Cuevas");
 	n = AddStr2Array(&sSpFamilies, n, "Custodio,Damaso,Davalos,Davila,Davinio,Daza");
 	n = AddStr2Array(&sSpFamilies, n, "Delgado,Deliz,Delgadillo,Demara,Diaz,Dieguez,Disla,Dominguez");

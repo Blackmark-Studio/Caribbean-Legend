@@ -426,7 +426,6 @@ void ProcessDialogEvent()
 			link.l1 = "稳住船, 皮埃尔! 我最好... 嗝... 在我的海腿变成果冻之前起锚, 否则我会发现自己在这酒馆的地板上漂流! 愿顺风为你的帆助力! ";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 
 		case "Exit2":

@@ -554,7 +554,7 @@ J'ai laissé tomber Florian Shoke. Je ne lui ai pas livré assez de canons. Ma b
 #TEXT 11
 J'ai livré les canons à Florian Shoke. Il a essayé de m'impliquer dans une affaire d'espionnage, mais j'ai refusé. C'est trop dangereux.
 #TEXT 12
-J'ai maintenant 250 doublons et une nouvelle mission de Florian Shoke. Je dois me faufiler dans Portobelo et découvrir pourquoi le galion Alcantara ne prend pas la mer. Je dois également découvrir ce qui est arrivé à Sylvain Laforêt, également connu sous le nom de Jaime Silicio.
+J'ai maintenant 75 doublons et une nouvelle mission de Florian Shoke. Je dois me faufiler dans Portobelo et découvrir pourquoi le galion Alcantara ne prend pas la mer. Je dois également découvrir ce qui est arrivé à Sylvain Laforêt, également connu sous le nom de Jaime Silicio.
 #TEXT 13
 Bon sang ! J'ai été trop négligent. Ce maudit aubergiste a appelé les gardes dès qu'il a entendu le nom de Jaime Silicio. Maintenant, toute la ville est au courant de ma présence. Je dois retourner voir Florian Shoke les mains vides...
 #TEXT 14
@@ -1090,7 +1090,8 @@ Quatre mois pour collecter les materiaux ont expire. Dommage que je n'aie pas re
 #QUEST renovate_fdm
 Renovation du navire fantôme
 #TEXT 1
-Le capitaine d’Isla Tesoro, Alexus, m’a demande de lui apporter les materiaux necessaires a la renovation du navire fantôme. Il lui faut 150 pieces de bois de fer, 200 reservoirs de resine, 170 rouleaux de soie de bateau et 130 rangees de cordes de chanvre.
+Le maître charpentier naval de l'Isla Tesoro, Alexus, a accepté de reconstruire le navire fantôme. Cette restauration ne modifiera pas seulement son apparence, elle l'améliorera également considérablement sous tous les aspects — les éléments obsolètes et usés seront remplacés et la structure complétée par des solutions modernes.
+Tout cela coûtera une somme folle, et il faudra aussi trouver et lui apporter les matériaux nécessaires : 150 unités de bakaut, de soie, de cordes et de résine.
 #TEXT 2
 @<sQty> de @<sGood> a gauche.
 #TEXT 3
@@ -1608,7 +1609,7 @@ Le Necromancien Merriman etait un dur a cuire, et ses monstres Chavinavi invoque
 #TEXT 33
 J'ai maintenant le crane de jade de Yum Cimil. Maintenant a la Dominique, pour voir Tuttuathapak.
 #TEXT 34
-La prochaine etape consiste a apporter le crane de jade au temple de Chavins, situe sur une ile inhabitee de l'archipel. La seule chose que je sais, c'est qu'elle est situee au nord de la Dominique, pres de l'ocean. @<sText> Et je dois me depecher, je n'ai qu'un mois pour rendre le crane au temple. Au bout d'un mois, les amulettes de Tuttuathapaka perdront leur pouvoir et je ne pourrai pas depasser les gardiens du temple - l'effrayant Chavinavi.
+La prochaine etape consiste a apporter le crane de jade au temple de Chavins, situe sur une ile inhabitee de l'archipel. La seule chose que l’on sait à son sujet, c’est qu’il se trouve au nord de la Dominique, au centre d’un triangle d’îles, et que sur le quatrième côté s’étend l’océan. @<sText> Et je dois me depecher, je n'ai qu'un mois pour rendre le crane au temple. Au bout d'un mois, les amulettes de Tuttuathapaka perdront leur pouvoir et je ne pourrai pas depasser les gardiens du temple - l'effrayant Chavinavi.
 #TEXT 35
 J'ai parle a Nathaniel Hawk ! Je connais desormais les coordonnees de Khael Roa : 19 degres 32 minutes Nord, 62 degres 25 minutes Ouest. En plus, Nathan m'a parle des dangers qui m'attendaient dans le temple.
 #TEXT 36
@@ -1630,6 +1631,10 @@ Eh bien, c'est la fin de cette longue histoire. J'ai recu du chaman trois grande
 J'ai passe trop de temps a chercher l'ile et les amulettes de Tuttuathapak ont perdu leur pouvoir. Je n'ai pas reussi a ramener le crane de jade au temple et Tuttuathapak a refuse de continuer a s'occuper de moi. Eh bien, rien a faire ici, tout etait de ma faute.
 #TEXT 44
 J'ai trouve une salle assez curieuse au fond du temple. Il y a des dalles de sol et des piliers en pierre. La sortie qui mene apparemment au sanctuaire est bloquee par une porte massive en pierre. Je devrais trouver un moyen de l'ouvrir. Enqueter sur cette salle serait un bon debut.
+#TEXT 45
+Il semble qu’un mécanisme soit caché sous ces dalles, ouvrant un passage. Je vais devoir marcher dessus une à une, jusqu’à trouver la bonne séquence. Chaque pas correct émet un son particulier – du moins, c’est ce qu’il me semble. Je n’ai aucune autre idée pour avancer, alors je vais tenter des combinaisons et écouter avec la plus grande attention...
+#TEXT 46
+Le diable... On dirait que les colonnes dissimulent elles aussi un mécanisme, et en plus il est protégé par la magie des Chavíns. Mais cette fois, l’erreur coûte cher : une mauvaise combinaison invoque des squelettes indigènes. Il va falloir faire preuve d’une extrême vigilance – et retenir chaque tentative pour ne pas me répéter. Qui sait combien de vagues je pourrai encore encaisser...
 
 #QUEST Patria
 Heros de la nation.
@@ -2426,7 +2431,7 @@ Folke Deluc
 #TEXT   1
 Pendant que je m'occupais d'affaires à Saint-Pierre, Folke Deluc s'est retrouvé une fois de plus derrière les barreaux, et comme on pouvait s'y attendre, la cause en est l'argent. Comment a-t-il pu accumuler de nouvelles dettes en si peu de temps ? L'équipage rouspète : le sauver une deuxième fois, c'est trop. Après la bataille près de Le François, ma position auprès des hommes s'est renforcée, et mon nom a désormais un certain poids sur l'île. Je pourrais essayer de trouver un nouveau navigateur à la taverne, mais ma conscience ne me permettra pas d'abandonner Folke aussi facilement. Il mérite au moins une chance de s'expliquer. Je dois découvrir comment il a réussi à s'endetter à nouveau en quelques heures.
 #TEXT   2
-Maintenant, tout est clair ! Le rusé prêteur de Saint-Pierre a compris qu'il pouvait faire du profit sur le dos du navigateur. Il a racheté toutes les dettes de Folke dans les colonies françaises. Le total n'est pas négligeable : une centaine de doublons d'or !
+Maintenant, tout est clair ! Le rusé prêteur de Saint-Pierre a compris qu'il pouvait faire du profit sur le dos du navigateur. Il a racheté toutes les dettes de Folke dans les colonies françaises. Le total n'est pas négligeable : 40 doublons d'or !
 #TEXT   3
 J'ai payé la dette de mon navigateur égaré. Laissons les gens de la ville rire. Je suis toujours sûr d'avoir fait le bon choix.
 #TEXT   4

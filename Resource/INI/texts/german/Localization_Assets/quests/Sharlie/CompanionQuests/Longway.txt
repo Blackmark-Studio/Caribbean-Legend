@@ -1,309 +1,68 @@
-Longway_1
-{
-Алонсо
-}
-Longway_2
-{
-
-}
-
-Longway_3
-{
-Abe
-}
-Longway_4
-{
-Bix
-}
-
-Longway_5
-{
-Marcel
-}
-Longway_6
-{
-Schulte
-}
-
-Longway_7
-{
-Johan
-}
-Longway_8
-{
-van Merden
-}
-
-Longway_9
-{
-Formosa Island@<NewStr()>April 2, 1645.
-}
-
-Longway_10
-{
-Oliver
-}
-Longway_11
-{
-Trust
-}
-
-Longway_12
-{
-Antoon
-}
-Longway_13
-{
-van Diemen
-}
-
-Longway_14
-{
-Joep
-}
-Longway_15
-{
-van der Vink
-}
-
-Longway_16
-{
-Ветте
-}
-Longway_17
-{
-ван Хаан
-}
-
-Longway_18
-{
-Люйтерс
-}
-Longway_19
-{
-ван Хаан
-}
-
-Longway_20
-{
-Vitus
-}
-Longway_21
-{
-Hengel
-}
-
-Longway_22
-{
-Georges
-}
-Longway_23
-{
-Gravel
-}
-
-Longway_24
-{
-Das Treffen findet hinter@<NewStr()>den Stadttoren statt
-}
-
-Longway_25
-{
-Гуго
-}
-Longway_26
-{
-Марсо
-}
-
-Longway_27
-{
-Einen Tag später...@<NewStr()>Abends, vor den Toren der Stadt.
-}
-
-Longway_28
-{
-Mathieu
-}
-Longway_29
-{
-Terugny
-}
-
-Longway_30
-{
-Drei Stunden später...@<NewStr()>Capsterville Pier
-}
-
-Longway_31
-{
-Commandant
-}
-Longway_32
-{
-
-}
-
-Longway_33
-{
-Stranger
-}
-Longway_34
-{
-
-}
-
-Longway_35
-{
-Georges
-}
-Longway_36
-{
-Gravel
-}
-
-Longway_37
-{
-Edgardo
-}
-Longway_38
-{
-Sotta
-}
-
-Longway_39
-{
-Morning Star
-}
-
-Longway_40
-{
-Quartierdeck der Morning Star
-}
-
-Longway_41
-{
-Schließt die Luken! Zeit, mit Fermentelos zu sprechen...
-}
-
-Longway_42
-{
-Das ganze Team kommt jetzt hierher!
-}
-
-Longway_43
-{
-Longway ist tot!!! Lasst uns gehen! Wir haben keinen Grund mehr, hier zu sein!
-}
-
-Longway_44
-{
-Annabel
-}
-Longway_45
-{
-Latter
-}
-
-Longway_46
-{
-Bestimmte Waren von der Star wurden schnell in unseren Laderaum gebracht.
-}
-
-Longway_47
-{
-Abraham
-}
-Longway_48
-{
-Norman
-}
-
-Longway_49
-{
-Mary
-}
-
-Longway_50
-{
-Helen
-}
-
-Longway_51
-{
-Rober
-}
-Longway_52
-{
-Martene
-}
-
-Longway_53
-{
-Voltigeur
-}
-
-Longway_54
-{
-Clement
-}
-Longway_55
-{
-Lebran
-}
-
-Longway_56
-{
-Prevoyant
-}
-
-Longway_57
-{
-Übrigens habe ich das Logbuch des Schiffes im Spind des Kapitäns gefunden, aber alle Seiten waren herausgerissen, also eine weitere falsche Spur.
-}
-
-Longway_58
-{
-Sailor
-}
-Longway_59
-{
-
-}
-
-Longway_60
-{
-Henri
-}
-Longway_61
-{
-Thibaut
-}
-
-Longway_62
-{
-Marceline
-}
-Longway_63
-{
-Levasseur
-}
-
-Longway_64
-{
-Marceline hätte mir in diesem Moment helfen können - sie hasst ihren verfluchten Ehemann von ganzem Herzen, wenn sie überhaupt einen hat. Und natürlich musste ich auf dem Weg aus ihrem Bett einfach ihre Schmuckschatulle stehlen. Sie muss den Diebstahl fast sofort bemerkt haben. Jetzt kann ich nur noch hoffen, dass Chang Xing mit uns kooperieren wird. Es hätte auch anders ausgehen können...
-}
-
-Longway_65
-{
-Chang
-}
-Longway_66
-{
-Xing
-}
-
-Longway_67
-{
-Meine Geliebte braucht Ruhe. Ich werde versuchen, sie in nächster Zeit nicht zu stören.
-}
+Longway_1 { }
+Longway_2 { }
+Longway_3 {Abe}
+Longway_4 {Bix}
+Longway_5 {Marcel}
+Longway_6 {Schulte}
+Longway_7 {Johan}
+Longway_8 {van Merden}
+Longway_9 {Formosa Island@<NewStr()>April 2, 1645.}
+Longway_10 {Oliver}
+Longway_11 {Trust}
+Longway_12 {Antoon}
+Longway_13 {van Diemen}
+Longway_14 {Joep}
+Longway_15 {van der Vink}
+Longway_16 {Ветте}
+Longway_17 {ван Хаан}
+Longway_18 {Люйтерс}
+Longway_19 {ван Хаан}
+Longway_20 {Vitus}
+Longway_21 {Hengel}
+Longway_22 {Georges}
+Longway_23 {Gravel}
+Longway_24 {Das Treffen findet hinter@<NewStr()>den Stadttoren statt}
+Longway_25 {Гуго}
+Longway_26 {Марсо}
+Longway_27 {Einen Tag später...@<NewStr()>Abends, vor den Toren der Stadt.}
+Longway_28 {Mathieu}
+Longway_29 {Terugny}
+Longway_30 {Drei Stunden später...@<NewStr()>Capsterville Pier}
+Longway_31 {Commandant}
+Longway_32 { }
+Longway_33 {Stranger}
+Longway_34 { }
+Longway_35 {Georges}
+Longway_36 {Gravel}
+Longway_37 {Edgardo}
+Longway_38 {Sotta}
+Longway_39 {Morning Star}
+Longway_40 {Quartierdeck der Morning Star}
+Longway_41 {Schließt die Luken! Zeit, mit Fermentelos zu sprechen...}
+Longway_42 {Das ganze Team kommt jetzt hierher!}
+Longway_43 {Longway ist tot!!! Lasst uns gehen! Wir haben keinen Grund mehr, hier zu sein!}
+Longway_44 {Annabel}
+Longway_45 {Latter}
+Longway_46 {Bestimmte Waren von der Star wurden schnell in unseren Laderaum gebracht.}
+Longway_47 {Abraham}
+Longway_48 {Norman}
+Longway_49 {Mary}
+Longway_50 {Helen}
+Longway_51 {Rober}
+Longway_52 {Martene}
+Longway_53 {Voltigeur}
+Longway_54 {Clement}
+Longway_55 {Lebran}
+Longway_56 {Prevoyant}
+Longway_57 {Übrigens habe ich das Logbuch des Schiffes im Spind des Kapitäns gefunden, aber alle Seiten waren herausgerissen, also eine weitere falsche Spur.}
+Longway_58 {Sailor}
+Longway_59 { }
+Longway_60 {Henri}
+Longway_61 {Thibaut}
+Longway_62 {Marceline}
+Longway_63 {Levasseur}
+Longway_64 {Marceline hätte mir in diesem Moment helfen können - sie hasst ihren verfluchten Ehemann von ganzem Herzen, wenn sie überhaupt einen hat. Und natürlich musste ich auf dem Weg aus ihrem Bett einfach ihre Schmuckschatulle stehlen. Sie muss den Diebstahl fast sofort bemerkt haben. Jetzt kann ich nur noch hoffen, dass Chang Xing mit uns kooperieren wird. Es hätte auch anders ausgehen können...}
+Longway_65 {Chang}
+Longway_66 {Xing}
+Longway_67 {Meine Geliebte braucht Ruhe. Ich werde versuchen, sie in nächster Zeit nicht zu stören.}
+Longway_68 {Voltigeur}

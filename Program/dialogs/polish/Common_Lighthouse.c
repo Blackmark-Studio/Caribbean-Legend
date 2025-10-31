@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("You have given 100 doubloons");
 			dialog.text = "Wszystko wydaje się w porządku. Oto twój amulet. Powodzenia z nim!";
 			link.l1 = "Dziękuję, "+npchar.name+"!";
@@ -585,6 +585,7 @@ void ProcessDialogEvent()
 			dialog.text = "Tak? Rozmawiałeś z Tuttuathapak, czy się mylę?";
 			link.l1 = "Dokładnie. A teraz chcę znaleźć jeszcze dwa amulety. Powiedziałeś, że byłem trzeci, który pokazał ci ten artefakt. A kim byli dwaj inni?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -619,6 +620,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":
@@ -649,16 +651,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "Ach, więc ty jesteś tym kapitanem! Tak, czekałem na ciebie. Gerard też czekał, ale musiał nagle wybrać się na jakąś ekspedycję, więc poprosił mnie, aby przekazać ci płatność. Powiedział, że musisz przyjść. Tutaj jest czterysta dublonów, jeśli pozwolisz.");
+			dialog.text = "Ach, więc ty jesteś tym kapitanem! Tak, czekałem na ciebie. Gerard też czekał, ale musiał nagle wybrać się na jakąś ekspedycję, więc poprosił mnie, aby przekazać ci płatność. Powiedział, że musisz przyjść. Tutaj jest 90 dublonów, jeśli pozwolisz.");
 			link.l1 = "Dziękuję! Miło jest mieć do czynienia z uczciwymi ludźmi.";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("You have received 400 doubloons");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

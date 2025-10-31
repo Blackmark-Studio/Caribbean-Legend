@@ -1,0 +1,299 @@
+_info
+{
+Fájl - az RPG rendszer leírásaKészítette: ALexusB 17.08.05 // módosította: Tymofei 2012.12.12.
+}
+newline
+{
+
+}
+Strength
+{
+Az erôs kalózok általában nagyszerû Vezérharcosok és Tüzérek.Hatással van a fizikai erôt igénylô képességekre, különösen 'Közepes Fegyver', 'Nehéz Fegyver' és 'Ágyúk'.~Meghatározza a szintenkénti HP mennyiségét és a maximális leltárkapacitást.
+}
+Perception
+{
+Az éleslátó kalózok lehetnek mesterlövészek, titkosügynökök és ágyúsok.~Hatással van a 'Pontosság' és a 'Lopakodás' képességekre.
+}
+Agility {Coordination of movements and dexterity of hands. ~ Affects: 'Boarding', 'Light Weapons', 'Medium Weapons', 'Pistols and Muskets', and the amount of energy gained per rank.}
+Charisma
+{
+A karizmatikus kalózok természetes vezetôk, tárgyalók és pénztárosok. Egy született vezetônek nincs szüksége erôszakra ahhoz, hogy árut vegyen el egy kereskedôtôl, mindent odaadnak neki, anélkül, hogy harcba szállnának. A legjobb matrózok követik ôt, és a legszebb nôk várják az érkezését minden kikötôben.~Hatással van a 'Vezetésre' és a 'Kereskedésre'.Meghatározza, hogy hány tisztet vehet fel (A*2).
+}
+Intellect {Innate tendencies and aptitudes, wit, and the ability to quickly adapt to situations. ~ Affects 'Commerce', 'Gunnery', 'Navigation', and the amount of energy gained per rank.}
+Endurance
+{
+A rugalmas kalózok ácsként és sebészként tündökölnek.~Hatással van a 'Javításra' és a 'Védelemre'.Ugyanaz, mint (P), meghatározza a maximális HP-t és a maximális készletkapacitást.
+}
+Luck
+{
+A szerencsés kalózok tökéletes lövészek, szerencsejátékosok és kalandorok.~A 'Tûzfegyverek', az 'Szerencse' és a 'Lopakodás' megköveteli ezt a tulajdonságot.Meghatározza néhány játékesemény kimenetelét, és nagy hatással van a kritikus találat esélyére.
+}
+Crit
+{
+Base chance to inflict a critical hit or shot on the enemy.
+~
+Depends on S and P.
+~
+Perks and equipment can increase this chance.
+}
+CharDefence
+{
+Base Damage Protection stats. Reduce all incoming damage by a specific percentage.
+ ~
+ These values are affected by personal Perks and equipment.
+}
+FencingL
+{
+Skill of wielding light blades, foils and the like.
+ (R*0.9+I*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
+}
+FencingS
+{
+Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility.
+ (P*0.6+R*0.4)
+ ~
+ Affects weapon damage and Energy cost of attacks.
+}
+FencingH
+{
+Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength.
+ (P*0.9+E*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
+}
+Pistol
+{
+Skill of using all kinds of firearms.
+ (R*0.4+S*0.6)
+ ~
+ Affects damage and reloading speed.
+}
+Fortune
+{
+Egy kis proaktív szerencse jól jön a szerencsejátékban és a fosztogatásban.A(S)alapján.
+}
+Leadership
+{
+Befolyásolja bizonyos események és párbeszédek eredményeit. Szintén a fô képesség, amikor új legénységi tagok felvételére kerül sor.(A*0,8+T*0,2)
+}
+Commerce
+{
+Meghatározó szerepet játszik bizonyos kereskedelmi párbeszédekben, befolyásolja mind az eladási, mind a vételi árakat, és hatással van a hajókezelés általános költségeire.(T*0,8+A*0,2)
+}
+Accuracy
+{
+Az egyik legfontosabb készség a nyílt tengeren hajózók számára. Egy tisztességes kapitány nem pazarolja a puskaport és az ágyúgolyókat csak azért, hogy szétszórja a halakat: minden saláta célba talál! És amint a sós szél eloszlatja a füstöt a kapitányi híd felett, nem marad ellenséges hajó a horizonton! (I*0,8+S*0,2)
+}
+Cannons
+{
+Gyorsan töltsd meg az ágyút, tekerd fel, és amíg még a szalvéták visszhangja dübörög a válaszfalak között, tisztítsd meg, töltsd meg, célozz, önts vizet az ágyúra, hogy ne melegedjen túl... A csata hevében nem szabad semmi túlzásnak lennie: töltés, feltekerés, tûz! (T*0.6+P*0.4)
+}
+Sailing
+{
+The ability to helm a vessel in any conditions, use instruments and command a squadron. Even the most capricious and unwieldy ship will obey the steady hand of an experienced skipper.
+ Depends on 'Perception' and 'Talent' (I0.2 + T0.8)
+ ~
+ To command a vessel of a given rate a corresponding minimum Navigation level is required:
+ rate 1 requires 90
+ rate 2 requires 70
+ rate 3 requires 55
+ rate 4 requires 40
+ rate 5 requires 20
+ rate 6 requires 01
+ ~
+ A lack of Navigation leads to penalties to all the hero's skills and attributes. The greater the difference between the current and required Navigation value, the stronger the penalties.
+}
+Repair
+{
+Amikor az ellenség lövedékek sorozatával ostromolja a hajódat, szétrepesztve az oldalát és süllyesztve a vitorlákat; amikor a hajótest megreped a viharban, és a szél szálról szálra tépi szét a kötélzetet, a javítás az egyik legfontosabb tengerészeti készséggé válik. (E*0,8+I*0,2)
+}
+Grappling
+{
+Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved prize — this requires great agility and experience, but the loot will surely make up for all the effort.
+ (R*0.7+T*0.3)
+ ~
+ Affects boarding distance.
+}
+Defence
+{
+Napról napra a legénység lassan eggyé válik a hajóval. Egy tapasztalt tengerész megér egy tucat csírát a helyi kocsmában. Minden jó kapitánynak meg kell védenie az embereit, és nem szabad hagynia, hogy ostobán elpusztuljanak. (E*0,5+A*0,5)
+}
+Sneak
+{
+Észrevétlenül elhaladni az ellenség mellett, elmenekülni, ha üldözik a nyílt tengeren, vagy azonnal megjelenni a semmibôl, hogy megtámadjon egy gyanútlan ellenséget - minden kapitánynak rendelkeznie kell a lopakodás megfelelô készségével. (S*0,5+I*0,5)
+}
+Loyality
+{
+Az Ön tettei hatással vannak a tisztviselôkre' hûségre. A fehér lovagok visszautasítják, hogy egy gazember alkalmazza ôket, a született banditák pedig nem maradnak sokáig becsületesek.~A magas szintû tekintély jelentôsen csökkentheti a döntések hatását a tisztjeid' lojalitásának csökkenésére, amennyiben ezek a lépések nem értenek egyet a világnézetükkel.
+}
+Authority
+{
+A tekintély, a hírnév és a becsület megkülönbözteti a fôhôst.a játék többi karakterétôl.~A tekintély a hôs értékelése a környezete által (elôször is a fôhôs hajórajának legénysége). Ha a kapitány tekintélye kritikusan esett, fekete jelet kap, és felajánlják neki, hogy önként vagy kényszerbôl mondjon le. Ha a tekintély magas, a legénység a parancsnok köré csoportosul és a vezetôjükbe vetett jóhiszemûséggel áll ki minden próbatételt!~A becsület akkor nô, ha a hôs megmenti a világot és lakóit. Vagy a legcsúnyább mélységekbe zuhan a megszegett ígéretek, az elkövetett erôszak és a gazemberség miatt. A becsület a karakter cselekedeteitôl függ, és ez viszont befolyásolja, hogy a játékban a többi ember hogyan látja ôt.~Ha azonban a hôs egyhangú és kimért életmódot él, a legkevésbé kockázatos megoldásokat választja, egyedül utazik az üres tengereken, a Becsülete és a Hírneve úgy hullik, mint a homok a nyitott tenyéren keresztül, semleges és bonyolult közegbe süllyed. A játékban a közösség emlékezete rövid, és nem haladja meg a játékbeli év felét.
+}
+Attention_abilities
+{
+Figyelem!Egyes képességek nem feltétlenül állnak rendelkezésrebizonyos típusú fôszereplôk vagy tisztek számára.
+}
+Personal_abilities
+{
+Perks that expand the character’s personal abilities. You gain progress by leveling up personal skills.
+ ~
+ Upon reaching a threshold, you gain a new personal Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the development tree.
+}
+Ship_abilities
+{
+Perks that affect ship management. You gain progress by leveling up ship skills.
+ ~
+ Upon reaching a threshold, you gain a new ship Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the development tree.
+ ~
+ They can be inherited by the main character from officers assigned to ship positions who know their craft.
+}
+Abilities_available {A szám a fel nem osztott perk pontok mennyiségét jelzi.}
+Abilities_active {A szám a karakter által aktivált perkeket jelzi.}
+Rank
+{
+Rank is an indicator of a character’s level of development in the game. You gain progress by leveling up skills.
+ ~
+ As the character’s Rank increases, their Health and Energy grow, and stronger enemies and new items begin to appear more often.
+}
+Life
+{
+HP — a measure of a character's resistance to physical damage. Zero means death, one means a world of possibilities.
+ ~
+ Value depends on P and E and grows with rank.
+}
+Health {Az életerô a karakter fizikai állapotának mutatója. Minden alkalommal csökken, amikor rövid idôn belül súlyosan megsebesülsz. Helyreáll, ha egy ideig elkerülöd a harcot, hogy a sebek megfelelôen begyógyuljanak. Súlyosan gyengítheti a statisztikákat és a képességeket, ha felügyelet nélkül hagyod.}
+Energy
+{
+Energy - the pool of a character's physical endurance.
+ 
+  ~
+ 
+  All attacking actions and sprinting in melee consume Energy; during combat the character gets tired and needs a breather to recover.
+ 
+  ~
+ 
+  The Energy value depends on R and T and grows with rank.
+}
+Money {A pénz minden ember királya. Piaszterek, tallérok, guineák... Mi a különbség, ha mind folyékony pénz!}
+Reputation
+{
+Honor reflects how society views the character.
+~
+It is shaped by the way you solve problems.
+~
+Honor always tends to return to a neutral state.
+}
+Weight
+{
+Weight is the maximum total mass of cargo a character can carry.
+ Depends on Power, Endurance, personal Perks, and active amulets.
+ ~
+ An overloaded character moves slower, suffers penalties, and cannot use fast travel.
+}
+Title {A cím azt jelzi, hogy a karakter mennyire hasznos az állam számára, amelyet szolgál.}
+NextExp
+{
+A tapasztalati küszöb azt jelzi, hogy hány pont jár az aktuális készséghez, ranghoz és képességhez, és mennyi tapasztalat szükséges egy újabb pont megszerzéséhez.~A készségek akkor fejlôdnek, amikor a megfelelô cselekvéseket végzi. Például minden egyes pontos pisztolylövésért tapasztalati pontokat kapsz a 'Tûzfegyverek' készségért. Ezek a képességpontok beszámítanak a rangtapasztalatba és a személyes/hajós képességekbe (a képesség típusától)függôen.~A rangtapasztalati küszöb átlépésével a hôs új rangot kap, és ezzel együtt - több élet- és képességpontot, amelyeket a játékos tetszése szerint oszthat be.
+}
+TABLE_PERKS {Hôs képességei}
+TABLE_PERKS_desc
+{
+A képességek olyan kiegészítô karakterparaméterek, amelyekkel új elônyökhöz juthatsz, vagy korábban elérhetetlen játékfunkciókat nyithatsz meg. A képességek lehetôvé tehetik, hogy a karakter egy adott szakterület szakértôjévé váljon, vagy olyan generalistává, aki sok mindenhez ért egy kicsit.~Kattintson duplán a kiválasztott képességre a leírás elolvasásához és az elôfeltételek megismeréséhez (ha van ilyen).~Bizonyos képességek nem választhatók ki azonnal az elôfeltételes képességek miatt. Tanuld meg elôször a kezdô képességeket a fán, hogy az új képességek elérhetôvé váljanak.
+}
+PERK_TABLE_NEED {Szükséges képességek}
+PERK_TABLE_NEED_desc {Ahhoz, hogy ezt a képességet kiválaszthasd, a hôsnek elôször aktiválnia kell az összes többi képességet ebben a fában.}
+Nation_hint
+{
+A hôs nemzetét a hôs által a játék kezdetén választott nemzet, vagy a (hôs szolgálatban)pillanatban kiadott szabadalom nemzetét. A nemzet a "Charakter" ablakban látható. A "Nemzet" ablakban láthatod a hajód aktuális zászlaját - ezt csak a tengeren változtathatod meg, hogy elrejtsd valódi kilétedet. Vedd figyelembe, hogy a nyílt tengeren lévô hajók és a kikötôi ôrök átlátnak az álcádon. A hôs lopakodása befolyásolja az álcázás sikerének esélyét. Ha egy hôs fejére a saját nemzete vérdíjat tûzött ki, akkor saját nemzetének ellenségének is számít.~Az ellenség felismerése az államok közötti hivatalos kapcsolatok, valamint az általuk a fejedre kitûzött vérdíjak figyelembevételével történik.~A gyors utazás nem mûködik ellenséges városokban.
+}
+Drunk_hint {Az alkohol befolyásolja a képességeidet. Ha részeg vagy, nem fogsz nagy fájdalmat érezni, de kényes feladatokat sem leszel képes végrehajtani.}
+England_descr {Anglia. Britanniának még egy évszázadot kell várnia arra, hogy valóban 'uralja a hullámokat', , de ha van egy feltörekvô tengeri hatalom, amely felveheti a versenyt Spanyolország hatalmával - az Anglia. Míg Franciaország a spanyol hatalmat támadja Európában, addig az angol kalózhajók és tengeri járôrök a védtelen spanyol hajózást lakmározzák, hogy végül uralják a Karib-térséget.}
+France_descr
+{
+A katolikusok és a hugenották közötti katasztrofális vallásháborúk, amelyek a reformáció több mint száz évvel ezelôtti kezdete óta sújtották Franciaországot, a tizenöt éves XIV. bourbon Lajos trónra lépésével nagyrészt elmúltak. Lajos király még messze van attól a jövendô 'Napkirálytól' , aki Franciaországot aranykorba vezeti, de a nagy Richelieu bíboros hagyományait folytatva erôteljes reformokkal kívánja megerôsíteni az államapparátust. Európában még mindig sok a konfliktus, de Lajos király szemében a Bourbonok elkeseredett riválisai, a Habsburgok - akik jelenleg Spanyolország királyaként és Szent Római Császárként uralkodnak - tûnnek fel a legnagyobbnak. Lajos király, hogy felvegye a versenyt a spanyolokkal mind a közeli, mind pedig a külföldön, utasította Jean-Baptiste Colbert-t, hogy újítsa fel a francia haditengerészetet. Egy új és hatékony adórendszer lehetôvé teszi Franciaország számára, hogy ne csak a közel ötvenéves háborúból származó adósságait fizesse ki, hanem a haditengerészeti és hadsereg reformjára is fordítson forrásokat. Bár a francia hadsereg még mindig nem olyan modern és harcedzett, mint Oliver Cromwell angol Új Modell Hadserege, az új lineáris hadstílusban gyorsan a kontinens egyik legjobban felszerelt és kiképzett hadseregévé válik. Toulonban és Saint-Nazaire-ben a legújabb tervezésû új hajókat építenek, és a belföldi gyárakban modern ágyúkat öntenek.~Az angolokkal ellentétben Franciaország fô gondjai az európai kontinensen vannak, és a gyarmati gondok gyakran háttérbe szorulnak a francia határok védelmének sürgetôbb szükségleteihez képest, amelyeket a Habsburgok ellen Ausztriában, Olaszországban és Spanyolországban kell megvédeni.~E hanyagság miatt az Amerikai Francia Társaság úgy döntött, hogy a francia lovag és fôkormányzó, Philippe de Poincy által szervezett üzlet révén eladja a Karib-tengeri Antillákon lévô gyarmati birtokainak egy részét a Máltai Lovagrendnek. De Poincy és a rend nagymestere, Jean de Lascaris-Castellar azt remélik, hogy ezzel a vásárlással pótolni tudják a rend bevételkiesését, amelyet a Szentszék által rosszallott, kreatívabb módszerekkel a Földközi-tengeren a barbár korzárok üldözése okozott. A rend egy ígéretes fiatal lovagja, Michel de Monper még azt is felajánlja, hogy a spanyol hajózás ellen magánhalászatot indít!~Így hát a francia nemesség krémje a következô hajóval a karibi gyarmatokra utazik, remélve, hogy hírnévre, szerencsére és kalandra lel, és közben talán a francia birodalmat is kiterjeszti.~
+}
+Holland_descr {Hollandia. Hollandia Egyesült Tartományai egy fiatal nemzet, amely nemrégiben szabadult meg a Spanyolországgal vívott nyolcvanéves függetlenségi háborútól. A hollandok takarékos és szorgalmas, kereskedelmi fölényre vágyó nép. Jelenleg a hollandok csendben segítik Franciaországot a közös ellenségük - Spanyolország - elleni harcban; de összességében semleges hatalom akar lenni, amely kereskedni tud (vagy csalni) bármely vásárlóval!}
+Spain_descr {Spanyolország. Egy nagy, de hanyatló gyarmati hatalom. Jelenleg a Karib-tengeri szigetek és a spanyol fôsziget nagy részét birtokló Spanyolország állandó nyomás alatt van Anglia és Franciaország részérôl, akik az Újvilág végtelen gazdagságát igyekeznek maguknak követelni.}
+Pirate_descr
+{
+Kalózok. Ezek az emberek minden zászló ellen hajóznak, és a kalózkódex (szerint élnek, bár inkább a Parti Testvérek) iránymutatásai. Ez nem akadályozza ôket abban, hogy zsákmányukat angol vagy francia gyarmatokon, például Port Royalban és Tortugán adják el, ahol a kormányzó szemet huny. A kalózok a helyzettôl függôen harcolhatnak 'legitimálisan' bármelyik hatalomért, amelyik kapitulációs levelet adhat nekik, de végsô soron a zsákmányuk ugyanaz, mint az angol és francia kalózoknak - egy szép kövér spanyol kincses hajó.~Bármely tengeri ôrjárat számára egy kalózzászló látványa a horizonton olyan, mintha szalonnát dobnának az éhezô farkasnak. A kalózok túlnyomó többsége számára csak két cél létezik - a bitófa vagy a hóhérhurok.
+}
+Hunter_hint
+{
+Egy nemzet, annak polgárai és katonái hozzáállása hozzád. Az országért tett jó tettek növelik a hírnevedet; a rossz tettekért akár vérdíjat is kitûzhetnek a hôs fejére. Ez folyamatos üldözést jelent szárazföldön és tengeren egyaránt.~A fejedre kitûzött vérdíj csökkenthetô az adott ország javára tett jótettekkel, vagy akár megvesztegetéssel is. Kellô erôfeszítéssel helyreállítható a semleges kapcsolat.
+}
+LevelComplexity {Nehézségi fok}
+LevelComplexity_desc
+{
+Ez a paraméter befolyásolja a hôs tapasztalatszerzésének ütemét, a fejlôdési ütemet, az ellenség erejét, a bevételt és sok más tényezôt.~Difficulty level varies from 'Easy' to 'Impossible'.
+}
+RechargePistolOnLine {Pisztoly újratöltése}
+RechargePistolOnLine_desc
+{
+Ebben a módban a pisztolyok nem tölthetôk újra harc közben; csak akkor, ha a kard hüvelyben van.~Ez a mód a játék összes karakterét érinti.
+}
+HardcoreGame {HardcoreGame}
+HardcoreGame_desc {Nincs elég adrenalinod? Szeretnél igazi korzózónak érezni magad, és felismerni minden tetted teljes hatását a körülötted lévô világra? Ebben a módban a játék mentése csak szent földön - a templomban - lehetséges. Mindent elsôre kell jól csinálnod, anélkül, hogy újra és újra lehetôséged lenne a mentett játék újratöltésére. Nincs helye a hibázásnak.}
+ArcadeSailMode_desc {A tengeri harcok sebessége és dinamikája. Gyors manôverezés, nagy sebesség és gyors ágyúújratöltés - nagy megfontoltságot igényel a következô taktikai lépésed.}
+EncountersRate_desc {A játékesemények gyakorisága, különösen a hajók száma a világtérképen.}
+WorldAlivePause {A nemzetek küldetései}
+WorldAlivePause_desc
+{
+Ez az üzemmód lehetôvé teszi, hogy menjen át az egyik forgatókönyv küldetéssorok a nemzetek, de mielôtt véget ér, a játék "életvilág" megállítja a fôkormányzó mozog városról városra, városok megragadása más nemzetek, és blokkolja a lehetôséget, hogy elfoglalja a város a hôs.~Az élô világ csak a forgatókönyv történetének befejezése után mûködik.
+}
+Prisoner {Fogoly}
+Prisoner_desc
+{
+A fogoly olyan karakter, akit elfogtak és akarata ellenére a hajódon tartanak fogva. Bármelyik foglyot ki lehet hallgatni a hajód rakterében. Legtöbbször váltságdíjat kaphatsz érte, és ha kalózról van szó, beszervezheted a hôs legénységébe. Bebörtönözheted az utast, akit elvittél szállítani, ha a hosszú út miatt kezd neheztelni, miközben a célállomásra szállít. A kapitányok azok, akik megadják magukat neked a beszállás során, vagy akiket te emeltél fel, miközben a nyílt tengeren lévô hajójukon vannak. A legnagyobb összegû váltságdíjat a fogollyal azonos nemzet kormányzója adja, de ez ingadozik, ahogyan maguknak a kormányzónak a véleménye is a fogoly értékérôl.A fogságban lévô kapitányok különbözô kérésekkel fordulhatnak hôsödhöz. Ne kerüld a foglyokkal való kommunikációt: váratlan elônyökkel járhat.
+}
+shipChoose_hint
+{
+Kattints duplán az egérrel (vagy nyomd meg a 'Enter' billentyût) a társad hajójának képén, hogy csatán kívül elkezdj egy cserét.~A cserét úgy indíthatod el, hogy közel hajózol egy társhajóhoz, és megnyomod a gyorsparancsot 'Cserélj'..Harcban és harcban kívül is megtehetô.
+}
+GoodsCargo_hint
+{
+A hajó fedélzetén lévô rakomány: lôszer, áruk és eszközök a raktérben.~A kiosztott ablakba nem illô tárgyak megtekintéséhez használd a lista jobb oldalán lévô csúszkát.~Nyomd meg a 'Enter' billentyût, vagy kattintson duplán a listában lévô tételre, hogy megnézze a termék leírását, dobjon ki egy nem kívánt mennyiséget a fedélzetre, vagy dobjon le egy aknát.
+}
+EXP_SLIDE {Tapasztalatszerzés mértéke}
+EXP_SLIDE_desc {Ez a beállítás azt a sebességet állítja be, amellyel a fôszereplô és tisztjei tapasztalatot szereznek. Minél nagyobb az arány, annál gyorsabban szereznek új képességpontokat, új szinteket és képességeket.}
+Partition_hint
+{
+A legénység részvényeit legkésôbb minden hónap 1-jén ki kell fizetni. A következô kifizetések történnek:~Havi fenntartás - a matrózok és tisztek együttes bére, a sérültek kártérítése, valamint a hajó és a felszerelés fenntartása.~Zsákmányrész - a zsákmányolt értéktárgyak felosztása és a legénység tagjai közötti részek elosztása.~Minden elfoglalt hajó és áru megosztásra kerül. A Parti Testvérek törvényei szerint az elhunyt tengerész vagy tiszt részesedése a hozzátartozókat és a barátokat illeti meg.~A legénység tagjainak részesedése a következôképpen alakul:- matróz - 1 rész- tiszt - 10 részesedés- társ - 30 részesedés- kapitány - 200-650 részvényEzenkívül a kapitány, mint a rajához tartozó hajók tulajdonosa, minden egyes hajóból (a hajó arányától függôen)20-120 részvényt kap, és ô viseli a hajók karbantartásával és esetleges elvesztésével kapcsolatos összes költséget is.Ha a kapitánynak van szabadalma, a zsákmány 10%-át a nemzet kincstárába fizetik be.~Az aktuális hónapra vonatkozó kifizetés elhalasztása nyugtalanságot okoz a legénységben a hónap végéig, míg az elôre fizetés növeli a morált.~Az elmúlt hónapra vonatkozó kifizetés késleltetése jelentôsen csökkenti a legénység morálját, valamint a tisztek és társaid lojalitását.~
+}
+SeaBattleSave_desc
+{
+Mentés a tengeri harcban.Ennek az opciónak a kikapcsolása megszünteti a játék mentésének lehetôségét a tengeri csaták során!
+}
+Rains_desc {Esô és viharok be- és kikapcsolása. Ez az opció befolyásolja a játék stabilitását.}
+CasualMode_desc
+{
+A klasszikus mód azoknak a játékosoknak alkalmas, akik a fôszereplô történetére szeretnének koncentrálni. Kicsit nehezebb, mint a felfedezô mód, és több figyelmet és erôfeszítést igényel, de lehetôvé teszi, hogy teljesen elmerülj a játék szerzôi által teremtett hangulatban.~A felfedezô mód kezdôknek, valamint azoknak a játékosoknak is alkalmas, akik több szabadidôt szeretnének a különbözô mellékküldetések és a szabad játék teljesítésére. Ebben az üzemmódban a fô küldetések megkezdéséhez szükséges rangsorolási korlátozások megszûntek, az idôzítôk sok lehetôség nélküli esetekben ki vannak kapcsolva, és a globális térképen az idô a kiválasztott nehézségi szinttôl függôen lelassul. A fô küldetésekben az ellenségek kevésbé lesznek erôsek, és a fôszereplô hajójának sebessége a globális térképen 5%-kal nô.
+}
+SourceBase {Basic level}
+SourceAdmiral {Admiral}
+SourceOfficer {Officer Bonus}
+SourceAccountant {Purser}
+SourceMangarosa {Mangarosa Potion}
+SourceHealth {Vitality Status}
+SourceEquip {Equipment}
+SourceQuest {Unique situation}
+SourceAlco {Intoxicating}
+SourceOverload {Burdened}
+SourceNavyPenalty {Navigation Skill check failed}
+CritDamage
+{
+Critical damage multiplier. Applied after all modifiers.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+CritCharDefence
+{
+Total reduction of enemy critical damage.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+SourceSkill {Skill}
+SourceChickenGod {Blessing of Aruba}

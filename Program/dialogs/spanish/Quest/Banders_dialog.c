@@ -73,7 +73,7 @@ void ProcessDialogEvent()
 		case "Step_4d":
 			iTotalTemp = 250+hrand(25)*10;
 			dialog.text = ""+FindRussianDublonString(iTotalTemp)+" ¡Ni una sola moneda menos!";
-			if (GetCharacterItem(pchar, "gold_dublon") >= iTotalTemp)
+			if (PCharDublonsTotal() >= iTotalTemp)
 			{
 				link.l1 = "Hm, es bastante caro. Pero estoy de acuerdo si el negocio lo vale. ¡Estoy dentro! Dame los detalles.";
 				link.l1.go = "Step_5";
@@ -93,7 +93,7 @@ void ProcessDialogEvent()
 				
 				case 1://кидалово
 					if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
-					else RemoveItems(pchar, "gold_dublon", iTotalTemp);
+					else RemoveDublonsFromPCharTotal(iTotalTemp);
 					GetBandersTradeShore();
 					GetBandersTradeGoods();
 					GetBandersTradeNation();
@@ -107,7 +107,7 @@ void ProcessDialogEvent()
 				
 				case 2://наведем на торговый корабль
 					if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
-					else RemoveItems(pchar, "gold_dublon", iTotalTemp);
+					else RemoveDublonsFromPCharTotal(iTotalTemp);
 					GetBandersTradeShore();
 					GetBandersTradeGoods();
 					GetBandersTradeNation();
@@ -122,7 +122,7 @@ void ProcessDialogEvent()
 				
 				case 3://наведем на курьерский корабль
 					if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
-					else RemoveItems(pchar, "gold_dublon", iTotalTemp);
+					else RemoveDublonsFromPCharTotal(iTotalTemp);
 					GetBandersTradeShore();
 					GetBandersTradeNation();
 					pchar.questTemp.jailCanMove.Deliver.ShipName = GenerateRandomNameToShip(sti(pchar.questTemp.jailCanMove.Deliver.Nation));
@@ -147,7 +147,7 @@ void ProcessDialogEvent()
 			link.l1 = "¡Maldito seas!";
 			link.l1.go = "exit";
 			if (iTotalTemp == 0) AddMoneyToCharacter(pchar, -50000);
-			else RemoveItems(pchar, "gold_dublon", 300);
+			else RemoveDublonsFromPCharTotal(300);
 			AddQuestRecord("GivePrisonFree", "17");
 			AddQuestUserData("GivePrisonFree", "sSex", GetSexPhrase("",""));
 			CloseQuestHeader("GivePrisonFree");

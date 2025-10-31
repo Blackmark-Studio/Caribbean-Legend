@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 		RemoveItems(pchar, "knife_01", 1);
 		PlaySound("interface\important_item.wav");
 		Log_Info("¡Has entregado la Garra del Jefe!");
-		RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+		RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 		dialog.text = "¡Oh, cuánto tiempo he esperado este momento! Ahora, por fin puedo irme... Pero como regalo de despedida, me gustaría transmitirte una partícula de mi poder. Este será el último presente que Alberto Casco dará jamás.";
 		link.l1 = "...";
 		link.l1.go = "guardmask_12";

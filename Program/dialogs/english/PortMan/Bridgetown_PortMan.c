@@ -11,26 +11,25 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			//регата
 			if (CheckAttribute(pchar, "questTemp.Regata.Go") && !CheckAttribute(npchar, "quest.regatatalk"))
 			{
-				dialog.text = "What do you want? A-ha, you are the participant of the regatta! Am I right?";
-				link.l1 = "Exactly, sir. I need to get registered here according to the rules.";
+				dialog.text = "What do you want? Ah, you are a participant in the regatta! Am I right?";
+				link.l1 = "Exactly, sir. I need to register here according to the rules.";
 				link.l1.go = "Regata_check";
 				break;
 			}
 			//регата
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions?", "What do you want, " + GetAddress_Form(NPChar) + "?"), "You've already tried to ask me a question " + GetAddress_Form(NPChar) + "...", "You have been talking about some question for the third time today...",
-                          "Look, if you have nothing to tell me about the port's matters then don't bother me with your questions.", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I have changed my mind.", "I've got nothing to talk about."), "Nevermind.", "Indeed, the third time already...", "Sorry, but I'm not interested in the port's matters for now.", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What kind of questions?","What do you want, "+GetAddress_Form(NPChar)+"?"),"You've already tried to ask me a question "+GetAddress_Form(NPChar)+"...","You've brought up this question for the third time today...","Look, if you have nothing to tell me about port matters then don't bother me with your questions.","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I have changed my mind.","I've got nothing to talk about."),"Never mind.","Indeed, the third time already...","Sorry, but I'm not interested in port matters for now.",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC.Eng") && pchar.questTemp.HWIC.Eng == "GotoBridgetown" && !CheckAttribute(npchar, "quest.HWICTalked"))
             {
-                link.l1 = "I am sailing to Blueweld to sell some paprika. Tell me, mister, do you have any passengers who are heading to Blueweld? Or to Port-Royal at least. It would be great to get some money off of a passenger, it could help pay off the crew's wage. I have already reduced it to a minimum, but these lazy bastards still ask for money...";
+                link.l1 = "I am sailing to Blueweld to sell some paprika. Tell me, mister, do you have any passengers who are heading to Blueweld? Or to Port Royal at least. It would be great to get some money from a passenger, it could help pay the crew's wages. I have already reduced them to a minimum, but these lazy bastards still ask for money...";
                 link.l1.go = "PortofficeDone";
             }
 			// Страж Истины
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "barbados")
 			{
-				link.l1 = "There was a galleon named 'Admirable' freighted in Philipsburg under the command of Gaius Marchais. He had to deliver here a load of paprika. Can you help me to find this captain?";
+				link.l1 = "There was a galleon named 'Admirable' freighted in Philipsburg under the command of Gaius Marchais. He was supposed to deliver a load of paprika here. Can you help me find this captain?";
                 link.l1.go = "guardoftruth";
 			}
 			// калеуче
@@ -43,7 +42,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				}
 				else
 				{
-					link.l1 = "I heard that a xebec belonging to a Captain Jack... or Jackson often visits your port. Could you tell me where to look for him?";
+					link.l1 = "I've heard that a xebec belonging to a Captain Jack... or Jackson often visits your port. Could you tell me where I might find him?";
 					link.l1.go = "caleuche";
 				}
 			}
@@ -51,7 +50,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		//Голландский гамбит
 		case "PortofficeDone":
-			dialog.text = "Unfortunately, there are no passengers to Blueweld nor to Port-Royal. Come back tomorrow or the day after tomorrow.";
+			dialog.text = "Unfortunately, there are no passengers for Blueweld or Port-Royal. Come back tomorrow or the day after.";
 			link.l1 = "Too bad. Goodbye then.";
 			link.l1.go = "exit";	
 			npchar.quest.HWICTalked = "true";
@@ -84,8 +83,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Regata_PU.over = "yes"; // mitrokosta снимаем прерывание
 			if (CheckAttribute(pchar, "questTemp.Regata.Breach") || !CheckAttribute(pchar, "questTemp.Regata.Sentjons") || GetCompanionQuantity(pchar) > 1 || !bRegLugger || pchar.Ship.Name != "Saint Catherine")
 			{
-				dialog.text = "Hm... You have broken the rules of the regatta and I have to disqualify you. I am sorry. You are not participating in the next voyage. I have already prepared a dispatch to Port-Royal.";
-				link.l1 = "Eh... what a pity! But I can't do anything here, you were too vigilant. Farewell!";
+				dialog.text = "Hm... You have broken the rules of the regatta and I have to disqualify you. I am sorry. You will not be participating in the next voyage. I have already prepared a dispatch to Port Royal.";
+				link.l1 = "Eh... what a pity! But there's nothing I can do here, you were too vigilant. Farewell!";
 				link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.Regata");
 				AddQuestRecord("Regata", "45");
@@ -94,7 +93,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			else
 			{
 				pchar.questTemp.Regata.FourthTransitionTime = GetPastTime("hour", sti(pchar.questTemp.Regata.StartYear), sti(pchar.questTemp.Regata.StartMonth), sti(pchar.questTemp.Regata.StartDay), stf(pchar.questTemp.Regata.StartTime), GetDataYear(), GetDataMonth(), GetDataDay(), GetTime());//истратил ГГ в часах на 1+2+3+4 переход
-				dialog.text = "You might have noticed, captain, that the city is under siege. We are expecting the Spanish to attack us at any more and mobilizing our forces. But the regatta still goes on\nLet's register: captain "+ GetFullName(pchar) +", ship is - "+pchar.Ship.Name+"... Regatta's time in hours is "+sti(pchar.questTemp.Regata.FourthTransitionTime)+". Done, your result is registered, you can continue your way.";
+				dialog.text = "You might have noticed, captain, that the city is under siege. We are expecting the Spanish to attack us at any moment and are mobilizing our forces. But the regatta still goes on\nLet's register, captain "+GetFullName(pchar)+", ship is - "+pchar.Ship.Name+"... Regatta time in hours is "+sti(pchar.questTemp.Regata.FourthTransitionTime)+". Done, your result has been recorded, you may continue on your way.";
 				link.l1 = "Tell me my rank.";
 				link.l1.go = "Regata_info";
 			}
@@ -126,8 +125,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (n==1)
 			{
-			dialog.text = "Ah, yes... I am sorry I was too busy for that. You are the first.";
-			link.l1 = "I see. Thanks for you information.";
+			dialog.text = "Ah, yes... I'm sorry, I was too busy for that. You are the first.";
+			link.l1 = "I see. Thanks for your information.";
 			link.l1.go = "exit";
 			AddQuestRecord("Regata", "22");
 			}
@@ -135,8 +134,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				if (n==6)
 				{
-				dialog.text = "Ah, yes... I am sorry I am too busy for that. You are the last.";
-				link.l1 = "I see. Thanks for you information.";
+				dialog.text = "Ah, yes... I'm sorry, I'm too busy for that. You are the last.";
+				link.l1 = "I see. Thanks for your information.";
 				link.l1.go = "exit";
 				AddQuestRecord("Regata", "27");
 				}
@@ -144,15 +143,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				{
 					if (n==2)
 					{
-						dialog.text = "Ah, yes... I am sorry I am too busy for that. You are the second. There is only one captain outrunning you. His name is "+sName+" on the ship "+sShip+".";
-						link.l1 = "I see. Thanks for you information.";
+						dialog.text = "Ah, yes... I am sorry, I am too busy for that. You are second. There is only one captain ahead of you. His name is "+sName+" on the ship "+sShip+".";
+						link.l1 = "I see. Thanks for your information.";
 						link.l1.go = "exit";
 						AddQuestRecord("Regata", "23");
 					}
 					else
 					{
-						dialog.text = "Ah, yes... I am sorry I am too busy for that. Your rank is "+n+" . Your closest opponent is "+sName+" on the ship "+sShip+".";
-						link.l1 = "I see. Thanks for you information.";
+						dialog.text = "Ah, yes... I'm sorry, I'm too busy for that. Your rank is "+n+" . Your nearest opponent is "+sName+" on the ship "+sShip+".";
+						link.l1 = "I see. Thanks for your information.";
 						link.l1.go = "exit";
 						if (n==3) AddQuestRecord("Regata", "24");
 						if (n==4) AddQuestRecord("Regata", "25");
@@ -205,8 +204,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// Страж Истины
 		case "guardoftruth":
-			dialog.text = "Yes, this galleon was here, got relieved of his goods and has left our port later. Information about its destination... hm... none, there is nothing. I am sorry but there is nothing I can do.";
-			link.l1 = "I see. Too bad... I will continue looking for it.";
+			dialog.text = "Yes, this galleon was here, got relieved of its goods and left our port afterwards. Information about its destination... hm... none, there is nothing. I am sorry but there is nothing I can do.";
+			link.l1 = "I see. Too bad... I will keep looking for it.";
 			link.l1.go = "guardoftruth_1";
 		break;
 		
@@ -218,23 +217,23 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		// калеуче
 		case "caleuche":
-			dialog.text = "Sir, I need the exact name of the ship. We have tons of Jacks and Jacksons going through our port. So, what's the name?";
+			dialog.text = "Sir, I need the exact name of the ship. We have plenty of Jacks and Jacksons passing through our port. So, what's the name?";
 			link.l1 = "";
 			Link.l1.edit = 2;
 			link.l1.go = "caleuche_name";
-			link.l2 = "Trouble is that I don't know the name of his old tub. It's strange, some bird woman, born...";
+			link.l2 = "Trouble is, I don't know the name of his old tub. It's strange, some bird woman, born...";
 			link.l2.go = "caleuche_1";
 		break;
 		
 		case "caleuche_1":
-			dialog.text = "Mister, go tell your stories and riddles at the tavern, we have a serious establishment here. Either you tell me the name of that xebec, or stop disturbing me from my work.";
+			dialog.text = "Mister, go tell your stories and riddles at the tavern, we have a respectable establishment here. Either tell me the name of that xebec, or stop distracting me from my work.";
 			link.l1 = "Alright, I'll try to find out.";
 			link.l1.go = "exit";
 			npchar.questTemp.caleuche = "true";
 		break;
 		
 		case "caleuche_2":
-			dialog.text = "So? Do you have the name of the ship? I am listening.";
+			dialog.text = "So? Do you have the name of the ship? I'm listening.";
 			link.l1 = "";
 			Link.l1.edit = 2;
 			link.l1.go = "caleuche_name";
@@ -243,13 +242,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "caleuche_name":
 			if (GetStrSmallRegister(dialogEditStrings[2]) == "harpy")
 			{
-				dialog.text = "'Harpy'? Of course, I know that xebec. Its captain is Reginald Jackson. But he hadn't been to Bridgetown for long. I heard that he now works for the Dutch West India Company. So you should look for him in Willemstad.";
-				link.l1 = "Thank you very much! You've helped me out a lot.";
+				dialog.text = "'Harpy'? Of course, I know that xebec. Its captain is Reginald Jackson. But he hasn't been in Bridgetown for long. I heard that he now works for the Dutch West India Company. So you should look for him in Willemstad.";
+				link.l1 = "Thank you very much! You've helped me a great deal.";
 				link.l1.go = "caleuche_3";
+				DelLandQuestMark(npchar);
 			}
 			else
 			{
-				dialog.text = "I am sorry, but that doesn't ring a bell. Are you sure that your captain has ever been here, in Bridgetown?";
+				dialog.text = "I am sorry, but that doesn't ring a bell. Are you sure your captain has ever been here, in Bridgetown?";
 				link.l1 = "I am sure. Alright, perhaps I'll come up with something ...";
 				link.l1.go = "exit";
 			}
@@ -260,6 +260,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("Caleuche", "18");
 			pchar.questTemp.Caleuche.Garpiya = "gwik"; 
 			npchar.quest.garpiya = "true";
+			AddLandQuestMarkToPhantom("GVIK", "HWIC_headclerk");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

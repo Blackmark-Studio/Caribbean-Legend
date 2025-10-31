@@ -1,106 +1,23 @@
-HelenDrinking_1
-{
-Francois
-}
-HelenDrinking_2
-{
-de Tavann
-}
-
-HelenDrinking_3
-{
-Vit
-}
-HelenDrinking_4
-{
-Needles
-}
-
-HelenDrinking_5
-{
-Rainbow
-}
-
-HelenDrinking_6
-{
-¿Es eso un sueño? ¿Dónde están todos?
-}
-
-HelenDrinking_7
-{
-Debería ver a Jan y disculparme.
-}
-
-HelenDrinking_8
-{
-Amelia
-}
-HelenDrinking_9
-{
-
-}
-
-HelenDrinking_10
-{
-Dane
-}
-HelenDrinking_11
-{
-
-}
-
-HelenDrinking_12
-{
-Lucky
-}
-HelenDrinking_13
-{
-
-}
-
-HelenDrinking_14
-{
-Y qué asco es tener dos casas. Ay, Mary... Después de todo lo que pasó, ¿qué debemos hacer ahora los tres?
-}
-
-HelenDrinking_15
-{
-Alonso
-}
-HelenDrinking_16
-{
-
-}
-
-HelenDrinking_17
-{
-Richard
-}
-HelenDrinking_18
-{
-Small
-}
-
-HelenDrinking_19
-{
-Helen lo aprueba
-}
-HelenDrinking_20
-{
-Helen lo desaprueba
-}
-
-HelenDrinking_21
-{
-¡Sándalo entregada en tu bodega!
-}
-
-HelenDrinking_22
-{
-~ obtuve +1 a ~
-}
-
-HelenDrinking_23
-{
-~ obtuve +1 a ~
-}
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {¿Es eso un sueño? ¿Dónde están todos?}
+HelenDrinking_7 {Debería ver a Jan y disculparme.}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {Y qué asco es tener dos casas. Ay, Mary... Después de todo lo que pasó, ¿qué debemos hacer ahora los tres?}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {¡Sándalo entregada en tu bodega!}
+HelenDrinking_22 {~ obtuve +1 a ~}
+HelenDrinking_23 {~ obtuve +1 a ~}

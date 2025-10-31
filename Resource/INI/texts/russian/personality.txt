@@ -1,0 +1,12 @@
+Archetype_Title {Профессия}
+Archetype_Tooltip {Основное занятие и хобби персонажа}
+Duelist {$key(perkTreeFencing|AbilityDescribe.txt)}
+Pirate {$key(perkTreePirat|AbilityDescribe.txt)}
+Gunman {$key(Shooter)}
+Soldier {$key(perkTreeSoldier|AbilityDescribe.txt)}
+Cannoner {$key(Cannoner)}
+Boatswain {$key(Boatswain)}
+Carpenter {$key(Carpenter)}
+Navigator {$key(Navigator)}
+Treasurer {$key(Treasurer)}
+Doctor {$key(Doctor)}

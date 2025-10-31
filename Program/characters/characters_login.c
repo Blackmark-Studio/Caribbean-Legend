@@ -30,6 +30,7 @@ void LoginCharacter(aref chr, string locID)
 		bool isNoCreated = true;
 		if(CreateCharacter(chr))
 		{
+			CheckAutolevel(chr);
 			isNoCreated = false;			
 			if(TeleportCharacterToLocator(chr, chr.location.group, chr.location.locator)==0)
 			{

@@ -263,7 +263,7 @@ bool AISeaGoods_ShipEatGood()
         PlaySound("interface\" + LanguageGetLanguage() + "\_Gotcha.wav"); // boal
 		//notification("+ "+iQuantity, sGoodName);
 		//notification("+ "+iQuantity, sGood);
-		notification(GetConvertStr(sGood, "GoodsDescribe.txt") + " + "+iQuantity, sGood);
+		notification(GetGoodName(rGood) + " + "+iQuantity, sGood);
 		/* string sGoodQuantity = iQuantity * iGoodWeight;
 		string sShipGotGood = LanguageConvertString(iSeaSectionLang, "Ship_got_good");
 		Event(PARSE_STRING, "aslss", &oRes, sShipGotGood, 2, sGoodQuantity, sGoodName);
@@ -297,7 +297,7 @@ void MakeMineBoom(int iCharacterIndex, int iGoodCharacterIndex, float damg)
 		int iRandStartTime = rand(1000);
 		float fTotalFireTime = Ship_GetTotalFireTime(rCharacter);
 
-		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, 0, "ship_onfire", fTotalFireTime, iGoodCharacterIndex);
+		PostEvent(SHIP_ACTIVATE_FIRE_PLACE, iRandStartTime, "ialsfl", rCharacter, rCharacter, 0, "ShipEMB/ShipDamage_Fire", fTotalFireTime, iGoodCharacterIndex);
 		PostEvent(SHIP_FIRE_DAMAGE, iRandStartTime, "lllf", iCharacterIndex, iGoodCharacterIndex, 0, fTotalFireTime);
 		//    PlaySound("Sea Battles\vzriv_pogreb_002.wav");
 	}
@@ -312,4 +312,22 @@ void SetMineFree(ref xi_refCharacter, int type)
     xi_refCharacter.Tmp.SpeedRecall = 0;  // чтоб пересчитались скорость и маневр
 	Achievment_SetStat(61, 1);
 	if (!CheckAttribute(pchar, "questTemp.Sharlie.DelTerGuard") && pchar.location == "tortuga" && sti(xi_refCharacter.index) == GetMainCharacterIndex() && !bDisableMapEnter) Tortuga_ShipGuardAttack();
+}
+
+#event_handler("Evnt_AISG_GetAbordageSkillMultiplier", "AISeaGoods_GetAbordageSkillMultiplier");
+// belamour коэффициент сбора объектов в море
+float AISeaGoods_GetAbordageSkillMultiplier()
+{
+	int Index = GetEventData();
+	
+	if(!CheckAttribute(&Characters[Index], "TmpSkill.Grappling")) return 1.0;
+  
+    return Bring2Range(1.0, 1.75, 0.0, 1.0, stf(Characters[Index].TmpSkill.Grappling));
+}
+
+float Get_AISeaGoods_AbordageSkillMultiplier(ref chr)
+{
+	if(!CheckAttribute(chr, "TmpSkill.Grappling")) return 1.0;
+  
+    return Bring2Range(1.0, 1.75, 0.0, 1.0, stf(chr.TmpSkill.Grappling));
 }

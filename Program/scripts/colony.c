@@ -954,11 +954,18 @@ void TWN_ExitForPay() // мэр даёт откуп - табличка приб�
 		{
 			int canQty = sti(rColony.FortValue);
 			canQty = makeint(fpb * fPart);
-			for(int can = GOOD_CANNON_36; can <= GOOD_CULVERINE_36; can++)
+			for(int i = 0; i < GetArraySize(&Goods); i++)
 			{
-				if(can == GOOD_CULVERINE_8 || can == GOOD_CULVERINE_18) continue;
+				if (!CheckAttribute(&Goods[i], "type") || sti(Goods[i].type) != T_TYPE_CANNONS)
+					continue;
 				
-				SetStoreGoods(&stores[GetStorage(sld.city)], can, makeint(canQty * fPart / 2));
+				if (!CheckAttribute(&Goods[i], "NotSale") || sti(Goods[i].NotSale) == 0)
+					continue;
+				
+				if (CheckAttribute(&Goods[i], "NotGenerate") && sti(Goods[i].NotGenerate) == 1)
+					continue;
+				
+				SetStoreGoods(&stores[GetStorage(sld.city)], i, makeint(canQty * fPart / 2));
 			}
 		}
 		// личные призы от губернатора за сложный форт

@@ -55,7 +55,7 @@ void ProcessDialogEvent()
 			{
 				if (sti(rColony.HeroOwn) == true) // наш горожанин
 				{
-				    dialog.text = RandPhraseSimple("Mówią, że jesteś panem tego miasta, "+GetSexPhrase("panie","panna")+".","Co za miłe spotkanie, "+GetSexPhrase("panie","panno")+"!");
+				    dialog.text = RandPhraseSimple("Mówią, że jesteś panem tego miasta, "+GetSexPhrase("panie","pani")+".","Co za miłe spotkanie, "+GetSexPhrase("panie","pani")+"!");
 					link.l1 = RandPhraseSimple("Zmieniam zdanie. Powodzenia!","Po prostu spaceruję po mieście. Do widzenia.");
 					link.l1.go = "exit";
 					link.l2 = RandPhraseSimple("Mam do ciebie pytanie.","Potrzebuję informacji.");
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						dialog.text = RandPhraseSimple("Czego chcesz? Ruszaj dalej.","Przestań blokować mi drogę, zjeżdżaj.");
+						dialog.text = RandPhraseSimple("Czego chcesz?! Ruszaj dalej!","Przestań blokować mi drogę! Zjeżdżaj!");
 						link.l1 = RandPhraseSimple("Wiesz co? Nie szczekaj!","Uspokój się. Albo zrobię to osobiście!");
 						link.l1.go = "exit";
 						link.l2 = RandPhraseSimple("Chcę cię o coś zapytać.","Proszę o chwilę uwagi. Jedno pytanie.");
@@ -105,8 +105,8 @@ void ProcessDialogEvent()
 				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
 				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
 				{
-					dialog.text = "Dzień dobry, "+GetAddress_Form(NPChar)+" Widzę, że jesteś kapitanem własnego statku. Chcę cię prosić o przysługę...";
-					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+"  Czego chcesz?";
+					dialog.text = "Dzień dobry, "+GetAddress_Form(NPChar)+". Widzę, że jesteś kapitanem własnego statku. Chcę cię prosić o przysługę...";
+					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+". W czym mogę służyć?";
 					link.l1.go = "passenger";
 					link.l2 = "Przepraszam, "+GetAddress_FormToNPC(NPChar)+", ale się spieszę.";
 					link.l2.go = "exit";
@@ -116,9 +116,9 @@ void ProcessDialogEvent()
 				}
 
                 // homo 05/08/06
-				dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Jestem ","Moje imię to ","Możesz mnie nazywać ")+GetFullName(npchar)+LinkRandPhrase("  Czego chcesz?","Nie widziałem cię tu wcześniej. Kim jesteś?","Kim jesteś i czego ode mnie chcesz?"),LinkRandPhrase("Pozdrowienia, "+GetAddress_Form(NPChar)+"  Nazywam się "+GetFullName(npchar)+" . A jak masz na imię?","Cześć, "+GetAddress_Form(NPChar)+"! Jestem "+GetFullName(npchar)+" Czy mogę poznać twe imię?","Tak, "+GetAddress_Form(NPChar)+". Czego chcesz? A tak przy okazji, nazywam się "+GetFullName(npchar)+" A jak się nazywasz?"));
+				dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Jestem ","Moje imię to ","Możesz mnie nazywać ")+GetFullName(npchar)+". "+ LinkRandPhrase("Co mogę dla ciebie zrobić?","Nie widziałem cię tu wcześniej. Kim jesteś?","Kim jesteś i czego ode mnie chcesz?"),LinkRandPhrase("Pozdrawiam, "+GetAddress_Form(NPChar)+". Nazywam się "+GetFullName(npchar)+". A jak ty masz na imię?","Niech będzie pochwalony, "+GetAddress_Form(NPChar)+"! Jestem "+GetFullName(npchar)+". Czy mogę poznać twe imię?","Tak, "+GetAddress_Form(NPChar)+". Czego chcesz? A tak przy okazji, nazywam się "+GetFullName(npchar)+". A jak brzmi twoje imię?"));
 
-				Link.l1 = pcharrepphrase(LinkRandPhrase("Do diabła ze mną! ","Cholera! ","Do diabła z tobą! ")+"Tak, jestem kapitanem "+GetFullName(Pchar)+LinkRandPhrase(", czy nigdy nie słyszałeś "+NPCharSexPhrase(NPChar,", łajdaku?","?")," i "+GetSexPhrase("najsłynniejszy pirat","najsłynniejsza dziewczyna-pirat")+"na morzu!"," i niech mnie diabli wezmą, jeśli się mylę!"),LinkRandPhrase("Jestem "+GetFullName(Pchar)+", kapitanie."," Nazywam się "+GetFullName(Pchar)+".","Możesz mnie nazywać kapitanem "+GetFullName(Pchar)+"."));
+				Link.l1 = pcharrepphrase(LinkRandPhrase("Do diabła ze mną! ","Cholera! ","Do diabła z tobą! ")+"Tak, jestem kapitan "+GetFullName(Pchar)+LinkRandPhrase(", czy nigdy nie "+NPCharSexPhrase(NPChar,"słyszałeś, łajdaku?!","słyszałaś, ladacznico?!")," i "+GetSexPhrase("najsłynniejszy pirat","najsłynniejsza dziewczyna-pirat")+" na morzu!"," i niech mnie diabli wezmą, jeśli się mylę!"),LinkRandPhrase("Jestem "+GetFullName(Pchar)+", kapitanie."," Nazywam się "+GetFullName(Pchar)+".","Możesz mnie nazywać kapitanem "+GetFullName(Pchar)+"."));
 				Link.l1.go = "Meeting";
 				
 				//==> прибыла инспекция на Святом Милосердии
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 				//Jason --> генератор Неудачливый вор
 				if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_town" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 				{
-					link.l16 = "Słuchaj, mam nadzieję, że możesz mi pomóc. Chcę kupić "+pchar.GenQuest.Device.Shipyarder.Type+", i powiedziano mi, że ta rzecz była sprzedawana w twoim mieście. Cóż, ktoś sprzedawał to na ulicach. Wiesz coś o tym?";
+					link.l16 = "Słuchaj, mam nadzieję, że możesz mi pomóc. Chcę kupić "+pchar.GenQuest.Device.Shipyarder.Type+" i powiedziano mi, że ta rzecz była sprzedawana w twoim mieście. Cóż, ktoś sprzedawał to na ulicach. Wiesz coś o tym?";
 					link.l16.go = "Device_Citizen";
 				}
 				// <-- генератор Неудачливый вор
@@ -178,12 +178,12 @@ void ProcessDialogEvent()
 				// Квестовый генератор священника. Квест №2. Warship -->
 				if(CheckAttribute(PChar, "GenQuest.ChurchQuest_2.AskPeople") && !CheckAttribute(NPChar, "GenQuest.ChurchQuest_2.AskedPeople") && NPChar.location == PChar.GenQuest.ChurchQuest_2.QuestTown + "_town")
 	            {
-					link.l5 = LinkRandPhrase("Czy wiesz ","Czy jesteś świadomy ","Słyszałeś ")+"że lokalny kościół został niedawno okradziony?";
+					link.l5 = LinkRandPhrase("Czy wiesz","Czy jesteś świadomy","Słyszałeś")+", że nasz lokalny kościół został niedawno okradziony?";
 					link.l5.go = "Citiz_GenQuest_Church_2_1";
 				}
 				// <-- Квестовый генератор священника. Квест №2.
 				
-				dialog.Text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Ach, to ty "+GetFullName(Pchar)+" "+GetSexPhrase(" - stary przyjacielu!"," - piękna!")+"","Cieszę się, że cię widzę, "+GetSexPhrase("stary przyjacielu!","ślicznotko!")+" "+Pchar.name,"O, to jest "+GetSexPhrase("sam kapitan","sama kapitan")+" "+GetFullName(Pchar))+RandPhraseSimple(" . Myślałem, że nie żyjesz!",". A być może "+GetSexPhrase("Pijany jak zawsze.","trochę pijany."))+LinkRandPhrase("Śmiało, czego potrzebujesz?"," Co tym razem?","Znowu mnie niepokoisz?"),LinkRandPhrase(TimeGreeting()+", kapitanie ","Dobry dzień dla ciebie, "+GetAddress_Form(NPChar)+" ","Witaj, kapitanie ")+GetFullName(Pchar)+LinkRandPhrase(" Jak mogę pomóc "+GetSexPhrase("tak zacny człowiek","taka godna dziewczyna")+", jak ty?"," . Dlaczego tu jesteś?"," Co chcesz wiedzieć tym razem?")),PCharRepPhrase(LinkRandPhrase("Cześć, kapitanie ","Pozdrowienia, ah, to ty "+GetAddress_Form(NPChar)+" ","Ah, kapitanie ")+GetFullName(Pchar)+LinkRandPhrase(", myślałem, że już nigdy się nie spotkamy, i",", nie powiem, że cieszę się na twój widok, ale",", widzę, że wciąż żyjesz, jaka szkoda i")+LinkRandPhrase(" czego chcesz?","dlaczego tu jesteś?"," jak mogę ci pomóc?"),LinkRandPhrase(TimeGreeting()+", kapitanie "+GetFullName(Pchar)+" Jak mogę ci pomóc?","O, to kapitan "+GetFullName(Pchar)+"! Jak mogę ci pomóc?","Pozdrowienia, "+GetAddress_Form(NPChar)+" "+Pchar.lastname+"Chcesz czegoś?")));  
+				dialog.Text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Ach, to ty "+GetFullName(Pchar)+" "+GetSexPhrase(" - stary przyjacielu!"," - piękna!")+"","Cieszę się, że cię widzę, "+GetSexPhrase("stary przyjacielu!","ślicznotko!")+" "+Pchar.name,"O, to jest "+GetSexPhrase("sam kapitan","sama kapitan")+" "+GetFullName(Pchar))+RandPhraseSimple(". Myślałem, że nie żyjesz!",". A być może "+GetSexPhrase("Pijany jak zawsze.","trochę pijany."))+LinkRandPhrase("Śmiało, czego potrzebujesz?"," Co tym razem?","Znowu mnie niepokoisz?"),LinkRandPhrase(TimeGreeting()+", kapitanie ","Dobry dzień dla ciebie, "+GetAddress_Form(NPChar)+" ","Witaj, kapitanie ")+GetFullName(Pchar)+LinkRandPhrase(" Jak mogę pomóc "+GetSexPhrase("tak zacny człowiek","taka godna dziewczyna")+", jak ty?"," . Dlaczego tu jesteś?"," Co chcesz wiedzieć tym razem?")),PCharRepPhrase(LinkRandPhrase("Cześć, kapitanie ","Pozdrowienia, ah, to ty "+GetAddress_Form(NPChar)+" ","Ah, kapitanie ")+GetFullName(Pchar)+LinkRandPhrase(", myślałem, że już nigdy się nie spotkamy, i",", nie powiem, że cieszę się na twój widok, ale",", widzę, że wciąż żyjesz, jaka szkoda i")+LinkRandPhrase(" czego chcesz?","dlaczego tu jesteś?",". Jak mogę ci pomóc?"),LinkRandPhrase(TimeGreeting()+", kapitanie "+GetFullName(Pchar)+". Jak mogę ci pomóc?","O, to kapitan "+GetFullName(Pchar)+"! Jak mogę ci pomóc?","Pozdrowienia, "+GetAddress_Form(NPChar)+" "+Pchar.lastname+"! Chcesz czegoś?")));  
 	   			link.l6 = PCharRepPhrase(RandPhraseSimple("Twoje uszy cię zwodzą. Muszę iść.","Nie, to nic, byłem w drodze do tawerny."),RandPhraseSimple("Dobrze, cokolwiek. Powodzenia!","Po prostu spaceruję po mieście. Żegnaj."));
 				link.l6.go = "exit";
 			}
@@ -197,14 +197,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ShipLetters_8":
-			dialog.text = LinkRandPhrase("Nie obchodzi mnie jakiś losowy papier, a poza tym nie umiem czytać. Idź do lichwiarza, mówią, że on potrafi robić cuda z literami, ha!","Nie wiem, o czym mówisz, zapytaj kogoś innego, kapitanie"+GetFullName(Pchar)+".","Nie wiem, jak ci pomóc, kapitanie "+GetFullName(Pchar)+"Spróbuj porozmawiać z lichwiarzem, on może coś wiedzieć.");
+			dialog.text = LinkRandPhrase("Nie obchodzi mnie jakiś losowy papier, a poza tym nie umiem czytać. Idź do bankiera, mówią, że on potrafi robić cuda z literami, ha!","Nie wiem, o czym mówisz, zapytaj kogoś innego, kapitanie "+GetFullName(Pchar)+".","Nie wiem, jak ci pomóc, kapitanie "+GetFullName(Pchar)+". Spróbuj porozmawiać z bankierem, on może coś wiedzieć.");
 			link.l1 = "Dzięki.";
 			link.l1.go = "exit";
 		break;
 		
 		case "Meeting":
-		    dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Czyżbyś kłamał, kapitanie "+GetFullName(Pchar)+"?","Więc co "+PChar.name+"?","Zapamiętam cię, "+GetFullName(Pchar)+".")+"Teraz powiedz mi, czego chcesz?",LinkRandPhrase("Miło cię poznać, kapitanie "+PChar.name,"Rad z naszego spotkania, "+GetAddress_Form(NPChar)+" "+PChar.lastname,"To przyjemność, kapitanie "+PChar.name)+" . Ale wątpię, że chciałeś tylko poznać moje imię, prawda?");
-            link.l1 = PCharRepPhrase("Chcę tylko zapytać o to dziadostwo, które nazywasz 'miastem'.","Chcę cię zapytać o coś związanego z tym miastem.");
+		    dialog.Text = NPCharRepPhrase(npchar,LinkRandPhrase("Czyżbyś kłamał, kapitanie "+GetFullName(Pchar)+"?","Więc co, "+PChar.name+"?","Zapamiętam cię, "+GetFullName(Pchar)+".")+"Teraz powiedz mi, czego chcesz?",LinkRandPhrase("Miło cię poznać, kapitanie "+PChar.name,"Jestem rad z naszego spotkania, "+GetAddress_Form(NPChar)+" "+PChar.lastname,". To przyjemność, kapitanie "+PChar.name)+". Ale wątpię, że chciałeś tylko poznać moje imię, prawda?");
+            link.l1 = PCharRepPhrase("Chcę tylko zapytać o tą żałosną kupę gruzów, które nazywasz 'miastem'.","Chcę cię zapytać o coś związanego z tym miastem.");
 			link.l1.go = "new question";
             Link.l2 = RandPhraseSimple("Mam do ciebie pytanie.","Potrzebuję informacji.");
 			if (CheckCharacterItem(pchar, "CaptainBook"))				
@@ -252,7 +252,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "new question":
-            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Och, i cieszę się, że cię widzę, jakbym się cieszył z gorzałki, pytaj o co chcesz.","Lubi pan gawędzić, kapitanie? Ja też... Zwłaszcza przy kubku rumu.","Tak, "+PChar.name+"? "),LinkRandPhrase("Czego jeszcze chcesz?","Przyjmuję to, kapitanie "+PChar.name+", że lubisz sobie pogadać?")),PCharRepPhrase(LinkRandPhrase("Czego jeszcze chcesz, "+GetAddress_Form(NPChar)+"?","Słucham, kapitanie.","Muszę iść, więc pytaj mnie szybko, kapitanie."),LinkRandPhrase("Zawsze się cieszę z miłego towarzystwa, "+GetAddress_Form(NPChar)+" "+PChar.lastname+" Mów.","Tak, "+GetAddress_Form(NPChar)+"?","Lubisz rozmawiać, kapitanie? Ja też... ")));
+            dialog.text = NPCharRepPhrase(npchar,PCharRepPhrase(LinkRandPhrase("Och, i cieszę się, że cię widzę, jakbym się cieszył z gorzałki, pytaj o co chcesz.","Lubi pan gawędzić, kapitanie? Ja też... Zwłaszcza przy kubku rumu.","Tak, "+PChar.name+"? "),LinkRandPhrase("Czego jeszcze chcesz?","Zakładam, kapitanie "+PChar.name+", że lubisz sobie pogawędzić?")),PCharRepPhrase(LinkRandPhrase("Czego jeszcze chcesz, "+GetAddress_Form(NPChar)+"?","Słucham, kapitanie.","Muszę iść, więc pytaj mnie szybko, kapitanie."),LinkRandPhrase("Zawsze się cieszę z miłego towarzystwa, "+GetAddress_Form(NPChar)+" "+PChar.lastname+" Mów.","Tak, "+GetAddress_Form(NPChar)+"?","Lubisz rozmawiać, kapitanie? Ja też... ")));
 			link.l1 = LinkRandPhrase("Jakie plotki krążą po tym mieście?","Jakieś wieści z tych stron?","Jak tam życie na lądzie?");
 			link.l1.go = "rumours_townman";
 			link.l2 = LinkRandPhrase("Pokażesz mi drogę?","Nie mogę znaleźć drogi do jednego miejsca...","Pomóż mi dotrzeć do jednego miejsca...");
@@ -302,8 +302,8 @@ void ProcessDialogEvent()
 		
 		//Jason --> генератор Неудачливый вор
 		case "Device_Citizen":
-           dialog.text = "Hm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Nigdy o tym nie słyszałem... Żyję tu od dawna i nigdy czegoś takiego nie widziałem.";
-			link.l1 = "Cóż, to jest narzędzie do budowy statków, "+pchar.GenQuest.Device.Shipyarder.Describe+" . Czy ktoś sprzedawał coś takiego w mieście? A może nosił to przy sobie i zauważyłeś?";
+           dialog.text = "Hmm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Nigdy o tym nie słyszałem... Żyję tu od dawna i nigdy czegoś takiego nie widziałem.";
+			link.l1 = "Cóż, to jest narzędzie do budowy statków, "+pchar.GenQuest.Device.Shipyarder.Describe+". Czy ktoś sprzedawał coś takiego w mieście? A może nosił to przy sobie i zauważyłeś?";
 			link.l1.go = "Device_Citizen_1";
 			npchar.quest.Device = "true";
 		break;
@@ -347,15 +347,15 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Townpassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Townpassenger.Enemycity"))
 			{
-				dialog.text = "Kapitanie, muszę dostać się do kolonii zwanej "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", jak najszybciej, to jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Dat")+", w "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Wasz statek wygląda solidnie w porównaniu z większością tych małych łajb pływających tutaj. Mogę wam zapłacić "+FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money))+"Co powiesz?";
+				dialog.text = "Kapitanie, muszę dostać się do kolonii zwanej "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+" - i to jak najszybciej. To jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Dat")+", w "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Wasz statek wygląda solidnie w porównaniu z większością tych małych łajb pływających tutaj. Mogę wam zapłacić "+FindRussianMoneyString(sti(pchar.GenQuest.Townpassenger.Money))+". Co ty na to?";
 			}
 			else
 			{
-				dialog.text = "Kapitanie, muszę dostać się do kolonii "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Voc")+", w "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Wiem, że to brzmi niezwykle ryzykownie, ale może "+FindRussianDublonString(sti(pchar.GenQuest.Townpassenger.Money))+"byłoby miłym wzmocnieniem dla ciebie?";
+				dialog.text = "Kapitanie, muszę dostać się do kolonii "+XI_ConvertString("Colony"+pchar.GenQuest.Townpassenger.City)+", która jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Townpassenger.City)+"Voc")+", w przeciągu "+FindRussianDaysString(sti(pchar.GenQuest.Townpassenger.DaysQty))+". Wiem, że to brzmi niezwykle ryzykownie, ale może "+FindRussianDublonString(sti(pchar.GenQuest.Townpassenger.Money))+" byłoby miłym wzmocnieniem dla ciebie?";
 			}
 			link.l1 = "Hm. Ja również zmierzam w tę stronę, więc jestem gotów zabrać cię na pokład na tych warunkach.";
 			link.l1.go = "passenger_1";
-			link.l2 = "Przepraszam,  "+GetAddress_FormToNPC(NPChar)+", ale płynę w innym kierunku. Nie mogę ci pomóc.";
+			link.l2 = "Przepraszam, "+GetAddress_FormToNPC(NPChar)+", ale płynę w innym kierunku. Nie mogę ci pomóc.";
 			link.l2.go = "passenger_exit";
 		break;
 		
@@ -368,7 +368,7 @@ void ProcessDialogEvent()
 		
 		case "passenger_1":
 			dialog.text = "Świetnie, bo jestem zmęczony czekaniem. Dostaniesz swoją zapłatę, gdy tam dotrzemy.";
-			link.l1 = "Idź na mój statek, "+GetAddress_FormToNPC(NPChar)+" Wkrótce wypływamy.";
+			link.l1 = "W takim razie kieruj się na mój statek, "+GetAddress_FormToNPC(NPChar)+". Wkrótce wypływamy.";
 			link.l1.go = "passenger_2";
 		break;
 		
@@ -424,8 +424,8 @@ void ProcessDialogEvent()
 		
 		case "passenger_3":
 			pchar.quest.Townpassenger_Over.over = "yes"; //снять таймер
-			dialog.text = "Jesteśmy na miejscu, doskonale! Ta podróż na twoim statku była całkiem satysfakcjonująca. Dziękuję. Weź swoje pieniądze, panie.";
-			link.l1 = "Powodzenia, "+GetAddress_FormToNPC(NPChar)+"Żegnaj.";
+			dialog.text = "Jesteśmy na miejscu, doskonale! Podróż twoim statkiem była całkiem ciekawa. Dziękuję. Weź swoje pieniądze, panie.";
+			link.l1 = "Powodzenia, "+GetAddress_FormToNPC(NPChar)+"! Żegnaj.";
 			link.l1.go = "passenger_4";
 		break;
 		

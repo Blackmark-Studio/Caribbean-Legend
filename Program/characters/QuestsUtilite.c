@@ -595,7 +595,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	{
         DeleteAttribute(_location, "box1");
         _location.box1.money = 50000;//
-		_location.box1.items.gold_dublon = 100;
+		_location.box1.items.gold_dublon = 350;
 		_location.box1.items.map_half_blaze = 1; // половинка карты
 		_location.box1.items.splinter_nh = 1; // осколок календаря
 		_location.box1.items.recipe_totem_10 = 1;
@@ -606,7 +606,6 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 			if (amap != "") _location.box1.items.(amap)	= 1;
 		}
 		DeleteAttribute(_location, "box2");
-		_location.box2.items.gold_dublon = 250;
 		_location.box2.items.witches_hammer = 1; //молот ведьм
 		_location.box2.items.letter_parol = 1; // записка с паролем на рудник
 		_location.box2.items.map_bermudas = 1;
@@ -623,7 +622,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 	{
 		DeleteAttribute(_location, "box1");
 		_location.box1.money = 5000;
-		_location.box1.items.gold_dublon = 100;
+		_location.box1.items.gold_dublon = 150;
 		_location.box1.items.jewelry16 = 1;
 		_location.box1.items.tailor_tool = 1; // портняжный набор
 		if (CheckAttribute(pchar, "questTemp.AdmiralMap")) // адм.карты
@@ -632,7 +631,6 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 			if (amap != "") _location.box1.items.(amap)	= 1;
 		}
 		DeleteAttribute(_location, "box2");
-		_location.box2.items.gold_dublon = 50;
 		_location.box2.items.letter_parol = 1;
 		ChangeItemDescribe("letter_parol", "itmdescr_letter_ouster");
 		_location.box2.items.indian_5 = 1;
@@ -859,8 +857,6 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		 DeleteAttribute(_location, "box1");
         _location.box1.money = 100000;
 		_location.box1.items.blade_28 = 1;
-		DeleteAttribute(_location, "box2");
-		_location.box2.items.gold_dublon = 5000;
         ok = false;
 	}
 	
@@ -1195,6 +1191,14 @@ void FillAboardCabinBox(ref _location, ref _npchar)
 		
         ok = false;
 	}
+	// Пиратский пинас по Калеуче
+	if (_npchar.id == "Caleuche_PiratePinas")
+	{
+		DeleteAttribute(_location, "box1");
+		_location.box1.items.gold_dublon = 500;
+		
+        ok = false;
+	}
 	
     if (ok) // не квестовый
     {
@@ -1301,6 +1305,7 @@ void FillAboardCabinBox(ref _location, ref _npchar)
     } else {
 		_location.box1.items.talisman11 = 1 + rand(4);
 	}
+	if(rand(9) == 5) _location.box1.items.ArmoryPaper = 4 + rand(3);
 }
 
 // ugeen --> вычисление ранга квестовых проитвников в зависимости от ранга ГГ и уровня сложности
@@ -1334,16 +1339,19 @@ void FantomMakeCoolSailor(ref _Character, int _ShipType, string _ShipName, int _
     SetCrewQuantityFull(_Character);
     Fantom_SetBalls(_Character, "pirate");
 
-	SetCharacterPerk(_Character, "FastReload");
-	SetCharacterPerk(_Character, "HullDamageUp");
-	SetCharacterPerk(_Character, "SailsDamageUp");
-	SetCharacterPerk(_Character, "CrewDamageUp");
-	SetCharacterPerk(_Character, "CriticalShoot");
-	SetCharacterPerk(_Character, "LongRangeShoot");
-	SetCharacterPerk(_Character, "CannonProfessional");
-	SetCharacterPerk(_Character, "ShipDefenseProfessional");
-	SetCharacterPerk(_Character, "ShipSpeedUp");
-	SetCharacterPerk(_Character, "ShipTurnRateUp");
+	// SetCharacterPerk(_Character, "FastReload");
+	// SetCharacterPerk(_Character, "HullDamageUp");
+	// SetCharacterPerk(_Character, "SailsDamageUp");
+	// SetCharacterPerk(_Character, "CrewDamageUp");
+	// SetCharacterPerk(_Character, "CriticalShoot");
+	// SetCharacterPerk(_Character, "LongRangeShoot");
+	// SetCharacterPerk(_Character, "CannonProfessional");
+	// SetCharacterPerk(_Character, "ShipDefenseProfessional");
+	// SetCharacterPerk(_Character, "ShipSpeedUp");
+	// SetCharacterPerk(_Character, "ShipTurnRateUp");
+		
+		ForceAutolevel(_Character, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB CoolSailor
+		GiveCaptainOfficers(_Character, true);
 
     DeleteAttribute(_Character, "ship.sails");// убрать дыры на парусах
     DeleteAttribute(_Character, "ship.blots");
@@ -1377,14 +1385,16 @@ void FantomMakeSmallSailor(ref _Character, int _ShipType, string _ShipName, int 
     SetCrewQuantityFull(_Character);
     Fantom_SetBalls(_Character, "pirate");
 
-	SetCharacterPerk(_Character, "HullDamageUp");
-	SetCharacterPerk(_Character, "SailsDamageUp");
-	SetCharacterPerk(_Character, "CrewDamageUp");
-	SetCharacterPerk(_Character, "AdvancedBattleState");
-	SetCharacterPerk(_Character, "ShipSpeedUp");
-	SetCharacterPerk(_Character, "ShipTurnRateUp");
-	SetCharacterPerk(_Character, "Doctor1");
-	SetCharacterPerk(_Character, "LongRangeGrappling");
+	// SetCharacterPerk(_Character, "HullDamageUp");
+	// SetCharacterPerk(_Character, "SailsDamageUp");
+	// SetCharacterPerk(_Character, "CrewDamageUp");
+	// SetCharacterPerk(_Character, "AdvancedBattleState");
+	// SetCharacterPerk(_Character, "ShipSpeedUp");
+	// SetCharacterPerk(_Character, "ShipTurnRateUp");
+	// SetCharacterPerk(_Character, "Doctor1");
+	// SetCharacterPerk(_Character, "LongRangeGrappling");
+	ForceAutolevel(_Character, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB CoolSailor
+	GiveCaptainOfficers(_Character, true);
 
     DeleteAttribute(_Character, "ship.sails");// убрать дыры на парусах
     DeleteAttribute(_Character, "ship.blots");
@@ -1445,9 +1455,10 @@ void FantomMakeCoolFighter(ref _Character, int _Rank, int _Fencing, int _Pistol,
 		}
 	}
 
-    FaceMaker(_Character);
+	FaceMaker(_Character);
 	CirassMaker(_Character);
-    SetNewModelToChar(_Character);  // перерисуем модель на лету
+	SetNewModelToChar(_Character);  // перерисуем модель на лету
+	ForceOldGenerateToNew(_Character, _Rank);
 }
 
 int GetCoffDiff(float _num, int _maxRange)
@@ -1879,25 +1890,53 @@ string GetSexPhrase(string StrMan, string StrWoman)
 string GetNatPhrase(ref _character, string StrEng, string StrFra, string StrSpa, string StrHol)
 {
 	string strBack;
-    if (_character.nation == ENGLAND || _character.nation == PIRATE)
-    {
-        strBack = StrEng;
-    }
-    else
+	if (CheckAttribute(_character, "basenation"))
 	{
-		if (_character.nation == FRANCE)
+		if (_character.basenation == ENGLAND || _character.basenation == PIRATE)
 		{
-        strBack = StrFra;
+			strBack = StrEng;
 		}
 		else
 		{
-			if (_character.nation == SPAIN)
+			if (_character.basenation == FRANCE)
 			{
-			strBack = StrSpa;
+			strBack = StrFra;
 			}
 			else
 			{
-			strBack = StrHol;
+				if (_character.basenation == SPAIN)
+				{
+				strBack = StrSpa;
+				}
+				else
+				{
+				strBack = StrHol;
+				}
+			}
+		}
+	}
+	else
+	{
+		if (_character.nation == ENGLAND || _character.nation == PIRATE)
+		{
+			strBack = StrEng;
+		}
+		else
+		{
+			if (_character.nation == FRANCE)
+			{
+			strBack = StrFra;
+			}
+			else
+			{
+				if (_character.nation == SPAIN)
+				{
+				strBack = StrSpa;
+				}
+				else
+				{
+				strBack = StrHol;
+				}
 			}
 		}
 	}
@@ -1971,6 +2010,7 @@ void SetNewModelToChar(ref chref)
     float liveTime = 0.1;
 	int colors = argb(64, 64, 64, 64);
 	int colore = argb(0, 32, 32, 32);
+	ref rItem;
 
     if (IsEntity(&chref))
     {
@@ -1980,7 +2020,7 @@ void SetNewModelToChar(ref chref)
         }
         if(CheckAttribute(chref, "equip.gun"))
         {
-			ref rItem = ItemsFromID(chref.equip.gun);
+			rItem = ItemsFromID(chref.equip.gun);
 			if(CheckAttribute(rItem, "model")) SendMessage(chref, "ls",    MSG_CHARACTER_SETGUN,   rItem.model);
 			else trace("SetNewModelToChar -> Character "+ chref.id + " has invalide model 'equip.gun'");
         }
@@ -1989,7 +2029,7 @@ void SetNewModelToChar(ref chref)
 			rItem = ItemsFromID(chref.equip.blade);
             //SendMessage(chref, "lsfll", MSG_CHARACTER_SETBLADE, chref.equip.blade, liveTime, colors, colore);
             //SendMessage(chref, "llsfll", MSG_CHARACTER_SETBLADE, 0, chref.equip.blade, liveTime, colors, colore);
-			SendMessage(chref, "llsfll", MSG_CHARACTER_SETBLADE, 0, rItem.model, liveTime, colors, colore);
+			SendMessage(chref, "lsfll", MSG_CHARACTER_SETBLADE, rItem.model, liveTime, colors, colore);
         }
 		if(CheckAttribute(chref, "equip.musket"))	// evganat - мушкет
         {
@@ -2439,6 +2479,12 @@ void SetQuestAboardCabinDialog(ref refChar)
             refChar.Dialog.FileName = "Quest\FireBrigade.c";
 			refChar.Dialog.CurrentNode = "FireBrigade_" + NationShortName(sti(refChar.nation));	
         }
+		else if (refChar.CaptanId == "Map_Garpiya") // Гарпия
+		{
+		    LAi_SetCheckMinHP(refChar, 10, true, "QuestAboardCabinDialog");
+			refChar.Dialog.FileName = "Quest\Caleuche_dialog.c";
+			refChar.Dialog.CurrentNode = "Caleuche_Reginald_21";	
+		}
 	}
 }
 
@@ -2772,33 +2818,7 @@ void HollandGambitNpcInit()//оптимизация - создаем всех к
 	
 //------------------------------------хижина Чарли Книппеля-------------------------------------------
 	//Чарли Книппель
-	sld = GetCharacter(NPC_GenerateCharacter("Knippel", "Kneepel", "man", "man_B", 20, ENGLAND, -1, false, "quest"));
-	sld.name = StringFromKey("QuestsUtilite_36");
-	sld.lastname = StringFromKey("QuestsUtilite_37");
-	sld.greeting = "knippel_1";
-	sld.CompanionDisable = true;
-	sld.rank = 20;
-	LAi_SetHP(sld, 120, 120);
-	SetSelfSkill(sld, 10, 12, 10, 10, 70);
-	SetShipSkill(sld, 50, 20, 75, 75, 45, 20, 20, 10, 15);
-	SetSPECIAL(sld, 9, 10, 6, 5, 5, 5, 9);
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "SailsDamageUp");
-	SetCharacterPerk(sld, "CrewDamageUp");
-	SetCharacterPerk(sld, "CriticalShoot");
-	SetCharacterPerk(sld, "LongRangeShoot");
-	SetCharacterPerk(sld, "CannonProfessional");
-	SetCharacterPerk(sld, "FastReload");
-	sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
-	sld.dialog.currentnode = "First time";
-	GiveItem2Character(sld, "blade_12");
-	sld.equip.blade = "blade_12";
-	GiveItem2Character(sld, "pistol1");
-	EquipCharacterbyItem(sld, "pistol1");
-    TakeNItems(sld, "bullet", 50);
-	AddItems(sld, "gunpowder", 50);
-	TakeNItems(sld,"potion2", 3);
-	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
+	sld = initKnippel();
 	sld.location = "SentJons_houseH1";
 	sld.location.group = "goto";
 	sld.location.locator = "goto1";
@@ -2846,35 +2866,7 @@ void HollandGambitNpcInit()//оптимизация - создаем всех к
 	SetRandSPECIAL(sld);
 	
 	//Лонгвэй
-	sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
-	sld.name = StringFromKey("QuestsUtilite_42");
-	sld.lastname = StringFromKey("QuestsUtilite_43");
-	sld.greeting = "Longway";
-    sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
-	sld.dialog.currentnode = "First time";
-	sld.CompanionDisable = true;
-	sld.rank = 20;
-	sld.money = 5000;
-	SetSelfSkill(sld, 45, 45, 45, 40, 50);
-	SetShipSkill(sld, 50, 20, 25, 25, 65, 20, 20, 50, 15);
-	SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-	LAi_SetHP(sld, 250, 250);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "ShipSpeedUp");
-	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
-	SetCharacterPerk(sld, "WindCatcher");
-	SetCharacterPerk(sld, "SailsMan");
-	SetCharacterPerk(sld, "SailingProfessional");
-	GiveItem2Character(sld, "blade_08");
-	sld.equip.blade = "blade_08";
-	GiveItem2Character(sld, "pistol3");
-	EquipCharacterbyItem(sld, "pistol3");
-	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "grapeshot");
-    TakeNItems(sld, "grapeshot", 50);
-	AddItems(sld, "gunpowder", 50);
-	TakeNItems(sld, "potion2", 1);
+	sld = initLongway();
 	
 	//Жоаким Мерриман
 	sld = GetCharacter(NPC_GenerateCharacter("Joakim", "Meriman_1", "man", "man_B", 25, HOLLAND, -1, false, "quest"));
@@ -2895,6 +2887,7 @@ void HollandGambitNpcInit()//оптимизация - создаем всех к
 	
 	//Эркюль Тонзаг
 	sld = GetCharacter(NPC_GenerateCharacter("Tonzag", "Tonzag", "man", "man", 30, ENGLAND, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = StringFromKey("QuestsUtilite_46");
 	sld.lastname = StringFromKey("QuestsUtilite_47");
 	sld.greeting = "tonzag_2";
@@ -3010,10 +3003,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -3043,8 +3036,8 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	
 	// Алонсо де Мальдонадо
 	sld = GetCharacter(NPC_GenerateCharacter("Maldonado", "Maldonado", "man", "man", 1, SPAIN, -1, false, "quest"));
-	sld.name = StringFromKey("QuestsUtilite_56");
-	sld.lastname = StringFromKey("QuestsUtilite_57");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = GetCharacterName("de Maldonado");
 	//sld.greeting = "alonso";
     sld.Dialog.Filename = "Quest\Sharlie\Maldonado.c";
 	sld.dialog.currentnode = "First time";
@@ -3060,10 +3053,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterPerk(sld, "LongRangeGrappling");
@@ -3108,10 +3101,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -3159,10 +3152,10 @@ void SharlieNpcInit()//создаем всех ключевых персонаж
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterPerk(sld, "LongRangeGrappling");
@@ -3209,10 +3202,10 @@ void SagaNpcInit()//создаем всех ключевых персонаже�
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -3299,10 +3292,10 @@ void SagaNpcInit()//создаем всех ключевых персонаже�
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -3364,6 +3357,7 @@ void SagaNpcInit()//создаем всех ключевых персонаже�
 	
 	//Элен
 	sld = GetCharacter(NPC_GenerateCharacter("Helena", "Rumba", "woman", "rumba", 1, ENGLAND, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = StringFromKey("QuestsUtilite_76");
 	sld.lastname = StringFromKey("QuestsUtilite_77");
 	sld.Dialog.Filename = "Quest\Saga\Helena.c";
@@ -3384,10 +3378,9 @@ void SagaNpcInit()//создаем всех ключевых персонаже�
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ShipEscape");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "SailsDamageUp");
@@ -3397,7 +3390,7 @@ void SagaNpcInit()//создаем всех ключевых персонаже�
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "BasicBattleState");
 	SetCharacterPerk(sld, "AdvancedBattleState");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	
 	LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
 	
@@ -3502,7 +3495,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "MusketsShoot");
 	SetCharacterPerk(sld, "LongRangeGrappling");
@@ -3510,7 +3503,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	SetCharacterPerk(sld, "HullDamageUp");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	GiveItem2Character(sld, "blade_16");
 	sld.equip.blade = "blade_16";
 	GiveItem2Character(sld, "pistol4");
@@ -3638,7 +3631,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "HardHitter");
 	GiveItem2Character(sld, "topor_01");
 	sld.equip.blade = "topor_01";
@@ -3768,6 +3761,7 @@ void LSC_NpcInit()// ключевые НПС LSC
 	
 	// Мэри Каспер ... Мэри... никому теперь не верит Мэри... лучшей подруги и любовницы для ГГ не будет :)
 	sld = GetCharacter(NPC_GenerateCharacter("Mary", "Mary", "woman", "mary", 1, PIRATE, -1, false, "quest"));
+	SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_SOLDIER, GEN_ARCHETYPE_BOATSWAIN, GEN_FIXED_PIRATES, 0.6);
 	sld.name = StringFromKey("QuestsUtilite_102");
 	sld.lastname = StringFromKey("QuestsUtilite_103");
 	sld.Dialog.Filename = "Quest\LSC\Mary.c";
@@ -3788,7 +3782,6 @@ void LSC_NpcInit()// ключевые НПС LSC
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "SwordplayProfessional");
 	SetCharacterPerk(sld, "BladeDancer");
 	SetCharacterPerk(sld, "ByWorker");
 	SetCharacterPerk(sld, "Doctor1");
@@ -5409,7 +5402,7 @@ int GetStoragePriceExt(ref NPChar, ref chref)
 	
 	int price = makeint(15000 * MOD_SKILL_ENEMY_RATE * fLeadership * fCommerce * 0.5);
 */
-	int price = makeint( 10000 * (5 + MOD_SKILL_ENEMY_RATE) * (3 + GetNationRelation2MainCharacter(sti(NPChar.nation)))/360.0 );
+	int price = makeint( 10000 * (2 + MOD_SKILL_ENEMY_RATE) * (3 + GetNationRelation2MainCharacter(sti(NPChar.nation)))/360.0 );
 	
 	return price;
 }
@@ -5418,7 +5411,7 @@ int GetStoragePriceExt(ref NPChar, ref chref)
 void SetStorageGoodsToShip(ref pStorage)
 {
 	int iStoreQ;
-	for (int i = 0; i< GOODS_QUANTITY; i++)
+	for (int i = 0; i< GetArraySize(&Goods); i++)
 	{
 		iStoreQ = GetStorageGoodsQuantity(pStorage, i); 
 		if (iStoreQ == 0) continue;
@@ -5470,10 +5463,12 @@ bool bPincers() // можно ли добывать клешни крабов
 }
 
 // устанавливаем сторожевики на Тортугу, сеттим каждый день 2015
-void Tortuga_SetShipGuard()
+void Tortuga_SetShipGuard(string qName)
 {
 	if (CheckAttribute(pchar, "questTemp.Sharlie.DelTerGuard")) return;
 	if (pchar.location == "Tortuga" && bSeaActive) return;
+	if (CheckAttribute(&TEV, "Guards.Tortuga")) return;
+	TEV.Guards.Tortuga = "";
 	int iShipType;
 	int iCannonType;
 	int i;
@@ -5514,7 +5509,7 @@ void Tortuga_SetShipGuard()
 		Group_AddCharacter("Tortuga_Guard", "TortugaGuardCap_"+i);
 	}
 	Group_SetGroupCommander("Tortuga_Guard", "TortugaGuardCap_1");
-	Group_SetTaskNone("Tortuga_Guard");//нет задачи
+	Group_SetTaskNone("Tortuga_Guard"); //нет задачи
 	Group_SetAddress("Tortuga_Guard", "Tortuga", "IslandShips1", "ship_1");
 	Group_LockTask("Tortuga_Guard");
 }
@@ -5522,7 +5517,10 @@ void Tortuga_SetShipGuard()
 void Tortuga_DeleteShipGuard()
 {
 	if (pchar.location == "Tortuga" && bSeaActive) return;
-	Group_DeleteGroup("Tortuga_Guard");
+	DeleteAttribute(&TEV, "Guards.Tortuga");
+	if (Group_FindGroup("Tortuga_Guard") != -1)
+		Group_DeleteGroup("Tortuga_Guard");
+	ref sld;
 	for (int i=1; i<=3; i++)
 	{  
 		if (GetCharacterIndex("TortugaGuardCap_"+i) != -1)
@@ -6170,269 +6168,6 @@ void ShowRipInscription(int i, string locId) // Jason: надписи на на�
 	}
 }
 
-//Jason 240912 ------------------------------- адмиральские карты ----------------------------------------------
-string SelectAdmiralMaps() // выбор случайной не повторяющейся
-{	
-	string sMap = "";
-	ref sld = characterFromId("Dios");
-	string map[24];
-	map[0] = "A_map_bermudas";
-	map[1] = "A_map_jam";
-	map[2] = "A_map_cayman";
-	map[3] = "A_map_barbados";
-	map[4] = "A_map_tortuga";
-	map[5] = "A_map_curacao";
-	map[6] = "A_map_martiniqua";
-	map[7] = "A_map_dominica";
-	map[8] = "A_map_trinidad";
-	map[9] = "A_map_puerto";
-	map[10] = "A_map_cuba";
-	map[11] = "A_map_hisp";
-	map[12] = "A_map_nevis";
-	map[13] = "A_map_beliz";
-	map[14] = "A_map_guad";
-	map[15] = "A_map_santa";
-	map[16] = "A_map_antigua";
-	map[17] = "A_map_terks";
-	map[18] = "A_map_sm";
-	map[19] = "A_map_maine_1";
-	map[20] = "A_map_maine_2";
-	map[21] = "A_map_panama";
-	map[22] = "A_map_cumana";
-	map[23] = "A_map_perl";
-	
-	string storeArray[24]; // mitrokosta переписал случайный выбор - старый иногда ничего не выдавал даже если карты были
-	int howStore = 0;
-	string sTemp;
-	
-	for (int i = 0; i < 24; i++) {
-		sTemp = map[i];
-		if (!CheckAttribute(sld, "quest.map." + sTemp))
-        {
-			if(CheckAttribute(&TreasureTiers[0], "map_a." + sTemp))
-                continue; // Если есть такой атрибут, значит мы сейчас генерим карту в клад, и там такая уже лежит
-            storeArray[howStore] = sTemp;
-			howStore++;
-		}
-	}
-	
-	if (howStore > 0) {
-		sMap = storeArray[rand(howStore - 1)];
-		//sld.quest.map.(sMap) = true;
-		}
-	
-	return sMap;
-}
-
-void GiveAdmiralMapToCharacter(ref chr, int abl) // дать случайную с рандомом
-{
-	if (!CheckAttribute(pchar, "questTemp.AdmiralMap")) return;
-	if (hrand(abl, chr.id + chr.name) == 0)
-	{
-		string amap = SelectAdmiralMaps();
-		if (amap != "") GiveItem2Character(chr, amap);
-	}
-}
-
-void TargetAdmiralMapToCharacter(ref chr, string amap) // дать конкретную, если такой ещё нет
-{
-	if (!CheckAttribute(pchar, "questTemp.AdmiralMap")) return;
-	ref sld = characterFromId("Dios");
-	if (!CheckAttribute(sld, "quest.map."+amap))
-	{
-		GiveItem2Character(chr, amap);
-		//sld.quest.map.(amap) = true;
-	}
-}
-
-int CountAdmiralMapFromCharacter() // сосчитать
-{
-	aref arItems;
-	int amap = 0;
-	string sName;
-	makearef(arItems, pchar.items);
-	int n = GetAttributesNum(arItems);
-	for(int i=0; i<n; i++)
-	{
-		sName = GetAttributeName(GetAttributeN(arItems, i));
-		if (findsubstr(sName, "A_map_", 0) != -1) amap++;
-	}
-	return amap;
-}
-
-string IdentifyAdmiralMapLast() // идентифицировать последнюю в списке
-{
-	aref arItems;
-	string sName;
-	string sMap = "";
-	makearef(arItems, pchar.items);
-	int n = GetAttributesNum(arItems);
-	for(int i=0; i<n; i++)
-	{
-		sName = GetAttributeName(GetAttributeN(arItems, i));
-		if (findsubstr(sName, "A_map_", 0) != -1) sMap = sName;
-	}
-	return sMap;
-}
-
-// mitrokosta не хочу копипастить код прохода по всем локам и фантомам
-// handler это функция вида void Handler(ref chref, string itemID) где chref - ссылка на найденного персонажа/бокса с предметом, а itemID - ид предмета
-// вызывается на всех найденных объектах, возвращает число найденных
-int FindRealItem(string itemID, string handler) {
-	ref sld;
-	aref chref;
-	int i, j;
-	string simpleBox, privateBox;
-	int numChr = 0;
-
-	for(i = 0; i < nLocationsNum; i++) {
-		sld = &Locations[i]; // проверим локации
-		for(j = 1; j < MAX_HANDLED_BOXES; j++) {
-			simpleBox = "box" + j;
-			privateBox = "private" + j;
-			
-			if(!CheckAttribute(sld, simpleBox) && !CheckAttribute(sld, privateBox)) {
-				break;
-			}
-
-			if(CheckAttribute(sld, simpleBox + ".Items." + itemID)) {
-				trace(itemID + " найден в локации " + sld.id + " в боксе " + simpleBox);
-				makearef(chref, sld.(simpleBox));
-				if (handler != "") {
-					call handler(chref, itemID);
-				}
-				numChr++;
-			}
-			
-			if(CheckAttribute(sld, privateBox + ".Items." + itemID)) {
-				trace(itemID + " найден в локации " + sld.id + " в привате " + privateBox);
-				makearef(chref, sld.(privateBox));
-				if (handler != "") {
-					call handler(chref, itemID);
-				}
-				numChr++;
-			}
-		}
-	}
-
-	for(i = 0; i < MAX_CHARACTERS; i++) {
-		sld = &Characters[i]; // и фантомов
-		if(CheckAttribute(sld, "Items." + itemID)) {
-			trace(itemID + " найден у персонажа " + sld.id);
-			if (handler != "") {
-				call handler(sld, itemID);
-			}
-			numChr++;
-		}
-	}
-	return numChr;
-}
-
-// mitrokosta проверить существование помеченных отличных карт и "освободить" их
-void PrepareAdmiralMaps() {
-	string sMap;
-	string map[24];
-	ref sld = CharacterFromID("Dios");
-
-	map[0] = "A_map_bermudas";
-	map[1] = "A_map_jam";
-	map[2] = "A_map_cayman";
-	map[3] = "A_map_barbados";
-	map[4] = "A_map_tortuga";
-	map[5] = "A_map_curacao";
-	map[6] = "A_map_martiniqua";
-	map[7] = "A_map_dominica";
-	map[8] = "A_map_trinidad";
-	map[9] = "A_map_puerto";
-	map[10] = "A_map_cuba";
-	map[11] = "A_map_hisp";
-	map[12] = "A_map_nevis";
-	map[13] = "A_map_beliz";
-	map[14] = "A_map_guad";
-	map[15] = "A_map_santa";
-	map[16] = "A_map_antigua";
-	map[17] = "A_map_terks";
-	map[18] = "A_map_sm";
-	map[19] = "A_map_maine_1";
-	map[20] = "A_map_maine_2";
-	map[21] = "A_map_panama";
-	map[22] = "A_map_cumana";
-	map[23] = "A_map_perl";
-
-	if (CheckAttribute(pchar, "questTemp.AdmiralMap")) {
-		for (int i = 0; i < 24; i++) {
-			sMap = map[i];
-			if (FindRealItem(sMap, "") == 0) {
-				DeleteAttribute(sld, "quest.map." + sMap); // второй шанс... можно и без этого конечно
-			}
-		}
-	}
-}
-
-// mitrokosta если у перса/бокса есть отличная карта, пометить её как найденную и удалить отовсюду кроме него самого
-void CheckAdmiralMaps(ref chref) {
-	string sMap;
-	string map[24];
-	ref sld = CharacterFromID("Dios");
-	ref rMap = ItemsFromID("map_full");
-	ref qMap = ItemsFromID("mapQuest");
-
-	map[0] = "A_map_bermudas";
-	map[1] = "A_map_jam";
-	map[2] = "A_map_cayman";
-	map[3] = "A_map_barbados";
-	map[4] = "A_map_tortuga";
-	map[5] = "A_map_curacao";
-	map[6] = "A_map_martiniqua";
-	map[7] = "A_map_dominica";
-	map[8] = "A_map_trinidad";
-	map[9] = "A_map_puerto";
-	map[10] = "A_map_cuba";
-	map[11] = "A_map_hisp";
-	map[12] = "A_map_nevis";
-	map[13] = "A_map_beliz";
-	map[14] = "A_map_guad";
-	map[15] = "A_map_santa";
-	map[16] = "A_map_antigua";
-	map[17] = "A_map_terks";
-	map[18] = "A_map_sm";
-	map[19] = "A_map_maine_1";
-	map[20] = "A_map_maine_2";
-	map[21] = "A_map_panama";
-	map[22] = "A_map_cumana";
-	map[23] = "A_map_perl";
-
-	if (CheckAttribute(pchar, "questTemp.AdmiralMap")) {
-		for (int i = 0; i < 24; i++) {
-			sMap = map[i];
-			if (CheckCharacterItem(chref, sMap)) {
-				if (!CheckAttribute(sld, "quest.map." + sMap)) {
-					FindRealItem(sMap, "TakeItemFromCharacter"); // стереть карту отовсюду
-					DeleteAttribute(rMap, "BoxTreasure." + sMap);
-					DeleteAttribute(qMap, "BoxTreasure." + sMap);
-
-					GiveItem2Character(chref, sMap);
-					sld.quest.map.(sMap) = true;
-					trace("Карта " + sMap + " помечена как найденная, больше она генериться не будет");
-				}
-			}
-		}
-	}
-}
-
-// belamour дать адмиральский атлас
-void GiveAdmiralAtlasToCharacter (ref chr)
-{
-	string sItmId;
-	for (i=0; i<TOTAL_ITEMS; i++)
-	{
-		if(!CheckAttribute(&Items[i],"groupID")) continue;
-		if(Items[i].groupID != MAPS_ITEM_TYPE) continue;
-		if(findsubstr(Items[i].id, "A_map_", 0) != -1) GiveItem2Character(chr, Items[i].id);
-	}
-}
-// <-- адмиральские карты
-
 // --> персидские клинки Фадея
 int CheckNCountPersian() // patch-7
 {
@@ -6553,7 +6288,7 @@ bool Ecliaton_FindCompanionShip() // Jason, НСО
 		if(iTemp > 0)
 		{
 			ref sld = GetCharacter(iTemp);
-			if(sld.ship.name == StringFromKey("QuestsUtilite_270") && CheckAttribute(pchar, "questTemp.Patria.Ecliaton")) return true;
+			if(sld.ship.name == GetShipName("Eclatant") && CheckAttribute(pchar, "questTemp.Patria.Ecliaton")) return true;
 		}
 	}
 	return false;
@@ -6567,7 +6302,7 @@ bool Trafalgar_FindCompanionShip() // Jason, НСО
 		if(iTemp > 0)
 		{
 			ref sld = GetCharacter(iTemp);
-			if(sld.ship.name == StringFromKey("QuestsUtilite_271") && CheckAttribute(pchar, "questTemp.Patria.Trafalgar")) return true;
+			if(sld.ship.name == GetShipName("Trafalgar") && CheckAttribute(pchar, "questTemp.Patria.Trafalgar")) return true;
 		}
 	}
 	return false;

@@ -1,69 +1,15 @@
-characterUtilite_1
-{
-@<_Money> Pesos erhalten
-}
-
-characterUtilite_2
-{
-@<abs(_Money)> Pesos ausgegeben
-}
-
-characterUtilite_3
-{
-Neues Item: ~
-}
-
-characterUtilite_4
-{
-@<n> Dublonen erhalten
-}
-
-characterUtilite_5
-{
-Item verloren: ~
-}
-
-characterUtilite_6
-{
-~ bemerkt, dass @<LanguageConvertString(idLngFile, arItem.name)> seine Kraft verloren hat
-}
-
-characterUtilite_7
-{
-Ehre erhöht
-}
-
-characterUtilite_8
-{
-Ehre gesunken
-}
-
-characterUtilite_9
-{
-@<_Dublons> Dublonen ausgegeben
-}
-
-characterUtilite_10
-{
-Ein Landungstrupp von @<Offizier.Schiff.Name> hat @<compCrew> Soldaten in sich
-}
-
-characterUtilite_11
-{
-Die Laufzeit Ihres Kredits ist abgelaufen
-}
-
-characterUtilite_12
-{
-Atlas Update: @<LanguageConvertString(idLngFile, arItem.name)>
-}
-
-characterUtilite_13
-{
-Inder missbilligen das (
-}
-
-characterUtilite_14
-{
-Indianer akzeptieren (
-}
+characterUtilite_1 {@<_Money> Pesos erhalten}
+characterUtilite_2 {@<abs(_Money)> Pesos ausgegeben}
+characterUtilite_3 {Neues Item: ~}
+characterUtilite_4 {@<n> Dublonen erhalten}
+characterUtilite_5 {Item verloren: ~}
+characterUtilite_6 {~ bemerkt, dass @<LanguageConvertString(idLngFile, arItem.name)> seine Kraft verloren hat}
+characterUtilite_7 {Ehre erhöht}
+characterUtilite_8 {Ehre gesunken}
+characterUtilite_9 {@<_Dublons> Dublonen ausgegeben}
+characterUtilite_10 {Ein Landungstrupp von @<Offizier.Schiff.Name> hat @<compCrew> Soldaten in sich}
+characterUtilite_11 {Die Laufzeit Ihres Kredits ist abgelaufen}
+characterUtilite_12 {Atlas Update: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {Inder missbilligen das (}
+characterUtilite_14 {Indianer akzeptieren (}
+characterUtilite_15 {Der Händler hat nicht genug Geld. Möchten Sie für @<money> verkaufen?}

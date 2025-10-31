@@ -13,7 +13,7 @@ void wdmInitWorldMap()
 	//Start date
 	worldMap.date.hour = 11;
 	worldMap.date.min = 14;
-	worldMap.date.sec = 42;	
+	worldMap.date.sec = 42;
 	worldMap.date.day   = STARTGAME_DAY;
 	worldMap.date.month = STARTGAME_MONTH;
 	worldMap.date.year  = STARTGAME_YEAR;
@@ -38,7 +38,7 @@ void wdmInitWorldMap()
 	worldMap.icon.texture = "interfaces\le\battle_interface\worldmap\icons.tga";
 	//Label types description
 	worldMap.labeltype.Island.icon = -1;				//Default icon
-	worldMap.labeltype.Island.font = "ISLANDS_MAPS";			//Default font
+	worldMap.labeltype.Island.font = "ISLANDS_MAPS";    //Default font
 	worldMap.labeltype.Island.pivotX = -0.5;			//Default label shifting left-upper point by X (1 -> full width)
 	worldMap.labeltype.Island.pivotY = -0.5;			//Default label shifting left-upper point by Y (1 -> full height)
 	worldMap.labeltype.Island.heightView = 1000.0;		//Default camera height when hide this labels
@@ -898,20 +898,21 @@ void wdmInitWorldMap()
 
 	//Player ship
 	worldMap.playerShipActionRadius = 20.0;
+    worldMap.playerShipLoadRadius = 32.0;       // loadRadius >= actionRadius
 	worldMap.playerShipX = -1000.0;
 	worldMap.playerShipZ = -300.0;
 	worldMap.playerShipAy = 0.0;
-	//belamour legendary edition коэффициент скорости корабля 
-	worldMap.kPlayerMaxSpeed = 1.0;
+	worldMap.kPlayerMaxSpeed = 1.0;             //belamour legendary edition коэффициент скорости корабля 
 	//Camera
-	worldMap.wdmCameraAY = 10.0;					//Угол поворота камеры
+	worldMap.wdmCameraAY = 10.0;				//Угол поворота камеры
 	worldMap.wdmCameraY = 130.0;				//Высота камеры
 	worldMap.wdmCameraRotLock = 1;				//Заблокировать вращение камеры
 	//Enemy ship	
 	worldMap.enemyshipViewDistMin = 60.0;		//Растояние на котором корабль начинает исчезать
 	worldMap.enemyshipViewDistMax = 120.0;		//Растояние на котором корабль исчезает полностью
-    worldMap.enemyshipDistKill = 3000;          // homo 07/10/06
-    //worldMap.enemyshipDistKill = 150.0;			//Расстояние на котором убиваем корабль
+    worldMap.enemyshipDistKill = 3000;          //homo 07/10/06
+    worldMap.enemyshipSilenceTimer = 3.0;       //Тайм-аут на пинг
+    //worldMap.enemyshipDistKill = 150.0;		//Расстояние на котором убиваем корабль
 	worldMap.enemyshipBrnDistMin = 80.0;		//Минимальное растояние на котором рожается корабль
 	worldMap.enemyshipBrnDistMax = 130.0;		//Максимальное растояние на котором рожается корабль
 	//storm
@@ -920,7 +921,7 @@ void wdmInitWorldMap()
 	worldMap.stormDistKill = 190.0;				//Расстояние на котором убиваем шторм
 	worldMap.stormBrnDistMin = 100.0;			//Минимальное растояние на котором рожается шторм
 	worldMap.stormBrnDistMax = 140.0;			//Максимальное растояние на котором рожается шторм
-	worldMap.stormZone = 90.0;// 120					//Общий радиус действия шторма
+	worldMap.stormZone = 90.0;// 120			//Общий радиус действия шторма
 
 	//=========================================================================
 	//Storm interface

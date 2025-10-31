@@ -950,36 +950,14 @@ string descF27 = "Противник на глобальной карте ВКЛ
 void CalculateInfoDataF27()
 {
     totalInfo = descF27;
-    // -->
-     ref mc;
-    mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-    {
-        mc.worldmapencountersoff = "1";
-		totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
-        //Log_SetStringToLog("Worldmap encounters OFF");
-    }
-    else
-    {
-        if(mc.worldmapencountersoff == "1")
-        {
-            mc.worldmapencountersoff = "0";
-			totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
-            //Log_SetStringToLog("Worldmap encounters ON");
-        }
-        else
-        {
-            mc.worldmapencountersoff = "1";
-			totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off")+ NewStr();
-            //Log_SetStringToLog("Worldmap encounters OFF");
-        }
-    }
-    // <--
-    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
-                LanguageConvertString(idLngFile, "Cheat_success");
+
+	bEncOffGlobal = !bEncOffGlobal;
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
+	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
+
+    totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile, "Cheat_success");
     LanguageCloseFile(idLngFile);
     SetFormatedText("INFO_TEXT",totalInfo);
-    // <--
 
     // Статистика по читам
     Statistic_AddValue(PChar, "Cheats.F27", 1);

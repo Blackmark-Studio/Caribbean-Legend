@@ -426,7 +426,6 @@ void ProcessDialogEvent()
 			link.l1 = "Avanti piano, Pierre! È meglio che... hic... molli l’ancora prima che le mie gambe da marinaio diventino gelatina e mi ritrovi alla deriva sul pavimento di questa taverna! Che venti propizi gonfino le tue vele!";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 
 		case "Exit2":

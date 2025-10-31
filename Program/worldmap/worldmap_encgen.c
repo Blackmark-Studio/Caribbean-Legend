@@ -1,7 +1,6 @@
 
-
 //--------------------------------------------------------------------------------------
-//Генерация энкоунтеров
+//Генерация энкаунтеров
 //--------------------------------------------------------------------------------------
 
 //Частота штормов в секунду
@@ -10,56 +9,52 @@
 #define WDM_MERCHANTS_RATE		0.08
 //Частота воюищих кораблей в секунду
 #define WDM_WARRING_RATE		0.012
-//Частота нападающих кораблей в секунду // belamour по факту это любой военный
+//Частота военных кораблей в секунду
 #define WDM_FOLLOW_RATE  		0.015
 //Частота специальных событий  (бочка или шлюпка) в секунду
 #define WDM_SPECIAL_RATE  		0.0015
+//Частота Merch + Follow для рандома
+#define WDM_GENERAL_RATE  		0.085
+
+bool bEncOffGlobal = false;
 
 //MAX, это поменял Я!!!!!!! Шуршунчик.
 // Boal - учите мат. часть, г-н Шуршунчик. не работает это до начала новой игры, всегда по уполчанию идёт. Дефайн правильно, тем более  iEncountersRate далее работает
 //float WDM_FOLLOW_RATE = 0.025 * iEncountersRate;
 //float WDM_STORM_RATE = 0.0001 * iEncountersRate;
 
-
-//--------------------------------------------------------------------------------------
-
-
 float wdmTimeOfLastStorm = 0.0;
 float wdmTimeOfLastMerchant = 0.0;
 float wdmTimeOfLastWarring = 0.0;
-float wdmTimeOfLastFollow = 0.0;
+float wdmTimeOfLastFollow  = 0.0;
 float wdmTimeOfLastSpecial = 0.0;
-
+float wdmTimeOfLastRandom  = 0.0;
 
 void wdmReset()
 {
 	wdmTimeOfLastStorm = 0.0;
 	wdmTimeOfLastMerchant = 0.0;
 	wdmTimeOfLastWarring = 0.0;
-	wdmTimeOfLastFollow = 0.0;
+	wdmTimeOfLastFollow  = 0.0;
 	wdmTimeOfLastSpecial = 0.0;
+	wdmTimeOfLastRandom  = 0.0;
 }
 
 //Storm
 void wdmStormGen(float dltTime, float playerShipX, float playerShipZ, float playerShipAY)
 {
-	bool encoff = false;
-	if(CheckAttribute(pchar,"worldmapencountersoff") == 1)
-	{
-		if(sti(pchar.worldmapencountersoff)) return;
-	}
+	if(bEncOffGlobal) return;
 	int numStorms = wdmGetNumberStorms();
 	if(numStorms < 1)
 	{
-		wdmTimeOfLastStorm = wdmTimeOfLastStorm + dltTime*WDM_STORM_RATE*1000.0*iEncountersRate;
+		wdmTimeOfLastStorm = wdmTimeOfLastStorm + dltTime * WDM_STORM_RATE * 1000.0 * iEncountersRate;
 		if(rand(1001) < wdmTimeOfLastStorm)
 		{
 			wdmCreateStorm();
 			wdmTimeOfLastStorm = 0.0;
 		}
-	}else{
-		wdmTimeOfLastStorm = 0.0;
 	}
+	else wdmTimeOfLastStorm = 0.0;
 }
 
 //Random ships
@@ -78,57 +73,57 @@ void wdmShipEncounter(float dltTime, float playerShipX, float playerShipZ, float
 	if(numShips < 8)
 	{
 		//Вероятности появления
-		wdmTimeOfLastMerchant = wdmTimeOfLastMerchant + dltTime * WDM_MERCHANTS_RATE * 1000.0 * iEncountersRate;
-		wdmTimeOfLastWarring  = wdmTimeOfLastWarring  + dltTime * WDM_WARRING_RATE   * 1000.0 * iEncountersRate;
-		wdmTimeOfLastFollow   = wdmTimeOfLastFollow   + dltTime * WDM_FOLLOW_RATE    * 1000.0 * iEncountersRate;
-		wdmTimeOfLastSpecial  = wdmTimeOfLastSpecial  + dltTime * WDM_SPECIAL_RATE   * 1000.0 * iEncountersRate;
-		//Вероятность от количества созданных
-		float nump = 1.0 - numShips*0.15;
+		//wdmTimeOfLastMerchant += dltTime * WDM_MERCHANTS_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastWarring  += dltTime * WDM_WARRING_RATE * 1000.0 * iEncountersRate;
+		//wdmTimeOfLastFollow += dltTime * WDM_FOLLOW_RATE  * 1000.0 * iEncountersRate;
+		wdmTimeOfLastRandom   += dltTime * WDM_GENERAL_RATE * 1000.0 * iEncountersRate;
+		wdmTimeOfLastSpecial  += dltTime * WDM_SPECIAL_RATE * 1000.0 * iEncountersRate;
+
 		//Выбираем
-		if(rand(1001) + 1 < wdmTimeOfLastMerchant)
+		if(bEncOffGlobal)
 		{
-			wdmTimeOfLastMerchant = 0.0;
-			wdmCreateMerchantShip(0.8 + rand(10)*0.03);
+			// Генерить только торговые по обычной логике
+			if(rand(1001) + 1 < wdmTimeOfLastRandom)
+			{
+				wdmTimeOfLastRandom = 0.0;
+				wdmCreateMerchantShip(0.8 + rand(10)*0.03);
+			}
 		}
 		else
 		{
-			bool encoff = false;
-			if(CheckAttribute(pchar,"worldmapencountersoff"))
+			if(rand(1001) + 1 < wdmTimeOfLastWarring)
 			{
-				encoff = sti(pchar.worldmapencountersoff);
+				// Сражения по обычной логике
+                if (bBettaTestMode && bGlobalVar4)
+                {
+                    if (TEV.LastEnc != "-2") bGlobalVar4 = 1;
+                    else bGlobalVar4++;
+                    TEV.LastEnc = "-2";
+                }
+				wdmTimeOfLastWarring = 0.0;
+				wdmCreateWarringShips();
 			}
-			if(encoff == false)
+			else if(rand(1001) + 1 < wdmTimeOfLastRandom)
 			{
-				if(rand(1001) + 1 < wdmTimeOfLastWarring)
-				{
-					wdmTimeOfLastWarring = 0.0;
-					wdmCreateWarringShips();
-				}
-				else
-				{
-					if(rand(1001) + 1 < wdmTimeOfLastFollow)
-					{
-						wdmTimeOfLastFollow = 0.0;
-						if(!IsStopMapFollowEncounters())
-						{
-							wdmCreateFollowShip(0.8 + rand(10)*0.05);
-						}						
-					}
-				}
-				if(rand(1001) + 1 < wdmTimeOfLastSpecial)
-				{
-					wdmTimeOfLastSpecial = 0.0;
-					wdmCreateSpecial(0.05 + rand(10)*0.02);
-				}					
+				// Развесовка
+				wdmTimeOfLastRandom = 0.0;
+				wdmChoseAndCreateShip();
 			}
+		}
+		// Специальные по обычной логике
+		if(rand(1001) + 1 < wdmTimeOfLastSpecial)
+		{
+			wdmTimeOfLastSpecial = 0.0;
+			wdmCreateSpecial(0.05 + rand(10)*0.02);
 		}
 	}
 	else
 	{
-		wdmTimeOfLastMerchant = 0.0;
+		//wdmTimeOfLastMerchant = 0.0;
 		wdmTimeOfLastWarring = 0.0;
-		wdmTimeOfLastFollow = 0.0;
+		//wdmTimeOfLastFollow  = 0.0;
 		wdmTimeOfLastSpecial = 0.0;
+		wdmTimeOfLastRandom  = 0.0;
 	}
 }
 
@@ -165,7 +160,7 @@ void Map_WarriorEnd_quest(string sChar)
 void Map_TraderSucces()
 {
 	if(!CheckAttribute(pchar, "worldmap.shipcounter"))
-	{		
+	{
 		return;
 	}
 	pchar.worldmap.shipcounter = sti(pchar.worldmap.shipcounter) - 1;

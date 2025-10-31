@@ -222,8 +222,8 @@ int Whr_InitStdWeather( int		_index,
 	
 	// common wind
 	whr.Wind.Angle 					= 2.0;
-	whr.Wind.Speed.Min 				= 5.0;
-	whr.Wind.Speed.Max 				= 18.0;
+	whr.Wind.Speed.Min 				= WIND_MIN_POWER;
+	whr.Wind.Speed.Max 				= WIND_MAX_POWER;
 		
 	if(_storm)
 	{
@@ -433,8 +433,8 @@ int Whr_InitStdWeather( int		_index,
 		case "19 Hour" 			:
 			whr.Sun.Color 						= argb(  0,255,180, 85 );
 			whr.Sun.Ambient 					= argb(  0,113, 79, 54 );
+			whr.Fog.Color 						= argb(  0, 98, 82, 76 );
 			whr.Rain.DropsColor 				= argb( 60,255,255,255 );
-			                            
 			whr.Sun.Flares.f20 					= "0.2,1000.0,9,606060";
 		break;	
 

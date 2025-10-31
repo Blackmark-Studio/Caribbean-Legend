@@ -189,7 +189,7 @@ string RandExclamation()
 //                Выбор фраз для диалога
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // boal 13.03.2004 -->
-string RandPhraseSimple(string Var1, string Var2);
+string RandPhraseSimple(string Var1, string Var2)
 {
 	int RandP;
 	RandP = Rand(1);
@@ -435,7 +435,7 @@ string GetCityName(string city) // имeна городов по аттрибу�
     string ret;
     int nFile = LanguageOpenFile("LocLables.txt");
     
-	ret = LanguageConvertString(nFile, city + " Town")
+	ret = LanguageConvertString(nFile, city + " Town");
 	LanguageCloseFile( nFile );
 	
 	return  ret;
@@ -983,18 +983,24 @@ string TimeGreeting()
     return "你好! ";
 }
 
-string Greeting()
+string Greeting(bool formal)
 {
-    return "你好";
+	if (GetHour() >= 6 && GetHour() < 12)
+    {
+       return "早上好";
+    }
+	if (formal == true) return "你好"; // polite
+	else return "嗨"; // friendly
 }
 
-string Goodbye()
+string Goodbye(bool formal)
 {
     if (GetHour() >= 23 || GetHour() < 6)
     {
        return "晚安";
     }
-    return RandPhraseSimple("再见", "再会");
+	if (formal == true) return RandPhraseSimple("再见", "再会"); // polite
+	else return RandPhraseSimple("拜拜", "拜拜"); // friendly
 }
 
 // выбор фразы от рeпутации
@@ -1223,4 +1229,29 @@ string GetIndianName(int Sex) //Jason имeна индeйцeв
 	else nameid = "l" + (100+rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle(ref NPChar, bool address) //Титул ГГ
+{
+	string Title, Nation;
+	
+	if (PChar.sex == "man")
+	{
+		if (address == true)
+		{
+			Nation = GetAddress_Form(NPChar);
+		}
+	
+		Title = "船长";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = GetAddress_Form(NPChar);
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "总督";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "副将";
+
+	if (address == true && PChar.sex == "man") return Nation + " " + Title;
+	else return Title;
 }

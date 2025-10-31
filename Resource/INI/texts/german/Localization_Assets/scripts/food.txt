@@ -1,84 +1,17 @@
-food_1
-{
-Ratten
-}
-
-food_2
-{
-~ verdorben ~
-}
-
-food_3
-{
-~ beschädigt ~
-}
-
-food_4
-{
-~ zerstört ~
-}
-
-food_5
-{
-~ Stk. ~
-}
-
-food_6
-{
-Auf dem Schiff @<rChar.Ship.Name> sind @<FindRussianSailorString(cn, "No")> Seeleute an einer Krankheit gestorben.
-}
-
-food_7
-{
-Auf dem Schiff @<rChar.Ship.Name> sind kaum noch Medikamente vorhanden.
-}
-
-food_8
-{
-Auf dem Schiff @<rChar.Ship.Name> sind @<FindRussianSlavesString(cn, "No")> Sklaven an einer Krankheit gestorben.
-}
-
-food_9
-{
-Auf der @<rChar.Ship.Name> sehnen sich die Leute nach Rum.
-}
-
-food_10
-{
-Auf Schiff @<rChar.Ship.Name> befinden sich noch Lebensmittel für @<FindRussianDaysString(cn)> Tage.
-}
-
-food_11
-{
-Wir müssen dringend unsere Vorräte auffüllen!
-}
-
-food_12
-{
-Sklaven rebellieren!
-}
-
-food_13
-{
-Die Besatzung des Schiffes @<rChar.Ship.Name> ist am Verhungern. Die Moral der Besatzung sinkt!
-}
-
-food_14
-{
-Die Seeleute verhungern
-}
-
-food_15
-{
-Die Sklaven verhungern
-}
-
-food_16
-{
-Unruhen auf dem Schiff @<rChar.Ship.Name>!!!! ~
-}
-
-food_17
-{
-Schiff verlässt das Geschwader
-}
+food_1 {Ratten}
+food_2 {~ verdorben ~}
+food_3 {~ beschädigt ~}
+food_4 {~ zerstört ~}
+food_5 {~ Stk. ~}
+food_6 {Auf dem Schiff @<rChar.Ship.Name> sind @<FindRussianSailorString(cn, "No")> Seeleute an einer Krankheit gestorben.}
+food_7 {Auf dem Schiff @<rChar.Ship.Name> sind kaum noch Medikamente vorhanden.}
+food_8 {Auf dem Schiff @<rChar.Ship.Name> sind @<FindRussianSlavesString(cn, "No")> Sklaven an einer Krankheit gestorben.}
+food_9 {Auf der @<rChar.Ship.Name> sehnen sich die Leute nach Rum.}
+food_10 {Auf Schiff @<rChar.Ship.Name> befinden sich noch Lebensmittel für @<FindRussianDaysString(cn)> Tage.}
+food_11 {Wir müssen dringend unsere Vorräte auffüllen!}
+food_12 {Sklaven rebellieren!}
+food_13 {Die Besatzung des Schiffes @<rChar.Ship.Name> ist am Verhungern. Die Moral der Besatzung sinkt!}
+food_14 {Die Seeleute verhungern}
+food_15 {Die Sklaven verhungern}
+food_16 {Unruhen auf dem Schiff @<rChar.Ship.Name>!!!! ~}
+food_17 {Schiff verlässt das Geschwader}

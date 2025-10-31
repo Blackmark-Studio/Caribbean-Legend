@@ -15,9 +15,6 @@ Discord频道: https://discord.gg/SjcpQafqsS (Discord需要使用英文反馈)
 ~
 如果之前使用过模组或以其他语言游玩, 建议开启新的存档。
 }
-News_Attention
-{
-}
-
+News_Attention { }
 [News]
 IsRead = false

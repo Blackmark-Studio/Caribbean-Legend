@@ -1,473 +1,301 @@
-_info {
-Файл - описание РПГ системы
-Создан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
+_info
+{
+Файл - описание РПГ системыСоздан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
 }
-
-newline {
+newline
+{
 
 }
-
 Strength
 {
-Strong pirates are usually great Vanguards and Cannoneers.
-Affects skills, which require physical strength, especially 'Medium Arms', 'Heavy Arms' and 'Cannons'.
-~
-Determines the amount of HP per level and the max inventory capacity.
+Strong pirates are usually great Vanguards and Cannoneers.Affects skills, which require physical strength, especially 'Medium Arms', 'Heavy Arms' and 'Cannons'.~Determines the amount of HP per level and the max inventory capacity.
 }
-
 Perception
 {
-Perceptive pirates can be marksmen, secret agents and Cannoneers.
-~
-Affects 'Accuracy' and 'Stealth' skills.
+Perceptive pirates can be marksmen, secret agents and Cannoneers.~Affects 'Accuracy' and 'Stealth' skills.
 }
-
-Agility
-{
-Agile pirates often make for the finest candidates for the Vanguard or Boatswain roles, with boarding being their forte.
-Affects 'Light Arms', 'Medium Arms', 'Boarding', 'Firearms'.
-~
-Determines the maximum amount of Energy.
-}
-
+Agility {Coordination of movements and dexterity of hands. ~ Affects: 'Boarding', 'Light Weapons', 'Medium Weapons', 'Pistols and Muskets', and the amount of energy gained per rank.}
 Charisma
 {
-Charismatic pirates are natural leaders, negotiators and Pursers. 
-A natural leader has no need for violence in order to take goods from a merchant, they will give him everything without putting up a fight. The best sailors will follow him and the most beautiful women will wait for his arrival in every port.
-~
-Affects 'Leadership' and 'Trading'.
-Determines how many officers you can hire (A*2).
+Charismatic pirates are natural leaders, negotiators and Pursers. A natural leader has no need for violence in order to take goods from a merchant, they will give him everything without putting up a fight. The best sailors will follow him and the most beautiful women will wait for his arrival in every port.~Affects 'Leadership' and 'Trading'.Determines how many officers you can hire (A*2).
 }
-
-Intellect
-{
-Smart pirates learn fast and have a wide choice of career options: Surgeons, Cannoneers and Navigators.
-~
-Affects 'Trading', 'Cannons', and 'Navigation"
-Determines how fast you gain levels and perks.
-}
-
+Intellect {Innate tendencies and aptitudes, wit, and the ability to quickly adapt to situations. ~ Affects 'Commerce', 'Gunnery', 'Navigation', and the amount of energy gained per rank.}
 Endurance
 {
-Resilient pirates shine as Carpenters and Surgeons.
-~
-Affects 'Repairs' and 'Defence'.
-Same as (P), determines max HP and max inventory capacity.
+Resilient pirates shine as Carpenters and Surgeons.~Affects 'Repairs' and 'Defence'.Same as (P), determines max HP and max inventory capacity.
 }
-
 Luck
 {
-Lucky pirates are perfect shooters, gamblers and adventurers.
-~
-'Firearms', 'Opportunism' and 'Stealth' require this stat.
-Determines the outcome of some game events and have a massive effect on the critical hit chance.
+Lucky pirates are perfect shooters, gamblers and adventurers.~'Firearms', 'Opportunism' and 'Stealth' require this stat.Determines the outcome of some game events and have a massive effect on the critical hit chance.
 }
-
 Crit
 {
-The base probability of landing a critical hit depends on the combination of equipped items, perks, and stats.
+Base chance to inflict a critical hit or shot on the enemy.
 ~
-(S) stat determines a chance of critical melee atack.
-(S) and (I) stats determine a chance of critical shot - but only for firearms of high quality.
+Depends on S and P.
 ~
-
-Enemy's equipment and perks can alter your crit chance.
+Perks and equipment can increase this chance.
 }
-
 CharDefence
 {
-Base indicators of protection from cold weapons / firearms / enemy critical hit
-~
-Performance is affected by personal abilities and equipment
-~
-They do not adjust to the enemy's abilities and equipment.
+Base Damage Protection stats. Reduce all incoming damage by a specific percentage.
+ ~
+ These values are affected by personal Perks and equipment.
 }
-
 FencingL
 {
-Skill of wielding light blades, foils and the like. 
-(R*0.9+I*0.1)
+Skill of wielding light blades, foils and the like.
+ (R*0.9+I*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
-
 FencingS
 {
-Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility. 
-(P*0.6+R*0.4)
+Skill of wielding medium, all-round balanced blades, such as sabers, which require both strength and agility.
+ (P*0.6+R*0.4)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
-
 FencingH
 {
-Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength. 
-(P*0.9+E*0.1)
+Skill of wielding heavy weapons such as broadswords and axes. Requires a lot of physical strength.
+ (P*0.9+E*0.1)
+ ~
+ Affects weapon damage and Energy cost of attacks.
 }
-
 Pistol
 {
 Skill of using all kinds of firearms.
-(R*0.4+S*0.6)
+ (R*0.4+S*0.6)
+ ~
+ Affects damage and reloading speed.
 }
-
 Fortune
 {
 A little bit of proactive luck will come in handy in gambling and looting.
 Based on(S).
 }
-
 Leadership
 {
 Affects the results of certain events and dialogues. Also the main skill when it comes to hiring new crew members.
 (A*0.8+T*0.2)
 }
-
 Commerce
 {
-Plays a crucial role in specific trading dialogues, influencing both selling and buying prices, and impacting the overall cost of ship management.
-(T*0.8+A*0.2)
+Plays a crucial role in specific trading dialogues, influencing both selling and buying prices, and impacting the overall cost of ship management.(T*0.8+A*0.2)
 }
-
 Accuracy
 {
-One of the most important skills for those sailing the high seas. A decent captain will not waste gunpowder and cannonballs just to scatter the fish: every salvo will hit the mark! And once the salty wind disperses smoke over the captain's bridge, there shall be no enemy ships left on the horizon! 
-(I*0.8+S*0.2)
+One of the most important skills for those sailing the high seas. A decent captain will not waste gunpowder and cannonballs just to scatter the fish: every salvo will hit the mark! And once the salty wind disperses smoke over the captain's bridge, there shall be no enemy ships left on the horizon! (I*0.8+S*0.2)
 }
-
 Cannons
 {
-Load the cannon quickly, roll it up and while the echo of the salvo is still roaring between the bulkheads, clear, load, aim, pour water on the cannon so it doesn't overheat... In the heat of battle there should be nothing excessive: load, roll up, fire! 
-(T*0.6+P*0.4)
+Load the cannon quickly, roll it up and while the echo of the salvo is still roaring between the bulkheads, clear, load, aim, pour water on the cannon so it doesn't overheat... In the heat of battle there should be nothing excessive: load, roll up, fire! (T*0.6+P*0.4)
 }
-
 Sailing
 {
-The ability to guide a ship through storms and thick fog. The skill to use navigation instruments and command fleets. Even the largest and most formidable ship will fly like a bird, easily obeying the steady hand of an experienced skipper.
-Depends on Perception and Learnability (I*0.2+T*0.8)
+The ability to helm a vessel in any conditions, use instruments and command a squadron. Even the most capricious and unwieldy ship will obey the steady hand of an experienced skipper.
+ Depends on 'Perception' and 'Talent' (I0.2 + T0.8)
+ ~
+ To command a vessel of a given rate a corresponding minimum Navigation level is required:
+ rate 1 requires 90
+ rate 2 requires 70
+ rate 3 requires 55
+ rate 4 requires 40
+ rate 5 requires 20
+ rate 6 requires 01
 ~
-To command a ship of a certain rate, a corresponding minimum Navigation level is required:
-rate 1 requires 95
-rate 2 requires 80
-rate 3 requires 65
-rate 4 requires 45
-rate 5 requires 25
-rate 6 requires 05
-Insufficient Navigation leads to penalties to all skills and hero characteristics. The greater the difference between the current and required Navigation value, the stronger the penalties.
+ A lack of Navigation leads to penalties to all the hero's skills and attributes. The greater the difference between the current and required Navigation value, the stronger the penalties.
 }
-
 Repair
 {
-When the enemy storms your ship with a volley of projectiles, splintering the sides and turning sails into sives; when the hull is cracking in the storm, and wind tears the rigging apart thread by thread, the repair becomes one of the most important naval skills. 
-(E*0.8+I*0.2)
+When the enemy storms your ship with a volley of projectiles, splintering the sides and turning sails into sives; when the hull is cracking in the storm, and wind tears the rigging apart thread by thread, the repair becomes one of the most important naval skills. (E*0.8+I*0.2)
 }
-
 Grappling
 {
-Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved price - this requires great agility and experience, but the loot will surely make up for all the effort. 
-(R*0.7+T*0.3)
+Aligning a ship with the enemy vessel, flinging the hooks to board the trembling enemy, sweeping the decks and taking the ship as well-deserved prize — this requires great agility and experience, but the loot will surely make up for all the effort.
+ (R*0.7+T*0.3)
+ ~
+ Affects boarding distance.
 }
-
 Defence
 {
-Day after day, the crew slowly becomes one with the ship. A seasoned sailor is worth a dozen sprouts from a local tavern. Every good captain must protect his men and not allow them to perish foolishly. 
-(E*0.5+A*0.5)
+Day after day, the crew slowly becomes one with the ship. A seasoned sailor is worth a dozen sprouts from a local tavern. Every good captain must protect his men and not allow them to perish foolishly. (E*0.5+A*0.5)
 }
-
 Sneak
 {
-To pass undetected past the enemy, to escape when being chased in the open ocean, or instantly appear out of thin air to attack an unsuspecting enemy - every captain must possess the proper skill of stealth. 
-(S*0.5+I*0.5)
+To pass undetected past the enemy, to escape when being chased in the open ocean, or instantly appear out of thin air to attack an unsuspecting enemy - every captain must possess the proper skill of stealth. (S*0.5+I*0.5)
 }
-
 Loyality
 {
-Your actions affect the officers' loyalty. White knights will refuse to be employed by a scoundrel, and natural bandits won't remain honest for too long.
-~
-A high level of Authority can significally reduce the impact that decisions have on the drop of your officers' loyalty, in case those actions disagree with their worldview.
+Your actions affect the officers' loyalty. White knights will refuse to be employed by a scoundrel, and natural bandits won't remain honest for too long.~A high level of Authority can significally reduce the impact that decisions have on the drop of your officers' loyalty, in case those actions disagree with their worldview.
 }
-
 Authority
 {
-Authority, Fame and Honor distinguish the protagonist
-from all other game characters.
-~
-Authority is an assessment of the hero by his surroundings (first of all, the crew of the ships in the squadron of the protagonist). If authority of the captain fell critically, he is presented with a black mark and offered to resign voluntarily or forcibly. If Authority is high, the crew shall rally around the commander amd withstand any trials with good faith in their leader!
-~
-Honor grows when the hero saves the world and its inhabitants. Or falls to the most ugly depths, from broken promises, perpetrated violence and villainy. Honor depends on the character's actions and, in turn, influences how other people in the game perceive him.
-~
-However, if the hero lives a monotonous and measured way of life, chooses the least risky solutions, travels alone in the empty seas, his Honor and Fame fall like sand through an open palm, sinking to a neutral and uncomplicated medium. In the game, the memory of the community is short and does not exceed for a half of the in-game year.
+Authority, Fame and Honor distinguish the protagonistfrom all other game characters.~Authority is an assessment of the hero by his surroundings (first of all, the crew of the ships in the squadron of the protagonist). If authority of the captain fell critically, he is presented with a black mark and offered to resign voluntarily or forcibly. If Authority is high, the crew shall rally around the commander amd withstand any trials with good faith in their leader!~Honor grows when the hero saves the world and its inhabitants. Or falls to the most ugly depths, from broken promises, perpetrated violence and villainy. Honor depends on the character's actions and, in turn, influences how other people in the game perceive him.~However, if the hero lives a monotonous and measured way of life, chooses the least risky solutions, travels alone in the empty seas, his Honor and Fame fall like sand through an open palm, sinking to a neutral and uncomplicated medium. In the game, the memory of the community is short and does not exceed for a half of the in-game year.
 }
-
 Attention_abilities
 {
-Attention!
-Some abilities may not be available for
-certain types of protagonists or officers.
+Attention!Some abilities may not be available forcertain types of protagonists or officers.
 }
-
 Personal_abilities
 {
-Perks that are focused on the character.
+Perks that expand the character’s personal abilities. You gain progress by leveling up personal skills.
+ ~
+ Upon reaching a threshold, you gain a new personal Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the perk tree.
 }
-
 Ship_abilities
 {
-Perks that are focused on the ship.
-Hired officers can take care of the most of them, letting the Captain to prioritize.
+Perks that affect ship management. You gain progress by leveling up ship skills.
+ ~
+ Upon reaching a threshold, you gain a new ship Perk point. Different Perks require a different number of points. Usually, the most powerful ones are at the end of the perk tree.
+ ~
+ They can be inherited by the main character from officers assigned to ship positions who know their craft.
 }
-
-Abilities_available
-{
-The number indicates the amount of unallocated perk points.
-}
-
-Abilities_active
-{
-The number indicates perks a character has activated.
-}
-
+Abilities_available {The number indicates the amount of unallocated perk points.}
+Abilities_active {The number indicates perks a character has activated.}
 Rank
 {
-The rank indicates the level of progress of the character in the game. It increases with the hero's experience. As the rank of the hero increases, his Life also increases by a number based on the Endurance value.
-~
-As the rank of the hero increases, he will meet stronger adversaries and find better items more often.
+Rank is an indicator of a character’s progress in the game. You gain progress by leveling up skills.
+ ~
+ As the character’s Rank increases, their Health and Energy grow, and stronger enemies and new items begin to appear more often.
 }
-
 Life
 {
-Zero HP means death. One HP means the world of opportunities.
-~
-(E) determines how many bonus HP are granted with each new level.
+HP — a measure of a character's resistance to physical damage. Zero means death, one means a world of possibilities.
+ ~
+ Value depends on P and E and grows with rank.
 }
-
-Health
-{
-Vitality is the indicator of the physical state of the character. It drops each time you get severely wounded in a short period of time. It recovers, if you avoid combat for some time to let the wounds heal properly. Can severely debuff stats and skills if left unattended.
-}
-
+Health {Vitality is the indicator of the physical state of the character. It drops each time you get severely wounded in a short period of time. It recovers, if you avoid combat for some time to let the wounds heal properly. Can severely debuff stats and skills if left unattended.}
 Energy
 {
-Energy is a vital parameter that dictates the hero's stamina during melee combat, as every attack draws upon it. Simply put, engaging in battle fatigues the character, necessitating rest to restore their stamina.
-~
-(R) determines your max amount of Energy.
+Energy - the pool of a character's physical endurance.
+ 
+  ~
+ 
+  All attacking actions and sprinting in melee consume Energy; during combat the character gets tired and needs a breather to recover.
+ 
+  ~
+ 
+  The Energy value depends on R and T and grows with rank.
 }
-
-Money
+Money {Money is the king of all men. Piastres, talers, guineas... What's the difference, if it's all liquid cash!}
+Reputation
 {
-Money is the king of all men. Piastres, talers, guineas... What's the difference, if it's all liquid cash!
-}
-
-Honor
-{
-Honor is the measure of other characters' attitude towards you. Honor can be high (positive), neutral and low (negative). Honor changes according to the your deeds and determines how other characters in the game perceive you.
+Honor reflects how society views the character.
 ~
-The fame of the hero fades with time, his achievements or failures being erased from people's memories. Evil deeds are not as easily forgotten as good ones. If a hero doesn't take any sides or perform any significant actions, his reputation will eventually become 'unknown adventurer'.
+It is shaped by the way you solve problems.
+~
+Honor always tends to return to a neutral state.
 }
-
 Weight
 {
-The maximum weight a character can carry without losing movement speed and getting other penalties to his skills.
-Depends on (P) and (E).
+Weight is the maximum total mass of cargo a character can carry.
+ Depends on Power, Endurance, personal Perks, and active amulets.
+ ~
+ An overloaded character moves slower, suffers penalties, and cannot use fast travel.
 }
-
-Title
-{
-The title indicates how useful the character is for the state he is serving.
-}
-
+Title {The title indicates how useful the character is for the state he is serving.}
 NextExp
 {
-Experience threshold indicates how many points are assigned to the current skill, rank and ability, and how much experience is needed to gain another point.
-~
-Skills are developing when you're performing the corresponding actions. For example, for each accurate pistol shot you will gain experience points for the 'Firearms' skill. These skill points are counted towards rank experience and personal/ship abilities (depends on skill type).
-~
-By crossing the rank experience threshold the hero will gain a new rank, and with it - more life and ability points, which the player may assign as he or she chooses.
+Experience threshold indicates how many points are assigned to the current skill, rank and ability, and how much experience is needed to gain another point.~Skills are developing when you're performing the corresponding actions. For example, for each accurate pistol shot you will gain experience points for the 'Firearms' skill. These skill points are counted towards rank experience and personal/ship abilities (depends on skill type).~By crossing the rank experience threshold the hero will gain a new rank, and with it - more life and ability points, which the player may assign as he or she chooses.
 }
-
 TABLE_PERKS {Hero abilities}
-
 TABLE_PERKS_desc
 {
-Abilities are additional character parameters that allow you to get new advantages or open up previously inaccessible gaming features. Abilities can allow a character to become an expert in a particular specialization or become a generalist who knows a little about a lot.
-~
-Double-click on the selected ability to read its description and learn about the pre-requisites (if there are any)
-~
-Certain abilities cannot be selected right away due to pre-requisite abilities. Learn the starting abilities in the tree first, to make new ones available.
+Abilities are additional character parameters that allow you to get new advantages or open up previously inaccessible gaming features. Abilities can allow a character to become an expert in a particular specialization or become a generalist who knows a little about a lot.~Double-click on the selected ability to read its description and learn about the pre-requisites (if there are any)~Certain abilities cannot be selected right away due to pre-requisite abilities. Learn the starting abilities in the tree first, to make new ones available.
 }
-
 PERK_TABLE_NEED {Required abilities}
-
-PERK_TABLE_NEED_desc
-{
-To pick this ability, a hero must first activate all other abilities in this tree.
-}
-
+PERK_TABLE_NEED_desc {To pick this ability, a hero must first activate all other abilities in this tree.}
 Nation_hint
 {
-Hero's nation is a nation, chosen by the hero at the beginning of the game, or the nation of the patent issued at the moment (hero in service). The nation can be seen in the "Character" window. In "Nation" window you can see the current flag of your ship - you can change it only at sea, to hide your true identity. Note that ships in the open sea and guards at the port might see through your disguise. Stealth of the hero affects the chance that the disguise is successful. If a hero has a bounty placed on his head by his nation, he is considered an enemy of his own nation as well.
-~
-Enemy recognition is performed with consideration of the official relations between states, as well as the bounties they place on your head.
-~
-Quick Travel doesn't work in enemy cities.
+Hero's nation is a nation, chosen by the hero at the beginning of the game, or the nation of the patent issued at the moment (hero in service). The nation can be seen in the "Character" window. In "Nation" window you can see the current flag of your ship - you can change it only at sea, to hide your true identity. Note that ships in the open sea and guards at the port might see through your disguise. Stealth of the hero affects the chance that the disguise is successful. If a hero has a bounty placed on his head by his nation, he is considered an enemy of his own nation as well.~Enemy recognition is performed with consideration of the official relations between states, as well as the bounties they place on your head.~Quick Travel doesn't work in enemy cities.
 }
-
-Drunk_hint
-{
-Alcohol affects your skills. If you're drunk, you will not feel much pain, but won't be able to perform delicate tasks, either.
-}
-
-England_descr
-{
-England. Britannia still has another century to truly 'rule the waves', but if there is a rising naval power to contend with the might of Spain - it's England. While France attacks Spanish power in Europe, English privateers and naval patrols feast on unprotected Spanish shipping on their way to ultimately dominating the Caribbean.
-}
-
+Drunk_hint {Alcohol affects your skills. If you're drunk, you will not feel much pain, but won't be able to perform delicate tasks, either.}
+England_descr {England. Britannia still has another century to truly 'rule the waves', but if there is a rising naval power to contend with the might of Spain - it's England. While France attacks Spanish power in Europe, English privateers and naval patrols feast on unprotected Spanish shipping on their way to ultimately dominating the Caribbean.}
 France_descr
 {
-The disastrous wars of religion between Catholic and Huguenot that have plagued France since the beginning of the Reformation over a hundred years ago have largely passed with the ascension of the fifteen-year-old Louis XIV de Bourbon to the throne. Still a far cry from the future 'Sun King' that will lead France to a Golden Age, King Louis wishes to continue in the traditions of the great Cardinal Richelieu to strengthen the apparatus of state through vigorous reform. There is much conflict still in Europe, but looming largest in the eyes of King Louis are the bitter rivals of the Bourbons, the Habsburgs - currently ruling as king of Spain and Holy Roman Emperor. To compete with the Spanish both near and abroad, King Louis has ordered Jean-Baptiste Colbert to revitalize the French Navy. A new and efficient tax regime allows France not only to pay off its debts from nearly fifty years of war, but also to allocate funds for naval and army reforms. While the French Army is still not quite as modern or battle hardened as Oliver Cromwell's English New Model Army, they are rapidly becoming one of the best equipped and trained on the continent in the new linear style of war. New ships of the latest designs are being built at Toulon and Saint-Nazaire, and modern cannons being cast at factories in the interior.
-~
-Unlike the English, France's main concerns lie on the European continent, and colonial concerns often fall secondary to the more pressing need for defending the French border against the Habsburgs in Austria, Italy, and Spain.
-~
-Due to this neglect, the French Company of the Americas made the decision to sell part of their colonial holdings on the Caribbean Antilles to the Knights of Malta, through a deal orchestrated by French chevalier and Governor-General Philippe de Poincy. De Poincy and the Order Grandmaster Jean de Lascaris-Castellar hope through this purchase to make up  for the revenue of the Order lost chasing Barbary corsairs around the Mediterranean through more...creative methods frowned upon by the Holy See. A promising young knight of the Order named Michel de Monper even proposes to privateer against Spanish shipping!
-~
-And so it falls to the cream of French nobility to hitch a ride on the next boat to the Caribbean colonies, hoping to find fame, fortune, adventure, and perhaps expand the French Empire while at it.
-~
+The disastrous wars of religion between Catholic and Huguenot that have plagued France since the beginning of the Reformation over a hundred years ago have largely passed with the ascension of the fifteen-year-old Louis XIV de Bourbon to the throne. Still a far cry from the future 'Sun King' that will lead France to a Golden Age, King Louis wishes to continue in the traditions of the great Cardinal Richelieu to strengthen the apparatus of state through vigorous reform. There is much conflict still in Europe, but looming largest in the eyes of King Louis are the bitter rivals of the Bourbons, the Habsburgs - currently ruling as king of Spain and Holy Roman Emperor. To compete with the Spanish both near and abroad, King Louis has ordered Jean-Baptiste Colbert to revitalize the French Navy. A new and efficient tax regime allows France not only to pay off its debts from nearly fifty years of war, but also to allocate funds for naval and army reforms. While the French Army is still not quite as modern or battle hardened as Oliver Cromwell's English New Model Army, they are rapidly becoming one of the best equipped and trained on the continent in the new linear style of war. New ships of the latest designs are being built at Toulon and Saint-Nazaire, and modern cannons being cast at factories in the interior.~Unlike the English, France's main concerns lie on the European continent, and colonial concerns often fall secondary to the more pressing need for defending the French border against the Habsburgs in Austria, Italy, and Spain.~Due to this neglect, the French Company of the Americas made the decision to sell part of their colonial holdings on the Caribbean Antilles to the Knights of Malta, through a deal orchestrated by French chevalier and Governor-General Philippe de Poincy. De Poincy and the Order Grandmaster Jean de Lascaris-Castellar hope through this purchase to make up  for the revenue of the Order lost chasing Barbary corsairs around the Mediterranean through more...creative methods frowned upon by the Holy See. A promising young knight of the Order named Michel de Monper even proposes to privateer against Spanish shipping!~And so it falls to the cream of French nobility to hitch a ride on the next boat to the Caribbean colonies, hoping to find fame, fortune, adventure, and perhaps expand the French Empire while at it.~
 }
-
-Holland_descr
-{
-Holland. The United Provinces of the Netherlands is a young nation, recently free of an eighty year independence war against Spain. The Dutch are a thrifty and hardworking people with a craving for trade superiority. Currently the Dutch quietly aids France in their struggle against their common enemy - Spain; but in all, seeks to be a neutral power that can trade with (or cheat) any customer!
-}
-
-Spain_descr
-{
-Spain. A great but waning colonial power. Currently holding the greater part of the Caribbean islands and the Spanish Main, Spain finds itself under constant pressure from England and France, who are seeking to claim the endless riches of the New World for themselves.
-}
-
+Holland_descr {Holland. The United Provinces of the Netherlands is a young nation, recently free of an eighty year independence war against Spain. The Dutch are a thrifty and hardworking people with a craving for trade superiority. Currently the Dutch quietly aids France in their struggle against their common enemy - Spain; but in all, seeks to be a neutral power that can trade with (or cheat) any customer!}
+Spain_descr {Spain. A great but waning colonial power. Currently holding the greater part of the Caribbean islands and the Spanish Main, Spain finds itself under constant pressure from England and France, who are seeking to claim the endless riches of the New World for themselves.}
 Pirate_descr
 {
-Pirates. These men sail against all flags and live by the Pirate Code (although they're more like guidelines) of the Brethren of the Coast. This doesn't hinder them while selling their loot in English or French colonies such as Port Royal and Tortuga where the governor turns a blind eye. Depending on the situation, pirates might fight 'legitimately' for any of the powers who can give them a letter of marque, but ultimately their prize is the same as English and French privateers - a nice fat Spanish treasure ship.
-~
-For any naval patrol, the sight of a pirate flag on the horizon is like throwing bacon to a starving wolf. For the vast majority of pirates, there are only two ends - the gibbet or the hangman's noose.
+Pirates. These men sail against all flags and live by the Pirate Code (although they're more like guidelines) of the Brethren of the Coast. This doesn't hinder them while selling their loot in English or French colonies such as Port Royal and Tortuga where the governor turns a blind eye. Depending on the situation, pirates might fight 'legitimately' for any of the powers who can give them a letter of marque, but ultimately their prize is the same as English and French privateers - a nice fat Spanish treasure ship.~For any naval patrol, the sight of a pirate flag on the horizon is like throwing bacon to a starving wolf. For the vast majority of pirates, there are only two ends - the gibbet or the hangman's noose.
 }
-
 Hunter_hint
 {
-The attitude of a nation, its citizens and soldiers to you. Good deeds for the country increase your reputation; bad ones may even lead to a bounty placed on the hero's head. That means continuous pursuit both on land and at sea.
-~
-The price on your head can be reduced by good deeds in favor of the specific country, or even bribery. With enough effort, a neutral relationship can be restored.
+The attitude of a nation, its citizens and soldiers to you. Good deeds for the country increase your reputation; bad ones may even lead to a bounty placed on the hero's head. That means continuous pursuit both on land and at sea.~The price on your head can be reduced by good deeds in favor of the specific country, or even bribery. With enough effort, a neutral relationship can be restored.
 }
-
 LevelComplexity {Difficulty}
-
 LevelComplexity_desc
 {
-This parameter affects the rate of hero's experience gain, progression rate, enemy strength, income, and many other factors.
-~
-Difficulty level varies from 'Easy' to 'Impossible'.
+This parameter affects the rate of hero's experience gain, progression rate, enemy strength, income, and many other factors.~Difficulty level varies from 'Easy' to 'Impossible'.
 }
-
 RechargePistolOnLine {Pistol recharging}
-
 RechargePistolOnLine_desc
 {
-In this mode, pistols can't be reloaded in combat; only when the sword is sheathed.
-~
-This mode affects all characters in the game.
+In this mode, pistols can't be reloaded in combat; only when the sword is sheathed.~This mode affects all characters in the game.
 }
-
 HardcoreGame {HardcoreGame}
-
-HardcoreGame_desc
-{
-Not enough adrenaline? You wanna feel like a true corsair and realize the full effect of all your deeds on the world around you? In this mode, saving the game is only possible on sacred ground - in church. You will have to do everything right the first time, without the chance to reload a saved game over and over again. There is no room for error.
-}
-
-ArcadeSailMode_desc
-{
-Speed and dynamics of naval combat. Quick maneuvering, high speeds, and quick cannon reloading - requires a great deal of consideration for your next tactical move.
-}
-
-EncountersRate_desc
-{
-Frequency of game events, especially the number of ships on the world map.
-}
-
+HardcoreGame_desc {Not enough adrenaline? You wanna feel like a true corsair and realize the full effect of all your deeds on the world around you? In this mode, saving the game is only possible on sacred ground - in church. You will have to do everything right the first time, without the chance to reload a saved game over and over again. There is no room for error.}
+ArcadeSailMode_desc {Speed and dynamics of naval combat. Quick maneuvering, high speeds, and quick cannon reloading - requires a great deal of consideration for your next tactical move.}
+EncountersRate_desc {Frequency of game events, especially the number of ships on the world map.}
 WorldAlivePause {Nation quests}
-
 WorldAlivePause_desc
 {
-This mode allows you to go through one of the scenario quest lines for the Nations, but before it ends, the game's "living world" stops the governor-general moves from town to town, cities seizing by other nations, and blocks the opportunity to capture the city to the hero.
-~
-The living world will work only after the completion of the scenario history.
+This mode allows you to go through one of the scenario quest lines for the Nations, but before it ends, the game's "living world" stops the governor-general moves from town to town, cities seizing by other nations, and blocks the opportunity to capture the city to the hero.~The living world will work only after the completion of the scenario history.
 }
-
 Prisoner {Prisoner}
-
 Prisoner_desc
 {
-A prisoner is a character who is captured and held on your ship against his will. Any prisoner can be interrogated in the hold of your ship. Most of the time, you can get a ransom for him, and if it's a pirate, recruit him into the crew of the hero. You can imprison the passenger whom you have taken to deliver, when he begins to resent because of the long trip while delivering to his destination. Captains are those who surrender to you during boarding or raised by you while their being on boat at the open sea. The largest amount of the ransom is given by the governor of the same nation as the prisoner, but it fluctuates, as does the opinion of the governors themselves about the value of the prisoner.
-Captive captains can appeal to your hero with various requests. Do not avoid communicating with prisoners: it may bring an unexpected benefit.
+A prisoner is a character who is captured and held on your ship against his will. Any prisoner can be interrogated in the hold of your ship. Most of the time, you can get a ransom for him, and if it's a pirate, recruit him into the crew of the hero. You can imprison the passenger whom you have taken to deliver, when he begins to resent because of the long trip while delivering to his destination. Captains are those who surrender to you during boarding or raised by you while their being on boat at the open sea. The largest amount of the ransom is given by the governor of the same nation as the prisoner, but it fluctuates, as does the opinion of the governors themselves about the value of the prisoner.Captive captains can appeal to your hero with various requests. Do not avoid communicating with prisoners: it may bring an unexpected benefit.
 }
-
 shipChoose_hint
 {
-Double-click with the mouse (or press the 'Enter' key) on the image of the companion's ship to begin an exchange when out of battle.
-~
-You can start an exchange by sailing close to a companion ship and pressing the quick command 'Exchange'.
-Can be done in or out of combat.
+Double-click with the mouse (or press the 'Enter' key) on the image of the companion's ship to begin an exchange when out of battle.~You can start an exchange by sailing close to a companion ship and pressing the quick command 'Exchange'.Can be done in or out of combat.
 }
-
 GoodsCargo_hint
 {
-Cargo on board of the ship: ammunition, goods and implements in the hold.
-~
-To see the items that do not fit in the allotted window, use the slider on the right side of the list.
-~
-Press the 'Enter' key or double-click on the item in the list to view the description of the product, toss an unwanted amount overboard, or drop a mine.
+Cargo on board of the ship: ammunition, goods and implements in the hold.~To see the items that do not fit in the allotted window, use the slider on the right side of the list.~Press the 'Enter' key or double-click on the item in the list to view the description of the product, toss an unwanted amount overboard, or drop a mine.
 }
-
 EXP_SLIDE {Experience gain rate}
-
-EXP_SLIDE_desc
-{
-This setting adjusts the rate, at which the main character and his officers gain experience. The greater the rate, the faster will they acquire new skill points, new levels and abilities.
-}
-
+EXP_SLIDE_desc {This setting adjusts the rate, at which the main character and his officers gain experience. The greater the rate, the faster will they acquire new skill points, new levels and abilities.}
 Partition_hint
 {
-Shares of the crew must be paid no later than on the 1st of every month. The following payments are made:
-~
-Monthly upkeep - combined wages of the sailors and officers, compensation for the injured, and upkeep for the ship and equipment.
-~
-Loot share - splitting the looted valuables and distributing shares of them between the members of a crew.
-~
-All captured ships and goods are subject to sharing. According to the laws of the Brethren of the Coast, the share of a deceased sailor or officer goes to their relatives and friends.
-~
-The shares for the crew members are as follows:
-- sailor - 1 share
-- officer - 10 shares
-- companion - 30 shares
-- captain - 200-650 shares
-In addition, the captain, as the owner of the ships of his squadron, additionally receives 20-120 shares from each ship (depending on rate of the vessel), and he also bears all costs associated with the maintenance and possible loss of ships.
-If a captain has a patent, 10% of the loot is paid to the Nation's treasury.
-~
-Delaying the payment for the current month will cause unrest in the crew until the end of the month, whereas payment in advance will increase their morale.
-~
-Delaying a payment for the past month will significantly reduce the morale of the crew and the loyalty of your officers and companions.
-~
+Shares of the crew must be paid no later than on the 1st of every month. The following payments are made:~Monthly upkeep - combined wages of the sailors and officers, compensation for the injured, and upkeep for the ship and equipment.~Loot share - splitting the looted valuables and distributing shares of them between the members of a crew.~All captured ships and goods are subject to sharing. According to the laws of the Brethren of the Coast, the share of a deceased sailor or officer goes to their relatives and friends.~The shares for the crew members are as follows:- sailor - 1 share- officer - 10 shares- companion - 30 shares- captain - 200-650 sharesIn addition, the captain, as the owner of the ships of his squadron, additionally receives 20-120 shares from each ship (depending on rate of the vessel), and he also bears all costs associated with the maintenance and possible loss of ships.If a captain has a patent, 10% of the loot is paid to the Nation's treasury.~Delaying the payment for the current month will cause unrest in the crew until the end of the month, whereas payment in advance will increase their morale.~Delaying a payment for the past month will significantly reduce the morale of the crew and the loyalty of your officers and companions.~
 }
-
 SeaBattleSave_desc
 {
-Saving in sea combat.
-Disabling this option removes the ability to save the game during battles at sea!
+Saving in sea combat.Disabling this option removes the ability to save the game during battles at sea!
 }
-
-Rains_desc
-{
-Toggle rain and storms on/off. This option affects the stability of the game.
-}
-
+Rains_desc {Toggle rain and storms on/off. This option affects the stability of the game.}
 CasualMode_desc
 {
-Classic mode is suitable for players who want to focus on the main character's story. It is a little more difficult than exploration mode and requires more attention and effort, but allows you to fully immerse yourself in the atmosphere created by the authors of the game.
-~
-Exploration mode is suitable for beginners, as well as players who want to have more free time to complete various side quests and freeplay. In this mode, ranking restrictions to start the main questlines have been removed, timers are disabled in cases without many options, and time on the global map slows down, depending on the selected difficulty level. Enemies in the main quests become less powerful, and the speed of the main character's ship on the global map increases by 5%.
+Classic mode is suitable for players who want to focus on the main character's story. It is a little more difficult than exploration mode and requires more attention and effort, but allows you to fully immerse yourself in the atmosphere created by the authors of the game.~Exploration mode is suitable for beginners, as well as players who want to have more free time to complete various side quests and freeplay. In this mode, ranking restrictions to start the main questlines have been removed, timers are disabled in cases without many options, and time on the global map slows down, depending on the selected difficulty level. Enemies in the main quests become less powerful, and the speed of the main character's ship on the global map increases by 5%.
 }
+SourceBase {Base Value}
+SourceAdmiral {Admiral}
+SourceOfficer {Officer Bonus}
+SourceAccountant {Purser}
+SourceMangarosa {Mangarosa Potion}
+SourceHealth {Vitality Status}
+SourceEquip {Equipment}
+SourceQuest {Unique situation}
+SourceAlco {Intoxicating}
+SourceOverload {Burdened}
+SourceNavyPenalty {Navigation Skill check failed}
+CritDamage
+{
+Critical damage multiplier. Applied after all modifiers.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+CritCharDefence
+{
+Total reduction of enemy critical damage.
+ ~
+ Can be increased through personal Perks and equipment.
+}
+SourceSkill {Skill}
+SourceChickenGod {Blessing of Aruba}

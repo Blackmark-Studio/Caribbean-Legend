@@ -28,6 +28,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Słuchaj, w kwietniu 1654 roku do waszego portu zawineła fregata pod dowództwem kapitana Miguela Dichoso, który następnie zniknął. Czy jest coś, co możesz mi o tym powiedzieć?";
 				link.l1.go = "guardoftruth";
 			}
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "Powiedz mi, "+npchar.name+", co to za jeden ten Javier Castillo?";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "Wróćmy do rozmowy o człowieku, który może wpłynąć na Javiera.";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
 		break;
 		
 		//--> Цена чахотки
@@ -118,13 +130,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "Consumption_12":
 			dialog.text = "Juan? Który? Jest ich tutaj wielu, ludzie zazwyczaj mają też nazwiska... albo przynajmniej przezwisko...";
-			link.l1 = "Tak sobie myślałem... Może jego przezwisko to 'Gruźlica', słyszałeś o tym?";
+			link.l1 = "Tak sobie myślałem... Może jego przezwisko to 'Suchotnik', słyszałeś o tym?";
 			link.l1.go = "Consumption_13";
 		break;
 		
 		case "Consumption_13":
 			dialog.text = "O mój Boże, znowu o tym mówisz! Nie, dzięki Bogu, nie słyszałem. Przysięgam! A teraz zmieńmy temat. Proszę!";
-			link.l1 = "Dobrze, dobrze, uspokój się bo zawału serca dostaniesz...";
+			link.l1 = "Dobrze, dobrze, nie dostawaj zawału serca...";
 			link.l1.go = "exit";
 			pchar.questTemp.Consumption.AskJuan = sti(pchar.questTemp.Consumption.AskJuan)+1;
 			if(sti(pchar.questTemp.Consumption.AskJuan) == 3)
@@ -136,6 +148,56 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			npchar.quest.Consumption_1 = "true";
 		break;
 		//<-- Цена чахотки
+		
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "Javier to karciarz, szuler i oszust. Ciągle kręci się po tawernie, szukając, kogo by oskubać z paru peso.";
+			link.l1 = "Czyli w innych szemranych interesach nie był widywany? Może ma wrogów?";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "OZ_Tavern_2":
+			dialog.text = "Powiedzmy, że ma znacznie mniej przyjaciół niż tych, którzy marzą, by skręcić mu kark. Ale jeśli potrzebne wam nazwisko osoby, która naprawdę może na niego wpłynąć, to będzie kosztować tysiąc peso. Zapłacicie - i wszystko opowiem.";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Dobrze, trzymaj swoje pieniądze, stary wyłudzaczu.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Wrócimy do tej rozmowy później. Teraz nie mam potrzebnej sumy.";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+		
+		case "OZ_Tavern_2_1":
+			dialog.text = "Kapitanie, przynieśliście tysiąc peso?";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "Przynios"+GetSexPhrase("łem","łam")+". Trzymaj, stary wyłudzaczu.";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "Cholera. Wkrótce wrócę.";
+				link.l1.go = "exit";
+			}
+		break;
+		
+		case "OZ_Tavern_3":
+			dialog.text = "O, to co innego. Wiecie, Javier ma nie tylko długi karciane. Raz postanowił wejść w handel antykami, ale, jak można się było spodziewać, skończyło się to dla niego marnie. Na początku szło mu nawet nieźle, ale potem trafiła się okazja kupić rzadki przedmiot\nTak się zapalił do tego pomysłu, że obszedł wszystkich lichwiarzy w poszukiwaniu pieniędzy. Oczywiście nikt nie dał mu ani grosza. Wtedy znalazł człowieka równie zakręconego na punkcie antyków i pożyczył od niego sto pięćdziesiąt tysięcy peso. Dalej, myślę, już się domyślacie \nWyprowadzono go w pole i teraz ten dług wisi mu na szyi jak kamień. Spłacił marne grosze i, najwyraźniej, reszty oddać nawet nie zamierza, mimo że jego wierzyciel zatrudnił nawet ludzi do zastraszania\nCzłowiek, któremu jest winien, - Felipe Alarcón. Jego dom znajduje się naprzeciw banku, łatwo go poznacie: to wspaniała rezydencja z kolumnami przy wejściu.";
+			link.l1 = "Dziękuję!";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
 		
 		case "guardoftruth":
 			dialog.text = "Pamiętam go. Często wpadał do mojej karczmy, ale niewiele mówił. Wypił kilka kieliszków rumu, szepnął coś do niektórych klientów i wyszedł. Bardzo ponury i poważny, jak wszyscy na tej fregacie. Niebezpiecznie wyglądający najemnicy, którzy trzymali swoje miecze w pogotowiu\nKrążyła plotka, że fregata była pełna skarbów, ale nie wierzę w takie bajki. Cenne ładunki nigdy nie są transportowane na jednym statku bez konwoju. Spędzili tu dzień, a potem odpłynęli. Słyszałem, że do Europy. To wszystko, co wiem.";

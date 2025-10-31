@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
 			Log_Info("Przekazałeś Szpon Wodza");
-			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 			dialog.text = "O, jak długo czekałem na ten moment! Teraz mogę wreszcie odejść... Ale na pożegnanie chciałbym przekazać ci cząstkę mojej mocy. To będzie ostatni prezent, jaki kiedykolwiek da Alberto Casco.";
 			link.l1 = "... ";
 			link.l1.go = "guardmask_12";

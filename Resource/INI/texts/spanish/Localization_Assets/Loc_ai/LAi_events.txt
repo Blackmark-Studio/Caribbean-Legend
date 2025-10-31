@@ -1,4 +1,1 @@
-LAi_events_1
-{
-El Fajín de streltsy está destruido.
-}
+LAi_events_1 {El fajín de streltsy está destruido.}

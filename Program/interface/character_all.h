@@ -48,7 +48,7 @@ void FillCharactersScroll()
 	pRef2.str3 = "#" + pchar.lastname;
 	//pRef2.str4 = "#" + pchar.quest.OfficerPrice;
 	pRef2.str5 = "#" + pchar.rank;
-	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship"))
+	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + pchar.id))
 	{
         if(!HaveAllPerks(pchar, "any")) 
         {
@@ -101,7 +101,7 @@ void FillCharactersScroll()
 			pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
 			//pRef2.str4 = "#" + Characters[_curCharIdx].quest.OfficerPrice;
 			pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
 			{
                 if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                 {
@@ -140,7 +140,7 @@ void FillCharactersScroll()
 			pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
 			//pRef2.str4 = "#" + Characters[_curCharIdx].quest.OfficerPrice;
 			pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+			if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
 			{
                 if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                 {
@@ -188,7 +188,7 @@ void FillCharactersScroll()
 					//pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.convoyquest.money);
 				}
 				pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-				if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+				if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
 				{
                     if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
@@ -292,7 +292,6 @@ void FillCharactersScrollEx(bool bOfficers)
 	FillFaceList("CHARACTERS_SCROLL.ImagesGroup", pchar, 2); // passengers
 	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_upgrade");
 	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_byworker");
-	AddFaceGroup("CHARACTERS_SCROLL.ImagesGroup", "alert_byworker2");
 
 	GameInterface.CHARACTERS_SCROLL.BadTex1 = 0;
 	GameInterface.CHARACTERS_SCROLL.BadPic1 = "emptyface";
@@ -309,7 +308,7 @@ void FillCharactersScrollEx(bool bOfficers)
 	pRef2.str3 = "#" + pchar.lastname;
 	//pRef2.str4 = "#" + pchar.quest.OfficerPrice;
 	pRef2.str5 = "#" + pchar.rank;
-	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship"))
+	if(CheckAttribute(pchar,"perks.FreePoints_self") && CheckAttribute(pchar,"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + pchar.id))
 	{
         if(!HaveAllPerks(pchar, "any")) 
         {
@@ -364,7 +363,7 @@ void FillCharactersScrollEx(bool bOfficers)
                 pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
                 //pRef2.str4 = "#" + Characters[_curCharIdx].quest.OfficerPrice;
                 pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
                 {
                     if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
@@ -376,11 +375,6 @@ void FillCharactersScrollEx(bool bOfficers)
 				{
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-				}
-				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-				{
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
 				}
             }
             else
@@ -413,7 +407,7 @@ void FillCharactersScrollEx(bool bOfficers)
                 pRef2.str3 = "#" + Characters[_curCharIdx].lastname;
                 //pRef2.str4 = "#" + Characters[_curCharIdx].quest.OfficerPrice;
                 pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
                 {
                     if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
@@ -425,11 +419,6 @@ void FillCharactersScrollEx(bool bOfficers)
 				{
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-				}
-				if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-				{
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
 				}
             }
             else
@@ -471,7 +460,7 @@ void FillCharactersScrollEx(bool bOfficers)
                         //pRef2.str4 = "#" + sti(Characters[_curCharIdx].quest.convoyquest.money);
                     }
                     pRef2.str5 = "#" + Characters[_curCharIdx].rank;
-                    if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+                    if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
                     {
                         if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                         {
@@ -483,11 +472,6 @@ void FillCharactersScrollEx(bool bOfficers)
 					{
 						GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 						GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-					}
-					if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-					{
-						GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-						GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
 					}
                     m++;
                 }
@@ -534,7 +518,7 @@ void FillCharactersScrollEx(bool bOfficers)
                         //pRef2.str4 = "#" + Characters[_curCharIdx].quest.deliverymoney;
                     }
                 }
-                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship"))
+                if(CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_self") && CheckAttribute(&Characters[_curCharIdx],"perks.FreePoints_ship") && !CheckAttribute(&InterfaceStates, "markers." + Characters[_curCharIdx].id))
                 {
                     if(!HaveAllPerks(&Characters[_curCharIdx], "any")) 
                     {
@@ -546,11 +530,6 @@ void FillCharactersScrollEx(bool bOfficers)
 				{
 					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker";
 					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker");
-                }
-                if(CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-                {
-					GameInterface.CHARACTERS_SCROLL.(attributeName).img3 = "byworker2";
-					GameInterface.CHARACTERS_SCROLL.(attributeName).tex3 = FindFaceGroupNum("CHARACTERS_SCROLL.ImagesGroup","alert_byworker2");
                 }
                 m++;
             }
@@ -565,4 +544,10 @@ void FillCharactersScrollEx(bool bOfficers)
 
     if(m < 7) m = 7; // Чтобы не дублировало по кругу
 	GameInterface.CHARACTERS_SCROLL.ListSize = m;
+}
+
+int GetCurrentCharactersTab()
+{
+	if (!CheckAttribute(&InterfaceStates, "nCurScrollTab")) return 1;
+	return sti(InterfaceStates.nCurScrollTab);
 }

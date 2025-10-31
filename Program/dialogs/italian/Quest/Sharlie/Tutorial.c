@@ -548,7 +548,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Peccato che il mio piano malvagio sia fallito. Addio, marinaio.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -571,14 +571,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "Be’... avete ragione. E poi avete già cenato più volte nella cabina del capitano. Passate pure, signore "+pchar.lastname+".";
 					link.l1 = "Così va meglio!";
 					link.l1.go = "OhrannikCabin_4";
-					notification("Controllo superato", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -602,7 +602,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Abilità insufficiente (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -610,7 +610,7 @@ void ProcessDialogEvent()
 			dialog.text = "E-eh. Va bene, non credo che succederà nulla di grave.";
 			link.l1 = "Così va meglio!";
 			link.l1.go = "OhrannikCabin_4";
-			notification("Controllo superato", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 
 		case "OhrannikCabin_4":
@@ -959,6 +959,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 
 		case "SailorWantRum_PrinestiRum_6":
@@ -1063,17 +1064,17 @@ void ProcessDialogEvent()
 
 		case "OldSailor_9":
 			dialog.text = "Ditemi: qual è l'abilità più importante per un capitano?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Navigazione. Determina la dimensione della nave che può comandare.";
 				link.l1.go = "OldSailor_10";
-				notification("Controllo superato", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Non mentirò, non lo so.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Abilità insufficiente (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1157,18 +1158,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "Avete già trovato la risposta? Qual è l'abilità più importante per un capitano?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Navigazione. Determina la dimensione della nave che può comandare.";
 				link.l1.go = "OldSailor_10";
-				notification("Controllo superato", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Non ancora.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Abilità insufficiente (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1582,7 +1583,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_12_Wait": // ждёт выполнения квеста
 			dialog.text = "Come va? Hai distribuito il pagamento? Hai portato tutto? Il resto dei dobloni, lo scrigno vuoto?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "Tutto pronto.";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1599,7 +1600,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "E dire che sapevi contare. Qui ce n'è meno del dovuto. Questo significa che la mia contabilità si è appena complicata, e mi hai creato un nuovo problema invece di risolvere quello attuale\n"+
@@ -1682,7 +1683,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval_3":
 			dialog.text = "Bitwa zacznie się dopiero za kilka godzin, więc to idealny czas, żeby zamknąć dzienny rachunek. Macie moją skrzynkę z dublonami, de Maure. Łaskawie ją zwróćcie.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Zabierajcie. I nie pokazujcie już tutaj swojej gęby.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
@@ -1695,12 +1696,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "Nie miałem zamiaru. Nie jestem przecież szczurem lądowym - moje miejsce nie jest w ładowni. Żegnajcie.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);

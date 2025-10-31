@@ -13,6 +13,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "听着, 您在哈瓦那或附近见过一个叫约阿希姆.梅里曼的人吗? 他是个中年绅士, 葡萄牙人, 留着小胡子。 帝王式胡须和锐利的眼睛。 也许在海湾或丛林里? 我在找他。 ";
                 link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
             }
         break;
         

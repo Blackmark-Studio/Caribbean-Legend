@@ -1,91 +1,20 @@
-BlackMark_1
-{
-Przemytnik
-}
-BlackMark_2
-{
-
-}
-
-BlackMark_3
-{
-Francis
-}
-BlackMark_4
-{
-Reasley
-}
-
-BlackMark_5
-{
-Tommy
-}
-BlackMark_6
-{
-Irons
-}
-
-BlackMark_7
-{
-
-}
-BlackMark_8
-{
-
-}
-
-BlackMark_9
-{
-
-}
-BlackMark_10
-{
-
-}
-
-BlackMark_11
-{
-Gabriel
-}
-BlackMark_12
-{
-Callow
-}
-
-BlackMark_13
-{
-Principio
-}
-
-BlackMark_14
-{
-
-}
-BlackMark_15
-{
-
-}
-
-BlackMark_16
-{
-Zrobione. Czas się zwinąć, zanim pojawi się Gabe
-}
-
-BlackMark_17
-{
-Dwie godziny później...
-}
-
-BlackMark_18
-{
-Nad ranem...
-}
-
-BlackMark_19
-{
-
-}
-BlackMark_20
-{
-
-}
+BlackMark_1 {Przemytnik}
+BlackMark_2 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }
+BlackMark_10 { }
+BlackMark_11 {Gabriel}
+BlackMark_12 {Callow}
+BlackMark_13 { }
+BlackMark_14 { }
+BlackMark_15 { }
+BlackMark_16 {Zrobione. Czas się zwinąć, zanim pojawi się Gabe}
+BlackMark_17 {Dwie godziny później...}
+BlackMark_18 {Nad ranem...}
+BlackMark_19 { }
+BlackMark_20 { }

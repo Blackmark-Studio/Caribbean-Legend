@@ -5,16 +5,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 	switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat("Go ahead, what do you want?",
-                          "We were just talking about that. You must have forgotten...", "This is the third time today you're talking about some question...",
-                          "Listen, this is a store. People buy stuff here. Don't disturb me!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("You know, " + NPChar.name + ", maybe next time.", "Right, I've forgotten for some reason...",
-                      "Yes, it really is the third time...", "Hm, I wont...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Go ahead, what do you want?","We were just talking about that. You must have forgotten...","This is the third time today you've brought up some question...","Listen, this is a store. People buy things here. Don't disturb me!","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("You know, "+NPChar.name+", maybe next time.","Right, I've forgotten for some reason...","Yes, it really is the third time...","Hm, I won't...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// Jason НСО
 			if (CheckAttribute(pchar, "questTemp.Patria.Goods"))
 			{
-				link.l1 = "You have my goods stored in your warehouse. Tea, cocoa, and lignum vitae. I want to get them.";
+				link.l1 = "You have my goods stored in your warehouse. Tea, cocoa, and lignum vitae. I want to retrieve them.";
                 link.l1.go = "patria_goods";
 			}
 			if (CheckAttribute(pchar, "questTemp.Patria.GoodsSM"))
@@ -25,10 +22,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "patria_goods":
-			dialog.text = "Right you are, captain, I have your goods. Are you sure that you want to take them?";
+			dialog.text = "Right you are, captain, I have your goods. Are you sure you want to take them?";
 			link.l1 = "Yes.";
 			link.l1.go = "patria_goods_1";
-			link.l2 = "Hang on, I need to check if there is enough space in the hold first.";
+			link.l2 = "Hang on, I need to check if there's enough space in the hold first.";
 			link.l2.go = "exit";
 		break;
 		
@@ -52,10 +49,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "patria_goods_3":
-			dialog.text = "Yes, exactly. I keep it here by the baron's decree. Are you sure you want to take them?";
+			dialog.text = "Yes, exactly. I keep them here by the baron's decree. Are you sure you want to take them?";
 			link.l1 = "Yes.";
 			link.l1.go = "patria_goods_4";
-			link.l2 = "Hang on, I need to check if there is enough space in the hold first.";
+			link.l2 = "Hang on, I need to check if there's enough space in the hold first.";
 			link.l2.go = "exit";
 		break;
 		

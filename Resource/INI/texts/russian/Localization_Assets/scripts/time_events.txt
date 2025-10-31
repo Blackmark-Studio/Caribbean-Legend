@@ -1,34 +1,7 @@
-time_events_1
-{
-Вы получили долю прибыли от Пуанси
-}
-
-time_events_2
-{
-Жан Давид подготовил вашу долю добычи в Ле Франсуа
-}
-
-time_events_3
-{
-Сандро
-}
-
-time_events_4
-{
-Торн
-}
-
-time_events_5
-{
-Джим
-}
-
-time_events_6
-{
-Хопкинс
-}
-
-time_events_7
-{
-Алонсо
-}
+time_events_1 {Вы получили долю прибыли от Пуанси}
+time_events_2 {Жан Давид подготовил вашу долю добычи в Ле Франсуа}
+time_events_3 {Сандро}
+time_events_4 {Торн}
+time_events_5 {Джим}
+time_events_6 {Хопкинс}
+time_events_7 {Алонсо}

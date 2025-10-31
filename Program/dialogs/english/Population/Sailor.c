@@ -31,8 +31,8 @@ void ProcessDialogEvent()
 			{
 				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.crew"))//найм в команду
 				{
-					dialog.text = "Good day, "+GetAddress_Form(NPChar)+". I am aware that you are a captain of your own ship. I've got a deal for you.";
-					link.l1 = "I am listening, "+GetAddress_FormToNPC(NPChar)+". What kind of deal?";
+					dialog.text = "Good day, "+GetAddress_Form(NPChar)+". I know you are the captain of your own ship. I've got a deal for you.";
+					link.l1 = "I am listening, "+GetAddress_FormToNPC(NPChar)+". What sort of deal?";
 					link.l1.go = "crew";
 					link.l2 = "Sorry, "+GetAddress_FormToNPC(NPChar)+", but I am in a hurry.";
 					link.l2.go = "exit";
@@ -40,10 +40,10 @@ void ProcessDialogEvent()
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				dialog.text = LinkRandPhrase("Hey, captain! What do you want from a common sailor?","Good day, sir. How can I help you?","Good day, sir. Do you want anything?");
+				dialog.text = LinkRandPhrase("Hey, captain! What do you want from a common sailor?","Good day, sir. How can I help you?","Good day, sir. Do you need anything?");
 				link.l1 = "Glad to meet you, mate! My name is "+GetFullName(pchar)+". Got a minute to talk?";
 				link.l1.go = "question";
-				link.l2 = RandPhraseSimple("I've got a question for you.", "I need some information about this colony.");
+				link.l2 = RandPhraseSimple("I've got a question for you.","I need some information about this colony.");
 				link.l2.go = "quests";//(перессылка в файл города)
 				link.l3 = "Just wanted to say hi. See you!";
 				link.l3.go = "exit";
@@ -54,23 +54,17 @@ void ProcessDialogEvent()
 				dialog.text = "You again, sir? What else do you want?";
 				link.l1 = "Got a minute to talk?";
 				link.l1.go = "question";
-				link.l2 = RandPhraseSimple("I've got a question for you.", "I need some information about this colony.");
+				link.l2 = RandPhraseSimple("I've got a question for you.","I need some information about this colony.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				link.l3 = "No, pal, it's nothing. Good luck!";
+				link.l3 = "No, mate, it's nothing. Good luck!";
 				link.l3.go = "exit";
 			}
 			NextDiag.TempNode = "First time";
 		break;
 
 		case "question":
-			dialog.text = NPCStringReactionRepeat(""+GetFullName(npchar)+" at your service, good sir! What do you want to know?", 
-				"Glad to talk with you, captain!", 
-				"Well... I suppose I still have some more time to talk...",
-                "Unfortunately, I have to go now. Farewell!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Got anything interesting to tell me?", 
-				"Got anything interesting to tell me?",
-                "Got anything interesting to tell me?", 
-				"Sure. Good luck!", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(""+GetFullName(npchar)+" at your service, good sir! What would you like to know?","Glad to talk with you, Captain!","Well... I suppose I still have some more time to talk...","Unfortunately, I have to go now. Farewell!","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Got anything interesting to tell me?","Got anything interesting to tell me?","Got anything interesting to tell me?","Sure. Good luck!",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("rumours_sailor", "rumours_sailor", "rumours_sailor", "exit", npchar, Dialog.CurrentNode);
 		break;
 
@@ -82,7 +76,7 @@ void ProcessDialogEvent()
 				case 2: sTemp = "Me and my mates just got back from a voyage two weeks ago. The ship's master has dismissed us and we've been having some great fun. But our pockets are empty now so it's time to set sail again. Do you want to hire us, captain?"; break;
 			}
 			dialog.text = sTemp;
-			link.l1 = "Well, I am ready to discuss your proposal. How many of you and what are you good at?";
+			link.l1 = "Well, I am ready to discuss your proposal. How many of you are there, and what are your skills?";
 			link.l1.go = "crew_1";
 			link.l2 = "I am sorry, sailor, but I've got enough men already. You should find yourself another captain.";
 			link.l2.go = "exit";
@@ -95,10 +89,10 @@ void ProcessDialogEvent()
 				case 1: sTemp = "Most of all we like to be on the gun deck. Few of us even served on real warships. We can load and fire cannons in the way no one in your crew can. You can count on us in every hard fight!"; break;
 				case 2: sTemp = "We're proper good boarders captain, did a few runs on privateers before this. We know the glitter of cutlasses and the smell of gunpowder and blood. That's our calling. It's not easy to defeat us in a hand-to-hand fight so you can always count on our blades, captain!"; break;
 			}
-			dialog.text = "There are "+sti(npchar.quest.crew.qty)+" of us and we will hire only together. We can perform all basic sailor tasks."+sTemp+"";
+			dialog.text = "There are "+sti(npchar.quest.crew.qty)+" of us and we will only hire together. We can perform all basic sailor tasks."+sTemp+"";
 			if (GetFreeCrewQuantity(pchar) >= sti(npchar.quest.crew.qty))
 			{
-				link.l1 = "Sound like the men I'm looking for. What about your advance?";
+				link.l1 = "Sounds like the men I'm looking for. What about your advance?";
 				link.l1.go = "crew_2";
 				link.l2 = "Sorry, sailor, but I need other skills at the moment. You should find yourself another captain.";
 				link.l2.go = "exit";
@@ -115,17 +109,17 @@ void ProcessDialogEvent()
 			dialog.text = ""+FindRussianMoneyString(sti(npchar.quest.crew.money))+" for each. And then the common sailor's wage per month. We won't ask anything excessive, captain.";
 			if (sti(pchar.money) >= iTemp)
 			{
-				link.l1 = "You're hired! Take your coins. Now go to my ship, it is called '"+pchar.ship.name+"', right in the harbor. The boatswain will assign you all hammocks in the crew quarters and get your messes.";
+				link.l1 = "You're hired! Take your coins. Now go to my ship, it's called '"+pchar.ship.name+"', right in the harbour. The boatswain will assign you all hammocks in the crew quarters and arrange your messes.";
 				link.l1.go = "crew_3";
 			}
-			link.l2 = "Unfortunately, I can't afford to pay for you all. You should find yourself another captain.";
+			link.l2 = "Unfortunately, I can't afford to pay for all of you. You should find yourself another captain.";
 			link.l2.go = "exit";
 		break;
 		
 		case "crew_3":
 			iTemp = sti(npchar.quest.crew.money)*sti(npchar.quest.crew.qty);
 			AddMoneyToCharacter(pchar, -iTemp);
-			dialog.text = "Aye aye, captain! I will gather the lads and we'll be off immediately.";
+			dialog.text = "Aye aye, captain! I'll gather the lads and we'll be off immediately.";
 			link.l1 = "Be quick about it, we sail at a moment's notice.";
 			link.l1.go = "crew_4";
 		break;
@@ -151,8 +145,8 @@ void ProcessDialogEvent()
 
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
-			dialog.text = NPCharSexPhrase(NPChar, "Hey, sheathe your sword, cap. None of us needs problems, right?", "Hey, sheathe your sword, cap. None of us needs problems, right?");
-			link.l1 = LinkRandPhrase("Fine.", "As you wish.", "As you say.");
+			dialog.text = NPCharSexPhrase(NPChar,"Hey, sheathe your sword, captain. None of us needs trouble, right?","Hey, sheathe your sword, captain. None of us needs trouble, right?");
+			link.l1 = LinkRandPhrase("Fine.","As you wish.","As you say.");
 			link.l1.go = "exit";
 		break;
 

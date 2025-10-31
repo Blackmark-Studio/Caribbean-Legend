@@ -307,6 +307,7 @@ void CreatUnderwater(aref loc) // под водой
 					sld.lastname = "";
 					GiveItem2Character(sld, "unarmed");
 					EquipCharacterbyItem(sld, "unarmed");
+					SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 					sld.SaveItemsForDead = true;
 					if (bPincers()) TakeNItems(sld, "crab_pincers", 2); // клешни
 					//if (rand(2) == 1) TakeNItems(sld, "crab_jaw", rand(1)); // жвалы
@@ -314,9 +315,6 @@ void CreatUnderwater(aref loc) // под водой
 					LAi_SetHP(sld, iTemp, iTemp);
 					if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE/2.5);
 					sld.animal = true;
-					SetCharacterPerk(sld, "BasicDefense");
-					SetCharacterPerk(sld, "AdvancedDefense");
-					SetCharacterPerk(sld, "CriticalHit");
 					LAi_SetWarriorType(sld);
 					LAi_warrior_SetStay(sld, true);
 					LAi_warrior_DialogEnable(sld, false);
@@ -460,8 +458,8 @@ void CreatePlantation(aref loc)
 					sType = "mush_" + NationShortName(iNation) + "_" + (rand(2)+1);
 				}
 				chr = GetCharacter(NPC_GenerateCharacter("GenChar_"+i+"_", sType, "man", "mushketer", iRank, iNation, 2, false, "soldier"));
-				FantomMakeCoolFighter(chr, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
-				LAi_SetCharacterUseBullet(chr, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(chr, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+				LAi_SetCharacterUseBullet(chr, MUSKET_ITEM_TYPE, "bullet");
 				chr.id = "GenChar_"+i+"_" + chr.index;
 				chr.City = Colonies[iColony].id;
 				chr.CityType = "soldier";

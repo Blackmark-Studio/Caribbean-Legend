@@ -1,63 +1,59 @@
-Ship_critical		{致命一击! }
-Ship_critical_notif		{'- 致命一击! }
-Ship_sunk			{%1 "%2" 已沉没。 获得 +%3 经验值。 }
-Ship_sunk_other		{%1 "%2" 已沉没。 }
-Ship_got_good		{%1 公担的 %2 已装载到船上}
-Ship_cant_got_good	{没有空间装载 %1}
-
-Fort_destroy		{堡垒 %1 已摧毁。 获得 +%2 经验值。 }
-Fort_destroy_notif	{堡垒加农炮已被压制! }
-Fort_cannon			{堡垒加农炮已摧毁! }
-
-seg_Balls 			{圆形炮弹}
-seg_Grapes 			{葡萄弹}
-seg_Knippels 		{链弹}
-seg_Bombs 			{炸弹}
-seg_Sailcloth 		{帆布}
-seg_Planks 			{木板}
-seg_Slaves 			{奴隶}
-seg_Wheat 			{小麦}
-seg_Ebony 			{乌木}
-seg_Chocolate 		{可可}
-seg_Suga 			{糖}
-seg_Wine 			{葡萄酒}
-seg_ShipSilk 		{船用丝绸}
-seg_Rum 			{朗姆酒}
-seg_Tobacco 		{烟草}
-seg_Coffee 			{咖啡}
-seg_Mahogany 		{桃花心木}
-seg_Cinnamon 		{香草}
-seg_Copra 			{椰干}
-seg_Paprika 		{辣椒粉}
-seg_Fruits 			{水果}
-seg_Ale 			{麦芽酒}
-seg_Ropes 			{绳索}
-seg_Clothes 		{衣物}
-seg_Cotton 			{棉花}
-seg_Sandal 			{铁梨木}
-seg_Leather 		{皮革}
-seg_Oil 			{树脂}
-seg_Food 			{食物}
-seg_Weapon 			{武器}
-seg_Gold 			{黄金}
-seg_Silver 			{白银}
-seg_Powder 			{火药}
-seg_Brick 			{砖块}
-seg_Medicament 		{药品}
-
-seg_Cannon_3		{3磅隼炮}
-seg_Cannon_6		{6磅炮}
-seg_Cannon_8		{8磅炮}
-seg_Cannon_12		{12磅炮}
-seg_Cannon_16		{16磅炮}
-seg_Cannon_18		{18磅炮}
-seg_Cannon_20		{20磅炮}
-seg_Cannon_24		{24磅炮}
-seg_Cannon_32		{32磅炮}
-seg_Cannon_36		{36磅炮}
-seg_Cannon_42		{42磅炮}
-seg_Culverine_8		{半长炮}
-seg_Culverine_18	{长炮}
-seg_Culverine_36	{全长炮}
-
-sea_exp_add			{获得 +%1 经验值}
+Ship_critical {致命一击!}
+Ship_critical_notif {'- 致命一击!}
+Ship_sunk {%1 "%2" 已沉没。 获得 +%3 经验值。}
+Ship_sunk_other {%1 "%2" 已沉没。}
+Ship_got_good {%1 公担的 %2 已装载到船上}
+Ship_cant_got_good {没有空间装载 %1}
+Fort_destroy {堡垒 %1 已摧毁。 获得 +%2 经验值。}
+Fort_destroy_notif {堡垒加农炮已被压制!}
+Fort_cannon {堡垒加农炮已摧毁!}
+seg_Balls {圆形炮弹}
+seg_Grapes {葡萄弹}
+seg_Knippels {链弹}
+seg_Bombs {炸弹}
+seg_Sailcloth {帆布}
+seg_Planks {木板}
+seg_Slaves {奴隶}
+seg_Wheat {小麦}
+seg_Ebony {乌木}
+seg_Chocolate {可可}
+seg_Sugar { }
+seg_Wine {葡萄酒}
+seg_ShipSilk {船用丝绸}
+seg_Rum {朗姆酒}
+seg_Tobacco {烟草}
+seg_Coffee {咖啡}
+seg_Mahogany {桃花心木}
+seg_Cinnamon {香草}
+seg_Copra {椰干}
+seg_Paprika {辣椒粉}
+seg_Fruits {水果}
+seg_Ale {麦芽酒}
+seg_Ropes {绳索}
+seg_Clothes {衣物}
+seg_Cotton {棉花}
+seg_Sandal {铁梨木}
+seg_Leather {皮革}
+seg_Oil {树脂}
+seg_Food {食物}
+seg_Weapon {武器}
+seg_Gold {黄金}
+seg_Silver {白银}
+seg_Powder {火药}
+seg_Brick {砖块}
+seg_Medicament {药品}
+seg_Cannon_3 {3磅隼炮}
+seg_Cannon_6 {6磅炮}
+seg_Cannon_8 {8磅炮}
+seg_Cannon_12 {12磅炮}
+seg_Cannon_16 {16磅炮}
+seg_Cannon_18 {18磅炮}
+seg_Cannon_20 {20磅炮}
+seg_Cannon_24 {24磅炮}
+seg_Cannon_32 {32磅炮}
+seg_Cannon_36 {36磅炮}
+seg_Cannon_42 {42磅炮}
+seg_Culverine_8 {半长炮}
+seg_Culverine_18 {长炮}
+seg_Culverine_36 {全长炮}
+sea_exp_add {获得 +%1 经验值}

@@ -153,16 +153,12 @@ void ProcessDialogEvent()
 		case "amap":
 			Achievment_Set("ach_CL_110");
 			dialog.text = "我不敢相信我的眼睛! 你真的找到了它们? 全部? ";
-			link.l1 = "是的。 这并不容易, 但我在这次搜索中很幸运。 拿着你的地图。 它们太美妙了, 我很遗憾要与它们分开。 ";
+			link.l1 = "是的。这可不容易, 不过老子总算走了好运, 在这桩买卖里得手了。 拿去, 你的地图。 它们真是绝妙, 每一张都远胜过我以前见过的任何一张。";
 			link.l1.go = "amap_1";
 		break;
 		
 		case "amap_1":
-			for(i=1; i<=24; i++)
-			{
-				sTemp = IdentifyAdmiralMapLast();
-				if (sTemp != "") RemoveItems(pchar, sTemp, 1);
-			}
+			RemoveAllAdmiralMap()
 			Log_Info("你已经给出了全套舰队司令地图");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "难以置信! 这太不可思议了! 说实话, 我从未相信这一刻会发生。 ";
@@ -186,157 +182,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amap_4":
-			dialog.text = "使用它, 船长先生。 我希望我的望远镜能很好地为你服务。 ";
-			link.l1 = "毫无疑问! 我期待着把它安装在我的船的甲板上并透过它看。 ";
-			link.l1.go = "amap_5";
-		break;
-		
-		case "amap_5":
-			dialog.text = "你会惊讶的, 我可以向你保证... 再次感谢你拯救了我的地图! ";
-			link.l1 = "也谢谢你, 先生。 我想我们会再见面的。 但现在, 我向你道别。 我将去试用你那出色的设备。 再见! ";
-			link.l1.go = "amap_6";
-			link.l2 = "也谢谢你, 先生。 航海望远镜对水手来说是独特且非常有用的东西。 不过, 它可能不会比你的一套地图更有价值。 我羡慕科尔多瓦先生。 啊! 我希望我的船舱里的船长办公桌上有这样漂亮的地图。 ";
-			link.l2.go = "amapcopy_01";
-		break;
-		
-		case "amap_6":
-			DialogExit();
-			NextDiag.CurrentNode = "Dios";
-			AddCharacterExpToSkill(pchar, "Fortune", 1000);//运气
-			AddCharacterExpToSkill(pchar, "Leadership", 1000); // 魅力
-			AddCharacterExpToSkill(pchar, "Sneak", 300);//隐藏 (因为给了望远镜)
-			ChangeCharacterComplexReputation(pchar, "nobility", 10);//声誉-知名度
-			ChangeCharacterComplexReputation(pchar, "authority", 5);//声誉-权威
-			ChangeCharacterNationReputation(pchar, SPAIN, 20);
-			ChangeOfficersLoyality("good_all", 5);
-			DeleteAttribute(pchar, "questTemp.AdmiralMap");
-		break;
-		
-		case "amapcopy_01":
-			AddCharacterExpToSkill(pchar, "Fortune", 1000);//运气
-			AddCharacterExpToSkill(pchar, "Leadership", 1000); // 魅力
-			AddCharacterExpToSkill(pchar, "Sneak", 300);//隐藏 (因为给了望远镜)
-			ChangeCharacterComplexReputation(pchar, "nobility", 10);//声誉-知名度
-			ChangeCharacterComplexReputation(pchar, "authority", 5);//声誉-权威
-			ChangeCharacterNationReputation(pchar, SPAIN, 20);
-			ChangeOfficersLoyality("good_all", 5);
-			DeleteAttribute(pchar, "questTemp.AdmiralMap");
-			dialog.text = "唉, 先生, 但这些地图是独一无二的。 如果我开始制作副本, 一旦唐璜.德.科尔多瓦发现其他人有相同的地图, 这个地图集的独特性就会丧失。 ";
-			link.l1 = "嗯... 迪奥斯先生, 有没有可能你会破例? ";
-			link.l1.go = "amapcopy_02";
-		break;
-		
-		case "amapcopy_02":
-			dialog.text = "破例? ";
-			link.l1 = "你和我都是诚实的人; 我们有机会让彼此相信这一点。 如果你愿意为我制作一份地图副本, 我发誓没有人会知道这件事。 明白: 你的地图真的很壮观, 对我来说, 作为一名水手, 这个地图集是真正的宝藏。 此外, 我会慷慨地支付你的工作费用。 ";
-			link.l1.go = "amapcopy_03";
-		break;
-		
-		case "amapcopy_03":
-			dialog.text = ""+ PChar.lastname + "先生, 我一刻也不怀疑你会信守诺言。 考虑到你为我所做的一切, 我很难拒绝你的请求。 此外, 你这样一位优秀的水手如此高度评价我的地图, 这对我作为地图绘制者来说已经是一个宝贵的赞美。 ";
-			link.l1 = "相信我, 我一点也没有夸大。 那么你怎么说? ";
-			link.l1.go = "amapcopy_04";
-		break;
-		
-		case "amapcopy_04":
-			dialog.text = "很好, 我同意为你制作这个地图集的副本。 但有一个小问题。 当我珍贵的地图集被盗时, 小偷也拿走了我所有的工具 - 也许是为了确保我再也不能制作更多地图, 或者也把它们当给我的竞争对手。 如果我要制作如此高质量的地图, 我不能使用普通的文具设备。 \n我试图在市场上购买书写用品, 但运气不好 - 没有东西出售。 如果你能给我弄到必要的用品, 我会为你制作这些地图的副本。 ";
-			link.l1 = "没问题, 我会给你带来高质量的书写用品。 那付款呢? ";
-			link.l1.go = "amapcopy_05";
-		break;
-		
-		case "amapcopy_05":
-			dialog.text = "我不想显得吝啬, 先生... 但我不得不要求你为这项工作支付三箱杜布隆。 此外, 我需要一个月来完成工作 - 这样的地图不能在几个小时内完成。 ";
-			link.l1 = "当然, 我同意! 你的地图的价值远远超过你提到的金额。 ";
-			link.l1.go = "amapcopy_06";
-		break;
-		
-		case "amapcopy_06":
-			dialog.text = "那么我会等待你带来所需的用品和约定的付款。 一旦你带来所有东西, 我就开始工作。 ";
-			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
-			{
-				link.l1 = "你不必等很久: 幸运的是, 我碰巧有你需要的一切。 给你。 ";
-				link.l1.go = "amapcopy_07";
-			}
-			link.l2 = "你不必等很久, 先生! ";
-			link.l2.go = "amapcopy_exit";
-		break;
-		
-		case "amapcopy_07":
-			dialog.text = "好消息! 你知道, 对于一个真正的地图绘制者来说, 没有什么比自己的作品受到如此高度评价更令人高兴的了。 我必须承认, 我很高兴一位真正的专业水手将使用我的作品。 现在我需要一个月来完成它们。 之后, 我会在我的地方等你! ";
-			link.l1 = "一个月后我会回来, 迪奥斯先生。 再次非常感谢你! ";
-			link.l1.go = "amapcopy_08";
-		break;
-		
-		case "amapcopy_08":
-			TakeNItems(pchar,"chest", -3);
-			TakeNItems(pchar,"mineral21", -1);
-			Log_info("你交出了书写用品和三箱杜布隆。 ");
-			PlaySound("interface\important_item.wav");
-			SetTimerFunction("Amapcopy_comlete", 0, 0, 30);
-			pchar.questTemp.AdmiralMapCopy = "wait";
-			NextDiag.CurrentNode = "amapcopy_waitmonth";
-			DialogExit();
-		break;
-		
-		case "amapcopy_exit":
-			DialogExit();
-			NextDiag.CurrentNode = "amapcopy_waitchest";
-		break;
-		
-		case "amapcopy_waitchest":
-			dialog.text = "问候你, " + pchar.lastname + "先生! 你带来了我要的东西吗? ";
-			link.l1 = "还没有, 迪奥斯先生。 但我一定会带来所有东西! ";
-			link.l1.go = "amapcopy_exit";
-			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
-			{
-				link.l2 = "是的, 迪奥斯先生。 这是你的新书写用品和约定的付款。 ";
-				link.l2.go = "amapcopy_07";
-			}
-		break;
-		
-		case "amapcopy_waitmonth":
-			if(CheckAttribute(pchar,"questTemp.AdmiralMapCopy") && pchar.questTemp.AdmiralMapCopy == "complete")
-			{
-				dialog.text = "你来了, 我亲爱的朋友! 我希望你不介意我这样称呼你? ";
-				link.l1 = "一点也不, 我的朋友。 我真的很高兴我们成为了朋友。 ";
-				link.l1.go = "amapcopy_09";
-			}
-			else
-			{
-				dialog.text = "欢迎, 先生! 请原谅, 但地图还没有准备好! ";
-				link.l1 = "是的, 我记得你说过你需要一个月。 我只是顺道来看看你。 ";
-				link.l1.go = "amapcopy_waitmonth_01";
-			}
-		break;
-		
-		case "amapcopy_waitmonth_01":
-			NextDiag.CurrentNode = "amapcopy_waitmonth";
-			DialogExit();
-		break;
-		
-		case "amapcopy_09":
-			dialog.text = "我有好消息要告诉你! 我终于完成了舰队司令地图集的副本。 我将保留原件, 因为我仍然打算参加新格林纳达副王的招聘。 但副本是你的! 我希望它们能很好地为你服务。 ";
-			link.l1 = "非常感谢你, 先生! 你不知道这样的地图集对我这样的人有多宝贵! 我以我的荣誉发誓: 没有人会知道你为我制作了这个副本! ";
-			link.l1.go = "amapcopy_10";
-		break;
-		
-		case "amapcopy_10":
-			GiveAdmiralAtlasToCharacter(pchar);
-			Log_Info("你收到了一套舰队司令地图。 ");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "我很高兴你满意。 此外, 既然事情已经这样了, 我还有一个提议给你。 ";
-			link.l1 = "是什么? 我在非常仔细地听。 ";
+			dialog.text = "另外, 既然事情发展到这一步, 我还有一个小小的提议要给你。";
+			link.l1 = "什么提议? 我洗耳恭听。";
 			link.l1.go = "best_map";
 		break;
 		
 		case "best_map":
-			dialog.text = "当我为你绘制这些地图时, 我想到, 虽然它们对探险家很好, 但并没有提供船长需要的一切。 你自己看: 上面所有的海湾。 海角和泻湖都描绘得非常准确, 但你不能用它们来绘制岛屿之间的航线。 ";
-			link.l1 = "这是真的, 你不能用它们来确定航线。 但我绝不敢抱怨, 迪奥斯先生! 你已经按照我们的约定为我制作了地图, 一点也不少。 ";
+			AddCharacterExpToSkill(pchar, "Fortune", 1000);//运气
+			AddCharacterExpToSkill(pchar, "Leadership", 1000); // 魅力
+			AddCharacterExpToSkill(pchar, "Sneak", 300);//隐藏 (因为给了望远镜)
+			ChangeCharacterComplexReputation(pchar, "nobility", 10);//声誉-知名度
+			ChangeCharacterComplexReputation(pchar, "authority", 5);//声誉-权威
+			ChangeCharacterNationReputation(pchar, SPAIN, 20);
+			ChangeOfficersLoyality("good_all", 5);
+			DeleteAttribute(pchar, "questTemp.AdmiralMap");
+			dialog.text = "我突然想到, 这些地图对探险家来说确实不错, 可对海船船长却远远不够。 你想啊: 所有的海湾、海角和泻湖都画得很精确, 可是你却没法用它们来规划群岛之间的航路。";
+			link.l1 = "没错, 用它们根本定不出航线。";
 			link.l1.go = "best_map_01";
 		break;
 		
 		case "best_map_01":
-			dialog.text = "但我也可以为你绘制一张群岛地图! 不是你可以从荷兰西印度公司购买的那种, 而是独特的。 优秀的地图。 ";
+			dialog.text = "我可以为你绘制一张群岛的地图! 可不是那种能在荷兰西印度公司买到的, 而是一张独一无二的精良地图。";
 			link.l1 = "谢谢你, 迪奥斯先生, 但我不需要这样的地图。 不过, 还是非常感谢你的提议! ";
 			link.l1.go = "best_map_02";
 			link.l2 = "你在开玩笑吗? ! 迪奥斯先生, 我怎么可能拒绝? 只要告诉我你需要什么 - 我不会吝啬任何金钱或工具! ";
@@ -356,25 +222,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_04":
-			dialog.text = "你已经给我带来了工具, 谢谢你。 我需要一张常规的群岛地图, 我还要求一个罗盘和一个工作的天文钟: 地图必须准确, 否则只会对你造成阻碍。 至于付款 - 我要求一箱杜布隆。 ";
-			link.l1 = "一张常规的群岛地图, 一个罗盘, 一个工作的天文钟, 和一箱杜布隆... 你为什么需要所有这些? 我以为你会像绘制岛屿地图一样制作副本... ";
-			link.l1.go = "best_map_05";
-		break;
-		
-		case "best_map_05":
-			dialog.text = "是的, 就像其他地图一样, 我已经制作了一份普通群岛地图的副本。 客户是同一个人 - 新格拉纳达副王, 唐璜.德.科尔多瓦先生。 他需要这张地图给一艘在新旧世界之间穿越大西洋的巨大中队的船长。 但这张地图已经在其主人手中。 ";
-			link.l1 = "现在我明白了。 你需要重新绘制这张地图? ";
-			link.l1.go = "best_map_06";
-		break;
-		
-		case "best_map_06":
-			dialog.text = "正是如此。 这就是为什么我需要一张常规地图来定位自己, 以及导航仪器来进行更精确的测量。 我需要大约一周的时间来创建 - 毕竟, 这不是我第一次绘制这样的地图。 哦, 条件和以前一样: 这必须在我们之间保密。 如果副王发现我不只是为他绘制这样的地图, 他可能会生气。 ";
+			dialog.text = "工具我已经有了, 多谢。我要一张群岛的普通地图, 还得要一只罗盘和一只校准过的天文钟: 地图必须精准, 否则就是添乱。至于报酬——一箱达布隆金币。";
 			if(CheckAMapItems())
 			{
-				link.l1 = "我记得, 迪奥斯先生。 别担心, 没有人会知道这些地图。 我已经有了你需要的一切。 给你。 ";
+				link.l1 = "你说的这些我全都带在身上了。来, 拿去吧。";
 				link.l1.go = "best_map_07";
 			}
-			link.l2 = "我记得, 迪奥斯先生。 别担心, 没有人会知道这些地图。 我会带来你需要的一切, 等着吧。 ";
+			link.l2 = "一张群岛的普通地图、罗盘、校准过的天文钟, 还有一箱达布隆金币。我记住了! 我会尽快送来, 你等着! ";
 			link.l2.go = "best_map_07e";
 		break;
 		
@@ -384,12 +238,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_waititems":
-			dialog.text = "问候你, 我亲爱的朋友! 你带来了我要的东西吗? ";
-			link.l1 = "还没有, 迪奥斯先生。 但我一定会带来! ";
+			dialog.text = "你好! 我亲爱的朋友! 你带来了一张群岛的普通地图、罗盘、 校准过的天文钟和一箱达布隆金币了吗? ";
+			link.l1 = "还没有, 迪奥斯先生。但我一定会带来的! ";
 			link.l1.go = "best_map_07e";
 			if(CheckAMapItems())
 			{
-				link.l2 = "是的, 迪奥斯先生。 这是你要求的一切: 一张常规的群岛地图, 一个罗盘, 一个工作的天文钟, 和约定的付款。 ";
+				link.l2 = "是的, 迪奥斯先生。都在这儿, 拿去吧。";
 				link.l2.go = "best_map_07";
 			}
 		break;
@@ -415,14 +269,14 @@ void ProcessDialogEvent()
 		case "best_map_wait":
 			if(CheckAttribute(pchar,"questTemp.AdmiralAtlas") && pchar.questTemp.AdmiralAtlas == "complete")
 			{
-				dialog.text = "啊, 你来了, " + pchar.lastname + "先生! 我很高兴地告诉你, 我已经完成了群岛地图! 我可以向你保证, 它和我为唐璜.德.科尔多瓦先生绘制的第一幅画一样好! ";
-				link.l1 = "我的朋友... 这张地图太惊人了! 这简直是一件杰作! 我该如何感谢你为我所做的一切? ";
+				dialog.text = "哦, 你来了, "+pchar.lastname+"先生? 我得告诉你一个好消息: 我已经完成了群岛的地图! 而且我敢保证, 它比你之前交给我的那张好得多。";
+				link.l1 = "我的朋友……这张地图真是令人惊叹! 这简直, 不怕说出口, 就是一件杰作! 我该如何感谢你为我所做的一切? ";
 				link.l1.go = "best_map_09";
 			}
 			else
 			{
-				dialog.text = "问候你, 先生! 我必须道歉, 但地图还没有准备好。 ";
-				link.l1 = "是的, 我记得你需要一周。 我只是来看看你。 ";
+				dialog.text = "你好, 先生! 请原谅, 地图还没准备好。";
+				link.l1 = "是的, 我记得你说过需要一个星期。 我只是来看看你。";
 				link.l1.go = "best_map_wait_01";
 			}
 		break;
@@ -433,10 +287,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_09":
-			dialog.text = "哦, 别这样, 我的朋友。 为一位真正欣赏它们的高贵船长创建这样的地图是我的荣幸。 啊, 是的, 你可以拿回你的常规地图副本。 祝你在公海上好运! ";
-			link.l1 = "非常感谢你! 你说得对, 这些地图对我来说是无价的。 再见, 迪奥斯先生! ";
+			dialog.text = "得了吧, 我的朋友。 能为一位懂得欣赏的高贵船长绘制这样的地图, 对我来说是一种快乐。 啊, 对了——这是你的那张普通地图, 还给你。 祝你在大海上好运! ";
+			link.l1 = "万分感谢! 你说得对, 这张地图对我来说真是无价之宝。 再见, 迪奥斯先生! ";
 			link.l1.go = "best_map_10";
 		break;
+
 		
 		case "best_map_10":
 			TakeNItems(pchar,"Map_Best", 1);

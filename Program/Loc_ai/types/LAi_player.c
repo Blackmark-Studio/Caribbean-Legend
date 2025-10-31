@@ -61,9 +61,9 @@ void LAi_type_player_CharacterUpdate(aref chr, float dltTime)
 				}
 				else
 				{
-			DoQuestFunctionDelay("LSC_underwaterDeathTimer", 0.1);
-		}
-		}
+                    DoQuestFunctionDelay("LSC_underwaterDeathTimer", 0.1);
+                }
+            }
 		}
 		else Log_SetEternalString("" + sti(chr.showTimer));
 	}
@@ -216,7 +216,7 @@ void LAi_type_player_StartDialog(aref chr, aref by)
 void LAi_type_player_EndDialog(aref chr, aref by)
 {
 	LAi_tmpl_stay_InitTemplate(chr);
-	LAi_CharacterRestoreAy(chr);
+//	LAi_CharacterRestoreAy(chr);	// evganat - отключил, это не сочетается с камерой
 	LAi_tmpl_player_InitTemplate(chr);
 }
 

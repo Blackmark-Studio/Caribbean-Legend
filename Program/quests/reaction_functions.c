@@ -176,39 +176,73 @@ void Mangarosa_Start(string qName) //нашли первую травку
 
 void MangarosaEffect(string sEff)
 {
-	if (CheckAttribute(pchar, "questTemp.Mangarosa.Potion"))
+	Log_Info(StringFromKey("reaction_functions_3"));
+	pchar.questTemp.Mangarosa.Potion.(sEff) = true;
+	string questAttr = "Mangarosa_del_" + sEff;
+	ref item = ItemsFromID("mangarosa" + sEff);
+	int days = GetAttributeIntOrDefault(item, "time", 50);
+	pchar.quest.(questAttr).win_condition.l1 = "Timer";
+	pchar.quest.(questAttr).win_condition.l1.date.hour  = rand(24); // 021012
+	pchar.quest.(questAttr).win_condition.l1.date.day   = GetAddingDataDay(0, 0, days);
+	pchar.quest.(questAttr).win_condition.l1.date.month = GetAddingDataMonth(0, 0, days);
+	pchar.quest.(questAttr).win_condition.l1.date.year  = GetAddingDataYear(0, 0, days);
+	
+	switch (sEff)
 	{
-		DeleteAttribute(pchar, "questTemp.Mangarosa.Potion");
-		Log_Info(StringFromKey("reaction_functions_1"));
-		Log_Info(StringFromKey("reaction_functions_2"));
-		Pchar.chr_ai.hp = stf(Pchar.chr_ai.hp)-50;
-		LAi_CheckKillCharacter(pchar);
-		AddCharacterHealth(pchar, -10); //сносим здоровье
-		pchar.chr_ai.poison = 500; // травим
-		if (stf(pchar.Health.HP) <= 1) LAi_KillCharacter(pchar);
+		case "Total":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			SetChrModifier(pchar, M_SQUADRON_POWER, 0.15, "MangarosaTotal");
+		}
+		break;
+		case "Fast":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			SetChrModifier(pchar, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED, 0.15, "MangarosaFast");
+		}
+		break;
+		case "Power":
+		{
+			pchar.quest.(questAttr).function = "Mangarosa_DeleteEffect" + sEff;
+			// сделано по-старому на if-else
+		}
+		break;
 	}
-	else
-	{
-		Log_Info(StringFromKey("reaction_functions_3"));
-		pchar.questTemp.Mangarosa.Potion.(sEff) = true;
-		AddCharacterHealth(pchar, 4);
-		pchar.quest.Mangarosa_del.win_condition.l1 = "Timer";
-		pchar.quest.Mangarosa_del.win_condition.l1.date.hour  = rand(24); // 021012
-		pchar.quest.Mangarosa_del.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-		pchar.quest.Mangarosa_del.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-		pchar.quest.Mangarosa_del.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-		pchar.quest.Mangarosa_del.function = "Mangarosa_DeleteEffect";
-	}
+
 	RemoveItems(pchar, "mangarosa"+sEff, 1);
-	//PlaySound("Ambient\Tavern\glotok_001.wav");
 	PlaySound("Ambient\Horror\Fear_breath_01.wav");
+}
+
+void Mangarosa_DeleteEffectPower(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaPower");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Power");
+	Log_Info("Mangarosa_DeleteEffectPower");
+}
+
+void Mangarosa_DeleteEffectFast(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaFast");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Fast");
+	Log_Info("Mangarosa_DeleteEffectFast");
+}
+
+void Mangarosa_DeleteEffectTotal(string qName)
+{
+	RemoveChrModifier(pchar, "MangarosaTotal");
+	Mangarosa_DeleteEffect(qName);
+	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion.Total");
+	Log_Info("Mangarosa_DeleteEffectTotal");
+	UpdatePlayerSquadronPower();
 }
 
 void Mangarosa_DeleteEffect(string qName) //
 {
 	PlaySound("interface\notebook.wav");
 	Log_Info(StringFromKey("reaction_functions_4"));
-	DeleteAttribute(pchar, "questTemp.Mangarosa.Potion");
+	CT_UpdateCashTables(pchar);
 }
 
 void VodkaEffect()
@@ -395,6 +429,8 @@ void StartInstantDialogNoType(string id, string node, string fileName)
 	sld.dialog.currentnode = node;
 	pchar.InstantDialog = sld.id;
 	DoQuestFunctionDelay("InstantDialogNoType", 0);
+	if (pchar.chr_ai.type == LAI_TYPE_ACTOR) LAi_ActorWaitDialog(pchar, sld);
+	EndBattleLandInterface();
 }
 
 void InstantDialogNoType(string qName)
@@ -405,23 +441,60 @@ void InstantDialogNoType(string qName)
 	sld.chr_ai.tmpl.state = "wait";
 	DeleteAttribute(sld, "chr_ai.tmpl.poklon");
 	LAi_tmpl_dialog_StartDialog(sld, pchar, -1.0);
+	if (!questMovieIsLockPlayerCtrl) StartBattleLandInterface();
 }
 
 void StartInstantDialog(string id, string node, string fileName)
 {
 	DialogExit();
-	sld = CharacterFromId(id);
+	ref sld = CharacterFromId(id);
 	sld.Dialog.Filename = fileName;
 	sld.dialog.currentnode = node;
 	pchar.InstantDialog = sld.id;
 	DoQuestFunctionDelay("InstantDialog", 0);
+	if (pchar.chr_ai.type == LAI_TYPE_ACTOR) LAi_ActorWaitDialog(pchar, sld);
+	EndBattleLandInterface();
 }
 
 void InstantDialog(string qName)
 {
-	sld = CharacterFromID(pchar.InstantDialog);
+	ref sld = CharacterFromID(pchar.InstantDialog);
 	LAi_SetStayTypeNoGroup(sld);
 	LAi_tmpl_SetDialog(sld, pchar, -1.0);
+	if (!questMovieIsLockPlayerCtrl) StartBattleLandInterface();
+}
+
+void StartInstantDialogTurnToNPC(string id, string node, string fileName, string by)
+{
+	DialogExit();
+	ref sld = CharacterFromId(id);
+	sld.Dialog.Filename = fileName;
+	sld.dialog.currentnode = node;
+	pchar.InstantDialog1 = sld.id;
+	ref chr = CharacterFromId(by);
+	pchar.InstantDialog2 = chr.id;
+	DoQuestFunctionDelay("InstantDialogTurnToNPC", 0);
+	if (pchar.chr_ai.type == LAI_TYPE_ACTOR) LAi_ActorWaitDialog(pchar, sld);
+	EndBattleLandInterface();
+}
+
+void InstantDialogTurnToNPC(string qName)
+{
+	ref sld = CharacterFromID(pchar.InstantDialog1);
+	ref chr = CharacterFromId(pchar.InstantDialog2);
+	LAi_SetStayTypeNoGroup(sld);
+	LAi_tmpl_SetDialog(sld, pchar, -1.0);
+	CharacterTurnByChr(sld, chr);
+	CharacterTurnByChr(chr, sld);
+	if (!questMovieIsLockPlayerCtrl) StartBattleLandInterface();
+}
+
+void NPCsLookEachOther(string id, string by)
+{
+	ref sld = CharacterFromId(id);
+	ref chr = CharacterFromId(by);
+	CharacterTurnByChr(sld, chr);
+	CharacterTurnByChr(chr, sld);
 }
 
 void DeleteAllOfficersFromLocation()
@@ -450,7 +523,7 @@ void ChangeInterface(string qName)
 	ChangeShowIntarface();
 }
 
-void Return_MaryOfficer()
+void ReturnOfficer_Mary()
 {
 	sld = characterFromId("Mary");
 	sld.Dialog.Filename = "Quest\LSC\Mary.c";
@@ -461,7 +534,7 @@ void Return_MaryOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_HelenaOfficer()
+void ReturnOfficer_Helena()
 {
 	sld = characterFromId("Helena");
 	sld.Dialog.Filename = "Quest\Saga\Helena.c";
@@ -472,7 +545,7 @@ void Return_HelenaOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_TichingituOfficer()
+void ReturnOfficer_Tichingitu()
 {
 	sld = characterFromId("Tichingitu");
 	sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
@@ -483,7 +556,7 @@ void Return_TichingituOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_TonzagOfficer()
+void ReturnOfficer_Tonzag()
 {
 	sld = CharacterFromID("Tonzag");
 	sld.Dialog.Filename = "Quest\HollandGambit\Tonzag.c";
@@ -494,7 +567,7 @@ void Return_TonzagOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_KnippelOfficer()
+void ReturnOfficer_Knippel()
 {
 	sld = characterFromId("Knippel");
 	sld.Dialog.Filename = "Quest\HollandGambit\Knippel.c";
@@ -505,7 +578,7 @@ void Return_KnippelOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_LongwayOfficer()
+void ReturnOfficer_Longway()
 {
 	sld = characterFromId("Longway");
 	sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
@@ -516,7 +589,7 @@ void Return_LongwayOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_FolkeOfficer()
+void ReturnOfficer_Folke()
 {
 	sld = characterFromId("Folke");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -527,7 +600,7 @@ void Return_FolkeOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_DurandOfficer()
+void ReturnOfficer_Duran()
 {
 	sld = CharacterFromID("Duran");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -538,7 +611,7 @@ void Return_DurandOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_AvendelOfficer()
+void ReturnOfficer_Avendel()
 {
 	sld = CharacterFromID("Avendel");
 	sld.Dialog.Filename = "Enc_Officer_dialog.c";
@@ -549,7 +622,7 @@ void Return_AvendelOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_BakerOfficer()
+void ReturnOfficer_Baker()
 {
 	sld = CharacterFromID("Baker");
 	sld.Dialog.Filename = "Quest\Saga\Baker.c";
@@ -560,7 +633,7 @@ void Return_BakerOfficer()
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 }
 
-void Return_IronsOfficer()
+void ReturnOfficer_Irons()
 {
 	sld = CharacterFromID("Irons");
 	sld.dialog.filename = "Quest\BlackMark.c";
@@ -580,7 +653,7 @@ void Hat6_deal(string qName)
 			ref loc = &locations[FindLocation(pchar.location)];
 			if(CheckAttribute(loc, "type") && loc.type == "town")
 			{
-				int iGood = GOOD_COFFEE + rand(10);
+				int iGood = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, FLAG_GOODS_NONE);
 				ref rColony = GetColonyByIndex(FindColony(GetCityNameByIsland(GiveArealByLocation(loc))));
 				int iPrice = sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], iGood, PRICE_TYPE_BUY, pchar, 1));
 				
@@ -644,6 +717,12 @@ void OpenWardrobe_Sound(string qName)
 	PlaySound("Ambient\Teno_inside\door_1.wav");
 }
 
+// Открытие решетки в Мальтийском ордене
+void OpenMaltaDoor_Sound(string qName)
+{
+	PlaySound("Ambient\JAIL\jail_door2.wav");
+}
+
 void OpenWardrobe_PortRoyal()
 {
 	DeleteAttribute(&locations[FindLocation("PortRoyal_WineCellar")], "models.always.WineCellar_Room");
@@ -681,30 +760,41 @@ void OpenWardrobe_PortRoyal_2(string qName)
 
 void OpenWardrobe_FortFrance()
 {
-	DeleteAttribute(&locations[FindLocation("FortFrance_WineCellar")], "models.always.WineCellar_Room");
-	sld = &Locations[FindLocation("FortFrance_WineCellar")];
-	sld.models.always.WineCellar_Room = "WineCellar_RoomOpened";
-	sld.models.day.charactersPatch = "WineCellar_RoomOpened_patch";
-	sld.models.night.charactersPatch = "WineCellar_RoomOpened_patch";
-	
+	sld = &Locations[FindLocation("FortFrance_Dungeon")];
+	sld.models.always.Maltains_Door = "Malta_door_opened";
+	//Day
+	sld.models.day.charactersPatch = "Malta_patch_opened";
+	//Night
+	sld.models.night.charactersPatch = "Malta_patch_opened";
 	LAi_SetActorType(pchar);
-	DoQuestFunctionDelay("OpenWardrobe_Sound", 0.85);
+	LAi_ActorAnimation(pchar, "Barman_idle", "", 2.0);
+	DoQuestFunctionDelay("OpenMaltaDoor_Sound", 1.8);
 	DoQuestFunctionDelay("OpenWardrobe_FortFrance_2", 2.0);
 }
 
 void OpenWardrobe_FortFrance_2(string qName)
 {
 	LAi_SetPlayerType(pchar);
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.gold_dublon = 100;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.gold = 5000;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry8 = 12;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry52 = 5;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry41 = 3;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry40 = 4;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry45 = 5;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry43 = 2;
-	pchar.GenQuestBox.FortFrance_WineCellar.box3.items.jewelry37 = 2;
-	DoFunctionReloadToLocation("FortFrance_WineCellar", "item", "button01", "");
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.purse2 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.gold = 2000;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.blade_03 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.pistol3 = 1;
+	if (CheckAttribute(pchar, "questTemp.AdmiralMap"))
+	{
+		pchar.GenQuestBox.FortFrance_Dungeon.box4.items.A_map_martiniqua = 1;
+	}
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.jewelry45 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.amulet_9 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.amulet_10 = 1;
+	pchar.GenQuestBox.FortFrance_Dungeon.box4.items.PR_Letter = 1;
+	
+	PChar.quest.Find_PR_Letter.win_condition.l1 = "item";
+	PChar.quest.Find_PR_Letter.win_condition.l1.item = "PR_Letter";
+	PChar.quest.Find_PR_Letter.function = "Find_PR_Letter";
+	
+	chrDisableReloadToLocation = true;
+	
+	DoFunctionReloadToLocation("FortFrance_Dungeon", "item", "button01", "");
 }
 
 void OpenWardrobe_Villemstad()
@@ -748,6 +838,8 @@ void PR_Letter_Reaction()
 	ref rItem = ItemsFromID("PR_Letter");
 	
 	if(HasSubStr(locId, "WineCellar")) locId = FindStringBeforeChar(locId, "WineCellar") + "town";
+	if(locId == "Martinique_jungle_04") locId = "LeFransua_town";
+	if(locId == "FortFrance_Dungeon") locId = "FortFrance_town";
 	
 	if(!CheckAttribute(rItem, locId + ".find")) rItem.(locId).find = 0;
 	rItem.(locId).find = sti(rItem.(locId).find) + 1;
@@ -769,6 +861,63 @@ void PR_Letter_Reaction()
 		{
 			Achievment_Set("ach_CL_145");
 			pchar.questTemp.MysteryPortRoyal_Helena = true;
+		}
+	}
+	
+	if(locId == "FortFrance_town")
+	{
+		if(sti(rItem.(locId).find) == 4)
+		{
+			QuestPointerToLoc("FortFrance_town", "item", "key1");
+			rItem = ItemsFromID("key_candlestick_FortFrance");
+			rItem.shown = true;
+			rItem.startLocation = "FortFrance_town";
+			rItem.startLocator = "key1";
+			Item_OnLoadLocation("FortFrance_town");
+		}
+		else if (sti(rItem.(locId).find) == 5)
+		{
+			Achievment_Set("ach_CL_168");
+		}
+	}
+	
+	if(locId == "LeFransua_town")
+	{
+		if(sti(rItem.(locId).find) == 3)
+		{
+			QuestPointerToLoc("LeFransua_town", "item", "key1");
+			rItem = ItemsFromID("key_candlestick_LeFransua");
+			rItem.shown = true;
+			rItem.startLocation = "LeFransua_town";
+			rItem.startLocator = "key1";
+			Item_OnLoadLocation("LeFransua_town");
+			
+			rItem = &Locations[FindLocation("Martinique_jungle_04")];
+			rItem.box1 = Items_MakeTime(GetTime(), GetDataDay(), GetDataMonth(), GetDataYear());
+			rItem.box1.QuestClosed = true;
+			rItem.box1.Treasure = true; // Признак сокровища в сундуке
+			rItem.box1.LeFransua_LetterTreasure = true;
+			rItem.box1.items.gold_dublon = 12;
+			rItem.box1.items.potionrum = 1;
+			rItem.box1.items.potionwine = 1;
+			rItem.box1.items.berserker_potion = 1;
+			rItem.box1.items.Mineral35 = 1;
+			rItem.box1.items.obereg_10 = 1;
+			rItem.box1.items.obereg_4 = 1;
+			rItem.box1.items.PR_Letter = 1;
+			
+			PChar.quest.LeFransua_OpenLetterTreasureBox.win_condition.l1 = "item";
+			PChar.quest.LeFransua_OpenLetterTreasureBox.win_condition.l1.item = "key_candlestick_LeFransua";
+			PChar.quest.LeFransua_OpenLetterTreasureBox.function = "LeFransua_OpenLetterTreasureBox";
+		}
+		else if (sti(rItem.(locId).find) == 4)
+		{
+			TakeItemFromCharacter(pchar, "key_candlestick_LeFransua");
+			
+			rItem = &Locations[FindLocation("Martinique_jungle_04")];
+			DeleteAttribute(rItem, "box1.LeFransua_LetterTreasure");
+			DeleteAttribute(rItem,"box1.Treasure");
+			Achievment_Set("ach_CL_167");
 		}
 	}
 	
@@ -822,12 +971,20 @@ void Find_PR_Letter(string qName)
 	chrDisableReloadToLocation = false;
 }
 
+void LeFransua_OpenLetterTreasureBox(string qName)
+{
+	DeleteAttribute(&Locations[FindLocation("Martinique_jungle_04")], "box1.QuestClosed");
+	PChar.quest.Find_PR_Letter.win_condition.l1 = "item";
+	PChar.quest.Find_PR_Letter.win_condition.l1.item = "PR_Letter";
+	PChar.quest.Find_PR_Letter.function = "Find_PR_Letter";
+}
+
 void AutoSaveDelay(string qName)
 {
 	AutoSave();
 }
 
-void Notification_Reputation(bool check, int number)
+void Notification_Reputation(bool check, int number, string quality)
 {
 	if (check == true)
 	{
@@ -835,7 +992,8 @@ void Notification_Reputation(bool check, int number)
 	}
 	else
 	{
-		notification(GetConvertStr("Notification_ReputationCheckFailed", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
+		if (quality == "high") notification(GetConvertStr("Notification_ReputationCheckFailed_High", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
+		else notification(GetConvertStr("Notification_ReputationCheckFailed", "Notification.txt") + " ("+XI_ConvertString(GetReputationName(number))+")", "None");
 	}
 }
 
@@ -873,4 +1031,82 @@ void Notification_Level(bool check, int number)
 	{
 		notification(GetConvertStr("Notification_LevelCheckFailed", "Notification.txt") + " ("+number+") ", "None");
 	}
+}
+
+void Notification_Approve(bool check, string icon)
+{
+	if (check == true)
+	{
+		notification(GetConvertStr(icon, "CharactersStaticNames.txt") + " " + GetConvertStr("Notification_ApproveCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr(icon, "CharactersStaticNames.txt") + " " + GetConvertStr("Notification_ApproveCheckFailed", "Notification.txt"), icon);
+	}
+}
+
+void Notification_ReputationNation(bool check, int number, string nation)
+{
+	string icon;
+	if (nation == ENGLAND) icon = "enghunter";
+	if (nation == FRANCE) icon = "frahunter";
+	if (nation == SPAIN) icon = "spahunter";
+	if (nation == HOLLAND) icon = "holhunter";
+	if (nation == PIRATE) icon = "pirhunter";
+	if (check == true)
+	{
+		notification(GetConvertStr("Notification_ReputationNationCheckPassed", "Notification.txt"), icon);
+	}
+	else
+	{
+		notification(GetConvertStr("Notification_ReputationNationCheckFailed", "Notification.txt") + " ("+GetNationReputationName(nation, number)+")", icon);
+	}
+}
+
+void Notification_Money(bool check, int number, string money)
+{
+	string icon;
+	if (check == true)
+	{
+		if (money == "peso") icon = "Money";
+		if (money == "dublon") icon = "Dubloon";
+		notification(GetConvertStr("Notification_MoneyCheckPassed", "Notification.txt") + " ("+number+") ", icon);
+	}
+	else
+	{
+		if (money == "peso")
+		{
+			icon = "Money";
+			notification(GetConvertStr("Notification_MoneyCheckFailed_Peso", "Notification.txt") + " ("+number+") ", icon);
+		}
+		if (money == "dublon")
+		{
+			icon = "Dubloon";
+			notification(GetConvertStr("Notification_MoneyCheckFailed_Dublon", "Notification.txt") + " ("+number+") ", icon);
+		}
+	}
+}
+
+#event_handler("Animation_hit_stab_1", "Blood_InBody");
+void Blood_InBody()
+{
+	aref chr = GetEventData();
+    float x, y, z;
+	GetCharacterPos(chr, &x, &y, &z);
+    CreateParticleSystem("blood", x, y + 1.0, z, 0.0, 1.0, 0.0, 0);
+    SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
+}
+
+#event_handler("Animation_hit_stab_2", "Blood_InNeck");
+void Blood_InNeck()
+{
+	aref chr = GetEventData();
+    float x, y, z, ay;
+    GetCharacterAy(chr, &ay);
+	GetCharacterPos(chr, &x, &y, &z);
+    float off_x = -0.1;
+    float off_z = -0.3;
+    RotateAroundY(&off_x, &off_z, cos(ay), sin(ay));
+    CreateParticleSystem("blood_fire2", x - off_x, y + 1.42, z - off_z, -Pid2*0.33, ay-Pid2, 0.0, 0);
+    SendMessage(loadedLocation, "lsfff", MSG_LOCATION_EX_MSG, "AddBlood", x, y, z);
 }

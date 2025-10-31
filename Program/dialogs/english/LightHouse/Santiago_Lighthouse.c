@@ -4,18 +4,17 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What do you want?", "What would you like to know?"), "What is it you need, " + GetAddress_Form(NPChar) + "?", "That's the third time you try to ask me...", "I've had enough of you, get lost!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Sorry, I've changed my mind.", "It's nothing, apologies."), "I forgot, my apologies...",
-                      "Third time's the charm, ey? Excuse me...", "Sorry, sorry! I'll see myself out then...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What do you want?","What would you like to know?"),"What is it you need, "+GetAddress_Form(NPChar)+"?","That's the third time you've tried to ask me...","I've had enough of you, get lost!","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("Sorry, I've changed my mind.","It's nothing, my apologies."),"I forgot, my apologies...","Third time's the charm, eh? Excuse me...","Sorry, sorry! I'll see myself out then...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "mayak")
 			{
-				link.l1 = "Greetings. The inquisitor of Santiago, Dadre Vincento, has mentioned you in his letter. He said you might help me.";
+				link.l1 = "Greetings. The inquisitor of Santiago, Padre Vincento, has mentioned you in his letter. He said you might help me.";
                 link.l1.go = "guardoftruth";
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "mayak_next")
 			{
-				link.l1 = "Any news from Padre Vincento, "+npchar.name+"?";
+				link.l1 = "Any news from Padre Vincento? "+npchar.name+"?";
                 link.l1.go = "guardoftruth_5";
 			}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "utensil" && CheckCharacterItem(pchar, "jewelry33") && CheckCharacterItem(pchar, "jewelry34") && CheckCharacterItem(pchar, "jewelry35"))
@@ -31,28 +30,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth":
-			dialog.text = "Sure, Senor. You must be a man of high renown if Padre Vincento himself does business with you.";
-			link.l1 = "Splendid. You are our runner then. Now listen, this man is of great interest for Padre Vincento. He is under your responsibility now, you have to transfer him to Santiago or find someone who will.";
+			dialog.text = "Sure, Señor. You must be a man of high renown if Padre Vincento himself does business with you.";
+			link.l1 = "Splendid. You are our runner then. Now listen, this man is of great interest to Padre Vincento. He is under your responsibility now, you have to transfer him to Santiago or find someone who will.";
 			link.l1.go = "guardoftruth_1";
 		break;
 		
 		case "guardoftruth_1":
 			dialog.text = "...";
-			link.l1 = "You are responsible for the prisoner on behalf of the Inquisitor. I wouldn't advise you to remove his shackles, Gaius Marchais is a strong man. Give this letter to padre Vincento and tell him that I await an answer from him in two days time. This should be enough, I hope.";
+			link.l1 = "You are responsible for the prisoner on behalf of the Inquisitor. I wouldn't advise you to remove his shackles, Gaius Marchais is a strong man. Give this letter to Padre Vincento and tell him that I await an answer from him in two days' time. This should be enough, I hope.";
 			link.l1.go = "guardoftruth_2";
 		break;
 		
 		case "guardoftruth_2":
 			Log_Info("You part with the letter");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Understood, Senor. I'll do the best I can. It's not the first time I'm helping the holy father.";
-			link.l1 = "That's not all. The captain of the carraca, San Gregorio, Carlos Guevarra must have been here. He brought vanilla for me. Has he given you my letter?";
+			dialog.text = "Understood, Señor. I'll do the best I can. It's not the first time I'm helping the holy father.";
+			link.l1 = "That's not all. The captain of the carraca, San Gregorio, Carlos Guevara must have been here. He brought vanilla for me. Has he given you my letter?";
 			link.l1.go = "guardoftruth_3";
 		break;
 		
 		case "guardoftruth_3":
-			dialog.text = "Yes, your cargo is fine and waiting for you, Senor.";
-			link.l1 = "Good, I'll have it hauled on my ship then. I'll be here for two days waiting for Padre Vincento's answer. This is not goodbye for now, "+npchar.name+"!";
+			dialog.text = "Yes, your cargo is fine and waiting for you, Señor.";
+			link.l1 = "Good, I'll have it hauled onto my ship then. I'll be here for two days waiting for Padre Vincento's answer. This is not goodbye for now, "+npchar.name+"!";
 			link.l1.go = "guardoftruth_4";
 		break;
 		
@@ -70,7 +69,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_5":
-			dialog.text = "Yes, Senor. Here is a letter from Padre Vincento. He is very pleased of you, the rest you'll get to know from the letter.";
+			dialog.text = "Yes, Señor. Here is a letter from Padre Vincento. He is very pleased with you, the rest you'll learn from the letter.";
 			link.l1 = "Splendid. Until then, "+npchar.name+". And for now - farewell.";
 			link.l1.go = "guardoftruth_6";
 		break;
@@ -84,19 +83,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_7":
-			dialog.text = "Very well. Give them to me and I will take them to the holy father.";
-			link.l1 = "No way, chap! It wasn't easy to get those and I won't hand them over like that. I will only give them to Padre Vincento personally.";
+			dialog.text = "Very well. Give them to me and I will take them to the Holy Father.";
+			link.l1 = "No way, chap! It wasn't easy to get those and I won't hand them over just like that. I will only give them to Padre Vincento personally.";
 			link.l1.go = "guardoftruth_8";
 		break;
 		
 		case "guardoftruth_8":
-			dialog.text = "But senor! How can I know that you are not swindling me?";
-			link.l1 = "Take a look: the censer, the chalice and the cross with the lazurite... "+npchar.name+", who do you think I am? Do you really think I am stupid enough to go to the Inquisition without them?";
+			dialog.text = "But señor! How can I know that you are not swindling me?";
+			link.l1 = "Take a look: the censer, the chalice, and the cross with the lazurite... "+npchar.name+", who do you think I am? Do you really think I'm foolish enough to go to the Inquisition without them?";
 			link.l1.go = "guardoftruth_9";
 		break;
 		
 		case "guardoftruth_9":
-			dialog.text = "Forgive me, senor... Come tomorrow and I'll tell Padre Vincento about your arrival.";
+			dialog.text = "Forgive me, señor... Come tomorrow and I'll tell Padre Vincento about your arrival.";
 			link.l1 = "Good. See you tomorrow.";
 			link.l1.go = "guardoftruth_10";
 		break;
@@ -108,8 +107,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "guardoftruth_11":
-			dialog.text = "His Grace will receive you, Senor. Don't delay your visit. Here is the document, show it to the guards and they will let you in. But raise a Spanish flag first or the soldiers will likely arrest you.";
-			link.l1 = "Got it. Spanish then. Thanks, pal! I am on my way!";
+			dialog.text = "His Grace will receive you, Señor. Don't delay your visit. Here is the document, show it to the guards and they will let you in. But raise a Spanish flag first or the soldiers will likely arrest you.";
+			link.l1 = "Got it. Spanish then. Thanks, pal! I'm on my way!";
 			link.l1.go = "guardoftruth_12";
 		break;
 		

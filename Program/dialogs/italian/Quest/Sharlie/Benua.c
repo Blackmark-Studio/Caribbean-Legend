@@ -1,3 +1,5 @@
+int iBenuaPseudoGlobal;
+
 // аббат Бенуа
 void ProcessDialogEvent()
 {
@@ -205,22 +207,7 @@ void ProcessDialogEvent()
 		case "escape_10":
 			DialogExit();
 			NextDiag.CurrentNode = "first time";
-			pchar.questTemp.Sharlie = "escape";
-			CloseQuestHeader("Sharlie");
-			AddQuestRecord("Guardoftruth", "1");
-			pchar.questTemp.Guardoftruth = "begin";
-			DeleteAttribute(pchar, "questTemp.GoldenGirl_Block");	// Разрешаем квест Дороже Золота
-			SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
-			// ставим пленного испанца
-			sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);
-			sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
-			sld.dialog.currentnode = "spa_prisoner";
-			RemoveAllCharacterItems(sld, true);
-			LAi_SetStayType(sld);
-			LAi_SetImmortal(sld, true);
-			ChangeCharacterAddressGroup(sld, "Fortfrance_dungeon", "quest", "quest1");
-			LAi_CharacterDisableDialog(sld);//запрет диалога
+			AddDialogExitQuestFunction("Sharlie_Benua_BrotherEscape");
 		break;
 		
 		// уменьшение награды за голову
@@ -282,14 +269,15 @@ void ProcessDialogEvent()
 		
 		case "relation":
 			rate = wdmGetNationThreat(sti(pchar.GenQuest.BenuaNation));
+			iBenuaPseudoGlobal = DiplomatDublonPayment(rate, "Benua", false);
+			sTemp = FindRussianDublonString(iBenuaPseudoGlobal);
 			if (rate < 2)
 			{
-				dialog.text = "Sì, anche nella nostra chiesa sono giunte quelle voci. Posso darti una mano con il tuo impiccio, sai. È una faccenda risolvibile. Ma mi serviranno duecentocinquanta dobloni d'oro per appianare la tua situazione.";
-				if (PCharDublonsTotal() >= 250) // Sinistra legendary edition
+				dialog.text = "Sì, anche nella nostra chiesa sono giunte quelle voci. Posso darti una mano con il tuo impiccio, sai. È una faccenda risolvibile. Ma mi serviranno " + sTemp + " d'oro per appianare la tua situazione.";
+				if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 				{
 					link.l1 = "Magnifico! Ecco l’oro.";
 					link.l1.go = "agree";
-					iTotalTemp = 250;
 				}
 				link.l2 = "Allora è proprio il momento giusto per andare a caccia di dobloni.";
 				link.l2.go = "exit";
@@ -298,24 +286,22 @@ void ProcessDialogEvent()
 			{
 				if (rate < 4)
 				{
-					dialog.text = "Sì, le voci delle tue 'prodezze' sono giunte anche alla nostra chiesa. Hai macchiato la tua reputazione, figliolo. Dovresti esser più accorto. Ma posso aiutarti. Mi servono cinquecento dobloni d’oro per sistemare la tua brutta faccenda.";
-					if (PCharDublonsTotal() >= 500) // Sinistra legendary edition
+					dialog.text = "Sì, le voci delle tue 'prodezze' sono giunte anche alla nostra chiesa. Hai macchiato la tua reputazione, figliolo. Dovresti esser più accorto. Ma posso aiutarti. Mi servono " + sTemp + " d’oro per sistemare la tua brutta faccenda.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Magnifico! Ecco l’oro.";
 						link.l1.go = "agree";
-						iTotalTemp = 500;
 					}
 					link.l2 = "Allora è proprio il momento giusto per andare a caccia di dobloni.";
 					link.l2.go = "exit";
 				}
 				else
 				{
-					dialog.text = "Sì, figliolo. Sei disperato quanto tuo fratello... Dev'essere un vizio di famiglia, questo. Non posso raddrizzare del tutto la situazione, ma credo di poter alleviare un poco la tua miseria. E in seguito, se lo vorrai, potremo fare altre offerte. Ora mi servono seicento dobloni d’oro e mi metterò subito all’opera per sbrigare la tua faccenda.";
-					if (PCharDublonsTotal() >= 600) // Sinistra legendary edition
+					dialog.text = "Sì, figliolo. Sei disperato quanto tuo fratello... Dev'essere un vizio di famiglia, questo. Non posso raddrizzare del tutto la situazione, ma credo di poter alleviare un poco la tua miseria. E in seguito, se lo vorrai, potremo fare altre offerte. Ora mi servono " + sTemp + " d’oro e mi metterò subito all’opera per sbrigare la tua faccenda.";
+					if (PCharDublonsTotal() >= iBenuaPseudoGlobal) // Sinistra legendary edition
 					{
 						link.l1 = "Magnifico! Ecco l’oro.";
 						link.l1.go = "agree";
-						iTotalTemp = 600;
 					}
 					link.l2 = "Allora è proprio il momento giusto per andare a caccia di dobloni.";
 					link.l2.go = "exit";
@@ -324,8 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "agree":
-			RemoveDublonsFromPCharTotal(iTotalTemp); // Sinistra legendary edition
-			Log_Info("You've given "+iTotalTemp+" doubloons");
+			RemoveDublonsFromPCharTotal(iBenuaPseudoGlobal); // Sinistra legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Ora dovrai aspettare almeno due settimane. Credo che in questo tempo riuscirò a incontrare e parlare con le persone giuste.";
 			link.l1 = "Grazie, padre! Attenderò con ansia...";
@@ -335,7 +320,7 @@ void ProcessDialogEvent()
 		case "agree_1":
 			DialogExit();
             bOk = HasShipTrait(pchar, "trait23");
-            rate = 10 + rand(5);
+            rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromBenuaComplete", 0, 0, rate, false);
 			pchar.GenQuest.BenuaNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.BenuaNation));
@@ -752,6 +737,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sld = characterFromId("Helena");
 			else sld = characterFromId("Mary");
 			sld.lastname = "de Maure";
+			sld.SpecialRole = "wife";
 			sld.dialog.currentnode = "LongHappy_31";
 			LAi_SetActorType(sld);
 			LAi_ActorDialogDelay(sld, pchar, "", 4.0);
@@ -762,6 +748,212 @@ void ProcessDialogEvent()
 			link.l1 = "Vi ringrazio, Santo Padre. È stata una funzione meravigliosa e sono lieto che sia stato proprio voi a celebrarla.";
 			link.l1.go = "LH_abbat_38";
 		break;
+		
+		//--> Дикая Роза
+		case "WildRose_Abb_2":
+			dialog.text = "Quindi siete venuti da me per un consiglio, figli miei? Bene, vi ascolto.";
+			link.l1 = "Piuttosto per un aiuto, padre. L’aiuto di un uomo con contatti e conoscenze tra le più disparate persone...";
+			link.l1.go = "WildRose_Abb_3";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua");
+		break;
+
+		case "WildRose_Abb_3":
+			dialog.text = "Perdonami se ti interrompo, figlio mio, ma voglio ricordarti che sono solo un semplice abate, non un agente segreto.";
+			link.l1 = "Ma un semplice abate può conoscere un agente segreto, giusto? Oppure suggerire come trovarne uno?";
+			link.l1.go = "WildRose_Abb_4_fortune";
+			link.l2 = "La questione che ci ha portati da voi riguarda davvero dei misteri dimenticati... E noi cerchiamo di riportarli alla luce.";
+			link.l2.go = "WildRose_Abb_4_stealth";
+		break;
+
+		case "WildRose_Abb_4_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Giovanotto, questa storia inizia a non piacermi. Vai dritto al punto, poi vedremo se posso aiutarti... e se voglio.";
+			link.l1 = "Sì, padre. Cercherò di spiegare tutto brevemente...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_4_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = ""+pchar.name+", non parlare per enigmi — confesso che mi stanca.";
+			link.l1 = "Sì, padre. Cercherò di spiegare tutto brevemente...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_5":
+			dialog.text = "Continua, figlio mio.";
+			link.l1 = "La mia compagna, Mary Kasper, sta cercando suo padre — o almeno qualche informazione su di lui. Abbiamo scoperto che era un ufficiale della marina inglese e che prestava servizio sul brigantino 'Wrangler', naufragato presso Capo Catoche nel 1638.";
+			link.l1.go = "WildRose_Abb_6";
+		break;
+
+		case "WildRose_Abb_6":
+			dialog.text = "E sperate che sia ancora vivo? Dopo tutti questi anni?";
+			link.l1 = "Anche se non è sopravvissuto al naufragio, Mary vuole sapere da dove veniva suo padre, che uomo fosse, che vita ha vissuto... I documenti ufficiali sono poveri di dettagli — ma anche in essi può nascondersi qualcosa di prezioso, non è vero, padre?";
+			link.l1.go = "WildRose_Abb_7";
+		break;
+
+		case "WildRose_Abb_7":
+			dialog.text = "Hai certamente ragione, figlio mio. È una missione nobile e gradita a Dio. Ma ancora non comprendo esattamente cosa desideriate da me.";
+			link.l1 = "Vivete da molto tempo nell’Arcipelago, padre. Forse conoscete qualcuno con accesso agli archivi coloniali contenenti informazioni sugli ufficiali della marina inglese?";
+			link.l1.go = "WildRose_Abb_8_stealth";
+			link.l2 = "Ci serve una persona con accesso agli archivi coloniali dove sono conservati i dati sugli ufficiali della marina inglese. Sicuramente conoscete qualcuno, padre.";
+			link.l2.go = "WildRose_Abb_8_charisma";
+		break;
+
+		case "WildRose_Abb_8_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = "Capisci cosa stai chiedendo, figlio mio? Non si tratta solo del fatto che tali informazioni potrebbero essere segrete...";
+			link.l1 = "E di cosa si tratta, allora, padre? Te lo dirò subito...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_8_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Capisci cosa stai chiedendo, figlio mio? Non si tratta solo del fatto che tali informazioni potrebbero essere segrete...";
+			link.l1 = "E di cosa si tratta, allora, padre? Te lo dirò subito...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_9":
+			dialog.text = "Il problema riguarda proprio quegli archivi coloniali. Vent’anni fa, la Giamaica era sotto controllo spagnolo, e Saint John e Bridgetown erano sotto minaccia costante di razzie. Difficile credere che vi fossero registrate navi della Marina Reale...";
+			link.l1 = "State parlando dell’archivio dell’Ammiragliato a Londra, padre?";
+			link.l1.go = "WildRose_Abb_10";
+		break;
+
+		case "WildRose_Abb_10":
+			dialog.text = "È possibile. I documenti dovrebbero essere stati trasferiti all’Ammiragliato. Ottenere l’accesso non è facile.";
+			link.l1 = "Ma è possibile, vero, padre?";
+			link.l1.go = "WildRose_Abb_11";
+		break;
+
+		case "WildRose_Abb_11":
+			dialog.text = "Nulla è impossibile, figlio mio. Ma richiederà sforzi... e denaro.";
+			link.l1 = "Naturalmente, padre. Devo darvi i soldi, o incontrare qualcun altro?";
+			link.l1.go = "WildRose_Abb_12";
+		break;
+		
+				case "WildRose_Abb_12":
+			dialog.text = "Mi incontrerò personalmente con qualcun altro, figlio mio. Da te mi servono... ottocento dobloni.";
+			link.l1 = "Va bene, padre. Quanto tempo ci vorrà?";
+			link.l1.go = "WildRose_Abb_13";
+		break;
+
+		case "WildRose_Abb_13":
+			dialog.text = "Direi due mesi. E, tra l’altro, non mi hai ancora detto il nome della persona che cercate.";
+			link.l1 = "Si chiama Joshua Kasper.";
+			link.l1.go = "WildRose_Abb_14";
+		break;
+
+		case "WildRose_Abb_14":
+			dialog.text = "Ricorderò. Se sei pronto a consegnare l’intera somma adesso — già domani manderò un messaggio.";
+			if (PCharDublonsTotal() >= 800)
+			{
+				link.l1 = "Naturalmente, padre. Ecco qui. Ottocento dobloni d’oro.";
+				link.l1.go = "WildRose_Abb_14_pay";
+			}
+			else
+			{
+				link.l1 = "No, padre, non ho con me quella somma. Ma tornerò presto e li porterò.";
+				link.l1.go = "WildRose_Abb_14_nopay";
+			}
+		break;
+
+		case "WildRose_Abb_14_pay":
+			RemoveDublonsFromPCharTotal(800);
+			dialog.text = "Molto bene, "+pchar.name+". Tornate tra due mesi — sono certo che per allora avrò qualche risposta per voi.";
+			link.l1 = "Grazie, padre. A presto!";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_1");
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2");
+		break;
+
+		case "WildRose_Abb_14_nopay":
+			dialog.text = "Come desideri, figlio mio.";
+			link.l1 = "Tornerò presto.";
+			link.l1.go = "exit";
+			pchar.questTemp.WildRose_Etap3_Benua_2 = true;
+		break;
+		
+		case "WildRose_Abb_16":
+			dialog.text = "Ha scoperto sia di Joshua Kasper che della sua nave — che, però, non era affatto il 'Wrangler'. Un brigantino con quel nome non ha mai fatto parte della Marina Reale.";
+			link.l1 = "Hmm... Sono assolutamente certo che la nave su cui serviva Joshua Kasper si chiamava proprio così... E riguardo a Joshua stesso?";
+			link.l1.go = "WildRose_Abb_17";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3");
+		break;
+		
+				case "WildRose_Abb_17":
+			dialog.text = "Quest’uomo era un eccellente ufficiale, con numerosi meriti e onorificenze — tutto documentato nel suo fascicolo personale. Pur non appartenendo alla vera fede, fu un capitano degno. Mademoiselle può essere orgogliosa delle sue origini.";
+			link.l1 = "Una buona notizia, padre. Ma se permette, torniamo alla nave. Se non si chiamava 'Wrangler', allora come si chiamava?";
+			link.l1.go = "WildRose_Abb_19";
+			AddQuestRecordInfo("WildRose_Records_3", "1");
+		break;
+
+		case "WildRose_Abb_19":
+			dialog.text = "'Cornwall'. Salpò da Plymouth nel gennaio del 1638 con l’ordine di consegnare la paga alle guarnigioni di Antigua e Providence.";
+			link.l1 = "Incredibile...";
+			link.l1.go = "WildRose_Abb_20";
+			AddQuestRecordInfo("WildRose_Records_4", "1");
+		break;
+
+		case "WildRose_Abb_20":
+			dialog.text = "Se sia arrivata alla destinazione finale non lo so. Ma attraccò a Saint John's. All’amministrazione portuale si conserva un rapporto del capitano Kasper datato 2 giugno di quell’anno.";
+			link.l1 = "Sapevo che non siete così semplice come sembrate, padre! Quel documento, immagino, contiene informazioni importanti?";
+			link.l1.go = "WildRose_Abb_21_charisma";
+			link.l2 = "Vi siamo debitori, padre. Se avete menzionato quel documento, vuol dire che contiene qualcosa di rilevante?";
+			link.l2.go = "WildRose_Abb_21_honor";
+			AddQuestRecordInfo("WildRose_Records_5", "1");
+		break;
+
+		case "WildRose_Abb_21_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Solo il resoconto di uno scontro con il galeone spagnolo 'Toro' presso le Azzorre, dove un terzo dell’equipaggio perse la vita — leggi il rapporto, c’è tutto scritto lì.";
+			link.l1 = "Un’altra domanda: se siete riuscito a consultare i registri del porto di Antigua, vi è mai capitato di vedere di nuovo il nome di Joshua Kasper?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_21_honor":
+			AddComplexSelfExpToScill(100, 100, 100, 100);
+			dialog.text = "Solo il resoconto di uno scontro con il galeone spagnolo 'Toro' presso le Azzorre, dove un terzo dell’equipaggio perse la vita — leggi il rapporto, c’è tutto scritto lì.";
+			link.l1 = "Un’altra domanda: se siete riuscito a consultare i registri del porto di Antigua, vi è mai capitato di vedere di nuovo il nome di Joshua Kasper?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_22":
+			dialog.text = "Mi chiedi molto, figlio mio. Se stai insinuando che possa essere sopravvissuto al naufragio e tornato in servizio — ne dubito fortemente.";
+			link.l1 = "Le vie del Signore sono imperscrutabili, padre.";
+			link.l1.go = "WildRose_Abb_23";
+		break;
+
+		case "WildRose_Abb_23":
+			dialog.text = "In verità, figlio mio. Ma vedi, nel suo fascicolo è scritto che Joshua Kasper nacque nel 1586...";
+			link.l1 = "Forse avete ragione, padre.";
+			link.l1.go = "WildRose_Abb_24_fortune";
+			link.l2 = "Sapete, padre, vivendo nei Caraibi ho visto cose così assurde da credere perfino all’impossibile.";
+			link.l2.go = "WildRose_Abb_24_charisma";
+		break;
+
+		case "WildRose_Abb_24_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Senza dubbio, un ufficiale del genere meritava di morire in battaglia. Ma se vogliamo essere filosofici, anche quella fu una battaglia, in un certo senso...";
+			link.l1 = "Non sono molto ferrato in filosofia, padre. Ma grazie di tutto...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_24_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Senza dubbio, un ufficiale del genere meritava di morire in battaglia. Ma se vogliamo essere filosofici, anche quella fu una battaglia, in un certo senso...";
+			link.l1 = "Non sono molto ferrato in filosofia, padre. Ma grazie di tutto...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_25":
+			dialog.text = "È il Signore che vi guida in questo cammino, figli miei, ed è mio dovere assistervi come posso. Ma temo di non poter fare più nulla in questa faccenda...";
+			link.l1 = "Capisco, padre. Allora permetteteci di congedarci.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
+		break;
+		//<-- Дикая Роза
 		
 		case "LH_abbat_38":
 			DialogExit();

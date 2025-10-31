@@ -18,12 +18,8 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("You dare to show your face here?! Don't know, if you're brave or stupid...", "How did these lazybones let an enemy break into my residence? This is beyond me...", "Surely, my guards aren't worth a copper, if such bastards, are running around here..."), 
-					LinkRandPhrase("What do you need,"+ GetSexPhrase("scoundrel","stinker") +"?! My soldiers have already been set on your trail, "+ GetSexPhrase(", filthy pirate","") +"!", "Dirty murderer, leave my residence immediately! Guards!", "I am not afraid of you, "+ GetSexPhrase("rat","slut") +"! Soon you will be hanged in our fort, and you won't get far after that..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("These soldiers aren't worth a single peso...", "They will never get me."), 
-					RandPhraseSimple("Shut your piehole, " + GetWorkTypeOfMan(npchar, "") + ", or I'll rip out that foul tongue of yours!", "I'd suggest you to sit quietly, and maybe, you'll get through it alive..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("You dare to show your face here?! I don't know if you're brave or just stupid...","How did these lazybones let an enemy break into my residence? This is beyond me...","Surely, my guards aren't worth a copper if such bastards are running around here..."),LinkRandPhrase("What do you need?"+GetSexPhrase("scoundrel","stinker")+"?! My soldiers are already on your trail, "+GetSexPhrase(", filthy pirate","")+"!","Dirty murderer, leave my residence immediately! Guards!","I am not afraid of you, "+GetSexPhrase("rat","slut")+"! Soon you will be hanged in our fort, and you won't get far after that..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("These soldiers aren't worth a single peso...","They will never get me."),RandPhraseSimple("Shut your mouth, "+GetWorkTypeOfMan(npchar,"")+", or I'll rip out that foul tongue of yours!","I'd suggest you sit quietly, and maybe you'll get through it alive..."));
 				link.l1.go = "fight";
 				break;
 			}
@@ -34,25 +30,25 @@ void ProcessDialogEvent()
 				link.l1.go = "fight"; 
 				break;
 			}	
-			dialog.text = LinkRandPhrase(""+TimeGreeting()+", senor. I am "+GetFullName(npchar)+", the mining engineer of the Los-Teques mine. What is it that you need here?","Hello, senor. What did you want?","Hmm... did you want anything from me, senor? I am listening.");
+			dialog.text = LinkRandPhrase(""+TimeGreeting()+", señor. I am "+GetFullName(npchar)+", the mining engineer at the Los-Teques mine. What brings you here?","Hello, señor. What did you want?","Hmm... did you want anything from me, señor? I am listening.");
 			if (!CheckAttribute(location, "quest.info"))
 			{
-				link.l9 = "I am a new one here, and I would like to learn more about this mine...";
+				link.l9 = "I am new here, and I would like to learn more about this mine...";
 				link.l9.go = "info";
 			}
 			if (GetSquadronGoods(pchar, GOOD_SLAVES) > 4)
 			{
-				link.l2 = "I have a cargo in my hold which might be interesting to you. Slaves for your mine, to be exact. Want to haggle?";
+				link.l2 = "I have a cargo in my hold that might interest you. Slaves for your mine, to be exact. Care to haggle?";
 				if (!CheckAttribute(location, "quest.slaves")) link.l2.go = "slaves_0";
 				else link.l2.go = "slaves";
 			}
-			link.l1 = "I just came in to say hi, and I am already leaving.";
+			link.l1 = "I just came in to say hi, and I'm already leaving.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "info":
-			dialog.text = "Los-Teques  mine extracts gold for the Spanish Crown. Everything we extract belongs to Spain. We also find here not only gold but also silver nuggets and valuable precious stones. We don't sell gold here, everything we extract is delivered to the Old World under a reinforced convoy\nBut we have two exceptions for golden and silver nuggets. First, you can buy some amount of them in our local store from a quartermaster. Sometimes salary doesn't get here in time, so we have to keep some savings of coins here for such cases, that is why local trading is allowed\nSecond, we constantly experience a need of manpower, so we exchange nuggets for slaves. Therefore, talk to me if you have something to offer, we will do business\nI believe that rules of conduct of the mine are obvious: don't steal, don't distract convicts and don't bother soldiers otherwise you won't like the consequences.";
+			dialog.text = "Los-Teques mine extracts gold for the Spanish Crown. Everything we extract belongs to Spain. Here, we find not only gold, but also silver nuggets and valuable precious stones. We don't sell gold here; everything we extract is delivered to the Old World under a reinforced convoy. But we have two exceptions for gold and silver nuggets. First, you can buy a certain amount of them in our local store from the quartermaster. Sometimes salaries don't arrive on time, so we have to keep some coin savings here for such cases; that is why local trading is allowed. Second, we are constantly in need of manpower, so we exchange nuggets for slaves. Therefore, talk to me if you have something to offer, and we will do business. I believe the rules of conduct in the mine are obvious: don't steal, don't distract the convicts, and don't bother the soldiers, otherwise you won't like the consequences.";
 			link.l1 = "Fine, thank you!";			
 			link.l1.go = "exit";
 			location.quest.info = "true";
@@ -61,8 +57,8 @@ void ProcessDialogEvent()
 		// генератор купли-продажи рабов
 		case "slaves_0":
 			location.quest.slaves.qty = 200; // стартовая потребность
-			dialog.text = "Of course, senor! How many do you have?";
-			link.l1 = "I have "+FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SLAVES))+".";
+			dialog.text = "Of course, señor! How many do you have?";
+			link.l1 = "I have "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SLAVES))+".";
 			link.l1.go = "slaves_1";
 		break;
 		
@@ -71,25 +67,25 @@ void ProcessDialogEvent()
 			if (sti(location.quest.slaves.qty) > 350) location.quest.slaves.qty = 350; // максимум потребности
 			if (sti(location.quest.slaves.qty) < 5)
 			{
-				dialog.text = "Senor, unfortunately, right now we have no need in more slaves. But the situation can change anytime, so check back in a few weeks or some other time.";
-				link.l1 = "Alright, senor, I understand. You don't need them now, but you might need them in some time.";
+				dialog.text = "Señor, unfortunately, right now we have no need for more slaves. But the situation can change at any time, so check back in a few weeks or some other time.";
+				link.l1 = "Alright, señor, I understand. You don't need them now, but you might need them at some point.";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "Of course, senor! How many do you have?";
-				link.l1 = "I have "+FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SLAVES))+".";
+				dialog.text = "Of course, señor! How many do you have?";
+				link.l1 = "I have "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SLAVES))+".";
 				link.l1.go = "slaves_1";
 			}
 		break;
 		
 		case "slaves_1":
-			dialog.text = "For every slave, I am willing to pay you either one gold ingot or two silver ingots. What do you choose?";
+			dialog.text = "For every slave, I am willing to pay you either one gold ingot or two silver ingots. Which do you choose?";
 			link.l1 = "Gold ingots.";
 			link.l1.go = "slaves_g";
 			link.l2 = "Silver ingots.";
 			link.l2.go = "slaves_s";
-			link.l3 = "I am sorry, senor, but I've just changed my mind. Some other time.";
+			link.l3 = "I am sorry, señor, but I've just changed my mind. Some other time.";
 			link.l3.go = "slaves_exit";
 		break;
 		
@@ -113,36 +109,36 @@ void ProcessDialogEvent()
 			iTotalTemp = sti(dialogEditStrings[6]);
 			if (iTotalTemp < 1)
 			{
-				dialog.text = "Senor, I have no time for stupid jokes. If you're in a mood for jesting, go to the tavern!";
+				dialog.text = "Señor, I have no time for stupid jokes. If you're in the mood for jesting, go to the tavern!";
 				link.l1 = "Hmm...";
 				link.l1.go = "slaves_exit";
 				break;
 			}
 			if (iTotalTemp > GetSquadronGoods(pchar, GOOD_SLAVES))
 			{
-				dialog.text = "Senor, I think that you need to rest. Perhaps you're very tired or got a heatstroke. Go to the tavern, have a good rest, and then we can continue our bargaining.";
+				dialog.text = "Señor, I think you need to rest. Perhaps you're very tired or have suffered a heatstroke. Go to the tavern, get some rest, and then we can continue our bargaining.";
 				link.l1 = "Hmm...";
 				link.l1.go = "slaves_exit";
 				break;
 			}
 			if (iTotalTemp > sti(location.quest.slaves.qty))
 			{
-				dialog.text = "Unfortunately, senor, right now we don't need that many slaves. The mine currently requires "+FindRussianQtyString(sti(location.quest.slaves.qty))+". Are you going to sell that many?";
+				dialog.text = "Unfortunately, señor, right now we don't need that many slaves. The mine currently requires "+FindRussianQtyString(sti(location.quest.slaves.qty))+". Are you going to sell that many?";
 				link.l1 = "Yes, of course!";
 				link.l1.go = "slaves_max";
-				link.l2 = "Hmm... I guess, I am not.";
+				link.l2 = "Hmm... I suppose I'm not.";
 				link.l2.go = "slaves_exit";
 				break;
 			}
-			dialog.text = ""+FindRussianQtyString(iTotalTemp)+"? Excellent. Please order to bring them to the town gates. I'll send my men for them.";
-			link.l1 = "Don't worry, senor. Your slaves will be delivered to you in time. I will issue all relevant orders immediately.";
+			dialog.text = ""+FindRussianQtyString(iTotalTemp)+"? Excellent. Please give the order to bring them to the town gates. I'll send my men for them.";
+			link.l1 = "Don't worry, señor. Your slaves will be delivered to you in time. I will issue all relevant orders immediately.";
 			link.l1.go = "slaves_calk";
 		break;
 		
 		case "slaves_max":
 			iTotalTemp = sti(location.quest.slaves.qty);
-			dialog.text = "Excellent. Please order to bring them to the town gates. I'll send my men for them.";
-			link.l1 = "Don't worry, senor. Your slaves will be delivered to you in time. I will issue all relevant orders immediately.";
+			dialog.text = "Excellent. Please order them to be brought to the town gates. I'll send my men for them.";
+			link.l1 = "Don't worry, señor. Your slaves will be delivered to you in time. I will issue all relevant orders immediately.";
 			link.l1.go = "slaves_calk";
 		break;
 		

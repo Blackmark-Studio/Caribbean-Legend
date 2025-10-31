@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto beli co miesiąc za 25 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
+				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto beli co miesiąc za 5 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Znalazłem ci kupca. To budowniczy statków z Port Royal. Potrzebuje jedwabiu do swoich produkcji i będzie mógł kupować partie po sto sztuk co miesiąc za 25 dublonów za sztukę. Jego ludzie będą odbierać towary od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi to ponad dwa miesiące, aby znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
+				link.l1 = "Znalazłem ci kupca. To budowniczy statków z Port Royal. Potrzebuje jedwabiu do swoich produkcji i będzie mógł kupować partie po sto sztuk co miesiąc za 5 dublonów za sztukę. Jego ludzie będą odbierać towary od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi to ponad dwa miesiące, aby znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Zawsze mam zadania dla zdolnych chłopców. Jest pewna delikatna sprawa, którą chcę, abyś się zajął. W Capsterville stoi statek o nazwie 'Wąż', pod dowództwem Geffreya Brooke'a, znanego również jako Łysy Geffrey. Pracuje dla mnie. Doskonały wojownik, wie wszystko o broni palnej i mieczach, ale kompletny idiota w każdej innej dziedzinie życia. Ale nie bądźmy zbyt surowi dla Łysego, nikt nie jest doskonały, ha-ha!\nWięc. Ten twardziel zaatakował konwój holenderski na północ od Saint Martin i zdobył barkę wypełnioną workami z pszenicą. Rzecz w tym, że udało mu się znaleźć ukryty jedwab okrętowy wśród worków. Naprawdę duży ładunek. Ten towar jest niezwykle cenny i rzadki, Holendrzy przywożą go z Europy wyłącznie dla potrzeb swojego wojska. Ten jedwab jest używany do specjalnych żagli, które zwiększają prędkość statku i zdolność żeglowania pod wiatr.\nKupno jest prawie niemożliwe, sprzedaż nie stanowi problemu, ale trudno jest znaleźć odpowiednią cenę. Ci przeklęci handlarze zawsze obniżają cenę! Wiem, że są na Karaibach ludzie gotowi zapłacić dobrą cenę w dublonach za zakup tego jedwabiu, a twoim celem jest znalezienie takich ludzi.\nCo? Jakikolwiek głupiec może splądrować karawany, ale handel to tylko dla ludzi, którzy mają choćby oznakę istnienia mózgu w czaszce. Planuję sprzedawać jedwab okrętowy co miesiąc, więc twoim celem jest znalezienie stałego kupca, który zapłaci co najmniej dwadzieścia złotych dublonów za belkę. Masz na to dwa miesiące, nie mogę trzymać Łysego Geffreya w Capsterville na zawsze.\nTo wszystko. Wypłyń do Capsterville i porozmawiaj z Geffreyem, zanim sprzeda ładunek przemytnikom za grosze. Już ci mówiłem, że jest trochę 'prostoduszny'.";
+            dialog.text = "Zawsze mam zadania dla zdolnych chłopców. Jest pewna delikatna sprawa, którą chcę, abyś się zajął. W Capsterville stoi statek o nazwie 'Wąż', pod dowództwem Geffreya Brooke'a, znanego również jako Łysy Geffrey. Pracuje dla mnie. Doskonały wojownik, wie wszystko o broni palnej i mieczach, ale kompletny idiota w każdej innej dziedzinie życia. Ale nie bądźmy zbyt surowi dla Łysego, nikt nie jest doskonały, ha-ha!\nWięc. Ten twardziel zaatakował konwój holenderski na północ od Saint Martin i zdobył barkę wypełnioną workami z pszenicą. Rzecz w tym, że udało mu się znaleźć ukryty jedwab okrętowy wśród worków. Naprawdę duży ładunek. Ten towar jest niezwykle cenny i rzadki, Holendrzy przywożą go z Europy wyłącznie dla potrzeb swojego wojska. Ten jedwab jest używany do specjalnych żagli, które zwiększają prędkość statku i zdolność żeglowania pod wiatr.\nKupno jest prawie niemożliwe, sprzedaż nie stanowi problemu, ale trudno jest znaleźć odpowiednią cenę. Ci przeklęci handlarze zawsze obniżają cenę! Wiem, że są na Karaibach ludzie gotowi zapłacić dobrą cenę w dublonach za zakup tego jedwabiu, a twoim celem jest znalezienie takich ludzi.\nCo? Jakikolwiek głupiec może splądrować karawany, ale handel to tylko dla ludzi, którzy mają choćby oznakę istnienia mózgu w czaszce. Planuję sprzedawać jedwab okrętowy co miesiąc, więc twoim celem jest znalezienie stałego kupca, który zapłaci co najmniej 4 złotych dublonów za belkę. Masz na to dwa miesiące, nie mogę trzymać Łysego Geffreya w Capsterville na zawsze.\nTo wszystko. Wypłyń do Capsterville i porozmawiaj z Geffreyem, zanim sprzeda ładunek przemytnikom za grosze. Już ci mówiłem, że jest trochę 'prostoduszny'.";
 			link.l1 = "Hm... Rozumiem. Już jestem w drodze.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha! Oto odważny kapitan "+GetFullName(pchar)+"! A co z kupcem?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto bel co miesiąc za 25 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi ponad dwa miesiące, by znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
+				link.l1 = "Znalazłem ci kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu okrętowego do swojej produkcji i będzie mógł kupować partie po sto bel co miesiąc za 5 dublonów za belę. Jego ludzie będą odbierać towar od 10 do 15, w nocy, miejsce to Negril Cape. Hasło - 'Kupiec z Lyonu'. Zajęło mi ponad dwa miesiące, by znaleźć takiego kupca, Geffrey musiał już sprzedać jedwab przemytnikom. Przykro mi, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Znalazłem dla ciebie kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu do produkcji statków i będzie mógł kupować partie po sto zwojów co miesiąc za 25 дублонов за zwój. Jego ludzie będą odbierać towary od 10 do 15, w nocy, lokalizacja to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
+				link.l1 = "Znalazłem dla ciebie kupca. To szkutnik z Port Royal. Potrzebuje jedwabiu do produkcji statków i będzie mógł kupować partie po sto zwojów co miesiąc za 5 дублонов за zwój. Jego ludzie będą odbierać towary od 10 do 15, w nocy, lokalizacja to Przylądek Negril. Hasło - 'Kupiec z Lyonu'. Łysy Geffrey już dostarczył pierwszą partię na Jamajkę.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Bald Geffrey sprzedał twemu kupcowi pierwszą partię 105 zwojów żaglowego jedwabiu. Skoro spodziewałem się sprzedać to po dwadzieścia doublonów za zwój, myślę, że uczciwie będzie oddać ci różnicę. To moja decyzja. Twój udział to 525 doublonów plus premia - doubloon za zwój. W sumie to 630 doublonów. Weź je.";
+            dialog.text = "Bald Geffrey sprzedał twemu kupcowi pierwszą partię 105 zwojów żaglowego jedwabiu. Skoro spodziewałem się sprzedać to po 4 doublonów za zwój, myślę, że uczciwie będzie oddać ci różnicę. To moja decyzja. Twój udział to 105 doublonów plus premia - doubloon za zwój. W sumie to 210 doublonów. Weź je.";
 			link.l1 = "Podziękowania, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("You have received 630 doubloons");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Jeszcze jedna rzecz. Możesz z tego uzyskać dodatkowy zysk.";
 			link.l1 = "Interesujące... Mów dalej.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Twój kupiec chce, aby dostarczono więcej niż 100 bel jedwabiu w ciągu najbliższych dwóch miesięcy. Jeśli masz jakieś, przynieś mi od 20 do 100 beli za cenę 24 doblonów. Oferta będzie ważna przez dwa miesiące.";
+            dialog.text = "Twój kupiec chce, aby dostarczono więcej niż 100 bel jedwabiu w ciągu najbliższych dwóch miesięcy. Jeśli masz jakieś, przynieś mi od 20 do 100 beli za cenę 5 doblonów. Oferta będzie ważna przez dwa miesiące.";
 			link.l1 = "Dobrze! Przyniosę więcej, jeśli będę miał jakiekolwiek.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Bardzo dobrze. Weź złoto - 24 doubloony za rzut, jak się umówiliśmy.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Bardzo dobrze. Weź złoto - 5 doubloony za rzut, jak się umówiliśmy.";
 			link.l1 = "Wdzięczność!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Wezmę sto zwitków. Weź złoto - 24 doubloony za zwitek, jak się umówiliśmy.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Wezmę sto zwitków. Weź złoto - 5 doubloony za zwitek, jak się umówiliśmy.";
 			link.l1 = "Wdzięczność!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
@@ -1136,7 +1135,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1144,8 +1143,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2427,7 +2427,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2447,28 +2447,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Widzę, że jest odwrotnie. Co cię tu sprowadza?";
 			link.l1 = "Słyszałeś o nowym burdelu na Tortudze?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "W takim razie, pytaj. Wiesz, że nie lubię formalności, więc przejdź do rzeczy.";
 			link.l1 = "Słyszałeś o nowym burdelu w Tortudze?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Jesteś pijany? Co to za pytanie? Nie marnuj mojego czasu, jeśli naprawdę o tym chciałeś pogadać.";
 			link.l1 = "Chyba nie słyszałeś? Niedawno otwarto tam nowy burdel - bardzo drogi, gdzie pracują tylko najpiękniejsze, zdrowe i dobrze ubrane dziewczęta.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "O, to! Oczywiście, że słyszałem - kto nie słyszał?";
 			link.l1 = "Cóż, dopiero co się o tym dowiedziałem.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Ha-ha-ha-ha, ty łajdaku, niech mnie kule biją! Ale wciąż, dlaczego o tym ze mną dyskutujesz? Czemu nie spróbujesz najpierw z Hawkiem? He he. Chociaż... już się tam trochę zabawiłeś?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2485,34 +2485,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "Więc przyszedłeś się popisać! Ha, co za łobuz.";
 			link.l1 = "Właściwie, nie. Naprawdę chciałem cię o coś zapytać, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "Nie zrobiłeś tego?! Jesteś idiotą, De Maure. Gdybym był na twoim miejscu...";
 			link.l1 = "Wiem, że zaczęłabyś prawdziwą rozróbę. Ale to nie do końca to, o czym chciałem z tobą porozmawiać.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Co jest? No dalej, nie trzymaj mnie w niepewności.";
 			link.l1 = "Szukam właścicielki tego miejsca. Powiedziano mi, że chciała się z tobą spotkać i zaproponować możliwość inwestycji w jej handel. Nie sposób jej pomylić - jest Chinką.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Ho ho. Nie, nie miałem ostatnio przyjemności spotkać żadnych chińskich kobiet. Ale nie miałbym nic przeciwko spotkaniu z nią i zainwestowaniu w jej interes. W końcu nie można tak po prostu wkroczyć na terytorium Levasseura, a jako poddany twojego króla, byłby zmuszony otworzyć ogień na moją 'Smok' swoimi przybrzeżnymi okrętami, gdy tylko ją zauważy.";
 			link.l1 = "Wydaje się, że najpierw rozważa Port-au-Prince...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "Tak myślisz? To błąd. Nawet jeśli de Mussac ma więcej pieniędzy niż ja, w co wątpię, nie stać go na to, by przeznaczyć jakąkolwiek część budżetu miasta na burdel, nieważne ile złota przynosi.";
 			link.l1 = "Dobry punkt. Wyraźnie nie przemyślała dokładnie tego swojego ambitnego planu.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Wiesz, zawsze się zastanawiałem, jak inne burdele utrzymują się na powierzchni. To nie jest zdolność kobiety do myślenia, a tym bardziej do rządzenia - zapamiętaj moje słowa.";
 			link.l1 = "„Cóż, mylisz się co do tego. Dzięki za twój czas, Marcus! Jeśli spotkam ją pierwszą, dam jej znać, że będziesz się cieszył, widząc ją.”";
 			link.l1.go = "Exit";

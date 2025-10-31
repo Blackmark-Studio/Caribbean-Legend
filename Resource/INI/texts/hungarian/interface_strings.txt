@@ -1,0 +1,12 @@
+Delete profile confirm {Biztos, hogy törölni akarod ezt a profilt és az összes mentését?}
+Delete savefile confirm {Biztos, hogy törölni akarod ezt a mentést?}
+Overwrite savefile confirm {Biztos, hogy felül akarja írni ezt a mentést?}
+Low storage and unable save create {Nincs elég szabad hely a játék mentéséhez.}
+Load game confirm {Biztos, hogy be akarod tölteni ezt a mentést?}
+Unable to Load save game {Nem lehet betölteni ezt a mentést.}
+Salary info { }
+Officer info {A tisztjeid kérik a havi fizetésüket:}
+All info {Nettó összeg:}
+New game confirm {Biztos, hogy új játékot akarsz kezdeni?}
+Insert Disk Ok {Kérjük, helyezze be az 1. lemezt "A Karib-tenger kalózai"}
+save game limit {Túllépte a mentett játékok számát. Töröld a régebbi mentéseket.}

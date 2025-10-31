@@ -4,30 +4,27 @@ void SantaMisericordia_init()
 {
 	//if(!GetDLCenabled(DLC_APPID_4)) return;
 	pchar.questTemp.SantaMisericordia = true;
-	log_testinfo("Инициализация ГАЛЕОНА");
+	log_testinfo("Квест 'Святое Милосердие' стартовал");
 	pchar.questTemp.SantaMisericordia.stage = 1; // стадии меняем при выходе на карту
 	pchar.questTemp.SantaMisericordia.colony = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)); // колонии меняем при заходе в порт
     ref sld, chref;
-	string sName = GetConvertStr("Ship_Name", LangFile);
 	
 	// характеристики запишем после ТЗ
 	chref = GetCharacter(NPC_GenerateCharacter("SantaMisericordia_cap", "off_spa_2", "man", "man", 30, SPAIN, -1, false, "governor"));
-	FantomMakeCoolSailor(chref, SHIP_GALEON_SM, sName, CANNON_TYPE_CANNON_LBS24, 105, 105, 105);
+	FantomMakeCoolSailor(chref, SHIP_GALEON_SM, GetShipName("Holy Mercy"), CANNON_TYPE_CANNON_LBS24, 105, 105, 105);
 	FantomMakeCoolFighter(chref, 30, 100, 100, "lacrima_patris", "pistol8", "harpoon", 100);
+	ForceAdaptivelevel(chref, 20, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.55); // RB Аламида
+	GiveCaptainOfficers(chref, true);
 	chref.ship.Crew.Morale = 100;
 	ChangeCrewExp(chref, "Sailors",   100);
 	ChangeCrewExp(chref, "Cannoners", 100);
 	ChangeCrewExp(chref, "Soldiers",  100); 
-	LAi_SetHP(chref, 200 + makeint(pchar.rank) * 2, 200 + makeint(pchar.rank) * 2);
-	SetAllPerksToChar(chref, true);
 	chref.name = GetConvertStr("Cap_Name", LangFile);
 	chref.lastname = GetConvertStr("Cap_lastname", LangFile);
 	UpgradeShipParameter(chref, "SpeedRate");	//апгрейдить скорость
 	UpgradeShipParameter(chref, "TurnRate");	//манёвренность 
 	chref.DontRansackCaptain = true; //квестовые не сдаются
-	SetSPECIAL(chref, 10, 10, 10, 10, 10, 10, 10);
-	SetSelfSkill(chref, 100, 100, 100, 100, 100);
-	SetShipSkill(chref, 100, 100, 100, 100, 100, 100, 100, 100, 100);
+	chref.AutoBoardingDisable = true; // запрет абордажа фантомов
 	chref.SaveItemsForDead = true;
 	chref.DontClearDead = true;
 	chref.DontHitInStorm = true;
@@ -67,7 +64,7 @@ void SantaMisericordia_init()
 	chref.quest.targetCity = SantaMisericordia_findColony(sti(pchar.questTemp.SantaMisericordia.stage)+1);
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
-	chref.mapEnc.Name = GetConvertStr("Ship_Name", LangFile);
+	chref.mapEnc.Name = GetShipName("Holy Mercy");
 	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 30);
 	
 	// журнал капитана Фернандо де Аламиды
@@ -330,7 +327,7 @@ void SantaMisericordia_ToMap(string sQuest)
 	Log_testInfo("Капитан ГАЛЕОНА направился в колонию: "+chref.quest.targetCity + " из колонии : "+chref.city);
 	chref.mapEnc.type = "trade";
 	chref.mapEnc.worldMapShip = "galeon_sm";
-	chref.mapEnc.Name = GetConvertStr("Ship_Name", LangFile);
+	chref.mapEnc.Name = GetShipName("Holy Mercy");
 	Map_CreateTrader(chref.city, chref.quest.targetCity, chref.id, 30);
 	
 	//убираем ограничения в колонии, где находился ревизор
@@ -732,7 +729,7 @@ void SantaMisericordia_Pobeda(string sQuest)
 {
 	//ачивки
 	Achievment_Set("ach_CL_136");
-	if (sti(pchar.rank) < 15) Achievment_Set("ach_CL_137");
+	if (sti(pchar.rank) <= 14) Achievment_Set("ach_CL_137");
 	bQuestDisableMapEnter = false;
 	
 	//чистим всё
@@ -783,6 +780,63 @@ bool ach139condition()
 		return true;
 	}
 	return false;
+}
+
+void SantaMisericordia_Alamida_DlgExit()
+{
+	sld = CharacterFromID("SantaMisericordia_clone_church");
+	sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
+	sld.dialog.currentnode = "Alamida_repeat";
+	sld = CharacterFromID("SantaMisericordia_clone_city");
+	sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
+	sld.dialog.currentnode = "Alamida_repeat";
+	sld = CharacterFromID("SantaMisericordia_clone_guber");
+	sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
+	sld.dialog.currentnode = "Alamida_repeat";
+}
+
+void SantaMisericordia_Alamida_Abordage_DlgExit_1()
+{
+	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	LAi_SetPlayerType(pchar);
+	LAi_SetFightMode(pchar, true);
+	LAi_SetImmortal(sld, false);
+	LAi_SetCurHPMax(sld);
+	LAi_GetCharacterMaxEnergy(sld);
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_BRDENEMY);
+	LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, false);
+	LAi_SetCheckMinHP(sld, 1, true, "SantaMisericordia_TrirdRound");
+}
+
+void SantaMisericordia_Alamida_Abordage_DlgExit_2()
+{
+	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	LAi_SetPlayerType(pchar);
+	LAi_SetFightMode(pchar, true);
+	LAi_SetImmortal(sld, false);
+	LAi_SetCurHPMax(sld);
+	LAi_GetCharacterMaxEnergy(sld);
+	sld.MultiFighter = 2.5;
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_BRDENEMY);
+	LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, false);
+	LAi_SetCheckMinHP(sld, 1, true, "SantaMisericordia_Molitva");
+	
+	PlaySound("Ambient\Tavern\glotok_001.wav");
+	PlaySound("Ambient\Horror\Fear_breath_01.wav");
+}
+
+void SantaMisericordia_Alamida_Abordage_DlgExit_3()
+{
+	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	LAi_SetPlayerType(pchar);
+	LAi_SetImmortal(sld, false);
+	LAi_KillCharacter(sld);
+	
+	DoQuestFunctionDelay("Alamida_abordage_OfficerPodhodit", 2.0);
 }
 
 //=================================================================

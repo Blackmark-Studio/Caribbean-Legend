@@ -1,109 +1,22 @@
-colony_1
-{
-@<iTemp> marynarzy zgineło z powodu braku leków
-}
-
-colony_2
-{
-Statek @<Pchar.Ship.Name> posiada bardzo małą ilość medykamentów
-}
-
-colony_3
-{
-Przygotuj bitwę o miasto
-}
-
-colony_4
-{
-ERROR: Nie określono obwodnicy miasta podczas przechwytywania!!!
-}
-
-colony_5
-{
-Siły wroga zostały stłumione! Droga jest wolna.
-}
-
-colony_6
-{
-Otrzymano ~
-}
-
-colony_7
-{
-Otrzymano ~
-}
-
-colony_8
-{
-Otrzymano - Topór
-}
-
-colony_9
-{
-Otrzymano - Saskie Pióro
-}
-
-colony_10
-{
-Otrzymano - Panienka
-}
-
-colony_11
-{
-Chevalier Philippe
-}
-
-colony_12
-{
-de Poincy
-}
-
-colony_13
-{
-lord Thomas
-}
-
-colony_14
-{
-Vindzor
-}
-
-colony_15
-{
-don Juan
-}
-
-colony_16
-{
-de Cordova
-}
-
-colony_17
-{
-colonel
-}
-
-colony_18
-{
-Jonathan Fox
-}
-
-colony_19
-{
-Nasze miasto @<GetCityName(city)> jest oblegane!
-}
-
-colony_20
-{
-Oblężenie zostało przerwane!
-}
-
-colony_21
-{
-Nasze miasto @<GetCityName(city)> jest oblegane!
-}
-
-colony_22
-{
-Nasze miasto @<GetCityName(city)> zostało zdobyte!
-}
+colony_1 {@<iTemp> marynarzy zgineło z powodu braku leków}
+colony_2 {Statek @<Pchar.Ship.Name> posiada bardzo małą ilość medykamentów}
+colony_3 {Przygotuj bitwę o miasto}
+colony_4 {ERROR: Nie określono obwodnicy miasta podczas przechwytywania!!!}
+colony_5 {Siły wroga zostały stłumione! Droga jest wolna.}
+colony_6 {Otrzymano ~}
+colony_7 {Otrzymano ~}
+colony_8 {Otrzymano - Topór}
+colony_9 {Otrzymano - Saskie Pióro}
+colony_10 {Otrzymano - Panienka}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {colonel}
+colony_18 {Jonathan Fox}
+colony_19 {Nasze miasto @<GetCityName(city)> jest oblegane!}
+colony_20 {Oblężenie zostało przerwane!}
+colony_21 {Nasze miasto @<GetCityName(city)> jest oblegane!}
+colony_22 {Nasze miasto @<GetCityName(city)> zostało zdobyte!}

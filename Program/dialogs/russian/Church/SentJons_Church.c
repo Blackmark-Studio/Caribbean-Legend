@@ -38,13 +38,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Вызывающий доверие) Но ведь даже вы должны признать, что Господь действует через людей. Что, если цыганка - лишь инструмент в руках Божьих? Что если замысел Его так глубок, что нам, простым людям, не дано понять? Пути Господни неисповедимы, ведь так?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Вы вынуждаете отца смотреть, как его дочь медленно угасает, вместо того чтобы позволить ему попытаться её спасти. Разве это милосердие?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		

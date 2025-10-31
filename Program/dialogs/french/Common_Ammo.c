@@ -412,14 +412,14 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Je dirais non, je suppose... si je te donnais ma parole, je devrais faire un travail qui semble assez ennuyeux. Je ne ferai pas cela.";
 				link.l2.go = "zpq_fld";
-				notification("Reputation Check Passed", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
 				dialog.text = "Votre réputation est inacceptable pour moi. Je vous demande de quitter la salle. Nous sommes capables de résoudre nos problèmes par nous-mêmes.";
 				link.l1 = "Peu importe, résous-les alors...";
 				link.l1.go = "exit";
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				Notification_Reputation(false, 71, "low");
 			}		
 		break;
 		
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Digne de confiance) Je commence à croire que tu vas me tromper alors je ne partirai pas d'ici sans mes 125 000 pesos !";
 				link.l2.go = "zpq_ex4";
 			}
@@ -512,9 +512,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex3":
-			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 			{
-				notification("Skill Check Passed", "Leadership");
+				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "Ah, oui ... Exactement ! 100 000 pesos. J'ai oublié, pardonnez-moi. C'est à cause de mon âge, la sclérose vous savez ... Bien sûr, voici vos pièces. C'était un plaisir de faire affaire avec vous, capitaine. Maintenant, je suis désolé, mais j'ai beaucoup de travail à faire ...";
 				link.l1 = "La même chose pour vous, señor. À bientôt.";
 				link.l1.go = "exit";
@@ -527,13 +527,12 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Failed (36)", "Leadership");
+				Notification_Skill(false, 36, SKILL_LEADERSHIP);
 				dialog.text = "Quoi ?! Prends ton argent et fous le camp, ou tu vas pourrir dans cette casemate !";
 				link.l1 = "Vous êtes un tel menteur, monsieur! Je vous conseille de me donner mon argent de manière honnête, ou je prendrai la cargaison!";
 				link.l1.go = "zpq_ex_agry";
 				link.l2 = "Excusez-moi... D'accord, je prendrai la somme que vous proposez et nous en avons fini.";
 				link.l2.go = "zpq_ex5";
-				Log_info("Leadership skill is not sufficient");
 			}
 		break;
 		

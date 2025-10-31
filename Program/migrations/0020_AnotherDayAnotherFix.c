@@ -1,0 +1,3 @@
+void ApplyMigration(ref migrationState) {
+//
+}

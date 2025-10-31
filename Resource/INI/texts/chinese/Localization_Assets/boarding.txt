@@ -1,0 +1,11 @@
+boarding_1 {船长选择了自尽。}
+boarding_2 {船员拒绝为他们的船长而战。}
+boarding_3 {船长在甲板上!}
+boarding_4 {@<_Name>加入战斗!}
+boarding_5 {船长已死, 幸存者已投降。}
+boarding_6 {船长已死, 但船员拒绝投降。}
+boarding_7 {战利品。}
+boarding_8 {战利品中的物品。}
+boarding_9 {来自@<_ShipName>的登船队: @<_CrewSize>。}
+boarding_10 {@<_CrewSize>名幸存者返回了@<_ShipName>。}
+boarding_11 {同伴未能将船靠近进行登船。}

@@ -15,6 +15,7 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 
 		//navy 18.02.08 Запрет абордажа
 		if (CheckAttribute(rCharacter, "Tasks.CanBoarding") && !sti(rCharacter.Tasks.CanBoarding)) return false;
+		if (CheckAttribute(rCharacter, "AutoBoardingDisable")) return false;
 
 		// Addon 2016-1 Jason Пиратская линейка
 		if (sti(RealShips[sti(rCharacter.ship.type)].basetype) == SHIP_POLACRE_QUEST && rCharacter.id == "Ignasio") return false;
@@ -63,7 +64,7 @@ bool Ship_AutoAbordage(ref rCharacter, float fMinEnemyDistance)
 		if (bGrapplingProfessional || bAngleTest)
 		{
 			bSuccess = true;
-			PlayStereoSound("Interface\abordage.wav");
+			//PlayStereoSound("Interface\abordage.wav");
 
             if (fOurCrewFencing >= fEnCrewFencing)
             { // победа
@@ -258,7 +259,7 @@ void DoTakeAbordageGoods(ref rOneChr, ref rSecChr)
 		maxPrice = 0;
 		iGood = -1;
 		//ищем самый дорогой товар на борту
-		for (i=0; i < GOODS_QUANTITY; i++)
+		for (i=0; i < GetArraySize(&Goods); i++)
 		{
 			itmp = GetCargoGoods(rSecChr, i);
 			if (itmp > 0 && sti(Goods[i].Cost) > maxPrice)
@@ -328,12 +329,33 @@ void PlaceCompanionCloneNearMChr(int _index, bool _isCampus)
 		}
 		else
 		{
-			LAi_SetCitizenType(sld);
-			PlaceCharacter(sld, "rld", PChar.location);
+			if(NeedCabinTmpl())
+			{
+				if(chr.id == "Helena" && CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
+				{
+					ChangeCharacterAddressGroup(sld, pchar.location, "girl", "sit1");
+					LAi_SetSitType(sld);
+					LAi_SetOfficerCabinSitAnimation(sld);
+				}
+				else
+				{
+					LAi_SetCitizenType(sld);
+					// belamour до появления локаторов компаньонов
+					PlaceCharacter(sld, "rld", "random_must_be_near");
+					TeleportCharacterToLocatorIgnoreCollision(sld, "rld", "aloc1");
+				}
+			}
+			else
+			{
+				LAi_SetCitizenType(sld);
+				PlaceCharacter(sld, "rld", PChar.location);
+			}
 		}
+		
 		LAi_SetImmortal(sld, true); //неубиваемый.
 		sld.IsCompanionClone = true; //флаг для диалога, т.к. он не компаньон все таки...
         sld.RealCompanionIdx = chr.index;
+        sld.SpecialRole = GetJobsList(chr, " / ");
         
 		chr.Tasks.Clone = iTemp; //признак, что клон уже вызван.
 	}

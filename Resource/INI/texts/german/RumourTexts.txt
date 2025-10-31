@@ -1,66 +1,46 @@
-
-
 Start_GoldFleet_t0 {Es heißt, dass die Flottille, die Gold und Silber für die spanische Staatskasse transportiert, vor kurzem den Hafen von Portobello verlassen hat und nach Havanna gefahren ist.}
 Start_GoldFleet_t1 {Eine spanische Flottille mit einer unbezahlbaren Ladung von Silber und Gold der Inkas und Azteken ist kürzlich aus Portobello ausgelaufen. Der Konvoi ist auf dem Weg nach Havanna, von wo aus die Schätze nach Spanien transportiert werden sollen.}
 Start_GoldFleet_t2 {Es heißt, dass ein spanischer Goldkonvoi mit einer Ladung Silber und Gold von Portobello nach Havanna segelte. Die Flottille wird von einem riesigen Kriegsschiff sowie von Fregatten und Galleonen mit je zwei Kanonendecks eskortiert. Es gibt auch andere Militärschiffe, die ich nicht erkennen konnte.}
-
 End_GoldFleet_t0 {Der spanische Goldkonvoi ist erfolgreich auf Kuba angekommen. Nun wird das gesammelte Silber und Gold sicher nach Spanien transportiert.}
 End_GoldFleet_t1 {Alle Schiffe eines spanischen Goldkonvois sind erfolgreich in Havanna angekommen. Das gesamte Silber und Gold aus Peru und Mexiko wird bald nach Europa geliefert.}
 End_GoldFleet_t2 {Eine spanische Flottille ist in Havanna angekommen. Die Ladung Silber und Gold ist in Sicherheit und wird bald nach Spanien geliefert werden.}
-
 Defeat_GoldFleet_t0 {Es heißt, dass der spanische Goldkonvoi, der von Portobello nach Havanna segelte, nie an seinem Ziel angekommen ist. Gott allein weiß, was ihm zugestoßen sein könnte, schreckliche Stürme oder Piraten vielleicht, obwohl ich bezweifle, dass es so mutige oder eher verrückte Piraten da draußen gibt.}
 Defeat_GoldFleet_t1 {Die spanische Goldflottille, die eine Ladung Silber und Gold aus Portobello transportierte, verschwand spurlos. Niemand weiß es genau, aber es heißt, dass sie den Piraten zum Opfer gefallen ist!}
 Defeat_GoldFleet_t2 {Eine Goldflotte, die Schätze aus Portobello transportierte, ist nie in Havanna angekommen, obwohl sie das längst hätte tun sollen. Was könnte ihr zugestoßen sein? ... Wer weiß, um diese Jahreszeit gibt es heftige Stürme.}
-
 Attak_GoldFleet_t0 {Es heißt, dass die spanische Goldflotte, die Silber, Gold und andere Schätze aus der Neuen Welt transportierte, angegriffen wurde und mehrere Schiffe dabei verloren gingen.}
 Attak_GoldFleet_t1 {Die Meere sind unsicher! Eine spanische Goldflotte, die von Portobello nach Havanna segelte, wurde entweder von den Piraten oder von englischen Freibeuter angegriffen, ich weiß nicht genau, es könnten auch Franzosen gewesen sein! Wirklich, was für ein Wagnis! Ich würde sie am liebsten alle hängen sehen!}
 Attak_GoldFleet_t2 {Es wird von Tag zu Tag schlimmer! Eine spanische Goldflotte, die Silber, Gold und andere Schätze der Neuen Welt von Portobello nach Havanna transportierte, wurde von dreisten Piraten überfallen! Oh, Heilige Jungfrau! Das Ende der Tage kommt bestimmt!}
-
 Init_GoldFleet_t0 {Es heißt, eine spanische Goldflotte bereite sich darauf vor, von Portobello aus in See zu stechen. Der genaue Tag der Abfahrt wird geheim gehalten, aber es heißt, dass der Konvoi zu Beginn des #sgold_month# nach Kuba fahren wird.}
 Init_GoldFleet_t1 {Es heißt, dass Gold und Silber auf die Schiffe der Goldflotte verladen werden. Der Konvoi wird in der ersten Hälfte des #sgold_month# nach Kuba aufbrechen.}
 Init_GoldFleet_t2 {Die Abfahrt eines Goldkonvois von Portobello nach Kuba ist für die erste Hälfte des #sgold_month# geplant. Zu diesem Zeitpunkt wird das gesamte erworbene Gold und Silber in die Laderäume verladen sein.}
-
-
 MerchantOnMapTo_t0 {Sie sagen, dass das Schiff "#sShipName#" unter der Flagge von #snation# von der Kolonie #ssColony# zu uns unterwegs ist, voll beladen mit #sQuestGoodsIdx#.}
 MerchantOnMapTo_t1 {Der örtliche Händler erwartet die Ankunft des Schiffes "#sShipName#" unter der Flagge von #snation#  aus der Kolonie #ssColony# mit der Ladung von #sQuestGoodsIdx#.}
 MerchantOnMapTo_t2 {Ich habe gehört, dass ein Händler auf dem Schiff "#sShipName#" unter der Flagge von #snation# eine Ladung von #sQuestGoodsIdx# aus der Kolonie #ssColony# transportiert.}
-
 MerchantOnMap_t0 {Man sagt, dass ein Handelsschiff "#sShipName#" unter der Flagge von #snation# auf die Flut wartet, um mit der Ladung von #sQuestGoodsIdx# in Richtung #ssNextColony# aufzubrechen.}
 MerchantOnMap_t1 {Es heißt, dass ein reicher Unterhändler, der unter der Schirmherrschaft von #snation# arbeitet, das Schiff "#sShipName#" gechartert hat. Schon bald wird es mit einer Ladung von #sQuestGoodsIdx# in Richtung #ssNextColony# aufbrechen.}
 MerchantOnMap_t2 {Der hiesige Händler hat das Schiff "#sShipName#" mit einer Ladung von #sQuestGoodsIdx# für #snation# ausgerüstet, und schon bald wird es nach #ssNextColony# aufbrechen.}
-
 MerchantRumour_t0 {Ich habe Gerüchte gehört, dass das Schiff "#sShipName#" unter der Flagge von #snation#, das von #ssColony# nach #ssNextColony# mit einer Ladung von #sQuestGoodsIdx# segelte, von einem unbekannten Piraten versenkt wurde!}
 MerchantRumour_t1 {Ich habe Gerüchte gehört, dass das Schiff "#sShipName#" unter der Flagge von #snation#, das von #ssColony# mit der Ladung von #sQuestGoodsIdx# nach #ssNextColony# segelte, mitsamt der Ladung und der Mannschaft verloren gegangen ist!}
 MerchantRumour_t2 {Es gibt schreckliche Gerüchte, dass ein Pirat kürzlich ein Handelsschiff der #snation# geentert hat, das aus der Kolonie #ssColony# segelte. Er habe die gesamte Besatzung abgeschlachtet und die Ladung von #sQuestGoodsIdx# für sich selbst genommen. Warst du das nicht zufällig, Kapitän?}
-
-GetColonyPrices_t0 {Der Quartiermeister eines Schiffes der West India Company erzählte mir bei einem Becher Rum von den Preisen im Lager der #sColony#. (Liste der Preise erhalten)}
-GetColonyPrices_t0 {Der Kapitän des Handelsschiffs, das vor kurzem aus der Stadt #sColony# angekommen war, erzählte mir von den Preisen im örtlichen Geschäft. (Liste der Preise erhalten)}
 GetColonyPrices_t0 {Kürzlich habe ich in der Taverne gehört, wie zwei Kapitäne über die Preise im Laden der Stadt #sColony# diskutierten. (Liste der Preise erhalten)}
-
 WaitInTavern_t0 {Es heißt, dass #sPsHero_Name# sein Schiff verloren hat und nun in der Taverne von #sTown_Name# seine Sorgen in Rum ertränkt.}
 WaitInTavern_t1 {Ich hörte, wie ein betrunkener Matrose, der gestern wegen Diebstahls verhaftet wurde, seinen Trinkkumpanen erzählte, dass #sPsHero_Name# sein Schiff beim Kartenspiel verloren hat und nun in der Taverne von #sTown_Name# auf Rückenwind wartet.}
 WaitInTavern_t2 {Die Matrosen in der Taverne sagen, dass #sPsHero_Name# vor kurzem ein großes Pech gehabt hat. Die Zollbeamten haben sein Schiff versenkt, und er entkam nur knapp dem Galgen in der Stadt #sTown_Name#.}
-
 WorkOnMayor_t0 {Heute habe ich #sPsHero_Name# bei unserem Gouverneur gesehen. Es scheint, dass seine Exzellenz ihm eine weitere 'interessante' Mission gegeben hat.}
 WorkOnMayor_t1 {Man sagt, dass unser Gouverneur einen neuen Schützling hat. Kapitän #sPsHero_Name# ist ein häufiger Besucher in der Residenz, übernimmt heikle Missionen für ihn und hat offenbar eine Liebesaffäre mit der Tochter Seiner Exzellenz.}
 WorkOnMayor_t2 {Die Köchin erzählte mir, sie habe vom Hausmädchen Seiner Exzellenz gehört, dass #sPsHero_Name# ein guter Freund von ihm sei. Heute in aller Frühe eilte er zur Residenz - sicherlich hatte er dort etwas Wichtiges zu erledigen.}
-
 SailToIsland_t0 {#sPsHero_Name# sagte, dass er nach #sTo# #sTown_Name# gehen würde. Vielleicht gibt es dort etwas zu kaufen.}
 SailToIsland_t1 {#sPsHero_Name# segelt #sTo# #sTown_Name# in Handelsangelegenheiten - das habe ich von einem seiner Matrosen in der Taverne gehört.}
 SailToIsland_t2 {Gestern war #sPsHero_Name# sturzbetrunken in der örtlichen Taverne und schrie laut, dass er nach #sTo# #sTown_Name# gehen würde, wo er etwas zu erledigen habe.}
-
 WorkOnStore_t0 {Einer der Matrosen in der Taverne erwähnte, dass #sPsHero_Name# sich verpflichtet hat, die Fracht von #sGood# nach #sTown_Name# zu liefern.}
 WorkOnStore_t1 {Der Assistent unseres Händlers hat mir erzählt, dass #sPsHero_Name# sich verpflichtet hat, die Ladung von #sGood# aus dem Geschäft seines Chefs in die Stadt #sTown_Name# zu liefern.}
 WorkOnStore_t2 {Unser Barkeeper sagte, dass #sPsHero_Name# in der Taverne Matrosen anheuert, um mit der Fracht von #sGood# aus dem örtlichen Laden nach #sTown_Name# zu segeln.}
-
 WorkWithContra_t0 {Ich habe #sPsHero_Name# mit einer zwielichtigen Person sprechen sehen. Sie sagen, er war ein Schmuggler.}
 WorkWithContra_t1 {Es heißt, dass #sPsHero_Name# eine volle Ladung Schmuggelware mitgebracht hat. Vielleicht hat er sie schon verkauft - vielleicht aber auch nicht...}
 WorkWithContra_t2 {Ich hörte zufällig, wie #sPsHero_Name# mit unserem Schmuggler sprach. Sie vereinbarten ein Treffen an einem Ort mit dem Namen #sContraPlace#.}
-
 DuelCoward_t0 {Was für eine Schande! #sName# ist nicht zu einem Duell erschienen. Jetzt sagen alle, dass er ein Feigling ist!}
 DuelCoward_t1 {Ha-ha, #sName# ist nicht zum Duell erschienen! Ich glaube nicht, dass er bei Frauen den gleichen Erfolg haben wird wie bisher.}
-DuelCoward_t2 {Haben Sie es gehört? #sName# ist nicht zu einem Duell erschienen! Es heißt, er sei sturzbetrunken und könne sich einfach nicht auf den Beinen halten.}
-
-DuelHero_t0 {Wisst Ihr, dass #sName# ein erstklassiger Duellant ist? Er hat bereits #sKill# Männer getötet. Ich würde mich ihm nicht in den Weg stellen wollen.}
+DuelCoward_t2 {Haben Sie gehört? #sName# ist nicht zum Duell erschienen! Man sagt, er war letzte Nacht so betrunken, dass er nicht einmal aufstehen konnte.}
+DuelHero_t0 {Wissen Sie, dass #sName# ein erfahrener Duellant ist? Er hat bereits #sKill# Menschen getötet. Ich möchte ihm nicht in die Quere kommen.}
 DuelHero_t1 {Man sagt, dass #sName# seine Seele an den Teufel verkauft hat, und deshalb kann er in einem Duell nicht besiegt werden! Und die Seelen derer, die er tötet... er hat bereits #sKill# Männer getötet, und sie werden direkt in die Hölle gehen! Sie sagen auch, dass der Teufel seine eigene Seele einfordern wird, wenn er seine Mordserie beendet.}
 DuelHero_t2 {Dieser Emporkömmling #sName# hat unglaubliches Glück! Er hat bereits #sKill# Männer in einem Duell getötet und nie einen Kratzer abbekommen! Wirklich, kannst du das überhaupt glauben?}

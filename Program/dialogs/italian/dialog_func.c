@@ -189,7 +189,7 @@ string RandExclamation()
 //                Выбор фраз для диалога
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // boal 13.03.2004 -->
-string RandPhraseSimple(string Var1, string Var2);
+string RandPhraseSimple(string Var1, string Var2)
 {
 	int RandP;
 	RandP = Rand(1);
@@ -435,7 +435,7 @@ string GetCityName(string city) // имена городов по аттрибу
     string ret;
     int nFile = LanguageOpenFile("LocLables.txt");
     
-	ret = LanguageConvertString(nFile, city + " Town")
+	ret = LanguageConvertString(nFile, city + " Town");
 	LanguageCloseFile( nFile );
 	
 	return  ret;
@@ -966,35 +966,41 @@ string TimeGreeting()
 {
     if (GetHour() >= 18 && GetHour() < 23)
     {
-       return "Good evening";
+       return "Buona sera";
     }
     if (GetHour() >= 6 && GetHour() < 12)
     {
-       return "Good morning";
+       return "Buongiorno";
     }
     if (GetHour() >= 12 && GetHour() < 18)
     {
-       return "Good day";
+       return "Buon giorno";
     }
     if (GetHour() >= 23 || GetHour() < 6)
     {
-       return "Good night";
+       return "Buona notte";
     }
     return "Hallo!";
 }
 
-string Greeting()
+string Greeting(bool formal)
 {
-    return "Hello";
+	if (GetHour() >= 6 && GetHour() < 12)
+    {
+       return "Buongiorno";
+    }
+	if (formal == true) return "Salve"; // polite
+	else return "Ciao"; // friendly
 }
 
-string Goodbye()
+string Goodbye(bool formal)
 {
     if (GetHour() >= 23 || GetHour() < 6)
     {
-       return "Good night";
+       return "Buona notte";
     }
-    return RandPhraseSimple("Goodbye", "Farewell");
+    if (formal == true) return RandPhraseSimple("Arrivederci", "Addio"); // polite
+	else return RandPhraseSimple("Ciao", "Ciao"); // friendly
 }
 
 // выбор фразы от репутации
@@ -1223,4 +1229,29 @@ string GetIndianName(int Sex) //Jason имена индейцев
 	else nameid = "l" + (100+rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle(ref NPChar, bool address) //Титул ГГ
+{
+	string Title, Nation;
+	
+	if (PChar.sex == "man")
+	{
+		if (address == true)
+		{
+			Nation = GetAddress_Form(NPChar);
+		}
+		
+		Title = "capitano";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = GetAddress_Form(NPChar);
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "governatore generale";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "vice ammiraglio";
+
+	if (address == true && PChar.sex == "man") return Nation + " " + Title;
+	else return Title;
 }

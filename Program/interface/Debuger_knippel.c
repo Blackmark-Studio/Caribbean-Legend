@@ -415,6 +415,7 @@ void CalculateInfoDataF5()
 
     // Тичингиту
     sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+    SetHeroAutolevel(sld);
     sld.name = "Тичингиту";
     sld.lastname = "";
     sld.greeting = "Tichingitu";
@@ -433,10 +434,10 @@ void CalculateInfoDataF5()
     SetCharacterPerk(sld, "HardHitter");
     SetCharacterPerk(sld, "Gunman");
     SetCharacterPerk(sld, "GunProfessional");
-    SetCharacterPerk(sld, "SwordplayProfessional");
+
     SetCharacterPerk(sld, "Sliding");
     SetCharacterPerk(sld, "ByWorker");
-    SetCharacterPerk(sld, "ByWorker2");
+
     SetCharacterPerk(sld, "Grus");
     AddItems(sld, "mushket6", 1);
     sld.CanTakeMushket = true;

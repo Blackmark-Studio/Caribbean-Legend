@@ -1,109 +1,22 @@
-colony_1
-{
-Faute de médicaments pour soigner les blessures,  @<iTemp>  marins sont morts.
-}
-
-colony_2
-{
-Sur le navire @<Pchar.Ship.Name>, il reste peu de médicaments.
-}
-
-colony_3
-{
-Préparer la bataille de la ville
-}
-
-colony_4
-{
-ERREUR : Le contournement de la ville n'est pas défini lors de la capture !!!
-}
-
-colony_5
-{
-Les forces ennemies sont éliminées ! La voie est libre.
-}
-
-colony_6
-{
-Vous avez reçu ~
-}
-
-colony_7
-{
-Vous avez reçu ~
-}
-
-colony_8
-{
-Vous avez reçu - Hache
-}
-
-colony_9
-{
-Vous avez reçu - Plume de Saxe
-}
-
-colony_10
-{
-Vous avez reçu - Madonna
-}
-
-colony_11
-{
-Chevalier Philippe
-}
-
-colony_12
-{
-de Poincy
-}
-
-colony_13
-{
-lord Thomas
-}
-
-colony_14
-{
-Windsor
-}
-
-colony_15
-{
-don Juan
-}
-
-colony_16
-{
-de Córdova
-}
-
-colony_17
-{
-colonel
-}
-
-colony_18
-{
-Jonathan Fox
-}
-
-colony_19
-{
-Notre ville @<GetCityName(city)> est assiégée !
-}
-
-colony_20
-{
-Le siège est terminé !
-}
-
-colony_21
-{
-Notre ville @<GetCityName(city)> est assiégée !
-}
-
-colony_22
-{
-Notre ville @<GetCityName(city)> a été capturée !
-}
+colony_1 {Faute de médicaments pour soigner les blessures,  @<iTemp>  marins sont morts.}
+colony_2 {Sur le navire @<Pchar.Ship.Name>, il reste peu de médicaments.}
+colony_3 {Préparer la bataille de la ville}
+colony_4 {ERREUR : Le contournement de la ville n'est pas défini lors de la capture !!!}
+colony_5 {Les forces ennemies sont éliminées ! La voie est libre.}
+colony_6 {Vous avez reçu ~}
+colony_7 {Vous avez reçu ~}
+colony_8 {Vous avez reçu - Hache}
+colony_9 {Vous avez reçu - Plume de Saxe}
+colony_10 {Vous avez reçu - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Windsor}
+colony_15 {don Juan}
+colony_16 {de Córdova}
+colony_17 {colonel}
+colony_18 {Jonathan Fox}
+colony_19 {Notre ville @<GetCityName(city)> est assiégée !}
+colony_20 {Le siège est terminé !}
+colony_21 {Notre ville @<GetCityName(city)> est assiégée !}
+colony_22 {Notre ville @<GetCityName(city)> a été capturée !}

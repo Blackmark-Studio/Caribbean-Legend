@@ -1,182 +1,40 @@
-Caleuche_1
-{
-Tuttuathapak
-}
-Caleuche_2
-{
-
-}
-
-Caleuche_3
-{
-untoter Kapitän
-}
-Caleuche_4
-{
-
-}
-
-Caleuche_5
-{
-Geisterschiff
-}
-
-Caleuche_6
-{
-Fergus
-}
-Caleuche_7
-{
-Hooper
-}
-
-Caleuche_8
-{
-Ihr seid von dem Geisterschiff entkommen!
-}
-
-Caleuche_9
-{
-Reginald
-}
-Caleuche_10
-{
-Jackson
-}
-
-Caleuche_11
-{
-Harpy
-}
-
-Caleuche_12
-{
-xebec 'Harpy'
-}
-
-Caleuche_13
-{
-Tote Gastgeberin
-}
-Caleuche_14
-{
-
-}
-
-Caleuche_15
-{
-Chavinavy
-}
-Caleuche_16
-{
-
-}
-
-Caleuche_17
-{
-Esberto
-}
-Caleuche_18
-{
-Salinas
-}
-
-Caleuche_19
-{
-Die Amulette von Tuttuathapak haben ihre Macht verloren!
-}
-
-Caleuche_20
-{
-Drücken Sie 'T' zum Benutzen
-}
-
-Caleuche_21
-{
-Das Portal ist blockiert!
-}
-
-Caleuche_22
-{
-Häuptling Chavinavy
-}
-Caleuche_23
-{
-
-}
-
-Caleuche_24
-{
-Untoten-Tempel
-}
-Caleuche_25
-{
-
-}
-
-Caleuche_26
-{
-Ein Geisterschiff am Horizont zu sehen!
-}
-
-Caleuche_27
-{
-Baltazar
-}
-Caleuche_28
-{
-de Cordes
-}
-
-Caleuche_29
-{
-Flying Heart
-}
-
-Caleuche_30
-{
-Sie fühlen sich geschickter
-}
-Caleuche_31
-{
-Sie fühlen sich robuster
-}
-Caleuche_32
-{
-Sie fühlen sich stärker
-}
-Caleuche_33
-{
-Ihre Wahrnehmung verstärkt sich
-}
-Caleuche_34
-{
-Sie fühlen sich einsichtiger
-}
-Caleuche_35
-{
-Sie fühlen sich selbstbewusster
-}
-Caleuche_36
-{
-Sie fühlen sich inspiriert
-}
-
-Caleuche_37
-{
-Das Geisterschiff ist am Horizont zu sehen!
-}
-
-Caleuche_38
-{
-Ihr seid ohnmächtig geworden vor Wunden...
-}
-
-Caleuche_39
-{
-Alonso
-}
-Caleuche_40
-{
-
-}
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {untoter Kapitän}
+Caleuche_4 { }
+Caleuche_5 {Geisterschiff}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {Ihr seid von dem Geisterschiff entkommen!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {xebec 'Harpy'}
+Caleuche_13 {Tote Gastgeberin}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {Die Amulette von Tuttuathapak haben ihre Macht verloren!}
+Caleuche_20 {Drücken Sie 'T' zum Benutzen}
+Caleuche_21 {Das Portal ist blockiert!}
+Caleuche_22 {Häuptling Chavinavy}
+Caleuche_23 { }
+Caleuche_24 {Untoten-Tempel}
+Caleuche_25 { }
+Caleuche_26 {Ein Geisterschiff am Horizont zu sehen!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {Sie fühlen sich geschickter}
+Caleuche_31 {Sie fühlen sich robuster}
+Caleuche_32 {Sie fühlen sich stärker}
+Caleuche_33 {Ihre Wahrnehmung verstärkt sich}
+Caleuche_34 {Sie fühlen sich einsichtiger}
+Caleuche_35 {Sie fühlen sich selbstbewusster}
+Caleuche_36 {Sie fühlen sich inspiriert}
+Caleuche_37 {Das Geisterschiff ist am Horizont zu sehen!}
+Caleuche_38 {Ihr seid ohnmächtig geworden vor Wunden...}
+Caleuche_39 { }
+Caleuche_40 { }

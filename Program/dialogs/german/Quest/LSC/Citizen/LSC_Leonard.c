@@ -244,7 +244,7 @@ void ProcessDialogEvent()
 			iPeso = makeint((sti(pchar.money)-sti(pchar.questTemp.LSC.Drink.Money))/2);
 			iDubl = makeint((GetCharacterItem(pchar, "gold_dublon")-sti(pchar.questTemp.LSC.Drink.Dublon))/2);
 			AddMoneyToCharacter(pchar, -iPeso);
-			RemoveItems(pchar, "gold_dublon", iDubl);
+			RemoveDublonsFromPCharTotal(iDubl);
 			Log_Info("You have given "+iDubl+" doubloons");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Gut, gib mir den Schlüssel und ich werde ihn seinem Besitzer zurückgeben, bis er ihn nicht vermisst. Lebewohl, Kumpel...";

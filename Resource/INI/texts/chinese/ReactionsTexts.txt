@@ -1,21 +1,21 @@
-NoLootCorpse0 {这小子的口袋跟幽灵船一样空空如 也。 }
-NoLootCorpse1 {看来他没什么值钱的东西。 }
-NoLootCorpse2 {这家伙的口袋是空的。 }
-NoLootCorpse3 {我漏了什么吗? 不, 绝对是空的。 }
-NoLootCorpse4 {又一个穷死的人, 身上分文没有。 }
-NoLootCorpse5 {看来他是靠借债过日子的。 }
-NoLootCorpse6 {这具尸体连给渡船夫的钱都没有。 }
-NoLootCorpse7 {没有备用炮弹, 没有火药。 浪费我的时间。 }
-NoLootCorpse8 {他的口袋里没有一个硬币, 衬衫里也没有。 }
-NoLootCorpse9 {他穷得叮当响, 连一个硬币都没有。 }
-NoLootCorpse10 {我为什么要费这个劲? 这家伙身上什么都没有。 }
-NoLootCorpse11 {他的口袋空空如也。 }
-NoLootCorpse12 {这里什么都没有。 也许有隐藏的口袋? }
-NoLootCorpse13 {没有钱, 没有钥匙, 没有遗嘱。 }
-NoLootCorpse14 {他什么值钱的东西都没带就去了另 一个世界。 }
-NoLootCorpse15 {他显然不富有 —口袋是空的。 }
-NoLootCorpse16 {可怜的家伙显然是轻装上阵参加战 斗的。 }
-NoLootCorpse17 {他把最后一枚硬币都用来武装自己 了。 }
-NoLootCorpse18 {尸体就是尸体。 这里什么都没有。 }
-NoLootCorpse19 {他一定把所有的财宝都留在箱子里 了。 }
-NoLootCorpse20 {看来他在战斗中失去了所有贵重物 品。 }
+NoLootCorpse0 {这小子的口袋跟幽灵船一样空空如 也。}
+NoLootCorpse1 {看来他没什么值钱的东西。}
+NoLootCorpse2 {这家伙的口袋是空的。}
+NoLootCorpse3 {我漏了什么吗? 不, 绝对是空的。}
+NoLootCorpse4 {又一个穷死的人, 身上分文没有。}
+NoLootCorpse5 {看来他是靠借债过日子的。}
+NoLootCorpse6 {这具尸体连给渡船夫的钱都没有。}
+NoLootCorpse7 {没有备用炮弹, 没有火药。 浪费我的时间。}
+NoLootCorpse8 {他的口袋里没有一个硬币, 衬衫里也没有。}
+NoLootCorpse9 {他穷得叮当响, 连一个硬币都没有。}
+NoLootCorpse10 {我为什么要费这个劲? 这家伙身上什么都没有。}
+NoLootCorpse11 {他的口袋空空如也。}
+NoLootCorpse12 {这里什么都没有。 也许有隐藏的口袋?}
+NoLootCorpse13 {没有钱, 没有钥匙, 没有遗嘱。}
+NoLootCorpse14 {他什么值钱的东西都没带就去了另 一个世界。}
+NoLootCorpse15 {他显然不富有 —口袋是空的。}
+NoLootCorpse16 {可怜的家伙显然是轻装上阵参加战 斗的。}
+NoLootCorpse17 {他把最后一枚硬币都用来武装自己 了。}
+NoLootCorpse18 {尸体就是尸体。 这里什么都没有。}
+NoLootCorpse19 {他一定把所有的财宝都留在箱子里 了。}
+NoLootCorpse20 {看来他在战斗中失去了所有贵重物 品。}

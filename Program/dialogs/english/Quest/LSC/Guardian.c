@@ -25,7 +25,7 @@ void ProcessDialogEvent()
 		case "Narval_warning":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's a madman! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "check_parol_fight";
 				break;
@@ -35,7 +35,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 				{
-					dialog.text = "Stop, pal. Narwhal's territories ahead, an entry is prohibited for strangers. You can pass only by an invitation. Do you know the password?";
+					dialog.text = "Stop, pal. Narwhal's territory ahead, entry is prohibited for strangers. You can pass only with an invitation. Do you know the password?";
 					link.l1 = "Yes.";
 					link.l1.go = "Narval_warning_yes";
 					link.l2 = "No.";
@@ -43,8 +43,8 @@ void ProcessDialogEvent()
 				}
 				else // если друг нарвалам
 				{
-					dialog.text = "A-ah, "+GetFullName(pchar)+"! Hello, friend, we are warned that you can walk freely here. Welcome!";
-					link.l1 = "Thanks, friend!";
+					dialog.text = "A-ah, "+GetFullName(pchar)+"! Hello, friend, we've been told you may walk freely here. Welcome!";
+					link.l1 = "Thank you, friend!";
 					link.l1.go = "exit";
 				}
 				location.nrv_parolinfo = "true";
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 				{
-					dialog.text = "I hope that you didn't forget a password...";
+					dialog.text = "I hope you haven't forgotten the password...";
 					link.l1 = "Don't worry...";
 					link.l1.go = "exit";
 				}
@@ -69,14 +69,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Narval_warning_yes":
-			dialog.text = "Then go and tell that to the tough guy over there. Don't try to cheat on him, our boys with muskets know what to do. So if you are planning any tricks - you'd better turn and leave. Now. I warned you.";
+			dialog.text = "Then go and tell that to the tough guy over there. Don't try to cheat him, our boys with muskets know what to do. So if you're planning any tricks - you'd better turn and leave. Now. I warned you.";
 			link.l1 = "Fine, friend. I got it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Narval_warning_repeat";
 		break;
 		
 		case "Narval_warning_no":
-			dialog.text = "Then you have got nothing to do here if you are not going to end your life, of course. Or you're just joking, huh? Are you kidding me? Actually, I don't care. Go down, my job is to warn but not to stop. You won't make it back if you don't know a password.";
+			dialog.text = "Then you have nothing to do here unless you're planning to end your life, of course. Or are you just joking, huh? Are you kidding me? Actually, I don't care. Go down, my job is to warn, not to stop. You won't make it back if you don't know the password.";
 			link.l1 = "Fine, pal. I got it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Narval_warning_repeat";
@@ -91,7 +91,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Don't bother me, pal. Move along!";
+				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Don't bother me, friend. Move along!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 			}
@@ -101,14 +101,14 @@ void ProcessDialogEvent()
 		case "Narval_parol":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's the psycho! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "check_parol_fight";
 				break;
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend")) 
 			{
-				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Don't bother me, pal. Move along!";
+				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Don't bother me, friend. Move along!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Narval_parol";
@@ -120,30 +120,63 @@ void ProcessDialogEvent()
 		break;
 		
 		case "check_parol":
-			dialog.text = "Say a password and do it clear and loud.";
-			link.l1.edit = 3;
-			link.l1 = "";	
-			link.l1.go = "check_parol_1";
-		break;
-		
-		case "check_parol_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[3]);
-			if (sTemp == sNrvParol && CheckAttribute(pchar, "questTemp.LSC.NParol_bye"))
+			dialog.text = "Say the password, and make it clear and loud.";
+			sTotalTemp = sNrvParol;
+			if (CheckAttribute(pchar, "questTemp.LSC.NParol_bye"))
 			{
-				dialog.text = "Fine, you may proceed.";
-				link.l1 = "Thanks, pal...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "Narval_parol_repeat";
-				LAi_SetGuardianType(NPChar);
-				LAi_group_MoveCharacter(NPChar, "LSC_NARVAL");
-				pchar.questTemp.LSC.parol_nrv = "true";
+				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));
+				link.l1.go = "check_parol_wrong";
+				link.l2 = StringFromKey("QuestsUtilite_" + (293 + rand(11)));
+				link.l2.go = "check_parol_wrong";
+				link.l3 = StringFromKey("QuestsUtilite_" + (305 + rand(11)));
+				link.l3.go = "check_parol_wrong";
+				link.l4 = StringFromKey("QuestsUtilite_" + (317 + rand(11)));
+				link.l4.go = "check_parol_wrong";
+				
+				switch (rand(3))
+				{
+					case 0:
+						link.l1 = sTotalTemp;
+						link.l1.go = "check_parol_1";
+					break;
+
+					case 1:
+						link.l2 = sTotalTemp;
+						link.l2.go = "check_parol_1";
+					break;
+
+					case 2:
+						link.l3 = sTotalTemp;
+						link.l3.go = "check_parol_1";
+					break;
+
+					case 3:
+						link.l4 = sTotalTemp;
+						link.l4.go = "check_parol_1";
+					break;
+				}
 			}
 			else
 			{
-				dialog.text = "Hm... Lads! We have got a company!";
-				link.l1 = "Shit!";
-				link.l1.go = "check_parol_fight";
+				link.l1 = "What password? Let me through, or else...";
+				link.l1.go = "check_parol_wrong";
 			}
+		break;
+		
+		case "check_parol_1":
+			dialog.text = "Fine, you may proceed.";
+			link.l1 = "Thanks, pal...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Narval_parol_repeat";
+			LAi_SetGuardianType(NPChar);
+			LAi_group_MoveCharacter(NPChar, "LSC_NARVAL");
+			pchar.questTemp.LSC.parol_nrv = "true";
+		break;
+		
+		case "check_parol_wrong":
+			dialog.text = "Hm... Lads! We've got company!";
+			link.l1 = "Shit!";
+			link.l1.go = "check_parol_fight";
 		break;
 		
 		case "check_parol_fight":
@@ -156,7 +189,7 @@ void ProcessDialogEvent()
 		case "Narval_parol_repeat":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's the psycho! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "check_parol_fight";
 				break;
@@ -171,7 +204,7 @@ void ProcessDialogEvent()
 		case "Narval_residence":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's the psycho! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we will teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "check_parol_fight";
 				break;
@@ -188,7 +221,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-                    dialog.text = TimeGreeting()+", "+pchar.name+"! In case you want to see the boss, he is asleep by now. Come back in the morning.";
+                    dialog.text = TimeGreeting()+", "+pchar.name+"! If you want to see the boss, he's asleep now. Come back in the morning.";
 					link.l1 = "Fine...";
 					link.l1.go = "exit";
 					NextDiag.TempNode = "Narval_residence";
@@ -198,10 +231,10 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(pchar, "questTemp.LSC.nrv_friend") && CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				dialog.text = "Friends of black ones have nothing to do here. A straight order from the boss!";
+				dialog.text = "Friends of blacks have no business here. A direct order from the boss!";
 				if (CheckAttribute(pchar, "questTemp.LSC.Donald_enter"))
 				{
-					link.l1 = "He will have to see me. You have got real troubles, guys. I am here by the official orders of the admiral. So open the damn door!";
+					link.l1 = "He will have to see me. You have real trouble, guys. I am here by official order of the admiral. So open the damn door!";
 					link.l1.go = "negotiations";
 				}
 				else
@@ -216,7 +249,7 @@ void ProcessDialogEvent()
 			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
 			dialog.text = "Want to see the boss? Hm, well, move along then.";
-			link.l1 = "Thanks for allowing to...";
+			link.l1 = "Thanks for allowing me to...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Narval_residence";
 			DeleteAttribute(npchar, "protector.CheckAlways");
@@ -234,7 +267,7 @@ void ProcessDialogEvent()
 		case "Narval_soldier":
 			if (CheckAttribute(pchar, "GenQuest.NarvalConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's the psycho! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "check_parol_fight";
 				break;
@@ -247,7 +280,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Listen, pal, I am not in a mood to talk. Move along...";
+				dialog.text = "Listen, pal, I'm not in the mood to talk. Move along...";
 				link.l1 = "Fine.";
 				link.l1.go = "exit";
 			}
@@ -255,7 +288,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "negotiations":
-			dialog.text = "Well-well... Calm down. You should have said that you were from the admiral in the first place. See, there are different people wandering around...";
+			dialog.text = "Well, well... Calm down. You should have said you were from the admiral in the first place. See, there are all sorts of people wandering around...";
 			link.l1 = "Are you finally going to let me through? Thanks!";
 			link.l1.go = "negotiations_1";
 		break;
@@ -268,7 +301,7 @@ void ProcessDialogEvent()
 		
 		case "negotiations_2":
 			dialog.text = "Move along, you are allowed to...";
-			link.l1 = "Oh, really? Can't believe it.";
+			link.l1 = "Oh, really? I can't believe it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "negotiations_2";
 		break;
@@ -278,7 +311,7 @@ void ProcessDialogEvent()
 		case "Rivados_warning":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the aggressive psycho! To arms!","Enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an aggressive psycho! To arms!","The enemy is here! To arms!","Ah, you sick bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "Rcheck_parol_fight";
 				break;
@@ -288,7 +321,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 				{
-					dialog.text = "Stop! The territories behind me belong to Rivados clan, no strangers like you are allowed to pass through without an invitation. Do you know the password?";
+					dialog.text = "Stop! The territories behind me belong to the Rivados clan, and no strangers like you are allowed to pass through without an invitation. Do you know the password?";
 					link.l1 = "Yes.";
 					link.l1.go = "Rivados_warning_yes";
 					link.l2 = "No.";
@@ -296,8 +329,8 @@ void ProcessDialogEvent()
 				}
 				else // если друг ривадос
 				{
-					dialog.text = "Ah, "+GetFullName(pchar)+"! Glad to see you! We were informed that you can walk freely here. Welcome!";
-					link.l1 = "Thanks, friend!";
+					dialog.text = "Ah, "+GetFullName(pchar)+"! Glad to see you! We've been told that you're free to walk here. Welcome!";
+					link.l1 = "Thank you, friend!";
 					link.l1.go = "exit";
 				}
 				location.rvd_parolinfo = "true";
@@ -306,7 +339,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 				{
-					dialog.text = "I hope that you didn't forget a password...";
+					dialog.text = "I hope you haven't forgotten the password...";
 					link.l1 = "Don't worry...";
 					link.l1.go = "exit";
 				}
@@ -322,14 +355,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Rivados_warning_yes":
-			dialog.text = "You can go then. This lad will demand a password from you. You'd better leave now if your have any thoughts about tricking us. I have warned you.";
+			dialog.text = "You can go then. This lad will demand a password from you. You'd better leave now if you have any thoughts about tricking us. I have warned you.";
 			link.l1 = "Fine, pal. I got it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Rivados_warning_repeat";
 		break;
 		
 		case "Rivados_warning_no":
-			dialog.text = "Ho-ho! Either you are very brave or a very silly if you are going to visit us without a password. Or are you just joking? Go on then. I am here to warn, not to stop. Beware if you really don't know the password!";
+			dialog.text = "Ho-ho! Either you are very brave or very foolish if you are going to visit us without a password. Or are you just joking? Go on then. I am here to warn, not to stop. Beware if you really don't know the password!";
 			link.l1 = "Fine, pal. I got it.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Rivados_warning_repeat";
@@ -344,7 +377,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Eddie don't want me to talk too much.";
+				dialog.text = "I am sorry, "+pchar.name+", but I'm on duty. Eddie doesn't want me to talk too much.";
 				link.l1 = "...";
 				link.l1.go = "exit";
 			}
@@ -355,14 +388,14 @@ void ProcessDialogEvent()
 		case "Rivados_parol":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the aggressive psycho! To arms!","Enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an aggressive madman! To arms!","The enemy is here! To arms!","Ah, you are a sick bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "Rcheck_parol_fight";
 				break;
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				dialog.text = "I am sorry, "+pchar.name+", but I am on duty. Eddie don't want me to talk too much.";
+				dialog.text = "I am sorry, "+pchar.name+", but I'm on duty. Eddie doesn't want me to talk too much.";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Rivados_parol";
@@ -376,29 +409,65 @@ void ProcessDialogEvent()
 		
 		case "Rcheck_parol":
 			dialog.text = "Then say a password and do it loud and clear.";
-			link.l1.edit = 3;
-			link.l1 = "";	
-			link.l1.go = "Rcheck_parol_1";
-		break;
-		
-		case "Rcheck_parol_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[3]);
-			if (sTemp == sRvdParol && CheckAttribute(pchar, "questTemp.LSC.RParol_bye"))
+			sTotalTemp = sRvdParol;
+			if (CheckAttribute(pchar, "questTemp.LSC.RParol_bye"))
 			{
-				dialog.text = "Correct. Move along.";
-				link.l1 = "Thanks, pal...";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "Rivados_parol_repeat";
-				LAi_SetGuardianType(NPChar);
-				LAi_group_MoveCharacter(NPChar, "LSC_RIVADOS");
-				pchar.questTemp.LSC.parol_rvd = "true";
+				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));
+				link.l1.go = "Rcheck_parol_wrong";
+
+				link.l2 = StringFromKey("QuestsUtilite_" + (293 + rand(11)));
+				link.l2.go = "Rcheck_parol_wrong";
+
+				link.l3 = StringFromKey("QuestsUtilite_" + (305 + rand(11)));
+				link.l3.go = "Rcheck_parol_wrong";
+
+				link.l4 = StringFromKey("QuestsUtilite_" + (317 + rand(11)));
+				link.l4.go = "Rcheck_parol_wrong";
+				
+				switch (rand(3))
+				{
+					case 0:
+						link.l1 = sTotalTemp;
+						link.l1.go = "Rcheck_parol_1";
+					break;
+
+					case 1:
+						link.l2 = sTotalTemp;
+						link.l2.go = "Rcheck_parol_1";
+					break;
+
+					case 2:
+						link.l3 = sTotalTemp;
+						link.l3.go = "Rcheck_parol_1";
+					break;
+
+					case 3:
+						link.l4 = sTotalTemp;
+						link.l4.go = "Rcheck_parol_1";
+					break;
+				}
 			}
 			else
 			{
-				dialog.text = "Ha-ha! We have a guest here! Let's show him who we are!";
-				link.l1 = "Shit!";
-				link.l1.go = "Rcheck_parol_fight";
+				link.l1 = "What password? Let me through, or else...";
+				link.l1.go = "Rcheck_parol_wrong";
 			}
+		break;
+		
+		case "Rcheck_parol_1":
+			dialog.text = "Correct. Move along.";
+			link.l1 = "Thanks, pal...";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Rivados_parol_repeat";
+			LAi_SetGuardianType(NPChar);
+			LAi_group_MoveCharacter(NPChar, "LSC_RIVADOS");
+			pchar.questTemp.LSC.parol_rvd = "true";
+		break;
+		
+		case "Rcheck_parol_wrong":
+			dialog.text = "Ha-ha! We have a guest here! Let's show him who we are!";
+			link.l1 = "Shit!";
+			link.l1.go = "Rcheck_parol_fight";
 		break;
 		
 		case "Rcheck_parol_fight":
@@ -411,7 +480,7 @@ void ProcessDialogEvent()
 		case "Rivados_parol_repeat":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the aggressive psycho! To arms!","Enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you a lesson a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an aggressive psycho! To arms!","The enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "Rcheck_parol_fight";
 				break;
@@ -426,7 +495,7 @@ void ProcessDialogEvent()
 		case "Rivados_residence":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the aggressive psycho! To arms!","Enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an aggressive psycho! To arms!","The enemy is here! To arms!","Ah, you sick bastard! Now we'll teach you!");
 				link.l1 = "Fuck!";
 				link.l1.go = "Rcheck_parol_fight";
 				break;
@@ -435,7 +504,7 @@ void ProcessDialogEvent()
 			{
 				if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
 				{
-				dialog.text = TimeGreeting()+", "+pchar.name+"! The door is open, in case you want to see Eddie and Chimiset. They will be glad to see you.";
+				dialog.text = TimeGreeting()+", "+pchar.name+"! The door is open, in case you want to see Eddie and Chimiset. They'll be glad to see you.";
 				link.l1 = "Fine...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Rivados_residence";
@@ -443,7 +512,7 @@ void ProcessDialogEvent()
 				}
 				else // лесник - режим пропуска 
 				{	
-				dialog.text = TimeGreeting()+", "+pchar.name+"! In case you want to see Eddie and Chimiset, they resting already. Come back in the morning, they will be glad to see you.";
+				dialog.text = TimeGreeting()+", "+pchar.name+"! If you want to see Eddie and Chimiset, they're already resting. Come back in the morning, they'll be glad to see you.";
 				link.l1 = "Fine...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Rivados_residence";
@@ -453,7 +522,7 @@ void ProcessDialogEvent()
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.nrv_friend") && !CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) 
 			{
-				dialog.text = "There is nothing for friends of Narwhal to do inside Eddie's cabin! This is his direct order. Get lost!";
+				dialog.text = "There is nothing for friends of the Narwhal to do inside Eddie's cabin! This is his direct order. Get lost!";
 				link.l1 = "I didn't want to see him either...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Rivados_residence";
@@ -462,7 +531,7 @@ void ProcessDialogEvent()
 			}
 			if (GetCharacterIndex("Chimiset") == -1) // Чимисет убит
 			{
-				dialog.text = "There is nothing for you to do inside Eddie's cabin! This is his direct order. Get lost!";
+				dialog.text = "There is nothing for you to do inside Eddie's cabin! That's a direct order from him. Get lost!";
 				link.l1 = "I didn't want to see him either...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "Rivados_residence";
@@ -471,8 +540,8 @@ void ProcessDialogEvent()
 			}
 			if (stf(environment.time) >= 6.00 && stf(environment.time) < 21.00) // лесник . диалог от времени суток .
 			{
-			dialog.text = "Do you want to see Eddie? Fine, move along, I suppose he will spare a minute for you.";
-			link.l1 = "Thanks for allowing to...";
+			dialog.text = "Do you want to see Eddie? Fine, move along, I suppose he'll spare a minute for you.";
+			link.l1 = "Thanks for allowing me to...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Rivados_residence";
 			DeleteAttribute(npchar, "protector.CheckAlways");
@@ -490,7 +559,7 @@ void ProcessDialogEvent()
 		case "Rivados_soldier":
 			if (CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the aggressive psycho! To arms!","Enemy is here! To arms!","Ah, you are a sick bastard! Now we will teach you a lesson!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an aggressive madman! To arms!","The enemy is here! To arms!","Ah, you are a sick bastard! Now we'll teach you a lesson!");
 				link.l1 = "Fuck!";
 				link.l1.go = "Rcheck_parol_fight";
 				break;
@@ -503,7 +572,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Listen, pal, I am not in a mood to talk. Move along...";
+				dialog.text = "Listen, pal, I'm not in the mood to talk. Move along...";
 				link.l1 = "Fine.";
 				link.l1.go = "exit";
 			}
@@ -514,7 +583,7 @@ void ProcessDialogEvent()
 		case "Shark_storage":
 			if (CheckAttribute(pchar, "GenQuest.SharkConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the armed psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will kick your ass!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an armed madman! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll kick your arse!");
 				link.l1 = "Damn!";
 				link.l1.go = "shark_guard_fight";
 				break;
@@ -529,7 +598,7 @@ void ProcessDialogEvent()
 		case "Shark_residence":
 			if (CheckAttribute(pchar, "GenQuest.SharkConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the armed psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will kick your ass!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an armed madman! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll kick your arse!");
 				link.l1 = "Damn!";
 				link.l1.go = "shark_guard_fight";
 				break;
@@ -538,13 +607,13 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // тока прибыл
 				{
-					dialog.text = "Stop! You are not one of ours... Is Shark waiting for you or are you just walking around with no purpose?";
+					dialog.text = "Stop! You're not one of ours... Is Shark expecting you, or are you just wandering around aimlessly?";
 					link.l1 = "Shark? Steve Dodson?";
 					link.l1.go = "first_talk_day";
 				}
 				else
 				{
-				dialog.text = "Admiral will accept you. Move along.";
+				dialog.text = "The Admiral will accept you. Move along.";
 				link.l1 = "Thanks!";
 				link.l1.go = "exit";
 			}
@@ -553,13 +622,13 @@ void ProcessDialogEvent()
 			{
 				if (pchar.questTemp.LSC == "begin" || pchar.questTemp.LSC == "mary") // тока прибыл
 				{
-					dialog.text = "Where are you rushing to? It is night, don't you see! Or are you really thinking that the admiral will wake up to greet you personally? Come in the morning.";
-					link.l1 = "As you say. And where can I have a rest?";
+					dialog.text = "Where are you rushing to? It's night, can't you see! Or do you really think the admiral will wake up to greet you personally? Come back in the morning.";
+					link.l1 = "As you say. And where can I rest?";
 					link.l1.go = "first_talk_night";
 				}
 			else
 			{
-				dialog.text = "It's late, admiral is not recepting now. Come back tomorrow.";
+				dialog.text = "It's late, the admiral is not receiving now. Come back tomorrow.";
 				link.l1 = "Fine...";
 				link.l1.go = "exit";
 			}
@@ -570,51 +639,45 @@ void ProcessDialogEvent()
 		case "Shark_soldier":
 			if (CheckAttribute(pchar, "GenQuest.SharkConflict"))
 			{
-				dialog.text = LinkRandPhrase("Lads, careful, there is the armed psycho! To arms!","Enemy is here! To arms!","Ah, you are bastard! Now we will kick your ass!");
+				dialog.text = LinkRandPhrase("Lads, careful, there's an armed madman! To arms!","The enemy is here! To arms!","Ah, you bastard! Now we'll kick your arse!");
 				link.l1 = "Damn!";
 				link.l1.go = "shark_guard_fight";
 				break;
 			}
-			dialog.text = "Admiral won't be glad if he sees me talking. Move along.";
+			dialog.text = "The Admiral won't be pleased if he sees me talking. Move along.";
 			link.l1 = "Fine...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Shark_soldier";
 		break;
 		
 		case "first_talk_night":
-			dialog.text = NPCStringReactionRepeat("Are you drunk? Turn back and walk through the bridge, pass two ships and then you will find another bridge which will take you to the tavern. Sleep there.", 
-				"Are you trying to piss me off? I have just told you what to do. Get lost!", 
-				"Go and have a sleep, drunk face...",
-				"Go away!!", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("Thanks, sir. You could be more polite, actually...", 
-				"I am sorry, I forgot...",
-				"I am not drunk!", 
-				"What?!", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Are you drunk? Turn back and walk across the bridge, pass two ships, and then you will find another bridge which will take you to the tavern. Sleep there.","Are you trying to piss me off? I just told you what to do. Get lost!","Go and get some sleep, drunk face...","Go away!!","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("Thank you, sir. You could be a bit more polite, actually...","I am sorry, I forgot...","I am not drunk!","What?!",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 		
 		case "first_talk_day":
-			dialog.text = "Don't make round eyes, lad. Everybody knows that Steve Shark is our admiral. Do you have any business for him?";
-			link.l1 = "Yes, damn it! I have business for him and it is urgent.";
+			dialog.text = "Don't look so surprised, lad. Everybody knows that Steve Shark is our admiral. Do you have any business with him?";
+			link.l1 = "Yes, damn it! I have business with him and it is urgent.";
 			link.l1.go = "first_talk_day_1";
 		break;
 		
 		case "first_talk_day_1":
 			dialog.text = "And what kind of business?";
-			link.l1 = "I will tell about it only to Shark in private. I am working for Jan Svenson, do you know him?";
+			link.l1 = "I will only tell Shark about it in private. I am working for Jan Svenson, do you know him?";
 			link.l1.go = "first_talk_day_2";
 		break;
 		
 		case "first_talk_day_2":
-			dialog.text = "Forest Devil? Ha! Half of Main knows that man. Listen, lad, don't be stubborn. Either explain yourself or get lost before I get angry. Shark said to spare him from useless people and I am just doing as he ordered.";
+			dialog.text = "Forest Devil? Ha! Half of Main knows that man. Listen, lad, don't be stubborn. Either explain yourself or get lost before I get angry. Shark said to spare him from useless people and I'm just doing as he ordered.";
 			link.l1 = "Fine. Here, take a look at this letter, it's written by Forest Devil to Shark.";
 			link.l1.go = "first_talk_day_3";
 		break;
 		
 		case "first_talk_day_3":
 			PlaySound("interface\important_item.wav");
-			dialog.text = "(looking)... Fine. I suppose, Steve will find it interesting. Move along.";
-			link.l1 = "Oh, really? Give the letter back if it won't be too hard for you, please.";
+			dialog.text = "(looking)... Fine. I suppose Steve will find it interesting. Move along.";
+			link.l1 = "Oh, really? Give the letter back if it's not too much trouble, please.";
 			if (pchar.questTemp.LSC == "mary") link.l1.go = "first_talk_day_5";
 			else link.l1.go = "first_talk_day_4";
 		break;

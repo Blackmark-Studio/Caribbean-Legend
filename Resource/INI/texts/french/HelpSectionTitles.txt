@@ -1,44 +1,9 @@
-sea_minimap
-{
- Mini-carte de navigation 
-
-}
-ship_commands 
-{
- Commandes pour contrôler votre navire et ceux de vos capitaines
-
-}
-fast_commands 
-{
- Raccourci clavier de la commande actuelle 
-
-}
-sea_aim 
-{
- La portée des canons du navire 
-
-}
-alarm_indicator 
-{
- Indicateur d'alarme 
-
-}
-land_commands 
-{
- Commandes d'action terrestre.
-
-}
-WorldMap_Date_Clock 
-{
- Indicateur de date et d'heure sur la carte.
-
-}
-WorldMap_Compas 
-{
- Boussole sur la carte.
-
-}
-Dialog_window
-{
-  Fenêtre de dialogue 
-}
+sea_minimap {Mini-carte de navigation}
+ship_commands {Commandes pour contrôler votre navire et ceux de vos capitaines}
+fast_commands {Raccourci clavier de la commande actuelle}
+sea_aim {La portée des canons du navire}
+alarm_indicator {Indicateur d'alarme}
+land_commands {Commandes d'action terrestre.}
+WorldMap_Date_Clock {Indicateur de date et d'heure sur la carte.}
+WorldMap_Compas {Boussole sur la carte.}
+Dialog_window {Fenêtre de dialogue}

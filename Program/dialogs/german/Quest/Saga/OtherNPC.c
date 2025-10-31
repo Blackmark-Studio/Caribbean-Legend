@@ -37,15 +37,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jimmy_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "Saga_KillJimmy");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			AddDialogExitQuestFunction("Saga_Jimmy_fight");
 		break;
 		
 		case "Jimmy_1_2":
@@ -95,16 +88,13 @@ void ProcessDialogEvent()
 		case "Jimmy_8_1":
 			dialog.text = "Was... was hast du gesagt?!";
 			link.l1 = "Du wirst es niemandem sonst erzählen können...";
-			link.l1.go = "Jimmy_fight";
-			pchar.questTemp.Saga.Jimmysecret = "true";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Saga_KillToJimmy_kino");
 		break;
 		
 		case "Jimmy_8_2":
 			DialogExit();
-			pchar.questTemp.Saga = "jackman";
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			AddQuestRecord("Saga", "4_1");
+			AddDialogExitQuestFunction("Saga_Jimmy_DlgExit");
 		break;
 // <-- Джимми 
 		
@@ -1130,25 +1120,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "Wirklich? Dann müssen Sie das Passwort kennen. Sprich es aus, aber du wirst es bereuen, wenn du lügst...";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "Тритон";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "Neptun";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "Zenturio";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "Harpune";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Richtig. Aber du, Kumpel, bist von der falschen Seite hergekommen. Haben sie dich nicht gewarnt? Geh zurück und nimm den linken Pfad vom trockenen Brunnen. Dann umrunde den Hügel und dort wirst du das Haupttor sehen.";
-				link.l1 = "Kann ich hier nicht eintreten?";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "Jungs, wir haben einen Spion! Muskete bereit! Feuer!!";
-				link.l1 = "...";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "Richtig. Aber du, Kumpel, bist von der falschen Seite hergekommen. Haben sie dich nicht gewarnt? Geh zurück und nimm den linken Pfad vom trockenen Brunnen. Dann umrunde den Hügel und dort wirst du das Haupttor sehen.";
+			link.l1 = "Kann ich hier nicht eintreten?";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "Jungs, wir haben einen Spion! Muskete bereit! Feuer!!";
+			link.l1 = "...";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1172,25 +1163,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "Wirklich? Du solltest dann das Passwort wissen. Sprich es aus, damit ich es hören kann. Und wenn du versuchst, mich zu täuschen, wird das der letzte Scherz sein, den du in deinem Leben auf jemanden spielst.";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "Triton";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "Neptun";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "Zenturio";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "Harpune";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "Richtig. Geh weiter. Der Lagerleiter ist im Haus links vom Eingang der Mine. Geh und besuche ihn.";
-				link.l1 = "Gut, Kumpel...";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "Jungs, wir haben einen Schnüffler! Kanonen, Feuer frei!!";
-				link.l1 = "...";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "Richtig. Geh weiter. Der Lagerleiter ist im Haus links vom Eingang der Mine. Geh und besuche ihn.";
+			link.l1 = "Gut, Kumpel...";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "Jungs, wir haben einen Schnüffler! Kanonen, Feuer frei!!";
+			link.l1 = "...";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1565,7 +1557,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -1631,7 +1623,7 @@ void ProcessDialogEvent()
 			Log_Info("Talisman 'Cupid's Balm' acquired!");
 			PlaySound("interface\important_item.wav");
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen disapproves", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
 		break;
@@ -2079,7 +2071,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Helen disapproves", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
 		break;
@@ -2088,7 +2080,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Helen approves", "Helena");
+			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);
 			

@@ -1,78 +1,16 @@
-quests_reaction_1
-{
-Officer @<GetFullName(npchar)> is onboard.
-}
-
-quests_reaction_2
-{
-@<GetFullName(npchar)> surrendered.
-}
-
-quests_reaction_3
-{
-Corpses of the rebels were thrown overboard to their last voyage
-}
-
-quests_reaction_4
-{
-The mutiny was put to an end
-}
-
-quests_reaction_5
-{
-@<GetCityName(sld.City)> is ours!
-}
-
-quests_reaction_6
-{
-Someone had poked around in your pockets.
-}
-
-quests_reaction_7
-{
-There was a fight near the lighthouse not long ago. Some captain had tried to smuggle some goods, but our patrol party caught him in the act. ~
-}
-
-quests_reaction_8
-{
-Hell of a gunfight, the store's roof got bashed by a random cannon ball! But it was all for nothing. Local smugglers hid in the jungles and the captain has sailed away. Fooled our soldiers easily, I'll tell ya! Hell of a pilot too, escaped the bay like a king!
-}
-
-quests_reaction_9
-{
-
-}
-quests_reaction_10
-{
-
-}
-
-quests_reaction_11
-{
-, which on ~
-}
-
-quests_reaction_12
-{
-Terms of delivery are expired.
-}
-
-quests_reaction_13
-{
-Some hours passed...
-}
-
-quests_reaction_14
-{
-An hour passed...
-}
-
-quests_reaction_15
-{
-One day passed...
-}
-
-quests_reaction_16
-{
-Some days passed...
-}
+quests_reaction_1 {Officer @<GetFullName(npchar)> is onboard.}
+quests_reaction_2 {@<GetFullName(npchar)> surrendered.}
+quests_reaction_3 {Corpses of the rebels were thrown overboard to their last voyage}
+quests_reaction_4 {The mutiny was put to an end}
+quests_reaction_5 {@<GetCityName(sld.City)> is ours!}
+quests_reaction_6 {Someone had poked around in your pockets.}
+quests_reaction_7 {There was a fight near the lighthouse not long ago. Some captain had tried to smuggle some goods, but our patrol party caught him in the act. ~}
+quests_reaction_8 {Hell of a gunfight, the store's roof got bashed by a random cannon ball! But it was all for nothing. Local smugglers hid in the jungles and the captain has sailed away. Fooled our soldiers easily, I'll tell ya! Hell of a pilot too, escaped the bay like a king!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, which on ~}
+quests_reaction_12 {Terms of delivery are expired.}
+quests_reaction_13 {Some hours passed...}
+quests_reaction_14 {An hour passed...}
+quests_reaction_15 {One day passed...}
+quests_reaction_16 {Some days passed...}

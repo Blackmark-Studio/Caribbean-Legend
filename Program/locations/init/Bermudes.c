@@ -703,6 +703,68 @@ int LocationInitBermudes(int n)
 	locations[n].reload.l2.autoreload = "0";
 	locations[n].reload.l2.label = "Sea";
 	locations[n].locators_radius.reload.boat = 9.0;
+	
+	locations[n].reload.l3.name = "reload2";
+	locations[n].reload.l3.go = "Bermudes_DelRey";
+	locations[n].reload.l3.emerge = "reload1";
+	locations[n].reload.l3.autoreload = "0";
+	locations[n].reload.l3.label = "La Espada Del Rey";
+	locations[n].reload.l3.disable = true;
+	locations[n].locators_radius.reload.reload2 = 3;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Внутри корабля La Espada del Rey
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Bermudes_DelRey";
+	locations[n].id.label = "La Espada Del Rey";
+	locations[n].filespath.models = "locations\Inside\DelRey";
+	locations[n].image = "loading\IntsideLSC_" + rand(1) + ".tga";
+	//Town sack
+	locations[n].townsack = "Pirates";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "LSC_inside";
+	//locations[n].fastreload = "Pirates";
+	locations[n].islandId = "Bermudes";
+	//Models
+	//Always
+	Locations[n].models.always.inside = "DelRey";
+	Locations[n].models.always.inside.level = 65538;
+	Locations[n].models.always.seabed = "DelRey_sb";
+	Locations[n].models.always.outdoor = "DelRey_outdoor";
+	Locations[n].models.always.windows = "DelRey_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;  
+	Locations[n].models.always.plan1 = "DelRey_plan1";
+	Locations[n].models.always.plan1.tech = "LocationWindows";
+	Locations[n].models.always.plan1.level = 65533;
+	Locations[n].models.always.plan1.sea_reflection = 1;
+	Locations[n].models.always.locators = "DelRey_locators";  
+	//Day
+	locations[n].models.day.charactersPatch = "DelRey_patch_day";
+	//Night
+	locations[n].models.night.charactersPatch = "DelRey_patch_day";
+
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "true";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Shore_ship1";
+	locations[n].reload.l1.emerge = "reload2";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Shore_ship1";
+	
+	locations[n].private1.key = "LEDR_key";
+	locations[n].private1.key.delItem = true;
+	locations[n].private1.items.gold_dublon = 300;
+	locations[n].private1.items.amulet_6 = 1;
+	locations[n].private1.items.amulet_2 = 1;
+	locations[n].private1.items.Mineral3 = 10;
+	locations[n].private1.items.Mineral5 = 1;
+	locations[n].private1.items.Mineral21 = 1;
+	locations[n].private1.items.LEDR_Book = 1;
+	locations[n].locators_radius.item.item1 = 1;
 	n = n + 1;
 	
 	return n;

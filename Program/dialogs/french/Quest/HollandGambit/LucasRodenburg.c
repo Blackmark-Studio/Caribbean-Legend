@@ -617,14 +617,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood_complete_7":
 			DialogExit();
-			pchar.quest.Award_FromLucas.win_condition.l1 = "Timer";
-			pchar.quest.Award_FromLucas.win_condition.l1.date.hour  = 8.00;
-			pchar.quest.Award_FromLucas.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l2 = "location";
-			pchar.quest.Award_FromLucas.win_condition.l2.location = "Villemstad_townhall";
-			pchar.quest.Award_FromLucas.function = "AwardFromFromLucas";
+			AddDialogExitQuestFunction("GollandGambit_AwardFromLucas_1");
 			AddSimpleRumour("Tell me captain, was that damned English dog Fleetwood was really responsible for plundering English 'and' Dutch merchants? Really? Such an artful dodger! It is good that you have eliminated this bastard. You are a real hero, captain!", HOLLAND, 10, 3);
 		break;
 		
@@ -855,14 +848,14 @@ void ProcessDialogEvent()
 			dialog.text = "Quel est votre jeu, Capitaine ? Plusieurs pages manquent - des pages qui sont très importantes pour moi. Pensiez-vous que je ne m'en apercevrais pas pour que vous puissiez les utiliser contre moi ? Ou espériez-vous en tirer davantage ? Je crains de devoir vous décevoir sur les deux points.";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = " (Digne de confiance) Je m'excuse. Ma seule faute était de ne pas avoir vérifié les archives moi-même au préalable.";
 				link.l1.go = "VD_Merdok_book_3";
 				SetTimerCondition("PZ_Etap1_Start", 0, 0, 30, false);	// 1 этап стартует через 30 дней
 			}
 			else
 			{
-				notification("Perk check failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "Est-ce que j'arracherais vraiment les pages pour ensuite remettre les archives avec un air nonchalant ?";
 				link.l1.go = "Merdok_book_3";
 				SetTimerCondition("PZ_LigaInJungle", 0, 0, 7, false);	// проверку не прошёл, значит нападёт Лига через неделю, после чего начнётся таймер на 30 дней 1 этапа
@@ -951,7 +944,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";//прерывание на Лукаса
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour legendary edition
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";
@@ -984,7 +976,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";//прерывание на Лукаса
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour legendary edition
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";

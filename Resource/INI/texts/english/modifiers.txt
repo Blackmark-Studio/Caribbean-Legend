@@ -1,0 +1,10 @@
+blade_critDamage {Melee Critical Damage}
+gun_critDamage {Pistol Critical Damage}
+musket_critDamage {Musket Critical Damage}
+blade_critChance {Melee Critical Chance}
+gun_critChance {Pistol Critical Chance}
+musket_critChance {Musket Critical Chance}
+incomingDamageReduction {Damage Protection}
+RangeIncomingDamageReduction {Gunfire Damage Protection}
+Shot_Damage {Gunfire Damage}
+HeadshotDamage {Headshot Damage}

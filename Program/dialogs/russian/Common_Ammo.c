@@ -413,14 +413,14 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Нет, пожалуй... Данное вам слово обяжет меня взяться за дело, которое уже представляется мне весьма сомнительным. Я не стану связываться с этим...";
 				link.l2.go = "zpq_fld";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
 				dialog.text = "Ваша репутация не позволяет мне вести с вами сколько-нибудь серьёзных дел. Прошу вас освободить помещение. Мы сами в состоянии решить свои проблемы.";
 				link.l1 = "Ну что ж, решайте...";
 				link.l1.go = "exit";
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				Notification_Reputation(false, 71, "low");
 			}		
 		break;
 		
@@ -503,22 +503,22 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Вызывающий доверие) Я начинаю думать, что вы хотите меня обмануть, поэтому без своих 125 000 песо я отсюда не уйду!";
 				link.l2.go = "zpq_ex4";
 			}
 			else
 			{
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 			link.l3 = "Хм... вижу, обстоятельства изменились. Что ж я готов"+ GetSexPhrase("","а") +" принять указанную сумму, чтоб не накалять обстановку.";
 			link.l3.go = "zpq_ex5";
 		break;
 		
 		case "zpq_ex3":
-			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 			{
-				notification("Проверка пройдена", "Leadership");
+				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "Ах да-а... точно! 100 000 песо. Запамятовал, прошу меня простить. Возраст, знаете ли, уже не тот, склероз... Конечно, вот ваши деньги. Приятно было иметь с вами дело. А теперь прошу меня простить, дела ждут...";
 				link.l1 = "Мне тоже приятно, сеньор. Всего вам хорошего.";
 				link.l1.go = "exit";
@@ -531,13 +531,12 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Недостаточно развит навык (36)", "Leadership");
+				Notification_Skill(false, 36, SKILL_LEADERSHIP);
 				dialog.text = "Что-о?!! Забирай деньги и выметайся вон, иначе сгниёшь в наших казематах!";
 				link.l1 = "Да вы, сеньор, оказывается лжец! Предлагаю по-хорошему отдать деньги, о которых мы договаривались или я забираю товар!";
 				link.l1.go = "zpq_ex_agry";
 				link.l2 = "Прошу меня простить... Хорошо, я возьму предлагаемую сумму, и мы разойдёмся.";
 				link.l2.go = "zpq_ex5";
-				Log_info("Недостаточно навыка харизмы");
 			}
 		break;
 		

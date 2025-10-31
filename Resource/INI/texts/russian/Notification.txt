@@ -6,3 +6,12 @@ Notification_SkillCheckPassed {Проверка пройдена}
 Notification_SkillCheckFailed {Недостаточно развит навык}
 Notification_LevelCheckPassed {Проверка уровня пройдена}
 Notification_LevelCheckFailed {Требуется уровень}
+CanBeCaptain {$attr($context.name) не справится со своим кораблём в открытом море \(нужен навык 'Капитан'\)}
+Notification_ApproveCheckPassed {одобряет}
+Notification_ApproveCheckFailed {не одобряет}
+Notification_ReputationCheckFailed_High {Слишком высокий уровень чести}
+Notification_ReputationNationCheckPassed {Проверка отношений пройдена}
+Notification_ReputationNationCheckFailed {Слишком низкий уровень отношений}
+Notification_MoneyCheckPassed {Проверка пройдена}
+Notification_MoneyCheckFailed_Peso {Недостаточно песо}
+Notification_MoneyCheckFailed_Dublon {Недостаточно дублонов}

@@ -38,7 +38,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if (CheckAttribute(pchar, "questTemp.PZ.TortugaCitizensAsk") && !CheckAttribute(npchar, "quest.PZ.Ask.Block"))
 			{
 				link.l1 = "Könntest du mir ein wenig helfen, Kumpel? Ich suche einen Mann namens Joep van der Vink. Kennst du ihn?";
-				link.l1.go = "PZ1";
+				link.l1.go = "PZ_1";
 			}
         break;
         
@@ -156,19 +156,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddDialogExitQuestFunction("Mtraxx_WolfreekJewellerHouse");
 		break;
 		
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "Noch nie von ihm gehört.";
 			link.l1 = "Vielleicht ist er unter einem anderen Namen bekannt. Haben Sie vielleicht von ihm als dem Kapitän der Brigg 'Banten' gehört?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Noch nie von dieser Brigg gehört.";
 			link.l1 = "Ich habe gehört, er war kürzlich hier. Vielleicht wird ein wenig Silber Ihre Erinnerung auffrischen?";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			npchar.quest.PZ.Ask.Block = true;
 			
 			dialog.text = "Nun, frag, wo du das gehört hast. Ich habe nichts dagegen, dein Silber zu nehmen.";

@@ -1,364 +1,76 @@
-FMQ_1
-{
-Bertrand
-}
-FMQ_2
-{
-Pinette
-}
-
-FMQ_3
-{
-Carlos
-}
-FMQ_4
-{
-de Milyar
-}
-
-FMQ_5
-{
-Jean
-}
-FMQ_6
-{
-Deno
-}
-
-FMQ_7
-{
-Sario
-}
-
-FMQ_8
-{
-Juan
-}
-FMQ_9
-{
-Deno
-}
-
-FMQ_10
-{
-'Sario'
-}
-
-FMQ_11
-{
-~ En cuanto a Pinette... ¡Al diablo con él! Ese maldito banquero no lo aceptará.
-}
-
-FMQ_12
-{
-~ El maldito banquero me ayudará a resolver esto bajo la amenaza de ser expuesto. La carta de Pinette es un argumento muy sólido. Debo dirigirme a Guadalupe y entrar a la ciudad por las puertas durante la noche.
-}
-
-FMQ_13
-{
-Benseсho
-}
-
-FMQ_14
-{
-Convoy comercial desde San José
-}
-
-FMQ_15
-{
-Modo exploración: el tiempo ha sido ampliado. ¡Completa la misión!
-}
-
-FMQ_16
-{
-Ha caído la noche...@<NewStr()>La resina fue descargada en el astillero...
-}
-
-FMQ_17
-{
-Topaz
-}
-
-FMQ_18
-{
-¡Sonidos de alarma en la tartana Topaz!
-}
-
-FMQ_19
-{
-Eres libre de desembarcar en la costa
-}
-
-FMQ_20
-{
-Modo exploración: la misión no ha fallado
-}
-
-FMQ_21
-{
-Caspar
-}
-
-FMQ_22
-{
-Gratton
-}
-
-FMQ_23
-{
-Zeepard
-}
-
-FMQ_24
-{
-Un grupo de asalto inglés intentó infiltrarse en nuestra prisión, pero cayó en la trampa preparada por nuestro vigilante comandante. ¡Ahora cada inglés está tras las rejas, ja ja!
-}
-
-FMQ_25
-{
-¡Atención, atención! Hace poco atraparon a un grupo de asalto británico. Querían liberar a sus compatriotas de nuestra prisión, pero terminaron encerrados junto a ellos.
-}
-
-FMQ_26
-{
-Filippe
-}
-
-FMQ_27
-{
-Jaсobsen
-}
-
-FMQ_28
-{
-Un grupo de asalto británico llegó a nuestra isla, pero nuestro comandante, siempre alerta, los descubrió y los eliminó. ¡Es un gran logro!
-}
-
-FMQ_29
-{
-¿Has oído? Hubo un enfrentamiento fuera del pueblo. Encontraron a un grupo de asalto inglés. Los británicos se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!
-}
-
-FMQ_30
-{
-Seda de barco + 200
-}
-
-FMQ_31
-{
-¡Oh, eres tú! ¡Bravo, capitán! ¡Tuviste el valor de enfrentarte a los espías ingleses armados hasta los dientes!
-}
-
-FMQ_32
-{
-Las autoridades te elogian, capitán. Y con razón: ayudar a eliminar espías ingleses es un gran mérito.
-}
-
-FMQ_33
-{
-Los ingleses intentaron desembarcar en nuestra isla, pero nuestro vigilante comandante no perdió el tiempo, los encontró a todos y los eliminó. ¡Eso es todo!
-}
-
-FMQ_34
-{
-¿Has oído? Hubo una pelea fuera de la ciudad. Encontramos a saboteadores ingleses. Se negaron a rendirse y fueron eliminados por nuestros soldados. ¡Bien hecho, comandante!
-}
-
-FMQ_35
-{
-¡Alarma en la ciudad!
-}
-
-FMQ_36
-{
-¡Qué descaro! ¡Los británicos se infiltraron en nuestra ciudad durante la noche! Pero nuestro comandante los descubrió y los eliminó. ¡Un gran golpe para ellos!
-}
-
-FMQ_37
-{
-¿Has oído? Hubo un enfrentamiento en la ciudad. Encontraron a un grupo de asalto inglés. Se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!
-}
-
-FMQ_38
-{
-¡No has atracado tu barco en la bahía!
-}
-
-FMQ_39
-{
-Hans
-}
-
-FMQ_40
-{
-Shulte
-}
-
-FMQ_41
-{
-¡El corbeta Zeepard viene hacia nosotros!
-}
-
-FMQ_42
-{
-¿Has oído el caos que hay aquí? El gobernador está furioso. ¡Espías ingleses liberaron a sus compatriotas de nuestra prisión! Dicen que hubo franceses involucrados en esto.
-}
-
-FMQ_43
-{
-¿Has oído?? El gobernador está furioso. ¡Espías ingleses liberaron a sus compatriotas de nuestra prisión! Dicen que hubo franceses involucrados en esto.
-}
-
-FMQ_44
-{
-Modo exploración: tiempo ampliado. ¡Lleva a los pasajeros a su destino!
-}
-
-FMQ_45
-{
-¡Oh, eres tú! ¡Bravo, capitán! ¡Tuviste el valor de ayudar a nuestros marines en pleno territorio holandés!
-}
-
-FMQ_46
-{
-El gobernador te elogia, capitán. Y con razón: ayudar a los hombres de Fox a rescatar a los oficiales prisioneros es una gran hazaña.
-}
-
-FMQ_47
-{
-Marceline
-}
-FMQ_48
-{
-Levasseur
-}
-
-FMQ_49
-{
-Claude
-}
-FMQ_50
-{
-Durand
-}
-
-FMQ_51
-{
-Ugo
-}
-FMQ_52
-{
-
-}
-
-FMQ_53
-{
-interceptor
-}
-
-FMQ_54
-{
-Domingo Albalate ha dejado tu barco
-}
-
-FMQ_55
-{
-Has encontrado un libro de contabilidad pesado
-}
-
-FMQ_56
-{
-Luis
-}
-FMQ_57
-{
-Ortiz
-}
-
-FMQ_58
-{
-Fudroyan
-}
-
-FMQ_59
-{
-Gregoire
-}
-FMQ_60
-{
-Valinnie
-}
-
-FMQ_61
-{
-Prosper
-}
-FMQ_62
-{
-Trubal
-}
-
-FMQ_63
-{
-Johnny
-}
-FMQ_64
-{
-
-}
-
-FMQ_65
-{
-Has ahorrado 20.000 pesos para Selina Trubal
-}
-
-FMQ_66
-{
-Felicien
-}
-FMQ_67
-{
-Gronier
-}
-
-FMQ_68
-{
-Modo exploración: duración de la misión duplicada
-}
-
-FMQ_69
-{
-Modo exploración: se eliminó el temporizador
-}
-
-FMQ_70
-{
-Hans
-}
-FMQ_71
-{
-Shulte
-}
-
-FMQ_72
-{
-Silvestre
-}
-FMQ_73
-{
-McCoy
-}
-
-FMQ_74
-{
-Domingo
-}
-FMQ_75
-{
-Albalate
-}
-
-FMQ_76
-{
-Varias horas después...@<NewStr()>Las mercancías fueron entregadas a la playa.
-}
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ En cuanto a Pinette... ¡Al diablo con él! Ese maldito banquero no lo aceptará.}
+FMQ_12 {~ El maldito banquero me ayudará a resolver esto bajo la amenaza de ser expuesto. La carta de Pinette es un argumento muy sólido. Debo dirigirme a Guadalupe y entrar a la ciudad por las puertas durante la noche.}
+FMQ_13 {Benseсho}
+FMQ_14 {Convoy comercial desde San José}
+FMQ_15 {Modo exploración: el tiempo ha sido ampliado. ¡Completa la misión!}
+FMQ_16 {Ha caído la noche...@<NewStr()>La resina fue descargada en el astillero...}
+FMQ_17 {Topaz}
+FMQ_18 {¡Sonidos de alarma en la tartana Topaz!}
+FMQ_19 {Eres libre de desembarcar en la costa}
+FMQ_20 {Modo exploración: la misión no ha fallado}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {Un grupo de asalto inglés intentó infiltrarse en nuestra prisión, pero cayó en la trampa preparada por nuestro vigilante comandante. ¡Ahora cada inglés está tras las rejas, ja ja!}
+FMQ_25 {¡Atención, atención! Hace poco atraparon a un grupo de asalto británico. Querían liberar a sus compatriotas de nuestra prisión, pero terminaron encerrados junto a ellos.}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {Un grupo de asalto británico llegó a nuestra isla, pero nuestro comandante, siempre alerta, los descubrió y los eliminó. ¡Es un gran logro!}
+FMQ_29 {¿Has oído? Hubo un enfrentamiento fuera del pueblo. Encontraron a un grupo de asalto inglés. Los británicos se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!}
+FMQ_30 {Seda de barco + 200}
+FMQ_31 {¡Oh, eres tú! ¡Bravo, capitán! ¡Tuviste el valor de enfrentarte a los espías ingleses armados hasta los dientes!}
+FMQ_32 {Las autoridades te elogian, capitán. Y con razón: ayudar a eliminar espías ingleses es un gran mérito.}
+FMQ_33 {Los ingleses intentaron desembarcar en nuestra isla, pero nuestro vigilante comandante no perdió el tiempo, los encontró a todos y los eliminó. ¡Eso es todo!}
+FMQ_34 {¿Has oído? Hubo una pelea fuera de la ciudad. Encontramos a saboteadores ingleses. Se negaron a rendirse y fueron eliminados por nuestros soldados. ¡Bien hecho, comandante!}
+FMQ_35 {¡Alarma en la ciudad!}
+FMQ_36 {¡Qué descaro! ¡Los británicos se infiltraron en nuestra ciudad durante la noche! Pero nuestro comandante los descubrió y los eliminó. ¡Un gran golpe para ellos!}
+FMQ_37 {¿Has oído? Hubo un enfrentamiento en la ciudad. Encontraron a un grupo de asalto inglés. Se negaron a rendirse y fueron abatidos en combate. ¡Bien hecho, comandante!}
+FMQ_38 {¡No has atracado tu barco en la bahía!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {¡El corbeta Zeepard viene hacia nosotros!}
+FMQ_42 {¿Has oído el caos que hay aquí? El gobernador está furioso. ¡Espías ingleses liberaron a sus compatriotas de nuestra prisión! Dicen que hubo franceses involucrados en esto.}
+FMQ_43 {¿Has oído?? El gobernador está furioso. ¡Espías ingleses liberaron a sus compatriotas de nuestra prisión! Dicen que hubo franceses involucrados en esto.}
+FMQ_44 {Modo exploración: tiempo ampliado. ¡Lleva a los pasajeros a su destino!}
+FMQ_45 {¡Oh, eres tú! ¡Bravo, capitán! ¡Tuviste el valor de ayudar a nuestros marines en pleno territorio holandés!}
+FMQ_46 {El gobernador te elogia, capitán. Y con razón: ayudar a los hombres de Fox a rescatar a los oficiales prisioneros es una gran hazaña.}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {interceptor}
+FMQ_54 {Domingo Albalate ha dejado tu barco}
+FMQ_55 {Has encontrado un libro de contabilidad pesado}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {Has ahorrado 20.000 pesos para Selina Trubal}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Modo exploración: duración de la misión duplicada}
+FMQ_69 {Modo exploración: se eliminó el temporizador}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Varias horas después...@<NewStr()>Las mercancías fueron entregadas a la playa.}

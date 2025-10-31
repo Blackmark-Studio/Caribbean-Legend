@@ -136,16 +136,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_exit":
 			DialogExit();
-			
-			sld = CharacterFromID("SantaMisericordia_clone_church");
-			sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
-			sld.dialog.currentnode = "Alamida_repeat";
-			sld = CharacterFromID("SantaMisericordia_clone_city");
-			sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
-			sld.dialog.currentnode = "Alamida_repeat";
-			sld = CharacterFromID("SantaMisericordia_clone_guber");
-			sld.dialog.filename = "Quest\ShipsPack\SantaMisericordia_dialog.c";
-			sld.dialog.currentnode = "Alamida_repeat";
+			AddDialogExitQuestFunction("SantaMisericordia_Alamida_DlgExit");
 		break;
 		
 		case "Alamida_repeat":
@@ -238,17 +229,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_abordage_SecondRound":
 			DialogExit();
-			
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			LAi_SetImmortal(npchar, false);
-			LAi_SetCurHPMax(npchar);
-			LAi_GetCharacterMaxEnergy(npchar);
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_BRDENEMY);
-			LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, false);
-			LAi_SetCheckMinHP(npchar, 1, true, "SantaMisericordia_TrirdRound");
+			AddDialogExitQuestFunction("SantaMisericordia_Alamida_Abordage_DlgExit_1");
 		break;
 		
 		case "Alamida_abordage_TrirdRound":
@@ -294,21 +275,7 @@ void ProcessDialogEvent()
 		
 		case "Alamida_abordage_TrirdRound_4":
 			DialogExit();
-			
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			LAi_SetImmortal(npchar, false);
-			LAi_SetCurHPMax(npchar);
-			LAi_GetCharacterMaxEnergy(npchar);
-			npchar.MultiFighter = 2.5;
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_BRDENEMY);
-			LAi_group_SetRelation(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups(LAI_GROUP_BRDENEMY, LAI_GROUP_PLAYER, false);
-			LAi_SetCheckMinHP(npchar, 1, true, "SantaMisericordia_Molitva");
-			
-			PlaySound("Ambient\Tavern\glotok_001.wav");
-			PlaySound("Ambient\Horror\Fear_breath_01.wav");
+			AddDialogExitQuestFunction("SantaMisericordia_Alamida_Abordage_DlgExit_2");
 		break;
 		
 		case "Alamida_abordage_Molitva":
@@ -341,12 +308,7 @@ void ProcessDialogEvent()
 			
 		case "Alamida_abordage_Molitva_3":
 			DialogExit();
-			
-			LAi_SetPlayerType(pchar);
-			LAi_SetImmortal(npchar, false);
-			LAi_KillCharacter(npchar);
-			
-			DoQuestFunctionDelay("Alamida_abordage_OfficerPodhodit", 2.0);
+			AddDialogExitQuestFunction("SantaMisericordia_Alamida_Abordage_DlgExit_3");
 		break;
 		
 		//Элен

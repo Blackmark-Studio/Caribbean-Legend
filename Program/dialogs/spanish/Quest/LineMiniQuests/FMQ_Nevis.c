@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "seafox_2":
-		dialog.text = "No te preocupes. Francia no está en guerra con los holandeses, así que no debería haber peligro. Sólo déjanos en la playa y eso será todo. Sólo queremos explorar un poco la isla. ¿Trato hecho?";
+		dialog.text = ""+UpperFirst(GetAddress_Form(PChar))+", esto no debería preocuparle. No corre ningún peligro. Sólo tiene que dejarnos en la bahía y ya está. ¿Qué me dice, trato hecho?";
 		link.l1 = "Está bien, estoy dentro. No está tan lejos de aquí. Vamos a escuchar sobre esa paga.";
 		link.l1.go = "seafox_3";
 		link.l2 = "Lamento, pero tengo un asunto urgente en otra dirección y preferiría no molestar a los holandeses.";
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 	case "seafox_6":
 		PlaySound("Voice\Spanish\LE\SeaFox\SeaFox_02.wav");
 		dialog.text = "¡Gracias por el tranquilo viaje, capitán! Lamento mucho esto, pero no puedo pagarle en este preciso momento... se suponía que habría un lugre nuestro en esta área, pero no está aquí. Como puede ver claramente. Debo pedirle su ayuda una vez más. ¿Podría esperar alrededor de esta bahía por dos o tres días? Tenemos que ir y echar un vistazo. Una vez que regresemos, llévenos a Antigua. El Coronel Fox le recompensará generosamente.";
-		link.l1 = "Por supuesto que lo hará. Y aquí estaba yo esperando que esto fuera sin problemas.";
+		link.l1 = "Hmm... Esto no es exactamente lo que habíamos acordado...";
 		link.l1.go = "seafox_7";
 		break;
 
@@ -125,7 +125,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "seafox_8":
-		dialog.text = "¡Gracias señor! Nos dirigimos tierra adentro. Juro que estaremos de vuelta en 72 horas, ni un minuto más.";
+		dialog.text = "¡Gracias "+GetAddress_Form(NPChar)+"! Nos dirigimos tierra adentro. Juro que estaremos de vuelta en 72 horas, ni un minuto más.";
 		link.l1 = "Buen viaje, teniente. No te atrapen.";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("FMQN_EnglishmanGo");
@@ -134,13 +134,13 @@ void ProcessDialogEvent()
 	case "seafox_9":
 		DelLandQuestMark(npchar);
 		PlaySound("Voice\Spanish\LE\SeaFox\SeaFox_02.wav");
-		dialog.text = "¡Qué encuentro tan fortuito! Pensé que nos estarías esperando en la Playa Grand Case, Capitán de Maure!";
+		dialog.text = "¡Qué encuentro tan fortuito! Pensé que nos estarías esperando en la Playa Grand Case, Capitán "+pchar.lastname+"!";
 		link.l1 = "Hola teniente, la sorpresa es mutua. No esperaba verte vestido como un soldado holandés.";
 		link.l1.go = "seafox_10";
 		break;
 
 	case "seafox_10":
-		dialog.text = "Es nuestro disfraz... ¿Por qué estás aquí afuera, señor?";
+		dialog.text = "Es nuestro disfraz... ¿Por qué estás aquí afuera, "+GetAddress_Form(NPChar)+"?";
 		link.l1 = "Ese es un disfraz peligroso, camarada. Los espías pueden ser ejecutados sumariamente sin juicio. Y hablando de ejecuciones, si quieres evitar la tuya, será mejor que escuches.";
 		link.l1.go = "seafox_11";
 		break;
@@ -235,8 +235,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "seafox_25":
-		PlaySound("Voice\Spanish\LE\SeaFox\SeaFox_04.wav");
-		dialog.text = "¡Rayos, alguien está afuera! ¡Tú! ¡Tú trajiste a los holandeses de vuelta aquí, canalla! ¡Traidor!";
+		if (pchar.sex == "man") {PlaySound("VOICE\Spanish\LE\SeaFox\SeaFox_04.wav");}
+		dialog.text = "¡Rayos, alguien está afuera! ¡Tú! ¡Tú trajiste a los holandeses de vuelta aquí, canalla!";
 		link.l1 = "" + RandSwear() + "!!!";
 		link.l1.go = "exit";
 		AddDialogExitQuest("FMQN_HollandBattleFight");
@@ -311,7 +311,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "seafox_34":
-		dialog.text = "¡No sé cómo lo logramos, pero lo hicimos! Nada de esto hubiera sido posible sin su ayuda, señor. Ahora viene la parte relativamente fácil: debemos salir de Sint-Maartin vivos y enteros. ¡Vamos a la Playa de Grand Case!";
+		dialog.text = "¡No sé cómo lo logramos, pero lo hicimos! Nada de esto hubiera sido posible sin su ayuda, "+GetAddress_Form(NPChar)+". Ahora viene la parte relativamente fácil: debemos salir de Sint-Maartin vivos y enteros. ¡Vamos a la Playa de Grand Case!";
 		link.l1 = "¡Vamos a movernos!";
 		link.l1.go = "exit";
 		AddDialogExitQuest("FMQN_EnglandRunToShore");
@@ -319,20 +319,20 @@ void ProcessDialogEvent()
 
 	case "seafox_35":
 		PlaySound("Voice\Spanish\LE\SeaFox\SeaFox_05.wav");
-		dialog.text = "Capitán de Maure... señor, ¡gracias por su asistencia! Le ruego, por favor, que no zarpe inmediatamente, sino que se quede aquí un día más mientras informo al Coronel Fox. Visítelo mañana, su oficina está en el palacio del gobernador.";
+		dialog.text = "Capitán "+pchar.lastname+"... "+GetAddress_Form(NPChar)+", ¡gracias por su asistencia! Le ruego, por favor, que no zarpe inmediatamente, sino que se quede aquí un día más mientras informo al Coronel Fox. Visítelo mañana, su oficina está en el palacio del gobernador.";
 		link.l1 = "Muy bien, teniente Gretton. Por favor, haga que valga la pena. Va a llevar mucho tiempo reparar mi reputación con los holandeses por su escapada.";
 		link.l1.go = "seafox_36";
 		break;
 
 	case "seafox_35x":
 		PlaySound("Voice\Spanish\LE\SeaFox\SeaFox_05.wav");
-		dialog.text = "¡Gracias por tu ayuda, capitán! ¡Eres un verdadero héroe! Es una tragedia que el teniente Gretton no lo haya logrado. Murió como un verdadero caballero y un hijo de Inglaterra. Pediría quedarme aquí un día más mientras informo al coronel Fox. Visítalo mañana, su oficina está en el palacio del gobernador.";
+		dialog.text = "¡Gracias por tu ayuda, capitán! Te "+GetSexPhrase("comportaste como un verdadero héroe","comportaste como una joven muy valiente")+", "+GetAddress_Form(NPChar)+"! Es una tragedia que el teniente Gretton no lo haya logrado. Murió como un verdadero caballero y un hijo de Inglaterra. Pediría quedarme aquí un día más mientras informo al coronel Fox. Visítalo mañana, su oficina está en el palacio del gobernador.";
 		link.l1 = "Muy bien. Por favor, haz que valga la pena. Va a llevar mucho tiempo reparar mi reputación con los holandeses por culpa de tu escapada.";
 		link.l1.go = "seafox_36";
 		break;
 
 	case "seafox_36":
-		dialog.text = "No se preocupe, señor. Le daré el mayor crédito posible en mi informe. (saluda) ¡Fue un placer, señor!";
+		dialog.text = "No se preocupe, "+GetAddress_Form(NPChar)+". Le daré el mayor crédito posible en mi informe. (saluda) ¡Fue un placer, "+GetAddress_Form(NPChar)+"!";
 		link.l1 = "...";
 		link.l1.go = "seafox_37";
 		break;
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 
 	case "soldier_2":
 		AddLandQuestMark(characterFromId("Marigo_Mayor"), "questmarkmain");
-		dialog.text = "¡Oh no, no, señor capitán, no está bajo arresto! El gobernador ha ordenado invitar a cada capitán recién llegado a su palacio para tomar café y presentaciones. ¡Sígame!";
+		dialog.text = "¡Oh no, no, "+GetAddress_Form(NPChar)+" capitán, no está bajo arresto! El gobernador ha ordenado invitar a cada capitán recién llegado a su palacio para tomar café y presentaciones. ¡Sígame!";
 		link.l1 = "Suena como una oferta que no puedo rechazar. Guía el camino.";
 		link.l1.go = "exit";
 		AddDialogExitQuestFunction("FMQN_ReloadToGovernor");
@@ -374,7 +374,7 @@ void ProcessDialogEvent()
 
 	case "hol_officer":
 		PlaySound("Voice\Spanish\hol_gov_complete.wav");
-		dialog.text = "Mynheer, muéstranos dónde viste a esos soldados ingleses.";
+		dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+", muéstranos dónde viste a esos soldados ingleses.";
 		link.l1 = "Se esconden en una cueva en la jungla, como vulgares bandidos.";
 		link.l1.go = "hol_officer_1";
 		break;
@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 
 	case "hol_officer_5":
 		PlaySound("Voice\Spanish\hol_gov_common.wav");
-		dialog.text = "Malditos bastardos eran... Bien hecho, capitán, los perros ingleses han sido eliminados. Nuestro comandante y el gobernador estarán complacidos.";
+		dialog.text = "Malditos bastardos eran... Bien hecho, capitán, los perros ingleses han sido eliminados. Los saboteadores han sido eliminados, el comandante y el gobernador estarán satisfechos.";
 		link.l1 = "Te tomaste tu dulce tiempo, mynheer...";
 		link.l1.go = "hol_officer_6";
 		break;

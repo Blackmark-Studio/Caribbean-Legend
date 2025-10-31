@@ -132,6 +132,12 @@ int LocationInitBeliz(int n)
 	locations[n].reload.l11.emerge = "reload1";
 	locations[n].reload.l11.autoreload = "0";
 	locations[n].reload.l11.label = "House";
+	
+	locations[n].reload.l25.name = "houseSp1";
+	locations[n].reload.l25.go = "Beliz_houseSp1";
+	locations[n].reload.l25.emerge = "reload1";
+	locations[n].reload.l25.autoreload = "0";
+	locations[n].reload.l25.label = "House";
 
     // --> Комоны, загрушки. Номера с начинаются с 20.
 	locations[n].reload.l20.name = "houseF2";
@@ -157,12 +163,6 @@ int LocationInitBeliz(int n)
 	locations[n].reload.l24.emerge = "reload1";
 	locations[n].reload.l24.autoreload = "0";
 	locations[n].reload.l24.label = "House";
-
-	locations[n].reload.l25.name = "houseSp1";
-	locations[n].reload.l25.go = "CommonDoubleflourHouse_2";
-	locations[n].reload.l25.emerge = "reload1";
-	locations[n].reload.l25.autoreload = "0";
-	locations[n].reload.l25.label = "House";
 	
 	locations[n].reload.l26.name = "houseS3";
 	locations[n].reload.l26.go = "CommonPirateHouse";
@@ -674,7 +674,7 @@ int LocationInitBeliz(int n)
 	n = n + 1;
 	
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	// Квестовый дом
+	// Квестовый дом S5
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Beliz_houseS5";
 	locations[n].filespath.models = "locations\inside\FlamHouse";
@@ -728,7 +728,7 @@ int LocationInitBeliz(int n)
 	n = n + 1;
 	
 	//////////////////////////////////////////////////////////////////////////////
-	/////Комната в доме 1
+	/////Комната в доме S5 1
 	//////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Beliz_houseS5_Room";
 	locations[n].id.label = "Room";
@@ -772,7 +772,7 @@ int LocationInitBeliz(int n)
 	n = n + 1;
 	
 	//////////////////////////////////////////////////////////////////////////////
-	/////Комната в доме 2
+	/////Комната в доме S5 2
 	//////////////////////////////////////////////////////////////////////////////
 	locations[n].id = "Beliz_houseS5_Room2";
 	locations[n].id.label = "Room";
@@ -813,6 +813,53 @@ int LocationInitBeliz(int n)
 	locations[n].reload.l1.autoreload = "0";
 	locations[n].reload.l1.label = "room";
 	LAi_LocationFightDisable(&locations[n], true);
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовый дом Sp1
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "Beliz_houseSp1"; //с комнатой на втором этаже
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\largehouse01.tga";
+	//Town sack
+	locations[n].townsack = "Beliz";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "Beliz";
+ 	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\largehouse01";
+	locations[n].models.always.largehouse01 = "largehouse01";
+	locations[n].models.always.largehouse01.level = 65538;
+	locations[n].models.day.locators = "largehouse01_locators";
+	locations[n].models.night.locators = "largehouse01_Nlocators";
+
+	Locations[n].models.always.largehouse01windows = "largehouse01_windows";
+	Locations[n].models.always.largehouse01windows.tech = "LocationWindows";
+	locations[n].models.always.largehouse01windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.largehouse01rand= "largehouse01_rand";
+	locations[n].models.day.charactersPatch = "largehouse01_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "largehouse01_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "Beliz_town";
+	locations[n].reload.l1.emerge = "houseSp1";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	
+	locations[n].box1.QuestClosed = true;
+	LAi_LocationFightDisable(&locations[n], true);
+	
 	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

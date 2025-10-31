@@ -58,12 +58,12 @@ void ProcessDialogEvent()
 		case "officer_5":
 			PlaySound("Voice\English\z_arest_02.wav");
 			dialog.text = "先生们, 这里到底发生了什么? 我听到了打斗声。 ";
-			link.l1 = "谢谢你, 军官, 我听到一个女人呼救, 看到这位先生被两个恶棍袭击。 我试图救这个可怜的人, 但可惜我来晚了。 混蛋杀了他! ";
+			link.l1 = "唉……军官, 我是应酒馆女服务员的请求来的——她说这里有人被杀, 事实也确实如此——那两名歹徒袭击了这位高贵的贵族。不幸的是, 我没能救下他。那些混蛋杀了他。";
 			link.l1.go = "officer_6";
 		break;
 		
 		case "officer_6":
-			dialog.text = "真该死... 他是西班牙人! 他为什么会在这里? 嗯。 那么你是谁, 先生? ";
+			dialog.text = "真该死... 他是西班牙人! 他为什么会在这里? 嗯。 那么你是谁, "+GetAddress_Form(NPChar)+"? ";
 			link.l1 = ""+GetFullName(pchar)+"。 "+GetFullName(pchar)+"船长。 ";
 			link.l1.go = "officer_7";
 		break;
@@ -80,7 +80,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble":
-			dialog.text = "请允许我解释一切, 先生! 我叫唐.多明戈.奥尔蒂斯.阿尔瓦拉特, 来自圣多明戈。 我应一位年轻小姐的邀请来到太子港, 在这家酒馆停留等待约定的会面。 当我自顾自地坐着时, 被这两个该死的强盗袭击了。 如果不是这位恰好路过的好心人, 我现在已经在和天使共进晚餐了。 ";
+			dialog.text = "请允许我解释一切, 军官! 我是来自圣多明各的多明戈· 奥尔蒂斯· 阿尔巴拉特, 受一位年轻女士的邀请来到太子港。 等待会面期间, 我暂住在酒馆。 可不到两个小时, 就有 dos canallas malditas 闯进了我的房间; 若不是 "+GetSexPhrase("这位好心的先生及时出现","这位美丽的女士及时出现")+", 我恐怕凶多吉少。";
 			link.l1 = "唐.多明戈.奥尔蒂斯.阿尔瓦拉特? 你是西班牙人? ";
 			link.l1.go = "noble_1";
 		break;
@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 		
 		case "noble_3":
 			PlaySound("Voice\English\LE\Domingo\Domingo_01.wav");
-			dialog.text = "船长先生! 船长先生! 我以圣地亚哥和圣母玛利亚发誓, 你是个高尚的人, 卡斯蒂利亚的真正儿子总会报答这种高尚! 等我在这里处理完事务, 希望能给你奖赏。 请赏光访问我在圣多明戈的寒舍! 就在城门口附近。 我会为你准备盛宴, 我善良的骑士卡洛斯! 记住我的名字, 唐.多明戈.奥尔蒂斯.阿尔瓦拉特! ";
+			dialog.text = "船长"+UpperFirst(GetAddress_Form(NPChar))+"! 船长"+UpperFirst(GetAddress_Form(NPChar))+"! 我以圣地亚哥和圣母玛利亚发誓, 你是个高尚的人, 卡斯蒂利亚的真正儿子总会报答这种高尚! 等我在这里处理完事务, 希望能给你奖赏。 请赏光访问我在圣多明戈的寒舍! 就在城门口附近。 我会为你准备盛宴, 我善良的骑士卡洛斯! 记住我的名字, 唐.多明戈.奥尔蒂斯.阿尔瓦拉特! ";
 			link.l1 = "... ";
 			link.l1.go = "noble_4";
 		break;
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_5":
-			dialog.text = GetFullName(pchar)+"船长? ! 哦, 我的上帝! 这是场灾难! 这里发生了什么, 好朋友? 这些人是谁? ";
+			dialog.text = ""+pchar.lastname+"船长?! 哦, 我的上帝! 这是场灾难! 这里发生了什么, 好朋友? 这些人是谁? ";
 			link.l1 = "很高兴见到你, 唐.多明戈。 这些是... 我来这里拜访你。 看到那边那个人了吗? 那是乌戈, 你的仆人, 他... ";
 			link.l1.go = "noble_6";
 		break;
@@ -182,7 +182,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_16":
-			dialog.text = "等等, 我的朋友! 我刚想起这不是第一次有人试图杀我! 几周前我在街上遇到一个乞丐! 那个喝醉的混蛋用我无法忽视的方式冒犯了我。 结果他是个该死的优秀剑客, 他拔出剑, 甚至在我杀了他之前用细剑刺伤了我。 ";
+			dialog.text = "等等! 我刚想起这不是第一次有人试图杀我! 几周前我在街上遇到一个乞丐! 那个喝醉的混蛋用我无法忽视的方式冒犯了我。 结果他是个该死的优秀剑客, 他拔出剑, 甚至在我杀了他之前用细剑刺伤了我。 ";
 			link.l1 = "你到底怎么会在太子港的酒馆里? 你提到过某个年轻小姐? ";
 			link.l1.go = "noble_17";
 		break;
@@ -200,9 +200,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "noble_19":
-			dialog.text = "我的朋友卡洛斯, 我能请求你的帮助吗? 乌戈死了, 我身边没有可以信任的人。 你已经救了我两次! 两次! 我欠你很多, 我永远感激你, 但我还是敢请求你再帮个忙。 我以圣母发誓, 我会让你得到回报! ";
-			link.l1 = "很好, 对于一个西班牙人来说你是个好人。 我能为你做什么, 多明戈? ";
-			link.l1.go = "noble_20";
+			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+", 我能请求你的帮助吗? 乌戈死了, 我身边没有可以信任的人。 你已经救了我两次! 两次! 我欠你很多, 我永远感激你, 但我还是敢请求你再帮个忙。 我以圣母发誓, 我会让你得到回报! ";
+			if (startHeroType == 2)  
+			{
+				link.l1 = "我能为您效劳什么, 先生? ";
+				link.l1.go = "noble_20";
+			}
+			else
+			{
+				link.l1 = "很好, 对于一个西班牙人来说你是个好人。 我能为你做什么, 多明戈? ";
+				link.l1.go = "noble_20";
+			}
 		break;
 		
 		case "noble_20":
@@ -215,8 +223,8 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, 20000);
 			dialog.text = "感谢上帝, 我就知道你会帮我, 朋友! 给, 拿这两万比索作为去贝洛港的航行费用。 我们什么时候起航? 我们必须在我叔叔从卡塔赫纳回来之前赶紧出发! ";
 			link.l1 = "那我们别浪费时间了。 ";
-			if (CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 20) link.l1.go = "noble_22";
-			else link.l1.go = "noble_22x";
+			if (startHeroType != 2 && CheckCharacterItem(pchar, "HolTradeLicence") && GetDaysContinueNationLicence(HOLLAND) >= 20 && GetNationRelation2MainCharacter(SPAIN) == RELATION_NEUTRAL) {link.l1.go = "noble_22";}
+			else {link.l1.go = "noble_22x";}
 		break;
 		
 		case "noble_22x":
@@ -430,7 +438,8 @@ void ProcessDialogEvent()
 		
 		case "uncle":
 			PlaySound("Voice\English\OliverTrast02.wav");
-			dialog.text = "看来我及时赶到了。 我无忧无虑的侄子和他的守护天使"+GetFullName(pchar)+"船长。 别这么惊讶, 法国人, 我知道你是谁。 ";
+			if (pchar.sex == "woman") { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的新情人, 女船长"+GetFullName(pchar)+"……是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
+			else { dialog.text = "看来我来得正是时候。我的不争气的侄子和他的守护天使, 船长"+GetFullName(pchar)+"……是的, 是的, "+GetSexPhrase("小伙子","小姐")+", 别惊讶——我已经打听过你了。"; }
 			link.l1 = "路易斯.奥尔蒂斯? ";
 			link.l1.go = "uncle_1";
 		break;
@@ -450,7 +459,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "uncle_3":
-			dialog.text = "典型。 大喊大叫, 刀剑和杯子的碰撞声, 充满了声音和愤怒, 却毫无意义。 他付了你多少钱, 船长, 让你保护他? ";
+			if (pchar.sex == "woman") { dialog.text = "我那亲爱的侄子, 一如既往地做派十足。 吵闹、喧哗、剑刃碰撞、杯盏相撞, 却少有实质。 小姐, 我真不明白您为何会看上他, 他可是..."; }
+			else { dialog.text = "我那亲爱的侄子, 一如既往地做派十足。 吵闹、喧哗、剑刃碰撞、杯盏相撞, 却少有实质。 我真不明白他怎么让您动心, 居然愿意帮那个不中用的小子..."; }
 			link.l1 = "据我所知, 在你未能挖出任何反对你侄子的证据后, 你开始派刺客追杀他。 听起来简单的诉讼就足够了。 ";
 			link.l1.go = "uncle_4";
 		break;
@@ -470,7 +480,7 @@ void ProcessDialogEvent()
 		case "uncle_6":
 			int icpy = GetOfficersQuantity(pchar);
 			iTotalTemp = 10000+10000*icpy;
-			dialog.text = "不是威胁, 船长, 是承诺。 看这里, 孩子, 你走了很长的路, 但既然我把你当作被误导的受害者, 而不是敌人, 听听我简单而慷慨的提议: 走开。 我不想在这里流血。 我们不需要你的帮助来解决我们的家庭事务。 我甚至准备补偿你因为我白痴侄子而经历的麻烦 - "+FindRussianMoneyString(iTotalTemp)+" 八里亚尔。 拿着钱, 让我们相安无事。 拒绝我的提议, 我们会把你切成薄片送回你的船上。 ";
+			dialog.text = "警告。听着, 船长: "+GetSexPhrase("你已经做得太过分了, ","")+"但我并不把你当成敌人, 而是误入歧途的可怜人, 所以我给你个机会: 转身离开。 我不想见血。 我们家的事情, 不需要你掺和。 "+GetSexPhrase("我愿意补偿你因为我侄子而产生的开销:","为了让你更安心, 我愿意支付你:")+" "+FindRussianMoneyString(iTotalTemp)+" 现金。拿了钱, 就忘了来过这儿。 不然, 我的守卫不会留情。";
 			link.l1 = "我总是说‘家庭第一’。 那与我无关, 把钱给我, ‘vaya con Dios.’";
 			link.l1.go = "uncle_7";
 			link.l2 = "你的故事比你种植园的肥料还臭。 唐.多明戈可能不是圣人, 但你先生是个魔鬼! ";
@@ -486,8 +496,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "uncle_8":
-			dialog.text = "魔鬼? 好吧, 我会很高兴送你下地狱! ";
-			link.l1 = "... ";
+			if (pchar.sex == "woman") {dialog.text = "我明白了。你和我那侄子一样——愚蠢又鲁莽的丫头, 正好配得上他。是时候教训你们两个了!";} 
+			else { dialog.text = "我明白了。 你和我那侄子一模一样——同样愚蠢又狂妄的小子! 是时候教训你们两个了!";}
+			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQP_UncleFight");
 		break;

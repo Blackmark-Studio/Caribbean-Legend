@@ -31,9 +31,18 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1.go = "TBP_Tavern2_11";
 			}
 			if (CheckAttribute(pchar, "questTemp.TBP_Tavern3"))
-			{
-				link.l1 = "No cóż, "+npchar.name+", dobra wiadomość - twoja cenna kelnerka żyje i ma się dobrze. Będziesz musiał znowu zwiększyć zapasy rumu, ludzie wkrótce zaczną wracać.";
-				link.l1.go = "TBP_Tavern3_21";
+			{			
+				sld = CharacterFromID("Villemstad_waitress");
+					if (CheckAttribute(sld, "model") && sld.model != "Marquesa")
+					{
+						link.l1 = "No cóż, "+npchar.name+", dobra wiadomość - twoja cenna kelnerka żyje i ma się dobrze. Będziesz musiał znowu zwiększyć zapasy rumu, ludzie wkrótce zaczną wracać.";
+						link.l1.go = "TBP_Tavern3_21";
+					}
+					else
+					{
+						link.l1 = "No więc, "+npchar.name+", sprawa załatwiona – twoja cenna kelnerka wróciła. Lepiej uzupełnij zapasy rumu, ludzie wkrótce znów się zlecą.";
+						link.l1.go = "TBP_Tavern3_21_1";
+					}
 			}
 			//<-- Тайна Бетси Прайс
 		break;
@@ -183,7 +192,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
 			AddCharacterExpToSkill(pchar, "Leadership", 100);
 			AddItems(pchar, "gold_dublon", 100);
-			GiveItem2Character(PChar, "map_full");
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
 		break;
 
 		case "TBP_Tavern3_22_fortune":
@@ -193,7 +203,39 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
 			AddCharacterExpToSkill(pchar, "Fortune", 100);
 			AddItems(pchar, "gold_dublon", 100);
-			GiveItem2Character(PChar, "map_full");
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
+		break;
+		
+		case "TBP_Tavern3_21_1":
+			dialog.text = "Uratowaliście mnie, kapitanie! Już straciłem nadzieję, że ją jeszcze zobaczę... Więc co się właściwie stało? Naprawdę chciała uciec? Nie odważyłem się zapytać jej o to osobiście.";
+			link.l1 = "Powiedzmy, że musiała uporać się z pewnymi sprawami z przeszłości. Ale wygląda na to, że ma to już za sobą i wkrótce wróci do pracy.";
+			link.l1.go = "TBP_Tavern3_22_leadership_1";
+			link.l2 = "Cóż, powiedzmy, że potrzebowała krótkiej przerwy od oglądania twojego nudnego oblicza. Ha ha! No nie krzyw się tak, tylko żartuję. Każda dama powinna mieć swoje małe sekrety...";
+			link.l2.go = "TBP_Tavern3_22_fortune";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "TBP_Tavern3_22_leadership_1":
+			dialog.text = "Cóż, najważniejsze, że wróciła do pracy. Zasłużyliście na nagrodę, kapitanie. Proszę – sto dublonów, jak się umawialiśmy. I weźcie też tę mapę. Jeden z gości ją zostawił i już nie wrócił. Wygląda na to, że prowadzi do skarbu.";
+			link.l1 = "W porządku, sprawdzę to. Dzięki.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
+		break;
+
+		case "TBP_Tavern3_22_fortune_1":
+			dialog.text = "Cóż, najważniejsze, że wróciła do pracy. Zasłużyliście na nagrodę, kapitanie. Proszę – sto dublonów, jak się umawialiśmy. I weźcie też tę mapę. Jeden z gości ją zostawił i już nie wrócił. Wygląda na to, że prowadzi do skarbu.";
+			link.l1 = "W porządku, sprawdzę to. Dzięki.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("TBP_BetsiBackToWork");
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			AddItems(pchar, "gold_dublon", 100);
+			if (!CheckCharacterItem(PChar, "map_full")) GiveItem2Character(PChar, "map_full");
+			else AddMapPart();
 		break;
 		//<-- Тайна Бетси Прайс
 	}

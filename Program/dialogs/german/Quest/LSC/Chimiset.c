@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 			dialog.text = "Warte! Halt... Ich bitte dich, mir zuzuhören, bevor du einen Fehler machst.";
 			link.l1 = "Ich höre zu... Ich hoffe, dass du ein vernünftiges Argument hast, um mich davon abzuhalten...";
 			link.l1.go = "KillChad_1";
-			LAi_RemoveCheckMinHP(npchar); //убираем проверяльщик, если еще есть
+			LAi_RemoveCheckMinHP(npchar); //убираем проверяльщик, если ещё есть
 		break;
 		
 		case "KillChad_1":

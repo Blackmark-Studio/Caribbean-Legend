@@ -206,9 +206,7 @@ void ProcessDialogEvent()
 
 	case "florian_deck_5":
 		TakeNItems(pchar, "gold_dublon", 200);
-		Log_Info("Has recibido 200 doblones.");
-		PlaySound("interface\important_item.wav");
-		dialog.text = "Pero eso no es todo, capitán. ¿Le gustaría ganar otros doscientos cincuenta escudos de oro?";
+		dialog.text = "Pero eso no es todo, capitán. ¿Le gustaría ganar otros 75 escudos de oro?";
 		link.l1 = "Eso suena prometedor, pero depende de lo que me vaya a pedir que haga por ello, señor.";
 		link.l1.go = "florian_deck_6";
 		break;
@@ -412,9 +410,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "florian_16":
-		TakeNItems(pchar, "gold_dublon", 250);
-		Log_Info("Has recibido 250 doblones");
-		PlaySound("interface\important_item.wav");
+		TakeNItems(pchar, "gold_dublon", 75);
 		dialog.text = "Estás leyendo mi mente, " + GetFullName(pchar) + "¡Sí, maldita sea! Como Alacantara tiene poca pólvora, puedo dejarla navegar en mar abierto y luego obligarla a entablar una prolongada pelea naval, en la que su pólvora se agotará antes que la nuestra, ¡ja ja!\nDebes asegurarte de que el barca goleta de suministros Puebla nunca llegue a . No puedo navegar cerca de la costa, las patrullas notarán mi fragata fácilmente y me echarán antes de que pueda interceptar a Alacantara.\nPuedes encargarte de Puebla por tu cuenta. Encuéntrala y deshazte de ella. Hundela o tómala como premio, no me importa. ¡Solo impide que llegue aquí!\nSi tienes éxito, entonces ve a Guadalupe y busca a Gerard LeCroix. Creo que ya lo conoces, ¿no? Él te pagará la moneda que mereces.";
 		link.l1 = "¡Trato hecho! ¡Me pondré en camino para cortar el Puebla!";
 		link.l1.go = "florian_19";

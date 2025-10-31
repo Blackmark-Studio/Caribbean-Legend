@@ -272,7 +272,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
                 {
                     iCapBattleDifficulty = CalcBattleDifficulty();
-                    link.l2 = "(Шанс " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Вы в курсе, кто я? Думаю, ясно, что мои корабельные орудия могут сделать решето из вашего корыта. Давайте решим всё мирно. Выкуп вполне меня устроит.", "Море... и мы одни... Как насчёт того, чтобы в целях вашей безопасности немного задобрить моих ребят?");
+                    link.l2 = "(Шанс запугать: " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Вы в курсе, кто я? Думаю, ясно, что мои корабельные орудия могут сделать решето из вашего корыта. Давайте решим всё мирно. Выкуп вполне меня устроит.", "Море... и мы одни... Как насчёт того, чтобы в целях вашей безопасности немного задобрить моих ребят?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -597,7 +597,7 @@ void ProcessDialogEvent()
             if(!bOk && iCapBattleDifficulty <= 33)
             {
                 Dialog.text = "Ха-ха! Хорошая шутка. Тем более, что у меня явное превосходство. Убирайтесь на свой корабль и тоните вместе с ним.";
-                link.l1 = "Скоро узнаем цену вашей самоуверенности.";
+                link.l1 = "...";
                 link.l1.go = "Boarding";
             }
             else

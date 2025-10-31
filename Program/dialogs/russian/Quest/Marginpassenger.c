@@ -268,7 +268,7 @@ void ProcessDialogEvent()
 			sld = characterFromId("MarginPass");
 			RemovePassenger(Pchar, sld);
 			sld.lifeday = 0;
-			iTemp = sti(dialogEditStrings[1])*100;
+			iTemp = sti(dialogEditStrings[1])*500;
 			AddMoneyToCharacter(pchar, iTemp);
 			AddQuestRecord("Marginpassenger", "10");
 			AddQuestUserData("Marginpassenger", "sSum", FindRussianMoneyString(iTemp));

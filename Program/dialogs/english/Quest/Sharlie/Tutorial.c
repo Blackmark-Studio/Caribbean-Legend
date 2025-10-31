@@ -40,7 +40,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "StartSailor_1_fencing":
-			dialog.text = "Ha! First time at sea, monsieur? When it's calm like this, anyone can play captain. Better enjoy it while it lasts.";
+			dialog.text = "Ha! First time at sea, monsieur? When it's calm like this, anyone can play captain. Best enjoy it while it lasts.";
 			link.l1 = ""+GetFullName(pchar)+". A nobleman, I'll have you know. Don't 'monsieur' me.";
 			link.l1.go = "StartSailor_2";
 			AddCharacterSkillPoints(pchar, "FencingL", 1);
@@ -50,7 +50,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_1_leadership":
-			dialog.text = "Ha! First time at sea, monsieur? When it's calm like this, anyone can play captain. Better enjoy it while it lasts.";
+			dialog.text = "Ha! First time at sea, monsieur? When it's calm like this, anyone can play captain. Best enjoy it while it lasts.";
 			link.l1 = ""+GetFullName(pchar)+". A nobleman, I'll have you know. Don't 'monsieur' me.";
 			link.l1.go = "StartSailor_2";
 			AddCharacterSkillPoints(pchar, "Leadership", 1);
@@ -64,20 +64,20 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_2":
-			dialog.text = "As you wish, my lord. So then, first voyage for you, my lord "+pchar.lastname+"?";
-			link.l1 = "Is it so obvious? Aye, my first. And I was not born for cramped quarters and moldering ship's food.";
+			dialog.text = "As you wish, my lord. So then, your first voyage, my lord "+pchar.lastname+"?";
+			link.l1 = "Is it so obvious? Yes, my first. And I was not born for cramped quarters and mouldering ship's food.";
 			link.l1.go = "StartSailor_3";
 		break;
 		
 		case "StartSailor_3":
-			dialog.text = "Plain as day you're a landlubber, my lord.";
-			link.l1 = "Mind your tongue! To a man of honor I would cast down my glove and demand satisfaction. But to a peasant like you - I'll simply cut off your ears.";
+			dialog.text = "Plain as day, you're a landlubber, my lord.";
+			link.l1 = "Mind your tongue! To a man of honour I would cast down my glove and demand satisfaction. But to a peasant like you - I'll simply cut off your ears.";
 			link.l1.go = "StartSailor_4";
 		break;
 		
 		case "StartSailor_4":
-			dialog.text = "Maybe in Paris. But out here, words like that can get a man fed to the fishes. I wouldn't go waving that blade around, my lord - and don't make the captain regret letting you walk his deck armed. Last troublemaker got sent to the hold on moldy hardtack and bilge water even the rats wouldn't touch. And you know what? The poor bastard still had to pay extra when we reached port.";
-			link.l1 = "What can you expect... Fine, let's forget this misunderstanding. I keep having to remind myself this tub is nowhere near the Louvre.";
+			dialog.text = "Maybe in Paris. But out here, words like that can get a man fed to the fishes. I wouldn't go waving that blade around, my lord - and don't make the captain regret letting you walk his deck armed. The last troublemaker got sent to the hold on mouldy hardtack and bilge water even the rats wouldn't touch. And you know what? The poor bastard still had to pay extra when we reached port.";
+			link.l1 = "What can you expect... Fine, let's forget this misunderstanding. I have to keep reminding myself this tub is nowhere near the Louvre.";
 			link.l1.go = "StartSailor_5";
 		break;
 		
@@ -88,8 +88,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_6":
-			dialog.text = "Ah... a brothel then. We've got those aplenty. Can't say they're for the chosen few - pay your coin and all's yours.";
-			link.l1 = "Ha! You're not far from the mark, sailor.";
+			dialog.text = "Ah... a brothel then. We've plenty of those. Can't say they're for the chosen few - pay your coin and it's all yours.";
+			link.l1 = "Ha! You're not far off the mark, sailor.";
 			link.l1.go = "StartSailor_7";
 		break;
 		
@@ -100,10 +100,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_8":
-			dialog.text = "Why not just send a trusted man, instead of enduring the hardships of the sea yourself?";
+			dialog.text = "Why not simply send a trusted man, instead of enduring the hardships of the sea yourself?";
 			link.l1 = "Family comes first. I cannot entrust its fate to the first man I meet.";
 			link.l1.go = "StartSailor_9_nobilityplus";
-			link.l2 = "I would have liked to - but my father insists it must be me. I have no idea why.";
+			link.l2 = "I would have liked to – but my father insists it must be me. I have no idea why.";
 			link.l2.go = "StartSailor_9_nobilityminus";
 		break;
 		
@@ -122,32 +122,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_10":
-			dialog.text = "De Monper? And you're "+pchar.lastname+"? How come?";
+			dialog.text = "De Monper? And you are "+pchar.lastname+"? How come?";
 			link.l1 = "Don't look at me like that. I'm the legitimate son. Just took my mother's name.";
 			link.l1.go = "StartSailor_11";
 		break;
 		
 		case "StartSailor_11":
-			dialog.text = "Nothing to be ashamed of. You'll fit right in - in the New World, everyone has some story. Me, for example...";
+			dialog.text = "Nothing to be ashamed of. You'll fit right in – in the New World, everyone has a story. Me, for example...";
 			link.l1 = "I'm not ashamed of anything! Just tell me about Martinique. Is it a big city? Like Toulouse?";
 			link.l1.go = "StartSailor_12";
 		break;
 		
 		case "StartSailor_12":
-			dialog.text = "A city? Ha! Martinique is an island. One of the largest in France's Caribbean holdings. They grow fiery coffee, mine hellish sulfur, and birth the most beautiful women in the world. A fine mix, if you ask me.";
-			link.l1 = "I'm not interested in coffee or sulfur. But wait... an island? How am I supposed to find my brother on a whole island?";
+			dialog.text = "A city? Ha! Martinique is an island. One of the largest of France's Caribbean holdings. They grow fiery coffee, mine hellish sulphur, and give birth to the most beautiful women in the world. A fine mix, if you ask me.";
+			link.l1 = "I'm not interested in coffee or sulphur. But wait... an island? How am I supposed to find my brother on an entire island?";
 			link.l1.go = "StartSailor_13";
 		break;
 		
 		case "StartSailor_13":
 			dialog.text = "Don't fret. Saint-Pierre is a small town — not the Louvre, sure, but not the jungle either. Now Le François, God forbid — a decent man has no business there.";
-			link.l1 = "If I must, I'll go to the bandits. Michel always pulled me out of trouble. Now it's my turn.";
+			link.l1 = "If I must, I'll go to the bandits. Michel always got me out of trouble. Now it's my turn.";
 			link.l1.go = "StartSailor_14";
 		break;
 		
 		case "StartSailor_14":
 			dialog.text = "Not bad... for a landlubber.";
-			link.l1 = "There you go again. How long till we reach this damn Martinique?";
+			link.l1 = "There you go again. How long until we reach this damn Martinique?";
 			link.l1.go = "StartSailor_15";
 		break;
 		
@@ -170,7 +170,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_18":
-			dialog.text = "Er... better not say things like that out loud. Folks might think you're the reason we ran out of rum.";
+			dialog.text = "Er... best not say things like that out loud. Folks might think you're the reason we ran out of rum.";
 			link.l1 = "Alright, Alonso, I won’t. I wouldn’t drink that swill anyway. As for your brilliant plan to stash me in the hold before battle — not happening.";
 			link.l1.go = "StartSailor_20";
 		break;
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_21_fencing":
-			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
+			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses held high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
 			link.l1 = "You don't know me at all.";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "FencingL", 1);
@@ -197,21 +197,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_21_leadership":
-			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
+			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses held high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
 			link.l1 = "You don't know me at all.";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "Leadership", 1);
 		break;
 		
 		case "StartSailor_21_fortune":
-			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
+			dialog.text = "Ha. Maybe there's something to you after all. But watch out — the Caribbean loves to flay those who walk in with their noses held high. You won't survive your first run-in with the pirate vanguard. Hell, some ragged thug outside Saint-Pierre will gut you before you know it.";
 			link.l1 = "You don't know me at all.";
 			link.l1.go = "StartSailor_22";
 			AddCharacterSkillPoints(pchar, "Fortune", 1);
 		break;
 		
 		case "StartSailor_22":
-			dialog.text = "But I know the New World and its folk. If you're not planning to wither behind account books or serve in the governor's house — you'll need to learn everything from scratch.";
+			dialog.text = "But I know the New World and its people. If you're not planning to wither behind account books or serve in the governor's house — you'll need to learn everything from scratch.";
 			link.l1 = "Good thing I don’t plan on sticking around.";
 			link.l1.go = "StartSailor_23";
 		break;
@@ -224,13 +224,13 @@ void ProcessDialogEvent()
 		
 		case "StartSailor_24":
 			dialog.text = "Ah yes, that's right. A sick father?";
-			link.l1 = "Let's just say... there's a certain lady whose husband really doesn’t want me in Paris. But a few months — and the passions will cool.";
+			link.l1 = "Let's just say... there's a certain lady whose husband really doesn’t want me in Paris. But give it a few months — and the passions will cool.";
 			link.l1.go = "StartSailor_25";
 		break;
 		
 		case "StartSailor_25":
 			dialog.text = "Ha-ha-ha! Then you've definitely come to the right place. The Caribbean is a paradise for those fleeing jealous husbands. And time flies here. Give it a while — you might end up a sailor yet!";
-			link.l1 = "More likely a captain. I’m no good as a common sailor, I fear. Manual labor isn’t my thing.";
+			link.l1 = "More likely a captain. I’m no good as a common sailor, I fear. Manual labour isn’t my thing.";
 			link.l1.go = "StartSailor_26";
 		break;
 		
@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AlonsoGold_2":
-			dialog.text = "Ha! That four-eyes got you in on this too?";
+			dialog.text = "Ha! That four-eyes got you mixed up in this too?";
 			link.l1 = "Four-eyes?";
 			link.l1.go = "AlonsoGold_3";
 		break;
@@ -269,7 +269,7 @@ void ProcessDialogEvent()
 		
 		case "AlonsoGold_4":
 			dialog.text = "Uhh... Sorry, but that’s our own business. Don’t worry though — we’re not breaking any ship laws.";
-			link.l1 = "What about regular laws?";
+			link.l1 = "What about ordinary laws?";
 			link.l1.go = "AlonsoGold_5";
 		break;
 		
@@ -344,7 +344,7 @@ void ProcessDialogEvent()
 			link.l3.go = "Captain_2_sailing";
 			if (bBettaTestMode)
 			{
-				link.l9 = "BetaTest (skip tutorial and start game on Martinique)";
+				link.l9 = "BetaTest (skip tutorial and start the game on Martinique)";
 				link.l9.go = "BetaTest_StartGame";
 			}
 			pchar.questTemp.SharlieTutorial_CaptainDialog = true;
@@ -393,8 +393,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_6":
-			dialog.text = "Capsterville. Listen, "+pchar.name+": we need to have a serious talk. I’m inviting you to dine in my cabin. The bell will strike soon — then we’ll have the time to talk like civilized men, finishing the ship’s last bottle of wine.";
-			link.l1 = "Thank you for the invitation. I’d be honored, Captain.";
+			dialog.text = "Capsterville. Listen, "+pchar.name+": we need to have a serious talk. I’m inviting you to dine in my cabin. The bell will strike soon — then we’ll have time to talk like civilised men, finishing the ship’s last bottle of wine.";
+			link.l1 = "Thank you for the invitation. I’d be honoured, Captain.";
 			link.l1.go = "Captain_7";
 		break;
 		
@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 				SetLocatorEvent(sld.id, "event3", "SharlieTutorial_cannon_1");
 			}
 			else dialog.text = "Any other questions?";
-			link.l1 = "(Wrap things up) I’m ready, Captain. With you — I’ll even drink Burgundy!";
+			link.l1 = "(Wrap things up) I’m ready, Captain. With you — I’d even drink Burgundy!";
 			link.l1.go = "Captain_8";
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_1"))
 			{
@@ -417,12 +417,12 @@ void ProcessDialogEvent()
 			}
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_2"))
 			{
-				link.l3 = "Captain, I had the pleasure of speaking with a certain Alonso. What’s his position aboard?";
+				link.l3 = "Captain, I had the pleasure of speaking with a certain Alonso. What’s his position on board?";
 				link.l3.go = "Captain_7_question_2_1";
 			}
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_3"))
 			{
-				link.l4 = "Captain, tell me about your ship. A pinnace, isn’t it?";
+				link.l4 = "Captain, tell me about your ship. A pinnace, isn't it?";
 				link.l4.go = "Captain_7_question_3_1";
 			}
 			link.l5 = "Until next time, Captain.";
@@ -452,13 +452,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_7_question_1_3":
-			dialog.text = "Worse — one of the pirate barons. These gallows birds formed something like an organization and call themselves the Brotherhood of the Coast. They divided the Caribbean into six parts and placed a baron in each, so they wouldn’t tear each other apart.";
+			dialog.text = "Worse — one of the pirate barons. These gallows birds formed something like an organisation and call themselves the Brotherhood of the Coast. They divided the Caribbean into six parts and placed a baron in each, so they wouldn’t tear each other apart.";
 			link.l1 = "Why don’t the authorities do something about it?";
 			link.l1.go = "Captain_7_question_1_4";
 		break;
 		
 		case "Captain_7_question_1_4":
-			dialog.text = "You’re naïve, "+pchar.name+". Piracy exists only because local authorities let them repair and resupply in selected ports in exchange for a cut of the loot. I don’t like to admit it, but the only ones actually doing anything about this black plague are the Spaniards. If not for them, we’d have to outfit our ship with pricey cannons — and hire an escort too.";
+			dialog.text = "You’re naive, "+pchar.name+". Piracy exists only because the local authorities allow them to repair and resupply in selected ports in exchange for a share of the loot. I don’t like to admit it, but the only ones actually doing anything about this black plague are the Spaniards. If not for them, we’d have to outfit our ship with expensive cannons — and hire an escort as well.";
 			link.l1 = "...";
 			link.l1.go = "Captain_7";
 			npchar.SharlieTutorial_question_1 = true;
@@ -471,7 +471,7 @@ void ProcessDialogEvent()
 		break;
 		
 				case "Captain_7_question_2_2":
-			dialog.text = "Not at all. Do you think it’s easy to find such experienced men for the crew? It takes at least a year and an excellent boatswain to make a gang of tavern drunks look even remotely like a crew. Besides, Alonso is also the crew’s voice. A captain doesn’t bother with talking to the lower ranks, but it’s stupid — and deadly — to forget that common sailors have interests too. Alonso represents them when needed.";
+			dialog.text = "Not at all. Do you think it’s easy to find such experienced men for the crew? It takes at least a year and an excellent boatswain to make a gang of tavern drunks look even remotely like a crew. Besides, Alonso is also the crew’s voice. A captain doesn’t bother talking to the lower ranks, but it’s stupid — and deadly — to forget that common sailors have interests too. Alonso represents them when needed.";
 			link.l1 = "And what happens if the crew is unhappy?";
 			link.l1.go = "Captain_7_question_2_3";
 		break;
@@ -484,25 +484,25 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Captain_7_question_3_1":
-			dialog.text = "You’ve touched a nerve, "+pchar.name+"! I could talk about my beauty forever. Third-rate, twenty guns, great speed — don’t let the ‘merchant’ part fool you!";
+			dialog.text = "You’ve struck a nerve, "+pchar.name+"! I could talk about my beauty forever. Third-rate, twenty guns, great speed — don’t let the ‘merchant’ part fool you!";
 			link.l1 = "I got the part about guns and speed. But ‘rate’? ‘Merchant’?";
 			link.l1.go = "Captain_7_question_3_2";
 		break;
 		
 		case "Captain_7_question_3_2":
 			dialog.text = "Rates are a loose classification by number of guns. Seventh rate is barely a boat, while first rate is nearly a fortress. But don’t go repeating that in Europe — especially around naval officers.";
-			link.l1 = "Why not? Is this some kind of sailor joke?";
+			link.l1 = "Why not? Is this some kind of sailor's joke?";
 			link.l1.go = "Captain_7_question_3_3";
 		break;
 		
 		case "Captain_7_question_3_3":
-			dialog.text = "They’ll take you for a complete fool and mock you. Truth is, on any serious navy, the ranking system is different and applies only to warships. But here in the Caribbean, things are done our own way, as usual.";
+			dialog.text = "They’ll take you for a complete fool and mock you. The truth is, in any proper navy, the ranking system is different and applies only to warships. But here in the Caribbean, things are done our own way, as usual.";
 			link.l1 = "And what did you mean by calling your ship a ‘merchant’?";
 			link.l1.go = "Captain_7_question_3_4";
 		break;
 		
 		case "Captain_7_question_3_4":
-			dialog.text = "Another loose term. Warships — tougher and shoot better. Raiders — rob and run. Merchants — can carry lots of cargo, crew, or guns, but must compromise, or else their speed becomes laughable. There are also multipurpose ships, but not much to say about them except that they adapt to their owner’s needs.";
+			dialog.text = "Another loose term. Warships — tougher and shoot better. Raiders — rob and run. Merchants — can carry lots of cargo, crew, or guns, but must compromise, or else their speed becomes laughable. There are also multipurpose ships, but not much to say about them except that they adapt to their owner's needs.";
 			link.l1 = "You’re getting excited, Captain.";
 			link.l1.go = "Captain_7_question_3_5";
 		break;
@@ -517,10 +517,10 @@ void ProcessDialogEvent()
 		case "Captain_8":
 			if (IsEquipCharacterByItem(pchar, "hat3"))
 			{
-				dialog.text = "Well, lucky you — Burgundy’s all I’ve got left... Hold on, "+pchar.name+". Where did you get my old hat?!\nWait. Hey, in the tops! What’s going on up there?";
+				dialog.text = "Well, lucky you — Burgundy’s all I’ve got left... Hold on, "+pchar.name+". Where did you get my old hat?!\nWait. Hey, up in the tops! What’s going on up there?";
 				ChangeCharacterComplexReputation(pchar, "nobility", -1);
 			}
-			else dialog.text = "Well, lucky you — Burgundy’s all I’ve got left\nWait. Hey, in the tops! What’s going on up there?";
+			else dialog.text = "Well, lucky you — Burgundy’s all I’ve got left\nWait. Hey, up in the tops! What’s going on up there?";
 			link.l1 = "...";
 			link.l1.go = "Captain_9";
 		break;
@@ -540,12 +540,12 @@ void ProcessDialogEvent()
 		
 		// --> Диалог с охранником каюты
 		case "OhrannikCabin":
-			dialog.text = "Forgive me, monsieur de More, but you are not allowed in there.";
+			dialog.text = "Forgive me, Monsieur de More, but you are not allowed in there.";
 			link.l1 = "I’ve been to the captain’s cabin before. You should remember that by now.";
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Alas, my cunning plan has failed. Farewell, sailor.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -562,24 +562,24 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_2":
-			dialog.text = "There’s hardly any voyage left, and the captain would rather not have anyone cleaning out his valuables and vanishing into the bandit haven of Le Francois.";
+			dialog.text = "There’s hardly any voyage left, and the captain would rather not have anyone cleaning out his valuables and vanishing into the bandit haven of Le François.";
 			link.l1 = "I doubt the captain had me in mind when he gave such an order.";
 			link.l1.go = "OhrannikCabin_3";
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
-					dialog.text = "Well... you’ve got a point. And you’ve dined in the captain’s cabin more than once already. Go ahead, monsieur de More.";
+					dialog.text = "Well... you’ve got a point. And you’ve dined in the captain’s cabin more than once already. Go ahead, Monsieur de More.";
 					link.l1 = "That’s more like it!";
 					link.l1.go = "OhrannikCabin_4";
-					notification("Check passed", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
-					dialog.text = "Insi... insinu-what? I didn’t mean anything like that, monsieur de More!";
+					dialog.text = "Insi... insinua-what? I didn’t mean anything like that, monsieur de More!";
 					link.l1 = "Then you must let me through.";
 					link.l1.go = "OhrannikCabin_3_1";
 				}
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Insufficient skill (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 			dialog.text = "Eh... fine. I suppose no great harm will come of it.";
 			link.l1 = "That’s more like it!";
 			link.l1.go = "OhrannikCabin_4";
-			notification("Check passed", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -631,7 +631,7 @@ void ProcessDialogEvent()
 		
 		// --> матрос ругается на ГГ, который активировал брашпиль
 		case "SailorWithWindlass_1":
-			dialog.text = "Hey, you noble oaf! What are you doing, trying to stuff the devil into the windlass?!\nYou kicked the stopper with your royal foot! Planning to send us all to the bottom, huh?!\nDo us a favor — don’t touch anything unless it’s a French runny nose!";
+			dialog.text = "Hey, you noble oaf! What are you doing, trying to stuff the devil into the windlass?!\nYou kicked the stopper with your royal foot! Planning to send us all to the bottom, are you?!\nDo us a favour — don’t touch anything unless it’s a French runny nose!";
 			link.l1 = "What is this, exactly?";
 			link.l1.go = "SailorWithWindlass_2";
 		break;
@@ -672,22 +672,22 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWithCannon_4":
-			dialog.text = "True. But it all comes down to the crew’s teamwork and the сannoneer’s skill. Too bad ours is asleep — he’d give you a whole lesson and then load you into the cannon himself, ha!";
-			link.l1 = "The сannoneer is an officer, right?";
+			dialog.text = "True. But it all comes down to the crew’s teamwork and the cannoneer’s skill. Too bad ours is asleep — he’d give you a whole lesson and then load you into the cannon himself, ha!";
+			link.l1 = "The cannoneer is an officer, right?";
 			link.l1.go = "SailorWithCannon_5";
 		break;
 
 		case "SailorWithCannon_5":
-			dialog.text = "Usually. Without at least a semi-competent сannoneer, it’s better to avoid fights — might as well throw the cannons overboard and run.\nMerchant captains rarely carry anything bigger than six-pounders — they count on escorts or luck.\nThat’s fair enough: with no heavy cannons or munitions, a ship sails better and has more room for cargo to sell.\nIf our captain hadn’t splurged on these beauties, we might still have some rum left. Sigh.";
+			dialog.text = "Usually. Without at least a semi-competent cannoneer, it’s better to avoid fights — might as well throw the cannons overboard and run.\nMerchant captains rarely carry anything bigger than six-pounders — they count on escorts or luck.\nThat’s fair enough: with no heavy cannons or munitions, a ship sails better and has more room for cargo to sell.\nIf our captain hadn’t splurged on these beauties, we might still have some rum left. Sigh.";
 			link.l1 = "Doesn’t the captain direct the gunfire personally?";
 			link.l1.go = "SailorWithCannon_6";
 		break;
 
 		case "SailorWithCannon_6":
-			dialog.text = "With a good сannoneer and crew, he doesn’t need to. But let me tell you: when a captain sights the guns himself instead of barking 'Fire!' from the quarterdeck — the enemy ships end up with more holes.";
+			dialog.text = "With a good cannoneer and crew, he doesn’t need to. But let me tell you: when a captain sights the guns himself instead of barking 'Fire!' from the quarterdeck — the enemy ships end up with more holes.";
 			link.l1 = "Can I fire one?";
 			link.l1.go = "SailorWithCannon_7";
-			link.l2 = "Thanks for the fascinating lecture, Alonso. You’re a real treasure trove of naval wisdom.";
+			link.l2 = "Thank you for the fascinating lecture, Alonso. You’re a real treasure trove of naval wisdom.";
 			link.l2.go = "SailorWithCannon_7_exit";
 		break;
 		
@@ -713,7 +713,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "CaptainWithCannon_1":
-			dialog.text = "What is it here, Alonso?";
+			dialog.text = "What is it, Alonso?";
 			link.l1 = "...";
 			link.l1.go = "CaptainWithCannon_2";
 		break;
@@ -767,7 +767,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "CaptainWithCannon_10":
-			dialog.text = "Enjoy yourselves, "+pchar.name+". We'll rouse the crew... at your expense, ha-ha!";
+			dialog.text = "Enjoy yourselves, "+pchar.name+". We'll rouse the crew... at your expense, ha ha!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_cannon_5");
@@ -792,7 +792,7 @@ void ProcessDialogEvent()
 
 		case "SailorWantRum_2":
 			dialog.text = "Five hundred pesos.";
-			link.l1 = "How much?! What do you want me to do for that kind of money? Stage a mutiny?";
+			link.l1 = "How much?! What do you want me to do for that kind of money? Start a mutiny?";
 			link.l1.go = "SailorWantRum_3";
 		break;
 
@@ -803,20 +803,20 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_4":
-			dialog.text = "Ah, I won’t take advantage of your ignorance. Here in the Caribbean, 500 pesos is nothing. Captains and traders bring so many goods that the prices for anything remotely useful are through the roof. Sometimes a rare blade costs as much as a small ship.";
+			dialog.text = "Ah, I won’t take advantage of your ignorance. Here in the Caribbean, 500 pesos is nothing. Captains and traders bring in so many goods that the prices for anything remotely useful are through the roof. Sometimes a rare blade costs as much as a small ship.";
 			link.l1 = "That’s insane.";
 			link.l1.go = "SailorWantRum_5";
 		break;
 
 		case "SailorWantRum_5":
-			dialog.text = "What can I say? We’re all waiting for things to stabilize and prices to normalize. So, are you interested in earning 500 pesos?";
+			dialog.text = "What can I say? We’re all waiting for things to stabilise and prices to normalise. So, are you interested in earning 500 pesos?";
 			link.l1 = "First, I want to know what the job is.";
 			link.l1.go = "SailorWantRum_6";
 		break;
 
 		case "SailorWantRum_6":
 			dialog.text = "You’re surely aware of the unfortunate rum situation on the ship. But I’m convinced there are still a few bottles left somewhere. Rum in bottles isn’t the same as barrel swill. Great taste, prevents poisoning, strengthens your arm and health — a real treasure. Especially at the end of a voyage, when the horizon starts to drive you mad.";
-			link.l1 = "And what would you do with it? Why not search yourself?";
+			link.l1 = "And what would you do with it? Why not search for it yourself?";
 			link.l1.go = "SailorWantRum_7";
 		break;
 
@@ -926,14 +926,14 @@ void ProcessDialogEvent()
 		
 		case "SailorWantRum_PrinestiRum_2":
 			dialog.text = "Thank you, monsieur "+pchar.lastname+". That was slick work!";
-			link.l1 = "I hope I’ll get my payment just as slick.";
+			link.l1 = "I hope I’ll get my payment just as smoothly.";
 			link.l1.go = "SailorWantRum_PrinestiRum_3";
 			RemoveItems(pchar, "potionrum", 3);
 			npchar.SailorWantRum_Done = true;
 		break;
 
 		case "SailorWantRum_PrinestiRum_3":
-			dialog.text = "Would you consider non-monetary payment?";
+			dialog.text = "Would you consider a non-monetary payment?";
 			link.l1 = "You're not as honest as you claim, it seems.";
 			link.l1.go = "SailorWantRum_PrinestiRum_4";
 		break;
@@ -953,15 +953,16 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiRum_money":
-			dialog.text = "Here you are, monsieur "+pchar.lastname+". And thanks again!";
+			dialog.text = "Here you are, monsieur "+pchar.lastname+". And thank you again!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 		
 		case "SailorWantRum_PrinestiRum_6":
-			dialog.text = "I sincerely hope, monsieur "+pchar.name+", that my lesson proves useful. Do you know what navigation is?";
-			link.l1 = "You’d be surprised, but I do. I can even read. Navigation is determining position in space and plotting a course, for example, of a ship.";
+			dialog.text = "I sincerely hope so, monsieur "+pchar.name+", that my lesson proves useful. Do you know what navigation is?";
+			link.l1 = "You’d be surprised, but I do. I can even read. Navigation is determining your position in space and plotting a course, for example, for a ship.";
 			link.l1.go = "SailorWantRum_PrinestiRum_7";
 		break;
 
@@ -972,20 +973,20 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiRum_8":
-			dialog.text = "In the Caribbean. That’s just how it is, don’t ask me why. So, the better your navigation, the more speed and maneuverability you can squeeze out of a ship. Your crew also handles sails faster. But that’s not the most important thing.";
+			dialog.text = "In the Caribbean. That’s just how it is, don’t ask me why. So, the better your navigation, the more speed and manoeuvrability you can squeeze out of a ship. Your crew also handles the sails faster. But that’s not the most important thing.";
 			link.l1 = "You sure know how to build suspense.";
 			link.l1.go = "SailorWantRum_PrinestiRum_9";
 		break;
 
 		case "SailorWantRum_PrinestiRum_9":
 			dialog.text = "The better your navigation, the larger the ship you can command! If you take a ship that’s too advanced, you’ll lose focus, energy, and even your health!";
-			link.l1 = "Sounds dangerous. Strange I survived this long without knowing.";
+			link.l1 = "Sounds dangerous. Strange I've survived this long without knowing.";
 			link.l1.go = "SailorWantRum_PrinestiRum_10";
 		break;
 
 		case "SailorWantRum_PrinestiRum_10":
 			dialog.text = "Luckily, you don’t have to be an expert in everything. You can always hire a good navigator to cover your shortcomings. Just make sure they’re paid and loyal. Losing a navigator on a ship that’s beyond your skill — not fun.";
-			link.l1 = "Thanks for the lecture, Henry. Not sure I’ll need it, but I guess you can never have too much knowledge.";
+			link.l1 = "Thanks for the lecture, Henry. Not sure I’ll need it, but I suppose you can never have too much knowledge.";
 			link.l1.go = "SailorWantRum_PrinestiRum_11";
 			AddCharacterSkillPoints(pchar, "Sailing", 3);
 		break;
@@ -1002,13 +1003,13 @@ void ProcessDialogEvent()
 		// --> Диалог со старым матросом в трюме
 		case "OldSailor":
 			dialog.text = "(sings) C’est la mère Michel qui a perdu son chat... Qui crie par la fenêtre à qui le lui rendra...";
-			link.l1 = "What are you doing here, sailor??";
+			link.l1 = "What are you doing here, sailor?";
 			link.l1.go = "OldSailor_1";
 			NextDiag.TempNode = "OldSailor";
 		break;
 		
 		case "OldSailor_1":
-			dialog.text = "So now I'm like madame Michel — looking for the cat. Only I don't shout — she doesn't like shouting.";
+			dialog.text = "So now I'm like Madame Michel — looking for the cat. Only I don't shout — she doesn't like shouting.";
 			link.l1 = "I saw her this morning — clawing at my boots again.";
 			link.l1.go = "OldSailor_2";
 		break;
@@ -1022,21 +1023,21 @@ void ProcessDialogEvent()
 		break;
 
 		case "OldSailor_3":
-			dialog.text = "Makes sense. Otherwise how would we deal with those damn rats?";
+			dialog.text = "Makes sense. Otherwise, how would we deal with those damn rats?";
 			link.l1 = "But you can't rely on cats forever, can you? They're quite wilful creatures.";
 			link.l1.go = "OldSailor_5";
 			ChangeCharacterComplexReputation(pchar, "nobility", 1);
 		break;
 
 		case "OldSailor_4":
-			dialog.text = "Pity. Cats are loved and valued aboard. Otherwise how would we deal with those damn rats?";
+			dialog.text = "Pity. Cats are loved and valued aboard. Otherwise, how would we deal with those damn rats?";
 			link.l1 = "But you can't rely on cats forever, can you? They're quite wilful creatures.";
 			link.l1.go = "OldSailor_5";
 			ChangeCharacterComplexReputation(pchar, "nobility", -1);
 		break;
 
 		case "OldSailor_5":
-			dialog.text = "That's true. So we rely on arsenic. Only good luck finding that in the Caribbean. So we lose cargo — rats foul the rum, ruin the hardtack, and gnaw everything else\nAnd our purser says: 'Relax, it's like a trade tax'\nBut we know the truth: he's just lazy. If not for our dear Chantal, the captain would've had him living in the hold and catching rats himself long ago, ha-ha!";
+			dialog.text = "That's true. So we rely on arsenic. Only good luck finding that in the Caribbean. So we lose cargo — rats foul the rum, ruin the hardtack, and gnaw everything else\nAnd our purser says: 'Relax, it's like a trade tax.'\nBut we know the truth: he's just lazy. If not for our dear Chantal, the captain would have had him living in the hold and catching rats himself long ago, ha-ha!";
 			link.l1 = "Good luck with the cat. I must go.";
 			link.l1.go = "OldSailor_6";
 		break;
@@ -1054,24 +1055,24 @@ void ProcessDialogEvent()
 		break;
 
 		case "OldSailor_8":
-			dialog.text = "Not surprising. Though the sea's brought many of us only sorrow, we love our work. And a sailor's always glad when someone new shows genuine interest.";
+			dialog.text = "Not surprising. Though the sea has brought many of us only sorrow, we love our work. And a sailor is always glad when someone new shows genuine interest.";
 			link.l1 = "...";
 			link.l1.go = "OldSailor_9";
 		break;
 		
 		case "OldSailor_9":
 			dialog.text = "Now tell me: what's the most important skill for a captain?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Navigation. It determines the size of the ship he can command.";
 				link.l1.go = "OldSailor_10";
-				notification("Check passed", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "I won't lie — I don't know.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Insufficient skill level (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1090,24 +1091,24 @@ void ProcessDialogEvent()
 
 		case "OldSailor_11":
 			dialog.text = "Right again! Square sails are great if you've got the wind at your back. But a fore-and-aft rig can tack and catch even a crosswind. It's good to see you haven’t been wasting your time, monsieur.";
-			link.l1 = "Not sure this knowledge will ever be useful... Unless I want to impress high society ladies by posing as a true sailor, ha-ha!";
+			link.l1 = "Not sure this knowledge will ever be useful... Unless I want to impress high society ladies by posing as a real sailor, ha-ha!";
 			link.l1.go = "OldSailor_12";
 		break;
 		
 		case "OldSailor_12":
-			dialog.text = "Oh, I don’t know, monsieur "+pchar.name+". A noble you may be — but you treat us decently. We value that. The captain’s up to something. A black cat’s crossed your path.";
+			dialog.text = "Oh, I’m not sure, monsieur "+pchar.name+". A noble you may be — but you treat us decently. We value that. The captain’s up to something. A black cat has crossed your path.";
 			link.l1 = "Nonsense. What are you on about, sailor?";
 			link.l1.go = "OldSailor_13";
 		break;
 
 		case "OldSailor_13":
-			dialog.text = "Word is, he sent a letter to Capsterville just days ago with a passing ship\nAnd went adrift — right at the voyage’s end, when everyone's howling for landfall.";
-			link.l1 = "I don’t care for rumors. Why bother? I can just ask him. He wouldn’t deny a nobleman a straight answer.";
+			dialog.text = "Word is, he sent a letter to Capsterville just days ago with a passing ship\nAnd went adrift — right at the voyage’s end, when everyone was howling for landfall.";
+			link.l1 = "I don’t care for rumours. Why bother? I can just ask him. He wouldn’t deny a nobleman a straight answer.";
 			link.l1.go = "OldSailor_14";
 		break;
 
 		case "OldSailor_14":
-			dialog.text = "You don’t know him, monsieur "+pchar.name+". He would — and how. And he’s angry now — lost his key.";
+			dialog.text = "You don’t know him, monsieur "+pchar.name+". He would — and how. And he’s angry now — he’s lost his key.";
 			link.l1 = "Key?";
 			link.l1.go = "OldSailor_15";
 		break;
@@ -1119,7 +1120,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OldSailor_16":
-			dialog.text = "That’s up to you\nBy the way, monsieur "+pchar.name+", any rum left? Surely you didn’t give all of it to Henry, ha-ha!";
+			dialog.text = "That’s up to you\nBy the way, monsieur "+pchar.name+", any rum left? Surely you didn’t give all of it to Henry, ha ha!";
 			if (GetCharacterItem(pchar, "potionrum") >= 1)
 			{
 				link.l1 = "I do. Here you go.";
@@ -1146,27 +1147,27 @@ void ProcessDialogEvent()
 		break;
 
 		case "OldSailor_18":
-			dialog.text = "Laugh all you like. Out at sea, talismans don’t hurt.";
-			link.l1 = "You sailors are a superstitious bunch. Good luck to you.";
+			dialog.text = "Laugh all you like. Out at sea, talismans do no harm.";
+			link.l1 = "You sailors are a superstitious lot. Good luck to you.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_OldSailorKey");
 			PlaySound("ambient\\Animals\\Cat_01.wav");
 		break;
 
 		case "OldSailor_again":
-			dialog.text = "Already found the answer? What's the most important skill for a captain?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			dialog.text = "Already found the answer? What is the most important skill for a captain?";
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Navigation. It determines the size of the ship he can command.";
 				link.l1.go = "OldSailor_10";
-				notification("Check passed", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Not yet.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Insufficient skill level (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1186,13 +1187,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorNeedBox_2":
-			dialog.text = "Need a helping hand, lad. Been ordered to stack shot by the guns — case we run into trouble in these dangerous waters. Spent half the watch hauling these iron bastards up from the hold, and my back's given out on the last crate.";
-			link.l1 = "Why not just ask your mates? I thought you sailors help each other out.";
+			dialog.text = "Need a helping hand, lad. Been ordered to stack shot by the guns — in case we run into trouble in these dangerous waters. Spent half the watch hauling these iron bastards up from the hold, and my back's given out on the last crate.";
+			link.l1 = "Why not just ask your mates? I thought you sailors helped each other out.";
 			link.l1.go = "SailorNeedBox_3";
 		break;
 
 		case "SailorNeedBox_3":
-			dialog.text = "One thing our brotherhood definitely hates is hauling heavy loads without good reason. Drew the short straw today — dragging shot crates from the hold. Lousy work, beneath a sailor of my caliber. But what can you do?";
+			dialog.text = "One thing our brotherhood definitely hates is hauling heavy loads without good reason. Drew the short straw today — dragging shot crates from the hold. Lousy work, beneath a sailor of my calibre. But what can you do?";
 			link.l1 = "Stop your whining. I'll help. At least I'll get a look at this hold everyone keeps threatening me with.";
 			link.l1.go = "SailorNeedBox_4";
 			if (IsCharacterPerkOn(pchar, "HT3"))
@@ -1200,7 +1201,7 @@ void ProcessDialogEvent()
 				link.l2 = "(Athlete) See this broadsword on my belt? It weighs more than you. I'll fetch your shot — no trouble at all.";
 				link.l2.go = "SailorNeedBox_4";
 			}
-			link.l3 = "I don't do manual labor, sailor. Haul your own crates.";
+			link.l3 = "I don't do manual labour, sailor. Haul your own crates.";
 			link.l3.go = "SailorNeedBox_Net";
 		break;
 
@@ -1242,12 +1243,12 @@ void ProcessDialogEvent()
 
 		case "BallsGold_2":
 			dialog.text = "Er... y-yes.";
-			link.l1 = "Your name's on the list monsieur Pinchon gave me.";
+			link.l1 = "Your name's on the list Monsieur Pinchon gave me.";
 			link.l1.go = "BallsGold_3";
 		break;
 		
 		case "BallsGold_3":
-			dialog.text = "Phew, thought for a moment... Yes, Paul - that's me alright. How much have you got there for me?";
+			dialog.text = "Phew, I thought for a moment... Yes, Paul - that's me, all right. How much have you got there for me?";
 			if (PCharDublonsTotal() >= 20)
 			{
 				link.l1 = "20 doubloons.";
@@ -1279,7 +1280,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "BallsGold_DatDeneg_gold25":
-			dialog.text = "Thanks, lad.";
+			dialog.text = "Thank you, lad.";
 			link.l1 = "...";
 			link.l1.go = "BallsGold_DatDeneg_3";
 			DelLandQuestMark(npchar);
@@ -1305,7 +1306,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiBalls_2":
-			dialog.text = "Any bigger and it'd be a gift to the enemy! If it hits the hull — well, maybe just splinters someone. But if it strikes the stern, it'll bounce all over the deck like a ball!";
+			dialog.text = "Any bigger and it'd be a gift to the enemy! If it hits the hull — well, maybe it'll just splinter someone. But if it strikes the stern, it'll bounce all over the deck like a ball!";
 			link.l1 = "Seen that happen before?";
 			link.l1.go = "SailorWantRum_PrinestiBalls_3";
 			TakeItemFromCharacter(pchar, "BoxOfBalls");
@@ -1318,14 +1319,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorWantRum_PrinestiBalls_4":
-			dialog.text = "Well, you've done me a real favor. And I’ll return it. Here — a nearly full bottle of prime rum, ha-ha!";
+			dialog.text = "Well, you've done me a real favour. And I’ll return it. Here — a nearly full bottle of prime rum, ha-ha!";
 			link.l1 = "Where’d you get it? I keep hearing the rum ran out ages ago. With that kind of goods, you could’ve made anyone haul not just one, but all the crates from the hold.";
 			link.l1.go = "SailorWantRum_PrinestiBalls_5";
 			GiveItem2Character(PChar, "potionrum");
 		break;
 
 		case "SailorWantRum_PrinestiBalls_5":
-			dialog.text = "Just happened that way, lad. Thanks and farewell.";
+			dialog.text = "Just happened that way, lad. Thank you and farewell.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "SailorNeedBox_PrinestiBalls";
@@ -1336,7 +1337,7 @@ void ProcessDialogEvent()
 		
 		// --> Диалог с офицером-торговцем, который торгует всяким
 		case "OfficerTorgovets":
-			dialog.text = "Ah, monsieur "+pchar.lastname+". If you're planning to sleep — you're out of luck. Our cannoneer's claimed your bed. As you know, waking him is rather tricky.";
+			dialog.text = "Ah, monsieur "+pchar.lastname+". If you're planning to sleep — you're out of luck. Our cannoneer has claimed your bed. As you know, waking him is rather tricky.";
 			link.l1 = "I must say, when he needs to — he hears everything perfectly well!";
 			link.l1.go = "OfficerTorgovets_1";
 			/*link.l2 = "Нет.";
@@ -1345,14 +1346,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerTorgovets_1":
-			dialog.text = "That’s nothing. Heard Sharp’s crew once had a blind cannoneer. Said he aimed by the sound of the guns.";
+			dialog.text = "That’s nothing. I heard Sharp’s crew once had a blind cannoneer. They said he aimed by the sound of the guns.";
 			link.l1 = "You’re remarkably talkative today, monsieur boatswain.";
 			link.l1.go = "OfficerTorgovets_2";
 		break;
 
 		case "OfficerTorgovets_2":
-			dialog.text = "There’s a reason for that! We’ll be ashore soon — time to turn the leftover goods into clinking pesos. Brothels in Saint-Pierre are always happy to see those, ha-ha!";
-			link.l1 = "Strange it’s you, not the purser, handling petty trade aboard.";
+			dialog.text = "There’s a reason for that! We’ll be ashore soon — time to turn the leftover goods into clinking pesos. The brothels in Saint-Pierre are always happy to see those, ha-ha!";
+			link.l1 = "Strange that it’s you, not the purser, handling petty trade aboard.";
 			link.l1.go = "OfficerTorgovets_3";
 		break;
 
@@ -1365,7 +1366,7 @@ void ProcessDialogEvent()
 		case "OfficerTorgovets_4":
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_0"))
 			{
-				dialog.text = "Last bottle of rum on the ship, a few lucky charms... and voilà! A full treasure map.";
+				dialog.text = "Last bottle of rum on the ship, a few lucky charms... and voilà! A complete treasure map.";
 				link.l1 = "You should be a merchant, not a boatswain! Let’s see what you’ve got.";
 				npchar.SharlieTutorial_question_0 = true;
 			}
@@ -1377,7 +1378,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OfficerTorgovets_5";
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_1"))
 			{
-				link.l2 = "Charms? Like the one hanging on your chest?";
+				link.l2 = "Charms? Like the one hanging from your neck?";
 				link.l2.go = "OfficerTorgovets_6_question_1_1";
 			}
 			if (!CheckAttribute(npchar, "SharlieTutorial_question_2"))
@@ -1405,14 +1406,14 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerTorgovets_6_question_1_2":
-			dialog.text = "I don’t have to believe. That’s just how the Caribbean works, and the seaman’s lot. Charms are handy things. So if you’re sticking with us, I recommend carrying a few — for different occasions.";
+			dialog.text = "I don’t have to believe. That’s just how the Caribbean works, and a seaman’s lot. Charms are handy things. So if you’re sticking with us, I recommend carrying a few — for different occasions.";
 			link.l1 = "...";
 			link.l1.go = "OfficerTorgovets_4";
 			npchar.SharlieTutorial_question_1 = true;
 		break;
 
 		case "OfficerTorgovets_6_question_2_1":
-			dialog.text = "Oh yes. It’s not uncommon in the Caribbean. Some get lucky — hit it big. Then they either pay taxes, live quietly and long... or stash the gold in a cave. And what’s left is a grave, treasure... and a scrap of paper.";
+			dialog.text = "Oh yes. It’s not uncommon in the Caribbean. Some get lucky — strike it rich. Then they either pay taxes, live quietly and long... or stash the gold in a cave. And what’s left is a grave, treasure... and a scrap of paper.";
 			link.l1 = "Just like that?";
 			link.l1.go = "OfficerTorgovets_6_question_2_2";
 		break;
@@ -1428,19 +1429,19 @@ void ProcessDialogEvent()
 		// --> Диалог с офицером-казначеем
 		case "OfficerKaznachey":
 			dialog.text = "Monsieur "+pchar.lastname+"! Just a moment.";
-			link.l1 = "Again with the lectures, monsieur Pinchon? I didn’t touch your precious ink!";
+			link.l1 = "Again with the lectures, Monsieur Pinchon? I didn’t touch your precious ink!";
 			link.l1.go = "OfficerKaznachey_2";
 		break;
 
 		case "OfficerKaznachey_2":
-			dialog.text = "Then what are you scribbling into your little book with? Holy water? There was no ink in the passenger inventory. Anyway, you've got bigger problems right now.";
+			dialog.text = "Then what are you scribbling in your little book with? Holy water? There was no ink in the passenger inventory. Anyway, you've got bigger problems right now.";
 			link.l1 = "...";
 			link.l1.go = "OfficerKaznachey_3";
 		break;
 
 		case "OfficerKaznachey_3":
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) sStr = "And two hundred more — for the broken windlass. The anchor cable snapped.";
-			dialog.text = "You still owe thirty pesos to the ship’s treasury — for the rain barrel you ruined. Your hilarious attempt to wash your shirt would’ve cost even more if it hadn’t rained again just then. "+sStr+"";
+			dialog.text = "You still owe thirty pesos to the ship’s treasury — for the rain barrel you ruined. Your hilarious attempt to wash your shirt would have cost even more if it hadn’t rained again just then. "+sStr+"";
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass"))
 			{
 				if (sti(pchar.Money) >= 230)
@@ -1490,13 +1491,13 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Enough to stretch my father’s meager allowance through the season.";
+				link.l1 = "Enough to stretch my father’s meagre allowance through the season.";
 				link.l1.go = "OfficerKaznachey_8";
 			}
 		break;
 
 		case "OfficerKaznachey_7":
-			dialog.text = "Ooooh! Shame you didn’t tell me sooner - this voyage could’ve been far more interesting.";
+			dialog.text = "Ooooh! Shame you didn’t tell me sooner – this voyage could’ve been far more interesting.";
 			link.l1 = "You mentioned a task?";
 			link.l1.go = "OfficerKaznachey_9";
 		break;
@@ -1508,14 +1509,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_9":
-			dialog.text = "Yes. Not sure if you’re aware, but the purser and the doctor — are second only to the captain.\n" +
-			"Setting sail without either is a risk to your money. And without money, a ship is just a very expensive piece of wood.\n" +
-			"Even a small sloop can bankrupt its captain without a purser. And the first battle without a doctor could wipe out the entire crew — triggering the long and costly process of hiring and training replacements.\n" +
-			"Luckily for both of us, I serve as both. That gives me the ability to conduct personal trade and request minor services from the crew.\n" +
-			"Of course, I pay generously — and now’s a good time for that.\n" +
-			"I want you to take this list, this chest of doubloons — and pay the crew.\n" +
-			"Exactly as listed! That’s why I asked if you could count.";
-			link.l1 = "Why don’t you do it yourself? If they’re expecting pay — let them come to you.";
+			dialog.text = "Yes. Not sure if you’re aware, but the purser and the doctor are second only to the captain.\n"+"Setting sail without either is a risk to your money. And without money, a ship is just a very expensive piece of wood.\n"+"Even a small sloop can bankrupt its captain without a purser. And the first battle without a doctor could wipe out the entire crew — triggering the long and costly process of hiring and training replacements.\n"+"Luckily for both of us, I serve as both. That gives me the ability to conduct personal trade and request minor services from the crew.\n"+"Of course, I pay generously — and now’s a good time for that.\n"+"I want you to take this list, this chest of doubloons — and pay the crew.\n"+"Exactly as listed! That’s why I asked if you could count.";
+			link.l1 = "Why don’t you do it yourself? If they’re expecting payment — let them come to you.";
 			link.l1.go = "OfficerKaznachey_10";
 		break;
 		
@@ -1526,7 +1521,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_11":
-			dialog.text = "Spanish gold coin. Hard currency. The true measure of wealth. Only the rarest, most valuable services go for these.\nThey’re stored in chests like this for convenience.";
+			dialog.text = "Spanish gold coin. Hard currency. The true measure of wealth. Only the rarest, most valuable services are paid for with these.\nThey’re stored in chests like this for convenience.";
 			link.l1 = "And what do I get out of it?";
 			link.l1.go = "OfficerKaznachey_12";
 		break;
@@ -1542,7 +1537,7 @@ void ProcessDialogEvent()
 			}
 			link.l1 = "Fine. Hand over the list and the chest.";
 			link.l1.go = "OfficerKaznachey_11_agree";
-			link.l2 = "I’m afraid this sort of work isn’t for me. Farewell, monsieur Pinchon.";
+			link.l2 = "I’m afraid this sort of work isn’t for me. Farewell, Monsieur Pinchon.";
 			link.l2.go = "OfficerKaznachey_11_otkaz";
 		break;
 		
@@ -1563,7 +1558,7 @@ void ProcessDialogEvent()
 			{
 				dialog.text = "Here you go. For the love of God — don’t forget to take the doubloons from the chest, follow the list exactly, and don’t pocket any extra. I expect the empty chest back too.";
 			}
-			link.l1 = "As you wish. See you soon, monsieur Pinchon.";
+			link.l1 = "As you wish. See you soon, Monsieur Pinchon.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_QuestRazdatZoloto");
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_ActivateWindlass")) AddQuestRecordInfo("SharlieTutorial_ListOfSailors", "1");
@@ -1578,12 +1573,12 @@ void ProcessDialogEvent()
 				
 		case "OfficerKaznachey_12_Wait":
 			dialog.text = "How did it go? Did you pay them all? Got the leftover doubloons and the empty chest?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "All done.";
 				link.l1.go = "OfficerKaznachey_13";
 			}
-			link.l2 = "Not yet, monsieur Pinchon.";
+			link.l2 = "Not yet, Monsieur Pinchon.";
 			link.l2.go = "exit";
 			NextDiag.TempNode = "OfficerKaznachey_12_Wait";
 		break;
@@ -1595,7 +1590,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "And you claimed you could count. You returned fewer doubloons than expected. That means extra work for me, not less — and that means no pay for you.";
@@ -1646,7 +1641,7 @@ void ProcessDialogEvent()
 
 		case "OfficerKaznachey_15_gold_105":
 			dialog.text = "Of course. 105 pesos per doubloon. Come to me if you’re interested.\nLet me give you some advice: if fate ever puts you in charge of a ship, hire a treasurer first thing. Even a poor one will save you a fortune.";
-			link.l1 = "Thank you, monsieur Pinchon.";
+			link.l1 = "Thank you, Monsieur Pinchon.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "TreasurerTrade";
 			npchar.questTemp.GoldPrice = 105;
@@ -1654,7 +1649,7 @@ void ProcessDialogEvent()
 
 		case "OfficerKaznachey_15_gold_100":
 			dialog.text = "Of course! 100 pesos per doubloon — a fair rate. Caribbean banks would charge you more.\nLet me give you some advice: if fate ever puts you in charge of a ship, hire a treasurer first thing. Even a poor one will save you a fortune.";
-			link.l1 = "Thank you, monsieur Pinchon.";
+			link.l1 = "Thank you, Monsieur Pinchon.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "TreasurerTrade";
 			npchar.questTemp.GoldPrice = 100;
@@ -1667,32 +1662,32 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_2":
-			dialog.text = "I’m the ship’s doctor, "+pchar.lastname+"! Soon the wardroom will be full of wounded, and I’ll see more blood than any fighter. And even if I were just the treasurer, I’d still take my place in the line of fire. No, the only one who was sent to rest in the cozy hold is you.";
+			dialog.text = "I’m the ship’s doctor, "+pchar.lastname+"! Soon the wardroom will be full of wounded, and I’ll see more blood than any fighter. And even if I were just the purser, I’d still take my place in the line of fire. No, the only one who was sent to rest in the cosy hold is you.";
 			link.l1 = "Then what are you doing down here?";
 			link.l1.go = "OfficerKaznachey_16_Proval_3";
 		break;
 		
 		case "OfficerKaznachey_16_Proval_3":
-			dialog.text = "The battle won't start for a couple hours, so it's the perfect time to close the daily accounts. You have my chest of doubloons, de Maure. Kindly return it.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			dialog.text = "The battle won't start for a couple of hours, so it's the perfect time to close the daily accounts. You have my chest of doubloons, de Maure. Kindly return it.";
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Take it. And don't show your face down here again.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
 			}
 			else
 			{
-				link.l1 = "I left your junk somewhere else.";
+				link.l1 = "I left your stuff somewhere else.";
 				link.l1.go = "OfficerKaznachey_16_Proval_5";
 			}
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "I had no intention of it. I'm not a landlubber - my place isn't in the hold. Farewell.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
@@ -1701,7 +1696,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_5":
-			dialog.text = "Somewhere else... We'll discuss this after the battle - in the captain's presence. Until then.";
+			dialog.text = "Somewhere else... We'll discuss this after the battle – in the captain's presence. Until then.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
@@ -1710,7 +1705,7 @@ void ProcessDialogEvent()
 		
 		case "TreasurerTrade":
 			dialog.text = "Interested in doubloons, monsieur "+pchar.lastname+"?";
-			link.l1 = "Let’s make a deal.";
+			link.l1 = "Let's make a deal.";
 			link.l1.go = "TreasurerTrade_1";
 			link.l2 = "Not right now.";
 			link.l2.go = "exit";
@@ -1744,7 +1739,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Sailor_Trevoga_4_fencing";
 			link.l2 = "If I can help in any way...";
 			link.l2.go = "Sailor_Trevoga_4_leadership";
-			link.l3 = "Wait, does that mean no burgundy?..";
+			link.l3 = "Wait, does that mean no Burgundy?..";
 			link.l3.go = "Sailor_Trevoga_4_fortune";
 		break;
 
@@ -1768,7 +1763,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Sailor_Trevoga_4_fortune":
-			dialog.text = "Alonso, get him out of here. Move it, you slackers! Raise the sails!";
+			dialog.text = "Alonso, get him out of here. Move it, you slackers! Hoist the sails!";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_Trevoga_7");
@@ -1787,7 +1782,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "EnemyPirate_2":
-			dialog.text = "And what are you doing here?! Abandoned your crew and hiding from the fight, you bilge rat?! I’ll gut you right now!";
+			dialog.text = "And what are you doing here?! Abandoning your crew and hiding from the fight, you bilge rat?! I’ll gut you right now!";
 			link.l1 = "Bad move crawling into my hold. I’ll gut you myself.";
 			link.l1.go = "EnemyPirate_3_Fencing";
 			link.l2 = "You're barely standing, and most of that blood on you isn’t even yours.";
@@ -1843,17 +1838,17 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorAlive_2":
-			dialog.text = "We were boarded. Ar-r-gh! Stubborn devils!\nListen carefully: we held the gun deck, but the fun’s just beginning upstairs. I swear, they’ll be down here any minute. Take the scattergun! Devil, careful! It’s loaded!";
+			dialog.text = "We were boarded. Argh! Stubborn devils!\nListen carefully: we held the gun deck, but the fun’s just beginning upstairs. I swear, they’ll be down here any minute. Take the scattergun! Devil, careful! It’s loaded!";
 			if (IsCharacterPerkOn(pchar, "HT4"))
 			{
-				link.l1 = "(Sharpshooter) Don’t worry about me. I’ll punch holes in anyone who tries.";
+				link.l1 = "(Sharpshooter) Don’t worry about me. I’ll put holes in anyone who tries.";
 			}
 			else link.l1 = "...";
 			link.l1.go = "SailorAlive_3";
 		break;
 
 		case "SailorAlive_3":
-			dialog.text = "There’s grapeshot in it. Do it right, and you can take down two or three at once.\nI believe in you, "+pchar.name+". Once you fight them off, check the bodies. Maybe you’ll find a drink for me... otherwise I’m no help.";
+			dialog.text = "There’s grapeshot in it. Do it right, and you can take down two or three at once.\nI believe in you, "+pchar.name+". Once you’ve fought them off, check the bodies. Maybe you’ll find a drink for me... otherwise I’m no help.";
 			link.l1 = "Hang in there, Alonso. Here come the guests!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumBitva_5");
@@ -1877,7 +1872,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "SailorAlive_12":
-			dialog.text = "Not bad at all, ha-ha! Thanks, "+pchar.name+". And those three — you took them out nicely. Since you're truly a nobleman, take command. Together, we can hold this deck. And if the boys upstairs manage too — the day is ours!";
+			dialog.text = "Not bad at all, ha-ha! Thanks, "+pchar.name+". And those three — you took them out nicely. Since you're truly a nobleman, take command. Together, we can hold this deck. And if the boys upstairs manage it too — the day is ours!";
 			link.l1 = "...";
 			//link.l1.go = "exit";
 			link.l1.go = "SailorAlive_13";
@@ -1897,7 +1892,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Since you're truly a nobleman, take command.";
+				dialog.text = "Since you are truly a nobleman, take command.";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "SailorAlive_13";
@@ -1922,14 +1917,14 @@ void ProcessDialogEvent()
 		
 		// --> Диалог с Алонсо после боя
 		case "AfterBattle_Alonso_1":
-			dialog.text = "Here we are finishing where we started. Thanks for saving my hide, "+pchar.name+".";
+			dialog.text = "Here we are, finishing where we started. Thanks for saving my hide, "+pchar.name+".";
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_Ranen"))
 			{
-				link.l1 = "I guess we’re even. I don’t even remember how you dragged me out of there.";
+				link.l1 = "I suppose we’re even. I can’t even remember how you dragged me out of there.";
 			}
 			else
 			{
-				link.l1 = "I guess we’re even. If it weren’t for you and the boys, I’d still be there.";
+				link.l1 = "I suppose we’re even. If it weren’t for you and the lads, I’d still be there.";
 			}
 			link.l1.go = "AfterBattle_Alonso_2";
 			LAi_SetActorType(pchar);
@@ -1947,22 +1942,19 @@ void ProcessDialogEvent()
 		break;
 
 		case "AfterBattle_Alonso_3":
-			dialog.text = "Some saw him drop three. Others say it was a dozen. I figure only the devil kept count.";
+			dialog.text = "Some saw him drop three. Others say it was a dozen. I reckon only the devil kept count.";
 			link.l1 = "You still haven’t told me how it all turned out this way.";
 			link.l1.go = "AfterBattle_Alonso_4";
 		break;
 
 		case "AfterBattle_Alonso_4":
-			dialog.text = "What’s there to tell? Our sixteen-pounders didn’t save us from a single pirate brig.\n" +
-			"It was on us in a flash, hit us with grapeshot while we were turning, and boarded right away. You should’ve seen the deck — nothing left for the surgeon to do.\n" +
-			"Worst part of fighting pirates — no profit. Just paupers. We couldn’t even take their brig.";
+			dialog.text = "What’s there to tell? Our sixteen-pounders didn’t save us from a single pirate brig.\n"+"It was on us in a flash, hit us with grapeshot while we were turning, and boarded right away. You should’ve seen the deck — nothing left for the surgeon to do.\n"+"Worst part of fighting pirates — no profit. Just paupers. We couldn’t even take their brig.";
 			link.l1 = "So what happens next?";
 			link.l1.go = "AfterBattle_Alonso_5";
 		break;
 
 		case "AfterBattle_Alonso_5":
-			dialog.text = "The ship's afloat, and we’ve enough crew left to get you to Saint-Pierre on schedule, where I’ll look for a new captain, and you’ll find your brother and tell him all about your adventures. What comes next — only God knows.\n" +
-			"But one thing’s for sure - you’ll fit in fine with us. Not bad for a land rat, "+pchar.name+".";
+			dialog.text = "The ship's afloat, and we’ve enough crew left to get you to Saint-Pierre on schedule, where I’ll look for a new captain, and you’ll find your brother and tell him all about your adventures. What comes next — only God knows.\n"+"But one thing’s for sure - you’ll fit in just fine with us. Not bad for a land rat, "+pchar.name+".";
 			link.l1 = "...";
 			link.l1.go = "AfterBattle_Alonso_6";
 		break;

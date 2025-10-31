@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "Słucham, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "Stawimy im czoła, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu dla nich i nigdzie się nie ruszamy. Żadna banda czerwonoskórych, nawet z muszkietami, nas nie powstrzyma! Zakopmy skurczybyków i dokończmy robotę! Mamy wystarczająco ludzi, jest szansa ich zaskoczyć. Czterech ludzi przywita ich ogniem z flanek, a reszta zajmie tu pozycje. Zmniejszmy ich liczebność i dobijmy ich!";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("Not enough people", "X");
 				if (n > 0)
 				{
 					link.l1 = "Damy im walkę, chłopcy! Za tym wzgórzem są towary i pieniądze! Jesteśmy tu po nie i nie zamierzamy odchodzić. Żadna zgraja czerwonoskórych, nawet z muszkietami, nie zatrzyma nas! Zakopmy skurczybyków i skończmy robotę!";

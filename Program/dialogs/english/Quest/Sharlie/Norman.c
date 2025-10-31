@@ -24,13 +24,13 @@ void ProcessDialogEvent()
 		case "norman_us":
 			if(CheckAttribute(pchar, "questTemp.Tieyasal") && pchar.questTemp.Tieyasal == "begin" && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				dialog.text = LinkRandPhrase("What do you need, mate? Walk your path, take care of your business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr. Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, friend. Wanna chat? There's just one problem: I'm not in the mood for conversation. So go look for somebody else to bother. Go kick back at the tavern. Have some rum...");
-				link.l1 = "Listen, Abraham, did you happen to run into a man named Miguel Dichoso on Isla Tesoro recently? He's kind of a well-known cat around here.";
+				dialog.text = LinkRandPhrase("What do you need? Walk your path, take care of your business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, friend. Fancy a chat? There's just one problem: I'm not in the mood for conversation. So go and find someone else to bother. Go relax at the tavern. Have some rum...");
+				link.l1 = "Listen, Abraham, did you happen to run into a man named Miguel Dichoso on Isla Tesoro recently? He's something of a well-known character around here.";
 				link.l1.go = "tieyasal";
 				break;
 			}
-			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("What do you need, mate? Walk your path, take care of your business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr. Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, pal. Wanna chat? There's just one problem: I'm not in the mood for conversation. So go bother someone else. Go kick back at the tavern. Have some rum..."), LinkRandPhrase("Hey, Sailor. What, are you hard-headed or something? I thought I was pretty clear.","Pal, go get some rest. You seem to be a little hard of hearing.","Hey pal, what, are you stupid or something? I pretty much spelled it out for you already."), "Buddy, don't make me angry. I've slaughtered so many landlubbers in my time, one more or less doesn't really make a difference.", "All right, you've pissed me off. Now either take out your rusty sword or run as fast as you can. I recommend the second option...", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("All right, friend. I'm not gonna bother you.", "Fine, fine. I got it...", "Whoa, well you look like you are the thunder of the seas! All right, I'm out of here.", "What?!", npchar, Dialog.CurrentNode); 
+			dialog.text = NPCStringReactionRepeat(LinkRandPhrase("What do you need? Walk your path, take care of your business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, pal. Fancy a chat? There's just one problem: I'm not in the mood for conversation. So go bother someone else. Go kick back at the tavern. Have some rum..."),LinkRandPhrase("Hey, sailor. What, are you hard-headed or something? I thought I was pretty clear.","Pal, go get some rest. You seem to be a little hard of hearing.","Hey pal, what, are you stupid or something? I’ve pretty much spelled it out for you already."),"Buddy, don't make me angry. I've slaughtered so many landlubbers in my time, one more or less doesn't really make a difference.","All right, you've pissed me off. Now either draw your rusty sword or run as fast as you can. I recommend the second option...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("All right, friend. I won't bother you.","Fine, fine. I got it...","Whoa, well, you look like you are the thunder of the seas! All right, I'm out of here.","What?!",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			NextDiag.TempNode = "norman_us";
 		break;
@@ -38,8 +38,8 @@ void ProcessDialogEvent()
 		case "norman_fes":
 			if(CheckAttribute(pchar, "questTemp.Tieyasal") && pchar.questTemp.Tieyasal == "begin" && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				dialog.text = LinkRandPhrase("What do you need, mate? Walk your path, take care of your business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr. Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, pal. Wanna chat? There's just one problem: I'm not in the mood for conversation. So go bother someone else. Go kick back at the tavern. Have some rum...");
-				link.l1 = "Listen, Abraham, did you happen to run into a man named Miguel Dichoso on Isla Tesoro recently? He's kind of a well-known cat around here.";
+				dialog.text = LinkRandPhrase("What do you need, mate? Go your way, mind your own business. Just leave me alone.","Hey, hey, pal. Going for a walk? Well, you just keep on walking and leave Mr Abraham alone. He's going for a walk too. He's getting a breath of fresh sea air.","Hello, pal. Want to chat? There's just one problem: I'm not in the mood for conversation. So go bother someone else. Go kick back at the tavern. Have some rum...");
+				link.l1 = "Listen, Abraham, did you happen to run into a man named Miguel Dichoso on Isla Tesoro recently? He's something of a well-known character around here.";
 				link.l1.go = "tieyasal";
 				break;
 			}
@@ -54,24 +54,24 @@ void ProcessDialogEvent()
 				break;
 				
 				case 1:
-					dialog.text = "At attention! Behold - Admiral Barbarigo! Don't you recognize my famous cavalry sword?";
-					link.l1 = "My apologies, Sir Admiral! From now on, I'll be more attentive.";
+					dialog.text = "Attention! Behold - Admiral Barbarigo! Don't you recognise my famous cavalry sword?";
+					link.l1 = "My apologies, Admiral! From now on, I'll be more attentive.";
 					link.l1.go = "norman_fes1_peace";
-					link.l2 = "Your cavalry sword is widely known. Too bad, it is in the hands of a fool.";
+					link.l2 = "Your cavalry sword is widely known. Too bad it's in the hands of a fool.";
 					link.l2.go = "norman_fes1_fight";
 				break;
 				
 				case 2:
-					dialog.text = "As you can see, I am here in exile. I am awaiting further notification from General Monk. I ask that you do not disseminate my concealed royal identity. Cromwell's intelligence has long ears.";
-					link.l1 = "But of course, your Majesty. No one will ever learn that Karl the II is hiding in West India.";
+					dialog.text = "As you can see, I am here in exile. I am awaiting further notification from General Monck. I ask that you do not disclose my concealed royal identity. Cromwell's intelligence has long ears.";
+					link.l1 = "But of course, Your Majesty. No one will ever learn that Karl II is hiding in the West Indies.";
 					link.l1.go = "norman_fes2_fight";
 					link.l2 = "Well, and I am Pope Innocent X then.";
 					link.l2.go = "norman_fes2_peace";
 				break;
 				
 				case 3:
-					dialog.text = "What happened to you, Blaze? I've been looking for you for two days. You've completely forgotten your father Nicolas!";
-					link.l1 = "I don't have time for you father! I'm swamped.";
+					dialog.text = "What happened to you, Blaze? I've been looking for you for two days. You've completely forgotten your father, Nicolas!";
+					link.l1 = "I don't have time for you, Father! I'm swamped.";
 					link.l1.go = "norman_fes3_peace";
 					link.l2 = "You are mistaken, sir. My name is "+GetFullName(pchar)+".";
 					link.l2.go = "norman_fes3_fight";
@@ -79,31 +79,31 @@ void ProcessDialogEvent()
 				
 				case 4:
 					dialog.text = "Sh-sh... I am Davy Jones. Tell me, are you afraid of death?";
-					link.l1 = "Of course I am, Mr. Jones. Especially after a hangover.";
+					link.l1 = "Of course I am, Mr Jones. Especially after a hangover.";
 					link.l1.go = "norman_fes4_fight";
 					link.l2 = "One death is a tragedy, a thousand deaths are just a statistic.";
 					link.l2.go = "norman_fes4_peace";
 				break;
 				
 				case 5:
-					dialog.text = "I'm in a hurry to finish my new play. You must help me finish the phrase 'To be or not to be'?!";
-					link.l1 = "That is the question! Shall we endure the offense and move on...";
+					dialog.text = "I'm in a hurry to finish my new play. You must help me complete the phrase 'To be or not to be'?!";
+					link.l1 = "That is the question! Shall we endure the offence and move on...";
 					link.l1.go = "norman_fes5_fight";
-					link.l2 = "A drink, for sure. But I won't be surprised if I catch a disease in a brothel!";
+					link.l2 = "A drink, for sure. But I wouldn't be surprised if I caught a disease in a brothel!";
 					link.l2.go = "norman_fes5_peace";
 				break;
 			}
 		break;
 		
 		case "norman_fes0_fight":
-			dialog.text = "What the hell are you talking about? 'Tesoro'?! You might as well call it the Bermudas! This island is called Norman Island after me and you don't forget it! I'm going to have to teach you geography...";
+			dialog.text = "What the hell are you talking about? 'Tesoro'?! You might as well call it the Bermudas! This island is called Norman Island after me, and don't you forget it! I'm going to have to teach you geography...";
 			link.l1 = "Huh! What do you mean?!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "norman_fes0_peace":
-			dialog.text = "You're right, Sailor. I really am Admiral Barbarigo, but that's strictly between us. Get ready to march. We're moving out soon. That'll come in handy for you.";
+			dialog.text = "You're right, sailor. I really am Admiral Barbarigo, but that's strictly between us. Get ready to march. We're moving out soon. That'll come in handy for you.";
 			link.l1 = "I'm extremely grateful!";
 			link.l1.go = "norman_fes0_exit";
 		break;
@@ -133,7 +133,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fes1_fight":
-			dialog.text = "We'll see who the fool is right now. En guard!";
+			dialog.text = "We'll see who the fool is right now. En garde!";
 			link.l1 = "Are you serious?!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
@@ -141,7 +141,7 @@ void ProcessDialogEvent()
 		
 		case "norman_fes1_peace":
 			dialog.text = "What did I tell you! Here, drink to my health.";
-			link.l1 = "Bottoms up, admiral!";
+			link.l1 = "Bottoms up, Admiral!";
 			link.l1.go = "norman_fes1_exit";
 		break;
 		
@@ -169,14 +169,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fes2_fight":
-			dialog.text = "I asked you not to disseminate my name! Now I'm going to have to do away with you as a dangerous witness...";
+			dialog.text = "I asked you not to spread my name! Now I'll have to get rid of you as a dangerous witness...";
 			link.l1 = "Oh, I've been waiting for this!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "norman_fes2_peace":
-			dialog.text = "Forgive me, your Grace! I didn't recognize you in this apparel. Please, accept this modest gift from a true catholic.";
+			dialog.text = "Forgive me, your Grace! I didn't recognise you in this attire. Please, accept this modest gift from a true Catholic.";
 			link.l1 = "Insanity pipes up...";
 			link.l1.go = "norman_fes2_exit";
 		break;
@@ -206,14 +206,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fes3_fight":
-			dialog.text = "Everyone's coming at me! I caught a spy that looks just like my son! I'm sure Thomas sent him to knock my second eye out!";
-			link.l1 = "Buzz off, moron!";
+			dialog.text = "Everyone's after me! I caught a spy who looks just like my son! I'm sure Thomas sent him to knock out my other eye!";
+			link.l1 = "Buzz off, you idiot!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "norman_fes3_peace":
-			dialog.text = "You're tired and you don't look so hot, sonny. Go on and get some treatment.";
+			dialog.text = "You're tired and you don't look so well, sonny. Go on and get some treatment.";
 			link.l1 = "Thanks!";
 			link.l1.go = "norman_fes3_exit";
 		break;
@@ -243,8 +243,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fes4_fight":
-			dialog.text = "Don't be afraid, mate. See, dying isn't scary at all...";
-			link.l1 = "Looks like you aren't kidding!";
+			dialog.text = "Don't be afraid, mate. See, dying isn't frightening at all...";
+			link.l1 = "Looks like you weren't joking!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
@@ -280,14 +280,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fes5_fight":
-			dialog.text = "You're a crappy poet, Sailor. Could it be that your blade is more agile than your tongue?";
+			dialog.text = "You're a lousy poet, Sailor. Could it be that your blade is more agile than your tongue?";
 			link.l1 = "Caramba! That cavalry sword of yours isn't a sham at all!";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "norman_fes5_peace":
-			dialog.text = "Dang! Things have gone pretty smoothly for you! How's that for your imagination!";
+			dialog.text = "Damn! Things have gone pretty smoothly for you! How's that for your imagination!";
 			link.l1 = "Come again.";
 			link.l1.go = "norman_fes5_exit";
 		break;
@@ -318,7 +318,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "norman_fight_again":
-			dialog.text = "Aha, I recognize you! Ha-ha!";
+			dialog.text = "Aha, I recognise you! Ha-ha!";
 			link.l1 = "Again...";
 			link.l1.go = "fight";
 		break;
@@ -331,12 +331,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal":
-			dialog.text = "Dichoso? What do you need him for, huh?";
-			link.l1 = "Well, I need him. I just need him. So have you seen him?";
+			dialog.text = "Dichoso? What do you need him for, eh?";
+			link.l1 = "Well, I need him. I just need him. So, have you seen him?";
 			link.l1.go = "tieyasal_1";
-			link.l2 = "What do you mean what do I need him for? Miguel is my old mate, a friend you could say. He's supposed to...";
+			link.l2 = "What do you mean, what do I need him for? Miguel is an old mate of mine, you could say a friend. He's supposed to...";
 			link.l2.go = "tieyasal_2";
-			link.l3 = "I want him to haul along a new vessel for me just like he did once before for Shark Dodson.";
+			link.l3 = "I want him to haul in a new vessel for me just like he did once before for Shark Dodson.";
 			link.l3.go = "tieyasal_3";
 			if (CheckAttribute(pchar, "questTemp.Ksochitam.SQCapBookRead")) // прочел журнал Санта-Квитерии
 			{
@@ -347,127 +347,123 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_1":
-			dialog.text = "You just need him...You juuust need him! All you need is Miguel Dichoso! No, I haven't seen him. I haven't seen him for a long time. There's nothing I can help you with, Sailor.";
+			dialog.text = "You just need him... You just need him! All you need is Miguel Dichoso! No, I haven't seen him. I haven't seen him for a long time. There's nothing I can help you with, Sailor.";
 			link.l1 = "Hm... All right, bye.";
 			link.l1.go = "exit";
 		break;
 		
 		case "tieyasal_2":
-			dialog.text = "A friend, you say... He seems to have cultivated a whole heap of friends. He's about to have one friend less...";
+			dialog.text = "A friend, you say... He seems to have cultivated a whole heap of friends. He's about to have one friend fewer...";
 			link.l1 = "Hey, old man. What's wrong with you?";
 			link.l1.go = "fight";
 			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_3":
-			dialog.text = "Yes, Dichoso is a master of such trades either way you look at it. But I don't know where he is. He came around but took off again. So go on over to Alexus, Sailor. He'll timber together a wonderful tub for you.";
+			dialog.text = "Yes, Dichoso is a master of such trades whichever way you look at it. But I don't know where he is. He came around but took off again. So go over to Alexus, Sailor. He'll put together a wonderful tub for you.";
 			link.l1 = "Hm... Thanks for the tip, mate.";
 			link.l1.go = "exit";
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "And who was it that Dichoso ganked for you to be conducting a search for him, huh mate? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "So who did Dichoso take out that got you on his trail, huh, buddy?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "The Pope";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "What do you mean? Which Sharp did he kill exactly? There are a lot of Sharps, you know.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Shhh... (looks around) So you also think Dichoso killed Blaze Sharp?";
+			link.l1 = "Yeah. And it's not just a hunch — I’ve got proof. Entries in the ship’s log...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "So we’re cracking jokes now? No respect at all! Come on, step closer...";
+			link.l1 = "No way.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "Sh-sh-sh...(looking around) So you also think that Blaze Sharp was killed by Dichoso?";
-				link.l1 = "Yes. I have not only my suspicions, but solid proof. Entries in his logbook...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Go on, little Sailor...";
-				link.l1 = "What do you mean? Tell me more.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
-			dialog.text = "Ah...Well. He killed him and that's all there is to it. You know how many killers we've got running around here? Every other man! No, Sailor. I haven't seen Dichoso in a long time. I can't help you with anything.";
+			dialog.text = "Ah... Well. He killed him and that's all there is to it. Do you know how many killers we've got running around here? Every other man! No, Sailor. I haven't seen Dichoso in a long time. I can't help you with anything.";
 			link.l1 = "Pity...";
 			link.l1.go = "exit";
 		break;
 		
 		case "tieyasal_6":
-			dialog.text = "Quiet down, mate. What's your name, huh? It has somehow escaped my memory...";
+			dialog.text = "Quiet down, mate. What's your name, eh? It seems to have slipped my mind...";
 			link.l1 = "Captain "+GetFullName(pchar)+".";
 			link.l1.go = "tieyasal_7";
 		break;
 		
 		case "tieyasal_7":
-			dialog.text = "Listen, "+pchar.name+". Dichoso killed poor Blaze. I saw it with my own eyes, yes-yes. But they don't believe me. See, they think I am crazy. One of their own, but crazy. And I used to be the best boarding officer in the crew of Nicolas Sharp himself! Good times! But eventually I have lost my claws, hoof and lens and got grounded.\nWhat? Ah, right! Everyone thought that Shark was to blame, but he was not. No-no-no. There was a shark's tooth, a talisman of Dodson but it was Dichoso who planted it there.\nHe must had stolen it from Shark when they were sailing together on a frigate called Fortune. I didn't sleep well that day and went outside for a walk. I saw Dichoso had sneaked inside Sharp's residence, heard someone scream and then groan. Soon after Dichoso left the residence and his hands were in blood.\nThey didn't believe me, no-no. Because there was no Dichoso on the island that day, but Shark was. And they found his tooth. But I saw Dichoso, I am sure of it. Nobody knew that he was there that day. 'The Lucky' is a very cunning and fearsome man...";
-			link.l1 = "You're not the first one to call Dichoso 'the Lucky'. Why is that? Is it his nickname?";
+			dialog.text = "Listen, "+pchar.name+". Dichoso killed poor Blaze. I saw it with my own eyes, yes-yes. But they don't believe me. You see, they think I'm mad. One of their own, but mad. And I used to be the best boarding officer in the crew of Nicolas Sharp himself! Good times! But eventually, I lost my claws, hoof and lens and got grounded.\nWhat? Ah, right! Everyone thought that Shark was to blame, but he wasn't. No-no-no. There was a shark's tooth, a talisman of Dodson, but it was Dichoso who planted it there.\nHe must have stolen it from Shark when they were sailing together on a frigate called Fortune. I didn't sleep well that day and went outside for a walk. I saw Dichoso sneak into Sharp's residence, heard someone scream and then groan. Soon after, Dichoso left the residence and his hands were covered in blood.\nThey didn't believe me, no-no. Because there was no Dichoso on the island that day, but Shark was. And they found his tooth. But I saw Dichoso, I'm sure of it. Nobody knew he was there that day. 'The Lucky' is a very cunning and fearsome man...";
+			link.l1 = "You're not the first to call Dichoso 'the Lucky'. Why is that? Is it his nickname?";
 			link.l1.go = "tieyasal_8";
 		break;
 		
 		case "tieyasal_8":
-			dialog.text = "Don't you know Spanish, guy? 'Dichoso' means 'lucky' in the papist language. Lucky Miguel, Miguel the Lucky. That's what his name is.";
+			dialog.text = "Don't you know Spanish, man? 'Dichoso' means 'lucky' in the papist tongue. Lucky Miguel, Miguel the Lucky. That's what his name is.";
 			link.l1 = "Miguel the Lucky?... Hm. That reminds me of something. Hm. That phrase sounds so familiar...";
 			link.l1.go = "tieyasal_9";
 		break;
 		
 		case "tieyasal_9":
-			dialog.text = "Well, even though his last name is Dichoso, I still don't think that he's Spanish. No, no. He isn't Spanish. Although he looks like a Spanish.";
+			dialog.text = "Well, even though his last name is Dichoso, I still don't think that he's Spanish. No, no. He isn't Spanish. Although he looks Spanish.";
 			link.l1 = "Then what could he be? English, French?";
 			link.l1.go = "tieyasal_10";
 		break;
 		
 		case "tieyasal_10":
-			dialog.text = "That's not what I'm talking about, Sailor... Oh, forgive me, Captain. Yes, Dichoso babbles in French quite fabulously, no worse than you do. And in English as well. However in his veins flows Indian blood. I have seen many such people in my life. It's not clear to see, but he's a halfzee. I guarantee you.";
-			link.l1 = "Does he speak Indian?";
+			dialog.text = "That's not what I'm talking about, Sailor... Oh, forgive me, Captain. Yes, Dichoso babbles in French quite fabulously, no worse than you do. And in English as well. However, Indian blood runs in his veins. I have seen many such people in my life. It's not easy to spot, but he's a half-blood. I guarantee you.";
+			link.l1 = "Does he speak the native language?";
 			link.l1.go = "tieyasal_11";
 		break;
 		
 		case "tieyasal_11":
-			dialog.text = "Oh, hell knows. Maybe he does. Although, wait. He does! He used to constantly utter weird sentences in some bizarre language and he made a scary sage face and blew out his cheeks while he was pronouncing them. For example, he would say something like: cogito ergo sum! And then he would roll his eyes and look for the reaction of the sailors. Or he would exclaim like this: aut Caesar, aut nihil! He blurted out a lot of other things too. I don't remember everything he used to say.";
-			link.l1 = "That's not Indian language. That's Latin. Latin... Latin?! Holy Fuck!";
+			dialog.text = "Oh, hell knows. Maybe he does. Although, wait. He does! He used to constantly utter strange sentences in some bizarre language, and he would make a frightening sage-like face and puff out his cheeks while pronouncing them. For example, he would say something like: cogito ergo sum! And then he would roll his eyes and watch for the sailors' reactions. Or he would exclaim like this: aut Caesar, aut nihil! He blurted out many other things too. I don't remember everything he used to say.";
+			link.l1 = "That's not an Indian language. That's Latin. Latin... Latin?! Bloody hell!";
 			link.l1.go = "tieyasal_12";
 		break;
 		
 		case "tieyasal_12":
-			dialog.text = "Why so jumpy, guy? What are you shouting for? Did you get bitten by a snake or something? Where did it go?";
-			link.l1 = "Why didn't I see it in the beginning! Everything was staring me right in the face! Latin! Miguel... Miguel the Lucky!!!";
+			dialog.text = "Why so jumpy, man? What are you shouting for? Did you get bitten by a snake or something? Where did it go?";
+			link.l1 = "Why didn't I see it from the start! Everything was staring me right in the face! Latin! Miguel... Miguel the Lucky!!!";
 			link.l1.go = "tieyasal_13";
 		break;
 		
 		case "tieyasal_13":
-			dialog.text = "Hey, pal. Would you stop hollering already. People are staring at us. What's eating you, Sailor... sorry Captain?";
+			dialog.text = "Hey, pal. Would you stop hollering already? People are staring at us. What's eating you, Sailor... sorry, Captain?";
 			link.l1 = "I know who Miguel Dichoso really is. He isn't Spanish. He's French! Oh, I was so blind!";
 			link.l1.go = "tieyasal_14";
 		break;
 		
 		case "tieyasal_14":
-			dialog.text = "Nah-uh, dummy. He's not French. He's a halfzee. His white daddy shook boots with a little bitty Indian girl, one of those Arawaks or Miskito from the Caribbean or even an Itza, and that's how Holy Miguel Dichoso came on this Earth. You don't see this, but I do. It's written in his eyes...";
+			dialog.text = "Nah-uh, dummy. He's not French. He's a half-breed. His white daddy knocked boots with a little Indian girl, one of those Arawaks or Miskito from the Caribbean, or even an Itza, and that's how Holy Miguel Dichoso came into this world. You don't see it, but I do. It's written in his eyes...";
 			link.l1 = "Let's leave the question of his origin aside for a moment. Where is he, Abraham?! Was he here?!";
 			link.l1.go = "tieyasal_15";
 		break;
 		
 		case "tieyasal_15":
 			dialog.text = "Sh-sh... Yes, he was here. But he left. He's not on Isla Tesoro anymore.";
-			link.l1 = "What did he come here for? What kind of ship has he got?";
+			link.l1 = "What did he come here for? What kind of ship does he have?";
 			link.l1.go = "tieyasal_16";
 		break;
 		
 		case "tieyasal_16":
-			dialog.text = "His ship is a galleon. A big war galleon. What he came here for... Well, he sniffed around asking questions. But I overheard his conversations, yes yes! He was looking for some Charles de Maure. Yes, that's it. Charles de Maure. Wait, that's you, Charles de Maure! He was looking for you, mate.";
+			dialog.text = "His ship is a galleon. A big war galleon. What did he come here for... Well, he was snooping around, asking questions. But I overheard his conversations, yes, yes! He was looking for some Charles de Maure. Yes, that's it. Charles de Maure. Wait, that's you, Charles de Maure! He was looking for you, mate.";
 			link.l1 = "Do you know what for?";
 			link.l1.go = "tieyasal_17";
 		break;
 		
 		case "tieyasal_17":
-			dialog.text = "Well definitely not to visit the tavern and sip some rum with you. He was prompting to capture you. Yes, yes! Capture you! You're in deep shit, captain!";
+			dialog.text = "Well, definitely not to visit the tavern and sip some rum with you. He was planning to capture you. Yes, yes! Capture you! You're in deep shit, captain!";
 			link.l1 = "I don't doubt it...";
 			link.l1.go = "tieyasal_18";
 		break;
@@ -479,19 +475,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_19":
-			dialog.text = "He was on his way to Blueweld. He said that Charles de Maure is to be sought under the wing of the Forest Devil. But he left his people here... Wait. I think you've already been noticed!";
+			dialog.text = "He was on his way to Blueweld. He said that Charles de Maure is to be sought under the wing of the Forest Devil. But he left his people here... Wait. I think you've already been spotted!";
 			link.l1 = "Who has noticed me?";
 			link.l1.go = "tieyasal_20";
 		break;
 		
 		case "tieyasal_20":
-			dialog.text = "Dichoso's men. He has ordered to put a watch on you here. Oh, I know, I know! Be alert, captain: the reefs of Isla Tesoro are surrounded by ships and they're waiting there for your head. The captain is sly as a fox. Don't let yourself be tricked.";
+			dialog.text = "Dichoso's men. He has ordered them to keep watch on you here. Oh, I know, I know! Be alert, captain: the reefs of Isla Tesoro are surrounded by ships and they're waiting there for your head. The captain is sly as a fox. Don't let yourself be tricked.";
 			link.l1 = "I'll try...";
 			link.l1.go = "tieyasal_21";
 		break;
 		
 		case "tieyasal_21":
-			dialog.text = "And one more thing: here, take my cavalry sword. Take it, take it. You'll need it. This is Captain Barbarigo's sword itself. It's an excellent blade. The best on the archipelago. Don't be shy, take it. Blaze Sharp shall be avenged!";
+			dialog.text = "And one more thing: here, take my cavalry sword. Take it, take it. You'll need it. This is Captain Barbarigo's very own sword. It's an excellent blade. The best in the archipelago. Don't be shy, take it. Blaze Sharp shall be avenged!";
 			link.l1 = "Thank you, Abraham.";
 			link.l1.go = "tieyasal_22";
 		break;
@@ -507,7 +503,7 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(npchar, "blade_19");
 			Log_Info("You've received Barbarigo's sword");
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Go now. Go, you are being watched. Make it look like you're smart. Or stupid. It doesn't matter. Just be careful!";
+			dialog.text = "Go now. Go, you are being watched. Make it look like you're clever. Or foolish. It doesn't matter. Just be careful!";
 			link.l1 = "Thanks, mate. You don't even know how much you've helped me. Good luck!";
 			link.l1.go = "tieyasal_23";
 		break;

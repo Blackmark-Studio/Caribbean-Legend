@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			link.l1 = "Wypływamy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayEnemy = "true";//признак враждебности китайца
-			notification("Longway disapproves", "Longway");
+			Notification_Approve(false, "Longway");
 		break;
 		
 		case "Longway_friend":
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 			link.l1 = "Wyruszajmy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayFriend = "true";//признак враждебности китайца
-			notification("Longway approves", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "Longway_JacobGo":
@@ -77,6 +77,8 @@ void ProcessDialogEvent()
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload2_back", "none", "", "", "", -1);
 			AddQuestRecord("Holl_Gambit", "1-8");
+			ForceHeroAutolevel(npchar);
+			SetCharacterPerk(npchar, "Captain");
 			AddQuestUserData("Holl_Gambit", "sCity", XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat"));
 			AddMapQuestMarkCity(pchar.questTemp.HWIC.Holl.JacobCity, true);
 			AddLandQuestMark(characterFromId(""+pchar.questTemp.HWIC.Holl.JacobCity+"_tavernkeeper"), "questmarkmain");
@@ -184,7 +186,7 @@ void ProcessDialogEvent()
 			npchar.OfficerImmortal = true;
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			npchar.CanTakeMushket = true;
 			npchar.Payment = true;
 			LAi_SetOfficerType(npchar);
@@ -196,6 +198,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
 			AddQuestRecord("Holl_Gambit", "1-38");
+			ForceHeroAutolevel(npchar);
 			
 			//Sinistra - квест Лонгвэя "Путеводная звезда"
 			PChar.quest.PZ_Start.win_condition.l1 = "location";
@@ -265,7 +268,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_7":
-			dialog.text = "Jest mała wyspa na południe od Gwadelupy. Przylądek Niedostępny. Tam wysadź Longwaya i daj mu broń. Tylko wtedy Longway powie ci wszystko, co wie o Lucasie Rodenburgu.";
+			dialog.text = "Jest mała wyspa Marie Galante na południe od Gwadelupy. Przylądek Niedostępny. Tam wysadź Longwaya i daj mu broń. Tylko wtedy Longway powie ci wszystko, co wie o Lucasie Rodenburgu.";
 			link.l1 = "Nie jesteś w pozycji, by się ze mną targować, Chińczyku.";
 			link.l1.go = "Longway_prisoner_8";			
 		break;
@@ -324,7 +327,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Longway_prisoner_0":
-			dialog.text = "Dotarliśmy do Gwadelupy, chuanzhang?";
+			dialog.text = "Dotarliśmy do Marie Galante, chuanzhang?";
 			link.l1 = "Uspokój się, wkrótce tam będziemy.";
 			link.l1.go = "exit";
 			NextDiag.Tempnode = "Longway_prisoner_0";

@@ -34,7 +34,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "我是奉总督菲利普.德.庞西的命令来指挥你的武装护卫舰的。 ";
                 link.l1.go = "patria";
 			}
-			if (CheckAttribute(npchar, "quest.frigate.wait") && GetCompanionQuantity(pchar) < 5)
+			if (CheckAttribute(npchar, "quest.frigate.wait") && GetCompanionQuantity(pchar) < COMPANION_MAX)
 			{
 				link.l1 = "我准备将这艘护卫舰加入我的中队。 ";
                 link.l1.go = "patria_2";

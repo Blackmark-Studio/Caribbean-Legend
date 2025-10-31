@@ -1,41 +1,9 @@
-FalseTrace_1
-{
-Adam
-}
-FalseTrace_2
-{
-Rayner
-}
-
-FalseTrace_3
-{
-flûte '@<pchar.questTemp.FalseTrace.ShipName>'
-}
-
-FalseTrace_4
-{
-Adam Rayner has stolen a rowboat and escaped with his wife!
-}
-
-FalseTrace_5
-{
-Cockeyed
-}
-FalseTrace_6
-{
-Solly
-}
-
-FalseTrace_7
-{
-flûte with gold ore
-}
-
-FalseTrace_8
-{
-Katerine
-}
-FalseTrace_9
-{
-Rayner
-}
+FalseTrace_1 {Adam}
+FalseTrace_2 {Rayner}
+FalseTrace_3 {flûte '@<pchar.questTemp.FalseTrace.ShipName>'}
+FalseTrace_4 {Adam Rayner has stolen a rowboat and escaped with his wife!}
+FalseTrace_5 {Cockeyed}
+FalseTrace_6 {Solly}
+FalseTrace_7 {flûte with gold ore}
+FalseTrace_8 {Katerine}
+FalseTrace_9 {Rayner}

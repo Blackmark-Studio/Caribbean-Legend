@@ -189,7 +189,7 @@ void Notification(string strLog, string ability)
 		case "BasicDefense": IconIndex = 0; break;
 		case "AdvancedDefense": IconIndex = 1; break;
 		case "CriticalHit": IconIndex = 2; break;
-		case "Dragoon": IconIndex = 3; break;
+		case "Mule": IconIndex = 3; break;
 		case "FencingMaster": IconIndex = 4; break;
 		case "Grus": IconIndex = 5; break;
 		case "Berserker": IconIndex = 6; break;
@@ -305,6 +305,7 @@ void Notification(string strLog, string ability)
 		case "Threat4": IconIndex = 180; break;
 		case "Threat5": IconIndex = 181; break;
 		case "Threat0": IconIndex = 182; break;
+		case "ItemDestroy": IconIndex = 183; break;
 		case "Yorick": IconIndex = 184; break;
 		case "Hat9": IconIndex = 185; break;
 		case "Key": IconIndex = 186; break;
@@ -320,8 +321,14 @@ void Notification(string strLog, string ability)
 		case "spahunter": IconIndex = 44; break;
 		case "frahunter": IconIndex = 45; break;
 		case "pirhunter": IconIndex = 46; break;
+		case "Sailor": IconIndex = 206; break;
+		case "CoordinatedBoarding": IconIndex = 207; break;
+		case "TrainedEye": IconIndex = 208; break;
 		case "None": IconIndex = 239; break;
 	}
+
+	if (HasSubStr(ability, "face_")) IconIndex = 180 + sti(FindStringAfterChar(ability, "_"));
+
 	if(notificationsQty < 8)
 	{
 		notificationsQty++;
@@ -523,7 +530,7 @@ void CreatePicInfoEnvironment()
 	}
 	ILogAndActions.PicInfo.font = "interface_normal";
 	ILogAndActions.PicInfo.fontscale = 1.4 * fHtRatio;
-	ILogAndActions.PicInfo.color = argb(255,255,255,255);
+	ILogAndActions.PicInfo.color = ARGB_Color("white");
 	ILogAndActions.PicInfo.offsetString = makeint(50 * fHtRatio);
 	ILogAndActions.PicInfo.color_speed = NOTIFICATIONS_SPEED;
 	ILogAndActions.PicInfo.maxcolor = argb(255,128,128,128);
@@ -594,7 +601,7 @@ void CreateTimeSpeedEnvironment()
 	ILogAndActions.timespeedtext.up = sti(showWindow.bottom)/2 - RecalculateVIcon(makeint(0 * fHtRatio));
 	ILogAndActions.timespeedtext.font = "interface_normal";
 	ILogAndActions.timespeedtext.fontscale = 1.75 * fHtRatio;
-	ILogAndActions.timespeedtext.color = argb(255,255,255,255);
+	ILogAndActions.timespeedtext.color = ARGB_Color("white");
 	
 	ILogAndActions.timespeedicon.TextureName = "interfaces\le\battle_interface\timescale.tga.tx";
 	ILogAndActions.timespeedicon.width = RecalculateHIcon(makeint(60 * fHtRatio));
@@ -774,6 +781,16 @@ void CreateLandActionsEnvironment()
 	ILogAndActions.ActiveActions.PlayEvent.Text			= XI_ConvertString("for_quick_action_Use");
 	ILogAndActions.ActiveActions.PlayEvent.pos.x		= fTmp;
 	ILogAndActions.ActiveActions.PlayEvent.pos.y		= fTmp2;
+	
+	ILogAndActions.ActiveActions.Teleport.IconNum		= 13;
+	ILogAndActions.ActiveActions.Teleport.Text			= XI_ConvertString("for_quick_action_Use");
+	ILogAndActions.ActiveActions.Teleport.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Teleport.pos.y			= fTmp2;
+	
+	ILogAndActions.ActiveActions.Caleuche_Levers.IconNum		= 0;
+	ILogAndActions.ActiveActions.Caleuche_Levers.Text			= XI_ConvertString("for_quick_action_Action");
+	ILogAndActions.ActiveActions.Caleuche_Levers.pos.x			= fTmp;
+	ILogAndActions.ActiveActions.Caleuche_Levers.pos.y			= fTmp2;
 
 	ILogAndActions.ActiveActions.Closed.IconNum			= 29;
 	ILogAndActions.ActiveActions.Closed.Text			= XI_ConvertString("for_quick_action_Closed");
@@ -968,6 +985,14 @@ void BI_FastCommand()
 			case "PlayEvent":
 				bEC = true; 
 				PlayLocatorEvent();
+			break;
+			case "Teleport":
+				bEC = true; 
+				TeleportCharacter();
+			break;
+			case "Caleuche_Levers":
+				bEC = true; 
+				CaleucheLeversAction();
 			break;
 		}
 	}

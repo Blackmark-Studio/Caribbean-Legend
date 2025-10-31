@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 25 doublons le rouleau. Ses hommes recevront les marchandises du 10 au 15, la nuit, à Negril Cape. Le mot de passe - 'Un marchand de Lyon'. Le Chauve Geoffrey a déjà livré le premier lot en Jamaïque.";
+				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 5 doublons le rouleau. Ses hommes recevront les marchandises du 10 au 15, la nuit, à Negril Cape. Le mot de passe - 'Un marchand de Lyon'. Le Chauve Geoffrey a déjà livré le premier lot en Jamaïque.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 25 doublons le rouleau. Ses hommes recevront la marchandise du 10 au 15, la nuit, l'endroit est le Cap Negril. Le mot de passe - 'Un marchand de Lyon'. Il m'a fallu plus de deux mois pour trouver cet acheteur, Geffrey a déjà dû vendre la soie aux contrebandiers. Je suis désolé, Marcus.";
+				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 5 doublons le rouleau. Ses hommes recevront la marchandise du 10 au 15, la nuit, l'endroit est le Cap Negril. Le mot de passe - 'Un marchand de Lyon'. Il m'a fallu plus de deux mois pour trouver cet acheteur, Geffrey a déjà dû vendre la soie aux contrebandiers. Je suis désolé, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "J'ai toujours des tâches pour des gars capables. Il y a une affaire délicate dont je veux que tu t'occupes. Il y a un navire stationné à Capsterville, appelé le 'Serpent', sous le commandement de Geffrey Brooke aussi connu sous le nom de Geffrey le Chauve. Il travaille pour moi. Un excellent combattant, il sait tout sur les armes à feu et les lames mais c'est un idiot complet dans tous les autres aspects de la vie. Mais ne soyons pas durs avec le Chauve, personne n'est parfait, ha-ha !\nAlors. Ce dur à cuire a attaqué un convoi hollandais au nord de Saint-Martin et capturé un brick rempli de sacs de blé. Le truc, c'est qu'il a réussi à trouver de la soie de navire cachée parmi les sacs. Un très gros chargement. Cette marchandise est extrêmement précieuse et rare, les Hollandais la rapportent d'Europe uniquement pour les besoins de leur armée. Cette soie est utilisée pour des voiles spéciales qui augmentent la vitesse du navire et sa capacité à naviguer par le vent.\nIl est presque impossible d'en acheter, la vendre n'est pas un problème mais il est difficile de trouver le bon prix. Ces maudits commerçants baissent toujours le prix ! Je sais qu'il y a des gens aux Caraïbes qui sont prêts à donner un bon prix en doublons pour acheter cette soie et ton objectif est de trouver ces personnes.\nQuoi ? N'importe quel idiot peut piller des caravanes mais le commerce est réservé aux gens qui ont au moins un signe d'existence de cerveau dans le crâne. Je prévois de vendre de la soie de navire sur une base mensuelle donc ton objectif est de trouver un acheteur régulier qui paiera au moins vingt doublons d'or pour un rouleau. Tu as deux mois pour cela, je ne peux pas garder Geffrey le Chauve à Capsterville éternellement.\nC'est tout. Mets les voiles vers Capsterville et parle à Geffrey avant qu'il ne vende la cargaison aux contrebandiers pour une bouchée de pain. Je t'ai déjà dit qu'il est un peu 'simple'.";
+            dialog.text = "J'ai toujours des tâches pour des gars capables. Il y a une affaire délicate dont je veux que tu t'occupes. Il y a un navire stationné à Capsterville, appelé le 'Serpent', sous le commandement de Geffrey Brooke aussi connu sous le nom de Geffrey le Chauve. Il travaille pour moi. Un excellent combattant, il sait tout sur les armes à feu et les lames mais c'est un idiot complet dans tous les autres aspects de la vie. Mais ne soyons pas durs avec le Chauve, personne n'est parfait, ha-ha !\nAlors. Ce dur à cuire a attaqué un convoi hollandais au nord de Saint-Martin et capturé un brick rempli de sacs de blé. Le truc, c'est qu'il a réussi à trouver de la soie de navire cachée parmi les sacs. Un très gros chargement. Cette marchandise est extrêmement précieuse et rare, les Hollandais la rapportent d'Europe uniquement pour les besoins de leur armée. Cette soie est utilisée pour des voiles spéciales qui augmentent la vitesse du navire et sa capacité à naviguer par le vent.\nIl est presque impossible d'en acheter, la vendre n'est pas un problème mais il est difficile de trouver le bon prix. Ces maudits commerçants baissent toujours le prix ! Je sais qu'il y a des gens aux Caraïbes qui sont prêts à donner un bon prix en doublons pour acheter cette soie et ton objectif est de trouver ces personnes.\nQuoi ? N'importe quel idiot peut piller des caravanes mais le commerce est réservé aux gens qui ont au moins un signe d'existence de cerveau dans le crâne. Je prévois de vendre de la soie de navire sur une base mensuelle donc ton objectif est de trouver un acheteur régulier qui paiera au moins 4 doublons d'or pour un rouleau. Tu as deux mois pour cela, je ne peux pas garder Geffrey le Chauve à Capsterville éternellement.\nC'est tout. Mets les voiles vers Capsterville et parle à Geffrey avant qu'il ne vende la cargaison aux contrebandiers pour une bouchée de pain. Je t'ai déjà dit qu'il est un peu 'simple'.";
 			link.l1 = "Hm... Compris. Déjà en route.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha ! Voilà le courageux capitaine "+GetFullName(pchar)+" !  Qu'en est-il de l'acheteur ?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie pour ses navires et il pourra acheter des lots de cent rouleaux chaque mois pour 25 doublons le rouleau. Ses hommes recevront la marchandise du 10 au 15, la nuit, l'endroit est le Cap Negril. Le mot de passe - 'Un marchand de Lyon'. Cela m'a pris plus de deux mois pour trouver un tel acheteur, Geffrey a dû déjà vendre la soie aux contrebandiers. Je suis désolé, Marcus.";
+				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie pour ses navires et il pourra acheter des lots de cent rouleaux chaque mois pour 5 doublons le rouleau. Ses hommes recevront la marchandise du 10 au 15, la nuit, l'endroit est le Cap Negril. Le mot de passe - 'Un marchand de Lyon'. Cela m'a pris plus de deux mois pour trouver un tel acheteur, Geffrey a dû déjà vendre la soie aux contrebandiers. Je suis désolé, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 25 doublons le rouleau. Ses hommes recevront les marchandises du 10 au 15, la nuit, l'emplacement est le cap Negril. Le mot de passe - 'Un marchand de Lyon'. Le Chauve Geffrey a déjà livré le premier lot à la Jamaïque.";
+				link.l1 = "Je t'ai trouvé un acheteur. C'est un constructeur naval de Port Royal. Il a besoin de soie de navire pour sa production et il pourra acheter des lots de cent rouleaux chaque mois pour 5 doublons le rouleau. Ses hommes recevront les marchandises du 10 au 15, la nuit, l'emplacement est le cap Negril. Le mot de passe - 'Un marchand de Lyon'. Le Chauve Geffrey a déjà livré le premier lot à la Jamaïque.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Bald Geffrey a vendu à votre acheteur le premier lot de 105 rouleaux de soie de navire. Comme je comptais les vendre vingt doublons le rouleau, je pense qu'il serait équitable de vous donner la différence. C'est ma décision. Votre part est de 525 doublons plus un bonus - un doublon par rouleau. Cela fait un total de 630 doublons. Tenez, prenez-les.";
+            dialog.text = "Bald Geffrey a vendu à votre acheteur le premier lot de 105 rouleaux de soie de navire. Comme je comptais les vendre 4 doublons le rouleau, je pense qu'il serait équitable de vous donner la différence. C'est ma décision. Votre part est de 105 doublons plus un bonus - un doublon par rouleau. Cela fait un total de 210 doublons. Tenez, prenez-les.";
 			link.l1 = "Gratitude, Marcus !";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("You have received 630 doubloons");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Encore une chose. Tu peux tirer un bénéfice supplémentaire de cela.";
 			link.l1 = "Intéressant... Continue.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Votre acheteur veut plus de 100 rouleaux de soie à livrer pour les deux prochains mois. Si vous en avez, apportez-moi de 20 à 100 rouleaux pour un prix de 24 doublons. L'offre sera valable pendant deux mois.";
+            dialog.text = "Votre acheteur veut plus de 100 rouleaux de soie à livrer pour les deux prochains mois. Si vous en avez, apportez-moi de 20 à 100 rouleaux pour un prix de 5 doublons. L'offre sera valable pendant deux mois.";
 			link.l1 = "Très bien ! J'en apporterai plus si j'en ai.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Très bien. Prends l'or - 24 doublons pour un lancer comme convenu.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Très bien. Prends l'or - 5 doublons pour un lancer comme convenu.";
 			link.l1 = "Gratitude !";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Je prendrai cent rouleaux. Prends l'or - 24 doublons par rouleau comme convenu.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Je prendrai cent rouleaux. Prends l'or - 5 doublons par rouleau comme convenu.";
 			link.l1 = "Gratitude !";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
@@ -1136,7 +1135,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -2427,7 +2426,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2447,28 +2446,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Je vois que c'est le contraire. Qu'est-ce qui t'amène ici ?";
 			link.l1 = "As-tu entendu parler du nouveau bordel à Tortuga ?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "Alors, n'hésite pas, demande. Tu sais que je n'aime pas les formalités, donc allons droit au but.";
 			link.l1 = "As-tu entendu parler du nouveau bordel à Tortuga ?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Es-tu ivre? Quelle sorte de question est-ce là? Ne perds pas mon temps si c'est vraiment de cela que tu voulais parler.";
 			link.l1 = "Je suppose que tu n'as pas entendu ? Un nouveau bordel a récemment ouvert là-bas - un très cher, où travaillent seulement les filles les plus belles, en bonne santé et bien habillées.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Oh, ça ! Bien sûr que j'ai entendu - qui ne l'a pas ?";
 			link.l1 = "Eh bien, je l'ai appris seulement l'autre jour.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Ha-ha-ha-ha, vaurien, je serai damné ! Mais quand même, pourquoi tu en parles avec moi ? Pourquoi ne pas essayer Hawks d'abord ? Hi hi. Bien que... as-tu déjà eu un peu de plaisir là-bas ?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2485,34 +2484,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "Alors, tu viens frimer ! Ha, quel vaurien.";
 			link.l1 = "En fait, non. Je voulais vraiment te demander quelque chose, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "Tu ne l'as pas fait ?! T'es un idiot, De Maure. Si j'étais toi...";
 			link.l1 = "Tu aurais commencé une vraie débauche, je le sais. Mais ce n'est pas exactement ce dont je voulais discuter avec toi.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Qu'est-ce que c'est ? Allez, ne me laisse pas dans l'attente.";
 			link.l1 = "Je cherche la propriétaire de cet endroit. On m'a dit qu'elle voulait te rencontrer et te proposer une opportunité d'investissement dans son commerce. Tu ne peux pas te tromper - elle est chinoise.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Ho ho. Non, je n'ai pas eu le plaisir de rencontrer des femmes chinoises récemment. Mais je ne serais pas contre la rencontrer et investir dans son affaire. Après tout, tu ne peux pas simplement te promener sur le territoire de Levasseur, et en tant que sujet de ton roi, il serait forcé de tirer ses navires côtiers sur mon 'Dragon' dès qu'il la repère.";
 			link.l1 = "On dirait qu'elle envisage Port-au-Prince d'abord...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "Tu crois ça ? C'est une erreur. Même si de Mussac a plus d'argent que moi, ce dont je doute, il ne peut pas se permettre de consacrer une partie du budget de la ville à un bordel, peu importe combien d'or cela rapporte.";
 			link.l1 = "Bon point. Elle n'a clairement pas réfléchi à son ambition.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Tu sais, je me suis toujours demandé comment d'autres bordels restent à flot. Ce n'est pas l'aptitude d'une femme à penser et, surtout, à gouverner - marque mes mots.";
 			link.l1 = "Eh bien, tu te trompes là-dessus. Merci pour ton temps, Marcus ! Si je la rencontre en premier, je lui dirai que tu serais ravi de la voir.";
 			link.l1.go = "Exit";

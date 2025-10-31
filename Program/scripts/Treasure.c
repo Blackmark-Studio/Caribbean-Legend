@@ -1,15 +1,17 @@
 
+bool   bTrHash;
+string sTrTag, sTrSubTag;
 object TreasureTiers[16]; // Пуллы (тиры); 0-ой это SingleTreasures + QuestSlot + Флаги проверок
 
 extern void InitTreasureTiers();
-extern void InitTreasureTiers_Additions(bool SandBoxMode);
+extern void InitTreasureTiers_Additions();
 
-void TreasureTiersInit(bool SandBoxMode)
+void TreasureTiersInit()
 {
 	if(LoadSegment("scripts\Treasure_Init.c"))
 	{
 		InitTreasureTiers();
-        InitTreasureTiers_Additions(SandBoxMode)
+        InitTreasureTiers_Additions()
 		UnloadSegment("scripts\Treasure_Init.c");
 	}
 }
@@ -41,7 +43,8 @@ string GetIslandForTreasure()
 			}	
 		}
 	}
-	m = rand(m-1);
+	if (bTrHash) m = hrand(m-1, sTrTag);
+	else m = rand(m-1);
 	return sArray[m];
 }
 
@@ -70,7 +73,8 @@ string GetLocationForTreasure(string island)
 
 	makearef(arDest, NullCharacter.TravelMap.Islands.(island).Treasure);
 	iNum = GetAttributesNum(arDest);
-    iNum = rand(iNum-1);
+	if (bTrHash) iNum = hrand(iNum-1, sTrTag);
+	else iNum = rand(iNum-1);
     
     arImt = GetAttributeN(arDest, iNum);
 	return GetAttributeName(arImt);
@@ -84,7 +88,8 @@ string GetBoxForTreasure(string island, string location)
 
 	makearef(arDest, NullCharacter.TravelMap.Islands.(island).Treasure.(location));
 	iNum = GetAttributesNum(arDest);
-    iNum = rand(iNum-1);
+	if (bTrHash) iNum = hrand(iNum-1, sTrTag);
+	else iNum = rand(iNum-1);
     
     arImt = GetAttributeN(arDest, iNum);
 	return GetAttributeValue(arImt);
@@ -101,14 +106,22 @@ void GenerateAdmiralMapsTreasure(ref item, int abl)
 	}
 }
 
-void FillMapForTreasure(ref item)
+void FillMapForTreasure(ref item, string tag)
 {
-    item.MapIslId   = GetIslandForTreasure();
-    item.MapLocId   = GetLocationForTreasure(item.MapIslId);
-    item.MapBoxId   = GetBoxForTreasure(item.MapIslId, item.MapLocId);
+	sTrTag  = tag;
+	sTrSubTag = "";
+	bTrHash = (sTrTag != "");
+
+    item.MapIslId = GetIslandForTreasure();
+    item.MapLocId = GetLocationForTreasure(item.MapIslId);
+    item.MapBoxId = GetBoxForTreasure(item.MapIslId, item.MapLocId);
     DeleteAttribute(item, "BoxTreasure");
 
-    if (!CheckAttribute(Pchar, "GenQuest.TreasureBuild") && rand(15) == 1)
+	int iBiba;
+	if (bTrHash) iBiba = hrand(15, sTrTag);
+	else iBiba = rand(15);
+
+    if (!CheckAttribute(Pchar, "GenQuest.TreasureBuild") && iBiba == 1)
     {
         item.MapTypeIdx = -1; // Подделка 6.25%
     }
@@ -120,9 +133,15 @@ void FillMapForTreasure(ref item)
         Pchar.quest.SetTreasureFromMap.win_condition.l1          = "location";
         Pchar.quest.SetTreasureFromMap.win_condition.l1.location = item.MapLocId;
         Pchar.quest.SetTreasureFromMap.win_condition             = "SetTreasureFromMap";
-		Pchar.GenQuest.Treasure.Vario = rand(5); // Определяем событие (33% скип)
+		if (bTrHash) iBiba = hrand(5, sTrTag);
+		else iBiba = rand(5);
+		Pchar.GenQuest.Treasure.Vario = iBiba; // Определяем событие (33% скип)
 		locations[FindLocation(item.MapLocId)].DisableEncounters = true;
     }
+
+	sTrTag = "";
+	sTrSubTag = "";
+	bTrHash = false;
 }
 
 int GetTresuareTier(int iTier)
@@ -143,8 +162,9 @@ int GetTresuareTier(int iTier)
         sTemp = "T" + (iTier+1);
         Lottery.(sTemp).weight = LTR.TresuareMapTier.(sTemp).weight;
     }
-
-    sTemp = wrand("TresuareMap");
+	
+	if (bTrHash) sTemp = wrand_h("TresuareMap", "TM" + sTrTag);
+    else sTemp = wrand("TresuareMap");
     CorrectWeightParameters("TresuareMapTier", sTemp, "Treasure");
     return sti(LTR.TresuareMapTier.(sTemp));
 }
@@ -186,7 +206,9 @@ string GetRandEnabledItem(aref aTier, string sType)
     }
 
     // Рандомим и отключаем в тирах
-    sItem = GetAttributeValue(GetAttributeN(aItem, rand(numItems-1)));
+	if (bTrHash) sItem = GetAttributeValue(GetAttributeN(aItem, hrand(numItems-1, sTrTag + sTrSubTag)));
+    else sItem = GetAttributeValue(GetAttributeN(aItem, rand(numItems-1)));
+
     if(!CheckAttribute(&TreasureTiers[0], sItem))
     {
         for(i = 1; i <= 15; i++)
@@ -214,6 +236,8 @@ void FillBoxForTreasure(ref item)
 {
     int iTier = 0;
     aref aTier;
+    bool HasLuckyHat = GetCharacterEquipByGroup(pchar, HAT_ITEM_TYPE) == "hat7"; // Счастливая шляпа
+    bool HasTreasureHunter = CheckCharacterPerk(PChar,"TreasureHunter");         // Счетовод
 
     if(!CheckAttribute(PChar, "Statistic.Treasure"))
         PChar.Statistic.Treasure = 0;
@@ -222,7 +246,12 @@ void FillBoxForTreasure(ref item)
     iTier += GetCharacterSkill(PChar,SKILL_FORTUNE)*3;                //Везение (min 1)
     iTier += iClamp(0, 12, sti(PChar.Statistic.Treasure))*16;         //Количество найденных кладов
     if(CheckAttribute(PChar,"GenQuest.TreasureBuild")) iTier += 200;  //Сборная карта
-    if(CheckCharacterPerk(PChar,"HT2")) iTier += MakeInt(iTier*0.15); //Счетовод
+
+    float mtp = 1;
+    if (HasTreasureHunter) mtp += 0.15;
+    if (HasLuckyHat) mtp += 0.10;
+
+    iTier = MakeInt(iTier*mtp);
     iTier = iClamp(0, 14, iTier/47);    // Неполное частное от 0 до 14 (ниже +1 будет от 1 до 15)
     iTier = GetTresuareTier(iTier + 1); // Среди соседей взять рандомом по весу
     item.TreasureTier = iTier;          // Сохраним для ачивки и опыта
@@ -231,58 +260,97 @@ void FillBoxForTreasure(ref item)
 
     // Заполняем
     int iBonus = 0;
-    if(CheckCharacterPerk(PChar,"HT2")) iBonus = 25;
+    if (HasTreasureHunter) iBonus = 25;
+    if (HasLuckyHat) iBonus += 10;
+
     FillBoxForNotes(item);                        //Записки
     FillBoxForQuest(item, iTier, iBonus);         //Квестовое
     FillBoxForEquip(item, aTier, iBonus, true);   //Экипировка
+	sTrSubTag = "";
     FillBoxForJewelry(item, aTier, iBonus, true); //Ценности
+	sTrSubTag = "";
     FillBoxForSpecial(item, aTier, iBonus, true); //Специальные предметы
 }
 
 void FillBoxForEquip(ref item, aref aTier, int iBonus, bool bOtherSlots)
 {
+	sTrSubTag += "ÿ";
     string itmName = GetRandEnabledItem(aTier, "Equip");
-    if(IsGenerableItem(itmName)) itmName = GetGeneratedItem(itmName);
-    item.BoxTreasure.(itmName) = 1; // Весь эквип выдаётся штучно
-	
-	if(GetDLCenabled(DLC_APPID_1) && itmName == "pistol10")
+    if(IsGenerableItem(itmName))
 	{
-		item.BoxTreasure.talisman12 = 1;
-		if(startHeroType != 1)
-		{
-			item.BoxTreasure.knife_03 = 1;
-		}
-		return;
-	}
+		if (bTrHash) itmName = GetFixGeneratedItem(itmName);
+		else itmName = GetGeneratedItem(itmName);
+    }
+	item.BoxTreasure.(itmName) = 1; // Весь эквип выдаётся штучно
 	
     if(bOtherSlots)
     {
-        if(50 + iBonus > rand(99)) FillBoxForEquip(item, aTier, iBonus, false);
-        if(25 + iBonus > rand(99)) FillBoxForEquip(item, aTier, iBonus, false);
+		if (bTrHash)
+		{
+			if(50 + iBonus > hrand(99, sTrTag)) FillBoxForEquip(item, aTier, iBonus, false);
+			if(25 + iBonus > hrand(99, sTrTag)) FillBoxForEquip(item, aTier, iBonus, false);
+		}
+		else
+		{
+			if(50 + iBonus > rand(99)) FillBoxForEquip(item, aTier, iBonus, false);
+			if(25 + iBonus > rand(99)) FillBoxForEquip(item, aTier, iBonus, false);
+		}
     }
 }
 
 void FillBoxForJewelry(ref item, aref aTier, int iBonus, bool bOtherSlots)
 {
+	sTrSubTag += "¥";
     if(bOtherSlots)
     {
-        // Золото в первый слот
-        item.BoxTreasure.gold = sti(aTier.gold.min) + rand(sti(aTier.gold.dif));
-        // Остальные четыре слота
-        if(75 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
-        if(65 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
-        if(50 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
-        if(35 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
+		if (bTrHash)
+		{
+			// Золото в первый слот
+			item.BoxTreasure.gold = sti(aTier.gold.min) + hrand(sti(aTier.gold.dif), sTrTag);
+			// Остальные четыре слота
+			if(75 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(65 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(50 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(35 + iBonus > hrand(99, sTrTag)) FillBoxForJewelry(item, aTier, iBonus, false);
+		}
+		else
+		{
+			// Золото в первый слот
+			item.BoxTreasure.gold = sti(aTier.gold.min) + rand(sti(aTier.gold.dif));
+			// Остальные четыре слота
+			if(75 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(65 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(50 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
+			if(35 + iBonus > rand(99)) FillBoxForJewelry(item, aTier, iBonus, false);
+		}
     }
     else
     {
         string itmName = GetRandEnabledItem(aTier, "Jewelry");
-        item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + rand(sti(aTier.Jewelry.(itmName).dif));
+		if(itmName == "Ammo")
+		{
+			if (bTrHash)
+			{
+				itmName = GetSubStringByNum("bullet,GunPowder,grapeshot", hrand(2, sTrTag + sTrSubTag));
+				item.BoxTreasure.(itmName) = sti(aTier.Jewelry.Ammo.min) + hrand(sti(aTier.Jewelry.Ammo.dif), sTrTag + sTrSubTag);
+			}
+			else
+			{
+				itmName = LinkRandPhrase("bullet", "GunPowder", "grapeshot");
+				item.BoxTreasure.(itmName) = sti(aTier.Jewelry.Ammo.min) + rand(sti(aTier.Jewelry.Ammo.dif));
+			}
+		}
+		else
+		{
+			if (bTrHash) item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + hrand(sti(aTier.Jewelry.(itmName).dif), sTrTag + sTrSubTag);
+			else item.BoxTreasure.(itmName) = sti(aTier.Jewelry.(itmName).min) + rand(sti(aTier.Jewelry.(itmName).dif));
+		}
     }
 }
 
 void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
 {
+	sTrSubTag += "µ";
     string itmName = GetRandEnabledItem(aTier, "Special");
     if(itmName == "map" || itmName == "map_a") // Подбор карты
     {
@@ -290,13 +358,16 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
             itmName = "map"; // Пока нельзя
 
         bool bExcellent = (itmName == "map_a");
-        int qMiss = MAPS_IN_ATLAS - sti(PChar.MapsAtlasCount); // Сколько на момент генерации не хватало обычных карт
-        int qTy = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
+        int qMiss = MAPS_IN_ATLAS - CountAreasMapFromCharacter(); // Сколько на момент генерации не хватало обычных карт
+        int qTy;
+		if (bTrHash) qTy = sti(aTier.Special.(itmName).min) + hrand(sti(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
+		else qTy = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
         for(int i = 0; i < qTy; i++)
         {
             if(bExcellent)
             {
-                itmName = SelectAdmiralMaps();
+				if (bTrHash) itmName = SelectFixAdmiralMap();
+                else itmName = SelectAdmiralMaps();
                 if(itmName != "")
                 {
                     TreasureTiers[0].map_a.(itmName) = ""; // Чтобы не генерило одинаковые адмиралки в клад
@@ -323,21 +394,38 @@ void FillBoxForSpecial(ref item, aref aTier, int iBonus, bool bOtherSlots)
     }
     else
     {
-        item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
+        if (bTrHash) item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + hrand(sti(aTier.Special.(itmName).dif), sTrTag + sTrSubTag);
+		else item.BoxTreasure.(itmName) = sti(aTier.Special.(itmName).min) + rand(sti(aTier.Special.(itmName).dif));
     }
 
     if(bOtherSlots)
     {
-        // Половинку карты во второй слот
-        if(25 + iBonus > rand(99))
-        {
-            if (GetCharacterItem(PChar, "map_part1") == 0)      item.BoxTreasure.map_part1 = 1;
-            else if (GetCharacterItem(PChar, "map_part2") == 0) item.BoxTreasure.map_part2 = 1;
-        }
-        // Остальные три слота
-        if(65 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
-        if(35 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
-        if(15 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
+		if (bTrHash)
+		{
+			// Половинку карты во второй слот
+			if(25 + iBonus > hrand(99, sTrTag))
+			{
+				if (GetCharacterItem(PChar, "map_part1") == 0)      item.BoxTreasure.map_part1 = 1;
+				else if (GetCharacterItem(PChar, "map_part2") == 0) item.BoxTreasure.map_part2 = 1;
+			}
+			// Остальные три слота
+			if(65 + iBonus > hrand(99, sTrTag)) FillBoxForSpecial(item, aTier, iBonus, false);
+			if(35 + iBonus > hrand(99, sTrTag)) FillBoxForSpecial(item, aTier, iBonus, false);
+			if(15 + iBonus > hrand(99, sTrTag)) FillBoxForSpecial(item, aTier, iBonus, false);
+		}
+		else
+		{
+			// Половинку карты во второй слот
+			if(25 + iBonus > rand(99))
+			{
+				if (GetCharacterItem(PChar, "map_part1") == 0)      item.BoxTreasure.map_part1 = 1;
+				else if (GetCharacterItem(PChar, "map_part2") == 0) item.BoxTreasure.map_part2 = 1;
+			}
+			// Остальные три слота
+			if(65 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
+			if(35 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
+			if(15 + iBonus > rand(99)) FillBoxForSpecial(item, aTier, iBonus, false);
+		}
     }
 }
 
@@ -345,7 +433,16 @@ void FillBoxForNotes(ref item)
 {
     aref aTreasureStories;
     makearef(aTreasureStories, pchar.questTemp.Treasure_Stories);
-    string sNumb = GetRandomAttrName(aTreasureStories);
+
+	string sNumb;
+	if (bTrHash)
+	{
+		int num = GetAttributesNum(aTreasureStories);
+		if (num == 0) sNumb = "error";
+		else sNumb = GetAttributeName(GetAttributeN(aTreasureStories, hrand(num-1, sTrTag)));
+	}
+	else sNumb = GetRandomAttrName(aTreasureStories);
+
     if(sNumb != "error")
     {
         item.NoteNum = sNumb;
@@ -589,6 +686,7 @@ void SetTreasureHunter(string temp)
     {
         sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", sti(PChar.rank) + 5, PIRATE, 0, true, "hunter"));
         SetFantomParamHunter(sld); //крутые парни
+        ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Говоруны охотники за кладами
         sld.Dialog.CurrentNode = "TreasureHunter";
         sld.dialog.filename = "Hunter_dialog.c";
         sld.greeting = "hunter";
@@ -667,60 +765,6 @@ ref SetFantomSkeletForts(string group, string locator, string enemygroup, string
     return Cr;
 }
 
-string SelectUsualMaps(ref item, ref qMiss) // Выбор обычной неповторяющейся карты
-{	
-    string sMap = "";
-    string map[MAPS_IN_ATLAS];
-    map[0] = "map_jam";
-    map[1] = "map_cayman";
-    map[2] = "map_barbados";
-    map[3] = "map_trinidad";
-    map[4] = "map_Curacao";
-    map[5] = "map_martiniqua";
-    map[6] = "map_dominica";
-    map[7] = "map_puerto";
-    map[8] = "map_cuba";
-    map[9] = "map_hisp";
-    map[10] = "map_nevis";
-    map[11] = "map_guad";
-    map[12] = "map_antigua";
-    map[13] = "map_TORTUGA";
-    map[14] = "map_terks";
-    map[15] = "map_sm";
-    map[16] = "map_bermudas";
-    map[17] = "map_beliz";
-    map[18] = "map_santa";
-    map[19] = "map_maine_1";
-    map[20] = "map_maine_2";
-    map[21] = "map_panama";
-    map[22] = "map_cumana";
-
-    string storeArray[MAPS_IN_ATLAS];
-    int howStore = 0;
-    string sTemp;
-
-    if(qMiss > 0)
-    {
-        for (int i = 0; i < MAPS_IN_ATLAS; i++)
-        {
-            sTemp = map[i];
-            if (!CheckMainHeroMap(sTemp) && !CheckAttribute(item, "BoxTreasure." + sTemp))
-            {
-                storeArray[howStore] = sTemp;
-                howStore++;
-            }
-        }
-        qMiss--;
-    }
-    else
-        howStore = MAPS_IN_ATLAS; // У игрока на пару с текущим кладом имеются все карты, теперь можно рандомить любую
-
-    if (howStore > 0)
-        sMap = storeArray[rand(howStore - 1)];
-
-    return sMap;
-}
-
 void SetMapDescribe(ref item, int iTier)
 {
     iTier = 1 + ((iTier - 1) / 5); // 1 [1;5], 2 [6;10], 3 [11;15]
@@ -741,7 +785,11 @@ void SetMapDescribe(ref item, int iTier)
         aDesc.v2 = 2;
         aDesc.v3 = 3;
     }
-    sTemp = GetRandomAttrName(aDesc);
+	if (bTrHash)
+	{
+		sTemp = GetAttributeName(GetAttributeN(aDesc, hrand(GetAttributesNum(aDesc)-1, sTrTag))); // :)
+	}
+	else sTemp = GetRandomAttrName(aDesc);
     item.MapTypeIdx = (iTier - 1) * 3 + sti(aDesc.(sTemp)); // 123, 456, 789
     DeleteAttribute(aDesc, sTemp);
 }
@@ -781,6 +829,7 @@ void Treasure_SetCaribWarrior()
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_carib_"+i, "canib_"+(rand(5)+1), "man", "man", iRank, PIRATE, 1, true, "native"));
 		SetFantomParamFromRank(sld, iRank, true);
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Молчуны охотники за кладами
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		LAi_CharacterDisableDialog(sld);
@@ -802,6 +851,7 @@ void Treasure_SetBandosWarrior()
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Treasure_bandos_"+i, "citiz_"+(rand(9)+41), "man", "man", iRank, PIRATE, 1, true, "marginal"));
 		SetFantomParamFromRank(sld, iRank, true);
+        ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Молчуны охотники за кладами
 		LAi_CharacterDisableDialog(sld);
 		GetCharacterPos(pchar, &locx, &locy, &locz);
 		ChangeCharacterAddressGroup(sld, pchar.location, "monsters", LAi_FindNearestFreeLocator("monsters", locx, locy, locz));
@@ -822,7 +872,7 @@ void Treasure_SetCaptainWarrior(string qName)
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(loc, true);//запретить драться // patch-6
-	for(int i=1; i<=4; i++)
+	for(int i=1; i<=3; i++)
 	{
 		model = "citiz_"+(rand(9)+51);
 		if (i > 1) model = "mercen_"+(rand(29)+1);
@@ -852,7 +902,7 @@ void Treasure_SetOfficerWarrior(string qName)
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_LocationFightDisable(loc, true);//запретить драться // patch-6
-	for(int i=1; i<=4; i++)
+	for(int i=1; i<=3; i++)
 	{
 		sTemp = "off_"+NationShortName(iNation)+"_"+(rand(4)+1);
 		if (i > 1) sTemp = "sold_"+NationShortName(iNation)+"_"+(rand(7)+1);
@@ -867,6 +917,73 @@ void Treasure_SetOfficerWarrior(string qName)
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
+}
+
+string GetFixGeneratedItem(string _itemId)
+{
+	int itemsQty = 0;
+	String generatedItems[2];
+	SetArraySize(&generatedItems, TOTAL_ITEMS);
+	if(!IsGenerableItem(_itemId)) // Генерящийся ли предмет
+	{
+		return _itemID;
+	}
+	
+	for(int i = ITEMS_QUANTITY; i < TOTAL_ITEMS; i++)
+	{
+		if(CheckAttribute(&Items[i], "DefItemID") && Items[i].DefItemID == _itemId)
+		{
+			generatedItems[itemsQty] = Items[i].ID;
+			itemsQty++;
+		}
+	}
+		
+	if(itemsQty == 0)
+	{
+		return _itemId; // Ничего не нашлось
+	}
+		
+	return generatedItems[hrand(itemsQty - 1, sTrTag + sTrSubTag)];
+}
+
+string SelectFixAdmiralMap() 
+{
+	string mapId = "";
+	string map[24];
+	string leftMaps[2];
+	int n = 1;
+	int mapQty = FillAdmiralMaps(&map);
+
+	for (int i = 0; i < mapQty; i++) {
+		mapId = map[i];
+		if (CheckMapForEquipped(pchar, mapId)) continue;
+		SetArraySize(&leftMaps, n);
+		leftMaps[n-1] = mapId;
+		n++;
+	}
+
+	sTrSubTag += "µ";
+	if (n == 1) return map[hrand(mapQty-1, sTrTag + sTrSubTag)];
+	return leftMaps[hrand(n - 2, sTrTag + sTrSubTag)];
+}
+
+void GenerateTreasureMapSeed()
+{
+	aref aSeeds;
+	makearef(aSeeds, TEV.TreasureSeeds);
+	int num = GetAttributesNum(aSeeds);
+	string attr = "l" + num;
+	while (CheckAttribute(aSeeds, attr)) attr += "l";
+	aSeeds.(attr) = PChar.Location;
+}
+
+string GetTresuareMapSeed()
+{
+	aref aSeeds;
+	makearef(aSeeds, TEV.TreasureSeeds);
+	int num = GetAttributesNum(aSeeds);
+	if (num == 0) return "";
+	return GetAttributeValue(GetAttributeN(aSeeds, 0));
 }
 
 void LoyaltyPack_Treasure(int iTier, int iBonus, ref item)

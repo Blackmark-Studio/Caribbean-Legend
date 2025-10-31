@@ -365,3 +365,36 @@ void CorrectWeightParameters(string sLottery, string Winner, string sCase)
             break;
     }
 }
+
+// Бросок с шансом n
+bool PercentChance(int chance)
+{
+  return chance > rand(99);
+}
+
+// Бросок с шансом n
+bool fPercentChance(float chance)
+{
+  return chance > frandSmall(0.99);
+}
+
+// Берем два числа из диапазона по принципу если первое число больше половины, тогда 
+// второе число берется из предыдущих, а если меньше – из следующих
+void SetTwoRandomNums(int max, ref a, ref b, string dayLockTag)
+{
+	int tempA;
+	int tempB;
+	tempA = randWWoDate(max, dayLockTag);
+	if (tempA > (max / 2)) tempB = randWWoDate(tempA - 1, dayLockTag);
+	else tempB = randWWoDate(max - tempA - 1, dayLockTag) + tempA + 1;
+
+	a = tempA;
+	b = tempB;
+}
+
+// Рандом с пробросом флага закрепления за датой
+int randWWoDate(int max, string tag)
+{
+	if (tag != "") return DateRandom(max, tag);
+	return rand(max);
+}

@@ -1,3 +1,12 @@
+void OS_Start()
+{
+	SetQuestHeader("OS");
+	AddQuestRecord("OS", "1");
+	pchar.questTemp.OS_Start = true;
+	pchar.questTemp.OS_Tavern_1 = true;
+	AddLandQuestMark(characterFromId("PuertoPrincipe_tavernkeeper"), "questmarkmain");
+}
+
 void OS_ShipWolf(string qName)
 {
 	sld = GetCharacter(NPC_GenerateCharacter("OS_Pirate", "mercen_11", "man", "man", sti(PChar.rank), PIRATE, -1, true, "pirate"));
@@ -96,5 +105,9 @@ void OS_Pobeda(string qName)
 	
 	sld = CharacterFromID("PuertoPrincipe_waitress");
 	ChangeCharacterAddressGroup(sld, "PuertoPrincipe_tavern", "waitress", "barmen");
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 

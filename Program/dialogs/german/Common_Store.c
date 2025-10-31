@@ -948,7 +948,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text = "Oh! Ich wollte dich gerade um einen Gefallen bitten. Siehst du, ich muss die Fracht liefern von "+GetGoodsNameAlt(iTradeGoods)+" in der Menge von "+FindRussianQtyString(iQuantityGoods)+" zur Stadt von "+sNation+sTemp+", und je eher, desto besser. Wenn es Ihnen gelingt, es für "+FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired))+", dann bei der Ankunft erhalten Sie "+FindRussianMoneyString(iMoney)+" als deine Belohnung. Was sagst du dazu?";
     							link.l1 = "Ich glaube, ich stimme zu.";
@@ -1461,7 +1461,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "Mein 'Freund' ist derzeit in seinem Zuhause in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Du brauchst ihn nicht - du brauchst sein Schiff, das, wie ich herausgefunden habe, nach etwa "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" wird in der Nähe vorbeifahren "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Sie können es versenken, können es durch Entern nehmen - das spielt keine Rolle. Die Hauptsache ist, sicherzustellen, dass das Schiff und die Ladung nicht mehr im Besitz von "+pchar.GenQuest.Sunplace.Trader.Enemyname+". Und es ist mir egal, wer es beansprucht - du oder das Meer. Für diese Arbeit werde ich dich bezahlen "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "Mein 'Freund' ist derzeit in seinem Zuhause in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Du brauchst ihn nicht - du brauchst sein Schiff, das, wie ich herausgefunden habe, nach etwa "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" wird in der Nähe vorbeifahren "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Sie können es versenken, können es durch Entern nehmen - das spielt keine Rolle. Die Hauptsache ist, sicherzustellen, dass das Schiff und die Ladung nicht mehr im Besitz von "+pchar.GenQuest.Sunplace.Trader.Enemyname+". Und es ist mir egal, wer es beansprucht - du oder das Meer. Für diese Arbeit werde ich dich bezahlen "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "Ich habe es. Nun, dann ist es Zeit zu gehen!";
 			link.l1.go = "Sunplace_3";
 		break;

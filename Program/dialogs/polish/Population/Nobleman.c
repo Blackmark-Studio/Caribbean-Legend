@@ -38,7 +38,7 @@ void ProcessDialogEvent()
 			//--> проверка межнациональных отношений
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
 				{
-				dialog.text = NPCStringReactionRepeat("Hm. Pływasz pod banderą "+NationNameGenitive(sti(pchar.nation))+", kamracie. Co do cholery robisz tutaj, w naszym mieście? Zjeżdżaj!","Nie chcę być podejrzewany jako przyjaciel "+NationNameAblative(sti(pchar.nation))+"Zjeżdżaj, albo doniosę strażnikom!","To twoja ostatnia szansa, by uciec. Inaczej będziesz mógł winić tylko siebie.","Przestrzegałem cię. Teraz zapłacisz za swoją zuchwałość, bękarcie!","zablokować",1,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Hm. Pływasz pod banderą "+NationNameGenitive(sti(pchar.nation))+", kamracie. Co do cholery robisz tutaj, w naszym mieście? Zjeżdżaj!","Nie chcę być podejrzewany jako przyjaciel "+NationNameAblative(sti(pchar.nation))+". Zjeżdżaj, albo doniosę strażnikom!","To twoja ostatnia szansa, by uciec. Inaczej będziesz mógł winić tylko siebie.","Przestrzegałem cię. Teraz zapłacisz za swoją zuchwałość, bękarcie!","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Taki patriota, ha!","Dobrze, dobrze, uspokój się. Już wychodzę.","Nie hałasuj tak. Odchodzę.","Co?!",npchar,Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			break;
@@ -47,7 +47,7 @@ void ProcessDialogEvent()
 			//--> проверка репутации - дворяне гнобят супернегодяев
 			if (sti(pchar.reputation.nobility) < 10)
 			{
-				dialog.text = NPCStringReactionRepeat("Spójrz tylko na to! Jak to się dzieje, że nasi strażnicy pozwalają takiemu łajdakowi jak ty swobodnie chodzić po mieście? To niemożliwe...","Zjeżdżaj, nawet nie chcę z tobą gadać! Wisielec...","To twoja ostatnia szansa, żeby uciec. W przeciwnym razie będziesz mógł winić tylko siebie.","Ostrzegałem cię. Teraz zapłacisz za swoją bezczelność, łajdaku!","blokada",1,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Spójrz tylko na to! Jak to się dzieje, że nasi strażnicy pozwalają takiemu łajdakowi jak ty swobodnie chodzić po mieście? To niemożliwe...","Zjeżdżaj, nawet nie chcę z tobą gadać! Wisielec...","To twoja ostatnia szansa, żeby uciec. W przeciwnym razie będziesz mógł winić tylko siebie.","Ostrzegałem cię. Teraz zapłacisz za swoją bezczelność, łajdaku!","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Hej hej! Okaż mi więcej szacunku, panie!","Spójrz na siebie, święty...","Uspokój się...","Co?!",npchar,Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			break;
@@ -61,7 +61,7 @@ void ProcessDialogEvent()
 				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && CheckAttribute(pchar, "questTemp.StatusCity") && pchar.questTemp.StatusCity == npchar.city)//дворянин-пассажир
 				{
 					dialog.text = "Witaj, "+GetAddress_Form(NPChar)+" Widzę, że jesteś kapitanem solidnego okrętu. Chcę cię o coś poprosić. Możesz się tego podjąć lub odmówić.";
-					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+"Co masz na myśli?";
+					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+". Co masz na myśli?";
 					link.l1.go = "passenger";
 					link.l2 = "Przepraszam, "+GetAddress_FormToNPC(NPChar)+", ale się spieszę.";
 					link.l2.go = "exit";
@@ -72,7 +72,7 @@ void ProcessDialogEvent()
 				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Noblepassenger") && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsUniversalShipType(pchar), IsMerchantShipType(pchar)))//дворянин-пассажир
 				{
 					dialog.text = "Pozdrowienia, "+GetAddress_Form(NPChar)+" Widzę, że jesteś kapitanem solidnego statku. Chcę cię o coś poprosić. Możesz to przyjąć lub zostawić.";
-					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+"  Co masz na myśli?";
+					link.l1 = "Słucham, "+GetAddress_FormToNPC(NPChar)+". Co masz na myśli?";
 					link.l1.go = "passenger";
 					link.l2 = "Proszę wybaczyć, "+GetAddress_FormToNPC(NPChar)+", ale się śpieszę.";
 					link.l2.go = "exit";
@@ -90,7 +90,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(npchar, "quest.lombard") && !CheckAttribute(pchar, "GenQuest.Noblelombard"))//семейная реликвия
 				{
-					dialog.text = "Dzień dobry, "+GetAddress_Form(NPChar)+" ! Dobrze spotkać dżentelmena na ulicach naszego miasta! Czy pozwolisz mi zabrać ci kilka minut?";
+					dialog.text = "Dzień dobry, "+GetAddress_Form(NPChar)+"! Dobrze jest spotkać dżentelmena na ulicach naszego miasta! Czy pozwolisz mi zabrać ci kilka minut?";
 					link.l1 = "Tak, panie. Słucham.";
 					link.l1.go = "lombard";
 					npchar.quest.meeting = "1";
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 				//==> прибыла инспекция на Святом Милосердии
 				if (CheckAttribute(pchar, "questTemp.SantaMisericordia.ColonyZapret") && pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_town")
 				{
-					dialog.Text = LinkRandPhrase(LinkRandPhrase("Całe miasto jest spięte - przybył don Fernando de Alamida, królewski inspektor. Wiesz, widziałem tu wiele, ale to... To nie żałoba zmienia ludzi, ale to, jak sobie z nią radzą. Mówią, że stał się innym człowiekiem po śmierci ojca. Teraz nie znajdziesz bardziej nieprzekupnego i... bezlitosnego sługi Korony w całym Archipelagu.","Spójrz tylko na 'Świętą Miłosierdzie'! Mówią, że sam król kazał ją zbudować według specjalnych projektów. I zauważ - ani jednej rysy. Jakby sama Matka Boska jej strzegła. Choć słyszałem plotki... może to wcale nie Matka Boska.","Wiesz, ile razy próbowali zabić don Fernando? Dwanaście ataków na otwartych wodach - i to tylko w zeszłym roku! Cóż, z tak lojalną i wyszkoloną załogą, oraz pod ochroną Pana - przetrwa trzynasty również!"),LinkRandPhrase("Słyszałeś? Don Fernando de Alamida przybył do naszego miasta, a mówią, że teraz gdzieś krąży po ulicach. Chciałbym go zobaczyć na własne oczy...","Skomplikowany człowiek, ten don Fernando. Niektórzy mówią, że to zbawca, oczyszczający Ojczyznę z plugastwa. Inni szepczą, że coś w nim pękło po śmierci ojca i wkrótce wszyscy będziemy płakać. Ale powiem ci jedno: nie bój się go. Bój się tych, którzy go takim uczynili.","Taki przystojny mężczyzna, ten don Fernando! Ale wiesz co jest dziwne? Jakby nikogo nie zauważał. Wszystko obowiązek i służba. Słyszałam, że była jakaś dziewczyna... ale po spotkaniu z jakimś księdzem, całkowicie odrzucił ziemskie przyjemności. Jakby złożył ślub."),RandPhraseSimple(RandPhraseSimple("Przeklęty inspektor! Kiedy on tu jest - miasto jakby umarło. Żadnego handlu, żadnej zabawy. Nawet oddychać, zdaje się, trzeba ciszej. I wiesz, co jest najbardziej przerażające? To samo dzieje się w każdym porcie. Jak w zegarku. Jego Królewska Mość nie mógłby celowo wymyślić tej tortury dla nas wszystkich!","Don Fernando znowu odwiedził sierociniec. Hojnie daruje, modli się godzinami. Tak szlachetnego człowieka należy stawiać za przykład tym przeklętym defraudatorom!"),RandPhraseSimple("Ha! 'Święty' Fernando znów zamknął wszystkie burdele. Cóż, nieważne, wkrótce odpłynie i znowu się otworzą.","Inspekt... inspektor przybył, to co! Don Fernando de Almeyda, czy jak mu tam, Alamida! Tak ważny, że sam gubernator chodzi wokół niego na paluszkach. Mówią, że patrzy ci w oczy i od razu widzi wszystkie twoje grzechy. Przerażające!")));
+					dialog.Text = LinkRandPhrase(LinkRandPhrase("Całe miasto jest spięte - przybył don Fernando de Alamida, królewski inspektor. Wiesz, widziałem tu wiele, ale to... To nie żałoba zmienia ludzi, ale to, jak sobie z nią radzą. Mówią, że stał się innym człowiekiem po śmierci ojca. Teraz nie znajdziesz bardziej nieprzekupnego i... bezlitosnego sługi Korony w całym Archipelagu.","Spójrz tylko na 'Święte Miłosierdzie'! Mówią, że sam król kazał ją zbudować według specjalnych projektów. I zauważ - ani jednej rysy. Jakby sama Matka Boska jej strzegła. Choć słyszałem plotki... może to wcale nie Matka Boska.","Wiesz, ile razy próbowali zabić don Fernando? Dwanaście ataków na otwartych wodach - i to tylko w zeszłym roku! Cóż, z tak lojalną i wyszkoloną załogą, oraz pod ochroną Pana - przetrwa trzynasty również!"),LinkRandPhrase("Słyszałeś? Don Fernando de Alamida przybył do naszego miasta, a mówią, że teraz gdzieś krąży po ulicach. Chciałbym go zobaczyć na własne oczy...","Skomplikowany człowiek, ten don Fernando. Niektórzy mówią, że to zbawca, oczyszczający Ojczyznę z plugastwa. Inni szepczą, że coś w nim pękło po śmierci ojca i wkrótce wszyscy będziemy płakać. Ale powiem ci jedno: nie bój się go. Bój się tych, którzy go takim uczynili.","Taki przystojny mężczyzna, ten don Fernando! Ale wiesz co jest dziwne? Jakby nikogo nie zauważał. Wszystko obowiązek i służba. Słyszałam, że była jakaś dziewczyna... ale po spotkaniu z jakimś księdzem, całkowicie odrzucił ziemskie przyjemności. Jakby złożył ślub."),RandPhraseSimple(RandPhraseSimple("Przeklęty inspektor! Kiedy on tu jest - miasto jakby umarło. Żadnego handlu, żadnej zabawy. Nawet oddychać, zdaje się, trzeba ciszej. I wiesz, co jest najbardziej przerażające? To samo dzieje się w każdym porcie. Jak w zegarku. Jego Królewska Mość nie mógłby celowo wymyślić tej tortury dla nas wszystkich!","Don Fernando znowu odwiedził sierociniec. Hojnie daruje, modli się godzinami. Tak szlachetnego człowieka należy stawiać za przykład tym przeklętym defraudatorom!"),RandPhraseSimple("Ha! 'Święty' Fernando znów zamknął wszystkie burdele. Cóż, nieważne, wkrótce odpłynie i znowu się otworzą.","Inspekt... inspektor przybył, to co! Don Fernando de Almeyda, czy jak mu tam, Alamida! Tak ważny, że sam gubernator chodzi wokół niego na paluszkach. Mówią, że patrzy ci w oczy i od razu widzi wszystkie twoje grzechy. Przerażające!")));
 					link.l1 = "...";
 					link.l1.go = "exit";
 					DeleteAttribute(link, "l2");
@@ -132,7 +132,7 @@ void ProcessDialogEvent()
 			}
 			else //--> повторные обращения
 			{
-				dialog.text = NPCStringReactionRepeat("Co? Znowu? Nie mam dla ciebie czasu. Poszukaj kogoś innego do rozmowy. Wiele pospólstwa krąży po ulicach. A ja muszę iść, dziś wieczorem będzie bankiet w rezydencji gubernatora i muszę przygotować swój strój...","Nie, teraz to naprawdę irytujące! Czy ty tego po prostu nie rozumiesz? Czy jesteś tępy?","Proszę pana, zaczynam podejrzewać, że nie tylko jesteś idiotą, ale także prostakiem i gburem. Ostrzegam cię, zostaw mnie w spokoju albo pożałujesz, że mnie niepokoiłeś.","Dosyć. Nauczę cię, zuchwały draniu!","blokada",1,npchar,Dialog.CurrentNode);
+				dialog.text = NPCStringReactionRepeat("Co? Znowu? Nie mam dla ciebie czasu. Poszukaj kogoś innego do rozmowy. Wiele pospólstwa krąży po ulicach. A ja muszę iść, dziś wieczorem będzie bankiet w rezydencji gubernatora i muszę przygotować swój strój...","Nie, teraz to naprawdę irytujące! Czy ty tego po prostu nie rozumiesz? Czy jesteś tępy?","Proszę pana, zaczynam podejrzewać, że nie tylko jesteś idiotą, ale także prostakiem i gburem. Ostrzegam cię, zostaw mnie w spokoju albo pożałujesz, że mnie niepokoiłeś.","Dosyć. Nauczę cię, zuchwały draniu!","block",1,npchar,Dialog.CurrentNode);
 				link.l1 = HeroStringReactionRepeat("Rozumiem. Żegnaj.","Tak-tak, tylko zapomniałem, o co chciałem zapytać...","Źle mnie zrozumiałeś...","Co?!",npchar,Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "fight", npchar, Dialog.CurrentNode);
 			}
@@ -152,11 +152,11 @@ void ProcessDialogEvent()
 			else SetPassengerParameter("Noblepassenger", true);
 			if (!CheckAttribute(pchar, "GenQuest.Noblepassenger.Enemycity"))
 			{
-				dialog.text = " "+GetSexPhrase("Panie","Madame")+", muszę dotrzeć do kolonii"+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"jak najszybciej to możliwe"+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+", dla "+FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty))+"Twoja łajba wygląda solidnie i szybko w porównaniu z większością tych małych beczek pływających tutaj. Mogę ci zapłacić "+FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money))+"Co byś powiedział?"; // belamour gen
+				dialog.text = " "+GetSexPhrase("Panie","Madame")+", muszę dotrzeć do kolonii "+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+" jak najszybciej to możliwe "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+", dla "+FindRussianDaysString(sti(pchar.GenQuest.Noblepassenger.DaysQty))+" Twoja łajba wygląda solidnie i szybko w porównaniu z większością tych małych beczek pływających tutaj. Mogę ci zapłacić "+FindRussianMoneyString(sti(pchar.GenQuest.Noblepassenger.Money))+". Co byś powiedział?"; // belamour gen
 			}
 			else
 			{
-				dialog.text = "Cześć, "+GetSexPhrase("panie","pani")+"! Muszę dostać się do "+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! To jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+", przy okazji. Tak, tak, wiem - te dranie tylko czekają, aż się tam pojawimy. Ale mam tam bardzo pilne i ważne spotkanie! Nie jestem skąpy - choć nie lubię płacić, zawsze płacę. Rzuć wszystko, co robisz, a jak tylko przybędziemy, dam ci "+FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money))+".";
+				dialog.text = "Witaj, "+GetSexPhrase("panie","pani")+"! Muszę dostać się do "+XI_ConvertString("Colony"+pchar.GenQuest.Noblepassenger.City+"Acc")+"! To jest na "+XI_ConvertString(GetIslandByCityName(pchar.GenQuest.Noblepassenger.City)+"Voc")+", przy okazji. Tak, tak, wiem - te dranie tylko czekają, aż się tam pojawimy. Ale mam tam bardzo pilne i ważne spotkanie! Nie jestem skąpy - choć nie lubię płacić, zawsze płacę. Rzuć wszystko, co robisz, a jak tylko przybędziemy, dam ci "+FindRussianDublonString(sti(pchar.GenQuest.Noblepassenger.Money))+".";
 			}
 			link.l1 = "Hm. Zmierzam w tę stronę, więc jestem gotów zabrać cię na pokład na tych warunkach.";
 			link.l1.go = "passenger_1";
@@ -337,25 +337,8 @@ void ProcessDialogEvent()
 		
 		case "lombard_3":
 			DialogExit();
-			pchar.GenQuest.Noblelombard = "true"
-			pchar.GenQuest.Noblelombard.Name = GetFullName(npchar);
 			pchar.GenQuest.Noblelombard.id = npchar.id;
-			pchar.GenQuest.Noblelombard.City = npchar.city;
-			pchar.GenQuest.Noblelombard.Money = 20000+hrand(60)*500;
-			pchar.GenQuest.Noblelombard.Percent = makeint(sti(pchar.GenQuest.Noblelombard.Money)*0.3);
-			pchar.GenQuest.Noblelombard.Summ = sti(pchar.GenQuest.Noblelombard.Money)+sti(pchar.GenQuest.Noblelombard.Percent);
-			pchar.GenQuest.Noblelombard.Chance = hrand(9);
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_SetActorType(npchar);
-			LAi_RemoveLoginTime(npchar);
-			DeleteAttribute(npchar, "CityType");//удалить признак фантома
-			FreeSitLocator(pchar.GenQuest.Noblelombard.City + "_tavern", "sit1");
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", pchar.GenQuest.Noblelombard.City+"_tavern", "sit", "sit1", "Nobleman_lombardTavern", 10);
-			SetFunctionTimerCondition("Noblelombard_Over", 0, 0, 1, false); //таймер до конца суток
-			ReOpenQuestHeader("Noblelombard");
-			AddQuestRecord("Noblelombard", "1");
-			AddQuestUserData("Noblelombard", "sCity", XI_ConvertString("Colony"+pchar.GenQuest.Noblelombard.City));
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
+			AddDialogExitQuestFunction("Noblelombard_TookQuest");
 		break;
 		
 		case "lombard_4":
@@ -393,14 +376,7 @@ void ProcessDialogEvent()
 		
 		case "lombard_fail_1":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			AddQuestRecord("Noblelombard", "4");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			CloseQuestHeader("Noblelombard");
-			sld = characterFromId(pchar.GenQuest.Noblelombard.City+"_usurer");
-			DeleteAttribute(sld, "quest.noblelombard");
-			DeleteAttribute(Pchar, "GenQuest.Noblelombard");
+			AddDialogExitQuestFunction("Noblelombard_fail");
 		break;
 		
 		case "lombard_5":
@@ -417,13 +393,7 @@ void ProcessDialogEvent()
 		
 		case "lombard_7":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			ChangeCharacterComplexReputation(pchar, "authority", 2);
-			ChangeOfficersLoyality("good_all", 1);
-			AddQuestRecord("Noblelombard", "5");
-			AddQuestUserData("Noblelombard", "sName", pchar.GenQuest.Noblelombard.Name);
-			SetFunctionTimerCondition("Noblelombard_Regard", 0, 0, 90, false); //таймер
+			AddDialogExitQuestFunction("Noblelombard_success");
 		break;
 //<-- семейная реликвия
 
@@ -432,7 +402,7 @@ void ProcessDialogEvent()
 			npchar.quest.slaves.price = 3+hrand(1);//цена на рабов в дублонах
 			npchar.quest.slaves.qty = 50+hrand(5)*10;//количество
 			npchar.quest.slaves.money = sti(npchar.quest.slaves.qty)*sti(npchar.quest.slaves.price);
-			dialog.text = "Jestem właścicielem "+LinkRandPhrase("fabryka","moje","plantacja")+" i zawsze potrzebuję świeżych niewolników. Klimat naprawdę daje im w kość. W tej chwili potrzebuję "+sti(npchar.quest.slaves.qty)+" głowy. Jestem gotów zamówić ich partię. Zapłacę złotem za każdą głowę, "+sti(npchar.quest.slaves.price)+"	dublony\nNie spiesz się, nie będę cię ograniczać czasowo, jeśli zdobędziesz to, czego potrzebuję. No cóż, oczywiście w granicach rozsądku, nie przedłużaj tego na więcej niż pół roku. Co powiesz? Umowa?";
+			dialog.text = "Jestem właścicielem "+LinkRandPhrase("fabryki","kopalni","plantacji")+" i zawsze potrzebuję świeżych niewolników. Klimat naprawdę daje im w kość. W tej chwili potrzebuję "+sti(npchar.quest.slaves.qty)+" głów. Jestem gotów zamówić ich partię. Zapłacę złotem za każdą głowę, "+sti(npchar.quest.slaves.price)+" dublony\nNie spiesz się, nie będę cię ograniczać czasowo, jeśli zdobędziesz to, czego potrzebuję. No cóż, oczywiście w granicach rozsądku, nie przedłużaj tego na więcej niż pół roku. Co powiesz? Umowa?";
 			link.l1 = "Umowa stoi! Handel niewolnikami to brudny interes, ale wart ryzyka.";
 			link.l1.go = "slaves_1";
 			link.l2 = "Przepraszam, ale nie jestem handlarzem niewolników. To nie moja branża.";
@@ -510,7 +480,7 @@ void ProcessDialogEvent()
 		case "slaves_6":
 			RemoveCharacterGoods(pchar, GOOD_SLAVES, sti(npchar.quest.slaves.qty));
 			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.slaves.money));
-			Log_Info("You have received "+FindRussianDublonString(sti(npchar.quest.slaves.money))+"");
+			Log_Info("Otrzymałeś "+FindRussianDublonString(sti(npchar.quest.slaves.money))+"");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Powinienem tak powiedzieć... Wybacz mi teraz, muszę iść. Do zobaczenia!";
 			link.l1 = "Powodzenia, "+GetAddress_FormToNPC(NPChar)+".";
@@ -576,12 +546,12 @@ string DonationText()
 	string sText;
 	switch (hrand(5))
 	{
-		case 0: sText = "I've lost all my money in gambling yesterday and I don't have enough sum to wipe away the debt. Can you help me?" break;
-		case 1: sText = "I had a nice time yesterday with a... certain lady of the evening, and now she is trying to blackmail me. I need to pay her first and then I will deal with her... Can you help me with some money?" break;
-		case 2: sText = "I ran through a local fool with my rapier recently and now the commandant demands a bribe to hush up the event. I am short of money now. Can you help me?" break;
-		case 3: sText = "I was unlucky enough to lose a bet and I don't have a trifling sum to repay the debt of honor. Can you help me?" break;
-		case 4: sText = "Some bastard knows about my... indiscreet activities concerning a married woman. I don't have enough money to shut his mouth. Just a few gold coins are needed... " break;
-		case 5: sText = "Some bastard has stolen important papers from my house and demanding a significant sum for their return. I've almost got it, just a few more coins needed. Can you help me?" break;
+		case 0: sText = "Wczoraj przegrałem wszystkie pieniądze i nie mam wystarczająco dużo, żeby spłacić dług. Czy możesz mi pomóc?" break;
+		case 1: sText = "Wczoraj miło spędziłem czas z... pewną panią wieczoru, a teraz próbuje mnie szantażować. Najpierw muszę jej zapłacić, a potem się z nią rozprawię... Czy możesz mi pomóc z pieniędzmi?" break;
+		case 2: sText = "Niedawno pocharatałem rapierem miejscowego głupca, a teraz komendant żąda łapówki, żeby zatuszować sprawę. Teraz brakuje mi pieniędzy. Możesz mi pomóc?" break;
+		case 3: sText = "Miałem pecha i przegrałem zakład, a nie mam nawet grosza, żeby spłacić dług honorowy. Czy możesz mi pomóc?" break;
+		case 4: sText = "Jakiś drań wie o moich... niedyskretnych poczynaniach z mężatką. Nie mam dość pieniędzy, żeby zamknąć mu usta. Potrzeba tylko kilku złotych monet... " break;
+		case 5: sText = "Jakiś drań ukradł mi z domu ważne dokumenty i żąda znacznej sumy za ich zwrot. Już prawie je mam, brakuje mi tylko kilku monet. Możesz mi pomóc?" break;
 	}
 	return sText;
 }

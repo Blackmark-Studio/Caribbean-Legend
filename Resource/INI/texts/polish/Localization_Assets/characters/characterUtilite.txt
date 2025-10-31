@@ -1,69 +1,15 @@
-characterUtilite_1
-{
-Otrzymano @<_Money> Pesos
-}
-
-characterUtilite_2
-{
-Wydano @<abs(_Money)> Pesos
-}
-
-characterUtilite_3
-{
-Otrzymano Przedmiot: ~
-}
-
-characterUtilite_4
-{
-Otrzymano @<n> Dublony
-}
-
-characterUtilite_5
-{
-Przekazano Przedmiot: ~
-}
-
-characterUtilite_6
-{
-  zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc
-}
-
-characterUtilite_7
-{
-Zyskano Honor
-}
-
-characterUtilite_8
-{
-Utracono Honor
-}
-
-characterUtilite_9
-{
-Wydano @<_Dublons> Dublony
-}
-
-characterUtilite_10
-{
-Okręt @<officer.Ship.Name> wyładował @<compCrew> żołnierzy.
-}
-
-characterUtilite_11
-{
-Termin Twojej pożyczki wygasł
-}
-
-characterUtilite_12
-{
-Zaktualizowano atlas: @<LanguageConvertString(idLngFile, arItem.name)>
-}
-
-characterUtilite_13
-{
-Wkurzyłeś Tubylców (
-}
-
-characterUtilite_14
-{
-Doceniłeś Tubylców (
-}
+characterUtilite_1 {Otrzymano @<_Money> Pesos}
+characterUtilite_2 {Wydano @<abs(_Money)> Pesos}
+characterUtilite_3 {Otrzymano Przedmiot: ~}
+characterUtilite_4 {Otrzymano @<n> Dublony}
+characterUtilite_5 {Przekazano Przedmiot: ~}
+characterUtilite_6 {zauważył, że @<LanguageConvertString(idLngFile, arItem.name)> stracił swą moc}
+characterUtilite_7 {Zyskano Honor}
+characterUtilite_8 {Utracono Honor}
+characterUtilite_9 {Wydano @<_Dublons> Dublony}
+characterUtilite_10 {Okręt @<officer.Ship.Name> wyładował @<compCrew> żołnierzy.}
+characterUtilite_11 {Termin Twojej pożyczki wygasł}
+characterUtilite_12 {Zaktualizowano atlas: @<LanguageConvertString(idLngFile, arItem.name)>}
+characterUtilite_13 {Wkurzyłeś Tubylców (}
+characterUtilite_14 {Doceniłeś Tubylców (}
+characterUtilite_15 {Kupiec nie ma całej kwoty. Sprzedać za @<money>?}

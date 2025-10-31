@@ -1,143 +1,33 @@
-Slavetrader_1
-{
-Режим исследования: таймер продлён. Выполните квест!
-}
-
-Slavetrader_2
-{
-
-}
-Slavetrader_3
-{
-а
-}
-
-Slavetrader_4
-{
-
-}
-Slavetrader_5
-{
-ла
-}
-
-Slavetrader_6
-{
-ёл
-}
-Slavetrader_7
-{
-ла
-}
-
-Slavetrader_8
-{
-Набуки
-}
-Slavetrader_9
-{
-Анаконда
-}
-
-Slavetrader_10
-{
-из Каракаса
-}
-Slavetrader_11
-{
-из Куманы
-}
-
-Slavetrader_12
-{
-Франсуа
-}
-Slavetrader_13
-{
-Гонтьер
-}
-
-Slavetrader_14
-{
-счел
-}
-Slavetrader_15
-{
-сочла
-}
-Slavetrader_16
-{
-у берегов Барбадоса
-}
-Slavetrader_17
-{
-у берегов Гваделупы
-}
-Slavetrader_18
-{
-недалеко от Сантьяго
-}
-Slavetrader_19
-{
-недалеко от Гаваны
-}
-Slavetrader_20
-{
-у берегов Тортуги
-}
-Slavetrader_21
-{
-у берегов Тринидада
-}
-Slavetrader_22
-{
-у берегов Сент-Кристофера
-}
-Slavetrader_23
-{
-недалеко от Санто-Доминго
-}
-Slavetrader_24
-{
-недалеко от Порт-о-Принса
-}
-Slavetrader_25
-{
-недалеко от Картахены
-}
-
-Slavetrader_26
-{
-Таманго
-}
-Slavetrader_27
-{
-
-}
-
-Slavetrader_28
-{
-Свен
-}
-Slavetrader_29
-{
-Карлсон
-}
-
-Slavetrader_30
-{
-Жанна
-}
-Slavetrader_31
-{
-Мольери
-}
-
-Slavetrader_32
-{
-Изаура
-}
-Slavetrader_33
-{
-
-}
+Slavetrader_1 {Режим исследования: таймер продлён. Выполните квест!}
+Slavetrader_2 { }
+Slavetrader_3 {а}
+Slavetrader_4 { }
+Slavetrader_5 {ла}
+Slavetrader_6 {ёл}
+Slavetrader_7 {ла}
+Slavetrader_8 {Набуки}
+Slavetrader_9 {Анаконда}
+Slavetrader_10 {из Каракаса}
+Slavetrader_11 {из Куманы}
+Slavetrader_12 {Франсуа}
+Slavetrader_13 {Гонтьер}
+Slavetrader_14 {счел}
+Slavetrader_15 {сочла}
+Slavetrader_16 {у берегов Барбадоса}
+Slavetrader_17 {у берегов Гваделупы}
+Slavetrader_18 {недалеко от Сантьяго}
+Slavetrader_19 {недалеко от Гаваны}
+Slavetrader_20 {у берегов Тортуги}
+Slavetrader_21 {у берегов Тринидада}
+Slavetrader_22 {у берегов Сент-Кристофера}
+Slavetrader_23 {недалеко от Санто-Доминго}
+Slavetrader_24 {недалеко от Порт-о-Принса}
+Slavetrader_25 {недалеко от Картахены}
+Slavetrader_26 {Таманго}
+Slavetrader_27 { }
+Slavetrader_28 {Свен}
+Slavetrader_29 {Карлсон}
+Slavetrader_30 {Жанна}
+Slavetrader_31 {Мольери}
+Slavetrader_32 {Изаура}
+Slavetrader_33 { }

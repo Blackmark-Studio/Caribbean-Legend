@@ -17,7 +17,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		if (CheckAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk"))
 		{
 			link.l1 = "Su Señoría, ¿quería verme?";
-			link.l1.go = "PZ1";
+			link.l1.go = "PZ_1";
 		}
 		// Украденное воспоминание
 		if (CheckAttribute(pchar, "questTemp.UV_DialogMayor"))
@@ -69,33 +69,33 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		npchar.quest.patria = "true";
 		break;
 
-	case "PZ1":
+	case "PZ_1":
 		DeleteAttribute(pchar, "questTemp.PZ.PortPaxMayorTalk");
 		dialog.text = "No, no te he convocado, monsieur. ¿Querías algo?";
 		link.l1 = "¿Cómo podría? Pero tu mensajero salió a nuestro encuentro; dijo que habías preparado una de las casas de la ciudad para mí...";
-		link.l1.go = "PZ2";
+		link.l1.go = "PZ_2";
 		DelLandQuestMark(npchar);
 		break;
 
-	case "PZ2":
+	case "PZ_2":
 		dialog.text = "¿Qué casa, qué mensajero, qué insolencia es esta?";
 		link.l1 = "¿Qué quieres decir, qué mensajero...? Su nombre es Henri Thibaut, y...";
-		link.l1.go = "PZ3";
+		link.l1.go = "PZ_3";
 		break;
 
-	case "PZ3":
+	case "PZ_3":
 		dialog.text = "¿QUÉ? ¿Sabéis siquiera quién es él? Aparentemente no. Pero no importa. ¿Qué hace el sobrino de Levasseur en mi ciudad?";
 		link.l1 = "¡Oh, Dios mío...!";
-		link.l1.go = "PZ4";
+		link.l1.go = "PZ_4";
 		break;
 
-	case "PZ4":
+	case "PZ_4":
 		dialog.text = "De Maure, ¿puedes oírme? ¿Monsieur?";
 		link.l1 = "...";
-		link.l1.go = "PZ5";
+		link.l1.go = "PZ_5";
 		break;
 
-	case "PZ5":
+	case "PZ_5":
 		DialogExit();
 		LAi_SetActorType(pchar);
 		LAi_ActorRunToLocator(pchar, "reload", "reload1", "PZ_SharleBezhitObratno", -1);

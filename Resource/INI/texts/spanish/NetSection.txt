@@ -1,17 +1,17 @@
-Net_ShipDieFromPlayer 			{%1 <%2> ha enviado a %3 <%4> al fondo del mar.}
-Net_ShipDieFromCollisionLiveShip 	{%1 <%2> ha destrozado a %3 <%4>.}
-Net_ShipDieFromCollisionDeadShip 	{%1 <%2> se ha convertido en pasto de los tiburones! ¡Menuda tragedia para semejante capitán!}
-Net_ShipDieFromCollisionIsland 		{¡%1 <%2> se ha chocado contra el acantilado! ¡Qué pena que le pase a semejante capitán!}
-Net_ShipDieFromLighting 		{¡Dios se ha enfadado con %1 <%2> y lo ha fulminado con sus propias manos!}
-Net_ShipDieFromCriticalHit 		{¡%1 <%2> ha hecho pedazos a %3 <%4>!}
-Net_CriticalHit 			{¡La bala del cañón de %1 <%2> ha caído en el barril de pólvora de la cubierta de %3 <%4>!}
-Net_MastFallFromHit 			{%1 <%2> ha destrozado el mástil de %3 <%4>.}
-Net_MastFallFromCollision 		{%1 <%2> se ha quedado sin mástil al chocar.}
-Net_FireActivation 			{%1 <%2> le ha prendido fuego a %3 <%4>}
-NetFG_ServerIsFull 			{El servidor está lleno. No se pueden conectar más jugadores.}
-NetFG_NeedUserPassword 			{La contraseña introducida no coincide con ningún usuario registrado en el servidor. Inténtalo de nuevo.}
-NetFG_NeedServerPassword 		{Has introducido la contraseña incorrecta para este servidor. Inténtalo de nuevo.}
-NetFG_RejectedUnknown 			{Por algún motivo que no hay quien entienda, parece que no puedes conectarte a este servidor.}
-NetFG_Banned 				{Se te ha excluido de este servidor.}
-NetEG_DeathMatch 			{Fin del combate.\n \n%1 gana!}
-NetEG_Team 				{Fin del combate.\n \n ¡El equipo "%1" gana!}
+Net_ShipDieFromPlayer {%1 <%2> ha enviado a %3 <%4> al fondo del mar.}
+Net_ShipDieFromCollisionLiveShip {%1 <%2> ha destrozado a %3 <%4>.}
+Net_ShipDieFromCollisionDeadShip {%1 <%2> se ha convertido en pasto de los tiburones! ¡Menuda tragedia para semejante capitán!}
+Net_ShipDieFromCollisionIsland {¡%1 <%2> se ha chocado contra el acantilado! ¡Qué pena que le pase a semejante capitán!}
+Net_ShipDieFromLighting {¡Dios se ha enfadado con %1 <%2> y lo ha fulminado con sus propias manos!}
+Net_ShipDieFromCriticalHit {¡%1 <%2> ha hecho pedazos a %3 <%4>!}
+Net_CriticalHit {¡La bala del cañón de %1 <%2> ha caído en el barril de pólvora de la cubierta de %3 <%4>!}
+Net_MastFallFromHit {%1 <%2> ha destrozado el mástil de %3 <%4>.}
+Net_MastFallFromCollision {%1 <%2> se ha quedado sin mástil al chocar.}
+Net_FireActivation {%1 <%2> le ha prendido fuego a %3 <%4>}
+NetFG_ServerIsFull {El servidor está lleno. No se pueden conectar más jugadores.}
+NetFG_NeedUserPassword {La contraseña introducida no coincide con ningún usuario registrado en el servidor. Inténtalo de nuevo.}
+NetFG_NeedServerPassword {Has introducido la contraseña incorrecta para este servidor. Inténtalo de nuevo.}
+NetFG_RejectedUnknown {Por algún motivo que no hay quien entienda, parece que no puedes conectarte a este servidor.}
+NetFG_Banned {Se te ha excluido de este servidor.}
+NetEG_DeathMatch {Fin del combate.\n \n%1 gana!}
+NetEG_Team {Fin del combate.\n \n ¡El equipo "%1" gana!}

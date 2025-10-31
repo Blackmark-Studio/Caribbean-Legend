@@ -26,7 +26,7 @@ void ProcessDialogEvent()
                     link.l1.go = "exit";
                     break;
                 }
-                if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < 5)//战斗生成任务 2015
+                if (CheckAttribute(npchar, "quest.march") && !CheckAttribute(pchar, "questTemp.Sharlie.Lock") && GetCompanionQuantity(pchar) < COMPANION_MAX)//战斗生成任务 2015
                 {
                     dialog.text = "哈! 你来得正是时候, 船长... 我有个生意要和你谈。 你能抽出几个小时吗? ";
                     link.l1 = "不能。 我赶时间, 伙计。 也许下次吧。 ";

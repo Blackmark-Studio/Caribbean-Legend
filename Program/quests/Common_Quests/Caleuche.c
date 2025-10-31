@@ -6,8 +6,11 @@ void Caleuche_StartTotal(string qName) // этот долбоебизм вызв
 {
 	log_testinfo("Квест Калеуче стартовал!!!");
 	pchar.questTemp.Caleuche = "Go";
-	pchar.questTemp.Caleuche.SeekAmulet = "true"; 
-	if (pchar.questTemp.HWIC.Detector == "self_win" || pchar.questTemp.HWIC.Detector == "holl_win") pchar.questTemp.Caleuche.Skul = "true";
+	pchar.questTemp.Caleuche.SeekAmulet = "true";
+	bool bOk1, bOk2;
+	bOk1 = CheckAttribute(pchar, "questTemp.HWIC.Detector") && pchar.questTemp.HWIC.Detector == "self_win";
+	bOk2 = CheckAttribute(pchar, "questTemp.HWIC.Detector") && pchar.questTemp.HWIC.Detector == "holl_win";
+	if (bOk1 || bOk2) pchar.questTemp.Caleuche.Skul = "true";
 	if (GetCharacterIndex("Landlady") != -1)
 	{
 		sld = characterFromId("Landlady");
@@ -46,6 +49,14 @@ void Caleuche_StartTotal(string qName) // этот долбоебизм вызв
 	sld.Weight = 8.0;
 	sld.startLocation = "Havana_CryptDungeon";
 	sld.startLocator = "item"+(rand(4)+1);
+}
+
+void Caleuche_StartSandBox(string qName) // Старт квеста "Калеуче" в режиме Песочницы
+{
+	if (SandBoxMode)
+	{
+		SetFunctionTimerCondition("Caleuche_StartTotal", 0, 0, 1, false); // таймер на Калеуче
+	}
 }
 
 void Caleuche_FindFirstAmulet(string qName) // нашли первый амулет
@@ -168,6 +179,7 @@ void Caleuche_PrepareBeliz(string qName) // готовим локации Бел
 	locations[FindLocation("Beliz_Cave_2")].DisableEncounters = true; 
 	locations[FindLocation("Beliz_CaveEntrance_3")].DisableEncounters = true; 
 	locations[FindLocation("Beliz_jungle_03")].DisableEncounters = true; 
+	AddLandQuestMark(characterFromId("Beliz_tavernkeeper"), "questmarkmain");
 }
 
 void Caleuche_FergusCome(string qName) // Фергус в таверне Белиза
@@ -185,6 +197,7 @@ void Caleuche_FergusCome(string qName) // Фергус в таверне Бел�
 	ChangeCharacterAddressGroup(sld, "Beliz_tavern", "sit", "sit3");
 	LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
 	LAi_SetLoginTime(sld, 18.0, 22.0);
+	AddLandQuestMark(sld, "questmarkmain");
 }
 
 void Caleuche_FindLetter(string qName) // 
@@ -197,6 +210,62 @@ void Caleuche_FindLetter(string qName) //
 	pchar.quest.Caleuche_junglebandos.win_condition.l2.start.hour = 0.00;
 	pchar.quest.Caleuche_junglebandos.win_condition.l2.finish.hour = 3.00;
 	pchar.quest.Caleuche_junglebandos.function = "Caleuche_LoginJungleBandos";
+	
+	SetFunctionTimerCondition("Caleuche_CreatePiratePinas", 0, 0, 4, false);
+}
+
+void Caleuche_CreatePiratePinas(string qName)
+{
+	sld = GetCharacter(NPC_GenerateCharacter("Caleuche_PiratePinas", "mercen_11", "man", "man", 25, PIRATE, -1, true, "pirate"));
+	FantomMakeCoolSailor(sld, SHIP_PINNACE, "", CANNON_TYPE_CANNON_LBS12, 100, 100, 100);
+	sld.AlwaysEnemy = true;
+	sld.DontRansackCaptain = true;
+	sld.DontHitInStorm = true;
+	sld.AlwaysSandbankManeuver = true;
+	sld.SinkTenPercent = false;
+	SetCharacterGoods(sld, GOOD_SANDAL, 200);
+	SetCharacterGoods(sld, GOOD_OIL, 200);
+	SetCharacterGoods(sld, GOOD_SHIPSILK, 200);
+	SetCharacterGoods(sld, GOOD_ROPES, 200);
+	Group_FindOrCreateGroup("Caleuche_PiratePinas_ship");
+	Group_SetType("Caleuche_PiratePinas_ship", "pirate");
+	Group_AddCharacter("Caleuche_PiratePinas_ship", "Caleuche_PiratePinas");
+	Group_SetGroupCommander("Caleuche_PiratePinas_ship", "Caleuche_PiratePinas");
+	Group_SetAddress("Caleuche_PiratePinas_ship", "Beliz", "quest_ships", "Quest_ship_4");
+	DelLandQuestMark(characterFromId("belizJailOff"));
+	DelLandQuestMarkToPhantom();
+	
+	// ачивка за захват пинаса
+	PChar.quest.Caleuche_PiratePinas_Achievment.win_condition.l1 = "Character_Capture";
+	PChar.quest.Caleuche_PiratePinas_Achievment.win_condition.l1.character = "Caleuche_PiratePinas";
+	PChar.quest.Caleuche_PiratePinas_Achievment.function = "Caleuche_PiratePinas_Achievment";
+	// таймер
+	SetFunctionTimerCondition("Caleuche_PiratePinas_Late", 0, 0, 1, false);
+}
+
+void Caleuche_PiratePinas_Achievment(string qName)
+{
+	Achievment_Set("ach_CL_176");
+	DeleteQuestCondition("Caleuche_PiratePinas_Late");
+}
+
+void Caleuche_PiratePinas_Late(string qName)
+{
+	if (CharacterIsAlive("Caleuche_PiratePinas"))
+	{
+		sld = CharacterFromID("Caleuche_PiratePinas");
+		sld.lifeday = 0;
+	}
+	DeleteQuestCondition("Caleuche_PiratePinas_Achievment");
+}
+
+void Caleuche_BelizComendantPrison()
+{
+	AddQuestRecord("Caleuche", "15");
+	pchar.questTemp.Caleuche.Bandos = "comendant";
+	pchar.questTemp.Caleuche.BelizChance = hrand(3);
+	SetFunctionTimerCondition("Caleuche_BelizRegard", 0, 0, 3, false); // таймер
+	DeleteQuestCondition("Caleuche_CreatePiratePinas");
 }
 
 void Caleuche_LoginJungleBandos(string qName) // бандосы в лесу
@@ -271,7 +340,7 @@ void Caleuche_JungleBandosRobbery(string qName) //
 			if (i > 1 && i < 4)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Beliz_forestmerchant_"+i, "mush_ctz_"+i, "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "", "mushket2", "cartridge", iScl*2+70);
+				FantomMakeCoolFighter(sld, iRank+5, iScl+5, iScl+5, "", "mushket2", "bullet", iScl*2+70);
 				ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc1");
 				LAi_SetWarriorType(sld);
 			}
@@ -356,6 +425,7 @@ void Caleuche_BelizbandosClear(string qName) // чистим все по кве�
 void Caleuche_BelizRegard(string qName) // 
 {
 	pchar.questTemp.Caleuche.BelizRegard = "true";
+	AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 }
 
 void Caleuche_PrepareMapAttack(string qName) // 
@@ -390,6 +460,7 @@ void Caleuche_MapAttack(string qName) // корабль-призрак ищет 
 	sld.mapEnc.type = "war";
     sld.mapEnc.Name = StringFromKey("Caleuche_5")
 	sld.mapEnc.worldMapShip = "pirates_manowar";
+    sld.mapEnc.NoSkip = "";
 	
 	Group_AddCharacter(sGroup, sCapId);
 	Group_SetGroupCommander(sGroup, sCapId);
@@ -417,6 +488,26 @@ void Caleuche_MapGhostshipBoarding() // подпустили слишком бл
 	SetLaunchFrameFormPic("loading\boarding_b3.tga");
 	LaunchFrameForm();
 	DoQuestCheckDelay("Caleuche_GhostshipGameOver", 15.0);
+}
+
+void Caleuche_PrepareCreateGarpiya()
+{
+	pchar.questTemp.Caleuche.Garpiya = "capitan";
+	pchar.questTemp.Garpiya = "to_portroyal";
+	AddQuestRecord("Caleuche", "19");
+	PChar.quest.Caleuche_GarpiyaFail.win_condition.l1 = "Character_sink";
+	PChar.quest.Caleuche_GarpiyaFail.win_condition.l1.character = "Map_Garpiya";
+	PChar.quest.Caleuche_GarpiyaFail.function = "Caleuche_GarpiyaFail";
+	DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
+}
+
+void Caleuche_GarpiyaFail(string qName) // потопил Гарпию, квест закрывается
+{
+	AddQuestRecord("Caleuche", "20_3");
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("Caleuche", "sSex", GetSexPhrase("","а"));
+	CloseQuestHeader("Caleuche");
+	DeleteAttribute(pchar, "questTemp.Caleuche.Garpiya");
+	DeleteAttribute(pchar, "questTemp.Garpiya");
 }
 
 void Caleuche_CreateGarpiyaInWorld(string qName) // щебека Гарпия на карте
@@ -448,13 +539,13 @@ void Caleuche_CreateGarpiyaInWorld(string qName) // щебека Гарпия н
 	sld.DeckDialogNode = "reginald";
 	FantomMakeCoolSailor(sld, SHIP_XebekVML, StringFromKey("Caleuche_11"), CANNON_TYPE_CULVERINE_LBS18, 70, 70, 70);
 	FantomMakeCoolFighter(sld, 30, 70, 70, "blade_20", "pistol4", "bullet", 200);
-	LAi_SetImmortal(sld, true);
+	// LAi_SetImmortal(sld, true);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.DontHitInStorm = true; // не ломается в шторм
-	sld.Abordage.Enable = false; // запрет абордажа
-	sld.AlwaysFriend = true;
-	sld.ShipEnemyDisable  = true;
+	// sld.Abordage.Enable = false; // запрет абордажа
+	// sld.AlwaysFriend = true;
+	// sld.ShipEnemyDisable  = true;
 	sld.Ship.Mode = "trade";
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
 	SetCharacterPerk(sld, "MusketsShoot");
@@ -471,10 +562,6 @@ void Caleuche_CreateGarpiyaInWorld(string qName) // щебека Гарпия н
 	pchar.quest.Caleuche_garpiya_sea.win_condition.l1 = "Group_Death";
 	pchar.quest.Caleuche_garpiya_sea.win_condition.l1.group = sGroup;
 	pchar.quest.Caleuche_garpiya_sea.function = "Caleuche_CreateGarpiyaInSea";
-	
-	// Captain Beltrop, 12.09.21, отключаем морских ОЗГов на время
-    pchar.GenQuest.SeaHunter2Pause = true;
-    SeaHunter_Delete();
 }
 
 void Caleuche_CreateGarpiyaInSea(string qName) // щебека Гарпия в порту
@@ -538,6 +625,98 @@ void Caleuche_PrepareGarpiyaInWorld(string qName) // подготовка к в�
 	DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
 }
 
+void Caleuche_SpawnItemsInTheChest() // мы получили ключ, лут спавнится в сундуке на Барбадосе
+{
+	if (CharacterIsAlive("Map_Garpiya"))
+	{
+		sld = CharacterFromID("Map_Garpiya");
+		LAi_CharacterDisableDialog(sld);
+		sld.DontDeskTalk = true;
+		LAi_SetImmortal(sld, true);
+		sld.Abordage.Enable = false;
+		sld.AlwaysFriend = true;
+		sld.ShipEnemyDisable  = true;
+	}
+	DeleteAttribute(pchar, "questTemp.Caleuche.Garpiya");
+	DeleteAttribute(pchar, "questTemp.Garpiya");
+	DeleteQuestCondition("Caleuche_GarpiyaFail");
+	GiveItem2Character(pchar, "kaleuche_key");
+	ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key");
+	// сундук со схроном
+	i = Findlocation("Mayak2");
+	Locations[i].models.always.locators = "lighthouse_Blocators";
+	locations[i].private1.key = "kaleuche_key";
+	locations[i].private1.key.delItem = true;
+	locations[i].private1.items.kaleuche_amulet3 = 1;
+	locations[i].private1.items.pistol9 = 1;
+	locations[i].private1.items.indian_6 = 1;
+	locations[i].private1.items.map_barbados = 1;
+	locations[i].private1.items.map_part2 = 1;
+	locations[i].private1.items.jewelry22 = 5;
+	locations[i].private1.items.jewelry17 = 6;
+	locations[i].private1.items.jewelry12 = 3;
+	locations[i].private1.items.jewelry16 = 2;
+	locations[i].private1.items.jewelry20 = 7;
+	locations[i].private1.items.jewelry53 = 11;
+	locations[i].private1.items.mineral25 = 1;
+	locations[i].private1.items.mineral21 = 1;
+	locations[i].private1.items.mineral22 = 5;
+	locations[i].private1.items.mineral26 = 1;
+	locations[i].private1.items.mineral10 = 1;
+	locations[i].private1.items.mineral3 = 10;
+	pchar.quest.caleuche_amulet3.win_condition.l1 = "item";
+	pchar.quest.caleuche_amulet3.win_condition.l1.item = "kaleuche_amulet3";
+	pchar.quest.caleuche_amulet3.function = "Caleuche_ThirdAmuletFind";
+}
+
+void Caleuche_EndFightWithReginald() // Отпускаем Реджинальда
+{
+	Achievment_Set("ach_CL_177");
+	ChangeCharacterNationReputation(pchar, HOLLAND, -20);
+	LAi_SetPlayerType(pchar);
+	Caleuche_SpawnItemsInTheChest();
+	AddQuestRecord("Caleuche", "20_1");
+	pchar.questTemp.Caleuche_ReleasedHarpy = true;
+	pchar.GenQuest.CannotTakeShip = true;
+	PChar.quest.Caleuche_EndFightWithReginald_2.win_condition.l1 = "MapEnter";
+	PChar.quest.Caleuche_EndFightWithReginald_2.function = "Caleuche_EndFightWithReginald_2";
+	LAi_ReloadBoarding();
+}
+
+void Caleuche_EndFightWithReginald_2(string qName)
+{
+	DeleteAttribute(pchar, "GenQuest.CannotTakeShip");
+}
+
+void Caleuche_KillToReginald() // стреляем в Реджинальда в каюте
+{
+	Achievment_Set("ach_CL_177");
+	if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
+	{
+		GiveItem2Character(pchar, "pistol1");
+		EquipCharacterbyItem(pchar, "pistol1");
+	}
+	LAi_ActorAnimation(pchar, "Shot", "1", 1.8);
+	DoQuestFunctionDelay("Caleuche_KillToReginald_2", 0.9);
+}
+
+void Caleuche_KillToReginald_2(string qName)
+{
+	sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
+	LAi_KillCharacter(sld);
+	DoQuestFunctionDelay("Caleuche_KillToReginald_3", 1.0);
+	Achievment_SetStat(95, 1);
+}
+
+void Caleuche_KillToReginald_3(string qName)
+{
+	ChangeCharacterComplexReputation(pchar, "nobility", -10);
+	LAi_SetPlayerType(pchar);
+	Caleuche_SpawnItemsInTheChest();
+	AddQuestRecord("Caleuche", "20_2");
+	PostEvent("LAi_event_boarding_EnableReload", 5000);
+}
+
 void Caleuche_ThirdAmuletFind(string qName) // нашли третий амулет
 {
 	BackItemDescribe("kaleuche_key");
@@ -563,16 +742,49 @@ void Caleuche_CreateMonk(string qName) // ставим монаха в Вилл�
 
 void Caleuche_CreateJoakimSkel(string qName) // в комнате ночью
 {
+	LAi_FadeToBlackStartInstantly();
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(-1.85, 0.90, -3.16, true, -0.35, -1.30, -0.98);
 	LAi_group_Delete("EnemyFight");
 	chrDisableReloadToLocation = true;//закрыть локацию
 	LAi_SetActorType(pchar);
-	LAi_ActorTurnToLocator(pchar, "goto", "goto2");
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_2", 1.5);
+}
+
+void Caleuche_CreateJoakimSkel_2(string qName)
+{
+	EndBattleLandInterface();
+	ClearAllLogStrings();
+	locCameraFromToPos(-1.85, 0.90, -3.16, true, -0.35, -1.20, -0.98);
+	LAi_FadeToBlackEnd();
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_3", 0.5);
+}
+
+void Caleuche_CreateJoakimSkel_3(string qName)
+{
+	LAi_ActorGoToLocator(pchar, "goto", "goto3", "Caleuche_CreateJoakimSkel_3_1", -1);
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_4", 0.4);
+}
+
+void Caleuche_CreateJoakimSkel_4(string qName)
+{
 	CreateLocationParticles("large_smoke", "goto", "goto2", 0.5, 0, 0, "");
-	DoQuestFunctionDelay("Caleuche_SetLandLedySkel", 5.0);
 	DoQuestFunctionDelay("Terrapin_SetMusic", 1.2);
 }
 
-void Caleuche_SetLandLedySkel(string qName) // скелет хозяйки дома
+void Caleuche_CreateJoakimSkel_5()
+{
+	LAi_ActorTurnToLocator(pchar, "goto", "goto2");
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_7", 2.0);
+}
+
+void Caleuche_CreateJoakimSkel_7(string qName)
+{
+	locCameraFromToPos(0.76, 0.85, -0.44, true, -1.05, -0.95, 1.60);
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_8", 1.5);
+}
+
+void Caleuche_CreateJoakimSkel_8(string qName) // скелет хозяйки дома
 {
 	PlaySound("Types\skel.wav");
 	int iRank = 20+MOD_SKILL_ENEMY_RATE*3;
@@ -585,7 +797,7 @@ void Caleuche_SetLandLedySkel(string qName) // скелет хозяйки до�
 	{
 		sld.cirassId = Items_FindItemIdx("cirass1");
 		SetCharacterPerk(sld, "Energaiser");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "HardHitter");
 	}
 	float fMft = MOD_SKILL_ENEMY_RATE/10;
@@ -604,12 +816,25 @@ void Caleuche_SetLandLedySkel(string qName) // скелет хозяйки до�
 	LAi_SetActorType(sld);
 	LAi_ActorTurnToCharacter(sld, pchar);
 	ChangeCharacterAddressGroup(sld, "Villemstad_houseSp1_room", "goto", "goto2");
+	CharacterTurnByChr(sld, pchar);
 	CreateLocationParticles("fire_incas_Simple", "goto", "goto2", 0.5, 0, 0, "");
-	DoQuestFunctionDelay("Caleuche_LandLedySkelAttack", 5.0);
+	
+	DoQuestFunctionDelay("Caleuche_CreateJoakimSkel_9", 0.2);
+}
+
+void Caleuche_CreateJoakimSkel_9(string qName)
+{
+	// locCameraFromToPos(-0.48, 0.77, 2.15, true, -1.17, -1.20, 0.36);
+	SetCharacterAnimationSpeed(pchar, "cross", 1.5);
+	LAi_ActorAnimation(pchar, "cross", "1", 5.0);
+	DoQuestFunctionDelay("Caleuche_LandLedySkelAttack", 2.0);
 }
 
 void Caleuche_LandLedySkelAttack(string qName) // скелет хозяйки дома атакует
 {
+	SetCharacterAnimationSpeed(pchar, "cross", 1.0);
+	EndQuestMovie();
+	locCameraFollowEx(true);
 	PlaySound("Reef\reef_01.wav");
 	LAi_SetPlayerType(pchar);
 	sld = characterFromId("skel_landlady");
@@ -619,7 +844,7 @@ void Caleuche_LandLedySkelAttack(string qName) // скелет хозяйки д
 	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
 	LAi_group_SetCheck("EnemyFight", "Caleuche_LandLedySkelDie");
 	LAi_SetFightMode(pchar, true);
-	DoQuestFunctionDelay("Terrapin_SetMusic", 0.5);
+	// DoQuestFunctionDelay("Terrapin_SetMusic", 0.5);
 }
 
 void Caleuche_PrepareCubaGrot() // готовим пещеру Кубы
@@ -630,7 +855,7 @@ void Caleuche_PrepareCubaGrot() // готовим пещеру Кубы
 	LocatorReloadEnterDisable("Cuba_Jungle_07", "reload2_back", true);
 	// ставим охотника
 	sld = GetCharacter(NPC_GenerateCharacter("cavehunter", "mush_ctz_2", "man", "mushketer", 25, SPAIN, -1, true, "soldier"));
-	FantomMakeCoolFighter(sld, 25, 70, 100, "", "mushket1", "cartridge", 150);
+	FantomMakeCoolFighter(sld, 25, 70, 100, "", "mushket1", "bullet", 150);
 	sld.Dialog.Filename = "Quest\Caleuche_dialog.c";
 	sld.dialog.currentnode = "cavehunter";
 	sld.greeting = "town_pirate";
@@ -664,7 +889,7 @@ void Caleuche_CubaCaveEntrance(string qName) // бой перед пещерой
 		if (CheckAttribute(sld, "quest.caleuche"))
 		{
 			sld.MusketerDistance = 0;
-			sld.MushketBulletType = "cartridge";
+			sld.MushketBulletType = "bullet";
 			ChangeCharacterAddressGroup(sld, "Cuba_CaveEntrance", "officers", "reload2_1");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -699,7 +924,7 @@ void Caleuche_CubaGrot(string qName) // нечисть в гроте
 		if (CheckAttribute(sld, "quest.caleuche"))
 		{
 			sld.MusketerDistance = 5;
-			sld.MushketBulletType = "cartridge";
+			sld.MushketBulletType = "bullet";
 			ChangeCharacterAddressGroup(sld, "Cuba_Grot", "officers", "reload1_2");
 			LAi_SetWarriorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -837,7 +1062,7 @@ void Caleuche_InMerrimanCave(string qName) // заполняем логово М
 	{
 		sld.cirassId = Items_FindItemIdx("cirass1");
 		SetCharacterPerk(sld, "Energaiser");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "HardHitter");
 		TakeNItems(pchar, "potion2", MOD_SKILL_ENEMY_RATE-5);
 	}
@@ -921,6 +1146,7 @@ void Caleuche_FindSkull(string qName) // нашли нефритовый чер�
 	sld.shown = true; // деактивация для локатора итем
 	sld.price = 0;
 	sld.ItemType = "QUESTITEMS";
+	AddLandQuestMark(characterFromId("Tuttuat"), "questmarkmain");
 }
 
 void Caleuche_MerrimanBoxOpen() // открыли ящик Мерримана
@@ -958,6 +1184,8 @@ void Caleuche_TuttuatAmuletOver(string qName) // действие амулето
 	DeleteAttribute(sld, "groupID");
 	DeleteAttribute(sld, "unique");
 	DeleteAttribute(sld, "kind");
+	DeleteAttribute(sld, "modifiers");
+	DeleteAttribute(sld, "descriptors.AmuletType_1");
 	sld.ItemType = "QUESTITEMS";
 	sld = ItemsFromID("kaleuche_amulet3");
 	sld.picIndex = 11;
@@ -965,8 +1193,11 @@ void Caleuche_TuttuatAmuletOver(string qName) // действие амулето
 	DeleteAttribute(sld, "groupID");
 	DeleteAttribute(sld, "unique");
 	DeleteAttribute(sld, "kind");
+	DeleteAttribute(sld, "modifiers");
+	DeleteAttribute(sld, "descriptors.AmuletType_1");
 	sld.ItemType = "QUESTITEMS";
 	pchar.questTemp.Caleuche.AmuletOver = "true";
+	CT_UpdateCashTables(pchar);
 }
 
 void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Роа
@@ -1035,7 +1266,7 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	pchar.quest.Caleuche_alcove.win_condition.l1.locator = "teleport6";
 	pchar.quest.Caleuche_alcove.function = "Caleuche_InAlcoveTop";
 	// подсказки
-	pchar.quest.Caleuche_support1.win_condition.l1 = "locator";
+	/* pchar.quest.Caleuche_support1.win_condition.l1 = "locator"; // to_del
 	pchar.quest.Caleuche_support1.win_condition.l1.location = "KhaelRoa_Treasure_Alcove";
 	pchar.quest.Caleuche_support1.win_condition.l1.locator_group = "teleport";
 	pchar.quest.Caleuche_support1.win_condition.l1.locator = "teleport0";
@@ -1044,7 +1275,7 @@ void Caleuche_KhaelRoaArrive(string qName) // прибыли на Хаэль Р�
 	pchar.quest.Caleuche_support2.win_condition.l1.location = "KhaelRoa_Treasure_Alcove";
 	pchar.quest.Caleuche_support2.win_condition.l1.locator_group = "teleport";
 	pchar.quest.Caleuche_support2.win_condition.l1.locator = "teleport1";
-	pchar.quest.Caleuche_support2.function = "Caleuche_TeleportSupport";
+	pchar.quest.Caleuche_support2.function = "Caleuche_TeleportSupport"; */
 	pchar.quest.Caleuche_support3.win_condition.l1 = "locator";
 	pchar.quest.Caleuche_support3.win_condition.l1.location = "KhaelRoa_Labirint_3";
 	pchar.quest.Caleuche_support3.win_condition.l1.locator_group = "quest";
@@ -1142,6 +1373,11 @@ void Caleuche_NineStoneTilesOpen() // прошли 9 плиток правиль
 void Caleuche_NineStoneDelete() // ступили на ложную плитку - начинай сначала
 {
 	PlaySound("interface\box_locked.wav");
+	if (!CheckAttribute(pchar, "questTemp.Caleuche_NineStoneInfo"))
+	{
+		pchar.questTemp.Caleuche_NineStoneInfo = true;
+		DoQuestFunctionDelay("Caleuche_NineStoneInfo", 3.0);
+	}
 	switch (sti(pchar.questTemp.Caleuche.Tile))
 	{
 		case 0: pchar.questTemp.Caleuche.NextTile = "step1"; break;
@@ -1150,6 +1386,11 @@ void Caleuche_NineStoneDelete() // ступили на ложную плитку
 		case 3: pchar.questTemp.Caleuche.NextTile = "step7"; break;
 		case 4: pchar.questTemp.Caleuche.NextTile = "step1"; break;
 	}
+}
+
+void Caleuche_NineStoneInfo(string qName)
+{
+	AddQuestRecord("Caleuche", "45");
 }
 
 void Caleuche_ShowLeftLevers(string qName) // показываем левые рычаги
@@ -1382,9 +1623,10 @@ void Caleuche_LeverFight(string qName) // атака чавинави
 	LAi_SetFightMode(pchar, true);
 }
 
+// to_del
 void Caleuche_TeleportSupport(string qName)
 {
-	log_info(StringFromKey("Caleuche_20"));
+	//log_info(StringFromKey("Caleuche_20"));
 }
 
 void Caleuche_TeleportStart() // телепортация по алькову
@@ -1573,7 +1815,7 @@ void Caleuche_CreateGhostshipKhalRoa(string qName)//подгружаем в мо
 	sld = GetCharacter(NPC_GenerateCharacter("Kaleuche_khaelroacap", "skeletcap", "man", "man", iRank, PIRATE, -1, true, "quest"));
 	sld.name = StringFromKey("Caleuche_27");
 	sld.lastname = StringFromKey("Caleuche_28");
-	FantomMakeCoolSailor(sld, SHIP_CURSED_FDM, StringFromKey("Caleuche_29"), CANNON_TYPE_CANNON_LBS36, 80, 80, 80);
+	FantomMakeCoolSailor(sld, SHIP_CURSED_FDM, GetShipName("Flying Heart"), CANNON_TYPE_CANNON_LBS36, 80, 80, 80);
 	FantomMakeCoolFighter(sld, iRank, 100, 100, "blade_21", "pistol5", "bullet", 400);
 	sld.MultiFighter = 1.0+MOD_SKILL_ENEMY_RATE/10;
 	GiveItem2Character(sld, "kaleuche_amulet1");
@@ -1663,6 +1905,63 @@ void Caleuche_KhaelroaAbordage(string qName) //
 {
 	pchar.questTemp.Caleuche.Abordage = "true";
 	Achievment_Set("ach_49");
+}
+
+void Caleuche_AlonsoAfterWinOnShip_1(string qName)
+{
+	sld = GetCharacter(NPC_GenerateCharacter("Caleuche_Alonso", "Alonso", "man", "man", sti(pchar.rank), FRANCE, 0, false, "soldier"));
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
+	GiveItem2Character(sld, "blade_10");
+	EquipCharacterByItem(sld, "blade_10");
+	sld.Dialog.Filename = "Quest\Caleuche_dialog.c";
+	sld.dialog.currentnode = "Caleuche_Alonso_1";
+	ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");
+	LAi_SetActorType(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
+}
+
+void Caleuche_AlonsoAfterWinOnShip_2()
+{
+	AddItems(pchar, "gold_dublon", 2500);
+	AddCharacterExpToSkill(pchar, "Leadership", 500);
+	ChangeCharacterComplexReputation(pchar, "nobility", 6);
+	AddCrewMorale(Pchar, 50);
+	
+	Caleuche_AlonsoAfterWinOnShip_5();
+}
+
+void Caleuche_AlonsoAfterWinOnShip_3()
+{
+	AddItems(pchar, "gold_dublon", 3750);
+	AddCharacterExpToSkill(pchar, "Commerce", 300);
+	ChangeCharacterComplexReputation(pchar, "nobility", 2);
+	AddCrewMorale(Pchar, 10);
+	
+	Caleuche_AlonsoAfterWinOnShip_5();
+}
+
+void Caleuche_AlonsoAfterWinOnShip_4()
+{
+	AddItems(pchar, "gold_dublon", 5000);
+	AddComplexSelfExpToScill(300, 300, 300, 300);
+	ChangeCharacterComplexReputation(pchar, "nobility", -12);
+	AddCrewMorale(Pchar, -50);
+	
+	Caleuche_AlonsoAfterWinOnShip_5();
+}
+
+void Caleuche_AlonsoAfterWinOnShip_5()
+{
+	sld = CharacterFromID("Caleuche_Alonso");
+	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "Caleuche_AlonsoAfterWinOnShip_5_1", 5);
+}
+
+void Caleuche_AlonsoAfterWinOnShip_6()
+{
+	DeleteAttribute(&TEV, "boardingReloadFreeze");
+	PostEvent("LAi_event_boarding_EnableReload", 5000);
 }
 
 void Caleuche_MangarosaPotion(string qName) // 
@@ -1924,18 +2223,22 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		sld = characterFromId("Tuttuat");
 		sld.dialog.currentnode = "Tuttuat_11"; // ноду шаману
 		AddLandQuestMark(sld, "questmarkmain");
-		if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = characterFromId("Mary");
-		else
-		{
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = characterFromId("Helena");
-			else
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "Alonso", "man", "man", 25, FRANCE, 1, false, "soldier"));
-				sld.name = StringFromKey("Caleuche_39");
-				sld.lastname = StringFromKey("Caleuche_40");
-				sld.dialog.FileName = "Quest\Caleuche_dialog.c";
-			}
-		}
+		// if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = characterFromId("Mary");
+		// else
+		// {
+			// if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) sld = characterFromId("Helena");
+			// else
+			// {
+				// sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "Alonso", "man", "man", 25, FRANCE, 1, false, "soldier"));
+				// sld.name = StringFromKey("Caleuche_39");
+				// sld.lastname = StringFromKey("Caleuche_40");
+				// sld.dialog.FileName = "Quest\Caleuche_dialog.c";
+			// }
+		// }
+		sld = GetCharacter(NPC_GenerateCharacter("caleuche_oursailor", "Alonso", "man", "man", 25, FRANCE, 1, false, "soldier"));
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
+		sld.dialog.FileName = "Quest\Caleuche_dialog.c";
 		sld.Dialog.currentnode = "on_coast";
 		ChangeCharacterAddressGroup(sld, "shore27", "goto", "goto2");
 		LAi_SetActorType(sld);
@@ -2004,6 +2307,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		AddQuestRecord("Caleuche", "25");
 		pchar.questTemp.Caleuche = "priest";
 		AddComplexSelfExpToScill(100, 100, 100, 100);
+		AddLandQuestMark(characterFromId("Villemstad_Priest"), "questmarkmain");
 	}
 	else if (sQuestName == "Caleuche_CubaCaveEntSkelDie") // прибили скелетов у пещеры
 	{
@@ -2089,6 +2393,7 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		AddComplexSelfExpToScill(150, 150, 150, 150);
 		ChangeCharacterComplexReputation(pchar, "authority", 1);
 		ChangeCharacterComplexReputation(pchar, "fame", 1);
+		AddLandQuestMark(characterFromId("Havana_Priest"), "questmarkmain");
 	}
 	else if (sQuestName == "Caleuche_MerrimanTeleport") // телепортируем Мерримана
 	{
@@ -2196,6 +2501,11 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 		if (sti(pchar.questTemp.Caleuche.LeverType) == 1) pchar.questTemp.Caleuche.LeverR = "true";
 		DeleteAttribute(pchar, "questTemp.Caleuche.LeverType");
 		iGlobalTemp++;
+		if (!CheckAttribute(pchar, "questTemp.Caleuche_LeverInfo"))
+		{
+			pchar.questTemp.Caleuche_LeverInfo = true;
+			AddQuestRecord("Caleuche", "46");
+		}
 	}
 	else if (sQuestName == "Caleuche_TeleportTrapOver") // прибили чавинави у телепорта-ловушки
 	{
@@ -2237,8 +2547,19 @@ bool Caleuche_QuestComplete(string sQuestName, string qname)
 	{
 		sld = characterFromId("Kaleuche_khaelroacap");
 		shTo = &RealShips[sti(sld.Ship.Type)];
-		shTo.SpeedRate = 15.2;
+		shTo.SpeedRate = 11.0;
 		shTo.TurnRate = 32.0;
+		
+		TEV.boardingReloadFreeze = "";
+		DoQuestFunctionDelay("Caleuche_AlonsoAfterWinOnShip_1", 12.0);
+	}
+	else if (sQuestName == "Caleuche_CreateJoakimSkel_3_1")
+	{
+		Caleuche_CreateJoakimSkel_5();
+	}
+	else if (sQuestName == "Caleuche_AlonsoAfterWinOnShip_5_1")
+	{
+		Caleuche_AlonsoAfterWinOnShip_6();
 	}
 	else
 	{

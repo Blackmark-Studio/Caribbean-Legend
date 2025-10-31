@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Un crâne de jade avec des gemmes vertes dans les orbites ? Alors c'est ça que je dois trouver ? Mais ce marin pourrait être mort dans la selva il y a cinquante ans, et le crâne pourrait être perdu à jamais !";
+				link.l1 = "Un crâne de jade avec des gemmes vertes dans les orbites ? Mais ce marin pourrait être mort dans la selva il y a cinquante ans, et le crâne pourrait être perdu à jamais !";
 				link.l1.go = "Tuttuat_21_2";
 			}
 		break;
@@ -297,6 +297,8 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Tuttuat_10";
 			pchar.questTemp.Caleuche = "mayak"; 
 			AddQuestRecord("Caleuche", "6");
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "Santiago_Lightman") {AddLandQuestMark(characterFromId("Santiago_Lightman"), "questmarkmain");}
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "BasTer_Lightman") {AddLandQuestMark(characterFromId("BasTer_Lightman"), "questmarkmain");}
 		break;
 		
 		case "Tuttuat_33":
@@ -454,6 +456,7 @@ void ProcessDialogEvent()
 			dialog.text = " (regardant) Oui, c'est celui-là. Très belle. Et très effrayante.";
 			link.l1 = "Bien sûr... Mais ce qui est plus intéressant - j'ai traversé toute la mer des Caraïbes de Cuba à la Dominique, et le Caleuche n'a jamais essayé de m'attaquer, quand j'avais ce crâne, je ne l'ai même pas vu. Et quand je transportais des amulettes pour toi, il me traquait constamment dès que je mettais les voiles, il me retrouvait en quelques heures.";
 			link.l1.go = "Tuttuat_46a";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "Tuttuat_46a":
@@ -487,8 +490,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tuttuat_48":
-			dialog.text = "Je suppose qu'elle est petite et au nord du village quelque part dans cette vaste étendue d'eau que vous appelez océan, ce n'est pas loin.";
-			link.l1 = "Hmm... Au nord de la Dominique à la frontière de l'océan peut-être ? Nom de Dieu - c'est une très vaste zone en mer ! Comment suis-je censé trouver une petite île là-bas, si personne n'en a entendu parler ?";
+			dialog.text = "D’après le récit, je comprends qu’il s’agit d’une petite île, située depuis l’île avec ce village en direction que les visages pâles appellent 'nord', au milieu de trois îles, et du quatrième côté se trouve la grande eau — l’océan.";
+			link.l1 = "Hmm... Au nord de la Dominique, dans un triangle d’îles, au bord de l’océan ? Nom de Dieu, c’est une sacrée étendue de mer ! Comment trouver là un îlot dont personne n’a jamais entendu parler ?";
 			link.l1.go = "Tuttuat_49";
 		break;
 		
@@ -577,12 +580,18 @@ void ProcessDialogEvent()
 			ChangeItemDescribe("kaleuche_amulet2", "itmdescr_kaleuche_amulet2_sword");
 			ChangeItemDescribe("kaleuche_amulet3", "itmdescr_kaleuche_amulet3_shield");
 			sld = ItemsFromID("kaleuche_amulet2");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			aref modifier = AddCallback(sld, CT_COMMON, "KaleucheAmuletAttack");
+			modifier.arg0 = 0.25;
 			sld.picIndex = 13;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;
 			sld.unique = true;	
 			sld.ItemType = "ARTEFACT";
 			sld = ItemsFromID("kaleuche_amulet3");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			SetModifierFromSource(sld, HAS + M_CANT_BE_POISONED, true, TALISMAN_ITEM_TYPE);
+			SetModifier(sld, M_REDUCE_DAMAGE, 0.25);
 			sld.picIndex = 14;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;
@@ -620,6 +629,7 @@ void ProcessDialogEvent()
 				dialog.text = "Moi parler avec les esprits. Tu étais sur l'île dans le temple de Yum Cimil. As-tu trouvé le Caleuche et l'amulette ?";
 				link.l1 = "Tu as raison, grand chaman. J'ai trouvé l'île, suis entré dans le temple et ai laissé le crâne de jade à l'intérieur.";
 				link.l1.go = "Tuttuat_63";
+				DelLandQuestMark(npchar);
 			}
 			else
 			{
@@ -1004,6 +1014,62 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
+		// Наш Алонсо после финального абордажа на Калеуче
+		case "Caleuche_Alonso_1":
+			dialog.text = "La barcasse est nettoyée de toute engeance, cap'. Cette fois, les morts ne se sont pas relevés. Mais cette épave... c’est un mystère qu’elle flotte encore.";
+			link.l1 = "C’est la malédiction qui la maintenait, Alonso. Mais c’est fini maintenant.";
+			link.l1.go = "Caleuche_Alonso_2";
+		break;
+
+		case "Caleuche_Alonso_2":
+			dialog.text = "Quels sont vos ordres ? On y met le feu - et on en parle plus ?";
+			link.l1 = "Je vais encore y réfléchir. Même en ruine, le 'Cœur Volant' a failli transformer notre navire en passoire.";
+			link.l1.go = "Caleuche_Alonso_3";
+		break;
+
+		case "Caleuche_Alonso_3":
+			dialog.text = "Côté puissance de feu, cette carcasse n’a rien à envier à personne, maudite soit-elle... Si je suis venu, c’est pour vous parler d’un matelot, Jacques...";
+			link.l1 = "Jacques Trudeau ? Je me souviens. Il nous a rejoints récemment, non ?";
+			link.l1.go = "Caleuche_Alonso_4";
+		break;
+
+		case "Caleuche_Alonso_4":
+			dialog.text = "Tout juste, cap'. Ce fripon a un flair incroyable pour les trésors. Dès que les morts se sont calmés, il a bondi vers une couchette, s’est glissé dessous – et en a sorti un coffre. Et dans le coffre – cinq mille doublons !";
+			link.l1 = "Cinq mille ? Hm... On dirait bien que Balthazar de Cordes et ses hommes espéraient vraiment se débarrasser de la malédiction. Ils gavaient leurs poches d’or, rêvant d’une belle vie... une fois tout cela terminé.";
+			link.l1.go = "Caleuche_Alonso_5";
+		break;
+		
+		case "Caleuche_Alonso_5":
+			dialog.text = "Notre équipage aussi aimerait vivre comme ça, cap’... Si vous partagez avec les gars, ils ne l’oublieront jamais. Mais si vous ne le faites pas – ils s’en souviendront tout autant.";
+			link.l1 = "Tu as raison, Alonso. Il faut gâter un peu l’équipage – ils l’ont mérité. Donne-leur la moitié, et Jacques – exempté de quart pendant une semaine. Aujourd’hui, remplacez la gnôle par du rhum. Mais qu’on reste vigilant – tu sais comme moi que la mer ne pardonne pas.";
+			link.l1.go = "Caleuche_Alonso_6";
+			link.l2 = "Hm... Tu n’as peut-être pas tort, Alonso. L’équipage a besoin de se défouler. Donne-leur un quart du butin. Et surveille que ces pochtrons n’ouvrent pas la fête avant qu’on ait jeté l’ancre dans un port.";
+			link.l2.go = "Caleuche_Alonso_7";
+			link.l3 = "Pour que ces fainéants se dispersent dès le premier port, entre tavernes et bordels ? Pas question de passer un mois à les récupérer un par un. Leur solde suffit. Et apportez les doublons ici. Que personne n’ait l’idée de se les approprier.";
+			link.l3.go = "Caleuche_Alonso_8";
+		break;
+		
+		case "Caleuche_Alonso_6":
+			dialog.text = "Ce sera fait, cap’. Et ne vous inquiétez pas, les gars ne vous décevront jamais.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_2");
+		break;
+		
+		case "Caleuche_Alonso_7":
+			dialog.text = "Bien reçu, cap’. Je sais comment tenir ces diables en laisse – vous pouvez compter sur moi.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_3");
+		break;
+		
+		case "Caleuche_Alonso_8":
+			dialog.text = "Comme vous l’ordonnez, cap’. L’équipage espérait un peu plus... mais vous êtes le capitaine, c’est à vous de décider.";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_4");
+		break;
+		
 		// --> // наш матрос на берегу
 		case "on_coast":
 			dialog.text = "Enfin, tu t'es réveillé, capitaine... Comment te sens-tu ?";
@@ -1067,6 +1133,7 @@ void ProcessDialogEvent()
 			dialog.text = "Hey ! Je n'ai pas encore rassemblé assez de peaux de serpent pour te les vendre, alors fous le camp !";
 			link.l1 = "Hmm... Êtes-vous Fergus Hooper ?";
 			link.l1.go = "fergus_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "fergus_1":
@@ -1130,6 +1197,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Caleuche.Bandos = "start"; 
 			LAi_CharacterDisableDialog(npchar);
 			npchar.lifeday = 0;
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// бандит в городе
@@ -1322,6 +1390,7 @@ void ProcessDialogEvent()
 			// меняем флаг
 			pchar.questTemp.Caleuche.Bandos = "know";
 			SaveCurrentQuestDateParam("questTemp.Caleuche.belizbandos");
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// спалили бандосы в пещере
@@ -1360,6 +1429,7 @@ void ProcessDialogEvent()
 			dialog.text = "Bonjour, collègue ! Qu'est-ce qui t'amène ici ?";
 			link.l1 = TimeGreeting()+", monsieur Jackson. Je suis heureux de vous trouver enfin.";
 			link.l1.go = "reginald_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "reginald_1":
@@ -1413,6 +1483,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "reginald_9";
 			npchar.DeckDialogNode = "reginald_9";
+			AddLandQuestMark(npchar, "questmarkmain");
 		break;
 		
 		case "reginald_9":
@@ -1427,10 +1498,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "reginald_10":
-			Log_Info("You have given 500 doubloons");
-			PlaySound("interface\important_item.wav");
 			RemoveDublonsFromPCharTotal(500);
-			DeleteAttribute(pchar, "GenQuest.SeaHunter2Pause"); // вертаем морских ОЗГов
+			DelLandQuestMark(npchar);
+			
 			dialog.text = "Génial ! Et voici votre clé. Et je n'ai qu'une requête : après avoir pris tout ce qu'il y a dedans, veuillez laisser la clé dans la serrure. Je détesterais devoir commander une nouvelle serrure et une clé pour celle-ci.";
 			link.l1 = "D'accord.";
 			link.l1.go = "reginald_11";
@@ -1444,38 +1514,48 @@ void ProcessDialogEvent()
 		
 		case "reginald_12":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.DontDeskTalk = true;
-			DeleteAttribute(pchar, "questTemp.Caleuche.Garpiya");
-			DeleteAttribute(pchar, "questTemp.Garpiya");
-			GiveItem2Character(pchar, "kaleuche_key"); 
-			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key");
+			AddDialogExitQuestFunction("Caleuche_SpawnItemsInTheChest");
 			AddQuestRecord("Caleuche", "20");
-			// сундук со схроном
-			i = Findlocation("Mayak2");
-			Locations[i].models.always.locators = "lighthouse_Blocators";
-			locations[i].private1.key = "kaleuche_key";
-			locations[i].private1.key.delItem = true;
-			locations[i].private1.items.kaleuche_amulet3 = 1;
-			locations[i].private1.items.pistol9 = 1;
-			locations[i].private1.items.indian_6 = 1;
-			locations[i].private1.items.map_barbados = 1;
-			locations[i].private1.items.map_part2 = 1;
-			locations[i].private1.items.jewelry22 = 5;
-			locations[i].private1.items.jewelry17 = 6;
-			locations[i].private1.items.jewelry12 = 3;
-			locations[i].private1.items.jewelry16 = 2;
-			locations[i].private1.items.jewelry20 = 7;
-			locations[i].private1.items.jewelry53 = 11;
-			locations[i].private1.items.mineral25 = 1;
-			locations[i].private1.items.mineral21 = 1;
-			locations[i].private1.items.mineral22 = 5;
-			locations[i].private1.items.mineral26 = 1;
-			locations[i].private1.items.mineral10 = 1;
-			locations[i].private1.items.mineral3 = 10;
-			pchar.quest.caleuche_amulet3.win_condition.l1 = "item";
-			pchar.quest.caleuche_amulet3.win_condition.l1.item = "kaleuche_amulet3";
-			pchar.quest.caleuche_amulet3.function = "Caleuche_ThirdAmuletFind";
+		break;
+		
+		case "Caleuche_Reginald_21":
+			dialog.text = "Que diable nous voulez-vous ? Ce navire appartient à la Compagnie néerlandaise des Indes occidentales, et ce genre d’agression ne reste jamais impuni. Ils vous traqueront jusque sous terre – vous et votre bande.";
+			link.l1 = "Je me fiche pas mal des Hollandais et de leur foutue compagnie. Je cherche un ancien talisman indien, et je sais que tu l’as – ou que tu l’as eu.";
+			link.l1.go = "Caleuche_Reginald_22";
+		break;
+
+		case "Caleuche_Reginald_22":
+			dialog.text = "T'es complètement fou ! Attaquer un navire pour une babiole ?";
+			link.l1 = "La ferme et donne-le-moi, et peut-être que tu t’en sortiras vivant.";
+			link.l1.go = "Caleuche_Reginald_23";
+		break;
+
+		case "Caleuche_Reginald_23":
+			dialog.text = "Merde... Je ne l’ai pas sur moi. Il est à la Barbade.";
+			link.l1 = "Alors ton rafiot va couler ici et maintenant, et toi, tu rejoindras les rats dans ma cale. On aura tout le trajet pour discuter de l’endroit exact où le trouver. Et crois-moi – j’ai des gars à bord qui peuvent faire parler n’importe quel abruti... sans bavardage ni détours.";
+			link.l1.go = "Caleuche_Reginald_24";
+		break;
+
+		case "Caleuche_Reginald_24":
+			dialog.text = "Pas besoin d’en arriver là. Il est dans un coffre, au phare. Fermé à clé. La voilà.";
+			link.l1 = "Sage décision, mon pote. Dommage que les autres n’aient pas assez de cervelle pour faire pareil... je me salirais moins les mains.";
+			link.l1.go = "Caleuche_Reginald_24_1";
+			link.l2 = "Tu as bien fait. Mais tu vois... je ne peux pas te laisser en vie. Tu irais pleurnicher chez ces margoulins de Hollandais, et je n’ai pas besoin de leur attention.";
+			link.l2.go = "Caleuche_Reginald_24_2";
+		break;
+		
+		case "Caleuche_Reginald_24_1":
+			dialog.text = "Dans ce coffre, y’a tout ce que j’ai gagné en servant les Hollandais...";
+			link.l1 = "On va dire qu’on a un accord : ton coffre pour moi, ta peau pour toi. C’est réglo...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_EndFightWithReginald");
+		break;
+		
+		case "Caleuche_Reginald_24_2":
+			dialog.text = "Argh...";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_KillToReginald");
 		break;
 		
 		// монах в Виллемстаде
@@ -1596,6 +1676,7 @@ void ProcessDialogEvent()
 			dialog.text = "Es-tu sûr de vouloir y aller?";
 			link.l1 = "Absolument. "+sld.name+", père supérieur de l'église à La Havane, m'a envoyé ici. Je dois déterminer ce qui se passe ici, et prendre les mesures adéquates.";
 			link.l1.go = "cavehunter_6";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "cavehunter_6":

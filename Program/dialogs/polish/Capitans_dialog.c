@@ -272,7 +272,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
                 {
                     iCapBattleDifficulty = CalcBattleDifficulty();
-                    link.l2 = "(Шанс " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Czy masz pojęcie, kim jestem? Myślę, że jest całkiem jasne, że moje działa mogą zrobić sito z twojego starego kubła. Rozwiążmy to w pokojowy sposób. Okup to dla mnie dobra decyzja.","Tylko my... i morze... Co sądzisz o uspokojeniu moich ludzi... dla własnego bezpieczeństwa?");
+                    link.l2 = "(Szansa zastraszenia: " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Wiesz w ogóle, kim jestem? Moje działa mogłyby zrobić sito z twojej łajby. Załatwmy to pokojowo – okup mi wystarczy.", "Morze... tylko my... Może, dla bezpieczeństwa twojej załogi, dasz coś moim chłopakom?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -595,8 +595,8 @@ void ProcessDialogEvent()
             //if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
             if(!bOk && iCapBattleDifficulty <= 33)
             {
-                Dialog.text = "Ha-ha-ha! Świetny żart, mam więcej statków. Wróć do swojego statku i utop się z nim.";
-                link.l1 = "Więcej nie znaczy silniejszy, kumplu.";
+                Dialog.text = "Ha-ha! Dobry żart. Zwłaszcza że mam wyraźną przewagę. Wracaj na swój statek i zatonij razem z nim.";
+                link.l1 = "...";
                 link.l1.go = "Boarding";
             }
             else

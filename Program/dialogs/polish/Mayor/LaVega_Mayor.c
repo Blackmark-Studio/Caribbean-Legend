@@ -106,32 +106,32 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "Ah, to ty, de Maure. Cóż za niespodzianka. Na diabła morskiego, twój przyjazd to najciekawsza rzecz, jaka się wydarzyła od dłuższego czasu, do diabła.";
 			link.l1 = "Dobrze cię widzieć, Vensan. Cieszysz się rządzeniem wioską?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 			DelLandQuestMark(npchar);
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Jakże bym mógł? Jestem kapitanem, i to cholernie dobrym, a nie jakimś przeklętym księgowym. I czekałem na posłańców Marcusa, żeby wezwali mnie na nową podróż, dłużej niż czekałem na Boże Narodzenie, przeklęte klątwy!";
 			link.l1 = "Święta Bożego Narodzenia i przekleństwa w jednym zdaniu, to coś. Aye, nie zazdroszczę ci. Choć wielu chciałoby być na twoim miejscu. Ale przybyłem do ciebie w interesach, Vensan.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Interes?! No, wykrztuś to z siebie - wymyśliłeś coś? Masz dobry trop? Zaraz osuszę lokalną piwniczkę z czystej nudy i tych cholernych obliczeń.";
 			link.l1 = "Cóż, chodzi bardziej o to, że mam do ciebie pytanie, nic więcej.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Do diabła! Ale dobrze, słucham, Charles.";
 			link.l1 = "Czy przybyła do was jakaś kobieta? A może zauważyliście ją w La Vega? Znana jest pod imieniem Belle Étoile, choć to tylko pseudonim, więc mogła się przedstawić pod innym imieniem. Ważne jest to, że... ma żółtą skórę. Ale nie jest niewolnicą ani robotnicą - to zamożna kobieta.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Żółtoskóry, ale bogaty? Nigdy nie mieliśmy tu kogoś takiego, nigdy! Wygląda na to, że wciąż prowadzisz swoje interesujące życie, de Maure! Prawie ci zazdroszczę.";
 			link.l1 = "Czyżby... Cóż, dzięki za twój czas, Vensan. Już cię dłużej nie będę odciągać od twojej buchalterii, heh-heh.";
 			link.l1.go = "Exit";

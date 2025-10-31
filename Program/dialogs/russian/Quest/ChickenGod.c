@@ -5,19 +5,11 @@ extern void InitGunExt(string id,
 				string sAttr,       
 				string sBullet,     
 				string sGunPowder,  
-				float  DmgMin_NC,   
-				float  DmgMax_NC,   
-				float  DmgMin_C,    
-				float  DmgMax_C,    
-				float  EnergyP_NC,  
-				float  EnergyP_C,   
-				bool   Stun_NC,     
-				bool   Stun_C,      
+				float  DmgMin,   
+				float  DmgMax, 
+				float  EnergyP,
 				bool   MultiDamage, 
 				int    MisFire,     
-				bool   SelfDamage,  
-				bool   Explosion,   
-				float  Accuracy,    
 				int    ChargeSpeed, 
 				bool   isDefault );
 
@@ -781,7 +773,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "joruba_p3_PinkOtkaz":
-			dialog.text = "Корабль этот хоть и правда с историей, но как-то слишком просто... Нет уж! У тебя еще целая куча несделанной работы по списку. Как сделаешь - обсудим еще раз.";
+			dialog.text = "Корабль этот хоть и правда с историей, но как-то слишком просто... Нет уж! У тебя ещё целая куча несделанной работы по списку. Как сделаешь - обсудим ещё раз.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 		break;
@@ -1313,20 +1305,32 @@ void ProcessDialogEvent()
 
 void ChickenGod_InitAmmo() {
 	if(LoadSegment("items\initItems.c")) {
-		InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 20, 0);
-		InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,  20.0, 100.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 40, 20, 0);
-		InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0,  30.0, 110.0,  0.0,  0.0, 0, 1, 1, 2, 1, 1, 40, 20, 0);
-		InitGunExt(		 "pistol4", "t3",    "bullet_double",               "",  70.0, 270.0,  30.0, 230.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 35, 30, 0);
-		InitGunExt(		 "pistol5", "t3", 	 "bullet_double",               "", 130.0, 330.0,  90.0, 290.0,  0.0,  0.0, 1, 0, 0, 2, 0, 0, 70, 30, 0);
-		InitGunExt(		 "pistol6", "t3",    "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 50, 20, 0);
-		InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0,  30.0,  60.0,  5.0,  5.0, 1, 1, 1, 0, 1, 1, 20, 20, 0);
-		InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,  80.0, 280.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 30, 0);
-		InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0, 100.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 30, 0);
-		InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,  10.0, 620.0, 40.0, 30.0, 1, 1, 0, 0, 0, 0, 45,100, 0);
-		InitGunExt(		 "pistol12", "t3",   "bullet_double",               "",  80.0, 290.0,  60.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 20, 0);
-		InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0,  90.0, 260.0, 15.0,  0.0, 1, 1, 0, 0, 0, 0, 60, 30, 0);
-		InitGunExt(		 "howdah",  "t3", "grapeshot_double",	            "",  50.0, 140.0,  30.0,  70.0,  5.0,  5.0, 1, 1, 1, 0, 0, 1, 50, 30, 0);
-		InitGunExt(		 "pistol14", "t3",   "bullet_double",               "", 130.0, 330.0,  90.0, 290.0,  0.0,  0.0, 1, 0, 0, 4, 0, 0, 70, 34, 0); // Дуэльный двухзарядный пистоль cle 1.3
+		InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,    0.0,  0, 0,  20, 0);
+		InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,      0.0,  1, 0,  20, 0);
+		InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0,    0.0,  1, 2,  20, 0);
+		InitGunExt(		 "pistol4", "t3",    "bullet_double",               "",  70.0, 270.0,     0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol5", "t3", 	 "bullet_double",               "", 130.0, 330.0,     0.0,  0, 2,  30, 0);
+		InitGunExt(		 "pistol6", "t3",    "bullet_double",               "", 100.0, 300.0,     0.0,  0, 0,  20, 0);
+		InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0,    5.0,   1, 0,  20, 0);
+		InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,     0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0,    0.0,  0, 0,  30, 0);
+		InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,   40.0,   0, 0, 100, 0);
+		InitGunExt(		 "pistol12", "t3",   "bullet_double",               "",  80.0, 290.0,    0.0,   0, 0,  20, 0);
+		InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0,  15.0,    0, 0,  30, 0);
+		InitGunExt(		 "howdah",  "t3", "grapeshot_double",	            "",  50.0, 140.0,   5.0,    1, 0,  30, 0);
+		InitGunExt(		 "pistol14", "t3",   "bullet_double",               "", 130.0, 330.0,   0.0,    0, 4,  34, 0); // Дуэльный двухзарядный пистоль cle 1.3
+		
+		InitGunExt(		"mushket1", "t3",    "bullet_double",      			"", 240.0, 440.0,  0.0,    0, 0,  20, 0);
+		InitGunExt(		"mushket2", "t3", 	 "bullet_double",      			"", 270.0, 470.0,  0.0,    0, 0,  15, 0);
+		InitGunExt(		"mushket5", "t3", 	 "bullet_double",      			"", 400.0, 600.0,  15.0,   0, 0,  15, 0);
+		InitGunExt(		"mushket7", "t3", 	 "bullet_double",      			"", 300.0, 440.0,   0.0,   0, 0,  18, 0); // Качественный мушкет cle
+		InitGunExt(		"mushket8", "t3", 	 "bullet_double",      			"", 200.0, 400.0,  0.0,    0, 0,  20, 0); // Четырехзарядный штуцер cle
+		InitGunExt(	  "mushket2x2", "t3", 	 "bullet_double",      			"", 360.0, 560.0,  15.0,   0, 0,  15, 0);
+		
+		InitGunExt(		"mushket3", "t2", "grapeshot_double",	            "", 140.0, 240.0,    0.0,    1, 0,  13, 0);
+		InitGunExt(		"mushket6", "t3", "grapeshot_double",	            "", 180.0, 310.0,  20.0,   1, 0,  15, 0);
+		InitGunExt(		"mushket9", "t3", "grapeshot_double",	            "", 140.0, 240.0,   0.0,   1, 0,  23, 0);
+		InitGunExt(	  "mushket10",  "t3", 	 "bullet_double",      			"", 360.0, 440.0,   0.0,   0, 0,  21, 0);
 		
 		UnloadSegment("items\initItems.c");
 	}
@@ -1337,6 +1341,49 @@ void ChickenGod_InitAmmo() {
 	CGInitGrapeGunExt(	"howdah",	"t3",		3,		85,		3.0,	5.5,	2);		// гауда, двойной заряд
 	CGInitGrapeGunExt(	"mushket3",	"t2",		3,		60,		6.0,	3.0,	3);		// аркебуза, картечь
 	CGInitGrapeGunExt(	"mushket6",	"t3",		3,		90,		4.0,	3.5,	2);		// башенный мушкетон, картечь
+	
+	ref itm;
+	
+	makeref(itm, items[FindItem("mushket9")]);
+	
+	itm.type.t3.basedmg  = 3;
+	itm.type.t3.shards  = 110;
+	itm.type.t3.width   = 8.5;
+	itm.type.t3.height  = 7.85;
+	itm.type.t3.area    = XI_ConvertString("grapes_area_4");
+		
+	if(CheckAttribute(itm, "UpgradeStage"))
+	{
+		int iUpgradeStage = sti(itm.UpgradeStage);
+		
+		switch (iUpgradeStage)
+		{
+			case 2:	
+				itm.type.t3.basedmg  = 3;
+				itm.type.t3.shards  = 120;
+				itm.type.t3.width   = 7.0;
+				itm.type.t3.height  = 5.75;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_4");
+			break;
+			
+			case 3:	
+				itm.type.t3.basedmg  = 4;
+				itm.type.t3.shards  = 130;
+				itm.type.t3.width   = 5.5;
+				itm.type.t3.height  = 4.5;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_3");
+			break;
+			
+			case 4:	
+				itm.type.t3.basedmg  = 5;
+				itm.type.t3.shards  = 130;
+				itm.type.t3.width   = 4.5;
+				itm.type.t3.height  = 3.75;
+				itm.type.t3.area    = XI_ConvertString("grapes_area_2");
+				itm.type.t3.ChargeSpeed = 18;
+			break;
+		}
+	}
 }
 
 void CGInitGrapeGunExt(string id, string sAttr, int basedmg, int shards, float width, float height, int dispersion)

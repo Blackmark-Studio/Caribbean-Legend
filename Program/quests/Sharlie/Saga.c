@@ -41,6 +41,78 @@ void Saga_CreateJimmy(string qName)//ставим Джимми
 	ChangeCharacterAddressGroup(sld, "FortOrange_House1", "goto", "goto1");
 }
 
+void Saga_Jimmy_DlgExit()//поговорили с Джимми
+{
+	pchar.questTemp.Saga = "jackman";
+	sld = characterFromID("SagaJimmy");
+	LAi_CharacterDisableDialog(sld);
+	sld.lifeday = 0;
+	AddQuestRecord("Saga", "4_1");
+}
+
+void Saga_Jimmy_fight()//сражение с Джимми
+{
+	chrDisableReloadToLocation = true;
+	sld = characterFromID("SagaJimmy");
+	LAi_SetImmortal(sld, false);
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
+	LAi_group_SetCheckFunction("EnemyFight", "Saga_KillJimmy");
+	LAi_SetFightMode(pchar, true);
+}
+
+void Saga_KillToJimmy_kino()//убиваем Джимми ножом
+{
+	pchar.questTemp.Saga.Jimmysecret = "true";
+	
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(-2.37, 2.12, -1.51, true, -0.80, 0.03, -0.15);
+	sld = characterFromID("SagaJimmy");
+	SyncPlaybackDlt(PChar, sld);
+	TeleportCharacterToPosAy(sld, -0.07, 0.00, 0.29, -1.50);
+	LAi_SetActorType(sld);
+	SetCharacterActionAnimation(sld, "dead", "hit_stab");
+	LAi_KillCharacter(sld);
+	TeleportCharacterToPosAy(pchar, -0.97, 0.00, 0.29, 1.50);
+	LAi_SetActorType(pchar);
+	LAi_ActorAnimation(pchar, "stab", "", 12.0);
+	SendMessage(pchar, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("knife_01"), "knife_01", "Saber_hand", 1);
+	DoQuestFunctionDelay("Saga_KillToJimmy_kino_2", 1.6);
+}
+
+void Saga_KillToJimmy_kino_2(string qName)
+{
+	locCameraFromToPos(0.95, 2.13, -0.99, true, -0.47, -0.11, 0.37);
+	DoQuestFunctionDelay("Saga_KillToJimmy_kino_3", 2.3);
+}
+
+void Saga_KillToJimmy_kino_3(string qName)
+{
+	EndQuestMovie();
+	LAi_SetPlayerType(pchar);
+	locCameraFollowEx(true);
+	SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", FindItem("knife_01"));
+	
+	DoQuestFunctionDelay("Saga_KillJimmy", 0.1);
+}
+
+void Saga_KillJimmy(string qName)
+{
+	chrDisableReloadToLocation = false; // открыть локацию
+	LAi_group_Delete("EnemyFight");
+	pchar.questTemp.Saga = "jackman";
+	if (CheckAttribute(pchar, "questTemp.Saga.Jimmysecret"))
+	{
+		AddQuestRecord("Saga", "4");
+	}
+	else 
+	{
+		AddQuestRecord("Saga", "3");
+	}
+}
+
 void Saga_createDonovan(string qName)//ставим корвет Донована
 {
 	pchar.quest.Helena_AntiguaOver.over = "yes";// снять таймер
@@ -75,6 +147,7 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 	SetCharacterPerk(sld, "Doctor1");
 	Group_AddCharacter("DonovanGroup", "Donovan");
 	Group_SetGroupCommander("DonovanGroup", "Donovan");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 	if (sti(pchar.rank > 17) && MOD_SKILL_ENEMY_RATE > 2)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("DonovanHelper", "off_eng_2", "man", "man", 25, ENGLAND, 2, true, "quest"));
@@ -99,6 +172,7 @@ void Saga_createDonovan(string qName)//ставим корвет Донован�
 		SetCharacterPerk(sld, "Doctor1");
 		Group_AddCharacter("DonovanGroup", "DonovanHelper");
 		Group_SetGroupCommander("DonovanGroup", "DonovanHelper");
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_MINIBOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 	}
 	Group_SetTaskNone("DonovanGroup");//нет задачи
 	Group_SetAddress("DonovanGroup", "Antigua", "quest_ships", "quest_ship_"+(3+rand(4)));
@@ -122,6 +196,9 @@ void Donovan_AfterBattle(string qName)//после боя
 		ref rShip = GetRealShip(iShipType);
 		sTemp = "My_" + rShip.CabinType;
 		sld = characterFromId("Helena");
+		GiveItem2Character(sld, "unarmed");
+		EquipCharacterByItem(sld, "unarmed");
+		ForceHeroAutolevel(sld);
 		sld.dialog.currentnode = "After_boarding";
 		ChangeCharacterAddressGroup(sld, sTemp, "rld", "aloc0");
 		LAi_SetStayType(sld);
@@ -276,7 +353,7 @@ void Saga_CreateTrapBandos(string qName)//ловушка - бандиты у м�
 		if (i == 1) 
 		{	
 			sld = GetCharacter(NPC_GenerateCharacter("sagatrap_sold_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, 80, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, 80, "", "mushket1", "bullet", iScl*2);
 			sld.Dialog.Filename = "Quest\Saga\OtherNPC.c";
 			sld.dialog.currentnode = "saga_trap";
 			sld.greeting = "hunter";
@@ -518,13 +595,9 @@ void LSC_CreateCrabGuard() // крабик-охранник
 	sld.lastname = StringFromKey("Saga_17");
 	GiveItem2Character(sld, "unarmed");
 	EquipCharacterbyItem(sld, "unarmed");
-	int iTemp = 100+MOD_SKILL_ENEMY_RATE*15+sti(pchar.rank)*5;
-	LAi_SetHP(sld, iTemp, iTemp);
 	if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE/2.5);
 	sld.animal = true;
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "CriticalHit");
+	SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 	LAi_SetActorType(sld);
 	sld.SaveItemsForDead = true;
 	sld.DontClearDead = true;
@@ -829,7 +902,7 @@ void LSC_SetMaryNCyclopInCabin() // Мэри и Циклоп входят
 	int iScl = 70;
 	// Мэри
 	sld = characterFromId("Mary");
-	LAi_SetHP(sld, 280+iScl, 280+iScl); // усилим
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мэри при каноничном прохождении
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
 	sld.cirassId = Items_FindItemIdx("cirass1");
 	GiveItem2Character(sld, "letter_chad_1");
@@ -850,6 +923,32 @@ void LSC_SetMaryNCyclopInCabin() // Мэри и Циклоп входят
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
+void LSC_Cabin_fight() // Мэри и Циклоп нападают
+{
+	chrDisableReloadToLocation = true;//закрыть локацию
+	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
+	DialogExit();
+	sld = characterFromId("Marchello");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	sld = characterFromId("Mary");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
+	{
+		for (i=1; i<=3; i++)
+		{
+			sld = characterFromId("CyclopGuard_"+i);
+			LAi_SetWarriorType(sld);
+			LAi_group_MoveCharacter(sld, "EnemyFight");
+		}
+	}
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
+	LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
+	AddDialogExitQuest("MainHeroFightModeOn");	
+}
+
 void LSC_MaryNCyclopWait(string qName) // Мэри и Циклоп ждут
 {
 	pchar.quest.LSC_CyclopWaitOver.over = "yes"; //снять прерывание
@@ -859,7 +958,7 @@ void LSC_MaryNCyclopWait(string qName) // Мэри и Циклоп ждут
 	// Мэри
 	sld = characterFromId("Mary");
 	sld.greeting = "mary_4";
-	LAi_SetHP(sld, 280+iScl, 280+iScl); // усилим
+	// LAi_SetHP(sld, 280+iScl, 280+iScl); // усилим
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
 	sld.cirassId = Items_FindItemIdx("cirass1");
 	GiveItem2Character(sld, "letter_chad_1");
@@ -894,7 +993,7 @@ void LSC_MaryNCyclopAttack(string qName) // Мэри делает заманух
 	// Мэри
 	sld = characterFromId("Mary");
 	sld.greeting = "mary_2";
-	LAi_SetHP(sld, 280+iScl, 280+iScl); // усилим
+	// LAi_SetHP(sld, 280+iScl, 280+iScl); // усилим
 	if (MOD_SKILL_ENEMY_RATE > 7) sld.MultiFighter = 1.5; // мультифайтер
 	sld.cirassId = Items_FindItemIdx("cirass1");
 	GiveItem2Character(sld, "letter_chad_1");
@@ -1011,6 +1110,23 @@ void LSC_CarolineEnter(string qName)// входим в Каролину
 	SetActorDialogAny2Pchar(sld.id, "", 0.0, 0.0);
 }
 
+void LSC_Caroline_DlgExit_3()
+{
+	LAi_SetPlayerType(pchar);
+	// запускаем Мэри, Чада и нарвалов - будет лютое рубилово
+	sld = characterFromId("Capper");
+	sld.cirassId = Items_FindItemIdx("cirass1");
+	LAi_SetActorType(sld);
+	ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload3");
+	sld = characterFromId("Mary");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Мэри при каноничном прохождении
+	sld.greeting = "mary_4";
+	sld.dialog.currentnode = "caroline";
+	ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload2");
+	LAi_SetActorType(sld);
+	LAi_ActorDialogNow(sld, pchar, "", -1);
+}
+
 void LSC_FacioReturn(string qName)// вертаем Фацио
 {
 	sld = characterFromId("Facio");
@@ -1049,7 +1165,6 @@ void LSC_FindMary(string qName)// ГГ круто повезло - он наше
 		SetCharacterPerk(sld, "BasicDefense");
 		SetCharacterPerk(sld, "AdvancedDefense");
 		SetCharacterPerk(sld, "CriticalHit");
-		SetCharacterPerk(sld, "SwordplayProfessional");
 		GiveItem2Character(sld, "blade_10");
 		sld.equip.blade = "blade_10";
 		GiveItem2Character(sld, "pistol1");
@@ -1060,6 +1175,7 @@ void LSC_FindMary(string qName)// ГГ круто повезло - он наше
 		TakeNItems(sld, "bullet", 50);
 		AddItems(sld, "gunpowder", 50);
 		TakeNItems(sld, "potion2", 3);
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 		LAi_SetWarriorType(sld);
 		LAi_CharacterDisableDialog(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1067,6 +1183,7 @@ void LSC_FindMary(string qName)// ГГ круто повезло - он наше
 	}
 	// Мэри в отдельную группу
 	sld = characterFromId("Mary");
+	ForceHeroAutolevel(sld);
 	sld.greeting = "mary_1";
 	GiveItem2Character(sld, "letter_chad_1");
 	LAi_group_Register("TMP_FRIEND"); // спецгруппа
@@ -2466,7 +2583,7 @@ void Saga_DestroyVensanTrap(string qName) // учиняем массовую д�
 	for (i=1; i<=m; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Saga_TrapMush_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank+2, iScl+5, iScl+5, "", "mushket1", "cartridge", iScl*2);
+		FantomMakeCoolFighter(sld, iRank+2, iScl+5, iScl+5, "", "mushket1", "bullet", iScl*2);
 		sld.MusketerDistance = 0;
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto"+i);
 		LAi_SetWarriorType(sld);
@@ -2495,7 +2612,7 @@ void Saga_DestroyVensanTrap(string qName) // учиняем массовую д�
 	for (i=1; i<=2; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Saga_OwrMush_"+i, "mush_ctz_"+(rand(2)+4), "man", "mushketer", iRank, PIRATE, 1, false, "soldier")); // 291112
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc2");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -2790,8 +2907,8 @@ void Saga_CheckJackmanFrigate() // анализируем ГГ - обработ�
 {
 	// Джекмана обмануть сложнее
 	bool bOk = false;
-	if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name == StringFromKey("Saga_37") && GetSummonSkillFromName(pchar, SKILL_SNEAK)*isEquippedArtefactUse(pchar, "indian_11", 1.0, 1.15) > (10+rand(50))) bOk = true;
-	if (!CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name == StringFromKey("Saga_37") && GetSummonSkillFromName(pchar, SKILL_SNEAK)*isEquippedArtefactUse(pchar, "indian_11", 1.0, 1.15) > (20+rand(100))) bOk = true;
+	if (CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name == StringFromKey("Saga_37") && GetSummonSkillFromName(pchar, SKILL_SNEAK)*GetBonusDeceptionChance(pchar) > (10+rand(50))) bOk = true;
+	if (!CheckAttribute(pchar, "questTemp.Saga.BarbTemptation.Marlin") && pchar.ship.name == StringFromKey("Saga_37") && GetSummonSkillFromName(pchar, SKILL_SNEAK)*GetBonusDeceptionChance(pchar) > (20+rand(100))) bOk = true;
 	if (!bOk)
 	{
 		log_info(StringFromKey("Saga_55"));
@@ -2930,7 +3047,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	for (i=1; i<=2; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, "mush_ctz_"+(rand(2)+4), "man", "mushketer", 25, sti(pchar.nation), -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 25, 80, 100, "", "mushket1", "cartridge", 100);
+		FantomMakeCoolFighter(sld, 25, 80, 100, "", "mushket1", "bullet", 100);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto16");
 		LAi_SetActorType(sld);
 		LAi_ActorFollowEverywhere(sld, "", -1);
@@ -2938,7 +3055,7 @@ void Saga_CreateStormingGroup(string qName) // к Барбазону
 	for (i=3; i<=6; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Saga_SGM_"+i, "mush_ctz_"+(rand(2)+4), "man", "mushketer", 25, sti(pchar.nation), -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 25, 80, 100, "", "mushket1", "cartridge", 100);
+		FantomMakeCoolFighter(sld, 25, 80, 100, "", "mushket1", "bullet", 100);
 		ChangeCharacterAddressGroup(sld, pchar.location, "goto", "goto16");
 		LAi_SetActorType(sld);
 		LAi_ActorFollow(sld, pchar, "", -1);
@@ -3060,7 +3177,7 @@ void Saga_MineBanditsPrepareAttack(string qName) // идем на рудник �
 		if (i == 11 || i == 12)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Svensons_sold_"+i, "mush_ctz_"+(i-4), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -3087,7 +3204,7 @@ void Saga_MineBanditsPrepareAttack(string qName) // идем на рудник �
 		if (i == 1 || i == 2)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Ourmine_sold_"+i, "mush_ctz_"+(i+4), "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -3272,7 +3389,7 @@ void Saga_MineGunAttack(string qName) // устанавливаем орудие
 	for (i=1; i<=6; i++) // ставим вражеских мушкетеров
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Mine_Bandos_05_"+i, "mush_ctz_"+(rand(2)+10), "man", "mushketer", iRank, PIRATE, 0, true, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 80, 80, "", "mushket1", "cartridge", iScl*2+50);
+		FantomMakeCoolFighter(sld, iRank, 80, 80, "", "mushket1", "bullet", iScl*2+50);
 		sld.MusketerDistance = 0; 
 		LAi_SetWarriorType(sld);
 		ChangeCharacterAddressGroup(sld, "mine", "goto", "mush"+i);
@@ -3309,7 +3426,7 @@ void Saga_MineAttackMines(string qName)
 	for (i=1; i<=2; i++) // ставим вражеских мушкетеров
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Mine_Bandos_mines_"+i, "mush_ctz_"+(rand(2)+10), "man", "mushketer", iRank, PIRATE, -1, true, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "cartridge", iScl*2+50);
+		FantomMakeCoolFighter(sld, iRank, 60, 60, "", "mushket1", "bullet", iScl*2+50);
 		sld.MusketerDistance = 0; 
 		LAi_SetWarriorType(sld);
 		ChangeCharacterAddressGroup(sld, "mine_mines", "soldiers", "soldier"+i);
@@ -3786,6 +3903,7 @@ void Saga_BakerToCabin()
 	LAi_SetStayType(sld);
 	AddPassenger(pchar, sld, false);
 	SetCharacterRemovable(sld, false);
+	ForceHeroAutolevel(sld);
 	DeleteAttribute(pchar, "Cheats.SeaTeleport");
 }
 		
@@ -3870,6 +3988,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	sld.greeting = "jessika_0";
     sld.Dialog.Filename = "Quest\Saga\Jessika.c";
 	sld.dialog.currentnode = "reef";
+	sld.SpecialRole = "monster";
 	sld.monster = true; // признак нежити
 	sld.rank = 50;
 	LAi_SetHP(sld, 250+iAdd, 250+iAdd); 
@@ -3879,7 +3998,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	if (MOD_SKILL_ENEMY_RATE > 4)
 	{
 		SetCharacterPerk(sld, "Energaiser");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "HardHitter");
 	}
 	float fMft = MOD_SKILL_ENEMY_RATE/10;
@@ -3894,7 +4013,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "HullDamageUp");
@@ -3915,6 +4034,7 @@ void Saga_CreateJessikaGhost(string qName) // ставим Джессику
 	sld.DontClearDead = true;
 	LAi_SetCheckMinHP(sld, 10, true, "Saga_JessikaFirstKick"); // первый фокус
 	LAi_SetActorType(sld);
+	ForceAdaptivelevel(sld, 50, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_FIXED_PIRATES, 0.6);
 	ChangeCharacterAddressGroup(sld, "shore67", "quest", "jessika");
 }
 
@@ -4121,7 +4241,7 @@ void AlexClock_Chest(string qName) // четыре разгвоздяя в по�
 		if (i == 1)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_"+i, "mush_ctz_9", "man", "mushketer", iRank+2, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl+5, iScl+5, "", "mushket2", "cartridge", iScl*2+100);
+			FantomMakeCoolFighter(sld, iRank, iScl+5, iScl+5, "", "mushket2", "bullet", iScl*2+100);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster"+i);
 			sld.Dialog.Filename = "Quest\Saga\OtherNPC.c";
 			sld.dialog.currentnode = "Alexs_bandos";
@@ -4392,7 +4512,7 @@ void SharkGoldFleetToShark(string qName)
 	RealShips[sti(sld.Ship.Type)].CannonsQuantityMax = 50;
 	RealShips[sti(sld.Ship.Type)].CannonDiff = 0;
 	SetShipCannonsDamagesNull(sld);
-	RealShips[sti(sld.Ship.Type)].SpeedRate = 16.0;
+	RealShips[sti(sld.Ship.Type)].SpeedRate = 11.0;
 	RealShips[sti(sld.Ship.Type)].TurnRate = 35.0;
 	RealShips[sti(sld.Ship.Type)].MinCrew = 50; 
 	RealShips[sti(sld.Ship.Type)].OptCrew = 408; 
@@ -4874,7 +4994,6 @@ void Mary_SexReady(string qName) // Мэри снова готова к секс
 // требует секса, если давно не давал. Пока только в таверне
 void Mary_GiveMeSex(string qName)
 {
-	if (CheckAttribute(pchar, "questTemp.GoldenGirl.MaryBlock")) return; // fix 22-03-20
 	if (CheckAttribute(pchar, "questTemp.MarySexBlock")) return;
 	pchar.quest.Mary_giveme_sex1.win_condition.l1 = "Location_Type";
 	pchar.quest.Mary_giveme_sex1.win_condition.l1.location_type = "tavern";
@@ -4886,7 +5005,7 @@ void Mary_GiveMeSex(string qName)
 
 void Mary_GetTalk(string qName) // говорилка Мэри
 {
-	if(chrDisableReloadToLocation) // belamour уже идёт другой квест
+	if(chrDisableReloadToLocation || CheckAttribute(pchar, "questTemp.MarySexBlock")) // belamour уже идёт другой квест
 	{
 		SetTimerFunction("Mary_GiveMeSex", 0, 0, 1);
 		return;
@@ -5095,7 +5214,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		for (i = 1; i <= 3; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Mine_Bandos_02_" + i, "mush_ctz_" + (rand(2) + 10), "man", "mushketer", 35, PIRATE, 0, true, "soldier"));
-			FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket1", "cartridge", 100);
+			FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket1", "bullet", 100);
 			LAi_SetActorType(sld);
 			ChangeCharacterAddressGroup(sld, "mine", "rld", "warrior");
 			LAi_ActorRunToLocator(sld, "rld", "detector1", "", -1);
@@ -5369,20 +5488,6 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
 	// -----------------------начальная часть - пропавшая амазонка и наследница------------------------------
-	else if (sQuestName == "Saga_KillJimmy")	
-	{
-		chrDisableReloadToLocation = false; // открыть локацию
-		LAi_group_Delete("EnemyFight");
-		pchar.questTemp.Saga = "jackman";
-		if (CheckAttribute(pchar, "questTemp.Saga.Jimmysecret"))
-		{
-			AddQuestRecord("Saga", "4");
-		}
-		else 
-		{
-			AddQuestRecord("Saga", "3");
-		}
-	}
 	else if (sQuestName == "Saga_AfterDonovanBoarding")
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SagaTempsailor", "citiz_35", "man", "man", 10, sti(pchar.nation), 0, true, "quest"));
@@ -5430,7 +5535,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.OfficerImmortal = true;
 		sld.Health.HP = 60.0; 
 		sld.Health.maxHP = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+	
 		sld.dialog.currentnode = "Helena_officer";
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		SaveCurrentNpcQuestDateParam(sld, "HiredDate");
@@ -6285,6 +6390,9 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.dialog.currentnode = "happy_10";
 		LAi_SetActorType(sld);
 		LAi_ActorDialog(sld, pchar, "", -1, 0);
+		// ачивка Путана, если переспали с Мэри и Элен за одно прохождение
+		pchar.questTemp.SexWithGirl_Mary = true;
+		if (CheckAttribute(pchar, "questTemp.SexWithGirl_Helena") && CheckAttribute(pchar, "questTemp.SexWithGirl_Mary")) Achievment_Set("ach_CL_192");
 	}
 	else if (sQuestName == "LSC_MaryRomantic_5") // на улицы
 	{
@@ -6457,6 +6565,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.OfficerWantToGo.DontGo = true; // не пытаться уйти
 		sld.CompanionDisable = true; // Мэри подруга, а не компаньон
 		sld.loyality = MAX_LOYALITY;
+		sld.SpecialRole = "fgirl";
 		AddPassenger(pchar, sld, false);
 		SetCharacterRemovable(sld, true);
 		sld.Payment = true;
@@ -6470,7 +6579,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.OfficerImmortal = true;
 		sld.Health.HP = 60.0; 
 		sld.Health.maxHP = 60.0;
-		SetCharacterPerk(sld, "ShipEscape");
+	
 		// <-- legendary edition
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 		SaveCurrentNpcQuestDateParam(sld, "HiredDate");
@@ -6489,6 +6598,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			EquipOfficerByArtefact(sld, "indian_1");
 			EquipOfficerByArtefact(sld, "amulet_4");
 		}
+		ForceHeroAutolevel(sld);
 		// активируем поведение Мэри
 		// если две недели не заниматься с ней любовью - будет требовать
 		pchar.quest.Mary_giveme_sex.win_condition.l1 = "Timer";
@@ -6610,7 +6720,6 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		LocatorReloadEnterDisable("ExternalRingInside", "reload1", true);
 		// ставим крабикусов
 		iRank = 25 + MOD_SKILL_ENEMY_RATE * 2;
-		iTemp = 150 + MOD_SKILL_ENEMY_RATE * 30 + sti(pchar.rank) * 5;
 		LAi_group_Register("EnemyCrab");
 		for (i = 1; i <= 10; i++)
 		{
@@ -6622,10 +6731,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			if (MOD_SKILL_ENEMY_RATE > 4) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE / 2.5);
 			sld.SaveItemsForDead = true;
 			sld.animal = true;
-			LAi_SetHP(sld, iTemp, iTemp);
-			SetCharacterPerk(sld, "BasicDefense");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "CriticalHit");
+			SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 			LAi_SetWarriorType(sld);
 			if (bPincers()) TakeNItems(sld, "crab_pincers", 2); // клешни
 			ChangeCharacterAddressGroup(sld, "ExternalRingInside", "goto", "goto" + i);
@@ -6659,7 +6765,6 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		chrDisableReloadToLocation = true; // закрыть локацию
 		// ставим крабикусов
 		iRank = 25 + MOD_SKILL_ENEMY_RATE * 2;
-		iTemp = 150 + MOD_SKILL_ENEMY_RATE * 30 + sti(pchar.rank) * 5;
 		for (i = 1; i <= 6; i++)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("CrabDeck_" + i, "crabBig", "crab", "crabBig", iRank, PIRATE, -1, false, "quest"));
@@ -6670,10 +6775,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 			if (MOD_SKILL_ENEMY_RATE > 2) sld.MultiFighter = stf(MOD_SKILL_ENEMY_RATE / 2.5);
 			sld.SaveItemsForDead = true;
 			sld.animal = true;
-			LAi_SetHP(sld, iTemp, iTemp);
-			SetCharacterPerk(sld, "BasicDefense");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "CriticalHit");
+			SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Крабы
 			ChangeCharacterAddressGroup(sld, "ExternalRingDeck", "goto", "goto" + i);
 			LAi_SetWarriorType(sld);
 			LAi_warrior_SetStay(sld, true);
@@ -7346,6 +7448,7 @@ bool Saga_QuestComplete(string sQuestName, string qname)
 		sld.dialog.currentnode = "Helena_officer";
 		DeleteAttribute(sld, "HalfImmortal"); // халява закончилась
 		DeleteAttribute(sld, "CompanionDisable");
+		SetCharacterPerk(sld, "Captain");
 		SetCharacterRemovable(sld, true);
 		LAi_SetOfficerType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);

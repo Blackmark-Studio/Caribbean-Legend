@@ -1,3 +1,22 @@
+void UV_Start()
+{
+	SetQuestHeader("UV");
+	AddQuestRecord("UV", "1");
+	pchar.questTemp.UV_Start = true;
+	
+	sld = GetCharacter(NPC_GenerateCharacter("UV_Juli", "women_4", "woman", "woman", sti(pchar.rank), FRANCE, -1, false, "quest"));
+	sld.name = GetCharacterName("Julie");
+	sld.lastname = GetCharacterName("d'Armagnac");
+	sld.City = "PortPax";
+	ChangeCharacterAddressGroup(sld, "PortPax_town", "goto", "goto12");
+	sld.dialog.filename = "Quest\MiniEvents\StolenMemory_dialog.c";
+	sld.dialog.currentnode = "Juli";
+	LAi_SetCitizenType(sld);
+	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+	LAi_SetImmortal(sld, true);
+	AddLandQuestMark(sld, "questmarkmain");
+}
+
 void UV_GoldSeagull(string qName)
 {
 	//AddQuestRecord("UV", "3");
@@ -106,6 +125,10 @@ void UV_Juli_GoodEnd(string qName)
 	sld = CharacterFromID("UV_Juli");
 	LAi_CharacterDisableDialog(sld);	
 	SetFunctionExitFromLocationCondition("UV_JuliInResidensia", PChar.location, false);
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void UV_End(string qName)
@@ -117,6 +140,10 @@ void UV_End(string qName)
 	DeleteAttribute(pchar, "questTemp.UV_DialogMayor");
 	
 	SetFunctionExitFromLocationCondition("UV_JuliInResidensia", PChar.location, false);
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void UV_JuliInResidensia(string qName)

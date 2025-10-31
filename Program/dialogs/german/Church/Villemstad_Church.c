@@ -12,6 +12,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Entschuldigen Sie, Vater, einer der Geistlichen Ihrer Gemeinde hat mich gebeten, das Haus zu untersuchen, in dem Joachim Merriman ein Zimmer gemietet hat...";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
 		break;
 		
@@ -105,6 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddCharacterExpToSkill(pchar, "Leadership", 300);
 			pchar.questTemp.Caleuche = "havana";
 			Caleuche_PrepareCubaGrot();
+			AddLandQuestMark(characterFromId("Havana_Priest"), "questmarkmain");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

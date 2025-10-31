@@ -579,7 +579,6 @@ void CreateCharacters()
     locCamera.offsetX = 0.0;
     locCamera.offsetY = 0.2;
     locCamera.offsetZ = -0.6;
-    locCamera.OffsetPreset.CurPreset = 2;
 }
 
 void SetAllShipData()

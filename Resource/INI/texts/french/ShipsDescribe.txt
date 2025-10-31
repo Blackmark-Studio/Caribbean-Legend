@@ -1,322 +1,90 @@
-new_string        {
-
-
-}
-
-Tartane
+new_string
 {
-Une barque de pêche n'est pas le meilleur navire pour un capitaine brillant dans la haute société. Mais si le destin vous a privé de votre navire préféré, cette embarcation morose convient parfaitement à un voyage rapide entre les îles, même si vous devez vous rappeler : ce n'est que temporaire !
-}
 
-WarTartane
-{
-Les tartanes sont les mêmes barques de pêche rapidement réaménagées pour le cabotage dans les eaux dangereuses des Caraïbes. Leur armement modeste et leur construction artisanale n'inspirent pas le respect, mais elles sont tout à fait capables d'effrayer un pirate inexpérimenté ou un pauvre contrebandier. Une solution temporaire quand il n'y a pas beaucoup de choix.
 }
-
-Barque
-{
-Une barque est idéale pour les longs voyages. Avec une cale spacieuse et de bonnes qualités de navigation, la barque est considérée comme l'un des navires marchands les plus équilibrés. Cependant, sa taille impressionnante et son armement relativement faible en font une cible facile pour les pillards de la mer.
-}
-
-Schooner
-{
-De bonnes qualités de navigation, une cale spacieuse, un faible tirant d'eau et un armement décent ont fait du schooner l'un des navires les plus populaires des petites classes. Il convient aussi bien au commerce, au cabotage qu'au combat.
-}
-
-Barkentine
-{
-L'apparition de la barquentine était motivée par le désir de simplifier la gestion d'un navire marchand par un équipage inexpérimenté et peu nombreux. Pour cela, les voiles carrées du grand mât de la barque ont été remplacées par des voiles auriques et la coque a été légèrement réduite. Grâce à son gréement mixte, la barquentine navigue avec assurance aussi bien au vent qu'au portant.
-}
-
-Shnyava
-{
-La shniava et la brigantine étaient les prédécesseurs de la brig. Grâce à leur conception de coque réussie, leur bonne vitesse et leur capacité à porter de lourds canons, ces navires sont devenus très populaires tant dans les Caraïbes qu'en Europe. Ils sont souvent utilisés pour escorter des convois marchands de petites classes.
-}
-
-Fleut
-{
-Le flûte est une branche unique dans le développement des navires marchands. Son pont caractéristiquement étroit permettait de réduire les droits de douane, calculés en fonction de la largeur du pont supérieur. Une cale spacieuse, une grande vitesse et de bonnes performances au près ont rapidement fait du flûte l'un des navires marchands les plus populaires.
-}
-
-Caravel
-{
-Le gréement caractéristique de la caravelle permet de reconnaître facilement ce navire de loin. Sa conception obsolète lui confère des qualités de navigation assez médiocres, ce qui l'empêche de rivaliser à armes égales avec les navires modernes, malgré un nombre suffisant de canons.
-}
-
-Pinnace
-{
-Avec le flûte, la pinasse est devenue très répandue comme navire marchand. Elle est suffisamment grande et solide pour de longs voyages en mer, et sa capacité de cale permet de transporter une grande quantité de marchandises. Grâce aux lignes acérées de sa proue, même avec une coque lourde, la pinasse atteint une vitesse décente.
-}
-
-Navio
-{
-Un tel navire n'est abordable que pour un marchand vraiment riche. Une coque grande et solide, une cale spacieuse et un gréement avancé permettent d'effectuer les plus longs voyages, et pas moins de trois douzaines de canons lourds le protègent des pirates et des corsaires.
-}
-
-EastIndiaMan
-{
-Les navires de la Compagnie des Indes orientales ont réuni les meilleures qualités des pinasses et se sont débarrassés de leurs défauts, devenant ainsi des navires universels presque parfaits. Dotés de canons de gros calibre, ils peuvent rivaliser avec des navires de guerre de taille comparable, et leur cale spacieuse permet de les utiliser efficacement pour le commerce.
-}
-
-LuggerQuest
-{
-Le lougre de messagerie a été spécialement construit pour les besoins du service de messagerie. D'excellentes qualités de navigation, de bonnes performances au près et un armement assez puissant garantissent la livraison fiable de dépêches importantes et de petites cargaisons précieuses.
-}
-
+Tartane {Une barque de pêche n'est pas le meilleur navire pour un capitaine brillant dans la haute société. Mais si le destin vous a privé de votre navire préféré, cette embarcation morose convient parfaitement à un voyage rapide entre les îles, même si vous devez vous rappeler : ce n'est que temporaire !}
+WarTartane {Les tartanes sont les mêmes barques de pêche rapidement réaménagées pour le cabotage dans les eaux dangereuses des Caraïbes. Leur armement modeste et leur construction artisanale n'inspirent pas le respect, mais elles sont tout à fait capables d'effrayer un pirate inexpérimenté ou un pauvre contrebandier. Une solution temporaire quand il n'y a pas beaucoup de choix.}
+Barque {Une barque est idéale pour les longs voyages. Avec une cale spacieuse et de bonnes qualités de navigation, la barque est considérée comme l'un des navires marchands les plus équilibrés. Cependant, sa taille impressionnante et son armement relativement faible en font une cible facile pour les pillards de la mer.}
+Schooner {De bonnes qualités de navigation, une cale spacieuse, un faible tirant d'eau et un armement décent ont fait du schooner l'un des navires les plus populaires des petites classes. Il convient aussi bien au commerce, au cabotage qu'au combat.}
+Barkentine {L'apparition de la barquentine était motivée par le désir de simplifier la gestion d'un navire marchand par un équipage inexpérimenté et peu nombreux. Pour cela, les voiles carrées du grand mât de la barque ont été remplacées par des voiles auriques et la coque a été légèrement réduite. Grâce à son gréement mixte, la barquentine navigue avec assurance aussi bien au vent qu'au portant.}
+Shnyava {La shniava et la brigantine étaient les prédécesseurs de la brig. Grâce à leur conception de coque réussie, leur bonne vitesse et leur capacité à porter de lourds canons, ces navires sont devenus très populaires tant dans les Caraïbes qu'en Europe. Ils sont souvent utilisés pour escorter des convois marchands de petites classes.}
+Fleut {Le flûte est une branche unique dans le développement des navires marchands. Son pont caractéristiquement étroit permettait de réduire les droits de douane, calculés en fonction de la largeur du pont supérieur. Une cale spacieuse, une grande vitesse et de bonnes performances au près ont rapidement fait du flûte l'un des navires marchands les plus populaires.}
+Caravel {Le gréement caractéristique de la caravelle permet de reconnaître facilement ce navire de loin. Sa conception obsolète lui confère des qualités de navigation assez médiocres, ce qui l'empêche de rivaliser à armes égales avec les navires modernes, malgré un nombre suffisant de canons.}
+Pinnace {Avec le flûte, la pinasse est devenue très répandue comme navire marchand. Elle est suffisamment grande et solide pour de longs voyages en mer, et sa capacité de cale permet de transporter une grande quantité de marchandises. Grâce aux lignes acérées de sa proue, même avec une coque lourde, la pinasse atteint une vitesse décente.}
+Navio {Un tel navire n'est abordable que pour un marchand vraiment riche. Une coque grande et solide, une cale spacieuse et un gréement avancé permettent d'effectuer les plus longs voyages, et pas moins de trois douzaines de canons lourds le protègent des pirates et des corsaires.}
+EastIndiaMan {Les navires de la Compagnie des Indes orientales ont réuni les meilleures qualités des pinasses et se sont débarrassés de leurs défauts, devenant ainsi des navires universels presque parfaits. Dotés de canons de gros calibre, ils peuvent rivaliser avec des navires de guerre de taille comparable, et leur cale spacieuse permet de les utiliser efficacement pour le commerce.}
+LuggerQuest {Le lougre de messagerie a été spécialement construit pour les besoins du service de messagerie. D'excellentes qualités de navigation, de bonnes performances au près et un armement assez puissant garantissent la livraison fiable de dépêches importantes et de petites cargaisons précieuses.}
 Lugger
 {
-Le lougre est un petit voilier que de nombreux marins, en particulier les contrebandiers, apprécient pour sa maniabilité et sa polyvalence. Les lougres compensent leur manque de vitesse sous voiles pleines par d'excellents angles de navigation au près.
-Malgré leur petite taille, les lougres ont une bonne navigabilité et peuvent effectuer de longs voyages.
+Le lougre est un petit voilier que de nombreux marins, en particulier les contrebandiers, apprécient pour sa maniabilité et sa polyvalence. Les lougres compensent leur manque de vitesse sous voiles pleines par d'excellents angles de navigation au près.Malgré leur petite taille, les lougres ont une bonne navigabilité et peuvent effectuer de longs voyages.
 }
-
-Sloop
-{
-Avec une bonne vitesse et maniabilité et un armement solide pour sa taille, le sloop est un navire de patrouille fiable, également adapté à la reconnaissance.
-}
-
-Brigantine
-{
-Un type de voilier légendaire. Rapide et maniable comme une hirondelle, la brigantine est particulièrement appréciée des pirates et des aventuriers de tous horizons. Sa conception réussie la rend adaptée à toutes les tâches, du combat au commerce.
-}
-
-Brig
-{
-Les bricks sont largement utilisés dans la marine pour la reconnaissance. Faible tirant d'eau, lignes de coque acérées et gréement avancé font du brick l'un des navires les plus rapides, et ses canons de calibre décent en font un adversaire très dangereux.
-}
-
-Schooner_W
-{
-Les marins du Nouveau Monde ont été les premiers à apprécier les schooners et ont commencé à les utiliser à des fins militaires. Pour cela, il a fallu modifier un peu la coque, réduire l'espace utile de la cale et ajouter des canons, mais le résultat en valait la peine. Bien armé, rapide et maniable, le schooner de guerre est une menace sérieuse pour tout navire marchand.
-}
-
-Galeon_l
-{
-La galéon a été créée au début du XVIe siècle sur la base de la caraque et a été conçue dès le départ comme un navire de guerre. Au milieu du XVIIe siècle, la galéon avait atteint le sommet de son développement et a passé le relais à des navires plus avancés, mais elle n'a pas encore disparu et continue de servir fidèlement les marins.
-}
-
-Galeon_sm
-{
-Un symbole de la puissance et de l'ambition espagnoles. Les ponts brillent d'ornements dorés et à la poupe se dresse l'image de la Vierge de la Miséricorde, patronne du navire. Pour certains, 'Santa Misericordia' est l'incarnation de l'ordre, pour d'autres, un symbole redouté de l'oppression royale. Et certains y voient même la véritable Providence divine.
-}
-
+Sloop {Avec une bonne vitesse et maniabilité et un armement solide pour sa taille, le sloop est un navire de patrouille fiable, également adapté à la reconnaissance.}
+Brigantine {Un type de voilier légendaire. Rapide et maniable comme une hirondelle, la brigantine est particulièrement appréciée des pirates et des aventuriers de tous horizons. Sa conception réussie la rend adaptée à toutes les tâches, du combat au commerce.}
+Brig {Les bricks sont largement utilisés dans la marine pour la reconnaissance. Faible tirant d'eau, lignes de coque acérées et gréement avancé font du brick l'un des navires les plus rapides, et ses canons de calibre décent en font un adversaire très dangereux.}
+Schooner_W {Les marins du Nouveau Monde ont été les premiers à apprécier les schooners et ont commencé à les utiliser à des fins militaires. Pour cela, il a fallu modifier un peu la coque, réduire l'espace utile de la cale et ajouter des canons, mais le résultat en valait la peine. Bien armé, rapide et maniable, le schooner de guerre est une menace sérieuse pour tout navire marchand.}
+Galeon_l {La galéon a été créée au début du XVIe siècle sur la base de la caraque et a été conçue dès le départ comme un navire de guerre. Au milieu du XVIIe siècle, la galéon avait atteint le sommet de son développement et a passé le relais à des navires plus avancés, mais elle n'a pas encore disparu et continue de servir fidèlement les marins.}
+Galeon_sm {Un symbole de la puissance et de l'ambition espagnoles. Les ponts brillent d'ornements dorés et à la poupe se dresse l'image de la Vierge de la Miséricorde, patronne du navire. Pour certains, 'Santa Misericordia' est l'incarnation de l'ordre, pour d'autres, un symbole redouté de l'oppression royale. Et certains y voient même la véritable Providence divine.}
 LadyBeth
 {
-Un magnifique exemple de construction navale anglaise, créé pour le service de patrouille indépendant dans des eaux dangereuses. Cette shniava a d'excellentes qualités de navigation et un armement impressionnant pour sa taille, ce qui lui permet de rivaliser avec des navires de classes supérieures.
-Ses années de service militaire sont derrière elle, et la gloire de son ancien propriétaire attire désormais davantage les marchands d'antiquités et de cartes au trésor que les loups de mer.
+Un magnifique exemple de construction navale anglaise, créé pour le service de patrouille indépendant dans des eaux dangereuses. Cette shniava a d'excellentes qualités de navigation et un armement impressionnant pour sa taille, ce qui lui permet de rivaliser avec des navires de classes supérieures.Ses années de service militaire sont derrière elle, et la gloire de son ancien propriétaire attire désormais davantage les marchands d'antiquités et de cartes au trésor que les loups de mer.
 }
-
-Memento
-{
-Dans ce navire, il est difficile de reconnaître le vieux design d'un brig anglais, qui compense son manque de capacités de navigation par une puissante artillerie et une coque lourde et durable. Recouvert d'amulettes indigènes et imprégné de mort, il effraie non seulement ses ennemis mais aussi son propre équipage.
-}
-
-Corvette
-{
-Les corvettes sont conçues pour la reconnaissance, le service de messagerie et les opérations de croisière. Avec une bonne vitesse et maniabilité, une corvette peut rattraper des navires plus légers et éviter avec succès le combat avec des navires plus lourds.
-}
-
-XebekVML
-{
-Le chébec est le type de navire méditerranéen le plus célèbre. Sa coque étroite et ses grandes voiles latines sur tous les mâts lui permettent de naviguer à des angles extrêmes par rapport au vent, ce qui en fait un adversaire très agaçant. Malheureusement, la faible vitesse au vent arrière limite l'utilisation du chébec principalement à la piraterie et à la contrebande.
-}
-
-Polacre
-{
-La polacre est le parent le plus proche du chébec. Contrairement à ce dernier, elle porte des voiles carrées sur le grand mât, ce qui lui permet de tenir le cap avec un vent arrière. Cependant, ce gréement réduit la maniabilité, aggrave les performances au près et augmente considérablement les exigences en matière de compétences et de coordination de l'équipage.
-}
-
-Galeon_h
-{
-La galéon lourde est un puissant navire de guerre conçu pour protéger les convois et transporter de manière indépendante des cargaisons particulièrement précieuses. Elle est inférieure aux navires modernes en vitesse et en maniabilité, mais ses canons de gros calibre, sa coque solide et son équipage nombreux assurent une protection fiable de toute cargaison. Une flotte de galéons lourds est une force avec laquelle il faut compter dans les Caraïbes.
-}
-
-Elcasador
-{
-Un brillant exemple de navire de guerre conçu pour des opérations spéciales en haute mer. Ce galéon a été construit sur ordre de la Casa de Contratación pour détruire les pirates les plus dangereux qui représentent une menace réelle pour le commerce dans la région et les intérêts de la Couronne espagnole.
-}
-
-Frigate
-{
-Les frégates ont d'excellentes qualités de navigation, une bonne puissance de feu et ont été créées spécialement pour la reconnaissance à longue distance, l'escorte de transports et le combat en escadre. Aujourd'hui, on les trouve plus souvent comme navires de croisière indépendants sur les routes ennemies, pour capturer ou détruire des navires marchands ennemis.
-}
-
-Frigate_h
-{
-Les frégates lourdes sont devenues un compromis pour les capitaines à qui la puissance de feu des frégates ordinaires faisait défaut. Les coques renforcées et les canons de plus gros calibre les rapprochent des navires de ligne de quatrième classe, mais au prix d'une vitesse et d'une maniabilité moindres.
-}
-
-LineShip
-{
-Les navires de ligne de quatrième classe ne peuvent rivaliser en puissance de feu avec leurs aînés, il n'est donc pas logique de les mettre en ligne de bataille. Leur meilleure utilisation est la protection des convois, car leur vitesse et leur maniabilité les rendent plus efficaces pour cette tâche.
-}
-
-Warship
-{
-Les navires de ce type ont été construits à l'époque du cardinal Richelieu et sont aujourd'hui structurellement obsolètes. Mais ils ont de bonnes qualités de navigation et peuvent porter les canons les plus lourds, ce qui en fait une force redoutable.
-}
-
-Ecliaton
-{
-Les navires de ce type ont été construits à l'époque du cardinal Richelieu et sont aujourd'hui structurellement obsolètes. Mais ils ont de bonnes qualités de navigation et peuvent porter les canons les plus lourds, ce qui en fait une force redoutable.
-}
-
-Pink
-{
-Le pink est un petit navire conçu pour transporter des marchandises et protéger de petits convois. Bien que son armement soit faible et son équipage réduit, le pink est spécialement conçu pour le commerce et le combat, et de nombreux capitaines l'apprécient pour sa vitesse et sa maniabilité. La petite taille du pink ne lui permet pas d'effectuer de longs voyages en mer.
-}
-
-Battleship
-{
-Les navires de ligne de troisième classe sont très nombreux et les plus équilibrés en termes de qualités de combat, conçus pour la bataille en ligne. Ils ont suffisamment de puissance de feu pour défier même les léviathans à 100 canons. En même temps, ils les surpassent nettement en vitesse et en maniabilité.
-}
-
-Manowar
-{
-Les navires de ligne de deuxième classe sont l'épine dorsale de la puissance navale de toute nation. Avec les navires de troisième classe, ils forment une flotte qui allie force et maniabilité. Et en l'absence de navires de première classe dans l'escadre, certains d'entre eux servent de navires amiraux.
-}
-
-Manowar_e
-{
-Un navire de ligne de première classe est une véritable forteresse flottante. Grâce à sa puissance de feu terrifiante, il peut envoyer n'importe quel adversaire par le fond en quelques salves précises. Mais même les plus grandes puissances navales n'ont pas beaucoup de ces navires, et ils sont utilisés comme navires amiraux lors des grandes batailles navales.
-}
-
+Memento {Dans ce navire, il est difficile de reconnaître le vieux design d'un brig anglais, qui compense son manque de capacités de navigation par une puissante artillerie et une coque lourde et durable. Recouvert d'amulettes indigènes et imprégné de mort, il effraie non seulement ses ennemis mais aussi son propre équipage.}
+Corvette {Les corvettes sont conçues pour la reconnaissance, le service de messagerie et les opérations de croisière. Avec une bonne vitesse et maniabilité, une corvette peut rattraper des navires plus légers et éviter avec succès le combat avec des navires plus lourds.}
+XebekVML {Le chébec est le type de navire méditerranéen le plus célèbre. Sa coque étroite et ses grandes voiles latines sur tous les mâts lui permettent de naviguer à des angles extrêmes par rapport au vent, ce qui en fait un adversaire très agaçant. Malheureusement, la faible vitesse au vent arrière limite l'utilisation du chébec principalement à la piraterie et à la contrebande.}
+Polacre {La polacre est le parent le plus proche du chébec. Contrairement à ce dernier, elle porte des voiles carrées sur le grand mât, ce qui lui permet de tenir le cap avec un vent arrière. Cependant, ce gréement réduit la maniabilité, aggrave les performances au près et augmente considérablement les exigences en matière de compétences et de coordination de l'équipage.}
+Galeon_h {La galéon lourde est un puissant navire de guerre conçu pour protéger les convois et transporter de manière indépendante des cargaisons particulièrement précieuses. Elle est inférieure aux navires modernes en vitesse et en maniabilité, mais ses canons de gros calibre, sa coque solide et son équipage nombreux assurent une protection fiable de toute cargaison. Une flotte de galéons lourds est une force avec laquelle il faut compter dans les Caraïbes.}
+Elcasador {Un brillant exemple de navire de guerre conçu pour des opérations spéciales en haute mer. Ce galéon a été construit sur ordre de la Casa de Contratación pour détruire les pirates les plus dangereux qui représentent une menace réelle pour le commerce dans la région et les intérêts de la Couronne espagnole.}
+Frigate {Les frégates ont d'excellentes qualités de navigation, une bonne puissance de feu et ont été créées spécialement pour la reconnaissance à longue distance, l'escorte de transports et le combat en escadre. Aujourd'hui, on les trouve plus souvent comme navires de croisière indépendants sur les routes ennemies, pour capturer ou détruire des navires marchands ennemis.}
+Frigate_h {Les frégates lourdes sont devenues un compromis pour les capitaines à qui la puissance de feu des frégates ordinaires faisait défaut. Les coques renforcées et les canons de plus gros calibre les rapprochent des navires de ligne de quatrième classe, mais au prix d'une vitesse et d'une maniabilité moindres.}
+LineShip {Les navires de ligne de quatrième classe ne peuvent rivaliser en puissance de feu avec leurs aînés, il n'est donc pas logique de les mettre en ligne de bataille. Leur meilleure utilisation est la protection des convois, car leur vitesse et leur maniabilité les rendent plus efficaces pour cette tâche.}
+Warship {Les navires de ce type ont été construits à l'époque du cardinal Richelieu et sont aujourd'hui structurellement obsolètes. Mais ils ont de bonnes qualités de navigation et peuvent porter les canons les plus lourds, ce qui en fait une force redoutable.}
+Ecliaton {Les navires de ce type ont été construits à l'époque du cardinal Richelieu et sont aujourd'hui structurellement obsolètes. Mais ils ont de bonnes qualités de navigation et peuvent porter les canons les plus lourds, ce qui en fait une force redoutable.}
+Pink {Le pink est un petit navire conçu pour transporter des marchandises et protéger de petits convois. Bien que son armement soit faible et son équipage réduit, le pink est spécialement conçu pour le commerce et le combat, et de nombreux capitaines l'apprécient pour sa vitesse et sa maniabilité. La petite taille du pink ne lui permet pas d'effectuer de longs voyages en mer.}
+Battleship {Les navires de ligne de troisième classe sont très nombreux et les plus équilibrés en termes de qualités de combat, conçus pour la bataille en ligne. Ils ont suffisamment de puissance de feu pour défier même les léviathans à 100 canons. En même temps, ils les surpassent nettement en vitesse et en maniabilité.}
+Manowar {Les navires de ligne de deuxième classe sont l'épine dorsale de la puissance navale de toute nation. Avec les navires de troisième classe, ils forment une flotte qui allie force et maniabilité. Et en l'absence de navires de première classe dans l'escadre, certains d'entre eux servent de navires amiraux.}
+Manowar_e {Un navire de ligne de première classe est une véritable forteresse flottante. Grâce à sa puissance de feu terrifiante, il peut envoyer n'importe quel adversaire par le fond en quelques salves précises. Mais même les plus grandes puissances navales n'ont pas beaucoup de ces navires, et ils sont utilisés comme navires amiraux lors des grandes batailles navales.}
 MayFang
 {
-Ce chébec a une coque allégée au détriment de la solidité, mais cela en fait un navigateur inégalé : il n'y a pas d'autre navire dans les Caraïbes capable de naviguer presque contre le vent !
-Et vingt canons de calibre moyen sont un argument de poids dans la compétition maritime.
+Ce chébec a une coque allégée au détriment de la solidité, mais cela en fait un navigateur inégalé : il n'y a pas d'autre navire dans les Caraïbes capable de naviguer presque contre le vent !Et vingt canons de calibre moyen sont un argument de poids dans la compétition maritime.
 }
-
-Mirage
-{
-Contrairement aux ketchs bombardiers, les ketchs corsaires ne portent pas de mortiers géants destinés à bombarder les forteresses, mais ont une coque plus légère et profilée, ce qui améliore leurs qualités de navigation. Même les yachts des princes envieraient la vitesse de ce ketch corsaire.
-}
-
-Himera
-{
-Un navire chef-d'œuvre, créé spécialement pour les besoins du renseignement naval britannique. Par ses caractéristiques, il est comparable aux navires de guerre de troisième classe, tout en conservant la facilité de manœuvre de la quatrième classe.
-}
-
-Valciria
-{
-Un excellent brick anglais. Grande vitesse et maniabilité, bonnes performances au près et deux douzaines de canons sur le pont font de ce voilier un rêve.
-}
-
-CORVETTE_QUEST
-{
-Un navire unique, chef-d'œuvre des constructeurs navals français. La modernisation en profondeur de la conception de la corvette a amélioré presque toutes ses caractéristiques sans sacrifier la vitesse. L'augmentation de la surface de voile et du calibre des canons nécessite un équipage plus expérimenté et plus nombreux, mais si les essais dans les Caraïbes sont concluants, les technologies appliquées ici pourraient représenter une véritable avancée dans la construction navale.
-}
-
-Polacre_q
-{
-Un maître qui a su combiner avec succès des éléments du chébec et de la frégate a créé une polacre avec une coque inhabituelle, solide et spacieuse, caractérisée par des hauts bords, un faible tirant d'eau et un armement très puissant. Trois mâts et un beaupré avec des voiles de différents types la rendent rapide et très maniable. Toutes ces caractéristiques sont bonnes séparément, mais ensemble elles sont excellentes : seul le propriétaire décidera s'il s'agira d'un navire de guerre, d'un navire pirate ou d'un navire marchand qui prendra la mer.
-}
-
-ArabellaShip
-{
-Ce navire unique combine les meilleures caractéristiques des frégates et des navires de ligne. Ses qualités de navigation étonnantes sont associées à une batterie de canons de gros calibre, et les intérieurs peuvent accueillir toute une compagnie de marines. Entre de bonnes mains, Fortuna peut affronter seule un adversaire bien plus fort.
-}
-
-Flyingdutchman
-{
-"Caleuche". La terreur de tous ceux qui naviguent...
-}
-
-Flyingdutchman_l
-{
-Une copie du "Caleuche".
-}
-
-NewFlyingdutchman
-{
-Ce fut autrefois le tristement célèbre "navire fantôme". Il a maintenant été entièrement reconstruit et est un puissant galéon de guerre, capable de rivaliser à armes égales même avec les navires de ligne. Avec une vitesse impressionnante pour sa taille, une grande cale et un armement redoutable, c'est un navire totalement autonome, capable de couler des navires ennemis, de les aborder et même d'assiéger des colonies entières.
-}
-
-Santisima
-{
-Ce navire a été lancé sur le célèbre chantier naval de La Havane. Sa coque est un peu plus légère et plus faible que celle des autres navires de première classe, mais cela est largement compensé par de meilleures qualités de navigation.
-}
-
-NoneBoat
-{
-Pas de navire. Le héros est devenu un rat de terre et ne peut pas se dire capitaine tant qu'il n'a pas de navire.
-}
-
-Hull
-{
-Coque : indique la quantité actuelle et maximale de dommages que la coque du navire peut supporter.
-}
-
-Sails
-{
-Voiles : indiquent les dommages actuels et maximaux que les voiles du navire peuvent supporter.
-}
-
-Speed
-{
-Vitesse : indique la vitesse maximale actuelle du navire, en tenant compte de tous les facteurs (charge, compétences du capitaine, dommages au navire) et la vitesse maximale atteignable.
-}
-
-Maneuver
-{
-Maniabilité : indique la maniabilité du navire à ce moment, en tenant compte de tous les facteurs (charge, compétences du capitaine, dommages au navire) et la maniabilité maximale atteignable.
-}
-
+Mirage {Contrairement aux ketchs bombardiers, les ketchs corsaires ne portent pas de mortiers géants destinés à bombarder les forteresses, mais ont une coque plus légère et profilée, ce qui améliore leurs qualités de navigation. Même les yachts des princes envieraient la vitesse de ce ketch corsaire.}
+Himera {Un navire chef-d'œuvre, créé spécialement pour les besoins du renseignement naval britannique. Par ses caractéristiques, il est comparable aux navires de guerre de troisième classe, tout en conservant la facilité de manœuvre de la quatrième classe.}
+Valciria {Un excellent brick anglais. Grande vitesse et maniabilité, bonnes performances au près et deux douzaines de canons sur le pont font de ce voilier un rêve.}
+CORVETTE_QUEST {Un navire unique, chef-d'œuvre des constructeurs navals français. La modernisation en profondeur de la conception de la corvette a amélioré presque toutes ses caractéristiques sans sacrifier la vitesse. L'augmentation de la surface de voile et du calibre des canons nécessite un équipage plus expérimenté et plus nombreux, mais si les essais dans les Caraïbes sont concluants, les technologies appliquées ici pourraient représenter une véritable avancée dans la construction navale.}
+Polacre_q {Un maître qui a su combiner avec succès des éléments du chébec et de la frégate a créé une polacre avec une coque inhabituelle, solide et spacieuse, caractérisée par des hauts bords, un faible tirant d'eau et un armement très puissant. Trois mâts et un beaupré avec des voiles de différents types la rendent rapide et très maniable. Toutes ces caractéristiques sont bonnes séparément, mais ensemble elles sont excellentes : seul le propriétaire décidera s'il s'agira d'un navire de guerre, d'un navire pirate ou d'un navire marchand qui prendra la mer.}
+ArabellaShip {Ce navire unique combine les meilleures caractéristiques des frégates et des navires de ligne. Ses qualités de navigation étonnantes sont associées à une batterie de canons de gros calibre, et les intérieurs peuvent accueillir toute une compagnie de marines. Entre de bonnes mains, Fortuna peut affronter seule un adversaire bien plus fort.}
+Flyingdutchman {"Caleuche". La terreur de tous ceux qui naviguent...}
+Flyingdutchman_l {Une copie du "Caleuche".}
+NewFlyingdutchman {Ce fut autrefois le tristement célèbre "navire fantôme". Il a maintenant été entièrement reconstruit et est un puissant galéon de guerre, capable de rivaliser à armes égales même avec les navires de ligne. Avec une vitesse impressionnante pour sa taille, une grande cale et un armement redoutable, c'est un navire totalement autonome, capable de couler des navires ennemis, de les aborder et même d'assiéger des colonies entières.}
+Santisima {Ce navire a été lancé sur le célèbre chantier naval de La Havane. Sa coque est un peu plus légère et plus faible que celle des autres navires de première classe, mais cela est largement compensé par de meilleures qualités de navigation.}
+NoneBoat {Pas de navire. Le héros est devenu un rat de terre et ne peut pas se dire capitaine tant qu'il n'a pas de navire.}
+Hull {Coque : indique la quantité actuelle et maximale de dommages que la coque du navire peut supporter.}
+Sails {Voiles : indiquent les dommages actuels et maximaux que les voiles du navire peuvent supporter.}
+Speed {Vitesse : indique la vitesse maximale actuelle du navire, en tenant compte de tous les facteurs (charge, compétences du capitaine, dommages au navire) et la vitesse maximale atteignable.}
+Maneuver {Maniabilité : indique la maniabilité du navire à ce moment, en tenant compte de tous les facteurs (charge, compétences du capitaine, dommages au navire) et la maniabilité maximale atteignable.}
 AgainstWind
 {
-Le meilleur cap du navire par rapport au vent, auquel il peut atteindre la vitesse maximale. Les valeurs sont exprimées en degrés.
-La deuxième valeur indique la différence entre la direction actuelle du vent et le meilleur angle de cap pour ce navire.
+Le meilleur cap du navire par rapport au vent, auquel il peut atteindre la vitesse maximale. Les valeurs sont exprimées en degrés.La deuxième valeur indique la différence entre la direction actuelle du vent et le meilleur angle de cap pour ce navire.
 }
-
 Capacity
 {
-Port en lourd : indique la capacité actuelle et maximale du navire. Plus le navire est chargé, plus il devient lent et peu maniable.
-Les canons installés sur le navire sont également pris en compte dans le calcul du port en lourd. Ils peuvent être retirés du navire pour libérer de l'espace supplémentaire pour la cargaison. Pour cela, sélectionnez les canons actuels dans la liste des paramètres du navire dans l'interface "Navire".
+Port en lourd : indique la capacité actuelle et maximale du navire. Plus le navire est chargé, plus il devient lent et peu maniable.Les canons installés sur le navire sont également pris en compte dans le calcul du port en lourd. Ils peuvent être retirés du navire pour libérer de l'espace supplémentaire pour la cargaison. Pour cela, sélectionnez les canons actuels dans la liste des paramètres du navire dans l'interface "Navire".
 }
-
-Crew
-{
-Équipage : indique le nombre actuel de membres d'équipage, ainsi que le minimum et le maximum pour ce navire.
-}
-
-CannonType
-{
-Type de canon : indique le type (canons ou couleuvrines), le calibre actuel et le nombre de canons installés
-}
-
-sCannons
-{
-Indique le calibre maximal autorisé et le nombre maximal possible de canons sur le navire.
-}
-
+Crew {Équipage : indique le nombre actuel de membres d'équipage, ainsi que le minimum et le maximum pour ce navire.}
+CannonType {Type de canon : indique le type (canons ou couleuvrines), le calibre actuel et le nombre de canons installés}
+sCannons {Indique le calibre maximal autorisé et le nombre maximal possible de canons sur le navire.}
 Crew_Exp {Expérience de l'équipage}
-
 Crew_Exp_hint
 {
-L'expérience de l'équipage est divisée en trois catégories : la navigation (affecte la manœuvrabilité du navire), l'artillerie (vitesse de rechargement et précision du tir) et l'abordage (efficacité de l'équipage au combat rapproché).
-Un équipage expérimenté en nombre réduit peut être plus efficace qu'un navire surchargé de novices.
-L'expérience dans les trois catégories est acquise lors de l'exécution des actions correspondantes (manœuvre, tir, abordage), mais elle se perd également si les compétences acquises ne sont pas pratiquées pendant longtemps.
+L'expérience de l'équipage est divisée en trois catégories : la navigation (affecte la manœuvrabilité du navire), l'artillerie (vitesse de rechargement et précision du tir) et l'abordage (efficacité de l'équipage au combat rapproché).Un équipage expérimenté en nombre réduit peut être plus efficace qu'un navire surchargé de novices.L'expérience dans les trois catégories est acquise lors de l'exécution des actions correspondantes (manœuvre, tir, abordage), mais elle se perd également si les compétences acquises ne sont pas pratiquées pendant longtemps.
 }
-
-TakeAllGoods_hint
-{
-Le bouton "Transférer toutes les marchandises" transfère les marchandises sur le navire du personnage en fonction de leur valeur spécifique moyenne. Les marchandises les plus précieuses sont transférées en premier, puis les moins précieuses, et ainsi de suite jusqu'à ce qu'il n'y ait plus de place dans la cale.
-}
-
+TakeAllGoods_hint {Le bouton "Transférer toutes les marchandises" transfère les marchandises sur le navire du personnage en fonction de leur valeur spécifique moyenne. Les marchandises les plus précieuses sont transférées en premier, puis les moins précieuses, et ainsi de suite jusqu'à ce qu'il n'y ait plus de place dans la cale.}
 GoodsKeys_hint
 {
-Les touches fléchées "Gauche" et "Droite" du clavier déplacent les marchandises dans la ligne sélectionnée du tableau par lot. Si vous maintenez la touche Maj enfoncée, les marchandises seront déplacées en totalité.
-Un clic droit sur les flèches de la ligne contenant la marchandise dans l'interface transfère dix lots à la fois.
+Les touches fléchées "Gauche" et "Droite" du clavier déplacent les marchandises dans la ligne sélectionnée du tableau par lot. Si vous maintenez la touche Maj enfoncée, les marchandises seront déplacées en totalité.Un clic droit sur les flèches de la ligne contenant la marchandise dans l'interface transfère dix lots à la fois.
 }
-
 Shipyard_hint
 {
-Au chantier naval, vous pouvez acheter, réparer ou vendre des navires.
-Le héros ne peut pas vendre son navire s'il a des compagnons. Vous ne pouvez pas non plus acheter un navire pour un compagnon si le héros n'a pas son propre navire.
-Pour changer le navire du héros ou du compagnon tout en conservant tout le contenu de la cale et l'équipage, sélectionnez dans la liste des navires de l'escadre du héros (à gauche de l'interface) le navire à remplacer par un nouveau, et dans la liste des navires en vente au chantier naval (à droite de l'interface) celui souhaité, puis cliquez sur le bouton "Acheter".
-Pour acheter un nouveau navire (attribuer un nouveau compagnon), sélectionnez d'abord un emplacement vide dans la liste de gauche avant d'acheter.
+Au chantier naval, vous pouvez acheter, réparer ou vendre des navires.Le héros ne peut pas vendre son navire s'il a des compagnons. Vous ne pouvez pas non plus acheter un navire pour un compagnon si le héros n'a pas son propre navire.Pour changer le navire du héros ou du compagnon tout en conservant tout le contenu de la cale et l'équipage, sélectionnez dans la liste des navires de l'escadre du héros (à gauche de l'interface) le navire à remplacer par un nouveau, et dans la liste des navires en vente au chantier naval (à droite de l'interface) celui souhaité, puis cliquez sur le bouton "Acheter".Pour acheter un nouveau navire (attribuer un nouveau compagnon), sélectionnez d'abord un emplacement vide dans la liste de gauche avant d'acheter.
 }
-
-NoneBoat2
-{
-Pas de navire.
-}
+NoneBoat2 {Pas de navire.}

@@ -1,242 +1,156 @@
 info
 {
-    Генератор кладов
-    Скрипт создан ALexusB 05.11.04
+Генератор кладов    Скрипт создан ALexusB 05.11.04
 }
-type_full_1
-{
-El mapa es reciente y el papel no amarillea. Las marcas parecen estar dibujadas con prisa. Si les creemos, el tesoro está oculto en #sMaplocName# en #sMapIslName#.
-}
+type_full_1 {El mapa es reciente y el papel no amarillea. Las marcas parecen estar dibujadas con prisa. Si les creemos, el tesoro está oculto en #sMaplocName# en #sMapIslName#.}
 type_full_1_isl {isla}
 type_full_1_mein {continente}
-
-type_full_2
-{
-El mapa está dibujado de manera bastante descuidada, y #sMapIslName# apenas es discernible. Juzgando por las marcas, el tesoro está escondido en #sMaplocName#, pero solo podemos estar seguros al ir allí.
-}
+type_full_2 {El mapa está dibujado de manera bastante descuidada, y #sMapIslName# apenas es discernible. Juzgando por las marcas, el tesoro está escondido en #sMaplocName#, pero solo podemos estar seguros al ir allí.}
 type_full_2_isl {isla}
 type_full_2_mein {continente}
-
-type_full_3
-{
-Este mapa no era valioso para su propietario; el contorno de #sMapIslName# está arruinado por manchas de agua. La ubicación del tesoro parece ser #sMaplocName#.
-}
+type_full_3 {Este mapa no era valioso para su propietario; el contorno de #sMapIslName# está arruinado por manchas de agua. La ubicación del tesoro parece ser #sMaplocName#.}
 type_full_3_isl {islas}
 type_full_3_mein {continente}
-
-type_full_4
-{
-El mapa representa #sMapIslName#. El lugar donde se almacenan los tesoros es #sMaplocName#. La falta de habilidad del autor ha sido compensada por el esfuerzo: animales caprichosos, como si fueran dibujados por la mano de un niño, adornan los márgenes.
-}
+type_full_4 {El mapa representa #sMapIslName#. El lugar donde se almacenan los tesoros es #sMaplocName#. La falta de habilidad del autor ha sido compensada por el esfuerzo: animales caprichosos, como si fueran dibujados por la mano de un niño, adornan los márgenes.}
 type_full_4_isl {isla}
 type_full_4_mein {continente}
-
-type_full_5
-{
-El mapa refleja con precisión los contornos de #sMapIslName#. La ubicación del tesoro es #sMaplocName#. No será difícil encontrarlo, ya que el autor ha dejado direcciones bastante precisas.
-}
+type_full_5 {El mapa refleja con precisión los contornos de #sMapIslName#. La ubicación del tesoro es #sMaplocName#. No será difícil encontrarlo, ya que el autor ha dejado direcciones bastante precisas.}
 type_full_5_isl {isla}
 type_full_5_mein {continente}
-type_full_6
-{
-Este mapa está dibujado en papel de alta calidad. El contorno de #sMapIslName# es fácilmente reconocible. Según la nota en la parte de atrás, la ubicación del tesoro es #sMaplocName#.
-}
+type_full_6 {Este mapa está dibujado en papel de alta calidad. El contorno de #sMapIslName# es fácilmente reconocible. Según la nota en la parte de atrás, la ubicación del tesoro es #sMaplocName#.}
 type_full_6_isl {isla}
 type_full_6_mein {continente}
-
 type_full_7
 {
-Esto es #sMapIslName#. El mapa indica la ubicación del tesoro escondido — está en #sMaplocName#. Un pirata notorio escondió su tesoro allí.  
-La autenticidad del mapa está sugerida por las manchas marrones de sangre, que también indican que este trozo de papel ha cambiado de manos múltiples veces.
+Esto es #sMapIslName#. El mapa indica la ubicación del tesoro escondido — está en #sMaplocName#. Un pirata notorio escondió su tesoro allí.  La autenticidad del mapa está sugerida por las manchas marrones de sangre, que también indican que este trozo de papel ha cambiado de manos múltiples veces.
 }
 type_full_7_isl {isla}
 type_full_7_mein {continente}
-
-type_full_8
-{
-Este mapa ha visto claramente muchas manos — el papel está quemado en varios lugares, y el contorno de #sMapIslName# está marcado por señales de múltiples pliegues. La ubicación del tesoro es #sMaplocName#. Aparentemente, allí hay algo realmente valioso.
-}
+type_full_8 {Este mapa ha visto claramente muchas manos — el papel está quemado en varios lugares, y el contorno de #sMapIslName# está marcado por señales de múltiples pliegues. La ubicación del tesoro es #sMaplocName#. Aparentemente, allí hay algo realmente valioso.}
 type_full_8_isl {islas}
 type_full_8_mein {continente}
-
-type_full_9
-{
-#sMapIslName#, representado bastante exactamente en este mapa, está rodeado de ornamentaciones y dibujos de monstruos marinos. Quien quiera que sea el autor del mapa, claramente conocía su oficio, escondiendo algo muy valioso en el tesoro. Todo lo que queda es llegar a la ubicación — #sMaplocName#.
-}
+type_full_9 {#sMapIslName#, representado bastante exactamente en este mapa, está rodeado de ornamentaciones y dibujos de monstruos marinos. Quien quiera que sea el autor del mapa, claramente conocía su oficio, escondiendo algo muy valioso en el tesoro. Todo lo que queda es llegar a la ubicación — #sMaplocName#.}
 type_full_9_isl {isla}
 type_full_9_mein {continente}
-
-type_full_10
-{
-Las mitades de este mapa no encajan, aunque la caligrafía, el color de la tinta y el estado del papel indican claramente que es del mismo autor. Los contornos de #sMapIslName# están difusos y manchados de tinta, y el tesoro parece estar ubicado en #sMaplocName#.
-}
+type_full_10 {Las mitades de este mapa no encajan, aunque la caligrafía, el color de la tinta y el estado del papel indican claramente que es del mismo autor. Los contornos de #sMapIslName# están difusos y manchados de tinta, y el tesoro parece estar ubicado en #sMaplocName#.}
 type_full_10_isl {isla}
 type_full_10_mein {continente}
-
-type_full_11
-{
-Este mapa ha sido cuidadosamente dividido en diagonal, lo que hace imposible discernir #sMapIslName# con solo una mitad. Las notas están escritas con una caligrafía ordenada, lo que facilita entender dónde se encuentra el tesoro — en #sMaplocName#. A juzgar por el estado del papel, los tesoros han estado allí durante muchas décadas.
-}
+type_full_11 {Este mapa ha sido cuidadosamente dividido en diagonal, lo que hace imposible discernir #sMapIslName# con solo una mitad. Las notas están escritas con una caligrafía ordenada, lo que facilita entender dónde se encuentra el tesoro — en #sMaplocName#. A juzgar por el estado del papel, los tesoros han estado allí durante muchas décadas.}
 type_full_11_isl {isla}
 type_full_11_mein {continente}
-
-type_full_12
-{
-Este mapa, hecho de dos partes, se ve increíblemente antiguo. Los contornos de #sMapIslName# están desactualizados por varias décadas. Las descripciones y pistas están escritas en un lenguaje anticuado y abundan en latín. Es difícil evaluar la magnitud de los tesoros almacenados en #sMaplocName#.
-}
+type_full_12 {Este mapa, hecho de dos partes, se ve increíblemente antiguo. Los contornos de #sMapIslName# están desactualizados por varias décadas. Las descripciones y pistas están escritas en un lenguaje anticuado y abundan en latín. Es difícil evaluar la magnitud de los tesoros almacenados en #sMaplocName#.}
 type_full_12_isl {islas}
 type_full_12_mein {continente}
-
-
-
 type_quest_0
 {
-Es de #sMapIslName#. El tesoro escondido se muestra en la siguiente ubicación: #sMaplocName#. #sMapOwner#, ahí es donde se supone que está escondido.
-A juzgar por las manchas de sangre, el mapa es genuino, también indica que ha cambiado de dueño con bastante frecuencia.
+Es de #sMapIslName#. El tesoro escondido se muestra en la siguiente ubicación: #sMaplocName#. #sMapOwner#, ahí es donde se supone que está escondido.A juzgar por las manchas de sangre, el mapa es genuino, también indica que ha cambiado de dueño con bastante frecuencia.
 }
-type_quest_0_isl {}
+type_quest_0_isl { }
 type_quest_0_mein {Tierra Firme}
-
 type_part
 {
-Al parecer es la mitad de un mapa que definitivamente lleva a un tesoro. No me es posible saber dónde está con la poca información que contiene este trozo, pero espero que la otra mitad esté en algún sitio del Caribe y un día de estos termine en mis manos. 
-¡Entonces todo se aclarará!
+Al parecer es la mitad de un mapa que definitivamente lleva a un tesoro. No me es posible saber dónde está con la poca información que contiene este trozo, pero espero que la otra mitad esté en algún sitio del Caribe y un día de estos termine en mis manos. ¡Entonces todo se aclarará!
 }
-
 type_fake
 {
-Se supone que este mapa lleva a un tesoro. Por supuesto que no pasa nada por ir a comprobarlo, pero se nota que es un mapa falso.
-Será mejor tirarlo.
+Se supone que este mapa lleva a un tesoro. Por supuesto que no pasa nada por ir a comprobarlo, pero se nota que es un mapa falso.Será mejor tirarlo.
 }
-
-Antigua_Grot             {en la cueva a la derecha de la costa de Falmouth}
-Antigua_Grot_box1        {en un cofre, encima de una roca grande}
-
-SentJons_TownCave 		{en la mazmorra de la ciudad de St. Johns}
-SentJons_TownCave_box1 	{debajo de unas maderas en un callejón sin salida}
-SentJons_TownCave_box2 	{en el túnel sin salida de una mina}
-SentJons_TownCave_box3 	{en una obstrucción}
- 
-Barbados_Cave			{en una cueva cerca de Bridgetown}		
-Barbados_Cave_box1		{debajo de unas maderas en un callejón sin salida}
-
-Beliz_Cave 				{en una cueva, a la derecha de la salida de Belice}
-Beliz_Cave_box1			{en una cueva, junto a un puente de piedra}
-Beliz_Cave_box2			{en un cofre, encima de una roca grande}
-Beliz_Cave_box3			{en un cofre, junto a una cuerda que cuelga del techo}
-
-Beliz_Cave_2 			{en una cueva, junto a la salida de Belice}		
-Beliz_Cave_2_box1		{debajo de unas maderas en un callejón sin salida}
-
-Bermudes_Dungeon 		{en la mazmorra bajo el astillero de Sharptown}	
-Bermudes_Dungeon_box1	{en un cofre, tras una puerta cerrada}
-Bermudes_Dungeon_box2	{en un cofre, tras una puerta abierta}
-Bermudes_Dungeon_box3	{en un cofre, en un callejón sin salida}
-Bermudes_Dungeon_box4	{en un cofre, detrás de los barriles}
-
-Caracas_Grot 			{en una cueva, a la izquierda de la salida de Caracas}	
-Caracas_Grot_box1		{en un cofre, encima de una roca grande}
-
-Cartahena_Cave			{en una cueva, junto a la salida de Cartagena}	
-Cartahena_Cave_box1		{en un cofre, debajo de una antorcha}
-Cartahena_Cave_box2		{en un cofre, en un callejón sin salida}
-Cartahena_Cave_box3		{en un cofre, junto a una antorcha}
-
-Caiman_Grot				{en una cueva, a la derecha de una playa desierta}
-Caiman_Grot_box1		{en un cofre, encima de una roca grande}
-
-Charles_Grot			{en una cueva, a la derecha de la Bahía Half Moon}	
-Charles_Grot_box1		{en un cofre, en la playa}
-
-Cuba_Grot				{en una cueva, a la derecha del cabo Camagüey}
-Cuba_Grot_box1			{en un cofre, en la playa}
-
-Cumana_Cave				{en una cueva, a la derecha de la costa de Carupano}
-Cumana_Cave_box1		{en una cueva, junto a un puente de piedra}
-Cumana_Cave_box2		{en un cofre, encima de una roca grande}
-Cumana_Cave_box3		{en un cofre, junto a una cuerda que cuelga del techo}
-
-Curacao_Cave			{en una cueva, a la derecha de la Laguna Blanca}	
-Curacao_Cave_box1		{en un cofre, junto a una antorcha}
-Curacao_Cave_box2		{en un cofre, en un callejón sin salida}
-Curacao_Cave_box3		{en un cofre, debajo de una antorcha}
-
-Dominica_Grot			{en una cueva, a la izquierda de la Bahía de Scott's Head}	
-Dominica_Grot_box1		{en un cofre, en la playa}
-
-Guadeloupe_Cave			{en una cueva, a la izquierda del faro de Guadalupe}
-Guadeloupe_Cave_box1	{en un cofre, en un nicho con una antorcha}
-Guadeloupe_Cave_box2	{en un cofre, en un nicho con un farol}
-Guadeloupe_Cave_box3	{en un cofre, detrás de las rocas de un muro}
-
-Hispaniola_Cave			{en una cueva, cerca de la ciudad de Port-au-Prince}		
-Hispaniola_Cave_box1	{en una cueva, junto a un puente de piedra}
-Hispaniola_Cave_box2	{en un cofre, encima de una roca grande}
-Hispaniola_Cave_box3	{en un cofre, junto a una cuerda que cuelga del techo}
-
-Jamaica_Grot			{en una cueva, cerca del faro de Port Royal}
-Jamaica_Grot_box1		{en un cofre, encima de una roca grande}
-
-Maracaibo_Cave			{en una cueva, junto a la salida de Maracaibo}
-Maracaibo_Cave_box1		{en un cofre, debajo de una antorcha}
-Maracaibo_Cave_box2		{en un cofre, en un callejón sin salida}
-Maracaibo_Cave_box3		{en un cofre, junto a una antorcha}
-
-Marigo_Cave				{en una cueva, junto a la entrada a Philipsburg}
-Marigo_Cave_box1		{en un cofre, debajo de una antorcha}
-Marigo_Cave_box2		{en un cofre, en un callejón sin salida}
-Marigo_Cave_box3		{en un cofre, junto a una antorcha}
-			
-Panama_Cave				{en una cueva, a la izquierda de la salida de Portobello}
-Panama_Cave_box1		{debajo de unas maderas en un callejón sin salida}
-
-Pearl_Grot				{en una cueva, en la costa entre Belice y Blueweld}	
-Pearl_Grot_box1			{en un cofre, encima de una roca grande}
-
-PortoBello_Cave			{en una cueva, a la derecha de la Bahía de los Mosquitos}		
-PortoBello_Cave_box1	{debajo de unas maderas en un callejón sin salida}
-
-SanJuan_Cave			{en una cueva, cerca de San Juan}		
-SanJuan_Cave_box1		{en una cueva, junto a un puente de piedra}
-SanJuan_Cave_box2		{en un cofre, encima de una roca grande}
-SanJuan_Cave_box3		{en un cofre, junto a una cuerda que cuelga del techo}
-
-SantaCatalina_Cave		{en una cueva, cerca del Cabo de las Perlas}
-SantaCatalina_Cave_box1	{en un cofre, debajo de una antorcha}
-SantaCatalina_Cave_box2	{en un cofre, en un callejón sin salida}
-SantaCatalina_Cave_box3	{en un cofre, junto a una antorcha}
-
-SantaCatalina_Grot		{en una cueva, a la derecha de la costa de San Juan del Norte}
-SantaCatalina_Grot_box1	{en un cofre, en la playa}
-
-SantaCatalina_PearlCave	{en una cueva, a la izquierda de la costa de San Juan del Norte}
-SantaCatalina_PearlCave_box1	{en una cueva, junto a un puente de piedra}
-SantaCatalina_PearlCave_box2	{en un cofre, encima de una roca grande}
-SantaCatalina_PearlCave_box3	{en un cofre, junto a una cuerda que cuelga del techo}
-
-Tenotchitlan_Cave		{en una cueva, al norte del templo azteca}
-Tenotchitlan_Cave_box1	{en una cueva, junto a un puente de piedra}
-Tenotchitlan_Cave_box2	{en un cofre, encima de una roca grande}
-Tenotchitlan_Cave_box3	{en un cofre, junto a una cuerda que cuelga del techo}
-
-Terks_Grot				{en una cueva, a la derecha de la Bahía del Norte}
-Terks_Grot_box1			{en un cofre en la playa}
-
-Tortuga_Grot			{en una cueva, junto a la entrada de la playa Fisheye}
-Tortuga_Grot_box1		{en un cofre en la playa}
-
-Tortuga_Cave			{en la mazmorra de la ciudad de Tortuga}
-Tortuga_Cave_box1		{en un cofre, tras una puerta cerrada}
-
-Trinidad_Grot			{en una cueva, enfrente del faro de Trinidad}
-Trinidad_Grot_box1		{en un cofre, en la playa}
-
-Martinique_Grot 		{en una cueva, no lejos de la playa Lamentin}
-Martinique_Grot_box1 	{en un cofre en la playa}
-
-FortFrance_Dungeon		{en la mazmorra de la ciudad de Saint-Pierre}
-FortFrance_Dungeon_box1	{en un cofre, en un montículo}
-FortFrance_Dungeon_box2	{en un cofre, detrás de una puerta abierta en la parte superior}
-FortFrance_Dungeon_box3	{en un cofre, no muy lejos del montacargas}
-FortFrance_Dungeon_box4	{en un cofre, detrás de una puerta abierta en la planta baja}
-FortFrance_Dungeon_box5	{bajo unas cajas de madera}
+Antigua_Grot {en la cueva a la derecha de la costa de Falmouth}
+Antigua_Grot_box1 {en un cofre, encima de una roca grande}
+SentJons_TownCave {en la mazmorra de la ciudad de St. Johns}
+SentJons_TownCave_box1 {debajo de unas maderas en un callejón sin salida}
+SentJons_TownCave_box2 {en el túnel sin salida de una mina}
+SentJons_TownCave_box3 {en una obstrucción}
+Barbados_Cave {en una cueva cerca de Bridgetown}
+Barbados_Cave_box1 {debajo de unas maderas en un callejón sin salida}
+Beliz_Cave {en una cueva, a la derecha de la salida de Belice}
+Beliz_Cave_box1 {en una cueva, junto a un puente de piedra}
+Beliz_Cave_box2 {en un cofre, encima de una roca grande}
+Beliz_Cave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+Beliz_Cave_2 {en una cueva, junto a la salida de Belice}
+Beliz_Cave_2_box1 {debajo de unas maderas en un callejón sin salida}
+Bermudes_Dungeon {en la mazmorra bajo el astillero de Sharptown}
+Bermudes_Dungeon_box1 {en un cofre, tras una puerta cerrada}
+Bermudes_Dungeon_box2 {en un cofre, tras una puerta abierta}
+Bermudes_Dungeon_box3 {en un cofre, en un callejón sin salida}
+Bermudes_Dungeon_box4 {en un cofre, detrás de los barriles}
+Caracas_Grot {en una cueva, a la izquierda de la salida de Caracas}
+Caracas_Grot_box1 {en un cofre, encima de una roca grande}
+Cartahena_Cave {en una cueva, junto a la salida de Cartagena}
+Cartahena_Cave_box1 {en un cofre, debajo de una antorcha}
+Cartahena_Cave_box2 {en un cofre, en un callejón sin salida}
+Cartahena_Cave_box3 {en un cofre, junto a una antorcha}
+Caiman_Grot {en una cueva, a la derecha de una playa desierta}
+Caiman_Grot_box1 {en un cofre, encima de una roca grande}
+Charles_Grot {en una cueva, a la derecha de la Bahía Half Moon}
+Charles_Grot_box1 {en un cofre, en la playa}
+Cuba_Grot {en una cueva, a la derecha del cabo Camagüey}
+Cuba_Grot_box1 {en un cofre, en la playa}
+Cumana_Cave {en una cueva, a la derecha de la costa de Carupano}
+Cumana_Cave_box1 {en una cueva, junto a un puente de piedra}
+Cumana_Cave_box2 {en un cofre, encima de una roca grande}
+Cumana_Cave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+Curacao_Cave {en una cueva, a la derecha de la Laguna Blanca}
+Curacao_Cave_box1 {en un cofre, junto a una antorcha}
+Curacao_Cave_box2 {en un cofre, en un callejón sin salida}
+Curacao_Cave_box3 {en un cofre, debajo de una antorcha}
+Dominica_Grot {en una cueva, a la izquierda de la Bahía de Scott's Head}
+Dominica_Grot_box1 {en un cofre, en la playa}
+Guadeloupe_Cave {en una cueva, a la izquierda del faro de Guadalupe}
+Guadeloupe_Cave_box1 {en un cofre, en un nicho con una antorcha}
+Guadeloupe_Cave_box2 {en un cofre, en un nicho con un farol}
+Guadeloupe_Cave_box3 {en un cofre, detrás de las rocas de un muro}
+Hispaniola_Cave {en una cueva, cerca de la ciudad de Port-au-Prince}
+Hispaniola_Cave_box1 {en una cueva, junto a un puente de piedra}
+Hispaniola_Cave_box2 {en un cofre, encima de una roca grande}
+Hispaniola_Cave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+Jamaica_Grot {en una cueva, cerca del faro de Port Royal}
+Jamaica_Grot_box1 {en un cofre, encima de una roca grande}
+Maracaibo_Cave {en una cueva, junto a la salida de Maracaibo}
+Maracaibo_Cave_box1 {en un cofre, debajo de una antorcha}
+Maracaibo_Cave_box2 {en un cofre, en un callejón sin salida}
+Maracaibo_Cave_box3 {en un cofre, junto a una antorcha}
+Marigo_Cave {en una cueva, junto a la entrada a Philipsburg}
+Marigo_Cave_box1 {en un cofre, debajo de una antorcha}
+Marigo_Cave_box2 {en un cofre, en un callejón sin salida}
+Marigo_Cave_box3 {en un cofre, junto a una antorcha}
+Panama_Cave {en una cueva, a la izquierda de la salida de Portobello}
+Panama_Cave_box1 {debajo de unas maderas en un callejón sin salida}
+Pearl_Grot {en una cueva, en la costa entre Belice y Blueweld}
+Pearl_Grot_box1 {en un cofre, encima de una roca grande}
+PortoBello_Cave {en una cueva, a la derecha de la Bahía de los Mosquitos}
+PortoBello_Cave_box1 {debajo de unas maderas en un callejón sin salida}
+SanJuan_Cave {en una cueva, cerca de San Juan}
+SanJuan_Cave_box1 {en una cueva, junto a un puente de piedra}
+SanJuan_Cave_box2 {en un cofre, encima de una roca grande}
+SanJuan_Cave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+SantaCatalina_Cave {en una cueva, cerca del Cabo de las Perlas}
+SantaCatalina_Cave_box1 {en un cofre, debajo de una antorcha}
+SantaCatalina_Cave_box2 {en un cofre, en un callejón sin salida}
+SantaCatalina_Cave_box3 {en un cofre, junto a una antorcha}
+SantaCatalina_Grot {en una cueva, a la derecha de la costa de San Juan del Norte}
+SantaCatalina_Grot_box1 {en un cofre, en la playa}
+SantaCatalina_PearlCave {en una cueva, a la izquierda de la costa de San Juan del Norte}
+SantaCatalina_PearlCave_box1 {en una cueva, junto a un puente de piedra}
+SantaCatalina_PearlCave_box2 {en un cofre, encima de una roca grande}
+SantaCatalina_PearlCave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+Tenotchitlan_Cave {en una cueva, al norte del templo azteca}
+Tenotchitlan_Cave_box1 {en una cueva, junto a un puente de piedra}
+Tenotchitlan_Cave_box2 {en un cofre, encima de una roca grande}
+Tenotchitlan_Cave_box3 {en un cofre, junto a una cuerda que cuelga del techo}
+Terks_Grot {en una cueva, a la derecha de la Bahía del Norte}
+Terks_Grot_box1 {en un cofre en la playa}
+Tortuga_Grot {en una cueva, junto a la entrada de la playa Fisheye}
+Tortuga_Grot_box1 {en un cofre en la playa}
+Tortuga_Cave {en la mazmorra de la ciudad de Tortuga}
+Tortuga_Cave_box1 {en un cofre, tras una puerta cerrada}
+Trinidad_Grot {en una cueva, enfrente del faro de Trinidad}
+Trinidad_Grot_box1 {en un cofre, en la playa}
+Martinique_Grot {en una cueva, no lejos de la playa Lamentin}
+Martinique_Grot_box1 {en un cofre en la playa}
+FortFrance_Dungeon {en la mazmorra de la ciudad de Saint-Pierre}
+FortFrance_Dungeon_box1 {en un cofre, en un montículo}
+FortFrance_Dungeon_box2 {en un cofre, detrás de una puerta abierta en la parte superior}
+FortFrance_Dungeon_box3 {en un cofre, no muy lejos del montacargas}
+FortFrance_Dungeon_box4 {en un cofre, detrás de una puerta abierta en la planta baja}
+FortFrance_Dungeon_box5 {bajo unas cajas de madera}

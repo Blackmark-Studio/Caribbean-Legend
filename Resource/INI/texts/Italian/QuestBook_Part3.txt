@@ -554,7 +554,7 @@ Ho deluso Florian Shoke. Non sono riuscito a procurargli abbastanza cannoni. La 
 #TEXT 11
 Ho consegnato i cannoni a Florian Shoke. Ha cercato di coinvolgermi in qualche faccenda da spia, ma ho rifiutato. Troppo rischioso per i miei gusti.
 #TEXT 12
-Ora ho 250 dobloni e una nuova missione da Florian Shoke. Devo intrufolarmi a Portobello e scoprire perché il galeone Alcantara non salpa. Dovrei anche capire che fine ha fatto Sylvan Laforet, conosciuto anche come Jaime Silicio.
+Ora ho 75 dobloni e una nuova missione da Florian Shoke. Devo intrufolarmi a Portobello e scoprire perché il galeone Alcantara non salpa. Dovrei anche capire che fine ha fatto Sylvan Laforet, conosciuto anche come Jaime Silicio.
 #TEXT 13
 Maledizione! Sono stato troppo imprudente. Quel dannato locandiere ha chiamato le guardie appena ha sentito il nome di Jaime Silicio. Ora tutta la città sa che sono qui. Devo tornare da Florian Shoke a mani vuote...
 #TEXT 14
@@ -1090,7 +1090,8 @@ Sono scaduti i quattro mesi per raccogliere i materiali. Peccato non esserci riu
 #QUEST renovate_fdm
 Rinnovare la Nave Fantasma
 #TEXT   1
-Il comandante di Isla Tesoro, Alexus, mi ha chiesto di procurargli i materiali necessari per restaurare la nave fantasma. Gli servono 150 pezzi di legno di ferro, 200 barili di resina, 170 rotoli di seta navale e 130 matasse di corde di canapa.
+Il maestro d'ascia di Isla Tesoro, Alexus, ha accettato di ricostruire la nave fantasma. Questo restauro non solo ne cambierà l'aspetto, ma lo migliorerà anche significativamente sotto ogni aspetto: gli elementi obsoleti e consumati saranno sostituiti e la struttura sarà integrata con soluzioni moderne.
+Tutto ciò costerà una cifra folle, e dovrai anche cercare e portargli i materiali necessari: 150 unità ciascuna di bakaut, seta, corde e resina.
 #TEXT   2
 @<sQty> di @<sGood> rimasti.
 #TEXT   3
@@ -1612,7 +1613,7 @@ Il negromante Merriman era davvero tosto, e i mostri Chavinavi che aveva evocato
 #TEXT   33
 Ora ho il teschio di giada di Yum Cimil. Adesso devo andare a Dominica, per incontrare Tuttuathapak.
 #TEXT   34
-Il prossimo passo è portare il teschio di giada al tempio dei Chavin, che si trova su un’isola disabitata dell’arcipelago. Tutto quello che so è che si trova a nord di Dominica, vicino all’oceano. @<sText> E devo sbrigarmi: ho solo un mese per riportare il teschio al tempio. Dopo un mese, gli amuleti di Tuttuathapak perderanno il loro potere e non potrò superare i guardiani del tempio: i temibili Chavinavi.
+Il prossimo passo è portare il teschio di giada al tempio dei Chavin, che si trova su un’isola disabitata dell’arcipelago. L’unica cosa che si sa di esso è che si trova a nord di Dominica, nel mezzo di un triangolo di isole, e dal quarto lato c’è l’oceano. @<sText> E devo sbrigarmi: ho solo un mese per riportare il teschio al tempio. Dopo un mese, gli amuleti di Tuttuathapak perderanno il loro potere e non potrò superare i guardiani del tempio: i temibili Chavinavi.
 #TEXT   35
 Ho parlato con Nathaniel Hawk! Ora conosco le coordinate di Khael Roa: 19 gradi e 32 minuti Nord, 62 gradi e 25 minuti Ovest. Inoltre, Nathan mi ha avvertito dei pericoli che mi aspettano nel tempio.
 #TEXT   36
@@ -1634,6 +1635,10 @@ Bene, questa lunga storia è giunta al termine. Ho ricevuto dallo sciamano tre p
 Ho passato troppo tempo a cercare l’isola, e gli amuleti di Tuttuathapak hanno perso il loro potere. Non sono riuscito a riportare il teschio di giada al tempio, e Tuttuathapak ha deciso di non avere più nulla a che fare con me. Pazienza, è tutta colpa mia.
 #TEXT   44
 Ho trovato una sala davvero curiosa nelle profondità del tempio. Ci sono lastre di pietra sul pavimento e colonne tutt’intorno. L’uscita, che sembra portare al santuario, è bloccata da una pesante porta di pietra. Devo trovare un modo per aprirla. Esplorare questa sala è sicuramente un buon inizio.
+#TEXT   45
+Sembra che sotto queste piastrelle si nasconda un meccanismo che apre un passaggio. Dovrò camminarci sopra una alla volta, finché non troverò la sequenza giusta. Ogni passo corretto emette un suono particolare – almeno così mi sembra. Non ho altre idee per andare avanti, quindi cercherò la combinazione giusta e ascolterò con la massima attenzione...
+#TEXT   46
+Dannazione... Anche nelle colonne sembra esserci un meccanismo nascosto, e per di più protetto dalla magia dei Chavín. Ma ora l’errore costa molto di più: una combinazione sbagliata fa apparire scheletri indigeni. Dovrò stare estremamente attento – e ricordare ogni tentativo, per non ripetere gli errori. Chissà quante ondate ancora riuscirò a sopravvivere...
 
 #QUEST Patria
 Eroe della Nazione
@@ -2432,7 +2437,7 @@ Folke Deluc
 #TEXT   1
 Mentre mi occupavo degli affari a Saint-Pierre, Folke Deluc è finito di nuovo in prigione, e come al solito la causa sono i soldi. Maledizione a lui, come ha fatto a indebitarsi di nuovo in così poco tempo? L’equipaggio borbotta: salvarlo una seconda volta sembra davvero troppo. Dopo la battaglia vicino a Le François, la mia reputazione tra gli uomini è cresciuta, e il mio nome ora ha un certo peso sull’isola. Potrei cercare un nuovo navigatore alla taverna, ma la coscienza non mi permette di abbandonare Folke così facilmente. Merita almeno la possibilità di spiegarsi. Devo scoprire come sia riuscito a cacciarsi di nuovo nei guai in poche ore.
 #TEXT   2
-Bene, ora è tutto chiaro! Il furbo usuraio di Saint-Pierre ha capito che poteva guadagnarci col navigatore. Ha comprato tutti i debiti di Folke nelle colonie francesi. E la somma non era affatto piccola: ben cento dobloni d’oro!
+Bene, ora è tutto chiaro! Il furbo usuraio di Saint-Pierre ha capito che poteva guadagnarci col navigatore. Ha comprato tutti i debiti di Folke nelle colonie francesi. E la somma non era affatto piccola: 40 dobloni d’oro!
 #TEXT   3
 Ho saldato il debito del mio sconsiderato navigatore. Che la gente del posto rida pure. Sono ancora convinto di aver fatto la cosa giusta.
 #TEXT   4

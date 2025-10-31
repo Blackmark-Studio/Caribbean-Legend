@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 					{
 						link.l2 = "(Vertrauenswürdig) Ehrenwerte Herren, ich bin hier für fairen und beiderseitig vorteilhaften Handel. Bitte, lassen Sie mich den Plantagenbesitzer sehen.";
 						link.l2.go = "mtraxx_soldier_1";
-						notification("Trustworthy", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 					}
 				}
 				else
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Vertrauenswürdig) Hochgeschätzter Herr, gestatten Sie mir, Einwände zu erheben! Ich habe Ihnen Waren von höchster Qualität gebracht. Ich kenne den Wert jeder Einheit, sowohl dessen, was ich anbiete, als auch dessen, was Sie im Gegenzug anbieten. Ich verdiene eine etwas größere Ladung von Ihrer Seite, und dieser Handel wird immer noch profitabel für Sie sein - das wissen Sie sehr gut.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Vertrauenswürdig) Hochgeschätzter Herr, erlauben Sie mir, Einspruch zu erheben! Ich habe Ihnen Waren von höchster Qualität gebracht. Ich kenne den Wert jeder Einheit, sowohl von dem, was ich anbiete, als auch von dem, was Sie im Gegenzug anbieten. Ich verdiene eine etwas größere Ladung von Ihrer Seite, und dieser Handel wird immer noch profitabel für Sie sein - das wissen Sie sehr gut.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Vertrauenswürdig) Geschätzter Herr, erlauben Sie mir zu widersprechen! Ich habe Ihnen Waren von höchster Qualität gebracht. Ich kenne den Wert jeder Einheit, sowohl von dem, was ich anbiete, als auch von dem, was Sie im Gegenzug anbieten. Ich verdiene eine etwas größere Ladung von Ihrer Seite und dieser Handel wird immer noch profitabel für Sie sein - das wissen Sie sehr gut.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -406,7 +406,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ja, es besteht Bedarf an Jean Picard - nicht nur zum Weinschenken. Ein einflussreicher Engländer hat mich bereits kontaktiert. Ein Mann namens, wie war es ... Pattornson? Er hat mir einen Brief zugestellt.";
 				link.l1 = "Aber weder Pattornson noch sein Kunde sind bisher aufgetaucht. Ich bin bereit, Jean hier und jetzt von dir zu kaufen. Nenne deinen Preis - die Damen warten!";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

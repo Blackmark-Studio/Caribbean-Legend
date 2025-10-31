@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("Voice\English\Enc_RapersGirl_1.wav");
-				dialog.text = "先生! 先生, 救命! 杀人啦! ";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", 救命! 杀人啦! ";
 				link.l1 = "嗯? 杀谁? 在哪里? 这是玩笑吗, 亲爱的? ";
 				link.l1.go = "FMQP";
 				break;
@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "这是在'暗示'吗? 对不起, 和你说话是我的错! 再见,'骑士'... ";
 				link.l1 = "如你所愿, 甜心。 ";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "好吧... 至少你对自己的愿望很诚实。 我保证, 如果你找到安杰洛或者告诉我他到底发生了什么, 你会得到你想要的... ";
 				link.l1 = "亲爱的小姐, 和你做生意很愉快... 现在让我们直接谈谈你哥哥的事。 ";
 				link.l1.go = "Consumption_4";
@@ -332,7 +334,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, 法国迷你任务 ("ЊЉ) 佐尔特 佐伦斯
 		case "FMQP":
-			dialog.text = "不, 不是开玩笑! 楼上! 两个暴徒正在谋杀一位贵族绅士! 救救他, 船长, 你是这里唯一带武器的人! ";
+			dialog.text = "不, 不是开玩笑! 楼上! 两个暴徒正在谋杀一位贵族绅士! 救命, 船长! 这里只有你一个人有武器! ";
 			link.l1 = "跑到外面去, 叫卫兵! 我上楼去! ";
 			link.l1.go = "FMQP_1";
 			link.l2 = "亲爱的, 你一定把我当成卫兵了。 如果发生谋杀就叫巡逻队。 ";

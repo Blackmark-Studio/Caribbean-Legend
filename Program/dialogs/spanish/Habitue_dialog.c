@@ -646,50 +646,11 @@ void ProcessDialogEvent()
 		link.l1.go = "trial_spy_2";
 		break;
 
-	case "trial_spy_2":
-		dialog.text = "¡Eso va sin decir! ¡Eso debería ser algo realmente digno de atención, te lo digo! Oh, y la gente decía que los pescadores han visto un barco militar extranjero en estas aguas... probablemente una fragata. ¿Quizás, de allí vino ese espía?";
-		link.l1 = "¡Sí, puede ser... Bien, compañero, gracias por la compañía, pero tengo que irme!";
-		link.l1.go = "exit_sit";
-		pchar.questTemp.Trial = "spy_drink";
-
-		if (CheckAttribute(pchar, "questTemp.trialHabitueId"))
-		{
-			if (GetCharacterIndex(pchar.questTemp.trialHabitueId) != -1)
-			{
-				sld = characterFromId(pchar.questTemp.trialHabitueId);
-				sld.lifeday = 0;
-				DeleteAttribute(pchar, "questTemp.trialHabitueId");
-				LAi_CharacterDisableDialog(sld);
-				DelLandQuestMark(sld);
-			}
-		}
-		// belamour legendary edtion -->
-		if (GetCharacterIndex("PortoBello_Poorman") < 0)
-		{
-			// новый нищий
-			sld = GetCharacter(NPC_GenerateCharacter("PortoBello_Poorman", "panhandler_" + (rand(5) + 1), "man", "man", 5, SPAIN, -1, false, "slave"));
-			sld.city = "PortoBello";
-			sld.location = "PortoBello_town";
-			sld.location.group = "goto";
-			sld.location.locator = "goto15";
-			sld.forStay.locator = "goto15"; // где генеримся в случае стояния
-			sld.forSit.locator0 = "goto3";
-			sld.forSit.locator1 = "goto25"; // три локатора, где генеримся в случае сидения
-			sld.forSit.locator2 = "goto12";
-			LAi_SetLoginTime(sld, 9.0, 21.99);
-			sld.Dialog.Filename = "Common_poorman.c";
-			LAi_SetPoorType(sld);
-			LAi_SetHP(sld, 50.0, 50.0);
-			sld.greeting = "poorman_male";
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-		}
-		sld = characterFromId("PortoBello_Poorman");
-		LAi_RemoveLoginTime(sld);
-		ChangeCharacterAddressGroup(sld, "Portobello_town", "goto", "goto15");
-		AddLandQuestMark(sld, "questmarkmain");
-		DelLandQuestMark(characterFromId("portobello_tavernkeeper"));
-		// <-- legendary edtion
-		AddQuestRecord("Trial", "14");
+		case "trial_spy_2":
+			dialog.text = "¡Eso va sin decir! ¡Eso debería ser algo realmente digno de atención, te lo digo! Oh, y la gente decía que los pescadores han visto un barco militar extranjero en estas aguas... probablemente una fragata. ¿Quizás, de allí vino ese espía?";
+			link.l1 = "¡Sí, puede ser... Bien, compañero, gracias por la compañía, pero tengo que irme!";
+			link.l1.go = "exit_sit";
+			Trial_Habitue_DlgExit();
 		break;
 
 	case "sit_2":
@@ -1105,7 +1066,7 @@ void ProcessDialogEvent()
 		link.l1 = "Lo entiendo. Gracias por la compañía, compañero. Tómatelo con calma.";
 		link.l1.go = "exit_sit";
 
-		npchar.questTemp.Sotta = true;
+		npchar.questTemp.PZ_Sotta = true;
 		pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 		AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;
@@ -1121,7 +1082,7 @@ void ProcessDialogEvent()
 		link.l1 = "Eso es correcto, los solitarios no duran mucho. Bueno, celebra. Tengo que irme, compañero.";
 		link.l1.go = "exit_sit";
 
-		npchar.questTemp.Lutter = true;
+		npchar.questTemp.PZ_Lutter = true;
 		pchar.questTemp.PZ_BelizAskCitizens = sti(pchar.questTemp.PZ_BelizAskCitizens) + 1;
 		AddDialogExitQuest("PZ_LongwayBelizDialog");
 		break;

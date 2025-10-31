@@ -1,34 +1,33 @@
-
-Antigua	{Антигуа}
-Barbados	{Барбадос}
-Bermudes	{Исла-Тесоро}
-Beliz	{Юкатан}
-Cuba   {Куба}
-Cuba1   {Куба}
-Cuba2   {Куба}
-Caiman 	{Кайман}
+Antigua {Антигуа}
+Barbados {Барбадос}
+Bermudes {Исла-Тесоро}
+Beliz {Юкатан}
+Cuba {Куба}
+Cuba1 {Куба}
+Cuba2 {Куба}
+Caiman {Кайман}
 Cumana {Мэйн}
 Caracas {Мэйн}
-Curacao	{Кюрасао}
+Curacao {Кюрасао}
 Cartahena {Мэйн}
-Dominica	{Доминика}
-Guadeloupe	{Гваделупа}
+Dominica {Доминика}
+Guadeloupe {Гваделупа}
 Hispaniola {Эспаньола}
-Hispaniola1	{Эспаньола}
+Hispaniola1 {Эспаньола}
 Hispaniola2 {Эспаньола}
-Jamaica	{Ямайка}
+Jamaica {Ямайка}
 Maracaibo {Мэйн}
-Martinique	{Мартиника}
-SentMartin	{Синт-Маартен}
-Nevis	{Сент-Кристофер}
-PuertoRico	{Пуэрто-Рико}
+Martinique {Мартиника}
+SentMartin {Синт-Маартен}
+Nevis {Сент-Кристофер}
+PuertoRico {Пуэрто-Рико}
 PortoBello {Мэйн}
 Pearl {Жемчужный Берег}
 Panama {Панама}
 SantaCatalina {Мэйн}
-Terks	{Теркс}
-Tortuga	{Тортуга}
-Trinidad	{Тринидад}
+Terks {Теркс}
+Tortuga {Тортуга}
+Trinidad {Тринидад}
 Tenotchitlan {оз. Петен}
 Mein {Мэйн}
 KhaelRoa {Хаэль Роа}
@@ -41,35 +40,34 @@ IslaMona {Исла Мона}
 IslaDeCoche {Исла-де-Коче}
 Tobago {Тобаго}
 MarieGalante {Мари-Галант}
-
 SentJons_town {Сент-Джонс}
-Pirates_town	{Шарптаун}
-Bridge_town	{Бриджтаун}
-Beliz_town	{Белиз}
-Santiago_town	{Сантьяго}
-PuertoPrincipe_town	{Пуэрто-Принсипе}
-Havana_town	{Гавана}
-Cumana_town	{Кумана}
-Caracas_town	{Каракас}
-Villemstad_town	{Виллемстад}
-Cartahena_town	{Картахена}
-BasTer_town	{Бас-Тер}
-SantoDomingo_town	{Санто-Доминго}
-LaVega_town	{Ла Вега}
-PortPax_town	{Порт-о-Пренс}
-PortRoyal_town	{Порт-Ройял}
-Maracaibo_town	{Маракайбо}
-FortFrance_town	{Сен-Пьер}
-LeFransua_town	{Ле Франсуа}
-Marigo_town	{Филипсбург}
-Charles_town	{Капстервиль}
-SanJuan_town	{Сан-Хуан}
-PortoBello_town	{Порто Белло}
-Panama_town	{Панама}
-SantaCatalina_town	{Блювельд}
-Tortuga_town	{Тортуга}
-PortSpein_town	{Сан-Хосе}
-Tenotchitlan_town	{Тайясаль}
+Pirates_town {Шарптаун}
+Bridge_town {Бриджтаун}
+Beliz_town {Белиз}
+Santiago_town {Сантьяго}
+PuertoPrincipe_town {Пуэрто-Принсипе}
+Havana_town {Гавана}
+Cumana_town {Кумана}
+Caracas_town {Каракас}
+Villemstad_town {Виллемстад}
+Cartahena_town {Картахена}
+BasTer_town {Бас-Тер}
+SantoDomingo_town {Санто-Доминго}
+LaVega_town {Ла Вега}
+PortPax_town {Порт-о-Пренс}
+PortRoyal_town {Порт-Ройял}
+Maracaibo_town {Маракайбо}
+FortFrance_town {Сен-Пьер}
+LeFransua_town {Ле Франсуа}
+Marigo_town {Филипсбург}
+Charles_town {Капстервиль}
+SanJuan_town {Сан-Хуан}
+PortoBello_town {Порто Белло}
+Panama_town {Панама}
+SantaCatalina_town {Блювельд}
+Tortuga_town {Тортуга}
+PortSpein_town {Сан-Хосе}
+Tenotchitlan_town {Тайясаль}
 FortOrange_town {Марун-Таун}
 Providence_town {Сан-Андрес}
 Estate {Имение Оглторпа, Англия}
@@ -77,70 +75,69 @@ DesMoines {Дес-Мойнес}
 LosTeques_town {рудник Лос-Текес}
 ExitMine {Выход к руднику}
 Factoria {Фактория}
-
-Shore1	{мыс Бун}
-Shore2	{бухта Фалмут}
-Shore3	{бухта Бенурес}
-Shore4	{мыс Гаррисон}
-Shore5	{мыс Реггед Пойнт}
-Shore6	{мыс Каточе}
-Shore7	{залив Косумель}
-Shore8	{бухта Четумаль}
-Shore9	{бухта Аматике}
-Shore10	{лагуна Каратаска}
-Shore11	{мыс Камагуэй}
-Shore12	{залив Анна Мария}
-Shore13	{залив Батабано}
-Shore14	{бухта Хувентуд}
-Shore15	{мыс Сан Антонио}
-Shore16	{Пустынный пляж}
-Shore17	{залив Эсмеральды}
-Shore18	{берег Бока де ла Сьерпе}
-Shore19	{бухта Карупано}
-Shore20	{пляж Лос Текес}
-Shore21	{мыс Аруба}
-Shore22	{берег Ван Хато}
-Shore23	{мыс Санта Мария}
-Shore24	{лагуна Бланка}
-Shore25	{бухта Ковеньяс}
-Shore26	{пляж Касл Брус}
-Shore27	{мыс Скотс Хед}
-Shore28	{бухта Морн л'О}
-Shore29	{пляж Капстер}
-Shore30	{бухта Гран Бур}
-Shore31	{мыс Недоступный}
-Shore32	{мыс Исабела}
-Shore33	{бухта Самана}
-Shore34	{залив Гонаив}
-Shore35	{мыс Негрил}
-Shore36	{бухта Портленд}
-Shore37	{бухта Гуахира}
-Shore38	{пляж Ламантен}
-Shore39	{бухта Ле Марен}
-Shore40	{пляж Гранд Кейс}
-Shore41	{залив Симпсон}
-Shore42	{залив Санди}
-Shore43	{залив Халф Мун}
-Shore44	{бухта Агуадилья}
-Shore45	{пляж Фахардо}
-Shore46	{лагуна Чирики}
-Shore47	{залив Москитос}
-Shore48	{Дарьенский залив}
-Shore49	{залив Папагайо}
-Shore50	{залив Никоя}
-Shore51	{залив Коронадо}
-Shore52	{залив Гольфо Дульсе}
-Shore53	{Берег Москитов}
-Shore54	{мыс Перлас}
-Shore55	{залив Сан Хуан дель Норте}
-Shore56	{залив Северный}
-Shore57	{залив Южный}
-Shore58	{пляж Глаз Рыбы}
-Shore59	{бухта Скарборо}
-Shore60	{мыс Галера}
-Shore61	{Тепейакак}
-Shore62	{Истапалапу}
-Shore63	{залив Сан Мигель}
+Shore1 {мыс Бун}
+Shore2 {бухта Фалмут}
+Shore3 {бухта Бенурес}
+Shore4 {мыс Гаррисон}
+Shore5 {мыс Реггед Пойнт}
+Shore6 {мыс Каточе}
+Shore7 {залив Косумель}
+Shore8 {бухта Четумаль}
+Shore9 {бухта Аматике}
+Shore10 {лагуна Каратаска}
+Shore11 {мыс Камагуэй}
+Shore12 {залив Анна Мария}
+Shore13 {залив Батабано}
+Shore14 {бухта Хувентуд}
+Shore15 {мыс Сан Антонио}
+Shore16 {Пустынный пляж}
+Shore17 {залив Эсмеральды}
+Shore18 {берег Бока де ла Сьерпе}
+Shore19 {бухта Карупано}
+Shore20 {пляж Лос Текес}
+Shore21 {мыс Аруба}
+Shore22 {берег Ван Хато}
+Shore23 {мыс Санта Мария}
+Shore24 {лагуна Бланка}
+Shore25 {бухта Ковеньяс}
+Shore26 {пляж Касл Брус}
+Shore27 {мыс Скотс Хед}
+Shore28 {бухта Морн л'О}
+Shore29 {пляж Капстер}
+Shore30 {бухта Гран Бур}
+Shore31 {мыс Недоступный}
+Shore32 {мыс Исабела}
+Shore33 {бухта Самана}
+Shore34 {залив Гонаив}
+Shore35 {мыс Негрил}
+Shore36 {бухта Портленд}
+Shore37 {бухта Гуахира}
+Shore38 {пляж Ламантен}
+Shore39 {бухта Ле Марен}
+Shore40 {пляж Гранд Кейс}
+Shore41 {залив Симпсон}
+Shore42 {залив Санди}
+Shore43 {залив Халф Мун}
+Shore44 {бухта Агуадилья}
+Shore45 {пляж Фахардо}
+Shore46 {лагуна Чирики}
+Shore47 {залив Москитос}
+Shore48 {Дарьенский залив}
+Shore49 {залив Папагайо}
+Shore50 {залив Никоя}
+Shore51 {залив Коронадо}
+Shore52 {залив Гольфо Дульсе}
+Shore53 {Берег Москитов}
+Shore54 {мыс Перлас}
+Shore55 {залив Сан Хуан дель Норте}
+Shore56 {залив Северный}
+Shore57 {залив Южный}
+Shore58 {пляж Глаз Рыбы}
+Shore59 {бухта Скарборо}
+Shore60 {мыс Галера}
+Shore61 {Тепейакак}
+Shore62 {Истапалапу}
+Shore63 {залив Сан Мигель}
 Shore64 {Рифовая бухта}
 Shore65 {бухта Скалистая}
 Shore66 {Акулий пляж}
@@ -160,14 +157,11 @@ Shore76 {мыс Утопленника}
 Shore77 {бухта Вьекес}
 Shore78 {залив Буканьеров}
 Shore79 {мыс Кабо-Рохо}
-
-Shore_ship1	{бухта Сабу-Матила}
-Shore_ship2	{залив Гибели}
-Shore_ship3	{мыс Несбывшихся надежд}
-Shore_ship4	{бухта Проклятая}
-
+Shore_ship1 {бухта Сабу-Матила}
+Shore_ship2 {залив Гибели}
+Shore_ship3 {мыс Несбывшихся надежд}
+Shore_ship4 {бухта Проклятая}
 Shore_mask {грот Стража}
-
 Mayak1 {Маяк Тринидада}
 Mayak2 {Маяк Барбадоса}
 Mayak3 {Маяк Порт-Ройяла}
@@ -179,150 +173,115 @@ Mayak8 {Маяк Санто-Доминго}
 Mayak9 {Маяк Сантьяго}
 Mayak10 {Маяк Гаваны}
 Mayak11 {Маяк Картахены}
-
 Bridgetown {Бриджтаун}
 Bridgetown Town {Бриджтаун}
 Bridgetown Fort {форт Бриджтауна}
 Bridgetown Port {порт Бриджтауна}
-
 SanJuan {Сан-Хуан}
 SanJuan Town {Сан-Хуан}
 SanJuan Fort {форт Сан-Хуана}
 SanJuan Port {порт Сан-Хуана}
-
 Santiago {Сантьяго}
 Santiago Town {Сантьяго}
 Santiago Fort {форт Сантьяго}
 Santiago Port {порт Сантьяго}
-
 PuertoPrincipe {Пуэрто-Принсипе}
 PuertoPrincipe Town {Пуэрто-Принсипе}
 PuertoPrincipe Fort {форт Пуэрто-Принсипе}
 PuertoPrincipe Port {порт Пуэрто-Принсипе}
-
 SentJons {Сент-Джонс}
 SentJons Town {Сент-Джонс}
 SentJons Fort {форт Сент-Джонса}
 SentJons Port {порт Сент-Джонса}
-
 PortRoyal {Порт-Ройял}
 PortRoyal Town {Порт-Ройял}
 PortRoyal Fort {форт Порт-Ройяла}
 PortRoyal Port {порт Порт-Ройяла}
-
 FortOrange {Марун-Таун}
 FortOrange Town {Марун-Таун}
-
 Villemstad {Виллемстад}
 Villemstad Town {Виллемстад}
 Villemstad Fort {форт Виллемстада}
 Villemstad Port {порт Виллемстада}
-
 BasTer {Бас-Тер}
 BasTer Town {Бас-Тер}
 BasTer Fort {форт Бас-Тер}
 BasTer Port {порт Бас-Тер}
-
 LaVega {Ла Вега}
 LaVega Town {Ла Вега}
 LaVega Fort {форт Ла Веги}
 LaVega Port {порт Ла Веги}
-
 SantoDomingo {Санто-Доминго}
 SantoDomingo Town {Санто-Доминго}
 SantoDomingo Fort {форт Санто-Доминго}
 SantoDomingo Port {порт Санто-Доминго}
-
 PortPax {Порт-о-Пренс}
 PortPax Town {Порт-о-Пренс}
 PortPax Fort {форт Порт-о-Пренс}
 PortPax Port {порт Порт-о-Пренс}
-
-Pirates	{Шарптаун}
+Pirates {Шарптаун}
 Pirates Town {Шарптаун}
 Pirates Port {порт Шарптауна}
-
 FortFrance {Сен-Пьер}
 FortFrance Town {Сен-Пьер}
 FortFrance Fort {форт Сен-Пьера}
 FortFrance Port {порт Сен-Пьера}
-
 LeFransua {Ле Франсуа}
 LeFransua Town {Ле Франсуа}
 LeFransua Port {порт Ле Франсуа}
-
-Havana	{Гавана}
+Havana {Гавана}
 Havana Town {Гавана}
 Havana Fort {форт Гаваны}
 Havana Port {порт Гаваны}
-
-Charles	{Капстервиль}
+Charles {Капстервиль}
 Charles Town {Капстервиль}
 Charles Fort {форт Капстервиля}
 Charles Port {порт Капстервиля}
-
 PortoBello Town {Порто Белло}
 PortoBello Fort {форт Порто Белло}
 PortoBello Port {порт Порто Белло}
-
 PortSpein {Сан-Хосе}
 PortSpein Town {Сан-Хосе}
 PortSpein Fort {форт Сан-Хосе}
 PortSpein Port {порт Сан-Хосе}
-
-Tortuga	{Тортуга}
 Tortuga Town {Тортуга}
 Tortuga Fort {форт Тортуги}
 Tortuga Port {порт Тортуги}
-
 Marigo {Филипсбург}
 Marigo Town {Филипсбург}
 Marigo Fort {форт Филипсбурга}
 Marigo Port {порт Филипсбурга}
-
 Panama Town {Панама}
 Panama Fort {форт Панамы}
 Panama Port {порт Панамы}
-
 Cartahena Town {Картахена}
 Cartahena Fort {форт Картахены}
 Cartahena Port {порт Картахены}
-
 Maracaibo Town {Маракайбо}
 Maracaibo Fort {форт Маракайбо}
 Maracaibo Port {порт Маракайбо}
-
 Caracas Town {Каракас}
 Caracas Fort {форт Каракаса}
 Caracas Port {порт Каракаса}
-
 Cumana Town {Кумана}
 Cumana Fort {форт Куманы}
 Cumana Port {порт Куманы}
-
 SantaCatalina Town {Блювельд}
 SantaCatalina Fort {форт Блювельда}
 SantaCatalina Port {порт Блювельда}
-
 Beliz Town {Белиз}
 Beliz Fort {форт Белиза}
 Beliz Port {порт Белиза}
-
 SanAndres {Сан-Андрес}
 SanAndres Town {Сан-Андрес}
 SanAndres Fort {форт Сан-Андреса}
 SanAndres Port {порт Сан-Андреса}
-
-IslaMona {Исла Мона}
 IslaMona Town {Исла Мона}
-
 LosTeques {рудник Лос-Текес}
 LosTeques Town {рудник Лос-Текес}
-
-Duel Field	{дуэльное поле}
-
-Boarding deck {верхняя палуба} 
-Orlop deck {нижняя палуба} 
+Duel Field {дуэльное поле}
+Boarding deck {верхняя палуба}
+Orlop deck {нижняя палуба}
 Fort inside {форт}
 Sea {море}
 Jungle {джунгли}
@@ -333,7 +292,7 @@ Port {Порт}
 Tavern {таверна}
 Tavern upstairs {комната в таверне}
 Store {магазин}
-Shipyard	{верфь}
+Shipyard {верфь}
 PackHouse {склад}
 Townhall {резиденция}
 TownhallRoom {комната в резиденции}
@@ -355,9 +314,7 @@ Crypt {склеп}
 Exit {выход}
 The cavern {пещера}
 ????? {?????}
-Passage (мост)
-Beach {пляж}
-Cave {пещера}
+Passage (мост)Beach {пляж}
 Cave {пещера}
 Cave entrance {вход в пещеру}
 FloodedCave {Затопленная пещера}
@@ -372,17 +329,15 @@ Brothel Room {комната уединения}
 Village {Деревня}
 Plantation {Плантация}
 UnderWater {Под водой}
-Grotto	{Грот}
-Dunes house	{Дом в дюнах}
+Grotto {Грот}
+Dunes house {Дом в дюнах}
 Torture room {Пыточная}
 Wine Cellar {Винный погреб}
-
-cabine	{Каюта}
-My_Campus	{Кают-компания}
-My_Deck_Medium	{Орудийная палуба}
-My_Deck	{Трюм}
+cabine {Каюта}
+My_Campus {Кают-компания}
+My_Deck_Medium {Орудийная палуба}
+My_Deck {Трюм}
 My_Ship {Корабль}
-
 Drugstore {Аптека}
 HWIC_flat {Штаб-квартира ГВИК}
 Comendant's House {Дом коменданта Гаваны}
@@ -398,13 +353,11 @@ Gladis_house {дом Глэдис МакАртур}
 Gonsales_house {дом Энрике Гонсалеса}
 Loxly_house {контора Альберта Локсли}
 Kristian_house {дом Кристиана}
-
 LostShipsCity {Локо-Риферте}
 LostShipsCity Town {Локо-Риферте}
 LSC South {Юг Острова погибших кораблей}
 LSC North {Север Острова погибших кораблей}
 LSC Town {улицы Локо-Риферте}
-
 Ava Cabin {Галеон 'Эва'}
 Caroline cabin {Фрегат 'Каролина'}
 CeresSmithy cabin {Флейт 'Церес Смити'}
@@ -421,7 +374,6 @@ SanGabrielMechanic cabin {Барк 'Сан Габриэль'}
 SantaFlorentinaShipInside4 cabin {Бриг 'Санта Флорентина'}
 TartarusPrison cabin {Бэттлшип 'Тартарус'}
 VelascoShipInside1 cabin {Галеон 'Веласко'}
-
 Tenochtitlan {Тайясаль}
 Temple_1 {Храм Тохила}
 Temple_2 {Храм Кавиля}
@@ -433,14 +385,12 @@ TempleTreasure {Сокровищница}
 TempleGreatInside {Большой храм}
 TempleRoundInside {Храм Кукулькана}
 TempleUnderwater {Подводный лабиринт}
-
 Maze {храм чавинцев}
 Alcove {святилище}
 Merrimancave {логово Мерримана}
-
 River {Берег реки}
 Jungle Fort {Форт в джунглях}
 Basement {Подвал}
 Ruins {Руины}
-
 Ulysse {Пинас 'Улисc'}
+La Espada Del Rey {Флейт 'La Espada del Rey'}

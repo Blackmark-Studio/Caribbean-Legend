@@ -1,3 +1,168 @@
+void DWH_Start()
+{
+	SetQuestHeader("DWH");
+	AddQuestRecord("DWH", "1");
+	pchar.questTemp.DWH_Start = true;
+	
+	sld = GetCharacter(NPC_GenerateCharacter("DWH_gypsy", "gipsy_2", "woman", "towngirl", 10, PIRATE, -1, true, "citizen"));
+	ChangeCharacterAddressGroup(sld, "SentJons_town", "goto", "goto1");
+	sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+	sld.dialog.currentnode = "dwh_gypsy_0";
+	LAi_SetCitizenType(sld);
+	LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+	LAi_SetLoginTime(sld, 07.00, 21.99);
+	AddLandQuestMark(sld, "questmarkmain");
+}
+
+void DWH_gypsy_5()
+{
+	AddQuestRecord("DWH", "2");
+			
+	sld = CharacterFromID("DWH_gypsy");
+	sld.dialog.currentnode = "dwh_gypsy_repeat";
+	
+	sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
+	sld.name = GetCharacterName("Thomas");
+	sld.lastname = GetCharacterName("Morrison");
+	LAi_SetStayType(sld);
+	sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+	sld.dialog.currentnode = "Tomas";
+	ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
+	sld.City = "SentJons";
+	LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
+	AddLandQuestMark(sld, "questmarkmain");
+}
+
+void DWH_Tomas_7()
+{
+	AddQuestRecord("DWH", "2");
+	
+	sld = CharacterFromID("DWH_Tomas");
+	LAi_SetActorType(sld);
+	AddQuestRecord("DWH", "3");
+	pchar.questTemp.DWH_pastor = true;
+	AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
+	
+	sld = CharacterFromID("DWH_gypsy");
+	LAi_CharacterDisableDialog(sld);
+}
+
+void DWH_Tomas_14()
+{
+	sld = CharacterFromID("DWH_Tomas");
+	LAi_SetActorType(sld);
+	pchar.questTemp.DWH_pastor_PrinesDengi = true;
+	AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
+}
+
+void DWH_gypsy_22()
+{
+	sld = CharacterFromID("DWH_Tomas");
+	LAi_SetActorType(sld);
+	sld = CharacterFromID("DWH_gypsy");
+	LAi_SetActorType(sld);
+	
+	AddQuestRecord("DWH", "5");
+	
+	// поход за мангаросой
+	LAi_LocationDisableOfficersGen("Antigua_Grot", true);
+	locations[FindLocation("Antigua_Grot")].DisableEncounters = true;
+	PChar.quest.DWH_Grot.win_condition.l1 = "location";
+	PChar.quest.DWH_Grot.win_condition.l1.location = "Antigua_Grot";
+	PChar.quest.DWH_Grot.function = "DWH_Grot";
+}
+
+void DWH_Bandit_2()
+{
+	LAi_SetActorType(pchar);
+	LAi_ActorGoToLocator(pchar, "goto", "goto2", "", -1);
+	DoQuestFunctionDelay("DWH_Grot_2", 4.0);
+}
+
+void DWH_Bandit_6()
+{
+	EndQuestMovie();
+	LAi_SetPlayerType(pchar);
+	LAi_LocationDisableOfficersGen("Antigua_Grot", false);
+	locations[FindLocation("Antigua_Grot")].DisableEncounters = false;
+	
+	SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false)
+	
+	sld = CharacterFromID("DWH_gypsy");
+	LAi_SetStayType(sld);
+	sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
+	sld.dialog.currentnode = "gypsy_3";
+	AddLandQuestMark(sld, "questmarkmain");
+	
+	for (i=1; i<=2; i++)
+	{
+		sld = CharacterFromID("DWH_Bandit_"+i);
+		LAi_CharacterDisableDialog(sld);
+		LAi_SetWarriorType(sld);
+		LAi_group_MoveCharacter(sld, "PIRATE_CITIZENS");
+		LAi_SetCheckMinHP(sld, LAi_GetCharacterHP(sld)-1, false, "DWH_Podkreplenie");
+	}
+}
+
+void DWH_Bandit_7()
+{
+	chrDisableReloadToLocation = true;
+	EndQuestMovie();
+	LAi_SetPlayerType(pchar);
+	sld = CharacterFromID("DWH_Bandit_1");
+	GiveItem2Character(sld, "cannabis7");
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	LAi_SetFightMode(pchar, true);
+	
+	for (i=1; i<=2; i++)
+	{
+		sld = CharacterFromID("DWH_Bandit_"+i);
+		LAi_SetWarriorType(sld);
+		LAi_group_MoveCharacter(sld, "EnemyFight");
+	}
+	for (i=3; i<=4; i++)
+	{
+		sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
+		if (i==4) sld.model = "citiz_49";
+		LAi_SetWarriorType(sld);
+		LAi_group_MoveCharacter(sld, "EnemyFight");
+		ChangeCharacterAddressGroup(sld, "Antigua_Grot", "reload", "reload1");
+	}
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheckFunction("EnemyFight", "DWH_Grot_4");
+}
+
+void DWH_gypsy_43()
+{
+	AddCharacterExpToSkill(pchar, "Leadership", 200);
+	AddQuestRecord("DWH", "9");
+	CloseQuestHeader("DWH");
+	
+	sld = CharacterFromID("DWH_gypsy");
+	sld.lifeday = 0;
+	LAi_CharacterDisableDialog(sld);
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+}
+
+void DWH_gypsy_47()
+{
+	AddCharacterExpToSkill(pchar, "Leadership", 200);
+	AddQuestRecord("DWH", "10");
+	CloseQuestHeader("DWH");
+	AddQuestRecordInfo("Useful_Acquaintances", "1");
+	
+	SetTimerFunction("DWH_Mangarosa", 0, 0, 30);
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+}
+
 void DWH_Grot(string qName)
 {
 	LAi_SetActorType(pchar);

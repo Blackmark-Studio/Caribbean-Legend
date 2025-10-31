@@ -35,31 +35,8 @@ void ProcessDialogEvent()
 		case "Cabin":
 			dialog.text = "Marcello, znam go. To przyjaciel Rivadosa i piratów. Adolf nigdy by z nim nie współpracował. Poczuj powietrze... czy wyczuwasz zapach prochu? A na ścianie jest krew... Zabił Adolfa i teraz próbuje nas oszukać! Musi pracować dla admirała! Zabij go!";
 			link.l1 = "Hello, sailor.";
-			link.l1.go = "Cabin_fight";
-		break;
-		
-		case "Cabin_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			DialogExit();
-			sld = characterFromId("Marchello");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-			{
-				for (i=1; i<=3; i++)
-				{
-					sld = characterFromId("CyclopGuard_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 		// на улице
@@ -1707,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Co to za harmider tym razem, kapitanie? Hiszpanie, piraci czy coś gorszego?";
 			link.l1 = "„To gorzej, Mary, dużo gorzej. Gubernator zamierza odwiedzić niezwykle drogą kurtyzanę, a ja mam mu towarzyszyć jako osoba zainteresowana, jak obiecano gospodyni. Nudne rozmowy, przewartościowane wino i nudni szlachcice.”";
 			link.l1.go = "GoldenGirl_1";

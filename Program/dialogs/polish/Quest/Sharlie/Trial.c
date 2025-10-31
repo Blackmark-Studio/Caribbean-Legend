@@ -203,9 +203,7 @@ void ProcessDialogEvent()
 		
 		case "florian_deck_5":
 			TakeNItems(pchar, "gold_dublon", 200);
-			Log_Info("Otrzymałeś 200 dublonów.");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "Ale to nie wszystko, kapitanie. Chciałbyś zarobić jeszcze dwieście pięćdziesiąt złotych podwójnych escudos?";
+			dialog.text = "Ale to nie wszystko, kapitanie. Chciałbyś zarobić jeszcze 75 złotych podwójnych escudos?";
 			link.l1 = "Brzmi obiecująco, ale wszystko zależy od tego, co mnie pan o to poprosi, sir.";
 			link.l1.go = "florian_deck_6";
 		break;
@@ -409,9 +407,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "florian_16":
-			TakeNItems(pchar, "gold_dublon", 250);
-			Log_Info("Otrzymałeś 250 dublonów");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 75);
 			dialog.text = "Czytasz w moich myślach, "+GetFullName(pchar)+". Tak, do diabła! Skoro Alacantara ma mało prochu, mogę pozwolić jej wypłynąć na otwarte morze, a potem zmusić ją do długotrwałej bitwy morskiej, w której ich proch skończy się przed naszym, haha!\nMusisz upewnić się, że barkentyna zaopatrzeniowy Puebla nigdy nie dotrze do Portobelo. Nie mogę żeglować blisko brzegu, patrole łatwo zauważą moją fregate i odpędzą mnie, zanim przechwycę Alacantarę\nMożesz zająć się Pueblą samodzielnie. Znajdź ją i pozbądź się jej. Zatop ją lub weź jako nagrodę, nie obchodzi mnie to. Po prostu powstrzymaj ją przed dotarciem tutaj!\nJeśli ci się uda, udaj się na Gwadelupę i zobacz się z Gerardem LeCroix, wierzę, że już go znasz, prawda? On zapłaci ci monety, na które zasługujesz.";
 			link.l1 = "Umowa stoi! Wyruszam, by odciąć Pueblę!";
 			link.l1.go = "florian_19";

@@ -28,28 +28,28 @@ void ProcessDialogEvent()
 			dialog.text = "What do you want?";
 			link.l1 = "Nothing.";
 			link.l1.go = "exit";
-			link.l2 = RandPhraseSimple("I've got a question for you.", "I need information.");
+			link.l2 = RandPhraseSimple("I've got a question for you.","I need information.");
 			link.l2.go = "quests";//(перессылка в файл города)
 			
 			if (npchar.quest.meeting == "0")
 			{
 				if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Marginpassenger"))//захват пассажира
 				{
-					dialog.text = "Hey, captain! Yes, you. Come here I've got a deal for you...";
+					dialog.text = "Hey, captain! Yes, you. Come here, I've got a deal for you...";
 					link.l1 = "And what's the deal?";
 					link.l1.go = "passenger";
-					link.l2 = "I am in a hurry, friend. Next time perhaps.";
+					link.l2 = "I am in a hurry, friend. Perhaps next time.";
 					link.l2.go = "exit_quest";
 					npchar.quest.meeting = "1";
 					DeleteAttribute(npchar, "talker"); //снимаем говорилку
 					break;
 				}
-				dialog.text = LinkRandPhrase("Hey, captain, I am busy actually. What do you need?","What do you want, captain?","Cap'n, I am not in the mood to talk. What do you want?");
-				link.l1 = "Greeting, "+GetAddress_FormToNPC(NPChar)+". Wait a minute, I want you to tell me something.";
+				dialog.text = LinkRandPhrase("Hey, captain, I'm actually busy. What do you need?","What do you want, captain?","Cap'n, I'm not in the mood to talk. What do you want?");
+				link.l1 = "Greeting, "+GetAddress_FormToNPC(NPChar)+". Wait a moment, I want you to tell me something.";
 				link.l1.go = "question";
-				link.l2 = RandPhraseSimple("I have a question for you.", "I need information.");
+				link.l2 = RandPhraseSimple("I have a question for you.","I need information.");
 				link.l2.go = "quests";//(перессылка в файл города)
-				link.l3 = "It's nothing, I am on a way to the tavern...";
+				link.l3 = "It's nothing, I'm on my way to the tavern...";
 				link.l3.go = "exit";
 				npchar.quest.meeting = "1";
 			}
@@ -59,13 +59,13 @@ void ProcessDialogEvent()
 //----------------------------------------захват пассажиров для выкупа------------------------------------------
 			case "passenger":
 				DeleteAttribute(npchar, "talker");
-				dialog.text = "Hm. You are a captain of a ship but you don't look like a merchant. It looks like you have some coins in your pocket... How about to get some interesting information in exchange for a fistful of doubloons?";
+				dialog.text = "Hm. You are a captain of a ship, but you don't look like a merchant. It seems you have some coins in your pocket... How about getting some interesting information in exchange for a fistful of doubloons?";
 				link.l1 = "First, prove that your information is worth a single piece of eight.";
 				link.l1.go = "passenger_1";
 			break;
 		
 			case "passenger_1":
-				dialog.text = "It is, cap, it is. It costs much more than I ask. You give me the gold and I'll tell you when and on which ship a certain very important person will sail. You will be able to ransom this one for a very good price... I'll even tell you the name of the buyer. Deal?";
+				dialog.text = "It is, cap, it is. It costs much more than I ask. You give me the gold and I'll tell you when and on which ship a certain very important person will sail. You'll be able to ransom this one for a very good price... I'll even tell you the name of the buyer. Deal?";
 				link.l1 = "No way! I'm not a kidnapper. Shove off!";
 				link.l1.go = "exit_quest";
 				link.l2 = "And how can I know that you are telling the truth?";
@@ -74,8 +74,8 @@ void ProcessDialogEvent()
 		
 			case "passenger_2":
 				pchar.GenQuest.Marginpassenger.Dublon = 70+hrand(5)*10;
-				dialog.text = "It would be most unwise to cheat you, sea dog. I live in this town and I don't need the trouble. For just "+sti(pchar.GenQuest.Marginpassenger.Dublon)+" doubloons I'll provide complete information. You will make much more.";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				dialog.text = "It would be most unwise to cheat you, sea dog. I live in this town and I don't need the trouble. For just "+sti(pchar.GenQuest.Marginpassenger.Dublon)+" doubloons and I'll provide complete information. You'll make much more.";
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "You have a point. Take the gold and start talking.";
 					link.l1.go = "passenger_4";
@@ -87,8 +87,8 @@ void ProcessDialogEvent()
 			break;
 		
 			case "passenger_3":
-				dialog.text = "Don't you? Fine, cap. I can wait for a few days more and this information can too. Find me when you get your gold. It won't be difficult to find me... today, ha-ha-ha!";
-				link.l1 = "Don't show your teeth like that. Fine, I'll bring you the gold... if I don't change my mind. ";
+				dialog.text = "Don't you? Fine, Cap. I can wait a few more days, and so can this information. Find me when you have your gold. It won't be hard to find me... today, ha-ha-ha!";
+				link.l1 = "Don't bare your teeth like that. Fine, I'll bring you the gold... if I don't change my mind. ";
 				link.l1.go = "passenger_wait";
 			break;
 			
@@ -100,7 +100,7 @@ void ProcessDialogEvent()
 
 			case "passenger_repeat":
 				dialog.text = "Did you bring my gold?";
-				if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.GenQuest.Marginpassenger.Dublon))
+				if (PCharDublonsTotal() >= sti(pchar.GenQuest.Marginpassenger.Dublon))
 				{
 					link.l1 = "Yes. Take it. Don't even try to lie now...";
 					link.l1.go = "passenger_4";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 			
 			case "passenger_4"://установка параметров
 				pchar.quest.Marginpassenger_Over.over = "yes"; //снять возможный таймер
-				RemoveItems(pchar, "gold_dublon", sti(pchar.GenQuest.Marginpassenger.Dublon));
+				RemoveDublonsFromPCharTotal(sti(pchar.GenQuest.Marginpassenger.Dublon));
 				pchar.GenQuest.Marginpassenger.Name = GetFullName(npchar);
 				pchar.GenQuest.Marginpassenger.City = npchar.city;
 				pchar.GenQuest.Marginpassenger.Targetcity = SelectAnyColony(npchar.city); 
@@ -123,13 +123,13 @@ void ProcessDialogEvent()
 				pchar.GenQuest.Marginpassenger.Chance = 0.8+frand(0.4);
 				SelectMarginpassengerParameter();
 				log_testinfo(pchar.GenQuest.Marginpassenger.Targetcity);
-				dialog.text = "Keep your powder dry, you'll need it soon, cap. Now listen, in "+FindRussianDaysString(sti(pchar.GenQuest.Marginpassenger.Days))+" a ship will sail away from our colony, the ship is "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")))+" named '"+pchar.GenQuest.Marginpassenger.ShipName+"' and it will be heading to "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity+"Gen")+". There will be a passenger -  "+pchar.GenQuest.Marginpassenger.Text+", named "+pchar.GenQuest.Marginpassenger.q1Name+"\nThe captain "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")+"Gen"))+" is a yellowbellied coward like all traders, ha-ha-ha! Perhaps, you will even avoid any fighting. Just put the fear of the devil into him and he should hand over the target himself, he-he\nAs you understand, "+pchar.GenQuest.Marginpassenger.Text1+", you'll probably get your coins, yes, but the local authorities will hunt you to death after that. You'd better bring your prey to "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity)+". You'll find there a man named "+pchar.GenQuest.Marginpassenger.q2Name+"\n"+pchar.GenQuest.Marginpassenger.Text2+" and you won't be even need to tell your name. It's your decision where to ransom your man, but don't bite off more then you can chew... But "+sti(pchar.GenQuest.Marginpassenger.Dublon)*4+" doubloons you can ask for sure. Got it?";
+				dialog.text = "Keep your powder dry, you'll need it soon, Cap. Now listen, in "+FindRussianDaysString(sti(pchar.GenQuest.Marginpassenger.Days))+" a ship will sail away from our colony, the ship is "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" named '"+pchar.GenQuest.Marginpassenger.ShipName+"' and it will be heading to "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity+"Gen")+". There will be a passenger -  "+pchar.GenQuest.Marginpassenger.Text+", named "+pchar.GenQuest.Marginpassenger.q1Name+"\nThe captain "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")+"Gen"))+" is a yellow-bellied coward like all traders, ha-ha-ha! Perhaps you'll even avoid any fighting. Just put the fear of the devil into him and he should hand over the target himself, he-he\nAs you understand, "+pchar.GenQuest.Marginpassenger.Text1+", you'll probably get your coins, yes, but the local authorities will hunt you down after that. You'd better bring your prey to "+XI_ConvertString("Colony"+pchar.GenQuest.Marginpassenger.Targetcity)+". You'll find a man there named "+pchar.GenQuest.Marginpassenger.q2Name+"\n"+pchar.GenQuest.Marginpassenger.Text2+" and you won't even need to tell your name. It's your decision where to ransom your man, but don't bite off more than you can chew... But "+sti(pchar.GenQuest.Marginpassenger.Dublon)*4+" Doubloons you can ask for, sure. Got it?";
 				link.l1 = "Yes. I am going to get back on my ship and write it in the log.";
 				link.l1.go = "passenger_5";
 			break;
 		
 			case "passenger_5":
-				dialog.text = "Exactly! Right choice. Fine, cap, good luck in this easy task. Oh yes, I've almost forgotten: "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType), "Name")))+" will sail not from the port but from one of bays nearby. So watch it. Good luck and thanks for the gold!";
+				dialog.text = "Exactly! The right choice. Fine, Cap, good luck with this easy task. Oh yes, I'd almost forgotten: "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Marginpassenger.ShipType),"Name")))+" will sail not from the port but from one of the bays nearby. So watch for it. Good luck and thanks for the gold!";
 				link.l1 = "You're welcome. Don't spend it all in one night.";
 				link.l1.go = "exit_quest";
 				npchar.lifeday = 0;
@@ -150,13 +150,13 @@ void ProcessDialogEvent()
 			
 		//замечание по обнажённому оружию от персонажей типа citizen
 		case "CitizenNotBlade":
-			dialog.text = NPCharSexPhrase(NPChar, "Listen matey, calm down and sheathe your weapon.", "Listen mate, calm down and sheathe your weapon.");
-			link.l1 = LinkRandPhrase("Fine.", "Fine.", "As you wish.");
+			dialog.text = NPCharSexPhrase(NPChar,"Listen, calm down and sheathe your weapon.","Listen, calm down and sheathe your weapon.");
+			link.l1 = LinkRandPhrase("Fine.","Fine.","As you wish.");
 			link.l1.go = "exit";
 		break;
 		
 		case "question":
-			dialog.text = LinkRandPhrase("Don't beat around the bush, cap. Speak what you want!","Oh, fine. What do you want?","Questions? Fine, sailor, I am listening.");
+			dialog.text = LinkRandPhrase("Don't beat around the bush, Captain. Say what you want!","Oh, fine. What do you want?","Questions? Fine, sailor, I'm listening.");
 			link.l1 = LinkRandPhrase("Can you tell me the latest gossip?","Has anything interesting happened here recently?","What's going on in the Caribbean?");
 			link.l1.go = "rumours_marginal";
 		break;

@@ -1,0 +1,7 @@
+time_events_1 {Megkaptad a Poinsey nyereségének egy részét.}
+time_events_2 {Jean David elôkészítette a zsákmányból való részesedésedet Le Francois-nál}
+time_events_3 {Sandro}
+time_events_4 {Elszakadt}
+time_events_5 {Jim}
+time_events_6 {Hopkins}
+time_events_7 {Alonso}

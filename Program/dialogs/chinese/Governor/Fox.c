@@ -30,8 +30,8 @@ void ProcessDialogEvent()
             // Addon-2016 杰森, 法属圣克里斯托弗迷你任务 (FMQN) 
             if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
             {
-                dialog.text = "据我所知, 你就是在圣马丁岛上协助我军执行任务的法国船长? " +TimeGreeting()+ "! ";
-                link.l1 = TimeGreeting() + ", 上校。 是的, 正是在下。 ";
+                dialog.text = "我没猜错的话, 您就是"+GetSexPhrase("那位船长先生","那位女船长")+", 在圣马丁帮助了我的人完成任务的那位?"+TimeGreeting()+"!";
+                link.l1 = TimeGreeting()+", 上校。 是的, 正是在下。 ";
                 link.l1.go = "FMQN";
                 break;
             }
@@ -68,32 +68,9 @@ void ProcessDialogEvent()
         case "guardoftruth_4":
             dialog.text = "我审问过... 他只是当着我的面笑。 但我真的不在乎他的藏匿处.'帽子罗利'被绞死了, 这是最重要的事情。 ";
             link.l1 = "我明白了。 谢谢你的讲述和时间, 上校。 再见... ";
-            link.l1.go = "guardoftruth_5";
-        break;
-        
-        case "guardoftruth_5":
-            DialogExit();
-            npchar.quest.utensil = "true";
-            AddQuestRecord("Guardoftruth", "24");
-            Island_SetReloadEnableGlobal("Dominica", true);//patch-7
-            // 填充宝箱
-            pchar.GenQuestBox.Shore27 = true;
-            pchar.GenQuestBox.Shore27.box1.money = 30000;
-            pchar.GenQuestBox.Shore27.box1.items.gold_dublon = 100;
-            pchar.GenQuestBox.Shore27.box1.items.chest = 1;
-            pchar.GenQuestBox.Shore27.box1.items.icollection = 1;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry40 = 15;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry41 = 22;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry42 = 8;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry43 = 20;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry44 = 33;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry45 = 16;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry46 = 58;
-            pchar.GenQuestBox.Shore27.box1.items.jewelry35 = 1; // 香炉
-            pchar.quest.GuardOT_finddominicachest.win_condition.l1 = "item";
-            pchar.quest.GuardOT_finddominicachest.win_condition.l1.item = "jewelry35";
-            pchar.quest.GuardOT_finddominicachest.function = "GuardOT_DominicaChest";
-        break;
+            link.l1.go = "exit";
+			AddDialogExitQuestFunction("GuardOT_Fox_DlgExit");
+		break;
         
         case "terrapin":
             dialog.text = "好几次了, 船长! 你那可敬而勇敢的行为, 很难指望一个法国人能做到。 作为一名士兵和一位父亲, 我欠你一份感激之情。 在这个世界上, 没有什么比我的女儿更有价值了... ";

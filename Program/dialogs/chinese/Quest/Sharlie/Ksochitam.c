@@ -140,7 +140,7 @@ void ProcessDialogEvent()
 			RemoveItems(pchar, "knife_01", 1);
 			PlaySound("interface\important_item.wav");
 			Log_Info("你已交出酋长之爪");
-			RemoveCharacterEquip(pchar, BLADE_ITEM_TYPE);
+			RemoveCharacterEquip(pchar, TALISMAN_ITEM_TYPE);
 			dialog.text = "哦, 我等这一刻等了多久! 现在我终于可以离开了... 但作为告别礼物, 我想把我的一部分力量传给你。 这将是阿尔贝托.卡斯柯最后的礼物。 ";
 			link.l1 = "... ";
 			link.l1.go = "guardmask_12";

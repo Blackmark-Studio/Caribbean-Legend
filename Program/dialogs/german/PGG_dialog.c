@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 		}
 		PChar.GenQuest.PGG_Quest.Island.Town = FindTownOnIsland(PChar.GenQuest.PGG_Quest.Island);
 		PChar.GenQuest.PGG_Quest.Days = 3 + GetMaxDaysFromIsland2Island(Islands[GetCharacterCurrentIsland(pchar)].id, PChar.GenQuest.PGG_Quest.Island);
-		PChar.GenQuest.PGG_Quest.Goods = GOOD_SLAVES + rand(2);
+		PChar.GenQuest.PGG_Quest.Goods = GetRandomGood(FLAG_GOODS_TYPE_CROWN, FLAG_GOODS_NONE);
 		if (CheckAttribute(NPChar, "PGGAi.ActiveQuest"))
 		{
 //			Dialog.Text = "Ich habe Geschäfte mit dir, "+GetSexPhrase("Kumpel","lass")+". Ich weiß, dass ich dir vertrauen kann, aber ich kann das einfach nicht in der Taverne besprechen - zu viele falsche Ohren. Ich werde auf meinem Schiff auf dich warten. Der Name meiner alten Kiste ist '"+NPChar.Ship.Name+"'.";

@@ -1,84 +1,18 @@
-GoldenGirl_1
-{
-Haben Sie von der teuren Kurtisane aus den nördlichen Kolonien gehört, die jetzt das Freudenhaus in St. Pierre leitet? Man sagt, dass sie von Zeit zu Zeit private Partys veranstaltet, zu denen nur die Besten der gehobenen Gesellschaft zugelassen sind. Bester Wein, wunderschöne Frauen und unbegrenztes Glücksspiel, alles, was ein echter Adliger schätzt. Eine Einladung dorthin zu bekommen, ist Gold wert.
-}
-
-GoldenGirl_2
-{
-Die besagte Marquise Botot ist nun selbst zu Gast in St. Pierre. Sie ist die teuerste Frau von Neufrankreich. Manchmal gibt sie Partys nur für die Crème de la Crème. Ein wahres Nest für die anmutigsten Gelüste. Es heißt, ein Bankier habe dort seine eigene Bank verspielt, man stelle sich das vor. Leider sind ohne Einladung selbst die Reichsten nicht willkommen.
-}
-
-GoldenGirl_3
-{
-Das Bordell von St. Pierre wird jetzt von einer Edelkurtisane geführt. Der Ort selbst hat sich nicht sehr verändert, aber die privaten Partys, die sie dort veranstaltet... Die Leute erzählen sich Geschichten. Dass es dort zugeht wie im guten alten Paris - bester Wein, beste Huren, beste Gesellschaft. Und die merkwürdigsten Gäste - wie spanische Admirale und Piratenbarone! Unglaublich, nicht wahr?
-}
-
-GoldenGirl_4
-{
-Julianne
-}
-GoldenGirl_5
-{
-Botot
-}
-
-GoldenGirl_6
-{
-Angerran
-}
-GoldenGirl_7
-{
-de Chievous
-}
-
-GoldenGirl_8
-{
-William
-}
-GoldenGirl_9
-{
-Cortney
-}
-
-GoldenGirl_10
-{
-Bart
-}
-GoldenGirl_11
-{
-Portugal
-}
-
-GoldenGirl_12
-{
-Hernando
-}
-GoldenGirl_13
-{
-Vasces
-}
-
-GoldenGirl_14
-{
-Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!
-}
-
-GoldenGirl_15
-{
-Nayade
-}
-
-GoldenGirl_16
-{
-Es heißt, Madame Botot sei verschwunden und habe ihr luxuriöses Haus ihrem vertrauten Verwalter überlassen. Stellen Sie sich den Kummer vor, der auf die jungen Adligen zukommt!
-}
-
-GoldenGirl_17
-{
-Am nächsten Morgen...
-}
-
-GoldenGirl_18
-{
-Es sind einige Tage vergangen....@<NewStr()>Sie und Baronet Courtney sind in Guadeloupe angekommen
-}
+GoldenGirl_1 {Haben Sie von der teuren Kurtisane aus den nördlichen Kolonien gehört, die jetzt das Freudenhaus in St. Pierre leitet? Man sagt, dass sie von Zeit zu Zeit private Partys veranstaltet, zu denen nur die Besten der gehobenen Gesellschaft zugelassen sind. Bester Wein, wunderschöne Frauen und unbegrenztes Glücksspiel, alles, was ein echter Adliger schätzt. Eine Einladung dorthin zu bekommen, ist Gold wert.}
+GoldenGirl_2 {Die besagte Marquise Botot ist nun selbst zu Gast in St. Pierre. Sie ist die teuerste Frau von Neufrankreich. Manchmal gibt sie Partys nur für die Crème de la Crème. Ein wahres Nest für die anmutigsten Gelüste. Es heißt, ein Bankier habe dort seine eigene Bank verspielt, man stelle sich das vor. Leider sind ohne Einladung selbst die Reichsten nicht willkommen.}
+GoldenGirl_3 {Das Bordell von St. Pierre wird jetzt von einer Edelkurtisane geführt. Der Ort selbst hat sich nicht sehr verändert, aber die privaten Partys, die sie dort veranstaltet... Die Leute erzählen sich Geschichten. Dass es dort zugeht wie im guten alten Paris - bester Wein, beste Huren, beste Gesellschaft. Und die merkwürdigsten Gäste - wie spanische Admirale und Piratenbarone! Unglaublich, nicht wahr?}
+GoldenGirl_4 {Julianne}
+GoldenGirl_5 {Botot}
+GoldenGirl_6 {Angerran}
+GoldenGirl_7 {de Chievous}
+GoldenGirl_8 {William}
+GoldenGirl_9 {Cortney}
+GoldenGirl_10 {Bart}
+GoldenGirl_11 {Portugal}
+GoldenGirl_12 {Hernando}
+GoldenGirl_13 {Vasces}
+GoldenGirl_14 {Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!}
+GoldenGirl_15 {Nayade}
+GoldenGirl_16 {Es heißt, Madame Botot sei verschwunden und habe ihr luxuriöses Haus ihrem vertrauten Verwalter überlassen. Stellen Sie sich den Kummer vor, der auf die jungen Adligen zukommt!}
+GoldenGirl_17 {Am nächsten Morgen...}
+GoldenGirl_18 {Es sind einige Tage vergangen....@<NewStr()>Sie und Baronet Courtney sind in Guadeloupe angekommen}

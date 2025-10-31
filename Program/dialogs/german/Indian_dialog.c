@@ -492,7 +492,7 @@ void ProcessDialogEvent()
 			link.l1 = "Glaubst du, dass diese Kapongs alles sind, worum du dich sorgen musst? Du liegst sehr falsch...";
 			link.l1.go = "hayamee_bad_4";
 			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("Die Indianer respektieren dich nicht "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Perk Check Failed", "Trustworthy");
+			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
 		case "hayamee_bad_4":
@@ -518,7 +518,7 @@ link.l1.go = "hayamee_1_1";
 			link.l1 = "Sag Tagofa, dass ich ihm meine schönste Pistole geben werde. Und für dich habe ich viele Juwelen.";
 			link.l1.go = "hayamee_2";
 			notification("Die Indianer respektieren dich "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		break;
 		
 		case "hayamee_2":

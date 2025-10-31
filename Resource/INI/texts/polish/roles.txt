@@ -1,0 +1,58 @@
+portman {Mistrz portu}
+drinker_0 {Najsłynniejszy pirat na tych wodach}
+drinker_1 {Mistrz opowieści prawdziwych historii}
+drinker_2 {Emerytowany agent specjalny Escorialu}
+drinker_3 {Wyjątkowo oczytany rozmówca}
+drinker_4 {Kompetentny ekspert w każdej dziedzinie}
+drinker_5 {Wesołek, nieustraszony i prawy}
+drinker_6 {Wspaniały mężczyzna w pełni sił}
+drinker_7 {Szef od drobiazgów}
+drinker_8 {Starszy Pijanego Pokładu}
+drinker_9 {Drugi kuzyn nie byle kogo w GIVK.}
+pofficer {Kandydat}
+hovernor {Gubernator}
+tavernkeeper {Karczmarz}
+waitress {Kelnerka}
+trader {Kupiec}
+shipyarder {Stoczniowiec}
+priest {Kapłan}
+Ghovernor {Gubernator Generalny}
+Phovernor {Baron}
+usurer {Bankier}
+poorman {Żebrak}
+gipsy {Cyganka}
+captain {Kapitan}
+sailor {Marynarz}
+marginal_town {Pirat}
+noble {Szlachcic}
+monk {Mnich}
+chaplain {Kapelan}
+potion_merchant {Alchemik}
+veteran_merchant {Kowal żelaza}
+armourer_merchant {Ruszkownik}
+monk_merchant {Sprzedawca Relikwii Świętych}
+indian_merchant {Wróżka}
+lightman_merchant {Latarnik}
+cemeteryman_merchant {Strażnik cmentarza}
+legend {Legenda}
+soldier_town {Strażnik}
+banditos {Łotr}
+patrol {Patrol}
+comandante {Dowódca}
+prisonboss {Komendant}
+whore {Służąca}
+hostess {Gospodyni}
+enemy {Wróg}
+wife {Żona}
+kukulkan {Kukulkan}
+mercen {Najemnik}
+monster {Nieumarły}
+captain_trader {Wolny kupiec}
+mtraxx_vanguard {Awangarda Tiraksa}
+fgirl {Kochanka}
+deadman {Żywy nieumarły}
+friend {Przyjaciel}
+duelist {Szermierz}
+smuggler {Przemytnik}
+AffairOfHonor_tavern {Zdesperowany pijak}
+hovernon_wife {Żona gubernatora}

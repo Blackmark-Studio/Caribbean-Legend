@@ -153,16 +153,12 @@ void ProcessDialogEvent()
 		case "amap":
 			Achievment_Set("ach_CL_110");
 			dialog.text = "Je n'en crois pas mes yeux ! Les as-tu vraiment trouvés ? Tous ?";
-			link.l1 = "Oui. Ce n'était pas facile, mais j'ai eu de la chance dans cette recherche. Prenez vos cartes. Elles sont si merveilleuses que je suis désolé de m'en séparer.";
+			link.l1 = "Oui. Ce n'était pas facile, mais la chance m'a tout de même souri dans cette entreprise. Prenez vos cartes. Elles sont magnifiques, chacune surpasse de loin toutes celles que j'ai vues jusqu'à présent.";
 			link.l1.go = "amap_1";
 		break;
 		
 		case "amap_1":
-			for(i=1; i<=24; i++)
-			{
-				sTemp = IdentifyAdmiralMapLast();
-				if (sTemp != "") RemoveItems(pchar, sTemp, 1);
-			}
+			RemoveAllAdmiralMap()
 			Log_Info("You have given the complete set of admiral's maps");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Incroyable! C'est tout simplement incroyable! Pour être honnête, je n'ai jamais cru que ce moment arriverait.";
@@ -188,28 +184,7 @@ void ProcessDialogEvent()
 		case "amap_4":
 			dialog.text = "Utilise-le, Capitaine Señor. J'espère que ma longue-vue te sera utile.";
 			link.l1 = "Sans doute ! J'ai hâte de l'installer sur le pont de mon navire et de regarder à travers.";
-			link.l1.go = "amap_5";
-		break;
-		
-		case "amap_5":
-			dialog.text = "Vous serez surpris, je vous l'assure... Merci encore d'avoir sauvé mes cartes !";
-			link.l1 = "Merci à vous aussi, señor. Je pense que nous nous reverrons. Mais pour l'instant, je vous dis adieu. Je vais aller essayer votre appareil magnifique. Adieu !";
-			link.l1.go = "amap_6";
-			link.l2 = "Je vous remercie également, señor. Une lunette nautique est une chose unique et très utile pour un marin. Pourtant, elle peut ne pas être plus précieuse qu'un ensemble de vos cartes. J'envie aimablement Don de Cordova. Ah ! J'adorerais avoir de si belles cartes sur le bureau de mon capitaine dans ma cabine.";
-			link.l2.go = "amapcopy_01";
-		break;
-		
-		case "amap_6":
-			DialogExit();
-			NextDiag.CurrentNode = "Dios";
-			AddCharacterExpToSkill(pchar, "Fortune", 1000);//везение
-			AddCharacterExpToSkill(pchar, "Leadership", 1000); // харизма
-			AddCharacterExpToSkill(pchar, "Sneak", 300);//скрытность (раз телескоп дали)
-			ChangeCharacterComplexReputation(pchar, "nobility", 10);// репутация-известность
-			ChangeCharacterComplexReputation(pchar, "authority", 5);// репутация-авторитет
-			ChangeCharacterNationReputation(pchar, SPAIN, 20);
-			ChangeOfficersLoyality("good_all", 5);
-			DeleteAttribute(pchar, "questTemp.AdmiralMap");
+			link.l1.go = "amapcopy_01";
 		break;
 		
 		case "amapcopy_01":
@@ -221,117 +196,14 @@ void ProcessDialogEvent()
 			ChangeCharacterNationReputation(pchar, SPAIN, 20);
 			ChangeOfficersLoyality("good_all", 5);
 			DeleteAttribute(pchar, "questTemp.AdmiralMap");
-			dialog.text = "Hélas, señor, mais les cartes sont uniques en leur genre. Et si je commençais à en faire des copies, l'unicité de cet atlas serait perdue dès que Don Juan de Cordova découvrirait que quelqu'un d'autre possédait les mêmes.";
-			link.l1 = "Hmm... Senor Dios, y aurait-il un moyen de faire une exception ?";
-			link.l1.go = "amapcopy_02";
-		break;
-		
-		case "amapcopy_02":
-			dialog.text = "Exception ?";
-			link.l1 = "Both you and I are honest people; we had the opportunity to convince each other of that. If you would make a copy of your maps for me, I would swear that no one would ever know about it. Understand: your maps are truly magnificent, and for me, as a sailor, this atlas is a real treasure. Moreover, I would generously pay you for your work.";
-			link.l1.go = "amapcopy_03";
-		break;
-		
-		case "amapcopy_03":
-			dialog.text = "Señor "+pchar.lastname+", je ne doute pas un instant que vous tiendrez parole. Et compte tenu de ce que vous avez fait pour moi, il m'est très difficile de refuser votre demande. De plus, le fait que vous, un excellent marin, appréciez tellement mes cartes est déjà un compliment précieux pour moi en tant que cartographe.";
-			link.l1 = "Croyez-moi, je n'ai pas exagéré le moins du monde. Alors, qu'en dites-vous ?";
-			link.l1.go = "amapcopy_04";
-		break;
-		
-		case "amapcopy_04":
-			dialog.text = "Très bien, je consens à vous faire une copie de cet atlas. Mais il y a un petit problème. Lorsque mon précieux atlas a été volé, les voleurs ont aussi pris tous mes outils - peut-être pour s'assurer que je ne puisse jamais faire d'autres cartes ou peut-être pour les mettre en gage auprès de mes concurrents. Et si je dois faire d'autres cartes de cette qualité, je ne peux pas utiliser du matériel de bureau ordinaire.\nJ'ai essayé d'acheter des fournitures d'écriture au marché, mais sans succès - il n'y a rien à vendre. Si vous pouvez m'obtenir les fournitures nécessaires, je ferai des copies de ces cartes pour vous.";
-			link.l1 = "Pas de problème, je vous apporterai des fournitures d'écriture de qualité. Et qu'en est-il du paiement ?";
-			link.l1.go = "amapcopy_05";
-		break;
-		
-		case "amapcopy_05":
-			dialog.text = "Je ne veux pas paraître avare, señor... Mais je vais devoir vous demander trois coffres de doublons pour ce travail. De plus, il me faudra un mois pour terminer cette tâche - de telles cartes ne peuvent être faites en quelques heures.";
-			link.l1 = "Bien sûr, j'accepte ! La valeur de vos cartes dépasse largement le montant que vous avez mentionné.";
-			link.l1.go = "amapcopy_06";
-		break;
-		
-		case "amapcopy_06":
-			dialog.text = "Alors je t'attendrai avec les fournitures nécessaires et le paiement convenu. Dès que tu apporteras tout, je commencerai à travailler.";
-			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
-			{
-				link.l1 = "Vous n'aurez pas à attendre longtemps : par chance, il se trouve que j'ai tout ce qu'il vous faut. Tenez, je vous en prie.";
-				link.l1.go = "amapcopy_07";
-			}
-			link.l2 = "Vous n'aurez pas à attendre longtemps, señor !";
-			link.l2.go = "amapcopy_exit";
-		break;
-		
-		case "amapcopy_07":
-			dialog.text = "Nouvelle fantastique ! Vous savez, pour un vrai cartographe, il n'y a rien de plus réjouissant que lorsque son travail est si hautement apprécié. Je dois admettre que je suis heureux qu'un véritable marin professionnel utilisera mon travail. Maintenant, il me faut un mois pour les terminer. Ensuite, je vous attendrai chez moi !";
-			link.l1 = "Je serai de retour dans un mois, señor Dios. Et encore une fois, merci beaucoup !";
-			link.l1.go = "amapcopy_08";
-		break;
-		
-		case "amapcopy_08":
-			TakeNItems(pchar,"chest", -3);
-			TakeNItems(pchar,"mineral21", -1);
-			Log_info("You handed over writing supplies and three chests with doubloons.");
-			PlaySound("interface\important_item.wav");
-			SetTimerFunction("Amapcopy_comlete", 0, 0, 30);
-			pchar.questTemp.AdmiralMapCopy = "wait";
-			NextDiag.CurrentNode = "amapcopy_waitmonth";
-			DialogExit();
-		break;
-		
-		case "amapcopy_exit":
-			DialogExit();
-			NextDiag.CurrentNode = "amapcopy_waitchest";
-		break;
-		
-		case "amapcopy_waitchest":
-			dialog.text = "Salutations, señor "+pchar.lastname+" ! As-tu apporté ce que j'ai demandé ?";
-			link.l1 = "Pas encore, señor Dios. Mais je vais certainement tout apporter !";
-			link.l1.go = "amapcopy_exit";
-			if(GetCharacterItem(pchar,"chest") >= 3 && GetCharacterItem(pchar,"mineral21") > 0)
-			{
-				link.l2 = "Oui, señor Dios. Voici vos nouvelles fournitures d'écriture et le paiement convenu.";
-				link.l2.go = "amapcopy_07";
-			}
-		break;
-		
-		case "amapcopy_waitmonth":
-			if(CheckAttribute(pchar,"questTemp.AdmiralMapCopy") && pchar.questTemp.AdmiralMapCopy == "complete")
-			{
-				dialog.text = "Et te voilà, mon cher ami ! J'espère que cela ne te dérange pas que je t'appelle ainsi ?";
-				link.l1 = "Pas du tout, mon ami. Je suis vraiment heureux que nous soyons devenus amis.";
-				link.l1.go = "amapcopy_09";
-			}
-			else
-			{
-				dialog.text = "Bienvenue, señor ! Je vous prie de m'excuser, mais les cartes ne sont pas encore prêtes !";
-				link.l1 = "Oui, je me souviens que vous avez dit que vous auriez besoin d'un mois. Je suis simplement passé pour prendre de vos nouvelles.";
-				link.l1.go = "amapcopy_waitmonth_01";
-			}
-		break;
-		
-		case "amapcopy_waitmonth_01":
-			NextDiag.CurrentNode = "amapcopy_waitmonth";
-			DialogExit();
-		break;
-		
-		case "amapcopy_09":
-			dialog.text = "J'ai des nouvelles merveilleuses pour vous ! J'ai enfin terminé une copie de l'atlas de l'amiral. Je garderai l'original pour moi, car j'ai toujours l'intention de participer à l'emploi du Vice-Roi de la Nouvelle-Grenade. Mais les copies sont à vous ! J'espère qu'elles vous seront utiles.";
-			link.l1 = "Merci beaucoup, señor ! Vous n'avez aucune idée de la valeur de votre atlas pour quelqu'un comme moi ! Je jure sur mon honneur : personne ne saura jamais que vous avez fait cette copie pour moi !";
-			link.l1.go = "amapcopy_10";
-		break;
-		
-		case "amapcopy_10":
-			GiveAdmiralAtlasToCharacter(pchar);
-			Log_Info("You received a set of admiral's maps.");
-			PlaySound("interface\important_item.wav");
-			dialog.text = "Je suis ravi que vous soyez satisfait. De plus, puisque tout s'est déroulé ainsi, j'ai une autre proposition à vous faire.";
-			link.l1 = "Qu'est-ce que c'est? J'écoute très attentivement.";
+			dialog.text = "De plus, puisque les choses ont pris cette tournure, j'ai encore une petite proposition à vous faire.";
+			link.l1 = "Laquelle ? Je vous écoute très attentivement.";
 			link.l1.go = "best_map";
 		break;
 		
 		case "best_map":
-			dialog.text = "Pendant que je dessinais ces cartes pour vous, une pensée m'est venue à l'esprit : bien qu'elles soient utiles pour un explorateur, elles ne fournissent pas tout ce dont un capitaine de mer a besoin. Voyez par vous-même : toutes les baies, caps et lagunes y sont représentés très précisément, mais vous ne pouvez pas les utiliser pour tracer une route entre les îles.";
-			link.l1 = "C'est vrai, on ne peut pas déterminer le cap avec ça. Mais je n'oserais jamais me plaindre, senor Dios ! Vous avez fait les cartes pour moi comme nous l'avions convenu, rien de moins.";
+			dialog.text = "Il m'est venu à l'esprit que ces cartes sont excellentes pour un explorateur, mais qu'elles ne fournissent pas tout ce dont un capitaine de marine a besoin. Voyez-vous : toutes les baies, caps et lagunes y sont représentés avec précision, mais elles ne permettent pas de tracer une route entre les îles.";
+			link.l1 = "C’est vrai, on ne peut pas y déterminer une route.";
 			link.l1.go = "best_map_01";
 		break;
 		
@@ -356,25 +228,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_04":
-			dialog.text = "Vous m'avez déjà apporté les outils, merci. J'aurai besoin d'une carte de l'archipel ordinaire, et je demande aussi une boussole et un chronomètre fonctionnel : la carte doit être précise, sinon elle ne fera que vous gêner. Quant au paiement - je demande un coffre de doublons.";
-			link.l1 = "Une carte d'archipel classique, une boussole, un chronomètre fonctionnel, et un coffre rempli de doublons... Pourquoi as-tu besoin de tout ça ? Je pensais que tu ferais simplement une copie, comme avec tes cartes d'île...";
-			link.l1.go = "best_map_05";
-		break;
-		
-		case "best_map_05":
-			dialog.text = "Oui, tout comme avec les autres cartes, j'ai déjà fait une copie de la carte générale de l'archipel. Le client était le même - le Vice-roi de Nouvelle-Grenade, Don Juan de Cordova. Il avait besoin de cette carte pour le capitaine d'une immense escadre qui navigue entre le Vieux et le Nouveau Monde à travers l'Atlantique. Mais la carte est déjà entre les mains de son propriétaire.";
-			link.l1 = "Maintenant je comprends. Il te faudra dessiner cette carte à nouveau ?";
-			link.l1.go = "best_map_06";
-		break;
-		
-		case "best_map_06":
-			dialog.text = "Exactement. C'est pourquoi j'ai besoin d'une carte ordinaire pour m'orienter, ainsi que d'instruments de navigation pour des mesures plus précises. Cela me prendra environ une semaine pour la créer - après tout, ce n'est pas la première fois que je dessine une telle carte. Oh, la condition est la même qu'avant : cela doit rester entre nous. Le Vice-Roi pourrait se fâcher s'il découvre que je dessine de telles cartes pas seulement pour lui.";
+			dialog.text = "J'ai déjà les outils, merci. Il me faudra une carte standard de l'archipel, ainsi qu'une boussole et un chronomètre étalonné : la carte doit être précise, sinon ce serait du sabotage. Et comme paiement – un coffre rempli de doublons.";
 			if(CheckAMapItems())
 			{
-				link.l1 = "Je m'en souviens, Señor Dios. Ne t'inquiète pas, personne ne découvrira ces cartes. Et j'ai déjà tout ce dont tu as besoin avec moi. Tiens, prends-le.";
+				link.l1 = "J'ai déjà tout ce que vous avez demandé. Tenez.";
 				link.l1.go = "best_map_07";
 			}
-			link.l2 = "Je me souviens de cela, Senor Dios. Ne vous inquiétez pas, personne ne découvrira ces cartes. Et je vous apporterai tout ce dont vous avez besoin, attendez juste.";
+			link.l2 = "Une carte standard de l'archipel, une boussole, un chronomètre étalonné, et un coffre de doublons. C'est noté ! Je vous les apporte au plus vite, attendez-moi !";
 			link.l2.go = "best_map_07e";
 		break;
 		
@@ -384,12 +244,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "best_map_waititems":
-			dialog.text = "Salutations, mon cher ami ! As-tu apporté ce que je t'ai demandé ?";
+			dialog.text = "Salutations, mon cher ami ! Avez-vous apporté la carte standard de l'archipel, la boussole, le chronomètre étalonné et le coffre de doublons ?";
 			link.l1 = "Pas encore, Señor Dios. Mais je l'apporterai certainement !";
 			link.l1.go = "best_map_07e";
 			if(CheckAMapItems())
 			{
-				link.l2 = "Oui, Senor Dios. Voici tout ce que vous avez demandé : une carte régulière de l'archipel, une boussole, un chronomètre fonctionnel, et le paiement convenu.";
+				link.l2 = "Oui, Señor Dios. Tenez, tout est là.";
 				link.l2.go = "best_map_07";
 			}
 		break;
@@ -415,14 +275,14 @@ void ProcessDialogEvent()
 		case "best_map_wait":
 			if(CheckAttribute(pchar,"questTemp.AdmiralAtlas") && pchar.questTemp.AdmiralAtlas == "complete")
 			{
-				dialog.text = "Ah, te voilà, Señor "+pchar.lastname+" ! Je suis ravi de vous informer que j'ai terminé la carte de l'archipel ! Et je peux vous assurer qu'elle est tout aussi bonne que le premier dessin que j'ai fait pour Don Juan de Cordova !";
-				link.l1 = "Mon ami... Cette carte est incroyable ! C'est rien de moins qu'un chef-d'œuvre ! Comment puis-je te remercier pour tout ce que tu as fait pour moi ?";
+				dialog.text = "Ah, vous voilà, Señor "+pchar.lastname+" ! J’ai le plaisir de vous annoncer que j’ai terminé la carte de l’archipel ! Et permettez-moi de vous assurer qu’elle est bien meilleure que celle que vous m’avez remise.";
+				link.l1 = "Mon ami... Cette carte est stupéfiante ! C’est, osons le dire, un chef-d’œuvre ! Comment pourrais-je vous remercier pour tout ce que vous avez fait pour moi ?";
 				link.l1.go = "best_map_09";
 			}
 			else
 			{
-				dialog.text = "Salutations, Senor! Je dois m'excuser, mais la carte n'est pas encore prête.";
-				link.l1 = "Oui, je me souviens que tu avais besoin d'une semaine. Je suis juste venu te voir.";
+				dialog.text = "Bienvenue, Señor ! Je vous prie de m’excuser, mais la carte n’est pas encore prête.";
+				link.l1 = "Oui, je me souviens que vous avez besoin d’une semaine. Je voulais simplement prendre de vos nouvelles.";
 				link.l1.go = "best_map_wait_01";
 			}
 		break;
@@ -434,7 +294,7 @@ void ProcessDialogEvent()
 		
 		case "best_map_09":
 			dialog.text = "Allons donc, mon ami. Ce fut un plaisir pour moi de créer de telles cartes pour un noble capitaine qui les apprécie véritablement. Ah oui, vous pouvez récupérer votre copie de la carte ordinaire. Bonne chance sur les hautes mers !";
-			link.l1 = "Merci beaucoup ! Vous avez raison, ces cartes sont inestimables pour moi. Adieu, Señor Dios !";
+			link.l1 = "Un immense merci à vous ! Vous avez raison, cette carte est tout simplement inestimable pour moi. Au revoir, Señor Dios !";
 			link.l1.go = "best_map_10";
 		break;
 		

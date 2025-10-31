@@ -1,99 +1,20 @@
-LSC_Q2Utilite_1
-{
-ся
-}
-
-LSC_Q2Utilite_2
-{
-ась
-}
-
-LSC_Q2Utilite_3
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас в городе. Кажется, его зовут @<GetFullName(sld)>. Он сейчас должнен быть у начальника порта.
-}
-
-LSC_Q2Utilite_4
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас можно застать у начальника порта.
-}
-
-LSC_Q2Utilite_5
-{
-Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то идите прямоком к начальнику порта. @<GetFullName(sld)> сейчас там...
-}
-
-LSC_Q2Utilite_6
-{
-, что находится на ~
-}
-
-LSC_Q2Utilite_7
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' стоит в порту на рейде. Кажется, его зовут @<GetFullName(sld)>. Странный тип, скажу я вам, на берег не сходит вообще.
-}
-
-LSC_Q2Utilite_8
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас можно встретить, только если выйти на шлюпке в порт. Корабль стоит на рейде, но капитан в город не выходит, предпочитает оставаться на корабле. И и недоело ему?..
-}
-
-LSC_Q2Utilite_9
-{
-Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то выходите в порт. @<GetFullName(sld)> вроде бы его зовут... В общем, он бросил якорь в порту, но на берег не сходит. Настоящий морской волк, даже с палубной качкой расставаться не хочет.
-}
-
-LSC_Q2Utilite_10
-{
-, что находится на ~
-}
-
-LSC_Q2Utilite_11
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' в городе. Кажется, его зовут @<GetFullName(sld)>.
-}
-
-LSC_Q2Utilite_12
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' сейчас можно застать в городе.
-}
-
-LSC_Q2Utilite_13
-{
-Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то поищите его в на улицах. @<GetFullName(sld)> вроде бы его зовут...
-}
-
-LSC_Q2Utilite_14
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' находится в порту на рейде. Кажется, его зовут @<GetFullName(sld)>.
-}
-
-LSC_Q2Utilite_15
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' сейчас можно застать в нашем порту. Его корабль стоит на рейде.
-}
-
-LSC_Q2Utilite_16
-{
-Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то поищите его корабль в нашем порту. @<GetFullName(sld)> вроде бы его зовут...
-}
-
-LSC_Q2Utilite_17
-{
-, что находится на ~
-}
-
-LSC_Q2Utilite_18
-{
-Мэри Селест
-}
-
-LSC_Q2Utilite_19
-{
-Корабль пуст
-}
-
-LSC_Q2Utilite_20
-{
-бригантина 'Мэри Селест'
-}
+LSC_Q2Utilite_1 {ся}
+LSC_Q2Utilite_2 {ась}
+LSC_Q2Utilite_3 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас в городе. Кажется, его зовут @<GetFullName(sld)>. Он сейчас должнен быть у начальника порта.}
+LSC_Q2Utilite_4 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас можно застать у начальника порта.}
+LSC_Q2Utilite_5 {Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то идите прямоком к начальнику порта. @<GetFullName(sld)> сейчас там...}
+LSC_Q2Utilite_6 {, что находится на ~}
+LSC_Q2Utilite_7 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' стоит в порту на рейде. Кажется, его зовут @<GetFullName(sld)>. Странный тип, скажу я вам, на берег не сходит вообще.}
+LSC_Q2Utilite_8 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>' сейчас можно встретить, только если выйти на шлюпке в порт. Корабль стоит на рейде, но капитан в город не выходит, предпочитает оставаться на корабле. И и недоело ему?..}
+LSC_Q2Utilite_9 {Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то выходите в порт. @<GetFullName(sld)> вроде бы его зовут... В общем, он бросил якорь в порту, но на берег не сходит. Настоящий морской волк, даже с палубной качкой расставаться не хочет.}
+LSC_Q2Utilite_10 {, что находится на ~}
+LSC_Q2Utilite_11 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' в городе. Кажется, его зовут @<GetFullName(sld)>.}
+LSC_Q2Utilite_12 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' сейчас можно застать в городе.}
+LSC_Q2Utilite_13 {Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то поищите его в на улицах. @<GetFullName(sld)> вроде бы его зовут...}
+LSC_Q2Utilite_14 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' находится в порту на рейде. Кажется, его зовут @<GetFullName(sld)>.}
+LSC_Q2Utilite_15 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>' сейчас можно застать в нашем порту. Его корабль стоит на рейде.}
+LSC_Q2Utilite_16 {Если вы хотите пообщаться с капитаном @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Acc"))> '@<sld.Ship.name>', то поищите его корабль в нашем порту. @<GetFullName(sld)> вроде бы его зовут...}
+LSC_Q2Utilite_17 {, что находится на ~}
+LSC_Q2Utilite_18 {Мэри Селест}
+LSC_Q2Utilite_19 {Корабль пуст}
+LSC_Q2Utilite_20 {бригантина 'Мэри Селест'}

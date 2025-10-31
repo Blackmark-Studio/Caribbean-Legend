@@ -16,6 +16,8 @@ int iShowTime = 15;
 #define	BLI_UPDATE_PERIOD 400
 #event_handler("evntBattleCommandSound","procBattleCommandSound");
 
+#define BLI_KILL_MARKER_TIMER 0.5
+
 bool bLandInterfaceStart = false;
 
 void procBattleCommandSound()
@@ -169,10 +171,6 @@ ref BLI_CheckCommand()
 		g_intRetVal = 0;
 	break;
 	
-	case "BI_SelfRepair":
-		g_intRetVal = 0;
-	break;
-	
 	case "BI_Alchemy":
 		g_intRetVal = 0;
 	break;
@@ -220,6 +218,13 @@ void BLI_ExecuteCommand()
 	{
 	case "BI_FastReload":
 		{
+			// Перегрузка запрещает быстрый переход
+			if (GetAttributeInt(pchar, "WeightLoadLevel") > OVERLOAD_NONE)
+			{
+				Log_info(XI_ConvertString("CharacterOverload"));
+				PlaySound("interface\knock.wav");
+				return;
+			}
 			curLocIdx = FindLoadedLocation();
 			if(curLocIdx==-1) return;
 			if( FindUserIcon(evntName,&uiref) )
@@ -300,11 +305,7 @@ void BLI_ExecuteCommand()
 	case "BI_TalkSelf":
 		DoQuestCheckDelay("TalkSelf_Start", 0.2);
 	break;
-	
-	case "BI_SelfRepair":		
-		LaunchRepair(pchar);
-	break;
-	
+
 	case "BI_Alchemy":
 		CheckAlchemyRecipe();
 		LaunchAlchemyScreen();
@@ -525,14 +526,6 @@ void BLI_SetObjectData()
 	objLandInterface.Commands.TalkSelf.event		= "BI_TalkSelf";
 	objLandInterface.Commands.TalkSelf.note			= LanguageConvertString(idLngFile, "land_TalkSelf");
 	// диалог сам с собой <--
-	// починка -->
-	objLandInterface.Commands.SelfRepair.enable	= true;
- 	objLandInterface.Commands.SelfRepair.picNum	 	= 48;
-	objLandInterface.Commands.SelfRepair.selPicNum	= 32;
-	objLandInterface.Commands.SelfRepair.texNum		= 0;
-	objLandInterface.Commands.SelfRepair.event		= "BI_SelfRepair";
-	objLandInterface.Commands.SelfRepair.note		= LanguageConvertString(idLngFile, "land_SelfRepair");
-	// починка <--
 	// алхимия -->	
 	objLandInterface.Commands.Alchemy.enable		= true;
  	objLandInterface.Commands.Alchemy.picNum	 	= 49;
@@ -640,7 +633,7 @@ void BLI_SetObjectData()
     objLandInterface.ManSign.manrankrateiconsize		= fTmp + "," + fTmp;
 	
 	objLandInterface.ManSign.rankfontid			= "interface_normal";
-	objLandInterface.ManSign.rankfontcolor		= argb(255,255,255,255);													 
+	objLandInterface.ManSign.rankfontcolor		= ARGB_Color("white");													 
 	objLandInterface.ManSign.rank0fontscale		= 1.2 * fHtRatio;
 	fTmp = makeint(0.0 * fHtRatio);
     fTmp2 = makeint(39.0 * fHtRatio);
@@ -652,14 +645,14 @@ void BLI_SetObjectData()
     objLandInterface.ManSign.rankfontoffset       = fTmp + "," + fTmp2;
 	
 	objLandInterface.ManSign.energyvaluefontid			= "interface_normal";
-	objLandInterface.ManSign.energyvaluefontcolor		= argb(255,255,255,255);
+	objLandInterface.ManSign.energyvaluefontcolor		= ARGB_Color("white");
 	fTmp = makeint(200.0 * fHtRatio);
     fTmp2 = makeint(4.0 * fHtRatio);
 	objLandInterface.ManSign.energyvaluefontscale	= 1.0 * fHtRatio;
 	objLandInterface.ManSign.energyvaluefontoffset  = fTmp + "," + fTmp2;
 	
 	objLandInterface.ManSign.healthvaluefontid		= "interface_normal";
-	objLandInterface.ManSign.healthvaluefontcolor	= argb(255,255,255,255);
+	objLandInterface.ManSign.healthvaluefontcolor	= ARGB_Color("white");
 	fTmp = makeint(200.0 * fHtRatio);
     fTmp2 = makeint(-18.0 * fHtRatio);
 	objLandInterface.ManSign.healthvaluefontscale	= 1.1 * fHtRatio;
@@ -804,7 +797,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.RushTimer.font		= "interface_normal";
 	objLandInterface.textinfo.RushTimer.scale		= 1.3 * fHtRatio;
-	objLandInterface.textinfo.RushTimer.color		= argb(255,255,255,255);
+	objLandInterface.textinfo.RushTimer.color		= ARGB_Color("white");
 	objLandInterface.textinfo.RushTimer.pos.x		= sti(showWindow.left) + RecalculateHIcon(makeint(80 * fHtRatio));
 	objLandInterface.textinfo.RushTimer.pos.y		= sti(showWindow.bottom)- RecalculateVIcon(makeint(108 * fHtRatio));
 	objLandInterface.textinfo.RushTimer.text		= "";
@@ -821,7 +814,7 @@ void BLI_SetObjectData()
 	objLandInterface.equipment.AntidoteOn           =  0;
 	
 	objLandInterface.equipment.PotionDesfontid		= "interface_normal";
-	objLandInterface.equipment.PotionDesfontcolor	= argb(255,255,255,255);
+	objLandInterface.equipment.PotionDesfontcolor	= ARGB_Color("white");
 	fTmp = makeint(0.0 * fHtRatio);
     fTmp2 = makeint(130.0 * fHtRatio);
 	objLandInterface.equipment.PotionDesfontscale	= 1.5* fHtRatio;
@@ -829,7 +822,7 @@ void BLI_SetObjectData()
 	objLandInterface.equipment.PotionDescribe		= "";
 	
 	objLandInterface.equipment.PotionQtyfontid		= "interface_normal";
-	objLandInterface.equipment.PotionQtyfontcolor	= argb(255,255,255,255);
+	objLandInterface.equipment.PotionQtyfontcolor	= ARGB_Color("white");
 	fTmp = makeint(20.0 * fHtRatio);
     fTmp2 = makeint(70.0 * fHtRatio);
 	objLandInterface.equipment.PotionQtyfontscale	= 1.5* fHtRatio;
@@ -837,7 +830,7 @@ void BLI_SetObjectData()
 	objLandInterface.equipment.PotionQty		    = "";
 	
 	objLandInterface.equipment.BulletQtyfontid		= "interface_normal";
-	objLandInterface.equipment.BulletQtyfontcolor	= argb(255,255,255,255);
+	objLandInterface.equipment.BulletQtyfontcolor	= ARGB_Color("white");
  	fTmp = makeint(80.0 * fHtRatio);
 	fTmp2 = makeint(10.0 * fHtRatio);
 	objLandInterface.equipment.BulletQtyfontscale	= 1.5* fHtRatio;
@@ -1037,7 +1030,7 @@ void BLI_SetObjectData()
 		
 		objLandInterface.textinfo.(sAttr).font = "KEYBOARD_SYMBOL";
 		objLandInterface.textinfo.(sAttr).scale = 0.9 * fHtRatio;
-		objLandInterface.textinfo.(sAttr).color = argb(255,255,255,255);
+		objLandInterface.textinfo.(sAttr).color = ARGB_Color("white");
 		objLandInterface.textinfo.(sAttr).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(85 * fHtRatio));
 		objLandInterface.textinfo.(sAttr).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(coff * fHtRatio));
 		objLandInterface.textinfo.(sAttr).align = "left";
@@ -1046,7 +1039,7 @@ void BLI_SetObjectData()
 		
 		objLandInterface.textinfo.(sAttrDes).font = "interface_normal";
 		objLandInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
-		objLandInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
+		objLandInterface.textinfo.(sAttrDes).color = ARGB_Color("white");
 		objLandInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.right) - RecalculateHIcon(makeint(95 * fHtRatio));
 		objLandInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
 		objLandInterface.textinfo.(sAttrDes).align = "right";
@@ -1056,7 +1049,7 @@ void BLI_SetObjectData()
 	//блок экипировки
 	objLandInterface.textinfo.GunCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.GunCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.GunCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.GunCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.GunCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(180 * fHtRatio));
 	objLandInterface.textinfo.GunCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(212 * fHtRatio));
 	objLandInterface.textinfo.GunCtrl.text = "";
@@ -1064,7 +1057,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.BladeCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.BladeCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.BladeCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.BladeCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.BladeCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(168 * fHtRatio));
 	objLandInterface.textinfo.BladeCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(192 * fHtRatio));
 	objLandInterface.textinfo.BladeCtrl.align = "right";
@@ -1073,7 +1066,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.PotionCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.PotionCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.PotionCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.PotionCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.PotionCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(180 * fHtRatio));
 	objLandInterface.textinfo.PotionCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(168 * fHtRatio));
 	objLandInterface.textinfo.PotionCtrl.text = "";
@@ -1081,7 +1074,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.BulletCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.BulletCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.BulletCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.BulletCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.BulletCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(192 * fHtRatio));
 	objLandInterface.textinfo.BulletCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(192 * fHtRatio));
 	objLandInterface.textinfo.BulletCtrl.align = "left";
@@ -1090,7 +1083,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.RushCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.RushCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.RushCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.RushCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.RushCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(72 * fHtRatio));
 	objLandInterface.textinfo.RushCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(110 * fHtRatio));
 	objLandInterface.textinfo.RushCtrl.text = "";
@@ -1098,7 +1091,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.AntidoteCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.AntidoteCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.AntidoteCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.AntidoteCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.AntidoteCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(252 * fHtRatio));
 	objLandInterface.textinfo.AntidoteCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(110 * fHtRatio));
 	objLandInterface.textinfo.AntidoteCtrl.text = "";
@@ -1106,7 +1099,7 @@ void BLI_SetObjectData()
 	
 	objLandInterface.textinfo.MusCtrl.font = "KEYBOARD_SYMBOL";
 	objLandInterface.textinfo.MusCtrl.scale = 0.6 * fHtRatio;
-	objLandInterface.textinfo.MusCtrl.color = argb(255,255,255,255);
+	objLandInterface.textinfo.MusCtrl.color = ARGB_Color("white");
 	objLandInterface.textinfo.MusCtrl.pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(50 * fHtRatio));
 	objLandInterface.textinfo.MusCtrl.pos.y = sti(showWindow.bottom)- RecalculateVIcon(makeint(256 * fHtRatio));
 	objLandInterface.textinfo.MusCtrl.text = "";
@@ -1123,7 +1116,7 @@ void BLI_SetObjectData()
 	objLandInterface.CommandList.CommandIconHeight = RecalculateVIcon(55 * fHtRatio);
 
 	objLandInterface.CommandList.CommandNoteFont = "interface_normal_bold";
-	objLandInterface.CommandList.CommandNoteColor = argb(255,255,255,255);
+	objLandInterface.CommandList.CommandNoteColor = ARGB_Color("white");
 	objLandInterface.CommandList.CommandNoteScale = 0.65 * fHtRatio;
 	objLandInterface.CommandList.CommandNoteOffset = RecalculateHIcon(0) + "," + RecalculateVIcon(20 * fHtRatio);
 
@@ -1213,11 +1206,6 @@ void BLI_UpdateObjectData()
 	{
 		objLandInterface.data.stealth = true;
 		objLandInterface.ManSign.alarmtexturename = "interfaces\le\battle_interface\alarmstealth.tga.tx";
-		if(CheckAttribute(&InterfaceStates,"ShowStealthAlarm") && sti(InterfaceStates.ShowStealthAlarm) == false)
-		{
-			objLandInterface.data.stealth = false;
-			// objLandInterface.ManSign.alarmtexturename = "interfaces\le\battle_interface\alarmstealth.tga.tx";
-		}
 	}
 	bool bIsRiskAlarm = LAi_group_IsActivePlayerAlarm();
 	if(sti(objLandInterface.data.Alarm)!=bIsRiskAlarm) BLI_RefreshCommandMenu();
@@ -1231,6 +1219,8 @@ void BLI_UpdateObjectData()
 	}
 	else 
 	{ 
+		// evganat - помечаем готового к диалогу персонажа
+		SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "MarkDialogCharacter", false);
 		if(g_ActiveActionName == "Talk") Log_SetActiveAction("Nothing");
 	}
 
@@ -1311,7 +1301,7 @@ void BLI_SetPossibleCommands()
 		// boal запрет всех переходов
 		if (chrDisableReloadToLocation) bTmpBool = false;
 		if (!CheckAttribute(loadedLocation,"fastreload")) bTmpBool = false;  // в каюте некуда переходить
-		if (bTmpBool && !CheckAttribute(pchar, "Cheats.LocTeleport")) // все еще можно переходить, проверяем город враг
+		if (bTmpBool && !CheckAttribute(pchar, "Cheats.LocTeleport")) // все ещё можно переходить, проверяем город враг
 		{
 		    string sNation = Colonies[FindColony(loadedLocation.fastreload)].nation;
 			if (sNation != "none")
@@ -1388,12 +1378,7 @@ void BLI_SetPossibleCommands()
 		objLandInterface.Commands.ActivateRush.enable = true;
 		bUseCommand = true;
 	}
-	bOk = LAi_IsCharacterControl(pchar) && !LAi_IsFightMode(pchar) && !LAi_grp_alarmactive && !chrDisableReloadToLocation;
-	if(Pchar.Location == Pchar.location.from_sea && CheckOfficersPerk(pchar, "SelfRepair") && CheckSelfRepairConditions() && bOk)
-	{
-		objLandInterface.Commands.SelfRepair.enable = true;
-		bUseCommand = true;
-	}		
+	bOk = LAi_IsCharacterControl(pchar) && !LAi_IsFightMode(pchar) && !LAi_grp_alarmactive && !chrDisableReloadToLocation;	
 
 	if( CanBeUseItem(pchar) )
 	{
@@ -1463,11 +1448,8 @@ void BLI_SetPossibleCommands()
 	bOk1 = bLandInterfaceStart && !LAi_IsFightMode(pchar);			
 	if(bOk || bOk1) 
 	{ 
-		if(CheckCharacterItem(PChar, "MapsAtlas") && pchar.MapsAtlasCount > 0) 
-		{
-			bUseCommand = true;
-			objLandInterface.Commands.MapAtlas.enable = true;	
-		}
+		bUseCommand = true;
+		objLandInterface.Commands.MapAtlas.enable = true;	
 	}	
 	
 	// ugeen  --> отслеживаем ситуацию взрыва или эпидемии на захваченном корабле --> покидание каюты минуя интерфейс грабежа
@@ -1884,7 +1866,7 @@ void ControlsLandDesc()
 	if(bMainMenu) return;
 	if(iControlsTips > 0 && !IsSteamDeck())
 	{
-		int colorbase	= argb(255,255,255,255);
+		int colorbase	= ARGB_Color("white");
 		int colorused	= argb(255,255,255,192);
 		int colorcd 	= argb(155,255,64,64);
 		int colorempty	= argb(155,255,255,255);
@@ -2408,8 +2390,13 @@ void BI_CrosshairSet()
 void BI_CrosshairRefresh(float fAimingTime, bool isFindedTarget, aref target)
 {
 	float fMaxTime = MAX_AIMING_TIME;
-	if(IsCharacterEquippedArtefact(pchar, "talisman20")) fMaxTime *= 0.8;
-	float fSteady = Bring2Range(0.0, 1.0, 0.0, fMaxTime, fAimingTime);
+	float fSteady;
+	float mtp = 1;
+	if (HasPerk(pchar, "Preaim")) mtp += PERK_VALUE_PREAIM;
+	if (IsCharacterEquippedArtefact(pchar, "talisman20")) mtp += 0.15;
+
+	fSteady = Bring2Range(0.0, 1.0, 0.0, fMaxTime, fAimingTime * mtp);
+
 
 	aref arElement;
 	makearef(arElement, objLandInterface.crosshair.elements.center);

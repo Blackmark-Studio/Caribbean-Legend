@@ -235,7 +235,7 @@ void RedChieftain_Shore(string qName)//высадка на сушу и бой
 		if (i == 3)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("RSOur_crew_"+i, "mush_ctz_5", "man", "mushketer", iRank, sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -254,7 +254,7 @@ void RedChieftain_Shore(string qName)//высадка на сушу и бой
 		if (i == 1 || i == 2)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("RSEnemy_crew_"+i, "mush_"+NationShortName(iNation)+"_" + i, "man", "mushketer", iRank+2, iNation, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank+2, iScl+5, iScl+5, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank+2, iScl+5, iScl+5, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{

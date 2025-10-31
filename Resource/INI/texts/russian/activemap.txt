@@ -1,5 +1,4 @@
 CONTRABAND {Контрабанда}
-AGGRESSIVE {Агрессивный спрос}
 EXPORT {Экспорт}
 IMPORT {Импорт}
 Trade_assistant {Торговый ассистент}

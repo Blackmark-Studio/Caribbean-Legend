@@ -554,7 +554,7 @@ Ich habe Florian Shoke im Stich gelassen. Ich habe ihm nicht genug Kanonen gelie
 #TEXT	11
 Ich habe die Kanonen an Florian Shoke geliefert. Er hat versucht, mich in irgendwelche Spionagegeschäfte zu verwickeln, aber ich habe abgelehnt. Viel zu gefährlich.
 #TEXT	12
-Jetzt habe ich 250 Dublonen und einen neuen Auftrag von Florian Shoke. Ich muss mich nach Portobello schleichen und herausfinden, warum die Galeone Alcantara nicht in See sticht. Ich sollte auch herausfinden, was mit Sylvan Laforet, auch bekannt als Jaime Silicio, passiert ist.. 
+Jetzt habe ich 75 Dublonen und einen neuen Auftrag von Florian Shoke. Ich muss mich nach Portobello schleichen und herausfinden, warum die Galeone Alcantara nicht in See sticht. Ich sollte auch herausfinden, was mit Sylvan Laforet, auch bekannt als Jaime Silicio, passiert ist.. 
 #TEXT	13
 Verdammter Mist! Ich war zu unvorsichtig. Der verdammte Tavernenbesitzer hat die Wachen gerufen, sobald er den Namen Jaime Silicio hörte. Jetzt ist die ganze Stadt über meine Anwesenheit informiert. Ich muss mit leeren Händen zu Florian Shoke zurückkehren...
 #TEXT	14
@@ -1090,7 +1090,8 @@ Vier Monate, um Materialien zu sammeln, sind abgelaufen. Schade, dass ich es nic
 #QUEST renovate_fdm
 Instandsetzung des Geisterschiffs
 #TEXT   1
-Der Schiffskapitän der Isla Tesoro, Alexus, hat mich gebeten, die Materialien zu sammeln und ihm zu bringen, die er für die Instandsetzung des Geisterschiffs benötigt. Er braucht 150 Stück Eisenholz, 200 Behälter mit Harz, 170 Rollen Schiffsseide und 130 Lagen Hanfseile.
+Der Meisterschiffbauer von Isla Tesoro, Alexus, hat zugestimmt, das Geisterschiff umzubauen. Diese Restaurierung wird nicht nur sein Aussehen verändern, sondern es in jeder Hinsicht deutlich verbessern — veraltete und verschlissene Bauteile werden ersetzt und die Konstruktion um moderne Lösungen ergänzt.
+Das alles wird ein Vermögen kosten, und du musst außerdem die benötigten Materialien auftreiben und zu ihm bringen: je 150 Einheiten Bakaut, Seide, Taue und Harz.
 #TEXT   2
 @<sQty> von @<sGood> fehlen.
 #TEXT   3
@@ -1610,7 +1611,7 @@ Der Nekromant Merriman war eine harte Nuss, und seine beschworenen Chavinavi-Mon
 #TEXT   33
 Ich habe jetzt den Jadeschädel von Yum Cimil. Jetzt nach Dominica, um Tuttuathapak zu sehen.
 #TEXT   34
-Der nächste Schritt besteht darin, den Jadeschädel zum Tempel von Chavins zu bringen, der sich auf einer unbewohnten Insel im Archipel befindet. Das Einzige, was ich darüber weiß, ist, dass sie im Norden von Dominica in der Nähe des Ozeans liegt. @<sText> Und ich muss mich beeilen - ich habe nur einen Monat Zeit, um den Schädel zum Tempel zu bringen. Nach Ablauf des Monats verlieren die Amulette von Tuttuathapakа ihre Kraft, und ich werde nicht mehr an den Tempelwächtern - den schrecklichen Chavinavi - vorbeikommen können.
+Der nächste Schritt besteht darin, den Jadeschädel zum Tempel von Chavins zu bringen, der sich auf einer unbewohnten Insel im Archipel befindet. Das Einzige, was man über ihn weiß, ist, dass er nördlich von Dominica liegt, in der Mitte eines Dreiecks aus Inseln, und dass auf der vierten Seite der Ozean liegt. @<sText> Und ich muss mich beeilen - ich habe nur einen Monat Zeit, um den Schädel zum Tempel zu bringen. Nach Ablauf des Monats verlieren die Amulette von Tuttuathapakа ihre Kraft, und ich werde nicht mehr an den Tempelwächtern - den schrecklichen Chavinavi - vorbeikommen können.
 #TEXT   35
 Ich habe mit Nathaniel Hawk gesprochen! Jetzt kenne ich die Koordinaten von Khael Roa: 19 Grad 32 Minuten Nord, 62 Grad 25 Minuten West. Außerdem hat Nathan mir von den Gefahren erzählt, die im Tempel auf mich warten.
 #TEXT   36
@@ -1632,6 +1633,10 @@ Nun, das ist das Ende dieser langen Geschichte. Ich habe vom Schamanen drei gro�
 Ich habe zu viel Zeit mit der Suche nach der Insel verbracht, und die Amulette von Tuttuathapak haben ihre Kraft verloren. Ich habe es nicht geschafft, den Jadeschädel in den Tempel zurückzubringen, und Tuttuathapak hat sich geweigert, weiter mit mir zu verhandeln. Nun, da kann man nichts machen, es war alles meine Schuld.
 #TEXT   44
 Ich habe in den Tiefen des Tempels eine recht merkwürdige Halle gefunden. Es gibt steinerne Bodenplatten und Säulen. Der Ausgang, der offenbar zum Heiligtum führt, ist durch eine massive Steintür versperrt. Ich sollte einen Weg finden, sie zu öffnen. Diese Halle zu untersuchen, wäre ein guter Anfang.
+#TEXT   45
+Es sieht so aus, als ob sich unter diesen Platten ein Mechanismus verbirgt, der einen Durchgang öffnet. Ich werde sie nacheinander betreten müssen, bis ich die richtige Reihenfolge finde. Jeder korrekte Schritt gibt ein besonderes Geräusch von sich – zumindest scheint es so. Ich habe keinen anderen Ansatz, um weiterzukommen, also werde ich die Kombinationen durchprobieren und ganz genau hinhören...
+#TEXT   46
+Verdammt... In den Säulen scheint ebenfalls ein Mechanismus verborgen zu sein, der obendrein durch die Magie der Chavín geschützt ist. Doch jetzt ist der Preis für einen Fehler deutlich höher: Eine falsche Kombination ruft indianische Skelette herbei. Ich muss äußerst vorsichtig sein – und mir jeden Versuch merken, um Wiederholungen zu vermeiden. Wer weiß, wie viele solcher Wellen ich noch überlebe...
 
 #QUEST Patria
 Held der Nation.
@@ -2429,7 +2434,7 @@ Folke Deluc
 #TEXT   1
 While I was handling business in Saint-Pierre, Folke Deluc found himself behind bars once again, and predictably the cause was money. Damn him, how did he manage to rack up new debts in such a short time? The crew is grumbling: rescuing him a second time feels like too much. After the battle near Le François, my standing with the men has grown stronger, and my name now carries some weight on the island. I could try finding a new navigator at the tavern, but my conscience won't let me abandon Folke so easily. He deserves at least a chance to explain himself. I need to find out how he managed to land himself in debt again in just a few hours.
 #TEXT   2
-Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could make a profit off the navigator. He bought up all of Folke' debts across the French colonies. The total wasn't small - an impressive one hundred gold doubloons!
+Well, now it's all clear! The sly moneylender from Saint-Pierre realized he could make a profit off the navigator. He bought up all of Folke' debts across the French colonies. The total wasn't small - an impressive 40 gold doubloons!
 #TEXT   3
 I paid the debt for my wayward navigator. Let the townsfolk laugh. I`m still sure I did the right thing.
 #TEXT   4

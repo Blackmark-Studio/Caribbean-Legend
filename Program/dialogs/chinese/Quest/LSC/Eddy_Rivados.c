@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "letter_chad_1");
 			ChangeItemDescribe("letter_chad_1", "itmdescr_letter_axel");
 			pchar.questTemp.LSC.rvd_friend = "true"; //里瓦多斯船只通行标志
-			pchar.rvd_friend = true; //里瓦多斯不会在需要密码的地方阻拦
+			// //里瓦多斯不会在需要密码的地方阻拦
 			pchar.questTemp.Saga.SharkHunt = "dodson_whiskey"; //前往鲨鱼处
 			sld = CharacterFromID("Dodson");
 			sld.dialog.currentnode = "Chad_escape"; //鲨鱼的节点

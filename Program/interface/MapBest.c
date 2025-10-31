@@ -316,8 +316,8 @@ void HideTable()
 void FillTable()
 {
 	if (!bBettaTestMode) return;
-	float fMouseX = stf(GameInterface.mousepos.x)-250;
-	float fMouseY = stf(GameInterface.mousepos.y)-80;
+	float fMouseX = stf(GameInterface.mousepos.x) - 250;
+	float fMouseY = stf(GameInterface.mousepos.y) + GetVerticalOffset();
 	
 	//Getting correct image offsets
 	float fOffsetX, fOffsetY;
@@ -520,8 +520,8 @@ string CheckForIslandID(ref location)
 
 void SelectRColony()
 {
-	float fMouseX = stf(GameInterface.mousepos.x)-250;
-	float fMouseY = stf(GameInterface.mousepos.y)-80;
+	float fMouseX = stf(GameInterface.mousepos.x) + 250;
+	float fMouseY = stf(GameInterface.mousepos.y) + GetVerticalOffset();
 	
 	//Getting correct image offsets
 	float fOffsetX, fOffsetY;
@@ -869,7 +869,7 @@ void ShowColonyInfo(int iColony)
 			break;
 	}
 	
-	for(iType=0; iType<GOODS_QUANTITY; iType++)
+	for(iType=0; iType<GetArraySize(&Goods); iType++)
 	{
 		if(iType > 34 && iType < 51) continue;
 		
@@ -1247,3 +1247,22 @@ float Normalize360(float dir)
     return dir;
 }
 // LDH 12Jul17 <-
+
+// belamour поправка коэффициента от соотношения сторон
+float GetVerticalOffset()
+{
+    float ratio = stf(showWindow.width) /  stf(showWindow.height);
+	
+    if (ratio >= 3.0)
+        return -0;
+	else if (ratio >= 2.0) // 32:9
+        return -40;
+	else if (ratio >= 1.77) // 16:9
+        return -80;
+	else if (ratio >= 1.6) // 16:10
+        return -140;
+	else if (ratio >= 1.33) // 4:3
+        return -250;
+	else
+        return -80;
+}

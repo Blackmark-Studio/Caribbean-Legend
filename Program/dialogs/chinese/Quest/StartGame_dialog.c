@@ -21,76 +21,9 @@ void ProcessDialogEvent()
 		
 		case "Finish_2":
 			SetAchievement("Test_Ach");
-			dialog.text = "船长, 最后一个问题。 我该向船员传达什么信息? ";
-			link.l1     = "你是什么意思? ";
-			link.l1.go  = "Finish_2_0";
-		break;
-		
-		case "Finish_2_0":
-			dialog.text = "大家想知道该期待什么。 看来你还没下定决心。 ";
-			link.l1     = "我有哪些选择? ";
-			link.l1.go  = "Finish_2_0_1";
-		break;
-		
-		case "Finish_2_0_1":
-			dialog.text = "好吧, 船长, 加勒比是个独特的地方。 你可以从事贸易。 掠夺。 卷入阴暗勾当, 或者踏上寻宝之旅 —在这些水域成为传奇的道路数不胜数。 船员和我讨论过了, 我们准备支持你的任何选择。 ";
-			link.l1     = "我必须只选一个吗? ";
-			link.l1.go  = "Finish_2_0_2";
-		break;
-		
-		case "Finish_2_0_2":
-			dialog.text = "不, 当然不必, 但设定初始优先级是个好主意。 ";
-			link.l1     = "像任何理智的人一样, 我想积累财富! 一百万比索就够了。 ";
-			link.l1.go  = "Finish_2_1";
-			link.l2     = "我旨在赢得尊重 —像洛奥奈斯掠夺马拉开波后那样的尊重。 ";
-			link.l2.go  = "Finish_2_2";
-			link.l3     = "冒险! 我渴望探索异国情调和遇见有趣的人物。 ";
-			link.l3.go  = "Finish_2_3";
-			link.l4     = "我一直梦想成为浪漫的寻宝猎人! ";
-			link.l4.go  = "Finish_2_4";
-			link.l5     = "省省你的建议吧, 阿隆索。 为什么要限制自己? 我知道我想要什么, 我想要一切! ";
-			link.l5.go  = "Finish_2_5";
-		break;
-		
-		case "Finish_2_1":
-			pchar.questTemp.SanBoxTarget = 1;
-			dialog.text = "这野心不小啊, 船长。 最快的方法是袭击商船和从事走私。 你也可以选择诚实贸易, 但需要更多时间。 不过你不必局限于此 —接任何工作, 参与所有你能找到的活动。 这是发财的途径。 我会通知船员, 船长。 愿幸运眷顾我们所有人! ";
-			link.l1     = "开始游戏";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_2":
-			pchar.questTemp.SanBoxTarget = 2;
-			dialog.text = "但你知道洛奥奈斯是怎么死的吗? 好吧, 我不评判你, 船长。 溅无辜者的血可能有利可图, 但要准备好承担后果。 你需要一艘强大的船, 甚至可能需要一支中队, 才能攻克堡垒并建立据点。 或者你可以从陆路攻占城市 —四百人应该足够, 但请放心, 未被镇压的驻军会迅速把你打回丛林。 我会把你的选择传达给船员, 船长。 愿幸运眷顾我们所有人! ";
-			link.l1     = "开始游戏";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_3":
-			pchar.questTemp.SanBoxTarget = 3;
-			dialog.text = "两者我们都不缺, 船长! 访问城市, 与当地人交流, 冒险会主动找上门。 只要记住, 只有在你证明了自己的能力并建立了声誉后, 严肃的人才会寻求你的帮助。 船员会喜欢这样的。 愿幸运眷顾我们所有人! ";
-			link.l1     = "开始游戏";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_4":
-			pchar.questTemp.SanBoxTarget = 4;
-			dialog.text = "这行没多少浪漫可言, 船长。 这是一个漫长但有利可图的追求, 尤其是如果运气好的话。 从酒馆卖家那里寻找藏宝图, 保持警惕 —你会遇到很多想从你身上发财的竞争对手猎人。 此外, 最有价值的宝藏通常需要从简单的发现中收集半张地图, 所以去追求吧! 愿幸运眷顾我们所有人! ";
-			link.l1     = "开始游戏";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_5":
-			pchar.questTemp.SanBoxTarget = 5;
-			dialog.text = "那么你明白成为加勒比传奇需要什么, 船长。 船员相信你, 热切期待你的成就。 愿幸运眷顾我们所有人! ";
-			link.l1     = "开始游戏";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_3":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
-			LAi_RemoveCheckMinHP(Pchar); // 移除检查
+			LAi_RemoveCheckMinHP(Pchar); // снимем проверки
 			LAi_SetImmortal(pchar, false);
 			LAi_SetPlayerType(pchar);
 			InterfaceStates.Buttons.Save.enable = true;
@@ -194,7 +127,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -219,7 +152,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -271,6 +204,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Pirates_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -287,7 +221,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -306,7 +240,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0; 
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			AddPassenger(pchar, sld, false);
 			SetCharacterRemovable(sld, true);
 			sld.Payment = true;
@@ -315,6 +249,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -357,7 +292,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0; 
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			// 埃伦:
 			pchar.questTemp.Saga.Helena_officer = "true";
 			sld = characterFromId("Helena");
@@ -378,7 +313,7 @@ void ProcessDialogEvent()
 			SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "ByWorker");
-			SetCharacterPerk(sld, "ByWorker2");
+		
 			SetCharacterPerk(sld, "Grus");
 			GiveItem2Character(sld, "pirate_cutlass");
 			sld.equip.blade = "pirate_cutlass";
@@ -396,6 +331,7 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(sld, false);
 			// Baсker
 			sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Raymond";
 			sld.lastname = "Baсker";
 			sld.greeting = "baker";
@@ -460,7 +396,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -485,7 +421,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -537,6 +473,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Pirates_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -553,7 +490,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -580,6 +517,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -642,7 +580,7 @@ void ProcessDialogEvent()
 			SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "ByWorker");
-			SetCharacterPerk(sld, "ByWorker2");
+		
 			SetCharacterPerk(sld, "Grus");
 			GiveItem2Character(sld, "blade_31");
 			sld.equip.blade = "blade_31";
@@ -659,6 +597,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			// Baсker
 			sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Raymond";
 			sld.lastname = "Baсker";
 			sld.greeting = "baker";
@@ -722,7 +661,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -747,7 +686,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -792,6 +731,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Shore9");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -808,7 +748,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -836,6 +776,7 @@ void ProcessDialogEvent()
 			
 			// 蒂钦吉图
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -928,7 +869,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -953,7 +894,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -998,6 +939,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("SentJons_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -1014,7 +956,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -1042,6 +984,7 @@ void ProcessDialogEvent()
 			
 			// 蒂钦吉图
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -1112,7 +1055,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -1137,7 +1080,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -1182,6 +1125,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Mayak4");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -1198,7 +1142,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -1226,6 +1170,7 @@ void ProcessDialogEvent()
 			
 			// 蒂钦吉图
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";

@@ -85,9 +85,9 @@ void ProcessDialogEvent()
 					link.l7 = "Sancho, veux-tu que je te montre quelque chose d'intéressant ? Est-ce le masque de chauve-souris que tu voulais tant avoir ?";
 					link.l7.go = "rat";
 				}
-				if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && GetCharacterItem(pchar, "gold_dublon") >= 1)
+				if (CheckCharacterItem(pchar, "talisman1") && CheckAttribute(npchar, "quest.ratmoney") && PCharDublonsTotal() >= 1)
 				{
-					if (GetCharacterItem(pchar, "gold_dublon") >= sti(npchar.quest.ratmoney))
+					if (PCharDublonsTotal() >= sti(npchar.quest.ratmoney))
 					{
 						if(!CheckAttribute(npchar, "quest.ratmoneyagain")) ChangeCharacterComplexReputation(pchar, "fame", 5);
 						link.l7 = "Sancho, je suis venu pour ma cuirasse. Voici l'argent.";
@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 		case "rat_torg":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Skill Check Failed (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Bonjour, mon ami."+pchar.name+", dans d'autres circonstances, j'exigerais cinq mille. L'amiral lui-même a montré de l'intérêt, et il n'est pas seul, croyez-moi. Prenez votre temps pour décider. L'armure vous attendra aussi longtemps que vous en aurez besoin. Je ne la vendrai qu'à vous.";
 				link.l1 = "Je vais y réfléchir, Sancho. Je vais y réfléchir longuement et sérieusement.";
 				link.l1.go = "rat_yes_1";
@@ -372,7 +372,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = "Bonjour, mon ami."+pchar.name+", dans d'autres circonstances, j'exigerais cinq mille. L'amiral lui-même a manifesté de l'intérêt, et il n'est pas seul, croyez-moi. Très bien, je vais réduire de cinq cents, étant donné que vous ne m'avez pas oublié, moi et mon problème. Il semble qu'il y ait eu quelques aventures en chemin.";
 				link.l1 = "C'est mieux. Mais je ne comprends toujours pas pourquoi je devrais payer un supplément dans cet échange d'objets tout aussi uniques. Peut-être que c'est toi qui devrais me payer, hein Sancho ?";
 				link.l1.go = "rat_yes_1500";
@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		case "rat_yes_1500":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 90)
 			{
-				notification("Skill Check Failed (90)", SKILL_COMMERCE);
+				Notification_Skill(false, 90, SKILL_COMMERCE);
 				dialog.text = "Non, "+pchar.name+", ça ne va pas arriver. Je peux me débarrasser des rats avec du poison, mais cette armure pourrait te sauver la vie un jour. Et tu auras l'air d'un duc italien en la portant. Mille cinq cents, c'est mon offre finale. Prends ton temps pour y réfléchir, et fais-le moi savoir. L'armure t'attendra aussi longtemps que tu en auras besoin, je ne la vendrai qu'à toi.";
 				link.l1 = "Sancho, si tu n'étais pas le seul tavernier de ce cimetière lugubre... Je réfléchirai à ta proposition.";
 				link.l1.go = "rat_yes_1500exit";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				dialog.text = "Pour un capitaine militaire et un pirate, tu sais vraiment comment négocier ! Tu te souviens de Jost ? Il a réussi à acheter tout mon arsenic à prix réduit, alors que les rats me tourmentaient déjà. Très bien, "+pchar.name+", tu gagnes. Je te fais une remise de cinq cents de plus ! Mais c'est ma dernière offre !";
 				link.l1 = "This still feels like a rip-off, but at least now I won't feel like a typical damsel in distress in the jungle. Wait for the money; I'll bring it soon.";
 				link.l1.go = "rat_yes_1000exit";
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			GiveItem2Character(pchar, "cirass4");
 			RemoveItems(pchar, "talisman1", 1);
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.ratmoney));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.ratmoney));
 			Log_Info("You have given away the talisman 'God of rats'");
 			Log_Info("You have received a Milanese armor");
 			Log_Info("You gave "+FindRussianDublonString(sti(npchar.quest.ratmoney))+"");
@@ -438,9 +438,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rat_take_money_not_all":
-			npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("You gave "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+"");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			npchar.quest.ratmoney = sti(npchar.quest.ratmoney) - PCharDublonsTotal();
+			Log_Info("You gave "+FindRussianDublonString(PCharDublonsTotal())+"");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
 			dialog.text = "Tu m'impressionnes toujours "+FindRussianDublonString(sti(npchar.quest.ratmoney))+", "+pchar.name+".";
 			link.l1 = "N'en parle pas !";

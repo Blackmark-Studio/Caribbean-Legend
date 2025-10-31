@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "Ascolto, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "Li faremo vedere noi, ragazzi! Dietro questa collina ci sono merci e dobloni che aspettano solo noi! Siamo qui per questo e non ce ne andiamo da nessuna parte. Nessun branco di pellirosse, anche armati di moschetti, potrà fermarci! Sotterriamo quei bastardi e finiamo il lavoro! Siamo in numero sufficiente, possiamo coglierli di sorpresa. Quattro uomini li accoglieranno col fuoco dai fianchi, gli altri si piazzeranno qui. Tagliamo le loro fila e facciamoli fuori!";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("Not enough people", "X");
 				if (n > 0)
 				{
 					link.l1 = "Li daremo battaglia, ragazzi! Dietro questa collina ci sono merci e denaro! Siamo venuti per prenderli e non ce ne andiamo. Nessun branco di pellirosse, anche armati di moschetti, potrà fermarci! Seppelliamo quei bastardi e portiamo a termine il lavoro!";

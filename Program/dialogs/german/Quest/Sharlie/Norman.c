@@ -366,35 +366,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "Und wen hat Dichoso für dich erledigt, dass du ihn suchst, he Kumpel? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "Wen hat Dichoso denn umgelegt, dass du jetzt hinter ihm her bist, hm, Kumpel?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Den Papst";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "Was meinst du? Welchen Sharp hat er genau getötet? Es gibt viele Sharps, weißt du.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Pssst... (schaut sich um) Du glaubst also auch, dass Dichoso Blaze Sharp getötet hat?";
+			link.l1 = "Ja. Und das ist nicht nur ein Verdacht — ich habe Beweise. Einträge im Logbuch...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Willst du wohl Witze machen? Kein bisschen Respekt! Na komm, näher ran...";
+			link.l1 = "Nicht mit mir.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "Sh-sh-sh ...(umschauend) Also denkst du auch, dass Blaze Sharp von Dichoso getötet wurde?";
-				link.l1 = "Ja. Ich habe nicht nur meine Vermutungen, sondern auch handfeste Beweise. Einträge in seinem Logbuch...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Mach weiter, kleiner Seemann...";
-				link.l1 = "Was meinst du? Erzähl mir mehr.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "Ach...Nun. Er hat ihn getötet und das ist alles dazu. Weißt du, wie viele Mörder wir hier herumlaufen haben? Jeder zweite Mann! Nein, Matrose. Ich habe Dichoso schon lange nicht gesehen. Ich kann dir bei nichts helfen.";
 			link.l1 = "Schade...";
 			link.l1.go = "exit";

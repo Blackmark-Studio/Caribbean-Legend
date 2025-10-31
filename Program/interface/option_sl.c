@@ -35,11 +35,16 @@ void PrepareDefaultOption(ref optref)
 	optref.AdvancedChange = false;
 	optref.video.grassquality = 0;
 	optref.seadetails = 1.0;
+	optref.ifov = 1;
 	optref.ifonttype = 0;
 	optref.imoreinfo = 0;
 	optref.icontrolsmode = 0;
 	optref.icompasspos = 0;
 	optref.icontrolstips = 2;
+	optref.ihelptime = 1;
+	optref.icamera = 1;
+	optref.ienemytype = 1;
+	optref.itarget = 2;
 	optref.FoliageDrawDistance = 1000;
 	optref.GrassDrawDistance = 50;
 	
@@ -77,6 +82,13 @@ void GetRealOptions(ref optref)
 	optref.cameramode.follow_on = !locCameraEnableSpecialMode;
 
 	optref.video.grassquality = iGrassQuality;
+
+	if( CheckAttribute(&InterfaceStates,"Fov") ) {
+		optref.ifov = sti(InterfaceStates.Fov);
+	} else {
+		optref.ifov = 1;
+	}
+
 	if( CheckAttribute(&InterfaceStates,"FontType") ) {
 		optref.ifonttype = sti(InterfaceStates.FontType);
 	} else {
@@ -105,6 +117,30 @@ void GetRealOptions(ref optref)
 		optref.icontrolstips = sti(InterfaceStates.ControlsTips);
 	} else {
 		optref.icontrolstips = 2;
+	}
+
+	if( CheckAttribute(&InterfaceStates,"HelpTime") ) {
+		optref.ihelptime = sti(InterfaceStates.HelpTime);
+	} else {
+		optref.ihelptime = 1;
+	}
+
+	if( CheckAttribute(&InterfaceStates,"Camera") ) {
+		optref.icamera = sti(InterfaceStates.Camera);
+	} else {
+		optref.icamera = 1;
+	}
+
+	if( CheckAttribute(&InterfaceStates,"EnemyType") ) {
+		optref.ienemytype = sti(InterfaceStates.EnemyType);
+	} else {
+		optref.ienemytype = 1;
+	}
+
+	if( CheckAttribute(&InterfaceStates,"Target") ) {
+		optref.itarget = sti(InterfaceStates.Target);
+	} else {
+		optref.itarget = 2;
 	}
 	
 	if( CheckAttribute(&InterfaceStates,"SeaDetails") ) {
@@ -142,12 +178,6 @@ void GetRealOptions(ref optref)
 		optref.cameramode.ShowBattleMode = true;
 	}
 
-	if( CheckAttribute(&InterfaceStates,"ShowStealthAlarm") ) {
-		optref.cameramode.ShowStealthAlarm = sti(InterfaceStates.ShowStealthAlarm);
-	} else {
-		optref.cameramode.ShowStealthAlarm = true;
-	}
-	
 	if( CheckAttribute(&InterfaceStates,"ShowCharString") ) {
 		optref.cameramode.ShowCharString = sti(InterfaceStates.ShowCharString);
 	} else {
@@ -183,7 +213,7 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.EnabledShipMarks = 1;
 	}
-	if (sti(optref.cameramode.EnabledShipMarks)>0) bDrawBars = 1;
+	if (sti(optref.cameramode.EnabledShipMarks)>0) bDrawBars = true;
 	else bDrawBars = sti(optref.cameramode.EnabledShipMarks);
 
 	if( CheckAttribute(&InterfaceStates,"SimpleSea") ) {
@@ -191,25 +221,13 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.SimpleSeaMode = true;
 	}
-	// belamour -->
-	if( CheckAttribute(&InterfaceStates,"DIRECTSAIL") ) {
-		optref.cameramode.DIRECTSAILMode = sti(InterfaceStates.DIRECTSAIL);
-	} else {
-		optref.cameramode.DIRECTSAILMode = false;
-	}
-	
+
 	if( CheckAttribute(&InterfaceStates,"CREWONDECK") ) {
 		optref.cameramode.CREWONDECKMode = sti(InterfaceStates.CREWONDECK);
 	} else {
 		optref.cameramode.CREWONDECKMode = true;
 	}
 
-	if( CheckAttribute(&InterfaceStates,"ENHANCEDSAILING") ) {
-		optref.cameramode.ENHANCEDSAILINGMode = sti(InterfaceStates.ENHANCEDSAILING);
-	} else {
-		optref.cameramode.ENHANCEDSAILINGMode = false;
-	}
-	
 	if( CheckAttribute(&InterfaceStates,"ROTATESKY") ) {
 		optref.cameramode.ROTATESKYMode = sti(InterfaceStates.ROTATESKY);
 	} else {
@@ -220,7 +238,6 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.cameramode.DYNAMICLIGHTSMode = true;
 	}
-	// <-- belamour
 	GetControlsOptions(optref);
 
 	// mouse
@@ -280,9 +297,6 @@ void GetRealOptions(ref optref)
 	} else {
 		optref.AdvancedChange = false;
 	}
-	// belamour перспектива морской камеры
-	if(CheckAttribute(&InterfaceStates, "SEACAMPERSP")) optref.SEACAMPERSP = InterfaceStates.SEACAMPERSP;
-	else optref.SEACAMPERSP = 25;
 
 	// belamour legendary edition информация о текущем профиле
 	if(CheckAttribute(&PlayerProfile,"name")) 
@@ -323,12 +337,6 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.ShowBattleMode = true;
 	}
 
-	if( CheckAttribute(optref,"cameramode.ShowStealthAlarm") ) {
-		InterfaceStates.ShowStealthAlarm = optref.cameramode.ShowStealthAlarm;
-	} else {
-		InterfaceStates.ShowStealthAlarm = true;
-	}
-	
 	if( CheckAttribute(optref,"cameramode.ShowCharString") ) {
 		InterfaceStates.ShowCharString = optref.cameramode.ShowCharString;
 	} else {
@@ -370,12 +378,6 @@ void SetCurentOptions(ref optref)
 	} else {
 		InterfaceStates.SimpleSea = false;
 	}
-	// belamour
-	if( CheckAttribute(optref,"cameramode.DIRECTSAILMode") ) {
-		InterfaceStates.DIRECTSAIL = optref.cameramode.DIRECTSAILMode;
-	} else {
-		InterfaceStates.DIRECTSAIL = false;
-	}
 	
 	if( CheckAttribute(optref,"cameramode.CREWONDECKMode") ) {
 		InterfaceStates.CREWONDECK = optref.cameramode.CREWONDECKMode;
@@ -383,12 +385,6 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.CREWONDECK = true; // заполнить чекбокс
 	}
 	
-	if( CheckAttribute(optref,"cameramode.ENHANCEDSAILINGMode") ) {
-		InterfaceStates.ENHANCEDSAILING = optref.cameramode.ENHANCEDSAILINGMode;
-	} else {
-		InterfaceStates.ENHANCEDSAILING = false;
-	}
-
 	if( CheckAttribute(optref,"cameramode.ROTATESKYMode") ) {
 		InterfaceStates.ROTATESKY = optref.cameramode.ROTATESKYMode;
 	} else {
@@ -453,6 +449,14 @@ void SetCurentOptions(ref optref)
 	} else {
 		iGrassQuality = 0;
 	}
+
+	if( CheckAttribute(optref,"ifov") ) {
+		InterfaceStates.Fov = sti(optref.ifov);
+		Render.CorrectFov = sti(InterfaceStates.Fov);
+	} else {
+		InterfaceStates.Fov = 1;
+	}
+
 	if( CheckAttribute(optref,"ifonttype") ) {
 		InterfaceStates.FontType = sti(optref.ifonttype);
 	} else {
@@ -481,6 +485,34 @@ void SetCurentOptions(ref optref)
 		InterfaceStates.ControlsTips = sti(optref.icontrolstips);
 	} else {
 		InterfaceStates.ControlsTips = 2;
+	}
+
+	if( CheckAttribute(optref,"ihelptime") ) {
+		iGlobalHelpTime = sti(optref.ihelptime);
+		InterfaceStates.HelpTime = iGlobalHelpTime;
+	} else {
+		InterfaceStates.HelpTime = 1;
+	}
+
+	if( CheckAttribute(optref,"icamera") ) {
+		iGlobalCamera = sti(optref.icamera);
+		InterfaceStates.Camera = iGlobalCamera;
+	} else {
+		InterfaceStates.Camera = 1;
+	}
+
+	if( CheckAttribute(optref,"ienemytype") ) {
+		iGlobalEnemyType = sti(optref.ienemytype);
+		InterfaceStates.EnemyType = iGlobalEnemyType;
+	} else {
+		InterfaceStates.EnemyType = 1;
+	}
+
+	if( CheckAttribute(optref,"itarget") ) {
+		iGlobalTarget = sti(optref.itarget);
+		InterfaceStates.Target = iGlobalTarget;
+	} else {
+		InterfaceStates.Target = 2;
 	}
 
 	if( CheckAttribute(optref,"seadetails") ) {
@@ -521,15 +553,6 @@ void SetCurentOptions(ref optref)
 
 	ControlsMakeInvert();
 	SetRealMouseSensitivity();
-	// belamour перспектива морской камеры
-	if(CheckAttribute(optref, "SEACAMPERSP"))
-	{
-		InterfaceStates.SEACAMPERSP = optref.SEACAMPERSP;
-	}
-	else
-	{
-		InterfaceStates.SEACAMPERSP = 25;
-	}
 }
 
 // belamour legendary edition теперь пишется все в один общий файл, а в option_screen.c сбрысывается в дефолт

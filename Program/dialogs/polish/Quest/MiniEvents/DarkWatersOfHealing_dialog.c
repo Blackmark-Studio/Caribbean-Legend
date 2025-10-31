@@ -71,22 +71,7 @@ void ProcessDialogEvent()
 
 		case "dwh_gypsy_5":
 			DialogExit();
-			
-			AddQuestRecord("DWH", "2");
-			
-			sld = CharacterFromID("DWH_gypsy");
-			sld.dialog.currentnode = "dwh_gypsy_repeat";
-			
-			sld = GetCharacter(NPC_GenerateCharacter("DWH_Tomas", "citiz_13", "man", "man", 1, ENGLAND, -1, false, "quest"));
-			sld.name = "Thomas";
-			sld.lastname = "Morrison";
-			LAi_SetStayType(sld);
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "Tomas";
-			ChangeCharacterAddressGroup(sld, "SentJons_houseS3", "goto", "goto1");
-			sld.City = "SentJons";
-			LAi_group_MoveCharacter(sld, "ENGLAND_CITIZENS");
-			AddLandQuestMark(sld, "questmarkmain");
+			AddDialogExitQuestFunction("DWH_gypsy_5");
 		break;
 		
 		case "dwh_gypsy_repeat":
@@ -145,14 +130,7 @@ void ProcessDialogEvent()
 		
 		case "Tomas_7":
 			DialogExit();
-			
-			LAi_SetActorType(npchar);
-			AddQuestRecord("DWH", "3");
-			pchar.questTemp.DWH_pastor = true;
-			AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
-			
-			sld = CharacterFromID("DWH_gypsy");
-			LAi_CharacterDisableDialog(sld);
+			AddDialogExitQuestFunction("DWH_Tomas_7");
 		break;
 
 		case "Tomas_11":
@@ -176,9 +154,7 @@ void ProcessDialogEvent()
 
 		case "Tomas_14":
 			DialogExit();
-			LAi_SetActorType(npchar);
-			pchar.questTemp.DWH_pastor_PrinesDengi = true;
-			AddLandQuestMark(characterFromId("SentJons_Priest"), "questmarkmain");
+			AddDialogExitQuestFunction("DWH_Tomas_14");
 		break;
 		
 		case "Tomas_15":
@@ -263,16 +239,7 @@ void ProcessDialogEvent()
 		
 		case "gypsy_2":
 			DialogExit();
-			sld = CharacterFromID("DWH_Tomas");
-			LAi_SetActorType(sld);
-			sld = CharacterFromID("DWH_gypsy");
-			LAi_SetActorType(sld);
-			AddQuestRecord("DWH", "5");
-			LAi_LocationDisableOfficersGen("Antigua_Grot", true);
-			locations[FindLocation("Antigua_Grot")].DisableEncounters = true;
-			PChar.quest.DWH_Grot.win_condition.l1 = "location";
-			PChar.quest.DWH_Grot.win_condition.l1.location = "Antigua_Grot";
-			PChar.quest.DWH_Grot.function = "DWH_Grot";
+			AddDialogExitQuestFunction("DWH_gypsy_22");
 		break;
 		
 		case "Bandit_1":
@@ -288,9 +255,7 @@ void ProcessDialogEvent()
 		
 		case "Bandit_2":
 			DialogExit();
-			LAi_SetActorType(pchar);
-			LAi_ActorGoToLocator(pchar, "goto", "goto2", "", -1);
-			DoQuestFunctionDelay("DWH_Grot_2", 4.0);
+			AddDialogExitQuestFunction("DWH_Bandit_2");
 		break;
 		
 		case "Bandit_3":
@@ -326,58 +291,12 @@ void ProcessDialogEvent()
 		
 		case "Bandit_6":
 			DialogExit();
-			
-			EndQuestMovie();
-			LAi_SetPlayerType(pchar);
-			LAi_LocationDisableOfficersGen("Antigua_Grot", false);
-			locations[FindLocation("Antigua_Grot")].DisableEncounters = false;
-			
-			/*if (CheckAttribute(pchar, "questTemp.DWH_GoodChoice"))*/ SetFunctionLocatorCondition("DWH_VorovstvoSunduk", "Antigua_Grot", "box", "box1", false)
-			
-			sld = CharacterFromID("DWH_gypsy");
-			LAi_SetStayType(sld);
-			sld.dialog.filename = "Quest\MiniEvents\DarkWatersOfHealing_dialog.c";
-			sld.dialog.currentnode = "gypsy_3";
-			AddLandQuestMark(sld, "questmarkmain");
-			
-			for (i=1; i<=2; i++)
-			{
-				sld = CharacterFromID("DWH_Bandit_"+i);
-				LAi_CharacterDisableDialog(sld);
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "PIRATE_CITIZENS");
-				LAi_SetCheckMinHP(sld, LAi_GetCharacterHP(sld)-1, false, "DWH_Podkreplenie");
-			}
+			AddDialogExitQuestFunction("DWH_Bandit_6");
 		break;
 		
 		case "Bandit_7":
 			DialogExit();
-			
-			chrDisableReloadToLocation = true;
-			EndQuestMovie();
-			LAi_SetPlayerType(pchar);
-			GiveItem2Character(NPChar, "cannabis7");
-			npchar.SaveItemsForDead = true;
-			npchar.DontClearDead = true;
-			LAi_SetFightMode(pchar, true);
-			
-			for (i=1; i<=2; i++)
-			{
-				sld = CharacterFromID("DWH_Bandit_"+i);
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "EnemyFight");
-			}
-			for (i=3; i<=4; i++)
-			{
-				sld = GetCharacter(NPC_GenerateCharacter("DWH_Bandit_"+i, "citiz_48", "man", "man", sti(pchar.rank), PIRATE, 0, true, "pirate"));
-				if (i==4) sld.model = "citiz_49";
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "EnemyFight");
-				ChangeCharacterAddressGroup(sld, "Antigua_Grot", "reload", "reload1");
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheckFunction("EnemyFight", "DWH_Grot_4");
+			AddDialogExitQuestFunction("DWH_Bandit_7");
 		break;
 		
 		case "gypsy_3":

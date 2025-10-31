@@ -426,7 +426,6 @@ void ProcessDialogEvent()
 			link.l1 = "Tiens bon, Pierre... hic... je ferais mieux d’y aller tant que je tiens encore debout !";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 		
 		case "Exit2":

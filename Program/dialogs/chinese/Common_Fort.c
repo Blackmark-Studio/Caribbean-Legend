@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 						// belamour传奇版 值得信赖的特质让玩家有机会欺骗守卫
 						if(sti(pchar.reputation.fame) < 41 && CheckCharacterPerk(pchar, "Trustworthy"))
 						{
-							notification("Trustworthy", "Trustworthy");
+							Notification_Perk(true, "Trustworthy");
 							link.l1.go = "NotPegYou";
 						}
 						else

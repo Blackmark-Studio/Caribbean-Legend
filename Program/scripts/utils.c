@@ -6,6 +6,8 @@
 #include "scripts\officers.c"
 #include "scripts\companions.c"
 #include "scripts\ShipsUtilites.c"
+#include "scripts\ship_docking.c" // корабли на стоянках
+#include "scripts\trained_eye.c"
 #include "scripts\Crew.c"
 #include "scripts\bountyhunters.c"
 #include "scripts\tavern.c"
@@ -21,6 +23,7 @@
 #include "scripts\CompanionTravel.c" // Warship 17.07.08 Методы для свободного плавания компаньонов
 #include "scripts\GameModeCondition.c" // Warship. Обраобтка прерывания, выполняющегося в каждом фрейме
 #include "scripts\GenQuests_common.c" // Ugeen 12.01.10 общие функции для генераторов
+#include "scripts\DialogDSL.c"
 
 #define MAN 			0
 #define WOMAN 			1
@@ -105,113 +108,160 @@ int GetDiplomatRate(bool bTrait, int iNation)
     int iRel;
     switch (iTargetThreat)
     {
-        case 0: iRel = 0;  break;
-        case 1: iRel = 10; break;
-        case 2: iRel = 15; break;
-        case 3: iRel = 20; break;
-        case 4: iRel = 30; break;
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
     }
     return iCurProblem - iRel;
 }
 
-void ChangeNationRelationFromRelationAgent(aref chr)
+// Плата Фадею и Бенуа в дублонах
+int DiplomatDublonPayment(int rate, string sName, bool bContra)
 {
-	int iNation = sti(chr.quest.relation);
+	int iRes;
 
-    int iDays = rand(10) + 5;
-	iDays = GetIntByCondition(HasShipTrait(pchar, "trait23"), iDays, iDays / 2);
-	
+	switch (sName)
+	{
+		case "Fadey":
+			if (bContra) return 700;
+			if (rate < 2) 	   iRes = 300;
+			else if (rate < 4) iRes = 600;
+			else			   iRes = 700;
+		break;
+
+		case "Benua":
+			if (bContra) return 600; // Нет такого сейчас
+			if (rate < 2) 	   iRes = 250;
+			else if (rate < 4) iRes = 500;
+			else			   iRes = 600;
+		break;
+	}
+
+	return iRes;
+}
+
+// Плата Локсли и дипломатам
+int CalculateRelationSum(int iNation, bool bLoyer)
+{
+	bool bTrait = HasShipTrait(PChar, "trait23");
+    int iCurThreat = wdmGetNationThreat(iNation);
+    int iCurProblem = abs(ChangeCharacterNationReputation(PChar, iNation, 0));
+    int iTargetThreat = GetIntByCondition(bTrait, iCurThreat - 1, iCurThreat - 2);
+    if (iTargetThreat < 0) iTargetThreat = 0;
+    int iRel;
+
+	// Сколько сбросит
+    switch (iTargetThreat)
+    {
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
+    }
+	string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
+	PChar.GenQuest.(sNation) = iCurProblem - iRel;
+
+	// Сколько заплатим
+	iTargetThreat = iCurThreat - 1;
+	if (iTargetThreat < 0) iTargetThreat = 0;
+    switch (iTargetThreat)
+    {
+        case 0: iRel = THREAT_LVL_0;  break;
+        case 1: iRel = THREAT_LVL_1; break;
+        case 2: iRel = THREAT_LVL_2; break;
+        case 3: iRel = THREAT_LVL_3; break;
+        case 4: iRel = THREAT_LVL_4; break;
+    }
+	if (bLoyer) return (iCurProblem - iRel) * 1200 + makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*80000);
+	return (iCurProblem - iRel) * 1500 +  makeint(stf(PChar.rank)/stf(PChar.reputation.nobility)*100000);
+}
+
+int CalculateRelationContraSum(bool bLoyer)
+{
+	if (bLoyer) return makeint(0.3*stf(PChar.rank)/stf(PChar.reputation.nobility)*60000);
+	return makeint(0.3 * stf(Pchar.rank)/stf(Pchar.reputation.nobility)*80000);
+}
+
+void ChangeNationRelationFromRelationAgent(int iNation)
+{
+    int iDays = hrand(10) + 5;
+	iDays = GetIntByCondition(HasShipTrait(PChar, "trait23"), iDays, iDays / 2);
+
 	string sQuest = "Change_Relation_for_Nation_" + GetNationNameByType(iNation) + "_by_relation_agent_" + iDays;
-	
+
 	SetTimerCondition(sQuest, 0, 0, iDays, false);
-	pchar.quest.(sQuest).function = "ChangeNationRelationFromRelationAgentComplete";
-	pchar.quest.(sQuest).nation = iNation;
+	PChar.quest.(sQuest).function = "ChangeNationRelationFromRelationAgentComplete";
+	PChar.quest.(sQuest).nation = iNation;
 }
 
 void ChangeNationRelationFromRelationAgentComplete(string sQuest)
 {
-	int iNation = sti(pchar.quest.(sQuest).nation);
+	int iNation = sti(PChar.quest.(sQuest).nation);
     string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
-    
-	SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL); // Для Локсли всегда нейтралим
-    // --> С трейтом гарантированно обнуляем, даже если покуролесили после оплаты
-    int iRate = ChangeCharacterNationReputation(pchar, iNation, 0);
-    if(HasShipTrait(pchar, "trait23") && iRate < 0) Pchar.GenQuest.(sNation) = abs(iRate);
-    // <--
-    ChangeCharacterNationReputation(pchar, iNation, sti(Pchar.GenQuest.(sNation)));
+	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
+	if (nowrate < 0)
+	{
+        int rate = sti(PChar.GenQuest.(sNation));
+        nowrate = -nowrate;
+        if (nowrate < rate) rate = nowrate;
+        ChangeCharacterNationReputation(PChar, iNation, rate);
+		PChar.GenQuest.(sNation) = 0;
+    }
+    SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+
 	sNation = "RelationAgent" + GetNationNameByType(iNation);
-    Pchar.GenQuest.(sNation) = false;
-    
 	if (CheckAttribute(pchar, "GenQuest."+(sNation)+".loyer"))
 	{
-		//Log_Info(XI_ConvertString("AlbertDone"));
 		LaunchMessage(XI_ConvertString("AlbertDone"));
 		DeleteAttribute(pchar, "GenQuest."+(sNation)+".loyer");
 	}
 	else LaunchMessage(XI_ConvertString("DiplomatDone"));
+	PChar.GenQuest.(sNation) = false;
 }
 
 void ChangeNationRelationFromFadeyComplete(string sQuest) 
 {
 	int iNation = sti(pchar.GenQuest.FadeyNation);
-	if (ChangeCharacterNationReputation(pchar, iNation, 0) < 0)
+	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
+	if (nowrate < 0)
 	{
         int rate = sti(pchar.GenQuest.FadeyNation.Rate);
-        int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
+        nowrate = -nowrate;
         if (nowrate < rate) rate = nowrate;
         ChangeCharacterNationReputation(pchar, iNation, rate);
     }
-    // Если без НЗГ, то вдобавок нейтралим
-    if (wdmGetNationThreat(iNation) == 0) SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+    SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
 
 	ref sld = characterFromId("Fadey");
 	if (CheckAttribute(sld, "quest.relation")) DeleteAttribute(sld, "quest.relation");
 	if (CheckAttribute(pchar, "GenQuest.FadeyNation")) DeleteAttribute(pchar, "GenQuest.FadeyNation");
 
-	//Log_Info(XI_ConvertString("FadeyDone")); // patch-10
 	LaunchMessage(XI_ConvertString("FadeyDone"));
 }
 
 void ChangeNationRelationFromBenuaComplete(string sQuest) // 141012
 {
 	int iNation = sti(pchar.GenQuest.BenuaNation);
-	if (ChangeCharacterNationReputation(pchar, iNation, 0) < 0)
+	int nowrate = ChangeCharacterNationReputation(PChar, iNation, 0);
+	if (nowrate < 0)
 	{
         int rate = sti(pchar.GenQuest.BenuaNation.Rate);
-        int nowrate = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
+        nowrate = -nowrate;
         if (nowrate < rate) rate = nowrate;
         ChangeCharacterNationReputation(pchar, iNation, rate);
     }
-    // Если без НЗГ, то вдобавок нейтралим
-    if (wdmGetNationThreat(iNation) == 0) SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
-	
+    SetNationRelation2MainCharacter(iNation, RELATION_NEUTRAL);
+
 	ref sld = characterFromId("Benua");
 	if (CheckAttribute(sld, "quest.relation")) DeleteAttribute(sld, "quest.relation");
 	if (CheckAttribute(pchar, "GenQuest.BenuaNation")) DeleteAttribute(pchar, "GenQuest.BenuaNation");
-	
-	//Log_Info(XI_ConvertString("BenoitDone")); // patch-10
+
 	LaunchMessage(XI_ConvertString("BenoitDone"));
 }
 
-int CalculateRelationSum(int iNation)
-{
-	string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
-	Pchar.GenQuest.(sNation) = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
-	int iSumm = sti(Pchar.GenQuest.(sNation)) * 1500 +  makeint(stf(Pchar.rank)/stf(Pchar.reputation.nobility)*100000);
-
-	//iSumm = iSumm * (1.0 + (0.1 * MOD_SKILL_ENEMY_RATE));
-	
-	return iSumm;
-}
-
-int CalculateRelationLoyerSum(int iNation) // Jason: сумма по адвокату Локсли
-{
-	string sNation = "RelationAgentRate" + GetNationNameByType(iNation);
-	Pchar.GenQuest.(sNation) = abs(ChangeCharacterNationReputation(pchar, iNation, 0));
-	int iSumm = sti(Pchar.GenQuest.(sNation)) * 1200 + makeint(stf(Pchar.rank)/stf(Pchar.reputation.nobility)*80000);
-	
-	return iSumm;
-}
 // to_do del нигде не используется
 bool CreateParticleSystemOnLocator(string _location_id, string _locatorName, string _particleName)
 {
@@ -289,8 +339,8 @@ void GiveItemToTrader(aref ch)
 	
 	switch (merType)
 	{
-		case "potion" 		: // лекарства и травы + обереги
-			AddItems(ch, "mineral17", 	Rand(1) + 2);	
+		case "potion" 		: // лекарства и травы + обереги 
+			AddItems(ch, "mineral17", 	Rand(6) + 2);	
 			AddItems(ch, "potion1", 	Rand(8) + 1);
 			if (ch.id == "Merdok")
 			{
@@ -336,6 +386,8 @@ void GiveItemToTrader(aref ch)
 			if(irand == 1)
 			{
 				if(GetDataDay() < 4) AddItems(ch, "recipe_potion2", 1);
+				if(GetDataDay() > 27) AddItems(ch, "recipe_PerksPotion", 1);
+				if(GetDataDay() % 2 == 0) AddItems(ch, "recipe_potion1", 1);
 			}
 			if(rank < 11)
 			{
@@ -432,28 +484,33 @@ void GiveItemToTrader(aref ch)
 			irand = hrand(5, tag);
 			if(irand == 1) AddItems(ch, "mineral3", 	Rand(4) + 5);
 			if(irand == 2) AddItems(ch, "mineral5", 	Rand(1) + 1);
+			if(irand == 3) AddItems(ch, "ArmoryPaper", 	Rand(6) + 3);
 			
 			irand = hrand(6, tag);
-			if(irand == 3) AddItems(ch, "mineral6", 	Rand(2) + 1);
-			if(irand == 4) AddItems(ch, "mineral7", 	Rand(2) + 1);				
-			if(irand == 5) AddItems(ch, "mineral9", 	Rand(2) + 1);
-			if(irand == 6) AddItems(ch, "mineral10", 	Rand(2) + 1);
+			if(irand == 2) AddItems(ch, "mineral6", 	Rand(2) + 1);
+			if(irand == 3) AddItems(ch, "mineral7", 	Rand(2) + 1);				
+			if(irand == 4) AddItems(ch, "mineral9", 	Rand(2) + 1);
+			if(irand == 5) AddItems(ch, "mineral10", 	Rand(2) + 1);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(3) + 2);
 
 			irand = hrand(4, tag);
 			if(irand == 0) AddItems(ch, "mineral13", 	Rand(1) + 1);		
 			if(irand == 1) AddItems(ch, "mineral15", 	Rand(1) + 1);
 			if(irand == 2) AddItems(ch, "mineral16", 	Rand(1) + 1);
+			if(irand == 3) AddItems(ch, "ArmoryPaper", 	Rand(8) + 1);
 			
 			irand = hrand(8, tag);
 			if(irand == 1) AddItems(ch, "mineral18", 	Rand(1) + 1);
 			if(irand == 8) AddItems(ch, "mineral19", 	Rand(1) + 1);
 			if(irand == 5) AddItems(ch, "mineral20", 	Rand(1) + 1);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(4) + 2);
 			
 			irand = hrand(9, tag);
 			if(irand == 9) AddItems(ch, "mineral21", 	Rand(1) + 1);
 			if(irand == 7) AddItems(ch, "mineral22", 	Rand(5) + 2);
 			if(irand == 5) AddItems(ch, "mineral23", 	Rand(9) + 5);
 			if(irand == 3) AddItems(ch, "mineral24", 	Rand(1) + 1);
+			if(irand == 6) AddItems(ch, "ArmoryPaper", 	Rand(5) + 4);
 			
 			irand = hrand(15, tag);
 			if(irand == 15)AddItems(ch, "mineral25", 	Rand(1) + 2);
@@ -793,18 +850,18 @@ void GiveItemToTrader(aref ch)
 		case "jeweller" 	:// ювелир
 			if(ShipBonus2Artefact(pchar, SHIP_LADYBETH))
 			{
-				AddItems(ch, "gold_dublon", sti(pchar.rank) * 6 + rand(GetCharacterSkill(pchar, SKILL_COMMERCE)) + 25 + (GetCharacterSkill(pchar, SKILL_COMMERCE)/5)); // дублоны
+				AddItems(ch, "gold_dublon", 45 + sti(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
 			}
 			else if(CheckAttribute(ch, "City") && ch.City == GetLadyBethCity())
 			{
-				AddItems(ch, "gold_dublon", sti(pchar.rank) * 6 + rand(GetCharacterSkill(pchar, SKILL_COMMERCE)) + 25 + (GetCharacterSkill(pchar, SKILL_COMMERCE)/5));
+				AddItems(ch, "gold_dublon", 45 + sti(pchar.rank) * 4 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(4 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 5)); // дублоны
 			}
 			else
 			{
-				AddItems(ch, "gold_dublon", sti(pchar.rank) * 2 + rand(GetCharacterSkill(pchar, SKILL_COMMERCE)) + 25 + (GetCharacterSkill(pchar, SKILL_COMMERCE)/5)); // дублоны
+				AddItems(ch, "gold_dublon", 35 + sti(pchar.rank) * 3 + GetCharacterSkill(pchar, SKILL_COMMERCE) / 20 + rand(3 * GetCharacterSkill(pchar, SKILL_COMMERCE) / 4)); // дублоны 
 			}
 			irand = rand(2);
-			if(irand == 1) AddItems(ch, "chest_open", Rand(1) + 1); // пустые сундуки
+			if(irand == 1) AddItems(ch, "chest_open", Rand(3) + 4); // пустые сундуки
 			
 			AddItems(ch, "jewelry1", Rand(4) + 1);
 			AddItems(ch, "jewelry2", Rand(4) + 1);
@@ -914,6 +971,7 @@ void GiveItemToTrader(aref ch)
 			if(irand == 95) AddItems(ch, "obereg_10", 1);
 			if(irand == 105) AddItems(ch, "obereg_11", 1);
 			if(irand == 115) AddItems(ch, "rat_poison", 1);
+			if(irand == 125) AddItems(ch, "recipe_PerksPotion", 1);
 			irand = hrand(120, tag);
 			if(irand == 9 && rank > 6) GenerateAndAddItems(ch, "blade_06", 1);
 			if(irand == 49 && rank > 6) GenerateAndAddItems(ch, "blade_10", 1);
@@ -1088,37 +1146,103 @@ void GiveItemToTrader(aref ch)
 			GenerateMaps(ch, 20, 50); // patch-5
 		break;
 		
-		case "cemeteryman": //Jason: смотрители кладбищ
-			irand = hrand(1, tag);
-			if(irand == 0) AddItems(ch, "cannabis1", 3+(rand(7)));
-			if(irand == 1) AddItems(ch, "cannabis2", 3+(rand(7)));
-			irand = hrand(3, tag);
-			if(irand == 0) AddItems(ch, "cannabis3", 3+(rand(7)));
-			if(irand == 1) AddItems(ch, "cannabis4", 3+(rand(7)));
-			if(irand == 2) AddItems(ch, "cannabis5", 3+(rand(7)));
-			if(irand == 3) AddItems(ch, "cannabis6", 3+(rand(7)));
-			irand = hrand(4, tag);
-			if(irand == 0) AddItems(ch, "jewelry12", 1+(rand(1)));
-			if(irand == 1) AddItems(ch, "jewelry13", 1+(rand(1)));
-			if(irand == 2) AddItems(ch, "jewelry22", 1+(rand(1)));
-			irand = hrand(10, tag);
-			if(irand == 0) AddItems(ch, "blade_03", 1);
-			if(irand == 3) AddItems(ch, "blade_05", 1);
-			if(irand == 7) AddItems(ch, "blade_07", 1);
-			irand = hrand(120, tag);
-			if(irand == 10) AddItems(ch, "blade_04", 1);
-			if(irand == 40) AddItems(ch, "blade_06", 1);
-			if(irand == 80) AddItems(ch, "blade_10", 1);
-			irand = hrand(7, tag);
-			if(irand == 0) AddItems(ch, "pistol1", 1);
-			irand = hrand(5, tag);
-			if(irand == 0) AddItems(ch, "bullet", 1+(rand(10)));
-			if(irand == 1) AddItems(ch, "grapeshot", 1+(rand(10)));
-			if(irand == 2) AddItems(ch, "cartridge", 1+(rand(5)));
-			if(irand == 3) AddItems(ch, "gunpowder", 1+(rand(10)));
-			AddItems(ch, "mineral"+(hrand(11, tag)+1), 1);
-			AddItems(ch, "mineral"+(hrand(13, tag)+13), 1);
+		case "cemeteryman": // Кирюмбасик: смотрители кладбищ
+   			irand = hrand(1, tag);
+    		if(irand == 0) AddItems(ch, "cannabis1", 3 + rand(7));
+    		if(irand == 1) AddItems(ch, "cannabis2", 3 + rand(7));
+    		irand = hrand(3, tag);
+    		if(irand == 0) AddItems(ch, "cannabis3", 3 + rand(7));
+    		if(irand == 1) AddItems(ch, "cannabis4", 3 + rand(7));
+    		if(irand == 2) AddItems(ch, "cannabis5", 3 + rand(7));
+    		if(irand == 3) AddItems(ch, "cannabis6", 3 + rand(7));
+    		// второй набор трав
+    		irand = hrand(1, tag);
+    		if(irand == 0) AddItems(ch, "cannabis1", 3 + rand(7));
+    		if(irand == 1) AddItems(ch, "cannabis2", 3 + rand(7));
+    		irand = hrand(3, tag);
+    		if(irand == 0) AddItems(ch, "cannabis3", 3 + rand(7));
+    		if(irand == 1) AddItems(ch, "cannabis4", 3 + rand(7));
+    		if(irand == 2) AddItems(ch, "cannabis5", 3 + rand(7));
+    		if(irand == 3) AddItems(ch, "cannabis6", 3 + rand(7));
+    		// ===== УКРАШЕНИЯ: добавлен коралл в общий пул =====
+    		irand = hrand(4, tag); // 0..4
+   		 	if(irand == 0) AddItems(ch, "jewelry12", 1 + rand(1)); // медный слиток
+    		if(irand == 1) AddItems(ch, "jewelry13", 1 + rand(1)); // железный слиток
+    		if(irand == 2) AddItems(ch, "jewelry22", 1 + rand(1)); // нефрит
+    		if(irand == 3) AddItems(ch, "jewelry19", 1 + rand(1)); // коралл
+    		// ===== ДОП. КАМНИ: шанс 40% на каждый, 3..5 шт. =====
+    		if(rand(99) < 40) AddItems(ch, "jewelry1",  3 + rand(2)); // Аметист
+    		if(rand(99) < 40) AddItems(ch, "jewelry8",  3 + rand(2)); // Янтарь
+    		if(rand(99) < 40) AddItems(ch, "jewelry4",  3 + rand(2)); // Изумруд
+    		if(rand(99) < 40) AddItems(ch, "jewelry3",  3 + rand(2)); // Рубин
+    		if(rand(99) < 40) AddItems(ch, "jewelry14", 3 + rand(2)); // Огненный опал
+    		if(rand(99) < 40) AddItems(ch, "jewelry15", 3 + rand(2)); // Аквамарин
+    		if(rand(99) < 40) AddItems(ch, "jewelry17", 3 + rand(2)); // Гиацинт
+    		if(rand(99) < 40) AddItems(ch, "jewelry23", 3 + rand(2)); // Хризоберилл
+        	irand = hrand(10, tag); // 0..2
+        	if(irand == 0) AddItems(ch, "Tailor_Tool", 1);   // портняжный инструмент
+        	if(irand == 1) AddItems(ch, "Mechanic_Tool", 1); // слесарный инструмент
+        	if(irand == 2) AddItems(ch, "alchemy_tool", 1);  // алхимический набор
+
+    		// ===== (2) КАЖДЫЙ ДЕНЬ: случайный рецепт зелья (гарантированно 1 шт.) =====
+    		irand = hrand(5, tag); // 0..5
+    		if(irand == 0) AddItems(ch, "recipe_potion1", 1);
+    		if(irand == 1) AddItems(ch, "recipe_potion2", 1);
+    		if(irand == 2) AddItems(ch, "recipe_potion3", 1);
+    		if(irand == 3) AddItems(ch, "recipe_potion4", 1);
+    		if(irand == 4) AddItems(ch, "recipe_berserker_potion", 1);
+    		if(irand == 5) AddItems(ch, "recipe_PerksPotion", 1);
+
+    		// ===== (3) СЛУЧАЙНЫЙ РЕЦЕПТ ТОТЕМА (гарантированно 1 шт.) =====
+    		irand = hrand(12, tag); // 0..12
+    		if(irand == 0)  AddItems(ch, "recipe_totem_01", 1);
+    		if(irand == 1)  AddItems(ch, "recipe_totem_02", 1);
+    		if(irand == 2)  AddItems(ch, "recipe_totem_03", 1);
+    		if(irand == 3)  AddItems(ch, "recipe_totem_04", 1);
+    		if(irand == 4)  AddItems(ch, "recipe_totem_05", 1);
+    		if(irand == 5)  AddItems(ch, "recipe_totem_06", 1);
+    		if(irand == 6)  AddItems(ch, "recipe_totem_07", 1);
+    		if(irand == 7)  AddItems(ch, "recipe_totem_08", 1);
+    		if(irand == 8)  AddItems(ch, "recipe_totem_09", 1);
+    		if(irand == 9)  AddItems(ch, "recipe_totem_10", 1);
+    		if(irand == 10) AddItems(ch, "recipe_totem_11", 1);
+    		if(irand == 11) AddItems(ch, "recipe_totem_12", 1);
+    		if(irand == 12) AddItems(ch, "recipe_totem_13", 1);
+
+    		// ===== ОРУЖИЕ (без изменений) =====
+    		irand = hrand(10, tag);
+    		if(irand == 0) AddItems(ch, "blade_03", 1);
+    		if(irand == 3) AddItems(ch, "blade_05", 1);
+    		if(irand == 7) AddItems(ch, "blade_07", 1);
+
+    		irand = hrand(120, tag);
+    		if(irand == 10) AddItems(ch, "blade_04", 1);
+    		if(irand == 40) AddItems(ch, "blade_06", 1);
+    		if(irand == 80) AddItems(ch, "blade_10", 1);
+
+    		// ===== ОГНЕСТРЕЛ: усилен шанс (pistol1/pistol3) =====
+    		irand = hrand(7, tag); // 0..7
+    		if(irand == 0) AddItems(ch, "pistol1", 1);
+    		if(irand == 1) AddItems(ch, "pistol3", 1);
+
+    		// ===== БОЕПРИПАСЫ =====
+    		irand = hrand(5, tag); // 0..5
+    		if(irand == 0) AddItems(ch, "bullet",     1 + rand(10));
+    		if(irand == 1) AddItems(ch, "grapeshot",  1 + rand(10));
+    		if(irand == 2) AddItems(ch, "cartridge",  rand(1));
+    		if(irand == 3) AddItems(ch, "gunpowder",  1 + rand(10));
+
+    		// ===== МИНЕРАЛЫ: утроено количество =====
+    		AddItems(ch, "mineral" + (hrand(11, tag) + 1),   1);  // 1..12
+    		AddItems(ch, "mineral" + (hrand(13, tag) + 13),  1);  // 13..26
+
+    		AddItems(ch, "mineral" + (hrand(11, tag) + 1),   1);
+    		AddItems(ch, "mineral" + (hrand(13, tag) + 13),  1);
+
+    		AddItems(ch, "mineral" + (hrand(11, tag) + 1),   1);
+    		AddItems(ch, "mineral" + (hrand(13, tag) + 13),  1);
 		break;
+
 		
 		case "FishingBoat": // belamour рыбацкое судно 
 			AddItems(ch, "mineral35", 	Rand(2) + 3); // лютня
@@ -1157,6 +1281,15 @@ void GiveItemToTrader(aref ch)
             itm = ItemsFromID("map_full");
             SharlieTutorial_GenerateTreasureMap(itm);
 			AddItems(ch, "map_full", 	1); // Карта сокровищ
+		break;
+		
+		case "OZ_Blacksmith":		
+			AddItems(ch, "jewelry13", 5);
+			AddItems(ch, "jewelry12", 2);
+			AddItems(ch, "jewelry10", 2);
+			AddItems(ch, "jewelry11", 2);
+			AddItems(ch, "Mineral23", Rand(55) + 70);
+			AddItems(ch, "slave_01", 20);
 		break;
 	}	
 }
@@ -1800,8 +1933,9 @@ int GenerateCharacter(int iNation, int isShip, string sModel, int iSex, int isLo
 		else
 		{
 			characters[iChar].ship.type = SearchForMaxShip(&characters[iChar], isLock, CharacterType);
+			InitChrRebalance(&characters[iChar]);
 			Fantom_SetRandomCrewExp(&characters[iChar], "war");
-			
+			GiveCaptainOfficers(&characters[iChar], true);
 		}
 		
 		SetBaseShipData(&characters[iChar]);
@@ -1881,7 +2015,7 @@ int GetRandomNationForMapEncounter(string sIslandID, bool bMerchant)
 	fHolland  = fSpain   + fHolland;
 	fPirate   = fHolland + fPirate;
 
-	if(bMerchant == 0)
+	if(!bMerchant)
 	{
 		if(fProbablyNation >= fFrance && fProbablyNation < fSpain)
 		{
@@ -2321,6 +2455,7 @@ int SetCharToPrisoner(ref refEnemyCharacter)
 	    LAi_NoRebirthEnable(rChTo);
 
 	    SetCharacterRemovable(rChTo, true);
+			if (CheckAttribute(rChTo, "personality.hasCrew")) RemoveCaptainOfficers(rChTo);
 	    AddPassenger(refMyCharacter,rChTo,true);
     }
     return iNextPrisoner;
@@ -2560,4 +2695,11 @@ aref ErrorAttr()
     aref aError;
     makearef(aError, TEV.Error);
     return aError;
+}
+
+// На глобалке или в море, не на суше
+bool IsInSeaNow()
+{
+	if (bAbordageStarted) return false;
+	return IsEntity(&worldMap) || bSeaActive;
 }

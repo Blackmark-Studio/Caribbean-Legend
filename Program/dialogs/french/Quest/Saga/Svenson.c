@@ -1205,9 +1205,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61":
 			dialog.text = "Fort bien. Alors, nous le partagerons en deux.";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Voilà. J'ai "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1221,9 +1221,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61_1":
 			dialog.text = "Joyeux bon. Combien avez-vous apporté ?";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Voilà. J'ai "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1243,7 +1243,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
 			Log_Info("You have given "+sti(npchar.quest.bakaut_pay)+" doubloons");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
@@ -1686,7 +1686,7 @@ void ProcessDialogEvent()
 				dialog.text = "Ravi que le gaïac te plaise, " + sStr + ". Augmenter les livraisons n'est pas un problème, mais il y a un hic, tu comprends. Avec l'augmentation des volumes apparaît une trace qui peut attirer l'attention indésirable, surtout des autorités anglaises. Mais si nous ajoutons à l'affaire des mains fiables, des oreilles fidèles, et des gens dans la résidence qui aideront à rester dans l'ombre, tout peut s'arranger. C'est vrai que cela ne sera pas bon marché - trois mille doublons pour contourner le trésor de la ville et les besoins de l'Angleterre. Alors je pourrai te fournir cinq fois plus. Qu'en dis-tu ?";
 				link.l1 = "Trois mille doublons ? Jan, c'est du vol en plein jour ! Ne pourrait-on pas s'en sortir avec moins de dépenses ? Peut-être y a-t-il un moyen de régler l'affaire sans de telles sommes fabuleuses ?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

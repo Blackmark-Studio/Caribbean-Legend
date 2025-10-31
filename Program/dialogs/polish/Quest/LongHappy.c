@@ -100,12 +100,15 @@ void ProcessDialogEvent()
 		case "spa_officer_1":
 			if(sti(pchar.reputation.nobility) > 80 || sti(pchar.reputation.nobility) < 20) // провести учёт чести и известности
 			{
+				Notification_Reputation(true, 81, "low");
 				dialog.text = "Tak, wiele o tobie słyszałem i mam jasne instrukcje, aby nie zamieniać miasta w krwawą łaźnię, jeśli będziesz uparty. Możesz przejść. Ale ojciec Vincento będzie... niezadowolony. Miej to na uwadze.";
 				link.l1 = "Zachowałeś się rozsądnie, monsieur. Jakoś przeżyję ból w moim sercu spowodowany niezadowoleniem ojca-inkwizytora. Miłego wieczoru!";
 				link.l1.go = "spa_officer_2";
 			}
 			else
 			{
+				Notification_Reputation(false, 81, "low");
+				Notification_Reputation(false, 19, "high");
 				dialog.text = "Tak, słyszałem o tobie... wiele interesujących rzeczy. Jednakże odrzucanie takich zaproszeń jest niebezpieczne dla zdrowia, senior. Podobnie jak porywanie gości ojca Vincento. Zatrzymać ich!";
 				link.l1 = "Każdy dokonał swego wyboru. Żałuję, że musiało do tego dojść. Do broni, caballero!";
 				link.l1.go = "spa_officer_3";

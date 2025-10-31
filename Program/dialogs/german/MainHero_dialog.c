@@ -178,7 +178,7 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Vanille wurde schon lange auf die Karracke geladen und ihre Segel sind schon lange am Horizont verschwunden - und dieses verdammte Galeon ist statt auf hoher See wieder im Hafen aufgetaucht. Ich darf mit meinem Schiff nicht im Hafen auftauchen - es ist am besten, wenn sie denken, dass ich Guadeloupe verlassen habe... Ich denke, ich werde durch den Dschungel in die Stadt gehen und nach meinem lieben Marchais fragen...";
+    		    dialog.text = "Vanille wurde schon lange auf die Briggantine geladen und ihre Segel sind schon lange am Horizont verschwunden - und dieses verdammte Galeon ist statt auf hoher See wieder im Hafen aufgetaucht. Ich darf mit meinem Schiff nicht im Hafen auftauchen - es ist am besten, wenn sie denken, dass ich Guadeloupe verlassen habe... Ich denke, ich werde durch den Dschungel in die Stadt gehen und nach meinem lieben Marchais fragen...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
@@ -263,7 +263,7 @@ void ProcessDialogEvent()
 			// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 			if (CheckAttribute(pchar, "questTemp.FMQN.Choose") && pchar.location == "shore40")
     		{
-				dialog.text = "Hm. Diese Geschichte fühlt sich nicht richtig an. Ich glaube, dass dieser Schoner aus St. Jones nie existieren sollte. Der Leutnant zieht mich in seine militärische Operation. Warum brauche ich das? Ich bin nicht im Krieg mit den Niederländern... Was soll ich tun? Soll ich gehen und den Briten ihren Spaß alleine lassen? Oder soll ich bleiben?";
+				dialog.text = "Hm. Diese Geschichte fühlt sich nicht richtig an. Ich glaube, dass dieser Schoner aus St. Jones nie existieren sollte. Der Leutnant zieht mich in seine militärische Operation. Warum brauche ich das? Ich bin nicht im Krieg mit den Niederländern... Was soll ich tun? Hier verschwinden und sie alle zur Hölle schicken — oder bleiben?";
 				link.l1 = "Geh weg.";
 				link.l1.go = "FMQN_1";
 				link.l2 = "Bleib.";
@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 				
 				DeleteAttribute(pchar, "questTemp.PZ_OsmatrivaemSunduk");
 
-				AddDialogExitQuest("PZ_OsmatrivaemSunduk_3");
+				AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_4");
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.PZ_GotovimShlupki")) {
@@ -559,13 +559,6 @@ void ProcessDialogEvent()
 	        	Link.l18 = "Bereitet die Feier vor.";
 	    		Link.l18.go = "LH_marry_4";
 	    	}
-			// -->Авторемонт			
-			if(Pchar.Location == Pchar.location.from_sea && CheckOfficersPerk(pchar, "SelfRepair") && CheckSelfRepairConditions()) 
-			{
-				Link.l14 = "Beginne mit der Reparatur der Schiffe";
-				Link.l14.go = "StartSelfRepair";
-			}			
-			// <--Авторемонт
 			//--> завершение игры
 			if(CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
 	        {
@@ -582,11 +575,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("Tonzag_CreateKiller");
 		break;
 		
-		case "StartSelfRepair":
-			NextDiag.CurrentNode = NextDiag.TempNode;
-			DialogExit_Self();
-			LaunchRepair(pchar);
-		break;
+
 		
 		case "SetGunBullets":
 			Dialog.Text = "Wähle den Munitionstyp:";
@@ -1117,7 +1106,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FMQN_2":
-			dialog.text = "Nein, auf keinen Fall, ich bleibe. Aber zur Hölle, ich werde hier nicht auf Gott weiß was warten. Ich sollte zum Hafen von Philipsburg segeln und die Situation untersuchen. Mir gefällt die Vorstellung nicht, ein Werkzeug in den Händen eines verfluchten lügenden Engländers zu sein.";
+			dialog.text = "Nein, auf keinen Fall, ich bleibe. Aber zur Hölle, ich werde hier nicht auf Gott weiß was warten. Ich sollte zum Hafen von Philipsburg segeln und die Situation untersuchen. Ich habe nicht vor, ein blindes Werkzeug in ihren Händen zu werden.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_ChooseContinue");

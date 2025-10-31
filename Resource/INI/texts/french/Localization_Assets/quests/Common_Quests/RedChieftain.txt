@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-chieftain
-}
-RedChieftain_2
-{
-Kanauri
-}
-
-RedChieftain_3
-{
-indians
-}
-RedChieftain_4
-{
-of Caiman tribe
-}
-
-RedChieftain_5
-{
-The chieftain has left your vessel!
-}
-
-RedChieftain_6
-{
-indian
-}
-RedChieftain_7
-{
-of Caiman tribe
-}
+RedChieftain_1 {chieftain}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {indians}
+RedChieftain_4 {of Caiman tribe}
+RedChieftain_5 {The chieftain has left your vessel!}
+RedChieftain_6 {indian}
+RedChieftain_7 {of Caiman tribe}

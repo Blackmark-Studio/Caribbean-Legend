@@ -1,0 +1,10 @@
+blade_critDamage {Daño crítico cuerpo a cuerpo}
+gun_critDamage {Daño crítico de pistola}
+musket_critDamage {Daño crítico de mosquete}
+blade_critChance {Probabilidad de crítico cuerpo a cuerpo}
+gun_critChance {Probabilidad de crítico de pistola}
+musket_critChance {Probabilidad de crítico de mosquete}
+incomingDamageReduction {Protección contra daño}
+RangeIncomingDamageReduction {Protección contra daño de armas de fuego}
+Shot_Damage {Daño de armas de fuego}
+HeadshotDamage {Daño por disparo a la cabeza}

@@ -1079,7 +1079,7 @@ void ProcessDialogEvent()
 		ChangeCharacterAddressGroup(sld, "Villemstad_prison", "goto", "goto9");
 		sld = GetCharacter(NPC_GenerateCharacter("PortHolOfficer", "off_hol_4", "man", "man", 35, HOLLAND, 30, true, "soldier"));
 		FantomMakeCoolFighter(sld, sti(pchar.rank) + MOD_SKILL_ENEMY_RATE + 10, 100, 100, "blade_19", "pistol3", "grapeshot", 100);
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "HOLLAND_CITIZENS");

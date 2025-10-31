@@ -1,1 +1,1 @@
-SelectDeliveryTradeDialog0	 {文件为空, 为了与Storm-2.5核心兼容。 不知为何核心需要它, 但脚本中没有相关内容}
+SelectDeliveryTradeDialog0 {文件为空, 为了与Storm-2.5核心兼容。 不知为何核心需要它, 但脚本中没有相关内容}

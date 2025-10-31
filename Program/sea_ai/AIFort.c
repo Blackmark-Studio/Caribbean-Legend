@@ -2,7 +2,7 @@
 
 #define		MAX_FORTS						16
 #define		MIN_CANNON_DAMAGE_DISTANCE		20.0
-#define		FORT_CANNON_MAXHP				1500.0
+#define		FORT_CANNON_MAXHP				1850.0
 
 object		AIFort;
 object		Forts[MAX_FORTS];
@@ -479,7 +479,7 @@ void Fort_CannonDestroy()
 	
 	Ship_ApplyCrewHitpoints(rFortCharacter, 15.0);
 	
-	Play3DSound("fort_cann_explode", x, y, z);
+	Play3DSoundEvent("ShipEMB/Explosion_Cannon_fort", x, y, z);
 	CreateBlast(x, y, z);
 	CreateParticleSystem("blast_inv", x, y, z, 0.0, 0.0, 0.0, 0);
 	CreateParticleSystem("blast", x, y, z, 0.0, 0.0, 0.0, 0);

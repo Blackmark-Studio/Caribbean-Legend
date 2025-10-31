@@ -79,6 +79,7 @@ void Duel_Move_Opponent2Place(string qName)
 	string sTemp, attrName;
 
 	npchar = CharacterFromID(pchar.questTemp.duel.enemy);
+	SetAutolevel(npchar, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Дуэлянты по квесту
     
 	if (GetQuestPastTimeParam("questTemp.Duel.StartTime") < sti(pchar.questTemp.Duel.WaitTime))
 	{

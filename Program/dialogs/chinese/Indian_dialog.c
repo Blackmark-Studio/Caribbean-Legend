@@ -504,7 +504,7 @@ void ProcessDialogEvent()
 			link.l1 = "你认为这些卡蓬人是你唯一需要担心的吗? 你大错特错了... ";
 			link.l1.go = "hayamee_bad_4";
 			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("印第安人不尊重你 " + stf(pchar.questTemp.Indian.relation) + "/40", "None");
-			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("特质检查失败", "Trustworthy");
+			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
 		case "hayamee_bad_4":

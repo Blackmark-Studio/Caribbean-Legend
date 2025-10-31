@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			link.l1 = "Почему-то я ожидал"+GetSexPhrase("","а")+" от него пафосной речи. А он сразу в бой кинулся.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_2";
 			Achievment_Set("ach_CL_154");
-			if (sti(pchar.rank) <= 13) Achievment_Set("ach_CL_156");
+			if (sti(pchar.rank) <= 11) Achievment_Set("ach_CL_156");
 		break;
 		
 		case "Memento_MortimerGrimDead_Alonso_2":
@@ -92,7 +92,7 @@ void ProcessDialogEvent()
 		
 		case "Memento_MortimerGrimDead_Alonso_8":
 			dialog.text = "Лучше не стоит. Он весь обвешан какими-то туземными символами. Да и ходят о нем нехорошие слухи - говорят, он когда-то пережил чудовищную эпидемию и что на палубах разве что мертвецы не танцевали\n"+
-			"Про скелет на корме я уж вообще молчу: пока какой-нибудь идиот не отважится свистнуть череп куражу ради - на корме еще долго никто кроме меня вахту держать не отважится.";
+			"Про скелет на корме я уж вообще молчу: пока какой-нибудь идиот не отважится свистнуть череп куражу ради - на корме ещё долго никто кроме меня вахту держать не отважится.";
 			link.l1 = "Принято, Алонсо. Возвращайся к работе.";
 			link.l1.go = "Memento_MortimerGrimDead_Alonso_9";
 		break;

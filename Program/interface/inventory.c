@@ -1,6 +1,13 @@
 // Sith меню снаряжение/инвентарь
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню кнопками Q, E и TAB
 #include "interface\character_all.h"
+#include "interface\utils\popup_error.c"
+#include "interface\utils\popup_confirmation.c"
+#include "interface\utils\common_header.c"
+#include "interface\utils\officer_change.c"
+#include "interface\utils\items\stats.c"
+#include "interface\utils\character_stats.c"
+#include "interface\utils\items\descriptors.c"
 int currentTab = 0;
 int currentScrollTab = 1;
 int sMode;
@@ -10,18 +17,16 @@ int iCharQty, iGoodIndex;
 bool bQuestItem;
 bool isMusketLoadPress = false;
 bool bShowTabOfficers = true;
-bool isRemoveItemMsgActive = false;
+ref currentItem;
 
 void InitInterface(string iniName)
 {
-    xi_refCharacter = pchar;
+	RefreshEquippedMaps(pchar);
+	xi_refCharacter = pchar;
 	InterfaceStack.SelectMenu_node = "LaunchInventory"; // запоминаем, что звать по Ф2
 	GameInterface.title = "titleCharacter";
-	if (CheckAttribute(&InterfaceStates, "nCurScrollTab") && sti(InterfaceStates.nCurScrollTab) == 2)
-	{
-		bShowTabOfficers = false;
-		currentScrollTab = 2;
-	}
+	currentScrollTab = GetCurrentCharactersTab();
+	bShowTabOfficers = currentScrollTab == 1;
 	FillCharactersScrollEx(bShowTabOfficers);
 	FillPassengerScroll();
  	if (CheckAttribute(&InterfaceStates, "CurCharacter")) 
@@ -38,20 +43,23 @@ void InitInterface(string iniName)
     SetEventHandler("frame","ProcessFrame",1);
     SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("eTabControlPress","procTabChange",0);
 	SetEventHandler("eScrollTabControlPress","procScrollTabChange",0);
 	SetEventHandler("ExitOfficerMenu","ExitOfficerMenu",0);
 	SetEventHandler("OfficerChange","OfficerChange",0);
 	SetEventHandler("acceptaddofficer","AcceptAddOfficer",0);
-	SetEventHandler("ExitRemoveOfficerMenu","ExitRemoveOfficerMenu",0);
-	SetEventHandler("AcceptRemoveOfficer","AcceptRemoveOfficer",0);
 	SetEventHandler("ExitMapWindow","ExitMapWindow",0);	
 	SetEventHandler("EquipItem","EquipItem",0);
 	SetEventHandler("RemoveItem","RemoveItem",0);
+	SetEventHandler("PopupIsShown","PopupIsShown",0);
+	SetEventHandler("PopupIsClosed","PopupIsClosed",0);
 	SetEventHandler("RemoveSlotItemOk","RemoveSlotItemOk",0);
 	SetEventHandler("RemoveItemCancel","RemoveItemMsgExit",0);
 	SetEventHandler("WarningHide","WarningHide",0);
+	SetEventHandler("OpenExchange", "OpenExchange", 0);
+	SetEventHandler("OnHeaderClick","OnHeaderClick",0);
 	// выбросить предмет
 	SetEventHandler("ShowBoxMove", "ShowBoxMove", 0);
 	SetEventHandler("GoodsExitCancel", "GoodsExitCancel", 0);
@@ -74,7 +82,7 @@ void InitInterface(string iniName)
 	
 	if (IsMainCharacter(xi_refCharacter))
 	{
-		SetFormatedText("LOYALITY_STR", XI_ConvertString("Authority"));
+		SetFormatedText("LOYALITY_STR", XI_ConvertString("F"));
 	}
 	else
 	{
@@ -83,9 +91,7 @@ void InitInterface(string iniName)
 	GameInterface.TABLE_ITEMS.select = -1;
 	Table_UpdateWindow("TABLE_ITEMS");
 	SetControlsTabMode(1);
-	if (CheckAttribute(&InterfaceStates, "nCurScrollTab") && CheckAttribute(&InterfaceStates, "CurCharacter")) 
-		SetControlsScrollTabMode(currentScrollTab);
-	else SetControlsScrollTabMode(1);
+	SetControlsScrollTabMode(currentScrollTab);
 	CreateString(true, "CharJob", "", FONT_NORMAL, COLOR_NORMAL, 960, 290, SCRIPT_ALIGN_CENTER, 1.4);
 	GameInterface.strings.CharJob = "";
 }
@@ -93,16 +99,25 @@ void InitInterface(string iniName)
 // гуляем по меню кнопками Q и E, TAB переключает вкладки таблицы
 void ProcessInterfaceControls() 
 {
-    string controlName = GetEventData();
+	string controlName = GetEventData();
 	if (controlName == "InterfaceGoLeft") {
-        IDoExit(RC_INTERFACE_NATIONRELATION);
-    }
-    if (controlName == "InterfaceGoRight") {
+		IDoExit(RC_INTERFACE_NATIONRELATION);
+	}
+	if (controlName == "InterfaceGoRight") {
 		IDoExit(RC_INTERFACE_TO_SHIP);
-    }
+	}
 	if (controlName == "InterfaceTabSwitch") {
-		currentTab = (currentTab + 1) % 5;
-		SetControlsTabMode(currentTab + 1);
+		string sCurrentNode = GetCurrentNode();
+		if (sCurrentNode == "CHARACTERS_SCROLL" && controlName == "InterfaceTabSwitch") 
+		{
+			currentScrollTab = currentScrollTab % 2 + 1;
+			SetControlsScrollTabMode(currentScrollTab);
+		}
+		else
+		{
+			currentTab = (currentTab + 1) % 5;
+			SetControlsTabMode(currentTab + 1);
+		}
 	}
 }
 
@@ -129,6 +144,7 @@ void IDoExit(int exitCode)
 		}
 		if(totalMush > 2) Achievment_Set("ach_CL_132");
 	}
+	Achievments_Descriptors();
 	/* if(bGlobalTutor)
 	{
 		for(i = 1; i < 4; i++)
@@ -150,20 +166,21 @@ void IDoExit(int exitCode)
     DelEventHandler("frame","ProcessFrame");
     DelEventHandler("ShowInfoWindow","ShowInfoWindow");
 	DelEventHandler("MouseRClickUp","HideInfoWindow");
+	DelEventHandler("HideInfoWindow","HideInfoWindow");
 	DelEventHandler("TableSelectChange", "CS_TableSelectChange");
 	DelEventHandler("eTabControlPress","procTabChange");
 	DelEventHandler("eScrollTabControlPress","procScrollTabChange");
 	DelEventHandler("ExitOfficerMenu","ExitOfficerMenu");
 	DelEventHandler("OfficerChange","OfficerChange");
 	DelEventHandler("acceptaddofficer","AcceptAddOfficer");
-	DelEventHandler("ExitRemoveOfficerMenu","ExitRemoveOfficerMenu");
-	DelEventHandler("AcceptRemoveOfficer","AcceptRemoveOfficer");
 	DelEventHandler("ExitMapWindow","ExitMapWindow");
 	DelEventHandler("EquipItem","EquipItem");
 	DelEventHandler("RemoveItem","RemoveItem");
 	DelEventHandler("RemoveSlotItemOk","RemoveSlotItemOk");
 	DelEventHandler("RemoveItemCancel","RemoveItemMsgExit");
 	DelEventHandler("WarningHide","WarningHide");
+	DelEventHandler("PopupIsShown","PopupIsShown");
+	DelEventHandler("PopupIsClosed","PopupIsClosed");
 	// выбросить предмет
 	DelEventHandler("ShowBoxMove", "ShowBoxMove");
 	DelEventHandler("GoodsExitCancel", "GoodsExitCancel");
@@ -173,6 +190,8 @@ void IDoExit(int exitCode)
 	DelEventHandler("ADD_BUTTON","ADD_BUTTON");
 	DelEventHandler("REMOVE_BUTTON", "REMOVE_BUTTON");
 	DelEventHandler("REMOVE_ALL_BUTTON", "REMOVE_ALL_BUTTON");
+	DelEventHandler("OpenExchange", "OpenExchange");
+	DelEventHandler("OnHeaderClick","OnHeaderClick");
 	//
 	
 	interfaceResultCommand = exitCode;
@@ -184,7 +203,7 @@ void IDoExit(int exitCode)
 	else
 	{
 		DeleteAttribute(&InterfaceStates, "CurCharacter");
-		DeleteAttribute(&InterfaceStates, "nCurScrollTab");
+		if (interfaceResultCommand == RC_INTERFACE_ANY_EXIT) DeleteAttribute(&InterfaceStates, "nCurScrollTab");
 		EndCancelInterface(true);
 	}
 	LAi_SetPlayerType(PChar); // Возвращаем тип игрока
@@ -194,7 +213,6 @@ void ProcessCommandExecute()
 {
 	string comName = GetEventData();
 	string nodName = GetEventData();
-	
     switch(nodName)
 	{
 		case "EQUIP_BUTTON":
@@ -207,15 +225,8 @@ void ProcessCommandExecute()
 		case "OPENMAP_BUTTON":
 			if (comName=="activate" || comName=="click")
 			{
-				EquipPress();
-				SetCurrentNode("TABLE_ITEMS");
-			}
-		break;
-		case "ATLASADD_BUTTON":
-			if (comName=="activate" || comName=="click")
-			{
-				AtlasAddPress();
-				SetCurrentNode("TABLE_ITEMS");
+				OpenMap();
+				return;
 			}
 		break;
 		case "LOADGUN_BUTTON":
@@ -480,7 +491,6 @@ void RemoveItemMsgShow()
 	XI_WindowDisable("REMOVE_ITEM_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);
 	SetCurrentNode("REMOVE_ACCEPT_ITEM");
-	isRemoveItemMsgActive = true;
 }
 
 void RemoveItemMsgExit()
@@ -488,7 +498,6 @@ void RemoveItemMsgExit()
 	XI_WindowShow("REMOVE_ITEM_WINDOW", false);
 	XI_WindowDisable("REMOVE_ITEM_WINDOW", true);
 	XI_WindowDisable("MAIN_WINDOW", false);
-	isRemoveItemMsgActive = false;
 }
 
 void RemoveSlotItemOk()
@@ -545,22 +554,20 @@ void SetButtonsState()
 
 void SetVariable()
 {
-	// доп инфа в шапку --->
-	SetAlertMarks(xi_refCharacter);
-	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
-	SetFormatedText("Money", FindRussianMoneyString(sti(xi_refCharacter.money)));
-	SetFormatedText("Dublon", FindRussianDublonString(sti(xi_refCharacter.dublon)));
+	SetCommonHeaderInfo();
 	SetFormatedText("Rank", xi_refCharacter.rank);
-	SetFormatedText("Rank_progress", GetCharacterRankRateCur(xi_refCharacter) + " / " + GetCharacterRankRate(xi_refCharacter));
-	// порог уровня
-	GameInterface.StatusLine.BAR_RANK.Max   = GetCharacterRankRate(xi_refCharacter);
-	GameInterface.StatusLine.BAR_RANK.Min   = 0;
-	GameInterface.StatusLine.BAR_RANK.Value = GetCharacterRankRateCur(xi_refCharacter);	
+	SetFormatedText("Rank2", ""+(sti(xi_refCharacter.rank) + 1));
+	SetFormatedText("Rank_progress", GetCharacterRankRateCur(&xi_refCharacter) + " / " + GetCharacterRankRate(&xi_refCharacter));
+
+	//Порог уровня
+	GameInterface.StatusLine.BAR_RANK.Max = GetCharacterRankRate(&xi_refCharacter);
+	GameInterface.StatusLine.BAR_RANK.Min = 0;
+	GameInterface.StatusLine.BAR_RANK.Value = GetCharacterRankRateCur(&xi_refCharacter);
 	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_RANK",0);
-	// <--- 
+
 	// items --->
-	SetFormatedText("SETUP_FRAME_CAPTION", XI_ConvertString("Equipment"));	
 	SortItems(xi_refCharacter); //сортировка
+	SetNodeUsing("EXCHANGE_BUTTON", IsFellowAbleToExchange(xi_refCharacter)); // добавляем кнопку обмена
 	FillItemsTable(currentTab+1); // fix
 	HideItemSelect();
 	SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
@@ -586,7 +593,6 @@ void SetVariable()
 	if(CheckCharacterPerk(xi_refCharacter, "ByWorker"))
 	{
 		SetNewGroupPicture("CHARACTER_NATION_PICTURE", "PERKS_ENABLE", "ByWorker");
-		if(CheckCharacterPerk(xi_refCharacter, "ByWorker2")) SetNewGroupPicture("CHARACTER_NATION_PICTURE", "PERKS_ENABLE", "ByWorker2");
 	}
 	else
 	{
@@ -608,26 +614,10 @@ void SetVariable()
                      " DayDmg = "  + FloatToString(stf(pchar.Health.Damg), 1),
                      "INTERFACE_ULTRASMALL",COLOR_NORMAL,10,1070, SCRIPT_ALIGN_LEFT,1.0);
     }
-    
-    // теперь это Лояльность		
+
 	if (xi_refCharacter.id == pchar.id)
 	{
-		GameInterface.StatusLine.LOYALITY.Max   = COMPLEX_REPUTATION_MAX;
-		GameInterface.StatusLine.LOYALITY.Min   = COMPLEX_REPUTATION_MIN;
-		GameInterface.StatusLine.LOYALITY.Value = sti(xi_refCharacter.reputation.authority);
-		
-		SetFormatedText("REPUTATION_STR", GetFullReputationComplexName(xi_refCharacter));
-	}
-	else
-	{
-		GameInterface.StatusLine.LOYALITY.Max   = MAX_LOYALITY;
-		GameInterface.StatusLine.LOYALITY.Min   = 0;
-		GameInterface.StatusLine.LOYALITY.Value = GetCharacterLoyality(xi_refCharacter);
-		
-		SetFormatedText("REPUTATION_STR", XI_ConvertString(GetReputationName(sti(xi_refCharacter.reputation))));
-	}	
-    if (xi_refCharacter.id == pchar.id)
-    {
+			SetFormatedText("LOYALITY_STR", GetFullReputationComplexName(xi_refCharacter));
 	    GameInterface.StatusLine.BAR_HEALTH.Max   = 60;
 	    GameInterface.StatusLine.BAR_HEALTH.Min   = 1;
 	    GameInterface.StatusLine.BAR_HEALTH.Value = makeint(pchar.Health.HP);
@@ -635,9 +625,16 @@ void SetVariable()
 	    {
 	        GameInterface.StatusLine.BAR_HEALTH.Value = 60;
 	    }
+			GameInterface.StatusLine.LOYALITY.Max   = COMPLEX_REPUTATION_MAX;
+			GameInterface.StatusLine.LOYALITY.Min   = COMPLEX_REPUTATION_MIN;
+			GameInterface.StatusLine.LOYALITY.Value = sti(xi_refCharacter.reputation.nobility);
     }
     else
     {
+			SetFormatedText("LOYALITY_STR", xiStr(GetReputationName(sti(xi_refCharacter.reputation))));
+			GameInterface.StatusLine.LOYALITY.Max   = MAX_LOYALITY;
+			GameInterface.StatusLine.LOYALITY.Min   = 0;
+			GameInterface.StatusLine.LOYALITY.Value = GetCharacterLoyality(xi_refCharacter);
 		// belamour legendary edition бар для бессмертного офицера -->
 		if(CheckAttribute(xi_refCharacter, "OfficerImmortal"))
 		{
@@ -653,22 +650,14 @@ void SetVariable()
 		{
 			GameInterface.StatusLine.BAR_HEALTH.Max = 1;
 			GameInterface.StatusLine.BAR_HEALTH.Min = 0;
-			GameInterface.StatusLine.BAR_HEALTH.Value = 0;
+			GameInterface.StatusLine.BAR_HEALTH.Value = 1;
 		}
 		//<-- legendary edition			 
     }
 
     SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"LOYALITY",0);
     SendMessage(&GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"BAR_HEALTH",0);
-    
-	if ( IsMainCharacter(xi_refCharacter) )
-	{
-		SetFormatedText("LOYALITY_STR", XI_ConvertString("Authority"));
-	}
-	else
-	{
-		SetFormatedText("LOYALITY_STR", XI_ConvertString("Loyality"));
-	}	
+
 	RefreshSetupBigPicture();
 }
 
@@ -725,7 +714,7 @@ void RefreshSetupBigPicture()
 	
 void ShowInfoWindow()
 {
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader, sText1, sText2, sText3, sPicture;
 	string sGroup, sGroupPicture;
 	int iItem;
@@ -734,12 +723,15 @@ void ShowInfoWindow()
 	int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 	int	picW = 128;
 	int	picH = 128;
+	
+	string sRow;
 
 	sPicture = "-1";
 	int nChooseNum = -1;
 	switch (sCurrentNode)
 	{
 		case "CHARACTERS_SCROLL":
+			CloseTooltipNew();
 			picW = 256;
 			picH = 256;
 			nChooseNum = SendMessage( &GameInterface,"lsl",MSG_INTERFACE_MSG_TO_NODE,"CHARACTERS_SCROLL", 2 );
@@ -839,8 +831,7 @@ void ShowInfoWindow()
 					sPicture = "interfaces\le\portraits\512\face_" + rchr.FaceId + ".tga"
 					if(CheckCharacterPerk(rchr, "ByWorker")) 
 					{
-						if(CheckCharacterPerk(rchr, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
-						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
 					}
 				}
 			}
@@ -868,8 +859,7 @@ void ShowInfoWindow()
 					sPicture = "interfaces\le\portraits\512\face_" + rchar.FaceId + ".tga"
 					if(CheckCharacterPerk(rchar, "ByWorker")) 
 					{
-						if(CheckCharacterPerk(rchar, "ByWorker2")) sText2 = sText2 + NewStr() + GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
-						else sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
+						sText2 = sText2 + NewStr() + GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt");
 					}
 				}
 				else return;
@@ -902,12 +892,43 @@ void ShowInfoWindow()
 		break;
 
 		case "TABLE_OTHER":
-		    sHeader = XI_ConvertString(GameInterface.(CurTable).(CurRow).UserData.ID);
-		    sText1  = GetRPGText(GameInterface.(CurTable).(CurRow).UserData.ID);
+			CloseTooltipNew();
+			nChooseNum = SendMessage(&GameInterface, "lsl", MSG_INTERFACE_MSG_TO_NODE, "TABLE_OTHER", 1);
+			sRow = "tr"+nChooseNum;
+			sHeader = XI_ConvertString(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
+			sText1  = GetRPGText(GameInterface.TABLE_OTHER.(sRow).UserData.ID);
+			SetCharacterStatsTooltip(xi_refCharacter, GameInterface.TABLE_OTHER.(sRow).UserData.ID, &sHeader, &sText1, &sText2, &sText3);
+			if (bBettaTestMode)
+			{
+				CT_UpdateCashTables(xi_refCharacter);
+				aref landTable = CT_GetTable(xi_refCharacter, CT_LAND);
+				aref commonTable = CT_GetTable(xi_refCharacter, CT_COMMON);
+				aref equipTable = CT_GetTable(xi_refCharacter, CT_EQUIP);
+				aref staticTable = CT_GetTable(xi_refCharacter, CT_STATIC);
+				if (nChooseNum == 1){
+					sHeader = "Таблица суши";
+					sText1 = AtributesToText(&landTable);
+				}
+				else if (nChooseNum == 2)
+				{
+					sHeader = "Таблица экипировки";
+					sText1 = AtributesToText(&equipTable);
+				}
+				else if (nChooseNum == 3)
+				{
+					sHeader = "Таблица статики (персонажа)";
+					sText1 = AtributesToText(&staticTable);
+				}
+				else if (nChooseNum == 4)
+				{
+					sHeader = "Таблица скиллов";
+					sText1 = AtributesToText(&commonTable);
+				}
+			}
 		break;
 
 		case "TABLE_ITEMS":
-			if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index"))
+		/*	if(CheckAttribute(&GameInterface, CurTable + "." + CurRow + ".index"))
 			{
 				sHeader = LanguageConvertString(lngFileID, rItem.name);
 				sText1  = GetAssembledString(LanguageConvertString(lngFileID, arItm.describe), rItem);
@@ -916,10 +937,10 @@ void ShowInfoWindow()
 				if(rItem.id == "talisman19") sText1 = GetItemDescribe(iGoodIndex);
 			}
 			else
-			{
+			{	*/
 				sHeader = XI_ConvertString("Items");
 				sText1  = XI_ConvertString("ItemsDescribe1");
-			}
+		//	}
 			sText2  = XI_ConvertString("ItemsDescribe2");
 			sText3  = XI_ConvertString("ItemsDescribe3");
 		break;
@@ -932,11 +953,6 @@ void ShowInfoWindow()
 				sHeader = GetConvertStr("ByWorker", "AbilityDescribe.txt"));
 				sText1 = GetConvertStr("perkByWorkerShort", "AbilityDescribe.txt"));
 			}
-			if(CheckCharacterPerk(xi_refCharacter, "ByWorker2")) 
-			{
-				sHeader = GetConvertStr("ByWorker2", "AbilityDescribe.txt"));
-				sText1 = GetConvertStr("perkByWorker2Short", "AbilityDescribe.txt"));
-			}			
 		break;
 		//navy-->
 		case "CHARACTER_DRUNK_PICTURE":
@@ -1037,15 +1053,18 @@ void ShowInfoWindow()
 			sText1 = "Шляпа";
 		break;
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,192,255,192), sText3, argb(255,255,192,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, picW, picH);
+
+	SetDescriptorsTooltip(sCurrentNode, &sHeader, &sText1, &sText2, &sText3, currentItem);
+	SetItemStatsTooltip(xi_refCharacter, sCurrentNode, &sHeader, &sText1, &sText2, &sText3);
+	if(sHeader != "" || sText1 != "")
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 	LanguageCloseFile(lngFileID);
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
-	if(isRemoveItemMsgActive)
-		RemoveItemMsgExit();
+	CloseTooltipNew();
+	if (XI_IsWindowEnable("MAIN_WINDOW")) RemoveItemMsgExit();
 }
 
 void FillTableOther()
@@ -1061,6 +1080,8 @@ void FillTableOther()
     SetEnergyToCharacter(xi_refCharacter);
     // boal оптимизация скилов <--
 
+	aref landTable = CT_GetTable(xi_refCharacter, CT_LAND);
+
 	////  остальное
 	GameInterface.TABLE_OTHER.select = 0;
 	GameInterface.TABLE_OTHER.hr.td1.str = "";
@@ -1068,27 +1089,26 @@ void FillTableOther()
 	{
 	    row = "tr" + i;
 
-	    GameInterface.TABLE_OTHER.(row).td1.icon.width = 40;
-    	GameInterface.TABLE_OTHER.(row).td1.icon.height = 40;
-    	GameInterface.TABLE_OTHER.(row).td1.icon.offset = "0, 0";
+		GameInterface.TABLE_OTHER.(row).td1.icon.width = 26;
+		GameInterface.TABLE_OTHER.(row).td1.icon.height = 26;
+		GameInterface.TABLE_OTHER.(row).td1.icon.offset = "8, 7";
 		GameInterface.TABLE_OTHER.(row).td2.align = "left";
-		// GameInterface.TABLE_OTHER.(row).td2.scale = 0.85;
-		GameInterface.TABLE_OTHER.(row).td2.textoffset = "10,0";
+		GameInterface.TABLE_OTHER.(row).td2.textoffset = "0,0";
 		GameInterface.TABLE_OTHER.(row).td3.align = "right";
 	}
 
 	
 	GameInterface.TABLE_OTHER.tr1.UserData.ID = "Life";
-	GameInterface.TABLE_OTHER.tr1.td1.icon.group = "ICONS_CHAR";
-    GameInterface.TABLE_OTHER.tr1.td1.icon.image = "Life";
+	GameInterface.TABLE_OTHER.tr1.td1.icon.group = "EQUIP_ICONS";
+	GameInterface.TABLE_OTHER.tr1.td1.icon.image = "life";
 	GameInterface.TABLE_OTHER.tr1.td2.str = XI_ConvertString("Life");
-	GameInterface.TABLE_OTHER.tr1.td3.str = MakeInt(LAi_GetCharacterHP(xi_refCharacter)) + " / " + MakeInt(LAi_GetCharacterMaxHP(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr1.td3.str = MakeInt(LAi_GetCharacterHP(xi_refCharacter)) + " / " + MakeInt(LAi_GetCharacterMaxHP(xi_refCharacter));
 
     GameInterface.TABLE_OTHER.tr2.UserData.ID = "Energy";
-	GameInterface.TABLE_OTHER.tr2.td1.icon.group = "ICONS_CHAR";
+	GameInterface.TABLE_OTHER.tr2.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr2.td1.icon.image = "Energy";
 	GameInterface.TABLE_OTHER.tr2.td2.str = XI_ConvertString("Energy");
-	GameInterface.TABLE_OTHER.tr2.td3.str = sti(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + sti(LAi_GetCharacterMaxEnergy(xi_refCharacter));
+	GameInterface.TABLE_OTHER.tr2.td3.str = sti(Lai_CharacterGetEnergy(xi_refCharacter)) + " / " + sti(LAi_GetCharacterMaxEnergy(xi_refCharacter));
 	diff = sti(LAi_GetCharacterMaxEnergy(xi_refCharacter) - GetCharacterMaxEnergyABSValue(xi_refCharacter));
 	if (diff != 0)
 	{
@@ -1107,7 +1127,7 @@ void FillTableOther()
 	}
 
     GameInterface.TABLE_OTHER.tr3.UserData.ID = "Health";
-	GameInterface.TABLE_OTHER.tr3.td1.icon.group = "ICONS_CHAR";
+	GameInterface.TABLE_OTHER.tr3.td1.icon.group = "EQUIP_ICONS";
     GameInterface.TABLE_OTHER.tr3.td1.icon.image = "Health";
 	GameInterface.TABLE_OTHER.tr3.td2.str = XI_ConvertString("Health");
 	GameInterface.TABLE_OTHER.tr3.td3.str = GetHealthName(xi_refCharacter);
@@ -1122,64 +1142,33 @@ void FillTableOther()
         GameInterface.TABLE_OTHER.tr3.td3.color = SetAlphaIntoColor(COLOR_NORMAL, GetAlphaFromSkill(makeint(GetHealthNum(xi_refCharacter)* 1.9)));
     }
     
-	GameInterface.TABLE_OTHER.tr4.UserData.ID = "Crit";
-	GameInterface.TABLE_OTHER.tr4.td1.icon.group = "PERKS_ENABLE";
-    GameInterface.TABLE_OTHER.tr4.td1.icon.image = "CriticalHit";
-	GameInterface.TABLE_OTHER.tr4.td2.str = XI_ConvertString("Crit");
-	GameInterface.TABLE_OTHER.tr4.td3.str = GetAttackCritical(xi_refCharacter)+"%/"+GetShotCritical(xi_refCharacter)+"%";
+	GameInterface.TABLE_OTHER.tr4.UserData.ID = "CritDamage";
+	GameInterface.TABLE_OTHER.tr4.td1.icon.group = "EQUIP_ICONS";
+	GameInterface.TABLE_OTHER.tr4.td1.icon.image = "CritDamage";
+	GameInterface.TABLE_OTHER.tr4.td2.str = XI_ConvertString("CritDamage");
+	GameInterface.TABLE_OTHER.tr4.td3.str = ToHumanPercent(1+GetCritDamageMtp(landTable, BLADE_ITEM_TYPE));
 
-	GameInterface.TABLE_OTHER.tr5.UserData.ID = "CharDefence";
-	GameInterface.TABLE_OTHER.tr5.td1.icon.group = "PERKS_ENABLE";
-    GameInterface.TABLE_OTHER.tr5.td1.icon.image = "AdvancedDefense";
-	GameInterface.TABLE_OTHER.tr5.td2.str = XI_ConvertString("CharDefence");
-	GameInterface.TABLE_OTHER.tr5.td3.str = GetDefenceBlade(xi_refCharacter) + " / "+GetDefenceGun(xi_refCharacter)+ " / "+GetDefenceCritical(xi_refCharacter);
-	
-    GameInterface.TABLE_OTHER.tr6.UserData.ID = "Title";
-	GameInterface.TABLE_OTHER.tr6.td1.icon.group = "ICONS_CHAR";
-	GameInterface.TABLE_OTHER.tr6.td1.icon.image = "Title";
-	
-	DeleteAttribute(&GameInterface, "TABLE_OTHER.tr6.td2");
-	GameInterface.TABLE_OTHER.tr6.td2.str = XI_ConvertString("Title");
-	GameInterface.TABLE_OTHER.tr6.td2.align = "left";
-	// GameInterface.TABLE_OTHER.tr6.td2.scale = 0.85;
-	GameInterface.TABLE_OTHER.tr6.td2.textoffset = "10,0";
+	GameInterface.TABLE_OTHER.tr5.UserData.ID = "Crit";
+	GameInterface.TABLE_OTHER.tr5.td1.icon.group = "EQUIP_ICONS";
+	GameInterface.TABLE_OTHER.tr5.td1.icon.image = "CritChance";
+	GameInterface.TABLE_OTHER.tr5.td2.str = XI_ConvertString("Crit");
+	GameInterface.TABLE_OTHER.tr5.td3.str = ToHumanPercent(GetCritChance(landTable, BLADE_ITEM_TYPE));
 
-    DeleteAttribute(&GameInterface, "TABLE_OTHER.tr6.td3");
-    GameInterface.TABLE_OTHER.tr6.td3.str = "";
-	// GameInterface.TABLE_OTHER.tr6.td3.scale = 0.9;
-	
-	if (xi_refCharacter.id == pchar.id && isMainCharacterPatented())
-    {
-        GameInterface.TABLE_OTHER.tr6.td3.str = GetAddress_FormTitle(sti(Items[sti(pchar.EquipedPatentId)].Nation), sti(Items[sti(pchar.EquipedPatentId)].TitulCur));
-		GameInterface.TABLE_OTHER.tr6.td3.align = "right";
-		// GameInterface.TABLE_OTHER.tr6.td3.scale = 1.4;
-        GameInterface.TABLE_OTHER.tr6.td2.icon.group = "NATIONS";
-		GameInterface.TABLE_OTHER.tr6.td2.icon.image = GetNationNameByType(sti(Items[sti(pchar.EquipedPatentId)].Nation));
-		GameInterface.TABLE_OTHER.tr6.td2.icon.offset = "80, 5";
-		GameInterface.TABLE_OTHER.tr6.td2.icon.width = 30;
-		GameInterface.TABLE_OTHER.tr6.td2.icon.height = 30;
-    }
-    else
-    {
-        GameInterface.TABLE_OTHER.tr6.td3.str = XI_ConvertString("NoTitle");
-		GameInterface.TABLE_OTHER.tr6.td3.align = "right";
-    }
+	GameInterface.TABLE_OTHER.tr6.UserData.ID = "CritCharDefence";
+	GameInterface.TABLE_OTHER.tr6.td1.icon.group = "EQUIP_ICONS";
+	GameInterface.TABLE_OTHER.tr6.td1.icon.image = "CritDefence";
+	GameInterface.TABLE_OTHER.tr6.td2.str = XI_ConvertString("CritCharDefence");
+	GameInterface.TABLE_OTHER.tr6.td3.str = ToHumanPercent(GetCritDefence(landTable));
 
-	GameInterface.TABLE_OTHER.tr7.UserData.ID = "Rank";
-	GameInterface.TABLE_OTHER.tr7.td1.icon.group = "ICONS_CHAR";
-    GameInterface.TABLE_OTHER.tr7.td1.icon.image = "Rank";
-	GameInterface.TABLE_OTHER.tr7.td2.str = XI_ConvertString("Rank");
-	GameInterface.TABLE_OTHER.tr7.td3.str = sti(xi_refCharacter.rank);
-	
-	GameInterface.TABLE_OTHER.tr8.UserData.ID = "NextExp";
-	GameInterface.TABLE_OTHER.tr8.td1.icon.group = "ICONS_CHAR";
-    GameInterface.TABLE_OTHER.tr8.td1.icon.image = "NextExp";
-	GameInterface.TABLE_OTHER.tr8.td2.str = XI_ConvertString("NextExp");
-	GameInterface.TABLE_OTHER.tr8.td3.str = "";
-	
+	GameInterface.TABLE_OTHER.tr7.UserData.ID = "CharDefence";
+	GameInterface.TABLE_OTHER.tr7.td1.icon.group = "EQUIP_ICONS";
+	GameInterface.TABLE_OTHER.tr7.td1.icon.image = "Defence";
+	GameInterface.TABLE_OTHER.tr7.td2.str = XI_ConvertString("CharDefence");
+	GameInterface.TABLE_OTHER.tr7.td3.str = ToHumanPercent(GetDamageReduction(landTable));
+
 	// прорисовка
-    Table_UpdateWindow("TABLE_OTHER");
-}	
+	Table_UpdateWindow("TABLE_OTHER");
+}
 
 void CS_TableSelectChange()
 {
@@ -1187,7 +1176,7 @@ void CS_TableSelectChange()
 	iSelected = GetEventData();
     CurTable = sControl;
     CurRow   =  "tr" + (iSelected);
-    iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index)
+    iGoodIndex = sti(GameInterface.(CurTable).(CurRow).index);
     NullSelectTable("TABLE_OTHER");
     // перерисует "порог опыта"
     GameInterface.TABLE_OTHER.tr8.td3.str = "";
@@ -1346,7 +1335,7 @@ void SetControlsTabModeManual(int mode)
 
 void SetControlsTabMode(int nMode)
 {
-	int nColor1 = argb(255,196,196,196);
+	int nColor1 = ARGB_Color("offGrey");
 	int nColor2 = nColor1;
 	int nColor3 = nColor1;
 	int nColor4 = nColor1;
@@ -1394,27 +1383,27 @@ void SetControlsTabMode(int nMode)
 		case 1:
 			sPic1 = "TabSelected";
 			sPic6 = "TabSelectedMark";
-			nColor1 = argb(255,255,255,255);
+			nColor1 = ARGB_Color("white");
 		break;
 		case 2:
 			sPic2 = "TabSelected";
 			sPic7 = "TabSelectedMark";
-			nColor2 = argb(255,255,255,255);
+			nColor2 = ARGB_Color("white");
 		break;
 		case 3:
 			sPic3 = "TabSelected";
 			sPic8 = "TabSelectedMark";
-			nColor3 = argb(255,255,255,255);
+			nColor3 = ARGB_Color("white");
 		break;
 		case 4:
 			sPic4 = "TabSelected";
 			sPic9 = "TabSelectedMark";
-			nColor4 = argb(255,255,255,255);
+			nColor4 = ARGB_Color("white");
 		break;
 		case 5:
 			sPic5 = "TabSelected";
 			sPic10 = "TabSelectedMark";
-			nColor5 = argb(255,255,255,255);
+			nColor5 = ARGB_Color("white");
 		break;
 		case 6:
 			sPic11 = "glow";
@@ -1532,321 +1521,6 @@ void FillControlsList(int nMode)
 	}
 }
 
-void SetOfficersSkills()
-{
-	string sCharacter = "pic"+(sti(GameInterface.PASSENGERSLIST.current)+1);
-	if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter))
-	{
-		if (checkAttribute(&GameInterface, "PASSENGERSLIST."+sCharacter + ".character"))
-		{
-			sCharacter = GameInterface.PASSENGERSLIST.(sCharacter).character;
-			ref otherchr = &characters[sti(sCharacter)];
-	        SetSPECIALMiniTable("TABLE_SMALLSKILL", otherchr);
-	        SetOTHERMiniTable("TABLE_SMALLOTHER", otherchr);
-	        SetFormatedText("OFFICER_NAME", GetFullName(otherchr));
-			GameInterface.strings.CharJob = GetOfficerPosition(sCharacter);
-	        SetSelectable("ACCEPT_ADD_OFFICER", true);
-        }
-        else
-        {
-            Table_Clear("TABLE_SMALLSKILL", false, true, true);
-            Table_Clear("TABLE_SMALLOTHER", false, true, true);
-            SetFormatedText("OFFICER_NAME", "");
-			GameInterface.strings.CharJob = "";
-            SetSelectable("ACCEPT_ADD_OFFICER", false);
-        }
-	}
-	else
-    {
-        Table_Clear("TABLE_SMALLSKILL", false, true, true);
-        Table_Clear("TABLE_SMALLOTHER", false, true, true);
-        SetFormatedText("OFFICER_NAME", "");
-		GameInterface.strings.CharJob = "";
-        SetSelectable("ACCEPT_ADD_OFFICER", false);
-    }
-}
-
-void FillPassengerScroll()
-{
-	int i, howWork;
-	string faceName;
-	string attributeName;
-	string PsgAttrName;
-	int _curCharIdx;
-	ref _refCurChar;
-	aref pRef, pRef2;
-	bool  ok;
-	
-	DeleteAttribute(&GameInterface, "PASSENGERSLIST");
-
-	nCurScrollOfficerNum = -1;
-	GameInterface.PASSENGERSLIST.current = 0;
-	makearef(pRef,pchar.Fellows.Passengers);
-
-	int nListSize = GetPassengersQuantity(pchar);
-	int nListSizeFree = GetFreePassengersQuantity(pchar);
-
-	GameInterface.PASSENGERSLIST.NotUsed = 6;
-	GameInterface.PASSENGERSLIST.ListSize = nListSizeFree + 2;
-
-	GameInterface.PASSENGERSLIST.ImagesGroup.t0 = "EMPTYFACE";
-
-	FillFaceList("PASSENGERSLIST.ImagesGroup", pchar, 2); // passengers
-
-	GameInterface.PASSENGERSLIST.BadTex1 = 0;
-	GameInterface.PASSENGERSLIST.BadPic1 = "emptyface";
-
-	int m = 0;
-	for(i=0; i<nListSize; i++)
-	{
-		attributeName = "pic" + (m+1);
-		PsgAttrName = "id"+(i+1);
-		makearef(pRef2,GameInterface.PASSENGERSLIST.(attributeName));
-
-		_curCharIdx = sti(pRef.(PsgAttrName));
-
-		if (_curCharIdx!=-1)
-		{
-			ok = CheckAttribute(&characters[_curCharIdx], "prisoned") && sti(characters[_curCharIdx].prisoned) == true;
-			if (!ok && GetRemovable(&characters[_curCharIdx]))
-			{
-                // совместители должностей -->
-                howWork = 1;
-                if (CheckCharacterPerk(&characters[_curCharIdx], "ByWorker"))
-                {
-                    howWork = 2;
-                }
-                if (CheckCharacterPerk(&characters[_curCharIdx], "ByWorker2"))
-                {
-                    howWork = 3;
-                }
-                ok = !CheckAttribute(&characters[_curCharIdx], "isbusy") || sti(characters[_curCharIdx].isbusy) < howWork;
-                PsgAttrName = GetOfficerTypeByNum(nCurScrollNum);
-				// совместители должностей <--
-				if (ok && !CheckAttribute(&characters[_curCharIdx], PsgAttrName))
-				{
-					GameInterface.PASSENGERSLIST.(attributeName).character = _curCharIdx;
-					GameInterface.PASSENGERSLIST.(attributeName).img1 = GetFacePicName(GetCharacter(_curCharIdx));
-					GameInterface.PASSENGERSLIST.(attributeName).tex1 = FindFaceGroupNum("PASSENGERSLIST.ImagesGroup","FACE128_"+Characters[_curCharIdx].FaceID);
-					m++;
-				}
-			}
-		}
-	}
-	GameInterface.PASSENGERSLIST.ListSize = m + 2; // не знаю зачем, но для совместимости с "было"
-}
-
-void ExitOfficerMenu()
-{
-	XI_WindowShow("OFFICERS_WINDOW", false);
-	XI_WindowDisable("OFFICERS_WINDOW", true);
-	XI_WindowDisable("MAIN_WINDOW", false);
-	GameInterface.strings.CharJob = "";
-	SetCurrentNode("CHARACTERS_SCROLL");
-}
-
-void OfficerChange()
-{
-    string attributeName = "pic" + (nCurScrollNum+1);
-	
-	//if(bGlobalTutor && nCurScrollNum < 7) return;
-
-	if(GameInterface.CHARACTERS_SCROLL.(attributeName).character != "0")
-	{
-		int iCharacter = sti(GameInterface.CHARACTERS_SCROLL.(attributeName).character);
-		xi_refCharacter = &characters[iCharacter];
-		if (isOfficerInShip(xi_refCharacter, true) && xi_refCharacter.id != pchar.id)
-		{
-			XI_WindowShow("REMOVE_OFFICER_WINDOW", true);
-			XI_WindowDisable("REMOVE_OFFICER_WINDOW", false);
-			XI_WindowDisable("MAIN_WINDOW", true);
-
-			SetCurrentNode("REMOVE_CANCEL_OFFICER");
-		}
-	}
-	else
-	{
-	    if (nCurScrollNum <= 9 && nCurScrollNum != 0)
-		{
-			FillPassengerScroll();
-		    SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"PASSENGERSLIST",-1);
-		    SetCurrentNode("PASSENGERSLIST");
-			ProcessFrame();
-			SetOfficersSkills();
-
-			XI_WindowShow("OFFICERS_WINDOW", true);
-			XI_WindowDisable("OFFICERS_WINDOW", false);
-			XI_WindowDisable("MAIN_WINDOW", true);
-		}
-	}
-}
-
-void AcceptAddOfficer()
-{
-	int iCurrentNode = nCurScrollNum;
-	bool bNeedFollow = false;
-	bool bOk;
-	ref rChar;
-	
-	string attributeName2 = "pic"+(nCurScrollOfficerNum+1);
-
-    if (checkAttribute(&GameInterface, "PASSENGERSLIST."+attributeName2 + ".character"))
-    {
-		int iChar = sti(GameInterface.PASSENGERSLIST.(attributeName2).character);
-
-		if (!CheckAttribute(&characters[iChar], "isbusy"))
-		{
-			characters[iChar].isbusy = 1;
-		}
-		else
-		{
-		    characters[iChar].isbusy = sti(characters[iChar].isbusy) + 1; // совместители
-		}
-		bOk = (Characters[iChar].location != pchar.location);  // ниже локация перебивается на ГГ
-		switch (nCurScrollNum)
-		{
-			case 1:
-				pchar.Fellows.Passengers.navigator = iChar;
-			break;
-
-			case 2:
-				pchar.Fellows.Passengers.boatswain = iChar;
-			break;
-
-			case 3:
-				pchar.Fellows.Passengers.cannoner = iChar;
-			break;
-
-			case 4:
-				pchar.Fellows.Passengers.doctor = iChar;
-			break;
-
-			case 5:
-				pchar.Fellows.Passengers.treasurer = iChar;
-			break;
-
-			case 6:
-				pchar.Fellows.Passengers.carpenter = iChar;
-			break;
-
-			case 7:
-				SetOfficersIndex(pchar, 1, iChar);
-				bNeedFollow = true;
-			break;
-
-			case 8:
-				SetOfficersIndex(pchar, 2, iChar);
-				bNeedFollow = true;
-			break;
-
-			case 9:
-				SetOfficersIndex(pchar, 3, iChar);
-				bNeedFollow = true;
-			break;
-		}
-        attributeName2 = GetOfficerTypeByNum(nCurScrollNum);
-    	characters[iChar].(attributeName2) = true; // совместитель дожности
-    	//SetCharacterTask_FollowCharacter(&Characters[iChar], PChar);
-    	if (!IsEntity(&worldMap) && !bSeaActive && bNeedFollow) // только для офов
-    	{
-	    	if (IsEntity(&loadedLocation) && loadedLocation.type == "tavern")
-	    	{   //  пусть всегда будут появляться
-	    	    PlaceCharacter(&Characters[iChar], "goto", "random_must_be_near");
-	    	}
-			else // запрет обмена с офами, где их нет
-			{
-				ref loc = &Locations[FindLocation(pchar.location)];
-				aref grp;
-				makearef(grp, loc.locators.officers);
-				int num = GetAttributesNum(grp);
-				if (num < 1 || CheckAttribute(loc, "DisableOfficers")) ChangeCharacterAddressGroup(&Characters[iChar], "none", "", "");
-			}
-	    	LAi_tmpl_SetFollow(&Characters[iChar], GetMainCharacter(), -1.0);
-    	}
-		FillCharactersScrollEx(true);
-		GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
-		
-		rChar = &characters[iChar];
-		Event("eSwitchPerks", "l", sti(rChar.index));
-	}
-	ExitOfficerMenu();
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
-	ProcessFrame();
-	SetVariable();
-	SetControlsTabMode(currentTab+1);
-}
-
-void ExitRemoveOfficerMenu()
-{
-	XI_WindowShow("REMOVE_OFFICER_WINDOW", false);
-	XI_WindowDisable("REMOVE_OFFICER_WINDOW", true);
-	XI_WindowDisable("MAIN_WINDOW", false);
-
-	SetCurrentNode("CHARACTERS_SCROLL");
-}
-
-void AcceptRemoveOfficer()
-{
-    int iCurrentNode = nCurScrollNum;
-	string attributeName2 = "pic"+(nCurScrollNum+1);
-
-	int iChar = sti(GameInterface.CHARACTERS_SCROLL.(attributeName2).character);
-
-    characters[iChar].isbusy = sti(characters[iChar].isbusy) - 1; // совместители
-	if (sti(characters[iChar].isbusy) <= 0)
-	{
-		DeleteAttribute(&characters[iChar], "isbusy");
-	}
-
-	switch (nCurScrollNum)
-	{
-		case 1:
-			pchar.Fellows.Passengers.navigator = -1;
-		break;
-
-		case 2:
-			pchar.Fellows.Passengers.boatswain = -1;
-		break;
-
-		case 3:
-			pchar.Fellows.Passengers.cannoner = -1;
-		break;
-
-		case 4:
-			pchar.Fellows.Passengers.doctor = -1;
-		break;
-
-		case 5:
-			pchar.Fellows.Passengers.treasurer = -1;
-		break;
-
-		case 6:
-			pchar.Fellows.Passengers.carpenter = -1;
-		break;
-
-		case 7:
-			RemoveOfficersIndex(pchar, GetOfficersIndex(pchar, 1));
-		break;
-
-		case 8:
-			RemoveOfficersIndex(pchar, GetOfficersIndex(pchar, 2));
-		break;
-
-		case 9:
-			RemoveOfficersIndex(pchar, GetOfficersIndex(pchar, 3));
-		break;
-	}
-    attributeName2 = GetOfficerTypeByNum(nCurScrollNum);
-    DeleteAttribute(&characters[iChar], attributeName2); // совместитель дожности
-    
-	FillCharactersScrollEx(true);
-	GameInterface.CHARACTERS_SCROLL.current = iCurrentNode;
-	ExitRemoveOfficerMenu();
-	SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
-	SetVariable();
-	SetControlsTabMode(currentTab+1);
-}
-
 // items --->
 void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эликсиры 4 - амулеты 5 - прочее
 {
@@ -1940,7 +1614,7 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 			if(_mode == 5) 
 			{
 				if(!ok1 && !ok5) continue;
-				if(GetCharacterFreeItem(xi_refCharacter, arItem.id) < 1 && arItem.id != "MapsAtlas") continue;
+				if(GetCharacterFreeItem(xi_refCharacter, arItem.id) < 1) continue;
 				if(HasSubStr(sGood, "potion"))  continue;
 			}			
 			if(_mode == 6 && !slot1) continue;//сабли
@@ -1965,6 +1639,10 @@ void FillItemsTable(int _mode) // 1 - все 2 - снаряжение 3 - эли
 			if(_mode == 16 && groupID != AMMO_ITEM_TYPE) continue;//боеприпасы
 			if(_mode == 17 && groupID != LANTERN_ITEM_TYPE) continue;//фонарь
 			if(_mode == 18 && groupID != HAT_ITEM_TYPE) continue;//шляпы
+			if (sGood == "unarmed")
+			{
+				if (GetCharacterEquipByGroup(xi_refCharacter, BLADE_ITEM_TYPE) != "unarmed") continue;
+			}
 			if (GetCharacterItem(xi_refCharacter, sGood) > 0)
 			{		
 				GameInterface.TABLE_ITEMS.(row).index = GetItemIndex(arItem.id);
@@ -2142,7 +1820,7 @@ void FillItemsSelected()
                     SetFormatedText("SLOT6_TEXT", QBonus +"/10");
                     SetNodeUsing("SLOT6_TEXT", true);
                 }
-				if (IsEquipCharacterByArtefact(xi_refCharacter, "talisman20"))
+                if (IsEquipCharacterByArtefact(xi_refCharacter, "talisman20"))
                 {
                     ref Bandolier = ItemsFromID("talisman20");
                     int Durability = 60;
@@ -2171,8 +1849,7 @@ void FillItemsSelected()
                 SetNewGroupPicture("ITEM_11", curItem.picTexture, "itm" + curItem.picIndex);
                 SetNodeUsing("ITEM_11", true);
                 SetNodeUsing("TABBTNSLOT_11", true);
-				
-				if (GetCharacterEquipByGroup(xi_refCharacter, HAT_ITEM_TYPE) == "hat10")
+                if (GetCharacterEquipByGroup(xi_refCharacter, HAT_ITEM_TYPE) == "hat10")
                 {
                     ref hat10 = ItemsFromID("hat10");
                     int DurabilityHat10 = 45;
@@ -2319,7 +1996,7 @@ void GoodsExitCancel()
 	XI_WindowDisable("MAIN_WINDOW", false);
 	SetCurrentNode("TABLE_ITEMS");
 	// вернём старые значения веса
-	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
+	SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter));
 	Table_UpdateWindow("TABLE_OTHER");
 }
 
@@ -2337,7 +2014,7 @@ void TransactionOK()
 	GoodsExitCancel();
 	FillItemsTable(currentTab+1);
 	UpdateItemInfo();
-	Log_Info(XI_ConvertString("DropItemLog") + GetConvertStr(arItm.name, "ItemsDescribe.txt") + " " + iDropQuantity + " " +  XI_ConvertString("units"));
+	Log_Info(XI_ConvertString("DropItemLog") + GetItemName(arItm) + " " + iDropQuantity + " " +  XI_ConvertString("units"));
 }
 
 void confirmChangeQTY_EDIT()
@@ -2370,7 +2047,7 @@ void ChangeQTY_EDIT()
     }
 	fItemsWeight = sti(GameInterface.qty_edit.str)*stf(rItem.Weight);
 	fCurWeight = GetItemsWeight(xi_refCharacter) - fItemsWeight;
-	string sText = FloatToString(fCurWeight, 1) + " / " + GetMaxItemsWeight(xi_refCharacter);
+	string sText = FloatToString(fCurWeight, 1) + " / " + GetMaxItemsWeight(xi_refCharacter);
 	SetFormatedText("WEIGHT", sText);
 	Table_UpdateWindow("TABLE_OTHER");
 }
@@ -2411,142 +2088,19 @@ void REMOVE_ALL_BUTTON()  // выкинуть все
 	ChangeQTY_EDIT();
 }
 
-void SetItemInfo(int iGoodIndex)
-{
-	ref arItm = &Items[iGoodIndex];
-	string describeStr;
-	iCharQty = GetCharacterFreeItem(xi_refCharacter, arItm.id);
-	bQuestItem = IsQuestUsedItem(arItm.id);// квестовый
-	SetNodeUsing("EQUIP_BUTTON", true);
-	SetNodeUsing("OPENMAP_BUTTON", false);
-	SetNodeUsing("ATLASADD_BUTTON", false);
-	SetNodeUsing("LOADGUN_BUTTON", false);
-	SetNodeUsing("LOADMUSKET_BUTTON", false);
-		
-	aref attr, arGrape;
-	string sBullet;
-	string sAttr;
-	int i, n;
-	int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
-	if(CheckAttribute(arItm,"groupID") && arItm.groupID == GUN_ITEM_TYPE && IsEquipCharacterByItem(xi_refCharacter, arItm.id))
-	{
-		sBullet = LAi_GetCharacterBulletType(xi_refCharacter, "gun");
-		if(IsBulletGrape(sBullet))
-		{
-			makearef(attr, arItm.type);
-			n = GetAttributesNum(attr);
-			for(i = 0; i < n; i++)
-			{
-				arGrape = GetAttributeN(attr, i);
-				if(arGrape.bullet == sBullet)
-					break;
-			}
-			describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon grape parameters equipped"), arGrape) + newStr();
-		}
-		else
-			describeStr = GetAssembledString(LanguageConvertString(lngFileID,"weapon gun parameters equipped"), arItm) + newStr();
-		
-		describeStr = describeStr + GetAssembledString(LanguageConvertString(lngFileID, Items[iGoodIndex].describe), arItm);
-		SetFormatedText("INFO_TEXT", describeStr);
-
-		LanguageCloseFile(lngFileID);
-	}
-	else
-	{
-		if(CheckAttribute(arItm,"groupID") && arItm.groupID == MUSKET_ITEM_TYPE && IsEquipCharacterByItem(xi_refCharacter, arItm.id))
-		{
-			sBullet = LAi_GetCharacterBulletType(xi_refCharacter, "musket");
-			if(IsBulletGrape(sBullet))
-			{
-				makearef(attr, arItm.type);
-				n = GetAttributesNum(attr);
-				for(i = 0; i < n; i++)
-				{
-					arGrape = GetAttributeN(attr, i);
-					if(arGrape.bullet == sBullet)
-						break;
-				}
-				describeStr += GetAssembledString( LanguageConvertString(lngFileID,"weapon grape parameters equipped"), arGrape) + newStr();
-			}
-			else
-				describeStr = GetAssembledString(LanguageConvertString(lngFileID,"mushket parameters equipped"), arItm) + newStr();		
-			
-			describeStr = describeStr + GetAssembledString(LanguageConvertString(lngFileID, Items[iGoodIndex].describe), arItm);
-			if(CheckAttribute(arItm, "UpgradeStage"))
-			{
-				describeStr += newStr() + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));
-			}
-			SetFormatedText("INFO_TEXT", describeStr);
-
-			LanguageCloseFile(lngFileID);
-		}
-		else
-			SetFormatedText("INFO_TEXT", GetItemDescribe(iGoodIndex));
-	}
-	
-	SetNewGroupPicture("INFO_PIC", Items[iGoodIndex].picTexture, "itm" + Items[iGoodIndex].picIndex);
-	SetNodeUsing("INFO_TEXT", true);
-	SetNodeUsing("INFO_PIC", true);
-	
-	if(arItm.ID == "map_bad" || arItm.ID == "map_normal" || arItm.ID == "map_best")
-	{
-		if(IsMainCharacter(xi_refCharacter))
-		{
-			SetNodeUsing("EQUIP_BUTTON", false);
-			SetNodeUsing("OPENMAP_BUTTON", true);
-			SetNodeUsing("ATLASADD_BUTTON", true);
-			SetSelectable("ATLASADD_BUTTON",ThisItemCanBeEquip(&Items[iGoodIndex]));
-		}
-		else
-		{
-			SetNodeUsing("EQUIP_BUTTON", true);
-			SetNodeUsing("OPENMAP_BUTTON", false);
-			SetNodeUsing("ATLASADD_BUTTON", false);
-			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
-			SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(&Items[iGoodIndex]));
-		}
-	}
-	else
-	{
-		if(CheckAttribute(arItm,"groupID") && arItm.groupID == AMMO_ITEM_TYPE)
-		{
-			SetNodeUsing("EQUIP_BUTTON", true);
-			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("LoadAnyGun"));
-			if(arItm.groupID == AMMO_ITEM_TYPE
-				&& arItm.ID != "GunPowder"
-				&& GetCharacterEquipByGroup(xi_refCharacter, GUN_ITEM_TYPE) !="" 
-				&& GetCharacterEquipByGroup(xi_refCharacter, MUSKET_ITEM_TYPE) !="")
-			{
-				SetNodeUsing("EQUIP_BUTTON", false);
-				SetNodeUsing("LOADGUN_BUTTON", true);
-				SetNodeUsing("LOADMUSKET_BUTTON", true);
-				SetSelectable("LOADGUN_BUTTON",true);
-				SetSelectable("LOADMUSKET_BUTTON",true);
-				if(!LAi_CanCharacterUseBullet(xi_refCharacter, GUN_ITEM_TYPE, arItm.ID)) SetSelectable("LOADGUN_BUTTON",false);
-				if(!LAi_CanCharacterUseBullet(xi_refCharacter, MUSKET_ITEM_TYPE, arItm.ID)) SetSelectable("LOADMUSKET_BUTTON",false);
-			}
-		}
-		SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
-		SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(&Items[iGoodIndex]));
-	}
-	SetVAligmentFormatedText("INFO_TEXT");
-}
 
 void HideItemInfo()
 {
-	SetNodeUsing("INFO_TEXT", false);
-	SetNodeUsing("INFO_PIC", false);
-	SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
-	SetNodeUsing("EQUIP_BUTTON", false);
-	SetNodeUsing("OPENMAP_BUTTON", false);
-	SetNodeUsing("ATLASADD_BUTTON", false);
+	XI_WindowShow("ITEM_WINDOW", false);
+	XI_WindowDisable("ITEM_WINDOW", true);
 }
 
 void UpdateItemInfo();
 {
+	CloseTooltipNew();
 	if(CheckAttribute(&GameInterface, "TABLE_ITEMS." + CurRow + ".index"))
 	{
-		iGoodIndex = sti(GameInterface.TABLE_ITEMS.(CurRow).index)
+		iGoodIndex = sti(GameInterface.TABLE_ITEMS.(CurRow).index);
 		SetItemInfo(iGoodIndex);
 	}
 	else HideItemInfo();
@@ -2580,6 +2134,11 @@ void HideItemSelect()
 
 bool ThisItemCanBeEquip(aref arItem)
 {
+	if (CheckAttribute(&arItem, "callbacks.canBeUsed" ))
+	{
+		return RunCanBeUsedCallbacks(xi_refCharacter, &arItem);
+	}
+
 	if( !CheckAttribute(arItem,"groupID") )
 	{
 		if(IsMainCharacter(xi_refCharacter) && LAi_GetCharacterHP(xi_refCharacter)<LAi_GetCharacterMaxHP(xi_refCharacter)) // неполное здоровье
@@ -2602,12 +2161,6 @@ bool ThisItemCanBeEquip(aref arItem)
 	{
 		if(IsMainCharacter(xi_refCharacter)) return true;
 		return false;
-	}
-
-	// дешевая, обычная и отличная карты для ГГ
-	if(arItem.ID == "map_bad" || arItem.ID == "map_normal" || arItem.ID == "map_best")
-	{
-		if(IsEquipCharacterByMap(xi_refCharacter, arItem.ID)) return false;
 	}
 
     // нельзя собрать новую карту сокровищ, если текущий клад не найден
@@ -2663,6 +2216,14 @@ bool ThisItemCanBeEquip(aref arItem)
 	{
 		return false;
 	}
+	if (xi_refCharacter.id != "Mary" && arItem.id == "hat11" && arItem.groupID == HAT_ITEM_TYPE)
+	{
+		return false;
+	}
+	if (xi_refCharacter.id == "Mary" && arItem.id != "hat11" && arItem.groupID == HAT_ITEM_TYPE)
+	{
+		return false;
+	}
 	
 	if (arItem.groupID == GUN_ITEM_TYPE) 
 	{
@@ -2672,17 +2233,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		}
 		int chrgQ = sti(arItem.chargeQ);
 
-		if (chrgQ >= 2 && !IsCharacterPerkOn(xi_refCharacter,"GunProfessional") )
-		{
-			if(arItem.id == "pistol9" || arItem.id == "pistol6") return true;
-			return false;
-		}
-		
-		// Нельзя экипировать мушкет в непредназначенных для этого локациях (Таверна)
-		if(HasSubStr(arItem.id, "mushket") && !CanEquipMushketOnLocation(PChar.Location))
-		{
-			if(!HasSubStr(xi_refCharacter.model, "Irons")) return false;
-		}
+		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
 	}
 	
 	if (arItem.groupID == MUSKET_ITEM_TYPE) 
@@ -2698,23 +2249,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		}
 		int chrgQm = sti(arItem.chargeQ);
 
-		if (chrgQm >= 2 && !IsCharacterPerkOn(xi_refCharacter,"GunProfessional") )
-		{
-			if(arItem.id == "pistol9" || arItem.id == "pistol6") return true;
-			return false;
-		}
-				
-		// Для мушкетов нужен соответствующий перк
-		if(HasSubStr(arItem.id, "mushket") && !IsCharacterPerkOn(xi_refCharacter,"Gunman"))
-		{
-			return false;
-		}
-		
-		// Нельзя экипировать мушкет в непредназначенных для этого локациях (Таверна)
-		if(HasSubStr(arItem.id, "mushket") && !CanEquipMushketOnLocation(PChar.Location))
-		{
-			if(!HasSubStr(xi_refCharacter.model, "Irons")) return false;
-		}
+		if (!CanEquipFireArmsNow(xi_refCharacter, arItem)) return false;
 	}
     
 	if (arItem.groupID == ITEM_SLOT_TYPE)
@@ -2726,7 +2261,7 @@ bool ThisItemCanBeEquip(aref arItem)
 		}
 		else
 		{
-			if(GetCharacterFreeSlot(xi_refCharacter) != SLOT_NOT_USED && IsCanArtefactBeEquipped(xi_refCharacter, arItem.id))
+			if(GetCharacterFreeSlot(xi_refCharacter) != SLOT_NOT_USED)
 			{
 				SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
 				return true;
@@ -2797,7 +2332,7 @@ bool ThisItemCanBeEquip(aref arItem)
 			}
 		}
 	}*/
-	
+
 	return true;
 }
 
@@ -2826,6 +2361,8 @@ void EquipPress()
 	string totalInfo;
 	int  i;
 	
+	RunOnUseCallbacks(xi_refCharacter, itmRef);
+
 	if (CheckAttribute(itmRef, "groupID"))
 	{
 		string itmGroup = itmRef.groupID;
@@ -2892,26 +2429,27 @@ void EquipPress()
 			        TakeNItems(pchar, "map_full",   1);
 			        itmRef = &Items[FindItem("map_full")];
 			        pchar.GenQuest.TreasureBuild = true;
-			        FillMapForTreasure(itmRef);
+			        FillMapForTreasure(itmRef, GetTresuareMapSeed());
 			        SetVariable();
 			    }
 			    if (itmRef.mapType == "Full")
 			    {
+                    if (!CheckAttribute(itmRef, "MapIslId"))
+                    {
+                        FillMapForTreasure(itmRef, ""); //заполним если смотрим карту из сундука
+                    }
 		            if (CheckAttribute(itmRef, "MapTypeIdx") && (sti(itmRef.MapTypeIdx) == -1))
 				    {
                         SetFormatedText("MAP_TEXT", GetConvertStr("type_fake", "MapDescribe.txt"));
 					    DeleteAttribute(itmRef, "MapIslId");
 					    TakeNItems(GetMainCharacter(), "map_full", -1);
+                        SetVariable();
 				    }
 				    else
 				    {
-				        if (!CheckAttribute(itmRef, "MapIslId"))
-				        {
-				            FillMapForTreasure(itmRef); //заполним если смотрим карту из сундука
-				        }
                         //totalInfo = GetConvertStr(itmRef.MapIslId, "LocLables.txt");
                         i = FindLocation(itmRef.MapLocId);  // ищем ареал
-						if (i != -1 && locations[i].islandId != "Mein")
+                        if (i != -1 && locations[i].islandId != "Mein")
                         {
                             totalInfo = GetConvertStr(locations[i].islandId, "LocLables.txt");
                             totalInfo = GetConvertStr("type_full_" + itmRef.MapTypeIdx + "_isl", "MapDescribe.txt") + " " + totalInfo;
@@ -2920,13 +2458,13 @@ void EquipPress()
                         {
                             totalInfo = GetConvertStr("type_full_" + itmRef.MapTypeIdx + "_mein", "MapDescribe.txt");
                         }
-						itmRef.MapIslName = totalInfo;
-						totalInfo = GetConvertStr(itmRef.MapLocId, "MapDescribe.txt") + ", " + GetConvertStr(itmRef.MapLocId + "_" + itmRef.MapBoxId, "MapDescribe.txt");
-				        itmRef.MaplocName = totalInfo;
+                        itmRef.MapIslName = totalInfo;
+                        totalInfo = GetConvertStr(itmRef.MapLocId, "MapDescribe.txt") + ", " + GetConvertStr(itmRef.MapLocId + "_" + itmRef.MapBoxId, "MapDescribe.txt");
+                        itmRef.MaplocName = totalInfo;
 
-				        totalInfo = GetConvertStr("type_full_" + itmRef.MapTypeIdx, "MapDescribe.txt");
-				        totalInfo = GetAssembledString(totalInfo, itmRef);
-				        SetFormatedText("MAP_TEXT", totalInfo);
+                        totalInfo = GetConvertStr("type_full_" + itmRef.MapTypeIdx, "MapDescribe.txt");
+                        totalInfo = GetAssembledString(totalInfo, itmRef);
+                        SetFormatedText("MAP_TEXT", totalInfo);
 				    }
 			    }
 			    else
@@ -3071,6 +2609,7 @@ void EquipPress()
 					FillItemsSelected();
 					FillTableOther();
 				}
+				Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 				SetVariable();
 				UpdateItemInfo();
 				return;
@@ -3100,6 +2639,8 @@ void EquipPress()
 							UpdateItemInfo();
 							FillItemsSelected();
 							FillTableOther();
+								CT_UpdateCashTables(xi_refCharacter);
+								CT_UpdateLandTable(xi_refCharacter);
 							return;
 						}
 						else // Мушкетер. Делаем обычным фехтовальщиком
@@ -3109,6 +2650,8 @@ void EquipPress()
 							UpdateItemInfo();
 							FillItemsSelected();
 							FillTableOther();
+								CT_UpdateCashTables(xi_refCharacter);
+								CT_UpdateLandTable(xi_refCharacter);
 							return;
 						}
 					//}
@@ -3120,6 +2663,7 @@ void EquipPress()
 						if(IsEquipCharacterByArtefact(xi_refCharacter, itmRef.id))
 						{
 							RemoveCharacterArtefactEquip(xi_refCharacter, GetCharacterEquipSlot(xi_refCharacter, itmRef.id));
+							Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 							SetVariable();
 							FillItemsSelected();
 							UpdateItemInfo();
@@ -3134,6 +2678,7 @@ void EquipPress()
 								if(bGlobalTutor)
 								{
 									DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
+									Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 									ProcessExitCancel();
 									return;
 								}
@@ -3141,6 +2686,7 @@ void EquipPress()
 								{
 									if(CheckAttribute(&InterfaceStates, "ShowTutorial") && sti(InterfaceStates.ShowTutorial) == 1)
 									{
+										Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 										DoQuestFunctionDelay("Tutorial_Amulet", 0.1);
 										ProcessExitCancel();
 										return;
@@ -3163,6 +2709,8 @@ void EquipPress()
 								{
 									if(HasSubStr(itmRef.ID, "_double")) notification(XI_ConvertString("AmmoNotSelectNotif"), "AmmoNotSelect");
 									PlaySound("interface\knock.wav");
+									CT_UpdateCashTables(xi_refCharacter);
+									CT_UpdateLandTable(xi_refCharacter);
 									return;
 								}
 								LAi_GunSetUnload(xi_refCharacter, MUSKET_ITEM_TYPE);
@@ -3183,6 +2731,8 @@ void EquipPress()
 									if(HasSubStr(itmRef.ID, "_double")) notification(XI_ConvertString("AmmoNotSelectNotif"), "AmmoNotSelect");
 									PlaySound("interface\knock.wav");
 									log_info("gun load");
+										CT_UpdateCashTables(xi_refCharacter);
+										CT_UpdateLandTable(xi_refCharacter);
 									return;
 								}
 								LAi_GunSetUnload(xi_refCharacter, GUN_ITEM_TYPE);
@@ -3196,9 +2746,10 @@ void EquipPress()
 									SetNodeUsing("ITEM_2B", false);
 								}
 							}
-							//Log_info(XI_ConvertString("AmmoSelect")+GetConvertStr(itmRef.name, "ItemsDescribe.txt")+"");
-							notification(GetFullName(xi_refCharacter)+" "+XI_ConvertString("AmmoSelectNotif")+GetConvertStr(itmRef.name, "ItemsDescribe.txt")+"", "AmmoSelect");
+							notification(GetFullName(xi_refCharacter)+" "+XI_ConvertString("AmmoSelectNotif")+GetItemName(itmRef)+"", "AmmoSelect");
 							PlaySound("People Fight\reload1.wav");
+							CT_UpdateCashTables(xi_refCharacter);
+							CT_UpdateLandTable(xi_refCharacter);
 							SetVariable();
 							SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("LoadAnyGun"));
 							return;
@@ -3238,6 +2789,7 @@ void EquipPress()
 										DeleteAttribute(xi_refCharacter, "reputation.fame.talisman9");
 									}
 									RemoveCharacterEquip(xi_refCharacter, itmGroup);
+									Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 								}
 								else 
 								{
@@ -3267,6 +2819,7 @@ void EquipPress()
 										itmRef.durability = 45;
 									}
 									EquipCharacterByItem(xi_refCharacter, itmRef.id);
+									Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
 								}
 							}
 						}
@@ -3277,7 +2830,8 @@ void EquipPress()
 			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
 			SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(itmRef));
 			SetItemInfo(iGoodIndex);
-			SetFormatedText("Weight", FloatToString(GetItemsWeight(xi_refCharacter), 1) + " / " + GetMaxItemsWeight(xi_refCharacter)); // обновим вес
+			Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
+			SetVariable();
 			FillTableOther(); // обновим статы
 		}
 	}
@@ -3292,6 +2846,9 @@ void EquipPress()
 			UpdateItemInfo();
 		}
 	}
+	Event(EVENT_CT_UPDATE_FELLOW, "a", xi_refCharacter);
+	CT_UpdateCashTables(xi_refCharacter);
+	CT_UpdateLandTable(xi_refCharacter);
 	FillTableOther();
 }
 
@@ -3442,7 +2999,7 @@ void procScrollTabChange()
 
 void SetControlsScrollTabMode(int nMode)
 {
-	int nColor1 = argb(255,196,196,196);
+	int nColor1 = ARGB_Color("offGrey");
 	int nColor2 = nColor1;
 	if(GetFreePassengersQuantity(pchar) == 0) nColor2 = argb(255,128,128,128);
 
@@ -3457,12 +3014,12 @@ void SetControlsScrollTabMode(int nMode)
 		case 1:
 			sPic1 = "TabSelected";
 			sPic3 = "TabSelectedMark";
-			nColor1 = argb(255,255,255,255);
+			nColor1 = ARGB_Color("white");
 		break;
 		case 2:
 			sPic2 = "TabSelected";
 			sPic4 = "TabSelectedMark";
-			nColor2 = argb(255,255,255,255);
+			nColor2 = ARGB_Color("white");
 		break;
 	}
     
@@ -3474,6 +3031,7 @@ void SetControlsScrollTabMode(int nMode)
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_SCROLL_2", 8,0,nColor2);
 
 	FillScrollControlsList(nMode);
+	InterfaceStates.nCurScrollTab = nMode;
 }
 
 void FillScrollControlsList(int nMode)
@@ -3500,4 +3058,128 @@ void FillScrollControlsList(int nMode)
 		GameInterface.CHARACTERS_SCROLL.current = 0;
 		SendMessage(&GameInterface,"lsl",MSG_INTERFACE_SCROLL_CHANGE,"CHARACTERS_SCROLL",-1);
 	}
+}
+
+// выходим в Атлас с тыкнутой картой
+void OpenMap()
+{
+	ref map = ItemFromIdx(iGoodIndex);
+	pchar.showlastmap = map.id;
+	pchar.showlastmap.force;
+	IDoExit(RC_INTERFACE_MAPVIEW);
+}
+
+void OnHeaderClick()
+{
+	string sControl = GetEventData();
+	int column = GetEventData();
+	if (sControl != "TABLE_ITEMS") return;
+	GameInterface.TABLE_ITEMS.select = 0;
+
+	string datatype = "integer";
+	switch (column)
+	{
+		case 1: datatype = "index"; break; 
+		case 2: datatype = "float"; break; 
+		case 3: datatype = "integer"; break; 
+		case 4: datatype = "float"; break; 
+	}
+
+	QoLSortTable("TABLE_ITEMS", column, datatype, false, 0);
+}
+
+void SetItemInfo(int iGoodIndex)
+{
+	XI_WindowShow("ITEM_WINDOW", true);
+	XI_WindowDisable("ITEM_WINDOW", false);
+
+	ref arItm = &Items[iGoodIndex];
+	currentItem = arItm;
+	string describeStr;
+	iCharQty = GetCharacterFreeItem(xi_refCharacter, arItm.id);
+	bQuestItem = IsQuestUsedItem(arItm.id);// квестовый
+	SetNodeUsing("EQUIP_BUTTON", true);
+	SetNodeUsing("OPENMAP_BUTTON", false);
+	SetNodeUsing("LOADGUN_BUTTON", false);
+	SetNodeUsing("LOADMUSKET_BUTTON", false);
+	SetFormatedText("INFO_NAME", GetItemName(arItm));
+	SetFormatedText("ITEM_TYPE", GetItemType(arItm));
+		
+	aref attr, arGrape;
+	string sBullet;
+	string sAttr;
+	int i, n;
+	int lngFileID = LanguageOpenFile("ItemsDescribe.txt");
+	describeStr = GetItemDescribe(arItm);
+	if(CheckAttribute(arItm, "UpgradeStage"))
+	{
+		describeStr += " " + LanguageConvertString(lngFileID,"UpgradeStageInfo_" + arItm.id + "_" + sti(arItm.UpgradeStage));
+	}
+	if(arItm.id == "talisman17")
+	{
+		if(CheckAttribute(arItm,"QBonus"))
+		{
+			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman17_quests"), arItm) + newStr();
+		}
+		else
+		{
+			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman17_questsNoBonus") + newStr();
+		}
+	}
+	if(arItm.id == "talisman18")
+	{
+		if(CheckAttribute(arItm,"QBonus"))
+		{
+			describeStr += newStr() + GetAssembledString( LanguageConvertString(lngFileID,"talisman18_Bonus"), arItm) + newStr();
+		}
+		else
+		{
+			describeStr += newStr() + LanguageConvertString(lngFileID, "talisman18_NoBonus") + newStr();
+		}
+	}
+	SetFormatedText("INFO_TEXT", describeStr);
+	
+	SetNewGroupPicture("INFO_PIC", Items[iGoodIndex].picTexture, "itm" + Items[iGoodIndex].picIndex);
+
+	if (IsAtlasMap(&arItm))
+	{
+		SetNodeUsing("EQUIP_BUTTON", false);
+		SetNodeUsing("OPENMAP_BUTTON", true);
+	}
+	else
+	{
+		if(CheckAttribute(arItm,"groupID") && arItm.groupID == AMMO_ITEM_TYPE)
+		{
+			SetNodeUsing("EQUIP_BUTTON", true);
+			SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("LoadAnyGun"));
+			if(arItm.groupID == AMMO_ITEM_TYPE
+				&& arItm.ID != "GunPowder"
+				&& GetCharacterEquipByGroup(xi_refCharacter, GUN_ITEM_TYPE) !="" 
+				&& GetCharacterEquipByGroup(xi_refCharacter, MUSKET_ITEM_TYPE) !="")
+			{
+				SetNodeUsing("EQUIP_BUTTON", false);
+				SetNodeUsing("LOADGUN_BUTTON", true);
+				SetNodeUsing("LOADMUSKET_BUTTON", true);
+				SetSelectable("LOADGUN_BUTTON",true);
+				SetSelectable("LOADMUSKET_BUTTON",true);
+				if(!LAi_CanCharacterUseBullet(xi_refCharacter, GUN_ITEM_TYPE, arItm.ID)) SetSelectable("LOADGUN_BUTTON",false);
+				if(!LAi_CanCharacterUseBullet(xi_refCharacter, MUSKET_ITEM_TYPE, arItm.ID)) SetSelectable("LOADMUSKET_BUTTON",false);
+			}
+		}
+		SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
+		SetSelectable("EQUIP_BUTTON",ThisItemCanBeEquip(&Items[iGoodIndex]));
+	}
+
+	FillUpDescriptors(&arItm);
+	FillUpStats(&arItm, xi_refCharacter);
+}
+
+void PopupIsShown()
+{
+	XI_WindowDisable("ITEM_WINDOW", true);
+}
+
+void PopupIsClosed()
+{
+	XI_WindowDisable("ITEM_WINDOW", false);
 }

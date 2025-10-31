@@ -223,25 +223,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_5":
-			chrDisableReloadToLocation = true;//关闭地点
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload5_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_poorman";
-			pchar.quest.trial_spy_poorman.win_condition.l1 = "Timer";
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.hour  = 22.00;
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
-			pchar.quest.trial_spy_poorman.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
-			pchar.quest.trial_spy_poorman.function = "Trial_SetPoormanInPort";
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1 = "Timer";
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.hour  = 6.00;
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-			pchar.quest.Trial_ReturnPoormanNorm.win_condition = "Trial_ReturnPoormanNorm";
-			//SetTimerCondition("Trial_ReturnPoormanNorm", 0, 0, 1, false);
-			AddQuestRecord("Trial", "15");
+			AddDialogExitQuestFunction("Trial_Poorman_DlgExit");
 		break;
 		
 		case "trial_6":
@@ -272,14 +255,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_fail_1":
-			chrDisableReloadToLocation = true;//关闭地点
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_fail";
-			AddQuestRecord("Trial", "16");
-			sld = characterFromId("Florian");
-			sld.DeckDialogNode = "florian_failspy_5";
+			AddDialogExitQuestFunction("Trial_FailPoormanInPort");
 		break;
 		
 		case "trial_8":
@@ -293,49 +270,24 @@ void ProcessDialogEvent()
 			dialog.text = "'阿拉坎塔拉'号的一个水手 - 费利佩.达宾霍... 但这其实根本不是秘密, 是总督大人自己下的命令... ";
 			link.l1 = "我明白了。 这正是我所期望的。 法国间谍在镇上, 但这些白痴像妓女一样喋喋不休, 难以置信! 任何先来的人都能知道大人的计划。 哦, 那个费利佩.达宾霍现在有大麻烦了! 还有'阿拉坎塔拉'号的水手长也是! 他的船员不懂纪律, 这是他的错! ";
 			link.l1.go = "trial_10";
-			QuestPointerToLoc("PortoBello_Town", "reload", "gate_back");
-			QuestPointerToLoc("PortoBello_ExitTown", "reload", "reload1_back");
-			QuestPointerToLoc("PortoBello_Jungle_01", "reload", "reload2_back");
-			QuestPointerToLoc("PortoBello_Jungle_02", "reload", "reload3_back");
-			QuestPointerToLoc("shore47", "reload", "boat");
 		break;
 		
 		case "trial_10":
 			dialog.text = "哦... 所以你一开始就知道了? 但是为什么... 这不是我的错! 你让我这么做的! ";
 			link.l1 = "这不是你的错, 你不应该担心, 没人会惩罚你。 现在我们知道'阿拉坎塔拉'号的船员可以向敌人泄露任何信息 - 即使是应该保密的信息。 好了, 你现在可以走了。 谢谢你的帮助。 去花你的钱吧。 ";
 			link.l1.go = "trial_11";
-			// belamour传奇版 -->
 			link.l2 = "再见。 (杀了他)";
 			link.l2.go = "trial_11a";
 		break;
 		
 		case "trial_11a":
 			DialogExit();
-			AddMoneyToCharacter(npchar, 5000);
-			npchar.SaveItemsForDead  = true; 
-			LAi_SetActorType(pchar);
-			// 如果没有佩戴手枪或步枪, 就发放制式武器
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
-			{
-				GiveItem2Character(pchar, "pistol1");
-				EquipCharacterbyItem(pchar, "pistol1");
-			}
-			LAi_ActorAnimation(pchar, "Shot", "RIP_Bomzh", 1.0); 
+			AddDialogExitQuestFunction("Trial_KillPoormanInPort");
 		break;
 		
 		case "trial_11":
-			AddCharacterExpToSkill(pchar, "Leadership", 100);
-			AddCharacterExpToSkill(pchar, "Sneak", 50);
-			// < —传奇版
-			chrDisableReloadToLocation = true;//关闭地点
 			DialogExit();
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
-			pchar.questTemp.Trial = "spy_win";
-			AddQuestRecord("Trial", "17");
-			sld = characterFromId("Florian");
-			sld.DeckDialogNode = "florian_12";
-			AddLandQuestMark(sld, "questmarkmain");
+			AddDialogExitQuestFunction("Trial_PeacePoormanInPort");
 		break;
 		
 		// --> 卡莱乌切

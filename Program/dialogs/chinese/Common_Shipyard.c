@@ -948,7 +948,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 				}
 				else
 				{
@@ -1473,12 +1473,10 @@ void ProcessDialogEvent()
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-                    shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 				}
 				else
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-                    shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 				}
 			}
 			else
@@ -1489,7 +1487,6 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
 				else
 				{
@@ -1497,11 +1494,9 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
 			}
 	        shTo.Tuning.HP = true;
-			//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
 			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
@@ -2413,7 +2408,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2648,7 +2643,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("技能检查失败 (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "我保证会出现的。 价格不变。 怎么样? 我不会等太久。 ";
 				link.l1 = "好吧, 好吧, 好吧。 我买了。 ";
 				link.l1.go = "IslaMona_7";
@@ -2656,7 +2651,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "好吧, 我们让一百。 九百。 我不能再低了。 别让我再让了。 ";
 				link.l1 = "我也不会。 我同意。 ";
@@ -2670,7 +2665,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("技能检查失败 (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "我不在乎你是否订购一个活的 wench。 九百。 ";
 				link.l1 = "好吧, 好吧, 好吧。 我买了。 ";
 				link.l1.go = "IslaMona_7";
@@ -2678,7 +2673,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "你确定吗? 你不会忘记吧? 好吧, 再减一百。 但就这样了! ";
 				link.l1 = "我不会忘记。 成交! ";
@@ -2700,7 +2695,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("技能检查失败 (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "妓院女孩的孩子不算数, " +pchar.name+ "。 我受够你了。 一千达布隆现金, 否则我们就道别。 ";
 				link.l1 = "你是什么意思, 他们不算? 呃。 我同意, 你是个骗子。 ";
@@ -2709,7 +2704,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "我不知道你有孩子。 而且情况这么糟。 好吧, 别抱怨了。 七百。 这几乎是亏损了。 ";
 				link.l1 = "我不会忘记。 成交! ";
@@ -2721,30 +2716,30 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_7":
 			dialog.text = "那么, 你欠我 " + sti(pchar.questTemp.IslaMona.Shipyarder.Money) + " 达布隆。 ";
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 			{
 				link.l1 = "给你, 我把最后一点都给你了, 我什么都没有了。 ";
 				link.l1.go = "IslaMona_8";
 			}
 			else
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") < 1)
+				if (PCharDublonsTotal() < 1)
 				{
 					link.l1 = "等等, 我要去找高利贷借钱。 ";
 					link.l1.go = "IslaMona_money_exit";
 				}
 				else
 				{
-					link.l1 = "我身上只有 " + FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon")) + "。 拿着这个, 我去找高利贷。 ";
+					link.l1 = "我身上只有 " + FindRussianDublonString(PCharDublonsTotal()) + "。 拿着这个, 我去找高利贷。 ";
 					link.l1.go = "IslaMona_money";
 				}
 			}
 		break;
 		
 		case "IslaMona_money":
-			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("你给了 " + FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon")) + "");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-PCharDublonsTotal();
+			Log_Info("你给了 " + FindRussianDublonString(PCharDublonsTotal()) + "");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
 			dialog.text = "不要为我感到难过, 你的船舱锁里装满了金子。 你还欠我 " + FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money)) + "。 ";
 			link.l1 = "";
@@ -2760,7 +2755,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_8":
 			Log_Info("你给了 " + FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money)) + "");
-			RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 			PlaySound("interface\important_item.wav");
 			dialog.text = "太好了。 全部金额都到了。 工具将被送到你的船上。 这些是一些沉重的板条箱。 ";
 			link.l1 = "谢谢你, " + npchar.name+ "! ";

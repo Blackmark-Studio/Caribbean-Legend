@@ -172,7 +172,7 @@ void ProcessDialogEvent()
 					link.l1.go = "patria_59";
 					break;
 				}
-				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < 5)
+				if (pchar.questTemp.Patria == "epizode_8_wait" && IsUniformEquip() && GetCompanionQuantity(pchar) < COMPANION_MAX)
 				{
 					dialog.text = "Es-tu prêt à prendre notre cotre courrier ?";
 					link.l1 = "Je le suis.";
@@ -457,7 +457,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "serve_4":
-			dialog.text = "La frégate légère 'Gryffondor' est maintenant sous votre commandement. A partir de ce moment, ce navire d'exception vous appartient. Utilisez ses hautes qualités pour la gloire de Sa Majesté et pour renforcer l'influence française sur l'archipel des Caraïbes !";
+			dialog.text = "La corvette lourde 'Gryffondor' est maintenant sous votre commandement. A partir de ce moment, ce navire d'exception vous appartient. Utilisez ses hautes qualités pour la gloire de Sa Majesté et pour renforcer l'influence française sur l'archipel des Caraïbes !";
 			link.l1 = "Tout de suite !";
 			link.l1.go = "serve_5";
 			LAi_Fade("SharlePutsSuit", "");
@@ -503,7 +503,6 @@ void ProcessDialogEvent()
 			pchar.quest.DefendSP_prepare.function = "DefendSP_PrepareMartinique";
 			AddCharacterExpToSkill(pchar, "Leadership", 2000);
 			AddCharacterExpToSkill(pchar, "Fortune", 500);
-			pchar.questTemp.GoldenGirl_Block = true;	// Запрещаем квест Дороже Золота
 		break;
 		
 		case "serve_wait":
@@ -1832,7 +1831,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			SetTimerCondition("PZ_NormanBackToStreets", 0, 0, 1, false);	//Вовзращаем Акулу или Тиракса в Шарптаун
 			// ставим сразу прерывание, чтобы потом по тысячу раз не копировать
 			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom"))
@@ -1851,7 +1850,7 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.PZ_LevasserPlenen"))
 				{
 					link.l1 = "Ce n'est pas tout, Votre Excellence.";
-					link.l1.go = "PZ2";
+					link.l1.go = "PZ_2";
 				}
 				else
 				{
@@ -1869,13 +1868,13 @@ void ProcessDialogEvent()
 			DeleteAttribute(pchar, "questTemp.PZ_LongwayNelzyaOtdatArube");
 		break;
 					
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Vraiment? Que voulez-vous dire, Capitaine?";
 			link.l1 = "J'ai réussi à capturer Levasseur vivant et à l'amener à vous. Dès que nous aurons terminé, je donnerai l'ordre de le faire venir à vous.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Je n'aurais jamais pensé qu'une telle chose était possible ! Vraiment, un travail brillant, Charles ! Je doute que même votre illustre frère aurait pu faire mieux. Votre père serait fier de vous, mon ami.";
 			link.l1 = "Merci pour vos aimables paroles, Monsieur Philippe.";
 			link.l1.go = "exit";
@@ -1883,7 +1882,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("PZ_LevasserVGostyahUPuansie");
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Très bien, Charles. Je suis satisfait de vous.";
 			link.l1 = "Puis-je obtenir un ordre écrit de vous pour que mon frère soit libéré de détention immédiatement ?";
 			link.l1.go = "serve";

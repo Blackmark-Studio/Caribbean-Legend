@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Gladis_history_4":
-			dialog.text = "";
+			dialog.text = "...";
 			link.l1 = "Ein einfacher Zwischenfall hatte ihn daran gehindert, dies rechtzeitig zu tun und er litt sein ganzes Leben lang, weil er den letzten Befehl seines Kapitäns nicht erfüllt hatte. Er starb vor nicht allzu langer Zeit und... nun, genug traurige Nachrichten. Sag mir, Gladys, hat Helens Mutter ihrem Kind nicht irgendein Andenken hinterlassen? Vielleicht eine Kleinigkeit?";
 			link.l1.go = "Gladis_history_5";
 		break;

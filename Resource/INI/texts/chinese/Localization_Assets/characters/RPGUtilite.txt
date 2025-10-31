@@ -1,113 +1,23 @@
-RPGUtilite_1
-{
-获得经验值 ~
-}
-
-RPGUtilite_2
-{
-糟糕
-}
-RPGUtilite_3
-{
-差
-}
-
-RPGUtilite_4
-{
-贫乏
-}
-
-RPGUtilite_5
-{
-中等
-}
-
-RPGUtilite_6
-{
-良好
-}
-
-RPGUtilite_7
-{
-优秀
-}
-
-RPGUtilite_8
-{
-活力增加
-}
-
-RPGUtilite_9
-{
-活力减少
-}
-
-RPGUtilite_10
-{
-赏金增加! 
-}
-
-RPGUtilite_11
-{
-国家声望增加! 
-}
-
-RPGUtilite_12
-{
-国家声望增加! 
-}
-
-RPGUtilite_13
-{
-国家声望减少! 
-}
-
-RPGUtilite_14
-{
-憎恨
-}
-
-RPGUtilite_15
-{
-敌意
-}
-
-RPGUtilite_16
-{
-反感
-}
-
-RPGUtilite_17
-{
-恼怒
-}
-
-RPGUtilite_18
-{
-中立
-}
-
-RPGUtilite_19
-{
-好感
-}
-
-RPGUtilite_20
-{
-友好
-}
-
-RPGUtilite_21
-{
-钦佩
-}
-
-RPGUtilite_22
-{
-Rainbow
-}
-
-RPGUtilite_23
-{
-Quicksilver
-}
+RPGUtilite_1 {获得经验值 ~}
+RPGUtilite_2 {糟糕}
+RPGUtilite_3 {差}
+RPGUtilite_4 {贫乏}
+RPGUtilite_5 {中等}
+RPGUtilite_6 {良好}
+RPGUtilite_7 {优秀}
+RPGUtilite_8 {活力增加}
+RPGUtilite_9 {活力减少}
+RPGUtilite_10 {赏金增加!}
+RPGUtilite_11 {国家声望增加!}
+RPGUtilite_12 {国家声望增加!}
+RPGUtilite_13 {国家声望减少!}
+RPGUtilite_14 {憎恨}
+RPGUtilite_15 {敌意}
+RPGUtilite_16 {反感}
+RPGUtilite_17 {恼怒}
+RPGUtilite_18 {中立}
+RPGUtilite_19 {好感}
+RPGUtilite_20 {友好}
+RPGUtilite_21 {钦佩}
+RPGUtilite_22 {Rainbow}
+RPGUtilite_23 {Quicksilver}

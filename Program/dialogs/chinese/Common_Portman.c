@@ -95,7 +95,7 @@ void ProcessDialogEvent()
 		RemovePassenger(pchar, compref);
 		// снимем пассажира <--
 		SetCompanionIndex(pchar, -1, iChar);
-		DelBakSkill(compref);
+		PortmanDelBakSkill(compref);
 		DeleteAttribute(chref, "ShipInStockMan");
 		if(CheckAttribute(chref, "DontNullShip"))
 		{
@@ -861,10 +861,12 @@ void ProcessDialogEvent()
 					dialog.Text = "嗯... 好吧, 这取决于你感兴趣的工作。 ";
 					link.l1 = "我可以提议将我的船租给你用于运输货物。 ";
 					Link.l1.go = "Fraht_begin";		//货运
-					link.l2 = "我想通过护送商人或递送邮件来赚外快。 ";
-					Link.l2.go = "Check_other";		//邮件递送。 护送
-					Link.l3 = "好吧, 也许你可以提供一些什么? ";
-					Link.l3.go = "node_4"; 			//船只租赁。 被劫持的船。 烧毁的船
+					link.l2 = "我想赚取一些额外的钱作为商人护送。";
+					Link.l2.go = "escort_begin";	//эскорт
+					link.l3 = "我想赚点外快寄邮件.";
+					Link.l3.go = "cureer_begin";	//доставка почты
+					Link.l4 = "好吧, 也许你可以提供一些什么? ";
+					Link.l4.go = "node_4"; 			//船只租赁。 被劫持的船。 烧毁的船
 				}
 				else
 				{
@@ -880,76 +882,113 @@ void ProcessDialogEvent()
 				link.l1.go = "exit";
 			}
 		break;
-	
-		case "Check_other"://выбор между почтовым курьером, эскортом и ничем
+		
+		case "escort_begin"://эскорт
 		SaveCurrentNpcQuestDateParam(npchar, "work_date"); // mitrokosta безусловно сохраняем
-		int nTask = 0;
-		string tasks[10]; // mitrokosta сделал выбор задания расширяемым на тот случай если задания добавятся
-		if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER) {
-			tasks[nTask] = "cureer";
-			nTask++;
-		}
-		if (GetCompanionQuantity(pchar) < 3 && sti(RealShips[sti(pchar.Ship.Type)].Class) >= 4 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) {
-			tasks[nTask] = "escort";
-			nTask++;
-		}
-		if (nTask > 0 && hrand(5) > 1) {
-			string sTask = tasks[hrand(nTask - 1)];
-			switch (sTask) {
-				case "cureer":
-					if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp")) { // 如果已占用
-						dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
-						link.l1 = "好的, 我会那么做的。 ";
-						link.l1.go = "exit";
-					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) { //如果 2 级
-							dialog.text = "所以... 据我所知, 你已经接过几份信使工作并且相当成功。 你或许能处理我即将交给你的任务。 ";
-							link.l1 = "我洗耳恭听, " + GetAddress_FormToNPC(NPChar) + "。 ";
-							link.l1.go = "Postcureer_LevelUp";
-						} else { // первый уровень
-							dialog.text = "我看你有一艘快船。 我可以给你提供一份信使工作 - 递送邮件和商业文件。 ";
-							link.l1 = "这很有趣。 我同意。 我需要去哪里? ";
-							link.l1.go = "Postcureer";
+		
+		if (hrand(5) > 1)
+		{
+			if (GetCompanionQuantity(pchar) < 3 && or(sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_WAR, sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)) 
+			{
+				if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) 
+				{ // если заняты
+					dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
+					link.l1 = "好的, 我会那么做的。 ";
+					link.l1.go = "exit";
+				} 
+				else 
+				{ // если не заняты
+					if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) 
+					{ // 2 уровень
+						dialog.text = "你已经成功护送过几次商船了。 我想我有一个适合你的任务。 ";
+							link.l1 = "我洗耳恭听。 ";
+							link.l1.go = "Escort_LevelUp";
+					} 
+					else 
+					{ // 1 уровень
+						if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // если на ТГ
+							dialog.text = "我正好有个适合你的工作。 港口有两艘商船本应该已经上路了。 问题是它们的护航船受损了, 还在等待必要的维修, 所以短期内无法出发。 \n碰巧你的船非常适合这项工作 - 另外我还得在你的船舱里存放额外的货物。 当然, 报酬会是双倍的 - 既包括货运也包括护送。 ";
+							link.l1 = "多么有趣的提议! 我接受! ";
+							link.l1.go = "escort_bonus";
+							link.l2 = "谢谢你, 但这不是我喜欢的工作。 ";
+							link.l2.go = "exit";
+						} 
+						else 
+						{ // просто эскорт
+							dialog.text = "我正好有个适合你的工作。 目前有两艘商船在我们港口外停泊 - 它们需要护航。 我提议你将这些船护送到目的地。 你愿意吗? ";
+							link.l1 = "有趣的提议! 我接受! ";
+							link.l1.go = "escort";
 							link.l2 = "谢谢你, 但这不是我喜欢的工作。 ";
 							link.l2.go = "exit";
 						}
 					}
-				break;
-
-				case "escort":
-					if (pchar.questTemp.WPU.Escort == "begin" || pchar.questTemp.WPU.Escort == "late" || pchar.questTemp.WPU.Escort == "win" || CheckAttribute(pchar, "questTemp.WPU.Escort.LevelUp")) { // если заняты
-						dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
-						link.l1 = "好的, 我会那么做的。 ";
-						link.l1.go = "exit";
-					} else { // если не заняты
-						if (sti(pchar.questTemp.WPU.Escort.count) > 3 && hrand(1) == 1) { // 2 级
-							dialog.text = "你已经成功护送过几次商船了。 我想我有一个适合你的任务。 ";
-							link.l1 = "我洗耳恭听。 ";
-							link.l1.go = "Escort_LevelUp";
-						} else { // 1 уровень
-							if (sti(RealShips[sti(pchar.Ship.Type)].BaseType) == SHIP_GALEON_H && 2500 - makeint(GetCharacterFreeSpace(pchar, GOOD_RUM)) < 0 && !CheckAttribute(pchar, "questTemp.WPU.Fraht.TargetPortmanID")) { // 如果在 TG
-								dialog.text = "我正好有个适合你的工作。 港口有两艘商船本应该已经上路了。 问题是它们的护航船受损了, 还在等待必要的维修, 所以短期内无法出发。 \n碰巧你的船非常适合这项工作 - 另外我还得在你的船舱里存放额外的货物。 当然, 报酬会是双倍的 - 既包括货运也包括护送。 ";
-								link.l1 = "多么有趣的提议! 我接受! ";
-								link.l1.go = "escort_bonus";
-								link.l2 = "谢谢你, 但这不是我喜欢的工作。 ";
-								link.l2.go = "exit";
-							} else { // просто эскорт
-								dialog.text = "我正好有个适合你的工作。 目前有两艘商船在我们港口外停泊 - 它们需要护航。 我提议你将这些船护送到目的地。 你愿意吗? ";
-								link.l1 = "有趣的提议! 我接受! ";
-								link.l1.go = "escort";
-								link.l2 = "谢谢你, 但这不是我喜欢的工作。 ";
-								link.l2.go = "exit";
-							}
-						}
-					}
-				break;
+				}
 			}
-			break;
+			else
+			{
+				//не тот тип корабля
+				dialog.text = "你还想用一艘塔尔塔纳去护送商队吗。这类工作需要具备足够火力的舰船——战舰或掠夺舰。";
+				link.l1 = "好吧, 我明白了。";
+				link.l1.go = "exit";
+			}
 		}
-		//ничего не подошло
-		dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
-		link.l1 = "好的, 我会那么做的。 ";
-		link.l1.go = "exit";
+		else
+		{
+			//нет работы
+			dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
+			link.l1 = "好的, 我会那么做的。 ";
+			link.l1.go = "exit";
+		}
+		break;
+		
+		case "cureer_begin"://доставка почты
+		SaveCurrentNpcQuestDateParam(npchar, "work_date");
+		
+		if (hrand(5) > 1)
+		{
+			if (sti(RealShips[sti(pchar.Ship.Type)].Spec) == SHIP_SPEC_RAIDER)
+			{
+				if (pchar.questTemp.WPU.Postcureer == "begin" || pchar.questTemp.WPU.Postcureer == "late" || pchar.questTemp.WPU.Postcureer == "lost" || pchar.questTemp.WPU.Postcureer == "fail" || CheckAttribute(pchar, "questTemp.WPU.Postcureer.LevelUp"))
+				{ 
+					// если заняты
+					dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
+					link.l1 = "好的, 我会那么做的。 ";
+					link.l1.go = "exit";
+				} 
+				else 
+				{ 
+					// если не заняты
+					if (sti(pchar.questTemp.WPU.Postcureer.count) > 3 && hrand(1) == 1) 
+					{ //если 2 уровень
+						dialog.text = "所以... 据我所知, 你已经接过几份信使工作并且相当成功。 你或许能处理我即将交给你的任务。 ";
+						link.l1 = "我洗耳恭听, " + GetAddress_FormToNPC(NPChar) + "。 ";
+						link.l1.go = "Postcureer_LevelUp";
+					} 
+					else 
+					{ // первый уровень
+						dialog.text = "我看你有一艘快船。 我可以给你提供一份信使工作 - 递送邮件和商业文件。 ";
+						link.l1 = "这很有趣。 我同意。 我需要去哪里? ";
+						link.l1.go = "Postcureer";
+						link.l2 = "谢谢你, 但这不是我喜欢的工作。 ";
+						link.l2.go = "exit";
+					}
+				}
+			}
+			else
+			{
+				//не тот тип корабля
+				dialog.text = "很抱歉, 我这里没有适合你的任务。这类工作需要一艘灵活的掠夺舰。你的船更适合承接货运。";
+				link.l1 = "好吧, 我明白了。";
+				link.l1.go = "exit";
+			}
+		}
+		else
+		{
+			//нет работы
+			dialog.text = "不幸的是, 我无法为你提供此类工作。 过几天再来吧。 ";
+			link.l1 = "好的, 我会那么做的。 ";
+			link.l1.go = "exit";
+		}
 		break;
 
 ///--> ------фрахт со свободным выбором пункта назначения, оплаты и вида груза из предложенного списка---------
@@ -3118,10 +3157,10 @@ void ProcessDialogEvent()
 			link.l1.go = "SeekShip_good_1";
 		break;
 		case "SeekShip_good_1":
-			dialog.text = "我准备支付你报酬。 它由 " + FindRussianMoneyString(makeint(sti(npchar.quest.chest)*15000)) + " 箱组成。 不幸的是, 我不能支付更多。 ";
+			dialog.text = "我准备支付你报酬。 它由 " + FindRussianMoneyString(makeint(sti(npchar.quest.chest)*500)) + " 金币。 不幸的是, 我不能支付更多。 ";
 			link.l1 = "嗯, 那足够了。 谢谢你和亲切的问候。 ";
 			link.l1.go = "exit";
-			TakeNItems(pchar, "chest", sti(npchar.quest.chest));
+			TakeNItems(pchar, "gold_dublon", sti(npchar.quest.money));
 			sTitle = npchar.id + "Portmans_SeekShip";
 			AddQuestRecordEx(sTitle, "Portmans_SeekShip", "6");
 			CloseQuestHeader(sTitle);
@@ -3378,7 +3417,7 @@ void ProcessDialogEvent()
 		break;
 */		
 		case "ShipStock_2":
-            chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+            /*chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
 			if (CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && npchar.id == "Beliz_portman" && !CheckAttribute(npchar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)	// В Белизе скидка 50%
 			{
 				NPChar.MoneyForShip = GetPortManPriceExt(NPChar, chref)/2;
@@ -3400,7 +3439,23 @@ void ProcessDialogEvent()
                 Link.l1.go = "ShipStock_NoMoney";
 			}
 			Link.l2 = "不, 我改变主意了。 ";
-			Link.l2.go = "exit";
+			Link.l2.go = "exit";*/
+			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			PortmanCalculatePrices(NPChar, chref);
+			dialog.Text = XI_ConvertString(RealShips[sti(chref.Ship.Type)].BaseName) + " '" + chref.Ship.Name + "', 等级 " + RealShips[sti(chref.Ship.Type)].Class +
+								 ", 泊位费用为 " + FindRussianMoneyString(sti(NPChar.MoneyForShip)) + " 每月, 需提前支付。";
+			dialog.Text = dialog.Text + " 如果您连同军官和船员一起交付, 那么加上他们总共需要 " + FindRussianMoneyString(sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew));
+
+			Link.l1 = "是的, 这对我来说可以。";
+			if (sti(Pchar.Money) >= sti(NPChar.MoneyForShip)) Link.l1.go = "ShipStock_3";
+			else  Link.l2.go = "ShipStock_NoMoney";
+
+			Link.l2 = "是的, 这对我来说可以。 我们会连同船长和船员一起交付。";
+			if (sti(Pchar.Money) >= (sti(NPChar.MoneyForShip) + sti(NPChar.MoneyForCrew))) Link.l2.go = "ShipStock_4";
+			else Link.l2.go = "ShipStock_NoMoney";
+
+			Link.l3 = "不, 我改变主意了。";
+			Link.l3.go = "exit";
 		break;
 
 		case "ShipStock_NoMoney":
@@ -3409,63 +3464,17 @@ void ProcessDialogEvent()
 			Link.l1.go = "exit";
 		break;
 
-		case "ShipStock_3": // hasert новый кейс выбора для оффов
-			//AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			if (sti(NPChar.StoreWithOff))
-			{
-				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
-			chref.ShipInStockMan = NPChar.id;
-			// Warship 22.03.09 fix Не перенеслось с КВЛ 1.2.3
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			chref.Ship.Crew.Quantity  = 0;
-			RemoveCharacterCompanion(pchar, chref);
-			}
-			else
-			{
-				AddMoneyToCharacter(pchar, -makeint(NPChar.MoneyForShip));
-			chref = GetCharacter(NPC_GenerateCharacter("ShipInStockMan_", "citiz_"+(rand(9)+31), "man", "man", 1, NPChar.nation, -1, false, "quest"));
-			chref.id = "ShipInStockMan_" + chref.index; //меняем ID на оригинальный
-			chref.loyality = MAX_LOYALITY; 
-			chref.name = "";
-			chref.lastname = "";
-			 chref.Ship.Crew.Quantity  = 0;
-			DeleteAttribute(chref,"ship");
-			chref.ship = "";
-			
-			chref.ShipInStockMan = NPChar.id;
-			chref.ShipInStockMan.MoneyForShip = NPChar.MoneyForShip;
-			chref.ShipInStockMan.AltDate = GetQuestBookDataDigit(); // для печати
-			SaveCurrentNpcQuestDateParam(chref, "ShipInStockMan.Date"); // для расчёта
-			//  chref.Ship.Crew.Quantity  = 0;
-			compref = GetCharacter(sti(NPChar.ShipToStoreIdx));//компаньон, у которого надо забрать корабль
-			compref.Ship.Crew.Quantity  = 0;
-            RemoveCharacterCompanion(pchar, compref);
-			makearef(arTo, chref.ship);
-			makearef(arFrom, compref.Ship);
-			CopyAttributes(arTo, arFrom);
+		case "ShipStock_3":
+		 	LeaveShipInPort(&NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
+			dialog.text = "好的。 您想要的时候再来取。";
+			Link.l1 = "谢谢。";
+			Link.l1.go = "exit";
+		break;
 
-			compref.ship.type = SHIP_NOTUSED;
-			RemoveCharacterCompanion(pchar, compref);
-			AddPassenger(pchar, compref, false);
-			DelBakSkill(compref);
-			}
-
-			chref.location = "";
-			chref.location.group = "";
-			chref.location.locator = "";
-			NPChar.Portman	= sti(NPChar.Portman) + 1;
-			pchar.ShipInStock = sti(pchar.ShipInStock) + 1;
-			if(NPChar.id == "Beliz_portman" && CheckAttribute(pchar, "questTemp.GS_BelizSkidka") && !CheckAttribute(NPChar, "DontNullShipBeliz") && sti(RealShips[sti(chref.Ship.Type)].Class) > 1)
-			{
-				chref.DontNullShip = true;
-				NPChar.DontNullShipBeliz = true;
-			}
-
-			dialog.text = "好的。 你可以随时取回你的船。 ";
-			Link.l1 = "谢谢。 ";
+		case "ShipStock_4":
+		 	LeaveShipInPortWithCrew(&NPChar, GetCharacter(sti(NPChar.ShipToStoreIdx)));
+			dialog.text = "好的。 您想要的时候再来取。";
+			Link.l1 = "谢谢。";
 			Link.l1.go = "exit";
 		break;
 
@@ -3520,6 +3529,15 @@ void ProcessDialogEvent()
 
         case "ShipStockManBack":
             chref = GetCharacter(sti(NPChar.ShipToStoreIdx));
+			
+			// Лимит офицеров не позволяет забрать
+			if (AttributeIsTrue(NPChar, "StoreWithOff") && FindFreeRandomOfficer() < 1 ) {
+				dialog.text = "船长, 看起来您的队伍里已经没有位置容纳另一名军官了。";
+				link.l1 = "嗯……那我稍后再来。";
+				link.l1.go = "exit";
+				break;
+			}
+
 			// --> mitrokosta给把叛乱者放进PU的狡猾者的惊喜
 			if (CheckAttribute(chref, "quest.Mutiny.date")) {
 				dialog.text = "让我看看...这艘船于" + chref.quest.Mutiny.date + "离开港口。 ";
@@ -4063,7 +4081,7 @@ int CheckCapitainsList(ref npchar)
     {
     	arCapLocal = GetAttributeN(arCapBase, i);
         sCapitainId = GetAttributeName(arCapLocal);
-    	if (GetCharacterIndex(sCapitainId) > 0) //если еще жив
+    	if (GetCharacterIndex(sCapitainId) > 0) //если ещё жив
     	{
 			bResult++;			
     	}
@@ -4109,8 +4127,8 @@ void SetSeekShipCapParam(ref npchar)
 	SetCharacterPerk(sld, "ShipDefenseProfessional");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
+
 	SetCharacterPerk(sld, "AdvancedDefense");
 	SetCharacterPerk(sld, "CriticalHit");
 	SetCharacterPerk(sld, "Sliding");
@@ -4131,8 +4149,8 @@ void SetSeekShipCapParam(ref npchar)
 	npchar.quest.PortmansSeekShip.shipName = sld.Ship.name; //имя украденного корабля
 	npchar.quest.PortmansSeekShip.shipTapeName = RealShips[sti(sld.Ship.Type)].BaseName; //название украденного корабля
 	npchar.quest.PortmansSeekShip.shipTape = RealShips[sti(sld.Ship.Type)].basetype; //тип украденного корабля
-	//npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 1000) + (sti(pchar.rank)*500); //вознаграждение
-	npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
+	npchar.quest.money = ((sti(RealShips[sti(sld.Ship.Type)].basetype)+1) * 10) + (sti(pchar.rank)*5); //вознаграждение
+	// npchar.quest.chest = 12-sti(RealShips[sti(sld.Ship.Type)].Class); //в сундуках
 	sld.quest = "InMap"; //личный флаг кэпа-вора
 	sld.city = SelectAnyColony(npchar.city); //определим колонию, откуда кэп-вор выйдет
 	sld.quest.targetCity = SelectAnyColony2(npchar.city, sld.city); //определим колонию, куда он придёт
@@ -4272,18 +4290,7 @@ int Escort_ShipType()
 }
 //< —новые мини-квесты
 
-void DelBakSkill(ref _compref) // hasert
-{
-	DelBakSkillAttr(pchar);
-	ClearCharacterExpRate(pchar);
-	RefreshCharacterSkillExpRate(pchar);
-	SetEnergyToCharacter(pchar);
 
-	DelBakSkillAttr(_compref);
-	ClearCharacterExpRate(_compref);
-	RefreshCharacterSkillExpRate(_compref);
-	SetEnergyToCharacter(_compref);
-}
 
 void SetSeekCapShip(ref _chr)
 {

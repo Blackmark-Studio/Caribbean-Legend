@@ -37,15 +37,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jimmy_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "Saga_KillJimmy");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			AddDialogExitQuestFunction("Saga_Jimmy_fight");
 		break;
 		
 		case "Jimmy_1_2":
@@ -95,16 +88,13 @@ void ProcessDialogEvent()
 		case "Jimmy_8_1":
 			dialog.text = "Что... Что ты сказал?!";
 			link.l1 = "Больше ты это никому не расскажешь...";
-			link.l1.go = "Jimmy_fight";
-			pchar.questTemp.Saga.Jimmysecret = "true";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Saga_KillToJimmy_kino");
 		break;
 		
 		case "Jimmy_8_2":
 			DialogExit();
-			pchar.questTemp.Saga = "jackman";
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			AddQuestRecord("Saga", "4_1");
+			AddDialogExitQuestFunction("Saga_Jimmy_DlgExit");
 		break;
 // <-- Джимми 
 		
@@ -417,7 +407,7 @@ void ProcessDialogEvent()
 		case "GonsalesB_3_10":
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
 			{
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 				notification("Проверка пройдена", SKILL_LEADERSHIP);
 				dialog.text = "Дьявол! Сам Чарли Принц предлагает мне пойти к нему абордажником! Чёрт тебя подери, я согласен! Давай обратно мой клинок и десять тысяч песо впридачу. Вот уж не думал, что всё так обернётся!";
 				link.l1 = "Держи. И прикуси язык: никто в этом городе не должен знать, кто я такой, понял?";
@@ -1134,25 +1124,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "Вот как? Ну тогда тебе должен быть известен пароль для входа. Говори его, а если ты солгал - даже пожалеть об этом не успеешь...";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "Тритон";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "Нептун";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "Центурион";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "Гарпун";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "нептун")
-			{
-				dialog.text = "Всё верно. Но ты, приятель, пришёл не с той стороны. Разве тебя не предупредили? Топай назад по тропе, потом пройдёшь мимо сухого колодца, возьмёшь левее, на тропинку вокруг холма - она тебя приведёт к центральному входу.";
-				link.l1 = "А здесь пройти никак нельзя?";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "Ребята, у нас тут шпик! Мушкеты на изготовку! Пли!!";
-				link.l1 = "...";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "Всё верно. Но ты, приятель, пришёл не с той стороны. Разве тебя не предупредили? Топай назад по тропе, потом пройдёшь мимо сухого колодца, возьмёшь левее, на тропинку вокруг холма - она тебя приведёт к центральному входу.";
+			link.l1 = "А здесь пройти никак нельзя?";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "Ребята, у нас тут шпик! Мушкеты на изготовку! Пли!!";
+			link.l1 = "...";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1176,25 +1167,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "Да неужели? Ну тогда тебе должен быть известен пароль. Говори его, и говори чётко, чтобы я хорошо расслышал. Ну, а если ты сейчас попытался схитрить - то это была последняя неудачная шутка в твоей жизни.";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "Тритон";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "Нептун";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "Центурион";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "Гарпун";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "нептун")
-			{
-				dialog.text = "Верно. Можете проходить. Старший по лагерю находится в доме слева от входа в шахту. Топайте сразу к нему.";
-				link.l1 = "Хорошо, приятель...";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "Ребята, у нас тут шпик! Орудия, пли!!";
-				link.l1 = "...";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "Верно. Можете проходить. Старший по лагерю находится в доме слева от входа в шахту. Топайте сразу к нему.";
+			link.l1 = "Хорошо, приятель...";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "Ребята, у нас тут шпик! Орудия, пли!!";
+			link.l1 = "...";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1635,7 +1627,7 @@ void ProcessDialogEvent()
 			Log_Info("Получен талисман 'Бальзам Купидона'!");
 			PlaySound("interface\important_item.wav");
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Элен не одобряет", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
 		break;
@@ -2083,7 +2075,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("Элен не одобряет", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
 		break;
@@ -2092,7 +2084,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("Элен одобряет", "Helena");
+			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);
 			

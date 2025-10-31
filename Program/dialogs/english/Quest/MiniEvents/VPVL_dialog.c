@@ -426,7 +426,6 @@ void ProcessDialogEvent()
 			link.l1 = "Steady as she goes, Pierre! I'd best... hic... weigh anchor before my sea legs turn to jelly and I find myself adrift on this tavern floor! May fair winds fill your sails!";
 			npchar.dialog.currentnode = "RepeatTavern";
 			link.l1.go = "Exit2";
-			CloseQuestHeader("VPVL");
 		break;
 
 		case "Exit2":

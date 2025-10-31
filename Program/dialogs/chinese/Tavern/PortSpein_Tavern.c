@@ -30,6 +30,19 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "听着, 1654年4月, 一艘由米格尔.迪乔索船长指挥的护卫舰停靠在你们港口, 之后他就失踪了。 你能告诉我些什么吗? ";
                 link.l1.go = "guardoftruth";
             }
+			//--> Оковы Азарта
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_1"))
+			{
+				link.l2 = "告诉我, "+npchar.name+", 那个叫哈维尔·卡斯蒂略的是个什么人物? ";
+				link.l2.go = "OZ_Tavern_1";
+			}
+			if (CheckAttribute(pchar, "questTemp.OZ_Tavern_2"))
+			{
+				link.l2 = "我们回到那个能影响哈维尔的人的话题吧。";
+				link.l2.go = "OZ_Tavern_2_1";
+			}
+			//<-- Оковы Азарта
+
         break;
         
         //--> 肺结核的代价
@@ -138,6 +151,55 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             npchar.quest.Consumption_1 = "true";
         break;
         //< —肺结核的代价
+		//--> Оковы Азарта
+		case "OZ_Tavern_1":
+			dialog.text = "哈维尔是个赌徒、骗子和诈骗犯, 总是混在酒馆里, 想找人讹上几个比索。";
+			link.l1 = "也就是说, 他没参与过其他更阴暗的勾当? 也许他有仇家? ";
+			link.l1.go = "OZ_Tavern_2";
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_1");
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "OZ_Tavern_2":
+			dialog.text = "这么说吧, 他的朋友远比那些想拧断他脖子的人少。不过, 如果你想知道一个真能影响他的人, 这要花上一千比索。给钱——我就全告诉你。";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "好吧, 拿去, 老敲诈鬼。";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "这个话题我们以后再谈, 现在我没这笔钱。";
+				link.l1.go = "exit";
+				pchar.questTemp.OZ_Tavern_2 = true;
+				AddLandQuestMark(npchar, "questmarkmain");
+			}
+		break;
+		
+		case "OZ_Tavern_2_1":
+			dialog.text = "船长, 你带来一千比索了吗? ";
+			if (sti(pchar.Money) >= 1000)
+			{
+				link.l1 = "带来了。拿去, 老敲诈鬼。";
+				link.l1.go = "OZ_Tavern_3";
+			}
+			else
+			{
+				link.l1 = "该死的, 我很快就回来。";
+				link.l1.go = "exit";
+			}
+		break;
+		
+		case "OZ_Tavern_3":
+			dialog.text = "这才像话。你看, 哈维尔不光有赌债, 还曾一度想搞古董买卖, 可想而知, 这事最后没什么好下场。起初他的生意还算顺利, 但后来他有机会买下一件稀罕玩意儿\n他对此痴迷不已, 跑遍所有放债人借钱。当然, 没人肯借他一分钱。于是他找到了一个同样痴迷古董的人, 从他那里借了十五万比索。接下来, 你应该能猜到结果\n他被狠狠耍了一道, 这笔债现在像石头一样压在他脖子上。他只还了九牛一毛, 看来根本没打算还清, 哪怕债主已经雇了人去吓唬他\n这个债主叫费利佩·阿拉尔孔, 他的房子就在银行对面, 你一眼就能认出来——那是一栋入口有柱子的漂亮豪宅。";
+			link.l1 = "谢了! ";
+			link.l1.go = "exit";
+			AddMoneyToCharacter(pchar, -1000);
+			DeleteAttribute(pchar, "questTemp.OZ_Tavern_2");
+			AddDialogExitQuestFunction("OZ_Felip_1");
+			DelLandQuestMark(npchar);
+		break;
+		//<-- Оковы Азарта
         
         case "guardoftruth":
             dialog.text = "我记得他。 经常来我的酒馆, 但不多说话。 喝几杯朗姆酒, 和一些顾客低语几句就走了。 像那艘护卫舰上的每个人一样, 非常阴郁和严肃。 看起来很危险的雇佣兵, 随时准备好刀刃。 有传言说那艘护卫舰装满了宝藏, 但我不相信这样的故事。 贵重货物从来不会在没有护航的情况下用单艘船运输。 他们在这里待了一天, 然后离开了。 我听说去了欧洲。 这就是我所知道的。 ";

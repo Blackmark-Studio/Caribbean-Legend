@@ -9,24 +9,39 @@ void FMQ_SetConditions(string qName) // установка параметров 
 		return;
 	}
 	if (CheckAttribute(pchar, "questTemp.FMQ.Success")) return;
-	// Гваделупа
-	pchar.quest.FMQG_start.win_condition.l1 = "location";
-	pchar.quest.FMQG_start.win_condition.l1.location = "Baster_town";
-	pchar.quest.FMQG_start.win_condition.l2 = "Ship_location";
-	pchar.quest.FMQG_start.win_condition.l2.location = "Baster_town";
-	pchar.quest.FMQG_start.win_condition.l3 = "Hour";
-	pchar.quest.FMQG_start.win_condition.l3.start.hour = 8.00;
-	pchar.quest.FMQG_start.win_condition.l3.finish.hour = 15.00;
-	pchar.quest.FMQG_start.function = "FMQG_Activation";
-	// Мартиника
-	pchar.quest.FMQM_start.win_condition.l1 = "location";
-	pchar.quest.FMQM_start.win_condition.l1.location = "Fortfrance_town";
-	pchar.quest.FMQM_start.win_condition.l2 = "Ship_location";
-	pchar.quest.FMQM_start.win_condition.l2.location = "Fortfrance_town";
-	pchar.quest.FMQM_start.win_condition.l3 = "Hour";
-	pchar.quest.FMQM_start.win_condition.l3.start.hour = 8.00;
-	pchar.quest.FMQM_start.win_condition.l3.finish.hour = 20.00;
-	pchar.quest.FMQM_start.function = "FMQM_Activation";
+	if (!SandBoxMode)
+	{
+		// Гваделупа
+		pchar.quest.FMQG_start.win_condition.l1 = "location";
+		pchar.quest.FMQG_start.win_condition.l1.location = "Baster_town";
+		pchar.quest.FMQG_start.win_condition.l2 = "Ship_location";
+		pchar.quest.FMQG_start.win_condition.l2.location = "Baster_town";
+		pchar.quest.FMQG_start.win_condition.l3 = "Hour";
+		pchar.quest.FMQG_start.win_condition.l3.start.hour = 8.00;
+		pchar.quest.FMQG_start.win_condition.l3.finish.hour = 15.00;
+		pchar.quest.FMQG_start.function = "FMQG_Activation";
+		AddMapQuestMarkCity("Baster", false);
+		// Мартиника
+		pchar.quest.FMQM_start.win_condition.l1 = "location";
+		pchar.quest.FMQM_start.win_condition.l1.location = "Fortfrance_town";
+		pchar.quest.FMQM_start.win_condition.l2 = "Ship_location";
+		pchar.quest.FMQM_start.win_condition.l2.location = "Fortfrance_town";
+		pchar.quest.FMQM_start.win_condition.l3 = "Hour";
+		pchar.quest.FMQM_start.win_condition.l3.start.hour = 8.00;
+		pchar.quest.FMQM_start.win_condition.l3.finish.hour = 20.00;
+		pchar.quest.FMQM_start.function = "FMQM_Activation";
+		AddMapQuestMarkCity("Fortfrance", false);
+		// Тортуга
+		pchar.quest.FMQT_start.win_condition.l1 = "location";
+		pchar.quest.FMQT_start.win_condition.l1.location = "Tortuga_town";
+		pchar.quest.FMQT_start.win_condition.l2 = "Ship_location";
+		pchar.quest.FMQT_start.win_condition.l2.location = "Tortuga_town";
+		pchar.quest.FMQT_start.win_condition.l3 = "Hour";
+		pchar.quest.FMQT_start.win_condition.l3.start.hour = 10.00;
+		pchar.quest.FMQT_start.win_condition.l3.finish.hour = 16.00;
+		pchar.quest.FMQT_start.function = "FMQT_Activation";
+		AddMapQuestMarkCity("Tortuga", false);
+	}
 	// Сент-Кристофер
 	pchar.quest.FMQN_start.win_condition.l1 = "location";
 	pchar.quest.FMQN_start.win_condition.l1.location = "Charles_town";
@@ -36,15 +51,7 @@ void FMQ_SetConditions(string qName) // установка параметров 
 	pchar.quest.FMQN_start.win_condition.l3.start.hour = 8.00;
 	pchar.quest.FMQN_start.win_condition.l3.finish.hour = 21.00;
 	pchar.quest.FMQN_start.function = "FMQN_Activation";
-	// Тортуга
-	pchar.quest.FMQT_start.win_condition.l1 = "location";
-	pchar.quest.FMQT_start.win_condition.l1.location = "Tortuga_town";
-	pchar.quest.FMQT_start.win_condition.l2 = "Ship_location";
-	pchar.quest.FMQT_start.win_condition.l2.location = "Tortuga_town";
-	pchar.quest.FMQT_start.win_condition.l3 = "Hour";
-	pchar.quest.FMQT_start.win_condition.l3.start.hour = 10.00;
-	pchar.quest.FMQT_start.win_condition.l3.finish.hour = 16.00;
-	pchar.quest.FMQT_start.function = "FMQT_Activation";
+	AddMapQuestMarkCity("Charles", false);
 	// Порт-о-Пренс
 	pchar.quest.FMQP_start.win_condition.l1 = "location";
 	pchar.quest.FMQP_start.win_condition.l1.location = "Portpax_town";
@@ -54,10 +61,6 @@ void FMQ_SetConditions(string qName) // установка параметров 
 	pchar.quest.FMQP_start.win_condition.l3.start.hour = 8.00;
 	pchar.quest.FMQP_start.win_condition.l3.finish.hour = 22.00;
 	pchar.quest.FMQP_start.function = "FMQP_Activation";
-	AddMapQuestMarkCity("Baster", false);
-	AddMapQuestMarkCity("Fortfrance", false);
-	AddMapQuestMarkCity("Charles", false);
-	AddMapQuestMarkCity("Tortuga", false);
 	AddMapQuestMarkCity("Portpax", false);
 	// флаг, он же счетчик
 	pchar.questTemp.FMQ.Success = 0;
@@ -866,7 +869,7 @@ void FMQM_GuideAdvice(string qName) //
 
 void FMQM_HurryLate(string qName) // 
 {
-	pchar.worldmapencountersoff = "0"; // включить энкаунтеры
+	bEncOffGlobal = false; // включить энкаунтеры
 	pchar.quest.FMQM_hurry.over = "yes";
 	pchar.questTemp.FMQM = "fail";
 	AddQuestRecord("FMQ_Martinique", "14");
@@ -876,7 +879,7 @@ void FMQM_HurryLate(string qName) //
 
 void FMQM_ArriveGuadeloupe(string qName) // 
 {
-	pchar.worldmapencountersoff = "0"; // включить энкаунтеры
+	bEncOffGlobal = false; // включить энкаунтеры
 	pchar.quest.FMQM_HurryLate.over = "yes";
 	AddQuestRecord("FMQ_Martinique", "15");
 	Island_SetReloadEnableGlobal("Guadeloupe", false);
@@ -1018,8 +1021,8 @@ void FMQM_AbandonCoast(string qName) // в бухте Морн л'О
 		if (i == 1)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("FMQM_Enemy_crew_"+i, "mush_ctz_9", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.MusketerDistance = 0;
 		}
 		else
@@ -1036,7 +1039,7 @@ void FMQM_AbandonCoast(string qName) // в бухте Морн л'О
 		if (MOD_SKILL_ENEMY_RATE > 8)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("FMQM_Enemy_crew_plus", "mush_ctz_8", "man", "mushketer", iRank+3, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank+3, iScl+5, iScl+5, "", "mushket1", "cartridge", iScl*3);
+			FantomMakeCoolFighter(sld, iRank+3, iScl+5, iScl+5, "", "mushket1", "bullet", iScl*3);
 			sld.MusketerDistance = 0;
 			ChangeCharacterAddressGroup(sld, "Shore28", "smugglers", "smugglerload");
 		}
@@ -1226,8 +1229,8 @@ void FMQN_Activation(string qName) //
 		if (i == 5)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("FMQN_seafox_"+i, "mush_eng_6", "man", "mushketer", iRank, ENGLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		}
 		else
 		{
@@ -1348,7 +1351,8 @@ void FMQN_ChooseContinue() // продолжаем квест
 	bDisableCharacterMenu = false;
 	pchar.GenQuest.SmugglersBlock = "marigo_tavern"; 
 	DeleteAttribute(pchar, "questTemp.FMQN.Choose");
-	AddQuestRecord("FMQ_Nevis", "4");
+	if (GetNationRelation(ENGLAND, HOLLAND) == RELATION_ENEMY) {AddQuestRecord("FMQ_Nevis", "4");}
+	else {log_info(AddQuestRecord("FMQ_Nevis", "4_1"));}
 	pchar.quest.FMQN_to_port.win_condition.l1 = "location";
 	pchar.quest.FMQN_to_port.win_condition.l1.location = "Marigo_town";
 	pchar.quest.FMQN_to_port.win_condition.l2 = "Ship_location";
@@ -1868,7 +1872,7 @@ void FMQN_EnglandInShoreAttack(string qName) // рубилово в бухте
 		if (i > 7)
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("FMQN_holland_"+i, "mush_hol_"+(i-4), "man", "mushketer", iRank, HOLLAND, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*3);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*3);
 			sld.MusketerDistance = 0;
 			ChangeCharacterAddressGroup(sld, "shore40", "goto", "goto"+(i+3));
 		}
@@ -2225,6 +2229,7 @@ void FMQT_WifeMeeting(string qName) //
 	SetFantomParamFromRank(sld, 5, true);
 	sld.name = StringFromKey("FMQ_47");
 	sld.lastname = StringFromKey("FMQ_48");
+	sld.SpecialRole = "hovernon_wife";
 	sld.Dialog.Filename = "Quest\LineMiniQuests\FMQ_Tortuga.c";
 	if (pchar.questTemp.FMQT == "begin_serveroom") sld.Dialog.currentnode = "wife";
 	else sld.Dialog.currentnode = "wife_8";
@@ -2331,22 +2336,7 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	pchar.questTemp.FMQT = "chest_open";
 	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
 	LAi_group_Delete("EnemyFight");
-	sld = GetCharacter(NPC_GenerateCharacter("Duran", "Claude_Durand", "man", "man", 1, FRANCE, -1, false, "soldier"));
-	sld.name = StringFromKey("FMQ_49");
-	sld.lastname = StringFromKey("FMQ_50");
-	sld.Dialog.Filename = "Quest\LineMiniQuests\FMQ_Tortuga.c";
-	sld.Dialog.currentnode = "mercen";
-	sld.rank = 15;
-	sld.reputation = 25;
-	sld.alignment = "bad";
-	LAi_SetHP(sld, 180, 180);
-	SetSelfSkill(sld, 45, 50, 45, 45, 35);
-	SetShipSkill(sld, 25, 10, 20, 20, 20, 20, 20, 20, 30);
-	SetSPECIAL(sld, 8, 5, 8, 4, 6, 8, 5);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "CriticalHit");
+	sld = InitDuran();
 	if (MOD_SKILL_ENEMY_RATE > 4)
 	{
 		SetCharacterPerk(sld, "Sliding");
@@ -2354,9 +2344,6 @@ void FMQT_MercenEnter(string qName) // входит наемник
 		sld.MultiFighter = 1.5;
 		sld.MultiShooter = 2.0;
 	}
-	SetCharacterPerk(sld, "Gunman");
-	SetCharacterPerk(sld, "Tireless");
-	sld.SuperShooter = true;
 	EquipCharacterByArtefact(sld, "indian_1");
 	EquipCharacterByArtefact(sld, "indian_7");
 	EquipCharacterByArtefact(sld, "indian_4");
@@ -2365,8 +2352,10 @@ void FMQT_MercenEnter(string qName) // входит наемник
 	GiveItem2Character(sld, "pistol1");
 	EquipCharacterbyItem(sld, "pistol1");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
-    TakeNItems(sld, "bullet", 20);
+	TakeNItems(sld, "bullet", 20);
 	AddItems(sld, "gunpowder", 20);
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	
 	int i = makeint(MOD_SKILL_ENEMY_RATE/3);
 	int n = 1+i;
 	TakeNItems(sld, "potion1", n);
@@ -2588,7 +2577,7 @@ void FMQP_InSantoDomingo(string qName) //
 	// ставим засаду в коммон
 	int iRank = MOD_SKILL_ENEMY_RATE+sti(pchar.rank)/2-2;// Addon 2016-1 Jason пиратская линейка
 	int iScl = 15 + sti(pchar.rank);
-	sld = GetCharacter(NPC_GenerateCharacter("FMQP_Ugo", "citiz_19", "man", "man", iRank, PIRATE, 2, false, "soldier"));
+	sld = GetCharacter(NPC_GenerateCharacter("FMQP_Ugo", "citiz_19", "man", "man", iRank, SPAIN, 2, false, "soldier"));
 	FantomMakeCoolFighter(sld, iRank, iScl, iScl, RandPhraseSimple("blade_05","blade_07"), "pistol1", "bullet", iScl*2);
 	sld.name = StringFromKey("FMQ_51");
 	sld.lastname = StringFromKey("FMQ_52");
@@ -2650,7 +2639,7 @@ void FMQP_DomingoEnter(string qName) //
 {
 	sld = CharacterFromID("FMQP_noble");
 	sld.Dialog.currentnode = "noble_5";
-	sld.greeting = "Domingo_1"
+	if (pchar.sex == "man") {sld.greeting = "Domingo_1"}
 	ChangeCharacterAddressGroup(sld, "CommonPirateHouse", "reload", "reload1");
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
@@ -2820,7 +2809,7 @@ void FMQP_CreateUncleLuis(string qName) //
 		SetCharacterPerk(sld, "GunProfessional");
 		if (MOD_SKILL_ENEMY_RATE > 6)
 		{
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			sld.cirassId = Items_FindItemIdx("cirass2");
 		}
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -2925,33 +2914,12 @@ void FMQL_Start() // накручиваем гида и выдаем ему шн
 	//sld.talker = 9;
 	sld.rank = 25;
 	int iHp = MOD_SKILL_ENEMY_RATE*10+300;
-	LAi_SetHP(sld, iHp, iHp);
-	SetSelfSkill(sld, 80, 80, 80, 80, 50);
-	SetShipSkill(sld, 50, 80, 35, 30, 50, 20, 30, 20, 80);
-	SetSPECIAL(sld, 9, 5, 8, 6, 5, 10, 8);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "AdvancedDefense");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "Tireless");
-	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "Sliding");
-	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
-	SetCharacterPerk(sld, "Gunman");
-	SetCharacterPerk(sld, "GunProfessional");
-	SetCharacterPerk(sld, "ShipSpeedUp");
-	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "SailsDamageUp");
-	SetCharacterPerk(sld, "Doctor1");
-	SetCharacterPerk(sld, "BasicBattleState");
-	SetCharacterPerk(sld, "BasicCommerce");
-	SetCharacterPerk(sld, "AdvancedCommerce");
 	GiveItem2Character(sld, "blade_30");
 	EquipCharacterbyItem(sld, "blade_30");
 	GiveItem2Character(sld, "pistol6");
 	EquipCharacterbyItem(sld, "pistol6");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+	GiveCaptainOfficers(sld, true);
 	sld.cirassId = Items_FindItemIdx("cirass4");
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
     TakeNItems(sld, "bullet", 30);
@@ -3209,15 +3177,15 @@ void FMQL_InJungle(string qName) // в джунглях
 	if (CheckAttribute(pchar, "questTemp.Prosper_fmql"))
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("FMQL_Prosper", "Prospero_mush", "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, 110, "", "mushket1", "cartridge", iScl*3);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, iScl, 110, "", "mushket1", "bullet", iScl*3);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.name = StringFromKey("FMQ_61");
 		sld.lastname = StringFromKey("FMQ_62");
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Lesson.c";
 		sld.dialog.currentnode = "prosper";
 		sld.greeting = "prosper_vovremya";
 		sld.cirassId = Items_FindItemIdx("cirass1");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 	}
@@ -3226,8 +3194,8 @@ void FMQL_InJungle(string qName) // в джунглях
 		sld = GetCharacter(NPC_GenerateCharacter("FMQL_mercen", "mush_ctz_12", "man", "mushketer", iRank, FRANCE, -1, false, "soldier"));
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Lesson.c";
 		sld.dialog.currentnode = "mercen";
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*3);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*3);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 	}
 	ChangeCharacterAddressGroup(sld, "Common_jungle_01", "rld", "aloc0");
 	DeleteAttribute(sld, "SaveItemsForDead");
@@ -3342,8 +3310,8 @@ void FMQL_CreateCaribMushketer(string qName) // вышли из леса кру�
 	for (int i=1; i<=4; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("FMQL_canib_mush_"+i, "mush_cnb_"+(rand(2)+1), "man", "mushketer", iRank, PIRATE, -1, false, "native"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.name = GetIndianName(MAN);
 		sld.lastname = "";
 		ChangeCharacterAddressGroup(sld, "Common_jungle_01", "quest", "quest1");
@@ -3643,7 +3611,7 @@ void FMQL_CreateGuidesWarriors() // ставим кодлу гида
 	TakeNItems(sld, "potion2", makeint(MOD_SKILL_ENEMY_RATE/2)); // may-16
 	//sld.cirassId = Items_FindItemIdx("cirass1");
 	sld.LSC_clan = true; // may-16
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	ChangeCharacterAddressGroup(sld, "Shore38", "box", "box1");
@@ -3661,7 +3629,7 @@ void FMQL_CreateGuidesWarriors() // ставим кодлу гида
 		TakeNItems(sld, "potion2", makeint(MOD_SKILL_ENEMY_RATE/3)); // may-16
 		//sld.cirassId = Items_FindItemIdx("cirass4");
 		sld.LSC_clan = true; // may-16
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 		DeleteAttribute(sld, "SaveItemsForDead");
@@ -3843,13 +3811,13 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		RemoveAllCharacterItems(sld, true);
 		GiveItem2Character(sld, "blade_12");
 		EquipCharacterbyItem(sld, "blade_12");
+		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
 		sld.name = StringFromKey("FMQ_59");
 		sld.lastname = StringFromKey("FMQ_60");
 		sld.dialog.FileName = "Quest\LineMiniQuests\FMQ_Martinique.c";
 		sld.dialog.currentnode = "greguar";
 		sld.greeting = "";
 		sld.rank = 25;
-		LAi_SetHP(sld, 350, 350);
 		LAi_SetImmortal(sld, true);
 		ChangeCharacterAddressGroup(sld, "Fortfrance_town", "goto", "goto13");
 		LAi_SetActorType(sld);
@@ -3910,7 +3878,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 			SetFunctionTimerCondition("FMQM_HurryLate", 0, 0, 10, false);
 		}
 		else SetFunctionTimerCondition("FMQM_HurryLate", 0, 0, 5, false);
-		pchar.worldmapencountersoff = "1"; // отключить энкаунтеры
+		bEncOffGlobal = true; // отключить энкаунтеры
 	}
 	else if (sQuestName == "FMQM_ShoreAfterFight") // прибили контру
 	{
@@ -3951,8 +3919,8 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 			if (i > 3)
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("FMQM_mercenary_"+i, sModel_m, "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				sld.MusketerDistance = 0;
 				sGroup = "goto";
 				sLocator = "goto"+(i+7);
@@ -4356,6 +4324,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 	{
 		chrDisableReloadToLocation = false;
 		sld = CharacterFromID("Duran");
+		ForceHeroAutoLevel(sld);
 		LAi_SetImmortal(sld, false);
 		sld.quest.OfficerPrice = sti(pchar.rank)*2000;
 		Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
@@ -4919,6 +4888,7 @@ bool FMQ_QuestComplete(string sQuestName, string qname)
 		}
 		sld = CharacterFromID("Guide_y");
 		sld.dialog.currentnode = "greguar_20";
+		sld.SpecialRole = "enemy";
 		LAi_SetActorType(sld);
 		LAi_ActorDialogDelay(sld, pchar, "", 2.0);
 	}

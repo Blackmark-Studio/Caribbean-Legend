@@ -948,7 +948,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text = "Oh! Stavo proprio per chiederti un favore. Vedi, ho bisogno di consegnare il carico di "+GetGoodsNameAlt(iTradeGoods)+" nella quantità di "+FindRussianQtyString(iQuantityGoods)+" alla città di "+sNation+sTemp+", e quanto prima, meglio è. Se riesci a farlo per "+FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired))+", allora all'arrivo riceverai "+FindRussianMoneyString(iMoney)+" come tua ricompensa. Che ne dici?";
     							link.l1 = "Credo di essere d'accordo.";
@@ -1461,7 +1461,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "Il mio 'amico' è attualmente a casa sua a "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Non hai bisogno di lui - hai bisogno della sua nave, che, come ho scoperto dopo circa "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" passerà vicino a "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Puoi affondarlo, puoi prenderlo abordandolo - non importa. L'importante è assicurarsi che la nave e il carico non siano più proprietà di "+pchar.GenQuest.Sunplace.Trader.Enemyname+". E non mi importa, chi lo reclamerà - tu o il mare. Per quel lavoro ti pagherò "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "Il mio 'amico' è attualmente a casa sua a "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Non hai bisogno di lui - hai bisogno della sua nave, che, come ho scoperto dopo circa "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" passerà vicino a "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Puoi affondarlo, puoi prenderlo abordandolo - non importa. L'importante è assicurarsi che la nave e il carico non siano più proprietà di "+pchar.GenQuest.Sunplace.Trader.Enemyname+". E non mi importa, chi lo reclamerà - tu o il mare. Per quel lavoro ti pagherò "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "Capito. Beh, è ora di partire allora!";
 			link.l1.go = "Sunplace_3";
 		break;

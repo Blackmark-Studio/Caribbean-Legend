@@ -1,0 +1,35 @@
+Sharle {Sharle}
+Diego {Diego}
+Willy {Willy}
+Mary {Mary}
+Helena {Helen}
+Tichingitu {Tichingitu}
+Tonzag {Tonzag}
+Knippel {Knippel}
+Longway {Longway}
+Folke {Folke}
+Duran {Durand}
+Avendel {Avendel}
+Baker {Baker}
+Irons {Irons}
+Alonso {Alonso}
+de Maure {de Maure}
+de Montoya {de Montoya}
+Paterson {Paterson}
+Kasper {Kasper}
+McArthur {McArthur}
+Hercule {Hercule}
+Charlie {Charlie}
+Deluc {Deluc}
+Claude {Claude}
+Hugo {Hugo}
+Raymond {Raymond}
+Tommy {Tommy}
+Thomas {Thomas}
+Morrison {Morrison}
+Julie {Julie}
+d'Armagnac {d'Armagnac}
+Henri {Henri}
+d'Aubuisson {d'Aubuisson}
+Alicia {Alicia}
+Chardon {Chardon}

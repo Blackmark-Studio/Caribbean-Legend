@@ -24,6 +24,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			link.l1 = "Mira, estoy buscando a un hombre llamado Bertrand Pinette, ¿has oído hablar de él? Un caballero imponente con una peluca rizada. Un comerciante. Puede que haya estado aquí...";
 			link.l1.go = "FMQG";
 		}
+		//--> Письмо от покойника
+		if (CheckAttribute(pchar, "questTemp.LFD_Tavern_1"))
+        {
+            link.l1 = "¿Podrías decirme dónde puedo encontrar a Marisa Caldera?";
+            link.l1.go = "LFD_Tavern_1_1";
+        }
+		//<-- Письмо от покойника
 		break;
 
 	case "Portobello_rat_1":
@@ -58,7 +65,39 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		DialogExit();
 		AddQuestRecord("FMQ_Guadeloupe", "9");
 		npchar.quest.FMQG = true;
-		break;
+	break;
+	
+	//--> Письмо от покойника
+	case "LFD_Tavern_1_1":
+		dialog.text = "¿Marisa? Hm... Hace tiempo que no la veo. Desde que le informaron de la muerte de su marido, no se ha dejado ver por la ciudad.";
+		link.l1 = "¿Entonces es viuda?";
+		link.l1.go = "LFD_Tavern_1_2";
+		DelLandQuestMark(npchar);
+	break;
+		
+	case "LFD_Tavern_1_2":
+		dialog.text = "Sí. Su marido era el capitán de una pinaza mercante llamada 'Rompeolas'. Gracias a una licencia de la Compañía Neerlandesa de las Indias Occidentales, tenía acceso a casi todos los puertos del archipiélago. Se rumorea que no sobrevivió a un ataque pirata en su ruta de Belice a Capsterville. No es algo raro por aquí, pero para ella fue un golpe devastador.";
+		link.l1 = "¿Y simplemente desapareció?";
+		link.l1.go = "LFD_Tavern_1_3";
+	break;
+		
+	case "LFD_Tavern_1_3":
+		dialog.text = "Bueno, decir que desapareció es exagerar un poco. Pero desde entonces apenas se la ha visto en la ciudad. Curiosamente... de vez en cuando distintos hombres preguntan por ella. Igual que tú, capitán. Si no fuera tan devota, pensaría que... se ha escondido de la vista pública y se gana la vida como puede. Pero Marisa, antes de que muriera su esposo, no se perdía ni una misa. Vivía prácticamente en la iglesia, así que lo dudo mucho.";
+		link.l1 = "¿Eso es todo? ¿No sabes nada más?";
+		link.l1.go = "LFD_Tavern_1_4";
+	break;
+		
+	case "LFD_Tavern_1_4":
+		dialog.text = "Todo lo que sé, capitán, ya te lo he contado.";
+		link.l1 = "...";
+		link.l1.go = "LFD_Tavern_1_5";
+	break;
+		
+	case "LFD_Tavern_1_5":
+		DialogExit();
+		AddDialogExitQuestFunction("LFD_Tavern_1");
+	break;
+	//<-- Письмо от покойника
 	}
 	UnloadSegment(NPChar.FileDialog2); // если где-то выход внутри switch  по return не забыть сделать анлод
 }

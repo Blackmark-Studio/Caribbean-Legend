@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Reputation Check Passed", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 30)//низкая навигация
 			{
@@ -310,6 +310,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Knippel_ToOfficer_1":
+			ForceHeroAutolevel(npchar);
 			LocatorReloadEnterDisable("SentJons_town", "reload1_back", false);
 			LocatorReloadEnterDisable("SentJons_town", "reload2_back", false);
 			LocatorReloadEnterDisable("SentJons_town", "gate_back", false);//откроем локаторы
@@ -418,7 +419,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "OnCuracao_4";
 			AddMoneyToCharacter(pchar, 200000);
 			LAi_SetCitizenType(npchar);
-			npchar.lifeday = 1;//еще денек пусть погуляет по пляжу
+			npchar.lifeday = 1;//ещё денек пусть погуляет по пляжу
 			pchar.quest.Holland_ShoreAttack.win_condition.l1 = "location";
 			pchar.quest.Holland_ShoreAttack.win_condition.l1.location = "Curacao";
 			pchar.quest.Holland_ShoreAttack.function = "CreateHollandShorePatrol";//патруль в прибрежных водах
@@ -449,7 +450,7 @@ void ProcessDialogEvent()
 			npchar.OfficerImmortal = true;
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			AddPassenger(pchar, npchar, false);
 			SetCharacterRemovable(npchar, true);
 			npchar.Payment = true;
@@ -460,6 +461,7 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = "Knippel_officer";
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
+			ForceHeroAutolevel(npchar);
 			
 			//Sinistra - через 2 месяца стартует личный квест Чарли Книппеля "Длинные тени старых грехов"
 			SetTimerCondition("DTSG_Start", 0, 0, 60, false);

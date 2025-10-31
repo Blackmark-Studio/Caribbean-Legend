@@ -534,6 +534,7 @@ void FillPriceListTownSorted(string _tabName)
 }
 
 // --> mitrokosta сортировка по дате
+/*
 int DateStringToInt(string dateString) {
 	int pos;
 	string time, date;
@@ -563,6 +564,7 @@ int DateStringToInt(string dateString) {
 	
 	return totalTime;
 }
+*/
 
 void FillPriceListTownSortedByDate(string _tabName) {
 	string	cityId, attr2, firstId;
@@ -817,7 +819,7 @@ void FillPriceList(string _tabName, string  attr1)
 	{
 	    // <--
 	    n = 1;
-	    for (i = 0; i < GOODS_QUANTITY; i++)
+	    for (i = 0; i < GetArraySize(&Goods); i++)
 	    {
 	        row = "tr" + n;
 	        sGoods = "Gidx" + i;			
@@ -943,7 +945,7 @@ void ShowInfoWindow()
 		break;
 		// <--
 	}
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	CreateTooltip(sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64);
 
 }
 void HideInfoWindow()

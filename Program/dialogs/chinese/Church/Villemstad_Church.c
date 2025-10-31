@@ -14,6 +14,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "打扰了, 神父, 您教区的一位神职人员让我调查约阿希姆.梅里曼曾租住的那栋房子…";
                 link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
             }
         break;
         
@@ -107,6 +108,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             AddCharacterExpToSkill(pchar, "Leadership", 300);
             pchar.questTemp.Caleuche = "havana";
             Caleuche_PrepareCubaGrot();
+			AddLandQuestMark(characterFromId("Havana_Priest"), "questmarkmain");
         break;
     }
     UnloadSegment(NPChar.FileDialog2);  // 若switch内部某处通过return退出, 切记执行卸载

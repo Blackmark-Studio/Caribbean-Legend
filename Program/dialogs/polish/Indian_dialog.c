@@ -518,7 +518,7 @@ link.l1.go = "hayamee_1_1";
 			link.l1 = "Powiedz Tagofie, że dam mu mój najpiękniejszy pistolet. A dla ciebie mam wiele klejnotów.";
 			link.l1.go = "hayamee_2";
 			notification("The Indians respect you "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			notification("Trustworthy", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		break;
 		
 		case "hayamee_2":

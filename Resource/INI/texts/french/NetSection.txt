@@ -1,17 +1,20 @@
-Net_ShipDieFromPlayer               {%1 <%2> coule %3 <%4>. }
-Net_ShipDieFromCollisionLiveShip    {%1 <%2> rammed %3 <%4>. }
-Net_ShipDieFromCollisionDeadShip    {%1 <%2> est alle nourrir les requins! Malheur a un tel navigateur! }
-Net_ShipDieFromCollisionIsland      {%1 <%2> s’est ecrase contre les rochers! Honte a un tel navigateur! }
-Net_ShipDieFromLighting             {Le Seigneur etait en colere contre %1 <%2> et l’a chatie ! }
-Net_ShipDieFromCriticalHit          {%1 <%2> souffle %3 <%4> en morceaux! }
-Net_CriticalHit                     {%1 <%2> touche le baril de poudre sur le pont de %3 <%4>! }
-Net_MastFallFromHit                 {%1 <%2> a fait tomber le mat de %3 <%4>. }
-Net_MastFallFromCollision           {%1 <%2> a perdu le mat a la suite d’une collision. }
-Net_FireActivation                  {%1 <%2> a mis le feu a %3 <%4>}
-NetFG_ServerIsFull                  {Le serveur est plein. La connexion d’un autre joueur est impossible.
-NetFG_NeedUserPassword              {Le mot de passe saisi ne correspond pas au mot de passe stocke sur le serveur, veuillez reessayer. }
-NetFG_NeedServerPassword            {Vous avez saisi un mot de passe non valide pour vous connecter au serveur, veuillez reessayer. }
-NetFG_RejectedUnknown               {La connexion au serveur a echoue pour des raisons inconnues. }
-NetFG_Banned                        {Il vous a ete interdit d’acceder a ce serveur. }
-NetEG_DeathMatch                    {Bataille terminee.  \n \n%1 gagne! }
-NetEG_Team                          {Bataille terminee.  \n \nTeam "%1" won!
+Net_ShipDieFromPlayer {%1 <%2> coule %3 <%4>.}
+Net_ShipDieFromCollisionLiveShip {%1 <%2> rammed %3 <%4>.}
+Net_ShipDieFromCollisionDeadShip {%1 <%2> est alle nourrir les requins! Malheur a un tel navigateur!}
+Net_ShipDieFromCollisionIsland {%1 <%2> s’est ecrase contre les rochers! Honte a un tel navigateur!}
+Net_ShipDieFromLighting {Le Seigneur etait en colere contre %1 <%2> et l’a chatie !}
+Net_ShipDieFromCriticalHit {%1 <%2> souffle %3 <%4> en morceaux!}
+Net_CriticalHit {%1 <%2> touche le baril de poudre sur le pont de %3 <%4>!}
+Net_MastFallFromHit {%1 <%2> a fait tomber le mat de %3 <%4>.}
+Net_MastFallFromCollision {%1 <%2> a perdu le mat a la suite d’une collision.}
+Net_FireActivation {%1 <%2> a mis le feu a %3 <%4>}
+NetFG_ServerIsFull
+{
+Le serveur est plein. La connexion d’un autre joueur est impossible.NetFG_NeedUserPassword
+}
+NetFG_NeedUserPassword { }
+NetFG_NeedServerPassword {Vous avez saisi un mot de passe non valide pour vous connecter au serveur, veuillez reessayer.}
+NetFG_RejectedUnknown {La connexion au serveur a echoue pour des raisons inconnues.}
+NetFG_Banned {Il vous a ete interdit d’acceder a ce serveur.}
+NetEG_DeathMatch {Bataille terminee.  \n \n%1 gagne!}
+NetEG_Team {Bataille terminee.  \n \nTeam "%1" won!}

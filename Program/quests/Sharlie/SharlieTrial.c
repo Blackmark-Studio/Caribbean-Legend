@@ -22,6 +22,19 @@ void Sharlie_enterSoldiers()//арестовывающие солдаты
 	LAi_ActorDialog(sld, pchar, "", 1.0, 0);
 }
 
+void Sharlie_enterSoldiers_2()
+{
+	chrDisableReloadToLocation = false;
+	DoFunctionReloadToLocation("FortFrance_prison", "goto", "goto9", "Puancie_InJail");
+	WaitDate("", 0, 0, 2, 0, 10); //крутим время
+	RecalculateJumpTable();
+	RemoveAllCharacterItems(PChar, true);
+	sld = characterFromId("Puancie");
+	sld.dialog.currentnode = "Puancie_Jail"; 
+	LAi_SetActorTypeNoGroup(sld);
+	ChangeCharacterAddressGroup(sld, "FortFrance_prison", "goto", "goto13");
+}
+
 void Puancie_InJail(string qName)//Пуанси в тюрьме //Sinistra Катсцена
 {
     StartQuestMovie(true, false, true);
@@ -102,11 +115,109 @@ void Sharlie_MaltieAfterJail(string qName)//мальтийский рыцарь
 	LAi_ActorDialog(sld, pchar, "", 4.0, -1);
 }
 
+void Sharlie_Maltie_DlgExit_1()
+{
+	sld = CharacterFromID("Sh_Maltie");
+	LAi_ActorGoToLocation(sld, "reload", "reload1_back", "FortFrance_town", "officers", "reload7_1", "Maltie_GoTown", -1);
+}
+
+void Sharlie_Maltie_DlgExit_2()
+{
+	chrDisableReloadToLocation = false;//открыть локацию
+	sld = CharacterFromID("Sh_Maltie");
+	sld.lifeday = 0;
+	LAi_ActorGoToLocator(sld, "goto", "goto1", "none", -1);
+}
+
+void Sharlie_Maltie_DlgExit_3()
+{
+	Pchar.quest.Sharlie_Maltie.win_condition.l1 = "location";
+	Pchar.quest.Sharlie_Maltie.win_condition.l1.location = "FortFrance_town";
+	Pchar.quest.Sharlie_Maltie.win_condition = "Maltie_GoBasement";
+	QuestPointerDelLoc("FortFrance_prison", "reload", "reload1");
+}
+
 void Sharlie_BenuaLoanTime(string qName)//займ у Бенуа // Addon 2016-1 Jason пиратская линейка 1
 {
 	if (!CheckAttribute(pchar, "questTemp.Sharlie.BenuaLoan")) return;
     pchar.questTemp.Sharlie.BenuaLoan.Late = "true";
 	log_info(StringFromKey("SharlieTrial_1"));
+}
+
+void Sharlie_Mishelle_OpenWorld()// С этого момента открываются остальные острова, квесты и активности
+{
+	TakeNItems(pchar, "bullet", 5);
+	TakeNItems(pchar, "gunpowder", 5);
+	pchar.questTemp.Sharlie = "trial";
+	pchar.questTemp.Trial = "begin"; // старт промежуточной линейки
+	SetFunctionTimerCondition("Sharlie_TrialOver", 0, 0, 24, false); // таймер
+	if(bImCasual) NewGameTip("Режим исследования: таймер не отключён. Уложитесь в срок!");
+	AddMapQuestMarkCity("Baster", false);
+	AddLandQuestMark(characterFromId("Fadey"), "questmarkmain");
+	AddQuestRecord("Sharlie", "19");
+	// открываем все острова
+	for (i=0; i<MAX_ISLANDS; i++)
+	{				
+		if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
+	}
+	DeleteAttribute(pchar, "questTemp.Sharlie.Lock"); //снимаем блокировку
+	LocatorReloadEnterDisable("FortFrance_store", "reload2", false); // откроем склад магазина
+	sld = characterFromId("Benua");
+	sld.quest.help = "true";
+	sld = CharacterFromID("Mishelle");
+	sld.greeting = "mishelle_3";
+	i = FindIsland("Martinique");
+	Islands[i].EffectRadius = 5000;
+	// Addon-2016 Jason, французские миниквесты (ФМК)
+	pchar.quest.Sharlie_FMQ.win_condition.l1 = "Rank";
+	pchar.quest.Sharlie_FMQ.win_condition.l1.value = 4;
+	pchar.quest.Sharlie_FMQ.win_condition.l1.operation = ">=";
+	pchar.quest.Sharlie_FMQ.function = "FMQ_SetConditions";
+	// Sinistra - миниквест "Делюк"
+	PChar.quest.Del_Alonso.win_condition.l1 = "location";
+	PChar.quest.Del_Alonso.win_condition.l1.location = "FortFrance_town";
+	PChar.quest.Del_Alonso.function = "Del_Alonso";
+	// при достижении уровня даём флаг на квест "Голландский Гамбит"
+	pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1 = "Rank";
+	pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.value = 9;
+	pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.operation = ">=";
+	pchar.quest.Sharlie_GambitStage_level_9.function = "Sharlie_GambitStage_level_9";
+	pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1 = "Rank";
+	pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.value = 12;
+	pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.operation = ">=";
+	pchar.quest.Sharlie_GambitStage_level_12.function = "Sharlie_GambitStage_level_12";
+	//маркер на контрабандиста по квесту "Деньги на деревьях"
+	AddLandQuestMark(characterFromId("FortFrance_Smuggler"), "questmarkmain");
+	PChar.quest.MOT_UbratMarku.win_condition.l1 = "MapEnter";
+	PChar.quest.MOT_UbratMarku.win_condition = "MOT_UbratMarku";
+	// Sinistra - Старт квеста "Травля крысы"
+	pchar.questTemp.TK_TravlyaKrys = true;
+	AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
+	SetTimerCondition("TK_Timer", 0, 0, 30, false);
+	//маркер на торговца БасТера по квесту "Бесчестный конкурент"
+	AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
+}
+
+void Sharlie_Benua_BrotherEscape()
+{
+	pchar.questTemp.Sharlie = "escape";
+	CloseQuestHeader("Sharlie");
+	AddQuestRecord("Guardoftruth", "1");
+	pchar.questTemp.Guardoftruth = "begin";
+	// ставим пленного испанца
+	sld = GetCharacter(NPC_GenerateCharacter("spa_baseprisoner", "q_spa_off_1", "man", "man", 30, SPAIN, -1, true, "quest"));
+	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_13", "pistol1", "bullet", 150);
+	sld.dialog.FileName = "Quest\Sharlie\Guardoftruth.c";
+	sld.dialog.currentnode = "spa_prisoner";
+	RemoveAllCharacterItems(sld, true);
+	LAi_SetStayType(sld);
+	LAi_SetImmortal(sld, true);
+	ChangeCharacterAddressGroup(sld, "Fortfrance_dungeon", "quest", "quest1");
+	LAi_CharacterDisableDialog(sld);//запрет диалога
+	
+	// наступает финальный этап игры, а значит и новые квесты
+	SetFunctionTimerCondition("GoldenGirl_Start", 0, 0, 1, false); // Запуск квеста Дороже золота
+	if (!CheckAttribute(pchar, "questTemp.WildRose_Start") && CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) SetFunctionTimerCondition("WildRose_Start", 0, 0, 1, false); // Запуск квеста Дикая Роза
 }
 
 //------------------------------------------мини-квесты для сбора денег---------------------------------------
@@ -501,6 +612,7 @@ void Captive_CreatePirates(string qName)//устанавливаем пират�
 			GiveItem2Character(sld, "slave_02");
 			EquipCharacterbyItem(sld, "slave_02");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
+			ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 			if (i == 1 || i == 2 || i == 3) ChangeCharacterAddressGroup(sld, "Shore39", "smugglers", "smuggler0"+i);
 			if (i == 4) ChangeCharacterAddressGroup(sld, "Shore39", "goto", "goto3");
 			if (i == 5)
@@ -1152,55 +1264,6 @@ void SharlieSea_ReloadToCabin(string qName) {
 	LAi_ActorDialog(sld, pchar, "", -1, -1);
 }
 
-void FreeTichingituOver(string qName)//удаляем Тичингиту
-{
-	AddQuestRecord("Tichingitu", "6");
-	CloseQuestHeader("Tichingitu");
-	DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-	if (CheckCharacterItem(pchar, "letter_1")) RemoveItems(pchar, "letter_1", 1); // 170712
-	QuestPointerDelLoc("BasTer_town", "reload", "reload_jail");
-	QuestPointerDelLoc("baster_town", "reload", "houseSp1");
-}
-
-void SetTichingituJail()//ставим Тичингиту
-{
-	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 1, FRANCE, 10, false, "quest"));
-	sld.name = StringFromKey("SharlieTrial_27"); // 270912
-	sld.lastname = StringFromKey("SharlieTrial_28");
-	sld.greeting = "Tichingitu";
-    sld.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-	sld.dialog.currentnode = "Tichingitu";
-	sld.rank = 12;
-	LAi_SetHP(sld, 140.0, 140.0);
-	SetSPECIAL(sld, 4, 9, 5, 5, 10, 8, 8);
-	SetSelfSkill(sld, 30, 30, 30, 50, 20);
-    SetShipSkill(sld, 5, 5, 2, 5, 1, 2, 1, 1, 10);
-	SetCharacterPerk(sld, "Energaiser");
-	SetCharacterPerk(sld, "Tireless");
-	SetCharacterPerk(sld, "BasicDefense");
-	SetCharacterPerk(sld, "CriticalHit");
-	SetCharacterPerk(sld, "Gunman");
-	GiveItem2Character(sld, "unarmed");
-	sld.equip.blade = "unarmed";
-	sld.equip.gun = "";
-	ChangeCharacterAddressGroup(sld, "BasTer_prison", "goto", "goto9");
-	LAi_SetStayType(sld);
-	LAi_SetImmortal(sld, true); // 170712
-	AddLandQuestMark(sld, "questmarkmain");
-	SetFunctionLocationCondition("Tichingitu_AddQuestMark", "baster_prison", false);
-	QuestPointerToLoc("BasTer_town", "reload", "reload_jail");
-}
-
-void Tichingitu_AddQuestMark(string qName)
-{
-	DoQuestFunctionDelay("Tichingitu_AddQuestMark_Delay", 2.5);
-}
-
-void Tichingitu_AddQuestMark_Delay(string qName)
-{
-	AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
-}
-
 void Sharlie_GambitStage_level_9(string qName)//переход на голландский гамбит
 {
 	pchar.questTemp.Sharlie = "gambitstage";
@@ -1377,15 +1440,15 @@ void VsD_Vzriv_2(string qName)
 	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
 	{
 		sld = CharacterFromID("Folke");
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_LoginInCaptureTown(sld, true);
 		ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload1_back");
 	}
 	else
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
-		sld.name 	= StringFromKey("SharlieTrial_29");
-		sld.lastname = StringFromKey("SharlieTrial_30");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		LAi_SetActorType(sld);
 		LAi_LoginInCaptureTown(sld, true);
 		ChangeCharacterAddressGroup(sld, "PortPax_town", "reload", "reload1_back");
@@ -1409,7 +1472,7 @@ void VsD_Vzriv_3(string qName)
 	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
 	{
 		sld = CharacterFromID("Folke");
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorTurnToCharacter(sld, CharacterFromID("VsD_MirnyeQuest_2"));
 	}
 	else
@@ -1488,7 +1551,7 @@ void VsD_Vzriv_6(string qName)
 	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
 	{
 		sld = CharacterFromID("Folke");
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorAnimation(sld, "afraid", "", -1);
 	}
 	else
@@ -1500,7 +1563,7 @@ void VsD_Vzriv_6(string qName)
 	sld = CharacterFromID("Tichingitu");
 	if (sld.location == pchar.location && !LAi_IsDead(sld))
 	{
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorAnimation(sld, "afraid", "", -1);
 	}
 	LAi_SetActorType(pchar);
@@ -1570,7 +1633,7 @@ void VsD_Vzriv_9(string qName)
 	if (GetCharacterIndex("Folke") != -1 && CheckPassengerInCharacter(pchar, "Folke"))
 	{
 		sld = CharacterFromID("Folke");
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 	}
 	else
 	{
@@ -1596,7 +1659,7 @@ void VsD_Vzriv_10(string qName)
 		sld = CharacterFromID("Folke");
 		sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
 		sld.dialog.currentnode = "VsD_FolkeAlonso";
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorDialogDelay(sld, pchar, "", 0.1);
 	}
 	else
@@ -1642,7 +1705,7 @@ void VsD_AfterVzriv_3()
 	sld = CharacterFromID("Tichingitu");
 	if (sld.location == pchar.location && !LAi_IsDead(sld))
 	{
-		LAi_SetActorType(sld);
+		LAi_SetOneTimeActorTypeForOfficer(sld);
 		LAi_ActorGoToLocator(sld, "reload", "reload1", "", -1);
 	}
 }
@@ -1836,7 +1899,6 @@ void Trial_FrahtFail(string qName)// провалил 1 задание
 	PChar.quest.VsD_DiegoNachalo.over = "yes";
 	ChangeCharacterNationReputation(pchar, FRANCE, -12);
 	DelMapQuestMarkCity("PortPax");
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_CreateFlorianFrigate(string qName)// ставим фрегат Флориана Шоке
@@ -1896,7 +1958,6 @@ void Trial_CannonFail(string qName)// провалил 2 задание
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_FlorianAfterBattle(string qName)// напал на Флориана Шоке
@@ -1917,7 +1978,6 @@ void Trial_FlorianAfterBattle(string qName)// напал на Флориана �
 		DelLandQuestMark(sld);
 		DelMapQuestMarkCity("PortRoyal");
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TakeCannons()// выгрузка
@@ -2027,7 +2087,6 @@ void Trial_SpyTimeOver(string qName) //время на шпионаж вышло
 			DeleteAttribute(pchar,"questTemp.trialHabitueId");
 		}
 	}
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_TavernEnterSoldiers() //неверный путь в таверне
@@ -2074,6 +2133,56 @@ void Trial_Spyfail_NextStage(string qName)//активируем следующ�
 	sld.DeckDialogNode = "florian_17";
 }
 
+void Trial_Habitue_DlgExit()//
+{
+	pchar.questTemp.Trial = "spy_drink";
+			
+	if(CheckAttribute(pchar,"questTemp.trialHabitueId"))
+	{
+		if (GetCharacterIndex(pchar.questTemp.trialHabitueId) != -1)
+		{
+			sld = characterFromId(pchar.questTemp.trialHabitueId);
+			sld.lifeday = 0;
+			DeleteAttribute(pchar,"questTemp.trialHabitueId");
+			LAi_CharacterDisableDialog(sld);
+			DelLandQuestMark(sld);
+		}
+	}
+	if (GetCharacterIndex("PortoBello_Poorman") < 0)
+	{
+		Trial_NewPoormanInPortoBello();
+	}
+	sld = characterFromId("PortoBello_Poorman");
+	LAi_RemoveLoginTime(sld);
+	ChangeCharacterAddressGroup(sld, "Portobello_town", "goto", "goto15");
+	AddLandQuestMark(sld, "questmarkmain");
+	DelLandQuestMark(characterFromId("portobello_tavernkeeper"));
+	AddQuestRecord("Trial", "14");
+}
+
+void Trial_Poorman_DlgExit()//
+{
+	chrDisableReloadToLocation = true;
+	sld = characterFromId("PortoBello_Poorman");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload5_back", "none", "", "", "OpenTheDoors", 10.0);
+	pchar.questTemp.Trial = "spy_poorman";
+	pchar.quest.trial_spy_poorman.win_condition.l1 = "Timer";
+	pchar.quest.trial_spy_poorman.win_condition.l1.date.hour  = 22.00;
+	pchar.quest.trial_spy_poorman.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 0);
+	pchar.quest.trial_spy_poorman.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 0);
+	pchar.quest.trial_spy_poorman.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 0);
+	pchar.quest.trial_spy_poorman.function = "Trial_SetPoormanInPort";
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1 = "Timer";
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.hour  = 6.00;
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
+	pchar.quest.Trial_ReturnPoormanNorm.win_condition = "Trial_ReturnPoormanNorm";
+	//SetTimerCondition("Trial_ReturnPoormanNorm", 0, 0, 1, false);
+	AddQuestRecord("Trial", "15");
+}
+
 void Trial_SetPoormanInPort(string qName)//ставим нищеброда
 {
 	sld = characterFromId("PortoBello_Poorman");
@@ -2081,6 +2190,112 @@ void Trial_SetPoormanInPort(string qName)//ставим нищеброда
 	ChangeCharacterAddressGroup(sld, "Portobello_town", "reload", "reload5");
 	LAi_SetStayType(sld);
 	AddLandQuestMark(sld, "questmarkmain");
+}
+
+void Trial_FailPoormanInPort()//спугнули нищего, неудача
+{
+	chrDisableReloadToLocation = true;
+	sld = characterFromId("PortoBello_Poorman");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
+	pchar.questTemp.Trial = "spy_fail";
+	AddQuestRecord("Trial", "16");
+	sld = characterFromId("Florian");
+	sld.DeckDialogNode = "florian_failspy_5";
+}
+
+void Trial_PeacePoormanInPort()//отпускаем нищего
+{
+	AddCharacterExpToSkill(pchar, "Leadership", 100);
+	AddCharacterExpToSkill(pchar, "Sneak", 50);
+	chrDisableReloadToLocation = true;
+	sld = characterFromId("PortoBello_Poorman");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload4_back", "none", "", "", "OpenTheDoors", 10.0);
+	
+	Trial_BackToFlorianWithInformation();
+}
+
+void Trial_KillPoormanInPort()//убиваем нищего ножом
+{
+	sld = characterFromId("PortoBello_Poorman");
+	AddMoneyToCharacter(sld, 5000);
+	sld.SaveItemsForDead  = true;
+	sld.DontClearDead = true;
+	
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(5.20, 3.52, 44.55, true, 3.66, 1.33, 45.83);
+	SyncPlaybackDlt(PChar, sld);
+	TeleportCharacterToPosAy(sld, 3.24, 1.30, 46.47, 3.00);
+	LAi_SetActorType(sld);
+	// LaunchBlood(sld, 1.0, true, "fight");
+	// LaunchBlood(sld, 1.0, true, "fight");
+	// LAi_ActorAnimation(sld, "hit_stab", "", 12.0);
+	SetCharacterActionAnimation(sld, "dead", "hit_stab");
+	LAi_KillCharacter(sld);
+	TeleportCharacterToPosAy(pchar, 3.24, 1.30, 45.57, 0.00);
+	LAi_SetActorType(pchar);
+	LAi_ActorAnimation(pchar, "stab", "", 12.0);
+	SendMessage(pchar, "lslssl", MSG_CHARACTER_EX_MSG, "TieItem", FindItem("knife_01"), "knife_01", "Saber_hand", 1);
+	DoQuestFunctionDelay("Trial_KillPoormanInPort_kino_2", 1.6);
+}
+
+void Trial_KillPoormanInPort_kino_2(string qName)
+{
+	locCameraFromToPos(4.20, 4.27, 47.69, true, 3.34, 1.26, 46.20);
+	DoQuestFunctionDelay("Trial_KillPoormanInPort_kino_3", 2.3);
+}
+
+void Trial_KillPoormanInPort_kino_3(string qName)
+{
+	EndQuestMovie();
+	LAi_SetPlayerType(pchar);
+	locCameraFollowEx(true);
+	SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", FindItem("knife_01"));
+	
+	ChangeCharacterComplexReputation(pchar, "nobility", -5);
+	AddCharacterExpToSkill(pchar, "Sneak", 100);
+	AddCharacterExpToSkill(pchar, "FencingL", 30);
+	AddCharacterExpToSkill(pchar, "FencingS", 30);
+	AddCharacterExpToSkill(pchar, "FencingH", 30);
+	AddCharacterExpToSkill(pchar, "Pistol", 30);
+	
+	Trial_BackToFlorianWithInformation();
+	Trial_NewPoormanInPortoBello();
+}
+
+void Trial_BackToFlorianWithInformation() //возвращаемся обратно к Флориану с важной информацией
+{
+	pchar.questTemp.Trial = "spy_win";
+	AddQuestRecord("Trial", "17");
+	sld = characterFromId("Florian");
+	sld.DeckDialogNode = "florian_12";
+	AddLandQuestMark(sld, "questmarkmain");
+	
+	QuestPointerToLoc("PortoBello_Town", "reload", "gate_back");
+	QuestPointerToLoc("PortoBello_ExitTown", "reload", "reload1_back");
+	QuestPointerToLoc("PortoBello_Jungle_01", "reload", "reload2_back");
+	QuestPointerToLoc("PortoBello_Jungle_02", "reload", "reload3_back");
+	QuestPointerToLoc("shore47", "reload", "boat");
+}
+
+void Trial_NewPoormanInPortoBello() //новый нищий в Порто Белло
+{
+	sld = GetCharacter(NPC_GenerateCharacter("PortoBello_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, SPAIN, -1, false, "slave"));
+	sld.city = "PortoBello";
+	sld.location	= "PortoBello_town";
+	sld.location.group = "goto";
+	sld.location.locator = "goto15";
+	sld.forStay.locator = "goto15"; //где генеримся в случае стояния
+	sld.forSit.locator0 = "goto3";
+	sld.forSit.locator1 = "goto25"; //три локатора, где генеримся в случае сидения
+	sld.forSit.locator2 = "goto12";
+	LAi_SetLoginTime(sld, 9.0, 21.99);
+	sld.Dialog.Filename = "Common_poorman.c";
+	LAi_SetPoorType(sld);
+	LAi_SetHP(sld, 50.0, 50.0);
+	sld.greeting = "poorman_male";
+	LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
 }
 
 void Trial_CreatePueblaBarqueInWorld()//запускаем барк 'Пуэбла' на карте
@@ -2148,7 +2363,6 @@ void Trial_Pueblabarque_AfterBattle(string qName)// уничтожили
 	AddComplexSeaExpToScill(50, 50, 50, 50, 50, 50, 0);
 	ChangeCharacterNationReputation(pchar, SPAIN, -3);
 	ChangeCharacterComplexReputation(pchar, "fame", 1);
-	DeleteAttribute(pchar,"worldmapencountersoff");
 }
 
 void Trial_Pueblabarque_Check(string qName)// истекло время энкаунтера или уничтожен
@@ -2173,9 +2387,417 @@ void Trial_Pueblabarque_Result(string qName) // результаты
 		CloseQuestHeader("Trial");
 		DeleteAttribute(pchar, "questTemp.Trial");
 		pchar.questTemp.TrialEnd = true;
-		DeleteAttribute(pchar,"worldmapencountersoff");
 	}
 } // <-- 170712
+
+void Guide_DlgExit_64()	// Валинье становится супер боссом и нападает на ГГ
+{
+	sld = characterFromId("Guide");
+	sld.rank = 25;
+	GiveItem2Character(sld, "blade_30");
+	EquipCharacterbyItem(sld, "blade_30");
+	GiveItem2Character(sld, "cirass7");
+	GiveItem2Character(sld, "obereg_7");
+	GiveItem2Character(sld, "talisman11");
+	AddMoneyToCharacter(sld, 10000);
+	AddItems(sld, "gold_dublon", 25);
+	AddItems(sld, "bullet", 5);
+	AddItems(sld, "grapeshot", 5);
+	AddItems(sld, "GunPowder", 10);
+	TakeItemFromCharacter(sld, "blade_12");
+	sld.cirassId = Items_FindItemIdx("cirass4");
+	LAi_SetCurHPMax(sld);
+	LAi_GetCharacterMaxEnergy(sld);
+	LAi_SetCurHPMax(pchar); 
+	LAi_GetCharacterMaxEnergy(pchar);
+	LAi_SetImmortal(sld, false);
+	LAi_group_Delete("EnemyFight");
+	LAi_SetWarriorType(sld);
+	LAi_group_MoveCharacter(sld, "EnemyFight");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Валинье на острове
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
+	LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+	LAi_group_SetCheckFunction("EnemyFight", "Guide_HeroKill");
+	AddDialogExitQuest("MainHeroFightModeOn");
+}
+
+void Guide_HeroKill(string qName) // ГГ убил Валинье
+{
+	LAi_group_Delete("EnemyFight");
+	DoQuestCheckDelay("hide_weapon", 1.2);
+	Log_info(StringFromKey("SharlieTrial_46"));
+	Achievment_Set("ach_CL_107");
+	AddCharacterExpToSkill(pchar, "Leadership", 150);
+	AddCharacterExpToSkill(pchar, "Sneak", 150);
+	AddCharacterExpToSkill(pchar, "FencingL", 150);
+	AddCharacterExpToSkill(pchar, "FencingS", 150);
+	AddCharacterExpToSkill(pchar, "FencingH", 150);
+	AddCharacterExpToSkill(pchar, "Pistol", 150);
+	AddCharacterExpToSkill(pchar, "Fortune", 150);
+	ChangeCharacterComplexReputation(pchar, "nobility", -10);
+	ChangeCharacterComplexReputation(pchar, "fame", 1);
+	chrDisableReloadToLocation = false;
+	pchar.questTemp.GuideDeath = true;
+}
+
+// Миниквест "Делюк" ==>
+void Del_Alonso(string qName)
+{
+	sld = GetCharacter(NPC_GenerateCharacter("Del_Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
+	sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "Del_Alonso";
+	LAi_SetImmortal(sld, true);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	ChangeCharacterAddressGroup(sld, "FortFrance_town", "reload", "reload4_back");
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
+	
+	bDisableFastReload = true;
+	chrDisableReloadToLocation = true;
+}
+
+void Del_Alonso_DlgExit()
+{
+	SetQuestHeader("FolkeDeluc");
+	AddQuestRecord("FolkeDeluc", "1");
+	QuestCloseSeaExit();
+	SetFunctionLocationCondition("FortfranceJailOff_AddQuestMark", "fortfrance_prison", false);
+	bDisableFastReload = false;
+	chrDisableReloadToLocation = false;
+	pchar.questTemp.Del_Deluck = true;
+	
+	sld = CharacterFromID("Del_Alonso");
+	sld.lifeday = 0;
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload1", "none", "", "", "", -1);
+	
+	sld = CharacterFromID("Folke");
+	sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "Del_Folke_1";
+	RemovePassenger(pchar, sld);
+	LAi_SetStayType(sld);
+	ChangeCharacterAddressGroup(sld, "FortFrance_prison", "goto", "goto9");
+	
+	sld = GetCharacter(NPC_GenerateCharacter("Del_shturman", "mercen_4", "man", "man", 5, FRANCE, 3, false, "quest"));
+	GiveItem2Character(sld, "blade_03");
+	EquipCharacterByItem(sld, "blade_03");
+	sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "Del_shturman";
+	LAi_SetSitType(sld);
+	sld.greeting = "officer_hire";
+	SetSelfSkill(sld, 21, 23, 18, 33, 25);
+	SetShipSkill(sld, 25, 10, 8, 6, 35, 11, 13, 25, 14);
+	SetSPECIAL(sld, 7, 10, 6, 8, 7, 8, 4);
+	sld.rank = 5;
+	SetCharacterPerk(sld, "ShipSpeedUp");
+	SetCharacterPerk(sld, "HullDamageUp");
+	SetCharacterPerk(sld, "BasicDefense");
+	FreeSitLocator("FortFrance_tavern", "sit4");
+	ChangeCharacterAddressGroup(sld, "FortFrance_tavern", "sit", "sit4");
+	AddLandQuestMark(characterFromId("Del_shturman"), "questmarkmain");
+}
+
+void Del_prison()
+{
+	chrDisableReloadToLocation = true;
+	DeleteAttribute(pchar, "questTemp.Del_Deluck");
+	pchar.questTemp.jailCanMove = true;
+	AddLandQuestMark(characterFromId("Folke"), "questmarkmain");
+}
+
+void Del_Folke_DlgExit_1()
+{
+	chrDisableReloadToLocation = false;
+	sld = CharacterFromID("Folke");
+	LAi_SetActorType(sld);
+	pchar.questTemp.Del_Rostovshik = true;
+	AddLandQuestMark(characterFromId("FortFrance_usurer"), "questmarkmain");
+}
+
+void Del_Folke_DlgExit_2()
+{
+	EndQuestMovie();
+	locCameraFollowEx(true);
+	chrDisableReloadToLocation = false;
+	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);
+	QuestOpenSeaExit()
+	sld = CharacterFromID("Del_shturman");
+	sld.lifeday = 0;
+	AddQuestRecord("FolkeDeluc", "3");
+	CloseQuestHeader("FolkeDeluc");
+	
+	sld = CharacterFromID("Folke");
+	ChangeCharacterComplexReputation(pchar, "authority", -2);
+	AddCrewMorale(Pchar, -30);
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload1", "", "", "", "", -1);
+	sld.Dialog.Filename = "Enc_Officer_dialog.c";
+	sld.quest.meeting = true;
+	Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
+	sld.OfficerWantToGo.DontGo = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+
+	sld.location = "None";
+	sld.Dialog.CurrentNode = "hired";
+	sld.Payment = true;
+	sld.FriendRole = true;
+	SetCharacterPerk(sld, "ByWorker");
+	DeleteAttribute(sld, "CompanionDisable");
+}
+
+void Del_Ohrannik()
+{
+	sld = CharacterFromID("Del_Ohranik");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload3", "none", "", "", "", -1);
+}
+
+void Del_Turma(string qName)
+{
+	chrDisableReloadToLocation = true;//закрыть локацию
+	LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//запретить драться
+	// замораживаем ГГ
+	LAi_SetActorType(pchar);
+	LAi_ActorTurnToLocator(pchar, "goto", "goto17"); // 170712
+	
+	sld = CharacterFromID("Folke");
+	LAi_CharacterEnableDialog(sld);
+	ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
+	
+	sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
+	LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
+	ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
+	
+	StartQuestMovie(true, false, true);
+	locCameraFromToPos(-13.10, 3.09, 6.43, true, -10.00, -3.20, -10.00);
+	DoQuestFunctionDelay("Del_Turma_2", 3.0);
+}
+
+void Del_Turma_2(string qName)
+{
+	LAi_Fade("", "");
+	DoQuestFunctionDelay("Del_Turma_3", 0.5);
+}
+
+void Del_Turma_3(string qName)
+{
+	sld = CharacterFromID("Folke");
+	ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "item", "detector1");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocator(sld, "reload", "reload1", "Del_FolkeStay", -1);
+	
+	sld = CharacterFromID("Del_Ohranik");
+	ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "reload", "reload3");
+	LAi_SetActorType(sld);
+	LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
+	
+	locCameraFromToPos(12.83, 2.28, 3.64, true, 0.00, -3.20, -25.00);
+	DoQuestFunctionDelay("Del_Turma_4", 3.5);
+}
+
+void Del_Turma_4(string qName)
+{
+	LAi_Fade("", "");
+	DoQuestFunctionDelay("Del_Turma_5", 0.5);
+}
+
+void Del_Turma_5(string qName)
+{
+	locCameraFromToPos(17.33, 2.89, -12.15, true, 0.00, -3.20, -10.00);
+	DoQuestCheckDelay("Del_FolkeStay", 3.3);
+}
+
+void Del_FolkeStay_function()
+{
+	LAi_SetPlayerType(pchar);
+	sld = characterFromId("Folke");
+	LAi_SetActorType(sld);
+	LAi_ActorDialogDelay(sld, pchar, "", 1.0); // 170712
+}
+
+void Del_shturman_DlgExit()
+{
+	sld = characterFromId("Del_shturman");
+	sld.Dialog.Filename = "Enc_Officer_dialog.c";
+	sld.Dialog.CurrentNode = "hired";
+	Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
+	LandEnc_OfficerHired();
+	sld.quest.meeting = true;
+	sld.loyality = 18;
+	DelLandQuestMark(sld);
+	
+	ChangeCharacterComplexReputation(pchar, "authority", 2);
+	AddCrewMorale(Pchar, 30);
+	QuestOpenSeaExit();
+	pchar.quest.FortfranceJailOff_AddQuestMark.over = "yes";
+	if (GetCharacterIndex("FortFranceJailOff") != -1)
+	{
+		DelLandQuestMark(characterFromId("FortFranceJailOff"));
+	}
+	sld = CharacterFromID("Folke");
+	LAi_CharacterDisableDialog(sld);
+	DeleteAttribute(pchar, "questTemp.Del_Deluck");
+	DeleteAttribute(pchar, "questTemp.Del_DeluckSvoboda");
+	DeleteAttribute(pchar, "questTemp.Del_Rostovshik");
+	DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
+	pchar.questTemp.Del_DeluckSiditTurma = true;
+	AddQuestRecord("FolkeDeluc", "4");
+	CloseQuestHeader("FolkeDeluc");
+}
+// <== Миниквест "Делюк"
+
+// Миниквест "Тичингиту" ==>
+void Tichingitu_FreeTichingituOver(string qName)//удаляем Тичингиту
+{
+	AddQuestRecord("Tichingitu", "6");
+	CloseQuestHeader("Tichingitu");
+	DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
+	if (CheckCharacterItem(pchar, "letter_1")) RemoveItems(pchar, "letter_1", 1); // 170712
+	QuestPointerDelLoc("BasTer_town", "reload", "reload_jail");
+	QuestPointerDelLoc("baster_town", "reload", "houseSp1");
+}
+
+void Tichingitu_SetTichingituJail()//ставим Тичингиту
+{
+	sld = InitTichingitu();
+	ChangeCharacterAddressGroup(sld, "BasTer_prison", "goto", "goto9");
+	LAi_SetStayType(sld);
+	AddLandQuestMark(sld, "questmarkmain");
+	SetFunctionLocationCondition("Tichingitu_AddQuestMark", "baster_prison", false);
+	QuestPointerToLoc("BasTer_town", "reload", "reload_jail");
+	ForceHeroAutolevel(sld)
+}
+
+void Tichingitu_AddQuestMark(string qName)
+{
+	DoQuestFunctionDelay("Tichingitu_AddQuestMark_Delay", 2.5);
+}
+
+void Tichingitu_AddQuestMark_Delay(string qName)
+{
+	AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
+}
+
+void Tichingitu_DlgExit_1()
+{
+	pchar.questTemp.Sharlie.Tichingitu = "commandante";
+	AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
+	AddQuestRecord("Tichingitu", "2");
+}
+
+void Tichingitu_DlgExit_2()
+{
+	chrDisableReloadToLocation = true;
+	bDisableFastReload = true;
+	DoFunctionReloadToLocation("BasTer_exittown", "rld", "aloc9", "Tichingitu_Free");
+	pchar.quest.Tichingitu_FreeTichingituOver.over = "yes"; //снять таймер
+	if (GetHour() > 17.0)
+	{
+		WaitDate("", 0, 0, 0, 13, 0);
+		RecalculateJumpTable();
+		RefreshWeather();
+		RefreshLandTime();
+	}
+	if (GetHour() < 8.0)
+	{
+		WaitDate("", 0, 0, 0, 7, 0);
+		RecalculateJumpTable();
+		RefreshWeather();
+		RefreshLandTime();
+	}
+}
+
+void Tichingitu_Free(string qName)
+{
+	sld = characterFromId("Tichingitu");
+	sld.dialog.currentnode = "Tichingitu_9";
+	ChangeCharacterAddressGroup(sld, "BasTer_exittown", "rld", "aloc14"); // 170712
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
+	RemoveAllCharacterItems(sld, true);
+	GiveItem2Character(sld, "topor_05");
+	EquipCharacterbyItem(sld, "topor_05"); // 151012
+}
+
+void Tichingitu_DlgExit_3()
+{
+	chrDisableReloadToLocation = false;
+	AddQuestRecord("Tichingitu", "5");
+	CloseQuestHeader("Tichingitu");
+	sld = characterFromId("Tichingitu");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "reload2_back", "none", "", "", "", 10.0);
+	sld.lifeday = 0;
+	DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
+	pchar.systeminfo.tutorial.Fighter = true;
+}
+
+void Tichingitu_Hire()
+{
+	sld = characterFromId("Tichingitu");
+	DeleteAttribute(sld, "LifeDay");
+	LAi_SetImmortal(sld, false);
+	sld.quest.OfficerPrice = sti(pchar.rank)*20;
+	sld.OfficerWantToGo.DontGo = true;
+	sld.CompanionDisable = true;
+	sld.loyality = MAX_LOYALITY;
+	AddPassenger(pchar, sld, false);
+	SetCharacterRemovable(sld, true);
+	sld.Payment = true;
+	sld.OfficerImmortal = true;
+	sld.Health.HP       = 60.0; 
+	sld.Health.maxHP    = 60.0;
+
+	sld.CanTakeMushket = true;
+	LAi_SetOfficerType(sld);
+	sld.dialog.currentnode = "Tichingitu_officer";
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
+	DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
+	pchar.OfficerAttRange = 35.0;
+	
+	AddQuestRecord("Tichingitu", "4");
+	CloseQuestHeader("Tichingitu");
+	
+	Tichingitu_NextQuest();
+}
+
+void Tichingitu_NextQuest()
+{
+	// Sinistra - Начало квеста "Знакомство с индейцами"
+	string sModel = "Miskito_"+(rand(5)+1);
+	sld = GetCharacter(NPC_GenerateCharacter("ListKakao", sModel, "man", "man", 1, PIRATE, -1, false, "quest"));
+	sld.name = StringFromKey("SharlieTrial_55");
+	sld.lastname = StringFromKey("SharlieTrial_56");
+	GiveItem2Character(sld, "blade_01");
+	EquipCharacterByItem(sld, "blade_01");
+	AddItems(sld, "jewelry53", rand(20)+180);
+	AddItems(sld, "cannabis1", 3);
+	GiveItem2Character(sld, "indian_10");
+	GiveItem2Character(sld, "talisman11");
+	sld.SaveItemsForDead = true;
+	sld.DontClearDead = true;
+	LAi_SetImmortal(sld, true);
+	sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
+	sld.dialog.currentnode = "ZsI_ListKakao";
+	ChangeCharacterAddressGroup(sld, "BasTer_ExitTown", "item", "item3");
+	LAi_SetActorType(sld);
+	LAi_ActorDialog(sld, pchar, "", -1, 0);
+	//LaunchTutorial("Fighter", 1);
+}
+// <== Миниквест "Тичингиту"
 
 //=================================================================
 //======================кейсы из quests_reaction===================
@@ -2248,6 +2870,8 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			RemoveAllCharacterItems(sld, true);
 			GiveItem2Character(sld, "blade_12");
 			EquipCharacterbyItem(sld, "blade_12");
+			SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Туториальный Валинье
+
 			sld.name = StringFromKey("SharlieTrial_43");
 			sld.lastname = StringFromKey("SharlieTrial_44");
 			sld.dialog.FileName = "Quest\Sharlie\Guide.c";
@@ -2522,6 +3146,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_SetActorType(sld);
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_ActorDialogDelay(sld, pchar, "", 1.0);
+			pchar.questTemp.FinishTutorial = true;
 	}
 	else if (sQuestName == "Guide_HeroFail") // ГГ проиграл фехт
 	{
@@ -2539,24 +3164,7 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_ActorTurnToCharacter(sld, pchar);
 			LAi_ActorDialogDelay(sld, pchar, "", 1.0);
 			LAi_SetImmortal(pchar, false);
-	}
-	else if (sQuestName == "Guide_HeroKill") // Sinistra ГГ убил Валинье
-	{
-			LAi_group_Delete("EnemyFight");
-			DoQuestCheckDelay("hide_weapon", 1.2);
-			Log_info(StringFromKey("SharlieTrial_46"));
-			Achievment_Set("ach_CL_107");
-			AddCharacterExpToSkill(pchar, "Leadership", 150);
-			AddCharacterExpToSkill(pchar, "Sneak", 150);
-			AddCharacterExpToSkill(pchar, "FencingL", 150);
-			AddCharacterExpToSkill(pchar, "FencingS", 150);
-			AddCharacterExpToSkill(pchar, "FencingH", 150);
-			AddCharacterExpToSkill(pchar, "Pistol", 150);
-			AddCharacterExpToSkill(pchar, "Fortune", 150);
-			ChangeCharacterComplexReputation(pchar, "nobility", -10);
-			ChangeCharacterComplexReputation(pchar, "fame", 1);
-			chrDisableReloadToLocation = false;
-			pchar.questTemp.GuideDeath = true;
+			pchar.questTemp.FinishTutorial = true;
 	}
 	// <-- гид
 
@@ -2691,28 +3299,10 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_SetActorType(sld);
 			LAi_ActorDialog(sld, pchar, "", -1, 0);
 	}
-	else if (sQuestName == "FolkeStay")
-	{
-			LAi_SetPlayerType(pchar);
-			sld = characterFromId("Folke");
-			LAi_SetActorType(sld);
-			LAi_ActorDialogDelay(sld, pchar, "", 1.0); // 170712
-	}
 	else if (sQuestName == "Seabattle_pirate_open")
 	{
 			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
 			chrDisableReloadToLocation = false;//открыть локацию
-	}
-	else if (sQuestName == "TichingituFree")
-	{
-			sld = characterFromId("Tichingitu");
-			sld.dialog.currentnode = "Tichingitu_9";
-			ChangeCharacterAddressGroup(sld, "BasTer_exittown", "rld", "aloc14"); // 170712
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", -1, 0);
-			RemoveAllCharacterItems(sld, true);
-			GiveItem2Character(sld, "topor_05");
-			EquipCharacterbyItem(sld, "topor_05"); // 151012
 	}
 	else if (sQuestName == "ZsI_TPvGorod")
 	{
@@ -2966,56 +3556,9 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 	// <== Квест "Деньги на деревьях"
 
 	// Sinistra - Миниквест "Делюк" ==>
-	else if (sQuestName == "Del_Alonso")
+	else if (sQuestName == "Del_FolkeStay")
 	{
-			sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 25, pchar.nation, -1, true, "soldier"));
-			sld.name 	= StringFromKey("SharlieTrial_29");
-			sld.lastname = StringFromKey("SharlieTrial_30");
-			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "Del_Alonso";
-			LAi_SetImmortal(sld, true);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			ChangeCharacterAddressGroup(sld, "FortFrance_town", "reload", "reload4_back");
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", -1, 0);
-			
-			bDisableFastReload = true;
-			chrDisableReloadToLocation = true;
-	}
-	else if (sQuestName == "Del_Turma")
-	{
-			locCameraFromToPos(-13.10, 3.09, 6.43, true, -10.00, -3.20, -10.00);
-			DoQuestCheckDelay("Del_Turma_2", 3.0);
-			DoQuestCheckDelay("Del_Turma_3", 3.5);
-	}
-	else if (sQuestName == "Del_Turma_2")
-	{
-			LAi_Fade("", "");
-	}
-	else if (sQuestName == "Del_Turma_3")
-	{
-			sld = CharacterFromID("Folke");
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "item", "detector1");
-			LAi_SetActorType(sld);
-			LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-			
-			sld = CharacterFromID("Del_Ohranik");
-			ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "reload", "reload3");
-			LAi_SetActorType(sld);
-			LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
-			
-			locCameraFromToPos(12.83, 2.28, 3.64, true, 0.00, -3.20, -25.00);
-			DoQuestCheckDelay("Del_Turma_4", 3.5);
-			DoQuestCheckDelay("Del_Turma_5", 4.0);
-	}
-	else if (sQuestName == "Del_Turma_4")
-	{
-			LAi_Fade("", "");
-	}
-	else if (sQuestName == "Del_Turma_5")
-	{
-			locCameraFromToPos(17.33, 2.89, -12.15, true, 0.00, -3.20, -10.00);
-			DoQuestCheckDelay("FolkeStay", 3.3);
+			Del_FolkeStay_function();
 	}
 	// <== Миниквест "Делюк"
 
@@ -3389,43 +3932,6 @@ bool SharlieTrial_QuestComplete(string sQuestName, string qname)
 			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
 			DelLandQuestMark(sld);
 	}
-	// belamour legendary edition -->
-	else if (sQuestName == "RIP_Bomzh") // минус бомж
-	{
-			SendMessage(pchar, "lsl", MSG_CHARACTER_EX_MSG, "GunBelt", true);
-			sld = characterFromId("PortoBello_Poorman");
-			LAi_KillCharacter(sld);
-			pchar.questTemp.Trial = "spy_win";
-			AddQuestRecord("Trial", "17");
-			sld = characterFromId("Florian");
-			sld.DeckDialogNode = "florian_12";
-			AddLandQuestMark(sld, "questmarkmain");
-			ChangeCharacterComplexReputation(pchar, "nobility", -5);
-			AddCharacterExpToSkill(pchar, "Sneak", 100);
-			AddCharacterExpToSkill(pchar, "FencingL", 30);
-			AddCharacterExpToSkill(pchar, "FencingS", 30);
-			AddCharacterExpToSkill(pchar, "FencingH", 30);
-			AddCharacterExpToSkill(pchar, "Pistol", 30);
-			LAi_SetPlayerType(pchar);
-			// новый нищий
-			sld = GetCharacter(NPC_GenerateCharacter("PortoBello_Poorman", "panhandler_"+(rand(5)+1), "man", "man", 5, SPAIN, -1, false, "slave"));
-			sld.city = "PortoBello";
-			sld.location	= "PortoBello_town";
-			sld.location.group = "goto";
-			sld.location.locator = "goto15";
-			sld.forStay.locator = "goto15"; //где генеримся в случае стояния
-			sld.forSit.locator0 = "goto3";
-			sld.forSit.locator1 = "goto25"; //три локатора, где генеримся в случае сидения
-			sld.forSit.locator2 = "goto12";
-			LAi_SetLoginTime(sld, 9.0, 21.99);
-			sld.Dialog.Filename = "Common_poorman.c";
-			LAi_SetPoorType(sld);
-			LAi_SetHP(sld, 50.0, 50.0);
-			sld.greeting = "poorman_male";
-			LAi_group_MoveCharacter(sld, "SPAIN_CITIZENS");
-			Achievment_SetStat(95, 1);
-	}
-	// <-- legendary edition
 	else
 	{
 		condition = false;

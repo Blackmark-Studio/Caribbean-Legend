@@ -174,7 +174,7 @@ Cambié de barco y el trato se canceló.
 #QUEST	DELIVERY_TRADE_QUEST
 Entrega de mercancías
 #TEXT	1
-Tengo que entregar @<sGoodQty> de @<sGoodGen> de la tienda de @<sBaseColony> a @<sTargetColony>@<island>. Tengo que hacerlo en  @<sTermsDelivery> y mi pago será de @<sMoney>.
+Tengo que entregar @<sGoodQty> de @<sGoodGen> de la tienda de @<sBaseColony> a @<sTargetColony>, @<island>. Tengo que hacerlo en @<sTermsDelivery> y mi pago será de @<sMoney>.
 #TEXT	2
 La entrega de la mercancía a la tienda de @<sTargetColony> se realizó dentro del plazo acordado.
 #TEXT   3
@@ -1385,14 +1385,16 @@ En la taberna de Willemstad siempre me esperan descanso y placer. De ello se enc
 El jefe del puerto en Belice me otorgó un descuento del cincuenta por ciento por el amarre de un barco de hasta segunda clase, sin límite de tiempo. El barco estará bajo su supervisión personal y no sufrirá daños en caso de asedio a la ciudad.
 #TEXT   4
 ************************************************************
-Ahora puedo comprar vino y ron el día 15 de cada mes a Christian Delouce, en Basse-terre. Su casa está a la derecha de la residencia del gobernador. El precio es de 26 doblones por un lote de 20 botellas de vino y 20 botellas de ron.
+Ahora puedo comprar vino y ron el día 15 de cada mes a Christian Delouce, en Basseterre. Su casa está a la derecha de la residencia del gobernador. El precio es de 26 doblones por un lote de 20 botellas de vino y 20 botellas de ron.
 ************************************************************
 #TEXT   4_1
 He logrado acordar con Christian un aumento en los suministros. Ahora reservará para mí cien botellas de vino y ron cada día 15 del mes. El precio sigue siendo el mismo: ciento treinta doblones por todo el lote.
 #TEXT   6
 ************************************************************
 En la taberna de Puerto Principe me esperan alojamiento gratuito, bebida por cuenta de la casa, y además, el tabernero prometió que aumentará el número de marineros dispuestos a servir bajo mi mando.
-
+#TEXT   7
+************************************************************
+En la herrería de San José podré comprar los materiales y productos que necesite. Recibe suministros una vez al mes.
 
 #QUEST FMQ_Guadeloupe
 El precio de la discreción
@@ -1511,7 +1513,9 @@ Tardé demasiado en el viaje y tuve que matar a los británicos que comenzaron u
 #TEXT   3
 El teniente Caspar Gratton quiere que lo ayude en su operación militar contra Holanda. De ninguna forma, salir de Sint-Maarten es problema suyo.
 #TEXT   4
-He llevado al teniente Caspar Gratton y a sus soldados a Sint-Maarten, pero no me pagaron. En cambio, el teniente me pidió que lo esperara unos días para llevarlos a Antigua, donde el coronel Fox me pagaría generosamente. Espero que los holandeses no se enteren de todo esto, apoyar una operación militar británica en su contra, no creo que les guste demasiado... Debería navegar a Philipsburg e investigar la situación, me pregunto qué harán los soldados.
+El teniente Kaspar Gratton y sus soldados fueron llevados a Sint Maarten, pero no hubo ningún pago. En cambio, el teniente me pidió que esperara un par de días y luego los llevara a Antigua, donde su comandante, el coronel Fox, me pagaría generosamente. Ajá... Veremos. No quiero terminar teniendo problemas con los holandeses. Me dirijo al puerto de Philipsburg: primero, para desviar cualquier sospecha posible de los holandeses, y segundo, para averiguar qué hacen aquí estos marines británicos.
+#TEXT   4_1
+El teniente Kaspar Gratton y sus soldados han sido llevados a Sint Maarten, pero no hubo pago alguno. En cambio, el teniente pidió esperar un par de días y luego llevarlos a Antigua, donde su comandante, el coronel Fox, me pagaría generosamente. Ajá... ojalá esto no me traiga problemas con los holandeses. Me dirijo al puerto de Philipsburg: primero, para desviar cualquier sospecha de los holandeses, y segundo, para averiguar por qué han venido aquí los marines británicos. Después de todo, actualmente hay paz entre Inglaterra y los Países Bajos.
 #TEXT   5
 Han pasado tres días y no he averiguado nada. Debería regresar a la playa Grand Case. ¿Tal vez el teniente esté allí?
 #TEXT   6
@@ -1750,7 +1754,7 @@ He perdido al Utrecht, estaba muy cerca, pero no pude otear al bergantín en el 
 #TEXT   14
 ¡He fracasado! He desperdiciado la oportunidad de hacer un trato con los trabajadores, me tomaron por un oficial de la patrulla, se asustaron y los muy idiotas me atacaron. Tuve que matarlos a todos, que lástima esto se acabó.
 #TEXT   15
-Está hecho, logré cerrar un acuerdo con el maestro por 25 doblones por rollo. Ahora debería navegar hacia St. Cristopher para ver a Bald Geffrey.
+Está hecho, logré cerrar un acuerdo con el maestro por 5 doblones por rollo. Ahora debería navegar hacia St. Cristopher para ver a Bald Geffrey.
 #TEXT   16
 Han pasado dos meses y Bald Geffrey habrá vendido su seda a otra persona. Qué lástima... pero creo que aun puedo entregar la información del comprador a Tyrex. Debería llegar a La Vega en diez días para dar tiempo a Tyrex para que recoja suficiente seda. Espero que esto alivie su posible ira.
 #TEXT   17
@@ -1762,7 +1766,7 @@ Pasé la información que obtuve de Husky Billy a las autoridades. No esperaré 
 #TEXT   20
 Ya está hecho, una patrulla militar ha eliminado a mi competidor. Incluso me recompensaron con 10 000 pesos, lo cual es bueno. Debería ver al constructor de barcos, será más permisivo.
 #TEXT   21
-Está hecho. Logré llegar a un acuerdo con el astillero de 25 doblones por rollo. Ahora debería navegar a St. Cristopher para ver a Bald Geffrey.
+Está hecho. Logré llegar a un acuerdo con el astillero de 5 doblones por rollo. Ahora debería navegar a St. Cristopher para ver a Bald Geffrey.
 #TEXT   22
 Bald Geffrey recibió las instrucciones y está a punto de partir a Jamaica con el primer lote de seda de Marcus Tyrex. Debería navegar a La Vega.
 #TEXT   23

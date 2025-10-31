@@ -4,6 +4,7 @@ int InitItems()
 {
 	InitRandItems();
 	ref itm;
+	aref callback;
 	int n, i;
 
 	for(n=0; n<ITEMS_QUANTITY; n++)
@@ -142,10 +143,7 @@ int InitItems()
 	n = InitStdBlade(n, "topor_04", "ITEMS_17",  3,    TGT_QUEST,       B_GOOD, "FencingH", 8, 0.90, 1.15, 1, 15, 1, 		  0); // Секира
 	n = InitStdBlade(n, "topor_05", "ITEMS_16", 11,   TGT_YANKEE,       B_POOR, "FencingH", 2, 0.70, 1.10, 1, 10, 1, 		  0); // Томагавк
 	n = InitStdBlade(n, "topor_06", "ITEMS_17", 12,    TGT_QUEST,       B_GOOD, "FencingH", 18, 0.95, 1.15, 0, 0, 0, 	   6000); // топор викинга
-	n = InitStdBlade(n, "knife_01", "ITEMS_17",  8,    TGT_QUEST, 		B_POOR, "FencingL", 9, 0.50, 1.00, 0,  0, 0, 	   1000); // дага Коготь вождя
 	// новое холодное оружие cle -->
-	n = InitStdBlade(n, "knife_02", "ITEMS_38",   1,    TGT_QUEST,  B_EXCELLENT, "FencingL", 9, 0.55, 1.05, 0,  0, 0, 	   5000); // Мария cle
-	n = InitStdBlade(n, "knife_03", "ITEMS_38",   2,    TGT_QUEST,       B_GOOD, "FencingL", 9, 0.50, 1.00, 0,  0, 0, 	  50000); // Родовой кинжал cle
 	n = InitStdBlade(n, "blade_38", "ITEMS_38",   4,  TGT_OFFICER, B_EXCELLENT, "FencingL", 9, 1.10, 0.95, 1, 10, 1, 	      0); // Дуэльная шпага cle
 	n = InitStdBlade(n, "blade_39", "ITEMS_38",   3,  TGT_SOLDIER, B_GOOD,      "FencingL", 9, 0.80, 1.00, 1,  10, 1, 	      0); // Рапира бретера cle
 	n = InitStdBlade(n, "khopesh1", "ITEMS_38",  5,    TGT_QUEST,   B_ORDINARY, "FencingS", 9, 0.80, 1.20, 0,  0, 0, 	   1000); // Хопеш обычный cle
@@ -169,6 +167,7 @@ int InitItems()
 	n = InitStdBlade(n, "blade_35", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingS", 20, 0.95, 1.15, 0, 0, 0, 	   8000); // резервный клинок 2
 	n = InitStdBlade(n, "blade_36", "ITEMS_17", 16,    TGT_QUEST,  B_EXCELLENT, "FencingH", 21, 1.05, 1.10, 0, 0, 0, 	  10000); // мальтийский меч
 	n = InitStdBlade(n, "blade_37", "ITEMS_17", 12,    TGT_QUEST,  B_EXCELLENT, "FencingH", 21, 1.05, 1.10, 0, 0, 0, 	   8000); // резервный клинок 3
+	n = InitStdBlade(n, "blade_WR", "ITEMS_41", 14,    TGT_QUEST,  B_EXCELLENT, "FencingH", 22, 1.05, 1.10, 0, 0, 0, 	  10000); // Палаш Возрождённый
 	// негенерабельные дубликаты с повышающим эффектом - 6 шт
 	n = InitStdBlade(n, "q_blade_10", "ITEMS_16",  4,  TGT_QUEST,       B_GOOD, "FencingS", 10, 0.90, 1.05, 0, 0, 0, 	   5000); // Корд
 	n = InitStdBlade(n, "q_blade_13", "ITEMS_17",  2,  TGT_QUEST,       B_GOOD, "FencingH", 11, 0.95, 1.05, 0, 0, 0, 	   5400); // Офицерский палаш
@@ -219,13 +218,13 @@ int InitItems()
 	//Jason: номер модели задействован при смене модели перснажа и сопоставляется со списком моделей по очереди из ХероМейкера: 0 - без кирасы, 1-4 - тяжёлые кирасы. Номером 5 пойдёт для всех водолазное снаряжение. Дальше прописываем мундиры под номером 6 для всех, т.к. в игре они выдаются строго под конкретного перса своей нации, т.е. Шарль английский мундир в игре не встретит по определению. Номер 7 - бонусный костюм Лампорта. Это учтем в ХироМейкере. Легкие доспехи, под которые уникальных моделей не предусмотрено, будут иметь модель 0 - дефолтная модель персонажа.
 	//n = InitStdSuit( индекс, идентификатор, модель, текстура, картинка, цена, вес, редкость, мин.уровень, одежда?, защита ХО, защита PM, вер-ть крита);
 	// тяжёлые доспехи
-	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  58000, 40,   0.01,  1, false, 0.35, 0.35, 0.2 ); // траншейный доспех
+	n = InitStdSuit(n, "cirass1",     	"1", "ITEMS_32",  1,  21000, 27,   0.01,  1, false, 0.35, 0.35, 0.2 ); // траншейный доспех
 	n = InitStdSuit(n, "cirass2",     	"2", "ITEMS_32",  2,  38500, 30,   0.01,  5, false, 0.25, 0.25, 0.3 ); // рейтарская кираса
 	n = InitStdSuit(n, "cirass3",     	"3", "ITEMS_32",  3,  77000, 12,   0.01, 11, false, 0.20, 0.20, 0.5 ); // парадная кираса
 	n = InitStdSuit(n, "cirass4",     	"4", "ITEMS_32",  4, 230000, 18,   0.01, 20, false, 0.30, 0.30, 0.0 ); // миланский панцирь
 	n = InitStdSuit(n, "underwater",  	"5", "ITEMS_33",  9, 300000, 70, 0.0001, 20,  true, 0.60, 0.35, 0.0 ); // водолазное снаряжение
 	n = InitStdSuit(n, "cirass10",  	"14","ITEMS_39",  5,  38500, 15,   0.01, 20, false, 0.15, 0.15, 0.5 ); // Броня железнобоких
-	n = InitStdSuit(n, "cirass11",  	"15","ITEMS_41",  13, 45000, 23,   0.01, 20, false, 0.22, 0.22, 0.5 ); // Зерцальный нагрудник
+	n = InitStdSuit(n, "cirass11",  	"15","ITEMS_41",  13,  45000, 23,   0.01, 20, false, 0.22, 0.22, 0.5 ); // Зерцальный нагрудник
 	// костюмы
 	n = InitStdSuit(n,   "suit1", 		"6", "ITEMS_32",  9, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский офицерский мундир
 	n = InitStdSuit(n,   "suit5", 		"8", "ITEMS_33",  5, 150000,  5, 0.0001, 20,  true, 0.10, 0.00, 0.7 ); // французский адмиральский мундир
@@ -287,12 +286,11 @@ int InitItems()
 	itm.model = "";
 	itm.picIndex = 14;
 	itm.picTexture = "ITEMS_25";
-	itm.price = 100;
+	itm.price = 500;
 	itm.Weight = 0.1; 
 	itm.multiobject = true;
 	itm.multiobject.qty = 150;
 	itm.multiobject.alchemy = false;
-	itm.fixedprice = true;
 	itm.TradeType = ITEM_TRADE_JEWELRY;
 	n++;
 	
@@ -303,9 +301,8 @@ int InitItems()
 	itm.model = "stat1";
 	itm.picIndex = 16;
 	itm.picTexture = "ITEMS_25";
-	itm.price 	= 15000; 
+	itm.price 	= 75000; 
 	itm.Weight 	= 16.2; 
-	itm.fixedprice = true;
 	itm.multiobject = true;
 	itm.multiobject.qty = 1;
 	itm.multiobject.alchemy = false;
@@ -1492,7 +1489,9 @@ int InitItems()
     itm.ItemType = "QUESTITEMS";
     n++;
 	
-	// Новые квестовые предметы
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	//					НОВЫЕ КВЕСТОВЫЕ ПРЕДМЕТЫ
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	makeref(itm,Items[n]); //квестовое зелье
 	itm.id = "quest_potion";
 	itm.name = "itmname_quest_potion";
@@ -1525,7 +1524,7 @@ int InitItems()
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_35";
 	itm.price = 0;
-	itm.Weight = 1.0;
+	itm.Weight = 0.3;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1537,7 +1536,7 @@ int InitItems()
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_35";
 	itm.price = 0;
-	itm.Weight = 1.0;
+	itm.Weight = 0.3;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1553,6 +1552,18 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
+	makeref(itm,Items[n]); //кандалы
+	itm.id = "Shackles";
+	itm.name = "itmname_Shackles";
+	itm.describe = "itmdescr_Shackles";
+	itm.model = "Shackles";
+	itm.picIndex = 15;
+	itm.picTexture = "ITEMS_29";
+	itm.price = 0;
+	itm.Weight = 0.3;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
 	makeref(itm,Items[n]); //Ожерелье Жюли
 	itm.id = "SM_necklace_Julie";
 	itm.name = "itmname_SM_necklace_Julie";
@@ -1561,7 +1572,7 @@ int InitItems()
 	itm.picIndex = 2;
 	itm.picTexture = "ITEMS_41";
 	itm.price = 0;
-	itm.Weight = 1.0;
+	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1585,7 +1596,7 @@ int InitItems()
 	itm.picIndex = 15;
 	itm.picTexture = "ITEMS_26";
 	itm.price = 0;
-	itm.Weight = 1.0;
+	itm.Weight = 0.2;
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
@@ -1600,6 +1611,23 @@ int InitItems()
 	itm.Weight = 0.1;
 	itm.ItemType = "QUESTITEMS";
 	n++;
+	
+	makeref(itm,Items[n]); // Письмо для Марисы Кальдера
+	itm.id = "LFD_letter"; 
+	itm.name = "itmname_LFD_letter";
+	itm.describe = "itmdescr_LFD_letter";
+	itm.model = "Letter_sp2";
+	itm.picIndex = 6;
+	itm.picTexture = "ITEMS_26";
+	itm.price = 0;
+	itm.Weight = 0.1;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	// резервные предметы для возможных дополнений - 10 шт
 	makeref(itm,Items[n]); // письма и депеши по НСО
@@ -2360,7 +2388,7 @@ int InitItems()
 	itm.picIndex = 16;
 	itm.picTexture = "ITEMS_34";
 	itm.Weight = 0.3;
-	itm.useLocation = "FortFrance_WineCellar";
+	itm.useLocation = "FortFrance_Dungeon";
 	itm.useLocator = "button01";
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
@@ -2380,6 +2408,18 @@ int InitItems()
 	itm.ItemType = "QUESTITEMS";
 	n++;
 	
+	makeref(itm,Items[n]); // ключ от сундука Тайны ЛеФрансуа
+	itm.id = "key_candlestick_LeFransua";
+	itm.name = "itmname_key_candlestick_LeFransua";
+	itm.describe = "itmdescr_key_candlestick_LeFransua";
+	itm.model = "keysimple";
+	itm.picIndex = 16;
+	itm.picTexture = "ITEMS_34";
+	itm.Weight = 0.3;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
 	makeref(itm, Items[n]); // ящик с ядрами
 	itm.id = "BoxOfBalls";
 	itm.name = "itmname_BoxOfBalls";
@@ -2387,7 +2427,7 @@ int InitItems()
 	itm.model = "";
 	itm.picIndex = 3;
 	itm.picTexture = "ITEMS_41";
-	itm.Weight = 127.0;
+	itm.Weight = 161.7;
 	itm.price = 100;
 	itm.ItemType = "QUESTITEMS";
 	n++;
@@ -2429,9 +2469,57 @@ int InitItems()
 	itm.price = 0;
 	itm.ItemType = "QUESTITEMS";
 	n++;
+	
+	makeref(itm,Items[n]); // Книга кузнеца
+	itm.id = "OZ_book";
+	itm.name = "itmname_OZ_book";
+	itm.describe = "itmdescr_OZ_book";
+	itm.model = "";
+	itm.picIndex = 13;
+	itm.picTexture = "ITEMS_22";
+	itm.Weight = 0.1;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); // Записка с убитого шулера
+	itm.id = "OZ_letter";
+	itm.name = "itmname_OZ_letter";
+	itm.describe = "itmdescr_OZ_letter";
+	itm.model = "letter";
+	itm.picIndex = 16;
+	itm.picTexture = "ITEMS_26";
+	itm.Weight = 0.1;
+	itm.price = 10;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm,Items[n]); // Дневник Диего Веласкеса де Куэльяра
+	itm.id = "LEDR_Book";
+	itm.name = "itmname_LEDR_Book";
+	itm.describe = "itmdescr_LEDR_Book";
+    itm.model = "OpenBook";
+	itm.picIndex = 14;
+	itm.picTexture = "ITEMS_26";
+	itm.price = 0;
+	itm.Weight = 0.2;
+	itm.ItemType = "QUESTITEMS";
+	n++;
+	
+	makeref(itm, Items[n]);	// Ключ от сундука на флейте "La Espada del Rey"
+	itm.id = "LEDR_key";
+	itm.name = "itmname_LEDR_key";
+	itm.describe = "itmdescr_LEDR_key";
+	itm.model = "keysimple";
+	itm.picIndex = 5;
+	itm.picTexture = "ITEMS_36";
+	itm.Weight = 0.1;
+	itm.price = 0;
+	itm.ItemType = "QUESTITEMS";
+	n++;
 
 	// резервные предметы для возможных дополнений - +10 шт
-	makeref(itm,Items[n]); //резервный предмет №11
+	makeref(itm,Items[n]); //резервный предмет №11 ключ Тайны ЛеФрансуа
 	itm.id = "Reserve_item_11"; 
 	itm.name = "itmname_Reserve_item_11";
 	itm.describe = "itmdescr_Reserve_item_11";
@@ -2444,7 +2532,7 @@ int InitItems()
 	n++;
 		
 	
-	makeref(itm,Items[n]); //резервный предмет №12
+	makeref(itm,Items[n]); //резервный предмет №12 Ключ от сундука на флейте "La Espada del Rey"
 	itm.id = "Reserve_item_12"; 
 	itm.name = "itmname_Reserve_item_12";
 	itm.describe = "itmdescr_Reserve_item_12";
@@ -2560,62 +2648,62 @@ int InitItems()
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							КАРТЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
-	//int InitStdMap(ItemIndex, id, picTexture, picIndex, PriceModificator, Weight, ImageTga, ImageType, Atlas, MapType)
-	n = InitStdMap(n, 		  "map_bad", "ITEMS_27",  8,  (rand(4) + 6) * 1000, 0.1, 0.005,        "map_2", "cabin_map",  0,   "Special"); // плохая карта
-	n = InitStdMap(n,      "map_normal", "ITEMS_27",  8,  (rand(8) + 9) * 1020, 0.1, 0.001,        "map_1", "cabin_map",  0,   "Special"); // обычная карта
-    n = InitStdMap(n,        "Map_Best", "ITEMS_27",  3, (rand(8) + 37) * 1000, 0.1, 0.001,     "map_good", "cabin_map",  0,   "Special"); // отличная карта
-    n = InitStdMap(n,    "map_bermudas", "ITEMS_27",  8,  (rand(8) + 6) * 1050, 0.2,   0.0,     "cap_bermudas",          "",  1,	 	  ""); // Исла-Тесоро	
-	n = InitStdMap(n,         "map_jam", "ITEMS_27",  8,  (rand(8) + 6) * 1100, 0.2,   0.0,      "cap_Jamaica",          "",  1,	  	  ""); // Ямайка	
-	n = InitStdMap(n,      "map_cayman", "ITEMS_27",  8,  (rand(8) + 8) * 1015, 0.2,   0.0,       "cap_kayman",          "",  1,		  ""); // Кайман		
-	n = InitStdMap(n,    "map_barbados", "ITEMS_27",  8,  (rand(8) + 6) * 1200, 0.2,   0.0,     "cap_barbados",          "",  1,		  ""); // Барбадос			
-	n = InitStdMap(n,     "map_tortuga", "ITEMS_27",  8,  (rand(8) + 6) * 1070, 0.2,   0.0,      "cap_tortuga",          "",  1,	 	  ""); // Тортуга				
-	n = InitStdMap(n,     "map_curacao", "ITEMS_27",  8,  (rand(8) + 6) * 1300, 0.2,   0.0,      "cap_curacao",          "",  1,		  ""); // Кюрасао				
-	n = InitStdMap(n,  "map_martiniqua", "ITEMS_27",  8,  (rand(8) + 6) * 1250, 0.2,   0.0,    "cap_martinica",          "",  1,	  	  ""); // Мартиника				
-	n = InitStdMap(n,    "map_dominica", "ITEMS_27",  8,  (rand(8) + 7) * 1030, 0.2,   0.0,     "cap_dominica",          "",  1,	 	  ""); // Доминика						
-	n = InitStdMap(n,    "map_trinidad", "ITEMS_27",  8,  (rand(8) + 6) * 1080, 0.2,   0.0,     "cap_trinidad",          "",  1,		  ""); // Тринидад и Тобаго							
-	n = InitStdMap(n,      "map_puerto", "ITEMS_27",  8,  (rand(8) + 6) * 1500, 0.2,   0.0,       "cap_p_rico",          "",  1,		  ""); // Пуэрто-Рико								
-	n = InitStdMap(n,        "map_cuba", "ITEMS_27",  8, (rand(8) + 12) * 1090, 0.2,   0.0,         "cap_cuba",          "",  1,		  ""); // Куба								
-	n = InitStdMap(n,        "map_hisp", "ITEMS_27",  8, (rand(8) + 12) * 1220, 0.2,   0.0,   "cap_hispaniola",          "",  1,		  ""); // Эспаньола									
-	n = InitStdMap(n,       "map_nevis", "ITEMS_27",  8,  (rand(8) + 6) * 1010, 0.2,   0.0,        "cap_nevis",          "",  1,	 	  ""); // Сент-Кристофер									
-	n = InitStdMap(n,       "map_beliz", "ITEMS_27",  8,  (rand(8) + 9) * 1300, 0.2,   0.0,        "cap_beliz",          "",  1,		  ""); // Белиз									
-	n = InitStdMap(n,        "map_guad", "ITEMS_27",  8,  (rand(8) + 6) * 1015, 0.2,   0.0,    "cap_guadelupa",          "",  1,		  ""); // Гваделупа										
-	n = InitStdMap(n,       "map_santa", "ITEMS_27",  8,  (rand(8) + 8) * 1280, 0.2,   0.0,        "cap_santa",          "",  1,		  ""); // Блювельд										
-	n = InitStdMap(n,     "map_antigua", "ITEMS_27",  8,  (rand(8) + 6) * 1400, 0.2,   0.0,      "cap_antigua",          "",  1,		  ""); // Антигуа 											
-	n = InitStdMap(n,       "map_terks", "ITEMS_27",  8,  (rand(8) + 9) * 1350, 0.2,   0.0,        "cap_terks",          "",  1,		  ""); // Теркс											
-	n = InitStdMap(n,          "map_sm", "ITEMS_27",  8,  (rand(8) + 6) * 1500, 0.2,   0.0,     "cap_s_martin",          "",  1,		  ""); // Синт-Маартен											
-	n = InitStdMap(n,     "map_maine_1", "ITEMS_27",  8, (rand(8) + 17) * 1100, 0.2,   0.0,      "cap_maine_1",          "",  1,		  ""); // Новая Гранада, Центр (Картахена + Маракайбо)										
-	n = InitStdMap(n,     "map_maine_2", "ITEMS_27",  8, (rand(8) + 18) * 1150, 0.2,   0.0,      "cap_maine_2",          "",  1,		  ""); // Каракас											
-	n = InitStdMap(n,      "map_panama", "ITEMS_27",  8,  (rand(8) + 7) * 1200, 0.2,   0.0,       "cap_panama", 		 "",  1,		  ""); // Новая Гранада, Запад (Панама)												
-	n = InitStdMap(n,      "map_cumana", "ITEMS_27",  8,  (rand(8) + 7) * 1400, 0.2,   0.0,       "cap_cumana",          "",  1,		  ""); // Кумана									
-	n = InitStdMap(n,        "map_full", "ITEMS_27",  5,                     0, 0.4,   0.0,         "none",   "MapRead",  0,	  "Full"); 									
-	n = InitStdMap(n,       "map_part1", "ITEMS_27",  6,                     0, 0.2,   0.0,         "none",   "MapRead",  0,	  "Part");									
-	n = InitStdMap(n,       "map_part2", "ITEMS_27",  7,                     0, 0.2,   0.0,         "none",   "MapRead",  0,	  "Part");	
-	n = InitStdMap(n,         "map_LSC", "ITEMS_27",  14,                20000, 0.2,   0.0,"LostShipsCity",          "",  0,   "Special");	
+	//int InitStdMap(ItemIndex, id, picTexture, picIndex, Price, Weight, RareModificator, ImageTga, ImageType, atlasType, MapType, Area)
+	n = InitStdMap(n, 		  "map_bad", "ITEMS_27",  8,  (rand(4) + 6) * 1000, 0.1, 0.005,        "map_2", "cabin_map",  "region",   "Special", ""); // плохая карта
+	n = InitStdMap(n,      "map_normal", "ITEMS_27",  8,  (rand(8) + 9) * 1020, 0.1, 0.001,        "map_1", "cabin_map",  "region",   "Special", ""); // обычная карта
+	n = InitStdMap(n,        "Map_Best", "ITEMS_27",  3, (rand(8) + 37) * 1000, 0.1, 0.001,     "map_good", "cabin_map",  "region",   "Special", ""); // отличная карта
+	n = InitStdMap(n,    "map_bermudas", "ITEMS_27",  8,  (rand(8) + 6) * 1050, 0.2,   0.0,     "cap_bermudas",          "",  "common",	 	  "", "Bermudes"); // Исла-Тесоро	
+	n = InitStdMap(n,         "map_jam", "ITEMS_27",  8,  (rand(8) + 6) * 1100, 0.2,   0.0,      "cap_Jamaica",          "",  "common",	  	"", "Jamaica"); // Ямайка	
+	n = InitStdMap(n,      "map_cayman", "ITEMS_27",  8,  (rand(8) + 8) * 1015, 0.2,   0.0,       "cap_kayman",          "",  "common",		  "", "Caiman"); // Кайман		
+	n = InitStdMap(n,    "map_barbados", "ITEMS_27",  8,  (rand(8) + 6) * 1200, 0.2,   0.0,     "cap_barbados",          "",  "common",		  "", "Barbados"); // Барбадос			
+	n = InitStdMap(n,     "map_tortuga", "ITEMS_27",  8,  (rand(8) + 6) * 1070, 0.2,   0.0,      "cap_tortuga",          "",  "common",	 	  "", "Tortuga"); // Тортуга				
+	n = InitStdMap(n,     "map_curacao", "ITEMS_27",  8,  (rand(8) + 6) * 1300, 0.2,   0.0,      "cap_curacao",          "",  "common",		  "", "Curacao"); // Кюрасао				
+	n = InitStdMap(n,  "map_martiniqua", "ITEMS_27",  8,  (rand(8) + 6) * 1250, 0.2,   0.0,    "cap_martinica",          "",  "common",	  	"", "Martinique"); // Мартиника				
+	n = InitStdMap(n,    "map_dominica", "ITEMS_27",  8,  (rand(8) + 7) * 1030, 0.2,   0.0,     "cap_dominica",          "",  "common",	 	  "", "Dominica"); // Доминика						
+	n = InitStdMap(n,    "map_trinidad", "ITEMS_27",  8,  (rand(8) + 6) * 1080, 0.2,   0.0,     "cap_trinidad",          "",  "common",		  "", "Trinidad"); // Тринидад и Тобаго							
+	n = InitStdMap(n,      "map_puerto", "ITEMS_27",  8,  (rand(8) + 6) * 1500, 0.2,   0.0,       "cap_p_rico",          "",  "common",		  "", "PuertoRico"); // Пуэрто-Рико								
+	n = InitStdMap(n,        "map_cuba", "ITEMS_27",  8, (rand(8) + 12) * 1090, 0.2,   0.0,         "cap_cuba",          "",  "common",		  "", "Cuba"); // Куба								
+	n = InitStdMap(n,        "map_hisp", "ITEMS_27",  8, (rand(8) + 12) * 1220, 0.2,   0.0,   "cap_hispaniola",          "",  "common",		  "", "Hispaniola"); // Эспаньола									
+	n = InitStdMap(n,       "map_nevis", "ITEMS_27",  8,  (rand(8) + 6) * 1010, 0.2,   0.0,        "cap_nevis",          "",  "common",	 	  "", "Nevis"); // Сент-Кристофер									
+	n = InitStdMap(n,       "map_beliz", "ITEMS_27",  8,  (rand(8) + 9) * 1300, 0.2,   0.0,        "cap_beliz",          "",  "common",		  "", "Beliz"); // Белиз									
+	n = InitStdMap(n,        "map_guad", "ITEMS_27",  8,  (rand(8) + 6) * 1015, 0.2,   0.0,    "cap_guadelupa",          "",  "common",		  "", "Guadeloupe"); // Гваделупа										
+	n = InitStdMap(n,       "map_santa", "ITEMS_27",  8,  (rand(8) + 8) * 1280, 0.2,   0.0,        "cap_santa",          "",  "common",		  "", "SantaCatalina"); // Блювельд										
+	n = InitStdMap(n,     "map_antigua", "ITEMS_27",  8,  (rand(8) + 6) * 1400, 0.2,   0.0,      "cap_antigua",          "",  "common",		  "", "Antigua"); // Антигуа 											
+	n = InitStdMap(n,       "map_terks", "ITEMS_27",  8,  (rand(8) + 9) * 1350, 0.2,   0.0,        "cap_terks",          "",  "common",		  "", "Terks"); // Теркс											
+	n = InitStdMap(n,          "map_sm", "ITEMS_27",  8,  (rand(8) + 6) * 1500, 0.2,   0.0,     "cap_s_martin",          "",  "common",		  "", "SentMartin"); // Синт-Маартен											
+	n = InitStdMap(n,     "map_maine_1", "ITEMS_27",  8, (rand(8) + 17) * 1100, 0.2,   0.0,      "cap_maine_1",          "",  "common",		  "", "Cartahena"); // Новая Гранада, Центр (Картахена + Маракайбо)										
+	n = InitStdMap(n,     "map_maine_2", "ITEMS_27",  8, (rand(8) + 18) * 1150, 0.2,   0.0,      "cap_maine_2",          "",  "common",		  "", "Caracas"); // Каракас											
+	n = InitStdMap(n,      "map_panama", "ITEMS_27",  8,  (rand(8) + 7) * 1200, 0.2,   0.0,       "cap_panama",          "",  "common",		  "", "PortoBello"); // Новая Гранада, Запад (Панама)												
+	n = InitStdMap(n,      "map_cumana", "ITEMS_27",  8,  (rand(8) + 7) * 1400, 0.2,   0.0,       "cap_cumana",          "",  "common",		  "", "Cumana"); // Кумана									
+	n = InitStdMap(n,        "map_full", "ITEMS_27",  5,                     0, 0.4,   0.0,         "none",   "MapRead",  "none",	  "Full", ""); 									
+	n = InitStdMap(n,       "map_part1", "ITEMS_27",  6,                     0, 0.2,   0.0,         "none",   "MapRead",  "none",	  "Part", "");									
+	n = InitStdMap(n,       "map_part2", "ITEMS_27",  7,                     0, 0.2,   0.0,         "none",   "MapRead",  "none",	  "Part", "");	
+	n = InitStdMap(n,         "map_LSC", "ITEMS_27",  14,                20000, 0.2,   0.0,"LostShipsCity",          "",  "common",   "Special", "");	
 	// ------------------------------ адмиральские карты 24 шт -----------------------------------------------
-	n = InitStdMap(n,    "A_map_bermudas", "ITEMS_27",  8,  (rand(4) + 6) * 2000,  0.2,   0.0,     "bermudas",          "",  0,	 	  "Special"); // Исла-Тесоро	
-	n = InitStdMap(n,         "A_map_jam", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "Jamaica",          "",  0,	  	  "Special"); // Ямайка	
-	n = InitStdMap(n,      "A_map_cayman", "ITEMS_27",  8,  (rand(8) + 8) * 2000,  0.2,   0.0,       "kayman",          "",  0,		  "Special"); // Кайман		
-	n = InitStdMap(n,    "A_map_barbados", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,     "barbados",          "",  0,		  "Special"); // Барбадос			
-	n = InitStdMap(n,     "A_map_tortuga", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "tortuga",          "",  0,	 	  "Special"); // Тортуга				
-	n = InitStdMap(n,     "A_map_curacao", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "curacao",          "",  0,		  "Special"); // Кюрасао				
-	n = InitStdMap(n,  "A_map_martiniqua", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,    "martinica",          "",  0,	  	  "Special"); // Мартиника				
-	n = InitStdMap(n,    "A_map_dominica", "ITEMS_27",  8,  (rand(8) + 7) * 2000,  0.2,   0.0,     "dominica",          "",  0,	 	  "Special"); // Доминика						
-	n = InitStdMap(n,    "A_map_trinidad", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,     "trinidad",          "",  0,		  "Special"); // Тринидад и Тобаго							
-	n = InitStdMap(n,      "A_map_puerto", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,       "p_rico",          "",  0,		  "Special"); // Пуэрто-Рико								
-	n = InitStdMap(n,        "A_map_cuba", "ITEMS_27",  8, (rand(8) + 12) * 2000, 0.2,   0.0,         "cuba",          "",  0,		  "Special"); // Куба								
-	n = InitStdMap(n,        "A_map_hisp", "ITEMS_27",  8, (rand(8) + 12) * 2000, 0.2,   0.0,   "hispaniola",          "",  0,		  "Special"); // Эспаньола									
-	n = InitStdMap(n,       "A_map_nevis", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,        "nevis",          "",  0,	 	  "Special"); // Сент-Кристофер									
-	n = InitStdMap(n,       "A_map_beliz", "ITEMS_27",  8,  (rand(8) + 9) * 2000, 0.2,   0.0,        "beliz",          "",  0,		  "Special"); // Белиз									
-	n = InitStdMap(n,        "A_map_guad", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,    "guadelupa",          "",  0,		  "Special"); // Гваделупа										
-	n = InitStdMap(n,       "A_map_santa", "ITEMS_27",  8,  (rand(8) + 8) * 2000, 0.2,   0.0,        "santa",          "",  0,		  "Special"); // Блювельд										
-	n = InitStdMap(n,     "A_map_antigua", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,      "antigua",          "",  0,		  "Special"); // Антигуа 											
-	n = InitStdMap(n,       "A_map_terks", "ITEMS_27",  8,  (rand(8) + 9) * 2000, 0.2,   0.0,        "terks",          "",  0,		  "Special"); // Теркс											
-	n = InitStdMap(n,          "A_map_sm", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,     "s_martin",          "",  0,		  "Special"); // Синт-Маартен											
-	n = InitStdMap(n,     "A_map_maine_1", "ITEMS_27",  8, (rand(8) + 17) * 2000, 0.2,   0.0,      "maine_1",          "",  0,		  "Special"); // Новая Гранада, Центр (Картахена + Маракайбо)										
-	n = InitStdMap(n,     "A_map_maine_2", "ITEMS_27",  8, (rand(8) + 18) * 2000, 0.2,   0.0,      "maine_2",          "",  0,		  "Special"); // Каракас											
-	n = InitStdMap(n,      "A_map_panama", "ITEMS_27",  8,  (rand(8) + 7) * 2000, 0.2,   0.0,       "panama", 		   "",  0,		  "Special"); // Новая Гранада, Запад (Панама)												
-	n = InitStdMap(n,      "A_map_cumana", "ITEMS_27",  8,  (rand(8) + 7) * 2000, 0.2,   0.0,       "cumana",          "",  0,		  "Special"); // Кумана			
-	n = InitStdMap(n,      "A_map_perl", "ITEMS_27",  8,  (rand(8) + 7) * 2000,   0.2,   0.0,         "perl",          "",  0,		  "Special"); // Провиденсия	
+	n = InitStdMap(n,    "A_map_bermudas", "ITEMS_27",  8,  (rand(4) + 6) * 2000,  0.2,   0.0,     "bermudas",          "",  "admiral",	 	  "Special", "Bermudes"); // Исла-Тесоро	
+	n = InitStdMap(n,         "A_map_jam", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "Jamaica",          "",  "admiral",	  	  "Special", "Jamaica"); // Ямайка	
+	n = InitStdMap(n,      "A_map_cayman", "ITEMS_27",  8,  (rand(8) + 8) * 2000,  0.2,   0.0,       "kayman",          "",  "admiral",		  "Special", "Caiman"); // Кайман		
+	n = InitStdMap(n,    "A_map_barbados", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,     "barbados",          "",  "admiral",		  "Special", "Barbados"); // Барбадос			
+	n = InitStdMap(n,     "A_map_tortuga", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "tortuga",          "",  "admiral",	 	  "Special", "Tortuga"); // Тортуга				
+	n = InitStdMap(n,     "A_map_curacao", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,      "curacao",          "",  "admiral",		  "Special", "Curacao"); // Кюрасао				
+	n = InitStdMap(n,  "A_map_martiniqua", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,    "martinica",          "",  "admiral",	  	  "Special", "Martinique"); // Мартиника				
+	n = InitStdMap(n,    "A_map_dominica", "ITEMS_27",  8,  (rand(8) + 7) * 2000,  0.2,   0.0,     "dominica",          "",  "admiral",	 	  "Special", "Dominica"); // Доминика						
+	n = InitStdMap(n,    "A_map_trinidad", "ITEMS_27",  8,  (rand(8) + 6) * 2000,  0.2,   0.0,     "trinidad",          "",  "admiral",		  "Special", "Trinidad"); // Тринидад и Тобаго							
+	n = InitStdMap(n,      "A_map_puerto", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,       "p_rico",          "",  "admiral",		  "Special", "PuertoRico"); // Пуэрто-Рико								
+	n = InitStdMap(n,        "A_map_cuba", "ITEMS_27",  8, (rand(8) + 12) * 2000, 0.2,   0.0,         "cuba",          "",  "admiral",		  "Special", "Cuba"); // Куба								
+	n = InitStdMap(n,        "A_map_hisp", "ITEMS_27",  8, (rand(8) + 12) * 2000, 0.2,   0.0,   "hispaniola",          "",  "admiral",		  "Special", "Hispaniola"); // Эспаньола									
+	n = InitStdMap(n,       "A_map_nevis", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,        "nevis",          "",  "admiral",	 	  "Special", "Nevis"); // Сент-Кристофер									
+	n = InitStdMap(n,       "A_map_beliz", "ITEMS_27",  8,  (rand(8) + 9) * 2000, 0.2,   0.0,        "beliz",          "",  "admiral",		  "Special", "Beliz"); // Белиз									
+	n = InitStdMap(n,        "A_map_guad", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,    "guadelupa",          "",  "admiral",		  "Special", "Guadeloupe"); // Гваделупа										
+	n = InitStdMap(n,       "A_map_santa", "ITEMS_27",  8,  (rand(8) + 8) * 2000, 0.2,   0.0,        "santa",          "",  "admiral",		  "Special", "SantaCatalina"); // Блювельд										
+	n = InitStdMap(n,     "A_map_antigua", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,      "antigua",          "",  "admiral",		  "Special", "Antigua"); // Антигуа 											
+	n = InitStdMap(n,       "A_map_terks", "ITEMS_27",  8,  (rand(8) + 9) * 2000, 0.2,   0.0,        "terks",          "",  "admiral",		  "Special", "Terks"); // Теркс											
+	n = InitStdMap(n,          "A_map_sm", "ITEMS_27",  8,  (rand(8) + 6) * 2000, 0.2,   0.0,     "s_martin",          "",  "admiral",		  "Special", "SentMartin"); // Синт-Маартен											
+	n = InitStdMap(n,     "A_map_maine_1", "ITEMS_27",  8, (rand(8) + 17) * 2000, 0.2,   0.0,      "maine_1",          "",  "admiral",		  "Special", "Cartahena"); // Новая Гранада, Центр (Картахена + Маракайбо)										
+	n = InitStdMap(n,     "A_map_maine_2", "ITEMS_27",  8, (rand(8) + 18) * 2000, 0.2,   0.0,      "maine_2",          "",  "admiral",		  "Special", "Caracas"); // Каракас											
+	n = InitStdMap(n,      "A_map_panama", "ITEMS_27",  8,  (rand(8) + 7) * 2000, 0.2,   0.0,       "panama", 		   "",  "admiral",		  "Special", "PortoBello"); // Новая Гранада, Запад (Панама)												
+	n = InitStdMap(n,      "A_map_cumana", "ITEMS_27",  8,  (rand(8) + 7) * 2000, 0.2,   0.0,       "cumana",          "",  "admiral",		  "Special", "Cumana"); // Кумана			
+	n = InitStdMap(n,      "A_map_perl", "ITEMS_27",  8,  (rand(8) + 7) * 2000,   0.2,   0.0,         "perl",          "",  "admiral",		  "Special", "Providence"); // Провиденсия	
 
     //  ЗАПОЛНЕНИЕ ТРУПОВ
     ItemDeadStartCount = n;
@@ -2626,13 +2714,13 @@ int InitItems()
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//InitStdAmulet(индекс, идентификатор, модель, текстура, картинка, цена, вес, редкость, минимальный уровень, время действия, тип, мультиобъект, кол-во на выходе,тип офицера, если мультиобъект -нужен ли перк алхимии);
 	// красная группа с пенальти (взаимоисключающая с зеленой)
-	n = InitStdAmulet(n, "indian_1", "pursel",    "ITEMS_3",  1,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0, 	   	     "", 0); //стрельба (1) (для всех)
-	n = InitStdAmulet(n, "indian_2", "pursel",    "ITEMS_3",  2,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0, 			 "", 0); //стрельба (2) (для всех)
-	n = InitStdAmulet(n, "indian_3", "pursel",    "ITEMS_3",  3,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0, 			 "", 0); // пробивающий удар (1) (для всех)
-	n = InitStdAmulet(n, "indian_4", "pursel",    "ITEMS_3",  4,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0, 			 "", 0); // пробивающий удар (2) (для всех)
-	n = InitStdAmulet(n, "indian_5", "pursel",    "ITEMS_3",  5,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0,    "boatswain", 0); // абордаж (для боцмана)
-	n = InitStdAmulet(n, "indian_6", "pursel",    "ITEMS_3",  6,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0,    "boatswain", 0); // мушкетный залп (1) (для боцмана)
-	n = InitStdAmulet(n, "indian_7", "pursel",    "ITEMS_3",  7,   rand(150) + 100, 0.5, 0.01, 1, 70, ITEM_INDIAN, 0, 0, 			 "", 0); // энергия (для всех)
+	n = InitStdAmulet(n, "indian_1", "pursel",    "ITEMS_3",  1,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 	   	     "", 0); //стрельба (1) (для всех)
+	n = InitStdAmulet(n, "indian_2", "pursel",    "ITEMS_3",  2,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 			 "", 0); //стрельба (2) (для всех)
+	n = InitStdAmulet(n, "indian_3", "pursel",    "ITEMS_3",  3,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 			 "", 0); // пробивающий удар (1) (для всех)
+	n = InitStdAmulet(n, "indian_4", "pursel",    "ITEMS_3",  4,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 			 "", 0); // пробивающий удар (2) (для всех)
+	n = InitStdAmulet(n, "indian_5", "pursel",    "ITEMS_3",  5,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0,    "boatswain", 0); // абордаж (для боцмана)
+	n = InitStdAmulet(n, "indian_6", "pursel",    "ITEMS_3",  6,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0,    "boatswain", 0); // мушкетный залп (1) (для боцмана)
+	n = InitStdAmulet(n, "indian_7", "pursel",    "ITEMS_3",  7,   rand(150) + 100, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 			 "", 0); // энергия (для всех)
 	// красная группа без пенальти
 	n = InitStdAmulet(n, "indian_8", "pursel",    "ITEMS_3",  8,   rand(100) +  50, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0,     "cannoner", 0); // меткость (1) (для канонира)
 	n = InitStdAmulet(n, "indian_9", "pursel",    "ITEMS_3",  9,   rand(100) +  50, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0,     "cannoner", 0); // меткость (2) (для канонира)
@@ -2640,13 +2728,13 @@ int InitItems()
 	n = InitStdAmulet(n, "indian_11", "pursel",   "ITEMS_3", 11,   rand(100) +  50, 0.5, 0.01, 1, 50, ITEM_INDIAN, 0, 0, 			 "", 0); // скрытность (1) (для всех)
 	
 	// зеленая группа с пенальти (взаимоисключающая с красной)
-	n = InitStdAmulet(n,     "amulet_1", "pursel",    "ITEMS_3", 12,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 			 "", 0); // Стрельба (3) (для всех)
-	n = InitStdAmulet(n,     "amulet_2", "pursel",    "ITEMS_3", 13,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 			 "", 0); // Стрельба (4) (для всех)
-	n = InitStdAmulet(n,     "amulet_3", "pursel",    "ITEMS_3", 14,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 			 "", 0); // Пробивающий удар (3) (для всех)
-	n = InitStdAmulet(n,     "amulet_4", "pursel",    "ITEMS_3", 15,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 			 "", 0); // Пробивающий удар (4) (для всех)
-	n = InitStdAmulet(n,     "amulet_5", "pursel",    "ITEMS_3", 16,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0,     "cannoner", 0); // Орудия (для канонира)
-	n = InitStdAmulet(n,     "amulet_6", "pursel",   "ITEMS_20",  1,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 	 		 "", 0); // Здоровье (2) (для всех)
-	n = InitStdAmulet(n,     "amulet_7", "pursel",   "ITEMS_20",  2,   rand(150) + 100, 0.5, 0.05, 1, 70, ITEM_AMULET, 0, 0, 			 "", 0); // Здоровье (3) (для всех)
+	n = InitStdAmulet(n,     "amulet_1", "pursel",    "ITEMS_3", 12,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 			 "", 0); // Стрельба (3) (для всех)
+	n = InitStdAmulet(n,     "amulet_2", "pursel",    "ITEMS_3", 13,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 			 "", 0); // Стрельба (4) (для всех)
+	n = InitStdAmulet(n,     "amulet_3", "pursel",    "ITEMS_3", 14,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 			 "", 0); // Пробивающий удар (3) (для всех)
+	n = InitStdAmulet(n,     "amulet_4", "pursel",    "ITEMS_3", 15,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 			 "", 0); // Пробивающий удар (4) (для всех)
+	n = InitStdAmulet(n,     "amulet_5", "pursel",    "ITEMS_3", 16,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0,     "cannoner", 0); // Орудия (для канонира)
+	n = InitStdAmulet(n,     "amulet_6", "pursel",   "ITEMS_20",  1,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 	 		 "", 0); // Здоровье (2) (для всех)
+	n = InitStdAmulet(n,     "amulet_7", "pursel",   "ITEMS_20",  2,   rand(150) + 100, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0, 			 "", 0); // Здоровье (3) (для всех)
 	// зеленая группа без пенальти
 	n = InitStdAmulet(n,     "amulet_8", "pursel",   "ITEMS_20",  3,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0,    "carpenter", 0); // Защита (1) (для плотника)
 	n = InitStdAmulet(n,     "amulet_9", "pursel",   "ITEMS_20",  4,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0,    "carpenter", 0); // Защита (2) (для плотника)
@@ -2654,18 +2742,18 @@ int InitItems()
 	n = InitStdAmulet(n,    "amulet_11", "pursel",   "ITEMS_20",  6,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_AMULET, 0, 0,    "boatswain", 0); // Мушкетный залп (2) (для боцмана)
 	
 	// голубая группа 
-	n = InitStdAmulet(n,     "obereg_1", "pursel",   "ITEMS_20",  7,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0,    "carpenter", 0); // Починка (1) (для плотника)
-	n = InitStdAmulet(n,     "obereg_2", "pursel",   "ITEMS_20",  8,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0,    "carpenter", 0); // Починка (2) (для плотника)
-	n = InitStdAmulet(n,     "obereg_3", "pursel",   "ITEMS_20",  9,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0, 			 "", 0); // Переносимый вес (для всех)
-	n = InitStdAmulet(n,     "obereg_4", "pursel",   "ITEMS_20", 10,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0, 			 "", 0); // Скрытность (2) (для всех)
-	n = InitStdAmulet(n,     "obereg_5", "pursel",   "ITEMS_20", 11,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0, 			 "", 0); // Везение (для всех)
-	n = InitStdAmulet(n,     "obereg_6", "pursel",   "ITEMS_20", 12,   rand(100) +  50, 0.5, 0.05, 1, 30, ITEM_OBEREG, 0, 0, 			 "", 0); // Авторитет (для всех)
-	n = InitStdAmulet(n,     "obereg_7", "pursel",   "ITEMS_20", 13,   rand(100) +  50, 0.5, 0.05, 1, 30, ITEM_OBEREG, 0, 0,			 "", 0); // Навигация (для всех)
-	n = InitStdAmulet(n,     "obereg_8", "pursel",   "ITEMS_20", 14,   rand(100) +  50, 0.5, 0.05, 1, 30, ITEM_OBEREG, 0, 0, 			 "", 0); // Торговля (для всех)
-	n = InitStdAmulet(n,     "obereg_9", "pursel",   "ITEMS_20", 15,   rand(100) +  50, 0.5, 0.05, 1, 30, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (1) (для штурмана)
-	n = InitStdAmulet(n,    "obereg_10", "pursel",   "ITEMS_20", 16,   rand(100) +  50, 0.5, 0.05, 1, 45, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (2) (для штурмана)
-	n = InitStdAmulet(n,    "obereg_11", "pursel",   "ITEMS_21",  1,   rand(100) +  50, 0.5, 0.05, 1, 30, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (3) (для штурмана)
-	n = InitStdAmulet(n,   "rat_poison", "potion",    "ITEMS_6", 16,   rand(150) + 450, 0.5, 0.05, 1, 60, ITEM_OBEREG, 0, 0,    "treasurer", 0); // мышьяк (аналог крысобога)
+	n = InitStdAmulet(n,     "obereg_1", "pursel",   "ITEMS_20",  7,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "carpenter", 0); // Починка (1) (для плотника)
+	n = InitStdAmulet(n,     "obereg_2", "pursel",   "ITEMS_20",  8,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "carpenter", 0); // Починка (2) (для плотника)
+	n = InitStdAmulet(n,     "obereg_3", "pursel",   "ITEMS_20",  9,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0, 			 "", 0); // Переносимый вес (для всех)
+	n = InitStdAmulet(n,     "obereg_4", "pursel",   "ITEMS_20", 10,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0, 			 "", 0); // Скрытность (2) (для всех)
+	n = InitStdAmulet(n,     "obereg_5", "pursel",   "ITEMS_20", 11,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0, 			 "", 0); // Везение (для всех)
+	n = InitStdAmulet(n,     "obereg_6", "pursel",   "ITEMS_20", 12,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0, 			 "", 0); // Авторитет (для всех)
+	n = InitStdAmulet(n,     "obereg_7", "pursel",   "ITEMS_20", 13,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,			 "", 0); // Навигация (для всех)
+	n = InitStdAmulet(n,     "obereg_8", "pursel",   "ITEMS_20", 14,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0, 			 "", 0); // Торговля (для всех)
+	n = InitStdAmulet(n,     "obereg_9", "pursel",   "ITEMS_20", 15,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (1) (для штурмана)
+	n = InitStdAmulet(n,    "obereg_10", "pursel",   "ITEMS_20", 16,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (2) (для штурмана)
+	n = InitStdAmulet(n,    "obereg_11", "pursel",   "ITEMS_21",  1,   rand(100) +  50, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "navigator", 0); // Скорость (3) (для штурмана)
+	n = InitStdAmulet(n,   "rat_poison", "potion",    "ITEMS_6", 16,   rand(150) + 450, 0.5, 0.05, 1, 50, ITEM_OBEREG, 0, 0,    "treasurer", 0); // мышьяк (аналог крысобога)
 	
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2684,7 +2772,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "spyglass4";
-	itm.radius = 250.0;
+	itm.radius = 350.0;
+	itm.worldMapBonus = 0;
 	itm.scope.texture = "eye_BadTub.tga";
 	itm.scope.zoom = 2.5;
 	itm.scope.time_activate = 500;
@@ -2721,6 +2810,7 @@ int InitItems()
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.radius = 500.0;
+	itm.worldMapBonus = 10;
 	itm.scope.texture = "eye_CommonTub.tga";
 	itm.scope.zoom = 4.0;
 	itm.scope.time_activate = 500;
@@ -2756,7 +2846,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "spyglass4";
-	itm.radius = 750.0;
+	itm.radius = 650.0;
+	itm.worldMapBonus = 10;
 	itm.scope.texture = "eye_GoodTub.tga";
 	itm.scope.zoom = 7.0;
 	itm.scope.time_activate = 500;
@@ -2789,6 +2880,7 @@ int InitItems()
 	itm.folder = "items";
 	itm.model = "spyglass4";
 	itm.radius = 1000.0;
+	itm.worldMapBonus = 18;
 	itm.price = 12000;
 	// boal 19.01.2004 -->
 	itm.Weight = 2.5;
@@ -2827,7 +2919,8 @@ int InitItems()
 	itm.price = 75000;
 	// boal 19.01.2004 -->
 	itm.Weight = 4.0;
-	itm.radius = 1250.0;
+	itm.radius = 1609.0;
+	itm.worldMapBonus = 25;
     // boal 19.01.2004 <--
 	itm.scope.texture = "eye_BestTub.tga";
 	itm.scope.zoom = 15.0;
@@ -2864,7 +2957,8 @@ int InitItems()
     // boal 19.01.2004 <--
 	itm.folder = "items";
 	itm.model = "Spyglass_SP3";
-	itm.radius = 850.0;
+	itm.radius = 666.0;
+	itm.worldMapBonus = 14;
 	itm.scope.texture = "eye_GoodTub.tga";
 	itm.scope.zoom = 7.0;
 	itm.scope.time_activate = 500;
@@ -3191,6 +3285,20 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	n++;
 	
+	makeref(itm,Items[n]); // Шляпа Терезы
+	itm.id = "hat11";
+	itm.groupID	= HAT_ITEM_TYPE;
+	itm.name = "itmname_hat11";
+	itm.describe = "itmdescr_hat11";
+	itm.model = "hat11";
+	itm.picIndex = 11;
+	itm.picTexture = "ITEMS_40";
+	itm.price = 50000;
+	itm.Weight = 0.1;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	n++;
+	
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//							ЛЕЧИЛКИ И ТРАВЫ
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -3205,11 +3313,15 @@ int InitItems()
 	itm.Weight = 0.8;
 	itm.potion.pic = 21;
 	itm.potion.tex = 0; 
-	itm.potion.health = 40.0;
+	itm.potion.health = 85.0;
+	itm.potion.health.speed = 5;
 	itm.potion.penalty = 0.1;
 	itm.minlevel = 0;
 	itm.rare = 0.3;
 	itm.SortIndex = 2;
+	itm.multiobject = true;		
+	itm.multiobject.qty = 1;
+	itm.multiobject.alchemy = true;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_POTION;
 	n++;
@@ -3225,8 +3337,8 @@ int InitItems()
 	itm.Weight = 1;
 	itm.potion.pic = 22;
 	itm.potion.tex = 0; 
-	itm.potion.health = 150.0;
-	itm.potion.health.speed = 8; // скорость выпивания
+	itm.potion.health = 140.0;
+	itm.potion.health.speed = 5; // скорость выпивания
 	itm.potion.penalty = 0.3;
 	itm.minlevel = 1;
 	itm.rare = 0.005;
@@ -3249,6 +3361,8 @@ int InitItems()
 	itm.potion.pic = 23;
 	itm.potion.tex = 0; 
 	itm.potion.antidote = true;
+	itm.potion.health = 35.0;
+	itm.potion.health.speed = 5; // скорость выпивания
 	itm.potion.penalty = 0.2;
 	itm.minlevel = 1;
 	itm.rare = 0.001;	
@@ -3271,8 +3385,8 @@ int InitItems()
 	itm.Weight = 0.4;
 	itm.potion.pic = 24;
 	itm.potion.tex = 0; 
-	itm.potion.health = 160.0;
-	itm.potion.health.speed = 8; // скорость выпивания
+	itm.potion.health = 185.0;
+	itm.potion.health.speed = 5; // скорость выпивания
 	itm.potion.antidote = true;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
@@ -3295,7 +3409,8 @@ int InitItems()
 	itm.Weight = 2;
 	itm.potion.pic = 25;
 	itm.potion.tex = 0; 
-	itm.potion.health = 50.0;
+	itm.potion.health = 45.0;
+	itm.potion.health.speed = 5;
 	itm.potion.antidote = true;
 	//navy -->
 	itm.potion.drunk = 51;
@@ -3306,6 +3421,7 @@ int InitItems()
 	itm.SortIndex = 2;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_POTION;
+	itm.time = 50;
 	n++;
 
 	makeref(itm,Items[n]);
@@ -3319,8 +3435,8 @@ int InitItems()
 	itm.Weight = 1;
 	itm.potion.pic = 26;
 	itm.potion.tex = 0; 
-	itm.potion.health = 175.0;
-	itm.potion.health.speed = 7; // скорость выпивания
+	itm.potion.health = 90.0;
+	itm.potion.health.speed = 5; // скорость выпивания
 	itm.potion.antidote = true; // belamour legendary edition
 	//navy -->
 	itm.potion.drunk = 15;
@@ -3345,6 +3461,7 @@ int InitItems()
 	itm.potion.pic = 27;
 	itm.potion.tex = 0; 
 	itm.potion.health = 25.0;
+	itm.potion.health.speed = 5; // скорость выпивания
 	itm.minlevel = 1;
 	itm.rare = 0.2;
 	itm.SortIndex = 2;
@@ -3429,6 +3546,7 @@ int InitItems()
 	itm.picTexture = "ITEMS_35";
 	itm.price = 8000;
 	itm.Weight = 1;
+	itm.time = 50;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
@@ -3449,6 +3567,7 @@ int InitItems()
 	itm.price = 8000;
 	itm.Weight = 1;
 	itm.minlevel = 1;
+	itm.time = 50;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
 	itm.multiobject = true;		
@@ -3467,6 +3586,7 @@ int InitItems()
 	itm.picTexture = "ITEMS_35";
 	itm.price = 8000;
 	itm.Weight = 1;
+	itm.time = 50;
 	itm.minlevel = 1;
 	itm.rare = 0.001;
 	itm.SortIndex = 2;
@@ -3494,6 +3614,30 @@ int InitItems()
 	itm.multiobject.alchemy = false;
 	itm.ItemType = "SUPPORT";
 	n++;
+
+	makeref(itm,Items[n]);
+	itm.id = "PerksPotion";
+	itm.groupID		= SPECIAL_ITEM_TYPE;
+	itm.name = "itmname_PerksPotion";
+	itm.describe = "itmdescr_PerksPotion";
+    itm.model = "balsam";
+	itm.picIndex = 16;
+	itm.picTexture = "ITEMS_41";
+	itm.price = 20000;
+	itm.Weight = 0.1;
+	itm.minlevel = 1;
+	itm.rare = 0.001;
+	itm.SortIndex = 2;
+	itm.multiobject = true;		
+	itm.multiobject.qty = 1;
+	itm.multiobject.alchemy = true;
+	itm.ItemType = "SUPPORT";
+	AddOnUseCallback(itm, "RevokePerksPotionEffect");
+	AddOnUseCallback(itm, "NotifyPlayerUse");
+	callback = AddCanBeUsedCallback(itm, "IsFellowOurCrew");
+	callback.argumentsConfig = "chr";
+	n++;
+	
 	
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	// Jason: РЕЦЕПТЫ
@@ -3507,11 +3651,13 @@ int InitItems()
 	n = InitStdRecipies(n, "recipe_grapeshot_double", "grapeshot_double", 3000);
 	n = InitStdRecipies(n, "recipe_harpoon", "harpoon", 2000);
 	n = InitStdRecipies(n, "recipe_GunEchin", "GunEchin", 10000);
+	n = InitStdRecipies(n, "recipe_potion1", "potion1", 3500);
 	n = InitStdRecipies(n, "recipe_potion2", "potion2", 7000);
 	n = InitStdRecipies(n, "recipe_potion3", "potion3", 5000);
 	// belamour legendary edition рецепт Микстуры
 	n = InitStdRecipies(n, "recipe_potion4", "potion4", 7000);
 	n = InitStdRecipies(n, "recipe_berserker_potion", "berserker_potion", 77000);
+	n = InitStdRecipies(n, "recipe_PerksPotion", "PerksPotion", 20000);
 	n = InitStdRecipies(n, "recipe_totem_01", "totem_01", 22000);
 	n = InitStdRecipies(n, "recipe_totem_02", "totem_02", 21000);
 	n = InitStdRecipies(n, "recipe_totem_03", "totem_03", 22500);
@@ -3545,39 +3691,43 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman14", "", "ITEMS_39",  6, rand(5000), 0.5,    "navigator"); // Оберег 'Жаньи' cle 1.3
 	n = InitStdTalisman(n, "talisman15", "", "ITEMS_39",  7, rand(5000), 0.5,             ""); // Оберег 'Чёрная метка' cle 1.3 DLC
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
-	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,             ""); // Оберег Liber Misericordiae cle 1.5 DLC SP1
+	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,       "doctor"); // Оберег Liber Misericordiae cle 1.5 DLC SP1
 	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
-	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7, rand(5000), 2.2,              ""); // Оберег Череп
+	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7,  rand(5000), 2.2,             ""); // Оберег Череп
 	n = InitStdTalisman(n, "talisman20", "", "ITEMS_41", 10,       4200, 1.2,             ""); // Берендейка стрельца
+	n = InitStdTalisman(n, "talisman21", "", "ITEMS_41", 15, rand(5000), 0.5,             ""); // Оберег контрабандиста
+	n = InitStdTalisman(n, "knife_01", "",   "ITEMS_17", 8,  rand(5000), 0.5,             ""); // дага Коготь вождя
+	n = InitStdTalisman(n, "knife_02", "",   "ITEMS_38", 1,  rand(5000), 0.5,             ""); // Мария cle
+	n = InitStdTalisman(n, "knife_03", "",   "ITEMS_38", 2,  rand(5000), 0.5,             ""); // Родовой кинжал cle
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	//					ЮВЕЛИРНЫЕ ИЗДЕЛИЯ И ДРАГОЦЕННОСТИ
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////		
 	//InitStdItem( индекс, идентификатор, модель, текстура, индекс картинки, редкость, мин. уровень, цена, цена в дублонах, вес, тип)
 	// камни
-	n = InitStdItem( n,   "jewelry1", 	  "sapphire", "ITEMS_28",  15,   0.10,   1,   400,   4,  0.1,   ITEM_TRADE_JEWELRY); // аметист
-	n = InitStdItem( n,   "jewelry2",      "diamond", "ITEMS_28",   3,   0.05,   1,   700,   7,  0.1,   ITEM_TRADE_JEWELRY); // алмаз
-	n = InitStdItem( n,   "jewelry3",         "ruby", "ITEMS_28",  11,   0.10,   0,   550,   6,  0.1,   ITEM_TRADE_JEWELRY); // рубин
-	n = InitStdItem( n,   "jewelry4",      "emerald", "ITEMS_28",  14,   0.10,   0,   500,   5,  0.1,   ITEM_TRADE_JEWELRY); // изумруд
-	n = InitStdItem( n,   "jewelry5",     "sapphire", "ITEMS_28",   5,   0.05,   1,   250,   3,  0.5,   ITEM_TRADE_JEWELRY); // золотой самородок
-	n = InitStdItem( n,   "jewelry6",     "sapphire", "ITEMS_28",   9,   0.10,   0,   150,   2,  0.4,   ITEM_TRADE_JEWELRY); // серебряный самородок	
-	n = InitStdItem( n,   "jewelry7",       "pursel", "ITEMS_28",   1, 0.0001,   1,  1500,  15,  0.1,   ITEM_TRADE_JEWELRY); // голубой янтарь
-	n = InitStdItem( n,   "jewelry8",       "pursel", "ITEMS_28",   2, 0.0001,   1,   450,   5,  0.1,   ITEM_TRADE_JEWELRY); // янтарь
-	n = InitStdItem( n,   "jewelry9",       "pursel", "ITEMS_28",   4, 0.0001,   1,   200,   2,  0.1,   ITEM_TRADE_JEWELRY); // морион
-	n = InitStdItem( n,  "jewelry10",       "pursel", "ITEMS_28",   6, 0.0001,   1,   220,   2,  0.1,   ITEM_TRADE_JEWELRY); // платиновый самородок
-	n = InitStdItem( n,  "jewelry11",       "pursel", "ITEMS_28",   7, 0.0001,   1,   1500, 15,  1.1,   ITEM_TRADE_JEWELRY); // осколок метеорита
-	n = InitStdItem( n,  "jewelry12",       "pursel", "ITEMS_28",   8, 0.0001,   1,   150,   2,  0.3,   ITEM_TRADE_JEWELRY); // медный самородок
-	n = InitStdItem( n,  "jewelry13",       "pursel", "ITEMS_28",  10, 0.0001,   1,   150,   2,  0.5,   ITEM_TRADE_JEWELRY); // железный самородок
-	n = InitStdItem( n,  "jewelry14",       "pursel", "ITEMS_28",  12, 0.0001,   1,   450,   5,  0.1,   ITEM_TRADE_JEWELRY); // огненный опал
-	n = InitStdItem( n,  "jewelry15",       "pursel", "ITEMS_28",  13, 0.0001,   1,   230,   2,  0.1,   ITEM_TRADE_JEWELRY); // аквамарин
-	n = InitStdItem( n,  "jewelry16",       "pursel", "ITEMS_28",  16, 0.0001,   1,   350,   4,  0.1,   ITEM_TRADE_JEWELRY); // опал	
-	n = InitStdItem( n,  "jewelry17",       "pursel", "ITEMS_29",   1,  0.001,   1,   300,   3,  0.1,   ITEM_TRADE_JEWELRY); // гиацинт
-	n = InitStdItem( n,  "jewelry18",       "pursel", "ITEMS_29",   2,  0.001,   1,   200,   2,  0.1,   ITEM_TRADE_JEWELRY); // хризопраз
-	n = InitStdItem( n,  "jewelry19",       "pursel", "ITEMS_29",   3,  0.001,   1,   200,   2,  0.1,   ITEM_TRADE_JEWELRY); // коралл
-	n = InitStdItem( n,  "jewelry20",       "pursel", "ITEMS_29",   4,  0.001,   1,   400,   4,  0.1,   ITEM_TRADE_JEWELRY); // бирюза
-	n = InitStdItem( n,  "jewelry21",       "pursel", "ITEMS_29",   5,  0.001,   1,   180,   2,  0.1,   ITEM_TRADE_JEWELRY); // лазурит
-	n = InitStdItem( n,  "jewelry22",       "pursel", "ITEMS_29",   6,  0.001,   1,   250,   3,  0.1,   ITEM_TRADE_JEWELRY); // нефрит
-	n = InitStdItem( n,  "jewelry23",       "pursel", "ITEMS_29",   7,  0.001,   1,   200,   2,  0.1,   ITEM_TRADE_JEWELRY); // хризоберилл
+	n = InitStdItem( n,   "jewelry1", 	  "sapphire", "ITEMS_28",  15,   0.10,   1,   400,   2,  0.1,   ITEM_TRADE_JEWELRY); // аметист
+	n = InitStdItem( n,   "jewelry2",      "diamond", "ITEMS_28",   3,   0.05,   1,   700,   4,  0.1,   ITEM_TRADE_JEWELRY); // алмаз
+	n = InitStdItem( n,   "jewelry3",         "ruby", "ITEMS_28",  11,   0.10,   0,   550,   3,  0.1,   ITEM_TRADE_JEWELRY); // рубин
+	n = InitStdItem( n,   "jewelry4",      "emerald", "ITEMS_28",  14,   0.10,   0,   500,   2,  0.1,   ITEM_TRADE_JEWELRY); // изумруд
+	n = InitStdItem( n,   "jewelry5",     "sapphire", "ITEMS_28",   5,   0.05,   1,   250,   1,  0.5,   ITEM_TRADE_JEWELRY); // золотой самородок
+	n = InitStdItem( n,   "jewelry6",     "sapphire", "ITEMS_28",   9,   0.10,   0,   150,   1,  0.4,   ITEM_TRADE_JEWELRY); // серебряный самородок	
+	n = InitStdItem( n,   "jewelry7",       "pursel", "ITEMS_28",   1, 0.0001,   1,  1500,  8,  0.1,   ITEM_TRADE_JEWELRY); // голубой янтарь
+	n = InitStdItem( n,   "jewelry8",       "pursel", "ITEMS_28",   2, 0.0001,   1,   450,   2,  0.1,   ITEM_TRADE_JEWELRY); // янтарь
+	n = InitStdItem( n,   "jewelry9",       "pursel", "ITEMS_28",   4, 0.0001,   1,   200,   1,  0.1,   ITEM_TRADE_JEWELRY); // морион
+	n = InitStdItem( n,  "jewelry10",       "pursel", "ITEMS_28",   6, 0.0001,   1,   220,   1,  0.1,   ITEM_TRADE_JEWELRY); // платиновый самородок
+	n = InitStdItem( n,  "jewelry11",       "pursel", "ITEMS_28",   7, 0.0001,   1,   1500, 7,  1.1,   ITEM_TRADE_JEWELRY); // осколок метеорита
+	n = InitStdItem( n,  "jewelry12",       "pursel", "ITEMS_28",   8, 0.0001,   1,   150,   1,  0.3,   ITEM_TRADE_JEWELRY); // медный самородок
+	n = InitStdItem( n,  "jewelry13",       "pursel", "ITEMS_28",  10, 0.0001,   1,   150,   1,  0.5,   ITEM_TRADE_JEWELRY); // железный самородок
+	n = InitStdItem( n,  "jewelry14",       "pursel", "ITEMS_28",  12, 0.0001,   1,   450,   2,  0.1,   ITEM_TRADE_JEWELRY); // огненный опал
+	n = InitStdItem( n,  "jewelry15",       "pursel", "ITEMS_28",  13, 0.0001,   1,   230,   1,  0.1,   ITEM_TRADE_JEWELRY); // аквамарин
+	n = InitStdItem( n,  "jewelry16",       "pursel", "ITEMS_28",  16, 0.0001,   1,   350,   2,  0.1,   ITEM_TRADE_JEWELRY); // опал	
+	n = InitStdItem( n,  "jewelry17",       "pursel", "ITEMS_29",   1,  0.001,   1,   300,   1,  0.1,   ITEM_TRADE_JEWELRY); // гиацинт
+	n = InitStdItem( n,  "jewelry18",       "pursel", "ITEMS_29",   2,  0.001,   1,   200,   1,  0.1,   ITEM_TRADE_JEWELRY); // хризопраз
+	n = InitStdItem( n,  "jewelry19",       "pursel", "ITEMS_29",   3,  0.001,   1,   235,   1,  0.1,   ITEM_TRADE_JEWELRY); // коралл
+	n = InitStdItem( n,  "jewelry20",       "pursel", "ITEMS_29",   4,  0.001,   1,   400,   1,  0.1,   ITEM_TRADE_JEWELRY); // бирюза
+	n = InitStdItem( n,  "jewelry21",       "pursel", "ITEMS_29",   5,  0.001,   1,   380,   2,  0.1,   ITEM_TRADE_JEWELRY); // лазурит
+	n = InitStdItem( n,  "jewelry22",       "pursel", "ITEMS_29",   6,  0.001,   1,   425,   2,  0.1,   ITEM_TRADE_JEWELRY); // нефрит
+	n = InitStdItem( n,  "jewelry23",       "pursel", "ITEMS_29",   7,  0.001,   1,   200,   1,  0.1,   ITEM_TRADE_JEWELRY); // хризоберилл
 	
 	// квестовые дорогие украшения
 	n = InitStdItem( n,  "jewelry24",       "pursel", "ITEMS_24",   1, 0.0001,   1,     0,  50,  0.2,   ITEM_TRADE_JEWELRY); 
@@ -3681,8 +3831,8 @@ int InitItems()
 	itm.model = "pursel";
 	itm.picIndex = 8;
 	itm.picTexture = "ITEMS_18";
-	itm.price = 100;
-	itm.Weight = 0.1;
+	itm.price = 240;
+	itm.Weight = 0.3;
 	itm.usepowder = false;
 	itm.minlevel = 0;
 	itm.rare = 0.001;
@@ -3703,8 +3853,8 @@ int InitItems()
 	itm.model = "pursel";
 	itm.picIndex = 14;
 	itm.picTexture = "ITEMS_38";
-	itm.price = 200;
-	itm.Weight = 0.2;
+	itm.price = 480;
+	itm.Weight = 1.2;
 	itm.usepowder = false;
 	itm.minlevel =0;
 	itm.rare = 0.01;
@@ -3724,8 +3874,8 @@ int InitItems()
 	itm.model = "pursel";
 	itm.picIndex = 13;
 	itm.picTexture = "ITEMS_38";
-	itm.price = 200;
-	itm.Weight = 0.2;
+	itm.price = 480;
+	itm.Weight = 1.2;
 	itm.usepowder = false;
 	itm.minlevel = 0;
 	itm.rare = 0.001;
@@ -3914,6 +4064,22 @@ int InitItems()
 	itm.multiobject.alchemy = true;
 	itm.ItemType = "SUPPORT";
 	itm.TradeType = ITEM_TRADE_AMMUNITION;
+	n++;
+	
+	makeref(itm,Items[n]); // Оружейная бумага
+	itm.id = "ArmoryPaper";
+	itm.name = "itmname_ArmoryPaper";
+	itm.describe = "itmdescr_ArmoryPaper";
+	itm.model = "pursel";
+	itm.picIndex = 8;
+	itm.picTexture = "ITEMS_41";
+	itm.Weight = 0.1;
+	itm.price = 140;
+	itm.minlevel = 0;
+	itm.rare = 0.1;
+	itm.SortIndex = 1;
+	itm.ItemType = "SUPPORT";
+	itm.TradeType = ITEM_TRADE_NORMAL;
 	n++;
 	
 	// расходники для огнестрельного оружия
@@ -4343,6 +4509,7 @@ int InitStdBlade( 	int		ItemIndex,
 	if(ModelID == "blade_42") blade.Weight = 3.0;
 	if(ModelID == "blade_SP_3low") blade.Weight = 1.6;
 	if(ModelID == "blade_SP_3")    blade.Weight = 3.8;
+	if(ModelID == "blade_WR")    blade.Weight = 3.6;
 
 	blade.Balance = fRandSmall(2.0);
 	switch (Quality)
@@ -4489,7 +4656,6 @@ int InitStdGun(	int		ItemIndex,
 	gun.minlevel 		= MinLevel;
 	gun.Weight 			= Weight;
 	gun.ChargeSpeed 	= 10.0; // by default
-	gun.accuracy 		= 50.0; // by default
 	gun.TradeType 		= ITEM_TRADE_AMMUNITION;
 	
 	gunIndex++;
@@ -4534,7 +4700,6 @@ int InitStdMusket(	int		ItemIndex,
 	Mus.minlevel 		= MinLevel;
 	Mus.Weight 			= Weight;
 	Mus.ChargeSpeed 	= 10.0; // by default
-	Mus.accuracy 		= 50.0; // by default
 	Mus.TradeType 		= ITEM_TRADE_AMMUNITION;
 	
 	MusIndex++;
@@ -4701,8 +4866,9 @@ int InitStdMap(		int		ItemIndex,
 					float   Rare,
 					string  ImageTga,
 					string  ImageType,
-					int	    toAtlas,
-					string 	MapType)
+					string  AtlasType,
+					string 	MapType, 
+					string area)
 {
 	ref	map;
 	int	mapIndex;
@@ -4721,10 +4887,11 @@ int InitStdMap(		int		ItemIndex,
 	map.Weight 				= Weight;	
 	map.imageTga 			= ImageTga;
 	map.imageType 			= ImageType;
-	map.Atlas 				= toAtlas;
+	map.AtlasType 				= AtlasType;
 	map.MapType 			= MapType;
 	map.ItemType 			= "MAP";
 	map.TradeType 			= ITEM_TRADE_MAP;
+	map.area = area;
 	
 	if(Rare > 0.0) 
 	{
@@ -4806,27 +4973,34 @@ void InitMultiObjectAmulets()
 	// дублоны
 	InitMultiObject(    "gold_dublon",	"t1",       "chest", 	"Component",    1);
 	InitMultiObject(    "gold_dublon",	"t2",    "Chest_open", 	"Additional",    0);
-	
+
+	// Лечебное зелье
+	InitMultiObject("potion1",     "t1",     "potion5",    "Component",        1); // Имбирный корень
+	InitMultiObject("potion1",     "t2",     "potionrum",  "Component",        1); // Ром
+	InitMultiObject("potion1",     "t3",     "mineral27",  "AlchemyTool",      1); // Ступка с пестиком
+
 	// Эликсир
 	InitMultiObject(		"potion2",	    "t1",     "cannabis1", 	  "Component", 	  1); // Дурман
 	InitMultiObject(		"potion2",	    "t2",     "cannabis2", 	  "Component", 	  1); // Сабадилла
-	InitMultiObject(		"potion2",	    "t3",       "potion1", 	  "Component", 	  3); // Лечебное зелье
+	InitMultiObject(		"potion2",	    "t3",       "potion1", 	  "Component", 	  1); // Лечебное зелье
 	InitMultiObject(		"potion2",	    "t4",     "mineral17", 	  "Component", 	  3); // Пустой флакончик
-	InitMultiObject(  		"potion2",      "t5",     "mineral27",  "AlchemyTool", 	  1); // Ступка с пестиком
-	InitMultiObject(  		"potion2",	    "t6",  "alchemy_tool",  "AlchemyTool", 	  1); // Алхимический набор
+	InitMultiObject(		"potion2",	    "t5",     "potionrum", 	  "Component", 	  1); // Бутылка рома
+	InitMultiObject(  	"potion2",      "t6",     "mineral27",  "AlchemyTool", 	  1); // Ступка с пестиком
+	InitMultiObject(  	"potion2",	    "t7",  "alchemy_tool",  "AlchemyTool", 	  1); // Алхимический набор
 	
 	// Микстура belamour legendary edition
-	InitMultiObject(		"potion4",	    "t1",       "potion2", 	  "Component", 	  3); // Эликсир
-	InitMultiObject(		"potion4",	    "t2",     "cannabis1", 	  "Component", 	  1); // Дурман
-	InitMultiObject(		"potion4",	    "t3",     "cannabis2", 	  "Component", 	  1); // Сабадилла
-	InitMultiObject(		"potion4",	    "t4",     "cannabis3", 	  "Component", 	  1); // Вербена
-	InitMultiObject(		"potion4",	    "t5",      "cannabis4",   "Component",    1); // Ипекакуана
-	InitMultiObject(		"potion4",	    "t6",      "cannabis5",   "Component",    1); // Гуарана
-	InitMultiObject(		"potion4",	    "t7",      "cannabis6",   "Component", 	  1); // Ямайский перец
-	InitMultiObject(		"potion4",	    "t8",     "mineral17", 	  "Component", 	  3); // Пустой флакончик
-	InitMultiObject(		"potion4",	    "t9",     "potion3", 	  "Component", 	  3); // Противоядие
-	InitMultiObject(  		"potion4",	   "t10",  "alchemy_tool",  "AlchemyTool", 	  1); // Алхимический набор
-	InitMultiObject(  		"potion4",     "t11",     "mineral27",  "AlchemyTool", 	  1); // Ступка с пестиком
+	InitMultiObject(		"potion4",	    "t1",       "potion2", 	  "Component", 	  1); // Эликсир
+	InitMultiObject(		"potion4",	    "t2",     "potionwine", 	"Component", 	  1); // Вино
+	InitMultiObject(		"potion4",	    "t3",     "cannabis1", 	  "Component", 	  1); // Дурман
+	InitMultiObject(		"potion4",	    "t4",     "cannabis2", 	  "Component", 	  1); // Сабадилла
+	InitMultiObject(		"potion4",	    "t5",     "cannabis3", 	  "Component", 	  1); // Вербена
+	InitMultiObject(		"potion4",	    "t6",      "cannabis4",   "Component",    1); // Ипекакуана
+	InitMultiObject(		"potion4",	    "t7",      "cannabis5",   "Component",    1); // Гуарана
+	InitMultiObject(		"potion4",	    "t8",      "cannabis6",   "Component", 	  1); // Ямайский перец
+	InitMultiObject(		"potion4",	    "t9",     "mineral17", 	  "Component", 	  3); // Пустой флакончик
+	InitMultiObject(		"potion4",	    "t10",     "potion3", 	  "Component", 	  3); // Противоядие
+	InitMultiObject(  		"potion4",	   "t11",  "alchemy_tool",  "AlchemyTool", 	  1); // Алхимический набор
+	InitMultiObject(  		"potion4",     "t12",     "mineral27",  "AlchemyTool", 	  1); // Ступка с пестиком
 	
 	// Противоядие
 	InitMultiObject(		"potion3",	    "t1",     "cannabis3", 	  "Component", 	  1); // Вербена
@@ -4899,20 +5073,42 @@ void InitMultiObjectAmulets()
 	InitMultiObject(  		"vodka",        "t7",     "cannabis7", 	  "Component", 	  1); // Мангароса
 	InitMultiObject(  		"vodka",        "t8",     "mineral10",  "AlchemyTool", 	  1); // огниво
 	InitMultiObject(  		"vodka",        "t9",     "mineral1",   "AlchemyTool", 	  1); // Медный кувшин
+
+		// Зелье забвения
+	InitMultiObject(		"PerksPotion",	    "t1",     "gold_dublon",  "Component", 	666); // дублон
+	InitMultiObject(		"PerksPotion",	    "t2",     "cannabis1",   "Component", 	  5); // дурман
+	InitMultiObject(		"PerksPotion",	    "t3",     "cannabis2", 	  "Component", 	  5); // Сабадилла
+	InitMultiObject(		"PerksPotion",	    "t4",     "cannabis3", 	  "Component", 	  5); // вербена
+	InitMultiObject(		"PerksPotion",	    "t5",     "cannabis4", 	  "Component", 	  5); // Ипекакуана
+	InitMultiObject(  		"PerksPotion",	    "t6",  	  "cannabis5",    "Component", 	  5); // гуарана
+	InitMultiObject(  		"PerksPotion",      "t7",     "cannabis7", 	  "Component", 	 10); // Мангароса
+	InitMultiObject(  		"PerksPotion",      "t8",     "cannabis6",    "Component", 	  5); // ямайский перец
+	InitMultiObject(  		"PerksPotion",      "t9",     "mineral14",   "Component", 	  2); // крыло вампира
+	InitMultiObject(  		"PerksPotion",     "t10",     "jewelry19",   "Component", 	  2); // коралл
+	InitMultiObject(  		"PerksPotion",     "t11",     "mineral17",   "Component", 	  1); // флакон
+	InitMultiObject(  		"PerksPotion",     "t12",     "mineral31",   "Component", 	  2); // заговоренная кость
+	InitMultiObject(  		"PerksPotion",     "t13",     "mineral4",   "Component", 	  3); // Жук-Геркулес
+	InitMultiObject(  		"PerksPotion",     "t14",   "alchemy_tool", "AlchemyTool", 	  1); // Алхимический набор
 		
 	// Бумажный патрон
 	InitMultiObject(  	  	"cartridge",	"t1",  	     "bullet",    "Component", 	  1); // пуля
 	InitMultiObject(  	  	"cartridge",	"t2",     "gunpowder",    "Component", 	  1); // гранулированный порох
+	InitMultiObject(  	  	"cartridge",	"t3",     "ArmoryPaper",  "Component",    1); // Оружейная бумага
+	InitMultiObject(  	  	"cartridge",	"t4",     "mineral15",    "AlchemyTool", 	  1); // складной нож
 	
 	// Бумажный патрон x2
 	InitMultiObject(  	  	"bullet_double",	"t1",  	  "bullet",    "Component",   2); // пуля
 	InitMultiObject(  	  	"bullet_double",	"t2",     "gunpowder",   "Component", 2); // гранулированный порох
-	InitMultiObject(  	  	"bullet_double",	"t3",     "gold_dublon",   "Component", 1); // золотой дублон
+	InitMultiObject(  	  	"bullet_double",	"t3",     "gold_dublon",   "Component", 7); // золотой дублон
+	InitMultiObject(  	  	"bullet_double",	"t4",     "ArmoryPaper",   "Component", 1); // Оружейная бумага
+	InitMultiObject(  	  	"bullet_double",	"t5",     "mineral15",    "AlchemyTool", 1); // складной нож
 	
 	// Картечь x2
 	InitMultiObject(  	  	"grapeshot_double",	"t1",  	  "grapeshot",    "Component",2); // пуля
 	InitMultiObject(  	  	"grapeshot_double",	"t2",     "gunpowder",   "Component", 2); // гранулированный порох
-	InitMultiObject(  	  	"grapeshot_double",	"t3",     "gold_dublon",   "Component", 1); // золотой дублон
+	InitMultiObject(  	  	"grapeshot_double",	"t3",     "gold_dublon",   "Component", 7); // золотой дублон
+	InitMultiObject(  	  	"grapeshot_double",	"t4",     "ArmoryPaper",   "Component", 1); // Оружейная бумага
+	InitMultiObject(  	  	"grapeshot_double",	"t5",     "mineral15",    "AlchemyTool", 1); // складной нож
 	
 	// Петарда
 	InitMultiObject(  	"powder_pellet",	"t1",      "mineral1",    "Component", 	  1); // медный кувшин
@@ -5124,42 +5320,25 @@ void InitGunExt(string id,
 				string sAttr,       
 				string sBullet,     
 				string sGunPowder,  
-				float  DmgMin_NC,   
-				float  DmgMax_NC,   
-				float  DmgMin_C,    
-				float  DmgMax_C,    
-				float  EnergyP_NC,  
-				float  EnergyP_C,   
-				bool   Stun_NC,     
-				bool   Stun_C,      
+				float  DmgMin,   
+				float  DmgMax,
+				float  EnergyP, 
 				bool   MultiDamage, 
 				int    MisFire,     
-				bool   SelfDamage,  
-				bool   Explosion,   
-				float  Accuracy,    
 				int    ChargeSpeed, 
 				bool   isDefault )
 {
 	ref gun = ItemsFromID(id);
 	gun.type.(sAttr).bullet 		= sBullet;
 	gun.type.(sAttr).gunpowder 		= sGunPowder;
-	gun.type.(sAttr).DmgMin_NC		= DmgMin_NC;
-	gun.type.(sAttr).DmgMax_NC		= DmgMax_NC;
-	gun.type.(sAttr).DmgMin_C		= DmgMin_C;
-	gun.type.(sAttr).DmgMax_C		= DmgMax_NC;
-	gun.type.(sAttr).EnergyP_NC		= EnergyP_NC;
-	gun.type.(sAttr).EnergyP_C		= EnergyP_C;
-	gun.type.(sAttr).Stun_NC		= Stun_NC;
-	gun.type.(sAttr).Stun_C			= Stun_C;
+	gun.type.(sAttr).DmgMin			= DmgMin;
+	gun.type.(sAttr).DmgMax			= DmgMax;
+	gun.type.(sAttr).EnergyP		= EnergyP;
 	gun.type.(sAttr).multidmg       = MultiDamage;
 	gun.type.(sAttr).misfire        = MisFire;
-	gun.type.(sAttr).SelfDamage     = SelfDamage;
-	gun.type.(sAttr).Explosion      = Explosion;
-	gun.type.(sAttr).Accuracy       = Accuracy;
 	gun.type.(sAttr).ChargeSpeed    = ChargeSpeed;
 	gun.type.(sAttr).Default        = isDefault;
 	
-	if(Stun_NC || Stun_C) gun.stun = true;
 	if(gun.id == "mushket8")
 	{
 		gun.multiobject = true;		
@@ -5208,71 +5387,71 @@ void InitMushkets()
 					
 void InitGuns()
 {
-	//InitGunExt(id,	sAttr,  sBullet,  sGunPowder, DmgMin_NC, DmgMax_NC, DmgMin_C, DmgMax_C, EnergyP_NC, EnergyP_C, Stun_NC, Stun_C, MultiDamage, MisFire, SelfDamage, Explosion,Accuracy,ChargeSpeed,isDefault);
-	InitGunExt(		 "pistol1", "t1",  	     "cartridge",               "",  50.0, 150.0,  30.0, 130.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 20, 0);	
-	InitGunExt(		 "pistol1", "t2", 		    "bullet",      "gunpowder",  50.0, 150.0,  30.0, 130.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 40, 1);	
-	//InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 20, 0);	
-	InitGunExt( 	 "pistol2", "t1", 	     "grapeshot",      "gunpowder",  30.0,  80.0,  10.0,  50.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 40, 40, 1);	
-	//InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,  20.0, 100.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 40, 20, 0);	
-	InitGunExt(		 "pistol3", "t1", 	     "grapeshot",      "gunpowder",  40.0,  90.0,  15.0,  55.0,  0.0,  0.0, 0, 1, 1, 2, 1, 1, 40, 40, 1);	
-	//InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0,  30.0, 110.0,  0.0,  0.0, 0, 1, 1, 2, 1, 1, 40, 20, 0);	
-	InitGunExt(		 "pistol4", "t1", 	     "cartridge",               "",  35.0, 135.0,  15.0, 115.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 35, 30, 0);	
-	InitGunExt(		 "pistol4", "t2", 		    "bullet",      "gunpowder",  35.0, 135.0,  15.0, 115.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 35, 60, 1);	
-	//InitGunExt(		 "pistol4", "t3",    "bullet_double",               "",  70.0, 270.0,  30.0, 230.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 35, 30, 0);	
-	InitGunExt(		 "pistol5", "t1", 	     "cartridge",               "",  65.0, 165.0,  45.0, 145.0,  0.0,  0.0, 1, 0, 0, 2, 0, 0, 70, 30, 0);	
-	InitGunExt(		 "pistol5", "t2", 		    "bullet",      "gunpowder",  65.0, 165.0,  45.0, 145.0,  0.0,  0.0, 1, 0, 0, 2, 0, 0, 70, 60, 1);	
-	//InitGunExt(		 "pistol5", "t3", 	 "bullet_double",               "", 130.0, 330.0,  90.0, 290.0,  0.0,  0.0, 1, 0, 0, 2, 0, 0, 70, 30, 0);	
-	InitGunExt(		 "pistol6", "t1", 	     "cartridge",               "",  50.0, 150.0,  30.0, 130.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 50, 20, 0);	
-	InitGunExt(		 "pistol6", "t2", 		    "bullet",      "gunpowder",  50.0, 150.0,  30.0, 130.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 50, 40, 1);	
-	//InitGunExt(		 "pistol6", "t3",    "bullet_double",               "", 100.0, 300.0,  60.0, 260.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 50, 20, 0);	
-	InitGunExt(		 "pistol7", "t1","shotgun_cartridge",    "GunCap_colt", 200.0, 300.0, 180.0, 280.0, 10.0, 10.0, 1, 1, 0, 0, 0, 0, 80, 30, 1);	
-	InitGunExt(		 "pistol8", "t1", 	     "grapeshot",      "gunpowder",  25.0,  50.0,  15.0,  30.0,  5.0,  5.0, 1, 1, 1, 0, 1, 1, 50, 40, 1);	
-	InitGunExt(		 "pistol8", "t2", 		   "harpoon",      "gunpowder", 150.0, 250.0, 150.0, 250.0, 20.0, 20.0, 0, 1, 0, 0, 0, 0, 20, 40, 0);	
-	InitGunExt(		 "pistol8", "t3", 		  "GunEchin",               "", 120.0, 220.0, 120.0, 220.0, 20.0, 20.0, 0, 1, 1, 0, 0, 0, 20, 20, 0);
-	//InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0,  30.0,  60.0,  5.0,  5.0, 1, 1, 1, 0, 1, 1, 20, 20, 0);	
-	InitGunExt(		 "pistol9", "t1", 	     "cartridge",               "",  50.0, 160.0,  40.0, 140.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 30, 0);	
-	InitGunExt(		 "pistol9", "t2", 		    "bullet",      "gunpowder",  50.0, 160.0,  40.0, 140.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 60, 1);	
-	//InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,  80.0, 280.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 40, 30, 0);	
-	InitGunExt(		 "pistol10", "t1", 	     "cartridge",               "",  70.0, 140.0,  50.0, 120.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 30, 0); // Золотой орёл cle
-	InitGunExt(		 "pistol10", "t2", 		    "bullet",      "gunpowder",  70.0, 140.0,  50.0, 120.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 60, 1); // Золотой орёл cle
-	//InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0, 100.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 30, 0); // Золотой орёл cle
-	InitGunExt(		 "pistol11", "t1", 	     "cartridge",               "",   5.0, 350.0,   5.0, 310.0, 30.0, 30.0, 1, 1, 0, 0, 0, 0, 45, 60, 0); // Чудовище cle
-	InitGunExt(		 "pistol11", "t2", 		    "bullet",      "gunpowder",   5.0, 350.0,   5.0, 310.0, 30.0, 30.0, 1, 1, 0, 0, 0, 0, 45,120, 1); // Чудовище cle
-	//InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,  10.0, 620.0, 40.0, 30.0, 1, 1, 0, 0, 0, 0, 45,100, 0); // Чудовище cle
-	InitGunExt(		 "pistol12", "t1", 	     "cartridge",               "",  40.0, 145.0,  30.0, 120.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 20, 0); // Обрез штуцера cle
-	InitGunExt(		 "pistol12", "t2", 		    "bullet",      "gunpowder",  40.0, 145.0,  30.0, 120.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 40, 1); // Обрез штуцера cle
-	//InitGunExt(		 "pistol12", "t3",   "bullet_double",               "",  80.0, 290.0,  60.0, 240.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 45, 20, 0); // Обрез штуцера cle
-	InitGunExt(		 "pistol13", "t1",       "cartridge",               "",  65.0, 150.0,  45.0, 130.0, 10.0,  0.0, 1, 1, 0, 0, 0, 0, 60, 25, 0); // Кремневый револьвер cle
-	InitGunExt(		 "pistol13", "t2",          "bullet",      "gunpowder",  65.0, 150.0,  45.0, 130.0, 10.0,  0.0, 1, 1, 0, 0, 0, 0, 60, 50, 1); // Кремневый револьвер cle
-	//InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0,  90.0, 260.0, 15.0,  0.0, 1, 1, 0, 0, 0, 0, 60, 30, 0); // Кремневый револьвер cle
-	InitGunExt(		 "pistol14", "t1", 		    "bullet",      "gunpowder",  65.0, 165.0,  45.0, 145.0,  0.0,  0.0, 1, 0, 0, 4, 0, 0, 70, 69, 1); // Дуэльный двухзарядный пистоль cle 1.3
-	InitGunExt(		 "pistol14", "t2", 		   "cartridge",      "",         65.0, 165.0,  45.0, 145.0,  0.0,  0.0, 1, 0, 0, 4, 0, 0, 70, 35, 0);
-	InitGunExt(		 "howdah",  "t1",		 "grapeshot",	   "gunpowder",  25.0,  70.0,  15.0,  45.0,  5.0,  5.0, 1, 1, 1, 0, 0, 1, 50, 40, 1);		
-    InitGunExt(		 "howdah",  "t2",		  "GunEchin",         		"", 115.0, 215.0, 115.0, 215.0, 20.0, 20.0, 0, 1, 1, 0, 0, 0, 20, 20, 0);
-	//InitGunExt(		 "howdah",  "t3", "grapeshot_double",	            "",  50.0, 140.0,  30.0,  70.0,  5.0,  5.0, 1, 1, 1, 0, 0, 1, 50, 30, 0);
-	InitGunExt(	  "mortairgun", "t1", 	       "grenade",               "", 120.0, 360.0, 100.0, 320.0, 20.0, 20.0, 1, 1, 1, 0, 1, 1,100, 30, 1); // Ручная мортирка cle
-	InitGunExt(   "mortairgun", "t2",    "powder_pellet",               "",   5.0,  10.0,   5.0,  10.0,120.0,100.0, 1, 1, 1, 0, 1, 1,100, 30, 0); // Ручная мортирка cle
-	InitGunExt(		"mushket1", "t1", 	     "cartridge",               "", 120.0, 220.0, 100.0, 200.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 20, 0);	
-	InitGunExt(		"mushket1", "t2", 		    "bullet",      "gunpowder", 120.0, 220.0, 100.0, 200.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 40, 1);	
-	InitGunExt(		"mushket2", "t1", 	     "cartridge",               "", 135.0, 235.0, 115.0, 215.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 15, 0);	
-	InitGunExt(		"mushket2", "t2", 		    "bullet",      "gunpowder", 135.0, 235.0, 115.0, 215.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 30, 1);	
-	InitGunExt(		"mushket3", "t1", 	     "grapeshot",      "gunpowder",  70.0, 120.0,  40.0,  90.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 70, 25, 1);	
-	InitGunExt("grape_mushket", "t1", 	       "grenade",               "", 240.0, 440.0, 200.0, 400.0, 10.0, 10.0, 1, 1, 1, 0, 1, 1,100, 25, 1);	
-	InitGunExt("grape_mushket", "t2",    "powder_pellet",               "",  15.0,  85.0,  5.0,  75.0, 120.0,100.0, 1, 1, 1, 0, 1, 1,100, 15, 0);	
-	InitGunExt(		"mushket5", "t1", 	     "cartridge",               "", 200.0, 300.0, 180.0, 280.0, 15.0, 15.0, 1, 1, 0, 0, 0, 0, 95, 15, 0);	
-	InitGunExt(		"mushket5", "t2", 		    "bullet",      "gunpowder", 200.0, 300.0, 180.0, 280.0, 15.0, 15.0, 1, 1, 0, 0, 0, 0, 95, 30, 1);	
-	InitGunExt(		"mushket6", "t1", 	     "grapeshot",      "gunpowder",  90.0, 155.0,  50.0, 100.0, 20.0, 20.0, 1, 1, 1, 0, 0, 1, 70, 30, 1);	
-	InitGunExt(		"mushket6", "t2", 	      "GunEchin",               "", 115.0, 180.0,  65.0, 115.0, 20.0, 20.0, 1, 1, 1, 0, 0, 1, 60, 15, 0);
-	InitGunExt(		"mushket7", "t1", 	     	"bullet",      "gunpowder", 150.0, 220.0, 130.0, 200.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 36, 1); // Качественный мушкет cle
-	InitGunExt(		"mushket7", "t2", 	     "cartridge",               "", 150.0, 220.0, 130.0, 200.0,  0.0,  0.0, 1, 0, 0, 0, 0, 0, 80, 18, 0); // Качественный мушкет cle
-	InitGunExt(		"mushket8", "t1", 	     	"bullet",      "gunpowder", 100.0, 200.0,  80.0, 180.0,  0.0,  0.0, 1, 1, 0, 0, 0, 1, 80, 40, 1); // Четырехзарядный штуцер cle
-	InitGunExt(		"mushket8", "t2", 	     "cartridge",               "", 100.0, 200.0,  80.0, 180.0,  0.0,  0.0, 1, 1, 0, 0, 0, 1, 80, 20, 0); // Четырехзарядный штуцер cle
-	InitGunExt(	  "mushket2x2", "t1", 	     "cartridge",               "", 180.0, 280.0, 160.0, 260.0, 15.0, 15.0, 1, 1, 0, 0, 0, 0, 95, 15, 0);	
-	InitGunExt(	  "mushket2x2", "t2", 		    "bullet",      "gunpowder", 180.0, 280.0, 160.0, 260.0, 15.0, 15.0, 1, 1, 0, 0, 0, 0, 90, 30, 1);
-	InitGunExt(		"mushket9", "t1", 	     "grapeshot",      "gunpowder",  70.0, 120.0,  40.0,  90.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 60, 45, 1); // Аркебуза конкистадора SP2
-	InitGunExt(		"mushket9", "t2", 	      "GunEchin",               "",  70.0, 120.0,  40.0,  90.0,  0.0,  0.0, 0, 1, 1, 0, 1, 1, 45, 35, 0); // Аркебуза конкистадора SP2
-	InitGunExt(	   "mushket10", "t1", 	     "cartridge",               "", 140.0, 270.0, 140.0, 270.0,  0.0,  0.0, 1, 1, 0, 0, 0, 0, 95, 14, 0);	
-	InitGunExt(	   "mushket10", "t2", 		    "bullet",      "gunpowder", 140.0, 270.0, 140.0, 270.0,  0.0,  0.0, 1, 1, 0, 0, 0, 0, 90, 28, 1);
+	//InitGunExt(id,	sAttr,  sBullet,  sGunPowder, DmgMin, DmgMax, EnergyP, MultiDamage, MisFire, ChargeSpeed,isDefault);
+	InitGunExt(		 "pistol1", "t1",  	     "cartridge",               "",  52.0,  86.0,   0.0,  0, 0, 26, 0);	
+	InitGunExt(		 "pistol1", "t2", 		    "bullet",      "gunpowder",  45.0,  75.0,   0.0,  0, 0, 35, 1);	
+	//InitGunExt(		 "pistol1", "t3", 	 "bullet_double",               "", 100.0, 300.0,   0.0,  0, 0, 20, 0);	
+	InitGunExt( 	 "pistol2", "t1", 	     "grapeshot",      "gunpowder",  30.0,  80.0,   0.0,  1, 0, 40, 1);	
+	//InitGunExt( 	 "pistol2", "t2", "grapeshot_double",               "",  60.0, 160.0,   0.0,  1, 0, 20, 0);	
+	InitGunExt(		 "pistol3", "t1", 	     "grapeshot",      "gunpowder",  40.0,  90.0,   0.0, 1, 2, 40, 1);	
+	//InitGunExt(		 "pistol3", "t2", "grapeshot_double",               "",  80.0, 180.0, 0.0,  1, 2, 20, 0);	
+	InitGunExt(		 "pistol4", "t1", 	     "cartridge",              "",   40.0,  63.0,   0.0, 0, 0,  45, 0);	
+	InitGunExt(		 "pistol4", "t2", 		    "bullet",      "gunpowder",  35.0,  55.0,   0.0, 0, 0,  60, 1);	
+	//InitGunExt(		 "pistol4", "t3",    "bullet_double",           "",  70.0, 270.0,   0.0, 0, 0,  30, 0);	
+	InitGunExt(		 "pistol5", "t1", 	     "cartridge",              "",   81.0, 132.0,   0.0, 0, 2,  36, 0);	
+	InitGunExt(		 "pistol5", "t2", 		    "bullet",      "gunpowder",  70.0, 115.0,   0.0, 0, 2,  48, 1);	
+	//InitGunExt(		 "pistol5", "t3", 	 "bullet_double",           "", 130.0, 330.0,   0.0, 0, 2, 30, 0);	
+	InitGunExt(		 "pistol6", "t1", 	     "cartridge",               "",  46.0,  75.0,   0.0, 0, 0,  34, 0);	
+	InitGunExt(		 "pistol6", "t2", 		    "bullet",      "gunpowder",  40.0,  65.0,   0.0, 0, 0,  45, 1);	
+	//InitGunExt(		 "pistol6", "t3",    "bullet_double",           "", 100.0, 300.0,   0.0, 0, 0,  20, 0);	
+	InitGunExt(		 "pistol7", "t1","shotgun_cartridge",    "GunCap_colt", 125.0, 200.0,   10.0, 0, 0, 30, 1);	
+	InitGunExt(		 "pistol8", "t1", 	     "grapeshot",      "gunpowder",  25.0,  50.0,    5.0, 1, 0, 40, 1);	
+	InitGunExt(		 "pistol8", "t2", 		   "harpoon",      "gunpowder", 150.0, 250.0,   20.0, 0, 0, 40, 0);	
+	InitGunExt(		 "pistol8", "t3", 		  "GunEchin",               "", 120.0, 220.0,   20.0, 1, 0, 20, 0);
+	//InitGunExt(		 "pistol8", "t4", "grapeshot_double",               "",  50.0, 100.0, 5.0, 1, 0,  20, 0);	
+	InitGunExt(		 "pistol9", "t1", 	     "cartridge",               "",  63.0, 144.0,    0.0, 0, 0, 41, 0);	
+	InitGunExt(		 "pistol9", "t2", 		    "bullet",      "gunpowder",  55.0, 125.0,    0.0, 0, 0, 55, 1);	
+	//InitGunExt(		 "pistol9", "t3", 	 "bullet_double",               "", 100.0, 320.0,    0.0,  0, 0, 30, 0);	
+	InitGunExt(		 "pistol10", "t1", 	     "cartridge",               "",  58.0,  98.0,    0.0, 0, 0, 45, 0); // Золотой орёл cle
+	InitGunExt(		 "pistol10", "t2", 		    "bullet",      "gunpowder",  50.0,  85.0,    0.0, 0, 0, 60, 1); // Золотой орёл cle
+	//InitGunExt(		 "pistol10", "t3",   "bullet_double",               "", 140.0, 280.0,   0.0,  0, 0, 30, 0); // Золотой орёл cle
+	InitGunExt(		 "pistol11", "t1", 	     "cartridge",               "",   6.0, 403.0,  30.0,  0, 0, 58, 0); // Чудовище cle
+	InitGunExt(		 "pistol11", "t2", 		    "bullet",      "gunpowder",   5.0, 350.0,  30.0,  0, 0, 77, 1); // Чудовище cle
+	//InitGunExt(		 "pistol11", "t3",   "bullet_double",               "",  10.0, 700.0,  30.0,  0, 0, 100, 0); // Чудовище cle
+	InitGunExt(		 "pistol12", "t1", 	     "cartridge",               "",  52.0,  98.0,  0.0,  0, 0,  39, 0); // Обрез штуцера cle
+	InitGunExt(		 "pistol12", "t2", 		    "bullet",      "gunpowder",  45.0,  85.0,  0.0,  0, 0,  52, 1); // Обрез штуцера cle
+	//InitGunExt(		 "pistol12", "t3",   "bullet_double",           "",  80.0, 290.0,  0.0,  0, 0,  20, 0); // Обрез штуцера cle
+	InitGunExt(		 "pistol13", "t1",       "cartridge",               "",  58.0,  75.0, 10.0,  0, 0,  38, 0); // Кремневый револьвер cle
+	InitGunExt(		 "pistol13", "t2",          "bullet",      "gunpowder",  50.0,  65.0, 10.0,  0, 0,  50, 1); // Кремневый револьвер cle
+	//InitGunExt(		 "pistol13", "t3",   "bullet_double",               "", 130.0, 300.0, 15.0, 0, 0, 30, 0); // Кремневый револьвер cle
+	InitGunExt(		 "pistol14", "t1", 		    "bullet",      "gunpowder",  80.0, 135.0,  0.0,  0, 4,  54, 1); // Дуэльный двухзарядный пистоль cle 1.3
+	InitGunExt(		 "pistol14", "t2", 		   "cartridge",      "",         92.0, 155.0,  0.0,  0, 4,  41, 0);
+	InitGunExt(		 "howdah",  "t1",		 "grapeshot",	   "gunpowder",  25.0,  70.0,  5.0,  1, 0,  40, 1);		
+    InitGunExt(		 "howdah",  "t2",		  "GunEchin",         		"", 115.0, 215.0,  20.0,  1, 0,  20, 0);
+	//InitGunExt(		 "howdah",  "t3", "grapeshot_double",	       "",   50.0, 140.0,   5.0,  1, 0,  30, 0);
+	InitGunExt(	  "mortairgun", "t1", 	       "grenade",               "", 120.0, 360.0,  20.0,  1, 0,  30, 1); // Ручная мортирка cle
+	InitGunExt(   "mortairgun", "t2",    "powder_pellet",               "",   5.0,  10.0, 120.0,  1, 0,  30, 0); // Ручная мортирка cle
+	InitGunExt(		"mushket1", "t1", 	     "cartridge",               "", 109.0, 196.0,   0.0,  0, 0,  34, 0);	
+	InitGunExt(		"mushket1", "t2", 		    "bullet",      "gunpowder",  95.0, 170.0,   0.0,  0, 0,  45, 1);	
+	InitGunExt(		"mushket2", "t1", 	     "cartridge",               "", 144.0, 230.0,   0.0,  0, 0,  33, 0);	
+	InitGunExt(		"mushket2", "t2", 		    "bullet",      "gunpowder", 125.0, 200.0,   0.0,  0, 0,  44, 1);	
+	InitGunExt(		"mushket3", "t1", 	     "grapeshot",      "gunpowder",  70.0, 120.0,   0.0,  1, 0,  25, 1);	
+	InitGunExt("grape_mushket", "t1", 	       "grenade",               "", 240.0, 440.0,  10.0,  1, 0,  25, 1);	
+	InitGunExt("grape_mushket", "t2",    "powder_pellet",               "",  15.0,  85.0, 120.0,  1, 0,  15, 0);	
+	InitGunExt(		"mushket5", "t1", 	     "cartridge",               "", 132.0, 397.0,  15.0,  0, 0,  30, 0);	
+	InitGunExt(		"mushket5", "t2", 		    "bullet",      "gunpowder", 115.0, 345.0,  15.0,  0, 0,  40, 1);	
+	InitGunExt(		"mushket6", "t1", 	     "grapeshot",      "gunpowder",  90.0, 155.0,  20.0,  1, 0,  30, 1);	
+	InitGunExt(		"mushket6", "t2", 	      "GunEchin",               "", 115.0, 180.0,  20.0,  1, 0,  15, 0);
+	InitGunExt(		"mushket7", "t1", 	     	"bullet",      "gunpowder", 135.0, 210.0,   0.0,  0, 0,  38, 1); // Качественный мушкет cle
+	InitGunExt(		"mushket7", "t2", 	     "cartridge",               "", 155.0, 242.0,   0.0,  0, 0,  29, 0); // Качественный мушкет cle
+	InitGunExt(		"mushket8", "t1", 	     	"bullet",      "gunpowder",  95.0, 160.0,   0.0,  0, 0,  42, 1); // Четырехзарядный штуцер cle
+	InitGunExt(		"mushket8", "t2", 	     "cartridge",               "", 109.0, 184.0,   0.0,  0, 0,  32, 0); // Четырехзарядный штуцер cle
+	InitGunExt(	  "mushket2x2", "t1", 	     "cartridge",               "", 138.0, 224.0,  15.0,  0, 0,  23, 0);	
+	InitGunExt(	  "mushket2x2", "t2", 		    "bullet",      "gunpowder", 120.0, 195.0,  15.0,  0, 0,  30, 1);
+	InitGunExt(		"mushket9", "t1", 	     "grapeshot",      "gunpowder",  70.0, 120.0,   0.0,  1, 0,  45, 1); // Аркебуза конкистадора SP2
+	InitGunExt(		"mushket9", "t2", 	      "GunEchin",               "",  70.0, 120.0,   0.0,  1, 0,  35, 0); // Аркебуза конкистадора SP2
+	InitGunExt(	   "mushket10", "t1", 	     "cartridge",               "", 150.0, 253.0,  0.0,   0, 0,  32, 0);	
+	InitGunExt(	   "mushket10", "t2", 		    "bullet",      "gunpowder", 130.0, 220.0,  0.0,   0, 0,  42, 1);
 }
 
 void InitGrapeGuns()

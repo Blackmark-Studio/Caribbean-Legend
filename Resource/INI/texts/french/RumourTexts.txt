@@ -1,66 +1,46 @@
-
-
 Start_GoldFleet_t0 {On dit que la flotte, qui transporte de l'or et de l'argent pour le trésor d'Espagne, a récemment quitté le port de Portobelo pour se rendre à La Havane.}
 Start_GoldFleet_t1 {Une flotte espagnole transportant un chargement inestimable d'argent et d'or inca et aztèque a récemment quitté Portobelo. Le convoi se dirige vers La Havane, d'où les trésors seront transportés en Espagne.}
 Start_GoldFleet_t2 {On dit qu'un convoi d'or espagnol a navigué de Portobelo à La Havane avec une cargaison d'argent et d'or. La flotte est escortée par un énorme navire de guerre ainsi que par des frégates et des galions à deux ponts de canons chacun ; il y a également d'autres navires militaires que je n'ai pas pu reconnaître.}
-
 End_GoldFleet_t0 {Le convoi d'or espagnol est arrivé avec succès à Cuba. L'argent et l'or collectés seront désormais transportés en toute sécurité vers l'Espagne.}
 End_GoldFleet_t1 {Tous les navires d'un convoi d'or espagnol sont arrivés à La Havane. Tout l'argent et l'or du Pérou et du Mexique seront bientôt livrés à l'Europe.}
 End_GoldFleet_t2 {Une flotte espagnole est arrivée à La Havane. Le chargement d'argent et d'or est en sécurité et sera bientôt livré à l'Espagne.}
-
 Defeat_GoldFleet_t0 {On dit que le convoi d'or espagnol qui partait de Portobelo pour La Havane n'est jamais arrivé à destination. Dieu seul sait ce qui a pu lui arriver, de terribles tempêtes ou des pirates peut-être, bien que je doute qu'il existe des pirates aussi courageux ou plutôt fous.}
 Defeat_GoldFleet_t1 {La flotte d'or espagnole, qui transportait une cargaison d'argent et d'or depuis Portobelo, a disparu sans laisser de traces. Personne ne le sait avec certitude, mais on dit qu'elle est devenue la proie des pirates !}
 Defeat_GoldFleet_t2 {Une flotte d'or transportant des trésors de Portobelo n'est jamais arrivée à La Havane, alors qu'elle aurait dû le faire depuis longtemps. Que lui est-il arrivé ? ... Qui sait, il y a des tempêtes violentes à cette époque de l'année.}
-
 Attak_GoldFleet_t0 {On raconte que la flotte d'or espagnole, qui transportait de l'argent, de l'or et d'autres trésors du Nouveau Monde, a été attaquée et que plusieurs navires ont été perdus à la suite de cette attaque.}
 Attak_GoldFleet_t1 {Les mers ne sont pas sûres ! Une flotte d'or espagnole naviguant de Portobelo à La Havane a été attaquée soit par des pirates, soit par des corsaires anglais, je ne sais pas avec certitude, peut-être aussi par des Français ! Vraiment, quelle audace ! J'aimerais bien les voir tous pendus !}
 Attak_GoldFleet_t2 {La situation empire de jour en jour ! Une flotte espagnole transportant de l'argent, de l'or et d'autres trésors du Nouveau Monde de Portobelo à La Havane a été attaquée par d'audacieux pirates ! Oh, Sainte Vierge ! La fin des temps approche à grands pas !}
-
 Init_GoldFleet_t0 {On dit qu'une flotte d'or espagnole se prépare à partir de Portobelo. Le jour exact du départ est tenu secret, mais on dit que le convoi se dirigera vers Cuba au début de #sgold_month#.}
 Init_GoldFleet_t1 {On dit que l'or et l'argent sont en train d'être chargés sur les navires de la flotte d'or. Le convoi partira pour Cuba dans la première moitié de #sgold_month#.}
 Init_GoldFleet_t2 {Le départ d'un convoi d'or de Portobelo vers Cuba est prévu pour la première moitié de #sgold_month#. D'ici là, tout l'or et l'argent acquis seront chargés dans les cales.}
-
-
 MerchantOnMapTo_t0 {On dit que le navire "#sShipName#" battant pavillon de #snation# se dirige vers nous depuis la colonie de #ssColony#, chargé à bloc de #sQuestGoodsIdx#.}
 MerchantOnMapTo_t1 {Le marchand local attend l'arrivée du navire "#shipName#" sous le pavillon de #snation# en provenance de la colonie de #ssColony# avec un chargement de #sQuestGoodsIdx#.}
 MerchantOnMapTo_t2 {J'ai entendu dire qu'un marchand sur le navire "#shipName#" sous le drapeau de #snation# transporte un chargement de #sQuestGoodsIdx# depuis la colonie de #ssColony#.}
-
 MerchantOnMap_t0 {On dit qu'un navire marchand "#shipName#" battant pavillon de #snation# attend la marée pour mettre le cap sur #ssNextColony# avec le chargement de #sQuestGoodsIdx#.}
 MerchantOnMap_t1 {On dit qu'un riche négociant travaillant sous le patronage de #snation# a affrété le navire "#nomdunavire#". Bientôt, il mettra le cap sur #ssNextColony# avec une cargaison de #sQuestGoodsIdx#.}
 MerchantOnMap_t2 {Le marchand local a équipé le navire "#sShipName#" d'un chargement de #sQuestGoodsIdx# pour #snation#, et il partira bientôt pour #ssNextColony#.}
-
 MerchantRumour_t0 {J'ai entendu des rumeurs selon lesquelles le navire "#shipName#" battant pavillon de #snation#, qui naviguait de #ssColony# à #ssNextColony# avec une cargaison de #sQuestGoodsIdx#, a été coulé par un pirate inconnu !}
 MerchantRumour_t1 {J'ai entendu des rumeurs selon lesquelles le navire "#sShipName#" battant pavillon de #snation#, qui a quitté #ssColony# avec le chargement de #sQuestGoodsIdx# à destination de #ssNextColony#, a été perdu avec la cargaison et l'équipage au complet !}
 MerchantRumour_t2 {De terribles rumeurs circulent selon lesquelles un pirate aurait récemment abordé un navire marchand de la #snation# en provenance de la colonie de #ssColony#. Il a massacré tout l'équipage et s'est emparé du chargement de #sQuestGoodsIdx#. N'est-ce pas vous, par hasard, capitaine ?}
-
-GetColonyPrices_t0 {Le quartier-maître d'un navire de la Compagnie des Indes occidentales m'a parlé, autour d'une tasse de rhum, des prix pratiqués dans le magasin de #sColony# (liste des prix obtenue).}
-GetColonyPrices_t0 {Le capitaine du navire marchand qui venait d'arriver de la ville de #sColony#, m'a parlé des prix pratiqués dans le magasin local. (liste des prix obtenus)}
 GetColonyPrices_t0 {Récemment, j'ai entendu à la taverne deux capitaines discuter des prix dans le magasin de la ville de #sColony# (liste des prix obtenue).}
-
 WaitInTavern_t0 {On dit que #sPsHero_Name# a perdu son navire et qu'il noie son chagrin dans le rhum à la taverne de #sTown_Name#.}
 WaitInTavern_t1 {J'ai entendu un marin ivre, qui a été arrêté hier pour vol, dire à ses compagnons de beuverie que #sPsHero_Name# a perdu son navire dans une partie de cartes et qu'il attend maintenant en coulisses dans la taverne de #sTown_Name#.}
 WaitInTavern_t2 {Les marins de la taverne disent que #sPsHero_Name# a eu un coup de malchance récemment. Les douaniers ont coulé son navire et il a échappé de justesse à la potence dans la ville de #sTown_Name#.}
-
 WorkOnMayor_t0 {Aujourd'hui, j'ai vu #sPsHero_Name# avec notre gouverneur. Il semble que son Excellence lui ait confié une autre mission "intéressante".}
 WorkOnMayor_t1 {On dit que notre gouverneur a un nouveau protégé. Le capitaine #sPsHero_Name# est un visiteur fréquent de la résidence, entreprend des missions délicates pour lui et a apparemment une histoire d'amour avec la fille de Son Excellence.}
 WorkOnMayor_t2 {La cuisinière m'a dit qu'elle avait entendu dire par la femme de chambre de Son Excellence que #sPsHero_Name# était un de ses bons amis. Aujourd'hui, tôt dans la matinée, il s'est précipité à la résidence - il y avait certainement des affaires importantes à régler.}
-
 SailToIsland_t0 {#sPsHero_Name# a dit qu'il allait à #sTo# #sTown_Name#. Il y a peut-être quelque chose à acheter.}
 SailToIsland_t1 {#sPsHero_Name# navigue #sTo# #sTown_Name# pour des affaires commerciales - c'est ce que m'a dit l'un de ses marins à la taverne.}
 SailToIsland_t2 {Hier, #sPsHero_Name# était ivre comme un cochon à la taverne locale et il a crié haut et fort qu'il allait #sTo# #sTown_Name#, où il avait affaire.}
-
 WorkOnStore_t0 {L'un des marins de la taverne a mentionné que #sPsHero_Name# avait entrepris de livrer la cargaison de #sGood# à #sTown_Name#.}
 WorkOnStore_t1 {L'assistant de notre commerçant m'a dit que #sPsHero_Name# s'est engagé à livrer la cargaison de #sGood# de la boutique de son patron à la ville de #sTown_Name#.}
 WorkOnStore_t2 {Notre barman nous a dit que #sPsHero_Name# engageait des marins à la taverne pour naviguer vers #sTown_Name# avec la cargaison de #sGood# du magasin local.}
-
 WorkWithContra_t0 {J'ai vu #sPsHero_Name# parler avec une personne louche. Ils disent que c'était un contrebandier.}
 WorkWithContra_t1 {On dit que #sPsHero_Name# a apporté une pleine cale de marchandises de contrebande. Il l'a peut-être déjà vendue - ou peut-être pas...}
 WorkWithContra_t2 {J'ai entendu #sPsHero_Name# parler avec notre contrebandier. Ils se sont mis d'accord pour se rencontrer dans un endroit nommé #sContraPlace#.}
-
 DuelCoward_t0 {Quel honte ! #sName# ne s'est pas présenté pour un duel. Maintenant, tout le monde dit que c'est un lâche !}
 DuelCoward_t1 {Ha-ha, #sName# ne s'est pas présenté pour un duel ! Je ne pense pas qu'il aura le même succès avec les femmes qu'avant.}
-DuelCoward_t2 {Vous avez entendu ? #sName# ne s'est pas présenté pour un duel ! On dit qu'il était complètement ivre et qu'il ne tenait pas sur ses jambes.}
-
-DuelHero_t0 {Savez-vous que #sName# est un duelliste de premier ordre ? Il a déjà tué #sKill# hommes. Je ne voudrais pas me trouver sur son chemin.}
+DuelCoward_t2 {Vous avez entendu ? #sName# ne s’est pas présenté au duel ! On dit qu’il s’est tellement saoulé cette nuit-là qu’il ne pouvait plus se lever.}
+DuelHero_t0 {Savez-vous que #sName# est un duelliste chevronné ? Il a déjà tué #sKill# personnes. Je ne voudrais pas me trouver sur son chemin.}
 DuelHero_t1 {On dit que #sName# a vendu son âme au diable, et c'est pourquoi il ne peut pas être battu en duel ! Et les âmes de ceux qu'il tue... il a déjà tué #sKill# hommes, et ils iront directement en enfer ! On dit aussi que s'il met fin à sa folie meurtrière, le diable s'emparera de son âme.}
 DuelHero_t2 {Ce parvenu #sName# a une chance inouïe ! Il a déjà tué #sKill# hommes en duel et n'a jamais eu la moindre égratignure ! Vraiment, vous n'arrivez pas à y croire ?}

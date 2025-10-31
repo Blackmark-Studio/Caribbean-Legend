@@ -108,8 +108,8 @@ void ProcessDialogEvent()
 
 	case "Wine_take_1":
 		AddMoneyToCharacter(pchar, sti(pchar.questTemp.Wine.Money));
-		dialog.text = "Por supuesto que lo haremos, " + GetAddress_Form(NPChar) + "¡El tambor está sonando asamblea, tengo que irme ahora. ¡Adiós!";
-		link.l1 = "¡Vientos favorables y mares tranquilos, camarada!";
+		dialog.text = "Por supuesto que lo haremos, " + GetAddress_Form(NPChar) + "¡El tambor llama a asamblea, tengo que irme ahora! ¡Adiós!";
+		link.l1 = "¡Qué tengas vientos favorables y mares tranquilos, camarada!";
 		link.l1.go = "Wine_take_2";
 		break;
 

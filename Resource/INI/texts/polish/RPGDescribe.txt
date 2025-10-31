@@ -1,52 +1,25 @@
-_info {
-Файл - описание РПГ системы
-Создан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
+_info
+{
+Файл - описание РПГ системыСоздан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
 }
-
-newline {
+newline
+{
 
 }
-
 Strength
 {
-Silni piraci sa zazwyczaj świetnymi gwardzistami i kanonierami.
-Wpływa na umiejętnosci wymagające siły fizycznej, w szczególności na „Broń wyważona”, „Broń ciężka” i „Armaty”.
-~
-Określa ilość HP na poziom i maksymalną pojemność ekwipunku.
+Silni piraci sa zazwyczaj świetnymi gwardzistami i kanonierami.Wpływa na umiejętnosci wymagające siły fizycznej, w szczególności na „Broń wyważona”, „Broń ciężka” i „Armaty”.~Określa ilość HP na poziom i maksymalną pojemność ekwipunku.
 }
-
 Perception
 {
-Spostrzegawczy piraci mogą być strzelcami, tajnymi agentami i kanonierami.
-~
-Wpływa na umiejetnosci „Celowanie” i „Skradanie się”.
+Spostrzegawczy piraci mogą być strzelcami, tajnymi agentami i kanonierami.~Wpływa na umiejetnosci „Celowanie” i „Skradanie się”.
 }
-
-Agility
-{
-Zwinni piraci często są najlepszymi kandydatami do roli gwardzisty lub bosmana, a abordaż jest ich mocną stroną.
-Wpływa na „Broń lekka”, „Broń wyważona”, „Przyciąganie” i „Broń palna”.
-~
-Określa maksymalną ilość energii.
-}
-
+Agility {Koordynacja ruchów i zręczność rąk. ~ Wpływa na: „Abordaż”, „Broń lekką”, „Broń średnią”, „Pistolety i Muszkiety” oraz ilość energii zdobywanej na rangę.}
 Charisma
 {
-Charyzmatyczni piraci to urodzeni przywódcy, negocjatorzy i kwatermistrzowie. 
-Naturalny przywódca nie potrzebuje uciekać się do przemocy, aby odebrać handlarzowi towar, gdyż dadzą mu wszystko bez walki. Podążają za nim najlepsi żeglarze, a najpiękniejsze kobiety będą czekać na jego przybycie w każdym porcie.
-~
-Wpływa na „Dowodzenie” i „Handel”.
-Określa ilu oficerów możesz zatrudnić (Im wyższa charyzma, tym więcej).
+Charyzmatyczni piraci to urodzeni przywódcy, negocjatorzy i kwatermistrzowie. Naturalny przywódca nie potrzebuje uciekać się do przemocy, aby odebrać handlarzowi towar, gdyż dadzą mu wszystko bez walki. Podążają za nim najlepsi żeglarze, a najpiękniejsze kobiety będą czekać na jego przybycie w każdym porcie.~Wpływa na „Dowodzenie” i „Handel”.Określa ilu oficerów możesz zatrudnić (Im wyższa charyzma, tym więcej).
 }
-
-Intellect
-{
-Inteligentni piraci szybko sie uczą i mają szeroki wybór opcji kariery: chirurdzy, kanonierzy i nawigatorzy.
-~
-Wpływa na „Handel”, „Armaty” i „Nawigacja”
-Określa szybkość zdobywania poziomów i zdolności.
-}
-
+Intellect {Wrodzone skłonności i predyspozycje, bystrość i umiejętność szybkiego dostosowania się do sytuacji. ~ Wpływa na „Handel”, „Artylerię”, „Nawigację” oraz ilość energii zyskiwanej na rangę.}
 Endurance
 {
 Niezłomni piraci błyszczą jako stolarze i chirurdzy.
@@ -54,422 +27,276 @@ Niezłomni piraci błyszczą jako stolarze i chirurdzy.
 Wpływa na „Naprawa” i „Obrona”.
 Podobnie jak w przypadku siły, określa maksymalne PŻ i maksymalną pojemność ekwipunku.
 }
-
 Luck
 {
-Piraci z dużą dozą szczęścia są idealnymi strzelcami, hazardzistami i poszukiwaczami przygód.
-~
-"Broń palna", "Oportunizm" i "Skradanie się" wymagają tej statystyki.
-Określa wynik niektórych wydarzeń w grze i ma ogromny wpływ na trafienia krytyczne.
+Piraci z dużą dozą szczęścia są idealnymi strzelcami, hazardzistami i poszukiwaczami przygód.~"Broń palna", "Oportunizm" i "Skradanie się" wymagają tej statystyki.Określa wynik niektórych wydarzeń w grze i ma ogromny wpływ na trafienia krytyczne.
 }
-
 Crit
 {
-Podstawowe prawdopodobieństwo zadania ciosu krytycznego zależy od kombinacji wyposażenia, perków i statystyk.
+Podstawowa szansa na zadanie wrogowi ciosu lub strzału krytycznego.
 ~
-Statystyka (S) określa szansę na krytyczny atak wręcz.
-Statystyki (S) i (I) określają szansę na krytyczny strzał - ale tylko dla broni palnej wysokiej jakości.
+Zależy od S i P.
 ~
-
-Wyposażenie i perki wroga mogą zmienić twoją szansę na cios krytyczny.
+Perki i ekwipunek mogą zwiększyć tę szansę.
 }
-
 CharDefence
 {
-Podstawowe wskaźniki ochrony przed bronią białą / bronią palną / krytycznymi ciosami wroga
-~
-Wydajność zależy od umiejętności osobistych i wyposażenia
-~
-Nie dostosowują się do umiejętności i wyposażenia wroga.
+Podstawowe wskaźniki Ochrony przed obrażeniami. Zmniejszają wszystkie otrzymywane obrażenia o określony procent.
+ ~
+ Na wartości wpływają osobiste Perki i ekwipunek.
 }
-
 FencingL
 {
-Umiejętność posługiwania się lekkimi ostrzami, szpadami i podobnymi.
-(R*0.9+I*0.1)
+Umiejętność posługiwania się lekkimi ostrzami, floretami i podobną bronią.
+ (R*0.9+I*0.1)
+ ~
+ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
-
 FencingS
 {
-Umiejętność posługiwania się średnimi, wszechstronnymi ostrzami, takimi jak szable, które wymagają zarówno siły, jak i zwinności.
-(P*0.6+R*0.4)
+Umiejętność władania średnimi, dobrze wyważonymi ostrzami, takimi jak szable, wymagającymi siły i zręczności.
+ (P*0.6+R*0.4)
+ ~
+ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
-
 FencingH
 {
-Umiejętność posługiwania się ciężkimi broniami, takimi jak miecze dwuręczne i topory. Wymaga dużej siły fizycznej.
-(P*0.9+E*0.1)
+Umiejętność posługiwania się ciężką bronią, taką jak pałasze i topory. Wymaga dużej siły fizycznej.
+ (P*0.9+E*0.1)
+ ~
+ Wpływa na obrażenia broni i zużycie Energii podczas ataków.
 }
-
 Pistol
 {
 Umiejętność posługiwania się wszystkimi rodzajami broni palnej.
-(R*0.4+S*0.6)
+ (R*0.4+S*0.6)
+ ~
+ Wpływa na obrażenia i szybkość przeładowania.
 }
-
 Fortune
 {
-Odrobina proaktywnego szczęścia przyda się w hazardzie i plądrowaniu.
-Based on(S).
+Odrobina proaktywnego szczęścia przyda się w hazardzie i plądrowaniu.Based on(S).
 }
-
 Leadership
 {
-Wplywa na wyniki niektórych wydarzeń i dialogów. Jest również główną umiejętnością przy rekrutacji nowych członków załogi.
-(A*0.8+T*0.2)
+Wplywa na wyniki niektórych wydarzeń i dialogów. Jest również główną umiejętnością przy rekrutacji nowych członków załogi.(A*0.8+T*0.2)
 }
-
 Commerce
 {
-Odnosi się do kluczowej roli w specyficznych dialogach handlowych, wpływając zarówno na ceny sprzedaży, jak i zakupu, oraz mając wpływ na ogólny koszt zarządzania statkiem.
-(T*0.8+A*0.2)
+Odnosi się do kluczowej roli w specyficznych dialogach handlowych, wpływając zarówno na ceny sprzedaży, jak i zakupu, oraz mając wpływ na ogólny koszt zarządzania statkiem.(T*0.8+A*0.2)
 }
-
 Accuracy
 {
-Jedna z najważniejszych umiejętności dla tych, którzy żeglują po wielkich morzach. Porządny kapitan nie będzie marnował prochu strzelniczego i kul armatnich, by rozpraszać ryby: każda salwa trafi w cel! A gdy słony wiatr rozwieje dym nad mostkiem kapitańskim, na horyzoncie nie zostanie już żadnych wrogich statków!
-(I*0.8+S*0.2)
+Jedna z najważniejszych umiejętności dla tych, którzy żeglują po wielkich morzach. Porządny kapitan nie będzie marnował prochu strzelniczego i kul armatnich, by rozpraszać ryby: każda salwa trafi w cel! A gdy słony wiatr rozwieje dym nad mostkiem kapitańskim, na horyzoncie nie zostanie już żadnych wrogich statków!(I*0.8+S*0.2)
 }
-
 Cannons
 {
-Załaduj szybko działa, obróć je, a podczas gdy echo salwy wciąż dudni między grodziami, oczyść, załaduj, wyceluj, polej działo wodą, aby się nie przegrzało... W ferworze bitwy nie ma miejsca na zbędne czynności: załaduj, obróć, strzelaj!
-(T*0.6+P*0.4)
+Załaduj szybko działa, obróć je, a podczas gdy echo salwy wciąż dudni między grodziami, oczyść, załaduj, wyceluj, polej działo wodą, aby się nie przegrzało... W ferworze bitwy nie ma miejsca na zbędne czynności: załaduj, obróć, strzelaj!(T*0.6+P*0.4)
 }
-
 Sailing
 {
-Umiejętność bezpiecznego doprowadzenia statku do portu przez burzę i mgłę; zdolność posługiwania się sprzętem nawigacyjnym i kontrolowania floty. Największy i najgroźniejszy statek popłynie niczym ptak, słuchając pewnej ręki doświadczonego Nawigatora.
-(I*0.2+T*0.8)
-~
-Brak nawigacji nałoży kary na każdą umiejętność i statystykę.
-Statki 1. klasa wymagana 95
-Statki 2. klasa wymagana 80
-Statki 3. klasa wymagana 65
-Statki 4. klasa wymagana 45
-Statki 5. klasa wymagana 25
-Statki 6. klasa wymagana 1
-Brak Nawigacji prowadzi do kar we wszystkich umiejętnościach i cechach bohatera. Im większa różnica między aktualną a wymaganą wartością Nawigacji, tym większe kary.
+Umiejętność prowadzenia statku w każdych warunkach, korzystania z przyrządów i dowodzenia eskadrą. Nawet najbardziej kapryśny i niezręczny statek posłucha twardej ręki doświadczonego skippera.
+ Zależy od 'Percepcji' i 'Talentu' (I0.2 + T0.8)
+ ~
+ Do sterowania statkiem określonej klasy wymagany jest odpowiedni minimalny poziom Nawigacji:
+ klasa 1 wymaga 90
+ klasa 2 wymaga 70
+ klasa 3 wymaga 55
+ klasa 4 wymaga 40
+ klasa 5 wymaga 20
+ klasa 6 wymaga 01
+ ~
+ Brak Nawigacji prowadzi do kar we wszystkie umiejętności i cechy bohatera. Im większa różnica między bieżącą a wymaganą wartością Nawigacji, tym silniejsze kary.
 }
-
 Repair
 {
-Kiedy wróg szturmuje twój statek serią pocisków, rozszczepiając boki i zamieniając żagle w sito; gdy kadłub pęka podczas burzy, a wiatr rozrywa olinowanie nitka po nitce, naprawa staje się jedną z najważniejszych umiejętności morskich.
-(E0.8+I0.2)
+Kiedy wróg szturmuje twój statek serią pocisków, rozszczepiając boki i zamieniając żagle w sito; gdy kadłub pęka podczas burzy, a wiatr rozrywa olinowanie nitka po nitce, naprawa staje się jedną z najważniejszych umiejętności morskich.(E0.8+I0.2)
 }
-
 Grappling
 {
-Wyrównanie statku z wrogiem, rzucenie haków, aby abordować drżący wrogi okręt, oczyszczenie pokładu i wzięcie statku jako zasłużonej nagrody - to wymaga dużej zwinności i doświadczenia, ale łup z pewnością wynagrodzi cały wysiłek.
-(R0.7+T0.3)
+Wyrównanie statku z wrogim okrętem, rzucenie haków abordażowych, opanowanie drżącego przeciwnika, oczyszczenie pokładu i przejęcie statku jako zasłużonej nagrody — wszystko to wymaga zręczności i doświadczenia, ale łupy z pewnością wynagrodzą cały trud.
+ (R*0.7+T*0.3)
+ ~
+ Wpływa na dystans abordażu.
 }
-
 Defence
 {
-Dzień po dniu, załoga powoli staje się jednością ze statkiem. Doświadczony marynarz wart jest dziesięciu młodzików z lokalnej karczmy. Każdy dobry kapitan musi chronić swoich ludzi i nie pozwolić im zginąć głupio.
-(E0.5+A0.5)
+Dzień po dniu, załoga powoli staje się jednością ze statkiem. Doświadczony marynarz wart jest dziesięciu młodzików z lokalnej karczmy. Każdy dobry kapitan musi chronić swoich ludzi i nie pozwolić im zginąć głupio.(E0.5+A0.5)
 }
-
-Sneak
-{
-Aby przejść niezauważonym obok wroga, uciec, gdy jest się ściganym na otwartym oceanie, lub nagle pojawić się znikąd, by zaatakować niczego nieświadomego wroga - każdy kapitan musi posiadać odpowiednią umiejętność skradania się.(S0.5+I0.5)
-}
-
+Sneak {Aby przejść niezauważonym obok wroga, uciec, gdy jest się ściganym na otwartym oceanie, lub nagle pojawić się znikąd, by zaatakować niczego nieświadomego wroga - każdy kapitan musi posiadać odpowiednią umiejętność skradania się.(S0.5+I0.5)}
 Loyality
 {
-Twoje działania wpływają na lojalność oficerów. Biali rycerze odmówią pracy dla łotrów, a naturalni bandyci nie pozostaną uczciwi zbyt długo.
-~
-Wysoki poziom Autorytetu może znacznie zmniejszyć wpływ decyzji na spadek lojalności twoich oficerów, w przypadku gdy te działania nie zgadzają się z ich światopoglądem.
+Twoje działania wpływają na lojalność oficerów. Biali rycerze odmówią pracy dla łotrów, a naturalni bandyci nie pozostaną uczciwi zbyt długo.~Wysoki poziom Autorytetu może znacznie zmniejszyć wpływ decyzji na spadek lojalności twoich oficerów, w przypadku gdy te działania nie zgadzają się z ich światopoglądem.
 }
-
 Authority
 {
-Autorytet, Sława i Honor określają protagoniste wobec innych postaci w grze.
-~
-Autorytet to ocena bohatera przez jego otoczenie (przede wszystkim załogę statków w eskadrze bohatera). Jeśli autorytet kapitana spadnie krytycznie, zostanie on opatrzony czarnym znakiem i propozycją dobrowolnej lub przymusowej rezygnacji. Jeśli Władza jest wysoka, załoga powinna zgromadzić się wokół dowódcy i z dobrą wiarą w swojego przywódcę wytrzymać wszelkie próby!
-~
-Honor rośnie, gdy bohater ratuje świat i jego mieszkańców. Lub popada w najohydniejsze otchłanie, z powodu złamanych obietnic, popełnionej przemocy i nikczemności. Honor zależy od działań postaci i z kolei wpływa na to, jak postrzegają ją inne osoby w grze.
-~
-Jeśli bohater prowadzi monotonny i wyważony tryb życia, wybiera najmniej ryzykowne rozwiązania, podróżuje samotnie po pustych morzach, jego Honor i Sława będą opadały jak piasek uciekający przez otwartą dłoń, opadając na neutralne. W grze pamięć społeczności jest krótka i nie przekracza połowy roku gry.
+Autorytet, Sława i Honor określają protagoniste wobec innych postaci w grze.~Autorytet to ocena bohatera przez jego otoczenie (przede wszystkim załogę statków w eskadrze bohatera). Jeśli autorytet kapitana spadnie krytycznie, zostanie on opatrzony czarnym znakiem i propozycją dobrowolnej lub przymusowej rezygnacji. Jeśli Władza jest wysoka, załoga powinna zgromadzić się wokół dowódcy i z dobrą wiarą w swojego przywódcę wytrzymać wszelkie próby!~Honor rośnie, gdy bohater ratuje świat i jego mieszkańców. Lub popada w najohydniejsze otchłanie, z powodu złamanych obietnic, popełnionej przemocy i nikczemności. Honor zależy od działań postaci i z kolei wpływa na to, jak postrzegają ją inne osoby w grze.~Jeśli bohater prowadzi monotonny i wyważony tryb życia, wybiera najmniej ryzykowne rozwiązania, podróżuje samotnie po pustych morzach, jego Honor i Sława będą opadały jak piasek uciekający przez otwartą dłoń, opadając na neutralne. W grze pamięć społeczności jest krótka i nie przekracza połowy roku gry.
 }
-
 Attention_abilities
 {
-Uwaga!
-Niektóre umiejętności mogą nie być dostępne dla określonych typów protagonistów lub oficerów.
+Uwaga!Niektóre umiejętności mogą nie być dostępne dla określonych typów protagonistów lub oficerów.
 }
-
 Personal_abilities
 {
-Perki, które są skoncentrowane na postaci.
+Perki rozszerzające osobiste możliwości postaci. Postępy zdobywa się poprzez podnoszenie poziomów osobistych umiejętności.
+ ~
+ Po osiągnięciu progu otrzymujesz nowy punkt osobistych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze.
 }
-
 Ship_abilities
 {
-Perki, które są skoncentrowane na statku.
-Zatrudnieni oficerowie mogą zajmować się większością z nich, pozwalając Kapitanowi priorytetyzować.
+Perki wpływające na zarządzanie statkiem. Postępy zdobywa się poprzez podnoszenie poziomów umiejętności okrętowych.
+ ~
+ Po osiągnięciu progu otrzymujesz nowy punkt okrętowych Perków. Różne Perki kosztują różną liczbę punktów. Zazwyczaj na końcu drzewa rozwoju znajdują się te najsilniejsze.
+ ~
+ Mogą być odziedziczone przez bohatera od oficerów wyznaczonych na stanowiska na statku, którzy znają się na swoim fachu.
 }
-
-Abilities_available
-{
-Liczba wskazuje ilość nieprzydzielonych punktów perków.
-}
-
-Abilities_active
-{
-Liczba wskazuje perki, które postać aktywowała.
-}
-
+Abilities_available {Liczba wskazuje ilość nieprzydzielonych punktów perków.}
+Abilities_active {Liczba wskazuje perki, które postać aktywowała.}
 Rank
 {
-Ranga wskazuje poziom postępu postaci w grze. Wzrost rangi następuje wraz z doświadczeniem bohatera. Wraz ze wzrostem rangi bohatera, jego Życie również wzrasta o liczbę opartą na wartości Wytrzymałości.
-~
-Wraz ze wzrostem rangi bohatera, spotka on silniejszych przeciwników i częściej znajdzie lepsze przedmioty.
+Ranga to wskaźnik poziomu rozwoju postaci w grze. Postępy zdobywa się poprzez podnoszenie poziomu umiejętności.
+ ~
+ Wraz ze wzrostem rangi postaci zwiększa się jej Życie i Energia, a także częściej pojawiają się silniejsi przeciwnicy i nowe przedmioty.
 }
-
 Life
 {
-Zero HP oznacza śmierć. Jedno HP oznacza świat możliwości.
-~
-(E) określa, ile bonusowych HP przyznawane jest przy każdym nowym poziomie.
+HP — miara odporności postaci na obrażenia fizyczne. Zero oznacza śmierć, jeden oznacza morze możliwości.
+ ~
+ Wartość zależy od P i E i rośnie wraz z rangą.
 }
-
-Health
-{
-Zdrowie jest wskaźnikiem stanu fizycznego postaci. Spada za każdym razem, gdy postać zostaje poważnie ranna w krótkim okresie czasu. Regeneruje się, jeśli unika się walki przez pewien czas, aby rany mogły się odpowiednio zagoić. Może poważnie obniżyć statystyki i umiejętności, jeśli zostanie zaniedbane.
-}
+Health {Zdrowie jest wskaźnikiem stanu fizycznego postaci. Spada za każdym razem, gdy postać zostaje poważnie ranna w krótkim okresie czasu. Regeneruje się, jeśli unika się walki przez pewien czas, aby rany mogły się odpowiednio zagoić. Może poważnie obniżyć statystyki i umiejętności, jeśli zostanie zaniedbane.}
 Energy
 {
-Energia to kluczowy parametr określający wytrzymałość bohatera podczas walki wręcz – każda akcja zużywa jej część. Mówiąc prościej, udział w bitwie męczy postać, co wymaga odpoczynku w celu regeneracji sił.
-~
-(R) określa maksymalną ilość Energii.
+Energia - zapas wytrzymałości fizycznej postaci.
+ 
+  ~
+ 
+  Wszystkie akcje ofensywne i szybki bieg w walce wręcz wymagają wydatków Energii; w trakcie walki postać męczy się i potrzebuje oddechu, by odzyskać siły.
+ 
+  ~
+ 
+  Wartość Energii zależy od R i T i rośnie wraz z rangą.
 }
-
-Money
+Money {Pieniądze rządzą światem. Piastry, talary, gwinee... Jaka to różnica, jeśli wszystko to płynna gotówka!}
+Reputation
 {
-Pieniądze rządzą światem. Piastry, talary, gwinee... Jaka to różnica, jeśli wszystko to płynna gotówka!
-}
-
-Honor
-{
-Honor określa stosunek innych postaci do ciebie. Może być wysoki (pozytywny), neutralny lub niski (negatywny). Honor zmienia się w zależności od twoich czynów i wpływa na to, jak jesteś postrzegany w świecie gry.
+Honor odzwierciedla, jak postrzega cię społeczeństwo.
 ~
-Sława bohatera z czasem blednie – jego osiągnięcia lub porażki znikają z pamięci ludzi. Złe uczynki są jednak trudniejsze do zapomnienia niż dobre. Jeśli bohater nie opowiada się po żadnej stronie i nie podejmuje żadnych znaczących działań, jego reputacja ostatecznie stanie się „nieznanym awanturnikiem”.
+Zmienia się w zależności od sposobu rozwiązywania problemów.
+~
+Zawsze dąży do stanu neutralnego.
 }
-
 Weight
 {
-Maksymalna ilość ciężaru, jaką postać może nosić bez utraty prędkości ruchu i innych kar do umiejętności.
-Zależy od (P) i (E).
+Waga to maksymalna łączna masa ładunku, którą postać może nosić.
+ Zależy od Siły, Wytrzymałości, osobistych Perków i aktywnych amuletów.
+ ~
+ Przeciążona postać porusza się wolniej, otrzymuje kary i traci możliwość szybkiej podróży.
 }
-
-Title
-{
-Tytuł wskazuje, jak bardzo postać jest użyteczna dla państwa, któremu służy.
-}
-
+Title {Tytuł wskazuje, jak bardzo postać jest użyteczna dla państwa, któremu służy.}
 NextExp
 {
-Próg doświadczenia wskazuje, ile punktów przypisano do bieżącej umiejętności, rangi i zdolności oraz ile doświadczenia potrzeba do zdobycia kolejnego punktu.
-~
-Umiejętności rozwijają się poprzez wykonywanie odpowiadających im działań. Na przykład każde celne strzały z pistoletu zwiększają poziom umiejętności „Broń palna”. Punkty umiejętności liczą się do rangi doświadczenia oraz zdolności osobistych/okrętowych (w zależności od typu umiejętności).
-~
-Po przekroczeniu progu doświadczenia bohater zdobywa nową rangę, a wraz z nią więcej punktów życia i zdolności, które gracz może rozdysponować według własnego uznania.
+Próg doświadczenia wskazuje, ile punktów przypisano do bieżącej umiejętności, rangi i zdolności oraz ile doświadczenia potrzeba do zdobycia kolejnego punktu.~Umiejętności rozwijają się poprzez wykonywanie odpowiadających im działań. Na przykład każde celne strzały z pistoletu zwiększają poziom umiejętności „Broń palna”. Punkty umiejętności liczą się do rangi doświadczenia oraz zdolności osobistych/okrętowych (w zależności od typu umiejętności).~Po przekroczeniu progu doświadczenia bohater zdobywa nową rangę, a wraz z nią więcej punktów życia i zdolności, które gracz może rozdysponować według własnego uznania.
 }
-
 TABLE_PERKS {Zdolności bohatera}
-
 TABLE_PERKS_desc
 {
-Zdolności to dodatkowe parametry postaci, które zapewniają nowe korzyści lub odblokowują wcześniej niedostępne możliwości w grze. Dzięki nim bohater może stać się ekspertem w danej specjalizacji lub wszechstronnym poszukiwaczem przygód, który zna się po trochu na wszystkim.
-~
-Kliknij dwukrotnie wybraną zdolność, aby przeczytać jej opis i sprawdzić wymagania (jeśli istnieją).
-~
-Niektóre zdolności nie mogą być od razu wybrane – wymagają wcześniejszego odblokowania innych zdolności w drzewku.
+Zdolności to dodatkowe parametry postaci, które zapewniają nowe korzyści lub odblokowują wcześniej niedostępne możliwości w grze. Dzięki nim bohater może stać się ekspertem w danej specjalizacji lub wszechstronnym poszukiwaczem przygód, który zna się po trochu na wszystkim.~Kliknij dwukrotnie wybraną zdolność, aby przeczytać jej opis i sprawdzić wymagania (jeśli istnieją).~Niektóre zdolności nie mogą być od razu wybrane – wymagają wcześniejszego odblokowania innych zdolności w drzewku.
 }
-
 PERK_TABLE_NEED {Wymagane zdolności}
-
-PERK_TABLE_NEED_desc
-{
-Aby odblokować tę zdolność, bohater musi najpierw aktywować wszystkie poprzednie zdolności w tym drzewku.
-}
-
+PERK_TABLE_NEED_desc {Aby odblokować tę zdolność, bohater musi najpierw aktywować wszystkie poprzednie zdolności w tym drzewku.}
 Nation_hint
 {
-Nacja bohatera to ta, którą wybrał na początku gry lub ta, której patent posiada w danym momencie (jeśli służy danemu państwu). Informację o narodowości można znaleźć w oknie „Postać”. W oknie „Nacja” można zobaczyć aktualną flagę statku – można ją zmienić tylko na morzu, aby ukryć swoją prawdziwą tożsamość.
-Należy jednak pamiętać, że statki na otwartym morzu oraz strażnicy portowi mogą przejrzeć kamuflaż. Skuteczność ukrycia zależy od poziomu skradania się bohatera. Jeśli na bohatera została nałożona nagroda przez jego własne państwo, będzie on traktowany jako wróg swojej nacji.
-~
-Rozpoznanie wroga zależy od oficjalnych stosunków między państwami oraz wysokości nagród wyznaczonych za twoją głowę.
-~
-Szybka podróż nie działa w miastach wrogich państw.
+Nacja bohatera to ta, którą wybrał na początku gry lub ta, której patent posiada w danym momencie (jeśli służy danemu państwu). Informację o narodowości można znaleźć w oknie „Postać”. W oknie „Nacja” można zobaczyć aktualną flagę statku – można ją zmienić tylko na morzu, aby ukryć swoją prawdziwą tożsamość.Należy jednak pamiętać, że statki na otwartym morzu oraz strażnicy portowi mogą przejrzeć kamuflaż. Skuteczność ukrycia zależy od poziomu skradania się bohatera. Jeśli na bohatera została nałożona nagroda przez jego własne państwo, będzie on traktowany jako wróg swojej nacji.~Rozpoznanie wroga zależy od oficjalnych stosunków między państwami oraz wysokości nagród wyznaczonych za twoją głowę.~Szybka podróż nie działa w miastach wrogich państw.
 }
-
-Drunk_hint
-{
-Alkohol wpływa na twoje umiejętności. Jeśli jesteś pijany, nie będziesz odczuwać bólu, ale również nie będziesz w stanie wykonywać precyzyjnych czynności.
-}
-
-England_descr
-{
-Anglia. Brytania będzie potrzebować jeszcze jednego stulecia, aby naprawdę „rządzić falami”, ale jeśli istnieje wschodząca potęga morska zdolna przeciwstawić się Hiszpanii, to jest nią właśnie Anglia. Podczas gdy Francja atakuje Hiszpanię w Europie, angielscy korsarze i patrole morskie żerują na niechronionych hiszpańskich statkach, dążąc do dominacji na Karaibach.
-}
-
+Drunk_hint {Alkohol wpływa na twoje umiejętności. Jeśli jesteś pijany, nie będziesz odczuwać bólu, ale również nie będziesz w stanie wykonywać precyzyjnych czynności.}
+England_descr {Anglia. Brytania będzie potrzebować jeszcze jednego stulecia, aby naprawdę „rządzić falami”, ale jeśli istnieje wschodząca potęga morska zdolna przeciwstawić się Hiszpanii, to jest nią właśnie Anglia. Podczas gdy Francja atakuje Hiszpanię w Europie, angielscy korsarze i patrole morskie żerują na niechronionych hiszpańskich statkach, dążąc do dominacji na Karaibach.}
 France_descr
 {
-Katastrofalne wojny religijne między katolikami a hugenotami, które nękały Francję od początku reformacji, w dużej mierze dobiegły końca wraz z objęciem tronu przez piętnastoletniego Ludwika XIV de Bourbon. Choć daleko mu jeszcze do przyszłego „Króla Słońce”, który wprowadzi Francję w Złoty Wiek, dąży on do kontynuowania reform wielkiego kardynała Richelieu w celu umocnienia państwa.
-~
-Konflikty w Europie nadal trwają, ale największym rywalem Burbonów są Habsburgowie – aktualnie rządzący Hiszpanią oraz Świętym Cesarstwem Rzymskim. Aby konkurować ze Hiszpanami, Ludwik XIV powierzył Jean-Baptiste’owi Colbertowi zadanie rewitalizacji floty francuskiej. Nowoczesny system podatkowy pozwala Francji nie tylko spłacić długi po niemal pięćdziesięciu latach wojen, ale także przeznaczyć fundusze na reformy wojskowe i morskie.
-~
-W przeciwieństwie do Anglii, główne obawy Francji koncentrują się na kontynencie europejskim, przez co sprawy kolonialne często schodzą na dalszy plan.
-~
-W wyniku tego zaniedbania Francuska Kompania Ameryk postanowiła sprzedać część swoich posiadłości na Karaibach Zakonowi Maltańskiemu w ramach umowy zawartej przez gubernatora Philippe’a de Poincy. On oraz wielki mistrz zakonu, Jean de Lascaris-Castellar, liczą na odzyskanie dochodów utraconych przez kosztowne pościgi za berberyjskimi korsarzami na Morzu Śródziemnym, choć ich metody są raczej niechętnie widziane przez Stolicę Apostolską.
-~
-I tak oto najznamienitsi francuscy arystokraci wyruszają na Karaiby w poszukiwaniu sławy, bogactwa, przygody i – być może – ekspansji francuskiego imperium.
+Katastrofalne wojny religijne między katolikami a hugenotami, które nękały Francję od początku reformacji, w dużej mierze dobiegły końca wraz z objęciem tronu przez piętnastoletniego Ludwika XIV de Bourbon. Choć daleko mu jeszcze do przyszłego „Króla Słońce”, który wprowadzi Francję w Złoty Wiek, dąży on do kontynuowania reform wielkiego kardynała Richelieu w celu umocnienia państwa.~Konflikty w Europie nadal trwają, ale największym rywalem Burbonów są Habsburgowie – aktualnie rządzący Hiszpanią oraz Świętym Cesarstwem Rzymskim. Aby konkurować ze Hiszpanami, Ludwik XIV powierzył Jean-Baptiste’owi Colbertowi zadanie rewitalizacji floty francuskiej. Nowoczesny system podatkowy pozwala Francji nie tylko spłacić długi po niemal pięćdziesięciu latach wojen, ale także przeznaczyć fundusze na reformy wojskowe i morskie.~W przeciwieństwie do Anglii, główne obawy Francji koncentrują się na kontynencie europejskim, przez co sprawy kolonialne często schodzą na dalszy plan.~W wyniku tego zaniedbania Francuska Kompania Ameryk postanowiła sprzedać część swoich posiadłości na Karaibach Zakonowi Maltańskiemu w ramach umowy zawartej przez gubernatora Philippe’a de Poincy. On oraz wielki mistrz zakonu, Jean de Lascaris-Castellar, liczą na odzyskanie dochodów utraconych przez kosztowne pościgi za berberyjskimi korsarzami na Morzu Śródziemnym, choć ich metody są raczej niechętnie widziane przez Stolicę Apostolską.~I tak oto najznamienitsi francuscy arystokraci wyruszają na Karaiby w poszukiwaniu sławy, bogactwa, przygody i – być może – ekspansji francuskiego imperium.
 }
-
-Holland_descr
-{
-Holandia. Zjednoczone Prowincje Niderlandów to młody naród, który niedawno wyzwolił się po osiemdziesięcioletniej wojnie o niepodległość przeciwko Hiszpanii. Holendrzy to oszczędni i pracowici ludzie, dążący do dominacji w handlu. Obecnie Holandia po cichu wspiera Francję w jej walce przeciwko wspólnemu wrogowi – Hiszpanii, ale w gruncie rzeczy dąży do neutralności, by móc handlować (lub oszukiwać) dowolnych klientów!
-}
-
-Spain_descr
-{
-Hiszpania. Potężne, lecz słabnące imperium kolonialne. Kontrolując większość wysp Karaibów oraz hiszpańską część Ameryki Południowej, Hiszpania nieustannie znajduje się pod presją Anglii i Francji, które pragną zagarnąć niezmierzone bogactwa Nowego Świata dla siebie.
-}
-
+Holland_descr {Holandia. Zjednoczone Prowincje Niderlandów to młody naród, który niedawno wyzwolił się po osiemdziesięcioletniej wojnie o niepodległość przeciwko Hiszpanii. Holendrzy to oszczędni i pracowici ludzie, dążący do dominacji w handlu. Obecnie Holandia po cichu wspiera Francję w jej walce przeciwko wspólnemu wrogowi – Hiszpanii, ale w gruncie rzeczy dąży do neutralności, by móc handlować (lub oszukiwać) dowolnych klientów!}
+Spain_descr {Hiszpania. Potężne, lecz słabnące imperium kolonialne. Kontrolując większość wysp Karaibów oraz hiszpańską część Ameryki Południowej, Hiszpania nieustannie znajduje się pod presją Anglii i Francji, które pragną zagarnąć niezmierzone bogactwa Nowego Świata dla siebie.}
 Pirate_descr
 {
-Piraci. Ludzie ci żeglują pod żadną i każdą banderą, żyjąc według Kodeksu Pirackiego Braci Wybrzeża (choć to raczej luźne wytyczne). Nie przeszkadza im to w sprzedawaniu łupów w angielskich i francuskich koloniach, takich jak Port Royal czy Tortuga, gdzie gubernator przymyka oko na ich działalność. W zależności od sytuacji, piraci mogą nawet walczyć „legalnie” dla każdej z potęg, która wystawi im list kaperski, lecz ostatecznie ich celem jest taki sam łup, jak w przypadku angielskich i francuskich korsarzy – piękny, tłusty hiszpański statek skarbowy.
-~
-Dla każdej morskiej straży, widok pirackiej bandery na horyzoncie jest jak rzucony kawałek boczku w stronę wygłodniałego wilka. Dla większości piratów istnieją tylko dwa możliwe końce – szubienica lub stryczek.
+Piraci. Ludzie ci żeglują pod żadną i każdą banderą, żyjąc według Kodeksu Pirackiego Braci Wybrzeża (choć to raczej luźne wytyczne). Nie przeszkadza im to w sprzedawaniu łupów w angielskich i francuskich koloniach, takich jak Port Royal czy Tortuga, gdzie gubernator przymyka oko na ich działalność. W zależności od sytuacji, piraci mogą nawet walczyć „legalnie” dla każdej z potęg, która wystawi im list kaperski, lecz ostatecznie ich celem jest taki sam łup, jak w przypadku angielskich i francuskich korsarzy – piękny, tłusty hiszpański statek skarbowy.~Dla każdej morskiej straży, widok pirackiej bandery na horyzoncie jest jak rzucony kawałek boczku w stronę wygłodniałego wilka. Dla większości piratów istnieją tylko dwa możliwe końce – szubienica lub stryczek.
 }
-
 Hunter_hint
 {
-Stosunek narodu, jego obywateli i żołnierzy do ciebie. Dobre uczynki dla danej nacji zwiększają twoją reputację; złe mogą sprawić, że zostanie wyznaczona nagroda za twoją głowę, co oznacza ciągły pościg zarówno na lądzie, jak i na morzu.
-~
-Cena za twoją głowę może zostać obniżona poprzez dobre uczynki na rzecz danego kraju, a nawet łapówki. Przy odpowiednim wysiłku można przywrócić neutralne stosunki.
+Stosunek narodu, jego obywateli i żołnierzy do ciebie. Dobre uczynki dla danej nacji zwiększają twoją reputację; złe mogą sprawić, że zostanie wyznaczona nagroda za twoją głowę, co oznacza ciągły pościg zarówno na lądzie, jak i na morzu.~Cena za twoją głowę może zostać obniżona poprzez dobre uczynki na rzecz danego kraju, a nawet łapówki. Przy odpowiednim wysiłku można przywrócić neutralne stosunki.
 }
-
 LevelComplexity {Poziom trudności}
-
 LevelComplexity_desc
 {
-Ten parametr wpływa na tempo zdobywania doświadczenia przez bohatera, szybkość progresji, siłę przeciwników, dochody i wiele innych czynników.
-~
-Poziom trudności waha się od „Łatwy” do „Niemożliwy”.
+Ten parametr wpływa na tempo zdobywania doświadczenia przez bohatera, szybkość progresji, siłę przeciwników, dochody i wiele innych czynników.~Poziom trudności waha się od „Łatwy” do „Niemożliwy”.
 }
-
 RechargePistolOnLine {Przeładowywanie pistoletu}
-
 RechargePistolOnLine_desc
 {
-W tym trybie pistolety nie mogą być przeładowywane podczas walki – tylko wtedy, gdy broń biała jest schowana.
-~
-Tryb ten wpływa na wszystkie postacie w grze.
+W tym trybie pistolety nie mogą być przeładowywane podczas walki – tylko wtedy, gdy broń biała jest schowana.~Tryb ten wpływa na wszystkie postacie w grze.
 }
-
 HardcoreGame {Tryb Hardcore}
-
 HardcoreGame_desc
 {
-Za mało adrenaliny? Chcesz poczuć się jak prawdziwy korsarz i doświadczyć pełnych konsekwencji swoich czynów w świecie gry? W tym trybie zapis gry jest możliwy jedynie na świętym gruncie – w kościele.
-Będziesz musiał robić wszystko dobrze za pierwszym razem, bez możliwości wielokrotnego wczytywania zapisanej gry. Nie ma miejsca na błędy.
+Za mało adrenaliny? Chcesz poczuć się jak prawdziwy korsarz i doświadczyć pełnych konsekwencji swoich czynów w świecie gry? W tym trybie zapis gry jest możliwy jedynie na świętym gruncie – w kościele.Będziesz musiał robić wszystko dobrze za pierwszym razem, bez możliwości wielokrotnego wczytywania zapisanej gry. Nie ma miejsca na błędy.
 }
-
-ArcadeSailMode_desc
-{
-Prędkość i dynamika bitew morskich. Szybkie manewry, wysokie prędkości i szybkie przeładowywanie dział – wymaga to dużego przemyślenia każdego kolejnego ruchu taktycznego.
-}
-
-EncountersRate_desc
-{
-Częstotliwość wydarzeń w grze, zwłaszcza liczba statków na mapie świata.
-}
-
-
+ArcadeSailMode_desc {Prędkość i dynamika bitew morskich. Szybkie manewry, wysokie prędkości i szybkie przeładowywanie dział – wymaga to dużego przemyślenia każdego kolejnego ruchu taktycznego.}
+EncountersRate_desc {Częstotliwość wydarzeń w grze, zwłaszcza liczba statków na mapie świata.}
 WorldAlivePause {Misje Narodowe}
-
 WorldAlivePause_desc
 {
-Ten tryb pozwala na przejście jednej ze scenariuszowych linii fabularnych dla Narodów, ale zanim się zakończy, „żyjący świat” gry zostaje wstrzymany – gubernatorzy przestają przemieszczać się między miastami, miasta nie są zdobywane przez inne narody, a bohater traci możliwość podbijania miast.
-~
-Żyjący świat zacznie działać dopiero po ukończeniu scenariusza fabularnego.
+Ten tryb pozwala na przejście jednej ze scenariuszowych linii fabularnych dla Narodów, ale zanim się zakończy, „żyjący świat” gry zostaje wstrzymany – gubernatorzy przestają przemieszczać się między miastami, miasta nie są zdobywane przez inne narody, a bohater traci możliwość podbijania miast.~Żyjący świat zacznie działać dopiero po ukończeniu scenariusza fabularnego.
 }
-
 Prisoner {Więzień}
-
 Prisoner_desc
 {
-Więzień to postać, która została schwytana i jest przetrzymywana na twoim statku wbrew swojej woli. Każdego więźnia można przesłuchać w ładowni statku. W większości przypadków można zażądać okupu, a jeśli jest to pirat – zwerbować go do załogi bohatera. Możesz również uwięzić pasażera, którego zgodziłeś się przewieźć, jeśli zacznie się buntować z powodu zbyt długiej podróży.
-Kapitanowie to osoby, które poddają się podczas abordażu lub zostają przez ciebie wyciągnięte z wody po zatopieniu ich statku na otwartym morzu. Najwyższe okupy oferują gubernatorzy tej samej nacji, co więzień, jednak ich wysokość jest zmienna – podobnie jak opinia gubernatorów na temat wartości więźnia.
-Schwytani kapitanowie mogą zwracać się do bohatera z różnymi prośbami. Nie unikaj rozmów z więźniami – mogą przynieść niespodziewane korzyści.
+Więzień to postać, która została schwytana i jest przetrzymywana na twoim statku wbrew swojej woli. Każdego więźnia można przesłuchać w ładowni statku. W większości przypadków można zażądać okupu, a jeśli jest to pirat – zwerbować go do załogi bohatera. Możesz również uwięzić pasażera, którego zgodziłeś się przewieźć, jeśli zacznie się buntować z powodu zbyt długiej podróży.Kapitanowie to osoby, które poddają się podczas abordażu lub zostają przez ciebie wyciągnięte z wody po zatopieniu ich statku na otwartym morzu. Najwyższe okupy oferują gubernatorzy tej samej nacji, co więzień, jednak ich wysokość jest zmienna – podobnie jak opinia gubernatorów na temat wartości więźnia.Schwytani kapitanowie mogą zwracać się do bohatera z różnymi prośbami. Nie unikaj rozmów z więźniami – mogą przynieść niespodziewane korzyści.
 }
-
 shipChoose_hint
 {
-Aby rozpocząć wymianę poza walką, kliknij dwukrotnie myszką (lub naciśnij klawisz „Enter”) na obrazie statku towarzysza.
-~
-Możesz także rozpocząć wymianę, podpływając blisko statku towarzysza i wybierając szybką komendę „Wymiana”.
-Można to zrobić zarówno w trakcie, jak i poza walką.
+Aby rozpocząć wymianę poza walką, kliknij dwukrotnie myszką (lub naciśnij klawisz „Enter”) na obrazie statku towarzysza.~Możesz także rozpocząć wymianę, podpływając blisko statku towarzysza i wybierając szybką komendę „Wymiana”.Można to zrobić zarówno w trakcie, jak i poza walką.
 }
-
 GoodsCargo_hint
 {
-Ładunek na pokładzie statku: amunicja, towary i narzędzia w ładowni.
-~
-Aby zobaczyć przedmioty, które nie mieszczą się w wyświetlonym oknie, użyj suwaka po prawej stronie listy.
-~
-Naciśnij klawisz „Enter” lub kliknij dwukrotnie na przedmiot na liście, aby zobaczyć jego opis, wyrzucić niepotrzebną ilość za burtę lub zrzucić minę.
+Ładunek na pokładzie statku: amunicja, towary i narzędzia w ładowni.~Aby zobaczyć przedmioty, które nie mieszczą się w wyświetlonym oknie, użyj suwaka po prawej stronie listy.~Naciśnij klawisz „Enter” lub kliknij dwukrotnie na przedmiot na liście, aby zobaczyć jego opis, wyrzucić niepotrzebną ilość za burtę lub zrzucić minę.
 }
-
 EXP_SLIDE {Tempo zdobywania doświadczenia}
-
-EXP_SLIDE_desc
-{
-To ustawienie dostosowuje tempo, w jakim główny bohater i jego oficerowie zdobywają doświadczenie. Im wyższa wartość, tym szybciej zdobywają nowe punkty umiejętności, poziomy i zdolności.
-}
-
+EXP_SLIDE_desc {To ustawienie dostosowuje tempo, w jakim główny bohater i jego oficerowie zdobywają doświadczenie. Im wyższa wartość, tym szybciej zdobywają nowe punkty umiejętności, poziomy i zdolności.}
 Partition_hint
 {
-Udziały załogi muszą być wypłacane najpóźniej do 1. dnia każdego miesiąca. Oto składniki wypłat:
-~
-
-Miesięczne utrzymanie – pensje marynarzy i oficerów, odszkodowania dla rannych oraz koszty utrzymania statku i ekwipunku.
-Podział łupów – dzielenie zdobytych kosztowności i rozdzielanie udziałów pomiędzy członków załogi.
-~
-Wszystkie zdobyte statki i towary podlegają podziałowi. Według prawa Braci Wybrzeża, udział zmarłego marynarza lub oficera przypada jego rodzinie i przyjaciołom.
-~
-Udziały dla członków załogi:
-marynarz – 1 udział
-oficer – 10 udziałów
-towarzysz – 30 udziałów
-kapitan – 200-650 udziałów
-Dodatkowo kapitan, jako właściciel statków w eskadrze, otrzymuje dodatkowe 20-120 udziałów z każdego statku (w zależności od jego klasy) i ponosi wszelkie koszty związane z utrzymaniem oraz ewentualną utratą statków.
-
-Jeśli kapitan posiada patent, 10% łupów jest przekazywane do skarbca Narodu.
-~
-Opóźnienie wypłaty na bieżący miesiąc spowoduje niezadowolenie załogi do końca miesiąca, natomiast wypłata z góry zwiększy morale załogi.
-~
-Opóźnienie wypłaty za poprzedni miesiąc znacząco obniży morale załogi oraz lojalność oficerów i towarzyszy.
+Udziały załogi muszą być wypłacane najpóźniej do 1. dnia każdego miesiąca. Oto składniki wypłat:~Miesięczne utrzymanie – pensje marynarzy i oficerów, odszkodowania dla rannych oraz koszty utrzymania statku i ekwipunku.Podział łupów – dzielenie zdobytych kosztowności i rozdzielanie udziałów pomiędzy członków załogi.~Wszystkie zdobyte statki i towary podlegają podziałowi. Według prawa Braci Wybrzeża, udział zmarłego marynarza lub oficera przypada jego rodzinie i przyjaciołom.~Udziały dla członków załogi:marynarz – 1 udziałoficer – 10 udziałówtowarzysz – 30 udziałówkapitan – 200-650 udziałówDodatkowo kapitan, jako właściciel statków w eskadrze, otrzymuje dodatkowe 20-120 udziałów z każdego statku (w zależności od jego klasy) i ponosi wszelkie koszty związane z utrzymaniem oraz ewentualną utratą statków.Jeśli kapitan posiada patent, 10% łupów jest przekazywane do skarbca Narodu.~Opóźnienie wypłaty na bieżący miesiąc spowoduje niezadowolenie załogi do końca miesiąca, natomiast wypłata z góry zwiększy morale załogi.~Opóźnienie wypłaty za poprzedni miesiąc znacząco obniży morale załogi oraz lojalność oficerów i towarzyszy.
 }
-
 SeaBattleSave_desc
 {
-Zapisywanie gry podczas bitwy morskiej.
-Wyłączenie tej opcji uniemożliwi zapis gry w trakcie walk na morzu!
+Zapisywanie gry podczas bitwy morskiej.Wyłączenie tej opcji uniemożliwi zapis gry w trakcie walk na morzu!
 }
-
-Rains_desc
-{
-Włączanie i wyłączanie deszczu oraz burz. Ta opcja wpływa na stabilność gry.
-}
-
+Rains_desc {Włączanie i wyłączanie deszczu oraz burz. Ta opcja wpływa na stabilność gry.}
 CasualMode_desc
 {
-Tryb Klasyczny jest odpowiedni dla graczy, którzy chcą skupić się na historii głównego bohatera. Jest nieco trudniejszy niż tryb eksploracji i wymaga większej uwagi oraz wysiłku, ale pozwala na pełne zanurzenie się w atmosferze stworzonej przez autorów gry.
-~
-Tryb Eksploracji jest przeznaczony dla początkujących, a także dla graczy, którzy chcą mieć więcej swobody w wykonywaniu pobocznych zadań i wolnej rozgrywki. W tym trybie zniesiono ograniczenia rangowe dotyczące rozpoczęcia głównych linii fabularnych, wyłączono liczniki czasowe w zadaniach, które ich nie wymagają, a czas na globalnej mapie zwalnia w zależności od wybranego poziomu trudności.
-Wrogowie w głównych zadaniach stają się mniej wymagający, a prędkość statku głównego bohatera na mapie globalnej wzrasta o 5%.
+Tryb Klasyczny jest odpowiedni dla graczy, którzy chcą skupić się na historii głównego bohatera. Jest nieco trudniejszy niż tryb eksploracji i wymaga większej uwagi oraz wysiłku, ale pozwala na pełne zanurzenie się w atmosferze stworzonej przez autorów gry.~Tryb Eksploracji jest przeznaczony dla początkujących, a także dla graczy, którzy chcą mieć więcej swobody w wykonywaniu pobocznych zadań i wolnej rozgrywki. W tym trybie zniesiono ograniczenia rangowe dotyczące rozpoczęcia głównych linii fabularnych, wyłączono liczniki czasowe w zadaniach, które ich nie wymagają, a czas na globalnej mapie zwalnia w zależności od wybranego poziomu trudności.Wrogowie w głównych zadaniach stają się mniej wymagający, a prędkość statku głównego bohatera na mapie globalnej wzrasta o 5%.
 }
+SourceBase {Poziom podstawowy}
+SourceAdmiral {Admirał}
+SourceOfficer {Bonus Oficerski}
+SourceAccountant {Kwatermistrz}
+SourceMangarosa {Mikstura z mangarosy}
+SourceHealth {Stan zdrowia}
+SourceEquip {Ekwipunek}
+SourceQuest {Wyjątkowa sytuacja}
+SourceAlco {Odurzające}
+SourceOverload {Przeciążony}
+SourceNavyPenalty {Test nawigacji niezaliczony}
+CritDamage
+{
+Wartość obrażeń krytycznych. Stosowana po wszystkich modyfikatorach.
+ ~
+ Może być zwiększona dzięki osobistym Perkom i ekwipunkowi.
+}
+CritCharDefence
+{
+Całkowite zmniejszenie obrażeń krytycznych przeciwnika.
+ ~
+ Może być zwiększone dzięki osobistym Perkom i ekwipunkowi.
+}
+SourceSkill {Umiejętność}
+SourceChickenGod {Błogosławieństwo Aruby}

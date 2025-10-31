@@ -32,12 +32,12 @@ void ProcessDialogEvent()
 						{
 							if(pchar.questTemp.pirateStartQuest == "3" && !CheckAttribute(PChar, "questTemp.pirateStartQuest.many"))
 							{
-								link.l2 = "I picked up the trail, but I need some coins - 30.000 pesos to lure the rat from his hole.";
+								link.l2 = "I picked up the trail, but I need some coins – 30,000 pesos to lure the rat from his hole.";
 								link.l2.go = "pirateStartQuest_many";	
 							}
 							if(pchar.questTemp.pirateStartQuest == "3" && GetCharacterItem(pchar, "letter_open") > 0)
 							{
-								link.l2 = "Here, look at this letter which I've found on the smuggler's corpse";
+								link.l2 = "Here, look at this letter I found on the smuggler's corpse";
 								link.l2.go = "pirateStartQuest_info_1";	
 							}
 							if(pchar.questTemp.pirateStartQuest == "5")
@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 
 		//zagolski. начальный квест за пирата ===================================
 		case "pirateStartQuest":
-			dialog.text = "Hm... work, you've said? Actually it's good that you have asked me. I need a man from outside. I want to find out something in the nearest town but my men are known there. Can't promise you a lot but you will get something.";
+			dialog.text = "Hm... work, you say? Actually, it's good that you asked me. I need someone from outside. I want to find something out in the nearest town, but my men are known there. Can't promise you much, but you'll get something.";
 			link.l1 = "Nice! What's the mission?";
 			link.l1.go = "pirateStartQuest_1";
 			link.l2 = "Sorry, but I won't risk it for a few scraps. Farewell.";
@@ -71,20 +71,20 @@ void ProcessDialogEvent()
 			pchar.questTemp.pirateStartQuest = "0";
 		break;
 		case "pirateStartQuest_1":
-			dialog.text = "Then listen, I had a deal for delivering 200 slaves a month ago with the captain of the schooner 'Saintblue'. I wanted to sell them to the local plantation owner. The time has passed and the client has started to worry, but I yesterday I was told that the schooner was seen not far from the island. But! The captain didn't show up. Today, my client has demanded from me to return his advance and said that he was offered to buy slaves from another seller. More expensive, but the whole bunch of slaves and at once.";
-			link.l1 = "And? I have to find 200 slaves in a few days to save you from loosing an advance? For a few coins?";
+			dialog.text = "Then listen, I made a deal to deliver 200 slaves a month ago with the captain of the schooner 'Saintblue'. I intended to sell them to the local plantation owner. The time has passed and the client has started to worry, but yesterday I was told that the schooner was seen not far from the island. But! The captain didn't show up. Today, my client demanded that I return his advance and said he was offered to buy slaves from another seller. More expensive, but the whole lot of slaves and all at once.";
+			link.l1 = "And? I have to find 200 slaves in a few days to save you from losing an advance? For a few coins?";
 			link.l1.go = "pirateStartQuest_2";
 		break;
 		case "pirateStartQuest_2":
-			dialog.text = "Sure not. Do I look like an idiot? I won't return him his advance anyway. But I need proof that those slaves which were offered to him are mine. Find those who offered him a new deal and you will get your 10.000 pesos. Deal?";
-			link.l1 = "I'm in. Do you have any suspicions? Who could do that?";
+			dialog.text = "Of course not. Do I look like an idiot? I won't return his advance anyway. But I need proof that the slaves offered to him are mine. Find those who offered him a new deal and you will get your 10,000 pesos. Deal?";
+			link.l1 = "I'm in. Do you have any suspicions? Who could have done that?";
 			link.l1.go = "pirateStartQuest_3";
-			link.l2 = "Not a chance. Look for someone else. Only for 10.000? Sorry but it won't work.";
+			link.l2 = "Not a chance. Look for someone else. Only 10,000? Sorry, but that won't do.";
 			link.l2.go = "exit";
 		break;
 		case "pirateStartQuest_3":
-			dialog.text = "If I had any ideas then I would never use your services. Those men would be dead already. But I am eager to know how they found out about the 'Saintblue's' cargo and my client. It looks like that it was quite easy for them. See now?";
-			link.l1 = "Yes, someone has sold you out.";
+			dialog.text = "If I had any ideas, I would never use your services. Those men would be dead already. But I am eager to know how they found out about the 'Saintblue's' cargo and my client. It seems it was quite easy for them. See now?";
+			link.l1 = "Yes, someone has betrayed you.";
 			link.l1.go = "pirateStartQuest_4";
 
 			pchar.questTemp.pirateStartQuest = "1";
@@ -97,19 +97,19 @@ void ProcessDialogEvent()
 			AddQuestUserData("pSQ", "sName", pchar.questTemp.pirateStartQuest.Name);
 		break;
 		case "pirateStartQuest_4":
-			dialog.text = "Exactly! I am looking for him. Killing my competitors and returning my slaves are not your priority. I need that rat, actually his head on a skewer to be honest. See now, why my men shouldn't know a thing about your mission? I will suspect everyone until I'll find out who sells the information. And I don't really want that...";
-			link.l1 = "I see. Than I'll keep a low profile. I am on my way.";
+			dialog.text = "Exactly! I am looking for him. Killing my competitors and returning my slaves are not your priority. I need that rat—actually, his head on a skewer, to be honest. See now why my men shouldn't know a thing about your mission? I will suspect everyone until I find out who is selling the information. And I don't really want that...";
+			link.l1 = "I see. Then I'll keep a low profile. I am on my way.";
 			link.l1.go = "exit";
 		break;
 
 		case "pirateStartQuest_many":
-			dialog.text = "Thirty thousand you say? That's a large sum... I can only give you 5.000 pesos, that's all I have now. And don't even try to escape with the money or I'll find you and hang you on the nearest fence! Got it?";
+			dialog.text = "Thirty thousand, you say? That's a large sum... I can only give you 5,000 pesos, that's all I have now. And don't even think about running off with the money or I'll find you and hang you from the nearest fence! Got it?";
 			link.l1 = "Fine, give me five thousand then...";
 			link.l1.go = "pirateStartQuest_many_1";
 		break;
 		case "pirateStartQuest_many_1":
-			dialog.text = "Take it. I am waiting for the result of you search.";
-			link.l1 = "It all will be fine.";
+			dialog.text = "Take it. I am waiting for the result of your search.";
+			link.l1 = "It will all be fine.";
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, 5000);
 			pchar.questTemp.pirateStartQuest.many = "";
@@ -117,16 +117,16 @@ void ProcessDialogEvent()
 
 		//------------------------------------
 		case "pirateStartQuest_info_1":
-			dialog.text = "Ha! Excellent news! I was sure that you'd make it. I've got some intriguing information.";
-			link.l1 = "I've done my work and I want to have my ten thousand.";
+			dialog.text = "Ha! Excellent news! I was sure you'd make it. I've got some intriguing information.";
+			link.l1 = "I've done my work and I want my ten thousand.";
 			link.l1.go = "pirateStartQuest_info_2";
 			TakeItemFromCharacter(pchar, "letter_open");
 		break;
 		case "pirateStartQuest_info_2":
-			dialog.text = "Sure, here is you reward. But don't run away, I have one more assignments for you.\nPfaifer is a crewman of Norman Vigo of lugger 'Septima'. I am sure that Norman Vigo is the rat, even if he is one of us. He has beem recently seen in the waters of the island. Your job is to send this rat to the sea devil. You didn't fail me for the first time, therefore I want to ask you to deal with this matter too. I will pay you 15.000 pesos. Deal?";
+			dialog.text = "Sure, here is your reward. But don't run away, I have one more assignment for you.\nPfaifer is a crewman of Norman Vigo, of the lugger 'Septima'. I am sure that Norman Vigo is the rat, even if he is one of us. He has been recently seen in the waters near the island. Your job is to send this rat to the sea devil. You didn't fail me the first time, so I want to ask you to handle this matter as well. I will pay you 15,000 pesos. Deal?";
 			link.l1 = "I am on it! Consider the traitor Norman Vigo dead.";
 			link.l1.go = "pirateStartQuest_info_3";
-			link.l2 = "You know, I don't want to take a part in it... I have no time anyway. Sorry, but I am off.";
+			link.l2 = "You know, I don't want to take part in it... I have no time anyway. Sorry, but I'm off.";
 			link.l2.go = "pirateStartQuest_info_noex";
 			AddMoneyToCharacter(pchar, 10000);
 		break;
@@ -150,8 +150,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "pirateStartQuest_final":
-			dialog.text = "I know, I know. My men were watching the battle and have already reported about your flawless victory. Fine, you've done your job well. Here is 15.000 pesos I promised. And thank you, you helped me with a great deal.";
-			link.l1 = "It's fine, I was glad to help! But I have to go now, I've been here too long and I've got a lot things to do. Farewell!";
+			dialog.text = "I know, I know. My men were watching the battle and have already reported your flawless victory. Fine, you've done your job well. Here are the 15,000 pesos I promised. And thank you, you have helped me a great deal.";
+			link.l1 = "It's fine, I was glad to help! But I have to go now, I've been here too long and I've got a lot of things to do. Farewell!";
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, 15000);
 			pchar.questTemp.pirateStartQuest = "0";

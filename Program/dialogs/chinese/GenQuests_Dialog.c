@@ -1275,7 +1275,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Convict_11":
-			dialog.text = "我们是逃犯... 来自" + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Dat")) + "。 很快前主人就会注意到... 然后我们肯定死定了。 ";
+			dialog.text = "我们是逃犯... 来自" + GetStrSmallRegister(XI_ConvertString("MineType" + pchar.GenQuest.Convict.MineType + "Gen")) + "。 很快前主人就会注意到... 然后我们肯定死定了。 ";
 			if(GetFreeCrewQuantity(pchar) >= sti(pchar.GenQuest.Convict.ConvictQty))
 			{
 				link.l1 = "那么你们知道如何管理帆吗? ";
@@ -4756,14 +4756,14 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_5":
-			dialog.text = "不, 不! 这个老船长可能喝醉了, 但他仍然保持着清醒的头脑。 这些书和纸张是" + PChar.GenQuest.ChurchQuest_1.ToName + "神父给我的, 我正把它们带到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + "。 早上我去了当地的教堂, 向当地的神父提到了这些书。 当然, 他想看看它们, 你知道他们这种人, 他们对圣徒的生平之类的东西简直是痴迷。 所以, 我派了一个见习水手去拿装着它们的箱子。 当我在等的时候, 我决定赌一把... 不知怎么的, 我输光了所有的钱。 一切! 没有钱付酒钱了! 所以, 酒馆老板把书作为抵押, 然后我也把卷轴给了他...";
+			dialog.text = "不, 不! 这个老船长可能喝醉了, 但他仍然保持着清醒的头脑。 这些书和纸张是" + PChar.GenQuest.ChurchQuest_1.ToName + "神父给我的, 我正把它们带到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + "。 早上我去了当地的教堂, 向当地的神父提到了这些书。 当然, 他想看看它们, 你知道他们这种人, 他们对圣徒的生平之类的东西简直是痴迷。 所以, 我派了一个见习水手去拿装着它们的箱子。 当我在等的时候, 我决定赌一把... 不知怎么的, 我输光了所有的钱。 一切! 没有钱付酒钱了! 所以, 酒馆老板把书作为抵押, 然后我也把卷轴给了他...";
 				link.l1 = "所以, 你卖了书, 神父" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Gen") + "托付给你的圣书? ";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_6";
 			break;
 			
 		case "ChurchGenQuest1_DialogInTavernWithCap_6":
 			dialog.text = "我知道, 我知道... 我将在地狱里永远燃烧。 我现在既无颜面对给我这个任务的神父, 也无颜面对送文件的人, 也无颜面对当地人... 谁会为我的灵魂祈祷呢? 如果他们把我逐出教会怎么办? 哦, 我真不幸... 我需要喝一杯... ";
-				link.l1 = "哇, 放松点, 没那么糟糕。 你的行为很糟糕, 也不虔诚, 但我准备帮助你。 我会偿还你的债务, 买下这些手稿。 此外, 既然我已经认识提到的两位神父, 我会直接航行到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + ", 以便把文件送到那里。 成交? ";
+				link.l1 = "哇, 放松点, 没那么糟糕。 你的行为很糟糕, 也不虔诚, 但我准备帮助你。 我会偿还你的债务, 买下这些手稿。 此外, 既然我已经认识提到的两位神父, 我会直接航行到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ", 以便把文件送到那里。 成交? ";
 				link.l1.go = "ChurchGenQuest1_DialogInTavernWithCap_7";
 			break;
 			
@@ -4786,7 +4786,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_1":
 			dialog.text = "...还有帆! 我们也需要更换帆! .. 哦, 你好。 请不要见怪, " + GetSexPhrase("先生","女士") + "不管你叫什么, 但现在, 如你所见, 我很忙, 所以如果你有什么事找我, 请快点说。 ";
-				link.l1 = "据我所知, " + PChar.GenQuest.ChurchQuest_1.ToName + "神父在" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Voc") + "给了你一些圣书。 你答应把它们送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + ", 因为你反正要朝那个方向航行。 "; // belamour gen
+				link.l1 = "据我所知, " + PChar.GenQuest.ChurchQuest_1.ToName + "神父在" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.ToColony + "Voc") + "给了你一些圣书。 你答应把它们送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ", 因为你反正要朝那个方向航行。 "; // belamour gen
 				link.l1.go = "ChurchGenQuest1_DialogShip_2";
 			break;
 			
@@ -4798,7 +4798,7 @@ void ProcessDialogEvent()
 			
 		case "ChurchGenQuest1_DialogShip_3":
 			dialog.text = "没有人, 你听到了吗? 没有人敢指责我延迟交付这些该死的文件! ";
-				link.l1 = "哦, 不, 我当然不是那个意思。 我只是想减轻你的负担。 事情是这样的, " + PChar.GenQuest.ChurchQuest_1.ToName + "非常担心要送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + "的书籍和文件。 实际上, 我现在正要航行到那里。 ";
+				link.l1 = "哦, 不, 我当然不是那个意思。 我只是想减轻你的负担。 事情是这样的, " + PChar.GenQuest.ChurchQuest_1.ToName + "非常担心要送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + "的书籍和文件。 实际上, 我现在正要航行到那里。 ";
 				link.l1.go = "ChurchGenQuest1_DialogShip_4";
 			break;
 			
@@ -4811,7 +4811,7 @@ void ProcessDialogEvent()
 		}
 		else // 不交出卷轴
 		{
-			dialog.text = "别担心, " + GetSexPhrase("先生","女士") + ", 轻松地前往" +  XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + "吧, 因为是我承担了交付这些文件的任务, 也将是我不惜一切代价去完成, 这样就不会有人在每个角落呼喊" + NPChar.name + "船长没有信守诺言! ";
+			dialog.text = "别担心, " + GetSexPhrase("先生","女士") + ", 轻松地前往" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + "吧, 因为是我承担了交付这些文件的任务, 也将是我不惜一切代价去完成, 这样就不会有人在每个角落呼喊" + NPChar.name + "船长没有信守诺言! ";
 				link.l1 = "但是船长先生, 重点其实是...";
 				link.l1.go = "ChurchGenQuest1_DialogShip_5_2";
 		}
@@ -4833,7 +4833,7 @@ void ProcessDialogEvent()
 			break;
 			
 		case "ChurchGenQuest1_DialogShip_5_2":
-			dialog.text = "实际上, 重点是我和你根本没有任何业务往来。 神父给了我一个任务, 把书送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown) + ", 交给当地的神父。 我在那里看不到你。 完全看不到! 祝你好运。 ";
+			dialog.text = "实际上, 重点是我和你根本没有任何业务往来。 神父给了我一个任务, 把书送到" + XI_ConvertString("Colony" + PChar.GenQuest.ChurchQuest_1.QuestTown + "Acc") + ", 交给当地的神父。 我在那里看不到你。 完全看不到! 祝你好运。 ";
 //				link.l1 = "好吧, 那你是一个非常负责任的人, 尽管这是你唯一的优点。 祝你好运, 我无礼的朋友";
 //				link.l1.go = "ChurchGenQuest1_DialogShip_5_2_1"; // 离开, 相信他
 				link.l2 = "我受够了你这种无礼的行为。 你那张笨嘴甚至能逼天使动武。 我必须完成我神父的意愿, 如果必要的话, 我会使用我的武器! ";

@@ -92,7 +92,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//高声望
 			{
 				// belamour legendary edition 显示标准
-				notification("声望太低! (流氓)", "None");
+				Notification_Reputation(false, 48, "high");
 				PlaySound("Voice\English\hambit\Ercule Tongzag-03.wav");
 				dialog.text = "我不需要无赖的服务。 我没有任何任务可以给你。 ";
 				link.l1 = "嘿, 嘿。 说话客气点, 伙计! ";
@@ -103,10 +103,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//击剑能力弱
 			{
 				// belamour legendary edition 显示标准 -->
-				notification("技能检查失败 (35)", SKILL_F_LIGHT);
-				notification("技能检查失败 (35)", SKILL_FENCING);
-				notification("技能检查失败 (35)", SKILL_F_HEAVY);
-				notification("技能检查失败 (35)", SKILL_PISTOL);
+				Notification_Skill(false, 35, SKILL_F_LIGHT);
+				Notification_Skill(false, 35, SKILL_FENCING);
+				Notification_Skill(false, 35, SKILL_F_HEAVY);
+				Notification_Skill(false, 35, SKILL_PISTOL);
 				// <--
 				dialog.text = "船长, 你太软弱了。 我需要一个比你更有名望的战士。 等你学会如何使用你腰带上悬挂的钢铁再来吧。 射击的精准度也不会有坏处。 ";
 				link.l1 = "我明白了。 那我以后再来拜访你。 ";

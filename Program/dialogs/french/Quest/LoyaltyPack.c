@@ -395,7 +395,7 @@ void ProcessDialogEvent()
         case "Alonso_Lvl_16_Start":
 			DelLandQuestMark(npchar);
 			dialog.text = "Capitaine, je voulais juste vous signaler que votre équipage est reçu comme des rois dans les tavernes et les bordels. Servir sous votre pavillon, ça compte de nos jours !";
-			link.l1 = "Merci, Alonso... Dommage que je ne voie pas encore beaucoup de ce \"traitement royal\" pour moi-même.";
+			link.l1 = "Merci, Alonso... Dommage que je ne voie pas encore beaucoup de ce traitement royal pour moi-même.";
 			link.l1.go = "Alonso_Lvl_16_1";
         break;
 

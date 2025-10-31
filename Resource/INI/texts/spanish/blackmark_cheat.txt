@@ -1,93 +1,47 @@
-
 CheatStatus {on}
-
 new_string
 {
 
 }
-
 Cheat_success {Trucos activos.}
-
 Cheat_on {Trucos on}
-
 Cheat_off {Trucos off}
-
 Cheat_Comming_soon {Muy pronto.}
-
 f1 {Pesos + 500 000}
-
 f2 {Modo foto}
-
 f3 {Navegación arcade en el mapa de batalla ON/OFF}
-
 StrF3_on {Navegación Arcade Activada}
-
 StrF3_off {Navegación Arcade Desactivada}
-
 f4 {Experiencia de la tripulación +10}
-
 f5 {Puntos de habilidad +35}
-
 f6 {Ventajas navales +1}
-
 f7 {Ventajas personales +1}
-
 f8 {Habilidad del navegante +35}
-
 f9 {Oficiales en taberna}
-
 f10 {Modo Dios activado/desactivado}
-
 f11 {Lealtad de los oficiales +1}
-
 f12 {Lealtad de los oficiales -1}
-
 f13 {Relaciones entre naciones +10}
-
 f14 {Relaciones entre naciones -10}
-
 f15 {Aumentar la reputación}
-
 f16 {Disminuir la reputación}
-
 f17 {Aumentar fama}
-
 f18 {Disminuir fama}
-
 f19 {Límite de peso  +1000}
-
 f20 {+100 doblones}
-
 f21 {Ajustar la velocidad del viento a 14.5}
-
 f22 {Bendice el barco del héroe}
-
 f23 {Reparar el casco y las velas}
-
 f24 {Productos estratégicos +500}
-
 f25 {Medicinas +500}
-
 f26 {Aumentar la vitalidad}
-
 f27 {Enemigo en mapa global ON/OFF}
-
 f28 {Desplazamiento rápido ilimitado en el mar ON/OFF}
-
 f29 {Viajes rápidos ilimitados por tierra}
-
 f30 {Desbloquea el comando de menú 'Hundir barco enemigo'.}
-
 StrF9_on {¡Los oficiales aparecerán al día siguiente!}
-
 StrF9_off {Trampa desactivada: ¡Oficiales en la taberna!}
-
 StrF27_on {Encuentros con enemigos ON}
-
 StrF27_off {Encuentros con enemigos OFF}
-
 StrF28_on {Teletransporte en el mar ON}
-
 StrF28_off {Teletransporte en el mar OFF}
-
-

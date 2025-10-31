@@ -1,0 +1,11 @@
+boarding_1 {The captain chose to end his own life.}
+boarding_2 {The crew refused to fight for their captain.}
+boarding_3 {Captain on deck!}
+boarding_4 {@<_Name> joins the fray!}
+boarding_5 {The captain is dead; the survivors have surrendered.}
+boarding_6 {The captain is dead, but the crew refuses to surrender.}
+boarding_7 {Loot.}
+boarding_8 {Items in loot.}
+boarding_9 {Boarding party from @<_ShipName>: @<_CrewSize>.}
+boarding_10 {Survivors returned to the @<_ShipName>: @<_CrewSize>.}
+boarding_11 {The companion failed to bring the ship in for boarding.}

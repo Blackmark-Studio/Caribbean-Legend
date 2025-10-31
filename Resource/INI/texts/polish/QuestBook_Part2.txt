@@ -1410,6 +1410,9 @@ Udało mi się wynegocjować z Christianem zwiększenie dostaw. Teraz będzie od
 #TEXT   6
 ************************************************************
 W tawernie w Puerto Principe czekają na mnie darmowy nocleg, trunki na koszt lokalu, a do tego właściciel obiecał, że dzięki jego staraniom przybędzie marynarzy chętnych służyć pod moim dowództwem.
+#TEXT   7
+************************************************************
+U kowala w San José będę mógł zaopatrywać się w potrzebne mi materiały i wyroby. Dostawy u niego odbywają się raz w miesiącu.
 
 
 #QUEST FMQ_Guadeloupe
@@ -1530,7 +1533,9 @@ Zabrałem sobie czas na rejs, a Brytyjczycy zaczęli bunt. Musiałem ich zabić.
 #TEXT 3
 Porucznik Caspar Gratton postanowił, że pomogę mu w jego operacji wojskowej przeciwko Holendrom. Ani mowy. Ucieczka z Sint-Maarten to już jego problem.
 #TEXT 4
-Dostarczylem porucznika Caspara Grattona i jego żołnierzy na Sint-Maarten, ale nie dostałem zapłaty. Zamiast tego porucznik poprosił, abym poczekał na niego kilka dni, a potem zabrał jego drużynę na Antiguę, gdzie pułkownik Fox hojnie wypłaci mi całą należność. Żadne żarty, sir. Mam nadzieję, że Holendrzy się o tym nie dowiedzą, bo pomoc w brytyjskich operacjach wojskowych nie jest uważana za coś dobrego w ich książce... Muszę popłynąć do Philipsburga i sprawdzić sytuację. Zastanawiam się również, co brytyjscy marini mają w planach?
+Il tenente Kaspar Gratton e i suoi soldati sono stati portati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe ricompensato generosamente. Già... speriamo solo di non avere guai con gli olandesi alla fine. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti degli olandesi, e secondo, per cercare di scoprire cosa ci fanno davvero qui questi marines britannici.
+#TEXT   4_1
+Il tenente Kaspar Gratton e i suoi soldati sono stati consegnati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe pagato generosamente. Bene, bene... speriamo che alla fine non siano i miei guai con gli olandesi. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti da parte loro; secondo, per cercare di capire cosa ci fanno qui i marines britannici, visto che attualmente tra Olanda e Inghilterra c'è pace.
 #TEXT 5
 Minęły trzy dni, a nic się nie dowiedziałem. Powinienem wrócić na plażę Grand Case – może porucznik już tam jest?
 #TEXT 6
@@ -1789,7 +1794,7 @@ Przegapiłem Utrecht. Byłem tak blisko, a jednak nie udało mi się jej znaleź
 #TEXT 14
 Porażka! Zmarnowałem swoją szansę na umowę z pracownikiem; wziął mnie za patrolowca, przestraszył się i głupio zaatakował. Idiota. Musiałem wszystkich zabić. Szkoda, ale to już koniec.
 #TEXT 15
-Zrobione. Udało mi się zawrzeć umowę z pracownikiem. 25 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
+Zrobione. Udało mi się zawrzeć umowę z pracownikiem. 5 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
 #TEXT 16
 Minęły już dwa miesiące. Bald Geffrey pewnie już sprzedał swój jedwab komuś innemu. Szkoda... ale myślę, że wciąż mogę dostarczyć informacje o nabywcy do Tyrexa. Powinienem dotrzeć do La Vega za dziesięć dni, żeby dać Tyrexowi czas na zebranie wystarczającej ilości jedwabiu. Mam nadzieję, że złagodzi to jego możliwą złość.
 #TEXT 17
@@ -1801,7 +1806,7 @@ Przekazałem informacje, które uzyskałem od Husky'ego Billy'ego, władzom loka
 #TEXT 20
 Zrobione. Mój konkurent został wyeliminowany przez patrol wojskowy. Nawet otrzymałem nagrodę w wysokości 10 000 pesos, co miłe. Powinienem spotkać się z budowniczym statków; teraz powinien być bardziej przekonujący.
 #TEXT 21
-Zrobione. Udało mi się zawrzeć umowę z budowniczym statków. 25 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
+Zrobione. Udało mi się zawrzeć umowę z budowniczym statków. 5 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
 #TEXT 22
 Bald Geffrey otrzymał rozkaz – wkrótce wyruszy na Jamajkę z pierwszą partią jedwabiu statkowego od Marcusa Tyrexa. Powinienem wypłynąć do La Vega.
 #TEXT 23

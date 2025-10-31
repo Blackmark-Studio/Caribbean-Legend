@@ -70,13 +70,13 @@ void ProcessDialogEvent()
 			// вице-адмирал
 			if(isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4 && npchar.nation == sti(Items[sti(pchar.EquipedPatentId)].Nation))
 			{
-				dialog.text = "Witaj Wiceadmirał! Czy masz jakieś rozkazy?";
+				dialog.text = "Witaj Wiceadmirale! Czy masz jakieś rozkazy?";
 				link.l1 = "Nie, oficerze, bez poleceń. Przyszedłem tylko zobaczyć fort.";
 			}
 			// генерал-губернатор
 			if(CheckAttribute(pchar, "questTemp.Patria.GenGovernor") && npchar.nation == FRANCE)
 			{
-				dialog.text = "Gubernatorze Generale, Wasza Wysokość! Mam pełen porządek w forcie. Czy będą jakieś rozkazy?";
+				dialog.text = "Gubernatorze Generalny, Wasza Wysokość! Mam pełen porządek w forcie. Czy będą jakieś rozkazy?";
 				link.l1 = "Cieszę się, że jesteś w porządku, oficerze. Bez rozkazów, tylko wpadłem sprawdzić fort.";
 			}
 			// <-- legendary edition
@@ -412,14 +412,14 @@ void ProcessDialogEvent()
 				link.l1.go = "zpq_prs2";
 				link.l2 = "Powiedziałbym nie, przypuszczam... gdybym dał ci słowo, musiałbym wykonywać pracę, która wydaje się dość kłopotliwa. Nie zrobię tego.";
 				link.l2.go = "zpq_fld";
-				notification("Sukces!", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
 				dialog.text = "Twoja reputacja jest dla mnie nie do przyjęcia. Proszę cię, opuść ten pokój. Potrafimy sami rozwiązać nasze problemy.";
 				link.l1 = "Cokolwiek, rozwiąż je potem...";
 				link.l1.go = "exit";
-				notification("Reputacja zbyt niska! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+				Notification_Reputation(false, 71, "low");
 			}		
 		break;
 		
@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Zaufany) Zaczynam myśleć, że chcesz mnie oszukać, więc nie wyjdę stąd bez moich 125 000 pesos!";
 				link.l2.go = "zpq_ex4";
 			}
@@ -512,9 +512,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "zpq_ex3":
-			if (GetSummonSkillFromName(pchar, "Leadership") > 35)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 35)
 			{
-				notification("Skill Check Passed", "Leadership");
+				Notification_Skill(true, 36, SKILL_LEADERSHIP);
 				dialog.text = "Ach, tak... Dokładnie! 100 000 pesos. Zapomniałem, przepraszam. To moja starość jest winna, skleroza wiesz... Oczywiście, oto twoje monety. Było mi miło z tobą robić interesy, kapitanie. Teraz przepraszam, ale mam dużo pracy do zrobienia...";
 				link.l1 = "Podobnie tobie, senorze. Do zobaczenia.";
 				link.l1.go = "exit";
@@ -527,13 +527,12 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Failed (36)", "Leadership");
+				Notification_Skill(false, 36, SKILL_LEADERSHIP);
 				dialog.text = "Co?! Weź swoje pieniądze i znikaj, albo zgnijesz w tej kazamacie!";
 				link.l1 = "Jesteś takim kłamcą, señor! Radzę ci dać mi moje pieniądze w dobry sposób, albo zabiorę ładunek!";
 				link.l1.go = "zpq_ex_agry";
 				link.l2 = "Przepraszam... Dobrze, wezmę sumę, którą proponujesz i skończymy.";
 				link.l2.go = "zpq_ex5";
-				Log_info("Leadership skill is not sufficient");
 			}
 		break;
 		

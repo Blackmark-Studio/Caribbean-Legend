@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 
 			if(NPChar.quest.meeting == "0")
 			{
-				dialog.Text = GetNatPhrase(npchar,LinkRandPhrase("Bienvenido a mi humilde taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"', señor. Me alegra verte.","¡A su servicio, señor! En nuestra taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"' siempre nos alegra dar la bienvenida a nuevos visitantes.","¿Primera vez aquí, señor? No dudes, aquí en '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡siempre te sientes como en casa!"),LinkRandPhrase("Entra, señor capitán. No te reconozco, así que debe ser tu primera vez en '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","Nunca te he conocido antes, señor. Conozcámonos: Soy "+GetFullName(npchar)+", el posadero de '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","¡Me alegra dar la bienvenida a nuestro nuevo huésped, Monsieur Capitán! En mi taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡La primera bebida siempre corre por cuenta de la casa! Soy el dueño de este lugar, "+GetFullName(npchar)+", te da la bienvenida."),LinkRandPhrase("¡Señor Capitán! Bienvenido a la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'!","¡Oh, qué brillante hidalgo ha visitado nuestra taberna '!"+XI_ConvertString(NPChar.City+"TavernName")+"¿Es tu primera vez aquí, señor?","Buenos días, señor! Soy "+GetFullName(npchar)+", humilde propietario de '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡, estamos encantados de darle la bienvenida aquí!"),LinkRandPhrase("Hola, señor capitán. Soy el dueño de la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'. ¿Es la primera vez que se queda con nosotros?","Buenas tardes, señor. Bienvenido a la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","¡Qué bueno verte, mi señor capitán! ¡Nuestra taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"' te da la bienvenida! ¿Ron, vino, o si podría tentarte, tenemos un travieso nuevo espíritu holandés llamado ginebra?"));
+				dialog.Text = GetNatPhrase(npchar,LinkRandPhrase("Bienvenido a mi humilde taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"', señor. Me alegra verte.","¡A su servicio, señor! En nuestra taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"' siempre nos alegra dar la bienvenida a nuevos visitantes.","¿Primera vez aquí, señor? No dudes, aquí en '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡siempre te sientes como en casa!"),LinkRandPhrase("Entra, señor capitán. No te reconozco, así que debe ser tu primera vez en '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","Nunca te he conocido antes, señor. Conozcámonos: Soy "+GetFullName(npchar)+", el posadero de '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","¡Me alegra dar la bienvenida a nuestro nuevo huésped, Monsieur Capitán! En mi taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡La primera bebida siempre corre por cuenta de la casa! Soy el dueño de este lugar, "+GetFullName(npchar)+", te da la bienvenida."),LinkRandPhrase("¡Señor Capitán! Bienvenido a la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'!","¡Oh, qué brillante hidalgo ha visitado nuestra taberna, '"+XI_ConvertString(NPChar.City+"TavernName")+"' ¿Es tu primera vez aquí, señor?","Buenos días, señor! Soy "+GetFullName(npchar)+", humilde propietario de '"+XI_ConvertString(NPChar.City+"TavernName")+"'¡, estamos encantados de darle la bienvenida aquí!"),LinkRandPhrase("Hola, señor capitán. Soy el dueño de la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'. ¿Es la primera vez que se queda con nosotros?","Buenas tardes, señor. Bienvenido a la taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"'.'","¡Qué bueno verte, mi señor capitán! ¡Nuestra taberna '"+XI_ConvertString(NPChar.City+"TavernName")+"' te da la bienvenida! ¿Ron, vino, o si podría tentarte, tenemos un travieso nuevo espíritu holandés llamado ginebra?"));
 				Link.l1 = LinkRandPhrase("Un lugar acogedor que tienes aquí... Permíteme presentarme, "+GetFullName(pchar)+", es un placer conocerte.",""+GetFullName(pchar)+", es un placer conocerte. Entonces, ¿qué puedes ofrecerme?","Mi nombre es "+GetFullName(pchar)+" y soy nuevo en este puerto. Dime, ¿por qué es más conocida esta taberna?");
 				Link.l1.go = "meeting";
 				NPChar.quest.meeting = "1";
@@ -1102,7 +1102,7 @@ void ProcessDialogEvent()
 				link.l2.go = "room_day_next";
 			}
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1 && !CheckAttribute(pchar, "questTemp.MarySexBlock"))
 			{
 				pchar.questTemp.MarySexBlock = true;
 				SetTimerFunction("Mary_DeleteSexBlock", 0, 0, 1);
@@ -1624,7 +1624,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Sharlie = "sailor";
 			//усадим матроса Алонсо
 			sld = GetCharacter(NPC_GenerateCharacter("SharlieSailor" , "Alonso", "man", "man", 10, FRANCE, -1, true, "quest"));
-			sld.name 	= StringFromKey("HollandGambit_23");
+			sld.name = GetCharacterName("Alonso");
 			sld.lastname = "";
 			FantomMakeCoolFighter(sld, 10, 20, 20, "blade_05", "", "", 10);
 			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";

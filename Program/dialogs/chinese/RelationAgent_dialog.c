@@ -1,4 +1,4 @@
-#define DIPLOMAT_SUM 80000
+int iDiplomatPseudoGlobal;
 
 void ProcessDialogEvent()
 {
@@ -55,11 +55,7 @@ void ProcessDialogEvent()
 		{
 		    Dialog.CurrentNode = "RelationYet";
 		}
-		else
-		{
- 	    	Dialog.CurrentNode = "RelationAny_Done";
- 	    	npchar.quest.relation.summ = CalculateRelationSum(sti(npchar.quest.relation));
- 	    }
+		else Dialog.CurrentNode = "RelationAny_Done";
  	}
  	
  	if (findsubstr(attrLoc, "CityPay_" , 0) != -1)
@@ -342,10 +338,10 @@ void ProcessDialogEvent()
 		break;
 
 		case "Contraband":
-			Pchar.questTemp.Relations.sum = makeint(0.3 * stf(Pchar.rank)/stf(Pchar.reputation.nobility)*DIPLOMAT_SUM);
-			dialog.Text = "好的。 这将花费你" + Pchar.questTemp.Relations.sum + "比索。 ";
+			iDiplomatPseudoGlobal = CalculateRelationContraSum(false);
+			dialog.Text = "好的。 这将花费你" + iDiplomatPseudoGlobal + "比索。 ";
 			Link.l1 = "我同意。 ";
-			if(makeint(Pchar.money) < makeint(Pchar.questTemp.Relations.sum))
+			if(makeint(Pchar.money) < iDiplomatPseudoGlobal)
 			{
 				Link.l1.go = "No_money";
 			}
@@ -362,13 +358,14 @@ void ProcessDialogEvent()
 			Link.l99 = "谢谢。 ";
 			Link.l99.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
 		break;
         // boal <--
 		case "RelationAny_Done":
-			iSumm = sti(npchar.quest.relation.summ);
-			dialog.text = "嗯... 我甚至不知道该说什么。 当然, 我可以帮你与" + XI_ConvertString(Nations[sti(npchar.quest.relation)].Name + "Abl") + "和解, 这将花费" + FindRussianMoneyString(iSumm) + "。 ";
-			if(sti(pchar.money) >= iSumm)
+			i = sti(npchar.quest.relation);
+			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
+			dialog.text = "嗯... 我甚至不知道该说什么。 当然, 我可以帮你与" + XI_ConvertString(Nations[i].Name + "Abl") + "和解, 这将花费" + FindRussianMoneyString(iDiplomatPseudoGlobal) + "。 ";
+			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
 			{
 				link.l1 = "我认为我没有选择。 拿我的钱吧。 ";
 				link.l1.go = "relation3";
@@ -381,9 +378,9 @@ void ProcessDialogEvent()
 			dialog.text = "太好了! 和你打交道出奇地容易。 别担心, 我会在15天内解决你的问题。 ";
 			link.l1 = "好的。 ";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.relation.summ));
-			ChangeNationRelationFromRelationAgent(npchar);
-			attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
+			ChangeNationRelationFromRelationAgent(i);
+			attrLoc = "RelationAgent" + GetNationNameByType(i);
             Pchar.GenQuest.(attrLoc) = true;
 		break;
 		

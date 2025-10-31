@@ -1,146 +1,30 @@
-MerchantOnMap_1
-{
-comerciante
-}
-
-MerchantOnMap_2
-{
-Hubo un rumor de que 
-}
-
-MerchantOnMap_3
-{
-un audaz pirata
-}
-
-MerchantOnMap_4
-{
-una audaz pirata
-}
-
-MerchantOnMap_5
-{
-, fue atrapado
-}
-
-MerchantOnMap_6
-{
-
-}
-
-MerchantOnMap_7
-{
-
-}
-
-MerchantOnMap_8
-{
-~ en una trampa, en la que ~
-}
-
-MerchantOnMap_9
-{
-él
-}
-
-MerchantOnMap_10
-{
-ella
-}
-
-MerchantOnMap_11
-{
-~ fue atraído por el gobierno @<NationNameSK(sti(MerPrm.ination))>. Lo enviaron a ~
-}
-
-MerchantOnMap_12
-{
-él
-}
-
-MerchantOnMap_13
-{
-ella
-}
-
-MerchantOnMap_14
-{
-~  barco comercial con soldados del reino @<NationNameSK(sti(MerPrm.ination))> completamente armados en la bodega. Pero @<pchar.name> no estaba desprevenido ~
-}
-
-MerchantOnMap_15
-{
-
-}
-
-MerchantOnMap_16
-{
-
-}
-
-MerchantOnMap_17
-{
-, ~
-}
-
-MerchantOnMap_18
-{
-él
-}
-
-MerchantOnMap_19
-{
-ella
-}
-
-MerchantOnMap_20
-{
-~  ¡simplemente los mató a todos!
-}
-
-MerchantOnMap_21
-{
-
-}
-MerchantOnMap_22
-{
-
-}
-
-MerchantOnMap_23
-{
-
-}
-MerchantOnMap_24
-{
-
-}
-MerchantOnMap_25
-{
-
-}
-
-MerchantOnMap_26
-{
-
-}
-
-MerchantOnMap_27
-{
-
-}
-
-MerchantOnMap_28
-{
-
-}
-
-MerchantOnMap_29
-{
-~ Así es nuestro pirata @<GetFullName(pchar)>.
-}
-
-MerchantOnMap_30
-{
-La gente dice que el pirata @<GetFullName(pchar)> comenzó a saquear los barcos mercantes del reino @<NationNameSK(sti(MerPrm.ination))>. Entonces, nuestro Gobernador General decidió ponerle fin. Equipó un barco disfrazado de mercante con varias docenas de soldados bien entrenados de Europa y lo envió tras él. ¡Pero el pirata sediento de sangre mató a todos y una vez más escapó de la justicia!
-}
+MerchantOnMap_1 {comerciante}
+MerchantOnMap_2 {Hubo un rumor de que}
+MerchantOnMap_3 {un audaz pirata}
+MerchantOnMap_4 {una audaz pirata}
+MerchantOnMap_5 {, fue atrapado}
+MerchantOnMap_6 { }
+MerchantOnMap_7 { }
+MerchantOnMap_8 {~ en una trampa, en la que ~}
+MerchantOnMap_9 {él}
+MerchantOnMap_10 {ella}
+MerchantOnMap_11 {~ fue atraído por el gobierno @<NationNameSK(sti(MerPrm.ination))>. Lo enviaron a ~}
+MerchantOnMap_12 {él}
+MerchantOnMap_13 {ella}
+MerchantOnMap_14 {~  barco comercial con soldados del reino @<NationNameSK(sti(MerPrm.ination))> completamente armados en la bodega. Pero @<pchar.name> no estaba desprevenido ~}
+MerchantOnMap_15 { }
+MerchantOnMap_16 { }
+MerchantOnMap_17 {, ~}
+MerchantOnMap_18 {él}
+MerchantOnMap_19 {ella}
+MerchantOnMap_20 {~  ¡simplemente los mató a todos!}
+MerchantOnMap_21 { }
+MerchantOnMap_22 { }
+MerchantOnMap_23 { }
+MerchantOnMap_24 { }
+MerchantOnMap_25 { }
+MerchantOnMap_26 { }
+MerchantOnMap_27 { }
+MerchantOnMap_28 { }
+MerchantOnMap_29 {~ Así es nuestro pirata @<GetFullName(pchar)>.}
+MerchantOnMap_30 {La gente dice que el pirata @<GetFullName(pchar)> comenzó a saquear los barcos mercantes del reino @<NationNameSK(sti(MerPrm.ination))>. Entonces, nuestro Gobernador General decidió ponerle fin. Equipó un barco disfrazado de mercante con varias docenas de soldados bien entrenados de Europa y lo envió tras él. ¡Pero el pirata sediento de sangre mató a todos y una vez más escapó de la justicia!}

@@ -121,29 +121,62 @@ void ProcessDialogEvent()
 		
 		case "check_parol":
 			dialog.text = "说密码, 清楚大声地说。 ";
-			link.l1.edit = 3;
-			link.l1 = "";	
-			link.l1.go = "check_parol_1";
-		break;
-		
-		case "check_parol_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[3]);
-			if (sTemp == sNrvParol && CheckAttribute(pchar, "questTemp.LSC.NParol_bye"))
+			sTotalTemp = sNrvParol;
+			if (CheckAttribute(pchar, "questTemp.LSC.NParol_bye"))
 			{
-				dialog.text = "好的, 你可以继续前进。 ";
-				link.l1 = "谢谢, 伙计... ";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "Narval_parol_repeat";
-				LAi_SetGuardianType(NPChar);
-				LAi_group_MoveCharacter(NPChar, "LSC_NARVAL");
-				pchar.questTemp.LSC.parol_nrv = "true";
+				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));
+				link.l1.go = "check_parol_wrong";
+				link.l2 = StringFromKey("QuestsUtilite_" + (293 + rand(11)));
+				link.l2.go = "check_parol_wrong";
+				link.l3 = StringFromKey("QuestsUtilite_" + (305 + rand(11)));
+				link.l3.go = "check_parol_wrong";
+				link.l4 = StringFromKey("QuestsUtilite_" + (317 + rand(11)));
+				link.l4.go = "check_parol_wrong";
+				
+				switch (rand(3))
+				{
+					case 0:
+						link.l1 = sTotalTemp;
+						link.l1.go = "check_parol_1";
+					break;
+
+					case 1:
+						link.l2 = sTotalTemp;
+						link.l2.go = "check_parol_1";
+					break;
+
+					case 2:
+						link.l3 = sTotalTemp;
+						link.l3.go = "check_parol_1";
+					break;
+
+					case 3:
+						link.l4 = sTotalTemp;
+						link.l4.go = "check_parol_1";
+					break;
+				}
 			}
 			else
 			{
-				dialog.text = "嗯... 伙计们! 我们有伴了! ";
-				link.l1 = "该死的! ";
-				link.l1.go = "check_parol_fight";
+				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气……";
+				link.l1.go = "check_parol_wrong";
 			}
+		break;
+		
+		case "check_parol_1":
+			dialog.text = "好的, 你可以继续前进。 ";
+			link.l1 = "谢谢, 伙计... ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Narval_parol_repeat";
+			LAi_SetGuardianType(NPChar);
+			LAi_group_MoveCharacter(NPChar, "LSC_NARVAL");
+			pchar.questTemp.LSC.parol_nrv = "true";
+		break;
+		
+		case "check_parol_wrong":
+			dialog.text = "嗯... 伙计们! 我们有伴了! ";
+			link.l1 = "该死的! ";
+			link.l1.go = "check_parol_fight";
 		break;
 		
 		case "check_parol_fight":
@@ -376,29 +409,62 @@ void ProcessDialogEvent()
 		
 		case "Rcheck_parol":
 			dialog.text = "那就说密码, 大声清楚地说。 ";
-			link.l1.edit = 3;
-			link.l1 = "";	
-			link.l1.go = "Rcheck_parol_1";
-		break;
-		
-		case "Rcheck_parol_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[3]);
-			if (sTemp == sRvdParol && CheckAttribute(pchar, "questTemp.LSC.RParol_bye"))
+			sTotalTemp = sRvdParol;
+			if (CheckAttribute(pchar, "questTemp.LSC.RParol_bye"))
 			{
-				dialog.text = "正确。 往前走。 ";
-				link.l1 = "谢谢, 伙计... ";
-				link.l1.go = "exit";
-				NextDiag.TempNode = "Rivados_parol_repeat";
-				LAi_SetGuardianType(NPChar);
-				LAi_group_MoveCharacter(NPChar, "LSC_RIVADOS");
-				pchar.questTemp.LSC.parol_rvd = "true";
+				link.l1 = StringFromKey("QuestsUtilite_" + (281 + rand(11)));
+				link.l1.go = "Rcheck_parol_wrong";
+				link.l2 = StringFromKey("QuestsUtilite_" + (293 + rand(11)));
+				link.l2.go = "Rcheck_parol_wrong";
+				link.l3 = StringFromKey("QuestsUtilite_" + (305 + rand(11)));
+				link.l3.go = "Rcheck_parol_wrong";
+				link.l4 = StringFromKey("QuestsUtilite_" + (317 + rand(11)));
+				link.l4.go = "Rcheck_parol_wrong";
+				
+				switch (rand(3))
+				{
+					case 0:
+						link.l1 = sTotalTemp;
+						link.l1.go = "Rcheck_parol_1";
+					break;
+
+					case 1:
+						link.l2 = sTotalTemp;
+						link.l2.go = "Rcheck_parol_1";
+					break;
+
+					case 2:
+						link.l3 = sTotalTemp;
+						link.l3.go = "Rcheck_parol_1";
+					break;
+
+					case 3:
+						link.l4 = sTotalTemp;
+						link.l4.go = "Rcheck_parol_1";
+					break;
+				}
 			}
 			else
 			{
-				dialog.text = "哈哈! 我们有客人了! 让我们让他看看我们是谁! ";
-				link.l1 = "该死的! ";
-				link.l1.go = "Rcheck_parol_fight";
+				link.l1 = "还要什么密码? 让我过去, 否则别怪我不客气……";
+				link.l1.go = "Rcheck_parol_wrong";
 			}
+		break;
+		
+		case "Rcheck_parol_1":
+			dialog.text = "正确。 往前走。 ";
+			link.l1 = "谢谢, 伙计... ";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "Rivados_parol_repeat";
+			LAi_SetGuardianType(NPChar);
+			LAi_group_MoveCharacter(NPChar, "LSC_RIVADOS");
+			pchar.questTemp.LSC.parol_rvd = "true";
+		break;
+		
+		case "Rcheck_parol_wrong":
+			dialog.text = "哈哈! 我们有客人了! 让我们让他看看我们是谁! ";
+			link.l1 = "该死的! ";
+			link.l1.go = "Rcheck_parol_fight";
 		break;
 		
 		case "Rcheck_parol_fight":

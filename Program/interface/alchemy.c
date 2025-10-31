@@ -61,24 +61,22 @@ void InitInterface(string iniName)
 	SetNodeUsing("GETALL_BUTTON", true);
 	SetSelectable("GETALL_BUTTON", false);
 	XI_WindowShow("QTY_WINDOW", false);
+	
 	// belamour показывать TAB будем только в каюте -->
-
-	if(PChar.location != Get_My_Cabin())
+	int chestCount = CountChestsInCabin(Get_My_Cabin());
+	if(chestCount < 1)
 	{
-		for(int i = 1; i<=5; i++)
-		{
-			SetSelectable("TABSTR_"+i, false);
-			SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_"+i, 8,0,argb(255,128,128,128));
-		}
+		SetSelectable("TABSTR_1", false);
+		SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_1", 8,0,argb(255,128,128,128));
 	}
-	else 
-	{	// если сундуков 3, то четвертый залочим
-		
-		if(Get_My_Cabin() == "My_Cabin_Small" || Get_My_Cabin() == "My_Cabin_Huge" || Get_My_Cabin() == "My_Cabin")
-			{
-				SetSelectable("TABSTR_5", false);
-				SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_5", 8,0,argb(255,128,128,128));
-			}
+	// залочим несуществующие сундуки
+	for(int j = 2; j <= 5; j++)
+	{
+		if(j > chestCount + 1)
+		{
+			SetSelectable("TABSTR_"+j, false);
+			SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_"+j, 8,0,argb(255,128,128,128));
+		}
 	}
 	// <-- belamour
 	SetEventHandler("InterfaceBreak","ProcessBreakExit",0);
@@ -89,6 +87,8 @@ void InitInterface(string iniName)
 	SetEventHandler("OnHeaderClick", "OnHeaderClick", 0);
 	SetEventHandler("MouseRClickUP","EndTooltip",0);
 	SetEventHandler("ShowHelpHint", "ShowHelpHint", 0);
+	SetEventHandler("ShowInfoWindow", "ShowHelpHint", 0);
+	SetEventHandler("HideInfoWindow", "HideInfoWindow", 0);
 	SetEventHandler("ShowItemInfo", "ShowItemInfo", 0);
 	SetEventHandler("TableSelectChange", "CS_TableSelectChange", 0);
 	SetEventHandler("TransactionOK", "TransactionOK", 0);
@@ -145,6 +145,8 @@ void IDoExit(int exitCode)
 	DelEventHandler("MouseRClickUP","EndTooltip");
 	DelEventHandler("ShowHelpHint", "ShowHelpHint");
 	DelEventHandler("ShowItemInfo", "ShowItemInfo");
+	DelEventHandler("ShowInfoWindow", "ShowHelpHint");
+	DelEventHandler("HideInfoWindow", "HideInfoWindow");
 	DelEventHandler("TableSelectChange", "CS_TableSelectChange");
 	DelEventHandler("frame","ProcessFrame");
 	DelEventHandler("TransactionOK", "TransactionOK");
@@ -259,7 +261,7 @@ void DoPostExit()
 void ShowHelpHint()
 {
 	int    lngFileID;
-	string sCurrentNode = GetCurrentNode();
+	string sCurrentNode = GetEventData();
 	string sHeader;
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
 	
@@ -273,7 +275,7 @@ void ShowHelpHint()
 		lngFileID = LanguageOpenFile("ItemsDescribe.txt");
 		sHeader = LanguageConvertString(lngFileID, arItm.name);
 		sText1 =  GetItemDescribe(sti(arItm.index));
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,192,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 		LanguageCloseFile(lngFileID);
 	}
 	else
@@ -281,9 +283,13 @@ void ShowHelpHint()
 		sHeader = XI_ConvertString("titleAlchemy");
 		sText1 = XI_ConvertString("Alchemy_Descr1");
 		sText2 = XI_ConvertString("Alchemy_Descr2");
-	
-		CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,192,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+		CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 	}	
+}
+
+void HideInfoWindow()
+{
+	CloseTooltipNew();
 }
 
 int GetMultiObjectQty()
@@ -518,7 +524,7 @@ void OnHeaderClick()
 
 void EndTooltip()
 {
-	CloseTooltip(); // всегда убирать, если был
+	CloseTooltipNew(); // всегда убирать, если был
 	GameInterface.qty_edit.str = 0;
 	SetCurrentNode("TABLE_LIST");
  	XI_WindowDisable("QTY_WINDOW", false);
@@ -639,7 +645,12 @@ void onGetAllBtnClick()
 			AddItems(alchemy, sItmId, Qty);
 		}	
 	}
-	AddItems(refCharacter, sCurItem, Qty * sti(rItem.multiobject.qty));
+
+	int resultQty = Qty * sti(rItem.multiobject.qty);
+	Perk_PowderFeel(rItem, &resultQty);
+	Perk_Master(rItem, resultQty);
+
+	AddItems(refCharacter, sCurItem, resultQty);
 	WaitDate("", 0, 0, 0, 0, 15 + (5 * (Qty - 1)));
 	Statistic_AddValue(refCharacter, "Alchemy", Qty);
 	Achievment_SetStat(7, Qty);
@@ -1037,13 +1048,21 @@ void procTabChange()
 
 void SetControlsTabMode(int _mode)
 {
-	int nColor1 = argb(255,196,196,196);
-	int nColor2 = nColor1;
-	int nColor3 = nColor1;
-	int nColor4 = nColor1;
-	int nColor5 = nColor1;
-	if(Get_My_Cabin() == "My_Cabin_Small" || Get_My_Cabin() == "My_Cabin"
-	|| Get_My_Cabin() == "My_Cabin_Huge") nColor5 = argb(255,128,128,128);
+	int nColorMain = argb(255,196,196,196);
+	int nColorNone = argb(255,128,128,128);
+	int nColorSelected = argb(255,255,255,255);
+	
+	int colorArray[5];
+	colorArray[0] = nColorMain;
+	
+	int chestCount = CountChestsInCabin(Get_My_Cabin());
+	for (int i = 1; i < 5; i++)
+	{
+		if (i <= chestCount)
+			colorArray[i] = nColorMain;
+		else
+			colorArray[i] = nColorNone;
+	}
 
 	string sPic1 = "TabDeSelected";
 	string sPic2 = sPic1;
@@ -1056,33 +1075,31 @@ void SetControlsTabMode(int _mode)
 	string sPic8 = sPic1;
 	string sPic9 = sPic1;
 	string sPic10 = sPic1;
+	
+	if(_mode > -1)
+		colorArray[_mode - 1] = nColorSelected;
 
 	switch (_mode)
 	{
 		case 1:
 			sPic1 = "TabSelected";
 			sPic6 = "TabSelectedMark";
-			nColor1 = argb(255,255,255,255);
 		break;
 		case 2:
 			sPic2 = "TabSelected";
 			sPic7 = "TabSelectedMark";
-			nColor2 = argb(255,255,255,255);
 		break;
 		case 3:
 			sPic3 = "TabSelected";
 			sPic8 = "TabSelectedMark";
-			nColor3 = argb(255,255,255,255);
 		break;
 		case 4:
 			sPic4 = "TabSelected";
 			sPic9 = "TabSelectedMark";
-			nColor4 = argb(255,255,255,255);
 		break;
 		case 5:
 			sPic5 = "TabSelected";
 			sPic10 = "TabSelectedMark";
-			nColor5 = argb(255,255,255,255);
 		break;
 	}
 	   
@@ -1096,14 +1113,28 @@ void SetControlsTabMode(int _mode)
 	SetNewGroupPicture("TABBTN_3_MARK", "TABS", sPic8);
 	SetNewGroupPicture("TABBTN_4_MARK", "TABS", sPic9);
 	SetNewGroupPicture("TABBTN_5_MARK", "TABS", sPic10);	
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_1", 8,0,nColor1);
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_2", 8,0,nColor2);
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_3", 8,0,nColor3);
-    SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_4", 8,0,nColor4);
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_5", 8,0,nColor5);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_1", 8,0,colorArray[0]);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_2", 8,0,colorArray[1]);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_3", 8,0,colorArray[2]);
+    SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_4", 8,0,colorArray[3]);
+	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"TABSTR_5", 8,0,colorArray[4]);
 	
 	iCurrentTabMode = _mode;
 	
 	AddToTable(ItemsFromID(sCurItem));
+}
+
+// количество сундуков в каюте
+int CountChestsInCabin(string cabinType)
+{
+	if(PChar.location != Get_My_Cabin()) return 0;
+	
+	aref al;
+	int num = 0;
+	for(int i = 1; i < 5; i++)
+	{
+		if(FindLocator(cabinType, "box"+i, &al, true)) num++;
+	}
+	return num;
 }
 // <-- belamour

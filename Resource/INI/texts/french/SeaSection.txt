@@ -1,63 +1,59 @@
-Ship_critical		{Coup critique !}
-Ship_critical_notif		{' - Coup critique !}
-Ship_sunk			{%1 "%2" est coulé. +%3 d'expérience obtenue.}
-Ship_sunk_other		{%1 "%2" est coulé.}
-Ship_got_good		{%1 quintaux de %2 ont été embarqués}
-Ship_cant_got_good	{Pas de place pour %1}
-
-Fort_destroy		{Le fort %1 est détruit. +%2 d'expérience obtenue.}
-Fort_destroy_notif	{Artillerie de Fort détruite !}
-Fort_cannon			{Un canon du fort est détruit !}
-
-seg_Balls 			{boulets ronds}
-seg_Grapes 			{mitraille}
-seg_Knippels 		{boulets chaînés}
-seg_Bombs 			{bombes}
-seg_Sailcloth 		{toile à voile}
-seg_Planks 			{planches}
-seg_Slaves 			{esclaves}
-seg_Wheat 			{blé}
-seg_Ebony 			{ébène}
-seg_Chocolate 		{cacao}
-seg_Suga 			{sucre}
-seg_Wine 			{vin}
-seg_ShipSilk 		{soie de navire}
-seg_Rum 			{rhum}
-seg_Tobacco 		{tabac}
-seg_Coffee 			{café}
-seg_Mahogany 		{acajou}
-seg_Cinnamon 		{vanille}
-seg_Copra 			{copra}
-seg_Paprika 		{paprika}
-seg_Fruits 			{fruits}
-seg_Ale 			{bière}
-seg_Ropes 			{cordes}
-seg_Clothes 		{vêtements}
-seg_Cotton 			{coton}
-seg_Sandal 			{bois de fer}
-seg_Leather 		{cuir}
-seg_Oil 			{résine}
-seg_Food 			{nourriture}
-seg_Weapon 			{armes}
-seg_Gold 			{or}
-seg_Silver 			{argent}
-seg_Powder 			{poudre à canon}
-seg_Brick 			{briques}
-seg_Medicament 		{médicaments}
-
-seg_Cannon_3		{Fauconneau de 3 livres}
-seg_Cannon_6		{Canon de 6 livres}
-seg_Cannon_8		{Canon de 8 livres}
-seg_Cannon_12		{Canon de 12 livres}
-seg_Cannon_16		{Canon de 16 livres}
-seg_Cannon_18		{Canon de 18 livres}
-seg_Cannon_20		{Canon de 20 livres}
-seg_Cannon_24		{Canon de 24 livres}
-seg_Cannon_32		{Canon de 32 livres}
-seg_Cannon_36		{Canon de 36 livres}
-seg_Cannon_42		{Canon de 42 livres}
-seg_Culverine_8		{Demi-couleuvrine}
-seg_Culverine_18	{Couleuvrine}
-seg_Culverine_36	{Couleuvrine complète}
-
-sea_exp_add			{+%1 d'expérience obtenue}
+Ship_critical {Coup critique !}
+Ship_critical_notif {' - Coup critique !}
+Ship_sunk {%1 "%2" est coulé. +%3 d'expérience obtenue.}
+Ship_sunk_other {%1 "%2" est coulé.}
+Ship_got_good {%1 quintaux de %2 ont été embarqués}
+Ship_cant_got_good {Pas de place pour %1}
+Fort_destroy {Le fort %1 est détruit. +%2 d'expérience obtenue.}
+Fort_destroy_notif {Artillerie de Fort détruite !}
+Fort_cannon {Un canon du fort est détruit !}
+seg_Balls {boulets ronds}
+seg_Grapes {mitraille}
+seg_Knippels {boulets chaînés}
+seg_Bombs {bombes}
+seg_Sailcloth {toile à voile}
+seg_Planks {planches}
+seg_Slaves {esclaves}
+seg_Wheat {blé}
+seg_Ebony {ébène}
+seg_Chocolate {cacao}
+seg_Sugar { }
+seg_Wine {vin}
+seg_ShipSilk {soie de navire}
+seg_Rum {rhum}
+seg_Tobacco {tabac}
+seg_Coffee {café}
+seg_Mahogany {acajou}
+seg_Cinnamon {vanille}
+seg_Copra {copra}
+seg_Paprika {paprika}
+seg_Fruits {fruits}
+seg_Ale {bière}
+seg_Ropes {cordes}
+seg_Clothes {vêtements}
+seg_Cotton {coton}
+seg_Sandal {bois de fer}
+seg_Leather {cuir}
+seg_Oil {résine}
+seg_Food {nourriture}
+seg_Weapon {armes}
+seg_Gold {or}
+seg_Silver {argent}
+seg_Powder {poudre à canon}
+seg_Brick {briques}
+seg_Medicament {médicaments}
+seg_Cannon_3 {Fauconneau de 3 livres}
+seg_Cannon_6 {Canon de 6 livres}
+seg_Cannon_8 {Canon de 8 livres}
+seg_Cannon_12 {Canon de 12 livres}
+seg_Cannon_16 {Canon de 16 livres}
+seg_Cannon_18 {Canon de 18 livres}
+seg_Cannon_20 {Canon de 20 livres}
+seg_Cannon_24 {Canon de 24 livres}
+seg_Cannon_32 {Canon de 32 livres}
+seg_Cannon_36 {Canon de 36 livres}
+seg_Cannon_42 {Canon de 42 livres}
+seg_Culverine_8 {Demi-couleuvrine}
+seg_Culverine_18 {Couleuvrine}
+seg_Culverine_36 {Couleuvrine complète}
+sea_exp_add {+%1 d'expérience obtenue}

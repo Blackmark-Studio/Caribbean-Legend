@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "我在听, " +pchar.name+ "。 ";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "我们会和他们战斗, 孩子们! 这座山后面有货物和钱! 我们来这里就是为了它们, 我们不会离开。 不管一群红皮肤, 即使有滑膛枪, 也无法阻止我们! 让我们埋葬这些混蛋, 完成任务! 我们有足够的人手, 有机会伏击他们。 四个人从侧翼用火迎接他们, 我们其他人在这里占据位置。 削减他们的数量, 然后消灭他们! ";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("人不够", "X");
 				if (n > 0)
 				{
 					link.l1 = "我们会和他们战斗, 孩子们! 这座山后面有货物和钱! 我们来这里就是为了它们, 我们不会离开。 不管一群红皮肤, 即使有滑膛枪, 也无法阻止我们! 让我们埋葬这些混蛋, 完成任务! ";

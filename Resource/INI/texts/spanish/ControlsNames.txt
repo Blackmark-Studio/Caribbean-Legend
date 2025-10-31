@@ -1,8 +1,7 @@
-newLine {
-
+newLine
+{
 
 }
-
 HelpChooser {Seleccione Ayuda}
 MainInterface {Configuración de la interfaz}
 DialogControls {Diálogos}
@@ -12,886 +11,183 @@ Sailing1Pers {Vista del mar en primera persona}
 Sailing3Pers {Vista del mar en tercera persona}
 FightModeControls {Modo Batalla}
 PrimaryLand {Controles de tierra}
-
-
-
-ChrCamTurnV
-{
-Movimiento vertical de la cámara que sigue al personaje
-}
-
-ChrCamTurnH
-{
-Movimiento horizontal de la cámara que sigue al personaje
-}
-
-ChrCamCameraSwitch
-{
-Modo cámara
-}
-
-SwitchCameraOffset
-{
-Vista de cámara
-}
-
-CharacterCamera_Forward
-{
-Acercar cámara
-}
-
-CharacterCamera_Backward
-{
-Alejar cámara
-}
-
-ChrAiming
-{
-Apuntar (mantener)
-}
-
-ChrAimingShot
-{
-Disparar
-}
-
-ChrCamCameraRadius
-{
-Zoom de cámara
-}
-
-ChrCamNormalize
-{
-Centrar cámara
-}
-
-ShipCamera_Turn_V
-{
-Movimiento vertical de la cámara que sigue al barco
-}
-
-ShipCamera_Turn_H
-{
-Movimiento horizontal de la cámara que sigue al barco
-}
-
-ShipCamera_Forward
-{
-Acercar cámara
-}
-
-ShipCamera_Backward
-{
-Alejar cámara
-}
-
-DeckCamera_Turn_V
-{
-Rotación vertical de la cámara (vista de cubierta)
-}
-
-DeckCamera_Turn_H
-{
-Rotación horizontal de la cámara (vista de cubierta)
-}
-
-DeckCamera_Forward
-{
-Avanzar (vista de cubierta)
-}
-
-DeckCamera_Backward
-{
-Retroceder (vista de cubierta)
-}
-
-DeckCamera_Left
-{
-Desplazar a la izquierda (vista de cubierta)
-}
-
-DeckCamera_Right
-{
-Desplazar a la derecha (vista de cubierta)
-}
-
-ChrTurnH
-{
-Girar personaje
-}
-
-ChrTurnV
-{
-Mover personaje 
-}
-
-ChrTurnHL
-{
-Girar personaje a la izquierda
-}
-
-ChrTurnHR
-{
-Girar personaje a la derecha
-}
-
-ChrAction
-{
-Acción
-}
-
-ChrForward
-{
-Avanzar
-}
-
-ChrForward1
-{
-Avanzar
-}
-
-ChrForward2
-{
-Avanzar (alternativo)
-}
-
-ChrBackward
-{
-Retroceder
-}
-
-ChrBackward1
-{
-Retroceder
-}
-
-ChrSwitchWalk
-{
-Caminar/Correr
-}
-
-ChrSprint
-{
-Sprint
-}
-
-ChrRunStick
-{
-Pasar a carrera
-}
-
-ChrBlock
-{
-Bloquear
-}
-
-ChrRecoil
-{
-Retroceder
-}
-
-ChrParry
-{
-Finta (alternativo)
-}
-
-ChrAttackForce
-{
-Estocada
-}
-
-ChrAttackFast
-{
-Corte
-}
-
-ChrAttackRound
-{
-Golpe circular
-}
-
-ChrAttackBreak
-{
-Ataque pesado
-}
-
-ChrAttackFient
-{
-Finta y contrataque (alternativo)
-}
-
-ChrAttackBreakBase
-{
-Ataque pesado / Finta y contrataque
-}
-
-ChrAttackRoundBase
-{
-Golpe circular
-}
-
-ChrAttackChoseBase
-{
-Alternar tipo de ataque (mantener)
-}
-
-ChrBlockBase
-{
-Bloquear
-}
-
-ChrAttackBase
-{
-Estocada / Finta
-}
-
-ChrAltAttackBase
-{
-Corte / Golpe circular
-}
-
-ChrFire
-{
-Disparar
-}
-
-ChrFightMode
-{
-Sacar / Guardar arma
-}
-
-ChrSwitchFightMode
-{
-Cambiar el modo de combate
-}
-
-BulletChanger
-{
-Cambiar la munición del arma
-}
-
-PotionChanger
-{
-Cambiar poción
-}
-
-BOAL_UsePotion
-{
-Beber un elíxir de salud
-}
-
-BOAL_ActivateRush
-{
-Usar tintura Ometochtli
-}
-
-BOAL_DeadSearch
-{
-Registrar cuerpo
-}
-
-UseAntidote
-{
-Beber antídoto
-}
-
-Alchemy
-{
-Alquimia
-}
-
-Inventory
-{
-Inventario
-}
-
-ShipState
-{
-Barcos
-}
-
-QuestBook
-{
-Bitácora
-}
-
-MapView
-{
-Atlas
-}
-
-Abilities
-{
-Habilidades
-}
-
-Nations
-{
-Naciones
-}
-
-Dolly
-{
-Activar ídolo maya
-}
-
-Ultimate_potion
-{
-Beber poción india
-}
-
-Ship_TurnLeft
-{
-Girar barco a la izquierda
-}
-
-Ship_TurnRight
-{
-Girar barco a la derecha
-}
-
-Ship_SailUp
-{
-Izar velas
-}
-
-Ship_SailDown
-{
-Arriar velas
-}
-
-Ship_Fire
-{
-Disparar cañones
-}
-
-Sea_CameraSwitch
-{
-Alternar cámara 'Detras del barco'/'En cubierta'
-}
-
-TelescopeMode
-{
-Alternar catalejo
-}
-
-TelescopeZoomIn
-{
-Catalejo (ampliar)
-}
-
-TelescopeZoomOut
-{
-Catalejo (alejar)
-}
-
-BI_MapEnter
-{
-Vista del mapa
-}
-
-WMapTurnH
-{
-Cambiar cámara (vista del mapa)
-}
-
-WMapTurnV
-{
-Ajustar la altura de la cámara (Vista del mapa)
-}
-
-WMapCameraRotate
-{
-Activar modo deslizante (Vista del mapa)
-}
-
-WMapForward
-{
-Acercar cámara
-}
-
-WMapBackward
-{
-Alejar cámara
-}
-
-WMapCameraSwitch
-{
-Cambiar modo cámara
-}
-
-WMapShipSailUp
-{
-Navegar hacia adelante
-}
-
-WMapShipSailDown
-{
-Navegar hacia atrás
-}
-
-WMapShipTurnLeft
-{
-Girar hacia la izquierda
-}
-
-WMapShipTurnRight
-{
-Girar hacia la derecha
-}
-
-WMapCancel
-{
-Salir a vista del mar
-}
-
-Interface
-{
-Configuración de la interfaz
-}
-
-MainMenu
-{
-Menú Principal
-}
-
-MainMenuDouble
-{
-Menú principal
-}
-
-Help
-{
-Ayuda
-}
-
-BICommandsActivate
-{
-Menú de acción
-}
-
-LICommandsActivate
-{
-Menú de acción 
-}
-
-BICommandsConfirm
-{
-Confirmar acción 
-}
-
-BICommandsCancel
-{
-Cancelar acción 
-}
-
-BICommandsUp
-{
-Menú de acción - arriba
-}
-
-BICommandsDown
-{
-Menú de acción - abajo
-}
-
-BICommandsLeft
-{
-Menú de acción - izquierda
-}
-
-BICommandsRight
-{
-Menú de acción - derecha
-}
-
-MiniMapZoomIn
-{
-Acercar Minimapa
-}
-
-MiniMapZoomOut
-{
-Alejar Minimapa
-}
-
-BIFastCommand
-{
-Acción rápida
-}
-
-HelpChooser_Cancel
-{
-Salir del menú de ayuda
-}
-
-HelpChooser_Action
-{
-Ayuda sobre elemento actual
-}
-
-HelpChooser_Next
-{
-Siguiente consejo
-}
-
-HelpChooser_Prev
-{
-Consejo anterior
-}
-
-HelpChooser_Left
-{
-Izquierda (Menú Ayuda)
-}
-
-HelpChooser_Right
-{
-Derecha (Menú ayuda)
-}
-
-HelpChooser_Up
-{
-Arriba (Menú ayuda)
-}
-
-HelpChooser_Down
-{
-Abajo (Menú ayuda)
-}
-
-DlgAction
-{
-Elegir respuesta
-}
-
-DlgAction1
-{
-Elegir respuesta
-}
-
-DlgUp
-{
-Respuesta anterior en un diálogo
-}
-
-DlgDown
-{
-Respuesta siguiente en un diálogo
-}
-
-DlgScrollUp
-{
-Desplazar hacia abajo texto del diálogo
-}
-
-DlgScrollDown
-{
-Desplazar hacia arriba texto del diálogo
-}
-
-hk_charge1
-{
-Cargar con balas de cañón 
-}
-
-hk_charge2
-{
-Cargar con metralla
-}
-
-hk_charge3
-{
-Cargar con balas encadenadas
-}
-
-hk_charge4
-{
-Cargar con bombas
-}
-
-hk_Cure
-{
-Usar elíxir de salud
-}
-
-hk_Rush
-{
-Usar habilidad Furia 
-}
-
-hk_ImmediateReload
-{
-Activar habilidad "Recarga preliminar"
-}
-
-hk_LightRepair
-{
-Activar habilidad "Reparación ligera"
-}
-
-hk_InstantRepair
-{
-Activar habilidad "Reparación rápida"
-}
-
-hk_Turn180
-{
-Activar habilidad "Giro rápido"
-}
-
-hk_SandbankManeuver
-{
-Activar habilidad "Maniobras en bancos de arena"
-}
-
-ChrStrafeLeft
-{
-Mover a la izquierda
-}
-
-ChrStrafeRight
-{
-Mover a la derecha
-}
-
-OfficersCharge
-{
-Órdenes para los oficiales: Luchar a voluntad
-}
-
-OfficersHold
-{
-Órdenes para los oficiales: Mantener la posición
-}
-
-OfficersFollow
-{
-Órdenes para los oficiales: Seguirme
-}
-
-FLT_LoadBalls
-{
-Órdenes a la flota: cargar cañones con balas de cañón
-}
-
-FLT_LoadGrapes
-{
-Órdenes a la flota: cargar cañones con metralla
-}
-
-FLT_LoadChain
-{
-Órdenes a la flota: cargar cañones con balas encadenadas
-}
-
-FLT_LoadBombs
-{
-Órdenes a la flota: cargar cañones con bombas
-}
-
-FLT_SailAway
-{
-Órdenes a la flota: zarpar
-}
-
-FLT_LowerSails
-{
-Órdenes a la flota: velas para combate
-}
-
-FLT_ProtFlagship
-{
-Órdenes a la flota: proteger el buque insignia
-}
-
-Fast_store
-{
-Viaje rápido: Tienda
-}
-
-Fast_shipyard
-{
-Viaje rápido: Astillero
-}
-
-Fast_tavern
-{
-Viaje rápido: Taberna
-}
-
-Fast_townhall
-{
-Viaje rápido: Gobernador
-}
-
-Fast_bank
-{
-Viaje rápido: Usurero
-}
-
-Fast_church
-{
-Viaje rápido: Iglesia
-}
-
-Fast_brothel
-{
-Viaje rápido: Burdel
-}
-
-Fast_portoffice
-{
-Viaje rápido: Autoridad Portuaria
-}
-
-Fast_prison
-{
-Viaje rápido: Prisión
-}
-
-Fast_port
-{
-Viaje rápido: Puerto
-}
-
-LI_Fast_store
-{
-Tienda
-}
-
-LI_Fast_shipyard
-{
-Astillero
-}
-
-LI_Fast_tavern
-{
-Taberna
-}
-
-LI_Fast_townhall
-{
-Gobernador
-}
-
-LI_Fast_bank
-{
-Usurero
-}
-
-LI_Fast_church
-{
-Iglesia
-}
-
-LI_Fast_brothel
-{
-Burdel
-}
-
-LI_Fast_portoffice
-{
-Autoridad portuaria
-}
-
-LI_Fast_prison
-{
-Prisión
-}
-
-LI_Fast_port
-{
-Puerto
-}
-
-HK_Musket
-{
-Equipar mosquete
-}
-
-HK_FencingL
-{
-Equipar arma ligera
-}
-
-HK_FencingS
-{
-Equipar arma mediana
-}
-
-HK_FencingH
-{
-Equipar arma pesada
-}
-
-HK_bullet
-{
-Cargar arma de fuego con una bala (modificador)
-}
-
-HK_cartridge
-{
-Cargar arma de fuego con un cartucho de papel (modificador)
-}
-
-HK_grapeshot
-{
-Cargar arma de fuego con perdigones (modificador)
-}
-
-HK_harpoon
-{
-Cargar punta de arpón (modificador)
-}
-
-HK_GunEchin
-{
-Cargar clavos (modificador)
-}
-
-HK_grenade
-{
-Cargar arma de fuego con una granada (modificador)
-}
-
-hk_Cabin
-{
-Bajar a la cabina
-}
-
-CannonsRange
-{
-Alcance de los cañones
-}
-
-ChangeShowInterface
-{
-Ocultar/mostrar IU
-}
-
-FreeCam
-{
-Cámara libre
-}
-
-TimeScale
-{
-Acelerar/ralentizar el tiempo
-
-}
-
-TimeScaleFasterBA
-{
-Acelerar el tiempo
-}
-
-TimeScaleSlowerBA
-{
-Ralentizar el tiempo
-}
-
-FireCamera_Set
-{
-Vista de puntería
-}
+ChrCamTurnV {Movimiento vertical de la cámara que sigue al personaje}
+ChrCamTurnH {Movimiento horizontal de la cámara que sigue al personaje}
+ChrCamCameraSwitch {Modo cámara}
+SwitchCameraOffset {Vista de cámara}
+CharacterCamera_Forward {Acercar cámara}
+CharacterCamera_Backward {Alejar cámara}
+ChrAiming {Apuntar (mantener)}
+ChrAimingShot {Disparar}
+ChrCamCameraRadius {Zoom de cámara}
+ChrCamNormalize {Centrar cámara}
+ShipCamera_Turn_V {Movimiento vertical de la cámara que sigue al barco}
+ShipCamera_Turn_H {Movimiento horizontal de la cámara que sigue al barco}
+ShipCamera_Forward {Acercar cámara}
+ShipCamera_Backward {Alejar cámara}
+DeckCamera_Turn_V {Rotación vertical de la cámara (vista de cubierta)}
+DeckCamera_Turn_H {Rotación horizontal de la cámara (vista de cubierta)}
+DeckCamera_Forward {Avanzar (vista de cubierta)}
+DeckCamera_Backward {Retroceder (vista de cubierta)}
+DeckCamera_Left {Desplazar a la izquierda (vista de cubierta)}
+DeckCamera_Right {Desplazar a la derecha (vista de cubierta)}
+ChrTurnH {Girar personaje}
+ChrTurnV {Mover personaje}
+ChrTurnHL {Girar personaje a la izquierda}
+ChrTurnHR {Girar personaje a la derecha}
+ChrAction {Acción}
+ChrForward {Avanzar}
+ChrForward1 {Avanzar}
+ChrForward2 {Avanzar (alternativo)}
+ChrBackward {Retroceder}
+ChrBackward1 {Retroceder}
+ChrSwitchWalk {Caminar/Correr}
+ChrSprint {Sprint}
+ChrRunStick {Pasar a carrera}
+ChrBlock {Bloquear}
+ChrRecoil {Retroceder}
+ChrParry {Finta (alternativo)}
+ChrAttackForce {Estocada}
+ChrAttackFast {Corte}
+ChrAttackRound {Golpe circular}
+ChrAttackBreak {Ataque pesado}
+ChrAttackFient {Finta y contrataque (alternativo)}
+ChrAttackBreakBase {Ataque pesado}
+ChrAttackRoundBase {Golpe circular}
+ChrAttackChoseBase {Alternar tipo de ataque (mantener)}
+ChrBlockBase {Bloquear}
+ChrAttackBase {Estocada / Finta}
+ChrAltAttackBase {Corte / Golpe circular}
+ChrFire {Disparar}
+ChrFightMode {Sacar / Guardar arma}
+ChrSwitchFightMode {Cambiar el modo de combate}
+BulletChanger {Cambiar la munición del arma}
+PotionChanger {Cambiar poción}
+BOAL_UsePotion {Beber un elíxir de salud}
+BOAL_ActivateRush {Usar tintura Ometochtli}
+BOAL_DeadSearch {Registrar cuerpo}
+UseAntidote {Beber antídoto}
+Alchemy {Alquimia}
+Inventory {Inventario}
+ShipState {Barcos}
+QuestBook {Bitácora}
+MapView {Atlas}
+Abilities {Habilidades}
+Nations {Naciones}
+Dolly {Activar ídolo maya}
+Ultimate_potion {Beber poción india}
+Ship_TurnLeft {Girar barco a la izquierda}
+Ship_TurnRight {Girar barco a la derecha}
+Ship_SailUp {Izar velas}
+Ship_SailDown {Arriar velas}
+Ship_Fire {Disparar cañones}
+Sea_CameraSwitch {Alternar cámara 'Detras del barco'/'En cubierta'}
+TelescopeMode {Alternar catalejo}
+TelescopeZoomIn {Catalejo (ampliar)}
+TelescopeZoomOut {Catalejo (alejar)}
+BI_MapEnter {Vista del mapa}
+WMapTurnH {Cambiar cámara (vista del mapa)}
+WMapTurnV {Ajustar la altura de la cámara (Vista del mapa)}
+WMapCameraRotate {Activar modo deslizante (Vista del mapa)}
+WMapForward {Acercar cámara}
+WMapBackward {Alejar cámara}
+WMapCameraSwitch {Cambiar modo cámara}
+WMapShipSailUp {Navegar hacia adelante}
+WMapShipSailDown {Navegar hacia atrás}
+WMapShipTurnLeft {Girar hacia la izquierda}
+WMapShipTurnRight {Girar hacia la derecha}
+WMapCancel {Salir a vista del mar}
+TimeScaleOn {Acelerar tiempo}
+TimeScaleOff {Desactivar aceleración}
+Interface {Configuración de la interfaz}
+MainMenu {Menú Principal}
+MainMenuDouble {Menú principal}
+Help {Ayuda}
+BICommandsActivate {Menú de acción}
+LICommandsActivate {Menú de acción}
+BICommandsConfirm {Confirmar acción}
+BICommandsCancel {Cancelar acción}
+BICommandsUp {Menú de acción - arriba}
+BICommandsDown {Menú de acción - abajo}
+BICommandsLeft {Menú de acción - izquierda}
+BICommandsRight {Menú de acción - derecha}
+MiniMapZoomIn {Acercar Minimapa}
+MiniMapZoomOut {Alejar Minimapa}
+BIFastCommand {Acción rápida}
+HelpChooser_Cancel {Salir del menú de ayuda}
+HelpChooser_Action {Ayuda sobre elemento actual}
+HelpChooser_Next {Siguiente consejo}
+HelpChooser_Prev {Consejo anterior}
+HelpChooser_Left {Izquierda (Menú Ayuda)}
+HelpChooser_Right {Derecha (Menú ayuda)}
+HelpChooser_Up {Arriba (Menú ayuda)}
+HelpChooser_Down {Abajo (Menú ayuda)}
+DlgAction {Elegir respuesta}
+DlgAction1 {Elegir respuesta}
+DlgUp {Respuesta anterior en un diálogo}
+DlgDown {Respuesta siguiente en un diálogo}
+DlgScrollUp {Desplazar hacia abajo texto del diálogo}
+DlgScrollDown {Desplazar hacia arriba texto del diálogo}
+hk_charge1 {Cargar con balas de cañón}
+hk_charge2 {Cargar con metralla}
+hk_charge3 {Cargar con balas encadenadas}
+hk_charge4 {Cargar con bombas}
+hk_Cure {Usar elíxir de salud}
+hk_Rush {Usar habilidad Furia}
+hk_ImmediateReload {Activar habilidad "Recarga preliminar"}
+hk_LightRepair {Activar habilidad "Reparación ligera"}
+hk_InstantRepair {Activar habilidad "Reparación rápida"}
+hk_Turn180 {Activar habilidad "Giro rápido"}
+hk_SandbankManeuver {Activar habilidad "Maniobras en bancos de arena"}
+ChrStrafeLeft {Mover a la izquierda}
+ChrStrafeRight {Mover a la derecha}
+OfficersCharge {Órdenes para los oficiales: Luchar a voluntad}
+OfficersHold {Órdenes para los oficiales: Mantener la posición}
+OfficersFollow {Órdenes para los oficiales: Seguirme}
+FLT_LoadBalls {Órdenes a la flota: cargar cañones con balas de cañón}
+FLT_LoadGrapes {Órdenes a la flota: cargar cañones con metralla}
+FLT_LoadChain {Órdenes a la flota: cargar cañones con balas encadenadas}
+FLT_LoadBombs {Órdenes a la flota: cargar cañones con bombas}
+FLT_SailAway {Órdenes a la flota: zarpar}
+FLT_LowerSails {Órdenes a la flota: velas para combate}
+FLT_ProtFlagship {Órdenes a la flota: proteger el buque insignia}
+Fast_store {Viaje rápido: Tienda}
+Fast_shipyard {Viaje rápido: Astillero}
+Fast_tavern {Viaje rápido: Taberna}
+Fast_townhall {Viaje rápido: Gobernador}
+Fast_bank {Viaje rápido: Usurero}
+Fast_church {Viaje rápido: Iglesia}
+Fast_brothel {Viaje rápido: Burdel}
+Fast_portoffice {Viaje rápido: Autoridad Portuaria}
+Fast_prison {Viaje rápido: Prisión}
+Fast_port {Viaje rápido: Puerto}
+LI_Fast_store {Tienda}
+LI_Fast_shipyard {Astillero}
+LI_Fast_tavern {Taberna}
+LI_Fast_townhall {Gobernador}
+LI_Fast_bank {Usurero}
+LI_Fast_church {Iglesia}
+LI_Fast_brothel {Burdel}
+LI_Fast_portoffice {Autoridad portuaria}
+LI_Fast_prison {Prisión}
+LI_Fast_port {Puerto}
+HK_Musket {Equipar mosquete}
+HK_FencingL {Equipar arma ligera}
+HK_FencingS {Equipar arma mediana}
+HK_FencingH {Equipar arma pesada}
+HK_bullet {Cargar arma de fuego con una bala (modificador)}
+HK_cartridge {Cargar arma de fuego con un cartucho de papel (modificador)}
+HK_grapeshot {Cargar arma de fuego con perdigones (modificador)}
+HK_harpoon {Cargar punta de arpón (modificador)}
+HK_GunEchin {Cargar clavos (modificador)}
+HK_grenade {Cargar arma de fuego con una granada (modificador)}
+hk_Cabin {Bajar a la cabina}
+CannonsRange {Alcance de los cañones}
+ChangeShowInterface {Ocultar/mostrar IU}
+FreeCam {Cámara libre}
+TimeScale {Acelerar/ralentizar el tiempo}
+TimeScaleFasterBA {Acelerar el tiempo}
+TimeScaleSlowerBA {Ralentizar el tiempo}
+FireCamera_Set {Vista de puntería}
+WMapDrawCircle {Área de combate}
+InterfaceTakeAll {Cogerlo todo}

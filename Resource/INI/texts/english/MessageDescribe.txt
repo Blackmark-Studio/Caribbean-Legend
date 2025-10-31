@@ -1,5 +1,5 @@
-newline  {
+newline
+{
 
 }
-
 Template {Template}

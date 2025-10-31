@@ -18,23 +18,23 @@ void ProcessDialogEvent()
 		case "First time":
 			if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 			{
-				dialog.text = "Oh! And they told me that you have drown... Liars!";
-				link.l1 = "Sure, they did! Hah! I am fine!";
+				dialog.text = "Oh! And they told me that you had drowned... Liars!";
+				link.l1 = "Sure, they did! Ha! I'm fine!";
 				link.l1.go = "exit";
 				npchar.quest.return_isl = "true";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = "Good day, "+GetAddress_Form(NPChar)+"! First time here? I haven't seen you before... I hope that you will visit us more often, Sancho can offer an excellent variety of drinks. Yes, and my name is Nathalie and I help Sancho with the tavern's matters.";
-				link.l1 = TimeGreeting()+". My name is "+GetFullName(pchar)+". Glad to meet you. And you couldn't see me before. I have come here recently.";
+				dialog.text = "Good day, "+GetAddress_Form(NPChar)+"! First time here? I haven't seen you before... I hope you'll visit us more often, Sancho offers an excellent variety of drinks. Yes, and my name is Nathalie and I help Sancho with the tavern's affairs.";
+				link.l1 = TimeGreeting()+". My name is "+GetFullName(pchar)+". Glad to meet you. You couldn't have seen me before. I only arrived here recently.";
 				link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
 				dialog.text = "Ah, "+GetFullName(pchar)+"! "+TimeGreeting()+"! Want something?";
-				link.l1 = LinkRandPhrase("Got anything interesting to say?", "Has anything new happened on the island?", "Will you tell me the latest gossips?");
+				link.l1 = LinkRandPhrase("Got anything interesting to say?","Has anything new happened on the island?","Will you tell me the latest gossip?");
 				link.l1.go = "rumours_LSC";
 				link.l2 = "I want to ask you a few questions about the island.";
 				link.l2.go = "int_quests"; //информационный блок
@@ -45,10 +45,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting": // первая встреча
-			dialog.text = "Recently? Has another ship crashed? I haven't heard anything... Or haven't you arrived here just like monsieur Turam on the mast's wreckage? Oh, pardon me my curiosity, the nature of women, you know.";
-			link.l1 = "No, it's alright, Nathalie. I have arrived here on a barque but it has sunk. It was nice to meet you. See you around!";
+			dialog.text = "Recently? Has another ship crashed? I haven't heard anything... Or did you arrive here just like monsieur Turam, on the mast's wreckage? Oh, pardon my curiosity, it's the nature of women, you know.";
+			link.l1 = "No, it's all right, Nathalie. I arrived here on a barque, but it sank. It was nice to meet you. See you around!";
 			link.l1.go = "exit";
-			link.l2 = "No, it's alright. Just wanted to ask you a few questions about the island.";
+			link.l2 = "No, it's all right. Just wanted to ask you a few questions about the island.";
 			link.l2.go = "int_quests"; //информационный блок
 			NextDiag.TempNode = "First time";
 		break;
@@ -81,28 +81,28 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ansewer_1":
-			dialog.text = "Only positive things,  "+GetAddress_Form(NPChar)+". Sancho always has a great variety of drinks - from old wines to simple ale and rum. Several years ago he found a huge stock of vintage wines. Sancho had spent two months moving boxes with bottles to his store\nAnd now we are well supplied with wine only governors could afford that much back at the archipelago. Rum is not an issue either. Sancho can provide you not only with drinks, but also with fresh news, a good word of advice and a warm bed to spend a night.";
+			dialog.text = "Only good things,  "+GetAddress_Form(NPChar)+" Sancho always has a great variety of drinks - from old wines to simple ale and rum. Several years ago he found a huge stock of vintage wines. Sancho spent two months moving boxes of bottles to his store\nAnd now we are well supplied with wine only governors could afford back in the archipelago. Rum is not an issue either. Sancho can provide you not only with drinks, but also with fresh news, a good word of advice, and a warm bed for the night.";
 			link.l1 = "I see...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_1 = "true";
 		break;
 		
 		case "ansewer_2":
-			dialog.text = "Oh, that's a sad story. Seven years ago I ran away with my suitor from my parent's home and we decided to move to Belize from Santiago. The navigator made a mistake near Main, so we sailed in a wrong diraction to North and were caught by a storm. Our ship sunk not far from the outer ring\nMy suitor died that day just like most of the others. Me and survivors have started new lives here, on the Island.";
+			dialog.text = "Oh, that's a sad story. Seven years ago I ran away with my suitor from my parents' home and we decided to move to Belize from Santiago. The navigator made a mistake near Main, so we sailed in the wrong direction to the north and were caught by a storm. Our ship sank not far from the outer ring\nMy suitor died that day, just like most of the others. The survivors and I started new lives here, on the Island.";
 			link.l1 = "Sad story...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_2 = "true";
 		break;
 		
 		case "ansewer_3":
-			dialog.text = "Quite a lot. Clans of Rivados and Narwhals are strong in numbers, they have been living here for decades. There are not so many common people, but the tavern is full every night. I barely manage to serve drinks.";
+			dialog.text = "Quite a lot. The Rivados and Narwhal clans are strong in numbers; they've been living here for decades. There aren't many common folk, but the tavern is full every night. I barely manage to serve drinks.";
 			link.l1 = "Really? Interesting.";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_3 = "true";
 		break;
 		
 		case "ansewer_4":
-			dialog.text = "And why should we? There are a lot of new faces coming very often. I don't even know how many of us live here. Sometimes I see a man for the first time and he tells me that he has been living here for a year.";
+			dialog.text = "And why should we? There are a lot of new faces coming in very often. I don't even know how many of us live here. Sometimes I see a man for the first time and he tells me he's been living here for a year.";
 			link.l1 = "Well...";
 			link.l1.go = "int_quests";
 			npchar.quest.answer_4 = "true";
@@ -112,7 +112,7 @@ void ProcessDialogEvent()
 //----------------------------------------- специальные реакции -----------------------------------------------
 		//обнаружение ГГ в сундуках
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("What are you doing there, huh? Thief!", "Just look at that! As soon as I was lost in contemplation, you decided to check my chest!", "Decided to check my chests? You won't get away with it!");
+			dialog.text = LinkRandPhrase("What are you doing there, huh? Thief!","Just look at that! As soon as I got lost in contemplation, you decided to check my chest!","Decided to check my chests? You won't get away with it!");
 			link.l1 = "Damn it!";
 			link.l1.go = "fight";
 		break;
@@ -140,8 +140,8 @@ void ProcessDialogEvent()
 		
 		//замечание по обнажённому оружию
 		case "LSCNotBlade":
-			dialog.text = LinkRandPhrase("Listen, you'd better take your weapons away. It makes me nervous.", "You know, running with blade is not tolerated here. Take it away.", "Listen, don't play a medieval knight running around with a weapon. Take it away, it doesn't suit you...");
-			link.l1 = LinkRandPhrase("Fine.", "Alright.", "As you say...");
+			dialog.text = LinkRandPhrase("Listen, you'd better put your weapons away. They make me nervous.","You know, running around with a blade is not tolerated here. Put it away.","Listen, don't act like a medieval knight running around with a weapon. Put it away, it doesn't suit you...");
+			link.l1 = LinkRandPhrase("Fine.","Alright.","As you say...");
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";
 		break;	
@@ -149,13 +149,13 @@ void ProcessDialogEvent()
 		case "CitizenNotBlade":
 			if (loadedLocation.type == "town")
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Listen, I am the citizen of the city and I'd ask you to sheathe your blade.", "Listen, I am the citizen of the city and I'd ask you to sheathe your blade.");
-				link.l1 = LinkRandPhrase("Fine.", "Alright.", "As you say...");
+				dialog.text = NPCharSexPhrase(NPChar,"Listen, I am a citizen of this city and I'd ask you to sheathe your blade.","Listen, I am a citizen of this city and I'd ask you to sheathe your blade.");
+				link.l1 = LinkRandPhrase("Fine.","Alright.","As you say...");
 			}
 			else
 			{
-				dialog.text = NPCharSexPhrase(NPChar, "Be careful, pal, while running with a weapon. I can get nervous...", "I don't like when people are walking in front of me with their weapon ready. It scares me...");
-				link.l1 = RandPhraseSimple("Got it.", "I am taking it away.");
+				dialog.text = NPCharSexPhrase(NPChar,"Be careful, pal, running around with a weapon. It makes me nervous...","I don't like it when people walk in front of me with their weapons drawn. It frightens me...");
+				link.l1 = RandPhraseSimple("Got it.","I am taking it away.");
 			}
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First Time";

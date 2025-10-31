@@ -5,11 +5,13 @@
 #include "characters\characters_face.c"
 #include "characters\characters.h"
 #include "characters\characterUtilite.c"
-#include "characters\RPGUtilite.c" //boal
+#include "characters\fellowsUtilite.c"
+#include "characters\RPG\rpg.c"
 #include "characters\GeneratorUtilite.c" //boal
 #include "characters\TravelMap.c" //navy
 #include "characters\QuestsUtilite.c" //boal
 #include "characters\LSC_Q2Utilite.c"
+#include "characters\generator\generator.c"
 
 object chrFindNearCharacters[MAX_CHARS_IN_LOC];
 bool isBoardingLoading = false;
@@ -181,12 +183,23 @@ bool CreateCharacter(ref character)
 
 	SendMessage(character, "lf", MSG_CHARACTER_SETFTGLEVEL, fgtlevel);
 	//Set character sex
-	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetSex", character.sex == "man");
+	int iSex = 1;
+	if(character.sex == "woman")
+		iSex = 2;
+	else if(character.sex == "skeleton")
+		iSex = 3;
+	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetSex", iSex);
 	//
 	AddCharacterLocatorGroup(character, "goto");
 	BeginChangeCharacterActions(character);
 	SetDefaultFight(character);
 	EndChangeCharacterActions(character);
+	// evganat - выставление кастомных баров и иконок архетипов при загрузке персонажа
+	SendMessage(character, "lss", MSG_CHARACTER_EX_MSG, "SetBarTexture", "LocEfx\\bars_back.tga");
+	GEN_OverrideAppearance(character, -1);
+	int iMass = 100;
+	if (HasPerk(character, "Dodgy")) iMass *= (1 + PERK_VALUE_DODGY);
+	SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetMass", makeint(iMass));
 	return true;
 }
 
@@ -394,101 +407,7 @@ void SetDialogStayIdle(ref character)
 	character.actions.idle.i8 = "dialog_stay8";
 }
 // boal -->
-void SetOverloadNormWalk(ref character)
-{
-	// Jason: ну хоть таким способом решим проблему...
-	bool bOk = (GetItemsWeight(character) > GetMaxItemsWeight(character)) && (!IsEquipCharacterByArtefact(character, "totem_06"))
-	if (bOk || character.model == "protocusto" || CheckAttribute(character, "GenQuest.CantRun"))
-	{
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", true);
-	}
-	else
-	{
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", false);
-		if(CheckAttribute(character, "systeminfo.notgrus"))
-		{
-			DeleteAttribute(character, "systeminfo.notgrus");
-		}
-	}
-	
-    //if(GetItemsWeight(character) > GetMaxItemsWeight(character) && !IsEquipCharacterByArtefact(character, "totem_06"))
- /*   {
-        character.actions.walk = "walk";
-	    character.actions.backwalk = "back walk";
-	    character.actions.run = "walk";
-	    character.actions.backrun = "back run";
-        character.actions.stsUp = "stairs up";
-        character.actions.stsUpRun = "stairs up";
-        character.actions.stsDown = "stairs down";
-        character.actions.stsDownRun = "stairs down";
-		if(sti(character.index) == GetMainCharacterIndex())
-		{
-			bool bAtSea = bSeaActive && !bAbordageStarted;
-			if(GetItemsWeight(character) > GetMaxItemsWeight(character) && !IsEquipCharacterByArtefact(character, "totem_06") && !isEntity(&WorldMap) && !bAtSea)
-			{
-				if(!CheckAttribute(character, "systeminfo.notgrus"))
-				{
-					character.systeminfo.notgrus = true;
-					notification(XI_ConvertString("GrusNote"), "Grus");
-				}
-			}
-		}
-    }	*/
-	
-}
 
-void SetOverloadFight(ref character, string tag)
-{
-    //if(GetItemsWeight(character) > GetMaxItemsWeight(character) && !IsEquipCharacterByArtefact(character, "totem_06"))
-	bool bOk = (GetItemsWeight(character) > GetMaxItemsWeight(character)) && (!IsEquipCharacterByArtefact(character, "totem_06"))
-	if (bOk || character.model == "protocusto" || CheckAttribute(character, "GenQuest.CantRun"))
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", true);
-	else
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", false);
-	/*
-    {
-       character.actions.fightwalk = "fight walk" + tag;
-	   character.actions.fightbackwalk = "fight back walk" + tag;
-	   character.actions.fightrun = "fight walk" + tag;
-	   character.actions.fightbackrun = "fight back walk" + tag;
-    }
-	*/
-}
-
-void CheckAndSetOverloadMode(ref character)
-{
-	if (CheckAttribute(character, "actions")) // сундуки не трогаем
-	{
-//        BeginChangeCharacterActions(character);
-        //if(GetItemsWeight(character) > GetMaxItemsWeight(character) && !IsEquipCharacterByArtefact(character, "totem_06"))
-		bool bOk = (GetItemsWeight(character) > GetMaxItemsWeight(character)) && (!IsEquipCharacterByArtefact(character, "totem_06"))
-		if (bOk || character.model == "protocusto" || CheckAttribute(character, "GenQuest.CantRun"))
-			SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", true);
-		else
-			SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", false);
-/*        {
-            character.actions.walk = "walk";
-	        character.actions.backwalk = "back walk";
-	        character.actions.run = "walk";
-	        character.actions.backrun = "back run";
-            character.actions.stsUp = "stairs up";
-            character.actions.stsUpRun = "stairs up";
-            character.actions.stsDown = "stairs down";
-            character.actions.stsDownRun = "stairs down";
-
-            character.actions.fightwalk = "fight walk";
-	        character.actions.fightbackwalk = "fight back walk";
-	        character.actions.fightrun = "fight walk";
-	        character.actions.fightbackrun = "fight back walk";
-        }
-        else
-        {
-            SetDefaultNormWalk(character);
-            SetDefaultFight(character);
-        }	*/
-//        EndChangeCharacterActions(character);
-    }
-}
 // boal <--
 void SetDefaultNormWalk(ref character)
 {
@@ -567,12 +486,8 @@ void SetDefaultNormWalk(ref character)
     string tagVert = "";
     for(i=0; i<2; i++)
     {
-        sAttr = "walk_stairs_";
-        sAnim = "walk stairs ";
         if(i == 0)	tagVert = "up";
         else		tagVert = "down";
-        sAttr += tagVert;
-        sAnim += tagVert;
         for(j=0; j<2; j++)
         {
             for(k=0; k<4; k++)
@@ -584,21 +499,18 @@ void SetDefaultNormWalk(ref character)
                     case 2:	tagDirection = "right";		break;
                     case 3:	tagDirection = "left";		break;
                 }
-                sAttr = tagDirection + "_" + sAttr;
-                sAnim = tagDirection + " " + sAnim;
                 if(j == 1)
-                {
-                    sAttr = "fight_" + sAttr;
-                    sAnim = "fight " + sAnim;
-                }
+                    tagFightMode = "fight";
+				else
+					tagFightMode = "";
+				sAttr = StrConCheck(tagFightMode, "_") + tagDirection + "_walk_stairs_" + tagVert;
+				sAnim = StrConCheck(tagFightMode, " ") + tagDirection + " walk stairs " + tagVert; 
                 character.actions.(sAttr) = sAnim;
             }
         }
     }
 
-    // boal 21.01.2004 -->
-	SetOverloadNormWalk(character);
-	// boal 21.01.2004 <--
+	CheckAndSetOverloadMode(character);
 
 	character.actions.turnLeft = "turn left";
 	character.actions.turnRight = "turn right";
@@ -619,9 +531,7 @@ void SetDefaultFight(ref character)
 	character.actions.fightbackwalk = "fight back walk" + tag;
 	character.actions.fightbackrun = "fight back run" + tag;
 	
-	// boal 21.01.2004 -->
-	SetOverloadFight(character, tag);
-	// boal 21.01.2004 <--
+	CheckAndSetOverloadMode(character);
 
 	//Действия в режиме боя
 	//Fast (max 3) --------------------------------------------------
@@ -648,7 +558,8 @@ void SetDefaultFight(ref character)
 	character.actions.attack_feintc.a3 = "attack_feintc_3" + tag;
 	character.actions.attack_feintc.a4 = "attack_feintc_4" + tag;
 	//Shot--------------------------------------------------
-	character.actions.shot = "Shot" + tag;
+	
+//	character.actions.shot = "Shot" + tag;
 	//Normal hit (max 3) --------------------------------------------------
 	character.actions.hit_attack.h1 = "hit_attack_1" + tag;
 	character.actions.hit_attack.h2 = "hit_attack_2" + tag;
@@ -669,7 +580,20 @@ void SetDefaultFight(ref character)
 	character.actions.block_back_right = "block back-right walk" + tag;
 	character.actions.block_back_left = "block back-left walk" + tag;
 	character.actions.blockhit = "block_hit" + tag;
-	character.actions.blockbreak = "block_break" + tag;
+	
+	// стаггеры в блоке
+	string sAttr;
+	for(int i = 1; i <= 3; i++)	// лочим на 3 вариации
+	{
+		sAttr = "a" + i;
+		character.actions.blockbreak.(sAttr) = "block_break_" + i + tag;
+		character.actions.blockbreak_back.(sAttr) = "block_break_back_" + i + tag;
+		character.actions.blockbreak_bypass.(sAttr) = "block_break_bypass_" + i + tag;
+		character.actions.blockbreak_fire.(sAttr) = "block_break_fire_" + i + tag;
+	}
+	character.actions.attack_block_bypass.a1 = "attack_block_bypass_1";
+	character.actions.attack_power_break.a1 = "attack_power_break_1";
+	character.actions.attack_power_round.a1 = "attack_power_round_1";
 
 	character.actions.block_axe = "block_axe";
 	character.actions.block_axe_forward = "block_axe forward walk" + tag;
@@ -704,13 +628,13 @@ void SetDefaultFight(ref character)
 	//Дразнилка после отскока в сабельном, просто айдл в мушкетном
 	character.actions.fightidle.i8 = "fight stand_8" + tag;
 	
-	character.actions.aim_start = "aiming start" + tag;
+/*	character.actions.aim_start = "aiming start" + tag;
 	character.actions.aiming = "aiming" + tag;
 	character.actions.aim_shot = "aiming shot" + tag;
-	character.actions.aim_end = "aiming end" + tag;
+	character.actions.aim_end = "aiming end" + tag;	*/
 	character.actions.aim_hit1 = "hit_aiming_1" + tag;
 	character.actions.aim_hit2 = "hit_aiming_2" + tag;
-	character.actions.fast_shot = "fast shot" + tag;
+//	character.actions.fast_shot = "fast shot" + tag;
 }
 
 void SetDefaultDead(ref character)
@@ -739,6 +663,8 @@ void SetDefaultFightDead(ref character)
 	character.actions.fightdead.d2 = "death_1" + tag;
 	character.actions.fightdead.d3 = "death_2" + tag;
 	character.actions.fightdead.d4 = "death_3" + tag;
+	if(character.model.animation == "man")
+		character.actions.fightdead.d5 = "death_11";
 }
 
 void SetHuberAnimation(ref character)
@@ -808,105 +734,10 @@ void Character_SetAnimations()
 {
 	aref character = GetEventData();
 	string tag = GetEventData();
-	
-	if(bMainMenu) return;
-	/* aref arFader;
-	if(GetEntity(arFader,"fader")) return; */
+
+	if (bMainMenu) return;
 	if (!IsEntity(&character)) return;
-	
-	bool bOk = (GetItemsWeight(character) > GetMaxItemsWeight(character)) && (!IsEquipCharacterByArtefact(character, "totem_06"))
-	if (bOk || character.model == "protocusto" || CheckAttribute(character, "GenQuest.CantRun"))
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", true);
-	else
-		SendMessage(character, "lsl", MSG_CHARACTER_EX_MSG, "SetOverload", false);
-/*	
-	{
-		BeginChangeCharacterActions(character);
-		
-		//Rosarak. Нужно обновить лишь те экшены, которые меняются при перегрузе,
-		//отличны от дефолтных, либо чьё количество захардкожено в движке в виде
-		//numActionIdles, numFightActionIdles, numActionDead, numActionFightDead,
-		//numAttackFast, numAttackForce, numAttackRound, numAttackBreak,
-		//numAttackFeint, numParry, numHits, иначе сбросятся num-счётчики
-		
-		//Для перегруза
-		character.actions.run = "walk";
-		character.actions.backrun = "back walk";
-		character.actions.stsUpRun = "stairs up";
-		character.actions.stsUpRunBack = "back stairs up";
-		character.actions.stsDownRun = "stairs down";
-		character.actions.stsDownRunBack = "back stairs down";
-		character.actions.fightwalk = "fight walk" + tag;
-		character.actions.fightrun  = "fight walk" + tag;
-		character.actions.fightbackwalk = "fight back walk" + tag;
-		character.actions.fightbackrun  = "fight back walk" + tag;
-		
-		//С num-счётчиком
-		character.actions.attack_fast.a1 = "attack_fast_1" + tag;
-		character.actions.attack_fast.a2 = "attack_fast_2" + tag;
-		character.actions.attack_fast.a3 = "attack_fast_3" + tag;
-		
-		character.actions.attack_force.a1 = "attack_force_1" + tag;
-		character.actions.attack_force.a2 = "attack_force_2" + tag;
-		character.actions.attack_force.a3 = "attack_force_3" + tag;
-		character.actions.attack_force.a4 = "attack_force_4" + tag;
-		
-		character.actions.attack_round.a1 = "attack_round_1" + tag;
-
-		character.actions.attack_break.a1 = "attack_break_1" + tag;
-		
-		character.actions.attack_feint.a1 = "attack_feint_1" + tag;
-		character.actions.attack_feint.a2 = "attack_feint_2" + tag;
-		character.actions.attack_feint.a3 = "attack_feint_3" + tag;
-		character.actions.attack_feint.a4 = "attack_feint_4" + tag;
-		
-		character.actions.attack_feintc.a1 = "attack_feintc_1" + tag;
-		character.actions.attack_feintc.a2 = "attack_feintc_2" + tag;
-		character.actions.attack_feintc.a3 = "attack_feintc_3" + tag;
-		character.actions.attack_feintc.a4 = "attack_feintc_4" + tag;
-		
-		character.actions.hit_attack.h1 = "hit_attack_1" + tag;
-		character.actions.hit_attack.h2 = "hit_attack_2" + tag;
-		character.actions.hit_attack.h3 = "hit_attack_3" + tag;	*/
-		/* if(character.model.animation == "man")
-		{
-			character.actions.hit_attack.h4 = "hit_attack_4" + tag;
-		} */
-		
-/*		character.actions.parry.p1 = "parry_1" + tag;
-		character.actions.parry.p2 = "parry_2" + tag;
-		character.actions.parry.p3 = "parry_3" + tag;
-		character.actions.parry.p4 = "parry_4" + tag;
-
-		character.actions.fightidle.i1 = "fight stand_1" + tag;
-		character.actions.fightidle.i2 = "fight stand_2" + tag;
-		character.actions.fightidle.i3 = "fight stand_3" + tag;
-		character.actions.fightidle.i4 = "fight stand_4" + tag;
-		character.actions.fightidle.i5 = "fight stand_5" + tag;
-		character.actions.fightidle.i6 = "fight stand_6" + tag;
-		character.actions.fightidle.i7 = "fight stand_7" + tag;
-		character.actions.fightidle.i8 = "fight stand_8" + tag;
-		
-		character.actions.fightdead.d1 = "death_0" + tag;
-		character.actions.fightdead.d2 = "death_1" + tag;
-		character.actions.fightdead.d3 = "death_2" + tag;
-		character.actions.fightdead.d4 = "death_3" + tag;
-		
-		character.actions.aim_start = "aiming start" + tag;
-		character.actions.aiming = "aiming" + tag;
-		character.actions.aim_shot = "aiming shot" + tag;
-		character.actions.aim_end = "aiming end" + tag;
-		character.actions.aim_hit1 = "hit_aiming_1" + tag;
-		character.actions.aim_hit2 = "hit_aiming_2" + tag;
-		character.actions.fast_shot = "fast shot" + tag;
-		
-		//С num-счётчиком, но можно оставить дефолтные,
-		//либо будет переназначено в темплейте поведения
-		//numActionIdles - character.actions.idle
-		//numActionDead  - character.actions.dead
-		
-		EndChangeCharacterActionsBlend(character); //Rosarak. Временно другой метод
-	}	*/
+	CheckAndSetOverloadMode(character);
 }
 
 void SetPriorityMode(ref chr, int iPMode)
@@ -963,7 +794,7 @@ string StrConCheck(string str1, string str2)
 	return "";
 }
 
-// Модификаторы коллизий (to_do: мб это на битмаску посадить?)
+// Модификаторы коллизий
 void SetBonusPush(ref chr, bool bSet)
 {
     if(bSet) chr.col_modif.BonusPush = "";
@@ -983,4 +814,49 @@ void IgnoreCollision(ref chr, bool bSet)
     if(bSet) chr.col_modif.IgnoreCollision = "";
     else DeleteAttribute(chr, "col_modif.IgnoreCollision");
     SendMessage(chr, "lsl", MSG_CHARACTER_EX_MSG, "IgnoreCollision", bSet);
+}
+
+// Методы для синхронизации скорости воспроизведения
+// Для анимаций с несколькими актёрами
+void SetPlaybackDlt(ref chr, float dlt)
+{
+    wRange(&dlt, -0.05, 0.05);
+    SendMessage(chr, "lsf", MSG_CHARACTER_EX_MSG, "SetPlaybackDlt", dlt);
+}
+
+// Скорость воспроизведения по умолчанию как указана в экшене из ani
+void SyncPlaybackDlt(ref chr1, ref chr2)
+{
+    SendMessage(chr1, "lsf", MSG_CHARACTER_EX_MSG, "SetPlaybackDlt", 0.0);
+    SendMessage(chr2, "lsf", MSG_CHARACTER_EX_MSG, "SetPlaybackDlt", 0.0);
+}
+
+// [-0.05, 0.05]
+float GenPlaybackDlt()
+{
+    return frnd()*0.1 - 0.05;
+}
+
+void SetAttackSpeed(ref chr, float speed)
+{
+	SetCharacterActionSpeed(chr, FORCE_STRIKE, speed);
+	SetCharacterActionSpeed(chr, FAST_STRIKE,  speed);
+	SetCharacterActionSpeed(chr, ROUND_STRIKE, speed);
+	SetCharacterActionSpeed(chr, BREAK_STRIKE, speed);
+}
+
+void SetCharacterActionAnimation(ref chr, string sAction, string sAnimation)
+{
+	BeginChangeCharacterActions(chr);
+	chr.actions.(sAction) = sAnimation;
+	chr.actions.(sAction).d1 = sAnimation;
+	EndChangeCharacterActions(chr);
+}
+
+// Для ручного управления
+void SetPCharRank(int val)
+{
+    int old = sti(PChar.rank);
+    PChar.rank = val;
+    if (old < val) Event("PlayerLevelUp");
 }

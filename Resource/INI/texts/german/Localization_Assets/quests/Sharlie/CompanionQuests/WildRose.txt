@@ -1,0 +1,13 @@
+WildRose_1 {Habt ihr es gehört? Vor ein paar Tagen sind zwei Dutzend Sklaven von Bishops Plantage geflohen. Man sagt, sie haben nachts die Ketten durchgesägt, einige Wachen getötet und sind in den Dschungel entkommen. Aber wohin sollten sie schon von der Insel fliehen? Natürlich hat man sie schnell aufgespürt – einige fand man in einer Höhle, andere bei Kap Ragged Point. Fast alle wurden erschossen. Allerdings gab es auch Verluste bei den Soldaten. Doch man sagt, am meisten hat Bishop nicht das geärgert, sondern dass er die Flüchtlinge nicht eigenhändig bestrafen konnte.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kaspar}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jérôme}
+WildRose_9 {Souvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kaspar}
+WildRose_12 {Ketzer}
+WildRose_13 {Der Trupp sollte bereits vor Ort sein...}

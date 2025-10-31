@@ -1,361 +1,76 @@
-FMQ_1
-{
-Bertrand
-}
-FMQ_2
-{
-Pinette
-}
-
-FMQ_3
-{
-Carlos
-}
-FMQ_4
-{
-de Milyar
-}
-
-FMQ_5
-{
-Jean
-}
-FMQ_6
-{
-Deno
-}
-
-FMQ_7
-{
-Sario
-}
-
-FMQ_8
-{
-Juan
-}
-FMQ_9
-{
-Deno
-}
-
-FMQ_10
-{
-'Sario'
-}
-
-FMQ_11
-{
-~ As for Pinette.. Hell with him, the scum banker won't have him.
-}
-
-FMQ_12
-{
-~ The scum banker will help me to sort this out under a threat of exposure - Pinette's letter is a very serious argument. I should head to Guadeloupe and enter the town through the city gates at night.
-}
-
-FMQ_13
-{
-Benseсho
-}
-
-FMQ_14
-{
-trade convoy from San Jose
-}
-
-FMQ_15
-{
-Exploration mode: timer extended. Complete the quest!
-}
-
-FMQ_16
-{
-Evening has come...@<NewStr()>The resin was unloaded at the shipyard...
-}
-
-FMQ_17
-{
-Topaz
-}
-
-FMQ_18
-{
-Sounds of alarm on the Topaz tartane!
-}
-
-FMQ_19
-{
-You are free to land on shore
-}
-
-FMQ_20
-{
-Exploration mode: the quest is not failed
-}
-
-FMQ_21
-{
-Caspar
-}
-FMQ_22
-{
-Gratton
-}
-
-FMQ_23
-{
-Zeepard
-}
-
-FMQ_24
-{
-English raiding party tried to infiltrate our prison but got into a trap arranged by our vigilant commandant. Now every Englishman is locked behind bars, ha ha!
-}
-
-FMQ_25
-{
-Hear, hear. They caught British raiding party not long ago. They wanted to free their countrymen from our prison but got locked there as well instead!
-}
-
-FMQ_26
-{
-Filippe
-}
-FMQ_27
-{
-Jaсobsen
-}
-
-FMQ_28
-{
-British raiding party had come to our island yet our vigilant commandant found and slain them all. This is big!
-}
-
-FMQ_29
-{
-Have you heard? There was a skirmish outside the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!
-}
-
-FMQ_30
-{
-Ship silk + 200
-}
-
-FMQ_31
-{
-Oh, it's you! Bravo, captain! You were brave enough to face English spies armed to the teeth!
-}
-
-FMQ_32
-{
-Our powers praise you highly, captain. And for reasons: helping to eliminate English spies is a big deal!
-}
-
-FMQ_33
-{
-The English landing came to our island, but our vigilant commandant did not yawn, found all the villains and killed them. That's it!
-}
-
-FMQ_34
-{
-Have you heard? There was a fight outside the city. We found English saboteurs. They refused to surrender, and were killed by soldiers. Well done to our commandant!
-}
-
-FMQ_35
-{
-Alarm in the town!
-}
-
-FMQ_36
-{
-What insolence! The Brits infiltrated our town at night! And yet our commandant had them found and killed. Big deal!
-}
-
-FMQ_37
-{
-Have you heard? There was a skirmish in the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!
-}
-
-FMQ_38
-{
-Вы не поставили свое судно в бухту!
-}
-
-FMQ_39
-{
-Hans
-}
-FMQ_40
-{
-Shulte
-}
-
-FMQ_41
-{
-The Zeepard corvette is on us!
-}
-
-FMQ_42
-{
-Have you heard about the mess happening here? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.
-}
-
-FMQ_43
-{
-Have you heard?? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.
-}
-
-FMQ_44
-{
-Exploration mode: timer extended. Drop off passengers at their destination!
-}
-
-FMQ_45
-{
-Oh, it's you! Bravo, captain! You were brave enough to assist our marines right in the Dutch den!
-}
-
-FMQ_46
-{
-The governor praise you highly, captain. And for reasons: helping Fox's men to save the imprisoned officers is a big deal!
-}
-
-FMQ_47
-{
-Marceline
-}
-FMQ_48
-{
-Levasseur
-}
-
-FMQ_49
-{
-Claude
-}
-FMQ_50
-{
-Durand
-}
-
-FMQ_51
-{
-Ugo
-}
-FMQ_52
-{
-
-}
-
-FMQ_53
-{
-interceptor
-}
-
-FMQ_54
-{
-Domingo Albalate has left your ship
-}
-
-FMQ_55
-{
-You have found a heavy accounting book
-}
-
-FMQ_56
-{
-Luis
-}
-FMQ_57
-{
-Ortiz
-}
-
-FMQ_58
-{
-Fudroyan
-}
-
-FMQ_59
-{
-Gregoire
-}
-FMQ_60
-{
-Valinnie
-}
-
-FMQ_61
-{
-Prosper
-}
-FMQ_62
-{
-Trubal
-}
-
-FMQ_63
-{
-Johnny
-}
-FMQ_64
-{
-
-}
-
-FMQ_65
-{
-You have spared 20 000 pesos for Selina Trubal
-}
-
-FMQ_66
-{
-Felicien
-}
-FMQ_67
-{
-Gronier
-}
-
-FMQ_68
-{
-Exploration mode: quest duration doubled
-}
-
-FMQ_69
-{
-Exploration mode: deleted the timer
-}
-
-FMQ_70
-{
-Hans
-}
-FMQ_71
-{
-Shulte
-}
-
-FMQ_72
-{
-Silvestre
-}
-FMQ_73
-{
-McCoy
-}
-
-FMQ_74
-{
-Domingo
-}
-FMQ_75
-{
-Albalate
-}
-
-FMQ_76
-{
-Several hours later...@<NewStr()>The goods were delivered to the shore
-}
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ As for Pinette.. Hell with him, the scum banker won't have him.}
+FMQ_12 {~ The scum banker will help me to sort this out under a threat of exposure - Pinette's letter is a very serious argument. I should head to Guadeloupe and enter the town through the city gates at night.}
+FMQ_13 {Benseсho}
+FMQ_14 {trade convoy from San Jose}
+FMQ_15 {Exploration mode: timer extended. Complete the quest!}
+FMQ_16 {Evening has come...@<NewStr()>The resin was unloaded at the shipyard...}
+FMQ_17 {Topaz}
+FMQ_18 {Sounds of alarm on the Topaz tartane!}
+FMQ_19 {You are free to land on shore}
+FMQ_20 {Exploration mode: the quest is not failed}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {English raiding party tried to infiltrate our prison but got into a trap arranged by our vigilant commandant. Now every Englishman is locked behind bars, ha ha!}
+FMQ_25 {Hear, hear. They caught British raiding party not long ago. They wanted to free their countrymen from our prison but got locked there as well instead!}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {British raiding party had come to our island yet our vigilant commandant found and slain them all. This is big!}
+FMQ_29 {Have you heard? There was a skirmish outside the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!}
+FMQ_30 {Ship silk + 200}
+FMQ_31 {Oh, it's you! Bravo, captain! You were brave enough to face English spies armed to the teeth!}
+FMQ_32 {Our powers praise you highly, captain. And for reasons: helping to eliminate English spies is a big deal!}
+FMQ_33 {The English landing came to our island, but our vigilant commandant did not yawn, found all the villains and killed them. That's it!}
+FMQ_34 {Have you heard? There was a fight outside the city. We found English saboteurs. They refused to surrender, and were killed by soldiers. Well done to our commandant!}
+FMQ_35 {Alarm in the town!}
+FMQ_36 {What insolence! The Brits infiltrated our town at night! And yet our commandant had them found and killed. Big deal!}
+FMQ_37 {Have you heard? There was a skirmish in the town. They have found English raiding party. Brits refused to surrender and were killed in action. Good job, commandant!}
+FMQ_38 {Вы не поставили свое судно в бухту!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {The Zeepard corvette is on us!}
+FMQ_42 {Have you heard about the mess happening here? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.}
+FMQ_43 {Have you heard?? The governor is outraged. English spies have freed their countrymen from our prison! They say some French had something to do with this.}
+FMQ_44 {Exploration mode: timer extended. Drop off passengers at their destination!}
+FMQ_45 {Oh, it's you! Bravo, captain! You were brave enough to assist our marines right in the Dutch den!}
+FMQ_46 {The governor praise you highly, captain. And for reasons: helping Fox's men to save the imprisoned officers is a big deal!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {interceptor}
+FMQ_54 {Domingo Albalate has left your ship}
+FMQ_55 {You have found a heavy accounting book}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {You have spared 20 000 pesos for Selina Trubal}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Exploration mode: quest duration doubled}
+FMQ_69 {Exploration mode: deleted the timer}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Several hours later...@<NewStr()>The goods were delivered to the shore}

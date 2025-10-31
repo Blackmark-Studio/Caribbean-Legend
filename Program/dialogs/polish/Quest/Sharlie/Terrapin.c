@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "sister":
-			dialog.text = "Ha! Jesteś pierwszym człowiekiem, który nazwał moją siostrę 'piękną'. Bóg dał jej ciało grenadiera i róg Jerycha zamiast głosu. Nasza Molly potrafi o siebie zadbać\nAle kreatywność naszego Pana nie zakończyła się na wszystkim poniżej jej brody. Nie, nie, najlepszą rzeczą, którą zrobił, było umieszczenie włochatej, pokrytej ospą twarzy naszego zmarłego ojca powyżej jej piersi. I muszę powiedzieć, panie, twarz mojego starego człowieka sprawiała, że konie mdlały.";
+			dialog.text = "Ha! Jesteś pierwszym człowiekiem, który nazwał moją siostrę 'piękną'. Bóg dał jej ciało grenadiera i róg Jerycha zamiast głosu. Nasza Molly potrafi o siebie zadbać\nAle kreatywność naszego Pana nie zakończyła się na wszystkim poniżej jej brody. Nie, nie, najlepszą rzeczą, którą zrobił, było umieszczenie włochatej, pokrytej ospą twarzy naszego zmarłego ojca powyżej jej piersi. I muszę powiedzieć, panie, twarz mojego starego sprawiała, że konie mdlały.";
 			link.l1 = "Widzę, że nie jesteś szczególnie zmartwiony...";
 			link.l1.go = "sister_1";
 		break;
@@ -102,21 +102,21 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rober_2":
-			dialog.text = "Do diabła! Pierdol tego pijanego wieprza!... Nie udało mi się...";
+			dialog.text = "Do diabła! Jebać tego pijanego wieprza!... Nie udało mi się...";
 			link.l1 = "Masz rację. Twój marynarz miał niewyparzoną gębę, ale jego plotki nie dotarły nigdzie dalej niż do mnie. I te plotki nie pójdą dalej, skoro to ty się tym zająłeś, prawda?";
 			link.l1.go = "rober_3";
 		break;
 		
 		case "rober_3":
-			dialog.text = "Caramba! Teraz cię rozpoznaję! To ty zrobiłeś bigos z pułkownika Doileya i przejąłeś całą jego wyspę! Byłeś zamieszany w jakieś wielkie interesy z Holenderską Kompanią Zachodnioindyjską, ocierasz się o barona z Zachodnich Indii.... Twoje imię to... "+GetFullName(pchar)+", prawda?";
+			dialog.text = "Karamba! Teraz cię rozpoznaję! To ty zrobiłeś bigos z pułkownika Doileya i przejąłeś całą jego wyspę! Byłeś zamieszany w jakieś wielkie interesy z Holenderską Kompanią Zachodnioindyjską, ocierasz się o barona z Zachodnich Indii.... Twoje imię to... "+GetFullName(pchar)+", prawda?";
 			link.l1 = "Posiadasz dość dokładne informacje. Tak, to ja. Ale czy mógłbyś się na chwilę uspokoić, Robercie?";
 			link.l1.go = "rober_4";
 		break;
 		
 		case "rober_4":
 			PlaySound("Voice\English\sharlie\Rober Marten-02.wav");
-			dialog.text = "Argh!  No jakże mam się uspokoić, gdy jeden z najsłynniejszych wilków morskich archipelagu zainteresował się mną, i nie tylko to, dowiedział się o moich interesach też! Co mnie, do cholery, podkusiło, by zaatakować tę brygantynę! Czego ode mnie chcesz?";
-			link.l1 = "Zamknij gębę i słuchaj mnie. Wygląda na to, że obaj chcemy głowy Levasseura na talerzu. Ten napuszony chełpliwiec urósł zbyt wysoko i rozzłościł poważnych ludzi. Zamierzam zmienić równowagę sił na wyspie i umieścić de Poincy'ego na jego miejscu, ale nie chcę rozlewać nadmiaru krwi moich rodaków, zwłaszcza z powodu jakiegoś brudnego złodzieja. Możesz mi pomóc. A ja mogę pomóc tobie i Thibautowi zachować wasze przywileje.";
+			dialog.text = "Argh!  No jakże mam się uspokoić, gdy jeden z najsłynniejszych wilków morskich archipelagu zainteresował się mną, i nie tylko to, dowiedział się też o moich interesach! Co mnie, do cholery, podkusiło, by zaatakować tę brygantynę! Czego ode mnie chcesz?";
+			link.l1 = "Zamknij gębę i posłuchaj mnie. Wygląda na to, że obaj chcemy głowy Levasseura na talerzu. Ten napuszony chełpliwiec urósł zbyt wysoko i rozzłościł poważnych ludzi. Zamierzam zmienić równowagę sił na wyspie i umieścić de Poincy'ego na jego miejscu, ale nie chcę rozlewać nadmiaru krwi moich rodaków, zwłaszcza z powodu jakiegoś brudnego złodzieja. Możesz mi pomóc. A ja mogę pomóc tobie i Thibautowi zachować wasze przywileje.";
 			link.l1.go = "rober_5";
 		break;
 		
@@ -127,13 +127,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rober_6":
-			dialog.text = "Tak. Musisz przekonać Thibaut, by rozstał się z dziewczyną. Poprosiłem go, by się nią zajął, dopóki nie dowiem się, kim jest ten diabeł, ale ta 'Panna Jones', czy jak jej tam, całkowicie zawróciła mu w głowie, a teraz Henry nawet ją przede mną ukrywa! Sprowadź mi tę czarującą syrenę, a zorganizuję dla ciebie spotkanie z Levasseur'em poza miastem. W tym momencie będziesz miał okazję go zasadzić. Będę czekał na Plaży Rybim Oku.";
+			dialog.text = "Tak. Musisz przekonać Thibauta, by rozstał się z dziewczyną. Poprosiłem go, by się nią zajął, dopóki nie dowiem się, kim jest ten diabeł, ale ta 'Panna Jones', czy jak jej tam, całkowicie zawróciła mu w głowie, a teraz Henry nawet ją przede mną ukrywa! Sprowadź mi tę czarującą syrenę, a zorganizuję dla ciebie spotkanie z Levasseur'em poza miastem. W tym momencie będziesz miał okazję go zasadzić. Będę czekał na Plaży Rybim Oku.";
 			link.l1 = "Umowa stoi. Teraz powiedz mi, jak złapać Thibauta.";
 			link.l1.go = "rober_7";
 		break;
 		
 		case "rober_7":
-			dialog.text = "Ludzie w tawernie mogą pokazać ci drogę do jego domu. Henri jest całkiem wyjątkowy. Zagruż mu ujawnieniem i zmusić, by przyprowadził dziewczynę do mnie. Tego samego dnia dam znać Levasseur, że jego siostrzeniec ukrywa rzadką piękność w miejskim lochu\nMój kurier znajdzie cię w tawernie. Po tym, jak nie uda mu się znaleźć Henriego, gubernator uda się do lochu z małym oddziałem, a ty będziesz miał okazję z nim porozmawiać.";
+			dialog.text = "Ludzie w karczmie mogą pokazać ci drogę do jego domu. Henri jest całkiem wyjątkowy. Zagroź mu ujawnieniem i zmusić, by przyprowadził dziewczynę do mnie. Tego samego dnia dam znać Levasseurowi, że jego siostrzeniec ukrywa rzadką piękność w miejskim lochu\nMój kurier znajdzie cię w karczmie. Po tym, jak nie uda mu się znaleźć Henriego, gubernator uda się do lochu z małym oddziałem, a ty będziesz miał okazję z nim porozmawiać.";
 			link.l1 = "Gdzie mam dostarczyć dziewczynę?";
 			link.l1.go = "rober_8";
 		break;
@@ -183,7 +183,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			sld.MultiFighter = 1.0+fMft; // мультифайтер
@@ -197,26 +197,26 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rober_abordage":
-			dialog.text = "Argh!   Nie spodziewałem się tego... Przyszedłeś po moją duszę, prawda, kumplu? Wszystko zrobiłem zgodnie z umową! Co do diabła?!";
+			dialog.text = "Argh! Nie spodziewałem się tego... Przyszedłeś po moją duszę, prawda, kamracie? Wszystko zrobiłem zgodnie z umową! Co do diabła?!";
 			link.l1 = "Masz na sobie wyrok, Robercie. Wyrok został mi powierzony do wykonania. Więc wypełniam swoje zadanie.";
 			link.l1.go = "rober_abordage_1";
 		break;
 		
 		case "rober_abordage_1":
 			dialog.text = "Ty demonie! To niemożliwe! Nie mógł wszystkiego odkryć tak szybko! I jak w ogóle to odkrył?!";
-			link.l1 = "Masz na myśli Lisa? Nie. On mnie nie przysłał. Pułkownik nadal nawet nie wie, że jego córkę uśmierciłeś. To twój stary kumpel Henry Thibaut chce cię martwego. On mnie wynajął.";
+			link.l1 = "Masz na myśli Fox'a? Nie. On mnie nie przysłał. Pułkownik nadal nawet nie wie, że jego córkę już uśmierciłeś. To twój stary kumpel Henry Thibaut chce cię martwego. On mnie wynajął.";
 			link.l1.go = "rober_abordage_2";
 		break;
 		
 		case "rober_abordage_2":
 			dialog.text = "Ten przeklęty katamit! Powinienem był nakarmić nim kraby, gdy był na 'Voltigeur'... Ile ci ten drań obiecał?";
-			link.l1 = "Nie codziennie człowiek dowiaduje się, jaka jest cena za jego głowę, prawda Robert? Thibaut wycenił cię na ćwierć miliona, ale przekonałem go, że jesteś wart więcej. Jesteś wart trzysta tysięcy srebrnych peso, mój przyjacielu. Czyż nie cieszysz się?";
+			link.l1 = "Nie codziennie człowiek dowiaduje się, jaka jest cena za jego głowę, prawda Robert? Thibaut wycenił cię na ćwierć miliona, ale przekonałem go, że jesteś wart więcej. Jesteś wart trzysta tysięcy srebrnych peso, mój przyjacielu. Nie cieszysz się?";
 			link.l1.go = "rober_abordage_3";
 		break;
 		
 		case "rober_abordage_3":
 			dialog.text = "Poczekaj chwilę... Zróbmy interes! Zapłacę ci więcej!";
-			link.l1 = "Jakimi pieniędzmi, Robercie? Jestem absolutnie pewny, że kłamiesz. Nie masz tyle pieniędzy, ile obiecał mi Henryk. A to i tak nie jest najważniejsze. Gdyby nie jeden fakt, odrzuciłbym jego propozycję, żeby cię ścigać i zakończyć twoje brudne interesy z Thibautem.";
+			link.l1 = "Jakimi pieniędzmi, Robercie? Jestem absolutnie pewny, że kłamiesz. Nie masz tyle pieniędzy, ile obiecał mi Henry. A to i tak nie jest najważniejsze. Gdyby nie jeden fakt, odrzuciłbym jego propozycję, żeby cię ścigać i zakończyć twoje brudne interesy z Thibautem.";
 			link.l1.go = "rober_abordage_4";
 		break;
 		
@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 		
 		case "rober_abordage_5":
 			PlaySound("Voice\English\sharlie\Rober Marten-03.wav");
-			dialog.text = "Cholera! Co jeszcze mogłem zrobić?! Nie mogłem pozwolić jej żyć i ukrywać jej w nieskończoność na łodzi! A kim ty jesteś... ty łobuzie, ty draniu, ty zabójco, by mnie pouczać o moralności! Spójrz na siebie! Na swoje 'metody'! Nie jesteś lepszy ode mnie!";
+			dialog.text = "Cholera! Co jeszcze mogłem zrobić?! Nie mogłem pozwolić jej żyć i ukrywać w nieskończoność na łodzi! A kim ty jesteś... ty łobuzie, ty draniu, ty zabójco, by mnie pouczać o moralności! Spójrz na siebie! Na swoje 'metody'! Nie jesteś lepszy ode mnie!";
 			link.l1 = "Dosyć. Martene, dobywaj ostrza! Czas to zakończyć.";
 			link.l1.go = "rober_abordage_6";
 		break;
@@ -251,14 +251,14 @@ void ProcessDialogEvent()
 		case "tibo":
 			pchar.quest.Terrapin_LateTortuga.over = "yes"; //снять таймер
 			PlaySound("Voice\English\sharlie\Henry Thibault-02.wav");
-			dialog.text = "Co robisz w moim domu, sir?";
-			link.l1 = TimeGreeting()+", monsieur Thibaut. Jestem tutaj w imieniu człowieka, którego znacie, kapitana Roberta Martene'a.";
+			dialog.text = "Co robisz w moim domu, monsieur?";
+			link.l1 = TimeGreeting()+", monsieur Thibaut. Jestem tutaj w imieniu człowieka, którego znasz, kapitana Roberta Martene'a.";
 			link.l1.go = "tibo_1";
 		break;
 		
 		case "tibo_1":
 			dialog.text = "Hm. I? Co z tego?";
-			link.l1 = "Kapitan Martene prosi o zaszczyt twojego towarzystwa właśnie teraz na Plaży Rybne Oko. Ale nie w pojedynkę. Chciałby również zobaczyć Molly Jones w twoim towarzystwie. Rozumiesz, co mam na myśli?";
+			link.l1 = "Kapitan Martene prosi o zaszczyt twojego towarzystwa właśnie teraz na Plaży Rybiego Oka. Ale nie w pojedynkę. Chciałby również zobaczyć Molly Jones w twoim towarzystwie. Rozumiesz, co mam na myśli?";
 			link.l1.go = "tibo_2";
 		break;
 		
@@ -282,7 +282,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_5":
-			dialog.text = "Caramba! Jak mój wujek mógł się o tym dowiedzieć?";
+			dialog.text = "Karamba! Jak mój wujek mógł się o tym dowiedzieć?";
 			link.l1 = "Języki, Henry. Gadające języki. Nawet ja wiem, że ty i Robert złapaliście piękność, która zeszła z angielskiej brygantyny przejętej przez twego kumpla. Ukryliście ją przed Levasseurem... tsk tsk. Naprawdę wątpisz, że jestem jedynym, kto wie o tej historii?";
 			link.l1.go = "tibo_6";
 		break;
@@ -328,13 +328,13 @@ void ProcessDialogEvent()
 			pchar.quest.Terrapin_LateTortuga.over = "yes"; //снять таймер
 			PlaySound("Voice\English\sharlie\Henry Thibault-02.wav");
 			dialog.text = "Co tu robisz, panie? Nie zapraszałem cię tutaj.";
-			link.l1 = TimeGreeting()+", Monsieur Thibaut. Przybyłem od człowieka, którego znacie. Nazywa się kapitan Robert Martene.";
+			link.l1 = TimeGreeting()+", Monsieur Thibaut. Przybyłem od człowieka, którego znasz. Nazywa się kapitan Robert Martene.";
 			link.l1.go = "tibo_10";
 		break;
 		
 		case "tibo_10":
 			dialog.text = "Hm. I? Co z tego?";
-			link.l1 = "Kapitan Martene prosi o zaszczyt twego towarzystwa teraz na Plaży Rybie Oko. Ale nie samemu. Doceniłby również widok Molly Jones w twym towarzystwie. Rozumiesz, co mam na myśli?";
+			link.l1 = "Kapitan Martene prosi o zaszczyt twego towarzystwa teraz na Plaży Rybiego Oka. Ale nie samemu. Doceniłby również widok Molly Jones w twym towarzystwie. Rozumiesz, co mam na myśli?";
 			link.l1.go = "tibo_11";
 		break;
 		
@@ -346,19 +346,19 @@ void ProcessDialogEvent()
 		
 		case "tibo_12":
 			dialog.text = "C-c-co?";
-			link.l1 = "Zbladłeś całkiem, panie. Teraz słuchaj mnie uważnie, Henryku, i miej na baczności: ty i twój kumpel Robert tkwicie po uszy w gównie. Każdego dnia eskadra morska Cromwella może dotrzeć na Karaiby. Będą na was polować. Sama ich flagowa jednostka jest w stanie w ciągu kilku godzin zamienić twoją osławioną La Roche i załogę w drzazgi i siekaninę. Co myślisz? Czy atak na ten angielski bryg i niewola córki Foxa były tego warte?";
+			link.l1 = "Zbladłeś całkiem, panie. Teraz słuchaj mnie uważnie, Henry, i miej na baczności: ty i twój kumpel Robert tkwicie po uszy w gównie. Każdego dnia eskadra morska Cromwella może dotrzeć na Karaiby. Będą na was polować. Sama ich flagowa jednostka jest w stanie w ciągu kilku godzin zamienić twoją osławioną La Roche i załogę w drzazgi i siekaninę. Co myślisz? Czy atak na ten angielski bryg i niewola córki Foxa były tego warte?";
 			link.l1.go = "tibo_13";
 		break;
 		
 		case "tibo_13":
 			dialog.text = "";
-			link.l1 = "Lecz to nie wszystko. Twoje machinacje stały się znane nie tylko mnie. Twój drogi wujek gubernator dowie się, że łamiesz jego surowe rozkazy i ukryłeś przed nim dziewczynę, którą stary lubieżnik z pewnością chciałby wziąć dla siebie. Co myślisz, Henryku? Co twój wujek zrobi z tobą? Musisz wiedzieć jak nikt inny, jak ognisty jest jego temperament...";
+			link.l1 = "Lecz to nie wszystko. Twoje machinacje stały się znane nie tylko mnie. Twój drogi wujek gubernator dowie się, że łamiesz jego surowe rozkazy i ukryłeś przed nim dziewczynę, którą stary lubieżnik z pewnością chciałby wziąć dla siebie. Jak myślisz, Henry? Co twój wujek zrobi z tobą? Musisz wiedzieć jak nikt inny, jak ognisty jest jego temperament...";
 			link.l1.go = "tibo_14";
 		break;
 		
 		case "tibo_14":
 			dialog.text = "Wszystko kłamstwa!";
-			link.l1 = "Czyżby? Mój drogi Henryku, możesz zapytać swojego przyjaciela Martene'a. To on mnie wysłał. Levasseur dowie się, że ukrywasz dziewczynę, zanim słońce zajdzie. Nie pytaj mnie, jak Robert się o tym dowiedział, po prostu posłuchaj moich słów: jest przerażony na śmierć i gotów podnieść kotwicę i odpłynąć od razu. Nie odważył się nawet wejść do miasta. Dlatego poprosił mnie, bym przekazał ci tę wiadomość.";
+			link.l1 = "Czyżby? Mój drogi Henry, możesz zapytać swojego przyjaciela Martene'a. To on mnie wysłał. Levasseur dowie się, że ukrywasz dziewczynę, zanim słońce zajdzie. Nie pytaj mnie, jak Robert się o tym dowiedział, po prostu posłuchaj moich słów: jest przerażony na śmierć i gotów podnieść kotwicę i odpłynąć od razu. Nie odważył się nawet wejść do miasta. Dlatego poprosił mnie, bym przekazał ci tę wiadomość.";
 			link.l1.go = "tibo_15";
 		break;
 		
@@ -370,7 +370,7 @@ void ProcessDialogEvent()
 		
 		case "tibo_16":
 			dialog.text = "Czego chcesz?";
-			link.l1 = "W końcu jakieś mądre słowa od młodego pyszałka! Dobrze, Thibaut: idź tam, gdzie ją ukrywasz, chwyć ją delikatnie za jej lilijowe dłonie i szybko przejdź z nią na Plażę Rybie Oko, gdzie jest Voltigeur Martene'a. Powiedz mu, że plany się zmieniły...";
+			link.l1 = "W końcu jakieś mądre słowa od młodego pyszałka! Dobrze, Thibaut: idź tam, gdzie ją ukrywasz, chwyć ją delikatnie za jej lilijowe dłonie i szybko przejdź z nią na Plażę Rybiego Oka, gdzie jest 'Voltigeur' Martene'a. Powiedz mu, że plany się zmieniły...";
 			link.l1.go = "tibo_17";
 		break;
 		
@@ -414,7 +414,7 @@ void ProcessDialogEvent()
 			pchar.quest.Terrapin_tibo_call.over = "yes"; //снять прерывание
 			PlaySound("Voice\English\sharlie\Henry Thibault-04.wav");
 			dialog.text = "W końcu! Kapitanie "+GetFullName(pchar)+", jestem bardzo zadowolony, że przyszedłeś. Wejdź, usiądź. Coś do picia? Mam dla ciebie całkiem intratną propozycję biznesową, mój przyjacielu...";
-			link.l1 = "A niech mnie, czyżbyście byli dzisiaj w najgrzeczniejszym z nastrojów, Monsieur Thibaut... Nie ociągajmy się. Przejdźmy od razu do sedna sprawy.";
+			link.l1 = "A niech mnie, czyżbyś był dzisiaj w najgrzeczniejszym z nastrojów, Monsieur Thibaut... Nie ociągajmy się. Przejdźmy od razu do sedna sprawy.";
 			link.l1.go = "tibo_23";
 		break;
 		
@@ -431,7 +431,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_25":
-			dialog.text = "Tak, zrobiłem to. Ale żałuję tego każdego dnia. Musisz wiedzieć, że Molly to bardzo urocza i piękna dziewczyna, nigdy wcześniej nie spotkałem nikogo takiego jak ona. Muszę przyznać, zakochałem się w niej. Ona też mnie lubiła, sama tak powiedziała! Nie mogłem pozwolić, by mój wuj ją zabrał\nKiedy eskortowałem ją na 'Voltigeur', miałem nadzieję, że wujek się uspokoi, gdy tylko dowie się, że nikt nie ukrywa przed nim dziewczyn, stary rozpustnik. Wtedy Robert zabrałby ją z powrotem na Tortugę, żebym mógł bezpiecznie przenieść ją do siebie. W każdym razie, taki był układ z Martene. Ale wszystko potoczyło się inaczej\nGdy dowiedziałem się, że mój wujek został zabity, nie było sensu ukrywać Molly, więc cierpliwie czekałem na przybycie 'Voltigeur' z Molly na pokładzie.";
+			dialog.text = "Tak, zrobiłem to. Ale żałuję tego każdego dnia. Musisz wiedzieć, że Molly to bardzo urocza i piękna dziewczyna, nigdy wcześniej nie spotkałem nikogo takiego jak ona. Muszę przyznać, zakochałem się w niej. Ona też mnie lubiła, sama tak powiedziała! Nie mogłem pozwolić, by mój wuj ją zabrał\nKiedy eskortowałem ją na 'Voltigeur', miałem nadzieję, że wujek się uspokoi, gdy tylko dowie się, że nikt nie ukrywa przed nim dziewczyn, stary rozpustnik. Wtedy Robert zabrałby ją z powrotem na Tortugę, żebym mógł bezpiecznie przenieść ją do siebie. W każdym razie, taki był układ z Martenem. Ale wszystko potoczyło się inaczej\nGdy dowiedziałem się, że mój wujek został zabity, nie było sensu ukrywać Molly, więc cierpliwie czekałem na przybycie 'Voltigeur' z Molly na pokładzie.";
 			link.l1 = "Czy ona przybyła?";
 			link.l1.go = "tibo_26";
 		break;
@@ -449,8 +449,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_28":
-			dialog.text = "Nie żyje. Przerażona bliską karą od Foxa za atak na angielską brygantynę, Martene postanowiła ukryć jedyny pozostały dowód w wodzie. Była ostatnim świadkiem jego ataku na 'Albatrosa'.";
-			link.l1 = "Wtedy mógłby równie dobrze zamordować wszystkich swych marynarzy... Jak Fernand Luc. W przeciwnym razie, pewnego dnia upiją się i za szeroko otworzą usta w tawernie...";
+			dialog.text = "Nie żyje. Przerażona bliską karą od Foxa za atak na angielską brygantynę, Martene postanowił ukryć jedyny pozostały dowód w wodzie. Była ostatnim świadkiem jego ataku na 'Albatrosa'.";
+			link.l1 = "Wtedy mógłby równie dobrze zamordować wszystkich swych marynarzy... Jak Fernand Luc. W przeciwnym razie, pewnego dnia upiją się i za szeroko otworzą usta w karczmie...";
 			link.l1.go = "tibo_29";
 		break;
 		
@@ -462,27 +462,27 @@ void ProcessDialogEvent()
 		
 		case "tibo_30":
 			dialog.text = "Jestem pewien. Rozmawiałem z marynarzem z 'Voltigeur'. Uwierzyłem mu. Widział to na własne oczy, jak poderżnęli dziewczynie gardło, a potem przywiązali do jej stóp kulę armatnią i wrzucili ją za burtę.";
-			link.l1 = "Boże w niebie! Ta biedna kobieta... czego ode mnie chcesz, Henryku?";
+			link.l1 = "Boże w niebie! Ta biedna kobieta... czego ode mnie chcesz, Henry?";
 			link.l1.go = "tibo_31";
 		break;
 		
 		case "tibo_31":
-			dialog.text = "Nie mogę spać po nocach od tamtego dnia. Wciąż widzę Molly przed oczami... Catherine, raczej. Poprowadziłem ją na śmierć, "+GetFullName(pchar)+"Nie mogę sobie tego wybaczyć. Ponadto, nie mam żadnych złudzeń co do Foxa. Ten człowiek nie jest zadowolony i nie sądzę, żeby w ogóle spał. Prędzej czy później, wpadnie na trop Martene'a, zmusi kogoś do mówienia, a kiedy dowie się, kto zabił jego córkę, rozpęta się piekło. Ciężko będzie każdemu, kto w jakikolwiek sposób był związany z całą tą historią.";
+			dialog.text = "Nie mogę spać po nocach od tamtego dnia. Wciąż widzę Molly przed oczami... Catherine, raczej. Poprowadziłem ją na śmierć, "+GetFullName(pchar)+". Nie mogę sobie tego wybaczyć. Ponadto, nie mam żadnych złudzeń co do Foxa. Ten człowiek nie jest zadowolony i nie sądzę, żeby w ogóle spał. Prędzej czy później, wpadnie na trop Martene'a, zmusi kogoś do mówienia, a kiedy dowie się, kto zabił jego córkę, rozpęta się piekło. Ciężko będzie każdemu, kto w jakikolwiek sposób był związany z całą tą historią.";
 			link.l1 = "To obejmuje mnie.";
 			link.l1.go = "tibo_32";
 		break;
 		
 		case "tibo_32":
-			dialog.text = "Aye, ja też. Dlatego chcę, abyś znalazł Martene'a, zanim zrobi to Fox. Znajdź tego drania i zabij go. A jeśli możesz, spraw, by cierpiał. Dla biednej Catherine. Gdy to zrobisz, odetnij ten gruby pierścień, który nosi na ręce z palcem w środku i przynieś mi go jako dowód\nZnam jego krzywy palec i ten pierścień dobrze. Jeśli to zrobisz, zapłacę ci ćwierć miliona w srebrze.";
-			link.l1 = "Wygląda na to, że dostałeś spadek po swoim drogim, starym wujaszku, który spoczywa w pokoju, co? Powiedz mi, Henryku, czemu postanowiłeś poprosić mnie o pomoc w tej sprawie?";
+			dialog.text = "Aye, mnie też. Dlatego chcę, abyś znalazł Martene'a, zanim zrobi to Fox. Znajdź tego drania i zabij go. A jeśli możesz, spraw, by cierpiał. Dla biednej Catherine. Gdy to zrobisz, odetnij ten gruby pierścień, który nosi na ręce z palcem w środku i przynieś mi go jako dowód\nZnam jego krzywy palec i ten pierścień dobrze. Jeśli to zrobisz, zapłacę ci ćwierć miliona w srebrze.";
+			link.l1 = "Wygląda na to, że dostałeś spadek po swoim drogim, starym wujaszku, który spoczywa w pokoju, co? Powiedz mi, Henry, czemu postanowiłeś poprosić mnie o pomoc w tej sprawie?";
 			link.l1.go = "tibo_33";
 		break;
 		
 		case "tibo_33":
-			dialog.text = "Ponieważ dowiedziałem się również kilku rzeczy o tobie, "+GetFullName(pchar)+" . To było łatwe, jesteś sławnym człowiekiem. Nie wiadomo jednak, dla kogo naprawdę pracujesz, czy dla de Poincy, czy dla Holendrów, czy dla Anglików, czy dla barona Jana Svensona... Ale jedno jest jasne: podejmujesz się delikatnych, dyskretnych zadań i wykonujesz je. Potem jesteś za nie sowicie wynagradzany. A co najlepsze, nie masz powiązań z Hiszpanami\nW końcu, brałeś udział w wydarzeniach, po których odziedziczyłem fortunę mojego wujka. Nie zaprzeczaj... Ćwierć miliona to dobre pieniądze. Powiem ci, gdzie znaleźć Martene. Musisz tylko przechwycić jego statek i go abordażować.";
+			dialog.text = "Ponieważ dowiedziałem się również kilku rzeczy o tobie, "+GetFullName(pchar)+". To było łatwe, jesteś sławnym człowiekiem. Nie wiadomo jednak, dla kogo naprawdę pracujesz, czy dla de Poincy, czy dla Holendrów, czy dla Anglików, czy dla barona Jana Svensona... Ale jedno jest jasne: podejmujesz się delikatnych, dyskretnych zadań i wykonujesz je. Potem jesteś za nie sowicie wynagradzany. A co najlepsze, nie masz powiązań z Hiszpanami\nW końcu, brałeś udział w wydarzeniach, po których odziedziczyłem fortunę mojego wujka. Nie zaprzeczaj... Ćwierć miliona to dobre pieniądze. Powiem ci, gdzie znaleźć Martena. Musisz tylko przechwycić jego statek i go abordażować.";
 			link.l1 = "Jeszcze sto tysięcy i zajmę się Martenem dla ciebie.";
 			link.l1.go = "tibo_34";
-			link.l2 = "Ach, monsieur Thibaut, będziecie musieli poradzić sobie z waszym problemem z Martenem i pułkownikiem Foxem beze mnie. Ze swojej strony obiecuję wam, że nie przekażę żadnej wieści pułkownikowi o losie jego córki i tych, którzy są winni jej śmierci. Wszystkiego najlepszego, sir.";
+			link.l2 = "Ach, monsieur Thibaut, będziesz musiał poradzić sobie z waszym problemem z Martenem i pułkownikiem Foxem beze mnie. Ze swojej strony obiecuję ci, że nie przekażę żadnej wieści pułkownikowi o losie jego córki i tych, którzy są winni jej śmierci. Wszystkiego najlepszego, sir.";
 			link.l2.go = "tibo_exit";
 		break;
 		
@@ -493,13 +493,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tibo_34":
-			dialog.text = "Panie, bójcie się Boga... Nie mam milionów ukrytych w skrzyniach skarbów, uwierzcie mi! Rozumiem, że wasze usługi kosztują, dlatego od razu zaoferowałem wam dwieście pięćdziesiąt tysięcy... Dobrze... No cóż, dodam jeszcze pięćdziesiąt tysięcy złota. Nie mogę wam zaoferować więcej!";
+			dialog.text = "Panie, bój się Boga... Nie mam milionów ukrytych w skrzyniach skarbów, uwierz mi! Rozumiem, że twoje usługi kosztują, dlatego od razu zaoferowałem ci dwieście pięćdziesiąt tysięcy... Dobrze... No cóż, dodam jeszcze pięćdziesiąt tysięcy złota. Nie mogę ci zaoferować więcej!";
 			link.l1 = "Dobrze. Umowa stoi. Gdzie ostatnio widziałeś Martene?";
 			link.l1.go = "tibo_35";
 		break;
 		
 		case "tibo_35":
-			dialog.text = "Płynął na południe do hiszpańskich posiadłości w Caracas i udało mu się uzyskać audiencję u Don Diego Francisco de Kerres, gubernatora. Wydaje się, że jakoś go przekupił, ponieważ Don Diego przyznał Robertowi ochronę hiszpańskiej korony. Sprzedał 'Voltigeur' i teraz jest kapitanem ciężkiego galeonu 'Infanta'. Musiał mieć naprawdę dobre oszczędności, skoro mógł sobie pozwolić na przekupienie gubernatora oraz zakup i wyposażenie tak dużego okrętu wojennego. Następnie wypłynie z Caracas do Santo Domingo na swoim nowym statku jako część hiszpańskiej eskadry. To wszystko, co mój agent zdołał odkryć. Jedyną szansą na złapanie Martene jest dogonienie tej hiszpańskiej eskadry. Jeśli dotrą do Santo Domingo, to koniec. Nie wiadomo, dokąd Robert uda się dalej. Zniknie jak królik w norze i nigdy go nie znajdziemy.";
+			dialog.text = "Płynął na południe do hiszpańskich posiadłości w Karakas i udało mu się uzyskać audiencję u Don Diego Francisco de Kerres, gubernatora. Wydaje się, że jakoś go przekupił, ponieważ Don Diego przyznał Robertowi ochronę hiszpańskiej korony. Sprzedał 'Voltigeur' i teraz jest kapitanem ciężkiego galeonu 'Infanta'. Musiał mieć naprawdę dobre oszczędności, skoro mógł sobie pozwolić na przekupienie gubernatora oraz zakup i wyposażenie tak dużego okrętu wojennego. Następnie wypłynie z Karakas do Santo Domingo na swoim nowym statku jako część hiszpańskiej eskadry. To wszystko, co mój agent zdołał odkryć. Jedyną szansą na złapanie Martene jest dogonienie tej hiszpańskiej eskadry. Jeśli dotrą do Santo Domingo, to koniec. Nie wiadomo, dokąd Robert uda się dalej. Zniknie jak królik w norze i nigdy go nie znajdziemy.";
 			link.l1 = "Zrozumiano. Przechwycę ich.";
 			link.l1.go = "tibo_36";
 		break;
@@ -514,7 +514,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			AddQuestRecord("Sharlie", "27");
 			Terrapin_CreateRoberConvoy();
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			NextDiag.CurrentNode = "tibo_time";
 		break;
 		
@@ -527,13 +527,13 @@ void ProcessDialogEvent()
 		
 		case "tibo_38":
 			dialog.text = "Czy Martene zasmradza Karaiby swoją obecnością, kapitanie?";
-			link.l1 = "Już nie. Nie musisz się obawiać pułkownika Foxa i twoja Katarzyna została pomszczona. Oto twój dowód.";
+			link.l1 = "Już nie. Nie musisz się obawiać pułkownika Foxa i twoja Catherine została pomszczona. Oto twój dowód.";
 			link.l1.go = "tibo_39";
 		break;
 		
 		case "tibo_39":
 			RemoveItems(pchar, "finger", 1);
-			dialog.text = "Tak... To jest palec Martene'a, bez wątpienia. Nigdy nie przestajesz mnie imponować, Kapitanie "+GetFullName(pchar)+"! Naprawdę zasługujesz na reputację, którą ci przypisują.";
+			dialog.text = "Tak... To jest palec Martene'a, bez wątpienia. Nigdy nie przestajesz mi imponować, Kapitanie "+GetFullName(pchar)+"! Naprawdę zasługujesz na reputację, którą ci przypisują.";
 			link.l1 = "Przejdźmy do zapłaty, dobrze, Thibaut?";
 			link.l1.go = "tibo_40";
 		break;
@@ -541,9 +541,9 @@ void ProcessDialogEvent()
 		case "tibo_40":
 			AddMoneyToCharacter(pchar, 250000);
 			TakeNItems(pchar, "gold_dublon", 500);
-			Log_Info("You've received 500 doubloons");
+			Log_Info("Otrzymałeś 500 dublonów");
 			PlaySound("interface\important_item.wav");
-			dialog.text = " Wszystko gotowe. Tutaj, weź swoją nagrodę.";
+			dialog.text = " Wszystko gotowe. Prosze, weź swoją nagrodę.";
 			link.l1 = "Moja wdzięczność. Cieszę się, że udało ci się to przygotować z wyprzedzeniem. Cóż, Henry, mam nadzieję, że nie wpadniesz w dalsze tarapaty jak te i w przyszłości wybierzesz lepszych przyjaciół. Wszystkiego najlepszego!";
 			link.l1.go = "tibo_41";
 		break;
@@ -569,13 +569,13 @@ void ProcessDialogEvent()
 		
 		case "tibo_late":
 			dialog.text = "Ach, "+GetFullName(pchar)+"...No dalej, co tak długo cię zatrzymuje! Teraz, kto do diabła wie, gdzie jest Robert Martene?! Jeśli pułkownik Fox dowie się wszystkiego, myślę, że będę w niezłych tarapatach...";
-			link.l1 = "Widzę. Byłem za późno. Moje przeprosiny, Monsieur Thibaut, ale opóźniły mnie pewne bardzo pilne sprawy. Nie będę marnować twojego czasu. Żegnaj.";
+			link.l1 = "Rozumiem. Byłem za późno. Moje przeprosiny, Monsieur Thibaut, ale opóźniły mnie pewne bardzo pilne sprawy. Nie będę marnować twojego czasu. Żegnaj.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "tibo_over";
 		break;
 		
 		case "tibo_over":
-			dialog.text = "Czego chcesz, "+GetFullName(pchar)+"Nie mam czasu na pogawędki. Mam ważniejsze sprawy na głowie. Muszę znaleźć Martene, zanim zrobi to Fox...";
+			dialog.text = "Czego chcesz, "+GetFullName(pchar)+". Nie mam czasu na pogawędki. Mam ważniejsze sprawy na głowie. Muszę znaleźć Martene, zanim zrobi to Fox...";
 			link.l1 = "Tak, tak. Już idę.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "tibo_over";
@@ -619,7 +619,7 @@ void ProcessDialogEvent()
 		
 		case "levasser_cave_1":
 			dialog.text = "Co?! Ty smarkaczu bez nosa! Kim jestem? Jestem gubernatorem tej wyspy, François Levasseur, Senior de Renet de Boidouflet de Lettre! I wszystko na tej wyspie jest pod moją jurysdykcją! To dotyczy ciebie, kiedy jesteś na moim terenie, szczeniaku!";
-			link.l1 = "Cóż, cóż... Sam wielki zły wilk, co? Trochę się zgubiłeś, Levasseur, Senior de Renet de cokolwiek to było. Twój czas się skończył. Na rozkaz gubernatora generalnego François Longvillier de Poincy zostałeś usunięty ze stanowiska i skazany na natychmiastową śmierć! Jestem twoim sędzią i katem w jednym! Jakieś ostatnie słowa?";
+			link.l1 = "Prosze, prosze... Sam wielki zły wilk, co? Trochę się zgubiłeś, Levasseur, Senior de Renet de cokolwiek to było. Twój czas się skończył. Na rozkaz gubernatora generalnego François Longvillier de Poincy zostałeś usunięty ze stanowiska i skazany na natychmiastową śmierć! Jestem twoim sędzią i katem w jednym! Jakieś ostatnie słowa?";
 			link.l1.go = "levasser_cave_2";
 		break;
 		
@@ -714,19 +714,19 @@ void ProcessDialogEvent()
 		
 		case "roof_girl_1":
 			dialog.text = "Nie zabijaj mnie!";
-			link.l1 = "Nie bądź głupi! Przed chwilą przebiegł tędy człowiek, dziesięć minut temu. Dobrze ubrany szlachcic. Gdzie się ukrywa? I nawet nie próbuj mi mówić, że go nie widziałeś!";
+			link.l1 = "Nie bądź głupia! Przed chwilą przebiegł tędy człowiek, dziesięć minut temu. Dobrze ubrany szlachcic. Gdzie się ukrywa? I nawet nie próbuj mi mówić, że go nie widziałaś!";
 			link.l1.go = "roof_girl_2";
 		break;
 		
 		case "roof_girl_2":
 			dialog.text = "Monsieur Thibaut?";
-			link.l1 = "Cóż, zatem znasz go! Dokąd uciekł? Zamierzasz odpowiedzieć, czy mam potrząsnąć twoją głową, żeby zaczęła działać?";
+			link.l1 = "Cóż, znasz go zatem! Dokąd uciekł? Zamierzasz odpowiedzieć, czy mam potrząsnąć twoją głową, żeby zaczęła działać?";
 			link.l1.go = "roof_girl_3";
 		break;
 		
 		case "roof_girl_3":
-			dialog.text = "O nie, proszę, nie krzywdź mnie! Monsieur Thibaut uciekł, tam w stronę morza. I skoczył z dźwigu prosto do wody. Pewnie zginął, to takie wysoko...";
-			link.l1 = "Nie sądzę. On nie jest typem, który popełniłby samobójstwo. Powinieneś wejść do środka. Niebezpiecznie jest być tutaj na zewnątrz tej nocy..";
+			dialog.text = "O nie, proszę, nie krzywdź mnie! Monsieur Thibaut uciekł, tam w stronę morza. I skoczył z dźwigu prosto do wody. Pewnie zginął, to tak wysoko...";
+			link.l1 = "Nie sądzę. On nie jest typem, który popełniłby samobójstwo. Powinnaś wejść do środka. Niebezpiecznie jest być tutaj na zewnątrz tej nocy..";
 			link.l1.go = "roof_girl_4";
 		break;
 		
@@ -771,14 +771,14 @@ void ProcessDialogEvent()
 		
 		case "kathy_4":
 			dialog.text = "Jeśli dotrzemy do Antigui, zrobię wszystko, co w mojej mocy, aby przekonać mego ojca, że wśród Francuzów są prawdziwi rycerze.";
-			link.l1 = "Byłbym bardzo wdzięczny... Dobrze, mam nadzieję, że moi anioły stróże śledzili mój szlak po dachach miasta i już wypatrują naszego powrotu.";
+			link.l1 = "Byłbym bardzo wdzięczny... Dobrze, mam nadzieję, że moje anioły stróże śledziły mój szlak po dachach miasta i już wypatrują naszego powrotu.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Terrapin_OwrInGrot");
 		break;
 		
 		case "kathy_5":
 			PlaySound("Voice\English\Armo01.wav");
-			dialog.text = "Nie mogłem uwierzyć, że dotrzymasz obietnicy aż do teraz! Tak wiele okropnych i odrażających rzeczy przytrafiło mi się ostatnio... Dziękuję ci, kapitanie, za przywrócenie mi wiary w ludzi i rycerskość. Powinieneś odwiedzić mojego ojca, kiedy będziesz mógł!\nSzanuje takich ludzi jak ty. I nie ma znaczenia, że jesteś Francuzem. Zrobię wszystko, aby przekonać mojego ojca do zmiany nastawienia do twojego narodu.";
+			dialog.text = "Nie mogłam uwierzyć, że dotrzymasz obietnicy aż do teraz! Tak wiele okropnych i odrażających rzeczy przytrafiło mi się ostatnio... Dziękuję ci, kapitanie, za przywrócenie mi wiary w ludzi i rycerskość. Powinieneś odwiedzić mojego ojca, kiedy będziesz mógł!\nSzanuje takich ludzi jak ty. I nie ma znaczenia, że jesteś Francuzem. Zrobię wszystko, aby przekonać mojego ojca do zmiany nastawienia do twojego narodu.";
 			link.l1 = "Dziękuję, Catherine. Może skorzystam z twojej uprzejmej oferty.";
 			link.l1.go = "kathy_6";
 		break;
@@ -814,7 +814,7 @@ void ProcessDialogEvent()
 		
 		case "tibo_sailor_1":
 			dialog.text = "Uff, ledwo cię dogoniłem... Przychodzę do ciebie w imieniu dżentelmena, którego znasz pod imieniem Henry Thibaut.";
-			link.l1 = "Henryk? A cóż on chce? Podzielić się swą radością z powodu niespodziewanego spadku, który mu przypadł po śmierci jego zmarłego drogiego wujaszka?";
+			link.l1 = "Henry? A cóż on chce? Podzielić się swą radością z powodu niespodziewanego spadku, który mu przypadł po śmierci jego zmarłego drogiego wujaszka?";
 			link.l1.go = "tibo_sailor_2";
 		break;
 		
@@ -826,13 +826,13 @@ void ProcessDialogEvent()
 		
 		case "tibo_sailor_3":
 			dialog.text = "Również, jeśli to nie przekonało cię, aby już go odwiedzić, poprosił mnie, abym dodał następujące: 'Robert Martene musi umrzeć'.";
-			link.l1 = "Dobrze, dobrze... Teraz robi się ciekawie. Dwóch zaprzysiężonych przyjaciół właśnie się pokłóciło... Jak mówisz, spróbuję odwiedzić Henryka, gdy będę miał okazję.";
+			link.l1 = "Dobrze, dobrze... Teraz robi się ciekawie. Dwóch zaprzysiężonych przyjaciół właśnie się pokłóciło... Jak mówisz, spróbuję odwiedzić Henry'ego, gdy będę miał okazję.";
 			link.l1.go = "tibo_sailor_4";
 		break;
 		
 		case "tibo_sailor_4":
 			dialog.text = "Pan Thibaut prosił, abyś nie zwlekał z wizytą. 'Ryba wypłynie z sieci za dziesięć dni' - to były jego dokładne słowa...";
-			link.l1 = "On i Robert mają ten sam sposób mówienia. Dobrze, odwiedzę Henryka.";
+			link.l1 = "On i Robert mają ten sam sposób mówienia. Dobrze, odwiedzę Henry'ego.";
 			link.l1.go = "tibo_sailor_5";
 		break;
 		
@@ -840,7 +840,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			LAi_SetActorType(npchar);
 			LAi_ActorRunToLocation(npchar, "reload", "reload1_back", "none", "", "", "OpenTheDoors", 10.0);
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
+			if(bImCasual) NewGameTip("Tryb eksploracji: timer nie jest wyłączony. Dotrzymaj terminu!");
 			SetFunctionTimerCondition("Terrapin_TiboCallOver", 0, 0, 10, false);
 			AddQuestRecord("Sharlie", "25");
 		break;

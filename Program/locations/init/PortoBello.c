@@ -152,6 +152,17 @@ int LocationInitPortoBello(int n)
 	locations[n].reload.jail.label = "Prison";
 
     // --> Квестовые локации.
+	locations[n].reload.l27.name = "houseH3";
+	locations[n].reload.l27.go = "PortoBello_houseH3";
+	locations[n].reload.l27.emerge = "reload1";
+	locations[n].reload.l27.autoreload = "0";
+	locations[n].reload.l27.label = "House";
+	
+	locations[n].reload.l32.name = "houseSp1";
+	locations[n].reload.l32.go = "PortoBello_houseSp1";
+	locations[n].reload.l32.emerge = "reload1";
+	locations[n].reload.l32.autoreload = "0";
+	locations[n].reload.l32.label = "House";
 	
 	// --> Комоны, загрушки. Номера с начинаются с 20.
  	locations[n].reload.l20.name = "houseH4";
@@ -196,12 +207,6 @@ int LocationInitPortoBello(int n)
 	locations[n].reload.l26.autoreload = "0";
 	locations[n].reload.l26.label = "House";
 	
- 	locations[n].reload.l27.name = "houseH3";
-	locations[n].reload.l27.go = "CommonRoom_MH7";
-	locations[n].reload.l27.emerge = "reload1";
-	locations[n].reload.l27.autoreload = "0";
-	locations[n].reload.l27.label = "House";
-	
 	locations[n].reload.l28.name = "houseSp2";
 	locations[n].reload.l28.go = "CommonDoubleflourHouse_2";
 	locations[n].reload.l28.emerge = "reload1";
@@ -225,12 +230,6 @@ int LocationInitPortoBello(int n)
 	locations[n].reload.l31.emerge = "reload1";
 	locations[n].reload.l31.autoreload = "0";
 	locations[n].reload.l31.label = "House";
-
- 	locations[n].reload.l32.name = "houseSp1";
-	locations[n].reload.l32.go = "CommonDoubleflourHouse_1";
-	locations[n].reload.l32.emerge = "reload1";
-	locations[n].reload.l32.autoreload = "0";
-	locations[n].reload.l32.label = "House";
 
  	locations[n].reload.l33.name = "houseS5";
 	locations[n].reload.l33.go = "CommonCobHouse";
@@ -730,6 +729,100 @@ int LocationInitPortoBello(int n)
 	
 	locations[n].locators_radius.box.box1 = 0.8;
 	locations[n].box1.QuestClosed = true;
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовый дом
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "PortoBello_houseH3";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\mediumhouse10.tga";
+ 	//Town sack
+	locations[n].townsack = "PortoBello";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "PortoBello";
+ 	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\mediumhouse07";
+	locations[n].models.always.house = "mediumhouse07";
+	locations[n].models.always.house.level = 65538;
+	locations[n].models.day.locators = "mediumhouse07_locators";
+	locations[n].models.night.locators = "mediumhouse07_Nlocators";
+
+	Locations[n].models.always.mediumhouse07windows = "mediumhouse07_windows";
+	Locations[n].models.always.mediumhouse07windows.tech = "LocationWindows";
+	locations[n].models.always.mediumhouse07windows.level = 65539;
+	locations[n].models.always.tul = "mediumhouse07_tul";
+	Locations[n].models.always.tul.tech = "LocationWaterFall";
+	locations[n].models.always.tul.level = 180;
+
+	locations[n].models.always.back = "..\inside_back3";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.mediumhouse07rand= "mediumhouse07_rand";
+	locations[n].models.day.charactersPatch = "mediumhouse07_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "mediumhouse07_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "PortoBello_town";
+	locations[n].reload.l1.emerge = "houseH3";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "Street";
+	
+	LAi_LocationFightDisable(&locations[n], true);
+	
+	n = n + 1;
+	
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовый дом Долорес
+	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	locations[n].id = "PortoBello_houseSp1";
+	locations[n].id.label = "House";
+	locations[n].image = "loading\inside\largehouse01.tga";
+ 	//Town sack
+	locations[n].townsack = "PortoBello";
+	locations[n].lockWeather = "Inside";
+	//Sound
+	locations[n].type = "house";
+	locations[n].fastreload = "PortoBello";
+ 	locations[n].islandId = "Mein";
+	//Models
+	//Always
+	locations[n].filespath.models = "locations\inside\largehouse01";
+	locations[n].models.always.largehouse01 = "largehouse01";
+	locations[n].models.always.largehouse01.level = 65538;
+	locations[n].models.always.locators = "largehouse01_locators";
+
+	Locations[n].models.always.largehouse01windows = "largehouse01_windows";
+	Locations[n].models.always.largehouse01windows.tech = "LocationWindows";
+	locations[n].models.always.largehouse01windows.level = 65539;
+
+	locations[n].models.always.back = "..\inside_back";
+	locations[n].models.always.back.level = 65529;
+	//Day
+	Locations[n].models.day.largehouse01rand= "largehouse01_rand";
+	locations[n].models.day.charactersPatch = "largehouse01_patch";
+	//Night
+	locations[n].models.night.charactersPatch = "largehouse01_patch";
+	//Environment
+	locations[n].environment.weather = "true";
+	locations[n].environment.sea = "false";
+	//Reload map
+	locations[n].reload.l1.name = "reload1";
+	locations[n].reload.l1.go = "PortoBello_town";
+	locations[n].reload.l1.emerge = "houseSp1";
+	locations[n].reload.l1.autoreload = "0";
+	locations[n].reload.l1.label = "";
+	
+	LAi_LocationFightDisable(&locations[n], true);
+	
 	n = n + 1;
 
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

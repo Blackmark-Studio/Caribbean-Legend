@@ -1,0 +1,58 @@
+portman {Начальник порта}
+drinker_0 {Самый известный пират в этих водах}
+drinker_1 {Потрясающий рассказчик невыдуманных историй}
+drinker_2 {Спецагент Эскориала на пенсии}
+drinker_3 {Крайне эрудированный собеседник}
+drinker_4 {Компетентный специалист в чём угодно}
+drinker_5 {Весельчак без страха и упрёка}
+drinker_6 {Великолепный мужчина в самом расцвете сил}
+drinker_7 {Главный по тарелочкам и бутылочкам}
+drinker_8 {Старший по пьяному борту}
+drinker_9 {Троюродный дядя непоследнего человека в ГВИК}
+pofficer {Кандидат}
+hovernor {Губернатор}
+tavernkeeper {Трактирщик}
+waitress {Официантка}
+trader {Торговец}
+shipyarder {Корабел}
+priest {Священник}
+Ghovernor {Генерал-губернатор}
+Phovernor {Барон}
+usurer {Ростовщик}
+poorman {Нищий}
+gipsy {Цыганка}
+captain {Капитан}
+sailor {Матрос}
+marginal_town {Пират}
+noble {Дворянин}
+monk {Монах}
+chaplain {Капеллан}
+potion_merchant {Алхимик}
+veteran_merchant {Скобянщик}
+armourer_merchant {Оружейник}
+monk_merchant {Келейник}
+indian_merchant {Гадалка}
+lightman_merchant {Смотритель}
+cemeteryman_merchant {Сторож}
+legend {Легенда}
+soldier_town {Стражник}
+banditos {Головорез}
+patrol {Патруль}
+comandante {Командир}
+prisonboss {Комендант}
+whore {Девка}
+hostess {Хозяйка}
+enemy {Враг}
+wife {Жена}
+kukulkan {Кукулькан}
+mercen {Наёмник}
+monster {Нежить}
+captain_trader {Вольный торговец}
+mtraxx_vanguard {Авангард Тиракса}
+fgirl {Любовница}
+deadman {Живой мертвец}
+friend {Друг}
+duelist {Бретер}
+smuggler {Контрабандист}
+AffairOfHonor_tavern {Отчаянный пьяница}
+hovernon_wife {Жена губернатора}

@@ -1,0 +1,58 @@
+portman {Maestro de puerto}
+drinker_0 {El pirata más famoso de estas aguas}
+drinker_1 {Un narrador magistral de historias reales}
+drinker_2 {Agente especial de El Escorial retirado}
+drinker_3 {Conversador sumamente erudito}
+drinker_4 {Un experto competente en cualquier campo}
+drinker_5 {Un alma alegre, valiente y leal}
+drinker_6 {Un hombre magnífico en la flor de la vida}
+drinker_7 {Jefe de trastos y cachivaches}
+drinker_8 {Jefe de la Guardia Borracha}
+drinker_9 {El primo segundo de una persona nada insignificante en la DWIC.}
+pofficer {Candidato}
+hovernor {Gobernador}
+tavernkeeper {Tabernero}
+waitress {Camarera}
+trader {Mercante}
+shipyarder {Constructor naval}
+priest {Sacerdote}
+Ghovernor {Gobernador General}
+Phovernor {Barón}
+usurer {Banquero}
+poorman {Mendigo}
+gipsy {Gitana}
+captain {Capitán}
+sailor {Marinero}
+marginal_town {Pirata}
+noble {Noble}
+monk {Monje}
+chaplain {Capellán}
+potion_merchant {Alquimista}
+veteran_merchant {Ferretero}
+armourer_merchant {Armero}
+monk_merchant {Vendedor de Reliquias Sagradas}
+indian_merchant {Adivina}
+lightman_merchant {Guardián del faro}
+cemeteryman_merchant {Guardián del cementerio}
+legend {Leyenda}
+soldier_town {Guardia}
+banditos {Matón}
+patrol {Patrulla}
+comandante {Comandante}
+prisonboss {Comandante de guarnición}
+whore {Muchacha}
+hostess {Dueña}
+enemy {Enemigo}
+wife {Esposa}
+kukulkan {Kukulkan}
+mercen {Mercenario}
+monster {No-muerto}
+captain_trader {Comerciante libre}
+mtraxx_vanguard {Vanguardia de Tirax}
+fgirl {Amante}
+deadman {Muerto viviente}
+friend {Amigo}
+duelist {Espadachín}
+smuggler {Contrabandista}
+AffairOfHonor_tavern {Borracho desesperado}
+hovernon_wife {Esposa del gobernador}

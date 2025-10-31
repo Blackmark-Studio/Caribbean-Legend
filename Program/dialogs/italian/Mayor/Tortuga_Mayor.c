@@ -29,6 +29,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "FMQT_1":
+			Notification_Skill(false, 26, SKILL_LEADERSHIP);
 			AddMoneyToCharacter(pchar, 1000);
 			dialog.text = "Sempre lo stesso! Prendi questo! È tutto quello che ho sul tavolo! Ora vai via!";
 			link.l1 = "Grazie, vostra Eccellenza. Mi accompagnerò fuori.";

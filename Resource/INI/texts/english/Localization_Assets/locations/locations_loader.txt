@@ -1,12 +1,3 @@
-locations_loader_1
-{
-First visit ~
-}
-locations_loader_2
-{
-All colonies visited!
-}
-locations_loader_3
-{
-A mysterious place visited!
-}
+locations_loader_1 {First visit ~}
+locations_loader_2 {All colonies visited!}
+locations_loader_3 {A mysterious place visited!}

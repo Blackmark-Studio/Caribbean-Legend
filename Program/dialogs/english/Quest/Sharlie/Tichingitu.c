@@ -37,47 +37,45 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu":
 			DelLandQuestMark(npchar);
-			dialog.text = "What you want, pale-face? Tichingitu have nothing to say you.";
+			dialog.text = "What do you want, pale-face? Tichingitu has nothing to say to you.";
 			link.l1 = "Your name is Tichingitu? Hm. Listen, warrior, I haven't come here to stare at you. I've come here to ask you a question: Why did you intrude into that fat man's house?";
 			link.l1.go = "Tichingitu_1";
 		break;
 		
 		case "Tichingitu_1":
 			dialog.text = "";
-			link.l1 = "Not saying anything? Not smart. You'll be hanged for theft and everything else you've done. Tell me why you committed such an act and maybe I'll be able to help you.";
+			link.l1 = "Not saying anything? Not wise. You'll be hanged for theft and everything else you've done. Tell me why you committed such an act and maybe I'll be able to help you.";
 			link.l1.go = "Tichingitu_2";
 		break;
 		
 		case "Tichingitu_2":
-			dialog.text = "Tichingitu come to town of pale faces through many many roads, through big water, from great forests and swamps. Tichingitu tired and wanted eat. Tichingitu die from hunger. No one want help Tichingitu. They yell, 'Go away, red-skinned dog'. Pub owner kick out Indian like mangy dog. Tichingitu want eat.";
-			link.l1 = "God-damn it, but why did you come to this settlement from... your forest?";
+			dialog.text = "Tichingitu came to the town of pale faces by many, many roads, across great waters, from vast forests and swamps. Tichingitu was tired and wanted to eat. Tichingitu was dying of hunger. No one wanted to help Tichingitu. They yelled, 'Go away, red-skinned dog.' The pub owner kicked the Indian out like a mangy dog. Tichingitu wanted to eat.";
+			link.l1 = "God damn it, but why did you come to this settlement from... your forest?";
 			link.l1.go = "Tichingitu_3";
 		break;
 		
 		case "Tichingitu_3":
-			dialog.text = "Tichingitu kicked from native tribe. Tichingitu get into fight with tribe shaman, shaman tell chief, Shaman curse Tichingitu, Tichingitu leave tribe, far far away from native land. Tichingitu no home, no weapon, no nothing.";
-			link.l1 = "That's what I call a misfortune. Why did you fight with your own people?";
+			dialog.text = "Tichingitu was kicked out of the native tribe. Tichingitu got into a fight with the tribe's shaman, the shaman told the chief, the shaman cursed Tichingitu, Tichingitu left the tribe, far, far away from native land. Tichingitu has no home, no weapon, nothing at all.";
+			link.l1 = "That's what I call misfortune. Why did you fight with your own people?";
 			link.l1.go = "Tichingitu_4";
 		break;
 		
 		case "Tichingitu_4":
-			dialog.text = "Shaman of tribe evil man. He say evil spirit settle into wife's body. Wife must die. My wife just sick, no spirit settle. Tichingitu treat wife, shaman kill wife. Tichingitu stand out against shaman, everyone stand out against Tichingitu, Tichingitu leave.";
-			link.l1 = "You tried to save your wife? That's why you were kicked out of the village?";
+			dialog.text = "The shaman of the tribe is an evil man. He said an evil spirit had settled in my wife's body. My wife had to die. But my wife was just ill, no spirit had settled in her. Tichingitu tried to treat my wife, but the shaman killed her. Tichingitu stood up to the shaman, then everyone turned against Tichingitu, so Tichingitu left.";
+			link.l1 = "You tried to save your wife? Is that why you were kicked out of the village?";
 			link.l1.go = "Tichingitu_5";
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "Yes, pale face. Tichingitu no choice. Either steal or die of hunger...";
-			link.l1 = "Well, I say... A noose for a few measly coins stolen by a starving man... Tichingitu, I'll try to help you. I know Fadey, that husky man whose house you snuck into. Maybe I'll be able to do something... I'll go talk to the commandant.";
+			dialog.text = "Yes, pale face. Tichingitu has no choice. Either steal or die of hunger...";
+			link.l1 = "Well, I say... A noose for a few measly coins stolen by a starving man... Tichingitu, I'll try to help you. I know Fadey, that burly man whose house you snuck into. Maybe I'll be able to do something... I'll go talk to the commandant.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
-			pchar.questTemp.Sharlie.Tichingitu = "commandante";
-			AddLandQuestMark(characterFromId("BasterJailOff"), "questmarkmain");
-			AddQuestRecord("Tichingitu", "2");
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_1");
 		break;
 		
 		case "Tichingitu_wait":
-			dialog.text = "Tichingitu wait. Indian not afraid of death. Shaman curse Tichingitu, Tichingitu must die.";
+			dialog.text = "Tichingitu wait. Indian not afraid of death. Shaman cursed Tichingitu, Tichingitu must die.";
 			link.l1 = "Not all is lost yet. I'll try to help...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "Tichingitu_wait";
@@ -85,60 +83,39 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_6":
 			DelLandQuestMark(npchar);
-			dialog.text = "Tichingitu wait. Indian not afraid of death. Shaman curse Tichingitu, Tichingitu must die.";
-			link.l1 = "No need to be pessimistic. Your imprisonment has come to an end. I've helped to set you free.";
+			dialog.text = "Tichingitu waits. Indian not afraid of death. Shaman cursed Tichingitu, Tichingitu must die.";
+			link.l1 = "No need to be pessimistic. Your imprisonment has come to an end. I've helped set you free.";
 			link.l1.go = "Tichingitu_7";
 		break;
 		
 		case "Tichingitu_7":
 			dialog.text = "Pale-face joke? Tichingitu free?";
-			link.l1 = "No, I'm not joking. They are about to open your cell and let you out. Follow me, I'll lead you out of jail.";
-			link.l1.go = "Tichingitu_8";
-		break;
-		
-		case "Tichingitu_8":
-			DialogExit();
-			chrDisableReloadToLocation = true;
-			bDisableFastReload = true;
-			DoQuestReloadToLocation("BasTer_exittown", "rld", "aloc9", "TichingituFree"); // 170712
-			pchar.quest.FreeTichingituOver.over = "yes"; //снять таймер
-			if (GetHour() > 17.0)
-			{
-				WaitDate("", 0, 0, 0, 13, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
-			if (GetHour() < 8.0)
-			{
-				WaitDate("", 0, 0, 0, 7, 0);
-				RecalculateJumpTable();
-				RefreshWeather();
-				RefreshLandTime();
-			}
+			link.l1 = "No, I'm not joking. They're about to open your cell and let you out. Follow me, I'll lead you out of jail.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_2");
 		break;
 		
 		case "Tichingitu_9":
 			dialog.text = "";
-			link.l1 = "There you are, free again. Go on, Tichingitu, make sure not to steal anything else and don't get into any more trouble! You'd better find some Indian village and live with your own kind, I don't think they'd be against accepting you.";
+			link.l1 = "There you are, free again. Go on, Tichingitu, make sure not to steal anything else and don't get into any more trouble! You'd better find an Indian village and live with your own kind, I don't think they'd be against accepting you.";
 			link.l1.go = "Tichingitu_10";
 		break;
 		
 		case "Tichingitu_10":
-			dialog.text = "Tichingitu not go. Master save Tichingitu's life. Tichingitu stay. Tichingitu's life belong to master.";
+			dialog.text = "Tichingitu not go. Master saved Tichingitu's life. Tichingitu stay. Tichingitu's life belongs to master.";
 			link.l1 = "Huh? What are you talking about? What master, what life? Don't you understand what I'm saying? You're free! Go!";
 			link.l1.go = "Tichingitu_11";
 		break;
 		
 		case "Tichingitu_11":
-			dialog.text = "Indian have debt, white master. Tichingitu serve you faith and truth. Tichingitu know how to fight. Tichingitu die in battle for master. He stay.";
-			link.l1 = "Oh Lord! Damn it... What kind of a master am I to you, Tichingitu? I helped you not to turn you into a slave.";
+			dialog.text = "Indian has debt, white master. Tichingitu serves you with faith and truth. Tichingitu knows how to fight. Tichingitu will die in battle for master. He stays.";
+			link.l1 = "Oh Lord! Damn it... What kind of master am I to you, Tichingitu? I helped you, not to turn you into a slave.";
 			link.l1.go = "Tichingitu_12";
 		break;
 		
 		case "Tichingitu_12":
-			dialog.text = "Tichingitu not slave. Tichingitu free Indian. Tichingitu want serve you. Tichingitu know how to fight, any dog die before come close to master. Tichingitu know how to clean and load musket. Tichingitu can shoot musket.";
-			link.l1 = "Although... You know, Tichingitu, that's not a bad idea. I need loyal people and you don't seem to be a bad man. Also you know how to shoot a musket. And what are you going to do alone anyway? You'll end up stealing something else and next time you'll definitely be hanged... All right, you can stay. But remember: life isn't going to be calm with me.";
+			dialog.text = "Tichingitu not slave. Tichingitu free Indian. Tichingitu want serve you. Tichingitu know how to fight, any dog dies before coming close to master. Tichingitu know how to clean and load musket. Tichingitu can shoot musket.";
+			link.l1 = "Although... You know, Tichingitu, that's not a bad idea. I need loyal people and you don't seem to be a bad man. Also, you know how to shoot a musket. And what are you going to do alone anyway? You'll end up stealing something else and next time you'll definitely be hanged... All right, you can stay. But remember: life isn't going to be calm with me.";
 			link.l1.go = "Tichingitu_13";
 			link.l2 = "All right, enough. Go in peace, red-skinned brother. May your gods watch over you!";
 			link.l2.go = "Tichingitu_exit";
@@ -146,75 +123,26 @@ void ProcessDialogEvent()
 		
 		case "Tichingitu_exit":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			AddQuestRecord("Tichingitu", "5");
-			CloseQuestHeader("Tichingitu");
-			LAi_SetActorType(npchar);
-			LAi_ActorRunToLocation(npchar, "reload", "reload2_back", "none", "", "", "", 10.0);
-			npchar.lifeday = 0;
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.systeminfo.tutorial.Fighter = true;
+			AddDialogExitQuestFunction("Tichingitu_DlgExit_3");
 		break;
 		
 		case "Tichingitu_13":
-			dialog.text = "Tichingitu not afraid of anything, white master. Tichingitu be glad to serve you. Tichingitu faithful to last breath.";
+			dialog.text = "Tichingitu is not afraid of anything, white master. Tichingitu is glad to serve you. Tichingitu is faithful to his last breath.";
 			link.l1 = "All right. Welcome to the crew, Tichingitu!";
 			link.l1.go = "Tichingitu_hire";
 		break;
 		
 		case "Tichingitu_hire":
 			DialogExit();
-			DeleteAttribute(npchar, "LifeDay");
-			LAi_SetImmortal(npchar, false);
-			npchar.quest.OfficerPrice = sti(pchar.rank)*20;
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.CompanionDisable = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			SetCharacterRemovable(npchar, true);
-			npchar.Payment = true;
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.CanTakeMushket = true;
-			LAi_SetOfficerType(npchar);
-			NextDiag.CurrentNode = "Tichingitu_officer";
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
-			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
-			DeleteAttribute(pchar, "questTemp.Sharlie.Tichingitu");
-			pchar.OfficerAttRange = 35.0;
-			
-			AddQuestRecord("Tichingitu", "4");
-			CloseQuestHeader("Tichingitu");
-			// Sinistra - Начало квеста "Знакомство с индейцами"
-			string sModel = "Miskito_"+(rand(5)+1);
-			sld = GetCharacter(NPC_GenerateCharacter("ListKakao", sModel, "man", "man", 1, PIRATE, -1, false, "quest"));
-			sld.name = "Cocoa";
-			sld.lastname = "Leaf";
-			GiveItem2Character(sld, "blade_01");
-			EquipCharacterByItem(sld, "blade_01");
-			AddItems(sld, "jewelry53", rand(20)+180);
-			AddItems(sld, "cannabis1", 3);
-			GiveItem2Character(sld, "indian_10");
-			GiveItem2Character(sld, "talisman11");
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			LAi_SetImmortal(sld, true);
-			sld.dialog.filename = "Quest\Sharlie\OtherNPC.c";
-			sld.dialog.currentnode = "ZsI_ListKakao";
-			ChangeCharacterAddressGroup(sld, "BasTer_ExitTown", "item", "item3");
-			LAi_SetActorType(sld);
-			LAi_ActorDialog(sld, pchar, "", -1, 0);
-			//LaunchTutorial("Fighter", 1);
+			AddDialogExitQuestFunction("Tichingitu_Hire");
 		break;
 		
 	//--> ----------------------------------- офицерский блок ------------------------------------------
 		case "Tichingitu_officer":
-			dialog.text = "Tichingitu listen to you, Captain "+pchar.name+"!";
+			dialog.text = "Tichingitu listens to you, Captain "+pchar.name+"!";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Tichingitu, I'm about to depart to an old Indian village called Tayasal. I won't lie to you, it's an extremely dangerous journey and very unusual: through a teleportation idol. You... Will you join me?";
+				Link.l4 = "Tichingitu, I'm about to depart for an old Indian village called Tayasal. I won't lie to you, it's an extremely dangerous journey and very unusual: through a teleportation idol. You... Will you join me?";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -222,15 +150,15 @@ void ProcessDialogEvent()
            	// boal отчёт о корабле
 			if(CheckAttribute(NPChar, "treasurer") && NPChar.treasurer == 1)
 			{
-			    Link.l11 = "Tichingitu, give me a full ship report.";
+			    Link.l11 = "Tichingitu, give me a full report on the ship.";
 			    Link.l11.go = "QMASTER_1";
 				
 			    // Warship. Автозакупка товара
-				Link.l12 = "I want you to purchase certain goods every time we are docked.";
+				Link.l12 = "I want you to purchase certain goods every time we dock.";
 				Link.l12.go = "QMASTER_2";
 			}
 
-			Link.l1 = "Listen to my order!";
+			Link.l1 = "Listen to my orders!";
             Link.l1.go = "stay_follow";
 			link.l2 = "Nothing at the moment. At ease!";
 			link.l2.go = "exit";
@@ -239,19 +167,19 @@ void ProcessDialogEvent()
 		
 		/////////////////////////// ответы для казначея ///////////////////////////////////
 		case "QMASTER_1":
-			dialog.Text = "Ship report? Tichingitu has no report, master. Only weapon and clothes. Tichingitu took no report from nowhere.";
+			dialog.Text = "Ship report? Tichingitu has no report, master. Only weapon and clothes. Tichingitu took no report from anywhere.";
 			Link.l1 = "Fine, whatever.";
 			Link.l1.go = "exit";
 		break;	
 
 		case "QMASTER_2":
-			dialog.text = "Master, Tichingitu never set foot in a colony without you. When Tichingitu enters a shop - all think Tichingitu is thief again. Then, prison.";
-			link.l1 = "Yeah, you are probably right. Not that prison thing again. Plus, nobody will ever believe you are a purser.";
+			dialog.text = "Master, Tichingitu never sets foot in a colony without you. When Tichingitu enters a shop - everyone thinks Tichingitu is a thief again. Then, prison.";
+			link.l1 = "Yeah, you are probably right. Not that prison thing again. Besides, nobody will ever believe you are a purser.";
 			link.l1.go = "exit";
 		break;
 		
 		case "stay_follow":
-            dialog.Text = "What orders you have?";
+            dialog.Text = "What orders do you have?";
             Link.l1 = "Hold up here!";
             Link.l1.go = "Boal_Stay";
             Link.l2 = "Follow me and don't lag behind!";
@@ -260,7 +188,7 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(NPChar, "chr_ai.gun.bulletNum") && sti(NPChar.chr_ai.gun.bulletNum) > 1)
 				{
-					Link.l3 = "You need to change the type of ammunition for your firing arm.";
+					Link.l3 = "You need to change the type of ammunition for your firearm.";
 					Link.l3.go = "SetGunBullets";
 				}	
 			}
@@ -268,12 +196,12 @@ void ProcessDialogEvent()
 			{
 				if(CheckAttribute(NPChar, "chr_ai.musket.bulletNum") && sti(NPChar.chr_ai.musket.bulletNum) > 1)
 				{
-					Link.l4 = "Change the type of ammo for your musket.";
+					Link.l4 = "Change the type of ammunition for your musket.";
 					Link.l4.go = "SetMusketBullets";
 				}
-					Link.l5 = "Change your priority weapon for combat.";
+					Link.l5 = "Change your primary weapon for combat.";
 					Link.l5.go = "SetPriorityMode";
-					Link.l6 = "I want you to keep distance from the target.";
+					Link.l6 = "I want you to keep your distance from the target.";
 					Link.l6.go = "TargetDistance";
 			}	
 		break;
@@ -376,7 +304,7 @@ void ProcessDialogEvent()
 		
 		//--> задать дистанцию стрельбы
 		case "TargetDistance":
-			dialog.text = "How far, Captain? Tell Tichingitu how many yards, but not more than twenty.";
+			dialog.text = "How far, Captain? Tell Tichingitu how many yards, but no more than twenty.";
 			link.l1 = "";
 			Link.l1.edit = 3;
 			link.l1.go = "TargetDistance_1";			
@@ -386,14 +314,14 @@ void ProcessDialogEvent()
 			iTemp = sti(dialogEditStrings[3]);
 			if (iTemp < 0)
 			{
-				dialog.text = "Captain, forgive Tichingitu but me not understand you.";
+				dialog.text = "Captain, forgive Tichingitu, but I do not understand you.";
 				link.l1 = "Sorry, my mistake...";
 				link.l1.go = "exit";
 				break;
 			}
 			if (iTemp == 0)
 			{
-				dialog.text = "Tichingitu stand idle, no move. That is what you want, Captain?";
+				dialog.text = "Tichingitu stands idle, does not move. Is that what you want, Captain?";
 				link.l1 = "Yes, precisely so.";
 				link.l1.go = "exit";
 				npchar.MusketerDistance = 0;
@@ -401,13 +329,13 @@ void ProcessDialogEvent()
 			}
 			if (iTemp > 20)
 			{
-				dialog.text = "Tichingitu cannot stay more than twenty yards from target. Then he miss.";
+				dialog.text = "Tichingitu cannot stay more than twenty yards from the target. Then he misses.";
 				link.l1 = "Fine, keep your distance at twenty yards.";
 				link.l1.go = "exit";
 				npchar.MusketerDistance = 20.0;
 				break;
 			}
-			dialog.text = "Tichingitu understand everything. Tichingitu take position you say.";
+			dialog.text = "Tichingitu understands everything. Tichingitu will take the position you say.";
 			link.l1 = "Good.";
 			link.l1.go = "exit";
 			npchar.MusketerDistance = iTemp;
@@ -417,14 +345,14 @@ void ProcessDialogEvent()
 	
 	// на Тайясаль
 		case "tieyasal":
-			dialog.text = "Tichingitu's life long time become life of my Captain. Indian not forget what Captain do for Tichingitu. Tichingitu follow him where Captain say, no question, no hesitation.";
+			dialog.text = "Tichingitu's life, for a long time, has become the life of my Captain. Indian does not forget what Captain did for Tichingitu. Tichingitu will follow him wherever Captain says, no questions, no hesitation.";
 			link.l1 = "Thank you, my friend!";
 			link.l1.go = "tieyasal_1";
 		break;
 		
 		case "tieyasal_1":
 			dialog.text = "When will we depart?";
-			link.l1 = "A little later. For now we will have to prepare for the journey.";
+			link.l1 = "A little later. For now, we will have to prepare for the journey.";
 			link.l1.go = "tieyasal_2";
 		break;
 		
@@ -435,7 +363,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_jailed":
-			dialog.text = "We pay the white man a hundred doubloons, leave, and complete our job freely.";
+			dialog.text = "We pay the white man a hundred doubloons, leave, and finish our job freely.";
 			link.l1 = "And what if we get caught again?";
 			link.l1.go = "tonzag_jailed_1";
 			locCameraFromToPos(-16.78, 1.88, -1.70, true, -5.00, -6.10, -20.70);
@@ -443,12 +371,12 @@ void ProcessDialogEvent()
 		
 		case "tonzag_jailed_1":
 			dialog.text = "We pay a thousand doubloons.";
-			link.l1 = "Cynical but very acute.";
+			link.l1 = "Cynical, but very perceptive.";
 			link.l1.go = "tonzag_jailed_2";
 		break;
 		
 		case "tonzag_jailed_2":
-			dialog.text = "Guadeloupe be worse.";
+			dialog.text = "Guadeloupe is worse.";
 			link.l1 = "How so?";
 			link.l1.go = "tonzag_jailed_3";
 		break;
@@ -460,7 +388,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_aftershot":
-			dialog.text = "Point-blank shot. Captain, the old man is strong, we can save him if act quickly.";
+			dialog.text = "Point-blank shot. Captain, the old man is strong, we can save him if we act quickly.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			
@@ -469,7 +397,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_dead":
-			dialog.text = "The white man know no mercy. Many of mine, Captain. So many. But yours more.";
+			dialog.text = "The white man shows no mercy. Many of mine, Captain. So many. But yours, even more.";
 			link.l1 = "Are they your tribe?";
 			link.l1.go = "tonzag_dead_1";
 		break;
@@ -484,7 +412,7 @@ void ProcessDialogEvent()
 		
 	// Тичингиту говорит о том, что нужно спасти Делюка
 		case "Del_Deluck":
-			dialog.text = "More hundred doubloons?";
+			dialog.text = "Another 40 doubloons?";
 			link.l1 = "Huh? Are you asking if I'll pay for Deluc's release from prison again?";
 			link.l1.go = "Del_Deluck_1";
 		break;
@@ -497,19 +425,19 @@ void ProcessDialogEvent()
 		
 		case "Del_Deluck_2":
 			dialog.text = "We should bail him out.";
-			link.l1 = "That's honorable. Never leave your own behind, eh?";
+			link.l1 = "That's honourable. Never leave your own behind, eh?";
 			link.l1.go = "Del_Deluck_3";
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "Or leave him. Leave weak to a jaguar in the jungle.";
+			dialog.text = "Or leave him. Leave the weak to a jaguar in the jungle.";
 			link.l1 = "Who?";
 			link.l1.go = "Del_Deluck_4";
 		break;
 		
 		case "Del_Deluck_4":
 			dialog.text = "The big cat.";
-			link.l1 = "Tichingitu, I am having troubles understanding you. Just tell me: what should I do in this situation?";
+			link.l1 = "Tichingitu, I am having trouble understanding you. Just tell me: what should I do in this situation?";
 			link.l1.go = "Del_Deluck_5";
 		break;
 		
@@ -522,7 +450,7 @@ void ProcessDialogEvent()
 		case "Del_Deluck_6":
 			DialogExit();
 			AddQuestRecord("FolkeDeluc", "2");
-			Return_TichingituOfficer();
+			ReturnOfficer_Tichingitu();
 		break;
 		
 		case "Exit":

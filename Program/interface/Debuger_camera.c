@@ -725,26 +725,9 @@ void CalculateInfoDataF13()
     // -->
     totalInfo = descF13;
 
-    ref mc;
-    mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-    {
-        mc.worldmapencountersoff = "1";
-        Log_SetStringToLog("Worldmap encounters OFF");
-    }
-    else
-    {
-        if(mc.worldmapencountersoff == "1")
-        {
-            mc.worldmapencountersoff = "0";
-            Log_SetStringToLog("Worldmap encounters ON");
-        }
-        else
-        {
-            mc.worldmapencountersoff = "1";
-            Log_SetStringToLog("Worldmap encounters OFF");
-        }
-    }
+	bEncOffGlobal = !bEncOffGlobal;
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
+	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
     // <--
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
                 "Команда отработала успешно!";

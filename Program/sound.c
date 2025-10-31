@@ -83,6 +83,7 @@ void ResetSoundScheme()
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
 	InitSound();
 	//Trace("ResetSoundScheme");
+    DeleteAttribute(&TEV, "Schemes");
 	SendMessage(Sound,"l",MSG_SOUND_SCHEME_RESET);
 }
 
@@ -90,13 +91,32 @@ void SetSoundScheme(string schemeName)
 {
 	InitSound();
 	//Trace("SetSoundScheme: "+schemeName);
+    DeleteAttribute(&TEV, "Schemes");
+    TEV.Schemes.(schemeName) = "";
 	SendMessage(Sound,"ls",MSG_SOUND_SCHEME_SET,schemeName);
+}
+
+// Указать способ сброса предыдущих схем:
+// bForsed == true выключить сразу, false дать доиграть их звукам
+void UpdateSoundScheme(string schemeName, bool bForsed)
+{
+	InitSound();
+    DeleteAttribute(&TEV, "Schemes");
+    TEV.Schemes.(schemeName) = "";
+	SendMessage(Sound, "ll", MSG_SOUND_SCHEME_RESET, bForsed);
+	SendMessage(Sound,"ls", MSG_SOUND_SCHEME_ADD, schemeName);
+}
+
+bool CheckScheme(string schemeName)
+{
+    return CheckAttribute(&TEV, "Schemes." + schemeName);
 }
 
 void AddSoundScheme(string schemeName)
 {
 	InitSound();
 	//Trace("AddSoundScheme: "+schemeName);
+    TEV.Schemes.(schemeName) = "";
 	SendMessage(Sound,"ls",MSG_SOUND_SCHEME_ADD,schemeName);
 }
 
@@ -161,8 +181,6 @@ void SetSchemeForLocation (ref loc)
 {
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
 	if(CheckAttribute(pchar,"systeminfo.stopsound")) return;
-    ref mchref = GetMainCharacter();
-    mchref.GenQuest.God_hit_us = false; // нефиг воровать :)  (только в домах)
     int iColony = -1; //boal music
     // belamour legendary edition 
 	string ClassicSoundScene = "";
@@ -338,7 +356,6 @@ void SetSchemeForLocation (ref loc)
 						else SetMusicAlarm(ClassicSoundScene+"music_qhouse");
 					}
 				}
-				mchref.GenQuest.God_hit_us = true; // нефиг воровать :)
 			break;
 			
 			case "tavern":
@@ -564,11 +581,12 @@ void SetStaticSounds (ref loc)
 		locatorName = GetAttributeName(locator);
 		locatorNameLength = strlen(locatorName);
 		locatorType = strcut(locatorName, 0, locatorNameLength-3);
-		if ((locatorType == "nightinsects")||(locatorType == "torch"))
+
+		if (locatorType == "nightinsects" || locatorType == "torch")
 		{
 			if (Whr_IsDay() && loc.type != "Dungeon" && loc.type != "cave" && loc.type != "fort_attack") continue;
    		}
-		if (locatorType == "shipyard")
+		else if (locatorType == "shipyard")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 			if (Whr_IsNight()) continue;
@@ -577,7 +595,7 @@ void SetStaticSounds (ref loc)
 			if(LAi_group_IsActivePlayerAlarm()) continue;
 			if(loc.id == "Villemstad_town") locatorType = "villemstad_"+locatorType;
    		}
-		if (locatorType == "church")
+		else if (locatorType == "church")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 			if (Whr_IsNight()) continue;
@@ -586,20 +604,20 @@ void SetStaticSounds (ref loc)
 			if(LAi_group_IsActivePlayerAlarm()) continue;
 			if(loc.id == "Villemstad_town") locatorType = "villemstad_"+locatorType;
    		}
-		if (locatorType == "windmill")
+		else if (locatorType == "windmill")
 		{
 			// belamour legendary edition звуки мельницы
 			if(loc.id == "FortFrance_town") continue;
 			if(Whr_IsNight()) continue;
    		}
 		// belamour legendary edition новые звуковые эффекты -->
-		if (locatorType == "streetnoise")
+		else if (locatorType == "streetnoise")
 		{
 			if(!IsMerchantTime()) continue;
 			if(LAi_IsCapturedLocation) continue;
 			if(CheckAttribute(loc, "QuestCapture")) continue;
    		}
-		if(locatorType == "Churchbell")
+		else if (locatorType == "Churchbell")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 			if(LAi_IsCapturedLocation) continue;
@@ -610,7 +628,7 @@ void SetStaticSounds (ref loc)
 			// колокола во время службы
 			if(locatorType  != "amulet_7" && hrand(6, loc.id) != 3) continue;
 		}
-		if(locatorType == "tavern" || locatorType == "brothel")
+		else if (locatorType == "tavern" || locatorType == "brothel")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 			if(LAi_IsCapturedLocation) continue;
@@ -620,7 +638,7 @@ void SetStaticSounds (ref loc)
 			if(loc.id == "Villemstad_town") locatorType = "villemstad_"+locatorType;
 			else {if(locatorType == "brothel") locatorType = NationShortName(sti(Colonies[iColony].nation)) + "_" + locatorType;}
 		}
-		if (locatorType == "randsex")
+		else if (locatorType == "randsex")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 			if(LAi_IsCapturedLocation) continue;
@@ -628,7 +646,7 @@ void SetStaticSounds (ref loc)
 			if(LAi_group_IsActivePlayerAlarm()) continue;
 			if(loc.id == "Villemstad_town") locatorType = "villemstad_"+locatorType;
    		}
-		if(locatorType == "seashore")
+		else if (locatorType == "seashore")
 		{
 			if(loadedLocation.id != "khaelroa_port")
 			{
@@ -636,16 +654,15 @@ void SetStaticSounds (ref loc)
 				if(loc.type == "mayak") locatorType = "shoreseashore";
 			}
 		}
-		if(locatorType == "fireplace") 
+		else if (locatorType == "fireplace") 
 		{
 			if(CheckAttribute(Loc, "locators.heaters_p") && CheckAttribute(Loc, "heaters_night_only") && !Whr_IsNight()) continue;
 		} 
-		
-		if(locatorType == "islamona_tavern")
+		else if (locatorType == "islamona_tavern")
 		{
 			if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
 		}
-		if(locatorType == "band")
+		else if (locatorType == "band")
 		{
 			continue;
 			//if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) continue;
@@ -683,7 +700,7 @@ void SetCaveStaticSounds (ref loc)
 	}
 }
 
-void SetSchemeForSea ()
+void SetSchemeForSea()
 {
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
 	ResetSoundScheme();
@@ -778,7 +795,7 @@ void SetSchemeForSea ()
 	ResumeAllSounds();
 }
 
-void SetSchemeForMap ()
+void SetSchemeForMap()
 {
 	if(CheckAttribute(pchar, "questTemp.TrackNonStop")) return;
 	ResetSoundScheme();
@@ -820,13 +837,9 @@ void SetMusic(string name)
 		oldMusicID = musicID;
 	}
 
-	//int silenceTime = 20000 + MakeInt(frnd() * MUSIC_SILENCE_TIME);
-	//musicID = SendMessage(Sound, "lslllllll", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, true, true, false, MUSIC_CHANGE_TIME, silenceTime);
-	//SendMessage(Sound, "llf", MSG_SOUND_SET_VOLUME, musicID, 1.0);
-	// fix поседнее - это громкость звука
-	musicID = SendMessage(Sound, "lslllllllf", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, true, true, false, 0, MUSIC_CHANGE_TIME, 1.0);
-	SendMessage(Sound, "lll", MSG_SOUND_RESUME, musicID, MUSIC_CHANGE_TIME);
-	
+    // TO_DO: Активировать кроссфейд (но если мы его используем, то заработает логика сохранения позиций, надо принять решение по ней)
+	musicID = SendMessage(Sound, "lslllllllf", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, false, true, false, 0, MUSIC_CHANGE_TIME, 1.0);
+
 	oldMusicName = musicName;
 	musicName = name;
 }
@@ -854,7 +867,7 @@ void SetMusicOnce(string name)
 		SendMessage(Sound, "lll", MSG_SOUND_STOP, musicID, MUSIC_CHANGE_TIME);
 		oldMusicID = musicID;
 	}
-	musicID = SendMessage(Sound, "lslllllllf", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, false, false, false, 0, MUSIC_CHANGE_TIME, 1.0);
+	musicID = SendMessage(Sound, "lsllllllf", MSG_SOUND_PLAY, name, SOUND_MP3_STEREO, VOLUME_MUSIC, false, false, false, 0, 1.0);
 	SendMessage(Sound, "lll", MSG_SOUND_RESUME, musicID, MUSIC_CHANGE_TIME);
 	
 	oldMusicName = musicName;
@@ -987,7 +1000,7 @@ void Sound_OnAlarm(bool _alarmed)
 	{ //alarm on!
 		if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0)
 		{
-			if (CheckAttribute(pchar, "questTemp.Memento_BitvaSkeletMusic"))
+			if (CheckAttribute(pchar, "questTemp.Quest_BitvaSkeletMusic"))
 			{
 				SetMusic("classic_music_retribution_1");
 				return;
@@ -1009,11 +1022,13 @@ void Sound_OnAlarm(bool _alarmed)
 	oldAlarmed = alarmed;
 }
 
+/*
 void Sound_OnSeaAlarm(bool _seaAlarmed)
 {
 	seaAlarmed = _seaAlarmed;
 	if (seaAlarmed == oldSeaAlarmed)
 		return;
+    UpdateSailorsChatter();
 	string ClassicSoundScene = "";
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene") && sti(InterfaceStates.ClassicSoundScene) > 0) ClassicSoundScene = "classic_";
 	if (seaAlarmed)
@@ -1039,14 +1054,7 @@ void Sound_OnSeaAlarm(bool _seaAlarmed)
 	}
 	oldSeaAlarmed = seaAlarmed;
 }
-
-// set music without any checks
-void Sound_OnSeaAlarm555(bool _seaAlarmed, bool bHardAlarm)
-{
-	if (bHardAlarm) { oldSeaAlarmed = !_seaAlarmed; }
-	
-	Sound_OnSeaAlarm(_seaAlarmed);
-}
+*/
 
 void InitSound()
 {
@@ -1149,7 +1157,7 @@ void Start_TrackNonStop(string track, float out)
 {
 	ResetSound();
 	//SetMusicOnce("music_SeaDogs1_MainTheme_Sea");
-	musicID = SendMessage(Sound, "lslllllllf", MSG_SOUND_PLAY, track, SOUND_MP3_STEREO, VOLUME_MUSIC, false, false, false, 0, MUSIC_CHANGE_TIME, 1.5);
+	musicID = SendMessage(Sound, "lsllllllf", MSG_SOUND_PLAY, track, SOUND_MP3_STEREO, VOLUME_MUSIC, false, false, false, 0, 1.5);
 	pchar.questTemp.TrackNonStop = true;
 	//pchar.questTemp.NoFast = true;
 	DoQuestFunctionDelay("End_TrackNonStop", out);
@@ -1160,4 +1168,18 @@ void End_TrackNonStop()
 	if(CheckAttribute(pchar,"questTemp.TrackNonStop")) DeleteAttribute(pchar,"questTemp.TrackNonStop");
 	if(CheckAttribute(pchar,"questTemp.NoFast")) DeleteAttribute(pchar,"questTemp.NoFast");
 	SetSchemeAfterFlagRise();
+}
+
+//////////////////////////////////////
+// SOUND EVENT SECTION
+//////////////////////////////////////
+int Play3DSoundEvent(string name, float x, float y, float z)
+{
+	InitSound();
+    return SendMessage(Sound, "lslfff", MSG_SOUND_EVENT_PLAY, name, 0, x, y, z);
+}
+
+void SoundEvent_SetVolume(int iEventID, float fVolume)
+{
+	SendMessage(Sound, "llf", MSG_SOUND_EVENT_SET_VOLUME, iEventID, fVolume);
 }

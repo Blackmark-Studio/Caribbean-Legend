@@ -64,27 +64,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "DTSG_BasTerTavern_2":
 			dialog.text = "Да ничего особенного толком. Появился буквально пару-тройку дней назад. Нравилось ему у нас, даже дом снимал на окраине города. Частенько захаживал, исправно платил. И, что самое главное, всё это время он прилично себя вёл, никому и слова дурного не сказал. До сих дивлюсь тому, что он напал на вас с другом\nДумал уже, что он осядет здесь навсегда.";
 			Link.l1 = "В каком-то смысле так оно и оказалось. Ну, негусто, конечно, но спасибо и на этом, приятель. До встречи.";
-			Link.l1.go = "DTSG_BasTerTavern_3";
-		break;
-		
-		case "DTSG_BasTerTavern_3":
-			DialogExit();
-			DeleteAttribute(pchar, "questTemp.DTSG_BasTerTavern");
-			LAi_LocationDisableOfficersGen("BasTer_tavern", false);
-			SetQuestHeader("DTSG");
-			AddQuestRecord("DTSG", "1");
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			Return_KnippelOfficer();
-			
-			PChar.quest.DTSG_BasTerDom.win_condition.l1 = "locator";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.location = "BasTer_town";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator = "HutFish1";
-			PChar.quest.DTSG_BasTerDom.win_condition = "DTSG_BasTerDom";
-			
-			SetTimerCondition("DTSG_BasTerDom_Timer", 0, 0, 7, false);
-			SetTimerCondition("DTSG_Etap2", 0, 0, 14, false);
+			Link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_BasTerTavern_3");
 		break;
 		// <== Квест "Длинные тени старых грехов" - Sinistra
 		
@@ -144,7 +125,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "С документами? Разумеется, всё в полном порядке. Вы же не собираетесь в них заглядывать?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{
@@ -175,7 +156,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Пожалуй, я смогу сделать вам скидку. Но это ещё не всё. Я хочу стать вашим поставщиком на постоянной основе. Гарантирую - никаких накладок с поставками не будет. Я арендую склад в Бас-Тере, и вы будете получать товар прямо оттуда, без задержек. Там всегда будет достаточно спиртного, чтобы предвосхитить любого рода перебои. Что до суммы - с учётом скидки она составит двести сорок дублонов. Что скажете?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{
@@ -241,7 +222,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Конечно, капитан! Итак, сколько вы хотите за вашу партию?";
 				link.l1 = "За каждую десятку бутылок вина я хочу получить по тридцать дублонов, за ром - по пять дублонов. Вся партия из ста бутылок рома и такого же количества вина обойдётся вам в триста пятьдесят дублонов.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 			else
 			{

@@ -216,7 +216,7 @@ void ProcessDialogEvent()
 		pchar.GenQuest.MarchCap = "exellent";
 		break;
 
-	// если будет время - здесь создаем еще одного клона с уникальным ИД для продолжения квеста
+	// если будет время - здесь создаем ещё одного клона с уникальным ИД для продолжения квеста
 	case "MarchCap_Deck_continue":
 		dialog.text = "Hay una posibilidad, capitán. Te encontraré si obtengo otra pista rentable que no pueda manejar por mi cuenta. También me pareces un compañero de batalla confiable.";
 		link.l1 = "¡Genial! Adiós, capitán. ¡Buena suerte!";

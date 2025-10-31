@@ -35,32 +35,9 @@ void ProcessDialogEvent()
 	case "Cabin":
 		dialog.text = "Marcello, lo conozco. Es amigo de Rivados y de los piratas. Adolf nunca trabajaría con él. Huele el aire... ¿sientes el olor a pólvora? Y hay sangre en la pared... ¡Él mató a Adolf y ahora intenta engañarnos! ¡Debe estar trabajando para el almirante! ¡Mátalo!";
 		link.l1 = "Por favor, Mary, cuéntame más sobre tus aventuras, sí, ¿eh?";
-		link.l1.go = "Cabin_fight";
-		break;
-
-	case "Cabin_fight":
-		chrDisableReloadToLocation = true;										   // закрыть локацию
-		LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false); // разрешить драться
-		DialogExit();
-		sld = characterFromId("Marchello");
-		LAi_SetWarriorType(sld);
-		LAi_group_MoveCharacter(sld, "EnemyFight");
-		LAi_SetWarriorType(npchar);
-		LAi_group_MoveCharacter(npchar, "EnemyFight");
-		if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-		{
-			for (i = 1; i <= 3; i++)
-			{
-				sld = characterFromId("CyclopGuard_" + i);
-				LAi_SetWarriorType(sld);
-				LAi_group_MoveCharacter(sld, "EnemyFight");
-			}
-		}
-		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-		LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-		LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-		AddDialogExitQuest("MainHeroFightModeOn");
-		break;
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("LSC_Cabin_fight");
+	break;
 
 	// на улице
 	case "Town":
@@ -1722,7 +1699,7 @@ void ProcessDialogEvent()
 	// Jason Дороже золота
 	case "GoldenGirl":
 		pchar.quest.Mary_giveme_sex1.over = "yes";	   // fix 22-03-20
-		pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+		pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 		dialog.text = "¿Cuál es todo este alboroto esta vez, Capitán? ¿Españoles, piratas o algo peor?";
 		link.l1 = "Es peor, Mary, mucho peor. El gobernador tiene la intención de visitar a una cortesana extremadamente cara y se supone que debo acompañarlo como persona de interés, tal como prometí a la madama. Charlas aburridas, vino carísimo y nobles insulsos.";
 		link.l1.go = "GoldenGirl_1";

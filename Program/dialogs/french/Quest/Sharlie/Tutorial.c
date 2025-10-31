@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Quel dommage, mon plan sournois a échoué. À bientôt, matelot.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -570,14 +570,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "Eh bien... vous avez raison. Et vous avez déjà partagé plusieurs repas dans la cabine du capitaine. Passez, monsieur "+pchar.lastname+".";
 					link.l1 = "C’est mieux ainsi.";
 					link.l1.go = "OhrannikCabin_4";
-					notification("Vérification réussie", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -601,7 +601,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Compétence insuffisante (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 			dialog.text = "Eh bien... bon, je suppose que ça ne causera pas de gros problèmes.";
 			link.l1 = "Voilà qui est mieux !";
 			link.l1.go = "OhrannikCabin_4";
-			notification("Vérification réussie", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -959,6 +959,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 
 		case "SailorWantRum_PrinestiRum_6":
@@ -1063,17 +1064,17 @@ void ProcessDialogEvent()
 
 		case "OldSailor_9":
 			dialog.text = "Alors, dites-moi : quelle est la compétence la plus importante pour un capitaine ?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "La navigation. Elle détermine la taille du navire qu’il peut commander.";
 				link.l1.go = "OldSailor_10";
-				notification("Test réussi", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Je ne vais pas mentir, je ne sais pas.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Compétence insuffisante (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1157,18 +1158,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "Vous avez trouvé la réponse ? Quelle est la compétence la plus importante pour un capitaine ?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "La navigation. Elle détermine la taille du navire qu’il peut commander.";
 				link.l1.go = "OldSailor_10";
-				notification("Test réussi", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Pas encore.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Compétence insuffisante (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		// <-- Диалог со старым матросом в трюме
@@ -1578,7 +1579,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_12_Wait": // ждёт выполнения квеста
 			dialog.text = "Alors, des nouvelles ? Vous avez distribué les soldes ? Tout est revenu ? Les doublons restants, le coffre vide ?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "Tout est prêt.";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1595,7 +1596,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "On disait que vous saviez compter. Il en manque. Cela signifie que ma comptabilité vient de se compliquer, et vous m’avez causé un problème au lieu d’en résoudre un.\n"
@@ -1678,7 +1679,7 @@ void ProcessDialogEvent()
 
 		case "OfficerKaznachey_16_Proval_3":
 			dialog.text = "La bataille ne commencera que dans quelques heures, c'est donc le moment parfait pour clôturer les comptes quotidiens. Vous avez mon coffre de doublons, de Maure. Veuillez le rendre.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Prenez-le. Et ne montrez plus votre tête ici en bas.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
@@ -1691,12 +1692,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "Je n'en avais pas l'intention. Je ne suis pas un rat de terre - ma place n'est pas dans la cale. Adieu.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);

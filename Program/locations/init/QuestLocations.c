@@ -1413,32 +1413,34 @@ int LocationInitQuestLocations(int n)
 	//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	Locations[n].id = "Quest_Cabin_Medium";
 	Locations[n].id.label = "cabine";
-	Locations[n].filespath.models = "locations\decks\capmd";
+	Locations[n].filespath.models = "locations\decks\inside_cabin_3";
     Locations[n].image = "loading\Capdeck_" + rand(4) + ".tga";
 	//Sound
 	Locations[n].type = "residence";
 	//Models
 	//Always
-	Locations[n].models.always.l1 = "capmd";
-	locations[n].models.always.l1.level = 65538;
-
-	Locations[n].models.always.window = "capmd_w";
-	Locations[n].models.always.window.tech = "LocationWindows";
-	locations[n].models.always.window.level = 65539;
-
+	Locations[n].models.always.main = "inside_cabin_3";
+	Locations[n].models.always.main.level = 65538;
+	Locations[n].models.always.parts = "inside_cabin_3_parts";
+	Locations[n].models.always.locators = "inside_cabin_3_locators_quest";
+	Locations[n].models.always.camcollider = "inside_cabin_3_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
+	Locations[n].models.always.bsp = "inside_cabin_3_bsp";
+	Locations[n].models.always.windows = "inside_cabin_3_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
 	//Day
-	Locations[n].models.day.l2 = "capmd_md"; //пушки по бортам, карты на столе
-    Locations[n].models.day.l2.level = 65538;
-    Locations[n].models.day.locators = "capmd_quest_locators"; //протагонист в центре каюты, клевреты стоят вокруг, ближе к стенам
-    Locations[n].models.day.charactersPatch = "capmd_pmd"; //дерево + ковёр - стул
-    Locations[n].models.day.fonar = "capmd_fd";
-
+	Locations[n].models.day.charactersPatch = "inside_cabin_3_patch";
+	Locations[n].models.day.fonar = "inside_cabin_3_fd";
+	Locations[n].models.day.rays = "inside_cabin_3_rays"; // лучи только днем
+	Locations[n].models.day.rays.uvslide.v0 = 0.08;
+	Locations[n].models.day.rays.uvslide.v1 = 0.0;
+	Locations[n].models.day.rays.tech = "LocationWaterFall";
+	Locations[n].models.day.rays.level = 99950;
 	//Night
-	Locations[n].models.night.l3 = "capmd_mn"; //пушки по бортам, новые портреты
-    Locations[n].models.night.l3.level = 65538;
-    Locations[n].models.night.locators = "capmd_quest_locators"; //протагонист так же в центре каюты, клевреты располагаются вокруг
-    Locations[n].models.night.charactersPatch = "capmd_pmn"; //дерево + ковёр
-    Locations[n].models.night.fonar = "capmd_fn";
+	Locations[n].models.night.charactersPatch = "inside_cabin_3_patch";
+	Locations[n].models.night.fonar = "inside_cabin_3_fn";
 
 	//Environment
 	Locations[n].environment.sea = "true";
@@ -1495,6 +1497,8 @@ int LocationInitQuestLocations(int n)
 	Locations[n].models.always.outside = "inside_gundeck_3_outside";
 	Locations[n].models.always.locators = "inside_gundeck_3_locators_tutorial";
 	Locations[n].models.always.camcollider = "inside_gundeck_3_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
 	Locations[n].models.always.rays = "inside_gundeck_3_rays"; // лучи
 	Locations[n].models.always.rays.uvslide.v0 = 0.08;
 	Locations[n].models.always.rays.uvslide.v1 = 0.0;
@@ -1561,6 +1565,8 @@ int LocationInitQuestLocations(int n)
 	Locations[n].models.always.locators = "inside_campdeck_3_locators_tutorial";
 	Locations[n].models.always.sleeper = "inside_campdeck_3_sleeper";
 	Locations[n].models.always.camcollider = "inside_campdeck_3_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
 	Locations[n].models.always.rays = "inside_campdeck_3_rays"; // лучи
 	Locations[n].models.always.rays.uvslide.v0 = 0.08;
 	Locations[n].models.always.rays.uvslide.v1 = 0.0;
@@ -1627,6 +1633,8 @@ int LocationInitQuestLocations(int n)
 	Locations[n].models.always.outside = "inside_hold_3_outside";
 	Locations[n].models.always.locators = "inside_hold_3_locators_tutorial";
 	Locations[n].models.always.camcollider = "inside_hold_3_camcollider";
+	Locations[n].models.always.camcollider.tech = "LocationWindows";
+	locations[n].models.always.camcollider.level = 65539;
 	Locations[n].models.always.rays = "inside_hold_3_rays"; // лучи
 	Locations[n].models.always.rays.uvslide.v0 = 0.08;
 	Locations[n].models.always.rays.uvslide.v1 = 0.0;
@@ -1664,6 +1672,38 @@ int LocationInitQuestLocations(int n)
 	//Locations[n].camshuttle = 1;
 	locations[n].environment.weather.rain = false;
 
+	n = n + 1;
+	
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// Квестовая палуба на корабле, где проходят похороны
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////
+  	Locations[n].id = "Quest_ShipboardFuneral";
+	Locations[n].image = "loading\Quarter_" + rand(1) + ".tga";
+	locations[n].id.label = "Boarding deck";
+	//Sound
+	Locations[n].type = "residence";
+	// Locations[n].lockCamAngle = 0.4;
+	//Models  
+	Locations[n].filespath.models = "locations\decks\outside_deck_QuestMary"; // бриг, сцена похорон
+	//Always
+	Locations[n].models.always.main = "outside_deck_QuestMary";
+	Locations[n].models.always.parts = "outside_deck_QuestMary_parts";
+	Locations[n].models.always.ropes = "outside_deck_QuestMary_ropes";
+	Locations[n].models.always.locators = "outside_deck_QuestMary_locators";
+	Locations[n].models.always.windows = "outside_deck_QuestMary_windows";
+	Locations[n].models.always.windows.tech = "LocationWindows";
+	Locations[n].models.always.windows.level = 65539;
+	Locations[n].models.always.watermask = "outside_deck_QuestMary_watermask";
+	Locations[n].models.always.watermask.tech = "WaterMask";
+	Locations[n].models.always.watermask.level = 65500;
+	Locations[n].models.always.table_corpse = "outside_deck_QuestMary_table_corpse";
+	//Day
+	locations[n].models.day.charactersPatch = "outside_deck_QuestMary_patch";
+	Locations[n].models.day.deckMediumFonarsDay = "outside_deck_QuestMary_fd";
+	//Night
+	locations[n].models.night.charactersPatch = "outside_deck_QuestMary_patch";
+	Locations[n].models.night.deckMediumFonarsNight = "outside_deck_QuestMary_fd";
+	
 	n = n + 1;
 	
 	///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

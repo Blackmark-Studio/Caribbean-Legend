@@ -29,7 +29,7 @@ void ProcessDialogEvent()
 			dialog.text = "What do you want in my house?";
 			if (CheckAttribute(pchar, "questTemp.Mangarosa") && pchar.questTemp.Mangarosa == "amelia")
 			{
-				link.l1 = "Your name is Amelia, right? I came to ask you about one plant. Manga Rosa.";
+				link.l1 = "Your name is Amelia, right? I came to ask you about a plant. Manga Rosa.";
 				link.l1.go = "amelia_1";
 			}
 			else
@@ -41,13 +41,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amelia_1":
-			dialog.text = "Interesting! And who has told you about me, brave young man?";
-			link.l1 = "One of your people. She said that you know the secrets of this plant and you can teach me how to make special potions from it...";
+			dialog.text = "Interesting! And who told you about me, brave young man?";
+			link.l1 = "One of your people. She said that you know the secrets of this plant and that you can teach me how to make special potions from it...";
 			link.l1.go = "amelia_2";
 		break;
 		
 		case "amelia_2":
-			dialog.text = "First, show me the plant of which you are talking about. Perhaps you don't know a thing about it and you're just wasting my time. Where is your Manga Rosa?";
+			dialog.text = "First, show me the plant you are talking about. Perhaps you don't know a thing about it and you're just wasting my time. Where is your Manga Rosa?";
 			if (CheckCharacterItem(pchar, "cannabis7"))
 			{
 				link.l1 = "Here, take a look.";
@@ -61,17 +61,17 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amelia_exit":
-			dialog.text = "And what were you going to show me? You don't have Manga Rosa. So get out, pal, until I get angry. This talk is over.";
+			dialog.text = "And what were you going to show me? You don't have Manga Rosa. So get out, pal, before I lose my temper. This conversation is over.";
 			link.l1 = "But...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "amelia_wait";
 		break;
 		
 		case "amelia_wait":
-			dialog.text = "You again? Don't lead to trouble, boy...";
+			dialog.text = "You again? Don't cause any trouble, boy...";
 			if (CheckCharacterItem(pchar, "cannabis7"))
 			{
-				link.l1 = "Calm down, Amelia. I have dropped it somewhere last time. Here, I have brought you Manga Rosa. Take a look.";
+				link.l1 = "Calm down, Amelia. I must have dropped it somewhere last time. Here, I have brought you Manga Rosa. Take a look.";
 				link.l1.go = "amelia_3";
 			}
 			else
@@ -83,37 +83,37 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amelia_3":
-			dialog.text = "Let's see... It seems that you know something about it. And do you want me to tell you the secrets of my potions?";
+			dialog.text = "Let's see... It seems you know something about it. And do you want me to tell you the secrets of my potions?";
 			link.l1 = "Exactly. And not for free, as I understand...";
 			link.l1.go = "amelia_4";
 		break;
 		
 		case "amelia_4":
-			dialog.text = "You understand it right, young man! You don't look like a complete idiot. Well, I can teach a man who seeks knowledge and who doesn't waste this rare plant on a useless smoking stuff...";
-			link.l1 = "Amelia, before we start bargaining... would you be kindly to tell me some basic knowledge about potions I can make of Manga Rosa?";
+			dialog.text = "You understand it right, young man! You don't look like a complete idiot. Well, I can teach a man who seeks knowledge and who doesn't waste this rare plant on useless smoking stuff...";
+			link.l1 = "Amelia, before we start bargaining... would you be so kind as to tell me some basic knowledge about potions I can make from Manga Rosa?";
 			link.l1.go = "amelia_5";
 		break;
 		
 		case "amelia_5":
-			dialog.text = "No bargaining, pal. I will tell you the price and it would be your decision to pay it or not. Don't count on any bargain or discount, this is not a market. And concerning your question... You can make special potions of Manga Rosa which will fortify your physical abilities. They can make you stronger, more endurable or faster, or they can completely alter your body making you stronger in every aspect, but such a potion would have a weaker effect than the previous two.";
+			dialog.text = "No bargaining, pal. I will tell you the price and it will be your decision whether to pay it or not. Don't count on any bargains or discounts, this is not a market. And concerning your question... You can make special potions of Manga Rosa which will fortify your physical abilities. They can make you stronger, more enduring or faster, or they can completely alter your body, making you stronger in every aspect, but such a potion would have a weaker effect than the previous two.";
 			link.l1 = "Very interesting. Name your price.";
 			link.l1.go = "amelia_6";
 		break;
 		
 		case "amelia_6":
-			dialog.text = "I can teach you three recipes. For every recipe I ask for one plant and five hundred golden coins.";
-			link.l1 = "Tell me more about these potions. What each of them does?";
+			dialog.text = "I can teach you three recipes. For each recipe, I ask for one plant and five hundred gold coins.";
+			link.l1 = "Tell me more about these potions. What does each of them do?";
 			link.l1.go = "amelia_7";
 		break;
 		
 		case "amelia_7":
-			dialog.text = "You must be a master of the art of alchemy if you want to make a single potion. Every potion lasts for two days or less, depends when you drink it, if you drink it at midnight it will be close to two full days\nFirst potion adds you strength and endurance. You will fight better, take less damage and carry more weight\nSecond potion will make you swifter, agile, tireless and it will also improve your aim\nThird potion has a twice weaker effects of both previous potions. But it also gives you charm, self-confidence and luck too\nAll Manga Rosa-based potions have a positive effect on your health. You must drink only one potion at time, never mix them, otherwise they will do you no good, on the contrary you will get a strong poisoning\nSo, handsome, are you ready to pay for the knowledge right now, or do you need time to think?";
+			dialog.text = "You must be a master of the art of alchemy if you wish to brew even a single potion. Each potion lasts for two days or less, depending on when you drink it; if you take it at midnight, it will last nearly two full days\nThe first potion increases your strength and endurance. You will fight better, take less damage, and carry more weight\nThe second potion will make you swifter, more agile, tireless, and it will also improve your aim\nThe third potion has effects half as strong as both previous potions. But it also grants you charm, self-confidence, and luck as well\nAll Manga Rosa-based potions have a positive effect on your health. You must drink only one potion at a time; never mix them, otherwise they will do you no good—on the contrary, you will suffer severe poisoning\nSo, handsome, are you ready to pay for the knowledge right now, or do you need time to think?";
 			if (CheckCharacterItem(pchar, "cannabis7") && PCharDublonsTotal() >= 500)
 			{
 				link.l1 = "Yes, I am ready.";
 				link.l1.go = "amelia_8";
 			}
-			link.l2 = "I need to think a bit. This is a big decision to make.";
+			link.l2 = "I need to think for a bit. This is a big decision to make.";
 			link.l2.go = "exit";
 			NextDiag.TempNode = "amelia_next";
 		break;
@@ -153,27 +153,27 @@ void ProcessDialogEvent()
 		break;
 		
 		case "amelia_8":
-			dialog.text = "Very well. What kind of recipe do you want to buy?";
+			dialog.text = "Very well. What kind of recipe would you like to buy?";
 			if (!CheckAttribute(npchar, "quest.recipe_power"))
 			{
-				link.l1 = "The recipe for potion of strength and endurance.";
+				link.l1 = "The recipe for a potion of strength and endurance.";
 				link.l1.go = "power";
 			}
 			if (!CheckAttribute(npchar, "quest.recipe_fast"))
 			{
-				link.l2 = "The recipe for potion of agility and tirelessness.";
+				link.l2 = "The recipe for the potion of agility and tirelessness.";
 				link.l2.go = "fast";
 			}
 			if (!CheckAttribute(npchar, "quest.recipe_total"))
 			{
-				link.l3 = "The recipe of a complex potion.";
+				link.l3 = "The recipe for a complex potion.";
 				link.l3.go = "total";
 			}
 		break;
 		
 		case "power":
-			dialog.text = "Fine. I have named it the 'Tidal Wave'. Here, take an instruction. Read it carefully. And don't forget how to use it correctly!";
-			link.l1 = "Thanks, Amelia...";
+			dialog.text = "Fine. I have named it the 'Tidal Wave'. Here, take the instructions. Read them carefully. And don't forget how to use it correctly!";
+			link.l1 = "Thank you, Amelia...";
 			link.l1.go = "recipe_exit";
 			AddQuestRecordInfo("Recipe", "mangarosapower");
 			SetAlchemyRecipeKnown("mangarosapower");
@@ -181,8 +181,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "fast":
-			dialog.text = "Fine. I have named it the 'Squall'. Here, take an instruction. Read it carefully. And don't forget how to use it correctly!";
-			link.l1 = "Thanks, Amelia...";
+			dialog.text = "Fine. I have named it the 'Squall'. Here, take the instructions. Read them carefully. And don't forget how to use it correctly!";
+			link.l1 = "Thank you, Amelia...";
 			link.l1.go = "recipe_exit";
 			AddQuestRecordInfo("Recipe", "mangarosafast");
 			SetAlchemyRecipeKnown("mangarosafast");
@@ -190,8 +190,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "total":
-			dialog.text = "Fine. I have named it the 'Sea Hug'. Here, take an instruction. Read it carefully. And don't forget how to use it correctly!";
-			link.l1 = "Thanks, Amelia...";
+			dialog.text = "Fine. I've named it the 'Sea Hug'. Here, take these instructions. Read them carefully. And don't forget how to use it properly!";
+			link.l1 = "Thank you, Amelia...";
 			link.l1.go = "recipe_exit";
 			AddQuestRecordInfo("Recipe", "mangarosatotal");
 			SetAlchemyRecipeKnown("mangarosatotal");
@@ -219,13 +219,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "chickengod_1":
-			dialog.text = "No, dear, if you need to ask, then this knowledge is of no use for you yet.";
+			dialog.text = "No, dear, if you need to ask, then this knowledge is of no use to you yet.";
 			link.l1 = "And what is inside the chest you so generously promised to open?";
 			link.l1.go = "chickengod_2";
 		break;
 		
 		case "chickengod_2":
-			dialog.text = "A great many things, useful for captains who do not disdain manual labor. Don't waste my time, dear, you can't collect that many pebbles anyway.";
+			dialog.text = "A great many things, useful for captains who do not disdain manual labour. Don't waste my time, dear, you can't collect that many pebbles anyway.";
 			link.l1 = "We'll see about that!";
 			link.l1.go = "exit";
 			
@@ -233,14 +233,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "chickengod_collected":
-			dialog.text = "Ha-ha-ha! I was a joke, dear!";
-			link.l1 = "Jokes will be on you when they burn you, witch, in your own hovel!";
+			dialog.text = "Ha-ha-ha! It was a joke, dear!";
+			link.l1 = "The joke will be on you when they burn you, witch, in your own hovel!";
 			link.l1.go = "chickengod_collected_1";
 		break;
 		
 		case "chickengod_collected_1":
 			dialog.text = "That's not my fate, dear... You've made this gypsy proud! Here, this chest is yours to plunder.";
-			link.l1 = "Thank you, Amelia. But I really hope there's something useful in there besides your old underwear...";
+			link.l1 = "Thank you, Amelia. But I do hope there's something useful in there besides your old underwear...";
 			link.l1.go = "exit";
 			
 			TakeNItems(pchar, "talisman11", -113);

@@ -21,33 +21,29 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar,
-					LinkRandPhrase("There's been an alarm raised in the town. Everyone's looking for you! I wouldn't wait around here for too long if I were you.", "The whole guard is scouring the town trying to find you. I'm not an idiot and I'm not about to talk to you!", "Run, matey, before the soldiers make mincemeat out of you..."),
-					LinkRandPhrase("What do you need, scoundrel?! The town guard is already on your trail. You won't get far, pirate!", "Dirty killer, get out of my house! Guards!!", "I'm not afraid of you, dog! The noose is calling, you won't get far..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Heh, I'm not worried about the alarm...", "They have no chance of catching me."),
-					RandPhraseSimple("Shut your mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I will cut out your goddamn tongue.", "Heh, " + GetWorkTypeOfMan(npchar, "") + ", you too want to hunt a pirate? Listen, mate, keep calm and you might live..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("There's been an alarm raised in the town. Everyone's looking for you! I wouldn't wait around here for too long if I were you.","The whole guard is scouring the town trying to find you. I'm not an idiot, and I'm not about to talk to you!","Run, mate, before the soldiers make mincemeat out of you..."),LinkRandPhrase("What do you want, scoundrel?! The town guard is already on your trail. You won't get far, pirate!","Dirty killer, get out of my house! Guards!!","I'm not afraid of you, dog! The noose is calling, you won't get far..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Heh, I'm not worried about the alarm...","They have no chance of catching me."),RandPhraseSimple("Shut your mouth, "+GetWorkTypeOfMan(npchar,"")+", or I will cut out your damn tongue.","Heh, "+GetWorkTypeOfMan(npchar,"")+", you want to hunt a pirate too? Listen, mate, keep calm and you might just live..."));
 				link.l1.go = "exit";
 				break;
 			}
 			if (npchar.quest.meeting == "0")
 			{
-				dialog.text = TimeGreeting() + "! Welcome, " + GetAddress_Form(NPChar) + " to the Los-Teques mine tavern. Food, drinks and girls, all at affordable prices! My name is "+GetFullName(npchar)+" and I am always at your service.";
-				Link.l1 = "Let's see... I'm " + GetFullName(pchar) + ". Pleased to meet you, "+npchar.name+".";
+				dialog.text = TimeGreeting()+"! Welcome, "+GetAddress_Form(NPChar)+" to the Los-Teques Mine Tavern. Food, drinks, and girls, all at affordable prices! My name is "+GetFullName(npchar)+" and I am always at your service.";
+				Link.l1 = "Let's see... I'm "+GetFullName(pchar)+". Pleased to meet you, "+npchar.name+".";
 				Link.l1.go = "meeting";
 				npchar.quest.meeting = "1";
 			}
 			else
 			{
-				dialog.text = "Aha, it's my old acquaintance, captain "+GetFullName(pchar)+"! Glad to see you, old man! Rum, girls?";
+				dialog.text = "Aha, it's my old acquaintance, Captain "+GetFullName(pchar)+"! Glad to see you, old man! Rum, girls?";
 				if (makeint(pchar.money) >= 5)
 				{
 					link.l1 = "Pour me some rum, "+npchar.name+".";
 					link.l1.go = "drink";
 				}
-				link.l2 = "I'd like to get some shut eye. Do you have a free room?";
+				link.l2 = "I'd like to get some shut-eye. Do you have a free room?";
 				link.l2.go = "room";
-				link.l3 = LinkRandPhrase("Do you have any current news?","What's new in these parts?","How's life coming along on dry land?");
+				link.l3 = LinkRandPhrase("Do you have any news?","What's new around here?","How's life treating you on dry land?");
 				link.l3.go = "rumours_tavern";
 				link.l4 = "No, I don't need anything, "+npchar.name+". I just stopped by to say hello to you.";
 				link.l4.go = "exit";
@@ -56,29 +52,29 @@ void ProcessDialogEvent()
 		break;
 		
 		case "meeting":
-			dialog.text = "Oh, I'm so happy! New faces are a rarity in our city. How about I pour you some rum and we'll have a chat...";
-			link.l1 = "This is my first time here and I'd like to find out a little bit more about this settlement.";
+			dialog.text = "Oh, I'm so happy! New faces are a rarity in our city. How about I pour you some rum and we have a chat...";
+			link.l1 = "This is my first time here and I'd like to find out a little more about this settlement.";
 			link.l1.go = "info";
 			if (makeint(pchar.money) >= 5)
 			{
 				link.l2 = "Pour me some rum, "+npchar.name+".";
 				link.l2.go = "drink";
 			}
-			link.l3 = "I'd like to get some shut eye. Do you have a free room?";
+			link.l3 = "I'd like to get some shut-eye. Do you have a free room?";
 			link.l3.go = "room";
 		break;
 		
 		case "info":
-			dialog.text = "Nothing interesting to tell. Same business everyday: boredom, sun and dust. Only soldiers, negros, and Indians live here. You may also find a few adventures and bandits hungry for gold\nSometimes gentlemen, captains like yourself, visit us in order to sell slaves for ingots and to buy precious metals. Our merchant is quite aninteresting man, he sells not only golden and silver nuggets, but also semiprecious gems\n He claims that people with special knowledge may find these pebbles very useful. So check our store. The mine itself is located further beneath the mountain. You may attend it if you wish, but I recommend to avoid making guard upset\nDon't talk to convicts and God save you from stealing. Anyways, the best place in this settlement is my tavern, the best place to rest from this burning hell!";
-			link.l1 = "Thanks for the information!";			
+			dialog.text = "Nothing interesting to tell. Same business every day: boredom, sun and dust. Only soldiers, negroes, and Indians live here. You may also find a few adventurers and bandits hungry for gold\nSometimes gentlemen, captains like yourself, visit us in order to sell slaves for ingots and to buy precious metals. Our merchant is quite an interesting man, he sells not only gold and silver nuggets, but also semi-precious gems\n He claims that people with special knowledge may find these pebbles very useful. So check our store. The mine itself is located further beneath the mountain. You may visit it if you wish, but I recommend avoiding making the guard upset\nDon't talk to convicts and God save you from stealing. Anyway, the best place in this settlement is my tavern, the best place to rest from this burning hell!";
+			link.l1 = "Thank you for the information!";			
 			link.l1.go = "exit";
 		break;
 		
 		case "drink":
 			if (CheckAttribute(pchar, "questTemp.Rum") && sti(pchar.questTemp.Rum) > 3)
 			{
-				dialog.text = "Captain, I think you'd be better off stopping. God forbid you raise hell while your under the influence of alcohol. We're really strict about that here. Even your authority won't help you.";
-				link.l1 = "Hm... I suppose you're right -I've already had enough. Thanks for the concern!";			
+				dialog.text = "Captain, I think you'd be better off stopping. God forbid you raise hell while you're under the influence of alcohol. We're really strict about that here. Even your authority won't help you.";
+				link.l1 = "Hm... I suppose you're right - I've already had enough. Thanks for the concern!";			
 				link.l1.go = "exit";
 			}
 			else
@@ -98,8 +94,8 @@ void ProcessDialogEvent()
 				}				
 				WaitDate("",0,0,0, 0, 30);
 				
-				dialog.text = "You're welcome, captain. Just five pieces of eight for a pint of my best black Jamaican rum!";
-				link.l1 = RandPhraseSimple(LinkRandPhrase("All right, to your health and the prosperity of your establishment, matey!","All right, to those at sea!","All right, to the well-being of your town!"), LinkRandPhrase("All right, to the winds of production, to a gust of luck, that we all live more light-hearted and wealthy!","All right, to the wind always blowing in our backs in all affairs!","All right, to happiness, luck, joy, and wenches!"));		
+				dialog.text = "You're welcome, captain. Just five pieces of eight for a pint of my finest black Jamaican rum!";
+				link.l1 = RandPhraseSimple(LinkRandPhrase("All right, to your health and the prosperity of your establishment!","All right, to those at sea!","All right, to the well-being of your town!"),LinkRandPhrase("All right, to the winds of fortune, to a gust of luck, may we all live more light-hearted and wealthy!","All right, to the wind always blowing at our backs in all affairs!","All right, to happiness, luck, joy, and wenches!"));		
 				link.l1.go = "drink_1";
 			}
 		break;
@@ -122,7 +118,7 @@ void ProcessDialogEvent()
 		case "room":
 			if (CheckAttribute(pchar, "GenQuest.LosTequesSex"))
 			{
-				dialog.text = "Senor, you've paid for a room and a girl. Go on upstairs, she's been waiting for you for a while.";
+				dialog.text = "Señor, you've paid for a room and a girl. Go on upstairs, she's been waiting for you for a while.";
 				link.l1 = "All right.";
 				link.l1.go = "exit";
 				break;
@@ -130,12 +126,12 @@ void ProcessDialogEvent()
 			dialog.text = "We do. How long were you planning to stay?";
 			if(!isDay())
 			{
-				link.l1 = "Till the morning.";
+				link.l1 = "Till morning.";
 				link.l1.go = "room_day";
 			}
 			else
 			{
-				link.l1 = "Till the night time.";
+				link.l1 = "Until nightfall.";
 				link.l1.go = "room_night";
 				link.l2 = "Until the next morning.";
 				link.l2.go = "room_day_next";
@@ -143,7 +139,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day":
-			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room along with it? Only a thousand pesos for the wench.";
+			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room as well? Only a thousand pesos for the wench.";
 			if (makeint(pchar.money) >= 10)
 			{
 				link.l1 = "No, I don't need a girl. Here, take this for the room.";
@@ -163,7 +159,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_day_next":
-			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room along with it? Only a thousand pesos for the wench.";
+			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room as well? Only a thousand pesos for the wench.";
 			if (makeint(pchar.money) >= 10)
 			{
 				link.l1 = "No, I don't need a girl. Here, take this for the room.";
@@ -183,7 +179,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "room_night":
-			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room along with it? Only a thousand pesos for the wench.";
+			dialog.text = "That'll be ten pieces of eight. Would you like a girl for the room as well? Only a thousand pesos for the wench.";
 			if (makeint(pchar.money) >= 10)
 			{
 				link.l1 = "No, I don't need a girl. Here, take this for the room.";
@@ -228,7 +224,7 @@ void ProcessDialogEvent()
 		
 		case "room_girl":
 			AddMoneyToCharacter(pchar, -1010);
-			dialog.text = "Go on upstairs, senor. The girl will be waiting for you. Have a nice stay!";
+			dialog.text = "Go on upstairs, señor. The girl will be waiting for you. Have a nice stay!";
 			link.l1 = "Thanks, mate...";
 			link.l1.go = "room_girl_1";
 		break;
@@ -251,7 +247,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "MineFuckGirl":
-			dialog.text = "How, white master. Don't look at "+npchar.name+" like that, "+npchar.name+" knows how to do everything even better than white squaw from whorehouse. Ah, senor you so handsome... Promise, this squaw love you long time.";
+			dialog.text = "How, white master. Don't look at "+npchar.name+" like that, "+npchar.name+" knows how to do everything even better than the white squaw from the whorehouse. Ah, señor, you are so handsome... Promise, this squaw will love you for a long time.";
 			link.l1 = "That sounds fine, show me your best Indian charms. I won't need a rain dance to make you wet...";
 			link.l1.go = "MineFuckGirl_sex";
 		break;
@@ -268,8 +264,8 @@ void ProcessDialogEvent()
 
 		// ============== Грабеж среди бела дня, попытка залезть в сундуки =========================
 		case "Man_FackYou":
-			dialog.text = LinkRandPhrase("Robbery in broad day light!!! What's going on here?! Wait, hold on, mate...", "Hey, what are doing there?! Trying to rob me? Now you are fucked up...", "Wait, what the hell are you doing? Turns out that you are a thief! Consider this the end of the line, arsehole...");
-			link.l1 = LinkRandPhrase("Devil!", "Fuck!", "Ah, shit");
+			dialog.text = LinkRandPhrase("Robbery in broad daylight!!! What's going on here?! Wait, hold on, mate...","Hey, what are you doing there?! Trying to rob me? Now you're in trouble...","Wait, what the hell are you doing? Turns out you’re a thief! Consider this the end of the line, arsehole...");
+			link.l1 = LinkRandPhrase("Devil!","Fuck!","Ah, shit");
 			link.l1.go = "PL_Q3_fight";
 		break;
 		

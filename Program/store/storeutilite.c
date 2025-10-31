@@ -11,6 +11,206 @@
  ****************************  утилиты работы с магазином  *************************
 */
 
+
+void RefreshStoresForTheNewGood(int idx)
+{
+	ref curGood;
+	makeref(curGood, Goods[idx]);
+	string goodName = curGood.name;
+	float rateInc = 0.0;
+	for(int i=0; i<STORE_QUANTITY; i++)
+	{
+		ref refStore = &stores[i];
+		if (CheckAttribute(refStore,"Goods."+goodName))
+		{
+			continue;
+		}
+		if (CheckAttribute(curGood, "trade_type"))
+		{
+			stores[i].Goods.(goodName).TradeType = curGood.trade_type;
+		}
+		else
+		{
+			stores[i].Goods.(goodName).TradeType = T_TYPE_NORMAL;
+		}
+
+		if (CheckAttribute(curGood, "type"))
+		{
+			stores[i].Goods.(goodName).Type = curGood.type;
+		}
+		else
+		{
+			stores[i].Goods.(goodName).Type = T_TYPE_NORMAL;
+		}
+
+		stores[i].Goods.(goodName).NotUsed 			= false;
+		stores[i].Goods.(goodName).Quantity 		= 0;
+		stores[i].Goods.(goodName).canbecontraband 	= 0;
+
+		CalculateGoodStoreNorm(&stores[i], idx);
+
+		int iColony = FindColony(stores[i].Colony);
+		if (iColony != -1)
+		{
+			ref rColony = GetColonyByIndex(iColony);
+			SetPriceForGoodByStoreMan(rColony, idx, true);
+		}
+	}
+}
+
+void UpdateAllStores()
+{
+	for(int i=0; i<STORE_QUANTITY; i++)
+	{
+		UpdateStore(&stores[i]);
+	}
+}
+
+void CalculateGoodStoreNorm(ref pRef, int goodIdx)
+{
+	ref pGood = &Goods[goodIdx];
+	string goodName = pGood.Name;
+
+	int iColony = FindColony(pRef.Colony); // город магазина
+
+	float 	RndPriceModify;
+	float 	RndPriceModifySign = -1.0;
+
+	if (iColony != -1)
+	{
+		ref rColony = GetColonyByIndex(iColony);
+		int islandIdx = FindIsland(rColony.island); // остров города
+		if (islandIdx!=-1)
+		{
+			ref rIsland = GetIslandByIndex(islandIdx);
+			if(CheckAttribute(rIsland,"RndPriceModify"))
+			{
+				RndPriceModify = stf(rIsland.RndPriceModify);
+				if(CheckAttribute(rIsland,"RndPriceModifySign"))
+					RndPriceModifySign = stf(rIsland.RndPriceModifySign);
+			}
+			else
+			{
+				trace("Uninitialized island rng:  id="+rColony.island);
+			}
+		}
+		else
+		{
+			trace("Mistake island id into store:  id="+rColony.island);
+		}
+	}
+	else
+	{
+		trace("Mistake Colony id into store:  id=" + pRef.Colony);
+	}
+
+	switch(sti(pRef.Goods.(goodName).TradeType))
+	{
+		case T_TYPE_NORMAL:
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.75 + rand(sti(sti(pGood.Norm)*0.1)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_EXPORT:
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.9 + rand(sti(sti(pGood.Norm)*0.2)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_IMPORT:
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.4 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_AGGRESSIVE:
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.1 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_CONTRABAND:
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.1 + rand(sti(sti(pGood.Norm)*0.05)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_AMMUNITION:  //делаю все тоже, что и для нормального товара, а тип нужен, чтоб на корабле не скупали лишнее.
+			pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.75 + rand(sti(sti(pGood.Norm)*0.1)));
+			pRef.Goods.(goodName).RndPriceModify = RndPriceModify * RndPriceModifySign;
+			break;
+
+		case T_TYPE_CANNONS:
+			if(sti(pGood.NotSale) == 1) // 1.2.5 --> старшие калибры не продаем !!!
+			{
+				pRef.Goods.(goodName).Quantity = 0;
+			}
+			else
+			{
+				pRef.Goods.(goodName).Quantity = sti(sti(pGood.Norm)*0.4 + rand(sti(sti(pGood.Norm)*0.4)));
+			}
+			pRef.Goods.(goodName).RndPriceModify = (frnd() * 0.03 + RndPriceModify + 0.10) * RndPriceModifySign;
+			pRef.Goods.(goodName).canbecontraband = CONTRA_SELL; // все орудия можем продавать контрабандистам !!
+			break;
+	}
+
+	if (pRef.StoreSize == "medium")
+	{
+		pRef.Goods.(goodName).Quantity = makeint(sti(pRef.Goods.(goodName).Quantity) * stf(pGood.MediumNorm));
+	}
+	if (pRef.StoreSize == "small")
+	{
+		pRef.Goods.(goodName).Quantity = makeint(sti(pRef.Goods.(goodName).Quantity) * stf(pGood.SmallNorm));
+	}
+	// 24/01/08
+	pRef.Goods.(goodName).Norm            = pRef.Goods.(goodName).Quantity; 		// колво в начале, это норма магазина навсегда
+	pRef.Goods.(goodName).NormPriceModify = pRef.Goods.(goodName).RndPriceModify; 	// начальная цена - тоже limit стремлений
+	pRef.Goods.(goodName).AddPriceModify  = 1.0;
+}
+
+// запоминаем цены в ГГ
+void SetPriceForGoodByStoreMan(ref rchar, int i, bool single)
+{
+	ref refStore, nulChr;
+	string attr1, sGoods;
+	int tradeType;
+	string tmpstr;
+	aref   refGoods;
+
+	nulChr = &NullCharacter;
+
+	if (sti(rchar.StoreNum) >= 0)
+	{
+		refStore = &stores[sti(rchar.StoreNum)];
+		attr1 = rchar.id; // ветка, где храним цены
+		sGoods = "Gidx" + i;
+		tmpstr = Goods[i].name;
+		tradeType = 0;
+		if (CheckAttribute(refStore,"Goods."+tmpstr))
+		{
+		   makearef(refGoods, refStore.Goods.(tmpstr));
+		   tradeType = MakeInt(refGoods.TradeType);
+		}
+		nulChr.PriceList.(attr1).(sGoods).tradeType = tradeType; // тип торговли
+		nulChr.PriceList.(attr1).(sGoods).Buy  = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY,  pchar, 1);
+		if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
+		{
+			nulChr.PriceList.(attr1).(sGoods).Buy  = "???";
+		}
+		nulChr.PriceList.(attr1).(sGoods).Sell = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);
+		if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
+		{
+			nulChr.PriceList.(attr1).(sGoods).Sell  = "???";
+		}
+		nulChr.PriceList.(attr1).(sGoods).Qty  = GetStoreGoodsQuantity(refStore, i);
+		if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
+		{
+			nulChr.PriceList.(attr1).(sGoods).Qty  = "???";
+		}
+	}
+
+	if (single)
+	{
+		nulChr.PriceList.(attr1).AltDate = GetQuestBookDataDigit();
+	}
+}
+
 void SetStoreGoods(ref _refStore,int _Goods,int _Quantity)
 {
 	string tmpstr = Goods[_Goods].name;
@@ -113,7 +313,7 @@ bool GetStoreGoodsUsed(ref _refStore,int _Goods)
 */
 int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int _qty)
 {
-	float _TradeSkill = GetSummonSkillFromNameToOld(chref,SKILL_COMMERCE); // 0..10.0
+	float _TradeSkill = GetSkillAfterPenalty(chref,SKILL_COMMERCE); // 0..100.0
 	aref refGoods;
 	string tmpstr = Goods[_Goods].name;
 	int basePrice = MakeInt(Goods[_Goods].Cost);
@@ -134,10 +334,10 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 			tradeModify = 1.00 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_EXPORT:
-			tradeModify = 0.80 + stf(refGoods.RndPriceModify); 
+			tradeModify = 0.75 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_IMPORT:
-			tradeModify = 1.20 + stf(refGoods.RndPriceModify); 
+			tradeModify = 1.30 + stf(refGoods.RndPriceModify); 
 			break;
 		case T_TYPE_AGGRESSIVE:
 			tradeModify = 1.40 + stf(refGoods.RndPriceModify); 
@@ -159,54 +359,28 @@ int GetStoreGoodsPrice(ref _refStore, int _Goods, int _PriceType, ref chref, int
 	
 	if(_PriceType == PRICE_TYPE_BUY) // цена покупки товара игроком
 	{
-		skillModify = 1.325 - _TradeSkill * 0.005; 
+		skillModify = 1.29 - 0.17 * pow(makefloat(_TradeSkill) / 100.0, 0.55); 
 		if(tradeType == T_TYPE_CANNONS) cModify = 3.0 + MOD_SKILL_ENEMY_RATE/5.0;
-		if(CheckCharacterPerk(chref,"HT2")) // belamour legendary edition скидка 15%
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify -= 0.30; }
-			else
-			{
-				if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify -= 0.25; }
-				else {skillModify -= 0.15;}
-			}						
-		}
-		else
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify -= 0.15; }
-			else
-			{
-				if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify -= 0.10; }
-			}				
-		}
-		if(skillModify < 1.01) skillModify = 1.01;
+		
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{ skillModify *= 0.92; }
+		else if(CheckOfficersPerk(chref,"BasicCommerce"))	{ skillModify *= 0.96; }
+		
+		if(skillModify < 1.05) skillModify = 1.05;
 	}
 	else	// цена продажи товара игроком
 	{
-		skillModify = 0.675 + _TradeSkill * 0.005; 
-		if(CheckCharacterPerk(chref,"HT2")) // belamour legendary edition надбавка 15%
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify += 0.30; }
-			else
-			{
-				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.25; }
-				else {skillModify += 0.15;}
-			}				
-		}
-		else
-		{
-			if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify += 0.15;}
-			else
-			{
-				if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify += 0.10; }
-			}		
-		}
-		skillModify += GetShipTraitTransaction(chref, _refStore);
+		skillModify = 0.73 + 0.16 * pow(makefloat(_TradeSkill) / 100.0, 0.55);  
+		
+		if(CheckOfficersPerk(chref,"ProfessionalCommerce"))	{skillModify *= 1.08;}
+		else if(CheckOfficersPerk(chref,"AdvancedCommerce"))	{ skillModify *= 1.04; }
+		
+		skillModify *= 1.0 + GetShipTraitTransaction(chref, _refStore);
 						
 		if(CheckAttribute(mc,"Goods." + (tmpstr) + ".costCoeff"))
 		{
 			costCoeff = stf(mc.Goods.(tmpstr).costCoeff);
 		}
-		if(skillModify > 0.99) skillModify = 0.99;
+		if(skillModify > 0.96) skillModify = 0.96;
 	}
 
 	// boal 23.01.2004 -->
@@ -379,7 +553,7 @@ void UpdateStore(ref pStore)
 	aref gref, curref, arTypes;
 	makearef(gref, pStore.Goods);
 	
-	for(int i=0; i<GOODS_QUANTITY; i++)
+	for(int i=0; i<GetArraySize(&Goods); i++)
 	{
 		tmpstr = Goods[i].name;
 		if (!CheckAttribute(gref,tmpstr) ) continue;		
@@ -521,7 +695,7 @@ void FillShipStore( ref chr)
 	int iQuantity = 0;
 	string goodName;
 	
-	for(int i = 0; i<GOODS_QUANTITY; i++)
+	for(int i = 0; i<GetArraySize(&Goods); i++)
 	{
 		iQuantity = GetCargoGoods(chr, i); 
 		SetStoreGoods(pref, i, iQuantity);
@@ -546,7 +720,7 @@ int FindStore(string sColony)
 void CheckForGoodsSpoil(aref chr)
 {
 	int iGoodsQ = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetCargoGoods(chr, i);
 		if(iGoodsQ > 0)
@@ -571,7 +745,7 @@ int GetStoreFreeSpace(object refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStoreGoodsQuantity(refStore, i);
 		iWeight = iWeight + iGoodsQ * stf(Goods[i].weight);
@@ -605,32 +779,9 @@ void SetPriceListByStoreMan(ref rchar)   //rchar - это колония
     {
         refStore = &stores[sti(rchar.StoreNum)];
         attr1 = rchar.id; // ветка, где храним цены
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
-            sGoods = "Gidx" + i;
-        	tmpstr = Goods[i].name;
-        	tradeType = 0;
-        	if (CheckAttribute(refStore,"Goods."+tmpstr))
-        	{
-        	   makearef(refGoods, refStore.Goods.(tmpstr));
-         	   tradeType = MakeInt(refGoods.TradeType);
-         	}
-            nulChr.PriceList.(attr1).(sGoods).tradeType = tradeType; // тип торговли            
-            nulChr.PriceList.(attr1).(sGoods).Buy  = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_BUY,  pchar, 1);            
-			if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
-            {
-                nulChr.PriceList.(attr1).(sGoods).Buy  = "???";
-            }
-            nulChr.PriceList.(attr1).(sGoods).Sell = GetStoreGoodsPrice(refStore, i, PRICE_TYPE_SELL, pchar, 1);  
-			if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
-            {
-                nulChr.PriceList.(attr1).(sGoods).Sell  = "???";
-            }			
-            nulChr.PriceList.(attr1).(sGoods).Qty  = GetStoreGoodsQuantity(refStore, i);
-			if (tradeType == T_TYPE_CONTRABAND && !bBettaTestMode)
-            {
-                nulChr.PriceList.(attr1).(sGoods).Qty  = "???";
-            }
+            SetPriceForGoodByStoreMan(rchar, i, false);
         }
         nulChr.PriceList.(attr1).AltDate = GetQuestBookDataDigit();
     }
@@ -647,7 +798,7 @@ void SetNull2StoreMan(ref rchar)
     {
         refStore = &stores[sti(rchar.StoreNum)];
 
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
             tmpstr = Goods[i].name;
         	if( CheckAttribute(refStore,"Goods."+tmpstr) )
@@ -686,7 +837,7 @@ void SetNull2StoreManPart(ref rchar, float part)
     {
         refStore = &stores[sti(rchar.StoreNum)];
 
-        for (i = 0; i < GOODS_QUANTITY; i++)
+        for (i = 0; i < GetArraySize(&Goods); i++)
         {
             tmpstr = Goods[i].name;
         	if (CheckAttribute(refStore,"Goods."+tmpstr) )
@@ -775,7 +926,7 @@ int GetStorageUsedWeight(object refStore)
 {
 	int iGoodsQ = 0;
 	int iWeight = 0;
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		iGoodsQ = GetStorageGoodsQuantity(refStore, i);
 		iWeight = iWeight + GetGoodWeightByType(i, iGoodsQ)
@@ -810,5 +961,5 @@ float GetShipTraitTransaction(ref chr, ref rStore)
 	int rep = ChangeCharacterNationReputation(chr, nation, 0);
 	if(rep < 20) return 0.0;
 	
-	return Bring2Range(0.0, 0.15, 20.0, 100.0, makefloat(rep));
+	return Bring2Range(0.0, 0.10, 20.0, 100.0, makefloat(rep));
 }

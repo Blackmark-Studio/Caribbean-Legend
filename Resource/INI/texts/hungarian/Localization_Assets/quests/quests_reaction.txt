@@ -1,0 +1,16 @@
+quests_reaction_1 {A @<GetFullName(npchar)> tiszt a fedélzeten van.}
+quests_reaction_2 {@<GetFullName(npchar)> átadva.}
+quests_reaction_3 {A lázadók holttesteit a fedélzetre dobták az utolsó útjukra.}
+quests_reaction_4 {A lázadásnak véget vetettek}
+quests_reaction_5 {@<GetCityName(sld.City)> a miénk!}
+quests_reaction_6 {Valaki kutakodott a zsebeiben.}
+quests_reaction_7 {Nemrégiben harc volt a világítótorony közelében. Valami kapitány megpróbált árut csempészni, de az ôrjáratunk tetten érte. ~}
+quests_reaction_8 {Pokoli lövöldözés volt, a bolt tetejét egy véletlenszerû ágyúgolyó verte szét! De az egész a semmiért volt. A helyi csempészek elbújtak a dzsungelben, a kapitány pedig elhajózott. Könnyen átverték a katonáinkat, én mondom! Pokoli jó pilóta volt, úgy menekült az öbölbôl, mint egy király!}
+quests_reaction_9 { }
+quests_reaction_10 { }
+quests_reaction_11 {, amely a ~}
+quests_reaction_12 {A szállítási feltételek lejártak.}
+quests_reaction_13 {Eltelt néhány óra...}
+quests_reaction_14 {Egy óra telt el...}
+quests_reaction_15 {Egy nap telt el...}
+quests_reaction_16 {Néhány nap eltelt...}

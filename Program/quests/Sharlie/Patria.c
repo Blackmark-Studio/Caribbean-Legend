@@ -26,7 +26,7 @@ void Patria_SetEcliaton() // ставим Эклятон
 	// Эклятон
 	sld = GetCharacter(NPC_GenerateCharacter("Ecliaton_Cap", "Off_Fra_Z", "man", "man", 40, FRANCE, -1, true, "officer"));
 	sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_FRA, 42, 11250, 742, 9900, 250000, 12.85, 32.5, 0.4);
-	sld.Ship.name = StringFromKey("Patria_3");
+	sld.Ship.name = GetShipName("Eclatant");
 	SetBaseShipData(sld);
 	sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
 	FantomMakeCoolFighter(sld, 40, 100, 100, "blade_17", "pistol4", "bullet", 250);
@@ -58,12 +58,13 @@ void Patria_SetEcliaton() // ставим Эклятон
 	SetCharacterPerk(sld, "Builder");
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "SailingProfessional");
 	SetCharacterPerk(sld, "Doctor1");
 	SetCharacterPerk(sld, "Doctor2");
+	ForceHeroAutoLevel(sld);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.AlwaysSandbankManeuver = true;
@@ -209,8 +210,8 @@ void Patria_SanJoseMayak(string qName) // на маяке Тринидада
 		if (i > 8) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Patria_SanJoseSoldier_"+i, "mush_fra_"+(i-8), "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 80, 80, "", "mushket1", "cartridge", 150);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 80, 80, "", "mushket1", "bullet", 150);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		}
 		else
 		{
@@ -1349,34 +1350,25 @@ void Patria_HunterConvoyGenerate(string qName) // генерируем конв�
 	string sCapId = "PatriaHWICCap";
     string sGroup = "Sea_" + sCapId + "1";
 	int iGoodsType = rand(1);
-	if (iGoodsType > 0) iGoods = GOOD_COFFEE + rand(2);
-	else iGoods = GOOD_EBONY + rand(2);
-	switch (iGoods)
+	
+	int iGoodFlags = FLAG_GOODS_NONE;
+	if (iGoodsType > 0) iGoodFlags = FLAG_GOODS_EXPORT_PLANTS;
+	else iGoodFlags = FLAG_GOODS_VALUABLE_EXPORT;
+	
+	iGoods = GetRandomGood(FLAG_GOODS_TYPE_EXPORT, iGoodFlags);
+	
+	if (!and(sti(Goods[iGoods].Flag), FLAG_GOODS_VALUABLE_WOOD)) 
 	{
-		case 11:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 12:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 13:
-			iSpace = 1400+rand(100);
-		break;
-		
-		case 17:
-			iSpace = 550+rand(20);
-		break;
-		
-		case 18:
-			iSpace = 670+rand(30);
-		break;
-		
-		case 19:
-			iSpace = 1400+rand(100);
-		break;
+		iSpace = 1400+rand(100);
 	}
+	else
+	{
+		int cost = sti(Goods[iGoods].Cost);
+		int baseSize = 110000 / cost;
+		int variableSize = 5000 / cost;
+		iSpace = baseSize + rand(variableSize);
+	}
+
 	switch (iColony)
 	{
 		case 0:
@@ -1603,55 +1595,14 @@ void Patria_SiegeCreateSquadron() // осада
 	pchar.quest.Patria_LuggerFail.win_condition.l1.character = "Patria_CureerCap";
 	pchar.quest.Patria_LuggerFail.function = "Patria_LuggerFail";
 	// ставим осаду
-	// линейник + военник голландцев
+	// военники голландцев
 	for(int i = 1; i <= 3; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCap_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
-		if (i == 1) 
-		{
-			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 12.5, 29.5, 0.38);
-			sld.Ship.name = StringFromKey("Patria_17");
-			SetBaseShipData(sld);
-			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
-			sld.rank = 45;
-			SetShipSkill(sld, 80, 50, 100, 100, 100, 100, 100, 100, 80);
-			SetCharacterPerk(sld, "MusketsShoot");
-			SetCharacterPerk(sld, "Troopers");
-			SetCharacterPerk(sld, "LongRangeGrappling");
-			SetCharacterPerk(sld, "GrapplingProfessional");
-			SetCharacterPerk(sld, "HullDamageUp");
-			SetCharacterPerk(sld, "SailsDamageUp");
-			SetCharacterPerk(sld, "CrewDamageUp");
-			SetCharacterPerk(sld, "CriticalShoot");
-			SetCharacterPerk(sld, "LongRangeShoot");
-			SetCharacterPerk(sld, "FastReload");
-			SetCharacterPerk(sld, "CannonProfessional");
-			SetCharacterPerk(sld, "BasicBattleState");
-			SetCharacterPerk(sld, "AdvancedBattleState");
-			SetCharacterPerk(sld, "ShipDefenseProfessional");
-			SetCharacterPerk(sld, "Carpenter");
-			SetCharacterPerk(sld, "Builder");
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
-			SetCharacterPerk(sld, "WindCatcher");
-			SetCharacterPerk(sld, "SailsMan");
-			SetCharacterPerk(sld, "SailingProfessional");
-			SetCharacterPerk(sld, "Doctor1");
-			SetCharacterPerk(sld, "Doctor2");
-			FantomMakeCoolFighter(sld, 45, 80, 80, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol13", "bullet", 250);
-			RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
-			UpgradeShipParameter(sld, "TurnRate");//маневренность
-			sld.DontClearDead = true;
-			sld.SaveItemsForDead = true;
-		}
-		else 
-		{
-			FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 70, 70, 70);
-			FantomMakeCoolFighter(sld, 35, 70, 70, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 200);
-			DeleteAttribute(sld, "SaveItemsForDead");
-			DeleteAttribute(sld, "DontClearDead");
-		}
+		FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 70, 70, 70);
+		FantomMakeCoolFighter(sld, 35, 70, 70, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 200);
+		DeleteAttribute(sld, "SaveItemsForDead");
+		DeleteAttribute(sld, "DontClearDead");
 		
 		sld.cirassId = Items_FindItemIdx("cirass4");
 		sld.DontRansackCaptain = true;
@@ -1660,11 +1611,6 @@ void Patria_SiegeCreateSquadron() // осада
 		sld.Coastal_Captain = true;
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
-		LAi_SetImmortal(sld, true);
-		Character_SetAbordageEnable(sld, false); // нельзя абордировать
-		sld.Abordage.MakeDisable = true; // запрет идти на абордаж
-		sld.Abordage.Enable = false;
-		if (i == 1 && MOD_SKILL_ENEMY_RATE > 4) sld.SeaBoss = 0.6; // получает на 60% меньше урона корпусу
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
@@ -1695,10 +1641,6 @@ void Patria_SiegeCreateSquadron() // осада
 		sld.Coastal_Captain = true;
 		sld.AlwaysSandbankManeuver = true;
 		sld.Ship.Mode = "war";
-		LAi_SetImmortal(sld, true);
-		Character_SetAbordageEnable(sld, false); // нельзя абордировать
-		sld.Abordage.MakeDisable = true; // запрет идти на абордаж
-		sld.Abordage.Enable = false;
 		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
 		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
@@ -1894,7 +1836,7 @@ void Patria_SiegeEscapeOnMap(string qName) //
     sld.lastname = StringFromKey("Patria_21");
 	sld.Dialog.Filename = "Quest\Patria_NPC.c";
 	sld.dialog.currentnode = "doily_10";
-	FantomMakeCoolSailor(sld, SHIP_LSHIP_ENG, StringFromKey("Patria_22"), CANNON_TYPE_CULVERINE_LBS36, 100, 100, 100);
+	FantomMakeCoolSailor(sld, SHIP_LSHIP_ENG, GetShipName("Trafalgar"), CANNON_TYPE_CULVERINE_LBS36, 100, 100, 100);
 	FantomMakeCoolFighter(sld, 45, 100, 100, "blade_20", "pistol5", "bullet", 250);
 	SetSelfSkill(sld, 90, 90, 90, 90, 90);
 	SetShipSkill(sld, 90, 100, 100, 100, 100, 100, 100, 100, 70);
@@ -1979,39 +1921,133 @@ void Patria_SiegeEscapeOnMap(string qName) //
 
 void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'Ойли
 {
+	int i;
 	pchar.quest.Patria_SiegeCapitulation.over = "yes"; //снять таймер
-	// ремонтируем все осадные корабли и ставим их в две линии
-	for(int i = 2; i <= 5; i++)
+	
+	// удаляем старую эскадру
+	Group_DeleteGroup("Patria_SiegeGroup1");
+	Group_DeleteGroup("Patria_SiegeGroup2");
+	for(i = 1; i <= 6; i++)
 	{
-		Group_DelCharacter("Patria_SiegeGroup"+i, "Patria_SiegeCap_"+(i+1));
+		if (CharacterIsAlive("Patria_SiegeCap_"+i))
+		{
+			sld = CharacterFromID("Patria_SiegeCap_"+i);
+			sld.lifeday = 0;
+		}
 	}
-	Group_AddCharacter("Patria_SiegeGroup1", "Patria_SiegeCap_3"); // голландцы в одну группу
+	
+	// создаём новую эскадру во главе с Олифантом
+	for(i = 1; i <= 3; i++)
+	{
+		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCapNew_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
+		if (i == 1) 
+		{
+			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 12.5, 29.5, 0.38);
+			sld.Ship.name = GetShipName("Oliphant");
+			SetBaseShipData(sld);
+			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;
+			sld.rank = 45;
+			SetShipSkill(sld, 80, 50, 100, 100, 100, 100, 100, 100, 80);
+			SetCharacterPerk(sld, "MusketsShoot");
+			SetCharacterPerk(sld, "Troopers");
+			SetCharacterPerk(sld, "LongRangeGrappling");
+			SetCharacterPerk(sld, "GrapplingProfessional");
+			SetCharacterPerk(sld, "HullDamageUp");
+			SetCharacterPerk(sld, "SailsDamageUp");
+			SetCharacterPerk(sld, "CrewDamageUp");
+			SetCharacterPerk(sld, "CriticalShoot");
+			SetCharacterPerk(sld, "LongRangeShoot");
+			SetCharacterPerk(sld, "FastReload");
+			SetCharacterPerk(sld, "CannonProfessional");
+			SetCharacterPerk(sld, "BasicBattleState");
+			SetCharacterPerk(sld, "AdvancedBattleState");
+			SetCharacterPerk(sld, "ShipDefenseProfessional");
+			SetCharacterPerk(sld, "Carpenter");
+			SetCharacterPerk(sld, "Builder");
+			SetCharacterPerk(sld, "ShipSpeedUp");
+			SetCharacterPerk(sld, "ShipTurnRateUp");
+		
+			SetCharacterPerk(sld, "WindCatcher");
+			SetCharacterPerk(sld, "SailsMan");
+			SetCharacterPerk(sld, "SailingProfessional");
+			SetCharacterPerk(sld, "Doctor1");
+			SetCharacterPerk(sld, "Doctor2");
+			FantomMakeCoolFighter(sld, 45, 80, 80, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol13", "bullet", 250);
+			RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
+			UpgradeShipParameter(sld, "TurnRate");//маневренность
+			sld.DontClearDead = true;
+			sld.SaveItemsForDead = true;
+		}
+		else 
+		{
+			FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 70, 70, 70);
+			FantomMakeCoolFighter(sld, 35, 70, 70, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 200);
+			DeleteAttribute(sld, "SaveItemsForDead");
+			DeleteAttribute(sld, "DontClearDead");
+		}
+		
+		sld.cirassId = Items_FindItemIdx("cirass4");
+		sld.DontRansackCaptain = true;
+		sld.AnalizeShips = true;
+		sld.AlwaysEnemy = true;
+		sld.Coastal_Captain = true;
+		sld.AlwaysSandbankManeuver = true;
+		sld.Ship.Mode = "war";
+		if (i == 1 && MOD_SKILL_ENEMY_RATE > 4) sld.SeaBoss = 0.6; // получает на 60% меньше урона корпусу
+		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
+		SetRandGeraldSail(sld, HOLLAND);
+	}
+	
+	// военники испанцев
 	for(i = 4; i <= 6; i++)
 	{
-		Group_AddCharacter("Patria_SiegeGroup2", "Patria_SiegeCap_"+i); // испанцы во вторую группу
+		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCapNew_"+i, "off_spa_"+(8-i), "man", "man", 35, SPAIN, -1, true, "quest"));
+		if (i == 4) FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS36, 70, 70, 70);
+		else FantomMakeCoolSailor(sld, SHIP_LINESHIP, "", CANNON_TYPE_CANNON_LBS32, 65, 65, 65);
+		FantomMakeCoolFighter(sld, 35, 80, 80, LinkRandPhrase("blade_18","blade_19","blade_20"), "pistol5", "bullet", 150);
+		DeleteAttribute(sld, "SaveItemsForDead");
+		DeleteAttribute(sld, "DontClearDead");
+		sld.cirassId = Items_FindItemIdx("cirass4");
+		sld.DontRansackCaptain = true;
+		sld.AnalizeShips = true;
+		sld.AlwaysEnemy = true;
+		sld.Coastal_Captain = true;
+		sld.AlwaysSandbankManeuver = true;
+		sld.Ship.Mode = "war";
+		sld.ship.Crew.Morale = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Sailors = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Cannoners = 40+MOD_SKILL_ENEMY_RATE*5;
+		sld.Ship.Crew.Exp.Soldiers = 40+MOD_SKILL_ENEMY_RATE*5;
+		if (MOD_SKILL_ENEMY_RATE > 4) SetCharacterPerk(sld, "MusketsShoot");
+		SetRandGeraldSail(sld, SPAIN);
 	}
-	for(i = 3; i <= 5; i++)
+	
+	Group_FindOrCreateGroup("Patria_SiegeGroupNew1");
+	Group_FindOrCreateGroup("Patria_SiegeGroupNew2");
+	for(i = 1; i <= 3; i++)
 	{
-		Group_DeleteGroup("Patria_SiegeGroup"+i); // лишнее удаляем
+		Group_AddCharacter("Patria_SiegeGroupNew1", "Patria_SiegeCapNew_"+i); // голландцы в одну группу
 	}
-	Group_SetAddress("Patria_SiegeGroup1", "Nevis", "quest_ships", "quest_ship_1");
-	Group_SetAddress("Patria_SiegeGroup2", "Nevis", "quest_ships", "quest_ship_2");
-	for(i = 1; i <= 6; i++) // чиним и пополняем боеприпасы, снимаем квестовое бессмертие
+	for(i = 4; i <= 6; i++)
 	{
-		sld = characterFromId("Patria_SiegeCap_"+i);
-		DeleteAttribute(sld, "ship.sails");
-		DeleteAttribute(sld, "ship.blots");
-		DeleteAttribute(sld, "ship.masts");
-		DeleteAttribute(sld, "ship.hulls");
+		Group_AddCharacter("Patria_SiegeGroupNew2", "Patria_SiegeCapNew_"+i); // испанцы во вторую группу
+	}
+	Group_SetGroupCommander("Patria_SiegeGroupNew1", "Patria_SiegeCapNew_1");
+	Group_SetGroupCommander("Patria_SiegeGroupNew2", "Patria_SiegeCapNew_4");
+	Group_SetAddress("Patria_SiegeGroupNew1", "Nevis", "quest_ships", "quest_ship_1");
+	Group_SetAddress("Patria_SiegeGroupNew2", "Nevis", "quest_ships", "quest_ship_2");
+	for(i = 1; i <= 6; i++) // чиним и пополняем боеприпасы
+	{
+		sld = characterFromId("Patria_SiegeCapNew_"+i);
 		AddCharacterGoods(sld, GOOD_BALLS, 1800);
 		AddCharacterGoods(sld, GOOD_GRAPES, 1000);
 		AddCharacterGoods(sld, GOOD_KNIPPELS, 700);
 		AddCharacterGoods(sld, GOOD_BOMBS, 1500);
 		AddCharacterGoods(sld, GOOD_POWDER, 5000);
-		LAi_SetImmortal(sld, false);
-		Character_SetAbordageEnable(sld, true); // можно абордировать
-		DeleteAttribute(sld, "Abordage.MakeDisable");
-		sld.Abordage.Enable = true;
 	}
 	// д'Ойли в компаньоны
 	Group_DeleteGroup("Patria_EngSquadron");
@@ -2063,6 +2099,7 @@ void Patria_SiegeReturnToHelp(string qName) // не дошли за 7 дней
 	for(i = 1; i <= 2; i++)
 	{
 		Group_DeleteGroup("Patria_SiegeGroup"+i);
+		Group_DeleteGroup("Patria_SiegeGroupNew"+i);
 	}
 	// убираем Эклятон
 	Group_DeleteGroup("Ecliaton_group");
@@ -2105,16 +2142,16 @@ void Patria_SiegeSeaBattleGo(string qName) // бой эскадра на эск�
 		Group_AddCharacter("Patria_EngSquadron", "Patria_EngSquadronCap_"+i);
 	}
 	Group_SetGroupCommander("Patria_EngSquadron", "Doily");
-	Group_SetTaskAttack("Patria_SiegeGroup1", PLAYER_GROUP);
-	Group_SetTaskAttack("Patria_SiegeGroup2", PLAYER_GROUP);
-	Group_SetTaskAttack("Patria_SiegeGroup1", "Patria_EngSquadron");
-	Group_SetTaskAttack("Patria_SiegeGroup2", "Patria_EngSquadron");
+	Group_SetTaskAttack("Patria_SiegeGroupNew1", PLAYER_GROUP);
+	Group_SetTaskAttack("Patria_SiegeGroupNew2", PLAYER_GROUP);
+	Group_SetTaskAttack("Patria_SiegeGroupNew1", "Patria_EngSquadron");
+	Group_SetTaskAttack("Patria_SiegeGroupNew2", "Patria_EngSquadron");
 	if (!CheckAttribute(pchar, "questTemp.Patria.FailLugger")) DoQuestFunctionDelay("Patria_SiegeSeaBattleAddEcliaton", 5.0);
 	// прерывание на уничтожение врага
 	pchar.quest.Patria_Siege_AfterBattle.win_condition.l1 = "Group_Death";
-	pchar.quest.Patria_Siege_AfterBattle.win_condition.l1.group = "Patria_SiegeGroup1";
+	pchar.quest.Patria_Siege_AfterBattle.win_condition.l1.group = "Patria_SiegeGroupNew1";
 	pchar.quest.Patria_Siege_AfterBattle.win_condition.l2 = "Group_Death";
-	pchar.quest.Patria_Siege_AfterBattle.win_condition.l2.group = "Patria_SiegeGroup2";
+	pchar.quest.Patria_Siege_AfterBattle.win_condition.l2.group = "Patria_SiegeGroupNew2";
 	pchar.quest.Patria_Siege_AfterBattle.function = "Patria_SiegeSeaBattleFin";
 }
 
@@ -2145,8 +2182,8 @@ void Patria_SiegeSeaBattleFin(string qName) // победили
 {
 	Island_SetReloadEnableGlobal("Nevis", true);//открыть остров
 	pchar.GenQuest.MapClosedNoBattle = true;
-	Group_DeleteGroup("Patria_SiegeGroup1");
-	Group_DeleteGroup("Patria_SiegeGroup2");
+	Group_DeleteGroup("Patria_SiegeGroupNew1");
+	Group_DeleteGroup("Patria_SiegeGroupNew2");
 	AddQuestRecord("Patria", "44");
 	pchar.questTemp.Patria = "epizode_8_return";
 	pchar.quest.Patria_Siege_Fin.win_condition.l1 = "location";
@@ -2467,8 +2504,8 @@ void Patria_BastionShore(string qName) // в бухте, ставим штурм
 		if (i < 4) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Bastion_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "cartridge", 170);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
@@ -2961,7 +2998,7 @@ void Patria_CuracaoDoilyReady(string qName) // д'Ойли готов к пох�
 	int iShip, iCannon;
 	sld = characterFromId("Doily");
 	sld.nation = ENGLAND;
-	FantomMakeCoolSailor(sld, SHIP_LSHIP_ENG, StringFromKey("Patria_22"), CANNON_TYPE_CULVERINE_LBS36, 100, 100, 100);
+	FantomMakeCoolSailor(sld, SHIP_LSHIP_ENG, GetShipName("Trafalgar"), CANNON_TYPE_CULVERINE_LBS36, 100, 100, 100);
 	sld.DontRansackCaptain = true;
 	sld.AnalizeShips = true;
 	sld.AlwaysFriend = true;
@@ -3325,8 +3362,8 @@ void Patria_CuracaoMarch(string qName) // наш отряд в бухте
 		if (i < 4) // мушкетеры, 3 шт
 		{
 			sld = GetCharacter(NPC_GenerateCharacter("Curacao_fra_soldier_"+i, "mush_fra_"+i, "man", "mushketer", 30, FRANCE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "cartridge", 170);
-			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+			FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket2", "bullet", 170);
+			LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 			sld.cirassId = Items_FindItemIdx("cirass1");
 		}
 		else
@@ -3377,8 +3414,8 @@ void Patria_CuracaoJungleMushketer(string qName) // первая боевка
 	for (i=1; i<=9; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("Curacao_hol1_soldier_"+i, "mush_hol_"+(rand(2)+4), "man", "mushketer", iRank, HOLLAND, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, 65, 65, "", "mushket2", "cartridge", 220);
-		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+		FantomMakeCoolFighter(sld, iRank, 65, 65, "", "mushket2", "bullet", 220);
+		LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 		sld.cirassId = Items_FindItemIdx("cirass1");
 		sld.MusketerDistance = 0;
 		if (i < 7) ChangeCharacterAddressGroup(sld, "Curacao_jungle_02", "rld", "aloc"+(i+4));
@@ -4077,7 +4114,7 @@ void Patria_CondotierTerks(string qName) // на Терксе
 		// ставим корабль Додсона
 		Group_FindOrCreateGroup("DodsonFrigate");
 		sld = GetCharacter(NPC_GenerateCharacter("Dodson_sea", "Shark", "man", "man", 45, PIRATE, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, StringFromKey("Patria_32"), CANNON_TYPE_CANNON_LBS32, 105, 105, 105);
+		FantomMakeCoolSailor(sld, SHIP_FRIGATE_H, GetShipName("Fortune"), CANNON_TYPE_CANNON_LBS32, 105, 105, 105);
 		FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 100);
 		sld.name = StringFromKey("Patria_33");
 		sld.lastname = StringFromKey("Patria_34"); //14-add
@@ -4102,7 +4139,7 @@ void Patria_CondotierTerks(string qName) // на Терксе
 		// ставим корабль Тиракса
 		Group_FindOrCreateGroup("DodsonFrigate");
 		sld = GetCharacter(NPC_GenerateCharacter("Terrax_sea", "Terrax", "man", "man", 45, PIRATE, -1, true, "quest"));
-		FantomMakeCoolSailor(sld, SHIP_LINESHIP, StringFromKey("Patria_35"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
+		FantomMakeCoolSailor(sld, SHIP_LINESHIP, GetShipName("Red Dragon"), CANNON_TYPE_CULVERINE_LBS36, 110, 110, 110);
 		FantomMakeCoolFighter(sld, 45, 100, 100, "blade_21", "pistol5", "bullet", 100);
 		sld.name = StringFromKey("Patria_36");
 		sld.lastname = StringFromKey("Patria_37"); //14-add
@@ -4145,7 +4182,7 @@ void Patria_CondotierOnTerks(string qName) // на Терксе
 	ChangeCharacterAddressGroup(sld, "Shore56", "goto", "goto12");
 	LAi_SetActorType(sld);
 	sld = GetCharacter(NPC_GenerateCharacter("Terks_pirat", "mush_ctz_9", "man", "mushketer", 30, PIRATE, 2, false, "soldier"));
-	FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "cartridge", 170);
+	FantomMakeCoolFighter(sld, 30, 60, 60, "", "mushket1", "bullet", 170);
 	ChangeCharacterAddressGroup(sld, "Shore56", "goto", "goto6");
 	LAi_SetActorType(sld);
 }
@@ -4748,8 +4785,8 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 			if (i < 7) // мушкетеры, 6 шт
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Curacao_eng_soldier_"+i, "mush_eng_"+i, "man", "mushketer", 35, ENGLAND, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket2", "cartridge", 200);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, 35, 70, 70, "", "mushket2", "bullet", 200);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				sld.cirassId = Items_FindItemIdx("cirass1");
 			}
 			else
@@ -4987,8 +5024,8 @@ bool Patria_QuestComplete(string sQuestName, string qname)
 			if (i < 3) // мушкетеры, 2 шт
 			{
 				sld = GetCharacter(NPC_GenerateCharacter("Marigo_eng_soldier_"+i, "mush_eng_"+i, "man", "mushketer", 25, ENGLAND, -1, false, "soldier"));
-				FantomMakeCoolFighter(sld, 25, 50, 50, "", "mushket1", "cartridge", 150);
-				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "cartridge");
+				FantomMakeCoolFighter(sld, 25, 50, 50, "", "mushket1", "bullet", 150);
+				LAi_SetCharacterUseBullet(sld, MUSKET_ITEM_TYPE, "bullet");
 				if (MOD_SKILL_ENEMY_RATE > 4) sld.cirassId = Items_FindItemIdx("cirass1");
 			}
 			else

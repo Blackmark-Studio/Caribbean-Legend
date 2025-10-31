@@ -39,7 +39,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_2":
-			dialog.text = "Ne t'inquiète pas. La France n'est pas en guerre avec les Hollandais, donc il ne devrait y avoir aucun danger. Dépose-nous simplement sur la plage et ce sera tout. Nous voulons juste explorer un peu l'île. Marché conclu ?";
+			dialog.text = ""+UpperFirst(GetAddress_Form(PChar))+", cela ne devrait pas vous inquiéter. Vous ne risquez rien. Il suffit de nous déposer dans la baie, et c'est tout. Alors, marché conclu ?";
 			link.l1 = "D'accord, je suis partant. Ce n'est pas si loin d'ici. Parlons de cette paie.";
 			link.l1.go = "seafox_3";
 			link.l2 = "Je suis désolé, mais j'ai des affaires urgentes dans une autre direction et je préfère ne pas contrarier les Hollandais.";
@@ -114,7 +114,7 @@ void ProcessDialogEvent()
 		case "seafox_6":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
 			dialog.text = "Merci pour la traversée sans encombre, capitaine ! Je suis vraiment désolé, mais je ne peux pas vous payer à cet instant précis... il devait y avoir une de nos chaloupes dans cette zone, mais elle n'est pas là. Comme vous pouvez le constater. Je dois vous demander encore une fois votre aide. Pourriez-vous attendre dans cette baie pendant deux ou trois jours ? Nous devons aller jeter un œil aux alentours. Une fois que nous serons de retour, emmenez-nous à Antigua. Le colonel Fox vous récompensera généreusement.";
-			link.l1 = "Bien sûr qu'il le fera. Et moi qui m'attendais à ce que cela se passe sans accroc.";
+			link.l1 = "Hmm... Ce n'est pas vraiment ce dont nous étions convenus...";
 			link.l1.go = "seafox_7";
 		break;
 		
@@ -125,7 +125,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_8":
-			dialog.text = "Merci monsieur ! Nous nous dirigeons vers l'intérieur des terres. Je jure que nous serons de retour dans 72 heures, pas une minute de plus.";
+			dialog.text = "Merci "+GetAddress_Form(NPChar)+" ! Nous nous dirigeons vers l'intérieur des terres. Je jure que nous serons de retour dans 72 heures, pas une minute de plus.";
 			link.l1 = "Bon vent, lieutenant. Ne te fais pas attraper.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_EnglishmanGo");
@@ -134,13 +134,13 @@ void ProcessDialogEvent()
 		case "seafox_9":
 			DelLandQuestMark(npchar);
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_02.wav");
-			dialog.text = "Quelle rencontre fortuite ! Je pensais que vous nous attendriez à la plage de Grand Case, Capitaine de Maure !";
+			dialog.text = "Quelle rencontre fortuite ! Je pensais que vous nous attendriez à la plage de Grand Case, Capitaine "+pchar.lastname+" !";
 			link.l1 = "Bonjour lieutenant, la surprise est mutuelle. Je ne m'attendais pas à te voir vêtu comme un soldat néerlandais.";
 			link.l1.go = "seafox_10";
 		break;
 		
 		case "seafox_10":
-			dialog.text = "C'est notre déguisement... Pourquoi êtes-vous ici, monsieur ?";
+			dialog.text = "C'est notre déguisement... Pourquoi êtes-vous ici, "+GetAddress_Form(NPChar)+" ?";
 			link.l1 = "C'est un déguisement dangereux, matelot. Les espions risquent d'être exécutés sommairement sans procès. Et en parlant d'exécution, si tu veux éviter la tienne, tu ferais mieux d'écouter.";
 			link.l1.go = "seafox_11";
 		break;
@@ -235,8 +235,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "seafox_25":
-			PlaySound("Voice\English\LE\SeaFox\SeaFox_04.wav");
-			dialog.text = "Sapristi, quelqu'un est dehors ! Toi ! Tu as ramené les Néerlandais ici, canaille ! Traître !";
+			if (pchar.sex == "man") {PlaySound("VOICE\English\LE\SeaFox\SeaFox_04.wav");}
+			dialog.text = "Sapristi, quelqu'un est dehors ! Toi ! Tu as ramené les Néerlandais ici, canaille !";
 			link.l1 = ""+RandSwear()+"!!!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQN_HollandBattleFight");
@@ -319,20 +319,20 @@ void ProcessDialogEvent()
 		
 		case "seafox_35":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_05.wav");
-			dialog.text = "Capitaine de Maure...monsieur, merci pour votre aide ! Je vous supplie, ne quittez pas le port immédiatement mais restez ici un jour de plus pendant que je fais mon rapport au Colonel Fox. Rendez-lui visite demain, son bureau est dans le palais du gouverneur.";
+			dialog.text = "Capitaine "+pchar.lastname+"... "+GetAddress_Form(NPChar)+", merci pour votre aide ! Je vous supplie, ne quittez pas le port immédiatement mais restez ici un jour de plus pendant que je fais mon rapport au Colonel Fox. Rendez-lui visite demain, son bureau est dans le palais du gouverneur.";
 			link.l1 = "Très bien, Lieutenant Gretton. Veuillez faire en sorte que cela en vaille la peine. Il va me falloir beaucoup de temps pour réparer ma réputation auprès des Hollandais à cause de votre escapade.";
 			link.l1.go = "seafox_36";
 		break;
 		
 		case "seafox_35x":
 			PlaySound("Voice\English\LE\SeaFox\SeaFox_05.wav");
-			dialog.text = "Merci pour votre assistance, capitaine ! Vous êtes un véritable héros ! C'est une tragédie que le lieutenant Gretton n'ait pas survécu. Il est mort en véritable gentilhomme et fils de l'Angleterre. Je vous demanderais de rester ici un jour de plus pendant que je fais mon rapport au colonel Fox. Rendez-lui visite demain, son bureau se trouve dans le palais du gouverneur.";
+			dialog.text = "Merci pour votre assistance, capitaine ! Vous "+GetSexPhrase("vous êtes comporté comme un véritable héros","êtes une jeune femme très courageuse")+", "+GetAddress_Form(NPChar)+" ! C'est une tragédie que le lieutenant Gretton n'ait pas survécu. Il est mort en véritable gentilhomme et fils de l'Angleterre. Je vous demanderais de rester ici un jour de plus pendant que je fais mon rapport au colonel Fox. Rendez-lui visite demain, son bureau se trouve dans le palais du gouverneur.";
 			link.l1 = "Très bien. Veuillez faire en sorte que cela en vaille la peine. Il me faudra beaucoup de temps pour réparer ma réputation auprès des Hollandais à cause de votre escapade.";
 			link.l1.go = "seafox_36";
 		break;
 		
 		case "seafox_36":
-			dialog.text = "Ne vous inquiétez pas, monsieur. Je vous donnerai le crédit le plus élevé possible dans mon rapport. (salue) Ce fut un plaisir, monsieur !";
+			dialog.text = "Ne vous inquiétez pas, "+GetAddress_Form(NPChar)+". Je vous donnerai le crédit le plus élevé possible dans mon rapport. (salue) Ce fut un plaisir, "+GetAddress_Form(NPChar)+" !";
 			link.l1 = "... ";
 			link.l1.go = "seafox_37";
 		break;
@@ -366,7 +366,7 @@ void ProcessDialogEvent()
 		
 		case "soldier_2":
 			AddLandQuestMark(characterFromId("Marigo_Mayor"), "questmarkmain");
-			dialog.text = "Oh non, non, monsieur le capitaine, vous n'êtes pas en état d'arrestation. Le gouverneur a ordonné d'inviter chaque capitaine nouvellement arrivé à son palais pour du café et des présentations. Suivez-moi !";
+			dialog.text = "Oh non, non, "+GetAddress_Form(NPChar)+" le capitaine, vous n'êtes pas en état d'arrestation. Le gouverneur a ordonné d'inviter chaque capitaine nouvellement arrivé à son palais pour du café et des présentations. Suivez-moi !";
 			link.l1 = "On dirait une offre que je ne peux pas refuser. Montrez le chemin.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_ReloadToGovernor");
@@ -374,7 +374,7 @@ void ProcessDialogEvent()
 		
 		case "hol_officer":
 			PlaySound("Voice\English\hol_gov_complete.wav");
-			dialog.text = "Monsieur, montrez-nous où vous avez vu ces soldats anglais.";
+			dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+", montrez-nous où vous avez vu ces soldats anglais.";
 			link.l1 = "Ils se cachent dans une grotte dans la jungle, comme de vulgaires bandits.";
 			link.l1.go = "hol_officer_1";
 		break;
@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 		
 		case "hol_officer_5":
 			PlaySound("Voice\English\hol_gov_common.wav");
-			dialog.text = "Durs salauds qu'ils étaient... Bien joué, capitaine, les chiens anglais sont éliminés. Notre commandant et le gouverneur seront ravis.";
+			dialog.text = "Durs salauds qu'ils étaient... Bien joué, capitaine, les chiens anglais sont éliminés. Les saboteurs ont été éliminés, le commandant et le gouverneur seront satisfaits.";
 			link.l1 = "Vous avez pris votre temps, monseigneur...";
 			link.l1.go = "hol_officer_6";
 		break;

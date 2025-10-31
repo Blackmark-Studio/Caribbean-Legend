@@ -4,10 +4,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?", "How can I help you?"), "You tried to ask me that question not long ago...", "Yup, let me guess... Once again going around in circles?",
-                          "Listen, I do the finances here, I don't answer questions...", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...", "I've got nothing to talk about at the moment."), "Umph, where has my memory gone...",
-                      "You've guessed it, I'm sorry...", "I understand...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?","How can I help you?"),"You tried to ask me that question not long ago...","Yup, let me guess... Going around in circles again?","Listen, I handle the finances here, I don't answer questions...","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...","I've got nothing to talk about at the moment."),"Umph, where has my memory gone...","You've guessed it, I'm sorry...","I understand...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			// --> Sinistra Длинные тени старых грехов	
 			if (CheckAttribute(pchar, "questTemp.DTSG_KnippelDolg"))
@@ -24,12 +22,12 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Which one?";
 			if (sti(pchar.reputation.nobility) > 50)
 			{
-				link.l1 = "(Honor) It's certain Charlie Knippel.";
+				link.l1 = "(Honor) It's certainly Charlie Knippel.";
 				link.l1.go = "DTSG_KnippelDolg_VD_2";
 			}
 			else
 			{
-				link.l2 = "(Honor) You have the nerve to talk to me so calmly. You sent bounty hunters after my man.";
+				link.l2 = "(Honor) You have the nerve to speak to me so calmly. You sent bounty hunters after my man.";
 				link.l2.go = "DTSG_KnippelDolg_2";
 			}
 		break;
@@ -41,7 +39,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_KnippelDolg_VD_3":
-			dialog.text = "It's not. By his captain, Richard Fleetwood. A true gentleman, everyone should have friends like him.";
+			dialog.text = "It's not. By his captain, Richard Fleetwood. A true gentleman; everyone should have friends like him.";
 			link.l1 = "You see, I'm Charlie's captain now. Mr. Fleetwood... transferred him to my service. It's good to know he kept his promise and paid you.";
 			link.l1.go = "DTSG_KnippelDolg_VD_4";
 		break;
@@ -53,13 +51,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "DTSG_KnippelDolg_VD_5":
-			dialog.text = "Charlie arrested? You surprised me, sir, I didn't know anything about it. Nor about his... enemies. A good, God-fearing man like him...";
+			dialog.text = "Charlie arrested? You surprise me, sir, I didn't know anything about it. Nor about his... enemies. A good, God-fearing man like him...";
 			link.l1 = "Can't argue with that. Well, thanks anyway. I hope the commandant will accept bail from me.";
 			link.l1.go = "DTSG_KnippelDolg_VD_6";
 		break;
 		
 		case "DTSG_KnippelDolg_VD_6":
-			dialog.text = "Don't hesitate to approach me again if you are in need of funds to secure the bail - I'll give you good terms.";
+			dialog.text = "Don't hesitate to approach me again if you are in need of funds to secure the bail – I'll give you good terms.";
 			link.l1 = "Ha-ha, are you serious? A moneylender will always be a moneylender. I can afford the bail myself. Goodbye.";
 			link.l1.go = "DTSG_KnippelDolg_VD_7";
 		break;
@@ -77,7 +75,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "DTSG_KnippelDolg_2":
 			dialog.text = "Bounty hunters? After your man? What are you talking about?..";
-			link.l1 = "Don't deny it. Better confess, and we'll settle it like gentlemen. But if you play stupid, I'll have to deal with you the hard way.";
+			link.l1 = "Don't deny it. Better confess, and we'll settle it like gentlemen. But if you play dumb, I'll have to deal with you the hard way.";
 			link.l1.go = "DTSG_KnippelDolg_3";
 		break;
 		

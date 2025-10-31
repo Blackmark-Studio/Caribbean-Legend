@@ -105,7 +105,7 @@ void ProcessDialogEvent()
 				if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && 4-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0 && or(IsWarShipType(pchar), IsRaiderShipType(pchar))) ok = false;
 				if (ok && sti(Pchar.Ship.Type) != SHIP_NOTUSED && CheckAttribute(npchar, "quest.passenger") && !CheckAttribute(pchar, "GenQuest.Townpassenger") && 7-sti(RealShips[sti(Pchar.Ship.Type)].Class) > 0)//горожанин-пассажир
 				{
-					dialog.text = "Buen día, "+GetAddress_Form(NPChar)+"Veo que eres capitán de tu propio barco. Quiero pedirte un favor...";
+					dialog.text = "Buen día, "+GetAddress_Form(NPChar)+". Veo que eres capitán de tu propio barco. Quiero pedirte un favor...";
 					link.l1 = "Estoy escuchando, "+GetAddress_FormToNPC(NPChar)+"¿Qué quieres?";
 					link.l1.go = "passenger";
 					link.l2 = "Lo siento, "+GetAddress_FormToNPC(NPChar)+", pero tengo prisa.";

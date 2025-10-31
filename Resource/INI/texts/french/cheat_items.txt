@@ -1,57 +1,30 @@
-
 new_string
 {
 
 }
-
 Cheat_success {La triche a fonctionné avec succès !}
-
 Cheat_on {Triche activée}
-
 Cheat_off {Triche désactivée}
-
 Cheat_Comming_soon {Bientôt disponible !}
-
 f1 {Déverrouiller toutes les recettes d'artisanat}
-
 f2 {Ajouter des matériaux d'artisanat}
-
 f3 {Ajouter des herbes}
-
 f4 {Ajouter des gemmes}
-
 f5 {Oeuf de serpent +100}
-
 f6 {Munitions +50}
-
 f7 {Obtenir des lames}
-
 f8 {Obtenir des pistolets}
-
 f9 {Obtenir des mousquets}
-
 f10 {Invincibilité activée/désactivée}
-
 f11 {Obtenir des cuirasses}
-
 f12 {Obtenir des talismans}
-
 f13 {Obtenir des amulettes}
-
 f14 {Obtenir des protections}
-
 f15 {Obtenir des potions}
-
 f16 {Obtenir des longues-vues}
-
 f17 {Obtenir une lanterne}
-
 f18 {Obtenir des appareils de navigation}
-
 f19 {Obtenir des outils}
-
 f20 {Obtenir des cartes ordinaires}
-
 f21 {Obtenir des cartes amiraux}
-
 descF21No {Indisponible à ce stade du jeu}

@@ -64,7 +64,7 @@ void ProcessDialogEvent()
 			//--> Вступительный туториал на палубе корабля за Шарля
 			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1"))
 			{
-				dialog.text = "Thrilling, damn it! A real naval battle!\nToo bad I won’t see the fight from here... Never mind. I think I’ve learned enough about seafaring to imagine how it goes\nProbably five pirates... One big ship, a couple of mediums, and some small fry. Just right for our pinnace. It'll make a great tale — Lulu will love it!";
+				dialog.text = "Thrilling, damn it! A real naval battle!\nToo bad I won’t see the fight from here... Never mind. I think I’ve learned enough about seafaring to imagine how it goes.\nProbably five pirates... One big ship, a couple of mediums, and some small fry. Just right for our pinnace. It'll make a great tale — Lulu will love it!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.SharlieTutorial_TrumDialogSamSoboi_1");
@@ -78,14 +78,14 @@ void ProcessDialogEvent()
 			//--> Голландский гамбит
 			if (CheckAttribute(pchar, "questTemp.HWIC_FindIsland"))
     		{
-    		    dialog.text = "So, we have found this place on the map. I should mark it, and we're good to go searching.";
+    		    dialog.text = "So, we've found this place on the map. I should mark it, and we're good to go searching.";
     			link.l1 = "...";
     			link.l1.go = "exit";
 				AddDialogExitQuestFunction("SearchingForIslandOnMap");
     		}
 			if (CheckAttribute(pchar, "questTemp.HWICMC") && pchar.questTemp.HWICMC == "Fleetwood")
     		{
-    		    dialog.text = "Alright, we're here. I should hide my ship in the Southern bay, then come back on foot through the jungle and arrange a nasty surprise for Fleetwood.";
+    		    dialog.text = "Alright, we're here. I should hide my ship in the southern bay, then come back on foot through the jungle and arrange a nasty surprise for Fleetwood.";
     			link.l1 = "...";
     			link.l1.go = "exit";
 				pchar.quest.Fleetwood_repeatShore.win_condition.l1 = "ExitFromLocation";
@@ -97,8 +97,8 @@ void ProcessDialogEvent()
 			//--> Ложный след
 			if(CheckAttribute(pchar, "questTemp.FalseTrace") && pchar.questTemp.FalseTrace == "TalkCabinWoman" && PChar.location == Get_My_Cabin()) 
 	        {
-				dialog.text = "Hm... Trusting this rascal is dangerous, although his story seems genuine. Perhaps, he's not lying this time. But, anyway, I should talk to his wife... Bosun! Bring me that captive woman!";
-    			link.l1 = "Aye Aye, captain!";
+				dialog.text = "Hm... Trusting this rascal is dangerous, although his story seems genuine. Perhaps he's not lying this time. But anyway, I should talk to his wife... Bosun! Bring me that captive woman!";
+    			link.l1 = "Aye aye, captain!";
 	    		Link.l1.go = "exit";
 				chr = characterFromId("FalseTraceWife");
 				chr.dialog.currentnode = "FalseTrace_wife_6";
@@ -127,7 +127,7 @@ void ProcessDialogEvent()
             //--> приколы со стуком в дверь Диффиндура, LSC
 			if (CheckAttribute(pchar, "questTemp.LSC.DiffIndoor"))
     		{
-    		    dialog.text = "This is the door which leads to the inner premises of the ship. It's locked... Hawk must be here. What did Ole mention again? I should use a secret knock.";
+    		    dialog.text = "This is the door that leads to the inner quarters of the ship. It's locked... Hawk must be here. What did Ole mention again? I should use the secret knock.";
     			link.l1 = "Knock twice.";
     			link.l1.go = "knock_2";
 				link.l2 = "Knock three times.";
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 			//--> напялили водолазный скафандр, для перехода в режим шага
 			if (pchar.model == "protocusto")
     		{
-    		    dialog.text = "Wow! That thing is really heavy!";
+    		    dialog.text = "Shiver me timbers! That thing is really heavy!";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
@@ -152,37 +152,37 @@ void ProcessDialogEvent()
 			// отказ от телепортации
 			if (IsCharacterInLocator(pchar, "item", "dolly1") || IsCharacterInLocator(pchar, "item", "dolly2") || IsCharacterInLocator(pchar, "item", "dolly3"))
     		{
-    		    dialog.text = "No-no-no! No way! Three times were more than enough!";
+    		    dialog.text = "No, no, no! No way! Three times was more than enough!";
     			link.l1 = "...";
     			link.l1.go = "exit";
     		}
 			if (CheckAttribute(pchar, "questTemp.Terrapin") && pchar.questTemp.Terrapin == "roof")
     		{
-    		    dialog.text = "It is done. Levasseur is dead. It turned out to be much easier than I expected... But something isn't right. Thibaut didn't even speak to Martene! It means that either Robert betrayed me or there's been an accident\nBut where could that bastard Thibaut run? He must be hunting down Catherine. I must act quickly if I want to take the girl alive from under his nose...";
+    		    dialog.text = "It is done. Levasseur is dead. It turned out to be much easier than I expected... But something isn't right. Thibaut didn't even speak to Martene! That means either Robert betrayed me or there's been an accident\nBut where could that bastard Thibaut have run? He must be hunting down Catherine. I must act quickly if I want to take the girl alive from under his nose...";
     			link.l1 = "";
     			link.l1.go = "terrapin";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "think")
     		{
-    		    dialog.text = "Treasures, treasures... an Indian city... I don't believe in such coincidences... I bet that my brother had something to do with the disappearance of Dichoso's frigate. He probably made sure that Dichoso will never open his mouth again\nOr, maybe he was working with him, the Spanish must have had reasons to think that Dichoso is somewhere around here. This makes no sense. But I am confident that the Indian gold Michel was delivering to de Poincy, as well as Miguel Dichoso's gold is the same gold. The prisoner's story matches with what the officer told me about my brother's adventures\nFunny, Michel had failed to deliver the gold and so had Miguel! And where are the treasures now then? Perhaps, they were the reason why my brother is in a such rush\nErgo, finding the gold will mean killing two birds with one stone: I will look in my brother's insolent eyes again and... yes, the gold's always good. But how the hell do I find it? It seems, that it's time to become real close to the Spanish\nDon Ramona Mendoza is off the table, I doubt that I will be able to deal with him, but holy father Vincento, a baron's worst enemy... he will do. His kind is not scrupulous but loves money and foul means\nDichoso, Dichoso... I've heard this surname before... or haven't I? Whatever, to hell with it. I should go to the officer and claim the Spanish prisoner. Then I may head to Santiago at any time.";
+    		    dialog.text = "Treasures, treasures... an Indian city... I don't believe in such coincidences... I bet my brother had something to do with the disappearance of Dichoso's frigate. He probably made sure that Dichoso would never open his mouth again\nOr maybe he was working with him; the Spanish must have had reasons to think that Dichoso was somewhere around here. This makes no sense. But I am confident that the Indian gold Michel was delivering to de Poincy, as well as Miguel Dichoso's gold, is the same gold. The prisoner's story matches what the officer told me about my brother's adventures\nFunny, Michel failed to deliver the gold, and so did Miguel! And where are the treasures now, then? Perhaps they are the reason why my brother is in such a rush\nErgo, finding the gold will mean killing two birds with one stone: I will look into my brother's insolent eyes again and... yes, gold is always good. But how the hell do I find it? It seems it's time to get real close to the Spanish\nDon Ramona Mendoza is off the table; I doubt I will be able to deal with him, but holy father Vincento, a baron's worst enemy... he will do. His kind are not scrupulous but love money and foul means\nDichoso, Dichoso... I've heard this surname before... or haven't I? Whatever, to hell with it. I should go to the officer and claim the Spanish prisoner. Then I may head to Santiago at any time.";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "shore")
     		{
-    		    dialog.text = "Vanilla has been loaded on the carrack and her sails have long ago disappeared beyond the horizon - and this damned galleon has returned to the port instead of taking to the high seas. I must not show up with my ship in the port - it's best if they think that I had left Guadeloupe... I guess I'll walk to the town through the jungle and find out about my dear Marchais...";
+    		    dialog.text = "Vanilla has been loaded onto the brigantine and her sails have long since disappeared beyond the horizon - and this damned galleon has returned to port instead of heading for the open sea. I must not show up with my ship in port - it's best if they think I have left Guadeloupe... I suppose I'll walk to town through the jungle and find out about my dear Marchais...";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth") && pchar.questTemp.Guardoftruth == "galeon")
     		{
-    		    dialog.text = "There are only a few guards on the upper deck, all of them rather sleepy. I guess I can take them all out one by one, if I silently come from behind and hit them with a knuckle-duster in the back of the head... ";
+    		    dialog.text = "There are only a few guards on the upper deck, all of them rather sleepy. I suppose I could take them out one by one, if I silently come up from behind and hit them with a knuckle-duster on the back of the head... ";
     			link.l1 = "";
     			link.l1.go = "exit";
     		}
 			if (CheckAttribute(pchar, "questTemp.Guardoftruth_room"))
     		{
-    		    dialog.text = "An unlocked empty house with a cozy room on the second floor, and in the vicinity of Calhoun's apartments... This is just an answer to a maiden's prayer... If I get out of the window and walk on the abat-jour of the roof, I'll sneak into Archie's room with ease. But this must be done at night so that I don't get caught...";
+    		    dialog.text = "An unlocked empty house with a cosy room on the second floor, and in the vicinity of Calhoun's apartments... This is just the answer to a maiden's prayer... If I get out of the window and walk along the abat-jour of the roof, I'll sneak into Archie's room with ease. But this must be done at night so that I don't get caught...";
     			link.l1 = "";
     			link.l1.go = "exit";
 				AddDialogExitQuest("GuardOT_FindWayToRoom");
@@ -190,14 +190,14 @@ void ProcessDialogEvent()
 			// Поиски Ксочитэма
 			if (CheckAttribute(pchar, "questTemp.Ksochitam_Dolly") && pchar.questTemp.Ksochitam_Dolly == "half_pearl")
     		{
-    		    dialog.text = "Finally! I have located the spot, indicated by the 'manifestation': it's an Indian idol. When near, the 'Arrow of the Way' stops oscillating and points in one direction. Well, it seems logical - Indian magic and an Indian idol. Now I should mark the location indicated by the 'Arrow of the Way' on the map, and then I will go to Dominica.";
+    		    dialog.text = "Finally! I have found the spot indicated by the 'manifestation': it's an Indian idol. When I'm near, the 'Arrow of the Way' stops oscillating and points in one direction. Well, it seems logical—Indian magic and an Indian idol. Now I should mark the location indicated by the 'Arrow of the Way' on the map, and then I will go to Dominica.";
     			link.l1 = "";
     			link.l1.go = "exit";
 				AddDialogExitQuest("Ksochitam_FindFirstWay");
     		}
 			if (CheckAttribute(pchar, "questTemp.Ksochitam_Dolly") && pchar.questTemp.Ksochitam_Dolly == "half_dominica")
     		{
-    		    dialog.text = "Finally! I have located the spot, indicated by the 'manifestation': it's an Indian idol. When near, the 'Arrow of the Way' stops oscillating and points in one direction. Well, it seems logical - Indian magic and an Indian idol. Now I should mark the location indicated by the 'Arrow of the Way' on the map, and then I will go to Main.";
+    		    dialog.text = "Finally! I have found the spot indicated by the 'manifestation': it's an Indian idol. When I get close, the 'Arrow of the Way' stops oscillating and points in one direction. Well, it makes sense - Indian magic and an Indian idol. Now I should mark the location indicated by the 'Arrow of the Way' on the map, and then I will go to Main.";
     			link.l1 = "";
     			link.l1.go = "exit";
 				AddDialogExitQuest("Ksochitam_FindSecondWay");
@@ -214,13 +214,13 @@ void ProcessDialogEvent()
     		{
 				if (pchar.questTemp.Tieyasal_CabinTalk == "calendar")
 				{
-					dialog.text = "Alonso de Maldonado said that there is a path to Tayasal which starts North of Yucatan. It means that I should go deep into the selva of the area. But Gino said that teleport statues were originally supposed to move people to Tayasal\nAnd Miskito's shaman Snake Eye told me the idols were designed to send the 'eaten' to the place. But why then, are those portals are broken? Hm. Besides, the map of Two Manifestations shows an odd circle close to the Miskito's statue\nWhat the hell does it mean? Another magic place? Or it shows that the statue there has some additional functions? I suppose, I should pay a visit to the shaman. Or I can go to the North West of Main and search for the path there, at one of the local bays.";
+					dialog.text = "Alonso de Maldonado said that there is a path to Tayasal which starts north of Yucatan. It means that I should go deep into the selva of the area. But Gino said that teleport statues were originally supposed to move people to Tayasal\nAnd the Miskito shaman Snake Eye told me the idols were designed to send the 'eaten' to the place. But why then are those portals broken? Hm. Besides, the map of Two Manifestations shows an odd circle close to the Miskito statue\nWhat the hell does it mean? Another magic place? Or does it show that the statue there has some additional functions? I suppose I should pay a visit to the shaman. Or I can go to the northwest of Main and search for the path there, at one of the local bays.";
 					link.l1 = "";
 					link.l1.go = "exit";
 				}
 				else
 				{
-					dialog.text = "Alonso de Maldonado said that there was another way to Tayasal from the northern part of the peninsula of Yucatan. That means I must look for a path into the depths of the selva. It is likely that the path I need begins at one of the coves in the north-western Main.";
+					dialog.text = "Alonso de Maldonado said that there was another way to Tayasal from the northern part of the Yucatan peninsula. That means I must look for a path into the depths of the selva. It is likely that the path I need begins at one of the coves in the north-western Main.";
 					link.l1 = "";
 					link.l1.go = "exit";
 				}
@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 			// решаем - титры или фриплей 010912
 			if (CheckAttribute(pchar, "questTemp.Tieyasal_final"))
     		{
-				dialog.text = "It is done. The end of my long journey. I couldn't possibly imagine that saving my brother from prison meant preparing myself for the final fight against him! That I had almost doomed our world. Thank God, this is over\nNothing holds me in the Caribbean any longer. Time to return home, to France. But... Do I really want that?";
+				dialog.text = "It is done. The end of my long journey. I could never have imagined that saving my brother from prison would mean preparing myself for the final fight against him! That I had almost doomed our world. Thank God, it's over\nNothing holds me in the Caribbean any longer. Time to return home, to France. But... do I really want that?";
 				link.l1 = "Yes, I am returning to Europe.";
 				link.l1.go = "final_1";
 				link.l2 = "No, I am staying here in the Caribbean.";
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Europe"))
     		{
 				PlaySound("Voice\English\military02.wav");
-				dialog.text = "Have you heard the colonel? The rebels are hiding there! Search everything, turn the house upside down and seize everyone you find there! Get to it!";
+				dialog.text = "Did you hear the colonel? The rebels are hiding there! Search everything, turn the house upside down and seize everyone you find! Get to it!";
 				link.l1 = "...";
 				link.l1.go = "exit";
 				AddDialogExitQuest("Europe_SharlieFinal_2");
@@ -255,7 +255,7 @@ void ProcessDialogEvent()
 			// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 			if (CheckAttribute(pchar, "questTemp.FMQN.Choose") && pchar.location == "shore40")
     		{
-				dialog.text = "Hm. This story doesn't feel right. I believe that lugger from St. Jones was never meant to exist. The lieutenant is dragging me into his military operation. Why would I need that? I am not at war with the Dutch... What should I do? Should I leave and let Brits have fun on their own? Or should I stay?";
+				dialog.text = "Hm. This story doesn't feel right. I believe that lugger from St. Jones was never meant to exist. The lieutenant is dragging me into his military operation. Why would I need that? I am not at war with the Dutch... What should I do? Walk away from here before it all goes to hell and toss them to the devil - or stay?";
 				link.l1 = "Leave.";
 				link.l1.go = "FMQN_1";
 				link.l2 = "Stay.";
@@ -264,23 +264,23 @@ void ProcessDialogEvent()
 			// Addon 2016-1 Jason пиратская линейка
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Chest") && pchar.location == "shore37")
     		{
-    		    dialog.text = "So, the chest is prepared. I could try to find all the required materiel myself, but I'd rather go and see Fadey. He strikes me as a man who can acquire anything.";
-    			link.l1 = "*USE A THINKING OUT LOUD OPTION TO FINISH GATHERING MUNITIONS*";
+    		    dialog.text = "So, the chest is prepared. I could try to find all the required materials myself, but I'd rather go and see Fadey. He strikes me as a man who can acquire anything.";
+    			link.l1 = "*USE THE THINKING OUT LOUD OPTION TO FINISH GATHERING MUNITIONS*";
     			link.l1.go = "exit";
 				AddDialogExitQuest("Mtraxx_PlantChestReadyExit");
     		}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Boats") && pchar.location == "Maracaibo_river")
     		{
-    		    dialog.text = "So, we have to build six longboats. For this I need a carpenter, 20 planks and 10 leather packs";
-    			link.l1 = "*USE A THINKING OUT LOUD OPTION TO START BUILDING LONGBOATS*";
+    		    dialog.text = "So, we need to build six longboats. For that, I need a carpenter, 20 planks, and 10 packs of leather";
+    			link.l1 = "*USE THE THINKING OUT LOUD OPTION TO START BUILDING LONGBOATS*";
     			link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Boats");
 				AddQuestRecord("Roger_5", "11");
     		}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution.Powder") && pchar.location == "shore10")
     		{
-    		    dialog.text = "So, I intend to simply blow this pile of old trees sky high. All I need for this is 300 units of gunpowder just to be sure.";
-    			link.l1 = "*use a Thinking Out Loud option to order a gunpowder placement*";
+    		    dialog.text = "So, I intend to simply blow this pile of old wood sky high. All I need for this is 300 units of gunpowder, just to be sure.";
+    			link.l1 = "*use the Thinking Out Loud option to order a gunpowder placement*";
     			link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Retribution.Powder");
 				pchar.questTemp.Mtraxx.Retribution = "powder";
@@ -288,14 +288,14 @@ void ProcessDialogEvent()
     		}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution.ExitClosed") && pchar.location == "Judgement_dungeon_01")
     		{
-    		    dialog.text = RandSwear()+" The exit is sealed! It seems they blocked the door with something heavy! "+RandSwear()+"\nHush... What the hell?";
+    		    dialog.text = RandSwear()+" The exit is sealed! It seems they've blocked the door with something heavy! "+RandSwear()+"\nHush... What the hell?";
     			link.l1 = "";
     			link.l1.go = "mtraxx_dungeon";
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Retribution.ExitClosed");
     		}
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Retribution.Bead") && pchar.location == "Judgement_church")
     		{
-    		    dialog.text = "This is it... End of the line\n Looks like don Enrico was serious: there is no way out of these dungeons. I had a moment of hope when I found a second door at the water level but now... I have lost count of time - how long have I been lurking these dark tunnels? Half a day, the entire day? This place is as quiet and scary as a coffin\nThey had a church here once, right here. What a perfect place to say my prayers. I have sinned much, too much... I will pray and sleep here, my wounds and my exhaustion are killing me. If I am lucky I will never get up...";
+    		    dialog.text = "This is it... End of the line\n Looks like don Enrico was serious: there is no way out of these dungeons. I had a moment of hope when I found a second door at water level, but now... I have lost track of time - how long have I been lurking in these dark tunnels? Half a day, the whole day? This place is as quiet and frightening as a coffin\nThey had a church here once, right here. What a perfect place to say my prayers. I have sinned much, far too much... I will pray and sleep here, my wounds and my exhaustion are killing me. If I am lucky, I will never get up...";
     			link.l1 = "";
     			link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.Mtraxx.Retribution.Bead");
@@ -307,7 +307,7 @@ void ProcessDialogEvent()
 				dialog.text = "";
     			link.l1 = "I, Charles de Maure, French captain and nobleman, swear to myself and my conscience that I am done with my pirate past for good!";
     			link.l1.go = "Good_Choice";
-				link.l2 = "Yeah! Yeah! Ah ha ha!! I did it, I survived! Eat it, Zorro! Go to hell, Marcus! Now I'm on my own! Charlie Prince may have died, but Charles de Maure no one shall ever kill!";
+				link.l2 = "Yeah! Yeah! Ah ha ha!! I did it, I survived! Eat that, Zorro! Go to hell, Marcus! Now I'm on my own! Charlie Prince may have died, but Charles de Maure no one shall ever kill!";
     			link.l2.go = "Bad_Choice";
 			}
 			// <-- legendary edition
@@ -316,7 +316,7 @@ void ProcessDialogEvent()
 				dialog.text = "What should we do?";
 				if (CheckAttribute(pchar, "questTemp.TonzagQuest.JailDialog.FirstTime")) {
 					DeleteAttribute(pchar, "questTemp.TonzagQuest.JailDialog.FirstTime");
-					dialog.text = "... of course, Levasseur is no fool. Otherwise, why would they need to arrest us this very moment?\nAnd they didn't say a word!\n" + dialog.text;
+					dialog.text = "... of course, Levasseur is no fool. Otherwise, why would they need to arrest us at this very moment?\nAnd they didn't say a word!\n"+dialog.text;
 				}
 				
 				DeleteAttribute(link, "l1");
@@ -331,7 +331,7 @@ void ProcessDialogEvent()
 				}
 				
 				if (CheckAttribute(pchar, "questTemp.TonzagQuest.JailDialog.Tichingitu")) {
-					link.l3 = "Tichingitu? Say something appropriate for the situation.";
+					link.l3 = "Tichingitu? Say something suitable for the situation.";
 					link.l3.go = "tonzag_jail_tichingitu";
 				}
 				
@@ -346,7 +346,7 @@ void ProcessDialogEvent()
 			
 			if (CheckAttribute(pchar, "questTemp.TonzagQuest.JailPanic")) {
 				dialog.text = "";
-				link.l1 = "Oh my God, they killed Hercule!";
+				link.l1 = "Oh my God, they've killed Hercule!";
 				link.l1.go = "exit";
 				link.l2 = "You bastards!";
 				link.l2.go = "exit";
@@ -356,8 +356,8 @@ void ProcessDialogEvent()
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.HelenDrinking.RefusedGame")) {
-				dialog.text = "What an evening! Why did I listen to her? Brother was right - the girls here are completely different. Maybe they add something to the rum?";
-				link.l1 = "Time to sleep, and then - to Cartagena!";
+				dialog.text = "What an evening! Why did I listen to her? Brother was right – the girls here are completely different. Maybe they put something in the rum?";
+				link.l1 = "Time to sleep, and then – to Cartagena!";
 				link.l1.go = "exit";
 				
 				DeleteAttribute(pchar, "questTemp.HelenDrinking.RefusedGame");
@@ -366,13 +366,13 @@ void ProcessDialogEvent()
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.PZ_OsmatrivaemSunduk")) {
-				dialog.text = "Not a single thing was stolen, though everything is scattered around. Even the valuables are untouched. ";
+				dialog.text = "Not a single thing was stolen, though everything is scattered about. Even the valuables are untouched. ";
 				link.l1 = "They weren't trying to rob me - they were looking for something specific. But what? And more importantly, who...?";
 				link.l1.go = "exit";
 				
 				DeleteAttribute(pchar, "questTemp.PZ_OsmatrivaemSunduk");
 
-				AddDialogExitQuest("PZ_OsmatrivaemSunduk_3");
+				AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_4");
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.PZ_GotovimShlupki")) {
@@ -386,7 +386,7 @@ void ProcessDialogEvent()
 			}
 			
 			if (CheckAttribute(pchar, "questTemp.PZ_TiboUkralDevu")) {
-				dialog.text = "Oh my God... No, no, no... ";
+				dialog.text = "Oh God... No, no, no... ";
 				link.l1 = "";
 				link.l1.go = "exit";
 				
@@ -413,14 +413,14 @@ void ProcessDialogEvent()
 //navy --> after duel in tavern
 			if (CheckAttribute(pchar, "questTemp.LocationClone"))
 			{
-				Dialog.Text = RandPhraseSimple("That was one hell of a fight... Now we can call those cowards that ran away...", "Ha! That was easy. And those landlubbers just scattered!");
+				Dialog.Text = RandPhraseSimple("That was one hell of a fight... Now we can call out those cowards who ran away...","Ha! That was easy. And those landlubbers just scattered!");
 				link.l1 = "...";
 				link.l1.go = "exit";
 				DeleteAttribute(pchar, "questTemp.LocationClone");
 				break;
 			}
 //navy <--
-	        Dialog.Text = RandPhraseSimple("Hmm... So what should I do now?", "What to do now?");
+	        Dialog.Text = RandPhraseSimple("Hmm... So what should I do now?","What should we do now?");
 	        if (!bDisableMapEnter && pchar.location == Get_My_Cabin())
 	        {
 				//navy --> 13.02.08
@@ -444,7 +444,7 @@ void ProcessDialogEvent()
 	    			{
 	    				link.l1 = "Rest until night.";
 	    				link.l1.go = "TalkSelf_room_night";
-	    				link.l2 = "Rest until next morning.";
+	    				link.l2 = "Rest until the next morning.";
 						link.l2.go = "TalkSelf_room_day";
 	    			}
 				}
@@ -487,17 +487,17 @@ void ProcessDialogEvent()
 					Link.l9 = "I want to change the ammunition for the musket.";
 					Link.l9.go = "SetMusketBullets";
 				}
-					Link.l10 = "I want to choose a priority weapon for combat.";
+					Link.l10 = "I want to choose a primary weapon for combat.";
 					Link.l10.go = "SetPriorityMode";
 			}
 			
-			Link.l19 = "I want to select a potion for constant use.";
+			Link.l19 = "I want to choose a potion for regular use.";
 			Link.l19.go = "ChoosePotion";
 			
 			//--> Голландский гамбит
 			if(CheckAttribute(pchar, "questTemp.HWIC_Coordinates") && PChar.location == Get_My_Cabin()) 
 	        {
-	        	Link.l11 = "Try to find the island by the coordinates on the map.";
+	        	Link.l11 = "Try to find the island using the coordinates on the map.";
 	    		Link.l11.go = "Seek_AbyIsland";
 	    	}
 			//<-- Голландский гамбит
@@ -517,22 +517,22 @@ void ProcessDialogEvent()
 			// Addon 2016-1 Jason Пиратская линейка
 			if(CheckAttribute(pchar, "questTemp.Mtraxx.Ammo") && PChar.location == "Shore37") // прогон 3
 	        {
-	        	Link.l17 = "Tally up the chest's contents and decide to finish gathering munitions for Picard.";
+	        	Link.l17 = "Tally up the chest's contents and decide whether to finish gathering munitions for Picard.";
 	    		Link.l17.go = "mtraxx_ammo";
 	    	}
 			if(CheckAttribute(pchar, "questTemp.Mtraxx.Mutiny") && pchar.location == "Maracaibo_Plantation" && stf(environment.time) >= 3.00 && stf(environment.time) < 4.00) 
 	        {
-	        	Link.l17 = "Give an order to attack the Maracaibo plantation.";
+	        	Link.l17 = "Give the order to attack the Maracaibo plantation.";
 	    		Link.l17.go = "mtraxx_mutiny";
 	    	}
 			if(CheckAttribute(pchar, "questTemp.Mtraxx") && pchar.questTemp.Mtraxx == "merida_boats" && pchar.location == "Maracaibo_river") 
 	        {
-	        	Link.l17 = "Give an order to build longboats.";
+	        	Link.l17 = "Give the order to build longboats.";
 	    		Link.l17.go = "mtraxx_boats";
 	    	}
 			if(CheckAttribute(pchar, "questTemp.Mtraxx.Retribution") && pchar.questTemp.Mtraxx.Retribution == "powder" && pchar.location == "shore10") 
 	        {
-	        	Link.l17 = "Order to deliver the gunpowder to the dead abatis.";
+	        	Link.l17 = "Order to deliver the gunpowder to the fallen abatis.";
 	    		Link.l17.go = "mtraxx_powder";
 	    	}
 			// Jason Долго и счастливо
@@ -551,21 +551,14 @@ void ProcessDialogEvent()
 	        	Link.l18 = "Prepare the celebration.";
 	    		Link.l18.go = "LH_marry_4";
 	    	}
-			// -->Авторемонт			
-			if(Pchar.Location == Pchar.location.from_sea && CheckOfficersPerk(pchar, "SelfRepair") && CheckSelfRepairConditions()) 
-			{
-				Link.l14 = "Start repairing ships";
-				Link.l14.go = "StartSelfRepair";
-			}			
-			// <--Авторемонт
 			//--> завершение игры
 			if(CheckAttribute(pchar, "questTemp.Tieyasal_WinEnd")) // patch-9
 	        {
-	        	Link.l15 = "Finish the business on the Caribbean and sail to Europe.";
+	        	Link.l15 = "Finish your business in the Caribbean and sail to Europe.";
 	    		Link.l15.go = "final_1";
 	    	}
 			//<-- завершение игры
-			Link.l20 = RandPhraseSimple("Not now. There is no time.", "No time for that, too much to do.");
+			Link.l20 = RandPhraseSimple("Not now. There is no time.","No time for that, too much to do.");
 			Link.l20.go = "exit";
 		break;
 		
@@ -574,11 +567,7 @@ void ProcessDialogEvent()
 			AddDialogExitQuestFunction("Tonzag_CreateKiller");
 		break;
 		
-		case "StartSelfRepair":
-			NextDiag.CurrentNode = NextDiag.TempNode;
-			DialogExit_Self();
-			LaunchRepair(pchar);
-		break;
+
 		
 		case "SetGunBullets":
 			Dialog.Text = "Select ammunition type:";
@@ -657,7 +646,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "ChoosePotion":
-			Dialog.Text = "Select potion:";
+			Dialog.Text = "Select a potion:";
 	    	Link.l1 = "Healing potion.";
 	    	Link.l1.go = "ChoosePotion1";
 			Link.l2 = "Elixir.";
@@ -675,7 +664,7 @@ void ProcessDialogEvent()
 				Link.l7 = "I want to select potions automatically.";
 				Link.l7.go = "ChoosePotion7";
 			}
-			Link.l8 = "Wait, I have changed my mind..";
+			Link.l8 = "Wait, I have changed my mind.";
 	    	Link.l8.go = "ChoosePotion8";
 		break;
 		
@@ -755,7 +744,7 @@ void ProcessDialogEvent()
 	            chr = GetCharacter(GetCharIDXForTownAttack(pchar.location));
 	            if (chr.from_sea == Pchar.location.from_sea)
 	            {
-					Dialog.Text = "We could start capturing the town, but the ship would not endure the salvos of the fort's cannons for long, and we won't be able to send a landing party.";
+					Dialog.Text = "We could start capturing the town, but the ship would not endure the salvos from the fort's cannons for long, and we wouldn't be able to send a landing party.";
 	    			Link.l1 = "...";
 	    			Link.l1.go = "exit";
 	            }
@@ -763,7 +752,7 @@ void ProcessDialogEvent()
 	            {
 					if (pchar.location == "Panama_ExitTown" || pchar.location == "Tortuga_ExitTown" || pchar.location == pchar.questTemp.SantaMisericordia.ColonyZapret + "_ExitTown") // patch-5
 					{
-						Dialog.Text = "No, I am not that crazy yet..";
+						Dialog.Text = "No, I am not that crazy yet...";
 	    				Link.l1 = "...";
 	    				Link.l1.go = "exit";
 					}
@@ -777,7 +766,7 @@ void ProcessDialogEvent()
 						}
 						else
 						{
-							Dialog.Text = "Attack " + GetCityName(chr.City) + ".";
+							Dialog.Text = "Attack "+GetCityName(chr.City)+".";
 							if (CheckAttribute(pchar, "questTemp.Patria.SanJoseAttack") && pchar.location == "PortSpein_ExitTown") // Jason НСО
 							{
 								Link.l1 = "Quit messing around! Halt!";
@@ -814,7 +803,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					Dialog.Text = "Don't disperse! Continue with the attack!";
+					Dialog.Text = "Don't disperse! Continue the attack!";
 					Link.l2 = "...";
 					Link.l2.go = "exit";				
 				}			
@@ -866,7 +855,7 @@ void ProcessDialogEvent()
 	                {
 	                    pchar.GenQuest.SlavesToCrew = GetCargoGoods(pchar, GOOD_SLAVES);
 	                }
-	                Dialog.Text = "Your crew can be replenished with " + pchar.GenQuest.SlavesToCrew+ " slaves who want to serve under you. Would you like to accept?";
+	                Dialog.Text = "Your crew can be replenished with "+pchar.GenQuest.SlavesToCrew+" slaves who wish to serve under you. Would you like to accept?";
 	                Link.l1 = "Yes";
 	        		Link.l1.go = "TalkSelf_SlavesToCrew_1";
 	        		Link.l2 = "No";
@@ -936,7 +925,7 @@ void ProcessDialogEvent()
 
 //navy --> 13.02.08
 		case "Cabin_CompanionSelect":
-			Dialog.Text = "Which companion to summon?";
+			Dialog.Text = "Which companion should I summon?";
 			for (i = 1; i < GetCompanionQuantity(PChar); i++)
 			{
 				chr = GetCharacter(GetCompanionIndex(PChar, i));
@@ -974,7 +963,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Pity that I don't have the necessary navigational instruments for determining the latitude and longitude. I'll have to search for the island some other time. ";
+				dialog.text = "Pity that I don't have the necessary navigational instruments to determine the latitude and longitude. I'll have to search for the island some other time. ";
 				link.l1 = "";
 				link.l1.go = "exit";
 			}
@@ -1005,41 +994,41 @@ void ProcessDialogEvent()
 		//--> LSC, приколы со стуком в дверь
 		case "knock_2":
 			PlaySound("interface\knock_2.wav");
-			dialog.text = "So, I knocked, now let's wait for the answer...";
+			dialog.text = "So, I've knocked, now let's wait for the answer...";
 			link.l1 = "(wait)";
 			link.l1.go = "knock_wrong";
 		break;
 		
 		case "knock_3":
 			PlaySound("interface\knock.wav");
-			dialog.text = "So, I knocked, now let's wait for the answer...";
+			dialog.text = "So, I've knocked, now let's wait for the answer...";
 			link.l1 = "(wait)";
 			link.l1.go = "knock_wrong";
 		break;
 		
 		case "knock_3_1":
 			PlaySound("interface\knock_3_1.wav");
-			dialog.text = "So, I knocked, now let's wait for the answer...";
+			dialog.text = "So, I've knocked, now let's wait for an answer...";
 			link.l1 = "(wait)";
 			link.l1.go = "knock_wrong";
 		break;
 		
 		case "knock_1_3":
 			PlaySound("interface\knock_1_3.wav");
-			dialog.text = "So, I knocked, now let's wait for the answer...";
+			dialog.text = "So, I've knocked, now let's wait for an answer...";
 			link.l1 = "(wait)";
 			link.l1.go = "knock_wrong";
 		break;
 		
 		case "knock_2_2":
 			PlaySound("interface\knock_2_2.wav");
-			dialog.text = "So, I knocked, now let's wait for the answer...";
+			dialog.text = "So, I've knocked, now let's wait for the answer...";
 			link.l1 = "(wait)";
 			link.l1.go = "knock_right";
 		break;
 		
 		case "knock_wrong":
-			dialog.text = "He isn't opening the door... I guess I used the wrong secret knock. Alright, I'll come tomorrow and try again. Today, he will not open the door for sure.";
+			dialog.text = "He isn't opening the door... I suppose I used the wrong secret knock. Alright, I'll come back tomorrow and try again. Today, he definitely won't open the door.";
 			link.l1 = "(leave)";
 			link.l1.go = "exit";
 		break;
@@ -1047,7 +1036,7 @@ void ProcessDialogEvent()
 		case "knock_right":
 			PlaySound("interface\key.wav");
 			PlaySound("Voice\English\YouFace.wav");
-			dialog.text = "Wow! He answered and opened the door! I can enter now...";
+			dialog.text = "Shiver me timbers! He answered and opened the door! I can go in now...";
 			link.l1 = "(enter)";
 			link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.LSC.DiffIndoor");
@@ -1059,7 +1048,7 @@ void ProcessDialogEvent()
 		case "terrapin":
 			PlaySound("Interface\Door_Kick.wav");
 			PlaySound("Voice\English\EvilPirates02.wav");
-			dialog.text = "Caramba! So that's the delayed backup for Levasseur... No way I can leave through the door... Fine, I'll follow in Thibaut's steps - through the window! After all, this rascal managed to slip away somehow!";
+			dialog.text = "Caramba! So that's the delayed backup for Levasseur... No way I can leave through the door... Fine, I'll follow Thibaut's example - through the window! After all, that rascal managed to slip away somehow!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Terrapin_GoWindow");
@@ -1068,7 +1057,7 @@ void ProcessDialogEvent()
 		// защита Сен-Пьера
 		case "SP_defend":
 			PlaySound("Voice\English\military02.wav");
-			dialog.text = "So, our mission is to repel an attack of the blasted Spanish and save Saint Pierre. The fort is captured, and a battle is being fought in the streets. There is a powerful squadron in Saint Pierre's bay and they have got a ship of the line as a flagship. Attacking it now is pointless, the fort and the city is under enemy control, so they won't let us land in port\nTherefore, I have decided to move through the jungles and strike them from behind through the city gates. Once the fort and the city are cleared from the Spanish, we shall deal with the squadron. It will become much more vulnerable without the fire support of the fort\nThis won't be easy, so I have given orders to pay extra hundred thousand pesos to be distributed among the crew in addition to the normal salary. Let's move!";
+			dialog.text = "So, our mission is to repel an attack by the blasted Spanish and save Saint Pierre. The fort has been captured, and a battle is being fought in the streets. There is a powerful squadron in Saint Pierre's bay, and they have a ship of the line as their flagship. Attacking it now is pointless; the fort and the city are under enemy control, so they won't let us land in port\nTherefore, I have decided to move through the jungles and strike them from behind through the city gates. Once the fort and the city are cleared of the Spanish, we shall deal with the squadron. It will become much more vulnerable without the fire support of the fort\nThis won't be easy, so I have given orders for an extra hundred thousand pesos to be distributed among the crew in addition to the normal salary. Let's move!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuest("DefendSP_GoJungle");
@@ -1078,7 +1067,7 @@ void ProcessDialogEvent()
 		case "final_1": // Jason НСО
 			if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) // генерал-губернатор никуда не уедет
 			{
-				dialog.text = "Hold on, where am I going? I can't leave the position of Governor-General without permission from Paris! Otherwise I will be most definitely arrested for the unauthorized abandonment of the entrusted colonies when I come back to France. Paris, I will miss you ...";
+				dialog.text = "Hold on, where am I going? I can't leave the position of Governor-General without permission from Paris! Otherwise, I will most definitely be arrested for the unauthorized abandonment of the entrusted colonies when I return to France. Paris, I will miss you ...";
 				link.l1 = "";
 				link.l1.go = "exit";
 				EndQuestMovie();
@@ -1093,7 +1082,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "final_2":
-			dialog.text = "I believe this is the right decision! What is left in good old Europe waiting for me, when I found myself here? Besides, I can get back to France whenever I choose, anyway!";
+			dialog.text = "I believe this is the right decision! What is left for me in good old Europe, now that I've found myself here? Besides, I can return to France whenever I choose, anyway!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuest("Final_StayInCarribean"); // 010912
@@ -1109,7 +1098,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FMQN_2":
-			dialog.text = "Nah, no way, I am staying. But hell, I won't stay here waiting for God knows what. I should sail to the port of Philipsburg and investigate the situation. I don't fancy the idea of being a tool in the hands of some blasted lying Englishman.";
+			dialog.text = "Nah, no way, I am staying. But hell, I won't stay here waiting for God knows what. I should sail to the port of Philipsburg and investigate the situation. I'm not going to become a blind tool in their hands.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_ChooseContinue");
@@ -1120,7 +1109,7 @@ void ProcessDialogEvent()
 			Mtraxx_PlantCheckShoreBox(); // анализируем содержимое сундука
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.Weapon.Blade") && !CheckAttribute(pchar, "questTemp.Mtraxx.Weapon.NoBlade")) // собрали 30 сабель
 			{
-				dialog.text = "Thirty pieces of cold steel are in the chest! Should I stop now, or should I gather more firearms, charges, and potions?";
+				dialog.text = "Thirty pieces of cold steel are in the chest! Should I stop now, or should I gather more firearms, powder, and potions?";
 				link.l1 = "This is enough!";
 				link.l1.go = "mtraxx_ammo_1";
 				link.l2 = "No, I should keep filling this chest.";
@@ -1134,7 +1123,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Thirty pieces of cold steel are not gathered yet! I should bring more.";
+				dialog.text = "Thirty pieces of cold steel have not been gathered yet! I should bring more.";
 				link.l1 = "";
 				link.l1.go = "exit";
 			}
@@ -1143,14 +1132,14 @@ void ProcessDialogEvent()
 		case "mtraxx_ammo_1":
 			DelMapQuestMarkCity("baster");
 			DelLandQuestMark(characterFromId("Fadey"));
-            dialog.text = "Locking the chest and making a plan to sneak it to the plantation.";
+            dialog.text = "Locking the chest and making a plan to smuggle it onto the plantation.";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_PlantShoreBoxComplete");
 		break;
 		
 		case "mtraxx_mutiny":
-            dialog.text = "Go, chaaarge! Huurah!";
+            dialog.text = "Go, charge! Hurrah!";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_PlantMutiny");
@@ -1161,21 +1150,21 @@ void ProcessDialogEvent()
 			{
 				if (Mtraxx_MeridaCheckCarpenter()) // наличие плотника
 				{
-					dialog.text = "All required materials are prepared, we should start building the long boats right away.";
+					dialog.text = "All the required materials are prepared, we should start building the longboats right away.";
 					link.l1 = "";
 					link.l1.go = "exit";
 					AddDialogExitQuestFunction("Mtraxx_MeridaBuildBoats");
 				}
 				else
 				{
-					dialog.text = "I don't have an experinced carpenter capable of performing the job. I should assign an officer to this position.";
+					dialog.text = "I don't have an experienced carpenter capable of performing the job. I should assign an officer to this position.";
 					link.l1 = "";
 					link.l1.go = "exit";
 				}
 			}
 			else
 			{
-				dialog.text = "Not enough materials, we need at least 20 packs of planks plus 10 bales of leather.";
+				dialog.text = "Not enough materials, we need at least 20 packs of planks and 10 bales of leather.";
 				link.l1 = "";
 				link.l1.go = "exit";
 			}
@@ -1186,7 +1175,7 @@ void ProcessDialogEvent()
 			{
 				if (GetCrewQuantity(pchar) >= 20) // наличие команды
 				{
-					dialog.text = "Everything`s ready for a blast!";
+					dialog.text = "Everything's ready for a blast!";
 					link.l1 = "";
 					link.l1.go = "exit";
 					AddDialogExitQuestFunction("Mtraxx_RetributionBarrels");
@@ -1200,7 +1189,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Not enough gunpowder, at least 300 is needed.";
+				dialog.text = "Not enough gunpowder, at least 300 are needed.";
 				link.l1 = "";
 				link.l1.go = "exit";
 			}
@@ -1215,7 +1204,7 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_dungeon_1":
 			PlaySound("ambient\jail\jail_door1.wav");
-            dialog.text = "Right! We have visitors... Jan?..";
+            dialog.text = "Right! We have visitors... Jan?.. ";
 			link.l1 = "";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("Mtraxx_RetributionRunToEnrico");
@@ -1247,17 +1236,17 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) sld = characterFromId("Helena");
 			else sld = characterFromId("Mary");
 			string sTemp = sld.name;
-			dialog.text = "Me and "+sTemp+" have been together for a long time, and our bonds are stronger than any church vows, but I want both of us to remember this moment. Therefore, I need to decide where I am to propose to her:";
+			dialog.text = "You and "+sTemp+" have been together for a long time, and our bond is stronger than any church vow, but I want both of us to remember this moment. Therefore, I need to decide where I am to propose to her:";
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer"))
 			{
-				link.l1 = "Isla Tessoro - this island means a lot in our story. I suppose, there is no better place - Sabu Matila Bay is charming at sunset!";
+				link.l1 = "Isla Tessoro - this island means a lot in our story. I suppose there is no better place - Sabu Matila Bay is charming at sunset!";
 				link.l1.go = "LH_marry_1_1";
 			}
-			link.l2 = "Tortuga - a symbol of freedom of our time, and the view from the lighthouse to the Tortu strait is worthy of the brush of any painter!";
+			link.l2 = "Tortuga - a symbol of freedom in our time, and the view from the lighthouse to the Tortu Strait is worthy of any painter's brush!";
 			link.l2.go = "LH_marry_1_2";
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
 			{
-				link.l3 = "Jamaica - there's so much to it! And admiring the dawn in Portland Cove is how I imagine Paradise on earth.";
+				link.l3 = "Jamaica - there's so much to it! And admiring the dawn in Portland Cove is how I imagine paradise on earth.";
 				link.l3.go = "LH_marry_1_3";
 			}
 		break;
@@ -1269,7 +1258,7 @@ void ProcessDialogEvent()
 			else sld = characterFromId("Mary");
 			sTemp = sld.name;
 			AddQuestUserData("LongHappy", "sName", sTemp);
-			dialog.text = "But we cannot do this without the solemnity of the church - everything should be according to all the canons so that my father would be forced to accept my choice. So, I will need a priest, and I don't see anyone worthy of this position besides Abbot Benoit. He is an old friend of my father and from him began my adventures in the New World. I think he will agree to do me the honor.";
+			dialog.text = "But we cannot do this without the solemnity of the church – everything must be done according to the canons, so that my father will be compelled to accept my choice. So, I will need a priest, and I see no one more worthy of this role than Abbot Benoit. He is an old friend of my father's, and it was through him that my adventures in the New World began. I believe he will agree to do me this honour.";
 			link.l1 = "";
 			link.l1.go = "LH_marry_2";
 		break;
@@ -1281,7 +1270,7 @@ void ProcessDialogEvent()
 			else sld = characterFromId("Mary");
 			sTemp = sld.name;
 			AddQuestUserData("LongHappy", "sName", sTemp);
-			dialog.text = "But we cannot do this without the solemnity of the church - everything should be according to all the canons so that my father would be forced to accept my choice. So, I will need a priest, and I don't see anyone worthy of this position besides Abbot Benoit. He is an old friend of my father and from him began my adventures in the New World. I think he will agree to do me the honor.";
+			dialog.text = "But we cannot do this without the solemnity of the church - everything must be done according to the canons, so that my father will be compelled to accept my choice. So, I will need a priest, and I see no one more worthy of this role than Abbot Benoit. He is an old friend of my father's, and it was from him that my adventures in the New World began. I think he will agree to do me this honour.";
 			link.l1 = "";
 			link.l1.go = "LH_marry_2";
 		break;
@@ -1293,7 +1282,7 @@ void ProcessDialogEvent()
 			else sld = characterFromId("Mary");
 			sTemp = sld.name;
 			AddQuestUserData("LongHappy", "sName", sTemp);
-			dialog.text = "But we cannot do this without the solemnity of the church - everything should be according to all the canons so that my father would be forced to accept my choice. So, I will need a priest, and I don't see anyone worthy of this position besides Abbot Benoit. He is an old friend of my father and from him began my adventures in the New World. I think he will agree to do me the honor.";
+			dialog.text = "But we cannot do this without the solemnity of the church - everything must be done according to the canons, so that my father will be compelled to accept my choice. So, I will need a priest, and I see no one more worthy of this role than Abbot Benoit. He is an old friend of my father's, and it was through him that my adventures in the New World began. I believe he will agree to do me this honour.";
 			link.l1 = "";
 			link.l1.go = "LH_marry_2";
 		break;

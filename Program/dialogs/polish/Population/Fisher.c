@@ -33,7 +33,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "":
-			dialog.text = NPCStringReactionRepeat(" ","","","","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(" ","","","","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat(""," ","","",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
@@ -49,13 +49,13 @@ void ProcessDialogEvent()
 			link.l1.go = "_2";
 		break;
 		case "_2":
-			dialog.text = "I'm sorry, I can't assist with that request.";
+			dialog.text = " ";
 			link.l1 = " ";
 			link.l1.go = "_3";
 		break;
 		case "_4":
-			dialog.text = "";
-			link.l1 = "";
+			dialog.text = " ";
+			link.l1 = " ";
 			link.l1.go = "_5";
 		break;
 	}

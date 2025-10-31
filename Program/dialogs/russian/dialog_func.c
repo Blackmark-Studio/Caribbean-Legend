@@ -189,7 +189,7 @@ string RandExclamation()
 //                Выбор фраз для диалога
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // boal 13.03.2004 -->
-string RandPhraseSimple(string Var1, string Var2);
+string RandPhraseSimple(string Var1, string Var2)
 {
 	int RandP;
 	RandP = Rand(1);
@@ -435,7 +435,7 @@ string GetCityName(string city) // имена городов по аттрибу
     string ret;
     int nFile = LanguageOpenFile("LocLables.txt");
     
-	ret = LanguageConvertString(nFile, city + " Town")
+	ret = LanguageConvertString(nFile, city + " Town");
 	LanguageCloseFile( nFile );
 	
 	return  ret;
@@ -983,18 +983,24 @@ string TimeGreeting()
     return "Здрасте";
 }
 
-string Greeting()
+string Greeting(bool formal)
 {
-    return "Здравствуйте";
+	if (GetHour() >= 6 && GetHour() < 12)
+	{
+		return "Доброе утро";
+	}
+	if (formal == true) return "Здравствуйте"; // polite
+	else return "Привет"; // friendly
 }
 
-string Goodbye()
+string Goodbye(bool formal)
 {
-    if (GetHour() >= 23 || GetHour() < 6)
-    {
-       return "Доброй ночи";
-    }
-    return RandPhraseSimple("До свидания", "Прощайте");
+	if (GetHour() >= 23 || GetHour() < 6)
+	{
+		return "Доброй ночи";
+	}
+	if (formal == true) return RandPhraseSimple("До свидания", "Прощайте"); // polite
+	else return RandPhraseSimple("Пока", "Прощай"); // friendly
 }
 
 // выбор фразы от репутации
@@ -1223,4 +1229,29 @@ string GetIndianName(int Sex) //Jason имена индейцев
 	else nameid = "l" + (100+rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle(ref NPChar, bool address) //Титул ГГ
+{
+	string Title, Nation;
+	
+	if (PChar.sex == "man")
+	{
+		if (address == true)
+		{
+			Nation = GetAddress_Form(NPChar);
+		}
+		
+		Title = "капитан";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = GetAddress_Form(NPChar);
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "генерал-губернатор";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "вице-адмирал";
+
+	if (address == true && PChar.sex == "man") return Nation + " " + Title;
+	else return Title;
 }

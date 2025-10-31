@@ -35,31 +35,8 @@ void ProcessDialogEvent()
 		case "Cabin":
 			dialog.text = "Marcello, lo conosco. È un amico di Rivados e dei pirati. Adolf non lavorerebbe mai con lui. Senti l’aria... percepisci l’odore della polvere da sparo? E c’è sangue sul muro... Ha ucciso Adolf e ora cerca di prenderci in giro! Deve essere al soldo dell’ammiraglio! Uccidilo, giusto?";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
-		break;
-		
-		case "Cabin_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			DialogExit();
-			sld = characterFromId("Marchello");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-			{
-				for (i=1; i<=3; i++)
-				{
-					sld = characterFromId("CyclopGuard_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 		// на улице
@@ -1707,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Che succede stavolta, Capitano? Spagnoli, filibustieri o qualcosa di peggio, giusto?";
 			link.l1 = "È peggio, Mary, molto peggio. Il governatore ha intenzione di fare visita a una cortigiana dalle tariffe stellari e io dovrei accompagnarlo come ospite d’onore, come avevo promesso alla padrona. Chiacchiere noiose, vino strapagato e nobili insulsi, giusto?";
 			link.l1.go = "GoldenGirl_1";

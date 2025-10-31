@@ -90,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
-				notification("Wymagana negatywna reputacja!", "None");
+				Notification_Reputation(false, 48, "high");
 				PlaySound("Voice\English\hambit\Ercule Tongzag-03.wav");
 				dialog.text = "Nie potrzebuję usług lizusa. Nie mam żadnego zadania, które mógłbym ci zaoferować.";
 				link.l1 = "Hej, hej. Uważaj na język, kumplu!";
@@ -101,10 +101,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//слабое фехтование
 			{
 				// belamour legendary edition покажем критерии -->
-				notification("Zbyt niska umiejętność (35)", SKILL_F_LIGHT);
-				notification("Zbyt niska umiejętność (35)", SKILL_FENCING);
-				notification("Zbyt niska umiejętność (35)", SKILL_F_HEAVY);
-				notification("Zbyt niska umiejętność (35)", SKILL_PISTOL);
+				Notification_Skill(false, 35, SKILL_F_LIGHT);
+				Notification_Skill(false, 35, SKILL_FENCING);
+				Notification_Skill(false, 35, SKILL_F_HEAVY);
+				Notification_Skill(false, 35, SKILL_PISTOL);
 				// <--
 				dialog.text = "Kapitanie, jesteś zbyt miękki. Potrzebuję wojownika o nieco lepszej reputacji niż ty. Wróć, gdy nauczysz się obsługiwać tę stal wiszącą przy pasie. Odrobina celności w strzelaniu też by nie zaszkodziła.";
 				link.l1 = "Rozumiem. W takim razie odwiedzę cię później.";

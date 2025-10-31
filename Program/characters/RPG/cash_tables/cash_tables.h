@@ -1,0 +1,11 @@
+#define CT_COMMON "com"
+#define CT_EQUIP "equip"
+#define CT_LAND "land"
+#define CT_STATIC "static"
+
+#define EVENT_CT_UPDATE "eventCashTableUpdate"
+#define EVENT_CT_UPDATE_LAND "eventCashTableUpdateLand"
+#define EVENT_CT_UPDATE_FELLOW "eventCashTablesApplyFellow"
+#define EVENT_CT_UPDATE_FELLOWS "eventCashTablesApplyFellowS"
+#define EVENT_CT_APPLY_ADMIRAL "eventCashTablesApplyAdmiral"
+#define EVENT_CT_APPLY_COMPANION "eventCashTablesApplyCompanion"

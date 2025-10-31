@@ -1,529 +1,109 @@
-GenQuests_1
-{
-Контрабандист
-}
-
-GenQuests_2
-{
-Офицер
-}
-
-GenQuests_3
-{
-Солдат
-}
-
-GenQuests_4
-{
-Вот я и нашёл обручальное кольцо девушки из @<sCity>. Нужно отнести его ей.
-}
-
-GenQuests_16
-{
-Сокровища где-то рядом!
-}
-
-GenQuests_17
-{
-Время на поиски корабля вышло
-}
-
-GenQuests_18
-{
-Время на поиски корабля вышло, капитан сошёл на берег
-}
-
-GenQuests_19
-{
-Капитан сошёл на берег
-}
-
-GenQuests_20
-{
-Капитан! У нас эпидемия!
-}
-
-GenQuests_21
-{
-На борту корабля @<chref.Ship.Name> @<crew> человек уже мертвы
-}
-
-GenQuests_22
-{
-взорвал
-}
-
-GenQuests_23
-{
-взорвала
-}
-
-GenQuests_24
-{
-~ крюйт камеру.
-}
-
-GenQuests_25
-{
-Корабль пуст
-}
-
-GenQuests_26
-{
-Вы слышали, что служанку по имени @<pchar.GenQuest.EncGirl.name> хозяйка выгнала только за то, что та не смогла собрать в джунглях её рассыпавшиеся жемчужины? Совсем народ стыд потерял!.. а совести и не имел никогда.
-}
-
-GenQuests_27
-{
-Вы слышали, какая-то шлюха пыталась без документов проникнуть на корабль? Её поймали и отвели назад в бордель. Говорят она задолжала хозяйке кругленькую сумму.
-}
-
-GenQuests_28
-{
-Слыхали? у нас в порту поймали какую-то шлюху без документов. Говорят, из борделя сбежала, предварительно почистив сундуки тамошней хозяйки. Давно бы следовало прикрыть этот разносчик заразы и воровства. Ведь наши дети всё это видят, чему они могут научиться?
-}
-
-GenQuests_29
-{
-Джордж
-}
-
-GenQuests_30
-{
-Буш
-}
-
-GenQuests_31
-{
-Рабак
-}
-
-GenQuests_32
-{
-Мабоа
-}
-
-GenQuests_33
-{
-Авраам
-}
-
-GenQuests_34
-{
-Линкольн
-}
-
-GenQuests_35
-{
-в кораблестроении
-}
-
-GenQuests_36
-{
-в артиллерии
-}
-
-GenQuests_37
-{
-в навигации
-}
-
-GenQuests_38
-{
-Капитан, как вам путешествие на пиратском корабле? Нормально? Вас там не обижали? Ха-ха-ха!!
-}
-
-GenQuests_39
-{
-О-о-о, капитан, я слышал вам здорово досталось недавно.... Вы, батенька, теперь голодранец! Ха-ха-ха!!
-}
-
-GenQuests_40
-{
-Можно причаливать в бухту.
-}
-
-GenQuests_41
-{
-Вы слышали, @<GetAddress_Form(pchar)>, что недавно был арестован капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Оказывается, он подрабатывал контрабандой. Подумать только, до чего довёл колонию нынешний губернатор! Те, кто должен ловить пиратов, сами же нас и обворовывают!.. Поговаривают, что через неделю он будет казнён. Вот и поделом ему.
-}
-
-GenQuests_42
-{
-Поговаривают, что капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> оказался организатором шайки контрабандистов. Его поймали и скоро повесят. Похоже, @<GetAddress_Form(pchar)>, наш губернатор всерьёз взялся за наведение порядка в колонии.
-}
-
-GenQuests_43
-{
-Вы представляете! Начальник форта разоблачил тайную организацию контрабандистов, которой удалось завербовать в свои ряды даже офицеров флота. Одного из них, которого зовут @<pchar.GenQuest.CaptainComission.Name>, уже поймали и вскоре повесят. О, @<GetAddress_Form(pchar)>, я всегда говорил, что наш губернатор рано или поздно наведёт порядок в поселении.
-}
-
-GenQuests_44
-{
-Вы уже знаете, что капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> арестован? Властям стало известно, что он укрыл крупную партию товара, который конфисковывал у проходящих в акватории судов. Похоже, виселицы ему не избежать. А ведь, скажу я вам, он был одним из лучших в патрульной эскадре. Кто бы мог подумать...
-}
-
-GenQuests_45
-{
-Чёрт побери! Пленник сбежал!
-}
-
-GenQuests_46
-{
-Вы слышали, @<GetAddress_Form(pchar)>, что недавно был повешен капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Говорят, он ограбил какого-то купца. Вот ведь, как бывает, никому верить нельзя... И всю команду с ним за одно казнили. Сговор значит...
-}
-
-GenQuests_47
-{
-Вы уже знаете, @<GetAddress_Form(pchar)>, что бывший капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> казнён? Поговаривают, что он пустил ко дну какое-то важное судно, а товар спрятал. И ведь никто из команды не признался где тайник. Так их всех и повесили...
-}
-
-GenQuests_48
-{
-Вы представляете, @<GetAddress_Form(pchar)>? Один из капитанов патрульной эскадры занимался морским разбоем. Так его недавно казнили вместе со всей командой. Говорят, что они грабили и пускали ко дну торговые суда.
-}
-
-GenQuests_49
-{
-Недавно казнили бывшего капитана по имени @<pchar.GenQuest.CaptainComission.Name> вместе с командой его патрульного @<sShipType>. Поговаривают, что они укрыли крупную партию товара, который конфисковывали у проходящих в акватории судов. А ведь это был один из лучших патрульных экипажей. Я думаю, @<GetAddress_Form(pchar)>, что их намеренно оклеветали. Ведь товар так и не нашли..
-}
-
-GenQuests_50
-{
-Весь товар загружен в трюм
-}
-
-GenQuests_51
-{
-трем
-}
-GenQuests_52
-{
-четверым
-}
-GenQuests_53
-{
-пятерым
-}
-GenQuests_54
-{
-шестерым
-}
-GenQuests_55
-{
-семерым
-}
-GenQuests_56
-{
-восьмерым
-}
-GenQuests_57
-{
-девятерым
-}
-GenQuests_58
-{
-десятерым
-}
-
-GenQuests_59
-{
-Доставили кораблекрушенцев в поселение
-}
-
-GenQuests_60
-{
-Контрабандист испугался идти в арсенал форта и убежал
-}
-
-GenQuests_61
-{
-Вы прибыли в нужную пещеру
-}
-
-GenQuests_62
-{
-
-}
-GenQuests_63
-{
-ла
-}
-
-GenQuests_64
-{
-ся
-}
-GenQuests_65
-{
-ась
-}
-
-GenQuests_66
-{
-
-}
-GenQuests_67
-{
-а
-}
-
-GenQuests_68
-{
-не по-джентльменски
-}
-
-GenQuests_69
-{
-некрасиво
-}
-
-GenQuests_70
-{
-ся
-}
-GenQuests_71
-{
-ась
-}
-
-GenQuests_72
-{
-слово джентльмена
-}
-GenQuests_73
-{
-'держать своё слово'
-}
-
-GenQuests_74
-{
-затонула, а с ней
-}
-GenQuests_75
-{
-затонул, а с ним
-}
-
-GenQuests_76
-{
-ел
-}
-GenQuests_77
-{
-ла
-}
-
-GenQuests_78
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_79
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_80
-{
-Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.
-}
-
-GenQuests_81
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_82
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_83
-{
-Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.
-}
-
-GenQuests_84
-{
-Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_85
-{
-Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.
-}
-
-GenQuests_86
-{
-Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.
-}
-
-GenQuests_87
-{
-Офицер @<GetFullName(sld)> сбежал с кораблём @<sld.ship.name>
-}
-
-GenQuests_88
-{
-Офицер @<GetFullName(sld)> сбежал с корабля @<pchar.ship.name>
-}
-
-GenQuests_89
-{
-перехватчики
-}
-
-GenQuests_90
-{
-Прошло пять дней...
-}
-
-GenQuests_91
-{
-Ваша команда пополнилась на 55 человек
-}
-
-GenQuests_92
-{
-ёл
-}
-GenQuests_93
-{
-ла
-}
-
-GenQuests_94
-{
-Вы слышали, капитан @<GetFullName(pchar)> схватился с бандитом по имени @<pchar.GenQuest.(Gun).name>. Его хотели ограбить, а он не захотел платить. Смелый кэп - он просто его убил.
-}
-
-GenQuests_95
-{
-Вы знаете, недавно за городом была схватка - на капитана по имени @<GetFullName(pchar)> напали бандиты, ограбить хотели... А-а, так вы же и есть тот капитан, кто отправил к праотцам этого мародёра по имени @<pchar.GenQuest.(Gun).name>! Прекрасная работа, скажу я вам...
-}
-
-GenQuests_96
-{
-Вы не слышали о том, что местная шайка бандитов под предводительством негодяя @<pchar.GenQuest.(Gun).name> напала на капитана по имени @<GetFullName(pchar)>? Тот отказался платить и перебил бандитов.
-}
-
-GenQuests_97
-{
-Вы слышали, кто-то убил в джунглях несчастную девушку по имени @<pchar.GenQuest.EncGirl.name>. Отловить бы мерзавца и вздёрнуть!
-}
-
-GenQuests_98
-{
-Вы знаете, капитан @<GetFullName(pchar)>, кто-то убил несчастную девушку по имени @<pchar.GenQuest.EncGirl.name>, когда та по делам отправилась за город. Как жаль, она была такой хорошей...
-}
-
-GenQuests_99
-{
-Её звали @<pchar.GenQuest.EncGirl.name>, и она погибла в джунглях. И ничего удивительного, скажу я вам, за городом так неспокойно...
-}
-
-GenQuests_100
-{
-Вы слышали, какой-то капитан спас девушку по имени @<pchar.GenQuest.EncGirl.name> от бандитов, буквально вытащил её из их лап! Какой прекрасный человек и настоящий мужчина!
-}
-
-GenQuests_101
-{
-Вы знаете, капитан @<GetFullName(pchar)> спас девушку по имени @<pchar.GenQuest.EncGirl.name> от насильников в джунглях... А-а, так это же вы!! Я вами восхищаюсь...
-}
-
-GenQuests_102
-{
-Девушке по имени @<pchar.GenQuest.EncGirl.name> здорово повезло - недавно на неё напали бандиты в джунглях, хотели изнасиловать, видать. Но ничего у них не вышло, хе-хе, и благодарить она должна капитана @<GetMainCharacterNameGen()>!
-}
-
-GenQuests_103
-{
-Да уж, капитан @<GetFullName(pchar)>, никто не думал, что вы способны оставить беззащитную женщину на поругание бандитам. Бедная @<pchar.GenQuest.EncGirl.name>, у меня нет слов...
-}
-
-GenQuests_104
-{
-Знаете, капитан, вы форменный мерзавец. Как вы могли бросить беззащитную девушку в джунглях? Вы хоть представляете себе, что они с ней сделали? Бедная @<pchar.GenQuest.EncGirl.name>, её теперь никто не возьмёт замуж...
-}
-
-GenQuests_105
-{
-Вы слышали, какой-то капитан убил в джунглях несчастную девушку по имени @<pchar.GenQuest.EncGirlF.name>. Отловить бы мерзавца и вздёрнуть!
-}
-
-GenQuests_106
-{
-Вы знаете, капитан @<GetFullName(pchar)>, кто-то убил несчастную девушку по имени @<pchar.GenQuest.EncGirlF.name>, когда та по делам отправилась за город. Как жаль, она была такой хорошей...
-}
-
-GenQuests_107
-{
-Её звали @<pchar.GenQuest.EncGirlF.name>, и она погибла в джунглях. И ничего удивительного, скажу я вам, за городом так неспокойно...
-}
-
-GenQuests_108
-{
-Недавно за городом нашли мертвым нашего офицера и приданных ему солдат. Кто мог их убить? Зачем?..
-}
-
-GenQuests_109
-{
-Наш комендат постоянно отправляет за город патрули, но теперь даже не знаю, как будет дальше. Недавно солдат нашли метрвыми в джунглях...
-}
-
-GenQuests_110
-{
-Чёрт возьми, кто-то за городом перебил наши солдат, что патрулировали территорию...
-}
-
-GenQuests_111
-{
-Говорят, что капитан @<GetFullName(pchar)> нарвался в джунглях на солдат @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> и всех их перебил. Хех, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> - никуда негодные вояки...
-}
-
-GenQuests_112
-{
-Вы слышали, капитана @<GetMainCharacterNameGen()> проверял наш патруль за городом...
-}
-
-GenQuests_113
-{
-Хм, насколько я знаю, вас недавно проверил наш патруль за городом. Не знаю, насколько эта мера эффективна...
-}
-
-GenQuests_114
-{
-Наш комендант усилит патрулирование прилегающей к городу территории. Ну вы и сами об этом знаете, вас же недавно проверяли в джунглях...
-}
-
-GenQuests_115
-{
-Вы знаете, губернатор @<sTemp> поручил некоему капитану @<GetMainCharacterNameDat()> уничтожить известного бандита по имени @<GetFullName(arAll)>. И, кажется, что капитан выполнил задание губернатора...
-}
-
-GenQuests_116
-{
-Какой-то смелый капитан вызвался найти и уничтожить местного бандита по имени @<GetFullName(arAll)>. И, похоже, он сделал это!
-}
-
-GenQuests_117
-{
-Ха, наконец-то наш губернатор взялся за наведение порядка в джунглях - он поручил капитану @<GetMainCharacterNameDat()> разыскать в джунглях и убить наиболее известного бандита. И вы знате, этот бандит, @<GetFullName(arAll)> - мёртв!
-}
-
-GenQuests_118
-{
-картой
-}
-
-GenQuests_119
-{
-ценностями
-}
-
-GenQuests_120
-{
-деньгами
-}
+GenQuests_1 {Контрабандист}
+GenQuests_2 {Офицер}
+GenQuests_3 {Солдат}
+GenQuests_4 {Вот я и нашёл обручальное кольцо девушки из @<sCity>. Нужно отнести его ей.}
+GenQuests_16 {Сокровища где-то рядом!}
+GenQuests_17 {Время на поиски корабля вышло}
+GenQuests_18 {Время на поиски корабля вышло, капитан сошёл на берег}
+GenQuests_19 {Капитан сошёл на берег}
+GenQuests_20 {Капитан! У нас эпидемия!}
+GenQuests_21 {На борту корабля @<chref.Ship.Name> @<crew> человек уже мертвы}
+GenQuests_22 {взорвал}
+GenQuests_23 {взорвала}
+GenQuests_24 {~ крюйт камеру.}
+GenQuests_25 {Корабль пуст}
+GenQuests_26 {Вы слышали, что служанку по имени @<pchar.GenQuest.EncGirl.name> хозяйка выгнала только за то, что та не смогла собрать в джунглях её рассыпавшиеся жемчужины? Совсем народ стыд потерял!.. а совести и не имел никогда.}
+GenQuests_27 {Вы слышали, какая-то шлюха пыталась без документов проникнуть на корабль? Её поймали и отвели назад в бордель. Говорят она задолжала хозяйке кругленькую сумму.}
+GenQuests_28 {Слыхали? у нас в порту поймали какую-то шлюху без документов. Говорят, из борделя сбежала, предварительно почистив сундуки тамошней хозяйки. Давно бы следовало прикрыть этот разносчик заразы и воровства. Ведь наши дети всё это видят, чему они могут научиться?}
+GenQuests_29 {Джордж}
+GenQuests_30 {Буш}
+GenQuests_31 {Рабак}
+GenQuests_32 {Мабоа}
+GenQuests_33 {Авраам}
+GenQuests_34 {Линкольн}
+GenQuests_35 {в кораблестроении}
+GenQuests_36 {в артиллерии}
+GenQuests_37 {в навигации}
+GenQuests_38 {Капитан, как вам путешествие на пиратском корабле? Нормально? Вас там не обижали? Ха-ха-ха!!}
+GenQuests_39 {О-о-о, капитан, я слышал вам здорово досталось недавно.... Вы, батенька, теперь голодранец! Ха-ха-ха!!}
+GenQuests_40 {Можно причаливать в бухту.}
+GenQuests_41 {Вы слышали, @<GetAddress_Form(pchar)>, что недавно был арестован капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Оказывается, он подрабатывал контрабандой. Подумать только, до чего довёл колонию нынешний губернатор! Те, кто должен ловить пиратов, сами же нас и обворовывают!.. Поговаривают, что через неделю он будет казнён. Вот и поделом ему.}
+GenQuests_42 {Поговаривают, что капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> оказался организатором шайки контрабандистов. Его поймали и скоро повесят. Похоже, @<GetAddress_Form(pchar)>, наш губернатор всерьёз взялся за наведение порядка в колонии.}
+GenQuests_43 {Вы представляете! Начальник форта разоблачил тайную организацию контрабандистов, которой удалось завербовать в свои ряды даже офицеров флота. Одного из них, которого зовут @<pchar.GenQuest.CaptainComission.Name>, уже поймали и вскоре повесят. О, @<GetAddress_Form(pchar)>, я всегда говорил, что наш губернатор рано или поздно наведёт порядок в поселении.}
+GenQuests_44 {Вы уже знаете, что капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> арестован? Властям стало известно, что он укрыл крупную партию товара, который конфисковывал у проходящих в акватории судов. Похоже, виселицы ему не избежать. А ведь, скажу я вам, он был одним из лучших в патрульной эскадре. Кто бы мог подумать...}
+GenQuests_45 {Чёрт побери! Пленник сбежал!}
+GenQuests_46 {Вы слышали, @<GetAddress_Form(pchar)>, что недавно был повешен капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name>. Говорят, он ограбил какого-то купца. Вот ведь, как бывает, никому верить нельзя... И всю команду с ним за одно казнили. Сговор значит...}
+GenQuests_47 {Вы уже знаете, @<GetAddress_Form(pchar)>, что бывший капитан патрульного @<sShipType> @<pchar.GenQuest.CaptainComission.Name> казнён? Поговаривают, что он пустил ко дну какое-то важное судно, а товар спрятал. И ведь никто из команды не признался где тайник. Так их всех и повесили...}
+GenQuests_48 {Вы представляете, @<GetAddress_Form(pchar)>? Один из капитанов патрульной эскадры занимался морским разбоем. Так его недавно казнили вместе со всей командой. Говорят, что они грабили и пускали ко дну торговые суда.}
+GenQuests_49 {Недавно казнили бывшего капитана по имени @<pchar.GenQuest.CaptainComission.Name> вместе с командой его патрульного @<sShipType>. Поговаривают, что они укрыли крупную партию товара, который конфисковывали у проходящих в акватории судов. А ведь это был один из лучших патрульных экипажей. Я думаю, @<GetAddress_Form(pchar)>, что их намеренно оклеветали. Ведь товар так и не нашли..}
+GenQuests_50 {Весь товар загружен в трюм}
+GenQuests_51 {трем}
+GenQuests_52 {четверым}
+GenQuests_53 {пятерым}
+GenQuests_54 {шестерым}
+GenQuests_55 {семерым}
+GenQuests_56 {восьмерым}
+GenQuests_57 {девятерым}
+GenQuests_58 {десятерым}
+GenQuests_59 {Доставили кораблекрушенцев в поселение}
+GenQuests_60 {Контрабандист испугался идти в арсенал форта и убежал}
+GenQuests_61 {Вы прибыли в нужную пещеру}
+GenQuests_62 { }
+GenQuests_63 {ла}
+GenQuests_64 {ся}
+GenQuests_65 {ась}
+GenQuests_66 { }
+GenQuests_67 {а}
+GenQuests_68 {не по-джентльменски}
+GenQuests_69 {некрасиво}
+GenQuests_70 {ся}
+GenQuests_71 {ась}
+GenQuests_72 {слово джентльмена}
+GenQuests_73 {'держать своё слово'}
+GenQuests_74 {затонула, а с ней}
+GenQuests_75 {затонул, а с ним}
+GenQuests_76 {ел}
+GenQuests_77 {ла}
+GenQuests_78 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_79 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_80 {Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.}
+GenQuests_81 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_82 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_83 {Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.}
+GenQuests_84 {Капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', которого зовут @<GetFullName(sld)>, опять ушёл в море. По слухам, он двинулся в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_85 {Вы знаете, капитана @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>'? Так вот, он направился в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>.}
+GenQuests_86 {Если вам нужен капитан @<GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+"Gen"))> '@<sld.Ship.name>', то вам придётся отправится в @<XI_ConvertString("Colony"+sld.quest.targetCity+"Acc")>. @<GetFullName(sld)> ушёл именно туда.}
+GenQuests_87 {Офицер @<GetFullName(sld)> сбежал с кораблём @<sld.ship.name>}
+GenQuests_88 {Офицер @<GetFullName(sld)> сбежал с корабля @<pchar.ship.name>}
+GenQuests_89 {перехватчики}
+GenQuests_90 {Прошло пять дней...}
+GenQuests_91 {Ваша команда пополнилась на 55 человек}
+GenQuests_92 {ёл}
+GenQuests_93 {ла}
+GenQuests_94 {Вы слышали, капитан @<GetFullName(pchar)> схватился с бандитом по имени @<pchar.GenQuest.(Gun).name>. Его хотели ограбить, а он не захотел платить. Смелый кэп - он просто его убил.}
+GenQuests_95 {Вы знаете, недавно за городом была схватка - на капитана по имени @<GetFullName(pchar)> напали бандиты, ограбить хотели... А-а, так вы же и есть тот капитан, кто отправил к праотцам этого мародёра по имени @<pchar.GenQuest.(Gun).name>! Прекрасная работа, скажу я вам...}
+GenQuests_96 {Вы не слышали о том, что местная шайка бандитов под предводительством негодяя @<pchar.GenQuest.(Gun).name> напала на капитана по имени @<GetFullName(pchar)>? Тот отказался платить и перебил бандитов.}
+GenQuests_97 {Вы слышали, кто-то убил в джунглях несчастную девушку по имени @<pchar.GenQuest.EncGirl.name>. Отловить бы мерзавца и вздёрнуть!}
+GenQuests_98 {Вы знаете, капитан @<GetFullName(pchar)>, кто-то убил несчастную девушку по имени @<pchar.GenQuest.EncGirl.name>, когда та по делам отправилась за город. Как жаль, она была такой хорошей...}
+GenQuests_99 {Её звали @<pchar.GenQuest.EncGirl.name>, и она погибла в джунглях. И ничего удивительного, скажу я вам, за городом так неспокойно...}
+GenQuests_100 {Вы слышали, какой-то капитан спас девушку по имени @<pchar.GenQuest.EncGirl.name> от бандитов, буквально вытащил её из их лап! Какой прекрасный человек и настоящий мужчина!}
+GenQuests_101 {Вы знаете, капитан @<GetFullName(pchar)> спас девушку по имени @<pchar.GenQuest.EncGirl.name> от насильников в джунглях... А-а, так это же вы!! Я вами восхищаюсь...}
+GenQuests_102 {Девушке по имени @<pchar.GenQuest.EncGirl.name> здорово повезло - недавно на неё напали бандиты в джунглях, хотели изнасиловать, видать. Но ничего у них не вышло, хе-хе, и благодарить она должна капитана @<GetMainCharacterNameGen()>!}
+GenQuests_103 {Да уж, капитан @<GetFullName(pchar)>, никто не думал, что вы способны оставить беззащитную женщину на поругание бандитам. Бедная @<pchar.GenQuest.EncGirl.name>, у меня нет слов...}
+GenQuests_104 {Знаете, капитан, вы форменный мерзавец. Как вы могли бросить беззащитную девушку в джунглях? Вы хоть представляете себе, что они с ней сделали? Бедная @<pchar.GenQuest.EncGirl.name>, её теперь никто не возьмёт замуж...}
+GenQuests_105 {Вы слышали, какой-то капитан убил в джунглях несчастную девушку по имени @<pchar.GenQuest.EncGirlF.name>. Отловить бы мерзавца и вздёрнуть!}
+GenQuests_106 {Вы знаете, капитан @<GetFullName(pchar)>, кто-то убил несчастную девушку по имени @<pchar.GenQuest.EncGirlF.name>, когда та по делам отправилась за город. Как жаль, она была такой хорошей...}
+GenQuests_107 {Её звали @<pchar.GenQuest.EncGirlF.name>, и она погибла в джунглях. И ничего удивительного, скажу я вам, за городом так неспокойно...}
+GenQuests_108 {Недавно за городом нашли мертвым нашего офицера и приданных ему солдат. Кто мог их убить? Зачем?..}
+GenQuests_109 {Наш комендат постоянно отправляет за город патрули, но теперь даже не знаю, как будет дальше. Недавно солдат нашли метрвыми в джунглях...}
+GenQuests_110 {Чёрт возьми, кто-то за городом перебил наши солдат, что патрулировали территорию...}
+GenQuests_111 {Говорят, что капитан @<GetFullName(pchar)> нарвался в джунглях на солдат @<NationNameGenitive(sti(pchar.GenQuest.(attrName).nation))> и всех их перебил. Хех, @<NationNamePeople(sti(pchar.GenQuest.(attrName).nation))> - никуда негодные вояки...}
+GenQuests_112 {Вы слышали, капитана @<GetMainCharacterNameGen()> проверял наш патруль за городом...}
+GenQuests_113 {Хм, насколько я знаю, вас недавно проверил наш патруль за городом. Не знаю, насколько эта мера эффективна...}
+GenQuests_114 {Наш комендант усилит патрулирование прилегающей к городу территории. Ну вы и сами об этом знаете, вас же недавно проверяли в джунглях...}
+GenQuests_115 {Вы знаете, губернатор @<sTemp> поручил некоему капитану @<GetMainCharacterNameDat()> уничтожить известного бандита по имени @<GetFullName(arAll)>. И, кажется, что капитан выполнил задание губернатора...}
+GenQuests_116 {Какой-то смелый капитан вызвался найти и уничтожить местного бандита по имени @<GetFullName(arAll)>. И, похоже, он сделал это!}
+GenQuests_117 {Ха, наконец-то наш губернатор взялся за наведение порядка в джунглях - он поручил капитану @<GetMainCharacterNameDat()> разыскать в джунглях и убить наиболее известного бандита. И вы знате, этот бандит, @<GetFullName(arAll)> - мёртв!}
+GenQuests_118 {картой}
+GenQuests_119 {ценностями}
+GenQuests_120 {деньгами}

@@ -18,7 +18,15 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Słuchaj, potrzebuję myśliwego o imieniu Fergus Hooper. Powiedziano mi, że mieszka tutaj. Gdzie mogę go znaleźć?";
 				link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_Beliz"))
+			{
+				link.l1 = "Około półtora miesiąca temu do waszego miasta przybył pewien Jerome Souvernier. Czy go pamiętacie?";
+				link.l1.go = "WildRose_Tavern_1";
+			}
+			//<-- Дикая Роза
 		break;
 		
 		case "guardoftruth":
@@ -54,6 +62,28 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			SetFunctionTimerCondition("Caleuche_FergusCome", 0, 0, iTerms, false);
 			npchar.quest.Caleuche = "true";
 		break;
+		
+		//--> Дикая Роза
+		case "WildRose_Tavern_1":
+			dialog.text = "E-e, chyba tak. Tak, pamiętam tego dżentelmena. Ubrany nie od igły, ale przy pieniądzach.";
+			link.l1 = "Ucierpiał w bijatyce w waszej tawernie.";
+			link.l1.go = "WildRose_Tavern_2";
+			DelLandQuestMark(npchar);
+		break;
+
+		case "WildRose_Tavern_2":
+			dialog.text = "I co z tego? Tutaj bijatyki zdarzają się co drugi dzień. Marynarze się upiją, słowo za słowo — i nie da się ich już powstrzymać. Wygląda na to, że jesteś człowiekiem doświadczonym — czy naprawdę cię to dziwi?";
+			link.l1 = "Wcale nie. Chodzi o to, że ten człowiek to mój stary znajomy. Umówiliśmy się tutaj na spotkanie, ale trochę się spóźniłem. Nie podpowiesz, gdzie można go znaleźć?";
+			link.l1.go = "WildRose_Tavern_3";
+		break;
+
+		case "WildRose_Tavern_3":
+			dialog.text = "A czemużby nie powiedzieć, proszę pana? Pieniędzy, jak mówiłem, miał pod dostatkiem — więc wynajął domek przy administracji portu. Wyróżniający się, z czerwoną dachówką. Siedzi tam, prawie nie wychodzi, leczy nogę. Od czasu do czasu wpada tutaj, na kieliszek. Ale dzień w dzień nie przychodzi — czasem jest, czasem nie.";
+			link.l1 = "No, to zgłoszę się osobiście — do jego domu. Dziękuję za informacje. Wszystkiego dobrego.";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap6_LifeAfterDeath_3_tavern");
+		break;
+		//<-- Дикая Роза
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод
 }

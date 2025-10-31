@@ -681,7 +681,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_Capacity_start":
 		    amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -825,7 +825,7 @@ void ProcessDialogEvent()
 			
 		case "ship_tunning_SpeedRate_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -926,7 +926,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 				}
 				else
 				{
@@ -966,7 +966,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_TurnRate_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока
+			// belamour legendary edition туда сюда бегать - та ещё морока
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1092,7 +1092,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MaxCrew_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1222,7 +1222,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_MinCrew_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1352,7 +1352,7 @@ void ProcessDialogEvent()
 		
 		case "ship_tunning_HP_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1443,12 +1443,10 @@ void ProcessDialogEvent()
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 				}
 				else
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 				}
 			}
 			else
@@ -1459,7 +1457,6 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
 				else
 				{
@@ -1467,11 +1464,9 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
 			}
 	        shTo.Tuning.HP = true;
-			//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
 			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
@@ -1510,7 +1505,7 @@ void ProcessDialogEvent()
 
 		case "ship_tunning_WindAgainst_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -1641,7 +1636,7 @@ void ProcessDialogEvent()
 		
 		case "ship_c_quantity_start":
 			amount = GetMaterialQtyUpgrade(pchar, NPChar, 2 );
-			// belamour legendary edition туда сюда бегать - та еще морока -->
+			// belamour legendary edition туда сюда бегать - та ещё морока -->
 			if(GetCharacterItem(pchar,"chest") + CheckItemMyCabin("chest") >= amount)		    
 			{
 				if(GetCharacterItem(pchar,"chest") >= amount)
@@ -2363,7 +2358,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Adeline";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2598,7 +2593,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Skill Check Failed (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Ich garantiere, es wird auftauchen. Keine Preisänderung. Wie wär's? Ich warte nicht lange.";
 				link.l1 = "Gut, in Ordnung, in Ordnung. Ich nehme es.";
 				link.l1.go = "IslaMona_7";
@@ -2606,7 +2601,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "In Ordnung, wir nehmen hundert. Neunhundert. Ich gehe nicht tiefer. Frag mich nicht danach.";
 				link.l1 = "Und ich werde nicht. Ich stimme zu.";
@@ -2620,7 +2615,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Skill Check Failed (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Es ist mir egal, ob du eine lebendige Dirne bestellst. Neunhundert.";
 				link.l1 = "Gut, gut, gut. Ich nehme es.";
 				link.l1.go = "IslaMona_7";
@@ -2628,7 +2623,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Bist du sicher? Du wirst es nicht vergessen? Gut, lass uns noch hundert abziehen. Aber das ist es!";
 				link.l1 = "Ich werde es nicht vergessen. Abgemacht!";
@@ -2650,7 +2645,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Skill Check Failed (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "Kinder von Bordellmädchen zählen nicht, "+pchar.name+". Ich habe genug von dir. Tausend Dublonen auf das Fass, oder wir sagen auf Wiedersehen.";
 				link.l1 = "Was meinst du, sie sind es nicht? Ah ja. Ich stimme zu, du bist ein Schurke.";
@@ -2659,7 +2654,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Ich wusste nicht, dass du Kinder hast. Und dass die Dinge so schlecht stehen. Gut, beschwere dich nicht. Siebenhundert. Es ist fast ein Verlust.";
 				link.l1 = "Ich werde es nicht vergessen. Es ist ein Deal!";
@@ -2671,14 +2666,14 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_7":
             dialog.text = "Also, du schuldest mir "+sti(pchar.questTemp.IslaMona.Shipyarder.Money)+" Dublonen.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 			{
 				link.l1 = "Hier, ich gebe dir das Letzte davon, ich habe nichts mehr übrig.";
 				link.l1.go = "IslaMona_8";
 			}
 			else
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") < 1)
+				if (PCharDublonsTotal() < 1)
 				{
 					link.l1 = "Warte, ich gehe zum Kredithai, um Schulden zu machen.";
 					link.l1.go = "IslaMona_money_exit";
@@ -2692,9 +2687,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "IslaMona_money":
-			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("You gave "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+"");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-PCharDublonsTotal();
+			Log_Info("You gave "+FindRussianDublonString(PCharDublonsTotal())+"");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
             dialog.text = "Tut mir nicht leid, du hast eine Kajütenablage voller Gold. Du wirst mir schulden "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+".";
 			link.l1 = "";
@@ -2710,7 +2705,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_8":
 			Log_Info("You gave "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+"");
-			RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 			PlaySound("interface\important_item.wav");
             dialog.text = "Das ist großartig. Der volle Betrag ist vorhanden. Die Werkzeuge werden zu Ihrem Schiff geliefert. Das sind einige schwere Kisten.";
 			link.l1 = "Danke, "+npchar.name+"!";

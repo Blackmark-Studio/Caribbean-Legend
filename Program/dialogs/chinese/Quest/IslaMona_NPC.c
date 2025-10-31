@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_60":
-			dialog.text = "当然, 工厂需要维护。 随着它的建设, 这个岛将有一个以你为主要贸易伙伴的经济。 我们自己会养活奴隶, 但你必须从自己的口袋里支付安全和生产费用。 定居者每批将收取一百杜布隆和五瓶葡萄酒。 关于安全问题, 与扬森先生协商。 ";
+			dialog.text = "当然, 工厂需要维护。 随着它的建设, 这个岛将有一个以你为主要贸易伙伴的经济。 我们自己会养活奴隶, 但你必须从自己的口袋里支付安全和生产费用。 定居者每批将收取一20杜布隆和五瓶葡萄酒。 关于安全问题, 与扬森先生协商。 ";
 			link.l1 = "";
 			link.l1.go = "Himenes_61";
 		break;
@@ -1612,14 +1612,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_1":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 80)
 			{
-				notification("技能检查通过", SKILL_LEADERSHIP);
+				Notification_Skill(true, 80, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息, 你是对的, 这里没有必要拖延。 我的人都在这里, 我们强大。 训练有素。 准备就绪。 一切将在半小时内结束。 船长, 请准备好在你的船上接收人员。 囚犯和货物。 我们不会在这里久留。 ";
 				link.l1 = "一切就绪, 中尉。 我们只等你了。 回头见! ";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("技能检查失败 (80)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 80, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息。 在这种情况下, 前往码头并准备你的登船队。 我们将立即一起突袭强盗巢穴。 我和你最好的人将领导先锋队 —他们将是占领大门的人。 我们一起检查我们的部队后再讨论其余的。 不要让我和你的国家失望, " + GetFullName(pchar) + "。 ";
 				link.l1 = "... 就这样吧。 回头见, 中尉。 ";
 				link.l1.go = "FraOfficer_17";
@@ -1629,16 +1629,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_2":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("声誉检查通过", "None");
-				notification("技能检查通过", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息, 你是对的, 这里没有必要拖延。 我的人都在这里, 我们强大。 训练有素。 准备就绪。 一切将在半小时内结束。 船长, 请准备好在你的船上接收人员。 囚犯和货物。 我们不会在这里久留。 ";
 				link.l1 = "一切就绪, 中尉。 我们只等你了。 回头见! ";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("声誉太低! (" + XI_ConvertString(GetReputationName(42)) + ")", "None");
-				notification("技能检查失败 (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息。 在这种情况下, 前往码头并准备你的登船队。 我们将立即一起突袭强盗巢穴。 我和你最好的人将领导先锋队 —他们将是占领大门的人。 我们一起检查我们的部队后再讨论其余的。 不要让我和你的国家失望, " + GetFullName(pchar) + "。 ";
 				link.l1 = "... 就这样吧。 回头见, 中尉。 ";
 				link.l1.go = "FraOfficer_17";
@@ -1648,16 +1648,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_3":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("声誉检查通过", "None");
-				notification("技能检查通过", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 70, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息, 你是对的, 这里没有必要拖延。 我的人都在这里, 我们强大。 训练有素。 准备就绪。 一切将在半小时内结束。 船长, 请准备好在你的船上接收人员。 囚犯和货物。 我们不会在这里久留。 ";
 				link.l1 = "一切就绪, 中尉。 我们只等你了。 回头见! ";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("声誉太低! (" + XI_ConvertString(GetReputationName(42)) + ")", "None");
-				notification("技能检查失败 (70)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 70, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息。 在这种情况下, 前往码头并准备你的登船队。 我们将立即一起突袭强盗巢穴。 我和你最好的人将领导先锋队 —他们将是占领大门的人。 我们一起检查我们的部队后再讨论其余的。 不要让我和你的国家失望, " + GetFullName(pchar) + "。 ";
 				link.l1 = "... 就这样吧。 回头见, 中尉。 ";
 				link.l1.go = "FraOfficer_17";
@@ -1667,16 +1667,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_4":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("声誉检查通过", "None");
-				notification("技能检查通过", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息, 你是对的, 这里没有必要拖延。 我的人都在这里, 我们强大。 训练有素。 准备就绪。 一切将在半小时内结束。 船长, 请准备好在你的船上接收人员。 囚犯和货物。 我们不会在这里久留。 ";
 				link.l1 = "一切就绪, 中尉。 我们只等你了。 回头见! ";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("声誉太低! (" + XI_ConvertString(GetReputationName(42)) + ")", "None");
-				notification("技能检查失败 (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息。 在这种情况下, 前往码头并准备你的登船队。 我们将立即一起突袭强盗巢穴。 我和你最好的人将领导先锋队 —他们将是占领大门的人。 我们一起检查我们的部队后再讨论其余的。 不要让我和你的国家失望, " + GetFullName(pchar) + "。 ";
 				link.l1 = "... 就这样吧。 回头见, 中尉。 ";
 				link.l1.go = "FraOfficer_17";
@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_5":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 90)
 			{
-				notification("技能检查通过", SKILL_LEADERSHIP);
+				Notification_Skill(true, 90, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息, 你是对的, 这里没有必要拖延。 我的人都在这里, 我们强大。 训练有素。 准备就绪。 一切将在半小时内结束。 船长, 请准备好在你的船上接收人员。 囚犯和货物。 我们不会在这里久留。 ";
 				link.l1 = "一切就绪, 中尉。 我们只等你了。 回头见! ";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("技能检查失败 (90)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 90, SKILL_LEADERSHIP);
 				dialog.text = "谢谢你, 船长。 这是有价值的信息。 在这种情况下, 前往码头并准备你的登船队。 我们将立即一起突袭强盗巢穴。 我和你最好的人将领导先锋队 —他们将是占领大门的人。 我们一起检查我们的部队后再讨论其余的。 不要让我和你的国家失望, " + GetFullName(pchar) + "。 ";
 				link.l1 = "... 就这样吧。 回头见, 中尉。 ";
 				link.l1.go = "FraOfficer_17";

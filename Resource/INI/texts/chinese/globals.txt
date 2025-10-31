@@ -1,35 +1,31 @@
-QUEST_MESSAGE1 {埃尔开曼殖民地已被占领。 }
-QUEST_MESSAGE2 {埃尔开曼殖民地已被攻克。 }
-QUEST_MESSAGE3 {你太年迈了, 无法抵抗阿兹特克黄金的诅咒... }
-QUEST_MESSAGE4 {你发现了一处宝藏! }
-QUEST_MESSAGE5 {Nigel Blight袭击了走私者的双桅纵帆船! }
-QUEST_MESSAGE6 {Nigel Blight已消失! }
-QUEST_MESSAGE7 {船长, "黑珍珠号"出现在地平线上! }
-QUEST_MESSAGE8 {干得漂亮。 你已击杀首领! }
-QUEST_MESSAGE9 {现在你正与这个残酷的世界短兵相 接! }
+QUEST_MESSAGE1 {埃尔开曼殖民地已被占领。}
+QUEST_MESSAGE2 {埃尔开曼殖民地已被攻克。}
+QUEST_MESSAGE3 {你太年迈了, 无法抵抗阿兹特克黄金的诅咒...}
+QUEST_MESSAGE4 {你发现了一处宝藏!}
+QUEST_MESSAGE5 {Nigel Blight袭击了走私者的双桅纵帆船!}
+QUEST_MESSAGE6 {Nigel Blight已消失!}
+QUEST_MESSAGE7 {船长, "黑珍珠号"出现在地平线上!}
+QUEST_MESSAGE8 {干得漂亮。 你已击杀首领!}
+QUEST_MESSAGE9 {现在你正与这个残酷的世界短兵相 接!}
 QUEST_MESSAGE10 {一个冷酷无情的海盗}
-QUEST_MESSAGE11 {理应获得特殊奖励! }
-QUEST_MESSAGE12 {遗憾的是, 你已雇佣过多副官! 需解雇一名军官后才能雇佣新副官! }
-
+QUEST_MESSAGE11 {理应获得特殊奖励!}
+QUEST_MESSAGE12 {遗憾的是, 你已雇佣过多副官! 需解雇一名军官后才能雇佣新副官!}
 Address_Form_Spa {先生}
 Address_Form_Fra {先生}
 Address_Form_Eng {先生}
 Address_Form_Por {先生}
 Address_Form_Hol {先生}
-
-Swear_1 {我的脾脏都要炸了! }
-Swear_2 {该死! }
-Swear_3 {哦, 我的上帝! }
-Swear_4 {该死的! }
-Swear_5 {一千个恶魔! }
-Swear_6 {做我船尾的锚! }
-Swear_7 {哦, 天堂! }
-Swear_8 {啊—! !! }
-Swear_9 {一千条鲨鱼! }
-Swear_10 {魔鬼! }
-
+Swear_1 {我的脾脏都要炸了!}
+Swear_2 {该死!}
+Swear_3 {哦, 我的上帝!}
+Swear_4 {该死的!}
+Swear_5 {一千个恶魔!}
+Swear_6 {做我船尾的锚!}
+Swear_7 {哦, 天堂!}
+Swear_8 {啊—! !!}
+Swear_9 {一千条鲨鱼!}
+Swear_10 {魔鬼!}
 TimeGreeting {下午好}
-
 Antigua {安提瓜}
 Barbados {巴巴多斯}
 Curacao {库拉索}
@@ -54,17 +50,14 @@ PetitGoave {佩蒂戈夫}
 Bridgetown {布里奇顿}
 SanJuan {圣胡安}
 SantiagoVega {圣地亚哥 维加}
-
-
 OFFIC_TYPE_BOATSWAIN {水手长}
 OFFIC_TYPE_CANNONEER {炮手}
 OFFIC_TYPE_QMASTER {舵手}
 OFFIC_TYPE_NAVIGATOR {领航员}
 OFFIC_TYPE_FIRSTMATE {大副}
-
-Pirate	{海盗}
-Spain	{西班牙人}
-France	{法国人}
-Smuggler	{走私者}
-Holland	{荷兰人}
-England	{英国人}
+Pirate {海盗}
+Spain {西班牙人}
+France {法国人}
+Smuggler {走私者}
+Holland {荷兰人}
+England {英国人}

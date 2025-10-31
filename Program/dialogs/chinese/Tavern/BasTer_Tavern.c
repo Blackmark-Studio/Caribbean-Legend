@@ -64,28 +64,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         case "DTSG_BasTerTavern_2":
             dialog.text = "真的不多。 他几天前出现的。 喜欢这里, 甚至在小镇郊区租了房子。 经常来, 定期付款。 最重要的是, 这段时间他一直表现良好, 从未对任何人说过坏话。 我仍然很震惊他会袭击你和你的朋友。 我以为他可能会在这里永久定居。 ";
             Link.l1 = "在某种程度上, 他确实定居了。 好吧, 信息不多, 但谢谢你, 我的朋友。 回头见。 ";
-            Link.l1.go = "DTSG_BasTerTavern_3";
-        break;
-        
-        case "DTSG_BasTerTavern_3":
-            DialogExit();
-            DeleteAttribute(pchar, "questTemp.DTSG_BasTerTavern");
-            LAi_LocationDisableOfficersGen("BasTer_tavern", false);
-            SetQuestHeader("DTSG");
-            AddQuestRecord("DTSG", "1");
-            bDisableFastReload = false;
-            chrDisableReloadToLocation = false;
-            Return_KnippelOfficer();
-            
-            PChar.quest.DTSG_BasTerDom.win_condition.l1 = "locator";
-            PChar.quest.DTSG_BasTerDom.win_condition.l1.location = "BasTer_town";
-            PChar.quest.DTSG_BasTerDom.win_condition.l1.locator_group = "reload";
-            PChar.quest.DTSG_BasTerDom.win_condition.l1.locator = "HutFish1";
-            PChar.quest.DTSG_BasTerDom.win_condition = "DTSG_BasTerDom";
-            
-            SetTimerCondition("DTSG_BasTerDom_Timer", 0, 0, 7, false);
-            SetTimerCondition("DTSG_Etap2", 0, 0, 14, false);
-        break;
+			Link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_BasTerTavern_3");
+		break;
         // <== 任务"旧罪的长影" - Sinistra
         
         // Sinistra - 任务"导航星" ==>

@@ -25,19 +25,19 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.Saga.Oyster == "cantalk")
 			{
 				dialog.text = "Hm... And where is Molligan? Didn't he want to see me himself?";
-				link.l1 = "Our poor Paul has a fever. He is not in the mood to trade. I am here instead of him.";
+				link.l1 = "Our poor Paul has a fever. He is not in the mood to trade. I am here in his place.";
 				link.l1.go = "rozencraft_1";
 			}
 			else
 			{
-				dialog.text = "What do you want, Mister?";
-				link.l1 = "I take it that you are waiting to buy some ironwood?";
+				dialog.text = "What do you want, sir?";
+				link.l1 = "I take it you are waiting to buy some ironwood?";
 				link.l1.go = "rozencraft_no";
 			}
 		break;
 		
 		case "rozencraft_no":
-			dialog.text = "Who told you that bullshit, Mister? I am not waiting for anyone or anything. My vessel is patrolling the local area by the order of the governor of Willemstad. So, would you be so kind to leave my ship, you must be mistaken.";
+			dialog.text = "Who told you that nonsense, Mister? I am not waiting for anyone or anything. My vessel is patrolling the local area by order of the governor of Willemstad. So, would you be so kind as to leave my ship, you must be mistaken.";
 			link.l1 = "Hm... I see. I am sorry for troubling you.";
 			link.l1.go = "rozencraft_no_1";
 		break;
@@ -50,14 +50,14 @@ void ProcessDialogEvent()
 		
 		case "rozencraft_no_repeat":
 			dialog.text = "Haven't we had this talk already, Mister?";
-			link.l1 = "Yes, yes. I am leaving and embarking my ship already.";
+			link.l1 = "Yes, yes. I am leaving and boarding my ship already.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "rozencraft_no_repeat";
 		break;
 		
 		case "rozencraft_1":
 			dialog.text = "And who are you?";
-			link.l1 = "Don't you care who you trade with? I have brought ironwood to sell. How much?";
+			link.l1 = "Don't you care who you trade with? I've brought ironwood to sell. How much?";
 			link.l1.go = "rozencraft_2";
 		break;
 		
@@ -69,7 +69,7 @@ void ProcessDialogEvent()
 		
 		case "rozencraft_3":
 			npchar.quest.bakaut = GetSquadronGoods(pchar, GOOD_SANDAL);
-			dialog.text = "Pal, we had a deal with Molligan. This is a good price, you won't find a better one. So don't behave like a farmer in the shop. How much ironwood have you got?";
+			dialog.text = "Pal, we had a deal with Molligan. This is a good price, you won't find a better one. So don't act like a farmer at the market. How much ironwood have you got?";
 			link.l1 = ""+FindRussianQtyString(sti(npchar.quest.bakaut))+".";
 			link.l1.go = "rozencraft_4";
 		break;
@@ -78,7 +78,7 @@ void ProcessDialogEvent()
 			iTemp = sti(npchar.quest.bakaut);
 			if(iTemp >= 90)
 			{
-				dialog.text = "Splendid. That's more than I expected. Here, take the gold. If you get more ironwood, go to the tavern in Saint Martin and talk to... you know who. He will set a meeting for us. I see that you are a much better partner than that idiot Molligan.";
+				dialog.text = "Splendid. That's more than I expected. Here, take the gold. If you get more ironwood, go to the tavern in Saint Martin and talk to... you know who. He will arrange a meeting for us. I see that you are a much better partner than that idiot Molligan.";
 				link.l1 = "Fine. It's a deal.";
 				link.l1.go = "rozencraft_5";
 				pchar.GenQuest.Bakaut = "true"; // генератор сбыта бакаута
@@ -86,7 +86,7 @@ void ProcessDialogEvent()
 			}
 			if(iTemp >= 70 && iTemp < 90)
 			{
-				dialog.text = "Good. Here, take the gold. If you get more ironwood, go to the tavern in Philipsburg and talk to... you know who. He will get in contact with me. I see that we can do business with you no worse than with that idiot Molligan.";
+				dialog.text = "Good. Here, take the gold. If you get more ironwood, go to the tavern in Philipsburg and talk to... you know who. He will get in touch with me. I see that we can do business with you just as well as with that fool Molligan.";
 				link.l1 = "Fine. It's a deal.";
 				link.l1.go = "rozencraft_5";
 				pchar.GenQuest.Bakaut = "true"; // генератор сбыта бакаута
@@ -94,7 +94,7 @@ void ProcessDialogEvent()
 			}
 			if(iTemp >= 40 && iTemp < 70)
 			{
-				dialog.text = "Hm... I was expecting more. Fine. Here, take the gold. And tell Molligan that next time he must bring a batch not smaller than one hundred pieces.";
+				dialog.text = "Hm... I was expecting more. Fine. Here, take the gold. And tell Molligan that next time he must bring a batch no smaller than one hundred pieces.";
 				link.l1 = "Fine. I will tell him.";
 				link.l1.go = "rozencraft_5";
 				break;
@@ -146,12 +146,12 @@ void ProcessDialogEvent()
 			dialog.text = "How much have you got? I need a batch no smaller than "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+".";
 			if (GetSquadronGoods(pchar, GOOD_SANDAL) >= sti(pchar.GenQuest.Bakaut.Value))
 			{
-				link.l1 = "I know that. I have got "+FindRussianQtyString(GetSquadronGoods(pchar, GOOD_SANDAL))+"  of ironwood which you are so eager to get.";
+				link.l1 = "I know that. I have got "+FindRussianQtyString(GetSquadronGoods(pchar,GOOD_SANDAL))+"  of ironwood that you are so eager to get.";
 				link.l1.go = "bakaut_1";
 			}
 			else
 			{
-				link.l1 = "Hm. Unfortunately I haven't got that much.";
+				link.l1 = "Hm. Unfortunately, I haven't got that much.";
 				link.l1.go = "bakaut_no";
 			}
 		break;
@@ -159,7 +159,7 @@ void ProcessDialogEvent()
 		case "bakaut_no":
 			if (!CheckAttribute(npchar, "quest.bakaut_angry"))
 			{
-				dialog.text = "Damn it, didn't they warn you? Or have the rats eaten the wood? I need "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" and not one fewer piece. Next time bring me as much wood as my agent tells you. I do hope that you won't disappoint me again or I will have to decline your services.";
+				dialog.text = "Damn it, didn't they warn you? Or have the rats eaten the wood? I need "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" and not a single piece less. Next time, bring me as much wood as my agent instructs you. I do hope you won't disappoint me again, or I shall have to decline your services.";
 				link.l1 = "Fine, Mynheer, I will be more attentive in the future.";
 				link.l1.go = "bakaut_no_1";
 			}
@@ -167,13 +167,13 @@ void ProcessDialogEvent()
 			{
 				if (sti(npchar.quest.bakaut_angry) == 1)
 				{
-					dialog.text = "Your are screwing me for the second time. I don't like it. Know that this is the last warning, next time I will decline your services.";
-					link.l1 = "Damn rats damaged my goods! I promise you, Michael, that this was the last time.";
+					dialog.text = "You are screwing me for the second time. I don't like it. Know that this is the last warning, next time I will decline your services.";
+					link.l1 = "Damn rats have damaged my goods! I promise you, Michael, this will be the last time.";
 					link.l1.go = "bakaut_no_1";
 				}
 				else
 				{
-					dialog.text = "And now my patience has run out! I don't want to do business with you anymore. Get lost and forget about me.";
+					dialog.text = "And now my patience has run out! I don't want to do business with you any longer. Get lost and forget about me.";
 					link.l1 = "But Mynheer...";
 					link.l1.go = "bakaut_no_2";
 				}
@@ -206,14 +206,14 @@ void ProcessDialogEvent()
 			iTemp = GetSquadronGoods(pchar, GOOD_SANDAL);
 			if (iTemp > sti(pchar.GenQuest.Bakaut.Value)+20)
 			{ // перебор
-				dialog.text = "Wow! I am sorry, friend, but I can only buy "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", I don't have money for all your cargo. I was expecting a batch of "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" pieces per forty doubloons each...";
-				link.l1 = "Fine. Take "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+" now and I will sell you the rest next time.";
+				dialog.text = "Shiver me timbers! I'm sorry, friend, but I can only buy "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+", I don't have enough money for all your cargo. I was expecting a batch of "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value))+" pieces at forty doubloons each...";
+				link.l1 = "Fine. Take "+FindRussianQtyString(sti(pchar.GenQuest.Bakaut.Value)+20)+" now, and I will sell you the rest next time.";
 				link.l1.go = "bakaut_2";
 				npchar.quest.bakaut = sti(pchar.GenQuest.Bakaut.Value)+20;
 			}
 			else
 			{
-				dialog.text = "Very well. The price is the usual one, forty doubloons for each piece.";
+				dialog.text = "Very well. The price is as usual, forty doubloons for each piece.";
 				link.l1 = "Works for me. Take your batch.";
 				link.l1.go = "bakaut_2";
 				npchar.quest.bakaut = iTemp;
@@ -224,7 +224,7 @@ void ProcessDialogEvent()
 			LAi_Fade("", "");
 			WaitDate("",0,0,0,1,10);
 			dialog.text = "Pleasure doing business with you. Come and see me again if you want to sell more ironwood.";
-			link.l1 = "See you again, Mister. Our collaboration is very profitable for me. Goodbye!";
+			link.l1 = "See you again, Mister. Our collaboration has been very profitable for me. Goodbye!";
 			link.l1.go = "bakaut_3";
 		break;
 		

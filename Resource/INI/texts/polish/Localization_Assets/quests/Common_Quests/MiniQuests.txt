@@ -1,113 +1,24 @@
-MiniQuests_1
-{
-
-}
-MiniQuests_2
-{
-
-}
-
-MiniQuests_3
-{
-
-}
-MiniQuests_4
-{
-
-}
-
-MiniQuests_5
-{
-
-}
-MiniQuests_6
-{
-
-}
-
-MiniQuests_7
-{
-
-}
-MiniQuests_8
-{
-
-}
-
-MiniQuests_9
-{
-Handlarz podniósł czarną flagę i nas zaatakował!
-}
-
-MiniQuests_10
-{
-Bosman
-}
-
-MiniQuests_11
-{
-Pasażer @<GetFullName(sld)> opuścił twój statek!
-}
-
-MiniQuests_12
-{
-Kapelan @<GetFullName(sld)> opuścił twój statek!
-}
-
-MiniQuests_13
-{
-barkentyna '@<pchar.GenQuest.Marginpassenger.ShipName1>'
-}
-
-MiniQuests_14
-{
-konwój handlowy
-}
-
-MiniQuests_15
-{
-
-}
-MiniQuests_16
-{
-
-}
-
-MiniQuests_17
-{
-Statek wroga na horyzoncie!
-}
-
-MiniQuests_18
-{
-Konwój wroga na horyzoncie!
-}
-
-MiniQuests_19
-{
-Statek piracki na horyzoncie!
-}
-
-MiniQuests_20
-{
-@<pchar.GenQuest.FindFugitive.Name> zmarł na gorączke tropikalną!
-}
-
-MiniQuests_21
-{
-@<sld.name> został umieszczony w areszcie na twoim statku
-}
-
-MiniQuests_22
-{
-Mineła godzina...
-}
-
-MiniQuests_23
-{
-, na którym ~
-}
-MiniQuests_24
-{
-Alonso
-}
+MiniQuests_1 { }
+MiniQuests_2 { }
+MiniQuests_3 { }
+MiniQuests_4 { }
+MiniQuests_5 { }
+MiniQuests_6 { }
+MiniQuests_7 { }
+MiniQuests_8 { }
+MiniQuests_9 {Handlarz podniósł czarną flagę i nas zaatakował!}
+MiniQuests_10 {Bosman}
+MiniQuests_11 {Pasażer @<GetFullName(sld)> opuścił twój statek!}
+MiniQuests_12 {Kapelan @<GetFullName(sld)> opuścił twój statek!}
+MiniQuests_13 {barkentyna '@<pchar.GenQuest.Marginpassenger.ShipName1>'}
+MiniQuests_14 {konwój handlowy}
+MiniQuests_15 { }
+MiniQuests_16 { }
+MiniQuests_17 {Statek wroga na horyzoncie!}
+MiniQuests_18 {Konwój wroga na horyzoncie!}
+MiniQuests_19 {Statek piracki na horyzoncie!}
+MiniQuests_20 {@<pchar.GenQuest.FindFugitive.Name> zmarł na gorączke tropikalną!}
+MiniQuests_21 {@<sld.name> został umieszczony w areszcie na twoim statku}
+MiniQuests_22 {Mineła godzina...}
+MiniQuests_23 {, na którym ~}
+MiniQuests_24 { }

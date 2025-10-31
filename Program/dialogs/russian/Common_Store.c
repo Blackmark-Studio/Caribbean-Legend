@@ -1185,7 +1185,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", что на " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", что на " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text =  "О! Я как раз хотел сам попросить вас об оказании мне одной услуги. Дело в том, что мне нужно доставить груз " +
                                                GetGoodsNameAlt(iTradeGoods)+ " в количестве " + FindRussianQtyString(iQuantityGoods) + " в город " +
@@ -1713,7 +1713,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "'Друг' сейчас у себя дома в "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Он вам не нужен - вам нужен его корабль, который, как мне удалось узнать, примерно через "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" будет проходить у " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + ". Вы можете потопить его, можете взять на абордаж - не имеет значения. Главное - чтобы корабль и груз перестали быть собственностью "+pchar.GenQuest.Sunplace.Trader.Enemyname +". А уже кому они станут принадлежать - вам, или морю - мне безразлично. За работу я заплачу вам " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "'Друг' сейчас у себя дома в "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Он вам не нужен - вам нужен его корабль, который, как мне удалось узнать, примерно через "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" будет проходить у " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + ". Вы можете потопить его, можете взять на абордаж - не имеет значения. Главное - чтобы корабль и груз перестали быть собственностью "+pchar.GenQuest.Sunplace.Trader.Enemyname +". А уже кому они станут принадлежать - вам, или морю - мне безразлично. За работу я заплачу вам " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "Задачу понял"+GetSexPhrase("","а")+". Отправляюсь в путь!";
 			link.l1.go = "Sunplace_3";
 		break;

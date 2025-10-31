@@ -360,7 +360,7 @@ void Create_Mirage(string qName)//создаем 'Мираж'
 	Group_FindOrCreateGroup("Mirage");
 	Group_SetType("Mirage", "pirate");
 	sld = GetCharacter(NPC_GenerateCharacter("MirageCap", "mercen_"+(rand(10)+1), "man", "man", iRank, PIRATE, -1, false, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 40+rand(10), 30+rand(20), 30+rand(20), 30+rand(15), 25+rand(25));
+	FantomMakeSmallSailor(sld, SHIP_MIRAGE, GetShipName("Mirage"), CANNON_TYPE_CANNON_LBS18, 40+rand(10), 30+rand(20), 30+rand(20), 30+rand(15), 25+rand(25));
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition
@@ -578,8 +578,8 @@ void CreateFleetwoodOnMap(string qName)//подгружаем в море энк
 	Group_FindOrCreateGroup("Fleetwood_Attack");
 	sld = characterFromId("Fleetwood");
 	// belamour для легких уровней Флитвуд хуже стреляет -->
-	if(MOD_SKILL_ENEMY_RATE < 7) FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 20+rand(14), 25+rand(20));
-	else FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 30+rand(15), 35+rand(25));
+	if(MOD_SKILL_ENEMY_RATE < 7) FantomMakeSmallSailor(sld, SHIP_VALCIRIA, GetShipName("Valkyrie"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 20+rand(14), 25+rand(20));
+	else FantomMakeSmallSailor(sld, SHIP_VALCIRIA, GetShipName("Valkyrie"), CANNON_TYPE_CANNON_LBS16, 40+rand(10), 35+rand(20), 35+rand(20), 30+rand(15), 35+rand(25));
 	// <-- legendary edition
 	FantomMakeCoolFighter(sld, iRank, 30, 30, "blade_14", "pistol3", "grapeshot", 50);
 	GiveItem2Character(sld, "FleetwoodJournal");
@@ -651,7 +651,7 @@ void CreateEmptyMeifeng(string qName)//Мейфенг без китайца в �
 	sld = GetCharacter(NPC_GenerateCharacter("MeifengCap", "off_hol_2", "man", "man", 40, HOLLAND, -1, true, "quest"));
 	sld.name = StringFromKey("HollandGambit_10");
 	sld.lastname = StringFromKey("HollandGambit_11");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 90+rand(10), 80+rand(20), 80+rand(20), 80+rand(15), 75+rand(25));
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, GetShipName("Meifeng"), CANNON_TYPE_CANNON_LBS16, 90+rand(10), 80+rand(20), 80+rand(20), 80+rand(15), 75+rand(25));
 	SetFantomParamFromRank(sld, 40, true); 
 	Character_SetAbordageEnable(sld, false);//нельзя абордировать
 	sld.AnalizeShips = true;
@@ -704,7 +704,7 @@ void Lucas_ExangeShip()//обмен корабля
 void GetMeifengToCharacter(ref rChar)//сажаем на Мейфенг
 {
 	rChar.Ship.Type = GenerateShipExt(SHIP_MAYFANG, true, rChar);
-	rChar.Ship.name = StringFromKey("HollandGambit_12");
+	rChar.Ship.name = GetShipName("Meifeng");
 	SetBaseShipData(rChar);
 	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
 	SetCrewQuantityFull(rChar);
@@ -720,6 +720,21 @@ void GetMeifengToCharacter(ref rChar)//сажаем на Мейфенг
 	SetCharacterGoods(rChar, GOOD_POWDER, 800);
 	SetCharacterGoods(rChar, GOOD_WEAPON, 300);
 	SetCharacterGoods(rChar, GOOD_MEDICAMENT, 150);
+}
+
+void GollandGambit_AwardFromLucas_1()
+{
+	SetFunctionTimerCondition("GollandGambit_AwardFromLucas_2", 0, 0, 1, false);
+}
+
+void GollandGambit_AwardFromLucas_2(string qName)
+{
+	pchar.quest.Award_FromLucas.win_condition.l1 = "Hour";
+	pchar.quest.Award_FromLucas.win_condition.l1.start.hour = 8.00;
+	pchar.quest.Award_FromLucas.win_condition.l1.finish.hour = 21.00;
+	pchar.quest.Award_FromLucas.win_condition.l2 = "location";
+	pchar.quest.Award_FromLucas.win_condition.l2.location = "Villemstad_townhall";
+	pchar.quest.Award_FromLucas.function = "AwardFromFromLucas";
 }
 
 void AwardFromFromLucas(string qName)//церемония награждения
@@ -970,7 +985,6 @@ void FindMerdokKey(string qName)//теперь у нас есть ключ
 		CloseQuestHeader("Holl_Gambit");
 		pchar.questTemp.HWIC.Detector = "eng_win";
 		Achievment_Set("ach_10");
-		CheckPortugalHWIC();
 		AddLandQuestMark(characterFromId("Mishelle"), "questmarkmain");
 		AddMapQuestMarkCity("FortFrance", false);
 	}
@@ -1208,7 +1222,7 @@ void Knippel_InHouse(string qName)//заходим в дом
 void GetValckiriaToCharacter(ref rChar)//сажаем на Валькирию
 {
 	rChar.Ship.Type = GenerateShipExt(SHIP_VALCIRIA, true, rChar);
-	rChar.Ship.name = StringFromKey("HollandGambit_8");
+	rChar.Ship.name = GetShipName("Valkyrie");
 	SetBaseShipData(rChar);
 	rChar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
 	SetCrewQuantityFull(rChar);
@@ -1281,7 +1295,7 @@ void CreateVanBergInWorld()//запускаем Ван Берга на карт�
 	Group_DeleteGroup(sGroup);
 	Group_FindOrCreateGroup(sGroup);
 	sld = characterFromId("JacobBerg");
-	FantomMakeCoolSailor(sld, SHIP_MIRAGE,  StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 60, 60, 60);
+	FantomMakeCoolSailor(sld, SHIP_MIRAGE, GetShipName("Mirage"), CANNON_TYPE_CANNON_LBS18, 60, 60, 60);
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition
@@ -1302,7 +1316,7 @@ void CreateVanBergInWorld()//запускаем Ван Берга на карт�
 	sld.AnalizeShips = true;
 	sld.mapEnc.type = "war";
 	sld.mapEnc.worldMapShip = "quest_ship";
-	sld.mapEnc.Name = StringFromKey("HollandGambit_6");
+	sld.mapEnc.Name = GetShipName("Mirage");
 	SetCharacterPerk(sld, "MusketsShoot");
 	Group_AddCharacter(sGroup, sCapId);
     Group_SetGroupCommander(sGroup, sCapId);
@@ -1599,7 +1613,7 @@ void CreateLucasOnMeifeng(string qName)//создадим Лукаса на Ме
 	bQuestDisableMapEnter = true; // patch-4
 	Group_FindOrCreateGroup("Lucas_Attack");
 	sld = characterFromId("Lucas");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 100, 70, 70, 90, 70);
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, GetShipName("Meifeng"), CANNON_TYPE_CANNON_LBS16, 100, 70, 70, 90, 70);
 	FantomMakeCoolFighter(sld, 25, 70, 70, "blade_30", "pistol5", "bullet", 100); // приз - офицерский катлас
     sld.AlwaysEnemy = true;
     sld.DontRansackCaptain = true;
@@ -2021,6 +2035,42 @@ void TonzagMeeting(string qName)//встреча друзей
 	LAi_ActorDialog(sld, pchar, "", -1, 0);
 }
 
+void HollandGambit_NewShipTwilight()//получаем новый корабль Twilight
+{
+	sld = characterFromId("Tonzag");
+	LAi_SetActorType(sld);
+	LAi_ActorGoToLocation(sld, "reload", "reload1_back", "none", "", "", "", 10);
+	AddQuestRecord("Holl_Gambit", "3-13");
+	pchar.questTemp.HWIC.Self = "HuntFleetwood";
+	AddLandQuestMark(characterFromId("Merdok"), "questmarkmain");
+	
+	if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
+	{
+		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 9.5, 65.5, 1.6);
+	}
+	else
+	{
+		pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 10.5, 55.0, 1.10);
+	}
+	pchar.Ship.name = GetShipName("Twilight");
+	SetBaseShipData(pchar);
+	if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46) pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
+	else pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
+	SetCrewQuantityFull(pchar);
+	pchar.Ship.Crew.Morale = 80;
+	pchar.Ship.Crew.Exp.Sailors = 90;
+	pchar.Ship.Crew.Exp.Cannoners = 70;
+	pchar.Ship.Crew.Exp.Soldiers = 70;
+	SetCharacterGoods(pchar, GOOD_BALLS, 100);
+	SetCharacterGoods(pchar, GOOD_GRAPES, 100);
+	SetCharacterGoods(pchar, GOOD_KNIPPELS, 100);
+	SetCharacterGoods(pchar, GOOD_BOMBS, 100);
+	SetCharacterGoods(pchar, GOOD_FOOD, 100);
+	SetCharacterGoods(pchar, GOOD_POWDER, 300);
+	SetCharacterGoods(pchar, GOOD_WEAPON, 60);
+	SetCharacterGoods(pchar, GOOD_MEDICAMENT, 60);
+}
+
 //-----------------------------------------3 задание----------------------------------------------------
 void Wait_FleetwoodQM(string qName)
 {
@@ -2121,8 +2171,8 @@ void Knippel_AfterBattle(string qName)//реакция на победу
 			else ChangeCharacterAddressGroup(sld, "My_Deck", "rld", "loc3");
 		}
 		sld = GetCharacter(NPC_GenerateCharacter("Sailor_3", "Alonso", "man", "man", 25, pchar.nation, -1, false, "soldier"));
-		sld.name 	= StringFromKey("HollandGambit_23");
-		sld.lastname = StringFromKey("HollandGambit_24");
+		sld.name = GetCharacterName("Alonso");
+		sld.lastname = "";
 		sld.greeting = "hambit_other_4";
 		sld.Dialog.Filename = "Quest\HollandGambit\OtherNPC.c";
 		sld.dialog.currentnode = "Sailor_deck";
@@ -2411,7 +2461,7 @@ void CreateValkiriaBrig(string qName)//создаем Валькирию без 
 	Group_FindOrCreateGroup("Val_Attack");
 	Group_SetType("Val_Attack", "war");
 	sld = GetCharacter(NPC_GenerateCharacter("ValCap", "off_eng_4", "man", "man", 25, ENGLAND, -1, true, "quest"));
-	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, StringFromKey("HollandGambit_8"), CANNON_TYPE_CANNON_LBS16, 50, 60, 60, 60, 60);
+	FantomMakeSmallSailor(sld, SHIP_VALCIRIA, GetShipName("Valkyrie"), CANNON_TYPE_CANNON_LBS16, 50, 60, 60, 60, 60);
 	sld.DontRansackCaptain = true; 
 	sld.AnalizeShips = true;
 	sld.Alwaysenemy = true;
@@ -2544,7 +2594,7 @@ void CuracaoExploring(string qName)//на Кюрасао
 	Group_FindOrCreateGroup("Meifeng_Empty");
 	Group_SetType("Meifeng_Empty", "pirate");//тип группы
 	sld = characterFromId("Longway");
-	FantomMakeSmallSailor(sld, SHIP_MAYFANG, StringFromKey("HollandGambit_12"), CANNON_TYPE_CANNON_LBS16, 50, 65, 65, 50, 90);
+	FantomMakeSmallSailor(sld, SHIP_MAYFANG, GetShipName("Meifeng"), CANNON_TYPE_CANNON_LBS16, 50, 65, 65, 50, 90);
 	Character_SetAbordageEnable(sld, false);//нельзя абордировать
 	sld.AnalizeShips = true;
 	SetCharacterPerk(sld, "MusketsShoot");
@@ -2670,7 +2720,7 @@ void CreateMeifengOnMap(string qName)//энкаунтер Мейфенг на к
 	Character_SetAbordageEnable(sld, true);//можно абордировать
 	sld.mapEnc.type = "war";
 	sld.mapEnc.worldMapShip = "quest_ship";
-	sld.mapEnc.Name = "'"+StringFromKey("HollandGambit_12")+"'";
+	sld.mapEnc.Name = "'"+GetShipName("Meifeng")+"'";
 	Group_AddCharacter(sGroup, "Longway");
 	
 	Group_SetGroupCommander(sGroup, "Longway");
@@ -2994,7 +3044,7 @@ void CreateTradeFleut(string qName)//флейт Тоффа Келлера
 	AddLandQuestMark(sld, "questmarkmain");
 	Group_AddCharacter("Keller_Fleut", "Keller");
 	Group_SetGroupCommander("Keller_Fleut", "Keller");
-	Group_SetAddress("Keller_Fleut", "Trinidad", "quest_ships", "quest_ship_6");
+	Group_SetAddress("Keller_Fleut", "Trinidad", "quest_ships", "quest_ship_2");
 	pchar.quest.Keller_fail.win_condition.l1 = "NPC_Death";
 	pchar.quest.Keller_fail.win_condition.l1.character = "Keller";
 	pchar.quest.Keller_fail.function = "AbiIsland_failed";//для особо тупых
@@ -3051,7 +3101,7 @@ void CreateVanbergSailors(string qName)//напали ванберговцы в 
 	for (i=1; i<=3; i++)//3 мушкетера
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("vanberg_mushketer_"+i, "mush_ctz_"+(6+i), "man", "mushketer", 20, PIRATE, -1, false, "soldier"));
-		FantomMakeCoolFighter(sld, 20, 50, 50, "", "mushket1", "cartridge", 50);
+		FantomMakeCoolFighter(sld, 20, 50, 50, "", "mushket1", "bullet", 50);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		ChangeCharacterAddressGroup(sld, pchar.location.from_sea, "goto", "goto"+i);
@@ -3069,7 +3119,7 @@ void CreateVanbergInSea(string qName)//Якоб ван Берг у остров�
 	Group_FindOrCreateGroup("Mirage");
 	Group_SetType("Mirage", "pirate");//тип группы
 	sld = characterFromId("JacobBerg");
-	FantomMakeCoolSailor(sld, SHIP_MIRAGE, StringFromKey("HollandGambit_6"), CANNON_TYPE_CANNON_LBS18, 70, 70, 70);
+	FantomMakeCoolSailor(sld, SHIP_MIRAGE, GetShipName("Mirage"), CANNON_TYPE_CANNON_LBS18, 70, 70, 70);
 	// belamour для легких уровней команду в опт -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld,GetOptCrewQuantity(sld));
 	// <-- legendary edition			 

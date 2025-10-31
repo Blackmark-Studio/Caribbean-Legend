@@ -189,7 +189,7 @@ string RandExclamation()
 //                Выбор фраз для диалога
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
 // boal 13.03.2004 -->
-string RandPhraseSimple(string Var1, string Var2);
+string RandPhraseSimple(string Var1, string Var2)
 {
 	int RandP;
 	RandP = Rand(1);
@@ -435,7 +435,7 @@ string GetCityName(string city) // имена городов по аттрибу
 	string ret;
 	int nFile = LanguageOpenFile("LocLables.txt");
 
-	ret = LanguageConvertString(nFile, city + " Town")
+	ret = LanguageConvertString(nFile, city + " Town");
 		LanguageCloseFile(nFile);
 
 	return ret;
@@ -987,18 +987,24 @@ string TimeGreeting()
 	return "¡Hola!";
 }
 
-string Greeting()
+string Greeting(bool formal)
 {
-	return "Hola";
+	if (GetHour() >= 6 && GetHour() < 12)
+	{
+		return "Buenos dias";
+	}
+	if (formal == true) return "Hola"; // polite
+	else return "Hola"; // friendly
 }
 
-string Goodbye()
+string Goodbye(bool formal)
 {
 	if (GetHour() >= 23 || GetHour() < 6)
 	{
 	   return "Buenas noches";
 	}
-	return RandPhraseSimple("Adiós", "Hasta la vista");
+	if (formal == true) return RandPhraseSimple("Adiós", "Hasta la vista"); // polite
+	else return RandPhraseSimple("Adiós", "Adiós"); // friendly
 }
 
 // выбор фразы от репутации
@@ -1230,4 +1236,29 @@ string GetIndianName(int Sex) // Jason имена индейцев
 		nameid = "l" + (100 + rand(68));
 
 	return Names.Indian.(nameId);
+}
+
+string GetTitle(ref NPChar, bool address) //Титул ГГ
+{
+	string Title, Nation;
+	
+	if (PChar.sex == "man")
+	{
+		if (address == true)
+		{
+			Nation = GetAddress_Form(NPChar);
+		}
+		
+		Title = "capitán";
+	}
+	if (PChar.sex == "woman")
+	{
+		Title = GetAddress_Form(NPChar);
+	}
+	
+	if (CheckAttribute(pchar, "questTemp.Patria.GenGovernor")) Title = "Generalgouverneur";
+	if (isMainCharacterPatented() && sti(Items[sti(pchar.EquipedPatentId)].TitulCur) > 4) Title = "Vizeadmiral";
+
+	if (address == true && PChar.sex == "man") return Nation + " " + Title;
+	else return Title;
 }

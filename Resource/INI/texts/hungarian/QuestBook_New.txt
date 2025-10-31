@@ -1,0 +1,978 @@
+#QUEST JusticeOnSale
+Mellékfeladat: Csempész bajban
+#TEXT 1
+Beleegyeztem, hogy segítek egy csempészbandának megmenteni a kapitányukat, aki a @<cityName>börtönében ül. Bizonyára jobban jártam volna, ha nem szennyezem be a kezem ezzel az üggyel, de tisztességes jutalmat ajánlottak fel. Beszélnem kéne a parancsnokkal... vagy talán jobb lenne, ha az összes galamblelkût a hatóságoknak adnám át?
+#TEXT 2
+Mivel fontosabb ügyekkel voltam elfoglalva, megfeledkeztem a kapitányról, akit kiszabadítottam a börtönbôl, és a fiaival kötött üzletrôl. A gazember bizonyára kihasználta az alkalmat, hogy elszökjön. Nos, hát legyen.
+#TEXT 3
+Kiszabadítottam a csempészek kapitányát, és megkaptam a jutalmamat. A pénznek nincs szaga.
+#TEXT 4
+Kiszabadítottam a csempészek kapitányát a börtönbôl, de ezek a gazemberek úgy döntöttek, hogy becsapnak engem! Rendben, most már kössenek üzletet az ördöggel!
+#TEXT 5
+Tájékoztattam a városi hatóságokat a csempészek' terveirôl - innentôl kezdve maguk is el tudják intézni a dolgot.
+#TEXT 6
+A csempészek egy részének sikerült elmenekülnie. A kormányzó biztosan nem fog örülni a lassúságomnak.
+#TEXT 7
+Minden csempész azt kapta, amit megérdemelt. Most már csak jelentenem kell a kormányzónak, és az üzlet megköttetett.
+
+#QUEST AffairOfHonor
+Melléküldetés: Becsületbeli ügy
+#TEXT 1
+Véletlenül találkoztam egy nagyon rossz modorú tiszttel. Meg kell tanítanom neki némi illemet, és meg kell ôriznem a lány becsületét. Tehát két óra múlva a világítótoronynál találkozunk.
+#TEXT 2
+A gorilla megbûnhôdik, a megsértett becsület pedig megmarad! Ezt a kellemes hírt el kell mondanom a lánynak. Gyorsan vissza a városba!
+#TEXT 2_1
+Ó, a pokolba! Lemaradtam a párbajról. Micsoda bolond vagyok.
+#TEXT 3
+Egy szerencsétlen apa, egy semmirekellô fiú, a hölgy becsülete... Rendben, lássuk, hogy ezúttal mi lesz a vége. Kezdetnek látogassuk meg a kocsmát és a bordélyházat.
+#TEXT 3_1
+Kitûnô! Már csak egy apróság van hátra - lemészárolni a gazembert.
+#TEXT 4
+A tett el van végezve, apa és fia pedig nyugodtan alhat... a következô alkalomig. Ó, és megérdemlem a jutalmat. Gyerünk, gyûjtsük be!
+#TEXT 4_1
+Hát, lemaradtam róla - na és? Nem nagy ügy.
+#TEXT 5
+Ennyire feketén festenek a dolgok, ha a hatóságok parancsleveleket adnak ki véletlenszerû csirkefogóknak és részegeseknek? Meg kellene látogatnom a kocsmát, hogy megnézzem, ki terrorizálja a helyi lakosságot.
+#TEXT 6
+Egy gazemberrel kevesebb a világon. Jó dolog jót cselekedni.
+#TEXT 6_1
+Meggondoltam magam - nem fogok harcolni. Egyszerûen nincs kedvem hozzá. Különben is, a lánynak meg kell kóstolnia egy bátor kalóz ágyasának minden élvezetét ahhoz képest, hogy a kocsmában szolgálólányként dolgozik.
+#TEXT 7
+Párbaj! És az ok nem is lehetne ennél súlyosabb.
+#TEXT 8
+A szemtelen fickó megkapta a magáét.
+#TEXT 8_1
+Talán én gyáva voltam... Nem tudom.
+#TEXT 9
+Egy polgár mesélt nekem egy érdekes pénzkereseti módról: kirabolni a kártyapartnert, majd csalással vádolni, késôbb párbajban megölni, hogy elkerüljék a nemkívánatos pletykák terjedését. Utána kellene néznem, hogy igaz-e.
+#TEXT 10
+Igen, a polgárnak igaza volt. Szegény Tom, ahogy a többiek is, áldozatul esett a gazembernek. De én véget vetettem ennek.
+#TEXT 10_1
+Pfff! Kártyák, élesítôk, párbajok... Nincs idôm erre a szarságra!
+#TEXT 11
+Egy vívótanár fél a verekedéstôl - ki hinné el! A kormányzó unokaöccsének nehéz dolga lesz egy ilyen tanárral. De ez amúgy sem az én dolgom. Inkább a kereskedôvel találkoznék.
+#TEXT 12
+A zsoldos halott. Mondjuk el a jó hírt a tanítónak.
+#TEXT 12_1
+Az a zsoldos nagyon kemény fickónak tûnt. Úgy döntöttem, hogy nem harcolok vele.
+#TEXT 13
+Igen, manapság a tisztek már nem olyanok, mint régen. De még azok is arra törekszenek, hogy párbajban haljanak meg, ahelyett, hogy dicsôséges harcban pusztulnának el. Nos, nekem csak arról kell gondoskodnom, hogy az érdemesebbek tovább éljenek. Legfeljebb két napom van. El kell kezdenem az úrnô keresését.
+#TEXT 14
+Úgy tûnik, hogy az a tiszt, akit ismertem, szerencsés volt, szemben azzal a tisztel, akit nem ismertem, és aki most halott. Most már meg kellene fogadnom a másodpercek tanácsát, és egy idôre elhagynom a várost.
+#TEXT 14_1
+Úgy döntöttem, hogy nem avatkozom bele más ügyeibe. Hadd oldják meg a saját problémáikat maguk.
+#TEXT 15
+'Divine Justice' sounds great! Be kell majd avatkoznom, és párbajban meg kell védenem az ültetvényest.
+#TEXT 16
+Egy rajtaütés! Ki kellett volna találnom. Most az ültetvényesnek súlyos érvei lesznek a szomszédjával szemben. Most pedig begyûjthetem a jutalmamat: biztosan megérdemeltem.
+#TEXT 16_1
+Érdekes, most már számíthatok a helyi csempészek kedvezményeire?
+
+#QUEST BurntShipQuest
+Melléküldetés: Hajócsere a @<cityName>
+#TEXT 1
+Kikötômester @<portmanName> a @<cityName> kérte, hogy keressek egy rendkívüli hajót, amelynek különleges tulajdonsága van @<text>. Nagyon tisztességes jutalmat ajánlott fel. Fél év áll rendelkezésemre.
+#TEXT 2
+Nos, úgy tûnik, hogy a kikötômester @<portmanName> minden problémáját saját maga oldotta meg. Szerintem amúgy sem tûnt lúzernek.
+#TEXT 3
+A kikötômester nem volt ilyen egyszerû, és a biztosítási pénzt az uzsorásnak adta. Nos, a hajó még mindig nálam van. Lássuk, hogy mi lesz ebbôl.
+#TEXT 4
+Megkaptam a jutalmat egy egyedi hajóért - @<money> pezó. Ennyi pénzért két hasonló hajót lehet venni. El kell ismernem, hogy a kikötômester biztosan érti a dolgát, és meg tudja gyôzni a biztosítási irodát.
+#TEXT 5
+Úgy döntöttem, hogy megtartom magamnak a hajót. Úgy tûnt nekem, hogy @<money> pezó túl alacsony ár egy ilyen gyönyörû hajóért.
+
+#QUEST GiveShipLetters
+Melléküldetés: Talált tárgyak
+#TEXT 1
+Különös lelet! Valaki vagy sietett, vagy csak túlságosan szétszórt volt - akárhogy is, egy teljes hajó iratanyagát vesztette el. Biztos vagyok benne, hogy a tulajdonosuk hamarosan bejelenti az elvesztését.
+#TEXT 2
+Nos, szívességet tettem kedves embereknek, és nem került semmibe.
+#TEXT 3
+Nos, a világ nem jó emberek nélkül való. Nagyszerû, hogy a tulajdonos hamarosan behajtja a veszteségét!
+#TEXT 4
+Nos, a világ nem jó emberek nélkül van. Szerencse, hogy beugrottam a hajógyárba.
+#TEXT 5
+A jutalom csekély volt, de amúgy is szinte semmi erôfeszítést nem tettem.
+#TEXT 6
+Talán így a legjobb. Keveset nyertem, de legalább most már nem kell ezekkel az iratokkal bajlódnom.
+#TEXT 7
+Jó, ha a kereskedô és az áru ilyen szerencsésen egymásra talál!
+#TEXT 8
+Nagyszerû, amikor a szívességet ennek megfelelôen jutalmazzák!
+#TEXT 9
+Unicuique secundum opera eius! Az iratok hamarosan visszakerülnek a tulajdonosukhoz - és a pénz máris a zsebembe csúszott.
+#TEXT 10
+Már korábban le kellett volna adnom ezeket az iratokat, így a tulajdonosuknak nem kellett volna új iratokat beszereznie.
+
+#QUEST ReasonToFast
+Melléküldetés: Egy ok a sietségre
+#TEXT 1
+Egy csinos lány elkotyogta, hogy a helyôrség egyik tisztje annyira sietett valami öbölbe, hogy az még a szórakozásától is elvonta a figyelmét. Talán érdemes lenne utánajárni?
+#TEXT 2
+Sok a szélhámos a környéken. Lehet, hogy csak képzelôdtem?
+#TEXT 3
+Talán csak utat engedtem a sértett lánynak. Nem kellett volna kitalálnom, hogy mi hiányzik...
+#TEXT 4
+Micsoda balszerencse! Az a fickó pont rosszkor jelent meg. Most már késô kitalálni, hogy mire készültek...
+#TEXT 5
+Kiderült, hogy egy kalózfutár követett, a járôr itt várt rá. De úgy tûnik, sikerült eljátszanom, hogy én vagyok a hírnök, @<sName>.
+#TEXT 6
+Lenyomoztam a korrupt járôrtisztet, és meggyôzôdtem róla, hogy kalózokkal üzletelt. Sajnos nem sikerült letartóztatnom. Mégis, kellôképpen megbüntették.
+#TEXT 7
+Nem sikerült beszélnem a járôrrel. Ah, a pokolba vele, mindegy!...
+#TEXT 8
+Micsoda balszerencse! A járôr meghalt, és vele együtt a rejtélye is...
+#TEXT 9
+Júdás a hadseregben igyekszik megszerezni a 30 'darab' ezüstjét. Érdekes, miféle szívesség kerülhet egy ilyen halom @<sText>?
+#TEXT 10
+Megkérdôjelezhetô alku! Mégis, @<sName> nem vadászna erre a térképre ok nélkül.
+#TEXT 11
+@<sShipType> '@<sShipName>' rakományával @<sGoodsName> kíséret nélkül lófrál. Ez egy hasznos információ...
+#TEXT 12
+A kormányzó a saját budoárjában tartja az értéktárgyait? Milyen óvatlan...
+#TEXT 13
+Hála Istennek, végre vége van!
+#TEXT 14
+Egy szép penge nagyszerû jutalom! Azt is érdemes megnézni, hogy ez a térkép kerülhet-e egy marék drágakôbe!
+#TEXT 15
+Megszereztem egy kalóztérképet. Minél hamarabb meg kell néznem, hogy megéri-e a pénzt!
+#TEXT 16
+Huh... Így fordulhat ellened az igazságszolgáltatásba vetett bizalmad... Az ôrjáratozó csapat elleni támadással gyanúsítottak...
+#TEXT 17
+Végre vége lett ennek az ügynek, és úgy tûnik, nem én jöttem ki vesztesként!
+#TEXT 18
+A járôr vezetése helyes volt! A nagy nyeremény biztosan bôven fedezi majd minden költségemet.
+#TEXT 19
+Milyen szerencsétlen. Nem sikerült hasznát vennem a vacak pénzért vásárolt információnak.
+#TEXT 20
+Csak azért kellett @<sText> adnom, hogy ne halljam a hátam mögött a @<sName> forró leheletét. Legközelebb óvatosabb leszek, amikor ilyen kalandokra vállalkozom.
+#TEXT 21
+@<sName> nem válik meg könnyen a @<sText> -tól. El kell tûnnöm innen, méghozzá gyorsan.
+#TEXT 22
+Kiderült, hogy a kalózok valahogyan tudomást szereztek a járôrtiszt baklövésérôl. Hát, valószínûleg ez az ô temetése, ô már úgyis halott, és ideje lenne, hogy eltûnjek innen... Úgy tûnik, hogy már nincs senki, aki elmesélhetné @<sName> a tetteimet...
+#TEXT 23
+A kalózok tudták, hogy nálam van a @<sName>térkép. Sôt, tudtak a szigetrôl is, ahová elrejtette a kincseit. Még szerencse, hogy az eszük nem ért fel a kapzsiságukkal, mert nem találták meg a kincset elôttem.
+#TEXT 24
+Tekintettel arra, hogy az erôk egyenlôtlenek voltak, kénytelen voltam átadni a kincset a @<sName>kincsvadászoknak. Legközelebb óvatosabb leszek, amikor ilyen kalandokra vállalkozom.
+#TEXT 25
+Sikerült elsüllyesztenem egy kalózhajót, amelyen ezt az akciót a járôrtiszt bevonásával vezényelték le. Maga a járôr már biztosan halott, a kalózok sosem bocsátják meg az ilyen baklövéseket... Nos, úgy tûnik, hogy már nincs senki, aki elmesélhetné @<sName> a tetteimet...
+#TEXT 26
+Sikerült tisztán kijönnöm ebbôl a történetbôl a járôrrel. Nem hiszem, hogy a kalózok örökké üldözni fognak. Biztosan van más dolguk is.
+
+#QUEST PiratesOnUninhabited
+Melléküldetés: Megmenekült a @<shoreName>
+#TEXT 1
+A @<shoreName> fedélzetre vettem @<count> matrózokat a hajótörött kalóz @<shipTypeName>. Azt kérték, hogy bármelyik lakott öbölbe szállítsák ôket. Nos, én meg tudom ôket érteni - elvégre a törvénnyel állnak szemben...
+#TEXT 2
+A hajótörést szenvedett kalózokat a @<toShore> címre szállítottam, és még egy kis jutalmat is kaptam. Bizonyára nem volt sok, de azért nem fog fájni...
+#TEXT 3
+A kalózokat a lakatlan szigetrôl szállítottam a @<toShore>. De ezek a gazemberek azt követelték, hogy adjak nekik pénzt kölcsön. Kénytelen voltam elmagyarázni nekik, hogy nem adok kölcsön pénzt a fajtájuknak.
+#TEXT 4
+A kalózokat a lakatlan szigetrôl a @<toShore> címre szállítottam, és még pénzt is adtam nekik kölcsön... El sem tudom képzelni, hogyan küzdöttem volna ki magam ezekbôl a szorult helyzetekbôl, ha én lennék a helyükben...
+#TEXT 5
+A @<shoreName> fedélzetre vettem @<count> matrózokat a hajótörött kalóz @<shipTypeName>. Azt kérték, hogy egy kincses térképért cserébe szállítsanak el bármelyik lakott öbölbe. Nos, majd meglátjuk, mi lesz a térképpel... Vagy inkább adjam fel ôket a hatóságoknak? Ebben az esetben biztosan megkapom a jutalmamat...
+#TEXT 6
+A gazember úgy döntött, hogy becsap, de végül is ezért fizetett.
+#TEXT 7
+A gazembernél nem volt nála a térkép, de elmondta, hogy @<capName> kapitány hová rejtette el a zsákmányt. Meg kell néznem @<toShore>.
+#TEXT 8
+Nem tudom, hogy a kincs a @<shore> oldalon volt-e vagy sem. Nem sikerült megtalálnom. Hát, legalábbis nem mondhatom, hogy túl nagyok voltak a kiadásaim.
+#TEXT 9
+A kalóznak igaza volt. A @<shore> oldalon valóban találtam egy szép kincset...
+#TEXT 10
+Ez a kalóz biztosan nem egy egyszerû fickó. Kiderült, hogy nem csak nekem ígérte azt a kincset. Nos, akárhogy is, végül én voltam az, aki igényt tartott rá.
+#TEXT 11
+A @<shoreName> fedélzetre vettem @<count> matrózokat a hajótörött kalóz @<shipTypeName>. Bármelyik lakott öbölbe el kell szállítanom ôket. Vagy egyszerûen csak feladni ôket a hatóságoknak.
+#TEXT 12
+Úgy döntöttem, hogy egy madár a kézben jobb, mint kettô a bokorban, és átadtam a kalózokat a kormányzónak @<mayorName>. Szerintem jól tettem, legalább a pénz máris a zsebemben csörög.
+#TEXT 13
+A @<shoreName> fedélzetre vettem @<count> tengerészeket, akiket a kapitány @<badCapName>partra tett. Azt állítják, hogy a kapitány a @<ship> hajón hajózik és rabszolgákkal kereskedik. Megállapodtunk, hogy megkeressük ôt. Ha minden a terv szerint alakul, én elviszem a raktér tartalmát, ôk pedig megkaparintják a hajót.
+#TEXT 14
+Felszálltam a @<ship>fedélzetére, és a raktérben valóban megtaláltam a rabszolgákat. Nos, kiderült, hogy a kalózok között a barátok néha kifizetôdnek...
+#TEXT 15
+El kellett süllyesztenem @<ship> és a kalózokkal is végeznem kellett. Gondolom, senki nem fog felháborodni emiatt.
+#TEXT 16
+A csata hevében elsüllyedtem @<ship>. Meg kellett térítenem az árát a kalózoknak. Végül is nem hagyhattam volna ôket mindenféle létalap nélkül, ugye?
+
+#QUEST ShipWrecked
+Melléküldetés: A hajótöröttek
+#TEXT 1
+A @<shoreName> fedélzetre vettem @<count> matrózokat a hajótörött @<shipTypeName> '@<ShipName>'. hajóról, akiket a @<sNation>bármelyik településre kell szállítanom.
+#TEXT 2
+A @<shoreName> fedélzetre vettem @<count> tengerészeket, akiket a kapitány @<badCapName>partra tett. Bármelyik településre kell ôket szállítanom @<sNation>.
+#TEXT 3
+A @<shoreName> fedélzetre vettem @<count> matrózokat a hajótörött @<shipTypeName> '@<ShipName>'. hajóról, akiket a legközelebbi településre kell szállítanom.
+#TEXT 4
+A @<shoreName> fedélzetre vettem @<count> tengerészeket, akiket a kapitány @<badCapName>partra tett. A legközelebbi településre kell szállítanom ôket.
+#TEXT 5
+A @<shoreName> találkoztam a @<count> hajótörött @<shipTypeName> '@<ShipName>'. matrózokkal; kapitányuknak túl sok ütést kellett volna kapnia a fejére; követeli, hogy szállítsák Dunkerque-be. Fogalmam sincs, mit kezdjek velük. Eddig a fedélzetre vettem ôket. Nem hagyhattam ôket csak úgy itt, ezen a kihalt helyen.
+#TEXT 6
+A @<sName> kapitányt és matrózait leszállítottam a @<sCity> , és még egy kis jutalmat is kaptam. Nem túl sokat, de nem is fog fájni.
+#TEXT 7
+Ez az ôrült kapitány azt követeli, hogy szállítsuk Dunkerque-be, és egyszerûen nem akarja elhagyni a hajómat! A viselkedése teljesen elviselhetetlenné válik! Fogalmam sincs, mit tegyek ebben a helyzetben!
+#TEXT 8
+Ez az ôrült végre megkapta, amit kért. Ki kellett végeznem vele. Egyszerûen nem volt más választásom. Elképzelhetetlen kincsekrôl beszélt, miközben még egy kanál sem volt nála. Micsoda csaló...
+#TEXT 8_1
+Miféle emberek mentek!? A körülmények megváltoztak, de ez nem ok arra, hogy az emberek elôtt integessünk. Meg kellett leckéztetnem ezt a bunkó embert jó modorra.
+#TEXT 9
+Végül sikerült megszabadulnom attól a hajótörött túlélôtôl, és még egy térképdarabot is odacsúsztatott nekem. El kell tûnnöm, mielôtt rájön, hogy átvertem. Ô... Dunki-irk... Dunki-iiirk...
+#TEXT 10
+A @<shoreName> oldalon találkoztam a hajótörött tengerészekkel. A legközelebbi település kormányzójának @<sNation> kellene beszélnem róluk. Gondolom, a számukra hagyott élelmezésem elég sokáig kitart, amíg a mentôhajó megérkezik.
+#TEXT 11
+A @<shoreName> több tengerésszel találkoztam, akiket a kalózok @<sBadName>partra tettek. A legközelebbi település kormányzójának @<sNation> szólnom kell róluk. Gondolom, a számukra hagyott élelmezésem elég sokáig kitart, amíg a mentôhajó megérkezik.
+#TEXT 12
+Túlságosan elfoglalt voltam ahhoz, hogy visszatérjek abba a szerencsétlen öbölbe. Csak remélni tudom, hogy azokat a szerencsétleneket megtalálta és megmentette egy másik kapitány...
+#TEXT 13
+Beszéltem a @<sCity> kormányzónak a @<ShoreName>elhagyott tengerészekrôl, de túl sokáig tartott. Most már csak imádkozhatunk az Úrhoz, hogy idôben érkezzen a segítség...
+#TEXT 14
+Beszéltem a @<sCity> kormányzójának a @<ShoreName> elhagyott tengerészekrôl, és még egy kis jutalmat is kaptam. A kormányzó örömmel hallotta, hogy a hajótörést szenvedett hajó kapitányának sikerült túlélnie. Azonnal mentôexpedíciót indít.
+#TEXT 15
+A @<sName> kapitányt és matrózait a legközelebbi településre szállítottam, és nagyon szépen megjutalmaztak, bár ezt soha nem kértem...
+#TEXT 16
+A @<shoreName> fedélzetre vettem a kapitányt @<sName> és @<count> matrózait. A kapitány azt állítja, hogy a kalóz @<sBadName> lázadásra buzdította a legénységét, megfosztotta ôt a hajójától, és partra tette szegényeket. Megígértem neki, hogy megkeresem a hajóját '@<ShipName>' és visszaadom neki, míg én megkapom a raktér tartalmát.
+#TEXT 17
+Ahogy megbeszéltük, a kapitányt és matrózait a településre szállítottam. Az egyetlen jutalmam a köszönetük volt, de ez amúgy sem került semmibe.
+#TEXT 18
+Felszálltam @<ShipType> '@<ShipName>' és az egyezségünk értelmében visszaadtam @<sName>. A raktér tartalmát magamhoz vettem. Igazságot szolgáltattunk.
+#TEXT 19
+A csata hevében @<ShipType> '@<ShipName>' süllyedt, és nyilvánvalóan a rakterének tartalma is elveszett. Nagyon sajnálom a kapitányt @<sName>. De ami történt, megtörtént.
+
+#QUEST JungleGirl
+Melléküldetés: Hölgy a dzsungelben
+#TEXT 1
+Megígértem @<sName> településrôl @<sCity> , hogy hozok neki @<sText1> nagy és @<sText2> kis gyöngyöket az úrnôje nyakláncához. Már csak tíz napom van - különben minden erôfeszítésem hiábavaló lehet.
+#TEXT 2
+A gyöngyökért cserébe @<sName> egy nagyon szép amulettet adott nekem. Valóban, soha nem tudhatod, hogy mikor veszítesz el valamit, és mikor nyersz valamit.
+#TEXT 3
+Nem sikerült elég gyöngyöt gyûjtenem a @<sName>. Sajnálom a lányt, de ez az ô hibája, elvégre nem kellett volna egy ilyen szeszélyes szeretônél jelentkeznie...
+#TEXT 4
+@<sName> azt állítja, hogy tudja, hová rejtette el kincsét az apja, a hírhedt kalóz @<sPirateName>. Ez @<sTreasureLoc>. Ki kell szállnunk a @<sShore>. Miután megtaláltuk a kincset, vissza kell szállítanom ôt a @<sCity>településre.
+#TEXT 5
+@<sName> halott, és nem tudom, hol vannak elrejtve a ládák. Kár, de ezúttal nem volt szerencsém.
+#TEXT 5_1
+Úgy döntöttem, hogy nem veszôdöm a @<sName>apja kincsének felkutatásával. Ô maga is tud vele foglalkozni, ha úgy dönt.
+#TEXT 6
+A @<sPirateName> kincse valóban hatalmas volt. Megkaptam a felét. Most haza kell szállítanom @<sName> a @<sCity>településre.
+#TEXT 7
+@<sName> meghalt. Sajnálom a lányt, most lett gazdag... Micsoda hülye halál...
+#TEXT 8
+Hazaszállítottam @<sName> a kincsével együtt. Hálája jeléül egy nagyon szép ajándékot készített nekem... Valóban, nagyon szép dolog boldoggá tenni az embereket...
+#TEXT 9
+A @<sText> település @<sCity> lánya megszökött otthonról. Azt állította, hogy gyûlöli, hogy az uzsorás fiához megy feleségül, és könyörgött, hogy vigyem el a választottjához, @<sLover>. És mit tegyek vele? Nem szívesen rontanám el az életét hátralévô életére, de a szüleit is megértem...
+#TEXT 10
+@<sName> meghalt... Ez történik, ha a fiatalok nem hallgatnak a szüleikre...
+#TEXT 11
+Átadtam a szökevényt az ôröknek. Hadd döntsék el ôk, hogy mi legyen vele...
+#TEXT 12
+A @<sCity> településen a lány is elszaladt elôlem. Nos, csak remélni tudom, hogy megtalálja a boldogságát, amiért hajlandó mindent feláldozni. Ó, a fiatalság...
+#TEXT 13
+A szökevényt elvittem az apjához, és biztos vagyok benne, hogy helyesen cselekedtem. Mi lehet rosszabb, mint a szülôk bánata, akik elvesztették egyetlen gyermeküket? És az apja busásan megjutalmazott.
+#TEXT 14
+Elvittem a lányt a választottjához. Mostantól kezdve mehetnek egyedül, nem én vagyok a dadájuk.
+#TEXT 15
+Vállaltam, hogy a szerelmespárt a @<sCity>városba, az új vôlegény szüleihez szállítom. Úgy gondolom, hogy ez a helyes dolog.
+#TEXT 16
+A szerelmespárt oda szállítottam, ahová ígértem. Most pedig el kell mennem a @<sText> , és el kell kérnem a jutalmamat a vôlegény apjától. Vajon mennyire fog örülni, hogy lát engem?
+#TEXT 17
+Úgy döntöttem, hogy nem zavarom a vôlegény szüleit, biztosan más gondjaik vannak. Különben is, a kiadásaim ebben az ügyben amúgy is igen csekélyek voltak.
+#TEXT 18
+A vôlegény apja megköszönte, és egy nagyon tisztességes ajándékkal kedveskedett nekem... Szinte féltékeny vagyok erre a két fiatal szerelmesre...
+#TEXT 19
+Úgy tûnik, hogy csak az idômet vesztegettem. A vôlegény apja igazi fösvénynek bizonyult. Szinte sajnálom a fiatal párt - egyiküknek sem volt szerencséje a szüleikkel... Az emberek túl keményszívûek ebben a túlvilági régióban, és az aranyon kívül másról sem beszélnének. Mégis örülök, hogy sikerült segítenem a fiatalokon. Megérdemelnek egy másfajta életet.
+#TEXT 20
+Vállaltam, hogy a @<sName>lányt, aki a @<sBrothelCity>bordélyházból menekült, @<sCity>szüleihez juttatom.
+#TEXT 21
+Vállaltam, hogy a bordélyházból elmenekült @<sName>elhozom a markolózsákját. Meg kell keresnem a magánszobában. Benne kell lennie némi pénznek, iratoknak, egy tisztességes ruhának és a szegény lány egyéb holmijának.
+#TEXT 22
+Túlságosan elfoglalt voltam, és a lányt a kocsmában kellett hagynom. Mégis remélem, hogy elég okos ahhoz, hogy egyedül is elboldoguljon.
+#TEXT 23
+Mindent megtettem, amit tudtam. Csak remélni tudom, hogy @<sName> biztonságban hazaér.
+#TEXT 24
+A @<sName> településre @<sCity>szállítottam. A szüleihez nem vittem el, nekik biztosan más gondjaik lesznek...
+#TEXT 25
+Hazaszállítottam @<sName> . Egy tisztességes pengével és egyben mély erkölcsi elégtétellel jutalmaztak.
+#TEXT 26
+Hazaszállítottam @<sName> . Jutalmul egy nagyszerû muskétát és egyben mély erkölcsi elégtételt kaptam.
+#TEXT 27
+Hazaszállítottam @<sName> . A bátyja felajánlotta, hogy vegyek részt a kalózok elleni közös rajtaütésben, de vissza kellett utasítanom.
+
+#QUEST ShipEpidemy
+Esemény: A járvány
+#TEXT 1
+Úgy tûnik, elkaptam egy fertôzést. Úgy tûnik, a '@<sShipName>' kapitánya nem viccelt a járványról. A jövôben minimalizálnom kell a legénységgel való érintkezéseimet, és óvatosabbnak kell lennem.
+#TEXT 2
+A járvány visszaszorulóban van. Újra van étvágyam, ami azt jelenti, hogy hála Istennek, kezdek meggyógyulni.
+#TEXT 3
+Járvány van a hajón. A matrózok betegségben pusztulnak. A kapitány a fedélzeten '@<sShipName>', égjen a pokolban, nem viccelt... Mit kell most tennünk? A Szent Szûz mentsen meg mindannyiunkat.
+#TEXT 4
+A betegség csökkenôben van. Dicsértessék a Legszentebb Szûzanya! A jövôben mindenképpen óvatosabbnak kell lennem...
+
+#QUEST ChurchGenQuest1
+Melléküldetés: @<sCity> pap kéziratai
+#TEXT 1
+Szentatya @<sName> megbízott egy küldetéssel: értékes teozófiai kéziratokat vigyek, amelyeket a megvilágosodás érdekében és elöljárói utasítására adott át a @<sOwnerCity>papnak, és amelyeket nem adott vissza azonnal. Vállaltam, hogy segítek neki e kényes ügy megoldásában.
+#TEXT 2
+Felnôtt férfiak, Isten szolgái, akik úgy viselkednek, mint a kisgyerekek! Hát nem nagy ügy, a legfontosabb, hogy megvan a kézirat! Most pedig visszaviszem ôket a @<sColony>.
+#TEXT 3_1
+Nos, elképesztô látni, ahogy az emberek lustaságukat és felelôtlenségüket valami magas céllal próbálják igazolni. Hogyan lehet ilyen felbecsülhetetlen értékû dolgokat adni egy véletlenszerû embernek mindenféle garancia nélkül? Micsoda gondatlan pap... Most már az egész szigetvilágon keresztül kell üldöznöm azt a @<sCapName>, a "@<sShipName>" kapitányt.
+#TEXT 3_2
+Nem lesz könnyû feladat egy olyan hajót keresni, amelynek a nevét nem tudom. És gyorsan kell cselekednem, mielôtt az az istenfélô kapitány megszabadulna ezektôl az értékes könyvektôl... de elôször is ki kell derítenem, mi az a SZENT név, amit a @<sCapName> írt a régi kád hátuljára?
+#TEXT 4
+Vajon miért én fizessem meg valakinek a vallási impulzusait?! Az istenit! Nagyon remélem, hogy a @<sColony> kolónia közelében végre utolérem ezt a vén kádárt "@<sShipName>" és istenfélô kapitányát a kormánynál, és megkapom tôle ezeket a papírokat. Talán az Úr ezért feloldoz egy-két bûn alól.
+#TEXT 5
+Megint nincs szerencsém. Ez a @<sName> bizonyára érdekes fickó: a pap rendkívül értékes rakományt bízott rá, de a kikötôi tisztviselôk már a neve hallatán is reszketnek. Nos, majd meglátjuk, mi lesz, ha végre találkozunk a @<sColony>...
+#TEXT 6
+Ez a kapitány bizonyára érdekes ember. Nos, itt az ideje, hogy szemtôl szembe találkozz vele, vedd el tôle azokat a hôn áhított könyveket, és add át ôket jogos tulajdonosuknak a @<sColony>.
+#TEXT 7
+Ma átadtam a @<sColony> papjának értékes kéziratait, és megkaptam a jutalmamat a kapzsiság halálos bûnétôl való figyelmeztetéssel együtt.
+#TEXT 7_2
+Az öreg bolond @<sCapName> adósságot csinált a kocsmában, és értékes könyveket és kéziratokat adott a tulajdonosnak zálogba. Költségek és kiadások megint... Kivásárolom a kéziratokat, és végül átadom ôket @<sColony>.
+#TEXT 8
+Egy újabb kiadás a fôkönyvemben: @<sName> adósságát fizettem ki a kocsmában. A @<sColony> kolóniában élô pap kéziratait kivásároltam, és most itt az ideje, hogy visszaadjam neki a hôn áhított kéziratait, és megmutassam neki a kiadási könyvemet is!
+#TEXT 9
+Tény, hogy vannak még önzetlen kocsmárosok a környéken. Sietek a @<sColony> , hogy visszaadjam a teozófiai kéziratokat, és elmesélem a történetet egy kocsmárosról, aki csak azért adta oda a felbecsülhetetlen értékû könyveket, hogy megtartsa fogadalmát.
+#TEXT 10
+Ó, te jó ég... Soha nem gondoltam volna, hogy egy ilyen egyszerû feladat ennyi idôt és energiát vesz igénybe. Nos, legalább az istenfélô kapitány @<sCapName> nem okozott nekem gondot - átadta az értékes kéziratokat, és azt mondta, hogy tûnjek el, amit örömmel meg is tettem. Most pedig vissza @<sColony>.
+
+#QUEST ChurchGenQuest2
+Melléküldetés: Egyházi rablás @<sCity>
+#TEXT 1
+Ellopta a templom pénzét! Mi a baj ezzel a világgal?! Nos, amíg a @<sName> atya átkokat zúdít ezeknek a gúnyolódóknak a fejére, addig nekem hatékonyabb akciókat kellene vállalnom - és ha az Úr nem jutalmaz meg ezekért, akkor a Padre biztosan meg fogja... Nem mehettek messzire...
+#TEXT 2
+A városban azt mondják, hogy a pénzt a helyi banditák lopták el, akik elég okosak voltak ahhoz, hogy elbújjanak. Talán meg kellene látogatnom a vadászterületeiket.
+#TEXT 3
+Valóban, Isten mindenkinek megadja, ami jár - a banditák megkapták, amit megérdemeltek, én pedig a templomi pénzt. Most pedig vissza az atyához.
+#TEXT 4
+Hát nem szép? Szívességet tettem Istennek, és magamról sem feledkeztem meg. Áldás!
+#TEXT 5
+Ez még annál is több, mint amire számítottam! Valóban, az egyházért való munka néha tényleg kifizetôdik!
+#TEXT 6
+Nos, gazdag vagyok és átkozott. Mindegy is. Ilyen pénzzel nem törôdöm sem Istennel, sem az ördöggel.
+#TEXT 7
+A dzsungel tele van mindenféle gazemberrel, de még mindig nem találtam meg azokat, akiket kerestem. Vissza kell mennem a városba, hogy pontosabb információt kapjak a hollétükrôl.
+#TEXT 8
+A templom tulajdonának ellopói okosabbak voltak, mint gondoltam, és elmenekültek a településrôl. Sietnem kell a @<sCity> a @<sIsland>, mielôtt minden pénzüket piára és kurvákra pazarolták volna!
+#TEXT 9
+Nos, a csempészekrôl kiderült, hogy könnyû megegyezni velük. Pénzért segítettek a gazembereknek, és pénzért elárulták ôket. Rendben, akkor a @<sShore>-ra.
+#TEXT 10_1
+Ez aztán a történet... Vajon a @<sName> atya valóban ilyen alattomos lehet? Hát, mindenesetre elôbb beszélnem kellene vele - lehet, hogy egy teljesen ártatlan embert gyanúsítok...
+#TEXT 10_2
+Ez aztán a történet... Vajon a @<sName> atya valóban ilyen alattomos lehet? Nos, mivel megöltem az összes gazembert, most már senki más, csak maga a páter erôsítheti meg vagy cáfolhatja meg a szavaikat...
+#TEXT 11_1
+Végre megtaláltam a gazembereket. Biztos, hogy ez nem a Szent Grál volt, de mégis... Nos, itt az ideje, hogy visszamenjünk.
+#TEXT 11_2
+Remélem, hogy valami jót tettem, és ha eljön a végítélet napja, a Mindenható az én számlámra fogja írni - megosztottam a vagyonomat a szerencsétlenekkel, hogy megmutassam nekik az igazság útját. Egyébként meg kell majd mondanom az Atyának, hogy valószínûleg az ô templomi tulajdonát is ugyanerre a célra használták...
+#TEXT 11_3
+Ki gondolta volna, hogy az egyházi vagyon ilyen drága lehet... Hát, legalább kaptam valamit a pénzért cserébe. Elviszem a kelyhet az atyának - talán enyhíti a bánatát az ellopott pénz miatt...
+#TEXT 11_4
+Szegénynek lenni nem bûn... hazugnak lenni az! És Isten megjutalmazta az ilyen nemeslelkûséget: a gazemberek, akik szembeszálltak vele, el lesznek pusztítva, a templom vagyona megmenekül, én pedig megkapom a nekem járó jutalmat!
+#TEXT 12_1
+Szeretném hinni, hogy a @<sCity> pap bûnbánata ôszinte volt. Persze, anyagi szempontból vesztettem valamit - de az erkölcsi elégedettség bôven kárpótol!
+#TEXT 12_2
+Micsoda fordulat az eseményekben! Kiderül, hogy még a papok is áldozatul eshetnek a kapzsiságnak. De ahogy mondani szokták, minden jó, ha a vége jó. A @<sName> atyának sikerült megbirkóznia a kísértésével, és még a költségeimet is megtérítette.
+#TEXT 12_3
+Micsoda fordulat az eseményekben! Kiderül, hogy még a papok is áldozatul eshetnek a kapzsiságnak. De ahogy mondani szokták, minden jó, ha a vége jó. A @<sName> atyának sikerült megbirkóznia a kísértéssel. De elfelejtette megtéríteni a költségeimet - talán túlságosan is izgatott volt. Emlékeztetnem kellett rá.
+#TEXT 12_4
+Ezekben a kapzsiságtól vezérelt idôkben az ördög még a papságot is képes elcsábítani, nem is beszélve a laikusokról. Nos, lehet, hogy ostobaságnak tûnik, de nem fogadtam el annak a szutykos szélhámosnak a piszkos pénzét.
+#TEXT 12_5
+Valóban, Urunk irgalmas, ha megengedi az olyan bûnösöknek, mint a @<sName> atya, hogy megtévesszék hiszékeny gyülekezetüket. Én nem vagyok ilyen jóindulatú, és szívesen feljelentem ezt a csalót a hatóságoknál - de sajnos nincs szilárd bizonyítékom az összejátszására... Nos, ennyi jócselekedet elég volt a mi Urunk nevében. Azért elég szerencsés voltam, hogy az a csaló megtérítette a költségeimet.
+#TEXT 12_6
+Valóban, Urunk irgalmas, ha megengedi az olyan bûnösöknek, mint a @<sName> atya, hogy megtévesszék hiszékeny gyülekezetüket. Én nem vagyok ilyen jóindulatú, és szívesen feljelentem ezt a csalót a hatóságoknál - de sajnos nincs kézzelfogható bizonyítékom az összejátszására... Nos, ennyi jócselekedet elég volt a mi Urunk nevében - nekem már csak a kiadások és a csalódások maradtak.
+#TEXT 12_7
+Még mindig nem tudtam eloszlatni a gyanúmat a @<sCity>papjával kapcsolatban. Persze egy pap szava többet nyom a latban, mint egy banditaé, de ez az egész történet bûzlik. Nos, ennyi jócselekedet elég volt a mi Urunk nevében - nekem már csak a kiadások és a csalódások maradtak.
+#TEXT 12_8
+Atyám elfogadta a hírt, hogy az összes egyházi pénzt végül is a banditák piájára pazarolták. Nos, az én kiadásaim sem fizettek, ha ez vigasztalhatja ôt.
+#TEXT 12_9
+Ezt egy jó kereszténynek nem kellett volna megtennie, de az egyházközség nem lesz szegényebb, és az én kiadásaimat legalább részben fedezik. A lényeg, hogy a tolvajok nem jutottak hozzá az egyházi kasszához.
+#TEXT 12_10
+Az egyházi pénzt kisajátítani és jutalmat kapni érte biztosan nem a legerényesebb tett, de... Ha nem cserélem ki a kötélzetet, bármelyik matróz halálra zuhanhat, és ez a bûn az én lelkemet terheli... Ami az atyát illeti, fogadalmat teszek, hogy háromszor annyi pénzt adományozok az egyházának, mint amennyit elvettem!
+#TEXT 12_11
+Vajon az Úr megbocsát nekem? Ô az egyetlen, aki talán tudja, miért csaptam be a nyílt szívû papot? Ez önmagában is bûn volt, de még nagyobb bûn volt elfogadni a pénzt, amit ô határtalan jóságában adott nekem, hogy megvigasztaljon.
+#TEXT 12_12
+Nincs pénz! Nincs dicsôség! Csak mocskos célzások maradtak nekem!!! Soha többé nem fogok ezekkel a képmutatókkal üzletelni!
+#TEXT 13
+A Biblia azt mondja, hogy minden megpróbáltatást, amivel szembe kell néznünk, az Úr ad nekünk erônk szerint, és Isten a széllel a megnyírt bárányhoz igazítja a szelet. Nos, úgy tûnik, hogy elvesztettem az erômet, és ez a teher túl nehéz lett számomra. Remélem, hogy a @<sName> atya megérti, amikor elmondom neki, hogy kudarcot vallottam a küldetésében.
+
+#QUEST CaptainComission1
+Melléküldetés: Utolsó kívánság
+#TEXT 1
+A @<sShipName>kapitánya, @<sCapName>, mielôtt meghalt, megkért, hogy mondjam meg @<sCharName> a @<sCity> , hogy nincs ideje elvégezni a megbízását. Meg kell találnom ezt az embert. A haldokló utolsó akaratát tiszteletben kell tartani...
+#TEXT 2
+Úgy döntöttem, hogy nem vesztegetem az idômet jelentéktelen ügyekre. Az az ember már biztosan rég elfelejtette azt a megbízást.
+#TEXT 3
+@<sCharName> felajánlotta nekem, hogy váltságdíjat kérek a foglyáért @<sCharType>. Nem egyeztem bele, arra hivatkozva, hogy elfoglalt vagyok.
+#TEXT 4
+@<sCharName> a @<sCity> kérte, hogy adjak át 150 000 pesót a @<sPirateName> a @<sPirateCity>, hogy kiszabadítsam a @<sFamilyType> @<sSlaveName>, akit a kalózok tartanak fogva a váltságdíjra várva. Amikor visszatérek, 40 000 pesót kapok a jól végzett munkáért.
+#TEXT 5
+Szorult helyzetbe kerültem. Kiderült, hogy @<sCapName> szállította @<sPirateName> a @<sPirateCity> váltságdíjat néhány fogolyért @<sSlaveName> - 3 láda aranyat. Az a típus, @<sCharName>, azt mondta nekem, hogy a megbízása még mindig érvényes. Ha 30 napon belül nem viszem @<sSlaveName> a @<sCity> kocsmába, megígérte, hogy fejvadászokat küld a nyomomra... De hogy hagyhattam ki ezeket a ládákat a néhai kapitány kabinjában?!
+#TEXT 6
+Nem sikerült teljesítenem a @<sCharName>feladatát, de meg kell bocsátania nekem. Elvégre én is elpusztulhattam volna, mint @<sCapName>kapitány.
+#TEXT 7
+Nos, a fogoly kiszabadítására szánt idô lejárt. Lássuk, mit fog most tenni ez a fenyegetô mister @<sCharName> .
+#TEXT 8
+Úgy döntöttem, hogy elutasítom @<sCharName>küldetését. Lehet, hogy megsértôdött, de végül is visszaadom neki a pénzt.
+#TEXT 9
+Felszabadítottam a foglyot. Most át kell adnom ôt a @<sCharName> a @<sCity>.
+#TEXT 10
+@<sName> megunta a váltságdíjra való várakozást, és eladta foglyát egy barbadosi ültetvényre. Nos, ez biztos a legjobb - egy rabszolga biztosan nem kerülhet többe, mint egy túsz. Sietnem kell Barbadosra, hogy meglátogassam Bishop ezredest.
+#TEXT 11
+Fizettem @<sName> @<sSum> pesoért. Most sietnem kell @<sCity> a @<sCharName>. Biztos aggódik szegény. És a jutalom sem ártana.
+#TEXT 12
+A ládákkal kapcsolatos baklövés sokba került nekem. Fizettem a @<sName> egy tetemes összeget, @<sSum> pezót. De a fogoly nem volt ilyen egyszerû, és felajánlotta, hogy elviszem @<sCity> néhány nagyon értékes információért cserébe. Beleegyeztem, mivel úgy tûnt, hogy az ügyfél nem hajlandó fizetni nekem semmit.
+#TEXT 13
+A ládákkal kapcsolatos baklövés sokba került nekem. Fizettem a @<sName> egy tetemes összeget, @<sSum> pezót. Úgy tûnik, hogy a felszabadult fickó egyáltalán nem akar találkozni az ügyfelemmel, de ez nem az én dolgom. Nincs szükségem több bajra emiatt a rongyrázó miatt.
+#TEXT 14
+Egy korábbi túszt és most már szabad állampolgárt @<sName> átadtam a rokonának, és megkaptam az ígért 40 000 pezó jutalmat a hitelládákban.
+#TEXT 15
+Egy korábbi túszt @<sName> átadtam a rokonának, de nem volt hajlandó megtéríteni a további költségeimet... Az emberek akkor válnak igazán hajthatatlanná, amikor már nincs szükségük semmire tôled.
+#TEXT 16
+A korábbi foglyot átadtam az ügyfélnek. Kiderült, hogy a @<sSpeciality>specialistája volt, akire a @<sNation>vadászott. A kormány nevében értékes ajándékot kaptam jutalmul.
+#TEXT 17
+Egy szökési kísérlet során @<sName> megölték. Talán nem kellett volna veszélyeztetnem ôt. Mit mondjak most az ügyfélnek?
+#TEXT 17_1
+@<sName> elpusztult a dzsungelben. Talán nem kellett volna veszélyeztetnem ôt. Mit mondjak most az ügyfélnek?
+#TEXT 18
+Sikerült megszerveznem @<sName>szökését az ültetvényrôl. Most már csak meg kell találnom és el kell juttatnom az ügyfélhez.
+#TEXT 19
+Ez a fogoly nem volt ilyen egyszerû, és felajánlotta, hogy elviszem a @<sCity> címre, cserébe néhány nagyon értékes információért. Beleegyeztem, mivel úgy tûnt, hogy az ügyfél nem hajlandó fizetni nekem semmit.
+#TEXT 20
+Úgy tûnik, hogy a felszabadított fickó egyáltalán nem akar találkozni az ügyfelemmel, de ez nem az én dolgom. Nincs szükségem több bajra emiatt a rongyrázó miatt.
+#TEXT 21
+Az a fogoly mérnök elég hasznos volt. A tôle szerzett információk még egy tapasztalt harcos számára is felbecsülhetetlenek lennének.
+#TEXT 22
+Értesítettem a @<sCharName> a @<sName>rokonának haláláról. A váltságdíjat megtartottam a költségeim megtérítésére.
+#TEXT 23
+Értesítettem a @<sCharName> rokonának, a @<sName>haláláról, és visszaadtam neki a váltságdíjat - 150 000 pesót. Természetesen követelhettem volna a költségeim megtérítését, de ebben az esetben aligha.
+#TEXT 24
+@<sName> megbízott két kalózhajó elsüllyesztésével - '@<sShipName1>' és '@<sShipName2>', , amely a @<sShoreName> -ra @<sShoreType>ment. Nekem 15 nap alatt kell boldogulnom, mielôtt törlik a cache-t.
+#TEXT 25
+@<sName>s task was fulfilled, '@<sShipName1>' and '@<sShipName2>' were destroyed. Most sietnem kell a @<sCity> , mielôtt a @<sNameNom> eladja a foglyot rabszolgatartóknak.
+#TEXT 26
+Nem sikerült utolérnem a kalózokat. Mostanra már biztosan kiürítették a cache-t. Üres kézzel kell visszatérnem a @<sName> .
+#TEXT 27
+Nem sikerült megegyeznem a @<sName>. Most már fogalmam sincs, hogy vissza kellene-e térnem a @<sCity> , hogy találkozzam a @<sCharName>. Mit mondjak neki?
+#TEXT 28
+A küldetéssel kapcsolatos baklövésem után @<sName> a váltságdíjat 200 000 pesóra emelte. Nem a saját pénzembôl fizettem ki. Most már fogalmam sincs, hogy vissza kellene-e térnem @<sCity> , hogy találkozzam @<sCharName>. Mit mondjak neki?
+#TEXT 29
+A küldetéssel kapcsolatos baklövésem után @<sName> 200 000 pesóra emelte a váltságdíjat. A saját pénzembôl kellett kifizetnem. Most sietnem kell @<sCity> , hogy találkozzam @<sCharName>. Talán az ügyfél mégiscsak megtéríti a pluszköltségeimet?
+#TEXT 30
+Nem fizettem ki ilyen felháborító összeget. Egy túsz kiváltása egy dolog, de egy ültetvényes rabszolga megvásárlása már más tészta... Vajon a püspök megerôsítette az ôrséget az incidens után, vagy még mindig takarékoskodik?
+#TEXT 31
+@<sName> nem akar váltságdíj nélkül megválni foglyától. Nos, akkor vagy meg kell találnom a pénzt, vagy le kell mondanom az egész ügyrôl.
+#TEXT 32
+Elmondtam a @<sName> a fogoly haláláról. Úgy tûnik, most ugyanolyan reménytelen helyzetben van, mint amilyenbe korábban engem hozott.
+#TEXT 33
+Nem sikerült elpusztítanom a kalózhajókat @<sShipName1> és @<sShipName2>. Most üres kézzel kell visszatérnem a @<sName> .
+#TEXT 34
+Végre @<sName> a hajóm fedélzetén. Most már sietnem kell @<sCity> , hogy találkozzam @<sCharName> , mielôtt szívrohamot kap.
+#TEXT 35
+Eh ... Nem kellett volna ezt a lehetôséget választanom. Nem kellett volna veszekedni a @<sName>. Most már tényleg meg kell oldani a problémákat...
+#TEXT 36
+Eh ... Nem kellett volna ezt a lehetôséget választanom. Nem kellett volna feladni a @<sName> küldetést. Most a foglyot 250.000 pezóért kellett kiváltani.
+
+#QUEST CaptainComission2
+Melléküldetés: Utolsó kívánság
+#TEXT 1
+Kapitány @<sName>, mielôtt meghalt, megkért, hogy tájékoztassam a @<sShipType> '@<sShipName>', @<sCapName>kapitányt, hogy le fogják tartóztatni a @<sCity1>. A hatóságok kiszagoltak valamit róla... @<sShipTypeNom> a @<sCity2> hajóról indul, és 10-15 nap múlva érkezik meg a @<sCity1> kikötôbe. Utol kell érnem. Egy haldokló ember utolsó akaratát tiszteletben kell tartani.
+#TEXT 2
+Túlságosan elfoglalt voltam ahhoz, hogy a @<sCapName> figyelmeztessem a közelgô veszélyrôl. Gondolom, túl fogja élni, ha elég okos.
+#TEXT 3
+Teljesítettem a @<sName>feladatát, de nem segített a barátjának, arra hivatkozva, hogy elfoglalt. Okos srác, és egyedül is meg fogja oldani.
+#TEXT 4
+A kapitány @<sName> megkért, hogy segítsek neki titokban kivinni egy rakomány @<sGoods> a @<sShoreName>. Amikor visszautasítottam, egyszerûen elvitte a hajómat, és otthagyott egy sivatagi parton. Most a nulláról kell kezdenem... Ez történik azokkal, akik hajlandóak segíteni másokon.
+#TEXT 5
+Kapitány @<sName> megkért, hogy segítsek neki titokban kivinni egy rakomány @<sGoods> a @<sShoreName>. Amikor visszautasítottam, megpróbálta elvenni a hajómat. Nem kellett volna jobban próbálkoznia, mert leküldtem, hogy etesse meg a cápákat. Sajnos nem tudom, hogy hol van a cache.
+#TEXT 6
+A kapitány @<sName> megkért, hogy segítsek neki titokban kivinni egy rakomány @<sGoods> a @<sShoreName>. Amikor visszautasítottam, megpróbálta elvenni a hajómat. Minden vitorlával menekülnöm kellett.
+#TEXT 7
+A kapitány @<sName> megkért, hogy segítsek neki titokban kivinni egy rakomány @<sGoods> a @<sShoreName>. Mindent megkapok, ami nem fér be a rakterébe... Rögtön éjfél után kell kikötnöm a @<sShoreNameDat> .
+#TEXT 8
+Meggondoltam magam, és nem fogok foglalkozni a @<sName>. Hadd nézzen szembe egyedül a következményekkel.
+#TEXT 9
+Úgy tûnik, hogy csapdát állítottak a @<sShoreName> - a járôr túl gyorsan jelent meg. A @<sName> kapitány meghalt a csetepatéban. A tengerészek átfésülték az öblöt, de nem találták meg a rejtekhelyet. Talán a hatóságok már kiürítették...
+#TEXT 10
+A rakomány a raktérben van. Az én részem @<sGoodsQuantity> darab @<sGoods>. Itt az ideje, hogy elváljunk. Sietnünk kell, mielôtt a korona vadászokat küld a fejünkért.
+#TEXT 11
+A rakomány a raktérben van. Az én részem @<sGoodsQuantity> egység @<sGoods>volt. A kapitány @<sName> fél, hogy üldözésbe kerülhet, és kéri, hogy kísérjék a hajóját @<sShoreName>, a @<sShoreType>. Úgy döntöttem, hogy segítek neki, annál is inkább, mert tisztességes jutalmat ígért, @<sSum> pezót.
+#TEXT 12
+Az öböl kijáratánál már várt ránk egy járôrszázad. El kellett fogadnunk a csatát. @<sShipType> '@<sShipName>' térrel teli @<sGoods> elsüllyedt, és vele együtt a @<sName> kapitány is.
+#TEXT 13
+Elfogadtuk a csatát, és @<sShipType> '@<sShipName>' térrel tele @<sGoods> elsüllyedt... Nos, úgy tûnik, ez volt Isten akarata... A bátor kapitánynak @<sName> nem volt ideje élvezni az újonnan szerzett gazdagságát.
+#TEXT 14
+Én és a kapitány @<sName> úgy döntöttünk, hogy a legjobb, ha külön utakon járunk, hogy ne kössük magunkat kölcsönös kötelezettségekkel. Ô elment a @<sShoreName>, én pedig a saját dolgaimmal foglalkoztam.
+#TEXT 15
+Nem kísértem @<sShipType> '@<sShipName>' idôben, és a kapitány @<sName> nem volt hajlandó kifizetni a jutalmamat. Mégis, amúgy sem jöttem ki vesztesként.
+#TEXT 16
+A kapitány @<sName> csapdába csalt, és követelte, hogy adjam vissza a rakományt, vagy fizessek váltságdíjat aranyban. A @<sShoreName>hôs legénységének egy része már várt ránk. El kellett fogadnom a csatát.
+#TEXT 17
+A kapitány @<sName> csapdába csalt, és követelte, hogy adjam vissza a rakományt, vagy fizessek váltságdíjat aranyban. A @<sShoreName>hôs legénységének egy része már várt ránk. Ki kellett fizetnem neki @<sSum> pezót.
+#TEXT 18
+Kiderült, hogy a járôrkapitány @<sShipType>, @<sName>kapcsolatban áll a csempészekkel. Talán meg kellene látogatnom ôt az erôd tömlöcében, nem?
+#TEXT 19
+Kiderült, hogy az ôrjárat kapitánya @<sShipType>, @<sName>, egy piszkos történetbe keveredett némi elveszett rakománnyal. Talán meg kellene látogatnom az erôd tömlöcében, nem?
+#TEXT 20
+Nem sikerült megtalálnom a @<sName>kapitány cache-jét. Azt hiszem, nem kellene ezzel zaklatnom a @<sCity> kormányzót.
+#TEXT 21
+Kapitány @<sName> beleegyezett, hogy megmutatja nekem a rejtekhelyet, cserébe a tartalmának feléért. Elôször el kell rejtenem a kísérôt a hajómra, aztán majd én foglalkozom a többivel.
+#TEXT 22
+A @<sName> kapitány meghalt - és vele együtt a reményem is, hogy megtalálom a rejtekhelyet.
+#TEXT 23
+Teljesen elbuktam a kormányzó küldetését... Micsoda szégyen...
+#TEXT 24
+A @<sName> kapitány cache-je a @<sShoreName>. Fel kell készítenem a raktárat a @<sGoodsQuantity> egység @<sGoods>fogadására. Sietnünk kell, mielôtt megtalálják a rejtekhelyet.
+#TEXT 25
+Olyan ostoba voltam, hogy hagytam elszaladni @<sName> kapitányt! Elég sokat kereshettem volna.
+#TEXT 26
+Megtaláltuk a cache-t, @<sGoodsQuantity> egységek @<sGoods> kerültek a raktérbe. @<sSum1> ezek közül a kapitányé @<sName>. A @<sDays> napokban kell leszállítanom a @<sShoreName> a @<sShoreType>. Hadd üldözzék a kormányzó kopói a @<sName> kapitányt és értékes rakományát, és vegyenek fel engem is a listájukra.
+#TEXT 27
+Végül a kapitány @<sName> felfedte a rejtekhelyét, de úgy gondoltam, hogy nem fogom megosztani vele. Megpróbálta vitatni a döntésemet, és fizetett érte. És most @<sGoodsQuantity> egység @<sGoods> az enyém.
+#TEXT 28
+Végül a kapitány @<sName> felfedte a rejtekhelyét, de nem bírta elviselni a hírt, hogy az egész rakományt átadom a hatóságoknak. Sebészeti beavatkozást kellett alkalmaznom, aminek következtében a kapitány meghalt. Most el kell mondanom a @<sCity> kormányzónak, hogy hol van a rejtekhely.
+#TEXT 29
+Nem szóltam a hatóságoknak a @<sName>kapitány rejtekhelyének helyérôl. Gondolom, a segítségem nélkül is megtalálják.
+#TEXT 30
+A @<sCity> kormányzójának feladata befejezôdött. Pénzbeli kompenzáció helyett egy nagyon tisztességes ajándékot kaptam.
+#TEXT 31
+Elkéstünk, és nem volt vevô a @<sShoreName>. A kapitány @<sName> felajánlotta, hogy megveszem a részét, de nem látom okát, hogy kidobjam a pénzemet a rakományért, ami amúgy is a rakományomban van. A vitánkat a párbaj döntötte el.
+#TEXT 32
+Elkéstünk, és nem volt vevô a @<sShoreName>. A kapitány @<sName> felajánlotta, hogy megveszem a részét @<sSum> pezóért. Beleegyeztem, cserébe a kapitánytól kaptam egy szép ajándékot. Barátként váltunk el egymástól.
+#TEXT 33
+Úgy tûnik, a kapitány @<sName> nem tudta megosztani a zsákmányt a legénységével. Csökkentenem kellett azoknak a számát, akik hajlandóak voltak megkapni a részét. Maga a kapitány sem bírta már sokáig. Tehát a megállapodásunk az egyik partner halála miatt érvénytelen. Az egész rakományt megtarthatom.
+#TEXT 34
+Úgy tûnik, a kapitány @<sName> nem tudta megosztani a zsákmányt a legénységével. Csökkentenem kellett azoknak a számát, akik hajlandóak voltak megkapni a részét. Emellett a kapitány felajánlotta, hogy megveszem a részét @<sSum> pesóért. Beleegyeztem, és cserébe a kapitány szép ajándékot adott nekem. Barátként váltunk el egymástól.
+#TEXT 35
+Úgy tûnik, a kapitány @<sName> nem tudta megosztani a zsákmányt a legénységével. Csökkentenem kellett azoknak a számát, akik hajlandóak voltak megkapni a részét. Emellett a kapitány felajánlotta, hogy megveszem a részét @<sSum> pesóért. Azt is kérte, hogy vegyem be ôt a legénységembe, de én visszautasítottam. Túlságosan is független.
+#TEXT 36
+Úgy tûnik, hogy a kapitány @<sName> nem osztotta meg a zsákmányt a legénységével. Le kellett csökkentenem azoknak az összegét, akik részesedést akartak. Emellett a kapitány felajánlotta, hogy @<sSum> pezóért kivásárolja a zsákmányt. Így hát megtettem. És fel is vettem ôt, mint tisztet a parancsnokságom alá. Mindenki ilyen harcosokat keres.
+#TEXT 37
+Elkéstem, és az ôrjárat kapitányát @<sShipType>, @<sName>, az egész legénységével együtt kivégezték. Többet kellene megtudnom róla.
+#TEXT 38
+Elkéstem, és az ôrjárat kapitányát @<sShipType>, @<sName>, az egész legénységével együtt kivégezték. De arra még volt elég ideje, hogy a partra vigye a @<sShipTypeQuest>rakterének tartalmát.
+#TEXT 39
+Kiderül, hogy a dolgok nem olyan egyszerûek, mint amilyennek látszanak. Az ôrjárat kapitányát @<sShipType>, @<sName>legénységének egy részével együtt kivégezték, de nem volt bizonyíték a tettére. Találkoznom kellene @<sCharName>, a @<sShipType> '@<sShipName>'.megrögzött egykori ágyúsával.
+#TEXT 40
+A @<sShipType> '@<sShipName>', @<sName>egykori ágyúöntôje elmesélte nekem a @<sShipTypeQuest> '@<sShipNameQuest>'. halálának teljes történetét, de az a zavarodott fickó felháborító árat kért a rejtekhelyrôl szóló információkért. Nem voltam hajlandó fizetni neki.
+#TEXT 41
+A @<sShipType> '@<sShipName>' egykori ágyúsával folytatott beszélgetés nagyon gyümölcsözô volt. Meg kell találnom @<sSum> pesót - ezt a @<sName> kérte a rejtekhelyrôl szóló információkért.
+#TEXT 42
+Feladtam az egész ügyet a @<sName>kapitány cache-ével. Az egykori ágyús @<sCharName> bocsásson meg nekem, de egyszerûen túl sokat kért érte, és nekem fontosabb dolgom is van.
+#TEXT 43
+A @<sShipType> '@<sShipName>', @<sName>egykori ágyúöntôje elmesélte nekem a teljes történetet a @<sShipTypeQuest> '@<sShipNameQuest>'. haláláról, mint kiderült, a cache valóban létezik, és tartalmazza a teljes rakományt @<sShipTypeQuest> - @<sSum> darab @<sGoods> ott tárolják. El kell készítenem a rakteret, és éjfél után el kell jönnöm a @<sShoreName> - a @<sName> ott fog várni rám.
+#TEXT 44
+Ostoba módon elszalasztottam a lehetôséget, hogy felkutassam a @<sName>kapitány rejtekhelyét! Talán @<sCharName> nem várt meg, vagy talán úgy döntött, hogy engem tesz fel. Akárhogy is, elvesztegetett idô és pénz volt...
+#TEXT 45
+A csempészek kitakarították a @<sName>kapitány rejtekhelyét. Vagy talán a @<sCharName> úgy döntött, hogy engem is bevet, és mindkét fronton dolgozott. Akárhogy is, ez elvesztegetett idô és pénz volt...
+#TEXT 46
+A csempészek elôttem találták meg a @<sName> kapitány rejtekhelyét. Erôszakkal kellett visszaszereznem a rakományt. Sajnos az ágyús @<sCharName> elpusztult. A sors iróniája, hogy a szerencsétlenül járt @<sShipType> '@<sShipName>' legénységének minden tagja meghalt, és egyiküknek sem sikerült hasznát vennie hôsies vállalkozásuknak... Elvettem minden árut, ami belefért a rakterembe - @<sSum> egységnyi @<sGoods>.
+#TEXT 47
+A csempészek elôttem találták meg a @<sName> kapitány rejtekhelyét. Erôszakkal kellett visszaszereznem a rakományt. Elvettem minden árut, ami belefért a rakterembe - @<sSum> egységnyi @<sGoods>. Most az ágyúsok @<sCharName> szállítása a @<sCity>településre.
+#TEXT 48
+A @<sShipType> '@<sShipName>' @<sCharName> egykori ágyúsától a @<sCity>kikötôben váltunk meg. Hálája jeléül egy értékes dolgot adott nekem ajándékba. Legalább valaki a @<sShipType>legénységébôl hasznát vette a kockázatos ügyüknek.
+#TEXT 49
+Kiderült, hogy a járôrkapitányt @<sShipType>, @<sName>, letartóztatták tengeri banditizmusért. Talán meg kellene látogatnom az erôd tömlöcében, nem?
+#TEXT 50
+Kiderült, hogy a járôrkapitányt @<sShipType>, @<sName>, letartóztatták tengeri banditizmusért, és most a @<sCity> kormányzója keresi a rejtekhelyét. Vállaltam, hogy segítek neki ebben az ügyben, és engedélyt kaptam, hogy meglátogassam a foglyot.
+#TEXT 51
+Teljesen megfeledkeztem a kapitánnyal kötött szerzôdésrôl a rakományával ... És a pokolba vele ... Majd megoldom valahogy. A kapitányt pedig az elsô városban teszem ki.
+#TEXT 52
+Azt hiszem, a kormányzó nem lesz szegényebb attól, hogy becsaptam. És a kapitány... Ahogy mondják: kivágják az erdôt - repül a forgács.
+#TEXT 53
+Találtunk egy rejtekhelyet, @<sGoodsQuantity> darabokat @<sGoods> rakodtak a raktérbe. Ezek közül @<sSum1> a társamé. A @<sDays> napokban kell elszállítani a @<sShoreName>, ami a @<sShoreType>közelében van. Úgy döntöttem, hogy nem adom át a kapitányt a hatóságoknak, hanem elbújok vele! Most pedig keressenek meg a kormányzó vérebek ... sok szerencsét nekik ebben!
+#TEXT 54
+Úgy tûnik, a @<sName> kapitány nem tudta megosztani a zsákmányt a legénységével. Csökkentenem kellett azoknak a számát, akik meg akarták kapni a részét. Aztán felajánlotta, hogy megveszi tôlem. De nem voltam hajlandó fizetni neki. A párbaj eldöntötte a kérdésünket az én javamra.
+#TEXT 55
+A kapitány @<sName> véletlenül meghalt, amikor a börtönbôl a hajómra tartott. Kár érte. Most már elfelejtheted a rejtekhelyet.
+
+#QUEST Convict
+Melléküldetés: Szökevények
+#TEXT 1
+A @<sIslandType> dzsungelben találkoztam @<sConvictNum> szökevény elítéltekkel. Úgy döntöttem, hogy befogadom ôket a legénységembe. Éjfél körül le kell kötnöm a @<sShoreName>.
+#TEXT 2
+A szökevény elítéltek, akikkel a @<sIslandType>oldalon találkoztam, megkértek, hogy szerezzek nekik egy tartán vagy hosszú csónakot, és megígérték, hogy a dupláját fizetik. Az új kádjukat a @<sShoreName>kell majd elhoznom. A határidô holnap reggel lejár.
+#TEXT 3
+Meggondoltam magam - nem segítek az elítélteknek. Nekik kell egyedül végigcsinálniuk.
+#TEXT 4
+Elhoztam a hajót a @<sShoreName>. A szökevény elítéltek teljes egészében kifizettek.
+#TEXT 5
+Elhoztam a hajót a @<sShoreName>. De ahelyett, hogy fizettek volna nekem, az elítéltek nagyon tisztességes ajándékot adtak. Nekem ez megfelelt.
+#TEXT 6
+Elhoztam az edényt a @<sShoreName>. De az átkozott fegyencek úgy döntöttek, hogy engem tesznek fel. El kellett magyaráznom nekik, hogy az embernek hûnek kell maradnia a szavához. Kár, hogy ez a lecke már nem lesz hasznukra.
+#TEXT 7
+Az elítéltek tegnap este látták, ahogy a @<sShipName> nevû hajóra @<sGoodName>rakodtak. Akárkik is voltak, nem mehettek messzire.
+#TEXT 8
+A @<sIslandType> dzsungelben találkoztam @<sConvictNum> szökevény elítéltekkel. Azt kérték, hogy szállítsam ôket a @<sCity>világítótoronyhoz. Beleegyeztem, hogy ezt megteszem @<sSum> pezóért. Éjfél körül el kell küldenem értük egy mentôcsónakot a @<sShoreName>.
+#TEXT 9
+Nem voltam hajlandó az elítélteket a fedélzetre venni, ami egészségtelen agressziót váltott ki közöttük. A magam módján kellett megbékítenem ôket.
+#TEXT 10
+Az elítéltek a fedélzeten vannak. Most már el kell tûnnöm, mielôtt egy ôrjárat felbukkan.
+#TEXT 11
+Az elítélteket leszállítottam a @<sMayak> , és megkaptam a jutalmamat - @<sSum> pezó aranyrudakban. Ahogy mondják, a pénznek nincs szaga...
+#TEXT 12
+Az elítélteket a @<sMayak>címre szállítottam. De ahelyett, hogy fizettek volna nekem, az elítéltek nagyon tisztességes ajándékot adtak. Nekem ez tetszett.
+#TEXT 13
+Az elítélteket a @<sMayak>címre szállítottam. De az átkozott elítéltek úgy döntöttek, hogy engem adnak fel. El kellett magyaráznom nekik, hogy az embernek hûnek kell maradnia a szavához. Kár, hogy ez a lecke már nem lesz hasznukra.
+
+#QUEST HoldQuest
+Melléküldetés: Vezetés a fogoly kapitánytól
+#TEXT 1
+A fogoly kapitány @<sName> elmondta, hogy egy gazdag kereskedô @<sGoods> szállítja @<sCityFrom> a @<sCityTo>. Idônként kísérôt bérel. Megpróbálhatná valaki elfogni a hajóját '@<sShipName>' kikötôhöz közeledve. Ha a kapitány igazat mondott, a zsákmány nagyon gazdag lesz. A foglyot egyébként szabadon engedték.
+#TEXT 2
+Mielôtt sikerült volna elôkészítenem a támadást, '@<sShipName>' felemelte a horgonyt és elhajózott. Nem reménykedem abban, hogy még egyszer esélyem lesz a nyomára bukkanni.
+#TEXT 3
+Nem sikerült elfogni a hajót '@<sShipName>' megrakott @<sGoods>. Nem reménykedem abban, hogy lesz még esélyem a felkutatására.
+#TEXT 4
+Sikerült megörökítenem a hajót '@<sShipName>' megrakott @<sGoods>.
+#TEXT 5
+A csata hevében hajó '@<sShipName>' süllyedt, és a teljes rakomány @<sGoods> most a tengerfenéken pihen!
+#TEXT 6
+A fogoly kapitány @<sName> elmondta, hogy a @<sCity> városban van egy barátja, @<sNameChar>, aki állítólag nagy összegû váltságdíjat tud fizetni egykori társa kiszabadításáért. Azt hiszem, meg kell látogatnom ezt a 'barátját' .
+#TEXT 7
+Az a fogoly kapitány @<sName> próbált rám uszítani! Hát, ezt nem ússza meg! Azonnal felakasztatom!
+#TEXT 8
+A @<sCity> kocsma tulajdonosa azt tanácsolta, hogy látogassam meg a @<sFoundChar>; ha szerencsém van, ott meglátom a @<sName> .
+#TEXT 9
+Ostoba módon hagytam, hogy a @<sName> elillanjon! Szép váltságdíjat kaphattam volna a fogolyért.
+#TEXT 10
+Az a fogoly kapitány @<sName> próbált rám uszítani! Hát, ezt nem ússza meg! Azonnal felakasztatom!
+#TEXT 11
+Fogoly kapitány @<sName> nem vert át. A társa @<sNameChar> minden további nélkül kifizette @<sSum> pezót. Meg kell parancsolnom a bosunnak, hogy küldje a partra a szenvedônket.
+#TEXT 12
+A fogoly kapitány @<sName> elmondta, hogy a @<sCity> városban él egy @<sNameChar>, aki hajlandó eladni a @<sPirateName>kincséhez vezetô térképet. Nem tudom, hogy ez igaz-e vagy sem, de a foglyot akkor is el kellett engednem. Meg kell látogatnom azt a @<sNameChar>, mielôtt magának követeli a kincset.
+#TEXT 13
+Nem tudom, hogy a fogoly kapitány @<sName> becsapott-e, vagy csak úgy alakult, de nem találtam meg a @<sNameChar>, a térkép tulajdonosát... És nem hiszem, hogy valaha is fogom...
+#TEXT 14
+Ostoba módon hagytam, hogy a @<sName> kicsússzon a kezeim közül!
+#TEXT 15
+Vettem egy @<sPirateName> térképet @<sSum> pezóért. Csak remélni tudom, hogy a kincs még mindig ott van.
+#TEXT 16
+Úgy döntöttem, hogy nem veszem meg a térképet a @<sName>. @<sSum> - egyszerûen túl drága, annál is inkább, mert lehet, hogy a kincs már nincs is ott...
+#TEXT 17
+A ládában nem volt semmi értékelhetô. Talán a kincs tulajdonosa már elôttem ott volt - vagy az a gazember @<sName> talált ki egy eredeti módszert, hogy pénzt keressen a hozzám hasonló bolondokon.
+#TEXT 18
+Fogoly kapitány @<sCapName> nem hazudott. Minden kincs ott volt. Na ez aztán a szerencse!
+
+#QUEST zpq
+A veszélyes rakomány
+#TEXT 0
+Csempészek suttogták, hogy a Maine-en lévô egyik spanyol kolónián nagy gond volt a helyi erôd puskapor-készleteivel. Ha van rá esély, beszélned kell a parancsnokokkal - talán valaki meg akarja majd venni tôlem ezt a veszélyes szállítmányt. Csak két probléma van: egyrészt azt mondják, hogy a parancsnokság nem foglalkozik a gazemberekkel, másrészt a társaság nagyon nagy lesz - vigyázni kell a hajó befogadóképességére és biztonságára. De errôl majd késôbb - kezdésnek, hogy általában megtaláljuk ezt a vevôt.
+#TEXT 1
+Cumana erôdjének parancsnoka megkért, hogy szállítsak neki egy adag puskaporos hordót - 15 000 db. A 100 000 pezó jutalom bizonyára nagyon jövedelmezônek tûnik. Úgy döntöttem, hogy elvállalom ezt az ügyet, bár ennyi lôpor a raktérben biztosan veszélyes.
+#TEXT 2
+A rakományt leszállítom, és az erôd parancsnokának rossz emlékezete ellenére mégis sikerült megkapnom a nekem járó jutalmat.
+#TEXT 3
+Ki gondolta volna, hogy az erôd parancsnoka csak egy közönséges csaló! Kihasználva a pozícióját, a megbeszélt összegnek csak a felét fizette ki nekem! Úgy döntöttem, hogy ez még mindig jobb, mint a semmi, és amúgy is túl jól ôrzött...
+#TEXT 4
+Az a görény tiszti egyenruhában megpróbált átverni, és kisajátítani a jutalmam felét! Az ilyen árulást nem lehet megbocsátani! El kellett vennem a hideg holttestétôl, ami az enyém.
+#TEXT 5
+Az a leendô machinátor a megígért összegnek csak a felét akarta kifizetni nekem. Meg kellett magyaráznom neki, hogy kinek van igaza ebben az esetben. Az érveim nagyon meggyôzônek bizonyultak, és végül a parancsnok még negyedével többet is fizetett nekem. Mégis biztos vagyok benne, hogy amúgy sem jött ki vesztesként.
+#TEXT 6
+Úgy döntöttem, hogy visszautasítom ezt a küldetést. Százezer pezó rengeteg pénz, de a saját életemet még mindig többre értékelem ennél.
+#TEXT 7
+A város kijáratánál néhány gorilla közelített meg, akik nyilvánvalóan rám vártak. Kedvesen megkértek, hogy adjam át nekik az összes pénzt. Bizonyára az a büdös patkány bérelte fel ôket. Nos, még egyszer csalódást kellett okoznom neki...
+#TEXT 8
+Az erôd kijáratánál néhány gorilla szólított meg, akik nyilvánvalóan rám vártak. Kedvesen megkértek, hogy adjam vissza nekik az összes pénzt. Bizonyára az a büdös patkány bérelte fel ôket. Úgy döntöttem, hogy nem fogok velük packázni - nagyon jól fel voltak fegyverezve. El kellett adnom az összes pénzemet...
+
+#QUEST NoiseCemetery
+Kísérteties temetô
+#TEXT 1
+A temetôôr a szigeten @<sCity> halálra van rémülve. Elmondása szerint már több éjszakája furcsa zajok és hátborzongató nyögések hallatszanak, mintha szellemek lennének. Persze nem nagyon hiszek ezekben a mesékben, de úgy döntöttem, segítek szegény öregnek, és megnézem, mi folyik ott. Legrosszabb esetben vagy meg kell küzdenem néhány martalóccal, vagy az életemért kell futnom, ha ez valóban egy szellem. Csak meg kell várnom az alkonyatot.
+#TEXT 2
+Ez egyszerre vicces és szomorú. Ez a sok zaj és nyögés egyáltalán nem egy szellem jajveszékelése, hanem csupán egy szerelmespár titkos találkozója. A szüleik ellenzik, hogy találkozzanak, ezért gondolták, hogy keresnek egy megfelelô, félreesô helyet. Most már megnyugtathatom az ôrséget. Útközben ki kell találnom, mit mondjak neki.
+#TEXT 3
+Úgy döntöttem, hogy nem rontom el a szerencsétlen pár életét, és nem beszélek róluk az ôrnek. Fiatal szerelem... Remélhetôleg minden jóra fordul a számukra.
+#TEXT 4
+Elmondtam az igazságot az ôrnek. Elôször persze dühös volt, de végül megnyugodott. Mindannyian vétkeztünk. Ennek a párnak egyszerûen nem volt más hely, ahol láthatták volna egymást. Fiatal szerelem... Remélhetôleg minden jóra fordul.
+#TEXT 5
+Úgy döntöttem, hogy nem érdekelnek az ôr által elképzelt zajok és szörnyû nyögések. Az én idôm sokkal értékesebb.
+
+#QUEST SixCaptains
+Hat kapitány
+#TEXT	1
+Talán ez az elsô alkalom, hogy egy rövid találkozás valakivel, akinek sem munkája, sem dolga nem volt velem, arra késztet, hogy bejegyzést jegyezzek fel ebbe a naplóba. Nem értem, miért tett rám ekkora benyomást ez a pap. Nem tudom a nevét, és néha ostobaságokat beszélt, de emlékezetessé tette magát. Már kétszer találkoztunk, és ezt akár véletlen egybeesésnek is lehetett volna nevezni. De ha újra találkozunk...
+El kell ismernem, az érdeklôdése kissé hízelgô. Az a tekintet a szemében olyan... értékelô. Mintha csodálná a teljesítményemet. És ki ne csodálná? Két legendás hajó, két kapitány, akiknek a története az egész szigetvilágban elterjedt - mindkettô az én kezem által esett el.
+Kíváncsi vagyok, mit fog mondani, amikor megtudja, hogy mit fogok tenni a jövôben? A szigetvilág hatalmas, de a hírnevem, úgy tûnik, gyorsabban növekszik, mint gondoltam.
+#TEXT	2
+Diego de Landa - így hívnak téged. Tehát újra találkozunk. Folytatás következik.
+
+#QUEST SharlieTutorial
+A prológus
+#TEXT	0
+Hogy mennyire elegem van ebbôl az egészbôl! Öt nap... és végre a szárazföldre lépek. Az elmúlt két hónap egy teljes rémálom volt, és egyszerûen nem értem, hogy épeszû ember hogyan kötheti az életét a tengerhez!
+Egyelôre - a kapitány vár rám. Mostanában nem nagyon kedvelem ôt. Már semmit sem szeretek itt.
+#TEXT	0.1
+Minden jel szerint érdekes este vár rám. Egyelôre a kapitány szabad kezet adott nekem... a hajó keretein belül, ha-ha! Bármelyik pillanatban visszatérhetek hozzá, és véget vethetek ennek a fárasztó napnak.
+#TEXT	1
+500 pezóért eladhatok 3 üveg rumot Henry matróznak a felsô fedélzeten. Úgy tûnik, hogy a hajóskapitány az ôrszobán különféle árukkal kereskedik. Talán alaposan át kellene kutatnom a hajót, és beszélnem kellene a többi matrózzal.
+#TEXT	2
+Még jó, hogy nem iszom rumot, és így tisztességes üzletet tudtam kötni Henryvel. Úgy tûnik, a legénység értékelte az erôfeszítéseimet.
+#TEXT	3
+Paul matróznak megsérült a háta ágyúgolyókat cipelve, és megkért, hogy segítsek neki. A golyók a raktérben találhatók - bizonyára a végtelen ládák egyikében hevernek.
+#TEXT	4
+Alighogy odavonszoltam az átkozott ágyúgolyókat Paulhoz. Az a matróz kissé gyanúsan viselkedik, de jutalmul kaptam egy üveg rumot. Értékes jutalom, tekintve, hogy mekkora a kereslet errefelé erre a méregre.
+#TEXT	5
+Megtaláltam a kapitány kulcsát! Kíváncsi vagyok, milyen kincseket nyit ki...
+
+#QUEST DWH
+A gyógyulás sötét vizei
+#TEXT	1
+St John's-ban azt suttogják, hogy a helyi cigány az utolsó remény Thomas Morrison súlyosan beteg lányának. Ám ô makacsul megtagadja a segítséget. Vajon tényleg nem érez szánalmat a szegény lány iránt?
+#TEXT	2
+A cigányasszony arról tájékoztatott, hogy ô nagyon is hajlandó segíteni a lányon, de Thomas határozottan elutasítja, hogy beengedje a házába. Szeretném meglátogatni Thomast, és kideríteni, miért utasítja el a lány megmentésének utolsó reményét. A háza a város északi részén van, a fal mellett, egy oszlopos, fényûzô kúria mellett.
+#TEXT	3
+A helyi egyház papja kiátkozással fenyegette meg Thomas Morrisont, ha elfogadja a cigány segítségét, hogy megmentse súlyosan beteg lányát. Thomas most az egyház kiesésétôl való félelme és a lánya betegsége miatti kétségbeesése között vergôdik. Megpróbálja meggyôzni a papot, hogy a nagyobb jó - a lány életének megmentése - érdekében hunyjon szemet e bûn felett!
+#TEXT	4
+Megkerülési lehetôségeket kell találnom. A pap kétségtelenül makacs, és sok tekintetben igaza van. De mégsem tudok egyetérteni vele. Ha van esély arra, hogy a lányt talpra állítsuk, meg kell ragadni.
+#TEXT	5
+Sikerült meggyôznöm a papot. Beleegyezett, hogy szemet huny a cigányok kezelése felett, ha Tamás ôszinte bûnbánattal és jócselekedetekkel megváltja magát Isten elôtt.
+   Most meg kell találnom a mangarosát - a cigány bájital kulcsösszetevôjét. Ezt a növényt kellemes illata, magas szára és jellegzetes, csipkézett levelei jellemzik. Mangarosát egy barlangban találok a városon kívül, néhány 'gusztustalan alak' - valószínûleg csavargók vagy banditák. Nos, annál jobb. Lehet, hogy nem is kell fizetnem nekik.
+#TEXT	6
+Mindent megtettem, ami tôlem telt. Már csak a cigány képességeiben kell reménykednem. Annyira belemerültem a kislány megmentésébe, hogy teljesen megfeledkeztem a saját dolgaimról. Egy hónap múlva meglátogatom Antiguát. Addigra Esther teljesen felépül.
+#TEXT	7
+A cigány kész titokban segíteni a lányon, hogy Tamás ne vonja magára az egyház haragját. Most az a legfontosabb, hogy meggyôzzük, hogy bízzon bennünk.
+#TEXT	8
+Tamás nekem adta Eszter személyes tárgyát - jáde gyöngyöket. Most már csak két szár daturát, egy szár ipecacot, egy szár verbénát kell találnom, és máris visszatérhetek a cigányhoz.
+#TEXT	9
+A cigány és az én erôfeszítéseimnek köszönhetôen Eszter betegsége legyôzetett! Jó tudni, hogy nem volt hiábavaló minden erôfeszítés, és a lány most már egészséges.
+#TEXT	10
+A cigánnyal tett erôfeszítéseink legyôzték Eszter betegségét! Szívet melengetô érzés, hogy nem volt hiábavaló minden erôfeszítés, és a lány most már egészséges. A szentesi cigányasszonytól mindig tudok mangarózát venni - három szárat háromszázötven aranydublonért.
+#TEXT	11
+A cigánynak most már minden megvan, ami a gyógyító fôzet elkészítéséhez szükséges. Holnap reggel el kell vennem tôle a gyógyszert, és el kell vinnem Thomasnak.
+
+#QUEST TPZ
+Törvényes kereskedelem
+#TEXT 1
+Bas-Ter polgárai panaszkodnak, hogy nincs elég alkohol a kocsmában. A fogadós folyamatosan ígérget, hogy rendbe hozza a helyzetet, de eddig semmi sem jött össze. Úgy tûnik, komoly bajban van. És ahol baj van, ott lehetôség nyílik némi pénzkeresésre is.
+#TEXT 2
+A fogadós elmondta, hogy az antiguai beszállítója egy kalózrablás során elvesztette a szeszfôzdéjét, és legalább két hónapig nem fog tudni szállítani semmit. A fogadós hajlandó bármilyen tétel bort és rumot elfogadni, feltéve, hogy a kereskedônek jó híre van. Ezúttal nincs okmányellenôrzés, de a jövôben csak becsületes és megbízható kereskedôkkel fog együtt dolgozni. Talán meg kellene próbálnom nem hivatalos csatornákon keresztül beszerezni az árut... Ha jól játszom, akkor pénzre lehet szert tenni.
+#TEXT 3
+A csempészek most nem tudnak alkoholt kínálni. Viszont van egy kereskedô a kormányzó rezidenciája közelében, aki csendben kereskedik kisebb mennyiségû szeszes itallal. Talán érdemes lenne meglátogatni.
+#TEXT 4
+Sikerült megtalálnom a földalatti szeszkereskedôt. Elôször azt hitte, hogy a hatóságok ügynöke vagyok, de meggyôztem az ellenkezôjérôl. Ha segítek neki legalizálni az üzletét, a jövôben nagyon kedvezô feltételekkel vehetek tôle bort és rumot. De most itt az ideje, hogy meglátogassam a fogadót - talán még néhány dublont tudok keresni ezen az üzleten.
+#TEXT 5
+Megállapodtam a fogadósokkal, az én feltételeim szerint. Hajlandó 240 dublont fizetni 100 üveg borért és 100 üveg rumért, most és a jövôben is. Ideje legalizálni Christian üzletét.
+#TEXT 6
+Megállapodtam a fogadósokkal. Hajlandó 200 dublont fizetni 100 üveg borért és 100 üveg rumért, most és a jövôben is. Ideje legalizálni Christian üzletét.
+#TEXT 7
+A fogadós boldog - a kocsmában ismét folyik az alkohol. Christian is boldog - nagyszerû ügyfelet szerzett, és az üzlete most már legális. Most itt az ideje, hogy a saját hasznomra gondoljak ebben az üzletben. Christianra!
+#TEXT 8
+Azon kaptam magam, hogy közvetítôt játszom. Furcsa érzés. Mindenki elégedett: a kocsma újra élénk, Christian valószínûleg számolja a rá záporozó dublont, nekem pedig most már van egy megbízható szeszszállítóm a Karib-tengeren. És egyszer sem kellett kardot rántanom. Hihetetlen.
+#TEXT 9
+Éppen élveztem, hogy most az egyszer minden simán ment, amikor a kikötôben megtámadott egy kalózhajó. Mint kiderült, az ellátási problémák nem véletlenek voltak - az egész egy terv része volt, amit a hajó kapitánya szôtt, hogy megpróbálja átvenni a Bas-Ter kocsma ellátási vonalát. Ezúttal kudarcot vallott. Megtanulta a halálos leckét.
+#TEXT 10
+A tengeren megtámadott egy kalózhajó. Hogy kik voltak és mit akartak - soha nem fogom megtudni. A hajójuk a fenékre süllyedt, magával ragadva minden választ.
+#TEXT 11
+A szigeten a kereskedelmi szabályok igen egyszerûnek bizonyultak: havonta száz dublont a városi kincstárba adóként és idôben történô jelentéstétel. Azt hiszem, Christian remekül megbirkózik ezekkel a követelményekkel. Most pedig, hogy átadjam a jó hírt a gazembernek - minden tökéletesen ment.
+
+#QUEST GS
+Az igazságosság peremei
+#TEXT	1
+Merész merényletet követtek el a belize-i kikötôi hatóság vezetôje ellen. A támadónak sikerült elmenekülnie, és most ô lett az üldözött. A pletykák szerint a hivatalnok vérdíjat tûzött ki a fejére. Nos, az ellenség félelmetesnek tûnik - kétszer is meg kell gondolnom, mielôtt utána megyek.
+#TEXT	2
+A kikötô vezetôje azt állítja, hogy fogalma sincs, ki és miért támadta meg. A támadót közönséges ôrültnek nevezi, aki a Karib-térségben tucatjával fordul elô. Lehet, hogy ez nem hangzik meggyôzôen, de nem érdekel. Kétszáz dublon jutalom van kitûzve ennek “ôrültnek” fejére. Ez az, ami igazán számít. Elkezdem a keresést a közeli öblökben és barlangokban. A szökevény valószínûleg ott bujkál az igazságszolgáltatás elôl.
+#TEXT	3
+Kész is van. Ideje jelentést tenni a kikötôi fônöknek, és átvenni a jól megérdemelt jutalmamat. És mégis, talán meg kellett volna hallgatnom, amit a zsoldos mondott. Elég meggyôzôen hangzott. Másrészt, ki ne próbálna alkudozni az életéért, még a leghalványabb reménybe is kapaszkodva? Valószínûleg ez is csak egy újabb trükk volt.
+#TEXT	4
+A kikötôi fônök teljes egészében kifizette a pénzt, még a megbeszéltnél is bôkezûbben. Állandó ötven százalékos kedvezményt ajánlott fel egy hajó dokkolására bármilyen idôszakra. De ez a nagylelkûség csak tovább mélyíti a gyanúmat. Mi van, ha a zsoldos igazat mondott? Ha valóban kalózokkal találkozott, miért nem hívta az ôrséget? Miért nem említette, amikor a “gyilkos”után küldött? Mégis, ez mind csak spekuláció. Ami megtörtént, megtörtént, és talán csak az idô fogja kideríteni az igazságot. Tovább kell lépnem.
+#TEXT	5
+A kikötôi fônök egy igazi gazember! Mosolyogva int a bajtársaimat a tengerre, majd lazán eladja a hajóútvonalaikat a kalózoknak. A hozzá hasonló emberek nem maradhatnak büntetlenül. Megvárom az alkonyatot, és elintézem. Elintézem. A mocskos tettei leleplezôdnek. A zsoldos által nekem adott bankjegyek a házában maradnak, szem elôtt. Hadd lássa az egész város, hogy milyen is ô valójában. Ironikus, hogy a börtön közelében lakik - jogosan kellene, hogy rab legyen.
+#TEXT	6
+A fattyú halott! Már csak a jegyzeteket kell otthagynom és eltûnnöm, mielôtt az egész helyôrség riadókészültségbe kerül.
+#TEXT	7
+A kikötôi fônök nincs többé. Nem fog senkit sem küldeni a kalózok kezére. Ma egy kicsit jobb a világ.
+
+#QUEST OS
+Régi számok
+#TEXT 1
+A Puerto Principe-i kocsmáros valahogy elvesztett egy egész hordó ritka, a régi Európából importált gint. Ha az eltûnt áru nem kerül elô, szegény fickó komoly bajba kerülhet. A pánikból ítélve ezt a szállítmányt valaki fontosnak szánták - különben minek ez a nagy felhajtás?
+#TEXT 2
+A gint a kocsmáros orra elôl lopták el. Most az élete egy hajszálon függ - a titokzatos ügyfél nyilvánvalóan nem olyan ember, aki megbocsátja a hibákat. Százötven dublont ajánl fel annak, aki visszaszerzi a hordót. Van néhány ötletem. Elsô lépés: kérdezzük ki a matrózokat. Talán valamelyikük látott valamit.
+#TEXT 3
+Ez az egész történet tényleg gyanúsan hangzik. De azt hiszem, van egy elméletem arról, hogy mi történt valójában. Ideje beszélni a pincérnôvel.
+#TEXT 4
+A pincérnô nyomás alatt bevallotta, hogy az egész jelenetet egy Jack Wales nevû személy rendezte meg. A 'Sea Beast', kapitányával együtt elég nagyot alakítottak, hogy ellopják a hordót. Micsoda erôfeszítés a ginért! Úgy tûnik, nem csak ivók, hanem igazi ínyencek. A tolvaj háza csak néhány lépésre van - pont a kocsmával szemben.
+#TEXT 5
+Még éppen idôben sikerült visszaadnom a hordót a kocsmárosnak, megmentve ezzel a bôrét a komoly bajtól. Az igazat megvallva, jól meghálálta: a dublónok mellett élethosszig tartó jogot kaptam a kocsmájában való ingyenes italozásra és szállásra. Ami a pincérnôt illeti, bölcsen eltûnt - a kocsmáros hamar rájött, hogy benne volt a cselszövésben.
+#TEXT 6
+A 'Sea Beast' legénysége követte a kapitányukat. Megérdemelték ezt a sorsot? Ki tudná megmondani... De egy dolog biztos - kétszer is meg kellett volna gondolniuk, mielôtt kihívnak engem.
+
+#QUEST UV
+Lopott emlék
+#TEXT 1
+Az a hír járja, hogy Julie d'Armagnac, magának a kormányzónak az unokahúga, szomorúbb, mint valaha Port-au-Prince-ben. Egykor ragyogó és vidám volt, most pedig komorabbul járkál, mint egy viharfelhô. Senki sem tudja pontosan, mi változtathatta meg ennyire a lányt, de nyilvánvalóan valami komoly dolog történt.
+#TEXT 2
+Julie nehéz helyzetbe került. Ellopták a szívének kedves nyakláncot. Nem fordulhat az ôrökhöz - nagybátyja, Hispaniola francia részének kormányzója szigorúan megtiltotta neki, hogy kapcsolatba lépjen azzal, akitôl az ajándékot kapta. Arra gyanakszik, hogy a saját szolgája lehet a tolvaj. Egyszerûen nem hagyhatom magára ezzel a szerencsétlenséggel, és határozottan elhatároztam, hogy segítek. Gondolom, azzal kellene kezdenem, hogy kikérdezem a helyi kereskedôket - a tolvaj bizonyára sietett eladni az ékszert.
+#TEXT 3
+Egy bizonyos Tristan Renier, a 'Az Arany Sirály' kapitánya nemrég vásárolt egy nyakláncot egy kereskedôtôl, amely Julie-é lehet. A hajója még mindig a kikötôben horgonyoz. Ha a megérzésem igaz, a tolvaj nem más lehet, mint Giselle, akinek a nevét a kereskedô véletlenül elárulta.
+#TEXT 4
+Trisztán nem volt a fedélzeten. Meg kellene keresnem ôt a városban.
+#TEXT 5
+Sikerült visszaszereznem Julie nyakláncát. Most itt az ideje, hogy visszaadjam jogos tulajdonosának. Vagy... talán meglátogatom a kormányzót, és mindent elmondok neki?
+#TEXT 6
+A nyaklánc visszakerült bájos tulajdonosához. A tolvajról kiderült, hogy maga a szobalánya, Giselle volt. Julie most minden ravaszságát beveti, hogy megbüntesse a csalót. Nem szeretnék a helyében lenni.
+
+#QUEST VPVL
+A nagy fogás fogságában
+#TEXT   1
+Saint Pierre-ben a helyi halász, Pierre Carno eltûnésérôl szóló mesék keringenek. Hajója két teljes dagályforduló óta nem tért vissza a kikötôbe, miközben felesége, Lea, a rettegéstôl gyötörve, magányosan ôrködik a rakparton, tekintetével a kavargó vizet kutatva férje alakja után. Csak a férfi biztonságos visszatérése enyhíthetné megsebzett lelkét. A kegyetlen tenger azonban titkokat ôriz, és minden egyes harangszóval egyre kevesebb a remény, és egyre kisebb az esélye, hogy a férfi kijátssza a halált.
+#TEXT   2
+Lea elárulta, hogy férje a Le Marin-öböl felé vette az irányt, amely a sziget déli partjai mentén húzódik. Két teljes nap telt el azóta, hogy útnak indult, de semmi jele a visszatérésének. A szegény asszony arcára kirajzolódó gyötrelem arra késztetett, hogy felajánljam a segítségemet. Elôször a Le Marin-öböl vizeit fogom megvizsgálni - talán Pierre még mindig a tengeren van, a körülmények miatt késik. Ha a vizek üresnek bizonyulnak, akkor át kell kutatnom a partvonalat ember vagy hajó nyomai után.
+#TEXT   3
+Azok a tengerparti csempészek összetévesztettek a kormányzó egyik kutyájával, és megpróbáltak a vizes sírba juttatni. A szerencse azonban elfordította tôlük az arcát - most az ô vérük szennyezi a homokot az enyém helyett. Most meg kell vizsgálnom a tengeri barlangot, amelyrôl beszéltek. Talán 'tis Pierre-t tartják láncra verve abban a nyirkos börtönben.
+#TEXT   4
+Pierre most már a szabadság édes levegôjét szívja, és eljött az idô, hogy visszatérjen odaadó felesége ölelésébe. A sors kegyetlenül bánt vele - a hajója zátonyra futott, majd a partra érve azoknak az ôrült csempészeknek a karmai közé került, akik összekeverték a kormányzó ügynökével. A szegény lélek kínzásokat és éhezést szenvedett, és arra kényszerítették, hogy eláruljon olyan titkokat, amelyeknek soha nem volt birtokában. Az ember beleborzong, ha belegondol, milyen szörnyû vég várhatott volna rám, ha a Gondviselés nem vezeti lépteimet akkor, amikor az elátkozott barlangba.
+#TEXT   5
+Pierre biztonságban visszakerült odaadó felesége gyengéd gondoskodásába. Megígérte, hogy amint visszatér az ereje, háláját fejezi ki, és ragaszkodik hozzá, hogy holnap a hatodik harangszó után meghívják egy italra a kocsmába. Egy kérdés azonban még mindig rágja a gondolataimat, mint patkány a hajókötelet - kik voltak azok a szerencsétlenül járt csempészek, akiket valóban Le Marin partjainál vártak? Beszédeik egy hajóról szóltak, amely hamarosan partot ér. A kormányzó emberei bizonyára bôségesen megfizetnék, ha elôre figyelmeztetnének egy ilyen csempészáruval megrakott hajóra. Vagy talán.....
+#TEXT   6
+Jelentettem a kormányzónak a csempészekrôl, akik egy hajót vártak. Megígérte, hogy kivizsgálja a dolgot, és három nap múlva újra meglátogatom. Ha a jelentésem helytállónak bizonyul, a jutalom az enyém lehet.
+
+#QUEST TBP
+Betsy Price rejtélye
+#TEXT	1
+Willemstadban hallottam egy érdekes történetet - a helyi kocsma nemrég szerzett egy rendkívüli szépségû pincérnôt, de három nappal ezelôtt hirtelen eltûnt. A kocsmáros aggódik, és hajlandó fizetni annak, aki megtalálja.
+#TEXT	2
+A pletykák nem hamisak; a pincérnô valóban eltûnt. A kocsmáros egyértelmûen aggódik... akár a lány eltûnése, akár a csökkenô profitja miatt, ki tudja. Kész száz dublont fizetni annak, aki visszahozza a lányt. Beleegyeztem, hogy segítek neki keresni. Száz dublon jó motiváció, de ami még jobban izgat, az maga Betsy. Miféle nô az, aki képes annyira elbûvölni a férfiakat, hogy hajlandóak mindent eldobni és órákig ülni a kocsmában, csak hogy megnézzék? Kezdjük azzal, hogy megvizsgáljuk a házát. A fogadós szerint nem messze van a kocsmától, a dombon - szemben a díszes, kék erkélyes házzal.
+#TEXT	3
+Betsy nyilvánvalóan sötét ügyekbe keveredett. A levél, amit találtam, egyenesen az életét fenyegeti, ami azt jelenti, hogy eltûnésének oka sokkal komolyabb, mint az egyszerû szökés. Lehet, hogy sikerült elrejtôznie, de nem zárhatjuk ki a rosszabbik lehetôséget sem. Ki kell derítenem, ki hagyhatta ezt az üzenetet. A csapossal kezdem - talán ô vette észre a gyanús embereket körülötte.
+#TEXT	4
+A csavargótól vásárolt medál Betsyé. A ház melletti virágágyásban találta a lámpással együtt. Alaposan körül kell néznünk ott.
+#TEXT	5
+Hát micsoda nô ez a Betsy... Vagy talán Miranda? Nem, maradjunk Betsynél - nem kell a múltját piszkálni. Mindenesetre kiszabadult azoknak a szemétládáknak a karmai közül... Itt az ideje, hogy megkapja jól megérdemelt jutalmát.
+#TEXT	6
+A kocsmáros teljes egészében kifizette, hogy visszaszereztem az értékes pincérnôjét. Hogy ôszinte legyek, Betsy gondolatai még mindig nem hagynak nyugodni... Talán egyszer meg kellene látogatnom.
+
+#QUEST OZ
+A szerencse rabja
+#TEXT	1
+San Joséban a kovács súlyos árat fizetett a kártya iránti szenvedélyéért – egy Javier Castillo elleni játékban elvesztett valami nagyon értékeset. A pletykák szerint teljesen össze van törve: a munka nem halad, noha sötét felhők gyülekeznek a jövője felett, hiszen ha a megrendelés nem készül el időben – az admirális dühbe gurul. Vajon mi lehetett annyira értékes, hogy ilyen csüggedésbe taszítsa az embert?
+#TEXT	2
+Most már világos, mi okozta Sebastián Córdoba lelki összeomlását. Elvesztett egy munkájához létfontosságú könyvet – a kovácsmesterség könyvét. Helyzetét súlyosbítja, hogy Javier nem vesztegette az időt, és úgy döntött, eladja a könyvet egy francia fegyvermesternek. Mint mindig, a baj sosem jön egyedül. Előző nap a kovács komoly megrendelést kapott Eugenio de la Torre admirális­tól... Amikor az ideér, feltétlenül tudomást szerez majd arról, miért nem készült el a megrendelése. Ha megtudja, hogy a könyv a franciák kezébe került, a kovács szerint nagyon szigorúan fog elbánni vele. Úgy döntöttem@<sSex>, segítek a szegény embernek. Ha sikerül visszaszereznem a könyvet, második esélyt kap, és remélhetőleg többé nem követi el ugyanazokat a hibákat, én pedig mindig számíthatok egy jó kovács szolgálataira. Kezdem Javier felkutatásával, aki bizonyára most is próbál valakit rászedni.
+#TEXT	3
+Sikerült legyőznöm Javier! A könyv nálam van. Az ő trükkjei jók az együgyűek ellen, de komoly játékos ellen hasztalanok. A vereséget nem tudta elfogadni – csalással vádolt. Nos, le kellett törnöm a büszkeségét.
+#TEXT	4
+A francba! Javier tényleg erős a kártyában. Most módot kell találnom arra, hogy ne csak a könyvet, hanem a pénzemet is visszaszerezzem! Először érdemes többet megtudni róla.
+#TEXT	5
+A francba! Javier hallani sem akar az adósság halasztásáról. Ezt nem hagyom annyiban. Módot kell találnom, hogy nyomást gyakoroljak rá. De először érdemes többet megtudni róla.
+#TEXT	6
+Sikerült kiderítenem, hogy Javier nagy összeggel tartozik egy bizonyos Felipe Alarcón. Talán, ha beszélek vele, találhatok módot, hogy szorult helyzetbe hozzam az adóst. Felipe háza a bankkal szemben van, pompás kúria oszlopos bejárattal.
+#TEXT	7
+Felipe engedélyét megkaptam, hogy a nevében eljárjak. Most már követelhetem Javier-től a pénz azonnali visszafizetését, és ha nincs meg neki, elsőként a könyvet vehetem el tőle.
+#TEXT	8
+Javier kihozni a sodrából nem volt nehéz. Amikor egy lépésre volt az üzlet megkötésétől, nem bírta a nyomást – ráébredve, hogy minden egy pillanat alatt összeomolhat, gondolkodás nélkül harcba szállt. A francia, aki a könyvért jött, nyolcvanezer pesót ajánlott – de nem volt szívem Sebastián sorsával kereskedni. Javier zsebében csak egy cédulát találtam. Úgy tűnik, az üzlet után Javier valakivel együtt akarta elhagyni a szigetet. Meg kell nézni, mit rejtenek abban a barlangban. Nagyon jól jönne, ha ott pénzt találnék, hiszen Felipe ügye még mindig nincs lezárva.
+#TEXT	8_1
+Sikerült legyőznöm Javiert! Az ő trükkjei jól működnek az együgyűekkel szemben, de egy komoly játékos ellen haszontalanok. Nem tudta elfogadni a vereséget, és csalással vádolt meg. Nos, le kellett törnöm a szarvát. A francia, aki a könyvért jött, nyolcvanezer pesót ajánlott – de nem akartam Sebastian sorsával alkudozni. 
+Javier zsebében csak egy cetlit találtam. Úgy tűnik, hogy ez az üzlet után Javier valakivel együtt el akarta hagyni a szigetet. Meg kell néznem, mit rejtegetnek abban a barlangban.
+#TEXT	9
+Javier kihozni a sodrából nem volt nehéz. Amikor egy lépésre volt az üzlet megkötésétől, nem bírta a nyomást – ráébredve, hogy minden egy pillanat alatt összeomolhat, gondolkodás nélkül harcba szállt. A francia, aki a könyvért jött, nyolcvanezer pesót ajánlott – de sikerült százötvenért eladnom! Azt hiszem, most jobb, ha nem kerülök Sebastián szeme elé. Javier zsebében nem volt más, csak egy cédula. Úgy tűnik, az üzlet után Javier valakivel együtt akarta elhagyni a szigetet. Meg kell nézni, mit rejtenek abban a barlangban. Nagyon jól jönne, ha ott pénzt találnék, hiszen Felipe ügye még mindig nincs lezárva. Nem szeretnék megválni a könyv eladásából szerzett pénztől.
+#TEXT	9_1
+Sikerült legyőznöm Javiert! Az ő trükkjei jól működnek az együgyűekkel szemben, de egy komoly játékos ellen haszontalanok. Nem tudta elfogadni a vereséget, és csalással vádolt meg. Nos, le kellett törnöm a szarvát. A francia, aki a könyvért jött, nyolcvanezer pesót ajánlott – de sikerült százötvenezerre felalkudnom! Azt hiszem, most jobb, ha nem kerülök Sebastian szeme elé. 
+Javier zsebében nem volt semmi, csak egy cetli. Úgy tűnik, hogy ez az üzlet után Javier valakivel együtt el akarta hagyni a szigetet. Meg kell néznem, mit rejtegetnek abban a barlangban.
+#TEXT	10
+A könyv visszakerült tulajdonosához. Remélem, Sebastián valóban levonta a tanulságot, és erőfeszítéseim nem vesznek kárba.
+#TEXT	11
+A pénzt Felipe Alarcón nem adtam vissza. Úgy tűnik, nem értékelte ezt a lépést – most az egész spanyol haderő azon van, hogy a téren felakasszon.
+#TEXT	12
+A pénzt Felipe Alarcón nem adtam vissza. Nem értékelte a gesztust – támadásba lendült. Könnyedén elbántam vele, de úgy tűnik, a városból harcolva kell kitörnöm.
+
+#QUEST LFD
+Levél a halottól
+#TEXT	1
+Porto Bello-ban az a szóbeszéd járja, hogy az "Águila" nevű flöjt kapitánya alaposan leszidta a hadnagyát, amiért az a legénységet partra engedte. Általában, ha a legénységet a fedélzeten tartják, vagy van mit elpletykálniuk, vagy a hajó valóban nem készül sokáig a kikötőben maradni. Beszélnem kellene a matrózokkal, hátha akad lehetőség egy kis keresetre.
+#TEXT	2
+Porto Bello utcáin összefutottam egy matrózzal arról a bizonyos flöjtről. Azért kockáztatta meg, hogy lekéssen a hajóról, mert elhúzódtak a keresései egy bizonyos Marisa Caldera után. A hajója rakterében, a limlom között talált egy régi levelet, amely neki volt címezve, és úgy döntött, elviszi neki, remélve, hogy jutalmat kap érte. Mivel már nem volt ideje, felajánlotta, hogy némi pénzért eladja nekem ezt a fontos levelet, és én beleegyeztem. Végül is ez a történet igazán jól elsülhet.
+#TEXT	3
+A kocsmáros elmondta, hogy Marisa már két éve szinte nem mutatkozik a városban. Miután hírt kapott férje haláláról, mintha eltűnt volna, kerülve az emberek tekintetét. Neve azonban még mindig közszájon forog, és néhány férfi továbbra is érdeklődik iránta. Lehetne azt gondolni, hogy valami illetlen dologgal foglalkozik, és ezért rejtőzik, de a kocsmáros biztosít, hogy Marisa jámbor asszony volt, sok időt töltött a templomban, így aligha lehet ilyenben benne. Folytatnom kell a keresést. De hol is keressem? Ki tudna többet mesélni róla?
+#TEXT	4
+A lelkész megerősítette, hogy Marisa Caldera rég elhagyta a várost, és csak ritkán bukkan fel. Többet nem tud róla. A városban azonban él a barátnője, Dolores Moño, aki talán többet tud, mint ő. A háza a kikötői hivatal bal oldalán található.
+#TEXT	5
+Úgy tűnik, Marisa helyzete elég bonyolult, mivel a barátnője bizalmatlanul fogadott, amikor meghallotta, kit keresek. Azonban sikerült meggyőznöm Dolores tiszta szándékaimról. A találkozót holnapra, este tizenegy utánra beszéltük meg. Dolores nem garantálja, hogy Marisa megjelenik, de megígérte, hogy átad mindent, amiről beszéltünk.
+#TEXT	6
+Marisa elmesélte, hogy néhai férje rejtekhelyet hagyott valahol a városon kívül. Fél egyedül odamenni, ezért megkért, hogy kísérjem el. Holnap reggel hétkor be kell mennem hozzá, hogy útnak induljunk.
+#TEXT	7
+Megtaláltuk a rejtekhelyet, amely Marisa férjéé volt. Épp indulni készültünk, amikor ránk talált egy zsoldos, akit Ramiro hitelező küldött. Halálos leckét kellett adnom neki. Marisa azonban, finoman szólva, nem volt elragadtatva ettől a cselekedettől. Biztos benne, hogy mindent békésen kellett volna megoldani, bármi áron. Nos, ebben nem tudok vele egyetérteni. Most már csak vissza kell kísérnem a városba, ahol végre új, nyugodt életet kezdhet.
+#TEXT	8
+Megtaláltuk a rejtekhelyet, amely Marisa férjéé volt. De épp indulni készültünk, amikor ránk talált egy zsoldos, akit Ramiro hitelező küldött. Minden az én költségemen lett elintézve: az adósság kifizetve, a kamatok is. Most a félelem és az árnyékban élés a szegény özvegy számára már a múlté. Remélem, sikerül mindent elölről kezdenie, elfeledve mindazt, amit át kellett élnie.
+
+#QUEST WildRose
+Wild Rose
+#TEXT	1
+Una historia curiosa... De la plantación de Bishop escaparon esclavos — y no cualquiera, sino desertores de la flota. Según un soldado, Bishop ofreció recompensa por su captura, y en la selva se adentraron multitudes de armados dispuestos a lucrarse. ¿Quizá yo también debería involucrarme? Por otro lado, el riesgo de recibir una bala en el vientre es enorme — y no tanto de los fugitivos como de quienes los persiguen.
+#TEXT	2
+Mary ha desaparecido... Sin decir palabra. Espero que no sea por nuestra conversación de ayer... Quizá simplemente bajó al salón. Hay que buscarla allí.
+#TEXT	3
+Es sorprendente cómo los encuentros fortuitos pueden afectar a una persona. Sobre todo si es con un matón cuyas manos están hasta los codos en sangre. Los esclavos fugitivos, antes de verse acorralados y masacrados, dispararon a varios guardias y a los arrendatarios del terrateniente. Pero lo que es aún peor — violaron y mataron a una joven colona, después de lo cual casi acabaron también con su esposo. Al frente de los fugitivos estaba Jerry Casper.
+Dudo que él sea — aunque sea remotamente — pariente de mi amada. Sin embargo, la propia Mary quedó pensando en esta historia: ¿quiénes fueron sus padres? No sabe ni sus nombres, ni siquiera su lugar de nacimiento.
+En cualquier caso, si vamos a empezar a buscar huellas desaparecidas hace veinte años, entonces debe ser en la Isla de la Justicia. Quizá alguno de sus habitantes antiguos pueda ayudarnos...
+Mary dijo que no se debería olvidar nada con tal de descubrir este secreto. Pero veo que le arde hacerlo lo antes posible.
+Y cuanto a mí... estoy obligado a ayudarla.
+Sin embargo, sé muy bien que algunos secretos deben permanecer secretos. Puede que éste sea uno de ellos. No en vano hasta ahora nadie le contó nada a Mary sobre sus padres.
+#TEXT	4
+Aquí estamos otra vez en este cementerio de barcos... No me dan ganas de quedarme demasiado esta vez, así que conviene ponerse en marcha pronto — interrogar a aquellos que vivieron aquí hace veinte años. Creo que conviene empezar por Donald. A pesar de que, según Mary, no pudo o no quiso responderle esas preguntas la vez anterior, ¿quién mejor que el líder del clan 'Narval' para ayudarnos?
+Todavía me atormenta un presentimiento no muy bueno sobre la empresa de Mary, pero rendirse ya es tarde.
+#TEXT	5
+No pudo hablar con Donald — organizó ejercicios para su clan en el anillo exterior. Parece que la Isla de la Justicia espera nuevamente tiempos poco pacíficos. Espero que Leighton Dexter tenga suficiente voluntad y fuerza para mantener la situación bajo control, pero de cualquier modo conviene conseguir pronto la información que necesitamos y largarnos de aquí. Lo último que quisiera es quedar atrapado en fuego cruzado entre personas que luchan por nada.
+Grinspee debe regresar mañana — el tiempo de espera puede pasarse en la cabina de Mary en el 'Ceres Smith'.
+#TEXT	6
+La conversación con Grinspee resultó casi infructuosa. Afirma que llegó a la Isla algunos años después del nacimiento de Mary y que no conocía a sus padres. Nadie puede confirmar sus palabras, pero no creo que tenga motivo para mentir.
+Algunas cosas logramos averiguar. Primero: Mary nació aquí, en la Isla — eso Donald se lo contó Eric Udett, un viejo marinero que la crió y que, desafortunadamente, ya ha partido al mejor mundo. Segundo: en la crianza de Mary participó Oréli Bertin — ella ha vivido mucho tiempo en la Isla y, si presenció el nacimiento de Mary, también debe conocer a sus padres.
+Donald mencionó que ella no está bien de salud — la edad, no hay remedio. Lo importante es que la memoria esté intacta.
+#TEXT	14
+No averiguamos todo lo que queríamos, pero no blasfememos contra el Creador — Oréli recordó bastante, y con eso basta. Vamos por partes: se confirmó que Mary nació en la Isla de la Justicia. Pero sus padres no eran locales, sino náufragos que milagrosamente sobrevivieron a una tormenta feroz.
+La madre de Mary se llamaba Teresa; dio a luz una semana después de llegar a la Isla y murió poco después, lo cual era previsible, dado lo que había sufrido. Qué hacía en un barco — comercial o militar — en su último mes de embarazo, solo su esposo, el padre de Mary, podría saberlo.
+Pero con él todo es mucho más complicado: Oréli solo recuerda que su nombre empezaba con 'J.'. Nada más. Ni el nombre del barco ni su tipo ni en qué servía. Bertin afirma que ese misterioso J. desapareció sin dejar rastro unos días después del nacimiento de su hija, pero duda de que haya muerto — considerando que por aquellos años las tartanas de contrabandistas navegaban con regularidad entre la Isla y Cuba. No hay ningún testimonio de que haya muerto en este cementerio de barcos.
+Es difícil suponer si el padre de Mary sigue vivo, así como entender por qué abandonó a su hija recién nacida. Aunque, tal vez, para Mary baste con saber quién era él... Pero para avanzar en este asunto, debemos al menos averiguar el nombre del barco que naufragó en una de las noches de junio de 1638 cerca del anillo exterior. Y en eso, espero, podrá ayudarnos nadie menos que Donald Grinspee.
+#TEXT	15
+Mis sospechas se confirmaron: los narvales realmente llevan un registro de los barcos que han sido arrastrados al anillo exterior de la Isla de la Justicia, de los objetos recuperados y de los pasajeros. Ya es casi una tradición, mantenida por cada nuevo líder del clan "Narval", incluido Grinspee. Sin embargo, Donald no pudo poner esos registros a nuestra disposición — hace poco se los llevó Leighton Dexter.
+#TEXT	16
+No dejo de tener la sensación de que en esta, llamémosla investigación, nos persigue una especie de mala suerte. Problemas y obstáculos sin fin. Nadie sabe un carajo, y los que podrían ayudarnos están moribundos o ya muertos. Los registros sobre los barcos, al menos del año 1638 que necesitamos, no están en manos de Leighton Dexter. Desaparecieron de la cabina de Alan Milrow. Y según Mary, el anterior jefe del clan "Narval" trataba documentos de ese tipo con mucho cuidado y jamás los habría destruido. Pero, ¿a quién más en este cementerio de barcos podrían haberle interesado esos papeles, valiosos solo para historiadores?
+#TEXT	17
+Por fin se vislumbra una salida de esta cueva de ignorancia y enigmas. La madre de Mary y su padre — Joshua Casper — llegaron a la Isla de la Justicia a bordo del bergantín de la marina británica 'Wrangler'. Con ellos sobrevivieron dos marineros más, pero entregaron sus almas a Dios la noche siguiente. Una voz interior me dice que no fue casualidad, pero, veinte años después, no hay pruebas que respalden eso. En cualquier caso, ya no importa — hemos averiguado lo que necesitábamos, tras hablar, al parecer, con todos los que presenciaron aquellos acontecimientos, y ahora podemos dejar atrás la Isla de la Justicia.
+Solo queda pensar a quién podríamos acudir en busca de información sobre Joshua Casper. Nosotros no podremos acceder a los archivos de la Royal Navy...
+Pero, antes de zarpar, quiero asegurarme de que no pasé nada por alto. ¿Quién más podría haber contado algo? ¿Quién ha estado en la isla tanto tiempo como para recordar aquellos días?
+#TEXT	18
+Vaya, casi me olvido de Chimiset — y sin embargo, probablemente él sea el más antiguo habitante de la Isla de la Justicia. Llegó aquí en 1623 y fue testigo del nacimiento de Mary, de la muerte de su madre y de la desaparición de su padre, que fue encerrado tras matar a dos narvales que se negaron a dejar pasar al chamán junto a la parturienta.
+Del relato de Chimiset se deduce que Joshua Casper logró escapar y abordar una de las barcazas contrabandistas — no había otra forma de abandonar este lugar. Dejó en la isla a su hija recién nacida y seguramente planeaba volver por ella más adelante — pero, si compartió esos planes con alguien, ya no lo sabremos: los que pudieron hablar con él antes de su desaparición hace tiempo que son alimento para los cangrejos. La única pista puede ser el antiguo sacerdote, también fallecido — el padre Domingo, quien conversó con Casper en el 'Tartarus'. Tal vez llevaba algún tipo de diario, en cuyas páginas haya quedado rastro de aquella conversación. Para saber si es así, debemos acudir al hermano Julian.
+P.D. Y otra cosa curiosa. Antes de morir, Teresa Casper gritó el nombre de cierto Rupert. No el de Joshua, su esposo y padre de su hija, que hizo todo lo posible por salvarla, sino el de Rupert.
+#TEXT	19
+Nuestra visita al hermano Julian no fue en vano — si no fuera más que porque las notas del padre Domingo De la Cruz revelaron la fecha de nacimiento de Mary: 22 de junio de 1638. Fue bautizada el 3 de mayo, junto con Fabian Gallard, hijo de Cécile Gallard, quien falleció poco después. Fue Cécile quien amamantó a Mary — y ella es nuestra última esperanza para descubrir los detalles de la conversación entre el padre Domingo y Joshua Casper antes de su desaparición.
+#TEXT	20
+Cuanto más averiguamos sobre los padres de Mary, más nos hundimos en el pantano de enigmas e incomprensión sobre lo ocurrido en la Isla de la Justicia hace veinte años. Es curioso pensar quién era ese Rupert para Teresa: ¿un hermano, un amigo o tal vez... un esposo? La conversación con Cécile Gallard me llevó a pensar que Joshua Casper podría no haber sido del todo honesto — y que, por alguna razón, usara un nombre falso: ya fuera el de otro o uno inventado.
+Pero eso no es más que una suposición. Si vamos a buscar en los archivos de la marina, debe ser estrictamente por el nombre de Joshua Casper. Todo lo demás, por ahora, son conjeturas.
+Debemos dirigirnos al abad Benoît en Saint-Pierre.
+#TEXT	22
+El abad Benoît claramente no es tan sencillo como aparenta. En sus ojos brilló una chispa de emoción justo en el momento en que le pedí acceder a información del archivo del Almirantazgo, posiblemente clasificada. ¿O me lo imaginé? Pero si el pasado del abad encierra oscuros secretos, dudo que los comparta conmigo. En cuanto al pasado del señor Casper — esperamos saber algo en dos meses, que es el tiempo necesario para obtener esa información.
+#TEXT	23
+¡Y pensar que esta historia parecía tan simple al principio! Entonces, ¿qué tenemos...? Joshua Casper fue un oficial de reputación intachable, capitán del bergantín 'Cornwall', que por orden oficial zarpó de Inglaterra hacia el Caribe con el sueldo para las guarniciones de Antigua y Providencia — que entonces aún era británica. Cerca de las Azores hubo un combate con un galeón español, donde murió un tercio de la tripulación y uno de los oficiales — Rupert Northwood. Así lo dice el informe oficial conservado en la administración portuaria de Saint John. Tras dejar Antigua, el 'Cornwall' puso rumbo a Providencia, pero terminó encallando en los arrecifes de la Isla de la Justicia, ya bajo el nombre de 'Wrangler'.
+Cuatro personas sobrevivieron al naufragio — el capitán, una mujer y dos marineros. Estos últimos murieron en menos de un día. ¿Fueron asesinados? Seguramente, ya que podían saber demasiado. Aquel era o bien el verdadero Joshua Casper, perdidamente enamorado de la esposa de su primer oficial — considerando lo desesperado que corría entre los restos del barco buscando ayuda para Teresa —, o bien Rupert Northwood, cuyo nombre Teresa gritó antes de morir, que por alguna razón se presentó con el nombre de su comandante. La segunda opción no tiene lógica alguna. Ni tampoco que ese hombre no regresara a la Isla de la Justicia por su hija — ni al mes, ni al año, ni siquiera veinte años después.
+Tal vez murió — a veces, ni la experiencia, ni el valor, ni la astucia bastan contra las circunstancias. Pero así como él se adentró demasiado en este misterio, también nosotros estamos hasta el cuello en sus enredos. Y no tenemos intención alguna de echar marcha atrás ni de detenernos.
+Debemos molestar una vez más a Oréli Bertin, y luego decidir a quién estamos buscando: ¿a Rupert Northwood o a Joshua Casper?
+#TEXT	27
+Al final, lo logramos. Todavía no pudimos aclarar qué ocurrió a bordo del 'Cornwall' ni cómo se convirtió en el 'Wrangler' — pero encalló en los arrecifes de la Isla de la Justicia bajo el mando de Rupert Northwood. Si sigue con vida después de dos décadas, no lo sé — ni tampoco dónde buscarlo en ese caso. Nos ayudará en esto un viejo conocido que tiene tanto los contactos como los recursos necesarios para este tipo de tareas.
+Mientras llegamos hasta él, debo pensar detenidamente a quién enviar a buscar: ¿a Joshua Casper o a Rupert Northwood? Aunque... él es lo bastante astuto como para no repetir nombres. Desde luego, para un fugitivo siempre es más seguro usar su nombre real, para no equivocarse y no responder cuando lo llamen por otro. Pero, ¿era tan simple el primer oficial del 'Cornwall'?
+#TEXT	28
+La partida de la Isla de la Justicia tendrá que esperar. Anoche falleció Oréli Bertin. La anciana murió mientras dormía, con una sonrisa en los labios. Tuvimos suerte de haber venido con todas las velas desplegadas — si hubiéramos llegado un día más tarde, ¿con quién habríamos hablado sobre el padre de Mary? Y aun así, tengo una extraña sensación de que Oréli... como si nos hubiera estado esperando.
+Ese pensamiento no me deja en paz, y mientras Mary, junto con los habitantes de la Isla, organiza el funeral, iré a ver a Chimiset — necesito hablar con él sobre esto.
+#TEXT	29
+Todo tiene su precio. Siempre lo supe y traté de tenerlo en cuenta al tomar decisiones. Si hubiera sabido entonces lo que Chimiset impondría a Oréli, ¿la habría llevado con él aquella noche? Me cuesta admitirlo incluso ante mí mismo, pero probablemente lo habría hecho igual — porque sin los conocimientos perdidos en la memoria distorsionada por la enfermedad de Oréli, no habríamos avanzado en la búsqueda del padre de Mary.
+¿Fue cruel? Sin duda. ¿Cínico? Sin lugar a dudas. En el día que ha pasado desde aquella conversación con Chimiset, he pensado mucho en lo que él llama el río del tiempo. En verdad, no se puede hacer que fluya hacia atrás. Y aunque se pudiera, no tendría sentido — porque el ser humano casi siempre llega conscientemente a una decisión en determinada curva de ese río, y por tanto, difícilmente la cambiaría.
+Oréli Bertin, descansa en paz. Nosotros completaremos la tarea por la que tú, sin saberlo, diste la vida.
+#TEXT	30
+Fadey, como era de esperarse, pidió una buena suma, aunque menos de lo que podría haber exigido, dada su pasión por el oro. Debemos presentarnos ante él dentro de un mes — para entonces, algo sobre el padre de Mary debería haberse esclarecido.
+#TEXT	32
+Estamos casi en la meta. Solo nos separa la distancia de Basse-Terre a Belice. Allí se encuentra un hombre llamado Jérôme Sauvernier, quien afirma haber logrado encontrar a Rupert Casper. Icemos todas las velas y pongamos rumbo al oeste. Los veinte años que Mary ha esperado para reencontrarse con su padre están a punto de terminar.
+#TEXT	33
+Y bien, estamos en Belice. Creo que no será difícil encontrar a Jérôme Sauvernier. Estoy seguro de que el dueño de la taberna sabrá dónde se aloja. Y aun así, me inquieta un poco esa pelea en el 'Ojo de Cristal' en la que se vio envuelto Jérôme. Estaba cumpliendo una misión importante y bien remunerada — y aun así decidió involucrarse. Quizá tenga algo que ver con su investigación sobre Rupert Casper. Por eso es mejor no hacer demasiado ruido — y pensar bien si conviene empezar a hacer preguntas en la taberna.
+#TEXT	35
+Hemos recorrido un largo y tortuoso camino — y llegamos a una amarga conclusión: ten cuidado con lo que deseas. Esa es la lección que nos deja esta historia. La pobre Mary, desde luego, merece un padre mejor que Rupert Northwood… pero uno no elige a sus padres.
+Y bien, por monstruoso que sea el desenlace, y por mucho que duela la desilusión — la vida continúa. Pasamos toda la noche en la orilla, en silencio, interrumpido solo de vez en cuando por nuestras palabras sobre lo ocurrido. Mary soportó el golpe con entereza. No se atormentará pensando en quién fue su padre y qué 'hazañas' cometió. Y yo… haré todo lo que esté en mis manos para que piense en eso lo menos posible.
+
+#QUEST LEDR
+La Espada Del Rey
+#TEXT	1
+Dicen que un hombre anda vagando por Sharptown, proveniente de aquel mismo barco que ahora yace en la costa de la bahía de Sabu-Matilla. Afirma ser el único que sobrevivió al naufragio. Ahora quiere volver allí, pero no se atreve a ir solo — y para justificarlo, cuenta historias sobre un esqueleto vestido de indígena. Bueno, ya veremos... Quizá valga la pena escoltarlo. Me pregunto qué busca allí después de tanto tiempo.
+#TEXT	2
+Acepté ayudar al anciano, Gonsalo Peralta. No parece un loco, salvo por sus extraños relatos. Bueno, no debería llevar mucho tiempo — la bahía está cerca.
+#TEXT	3
+Cuando acepté acompañar al anciano, nunca imaginé que tendría que luchar contra esqueletos. ¡Esqueletos! Por suerte, la fortuna estuvo de nuestro lado y, a pesar del impacto, logramos defendernos. En el camarote del capitán encontramos el cofre del obispo, lleno de joyas y un viejo diario que pertenecía a Diego Velázquez de Cuéllar — el famoso conquistador y primer gobernador de Cuba. Incluso una lectura rápida de esas memorias pone los pelos de punta. Tal vez él sea la clave para desentrañar la maldición que atormenta a Gonsalo.
+#TEXT	4
+El diario ya es cosa del pasado. He llevado a Gonsalo de vuelta al lugar donde lo encontré — Sharptown. Que viva en paz, si sus pesadillas realmente lo han dejado. Y yo mejor me guardo la lengua — historias así pueden volverse fácilmente contra quien las cuenta.
+

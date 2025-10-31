@@ -184,14 +184,14 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Oh, ich bin mir nicht sicher, schöner Mann! Vor nicht allzu langer Zeit bat ein Kerl um Hilfe beim Ratten töten und dann hat jemand die Soldaten in der Festung vergiftet. Es wurde ziemlich heiß für meine Leute auf der Insel, während die Wachen uns zwei Wochen lang verhörten, bis sie den Mörder fanden. Er war ein feindlicher Spion.","Und wie kann ich mir Ihrer Absichten sicher sein? Vielleicht wollen Sie nur einen Adligen vergiften, gegen den Sie zu feige sind, um in einem ehrenhaften Duell zu kämpfen??","Mir wurde erzählt, dass jemand einen Händler in der Taverne vergiftet und all seine Habseligkeiten gestohlen hat. Der Mann hat lange gelitten, bevor er starb. Schaum kam aus seinem Mund und er wurde lila wie eine Aubergine.. Bist du dafür verantwortlich, mein Liebling?");
 				link.l1 = "Du Zigeunerweiber teilt sicherlich gerne eure Meinungen! Mach dir keine Sorgen, Mädchen, ich werde die Leute nicht vergiften. Das ist eine weibische Art zu töten, nicht mein Stil. Für Männer habe ich mein Schwert, aber ich kann diese verfluchten Ratten nicht ertragen.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "Sie versuchen mich in eine Falle zu locken! Nein, Herr, ich habe kein Gift. Ich habe Pflanzen und Tränke, aber keine Gifte.";
 				link.l1 = "Na schön dann. Leg mir nicht den bösen Blick auf.";
 				link.l1.go = "exit";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

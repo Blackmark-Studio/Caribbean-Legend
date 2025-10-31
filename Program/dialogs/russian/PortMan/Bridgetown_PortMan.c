@@ -220,11 +220,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// калеуче
 		case "caleuche":
 			dialog.text = "Сэр, мне нужно название судна. Ибо что Джексонов, что Джеков, у нас как грибов поганых. Знаете, сколько их через наш порт проходит? Так какое название?";
-			link.l1 = "";
-			Link.l1.edit = 2;
-			link.l1.go = "caleuche_name";
-			link.l2 = "Загвоздка в том, что я не знаю, как называется его лоханка. Имя такое странное, означает полуженщину-полуптицу, рождённую...";
-			link.l2.go = "caleuche_1";
+			link.l1 = "Сирена"; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "Ламия"; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "Гарпия"; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "Фурия"; 
+			link.l4.go = "caleuche_wrong_name";
+			link.l5 = "Загвоздка в том, что я не знаю, как называется его лоханка. Имя такое странное, означает полуженщину-полуптицу, рождённую...";
+			link.l5.go = "caleuche_1";
 		break;
 		
 		case "caleuche_1":
@@ -236,24 +241,30 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "caleuche_2":
 			dialog.text = "Ну? Вы выяснили? Слушаю вас.";
-			link.l1 = "";
-			Link.l1.edit = 2;
-			link.l1.go = "caleuche_name";
+			link.l1 = "Сирена."; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "Ламия."; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "Гарпия."; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "Фурия."; 
+			link.l4.go = "caleuche_wrong_name";
+			link.l5 = "Мне нужно ещё подумать.";
+			link.l5.go = "exit";
 		break;
 		
 		case "caleuche_name":
-			if (GetStrSmallRegister(dialogEditStrings[2]) == "гарпия")
-			{
-				dialog.text = "'Гарпия'? Ну конечно, я знаю шебеку 'Гарпия', её капитана зовут Реджинальд Джексон. Но в Бриджтауне он давно уже не появляется. Я слышал, что его наняла на службу Голландская Вест-Индская Компания. Так что вам нужно в Виллемстад.";
-				link.l1 = "Спасибо огромное! Вы мне очень помогли.";
-				link.l1.go = "caleuche_3";
-			}
-			else
-			{
-				dialog.text = "Это мне ни о чем не говорит, к сожалению. Вы уверены, что ваш капитан бывал в Бриджтауне?";
-				link.l1 = "Уверен. Ладно, надо ещё подумать, может, соображу...";
-				link.l1.go = "exit";
-			}
+			dialog.text = "'Гарпия'? Ну конечно, я знаю шебеку 'Гарпия', её капитана зовут Реджинальд Джексон. Но в Бриджтауне он давно уже не появляется. Я слышал, что его наняла на службу Голландская Вест-Индская Компания. Так что вам нужно в Виллемстад.";
+			link.l1 = "Спасибо огромное! Вы мне очень помогли.";
+			link.l1.go = "caleuche_3";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "caleuche_wrong_name":
+			dialog.text = "Это мне ни о чем не говорит, к сожалению. Вы уверены, что ваш капитан бывал в Бриджтауне?";
+			link.l1 = "Уверен. Ладно, надо ещё подумать, может, соображу...";
+			link.l1.go = "exit";
+			npchar.questTemp.caleuche = "true";
 		break;
 		
 		case "caleuche_3":
@@ -261,6 +272,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("Caleuche", "18");
 			pchar.questTemp.Caleuche.Garpiya = "gwik"; 
 			npchar.quest.garpiya = "true";
+			AddLandQuestMarkToPhantom("GVIK", "HWIC_headclerk");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

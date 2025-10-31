@@ -299,11 +299,14 @@ void ProcessDialogEvent()
 			dialog.text = "Je t'écoute, "+pchar.name+".";
 			if (n > 2 && GetSummonSkillFromName(pchar, SKILL_SNEAK) > 30)
 			{
+				Notification_Skill(true, 31, SKILL_SNEAK);
 				link.l1 = "Nous allons leur donner du fil à retordre, les gars ! Il y a des marchandises et de l'argent juste derrière cette colline ! Nous sommes ici pour ça et nous ne partons pas. Pas question qu'une bande de peaux-rouges, même avec des mousquets, puisse nous arrêter ! Enterrons ces salauds et finissons le travail ! Nous avons assez d'hommes, il y a une chance de les prendre en embuscade. Quatre hommes les accueilleront avec du feu sur les flancs et le reste d'entre nous prendra position ici. Réduisez leur nombre et achevez-les !";
 				link.l1.go = "prosper_8";
 			}
 			else
 			{
+				if (GetCharacterSkill(pchar, SKILL_SNEAK) < 31) Notification_Skill(false, 31, SKILL_SNEAK);
+				if (n < 3) notification("Not enough people", "X");
 				if (n > 0)
 				{
 					link.l1 = "Nous allons leur livrer bataille, les gars ! Il y a des marchandises et de l'argent juste derrière cette colline ! Nous sommes ici pour cela et nous ne partons pas. Il n'est pas question qu'une bande de peaux-rouges, même avec des mousquets, puisse nous arrêter ! Enterrons ces salauds et terminons le travail !";

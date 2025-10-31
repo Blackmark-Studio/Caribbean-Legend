@@ -1,182 +1,40 @@
-Caleuche_1
-{
-Tuttuathapak
-}
-Caleuche_2
-{
-
-}
-
-Caleuche_3
-{
-不死船长
-}
-Caleuche_4
-{
-
-}
-
-Caleuche_5
-{
-Ghost ship
-}
-
-Caleuche_6
-{
-Fergus
-}
-Caleuche_7
-{
-Hooper
-}
-
-Caleuche_8
-{
-你已经从幽灵船上逃脱了！
-}
-
-Caleuche_9
-{
-Reginald
-}
-Caleuche_10
-{
-Jackson
-}
-
-Caleuche_11
-{
-Harpy
-}
-
-Caleuche_12
-{
-"Harpy (哈耳庇厄号)" 号谢贝克三桅船
-}
-
-Caleuche_13
-{
-dead hostess
-}
-Caleuche_14
-{
-
-}
-
-Caleuche_15
-{
-Chavinavy
-}
-Caleuche_16
-{
-
-}
-
-Caleuche_17
-{
-Esberto
-}
-Caleuche_18
-{
-Salinas
-}
-
-Caleuche_19
-{
-Tuttuathapak 的护身符已失去力量! 
-}
-
-Caleuche_20
-{
-按'T'键使用
-}
-
-Caleuche_21
-{
-传送门已封锁! 
-}
-
-Caleuche_22
-{
-沙维纳维酋长
-}
-Caleuche_23
-{
-
-}
-
-Caleuche_24
-{
-神庙不死生物
-}
-Caleuche_25
-{
-
-}
-
-Caleuche_26
-{
-地平线上出现幽灵船! 
-}
-
-Caleuche_27
-{
-Baltazar
-}
-Caleuche_28
-{
-de Cordes
-}
-
-Caleuche_29
-{
-Flying Heart
-}
-
-Caleuche_30
-{
-你感觉更灵巧了
-}
-Caleuche_31
-{
-你感觉更健壮了
-}
-Caleuche_32
-{
-你感觉更强壮了
-}
-Caleuche_33
-{
-你的感知变得敏锐
-}
-Caleuche_34
-{
-你感觉更具洞察力
-}
-Caleuche_35
-{
-你感觉更自信了
-}
-Caleuche_36
-{
-你感到备受鼓舞
-}
-
-Caleuche_37
-{
-地平线上出现幽灵船! 
-}
-
-Caleuche_38
-{
-你因伤势过重昏厥过去... 
-}
-
-Caleuche_39
-{
-Alonso
-}
-Caleuche_40
-{
-
-}
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {不死船长}
+Caleuche_4 { }
+Caleuche_5 {Ghost ship}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {你已经从幽灵船上逃脱了!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {"Harpy (哈耳庇厄号)" 号谢贝克三桅船}
+Caleuche_13 {dead hostess}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {Tuttuathapak 的护身符已失去力量!}
+Caleuche_20 {按'T'键使用}
+Caleuche_21 {传送门已封锁!}
+Caleuche_22 {沙维纳维酋长}
+Caleuche_23 { }
+Caleuche_24 {神庙不死生物}
+Caleuche_25 { }
+Caleuche_26 {地平线上出现幽灵船!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {你感觉更灵巧了}
+Caleuche_31 {你感觉更健壮了}
+Caleuche_32 {你感觉更强壮了}
+Caleuche_33 {你的感知变得敏锐}
+Caleuche_34 {你感觉更具洞察力}
+Caleuche_35 {你感觉更自信了}
+Caleuche_36 {你感到备受鼓舞}
+Caleuche_37 {地平线上出现幽灵船!}
+Caleuche_38 {你因伤势过重昏厥过去...}
+Caleuche_39 { }
+Caleuche_40 { }

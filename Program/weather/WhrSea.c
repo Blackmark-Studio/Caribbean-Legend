@@ -659,7 +659,7 @@ int Whr_SetWaterColor(float fMaxSeaHeight)
 {
 	int iLocation = FindLocation(pchar.location);
 	int iWaterColor = argb(  0,  0, 70,120 );				
-	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain) // дождь
+	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain); // дождь
 	// цвет моря в шторм
 	if(Whr_CheckStorm() || Whr_CheckLandStorm())
 	{
@@ -864,7 +864,7 @@ void Whr_SetSeaFromWind(float fSpeed, float fMaxSeaHeight)
 	string sType = "";
 	string sMoveSpeed 	= Whr_SetSeaAngle();				//направление волн в море
 	Whr_ModifySeaFog( fSpeed );
-	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain) // дождь
+	bool bRain = CheckAttribute(&WeatherParams,"Rain") && sti(WeatherParams.Rain); // дождь
 	float fFrenel = 0.3;
 	
 	int iWaterColor = Whr_SetWaterColor(fMaxSeaHeight);		//цвет воды

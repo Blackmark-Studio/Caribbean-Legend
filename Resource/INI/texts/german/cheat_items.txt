@@ -1,57 +1,30 @@
-
 new_string
 {
 
 }
-
 Cheat_success {Cheat funktioniert!}
-
 Cheat_on {Cheat an}
-
 Cheat_off {Cheat aus}
-
 Cheat_Comming_soon {Demnächst!}
-
 f1 {Alle Handwerksrezepte freischalten}
-
 f2 {Handwerksmaterialien hinzufügen}
-
 f3 {Kräuter hinzufügen}
-
 f4 {Edelsteine hinzufügen}
-
 f5 {Kreuzotterstein +100}
-
 f6 {Munition +50}
-
 f7 {Klingen erhalten}
-
 f8 {Waffen erhalten}
-
 f9 {Musketen erhalten}
-
 f10 {God mode an/aus}
-
 f11 {Kürasse erhalten}
-
 f12 {Talismane erhalten}
-
 f13 {Amulette erhalten}
-
 f14 {Wächter erhalten}
-
 f15 {Tränke erhalten}
-
 f16 {Ferngläser erhalten}
-
 f17 {Laterne erhalten}
-
 f18 {Navigationsgeräte erhalten}
-
 f19 {Werkzeuge erhalten}
-
 f20 {Gewöhnliche Karten erhalten}
-
 f21 {Admiralkarten erhalten}
-
 descF21No {In diesem Stadium des Spiels nicht verfügbar}

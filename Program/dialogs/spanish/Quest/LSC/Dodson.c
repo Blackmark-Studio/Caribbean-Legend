@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 		DialogExit();
 		NextDiag.CurrentNode = "Total_wait";
 		pchar.questTemp.LSC.rvd_friend = "true"; // флаг на проход по кораблям ривадос
-		pchar.rvd_friend = true;				 // ривадосы не будут останавливать где просят пароль
+		//				 // ривадосы не будут останавливать где просят пароль
 		sld = characterFromId("Chimiset");
 		sld.dialog.currentnode = "Friend"; // ноду Чимисету
 		pchar.quest.LSC_Eddy.win_condition.l1 = "location";
@@ -582,26 +582,9 @@ void ProcessDialogEvent()
 	case "caroline_3":
 		dialog.text = "¡Maldición! Tienes razón. Parece que estamos en problemas." + pchar.name + ".";
 		link.l1 = "...";
-		link.l1.go = "caroline_4";
-		break;
-
-	case "caroline_4":
-		DialogExit();
-		LAi_SetPlayerType(pchar);
-		// запускаем Мэри, Чада и нарвалов - будет лютое рубилово
-		sld = characterFromId("Capper");
-		sld.cirassId = Items_FindItemIdx("cirass1");
-		LAi_SetActorType(sld);
-		ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload3");
-		sld = characterFromId("Mary");
-		sld.greeting = "mary_4";
-		int iScl = MOD_SKILL_ENEMY_RATE * 10 + 2 * sti(pchar.rank);
-		LAi_SetHP(sld, 250 + iScl, 250 + iScl); // усилим
-		sld.dialog.currentnode = "caroline";
-		ChangeCharacterAddressGroup(sld, "CarolineBank", "reload", "reload2");
-		LAi_SetActorType(sld);
-		LAi_ActorDialogNow(sld, pchar, "", -1);
-		break;
+		link.l1.go = "exit";
+		AddDialogExitQuestFunction("LSC_Caroline_DlgExit_3");
+	break;
 
 	case "caroline_5":
 		dialog.text = "¡Argh! Lo hicimos... Para ser honesto, pensé que estábamos muertos por seguro.";
@@ -1694,7 +1677,7 @@ void ProcessDialogEvent()
 		SetCharacterPerk(sld, "HardHitter");
 		SetCharacterPerk(sld, "Sliding");
 		SetCharacterPerk(sld, "BladeDancer");
-		SetCharacterPerk(sld, "SwordplayProfessional");
+	
 		SetCharacterPerk(sld, "Gunman");
 		SetCharacterPerk(sld, "GunProfessional");
 		SetCharacterPerk(sld, "MusketsShoot");

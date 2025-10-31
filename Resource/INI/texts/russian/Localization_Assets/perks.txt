@@ -1,0 +1,8 @@
+perks_1 {Цены обновлены}
+perks_2 {На корабле '@<_ShipName>' залатали пробоину.}
+perks_3 {@<_ShipName>' - пробоина ниже ватерлинии!}
+perks_4 {$rand(В трюме '$attr($context.ship.name)' точно должно быть что-то ценное|На '$attr($context.ship.name)' явно везут что-то важное)}
+perks_5 {$rand(Ловить в трюме '$attr($context.ship.name)' особо нечего|Кажется, в трюме '$attr($context.ship.name)' нет ничего стоящего)}
+perks_6 {На корабле @<rChar.Ship.Name> от давки погибло @<FindRussianSailorString(cn, "No")>.}
+perks_7 {По расчётам @<_ShipName> прибыл в @<_PortName>.}
+perks_8 {Ещё в пути.}

@@ -1,361 +1,76 @@
-FMQ_1
-{
-Bertrand
-}
-FMQ_2
-{
-Pinette
-}
-
-FMQ_3
-{
-Carlos
-}
-FMQ_4
-{
-de Milyar
-}
-
-FMQ_5
-{
-Jean
-}
-FMQ_6
-{
-Deno
-}
-
-FMQ_7
-{
-Sario
-}
-
-FMQ_8
-{
-Juan
-}
-FMQ_9
-{
-Deno
-}
-
-FMQ_10
-{
-'Sario'
-}
-
-FMQ_11
-{
-~ Und was Pinette betrifft... Zum Teufel mit ihm, der Abschaum von Banker will ihn nicht haben.
-}
-
-FMQ_12
-{
-~ Der dreckige Banker wird mir helfen, die Sache unter Androhung der Enttarnung zu klären - der Brief von Pinette ist ein sehr ernstes Argument. Ich sollte nach Guadeloupe fahren und nachts durch die Stadttore in die Stadt eindringen.
-}
-
-FMQ_13
-{
-Benseсho
-}
-
-FMQ_14
-{
-Handelskonvoi aus San Jose
-}
-
-FMQ_15
-{
-Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!
-}
-
-FMQ_16
-{
-Der Abend ist gekommen...@<NewStr()>Das Harz wurde in der Werft entladen...
-}
-
-FMQ_17
-{
-Topaz
-}
-
-FMQ_18
-{
-Alarmrufe auf der Topaz Tartane!
-}
-
-FMQ_19
-{
-Es steht Ihnen frei, an Land zu gehen
-}
-
-FMQ_20
-{
-Erkundungsmodus: Die Quest ist nicht gescheitert
-}
-
-FMQ_21
-{
-Caspar
-}
-FMQ_22
-{
-Gratton
-}
-
-FMQ_23
-{
-Zeepard
-}
-
-FMQ_24
-{
-Ein englisches Angriffskommando hat versucht, in unser Gefängnis einzudringen, ist aber in eine von unserem wachsamen Kommandanten gestellte Falle getappt. Jetzt ist jeder Engländer hinter Gittern, ha ha!
-}
-
-FMQ_25
-{
-Hört, hört. Sie haben vor kurzem eine englische Truppe gefangen genommen. Sie wollten ihre Landsleute aus unserem Gefängnis befreien, wurden aber stattdessen ebenfalls dort eingesperrt!
-}
-
-FMQ_26
-{
-Filippe
-}
-FMQ_27
-{
-Jaсobsen
-}
-
-FMQ_28
-{
-Ein englischer Angriffstrupp war auf unsere Insel gekommen, doch unser wachsamer Kommandant fand und tötete sie alle. Das ist beeindruckend!
-}
-
-FMQ_29
-{
-Habt ihr es schon gehört? Es gab ein Scharmützel außerhalb der Stadt. Sie haben eine englische Angriffsgruppe entdeckt. Die Briten weigerten sich zu kapitulieren und wurden im Kampf getötet. Gute Arbeit, Kommandant!
-}
-
-FMQ_30
-{
-Schiffsseide + 200
-}
-
-FMQ_31
-{
-Ach, Sie sind das! Bravo, Käpt'n! Sie waren mutig genug, sich den bis an die Zähne bewaffneten englischen Spionen zu stellen!
-}
-
-FMQ_32
-{
-Unsere Regierung lobt Sie in den höchsten Tönen, Käpt'n. Und das aus gutem Grund: Die Hilfe bei der Beseitigung englischer Spione ist eine große Sache!
-}
-
-FMQ_33
-{
-Die Engländer sind auf unserer Insel gelandet, aber unser wachsamer Kommandant hat nicht gezögert und alle Schurken gefunden und getötet. Das ist es!
-}
-
-FMQ_34
-{
-Haben Sie es schon gehört? Es gab einen Kampf außerhalb der Stadt. Wir haben englische Saboteure gefunden. Sie weigerten sich, sich zu ergeben, und wurden von Soldaten getötet. Gut gemacht, Kommandant!
-}
-
-FMQ_35
-{
-Alarm in der Stadt!
-}
-
-FMQ_36
-{
-Was für eine Frechheit! Die Engländer sind bei Nacht in unsere Stadt eingedrungen! Und doch hat unser Kommandant sie gefunden und getötet. Tolles Ding!
-}
-
-FMQ_37
-{
-Haben Sie es schon gehört? Es gab ein Scharmützel in der Stadt. Sie haben eine englische Angriffsgruppe gefunden. Die Engländer weigerten sich zu kapitulieren und wurden dabei getötet. Gute Arbeit, Kommandant!
-}
-
-FMQ_38
-{
-Sie haben Ihr Schiff nicht in die Bucht gebracht!
-}
-
-FMQ_39
-{
-Hans
-}
-FMQ_40
-{
-Shulte
-}
-
-FMQ_41
-{
-Die Zeepard Korvette ist uns auf den Fersen!
-}
-
-FMQ_42
-{
-Haben Sie von dem Chaos gehört, das hier herrscht? Der Gouverneur ist empört. Englische Spione haben ihre Landsleute aus unserem Gefängnis befreit! Es heißt, einige Franzosen hätten etwas damit zu tun.
-}
-
-FMQ_43
-{
-Haben Sie schon gehört? Der Gouverneur ist empört. Englische Spione haben ihre Landsleute aus unserem Gefängnis befreit! Es heißt, einige Franzosen hätten etwas damit zu tun.
-}
-
-FMQ_44
-{
-Erkundungsmodus: Timer verlängert. Setzen Sie Passagiere am Ziel ab!
-}
-
-FMQ_45
-{
-Ach, Sie sind das! Bravo, Käpt'n! Sie waren mutig genug, unsere Soldaten direkt in dem Versteck der Holländer zu unterstützen!
-}
-
-FMQ_46
-{
-Der Gouverneur lobt Sie in den höchsten Tönen, Käpt'n. Und das aus gutem Grund: Den Männern von Fox zu helfen, die gefangenen Offiziere zu retten, ist eine große Sache!
-}
-
-FMQ_47
-{
-Marceline
-}
-FMQ_48
-{
-Levasseur
-}
-
-FMQ_49
-{
-Claude
-}
-FMQ_50
-{
-Durand
-}
-
-FMQ_51
-{
-Ugo
-}
-FMQ_52
-{
-
-}
-
-FMQ_53
-{
-interceptor
-}
-
-FMQ_54
-{
-Domingo Albalate hat Ihr Schiff verlassen
-}
-
-FMQ_55
-{
-Sie haben ein dickes Kassenbuch gefunden
-}
-
-FMQ_56
-{
-Luis
-}
-FMQ_57
-{
-Ortiz
-}
-
-FMQ_58
-{
-Fudroyan
-}
-
-FMQ_59
-{
-Gregoire
-}
-FMQ_60
-{
-Valinnie
-}
-
-FMQ_61
-{
-Prosper
-}
-FMQ_62
-{
-Trubal
-}
-
-FMQ_63
-{
-Johnny
-}
-FMQ_64
-{
-
-}
-
-FMQ_65
-{
-Sie haben 20 000 Pesos für Selina Trubal gespart
-}
-
-FMQ_66
-{
-Felicien
-}
-FMQ_67
-{
-Gronier
-}
-
-FMQ_68
-{
-Erkundungsmodus: Questdauer verdoppelt
-}
-
-FMQ_69
-{
-Erkundungsmodus: den Timer gelöscht
-}
-
-FMQ_70
-{
-Hans
-}
-FMQ_71
-{
-Shulte
-}
-
-FMQ_72
-{
-Silvestre
-}
-FMQ_73
-{
-McCoy
-}
-
-FMQ_74
-{
-Domingo
-}
-FMQ_75
-{
-Albalate
-}
-
-FMQ_76
-{
-Einige Stunden später...@<NewStr()>Die Waren wurden an die Küste geliefert
-}
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ Und was Pinette betrifft... Zum Teufel mit ihm, der Abschaum von Banker will ihn nicht haben.}
+FMQ_12 {~ Der dreckige Banker wird mir helfen, die Sache unter Androhung der Enttarnung zu klären - der Brief von Pinette ist ein sehr ernstes Argument. Ich sollte nach Guadeloupe fahren und nachts durch die Stadttore in die Stadt eindringen.}
+FMQ_13 {Benseсho}
+FMQ_14 {Handelskonvoi aus San Jose}
+FMQ_15 {Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!}
+FMQ_16 {Der Abend ist gekommen...@<NewStr()>Das Harz wurde in der Werft entladen...}
+FMQ_17 {Topaz}
+FMQ_18 {Alarmrufe auf der Topaz Tartane!}
+FMQ_19 {Es steht Ihnen frei, an Land zu gehen}
+FMQ_20 {Erkundungsmodus: Die Quest ist nicht gescheitert}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {Ein englisches Angriffskommando hat versucht, in unser Gefängnis einzudringen, ist aber in eine von unserem wachsamen Kommandanten gestellte Falle getappt. Jetzt ist jeder Engländer hinter Gittern, ha ha!}
+FMQ_25 {Hört, hört. Sie haben vor kurzem eine englische Truppe gefangen genommen. Sie wollten ihre Landsleute aus unserem Gefängnis befreien, wurden aber stattdessen ebenfalls dort eingesperrt!}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {Ein englischer Angriffstrupp war auf unsere Insel gekommen, doch unser wachsamer Kommandant fand und tötete sie alle. Das ist beeindruckend!}
+FMQ_29 {Habt ihr es schon gehört? Es gab ein Scharmützel außerhalb der Stadt. Sie haben eine englische Angriffsgruppe entdeckt. Die Briten weigerten sich zu kapitulieren und wurden im Kampf getötet. Gute Arbeit, Kommandant!}
+FMQ_30 {Schiffsseide + 200}
+FMQ_31 {Ach, Sie sind das! Bravo, Käpt'n! Sie waren mutig genug, sich den bis an die Zähne bewaffneten englischen Spionen zu stellen!}
+FMQ_32 {Unsere Regierung lobt Sie in den höchsten Tönen, Käpt'n. Und das aus gutem Grund: Die Hilfe bei der Beseitigung englischer Spione ist eine große Sache!}
+FMQ_33 {Die Engländer sind auf unserer Insel gelandet, aber unser wachsamer Kommandant hat nicht gezögert und alle Schurken gefunden und getötet. Das ist es!}
+FMQ_34 {Haben Sie es schon gehört? Es gab einen Kampf außerhalb der Stadt. Wir haben englische Saboteure gefunden. Sie weigerten sich, sich zu ergeben, und wurden von Soldaten getötet. Gut gemacht, Kommandant!}
+FMQ_35 {Alarm in der Stadt!}
+FMQ_36 {Was für eine Frechheit! Die Engländer sind bei Nacht in unsere Stadt eingedrungen! Und doch hat unser Kommandant sie gefunden und getötet. Tolles Ding!}
+FMQ_37 {Haben Sie es schon gehört? Es gab ein Scharmützel in der Stadt. Sie haben eine englische Angriffsgruppe gefunden. Die Engländer weigerten sich zu kapitulieren und wurden dabei getötet. Gute Arbeit, Kommandant!}
+FMQ_38 {Sie haben Ihr Schiff nicht in die Bucht gebracht!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {Die Zeepard Korvette ist uns auf den Fersen!}
+FMQ_42 {Haben Sie von dem Chaos gehört, das hier herrscht? Der Gouverneur ist empört. Englische Spione haben ihre Landsleute aus unserem Gefängnis befreit! Es heißt, einige Franzosen hätten etwas damit zu tun.}
+FMQ_43 {Haben Sie schon gehört? Der Gouverneur ist empört. Englische Spione haben ihre Landsleute aus unserem Gefängnis befreit! Es heißt, einige Franzosen hätten etwas damit zu tun.}
+FMQ_44 {Erkundungsmodus: Timer verlängert. Setzen Sie Passagiere am Ziel ab!}
+FMQ_45 {Ach, Sie sind das! Bravo, Käpt'n! Sie waren mutig genug, unsere Soldaten direkt in dem Versteck der Holländer zu unterstützen!}
+FMQ_46 {Der Gouverneur lobt Sie in den höchsten Tönen, Käpt'n. Und das aus gutem Grund: Den Männern von Fox zu helfen, die gefangenen Offiziere zu retten, ist eine große Sache!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {interceptor}
+FMQ_54 {Domingo Albalate hat Ihr Schiff verlassen}
+FMQ_55 {Sie haben ein dickes Kassenbuch gefunden}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {Sie haben 20 000 Pesos für Selina Trubal gespart}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Erkundungsmodus: Questdauer verdoppelt}
+FMQ_69 {Erkundungsmodus: den Timer gelöscht}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Einige Stunden später...@<NewStr()>Die Waren wurden an die Küste geliefert}

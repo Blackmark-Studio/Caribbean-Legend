@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-Wódz
-}
-RedChieftain_2
-{
-Kanauri
-}
-
-RedChieftain_3
-{
-tubylcy
-}
-RedChieftain_4
-{
-z plemienia Kajmanów
-}
-
-RedChieftain_5
-{
-Wódz opuścił twój statek!
-}
-
-RedChieftain_6
-{
-Tubylec
-}
-RedChieftain_7
-{
-z plemienia Kajmanów
-}
+RedChieftain_1 {Wódz}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {tubylcy}
+RedChieftain_4 {z plemienia Kajmanów}
+RedChieftain_5 {Wódz opuścił twój statek!}
+RedChieftain_6 {Tubylec}
+RedChieftain_7 {z plemienia Kajmanów}

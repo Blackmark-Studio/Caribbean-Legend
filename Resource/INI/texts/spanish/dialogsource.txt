@@ -1,1 +1,1 @@
-SelectDeliveryTradeDialog0	 {el archivo está vacío, por compatibilidad con el kernel Storm-2.5 Se necesita allí por alguna razón, pero no está en los scripts.}
+SelectDeliveryTradeDialog0 {el archivo está vacío, por compatibilidad con el kernel Storm-2.5 Se necesita allí por alguna razón, pero no está en los scripts.}

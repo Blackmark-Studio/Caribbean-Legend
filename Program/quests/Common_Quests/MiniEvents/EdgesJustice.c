@@ -1,3 +1,14 @@
+void GS_Start()
+{
+	SetQuestHeader("GS");
+	AddQuestRecord("GS", "1");
+	pchar.questTemp.GS_Start = true;
+	pchar.questTemp.GS_Portman = true;
+	AddLandQuestMark(characterFromId("Beliz_portman"), "questmarkmain");
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // активировано событие
+}
+
 void GS_Peshera(string qName)
 {
 	chrDisableReloadToLocation = true;
@@ -155,6 +166,54 @@ void GS_Spravedlivost_2(string qName)
 	sld.dialog.currentnode = "Naemnik_27";
 	LAi_SetActorType(sld);
 	LAi_ActorDialog(sld, pchar, "", 0, 0);
+}
+
+void Naemnik_29()
+{
+	chrDisableReloadToLocation = false;
+	locations[FindLocation("Beliz_Cave")].DisableEncounters = false;
+	LAi_SetPlayerType(pchar);
+	
+	sld = CharacterFromID("GS_Naemnik");
+	LAi_SetWarriorType(sld);
+	sld.lifeday = 0;
+	LAi_CharacterDisableDialog(sld);
+	LAi_group_MoveCharacter(sld, LAI_GROUP_PEACE);
+	
+	AddQuestRecord("GS", "7");
+	CloseQuestHeader("GS");
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
+}
+
+void GS_Portman_5()
+{
+	AddQuestRecord("GS", "2");
+	DeleteAttribute(pchar, "questTemp.GS_Portman");
+	
+	PChar.quest.GS_Peshera.win_condition.l1 = "location";
+	PChar.quest.GS_Peshera.win_condition.l1.location = "Beliz_Cave";
+	PChar.quest.GS_Peshera.function = "GS_Peshera";
+	locations[FindLocation("Beliz_Cave")].DisableEncounters = true;
+	
+	PChar.quest.GS_Peshera_pusto.win_condition.l1 = "location";
+	PChar.quest.GS_Peshera_pusto.win_condition.l1.location = "Beliz_Cave_2";
+	PChar.quest.GS_Peshera_pusto.function = "GS_Peshera_pusto";
+}
+
+void GS_Portman_10()
+{
+	AddQuestRecord("GS", "4");
+	CloseQuestHeader("GS");
+	AddQuestRecordInfo("Useful_Acquaintances", "3");
+	DeleteAttribute(pchar, "questTemp.GS_NaemnikMertv");
+	pchar.questTemp.GS_BelizSkidka = true;
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 bool EdgesJustice_QuestComplete(string sQuestName, string qname)

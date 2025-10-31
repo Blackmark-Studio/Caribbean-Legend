@@ -218,11 +218,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		// калеуче
 		case "caleuche":
 			dialog.text = "Monsieur, j'ai besoin du nom exact du navire. Nous avons des tonnes de Jacks et Jacksons qui passent par notre port. Alors, quel est le nom ?";
-			link.l1 = "Bonjour, mon ami.";
-			Link.l1.edit = 2;
-			link.l1.go = "caleuche_name";
-			link.l2 = "Le problème, c'est que je ne connais pas le nom de sa vieille barcasse. C'est étrange, une femme oiseau, née...";
-			link.l2.go = "caleuche_1";
+			link.l1 = "Sirène"; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "Lamia"; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "Harpie"; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "Furie"; 
+			link.l4.go = "caleuche_wrong_name";
+			link.l5 = "Le problème, c'est que je ne connais pas le nom de sa vieille barcasse. C'est étrange, une femme oiseau, née...";
+			link.l5.go = "caleuche_1";
 		break;
 		
 		case "caleuche_1":
@@ -234,24 +239,30 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		
 		case "caleuche_2":
 			dialog.text = "Alors ? Avez-vous le nom du navire ? J'écoute.";
-			link.l1 = "Understood! Please provide the text you would like translated.";
-			Link.l1.edit = 2;
-			link.l1.go = "caleuche_name";
+			link.l1 = "Sirène"; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "Lamia"; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "Harpie"; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "Furie"; 
+			link.l4.go = "caleuche_wrong_name";
+			link.l5 = "J'ai besoin de réfléchir encore un peu.";
+			link.l5.go = "exit";
 		break;
 		
 		case "caleuche_name":
-			if (GetStrSmallRegister(dialogEditStrings[2]) == "harpy")
-			{
-				dialog.text = "'Harpy'? Bien sûr, je connais ce chébec. Son capitaine est Reginald Jackson. Mais il n'était pas à Bridgetown depuis longtemps. J'ai entendu dire qu'il travaille maintenant pour la Compagnie néerlandaise des Indes occidentales. Donc, vous devriez le chercher à Willemstad.";
-				link.l1 = "Merci beaucoup ! Vous m'avez beaucoup aidé.";
-				link.l1.go = "caleuche_3";
-			}
-			else
-			{
-				dialog.text = "Je suis désolé, mais cela ne me dit rien. Êtes-vous sûr que votre capitaine est déjà venu ici, à Bridgetown ?";
-				link.l1 = "Je suis sûr. D'accord, peut-être que je vais trouver quelque chose ...";
-				link.l1.go = "exit";
-			}
+			dialog.text = "'Harpy'? Bien sûr, je connais ce chébec. Son capitaine est Reginald Jackson. Mais il n'était pas à Bridgetown depuis longtemps. J'ai entendu dire qu'il travaille maintenant pour la Compagnie néerlandaise des Indes occidentales. Donc, vous devriez le chercher à Willemstad.";
+			link.l1 = "Merci beaucoup ! Vous m'avez beaucoup aidé.";
+			link.l1.go = "caleuche_3";
+			DelLandQuestMark(npchar);
+		break;
+		
+		case "caleuche_wrong_name":
+			dialog.text = "Je suis désolé, mais cela ne me dit rien. Êtes-vous sûr que votre capitaine est déjà venu ici, à Bridgetown ?";
+			link.l1 = "Je suis sûr. D'accord, peut-être que je vais trouver quelque chose ...";
+			link.l1.go = "exit";
+			npchar.questTemp.caleuche = "true";
 		break;
 		
 		case "caleuche_3":
@@ -259,6 +270,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			AddQuestRecord("Caleuche", "18");
 			pchar.questTemp.Caleuche.Garpiya = "gwik"; 
 			npchar.quest.garpiya = "true";
+			AddLandQuestMarkToPhantom("GVIK", "HWIC_headclerk");
 		break;
 	}
 	UnloadSegment(NPChar.FileDialog2);  // если где-то выход внутри switch  по return не забыть сделать анлод

@@ -22,29 +22,28 @@ void ProcessDialogEvent()
 		case "prepare_convoy_quest":
 			if (isBadReputation(pchar, 40)) 
 			{
-				dialog.text = RandPhraseSimple("Ahhh, hell! I know who you are! Only a total idiot would hire you to escort his ship. Farewell!", "Oh, I know who you are! Hiring you as an escort, you say? I am no fool...");
-				link.l1 = RandPhraseSimple("Heh, what a pity!", "People are certainly too easily scared these days!");
+				dialog.text = RandPhraseSimple("Ahhh, hell! I know who you are! Only a complete fool would hire you to escort his ship. Farewell!","Oh, I know who you are! Hiring you as an escort, you say? I'm no fool...");
+				link.l1 = RandPhraseSimple("Heh, what a pity!","People are certainly too easily scared these days!");
 				link.l1.go = "convoy_refused";
 			}
 			else
 			{
-				dialog.text = TimeGreeting() + ", "+GetAddress_Form(NPChar) + "! I am "+ GetFullName(NPChar) + ", a merchant. I heard you are looking for a job?";
-				link.l1 = "Something like that. And, you, as I heard, are looking for the captain, who will escort you and your ship to your destination?";
+				dialog.text = TimeGreeting()+", "+GetAddress_Form(NPChar)+"! I am "+GetFullName(NPChar)+", a merchant. I heard you're looking for work?";
+				link.l1 = "Something like that. And you, as I heard, are looking for a captain to escort you and your ship to your destination?";
 				link.l1.go = "prepare_convoy_quest_2";
 			}
 		break;
 		
 		case "prepare_convoy_quest_2":
-			dialog.text = "Exactly. Moreover, I believe you're just the right person for my escort. What would you say?";
-			link.l1 = "Well, make me an offer, and perhaps, you'll get a deal.";
+			dialog.text = "Exactly. Moreover, I believe you're just the right person to escort me. What would you say?";
+			link.l1 = "Well, make me an offer, and perhaps you'll get a deal.";
 			link.l1.go = "prepare_convoy_quest_3";
 		break;
 		
 		case "prepare_convoy_quest_3":
 			LookShipConvoy();
 			GenerateConvoyQuest(npchar);
-			dialog.text = "I need to be escorted to " + XI_ConvertString("Colony" + pchar.quest.destination + "Gen") + ", that is located on " + XI_ConvertString(GetIslandByCityName(pchar.quest.destination) + "Dat") +
-				", in " + FindRussianDaysString(sti(pchar.ConvoyQuest.iDay)) +", and for that I'll pay you " + FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney)) + ". So, your decision?";
+			dialog.text = "I need to be escorted to "+XI_ConvertString("Colony"+pchar.quest.destination+"Gen")+", which is located on "+XI_ConvertString(GetIslandByCityName(pchar.quest.destination)+"Dat")+", in "+FindRussianDaysString(sti(pchar.ConvoyQuest.iDay))+", and for that I'll pay you "+FindRussianMoneyString(sti(pchar.ConvoyQuest.convoymoney))+". So, your decision?";
 			link.l1 = "I'm in.";
 			link.l1.go = "convoy_agreeded";
 			link.l2 = "I don't think it's an interesting proposition.";
@@ -68,7 +67,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "complete_convoy_quest":
-			dialog.text = "Oh! Thank you. Under your protection I felt safe like never before. Here's your well-deserved reward.";
+			dialog.text = "Oh! Thank you. Under your protection, I felt safer than ever before. Here's your well-deserved reward.";
 			Link.l1 = "You're welcome.";
 			link.l1.go = "exit";
 			//слухи

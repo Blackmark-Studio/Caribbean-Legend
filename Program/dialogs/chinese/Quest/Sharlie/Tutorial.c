@@ -545,7 +545,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "唉, 我狡猾的计划失败了。 再见, 水手。 ";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -568,14 +568,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "嗯... 您有道理。 而且您已经在船长的舱室吃过不止一次饭了。 请进, 德.莫尔先生。 ";
 					link.l1 = "这才像话! ";
 					link.l1.go = "OhrannikCabin_4";
-					notification("检查通过", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -599,7 +599,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("技能不足 (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -607,7 +607,7 @@ void ProcessDialogEvent()
 			dialog.text = "呃... 好吧。 我想这也不会有什么大碍。 ";
 			link.l1 = "这才像话! ";
 			link.l1.go = "OhrannikCabin_4";
-			notification("检查通过", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -968,6 +968,7 @@ void ProcessDialogEvent()
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 		
 		case "SailorWantRum_PrinestiRum_6":
@@ -1072,17 +1073,17 @@ void ProcessDialogEvent()
 		
 		case "OldSailor_9":
 			dialog.text = "现在告诉我: 船长最重要的技能是什么? ";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "航海技术。 它决定了他能指挥的船只大小。 ";
 				link.l1.go = "OldSailor_10";
-				notification("检查通过", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "我不想撒谎 —我不知道。 ";
 				link.l1.go = "OldSailor_9_1";
-				notification("技能等级不足 (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 
@@ -1166,18 +1167,18 @@ void ProcessDialogEvent()
 
 		case "OldSailor_again":
 			dialog.text = "已经找到答案了? 船长最重要的技能是什么? ";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "航海技术。 它决定了他能指挥的船只大小。 ";
 				link.l1.go = "OldSailor_10";
-				notification("检查通过", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "还没有。 ";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("技能等级不足 (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1589,7 +1590,7 @@ void ProcessDialogEvent()
 				
 		case "OfficerKaznachey_12_Wait":
 			dialog.text = "进展如何? 都给他们发工资了吗? 拿到剩余的达布隆和空箱子了吗? ";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "都完成了。 ";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1606,7 +1607,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "您还说会数数。 您返回的达布隆比预期少。 这意味着我要做更多工作, 而不是更少 —这意味着您没有报酬。 ";
@@ -1685,7 +1686,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval_3":
 			dialog.text = "战斗还有几个小时才开始, 所以现在是结每日账目的最佳时间。 您拿着我的达布隆箱子, 德.莫尔。 请还给我。 ";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "拿去吧。 别再到这下面来露面。 ";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
@@ -1698,12 +1699,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "我可没这个打算。 我不是旱鸭子 —货舱不是我的地方。 再见。 ";
 			link.l1 = "... ";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);

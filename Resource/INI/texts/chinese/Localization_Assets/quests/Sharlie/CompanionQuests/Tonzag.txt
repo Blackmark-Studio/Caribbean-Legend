@@ -1,37 +1,8 @@
-Tonzag_1
-{
-赏金猎人
-}
-
-Tonzag_2
-{
-Alonso
-}
-Tonzag_3
-{
-
-}
-
-Tonzag_4
-{
-6小时过去了... 
-}
-
-Tonzag_5
-{
-探索模式: 计时器已禁用。 
-}
-
-Tonzag_6
-{
-解锁青铜骑士
-}
-
-Tonzag_7
-{
-Alberto
-}
-Tonzag_8
-{
-Gaodio
-}
+Tonzag_1 {赏金猎人}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {6小时过去了...}
+Tonzag_5 {探索模式: 计时器已禁用。}
+Tonzag_6 {解锁青铜骑士}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

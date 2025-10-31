@@ -1,91 +1,20 @@
-BlackMark_1
-{
-Smuggler
-}
-BlackMark_2
-{
-
-}
-
-BlackMark_3
-{
-Francis
-}
-BlackMark_4
-{
-Reasley
-}
-
-BlackMark_5
-{
-Tommy
-}
-BlackMark_6
-{
-Irons
-}
-
-BlackMark_7
-{
-
-}
-BlackMark_8
-{
-
-}
-
-BlackMark_9
-{
-
-}
-BlackMark_10
-{
-
-}
-
-BlackMark_11
-{
-Gabriel
-}
-BlackMark_12
-{
-Callow
-}
-
-BlackMark_13
-{
-Principio
-}
-
-BlackMark_14
-{
-
-}
-BlackMark_15
-{
-
-}
-
-BlackMark_16
-{
-Done and done. Time to go before Gabe shows up
-}
-
-BlackMark_17
-{
-Two hours later...
-}
-
-BlackMark_18
-{
-In the morning...
-}
-
-BlackMark_19
-{
-
-}
-BlackMark_20
-{
-
-}
+BlackMark_1 {Smuggler}
+BlackMark_2 { }
+BlackMark_3 {Francis}
+BlackMark_4 {Reasley}
+BlackMark_5 {Tommy}
+BlackMark_6 {Irons}
+BlackMark_7 { }
+BlackMark_8 { }
+BlackMark_9 { }
+BlackMark_10 { }
+BlackMark_11 {Gabriel}
+BlackMark_12 {Callow}
+BlackMark_13 { }
+BlackMark_14 { }
+BlackMark_15 { }
+BlackMark_16 {Done and done. Time to go before Gabe shows up}
+BlackMark_17 {Two hours later...}
+BlackMark_18 {In the morning...}
+BlackMark_19 { }
+BlackMark_20 { }

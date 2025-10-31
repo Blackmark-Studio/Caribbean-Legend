@@ -1,9 +1,2 @@
-LAi_fightparams_1
-{
-躲闪射击
-}
-
-LAi_fightparams_2
-{
-雇佣兵帽被毁了。
-}
+LAi_fightparams_1 {躲闪射击}
+LAi_fightparams_2 {雇佣兵帽已被摧毁。}

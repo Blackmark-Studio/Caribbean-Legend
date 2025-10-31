@@ -1184,7 +1184,7 @@ case "storage_01":
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", 位于" + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", 位于" + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text =  "哦! 我正想请你帮忙。 你看, 我需要把" +
                                                GetGoodsNameAlt(iTradeGoods)+ "的货物" + FindRussianQtyString(iQuantityGoods) + "运到" +
@@ -1712,7 +1712,7 @@ case "storage_01":
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "我的'朋友'目前在"+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+"的家中。 你不需要他 - 你需要他的船, 据我所知, 大约在"+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+"后, 它将经过" + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + "附近。 你可以击沉它, 也可以通过登船夺取它 - 这不重要。 关键是要确保这艘船和货物不再属于"+pchar.GenQuest.Sunplace.Trader.Enemyname+"。 我不在乎谁会得到它 - 你还是大海。 完成这项工作我将支付你" + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))"。 ";
+			dialog.text = "我的'朋友'目前在"+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+"的家中。 你不需要他 - 你需要他的船, 据我所知, 大约在"+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+"后, 它将经过" + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + "附近。 你可以击沉它, 也可以通过登船夺取它 - 这不重要。 关键是要确保这艘船和货物不再属于"+pchar.GenQuest.Sunplace.Trader.Enemyname+"。 我不在乎谁会得到它 - 你还是大海。 完成这项工作我将支付你" + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + "。 ";
 			link.l1 = "我知道了。 好吧, 该出发了! ";
 			link.l1.go = "Sunplace_3";
 		break;

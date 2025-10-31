@@ -106,32 +106,32 @@ void ProcessDialogEvent()
 		// <<<<<<<<<<<<============= блок нод angry =============================
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			dialog.text = "Ach, das bist du, de Maure. Nun, welch Überraschung. Beim See Teufel, deine Ankunft ist das interessanteste, was seit Langem passiert ist, verdammt noch mal.";
 			link.l1 = "Es freut mich auch, dich zu sehen, Vensan. Genießt du es, das Dorf zu regieren?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 			DelLandQuestMark(npchar);
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Wie könnte ich? Ich bin ein Kapitän, ein verdammt guter dazu, nicht irgendein verfluchter Buchhalter. Und ich habe länger auf die Boten von Marcus gewartet, um mich zu einer neuen Reise zu rufen, als ich auf Weihnachten gewartet habe, verfluchte Flüche!";
 			link.l1 = "Weihnachten und Flüche in einem Satz, das ist etwas. Ja, ich beneide dich nicht. Obwohl, viele würden gerne in deiner aktuellen Position sein. Aber ich bin geschäftlich zu dir gekommen, Vensan.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Geschäfte?! Nun, spuck es aus - hast du dir etwas überlegt? Hast du eine gute Spur? Ich bin dabei, den örtlichen Keller aus purer Langeweile und all diesen verfluchten Berechnungen leer zu trinken.";
 			link.l1 = "Nun, es ist mehr so, dass ich eine Frage an Sie habe, nichts weiter.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Verdammt nochmal! Aber gut, ich höre zu, Charles.";
 			link.l1 = "Ist eine Frau zu Ihnen gekommen? Oder haben Sie sie vielleicht in La Vega gesehen? Sie nennt sich Belle Étoile, obwohl das nur ein Alias ist, daher könnte sie sich unter einem anderen Namen vorgestellt haben. Was wichtig ist, dass sie... sie hat gelbe Haut. Aber sie ist keine Sklavin oder Arbeiterin - sie ist eine wohlhabende Frau.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Gelbhäutig, aber wohlhabend? So jemanden hatten wir hier noch nie, niemals! Scheint, du führst immer noch dieses interessante Leben von dir, de Maure! Ich bin fast eifersüchtig.";
 			link.l1 = "Ist das so... Nun, danke für Ihre Zeit, Vensan. Ich werde Sie nicht länger von Ihrer Buchhaltung ablenken, heh-heh.";
 			link.l1.go = "Exit";

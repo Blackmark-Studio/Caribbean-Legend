@@ -1,473 +1,299 @@
-_info {
-Файл - описание РПГ системы
-Создан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
+_info
+{
+Файл - описание РПГ системыСоздан: ALexusB 17.08.05  // изменен Tymofei 12.12.2012
 }
-
-newline {
+newline
+{
 
 }
-
 Strength
 {
-Starke Piraten sind in der Regel gute Kämpfer der Vorhut und Kanoniere.
-Beeinflusst Fertigkeiten, die körperliche Stärke erfordern, insbesondere 'Mittlere Waffen', 'Schwere Waffen' und 'Kanonen'.
-~
-Bestimmt die Menge an HP pro Stufe und die maximale Inventarkapazität.
+Starke Piraten sind in der Regel gute Kämpfer der Vorhut und Kanoniere.Beeinflusst Fertigkeiten, die körperliche Stärke erfordern, insbesondere 'Mittlere Waffen', 'Schwere Waffen' und 'Kanonen'.~Bestimmt die Menge an HP pro Stufe und die maximale Inventarkapazität.
 }
-
 Perception
 {
-Aufmerksame Piraten können Scharfschützen, Geheimagenten und Kanoniere sein.
-~
-Beeinflusst die Fertigkeiten 'Genauigkeit' und 'Tarnung'.
+Aufmerksame Piraten können Scharfschützen, Geheimagenten und Kanoniere sein.~Beeinflusst die Fertigkeiten 'Genauigkeit' und 'Tarnung'.
 }
-
-Agility
-{
-Flinke Piraten sind oft die besten Kandidaten für die Rolle der Vorhut oder des Bootsmannes, denn ihre Stärke ist das Entern.
-Beeinflusst 'Leichte Waffen', 'Mittlere Waffen', 'Entern' und 'Schusswaffen'.
-~
-Bestimmt die maximale Menge an Ausdauer.
-}
-
+Agility {Koordination der Bewegungen und Geschicklichkeit der Hände. ~ Beeinflusst: „Entern“, „Leichte Waffen“, „Mittlere Waffen“, „Pistolen und Musketen“ sowie die Energiemenge, die pro Rang gewonnen wird.}
 Charisma
 {
-Charismatische Piraten sind natürliche Anführer, Verhandlungsführer und Zahlmeister. 
-Ein geborener Anführer braucht keine Gewalt, um den Händlern ihre Waren abzunehmen, sie werden ihm alles geben, ohne sich zu wehren. Die besten Seeleute werden ihm folgen und die schönsten Frauen werden in jedem Hafen auf seine Ankunft warten.
-~
-Wirkt sich auf 'Führung' und 'Handel' aus.
-Bestimmt, wie viele Offiziere Sie einstellen können (A*2).
+Charismatische Piraten sind natürliche Anführer, Verhandlungsführer und Zahlmeister. Ein geborener Anführer braucht keine Gewalt, um den Händlern ihre Waren abzunehmen, sie werden ihm alles geben, ohne sich zu wehren. Die besten Seeleute werden ihm folgen und die schönsten Frauen werden in jedem Hafen auf seine Ankunft warten.~Wirkt sich auf 'Führung' und 'Handel' aus.Bestimmt, wie viele Offiziere Sie einstellen können (A*2).
 }
-
-Intellect
-{
-Kluge Piraten lernen schnell und haben eine große Auswahl an Karrieremöglichkeiten: Chirurgen, Kanoniere und Navigatoren.
-~
-Wirkt sich auf 'Handel', 'Kanonen' und 'Navigation' aus.
-Bestimmt, wie schnell ihr Stufen und Vorteile erhaltet.
-}
-
+Intellect {Angeborene Neigungen und Fähigkeiten, Scharfsinn und die Fähigkeit, sich schnell anzupassen. ~ Beeinflusst „Handel“, „Artillerie“, „Navigation“ und die Energiemenge, die pro Rang gewonnen wird.}
 Endurance
 {
-Unverwüstliche Piraten glänzen als Zimmerleute und Chirurgen.
-~
-Wirkt sich auf 'Reparaturen' und 'Verteidigung' aus.
-Wie (P), bestimmt die maximalen HP und die maximale Inventarkapazität.
+Unverwüstliche Piraten glänzen als Zimmerleute und Chirurgen.~Wirkt sich auf 'Reparaturen' und 'Verteidigung' aus.Wie (P), bestimmt die maximalen HP und die maximale Inventarkapazität.
 }
-
 Luck
 {
-Glückspiraten sind perfekte Schützen, Glücksspieler und Abenteurer.
-~
-'Feuerwaffen', 'Opportunismus' und 'Tarnung' erfordern diesen Wert.
-Bestimmt den Ausgang einiger Spielereignisse und hat einen massiven Einfluss auf die kritische Trefferchance.
+Glückspiraten sind perfekte Schützen, Glücksspieler und Abenteurer.~'Feuerwaffen', 'Opportunismus' und 'Tarnung' erfordern diesen Wert.Bestimmt den Ausgang einiger Spielereignisse und hat einen massiven Einfluss auf die kritische Trefferchance.
 }
-
 Crit
 {
-Die Wahrscheinlichkeit, einen kritischen Treffer zu landen, hängt von der Kombination aus ausgerüsteten Gegenständen, Vorteilen und Attributen ab.
+Grundwahrscheinlichkeit, dem Feind einen kritischen Treffer oder Schuss zuzufügen.
 ~
-(S) bestimmt die Chance auf einen kritischen Nahkampfangriff.
-Die (S)- und (I)-Werte bestimmen die Chance auf einen kritischen Schuss.
+Hängt von S und P ab.
 ~
-
-Die Ausrüstung des Gegners und seine Perks können deine kritische Trefferchance verändern.
+Perks und Ausrüstung können diese Chance erhöhen.
 }
-
 CharDefence
 {
-Basisindikatoren für den Schutz vor Nahkampfwaffen / Schusswaffen / kritischen Treffern des Gegners
-~
-Die Leistung hängt von den persönlichen Fähigkeiten und der Ausrüstung ab
-~
-Sie passen sich nicht an die Fähigkeiten und die Ausrüstung des Gegners an.
+Grundwerte der Schadensabwehr. Verringern den gesamten eingehenden Schaden um einen bestimmten Prozentsatz.
+ ~
+ Diese Werte werden von persönlichen Perks und Ausrüstung beeinflusst.
 }
-
 FencingL
 {
-Fähigkeit im Umgang mit leichten Klingen, Floretts und dergleichen. 
-(R*0.9+I*0.1)
+Fertigkeit im Umgang mit leichten Klingen, Floretten und ähnlichen Waffen.
+ (R*0.9+I*0.1)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
-
 FencingS
 {
-Fähigkeit im Umgang mit mittelgroßen, vielseitig ausbalancierten Klingen, wie z. B. Säbeln, die sowohl Kraft als auch Beweglichkeit erfordern. 
-(P*0.6+R*0.4)
+Fertigkeit im Umgang mit mittelgroßen, ausgewogenen Klingen wie Säbeln, die Kraft und Geschicklichkeit erfordern.
+ (P*0.6+R*0.4)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
-
 FencingH
 {
-Fähigkeit, mit schweren Waffen wie Breitschwertern und Äxten umzugehen. Erfordert viel körperliche Kraft. 
-(P*0.9+E*0.1)
+Fertigkeit im Umgang mit schweren Waffen wie Breitschwertern und Äxten. Erfordert große körperliche Stärke.
+ (P*0.9+E*0.1)
+ ~
+ Beeinflusst den Waffenschaden und den Energieverbrauch bei Angriffen.
 }
-
 Pistol
 {
-Beherrschung aller Arten von Feuerwaffen.
-(R*0.4+S*0.6)
+Fertigkeit im Umgang mit allen Arten von Schusswaffen.
+ (R*0.4+S*0.6)
+ ~
+ Beeinflusst Schaden und Nachladegeschwindigkeit.
 }
-
 Fortune
 {
-Ein bisschen proaktives Glück ist beim Glücksspiel und beim Plündern sehr nützlich.
-Based on(S).
+Ein bisschen proaktives Glück ist beim Glücksspiel und beim Plündern sehr nützlich.Based on(S).
 }
-
 Leadership
 {
-Beeinflusst die Ergebnisse bestimmter Ereignisse und Dialoge. Auch die wichtigste Fähigkeit, wenn es darum geht, neue Besatzungsmitglieder anzuheuern.
-(A*0.8+T*0.2)
+Beeinflusst die Ergebnisse bestimmter Ereignisse und Dialoge. Auch die wichtigste Fähigkeit, wenn es darum geht, neue Besatzungsmitglieder anzuheuern.(A*0.8+T*0.2)
 }
-
 Commerce
 {
-Spielt eine entscheidende Rolle in spezifischen Handelsdialogen, beeinflusst sowohl die Verkaufs- als auch die Kaufpreise und wirkt sich auf die Gesamtkosten des Schiffsmanagements aus.
-(T*0.8+A*0.2)
+Spielt eine entscheidende Rolle in spezifischen Handelsdialogen, beeinflusst sowohl die Verkaufs- als auch die Kaufpreise und wirkt sich auf die Gesamtkosten des Schiffsmanagements aus.(T*0.8+A*0.2)
 }
-
 Accuracy
 {
-Dies ist eine der wichtigsten Fähigkeiten auf hoher See. Ein anständiger Kapitän verschwendet kein Schießpulver und keine Kanonenkugeln, nur um die Fische zu zerstreuen: Jede Salve wird ihr Ziel treffen! Und wenn der salzige Wind den Rauch über der Brücke des Kapitäns vertreibt, werden keine feindlichen Schiffe mehr am Horizont zu sehen sein! 
-(I*0.8+S*0.2)
+Dies ist eine der wichtigsten Fähigkeiten auf hoher See. Ein anständiger Kapitän verschwendet kein Schießpulver und keine Kanonenkugeln, nur um die Fische zu zerstreuen: Jede Salve wird ihr Ziel treffen! Und wenn der salzige Wind den Rauch über der Brücke des Kapitäns vertreibt, werden keine feindlichen Schiffe mehr am Horizont zu sehen sein! (I*0.8+S*0.2)
 }
-
 Cannons
 {
-Ladet die Kanone schnell, rollt sie auf und während das Echo der Salve noch zwischen den Schotten dröhnt, räumt, ladet, zielt, gießt Wasser auf die Kanone, damit sie nicht überhitzt... In der Hitze des Gefechts sollte man es nicht übertreiben: laden, einrollen, feuern! 
-(T*0.6+P*0.4)
+Ladet die Kanone schnell, rollt sie auf und während das Echo der Salve noch zwischen den Schotten dröhnt, räumt, ladet, zielt, gießt Wasser auf die Kanone, damit sie nicht überhitzt... In der Hitze des Gefechts sollte man es nicht übertreiben: laden, einrollen, feuern! (T*0.6+P*0.4)
 }
-
 Sailing
 {
-Die Fähigkeit, das Schiff durch Sturm und Nebel sicher in den Hafen zu bringen; die Fertigkeit, Navigationsgeräte zu benutzen und die Flotte zu steuern. Das größte und furchterregendste Schiff wird wie ein Vogel fliegen und der ruhigen Hand eines erfahrenen Navigators gehorchen. 
-(I*0.2+T*0.8)
-~
-Fehlende Navigation führt zu Abzügen bei allen Fähigkeiten und Werten.
-Klasse 1 Schiffe erfordern 95
-Klasse 2 Schiffe erfordern 80
-Klasse 3 Schiffe erfordern 65
-Klasse 4 Schiffe erfordern 45
-Klasse 5 Schiffe erfordern 25
-Klasse 6 Schiffe erfordern 05
-Unzureichende Navigation führt zu Abzügen bei allen Fähigkeiten und Eigenschaften des Helden. Je größer der Unterschied zwischen aktuellem und erforderlichem Navigationswert, desto stärker die Abzüge.
+Fähigkeit, ein Schiff unter allen Bedingungen zu führen, Instrumente zu bedienen und eine Eskadron zu kommandieren. Selbst das launischste und unbeweglichste Schiff gehorcht der ruhigen Hand eines erfahrenen Skippers.
+ Hängt von 'Wahrnehmung' und 'Talent' ab (I0.2 + T0.8)
+ ~
+ Um ein Schiff einer bestimmten Klasse zu führen, ist ein entsprechendes Mindestniveau der Navigation erforderlich:
+ Klasse 1 erfordert 90
+ Klasse 2 erfordert 70
+ Klasse 3 erfordert 55
+ Klasse 4 erfordert 40
+ Klasse 5 erfordert 20
+ Klasse 6 erfordert 01
+ ~
+ Ein Mangel an Navigation führt zu Strafen auf alle Fertigkeiten und Attribute des Helden. Je größer die Differenz zwischen aktuellem und erforderlichem Navigationswert ist, desto stärker die Strafen.
 }
-
 Repair
 {
-Wenn der Feind Ihr Schiff mit einer Salve von Kanonenkugeln stürmt, die Seitenwände zersplittern und die Segel in Scherben verwandeln; wenn der Rumpf im Sturm zerbricht und der Wind die Takelage Faden für Faden zerreißt, wird die Reparatur zu einer der wichtigsten seemännischen Fähigkeiten. 
-(E*0.8+I*0.2)
+Wenn der Feind Ihr Schiff mit einer Salve von Kanonenkugeln stürmt, die Seitenwände zersplittern und die Segel in Scherben verwandeln; wenn der Rumpf im Sturm zerbricht und der Wind die Takelage Faden für Faden zerreißt, wird die Reparatur zu einer der wichtigsten seemännischen Fähigkeiten. (E*0.8+I*0.2)
 }
-
 Grappling
 {
-Ein Schiff auf das feindliche Schiff auszurichten, die Haken zu schleudern, um den zitternden Feind zu entern, die Decks zu säubern und das Schiff als wohlverdiente Beute an sich zu nehmen - das erfordert viel Geschick und Erfahrung, aber die Beute entschädigt sicher für alle Mühen. 
-(R*0.7+T*0.3)
+Das eigene Schiff mit dem feindlichen ausrichten, die Enterhaken werfen, den zitternden Gegner entern, die Decks säubern und das Schiff als wohlverdiente Beute nehmen – das erfordert große Beweglichkeit und Erfahrung, aber die Beute wird die Mühe sicher wettmachen.
+ (R*0.7+T*0.3)
+ ~
+ Beeinflusst die Enterdistanz.
 }
-
 Defence
 {
-Tag für Tag wird die Besatzung langsam eins mit dem Schiff. Ein erfahrener Seemann ist mehr wert als ein Dutzend Sprossen aus einer örtlichen Taverne. Jeder gute Kapitän muss seine Männer schützen und darf nicht zulassen, dass sie leichtsinnig untergehen. 
-(E*0.5+A*0.5)
+Tag für Tag wird die Besatzung langsam eins mit dem Schiff. Ein erfahrener Seemann ist mehr wert als ein Dutzend Sprossen aus einer örtlichen Taverne. Jeder gute Kapitän muss seine Männer schützen und darf nicht zulassen, dass sie leichtsinnig untergehen. (E*0.5+A*0.5)
 }
-
 Sneak
 {
-Um unbemerkt am Feind vorbeizukommen, bei einer Verfolgungsjagd auf offener See zu entkommen oder aus dem Nichts aufzutauchen, um einen ahnungslosen Feind anzugreifen - jeder Kapitän muss die Fähigkeit der Tarnung beherrschen. 
-(S*0.5+I*0.5)
+Um unbemerkt am Feind vorbeizukommen, bei einer Verfolgungsjagd auf offener See zu entkommen oder aus dem Nichts aufzutauchen, um einen ahnungslosen Feind anzugreifen - jeder Kapitän muss die Fähigkeit der Tarnung beherrschen. (S*0.5+I*0.5)
 }
-
 Loyality
 {
-Ihr Handeln beeinflusst die Loyalität der Offiziere. Weiße Ritter werden sich weigern, von einem Schurken angestellt zu werden, und natürliche Banditen werden nicht lange ehrlich bleiben.
-~
-Ein hohes Maß an Autorität kann die Auswirkungen von Entscheidungen auf die Loyalität Ihrer Offiziere erheblich verringern, wenn diese Handlungen nicht mit deren Weltanschauung übereinstimmen.
+Ihr Handeln beeinflusst die Loyalität der Offiziere. Weiße Ritter werden sich weigern, von einem Schurken angestellt zu werden, und natürliche Banditen werden nicht lange ehrlich bleiben.~Ein hohes Maß an Autorität kann die Auswirkungen von Entscheidungen auf die Loyalität Ihrer Offiziere erheblich verringern, wenn diese Handlungen nicht mit deren Weltanschauung übereinstimmen.
 }
-
 Authority
 {
-Autorität, Ruhm und Ehre unterscheiden
-den Protagonisten von allen anderen Spielfiguren.
-~
-Die Autorität ist eine Bewertung des Helden durch seine Umgebung (vor allem durch die Besatzung der Schiffe in der Flotte des Protagonisten). Wenn die Autorität des Kapitäns kritisch ist, wird er mit einer schwarzen Karte bedacht und ihm wird angeboten, freiwillig oder gezwungenermaßen zurückzutreten. Ist die Autorität hoch, schart sich die Besatzung um den Kommandanten und widersteht allen Prüfungen mit gutem Vertrauen in ihren Anführer!
-~
-Die Ehre wächst, wenn der Held die Welt und ihre Bewohner rettet. Oder er fällt in die hässlichsten Abgründe, durch gebrochene Versprechen, verübte Gewalt und Schurkerei. Die Ehre hängt von den Handlungen des Charakters ab und beeinflusst wiederum, wie andere Menschen im Spiel ihn wahrnehmen.
-~
-Lebt der Held jedoch eintönig und bedächtig, wählt er die am wenigsten riskanten Lösungen, reist er allein durch die leeren Meere, fallen seine Ehre und sein Ruhm wie Sand durch eine offene Handfläche und sinken auf ein neutrales und unkompliziertes Medium. Im Spiel ist das Gedächtnis der Gemeinschaft kurz und geht nicht über die Hälfte des Spieljahres hinaus.
+Autorität, Ruhm und Ehre unterscheidenden Protagonisten von allen anderen Spielfiguren.~Die Autorität ist eine Bewertung des Helden durch seine Umgebung (vor allem durch die Besatzung der Schiffe in der Flotte des Protagonisten). Wenn die Autorität des Kapitäns kritisch ist, wird er mit einer schwarzen Karte bedacht und ihm wird angeboten, freiwillig oder gezwungenermaßen zurückzutreten. Ist die Autorität hoch, schart sich die Besatzung um den Kommandanten und widersteht allen Prüfungen mit gutem Vertrauen in ihren Anführer!~Die Ehre wächst, wenn der Held die Welt und ihre Bewohner rettet. Oder er fällt in die hässlichsten Abgründe, durch gebrochene Versprechen, verübte Gewalt und Schurkerei. Die Ehre hängt von den Handlungen des Charakters ab und beeinflusst wiederum, wie andere Menschen im Spiel ihn wahrnehmen.~Lebt der Held jedoch eintönig und bedächtig, wählt er die am wenigsten riskanten Lösungen, reist er allein durch die leeren Meere, fallen seine Ehre und sein Ruhm wie Sand durch eine offene Handfläche und sinken auf ein neutrales und unkompliziertes Medium. Im Spiel ist das Gedächtnis der Gemeinschaft kurz und geht nicht über die Hälfte des Spieljahres hinaus.
 }
-
 Attention_abilities
 {
-Achtung!
-Einige Fähigkeiten sind möglicherweise nicht verfügbar 
-für bestimmte Arten von Protagonisten oder Offizieren.
+Achtung!Einige Fähigkeiten sind möglicherweise nicht verfügbar für bestimmte Arten von Protagonisten oder Offizieren.
 }
-
 Personal_abilities
 {
-Vorteile, die auf den Charakter ausgerichtet sind.
+Perks, die die persönlichen Fähigkeiten des Charakters erweitern. Fortschritt wird erzielt, wenn persönliche Fertigkeiten verbessert werden.
+ ~
+ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für persönliche Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
 }
-
 Ship_abilities
 {
-Vorteile, die sich auf das Schiff konzentrieren.
-Die angeheuerten Offiziere können sich um die meisten von ihnen kümmern, so dass der Kapitän Prioritäten setzen kann.
+Perks, die die Schiffsführung beeinflussen. Fortschritt wird erzielt, wenn Schiffsfertigkeiten verbessert werden.
+ ~
+ Beim Erreichen eines Schwellenwerts erhältst du einen neuen Punkt für Schiffs-Perks. Verschiedene Perks kosten unterschiedlich viele Punkte. In der Regel befinden sich die stärksten am Ende des Entwicklungsbaums.
+ ~
+ Sie können vom Hauptcharakter von Offizieren geerbt werden, die auf Schiffsposten eingesetzt sind und ihr Handwerk verstehen.
 }
-
-Abilities_available
-{
-Die Zahl gibt die Anzahl der nicht zugewiesenen Vorteilspunkte an.
-}
-
-Abilities_active
-{
-Die Zahl gibt an, welche Vorteile ein Charakter aktiviert hat.
-}
-
+Abilities_available {Die Zahl gibt die Anzahl der nicht zugewiesenen Vorteilspunkte an.}
+Abilities_active {Die Zahl gibt an, welche Vorteile ein Charakter aktiviert hat.}
 Rank
 {
-Der Rang gibt an, wie weit die Spielfigur im Spiel fortgeschritten ist. Er steigt mit der Erfahrung des Helden. Wenn der Rang des Helden steigt, erhöht sich auch sein Leben um eine Zahl, die auf dem Ausdauerwert basiert.
-~
-Je höher der Rang des Helden ist, desto öfter trifft er auf stärkere Gegner und findet bessere Gegenstände.
+Der Rang ist ein Maß für das Entwicklungsniveau einer Figur im Spiel. Fortschritt wird erzielt, wenn Fertigkeiten verbessert werden.
+ ~
+ Mit steigendem Rang des Charakters erhöhen sich seine Lebenspunkte und Energie, und stärkere Gegner sowie neue Gegenstände treten häufiger auf.
 }
-
 Life
 {
-Null HP bedeutet den Tod. Ein HP bedeutet die Welt der Möglichkeiten.
-~
-(E) bestimmt, wie viele Bonus-HP mit jeder neuen Stufe gewährt werden.
+HP — ein Maß für die Widerstandsfähigkeit eines Charakters gegen physische Schäden. Null bedeutet Tod, eins bedeutet eine Welt voller Möglichkeiten.
+ ~
+ Der Wert hängt von P und E ab und wächst mit dem Rang.
 }
-
-Health
-{
-Die Vitalität ist der Indikator für den körperlichen Zustand des Charakters. Sie sinkt jedes Mal, wenn du in kurzer Zeit schwer verwundet wirst. Sie erholt sich wieder, wenn du den Kampf für einige Zeit meidest, damit die Wunden richtig heilen können. Sie kann die Werte und Fertigkeiten stark beeinträchtigen, wenn sie nicht beachtet wird.
-}
-
+Health {Die Vitalität ist der Indikator für den körperlichen Zustand des Charakters. Sie sinkt jedes Mal, wenn du in kurzer Zeit schwer verwundet wirst. Sie erholt sich wieder, wenn du den Kampf für einige Zeit meidest, damit die Wunden richtig heilen können. Sie kann die Werte und Fertigkeiten stark beeinträchtigen, wenn sie nicht beachtet wird.}
 Energy
 {
-Energie ist ein wichtiger Parameter, der die Ausdauer des Helden während des Nahkampfes bestimmt, da jeder Angriff auf sie zurückgreift. Einfach ausgedrückt: Der Kampf ermüdet den Charakter, so dass er sich ausruhen muss, um seine Ausdauer wiederherzustellen.
-~
-(R) bestimmt deine maximale Energiemenge.
+Energie - der Vorrat an körperlicher Ausdauer eines Charakters.
+ 
+  ~
+ 
+  Alle Angriffsaktionen und das Sprinten im Nahkampf verbrauchen Energie; im Kampf ermüdet der Charakter und benötigt eine Pause zur Erholung.
+ 
+  ~
+ 
+  Der Energie-Wert hängt von R und T ab und steigt mit dem Rang.
 }
-
-Money
-{
-Geld ist der König aller Menschen. Piaster, Taler, Guineen... Wo ist der Unterschied, wenn es sich um flüssiges Geld handelt!
-}
-
+Money {Geld ist der König aller Menschen. Piaster, Taler, Guineen... Wo ist der Unterschied, wenn es sich um flüssiges Geld handelt!}
 Reputation
 {
-Der Ruf ist das Maß für die Einstellung der anderen Charaktere zu Ihnen. Der Ruf kann hoch (positiv), neutral und niedrig (negativ) sein. Der Ruf ändert sich je nach den Taten des Helden und bestimmt, wie andere Charaktere im Spiel Ihren Helden wahrnehmen.
+Ehre zeigt, wie die Gesellschaft den Charakter sieht.
 ~
-Der Ruhm des Helden verblasst mit der Zeit, seine Leistungen oder Misserfolge werden aus dem Gedächtnis der Menschen gelöscht. Böse Taten werden nicht so leicht vergessen wie gute. Wenn ein Held keine Partei ergreift oder keine bedeutenden Taten vollbringt, wird sein Ruf schließlich zum 'unbekannten Abenteurer'.
+Sie verändert sich je nach deinen Lösungswegen.
+~
+Ehre strebt immer zu einem neutralen Zustand.
 }
-
 Weight
 {
-Das maximale Gewicht, das ein Charakter tragen kann, ohne an Bewegungsgeschwindigkeit zu verlieren oder andere Abzüge bei seinen Fertigkeiten zu erhalten.
-Hängt von (P) und (E) ab.
+Das Gewicht ist die maximale Gesamtmasse an Fracht, die eine Figur tragen kann.
+ Hängt von Stärke, Ausdauer, persönlichen Perks und aktiven Amuletten ab.
+ ~
+ Ein überladener Charakter bewegt sich langsamer, erleidet Strafen und kann kein Schnellreisen verwenden.
 }
-
-Title
-{
-Der Titel gibt an, wie nützlich die Figur für den Staat ist, dem sie dient.
-}
-
+Title {Der Titel gibt an, wie nützlich die Figur für den Staat ist, dem sie dient.}
 NextExp
 {
-Die Erfahrungspunkte zeigen an, wie viele Punkte der aktuellen Fertigkeit, dem Rang und der Fähigkeit zugewiesen sind und wie viel Erfahrung benötigt wird, um einen weiteren Punkt zu erhalten.
-~
-Fertigkeiten entwickeln sich, wenn du die entsprechenden Aktionen ausführst. Zum Beispiel erhältst du für jeden präzisen Pistolenschuss Erfahrungspunkte für die Fertigkeit "Feuerwaffen". Diese Fertigkeitspunkte werden auf die Rangerfahrung und die persönlichen/Schiffsfähigkeiten angerechnet (je nach Fertigkeitstyp).
-~
-Durch das Überschreiten der Erfahrungsgrenze erhält der Held einen neuen Rang und damit mehr Lebens- und Fähigkeitspunkte, die der Spieler nach Belieben vergeben kann.
+Die Erfahrungspunkte zeigen an, wie viele Punkte der aktuellen Fertigkeit, dem Rang und der Fähigkeit zugewiesen sind und wie viel Erfahrung benötigt wird, um einen weiteren Punkt zu erhalten.~Fertigkeiten entwickeln sich, wenn du die entsprechenden Aktionen ausführst. Zum Beispiel erhältst du für jeden präzisen Pistolenschuss Erfahrungspunkte für die Fertigkeit "Feuerwaffen". Diese Fertigkeitspunkte werden auf die Rangerfahrung und die persönlichen/Schiffsfähigkeiten angerechnet (je nach Fertigkeitstyp).~Durch das Überschreiten der Erfahrungsgrenze erhält der Held einen neuen Rang und damit mehr Lebens- und Fähigkeitspunkte, die der Spieler nach Belieben vergeben kann.
 }
-
 TABLE_PERKS {Heldenfähigkeiten}
-
 TABLE_PERKS_desc
 {
-Fähigkeiten sind zusätzliche Charakterparameter, die es ermöglichen, neue Vorteile zu erhalten oder bisher unzugängliche Spielfunktionen zu erschließen. Fähigkeiten können einen Charakter zu einem Experten in einer bestimmten Spezialisierung oder zu einem Generalisten machen, der ein wenig über vieles weiß.
-~
-Doppelklicken Sie auf die ausgewählte Fähigkeit, um ihre Beschreibung zu lesen und sich über die Voraussetzungen zu informieren (falls vorhanden).
-~
-Bestimmte Fähigkeiten können nicht sofort ausgewählt werden, da sie Voraussetzungen erfüllen müssen. Lernen Sie zuerst die Anfangsfähigkeiten im Baum, um neue Fähigkeiten verfügbar zu machen.
+Fähigkeiten sind zusätzliche Charakterparameter, die es ermöglichen, neue Vorteile zu erhalten oder bisher unzugängliche Spielfunktionen zu erschließen. Fähigkeiten können einen Charakter zu einem Experten in einer bestimmten Spezialisierung oder zu einem Generalisten machen, der ein wenig über vieles weiß.~Doppelklicken Sie auf die ausgewählte Fähigkeit, um ihre Beschreibung zu lesen und sich über die Voraussetzungen zu informieren (falls vorhanden).~Bestimmte Fähigkeiten können nicht sofort ausgewählt werden, da sie Voraussetzungen erfüllen müssen. Lernen Sie zuerst die Anfangsfähigkeiten im Baum, um neue Fähigkeiten verfügbar zu machen.
 }
-
 PERK_TABLE_NEED {Erforderliche Fähigkeiten}
-
-PERK_TABLE_NEED_desc
-{
-Um diese Fähigkeit zu wählen, muss ein Held zuerst alle anderen Fähigkeiten in diesem Baum aktivieren.
-}
-
+PERK_TABLE_NEED_desc {Um diese Fähigkeit zu wählen, muss ein Held zuerst alle anderen Fähigkeiten in diesem Baum aktivieren.}
 Nation_hint
 {
-Die Nation des Helden ist eine Nation, die der Held zu Beginn des Spiels wählt, oder die Nation des Patents, das im Moment ausgestellt wird (Held im Dienst). Die Nation kann im "Charakter"-Fenster eingesehen werden. Im Fenster "Nation" kannst du die aktuelle Flagge deines Schiffes sehen - du kannst sie nur auf See ändern, um deine wahre Identität zu verbergen. Beachte, dass Schiffe auf offener See und Wachen im Hafen deine Tarnung durchschauen könnten. Die Tarnfähigkeit des Helden beeinflusst die Wahrscheinlichkeit, dass die Tarnung erfolgreich ist. Wenn auf einen Helden von seiner Nation ein Kopfgeld ausgesetzt wurde, gilt er auch als Feind seiner eigenen Nation.
-~
-Das Erkennen von Feinden erfolgt unter Berücksichtigung der offiziellen Beziehungen zwischen den Staaten sowie der Kopfgelder, die sie auf Sie aussetzen.
-~
-Schnellreise funktioniert nicht in feindlichen Städten.
+Die Nation des Helden ist eine Nation, die der Held zu Beginn des Spiels wählt, oder die Nation des Patents, das im Moment ausgestellt wird (Held im Dienst). Die Nation kann im "Charakter"-Fenster eingesehen werden. Im Fenster "Nation" kannst du die aktuelle Flagge deines Schiffes sehen - du kannst sie nur auf See ändern, um deine wahre Identität zu verbergen. Beachte, dass Schiffe auf offener See und Wachen im Hafen deine Tarnung durchschauen könnten. Die Tarnfähigkeit des Helden beeinflusst die Wahrscheinlichkeit, dass die Tarnung erfolgreich ist. Wenn auf einen Helden von seiner Nation ein Kopfgeld ausgesetzt wurde, gilt er auch als Feind seiner eigenen Nation.~Das Erkennen von Feinden erfolgt unter Berücksichtigung der offiziellen Beziehungen zwischen den Staaten sowie der Kopfgelder, die sie auf Sie aussetzen.~Schnellreise funktioniert nicht in feindlichen Städten.
 }
-
-Drunk_hint
-{
-Alkohol beeinträchtigt Ihre Fähigkeiten. Wenn Sie betrunken sind, spüren Sie zwar keine Schmerzen, können aber auch keine heiklen Aufgaben erledigen.
-}
-
-England_descr
-{
-England. Britannien hat noch ein weiteres Jahrhundert Zeit, um wirklich "die Wellen zu beherrschen", aber wenn es eine aufstrebende Seemacht gibt, die es mit der Macht Spaniens aufnehmen kann, dann ist es England. Während Frankreich die spanische Macht in Europa angreift, ergötzen sich englische Freibeuter und Seepatrouillen an der ungeschützten spanischen Schifffahrt auf ihrem Weg zur endgültigen Vorherrschaft in der Karibik.
-}
-
+Drunk_hint {Alkohol beeinträchtigt Ihre Fähigkeiten. Wenn Sie betrunken sind, spüren Sie zwar keine Schmerzen, können aber auch keine heiklen Aufgaben erledigen.}
+England_descr {England. Britannien hat noch ein weiteres Jahrhundert Zeit, um wirklich "die Wellen zu beherrschen", aber wenn es eine aufstrebende Seemacht gibt, die es mit der Macht Spaniens aufnehmen kann, dann ist es England. Während Frankreich die spanische Macht in Europa angreift, ergötzen sich englische Freibeuter und Seepatrouillen an der ungeschützten spanischen Schifffahrt auf ihrem Weg zur endgültigen Vorherrschaft in der Karibik.}
 France_descr
 {
-Die verheerenden Religionskriege zwischen Katholiken und Hugenotten, die Frankreich seit dem Beginn der Reformation vor über hundert Jahren geplagt haben, sind mit der Thronbesteigung des fünfzehnjährigen Ludwig XIV. von Bourbon weitgehend vorbei. Noch weit entfernt vom zukünftigen "Sonnenkönig", der Frankreich zu einem goldenen Zeitalter führen wird, möchte König Ludwig an die Traditionen des großen Kardinals Richelieu anknüpfen und den Staatsapparat durch energische Reformen stärken. Es gibt noch viele Konflikte in Europa, aber am größten sind in den Augen von König Ludwig die erbitterten Rivalen der Bourbonen, die Habsburger, die derzeit als König von Spanien und Kaiser des Heiligen Römischen Reiches herrschen. Um mit den Spaniern sowohl im In- als auch im Ausland konkurrieren zu können, hat König Ludwig Jean-Baptiste Colbert beauftragt, die französische Marine zu modernisieren. Ein neues und effizientes Steuersystem ermöglicht es Frankreich nicht nur, seine Schulden aus fast fünfzig Jahren Krieg zu begleichen, sondern auch Mittel für Reformen der Marine und der Armee bereitzustellen. Die französische Armee ist zwar immer noch nicht so modern und kampferprobt wie Oliver Cromwells englische New Model Army, aber sie entwickelt sich rasch zu einer der bestausgerüsteten und -ausgebildeten Armeen des Kontinents im neuen linearen Kriegsstil. In Toulon und Saint-Nazaire werden neue Schiffe nach den neuesten Entwürfen gebaut, und in den Fabriken im Landesinneren werden moderne Kanonen gegossen.
-~
-Im Gegensatz zu den Engländern liegen die Hauptinteressen Frankreichs auf dem europäischen Kontinent, und koloniale Belange sind oft zweitrangig gegenüber der dringenden Notwendigkeit, die französische Grenze gegen die Habsburger in Österreich, Italien und Spanien zu verteidigen.
-~
-Aufgrund dieser Vernachlässigung beschloss die Französische Amerikakompanie, einen Teil ihrer kolonialen Besitztümer auf den karibischen Antillen an die Malteserritter zu verkaufen, und zwar im Rahmen eines vom französischen Ritter und Generalgouverneur Philippe de Poincy eingefädelten Deals. De Poincy und der Großmeister des Ordens, Jean de Lascaris-Castellar, hoffen, durch diesen Kauf die Einnahmeverluste des Ordens bei der Jagd auf die barbarischen Korsaren im Mittelmeer durch kreativere, vom Heiligen Stuhl verpönte Methoden ausgleichen zu können. Ein vielversprechender junger Ordensritter namens Michel de Monper schlägt sogar vor, als Freibeuter gegen die spanische Schifffahrt vorzugehen!
-~
-Und so kommt es, dass die Crème de la Crème des französischen Adels das nächste Schiff in die karibischen Kolonien besteigt, in der Hoffnung, dort Ruhm, Reichtum und Abenteuer zu finden und vielleicht sogar das französische Reich zu vergrößern.
-~
+Die verheerenden Religionskriege zwischen Katholiken und Hugenotten, die Frankreich seit dem Beginn der Reformation vor über hundert Jahren geplagt haben, sind mit der Thronbesteigung des fünfzehnjährigen Ludwig XIV. von Bourbon weitgehend vorbei. Noch weit entfernt vom zukünftigen "Sonnenkönig", der Frankreich zu einem goldenen Zeitalter führen wird, möchte König Ludwig an die Traditionen des großen Kardinals Richelieu anknüpfen und den Staatsapparat durch energische Reformen stärken. Es gibt noch viele Konflikte in Europa, aber am größten sind in den Augen von König Ludwig die erbitterten Rivalen der Bourbonen, die Habsburger, die derzeit als König von Spanien und Kaiser des Heiligen Römischen Reiches herrschen. Um mit den Spaniern sowohl im In- als auch im Ausland konkurrieren zu können, hat König Ludwig Jean-Baptiste Colbert beauftragt, die französische Marine zu modernisieren. Ein neues und effizientes Steuersystem ermöglicht es Frankreich nicht nur, seine Schulden aus fast fünfzig Jahren Krieg zu begleichen, sondern auch Mittel für Reformen der Marine und der Armee bereitzustellen. Die französische Armee ist zwar immer noch nicht so modern und kampferprobt wie Oliver Cromwells englische New Model Army, aber sie entwickelt sich rasch zu einer der bestausgerüsteten und -ausgebildeten Armeen des Kontinents im neuen linearen Kriegsstil. In Toulon und Saint-Nazaire werden neue Schiffe nach den neuesten Entwürfen gebaut, und in den Fabriken im Landesinneren werden moderne Kanonen gegossen.~Im Gegensatz zu den Engländern liegen die Hauptinteressen Frankreichs auf dem europäischen Kontinent, und koloniale Belange sind oft zweitrangig gegenüber der dringenden Notwendigkeit, die französische Grenze gegen die Habsburger in Österreich, Italien und Spanien zu verteidigen.~Aufgrund dieser Vernachlässigung beschloss die Französische Amerikakompanie, einen Teil ihrer kolonialen Besitztümer auf den karibischen Antillen an die Malteserritter zu verkaufen, und zwar im Rahmen eines vom französischen Ritter und Generalgouverneur Philippe de Poincy eingefädelten Deals. De Poincy und der Großmeister des Ordens, Jean de Lascaris-Castellar, hoffen, durch diesen Kauf die Einnahmeverluste des Ordens bei der Jagd auf die barbarischen Korsaren im Mittelmeer durch kreativere, vom Heiligen Stuhl verpönte Methoden ausgleichen zu können. Ein vielversprechender junger Ordensritter namens Michel de Monper schlägt sogar vor, als Freibeuter gegen die spanische Schifffahrt vorzugehen!~Und so kommt es, dass die Crème de la Crème des französischen Adels das nächste Schiff in die karibischen Kolonien besteigt, in der Hoffnung, dort Ruhm, Reichtum und Abenteuer zu finden und vielleicht sogar das französische Reich zu vergrößern.~
 }
-
-Holland_descr
-{
-Holland. Die Vereinigten Provinzen der Niederlande sind eine junge Nation, die erst kürzlich einen achtzigjährigen Unabhängigkeitskrieg gegen Spanien hinter sich gebracht hat. Die Niederländer sind ein sparsames und fleißiges Volk, das nach wirtschaftlicher Überlegenheit strebt. Gegenwärtig unterstützen die Niederländer Frankreich im Kampf gegen den gemeinsamen Feind Spanien, streben aber danach, eine neutrale Macht zu sein, die mit jedem Kunden Handel treiben (oder ihn betrügen) kann!
-}
-
-Spain_descr
-{
-Spanien. Eine große, aber schwindende Kolonialmacht. Spanien, das derzeit den größten Teil der karibischen Inseln und des spanischen Festlands hält, steht unter ständigem Druck von England und Frankreich, die die endlosen Reichtümer der Neuen Welt für sich beanspruchen wollen.
-}
-
+Holland_descr {Holland. Die Vereinigten Provinzen der Niederlande sind eine junge Nation, die erst kürzlich einen achtzigjährigen Unabhängigkeitskrieg gegen Spanien hinter sich gebracht hat. Die Niederländer sind ein sparsames und fleißiges Volk, das nach wirtschaftlicher Überlegenheit strebt. Gegenwärtig unterstützen die Niederländer Frankreich im Kampf gegen den gemeinsamen Feind Spanien, streben aber danach, eine neutrale Macht zu sein, die mit jedem Kunden Handel treiben (oder ihn betrügen) kann!}
+Spain_descr {Spanien. Eine große, aber schwindende Kolonialmacht. Spanien, das derzeit den größten Teil der karibischen Inseln und des spanischen Festlands hält, steht unter ständigem Druck von England und Frankreich, die die endlosen Reichtümer der Neuen Welt für sich beanspruchen wollen.}
 Pirate_descr
 {
-Piraten. Diese Männer segeln gegen alle Flaggen und leben nach dem Piratenkodex (obwohl es sich eher um Richtlinien handelt) der Brüder der Küste. Das hindert sie nicht daran, ihre Beute in englischen oder französischen Kolonien wie Port Royal und Tortuga zu verkaufen, wo der Gouverneur ein Auge zudrückt. Je nach Situation kämpfen die Piraten "rechtmäßig" für eine der Mächte, die ihnen einen Kaperbrief ausstellen können, aber letztlich ist ihre Beute dieselbe wie die der englischen und französischen Freibeuter - ein schönes, fettes spanisches Schatzschiff.
-~
-Für jede Seepatrouille ist der Anblick einer Piratenflagge am Horizont so, als würde man einem hungrigen Wolf Speck vorwerfen. Für die große Mehrheit der Piraten gibt es nur zwei Enden - den Galgen oder die Schlinge des Henkers.
+Piraten. Diese Männer segeln gegen alle Flaggen und leben nach dem Piratenkodex (obwohl es sich eher um Richtlinien handelt) der Brüder der Küste. Das hindert sie nicht daran, ihre Beute in englischen oder französischen Kolonien wie Port Royal und Tortuga zu verkaufen, wo der Gouverneur ein Auge zudrückt. Je nach Situation kämpfen die Piraten "rechtmäßig" für eine der Mächte, die ihnen einen Kaperbrief ausstellen können, aber letztlich ist ihre Beute dieselbe wie die der englischen und französischen Freibeuter - ein schönes, fettes spanisches Schatzschiff.~Für jede Seepatrouille ist der Anblick einer Piratenflagge am Horizont so, als würde man einem hungrigen Wolf Speck vorwerfen. Für die große Mehrheit der Piraten gibt es nur zwei Enden - den Galgen oder die Schlinge des Henkers.
 }
-
 Hunter_hint
 {
-Die Einstellung einer Nation, ihrer Bürger und Soldaten zu Ihnen. Gute Taten für das Land erhöhen Ihr Ansehen, schlechte können sogar dazu führen, dass ein Kopfgeld auf den Helden ausgesetzt wird. Das bedeutet ständige Verfolgung an Land und auf See.
-~
-Das Kopfgeld kann durch gute Taten zu Gunsten des jeweiligen Landes oder sogar durch Bestechung gesenkt werden. Mit genügend Aufwand kann ein neutrales Verhältnis wiederhergestellt werden.
+Die Einstellung einer Nation, ihrer Bürger und Soldaten zu Ihnen. Gute Taten für das Land erhöhen Ihr Ansehen, schlechte können sogar dazu führen, dass ein Kopfgeld auf den Helden ausgesetzt wird. Das bedeutet ständige Verfolgung an Land und auf See.~Das Kopfgeld kann durch gute Taten zu Gunsten des jeweiligen Landes oder sogar durch Bestechung gesenkt werden. Mit genügend Aufwand kann ein neutrales Verhältnis wiederhergestellt werden.
 }
-
 LevelComplexity {Schwierigkeitsgrad}
-
 LevelComplexity_desc
 {
-Ein grundlegender Einstellungssatz für das Spiel, der die Geschwindigkeit der Charakterentwicklung, die Stärke der Gegner, die Häufigkeit von Ereignissen, das Einkommen und die Ausgaben, die Verfügbarkeit von Fähigkeiten und vieles mehr beeinflusst.
-~
-Der Schwierigkeitsgrad variiert von "Leicht" bis "Unmöglich".
+Ein grundlegender Einstellungssatz für das Spiel, der die Geschwindigkeit der Charakterentwicklung, die Stärke der Gegner, die Häufigkeit von Ereignissen, das Einkommen und die Ausgaben, die Verfügbarkeit von Fähigkeiten und vieles mehr beeinflusst.~Der Schwierigkeitsgrad variiert von "Leicht" bis "Unmöglich".
 }
-
 RechargePistolOnLine {Pistole nachladen}
-
 RechargePistolOnLine_desc
 {
-In diesem Modus können Pistolen im Kampf nicht nachgeladen werden, sondern nur, wenn das Schwert in die Scheide gesteckt wird.
-~
-Dieser Modus betrifft alle Charaktere im Spiel.
+In diesem Modus können Pistolen im Kampf nicht nachgeladen werden, sondern nur, wenn das Schwert in die Scheide gesteckt wird.~Dieser Modus betrifft alle Charaktere im Spiel.
 }
-
 HardcoreGame {Hardcore-Modus}
-
-HardcoreGame_desc
-{
-Nicht genug Adrenalin? Du willst dich wie ein echter Korsar fühlen und die volle Wirkung all deiner Taten auf die Welt um dich herum spüren? In diesem Modus ist das Speichern des Spiels nur auf heiligem Boden möglich - in der Kirche. Du musst alles beim ersten Mal richtig machen, ohne die Möglichkeit, ein gespeichertes Spiel immer wieder neu zu laden. Es gibt keinen Raum für Fehler.
-}
-
-ArcadeSailMode_desc
-{
-Geschwindigkeit und Dynamik des Seekampfes. Schnelles Manövrieren, hohe Geschwindigkeiten und schnelles Nachladen der Kanonen - das erfordert ein hohes Maß an Überlegung für Ihren nächsten taktischen Zug.
-}
-
-EncountersRate_desc
-{
-Häufigkeit der Spielereignisse, insbesondere die Anzahl der Schiffe auf der Weltkarte.
-}
-
+HardcoreGame_desc {Nicht genug Adrenalin? Du willst dich wie ein echter Korsar fühlen und die volle Wirkung all deiner Taten auf die Welt um dich herum spüren? In diesem Modus ist das Speichern des Spiels nur auf heiligem Boden möglich - in der Kirche. Du musst alles beim ersten Mal richtig machen, ohne die Möglichkeit, ein gespeichertes Spiel immer wieder neu zu laden. Es gibt keinen Raum für Fehler.}
+ArcadeSailMode_desc {Geschwindigkeit und Dynamik des Seekampfes. Schnelles Manövrieren, hohe Geschwindigkeiten und schnelles Nachladen der Kanonen - das erfordert ein hohes Maß an Überlegung für Ihren nächsten taktischen Zug.}
+EncountersRate_desc {Häufigkeit der Spielereignisse, insbesondere die Anzahl der Schiffe auf der Weltkarte.}
 WorldAlivePause {Aufträge von Nationen}
-
 WorldAlivePause_desc
 {
-In diesem Modus können Sie eine der Szenario-Questlinien für die Nationen durchspielen, aber bevor sie endet, hält die "lebendige Welt" des Spiels den Generalgouverneur davon ab, von Stadt zu Stadt zu ziehen, Städte von anderen Nationen einzunehmen und dem Helden die Möglichkeit zu versperren, die Stadt einzunehmen.
-~
-Die lebendige Welt funktioniert erst nach Abschluss der Szenariohistorie.
+In diesem Modus können Sie eine der Szenario-Questlinien für die Nationen durchspielen, aber bevor sie endet, hält die "lebendige Welt" des Spiels den Generalgouverneur davon ab, von Stadt zu Stadt zu ziehen, Städte von anderen Nationen einzunehmen und dem Helden die Möglichkeit zu versperren, die Stadt einzunehmen.~Die lebendige Welt funktioniert erst nach Abschluss der Szenariohistorie.
 }
-
 Prisoner {Gefangener}
-
 Prisoner_desc
 {
-Ein Gefangener ist eine Figur, die sich gegen ihren Willen auf deinem Schiff befindet. Jeder Gefangene kann im Frachtraum des Schiffes verhört werden, und seine Identität kann in Erfahrung gebracht werden. Meistens können Sie ein Lösegeld für ihn erlangen oder ihn, wenn er ein Pirat ist, in die Gesellschaft des Helden aufnehmen. Gefangene sind auch die Kapitäne, die sich Ihnen beim Entern ergeben oder von Ihnen auf den Rettungsbooten auf See aufgegriffen werden. Das höchste Lösegeld wird vom Gouverneur der gleichen Nation wie der Gefangene gezahlt, aber es variiert ebenso wie die Einschätzung des Gouverneurs über den Wert des Gefangenen.
-Gefangene Kapitäne können sich mit verschiedenen Bitten an Ihren Helden wenden. Vermeiden Sie es nicht, mit Gefangenen zu reden: Es könnte einen unerwarteten Vorteil bringen.
+Ein Gefangener ist eine Figur, die sich gegen ihren Willen auf deinem Schiff befindet. Jeder Gefangene kann im Frachtraum des Schiffes verhört werden, und seine Identität kann in Erfahrung gebracht werden. Meistens können Sie ein Lösegeld für ihn erlangen oder ihn, wenn er ein Pirat ist, in die Gesellschaft des Helden aufnehmen. Gefangene sind auch die Kapitäne, die sich Ihnen beim Entern ergeben oder von Ihnen auf den Rettungsbooten auf See aufgegriffen werden. Das höchste Lösegeld wird vom Gouverneur der gleichen Nation wie der Gefangene gezahlt, aber es variiert ebenso wie die Einschätzung des Gouverneurs über den Wert des Gefangenen.Gefangene Kapitäne können sich mit verschiedenen Bitten an Ihren Helden wenden. Vermeiden Sie es nicht, mit Gefangenen zu reden: Es könnte einen unerwarteten Vorteil bringen.
 }
-
 shipChoose_hint
 {
-Doppelklicke (oder drücke die 'Enter'-Taste) auf das Schiffsbild eines Begleiters, um einen Austausch mit seinem Schiff zu starten, wenn sich die Schiffe nicht im Kampf befinden.
-~
-Sie können einen Austausch starten, indem Sie in die Nähe eines Begleitschiffes segeln und den Schnellbefehl "Austausch" drücken.
-Kann im oder außerhalb des Kampfes durchgeführt werden.
+Doppelklicke (oder drücke die 'Enter'-Taste) auf das Schiffsbild eines Begleiters, um einen Austausch mit seinem Schiff zu starten, wenn sich die Schiffe nicht im Kampf befinden.~Sie können einen Austausch starten, indem Sie in die Nähe eines Begleitschiffes segeln und den Schnellbefehl "Austausch" drücken.Kann im oder außerhalb des Kampfes durchgeführt werden.
 }
-
 GoodsCargo_hint
 {
-Ladung an Bord des Schiffes: Munition, Waren und Ausrüstung im Laderaum.
-~
-Um die Elemente zu sehen, die nicht in das zugewiesene Fenster passen, verwenden Sie den Schieberegler auf der rechten Seite der Liste.
-~
-Drücken Sie die Eingabetaste oder doppelklicken Sie auf das Element in der Liste, um die Beschreibung des Produkts anzuzeigen, eine unerwünschte Menge über Bord zu werfen oder eine Mine zu legen.
+Ladung an Bord des Schiffes: Munition, Waren und Ausrüstung im Laderaum.~Um die Elemente zu sehen, die nicht in das zugewiesene Fenster passen, verwenden Sie den Schieberegler auf der rechten Seite der Liste.~Drücken Sie die Eingabetaste oder doppelklicken Sie auf das Element in der Liste, um die Beschreibung des Produkts anzuzeigen, eine unerwünschte Menge über Bord zu werfen oder eine Mine zu legen.
 }
-
 EXP_SLIDE {Rate des Erfahrungsgewinns}
-
-EXP_SLIDE_desc
-{
-Diese Einstellung regelt die Geschwindigkeit, mit der der Hauptcharakter und seine Offiziere Erfahrung sammeln. Je höher die Rate, desto schneller erhalten sie neue Fertigkeitspunkte, neue Stufen und Fähigkeiten.
-}
-
+EXP_SLIDE_desc {Diese Einstellung regelt die Geschwindigkeit, mit der der Hauptcharakter und seine Offiziere Erfahrung sammeln. Je höher die Rate, desto schneller erhalten sie neue Fertigkeitspunkte, neue Stufen und Fähigkeiten.}
 Partition_hint
 {
-Die Anteile der Besatzung müssen spätestens am 1. eines jeden Monats bezahlt werden. Die folgenden Zahlungen werden geleistet:
-~
-Monatlicher Unterhalt - Heuer der Matrosen und Offiziere, Entschädigung für Verletzte und Unterhalt für Schiff und Ausrüstung.
-~
-Beuteanteil - Aufteilung der erbeuteten Wertsachen und Verteilung der Anteile unter den Mitgliedern einer Mannschaft.
-~
-Alle erbeuteten Schiffe und Güter werden geteilt. Nach den Gesetzen der Küstenbrüder geht der Anteil eines verstorbenen Seemanns oder Offiziers an dessen Verwandte und Freunde.
-~
-Die Anteile für die Besatzungsmitglieder sind wie folgt:
-- Matrose - 1 Anteil
-- Offizier - 10 Anteile
-- Begleiter - 30 Anteile
-- Kapitän - 200-650 Anteile
-Darüber hinaus erhält der Kapitän als Eigentümer der Schiffe seiner Flotte von jedem Schiff 20-120 Anteile (je nach Schiffsklasse), und er trägt auch alle Kosten, die mit dem Unterhalt und dem eventuellen Verlust von Schiffen verbunden sind.
-Wenn ein Kapitän ein Patent hat, werden 10 % der Beute an die Staatskasse abgeführt.
-~
-Ein Aufschub der Zahlung für den laufenden Monat führt zu Unruhe in der Mannschaft bis zum Ende des Monats, während eine Vorauszahlung die Arbeitsmoral erhöht.
-~
-Eine verspätete Zahlung für den vergangenen Monat wird die Moral der Besatzung und die Loyalität Ihrer Offiziere und Kameraden erheblich beeinträchtigen.
-~
+Die Anteile der Besatzung müssen spätestens am 1. eines jeden Monats bezahlt werden. Die folgenden Zahlungen werden geleistet:~Monatlicher Unterhalt - Heuer der Matrosen und Offiziere, Entschädigung für Verletzte und Unterhalt für Schiff und Ausrüstung.~Beuteanteil - Aufteilung der erbeuteten Wertsachen und Verteilung der Anteile unter den Mitgliedern einer Mannschaft.~Alle erbeuteten Schiffe und Güter werden geteilt. Nach den Gesetzen der Küstenbrüder geht der Anteil eines verstorbenen Seemanns oder Offiziers an dessen Verwandte und Freunde.~Die Anteile für die Besatzungsmitglieder sind wie folgt:- Matrose - 1 Anteil- Offizier - 10 Anteile- Begleiter - 30 Anteile- Kapitän - 200-650 AnteileDarüber hinaus erhält der Kapitän als Eigentümer der Schiffe seiner Flotte von jedem Schiff 20-120 Anteile (je nach Schiffsklasse), und er trägt auch alle Kosten, die mit dem Unterhalt und dem eventuellen Verlust von Schiffen verbunden sind.Wenn ein Kapitän ein Patent hat, werden 10 % der Beute an die Staatskasse abgeführt.~Ein Aufschub der Zahlung für den laufenden Monat führt zu Unruhe in der Mannschaft bis zum Ende des Monats, während eine Vorauszahlung die Arbeitsmoral erhöht.~Eine verspätete Zahlung für den vergangenen Monat wird die Moral der Besatzung und die Loyalität Ihrer Offiziere und Kameraden erheblich beeinträchtigen.~
 }
-
 SeaBattleSave_desc
 {
-Speichern im Seekampf.
-Wenn Sie diese Option deaktivieren, können Sie das Spiel während der Seeschlacht nicht mehr speichern!
+Speichern im Seekampf.Wenn Sie diese Option deaktivieren, können Sie das Spiel während der Seeschlacht nicht mehr speichern!
 }
-
-Rains_desc
-{
-Schaltet Regen und Sturm ein/aus. Diese Option wirkt sich auf die Stabilität des Spiels aus.
-}
-
+Rains_desc {Schaltet Regen und Sturm ein/aus. Diese Option wirkt sich auf die Stabilität des Spiels aus.}
 CasualMode_desc
 {
-Der klassische Modus ist für Spieler geeignet, die sich auf die Geschichte der Hauptfigur konzentrieren wollen. Er ist etwas schwieriger als der Erkundungsmodus und erfordert mehr Aufmerksamkeit und Anstrengung, ermöglicht es Ihnen aber, vollständig in die von den Autoren des Spiels geschaffene Atmosphäre einzutauchen.
-~
-Der Erkundungsmodus eignet sich sowohl für Anfänger als auch für Spieler, die mehr Zeit haben möchten, um verschiedene Nebenquests und freies Spiel zu erleben. In diesem Modus wurden die Ranglistenbeschränkungen für den Start der Hauptquests entfernt, die Timer sind in Fällen ohne viele Optionen deaktiviert, und die Zeit auf der globalen Karte verlangsamt sich je nach ausgewähltem Schwierigkeitsgrad. Die Gegner in den Hauptquests werden schwächer und die Geschwindigkeit des Schiffes des Hauptcharakters auf der Weltkarte erhöht sich um 5%.
+Der klassische Modus ist für Spieler geeignet, die sich auf die Geschichte der Hauptfigur konzentrieren wollen. Er ist etwas schwieriger als der Erkundungsmodus und erfordert mehr Aufmerksamkeit und Anstrengung, ermöglicht es Ihnen aber, vollständig in die von den Autoren des Spiels geschaffene Atmosphäre einzutauchen.~Der Erkundungsmodus eignet sich sowohl für Anfänger als auch für Spieler, die mehr Zeit haben möchten, um verschiedene Nebenquests und freies Spiel zu erleben. In diesem Modus wurden die Ranglistenbeschränkungen für den Start der Hauptquests entfernt, die Timer sind in Fällen ohne viele Optionen deaktiviert, und die Zeit auf der globalen Karte verlangsamt sich je nach ausgewähltem Schwierigkeitsgrad. Die Gegner in den Hauptquests werden schwächer und die Geschwindigkeit des Schiffes des Hauptcharakters auf der Weltkarte erhöht sich um 5%.
 }
+SourceBase {Grundstufe}
+SourceAdmiral {Admiral}
+SourceOfficer {Offiziersbonus}
+SourceAccountant {Zahlmeister}
+SourceMangarosa {Mangarosa-Trank}
+SourceHealth {Vitalstatus}
+SourceEquip {Ausrüstung}
+SourceQuest {Einzigartige Situation}
+SourceAlco {Berauschend}
+SourceOverload {Überladen}
+SourceNavyPenalty {Navigationsfertigkeit unzureichend}
+CritDamage
+{
+Höhe des kritischen Schadens. Wird nach allen Modifikatoren angewendet.
+ ~
+ Kann durch persönliche Perks und Ausrüstung erhöht werden.
+}
+CritCharDefence
+{
+Gesamtreduktion des gegnerischen kritischen Schadens.
+ ~
+ Kann durch persönliche Perks und Ausrüstung erhöht werden.
+}
+SourceSkill {Fähigkeit}
+SourceChickenGod {Segen von Aruba}

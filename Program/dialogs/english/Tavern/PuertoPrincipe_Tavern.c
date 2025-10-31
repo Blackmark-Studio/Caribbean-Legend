@@ -4,15 +4,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
     switch (Dialog.CurrentNode)
 	{
 		case "quests":
-			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?", "How can I help you, " + GetAddress_Form(NPChar) + "?"), "You tried to ask me some question not long ago, " + GetAddress_Form(NPChar) + "...", "Over this whole day, this is the third time you're talking about some question...",
-                          "More questions, I presume?", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...", "I've got nothing to talk about at the moment."), "Umph, where has my memory gone...",
-                      "Yes, it really is the third time...", "No, what questions?...", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(RandPhraseSimple("What questions do you have?","How can I help you, "+GetAddress_Form(NPChar)+"?"),"You tried to ask me a question not long ago, "+GetAddress_Form(NPChar)+"...","Over the course of this whole day, this is the third time you've brought up that question...","More questions, I presume?","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(RandPhraseSimple("I've changed my mind...","I've got nothing to talk about at the moment."),"Umph, where has my memory gone...","Yes, it really is the third time...","No, what questions?...",npchar,Dialog.CurrentNode);
 			link.l1.go = "exit";
 			//--> Старые счёты
 			if (CheckAttribute(pchar, "questTemp.OS_Tavern_1"))
 			{
-				link.l1 = "Word has it someone's relieved you of your precious gin. Or do the rumors speak falsely?";
+				link.l1 = "Word has it someone's relieved you of your precious gin. Or do the rumours speak falsely?";
 				link.l1.go = "OS_Tavern1_1";
 			}
 			if (CheckAttribute(pchar, "questTemp.OS_Tavern_3"))
@@ -25,21 +23,21 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 
 		//--> Старые счёты
 		case "OS_Tavern1_1":
-			dialog.text = "God's wounds, it's true. What else have you heard? Do you know something? I implore you, say you know where to find it. If I don't recover it... I'll have to flee this town. Either by my own two feet or in a pine box.";
+			dialog.text = "God's wounds, it's true. What else have you heard? Do you know something? I implore you, tell me you know where to find it. If I don't recover it... I'll have to flee this town. Either on my own two feet or in a pine box.";
 			link.l1 = "Indeed, your situation looks grim, friend. No, I've merely caught whispers of your misfortune. How did such valuable cargo slip through your fingers?";
 			link.l1.go = "OS_Tavern1_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "OS_Tavern1_2":
-			dialog.text = "Blast it all... What can I say? Stolen right from under my nose! The barrel was certainly here in the morning. It arrived two days past, and for safe keeping, I took it home overnight. Come morning, I brought it back, tucked it beneath the counter. By evening, it had vanished without a trace! Not a soul saw or heard a thing.";
+			dialog.text = "Blast it all... What can I say? Stolen right from under my nose! The barrel was certainly here in the morning. It arrived two days past, and for safekeeping, I took it home overnight. Come morning, I brought it back, tucked it beneath the counter. By evening, it had vanished without a trace! Not a soul saw or heard a thing.";
 			link.l1 = "Well, I'll be damned...";
 			link.l1.go = "OS_Tavern1_3";
 		break;
 
 		case "OS_Tavern1_3":
-			dialog.text = "Had I even the faintest clue, I'd already be hunting it down. But alas, nothing - as if that barrel was too fine for this mortal realm and the heavens simply claimed it. I'll pay one hundred and fifty doubloons to whoever brings it back. More than that, I'll mount a plaque with their name in my tavern so all will know of their heroic deed!";
-			link.l1 = "I'll see what I can do. We'll revisit this plaque business later. Tell me instead who knew about this barrel? And who besides yourself might have been behind the counter?";
+			dialog.text = "Had I even the faintest clue, I'd already be hunting it down. But alas, nothing – as if that barrel was too fine for this mortal realm and the heavens simply claimed it. I'll pay one hundred and fifty doubloons to whoever brings it back. More than that, I'll mount a plaque with their name in my tavern so all will know of their heroic deed!";
+			link.l1 = "I'll see what I can do. We'll revisit this plaque business later. Tell me instead, who knew about this barrel? And who besides yourself might have been behind the counter?";
 			link.l1.go = "OS_Tavern1_4";
 			link.l2 = "One hundred and fifty doubloons for a barrel? Amusing. But your troubles aren't mine. Sort it out yourself.";
 			link.l2.go = "OS_Tavern1_end";
@@ -69,7 +67,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern1_5":
-			dialog.text = "Without a doubt! Working without respite didn't suit her temperament, and by evening she was wound tight as a spring. When one of the sailors made advances, she raised such a commotion it near deafened the whole establishment. I had to abandon my post to restore order. Strange, though - she typically handles such advances with far more composure.";
+			dialog.text = "Without a doubt! Working without respite didn't suit her temperament, and by evening she was wound tight as a spring. When one of the sailors made advances, she raised such a commotion it nearly deafened the whole establishment. I had to abandon my post to restore order. Strange, though - she typically handles such advances with far more composure.";
 			link.l1 = "Is that all? Nothing else unusual that day?";
 			link.l1.go = "OS_Tavern1_6";
 		break;
@@ -112,7 +110,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "OS_Tavern3_3":
-			dialog.text = "Captain! This is extraordinary! You've... you've freed me from the constant dread that's been shadowing my days! I always knew he'd return sooner or later... A few years back, we were rivals for the ownership of this tavern, and he managed to best me\nBut the joy of victory proved his undoing - in his celebratory excess, he unwittingly gambled the place away to me over cards. Of course, come morning, he came running, begging to reclaim the tavern, promising anything and everything\nBut I'm no complete fool to agree to such terms. Then he vanished... I knew he wouldn't let the matter rest. I sensed he would return one day. And now, that day has come.";
+			dialog.text = "Captain! This is extraordinary! You've... you've freed me from the constant dread that's been shadowing my days! I always knew he'd return sooner or later... A few years back, we were rivals for the ownership of this tavern, and he managed to best me\nBut the joy of victory proved his undoing – in his celebratory excess, he unwittingly gambled the place away to me over cards. Of course, come morning, he came running, begging to reclaim the tavern, promising anything and everything\nBut I'm no complete fool to agree to such terms. Then he vanished... I knew he wouldn't let the matter rest. I sensed he would return one day. And now, that day has come.";
 			link.l1 = "Credit where it's due – he executed his scheme with cunning.";
 			link.l1.go = "OS_Tavern3_4";
 		break;

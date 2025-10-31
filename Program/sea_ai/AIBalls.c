@@ -27,7 +27,7 @@ void CreateBallsEnvironment()
 	AIBalls.CurrentBallCannonType = -1;
 	AIBalls.CurrentBallDistance = 0.0;
 	AIBalls.CurrentMaxBallDistance = 0.0;
-	AIBalls.BallFlySoundDistance = 15.0;
+	AIBalls.BallFlySoundDistance = 17.5; //15.0;
 	AIBalls.BallFlySoundStereoMultiplyer = 2.0;
 
 	AIBalls.SpeedMultiply = 3.0;
@@ -70,8 +70,10 @@ void Ball_FlyNearCamera()
 	float x = GetEventData();
 	float y = GetEventData();
 	float z = GetEventData();
+    int GoodIndex = GetEventData();
 
-	Play3DSound("fly_ball", x, y, z);
+	//Play3DSound("fly_ball", x, y, z);
+    Play3DSoundEvent("Cannon_Shot/whistling_" + GoodIndex, x, y, z);
 }
 
 int ballNumber;
@@ -155,7 +157,7 @@ void Ball_AddBall(aref aCharacter, float fX, float fY, float fZ, float fSpeedV0,
 	}
 	//if (rand(1) == 0) // boal оптимизация дыма
 	CreateParticleSystem(sParticleName, fX, fY, fZ, -fHeightAng - (fCannonHeightMultiply - 1.0) * 0.1, fDirAng, 0.0, 5);
-	Play3DSound(rCannon.Sound, fX, fY, fZ);
+    Play3DSoundEvent(rCannon.Sound, fX, fY, fZ);
 }
 
 void Ball_WaterHitEvent()

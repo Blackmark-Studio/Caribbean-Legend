@@ -586,6 +586,7 @@ void ProcessDialogEvent()
 			dialog.text = "Да? Ты был у Туттуатхапака?";
 			link.l1 = "Точно. И теперь я хочу найти ещё два амулета. Ты же вроде говорил, что я третий, кто тебе такой артефакт показал. А кто были ещё двое?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -620,6 +621,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":
@@ -650,16 +652,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "А, так вы и есть тот самый капитан! Да, я ждал вас. Жерар тоже ждал, но ему нужно было срочно отправляться в какую-то экспедицию, поэтому он просил меня передать вам оплату. Сказал, вы обязательно зайдёте. Здесь четыреста дублонов, извольте.");
+			dialog.text = "А, так вы и есть тот самый капитан! Да, я ждал вас. Жерар тоже ждал, но ему нужно было срочно отправляться в какую-то экспедицию, поэтому он просил меня передать вам оплату. Сказал, вы обязательно зайдёте. Здесь 90 дублонов, извольте.");
 			link.l1 = "Благодарю! Приятно иметь дело с честными людьми.";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			//Log_Info("Вы получили 400 дублонов");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

@@ -1,109 +1,22 @@
-colony_1
-{
-Due to lack of medicines from wounds,  @<iTemp>  sailors died
-}
-
-colony_2
-{
-On the ship  @<Pchar.Ship.Name>  there are few medical supplies left
-}
-
-colony_3
-{
-Prepare Town Battle
-}
-
-colony_4
-{
-ERROR: Не задан обход города при захвате!!!
-}
-
-colony_5
-{
-The enemy forces are suppressed! The path is clear.
-}
-
-colony_6
-{
-You've received ~
-}
-
-colony_7
-{
-You've received ~
-}
-
-colony_8
-{
-You've received - Axe
-}
-
-colony_9
-{
-You've received - Saxon Feather
-}
-
-colony_10
-{
-You've received - Madonna
-}
-
-colony_11
-{
-Chevalier Philippe
-}
-
-colony_12
-{
-de Poincy
-}
-
-colony_13
-{
-lord Thomas
-}
-
-colony_14
-{
-Vindzor
-}
-
-colony_15
-{
-don Juan
-}
-
-colony_16
-{
-de Cordova
-}
-
-colony_17
-{
-colonel
-}
-
-colony_18
-{
-Jonathan Fox
-}
-
-colony_19
-{
-Our city @<GetCityName(city)> is under siege!
-}
-
-colony_20
-{
-Siege is down!
-}
-
-colony_21
-{
-Our city @<GetCityName(city)> is under siege!
-}
-
-colony_22
-{
-Our city @<GetCityName(city)> captured!
-}
+colony_1 {Due to lack of medicines from wounds,  @<iTemp>  sailors died}
+colony_2 {On the ship  @<Pchar.Ship.Name>  there are few medical supplies left}
+colony_3 {Prepare Town Battle}
+colony_4 {ERROR: Не задан обход города при захвате!!!}
+colony_5 {The enemy forces are suppressed! The path is clear.}
+colony_6 {You've received ~}
+colony_7 {You've received ~}
+colony_8 {You've received - Axe}
+colony_9 {You've received - Saxon Feather}
+colony_10 {You've received - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {colonel}
+colony_18 {Jonathan Fox}
+colony_19 {Our city @<GetCityName(city)> is under siege!}
+colony_20 {Siege is down!}
+colony_21 {Our city @<GetCityName(city)> is under siege!}
+colony_22 {Our city @<GetCityName(city)> captured!}

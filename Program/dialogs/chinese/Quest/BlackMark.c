@@ -192,14 +192,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_3":
 			DialogExit();
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			npchar.MusketerDistance = 10;
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
+			AddDialogExitQuestFunction("BM_Irons_DlgExit_1");
 		break;
 		
 		case "BM_Irons_4":
@@ -304,7 +297,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_19":
 			dialog.text = "... 觉得你有勇气吗? 呵呵, 我甚至不会和你争论 —你看到我是怎么从灯塔射死那个奸夫的吗? 第一枪! 也没有讨价还价, 如果你是这么想的。 你需要证明你能雇得起像我这样的专业人士。 ";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "是的, 我可以! 二百五十金币。 给你。 ";
 				link.l1.go = "BM_Irons_Hire1";
@@ -316,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_Hire1":
-			RemoveDublonsFromPCharTotal(250);
+			RemoveDublonsFromPCharTotal(150);
 			
 			dialog.text = "你不像我想的那么差! 但你最好确保我不会感到无聊。 浪费我的才能, 不是吗? 汤米和" +pchar.name+ "! 让我们震撼加勒比海! ";
 			link.l1 = "学会尊重指挥系统, 汤米。 其次, 对你来说我是船长。 明白吗? ";
@@ -331,37 +324,7 @@ void ProcessDialogEvent()
 		
 		case "Irons_Hire":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			LAi_SetPlayerType(pchar);
-			DeleteAttribute(npchar, "LifeDay");
-			LAi_SetImmortal(npchar, false);
-			npchar.quest.OfficerPrice = 15000;
-			npchar.OfficerWantToGo.DontGo = true;
-			npchar.CompanionDisable = true;
-			npchar.loyality = MAX_LOYALITY;
-			AddPassenger(pchar, npchar, false);
-			SetCharacterRemovable(npchar, true);
-			npchar.Payment = true;
-			npchar.OfficerImmortal = true;
-			npchar.Health.HP       = 60.0; 
-			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
-			npchar.CanTakeMushket = true;
-			pchar.questTemp.IronsItemsBlock = true;
-			LAi_SetOfficerType(npchar);
-			NextDiag.CurrentNode = "Irons_officer";
-			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
-			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
-			LAi_SetHP(npchar, 170.0, 170.0);
-			
-			// Костыли, нужно украсить интерфейс офицера ==>
-			//RemoveCharacterEquip(npchar, BLADE_ITEM_TYPE);
-			//TakeItemFromCharacter(npchar, "unarmed");
-			//GiveItem2Character(npchar, "blade_42");
-			//EquipCharacterByItem(npchar, "blade_42");
-			//EquipCharacterByItem(npchar, "mushket1");
-			//EquipCharacterByItem(npchar, "indian_2");
-			// <== Костыли, нужно украсить интерфейс офицера
+			AddDialogExitQuestFunction("BM_Irons_Hire");
 			
 			if (CheckAttribute(pchar, "questTemp.BM_hireInGrot"))
 			{
@@ -371,9 +334,6 @@ void ProcessDialogEvent()
 			{
 				AddQuestRecord("BlackMark", "1");
 			}
-			
-			// Продолжение через неделю в джунглях
-			SetTimerCondition("BM_FirstJungle_Time", 0, 0, 7, false);
 		break;
 		
 		case "BM_Irons_NoHire1":
@@ -411,7 +371,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave2":
 			dialog.text = "显然你没在爱尔兰雨季躲在坑里过, " + GetSexPhrase("年轻人","我的女孩") + "! 但和你一起走比躲在这里好。 现在, 关于那笔金子... ";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "这是你的金子。 ";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -421,7 +381,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_HireInCave1":
-			RemoveDublonsFromPCharTotal(250);
+			RemoveDublonsFromPCharTotal(150);
 			pchar.quest.BM_IronsTimeOver.over = "yes";
 			pchar.questTemp.BM_hireInGrot = true;
 			
@@ -446,7 +406,7 @@ void ProcessDialogEvent()
 		
 		case "BM_Irons_WaitInCave3":
 			dialog.text = "你带金子了吗? ";
-			if (PCharDublonsTotal() >= 250)
+			if (PCharDublonsTotal() >= 150)
 			{
 				link.l1 = "这是你的金子。 ";
 				link.l1.go = "BM_Irons_HireInCave1";
@@ -457,26 +417,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsJungleUhodit":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			
-			sld = characterFromID("Irons");
-			RemovePassenger(pchar, sld);
-			LAi_SetWarriorType(sld);
-			DeleteAttribute(sld, "OfficerImmortal");
-			if(CheckAttribute(sld, "Health.HP")) DeleteAttribute(sld, "Health.HP");
-			if(CheckAttribute(sld, "Health.maxHP")) DeleteAttribute(sld, "Health.maxHP");
-			sTemp = "RestoreHealth_" + sld.index;
-			if(CheckAttribute(PChar, "quest.RestoreHealth_" + sld.index)) PChar.quest.(sTemp).over = "Yes";
-			sld.lifeday = 0;
-			LAi_CharacterDisableDialog(sld);
-			GiveItem2Character(sld, "blade_42");
-			sld.SaveItemsForDead = true;
-			sld.DontClearDead = true;
-			//LAi_ActorRunToLocation(sld, "reload", "reload1", "", "", "", "", -1);
-			AddQuestRecord("BlackMark", "5");
-			AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("","а"));
-			CloseQuestHeader("BlackMark");
+			AddDialogExitQuestFunction("BM_IronsJungleUhodit");
 		break;
 		
 		case "BM_IronsFirstJungle_1":
@@ -492,8 +433,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_3":
-			dialog.text = "你为什么这么反感我的请求? 我不是在要该死的珍珠, 只是一发子弹。 我甚至等到我们在丛林里, 以免在城里分心。 那么, 有子弹吗? ";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			dialog.text = "你为什么把我的请求看得这么严重? 我又不是在要什么值钱的珍珠, 只是一颗子弹而已。 我甚至还挑了合适的时机, 好不打扰你的正事, 也不至于像个疯子一样挡你路, 嘿嘿。 那么……有子弹吗? ";
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "是的, 我有一发。 给你。 只是别用那颗子弹跟我开愚蠢的玩笑。 明白吗, 汤米? ";
 				link.l1.go = "BM_IronsFirstJungle_7";
@@ -524,15 +465,19 @@ void ProcessDialogEvent()
 			dialog.text = "不能保证什么, 嘿嘿。 好笑话能让事情轻松。 但当然要谢谢你。 ";
 			link.l1 = "好了, 我们走吧, 你这个爱开玩笑的人。 ";
 			link.l1.go = "BM_IronsFirstJungle_8";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+    			TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+    			TakeItemFromCharacter(PChar, "bullet");
+			}
 		break;
 		
 		case "BM_IronsFirstJungle_8":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			Return_IronsOfficer();
-			SetTimerCondition("BM_SecondJungle_Time", 0, 0, 7, false);
+			AddDialogExitQuestFunction("BM_IronsFirstJungle");
 		break;
 		
 		case "BM_IronsSecondJungle_1":
@@ -549,7 +494,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsSecondJungle_3":
 			dialog.text = "哦, 这将是一个致命的笑话, 相信我。 你会喜欢的, 呵呵。 只是还没把它组合起来。 那么子弹呢? ";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "给你。 我希望我真的喜欢你即将到来的恶作剧。 你把上一发子弹放在哪里了? 我给了你很多。 或者你把战斗用的弹药和笑话用的分开存放? ";
 				link.l1.go = "BM_IronsSecondJungle_7";
@@ -580,15 +525,19 @@ void ProcessDialogEvent()
 			dialog.text = "你会发现的。 一切都会及时的, 呵呵。 ";
 			link.l1 = "哦, 我有一种不好的感觉, 汤米... ";
 			link.l1.go = "BM_IronsSecondJungle_8";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+    			TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+    			TakeItemFromCharacter(PChar, "bullet");
+			}	
 		break;
 		
 		case "BM_IronsSecondJungle_8":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			Return_IronsOfficer();
-			SetTimerCondition("BM_ThirdJungle_Time", 0, 0, 7, false);
+			AddDialogExitQuestFunction("BM_IronsSecondJungle");
 		break;
 		
 		case "BM_IronsThirdJungle_1":
@@ -599,7 +548,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_2":
 			dialog.text = "你没猜到吗? 猜测是一项有用的技能, 呵呵。 你, 我, 丛林... 大约两周前, 我们有过这样的对话。 我需要另一发纸包子弹。 ";
-			if (CheckCharacterItem(PChar, "cartridge"))
+			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
 				link.l1 = "这正在成为一个有趣的传统, 不是吗? 已经两周了 —汤米要子弹。 给你。 你的那个笑话还需要多少发? ";
 				link.l1.go = "BM_IronsThirdJungle_5";
@@ -624,7 +573,14 @@ void ProcessDialogEvent()
 			dialog.text = "这发就够了, 呵呵。 ";
 			link.l1 = "那么你终于准备好了? 但为了什么? ";
 			link.l1.go = "BM_IronsThirdJungle_6";
-			TakeItemFromCharacter(pchar, "cartridge");
+			if (CheckCharacterItem(PChar, "cartridge"))
+			{
+    			TakeItemFromCharacter(PChar, "cartridge");
+			}
+			else if (CheckCharacterItem(PChar, "bullet"))
+			{
+    			TakeItemFromCharacter(PChar, "bullet");
+			}
 		break;
 		
 		case "BM_IronsThirdJungle_6":
@@ -827,18 +783,7 @@ void ProcessDialogEvent()
 		
 		case "BM_IronsThirdJungle_Otkaz3":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			bDisableLandEncounters = false;
-			
-			sld = characterFromID("Irons");
-			RemovePassenger(pchar, sld);
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocation(sld, "reload", "reload1", "", "", "", "", -1);
-			sld.location = "None";
-			AddQuestRecord("BlackMark", "6");
-			AddQuestUserData("BlackMark", "sSex", GetSexPhrase("","а"));
-			AddQuestUserData("BlackMark", "sSex1", GetSexPhrase("к","чка"));
-			CloseQuestHeader("BlackMark");
+			AddDialogExitQuestFunction("BM_IronsThirdJungle_Otkaz");
 		break;
 		
 		case "BM_IronsJamaicaShore1":
@@ -1012,33 +957,8 @@ void ProcessDialogEvent()
 		case "BM_IronsClone5":
 			dialog.text = "反正没人会听你的。 你总是个... 脑子坏掉的, 托马斯。 ";
 			link.l1 = "哦, 所以你不否认你那天的所作所为。 我有东西给你, 盖比。 一个黑色印记。 但现在船已经被征用, 我们正要让你吐露实情, 嘿嘿嘿嘿嘿嘿... ";
-			link.l1.go = "BM_IronsClone6"; // здесь переход на кейс с боёвкой
-		break;
-		
-		case "BM_IronsClone6":
-			DialogExit();
-			LAi_SetPlayerType(pchar);
-			LAi_SetFightMode(pchar, true);
-			locCameraTarget(PChar);
-			locCameraFollow();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			
-			sld = CharacterFromID("IronsClone");
-			LAi_SetCheckMinHP(sld, 1, true, "");
-			LAi_SetCurHPMax(sld);
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocator(sld, "reload", "reload1", "BM_IronsCloneMushket", -1);
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-			
-			sld = &Characters[sti(pchar.GenQuest.QuestAboardCabinDialogIdx)];
-			LAi_SetImmortal(sld, false);
-			LAi_SetCurHPMax(sld);
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, false);
-			LAi_group_SetCheck("EnemyFight", "BM_CabinDialog4");
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("BM_IronsClone5_function"); // здесь переход на кейс с боёвкой
 		break;
 		
 		case "BM_IronsClone8":
@@ -1183,7 +1103,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseGood1":
-			notification("Reputation Check Passed", "None");
+			Notification_Reputation(true, 71, "low");
 			if (startHeroType == 4)
 			{
 				dialog.text = "谁会相信这种事... 对不起, 小姐。 " +TimeGreeting()+ "。 我能为你做什么? 你看起来很担心。 ";
@@ -1286,7 +1206,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_GabeHouseNeutral1":
-			notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(71))+")", "None");
+			Notification_Reputation(false, 71, "low");
 			if (startHeroType == 4)
 			{
 				dialog.text = "你是谁, 小姐? 你一定是找错地址了。 我, 呃, 没有订购任何过夜服务。 ";
@@ -1359,13 +1279,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(值得信赖) 我很紧张。 盖比是个懦夫, 但他不傻。 如果来的不是他, 而是一整个排的士兵怎么办? 或者他们接近海湾并先击沉我们的船怎么办? ";
 				link.l1.go = "BM_IronsJamaicaJungle_GabePlan_VD1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l2 = "盖比看到我了。 我不得不跑。 ";
 				link.l2.go = "BM_IronsJamaicaJungle_GabePlan_4";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		
@@ -2209,11 +2129,7 @@ void ProcessDialogEvent()
 		
 		case "tieyasal_10":
 			DialogExit();
-			RemovePassenger(pchar, npchar);
-			DeleteAttribute(npchar, "OfficerImmortal");
-			npchar.lifeday = 0;
-			LAi_SetWarriorType(npchar);
-			LAi_CharacterDisableDialog(npchar);
+			AddDialogExitQuestFunction("BM_Irons_tieyasal_otkaz");
 		break;
 	}
 } 

@@ -1,12 +1,8 @@
-
 new_string
 {
 
 }
-
-Uninstalled_Mods_Founded {
-   ¡Atención!
-   No hay suficientes mods instalados para jugar en esta partida guardada. No deberías jugar así.
-   Instálalos o carga un save anterior que se haya hecho antes de instalar el mod. Mods:
-   ~
- }
+Uninstalled_Mods_Founded
+{
+¡Atención!   No hay suficientes mods instalados para jugar en esta partida guardada. No deberías jugar así.   Instálalos o carga un save anterior que se haya hecho antes de instalar el mod. Mods:   ~
+}

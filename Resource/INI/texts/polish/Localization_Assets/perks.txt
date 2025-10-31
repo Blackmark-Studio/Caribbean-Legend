@@ -1,0 +1,8 @@
+perks_1 {Ceny zaktualizowane}
+perks_2 {Wyłom w kadłubie statku „@<_ShipName>” został załatany.}
+perks_3 {@<_ShipName> – przebicie poniżej linii wodnej!}
+perks_4 {$rand(W ładowni '$attr($context.ship.name)' musi być coś cennego|Na '$attr($context.ship.name)' na pewno przewożą coś ważnego)}
+perks_5 {$rand(Niewiele można znaleźć w ładowni '$attr($context.ship.name)'|Wygląda na to, że w ładowni '$attr($context.ship.name)' nie ma nic wartościowego)}
+perks_6 {Na statku @<rChar.Ship.Name> @<FindRussianSailorString(cn, "No")> zginął w ścisku.}
+perks_7 {Zgodnie z obliczeniami, @<_ShipName> dotarł do @<_PortName>.}
+perks_8 {Wciąż w drodze.}

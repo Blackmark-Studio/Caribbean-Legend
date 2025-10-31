@@ -22,8 +22,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "start":
-			dialog.text = "Wake up, " + Pchar.name + "! We have reached the "+ Pchar.HeroParam.Land +" at last, after all of these storms!"+
-                          "  What are you going to do now? You've lost your ship, mate.";
+			dialog.text = "Wake up, "+Pchar.name+"! We have reached the "+Pchar.HeroParam.Land+" At last, after all these storms!"+"  What are you going to do now? You've lost your ship, mate.";
 			link.l1 = "Not my first time! Fortune is a bitch.";
 			link.l1.go = "start1";
 			link.l2 = "Do you want to offer me a job, Abraham?";
@@ -31,8 +30,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "start1":
-			dialog.text = "I hope that you'll have more luck since now than with your 'Mercury'. Farewell.";
-			link.l1 = "No doubt in that. Farewell, captain!";
+			dialog.text = "I hope you'll have better luck from now on than you did with your 'Mercury'. Farewell.";
+			link.l1 = "No doubt about that. Farewell, captain!";
 			link.l1.go = "game_begin";
 		break;
 		
@@ -40,16 +39,15 @@ void ProcessDialogEvent()
             ret = Pchar.name + ", I am a smuggler not a governor, what kind of job are you even talking about?";
             if (sti(Pchar.nation) == PIRATE)
             {
-                dialog.text = ret + " Check up the Inness's tavern. She is aware about everyone in the town."+
-                              "  Go to Urksen, he is the leader here. But have a talk with local pirates first.";
+                dialog.text = ret+" Check Inness's tavern. She knows everything about everyone in town."+"  Go to Urksen, he's the leader here. But have a word with the local pirates first.";
             }
             else
             {
-                dialog.text = ret + "Borrow some money, sell your stuff. You know what to do.";
+                dialog.text = ret+"Borrow some money, sell your things. You know what to do.";
             }
-            link.l1 = "Fine, thanks for an advice. Farewell.";
+            link.l1 = "Fine, thanks for the advice. Farewell.";
 			link.l1.go = "game_begin";
-			link.l2 = "You know, Abraham, I'd better take your ship. I like this one!";
+			link.l2 = "You know, Abraham, I think I'll take your ship. I rather like this one!";
 			link.l2.go = "start3";
 		break;
 		
@@ -60,14 +58,14 @@ void ProcessDialogEvent()
 		
 		case "start3":
 			dialog.text = "Bad joke, pal.";
-			link.l1 = "Don't worry , old man. Farewell!";
+			link.l1 = "Don't worry, old man. Farewell!";
 			link.l1.go = "game_begin";
-			link.l2 = "Who said that I was joking? You'll tell your people that you've sold your vessel to me. And I'll spare your life. Deal?";
+			link.l2 = "Who said I was joking? You'll tell your people that you've sold your vessel to me. And I'll spare your life. Deal?";
 			link.l2.go = "start4";
 		break;
 		
 		case "start4":
-			dialog.text = "I heard that you've murdered your master Malcolm Hatcher for a cheap saber. I thought that they were just rumors. Such a fool I was. You'll be feeding fish tonight, lad! You have got no chance.";
+			dialog.text = "I heard that you murdered your master, Malcolm Hatcher, for a cheap saber. I thought they were just rumours. Such a fool I was. You'll be feeding the fish tonight, lad! You've got no chance.";
 			link.l1 = "Oh, do you really think so?";
 			link.l1.go = "exit";
 			addDialogExitQuest("Tut_KillOnShip");
@@ -88,7 +86,7 @@ void ProcessDialogEvent()
 			int iRnd = (rand(100) == 30);
 			if (iRnd)
 			{
-				dialog.text = "Well, mate. You know, we thought that it would be a good idea to sell you as a slave. Ha-ha! Money is always useful.";
+				dialog.text = "Well, mate. You know, we thought it would be a good idea to sell you as a slave. Ha-ha! Money is always useful.";
 				link.l1 = "What?!";
 				//заглушка, пока нет рудников.
 				link.l1.go = "Travel_fight";
@@ -99,7 +97,7 @@ void ProcessDialogEvent()
 				dialog.text = "We've reached our destination. Farewell.";
 				link.l1 = "Farewell.";
 				link.l1.go = "Travel_end";
-				link.l2 = "I like your ship. I want to keep it to myself.";
+				link.l2 = "I like your ship. I want to keep it for myself.";
 				link.l2.go = "Travel_fight";
 			}
 		break;

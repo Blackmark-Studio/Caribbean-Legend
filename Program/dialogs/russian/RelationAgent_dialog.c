@@ -1,4 +1,4 @@
-#define DIPLOMAT_SUM 80000
+int iDiplomatPseudoGlobal;
 
 void ProcessDialogEvent()
 {
@@ -48,18 +48,14 @@ void ProcessDialogEvent()
  	if (findsubstr(attrLoc, "RelationTo_" , 0) != -1)
  	{
         i = findsubstr(attrLoc, "_" , 0);
-        npchar.quest.relation      = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
+        npchar.quest.relation = strcut(attrLoc, i+1, strlen(attrLoc)-1); // индех в конце
 		// проверка на уже договор
 		attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
 		if (CheckAttribute(Pchar, "GenQuest." + attrLoc) && sti(Pchar.GenQuest.(attrLoc)) == true)
 		{
 		    Dialog.CurrentNode = "RelationYet";
 		}
-		else
-		{
- 	    	Dialog.CurrentNode = "RelationAny_Done";
- 	    	npchar.quest.relation.summ = CalculateRelationSum(sti(npchar.quest.relation));
- 	    }
+		else Dialog.CurrentNode = "RelationAny_Done";
  	}
  	
  	if (findsubstr(attrLoc, "CityPay_" , 0) != -1)
@@ -342,10 +338,10 @@ void ProcessDialogEvent()
 		break;
 
 		case "Contraband":
-			Pchar.questTemp.Relations.sum = makeint(0.3 * stf(Pchar.rank)/stf(Pchar.reputation.nobility)*DIPLOMAT_SUM);
-			dialog.Text = "Хорошо. Это обойдётся в " + Pchar.questTemp.Relations.sum + " песо.";
+			iDiplomatPseudoGlobal = CalculateRelationContraSum(false);
+			dialog.Text = "Хорошо. Это обойдётся в " + iDiplomatPseudoGlobal + " песо.";
 			Link.l1 = "Я соглас"+ GetSexPhrase("ен","на") +".";
-			if(makeint(Pchar.money) < makeint(Pchar.questTemp.Relations.sum))
+			if(sti(Pchar.money) < iDiplomatPseudoGlobal)
 			{
 				Link.l1.go = "No_money";
 			}
@@ -362,13 +358,15 @@ void ProcessDialogEvent()
 			Link.l99 = "Спасибо.";
 			Link.l99.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			AddMoneyToCharacter(pchar, -sti(Pchar.questTemp.Relations.sum));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
 		break;
         // boal <--
+
 		case "RelationAny_Done":
-			iSumm = sti(npchar.quest.relation.summ);
-			dialog.text = "Хм-м... даже не знаю, что сказать. Я, конечно, смогу выполнить вашу просьбу о примирении с "+ XI_ConvertString(Nations[sti(npchar.quest.relation)].Name + "Abl") +", но это будет вам стоить " + FindRussianMoneyString(iSumm) + ".";
-			if(sti(pchar.money) >= iSumm)
+			i = sti(npchar.quest.relation);
+			iDiplomatPseudoGlobal = CalculateRelationSum(i, false);
+			dialog.text = "Хм-м... даже не знаю, что сказать. Я, конечно, смогу выполнить вашу просьбу о примирении с "+ XI_ConvertString(Nations[i].Name + "Abl") +", но это будет вам стоить " + FindRussianMoneyString(iDiplomatPseudoGlobal) + ".";
+			if(sti(pchar.money) >= iDiplomatPseudoGlobal)
 			{
 				link.l1 = "Думаю, у меня всё равно нет выбора. Так что вот ваши деньги.";
 				link.l1.go = "relation3";
@@ -381,9 +379,9 @@ void ProcessDialogEvent()
 			dialog.text = "Отлично! С вами удивительно легко иметь дело. Можете быть спокойны, по истечении максимум 15 дней ваши дела будут улажены.";
 			link.l1 = "Хорошо.";
 			link.l1.go = "exit";
-			AddMoneyToCharacter(pchar, -sti(npchar.quest.relation.summ));
-			ChangeNationRelationFromRelationAgent(npchar);
-			attrLoc = "RelationAgent" + GetNationNameByType(sti(npchar.quest.relation));
+			AddMoneyToCharacter(pchar, -iDiplomatPseudoGlobal);
+			ChangeNationRelationFromRelationAgent(i);
+			attrLoc = "RelationAgent" + GetNationNameByType(i);
             Pchar.GenQuest.(attrLoc) = true;
 		break;
 		

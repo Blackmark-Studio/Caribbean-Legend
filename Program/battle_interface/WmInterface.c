@@ -416,6 +416,47 @@ void WM_SetParameterData()
 
 	BattleInterface.maincharindex = pchar.index;
 	
+	
+	
+	for(numLine = 1; numLine <= 5; numline++)
+	{
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		sAttrB = "Con"+numLine+"Back";
+		
+		int boff = 9 + (numLine-1)*45;
+		int coff = 11 + (numLine-1)*45;
+		int doff = 15 + (numLine-1)*45;
+	
+		BattleInterface.textinfo.(sAttrB).font = "Info_fader_ls";
+		BattleInterface.textinfo.(sAttrB).scale = 0.6 * fHtRatio;
+		BattleInterface.textinfo.(sAttrB).color = argb(155,255,255,255);
+		BattleInterface.textinfo.(sAttrB).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(50 * fHtRatio));
+		BattleInterface.textinfo.(sAttrB).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(boff * fHtRatio));
+		BattleInterface.textinfo.(sAttrB).align = "left";
+		BattleInterface.textinfo.(sAttrB).text = "";
+		BattleInterface.textinfo.(sAttrB).refreshable = true;
+		
+		BattleInterface.textinfo.(sAttr).font = "KEYBOARD_SYMBOL";
+		BattleInterface.textinfo.(sAttr).scale = 0.9 * fHtRatio;
+		BattleInterface.textinfo.(sAttr).color = argb(255,255,255,255);
+		BattleInterface.textinfo.(sAttr).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(75 * fHtRatio));
+		BattleInterface.textinfo.(sAttr).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(coff * fHtRatio));
+		BattleInterface.textinfo.(sAttr).text = "";
+		BattleInterface.textinfo.(sAttr).refreshable = true;
+		
+		BattleInterface.textinfo.(sAttrDes).font = "interface_normal";
+		BattleInterface.textinfo.(sAttrDes).scale = 1.3 * fHtRatio;
+		BattleInterface.textinfo.(sAttrDes).color = argb(255,255,255,255);
+		BattleInterface.textinfo.(sAttrDes).pos.x = sti(showWindow.left) + RecalculateHIcon(makeint(105 * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).pos.y = sti(showWindow.bottom)/4*3 + RecalculateVIcon(makeint(doff * fHtRatio));
+		BattleInterface.textinfo.(sAttrDes).align = "left";
+		BattleInterface.textinfo.(sAttrDes).text = "";
+		BattleInterface.textinfo.(sAttrDes).refreshable = true;
+	}
+	
+	ControlsMapDesc();
+	
 	// evganat - динамический интерфейс
 	WM_SetNationsThreat();
 
@@ -580,4 +621,95 @@ void WM_SetNationsThreat()
 string GetPosString(int x1, int y1, int x2, int y2)
 {
 	return x1 + "," + y1 + "," + x2 + "," + y2;
+}
+
+void ControlsMapDesc()
+{
+	if(iControlsTips > 0 && !IsSteamDeck())
+	{
+		int colorbase	= argb(255,255,255,255);
+		
+		for(numline = 1; numline <= 5; numline++)
+		{
+			sAttrB = "Con"+numLine+"Back";
+			sAttr = "Con"+numLine;
+			sAttrDes = "Con"+numLine+"desc";
+
+			BattleInterface.textinfo.(sAttrB).text = "" ;
+			BattleInterface.textinfo.(sAttr).text = "";
+			BattleInterface.textinfo.(sAttrDes).text = "" ;
+
+			BattleInterface.textinfo.(sAttr).color = colorbase;
+			BattleInterface.textinfo.(sAttrDes).color = colorbase;
+		}
+
+		// режим камеры
+		numline = 1;
+		sAttrB = "Con"+numLine+"Back";
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("WMapCameraSwitch");
+		BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("WMapCameraSwitch","ControlsNames.txt");
+		BattleInterface.textinfo.(sAttrB).text = "1";
+		
+		// атлас
+		numline++;
+		sAttrB = "Con"+numLine+"Back";
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("WMapDrawCircle");
+		BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("WMapDrawCircle","ControlsNames.txt");
+		BattleInterface.textinfo.(sAttrB).text = "1";
+		
+		// выйти в море
+		numline++;
+		sAttrB = "Con"+numLine+"Back";
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("WMapCancel");
+		BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("WMapCancel","ControlsNames.txt");
+		BattleInterface.textinfo.(sAttrB).text = "1";
+		
+		// ускорить время / отключить ускорение
+		numline++;
+		sAttrB = "Con"+numLine+"Back";
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("TimeScale");
+		BattleInterface.textinfo.(sAttrB).text = "1";
+		if(TimeScaleCounter <= 0)
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOn","ControlsNames.txt");
+		else
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("TimeScaleOff","ControlsNames.txt");
+		
+		// поднять паруса / спустить паруса
+		numline++;
+		sAttrB = "Con"+numLine+"Back";
+		sAttr = "Con"+numLine;
+		sAttrDes = "Con"+numLine+"desc";
+		if(!CheckAttribute(&BattleInterface, "internal.wm_player_state"))
+			BattleInterface.internal.wm_player_state = 0;
+		if(sti(BattleInterface.internal.wm_player_state) > 0)
+		{
+			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailDown");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailDown","ControlsNames.txt");
+		}
+		else
+		{
+			BattleInterface.textinfo.(sAttr).text = GetKeyCodeImg("Ship_SailUp");
+			BattleInterface.textinfo.(sAttrDes).text = GetConvertStr("Ship_SailUp","ControlsNames.txt");
+		}
+		BattleInterface.textinfo.(sAttrB).text = "1";
+	}
+}
+
+#event_handler("WM_Event_ChangePlayerSailState","WM_Event_ChangePlayerSailState");
+void WM_Event_ChangePlayerSailState()
+{
+	int sailState = GetEventData();
+	if(iControlsTips > 0 && !IsSteamDeck())
+	{
+		BattleInterface.internal.wm_player_state = sailState;
+		ControlsMapDesc();
+	}
 }

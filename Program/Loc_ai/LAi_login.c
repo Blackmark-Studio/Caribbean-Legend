@@ -77,6 +77,7 @@ bool LAi_CharacterLogin(aref chr, string locID)
 			// boal fix fort officers <--
 		}
 	}
+	if(NotLoginQuestCapture(chr, locID)) return false;
 	if(!isLogin) return false;
 	//Если персонажей больше максимального числа, незагружаем больше
 	if(LAi_numloginedcharacters >= MAX_CHARS_IN_LOC)
@@ -274,7 +275,7 @@ void LAi_CharacterPostLogin(ref location)
 		LandHunterReactionResult(location);
 		//обновить базу абордажников для нефритового черепа
 		CopyPassForAztecSkull();
-
+		CheckTradeConnections(location);
 	}
 }
 
@@ -353,4 +354,15 @@ void LAi_PostLoginInit(aref chr)
 		call func(&chr);
 	}
 	ResetCritChanceBonus(chr);
+}
+
+bool NotLoginQuestCapture(aref chr, string locID)
+{
+	if(!CheckAttribute(&Locations[FindLocation(locID)], "QuestCapture")) return false;
+	
+	if(HasSubStr(chr.id, "PortmansCap_")) return true;
+	if(HasSubStr(chr.id, "SeekCap_")) return true;
+	if(HasSubStr(chr.id, "SeekCitizCap_")) return true;
+	
+	return false;
 }

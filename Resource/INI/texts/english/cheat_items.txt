@@ -1,57 +1,30 @@
-
 new_string
 {
 
 }
-
 Cheat_success {Cheat worked successfully!}
-
 Cheat_on {Cheat on}
-
 Cheat_off {Cheat off}
-
 Cheat_Comming_soon {Coming soon!}
-
 f1 {Unlock all crafting recipes}
-
 f2 {Add crafting materials}
-
 f3 {Add herbs}
-
 f4 {Add gems}
-
 f5 {Adder stone +100}
-
 f6 {Ammo +50}
-
 f7 {Get Blades}
-
 f8 {Get Guns}
-
 f9 {Get Muskets}
-
 f10 {God mode on/off}
-
 f11 {Get Cuirasses}
-
 f12 {Get Talismans}
-
 f13 {Get Amulets}
-
 f14 {Get Wards}
-
 f15 {Get Potions}
-
 f16 {Get Spyglasses}
-
 f17 {Get Lantern}
-
 f18 {Get navigation devices}
-
 f19 {Get Tools}
-
 f20 {Get ordinary maps}
-
 f21 {Get admiral maps}
-
 descF21No {Unavailable at this stage of the game}

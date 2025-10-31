@@ -1,0 +1,3 @@
+locations_loader_1 {Elsô látogatás ~}
+locations_loader_2 {Minden kolónia meglátogatva!}
+locations_loader_3 {Egy titokzatos hely meglátogatva!}

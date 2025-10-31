@@ -1112,17 +1112,17 @@ void initFastReloadTable()
 	curTable.l1.tex = 0;
 	curTable.l1.location = "IslaMona_TwoFloorRoom";
 	// tavern
-	curTable.l2.pic = FRP_TAVERN;
+	/*curTable.l2.pic = FRP_TAVERN;
 	curTable.l2.tex = 0;
-	curTable.l2.location = "IslaMona_town";
+	curTable.l2.location = "IslaMona_town";*/
 	// 
-	curTable.l3.pic = FRP_PRISON;
+	curTable.l2.pic = FRP_PRISON;
+	curTable.l2.tex = 0;
+	curTable.l2.location = "IslaMona_factoria_residence";
+	// 
+	curTable.l3.pic = FRP_CHURCH;
 	curTable.l3.tex = 0;
-	curTable.l3.location = "IslaMona_factoria_residence";
-	// 
-	curTable.l4.pic = FRP_CHURCH;
-	curTable.l4.tex = 0;
-	curTable.l4.location = "IslaMona_church";
+	curTable.l3.location = "IslaMona_church";
 	// 
 	/* curTable.l5.pic = 38;
 	curTable.l5.tex = 0;

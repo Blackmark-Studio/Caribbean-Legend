@@ -1,46 +1,10 @@
-Consumption_1
-{
-
-}
-Consumption_2
-{
-
-}
-
-Consumption_3
-{
-Sergio
-}
-Consumption_4
-{
-Saldo
-}
-
-Consumption_5
-{
-Juan
-}
-Consumption_6
-{
-Consumption
-}
-
-Consumption_7
-{
-
-}
-Consumption_8
-{
-
-}
-
-Consumption_9
-{
-Das Schiff wird in wenigen Minuten in die Luft gehen. Sie sollten sofort verschwinden!
-}
-
-Consumption_10
-{
-Das Schiff wird in wenigen Minuten in die Luft gehen. Sie sollten sofort verschwinden!
-
-}
+Consumption_1 { }
+Consumption_2 { }
+Consumption_3 {Sergio}
+Consumption_4 {Saldo}
+Consumption_5 {Juan}
+Consumption_6 {Consumption}
+Consumption_7 { }
+Consumption_8 { }
+Consumption_9 {Das Schiff wird in wenigen Minuten in die Luft gehen. Sie sollten sofort verschwinden!}
+Consumption_10 {Das Schiff wird in wenigen Minuten in die Luft gehen. Sie sollten sofort verschwinden!}

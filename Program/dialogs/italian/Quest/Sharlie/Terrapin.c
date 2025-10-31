@@ -183,7 +183,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "Sliding");
 			SetCharacterPerk(sld, "BladeDancer");
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "Gunman");
 			SetCharacterPerk(sld, "GunProfessional");
 			sld.MultiFighter = 1.0+fMft; // мультифайтер

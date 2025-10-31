@@ -3051,18 +3051,8 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_2":
 			dialog.text = "当然, 船长。 来 - 请接受这个来自我个人的微薄奖励。 ";
 			link.l1 = "谢谢你。 ";
-			link.l1.go = "JusticeOnSale_3";
-		break;
-		
-		case "JusticeOnSale_3":
-			AddQuestRecord("JusticeOnSale", "5");
-			CloseQuestHeader("JusticeOnSale");
-			
-			AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
-			
-			DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
-			
-			DialogExit();
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_1");
 		break;
 		
 		case "JusticeOnSale_4":
@@ -3074,56 +3064,8 @@ void ProcessDialogEvent()
 		case "JusticeOnSale_5":
 			dialog.text = "现在走吧。 航行到那里, 确保没有人能逃脱正义。 我想你首先需要在岸边下船, 然后你就可以处理那艘船了。 ";
 			link.l1 = "...";
-			link.l1.go = "JusticeOnSale_6";
-		break;
-		
-		case "JusticeOnSale_6":
-			sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", sti(PChar.rank) + 5, PIRATE, -1, true, "quest"));
-			sld.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
-			sld.Ship.Name = PChar.GenQuest.JusticeOnSale.ShipName;
-			SetBaseShipData(sld);
-			SetCrewQuantityFull(sld);
-			Fantom_SetCannons(sld, "pirate");
-			Fantom_SetBalls(sld, "pirate");
-			Fantom_SetUpgrade(sld, "pirate");
-			SetCaptanModelByEncType(sld, "pirate");
-			SetRandGeraldSail(sld, PIRATE);
-			
-			Character_SetAbordageEnable(sld, false);
-			
-			Group_FindOrCreateGroup("JusticeOnSaleGroup");
-			Group_AddCharacter("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-			Group_SetGroupCommander("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
-			Group_SetAddress("JusticeOnSaleGroup", PChar.curislandid, "reload", Island_GetLocationReloadLocator(PChar.curislandid, PChar.GenQuest.JusticeOnSale.ShoreId));
-			Group_SetTaskNone("JusticeOnSaleGroup");
-			Group_LockTask("JusticeOnSaleGroup");
-			
-			sld.AlwaysFriend = true;
-			SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
-			
-			SetCharacterShipLocation(sld, PChar.GenQuest.JusticeOnSale.ShoreId);
-
-			DeleteAttribute(sld, "SinkTenPercent");
-			DeleteAttribute(sld, "SaveItemsForDead");
-			DeleteAttribute(sld, "DontClearDead");
-			DeleteAttribute(sld, "AboardToFinalDeck");
-			
-			sld.AlwaysSandbankManeuver = true;
-			sld.AnalizeShips = true;
-			sld.DontRansackCaptain = true;
-			
-			sld = &Locations[FindLocation(PChar.GenQuest.JusticeOnSale.ShoreId)];
-			sld.DisableEncounters = true;
-			
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1  = "location";
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1.location = PChar.GenQuest.JusticeOnSale.ShoreId;
-			PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.function = "JusticeOnSale_ShoreEnterFromMayor";
-			
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1 = "Character_sink";
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1.character = "JusticeOnSale_ShipPirate";
-			PChar.Quest.JusticeOnSale_PirateShip_Sink.function = "JusticeOnSale_PirateShip_Sink";
-			
-			DialogExit();
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("JusticeOnSale_DlgExitAfterMayor_2");
 		break;
 		
 		case "JusticeOnSale_7":
@@ -3142,9 +3084,9 @@ void ProcessDialogEvent()
 			//--> Jason 帆船赛
 		case "Regata":
 			// belamour legendary edition -->
-			if(sti(pchar.rank) < 20)
+			if(sti(pchar.rank) < 15)
 			{
-				notification("需要20级", "None");
+				Notification_Level(false, 15);
 				dialog.text = "啊, 太好了, 很高兴见到你, 船长! 我听说过你的才能, 但等你真正准备好再来吧。 ";
 				link.l1 = "是的, 当然。 如你所愿。 ";
 				link.l1.go = "exit";

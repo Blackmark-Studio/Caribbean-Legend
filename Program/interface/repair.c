@@ -184,7 +184,7 @@ void ProcessCommandExecute()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{
@@ -678,7 +678,7 @@ void RepairOk()
 	{
 		mc.quest.waithours = ret;
 	}
-	Achievment_SetStat(64, 1); // ugeen 2016
+	//Achievment_SetStat(64, 1); // ugeen 2016
 }
 
 void RepairAll()

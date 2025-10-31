@@ -13,21 +13,21 @@ void ProcessDialogEvent()
 	switch(Dialog.CurrentNode)
 	{
 		case "First time":
-			dialog.text = "What you doin' on Rivados' territory, white man?";
-			link.l1 = "Just getting to know the locals. Sorry if I have bothered you.";
+			dialog.text = "What are you doing on Rivados' territory, white man?";
+			link.l1 = "Just getting to know the locals. Sorry if I bothered you.";
 			link.l1.go = "exit";			
 			NextDiag.TempNode = "First time";
 		break;
 		
 		case "Friend":
-			dialog.text = "I am glad to greet a friend of Rivados and a good man also! Chimiset told me what you did for him. All Rivados, including me, in your debt now. Allow me to introduce myself - Edward Black, also known as Black Eddie, the head of the Rivados gang.";
-			link.l1 = ""+GetFullName(pchar)+". Though I think that Chimiset has already told you about me. He promised to tell you...";
+			dialog.text = "I am glad to greet a friend of Rivados and a good man as well! Chimiset told me what you did for him. All of Rivados, myself included, are in your debt now. Allow me to introduce myself - Edward Black, also known as Black Eddie, the head of the Rivados gang.";
+			link.l1 = ""+GetFullName(pchar)+". Though I believe Chimiset has already told you about me. He promised he would tell you...";
 			link.l1.go = "Friend_1";
 		break;
 		
 		case "Friend_1":
 			dialog.text = "And he has. Now you can visit our ships freely. The guards won't stop you and we will be glad to see you. Be careful with the Narwhals, they must have already found out that you saved Chimiset, and they won't like it, since we are enemies.";
-			link.l1 = "I will consider that. Thanks for the warm welcome, Eddie! Now please allow me to talk with Chimiset.";
+			link.l1 = "I will consider that. Thanks for the warm welcome, Eddie! Now, please allow me to speak with Chimiset.";
 			link.l1.go = "Friend_2";
 		break;
 		
@@ -45,7 +45,7 @@ void ProcessDialogEvent()
 			if (pchar.questTemp.LSC == "return" && !CheckAttribute(npchar, "quest.return_isl"))
 			{
 				dialog.text = "White brother? Alive? I am glad! So, the Narwhals lied when they told everyone that you had drowned...";
-				link.l1 = "I am also glad to see you, Eddie. Rumors of my death have been greatly exaggerated.";
+				link.l1 = "I am also glad to see you, Eddie. Rumours of my death have been greatly exaggerated.";
 				link.l1.go = "exit";
 				npchar.quest.return_isl = "true";
 				break;
@@ -53,7 +53,7 @@ void ProcessDialogEvent()
 			dialog.text = "Glad to see you, "+pchar.name+". Any news?";
 			if (!CheckAttribute(npchar, "quest.natan"))
 			{
-				link.l1 = "Eddie, do you know a man by the name of Nathaniel Hawk? He must be here, as far as I know.";
+				link.l1 = "Eddie, do you know a man named Nathaniel Hawk? He must be here, as far as I know.";
 				link.l1.go = "natan";
 			}
 			if (!CheckAttribute(npchar, "quest.rivados"))
@@ -66,7 +66,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "natan":
-			dialog.text = "Nathaniel Hawk? No, I don't know this man. He is neither on the Rivados ships, nor in the neutral territory. I can't say the same about the Narwhal gang, we don't visit them.";
+			dialog.text = "Nathaniel Hawk? No, I don't know this man. He is neither on the Rivados ships nor in neutral territory. I can't say the same about the Narwhal gang; we don't visit them.";
 			link.l1 = "I see...";
 			link.l1.go = "exit";
 			npchar.quest.natan = "true";
@@ -74,7 +74,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "rivados":
-			dialog.text = "The Rivados gang was founded many years ago. It was the very first clan in this City of Abandoned Ships. More than fifty years ago, Admiral Betancourt's expedition sailed here from West Africa with several large slave ships. The holds of the Tartarus were filled with hundreds of black slaves bound for the Carribbean plantations. There was a man among those slave named Pedro Rivados, some Portuguese priests had taught him how to read and write\nHe managed to free a few dozen of slaves from their shackles and raised a mutiny. Alas, the rest of the slaves failed to join him. The revolt was quelled. The slavers tied Rivados hand and foot and left him in ship's hold to perish from hunger and thirst. A few days later the weather went bad and Betancourt's squadron was swept up by a powerful storm.\nDays later, after fighting the weather, the 'San Augustine' and the 'Tartarus', the only two ships still intact, were stuck in the middle of this Island. A lot of men died during those events, black and white, but many more managed to survive. The ex-slaves started a new life together and called themselves the Rivados in honour of Pedro Rivados, the liberator.";
+			dialog.text = "The Rivados gang was founded many years ago. It was the very first clan in this City of Abandoned Ships. More than fifty years ago, Admiral Betancourt's expedition sailed here from West Africa with several large slave ships. The holds of the Tartarus were filled with hundreds of black slaves bound for the Caribbean plantations. There was a man among those slaves named Pedro Rivados; some Portuguese priests had taught him how to read and write.\nHe managed to free a few dozen slaves from their shackles and raised a mutiny. Alas, the rest of the slaves failed to join him. The revolt was quelled. The slavers tied Rivados hand and foot and left him in the ship's hold to perish from hunger and thirst. A few days later the weather turned bad and Betancourt's squadron was swept up by a powerful storm.\nDays later, after fighting the weather, the 'San Augustine' and the 'Tartarus', the only two ships still intact, were stuck in the middle of this Island. A lot of men died during those events, black and white, but many more managed to survive. The ex-slaves started a new life together and called themselves the Rivados in honour of Pedro Rivados, the liberator.";
 			link.l1 = "A very interesting story... Thank you!";
 			link.l1.go = "exit";
 			npchar.quest.rivados = "true";
@@ -83,50 +83,50 @@ void ProcessDialogEvent()
 		// <-- информационный блок
 		
 		case "capper":
-			dialog.text = "What do you need on Rivados' territories, white man?";
-			link.l1 = "My name is "+GetFullName(pchar)+" and I am here by order of Admiral Dodson. I must talk to Black Eddie. As I understand it is you.";
+			dialog.text = "What do you want in Rivados' territory, white man?";
+			link.l1 = "My name is "+GetFullName(pchar)+" and I am here by order of Admiral Dodson. I must speak to Black Eddie. As I understand, that is you.";
 			link.l1.go = "capper_1";
 		break;
 		
 		case "capper_1":
-			dialog.text = "Yes, I am Edward Black, also known as Black Eddie. Tell me what does the admiral need from me.";
-			link.l1 = "There is a man on the 'Tartarus' named Chimiset. Admiral is willing to free him.";
+			dialog.text = "Yes, I am Edward Black, also known as Black Eddie. Tell me, what does the admiral want from me.";
+			link.l1 = "There is a man on the 'Tartarus' named Chimiset. The admiral is willing to free him.";
 			link.l1.go = "capper_2";
 		break;
 		
 		case "capper_2":
-			dialog.text = "This is very good news. Chimiset is our spiritual leader, and all the Rivados miss him. But I understand that the admiral wants something in exchange for his freedom, right?";
-			link.l1 = "Nothing. He just wants to free him as a gesture of good will. But there is a problem...";
+			dialog.text = "This is very good news. Chimiset is our spiritual leader, and all the Rivados miss him. But I understand that the admiral wants something in exchange for his freedom, correct?";
+			link.l1 = "Nothing. He just wants to free him as a gesture of goodwill. But there is a problem...";
 			link.l1.go = "capper_3";
 		break;
 		
 		case "capper_3":
 			dialog.text = "Go on, white man.";
-			link.l1 = "The ex-boatswain of the admiral, the current jailer Chad Kapper joined the Narwhals, turned rogue and now he is out of the admiral's control. We know that Chad is planning to kill Chimiset. Admiral doesn't want it to happen. We offer you a combined operation in order to eliminate the traitor and to free your man.";
+			link.l1 = "The former boatswain of the admiral, now jailer Chad Kapper, joined the Narwhals, turned rogue, and is now beyond the admiral's control. We know that Chad is planning to kill Chimiset. The admiral does not want this to happen. We propose a joint operation to eliminate the traitor and free your man.";
 			link.l1.go = "capper_4";
 		break;
 		
 		case "capper_4":
-			dialog.text = "You words sound a bit odd, but go on. Is Chimiset in trouble?";
-			link.l1 = "Yes. Chad is planning to kill him. Kapper is going to use the Narwhals in order to seize control of the City. We have to act quickly if we want to save Chimiset, since Chad doesn't suspect anything for now. Admiral has taken all the guards from the 'Tartarus', the passage is free. Here is the key which opens the door inside the prison. Take it.";
+			dialog.text = "Your words sound a bit odd, but go on. Is Chimiset in trouble?";
+			link.l1 = "Yes. Chad is planning to kill him. Kapper is going to use the Narwhals to seize control of the City. We have to act quickly if we want to save Chimiset, since Chad doesn't suspect anything for now. The Admiral has taken all the guards from the 'Tartarus', the passage is clear. Here is the key that opens the door inside the prison. Take it.";
 			link.l1.go = "capper_5";
 		break;
 		
 		case "capper_5":
 			RemoveItems(pchar, "key_capper", 1);
 			dialog.text = "";
-			link.l1 = "Gather your men, go to the Tartarus and free Chimiset. All the cards are yours.";
+			link.l1 = "Gather your men, go to Tartarus and free Chimiset. All the cards are yours.";
 			link.l1.go = "capper_6";
 		break;
 		
 		case "capper_6":
-			dialog.text = "It smells like a trap... And what if there is an ambush? What if the admiral decided to strike the Rivados down? Why won't he deal with Kapper himself?";
-			link.l1 = "Dodson said that you care about Chimiset's life... He did enough: there is the key and the guards are gone. You only need to get inside, deal with Chad and free your man. You have my word that there is no trap. Yeah, and one last thing: the admiral wants Chad's head in exchange for Chimiset's life and freedom. Do we have an agreement?";
+			dialog.text = "It smells like a trap... And what if there's an ambush? What if the admiral decides to strike the Rivados down? Why won't he deal with Kapper himself?";
+			link.l1 = "Dodson said that you care about Chimiset's life... He did enough: here is the key and the guards are gone. You only need to get inside, deal with Chad, and free your man. You have my word that there is no trap. Oh, and one last thing: the admiral wants Chad's head in exchange for Chimiset's life and freedom. Do we have an agreement?";
 			link.l1.go = "capper_7";
 		break;
 		
 		case "capper_7":
-			dialog.text = "Chimiset's life is valued by the Rivados beyond measure. We will move to the 'Tartarus' immediately. But you will stay here as our hostage. And if there is an ambush, you will face the rage of the Rivados!\nZikomo! Stay near the door and watch our guest. Don't let him out. I will lead the attack on the 'Tartarus' myself!";
+			dialog.text = "Chimiset's life is valued by the Rivados beyond measure. We will move to the 'Tartarus' immediately. But you will stay here as our hostage. And if there is an ambush, you will face the wrath of the Rivados!\nZikomo! Stay near the door and watch our guest. Don't let him out. I will lead the attack on the 'Tartarus' myself!";
 			link.l1 = "Good luck, Eddie. And remember: I need the head of Chad Kapper!";
 			link.l1.go = "capper_8";
 		break;
@@ -146,31 +146,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "chimiset_1":
-			dialog.text = "I have to ask for your forgiveness, white friend: you did everything you could for us, but we have failed you... I have failed you! That damn Kapper escaped. There were two Narwhals with him. We killed them, but the filthy jailer swam away through the lower door to the Narwhal territories.";
-			link.l1 = "Fuck... Didn't you know that there were two exits from the 'Tartarus'?";
+			dialog.text = "I must ask for your forgiveness, white friend: you did everything you could for us, but we have failed you... I have failed you! That damn Kapper escaped. There were two Narwhals with him. We killed them, but the filthy jailer swam away through the lower door into the Narwhal territories.";
+			link.l1 = "Fuck... Didn't you know there were two exits from the 'Tartarus'?";
 			link.l1.go = "chimiset_2";
 		break;
 		
 		case "chimiset_2":
 			dialog.text = "We didn't think about it. We attacked from the main entrance...";
-			link.l1 = "Pity. I was counting on his head. Too bad. Now he will continue to act against us.";
+			link.l1 = "Pity. I was counting on his head. Too bad. Now he'll continue to act against us.";
 			link.l1.go = "chimiset_3";
 		break;
 		
 		case "chimiset_3":
-			dialog.text = "I admit my guilt. But we couldn't follow him to the hostile ships. You will have our friendship and respect instead of Chad's head. From now on, you are allowed to visit our territory freely. Chimiset's wisdom will serve you well too, talk to him if you need anything. Talk to him if you need. Also, tell the admiral my assurances that I appreciated his action.";
+			dialog.text = "I admit my guilt. But we couldn't follow him onto the hostile ships. You will have our friendship and respect instead of Chad's head. From now on, you are allowed to visit our territory freely. Chimiset's wisdom will serve you well too; talk to him if you need anything. Also, give the admiral my assurances that I appreciated his actions.";
 			link.l1 = "Fine.";
 			link.l1.go = "chimiset_4";
 		break;
 		
 		case "chimiset_4":
-			dialog.text = "Wait! We have lost Chad, but I have found a few papers on his desk, which he was studying when we arrived. Here they are. You might find them useful, white brother.";
-			link.l1 = "Ha! Perhaps... Chad puts a great trust in paper...";
+			dialog.text = "Wait! We have lost Chad, but I found a few papers on his desk, which he was studying when we arrived. Here they are. You might find them useful, white brother.";
+			link.l1 = "Ha! Perhaps... Chad puts great trust in paper...";
 			link.l1.go = "chimiset_5";
 		break;
 		
 		case "chimiset_5":
-			dialog.text = "You are always a welcome guest here, white friend. All the Rivados will be informed about it. Good luck!";
+			dialog.text = "You are always a welcome guest here, white friend. All the Rivados will be informed of it. Good luck!";
 			link.l1 = "Same to you, Eddie...";
 			link.l1.go = "chimiset_6";
 		break;
@@ -187,7 +187,7 @@ void ProcessDialogEvent()
 			GiveItem2Character(pchar, "letter_chad_1");
 			ChangeItemDescribe("letter_chad_1", "itmdescr_letter_axel");
 			pchar.questTemp.LSC.rvd_friend = "true"; //флаг на проход по кораблям ривадос
-			pchar.rvd_friend = true; // ривадосы не будут останавливать где просят пароль
+			// // ривадосы не будут останавливать где просят пароль
 			pchar.questTemp.Saga.SharkHunt = "dodson_whiskey"; // к Акуле
 			sld = CharacterFromID("Dodson");
 			sld.dialog.currentnode = "Chad_escape"; // ноду Акуле

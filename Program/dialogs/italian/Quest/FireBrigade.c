@@ -280,63 +280,15 @@ void ProcessDialogEvent()
 		break;
 
 		case "Longway_Hired":
-            sld = GetCharacter(NPC_GenerateCharacter("Longway_FP", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
-			sld.name = StringFromKey("QuestsUtilite_42");
-			sld.lastname = StringFromKey("QuestsUtilite_43");
-			sld.greeting = "Longway";
-			sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
-			sld.Dialog.currentnode = "Longway_officer";
-			sld.rank = 20;
-			sld.money = 5000;
-			SetSelfSkill(sld, 45, 45, 45, 40, 50);
-			SetShipSkill(sld, 50, 20, 25, 25, 65, 20, 20, 50, 15);
-			SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-			LAi_SetHP(sld, 250, 250);
-			SetCharacterPerk(sld, "Energaiser");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
-			SetCharacterPerk(sld, "WindCatcher");
-			SetCharacterPerk(sld, "SailsMan");
-			SetCharacterPerk(sld, "SailingProfessional");
-            sTemp = GetGeneratedItem("blade_41");
-            GiveItem2Character(sld, sTemp);
-            EquipCharacterbyItem(sld, sTemp);
-            sTemp = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
-            if(sTemp != "")
-            {
-                GiveItem2Character(sld,   sTemp);
-                EquipCharacterbyItem(sld, sTemp);
-                sTemp = LAi_GetCharacterBulletType(NPChar, GUN_ITEM_TYPE);
-                LAi_SetCharacterBulletType(sld, sTemp);
-                LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, sTemp);
-                sTemp = LAi_GetCharacterGunpowderType(NPChar, GUN_ITEM_TYPE);
-                if(sTemp != "") AddItems(sld, sTemp, 30 + rand(20));
-            }
-			TakeNItems(sld, "potion2", 1);
-            sld.quest.meeting = true;
-			sld.quest.OfficerPrice = sti(pchar.rank)*200; // Артефакт
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.OfficerImmortal = true;
-			sld.Health.HP    = 60.0;
-			sld.Health.maxHP = 60.0;
-            sld.CanTakeMushket = true;
-			SetCharacterPerk(sld, "ShipEscape");
-			AddPassenger(pchar, sld, false);
-			SetCharacterRemovable(sld, true);
-			sld.Payment = true;
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = InitLongwayFP("Longway_FP", NPChar);
+			NPChar.lifeday = 0;
+			LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
+			LAi_SetActorType(NPChar);
+			LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
 
-            NPChar.lifeday = 0;
-            LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
-            LAi_SetActorType(NPChar);
-            LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
-
-            AddDialogExitQuest("pchar_back_to_player");
-            PostEvent("LAi_event_boarding_EnableReload", 5000);
-            DialogExit();
+			AddDialogExitQuest("pchar_back_to_player");
+			PostEvent("LAi_event_boarding_EnableReload", 5000);
+			DialogExit();
 		break;
 	}
 }

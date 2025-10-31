@@ -1,4 +1,1 @@
-Debuger_1
-{
-我们的城市 @<GetCN(city)> 被围困了! 
-}
+Debuger_1 {我们的城市 @<GetCN(city)> 被围困了!}

@@ -1,3 +1,13 @@
+void TBP_Start()
+{
+	SetQuestHeader("TBP");
+	AddQuestRecord("TBP", "1");
+	if (LanguageGetLanguage() == "russian") AddQuestUserData("TBP", "sSex", GetSexPhrase("","а")); 
+	pchar.questTemp.TBP_Start = true;
+	pchar.questTemp.TBP_Tavern = true;
+	AddLandQuestMark(CharacterFromID("Villemstad_tavernkeeper"), "questmarkmain");
+}
+
 void TBP_Poorman(string qName)
 {
 	DeleteAttribute(pchar, "questTemp.TBP_Tavern");
@@ -255,8 +265,8 @@ void TBP_ProvodimDoDoma_3(string qName)
 
 void TBP_ProvodimDoDoma_5(string qName)
 {
-	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && CharacterIsAlive("Helena")) Return_HelenaOfficer();
-	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) Return_MaryOfficer();
+	if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && CharacterIsAlive("Helena")) ReturnOfficer_Helena();
+	if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && CharacterIsAlive("Mary")) ReturnOfficer_Mary();
 	
 	chrDisableReloadToLocation = false;
 	LAi_LocationFightDisable(&Locations[FindLocation("Villemstad_houseS2")], false);
@@ -273,6 +283,10 @@ void TBP_BetsiBackToWork(string qName)
 	TakeItemFromCharacter(pchar, "TBP_letter");
 	SetTimerFunction("TBP_BetsiBackToWork_2", 0, 0, 1);
 	pchar.questTemp.TBP_BetsiPrice = true;
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void TBP_BetsiBackToWork_2(string qName)
@@ -344,6 +358,7 @@ void TBP_Betsi_sex_6(string qName)
 	LAi_SetStayType(sld);
 	ChangeCharacterAddressGroup(sld, PChar.location, "quest", "quest3");
 	sld.dialog.currentnode = "BetsiPrice_sex_2";
+	sld.SpecialRole = "fgirl";
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	
 	SetLaunchFrameFormParam("", "", 0, 15);

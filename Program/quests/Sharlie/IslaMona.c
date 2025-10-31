@@ -870,7 +870,7 @@ void IslaMona_FactoryReActivar() // перезапуск фактории пос
 	pchar.questTemp.IslaMona.Factory.Part = sti(pchar.questTemp.IslaMona.RecordPart);
 	DeleteAttribute(pchar, "questTemp.IslaMona.RecordPart");
 	pchar.questTemp.IslaMona.Factory.Goods = 20*sti(pchar.questTemp.IslaMona.Factory.Part);
-	pchar.questTemp.IslaMona.Factory.Dublon = 200*sti(pchar.questTemp.IslaMona.Factory.Part);
+	pchar.questTemp.IslaMona.Factory.Dublon = 20*sti(pchar.questTemp.IslaMona.Factory.Part);
 	pchar.questTemp.IslaMona.Factory.Bottle = 5*sti(pchar.questTemp.IslaMona.Factory.Part);
 	for(int i=1; i<=5; i++)
 	{
@@ -895,7 +895,7 @@ void IslaMona_FactoryPart() // партия бакаута
 	LaunchMessage(StringFromKey("IslaMona_4"));
 	pchar.questTemp.IslaMona.Factory.Part = sti(pchar.questTemp.IslaMona.Factory.Part)+1;
 	pchar.questTemp.IslaMona.Factory.Goods = 20*sti(pchar.questTemp.IslaMona.Factory.Part);
-	pchar.questTemp.IslaMona.Factory.Dublon = 200*sti(pchar.questTemp.IslaMona.Factory.Part);
+	pchar.questTemp.IslaMona.Factory.Dublon = 20*sti(pchar.questTemp.IslaMona.Factory.Part);
 	pchar.questTemp.IslaMona.Factory.Bottle = 5*sti(pchar.questTemp.IslaMona.Factory.Part);
 }
 
@@ -1042,7 +1042,7 @@ void IslaMona_Church_frasold(string qName)
 	for (i=8; i<=12; i++) // мушкетеры
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("IM_soldier_"+i, "mush_fra_"+(i-7), "man", "mushketer", iRank, FRANCE, -1, true, "soldier"));
-		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+		FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 	}		
 	for (int i=1; i<=7; i++) 
 	{
@@ -1340,6 +1340,7 @@ void IslaMona_DefBattleLightClear() // приводим посёлок в мир
 	pchar.quest.islamona_def_clear.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
 	pchar.quest.islamona_def_clear.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
 	pchar.quest.islamona_def_clear.function = "IslaMona_ChurchPrepareCelebrar";
+	DeleteQuestCondition("islamona_def_jungle");
 	AddQuestRecord("IslaMona", "25");
 	Achievment_Set("ach_CL_93");
 }
@@ -1363,8 +1364,8 @@ void IslaMona_DefAttackCommonArmy(string qName) // абордажная рота
 	int iScl = 20 + 2*sti(pchar.rank);
 	sld = GetCharacter(NPC_GenerateCharacter("Alonso", "Alonso", "man", "man", 35, FRANCE, -1, false, "soldier"));
 	FantomMakeCoolFighter(sld, 35, 90, 90, "blade_10", "pistol5", "bullet", 250);
-	sld.name = StringFromKey("IslaMona_8");
-	sld.lastname = StringFromKey("IslaMona_9");
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\IslaMona_NPC.c";
 	sld.dialog.currentnode = "Alonso";
 	LAi_SetCheckMinHP(sld, 10, true, ""); // скрытое бессмертие

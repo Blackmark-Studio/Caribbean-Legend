@@ -1,31 +1,7 @@
-RedChieftain_1
-{
-Häuptling
-}
-RedChieftain_2
-{
-Kanauri
-}
-
-RedChieftain_3
-{
-Indianer
-}
-RedChieftain_4
-{
-vom Stamm der Caiman
-}
-
-RedChieftain_5
-{
-Der Häuptling hat Ihr Schiff verlassen!
-}
-
-RedChieftain_6
-{
-Indianer
-}
-RedChieftain_7
-{
-vom Stamm der Caiman
-}
+RedChieftain_1 {Häuptling}
+RedChieftain_2 {Kanauri}
+RedChieftain_3 {Indianer}
+RedChieftain_4 {vom Stamm der Caiman}
+RedChieftain_5 {Der Häuptling hat Ihr Schiff verlassen!}
+RedChieftain_6 {Indianer}
+RedChieftain_7 {vom Stamm der Caiman}

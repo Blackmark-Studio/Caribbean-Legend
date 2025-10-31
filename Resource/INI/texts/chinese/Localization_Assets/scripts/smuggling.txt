@@ -1,8 +1,2 @@
-smuggling_1
-{
-走私者表示同意 (
-}
-smuggling_2
-{
-走私者表示不同意 (
-}
+smuggling_1 {走私者表示同意 (}
+smuggling_2 {走私者表示不同意 (}

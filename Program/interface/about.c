@@ -75,11 +75,15 @@ int GetColorFromPreset(string preset) {
 		case "yellow":
 			return argb(255,251,237,68);
 		break;
+
+		case "orange":
+			return argb(255,240,175,95);
+		break;
 		
 		case "red":
 			return argb(255,255,162,162);
 		break;
-		
+
 		case "blue":
 			return argb(255,0,255,255);
 		break;
@@ -129,8 +133,7 @@ void MoveText()
 		SendMessage(&GameInterface,"lslllll",MSG_INTERFACE_MSG_TO_NODE,"BMS",0, 120, makeint(210 - fNewPos * factor), 430, makeint(360 - fNewPos * factor));
 		SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"INFO_TEXT",2, fNewPos);
 		PostEvent("My_MoveText", 20);
-		factor = 7800; // скорость лого (больше быстрее)
-		// fNewPos = fNewPos + 0.00015;// скорость текста (больше быстрее)
-		fNewPos = fNewPos + 0.00022;// скорость текста (больше быстрее)
+		factor = 8500; // скорость лого (больше быстрее)
+		fNewPos = fNewPos + 0.00015;// скорость текста (больше быстрее)
 	}
 }

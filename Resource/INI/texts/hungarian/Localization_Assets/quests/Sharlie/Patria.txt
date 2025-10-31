@@ -1,0 +1,46 @@
+Patria_1 {Noel}
+Patria_2 {Elfelejt}
+Patria_3 { }
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {Felfedezô üzemmód: az idôzítô meghosszabbítva. Fejezd be a küldetést!}
+Patria_7 {A spanyolok üzenetet kaptak, hogy küldjenek parolákat Trinidad világítótornyához a tárgyalások megkezdésére!}
+Patria_8 {Egy nap telt el...}
+Patria_9 {Felfedezô mód: az idôzítô nincs kikapcsolva. Tartsd be a határidôt!}
+Patria_10 {Noel Forget báró elhagyta a hajódat!}
+Patria_11 {Egy másik ellenséges hajó van a nyakunkon!}
+Patria_12 {Frederick}
+Patria_13 {Péter}
+Patria_14 {Stuyvesant}
+Patria_15 {A Társaság kereskedelmi konvoja}
+Patria_16 {A Társaság Ost-Indiai hajóját elfogták!}
+Patria_17 { }
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 { }
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {A vállalat afrikai konvoja}
+Patria_26 {Felfedezô mód: az idôzítô ki van kapcsolva.}
+Patria_27 {El kell pusztítanunk az ellenséges századot!}
+Patria_28 {Doily ezredes jelzést adott a Blanca-lagúnában való partraszállásra!}
+Patria_29 {Kétórás bombázás után,@<NewStr()>a hollandok tárgyalócsoportot küldtek...}
+Patria_30 {Keresztény}
+Patria_31 {Tior}
+Patria_32 { }
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 { }
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {Két órával késôbb...@<NewStr()>}
+Patria_39 {Noel Forget báró belehalt a lázba!}
+Patria_40 {Olivier}
+Patria_41 {Teher}
+Patria_42 {Mária}
+Patria_43 {Casper}
+Patria_44 {A bánya kormányzóját kiszúrták az egyik házban, elfogták és bebörtönözték.}
+Patria_45 {Huszonhárom órával késôbb...@<NewStr()>Peter Stuyvesant megjelent a kapuknál...}
+Patria_46 {Egy nappal késôbb...@<NewStr()>}

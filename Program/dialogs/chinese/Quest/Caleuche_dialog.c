@@ -220,7 +220,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "一个眼窝里有绿色宝石的玉头骨? 所以这就是我需要找的? 但那个水手可能五十年前就死在丛林里了, 头骨可能永远丢失了! ";
+				link.l1 = "一个眼窝里有绿色宝石的玉头骨? 但那个水手可能五十年前就死在丛林里了, 头骨可能永远丢失了! ";
 				link.l1.go = "Tuttuat_21_2";
 			}
 		break;
@@ -297,6 +297,8 @@ void ProcessDialogEvent()
 			npchar.dialog.currentnode = "Tuttuat_10";
 			pchar.questTemp.Caleuche = "mayak"; 
 			AddQuestRecord("Caleuche", "6");
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "Santiago_Lightman") {AddLandQuestMark(characterFromId("Santiago_Lightman"), "questmarkmain");}
+			if (CheckAttribute(pchar, "questTemp.Caleuche.Amuletmaster") && pchar.questTemp.Caleuche.Amuletmaster == "BasTer_Lightman") {AddLandQuestMark(characterFromId("BasTer_Lightman"), "questmarkmain");}
 		break;
 		
 		case "Tuttuat_33":
@@ -454,6 +456,7 @@ void ProcessDialogEvent()
 			dialog.text = "(看着) 是的, 就是这个。 非常美丽。 也非常可怕。 ";
 			link.l1 = "当然... 但更有趣的是 - 我从古巴到多米尼加穿越了整个加勒比海, 当我有这个头骨时, 卡莱乌切从未试图攻击我, 我甚至没有看到它。 而当我把护身符带给你时, 我一出海它就不断追我, 几个小时内就找到了我。 ";
 			link.l1.go = "Tuttuat_46a";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "Tuttuat_46a":
@@ -487,10 +490,11 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tuttuat_48":
-			dialog.text = "我想它很小, 在村子的北边, 在你们称为海洋的那片大水中, 离得不远。 ";
-			link.l1 = "嗯... 也许在多米尼加北部的海洋边界? 该死的 - 那是海洋中的一大片区域! 如果没人听说过, 我怎么能找到一个小岛? ";
+			dialog.text = "从传说中我明白, 他是小岛, 在这村子所在的岛往被白人称为‘北方’的方向, 位于三个岛的中间, 而第四面是大水——大海。";
+			link.l1 = "嗯……在多米尼加以北的岛屿三角之间, 紧邻大海? 该死, 这可是一大片海域! 在那儿怎么找一座没人听说过的小岛?";
 			link.l1.go = "Tuttuat_49";
 		break;
+
 		
 		case "Tuttuat_49":
 			dialog.text = "我不能说得更清楚了。 但我还知道另一个故事。 你可能从你的兄弟那里听说过。 大约二十年前, 白人发现了那个岛。 他和一个女人以及一个老人进入了尤姆.西米尔的神庙, 拿走了一件强大的神器 —升起的太阳之球。 在岛的海岸上, 白脸船长遭到了卡莱乌切的袭击\n白脸人很聪明。 他用升起的太阳之球使卡莱乌切的船长和船员失明。 卡莱乌切的诅咒减弱了, 船长击沉了它, 但升起的太阳之球溶解了。 如果你找到那个白脸人, 他会告诉你岛在哪里。 ";
@@ -577,12 +581,18 @@ void ProcessDialogEvent()
 			ChangeItemDescribe("kaleuche_amulet2", "itmdescr_kaleuche_amulet2_sword");
 			ChangeItemDescribe("kaleuche_amulet3", "itmdescr_kaleuche_amulet3_shield");
 			sld = ItemsFromID("kaleuche_amulet2");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			aref modifier = AddCallback(sld, CT_COMMON, "KaleucheAmuletAttack");
+			modifier.arg0 = 0.25;
 			sld.picIndex = 13;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;
 			sld.unique = true;	
 			sld.ItemType = "ARTEFACT";
 			sld = ItemsFromID("kaleuche_amulet3");
+			AddDescriptor(sld, M_AMULET_TYPE, AMULET_PAGAN);
+			SetModifierFromSource(sld, HAS + M_CANT_BE_POISONED, true, TALISMAN_ITEM_TYPE);
+			SetModifier(sld, M_REDUCE_DAMAGE, 0.25);
 			sld.picIndex = 14;
 			sld.picTexture = "ITEMS_36";
 			sld.groupID = TALISMAN_ITEM_TYPE;
@@ -620,6 +630,7 @@ void ProcessDialogEvent()
 				dialog.text = "我与神灵交谈过。 你已经在尤姆.西米尔的神庙所在的岛上。 你找到卡莱乌切和护身符了吗? ";
 				link.l1 = "你说得对, 伟大的萨满。 我找到了那个岛, 进入了神庙, 并把玉头骨留在了里面。 ";
 				link.l1.go = "Tuttuat_63";
+				DelLandQuestMark(npchar);
 			}
 			else
 			{
@@ -1004,6 +1015,63 @@ void ProcessDialogEvent()
 			AddDialogExitQuest("MainHeroFightModeOn");
 		break;
 		
+		// Наш Алонсо после финального абордажа на Калеуче
+		case "Caleuche_Alonso_1":
+			dialog.text = "船壳上的妖孽已经清除了, 船长。这次那些死鬼没再爬起来。可这艘破船……简直不可思议, 它竟然还没沉。";
+			link.l1 = "是诅咒让它漂着, 阿隆索。不过现在, 诅咒已破。";
+			link.l1.go = "Caleuche_Alonso_2";
+		break;
+
+		case "Caleuche_Alonso_2":
+			dialog.text = "您怎么吩咐?咱们点把火, 把这破玩意儿烧了?";
+			link.l1 = "我还得想想。就算快散架了, ‘飞翔之心’差点把我们的船打成筛子。";
+			link.l1.go = "Caleuche_Alonso_3";
+		break;
+
+		case "Caleuche_Alonso_3":
+			dialog.text = "这破玩意儿的火力确实猛得很, 真他娘的见鬼……我来找您, 是想说咱们船上有个水手, 叫雅克……";
+			link.l1 = "雅克·特吕多? 我记得他。是最近才加入咱们的吧? ";
+			link.l1.go = "Caleuche_Alonso_4";
+		break;
+
+		case "Caleuche_Alonso_4":
+			dialog.text = "正是, 船长。那小子嗅觉灵得很, 一见尸潮平息了, 就蹿到一张床边, 钻到底下, 扛出一个箱子。里面——五千枚达布隆金币!";
+			link.l1 = "五千? 哼……看来巴尔塔萨·德·科尔德斯和他的伙计们真是想解除诅咒。他们把口袋塞满金币, 希望一切结束后能快活过日子……";
+			link.l1.go = "Caleuche_Alonso_5";
+		break;
+		
+		case "Caleuche_Alonso_5":
+			dialog.text = "咱们的伙计也想过快活日子, 船长……您要是愿意分一杯羹, 他们可一辈子都不会忘了这份恩情。 可要是不分……他们也会记住的。";
+			link.l1 = "你说得对, 阿隆索。该奖赏兄弟们——他们确实干得漂亮。 把一半分给大家, 特吕多这一周不用上岗。今天的酒水不发朗姆酒就说不过去了。 但也不能松懈——你知道, 大海从不原谅错误。";
+			link.l1.go = "Caleuche_Alonso_6";
+			link.l2 = "嗯……你说得有理, 阿隆索。兄弟们也该发泄一下。给他们四分之一的分红。记住, 别让这帮醉鬼在咱们进港前就开喝。";
+			link.l2.go = "Caleuche_Alonso_7";
+			link.l3 = "让这帮懒鬼一进港就跑光, 泡酒馆泡窑子?我可不想再花一个月把他们挨个捞回来。 他们拿着薪水就够了。把金币都带来, 谁敢私藏, 别怪我不客气。";
+			link.l3.go = "Caleuche_Alonso_8";
+		break;
+		
+		case "Caleuche_Alonso_6":
+			dialog.text = "明白了, 船长。放心, 兄弟们绝不会让您失望的。";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_2");
+		break;
+		
+		case "Caleuche_Alonso_7":
+			dialog.text = "是, 船长。我知道怎么管住这帮疯子——您尽管放心。";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_3");
+		break;
+		
+		case "Caleuche_Alonso_8":
+			dialog.text = "如您所愿, 船长。伙计们原本指望更多……不过您是船长, 您说了算。";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_AlonsoAfterWinOnShip_4");
+		break;
+
+		
 		// --> // 我们的水手在岸边
 		case "on_coast":
 			dialog.text = "终于, 你醒了, 船长... 你感觉怎么样? ";
@@ -1067,6 +1135,7 @@ void ProcessDialogEvent()
 			dialog.text = "嘿! 我还没收集到足够的蛇皮卖给你, 所以滚蛋! ";
 			link.l1 = "嗯... 你是弗格斯.胡珀吗? ";
 			link.l1.go = "fergus_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "fergus_1":
@@ -1130,6 +1199,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Caleuche.Bandos = "start"; 
 			LAi_CharacterDisableDialog(npchar);
 			npchar.lifeday = 0;
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// 镇上的强盗
@@ -1322,6 +1392,7 @@ void ProcessDialogEvent()
 			// 改变标志
 			pchar.questTemp.Caleuche.Bandos = "know";
 			SaveCurrentQuestDateParam("questTemp.Caleuche.belizbandos");
+			AddLandQuestMarkToPhantom("beliz_prison", "belizJailOff");
 		break;
 		
 		// 在洞穴中消灭了强盗
@@ -1360,6 +1431,7 @@ void ProcessDialogEvent()
 			dialog.text = "你好, 同事! 什么风把你吹来了? ";
 			link.l1 = TimeGreeting()+", 杰克逊先生。 很高兴终于找到你。 ";
 			link.l1.go = "reginald_1";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "reginald_1":
@@ -1413,6 +1485,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			NextDiag.CurrentNode = "reginald_9";
 			npchar.DeckDialogNode = "reginald_9";
+			AddLandQuestMark(npchar, "questmarkmain");
 		break;
 		
 		case "reginald_9":
@@ -1427,10 +1500,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "reginald_10":
-			Log_Info("你已支付500达布隆");
-			PlaySound("interface\important_item.wav");
 			RemoveDublonsFromPCharTotal(500);
-			DeleteAttribute(pchar, "GenQuest.SeaHunter2Pause"); // 恢复海上任务
+			DelLandQuestMark(npchar);
+			
 			dialog.text = "太好了! 这是你的钥匙。 我只有一个请求: 在你拿走里面的所有东西后, 请把钥匙留在锁里。 我不想再委托配新锁和钥匙了。 ";
 			link.l1 = "好的。 ";
 			link.l1.go = "reginald_11";
@@ -1444,38 +1516,48 @@ void ProcessDialogEvent()
 		
 		case "reginald_12":
 			DialogExit();
-			LAi_CharacterDisableDialog(npchar);
-			npchar.DontDeskTalk = true;
-			DeleteAttribute(pchar, "questTemp.Caleuche.Garpiya");
-			DeleteAttribute(pchar, "questTemp.Garpiya");
-			GiveItem2Character(pchar, "kaleuche_key"); 
-			ChangeItemDescribe("kaleuche_key", "itmdescr_kaleuche_key");
+			AddDialogExitQuestFunction("Caleuche_SpawnItemsInTheChest");
 			AddQuestRecord("Caleuche", "20");
-			// 藏匿物箱子
-			i = Findlocation("Mayak2");
-			Locations[i].models.always.locators = "lighthouse_Blocators";
-			locations[i].private1.key = "kaleuche_key";
-			locations[i].private1.key.delItem = true;
-			locations[i].private1.items.kaleuche_amulet3 = 1;
-			locations[i].private1.items.pistol9 = 1;
-			locations[i].private1.items.indian_6 = 1;
-			locations[i].private1.items.map_barbados = 1;
-			locations[i].private1.items.map_part2 = 1;
-			locations[i].private1.items.jewelry22 = 5;
-			locations[i].private1.items.jewelry17 = 6;
-			locations[i].private1.items.jewelry12 = 3;
-			locations[i].private1.items.jewelry16 = 2;
-			locations[i].private1.items.jewelry20 = 7;
-			locations[i].private1.items.jewelry53 = 11;
-			locations[i].private1.items.mineral25 = 1;
-			locations[i].private1.items.mineral21 = 1;
-			locations[i].private1.items.mineral22 = 5;
-			locations[i].private1.items.mineral26 = 1;
-			locations[i].private1.items.mineral10 = 1;
-			locations[i].private1.items.mineral3 = 10;
-			pchar.quest.caleuche_amulet3.win_condition.l1 = "item";
-			pchar.quest.caleuche_amulet3.win_condition.l1.item = "kaleuche_amulet3";
-			pchar.quest.caleuche_amulet3.function = "Caleuche_ThirdAmuletFind";
+		break;
+		
+		case "Caleuche_Reginald_21":
+			dialog.text = "你们到底想干什么, 见鬼的? 这是荷兰西印度公司的船? 你们这帮疯子别指望能全身而退。就算你钻到地底下, 他们也会把你揪出来——你那帮杂碎也一样。";
+			link.l1 = "老子才不管什么狗屁荷兰人和他们的公司。我要的, 是一件印第安人的古老护符——我知道你有, 或者以前有过。";
+			link.l1.go = "Caleuche_Reginald_22";
+		break;
+
+		case "Caleuche_Reginald_22":
+			dialog.text = "你疯了吗?! 为了一块破玩意儿就来袭船?";
+			link.l1 = "闭嘴, 把东西交出来。也许我还能饶你一命。";
+			link.l1.go = "Caleuche_Reginald_23";
+		break;
+
+		case "Caleuche_Reginald_23":
+			dialog.text = "该死的……我没带在身上。 那东西在巴巴多斯岛。";
+			link.l1 = "那你这条破船现在就得下水喂鱼, 而你就老老实实跟我回去关进货舱。咱们路上有的是时间聊聊它在哪儿。相信我, 我船上有人能让最顽固的家伙开口——不废话, 也不用折腾太久。";
+			link.l1.go = "Caleuche_Reginald_24";
+		break;
+
+		case "Caleuche_Reginald_24":
+			dialog.text = "没那个必要。它在灯塔的一个箱子里, 锁着。这是钥匙。";
+			link.l1 = "明智的选择, 伙计。可惜其他人没你这么有脑子……不然我也不用老是弄脏自己的手。";
+			link.l1.go = "Caleuche_Reginald_24_1";
+			link.l2 = "你确实做了个明智的决定。但问题是……我不能留你活口。 你一有机会就会跑去找那帮荷兰商人告状, 而我可不想惹他们注意。";
+			link.l2.go = "Caleuche_Reginald_24_2";
+		break;
+		
+		case "Caleuche_Reginald_24_1":
+			dialog.text = "那箱子里, 是我这些年替荷兰人卖命挣下的全部……";
+			link.l1 = "那就算我们达成交易了: 箱子归我, 你的小命归你。公平得很……";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_EndFightWithReginald");
+		break;
+		
+		case "Caleuche_Reginald_24_2":
+			dialog.text = "呃啊……";
+			link.l1 = "...";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Caleuche_KillToReginald");
 		break;
 		
 		// 威廉斯塔德的修士
@@ -1596,6 +1678,7 @@ void ProcessDialogEvent()
 			dialog.text = "你确定你想去那里吗? ";
 			link.l1 = "绝对确定。 哈瓦那教堂的修道院长"+sld.name+"派我来这里。 我必须确定这里发生了什么, 并采取适当的措施。 ";
 			link.l1.go = "cavehunter_6";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "cavehunter_6":

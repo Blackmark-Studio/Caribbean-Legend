@@ -12,16 +12,22 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "我听说在伯利兹附近和镇上有一伙盗贼和强盗活动。 ";
                 link.l1.go = "caleuche";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
             }
             if (CheckAttribute(pchar, "questTemp.Caleuche.Bandos") && pchar.questTemp.Caleuche.Bandos == "know" && CheckAttribute(pchar, "questTemp.Caleuche.belizbandos") && GetQuestPastDayParam("questTemp.Caleuche.belizbandos") < 3)
             {
                 link.l1 = "我可以给你提供关于这伙人的信息。 ";
                 link.l1.go = "caleuche_3";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
             }
             if (CheckAttribute(pchar, "questTemp.Caleuche.BelizRegard"))
             {
                 link.l1 = "关于这伙人有什么消息吗? 你们在洞穴里抓住他们了吗? ";
                 link.l1.go = "caleuche_7";
+				DelLandQuestMark(npchar);
+				DelLandQuestMarkToPhantom();
             }
             // 导航之星 ==>
             if (CheckAttribute(pchar, "questTemp.PZ_Beliz_Komendant"))
@@ -124,13 +130,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "caleuche_6";
         break;
         
-        case "caleuche_6":
-            DialogExit();
-            AddQuestRecord("Caleuche", "15");
-            pchar.questTemp.Caleuche.Bandos = "comendant";
-            pchar.questTemp.Caleuche.BelizChance = hrand(3);
-            SetFunctionTimerCondition("Caleuche_BelizRegard", 0, 0, 3, false); // 计时器
-        break;
+		case "caleuche_6":
+			DialogExit();
+			AddDialogExitQuestFunction("Caleuche_BelizComendantPrison");
+		break;
         
         case "caleuche_7":
             if (sti(pchar.questTemp.Caleuche.BelizChance) < 3)

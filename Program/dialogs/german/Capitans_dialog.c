@@ -272,7 +272,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
                 {
                     iCapBattleDifficulty = CalcBattleDifficulty();
-                    link.l2 = "(Шанс " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Hast du eine Ahnung, wer ich bin? Ich denke, es ist völlig klar, dass meine Kanonen aus deinem alten Kahn ein Sieb machen können. Lassen wir das auf friedliche Weise klären. Ein Lösegeld ist für mich eine gute Entscheidung.","Nur wir... und das Meer... Was hältst du davon, meine Männer zu besänftigen... für deine eigene Sicherheit?");
+                    link.l2 = "(Einschüchterungschance: " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("Weißt du überhaupt, wer ich bin? Meine Kanonen könnten dein Kahn in ein Sieb verwandeln. Also, regeln wir das friedlich – ein Lösegeld reicht mir.", "Siehst du? Nur wir hier draußen... Wie wäre es, wenn du meinen Jungs etwas spendierst, nur zur Sicherheit deiner Leute?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -595,8 +595,8 @@ void ProcessDialogEvent()
             //if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
             if(!bOk && iCapBattleDifficulty <= 33)
             {
-                Dialog.text = "Ha-ha-ha! Großer Witz, ich habe mehr Schiffe. Kehre zu deinem Schiff zurück und ertrinke damit.";
-                link.l1 = "Mehr bedeutet nicht stärker, Kumpel.";
+                Dialog.text = "Ha-ha! Ein guter Witz. Zumal ich klar im Vorteil bin. Geh zurück auf dein Schiff und sink mit ihm.";
+                link.l1 = "...";
                 link.l1.go = "Boarding";
             }
             else

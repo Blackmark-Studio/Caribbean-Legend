@@ -395,7 +395,7 @@ void ProcessDialogEvent()
 		case "Node_132_6":
 			AddMoneyToCharacter(pchar, -makeint(sti(pchar.GenQuest.EncGirl.mapPrice))); 
 			ref rMap = ItemsFromID("map_full"); // mitrokosta 修复空地图
-			FillMapForTreasure(rMap);
+			FillMapForTreasure(rMap, "");
 			GiveItem2Character(pchar, "map_full");
 			Diag.TempNode = "Node_12End";
 			pchar.GenQuest.EncGirl = "close";

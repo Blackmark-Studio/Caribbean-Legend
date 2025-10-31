@@ -79,47 +79,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             link.l1.go = "Sharlie_6";
         break;
         
-        case "Sharlie_6":
-            DialogExit();
-            chrDisableReloadToLocation = true;//关闭地点
-            LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);//禁止战斗
-            // 冻结主角
-            LAi_SetActorType(pchar);
-            LAi_ActorTurnToLocator(pchar, "goto", "goto17"); // 170712
-            //创建舵手
-            ref sld = GetCharacter(NPC_GenerateCharacter("Folke", "DeLuck", "man", "man", 1, FRANCE, -1, false, "quest"));
-            sld.name = "福尔克";
-            sld.lastname = "德吕克";
-            sld.greeting = "officer_hire";
-            sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-            sld.dialog.currentnode = "Folke";
-            LAi_SetImmortal(sld, true);
-            sld.CompanionDisable = true;
-            sld.rank = 5;
-            LAi_SetHP(sld, 90, 90);
-            sld.money = 0;
-            SetSelfSkill(sld, 25, 28, 21, 24, 22);
-            SetShipSkill(sld, 10, 5, 24, 22, 30, 15, 5, 15, 18);
-            SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-            SetCharacterPerk(sld, "ShipSpeedUp");
-            SetCharacterPerk(sld, "HullDamageUp");
-            SetCharacterPerk(sld, "BasicDefense");
-            GiveItem2Character(sld, "unarmed");
-            EquipCharacterbyItem(sld, "unarmed");
-            ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
-            LAi_SetActorType(sld);
-            LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-            pchar.questTemp.Sharlie = "takeskiper";
-            
-            sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
-            LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-            ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
-            LAi_SetActorType(sld);
-            LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
-            
-            StartQuestMovie(true, false, true);
-            DoQuestCheckDelay("Del_Turma", 0.1);
-        break;
+       case "Sharlie_6":
+			DialogExit();
+			// создаем штурмана
+			sld = InitFolke("福尔克", "德吕克");
+			pchar.questTemp.Sharlie = "takeskiper";	
+			ForceHeroAutolevel(sld);
+			AddDialogExitQuestFunction("Del_Turma");
+		break;
         //< —加斯科涅人的负担
         
         //--> 迷你任务"德吕克" (德吕克再次入狱) 
@@ -127,15 +94,9 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             DelLandQuestMark(npchar);
             dialog.text = "哈! 我说, 关于你困境的流言会让圣皮埃尔娱乐很久。 但别往心里去, 船长。 你显然是时运不济的受害者。 进来吧, 别担心: 你的领航员不会从这次谈话中逃脱的, 哈哈哈! ";
             link.l1 = "真有趣。 谢谢你, 军官。 ";
-            link.l1.go = "Del_Deluck_2";
-        break;
-        
-        case "Del_Deluck_2":
-            DialogExit();
-            DeleteAttribute(pchar, "questTemp.Del_Deluck");
-            pchar.questTemp.jailCanMove = true;
-            AddLandQuestMark(characterFromId("Folke"), "questmarkmain");
-        break;
+            link.l1.go = "exit";
+			AddDialogExitQuestFunction("Del_prison");
+		break;
         
         case "Del_DeluckSvoboda":
             dialog.text = "明白了, 船长。 我们会按程序办理。 ";
@@ -147,31 +108,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             DelLandQuestMark(npchar);
         break;
         
-        case "Del_DeluckSvoboda_2":
-            DialogExit();
-            DeleteAttribute(pchar, "questTemp.Del_DeluckSvoboda");
-            chrDisableReloadToLocation = true;
-            LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], true);
-            LAi_SetActorType(pchar);
-            LAi_ActorTurnToLocator(pchar, "goto", "goto17");
-            
-            sld = CharacterFromID("Folke");
-            LAi_CharacterEnableDialog(sld);
-            sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
-            sld.dialog.currentnode = "Del_Folke_10";
-            ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto23");
-            LAi_SetActorType(sld);
-            LAi_ActorGoToLocator(sld, "reload", "reload1", "FolkeStay", -1);
-                                
-            sld = GetCharacter(NPC_GenerateCharacter("Del_Ohranik", "sold_fra_2", "man", "man", sti(pchar.rank), FRANCE, 0, true, "soldier"));
-            LAi_group_MoveCharacter(sld, "FRANCE_CITIZENS");
-            ChangeCharacterAddressGroup(sld, "Fortfrance_prison", "goto", "goto12");
-            LAi_SetActorType(sld);
-            LAi_ActorFollow(sld, CharacterFromID("Folke"), "", -1);
-            
-            StartQuestMovie(true, false, true);
-            DoQuestCheckDelay("Del_Turma", 0.1);
-        break;
+		case "Del_DeluckSvoboda_2":
+			DialogExit();
+			DeleteAttribute(pchar, "questTemp.Del_DeluckSvoboda");
+			
+			sld = CharacterFromID("Folke");
+			sld.Dialog.Filename = "Quest\Sharlie\OtherNPC.c";
+			sld.dialog.currentnode = "Del_Folke_10";
+			
+			AddDialogExitQuestFunction("Del_Turma");
+		break;
         //< —迷你任务"德吕克"
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果switch内部某处通过return退出, 别忘了进行卸载

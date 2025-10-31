@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("Voice\English\Enc_RapersGirl_1.wav");
-				dialog.text = "Signore! Signore, aiuto! Assassinio!";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", aiuto! Assassinio!";
 				link.l1 = "Eh? Uccidendo chi? Dove? È uno scherzo, mia cara?";
 				link.l1.go = "FMQP";
 				break;
@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "È stato un 'suggerimento'? Mi scuso, è stato un errore da parte mia parlare con te! Addio 'caballero'...";
 				link.l1 = "Come desideri, tesoro.";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Ebbene... Almeno sei onesto nei tuoi desideri. Ti prometto che se trovi Angelo o mi dici cosa gli è realmente accaduto, otterrai ciò che hai chiesto...";
 				link.l1 = "Gentile signorina, è un piacere fare affari con te... Ora passiamo direttamente alla storia di tuo fratello.";
 				link.l1.go = "Consumption_4";
@@ -332,7 +334,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, французские миниквесты (”ЊЉ) Џорт Џренс
 		case "FMQP":
-			dialog.text = "No, no scherzi! Al piano di sopra! Due teppisti stanno uccidendo un nobile gentiluomo! Aiutalo, capitano, sei l'unico uomo armato qui!";
+			dialog.text = "No, no scherzi! Al piano di sopra! Due teppisti stanno uccidendo un nobile gentiluomo! Aiuto, capitano! Non c'è nessun altro qui armato tranne lei!";
 			link.l1 = "Corri fuori, chiama le guardie! Sto salendo al piano di sopra!";
 			link.l1.go = "FMQP_1";
 			link.l2 = "Mia cara, devi avermi scambiato per una guardia. Chiama una pattuglia in caso di omicidio.";

@@ -366,35 +366,31 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tieyasal_4":
-			dialog.text = "E chi sarebbe, allora, quello che Dichoso ha fatto fuori, visto che ora lo state cercando, eh compagno? ";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+			dialog.text = "Allora, chi ha fatto fuori Dichoso per farti metterti sulle sue tracce, eh, amico?";
+			link.l1 = "Blaze Sharp";
+			link.l1.go = "tieyasal_5_1";
+			link.l2 = "Nicolas Sharp";
+			link.l2.go = "tieyasal_5";
+			link.l3 = "Alonso de Maldonado";
+			link.l3.go = "tieyasal_5";
+			link.l4 = "Il Papa";
+			link.l4.go = "tieyasal_5_bud_joke";
 		break;
-		
-		case "tieyasal_4_1":
-			dialog.text = "Che vuoi dire? Quale Sharp ha fatto fuori, di preciso? Di Sharp ce n’è una marea, sai.";
-			link.l1 = "";
-			Link.l1.edit = 8;
-			link.l1.go = "tieyasal_5";
+
+		case "tieyasal_5_1":
+			dialog.text = "Shhh... (si guarda intorno) Quindi anche tu pensi che sia stato Dichoso a uccidere Blaze Sharp?";
+			link.l1 = "Già. E non è solo un sospetto — ho delle prove. Annotazioni nel diario di bordo...";
+			link.l1.go = "tieyasal_6"
+		break;
+
+		case "tieyasal_5_bud_joke":
+			dialog.text = "Quindi adesso facciamo gli spiritosi? Nessun rispetto! Dai, vieni più vicino...";
+			link.l1 = "Neanche per sogno.";
+			link.l1.go = "fight";
+			NextDiag.TempNode = "norman_fight_again";
 		break;
 		
 		case "tieyasal_5":
-			sTemp = GetStrSmallRegister(dialogEditStrings[8]);
-			if (sTemp == "blaze sharp")
-			{
-				dialog.text = "Sh-sh-sh... (guardando in giro) Anche tu pensi che Blaze Sharp sia stato fatto fuori da Dichoso?";
-				link.l1 = "Sì. Non ho solo sospetti, ma prove concrete. Annotazioni nel suo giornale di bordo...";
-				link.l1.go = "tieyasal_6";
-				break;
-			}
-			if (sTemp == "sharp")
-			{
-				dialog.text = "Avanti, piccolo marinaio...";
-				link.l1 = "Cosa vuoi dire? Spiegati meglio.";
-				link.l1.go = "tieyasal_4_1";
-				break;
-			}
 			dialog.text = "Ah... Beh. L’ha fatto fuori, e punto e basta. Sai quanti assassini scorrazzano da queste parti? Uno ad uno! No, marinaio. Non vedo Dichoso da un bel pezzo. Non posso aiutarti in nulla.";
 			link.l1 = "Che peccato...";
 			link.l1.go = "exit";

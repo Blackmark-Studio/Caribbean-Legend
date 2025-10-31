@@ -31,14 +31,12 @@ sea_SailSW {Południowy-zachód}
 sea_SailW {Zachód}
 sea_Boat {Wyślij łódź}
 sea_Bomb {Zrzuć minę}
-
 sea_Brander {Brander}
 sea_ImmediateReload {Przeładowanie}
 sea_LightRepair {Pilna naprawa}
 sea_InstantRepair {Naprawa bojowa}
 sea_SandbankManeuver {Manewry na płytkiej wodzie}
 sea_Turn180 {Zakręć o 180 stopni}
-
 land_TalkSelf {Zastanów się}
 land_ItemsDead {Złup}
 land_FastReload {Idź do}
@@ -58,7 +56,6 @@ land_SelfRepair {Naprawy}
 land_Alchemy {Wytwarzanie}
 land_MapAtlas {Mapy}
 land_Rest {Odpocznij}
-
 go_store {Sklep}
 go_shipyard {Stocznia}
 go_tavern {Tawerna}
@@ -72,7 +69,6 @@ go_usurer {Bank}
 go_portman {Administracja}
 go_duel {Pojedynek}
 go_exittown {Brama}
-
 go_Caroline {Fregata 'Carolina'}
 go_CeresSmithy_Mary {Mary Casper}
 go_CeresSmithy_Jurgen {Jurgen Schmidt}
@@ -85,7 +81,6 @@ go_ProtectorFisher {Eduard Black}
 go_SanAugustineResidence {Steven Dodson}
 go_SanGabrielMechanic {Henrick Vedecker}
 go_TartarusPrison {Okret wojenny 'Tartarus'}
-
 worldmap_toisland {Na morze}
 worldmap_tosea {Na morze}
 worldmap_toship {Atakuj}

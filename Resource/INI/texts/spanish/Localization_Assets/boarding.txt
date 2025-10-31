@@ -1,0 +1,11 @@
+boarding_1 {El capitán decidió quitarse la vida.}
+boarding_2 {La tripulación se negó a luchar por su capitán.}
+boarding_3 {¡Capitán en cubierta!}
+boarding_4 {@<_Name> se une a la refriega.}
+boarding_5 {El capitán ha muerto; los supervivientes se han rendido.}
+boarding_6 {El capitán ha muerto, pero la tripulación se niega a rendirse.}
+boarding_7 {Botín.}
+boarding_8 {Objetos en el botín.}
+boarding_9 {Partida de abordaje de @<_ShipName>: @<_CrewSize>.}
+boarding_10 {Sobrevivientes regresaron al @<_ShipName>: @<_CrewSize>.}
+boarding_11 {El escolta no logró acercar el barco para el abordaje.}

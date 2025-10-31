@@ -948,7 +948,7 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
                                 dialog.text = "O! Właśnie miałem prosić cię o przysługę. Widzisz, muszę dostarczyć ładunek "+GetGoodsNameAlt(iTradeGoods)+" w liczbie "+FindRussianQtyString(iQuantityGoods)+" do miasta "+sNation+sTemp+", a im szybciej, tym lepiej. Jeśli uda ci się to zrobić za "+FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired))+", wtedy po przybyciu otrzymasz "+FindRussianMoneyString(iMoney)+"  jako twoja nagroda. Co powiesz?";
     							link.l1 = "Myślę, że się zgadzam.";
@@ -1461,7 +1461,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "Mój 'przyjaciel' jest obecnie w swoim domu w "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Nie potrzebujesz jego - potrzebujesz jego statku, który, jak się dowiedziałem po około "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" będzie przepływać w pobliżu "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Możesz go zatopić, możesz zdobyć przez abordaż - to nie ma znaczenia. Najważniejsze, aby statek i ładunek nie były już własnością "+pchar.GenQuest.Sunplace.Trader.Enemyname+". I nie obchodzi mnie, kto to zgarnie - ty czy morze. Za tę robotę zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
+			dialog.text = "Mój 'przyjaciel' jest obecnie w swoim domu w "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". Nie potrzebujesz jego - potrzebujesz jego statku, który, jak się dowiedziałem po około "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" będzie przepływać w pobliżu "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". Możesz go zatopić, możesz zdobyć przez abordaż - to nie ma znaczenia. Najważniejsze, aby statek i ładunek nie były już własnością "+pchar.GenQuest.Sunplace.Trader.Enemyname+". I nie obchodzi mnie, kto to zgarnie - ty czy morze. Za tę robotę zapłacę ci "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 			link.l1 = "Zrozumiałem. Cóż, czas ruszać!";
 			link.l1.go = "Sunplace_3";
 		break;

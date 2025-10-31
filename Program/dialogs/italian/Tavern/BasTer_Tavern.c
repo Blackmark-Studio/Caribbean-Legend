@@ -62,27 +62,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		case "DTSG_BasTerTavern_2":
 			dialog.text = "Non molto, davvero. È arrivato un paio di giorni fa. Gli piaceva qui, ha persino affittato una casa alla periferia della città. Veniva spesso, pagava regolarmente. E, soprattutto, si è comportato bene tutto il tempo, non ha mai detto una parola cattiva a nessuno. Sono ancora scioccato che ti abbia attaccato tu e il tuo amico\nPensavo che potesse stabilirsi qui per sempre.";
 			Link.l1 = "In un certo senso, lo ha fatto. Beh, non è molto, ma grazie per questo, amico mio. Ci vediamo in giro.";
-			Link.l1.go = "DTSG_BasTerTavern_3";
-		break;
-		
-		case "DTSG_BasTerTavern_3":
-			DialogExit();
-			DeleteAttribute(pchar, "questTemp.DTSG_BasTerTavern");
-			LAi_LocationDisableOfficersGen("BasTer_tavern", false);
-			SetQuestHeader("DTSG");
-			AddQuestRecord("DTSG", "1");
-			bDisableFastReload = false;
-			chrDisableReloadToLocation = false;
-			Return_KnippelOfficer();
-			
-			PChar.quest.DTSG_BasTerDom.win_condition.l1 = "locator";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.location = "BasTer_town";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator_group = "reload";
-			PChar.quest.DTSG_BasTerDom.win_condition.l1.locator = "HutFish1";
-			PChar.quest.DTSG_BasTerDom.win_condition = "DTSG_BasTerDom";
-			
-			SetTimerCondition("DTSG_BasTerDom_Timer", 0, 0, 7, false);
-			SetTimerCondition("DTSG_Etap2", 0, 0, 14, false);
+			Link.l1.go = "exit";
+			AddDialogExitQuestFunction("DTSG_BasTerTavern_3");
 		break;
 		// <== Квест "Длинные тени старых грехов" - Sinistra
 		

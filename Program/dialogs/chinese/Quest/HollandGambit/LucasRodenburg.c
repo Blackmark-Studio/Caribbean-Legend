@@ -617,14 +617,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood_complete_7":
 			DialogExit();
-			pchar.quest.Award_FromLucas.win_condition.l1 = "Timer";
-			pchar.quest.Award_FromLucas.win_condition.l1.date.hour  = 8.00;
-			pchar.quest.Award_FromLucas.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l2 = "location";
-			pchar.quest.Award_FromLucas.win_condition.l2.location = "Villemstad_townhall";
-			pchar.quest.Award_FromLucas.function = "AwardFromFromLucas";
+			AddDialogExitQuestFunction("GollandGambit_AwardFromLucas_1");
 			AddSimpleRumour("告诉我, 船长, 那个该死的英国狗弗利特伍德真的要为掠夺英国‘和’荷兰商人负责吗? 真的吗? 这样一个狡猾的家伙! 你消灭了这个混蛋, 真是太好了。 你是个真正的英雄, 船长! ", HOLLAND, 10, 3);
 		break;
 		
@@ -855,14 +848,14 @@ void ProcessDialogEvent()
 			dialog.text = "你在玩什么把戏, 船长? 有几页不见了 - 对我来说非常重要的几页。 你以为我不会注意到, 所以你可以用它们来对付我? 或者你希望从中得到更多? 恐怕我在这两方面都要让你失望了。 ";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Trustworthy) 我道歉。 我唯一的过错是事先没有自己检查档案。 ";
 				link.l1.go = "VD_Merdok_book_3";
 				SetTimerCondition("PZ_Etap1_Start", 0, 0, 30, false);	// 1 阶段 30 天后开始
 			}
 			else
 			{
-				notification("特质检查失败", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "我真的会撕掉页面, 然后若无其事地交出档案吗? ";
 				link.l1.go = "Merdok_book_3";
 				SetTimerCondition("PZ_LigaInJungle", 0, 0, 7, false);	// 检查未通过, 意味着一周后 Liga 会攻击, 之后开始 30 天 1 阶段计时器
@@ -951,7 +944,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";// 卢卡斯退出事件
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour传奇版
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";
@@ -984,7 +976,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";// 卢卡斯退出事件
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour传奇版
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";

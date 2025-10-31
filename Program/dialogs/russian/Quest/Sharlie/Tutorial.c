@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_2":
-			dialog.text = "Как скажете, сударь. Так, первый раз в море, сударь де Мор?";
+			dialog.text = "Как скажете, сударь. Так первый раз в море, сударь де Мор?";
 			link.l1 = "Это так очевидно? Да, первый. И я не создан для тесных кают и гнилых сухарей.";
 			link.l1.go = "StartSailor_3";
 		break;
@@ -135,7 +135,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "StartSailor_12":
-			dialog.text = "Город? Ха! Мартиника - это целый остров. Один из крупнейших во владениях Франции на Карибах. Там собирают жгучий кофе, добывают адскую серу и рожают самых прекрасных женщин в мире. Отличная смесь, как по мне.";
+			dialog.text = "Город? Ха! Мартиника - это целый остров. Один из крупнейших во владениях Франции на Карибах. Там собирают первокласный кофе, добывают адскую серу и рожают самых прекрасных женщин в мире. Отличная смесь, как по мне.";
 			link.l1 = "Кофе и сера меня не интересуют. Но погоди... остров? Как же я найду брата на целом острове?";
 			link.l1.go = "StartSailor_13";
 		break;
@@ -547,7 +547,7 @@ void ProcessDialogEvent()
 			link.l1.go = "OhrannikCabin_1";
 			link.l2 = "Как жаль, что мой коварный план потерпел крах. Бывай, матрос.";
 			link.l2.go = "exit";
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15) NextDiag.TempNode = "OhrannikCabin";
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12) NextDiag.TempNode = "OhrannikCabin";
 			else NextDiag.TempNode = "OhrannikCabin_again";
 			if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikStay"))
 			{
@@ -570,14 +570,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OhrannikCabin_3":
-			if (GetSummonSkillFromName(pchar, SKILL_Leadership) >= 15)
+			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 12)
 			{
 				if (!CheckAttribute(npchar, "SharlieTutorial_OhrannikFail"))
 				{
 					dialog.text = "Ну... ваша правда. Да и трапезничали вы в капитанской каюте не раз уже. Проходите, сударь де Мор.";
 					link.l1 = "То-то же!";
 					link.l1.go = "OhrannikCabin_4";
-					notification("Проверка пройдена", SKILL_Leadership);
+					Notification_Skill(true, 12, SKILL_LEADERSHIP);
 				}
 				else
 				{
@@ -601,7 +601,7 @@ void ProcessDialogEvent()
 				}
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OhrannikCabin_again";
-				notification("Недостаточно развит навык (15)", SKILL_Leadership);
+				Notification_Skill(false, 12, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 			dialog.text = "Э-эх. Ну ладно, думаю, большой беды от того не будет.";
 			link.l1 = "То-то же!";
 			link.l1.go = "OhrannikCabin_4";
-			notification("Проверка пройдена", SKILL_Leadership);
+			Notification_Skill(true, 12, SKILL_LEADERSHIP);
 		break;
 		
 		case "OhrannikCabin_4":
@@ -959,6 +959,7 @@ void ProcessDialogEvent()
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_PrinestiRumFinal");
+			AddMoneyToCharacter(pchar, 500);
 		break;
 		
 		case "SailorWantRum_PrinestiRum_6":
@@ -1063,17 +1064,17 @@ void ProcessDialogEvent()
 		
 		case "OldSailor_9":
 			dialog.text = "А ну-ка, скажите: какой самый важный навык для капитана?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Навигация. От неё зависит размер корабля, которым он может командовать.";
 				link.l1.go = "OldSailor_10";
-				notification("Проверка пройдена", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Врать не буду, не знаю.";
 				link.l1.go = "OldSailor_9_1";
-				notification("Недостаточно развит навык (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1157,18 +1158,18 @@ void ProcessDialogEvent()
 		
 		case "OldSailor_again":
 			dialog.text = "Уже нашли ответ? Какой самый важный навык для капитана?";
-			if (GetSummonSkillFromName(pchar, SKILL_Sailing) >= 6)
+			if (GetSummonSkillFromName(pchar, SKILL_SAILING) >= 6)
 			{
 				link.l1 = "Навигация. От неё зависит размер корабля, которым он может командовать.";
 				link.l1.go = "OldSailor_10";
-				notification("Проверка пройдена", SKILL_Sailing);
+				Notification_Skill(true, 6, SKILL_SAILING);
 			}
 			else
 			{
 				link.l1 = "Пока нет.";
 				link.l1.go = "exit";
 				NextDiag.TempNode = "OldSailor_again";
-				notification("Недостаточно развит навык (6)", SKILL_Sailing);
+				Notification_Skill(false, 6, SKILL_SAILING);
 			}
 		break;
 		
@@ -1420,7 +1421,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerTorgovets_6_question_2_2":
-			dialog.text = "Не совсем. Карты стоят дорого, да и привлекают к себе таких же охотников, как вы. А сама добыча иногда едва-едва покрывает хлопоты. Но даже у великого Альберта Блэквуда не сразу всё вышло. Сделайте поиск сокровищ профессией — и чем больше найдете сокровищ, тем больше будут становится награды. А если амулет на везение прикупите — дело пойдёт ещё веселее!";
+			dialog.text = "Не совсем. Карты стоят дорого, да и привлекают к себе таких же охотников, как вы. А сама добыча иногда едва-едва покрывает хлопоты. Но даже у великого Альберта Блэквуда не сразу всё вышло. Сделайте поиск сокровищ профессией — и чем больше найдёте сокровищ, тем больше будут становиться награды. А если амулет на везение прикупите — дело пойдёт ещё веселее!";
 			link.l1 = "...";
 			link.l1.go = "OfficerTorgovets_4";
 			npchar.SharlieTutorial_question_2 = true;
@@ -1537,7 +1538,7 @@ void ProcessDialogEvent()
 		case "OfficerKaznachey_12":
 			if (IsCharacterPerkOn(pchar, "HT2"))
 			{
-				dialog.text = "(Счетовод) 150 песо, и еще 5 дублонов сверху за то, что вы почти мой коллега. Ну и возможность обменивать песо на дублоны по достойному курсу.";
+				dialog.text = "(Счетовод) 150 песо, и ещё 5 дублонов сверху за то, что вы почти мой коллега. Ну и возможность обменивать песо на дублоны по достойному курсу.";
 			}
 			else
 			{
@@ -1582,7 +1583,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_12_Wait": // ждёт выполнения квеста
 			dialog.text = "Как успехи? Плату раздали? Всё принесли? Остаток дублонов, пустой сундучок?";
-			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && GetCharacterItem(pchar, "gold_dublon") >= 18)
+			if (CheckAttribute(pchar, "questTemp.SharlieTutorial_KaznacheyQuest") && sti(pchar.questTemp.SharlieTutorial_KaznacheyQuest) == 3 && CheckCharacterItem(PChar, "chest_open") && PCharDublonsTotal() >= 18)
 			{
 				link.l1 = "Всё готово.";
 				link.l1.go = "OfficerKaznachey_13";
@@ -1599,7 +1600,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_14":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			if (addGold >= 18 && addGold <= 39)
 			{
 				dialog.text = "А говорили, что считать умеете. Тут меньше, чем должно быть. А это значит, что моя бухгалтерия только что усложнилась, и вы создали мне новую проблему, вместо того чтобы решить текущую\n"+
@@ -1682,7 +1683,7 @@ void ProcessDialogEvent()
 		
 		case "OfficerKaznachey_16_Proval_3":
 			dialog.text = "Сражение начнётся только через пару часов, так что самое время закрыть дневной учёт. У вас мой сундучок с дублонами, де Мор. Потрудитесь вернуть.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1 || GetCharacterItem(pchar, "chest_open") >= 1)
 			{
 				link.l1 = "Забирайте. И больше сюда свою физиономию не показывайте.";
 				link.l1.go = "OfficerKaznachey_16_Proval_4";
@@ -1695,12 +1696,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OfficerKaznachey_16_Proval_4":
-			addGold = GetCharacterItem(pchar, "gold_dublon");
+			addGold = PCharDublonsTotal();
 			dialog.text = "И не собирался. Я же не сухопутная крыса - моё место не в трюме. Прощайте.";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("SharlieTutorial_TrumLoad_4");
-			if (GetCharacterItem(pchar, "gold_dublon") >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
+			if (PCharDublonsTotal() >= 1 || GetCharacterItem(pchar, "chest") >= 1) ChangeCharacterComplexReputation(pchar, "nobility", -3);
 			else ChangeCharacterComplexReputation(pchar, "nobility", -6);
 			RemoveDublonsFromPCharTotal(addGold);
 			AddItems(npchar, "gold_dublon", addGold);
@@ -1970,7 +1971,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "AfterBattle_Alonso_5":
-			dialog.text = "Корабль на плаву, а людей мы сберегли достаточно, чтобы доставить вас в Сен-Пьер по расписанию, где я буду искать себе нового капитана, а вы найдете брата и поведаете ему о своих приключениях. А что дальше — только одному Богу известно.\n"+
+			dialog.text = "Корабль на плаву, а людей мы сберегли достаточно, чтобы доставить вас в Сен-Пьер по расписанию, где я буду искать себе нового капитана, а вы найдёте брата и поведаете ему о своих приключениях. А что дальше — только одному Богу известно.\n"+
 			"Но одно я знаю точно —  у нас вы приживетесь. Неплохо для сухопутной крысы, Шарль.";
 			link.l1 = "...";
 			link.l1.go = "AfterBattle_Alonso_6";

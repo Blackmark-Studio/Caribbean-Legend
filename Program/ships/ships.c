@@ -1,4 +1,5 @@
 #include "ships\ships.h"
+#include "ships\waterline_breaches.c"
 
 extern void InitShips();
 extern void InitSailsColors();

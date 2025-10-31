@@ -947,7 +947,7 @@ void ProcessDialogEvent()
 			{
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
-					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.35 + stf(shTo.Bonus_SpeedRate);
+					shTo.SpeedRate        = (stf(shTo.SpeedRate) - stf(shTo.Bonus_SpeedRate)) * 1.3 + stf(shTo.Bonus_SpeedRate);
 				}
 				else
 				{
@@ -1473,12 +1473,10 @@ void ProcessDialogEvent()
 				if(sti(shTo.Spec) == SHIP_SPEC_UNIVERSAL)
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP) * 0.35);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP) * 0.35);
 				}
 				else
 				{
 					shTo.HP        = sti(shTo.HP) + makeint(sti(shTo.HP)/5);
-					shTo.BaseHP    = sti(shTo.BaseHP) + makeint(sti(shTo.BaseHP)/5);
 				}
 			}
 			else
@@ -1489,7 +1487,6 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.35 + sti(shTo.Bonus_HP));
 				}
 				else
 				{
@@ -1497,11 +1494,9 @@ void ProcessDialogEvent()
 					{
 						shTo.HP    = makeint((sti(shTo.HP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 					}
-					shTo.BaseHP    = makeint((sti(shTo.BaseHP) - sti(shTo.Bonus_HP)) * 1.2 + sti(shTo.Bonus_HP));
 				}
 			}
 	        shTo.Tuning.HP = true;
-			//shTo.BaseHP = sti(shTo.HP); этого не должно существовать
 			ProcessHullRepair(pchar, 100.0); // у нпс при апгрейде есть, здесь тоже должно быть
 			
 			if(!CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(shTo,"Tuning.MaxCrew") && CheckAttribute(shTo,"Tuning.HP")) 
@@ -2334,7 +2329,7 @@ void ProcessDialogEvent()
 			int iDay = 3-sti(GetQuestPastDayParam("questTemp.Sharlie_ship"));
 			sTemp = "У вас осталось "+FindRussianDaysString(iDay)+"";
 			if (iDay == 0) sTemp = "Сегодня - последний день";
-			dialog.text = "Ну, раз такое дело, тогда продолжим нашу беседу, месье. Как вы правильно заметили, было внесено за корабль пять тысяч песо. Но полную стоимость корабля я оцениваю в пятнадцать тысячи песо, вместе с боеприпасом. Так что с вас ещё десять тысяч - и корабль ваш\nПричём, согласно договору, вы должны выплатить эти деньги не позднее, чем через неделю после спуска корабля на воду. "+sTemp+", после чего я имею право продать этот корабль другому лицу. Кстати, покупатель уже есть, так что вам следует поторопиться.";
+			dialog.text = "Ну, раз такое дело, тогда продолжим нашу беседу, месье. Как вы правильно заметили, было внесено за корабль пять тысяч песо. Но полную стоимость корабля я оцениваю в пятнадцать тысяч песо, вместе с боеприпасом. Так что с вас ещё десять тысяч - и корабль ваш\nПричём, согласно договору, вы должны выплатить эти деньги не позднее, чем через неделю после спуска корабля на воду. "+sTemp+", после чего я имею право продать этот корабль другому лицу. Кстати, покупатель уже есть, так что вам следует поторопиться.";
 			if (sti(Pchar.money) >= 10000)
 			{
 				link.l1 = "Никуда мне торопиться не надо. У меня есть нужная сумма прямо сейчас. Вот, держите.";
@@ -2415,7 +2410,7 @@ void ProcessDialogEvent()
 			AddCharacterGoods(pchar, GOOD_KNIPPELS, 100);
 			AddCharacterGoods(pchar, GOOD_BOMBS, 100);
 			AddCharacterGoods(pchar, GOOD_POWDER, 220);
-			pchar.Ship.name = "Аделина";
+			pchar.Ship.name = GetShipName("Adeline");
 			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS6;
 			AddQuestRecord("Sharlie", "6");
 			bDisableFastReload = false;//открыть переход
@@ -2650,7 +2645,7 @@ void ProcessDialogEvent()
 		case "IslaMona_3":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 60)
 			{
-				notification("Недостаточно развит навык (60)", SKILL_COMMERCE);
+				Notification_Skill(false, 60, SKILL_COMMERCE);
 				dialog.text = "Гарантирую, что найдётся. Цену не меняю. Ну так как? Ждать долго не буду.";
 				link.l1 = "Ладно-ладно. Согласен.";
 				link.l1.go = "IslaMona_7";
@@ -2658,7 +2653,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 900;
 				dialog.text = "Ладно, отнимем соточку. Девятьсот. Ниже не скину. И не проси.";
 				link.l1 = "И не буду. Согласен.";
@@ -2672,7 +2667,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Недостаточно развит навык (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Да хоть живую бабу туда закажи. Девятьсот.";
 				link.l1 = "Ладно-ладно. Согласен.";
 				link.l1.go = "IslaMona_7";
@@ -2680,7 +2675,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Точно? Не забудешь? Ладно, давай ещё сотню срежем. Но на этом все!";
 				link.l1 = "Не забуду. Договорились!";
@@ -2702,7 +2697,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Недостаточно развит навык (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "Дети от бордельных девок в зачет не идут, "+pchar.name+". Ты меня достал. Тысячу дублонов на бочку, или мы прощаемся.";
 				link.l1 = "То есть как это, не идут? Эх... Согласен, хапуга.";
@@ -2711,7 +2706,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Проверка пройдена", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Не знал, что у тебя дети есть... И что у тебя всё так плохо. Ладно, не жалостись. Семьсот. Почти себе в убыток.";
 				link.l1 = "Не забуду. Договорились!";
@@ -2723,30 +2718,30 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_7":
             dialog.text = "Итак, с тебя "+sti(pchar.questTemp.IslaMona.Shipyarder.Money)+" дублонов.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
+			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Shipyarder.Money))
 			{
 				link.l1 = "Держи, последнее отдаю, больше ни гроша не осталось.";
 				link.l1.go = "IslaMona_8";
 			}
 			else
 			{
-				if (GetCharacterItem(pchar, "gold_dublon") < 1)
+				if (PCharDublonsTotal() < 1)
 				{
 					link.l1 = "Жди, сейчас пойду к ростовщику в долги влезать.";
 					link.l1.go = "IslaMona_money_exit";
 				}
 				else
 				{
-					link.l1 = "У меня с собой только "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+". Держи это, а я пошёл по ростовщикам побираться.";
+					link.l1 = "У меня с собой только "+FindRussianDublonString(PCharDublonsTotal())+". Держи это, а я пошёл по ростовщикам побираться.";
 					link.l1.go = "IslaMona_money";
 				}
 			}
 		break;
 		
 		case "IslaMona_money":
-			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-GetCharacterItem(pchar, "gold_dublon");
-			Log_Info("Вы отдали "+FindRussianDublonString(GetCharacterItem(pchar, "gold_dublon"))+"");
-			RemoveItems(pchar, "gold_dublon", GetCharacterItem(pchar, "gold_dublon"));
+			pchar.questTemp.IslaMona.Shipyarder.Money = sti(pchar.questTemp.IslaMona.Shipyarder.Money)-PCharDublonsTotal();
+			Log_Info("Вы отдали "+FindRussianDublonString(PCharDublonsTotal())+"");
+			RemoveDublonsFromPCharTotal(PCharDublonsTotal());
 			PlaySound("interface\important_item.wav");
             dialog.text = "Не дави на жалость, у тебя рундук в каюте ломится от золота, небось. С тебя ещё "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+".";
 			link.l1 = "";
@@ -2762,7 +2757,7 @@ void ProcessDialogEvent()
 		
 		case "IslaMona_8":
 			Log_Info("Вы отдали "+FindRussianDublonString(sti(pchar.questTemp.IslaMona.Shipyarder.Money))+"");
-			RemoveItems(pchar, "gold_dublon", sti(pchar.questTemp.IslaMona.Shipyarder.Money));
+			RemoveDublonsFromPCharTotal(sti(pchar.questTemp.IslaMona.Shipyarder.Money));
 			PlaySound("interface\important_item.wav");
             dialog.text = "Отлично. Вся сумма на месте. Инструменты будут доставлены на твой корабль. Это несколько тяжёлых ящиков.";
 			link.l1 = "Спасибо, "+npchar.name+"!";

@@ -952,7 +952,7 @@ void ProcessDialogEvent()
 							sTemp = "";
 							if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 							{
-								sTemp = ", que está en " + XI_ConvertString(pchar.CargoQuest.iTradeIsland + "Dat");
+								sTemp = ", que está en " + XI_ConvertString(pchar.CargoQuest.iTradeIsland + "Voc");
 							}
 							dialog.text = "¡Oh! Estaba a punto de pedirte un favor. Verás, necesito entregar una carga de " + GetGoodsNameAlt(iTradeGoods) + " en la cantidad de " + FindRussianQtyString(iQuantityGoods) + "  a la ciudad de " + sNation + sTemp + ", y cuanto antes mejor. Si logras hacerlo en menos de " + FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired)) + ", entonces al llegar recibirás " + FindRussianMoneyString(iMoney) + " como tu recompensa. ¿Qué dices?";
 							link.l1 = "Creo que estoy de acuerdo.";
@@ -1465,7 +1465,7 @@ void ProcessDialogEvent()
 		break;
 
 	case "Sunplace_2":
-		dialog.text = "Mi 'amigo' se encuentra actualmente en su hogar en " + XI_ConvertString("Colony" + pchar.GenQuest.Sunplace.Trader.CityT + "Voc") + ". No lo necesitas a él, necesitas su barco, el cual, como descubrí después de aproximadamente " + FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty)) + " pasará cerca " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore + "Gen") + ". Puedes hundirlo, abordarlo, no importa. Lo principal es asegurarse de que el barco y la carga ya no sean propiedad de " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Y no me importa quién lo reclame, tú o el mar. Por ese trabajo te pagaré " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) ".";
+		dialog.text = "Mi 'amigo' se encuentra actualmente en su hogar en " + XI_ConvertString("Colony" + pchar.GenQuest.Sunplace.Trader.CityT + "Voc") + ". No lo necesitas a él, necesitas su barco, el cual, como descubrí después de aproximadamente " + FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty)) + " pasará cerca " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore + "Gen") + ". Puedes hundirlo, abordarlo, no importa. Lo principal es asegurarse de que el barco y la carga ya no sean propiedad de " + pchar.GenQuest.Sunplace.Trader.Enemyname + ". Y no me importa quién lo reclame, tú o el mar. Por ese trabajo te pagaré " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
 		link.l1 = "Lo tengo. ¡Bien, es hora de partir entonces!";
 		link.l1.go = "Sunplace_3";
 		break;

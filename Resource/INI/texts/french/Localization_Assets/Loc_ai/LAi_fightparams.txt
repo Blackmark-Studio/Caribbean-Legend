@@ -1,9 +1,2 @@
-LAi_fightparams_1
-{
-L’esquive du tir
-}
-
-LAi_fightparams_2
-{
-Le Chapeau de mercenaire est détruit.
-}
+LAi_fightparams_1 {L’esquive du tir}
+LAi_fightparams_2 {Le chapeau de mercenaire est détruit.}

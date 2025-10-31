@@ -21,73 +21,6 @@ void ProcessDialogEvent()
 		
 		case "Finish_2":
 			SetAchievement("Test_Ach");
-			dialog.text = "Kapitanie, ostatnie pytanie. Jaką wiadomość mam przekazać załodze?";
-			link.l1 = "Co masz na myśli?";
-			link.l1.go  = "Finish_2_0";
-		break;
-		
-		case "Finish_2_0":
-			dialog.text = "Ludzie chcą wiedzieć, czego się spodziewać. Wygląda na to, że jeszcze się nie zdecydowałeś.";
-			link.l1 = "Jakie mam opcje?";
-			link.l1.go  = "Finish_2_0_1";
-		break;
-		
-		case "Finish_2_0_1":
-			dialog.text = "Cóż, Kapitanie, Karaiby to wyjątkowe miejsce. Możesz zająć się handlem, grabieżą, zanurzyć się w szemrane interesy lub wyruszyć na poszukiwanie skarbów - jest niezliczona ilość dróg do stania się legendą na tych wodach. Załoga i ja przedyskutowaliśmy to i jesteśmy gotowi wesprzeć każdą decyzję, którą podejmiesz.";
-			link.l1 = "Czy muszę wybrać tylko jedną?";
-			link.l1.go  = "Finish_2_0_2";
-		break;
-		
-		case "Finish_2_0_2":
-			dialog.text = "Nie, z pewnością nie, ale to dobry pomysł, by ustalić nasze początkowe priorytety.";
-			link.l1 = "Jak każdy rozsądny człowiek, pragnę zgromadzić fortunę! Milion pesos by wystarczyło.";
-			link.l1.go  = "Finish_2_1";
-			link.l2 = "Pragnę zdobyć szacunek - taki, jaki miał l'Olonnais po splądrowaniu Maracaibo.";
-			link.l2.go  = "Finish_2_2";
-			link.l3 = "Przygoda! Pragnę zwiedzać egzotyczne miejsca i spotykać ciekawych bohaterów.";
-			link.l3.go  = "Finish_2_3";
-			link.l4 = "Zawsze marzyłem o romantycznym uroku bycia poszukiwaczem skarbów!";
-			link.l4.go  = "Finish_2_4";
-			link.l5 = "Zachowaj swoje rady, Alonso. Czemu się ograniczać? Wiem, czego chcę, i chcę to wszystko!";
-			link.l5.go  = "Finish_2_5";
-		break;
-		
-		case "Finish_2_1":
-			pchar.questTemp.SanBoxTarget = 1;
-			dialog.text = "To całkiem ambicja, Kapitanie. Najszybszym sposobem jest atakowanie statków handlowych i zajmowanie się przemytem. Możesz również wybrać uczciwy handel, ale to zajmie trochę więcej czasu. Jednak nie musisz się ograniczać - podejmuj się każdej pracy i wplątuj się we wszelkie kłopoty, jakie znajdziesz. Tak się zdobywa fortunę. Poinformuję załogę, Kapitanie. Oby fortuna sprzyjała nam wszystkim!";
-			link.l1 = "Rozpocznij grę";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_2":
-			pchar.questTemp.SanBoxTarget = 2;
-			dialog.text = " Ale czy wiesz, jak l'Olonnais zakończył swój żywot? Cóż, nie będę cię osądzał, Kapitanie. Przelewanie niewinnej krwi może być opłacalne, ale bądź gotów na konsekwencje. Będziesz potrzebował okrętu bojowego, a może nawet eskadry, aby zdobyć fort i ustanowić przyczółek. Alternatywnie, możesz zdobyć miasto lądem - czterystu ludzi powinno wystarczyć, ale zapewniam, że niespacyfikowany garnizon szybko odeprze cię z powrotem do dżungli. Przekażę twój wybór załodze, Kapitanie. Oby fortuna sprzyjała nam wszystkim!";
-			link.l1 = "Rozpocznij grę";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_3":
-			pchar.questTemp.SanBoxTarget = 3;
-			dialog.text = "Mamy obfitość obu, Kapitanie! Odwiedzaj miasta, mieszaj się z miejscowymi, a przygody same Cię znajdą. Tylko pamiętaj, że poważni ludzie poproszą o Twoją pomoc dopiero, gdy udowodnisz swoją wartość i zbudujesz reputację. Załoga to doceni. Niech fortuna nam sprzyja!";
-			link.l1 = "Rozpocznij grę";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_4":
-			pchar.questTemp.SanBoxTarget = 4;
-			dialog.text = "Nie ma w tym fachu zbyt wiele romansu, Kapitanie. To zajęcie długotrwałe, ale dochodowe, zwłaszcza jeśli szczęście ci sprzyja. Szukaj map skarbów u sprzedawców w tawernach i miej oczy szeroko otwarte - spotkasz wielu rywalizujących łowców, którzy chcą się wzbogacić twoim kosztem. Ponadto, najcenniejsze skarby często wymagają złożenia połowy mapy z prostszych znalezisk, więc do dzieła! Niech fortuna sprzyja nam wszystkim!";
-			link.l1 = "Rozpocznij grę";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_2_5":
-			pchar.questTemp.SanBoxTarget = 5;
-			dialog.text = "W takim razie rozumiesz, co jest potrzebne, aby stać się legendą Karaibów, Kapitanie. Załoga wierzy w ciebie i z niecierpliwością oczekuje na twoje osiągnięcia. Niech fortuna nam wszystkim sprzyja!";
-			link.l1 = "Rozpocznij grę";
-			link.l1.go  = "Finish_3";
-		break;
-		
-		case "Finish_3":
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
 			LAi_RemoveCheckMinHP(Pchar); // снимем проверки
@@ -194,7 +127,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -219,7 +152,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -271,6 +204,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Pirates_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -287,7 +221,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -306,7 +240,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0; 
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			AddPassenger(pchar, sld, false);
 			SetCharacterRemovable(sld, true);
 			sld.Payment = true;
@@ -315,6 +249,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -357,7 +292,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0; 
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			// Элен:
 			pchar.questTemp.Saga.Helena_officer = "true";
 			sld = characterFromId("Helena");
@@ -378,7 +313,7 @@ void ProcessDialogEvent()
 			SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "ByWorker");
-			SetCharacterPerk(sld, "ByWorker2");
+		
 			SetCharacterPerk(sld, "Grus");
 			GiveItem2Character(sld, "pirate_cutlass");
 			sld.equip.blade = "pirate_cutlass";
@@ -396,6 +331,7 @@ void ProcessDialogEvent()
 			LAi_SetImmortal(sld, false);
 			// Baсker
 			sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Raymond";
 			sld.lastname = "Baсker";
 			sld.greeting = "baker";
@@ -460,7 +396,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -485,7 +421,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -537,6 +473,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Pirates_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -553,7 +490,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -580,6 +517,7 @@ void ProcessDialogEvent()
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -642,7 +580,7 @@ void ProcessDialogEvent()
 			SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 			SetCharacterPerk(sld, "HardHitter");
 			SetCharacterPerk(sld, "ByWorker");
-			SetCharacterPerk(sld, "ByWorker2");
+		
 			SetCharacterPerk(sld, "Grus");
 			GiveItem2Character(sld, "blade_31");
 			sld.equip.blade = "blade_31";
@@ -659,6 +597,7 @@ void ProcessDialogEvent()
 			sld.Health.maxHP    = 60.0;
 			// Baсker
 			sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Raymond";
 			sld.lastname = "Baсker";
 			sld.greeting = "baker";
@@ -722,7 +661,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -747,7 +686,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -792,6 +731,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Shore9");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -808,7 +748,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -836,6 +776,7 @@ void ProcessDialogEvent()
 			
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -928,7 +869,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -953,7 +894,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -998,6 +939,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("SentJons_town");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -1014,7 +956,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -1042,6 +984,7 @@ void ProcessDialogEvent()
 			
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -1112,7 +1055,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicDefense");
 			SetCharacterPerk(pchar, "AdvancedDefense");
 			SetCharacterPerk(pchar, "Ciras");
-			SetCharacterPerk(pchar, "SwordplayProfessional");
+
 			SetCharacterPerk(pchar, "CriticalHit");
 			SetCharacterPerk(pchar, "AgileMan");
 			SetCharacterPerk(pchar, "BladeDancer");
@@ -1137,7 +1080,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(pchar, "BasicBattleState");
 			SetCharacterPerk(pchar, "AdvancedBattleState");
 			SetCharacterPerk(pchar, "ShipDefenseProfessional");
-			SetCharacterPerk(pchar, "StormProfessional");
+	
 			SetCharacterPerk(pchar, "SailingProfessional");
 			SetCharacterPerk(pchar, "SailsMan");
 			SetCharacterPerk(pchar, "WindCatcher");
@@ -1182,6 +1125,7 @@ void ProcessDialogEvent()
 			setWDMPointXZ("Mayak4");
 			//Longway
 			sld = GetCharacter(NPC_GenerateCharacter("Longway", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Longway";
 			sld.lastname = "";
 			sld.greeting = "Longway";
@@ -1198,7 +1142,7 @@ void ProcessDialogEvent()
 			SetCharacterPerk(sld, "AdvancedDefense");
 			SetCharacterPerk(sld, "ShipSpeedUp");
 			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
+		
 			SetCharacterPerk(sld, "WindCatcher");
 			SetCharacterPerk(sld, "SailsMan");
 			SetCharacterPerk(sld, "SailingProfessional");
@@ -1226,6 +1170,7 @@ void ProcessDialogEvent()
 			
 			// Tichingitu
 			sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+			SetHeroAutolevel(sld);
 			sld.name = "Tichingitu";
 			sld.lastname = "";
 			sld.greeting = "Tichingitu";
@@ -1325,8 +1270,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_2_Jess":
-			dialog.text = "Maska ...";
-			link.l1 = "Do diabła! Mask próbował mnie zabić... Nikomu nie można ufać... A co z Lawrence'em? Czy żyje?";
+			dialog.text = "Maska...";
+			link.l1 = "Do diabła! Maska próbował mnie zabić... Nikomu nie można ufać... A co z Lawrence'em? Czy żyje?";
 			link.l1.go  = "Node_3_Jess";
 		break;
 		
@@ -1337,7 +1282,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Node_3_Jess":
-			dialog.text = "Nie, dzięki Bogu. Och, przepraszam... Został powieszony na rozkaz Maski. A Maskę przeciął Rekin, tak mówią. Myślę, że wszyscy na to zasłużyli, byli łajdakami obaj. Ci łotrzy byli dla nas zbyt dużym kłopotem.";
+			dialog.text = "Nie, dzięki Bogu. Och, przepraszam... Został powieszony na rozkaz Maski. A Maskę pociął Rekin, tak mówią. Myślę, że wszyscy na to zasłużyli, byli łajdakami obaj. Ci łotrzy byli dla nas zbyt dużym kłopotem.";
 			link.l1 = "Nie mów brzydko o zmarłych... Nie możemy zmienić przeszłości. Bóg będzie ich sędzią... Dziękuję wam, towarzysze, za ocalenie mnie, nie zapomnę tego.";
 			link.l1.go  = "Node_4_Jess";
 		break;
@@ -1403,7 +1348,7 @@ void ProcessDialogEvent()
 		
 		case "Advice_2":
 			dialog.text = "Musisz znać aktualne ceny towarów w sklepach archipelagu, aby handlować z zyskiem. Odwiedzaj sklepy osobiście, pytaj kupców lub zbieraj plotki.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_3";
 			link.l2 = "Znakomicie. Dobrze, schodzę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1411,7 +1356,7 @@ void ProcessDialogEvent()
 		
 		case "Advice_3":
 			dialog.text = "Armaty mogą ulec uszkodzeniu i będziesz musiał je wymienić. Możesz także zabrać część z nich, aby zaoszczędzić miejsce na towary.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_4";
 			link.l2 = "Wspaniale. Dobrze, idę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1419,7 +1364,7 @@ void ProcessDialogEvent()
 		
 		case "Advice_4":
 			dialog.text = "Musisz coś wiedzieć, jeśli zamierzamy zostać kaperami... Kapitanowie statków kupują zdobyte statki za bardzo niskie ceny, ale możesz je odsprzedać z dużym zyskiem.";
-			link.l1 = "Kontynuuj.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_5";
 			link.l2 = "Znakomicie. Dobrze, schodzę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1427,7 +1372,7 @@ void ProcessDialogEvent()
 		
 		case "Advice_5":
 			dialog.text = "Nie psuj swoich relacji z przemytnikami, potrafią zapewnić ci niezły dochód, nawet ryzykując twoim życiem.";
-			link.l1 = "Kontynuuj.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_6";
 			link.l2 = "Wspaniale. Dobrze, schodzę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1435,7 +1380,7 @@ void ProcessDialogEvent()
 		
 		case "Advice_6":
 			dialog.text = "Wynajmij kilku oficerów, nie mamy teraz żadnych. Jeśli twoja władza jest niska, nie będziesz w stanie zatrudnić wielu oficerów. W takim przypadku powinieneś znaleźć ludzi, którzy potrafią pracować na dwóch lub trzech stanowiskach jednocześnie. Wystarczy trzech wszystkowiedzących, aby obsadzić wszystkie stanowiska na naszym statku.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_7";
 			link.l2 = "Wspaniale. Dobrze, schodzę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1443,15 +1388,15 @@ void ProcessDialogEvent()
 
 		case "Advice_7":
 			dialog.text = "Kradzież to nie jest dobry interes, ale czasem naprawdę musisz splądrować skrzynię w czyimś domu, banku lub sklepie. Spróbuj poczekać, aż gospodarz odwróci się od ciebie i dopiero wtedy splądruj skrzynię. I pamiętaj, że będziesz miał kłopoty, jeśli ktoś cię zauważy. Więc postaraj się być bardziej zwinny!";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_8";
 			link.l2 = "Wspaniale. Dobrze, idę na ląd...";
 			link.l2.go  = "Finish_2";
 		break;
 
 		case "Advice_8":
-			dialog.text = "Może, pewnego dnia będziesz musiał dostać się do wrogiego miasta. Dobrze zapamiętaj, co teraz powiem! W nocy przy bramach i w porcie nie ma żołnierzy. Lepiej wejść do wrogiego miasta nocą i po prostu starać się unikać patroli. Żołnierze nie mają oczu na plecach i widzą tylko to, co przed nimi. Zakradnij się do tawerny i czekaj tam do rana, a potem załatw swoje sprawy. Ale trzymaj się z dala od żołnierzy, mimo wszystko.";
-			link.l1 = "Idź dalej.";
+			dialog.text = "Może, pewnego dnia będziesz musiał dostać się do wrogiego miasta. Dobrze zapamiętaj, co teraz powiem! W nocy przy bramach i w porcie nie ma żołnierzy. Lepiej wejść do wrogiego miasta nocą i po prostu starać się unikać patroli. Żołnierze nie mają oczu na plecach i widzą tylko to, co przed nimi. Zakradnij się do karczmy i czekaj tam do rana, a potem załatw swoje sprawy. Ale trzymaj się z dala od żołnierzy, mimo wszystko.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_9";
 			link.l2 = "Znakomicie. Dobrze, idę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1459,7 +1404,7 @@ void ProcessDialogEvent()
 
 		case "Advice_9":
 			dialog.text = "Możesz również podnieść wrogą banderę, jeśli ją masz, i liczyć na szczęście i skrytość. Najbardziej niezawodnym sposobem jest zakup licencji od kompanii handlowej i nikt cię nie zatrzyma. Tylko nie zapomnij podnieść właściwej bandery, byłoby głupio próbować pokazać licencję, gdy twoja bandera jest angielska w hiszpańskim forcie.";
-			link.l1 = "Śmiało.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Advice_10";
 			link.l2 = "Wspaniale. Dobrze, idę na ląd...";
 			link.l2.go  = "Finish_2";
@@ -1479,7 +1424,7 @@ void ProcessDialogEvent()
 		
 		case "Teach_1_Jess":
 			dialog.text = "Cóż, zacznijmy zatem. Zawsze byłeś w tym dobry, ale przypomnę ci. Są trzy ruchy atakujące - normalne uderzenie, ciężki cios i przebijające pchnięcie. Jest także obrona grupowa. I pistolet, oczywiście, żeby przywitać przeciwnika z dystansu.";
-			link.l1 = "Śmiało.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Teach_2";
 		break;
 		
@@ -1493,25 +1438,25 @@ void ProcessDialogEvent()
 		
 		case "Teach_2_1":
 			dialog.text = " Energia jest wskaźnikiem twojej wytrzymałości w walce. Wszystkie ataki wymagają trochę energii. Zmęczysz się podczas walki i czasami musisz odpocząć, aby odzyskać swoją wytrzymałość."+"Maksimum twojej energii zależy od aktualnej wartości twojej reakcji.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Teach_3";
 		break;
 		
 		case "Teach_3":
 			dialog.text = "Unikaj walki z licznymi wrogami, bo w przeciwnym razie zginiesz w kilka sekund. Można walczyć z dwoma naraz, ale nie jest to takie proste, gdy masz do czynienia z trzema lub więcej przeciwnikami jednocześnie. Obserwuj ich energię; kiedy będzie niska, zaczną parować lub udawać ataki. Bądź ostrożny, bo wkrótce możesz stracić głowę.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Teach_4";
 		break;
 		
 		case "Teach_4":
 			dialog.text = "Jeśli zmylesz wroga, otrzyma on znaczne obrażenia, zwłaszcza jeśli walczysz lekką i małą bronią. A jeśli będziesz w stanie sparować jego ataki, straci energię i rytm, co pozwoli ci uderzyć go jeszcze mocniej.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Teach_5";
 		break;
 		
 		case "Teach_5":
 			dialog.text = "Każda broń jest inna. Istnieją rodzaje lekkie, średnie i ciężkie. Waga determinuje straty energii. Możesz walczyć długo z małym sztyletem, ale ciężki topór pomoże ci natychmiast zabić przeciwnika, podczas gdy szabla może pomóc w walce z wieloma wrogami naraz.";
-			link.l1 = "Idź dalej.";
+			link.l1 = "Mów dalej.";
 			link.l1.go  = "Teach_6";
 		break;
 		
@@ -1519,9 +1464,9 @@ void ProcessDialogEvent()
 			pchar.HeroParam.Teach_battle = 1;
 			Tut_RestoreState();
 			dialog.text = "Poćwiczmy trochę? Proponuję ci rozgrzewkę. Będziemy walczyć na serio, ale nie na śmierć. Możesz leczyć się eliksirami, miksturami lub rumem, ale nie marnuj ich teraz, to tylko trening.";
-			link.l1 = "Chodźmy i nie spodziewaj się litości!";
+			link.l1 = "Stawajmy i nie spodziewaj się litości!";
 			link.l1.go  = "Teach_battle_1";
-			link.l2 = "Nie, dziękuję, już to mam.";
+			link.l2 = "Nie, dziękuję.";
 			link.l2.go  = "Finish_1";
 		break;
 		

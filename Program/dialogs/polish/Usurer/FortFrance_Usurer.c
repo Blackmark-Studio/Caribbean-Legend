@@ -38,8 +38,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			}
 			if (CheckAttribute(pchar, "questTemp.Del_Rostovshik_repeat"))
 			{
-				dialog.text = "Czy przyniosłeś 100 dublonów?";
-				if (PCharDublonsTotal() >= 100)
+				dialog.text = "Czy przyniosłeś 40 dublonów?";
+				if (PCharDublonsTotal() >= 40)
 				{
 					link.l1 = "Oto twoje pieniądze za mojego oficera...";
 					link.l1.go = "Del_Deluck_5";
@@ -184,10 +184,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			pchar.quest.Sharlie_captive3.over = "yes";
 			// Rebbebion, новые марки до места назначения
 			QuestPointerDelLoc("shore39", "reload", "reload1_back");
-			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload2_back");
-			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload1_back");
-			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_03", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_02", "reload", "reload1_back");
+			QuestPointerDelLoc("martinique_jungle_01", "reload", "reload2_back");
+			QuestPointerDelLoc("fortfrance_exittown", "reload", "reload3");
 			QuestPointerDelLoc("fortfrance_town", "reload", "reload8_back");
 			DelLandQuestMark(npchar);
 			ref sld = characterFromId("CaptiveSpain");
@@ -260,7 +260,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "To tylko interesy, kapitanie! Całkowity dług Deluca wynosi sto dublonów, a odsetki rosną... Czy jesteś gotów go wykupić?";
+			dialog.text = "To tylko moja robota, kapitanie! Cały dług waszego nawigatora na dzień dzisiejszy wynosi 40 dublonów, i, proszę zauważyć, odsetki też narastają... Zapłacicie?";
 			link.l1 = "Nie jestem jeszcze gotowy, by odpowiedzieć, ale rozważę to. Do widzenia!";
 			link.l1.go = "Del_Deluck_4";
 		break;
@@ -283,7 +283,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "Doskonale! Wiesz, co robić dalej - tak samo, jak ostatnim razem. Oto dokumenty - przedstaw je komendantowi więzienia. To była przyjemność robić z Tobą interesy, Kapitanie.";
 			link.l1 = "Nie ma w tej sytuacji zbyt wiele do radości. Żegnaj.";
 			link.l1.go = "exit";
-			RemoveItems(pchar, "gold_dublon", 100);
+			RemoveDublonsFromPCharTotal(40);
 			DeleteAttribute(pchar, "questTemp.Del_Rostovshik_repeat");
 			Log_Info("Otrzymałeś rachunek za dług");
 			PlaySound("interface\important_item.wav");

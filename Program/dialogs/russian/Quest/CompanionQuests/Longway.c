@@ -82,23 +82,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_OsmatrivaemKautu":
 			DialogExit();
-			
-			if (npchar.id == "Tichingitu")
-			{
-				LAi_SetOfficerType(npchar);
-				npchar.Dialog.Filename = "Quest\Sharlie\Tichingitu.c";
-				npchar.Dialog.CurrentNode = "Tichingitu_officer";
-			}
-			if (npchar.id == "Duran" || npchar.id == "Folke")
-			{
-				LAi_SetOfficerType(npchar);
-				npchar.Dialog.Filename = "Enc_Officer_dialog.c";
-				npchar.Dialog.CurrentNode = "hired";
-			}
-			ChangeCharacterAddressGroup(npchar, "none", "", "");
-			
-			LAi_SetActorType(pchar);
-			LAi_ActorGoToLocator(pchar, "rld", "loc2", "PZ_OsmatrivaemSunduk", -1);
+			AddDialogExitQuestFunction("PZ_OsmatrivaemSunduk_0");
 		break;
 		
 		case "PZ_LigaInJungle_1":
@@ -186,7 +170,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_6":
 			DialogExit();
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			chrDisableReloadToLocation = false;
 			pchar.questTemp.PZ_RazgovorGerrits = true;
@@ -842,7 +826,7 @@ void ProcessDialogEvent()
 			sld.OfficerImmortal = true;
 			sld.Health.HP       = 60.0;
 			sld.Health.maxHP    = 60.0;
-			SetCharacterPerk(sld, "ShipEscape");
+		
 			LAi_SetActorType(sld);
 			LAi_ActorFollowEverywhere(sld, "", -1);
 			sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
@@ -943,13 +927,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Говоришь о дружбе, а сам обворовываешь меня за моей спиной?! Чтобы это было в первый и последний раз. Ты меня понял, Лонгвэй?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+				Notification_Reputation(false, 61, "low");
 			}
 			else
 			{
 				link.l1 = "А как тебе это удалось провернуть, Лонгвэй?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				notification("Проверка чести пройдена", "None");
+				Notification_Reputation(true, 71, "low");
 			}
 		break;
 		
@@ -958,7 +942,7 @@ void ProcessDialogEvent()
 			link.l1 = "Уж надеюсь на это. А теперь рассказывай, как ты докатился до такой жизни, что за обещание ты дал, когда, кому.";
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_2";
 			if (CheckAttribute(pchar, "questTemp.PZ_NashliArhiv")) AddComplexSelfExpToScill(100, 100, 100, 100);
-			notification("Лонгвэй не одобряет", "Longway");
+			Notification_Approve(false, "Longway");
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Grubim_2":
@@ -973,7 +957,7 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_2";
 			AddComplexLandExpToScill(200, 200, 0);
 			pchar.questTemp.PZ_FlagArhiv = true;
-			notification("Лонгвэй одобряет", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_LongwayRazgovorOProshlom_Proshaem_2":
@@ -1282,8 +1266,8 @@ void ProcessDialogEvent()
 			link.l1.go = "PZ_OliverTrust_Plantation_MediumDistance1";
 			link.l2 = "Издалека - так враг даже не сразу понять, откуда я его разить.";
 			link.l2.go = "PZ_OliverTrust_Plantation_FarDistance1";
-			notification("Открыт 'Егерь'", "Longway");		//Jager Unlocked
-			SetCharacterPerk(pchar, "Jager");
+			notification("Открыт " +GetConvertStr("Sniper", "AbilityDescribe.txt"), "Longway");		//Jager Unlocked
+			SetCharacterPerk(pchar, "Sniper");
 		break;
 		
 		case "PZ_OliverTrust_Plantation_MediumDistance1":
@@ -1337,9 +1321,9 @@ void ProcessDialogEvent()
 			//Log_Info("Вы получили двуствольный штуцер");
 			PlaySound("interface\important_item.wav");
 			
-			AddItems(pchar, "cartridge", 50);
+			AddItems(pchar, "bullet", 50);
 			AddItems(pchar, "gunpowder", 50);
-			LAi_SetCharacterUseBullet(pchar, MUSKET_ITEM_TYPE, "cartridge");
+			LAi_SetCharacterUseBullet(pchar, MUSKET_ITEM_TYPE, "bullet");
 			
 			dialog.text = "Настоящий охотник! Осторожнее, это был подарок. Один из редких случаев, когда оружие и богато украшено, и крайне эффективно. Двуствольный охотничий штуцер. Тяжело держать, легко и приятно использовать. Уже примерно понял, как из него стрелять?";
 			link.l1 = "Понять. Большой спасибо вам!";
@@ -1397,8 +1381,8 @@ void ProcessDialogEvent()
 			link.l1 = "Клеванг! Знакомый вещь. Люди соседние острова часто владеть таким.";
 			link.l1.go = "PZ_OliverTrust_resedinsia_2";
 			pchar.questTemp.PZ_Batavia_resedinsia_Go = true;
-			notification("Открыт 'Дуэлянт'", "Longway");
-			SetCharacterPerk(pchar, "FencingMaster");
+			notification("Открыт " + GetConvertStr("TannedLeather", "AbilityDescribe.txt"), "Longway");
+			SetCharacterPerk(pchar, "TannedLeather");
 			SetCharacterPerk(pchar, "HT1");
 		break;
 		
@@ -2802,7 +2786,7 @@ void ProcessDialogEvent()
 			LAi_SetOfficerType(npchar);
 			npchar.Dialog.Filename = "Quest\HollandGambit\Longway.c";
 			npchar.Dialog.CurrentNode = "Longway_officer";
-			LAi_SetCheckMinHP(npchar, 1, true, "SkritoeBessmertie");
+			LAi_SetCheckMinHP(npchar, 1, true, "HiddenImmortality");
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1 = "locator";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.location = "Mayak4";
 			PChar.quest.PZ_MayakPodslushivanie.win_condition.l1.locator_group = "goto";
@@ -2921,7 +2905,7 @@ void ProcessDialogEvent()
 		case "PZ_Longway_30":
 			DialogExit();
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			LAi_RemoveCheckMinHP(npchar);
 			AddQuestRecord("PZ", "17");
 			sld = &Locations[FindLocation("Mayak4")];
@@ -3136,7 +3120,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_34":
 			DialogExit();
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			if (!CheckAttribute(pchar, "questTemp.PZ.Shipwreckers.Decline")) AddQuestRecord("PZ", "18");
 			else AddQuestRecord("PZ", "18_1");
 			pchar.questTemp.PZ_Beliz_Komendant = true;
@@ -3177,7 +3161,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			pchar.questTemp.jailCanMove = true;
 			
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			sld = CharacterFromID("BelizJailOff");
 			LAi_SetHuberType(sld);
@@ -3692,8 +3676,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_HelenaMary_Exit":
 			DialogExit();
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 			WaitDate("", 0, 0, 0, 2, 0);
 			LAi_SetImmortal(npchar, true);
 			ChangeCharacterAddressGroup(npchar, "Pirates_tavern_upstairs", "goto", "goto1");
@@ -3802,8 +3786,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_MaryHelena_BitvaNaverhu_3":
 			DialogExit();
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 			sld = CharacterFromID("Longway");
 			sld.dialog.filename = "Quest\CompanionQuests\Longway.c";
 			sld.dialog.currentnode = "PZ_Longway_61";
@@ -3859,7 +3843,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_67":
 			dialog.text = "Ван дер Винк не быть так опасен, как Левассер или кто-то другой. К тому же, мой уже побеждать его однажды. И победить снова. На этот раз - убедиться, что навсегда. Так что мы не терять драгоценный время. Ваш отправиться на Тортуга и расспрашивать важный люди про всё, что наш нужно. А мой - поймать ван дер Винк. Сам, ведь мой уметь управлять корабль, и хорошо. Господин капитан не стоит тратить время на это.";
-			link.l1 = "Хм, в твоих словах есть смысл, Лонгвэй. Но ван дер Винк, может, и не так опасен, однако “Бантен” - один из быстрейших кораблей Архипелага, как мне кажется. Тут подойдёт не каждое судно. И где же ты найдёшь команду, да еще так быстро?";
+			link.l1 = "Хм, в твоих словах есть смысл, Лонгвэй. Но ван дер Винк, может, и не так опасен, однако “Бантен” - один из быстрейших кораблей Архипелага, как мне кажется. Тут подойдёт не каждое судно. И где же ты найдёшь команду, да ещё так быстро?";
 			link.l1.go = "PZ_Longway_68";
 		break;
 		
@@ -3967,7 +3951,7 @@ void ProcessDialogEvent()
 			}
 			RemoveDublonsFromPCharTotal(2500);
 			pchar.questTemp.PZ_FlagShipDublons = true;
-			notification("Лонгвэй одобряет", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_Longway_Peso_1":
@@ -4001,7 +3985,7 @@ void ProcessDialogEvent()
 			AddMoneyToCharacter(pchar, -50000);
 			
 			pchar.questTemp.PZ.LongwayBrig = true; // Лонгвэй будет на бриге
-			notification("Лонгвэй не одобряет", "Longway");
+			Notification_Approve(false, "Longway");
 		break;
 		
 		case "PZ_Longway_Otkaz_2":
@@ -4054,7 +4038,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
 			AddQuestRecord("PZ", "59");
-			notification("Лонгвэй одобряет", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		
@@ -4327,7 +4311,7 @@ void ProcessDialogEvent()
 			link.l1 = "А, пустое. Когда-то же это был твой корабль. Я помню. Ну, иди, удачной охоты! А я пока отправлюсь на Тортугу.";
 			link.l1.go = "Exit";
 			AddDialogExitQuest("PZ_NeedToTortuga");
-			notification("Лонгвэй одобряет", "Longway");
+			Notification_Approve(true, "Longway");
 		break;
 		
 		case "PZ_Longway_Caleuche1":
@@ -4368,7 +4352,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagShipDublons"))
 			{
 				pchar.questTemp.PZ_FlagShip = true;
-				notification("Лонгвэй одобряет", "Longway");
+				Notification_Approve(true, "Longway");
 			}
 			
 			dialog.text = "Никогда не плавать на полакр, когда быть капитан сам. Думать, это интересно. Но Лонгвэй считать, что сейчас быть самым главным скорость, а не мощь корабль.";
@@ -4409,7 +4393,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.PZ_FlagShipDublons"))
 			{
 				pchar.questTemp.PZ_FlagShip = true;
-				notification("Лонгвэй одобряет", "Longway");
+				Notification_Approve(true, "Longway");
 			}
 			
 			dialog.text = "Что это быть самый необычный галеон на весь Архипелаг, господин капитан. Мой мочь управиться с ним, однако он медленнее, чем 'Бантен'...";
@@ -5208,12 +5192,12 @@ void ProcessDialogEvent()
 			if (!CheckAttribute(pchar, "questTemp.Saga.DodsonDie")) 
 			{
 				AddLandQuestMark(characterFromId("Terrax"), "questmarkmain");
-				QuestSetCurrentNode("Terrax", "PZ1");
+				QuestSetCurrentNode("Terrax", "PZ_1");
 			}
 			else 
 			{
 				AddLandQuestMark(characterFromId("Vensan"), "questmarkmain");
-				QuestSetCurrentNode("Vensan", "PZ1");
+				QuestSetCurrentNode("Vensan", "PZ_1");
 			}
 			DeleteAttribute(pchar, "GenQuest.DontSetCabinOfficer");
 			chrDisableReloadToLocation = false;
@@ -5224,13 +5208,13 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Mary");
 				AddPassenger(pchar, sld, false);
-				Return_MaryOfficer();
+				ReturnOfficer_Mary();
 			}
 			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
 			{
 				sld = CharacterFromID("Helena");
 				AddPassenger(pchar, sld, false);
-				Return_HelenaOfficer();
+				ReturnOfficer_Helena();
 			}
 			if (!CheckAttribute(pchar, "questTemp.PZ_PredupredilNashuDevushku")) AddQuestRecord("PZ", "31");
 		break;
@@ -5399,8 +5383,8 @@ void ProcessDialogEvent()
 		case "PZ_AnriTibo_6":
 			StartInstantDialog("Tibo", "PZ_AnriTibo_7", "Quest\CompanionQuests\Longway.c");
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		break;
 		
 		case "PZ_AnriTibo_7":
@@ -5508,71 +5492,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_Longway_78":
 			DialogExit();
-			chrDisableReloadToLocation = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", true);
-			SetCurrentTime(15, 00);
-			RecalculateJumpTable();
-			RefreshWeather();
-			RefreshLandTime();
-			pchar.GenQuest.AbordageInStorm = true;	//Разрешить абордаж во время шторма
-			SetLocationCapturedState("PortPax_town", false);
-
-			LAi_LoginInCaptureTown(npchar, false);
-			AddPassenger(pchar, npchar, false);
-			Return_LongwayOfficer();
-			
-			if (GetCharacterIndex("Tichingitu") != -1)
-			{
-				sld = characterFromId("Tichingitu");
-				AddPassenger(pchar, sld, false);
-				Return_TichingituOfficer();
-			}
-			
-			PChar.quest.PZ_PoP_Pogonya.win_condition.l1 = "location";
-			PChar.quest.PZ_PoP_Pogonya.win_condition.l1.location = "Hispaniola2";
-			PChar.quest.PZ_PoP_Pogonya.win_condition = "PZ_PoP_Pogonya";
-			
-			SeaAI_SwapShipsAttributes(pchar, CharacterFromID("PZ_ShipStasis"));
-			AddCharacterGoodsSimple(pchar, GOOD_GRAPES, 300);
-			AddCharacterGoodsSimple(pchar, GOOD_BOMBS, 200);
-			AddCharacterGoodsSimple(pchar, GOOD_POWDER, 350);
-			AddCharacterGoodsSimple(pchar, GOOD_FOOD, 150);
-			AddCharacterGoodsSimple(pchar, GOOD_RUM, 50);
-			AddCharacterGoodsSimple(pchar, GOOD_FOOD, 700);
-			SetCrewQuantityFull(pchar);
-			pchar.ship.HP = sti(pchar.ship.HP) / 2;
-			pchar.Ship.Crew.Quantity = sti(pchar.ship.Crew.Quantity) / 2;
-			AddCrewMorale(Pchar, 100);
-			ChangeCrewExp(pchar, "Sailors", 100);
-			ChangeCrewExp(pchar, "Cannoners", 100);
-			ChangeCrewExp(pchar, "Soldiers", 100);
-			
-			//Вражина
-			sld = characterFromId("PZ_RobertMartin");
-			sld.nation = PIRATE;
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1)
-			{
-				GiveItem2Character(sld, "blade_31");
-				EquipCharacterByItem(sld, "blade_31");
-			}
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1)
-			{
-				GiveItem2Character(sld, "pirate_cutlass");
-				EquipCharacterByItem(sld, "pirate_cutlass");
-			}
-			FantomMakeCoolSailor(sld, SHIP_GALEON_L, "Вольтижёр", CANNON_TYPE_CANNON_LBS16, 50, 50, 50);
-			sld.AlwaysEnemy = true;
-			sld.AlwaysSandbankManeuver = true;
-			sld.DontRansackCaptain = true;
-			sld.ShipHideImmortal = 800;
-			Group_FindOrCreateGroup("PZ_RM_Attack");
-			Group_SetType("PZ_RM_Attack", "pirate");
-			Group_AddCharacter("PZ_RM_Attack", "PZ_RobertMartin");
-			Group_SetGroupCommander("PZ_RM_Attack", "PZ_RobertMartin");
-			Group_SetTaskAttack("PZ_RM_Attack", PLAYER_GROUP);
-			Group_SetAddress("PZ_RM_Attack", "Hispaniola2", "quest_ships", "Quest_ship_1");
-			Ship_SetTaskAttack(SECONDARY_TASK, sti(sld.index), sti(pchar.index));
+			AddDialogExitQuestFunction("PZ_Longway_78");
 		break;
 		
 		case "PZ_RobertMartin_8":
@@ -5607,7 +5527,6 @@ void ProcessDialogEvent()
 			dialog.text = "И это всё?";
 			link.l1 = "Ещё раз спрашиваю! Где " + sStr + "?! Где китаянка?! Где Анри Тибо?!";
 			link.l1.go = "PZ_RobertMartin_14";
-			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_1", "", 0.3);
 		break;
 		
@@ -5616,7 +5535,6 @@ void ProcessDialogEvent()
 			link.l1 = "Тварь! Я выбью из тебя каждое слово!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("PZ_DoprosRobertMartin_Trum_6");
-			LAi_SetActorType(npchar);
 			LAi_ActorAnimation(npchar, "beatmarten_idle_1", "", 0.3);
 		break;
 		
@@ -5681,7 +5599,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_RobertMartin_22":
 			dialog.text = "Так ты знаешь о его тайном местечке, в подземелье? О-о да, он настоящий владыка своего подземелья, ха-ха-ха! Но сможешь ли ты бросить ему вызов? Сомневаюсь. Хочешь победить зверя? Стань зверем сам. Посмотрим, сможешь ли ты вытянуть из меня хоть слово об этом и сломать, как Франсуа ломает этих девчонок. Как он вскоре сломит твою...";
-			/*if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
+			if (!CheckAttribute(pchar, "questTemp.PZ_FlagShip"))
 			{
 				link.l1 = "АЛО-О-ОН-СО-О-О-О!!!..";
 				link.l1.go = "PZ_RobertMartin_23";
@@ -5690,9 +5608,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "...";
 				link.l1.go = "PZ_LongwayKaznDialog_1";
-			}*/
-			link.l1 = "АЛО-О-ОН-СО-О-О-О!!!..";
-			link.l1.go = "PZ_RobertMartin_23";
+			}
 		break;
 		
 		case "PZ_RobertMartin_23":
@@ -5748,11 +5664,7 @@ void ProcessDialogEvent()
 		case "PZ_LongwayKaznDialog_8":
 			DialogExit();
 			LAi_SetActorType(npchar);
-			CharacterTurnByChr(npchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_SetStayType(pchar);
-			CharacterTurnByChr(pchar, CharacterFromID("PZ_RobertMartinPlennik"));
-			LAi_FadeToBlackStart();
-			DoQuestCheckDelay("PZ_LongwayKazn_4", 1.5);
+			LAi_ActorFollow(npchar, CharacterFromID("PZ_RobertMartinPlennik"), "PZ_LongwayKazn_3_1", -1);
 		break;
 		
 		case "PZ_LongwayKaznDialog_9":
@@ -5787,60 +5699,9 @@ void ProcessDialogEvent()
 		
 		case "PZ_LongwayKaznDialog_12":
 			DialogExit();
-			ResetSound();
-			chrDisableReloadToLocation = false;
-			EndQuestMovie();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			locCameraTarget(PChar);
-			locCameraFollow();
 			AddQuestRecord("PZ", "39");
-			
-			LAi_SetPlayerType(pchar);
-			npchar.greeting = "Longway";
-			Return_LongwayOfficer();
-			
-			bQuestDisableMapEnter = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
-			DeleteAttribute(pchar, "GenQuest.CannotWait");
-			DeleteAttribute(pchar,"questTemp.TimeLock");
-			LocatorReloadEnterDisable("LaVega_ExitTown", "reload1_back", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", false);
-			LAi_LocationDisableOfficersGen("PortPax_town", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			DeleteAttribute(pchar, "GenQuest.AbordageInStorm");
-			
-			PChar.quest.PZ_Etap6_Start.win_condition.l1 = "location";
-			PChar.quest.PZ_Etap6_Start.win_condition.l1.location = "Tortuga";
-			PChar.quest.PZ_Etap6_Start.win_condition = "PZ_Etap6_Start";
-			locations[FindLocation("Shore58")].DisableEncounters = true;
-			SetTimerCondition("PZ_Etap6_Opozdal", 0, 0, 7, false);
-			DelMapQuestMarkCity("PortPax");
-			AddMapQuestMarkShore("Shore58", true);
 			pchar.questTemp.PZ_FlagMartinInfo = true;
-			
-			// Компаньон-заглушка входит в состав нашей экскадры
-			sld = CharacterFromID("PZ_ShipStasis");
-			SetCompanionIndex(pchar, -1, sti(sld.index));
-			SetCharacterRemovable(sld, true);
-			SetShipRemovable(sld, true);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.quest.meeting = true;
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.Dialog.CurrentNode = "hired";
-			sld.Payment = true;
-			sld.ship.HP = sti(sld.ship.HP) / 2;
-			
-			//
-			makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
-			QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
-			DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
-			QuestToSeaLogin_Launch();
+			AddDialogExitQuestFunction("PZ_FinalKaznOnShip_DlgExit");
 		break;
 		
 		case "PZ_AlonsoKaznDialog_1":
@@ -5901,61 +5762,8 @@ void ProcessDialogEvent()
 		
 		case "PZ_AlonsoKaznDialog_9":
 			DialogExit();
-			ResetSound();
-			chrDisableReloadToLocation = false;
-			EndQuestMovie();
-			DeleteAttribute(pchar, "GenQuest.BlockDialogCamera");
-			locCameraTarget(PChar);
-			locCameraFollow();
 			AddQuestRecord("PZ", "38");
-			
-			LAi_SetPlayerType(pchar);
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1", "", "", "", "", -1);
-			npchar.lifeday = 0;
-			npchar.location = "None";
-			
-			bQuestDisableMapEnter = false;
-			Island_SetReloadEnableGlobal("Hispaniola2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_2", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_2", true);
-			Island_SetReloadEnableLocal("Hispaniola2", "reload_3", true)
-			Island_SetGotoEnableLocal("Hispaniola2", "reload_3", true);
-			DeleteAttribute(pchar, "GenQuest.CannotWait");
-			DeleteAttribute(pchar,"questTemp.TimeLock");
-			LocatorReloadEnterDisable("LaVega_ExitTown", "reload1_back", false);
-			LocatorReloadEnterDisable("PortPax_town", "gate_back", false);
-			LAi_LocationDisableOfficersGen("PortPax_town", false);
-			LAi_LocationFightDisable(&Locations[FindLocation("PortPax_town")], false);
-			DeleteAttribute(pchar, "GenQuest.AbordageInStorm");
-			
-			PChar.quest.PZ_Etap6_Start.win_condition.l1 = "location";
-			PChar.quest.PZ_Etap6_Start.win_condition.l1.location = "Tortuga";
-			PChar.quest.PZ_Etap6_Start.win_condition = "PZ_Etap6_Start";
-			locations[FindLocation("Shore58")].DisableEncounters = true;
-			SetTimerCondition("PZ_Etap6_Opozdal", 0, 0, 7, false);
-			DelMapQuestMarkCity("PortPax");
-			AddMapQuestMarkShore("Shore58", true);
-			
-			// Компаньон-заглушка входит в состав нашей экскадры
-			sld = CharacterFromID("PZ_ShipStasis");
-			SetCompanionIndex(pchar, -1, sti(sld.index));
-			SetCharacterRemovable(sld, true);
-			SetShipRemovable(sld, true);
-			sld.Dialog.Filename = "Enc_Officer_dialog.c";
-			sld.quest.meeting = true;
-			Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(sld.id);
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.Dialog.CurrentNode = "hired";
-			sld.Payment = true;
-			sld.ship.HP = sti(sld.ship.HP) / 2;
-			
-			//
-			makearef(arTmp, pchar.questTemp.PZ_PoP_More.ShipPos);
-			QuestToSeaLogin_Prepare(stf(arTmp.x), stf(arTmp.z), arTmp.Island);
-			DeleteAttribute(pchar, "questTemp.PZ_PoP_More.ShipPos");
-			QuestToSeaLogin_Launch();
+			AddDialogExitQuestFunction("PZ_FinalKaznOnShip_DlgExit");
 		break;
 		
 		case "PZ_Norman1":
@@ -6480,7 +6288,7 @@ void ProcessDialogEvent()
 		break;
 		
 		/*case "PZ_Longway_SisterDialog5":
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			
 			StartInstantDialog("PZ_ChangShin", "PZ_ChangShin_WithLongway3", "Quest\CompanionQuests\Longway.c");
 		break;*/
@@ -6803,14 +6611,14 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Вызывающий доверие) (Харизма) Лонгвэй... Чанг Ту. Остановись. Я не был идеальным капитаном. Но ты правда так сильно хочешь убить меня из-за этого? После всего, через что мы прошли? Сначала Роденбург, теперь поиски твоей сестры.";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet9";
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				notification("Проверка пройдена", SKILL_LEADERSHIP);
 			}
 			else
 			{
 				link.l1 = "Лонгвэй, я твой капитан. Не брат, не сын. Не нянечка. Я отдаю приказы, а не размышляю, а не нагрубил ли я тебе нечаянно. Ты предъявляешь мне претензию, будто мы старые супруги, ей-Богу...";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet15";
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Не открыта способность", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 85) notification("Недостаточно развит навык (85)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Да-а-а. Теперь я вижу это. Ты такой же гнилой самовлюблённый эгоист, которому плевать на всех остальных... Лонгвэй. Как и твоя сестрёнка. Как вы похожи! Сегодня будет жить моя семья - ваша этого больше не заслуживает. Отправляйтесь к чёрту!";
@@ -7104,14 +6912,14 @@ void ProcessDialogEvent()
 					{
 						link.l1 = "(Вызывающий доверие) (Харизма) Мы пойдём за твоей сестрой, клянусь тебе. Но за всё это время Левассер и пальцем её не тронул. " + sStr + " в куда большей опасности чем Чанг Шин. Так что помоги мне спасти её, и тогда я действительно буду обязан тебе по гроб жизни...";
 						link.l1.go = "PZ_Longway_FlagMartinInfo_VD1";
-						notification("Вызывающий доверие", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 						notification("Проверка пройдена", SKILL_LEADERSHIP);
 					}
 					else
 					{
 						link.l1 = "Лонгвэй! " + sStr + " сейчас в руках изверга, который пытает её или, не приведи Господь, делает ещё что похуже! А твоя сестра и так хорошо устроилась! Думаешь, Левассер позволил бы ей владеть дорогим заведением, обращайся он с ней, как с теми бедняжками в своём подземелье?!";
 						link.l1.go = "PZ_Longway_FlagMartinInfo_netVD1";
-						if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Не открыта способность", "Trustworthy");
+						if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 						if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 85) notification("Недостаточно развит навык (85)", SKILL_LEADERSHIP);
 					}
 				}
@@ -7335,7 +7143,7 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
-				Return_LongwayOfficer();
+				ReturnOfficer_Longway();
 				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
 			}
 			LAi_SetFightMode(pchar, true);
@@ -7469,7 +7277,7 @@ void ProcessDialogEvent()
 			{
 				sld = CharacterFromID("Longway");
 				ChangeCharacterAddressGroup(sld, PChar.location, "goto", "goto4");
-				Return_LongwayOfficer();
+				ReturnOfficer_Longway();
 				PlaySound("VOICE\Russian\hambit\Longway-02.wav");
 			}
 			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) sld = CharacterFromID("Mary");
@@ -7501,7 +7309,7 @@ void ProcessDialogEvent()
 		
 		case "PZ_TortureRoom_Longway_3":
 			DialogExit();
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 			chrDisableReloadToLocation = false;
 		break;
 		
@@ -7579,8 +7387,8 @@ void ProcessDialogEvent()
 			DialogExit();
 			if (CheckAttribute(pchar, "questTemp.PZ_DevushkaRanena_Legko")) AddPassenger(pchar, npchar, false);
 			LAi_SetPlayerType(pchar);
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
 		break;
 		
 		case "PZ_TortureRoom_Levasser_18":
@@ -7713,9 +7521,9 @@ void ProcessDialogEvent()
 			PChar.quest.PZ_TortureRoom_Levasser_ObratnoNaBereg.win_condition.l1.locator = "reload1";
 			PChar.quest.PZ_TortureRoom_Levasser_ObratnoNaBereg.win_condition = "PZ_TortureRoom_Levasser_ObratnoNaBereg";
 			
-			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) Return_MaryOfficer();
-			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) Return_HelenaOfficer();
-			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) Return_LongwayOfficer();
+			if (CheckAttribute(pchar, "questTemp.LSC.Mary_officer") && GetCharacterIndex("Mary") != -1) ReturnOfficer_Mary();
+			if (CheckAttribute(pchar, "questTemp.Saga.Helena_officer") && GetCharacterIndex("Helena") != -1) ReturnOfficer_Helena();
+			if (CheckAttribute(pchar, "questTemp.PZ_LongwayRyadom")) ReturnOfficer_Longway();
 			sld = CharacterFromID("Levasser");
 			sld.location = "None";
 			LAi_SetActorType(sld);
@@ -8282,7 +8090,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			DeleteAttribute(npchar, "CompanionDisable");//теперь можем и в компаньоны
 			chrDisableReloadToLocation = false;
-			Return_LongwayOfficer();
+			ReturnOfficer_Longway();
 		break;
 		
 		case "PZ_PuansieDialogWithLevasser_1":

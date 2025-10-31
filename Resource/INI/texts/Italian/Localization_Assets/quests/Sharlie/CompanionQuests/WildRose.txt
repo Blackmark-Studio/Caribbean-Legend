@@ -1,0 +1,13 @@
+WildRose_1 {Avete sentito? Qualche giorno fa, una ventina di schiavi è fuggita dalla piantagione di Bishop. Si dice che abbiano segato le catene durante la notte, ucciso alcune guardie e si siano nascosti nella giungla. Ma dove pensavano di andare, da quell’isola? Ovviamente sono stati catturati piuttosto in fretta – alcuni li hanno trovati in una grotta, altri a Capo Ragged Point. Quasi tutti sono stati abbattuti. Anche i soldati hanno avuto delle perdite. Ma si mormora che ciò che ha fatto infuriare di più Bishop non sia stato questo, ma il fatto di non essere riuscito a punire i fuggitivi con le proprie mani.}
+WildRose_2 {Bruce}
+WildRose_3 {Primer}
+WildRose_4 {Jerry}
+WildRose_5 {Kaspar}
+WildRose_6 {Lewis}
+WildRose_7 {Gernon}
+WildRose_8 {Jérôme}
+WildRose_9 {Souvernier}
+WildRose_10 {Rupert}
+WildRose_11 {Kaspar}
+WildRose_12 {Eretico}
+WildRose_13 {La squadra dovrebbe essere già sul posto...}

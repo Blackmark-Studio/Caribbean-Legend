@@ -495,7 +495,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("你已支付100杜布隆");
 			dialog.text = "一切似乎没问题。 这是你的护身符。 祝你好运! ";
 			link.l1 = "谢谢你, " + npchar.name+ "! ";
@@ -587,6 +587,7 @@ void ProcessDialogEvent()
 			dialog.text = "是吗? 你和Tuttuathapak谈过了, 对吗? ";
 			link.l1 = "正是。 现在我想找到另外两个护身符。 你说我是第三个给你看这个神器的人。 另外两个是谁? ";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -621,6 +622,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":
@@ -651,16 +653,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition 加勒比习俗
 		case "Trial":
-			dialog.text = "啊, 原来你就是那位船长! 是的, 我一直在等你。 热拉尔也在等, 但他需要紧急去参加某种探险, 所以他让我把报酬转给你。 他说你一定要来。 这里有四百杜布隆, 请收下。 ";
+			dialog.text = "啊, 原来你就是那位船长! 是的, 我一直在等你。 热拉尔也在等, 但他需要紧急去参加某种探险, 所以他让我把报酬转给你。 他说你一定要来。 这里有90杜布隆, 请收下。 ";
 			link.l1 = "谢谢你! 和诚实的人打交道真好。 ";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("你已获得400杜布隆");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

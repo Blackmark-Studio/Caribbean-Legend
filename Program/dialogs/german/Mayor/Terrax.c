@@ -128,12 +128,12 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.Mtraxx == "silk_14")
 			{
-				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er braucht Schiffsseide für seine Produktion und er wird in der Lage sein, jeden Monat Chargen von hundert Rollen für 25 Dublonen pro Rolle zu kaufen. Seine Männer werden die Ware vom 10. bis 15. nachts in Empfang nehmen, der Ort ist das Negril-Kap. Das Passwort - 'Ein Kaufmann aus Lyon'. Der kahlköpfige Geffrey hat die erste Lieferung bereits nach Jamaika gebracht.";
+				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er braucht Schiffsseide für seine Produktion und er wird in der Lage sein, jeden Monat Chargen von hundert Rollen für 5 Dublonen pro Rolle zu kaufen. Seine Männer werden die Ware vom 10. bis 15. nachts in Empfang nehmen, der Ort ist das Negril-Kap. Das Passwort - 'Ein Kaufmann aus Lyon'. Der kahlköpfige Geffrey hat die erste Lieferung bereits nach Jamaika gebracht.";
 				link.l1.go = "mtraxx_13";
 			}
 			if (pchar.questTemp.Mtraxx == "silk_15")
 			{
-				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und er wird in der Lage sein, jeden Monat Partien von hundert Rollen für 25 Dublonen pro Rolle zu kaufen. Seine Männer werden die Waren vom 10. bis zum 15. in der Nacht entgegennehmen, der Ort ist das Negril Kap. Das Passwort - 'Ein Kaufmann aus Lyon'. Es hat mich mehr als zwei Monate gekostet, einen solchen Käufer zu finden, Geffrey muss die Seide bereits an Schmuggler verkauft haben. Es tut mir leid, Marcus.";
+				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und er wird in der Lage sein, jeden Monat Partien von hundert Rollen für 5 Dublonen pro Rolle zu kaufen. Seine Männer werden die Waren vom 10. bis zum 15. in der Nacht entgegennehmen, der Ort ist das Negril Kap. Das Passwort - 'Ein Kaufmann aus Lyon'. Es hat mich mehr als zwei Monate gekostet, einen solchen Käufer zu finden, Geffrey muss die Seide bereits an Schmuggler verkauft haben. Es tut mir leid, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 		break;
@@ -793,7 +793,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_10":
-            dialog.text = "Ich habe immer Aufgaben für fähige Burschen. Es gibt eine heikle Angelegenheit, die ich möchte, dass du dich darum kümmerst. Es gibt ein Schiff in Capsterville, genannt die 'Schlange', unter dem Kommando von Geffrey Brooke, auch bekannt als Kahlkopf Geffrey. Er arbeitet für mich. Ein ausgezeichneter Kämpfer, weiß alles über Kanonen und Klingen, aber in jedem anderen Aspekt des Lebens ein kompletter Idiot. Aber seien wir nicht hart zu Kahlkopf, niemand ist perfekt, ha-ha!\nAlso. Dieser harte Kerl hat einen holländischen Konvoi nördlich von Saint Martin angegriffen und eine Barkasse voller Weizensäcke erbeutet. Das Ding ist, er hat unter den Säcken versteckte Schiffsseide gefunden. Eine wirklich große Ladung. Diese Ware ist extrem wertvoll und selten, die Holländer bringen sie nur für die Bedürfnisse ihres Militärs aus Europa. Diese Seide wird für spezielle Segel verwendet, die die Geschwindigkeit und die Fähigkeit des Schiffes erhöhen, gegen den Wind zu segeln.\nEs ist fast unmöglich zu kaufen, es zu verkaufen ist kein Problem, aber es ist schwer, den richtigen Preis zu finden. Diese verdammten Händler reduzieren immer den Preis! Mir ist bewusst, dass es Leute in der Karibik gibt, die bereit sind, einen guten Preis in Dublonen für diese Seide zu bezahlen, und deine Aufgabe ist es, solche Leute zu finden.\nWas? Jeder Narr kann Karawanen plündern, aber Handel ist nur für Leute mit mindestens einem Anzeichen von Gehirnexistenz im Schädel. Ich plane, Schiffsseide auf monatlicher Basis zu verkaufen, also ist dein Ziel, einen regelmäßigen Käufer zu finden, der mindestens zwanzig goldene Dublonen für eine Rolle zahlen wird. Du hast zwei Monate Zeit dafür, ich kann Kahlkopf Geffrey nicht ewig in Capsterville halten.\nDas ist alles. Setz die Segel nach Capsterville und sprich mit Geffrey, bevor er die Ladung für einen Pfennig an Schmuggler verkauft. Ich habe dir schon gesagt, dass er ein bisschen 'einfach' ist.";
+            dialog.text = "Ich habe immer Aufgaben für fähige Burschen. Es gibt eine heikle Angelegenheit, die ich möchte, dass du dich darum kümmerst. Es gibt ein Schiff in Capsterville, genannt die 'Schlange', unter dem Kommando von Geffrey Brooke, auch bekannt als Kahlkopf Geffrey. Er arbeitet für mich. Ein ausgezeichneter Kämpfer, weiß alles über Kanonen und Klingen, aber in jedem anderen Aspekt des Lebens ein kompletter Idiot. Aber seien wir nicht hart zu Kahlkopf, niemand ist perfekt, ha-ha!\nAlso. Dieser harte Kerl hat einen holländischen Konvoi nördlich von Saint Martin angegriffen und eine Barkasse voller Weizensäcke erbeutet. Das Ding ist, er hat unter den Säcken versteckte Schiffsseide gefunden. Eine wirklich große Ladung. Diese Ware ist extrem wertvoll und selten, die Holländer bringen sie nur für die Bedürfnisse ihres Militärs aus Europa. Diese Seide wird für spezielle Segel verwendet, die die Geschwindigkeit und die Fähigkeit des Schiffes erhöhen, gegen den Wind zu segeln.\nEs ist fast unmöglich zu kaufen, es zu verkaufen ist kein Problem, aber es ist schwer, den richtigen Preis zu finden. Diese verdammten Händler reduzieren immer den Preis! Mir ist bewusst, dass es Leute in der Karibik gibt, die bereit sind, einen guten Preis in Dublonen für diese Seide zu bezahlen, und deine Aufgabe ist es, solche Leute zu finden.\nWas? Jeder Narr kann Karawanen plündern, aber Handel ist nur für Leute mit mindestens einem Anzeichen von Gehirnexistenz im Schädel. Ich plane, Schiffsseide auf monatlicher Basis zu verkaufen, also ist dein Ziel, einen regelmäßigen Käufer zu finden, der mindestens 4 goldene Dublonen für eine Rolle zahlen wird. Du hast zwei Monate Zeit dafür, ich kann Kahlkopf Geffrey nicht ewig in Capsterville halten.\nDas ist alles. Setz die Segel nach Capsterville und sprich mit Geffrey, bevor er die Ladung für einen Pfennig an Schmuggler verkauft. Ich habe dir schon gesagt, dass er ein bisschen 'einfach' ist.";
 			link.l1 = "Hm... Verstanden. Ich bin schon unterwegs.";
 			link.l1.go = "mtraxx_11";
 		break;
@@ -810,12 +810,12 @@ void ProcessDialogEvent()
             dialog.text = "Ha! Hier ist der mutige Kapitän "+GetFullName(pchar)+"! Was ist mit dem Käufer?";
 			if (CheckAttribute(pchar, "questTemp.Mtraxx.SilkLate"))
 			{
-				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und kann monatlich Chargen von hundert Rollen für 25 Dublonen pro Rolle kaufen. Seine Männer werden die Waren vom 10. bis 15. nachts, am Standort Negril Cape, entgegennehmen. Das Passwort - 'Ein Kaufmann aus Lyon'. Es hat mich mehr als zwei Monate gekostet, einen solchen Käufer zu finden, Geffrey muss die Seide bereits an Schmuggler verkauft haben. Es tut mir leid, Marcus.";
+				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und kann monatlich Chargen von hundert Rollen für 5 Dublonen pro Rolle kaufen. Seine Männer werden die Waren vom 10. bis 15. nachts, am Standort Negril Cape, entgegennehmen. Das Passwort - 'Ein Kaufmann aus Lyon'. Es hat mich mehr als zwei Monate gekostet, einen solchen Käufer zu finden, Geffrey muss die Seide bereits an Schmuggler verkauft haben. Es tut mir leid, Marcus.";
 				link.l1.go = "mtraxx_15";
 			}
 			else
 			{
-				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und kann jeden Monat Partien von hundert Rollen für 25 Dublonen pro Rolle kaufen. Seine Männer werden die Ware vom 10. bis zum 15. nachts in Empfang nehmen, der Ort ist Negril Kap. Das Passwort - 'Ein Händler aus Lyon'. Kahlkopf Geffrey hat die erste Lieferung bereits nach Jamaika gebracht.";
+				link.l1 = "Ich habe einen Käufer für dich gefunden. Es ist ein Schiffsbauer aus Port Royal. Er benötigt Schiffsseide für seine Produktion und kann jeden Monat Partien von hundert Rollen für 5 Dublonen pro Rolle kaufen. Seine Männer werden die Ware vom 10. bis zum 15. nachts in Empfang nehmen, der Ort ist Negril Kap. Das Passwort - 'Ein Händler aus Lyon'. Kahlkopf Geffrey hat die erste Lieferung bereits nach Jamaika gebracht.";
 				link.l1.go = "mtraxx_13";
 			}
 		break;
@@ -861,14 +861,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_17":
-            dialog.text = "Der kahle Geffrey hat deinem Käufer die erste Ladung von 105 Rollen Schiffsseide verkauft. Da ich erwartet habe, sie für zwanzig Dublonen pro Rolle zu verkaufen, denke ich, es wäre fair, dir die Differenz zu geben. Das ist meine Entscheidung. Dein Anteil sind 525 Dublonen plus ein Bonus - eine Dublone pro Rolle. Das macht insgesamt 630 Dublonen. Hier, nimm sie.";
+            dialog.text = "Der kahle Geffrey hat deinem Käufer die erste Ladung von 105 Rollen Schiffsseide verkauft. Da ich erwartet habe, sie für 4 Dublonen pro Rolle zu verkaufen, denke ich, es wäre fair, dir die Differenz zu geben. Das ist meine Entscheidung. Dein Anteil sind 105 Dublonen plus ein Bonus - eine Dublone pro Rolle. Das macht insgesamt 210 Dublonen. Hier, nimm sie.";
 			link.l1 = "Dankbarkeit, Marcus!";
 			link.l1.go = "mtraxx_18";
 		break;
 		
 		case "mtraxx_18":
-			TakeNItems(pchar, "gold_dublon", 630);
-			Log_Info("You have received 630 doubloons");
+			TakeNItems(pchar, "gold_dublon", 210);
 			PlaySound("interface\important_item.wav");
             dialog.text = "Noch eine Sache. Du kannst aus diesem einen zusätzlichen Gewinn ziehen.";
 			link.l1 = "Interessant... Mach weiter.";
@@ -876,7 +875,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mtraxx_19":
-            dialog.text = "Dein Käufer will mehr als 100 Rollen Seide für die nächsten zwei Monate geliefert haben. Wenn du welche hast, bring mir 20 bis 100 Rollen zum Preis von 24 Dublonen. Das Angebot gilt für zwei Monate.";
+            dialog.text = "Dein Käufer will mehr als 100 Rollen Seide für die nächsten zwei Monate geliefert haben. Wenn du welche hast, bring mir 20 bis 100 Rollen zum Preis von 5 Dublonen. Das Angebot gilt für zwei Monate.";
 			link.l1 = "Gut! Ich bringe mehr, wenn ich welche habe.";
 			link.l1.go = "mtraxx_20";
 			pchar.questTemp.Mtraxx.SilkTrade = "true";
@@ -894,16 +893,16 @@ void ProcessDialogEvent()
 		
 		case "mtraxx_silktrade_1":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, iTotalTemp);
-			TakeNItems(pchar, "gold_dublon", iTotalTemp*24);
-            dialog.text = "Sehr gut. Nimm das Gold - 24 Dublonen für eine Rolle, wie wir vereinbart haben.";
+			TakeNItems(pchar, "gold_dublon", iTotalTemp*5);
+            dialog.text = "Sehr gut. Nimm das Gold - 5 Dublonen für eine Rolle, wie wir vereinbart haben.";
 			link.l1 = "Dankbarkeit!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
 		
 		case "mtraxx_silktrade_2":
 			RemoveCharacterGoods(pchar, GOOD_SHIPSILK, 100);
-			TakeNItems(pchar, "gold_dublon", 2400);
-            dialog.text = "Ich nehme hundert Rollen. Nimm das Gold - 24 Dublonen für eine Rolle, wie wir vereinbart haben.";
+			TakeNItems(pchar, "gold_dublon", 500);
+            dialog.text = "Ich nehme hundert Rollen. Nimm das Gold - 5 Dublonen für eine Rolle, wie wir vereinbart haben.";
 			link.l1 = "Dankbarkeit!";
 			link.l1.go = "mtraxx_silktrade_3";
 		break;
@@ -1136,7 +1135,7 @@ void ProcessDialogEvent()
 			// преобразуем Пикара
 			sld = characterFromId("Mrt_Rocur");
 			sld.model = "Jan_Pikar";
-			SetCharacterPerk(sld, "SwordplayProfessional");
+		
 			SetCharacterPerk(sld, "GunProfessional");
 			RemoveCharacterEquip(sld, BLADE_ITEM_TYPE);
 			RemoveCharacterEquip(sld, GUN_ITEM_TYPE);
@@ -1144,8 +1143,9 @@ void ProcessDialogEvent()
 			EquipCharacterbyItem(sld, "blade_17");
 			GiveItem2Character(sld, "pistol6");
 			EquipCharacterbyItem(sld, "pistol6");
-			TakeNItems(sld, "cartridge", 40);
-			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "cartridge");
+			TakeNItems(sld, "bullet", 40);
+			TakeNItems(sld, "gunpowder", 40);
+			LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 			GiveItem2Character(sld, "cirass7");
 			EquipCharacterbyItem(sld, "cirass7");
 			sld.dialog.currentnode = "rocur_29";
@@ -2425,7 +2425,7 @@ void ProcessDialogEvent()
 		break;
 		
 		// Rebbebion, квест "Путеводная звезда"
-		case "PZ1":
+		case "PZ_1":
 			DelLandQuestMark(npchar);
 			
 			if (pchar.questTemp.Mtraxx == "full_complete")
@@ -2445,28 +2445,28 @@ void ProcessDialogEvent()
 		case "PZ_Prince1":
 			dialog.text = "Ich sehe, es ist das Gegenteil. Was bringt dich hierher?";
 			link.l1 = "Hast du von dem neuen Bordell in Tortuga gehört?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
 		case "PZ_DeMaure1":
 			dialog.text = "Dann frag doch endlich. Du weißt, dass ich Formalitäten nicht mag, also komm zum Punkt.";
 			link.l1 = "Hast du von dem neuen Bordell in Tortuga gehört?";
-			link.l1.go = "PZ2";
+			link.l1.go = "PZ_2";
 		break;
 		
-		case "PZ2":
+		case "PZ_2":
 			dialog.text = "Bist du betrunken? Was für eine Frage ist das? Verschwende meine Zeit nicht, wenn das das ist, worüber du wirklich reden wolltest.";
 			link.l1 = "Ich nehme an, du hast es nicht gehört? Dort hat kürzlich ein neues Bordell eröffnet - ein sehr teures, in dem nur die schönsten, gesündesten und am besten gekleideten Mädchen arbeiten.";
-			link.l1.go = "PZ3";
+			link.l1.go = "PZ_3";
 		break;
 		
-		case "PZ3":
+		case "PZ_3":
 			dialog.text = "Oh, das! Natürlich habe ich gehört - wer hat das nicht?";
 			link.l1 = "Nun, ich habe erst neulich davon erfahren.";
-			link.l1.go = "PZ4";
+			link.l1.go = "PZ_4";
 		break;
 		
-		case "PZ4":
+		case "PZ_4":
 			dialog.text = "Ha-ha-ha-ha, du Schurke, verdammt nochmal! Aber warum diskutierst du das mit mir? Warum versuchst du es nicht zuerst bei Hawks? He he. Obwohl... hast du dort schon etwas Spaß gehabt?";
 			if (CheckAttribute(pchar, "questTemp.PZ.EliteWhoreFucked"))
 			{
@@ -2483,34 +2483,34 @@ void ProcessDialogEvent()
 		case "PZ_Fucked1":
 			dialog.text = "Also bist du gekommen, um anzugeben! Ha, was für ein Schelm.";
 			link.l1 = "Eigentlich nicht. Ich wollte dich wirklich etwas fragen, Marcus.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
 		case "PZ_NoFucked1":
 			dialog.text = "Du hast nicht?! Du bist ein Idiot, De Maure. Wenn ich du wäre...";
 			link.l1 = "Du hättest einen ordentlichen Exzess begonnen, das weiß ich. Aber genau das wollte ich nicht mit dir besprechen.";
-			link.l1.go = "PZ5";
+			link.l1.go = "PZ_5";
 		break;
 		
-		case "PZ5":
+		case "PZ_5":
 			dialog.text = "Was ist los? Na los, halte mich nicht in Spannung.";
 			link.l1 = "Ich suche die Besitzerin dieses Ortes. Mir wurde gesagt, sie wolle Sie treffen und eine Investitionsmöglichkeit in ihrem Handel anbieten. Sie können sie nicht verfehlen - sie ist Chinesin.";
-			link.l1.go = "PZ6";
+			link.l1.go = "PZ_6";
 		break;
 		
-		case "PZ6":
+		case "PZ_6":
 			dialog.text = "Ho ho. Nein, ich hatte in letzter Zeit nicht das Vergnügen, chinesische Frauen zu treffen. Aber ich hätte nichts dagegen, sie zu treffen und in ihr Geschäft zu investieren. Schließlich kann man nicht einfach in Levasseurs Gebiet spazieren gehen, und als Untertan Ihres Königs würde er gezwungen sein, seine Küstenschiffe auf meinen 'Drachen' zu feuern, sobald er ihn sieht.";
 			link.l1 = "Scheint, als würde sie zuerst Port-au-Prince in Betracht ziehen...";
-			link.l1.go = "PZ7";
+			link.l1.go = "PZ_7";
 		break;
 		
-		case "PZ7":
+		case "PZ_7":
 			dialog.text = "Du denkst also? Das ist ein Fehler. Selbst wenn de Mussac mehr Geld hat als ich, was ich bezweifle, kann er sich nicht leisten, einen Teil des Stadtbudgets für ein Bordell zu verwenden, egal wie viel Gold es einbringt.";
 			link.l1 = "Guter Punkt. Sie hat offensichtlich nicht über diesen Ehrgeiz von ihr nachgedacht.";
-			link.l1.go = "PZ8";
+			link.l1.go = "PZ_8";
 		break;
 		
-		case "PZ8":
+		case "PZ_8":
 			dialog.text = "Sie wissen, ich habe mich immer gefragt, wie andere Bordelle über Wasser bleiben. Es ist nicht die Fähigkeit einer Frau zu denken und vor allem zu herrschen - merken Sie sich meine Worte.";
 			link.l1 = "Nun, da liegst du falsch. Danke für deine Zeit, Marcus! Wenn ich sie zuerst treffe, werde ich ihr sagen, dass du dich freuen würdest, sie zu sehen.";
 			link.l1.go = "Exit";

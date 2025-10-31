@@ -1,361 +1,76 @@
-FMQ_1
-{
-Bertrand
-}
-FMQ_2
-{
-Pinette
-}
-
-FMQ_3
-{
-Carlos
-}
-FMQ_4
-{
-de Milyar
-}
-
-FMQ_5
-{
-Jean
-}
-FMQ_6
-{
-Deno
-}
-
-FMQ_7
-{
-Sario
-}
-
-FMQ_8
-{
-Juan
-}
-FMQ_9
-{
-Deno
-}
-
-FMQ_10
-{
-'Sario'
-}
-
-FMQ_11
-{
-~ A co do Pinette'a... Do diabła z nim, ten bankier-szuler go nie zechce.
-}
-
-FMQ_12
-{
-~ Bankier-szumowina pomoże mi to rozwiązać pod groźbą ujawnienia - list Pinette'a to bardzo poważny argument. Powinienem udać się na Gwadelupę i wjechać do miasta przez bramy miasta nocą.
-}
-
-FMQ_13
-{
-Benseсho
-}
-
-FMQ_14
-{
-konwój handlowy z San Jose
-}
-
-FMQ_15
-{
-Tryb eksploracji: wydłużony czas. Ukończ zadanie!
-}
-
-FMQ_16
-{
-Nadszedł wieczór...@<NewStr()>Żywica została pokryjomu rozładowana w stoczni...
-}
-
-FMQ_17
-{
-Topaz
-}
-
-FMQ_18
-{
-Alarm na tartanie Topaz!
-}
-
-FMQ_19
-{
-Możesz swobodnie wylądować na brzegu
-}
-
-FMQ_20
-{
-Tryb eksploracji: zadanie nie jest nieudane
-}
-
-FMQ_21
-{
-Caspar
-}
-FMQ_22
-{
-Gratton
-}
-
-FMQ_23
-{
-Zeepard
-}
-
-FMQ_24
-{
-Angielski oddział próbował zinfiltrować nasze więzienie, ale wpadł w pułapkę zastawioną przez naszego czujnego komendanta. Teraz każdy Anglik siedzi za kratkami, ha ha!
-}
-
-FMQ_25
-{
-Słuchajcie, słuchajcie! Niedawno złapali brytyjską grupę ratunkową. Chcieli uwolnić swoich rodaków z naszego więzienia, ale i tak zostali tam zamknięci!
-}
-
-FMQ_26
-{
-Filippe
-}
-FMQ_27
-{
-Jaсobsen
-}
-
-FMQ_28
-{
-Brytyjska grupa zwiadowców przybyła na naszą wyspę, ale nasz czujny dowódca znalazł i zabił ich wszystkich!
-}
-
-FMQ_29
-{
-Słyszałeś? Doszło do potyczki poza miastem. Znaleźli angielski oddział zwiadowczy. Brytyjczycy odmówili poddania się i zginęli w akcji. Dobra robota dla komendanta!
-}
-
-FMQ_30
-{
-Jedwab + 200
-}
-
-FMQ_31
-{
-O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, by stawić czoła angielskim szpiegom uzbrojonym po zęby!
-}
-
-FMQ_32
-{
-Nasze władze bardzo cię chwalą, kapitanie. Pomoc w eliminacji angielskich szpiegów to wielka sprawa!
-}
-
-FMQ_33
-{
-Angielski desant przybył na naszą wyspę, ale nasz czujny dowódca nie ziewnął, wytropił wszystkich złoczyńców i ich zabił. To wszystko!
-}
-
-FMQ_34
-{
-Słyszałeś? Doszło do potyczki poza miastem. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!
-}
-
-FMQ_35
-{
-Alarm w mieście!
-}
-
-FMQ_36
-{
-Cóż za bezczelność! Brytyjczycy w nocy zinfiltrowali nasze miasto! A jednak nasz komendant ich znalazł i zabił. Wielka sprawa!
-}
-
-FMQ_37
-{
-Słyszałeś? Doszło do w mieście do starcia. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!
-}
-
-FMQ_38
-{
-Nie umieściłeś swojego statku w zatoce!
-}
-
-FMQ_39
-{
-Hans
-}
-FMQ_40
-{
-Shulte
-}
-
-FMQ_41
-{
-Korweta 'Zeepard' siedzi nam na ogonie!
-}
-
-FMQ_42
-{
-Czy słyszałeś o tym bałaganie, który się tu wydarzył? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.
-}
-
-FMQ_43
-{
-Słyszałeś?? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.
-}
-
-FMQ_44
-{
-Tryb eksploracji: timer przedłużony. Wysadź pasażerów w miejscu docelowym!
-}
-
-FMQ_45
-{
-O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, żeby pomóc naszym marines w holenderskiej koloni!
-}
-
-FMQ_46
-{
-Gubernator bardzo cię chwali, kapitanie. Pomoc ludziom Foxa w ratowaniu uwięzionych oficerów to wielka sprawa!
-}
-
-FMQ_47
-{
-Marceline
-}
-FMQ_48
-{
-Levasseur
-}
-
-FMQ_49
-{
-Claude
-}
-FMQ_50
-{
-Durand
-}
-
-FMQ_51
-{
-Ugo
-}
-FMQ_52
-{
-
-}
-
-FMQ_53
-{
-przechwytywacz
-}
-
-FMQ_54
-{
-Domingo Albalate opuścił twój statek
-}
-
-FMQ_55
-{
-Znalazłeś ciężką książkę rachunkową
-}
-
-FMQ_56
-{
-Luis
-}
-FMQ_57
-{
-Ortiz
-}
-
-FMQ_58
-{
-Fudroyan
-}
-
-FMQ_59
-{
-Gregoire
-}
-FMQ_60
-{
-Valinnie
-}
-
-FMQ_61
-{
-Prosper
-}
-FMQ_62
-{
-Trubal
-}
-
-FMQ_63
-{
-Johnny
-}
-FMQ_64
-{
-
-}
-
-FMQ_65
-{
-Prosper nie żyje! Musiałeś więc odstąpić od 20 000 pesos dla Seliny Trubal
-}
-
-FMQ_66
-{
-Felicien
-}
-FMQ_67
-{
-Gronier
-}
-
-FMQ_68
-{
-Tryb eksploracji: podwojono czas trwania zadania
-}
-
-FMQ_69
-{
-Tryb eksploracji: usunięto licznik czasu
-}
-
-FMQ_70
-{
-Hans
-}
-FMQ_71
-{
-Shulte
-}
-
-FMQ_72
-{
-Silvestre
-}
-FMQ_73
-{
-McCoy
-}
-
-FMQ_74
-{
-Domingo
-}
-FMQ_75
-{
-Albalate
-}
-
-FMQ_76
-{
-Pare godzin później...@<NewStr()>Towar został dostarczony na brzeg
-}
+FMQ_1 {Bertrand}
+FMQ_2 {Pinette}
+FMQ_3 {Carlos}
+FMQ_4 {de Milyar}
+FMQ_5 {Jean}
+FMQ_6 {Deno}
+FMQ_7 {Sario}
+FMQ_8 {Juan}
+FMQ_9 {Deno}
+FMQ_10 {'Sario'}
+FMQ_11 {~ A co do Pinette'a... Do diabła z nim, ten bankier-szuler go nie zechce.}
+FMQ_12 {~ Bankier-szumowina pomoże mi to rozwiązać pod groźbą ujawnienia - list Pinette'a to bardzo poważny argument. Powinienem udać się na Gwadelupę i wjechać do miasta przez bramy miasta nocą.}
+FMQ_13 {Benseсho}
+FMQ_14 {konwój handlowy z San Jose}
+FMQ_15 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
+FMQ_16 {Nadszedł wieczór...@<NewStr()>Żywica została pokryjomu rozładowana w stoczni...}
+FMQ_17 {Topaz}
+FMQ_18 {Alarm na tartanie Topaz!}
+FMQ_19 {Możesz swobodnie wylądować na brzegu}
+FMQ_20 {Tryb eksploracji: zadanie nie jest nieudane}
+FMQ_21 {Caspar}
+FMQ_22 {Gratton}
+FMQ_23 {Zeepard}
+FMQ_24 {Angielski oddział próbował zinfiltrować nasze więzienie, ale wpadł w pułapkę zastawioną przez naszego czujnego komendanta. Teraz każdy Anglik siedzi za kratkami, ha ha!}
+FMQ_25 {Słuchajcie, słuchajcie! Niedawno złapali brytyjską grupę ratunkową. Chcieli uwolnić swoich rodaków z naszego więzienia, ale i tak zostali tam zamknięci!}
+FMQ_26 {Filippe}
+FMQ_27 {Jaсobsen}
+FMQ_28 {Brytyjska grupa zwiadowców przybyła na naszą wyspę, ale nasz czujny dowódca znalazł i zabił ich wszystkich!}
+FMQ_29 {Słyszałeś? Doszło do potyczki poza miastem. Znaleźli angielski oddział zwiadowczy. Brytyjczycy odmówili poddania się i zginęli w akcji. Dobra robota dla komendanta!}
+FMQ_30 {Jedwab + 200}
+FMQ_31 {O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, by stawić czoła angielskim szpiegom uzbrojonym po zęby!}
+FMQ_32 {Nasze władze bardzo cię chwalą, kapitanie. Pomoc w eliminacji angielskich szpiegów to wielka sprawa!}
+FMQ_33 {Angielski desant przybył na naszą wyspę, ale nasz czujny dowódca nie ziewnął, wytropił wszystkich złoczyńców i ich zabił. To wszystko!}
+FMQ_34 {Słyszałeś? Doszło do potyczki poza miastem. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!}
+FMQ_35 {Alarm w mieście!}
+FMQ_36 {Cóż za bezczelność! Brytyjczycy w nocy zinfiltrowali nasze miasto! A jednak nasz komendant ich znalazł i zabił. Wielka sprawa!}
+FMQ_37 {Słyszałeś? Doszło do w mieście do starcia. Znaleźliśmy angielskich sabotażystów. Odmówili poddania się i zostali zabici przez żołnierzy. Brawo dla naszego komendanta!}
+FMQ_38 {Nie umieściłeś swojego statku w zatoce!}
+FMQ_39 {Hans}
+FMQ_40 {Shulte}
+FMQ_41 {Korweta 'Zeepard' siedzi nam na ogonie!}
+FMQ_42 {Czy słyszałeś o tym bałaganie, który się tu wydarzył? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.}
+FMQ_43 {Słyszałeś?? Gubernator jest oburzony. Angielscy szpiedzy uwolnili swoich rodaków z naszego więzienia! Mówią, że jakiś Francuz miał z tym coś wspólnego.}
+FMQ_44 {Tryb eksploracji: timer przedłużony. Wysadź pasażerów w miejscu docelowym!}
+FMQ_45 {O, to ty! Brawo, kapitanie! Byłeś na tyle odważny, żeby pomóc naszym marines w holenderskiej koloni!}
+FMQ_46 {Gubernator bardzo cię chwali, kapitanie. Pomoc ludziom Foxa w ratowaniu uwięzionych oficerów to wielka sprawa!}
+FMQ_47 {Marceline}
+FMQ_48 {Levasseur}
+FMQ_49 {Claude}
+FMQ_50 {Durand}
+FMQ_51 {Ugo}
+FMQ_52 { }
+FMQ_53 {przechwytywacz}
+FMQ_54 {Domingo Albalate opuścił twój statek}
+FMQ_55 {Znalazłeś ciężką książkę rachunkową}
+FMQ_56 {Luis}
+FMQ_57 {Ortiz}
+FMQ_58 {Fudroyan}
+FMQ_59 {Gregoire}
+FMQ_60 {Valinnie}
+FMQ_61 {Prosper}
+FMQ_62 {Trubal}
+FMQ_63 {Johnny}
+FMQ_64 { }
+FMQ_65 {Prosper nie żyje! Musiałeś więc odstąpić od 20 000 pesos dla Seliny Trubal}
+FMQ_66 {Felicien}
+FMQ_67 {Gronier}
+FMQ_68 {Tryb eksploracji: podwojono czas trwania zadania}
+FMQ_69 {Tryb eksploracji: usunięto licznik czasu}
+FMQ_70 {Hans}
+FMQ_71 {Shulte}
+FMQ_72 {Silvestre}
+FMQ_73 {McCoy}
+FMQ_74 {Domingo}
+FMQ_75 {Albalate}
+FMQ_76 {Pare godzin później...@<NewStr()>Towar został dostarczony na brzeg}

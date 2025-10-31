@@ -1,581 +1,122 @@
-Saga_1
-{
-Jimmy
-}
-Saga_2
-{
-Higgins
-}
-
-Saga_3
-{
-Arbutus
-}
-
-Saga_4
-{
-Arthur
-}
-Saga_5
-{
-Donovan
-}
-
-Saga_6
-{
-Tryb eksploracji: wydłużony czas. Ukończ zadanie!
-}
-
-Saga_7
-{
-Helen McArthur zmarła na gorączke tropikalną
-}
-
-Saga_8
-{
-Enrique
-}
-Saga_9
-{
-Gonzales
-}
-
-Saga_10
-{
-Enrique
-}
-Saga_11
-{
-Galliardo
-}
-
-Saga_12
-{
-Alvares
-}
-Saga_13
-{
-Ortega
-}
-
-Saga_14
-{
-Snake Eye
-}
-Saga_15
-{
-
-}
-
-Saga_16
-{
-Wielki Krab
-}
-Saga_17
-{
-
-}
-
-Saga_18
-{
-Adolf
-}
-Saga_19
-{
-Barbier
-}
-
-Saga_20
-{
-Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?
-}
-
-Saga_21
-{
-Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?
-}
-
-Saga_22
-{
-Słyszałeś wieści? Czarodziej rivados, stary Chimiset, został zasztyletowany na śmierć w więzieniu w swojej klatce. Mówią, że zrobili to ludzie Admirała. Czarny Eddie jest po prostu wściekły...
-}
-
-Saga_23
-{
-Czarodziej Rivados, Chimiset, został zabity. Co dziwne, podejrzewają nie narwale, ale ludzi od Sharka. Rivados są bardzo źli na admirała...
-}
-
-Saga_24
-{
-Więzienie admirała zamienia się w scenę morderstwa: najpierw Alan Milrow, teraz Chimiset. Tak, admirał ostro rozprawia się ze swoimi przeciwnikami.
-}
-
-Saga_25
-{
-Czerwona Mary jest w niebezpieczeństwie. Masz tylko 100 sekund, aby ją znaleźć i pomóc!
-}
-
-Saga_26
-{
-Chwila! Powinienem porozmawiać z Mary, zanim opuszczę wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.
-}
-
-Saga_27
-{
-Powinienem porozmawiać z Mary, zanim opuszczę Wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.
-}
-
-Saga_28
-{
-Nie można przepłynąć przez rafy wyspy bez wskazówek dotyczących żeglugi!
-}
-
-Saga_29
-{
-Nie możesz zbliżyć się do wyspy - twoje statki są za duże!
-}
-
-Saga_30
-{
-Mineła godzina...@<NewStr()>Jedwab został załadowany na twój statek
-}
-
-Saga_31
-{
-Simon
-}
-Saga_32
-{
-Morelle
-}
-
-Saga_33
-{
-Odkryłeś ukrytą skrytkę Morela
-}
-
-Saga_34
-{
-Towary załadowano na statek
-}
-
-Saga_35
-{
-David
-}
-Saga_36
-{
-Fackman
-}
-
-Saga_37
-{
-Marlin
-}
-
-Saga_38
-{
-Homewrecker
-}
-
-Saga_39
-{
-Bernar
-}
-Saga_40
-{
-Vensan
-}
-
-Saga_41
-{
-Cuttlefish
-}
-
-Saga_42
-{
-Vagrant
-}
-Saga_43
-{
-
-}
-
-Saga_44
-{
-Merciless
-}
-
-Saga_45
-{
-Vampire
-}
-Saga_46
-{
-
-}
-
-Saga_47
-{
-Mina została zrzucona!
-}
-Saga_48
-{
-Masz tylko @<sti(fTemp)> aby się oddalić!
-}
-
-Saga_49
-{
-Nie udało Ci się uniknąć eksplozji!
-}
-
-Saga_50
-{
-Tak, nie byliśmy chciwi wobec prochu! Huknęło tak głośno, że prawdopodobnie słyszeli to nawet na Tortudze. Fregata zdetonowała swoje zapasy prochu, a jej kapitan poszedł na dno wraz ze swoim statkiem w mgnieniu oka.
-}
-
-Saga_51
-{
-Centurion
-}
-
-Saga_52
-{
-Chwila! Nie zaszkodzi poprosić o radę Mary, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...
-}
-
-Saga_53
-{
-Ech, szkoda, że ​​Mary tu nie ma... Na pewno by coś wymyśliła...
-}
-
-Saga_54
-{
-Chwila! Nie zaszkodzi poprosić Helen o radę, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...
-}
-
-Saga_55
-{
-Piraci rozpoznali twoją prawdziwą tożsamość!
-}
-
-Saga_56
-{
-Ładunki zostały podłożone!
-}
-
-Saga_57
-{
-Ładunki wybuchną w ciągu @<sti(fTemp)> sekund!
-}
-
-Saga_58
-{
-Randolf
-}
-Saga_59
-{
-Berns
-}
-
-Saga_60
-{
-Gregory
-}
-Saga_61
-{
-Couper
-}
-
-Saga_62
-{
-Paul
-}
-Saga_63
-{
-Molligan
-}
-
-Saga_64
-{
-Oyster
-}
-
-Saga_65
-{
-'Oyster'
-}
-
-Saga_66
-{
-Trafienie krytyczne kulami łańcuchowymi!
-}
-
-Saga_67
-{
-Znalazłem notatkę ze współrzędnymi w kabinie Milligana. Czeka tam tajemniczy kupiec. Mogę do niego popłynąć i, być może, zarobić dobrą monetę. Albo mogę dostarczyć ładunek Svenssonowi.
-}
-
-Saga_68
-{
-Pora wracać do Jana Svenssona.
-}
-
-Saga_69
-{
-Łódka
-}
-
-Saga_70
-{
-Pole Molligan zaatakował cię!
-}
-
-Saga_71
-{
-Mikhael
-}
-Saga_72
-{
-Rozencraft
-}
-
-Saga_73
-{
-Jim
-}
-Saga_74
-{
-Benson
-}
-
-Saga_75
-{
-Bald Maggy
-}
-
-Saga_76
-{
-Raymond Backer jest na pokładzie
-}
-
-Saga_77
-{
-Raymond
-}
-Saga_78
-{
-Baсker
-}
-
-Saga_79
-{
-Jessica
-}
-Saga_80
-{
-Rose
-}
-
-Saga_81
-{
-David
-}
-Saga_82
-{
-Fackman
-}
-
-Saga_83
-{
-Lugier kurierski z Karakasu
-}
-
-Saga_84
-{
-Tryb eksploracji: licznik czasu jest wyłączony.
-}
-
-Saga_85
-{
-Steven
-}
-Saga_86
-{
-Dodson
-}
-
-Saga_87
-{
-Hiszpański Złoty Konwój już na horyzoncie!
-}
-
-Saga_88
-{
-El Carnivoro
-}
-
-Saga_89
-{
-San Raphael
-}
-
-Saga_90
-{
-Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosami! Wszystko w porządku, jeszcze będą cierpieć: wciąż mają dużo bogactwa...
-}
-
-Saga_91
-{
-Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosem! Jednak przedtem ich pobiliśmy, hehe. Nieważne, tolerować: wciąż mają dużo bogactwa...
-}
-
-Saga_92
-{
-Zatopiliśmy całą eskadrę eskortową! Niech się dobrze zastanowią, zanim zaczną z nami zadzierać!
-}
-
-Saga_93
-{
-Jose Dios wykonał kopie doskonałych map.
-}
-
-Saga_94
-{
-Jose Dios sporządził kopię Doskonałej mapy archipelagu.
-}
-
-Saga_95
-{
-Minął jeden dzień...@<NewStr()>Srebro zostało przeniesione do twojej ładowni
-}
-
-Saga_96
-{
-Moknitekuvry
-}
-Saga_97
-{
-
-}
-
-Saga_98
-{
-Mineło @<iTemp> godzin...
-}
-
-Saga_99
-{
-Mówią, że nasz admirał zabił Alana Milrowa, szefa Narwalsów. Teraz są bardzo źli na piratów...
-}
-
-Saga_100
-{
-Czerwona Mary całkowicie się załamała po tragicznej śmierci swojego chłopaka Alana Milrowa. Siedzi w swojej kabinie „Ceres Smithy” i płacze każdej nocy... Biedna dziewczyna.
-}
-
-Saga_101
-{
-Zamordowali głowę Narwalsów w więzieniu. Straszny czyn, mówię wam. Zabić bezbronnego człowieka tak po prostu...
-}
-
-Saga_102
-{
-Słuchajcie, słuchajcie! Alan trafił do więzienia admirała, spędził kilka miesięcy w klatce, po czym został zabity bez żadnego procesu. A nasza ekscentryczna Czerwona Mary jest całkowicie zagubiona w swojej kajucie „Ceres Smithy”. Biedna dziewczyna, płacze co każdą noc z tego powodu. Kiedyś była takim radosnym ptaszkiem!
-}
-
-Saga_103
-{
-Użyto eliksiru Komanczów
-}
-Saga_104
-{
-Czujesz się całkowicie wyleczony!
-}
-
-Saga_105
-{
-Mówią, że Adolf Barbier jest zaginął. Tak, łatwe pieniądze nie wychodzą mu na dobre...
-}
-
-Saga_106
-{
-Czy wiesz gdzie jest Adolf Barbier? Zniknął zaraz po tym jak dostał pieniądze i nową kajute...
-}
-
-Saga_107
-{
-Tutaj dzieją się dziwne rzeczy. Ta szalona Red Mary zniknęła wraz z Chadem Kapperem. Jestem pewien, że to sprawka Rivadosa. Pomścili swojego czarodzieja...
-}
-
-Saga_108
-{
-Teraz zagineła Red Mary. Prawdopodobnie martwa, tak się dzieje, gdy zadziera się z Rivadosem. Jestem pewien, że to oni są odpowiedzialni za zniknięcie Chada i Mary.
-}
-
-Saga_109
-{
-Mówią, że wczoraj wieczorem z „Caroline” dochodziły dziwne dźwięki, ktoś tam walczył i usłyszeli krzyk kobiety przed śmiercią. Wierzę, że to wyjaśnia zniknięcie Mary Casper. Biedna dziewczyna! Jestem pewien, że nigdy jej już nie zobaczymy...
-}
-
-Saga_110
-{
-Mineły trzy godziny...
-}
-
-Saga_111
-{
-Następnego ranka...
-}
-
-Saga_112
-{
-Wielki Krab
-}
-Saga_113
-{
-
-}
-
-Saga_114
-{
-Znalazłeś odpowiednią skrzynię@<NewStr()>Złoto kapitana zostało odkryte!
-}
-
-Saga_115
-{
-Jessica odebrała ci możliwość biegania!
-}
-
-Saga_116
-{
-Jessica wchłonęła twoją moc - wszystkie umiejętności władania bronią zostały obniżone o 30 punktów!
-}
-
-Saga_117
-{
-Jessica wchłonęła Twoją zwinność - energia jest teraz o 20 punktów niższa!
-}
-
-Saga_118
-{
-Spędziłeś długie godziny na modlitwie...@<NewStr()>Wszystkie świece wypaliły się...
-}
-
-Saga_119
-{
-Jessica
-}
-Saga_120
-{
-Rose
-}
-
-Saga_121
-{
-Proces się odbył!
-}
-Saga_122
-{
-Minęła godzina...@<NewStr()>Dotarłeś do wraku statku
-}
+Saga_1 {Jimmy}
+Saga_2 {Higgins}
+Saga_3 {Arbutus}
+Saga_4 {Arthur}
+Saga_5 {Donovan}
+Saga_6 {Tryb eksploracji: wydłużony czas. Ukończ zadanie!}
+Saga_7 {Helen McArthur zmarła na gorączke tropikalną}
+Saga_8 {Enrique}
+Saga_9 {Gonzales}
+Saga_10 {Enrique}
+Saga_11 {Galliardo}
+Saga_12 {Alvares}
+Saga_13 {Ortega}
+Saga_14 {Snake Eye}
+Saga_15 { }
+Saga_16 {Wielki Krab}
+Saga_17 { }
+Saga_18 {Adolf}
+Saga_19 {Barbier}
+Saga_20 {Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?}
+Saga_21 {Krążą plotki, że strażnik admirała, Chad Capper, zniknął bez śladu. Może Shark zlecił mu tajną misję?}
+Saga_22 {Słyszałeś wieści? Czarodziej rivados, stary Chimiset, został zasztyletowany na śmierć w więzieniu w swojej klatce. Mówią, że zrobili to ludzie Admirała. Czarny Eddie jest po prostu wściekły...}
+Saga_23 {Czarodziej Rivados, Chimiset, został zabity. Co dziwne, podejrzewają nie narwale, ale ludzi od Sharka. Rivados są bardzo źli na admirała...}
+Saga_24 {Więzienie admirała zamienia się w scenę morderstwa: najpierw Alan Milrow, teraz Chimiset. Tak, admirał ostro rozprawia się ze swoimi przeciwnikami.}
+Saga_25 {Czerwona Mary jest w niebezpieczeństwie. Masz tylko 100 sekund, aby ją znaleźć i pomóc!}
+Saga_26 {Chwila! Powinienem porozmawiać z Mary, zanim opuszczę wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.}
+Saga_27 {Powinienem porozmawiać z Mary, zanim opuszczę Wyspę. Nie wybaczy mi, jeśli zniknę bez ostrzeżenia.}
+Saga_28 {Nie można przepłynąć przez rafy wyspy bez wskazówek dotyczących żeglugi!}
+Saga_29 {Nie możesz zbliżyć się do wyspy - twoje statki są za duże!}
+Saga_30 {Mineła godzina...@<NewStr()>Jedwab został załadowany na twój statek}
+Saga_31 {Simon}
+Saga_32 {Morelle}
+Saga_33 {Odkryłeś ukrytą skrytkę Morela}
+Saga_34 {Towary załadowano na statek}
+Saga_35 {David}
+Saga_36 {Fackman}
+Saga_37 {Marlin}
+Saga_38 {Homewrecker}
+Saga_39 {Bernar}
+Saga_40 {Vensan}
+Saga_41 {Cuttlefish}
+Saga_42 {Vagrant}
+Saga_43 { }
+Saga_44 {Merciless}
+Saga_45 {Vampire}
+Saga_46 { }
+Saga_47 {Mina została zrzucona!}
+Saga_48 {Masz tylko @<sti(fTemp)> aby się oddalić!}
+Saga_49 {Nie udało Ci się uniknąć eksplozji!}
+Saga_50 {Tak, nie byliśmy chciwi wobec prochu! Huknęło tak głośno, że prawdopodobnie słyszeli to nawet na Tortudze. Fregata zdetonowała swoje zapasy prochu, a jej kapitan poszedł na dno wraz ze swoim statkiem w mgnieniu oka.}
+Saga_51 {Centurion}
+Saga_52 {Chwila! Nie zaszkodzi poprosić o radę Mary, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...}
+Saga_53 {Ech, szkoda, że ​​Mary tu nie ma... Na pewno by coś wymyśliła...}
+Saga_54 {Chwila! Nie zaszkodzi poprosić Helen o radę, ostatnio pomogła z bombą! Jej pomysłowa głowa może znów podsunąć jakiś pomysł...}
+Saga_55 {Piraci rozpoznali twoją prawdziwą tożsamość!}
+Saga_56 {Ładunki zostały podłożone!}
+Saga_57 {Ładunki wybuchną w ciągu @<sti(fTemp)> sekund!}
+Saga_58 {Randolf}
+Saga_59 {Berns}
+Saga_60 {Gregory}
+Saga_61 {Couper}
+Saga_62 {Paul}
+Saga_63 {Molligan}
+Saga_64 {Oyster}
+Saga_65 {'Oyster'}
+Saga_66 {Trafienie krytyczne kulami łańcuchowymi!}
+Saga_67 {Znalazłem notatkę ze współrzędnymi w kabinie Milligana. Czeka tam tajemniczy kupiec. Mogę do niego popłynąć i, być może, zarobić dobrą monetę. Albo mogę dostarczyć ładunek Svenssonowi.}
+Saga_68 {Pora wracać do Jana Svenssona.}
+Saga_69 {Łódka}
+Saga_70 {Pole Molligan zaatakował cię!}
+Saga_71 {Mikhael}
+Saga_72 {Rozencraft}
+Saga_73 {Jim}
+Saga_74 {Benson}
+Saga_75 {Bald Maggy}
+Saga_76 {Raymond Backer jest na pokładzie}
+Saga_77 {Raymond}
+Saga_78 {Baсker}
+Saga_79 {Jessica}
+Saga_80 {Rose}
+Saga_81 {David}
+Saga_82 {Fackman}
+Saga_83 {Lugier kurierski z Karakasu}
+Saga_84 {Tryb eksploracji: licznik czasu jest wyłączony.}
+Saga_85 {Steven}
+Saga_86 {Dodson}
+Saga_87 {Hiszpański Złoty Konwój już na horyzoncie!}
+Saga_88 {El Carnivoro}
+Saga_89 {San Raphael}
+Saga_90 {Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosami! Wszystko w porządku, jeszcze będą cierpieć: wciąż mają dużo bogactwa...}
+Saga_91 {Udało nam się uciec hiszpańskiej eskadrze bezpieczeństwa i zostawić ich z nosem! Jednak przedtem ich pobiliśmy, hehe. Nieważne, tolerować: wciąż mają dużo bogactwa...}
+Saga_92 {Zatopiliśmy całą eskadrę eskortową! Niech się dobrze zastanowią, zanim zaczną z nami zadzierać!}
+Saga_93 {Jose Dios wykonał kopie doskonałych map.}
+Saga_94 {Jose Dios sporządził kopię Doskonałej mapy archipelagu.}
+Saga_95 {Minął jeden dzień...@<NewStr()>Srebro zostało przeniesione do twojej ładowni}
+Saga_96 {Moknitekuvry}
+Saga_97 { }
+Saga_98 {Mineło @<iTemp> godzin...}
+Saga_99 {Mówią, że nasz admirał zabił Alana Milrowa, szefa Narwalsów. Teraz są bardzo źli na piratów...}
+Saga_100 {Czerwona Mary całkowicie się załamała po tragicznej śmierci swojego chłopaka Alana Milrowa. Siedzi w swojej kabinie „Ceres Smithy” i płacze każdej nocy... Biedna dziewczyna.}
+Saga_101 {Zamordowali głowę Narwalsów w więzieniu. Straszny czyn, mówię wam. Zabić bezbronnego człowieka tak po prostu...}
+Saga_102 {Słuchajcie, słuchajcie! Alan trafił do więzienia admirała, spędził kilka miesięcy w klatce, po czym został zabity bez żadnego procesu. A nasza ekscentryczna Czerwona Mary jest całkowicie zagubiona w swojej kajucie „Ceres Smithy”. Biedna dziewczyna, płacze co każdą noc z tego powodu. Kiedyś była takim radosnym ptaszkiem!}
+Saga_103 {Użyto eliksiru Komanczów}
+Saga_104 {Czujesz się całkowicie wyleczony!}
+Saga_105 {Mówią, że Adolf Barbier jest zaginął. Tak, łatwe pieniądze nie wychodzą mu na dobre...}
+Saga_106 {Czy wiesz gdzie jest Adolf Barbier? Zniknął zaraz po tym jak dostał pieniądze i nową kajute...}
+Saga_107 {Tutaj dzieją się dziwne rzeczy. Ta szalona Red Mary zniknęła wraz z Chadem Kapperem. Jestem pewien, że to sprawka Rivadosa. Pomścili swojego czarodzieja...}
+Saga_108 {Teraz zagineła Red Mary. Prawdopodobnie martwa, tak się dzieje, gdy zadziera się z Rivadosem. Jestem pewien, że to oni są odpowiedzialni za zniknięcie Chada i Mary.}
+Saga_109 {Mówią, że wczoraj wieczorem z „Caroline” dochodziły dziwne dźwięki, ktoś tam walczył i usłyszeli krzyk kobiety przed śmiercią. Wierzę, że to wyjaśnia zniknięcie Mary Casper. Biedna dziewczyna! Jestem pewien, że nigdy jej już nie zobaczymy...}
+Saga_110 {Mineły trzy godziny...}
+Saga_111 {Następnego ranka...}
+Saga_112 {Wielki Krab}
+Saga_113 { }
+Saga_114 {Znalazłeś odpowiednią skrzynię@<NewStr()>Złoto kapitana zostało odkryte!}
+Saga_115 {Jessica odebrała ci możliwość biegania!}
+Saga_116 {Jessica wchłonęła twoją moc - wszystkie umiejętności władania bronią zostały obniżone o 30 punktów!}
+Saga_117 {Jessica wchłonęła Twoją zwinność - energia jest teraz o 20 punktów niższa!}
+Saga_118 {Spędziłeś długie godziny na modlitwie...@<NewStr()>Wszystkie świece wypaliły się...}
+Saga_119 {Jessica}
+Saga_120 {Rose}
+Saga_121 {Proces się odbył!}
+Saga_122 {Minęła godzina...@<NewStr()>Dotarłeś do wraku statku}

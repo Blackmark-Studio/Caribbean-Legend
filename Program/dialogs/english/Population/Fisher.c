@@ -19,7 +19,7 @@ void ProcessDialogEvent()
 			if (npchar.quest.meeting == "0")
 			{
 				dialog.text = "What do you want?";
-				link.l1 = "Nohing.";
+				link.l1 = "Nothing.";
 				link.l1.go = "exit";
 				npchar.quest.meeting = "1";
 			}
@@ -33,14 +33,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "":
-			dialog.text = NPCStringReactionRepeat("", 
-				"", 
-				"",
-                "", "block", 1, npchar, Dialog.CurrentNode);
-			link.l1 = HeroStringReactionRepeat("", 
-				"",
-                "", 
-				"", npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("","","","","block",1,npchar,Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat("","","","",npchar,Dialog.CurrentNode);
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 

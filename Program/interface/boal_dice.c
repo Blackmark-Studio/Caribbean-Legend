@@ -45,6 +45,7 @@ void InitInterface(string iniName)
 	SetEventHandler("My_eCompTurn","CompTurn",0);
 	SetEventHandler("My_eCheckGame","CheckGame",0);
     SetEventHandler("ShowInfoWindow","ShowInfoWindow",0);
+	SetEventHandler("HideInfoWindow","HideInfoWindow",0);
 	SetEventHandler("MouseRClickUp","HideInfoWindow",0);
 	/*
 	gold, silver   - 100x100
@@ -166,6 +167,7 @@ void Exit()
     	DelEventHandler("My_eCompTurn","CompTurn");
     	DelEventHandler("My_eCheckGame","CheckGame");
 		DelEventHandler("ShowInfoWindow","ShowInfoWindow");
+		DelEventHandler("HideInfoWindow","HideInfoWindow");
 		DelEventHandler("MouseRClickUp","HideInfoWindow");
 
         if (sti(pchar.GenQuest.Dice.SitType) == true)
@@ -226,18 +228,18 @@ void Exit()
 void ShowInfoWindow()
 {
 	string sHeader,sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
-
+	string sCurrentNode = GetEventData();
 	sHeader = XI_ConvertString("titleDice");
 	sText1 = XI_ConvertString("RulesDice1");
 	sText2 = XI_ConvertString("RulesDice2");
 	sText3 = XI_ConvertString("RulesDice3");
 	
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,192,255,192), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	CreateTooltipNew(sCurrentNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, 64, 64, false);
 }
 
 void HideInfoWindow()
 {
-	CloseTooltip();
+	CloseTooltipNew();
 }
 
 void ProcessCommandExecute()

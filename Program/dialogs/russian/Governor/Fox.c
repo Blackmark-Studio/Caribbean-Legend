@@ -30,7 +30,7 @@ void ProcessDialogEvent()
 			// Addon-2016 Jason, французские миниквесты (ФМК) Сент-Кристофер
 			if (CheckAttribute(pchar, "questTemp.FMQN") && pchar.questTemp.FMQN == "eng_reward")
 			{
-				dialog.text = "Как я понимаю, вы - тот самый французский капитан, который помог моим людям выполнить задание на Синт-Маартене? "+TimeGreeting()+"!";
+				dialog.text = "Как я понимаю, вы - "+GetSexPhrase("тот самый капитан"," та самая женщина-капитан")+" , котор"+GetSexPhrase("ый","ая")+" помог"+GetSexPhrase("","ла")+" моим людям выполнить задание на Синт-Маартене? "+TimeGreeting()+"!";
 				link.l1 = TimeGreeting()+", полковник. Да, это именно я.";
 				link.l1.go = "FMQN";
 				break;
@@ -68,31 +68,8 @@ void ProcessDialogEvent()
 		case "guardoftruth_4":
 			dialog.text = "Допрашивал, но он только смеялся мне в лицо. Однако меня, честно говоря, его схроны не интересуют. Ролли Колпак вздёрнут на виселице - и это главное.";
 			link.l1 = "Понятно. Спасибо за рассказ и за то, что уделили время! До свидания...";
-			link.l1.go = "guardoftruth_5";
-		break;
-		
-		case "guardoftruth_5":
-			DialogExit();
-			npchar.quest.utensil = "true";
-			AddQuestRecord("Guardoftruth", "24");
-			Island_SetReloadEnableGlobal("Dominica", true);//patch-7
-			// заполняем сундук
-			pchar.GenQuestBox.Shore27 = true;
-			pchar.GenQuestBox.Shore27.box1.money = 30000;
-			pchar.GenQuestBox.Shore27.box1.items.gold_dublon = 100;
-			pchar.GenQuestBox.Shore27.box1.items.chest = 1;
-			pchar.GenQuestBox.Shore27.box1.items.icollection = 1;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry40 = 15;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry41 = 22;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry42 = 8;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry43 = 20;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry44 = 33;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry45 = 16;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry46 = 58;
-			pchar.GenQuestBox.Shore27.box1.items.jewelry35 = 1; // кадило
-			pchar.quest.GuardOT_finddominicachest.win_condition.l1 = "item";
-			pchar.quest.GuardOT_finddominicachest.win_condition.l1.item = "jewelry35";
-			pchar.quest.GuardOT_finddominicachest.function = "GuardOT_DominicaChest";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("GuardOT_Fox_DlgExit");
 		break;
 		
 		case "terrapin":
@@ -156,12 +133,12 @@ void ProcessDialogEvent()
 		
 		case "FMQN_1":
 			dialog.text = "Само собой, попутной наградой вам явится почёт и уважение английских колонистов, властей и моё лично. Выражаю вам свою благодарность за то, что не бросили моих людей и помогли им!";
-			link.l1 = "Всегда рад, полковник...";
+			link.l1 = "Всегда рад"+GetSexPhrase("","а")+", полковник...";
 			link.l1.go = "FMQN_2";
 		break;
 		
 		case "FMQN_2":
-			dialog.text = "А теперь прошу меня простить - дела ждут. Попутного ветра, капитан.";
+			dialog.text = "А теперь прошу меня простить - дела ждут. Попутного ветра, капитан "+pchar.lastname+".";
 			link.l1 = "До свидания, сэр.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQN_EnglandComplete");

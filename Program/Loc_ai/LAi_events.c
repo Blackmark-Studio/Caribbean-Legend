@@ -195,24 +195,22 @@ void LAi_CharacterAttack()
 	aref enemy = GetEventData();
 	string attackType = GetEventData();
 	bool isBlocked = GetEventData();
+	float blockTime = GetEventData();		// время в секундах с момента прожатия блока
+	float defenceAngle = GetEventData();	// угол между направлением защищающегося персонажа и направлением, с которого пришла атака
+	bool isMiniStrike = GetEventData();		// показатель микроудара, требующий снижения урона
+	bool isBackstab = abs(180.0 - Radian2Degree(defenceAngle)) <= BACKSTAB_ANGLE; // удар в спину
+	
+	//Log_Chr(enemy, blockTime + "s block time");
+	//Log_Chr(enemy, fts(Radian2Degree(defenceAngle), 0) + "deg. block angle");
+	
 	/*if(attack.id == pchar.id)
 	{
 		pchar.combo.target = sti(enemy.index);
 	}   */
 	if(isBlocked == true)  // to_do
 	{
-		if(CheckCharacterPerk(attack, "sliding"))
-		{
-			int iRand = rand(100);
-			// belamour legendary edition бонус за удачу
-			if(iRand < 20 + GetCharacterSPECIALSimple(attack, SPECIAL_L))
-			{
-				isBlocked = false;
-			}
-		}
 		if(GetCharacterEquipByGroup(enemy, BLADE_ITEM_TYPE) == "topor_07") isBlocked = false;
 		if(CheckAttribute(attack, "cheats.sliding")) isBlocked = false;
-		
 	}
 	if(CheckAttribute(enemy, "cheats.NOsliding")) isBlocked = true;
 	//Реакция груп на атаку
@@ -240,7 +238,7 @@ void LAi_CharacterAttack()
 	}
 	
 	//Начисление повреждений
-	LAi_ApplyCharacterAttackDamage(attack, enemy, attackType, isBlocked);
+	LAi_ApplyCharacterAttackDamage(&attack, &enemy, attackType, isBlocked, isBackstab, isMiniStrike);
 	//Обновим цель сразу
 	LAi_group_UpdateTargets(enemy);
 	string func = enemy.chr_ai.type;
@@ -273,9 +271,10 @@ void LAi_CharacterFire()
 			{
 				DeleteAttribute(talisman, "durability");
 				RemoveCharacterEquip(attack, TALISMAN_ITEM_TYPE);
-				RemoveItems(attack, "talisman20", 1)
+				RemoveItems(attack, "talisman20", 1);
+				CT_UpdateCashTables(attack);
 				GiveItem2Character(attack, "talisman20_part");
-				notification(StringFromKey("LAi_events_1"), "none");
+				notification(StringFromKey("LAi_events_1"), "ItemDestroy");
 			}
 			else
 			{
@@ -301,6 +300,10 @@ void LAi_CharacterFire()
 	{
 		notification(XI_ConvertString("hat7"), "Fortune");
 		PlayStereoSound("interface\new_level.wav");
+	}
+	else if (!IsMainCharacter(attack) && HasPerk(attack, "PowderFeel") && fPercentChance(PERK_VALUE2_POWDER_FEEL))
+	{
+		Log_TestInfo(attack.name + " сэкономил выстрел");
 	}
 	else
 	{
@@ -330,27 +333,7 @@ void LAi_CharacterFire()
 	//weaponID = GetCharacterEquipByGroup(attack, sType);
 	aref weapon;
 	Items_FindItem(weaponID, &weapon);
-	// belamour расширенное издание разрыв ствола от х2 боеприпаса
-	if(HasSubStr(sBullet, "double") && !IsEquipCharacterByArtefact(attack, "indian_2") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
-	{
-		LAi_Explosion(attack, rand(40));
-  		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
-        TakeItemFromCharacter(attack, weaponID);
-		if(ShowCharString()) Log_Chr(attack, XI_ConvertString("GunBreakLog"));
-		else Log_Info(XI_ConvertString("GunBreak1") + GetCharacterFullName(attack.id) + XI_ConvertString("GunBreak2"));
-		return;
-	}
-	// belamour legendary edition пороховой тестер уменьшает разрыв ствола -->
-	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.(sType).misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
-	{
-		LAi_Explosion(attack, rand(20));
-  		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
-        TakeItemFromCharacter(attack, weaponID);
-		if(ShowCharString()) Log_Chr(attack, XI_ConvertString("GunBreakLog"));
-		else Log_Info(XI_ConvertString("GunBreak1") + GetCharacterFullName(attack.id) + XI_ConvertString("GunBreak2"));
-		return;
-	}
-	
+
 	//Если промахнулись, то ничего не делаем
 	if(isFindedEnemy == 0)
 	{
@@ -381,26 +364,8 @@ void LAi_CharacterFire()
 			findCh = GetCharacter(idx);	
 			if(findCh.chr_ai.group != LAI_GROUP_PLAYER)
 			{
-				LAi_ApplyCharacterFireDamage(attack, &Characters[idx], kDist, fAimingTime, isHeadShot, 1);
+				LAi_ApplyCharacterFireDamage(&attack, &Characters[idx], 1, fAimingTime, isHeadShot, 1);
 			}	
-			
-			if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
-			{
-				if(CheckAttribute(enemy, "cirassId"))
-				{
-					if(sti(attack.chr_ai.Stun_C) > 0) 
-					{
-						LAi_Stunned_StunCharacter(enemy, 10, true);
-					}
-				}
-				else
-				{
-					if(sti(attack.chr_ai.(sType).Stun_NC) > 0) 
-					{
-						LAi_Stunned_StunCharacter(enemy, 10, true);
-					}
-				}		
-			}			
 									
 			if( CheckAttribute(attack, "chr_ai."+sType+".selfdmg" ) && sti(attack.chr_ai.(sType).selfdmg) > 0 && findCh.id == attack.id && rand(4) == 1)	
 			{
@@ -409,30 +374,15 @@ void LAi_CharacterFire()
 			}
 		}
 	}
-
-	if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
-	{
-		if(CheckAttribute(enemy, "cirassId"))
-		{
-			if(sti(attack.chr_ai.(sType).Stun_C) > 0) 
-			{
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-			}
-		}
-		else
-		{		
-			if(sti(attack.chr_ai.(sType).Stun_NC) > 0) 
-			{
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-			}
-		}		
-	}
 	// <-- ugeen
 	
 	//Реакция груп на атаку
 	LAi_group_Attack(attack, enemy);
+	
+	CheckSlowDown(attack, enemy);
+	
 	//Начисление повреждений
-	LAi_ApplyCharacterFireDamage(attack, enemy, kDist, fAimingTime, isHeadShot, 1);
+	LAi_ApplyCharacterFireDamage(&attack, &enemy, 1, fAimingTime, isHeadShot, 1);
 	if(CheckAttribute(attack, "chr_ai." + sType + ".multidmg") && sti(attack.chr_ai.(sType).multidmg) > 0)
 	{
 		if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) enemy.chr_ai.hp = 5;
@@ -799,6 +749,7 @@ void Location_CharacterFireShards()
 	float fAimingTime = GetEventData();
 	int nShots = GetEventData();
 	int nHeadShots = GetEventData();
+	int nEnemies = GetEventData();
 	
 	string sType;
 	if(!CharUseMusket(attack))
@@ -806,28 +757,14 @@ void Location_CharacterFireShards()
 	else
 		sType = "musket";
 	
-	if(CheckAttribute(attack, "chr_ai."+sType+".stun" ) && sti(attack.chr_ai.(sType).stun) > 0 && !LAi_IsFightMode(enemy) && !IsMainCharacter(enemy))
-	{
-		if(CheckAttribute(enemy, "cirassId"))
-		{
-			if(sti(attack.chr_ai.(sType).Stun_C) > 0) 
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-		}
-		else
-		{		
-			if(sti(attack.chr_ai.(sType).Stun_NC) > 0) 
-				LAi_Stunned_StunCharacter(enemy, 10, true);
-		}		
-	}
-	
 	LAi_group_Attack(attack, enemy);
 	
 	if(nHeadShots > 0)
-		LAi_ApplyCharacterFireDamage(attack, enemy, 1.0, fAimingTime, true, nHeadShots);
+		LAi_ApplyCharacterFireDamage(&attack, &enemy, nEnemies, fAimingTime, true, nHeadShots);
 	LAi_CheckKillCharacter(enemy);
 	
 	if(nShots > 0)
-		LAi_ApplyCharacterFireDamage(attack, enemy, 1.0, fAimingTime, false, nShots);
+		LAi_ApplyCharacterFireDamage(&attack, &enemy, nEnemies, fAimingTime, false, nShots);
 	if(stf(enemy.chr_ai.hp) < 1.0 && enemy.chr_ai.group == LAI_GROUP_PLAYER) 
 		enemy.chr_ai.hp = 5;
 	LAi_CheckKillCharacter(enemy);
@@ -891,27 +828,88 @@ void Location_CharacterFireShardEnd()
 	//weaponID = GetCharacterEquipByGroup(attack, sType);
 	aref weapon;
 	Items_FindItem(weaponID, &weapon);
-	// belamour расширенное издание разрыв ствола от х2 боеприпаса
-	if(HasSubStr(sBullet, "double") && !IsEquipCharacterByArtefact(attack, "indian_2") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
-	{
-		LAi_Explosion(attack, rand(40));
-  		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
-        TakeItemFromCharacter(attack, weaponID);
-		if(ShowCharString()) Log_Chr(attack, XI_ConvertString("GunBreakLog"));
-		else Log_Info(XI_ConvertString("GunBreak1") + GetCharacterFullName(attack.id) + XI_ConvertString("GunBreak2"));
-		return;
-	}
-	// belamour legendary edition пороховой тестер уменьшает разрыв ствола -->
-	if(attack.id != "Blaze" && CheckAttribute(attack, "chr_ai."+sType+".misfire") && sti(attack.chr_ai.(sType).misfire) > 0 && rand(100)*isEquippedArtefactUse(attack, "indian_2", 1.0, 2.0) < sti(attack.chr_ai.misfire) && !HasSubStr(weapon.id, "mushket") && GetCharacterEquipByGroup(attack, CIRASS_ITEM_TYPE) != "cirass10")
-	{
-		LAi_Explosion(attack, rand(20));
-  		if(GetCharacterItem(attack, weaponID) <= 1) RemoveCharacterEquip(attack, weapon.groupID);
-        TakeItemFromCharacter(attack, weaponID);
-		if(ShowCharString()) Log_Chr(attack, XI_ConvertString("GunBreakLog"));
-		else Log_Info(XI_ConvertString("GunBreak1") + GetCharacterFullName(attack.id) + XI_ConvertString("GunBreak2"));
-		return;
-	}
-	
+
 	if(CheckAttribute(attack, "chr_ai.explosion" ) && sti(attack.chr_ai.explosion) > 0)
 		PlayStereoSound("Sea Battles\cannon_fire_03.wav");
+}
+
+// возвращаем максимальный угол блока в радианах, считается от направления защищающегося вправо и влево (как курсовой угол)
+#event_handler("Event_GetBackBlockAngle","Event_GetBackBlockAngle");
+float Event_GetBackBlockAngle()
+{
+	aref attack = GetEventData();
+	aref enemy = GetEventData();
+	return Degree2Radian(180.0-BACKSTAB_ANGLE);
+}
+
+// возвращаем пробитие блока особыми способностями, 1 - пробит, 0 - не пробит
+#event_handler("Event_CheckBlockBypass","Event_CheckBlockBypass");
+int Event_CheckBlockBypass()
+{
+	aref attack = GetEventData();
+	aref enemy = GetEventData();
+	if (attack.sex == "woman" ) return false;
+
+	return Perk_Sliding(attack);
+}
+
+#event_handler("Event_CheckPowerBreak","Event_CheckPowerBreak");
+int Event_CheckPowerBreak()
+{
+	aref attack = GetEventData();
+	if (attack.sex == "woman" || !HasPerk(&attack, "HardHitter")) return 0;
+	if (!HasHeavyWeapon(&attack)) return 0;
+	return 1;
+}
+
+#event_handler("Event_CheckPowerRound","Event_CheckPowerRound");
+int Event_CheckPowerRound()
+{
+	aref attack = GetEventData();
+	if (attack.sex == "woman" || !HasPerk(&attack, "Flanking")) return 0;
+	return 1;
+}
+
+#event_handler("Event_CheckKneeShot","Event_CheckKneeShot");
+int Event_CheckKneeShot()
+{
+	aref attack = GetEventData();
+	if (attack.sex == "woman" || !HasPerk(&attack, "Drill")) return 0;
+	return 1;
+}
+
+
+#event_handler("Event_PerkCollection", "Event_PerkCollection")
+void Event_PerkCollection()
+{
+	if (!HasPerk(pchar, "Collection")) return;
+	if (!HasSubStr(pchar.location.from_sea, "town")) return;
+	ref location = &Locations[FindLocation(pchar.location.from_sea)];
+	ref colony = &Colonies[FindColony(location.fastreload)];
+	if (GetRelation2BaseNation(sti(colony.nation)) == RELATION_ENEMY && !CheckNationLicence(HOLLAND)) return;
+	int cabinIdx = FindLocation(Get_My_Cabin());
+	if (cabinIdx < 0) return;
+	ref cabin = &locations[cabinIdx];
+	if (!CheckAttribute(cabin, "box1")) return;
+
+	int exoticQty = GetAttributeInt(pchar, "ct.equip.descriptors.Exotic");
+	Log_Info("Деньги за коллекцию?: " + exoticQty);
+	AddToAttributeInt(cabin, "box1.money", exoticQty * PERK_VALUE_COLLECTION);
+}
+
+void CheckSlowDown(ref attack, ref enemy)
+{
+	if (!HasPerk(attack, "ShootToKill")) return;
+	SetChrModifier(enemy, M_MOVE_SPEED, -PERK_VALUE_SHOOT_TO_KILL, "ShootToKill")
+	CT_UpdateEquipTable(enemy);
+	CT_UpdateLandTable(enemy);
+	enemy.chr_ai.slowdown = PERK_VALUE2_SHOOT_TO_KILL;
+}
+
+void RemoveSlowDown(ref chr)
+{
+	DeleteAttribute(chr, "chr_ai.slowdown");
+	RemoveChrModifier(chr, "ShootToKill");
+	CT_UpdateEquipTable(chr);
+	CT_UpdateLandTable(chr);	
 }

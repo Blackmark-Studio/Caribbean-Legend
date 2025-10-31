@@ -178,6 +178,8 @@ void SetOfficersInCabin()
     ref chr, mchr;
     int i;
     int idx;
+	
+	bool bFirstOfficerIsWoman = false;
     
     mchr = GetMainCharacter();
 	for (i = 1; i < 4; i++)
@@ -185,7 +187,52 @@ void SetOfficersInCabin()
 		idx = GetOfficersIndex(mchr, i);
 		if (idx < 1) continue;
 		chr = &Characters[idx];
-		PlaceCharacter(chr, "rld", mchr.location);
+		if(NeedCabinTmpl())
+		{
+			if(chr.id == "Helena" && CheckAttribute(pchar, "questTemp.Saga.Helena_officer")) 
+			{
+				ChangeCharacterAddressGroup(chr, mchr.location, "girl", "sit1");
+			}
+			else if(chr.id == "Mary" && CheckAttribute(pchar, "questTemp.LSC.Mary_officer"))
+			{
+				ChangeCharacterAddressGroup(chr, mchr.location, "girl", "sit1");
+			}
+			else 
+			{
+				if(i == 1)
+				{
+					if(chr.sex == "man") 
+					{
+						ChangeCharacterAddressGroup(chr, mchr.location, "officers", "sit1");
+					}
+					else
+					{
+						ChangeCharacterAddressGroup(chr, mchr.location, "officers", "stay2");
+						bFirstOfficerIsWoman = true;
+					}
+					
+					//PlaceCharacter(chr, "rld", mchr.location);
+					//TeleportCharacterToLocatorIgnoreCollision(chr, "rld", "loc"+i);
+				}
+				else
+				{
+					if(!bFirstOfficerIsWoman) 
+					{
+						ChangeCharacterAddressGroup(chr, mchr.location, "officers", "stay" + (i - 1));
+					}
+					else 
+					{
+						if(i == 3) ChangeCharacterAddressGroup(chr, mchr.location, "officers", "sit1");
+						else ChangeCharacterAddressGroup(chr, mchr.location, "officers", "stay1");
+					}
+					//PlaceCharacter(chr, "rld", mchr.location);
+				}
+			}
+		}
+		else
+		{
+			PlaceCharacter(chr, "rld", mchr.location);
+		}
 	}
 }
 void SetOfficersLocationToNone()
@@ -330,7 +377,7 @@ void Cabin_ReloadEndFadeAfter()
 
 	bSeaReloadStarted = false;
 
-	Ship_RecreateStaticSounds();
+	Ship_RecreateStaticSounds(true);
 	
 	DoQuestCheckDelay("update_sea_after_cabin", 0.1);
 
@@ -855,7 +902,7 @@ void SetPrisonerInHold()
 	if(GetDLCenabled(DLC_APPID_1) && !RemoveAlonsoFromHold())
 	{
 		offref = GetCharacter(NPC_GenerateCharacter("Alonso_LP", "Alonso", "man", "man", 1, FRANCE, 0, true, "pirate"));
-		offref.name = StringFromKey("HollandGambit_23");
+		offref.name = GetCharacterName("Alonso");
 		offref.lastname = "";
 		offref.Dialog.Filename = "Quest\LoyaltyPack.c";
 		offref.Dialog.currentnode = "Alonso";
@@ -932,4 +979,15 @@ void SetOfficersInCampus()
 		}
 	}*/ //С какой целью это делалось?
 	//navy <-- 19.02.08
+}
+
+bool NeedCabinTmpl()
+{
+	if(Get_My_Cabin() == "My_Cabin_Medium2") return true;
+	else if(Get_My_Cabin() == "My_Cabin") return true;
+	else if(Get_My_Cabin() == "My_CabineFDM") return true;
+	else if(Get_My_Cabin() == "My_CabineFDMR") return true;
+	else if(Get_My_Cabin() == "My_Cabin_Huge") return true;
+	
+	return false;
 }

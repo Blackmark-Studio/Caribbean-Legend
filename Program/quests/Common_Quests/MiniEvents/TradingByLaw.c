@@ -1,3 +1,11 @@
+void TPZ_Start()
+{
+	SetQuestHeader("TPZ");
+	AddQuestRecord("TPZ", "1");
+	pchar.questTemp.TPZ_Start = true;
+	AddLandQuestMark(characterFromId("BasTer_tavernkeeper"), "questmarkmain");
+}
+
 void TPZ_SpawnShip(string qName)
 {
 	sld = CharacterFromID("TPZ_Kristian");
@@ -56,6 +64,10 @@ void TPZ_Abordage(string qName)
 	sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
 	sld.dialog.currentnode = "Kristian_41";
 	pchar.questTemp.TPZ_TradeVinoAndRom = true;
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void TPZ_Potopil(string qName)
@@ -71,6 +83,10 @@ void TPZ_Potopil(string qName)
 	sld.dialog.filename = "Quest\MiniEvents\TradingByLaw_dialog.c";
 	sld.dialog.currentnode = "Kristian_41";
 	pchar.questTemp.TPZ_TradeVinoAndRom = true;
+	
+	pchar.questTemp.MiniEvents = sti(pchar.questTemp.MiniEvents) + 1; // завершено событие
+	Achievment_Set("ach_CL_174"); // ачивка за завершённое событие
+	if (GetAttributeInt(pchar, "questTemp.MiniEvents") > GetStat("stat_CL_175")) Achievment_SetStat(175, 1); // ачивка за 10 завершённых событий
 }
 
 void TPZ_KristianReturn(string qName)

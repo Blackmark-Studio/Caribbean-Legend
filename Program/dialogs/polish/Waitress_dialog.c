@@ -46,7 +46,7 @@ void ProcessDialogEvent()
 				DelMapQuestMarkCity("PortPax");
 				DelLandQuestMark(npchar);
 				PlaySound("Voice\English\Enc_RapersGirl_1.wav");
-				dialog.text = "Panie! Panie, pomóż! Mordują!";
+				dialog.text = ""+UpperFirst(GetAddress_Form(NPChar))+"! "+UpperFirst(GetAddress_Form(NPChar))+", pomóż! Mordują!";
 				link.l1 = "Co? Kogo mordują? Gdzie? To jakiś żart, moja droga?";
 				link.l1.go = "FMQP";
 				break;
@@ -272,12 +272,14 @@ void ProcessDialogEvent()
 		case "Consumption_3_1":
 			if(sti(pchar.reputation.nobility) > 36)
 			{
+				Notification_Reputation(false, 36, "high");
 				dialog.text = "Czy to była 'sugestia'? Przepraszam, to był błąd rozmawiać z tobą! Do widzenia 'caballero'...";
 				link.l1 = "Jak sobie życzysz, kochanie.";
 				link.l1.go = "exit";
 			}
 			else
 			{
+				Notification_Reputation(true, 36, "high");
 				dialog.text = "Cóż... Przynajmniej jesteś szczery w swoich pragnieniach. Obiecuję, że jeśli znajdziesz Angelo lub powiesz mi, co naprawdę się z nim stało, to dostaniesz to, o co prosiłeś...";
 				link.l1 = "Droga senorito, to przyjemność robić z tobą interesy... Teraz przejdźmy od razu do rzeczy. Co się stało z twoim bratem?";
 				link.l1.go = "Consumption_4";
@@ -332,7 +334,7 @@ void ProcessDialogEvent()
 		
 		// Addon-2016 Jason, французские миниквесты (”ЊЉ) Џорт Џренс
 		case "FMQP":
-			dialog.text = "Nie, to nie żart! Na górze! Dwóch rzezimieszków mordują szlachcica! Pomóż mu, Kapitanie, jesteś tu jedynym uzbrojonym człowiekiem!";
+			dialog.text = "Nie, to nie żart! Na górze! Dwóch rzezimieszków mordują szlachcica! Pomocy, kapitanie! Nikt poza panem nie ma tu broni!";
 			link.l1 = "Uciekaj więc na zewnątrz, i wołaj strażników! Idę na górę!";
 			link.l1.go = "FMQP_1";
 			link.l2 = "Moja droga, musiałaś pomylić mnie ze strażnikiem. Wezwij patrol w razie morderstwa.";

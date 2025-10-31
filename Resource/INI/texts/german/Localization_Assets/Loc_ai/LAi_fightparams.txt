@@ -1,9 +1,2 @@
-LAi_fightparams_1
-{
-Das Ausweichen vor dem Schuss
-}
-
-LAi_fightparams_2
-{
-Der Söldnerhut ist zerstört.
-}
+LAi_fightparams_1 {Das Ausweichen vor dem Schuss}
+LAi_fightparams_2 {Söldnerhut ist zerstört.}

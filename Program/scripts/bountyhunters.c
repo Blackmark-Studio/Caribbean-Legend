@@ -79,6 +79,7 @@ void SeaHunterCheck(int iNation)
             sld.mapEnc.type = "war";
             sld.mapEnc.Name = XI_ConvertString("BountyHunters");
             sld.mapEnc.worldMapShip = sMapShip;
+            sld.mapEnc.Marker = "BountyHunter";
             sld.hunter = "hunter";
             Group_AddCharacter(sGroup, sCapId + i);
             if (i == 1 || GetCharacterShipClass(sld) < 3) SetRandGeraldSail(sld, sti(sld.Nation));
@@ -325,7 +326,7 @@ void FireBrigadeCheck(int iNation)
         for (i = 1; i <= 6; i++)
         {
             if(iShips[i - 1] == 0) break;
-            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays + 1, true, "hunter"));
+            sld = GetCharacter(NPC_GenerateCharacter(sCapId + i, "off_hol_2", "man", "man", 5, iNation, iDays + 1, true, "hunter"));	// JokerChar Капитаны карательных эскадр
             if(i == 1)
             {
                 //"quest"?
@@ -338,22 +339,29 @@ void FireBrigadeCheck(int iNation)
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS20;
                 }
                 else if(iNation == FRANCE) {
+					sld.name = TEV.FireBrigade_fra.name;
+					sld.lastname = TEV.FireBrigade_fra.lastname;
                     sld.model = "off_fra_2";
                     //sld.greeting = "";
                     sld.Ship.Type = GenerateShipExt(SHIP_CORVETTE_QUEST, true, sld);
-                    sld.Ship.Name = StringFromKey("SharlieFinal_7");
+                    sld.Ship.Name = GetShipName("Griffondor");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
                 }
                 else if(iNation == SPAIN) {
                     if(SandBoxMode)
                     {
-                        sld.name = StringFromKey("QuestsUtilite_56");
-                        sld.lastname = StringFromKey("QuestsUtilite_57");
+                        sld.name = GetCharacterName("Alonso");
+                        sld.lastname = GetCharacterName("de Maldonado");
                         sld.model = "Maldonado";
                         //sld.greeting = "Alonso";
                     }
-                    else sld.model = "SpaOfficer2";
-                    sld.Ship.Type = GenerateShipExt(SHIP_ELCASADOR, true, sld);
+                    else
+					{
+                        sld.name = TEV.FireBrigade_spa.name;
+                        sld.lastname = TEV.FireBrigade_spa.lastname;
+						sld.model = "SpaOfficer2";
+                    }
+					sld.Ship.Type = GenerateShipExt(SHIP_ELCASADOR, true, sld);
                     sld.Ship.Name = StringFromKey("Roger_72");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS32;
                 }
@@ -364,10 +372,9 @@ void FireBrigadeCheck(int iNation)
                     sld.model.animation = "Longway";
                     sld.greeting = "Longway";
                     sld.Ship.Type = GenerateShipExt(SHIP_MAYFANG, true, sld);
-                    sld.Ship.Name = StringFromKey("HollandGambit_12");
+                    sld.Ship.Name = GetShipName("Meifeng");
                     sld.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
                 }
-                sld.Brigadier = "";
                 sld.QuestHandler = "FireBrigadeInterruption";
                 sld.DontClearDead      = true;
                 sld.SaveItemsForDead = true;
@@ -418,6 +425,8 @@ void FireBrigadeCheck(int iNation)
             sld.mapEnc.type = "war";
             sld.mapEnc.Name = XI_ConvertString("Punitive expedition");
             sld.mapEnc.worldMapShip = sMapShip;
+            sld.mapEnc.NoSkip = "";
+            sld.mapEnc.Marker = "Brigadier";
             sld.hunter = "hunter";
             Group_AddCharacter(sGroup, sCapId + i);
             if(i != 1 && rand(1)) SetRandGeraldSail(sld, iNation);
@@ -515,6 +524,9 @@ void FireBrigadeSink(string qName)
     PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
 	PChar.quest.(sTemp).function = "NationIntimidated";
     PChar.quest.(sTemp).Nation = iNation;
+
+	if (iNation == FRANCE) DeleteAttribute(&TEV, "FireBrigade_fra");
+	else if (iNation == SPAIN) DeleteAttribute(&TEV, "FireBrigade_spa");
 }
 
 void FireBrigadeCapture(string qName)
@@ -540,6 +552,9 @@ void FireBrigadeCapture(string qName)
     PChar.quest.(sTemp).win_condition.l1 = "ExitFromSea";
 	PChar.quest.(sTemp).function = "NationIntimidated";
     PChar.quest.(sTemp).Nation = iNation;
+
+	if (iNation == FRANCE) DeleteAttribute(&TEV, "FireBrigade_fra");
+	else if (iNation == SPAIN) DeleteAttribute(&TEV, "FireBrigade_spa");
 }
 
 void NationIntimidated(string qName)

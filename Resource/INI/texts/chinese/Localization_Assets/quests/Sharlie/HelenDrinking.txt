@@ -1,106 +1,23 @@
-HelenDrinking_1
-{
-Francois
-}
-HelenDrinking_2
-{
-de Tavann
-}
-
-HelenDrinking_3
-{
-Vit
-}
-HelenDrinking_4
-{
-Needles
-}
-
-HelenDrinking_5
-{
-Rainbow
-}
-
-HelenDrinking_6
-{
-这是梦吗? 大家都在哪儿? 
-}
-
-HelenDrinking_7
-{
-我应该去见 Jan 并道歉。 
-}
-
-HelenDrinking_8
-{
-Amelia
-}
-HelenDrinking_9
-{
-
-}
-
-HelenDrinking_10
-{
-Dane
-}
-HelenDrinking_11
-{
-
-}
-
-HelenDrinking_12
-{
-Lucky
-}
-HelenDrinking_13
-{
-
-}
-
-HelenDrinking_14
-{
-拥有两个家是多么令人厌烦。 哦, Mary... 在发生这一切之后, 我们三个现在该怎么办? 
-}
-
-HelenDrinking_15
-{
-Alonso
-}
-HelenDrinking_16
-{
-
-}
-
-HelenDrinking_17
-{
-Richard
-}
-HelenDrinking_18
-{
-Small
-}
-
-HelenDrinking_19
-{
-Helen 表示赞同
-}
-HelenDrinking_20
-{
-Helen 表示不赞同
-}
-
-HelenDrinking_21
-{
-铁木已运至你的货舱! 
-}
-
-HelenDrinking_22
-{
-~ 获得 +1 至 ~
-}
-
-HelenDrinking_23
-{
-~ 获得 +1 至 ~
-}
+HelenDrinking_1 {Francois}
+HelenDrinking_2 {de Tavann}
+HelenDrinking_3 {Vit}
+HelenDrinking_4 {Needles}
+HelenDrinking_5 {Rainbow}
+HelenDrinking_6 {这是梦吗? 大家都在哪儿?}
+HelenDrinking_7 {我应该去见 Jan 并道歉。}
+HelenDrinking_8 {Amelia}
+HelenDrinking_9 { }
+HelenDrinking_10 {Dane}
+HelenDrinking_11 { }
+HelenDrinking_12 {Lucky}
+HelenDrinking_13 { }
+HelenDrinking_14 {拥有两个家是多么令人厌烦。 哦, Mary... 在发生这一切之后, 我们三个现在该怎么办?}
+HelenDrinking_15 { }
+HelenDrinking_16 { }
+HelenDrinking_17 {Richard}
+HelenDrinking_18 {Small}
+HelenDrinking_19 { }
+HelenDrinking_20 { }
+HelenDrinking_21 {铁木已运至你的货舱!}
+HelenDrinking_22 {~ 获得 +1 至 ~}
+HelenDrinking_23 {~ 获得 +1 至 ~}

@@ -162,7 +162,22 @@ void LAi_tmpl_dialog_CharacterUpdate(aref chr, float dltTime)
 	}	
 	//если нищий и сидит - ничего не крутим
 	if (chr.chr_ai.type == LAI_TYPE_POOR && sti(chr.chr_ai.type.SitState)) return; 
-	if (chr.model.animation == "mushketer") return; 
+	if (chr.model.animation == "mushketer") return;
+	
+	if (chr.chr_ai.type == LAI_TYPE_OFFICER && bCabinStarted)
+	{
+		if(chr.location.locator == "sit1" && NeedCabinTmpl())
+		{
+			time = stf(chr.chr_ai.tmpl.phrasetime) - dltTime;
+			chr.chr_ai.tmpl.phrasetime = time;
+			if(time < 0.0)
+			{
+				CharacterPlayAction(chr, "Sit_Cabin_Dialog_" + (rand(4)+1));
+				chr.chr_ai.tmpl.phrasetime = 20;
+			}
+		}
+		return;
+	}
 
 	if (chr.chr_ai.type == LAI_TYPE_HUBER) 
 	{

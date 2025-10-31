@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(值得信赖) 我们做个妥协吧。 您现在免费提供推荐, 我以后也会免费为您提供推荐。 这笔葡萄酒交易只是个开始。 ";
 				link.l2.go = "Wine_Bottles_free";
 			}
@@ -381,7 +381,7 @@ void ProcessDialogEvent()
 		case "ZsI_Torg":
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 18)
 			{
-				notification("技能检查通过", SKILL_COMMERCE);
+				Notification_Skill(true, 19, SKILL_COMMERCE);
 				dialog.text = "确实, 船长。 法迪的朋友在这里总是受欢迎的。 两千三百比索如何? ";
 				link.l1 = "这听起来更好。 我买了。 ";
 				link.l1.go = "ZsI_Torg_2";
@@ -389,7 +389,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("技能检查失败 (19)", SKILL_COMMERCE); 
+				Notification_Skill(false, 19, SKILL_COMMERCE);
 				dialog.text = "法迪先生的朋友总是受欢迎的, 但价格不讲情面。 三千比索, 船长。 ";
 				if (sti(pchar.Money) > 2999)
 				{

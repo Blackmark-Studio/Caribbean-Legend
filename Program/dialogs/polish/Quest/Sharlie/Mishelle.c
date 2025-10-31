@@ -557,7 +557,7 @@ void ProcessDialogEvent()
 		
 		case "trial_21":
 			pchar.alchemy.known = 1;
-			AddQuestRecordInfo("Otrzymałeś recepture", "cartridge");
+			AddQuestRecordInfo("Recipe", "cartridge");
 			SetAlchemyRecipeKnown("cartridge");
 			dialog.text = "Weź te instrukcje do tworzenia papierowych ładunków, przestudiuj je w wolnym czasie i nie bądź zbyt leniwy, by zastosować swoją nową wiedzę\Zaczekaj, bracie. Nie zapomnij wpaść do naszego drogiego gubernatora.";
 			link.l1 = "Czy jest jakaś okazja?";
@@ -596,57 +596,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trial_27":
-			TakeNItems(pchar, "bullet", 5);
-			TakeNItems(pchar, "gunpowder", 5);
 			DialogExit();
 			NextDiag.TempNode = "First time";
-			pchar.questTemp.Sharlie = "trial";
-			if(bImCasual) NewGameTip("Exploration mode: timer is not disabled. Meet the deadline!");
-			pchar.questTemp.Trial = "begin"; // старт промежуточной линейки
-			SetFunctionTimerCondition("Sharlie_TrialOver", 0, 0, 24, false); // таймер
-			AddMapQuestMarkCity("Baster", false);
-			AddLandQuestMark(characterFromId("Fadey"), "questmarkmain");
-			AddQuestRecord("Sharlie", "19");
-			// открываем все острова
-			for (i=0; i<MAX_ISLANDS; i++)
-			{				
-				if (!CheckAttribute(&Islands[i], "hidden")) Island_SetReloadEnableGlobal(Islands[i].id, true);
-			}
-			DeleteAttribute(pchar, "questTemp.Sharlie.Lock"); //снимаем блокировку
-			LocatorReloadEnterDisable("FortFrance_store", "reload2", false); // откроем склад магазина
-			sld = characterFromId("Benua");
-			sld.quest.help = "true";
-			npchar.greeting = "mishelle_3";
-			i = FindIsland("Martinique");
-			Islands[i].EffectRadius = 5000;
-			// Addon-2016 Jason, французские миниквесты (ФМК)
-			pchar.quest.Sharlie_FMQ.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_FMQ.win_condition.l1.value = 4;
-			pchar.quest.Sharlie_FMQ.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_FMQ.function = "FMQ_SetConditions";
-			// Sinistra - миниквест "Делюк"
-			PChar.quest.Del_Alonso.win_condition.l1 = "location";
-			PChar.quest.Del_Alonso.win_condition.l1.location = "FortFrance_town";
-			PChar.quest.Del_Alonso.win_condition = "Del_Alonso";
-			// при достижении уровня даём флаг на квест "Голландский Гамбит"
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.value = 9;
-			pchar.quest.Sharlie_GambitStage_level_9.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_GambitStage_level_9.function = "Sharlie_GambitStage_level_9";
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1 = "Rank";
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.value = 12;
-			pchar.quest.Sharlie_GambitStage_level_12.win_condition.l1.operation = ">=";
-			pchar.quest.Sharlie_GambitStage_level_12.function = "Sharlie_GambitStage_level_12";
-			//маркер на контрабандиста по квесту "Деньги на деревьях"
-			AddLandQuestMark(characterFromId("FortFrance_Smuggler"), "questmarkmain");
-			PChar.quest.MOT_UbratMarku.win_condition.l1 = "MapEnter";
-			PChar.quest.MOT_UbratMarku.win_condition = "MOT_UbratMarku";
-			// Sinistra - Старт квеста "Травля крысы"
-			pchar.questTemp.TK_TravlyaKrys = true;
-			AddLandQuestMark(characterFromId("FortFrance_Mayor"), "questmarkmain");
-			SetTimerCondition("TK_Timer", 0, 0, 30, false);
-			//маркер на торговца БасТера по квесту "Бесчестный конкурент"
-			AddLandQuestMark(characterFromId("BasTer_trader"), "questmarkmain");
+			AddDialogExitQuestFunction("Sharlie_Mishelle_OpenWorld");
 		break;
 		
 		case "gambitA":
@@ -782,9 +734,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "gambit_8":
-			AddQuestRecordInfo("Otrzymałeś recepturę", "bussol");
+			AddQuestRecordInfo("Recipe", "bussol");
 			SetAlchemyRecipeKnown("bussol");
-			AddQuestRecordInfo("Otrzymałeś recepturę", "clock2");
+			AddQuestRecordInfo("Recipe", "clock2");
 			SetAlchemyRecipeKnown("clock2");
 			dialog.text = "Postaraj się zdobyć wszystkie te narzędzia tak szybko, jak to możliwe. Wszyscy doświadczeni i szanowani kapitanowie operują szerokością i długością geograficzną. Będziesz uważany za nowicjusza w żegludze, dopóki nie zrozumiesz, co te liczby oznaczają.\nCóż, wróć, by się pochwalić, gdy tylko odniesiesz sukces w sprawach, o których niedawno rozmawialiśmy. Powodzenia, Charles!";
 			link.l1 = "Dziękuję, drogi bracie. Czuję, że to na pewno się przyda!";

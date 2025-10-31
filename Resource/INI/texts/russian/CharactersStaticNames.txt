@@ -1,234 +1,146 @@
-
 Smuggler {Контрабандист}
-
-;========== Antigua ==========
-
 Cristopher {Кристофер}
 Keynell {Кейнелл}
-
 Benjamin {Бенджамин}
 Jones {Джонс}
-
-;========== Barbados ==========
-
 Francis {Фрэнсис}
 lord Willoughby {Лорд Уиллоби}
-
 Gaston {Гастон}
 Bald-pate {Плешивый}
-
 Mirabelle {Мирабель}
-
-;========== Beliz ==========
-
 Peter {Питер}
 Walles {Уоллес}
-
-;========== Bermudes ==========
-
 One-eyed {Одноглазый}
-
 Pascal {Паскуале}
 Voisier {Вуазье}
-
 Master {Мастер}
 Alexis {Алексус}
-
 Abraham {Абрахам}
 Norman {Норман}
-
-;========== Caracas ==========
-
 Diego Francisco {Диего Франсиско}
 de Kero {де Керо}
-
-;========== Cartahena ==========
-
 Dionisio {Дионисио}
 Peres {Перес}
-
 Alvares {Альварес}
 Ortega {Ортега}
-
-;========== Cumana ==========
-
 Fernando {Фернандо}
 de Vilyegas {де Вильегас}
-
 Esteban {Эстебан}
 Garcia {Гарсия}
-
 Carlos {Карлос}
 Estrada {Эстрада}
-
 Ignasio {Игнасио}
-Ortega {Ортега}
-
-;========== Curacao ==========
-
 Matthias {Матиас}
 Beck {Бек}
-
 Florentina {Флорентина}
-
-;========== Guadeloupe ==========
-
 Claude Francois {Клод Франсуа}
 de Lyon {де Лион}
-
-;========== Havana ==========
-
-Diego {дон Диего}
+Diego {Диего}
 de Toledo {де Толедо}
-
 Alexandro {Алехандро}
-Garcia {Гарсия}
-
 Jacopo {Якопо}
 Jeraldy {Джеральди}
-
-;========== Jamaica ==========
-
 Edward {Эдвард}
 Doily {д'Ойли}
-
 Oldjivly {Олдживли}
 Moris {Морис}
-
 Mortimer {Мортимер}
 Hope {Хоуп}
-
 Ida {Ида}
-
 Jacob {Якоб}
 Jackman {Джекман}
-
-;========== LaVega ==========
-
 Marcus {Маркус}
 Tyrax {Тиракс}
-
-;========== Maracaibo ==========
-
 Andres {Андрес}
 de Vera {де Вера}
-
-;========== Martinique ==========
-
 Jacques Dille {Жак Дьель}
 du Parquet {дю Парке}
-
 Jean Pierre {Жан-Пьер}
 Morua {Моруа}
-
 Aurora {Аврора}
-
 Jacques {Жак}
 Barbazon {Барбазон}
-
 Cesare {Чезаре}
 Craig {Крейг}
-
 Ian {Янг}
 Snake {Снейк}
-
-;========== Nevis ==========
-
 Timothy {Тимоти}
 Vitrye {Витрие}
-
 Simon {Симон}
-Morua {Моруа}
-
 Merilin {Мерилин}
-
-;========== Other ==========
-
 Sailor {Моряк}
-
-;========== Panama ==========
-
 Pedro Carrilia {Педро Каррилья}
 de Gusman {де Гусман}
-
 Dolores {Долорес}
-
-;========== PortoBello ==========
-
 Luis {Луис}
 de Montanos {де Монтанос}
-
 Ernesto {Эрнесто}
-Jeraldy {Джеральди}
-
-;========== PortPax ==========
-
 Jeremy Deshamp {Жереми Дешамп}
 do Mussack {дю Мюссак}
-
-;========== Providence ==========
-
-Alexandro {Алехандро}
 de la Cruz {де ла Круз}
-
-;========== PuertoPrincipe ==========
-
 Zachary {Захария}
 Marlow {Марлоу}
-
-;========== PuertoRico ==========
-
-Diego {Диего}
 de Aguillera-Gamboa {де Агуильера-и-Гамбоа}
-
-;========== SantaCatalina ==========
-
 Joseph {Джозеф}
 Batler {Батлер}
-
-;========== Santiago ==========
-
 Rodrigo {Родриго}
 de Flores-Aldana {де Флорес-и-Алдана}
-
-;========== SantoDomingo ==========
-
 Juan {дон Хуан}
 de Kuencka {де Куэнка}
-
 Lolita {Лолита}
-
-;========== SentMartin ==========
-
 Martin {Мартин}
 Thomas {Томас}
-
 Johanna {Йоханна}
-
-;========== Tortuga ==========
-
 Francois {Франсуа}
 Levasseur {Левассер}
-
 Janetta {Жанетта}
-
-;========== Trinidad ==========
-
 Ruis {Руис}
 de Aquerre {де Агуэрре}
-
-;========== HWIC ==========
-
 Coris {Корис}
 Gerritz {Герритц}
-
-;========== KhaelRoa ==========
-
 Chavinavi {Чавинави}
 TempleSkeleton {храмовая нежить}
-
-
-;========== Quest ==========
-
 Danielle {Даниэль}
 Hawk {Хоук}
+Smuggler_0 {Таинственный пьяница}
+Smuggler_1 {Аноним}
+Smuggler_2 {Некто}
+Smuggler_3 {Персона инкогнито}
+Smuggler_4 {Джон Доу}
+Smuggler_5 {Незнакомец}
+Smuggler_6 {Неизвестный}
+Smuggler_7 {Подозрительный посетитель}
+Sharle {Шарль}
+de Maure {де Мор}
+de Montoya {де Монтойя}
+Willy {Вильям}
+Paterson {Патерсон}
+Mary {Мэри}
+Kasper {Каспер}
+Helena {Элен}
+McArthur {МакАртур}
+Tichingitu {Тичингиту}
+Hercule {Эркюль}
+Tonzag {Тонзаг}
+Charlie {Чарли}
+Knippel {Книппель}
+Longway {Лонгвэй}
+Folke {Фульк}
+Deluc {Делюк}
+Claude {Клод}
+Duran {Дюран}
+Hugo {Хьюго}
+Avendel {Авендел}
+Raymond {Раймонд}
+Baker {Бейкер}
+Tommy {Томми}
+Irons {Айронс}
+Alonso {Алонсо}
+Morrison {Моррисон}
+Julie {Жюли}
+d'Armagnac {д'Арманьяк}
+Henri {Анри}
+d'Aubuisson {д'Обюссон}
+Alicia {Алисия}
+Chardon {Шардон}
+de Maldonado {де Мальдонадо}

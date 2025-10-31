@@ -493,7 +493,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Trade_artefact_4":
-			RemoveItems(pchar, "gold_dublon", 100); // Addon-2016 Jason
+			RemoveDublonsFromPCharTotal(100); // Addon-2016 Jason
 			Log_Info("You have given 100 doubloons");
 			dialog.text = "Tutto sembra a posto. Ecco il tuo amuleto. Buona fortuna con esso!";
 			link.l1 = "Grazie, "+npchar.name+"!";
@@ -585,6 +585,7 @@ void ProcessDialogEvent()
 			dialog.text = "Sì? Hai parlato con Tuttuathapak, ho ragione?";
 			link.l1 = "Esatto. E ora voglio trovare altri due amuleti. Hai detto che ero il terzo che ti ha mostrato questo artefatto. E chi erano gli altri due?";
 			link.l1.go = "caleuche_10";
+			DelLandQuestMark(npchar);
 		break;
 		
 		case "caleuche_10":
@@ -619,6 +620,7 @@ void ProcessDialogEvent()
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1 = "location";
 			pchar.quest.caleuche_prepare_beliz.win_condition.l1.location = "Beliz";
 			pchar.quest.caleuche_prepare_beliz.function = "Caleuche_PrepareBeliz";
+			AddLandQuestMark(characterFromId("Bridgetown_Portman"), "questmarkmain");
 		break;
 		
 		case "fight":
@@ -649,16 +651,14 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition карибские нравы
 		case "Trial":
-			dialog.text = "Ah, quindi tu sei quel capitano! Sì, ti stavo aspettando. Anche Gerard stava aspettando, ma doveva andare urgentemente in qualche tipo di spedizione, quindi mi ha chiesto di trasferirti il pagamento. Ha detto che devi venire. Ci sono quattrocento dobloni qui, se ti fa piacere.");
+			dialog.text = "Ah, quindi tu sei quel capitano! Sì, ti stavo aspettando. Anche Gerard stava aspettando, ma doveva andare urgentemente in qualche tipo di spedizione, quindi mi ha chiesto di trasferirti il pagamento. Ha detto che devi venire. Ci sono 90 dobloni qui, se ti fa piacere.");
 			link.l1 = "Grazie! È bello trattare con persone oneste.";
 			link.l1.go = "Trial_1";
 		break;
 		
 		case "Trial_1":
 			DialogExit();
-			TakeNItems(pchar, "gold_dublon", 400);
-			Log_Info("Avete ricevuto 400 doubloons");
-			PlaySound("interface\important_item.wav");
+			TakeNItems(pchar, "gold_dublon", 90);
             NextDiag.CurrentNode = NextDiag.TempNode;
 			DeleteAttribute(pchar, "questTemp.Trial");
 			DeleteAttribute(npchar, "quest.trial_usurer");

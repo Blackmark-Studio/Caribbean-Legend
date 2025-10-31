@@ -617,14 +617,7 @@ void ProcessDialogEvent()
 		
 		case "Fleetwood_complete_7":
 			DialogExit();
-			pchar.quest.Award_FromLucas.win_condition.l1 = "Timer";
-			pchar.quest.Award_FromLucas.win_condition.l1.date.hour  = 8.00;
-			pchar.quest.Award_FromLucas.win_condition.l1.date.day   = GetAddingDataDay(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.month = GetAddingDataMonth(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 1);
-			pchar.quest.Award_FromLucas.win_condition.l2 = "location";
-			pchar.quest.Award_FromLucas.win_condition.l2.location = "Villemstad_townhall";
-			pchar.quest.Award_FromLucas.function = "AwardFromFromLucas";
+			AddDialogExitQuestFunction("GollandGambit_AwardFromLucas_1");
 			AddSimpleRumour("Скажите, капитан, это правда - что проклятая английская собака - Флитвуд - и был командиром таинственного корабля, уничтожавшего английских торговцев? Да? Ну и хитрая же бестия! Хорошо, что вы обезвредили негодяя. Вы настоящий герой, капитан!", HOLLAND, 10, 3);
 		break;
 		
@@ -855,14 +848,14 @@ void ProcessDialogEvent()
 			dialog.text = "(после осмотра) Как прикажете это понимать, капитан? В архиве отсутствует несколько страниц. Самых важных для меня. Думали, я не стану проверять, чтобы вы потом могли воспользоваться ими против меня? Или хотели выторговать за него побольше? Спешу разочаровать в обоих случаях.";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Вызывающий доверие", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Вызывающий доверие) Прошу прощения, я виноват, но лишь в том, что не проверил архив сам, заранее.";
 				link.l1.go = "VD_Merdok_book_3";
 				SetTimerCondition("PZ_Etap1_Start", 0, 0, 30, false);	// 1 этап стартует через 30 дней
 			}
 			else
 			{
-				notification("Не открыта способность", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "Минхер Роденбург, стал бы я вырывать страницы, а потом отдавать вам архив с невозмутимым видом?";
 				link.l1.go = "Merdok_book_3";
 				SetTimerCondition("PZ_LigaInJungle", 0, 0, 7, false);	// проверку не прошёл, значит нападёт Лига через неделю, после чего начнётся таймер на 30 дней 1 этапа
@@ -951,7 +944,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";//прерывание на Лукаса
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour legendary edition
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";
@@ -984,7 +976,6 @@ void ProcessDialogEvent()
 			pchar.quest.Lucas_quit.win_condition.l1.date.year  = GetAddingDataYear(0, 0, 7);
 			pchar.quest.Lucas_quit.function = "LucasQuit";//прерывание на Лукаса
 			pchar.questTemp.HWIC.Detector = "holl_win";
-			CheckPortugalHWIC();
 			sld = characterFromId("Villemstad_Mayor"); // belamour legendary edition
 			sld.Dialog.Filename = "Common_Mayor.c";//patch-8
 			sld.dialog.currentnode = "First time";

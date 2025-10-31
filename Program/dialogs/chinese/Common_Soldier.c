@@ -466,6 +466,16 @@ void ProcessDialogEvent()
 					link.l3.go = "quests";//(转发到城市文件) */				
 				}
 			}
+			//--> Дикая Роза
+			if (CheckAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier") && npchar.location.group == "soldiers" && npchar.city == "Bridgetown")
+			{
+				dialog.text = "欢迎来到布里奇敦, "+GetAddress_Form(NPChar)+"……";
+				link.l1 = "我还以为我的脸在法属殖民地之外也很有名呢…… 我叫"+GetFullName(pchar)+"。";
+				link.l1.go = "WildRose_Soldier_1";
+				DeleteAttribute(pchar, "questTemp.WildRose_DialogeWithSoldierOnPier");
+				DelLandQuestMark(npchar);
+			}
+			//<-- Дикая Роза
 		break;
 		//============================== 识别时的拆解节点 =========================
 		case "PegYou":
@@ -720,6 +730,66 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		// < —夜间冒险者
+		
+		//--> Дикая Роза
+		case "WildRose_Soldier_1":
+			if (GetHour() >= 6 && GetHour() <= 21)
+			{
+				dialog.text = "啊, 是您啊, 船长……太阳底下真让人犯困…… 该死的热浪! ";
+			}
+			else
+			{
+				dialog.text = "这话不假。 不过您也知道, 到了晚上人都一个模样。";
+			}
+			link.l1 = "什么风把你吹来了, 士兵? 你们这些人平时可不会跟我多话。";
+			link.l1.go = "WildRose_Soldier_2";
+		break;
+		
+		case "WildRose_Soldier_2":
+			dialog.text = "咳, 是的, "+GetAddress_Form(NPChar)+"。 不过我奉威洛比勋爵的命令行事: 必须提醒所有新上岛的人, 几天前有一小撮奴隶从毕肖普种植园逃跑了。 那些该死的监工大概在呼呼大睡时让他们砸开了镣铐。 本来今天我该在我亲爱的安杰莉卡怀里……";
+			link.l1 = "让我猜猜: 派去追捕庄园主“财产”的, 是你们驻军?";
+			link.l1.go = "WildRose_Soldier_3";
+		break;
+		
+		case "WildRose_Soldier_3":
+			dialog.text = "当然……毕肖普还派了几支雇佣兵小队进了雨林, 但他还嫌不够。 他许诺, 谁要是能把奴隶带回来——活的, 就有重赏。 平时干活的是那些黑皮肤的, 但最近送来了一批逃兵——挖矿不顶用, 但脑子倒挺灵, 居然真从种植园逃了出去……";
+			link.l1 = "所以他们是白人? ";
+			link.l1.go = "WildRose_Soldier_4";
+		break;
+		
+		case "WildRose_Soldier_4":
+			dialog.text = "白得不能再白了, 见鬼去吧! 黑人只会逃跑, 而这帮人还顺手从他们干掉的雇佣兵 身上拿了几把火枪和军刀——还真派上了用场。 他们干掉了我们一个弟兄, 还带走了毕肖普的两个走狗——搞得剩下的人都疯了。\n差点就误把自己人当逃奴给射了。 还有几个平民在雨林里神秘失踪了。";
+			link.l1 = "城门上锁了吗? ";
+			link.l1.go = "WildRose_Soldier_5";
+		break;
+		
+		case "WildRose_Soldier_5":
+			dialog.text = "当然没有——城又没戒严。 您想去哪儿就去哪儿。 不过要是您想猎人变成猎物, 正好撞进火力交叉点, 那就别怪我们没提醒。真要能活下来, 也别回头去总督府拍门喊冤——毕竟, 他已经表现出足够的善意, 不光照顾布里奇敦的居民, 还照顾到了客人。";
+			link.l1 = "这真是……仁慈之举。 愿上帝保佑弗朗西斯·威洛比!";
+			link.l1.go = "WildRose_Soldier_6";
+			link.l2 = "唉, 要是所有总督都像威洛比爵士一样关心新来的就好了……";
+			link.l2.go = "WildRose_Soldier_7";
+		break;
+		
+		case "WildRose_Soldier_6":
+			dialog.text = "真好笑。 您可以走了, 船长。";
+			link.l1 = "那就再见了, 士兵。";
+			link.l1.go = "WildRose_Soldier_8";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+		break;
+		
+		case "WildRose_Soldier_7":
+			dialog.text = "可不是嘛, 那我们这些人就轻松多了。 我就不多打扰您了, 船长。";
+			link.l1 = "祝你好运, 士兵。";
+			link.l1.go = "WildRose_Soldier_8";
+			ChangeCharacterNationReputation(pchar, sti(NPChar.nation), 2);
+		break;
+		
+		case "WildRose_Soldier_8":
+			DialogExit();
+			AddDialogExitQuestFunction("WildRose_Etap1_EscapeSlaves");
+		break;
+		//<-- Дикая Роза
 		
 		//关于暴露武器的注释
 		case "SoldierNotBlade":

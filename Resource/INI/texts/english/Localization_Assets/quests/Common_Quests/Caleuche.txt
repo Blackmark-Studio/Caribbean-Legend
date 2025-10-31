@@ -1,182 +1,40 @@
-Caleuche_1
-{
-Tuttuathapak
-}
-Caleuche_2
-{
-
-}
-
-Caleuche_3
-{
-captain-undead
-}
-Caleuche_4
-{
-
-}
-
-Caleuche_5
-{
-Ghost ship
-}
-
-Caleuche_6
-{
-Fergus
-}
-Caleuche_7
-{
-Hooper
-}
-
-Caleuche_8
-{
-You have escaped from the ghost ship!
-}
-
-Caleuche_9
-{
-Reginald
-}
-Caleuche_10
-{
-Jackson
-}
-
-Caleuche_11
-{
-Harpy
-}
-
-Caleuche_12
-{
-xebec 'Harpy'
-}
-
-Caleuche_13
-{
-dead hostess
-}
-Caleuche_14
-{
-
-}
-
-Caleuche_15
-{
-Chavinavy
-}
-Caleuche_16
-{
-
-}
-
-Caleuche_17
-{
-Esberto
-}
-Caleuche_18
-{
-Salinas
-}
-
-Caleuche_19
-{
-Amulets of Tuttuathapak have lost their power!
-}
-
-Caleuche_20
-{
-Press 'T' to use
-}
-
-Caleuche_21
-{
-The portal is blocked!
-}
-
-Caleuche_22
-{
-Chieftain Chavinavy
-}
-Caleuche_23
-{
-
-}
-
-Caleuche_24
-{
-temple undead
-}
-Caleuche_25
-{
-
-}
-
-Caleuche_26
-{
-Ghost ship on the horizon!
-}
-
-Caleuche_27
-{
-Baltazar
-}
-Caleuche_28
-{
-de Cordes
-}
-
-Caleuche_29
-{
-Flying Heart
-}
-
-Caleuche_30
-{
-You feel more dexterous
-}
-Caleuche_31
-{
-You feel more sturdy
-}
-Caleuche_32
-{
-You feel stronger
-}
-Caleuche_33
-{
-Your perception intensifies
-}
-Caleuche_34
-{
-You feel more insightful
-}
-Caleuche_35
-{
-You feel more self-assured
-}
-Caleuche_36
-{
-You feel inspired
-}
-
-Caleuche_37
-{
-he ghost ship is on the horizon!
-}
-
-Caleuche_38
-{
-You have fainted of wounds...
-}
-
-Caleuche_39
-{
-Alonso
-}
-Caleuche_40
-{
-
-}
+Caleuche_1 {Tuttuathapak}
+Caleuche_2 { }
+Caleuche_3 {captain-undead}
+Caleuche_4 { }
+Caleuche_5 {Ghost ship}
+Caleuche_6 {Fergus}
+Caleuche_7 {Hooper}
+Caleuche_8 {You have escaped from the ghost ship!}
+Caleuche_9 {Reginald}
+Caleuche_10 {Jackson}
+Caleuche_11 {Harpy}
+Caleuche_12 {xebec 'Harpy'}
+Caleuche_13 {dead hostess}
+Caleuche_14 { }
+Caleuche_15 {Chavinavy}
+Caleuche_16 { }
+Caleuche_17 {Esberto}
+Caleuche_18 {Salinas}
+Caleuche_19 {Amulets of Tuttuathapak have lost their power!}
+Caleuche_20 {Press 'T' to use}
+Caleuche_21 {The portal is blocked!}
+Caleuche_22 {Chieftain Chavinavy}
+Caleuche_23 { }
+Caleuche_24 {temple undead}
+Caleuche_25 { }
+Caleuche_26 {Ghost ship on the horizon!}
+Caleuche_27 {Baltazar}
+Caleuche_28 {de Cordes}
+Caleuche_29 { }
+Caleuche_30 {You feel more dexterous}
+Caleuche_31 {You feel more sturdy}
+Caleuche_32 {You feel stronger}
+Caleuche_33 {Your perception intensifies}
+Caleuche_34 {You feel more insightful}
+Caleuche_35 {You feel more self-assured}
+Caleuche_36 {You feel inspired}
+Caleuche_37 {The ghost ship is on the horizon!}
+Caleuche_38 {You have fainted of wounds...}
+Caleuche_39 { }
+Caleuche_40 { }

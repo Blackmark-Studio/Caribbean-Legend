@@ -1,4 +1,9 @@
 #include "items\items.h"
+#include "items\modifiers\helpers.c"
+#include "items\onuse.c"
+#include "items\callbacks_cash_tables.c"
+#include "items\callbacks_on_use.c"
+#include "items\effects.c"
 
 object randItemModels[MAX_LOADED_RANDITEMS];
 object itemModels[2];
@@ -237,7 +242,7 @@ void Item_OnPickItem()
 		{
 			SendMessage(&randItemModels[sti(chr.activeItem)], "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 			GenerateAndAddItems(GetMainCharacter(), Items[sti(activeLocation.(activeRandItemAttribute))].id, 1);
-			displayItemName = LanguageConvertString(langFile, Items[sti(activeLocation.(activeRandItemAttribute))].name);
+			displayItemName = GetItemName(&Items[sti(activeLocation.(activeRandItemAttribute))]);
 			//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 			//notification(youvegotString+" "+displayItemName+"", "BoxPlus");
 
@@ -271,7 +276,7 @@ void Item_OnPickItem()
 		SendMessage(itemModel, "lslff", MSG_MODEL_BLEND, "blenditemlit", 1000, 1.0, 0.0);
 		GenerateAndAddItems(GetMainCharacter(), Items[activeItem].id, 1);
 
-		displayItemName = LanguageConvertString(langFile, Items[activeItem].name);
+		displayItemName = GetItemName(&Items[activeItem]);
 		//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 		// ===> перехват взятия предметов из локатора item на метод обрабоки для квестовых нужд 
 		QuestCheckTakeItem(activeLocation, Items[activeItem].id);
@@ -294,7 +299,7 @@ void Item_OnUseItem()
 	// boal баг! нет предмета, а он работает!!!
     if (!CheckCharacterItem(chr, Items[activeItem].id))
     {
-		Log_SetStringToLog(XI_ConvertString("You have not need item"));
+		notification(XI_ConvertString("You have not need item"), "Key");
         PlaySound("interface\knock.wav");
         return;
     }
@@ -318,7 +323,7 @@ void Item_OnUseItem()
 	int langFile = LanguageOpenFile("ItemsDescribe.txt");
 	string displayItemName, youvegotString;
 	youvegotString = LanguageConvertString(langFile, "used_itemNotif");
-	displayItemName = LanguageConvertString(langFile, Items[activeItem].name);
+	displayItemName = GetItemName(&Items[activeItem]);
 	//Log_SetStringToLog(youvegotString+" "+displayItemName+"!");
 	notification(youvegotString+" "+displayItemName+"!", "BoxMinus");
     PlaySound("interface\sobitie_na_karte_001.wav");
@@ -738,35 +743,25 @@ void OpenBoxProcedure()
 		Locations[locidx].(atrName).Money = 0;
 		makearef(ar,Locations[locidx].(atrName));
 	}
-	// God_hit_us  это такой прикол - задействовать в ловушки для сундуков(boal)
-	// токо сундуки и дома
-	if (sti(chr.GenQuest.God_hit_us) == 1 && rand(100) >= (85 + GetCharacterSkillToOld(chr, SKILL_FORTUNE)) && chr.location != "SentJons_HouseF3_Room2" && chr.location != "IslaMona_TwoFloorHouse" && chr.location != "IslaMona_TwoFloorRoom" && chr.location != "SantaCatalina_houseSp3_bedroom") // 280313 лесник сняты ловушки с исла моны.
-	{
-		Log_Info(XI_ConvertString("Trap"));
-		PlaySound("people\clothes1.wav");
-		DoQuestCheckDelay("God_hit_us", 0.2);
-	}
+	
+	if (CheckAttribute(chr, "questTemp.Guardoftruth.ArchyBoom") && chr.location == "IslaDeVieques_House" && atrName == "box1") GuardOT_ArchyChestBoom(); // Jason 070712
 	else
 	{
-		if (CheckAttribute(chr, "questTemp.Guardoftruth.ArchyBoom") && chr.location == "IslaDeVieques_House" && atrName == "box1") GuardOT_ArchyChestBoom(); // Jason 070712
-		else
+		if (CheckAttribute(chr, "questTemp.Ksochitam.ShoreShip") && chr.location == "Shore_ship4") Ksochitam_ShoreshipOpenBox(); // Jason 220712
+		else 
 		{
-			if (CheckAttribute(chr, "questTemp.Ksochitam.ShoreShip") && chr.location == "Shore_ship4") Ksochitam_ShoreshipOpenBox(); // Jason 220712
-			else 
-			{
-				// сюда можно ставить квестовые реакции при открытии сундука с выводом интерфейса содержимого
-				if (CheckAttribute(chr, "questTemp.Mtraxx.Grotbox") && chr.location == "PortoBello_Cave" && atrName == "box1") Mtraxx_WolfreekGrotOpenBox(); // Addon 2016-1 Jason Пиратская линейка
-				if (CheckAttribute(chr, "questTemp.Mtraxx.Cavebox") && chr.location == "Panama_Cave" && atrName == "box1") Mtraxx_WolfreekCaveOpenBox();
-				if (CheckAttribute(chr, "questTemp.Mtraxx.WolfreekBox") && chr.location == "IslaMona_WaterCave" && atrName == "private1") Mtraxx_WolfreekFindTreasure();
-				if (CheckAttribute(chr, "questTemp.Mtraxx.Pasquale.Grabbing") && chr.location == "LaVega_TwoFloorHouse" && atrName == "private1") Mtraxx_PasqualeCheckChest();
-				if (CheckAttribute(chr, "questTemp.HelenDrinking.Loot.Box") && chr.location == "SantaCatalina_PearlCave" && atrName == pchar.questTemp.HelenDrinking.Loot.Box.Id) {
-					if (CheckAttribute(chr, "questTemp.HelenDrinking.GoForLoot")) {
-						HelenDrinking_GotLoot();
-					}
-					HelenDrinking_ClearLootChest();
+			// сюда можно ставить квестовые реакции при открытии сундука с выводом интерфейса содержимого
+			if (CheckAttribute(chr, "questTemp.Mtraxx.Grotbox") && chr.location == "PortoBello_Cave" && atrName == "box1") Mtraxx_WolfreekGrotOpenBox(); // Addon 2016-1 Jason Пиратская линейка
+			if (CheckAttribute(chr, "questTemp.Mtraxx.Cavebox") && chr.location == "Panama_Cave" && atrName == "box1") Mtraxx_WolfreekCaveOpenBox();
+			if (CheckAttribute(chr, "questTemp.Mtraxx.WolfreekBox") && chr.location == "IslaMona_WaterCave" && atrName == "private1") Mtraxx_WolfreekFindTreasure();
+			if (CheckAttribute(chr, "questTemp.Mtraxx.Pasquale.Grabbing") && chr.location == "LaVega_TwoFloorHouse" && atrName == "private1") Mtraxx_PasqualeCheckChest();
+			if (CheckAttribute(chr, "questTemp.HelenDrinking.Loot.Box") && chr.location == "SantaCatalina_PearlCave" && atrName == pchar.questTemp.HelenDrinking.Loot.Box.Id) {
+				if (CheckAttribute(chr, "questTemp.HelenDrinking.GoForLoot")) {
+					HelenDrinking_GotLoot();
 				}
-				LaunchItemsBox(&ar);
+				HelenDrinking_ClearLootChest();
 			}
+			LaunchItemsBox(&ar);
 		}
 	}
 }

@@ -58,24 +58,24 @@ void ProcessDialogEvent()
 		
 		case "Himenes_3":
 			dialog.text = "My... zostaliśmy tu zrzuceni. Ale, señor, nie jesteśmy przestępcami! Ha-ha-ha-ha!";
-			link.l1 = "Co jest zabawnego?";
+			link.l1 = "Co jest w takiego zabawnego?";
 			link.l1.go = "Himenes_4";
 		break;
 		
 		case "Himenes_4":
 			dialog.text = "Ach... Przepraszam, señor! To wszystko moja przypadłość, od dzieciństwa śmieję się, gdy jestem bardzo zdenerwowany. Ha.";
-			link.l1 = "I został wybrany jako przywódca?.. Dobrze. Ludzie nie lądują na bezludnych wyspach bez powodu, senor. Masz ochotę wyjaśnić? Daję ci tylko jedną szansę.";
+			link.l1 = "I zostałeś wybrany jako przywódca?.. Dobrze. Ludzie nie lądują na bezludnych wyspach bez powodu, señor. Masz ochotę wyjaśnić? Daję ci tylko jedną szansę.";
 			link.l1.go = "Himenes_5";
 		break;
 		
 		case "Himenes_5":
 			string nationManName[4];
-			nationManName[0] = "English";
-			nationManName[1] = "French";
-			nationManName[2] = "If you are seeing this, it's a bug";
-			nationManName[3] = "Spaniard";
+			nationManName[0] = "Jestem Anglikiem";
+			nationManName[1] = "Jestem Francuzem";
+			nationManName[2] = "To jest błąd";
+			nationManName[3] = "Jestem Hiszpanem";
 			dialog.text = "Przepraszam, obawiam się, że nie dosłyszałem twojego imienia, panie. Czy jesteś Anglikiem?";
-			link.l1 = nationManName[sti(pchar.BaseNation)]+" . Czy to takie ważne? Nie martwmy się teraz o moje imię.";
+			link.l1 = nationManName[sti(pchar.BaseNation)]+". Czy to takie ważne? Nie martwmy się teraz o moje imię.";
 			link.l1.go = "Himenes_6";
 		break;
 		
@@ -117,8 +117,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_12":
-			dialog.text = "Naprawdę? Czy to hiszpański?";
-			link.l1 = "To moje. Z przeznaczenia odziedziczyłem dawną kryjówkę piratów na bezludnej wyspie. Teraz to moja baza, i chcę ją rozbudować, zbadać wyspę, a jeśli to możliwe, zbudować tam fabrykę.";
+			dialog.text = "Naprawdę? Czy jest to hiszpański ląd?";
+			link.l1 = "Nie, mój. Z przeznaczenia odziedziczyłem dawną kryjówkę piratów na bezludnej wyspie. Teraz to moja baza, i chcę ją rozbudować, zbadać wyspę, a jeśli to możliwe, zbudować tam fabrykę.";
 			link.l1.go = "Himenes_13";
 		break;
 		
@@ -144,7 +144,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_15":
 			dialog.text = "Nie mamy innego wyjścia. Ale to wcale nie jest zła opcja. Przyjmiemy ją, jeśli pozwolisz nam żyć i pracować w pokoju. I obiecaj, że pewnego dnia odeślesz nas do domu! Daj nam swoje słowo, panie, i powiedz swoje imię..";
-			link.l1 = "Ja, Kapitan "+GetFullName(pchar)+", daję ci moje słowo. ?";
+			link.l1 = "Ja, Kapitan "+GetFullName(pchar)+", daję ci moje słowo.";
 			link.l1.go = "Himenes_16";
 		break;
 		
@@ -164,7 +164,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_18":
-			dialog.text = "Miło cię poznać, Senor Rodgar. Wygląda na to, że będziemy musieli razem żyć i pracować przez długi czas... Boże, jak wytrzymujesz to gorąco?";
+			dialog.text = "Miło cię poznać, Señor Rodgar. Wygląda na to, że będziemy musieli razem żyć i pracować przez długi czas... Boże, jak wytrzymujesz to gorąco?";
 			link.l1 = "";
 			link.l1.go = "Himenes_19";
 		break;
@@ -199,7 +199,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_23":
 			dialog.text = "Tak, kapitanie?";
-			link.l1 = "Hymeńczyku, masz dla mnie jakieś dobre wieści?";
+			link.l1 = "Jimenezie, masz dla mnie jakieś dobre wieści?";
 			link.l1.go = "Himenes_24";
 		break;
 		
@@ -210,7 +210,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_25":
-			dialog.text = "Oczywiście, że to zabawne! Co oni robili przez te wszystkie lata? Przede wszystkim musimy dokończyć budowę kilku domów i naprawić te chuty do akceptowalnego stanu. Ludzie muszą żyć godnie, by pracować pilnie. Ponadto poproszę piratów, aby przeprowadzili pełne rozpoznanie wyspy. Może to miejsce jest bogate nie tylko w skały i piasek. Kiedy wszystko będzie gotowe, będę mógł dokładnie powiedzieć, co zrobić z tą ziemią.";
+			dialog.text = "Oczywiście, że to zabawne! Co oni robili przez te wszystkie lata? Przede wszystkim musimy dokończyć budowę kilku domów i naprawić te chaty do akceptowalnego stanu. Ludzie muszą żyć godnie, by pracować pilnie. Ponadto poproszę piratów, aby przeprowadzili pełne rozpoznanie wyspy. Może to miejsce jest bogate nie tylko w skały i piasek. Kiedy wszystko będzie gotowe, będę mógł dokładnie powiedzieć, co zrobić z tą ziemią.";
 			link.l1 = "Brzmi świetnie! Czego się ode mnie wymaga?";
 			link.l1.go = "Himenes_26";
 		break;
@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 			}
 			else // не привез товары на стройку
 			{
-				link.l1 = "Cześć, Hymenezie. Moi ludzie przeszukali całą wyspę. Co powiesz?";
+				link.l1 = "Cześć, Jimenez. Moi ludzie przeszukali całą wyspę. Co powiesz?";
 				if (CheckAttribute(pchar, "questTemp.IslaMona.Food")) link.l1.go = "Himenes_32_2"; // привез еду и лекарства
 				else link.l1.go = "Himenes_32_3";
 			}
@@ -265,7 +265,7 @@ void ProcessDialogEvent()
 		case "Himenes_32_1":
 			IslaMona_RemoveBuild(); // сразу удаляем товары со склада
 			dialog.text = "Poradziłeś sobie z tym obowiązkiem znakomicie! Jeśli kiedykolwiek będziesz w Kadyksie, przyjdź do mnie pracować jako magazynier!";
-			link.l1 = " Właśnie idę! Powiedz mi, compadre, co teraz zamierzasz zrobić?";
+			link.l1 = " Już idę! Powiedz mi, compadre, co teraz zamierzasz zrobić?";
 			if (CheckAttribute(pchar, "questTemp.IslaMona.Food")) link.l1.go = "Himenes_34_1"; // привез еду и лекарства
 			else link.l1.go = "Himenes_34_2";
 		break;
@@ -277,7 +277,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_32_3":
-			dialog.text = "Kapitánie, najpierw zajmijmy się kwaterą i zaopatrzeniem. Plany możemy zrobić później. Czekam na towary z twojej listy w magazynie. A twój piracki przyjaciel również oczekuje zapasów i medykamentów.";
+			dialog.text = "Kapitanie, najpierw zajmijmy się kwaterą i zaopatrzeniem. Plany możemy zrobić później. Czekam na towary z twojej listy w magazynie. A twój piracki przyjaciel również oczekuje zapasów i medykamentów.";
 			link.l1 = "Dobrze, rozumiem. Najpierw musimy zbudować domy i uporządkować to miejsce. Towary wkrótce tutaj będą. I dla mojego pirackiego przyjaciela też.";
 			link.l1.go = "Himenes_33";
 		break;
@@ -330,13 +330,13 @@ void ProcessDialogEvent()
 		
 		case "Himenes_38":
 			dialog.text = "Senor Kapitanie! Co o tym sądzisz? Ha-ha-ha?";
-			link.l1 = "Jest znacznie przyjemniej. Raport, Himenes!";
+			link.l1 = "Jest znacznie przyjemniej. Raportuj, Jimenez!";
 			link.l1.go = "Himenes_39";
 		break;
 		
 		case "Himenes_39":
 			dialog.text = "Teraz możesz tu faktycznie zamieszkać! Posprzątaliśmy i odbudowaliśmy wszystkie domy, oprócz twojego, oczywiście. Niezbyt luksusowo, ale nie gorzej niż w naszym Belize.";
-			link.l1 = "Belize od dawna należy do Anglii, Himenes.";
+			link.l1 = "Belize od dawna należy do Anglii, Jimenez.";
 			link.l1.go = "Himenes_40";
 		break;
 		
@@ -404,7 +404,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_50":
-			dialog.text = "Masz rację we wszystkim, Senor. Ale to nie wszystkie nowiny! Po pierwsze, Senor Rodgar wpadł na pomysł zbudowania tawerny. Nie wiem, co ci to da, ale ten łotr coś knuje.";
+			dialog.text = "Masz rację we wszystkim, Senor. Ale to nie wszystkie nowiny! Po pierwsze, Senor Rodgar wpadł na pomysł zbudowania karczmy. Nie wiem, co ci to da, ale ten łotr coś knuje.";
 			link.l1 = " On chce się upić, oto co!";
 			link.l1.go = "Himenes_51";
 		break;
@@ -480,7 +480,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_60":
-			dialog.text = "Oczywiście, fabryka będzie wymagała konserwacji. Dzięki jej budowie, ta wyspa będzie miała gospodarkę z tobą jako głównym partnerem handlowym. Sami nakarmimy niewolników, ale za ochronę i produkcję będziesz musiał zapłacić z własnej kieszeni. Osadnicy wezmą sto dublonów i pięć butelek wina za każdą partię. W sprawach bezpieczeństwa negocjuj z Senorem Janssenem.";
+			dialog.text = "Oczywiście, fabryka będzie wymagała konserwacji. Dzięki jej budowie, ta wyspa będzie miała gospodarkę z tobą jako głównym partnerem handlowym. Sami nakarmimy niewolników, ale za ochronę i produkcję będziesz musiał zapłacić z własnej kieszeni. Osadnicy wezmą 20 dublonów i pięć butelek wina za każdą partię. W sprawach bezpieczeństwa negocjuj z Senorem Janssenem.";
 			link.l1 = "";
 			link.l1.go = "Himenes_61";
 		break;
@@ -733,7 +733,7 @@ void ProcessDialogEvent()
 		
 		case "Himenes_tavern_3":
 			dialog.text = "Co się stało, k-k-kapitanie? Nie podoba ci się kolor ścian?";
-			link.l1 = "Teraz dopiero zauważyłem, że wy dwaj macie to samo imię! Ha-ha-ha! Hiszpan i pirat, z tym samym imieniem, zbudowali tawernę na bezludnej wyspie i piją razem, jakby bogowie indiańscy mieli wszystkich pożreć i zakończyć świat o wschodzie słońca! Ha-ha! Jestem z wami!";
+			link.l1 = "Teraz dopiero zauważyłem, że wy dwaj macie to samo imię! Ha-ha-ha! Hiszpan i pirat, z tym samym imieniem, zbudowali karczmę na bezludnej wyspie i piją razem, jakby bogowie indiańscy mieli wszystkich pożreć i zakończyć świat o wschodzie słońca! Ha-ha! Jestem z wami!";
 			link.l1.go = "Himenes_tavern_4";
 		break;
 		
@@ -843,7 +843,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_bacaut":
-			dialog.text = "Oczywiście, kapitanie, weź to. Mamy następujące partie gotowe na następny termin: "+sti(pchar.questTemp.IslaMona.Factory.Part)+",  to "+sti(pchar.questTemp.IslaMona.Factory.Goods)+" drewno. Dlatego jesteś nam winien "+sti(pchar.questTemp.IslaMona.Factory.Dublon)+"  doblony, "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" butelki rumu, i "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" butelki wina, czy masz to wszystko?";
+			dialog.text = "Oczywiście, kapitanie, weź to. Mamy następujące partie gotowe na następny termin: "+sti(pchar.questTemp.IslaMona.Factory.Part)+",  to "+sti(pchar.questTemp.IslaMona.Factory.Goods)+" drewno. Dlatego jesteś nam winien "+sti(pchar.questTemp.IslaMona.Factory.Dublon)+"  dublony, "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" butelki rumu, i "+sti(pchar.questTemp.IslaMona.Factory.Bottle)+" butelki wina, czy masz to wszystko?";
 			if (PCharDublonsTotal() >= sti(pchar.questTemp.IslaMona.Factory.Dublon) && PCharItemsTotal("potionrum") >= sti(pchar.questTemp.IslaMona.Factory.Bottle) && PCharItemsTotal("potionwine") >= sti(pchar.questTemp.IslaMona.Factory.Bottle))
 			{
 				link.l1 = "Oczywiście. Oto twoja zapłata.";
@@ -885,7 +885,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_church_1":
-			dialog.text = "Kapitánie, niezręcznie mi o to pytać... Już zainwestowałeś ogromną sumę w to miejsce!";
+			dialog.text = "Kapitanie, niezręcznie mi o to pytać... Już zainwestowałeś ogromną sumę w to miejsce!";
 			link.l1 = "Burdel?";
 			link.l1.go = "Himenes_church_2_1";
 			link.l2 = "Kościół?";
@@ -991,19 +991,19 @@ void ProcessDialogEvent()
 			string sAdd = "";
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Candle"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Candle)+ " candles,"
+				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Candle)+ " świec,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.Amber"))
 			{
-				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Amber)+ " amber,"
+				sAdd += " "+sti(pchar.questTemp.IslamonaChurch.Amber)+ " bursztynów,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.GoldNugget"))
 			{
-				sAdd += " "+ sti(pchar.questTemp.IslamonaChurch.GoldNugget) + " ingots,"
+				sAdd += " "+ sti(pchar.questTemp.IslamonaChurch.GoldNugget) + " sztabek,"
 			}
 			if(CheckAttribute(pchar, "questTemp.IslamonaChurch.BlueAmber"))
 			{
-				sAdd += " and one blue amber"
+				sAdd += " i jednego niebieskiego bursztynu"
 			}
 			if(sAdd == "")
 			{
@@ -1013,7 +1013,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = "Kapitane, wciąż są "+sAdd+" został.";
+				dialog.text = "Kapitane, wciąż brakuje nam "+sAdd+" .";
 				link.l1 = "Oczywiście, tylko daj mi trochę więcej czasu, proszę. Szczerze mówiąc, gdyby nie te świece, pomyślałbym, że zamierzasz zakopać skarb.";
 				link.l1.go = "Himenes_church_11";
 			}
@@ -1042,8 +1042,8 @@ void ProcessDialogEvent()
 		case "Himenes_church_14":
 			sld = characterFromId("Islamona_carpenter");
 			i = sti(sld.crew.qty);
-			if (i >= 50) sTemp = "that we won't have to sit here for weeks waiting for events to unfold.";
-			else sTemp = "that not everyone will have to participate in the battle.";
+			if (i >= 50) sTemp = "że nie będziemy musieli siedzieć tu tygodniami i czekać na rozwój wydarzeń.";
+			else sTemp = "że nie każdy będzie musiał brać udziału w bitwie.";
 			dialog.text = "Ha-ha-ha-ha-ha... ha. Też tak myślałem, kapitanie! Rodgar ma rację, twoja obecność już oznacza, "+sTemp+"";
 			link.l1 = "Już wiem, co się stało. Czy są jakieś ofiary?";
 			if (GetCharacterIndex("Mirabella") != -1) link.l1.go = "Himenes_church_15";
@@ -1152,13 +1152,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Himenes_church_22":
-			dialog.text = "Najpierw zbudowaliśmy kościół. To zajmie chwilę, wejdź. Jest coś do zobaczenia. Dokonałeś wielkiego czynu, kapitanie. Może ci się to nie wydawać, ale możliwość komunikacji z Bogiem jest dla nas bardzo, bardzo ważna. Od tego dnia nazywamy Isla Mona naszym hogar.";
-			link.l1 = "Dom, słodki dom? Zdecydowanie rzucę okiem. Czy niosłem te wszystkie świece na próżno?";
+			dialog.text = "Najpierw zbudowaliśmy kościół. To zajmie chwilę, wejdź. Jest coś do zobaczenia. Dokonałeś wielkiego czynu, kapitanie. Może ci się to nie wydawać, ale możliwość komunikacji z Bogiem jest dla nas bardzo, bardzo ważna. Od tego dnia nazywamy Isla Mona naszym hogar, dulce hogar.";
+			link.l1 = "Dom, słodki dom? Znam lepsze powiedzenie... Zdecydowanie rzucę okiem. Czy niosłem te wszystkie świece na próżno?";
 			link.l1.go = "Himenes_church_23";
 		break;
 		
 		case "Himenes_church_23":
-			dialog.text = "Nie za darmo! Po drugie, fabryka została zrujnowana - straciliśmy całą siłę roboczą. Będziesz musiał przywieźć nową partię niewolników. Na szczęście, po ponownym oszacowaniu wydajności pracy, doszliśmy do wniosku, że dziesięciu niewolników będzie więcej niż wystarczająco. Więc, mniej zamieszania dla ciebie.";
+			dialog.text = "Nie na darmo! Po drugie, fabryka została zrujnowana - straciliśmy całą siłę roboczą. Będziesz musiał przywieźć nową partię niewolników. Na szczęście, po ponownym oszacowaniu wydajności pracy, doszliśmy do wniosku, że dziesięciu niewolników będzie więcej niż wystarczająco. Więc, mniej zamieszania dla ciebie.";
 			link.l1 = "Dobrze. Coś jeszcze?";
 			link.l1.go = "Himenes_church_24";
 		break;
@@ -1264,7 +1264,7 @@ void ProcessDialogEvent()
 			TakeNItems(pchar, "potion5", 10);
 			TakeNItems(pchar, "cannabis7", 1);
 			dialog.text = "I teraz - z powrotem do pracy!";
-			link.l1 = "Nie, teraz do tawerny! Rodrigo, ruszajmy!";
+			link.l1 = "Nie, teraz do karczmy! Rodrigo, ruszajmy!";
 			link.l1.go = "Himenes_church_33_1";
 			link.l2 = "Tak, rozkoszujmy się tą wspaniałą chwilą nieco dłużej.";
 			link.l2.go = "Himenes_church_33_2";
@@ -1379,7 +1379,7 @@ void ProcessDialogEvent()
 		
 		// солдат в бухте
 		case "Capral":
-			dialog.text = "Stój! Kapralu "+GetFullName(npchar)+"Znajdujesz się na terenie walk! Natychmiast się przedstaw i podaj cel swojej obecności tutaj!";
+			dialog.text = "Stój! Kapralu "+GetFullName(npchar)+". Znajdujesz się na terenie walk! Natychmiast się przedstaw i podaj cel swojej obecności tutaj!";
 			if (CheckCharacterItem(pchar, "patent_fra"))
 			{
 				link.l1 = "Kapralu, spocznij! "+GetFullName(pchar)+", kapitan francuskiej marynarki wojennej. Rozkazuję ci eskortować mnie do twojego przełożonego. Wykonaj rozkaz!";
@@ -1459,20 +1459,20 @@ void ProcessDialogEvent()
 		case "FraOfficer":
 			if (CheckCharacterItem(pchar, "patent_fra"))
 			{
-				dialog.text = "Kapitan "+GetFullName(pchar)+"! Dzięki Bogu! Pozwól, że się przedstawię - porucznik "+GetFullName(npchar)+". Wielki admirator wasz! Nie wiem, co robicie na tym nędznym kawałku ziemi, ale jesteście w samą porę!\nMuszę przyznać, Kapitanie, że staliście się bardzo popularni wśród naszego korpusu oficerskiego. Chociaż wielu irytuje wasz... 'specjalny' styl służby, wszyscy zgadzają się, że wasz patent czyni naszą flotę silniejszą. Obecnie znajdujemy się w całkowicie patowej sytuacji, więc pomoc kogoś takiego jak wy będzie trudna do przecenienia!";
+				dialog.text = "Kapitan "+GetFullName(pchar)+"! Dzięki Bogu! Pozwól, że się przedstawię - porucznik "+GetFullName(npchar)+". Twój wielki admirator! Nie wiem, co robisz na tym nędznym kawałku ziemi, ale jesteś w samą porę!\nMuszę przyznać, Kapitanie, że stałeś się bardzo popularny wśród naszego korpusu oficerskiego. Chociaż wielu irytuje twój... 'specjalny' styl służby, wszyscy zgadzają się, że twój patent czyni naszą flotę silniejszą. Obecnie znajdujemy się w całkowicie patowej sytuacji, więc pomoc kogoś takiego jak ty będzie trudna do przecenienia!";
 				link.l1 = "Co mogę zrobić? I co się tutaj dzieje?";
 				link.l1.go = "FraOfficer_1";
 			}
 			else
 			{
-				dialog.text = "Kapitan "+GetFullName(pchar)+" Twoje imię było wielokrotnie wspominane w raportach floty. I zawsze w bardzo wątpliwym świetle. Jednak teraz masz szansę przerwać ten mniej zaszczytny trend i służyć ojczyźnie.";
+				dialog.text = "Kapitanie "+GetFullName(pchar)+" Twoje imię było wielokrotnie wspominane w raportach floty. I zawsze w bardzo wątpliwym świetle. Jednak teraz masz szansę przerwać ten mniej zaszczytny trend i służyć ojczyźnie.";
 				link.l1 = "Co mogę zrobić? I co tu się dzieje?";
 				link.l1.go = "FraOfficer_8";
 			}
 		break;
 		
 		case "FraOfficer_1":
-			dialog.text = "Byliśmy na 'Warriorze', na rutynowej misji - polując na szczególnie zuchwałych hiszpańskich korsarzy. Sprawa jest zazwyczaj bardzo prosta: szpieg dostarcza obszar i dane na temat celu, a ty chwytasz go zza horyzontu. Nie ma tu nic specjalnego do opowiadania, a wszystko skończyło się bardzo źle: Hiszpanie znaleźli nas pierwsi i zaatakowali, mimo że sami byli na korwecie. Gdybyśmy mieli coś poważniejszego, nie poszlibyśmy razem na dno... ale przynajmniej udało nam się wysadzić cały ich kadłub. Przeżył tylko mój oddział. Kastylijczycy jednak też mieli kogoś, kto przeżył. Ale nie na długo, haha!";
+			dialog.text = "Byliśmy na 'Wojowniku', na rutynowej misji - polując na szczególnie zuchwałych hiszpańskich korsarzy. Sprawa jest zazwyczaj bardzo prosta: szpieg dostarcza obszar i dane na temat celu, a ty chwytasz go zza horyzontu. Nie ma tu nic specjalnego do opowiadania, a wszystko skończyło się bardzo źle: Hiszpanie znaleźli nas pierwsi i zaatakowali, mimo że sami byli na korwecie. Gdybyśmy mieli coś poważniejszego, nie poszlibyśmy razem na dno... ale przynajmniej udało nam się wysadzić cały ich kadłub. Przeżył tylko mój oddział. Kastylijczycy jednak też mieli kogoś, kto przeżył. Ale nie na długo, haha!";
 			if (CheckAttribute(pchar, "questTemp.IslamonaSpaOfficer"))
 			{
 				link.l1 = "Fregata 'Wojownik'? Kapitan Shocke zginął?";
@@ -1492,7 +1492,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_2":
-			dialog.text = "Znaleźliśmy osadę na wyspie - całkiem zaludnioną kryjówkę bandytów dla - posłuchaj tylko - piratów i Hiszpanów. Niewiarygodne! Wiesz, zazwyczaj te dranie tylko się tną i wieszają, ale tutaj - patrz: w samym centrum archipelagu, pracują razem jak rodzina, aby wydobywać drewno korsarskie. Widziałeś molo, które dla siebie zbudowali? Goście nie przychodzą do tej bandy na łódkach wiosłowych. Nasze zadanie jest niezwykle jasne: z twoją pomocą przejmujemy osadę, zabieramy drewno korsarskie i więźniów, a ty zabierzesz wszystkich do Capsterburga. Tymczasem władze same się tym zajmą... A gdy będą się tym zajmować, my poradzimy sobie z drewnem korsarskim i porządnie to uczcimy z innymi oficerami z mojej domowej eskadry!";
+			dialog.text = "Znaleźliśmy osadę na wyspie - całkiem zaludnioną kryjówkę bandytów dla - posłuchaj tylko - piratów i Hiszpanów. Niewiarygodne! Wiesz, zazwyczaj te dranie tylko się tną i wieszają, ale tutaj - patrz: w samym centrum archipelagu, pracują razem jak rodzina, aby wydobywać drewno korsarskie. Widziałeś molo, które dla siebie zbudowali? Goście nie przychodzą do tej bandy na łódkach wiosłowych. Nasze zadanie jest niezwykle jasne: z twoją pomocą przejmujemy osadę, zabieramy drewno korsarskie i więźniów, a ty zabierzesz wszystkich do Capsterville. Tymczasem władze same się tym zajmą... A gdy będą się tym zajmować, my poradzimy sobie z drewnem korsarskim i porządnie to uczcimy z innymi oficerami z mojej domowej eskadry!";
 			link.l1 = "Co powstrzymało cię przed samodzielnym zdobyciem osady do tego czasu?";
 			link.l1.go = "FraOfficer_3";
 		break;
@@ -1500,10 +1500,10 @@ void ProcessDialogEvent()
 		case "FraOfficer_3":
 			sld = characterFromId("Islamona_carpenter");
 			i = sti(sld.crew.qty);
-			if (i >= 50) sTemp = "There are probably many more bandits than us - we saw tents on the shore. And besides tents, they also have a wall, gates, cannon!";
-			else sTemp = "There are probably not so many bandits, otherwise they would have kicked us out of here already, but they still have a wall, gates, cannon and plenty of time!";
+			if (i >= 50) sTemp = " Bandytów jest pewnie o wiele więcej niż nas – widzieliśmy namioty na brzegu. A oprócz namiotów mają też mur, bramy, armatę!";
+			else sTemp = " Bandytów prawdopodobnie nie ma aż tak wielu, w przeciwnym razie już by nas stąd wyrzucili, ale mają mur, bramy, armatę i mnóstwo czasu!";
 			dialog.text = "Co nas powstrzymało?! Mamy tylko dwunastu strzelców i siedmiu marynarzy. Wszyscy zmęczeni i wyczerpani. Ocaliliśmy tylko pięć muszkietów, z najwyżej jednym nabojem każdy!"+sTemp+"";
-			link.l1 = "   Ale czy masz plan?   ";
+			link.l1 = "Ale czy masz plan?   ";
 			link.l1.go = "FraOfficer_4";
 		break;
 		
@@ -1522,7 +1522,7 @@ void ProcessDialogEvent()
 		
 		case "FraOfficer_6":
 			GiveItem2Character(pchar, "grenade");
-			//Log_Info("Вы получили гранату");
+			//Log_Info("Otrzymałeś granat");
 			PlaySound("interface\important_item.wav");
 			dialog.text = "... a do tego czasu już się do ciebie przyzwyczają, więc łatwiej będzie przeprowadzić sabotaż! Sprytne! Cóż, niczego innego się po tobie nie spodziewałem, Kapitanie. Działaj, kiedy będziesz gotów. Ale jednak, oto... Może się przydać.";
 			link.l1 = "";
@@ -1551,7 +1551,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "FraOfficer_9":
-			dialog.text = "Znaleźliśmy osadę na wyspie - całkiem zaludnione legowisko bandytów dla - posłuchaj tylko - piratów i Hiszpanów. Niewiarygodne! Wiesz, zazwyczaj te łajdaki tylko się tną i wieszają, ale tutaj - patrz: w samym sercu archipelagu, współpracują jak rodzina, by zdobyć drewno korsarskie. Widziałeś molo, które sobie zbudowali? Goście nie przypływają do tej rasy na łódkach. Nasze zadanie jest niezwykle jasne: z twoją pomocą przejmujemy osadę, zabieramy drewno korsarskie i więźniów, a ty zabierasz wszystkich do Capsterburga. Tymczasem władze same się tym zajmą... A podczas gdy będą to rozwiązywać, mogę nawet być gotów dać ci możliwość zabrania trochę cennego drewna na twoje potrzeby.";
+			dialog.text = "Znaleźliśmy osadę na wyspie - całkiem zaludnione legowisko bandytów dla - posłuchaj tylko - piratów i Hiszpanów. Niewiarygodne! Wiesz, zazwyczaj te łajdaki tylko się tną i wieszają, ale tutaj - patrz: w samym sercu archipelagu, współpracują jak rodzina, by zdobyć drewno korsarskie. Widziałeś molo, które sobie zbudowali? Goście nie przypływają do tej rasy na łódkach. Nasze zadanie jest niezwykle jasne: z twoją pomocą przejmujemy osadę, zabieramy drewno korsarskie i więźniów, a ty zabierasz wszystkich do Capsterville. Tymczasem władze same się tym zajmą... A podczas gdy będą to rozwiązywać, mogę nawet być gotów dać ci możliwość zabrania trochę cennego drewna na twoje potrzeby.";
 			link.l1 = "Co przeszkodziło ci w zdobyciu osiedla na własną rękę do tego czasu?";
 			link.l1.go = "FraOfficer_3";
 		break;
@@ -1603,7 +1603,7 @@ void ProcessDialogEvent()
 			link.l2.go = "FraOfficer_15_2";
 			link.l3 = "Prawie połowa mieszkańców tej dziury to kobiety. Walczyłeś nie nawet przeciwko milicji: przez cały ten czas nie było przeciwko tobie więcej niż tuzin wojowników. Są słabi i zdemoralizowani.";
 			link.l3.go = "FraOfficer_15_3";
-			link.l4 = "The cannon is out of ammunition. I've seen enough guns in my lifetime and can tell when a crew is ready to fire and when it's not. Without their artillery, they're nothing but poor warriors; they are weak and demoralized.";
+			link.l4 = "W armacie skończyła się amunicja. Widziałem w życiu wystarczająco dużo dział i potrafię rozpoznać, kiedy załoga jest gotowa do strzału, a kiedy nie. Bez artylerii są po prostu marnymi wojownikami; są słabi i zdemoralizowani.";
 			link.l4.go = "FraOfficer_15_4";
 			link.l5 = "Myśl o trofeach i chwale, Poruczniku! Samodzielne zwycięstwo nad hiszpańskim korsarzem, zdobycie bandyckiego gniazda i unikalnego źródła drewna bukanierskiego - to wszystko wymaga dowodzenia własnym statkiem! Powtarzam, są słabi i zdemoralizowani, czas ich rozgromić!";
 			link.l5.go = "FraOfficer_15_5";
@@ -1612,14 +1612,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_1":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 80)
 			{
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 80, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja, i miałeś rację, nie ma potrzeby się tu ociągać. Moi ludzie są wszyscy tutaj, jesteśmy silni, wyszkoleni i gotowi. Wszystko zakończy się w ciągu pół godziny. Kapitanie, proszę przygotować się na przyjęcie ludzi, więźniów i ładunku na swój statek. Nie będziemy się tu długo zatrzymywać.";
 				link.l1 = "Wszystko gotowe, poruczniku. Czekaliśmy tylko na ciebie. Do zobaczenia później!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Skill Check Failed (80)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 80, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenne informacje. W takim razie, udaj się na nabrzeże i przygotuj swoją drużynę abordażową. Razem szturmujemy gniazdo bandytów natychmiast. Najlepsi z moich i twoich ludzi poprowadzą awangardę - to oni zdobędą bramy. Resztę omówimy po wspólnej inspekcji naszych sił. Nie zawiedź mnie i swojego kraju, "+GetFullName(pchar)+".";
 				link.l1 = "...Niech tak będzie. Do zobaczenia później, poruczniku.";
 				link.l1.go = "FraOfficer_17";
@@ -1629,16 +1629,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_2":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenne informacje, i miałeś rację, nie ma potrzeby się tu ociągać. Moi ludzie są tu wszyscy, jesteśmy silni, przeszkoleni i gotowi. Wszystko będzie skończone za pół godziny. Kapitanie, proszę przygotować się na przyjęcie ludzi, więźniów i ładunku na swój statek. Nie będziemy się tu długo ociągać.";
 				link.l1 = "Wszystko gotowe, poruczniku. Czekaliśmy tylko na ciebie. Do zobaczenia później!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja. W takim razie, udaj się na dok i przygotuj swoją załogę abordażową. Razem natychmiast szturmujemy gniazdo bandytów. Najlepsi z moich i twoich ludzi poprowadzą awangardę - to oni zdobędą bramy. Resztę omówimy po wspólnej inspekcji naszych sił. Nie zawiedź mnie i swojego kraju, "+GetFullName(pchar)+".";
 				link.l1 = "...Niech tak będzie. Do zobaczenia później, poruczniku.";
 				link.l1.go = "FraOfficer_17";
@@ -1648,16 +1648,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_3":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 70 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 70, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja, i miałeś rację, nie ma potrzeby tu zwlekać. Moi ludzie są tu wszyscy, jesteśmy silni, przeszkoleni i gotowi. Wszystko zakończy się za pół godziny. Kapitanie, proszę przygotować się na przyjęcie ludzi, więźniów i ładunku na swój statek. Nie będziemy tu długo zwlekać.";
 				link.l1 = "Wszystko gotowe, poruczniku. Czekaliśmy tylko na ciebie. Do zobaczenia później!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (70)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 70, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja. W takim razie udaj się na dok i przygotuj swoją załogę abordażową. Razem szturmujemy gniazdo bandytów i to natychmiast. Najlepsi z moich i twoich ludzi poprowadzą awangardę - to oni zdobędą bramy. Resztę omówimy po wspólnym przeglądzie naszych sił. Nie zawiedź mnie i swojego kraju, "+GetFullName(pchar)+".";
 				link.l1 = "...Niech tak będzie. Do zobaczenia później, poruczniku.";
 				link.l1.go = "FraOfficer_17";
@@ -1667,16 +1667,16 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_4":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 60 && sti(pchar.reputation.nobility) > 41)
 			{
-				notification("Reputation Check Passed", "None");
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Reputation(true, 42, "low");
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja i miałeś rację, nie ma potrzeby się tu ociągać. Moi ludzie są wszyscy tutaj, jesteśmy silni, przeszkoleni i gotowi. Wszystko skończy się za pół godziny. Kapitanie, proszę przygotować się na przyjęcie ludzi, więźniów i ładunku na swoim statku. Nie będziemy tu długo zwlekać.";
 				link.l1 = "Wszystko gotowe, poruczniku. Czekaliśmy tylko na ciebie. Do zobaczenia później!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(42))+")", "None");
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Reputation(false, 42, "low");
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenne informacje. W takim razie, skieruj się na przystań i przygotuj swój zespół abordażowy. Razem szturmujemy gniazdo bandytów natychmiast. Najlepsi z moich i twoich ludzi poprowadzą awangardę - to oni zdobędą bramy. Resztę omówimy po wspólnym przeglądzie naszych sił. Nie zawiedź mnie ani swojej ojczyzny, "+GetFullName(pchar)+".";
 				link.l1 = "...Niech tak będzie. Do zobaczenia później, poruczniku.";
 				link.l1.go = "FraOfficer_17";
@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 		case "FraOfficer_15_5":
 			if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) >= 90)
 			{
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 90, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenne informacje i miałeś rację, nie ma potrzeby tu zwlekać. Moi ludzie są wszyscy tutaj, jesteśmy silni, wyszkoleni i gotowi. Wszystko zakończy się w pół godziny. Kapitanie, proszę przygotować się na przyjęcie ludzi, więźniów i ładunku na swój statek. Nie będziemy tu długo zwlekać.";
 				link.l1 = "Wszystko gotowe, poruczniku. Czekaliśmy tylko na ciebie. Do zobaczenia później!";
 				link.l1.go = "FraOfficer_16";
 			}
 			else
 			{
-				notification("Skill Check Failed (90)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 90, SKILL_LEADERSHIP);
 				dialog.text = "Dziękuję, Kapitanie. To cenna informacja. W takim razie, udaj się na dok i przygotuj swoją drużynę abordażową. Zaatakujemy gniazdo bandytów razem i natychmiast. Najlepsi z moich i twoich ludzi poprowadzą awangardę – to oni zdobędą bramy. Resztę omówimy po wspólnym przeglądzie naszych sił. Nie zawiedź mnie i swojego kraju, "+GetFullName(pchar)+".";
 				link.l1 = "...Niech tak będzie. Do zobaczenia później, poruczniku.";
 				link.l1.go = "FraOfficer_17";
@@ -1803,7 +1803,7 @@ void ProcessDialogEvent()
 		
 		// испанский офицер
 		case "SpaOfficer":
-			dialog.text = "Witajcie, senor. Czy jesteście właścicielem tej ziemi? Pozwólcie, że się przedstawię, Wielki Francisco de Alba, były kapitan korwety 'Perro Marino'.";
+			dialog.text = "Witaj, senor. Czy jesteś właścicielem tej ziemi? Pozwól, że się przedstawię, Wielmożny Francisco de Alba, były kapitan korwety 'Perro Marino'.";
 			link.l1 = "Tak, to jest moja ziemia. Ja jestem "+GetFullName(pchar)+", kapitan statku '"+pchar.ship.name+"'. Wielmożny? Nie mieliśmy tu wcześniej tak znamienitych gości.";
 			link.l1.go = "SpaOfficer_1";
 		break;
@@ -1815,7 +1815,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SpaOfficer_2":
-			dialog.text = " Myślę, że nie ma sensu udawać. Moim zadaniem jest szukać i niszczyć wrogów Hiszpanii i króla Filipa na wszystkich morzach świata.";
+			dialog.text = "Myślę, że nie ma sensu udawać. Moim zadaniem jest szukać i niszczyć wrogów Hiszpanii i króla Filipa na wszystkich morzach świata.";
 			link.l1 = "To szczęście, że takie rozkazy jeszcze nie nadeszły. Jesteś oczywiście bardzo utalentowanym oficerem marynarki.";
 			link.l1.go = "SpaOfficer_3";
 		break;
@@ -1835,7 +1835,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SpaOfficer_4":
-			dialog.text = "A tak przy okazji, Monsieur de Mor, 'Wojownik' - ten mały statek był ci znajomy, prawda? Twoja śmiała operacja w Porto Bello nie przeszła niezauważona. Odważna, wręcz samobójcza. Bardzo potrzebowałeś pieniędzy, mam rację? Ha!";
+			dialog.text = "A tak przy okazji, Monsieur de Maure, 'Wojownik' - ten mały statek był ci znajomy, prawda? Twoja śmiała operacja w Portobelo nie przeszła niezauważona. Odważna, wręcz samobójcza. Bardzo potrzebowałeś pieniędzy, mam rację? Ha!";
 			link.l1 = "Dużo o mnie wiesz, Grand. Ale przejdźmy do twojego losu.";
 			link.l1.go = "SpaOfficer_5";
 		break;
@@ -1897,7 +1897,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SpaOfficer_9":
-			dialog.text = "Kapitan "+GetFullName(pchar)+"! You saved my life and brought me back to my own. I understand how difficult it was to take such a risk - I would never have dared to do such a thing. I owe you, senor. I give you my word that I will never tell anyone about the circumstances of that ill-fated battle. When you return to the Old World, be sure to find me; you will always be welcome at our family estate in Madrid. For now, take this...";
+			dialog.text = "Kapitan "+GetFullName(pchar)+"! Uratowałeś mi życie i przywróciłeś mnie do życia. Rozumiem, jak trudno było podjąć takie ryzyko – nigdy bym się na to nie odważył. Jestem ci to winien, senor. Daję ci słowo, że nigdy nikomu nie opowiem o okolicznościach tej nieszczęsnej bitwy. Kiedy wrócisz do Starego Świata, koniecznie mnie odszukaj; zawsze będziesz mile widziany w naszej rodzinnej posiadłości w Madrycie. A teraz weź to…";
 			link.l1 = "Kawałek mapy?";
 			link.l1.go = "SpaOfficer_10";
 		break;
@@ -1922,7 +1922,7 @@ void ProcessDialogEvent()
 		// Диалоги обитателей Исламоны
 		// мужское население
 		case "island_man":
-			dialog.text = LinkRandPhrase("Witajcie! Jak się macie, Kapitanie? Wszystko idzie dobrze dla nas.","Praca dla społeczności to największa radość!","Twoja wyspa jest wspaniała, kapitanie, i zrobimy wszystko dla jej dobrobytu.");
+			dialog.text = LinkRandPhrase("Witaj! Jak się masz, Kapitanie? Wszystko idzie dobrze dla ciebie.","Praca dla społeczności to największa radość!","Twoja wyspa jest wspaniała, kapitanie, i zrobimy wszystko dla jej dobrobytu.");
 			link.l1 = LinkRandPhrase("Miło to słyszeć.","Cieszę się, że wszystko w porządku.","Podziwiam twój entuzjazm, amigo.");
 			link.l1.go = "island_man_1";
 			if(CheckAttribute(pchar,"questTemp.IslaMona.TownStage"))
@@ -1936,19 +1936,19 @@ void ProcessDialogEvent()
 					break;
 					
 					case 1:
-						dialog.text = RandPhraseSimple(RandPhraseSimple("Nie jest tu źle! Tylko trochę nudno.","Kapitanie, miło cię widzieć. Wpadnij kiedyś!"),RandPhraseSimple("Ktoś znalazł czaszki na plaży i przyniósł je na poranne spotkanie. Czy zawsze tak tu jest?","Powiem ci sekret, Senor Himenes wyraźnie korzysta ze świeżego powietrza i bezpieczeństwa tego miejsca."));
+						dialog.text = RandPhraseSimple(RandPhraseSimple("Nie jest tu źle! Tylko trochę nudno.","Kapitanie, miło cię widzieć. Wpadnij kiedyś!"),RandPhraseSimple("Ktoś znalazł czaszki na plaży i przyniósł je na poranne spotkanie. Czy zawsze tak tu jest?","Powiem ci sekret, Senor Jimenez wyraźnie korzysta ze świeżego powietrza i bezpieczeństwa tego miejsca."));
 						link.l1 = "...";
 						link.l1.go = "island_man_1";
 					break;
 					
 					case 2:
-						dialog.text = RandPhraseSimple(RandPhraseSimple("Nie jest tu źle! Tylko trochę nudno.","Kapitanie, miło cię widzieć. Wpadnij kiedyś!"),RandPhraseSimple("Ktoś znalazł czaszki na plaży i przyniósł je na poranne spotkanie. Czy zawsze tak tu jest?","Powiem ci sekret, Señor Himenes wyraźnie korzysta z świeżego powietrza i bezpieczeństwa tego miejsca."));
+						dialog.text = RandPhraseSimple(RandPhraseSimple("Nie jest tu źle! Tylko trochę nudno.","Kapitanie, miło cię widzieć. Wpadnij kiedyś!"),RandPhraseSimple("Ktoś znalazł czaszki na plaży i przyniósł je na poranne spotkanie. Czy zawsze tak tu jest?","Powiem ci sekret, Señor Jimenez wyraźnie korzysta z świeżego powietrza i bezpieczeństwa tego miejsca."));
 						link.l1 = "...";
 						link.l1.go = "island_man_1";
 					break;
 					
 					case 3:
-						dialog.text = RandPhraseSimple(RandPhraseSimple("Niech cię Bóg błogosławi, Kapitanie!","Raz w tygodniu organizujemy występy na plaży i w tawernie. Wpadnij kiedyś."),RandPhraseSimple("Twoi marynarze ciągle przynoszą nam wszelkiego rodzaju błyskotki w zamian za świeże jedzenie. Dziękujemy za zachęcanie do tego.","To niesamowite, że to miejsce jeszcze nie zostało odkryte. Mam nadzieję, że tak pozostanie."));
+						dialog.text = RandPhraseSimple(RandPhraseSimple("Niech cię Bóg błogosławi, Kapitanie!","Raz w tygodniu organizujemy występy na plaży i w karczmie. Wpadnij kiedyś."),RandPhraseSimple("Twoi marynarze ciągle przynoszą nam wszelkiego rodzaju błyskotki w zamian za świeże jedzenie. Dziękujemy za zachęcanie do tego.","To niesamowite, że to miejsce jeszcze nie zostało odkryte. Mam nadzieję, że tak pozostanie."));
 						link.l1 = "...";
 						link.l1.go = "island_man_1";
 					break;
@@ -1993,7 +1993,7 @@ void ProcessDialogEvent()
 					break;
 					
 					case 1:
-						dialog.text = LinkRandPhrase(" Nasi ludzie wykonali świetną robotę - domy są doskonałe. Ale my też ciężko pracowaliśmy!","Senor Kapitanie, nie martw się: kobiety naszego małego klanu nie boją się trudności i tymczasowych niewygód.","Takie powietrze tutaj! I morze! Czujesz się bliżej Boga!");
+						dialog.text = LinkRandPhrase("Nasi ludzie wykonali świetną robotę - domy są doskonałe. Ale my też ciężko pracowaliśmy!","Senor Kapitanie, nie martw się: kobiety naszego małego klanu nie boją się trudności i tymczasowych niewygód.","Takie powietrze tutaj! I morze! Czujesz się bliżej Boga!");
 						link.l1 = "...";
 						link.l1.go = "island_woman_1";
 					break;
@@ -2042,7 +2042,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = dialog.text = RandPhraseSimple(RandPhraseSimple("Hiszpanie? Nie spodziewaliśmy się tego po was.","Teraz musimy iść całą drogę na plażę, aby tylko spać w spokoju!"),RandPhraseSimple(" Dlaczego zdecydowałeś się na to wszystko - co, kapitanie?","Szef ci wtedy ufał - i nie pomylił się. Znowu w ciebie uwierzymy."));
+				dialog.text = dialog.text = RandPhraseSimple(RandPhraseSimple("Hiszpanie? Nie spodziewaliśmy się tego po was.","Teraz musimy iść całą drogę na plażę, aby tylko spać w spokoju!"),RandPhraseSimple("Dlaczego zdecydowałeś się na to wszystko - co, kapitanie?","Szef ci wtedy ufał - i nie pomylił się. Znowu w ciebie uwierzymy."));
 			}
 			link.l1 = "...";
 			link.l1.go = "fort_pirate_1";
@@ -2055,7 +2055,7 @@ void ProcessDialogEvent()
 		
 		// посетители таверны
 		case "citizen_tavern":
-			dialog.text = LinkRandPhrase("Po wyczerpującej harówce, nie grzechem jest wypić kielicha lub dwa...","I'm almost done and heading home; the wife must be waiting...","Ah, it's nice to relax in our tavern after work! We're all grateful to you, captain!");
+			dialog.text = LinkRandPhrase("Po wyczerpującej harówce, nie grzechem jest wypić kielicha lub dwa...","Już prawie skończyłem i idę do domu. Żona pewnie czeka...","Ach, jak miło jest odpocząć w naszej karczmie po pracy! Wszyscy jesteśmy ci wdzięczni, kapitanie!");
 			link.l1 = LinkRandPhrase("Ciesz się napitkiem, kompadre, ha-ha!","Odpocznij, kumplu, tylko nie przesadzaj, bo żona cię zgani, ha-ha!","Weź to na luz, kumplu, życie to nie tylko praca!");
 			link.l1.go = "citizen_tavern_1";
 		break;
@@ -2066,9 +2066,9 @@ void ProcessDialogEvent()
 		break;
 		
 		case "sailor_tavern":
-			if (GetCharacterIndex("Mirabella") != -1) sTemp = "Who's that pretty mulatto woman living here?";
-				else sTemp = "Captain, nice place you got here!";
-			dialog.text = RandPhraseSimple(RandPhraseSimple("Kapitanie, masz tu niezłe miejsce!","Wyobraź sobie, że nagle zostalibyśmy pozbawieni rumu. Z pewnością zdobyłbyś więcej, prawda?"),RandPhraseSimple("Marzyłem o takich wakacjach od dawna. Chciałbym jednak burdel... ot, taka dzika myśl, Kapitanie.",sTemp));
+			if (GetCharacterIndex("Mirabella") != -1) sTemp = " kim jest ta ładna mulatka mieszkająca tutaj?";
+				else sTemp = " fajnie tu masz!";
+			dialog.text = RandPhraseSimple(RandPhraseSimple("Kapitanie, masz tu niezłe miejsce!","Wyobraź sobie, że nagle zostalibyśmy pozbawieni rumu. Z pewnością zdobyłbyś więcej, prawda?"),RandPhraseSimple("Marzyłem o takich wakacjach od dawna. Chciałbym jednak burdel... ot, taka dzika myśl, Kapitanie,",sTemp));
 			link.l1 = "...";
 			link.l1.go = "sailor_tavern_1";
 		break;

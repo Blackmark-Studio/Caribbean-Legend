@@ -65,6 +65,9 @@ string Stat_GetID(int achievNum)
 		case 101  :	id = "stat_CL_101"; break;
 		case 106  :	id = "stat_CL_106"; break;
 		case 120  :	id = "stat_duelist"; break;
+		case 175  :	id = "stat_CL_175"; break;
+		case 187  :	id = "stat_CL_187"; break;
+		case 188  :	id = "stat_CL_188"; break;
 	}
 	return id;
 }
@@ -171,8 +174,8 @@ int GetMaxState(int StateNum)
 			curState = 200;								
 		break;
 		
-		case 64  :  // за самостоятельный ремонт в бухте
-			curState = 5;						
+		case 64  :  // Восстановить 50 000 корпуса ремонтом в море
+			curState = 50000;						
 		break;
 		
 		case 68  :  // за несколько купленных фальшивых карт кладов  (5;
@@ -194,14 +197,23 @@ int GetMaxState(int StateNum)
 		case 120  :  // Победить в генераторных дуэлях 10 раз
 			curState = 10;
 		break;
+		case 175  :  // Выполнить все 10 квестов-события
+			curState = 10;
+		break;
+		case 187  :  // Нанести удар в спину 50 раз
+			curState = 50;
+		break;
+		case 188  :  // Сбежать на глобе 50 раз
+			curState = 50;
+		break;
 	}
 	return curState;
 }
 
 void CheckAchievments()
 {	
-	// Легендарный :  уровень >= 40
-	if(sti(pchar.rank) >= 40) Achievment_Set("ach_05");
+	// Легендарный :  уровень >= 30
+	if(sti(pchar.rank) >= 30) Achievment_Set("ach_05");
 	// Баловень судьбы : (удача = 100%)
 	if(GetSkillValue(pchar, SKILL_TYPE, SKILL_FORTUNE) >= 100)	Achievment_Set("ach_11");
 	// Фехтовальщик : (фехт в ЛО = 100%)
@@ -249,6 +261,8 @@ void CheckAchievments()
 	// за полный апгрейд корабля
 	if(CheckAttribute(pchar, "achievment.Tuning.stage1") && CheckAttribute(pchar, "achievment.Tuning.stage2") && CheckAttribute(pchar, "achievment.Tuning.stage3") && CheckAttribute(pchar, "achievment.Tuning.stage4")) Achievment_Set("ach_66");
 	if(CheckAttribute(pchar,"Achievment.Barbie") && CheckAttribute(pchar,"Achievment.Genrih")) Achievment_Set("ach_CL_111");
+	// Из народа: Выполнить все 10 квестов-события
+	if (!GetAchievement("ach_CL_175") && GetAttributeInt(pchar, "questTemp.MiniEvents") >= 10) Achievment_SetStat(175, 10);
 	// дальше будет только хуже
 	if(!GetAchievement("ach_CL_113"))
 	{
@@ -295,6 +309,10 @@ void CheckAchievments()
 		{
 			Achievment_Set("ach_CL_102");
 		}
+		if(sti(pchar.rank) >= 30 && !CheckAttribute(pchar, "questTemp.PerksPotionEffect"))
+		{
+			Achievment_Set("ach_CL_172");
+		}
 	}
 }
 
@@ -318,4 +336,97 @@ void CheckFireBrigadeAchievements(int iNation, string sWinType)
 		}
 		if(fireBrigadeWinQty > NON_PIRATES) Achievment_Set("ach_CL_160");
 	}
+}
+
+void Perks_Achievments()
+{
+	// Фехтовальщик
+	if(!GetAchievement("ach_CL_180")              &&
+	   CheckCharacterPerk(pchar, "CunningStrike") &&
+	   CheckCharacterPerk(pchar, "Heartbreaker")  &&
+	   CheckCharacterPerk(pchar, "Dodgy")  		  &&
+	   CheckCharacterPerk(pchar, "CriticalHit")   &&
+	   CheckCharacterPerk(pchar, "Sliding")       &&
+	   CheckCharacterPerk(pchar, "Exhaustion")    &&
+	   CheckCharacterPerk(pchar, "Reaper")) Achievment_Set("ach_CL_180");
+	// Авантюрист
+	else if(!GetAchievement("ach_CL_181")           &&
+		CheckCharacterPerk(pchar, "Alchemy")      &&
+		CheckCharacterPerk(pchar, "Practice")       &&
+		CheckCharacterPerk(pchar, "Strychnine")   &&
+		CheckCharacterPerk(pchar, "DarkHorse")      &&
+		CheckCharacterPerk(pchar, "Master")       &&
+		CheckCharacterPerk(pchar, "Grus")           &&
+		CheckCharacterPerk(pchar, "Quiet")        &&
+		CheckCharacterPerk(pchar, "Looting")        &&
+		CheckCharacterPerk(pchar, "Collection")   &&
+		CheckCharacterPerk(pchar, "Trustworthy")    &&
+		CheckCharacterPerk(pchar, "TieFit")       &&
+		CheckCharacterPerk(pchar, "Investor")       &&
+		CheckCharacterPerk(pchar, "Gossip")) Achievment_Set("ach_CL_181");
+	// Солдат
+	else if(!GetAchievement("ach_CL_183")             &&
+		CheckCharacterPerk(pchar, "BasicDefense")     &&
+		CheckCharacterPerk(pchar, "Medic")            &&
+		CheckCharacterPerk(pchar, "PalaceGuard")      &&
+		CheckCharacterPerk(pchar, "IronWill")         &&
+		CheckCharacterPerk(pchar, "Conquest")         &&
+		CheckCharacterPerk(pchar, "Muscles")          &&
+		CheckCharacterPerk(pchar, "AdvancedDefense")  &&
+		CheckCharacterPerk(pchar, "HPPlus")           &&
+		CheckCharacterPerk(pchar, "HardHitter")) Achievment_Set("ach_CL_183");
+	// Пират
+	else if(!GetAchievement("ach_CL_184")             &&
+		CheckCharacterPerk(pchar, "Tireless")         &&
+		CheckCharacterPerk(pchar, "PerfectBalance")   &&
+		CheckCharacterPerk(pchar, "MarathonRunner")   &&
+		CheckCharacterPerk(pchar, "BladeDancer")      &&
+		CheckCharacterPerk(pchar, "EnergyPlus")       &&
+		CheckCharacterPerk(pchar, "Flanking")         &&
+		CheckCharacterPerk(pchar, "SabreHurricane")) Achievment_Set("ach_CL_184");
+	// Стрелок
+	else if(!GetAchievement("ach_CL_185")            &&
+		CheckCharacterPerk(pchar, "FastHands")       &&
+		CheckCharacterPerk(pchar, "AmmoRig")         &&
+		CheckCharacterPerk(pchar, "Preaim")          &&
+		CheckCharacterPerk(pchar, "Gunman")          &&
+		CheckCharacterPerk(pchar, "KeenEye")         &&
+		CheckCharacterPerk(pchar, "PowderFeel")      &&
+		CheckCharacterPerk(pchar, "Drill")           &&
+		CheckCharacterPerk(pchar, "LeadRain")        &&
+		CheckCharacterPerk(pchar, "ShootToKill")     &&
+		CheckCharacterPerk(pchar, "GunProfessional")) Achievment_Set("ach_CL_185");
+	// Мастерство
+	else if(!GetAchievement("ach_CL_186")            &&
+		CheckCharacterPerk(pchar, "Chance")          &&
+		CheckCharacterPerk(pchar, "Bayonet")         &&
+		CheckCharacterPerk(pchar, "Kern")            &&
+		CheckCharacterPerk(pchar, "Dragoon")         &&
+		CheckCharacterPerk(pchar, "MeatGrinder")     &&
+		CheckCharacterPerk(pchar, "NeckStrike")      &&
+		CheckCharacterPerk(pchar, "Stabbing")        &&
+		CheckCharacterPerk(pchar, "Virtuosity")      &&
+		CheckCharacterPerk(pchar, "Puncher")         &&
+		CheckCharacterPerk(pchar, "Reach")           &&
+		CheckCharacterPerk(pchar, "Inertia")         &&
+		CheckCharacterPerk(pchar, "OttomanGrip")) Achievment_Set("ach_CL_186");
+}
+
+void Achievments_Descriptors()
+{
+	if(CountItemsWithDescriptor(pchar, "Exotic") > 4) Achievment_Set("ach_CL_189");
+	if(CountItemsWithDescriptor(pchar, "Fancy") > 4) Achievment_Set("ach_CL_190");
+	if(CountItemsWithDescriptor(pchar, "Unremarkable") > 4) Achievment_Set("ach_CL_191");
+}
+
+void Achievments_SquadronPower()
+{
+	if(GetAchievement("ach_CL_193")) return;
+	if(GetCompanionQuantity(pchar) > 1) return;
+	if(!HasPerk(pchar, "SeaDogProfessional")) return;
+	if(!HasPerk(pchar, "Gossip")) return;
+	if(GetDLCenabled(DLC_APPID_3) && !IsEquipCharacterByArtefact(pchar, "talisman15")) return;
+	if(GetCharacterEquipByGroup(pchar, CIRASS_ITEM_TYPE) != "suit4") return;
+	if(CountItemsWithDescriptor(pchar, "Exotic") < 4) return;
+	Achievment_Set("ach_CL_193");
 }

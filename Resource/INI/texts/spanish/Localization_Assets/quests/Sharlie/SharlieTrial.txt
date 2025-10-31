@@ -1,255 +1,56 @@
-SharlieTrial_1
-{
-¡Tu préstamo con el Abbé Benoit ha expirado!
-}
-
-SharlieTrial_2
-{
-Gralam
-}
-
-SharlieTrial_3
-{
-Lavua
-}
-
-SharlieTrial_4
-{
-Barco
-}
-
-SharlieTrial_5
-{
-¡Tu barco está listo! ¡Dirígete al muelle y sal al mar!
-}
-
-SharlieTrial_6
-{
-Fantasma
-}
-
-SharlieTrial_7
-{
-Dirígete al lado opuesto de la isla para completar tu misión. ¡Sal de la bahía a la derecha y sigue la costa!
-}
-
-SharlieTrial_8
-{
-Los controles del modo marítimo están disponibles en las opciones del juego.
-}
-
-SharlieTrial_9
-{
-¡Llegaste demasiado tarde para la reunión!
-}
-
-SharlieTrial_10
-{
-Ha pasado una hora...@<NewStr()>El ron fue cargado en tu barco
-}
-
-SharlieTrial_11
-{
-Usa el Menú de Acción para regresar a tu barco (entrar).
-}
-
-SharlieTrial_12
-{
-Transporta el ron a Le Francois. Sigue navegando alrededor de la isla.
-}
-
-SharlieTrial_13
-{
-Lutisse
-}
-
-SharlieTrial_14
-{
-Montane
-}
-
-SharlieTrial_15
-{
-Te espera una lucha desafiante. (F6) para guardar rápidamente.
-}
-
-SharlieTrial_16
-{
-¡Alguien ha sido asesinado cerca! En caso de asesinato, usa el Menú de Acción (ENTER) o la tecla asignada para saquear al fallecido.
-}
-
-SharlieTrial_17
-{
-Prosper
-}
-SharlieTrial_18
-{
-Trubal
-}
-
-SharlieTrial_19
-{
-Selina
-}
-SharlieTrial_20
-{
-Trubal
-}
-
-SharlieTrial_21
-{
-Gilbert
-}
-SharlieTrial_22
-{
-Cursee
-}
-
-SharlieTrial_23
-{
-Wolter
-}
-SharlieTrial_24
-{
-Catcher
-}
-
-SharlieTrial_25
-{
-Hundirla con bombas o abordarla inmediatamente si el viento lo permite.
-}
-
-SharlieTrial_26
-{
-¡Excelente trabajo! ¡Abre el Mapa global a través del Menú de acciones y zarpa hacia el norte, rumbo a Guadalupe!
-}
-
-SharlieTrial_27
-{
-Tichingitu
-}
-SharlieTrial_28
-{
-
-}
-
-SharlieTrial_29
-{
-Alonso
-}
-SharlieTrial_30
-{
-
-}
-
-SharlieTrial_31
-{
-Gerar
-}
-SharlieTrial_32
-{
-Lecrua
-}
-
-SharlieTrial_33
-{
-Warlike
-}
-
-SharlieTrial_34
-{
-Florian
-}
-SharlieTrial_35
-{
-Shoke
-}
-
-SharlieTrial_36
-{
-"Pasaron tres horas...@<NewStr()>Los cañones estaban cargados en la fragata"
-}
-
-SharlieTrial_37
-{
-Arthuro
-}
-SharlieTrial_38
-{
-Cascos
-}
-
-SharlieTrial_39
-{
-Puebla
-}
-SharlieTrial_40
-{
-'Puebla'
-}
-
-SharlieTrial_41
-{
-Jirarz
-}
-SharlieTrial_42
-{
-Artua
-}
-
-SharlieTrial_43
-{
-Gregoire
-}
-SharlieTrial_44
-{
-Valinnie
-}
-
-SharlieTrial_45
-{
-Accede a tu registro de misiones presionando F3.
-}
-
-SharlieTrial_46
-{
-A partir de ahora, estarás solo en este mundo cruel.
-}
-
-SharlieTrial_47
-{
-Tichingitu cambió de opinión.
-}
-
-SharlieTrial_48
-{
-Charles
-}
-SharlieTrial_49
-{
-Barbier
-}
-
-SharlieTrial_50
-{
-Henry
-}
-
-SharlieTrial_51
-{
-Barcaza 'Henry'
-}
-
-SharlieTrial_52
-{
-¡Una oportunidad de saquear a los muertos para conseguir objetos valiosos!
-}
-
-SharlieTrial_53
-{
-Guillaume
-}
-SharlieTrial_54
-{
-Dubois
-}
+SharlieTrial_1 {¡Tu préstamo con el Abbé Benoit ha expirado!}
+SharlieTrial_2 {Gralam}
+SharlieTrial_3 {Lavua}
+SharlieTrial_4 {Barco}
+SharlieTrial_5 {¡Tu barco está listo! ¡Dirígete al muelle y sal al mar!}
+SharlieTrial_6 {Fantasma}
+SharlieTrial_7 {Dirígete al lado opuesto de la isla para completar tu misión. ¡Sal de la bahía a la derecha y sigue la costa!}
+SharlieTrial_8 {Los controles del modo marítimo están disponibles en las opciones del juego.}
+SharlieTrial_9 {¡Llegaste demasiado tarde para la reunión!}
+SharlieTrial_10 {Ha pasado una hora...@<NewStr()>El ron fue cargado en tu barco}
+SharlieTrial_11 {Usa el Menú de Acción para regresar a tu barco (entrar).}
+SharlieTrial_12 {Transporta el ron a Le Francois. Sigue navegando alrededor de la isla.}
+SharlieTrial_13 {Lutisse}
+SharlieTrial_14 {Montane}
+SharlieTrial_15 {Te espera una lucha desafiante. (F6) para guardar rápidamente.}
+SharlieTrial_16 {¡Alguien ha sido asesinado cerca! En caso de asesinato, usa el Menú de Acción (ENTER) o la tecla asignada para saquear al fallecido.}
+SharlieTrial_17 {Prosper}
+SharlieTrial_18 {Trubal}
+SharlieTrial_19 {Selina}
+SharlieTrial_20 {Trubal}
+SharlieTrial_21 {Gilbert}
+SharlieTrial_22 {Cursee}
+SharlieTrial_23 {Wolter}
+SharlieTrial_24 {Catcher}
+SharlieTrial_25 {Hundirla con bombas o abordarla inmediatamente si el viento lo permite.}
+SharlieTrial_26 {¡Excelente trabajo! ¡Abre el Mapa global a través del Menú de acciones y zarpa hacia el norte, rumbo a Guadalupe!}
+SharlieTrial_27 {Tichingitu}
+SharlieTrial_28 { }
+SharlieTrial_29 { }
+SharlieTrial_30 { }
+SharlieTrial_31 {Gerar}
+SharlieTrial_32 {Lecrua}
+SharlieTrial_33 {Warlike}
+SharlieTrial_34 {Florian}
+SharlieTrial_35 {Shoke}
+SharlieTrial_36 {"Pasaron tres horas...@<NewStr()>Los cañones estaban cargados en la fragata"}
+SharlieTrial_37 {Arthuro}
+SharlieTrial_38 {Cascos}
+SharlieTrial_39 {Puebla}
+SharlieTrial_40 {'Puebla'}
+SharlieTrial_41 {Jirarz}
+SharlieTrial_42 {Artua}
+SharlieTrial_43 {Gregoire}
+SharlieTrial_44 {Valinnie}
+SharlieTrial_45 {Accede a tu registro de misiones presionando F3.}
+SharlieTrial_46 {A partir de ahora, estarás solo en este mundo cruel.}
+SharlieTrial_47 {Tichingitu cambió de opinión.}
+SharlieTrial_48 {Charles}
+SharlieTrial_49 {Barbier}
+SharlieTrial_50 {Henry}
+SharlieTrial_51 {Barcaza 'Henry'}
+SharlieTrial_52 {¡Una oportunidad de saquear a los muertos para conseguir objetos valiosos!}
+SharlieTrial_53 {Guillaume}
+SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

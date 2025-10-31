@@ -90,7 +90,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(sti(pchar.reputation.nobility) > 48)//высокая репа
 			{
 				// belamour legendary edition покажем критерии
-				notification("Reputation Too Low! (Rogue)", "None");
+				Notification_Reputation(false, 48, "high");
 				PlaySound("Voice\English\hambit\Ercule Tongzag-03.wav");
 				dialog.text = "Ich brauche die Dienste eines Schurken nicht. Ich habe keine Aufgabe, die ich Ihnen anbieten könnte.";
 				link.l1 = "He, he. Ruhig mit der Sprache, Kumpel!";
@@ -101,10 +101,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			if(!bOk)//слабое фехтование
 			{
 				// belamour legendary edition покажем критерии -->
-				notification("Skill Check Failed (35)", SKILL_F_LIGHT);
-				notification("Skill Check Failed (35)", SKILL_FENCING);
-				notification("Skill Check Failed (35)", SKILL_F_HEAVY);
-				notification("Skill Check Failed (35)", SKILL_PISTOL);
+				Notification_Skill(false, 35, SKILL_F_LIGHT);
+				Notification_Skill(false, 35, SKILL_FENCING);
+				Notification_Skill(false, 35, SKILL_F_HEAVY);
+				Notification_Skill(false, 35, SKILL_PISTOL);
 				// <--
 				dialog.text = "Kapitän, Sie sind zu weich. Ich brauche einen Kämpfer, der ein bisschen angesehener ist als Sie. Kommen Sie zurück, wenn Sie gelernt haben, mit dem Stahl umzugehen, der an Ihrem Gürtel baumelt. Und ein bisschen Treffsicherheit beim Schießen würde auch nicht schaden.";
 				link.l1 = "Ich verstehe. Dann werde ich Sie später besuchen.";

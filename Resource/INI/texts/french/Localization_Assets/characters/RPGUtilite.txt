@@ -1,113 +1,23 @@
-RPGUtilite_1
-{
-Experience Gained ~
-}
-
-RPGUtilite_2
-{
-awful
-}
-RPGUtilite_3
-{
-bad
-}
-
-RPGUtilite_4
-{
-poor
-}
-
-RPGUtilite_5
-{
-moderate
-}
-
-RPGUtilite_6
-{
-good
-}
-
-RPGUtilite_7
-{
-exellent
-}
-
-RPGUtilite_8
-{
-Vitality Increased
-}
-
-RPGUtilite_9
-{
-Vitality Decreased
-}
-
-RPGUtilite_10
-{
-Bounty Increased!
-}
-
-RPGUtilite_11
-{
-National Rep Increased!
-}
-
-RPGUtilite_12
-{
-National Rep Increased!
-}
-
-RPGUtilite_13
-{
-National Rep Decreased!
-}
-
-RPGUtilite_14
-{
-Haine
-}
-
-RPGUtilite_15
-{
-Hostilité
-}
-
-RPGUtilite_16
-{
-Antipathie
-}
-
-RPGUtilite_17
-{
-Irritation
-}
-
-RPGUtilite_18
-{
-Neutre
-}
-
-RPGUtilite_19
-{
-Sympathie
-}
-
-RPGUtilite_20
-{
-Amical
-}
-
-RPGUtilite_21
-{
-Admiration
-}
-
-RPGUtilite_22
-{
-Rainbow
-}
-
-RPGUtilite_23
-{
-Quicksilver
-}
+RPGUtilite_1 {Experience Gained ~}
+RPGUtilite_2 {awful}
+RPGUtilite_3 {bad}
+RPGUtilite_4 {poor}
+RPGUtilite_5 {moderate}
+RPGUtilite_6 {good}
+RPGUtilite_7 {exellent}
+RPGUtilite_8 {Vitality Increased}
+RPGUtilite_9 {Vitality Decreased}
+RPGUtilite_10 {Bounty Increased!}
+RPGUtilite_11 {National Rep Increased!}
+RPGUtilite_12 {National Rep Increased!}
+RPGUtilite_13 {National Rep Decreased!}
+RPGUtilite_14 {Haine}
+RPGUtilite_15 {Hostilité}
+RPGUtilite_16 {Antipathie}
+RPGUtilite_17 {Irritation}
+RPGUtilite_18 {Neutre}
+RPGUtilite_19 {Sympathie}
+RPGUtilite_20 {Amical}
+RPGUtilite_21 {Admiration}
+RPGUtilite_22 {Rainbow}
+RPGUtilite_23 {Quicksilver}

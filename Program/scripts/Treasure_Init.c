@@ -24,6 +24,17 @@ void InitTreasureTiers()
     TreasureTiers[1].Jewelry.Mineral1 = "On";
     TreasureTiers[1].Jewelry.Mineral1.min = 1;
     TreasureTiers[1].Jewelry.Mineral1.dif = 1;
+	// Пули / Порох / Картечь
+    TreasureTiers[1].Jewelry.Ammo = "On";
+    TreasureTiers[1].Jewelry.Ammo.min = 2;
+    TreasureTiers[1].Jewelry.Ammo.dif = 4;
+	// Оружейная бумага
+	TreasureTiers[1].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[1].Jewelry.ArmoryPaper.min = 2;
+    TreasureTiers[1].Jewelry.ArmoryPaper.dif = 4;
+	// Оружейная бумага (дубль)
+	TreasureTiers[1].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[1].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Перстень с изумрудом
     TreasureTiers[1].Jewelry.jewelry40 = "On";
     TreasureTiers[1].Jewelry.jewelry40.min = 1;
@@ -132,6 +143,17 @@ void InitTreasureTiers()
     TreasureTiers[2].Jewelry.Mineral1 = "On";
     TreasureTiers[2].Jewelry.Mineral1.min = 1;
     TreasureTiers[2].Jewelry.Mineral1.dif = 2;
+	// Пули / Порох / Картечь
+    TreasureTiers[2].Jewelry.Ammo = "On";
+    TreasureTiers[2].Jewelry.Ammo.min = 2;
+    TreasureTiers[2].Jewelry.Ammo.dif = 6;
+	// Оружейная бумага
+	TreasureTiers[2].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[2].Jewelry.ArmoryPaper.min = 2;
+    TreasureTiers[2].Jewelry.ArmoryPaper.dif = 4;
+	// Оружейная бумага (дубль)
+	TreasureTiers[2].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[2].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Перстень с изумрудом
     TreasureTiers[2].Jewelry.jewelry40 = "On";
     TreasureTiers[2].Jewelry.jewelry40.min = 2;
@@ -264,6 +286,17 @@ void InitTreasureTiers()
     TreasureTiers[3].Jewelry.Mineral1 = "On";
     TreasureTiers[3].Jewelry.Mineral1.min = 2;
     TreasureTiers[3].Jewelry.Mineral1.dif = 2;
+	// Пули / Порох / Картечь
+    TreasureTiers[3].Jewelry.Ammo = "On";
+    TreasureTiers[3].Jewelry.Ammo.min = 3;
+    TreasureTiers[3].Jewelry.Ammo.dif = 6;
+	// Оружейная бумага
+	TreasureTiers[3].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[3].Jewelry.ArmoryPaper.min = 2;
+    TreasureTiers[3].Jewelry.ArmoryPaper.dif = 5;
+	// Оружейная бумага (дубль)
+	TreasureTiers[3].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[3].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Перстень с изумрудом
     TreasureTiers[3].Jewelry.jewelry40 = "On";
     TreasureTiers[3].Jewelry.jewelry40.min = 3;
@@ -405,6 +438,17 @@ void InitTreasureTiers()
     TreasureTiers[4].Jewelry.jewelry6 = "On";
     TreasureTiers[4].Jewelry.jewelry6.min = 5;
     TreasureTiers[4].Jewelry.jewelry6.dif = 6;
+	// Пули / Порох / Картечь
+    TreasureTiers[4].Jewelry.Ammo = "On";
+    TreasureTiers[4].Jewelry.Ammo.min = 3;
+    TreasureTiers[4].Jewelry.Ammo.dif = 8;
+	// Оружейная бумага
+	TreasureTiers[4].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[4].Jewelry.ArmoryPaper.min = 2;
+    TreasureTiers[4].Jewelry.ArmoryPaper.dif = 5;
+	// Оружейная бумага (дубль)
+	TreasureTiers[4].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[4].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Перстень с изумрудом
     TreasureTiers[4].Jewelry.jewelry40 = "On";
     TreasureTiers[4].Jewelry.jewelry40.min = 5;
@@ -560,6 +604,17 @@ void InitTreasureTiers()
     TreasureTiers[5].Jewelry.jewelry6 = "On";
     TreasureTiers[5].Jewelry.jewelry6.min = 8;
     TreasureTiers[5].Jewelry.jewelry6.dif = 9;
+	// Пули / Порох / Картечь
+    TreasureTiers[5].Jewelry.Ammo = "On";
+    TreasureTiers[5].Jewelry.Ammo.min = 4;
+    TreasureTiers[5].Jewelry.Ammo.dif = 9;
+	// Оружейная бумага
+	TreasureTiers[5].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[5].Jewelry.ArmoryPaper.min = 2;
+    TreasureTiers[5].Jewelry.ArmoryPaper.dif = 6;
+	// Оружейная бумага (дубль)
+	TreasureTiers[5].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[5].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Перстень с изумрудом
     TreasureTiers[5].Jewelry.jewelry40 = "On";
     TreasureTiers[5].Jewelry.jewelry40.min = 11;
@@ -721,6 +776,17 @@ void InitTreasureTiers()
     TreasureTiers[6].Jewelry.jewelry6 = "On";
     TreasureTiers[6].Jewelry.jewelry6.min = 11;
     TreasureTiers[6].Jewelry.jewelry6.dif = 13;
+	// Пули / Порох / Картечь
+    TreasureTiers[6].Jewelry.Ammo = "On";
+    TreasureTiers[6].Jewelry.Ammo.min = 5;
+    TreasureTiers[6].Jewelry.Ammo.dif = 12;
+	// Оружейная бумага
+	TreasureTiers[6].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[6].Jewelry.ArmoryPaper.min = 3;
+    TreasureTiers[6].Jewelry.ArmoryPaper.dif = 6;
+	// Оружейная бумага (дубль)
+	TreasureTiers[6].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[6].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[6].Jewelry.jewelry3 = "On";
     TreasureTiers[6].Jewelry.jewelry3.min = 5;
@@ -891,6 +957,17 @@ void InitTreasureTiers()
     TreasureTiers[7].Jewelry.jewelry6 = "On";
     TreasureTiers[7].Jewelry.jewelry6.min = 14;
     TreasureTiers[7].Jewelry.jewelry6.dif = 17;
+	// Пули / Порох / Картечь
+    TreasureTiers[7].Jewelry.Ammo = "On";
+    TreasureTiers[7].Jewelry.Ammo.min = 6;
+    TreasureTiers[7].Jewelry.Ammo.dif = 14;
+	// Оружейная бумага
+	TreasureTiers[7].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[7].Jewelry.ArmoryPaper.min = 3;
+    TreasureTiers[7].Jewelry.ArmoryPaper.dif = 7;
+	// Оружейная бумага (дубль)
+	TreasureTiers[7].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[7].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[7].Jewelry.jewelry3 = "On";
     TreasureTiers[7].Jewelry.jewelry3.min = 8;
@@ -1069,6 +1146,17 @@ void InitTreasureTiers()
     TreasureTiers[8].Jewelry.jewelry6 = "On";
     TreasureTiers[8].Jewelry.jewelry6.min = 17;
     TreasureTiers[8].Jewelry.jewelry6.dif = 21;
+	// Пули / Порох / Картечь
+    TreasureTiers[8].Jewelry.Ammo = "On";
+    TreasureTiers[8].Jewelry.Ammo.min = 7;
+    TreasureTiers[8].Jewelry.Ammo.dif = 16;
+	// Оружейная бумага
+	TreasureTiers[8].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[8].Jewelry.ArmoryPaper.min = 3;
+    TreasureTiers[8].Jewelry.ArmoryPaper.dif = 7;
+	// Оружейная бумага (дубль)
+	TreasureTiers[8].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[8].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[8].Jewelry.jewelry3 = "On";
     TreasureTiers[8].Jewelry.jewelry3.min = 11;
@@ -1252,6 +1340,17 @@ void InitTreasureTiers()
     TreasureTiers[9].Jewelry.jewelry6 = "On";
     TreasureTiers[9].Jewelry.jewelry6.min = 20;
     TreasureTiers[9].Jewelry.jewelry6.dif = 25;
+	// Пули / Порох / Картечь
+    TreasureTiers[9].Jewelry.Ammo = "On";
+    TreasureTiers[9].Jewelry.Ammo.min = 8;
+    TreasureTiers[9].Jewelry.Ammo.dif = 18;
+	// Оружейная бумага
+	TreasureTiers[9].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[9].Jewelry.ArmoryPaper.min = 3;
+    TreasureTiers[9].Jewelry.ArmoryPaper.dif = 8;
+	// Оружейная бумага (дубль)
+	TreasureTiers[9].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[9].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[9].Jewelry.jewelry3 = "On";
     TreasureTiers[9].Jewelry.jewelry3.min = 15;
@@ -1410,7 +1509,6 @@ void InitTreasureTiers()
     TreasureTiers[10].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[10].Equip.blade_10 = "On"; // Корд
     TreasureTiers[10].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[10].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[10].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[10].Equip.blade_12 = "On"; // Полусабля
     TreasureTiers[10].Equip.blade_14 = "On"; // Валлонская шпага
@@ -1449,6 +1547,13 @@ void InitTreasureTiers()
     TreasureTiers[10].Jewelry.berserker_potion = "On";
     TreasureTiers[10].Jewelry.berserker_potion.min = 1;
     TreasureTiers[10].Jewelry.berserker_potion.dif = 0;
+	// Оружейная бумага
+	TreasureTiers[10].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[10].Jewelry.ArmoryPaper.min = 3;
+    TreasureTiers[10].Jewelry.ArmoryPaper.dif = 9;
+	// Оружейная бумага (дубль)
+	TreasureTiers[10].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[10].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[10].Jewelry.jewelry3 = "On";
     TreasureTiers[10].Jewelry.jewelry3.min = 19;
@@ -1606,7 +1711,6 @@ void InitTreasureTiers()
     TreasureTiers[11].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[11].Equip.blade_10 = "On"; // Корд
     TreasureTiers[11].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[11].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[11].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[11].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[11].Equip.blade_14 = "On"; // Валлонская шпага
@@ -1644,6 +1748,13 @@ void InitTreasureTiers()
     TreasureTiers[11].Jewelry.berserker_potion = "On";
     TreasureTiers[11].Jewelry.berserker_potion.min = 1;
     TreasureTiers[11].Jewelry.berserker_potion.dif = 0;
+	// Оружейная бумага
+	TreasureTiers[11].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[11].Jewelry.ArmoryPaper.min = 4;
+    TreasureTiers[11].Jewelry.ArmoryPaper.dif = 9;
+	// Оружейная бумага (дубль)
+	TreasureTiers[11].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[11].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Рубин
     TreasureTiers[11].Jewelry.jewelry3 = "On";
     TreasureTiers[11].Jewelry.jewelry3.min = 23;
@@ -1801,7 +1912,6 @@ void InitTreasureTiers()
     TreasureTiers[12].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[12].Equip.blade_10 = "On"; // Корд
     TreasureTiers[12].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[12].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[12].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[12].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[12].Equip.blade_38 = "On"; // Дуэльная шпага
@@ -1838,6 +1948,13 @@ void InitTreasureTiers()
     TreasureTiers[12].Jewelry.berserker_potion = "On";
     TreasureTiers[12].Jewelry.berserker_potion.min = 1;
     TreasureTiers[12].Jewelry.berserker_potion.dif = 1;
+	// Оружейная бумага
+	TreasureTiers[12].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[12].Jewelry.ArmoryPaper.min = 4;
+    TreasureTiers[12].Jewelry.ArmoryPaper.dif = 10;
+	// Оружейная бумага (дубль)
+	TreasureTiers[12].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[12].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Стрела
     TreasureTiers[12].Jewelry.harpoon = "On";
     TreasureTiers[12].Jewelry.harpoon.min = 10;
@@ -1901,8 +2018,8 @@ void InitTreasureTiers()
     TreasureTiers[12].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[12].Special.indian_2 = "On";
-    TreasureTiers[12].Special.indian_2.min = 2;
-    TreasureTiers[12].Special.indian_2.dif = 1;
+    TreasureTiers[12].Special.indian_2.min = 1;
+    TreasureTiers[12].Special.indian_2.dif = 2;
     // Амулет "Каскавела"
     TreasureTiers[12].Special.indian_10 = "On";
     TreasureTiers[12].Special.indian_10.min = 1;
@@ -1991,7 +2108,6 @@ void InitTreasureTiers()
     TreasureTiers[13].Equip.topor_01 = "On"; // Макуауитль
     TreasureTiers[13].Equip.blade_10 = "On"; // Корд
     TreasureTiers[13].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[13].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[13].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[13].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[13].Equip.blade_38 = "On"; // Дуэльная шпага
@@ -2028,6 +2144,13 @@ void InitTreasureTiers()
     TreasureTiers[13].Jewelry.berserker_potion = "On";
     TreasureTiers[13].Jewelry.berserker_potion.min = 1;
     TreasureTiers[13].Jewelry.berserker_potion.dif = 1;
+	// Оружейная бумага
+	TreasureTiers[13].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[13].Jewelry.ArmoryPaper.min = 4;
+    TreasureTiers[13].Jewelry.ArmoryPaper.dif = 11;
+	// Оружейная бумага (дубль)
+	TreasureTiers[13].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[13].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Стрела
     TreasureTiers[13].Jewelry.harpoon = "On";
     TreasureTiers[13].Jewelry.harpoon.min = 12;
@@ -2087,8 +2210,8 @@ void InitTreasureTiers()
     TreasureTiers[13].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[13].Special.indian_2 = "On";
-    TreasureTiers[13].Special.indian_2.min = 2;
-    TreasureTiers[13].Special.indian_2.dif = 1;
+    TreasureTiers[13].Special.indian_2.min = 1;
+    TreasureTiers[13].Special.indian_2.dif = 2;
     // Амулет "Каскавела"
     TreasureTiers[13].Special.indian_10 = "On";
     TreasureTiers[13].Special.indian_10.min = 1;
@@ -2176,7 +2299,6 @@ void InitTreasureTiers()
     TreasureTiers[14].Equip.saber    = "On"; // Кавалерийская сабля
     TreasureTiers[14].Equip.blade_10 = "On"; // Корд
     TreasureTiers[14].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[14].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[14].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[14].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[14].Equip.blade_38 = "On"; // Дуэльная шпага
@@ -2208,6 +2330,17 @@ void InitTreasureTiers()
     TreasureTiers[14].Jewelry.cannabis7 = "On";
     TreasureTiers[14].Jewelry.cannabis7.min = 2;
     TreasureTiers[14].Jewelry.cannabis7.dif = 2;
+    // Тинктура Ометочтли
+    TreasureTiers[14].Jewelry.berserker_potion = "On";
+    TreasureTiers[14].Jewelry.berserker_potion.min = 1;
+    TreasureTiers[14].Jewelry.berserker_potion.dif = 2;
+	// Оружейная бумага
+	TreasureTiers[14].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[14].Jewelry.ArmoryPaper.min = 5;
+    TreasureTiers[14].Jewelry.ArmoryPaper.dif = 11;
+	// Оружейная бумага (дубль)
+	TreasureTiers[14].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[14].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Метеорит
     TreasureTiers[14].Jewelry.jewelry11 = "On";
     TreasureTiers[14].Jewelry.jewelry11.min = 3;
@@ -2271,8 +2404,8 @@ void InitTreasureTiers()
     TreasureTiers[14].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[14].Special.indian_2 = "On";
-    TreasureTiers[14].Special.indian_2.min = 2;
-    TreasureTiers[14].Special.indian_2.dif = 1;
+    TreasureTiers[14].Special.indian_2.min = 1;
+    TreasureTiers[14].Special.indian_2.dif = 2;
     // Амулет "Каскавела"
     TreasureTiers[14].Special.indian_10 = "On";
     TreasureTiers[14].Special.indian_10.min = 1;
@@ -2356,7 +2489,6 @@ void InitTreasureTiers()
     TreasureTiers[15].Equip.saber    = "On"; // Кавалерийская сабля
     TreasureTiers[15].Equip.blade_10 = "On"; // Корд
     TreasureTiers[15].Equip.blade_17 = "On"; // Бретта
-    TreasureTiers[15].Equip.blade_25 = "On"; // Моргана
     TreasureTiers[15].Equip.blade_26 = "On"; // Асоледа
     TreasureTiers[15].Equip.blade_18 = "On"; // Паппенхаймер
     TreasureTiers[15].Equip.blade_38 = "On"; // Дуэльная шпага
@@ -2390,6 +2522,17 @@ void InitTreasureTiers()
     TreasureTiers[15].Jewelry.cannabis7 = "On";
     TreasureTiers[15].Jewelry.cannabis7.min = 2;
     TreasureTiers[15].Jewelry.cannabis7.dif = 4;
+    // Тинктура Ометочтли
+    TreasureTiers[15].Jewelry.berserker_potion = "On";
+    TreasureTiers[15].Jewelry.berserker_potion.min = 2;
+    TreasureTiers[15].Jewelry.berserker_potion.dif = 1;
+	// Оружейная бумага
+	TreasureTiers[15].Jewelry.ArmoryPaper = "On";
+    TreasureTiers[15].Jewelry.ArmoryPaper.min = 5;
+    TreasureTiers[15].Jewelry.ArmoryPaper.dif = 12;
+	// Оружейная бумага (дубль)
+	TreasureTiers[15].Jewelry.ArmoryPaper_2 = "On";
+    TreasureTiers[15].Jewelry.ArmoryPaper_2.orig = "ArmoryPaper";
     // Метеорит
     TreasureTiers[15].Jewelry.jewelry11 = "On";
     TreasureTiers[15].Jewelry.jewelry11.min = 5;
@@ -2453,8 +2596,8 @@ void InitTreasureTiers()
     TreasureTiers[15].Special.indian_7.dif = 2;
     // Амулет "Пороховой тестер"
     TreasureTiers[15].Special.indian_2 = "On";
-    TreasureTiers[15].Special.indian_2.min = 2;
-    TreasureTiers[15].Special.indian_2.dif = 1;
+    TreasureTiers[15].Special.indian_2.min = 1;
+    TreasureTiers[15].Special.indian_2.dif = 2;
     // Амулет "Каскавела"
     TreasureTiers[15].Special.indian_10 = "On";
     TreasureTiers[15].Special.indian_10.min = 1;
@@ -2525,7 +2668,7 @@ void InitTreasureTiers()
     TreasureTiers[15].Special.map_a.dif = 2;
 }
 
-void InitTreasureTiers_Additions(bool SandBoxMode)
+void InitTreasureTiers_Additions()
 {
 // Общие уникальные сокровища
     // Яд индейцев таино
@@ -2554,6 +2697,8 @@ void InitTreasureTiers_Additions(bool SandBoxMode)
         SetSingleItemToTiers(15, 15, "Equip", "blade_36");
         // Танат
         SetSingleItemToTiers(15, 15, "Equip", "blade_32");
+        // Моргана
+        SetSingleItemToTiers(10, 15, "Equip", "blade_25");
         // Охотничий штуцер
         SetSingleItemToTiers(14, 15, "Equip", "Mushket2x2");
         // Револьвер Кольта
@@ -2575,6 +2720,7 @@ void InitTreasureTiers_Additions(bool SandBoxMode)
         SetSingleItemToTiers(15, 15, "Special", "sextant2");
     }
 
+//DLC Section
 	TreasureTiers[0].QuestSlot.LoyaltyPack = "LoyaltyPack_Treasure";
 }
 

@@ -282,4 +282,7 @@ void InitInterfaceTables()
 	
 	Interfaces[INTERFACE_CHEAT_ITEMS].SectionName = "interface\cheat_items.c";
 	Interfaces[INTERFACE_CHEAT_ITEMS].IniFile     = "RESOURCE\INI\INTERFACES\cheat_items.ini";
+
+	Interfaces[INTERFACE_ITEMS_EXCHANGE].SectionName = "interface\items_exchange.c";
+	Interfaces[INTERFACE_ITEMS_EXCHANGE].IniFile = "RESOURCE\INI\INTERFACES\items_exchange.ini";
 }

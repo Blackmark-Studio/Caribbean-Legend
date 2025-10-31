@@ -29,6 +29,7 @@ int LocationInitTortuga(int n)
 	locations[n].models.always.seabed = "Margarita_GPK_seabed";
 	locations[n].models.always.locators = "Margarita_GPK_locators";
 	locations[n].models.always.grassPatch = "Margarita_GPK_grass";
+	locations[n].models.always.L1 = "Margarita_GPK_signsA";
 	
 	//Fontain
 	locations[n].models.always.Waterfall1 = "fontain1";

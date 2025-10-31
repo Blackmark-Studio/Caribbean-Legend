@@ -1,218 +1,46 @@
-Patria_1
-{
-Noel
-}
-Patria_2
-{
-Forget
-}
-
-Patria_3
-{
-Eclatant
-}
-
-Patria_4
-{
-Hubert
-}
-Patria_5
-{
-Dassien
-}
-
-Patria_6
-{
-Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!
-}
-
-Patria_7
-{
-Die Spanier wurden angewiesen, Parleys zum Leuchtturm von Trinidad zu schicken, um Verhandlungen aufzunehmen!
-}
-
-Patria_8
-{
-Ein Tag ist vergangen...
-}
-
-Patria_9
-{
-Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!
-}
-
-Patria_10
-{
-Baron Noel Forget hat Ihr Schiff verlassen!
-}
-
-Patria_11
-{
-Ein weiteres feindliches Schiff hat uns im Visier!
-}
-
-Patria_12
-{
-Frederick
-}
-
-Patria_13
-{
-Peter
-}
-Patria_14
-{
-Stuyvesant
-}
-
-Patria_15
-{
-Der Handelskonvoi der Company
-}
-
-Patria_16
-{
-Der Company's East-India ist gefangen genommen worden!
-}
-
-Patria_17
-{
-Oliphant
-}
-
-Patria_18
-{
-Lenart
-}
-Patria_19
-{
-Klap
-}
-
-Patria_20
-{
-Edward
-}
-Patria_21
-{
-Doily
-}
-
-Patria_22
-{
-Trafalgar
-}
-
-Patria_23
-{
-Kristian
-}
-Patria_24
-{
-Beusson
-}
-
-Patria_25
-{
-Der Afrika-Konvoi der Company
-}
-
-Patria_26
-{
-Erkundungsmodus: Der Timer ist deaktiviert.
-}
-
-Patria_27
-{
-Wir müssen das feindliche Geschwader vernichten!
-}
-
-Patria_28
-{
-Colonel Doily hat das Signal zur Landung in der Lagune von Blanca gegeben!
-}
-
-Patria_29
-{
-Nach einem zweistündigen Bombardement, @<NewStr()>schickten die Holländer eine Verhandlungsgruppe
-}
-
-Patria_30
-{
-Christian
-}
-Patria_31
-{
-Tior
-}
-
-Patria_32
-{
-Fortune
-}
-
-Patria_33
-{
-Steven
-}
-Patria_34
-{
-Dodson
-}
-
-Patria_35
-{
-Red Dragon
-}
-
-Patria_36
-{
-Marcus
-}
-Patria_37
-{
-Tyrex
-}
-
-Patria_38
-{
-Zwei Stunden später...@<NewStr()>
-}
-
-Patria_39
-{
-Baron Noel Forget starb an Fieber!
-}
-
-Patria_40
-{
-Olivier
-}
-Patria_41
-{
-Burden
-}
-
-Patria_42
-{
-Mary
-}
-Patria_43
-{
-Casper
-}
-
-Patria_44
-{
-Der Gouverneur der Mine wurde in einem der Häuser gesichtet, gefangen genommen und inhaftiert
-}
-
-Patria_45
-{
-23 Stunden später...@<NewStr()>Peter Stuyvesant hat sich vor den Toren gezeigt
-}
-
-Patria_46
-{
-Einen Tag später...@<NewStr()>
-}
+Patria_1 {Noel}
+Patria_2 {Forget}
+Patria_3 { }
+Patria_4 {Hubert}
+Patria_5 {Dassien}
+Patria_6 {Erkundungsmodus: Timer verlängert. Beenden Sie die Quest!}
+Patria_7 {Die Spanier wurden angewiesen, Parleys zum Leuchtturm von Trinidad zu schicken, um Verhandlungen aufzunehmen!}
+Patria_8 {Ein Tag ist vergangen...}
+Patria_9 {Erkundungsmodus: Der Timer ist nicht deaktiviert. Halten Sie die Frist ein!}
+Patria_10 {Baron Noel Forget hat Ihr Schiff verlassen!}
+Patria_11 {Ein weiteres feindliches Schiff hat uns im Visier!}
+Patria_12 {Frederick}
+Patria_13 {Peter}
+Patria_14 {Stuyvesant}
+Patria_15 {Der Handelskonvoi der Company}
+Patria_16 {Der Company's East-India ist gefangen genommen worden!}
+Patria_17 { }
+Patria_18 {Lenart}
+Patria_19 {Klap}
+Patria_20 {Edward}
+Patria_21 {Doily}
+Patria_22 { }
+Patria_23 {Kristian}
+Patria_24 {Beusson}
+Patria_25 {Der Afrika-Konvoi der Company}
+Patria_26 {Erkundungsmodus: Der Timer ist deaktiviert.}
+Patria_27 {Wir müssen das feindliche Geschwader vernichten!}
+Patria_28 {Colonel Doily hat das Signal zur Landung in der Lagune von Blanca gegeben!}
+Patria_29 {Nach einem zweistündigen Bombardement, @<NewStr()>schickten die Holländer eine Verhandlungsgruppe}
+Patria_30 {Christian}
+Patria_31 {Tior}
+Patria_32 { }
+Patria_33 {Steven}
+Patria_34 {Dodson}
+Patria_35 { }
+Patria_36 {Marcus}
+Patria_37 {Tyrex}
+Patria_38 {Zwei Stunden später...@<NewStr()>}
+Patria_39 {Baron Noel Forget starb an Fieber!}
+Patria_40 {Olivier}
+Patria_41 {Burden}
+Patria_42 {Mary}
+Patria_43 {Casper}
+Patria_44 {Der Gouverneur der Mine wurde in einem der Häuser gesichtet, gefangen genommen und inhaftiert}
+Patria_45 {23 Stunden später...@<NewStr()>Peter Stuyvesant hat sich vor den Toren gezeigt}
+Patria_46 {Einen Tag später...@<NewStr()>}

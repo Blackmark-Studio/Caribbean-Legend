@@ -1,37 +1,8 @@
-Tonzag_1
-{
-łowcy nagród
-}
-
-Tonzag_2
-{
-Alonso
-}
-Tonzag_3
-{
-
-}
-
-Tonzag_4
-{
-Mineło 6 godzin...
-}
-
-Tonzag_5
-{
-Tryb eksploracji: licznik czasu jest wyłączony.
-}
-
-Tonzag_6
-{
-Odblokowano umiejętność - 'Zakuty Łeb'
-}
-
-Tonzag_7
-{
-Alberto
-}
-Tonzag_8
-{
-Gaodio
-}
+Tonzag_1 {łowcy nagród}
+Tonzag_2 { }
+Tonzag_3 { }
+Tonzag_4 {Mineło 6 godzin...}
+Tonzag_5 {Tryb eksploracji: licznik czasu jest wyłączony.}
+Tonzag_6 {Odblokowano umiejętność - 'Zakuty Łeb'}
+Tonzag_7 {Alberto}
+Tonzag_8 {Gaodio}

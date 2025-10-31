@@ -165,7 +165,7 @@ void ProcessDialogEvent()
 		
 		case "map_1":
 			dialog.text = "Nie. Chcę złota. Żadne targowanie się nie wchodzi w grę.";
-			if (GetCharacterItem(pchar, "gold_dublon") >= 200)
+			if (PCharDublonsTotal() >= 200)
 			{
 				link.l1 = "Dobrze. Weź swoje złoto, zgadzam się.";
 				link.l1.go = "map_2";
@@ -176,7 +176,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "map_2":
-			RemoveItems(pchar, "gold_dublon", 200);
+			RemoveDublonsFromPCharTotal(200);
 			PlaySound("interface\important_item.wav");
 			Log_Info("You have received a map of the City of Abandoned Ships");
 			GiveItem2Character(pchar, "map_LSC");

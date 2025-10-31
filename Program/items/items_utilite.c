@@ -10,7 +10,12 @@ void DoCharacterUsedItem(ref chref, string itmID)
 {
 	aref arItm;
 	if( Items_FindItem(itmID,&arItm)<0 ) return;
-	TakeItemFromCharacter(chref,itmID);
+	bool isPotion = HasDescriptor(arItm, "HealPotion");
+	bool savePotion = isPotion && HasPerk(chref, "Alchemy") && fPercentChance(PERK_VALUE_ALCHEMY);
+	if (isPotion && !savePotion) TakeItemFromCharacter(chref, itmID);
+	else TakeItemFromCharacter(chref, itmID);
+
+	if (isPotion) Perk_MasterAlternate(chref);
 
 	 // Warship 13.06.09 fix - если только отравлен, а жизни полные (а такое бывает), то нечего и строку в лог выводить об прибавлении жизней
 	if(CheckAttribute(arItm,"potion.health") && LAi_GetCharacterHP(chref) < LAi_GetCharacterMaxHP(chref))
@@ -343,6 +348,18 @@ int FindItem(string sItemID)
 */	
 	// Warship 07.07.09 Перевел на движковую функцию - по-идее, так должно работать быстрее
 	return NativeFindCharacter(&Items, sItemID);
+}
+
+ref ItemFromIdx(int idx)
+{
+	if (idx == -1) Log_WithTrace("Bad index for item: " + idx);
+	return &Items[idx];
+}
+
+// Получить предмет по ссылке/id/индексу
+ref FindItem_VT(ref entity)
+{
+	return FindObject_VT(entity, "ItemsFromID", "ItemFromIdx");
 }
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -953,7 +970,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 	// проверяем пароль ривадос - КПП Фурия
 	if (_locator == "parol2")
 	{
-		bTalk = (!CheckAttribute(pchar, "questTemp.LSC.parol_rvd")) && (!CheckAttribute(pchar, "rvd_friend")) && (!LAi_group_IsEnemy(pchar, &Characters[GetCharacterIndex("RivadosProt_6")]));
+		bTalk = (!CheckAttribute(pchar, "questTemp.LSC.parol_rvd")) && (!CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) && (!LAi_group_IsEnemy(pchar, &Characters[GetCharacterIndex("RivadosProt_6")]));
 		if (bTalk || CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 		{
 			DoQuestCheckDelay("hide_weapon", 0.5);
@@ -965,7 +982,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 	// проверяем пароль ривадос - КПП Веласко
 	if (_locator == "parol3")
 	{
-		bTalk = (!CheckAttribute(pchar, "questTemp.LSC.parol_rvd")) && (!CheckAttribute(pchar, "rvd_friend")) && (!LAi_group_IsEnemy(pchar, &Characters[GetCharacterIndex("RivadosProt_8")]));
+		bTalk = (!CheckAttribute(pchar, "questTemp.LSC.parol_rvd")) && (!CheckAttribute(pchar, "questTemp.LSC.rvd_friend")) && (!LAi_group_IsEnemy(pchar, &Characters[GetCharacterIndex("RivadosProt_8")]));
 		if (bTalk || CheckAttribute(pchar, "GenQuest.RivadosConflict"))
 		{
 			DoQuestCheckDelay("hide_weapon", 0.5);
@@ -1093,15 +1110,13 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		}
 		if (CheckAttribute(pchar, "questTemp.Caleuche.LeverL") && findsubstr(_locator, "column1" , 0) != -1)
 		{
-			pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
-			pchar.questTemp.Caleuche.Lever.Locator = _locator;
-			Caleuche_ThreeLeverAim();
+			pchar.questTemp.Caleuche.Lever.CurLocator = _locator;
+			Log_SetActiveAction("Caleuche_Levers");
 		}
 		if (CheckAttribute(pchar, "questTemp.Caleuche.LeverR") && findsubstr(_locator, "column2" , 0) != -1)
 		{
-			pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
-			pchar.questTemp.Caleuche.Lever.Locator = _locator;
-			Caleuche_SixLeverAim();
+			pchar.questTemp.Caleuche.Lever.CurLocator = _locator;
+			Log_SetActiveAction("Caleuche_Levers");
 		}
 	}
 	// Addon 2016-1 Jason Пиратская линейка
@@ -1285,7 +1300,7 @@ void QuestCheckUseButton(aref _location, string _locator, string _itemId) /// <<
 		PlaySound("interface\key.wav");
 		OpenWardrobe_PortRoyal();
 	}
-	if (_location.id == "FortFrance_WineCellar" && _locator == "button01")
+	if (_location.id == "FortFrance_Dungeon" && _locator == "button01")
     {
 		PlaySound("Ambient\Teno_inside\big_ring.wav");
 		PlaySound("interface\key.wav");
@@ -1379,72 +1394,6 @@ void InitAddItem(int index)
 	itm.ItemType = "VARIETY";
 }
 
-// belamour карта острова от положения игрока
-string MapFromCurPos()
-{
-	string curLocId = pchar.location;
-	string mapLoc = "";
-	string mapId = "";
-	
-	if(curLocId == "") return "";
-	if(IsEntity(&worldMap)) return "";
-	
-	if(bSeaActive)
-	{
-		if(!bAbordageStarted) mapLoc = curLocId;
-		else mapLoc = boarding_adr[0].location;
-	}
-	else
-	{
-		ref loc = &locations[FindLocation(pchar.location)];
-		mapLoc = GiveArealByLocation(loc);
-	}
-	if(mapLoc == "" || mapLoc == "none" ) return "";
-	switch (mapLoc)
-	{
-		case "Antigua":       mapId = "map_antigua";    break;
-		case "Barbados":      mapId = "map_barbados";   break;
-		case "Beliz":         mapId = "map_beliz";      break;
-		case "Bermudes":      mapId = "map_bermudas";   break;
-		case "Caiman":        mapId = "map_cayman";     break;
-		case "Caracas":       mapId = "map_maine_2";    break;
-		case "Cartahena":     mapId = "map_maine_1";    break;
-		case "Cumana":        mapId = "map_cumana";     break;
-		case "Curacao":       mapId = "map_curacao";    break;
-		case "Dominica":      mapId = "map_dominica";   break;
-		case "Guadeloupe":    mapId = "map_guad";       break;
-		case "Cuba2":         mapId = "map_cuba";       break;
-		case "Jamaica":       mapId = "map_jam";        break;
-		case "Hispaniola1":   mapId = "map_hisp";       break;
-		//case "LostShipsCity": mapId = "map_LSC";        break;
-		case "Maracaibo":     mapId = "map_maine_1";    break;
-		case "Martinique":    mapId = "map_martiniqua"; break;
-		case "Nevis":         mapId = "map_nevis";      break;
-		case "Panama":        mapId = "map_panama";     break;
-		case "PortoBello":    mapId = "map_panama";     break;
-		case "Hispaniola2":   mapId = "map_hisp";       break;
-		//case "Providence":    mapId = "map_perl";       break;
-		case "Cuba1":         mapId = "map_cuba";       break;
-		case "PuertoRico":    mapId = "map_puerto";     break;
-		case "SantaCatalina": mapId = "map_santa";      break;
-		case "SentMartin":    mapId = "map_sm";         break;
-		case "Terks":         mapId = "map_terks";      break;
-		case "Tortuga":       mapId = "map_tortuga";    break;
-		case "Trinidad":      mapId = "map_trinidad";   break;
-	}
-	return mapId;
-}
-
-// belamour имеется ли релевантная карта (местоположение)
-bool FindAtlasMap(ref mapId)
-{
-	mapId = MapFromCurPos();
-	if(mapId == "") return false;
-	if(IsEquipCharacterByMap(pchar, mapId)) return true;
-	
-	return false;
-}
-
 // belamour установить тип особому ХО
 void SetBlade_FgtLvl (ref Chr, ref Blade)
 {
@@ -1507,28 +1456,39 @@ void addBonusToBlade(aref _attack, aref _enemy)
 	if(name == "Pirate" || name == "Marginal")
 	{
 		ref Blade = ItemsFromID("lacrima_patris");
-		if(!CheckAttribute(Blade,"KillerBonus"))
+		if (!CheckAttribute(Blade, "KillerBonus"))
 		{
 			Blade.KillerBonus = 0;
 			Blade.KillerBonus.Attack = 0.0;
-            Blade.KillerBonus.RangeBonus = 0.0;
+			Blade.KillerBonus.RangeBonus = 0.0;
 			Blade.KillerBonus.DefAttack = stf(Blade.Attack); // сохраним дефолтную атаку
 		}
-		
-		Blade.KillerBonus = sti(Blade.KillerBonus) + 1;
-		
-		if(sti(Blade.KillerBonus) % 10 == 0)
-		{
-            Blade.KillerBonus.Attack = stf(Blade.KillerBonus.Attack) + 2.0;
-			
-			if(stf(Blade.KillerBonus.Attack) > 30.0)
-                Blade.KillerBonus.Attack = 30.0;
-			
-			Blade.KillerBonus.RangeBonus = stf(Blade.KillerBonus.RangeBonus) + 1.0;
 
-            if(stf(Blade.KillerBonus.RangeBonus) > 15.0)
-                Blade.KillerBonus.RangeBonus = 15.0;
+		Blade.KillerBonus = sti(Blade.KillerBonus) + 1;
+
+		if (sti(Blade.KillerBonus) % 10 == 0)
+		{
+			Blade.KillerBonus.Attack     = fClamp(0, 30, stf(Blade.KillerBonus.Attack) + 2.0);
+			Blade.KillerBonus.RangeBonus = fClamp(0, 15, stf(Blade.KillerBonus.RangeBonus) + 1.0);
 			Blade.Attack = stf(Blade.KillerBonus.DefAttack) + stf(Blade.KillerBonus.Attack);
+
+			int currentDifference = sti(Blade.Attack) - sti(Blade.KillerBonus.DefAttack);
+			int addValue = currentDifference - GetAttributeInt(Blade, "KillerBonus.appliedBonus");
+			if (addValue == 0) return;
+
+			AddToAttributeInt(Blade, "KillerBonus.appliedBonus", addValue);
+			AddToAttributeInt(Blade, "attack.min", addValue);
+			AddToAttributeInt(Blade, "attack.max", addValue);
+			AddToAttributeInt(Blade, "attack.force.min", addValue);
+			AddToAttributeInt(Blade, "attack.force.max", addValue);
+			AddToAttributeInt(Blade, "attack.fast.min", addValue);
+			AddToAttributeInt(Blade, "attack.fast.max", addValue); 
+			AddToAttributeInt(Blade, "attack.round.min", addValue);
+			AddToAttributeInt(Blade, "attack.round.max", addValue);
+			AddToAttributeInt(Blade, "attack.break.min", addValue);
+			AddToAttributeInt(Blade, "attack.break.max", addValue);
+			AddToAttributeInt(Blade, "attack.shot.min", addValue);
+			AddToAttributeInt(Blade, "attack.shot.max", addValue);
 		}
 	}
 }
@@ -1552,14 +1512,10 @@ void addLiberMisBonus()
 
 float fLiberMisBonus(ref chr)
 {
-	if(!IsMainCharacter(chr)) return 1.0;
-	if(!IsEquipCharacterByArtefact(pchar, "talisman17")) return 1.0;
 	ref Liber = ItemsFromID("talisman17");
-	
-	if(CheckAttribute(Liber,"QBonus.max")) return 0.85;
-	else return 0.95;
+	if (!IsCharacterEquippedArtefact(chr, "talisman17")) return 1.0;
 
-	return 1.0;
+	return GetFloatByCondition(CheckAttribute(Liber,"QBonus.max"), 0.95, 0.85);
 }
 
 void addArticlesBonus()
@@ -1630,42 +1586,63 @@ void UpgradeMusketSP(ref chr)
 				itm.type.t2.shards  = 80;
 				itm.type.t2.width   = 7.0;
 				itm.type.t2.height  = 5.75;
+				if(isMultiObjectKnown("grapeshot_double"))
+				{
+					itm.type.t3.basedmg  = 3;
+					itm.type.t3.shards  = 120;
+					itm.type.t3.width   = 7.0;
+					itm.type.t3.height  = 5.75;
+					itm.type.t3.area    = XI_ConvertString("grapes_area_4");
+				}
 			break;
 			
 			case 3:	
 				itm.model			= "Mushket3_SP2";
 				itm.picIndex		= 12;
 				itm.price			= 56000;
-				itm.type.t1.Accuracy = 70.0;
 				itm.type.t1.basedmg  = 4;
 				itm.type.t1.shards  = 85;
 				itm.type.t1.width   = 6.5;
 				itm.type.t1.height  = 5.25;
 				itm.type.t1.area    = XI_ConvertString("grapes_area_4");
-				itm.type.t2.Accuracy = 60.0;
 				itm.type.t2.basedmg  = 4;
 				itm.type.t2.shards  = 85;
 				itm.type.t2.width   = 5.5;
 				itm.type.t2.height  = 4.5;
 				itm.type.t2.area    = XI_ConvertString("grapes_area_3");
+				if(isMultiObjectKnown("grapeshot_double"))
+				{
+					itm.type.t3.basedmg  = 4;
+					itm.type.t3.shards  = 130;
+					itm.type.t3.width   = 5.5;
+					itm.type.t3.height  = 4.5;
+					itm.type.t3.area    = XI_ConvertString("grapes_area_3");
+				}
 			break;
 			
 			case 4:	
 				itm.model			= "Mushket4_SP2";
 				itm.picIndex		= 12;
 				itm.price			= 85000;
-				itm.type.t1.Accuracy = 80.0;
 				itm.type.t1.basedmg  = 5;
 				itm.type.t1.width   = 5.5;
 				itm.type.t1.height  = 4.5;
 				itm.type.t1.area    = XI_ConvertString("grapes_area_3");
 				itm.type.t1.ChargeSpeed = 35;
-				itm.type.t2.Accuracy = 70.0;
 				itm.type.t2.basedmg  = 5;
 				itm.type.t2.width   = 4.5;
 				itm.type.t2.height  = 3.75;
 				itm.type.t2.area    = XI_ConvertString("grapes_area_2");
 				itm.type.t2.ChargeSpeed = 25;
+				if(isMultiObjectKnown("grapeshot_double"))
+				{
+					itm.type.t3.basedmg  = 5;
+					itm.type.t3.shards  = 130;
+					itm.type.t3.width   = 4.5;
+					itm.type.t3.height  = 3.75;
+					itm.type.t3.area    = XI_ConvertString("grapes_area_2");
+					itm.type.t3.ChargeSpeed = 18;
+				}
 				Achievment_Set("ach_CL_152");
 			break;
 		}
@@ -1689,19 +1666,14 @@ void AddMapPart()
         GiveItem2Character(PChar, "map_part2");
 }
 
-void SetBladeWeightAttack(ref blade)
+float GetWeightMtp(int weaponType, float weight)
 {
-	string sType = blade.FencingType;
-	switch(sType) 
+	switch (weaponType)
 	{
-		case "FencingL":
-			blade.WeightAttack = stf(blade.Attack) * (0.5 + 0.2 * stf(blade.Weight));
-		break;
-		case "FencingS":
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.25 * stf(blade.Weight));
-		break;
-		case "FencingH":
-			blade.WeightAttack = stf(blade.Attack) * (0.25 + 0.2 * stf(blade.Weight));
-		break;
+		case WEAPON_LIGHT:  return WEAPON_LIGHT_WEIGHT_MTP_1  + WEAPON_LIGHT_WEIGHT_MTP_2  * weight; break;
+		case WEAPON_MEDIUM: return WEAPON_MEDIUM_WEIGHT_MTP_1 + WEAPON_MEDIUM_WEIGHT_MTP_2 * weight; break;
+		case WEAPON_HEAVY:  return WEAPON_HEAVY_WEIGHT_MTP_1  + WEAPON_HEAVY_WEIGHT_MTP_2  * weight; break;
 	}
+
+	return 1.0; // для мушкетов
 }

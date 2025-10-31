@@ -6,7 +6,7 @@
 // SoundPlay (..., type, ...)
 #define SOUND_WAV_3D 1
 #define SOUND_MP3_STEREO 2
-#define SOUND_MP3_3D 3
+#define SOUND_FMOD_EVENT 3
 #define SOUND_WAV_STEREO 4
 
 // SoundPlay (..., volume_type, ...)

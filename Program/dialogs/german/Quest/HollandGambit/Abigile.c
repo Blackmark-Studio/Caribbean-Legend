@@ -434,7 +434,7 @@ void ProcessDialogEvent()
 		
 		case "Abigile_return_4":
 			dialog.text = "Oh...Ich bin ruiniert. Charles... bitte... bring mich zurück nach Hause nach Willemstad. Ich brauche meinen Papa...";
-			link.l1 = "Natürlich, liebe Miss. Leider gibt es hier in Bridgetown nichts für Sie. Geh, pack deine Sachen, verabschiede dich von John und wir werden sofort in See stechen.";
+			link.l1 = "Natürlich, liebe Miss. Leider gibt es hier in St. John's nichts für Sie. Geh, pack deine Sachen, verabschiede dich von John und wir werden sofort in See stechen.";
 			link.l1.go = "Abigile_return_5";
 		break;
 		

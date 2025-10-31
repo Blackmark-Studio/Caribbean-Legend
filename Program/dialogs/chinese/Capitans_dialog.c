@@ -272,8 +272,7 @@ void ProcessDialogEvent()
                 if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // 仅用于幻影掠夺
                 {
                     iCapBattleDifficulty = CalcBattleDifficulty();
-                    link.l2 = "(Шанс " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("你知道我是谁吗? 我想, 很明显我的枪可以把你的旧船打成筛子。 我们以和平方式解决吧。 赎金对我来说是个好决定。 ",
-                                               "只有我们... 和大海... 你觉得安抚我的人... 为了你自己的安全? .");
+                    link.l2 = "(威慑几率 " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("你知道我是谁吗? 我的火炮能把你的破船打成筛子。 和平解决吧—赎金就够了。", "大海上…… 只有我们…… 为了你船员的安全, 何不打赏点东西安抚我的兄弟们?");
                     link.l2.go = "Talk_board";
                 }
                 if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -597,8 +596,8 @@ void ProcessDialogEvent()
             //if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
             if(!bOk && iCapBattleDifficulty <= 33)
             {
-                Dialog.text = "哈哈哈! 太好笑了, 我的船更多。 回到你的船上, 和它一起淹死吧。 ";
-                link.l1 = "多不代表强, 伙计。 ";
+                Dialog.text = "哈哈! 真是个笑话。 尤其是现在我明显占优。 回到你的船上, 与它一起沉没吧。";
+                link.l1 = "...";
                 link.l1.go = "Boarding";
             }
             else

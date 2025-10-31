@@ -1067,6 +1067,8 @@ void ReasonToFast_SetTreasureHunter(string qName)
 
 void ReasonToFast_GenerateTreasureMap(ref item)
 {
+	bTrHash = false;
+	sTrTag  = "";
     item.MapIslId   = GetIslandForTreasure();
     item.MapLocId   = GetLocationForTreasure(item.MapIslId);
     item.MapBoxId   = GetBoxForTreasure(item.MapIslId, item.MapLocId);
@@ -1080,7 +1082,9 @@ void ReasonToFast_GenerateTreasureMap(ref item)
 	
     pchar.quest.ReasonToFast_SetTreasureFromMap.win_condition.l1  = "location";
     pchar.quest.ReasonToFast_SetTreasureFromMap.win_condition.l1.location = item.MapLocId;
-    pchar.quest.ReasonToFast_SetTreasureFromMap.function = "ReasonToFast_SetTreasureBoxFromMap"; 
+    pchar.quest.ReasonToFast_SetTreasureFromMap.function = "ReasonToFast_SetTreasureBoxFromMap";
+
+	sTrSubTag = "";
 }
 
 void ReasonToFast_ExitFromTownFight(string qName)
@@ -5700,6 +5704,8 @@ void Hold_GenQuest_SpeakMapChar(string qName)
 
 void Hold_GenQuest_GenerateTreasureMap(ref item)
 {
+	bTrHash = false;
+	sTrTag  = "";
     item.MapIslId   = GetIslandForTreasure();
     item.MapLocId   = GetLocationForTreasure(item.MapIslId);
     item.MapBoxId   = GetBoxForTreasure(item.MapIslId, item.MapLocId);
@@ -5711,7 +5717,9 @@ void Hold_GenQuest_GenerateTreasureMap(ref item)
 	pchar.GenQuest.Hold_GenQuest.Treasure.Location = item.MapLocId;
 	pchar.GenQuest.Hold_GenQuest.Treasure.Locator = item.MapBoxId;
 	
-	SetFunctionLocationCondition("Hold_GenQuest_SetTreasureBoxFromMap", item.MapLocId, false);	
+	SetFunctionLocationCondition("Hold_GenQuest_SetTreasureBoxFromMap", item.MapLocId, false);
+
+	sTrSubTag = "";
 }
 
 void Hold_GenQuest_SetTreasureBoxFromMap(string qName)
@@ -6018,6 +6026,65 @@ void JusticeOnSale_LocExitAfterMayor(string _quest)
 	CloseQuestHeader("JusticeOnSale");
 	
 	Log_TestInfo("Вышли из локации, а зря.");
+}
+
+// Срабатывание функции после диалога с мэром
+void JusticeOnSale_DlgExitAfterMayor_1()
+{
+	AddQuestRecord("JusticeOnSale", "5");
+	CloseQuestHeader("JusticeOnSale");
+	
+	AddMoneyToCharacter(PChar, 1000 + sti(PChar.rank) * 30 * hrand(10));
+	
+	DeleteAttribute(PChar, "GenQuest.JusticeOnSale");
+}
+
+void JusticeOnSale_DlgExitAfterMayor_2()
+{
+	sld = GetCharacter(NPC_GenerateCharacter("JusticeOnSale_ShipPirate", "", "man", "man", sti(PChar.rank) + 5, PIRATE, -1, true, "quest"));
+	sld.Ship.Type = GenerateShipExt(sti(PChar.GenQuest.JusticeOnSale.ShipType), true, sld);
+	sld.Ship.Name = PChar.GenQuest.JusticeOnSale.ShipName;
+	SetBaseShipData(sld);
+	SetCrewQuantityFull(sld);
+	Fantom_SetCannons(sld, "pirate");
+	Fantom_SetBalls(sld, "pirate");
+	Fantom_SetUpgrade(sld, "pirate");
+	SetCaptanModelByEncType(sld, "pirate");
+	SetRandGeraldSail(sld, PIRATE);
+	
+	Character_SetAbordageEnable(sld, false);
+	
+	Group_FindOrCreateGroup("JusticeOnSaleGroup");
+	Group_AddCharacter("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
+	Group_SetGroupCommander("JusticeOnSaleGroup", "JusticeOnSale_ShipPirate");
+	Group_SetAddress("JusticeOnSaleGroup", PChar.curislandid, "reload", Island_GetLocationReloadLocator(PChar.curislandid, PChar.GenQuest.JusticeOnSale.ShoreId));
+	Group_SetTaskNone("JusticeOnSaleGroup");
+	Group_LockTask("JusticeOnSaleGroup");
+	
+	sld.AlwaysFriend = true;
+	SetCharacterRelationBoth(sti(sld.index), GetMainCharacterIndex(), RELATION_FRIEND);
+	
+	SetCharacterShipLocation(sld, PChar.GenQuest.JusticeOnSale.ShoreId);
+
+	DeleteAttribute(sld, "SinkTenPercent");
+	DeleteAttribute(sld, "SaveItemsForDead");
+	DeleteAttribute(sld, "DontClearDead");
+	DeleteAttribute(sld, "AboardToFinalDeck");
+	
+	sld.AlwaysSandbankManeuver = true;
+	sld.AnalizeShips = true;
+	sld.DontRansackCaptain = true;
+	
+	sld = &Locations[FindLocation(PChar.GenQuest.JusticeOnSale.ShoreId)];
+	sld.DisableEncounters = true;
+	
+	PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1  = "location";
+	PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.win_condition.l1.location = PChar.GenQuest.JusticeOnSale.ShoreId;
+	PChar.Quest.JusticeOnSale_ShoreEnterFromMayor.function = "JusticeOnSale_ShoreEnterFromMayor";
+	
+	PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1 = "Character_sink";
+	PChar.Quest.JusticeOnSale_PirateShip_Sink.win_condition.l1.character = "JusticeOnSale_ShipPirate";
+	PChar.Quest.JusticeOnSale_PirateShip_Sink.function = "JusticeOnSale_PirateShip_Sink";
 }
 
 // Потопили корабль контриков.
@@ -6621,7 +6688,7 @@ void CitizCapFromSeaToMap(string qName) //помещаем на карту кэ�
 		// --> belamour gen
 		AddSimpleRumourEx(LinkRandPhrase(StringFromKey("GenQuests_84", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, GetFullName(sld), XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc")), 
 			StringFromKey("GenQuests_85", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+ "Acc")), 
-			StringFromKey("GenQuests_86", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName, "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))), 
+			StringFromKey("GenQuests_86", GetStrSmallRegister(XI_ConvertString(RealShips[sti(sld.Ship.Type)].BaseName+ "Gen")), sld.Ship.name, XI_ConvertString("Colony"+ sld.quest.targetCity+"Acc"), GetFullName(sld))), 
 			sld.city, iTemp, 1, "Citiz_SeekCap_rum", sld.id);
 		// <-- gen
 		//--> запись инфы по кэпу в базу местного портмана
@@ -8891,7 +8958,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 				ShipType = rand(9);
 				if (iModel[ShipType] != "")
 				{
-					if (i == 0) 
+					if (i == 0)
 					{   //главарь банды
 						int iMainGang = NPC_GenerateCharacter("MayorQuestGang_" + i, iModel[ShipType], "man", "man", Rank, PIRATE, 0, true, "hunter");
 						sld = &characters[iMainGang];
@@ -8906,6 +8973,7 @@ bool GenQuests_QuestComplete(string sQuestName, string qname)
 					else sld = GetCharacter(NPC_GenerateCharacter("MayorQuestGang_" + i, iModel[ShipType], "man", "man", Rank, PIRATE, 0, true, "marginal"));
 					LAi_SetActorType(sld);
 					SetFantomParamFromRank(sld, Rank, true);
+					SetAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Бандиты по квесту губернатора
 					//Получим локатор для логина
 					attrName = GetAttributeName(GetAttributeN(arAll, i));
 					ChangeCharacterAddressGroup(sld, location.id, encGroup, attrName);					

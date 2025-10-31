@@ -10,24 +10,6 @@ void FalseTrace_Prepare(string qName)//подготовка инициализа
 	pchar.quest.False_Trace_1.function = "FalseTrace_Begin";
 	log_testinfo("Ложный след в колонии: "+pchar.questTemp.FalseTrace.StartCity);
 	AddMapQuestMarkCity(pchar.questTemp.FalseTrace.StartCity, false);
-	CheckPortugalHWIC(); // для квест марков
-}
-
-void CheckPortugalHWIC()
-{
-	if(SandBoxMode || pchar.questTemp.HWIC.Detector == "holl_win"|| pchar.questTemp.HWIC.Detector == "eng_win" || pchar.questTemp.HWIC.Detector == "self_win")
-	{
-		if(sti(pchar.rank) > 14) 
-		{
-			AddMapQuestMarkCity("marigo", false);
-			AddLandQuestMark(characterFromId("Marigo_Hostess"), "questmarkmain");
-		}
-		if(!CheckAttribute(pchar, "questTemp.Consumption") && sti(pchar.rank) > 6)
-		{
-			AddMapQuestMarkCity("PortSpein", false);
-			AddLandQuestMark(characterFromId("PortSpein_waitress"), "questmarkmain");
-		}
-	}
 }
 
 void FalseTrace_Begin(string qName)//инициализация квестодателя
@@ -75,7 +57,7 @@ void FalseTrace_Begin(string qName)//инициализация квестода
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	sld.HalfImmortal = true;//полубессмертен
@@ -328,7 +310,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 		if (i == 3)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTOur_crew_"+i, "mush_ctz_5", "man", "mushketer", iRank, sti(pchar.nation), 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -348,7 +330,7 @@ void FalseTrace_SollyBonanza(string qName)//высадка на берег за 
 		if (i == 1)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTEnemy_crew_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{
@@ -375,7 +357,7 @@ void FalseTrace_SollyBonanzaAdd()//ещё выскочили из засады
 		if (i == 2)
 		{
 		sld = GetCharacter(NPC_GenerateCharacter("FTAEnemy_crew_"+i, "mush_ctz_"+(rand(2)+7), "man", "mushketer", iRank, PIRATE, 0, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl+5, "", "mushket1", "cartridge", iScl*2);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl+5, "", "mushket1", "bullet", iScl*2);
 		}
 		else
 		{

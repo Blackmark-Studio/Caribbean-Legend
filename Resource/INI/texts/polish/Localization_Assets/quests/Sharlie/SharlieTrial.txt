@@ -1,252 +1,56 @@
-SharlieTrial_1
-{
-Twoja pożyczka u Opata Benoit wygasła!
-}
-
-SharlieTrial_2
-{
-Gralam
-}
-SharlieTrial_3
-{
-Lavua
-}
-
-SharlieTrial_4
-{
-Łódź
-}
-
-SharlieTrial_5
-{
-Twój statek jest gotowy! Udaj się na molo i wypłyń w morze!
-}
-
-SharlieTrial_6
-{
-Duch
-}
-
-SharlieTrial_7
-{
-Udaj się na przeciwną stronę wyspy, aby ukończyć zadanie. Wypłyń z zatoki na prawo i trzymaj się linii brzegowej!
-}
-
-SharlieTrial_8
-{
-Sterowanie trybem morskim jest dostępne w opcjach gry.
-}
-
-SharlieTrial_9
-{
-Spóźniłeś się na spotkanie!
-}
-
-SharlieTrial_10
-{
-Minęła godzina...@<NewStr()>Rum załadowano na twoją szalupe
-}
-
-SharlieTrial_11
-{
-Użyj menu akcji, aby powrócić na swój statek (enter).
-}
-SharlieTrial_12
-{
-Przetransportuj rum do Le Francois. Płyń dalej wokół wyspy.
-}
-
-SharlieTrial_13
-{
-Lutisse
-}
-SharlieTrial_14
-{
-Montane
-}
-
-SharlieTrial_15
-{
-Czeka cię trudna walka. (F6) aby szybko zapisać grę.
-}
-
-SharlieTrial_16
-{
-Ktoś został zabity w pobliżu! W przypadku morderstwa użyj menu akcji (ENTER) lub przypisanego skrótu klawiszowego (Domyślnie 1), aby ograbić zmarłego.
-}
-
-SharlieTrial_17
-{
-Prosper
-}
-SharlieTrial_18
-{
-Trubal
-}
-
-SharlieTrial_19
-{
-Selina
-}
-SharlieTrial_20
-{
-Trubal
-}
-
-SharlieTrial_21
-{
-Gilbert
-}
-SharlieTrial_22
-{
-Cursee
-}
-
-SharlieTrial_23
-{
-Wolter
-}
-SharlieTrial_24
-{
-Catcher
-}
-
-SharlieTrial_25
-{
-Zatop go bombami, lub, jeśli wiatr na to pozwoli, natychmiast dokonaj abordażu.
-}
-
-SharlieTrial_26
-{
-Świetna robota! Otwórz Mapę Globalną poprzez Menu Akcji i popłyń na północ w kierunku Gwadelupy!
-}
-
-SharlieTrial_27
-{
-Tichingitu
-}
-SharlieTrial_28
-{
-
-}
-
-SharlieTrial_29
-{
-Alonso
-}
-SharlieTrial_30
-{
-
-}
-
-SharlieTrial_31
-{
-Gerar
-}
-SharlieTrial_32
-{
-Lecrua
-}
-
-SharlieTrial_33
-{
-Warlike
-}
-
-SharlieTrial_34
-{
-Florian
-}
-SharlieTrial_35
-{
-Shoke
-}
-
-SharlieTrial_36
-{
-Mineły trzy godziny...@<NewStr()>Działa załadowano na fregatę
-}
-
-SharlieTrial_37
-{
-Arthuro
-}
-SharlieTrial_38
-{
-Cascos
-}
-
-SharlieTrial_39
-{
-Puebla
-}
-SharlieTrial_40
-{
-'Puebla'
-}
-
-SharlieTrial_41
-{
-Jirarz
-}
-SharlieTrial_42
-{
-Artua
-}
-
-SharlieTrial_43
-{
-Gregoire
-}
-SharlieTrial_44
-{
-Valinnie
-}
-
-SharlieTrial_45
-{
-Aby uzyskać dostęp do dziennika zadań, naciśnij klawisz F3.
-}
-
-SharlieTrial_46
-{
-Od tej chwili jesteś sam w tym okrutnym świecie.
-}
-
-SharlieTrial_47
-{
-Tichingitu zmienił zdanie.
-}
-
-SharlieTrial_48
-{
-Charles
-}
-SharlieTrial_49
-{
-Barbier
-}
-
-SharlieTrial_50
-{
-Henry
-}
-
-SharlieTrial_51
-{
-barka 'Henry'
-}
-
-SharlieTrial_52
-{
-Okazja do ograbienia zmarłych w celu zdobycia cennych przedmiotów!
-}
-
-SharlieTrial_53
-{
-Guillaume
-}
-SharlieTrial_54
-{
-Dubois
-}
+SharlieTrial_1 {Twoja pożyczka u Opata Benoit wygasła!}
+SharlieTrial_2 {Gralam}
+SharlieTrial_3 {Lavua}
+SharlieTrial_4 {Łódź}
+SharlieTrial_5 {Twój statek jest gotowy! Udaj się na molo i wypłyń w morze!}
+SharlieTrial_6 {Duch}
+SharlieTrial_7 {Udaj się na przeciwną stronę wyspy, aby ukończyć zadanie. Wypłyń z zatoki na prawo i trzymaj się linii brzegowej!}
+SharlieTrial_8 {Sterowanie trybem morskim jest dostępne w opcjach gry.}
+SharlieTrial_9 {Spóźniłeś się na spotkanie!}
+SharlieTrial_10 {Minęła godzina...@<NewStr()>Rum załadowano na twoją szalupe}
+SharlieTrial_11 {Użyj menu akcji, aby powrócić na swój statek (enter).}
+SharlieTrial_12 {Przetransportuj rum do Le Francois. Płyń dalej wokół wyspy.}
+SharlieTrial_13 {Lutisse}
+SharlieTrial_14 {Montane}
+SharlieTrial_15 {Czeka cię trudna walka. (F6) aby szybko zapisać grę.}
+SharlieTrial_16 {Ktoś został zabity w pobliżu! W przypadku morderstwa użyj menu akcji (ENTER) lub przypisanego skrótu klawiszowego (Domyślnie 1), aby ograbić zmarłego.}
+SharlieTrial_17 {Prosper}
+SharlieTrial_18 {Trubal}
+SharlieTrial_19 {Selina}
+SharlieTrial_20 {Trubal}
+SharlieTrial_21 {Gilbert}
+SharlieTrial_22 {Cursee}
+SharlieTrial_23 {Wolter}
+SharlieTrial_24 {Catcher}
+SharlieTrial_25 {Zatop go bombami, lub, jeśli wiatr na to pozwoli, natychmiast dokonaj abordażu.}
+SharlieTrial_26 {Świetna robota! Otwórz Mapę Globalną poprzez Menu Akcji i popłyń na północ w kierunku Gwadelupy!}
+SharlieTrial_27 {Tichingitu}
+SharlieTrial_28 { }
+SharlieTrial_29 { }
+SharlieTrial_30 { }
+SharlieTrial_31 {Gerar}
+SharlieTrial_32 {Lecrua}
+SharlieTrial_33 {Warlike}
+SharlieTrial_34 {Florian}
+SharlieTrial_35 {Shoke}
+SharlieTrial_36 {Mineły trzy godziny...@<NewStr()>Działa załadowano na fregatę}
+SharlieTrial_37 {Arthuro}
+SharlieTrial_38 {Cascos}
+SharlieTrial_39 {Puebla}
+SharlieTrial_40 {'Puebla'}
+SharlieTrial_41 {Jirarz}
+SharlieTrial_42 {Artua}
+SharlieTrial_43 {Gregoire}
+SharlieTrial_44 {Valinnie}
+SharlieTrial_45 {Aby uzyskać dostęp do dziennika zadań, naciśnij klawisz F3.}
+SharlieTrial_46 {Od tej chwili jesteś sam w tym okrutnym świecie.}
+SharlieTrial_47 {Tichingitu zmienił zdanie.}
+SharlieTrial_48 {Charles}
+SharlieTrial_49 {Barbier}
+SharlieTrial_50 {Henry}
+SharlieTrial_51 {barka 'Henry'}
+SharlieTrial_52 {Okazja do ograbienia zmarłych w celu zdobycia cennych przedmiotów!}
+SharlieTrial_53 {Guillaume}
+SharlieTrial_54 {Dubois}
+SharlieTrial_55 {Cocoa}
+SharlieTrial_56 {Leaf}

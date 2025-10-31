@@ -35,31 +35,8 @@ void ProcessDialogEvent()
 		case "Cabin":
 			dialog.text = "Марчелло, я знаю этого типа. Это дружок ривадос и пиратов. Адольф никогда бы не связался с ним. Вдохни воздух... ты чувствуешь запах пороха? И вон там, посмотри, на стене кровь... Он убил Адольфа и теперь пытается нас одурачить! Он наверняка работает на адмирала! Валим его!";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
-		break;
-		
-		case "Cabin_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			DialogExit();
-			sld = characterFromId("Marchello");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-			{
-				for (i=1; i<=3; i++)
-				{
-					sld = characterFromId("CyclopGuard_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 		// на улице
@@ -1707,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Ну что там капитан, опять заваруха, да? Кто на этот раз, испанцы, пираты, или кто похуже?";
 			link.l1 = "Хуже, Мэри, хуже. Губернатор намерен посетить крайне дорогую куртизанку, а я при нём в качестве диковинки, обещанной хозяйке. Скучная болтовня, дорогое вино и унылые аристократы.";
 			link.l1.go = "GoldenGirl_1";

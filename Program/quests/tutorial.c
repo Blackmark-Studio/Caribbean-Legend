@@ -65,10 +65,6 @@ void Tutorial_Navigator2(string qName)
 	int shipClass = GetCharacterShipClass(pchar);
 	needSkill = GetShipClassNavySkill(shipClass);
 	
-	if(GetCharacterShipType(pchar) != SHIP_NOTUSED)
-	{
-		if (sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_RENOVATED_FDM || sti(RealShips[sti(pchar.ship.type)].basetype) == SHIP_FDM) needSkill = 100;
-	}
 	if (CheckAttribute(pchar, "NoNavyPenalty")) needSkill = 1;
 	
 	if (sailSkill >= needSkill) return;

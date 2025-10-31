@@ -1,0 +1,37 @@
+new_string
+{
+
+}
+Ship_Name {Szent kegyelem}
+Cap_Name {Fernando}
+Cap_lastname {de Alamida}
+City_Rum1 {Az egész város izgatott - don Fernando de Alamida, a királyi felügyelô megérkezett. Tudod, sok mindent láttam már itt, de ez... Nem a bánat változtatja meg az embert, hanem az, ahogyan kezeli. Azt mondják, más ember lett az apja halála után. Most már nem találsz megvesztegethetetlenebb és... könyörtelenebb szolgáját a Koronának az egész szigetvilágban.}
+City_Rum2 {Csak nézd meg a "Szent Irgalmasság"! Azt mondják, maga a király rendelte meg, hogy különleges tervek alapján épüljön. És vegyük észre - egyetlen karcolás sincs rajta. Mintha maga Szûz Mária védelmezné. Bár hallottam pletykákat... talán nem is a Szûzanya.}
+City_Rum3 {Tudod, hányszor próbálták már megölni don Fernandót? Tizenkét támadás nyílt vizeken - és ez csak az elmúlt évben történt! Nos, egy ilyen hûséges és képzett legénységgel, és az Úr védelme alatt - túl fogja élni a tizenharmadikat is!}
+City_Rum4 {Hallottátok? Don Fernando de Alamida megérkezett a városunkba, és azt mondják, most is valahol az utcán van. Szeretném a saját szememmel látni...}
+City_Rum5 {Bonyolult ember ez a don Fernando. Egyesek szerint ô a megmentô, aki megtisztítja a hazát a mocsoktól. Mások azt suttogják, hogy valami megtört benne az apja halála után, és hamarosan mindannyian sírni fogunk. De én azt mondom nektek: ne féljetek tôle. Féljetek azoktól, akik azzá tették, ami.}
+City_Rum6 {Milyen jóképû ember ez a don Fernando! De tudod mi a furcsa? Mintha senkit sem venne észre. Csupa kötelesség és szolgálat. Hallottam, hogy volt egy lány... de miután találkozott valami pappal, teljesen elutasította a világi örömöket. Mintha fogadalmat tett volna.}
+City_Rum7 {Átkozott felügyelô! Amíg ô itt van - a város olyan, mintha halott lenne. Nincs kereskedelem, nincs szórakozás. Még a légzés is, úgy tûnik, csendesebbnek kell lennie. És tudod, mi a legijesztôbb? Minden kikötôben ugyanez a helyzet. Mint az óramû. Ô királyi felsége nem találhatta ki szándékosan ezt a kínzást mindannyiunk számára!}
+City_Rum8 {Don Fernando újra meglátogatta az árvaházat. Nagylelkûen adakozik, órákig imádkozik. Egy ilyen méltó embert példaként kellene állítani azoknak az átkozott sikkasztóknak!}
+City_Rum9 {Ha! "Saint" Fernando ismét bezáratta az összes bordélyházat. Hát, nem baj, hamarosan elhajózik, és újra kinyitnak.}
+City_Rum10 {Megérkezett az insp... felügyelô, ez az! Don Fernando de Almeyda, vagy hogy is hívják, Alamida! Annyira fontos, hogy maga a kormányzó is lábujjhegyen járkál körülötte. Azt mondják, a szemedbe néz, és rögtön látja az összes bûnödet. Félelmetes!}
+Pop_Name {Diego}
+Pop_lastname {de Landa}
+Took_LiberMisericordiae {Received: Liber Misericordiae}
+SM_WorldMap
+{
+Mindenki a fedélzetre! A Szent Irgalom közeledik! Egy ádáz ellenfél, vajon valóban készen állunk-e arra, hogy szembeszálljunk vele? Talán a nyílt tengeren kellene elfognunk, távol a kolóniáktól?
+}
+City_Rum11 {Az a hír jutott el a fülemhez, hogy a Szent Irgalom célpontja ezúttal a  ~}
+City_Rum12 {. Még egyszer, mindannyian fejet hajtunk Escorial igája alatt. Valóban kiérdemeltük ezt a sorsot?}
+City_Rum13 {Új felügyelô érkezett a ~}
+City_Rum14 {~  - a Szent Irgalmasság horgonyon fekszik. Alamida ismét megkeseríti az egyszerû emberek életét - nincs vidám italozás, nincs bordélyház! Melyik ördög hozta ezt ránk?}
+City_Rum15 {Nem lehet irigyelni a kormányzó ~}
+City_Rum16 {~ - Señor Alamida kikötött a kikötôben, és megkezdte az ellenôrzést. Legutóbb, azt mondják, ~}
+City_Rum17 {~ majdnem elvesztette a címét. Ó... imádkozom, hogy a Szent Irgalom ne merészkedjen ide a közeljövôben újra...}
+City_Rum18 {Hallottad, hogy a korona követe most személyesen járja a szigetvilágot? Milyen gaztetteket követtek el a telepesek az Escorial elôtt? Egy haverom mondta, hogy a Szent Irgalom jelenleg a ~horgonyoz.}
+City_Rum19 {. Vajon van-e ebben valami igazság?}
+City_Rum20 {Úgy tûnik, hogy spanyol fejekre felügyelô esett, akit Európából küldtek felügyelni! Azt hittem, hogy királyuk hatalma még a Karib-tengeren is uralkodik. Meg kell kérdeznem, hogy a kormányzás a  ~}
+City_Rum21 {~  az elkövetkezô hónapokban változhat, ugyanis a Szent Irgalom jelenleg ott dokkol.}
+City_Rum22 {Különös hírek érkeznek a spanyol gyarmatokról. Azt mondják, amikor Senor Alamide megérkezik a városba, mindenkit félelem fog el, és lábujjhegyen járnak. Kíváncsi lennék, hogy valaki a ~}
+City_Rum23 {, mert az a hír járja, hogy a Szent Irgalom jelenleg is ott tartózkodik.}

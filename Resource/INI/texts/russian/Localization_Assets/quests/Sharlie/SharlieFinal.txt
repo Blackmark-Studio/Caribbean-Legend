@@ -1,390 +1,85 @@
-SharlieFinal_1
-{
-Кэтрин
-}
-SharlieFinal_2
-{
-Фокс
-}
-
-SharlieFinal_3
-{
-Режим исследования: таймер продлён. Выполните квест!
-}
-SharlieFinal_4
-{
-Кэтрин Фокс заболела тропической лихорадкой и умерла!
-}
-
-SharlieFinal_5
-{
-шевалье Тимолеон
-}
-SharlieFinal_6
-{
-де Фонтене
-}
-
-SharlieFinal_7
-{
-Гриффондор
-}
-
-SharlieFinal_8
-{
-Робер
-}
-SharlieFinal_9
-{
-Мартэн
-}
-
-SharlieFinal_10
-{
-Инфанта
-}
-
-SharlieFinal_11
-{
-испанский конвой
-}
-
-SharlieFinal_12
-{
-Виктори
-}
-SharlieFinal_13
-{
-Замок Виндзор
-}
-SharlieFinal_14
-{
-Роял Катерин
-}
-SharlieFinal_15
-{
-Лоял Лондон
-}
-SharlieFinal_16
-{
-Надменный
-}
-
-SharlieFinal_17
-{
-Сан Фелипе
-}
-SharlieFinal_18
-{
-Сан Исидро
-}
-SharlieFinal_19
-{
-Санта Магдалена
-}
-SharlieFinal_20
-{
-Санта Анна
-}
-SharlieFinal_21
-{
-Апостол
-}
-
-SharlieFinal_22
-{
-Камера открыта!
-}
-
-SharlieFinal_23
-{
-Мишель
-}
-SharlieFinal_24
-{
-де Монпе
-}
-
-SharlieFinal_25
-{
-Анри
-}
-SharlieFinal_26
-{
-Дюбле
-}
-
-SharlieFinal_27
-{
-Восхитительный
-}
-
-SharlieFinal_28
-{
-боцман Серж
-}
-SharlieFinal_29
-{
-Дега
-}
-
-SharlieFinal_30
-{
-Сан Грегорио
-}
-
-SharlieFinal_31
-{
-Карлос
-}
-SharlieFinal_32
-{
-Геварра
-}
-
-SharlieFinal_33
-{
-Гай
-}
-SharlieFinal_34
-{
-Марше
-}
-
-SharlieFinal_35
-{
-Прошёл день...@<NewStr()>Ваниль была перегружена на каракку...
-}
-
-SharlieFinal_36
-{
-Барти
-}
-SharlieFinal_37
-{
-Живодёр
-}
-
-SharlieFinal_38
-{
-отец Винсенто
-}
-SharlieFinal_39
-{
-
-}
-
-SharlieFinal_40
-{
-Педро
-}
-SharlieFinal_41
-{
-Лопес
-}
-
-SharlieFinal_42
-{
-Сан Маркос
-}
-
-SharlieFinal_43
-{
-Тень
-}
-SharlieFinal_44
-{
-Диего
-}
-SharlieFinal_45
-{
-де Монтойя
-}
-
-SharlieFinal_46
-{
-Курьерский люггер Диего 'Тень'
-}
-
-SharlieFinal_47
-{
-На корабле 'Тень' был взорван пороховой запас!
-}
-
-SharlieFinal_48
-{
-Фортуна
-}
-
-SharlieFinal_49
-{
-капитан
-}
-SharlieFinal_50
-{
-'Санта-Квитерии'
-}
-
-SharlieFinal_51
-{
-отец Адриан
-}
-SharlieFinal_52
-{
-
-}
-
-SharlieFinal_53
-{
-Незнакомец
-}
-SharlieFinal_54
-{
-
-}
-
-SharlieFinal_55
-{
-Врагов в засаде - @<n> штук
-}
-
-SharlieFinal_56
-{
-Нужно спуститься в каюту
-}
-
-SharlieFinal_57
-{
-Уракан
-}
-SharlieFinal_58
-{
-
-}
-
-SharlieFinal_59
-{
-Канек
-}
-SharlieFinal_60
-{
-
-}
-
-SharlieFinal_61
-{
-Открыта сокровищница ица
-}
-
-SharlieFinal_62
-{
-Маска Кукулькана уничтожена@<NewStr()>Телепортационные порталы разрушены!
-}
-
-SharlieFinal_63
-{
-Прошло несколько дней...@<NewStr()>Корабль прибыл в бухту
-}
-
-SharlieFinal_64
-{
-Гаэтано
-}
-SharlieFinal_65
-{
-Розетти
-}
-
-SharlieFinal_66
-{
-Прошло полчаса...@<NewStr()>Пометки на карте сделаны
-}
-
-SharlieFinal_67
-{
-Страж Маски
-}
-SharlieFinal_68
-{
-
-}
-
-SharlieFinal_69
-{
-Страж полностью восстановился!
-}
-
-SharlieFinal_70
-{
-Вы чувствуете себя сильнее
-}
-
-SharlieFinal_71
-{
-Вы чувствуете себя более выносливым
-}
-
-SharlieFinal_72
-{
-Вы чувствуете себя более ловким
-}
-
-SharlieFinal_73
-{
-
-}
-SharlieFinal_74
-{
-а
-}
-
-SharlieFinal_75
-{
-Абордажник @<GetFullName(sld)> использовал@<sTemp> зелье команчей
-}
-
-SharlieFinal_76
-{
-
-}
-SharlieFinal_77
-{
-ла
-}
-
-SharlieFinal_78
-{
-Абордажник @<GetFullName(sld)> умер@<sTemp> из-за отсутствия зелья команчей
-}
-
-SharlieFinal_79
-{
-Кукулькан ушёл в прошлое...@<NewStr()>Вы не смогли остановить его...
-}
-
-SharlieFinal_80
-{
-капитан
-}
-SharlieFinal_81
-{
-Гобарт
-}
-
-SharlieFinal_82
-{
-полковник
-}
-SharlieFinal_83
-{
-Кирк
-}
-
-SharlieFinal_84
-{
-Мир изменился, и наш герой - вместе с ним.@<NewStr()>Но это уже совсем другая история...
-}
-SharlieFinal_85
-{
-Алонсо
-}
+SharlieFinal_1 {Кэтрин}
+SharlieFinal_2 {Фокс}
+SharlieFinal_3 {Режим исследования: таймер продлён. Выполните квест!}
+SharlieFinal_4 {Кэтрин Фокс заболела тропической лихорадкой и умерла!}
+SharlieFinal_5 {шевалье Тимолеон}
+SharlieFinal_6 {де Фонтене}
+SharlieFinal_7 { }
+SharlieFinal_8 {Робер}
+SharlieFinal_9 {Мартэн}
+SharlieFinal_10 {Инфанта}
+SharlieFinal_11 {испанский конвой}
+SharlieFinal_12 {Виктори}
+SharlieFinal_13 {Замок Виндзор}
+SharlieFinal_14 {Роял Катерин}
+SharlieFinal_15 {Лоял Лондон}
+SharlieFinal_16 {Надменный}
+SharlieFinal_17 { }
+SharlieFinal_18 { }
+SharlieFinal_19 { }
+SharlieFinal_20 { }
+SharlieFinal_21 { }
+SharlieFinal_22 {Камера открыта!}
+SharlieFinal_23 {Мишель}
+SharlieFinal_24 {де Монпе}
+SharlieFinal_25 {Анри}
+SharlieFinal_26 {Дюбле}
+SharlieFinal_27 {Восхитительный}
+SharlieFinal_28 {боцман Серж}
+SharlieFinal_29 {Дега}
+SharlieFinal_30 {Сан Грегорио}
+SharlieFinal_31 {Карлос}
+SharlieFinal_32 {Геварра}
+SharlieFinal_33 {Гай}
+SharlieFinal_34 {Марше}
+SharlieFinal_35 {Прошёл день...@<NewStr()>Ваниль была перегружена на каракку...}
+SharlieFinal_36 {Барти}
+SharlieFinal_37 {Живодёр}
+SharlieFinal_38 {отец Винсенто}
+SharlieFinal_39 { }
+SharlieFinal_40 {Педро}
+SharlieFinal_41 {Лопес}
+SharlieFinal_42 {Сан Маркос}
+SharlieFinal_43 {Тень}
+SharlieFinal_44 {Диего}
+SharlieFinal_45 {де Монтойя}
+SharlieFinal_46 {Курьерский люггер Диего 'Тень'}
+SharlieFinal_47 {На корабле 'Тень' был взорван пороховой запас!}
+SharlieFinal_48 { }
+SharlieFinal_49 {капитан}
+SharlieFinal_50 {'Санта-Квитерии'}
+SharlieFinal_51 {отец Адриан}
+SharlieFinal_52 { }
+SharlieFinal_53 {Незнакомец}
+SharlieFinal_54 { }
+SharlieFinal_55 {Врагов в засаде - @<n> штук}
+SharlieFinal_56 {Нужно спуститься в каюту}
+SharlieFinal_57 {Уракан}
+SharlieFinal_58 { }
+SharlieFinal_59 {Канек}
+SharlieFinal_60 { }
+SharlieFinal_61 {Открыта сокровищница ица}
+SharlieFinal_62 {Маска Кукулькана уничтожена@<NewStr()>Телепортационные порталы разрушены!}
+SharlieFinal_63 {Прошло несколько дней...@<NewStr()>Корабль прибыл в бухту}
+SharlieFinal_64 {Гаэтано}
+SharlieFinal_65 {Розетти}
+SharlieFinal_66 {Прошло полчаса...@<NewStr()>Пометки на карте сделаны}
+SharlieFinal_67 {Страж Маски}
+SharlieFinal_68 { }
+SharlieFinal_69 {Страж полностью восстановился!}
+SharlieFinal_70 {Вы чувствуете себя сильнее}
+SharlieFinal_71 {Вы чувствуете себя более выносливым}
+SharlieFinal_72 {Вы чувствуете себя более ловким}
+SharlieFinal_73 { }
+SharlieFinal_74 {а}
+SharlieFinal_75 {Абордажник @<GetFullName(sld)> использовал@<sTemp> зелье команчей}
+SharlieFinal_76 { }
+SharlieFinal_77 {ла}
+SharlieFinal_78 {Абордажник @<GetFullName(sld)> умер@<sTemp> из-за отсутствия зелья команчей}
+SharlieFinal_79 {Кукулькан ушёл в прошлое...@<NewStr()>Вы не смогли остановить его...}
+SharlieFinal_80 {капитан}
+SharlieFinal_81 {Гобарт}
+SharlieFinal_82 {полковник}
+SharlieFinal_83 {Кирк}
+SharlieFinal_84 {Мир изменился, и наш герой - вместе с ним.@<NewStr()>Но это уже совсем другая история...}
+SharlieFinal_85 { }

@@ -184,14 +184,14 @@ void ProcessDialogEvent()
 				dialog.text = LinkRandPhrase("Oh, je ne suis pas sûr, beau gosse! Il y avait un type il n'y a pas longtemps qui demandait de l'aide pour tuer des rats, et puis quelqu'un a empoisonné les soldats dans le fort. Ça a chauffé pour mes gens sur l'île pendant que les gardes nous interrogeaient pendant deux semaines jusqu'à ce qu'ils trouvent le meurtrier. C'était un espion ennemi.","Et comment puis-je être sûr de vos intentions ? Peut-être voulez-vous seulement empoisonner un noble que vous êtes trop lâche pour affronter dans un duel honorable ??","On m'a dit que quelqu'un avait empoisonné un commerçant dans la taverne et avait volé toutes ses affaires. L'homme a souffert pendant longtemps avant de rendre l'âme. De l'écume sortait de sa bouche et il est devenu violet comme une aubergine... Es-tu responsable de cela, mon amour ?");
 				link.l1 = "Vous, les gitanes, aimez certainement partager vos opinions ! Ne t'inquiète pas ma fille, je ne vais pas empoisonner les gens. C'est une manière féminine de tuer, pas mon style. Pour les hommes, j'ai mon épée, mais je ne peux pas gérer ces maudits rats.";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Trustworthy", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "Vous essayez de me piéger ! Non monsieur, je n'ai aucun poison. J'ai des plantes et des potions, mais pas de poisons.";
 				link.l1 = "Quoi qu'il en soit. Ne me jette pas le mauvais oeil.";
 				link.l1.go = "exit";
-				notification("Perk Check Failed", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

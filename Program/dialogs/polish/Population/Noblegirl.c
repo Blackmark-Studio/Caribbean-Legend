@@ -31,13 +31,13 @@ void ProcessDialogEvent()
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)//проверка межнациональных отношений
 				{
 					dialog.text = "Hm. Płyniesz pod banderą "+NationNameGenitive(sti(pchar.nation))+", kapitanie. Nie mam ochoty rozmawiać z wrogiem mojego kraju. Hmph!";
-					link.l1 = "Ah, tak. Prawdziwy patriota...";
+					link.l1 = "Ah, tak. Prawdziwa patriotka...";
 					link.l1.go = "exit";
 				}
 				else
 				{
 					dialog.text = RandPhraseSimple("Czego chcesz ode mnie, "+GetAddress_Form(NPChar)+"? Nie przystoi zwykłemu żeglarzowi rozmawiać ze szlachetną damą, ale słucham cię.","Och, a czego taki odważny kapitan ode mnie chce?");
-					link.l1 = TimeGreeting()+", "+GetAddress_FormToNPC(NPChar)+"Nie zajmę ci dużo czasu, chcę tylko zapytać...";
+					link.l1 = TimeGreeting()+", "+GetAddress_FormToNPC(NPChar)+". Nie zajmę ci dużo czasu, chcę tylko zapytać...";
 					link.l1.go = "question";
 					link.l2 = RandPhraseSimple("Muszę wiedzieć, co się dzieje w waszej kolonii.","Potrzebuję pewnych informacji.");
 					link.l2.go = "quests";//(перессылка в файл города)
@@ -68,14 +68,14 @@ void ProcessDialogEvent()
 				//повторные обращения
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "Czy powinienem się powtórzyć? Nie chcę być podejrzewany o przyjaźń z "+NationNameAblative(sti(pchar.nation))+"Precz, albo zawołam straż! Chętnie z tobą porozmawiają.";
+					dialog.text = "Czy powinnam się powtórzyć? Nie chcę być podejrzewana o przyjaźń z "+NationNameAblative(sti(pchar.nation))+". Precz, albo zawołam straż! Chętnie z tobą porozmawiają.";
 					link.l1 = "Dobrze, dobrze, uspokój się. Już odchodzę.";
 					link.l1.go = "exit";
 				}
 				else
 				{
 				dialog.text = NPCStringReactionRepeat("Co? Znowu ty? Poszukaj sobie kogoś innego do rozmowy. Kręci się tu mnóstwo pospólstwa, oni bardziej pasują do ciebie. Muszę już iść, dziś wieczorem będzie bankiet w rezydencji gubernatora, a moja fryzura jeszcze nie jest gotowa!","Nie, teraz naprawdę zaczynasz mnie denerwować! Nie rozumiesz tego? Czy jesteś przygłupi?","Panie, zaczynam podejrzewać, że nie tylko jesteś idiotą, ale i łajdakiem oraz gburem. Ostrzegam cię, że zawołam mojego męża, jeśli nie przestaniesz mnie nękać swoimi głupimi pytaniami!","Jeszcze jedno słowo i powiem komendantowi, żeby coś z tobą zrobił!","block",1,npchar,Dialog.CurrentNode);
-				link.l1 = HeroStringReactionRepeat("Rozumiem. Żegnaj.","Tak-tak, pamiętam, tylko zapomniałem zapytać...","Źle mnie zrozumiałeś...","Spokojnie, pani, już odchodzę...",npchar,Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("Rozumiem. Żegnaj.","Tak-tak, pamiętam, tylko zapomniałem zapytać...","Źle mnie zrozumiałaś...","Spokojnie, pani, już odchodzę...",npchar,Dialog.CurrentNode);
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 				}
 			}

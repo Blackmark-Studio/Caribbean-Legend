@@ -1,44 +1,10 @@
-ChickenGod_1
-{
-Аруба
-}
-ChickenGod_2
-{
-Бессмертный
-}
-
-ChickenGod_3
-{
-Агуэбана
-}
-ChickenGod_4
-{
-
-}
-
-ChickenGod_5
-{
-
-}
-ChickenGod_6
-{
-а
-}
-
-ChickenGod_7
-{
-ен
-}
-ChickenGod_8
-{
-на
-}
-
-ChickenGod_9
-{
-Эмилио
-}
-ChickenGod_10
-{
-Боканегра
-}
+ChickenGod_1 {Аруба}
+ChickenGod_2 {Бессмертный}
+ChickenGod_3 {Агуэбана}
+ChickenGod_4 { }
+ChickenGod_5 { }
+ChickenGod_6 { }
+ChickenGod_7 { }
+ChickenGod_8 { }
+ChickenGod_9 {Эмилио}
+ChickenGod_10 {Боканегра}

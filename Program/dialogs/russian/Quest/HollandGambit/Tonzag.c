@@ -123,31 +123,6 @@ void ProcessDialogEvent()
 			dialog.text = "Не переживай по поводу этого. Когда твою лоханку взяли под стражу, я собрал весь твой офицерский состав и часть матросов на своём 'Сумраке'. Они знают, что ты жив и остались на службе. В качестве награды за журнал я передаю тебе в постоянное пользование свой корабль 'Сумрак'.";
 			link.l1 = "Спасибо! Я в долгу не останусь.";
 			link.l1.go = "SJ_talk_9";
-			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
-			{
-				pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5, 1.6);
-			}
-			else
-			{
-				pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 13.5, 55.0, 1.10);
-			}
-			pchar.Ship.name = "Сумрак";
-			SetBaseShipData(pchar);
-			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 46) pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
-			else pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
-			SetCrewQuantityFull(pchar);
-			pchar.Ship.Crew.Morale = 80;
-			pchar.Ship.Crew.Exp.Sailors = 90;
-			pchar.Ship.Crew.Exp.Cannoners = 70;
-			pchar.Ship.Crew.Exp.Soldiers = 70;
-			SetCharacterGoods(pchar, GOOD_BALLS, 100);
-			SetCharacterGoods(pchar, GOOD_GRAPES, 100);
-			SetCharacterGoods(pchar, GOOD_KNIPPELS, 100);
-			SetCharacterGoods(pchar, GOOD_BOMBS, 100);
-			SetCharacterGoods(pchar, GOOD_FOOD, 100);
-			SetCharacterGoods(pchar, GOOD_POWDER, 300);
-			SetCharacterGoods(pchar, GOOD_WEAPON, 60);
-			SetCharacterGoods(pchar, GOOD_MEDICAMENT, 60);
 		break;
 		
 		case "SJ_talk_8":
@@ -164,12 +139,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SJ_talk_10":
-			LAi_SetActorType(npchar);
-			LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 10);
 			DialogExit();
-			AddQuestRecord("Holl_Gambit", "3-13");
-			pchar.questTemp.HWIC.Self = "HuntFleetwood";
-			AddLandQuestMark(characterFromId("Merdok"), "questmarkmain");
+			AddDialogExitQuestFunction("HollandGambit_NewShipTwilight");
 		break;
 		
 		case "SJ_talk_11":
@@ -197,7 +168,8 @@ void ProcessDialogEvent()
 			link.l2.go = "Tonzag_exit";
 		break;
 		
-		case "Tonzag_hired_1"://Тонзага - в офицеры
+		case "Tonzag_hired_1":
+			ForceHeroAutolevel(npchar);//Тонзага - в офицеры
 			DialogExit();
 			DeleteAttribute(npchar, "LifeDay");
 			npchar.quest.OfficerPrice = sti(pchar.rank)*500;
@@ -214,7 +186,7 @@ void ProcessDialogEvent()
 			npchar.OfficerImmortal = true;
 			npchar.Health.HP       = 60.0; 
 			npchar.Health.maxHP    = 60.0;
-			SetCharacterPerk(npchar, "ShipEscape");
+		
 			LAi_SetImmortal(npchar, false);
 			LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 			SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
@@ -502,7 +474,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_drink_1":
-			dialog.text = "Значит пришло время познакомится. Ранние годы опустим, хотя бы потому, что рассказывать о них и нечего: солдат-победитель, солдат-побеждённый, дезертир, мародёр... ну вы знаете, как оно бывает.";
+			dialog.text = "Значит пришло время познакомиться. Ранние годы опустим, хотя бы потому, что рассказывать о них и нечего: солдат-победитель, солдат-побеждённый, дезертир, мародёр... ну вы знаете, как оно бывает.";
 			link.l1 = "Не знаю, но пока звучит достаточно обыденно.";
 			link.l1.go = "tonzag_drink_2";
 		break;
@@ -744,7 +716,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_hold_2":
-			dialog.text = "Банда Остина была знаменита тем, что заманивала вольных капитанов во всякую глушь, резала их и полностью избавляла труп от любых денег и побрякушек. Верное дело, искателей приключений у нас полно, так что никто особо не хватится. Но нашла коса на камень: с одним кэпом у них вышла промашка, так что свинтил наш головорез со своими ребятами под крыло Компании. Мы держали его поводке и спускали только тогда, когда нужно было решать вопросы быстро и без фантазии.";
+			dialog.text = "Банда Остина была знаменита тем, что заманивала вольных капитанов во всякую глушь, резала их и полностью избавляла труп от любых денег и побрякушек. Верное дело, искателей приключений у нас полно, так что никто особо не хватится. Но нашла коса на камень: с одним кэпом у них вышла промашка, так что свинтил наш головорез со своими ребятами под крыло Компании. Мы держали его на поводке и спускали только тогда, когда нужно было решать вопросы быстро и без фантазии.";
 			link.l1 = "Вряд ли с таким человеком получится договориться.";
 			link.l1.go = "tonzag_hold_3";
 		break;
@@ -820,7 +792,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "tonzag_after_drink_1":
-			dialog.text = "Банда Остина была знаменита тем, что заманивала вольных капитанов во всякую глушь, резала их и полностью избавляла труп от любых денег и ценностей. Верное дело, искателей приключений у нас много, так что никто особо не хватится. Но нашла коса на камень: с одним кэпом у них вышла промашка, так что свинтил наш головорез со своими ребятами под крыло Компании. Мы держали его поводке и спускали только тогда, когда нужно было решать вопросы быстро и без фантазии.";
+			dialog.text = "Банда Остина была знаменита тем, что заманивала вольных капитанов во всякую глушь, резала их и полностью избавляла труп от любых денег и ценностей. Верное дело, искателей приключений у нас много, так что никто особо не хватится. Но нашла коса на камень: с одним кэпом у них вышла промашка, так что свинтил наш головорез со своими ребятами под крыло Компании. Мы держали его на поводке и спускали только тогда, когда нужно было решать вопросы быстро и без фантазии.";
 			link.l1 = "Вряд ли с таким человеком получится договориться.";
 			link.l1.go = "tonzag_after_drink_2";
 		break;

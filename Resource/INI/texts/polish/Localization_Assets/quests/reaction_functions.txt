@@ -1,24 +1,5 @@
-reaction_functions_1
-{
-Przedobrzyłeś miksture mangarosy!
-}
-
-reaction_functions_2
-{
-Zostałeś otruty
-}
-
-reaction_functions_3
-{
-Użyto specjalnej mikstury mangarosy!
-}
-
-reaction_functions_4
-{
-Efekt działania eliksiru mangarosy dobiegł końca
-}
-
-reaction_functions_5
-{
-Szczęśliwy dzień na handel, holdy są wypełnione towarami! +
-}
+reaction_functions_1 {Przedobrzyłeś miksture mangarosy!}
+reaction_functions_2 {Zostałeś otruty}
+reaction_functions_3 {Użyto specjalnej mikstury mangarosy!}
+reaction_functions_4 {Efekt działania eliksiru mangarosy dobiegł końca}
+reaction_functions_5 {Szczęśliwy dzień na handel, holdy są wypełnione towarami! +}

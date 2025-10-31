@@ -618,6 +618,8 @@ void WaitDate(string postName,int year, int month, int day, int hour, int minute
 	postWaitHour = hour;
 	postWaitMinute = minute;
 	WaitDatePostEventControl();
+	CreateWeatherEnvironment();
+	RefreshLandTime();
 }
 
 // установить камеру на просмотр корабля персонажа и вызвать квест через заданное число секунд
@@ -1006,7 +1008,13 @@ string sQuestNameAfterReload = "_";
 void DoDeleteFakeLocation()
 {
 	DelEventHandler(EVENT_LOCATION_LOAD,"DoDeleteFakeLocation");
-	if(idxOldLocation!=-1)	DeleteAttribute(&Locations[idxOldLocation],"reload.fake1");
+	if(idxOldLocation!=-1)
+	{
+	//	aref aTempReload;
+	//	makearef(aTempReload, NullCharacter.id);
+	//	reload_locator_ref = aTempReload;
+		DeleteAttribute(&Locations[idxOldLocation],"reload.fake1");
+	}
 	if(sQuestNameAfterReload!="_")
 	{
 		CompleteQuestName(sQuestNameAfterReload, "");
@@ -1687,6 +1695,7 @@ void SetTimerConditionParam(string _name, string _quest, int _year, int _month, 
         DeleteAttribute(Pchar, "quest."+_name+".again");
     }
 }
+
 // проверка локации на зянятость по квестам, нужно для выбора локации без конфликта с др. квестами (генераторы)
 bool isLocationFreeForQuests(string loc_id)
 {
@@ -1870,6 +1879,14 @@ void SetFunctionNPCDeathCondition(string _name, string _character, bool _again)
 	}
 }
 
+void SetFunctionMapEnterCondition(string _name, bool _again)
+{
+	PChar.quest.(_name).win_condition.l1 = "MapEnter";
+	PChar.quest.(_name).function = _name;
+	if (_again) PChar.quest.(_name).again = true;
+	else DeleteAttribute(PChar, "quest." + _name + ".again");
+}
+
 void SetFunctionLocatorCondition(string _name, string _location, string _group, string _locator, bool _again)
 {
 	PChar.quest.(_name).win_condition.l1 = "locator";
@@ -1885,6 +1902,7 @@ void SetFunctionLocatorCondition(string _name, string _location, string _group, 
 	{
 		DeleteAttribute(Pchar, "quest."+_name+".again");
 	}
+	QuestsCheck();
 }
 
 // Для универсализации -->
@@ -1979,7 +1997,7 @@ int TransferGoods_CalculateWeight(ref _character)
 	String goodName;
 	String characterId = _character.Id;
 	
-	for(int i = 0; i < GOODS_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Goods); i++)
 	{
 		goodName = Goods[i].Name;
 		
@@ -2007,7 +2025,7 @@ int TransferGoods_StartTransfer(ref rChar, string sColony) // rChar - кому �
 	
 	rTreasurer = GetPCharTreasurerRef(); // Казначей. Ему даем экспу
 	
-	for(i = 0; i < GOODS_QUANTITY; i++)
+	for(i = 0; i < GetArraySize(&Goods); i++)
 	{
 		rGood = &Goods[i];
 		sGood = rGood.name;
@@ -2653,4 +2671,68 @@ string FindEventInLocator(ref loc, string locator)
 	}
 	
 	return "";
+}
+
+void TeleportCharacter()
+{
+	ref location = &Locations[FindLocation(pchar.location)];
+	bool bOk;
+	
+	if (CheckAttribute(location, "id") && location.id == "KhaelRoa_Treasure_Alcove") // калеуче
+	{
+		bOk = (IsCharacterInLocator(pchar, "teleport", "teleport0")) || (IsCharacterInLocator(pchar, "teleport", "teleport1")) || (IsCharacterInLocator(pchar, "teleport", "teleport2")) || (IsCharacterInLocator(pchar, "teleport", "teleport3")) || (IsCharacterInLocator(pchar, "teleport", "teleport4")) || (IsCharacterInLocator(pchar, "teleport", "teleport5")) || (IsCharacterInLocator(pchar, "teleport", "teleport6"))
+		if (bOk)
+		{
+			if (IsCharacterInLocator(pchar, "teleport", "teleport0")) sGlobalTemp = "teleport0";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport1")) sGlobalTemp = "teleport1";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport2")) sGlobalTemp = "teleport2";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport3")) sGlobalTemp = "teleport3";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport4")) sGlobalTemp = "teleport4";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport5")) sGlobalTemp = "teleport5";
+			if (IsCharacterInLocator(pchar, "teleport", "teleport6")) sGlobalTemp = "teleport6";
+			Caleuche_TeleportStart();
+		}
+	}
+	
+	if (CheckAttribute(location, "dolly"))
+	{
+		if (CheckAttribute(pchar, "questTemp.NotTeleportation")) 
+		{
+			DoQuestCheckDelay("TalkSelf_Quest", 0.1);
+			Log_SetActiveAction("Nothing");
+		}
+		else
+		{
+			if (IsCharacterInLocator(pchar, "item", "dolly1")) sGlobalTemp = "dolly1";
+			if (IsCharacterInLocator(pchar, "item", "dolly2")) sGlobalTemp = "dolly2";
+			if (IsCharacterInLocator(pchar, "item", "dolly3")) sGlobalTemp = "dolly3";
+			Dolly_TeleportStart();
+			Log_SetActiveAction("Nothing");
+		}
+	}
+}
+
+void CaleucheLeversAction()
+{
+	string _locator = "";
+	if(CheckAttribute(pchar,"questTemp.Caleuche.Lever.CurLocator"))
+	{
+		_locator = pchar.questTemp.Caleuche.Lever.CurLocator;
+	}
+	if(_locator == "") return;
+	
+	if (CheckAttribute(pchar, "questTemp.Caleuche.LeverL") && findsubstr(_locator, "column1" , 0) != -1)
+	{
+		pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
+		pchar.questTemp.Caleuche.Lever.Locator = _locator;
+		Caleuche_ThreeLeverAim();
+		Log_SetActiveAction("Nothing");
+	}
+	if (CheckAttribute(pchar, "questTemp.Caleuche.LeverR") && findsubstr(_locator, "column2" , 0) != -1)
+	{
+		pchar.questTemp.Caleuche.Lever.Count = sti(pchar.questTemp.Caleuche.Lever.Count)+1;
+		pchar.questTemp.Caleuche.Lever.Locator = _locator;
+		Caleuche_SixLeverAim();
+		Log_SetActiveAction("Nothing");
+	}
 }

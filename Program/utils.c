@@ -269,11 +269,18 @@ void Log_Info(string _str)
     Log_SetStringToLog(_str);
 }
 
+void Log_WithTrace(string logtext)
+{
+	if (bBettaTestMode) Log_SetStringToLog(logtext);
+	trace("TestInfo: " + GetQuestBookDataDigit() + " " + logtext);
+}
+
 void Log_TestInfo(string logtext)
 {
 	if (bBettaTestMode)
 	{
-		Log_SetStringToLog(logtext);
+		Log_SetStringToLog(logtext)
+		if (!CheckAttribute(&Environment, "date")) return;
 		trace("TestInfo: " + GetQuestBookDataDigit() + " " + logtext)
 	}
 }
@@ -574,9 +581,170 @@ float GetRealDeltaTime()
     return 0.0;
 }
 
+// Вернем обратно ссылку на объект/атрибут или найдем по id/индексу и вернем ссылку
+// Нужно для унификации вызовов из разных ситуаций, когда объект уже нашли или когда есть только id/индекс
+// Сам поиск объекта делаем по функции, переданной в handler
+ref FindObject_VT(ref someRef, string handlerId, string handlerIdx)
+{
+	switch (VarType(someRef))
+	{
+		case "object": return someRef; break;
+		case "aref":   return someRef; break;
+		case "string": return call handlerId(someRef); break;
+		case "int":    return call handlerIdx(someRef); break;
+	}
+	Log_WithTrace("Can't found object by Vartype. Handlers: " + handlerId + "/" + handlerIdx);
+	return ErrorAttr();
+}
+
+// Делим строку по символу, кусочки пишем в объект, в конце передаем нолик, это нужно для рекурсии
+// SplitString(obj, "a|b|c", "|", 0) →
+// obj.p0 = a
+// obj.p1 = b
+// obj.p2 = c
+void SplitString(ref result, string input, string bySym, int iteration)
+{
+	string varName = "p" + iteration;
+	int iPos = findsubstr(&input, bySym, 0);
+	result.(varName) = input;
+	if (iPos < 0) return;
+	int len = strlen(&input);
+	
+	if (iPos == 0) result.(varName) = "";
+	else result.(varName) = strcut(&input, 0, iPos-1);
+
+	if (iPos +1 == len) return;
+	SplitString(result, strcut(&input, iPos+1, len-1), &bySym, iteration+1);
+}
+
+// Собираем значения аттрибутов в строку через символ bySym
+// obj.p0 = a
+// obj.p1 = b
+// obj.p2 = c
+// AttributesToString(obj, "$") → "a$b$c"
+string AttributesToString(ref rObject, string bySym)
+{
+	string result = "";
+	int attributesNum = GetAttributesNum(rObject);
+
+	for (int i = 0; i < attributesNum; i++)
+	{
+		result += GetAttributeValue(GetAttributeN(rObject, i));
+		if (i+1 < attributesNum) result += bySym;
+	}
+
+	return result;
+}
+
+// Атрибут есть и он не пуст
+bool CheckAttributeHasValue(ref rObject, string atrName)
+{
+	if (!CheckAttribute(rObject, &atrName)) return false;
+	return rObject.(atrName) != "";
+}
+
 // Атрибут есть и равен строке
 bool CheckAttributeEqualTo(ref rObject, string atrName, string value)
 {
 	if (!CheckAttribute(rObject, &atrName)) return false;
 	return rObject.(atrName) == value;
+}
+
+// Атрибут есть и он true, иначе false
+bool AttributeIsTrue(ref rObject, string atrName)
+{
+	if (!CheckAttribute(rObject, &atrName)) return false;
+	return sti(rObject.(atrName)) == 1;
+}
+
+// Получить int из атрибута, либо 0, если атрибута нет
+int GetAttributeInt(ref rObject, string atrName)
+{
+	return GetAttributeIntOrDefault(rObject, &atrName, 0);
+}
+
+// Получить int из атрибута, либо 0, если атрибута нет
+int GetAttributeIntOrDefault(ref rObject, string atrName, int defaultValue)
+{
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	return sti(rObject.(atrName));
+}
+
+// Получить float из атрибута, либо 0, если атрибута нет
+float GetAttributeFloat(ref rObject, string atrName)
+{
+	return GetAttributeFloatOrDefault(rObject, &atrName, 0.0);
+}
+
+// Получить float из атрибута, либо дефолт, если атрибута нет
+float GetAttributeFloatOrDefault(ref rObject, string atrName, float defaultValue)
+{
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	return stf(rObject.(atrName));
+}
+
+// Установить значение атрибута. Нужно, чтобы не париться с записью через .(variable) при необходимости совместить в variable несколько строк
+void SetAttribute(ref rObject, string atrName, ref value)
+{
+	rObject.(atrName) = value;
+}
+
+// Получить строковый атрибут или заглушку
+string GetAttributeOrDefault(ref rObject, string atrName, string defaultValue)
+{
+	if (!CheckAttribute(rObject, &atrName)) return defaultValue;
+	return rObject.(atrName);
+}
+
+// Увеличить значение int атрибута на value
+void AddToAttributeInt(ref rObject, string atrName, int value)
+{
+	rObject.(atrName) = GetAttributeInt(rObject, &atrName) + value;
+}
+
+// Увеличить значение float атрибута на value
+void AddToAttributeFloat(ref rObject, string atrName, float value)
+{
+	rObject.(atrName) = GetAttributeFloat(rObject, &atrName) + value;
+}
+
+string AtributesToText(ref rObject)
+{
+	string result;
+	for (int i = 0; i < GetAttributesNum(rObject); i++)
+	{
+		aref attribute = GetAttributeN(rObject, i);
+		result += GetAttributeName(attribute) + ": " + GetAttributeValue(attribute) + "\n";
+		if (GetAttributesNum(attribute) > 0) result += AtributesToText(attribute);
+	}
+	
+	return result;
+}
+
+string AtributesToTextAref(ref rObject, string attributeName)
+{
+	aref attribute;
+	makearef(attribute, rObject.(attributeName));
+	return AtributesToText(&attribute);
+}
+
+// Суровое приведение к строке
+string VarTypeToString(ref something)
+{
+	switch (VarType(&something))
+	{
+		case "float": return fts(something, 4); break; // вряд ли кому-то в строковых приколах понадобятся разряды дальше
+		case "int": return its(something); break;
+		case "string": return something; break;
+	}
+
+	trace("VartypeToString error with: " + something);
+	return "Error";
+}
+
+void DumpAttributesAref(ref rObject, string attributeName)
+{
+	aref attribute;
+	makearef(attribute, rObject.(attributeName));
+	DumpAttributes(attribute);
 }

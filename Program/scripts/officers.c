@@ -60,8 +60,21 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 	int iPassenger;
 	int i, cn;
 	ref sld;
-	
-	for (int io = 0; io<GetPassengersQuantity(pchar); io++)
+
+    // Нормируем
+    if (iLoyality < 0)
+    {
+        iLoyality = -iLoyality;
+        switch (alignment)
+        {
+            case "good":     alignment = "bad";      break;
+            case "good_all": alignment = "bad_all";  break;
+            case "bad":      alignment = "good";     break;
+            case "bad_all":  alignment = "good_all"; break;
+        }
+    }
+
+	for (int io = 0; io < GetPassengersQuantity(pchar); io++)
 	{   // любой пассажир у кого есть пристрастие может свалить если наши дела ему не по душе	
 		iPassenger = GetPassenger(pchar, io);
 		if (iPassenger != -1)
@@ -72,22 +85,22 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 				switch (alignment)
 				{
 					case "bad":
-						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality;				
+						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality*2;				
 						else 							sld.loyality = makeint(sld.loyality) - iLoyality;				
 					break;
 					case "good":
-						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality;				
+						if (sld.alignment == alignment) sld.loyality = makeint(sld.loyality) + iLoyality*2;				
 						else 							sld.loyality = makeint(sld.loyality) - iLoyality;									
 					break;
 					case "bad_all":
 						sld.loyality = makeint(sld.loyality) - iLoyality;
 					break;
 					case "good_all":
-						sld.loyality = makeint(sld.loyality) + iLoyality;
+						sld.loyality = makeint(sld.loyality) + iLoyality*2;
 					break;
 				}
 			}
-		}	
+		}
 	}
 	for (i=1; i<COMPANION_MAX; i++)
 	{
@@ -100,39 +113,41 @@ void ChangeOfficersLoyality(string alignment, int iLoyality)
 				switch (alignment)
 				{
 					case "bad":
-						if (sld.alignment == alignment) {
-							sld.loyality = makeint(sld.loyality) + iLoyality;				
-							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy
-						}	
+						if (sld.alignment == alignment)
+                        {
+							sld.loyality = makeint(sld.loyality) + iLoyality*2;				
+							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1);
+						}
 						else 
 						{
 							sld.loyality = makeint(sld.loyality) - iLoyality;				
-							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1); //navy
-						}	
+							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1);
+						}
 					break;
 					case "good":
-						if (sld.alignment == alignment) {
-							sld.loyality = makeint(sld.loyality) + iLoyality;
-							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy		
-						}	
+						if (sld.alignment == alignment)
+                        {
+							sld.loyality = makeint(sld.loyality) + iLoyality*2;
+							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1);	
+						}
 						else 
-						{							
+						{
 							sld.loyality = makeint(sld.loyality) - iLoyality;
-							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1); //navy
-						}	
+							if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1);
+						}
 					break;
 					case "bad_all":
 						sld.loyality = makeint(sld.loyality) - iLoyality;
-						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1); //navy
+						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, -1);
 					break;
 					case "good_all":
-						sld.loyality = makeint(sld.loyality) + iLoyality;
-						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1); //navy
+						sld.loyality = makeint(sld.loyality) + iLoyality*2;
+						if (CheckAttribute(sld, "PGGAi")) PGG_ChangeRelation2MainCharacter(sld, 1);
 					break;
-				}	
-			}									
+				}
+			}
 		}
-	}	
+	}
 }
 
 // результат реакции - действия офа - диалог
@@ -168,7 +183,7 @@ void OfficersReactionResult()
 					    }
 						if(!CheckCharacterPerk(pchar, "IronWill")) DeleteAttribute(sld, "quest.officertype");
 	
-						LAi_SetActorType(sld);
+						LAi_SetOneTimeActorTypeForOfficer(sld);
 						LAi_ActorDialog(sld, pchar, "OpenTheDoors", 2.0, 0);
 						//SetActorDialogAny2Pchar(sld.id, "pchar_back_to_player", 0.0, 0.0);
 			    		//LAi_ActorFollow(sld, pchar, "ActorDialog_Any2Pchar", 2.0);
@@ -295,14 +310,11 @@ void CheckForReleaseOfficer(int iCharIndex)
 		pchar.Fellows.Passengers.treasurer = -1;
 		DeleteAttribute(&characters[iCharIndex], "treasurer"); // совместитель дожности
 	}
-	
-	//if (IsOfficer(&characters[iCharIndex]) == true)
-	//{
-		// все проверки внутри,  иначе не работает на трупе
-		RemoveOfficersIndex(pchar, iCharIndex);
-		DeleteAttribute(&characters[iCharIndex], "fighter"); // совместитель дожности
-	//}
+
+	RemoveOfficersIndex(pchar, iCharIndex);
+	DeleteAttribute(&characters[iCharIndex], "fighter"); // совместитель дожности
 	DeleteAttribute(&characters[iCharIndex], "isbusy");
+	Event(EVENT_CT_UPDATE_FELLOW, "a", &Characters[iCharIndex]);
 }
 
 bool CheckForAllOfficers() // ugeen 2016 -  возвращает true при наличии всех офицеров в команде ГГ
@@ -468,7 +480,7 @@ void SetOfficerParam(ref Npchar, int _type)
 
     Npchar.reputation = rand(84) + 5;
     // пристрастие офицера -->
-    Npchar.loyality = 5 + rand(10);
+    Npchar.loyality = 10 + rand(10);
     if (sti(Npchar.reputation) > 41)
     {
         Npchar.alignment = "good";
@@ -483,7 +495,7 @@ void SetOfficerParam(ref Npchar, int _type)
     
     SetFantomHP(Npchar);
     
-    Npchar.quest.OfficerPrice    = (11 + 2*sti(Npchar.rank))*(150 + MOD_SKILL_ENEMY_RATE*20) + rand(5)*10;
+    Npchar.quest.OfficerPrice    = (11 + 2*sti(Npchar.rank))*(150 + MOD_SKILL_ENEMY_RATE*16) + rand(5)*8;
     Npchar.quest.OfficerLowPrice = makeint(sti(Npchar.quest.OfficerPrice)/1.5 + 0.5);
 }
 ///////////////////////////////////////////////////////////////////////////

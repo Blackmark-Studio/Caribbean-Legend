@@ -888,26 +888,9 @@ void CalculateInfoDataF13()
 	// -->
 	totalInfo = descF13;
 
-    ref mc;
-	mc = GetMainCharacter();
-    if(CheckAttribute(mc,"worldmapencountersoff") == 0)
-	{
-		mc.worldmapencountersoff = "1";
-		Log_SetStringToLog("Worldmap encounters OFF");
-	}
-	else
-	{
-		if(mc.worldmapencountersoff == "1")
-		{
-			mc.worldmapencountersoff = "0";
-			Log_SetStringToLog("Worldmap encounters ON");
-		}
-		else
-		{
-			mc.worldmapencountersoff = "1";
-			Log_SetStringToLog("Worldmap encounters OFF");
-		}
-	}
+	bEncOffGlobal = !bEncOffGlobal;
+	if (bEncOffGlobal) totalInfo = totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_off") + NewStr();
+	else totalInfo + NewStr() + LanguageConvertString(idLngFile,"StrF27_on") + NewStr();
     // <--
     totalInfo = totalInfo + LanguageConvertString(idLngFile,"new_string") + LanguageConvertString(idLngFile,"new_string") +
                 "Команда отработала успешно!";
@@ -1111,7 +1094,7 @@ void CalculateInfoDataF14()
 	SetCharacterPerk(mc, "ShipDefenseProfessional");
 	SetCharacterPerk(mc, "ShipSpeedUp");
 	SetCharacterPerk(mc, "ShipTurnRateUp");
-	SetCharacterPerk(mc, "StormProfessional");
+
 	SetCharacterPerk(mc, "WindCatcher");
 	SetCharacterPerk(mc, "Doctor1");
 	SetCharacterPerk(mc, "Doctor2");
@@ -1179,6 +1162,7 @@ void CalculateInfoDataF14()
 	LAi_SetCharacterUseBullet(mc, "cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Tichingitu";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -1237,7 +1221,7 @@ void CalculateInfoDataF14()
 	SetCharacterPerk(sld, "Tireless");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	GiveItem2Character(sld, "blade_10");
@@ -1364,7 +1348,7 @@ void CalculateInfoDataF15()
 	SetCharacterPerk(mc, "MusketsShoot");
 	SetCharacterPerk(mc, "ShipSpeedUp");
 	SetCharacterPerk(mc, "ShipTurnRateUp");
-	SetCharacterPerk(mc, "StormProfessional");
+
 	SetCharacterPerk(mc, "WindCatcher");
 	SetCharacterPerk(mc, "SailsMan");
 	SetCharacterPerk(mc, "SailingProfessional");
@@ -1378,7 +1362,6 @@ void CalculateInfoDataF15()
 	SetCharacterPerk(mc, "HardHitter");
 	SetCharacterPerk(mc, "Sliding");
 	SetCharacterPerk(mc, "BladeDancer");
-	SetCharacterPerk(mc, "SwordplayProfessional");
 	SetCharacterPerk(mc, "Gunman");
 	SetCharacterPerk(mc, "GunProfessional");
 	mc.rank = 35;
@@ -1424,6 +1407,7 @@ void CalculateInfoDataF15()
 	LAi_SetCharacterUseBullet(mc, "shotgun_cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Тичингиту";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -1442,10 +1426,10 @@ void CalculateInfoDataF15()
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	AddItems(sld, "mushket6", 1);
 	sld.CanTakeMushket = true;
@@ -1491,7 +1475,7 @@ void CalculateInfoDataF15()
     SetShipSkill(sld, 100, 90, 90, 90, 90, 90, 90, 90, 90);
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "blade_31");
 	sld.equip.blade = "blade_31";
@@ -1523,11 +1507,11 @@ void CalculateInfoDataF15()
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "topor_06");
 	sld.equip.blade = "topor_06";
@@ -1542,6 +1526,7 @@ void CalculateInfoDataF15()
 	AddItems(sld, "potion4", 10);
 	// Бейкер
 	sld = GetCharacter(NPC_GenerateCharacter("Baker", "Baker", "man", "man_B", 1, ENGLAND, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Раймонд";
 	sld.lastname = "Бейкер";
 	sld.greeting = "baker";
@@ -1900,10 +1885,10 @@ void CalculateInfoDataF24()
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "HardHitter");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "ShipSpeedUp");
 	SetCharacterPerk(sld, "ShipTurnRateUp");
-	SetCharacterPerk(sld, "StormProfessional");
+
 	SetCharacterPerk(sld, "WindCatcher");
 	SetCharacterPerk(sld, "SailsMan");
 	SetCharacterPerk(sld, "Doctor1");
@@ -2074,7 +2059,7 @@ void CalculateInfoDataF25()
 	SetCharacterPerk(mc, "MusketsShoot");
 	SetCharacterPerk(mc, "ShipSpeedUp");
 	SetCharacterPerk(mc, "ShipTurnRateUp");
-	SetCharacterPerk(mc, "StormProfessional");
+
 	SetCharacterPerk(mc, "WindCatcher");
 	SetCharacterPerk(mc, "SailsMan");
 	SetCharacterPerk(mc, "SailingProfessional");
@@ -2088,7 +2073,6 @@ void CalculateInfoDataF25()
 	SetCharacterPerk(mc, "HardHitter");
 	SetCharacterPerk(mc, "Sliding");
 	SetCharacterPerk(mc, "BladeDancer");
-	SetCharacterPerk(mc, "SwordplayProfessional");
 	SetCharacterPerk(mc, "Gunman");
 	SetCharacterPerk(mc, "GunProfessional");
 	mc.rank = 35;
@@ -2142,6 +2126,7 @@ void CalculateInfoDataF25()
 	LAi_SetCharacterUseBullet(mc, "shotgun_cartridge");
 	// Тичингиту
 	sld = GetCharacter(NPC_GenerateCharacter("Tichingitu", "maskog", "man", "man", 5, FRANCE, -1, false, "quest"));
+	SetHeroAutolevel(sld);
 	sld.name = "Тичингиту";
 	sld.lastname = "";
 	sld.greeting = "Tichingitu";
@@ -2160,10 +2145,10 @@ void CalculateInfoDataF25()
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	AddItems(sld, "mushket6", 1);
 	sld.CanTakeMushket = true;
@@ -2209,7 +2194,7 @@ void CalculateInfoDataF25()
     SetShipSkill(sld, 100, 40, 40, 40, 40, 40, 40, 40, 40);
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "blade_31");
 	sld.equip.blade = "blade_31";
@@ -2241,11 +2226,11 @@ void CalculateInfoDataF25()
 	SetCharacterPerk(sld, "HardHitter");
 	SetCharacterPerk(sld, "Sliding");
 	SetCharacterPerk(sld, "BladeDancer");
-	SetCharacterPerk(sld, "SwordplayProfessional");
+
 	SetCharacterPerk(sld, "Gunman");
 	SetCharacterPerk(sld, "GunProfessional");
 	SetCharacterPerk(sld, "ByWorker");
-	SetCharacterPerk(sld, "ByWorker2");
+
 	SetCharacterPerk(sld, "Grus");
 	GiveItem2Character(sld, "topor_06");
 	sld.equip.blade = "topor_06";

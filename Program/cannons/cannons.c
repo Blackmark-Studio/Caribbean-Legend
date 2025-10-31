@@ -21,51 +21,59 @@ aref CannonGetByTypeEvent()
 
 int GetCannonByTypeAndCaliber(string sCannonType, int iCaliber)
 {
-	switch (sCannonType)
+	int typeIdx = GetCannonTypeIndex(sCannonType);
+	if (typeIdx == -1)
 	{
-		case "cannon":
-			switch (iCaliber)
-			{
-                case 3:  return CANNON_TYPE_CANNON_LBS3;  break;
-                case 6:  return CANNON_TYPE_CANNON_LBS6;  break;
-                case 8:  return CANNON_TYPE_CANNON_LBS8;  break;
-                case 12: return CANNON_TYPE_CANNON_LBS12; break;
-                case 16: return CANNON_TYPE_CANNON_LBS16; break;
-                case 18: return CANNON_TYPE_CANNON_LBS18; break;
-                case 20: return CANNON_TYPE_CANNON_LBS20; break;
-                case 24: return CANNON_TYPE_CANNON_LBS24; break;
-                case 32: return CANNON_TYPE_CANNON_LBS32; break;
-                case 36: return CANNON_TYPE_CANNON_LBS36; break;
-                case 42: return CANNON_TYPE_CANNON_LBS42; break;
-                case 48: return CANNON_TYPE_CANNON_LBS48; break;
-			}
-		break;
-		case "culverine":
-			switch (iCaliber)
-			{
-                case 8:  return CANNON_TYPE_CULVERINE_LBS8;  break;
-                case 18: return CANNON_TYPE_CULVERINE_LBS18; break;
-                case 42: return CANNON_TYPE_CULVERINE_LBS36; break; // Именно 42
-                // ЗАГЛУШКИ
-                case 3:  return CANNON_TYPE_CANNON_LBS3;     break;
-                case 6:  return CANNON_TYPE_CANNON_LBS6;     break;			
-                case 12: return CANNON_TYPE_CANNON_LBS12;    break;
-                case 16: return CANNON_TYPE_CANNON_LBS16;    break;
-                case 20: return CANNON_TYPE_CANNON_LBS20;    break;
-                case 24: return CANNON_TYPE_CANNON_LBS24;    break;
-                case 32: return CANNON_TYPE_CANNON_LBS32;    break;
-                case 36: return CANNON_TYPE_CANNON_LBS36;    break;
-                case 48: return CANNON_TYPE_CANNON_LBS48;    break;
-			}
-		break;
+		return CANNON_TYPE_NONECANNON;
 	}
-
+	
+	//Если есть орудие подходящего типа - будем брать максимально допустимый калибр. Например в 8ф слот выбираем 6ф пушку, хотя и существует 8ф кулеврина - предпочтение отдается нужному типу.
+	int result = CANNON_TYPE_NONECANNON;
+	int maxCaliber = -1;
+	
+	//Если орудия подходящего типа вообще нет - будем брать максимально допустимый калибр из всех типов. Например, если нет кулеврины, влезающей в 3ф слот - будем брать пушку.
+	int resultIgnoreType = CANNON_TYPE_NONECANNON;
+	int maxCaliberIgnoreType = -1;
+	
+	for (int i = 0; i <GetArraySize(&Cannon) ; i++) 
+	{
+		ref curCannon;
+		makeref(curCannon, Cannon[i]);
+		
+		int caliber = GetCannonCaliberNominal(i);
+		int type = sti(curCannon.type);
+		
+		if (typeIdx == type && caliber <= iCaliber && caliber > maxCaliber)
+		{
+			maxCaliber = caliber;
+			result = i;
+		}
+		
+		
+		if (caliber <= iCaliber && caliber > maxCaliberIgnoreType)
+		{
+			maxCaliberIgnoreType = caliber;
+			resultIgnoreType = i;
+		}
+	}
+	
+	
+	if (result != CANNON_TYPE_NONECANNON)
+	{
+		return result;
+	}
+	
+	if (resultIgnoreType != CANNON_TYPE_NONECANNON)
+	{
+		return resultIgnoreType;
+	}
+	
 	return CANNON_TYPE_NONECANNON;
 }
 
 int FindCannonByText(string sId)
 {
-	for(int i = 0; i < CANNON_TYPES_QUANTITY; i++)
+	for(int i = 0; i < GetArraySize(&Cannon); i++)
 	{
 		if(Cannon[i].picture == sId)
 		{
@@ -94,6 +102,25 @@ string GetCannonType(int iCannon)
 	return "NoneCannon";
 }
 
+int GetCannonTypeIndex(string type)
+{
+	switch(type)
+	{
+		case "culverine":
+			return CANNON_NAME_CULVERINE;
+		break;
+		case "cannon":
+			return CANNON_NAME_CANNON;
+		break;
+		case "special":
+			return CANNON_NAME_SPECIAL_CANNON;
+		break;
+	}
+
+	return -1;
+}
+
+
 // boal 09/02/05
 float GetCannonReloadTime(ref rCannon)
 {
@@ -111,7 +138,7 @@ int GetCannonGoodsIdxByType(int iCannon)
 {
 	int i;
 	
-	for (i = 0; i< GOODS_QUANTITY; i++)
+	for (i = 0; i< GetArraySize(&Goods); i++)
 	{
 		if (CheckAttribute(&Goods[i], "CannonIdx"))
 		{

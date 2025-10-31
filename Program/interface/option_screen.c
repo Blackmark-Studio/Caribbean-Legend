@@ -1,3 +1,4 @@
+#include "interface\utils\selector_frames.c"
 // Sith меню настроек
 #event_handler("Control Activation","ProcessInterfaceControls");// гуляем по меню на TAB
 int currentTab = 0;
@@ -7,18 +8,17 @@ int g_ControlsLngFile = -1;
 string sBtn1 = "";
 bool bControlsWin = false;
 bool bAdvancedChange = false;
-
 bool g_bToolTipStarted = false;
 
 float 	fHUDRatio 	= 1.0;
 int 	iHUDBase 	= iHudScale;
 int 	newBase 	= iHudScale;
-float   SEACAMPERSP = sti(InterfaceStates.SEACAMPERSP)/100.0; // belamour перспектива МК
 string 	sFoliageDrawDistance;
 string 	sGrassDrawDistance;
-int		curDifficulty;
 int		curFoliageDrawDistance;
 int		curGrassDrawDistance;
+int		curFov = 1;
+int		iFov;
 int		iEnabledShipMarks;
 
 #define BI_LOW_RATIO 	0.25
@@ -84,6 +84,7 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	SetEventHandler("InterfaceBreak","ProcessCancelExit",0);  // boal
 	SetEventHandler("eTabControlPress","procTabChange",0);
 	SetEventHandler("eventBtnAction","procBtnAction",0);
+	SetEventHandler("SelectorValueChanged","SelectorValueChanged",0);
 	SetEventHandler("eventKeyChange","procKeyChange",0);
 	SetEventHandler("ConfirmExitClick","ProcessOkExit",0);
 	SetEventHandler("ConfirmExitCancel","ConfirmExitCancel",0);
@@ -93,6 +94,8 @@ void InitInterface_B(string iniName, bool isMainMenu)
 
 	SetEventHandler("evntKeyChoose","procKeyChoose",0);
 	SetEventHandler("ShowInfo", "ShowInfo", 0);
+	SetEventHandler("ShowInfoWindow", "ShowInfo", 0);
+	SetEventHandler("HideInfoWindow", "HideInfo", 0);
 	SetEventHandler("MouseRClickUP","HideInfo",0);
 
 	SetEventHandler("evFaderFrame","FaderFrame",0);
@@ -139,15 +142,6 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	iHUDBase = CalcHUDBase(sl, stf(Render.screen_y));
 	SetFormatedText("HUD_DESCRIP_TEXT", Render.screen_y + "  / " + newBase + " : " + fHUDRatio);
 	
-	// belamour перспектива морской камеры
-	if(!CheckAttribute(&InterfaceStates, "SEACAMPERSP"))
-	{
-		InterfaceStates.SEACAMPERSP = 25; 
-	}
-	SEACAMPERSP = sti(InterfaceStates.SEACAMPERSP)/100.0;
-	GameInterface.nodes.SEACAMPERSP_SLIDE.value = SEACAMPERSP;
-	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "SEACAMPERSP_SLIDE", 0, SEACAMPERSP);
-	
 	// sith дальность прорисовки растительности на островах
 	if(!CheckAttribute(&InterfaceStates, "FoliageDrawDistance"))
 	{
@@ -170,13 +164,11 @@ void InitInterface_B(string iniName, bool isMainMenu)
 	sGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
 	curGrassDrawDistance = sti(InterfaceStates.GrassDrawDistance);
 	SetFormatedText("GRASS_DESCRIP_TEXT", sGrassDrawDistance);
-	// sith сложность игры
-	if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
-    {
-		curDifficulty = MOD_SKILL_ENEMY_RATE;
-		iDifficulty = MOD_SKILL_ENEMY_RATE;
+	// sith fov
+	if(CheckAttribute(&InterfaceStates,"Fov"))
+	{
+		curFov = sti(InterfaceStates.Fov);
 	}
-	SetFormatedText("DIFFICULTY_DESCRIP_TEXT", DifficultyDes(iDifficulty));
 	// продвинутые настройки контролок
 	if(CheckAttribute(&InterfaceStates,"AdvancedChange"))
 	{
@@ -207,32 +199,47 @@ void ProcessOkExit()
 	SetGlowParams(1.0, sti(InterfaceStates.GlowEffect), 2));
 	iHudScale = newBase;
 	trace("3 : " + iHudScale);
-	SEACAMPERSP = InterfaceStates.SEACAMPERSP; // belamour перспектива МК
-	// if(CheckAttribute(&InterfaceStates,"Difficulty") && sti(InterfaceStates.Difficulty) != curDifficulty){
-		// MOD_SKILL_ENEMY_RATE = sti(InterfaceStates.Difficulty); // sith сохраняем сложность
-		// MOD_EXP_RATE = makeint(5 + MOD_SKILL_ENEMY_RATE);
-		// MOD_EXP_RATE =  makeint(MOD_EXP_RATE + MOD_SKILL_ENEMY_RATE * MOD_EXP_RATE / 1.666666666);
-		// if (MOD_EXP_RATE < 10) MOD_EXP_RATE = 10;
-		// if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true)
-		// Log_Info (XI_ConvertString("DifficultyChanged") + DifficultyDes(MOD_SKILL_ENEMY_RATE));
-	// }
 	// sith дальность прорисовки растительности на островах
 	if(CheckAttribute(&InterfaceStates,"FoliageDrawDistance") && sti(InterfaceStates.FoliageDrawDistance) != curFoliageDrawDistance)
     {
 		if(bSeaActive && !bAbordageStarted) Sea_UpdateIslandGrass(AISea.Island);
 	}
+	int iLocation = FindLocation(pchar.location);
 	// sith дальность прорисовки травы
 	if(CheckAttribute(&InterfaceStates,"GrassDrawDistance") && sti(InterfaceStates.GrassDrawDistance) != curGrassDrawDistance)
     {
-		int iLocation = FindLocation(pchar.location);
 		if(iLocation != -1)
         {
 			object objGrass;
-			GetEntity(&objGrass,"grass"));
+			GetEntity(&objGrass,"grass");
 			float fMaxDist = stf(InterfaceStates.GrassDrawDistance);
 			SendMessage(objGrass,"lffffff",42666, 1.0, 1.0, 0.2, 10.0, fMaxDist, 0.0);
 		}
 	}
+	// sith fov
+	if(CheckAttribute(&InterfaceStates,"Fov") && sti(InterfaceStates.Fov) != curFov)
+    {
+		Render.CorrectFov = sti(InterfaceStates.Fov);
+		if(!bSeaActive || bAbordageStarted)
+			SendMessage(&locCamera, "lf", MSG_CAMERA_SET_PERSPECTIVE, 1.285);
+	}
+
+	// Применяем дальность исчезновения меток с названиями бухт
+	ApplyLabelsMode(GetAttributeInt(&InterfaceStates, "MapLabelsMode"));
+
+	// Количество травы
+	if(GetAttributeInt(&InterfaceStates, "HerbQuantity") != iGrassQuality)
+	{
+		iGrassQuality = GetAttributeInt(&InterfaceStates, "HerbQuantity");
+	}
+	
+	if(iEnabledShipMarks > 0) bDrawBars = true;
+	else bDrawBars = false;
+	
+	if(iLocation != -1)
+		SetLocationCharacterMarksOptions(&Locations[iLocation]);
+	Camera_CheckPreset();
+
 	SaveGameOptions();
 
 	ProcessExit();
@@ -260,10 +267,11 @@ void ProcessExit()
 void ShowConfirmExitWindow()
 {
 	XI_WindowDisable("MAIN_WINDOW",true);
-	XI_WindowDisable("GAME_WINDOW",true);
-	XI_WindowDisable("SCREEN_WINDOW",true);
+	XI_WindowDisable("INTERFACE_WINDOW",true);
 	XI_WindowDisable("GRAPHICS_WINDOW",true);
 	XI_WindowDisable("CONTROLS_WINDOW",true);
+	XI_WindowDisable("AUDIO_WINDOW",true);
+	XI_WindowDisable("OTHER_WINDOW",true);
 	XI_WindowDisable("CONFIRM_EXIT_WINDOW",false);
 	XI_WindowShow("CONFIRM_EXIT_WINDOW", true);
 	SetFormatedText("CONFIRM_EXIT_TEXT",XI_ConvertString("ControlsAtt"));
@@ -279,10 +287,11 @@ void ConfirmExitCancel()
     XI_WindowDisable("CONFIRM_EXIT_WINDOW",true);
 	XI_WindowDisable("MAIN_WINDOW",false);
 	XI_WindowShow("CONFIRM_EXIT_WINDOW",false);
-	XI_WindowDisable("GAME_WINDOW",false);
-	XI_WindowDisable("SCREEN_WINDOW",false);
+	XI_WindowDisable("INTERFACE_WINDOW",false);
 	XI_WindowDisable("GRAPHICS_WINDOW",false);
 	XI_WindowDisable("CONTROLS_WINDOW",false);
+	XI_WindowDisable("AUDIO_WINDOW",false);
+	XI_WindowDisable("OTHER_WINDOW",false);
 	SetCurrentNode("BTN_OK");
 }
 
@@ -297,10 +306,13 @@ void IDoExit(int exitCode)
 	DelEventHandler("ConfirmExitClick","ProcessOkExit");
 	DelEventHandler("ConfirmExitCancel","ConfirmExitCancel");
 	DelEventHandler("eventBtnAction","procBtnAction");
+	DelEventHandler("SelectorValueChanged","SelectorValueChanged");
 	DelEventHandler("eTabControlPress","procTabChange");
 	DelEventHandler("exitCancel","ProcessCancelExit");
 	DelEventHandler("ShowInfo", "ShowInfo");
+	DelEventHandler("ShowInfoWindow", "ShowInfo");
 	DelEventHandler("MouseRClickUP","HideInfo");
+	DelEventHandler("HideInfoWindow","HideInfo");
 	DelEventHandler("evFaderFrame","FaderFrame");
 	DelEventHandler("InterfaceBreak","ProcessCancelExit");  // boal
 
@@ -324,41 +336,24 @@ void IReadVariableBeforeInit()
 
 void IReadVariableAfterInit()
 {
-	SetFormatedText("HERB_DESCRIP_TEXT", HerbDes(iGrassQuality));
+	InitSelectors("ControlsMode", "CONTROLS_MODE", &iControlsMode);
+	InitSelectors("HerbQuantity", "HERB", &iGrassQuality); // не перемеиноввывал глоб. переменную для совместимости
+	InitSelectors("MapLabelsMode", "MAP_LABELS", 0);      // нет глоб переменной
+	InitSelectors("FOV", "FOV", &iFov);
+	InitSelectors("FontType", "FONT", &iFontType);
+	InitSelectors("MoreInfo", "MOREINFO", &iMoreInfo);
+	InitSelectors("CompassPos", "COMPASS_POS", &iCompassPos);
+	InitSelectors("ControlsTips", "CONTROLS_TIPS", &iControlsTips);
+	InitSelectors("EnabledShipMarks", "SHIPMARKS", &iEnabledShipMarks);
+	InitSelectors("HelpTime", "HELPTIME", &iGlobalHelpTime);
+	InitSelectors("Camera", "CAMERA", &iGlobalCamera);
+	InitSelectors("EnemyType", "ENEMYTYPE", &iGlobalEnemyType);
+	InitSelectors("Target", "TARGET", &iGlobalTarget);
+
+	if(iEnabledShipMarks > 0) bDrawBars = true;
+	else bDrawBars = false;
+
 	GetControlsStatesData();
-
-	if(CheckAttribute(&InterfaceStates,"FontType")) {
-		iFontType = sti(InterfaceStates.FontType);
-	}
-	SetFormatedText("FONT_DESCRIP_TEXT", FontDes(iFontType));
-
-	if(CheckAttribute(&InterfaceStates,"MoreInfo")) {
-		iMoreInfo = sti(InterfaceStates.MoreInfo);
-	}
-	SetFormatedText("MOREINFO_DESCRIP_TEXT", MoreInfoDes(iMoreInfo));
-
-	if(CheckAttribute(&InterfaceStates,"ControlsMode")) {
-		iControlsMode = sti(InterfaceStates.ControlsMode);
-	}
-	SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
-
-	if(CheckAttribute(&InterfaceStates,"CompassPos")) {
-		iCompassPos = sti(InterfaceStates.CompassPos);
-	}
-	SetFormatedText("COMPASS_POS_DESCRIP_TEXT", CompassPosDes(iCompassPos));
-
-	if(CheckAttribute(&InterfaceStates,"ControlsTips")) {
-		iControlsTips = sti(InterfaceStates.ControlsTips);
-	}
-	SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
-
-	iEnabledShipMarks = 1;
-	if(CheckAttribute(&InterfaceStates,"EnabledShipMarks")) {
-		iEnabledShipMarks = sti(InterfaceStates.EnabledShipMarks);
-		if(iEnabledShipMarks > 0) bDrawBars = 1;
-		else bDrawBars = iEnabledShipMarks;
-	}
-	SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
 
 	int nClassicSoundScene = 0;
 	if(CheckAttribute(&InterfaceStates,"ClassicSoundScene")) {
@@ -378,12 +373,6 @@ void IReadVariableAfterInit()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"BATTLE_MODE_CHECKBOX", 2, 1, nShowBattleMode);
 
-	int nShowStealthAlarm = 1;
-	if(CheckAttribute(&InterfaceStates,"ShowStealthAlarm")) {
-		nShowStealthAlarm = sti(InterfaceStates.ShowStealthAlarm);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"STEALTH_ALARM_CHECKBOX", 2, 1, nShowStealthAlarm);
-	
 	int nShowCharString = 1;
 	if(CheckAttribute(&InterfaceStates,"ShowCharString")) {
 		nShowCharString = sti(InterfaceStates.ShowCharString);
@@ -421,14 +410,6 @@ void IReadVariableAfterInit()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SIMPLESEA_CHECKBOX", 2, 1, nEnabledSimpleSea);
 	
-	// belamour --> 
-	int nEnabledDIRECTSAIL = 0;
-	if(CheckAttribute(&InterfaceStates,"DIRECTSAIL")) 
-	{
-		nEnabledDIRECTSAIL = sti(InterfaceStates.DIRECTSAIL);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"DIRECTSAIL_CHECKBOX", 2, 1, nEnabledDIRECTSAIL);
-	
 	int nEnabledCREWONDECK = 1;
 	if(CheckAttribute(&InterfaceStates,"CREWONDECK")) 
 	{
@@ -436,13 +417,6 @@ void IReadVariableAfterInit()
 	}
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREWONDECK_CHECKBOX", 2, 1, nEnabledCREWONDECK);
 	
-	int nEnabledENHANCEDSAILING = 0;
-	if(CheckAttribute(&InterfaceStates,"ENHANCEDSAILING")) 
-	{
-		nEnabledENHANCEDSAILING = sti(InterfaceStates.ENHANCEDSAILING);
-	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ENHANCEDSAILING_CHECKBOX", 2, 1, nEnabledENHANCEDSAILING);
-
 	int nEnabledROTATESKY = 0;
 	if(CheckAttribute(&InterfaceStates,"ROTATESKY")) 
 	{
@@ -455,8 +429,6 @@ void IReadVariableAfterInit()
 	{
 		nEnabledDYNAMICLIGHTS = sti(InterfaceStates.DYNAMICLIGHTS);
 	}
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"DYNAMICLIGHTS_CHECKBOX", 2, 1, nEnabledDYNAMICLIGHTS);
-	// <-- belamour
 }
 
 // метод на TAB переключает вкладки таблицы
@@ -566,41 +538,23 @@ void procBtnAction()
 {
 	int iComIndex = GetEventData();
 	string sNodName = GetEventData();
-	if(sNodName == "BTN_GAME") {
+	if(sNodName == "BTN_INTERFACE") {
 		if(iComIndex==ACTION_MOUSECLICK) {
-			XI_WindowDisable("GAME_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", true);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowDisable("INTERFACE_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", true);
 			XI_WindowShow("GRAPHICS_WINDOW", false);
 			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
-			XI_WindowDisable("GAME_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", true);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowDisable("INTERFACE_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", true);
 			XI_WindowShow("GRAPHICS_WINDOW", false);
 			XI_WindowShow("CONTROLS_WINDOW", false);
-			bControlsWin = false;
-			SetCurrentNode("MUSIC_SLIDE_FRAME");
-		}
-		return;
-	}
-	if(sNodName == "BTN_SCREEN") {
-		if(iComIndex==ACTION_MOUSECLICK) {
-			XI_WindowDisable("SCREEN_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", true);
-			XI_WindowShow("GRAPHICS_WINDOW", false);
-			XI_WindowShow("CONTROLS_WINDOW", false);
-			bControlsWin = false;
-		}	
-		if(iComIndex==ACTION_ACTIVATE) {
-			XI_WindowDisable("SCREEN_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", true);
-			XI_WindowShow("GRAPHICS_WINDOW", false);
-			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = false;
 			SetCurrentNode("HUD_SLIDE_FRAME");
 		}
@@ -609,18 +563,20 @@ void procBtnAction()
 	if(sNodName == "BTN_GRAPHICS") {
 		if(iComIndex==ACTION_MOUSECLICK) {
 			XI_WindowDisable("GRAPHICS_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
 			XI_WindowShow("GRAPHICS_WINDOW", true);
 			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = false;
 		}	
 		if(iComIndex==ACTION_ACTIVATE) {
 			XI_WindowDisable("GRAPHICS_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
 			XI_WindowShow("GRAPHICS_WINDOW", true);
 			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = false;
 			SetCurrentNode("GLOW_SLIDE_FRAME");
 		}
@@ -629,22 +585,68 @@ void procBtnAction()
 	if(sNodName == "BTN_CONTROLS") {
 		if(iComIndex==ACTION_MOUSECLICK) {
 			XI_WindowDisable("CONTROLS_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
 			XI_WindowShow("GRAPHICS_WINDOW", false);
 			XI_WindowShow("CONTROLS_WINDOW", true);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = true;
 			SetAlertMarksControls();
 		}
 		if(iComIndex==ACTION_ACTIVATE) {
 			XI_WindowDisable("CONTROLS_WINDOW", false);
-			XI_WindowShow("GAME_WINDOW", false);
-			XI_WindowShow("SCREEN_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
 			XI_WindowShow("GRAPHICS_WINDOW", false);
 			XI_WindowShow("CONTROLS_WINDOW", true);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", false);
 			bControlsWin = true;
-			SetCurrentNode("LOC_MOUSE_SENSITIVITY_FRAME");
+			SetCurrentNode("LOC_MOUSE_SENSITIVITY_SLIDE_FRAME");
 			SetAlertMarksControls();
+		}
+		return;
+	}
+	if(sNodName == "BTN_AUDIO") {
+		if(iComIndex==ACTION_MOUSECLICK) {
+			XI_WindowDisable("AUDIO_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", true);
+			XI_WindowShow("OTHER_WINDOW", false);
+			bControlsWin = false;
+		}	
+		if(iComIndex==ACTION_ACTIVATE) {
+			XI_WindowDisable("AUDIO_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", true);
+			XI_WindowShow("OTHER_WINDOW", false);
+			bControlsWin = false;
+			SetCurrentNode("MUSIC_SLIDE_FRAME");
+		}
+		return;
+	}
+	if(sNodName == "BTN_OTHER") {
+		if(iComIndex==ACTION_MOUSECLICK) {
+			XI_WindowDisable("OTHER_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", true);
+			bControlsWin = false;
+		}	
+		if(iComIndex==ACTION_ACTIVATE) {
+			XI_WindowDisable("OTHER_WINDOW", false);
+			XI_WindowShow("INTERFACE_WINDOW", false);
+			XI_WindowShow("GRAPHICS_WINDOW", false);
+			XI_WindowShow("CONTROLS_WINDOW", false);
+			XI_WindowShow("AUDIO_WINDOW", false);
+			XI_WindowShow("OTHER_WINDOW", true);
+			bControlsWin = false;
+			SetCurrentNode("MUSIC_SLIDE_FRAME");
 		}
 		return;
 	}
@@ -664,192 +666,62 @@ void procBtnAction()
 		else RestoreDefaultSettings();
 		return;
 	}
-	if(sNodName == "LEFTCHANGE_HERB") 
+}
+
+void SelectorValueChanged()
+{
+	int iComIndex = GetEventData();
+	string sNodeName = GetEventData();
+	int direction = 0;
+
+	switch (iComIndex)
 	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
+		case ACTION_LEFTSTEP: direction = -1; break;
+		case ACTION_RIGHTSTEP: direction = 1; break;
+		case ACTION_MOUSECLICK:
 		{
-			if(iGrassQuality > 2) return;
-			iGrassQuality += 1;
-			SetFormatedText("HERB_DESCRIP_TEXT", HerbDes(iGrassQuality));
+			if      (FindSubStr(sNodeName, "LEFTCHANGE_", 0) == 0) direction = -1; // клик левая стрелка
+			else if (FindSubStr(sNodeName, "RIGHTCHANGE_", 0) == 0) direction = 1; // клик правая стрелка
 		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_HERB") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iGrassQuality < 1) return;
-			iGrassQuality -= 1;
-			SetFormatedText("HERB_DESCRIP_TEXT", HerbDes(iGrassQuality));
-		}
-		return;
+		break;
 	}
-	if(sNodName == "LEFTCHANGE_FONT") 
+	if (direction == 0) return;
+
+	if (HandleSelector(&sNodeName, "ControlsMode",		&direction, "CONTROLS_MODE",	1, &iControlsMode)) return;
+	if (HandleSelector(&sNodeName, "HerbQuantity",		-direction, "HERB",				3, &iGrassQuality)) return; // -direction для инверсии справа налево
+	if (HandleSelector(&sNodeName, "FOV",				&direction, "FOV",				1, &iFov)) return;
+	if (HandleSelector(&sNodeName, "EnabledShipMarks",	&direction, "SHIPMARKS",		2, &iEnabledShipMarks)) return;
+	if (HandleSelector(&sNodeName, "FontType",			&direction, "FONT",				2, &iFontType)) return;
+	if (HandleSelector(&sNodeName, "MoreInfo",			&direction, "MOREINFO",			1, &iMoreInfo)) return;
+	if (HandleSelector(&sNodeName, "ControlsTips",		&direction, "CONTROLS_TIPS",	2, &iControlsTips)) return;
+	if (HandleSelector(&sNodeName, "CompassPos",		&direction, "COMPASS_POS",		1, &iCompassPos)) return;
+	if (HandleSelector(&sNodeName, "MapLabelsMode",		&direction, "MAP_LABELS",		2, 0)) return;
+	
+	if (HandleSelector(&sNodeName, "HelpTime",			&direction, "HELPTIME",			3, &iGlobalHelpTime)) return;
+	if (HandleSelector(&sNodeName, "Camera",			&direction, "CAMERA",			1, &iGlobalCamera)) return;
+	if (HandleSelector(&sNodeName, "EnemyType",			&direction, "ENEMYTYPE",		2, &iGlobalEnemyType)) return;
+	if (HandleSelector(&sNodeName, "Target",			&direction, "TARGET",			3, &iGlobalTarget)) return;
+}
+
+void ApplyLabelsMode(int newMode)
+{
+	aref allLabels;
+	makearef(allLabels, worldMap.labels);
+	int shoreHeight = 0;
+	switch (newMode)
 	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iFontType < 1) return;
-			iFontType -= 1;
-			SetFormatedText("FONT_DESCRIP_TEXT", FontDes(iFontType));
-			InterfaceStates.FontType = iFontType;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_FONT") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iFontType > 1) return;
-			iFontType += 1;
-			SetFormatedText("FONT_DESCRIP_TEXT", FontDes(iFontType));
-			InterfaceStates.FontType = iFontType;
-		}
-		return;
+		case 0: shoreHeight = 200;  break;
+		case 1: shoreHeight = 300;  break;
+		case 2: shoreHeight = 4000; break;
 	}
-	if(sNodName == "LEFTCHANGE_MOREINFO") 
+
+	for (int x=0; x<GetAttributesNum(allLabels); x++) 
 	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
+		aref label = GetAttributeN(allLabels, x);
+		switch (label.type)
 		{
-			if(iMoreInfo < 1) return;
-			iMoreInfo -= 1;
-			SetFormatedText("MOREINFO_DESCRIP_TEXT", MoreInfoDes(iMoreInfo));
-			InterfaceStates.MoreInfo = iMoreInfo;
+			case "shore": label.heightview = shoreHeight; break;
 		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_MOREINFO") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iMoreInfo > 0) return;
-			iMoreInfo += 1;
-			SetFormatedText("MOREINFO_DESCRIP_TEXT", MoreInfoDes(iMoreInfo));
-			InterfaceStates.MoreInfo = iMoreInfo;
-		}
-		return;
-	}	
-	if(sNodName == "LEFTCHANGE_CONTROLS_MODE") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iControlsMode < 1) return;
-			iControlsMode -= 1;
-			SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
-			ControlSettings(iControlsMode);
-			InterfaceStates.ControlsMode = iControlsMode;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_CONTROLS_MODE") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iControlsMode > 0) return;
-			iControlsMode += 1;
-			SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
-			ControlSettings(iControlsMode);
-			InterfaceStates.ControlsMode = iControlsMode;
-		}
-		return;
-	}	
-	if(sNodName == "LEFTCHANGE_COMPASS_POS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iCompassPos < 1) return;
-			iCompassPos -= 1;
-			SetFormatedText("COMPASS_POS_DESCRIP_TEXT", CompassPosDes(iCompassPos));
-			InterfaceStates.CompassPos = iCompassPos;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_COMPASS_POS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iCompassPos > 0) return;
-			iCompassPos += 1;
-			SetFormatedText("COMPASS_POS_DESCRIP_TEXT", CompassPosDes(iCompassPos));
-			InterfaceStates.CompassPos = iCompassPos;
-		}
-		return;
-	}
-	if(sNodName == "LEFTCHANGE_CONTROLS_TIPS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iControlsTips < 1) return;
-			iControlsTips -= 1;
-			SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
-			InterfaceStates.ControlsTips = iControlsTips;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_CONTROLS_TIPS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iControlsTips > 2) return;
-			iControlsTips += 1;
-			SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
-			InterfaceStates.ControlsTips = iControlsTips;
-		}
-		return;
-	}	
-	if(sNodName == "LEFTCHANGE_SHIPMARKS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP ) 
-		{
-			if(iEnabledShipMarks < 1) return;
-			iEnabledShipMarks -= 1;
-			SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
-			InterfaceStates.EnabledShipMarks = iEnabledShipMarks;
-		}
-		return;
-	}	
-	if(sNodName == "RIGHTCHANGE_SHIPMARKS") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(iEnabledShipMarks > 1) return;
-			iEnabledShipMarks += 1;
-			SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
-			InterfaceStates.EnabledShipMarks = iEnabledShipMarks;
-		}
-		return;
-	}	
-	if(sNodName == "LEFTCHANGE_DIFFICULTY") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_LEFTSTEP) 
-		{
-			if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true) 
-			{
-				if(iDifficulty > 9) return;
-			}
-			if(iDifficulty < 3) return;
-			iDifficulty -= 2;
-			SetFormatedText("DIFFICULTY_DESCRIP_TEXT", DifficultyDes(iDifficulty));
-			InterfaceStates.Difficulty = iDifficulty;
-		}
-		return;
-	}
-	if(sNodName == "RIGHTCHANGE_DIFFICULTY") 
-	{
-		if(iComIndex==ACTION_MOUSECLICK || iComIndex==ACTION_RIGHTSTEP) 
-		{
-			if(CheckAttribute(&InterfaceStates,"showGameMenuOnExit") && sti(InterfaceStates.showGameMenuOnExit) == true) // в процессе игры
-			{ 
-				if(iDifficulty > 7) return;
-			} 
-			else 
-			{
-				if(iDifficulty > 9) return;
-			}
-			iDifficulty += 2;
-			SetFormatedText("DIFFICULTY_DESCRIP_TEXT", DifficultyDes(iDifficulty));
-			InterfaceStates.Difficulty = iDifficulty;
-		}
-		return;
 	}
 }
 
@@ -882,12 +754,6 @@ void procCheckBoxChange()
 	{
 		{
 			InterfaceStates.ShowBattleMode = bBtnState;
-		}
-	}
-	if(sNodName == "STEALTH_ALARM_CHECKBOX") 
-	{
-		{
-			InterfaceStates.ShowStealthAlarm = bBtnState;
 		}
 	}
 	if(sNodName == "CHAR_STRING_CHECKBOX") 
@@ -933,14 +799,7 @@ void procCheckBoxChange()
 			InterfaceStates.SimpleSea = bBtnState;
 		}
 	}
-	// belamour -->
-	if(sNodName == "DIRECTSAIL_CHECKBOX") 
-	{
-		{ 
-			InterfaceStates.DIRECTSAIL = bBtnState;
-		}
-	}
-	
+
 	if(sNodName == "CREWONDECK_CHECKBOX") 
 	{
 		{ 
@@ -948,25 +807,12 @@ void procCheckBoxChange()
 		}
 	}
 	
-	if(sNodName == "ENHANCEDSAILING_CHECKBOX") 
-	{
-		{ 
-			InterfaceStates.ENHANCEDSAILING = bBtnState;
-		}
-	}
 	if(sNodName == "ROTATESKY_CHECKBOX") 
 	{
 		{ 
 			InterfaceStates.ROTATESKY = bBtnState;
 		}
 	}
-	if(sNodName == "DYNAMICLIGHTS_CHECKBOX") 
-	{
-		{ 
-			InterfaceStates.DYNAMICLIGHTS = bBtnState;
-		}
-	}
-	// <-- belamour
 }
 
 void procSlideChange()
@@ -1013,12 +859,6 @@ void procSlideChange()
 	}
 	if(sNodeName=="LOC_MOUSE_SENSITIVITY_SLIDE" || sNodeName=="SEA_MOUSE_SENSITIVITY_SLIDE") {
 		ChangeMouseSensitivity();
-	}
-	// belamour перспектива МК
-	if(sNodeName == "SEACAMPERSP_SLIDE")
-	{
-		InterfaceStates.SEACAMPERSP = fVal*100;
-		return;
 	}
 }
 
@@ -1321,108 +1161,6 @@ float ConvertSeaDetails(float fDetails, bool Real2Slider)
 	return fDetails;
 }
 
-string HerbDes(int gq)
-{
-	string sText = " "; 
-	switch (iGrassQuality)
-	{
-		case 0: sText =  XI_ConvertString("Herb Large"); break;
-		case 1: sText =  XI_ConvertString("Herb Medium"); break;
-		case 2: sText =  XI_ConvertString("Herb Small"); break;
-		case 3: sText =  XI_ConvertString("Herb None"); break;
-	}
-	return sText;
-}
-
-string FontDes(int ft)
-{
-	string sText = " "; 
-	switch (iFontType)
-	{
-		case 0: sText =  XI_ConvertString("Font_Italic"); break;
-		case 1: sText =  XI_ConvertString("Font_Normal"); break;
-		case 2: sText =  XI_ConvertString("Font_Mixed"); break;
-	}
-	return sText;
-}
-
-string MoreInfoDes(int mi)
-{
-	string sText = " "; 
-	switch (iMoreInfo)
-	{
-		case 0: sText =  XI_ConvertString("FightMode"); break;
-		case 1: sText =  XI_ConvertString("Always"); break;
-	}
-	return sText;
-}
-
-string ControlsModeDes(int cm)
-{
-	string sText = " "; 
-	switch (iControlsMode)
-	{
-		case 0: sText =  XI_ConvertString("Key Layout1"); break;
-		case 1: sText =  XI_ConvertString("Key Layout2"); break;
-	}
-	return sText;
-}
-
-string CompassPosDes(int csm)
-{
-	string sText = " "; 
-	switch (iCompassPos)
-	{
-		case 0: sText =  XI_ConvertString("CompassBot"); break;
-		case 1: sText =  XI_ConvertString("CompassTop"); break;
-	}
-	return sText;
-}
-
-string ControlsTipsDes(int ct)
-{
-	string sText = " "; 
-	switch (iControlsTips)
-	{
-		case 0: sText =  XI_ConvertString("Off"); break;
-		case 1: sText =  XI_ConvertString("BaseTips"); break;
-		case 2: sText =  XI_ConvertString("ExtendedTips"); break;
-		case 3: sText =  XI_ConvertString("AllTips"); break;
-	}
-	return sText;
-}
-
-string EnabledShipMarksDes(int esm)
-{
-	string sText = " "; 
-	switch (iEnabledShipMarks)
-	{
-		case 0: sText =  XI_ConvertString("Off"); break;
-		case 1: sText =  XI_ConvertString("All"); break;
-		case 2:	sText =  XI_ConvertString("OnlyChars"); break;
-	}
-	return sText;
-}
-
-string DifficultyDes(int df)
-{
-	string sText = " "; 
-	switch (iDifficulty)
-	{
-		case 1: sText =  XI_ConvertString("m_Complexity_1"); break;
-		case 2: sText =  XI_ConvertString("m_Complexity_2"); break;
-		case 3: sText =  XI_ConvertString("m_Complexity_3"); break;
-		case 4: sText =  XI_ConvertString("m_Complexity_4"); break;
-		case 5: sText =  XI_ConvertString("m_Complexity_5"); break;
-		case 6: sText =  XI_ConvertString("m_Complexity_6"); break;
-		case 7: sText =  XI_ConvertString("m_Complexity_7"); break;
-		case 8: sText =  XI_ConvertString("m_Complexity_8"); break;
-		case 9: sText =  XI_ConvertString("m_Complexity_9"); break;
-		case 10: sText =  XI_ConvertString("m_Complexity_10"); break;
-	}
-	return sText;
-}
-
 void GetControlsStatesData()
 {
 	int nAlwaysRun = 0;
@@ -1694,231 +1432,163 @@ void SetMouseToDefault()
 
 void ShowInfo()
 {
-	g_bToolTipStarted = true;
+//	g_bToolTipStarted = true;
 	string sHeader = " ";
-	string sNode = GetCurrentNode();
+	string sNode = GetEventData();
 
 	string sText1, sText2, sText3, sPicture, sGroup, sGroupPicture;
-	sPicture = "none";
-	sGroup = "none";
-	sGroupPicture = "none";
+	sPicture = "-1";
+	int	picW = 128;
+	int	picH = 128;
 
 	switch (sNode)
 	{
-		case "GAMMA_SLIDE":
+		case "HUD_SLIDE_FRAME":
+			sHeader = XI_ConvertString("HUD_SLIDE Mode");
+			sText1 = XI_ConvertString("HUD_SLIDE Mode_descr");
+		break;
+		case "TUTORIAL_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Show tutorial");
+			sText1 = XI_ConvertString("Show tutorial_descr");
+		break;
+		case "QUESTMARK_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("QuestMark Mode");
+			sText1 = XI_ConvertString("QuestMark Mode_descr");
+		break;
+		case "BATTLE_MODE_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Show battle mode");
+			sText1 = XI_ConvertString("Show battle mode_descr");
+		break;
+		case "CHAR_STRING_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Show characters strings");
+			sText1 = XI_ConvertString("Show characters strings_descr");
+		break;
+// Graphics
+		case "GAMMA_SLIDE_FRAME":
 			sHeader = XI_ConvertString("gamma");
 			sText1 = XI_ConvertString("gamma_descr");
 		break;
-		case "BRIGHT_SLIDE":
+		case "BRIGHT_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Brightness");
 			sText1 = XI_ConvertString("brightness_descr");
 		break;
-		case "CONTRAST_SLIDE":
+		case "CONTRAST_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Contrast");
 			sText1 = XI_ConvertString("Contrast_descr");
 		break;
-		
-		case "GLOW_SLIDE":
+		case "GLOW_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Glow");
 			sText1 = XI_ConvertString("Glow_descr");
 			sText2 = XI_ConvertString("PostProcessOnly");
 		break;
-		
-		case "SEA_DETAILS_SLIDE":
+		case "SEA_DETAILS_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Sea Detail");
 			sText1 = XI_ConvertString("Sea Detail_descr");
 		break;
-
-		case "FOLIAGE_DRAW_DISTANCE_SLIDE":
+		case "FOLIAGE_DRAW_DISTANCE_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Foliage Draw Distance");
 			sText1 = XI_ConvertString("Foliage Draw Distance_descr");
 		break;
-
-		case "GRASS_DRAW_DISTANCE_SLIDE":
+		case "GRASS_DRAW_DISTANCE_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Grass Draw Distance");
 			sText1 = XI_ConvertString("Grass Draw Distance_descr");
 		break;
-		
-		case "HERB_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Herb Quantity");
-			sText1 = XI_ConvertString("Herb Quantity_descr");
+		case "ROTATESKY_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("ROTATESKY Mode");
+			sText1 = XI_ConvertString("ROTATESKY Mode_descr");
+			sText2 = XI_ConvertString("ROTATESKYatt Mode_descr");
 		break;
-
-		case "MUSIC_SLIDE":
-			sHeader = XI_ConvertString("Music Volume");
-			sText1 = XI_ConvertString("Music Volume_descr");
+		case "CREWONDECK_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("CREWONDECK Mode");
+			sText1 = XI_ConvertString("CREWONDECK Mode_descr");
 		break;
-
-		case "SOUND_SLIDE":
-			sHeader = XI_ConvertString("Sound Volume");
-			sText1 = XI_ConvertString("Sound Volume_descr");
+		case "SIMPLESEA_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("SimpleSea Mode");
+			sText1 = XI_ConvertString("SimpleSea Mode_descr");
 		break;
-
-		case "DIALOG_SLIDE":
-			sHeader = XI_ConvertString("Dialog Volume");
-			sText1 = XI_ConvertString("Dialog Volume_descr");
+		case "FRAME_FOV":
+			picW = 645;
+			picH = 430;
+			sPicture = "interfaces\le\help\fov.tga";
 		break;
-		
-		case "CLASSIC_SOUNDSCENE_CHECKBOX":
-			sHeader = XI_ConvertString("Classic Soundscene");
-			sText1 = XI_ConvertString("Classic Soundscene_descr");
-		break;
-		
-		case "DIFFICULTY_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("m_Complexity");
-			sText1 = GetRPGText("LevelComplexity_desc");
-		break;
-
-		case "FONT_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Questbook Font");
-			sText1 = XI_ConvertString("Questbook Font_descr");
-		break;
-
-		case "MOREINFO_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("More Info");
-			sText1 = XI_ConvertString("More Info_descr");
-		break;
-
-		case "ALWAYS_RUN_CHECKBOX":
-			sHeader = XI_ConvertString("Always Run");
-			sText1 = XI_ConvertString("Always Run_descr");
-		break;
-
-		case "ADVANCEDCHANGE_CHECKBOX":
-			sHeader = XI_ConvertString("AdvancedChangeControls");
-			sText1 = XI_ConvertString("AdvancedChangeControls_descr");
-		break;
-
-		case "CONTROLS_MODE_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Key Layout");
-			sText1 = XI_ConvertString("Key Layout_descr");
-		break;
-		
+// Controls
 		case "CONTROLS_LIST":
 			sHeader = XI_ConvertString("Button Settings");
 			sText1 = XI_ConvertString("Button Settings_descr");
 			sText2 = XI_ConvertString("Button Settings_descr2");
 		break;
-
-		case "COMPASS_POS_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("CompassPos");
-			sText1 = XI_ConvertString("CompassPos_descr");
-		break;
-
-		case "CONTROLS_TIPS_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("Show Controls");
-			sText1 = XI_ConvertString("Show Controls_descr");
-		break;
-
-		case "INVERT_MOUSE_CHECKBOX":
-			sHeader = XI_ConvertString("Invert Vertical Mouse Control");
-			sText1 = XI_ConvertString("Invert Vertical Mouse Control_descr");
-		break;
-
-		case "LOC_MOUSE_SENSITIVITY_SLIDE":
+		case "LOC_MOUSE_SENSITIVITY_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Location Mouse Sensitivity");
 			sText1 = XI_ConvertString("Location Mouse Sensitivity_descr");
 		break;
-
-		case "SEA_MOUSE_SENSITIVITY_SLIDE":
+		case "SEA_MOUSE_SENSITIVITY_SLIDE_FRAME":
 			sHeader = XI_ConvertString("Sea Mouse Sensitivity");
 			sText1 = XI_ConvertString("Sea Mouse Sensitivity_descr");
 		break;
-
-		case "BATTLE_MODE_CHECKBOX":
-			sHeader = XI_ConvertString("Show battle mode");
-			sText1 = XI_ConvertString("Show battle mode_descr");
+		case "INVERT_MOUSE_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Invert Vertical Mouse Control");
+			sText1 = XI_ConvertString("Invert Vertical Mouse Control_descr");
 		break;
-
-		case "STEALTH_ALARM_CHECKBOX":
-			sHeader = XI_ConvertString("Show stealth alarm");
-			sText1 = XI_ConvertString("Show stealth alarm_descr");
+		case "ALWAYS_RUN_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Always Run");
+			sText1 = XI_ConvertString("Always Run_descr");
 		break;
-		
-		case "CHAR_STRING_CHECKBOX":
-			sHeader = XI_ConvertString("Show characters strings");
-			sText1 = XI_ConvertString("Show characters strings_descr");
+		case "ADVANCEDCHANGE_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("AdvancedChangeControls");
+			sText1 = XI_ConvertString("AdvancedChangeControls_descr");
 		break;
-
-		case "TUTORIAL_CHECKBOX":
-			sHeader = XI_ConvertString("Show tutorial");
-			sText1 = XI_ConvertString("Show tutorial_descr");
+// Audio
+		case "MUSIC_SLIDE_FRAME":
+			sHeader = XI_ConvertString("Music Volume");
+			sText1 = XI_ConvertString("Music Volume_descr");
 		break;
-		
-		case "AUTOSAVE_CHECKBOX":
-			sHeader = XI_ConvertString("AutoSave Mode");
-			sText1 = XI_ConvertString("AutoSave Mode_descr");
+		case "SOUND_SLIDE_FRAME":
+			sHeader = XI_ConvertString("Sound Volume");
+			sText1 = XI_ConvertString("Sound Volume_descr");
 		break;
-
-		case "AUTOSAVE2_CHECKBOX":
+		case "DIALOG_SLIDE_FRAME":
+			sHeader = XI_ConvertString("Dialog Volume");
+			sText1 = XI_ConvertString("Dialog Volume_descr");
+		break;
+		case "CLASSIC_SOUNDSCENE_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("Classic Soundscene");
+			sText1 = XI_ConvertString("Classic Soundscene_descr");
+		break;
+// Other
+		case "AUTOSAVE2_CHECKBOX_FRAME":
 			sHeader = XI_ConvertString("AutoSave Mode2");
 			sText1 = XI_ConvertString("AutoSave Mode2_descr");
 		break;
-
-		case "QUESTMARK_CHECKBOX":
-			sHeader = XI_ConvertString("QuestMark Mode");
-			sText1 = XI_ConvertString("QuestMark Mode_descr");
+		case "AUTOSAVE_CHECKBOX_FRAME":
+			sHeader = XI_ConvertString("AutoSave Mode");
+			sText1 = XI_ConvertString("AutoSave Mode_descr");
 		break;
-
-		case "SHIPMARKS_DESCRIP_TEXT":
-			sHeader = XI_ConvertString("ShipMark Mode");
-			sText1 = XI_ConvertString("ShipMark Mode_descr");
-		break;
-
-		case "SIMPLESEA_CHECKBOX":
-			sHeader = XI_ConvertString("SimpleSea Mode");
-			sText1 = XI_ConvertString("SimpleSea Mode_descr");
-		break;
-		// belamour
-		case "DIRECTSAIL_CHECKBOX":
-			sHeader = XI_ConvertString("DIRECTSAIL Mode");
-			sText1 = XI_ConvertString("DIRECTSAIL Mode_descr");
-		break;
-
-		case "ENHANCEDSAILING_CHECKBOX":
-			sHeader = XI_ConvertString("ENHANCEDSAILING Mode");
-			sText1 = XI_ConvertString("ENHANCEDSAILING Mode_descr");
-		break;
-		
-		case "CREWONDECK_CHECKBOX":
-			sHeader = XI_ConvertString("CREWONDECK Mode");
-			sText1 = XI_ConvertString("CREWONDECK Mode_descr");
-		break;
-		
-		case "ROTATESKY_CHECKBOX":
-			sHeader = XI_ConvertString("ROTATESKY Mode");
-			sText1 = XI_ConvertString("ROTATESKY Mode_descr");
-			sText2 = XI_ConvertString("ROTATESKYatt Mode_descr");
-		break;
-		
-		case "DYNAMICLIGHTS_CHECKBOX":
-			sHeader = XI_ConvertString("DYNAMICLIGHTS Mode");
-			sText1 = XI_ConvertString("DYNAMICLIGHTS Mode_descr");
-		break;
-		
-		case "SEACAMPERSP_SLIDE":
-			sHeader = XI_ConvertString("SEACAMPERSP_SLIDE Mode");
-			sText1 = XI_ConvertString("SEACAMPERSP_SLIDE Mode_descr");
-			sText2 = XI_ConvertString("NeedToExitFromSea");
-		break;
-
-		case "HUD_SLIDE":
-			sHeader = XI_ConvertString("HUD_SLIDE Mode");
-			sText1 = XI_ConvertString("HUD_SLIDE Mode_descr");
-		break;	
-		
 	}
 
-	CreateTooltip("#" + sHeader, sText1, argb(255,255,255,255), sText2, argb(255,255,192,192), sText3, argb(255,255,255,255), "", argb(255,255,255,255), sPicture, sGroup, sGroupPicture, 64, 64);
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "FOV", "FOV");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "ControlsMode", "CONTROLS_MODE");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "HerbQuantity", "HERB");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "EnabledShipMarks", "SHIPMARKS");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "FontType", "FONT");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "MoreInfo", "MOREINFO");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "ControlsTips", "CONTROLS_TIPS");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "CompassPos", "COMPASS_POS");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "MapLabelsMode", "MAP_LABELS");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "HelpTime", "HELPTIME");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "Camera", "CAMERA");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "EnemyType", "ENEMYTYPE");
+	HandleSelectorDescription(&sNode, &sHeader, &sText1, "Target", "TARGET");
+	CreateTooltipNew(sNode, sHeader, sText1, sText2, sText3, "", sPicture, sGroup, sGroupPicture, picW, picH, false);
 }
 
 void HideInfo()
 {
-	if(g_bToolTipStarted) {
+	CloseTooltipNew();
+/*	if(g_bToolTipStarted) {
 		g_bToolTipStarted = false;
 		CloseTooltip();
 		SetCurrentNode("OK_BUTTON");
-	}
+	}*/
 }
 
 bool KeyAlreadyUsed(string sGrpName, string sControl, string sKey, bool bAltPress, ref controlReplacement)
@@ -2028,7 +1698,7 @@ void RestoreDefaultKeys()
 {
 	InterfaceStates.ControlsMode = 0;
 	iControlsMode = 0;
-	SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
+	SetSelectorNewTextValue("ControlsMode", "CONTROLS_MODE", iControlsMode);
 	ControlSettings(iControlsMode);
 	InterfaceStates.AdvancedChange =  0;
 	bAdvancedChange = false;
@@ -2041,34 +1711,26 @@ void RestoreDefaultSettings()
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "MUSIC_SLIDE", 0, 0.25);
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "SOUND_SLIDE", 0, 0.25);
 	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "DIALOG_SLIDE", 0, 0.25);
-	
-	iGrassQuality = 0;
-	SetFormatedText("HERB_DESCRIP_TEXT", HerbDes(iGrassQuality));
-	
-	InterfaceStates.FontType = 0;
-	iFontType = 0;
-	SetFormatedText("FONT_DESCRIP_TEXT", FontDes(iFontType));
 
-	InterfaceStates.MoreInfo = 0;
-	iMoreInfo = 0;
-	SetFormatedText("MOREINFO_DESCRIP_TEXT", MoreInfoDes(iMoreInfo));
-
-	InterfaceStates.ControlsMode = 0;
-	iControlsMode = 0;
-	SetFormatedText("CONTROLS_MODE_DESCRIP_TEXT", ControlsModeDes(iControlsMode));
+	SetSelectorDefault("HerbQuantity", "HERB", 0, &iGrassQuality);
+	SetSelectorDefault("Fov", "FOV", 1, &iFov);
+	SetSelectorDefault("FontType", "FONT", 0, &iFontType);
+	SetSelectorDefault("MoreInfo", "MOREINFO", 0, &iMoreInfo);
+	SetSelectorDefault("ControlsMode", "CONTROLS_MODE", 0, &iControlsMode);
+	SetSelectorDefault("CompassPos", "COMPASS_POS", 0, &iCompassPos);
+	SetSelectorDefault("MapLabelsMode", "MAP_LABELS", 0, 0);
+	SetSelectorDefault("ControlsTips", "CONTROLS_TIPS", 2, &iControlsTips);
+	SetSelectorDefault("EnabledShipMarks", "SHIPMARKS", 1, &iEnabledShipMarks);
+	SetSelectorDefault("HelpTime", "HELPTIME", 1, &iGlobalHelpTime);
+	SetSelectorDefault("Camera", "CAMERA", 1, &iGlobalCamera);
+	SetSelectorDefault("EnemyType", "ENEMYTYPE", 1, &iGlobalEnemyType);
+	SetSelectorDefault("Target", "TARGET", 2, &iGlobalTarget);
 	ControlSettings(iControlsMode);
+	bDrawBars = true;
 
 	InterfaceStates.AdvancedChange =  0;
 	bAdvancedChange = false;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ADVANCEDCHANGE_CHECKBOX", 2, 1, 0);
-
-	InterfaceStates.CompassPos = 0;
-	iCompassPos = 0;
-	SetFormatedText("COMPASS_POS_DESCRIP_TEXT", CompassPosDes(iCompassPos));
-
-	InterfaceStates.ControlsTips = 2;
-	iControlsTips = 2;
-	SetFormatedText("CONTROLS_TIPS_DESCRIP_TEXT", ControlsTipsDes(iControlsTips));
 
 	InterfaceStates.ClassicSoundScene =  1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CLASSIC_SOUNDSCENE_CHECKBOX", 2, 1, 1);
@@ -2092,16 +1754,9 @@ void RestoreDefaultSettings()
 	// fHUDRatio = stf(Render.screen_y) / newBase;
 	// SetFormatedText("HUD_DESCRIP_TEXT", Render.screen_y + "  / " + newBase + " : " + fHUDRatio);
 
-	GameInterface.nodes.SEACAMPERSP_SLIDE.value = 0.25;
-	SendMessage(&GameInterface, "lslf", MSG_INTERFACE_MSG_TO_NODE, "SEACAMPERSP_SLIDE", 0, 0.25);
-	
 	InterfaceStates.ShowBattleMode = 0
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"BATTLE_MODE_CHECKBOX", 2, 1, 0);
 
-	InterfaceStates.ShowStealthAlarm = 1
-	// iShowStealthAlarm = 1;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"STEALTH_ALARM_CHECKBOX", 2, 1, 1);
-	
 	InterfaceStates.ShowCharString = 1
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CHAR_STRING_CHECKBOX", 2, 1, 1);
 
@@ -2117,16 +1772,8 @@ void RestoreDefaultSettings()
 	InterfaceStates.EnabledQuestsMarks = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"QUESTMARK_CHECKBOX", 2, 1, 1);
 
-	InterfaceStates.EnabledShipMarks = 1;
-	iEnabledShipMarks = 1;
-	bDrawBars = 1;
-	SetFormatedText("SHIPMARKS_DESCRIP_TEXT", EnabledShipMarksDes(iEnabledShipMarks));
-
 	InterfaceStates.SimpleSea = 0;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"SIMPLESEA_CHECKBOX", 2, 1, 0);
-	
-	InterfaceStates.DIRECTSAIL = 0;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"DIRECTSAIL_CHECKBOX", 2, 1, 0);
 	
 	InterfaceStates.CREWONDECK = 1;
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"CREWONDECK_CHECKBOX", 2, 1, 1);
@@ -2135,7 +1782,6 @@ void RestoreDefaultSettings()
 	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"ROTATESKY_CHECKBOX", 2, 1, 0);
 	
 	InterfaceStates.DYNAMICLIGHTS = 1;
-	SendMessage(&GameInterface,"lslll",MSG_INTERFACE_MSG_TO_NODE,"DYNAMICLIGHTS_CHECKBOX", 2, 1, 1);
 	
 	InterfaceStates.SeaDetails = 1.0;
 	SendMessage(&GameInterface,"lslf",MSG_INTERFACE_MSG_TO_NODE,"SEA_DETAILS_SLIDE", 0, 1.0);

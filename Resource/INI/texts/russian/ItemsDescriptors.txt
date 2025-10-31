@@ -1,0 +1,149 @@
+descriptor_Fancy {Вычурное}
+descriptor_Exotic {Экзотическое}
+descriptor_HighQuality {Качественное}
+descriptor_GoodFit {Подгонка}
+descriptor_HeartDefence {Укреплённая}
+descriptor_Unremarkable {Неприметное}
+descriptor_WeaponType_0 {Лёгкое}
+descriptor_WeaponType_1 {Среднее}
+descriptor_WeaponType_2 {Тяжёлое}
+descriptor_WeaponLength_0 {Короткое}
+descriptor_WeaponLength_1 {Длинное}
+descriptor_WeaponCurvature_0 {Прямое}
+descriptor_WeaponCurvature_1 {Кривое}
+descriptor_ArmorType_0 {Лёгкая}
+descriptor_ArmorType_1 {Средняя}
+descriptor_ArmorType_2 {Тяжёлая}
+descriptor_ArmorMaterial_0 {Ткань}
+descriptor_ArmorMaterial_1 {Кожа}
+descriptor_ArmorMaterial_2 {Пластины}
+descriptor_ArmorMaterial_3 {Штамповка}
+descriptor_ArmorMaterial_4 {Ковка}
+descriptor_AmuletType_0 {Бытовой}
+descriptor_AmuletType_1 {Языческий}
+descriptor_AmuletType_2 {Церковный}
+descriptor_SingleCharge {Однозарядное}
+descriptor_MultiCharge {Многозарядное}
+descriptor_OneHanded {Одноручное}
+descriptor_TwoHanded {Двуручное}
+descriptor_Bayonet {Штык}
+descriptor_PiercingAmmo {Бронебойное}
+descriptor_StunAmmo {Оглушение}
+descriptor_EmpoweredAmmo {Усиленное}
+descriptor_SpyGlass {Обзор}
+descriptor_SpyGlass_Crew_0 {Прикидка экипажа}
+descriptor_SpyGlass_Crew_1 {Оценка экипажа}
+descriptor_SpyGlass_Crew_2 {Подсчет экипажа}
+descriptor_SpyGlass_Caliber_0 {Калибр}
+descriptor_SpyGlass_Caliber_1 {Огневая мощь}
+descriptor_Special {Особое свойство}
+descriptor_Tool {Инструмент}
+descriptor_Valuable {Высокая ценность}
+descriptor_BulletNeedPowder {Нужен порох}
+descriptor_descr_BulletNeedPowder {Этот боеприпас не вылетит из ствола без меры пороха.}
+descriptor_GrapeAmmo {Картечь}
+descriptor_BulletAmmo {Пуля}
+descriptor_BombAmmo {Бомба}
+descriptor_HealPotion {Исцеление}
+descriptor_Alcohol {Опьянение}
+descriptor_EnhancingPotion {Усиление}
+descriptor_AntidotePotion {Противоядие}
+descriptor_Metal {Металл}
+descriptor_Trinket {Украшение}
+descriptor_descr_Alcohol {Развязывает языки, придаёт мыслям лёгкости, накладывает штрафы на умения.}
+descriptor_descr_EnhancingPotion {Имеет особый усиливающий эффект.}
+descriptor_descr_AntidotePotion {Избавляет от ядов, останавливает отравление.}
+descriptor_descr_Metal {Добывается из недр земли и используется в алхимии.}
+descriptor_descr_Trinket {Изысканные и не очень изделия, позволяющие отделить людей со вкусом от деревенщин. Могут использоваться для выгодного обмена на дублоны у ростовщиков.}
+descriptor_Junk {Хлам}
+descriptor_Herb {Трава}
+descriptor_descr_Herb {Дар земли. В основном используется в алхимии для изготовления припарок и зелий.}
+descriptor_descr_Fancy {Этот предмет отличается парадным видом, инкрустациями и дорогими материалами. Ношение такого увеличивает Харизму на $number($DescriptorBaseValue(Fancy)). Эффекты складываются.}
+descriptor_descr_Exotic
+{
+Этому предмету не место в руках доброго христианина, и про носителя моментально начинают распространяться пугающие слухи.
+Увеличивает мощь эскадры на $percent($DescriptorBaseValue(Exotic)), эффекты складываются.
+}
+descriptor_descr_HighQuality {Этот экземпляр оружия настолько хорошо сделан, что его критический урон выше на $percent($DescriptorBaseValue(HighQuality)).}
+descriptor_descr_GoodFit {Этот экземпляр брони удивительно хорошо сидит, что увеличивает скорость атак любым оружием на $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {Эта броня усилена в жизненно-важных местах, что уменьшает вражеский критический урон на $percent($DescriptorBaseValue(HeartDefence)).}
+descriptor_descr_Unremarkable
+{
+Подобные предметы есть у каждого второго. С этим вас не узнают и не запомнят.
+Увеличивает Cкрытность на $number($DescriptorBaseValue(Unremarkable)). Эффекты складываются.
+}
+descriptor_descr_WeaponType_0 {Лёгкое оружие обладает меньшим весом, большей изящностью и предназначено в первую очередь для сражений один на один. Удары таким оружием быстрее на 5%}
+descriptor_descr_WeaponType_1 {Среднее оружие обладает хорошим балансом веса и скорости, что делает его самым универсальным оружием. Отлично подходит для массовых драк и абордажных схваток.}
+descriptor_descr_WeaponType_2 {Тяжелое оружие обладает огромным весом и таким же огромным уроном. Плата за это - сниженная на 5% скорость атаки.}
+descriptor_descr_WeaponLength_0 {Это оружие требует сближения с противником и лучше подходит для тесных потасовок.}
+descriptor_descr_WeaponLength_1 {Это оружие имеет хорошую досягаемость и требует свободного пространства для эффективности.}
+descriptor_descr_WeaponCurvature_0 {Это оружие не имеет изгиба или он слабо выражен, что делает его более подходящим для выпадов, нежели для ударов.}
+descriptor_descr_WeaponCurvature_1 {Это оружие имеет выраженный изгиб и смещенный к острию центр тяжести, что делает его более приспособленным к ударам, нежели выпадам.}
+descriptor_descr_ArmorType_0 {Легкая броня почти неотличима от одежды и совершенно не стесняет движения. Плата за это — сниженная защита.}
+descriptor_descr_ArmorType_1 {Средняя броня несколько стесняет движения, но отлично защищает жизненно важные органы. Снижает скорость передвижения персонажа на 5%.}
+descriptor_descr_ArmorType_2 {Тяжелая броня громоздкая и неудобная, но в ней можно идти на штурм крепости. Снижает скорость передвижения персонажа на 10%.}
+descriptor_descr_ArmorMaterial_0 {Ткань не выдерживает сколь угодно серьезного удара, но может уберечь от ссадин и царапин. Уменьшает получаемый урон на 4%.}
+descriptor_descr_ArmorMaterial_1 {Кожаные доспехи могут выручить в пьяной драке, но не остановят пулю или умелый укол. Уменьшает получаемый урон на 8%.}
+descriptor_descr_ArmorMaterial_2 {Пластины - прекрасный компромисс веса и защиты. Могут спасти жизнь. Уменьшает получаемый урон на 15%.}
+descriptor_descr_ArmorMaterial_3
+{
+Штампованая броня изготавливается массово для снаряжения войск и используется в европейских войнах. 
+Снижает получаемый урон на 22%.
+}
+descriptor_descr_ArmorMaterial_4 {Изготовление качественной кованой брони - сложный и дорогостоящий процесс, что делает ее редкой гостьей на Карибах. Снижает получаемый урон на 35%.}
+descriptor_descr_AmuletType_0 {Использует силу примет, морских суеверий и реальные причинно-следственные связи.}
+descriptor_descr_AmuletType_1 {Использует силу языческих богов и индейских ритуалов.}
+descriptor_descr_AmuletType_2 {Использует силу христианских святых и праведной веры.}
+descriptor_descr_SingleCharge {Всего один снаряд в запасе - нужно целиться точно.}
+descriptor_descr_MultiCharge {Имеет несколько стволов, барабан или каморы, что позволяет совершить несколько выстрелов подряд. Требует специальных навыков.}
+descriptor_descr_OneHanded {Ручное оружие, носимое на поясе или перевязи. Не требует специальных навыков в обращении, если оно однозарядное.}
+descriptor_descr_TwoHanded {Тяжелое огнестрельное оружие, требующее удержания двумя руками во время стрельбы. Для его использования нужны специальных навыки.}
+descriptor_descr_Bayonet {Этот образец длинноствольного оружия снабжен штыком, что увеличивает урон от выпадов на 25%.}
+descriptor_descr_PiercingAmmo {Этот боеприпас игнорирует броню при попадании.}
+descriptor_descr_StunAmmo {Этот боеприпас накладывает штрафы на врагов при попадании.}
+descriptor_descr_EmpoweredAmmo {Этот боеприпас положительно влияет на свойства оружия.}
+descriptor_descr_SpyGlass {Любая подзорная труба позволяет разглядеть тип, название, состояние, скорость и количество пушек корабля.}
+descriptor_descr_SpyGlass_Crew_0 {Эта труба не позволяет достаточно хорошо разглядеть команду на корабле, поэтому оценка весьма приблизительная.}
+descriptor_descr_SpyGlass_Crew_1 {Эта труба позволяет довольно точно сосчитать количество команды на корабле, а также определить наличие мушкетеров.}
+descriptor_descr_SpyGlass_Crew_2 {Эта труба показывает абсолютно точное количество экипажа противника, мушкетеров и навыки капитана.}
+descriptor_descr_SpyGlass_Caliber_0 {У этой подзорной трубы достаточно качественные линзы, чтобы увидеть не только количество пушек, но и их калибр.}
+descriptor_descr_SpyGlass_Caliber_1 {Высококачественная оптика этой трубы позволяет увидеть калибр орудий и снаряды, которыми их заряжают.}
+descriptor_descr_Special {Этот предмет обладает уникальным свойством.}
+descriptor_descr_Tool {Набор сложных приборов, не представляющих ценности для несведующего человека. Но вы же не такой.}
+descriptor_descr_Valuable {Имеет высокую продажную стоимость.}
+descriptor_descr_BulletNeedPower {Не сможет вылететь из ствола без меры пороха.}
+descriptor_descr_GrapeAmmo {Множество мелких поражающих элементов. Эффективно в первую очередь против группы противников, или против одного - но в упор.}
+descriptor_descr_BulletAmmo {Заряжается и вылетает из ствола в одиночку. Эффективно на средней и дальней дистанции, особенно при попадании в голову.}
+descriptor_descr_BombAmmo {Взрывается и поражает всех окружающих. Особенно эффективно при попадании в группу противников.}
+descriptor_descr_HealPotion {Это снадобье восстанавливает жизнь.}
+descriptor_descr_Junk {Различная мелочёвка, встречающаяся на Карибах в большом изобилии. Представляет ценность только для тех, кто знает как её использовать, во всех остальных случаях она пылится в тёмных углах.}
+descriptor_Alchemy {Алхимия}
+descriptor_descr_Alchemy {Этот предмет может быть изготовлен или изменен с помощью Алхимии}
+descriptor_Quest {Квестовый}
+descriptor_descr_Quest {Этот предмет нужен для какого-то задания. Его нельзя выложить или продать.}
+descriptor_Map {Карта}
+descriptor_descr_Map {Клочок бумаги с обозначениями какой-то местности. Все такие предметы сразу копируются в атлас.}
+descriptor_Fragile {Хрупкое}
+descriptor_descr_Fragile {Этот предмет разрушается после определенного количества использований.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Эффект работает на Канонира.}
+descriptor_descr_Boatswain {Эффект работает на Боцмана.}
+descriptor_descr_Carpenter {Эффект работает на Плотника.}
+descriptor_descr_Navigator {Эффект работает на Навигатора.}
+descriptor_descr_Treasurer {Эффект работает на Казначея.}
+descriptor_descr_Doctor {Эффект работает на Врача.}
+descriptor_Ingredient {Ингредиент}
+descriptor_Jewelery {Драгоценность}
+descriptor_descr_Jewelery {Драгоценные и полудрагоценные камни. Можно продать или использовать в алхимии.}
+descriptor_descr_Ingredient {Этот предмет используется в алхимии.}
+descriptor_Alternate {Подстройка}
+descriptor_descr_Alternate {Навык имеет один эффект для главного героя и другой для всех остальных персонажей.}
+descriptor_IntoxicatingPotion {Опьянение}
+descriptor_descr_IntoxicatingPotion {Развязывает языки, придаёт мыслям лёгкости, накладывает штрафы на умения.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Эффект полезен для Абордажников.}

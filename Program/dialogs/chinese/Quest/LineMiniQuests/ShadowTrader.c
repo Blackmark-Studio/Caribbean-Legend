@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "站住, 罪犯人渣! 你不知道经营商业需要纳税吗? 在我眼皮底下没人能违法! " + GetFullName(npchar) + ", 你违反了法律, 你偷来的货物现在被没收了! 门外就有武装士兵, 所以别想装傻! ";
 				link.l2.go = "ShadowTrader_2";
 			}
@@ -171,16 +171,7 @@ void ProcessDialogEvent()
 	
 		case "ShadowTrader_killed":
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetActorType(pchar);
-			//  如果没佩戴手枪或步枪, 则发放制式武器 -->
-			if(!CheckAttribute(pchar,"equip."+GUN_ITEM_TYPE))
-			{
-				GiveItem2Character(pchar, "pistol1");
-				EquipCharacterbyItem(pchar, "pistol1");
-			}
-			// < —
-			LAi_ActorAnimation(pchar, "Shot", "ShadowTrader_killed_end", 1.3);
+			AddDialogExitQuestFunction("ShadowTrader_KillToTrader_kino");
 		break;
 		
 		case "Exit":

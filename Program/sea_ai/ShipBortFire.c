@@ -43,6 +43,7 @@ void Ship_BortFire()
 	bool  bTempNotEnoughBalls = false;
 	if (sti(rCharacter.index) == GetMainCharacterIndex())
 	{
+        if (80 > rand(99)) PlayShipSoundEvent(PChar, "sounds of sailors/FireCommand", true);
 		ballNumber = 0;
         bTempNotEnoughBalls = bNotEnoughBalls;
 	}

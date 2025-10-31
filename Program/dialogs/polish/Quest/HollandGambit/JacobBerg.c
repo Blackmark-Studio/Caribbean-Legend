@@ -15,13 +15,13 @@ void ProcessDialogEvent()
 		case "First time":
 			if (CheckAttribute(pchar, "questTemp.HWIC.Holl") && pchar.questTemp.HWIC.Holl == "JacobInRoom")
 			{
-				dialog.text = "Argh! Hic... Kimże jesteś, do diabła? Gdzie ten przeklęty Chińczyk? Mówię do ciebie, czy jesteś głuchy? Hic!";
+				dialog.text = "Argh! Hic... Kimże jesteś, do diabła? Gdzie ten przeklęty Chińczyk? Mówię do ciebie! ...Głuchy jesteś?! Hic!";
 				link.l1 = "Słyszę cię doskonale, więc nie krzycz. Żaden Chińczyk nie przyjdzie. Jestem tu zamiast niego.";
 				link.l1.go = "HollJacob_inRoom";
 				DelLandQuestMark(npchar);
 				break;
 			}
-			dialog.text = "Błąd. Powiedzcie deweloperom.";
+			dialog.text = "Robak. Powiedzcie deweloperom.";
 			link.l1 = "Jeśli tak mówisz...";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -33,8 +33,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "HollJacob_inRoom":
-			dialog.text = "Co? Kimże jesteś? Co, do cholery, tu robisz? Zadałem ci pytanie, łajdaku!";
-			link.l1 = "Nie musisz tego wiedzieć. Potrzebuję twojego statku.";
+			dialog.text = "Co? Kim ty jesteś? Co ty tu, do cholery, robisz?! ...Zadałem ci pytanie, łajdaku!";
+			link.l1 = "Tego już wiedzieć nie musisz. Potrzebuję twojego statku.";
 			link.l1.go = "HollJacob_inRoom_1";			
 		break;
 		
@@ -59,21 +59,24 @@ void ProcessDialogEvent()
 		case "JacobBerg_abordage":
 			if (CheckAttribute(pchar, "questTemp.HWIC.Eng"))
 			{
-				dialog.text = "Argh! Cholera! Co za bałagan! Nie jesteś kupcem, prawda?";
-				link.l1 = "Taki mądry chłopak. Moja załoga składa się z wybranych angielskich marines, więc od początku byłeś na straconej pozycji. Richard Fleetwood i ja wymyśliliśmy historię handlarza, i oto jesteś. Twoje przygody się skończyły, bękarcie!";
+				dialog.text = "Argh! Cholera... Co za bałagan! Ty nie jesteś żadnym kupcem, co?";
+				link.l1 = "Brawo, bystrzaku. Moja załoga to elita angielskich marines - od początku byłeś na straconej pozycji. Richard Fleetwood i ja uknuliśmy tę historyjkę o kupcu... a ty ją łyknąłeś jak pelikan. Brawo. A teraz twoja przygoda właśnie się skończyła, bękarcie!
+
+";
 				link.l1.go = "JacobBerg_abordage_1";
 			}
 			else
 			{
-				dialog.text = "Nareszcie się spotkaliśmy, kapitanie. Jesteś sprytnym gościem... Minęło zbyt wiele czasu, odkąd spotkałem tak poważnego przeciwnika.";
-				link.l1 = "I jestem twoim ostatnim przeciwnikiem, Jacob. Nie opuścisz tego miejsca żywym.";
+				dialog.text = "Nareszcie się spotykamy, kapitanie. Sprytny z ciebie gość... Dawno nie miałem tak godnego przeciwnika.";
+				link.l1 = "I będę twoim ostatnim, Jacob. Z tej kajuty nie wyjdziesz już żywy.";
 				link.l1.go = "JacobBerg_abordage_3";
 			}
 		break;
 		
 		case "JacobBerg_abordage_1":
-			dialog.text = "Wygląda na to. Twoja załoga przejęła statek i nie liczę na to, że zostanę oszczędzony. Ale wyślę cię do piekła, zanim przyjdą ci na pomoc! Van Berg sprzeda swoje życie za wysoką cenę!";
-			link.l1 = "To tylko twoja opinia. Myślę, że twoje życie nie jest warte ani grosza. Dość tych słów, przygotuj się!";
+			dialog.text = "Na to wygląda. Twoi ludzie przejęli pokład, więc nawet nie łudzę się, że mnie oszczędzicie. Ale zanim ktoś przyjdzie ci na pomoc - poślę cię prosto do piekła!
+Van Berg nie umrze tanio! Van Berg potrafi skończyć z klasą, tak łatwo mnie nie dostaniesz!";
+			link.l1 = "Heh, widzę, że jesteś nieźle oderwany od rzeczywistości. Ale uwierz mi - twój żałosny żywot nie jest wart nawet złamanego grosza. Dobra, koniec gadania! En garde!";
 			link.l1.go = "JacobBerg_abordage_2";			
 		break;
 		
@@ -86,14 +89,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "JacobBerg_abordage_3":
-			dialog.text = "Naprawdę? Upewniłem się, że nie uciekniesz. Podpaliłem lont prowadzący do prochowni. Wkrótce nasze statki zostaną rozerwane na strzępy.";
-			link.l1 = "Myślę, że tylko ty i twój stary kociołek wyleci w powietrze. Zamierzam cię wypatroszyć, uwolnić mój statek i oglądać fajerwerki, gdy będę odpływał.";
+			dialog.text = "Hah, takiś pewny?! Zadbałem o to, byś nie uciekł. Podpaliłem lont do prochowni. Za parę sekund nasze statki rozerwą się na strzępy!";
+			link.l1 = "A ja myślę, że tylko ty i twój głupawy ryj wylecicie w powietrze. Zatłukę cię, a potem odpłynę i obejrzę sobie ten twój śmieszny pokaz fajerwerków przy butelce rumu. Hah!";
 			link.l1.go = "JacobBerg_abordage_4";			
 		break;
 		
 		case "JacobBerg_abordage_4":
-			dialog.text = "Nie, jeśli najpierw cię zabiję, wyskoczę przez okno, popłynę do brzegu i sam będę oglądać fajerwerki!";
-			link.l1 = "Zakład?";
+			dialog.text = "Spróbuj tylko! To ja cię zatłukę, a potem wyskoczę i popłynę do brzegu, by delektować się pokazem!";
+			link.l1 = "Hah, zakład?!";
 			link.l1.go = "JacobBerg_abordage_5";			
 		break;
 		

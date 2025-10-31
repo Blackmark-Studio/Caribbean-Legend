@@ -1,0 +1,10 @@
+blade_critDamage {Kritischer Nahkampfschaden}
+gun_critDamage {Kritischer Pistolenschaden}
+musket_critDamage {Kritischer Musketenschaden}
+blade_critChance {Kritische Nahkampftrefferchance}
+gun_critChance {Kritische Pistolentrefferchance}
+musket_critChance {Kritische Musketentrefferchance}
+incomingDamageReduction {Schadensschutz}
+RangeIncomingDamageReduction {Schutz vor Schusswaffenschaden}
+Shot_Damage {Schusswaffenschaden}
+HeadshotDamage {Kopftreffer-Schaden}

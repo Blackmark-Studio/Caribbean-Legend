@@ -1,41 +1,9 @@
-FalseTrace_1
-{
-Адам
-}
-FalseTrace_2
-{
-Рейнер
-}
-
-FalseTrace_3
-{
-флейт '@<pchar.questTemp.FalseTrace.ShipName>'
-}
-
-FalseTrace_4
-{
-Адам Рейнер украл шлюпку и сбежал с корабля, прихватив жену!
-}
-
-FalseTrace_5
-{
-Косой
-}
-FalseTrace_6
-{
-Солли
-}
-
-FalseTrace_7
-{
-флейт с золотой рудой
-}
-
-FalseTrace_8
-{
-Катерина
-}
-FalseTrace_9
-{
-Рейнер
-}
+FalseTrace_1 {Адам}
+FalseTrace_2 {Рейнер}
+FalseTrace_3 {флейт '@<pchar.questTemp.FalseTrace.ShipName>'}
+FalseTrace_4 {Адам Рейнер украл шлюпку и сбежал с корабля, прихватив жену!}
+FalseTrace_5 {Косой}
+FalseTrace_6 {Солли}
+FalseTrace_7 {флейт с золотой рудой}
+FalseTrace_8 {Катерина}
+FalseTrace_9 {Рейнер}

@@ -777,7 +777,7 @@ Requiere la habilidad 'Alquimia'.
 #TEXT totem_12
 Talismán 'Hijo del Jaguar'
 **************************
-A los Aztecas les encantan los sacrificios en honor a sus dioses. Les encantaba construir “arenas” donde los cautivos luchaban hasta el fin. Luchaban contra el águila y el jaguar, armados solo con lanzas de madera.
+A los Aztecas les encantan los sacrificios en honor a sus dioses. Les encantaba construir 'arenas' donde los cautivos luchaban hasta el fin. Luchaban contra el águila y el jaguar, armados solo con lanzas de madera.
 La garra de Jaguar siempre se ha considerado un talismán que da suerte para cazar. Es una pena que la hechicería solo funcione para los cazadores.
 Tienes que hervir ese trofeo en un frasco de plata con polvo de perla, verbena, ámbar azul y jacinto. Esto te dará una precisión increíble, pero sólo funciona en lugares oscuros.
 
@@ -1076,13 +1076,13 @@ Lucharás peor, dispararás peor, comerciarás peor, etc. Eso significa que si i
 De momento, puedes manejar una tartana o un barco largo. Pero puedes -y debes- contratar a un navegante. Normalmente se encuentran en las tabernas junto con otros mercenarios.
 Comprueba siempre primero su nivel de habilidad. Si no es lo suficientemente alto para tu barco, experimentarás los mismos problemas que he mencionado antes.
 ************************************************************
-El rango de la nave lo determina. Por ejemplo, tengo experiencia suficiente (45 puntos) para controlar un buque de 4º rango sin penalizaciones. Los bergantines, barquichuelos, filibotes, jabeques y corbetas requieren más, por lo que no podré utilizarlos correctamente. Y no hablamos de barcos de segundo rango, como las fragatas y galeones pesados.
+El nivel de navegación requerido depende de la clase del barco. Cuanto más grande es la nave, más habilidad necesitas para manejarla. Yo, por ejemplo, solo he dominado naves hasta la cuarta clase: bergantines, xebecs, flautas. Una pinaza o una corbeta ya están fuera de mi alcance, y ni hablar de barcos de segunda clase como fragatas pesadas o galeones pesados.
 En cuanto a los gigantescos navíos de línea o los Man Of War... sólo los expertos en navegación pueden controlar semejantes monstruos. Se necesitan años para dominar la habilidad y no hay que olvidar el dinero. Un acorazado y su tripulación pueden vaciarte la cartera en un mes si no eres tan rico como el mismísimo rey Luis.
 Cuida tus puestos de oficial. Un contramaestre entrena a tu tripulación y hace que el abordaje sea más eficaz, un contable realizará las actividades financieras en tu lugar y librará tu barco de ratas. El médico cura a tus hombres heridos y reduce el número de los que mueren en batalla, un carpintero repara cualquier daño causado al barco y los vanguardias te salvan el pellejo cuando los piratas empiezan a pulular por tu cubierta. Presta atención a la destreza de los candidatos y a su reputación.
 ************************************************************
 Todo hombre tiene una, te muestra tal y como eres en realidad.
 Si eres un hombre honorable y siempre intentas hacer el bien, busca oficiales que compartan tus ideales. Y si quieres ser pirata... bueno, ya te haces una idea. La gente honrada no trabajará para la escoria y viceversa.
-Hablemos ahora de los tipos de barcos. Hay dos tipos: Los mercantes y los buques de guerra. Los mercantes o barcos de comercio tienen grandes bodegas de carga y suelen ser más lentos. Los buques de guerra son rápidos y tienen cañones potentes, a expensas de la capacidad de carga. Las barcas, los filibotes y las carracas son buenos y sólidos barcos comerciales. Los lugres, bergantines y corbetas son buques de guerra. Por supuesto, existen los híbridos, barcos que sirven tanto para comerciar como para combatir: Snows, goletas y galeones. Los barcos también tienen distintas disposiciones de aparejo; como velas cuadradas o triangulares, que cambian el comportamiento del barco según el ángulo de vienton azota la proa del barco.
+Ahora, un poco sobre los tipos de barcos. Hay barcos mercantes y barcos de guerra. Los mercantes se caracterizan por sus bodegas amplias, mientras que los de guerra por su tripulación numerosa y cañones potentes. Ejemplos típicos de mercantes: barca, flauta, pinaza; de guerra: balandra, snow y galeón. También existen barcos versátiles con características equilibradas — como los lugguer, goleta y bergantín. Buenos ejemplos de barcos corsarios son el bergantín, la corbeta y la xebec. Los barcos también tienen distintas disposiciones de aparejo; como velas cuadradas o triangulares, que cambian el comportamiento del barco según el ángulo de vienton azota la proa del barco.
 El ángulo fuera de la proa determina cómo se ve afectado el aparejo por el viento y en qué rumbo el barco alcanzará la mejor velocidad de la que es capaz. Una vez en el mar, busca la flecha en el minimapa; ése será tu ángulo de proa.
 ************************************************************
 A continuación, su tripulación. Usted y su barco no son nada sin los hombres que lo tripulan. Todo marinero debe saber hacer tres cosas: manejar los aparejos, los cañones y luchar. Cada nación destaca en una de estas tres actividades. Por ejemplo, España tiene los mejores vanguardias del mundo, además de llevan armadura. La metralla, los tajos y las puñaladas no son tan eficaces contra ellos. Me refiero a las armas cortas, a los cañonazos de metralla les importan un bledo las corazas.
@@ -1442,6 +1442,74 @@ Has demostrado que sabes observar, ocultarte, mantener conversaciones secretas y
 Ahora eres uno de los nuestros. El contenido de este cofre es tu reserva personal para los días oscuros, y esta habitación es tu escondite seguro. 
 Recuerda este momento. A partir de hoy, ya no eres simplemente uno más entre la multitud: eres parte de la hermandad.
 
+#QUEST LeFransua_town_Letter
+Los secretos de Le Francois
+
+#TEXT 1
+************************************************************
+Anne, mi problema y mi inspiración...
+Seguramente estás merodeando por la ciudad, tratando de encontrarme... No te molestes. Ya estoy en el mar.
+Y, maldita sea, no creas que fue fácil para mí. Esos imbéciles no me dejaron elección: o te toleraban y no compartían el botín con una puta, o lo compartían pero tú no estarías en la tripulación... Estaba furioso, Anne, pero discutir con una panda de idiotas armados es una pésima idea.
+Si les hubiera quitado las pistas, habría perdido mi puesto de capitán nada más conseguirlo. Así que primero me ganaré su confianza, y luego volverás. Y entonces lideraremos a estos perros juntos, lo juro por mi última camisa.
+Te dejé todo lo que tenía conmigo. Es suficiente para que llegues a Nassau... a menos que, claro, decidas otra vez meterte en la cama con alguien por el camino. Las notas están escondidas en la ciudad. Reúnelas – y sabrás a dónde ir. Elegí lugares en los que nadie salvo tú se atrevería a meter la nariz.
+
+#TEXT 2
+************************************************************
+Sí, sí, "¡Vete a la mierda, Jack!", – ya te oigo decirlo. "¿Primero me dejas tirada y ahora tengo que buscar unos malditos papelitos?!"
+¿Y qué otra cosa podía hacer? Aquí no hay nadie en quien se pueda confiar ni una mísera moneda oxidada. Y los perritos de Barbazon, como Marco – por un par de doblones encadenarían hasta a su madre. Así que créeme, entre todas las opciones posibles, esta era la mejor.
+
+P.S. En la colina más alta de la isla. Pero no corras hacia allá hasta que tengas todo lo que necesitas.
+
+#TEXT 3
+************************************************************
+Nassau cambia cada maldito minuto. Cuando regreses, susúrrale a tu "amiguita" que quiero saber todo lo que ocurre en la ciudad. Cada rumor, cada palabra.
+Por ahora – necesitas una llave. Está bien escondida. Busca un pasadizo estrecho detrás de un barril – donde los centinelas patrullan sobre tu cabeza.
+P.S. Todo lo que necesitas está bajo ese ridículo error de fortificación. Yo lo habría construido mejor.
+
+#TEXT 4
+************************************************************
+Con esto llegarás a Nassau.
+Lo lograremos, Anne. Estaremos juntos otra vez, como antes. Creo que el destino me ha asignado la grandeza de un capitán, y la grandeza no se obtiene fácilmente. Pero te aseguro que cada vez que la gente mencione al capitán Jack Rackham, también pronunciarán tu nombre.
+Espera en Nassau. Volveré con botín. Y si no, tendrás que buscar a alguien más dispuesto a aguantar tu carácter. Buena suerte con eso.
+
+#QUEST FortFrance_town_Letter
+Los secretos de Saint-Pierre
+
+#TEXT 1
+************************************************************
+Amigo mío. Tuve que abandonar Saint-Pierre con prisa. Ya no puedo formar parte de un juego donde no hay lugar para el honor y la vida de un hermano se convierte en moneda de cambio. Mientras haya quienes han vendido su conciencia dentro de la Orden, me niego a servir a su causa.
+Arrestaron a Michel. Mataron a Pietro. Él sabía los riesgos que corría, y antes de cumplir su última misión, nos dejó todo lo que tenía. Quise entregártelo en persona, pero no pude.
+He escondido algunas notas para ti en lugares que conoces bien. Contienen pistas. Reúnelas. Te llevarán al lugar donde todo será revelado.
+P.S. Todos los cofres se ven iguales. Pero solo uno guarda lo que realmente necesitas.
+
+#TEXT 2
+************************************************************
+Quizás me juzgues por haberme ido. Pero no tenía otra opción. Seré fiel a mis hermanos y al Señor hasta el final de mis días – pero no a quienes traicionaron su juramento por codicia. Y jamás pondré en peligro a Alicia. ¡Valió la pena perderlo todo por encontrar al amor de mi vida en el fin del mundo!
+P.S. Busca la puerta por la que se puede ver el interior.
+
+#TEXT 3
+************************************************************
+Debía cumplir la misma misión que Pietro. Pero en casa me esperaban. Tres. Mercenarios. Nos enfrentamos, y tuve suerte de salir con vida.
+Antes de sacar sus armas, me dieron un "saludo" de parte de Levasseur. Tras la muerte de Pietro y el arresto de Michel, pudo imaginar que alguien lo estaba cazando. Pero no podía saber quién exactamente iría tras su cabeza – el nombre del ejecutor solo lo conocían los oficiales de más alto rango y el comandante.
+¡Traidores dentro de la Hermandad!
+P.S. Baja. Hasta que no quede ni un solo peldaño más que descienda.
+
+#TEXT 4
+************************************************************
+Cuando todo terminó y salí de la casa, me encontré con Valigny. Su sonrisa lo decía todo: fue él quien señaló mi casa a los mercenarios. Y ningún discurso piadoso suyo logrará convencerme de lo contrario.
+P.S. Tu camino lleva al lugar que dejé atrás.
+P.S.S. Para llegar a lo que está oculto, necesitarás una llave. Búscala donde cada uno de nosotros encuentra fuerza e inspiración al dirigirse al Creador.
+
+#TEXT 5
+************************************************************
+Sabes la verdad sobre la conspiración. Sabes sobre la mina en Sint Maarten. Sobre la cacería de "Heinrich".
+Primero encerraron a Michel sin juicio – sabes quién dio la orden. Luego murió Pietro. Ahora me toca a mí.
+Las vidas de nuestros hermanos son solo moneda de cambio para esta gente – una forma de mantener el poder y resolver sus problemas. Los mejores entre nosotros mueren o terminan arrestados. Y por obra de quien tú bien sabes, la Orden pronto se convertirá en una banda de mercenarios – igual que los matones de Rodenburg.
+Muy pronto enviaré una carta al Gran Maestre – estoy seguro de que lo investigará y tomará la única decisión correcta.
+Me llevo a Alicia y parto hacia Port Royal.
+Que el Señor te proteja.
+Y si algún día nuestros caminos se cruzan de nuevo – espero que aún me llames amigo.
+
 #QUEST LadyBeth_Book
 Diario de Blackwood
 
@@ -1544,7 +1612,7 @@ Solo.
 
 Hablo con Mortimer. O mejor dicho, con lo que queda de él. Ya no está enfadado. Entiende. Dice que a todos se les da una oportunidad de redención. ¿Pero cómo redimir esto? ¿Cómo devolver la vida a esta gente?
 
-Salvado por nativos en la costa de Dominica. El chamán dijo: "Los muertos enseñan a los vivos". ¿Qué podría yo enseñar a alguien?
+Salvado por nativos en la costa de Dominica. El chamán dijo—que el muerto enseñe al vivo. ¿Qué podría yo enseñar a alguien?
 
 Cerca de la isla hubo una gran batalla. Los supervivientes llegaron a la orilla, listos para seguir matando, pero los detuve. No sé de dónde me viene esta fuerza. No sé si estoy vivo o si esto es el más allá. Pero el Memento no zarpará sin tripulación. Y sin barco no podré expiar mis pecados.
 
@@ -1554,6 +1622,95 @@ Rescatamos a una docena de indios de la bodega de un negrero. La mayor parte de 
 
 ¡El chamán arrancó el cráneo y lo escondió en algún sitio! ¡Idiota emplumado! Lo habría partido con mi nuevo sable si no fuera por el misionero que visitaba la tribu.
 
-Le conté todo. Una sensación increíble. ¡Ahora sé qué hacer! "Los muertos enseñan a los vivos." ¡Por supuesto! No basta con salvar a la gente de las cadenas o la horca. ¡Hay que salvarlos de la muerte misma! Y esto solo se puede lograr haciendo que otro pase por lo mismo que pasé yo. Morir y volver. ¿Me dan pena? Por supuesto. Pero yo tenía razón. A mí nunca me compadecieron.
+Le conté todo. Una sensación increíble. ¡Ahora sé qué hacer! "Que el muerto enseñe al vivo." ¡Por supuesto! No basta con salvar a la gente de las cadenas o la horca. ¡Hay que salvarlos de la muerte misma! Y solo se puede haciendo que otro pase por lo que pasé yo. Morir y volver. ¿Me dan pena? Por supuesto. Pero I. tenía razón. A mí nunca me compadecieron.
 
 Ya he encontrado un nuevo cráneo—no todos pueden superar la prueba de la muerte. Así es incluso mejor. Que las cuencas de Mortimer se queden en Dominica y no vean lo que pasa en su barco. No lo entendería.
+
+#QUEST WildRose_Records
+Extractos de los registros de barcos naufragados cerca de la Isla de la Justicia en junio de 1638
+#TEXT 1
+«...15 de junio. Bergantín 'Wrangler'. Buque de Su Majestad el Rey Carlos I. 
+Arrastrado al lado sureste del anillo exterior. Recuperado del barco:
+- 11 barriles de cerveza escocesa
+- 20 barriles de agua dulce
+- 17 cajas de provisiones
+- 3 cañones de 16 libras
+- 18 mosquetes
+- 29 armas blancas
+- 4 cajas de municiones
+- 15 rollos de lona de vela
+Rescatadas 4 personas:
+- Joshua Casper (capitán)
+- Teresa Casper
+- Anthony Young
+- Peter Friddicks...»
+
+#QUEST WildRose_Records_2
+Extractos del libro parroquial del padre Domingo De la Cruz durante el verano de 1638
+#TEXT 1
+«7 de junio. Se realizó el funeral del siervo de Dios Maximilian van Ekkus.
+
+18 de junio. Se realizaron los funerales de los siervos de Dios Anthony Young y Peter Friddicks.
+
+25 de junio. Se realizó el funeral de la sierva de Dios Teresa V. Casper. Se rezaron oraciones por el descanso de los siervos de Dios Jean-Pierre R. Sorren y Humberto Rojas (cuerpos no encontrados).
+
+5 de julio. Se bautizó al siervo de Dios Thierry G. Legros (nacido el 27 de febrero).
+
+3 de agosto. Se bautizaron al siervo de Dios Fabian O. Gallard (nacido el 10 de junio) y a la sierva de Dios Mary J. Casper (nacida el 22 de junio).»
+
+#QUEST WildRose_Records_3
+Algunos detalles del extracto del expediente personal de Joshua Casper
+#TEXT 1
+Joshua Anthony Casper nació en 1586 d.C. en la ciudad de Portsmouth. 
+Registrado en la Marina de Su Majestad desde junio de 1611. 
+En 1619 aprobó el examen para el rango de teniente, asignado a la fragata 'Reversible'...
+En 1625 fue transferido a la fragata 'Triumph' como primer oficial...
+En 1630 fue nombrado capitán del bergantín 'Cornwall'... Desaparecido junto con el barco y la tripulación en 1638.
+No estaba casado. No tenía hijos. 
+Oficial ejemplar, con numerosas condecoraciones y reconocimientos, sin sanciones ni reprimendas registradas...
+
+#QUEST WildRose_Records_4
+Contenido de la orden al capitán Joshua Casper de entregar el salario en Antigua y Providencia
+#TEXT 1
+Al capitán del bergantín 'Cornwall' Joshua Anthony Casper — dirigirse a la ciudad de Dundalk para descargar armamento militar, luego — cruzar el Océano Atlántico para entregar el salario a los servidores de las guarniciones de las islas Antigua y Providencia. Tras completar la tarea, informar al gobernador de la isla de Antigua - Thomas Warner, otorgar descanso a la tripulación del barco, y luego regresar a Inglaterra al puerto de origen. 
+La responsabilidad de preparar el bergantín 'Cornwall' para la expedición, instruir a la tripulación, cargar los víveres y la carga mencionada — recae en el capitán Joshua Anthony Casper.
+
+Firmado de mi puño y letra,  
+Vicealmirante Robert Bertie, 3.er Conde de Lindsey  
+8 de enero de 1638  
+Londres, Inglaterra
+
+#QUEST WildRose_Records_5
+Algunos detalles del informe del capitán Joshua Casper sobre la travesía del Atlántico
+#TEXT 1
+...Zarpamos de Londres el 14 de enero de 1638, rumbo a Dundalk...
+...Arribamos a Dundalk el 19 de enero de 1638, comenzamos la descarga del armamento militar...
+...Zarpamos de Dundalk el 21 de enero de 1638, rumbo suroeste...
+...El 10 de febrero de 1638, al pasar frente a la isla de São Miguel (Azores), entablamos combate con el galeón español 'Toro'. Estimo su armamento en aproximadamente 50 piezas pesadas. Tras derribarle el palo mayor, se tomó la decisión de no poner en riesgo el cumplimiento de la misión encomendada por el Almirantazgo y retirarnos del campo de batalla, virando hacia el oeste. Las pérdidas ascendieron a 32 hombres, incluidos los siguientes oficiales: primer oficial Rupert Northwood, teniente Edward Matts, teniente Samuel Downs. Los caídos fueron sepultados en el mar, conforme a las tradiciones establecidas en la Marina de Su Majestad.
+...Arribamos a la isla de Antigua el 1 de junio de 1638, entregamos al gobernador de la isla, Sir Thomas Warner, el cofre con el salario para la guarnición...
+
+Firmado de mi puño y letra,  
+Capitán del navío de Su Majestad 'Cornwall' Joshua Anthony Casper  
+2 de junio de 1638  
+Saint John’s, isla de Antigua
+
+#QUEST WildRose_Records_6
+Carta de Jérôme Sauvernier a Fadey el Moscovita
+#TEXT 1
+Monsieur Fadey, espero que mi mensaje le encuentre en buen estado de salud. Por desgracia, no puedo decir lo mismo de mí. En el 'Ojo de Cristal' ocurrió una pelea violenta en la que, por mala suerte, me vi involucrado. Una herida seria, que por fortuna no pone en peligro mi vida, me obliga a quedarme un tiempo en esta ciudad nada hospitalaria.
+En cuanto a su encargo — aquí tengo buenas noticias. He logrado seguir la pista de un hombre llamado Rupert Casper. Los detalles los compartiré al regresar a Basse-Terre. Lamento hacerle esperar.
+
+Jérôme Sauvernier
+
+#QUEST LEDR_Book_1
+Fragmentos del diario de Diego Velázquez de Cuéllar
+#TEXT 1
+"Hoy destruimos otra aldea de salvajes. Ninguno de ellos resistió ante nuestras espadas. A los hombres que se atrevieron a resistir los matamos en el acto, al resto los encadenamos. Sus chozas ardieron por completo, los graneros quedaron vacíos, y todo lo valioso se convirtió en nuestro botín. Aquellos que trataron de esconder a los niños fueron asesinados ante los ojos de los que lograron sobrevivir. Sus lágrimas fluían como ríos, lavando el triunfo de nuestros estandartes. Estas tierras ahora pertenecen a España. Trajimos aquí el orden y la voluntad del Señor, aunque fuese al costo de sangre."
+
+"Mi intención se ha cumplido. Los salvajes acudieron a negociar. Sus jefes se sentaron alrededor del fuego, creyendo ingenuamente en la paz. Pero la paz verdadera llega sólo a través de la sangre. Rodeamos la choza, bloqueamos la puerta y la prendimos fuego. Al principio hubo gritos — furiosos, desesperados. Luego todo se silenció, solo el crepitar del fuego rompía el silencio. El olor a carne chamuscada llenó el aire, como bendición del Señor mismo. Estos salvajes nunca volverán a levantar la cabeza."
+
+"El cacique Atuéy recibió lo que merecía. Le obligué a contemplar la ejecución de su pueblo: mujeres arrojadas a las llamas, cabezas cortadas a los jóvenes, y los niños gritaban de miedo. Lo ataron a un poste en el centro de una gran hoguera. Vi con mis propios ojos las llamas abrazar su cuerpo. Pero no gritó por el dolor. No, su voz estaba llena de desprecio hacia nosotros. Incluso muriendo, halló fuerzas para escupir maldiciones en nuestra dirección. ¡Salvaje tonto! Creyó que sus palabras podrían asustarnos. El viento dispersará esta locura junto con las cenizas de su cuerpo."
+
+"Tras aquella ejecución comencé a notar cosas extrañas. De día, los monjes proclamaban la gracia de Dios, pero de noche las sombras alrededor cobraban vida. Me parecía oír los lamentos de mujeres, los gritos de los niños y las maldiciones de los salvajes resonar en mis oídos. Anoche murió uno de los marineros. Su cuerpo fue encontrado destrozado, como si bestias salvajes lo hubieran atacado. Ordené que todos rezaran, pero las oraciones fueron inútiles. Ahora estoy seguro: es Atuéy. Él nos ha lanzado una maldición. Estos bárbaros no perdonan. Nunca."
+
+"La maldición… No me abandona. Anida dentro de mí como una serpiente que envuelve el corazón. Cada noche veo chozas ardiendo, escucho gritos y gemidos de los muertos que me llaman a responder. Sus esqueletos calcinados se alzan de las cenizas, sus órbitas vacías me miran con odio. Incluso ahora, en esta habitación, oigo sus pasos. La puerta chirría lentamente, como si alguien entrara, pero no veo a nadie. Las manos tiemblan tanto que la pluma apenas obedece. No hay salvación. El Señor me ha abandonado, así como yo abandoné la misericordia. Ya están cerca. Pronto vendrán a buscarme..."

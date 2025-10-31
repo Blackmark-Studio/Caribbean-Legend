@@ -1,0 +1,8 @@
+perks_1 {Prix mis à jour}
+perks_2 {La brèche sur la coque du navire « @<_ShipName> » a été réparée.}
+perks_3 {@<_ShipName> – voie d’eau sous la ligne de flottaison !}
+perks_4 {$rand(Il doit bien y avoir quelque chose de précieux dans la cale du '$attr($context.ship.name)'|Ils transportent sûrement quelque chose d'important sur '$attr($context.ship.name)')}
+perks_5 {$rand(Il n’y a pas grand-chose à prendre dans la cale du '$attr($context.ship.name)'|Il semble que la cale du '$attr($context.ship.name)' ne contienne rien de valeur)}
+perks_6 {Sur le navire @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> est mort dans la cohue.}
+perks_7 {D’après les calculs, @<_ShipName> est arrivé à @<_PortName>.}
+perks_8 {Toujours en route.}

@@ -100,12 +100,15 @@ void ProcessDialogEvent()
 		case "spa_officer_1":
 			if(sti(pchar.reputation.nobility) > 80 || sti(pchar.reputation.nobility) < 20) // 进行荣誉和知名度的计算
 			{
+				Notification_Reputation(true, 81, "low");
 				dialog.text = "是的, 我听说了很多关于你的事, 而且我有明确的指示, 如果你固执己见, 不要把城市变成血泊。 你可以通过。 但文森托神父会... 不满意。 记住这一点。 ";
 				link.l1 = "你做得很理智, 先生。 我会以某种方式挺过宗教裁判官神父不满意带来的心痛。 祝你晚上好! ";
 				link.l1.go = "spa_officer_2";
 			}
 			else
 			{
+				Notification_Reputation(false, 81, "low");
+				Notification_Reputation(false, 19, "high");
 				dialog.text = "是的, 我听说过你... 很多有趣的事情。 然而, 拒绝这样的邀请对健康有害, 先生。 就像绑架文森托神父的客人一样。 抓住他们! ";
 				link.l1 = "每个人都有自己的选择。 很抱歉不得不这样。 拔剑吧, 骑士! ";
 				link.l1.go = "spa_officer_3";

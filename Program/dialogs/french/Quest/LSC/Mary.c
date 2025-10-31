@@ -35,31 +35,8 @@ void ProcessDialogEvent()
 		case "Cabin":
 			dialog.text = "Marcello, je le connais. Il est un ami de Rivados et des pirates. Adolf ne travaillerait jamais avec lui. Sens l'air... perçois-tu l'odeur de la poudre à canon ? Et il y a du sang sur le mur... Il a tué Adolf et essaie maintenant de nous duper ! Il doit travailler pour l'amiral ! Tue-le !";
 			link.l1 = "...";
-			link.l1.go = "Cabin_fight";
-		break;
-		
-		case "Cabin_fight":
-			chrDisableReloadToLocation = true;//закрыть локацию
-			LAi_LocationFightDisable(&Locations[FindLocation(pchar.location)], false);//разрешить драться
-			DialogExit();
-			sld = characterFromId("Marchello");
-			LAi_SetWarriorType(sld);
-			LAi_group_MoveCharacter(sld, "EnemyFight");
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			if (CheckAttribute(pchar, "questTemp.Saga.SharkHunt.TownAttack"))
-			{
-				for (i=1; i<=3; i++)
-				{
-					sld = characterFromId("CyclopGuard_"+i);
-					LAi_SetWarriorType(sld);
-					LAi_group_MoveCharacter(sld, "EnemyFight");
-				}
-			}
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "LSC_CyclopNMaryDie");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("LSC_Cabin_fight");
 		break;
 		
 		// на улице
@@ -110,7 +87,7 @@ void ProcessDialogEvent()
 		case "Town_7":
 			PlaySound("Voice\English\LSC\Mary Casper-04.wav");
 			dialog.text = "Qu'as-tu dit ?... Bon sang, tu n'es pas un simple bandit ! Il travaille pour l'amiral ! Abattez-le, les gars !";
-			link.l1 = "I think we make a great team, don't you, alright?";
+			link.l1 = "Je pense qu’on forme une super équipe, non ? Ça te va ?";
 			link.l1.go = "Cabin_fight";
 		break;
 		
@@ -1707,7 +1684,7 @@ void ProcessDialogEvent()
 		// Jason Дороже золота
 		case "GoldenGirl":
 			pchar.quest.Mary_giveme_sex1.over = "yes"; // fix 22-03-20
-			pchar.questTemp.GoldenGirl.MaryBlock = "true"; // fix 22-03-20
+			pchar.questTemp.MarySexBlock = "true"; // fix 22-03-20
 			dialog.text = "Quel est tout ce vacarme cette fois, Capitaine ? Espagnols, pirates ou pire ?";
 			link.l1 = "C'est pire, Mary, bien pire. Le gouverneur a l'intention de rendre visite à une courtisane extrêmement coûteuse et je suis censé l'accompagner en tant que personne d'intérêt, comme promis à la maîtresse. Des discours ennuyeux, du vin hors de prix et des nobles sans intérêt.";
 			link.l1.go = "GoldenGirl_1";

@@ -20,18 +20,22 @@ void Group_DeleteGroupIndex(int iGroupIndex)
 		Trace("Group_DeleteGroupIndex iGroupIndex is out of range = " + iGroupIndex);
 		return;
 	}
-	// boal super fix 03/02/2005 -->
-	for (int i=0; i<MAX_SHIP_GROUPS; i++)
-	{
-		if (CheckAttribute(&AIGroups[i], "id") && CheckAttribute(&AIGroups[i], "Task.Target"))
-		{
-			if (AIGroups[i].Task.Target == AIGroups[iGroupIndex].id)
-			{
-				Group_SetTaskNone(AIGroups[i].id);
-			}
-		}
-	}
-	// boal super fix 03/02/2005 <--
+
+    string sGroupID = AIGroups[iGroupIndex].id;
+    bool NotPlayer = (sGroupID != PLAYER_GROUP);
+    for (int i = 0; i < MAX_SHIP_GROUPS; i++)
+    {
+        if (CheckAttribute(&AIGroups[i], "id") && CheckAttribute(&AIGroups[i], "Task.Target"))
+        {
+            if (NotPlayer || !CheckAttribute(&AIGroups[i], "Task.Lock") || sti(AIGroups[i].Task.Lock) == 0)
+            {
+                if (AIGroups[i].Task.Target == sGroupID)
+                {
+                    Group_SetTaskNone(AIGroups[i].id);
+                }
+            }
+        }
+    }
 
 	DeleteAttribute(&AIGroups[iGroupIndex], "");
 }
@@ -169,8 +173,7 @@ ref	Group_FindOrCreateGroup(string sGroupID)
 		{
 			Trace("Group_FindOrCreateGroup sGroupID = " + sGroupID + ", can't create group ");
 			if (MOD_BETTATESTMODE == "On") Log_Info("Error: Group_FindOrCreateGroup не создалась группа " + sGroupID);
-			// бред - просто плодили еррор AIGroups[iGroupIndex].Task.Lock = false;
-			return &AIGroups[0];
+			return &AIGroups[0]; // ~!~
 		}
 	}
 
@@ -275,6 +278,7 @@ string GetGroupIDFromCharacter(ref chr)
 {
 	ref rGroup;
 	if (!CheckAttribute(chr, "index")) return "";
+    // ~!~ А почему не Ship_GetGroupID(chr)? ~!~
 	for (int i=0;i<MAX_SHIP_GROUPS;i++)	
 	{
 		rGroup = Group_GetGroupByIndex(i);
@@ -327,6 +331,11 @@ int Group_GetLiveCharactersNum(string sGroupID)
 	return (Group_GetCharactersNumR(rGroup) - Group_GetDeadCharactersNumR(rGroup));
 }
 
+int Group_GetLiveCharactersNumR(ref rGroup)
+{
+	return (Group_GetCharactersNumR(rGroup) - Group_GetDeadCharactersNumR(rGroup));
+}
+
 int Group_GetDeadCharactersNum(string sGroupID) { ref rGroup = Group_FindOrCreateGroup(sGroupID); return Group_GetDeadCharactersNumR(rGroup); }
 int Group_GetDeadCharactersNumR(ref rGroup)
 {
@@ -353,7 +362,7 @@ int Group_GetCharactersNumR(ref rGroup)
 int Group_GetCharacterIndexR(ref rGroup, int iIndex)
 {
 	aref arQuest, arAttr; 
-	if (!CheckAttribute(rGroup,"quest")) { return -1; }
+	if (!CheckAttribute(rGroup, "quest")) { return -1; }
 	makearef(arQuest,rGroup.Quest);
 	int iNumAttributes = GetAttributesNum(arQuest);
 	if (iIndex >= iNumAttributes) { return -1; } 
@@ -464,6 +473,21 @@ bool Group_isTaskLock(string sGroupID)
 	ref rGroup = Group_FindOrCreateGroup(sGroupID);
 	return Group_isTaskLockR(rGroup);
 }
+// Отдельно
+bool Group_CheckTaskLock(string sGroupID)
+{
+    ref rGroup = Group_FindOrCreateGroup(sGroupID);
+    if (!CheckAttribute(rGroup, "Task.Lock"))
+        rGroup.Task.Lock = "0";
+	return sti(rGroup.Task.Lock);
+}
+
+bool Group_CheckTaskLockR(ref rGroup)
+{
+    if (!CheckAttribute(rGroup, "Task.Lock"))
+        rGroup.Task.Lock = "0";
+	return sti(rGroup.Task.Lock);
+}
 
 // lock task, group can't change task before end current
 void Group_LockTask(string sGroupID)
@@ -477,6 +501,21 @@ void Group_UnlockTask(string sGroupID)
 {
 	ref rGroup = Group_FindOrCreateGroup(sGroupID);
 	rGroup.Task.Lock = false;
+}
+
+bool Group_CheckAttackPlayer(string sGroupID)
+{
+    ref rGroup = Group_FindOrCreateGroup(sGroupID);
+    if (!CheckAttribute(rGroup, "Task.Target"))
+        return false;
+    return (sti(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
+}
+
+bool Group_CheckAttackPlayerR(ref rGroup)
+{
+    if (!CheckAttribute(rGroup, "Task.Target"))
+        return false;
+    return (sti(rGroup.Task) == AITASK_ATTACK) && (rGroup.Task.Target == PLAYER_GROUP);
 }
 
 // Task: Defend
@@ -502,32 +541,31 @@ void Group_SetTaskAttack(string sGroupID, string sAttackedGroup) { Group_SetTask
 void Group_SetTaskAttackEx(string sGroupID, string sAttackedGroup, bool bTaskBoth)
 {
 	ref rGroup = Group_FindOrCreateGroup(sGroupID);
-
 	rGroup.Task = AITASK_ATTACK;
 	rGroup.Task.Target = sAttackedGroup;
-	// fix --> //navy тогда уж так ;)
+
 	if (bTaskBoth)
 	{
 		rGroup = Group_FindOrCreateGroup(sAttackedGroup);
 		rGroup.Task = AITASK_ATTACK;
 		rGroup.Task.Target = sGroupID;
-	}
-	// fix <--	
-	if (bSeaActive) { AIAttack_GroupAttack(sGroupID, sAttackedGroup, bTaskBoth); }	
+	}	
+
+	if (bSeaActive)
+    { 
+        AIAttack_GroupAttack(sGroupID, sAttackedGroup, bTaskBoth);
+    }
 }
 // boal иначе вылеты, если в каюте дела
 void Group_SetTaskAttackInMap(string sGroupID, string sAttackedGroup)
 {
 	ref rGroup = Group_FindOrCreateGroup(sGroupID);
-
 	rGroup.Task = AITASK_ATTACK;
 	rGroup.Task.Target = sAttackedGroup;
-	// fix -->
-	rGroup = Group_FindOrCreateGroup(sAttackedGroup);
 
+	rGroup = Group_FindOrCreateGroup(sAttackedGroup);
 	rGroup.Task = AITASK_ATTACK;
 	rGroup.Task.Target = sGroupID;
-	// fix <--
 }
 
 // Task: Move
@@ -547,6 +585,27 @@ void Group_SetTaskMove(string sGroupID, float x, float z)
 		if (iCharacterIndex < 0) { break; }
 		iIndex++;
 		Ship_SetTaskMove(SECONDARY_TASK,iCharacterIndex,x,z);
+	}
+}
+
+// Task: Drift
+void Group_SetTaskDrift(string sGroupID)
+{
+	ref rGroup = Group_FindOrCreateGroup(sGroupID);
+
+	rGroup.Task = AITASK_DRIFT;
+	rGroup.Task.Target = "";
+	rGroup.Task.Lock = false;
+
+	int iIndex;
+	int iCharacterIndex;
+	iIndex = 0;
+	while (true)
+	{
+		iCharacterIndex = Group_GetCharacterIndexR(rGroup, iIndex);
+		if (iCharacterIndex < 0) { break; }
+		iIndex++;
+		Ship_SetTaskDrift(SECONDARY_TASK, iCharacterIndex);
 	}
 }
 

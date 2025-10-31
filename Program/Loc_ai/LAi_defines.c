@@ -80,3 +80,6 @@
 
 // evganat - время сведения прицела
 #define MAX_AIMING_TIME			1.0
+
+// количество хп в одной засечке
+#define ENEMY_BARS_SERIF_WIDTH 50.0

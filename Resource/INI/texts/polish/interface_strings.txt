@@ -1,18 +1,15 @@
-Delete profile confirm{Czy jesteś pewien, że chcesz usunąć ten profil i wszystkie związane z nim zapisy gry?}
-Delete savefile confirm{Czy jesteś pewien, że chcesz usunąć ten zapis gry?}
-Overwrite savefile confirm{Czy na pewno chcesz nadpisać swoją grę?}
-
-Low storage and unable save create{Brak wolnego miejsca na dysku.}
-Load game confirm{Czy na pewno chcesz wczytać ten zapis gry?}
-Unable to Load save game{Nie udało się wczytać tego zapisu gry.}
-
+Delete profile confirm {Czy jesteś pewien, że chcesz usunąć ten profil i wszystkie związane z nim zapisy gry?}
+Delete savefile confirm {Czy jesteś pewien, że chcesz usunąć ten zapis gry?}
+Overwrite savefile confirm {Czy na pewno chcesz nadpisać swoją grę?}
+Low storage and unable save create {Brak wolnego miejsca na dysku.}
+Load game confirm {Czy na pewno chcesz wczytać ten zapis gry?}
+Unable to Load save game {Nie udało się wczytać tego zapisu gry.}
 Salary info
-{Twoja załoga żąda swej miesięcznej pensji.
-Czy zapłacisz?}
+{
+Twoja załoga żąda swej miesięcznej pensji.Czy zapłacisz?
+}
 Officer info {Twoi oficerowie żądają swej miesięcznej pensji:}
-All info {Kwota netto: }
-
-New game confirm{Czy na pewno chcesz rozpocząć nową grę?}
-
+All info {Kwota netto:}
+New game confirm {Czy na pewno chcesz rozpocząć nową grę?}
 Insert Disk Ok {Please insert Disc 1 "Pirates Of The Caribbean"}
 save game limit {Przekroczono limit zapisanych gier. Usuń starsze zapisy.}

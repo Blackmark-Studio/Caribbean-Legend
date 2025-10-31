@@ -198,7 +198,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Gladis_history_4":
-			dialog.text = "";
+			dialog.text = "...";
 			link.l1 = "一个简单的事件阻止了他及时这样做, 他一生都因为未能完成船长的最后命令而痛苦。 他不久前去世了, 而且... 好吧, 悲伤的消息够多了。 告诉我, 格莱迪斯, 海伦的母亲没有给她的孩子留下任何纪念她的信物吗? 也许是某个小东西? ";
 			link.l1.go = "Gladis_history_5";
 		break;

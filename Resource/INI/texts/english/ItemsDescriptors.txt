@@ -1,0 +1,149 @@
+descriptor_Fancy {Fancy}
+descriptor_Exotic {Exotic}
+descriptor_HighQuality {Superior}
+descriptor_GoodFit {Plain}
+descriptor_HeartDefence {Reinforced}
+descriptor_Unremarkable {Plain}
+descriptor_WeaponType_0 {Light}
+descriptor_WeaponType_1 {Medium}
+descriptor_WeaponType_2 {Heavy}
+descriptor_WeaponLength_0 {Short}
+descriptor_WeaponLength_1 {Long}
+descriptor_WeaponCurvature_0 {Straight}
+descriptor_WeaponCurvature_1 {Curved}
+descriptor_ArmorType_0 {Light}
+descriptor_ArmorType_1 {Medium}
+descriptor_ArmorType_2 {Heavy}
+descriptor_ArmorMaterial_0 {Cloth}
+descriptor_ArmorMaterial_1 {Leather}
+descriptor_ArmorMaterial_2 {Plate}
+descriptor_ArmorMaterial_3 {Stamped}
+descriptor_ArmorMaterial_4 {Forged}
+descriptor_AmuletType_0 {Mundane}
+descriptor_AmuletType_1 {Pagan}
+descriptor_AmuletType_2 {Christian}
+descriptor_SingleCharge {Single-Shot}
+descriptor_MultiCharge {Multi-Shot}
+descriptor_OneHanded {One-Handed}
+descriptor_TwoHanded {Two-Handed}
+descriptor_Bayonet {Bayonet}
+descriptor_PiercingAmmo {Armor-Piercing}
+descriptor_StunAmmo {Stun}
+descriptor_EmpoweredAmmo {Overcharged}
+descriptor_SpyGlass {Surveying}
+descriptor_SpyGlass_Crew_0 {Crew Guess}
+descriptor_SpyGlass_Crew_1 {Crew Estimate}
+descriptor_SpyGlass_Crew_2 {Crew Count}
+descriptor_SpyGlass_Caliber_0 {Cannons}
+descriptor_SpyGlass_Caliber_1 {Armament}
+descriptor_Special {Special}
+descriptor_Tool {Tool}
+descriptor_Valuable {Expensive}
+descriptor_BulletNeedPowder {Gunpowder}
+descriptor_descr_BulletNeedPowder {This ammunition will not fire from the barrel without a measure of gunpowder.}
+descriptor_GrapeAmmo {Grapeshot}
+descriptor_BulletAmmo {Ball}
+descriptor_BombAmmo {Grenade}
+descriptor_HealPotion {Healing}
+descriptor_Alcohol {Intoxicating}
+descriptor_EnhancingPotion {Enhancing}
+descriptor_AntidotePotion {Antidote}
+descriptor_Metal {Metal}
+descriptor_Trinket {Trinket}
+descriptor_descr_Alcohol {Loosens tongues, lightens thoughts, but imposes penalties to skills.}
+descriptor_descr_EnhancingPotion {Has a special enhancing effect.}
+descriptor_descr_AntidotePotion {Removes poisons, stops poisoning.}
+descriptor_descr_Metal {Extracted from the earth and used in alchemy.}
+descriptor_descr_Trinket {Exquisite and not-so-exquisite items that separate those with taste from country folk. Can be traded for doubloons at moneylenders.}
+descriptor_Junk {Junk}
+descriptor_Herb {Herb}
+descriptor_descr_Herb {Gift of the Earth. Mainly used in alchemy to craft poultices and potions.}
+descriptor_descr_Fancy {This item stands out for its ceremonial look, inlays, and costly materials. Wearing it increases Leadership by $number($DescriptorBaseValue(Fancy)). Effects stack.}
+descriptor_descr_Exotic
+{
+This item has no place in the hands of a good Christian, and chilling rumors about its bearer spread instantly.
+Increases Fleet Power by $percent($DescriptorBaseValue(Exotic)); effects stack.
+}
+descriptor_descr_HighQuality {This weapon is crafted so well that its critical damage is increased by $percent($DescriptorBaseValue(HighQuality)).}
+descriptor_descr_GoodFit {This piece of armor fits remarkably well, increasing attack speed with any weapon by $percent($DescriptorBaseValue(GoodFit)).}
+descriptor_descr_HeartDefence {This armor is reinforced at vital points, reducing enemy critical damage by $percent($DescriptorBaseValue(HeartDefence)).}
+descriptor_descr_Unremarkable
+{
+Everyone has items like this. With it, you won’t stand out or be remembered.
+Increases Stealth by $number($DescriptorBaseValue(Unremarkable)). Effects stack.
+}
+descriptor_descr_WeaponType_0 {Light Weapons are lighter, more agile, and mainly designed for one-on-one duels. Attacks with these weapons are 5% faster.}
+descriptor_descr_WeaponType_1 {Medium weapons offer a good balance of weight and speed, making them the most versatile choice. Ideal for brawls and boarding fights.}
+descriptor_descr_WeaponType_2 {Heavy weapons have tremendous weight and deal equally tremendous damage. The trade-off is a 5% reduction in attack speed.}
+descriptor_descr_WeaponLength_0 {This weapon requires closing in on the enemy and is better suited for close-quarters skirmishes.}
+descriptor_descr_WeaponLength_1 {This weapon has good reach and requires open space to be effective.}
+descriptor_descr_WeaponCurvature_0 {This weapon is straight or only slightly curved, making it better suited for fast attacks than for slash attacks.}
+descriptor_descr_WeaponCurvature_1 {This weapon features a pronounced curve and a forward-shifted center of gravity, making it better suited for slash attacks than for fast attacks.}
+descriptor_descr_ArmorType_0 {Light armor is almost indistinguishable from regular clothing and doesn’t restrict movement at all. The trade-off is reduced protection.}
+descriptor_descr_ArmorType_1 {Medium armor somewhat restricts movement, but offers excellent protection for vital organs. Reduces character movement speed by 5%.}
+descriptor_descr_ArmorType_2 {Heavy armor is bulky and unwieldy, but it lets you storm a fortress. Reduces movement speed by 10%.}
+descriptor_descr_ArmorMaterial_0 {Cloth can’t withstand heavy blows, but it protects against scrapes and scratches. Reduces incoming damage by 4%.}
+descriptor_descr_ArmorMaterial_1 {Leather armor might save you in a drunken brawl, but it won’t stop a bullet or a skilled thrust. Reduces incoming damage by 8%.}
+descriptor_descr_ArmorMaterial_2 {Plate is an excellent balance of weight and protection. Can save your life. Reduces incoming damage by 15%.}
+descriptor_descr_ArmorMaterial_3
+{
+Stamped armor is mass-produced to equip troops and is used in European wars. 
+Reduces incoming damage by 22%.
+}
+descriptor_descr_ArmorMaterial_4 {Producing high-quality forged armor is a complex and costly process, which makes it a rare sight in the Caribbean. Reduces incoming damage by 35%.}
+descriptor_descr_AmuletType_0 {Draws on omens, sea superstitions, and real cause-and-effect.}
+descriptor_descr_AmuletType_1 {Draws on the power of pagan gods and native rituals.}
+descriptor_descr_AmuletType_2 {Draws on the power of Christian saints and righteous faith.}
+descriptor_descr_SingleCharge {Only one shot in reserve – make it count.}
+descriptor_descr_MultiCharge {Has multiple barrels, a cylinder, or chambers, allowing for several shots in succession. Requires special skills.}
+descriptor_descr_OneHanded {Hand weapon carried on a belt or sash. Single-shot types require no special handling skills.}
+descriptor_descr_TwoHanded {Heavy firearm that must be held with both hands when firing. Requires special skills to use.}
+descriptor_descr_Bayonet {This long-barreled firearm is equipped with a bayonet, increasing Fast attack damage by 25%.}
+descriptor_descr_PiercingAmmo {This ammo ignores armor on hit.}
+descriptor_descr_StunAmmo {This ammo inflicts penalties on enemies when it hits.}
+descriptor_descr_EmpoweredAmmo {This ammo positively affects weapon properties.}
+descriptor_descr_SpyGlass {Any spyglass reveals a ship’s type, name, condition, speed, and number of cannons.}
+descriptor_descr_SpyGlass_Crew_0 {This spyglass doesn’t let you see the crew clearly, so the estimate is only approximate.}
+descriptor_descr_SpyGlass_Crew_1 {This spyglass lets you accurately count a ship’s crew and spot any musketeers aboard.}
+descriptor_descr_SpyGlass_Crew_2 {This spyglass reveals the exact number of enemy crew and musketeers, as well as the captain’s skills.}
+descriptor_descr_SpyGlass_Caliber_0 {This spyglass has lenses good enough to reveal not just the number of cannons, but their caliber as well.}
+descriptor_descr_SpyGlass_Caliber_1 {The high-quality optics of this spyglass let you see the caliber of cannons and the type of ammo they're loaded with.}
+descriptor_descr_Special {This item has a unique property.}
+descriptor_descr_Tool {A set of complex instruments, worthless to the uninitiated. But you’re not one of them.}
+descriptor_descr_Valuable {Has a high sale value.}
+descriptor_descr_BulletNeedPower {Cannot be fired without a measure of gunpowder.}
+descriptor_descr_GrapeAmmo {Multiple small projectiles. Most effective against groups of enemies, or a single target at close range.}
+descriptor_descr_BulletAmmo {Loaded and fired one at a time. Effective at medium and long range, especially with headshots.}
+descriptor_descr_BombAmmo {Explodes and hits all nearby targets. Especially effective against groups of enemies.}
+descriptor_descr_HealPotion {This potion restores health.}
+descriptor_descr_Junk {Various trinkets found in abundance across the Caribbean. Valuable only to those who know how to use them; otherwise, they gather dust in dark corners.}
+descriptor_Alchemy {Alchemy}
+descriptor_descr_Alchemy {This item can be crafted or modified using Alchemy.}
+descriptor_Quest {Quest}
+descriptor_descr_Quest {This item is required for a quest. It cannot be dropped or sold.}
+descriptor_Map {Map}
+descriptor_descr_Map {A scrap of paper bearing markings of some locality. All such items are immediately copied into the atlas.}
+descriptor_Fragile {Fragile}
+descriptor_descr_Fragile {This item breaks after a certain number of uses.}
+descriptor_Cannoner {$key(Cannoner)}
+descriptor_Boatswain {$key(Boatswain)}
+descriptor_Carpenter {$key(Carpenter)}
+descriptor_Navigator {$key(Navigator)}
+descriptor_Treasurer {$key(Treasurer)}
+descriptor_Doctor {$key(Doctor)}
+descriptor_descr_Cannoner {Effect applies to the Cannoneer.}
+descriptor_descr_Boatswain {Effect applies to the Boatswain.}
+descriptor_descr_Carpenter {Effect applies to the Carpenter.}
+descriptor_descr_Navigator {Effect applies to the Navigator.}
+descriptor_descr_Treasurer {Effect applies to the Treasurer.}
+descriptor_descr_Doctor {Effect applies to the Doctor.}
+descriptor_Ingredient {Ingredient}
+descriptor_Jewelery {Jewel}
+descriptor_descr_Jewelery {Precious and semi-precious stones. Can be sold or used in alchemy.}
+descriptor_descr_Ingredient {This item is used in alchemy.}
+descriptor_Alternate {Adjustment}
+descriptor_descr_Alternate {The perk has one effect for the main hero and a different effect for all other characters.}
+descriptor_IntoxicatingPotion {Intoxicating}
+descriptor_descr_IntoxicatingPotion {Loosens tongues, lightens thoughts, but imposes penalties to skills.}
+descriptor_Fighter {$key(Fighter)}
+descriptor_descr_Fighter {Effect is useful for Vanguards.}

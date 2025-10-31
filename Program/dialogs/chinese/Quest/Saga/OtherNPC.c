@@ -37,15 +37,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Jimmy_fight":
-			chrDisableReloadToLocation = true;//关闭地点
 			DialogExit();
-			LAi_SetImmortal(npchar, false);
-			LAi_SetWarriorType(npchar);
-			LAi_group_MoveCharacter(npchar, "EnemyFight");
-			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
-			LAi_group_FightGroups("EnemyFight", LAI_GROUP_PLAYER, true);
-			LAi_group_SetCheck("EnemyFight", "Saga_KillJimmy");
-			AddDialogExitQuest("MainHeroFightModeOn");	
+			AddDialogExitQuestFunction("Saga_Jimmy_fight");
 		break;
 		
 		case "Jimmy_1_2":
@@ -95,16 +88,13 @@ void ProcessDialogEvent()
 		case "Jimmy_8_1":
 			dialog.text = "你... 你说什么? ! ";
 			link.l1 = "你不会有机会告诉别人了... ";
-			link.l1.go = "Jimmy_fight";
-			pchar.questTemp.Saga.Jimmysecret = "true";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("Saga_KillToJimmy_kino");
 		break;
 		
 		case "Jimmy_8_2":
 			DialogExit();
-			pchar.questTemp.Saga = "jackman";
-			LAi_CharacterDisableDialog(npchar);
-			npchar.lifeday = 0;
-			AddQuestRecord("Saga", "4_1");
+			AddDialogExitQuestFunction("Saga_Jimmy_DlgExit");
 		break;
 // < —吉米 
 		
@@ -1130,25 +1120,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attackx":
 			dialog.text = "真的吗? 那你一定知道密码。 说出来, 如果你撒谎, 你会后悔的... ";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attackx_1";
+			link.l1 = "特里同";
+			link.l1.go = "mine_wrongx_password";
+			link.l2 = "海王星";
+			link.l2.go = "mine_attackx_1";
+			link.l3 = "百夫长";
+			link.l3.go = "mine_wrongx_password";
+			link.l4 = "鱼叉";
+			link.l4.go = "mine_wrongx_password";
 		break;
 		
 		case "mine_attackx_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "正确。 但你, 伙计, 从错误的一侧来了。 他们没警告过你吗? 回去, 从枯井走左边的路。 然后绕过小山, 你就会看到正门。 ";
-				link.l1 = "我不能从这里进吗? ";
-				link.l1.go = "mine_attackx_2";
-			}
-			else
-			{
-				dialog.text = "伙计们, 有探子! 火枪准备! 开火!! ";
-				link.l1 = "... ";
-				link.l1.go = "mine_banditx_fire";
-			}
+			dialog.text = "正确。 但你, 伙计, 从错误的一侧来了。 他们没警告过你吗? 回去, 从枯井走左边的路。 然后绕过小山, 你就会看到正门。 ";
+			link.l1 = "我不能从这里进吗? ";
+			link.l1.go = "mine_attackx_2";
+		break;
+		
+		case "mine_wrongx_password":
+			dialog.text = "伙计们, 有探子! 火枪准备! 开火!! ";
+			link.l1 = "... ";
+			link.l1.go = "mine_banditx_fire";
 		break;
 		
 		case "mine_attackx_2":
@@ -1172,25 +1163,26 @@ void ProcessDialogEvent()
 		
 		case "mine_attack":
 			dialog.text = "真的吗? 那你应该知道密码。 说出来, 让我听到。 如果你想骗我, 那将是你这辈子对别人开的最后一个玩笑。 ";
-			link.l1.edit = 5;
-			link.l1 = "";
-			link.l1.go = "mine_attack_1";
+			link.l1 = "特里同";
+			link.l1.go = "mine_wrong_password";
+			link.l2 = "海王星";
+			link.l2.go = "mine_attack_1";
+			link.l3 = "百夫长";
+			link.l3.go = "mine_wrong_password";
+			link.l4 = "鱼叉";
+			link.l4.go = "mine_wrong_password";
 		break;
 		
 		case "mine_attack_1":
-			sTemp = GetStrSmallRegister(dialogEditStrings[5]);
-			if (sTemp == "neptune")
-			{
-				dialog.text = "正确。 往前走。 营地的头儿在矿场入口左边的房子里。 去见他。 ";
-				link.l1 = "好的, 伙计... ";
-				link.l1.go = "mine_attack_2";
-			}
-			else
-			{
-				dialog.text = "伙计们, 有探子! 加农炮, 开火!! ";
-				link.l1 = "... ";
-				link.l1.go = "mine_bandit_fire";
-			}
+			dialog.text = "正确。 往前走。 营地的头儿在矿场入口左边的房子里。 去见他。 ";
+			link.l1 = "好的, 伙计... ";
+			link.l1.go = "mine_attack_2";
+		break;
+		
+		case "mine_wrong_password":
+			dialog.text = "伙计们, 有探子! 加农炮, 开火!! ";
+			link.l1 = "... ";
+			link.l1.go = "mine_bandit_fire";
 		break;
 		
 		case "mine_attack_2":
@@ -1565,7 +1557,7 @@ void ProcessDialogEvent()
 			int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE+5;
 			int iScl = 25+2*sti(pchar.rank);
 			sld = GetCharacter(NPC_GenerateCharacter("Alexs_bandos_5", "mush_ctz_8", "man", "mushketer", iRank, PIRATE, -1, false, "soldier"));
-			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "cartridge", iScl*2+50);
+			FantomMakeCoolFighter(sld, iRank, iScl, iScl, "", "mushket1", "bullet", iScl*2+50);
 			ChangeCharacterAddressGroup(sld, "Bermudes_Dungeon", "monsters", "monster8");
 			LAi_group_MoveCharacter(sld, "EnemyFight");
 			LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -1631,7 +1623,7 @@ void ProcessDialogEvent()
 			Log_Info("获得护身符'丘比特香膏'! ");
 			PlaySound("interface\important_item.wav");
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("海伦不赞成", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_TalkedToGypsy");
 		break;
@@ -2079,7 +2071,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) - 1;
-			notification("海伦不赞成", "Helena");
+			Notification_Approve(false, "Helena");
 			
 			AddDialogExitQuestFunction("HelenDrinking_FinishFrancois");
 		break;
@@ -2088,7 +2080,7 @@ void ProcessDialogEvent()
 			DialogExit();
 			
 			pchar.questTemp.Saga.HelenRelation = sti(pchar.questTemp.Saga.HelenRelation) + 1;
-			notification("海伦赞成", "Helena");
+			Notification_Approve(true, "Helena");
 			AddCharacterExpToSkill(pchar, SKILL_LEADERSHIP, 300);
 			AddCharacterExpToSkill(pchar, SKILL_FORTUNE, 300);
 			

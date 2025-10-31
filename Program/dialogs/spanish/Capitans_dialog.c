@@ -281,7 +281,7 @@ void ProcessDialogEvent()
 			if (CheckAttribute(NPChar, "EncGroupName") && !bOk) // только для фантомов грабеж
 			{
                 iCapBattleDifficulty = CalcBattleDifficulty();
-                link.l2 = "(Шанс " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("¿Tienes alguna idea de quién soy? Creo que queda perfectamente claro que mis armas pueden convertir tu vieja bañera un colador. Resolvamos esto de manera pacífica. El rescate me parece una buena decisión.", "Solo nosotros... y el mar... ¿Qué te parece si aplacas a mis hombres... por tu propia seguridad?");
+                link.l2 = "(Probabilidad de intimidación: " + iCapBattleDifficulty + "%%) " + RandPhraseSimple("¿Sabes quién soy? Mis cañones podrían convertir tu cascarón en un colador. Arreglémoslo en paz: un rescate me basta.", "El mar... y solo nosotros... ¿Qué tal si, por la seguridad de tu tripulación, haces una pequeña ofrenda para contentar a mis muchachos?");
 				link.l2.go = "Talk_board";
 			}
 			if (CheckAttribute(NPChar, "Ship.Mode") && NPChar.Ship.Mode == "Trade")
@@ -604,8 +604,8 @@ void ProcessDialogEvent()
         //if ((Group_GetCharactersNum(NPChar.EncGroupName) - Group_GetDeadCharactersNum(NPChar.EncGroupName)) > GetCompanionQuantity(PChar) && rand(11) > GetCharacterSkillToOld(PChar, SKILL_FORTUNE))
         if(!bOk && iCapBattleDifficulty <= 33)
 		{
-			Dialog.text = "¡Ja-ja-ja! Buen chiste, tengo más barcos. Regresa a tu barco y ahógate con él.";
-			link.l1 = "Más no significa más fuerte, compañero.";
+			Dialog.text = "¡Ja, ja! Buen chiste. Sobre todo porque tengo la clara ventaja. Vuelve a tu barco y húndete con él.";
+			link.l1 = "...";
 			link.l1.go = "Boarding";
 		}
 		else
@@ -815,7 +815,7 @@ void ProcessDialogEvent()
 
 	case "attack_fort":
 		dialog.text = "¿Y qué quieres decir?";
-		link.l1 = "Puedo ayudarte a aplastar el fuerte de la colonia de " + GetConvertStr(aData.Colony + " Town", "LocLables.txt") + " y captura la ciudad, y un botín, resultando en el caso de nuestro éxito, nos dividimos entre nosotros.";
+		link.l1 = "Puedo ayudarte a aplastar el fuerte de la colonia de " + GetConvertStr(aData.Colony + " Pueblo", "LocLables.txt") + " y captura la ciudad, y un botín, resultando en el caso de nuestro éxito, nos dividimos entre nosotros.";
 		link.l1.go = "Siegehelp_1";
 		link.l2 = "En realidad, mis asuntos apenas valen tu tiempo. Adiós, " + GetAddress_FormToNPC(NPChar) + ".";
 		link.l2.go = "exit";

@@ -123,34 +123,7 @@ void ProcessDialogEvent()
 		dialog.text = "No te preocupes por eso. Cuando tu vieja bañera fue arrestada, llevé a todos tus oficiales y a algunos de los marineros a bordo de mi 'Crepúsculo'. Saben que estás vivo y acordaron permanecer en servicio. Y como recompensa por el diario, te cedo mi barco 'Crepúsculo'.";
 		link.l1 = "¡Gracias! ¡Recordaré eso!";
 		link.l1.go = "SJ_talk_9";
-		if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
-		{
-			pchar.Ship.Type = GenerateShipHand(pchar, SHIP_CAREERLUGGER, 12, 580, 30, 800, 20000, 16.5, 65.5, 1.6);
-		}
-		else
-		{
-			pchar.Ship.Type = GenerateShipHand(pchar, SHIP_SCHOONER, 16, 1900, 50, 1350, 25000, 13.5, 55.0, 1.10);
-		}
-		pchar.Ship.name = "Twilight";
-		SetBaseShipData(pchar);
-		if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 46)
-			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS12;
-		else
-			pchar.Ship.Cannons.Type = CANNON_TYPE_CANNON_LBS16;
-		SetCrewQuantityFull(pchar);
-		pchar.Ship.Crew.Morale = 80;
-		pchar.Ship.Crew.Exp.Sailors = 90;
-		pchar.Ship.Crew.Exp.Cannoners = 70;
-		pchar.Ship.Crew.Exp.Soldiers = 70;
-		SetCharacterGoods(pchar, GOOD_BALLS, 100);
-		SetCharacterGoods(pchar, GOOD_GRAPES, 100);
-		SetCharacterGoods(pchar, GOOD_KNIPPELS, 100);
-		SetCharacterGoods(pchar, GOOD_BOMBS, 100);
-		SetCharacterGoods(pchar, GOOD_FOOD, 100);
-		SetCharacterGoods(pchar, GOOD_POWDER, 300);
-		SetCharacterGoods(pchar, GOOD_WEAPON, 60);
-		SetCharacterGoods(pchar, GOOD_MEDICAMENT, 60);
-		break;
+	break;
 
 	case "SJ_talk_8":
 		AddMoneyToCharacter(pchar, 15000);
@@ -166,13 +139,9 @@ void ProcessDialogEvent()
 		break;
 
 	case "SJ_talk_10":
-		LAi_SetActorType(npchar);
-		LAi_ActorGoToLocation(npchar, "reload", "reload1_back", "none", "", "", "", 10);
 		DialogExit();
-		AddQuestRecord("Holl_Gambit", "3-13");
-		pchar.questTemp.HWIC.Self = "HuntFleetwood";
-		AddLandQuestMark(characterFromId("Merdok"), "questmarkmain");
-		break;
+		AddDialogExitQuestFunction("HollandGambit_NewShipTwilight");
+	break;
 
 	case "SJ_talk_11":
 		dialog.text = "Me gustaría presentarte esta armadura por eliminar a Fleetwood. Te protegerá en futuras batallas. Ahora vamos a ver a John. Quiere hablar contigo y ofrecerte... un asunto interesante.";
@@ -199,7 +168,8 @@ void ProcessDialogEvent()
 		link.l2.go = "Tonzag_exit";
 		break;
 
-	case "Tonzag_hired_1": // Тонзага - в офицеры
+	case "Tonzag_hired_1":
+		ForceHeroAutolevel(npchar); // Тонзага - в офицеры
 		DialogExit();
 		DeleteAttribute(npchar, "LifeDay");
 		npchar.quest.OfficerPrice = sti(pchar.rank) * 500;
@@ -217,7 +187,7 @@ void ProcessDialogEvent()
 		npchar.Health.HP = 60.0;
 		npchar.Health.maxHP = 60.0;
 		LAi_SetImmortal(npchar, false);
-		SetCharacterPerk(npchar, "ShipEscape");
+	
 		LAi_group_MoveCharacter(npchar, LAI_GROUP_PLAYER);
 		SaveCurrentNpcQuestDateParam(npchar, "HiredDate");
 		break;

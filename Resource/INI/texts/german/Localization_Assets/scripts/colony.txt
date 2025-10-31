@@ -1,109 +1,22 @@
-colony_1
-{
-Wegen des Mangels an Medikamenten für Wunden starben  @<iTemp>  Seeleute.
-}
-
-colony_2
-{
-Auf dem Schiff  @<Pchar.Ship.Name>  gibt es nur noch wenige medizinische Vorräte.
-}
-
-colony_3
-{
-Kampf um die Stadt vorbereiten
-}
-
-colony_4
-{
-ERROR: Не задан обход города при захвате!!!
-}
-
-colony_5
-{
-Die feindlichen Kräfte sind zurückgedrängt! Der Weg ist frei.
-}
-
-colony_6
-{
-Sie haben erhalten ~
-}
-
-colony_7
-{
-Sie haben erhalten ~
-}
-
-colony_8
-{
-Sie haben erhalten - Axt
-}
-
-colony_9
-{
-Sie haben erhalten - Sächsische Feder
-}
-
-colony_10
-{
-Sie haben erhalten - Madonna
-}
-
-colony_11
-{
-Chevalier Philippe
-}
-
-colony_12
-{
-de Poincy
-}
-
-colony_13
-{
-lord Thomas
-}
-
-colony_14
-{
-Vindzor
-}
-
-colony_15
-{
-don Juan
-}
-
-colony_16
-{
-de Cordova
-}
-
-colony_17
-{
-colonel
-}
-
-colony_18
-{
-Jonathan Fox
-}
-
-colony_19
-{
-Unsere Stadt @<GetCityName(city)> wird belagert!
-}
-
-colony_20
-{
-Die Belagerung ist beendet!
-}
-
-colony_21
-{
-Unsere Stadt @<GetCityName(city)> wird belagert!
-}
-
-colony_22
-{
-Unsere Stadt @<GetCityName(city)> wurde eingenommen!
-}
+colony_1 {Wegen des Mangels an Medikamenten für Wunden starben  @<iTemp>  Seeleute.}
+colony_2 {Auf dem Schiff  @<Pchar.Ship.Name>  gibt es nur noch wenige medizinische Vorräte.}
+colony_3 {Kampf um die Stadt vorbereiten}
+colony_4 {ERROR: Не задан обход города при захвате!!!}
+colony_5 {Die feindlichen Kräfte sind zurückgedrängt! Der Weg ist frei.}
+colony_6 {Sie haben erhalten ~}
+colony_7 {Sie haben erhalten ~}
+colony_8 {Sie haben erhalten - Axt}
+colony_9 {Sie haben erhalten - Sächsische Feder}
+colony_10 {Sie haben erhalten - Madonna}
+colony_11 {Chevalier Philippe}
+colony_12 {de Poincy}
+colony_13 {lord Thomas}
+colony_14 {Vindzor}
+colony_15 {don Juan}
+colony_16 {de Cordova}
+colony_17 {colonel}
+colony_18 {Jonathan Fox}
+colony_19 {Unsere Stadt @<GetCityName(city)> wird belagert!}
+colony_20 {Die Belagerung ist beendet!}
+colony_21 {Unsere Stadt @<GetCityName(city)> wird belagert!}
+colony_22 {Unsere Stadt @<GetCityName(city)> wurde eingenommen!}

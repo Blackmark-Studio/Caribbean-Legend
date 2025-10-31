@@ -197,7 +197,7 @@ void AddToTable()
 	aref refGoods;
 	n = 1;
 	Table_Clear("TABLE_LIST", false, true, false);
-    for (i = 0; i< GOODS_QUANTITY; i++)
+    for (i = 0; i< GetArraySize(&Goods); i++)
 	{
         row = "tr" + n;
 		sGood = Goods[i].name;
@@ -349,7 +349,7 @@ void CS_TableSelectChange()
 void FillShipsScroll()
 {
 	nCurScrollNum = -1;
-	FillScrollImageWithCompanionShips("SHIPS_SCROLL", 5);
+	FillScrollImageWithCompanionShips("SHIPS_SCROLL", COMPANION_MAX);
 
 	if(!CheckAttribute(&GameInterface,"SHIPS_SCROLL.current"))
 	{

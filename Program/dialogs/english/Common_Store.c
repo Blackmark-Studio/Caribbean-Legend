@@ -63,19 +63,15 @@ void ProcessDialogEvent()
 		case "First time":
 			if (LAi_grp_playeralarm > 0)
 			{
-				dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("The Alarm is raised in the town, and everyone is looking for you. If I were you, I wouldn't stay there.", "All the city guards are scouring the town looking for you. I am not a fool and I will not talk to you!", "Run, "+ GetSexPhrase("mate","lass") +", before the soldiers turn you into a sieve..."), 
-					LinkRandPhrase("What do you need, "+ GetSexPhrase("scoundrel","rascal") +"?! The city guards already have your scent, you won't get far, "+ GetSexPhrase("filthy pirate","murderous filth") +"!", "Filthy murderer, leave my house at once! Guards!", "I don't fear you, "+ GetSexPhrase("creep","stinker") +"! Soon you will be hanged in our fort, you won't get far..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Heh, an alarm is never a problem for me...", "They will never get me."), 
-					RandPhraseSimple("Shut your fucking mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I'll rip your filthy tongue!!", "Heh, " + GetWorkTypeOfMan(npchar, "") + ", and everyone there - are here to catch pirates! Here's what I'll tell you, mate: sit quietly and you will not die..."));
+				dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("The alarm has been raised in the town, and everyone is looking for you. If I were you, I wouldn't stay there.","All the city guards are scouring the town looking for you. I am not a fool and I will not talk to you!","Run, "+GetSexPhrase("mate","lass")+", before the soldiers turn you into a sieve..."),LinkRandPhrase("What do you need, "+GetSexPhrase("scoundrel","rascal")+"?! The city guards already have your scent, you won't get far, "+GetSexPhrase("filthy pirate","murderous filth")+"!","Filthy murderer, get out of my house at once! Guards!","I don't fear you, "+GetSexPhrase("creep","stinker")+"! Soon you will be hanged in our fort, you won't get far..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Heh, an alarm is never a problem for me...","They will never catch me."),RandPhraseSimple("Shut your bloody mouth, "+GetWorkTypeOfMan(npchar,"")+", or I'll rip out your filthy tongue!!","Heh, "+GetWorkTypeOfMan(npchar,"")+", and everyone there is here to catch pirates! Here's what I'll tell you, mate: sit quietly and you will not die..."));
 				link.l1.go = "fight";
 				break;
 			}
 			if (sti(pchar.GenQuest.Piratekill) > 20 && sti(npchar.nation) == PIRATE)
 			{
-				dialog.text = RandPhraseSimple("Hey, bastard! Do you think you can take whatever you want? Certainly not! Guys! To arms! Cut the psycho!", "If you want something, buy it, you beast! Now I will show you what's what! Guys, get your weapons! Alert!");
-				link.l1 = RandPhraseSimple("Huh? What?", "Uh, why are you doing this?");
+				dialog.text = RandPhraseSimple("Hey, bastard! Do you think you can take whatever you want? Certainly not! Guys! To arms! Cut down the psycho!","If you want something, buy it, you brute! Now I'll show you what's what! Guys, grab your weapons! Alert!");
+				link.l1 = RandPhraseSimple("Huh? What?","Uh, why are you doing this?");
 				link.l1.go = "fight";
 				bDisableFastReload = true;//закрыть переход
 				pchar.quest.pirate_in_town.win_condition.l1 = "ExitFromLocation";
@@ -89,7 +85,7 @@ void ProcessDialogEvent()
 				//Jason --> мини-квест Дефицитный товар
 				if (CheckAttribute(pchar, "questTemp.Wine.Trader") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 				{
-					link.l13 = "I'd like to purchase a batch of European wine from you - fifty-sixty bottles. I was told that you had enough of it in stock."; 
+					link.l13 = "I'd like to purchase a batch of European wine from you – fifty or sixty bottles. I was told that you have enough in stock."; 
 					link.l13.go = "Wine_Trader";
 				}
 				if (CheckAttribute(pchar, "questTemp.Wine.Repeat2") && NPChar.location == pchar.questTemp.Wine.City + "_store" && CheckCharacterItem(pchar, "letter_1") && !CheckAttribute(pchar, "questTemp.Wine.fail"))
@@ -99,14 +95,14 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(pchar, "questTemp.Wine.wait") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 				{
-					link.l13 = "It's me again. Can we resume our interrupted wine deal? I managed to raise enough money."; 
+					link.l13 = "It's me again. Can we resume our interrupted wine deal? I've managed to raise enough money."; 
 					link.l13.go = "Wine_Price";
 				}
 				// <-- мини-квест Дефицитный товар
 				dialog.text = "Did you want to buy something, monsieur?";
 				Link.l1 = "Of course I did - what else are the stores for? Show me your wares.";
 				Link.l1.go = "trade_1";
-				Link.l2 = "I come for a particular business purpose...";
+				Link.l2 = "I've come for a particular business purpose...";
 				Link.l2.go = "quests";
 				Link.l3 = "I am sorry, but I have to go.";
 				Link.l3.go = "exit";
@@ -115,7 +111,7 @@ void ProcessDialogEvent()
 				{
 					if (!CheckAttribute(npchar, "quest.storehelper") && pchar.questTemp.Sharlie == "ship")
 					{
-						Link.l2 = "Listen, monsieur, I'm looking for a job. Not like a full-time job or labor hauling bags of cargo, but more like running errands, so to speak. Do you happen to need assistance?";
+						Link.l2 = "Listen, monsieur, I'm looking for work. Not a full-time position or hauling cargo, but more like running errands, so to speak. Do you happen to need any assistance?";
 						Link.l2.go = "Sharlie_storehelper";
 					}
 					if (CheckAttribute(pchar, "questTemp.Sharlie.Storehelper") && pchar.questTemp.Sharlie.Storehelper == "return")
@@ -135,7 +131,7 @@ void ProcessDialogEvent()
 					}
 					if (CheckAttribute(pchar, "questTemp.Sharlie.Junglejew") && !CheckAttribute(npchar, "quest.junglejew"))
 					{
-						link.l4 = "Take a look at these earrings, monsieur. I've found them on the body of a bandit that was killed in the jungle. This is clearly the work of a fine jeweler which, I'm sure, is not from around here. Is there anything you can say about these earrings?";
+						link.l4 = "Take a look at these earrings, monsieur. I found them on the body of a bandit who was killed in the jungle. This is clearly the work of a fine jeweler which, I'm sure, is not from around here. Is there anything you can say about these earrings?";
 						link.l4.go = "Sharlie_junglejew";
 					}
 				}
@@ -146,7 +142,7 @@ void ProcessDialogEvent()
 			// Warship, 29.05.11. Дело чести - трусливый фехтовальщик.
 			if(CheckAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk"))
 			{
-				dialog.text = "Captain, thanks for saving me.";
+				dialog.text = "Captain, thank you for saving me.";
 				Link.l1 = "Oh, you're welcome.";
 				Link.l1.go = "exit";
 				DeleteAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk");
@@ -155,8 +151,8 @@ void ProcessDialogEvent()
 			// Карибские нравы
 			if(CheckAttribute(npchar, "quest.trial_usurer"))
 			{
-				dialog.text = "What's up, captain? Have you lost something? Why are you running around in my shop like that?";
-				Link.l1 = "Well, imagine that - I actually have! Where is that cursed Gerard LeCroix? I have fulfilled all the tasks given to me by Florian Shoke, and, may the shark swallow me whole, I had a damn hard time doing that! And now, when I come to collect my reward, it turns out that this bird is flown!";
+				dialog.text = "What's the matter, captain? Have you lost something? Why are you running around my shop like that?";
+				Link.l1 = "Well, imagine that - I actually have! Where is that cursed Gerard LeCroix? I have fulfilled all the tasks given to me by Florian Shoke, and, may a shark swallow me whole, I had a damn hard time doing that! And now, when I come to collect my reward, it turns out that this bird has flown!";
 				Link.l1.go = "trial";
 				// belamour legendary edition -->
 				Link.l2 = "How can I tell you... Lost. Have you seen my client? His name is Gerard LeCroix.";
@@ -168,20 +164,20 @@ void ProcessDialogEvent()
 			// belamour legendary edition Бесчестный конкурент -->
 			if(!CheckAttribute(pchar, "questTemp.Shadowtrader") && sti(npchar.nation) != PIRATE && npchar.location == "baster_store")
 			{
-				dialog.text = "Captain, I want to ask you one favor. Will you help me?";
-				link.l1 = "How can i help you?"; 
+				dialog.text = "Captain, I want to ask you a favour. Will you help me?";
+				link.l1 = "How can I help you?"; 
 				link.l1.go = "Shadowtrader_begin";
 				break;
 			}
 			// <-- legendary edition			
-            dialog.Text = GetNatPhrase(npchar, LinkRandPhrase("Nice to meet you, sir! Are you new to these lands?","Welcome, captain! My store is at your service, sir.","Sir, please come in! I am happy to offer you the very best wares you can buy on this archipelago."), LinkRandPhrase("Oh, monsieur captain! The best wares in all the French colonies - right here and now and exclusively for you!","What a nice meeting, monsieur! The best shop offering the best French wares - at your service!","Have we met before, monsieur captain? You know, my shop is as fine as the best stores in the mother country!"), LinkRandPhrase("Oh! Senor captain! I am so glad to see you in my store!","I am happy to greet such a brilliant caballero in the best store of all the Spanish colonies!","Oh, noble hidalgo! Fate itself has brought you to my humble shop! Here you will find whatever you might want!"),LinkRandPhrase("Good afternoon, mynheer captain. Is this your first visit here?","Hello, mynheer. Have you come here for the first time? I assure you that the quality of our Dutch goods will pleasantly surprise you!","Please come in, mynheer captain! The very best wares at the lowest prices available - that's the Dutch way of commerce!"));
-			Link.l1 = LinkRandPhrase("Nice to meet you, too. My name is "+GetFullName(pchar)+" and I am rather new to these lands. Well, show me the riches of the archipelago!","Nice to meet you, too. I am "+GetFullName(pchar)+". captain of the ship '"+pchar.ship.name+"'. So, what are the hot deals?",""+GetFullName(pchar)+", captain of ship '"+pchar.ship.name+"', nice meeting you. So, what can you offer me?");
+            dialog.Text = GetNatPhrase(npchar,LinkRandPhrase("Nice to meet you, sir! Are you new to these lands?","Welcome, captain! My store is at your service, sir.","Sir, please come in! I am happy to offer you the finest wares you can buy on this archipelago."),LinkRandPhrase("Oh, monsieur captain! The finest wares in all the French colonies - right here, right now, and exclusively for you!","What a pleasant meeting, monsieur! The finest shop offering the best French wares - at your service!","Have we met before, monsieur captain? You know, my shop is as fine as the best stores in the mother country!"),LinkRandPhrase("Oh! Señor captain! I am so glad to see you in my store!","I am happy to welcome such a brilliant caballero to the finest store in all the Spanish colonies!","Oh, noble hidalgo! Fate itself has brought you to my humble shop! Here you will find whatever you may desire!"),LinkRandPhrase("Good afternoon, mynheer captain. Is this your first visit here?","Hello, mynheer. Is this your first time here? I assure you, the quality of our Dutch goods will pleasantly surprise you!","Please come in, mynheer captain! The very best wares at the lowest prices available - that's the Dutch way of commerce!"));
+			Link.l1 = LinkRandPhrase("Nice to meet you, too. My name is "+GetFullName(pchar)+" and I am rather new to these lands. Well, show me the riches of the archipelago!","Nice to meet you, too. I am "+GetFullName(pchar)+". captain of the ship '"+pchar.ship.name+"'. So, what are the hot deals?",""+GetFullName(pchar)+", captain of the ship '"+pchar.ship.name+", nice meeting you. So, what can you offer me?");
 			link.l1.go = "node_1";
 			
 			if(startHeroType == 4 && NPChar.location == "SantaCatalina_store")
 			{
 				dialog.text = "Captain Helen! Always a pleasure.";
-				link.l1 = "As am I to you, thank you.";
+				link.l1 = "As I am to you, thank you.";
 				link.l1.go = "Helen_node_1";
 			}
 			NextDiag.TempNode = "Second time";
@@ -190,12 +186,8 @@ void ProcessDialogEvent()
 		case "second time":
 			if (LAi_group_GetPlayerAlarm() > 0)
 			{
-       			dialog.text = NPCharRepPhrase(pchar, 
-					LinkRandPhrase("The alarm is raised in the town, and everyone is looking for you. If I were you, I wouldn't stay there.", "All the city guards are scouring the town looking for you. I am not a fool and I will not talk to you!", "Run, "+ GetSexPhrase("mate","lass") +", before the soldiers turn you into a sieve..."), 
-					LinkRandPhrase("What do you need, "+ GetSexPhrase("scoundrel","rascal") +"?! The city guards already have your scent, you won't get far, "+ GetSexPhrase("filthy pirate","murderous filth") +"!", "Filthy murderer, leave my house at once! Guards!", "I don't fear you, "+ GetSexPhrase("creep","stinker") +"! Soon you will be hanged in our fort, you won't get far..."));
-				link.l1 = NPCharRepPhrase(pchar,
-					RandPhraseSimple("Heh, an alarm is never a problem for me...", "They will never get me."), 
-					RandPhraseSimple("Shut your mouth, " + GetWorkTypeOfMan(npchar, "") + ", or I'll rip your filthy tongue!", "Heh, " + GetWorkTypeOfMan(npchar, "") + ", and everyone there - are here to catch pirates! Here's what I'll tell you, mate: sit quietly and you will not die..."));
+       			dialog.text = NPCharRepPhrase(pchar,LinkRandPhrase("The alarm has been raised in the town, and everyone is looking for you. If I were you, I wouldn't stay there.","All the city guards are scouring the town looking for you. I am not a fool and I will not talk to you!","Run, "+GetSexPhrase("mate","lass")+", before the soldiers turn you into a sieve..."),LinkRandPhrase("What do you need, "+GetSexPhrase("scoundrel","rascal")+"?! The city guards already have your scent, you won't get far, "+GetSexPhrase("filthy pirate","murderous filth")+"!","Filthy murderer, leave my house at once! Guards!","I don't fear you, "+GetSexPhrase("creep","stinker")+"! Soon you will be hanged in our fort, you won't get far..."));
+				link.l1 = NPCharRepPhrase(pchar,RandPhraseSimple("Heh, an alarm is never a problem for me...","They will never get me."),RandPhraseSimple("Shut your mouth, "+GetWorkTypeOfMan(npchar,"")+", or I'll rip out your filthy tongue!","Heh, "+GetWorkTypeOfMan(npchar,"")+", and everyone there - is here to catch pirates! Here's what I'll tell you, mate: sit quietly and you will not die..."));
 				link.l1.go = "fight";
 				break;
 			}
@@ -203,8 +195,8 @@ void ProcessDialogEvent()
 			//--> Jason, Сомнительное предложение
 			if (CheckAttribute(pchar, "GenQuest.Contraoffer.Trader.busy"))
 			{
-				dialog.text = "Please, excuse me, but I have no time for you now.";
-				link.l1 = "Yes, sure. I'll drop in some other time, then.";
+				dialog.text = "Please, excuse me, but I have no time for you right now.";
+				link.l1 = "Yes, sure. I'll drop by some other time, then.";
 				link.l1.go = "exit";
 				break;
 			}
@@ -213,7 +205,7 @@ void ProcessDialogEvent()
 			// Warship, 29.05.11. Дело чести - трусливый фехтовальщик.
 			if(CheckAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk"))
 			{
-				dialog.text = "Captain, thanks for saving me.";
+				dialog.text = "Captain, thank you for saving me.";
 				Link.l1 = "Oh, you're welcome.";
 				Link.l1.go = "exit";
 				DeleteAttribute(PChar, "QuestTemp.AffairOfHonor.CowardFencer.CanTraderTalk");
@@ -222,8 +214,8 @@ void ProcessDialogEvent()
 			// Карибские нравы
 			if(CheckAttribute(npchar, "quest.trial_usurer"))
 			{
-				dialog.text = "What's up, captain? Have you lost something? Why are you running around in my shop like that?";
-				Link.l1 = "Well, imagine that - I actually have! Where is that cursed Gerard LeCroix? I have fulfilled all tasks given to me by Florian Shoke, and, may the shark swallow me in whole, I had a damn hard time doing that! And now, when I come to collect my reward, it turns out that this bird is flown!";
+				dialog.text = "What's the matter, captain? Have you lost something? Why are you running around my shop like that?";
+				Link.l1 = "Well, imagine that - I actually have! Where is that cursed Gerard LeCroix? I have fulfilled all the tasks given to me by Florian Shoke, and, may the shark swallow me whole, I had a damn hard time doing it! And now, when I come to collect my reward, it turns out that this bird has flown!";
 				Link.l1.go = "trial";
 				// belamour legendary edition -->
 				Link.l2 = "How can I tell you... Lost. Have you seen my client? His name is Gerard LeCroix.";
@@ -235,130 +227,43 @@ void ProcessDialogEvent()
  			// belamour legendary edition Бесчестный конкурент -->
 			if(!CheckAttribute(pchar, "questTemp.Shadowtrader") && sti(npchar.nation) != PIRATE && npchar.location == "baster_store")
 			{
-				dialog.text = "Captain, I want to ask you one favor. Will you help me?";
-				link.l1 = "How can i help you?"; 
+				dialog.text = "Captain, I want to ask you a favour. Will you help me?";
+				link.l1 = "How can I help you?"; 
 				link.l1.go = "Shadowtrader_begin";
 				break;
 			}
 			// <-- legendary edition           
-			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's there! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Wanna trade or just take some stuff for free? Hey, just kidding...","Can't say that I am glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Wanna trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are shunning you, and this is bad for my business,"),LinkRandPhrase("Wanna trade, mynheer? Just a second, I will cash up - you know, there are dubious types around... Of course, I don't mean you, captain!","If I saw you in the open sea, "+GetAddress_Form(NPChar)+", I would likely order to add sails... But here, in my shop, I can offer you to trade.","Cap, I will warn you right away: if the fabric is stained with blood and coffee stinks with gunpowder, I won't take it. Otherwise take a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to greet you again, "+GetAddress_Form(NPChar)+"! Buying or seling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I am always happy to see my favourite customer here. What will it be this time - buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I am so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your pick.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I am glad to see you again! Wanna take a look at the assortment of our wares?","Glad to see you, captain! I knew that you would like our quality goods. Wanna take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please come in! All the wares just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, make your pick, whatever you like!","What would you like this time, captain? I am glad that you still remember how to find me. We have all the wares you might need - the very best quality!")));
-			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("That's how you're welcoming me, mate? Well, I'll remember that if we meet at the sea... Stop trembling, I was just kidding. Show me what you've got.","Alright, mate. I might need your wares, but I don't need your tongue. Can you hold it or you will need help with that? Shut up and show me your wares."),RandPhraseSimple("Let's get closer to business, huckster. I have no time to discuss morale issues with you, so let's just trade like decent people.","Hold your horses, mate. Kidding is fine, but keep in mind that I can get angry... So stop irritating me and just show me your wares.")),RandPhraseSimple(RandPhraseSimple("Always happy to visit you, mate. What do you have in stock that would be worth my attention?","Always good to see you, mate. So, what's new is there for sea wanderers who haven't been on dry land for months?"),RandPhraseSimple("And once again I am in "+XI_ConvertString("Colony"+npchar.City+"Acc")+"! Glad I was not here to forget. But there is something left in your warehouses for me? Everything is sorted out?","How could you not come? You always please me more than that. Well, what have you got there?")));
+			dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's here! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Want to trade, or just take something for free? Hey, just kidding...","Can't say that I'm glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Want to trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are avoiding you, and this is bad for my business,"),LinkRandPhrase("Care to trade, mynheer? Just a moment, I'll count the cash – you know, there are some shady types about... Of course, I don't mean you, captain!","If I saw you on the open sea, "+GetAddress_Form(NPChar)+", I would probably order more sails... But here, in my shop, I can offer you a trade.","Cap, I'll warn you straight away: if the fabric is stained with blood and the coffee reeks of gunpowder, I won't take it. Otherwise, have a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to see you again, "+GetAddress_Form(NPChar)+"! Buying or selling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I'm always glad to see my favourite customer here. What will it be this time - buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I'm so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your choice.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I'm glad to see you again! Care to take a look at our selection of wares?","Glad to see you, captain! I knew you'd appreciate our quality goods. Care to take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please come in! All the wares are just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, take your pick, whatever you like!","What would you like this time, captain? I'm glad you still remember how to find me. We have all the wares you might need – the very best quality!")));
+			Link.l1 = pcharrepphrase(RandPhraseSimple(RandPhraseSimple("That's how you're welcoming me, mate? Well, I'll remember that if we meet at sea... Stop trembling, I was just kidding. Show me what you've got.","Alright, mate. I might need your wares, but I don't need your tongue. Can you hold it, or will you need help with that? Shut up and show me your wares."),RandPhraseSimple("Let's get down to business, huckster. I have no time to discuss morale issues with you, so let's just trade like decent people.","Hold your horses, mate. Joking is fine, but keep in mind that I can get angry... So stop irritating me and just show me your wares.")),RandPhraseSimple(RandPhraseSimple("Always happy to visit you, mate. What do you have in stock that's worth my attention?","Always good to see you, mate. So, what's new for sea wanderers who haven't set foot on dry land in months?"),RandPhraseSimple("And once again, I am in "+XI_ConvertString("Colony"+npchar.City+"Acc")+"! Glad I wasn't here to forget. But is there anything left in your warehouses for me? Has everything been sorted out?","How could you not come? You always please me more than that. Well, what have you got there?")));
 			link.l1.go = "node_1";
 			NextDiag.TempNode = "Second time";
 		break;
 
 		case "node_1":
-			dialog.text = NPCStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                         pcharrepphrase(RandPhraseSimple("All hands on deck! ","Hold inspection! ") +LinkRandPhrase("What does a "+ GetSexPhrase("gentleman","gentleman, oh, pardon me - a lady") +" of fortune need in my store, he-he?",
-													                                 "What a surprise for a poor old shopkeeper! He-he!", "So, what fair wind has brought you to my shop?"),
-            														LinkRandPhrase("Open the ports!", "Hooks to the side!","Sail straight ahead!")+RandPhraseSimple(" Here you will find"," My shop has")
-																	+LinkRandPhrase(" the best prices on the entire island."," excellent assortment of goods."," goods of the best quality available.")
-																	+RandPhraseSimple(" I am at your service"," Whatever you want")+", captain!"),
-													 pcharrepphrase(RandPhraseSimple("Any goods for "+ GetSexPhrase("gentlemen","gentlemen and ladies") +" of fortune! He-he! Until they are hanged to dry in the sun!",
-													                                 "The wind swings the hanged in the port and carries the clank of the chains. But money has no smell, has it?"),
-                 												"Would you like to " +LinkRandPhrase("buy the best wares of " + NationNameGenitive(sti(NPChar.nation)),"buy or sell your cargo", "got a profitable freight?")
-																	+RandPhraseSimple("? I am at your service!","? My store is at your service!")
-																	+RandPhraseSimple(" Glad to see you"," Suit yourself") +", captain!")),
-				                                  NPCharRepPhrase(npchar,
-												  	 pcharrepphrase("If you want my advice, cap - don't spare money on grapeshot. You know, the dead are much easier to search!",
-													                "I have noticed right away that you're an "+ GetSexPhrase("artful mate","artful lass") +". " +RandPhraseSimple("But now I can see that you're a real "+ GetSexPhrase("hero","daredevil") +".", "You're young, but "
-																	+RandPhraseSimple("you keep your wits with you.", "you certainly cannot be tricked easily."))),
-													 pcharrepphrase("I am willing to buy from you all the cargo from the captured prizes. Want by silver or gold? That stuff is always pricey.",
-													                "Commercial seafaring is a profitable business, captain " + GetFullName(pchar)+", isn't it?")),
-												  NPCharRepPhrase(npchar,
-												     RandPhraseSimple("We wrapped 'em all in a mains' tight With twice ten turns of a hawser's bight And we heaved 'em over and out of sight! " ,
-													   RandPhraseSimple("Fifteen men on a dead man's chest!","Drink and the devil had done for the rest!") +" Yo ho ho and a bottle of rum! ")
-													   +RandPhraseSimple("What's up, cap?", "Looking to buy something, captain?"),
-													 pcharrepphrase("I see you're quite a haggler, captain " + GetFullName(pchar)+". Since you are a returning customer, I am offering you very good prices!",
-													                "Alright, captain " + GetFullName(pchar)+", out of deference to you I can offer just a little bit more! What would you like?")),
-												  NPCharRepPhrase(npchar,
-												     "I swear, talking to you is sickening me. "
-													 +LinkRandPhrase("Buy a couple of peanuts. Pigs are fond of that stuff. ","You expect someone to polish your boots with rum here? ",
-													 pcharrepphrase("I know your type. Get loaded with rum - and straight to the gallows.","I wonder how your mother allowed you to become a sailor! A sailor! You would make a much better tailor...")),
-													 pcharrepphrase(RandPhraseSimple("I thought that ","I hoped that ")+RandPhraseSimple("you had left our island for good.","I would never see you again.")
-													 +RandPhraseSimple(" The dead are hanging on your neck like millstones..."," Just how many sailors have you left to rot among the corals?!"),
-													 "Captain " + GetFullName(pchar)+", your passion for commerce has exceeded all my expectations!"
-													 +RandPhraseSimple(" Wanna make last-minute purchases before setting sail?", " Are you looking for something special?"))),
-										"cycle", 10, npchar, Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase(RandPhraseSimple("All hands on deck! ","Hold inspection! ")+LinkRandPhrase("What does a "+GetSexPhrase("gentleman","gentleman, oh, pardon me - a lady")+" of fortune you need in my store, he-he?","What a surprise for a poor old shopkeeper! He-he!","So, what fair wind has brought you to my shop?"),LinkRandPhrase("Open the ports!","Hooks to the side!","Sail straight ahead!")+RandPhraseSimple(" Here you will find"," My shop has")+LinkRandPhrase(" the best prices on the entire island."," excellent assortment of goods."," goods of the finest quality available.")+RandPhraseSimple(" I am at your service"," Whatever you want")+", captain!"),pcharrepphrase(RandPhraseSimple("Any goods for "+GetSexPhrase("gentlemen","gentlemen and ladies")+" of fortune! He-he! Until they are hanged out to dry in the sun!","The wind swings the hanged men in the port and carries the clank of the chains. But money has no smell, does it?"),"Would you like to "+LinkRandPhrase("buy the finest wares of "+NationNameGenitive(sti(NPChar.nation)),"buy or sell your cargo","Got a profitable cargo?")+RandPhraseSimple("? I am at your service!","? My shop is at your service!")+RandPhraseSimple(" Glad to see you"," Suit yourself")+", captain!")),NPCharRepPhrase(npchar,pcharrepphrase("If you want my advice, Cap - don't spare money on grapeshot. You know, the dead are much easier to search!","I noticed right away that you're a "+GetSexPhrase("artful mate","artful lass")+". "+RandPhraseSimple("But now I can see that you're a real "+GetSexPhrase("hero","daredevil")+".","You're young, but "+RandPhraseSimple("you keep your wits about you.","you certainly cannot be tricked easily."))),pcharrepphrase("I am willing to buy all the cargo from the captured prizes from you. Want to be paid in silver or gold? That stuff is always pricey.","Commercial seafaring is a profitable business, captain "+GetFullName(pchar)+", isn't it?")),NPCharRepPhrase(npchar,RandPhraseSimple("We wrapped 'em all in a main's tight With twice ten turns of a hawser's bight And we heaved 'em over and out of sight! ",RandPhraseSimple("Fifteen men on a dead man's chest!","Drink and the devil had done for the rest!")+" Yo ho ho and a bottle of rum! ")+RandPhraseSimple("What's up, captain?","Looking to buy something, captain?"),pcharrepphrase("I see you're quite the haggler, captain "+GetFullName(pchar)+". Since you are a returning customer, I am offering you very good prices!","Alright, Captain "+GetFullName(pchar)+", out of deference to you, I can offer just a little bit more! What would you like?")),NPCharRepPhrase(npchar,"I swear, talking to you is making me sick. "+LinkRandPhrase("Buy a couple of peanuts. Pigs are fond of that stuff. ","You expect someone to polish your boots with rum here? ",pcharrepphrase("I know your type. Get loaded with rum – and straight to the gallows.","I wonder how your mother allowed you to become a sailor! A sailor! You would make a much better tailor...")),pcharrepphrase(RandPhraseSimple("I thought that ","I hoped that ")+RandPhraseSimple("you had left our island for good.","I thought I would never see you again.")+RandPhraseSimple(" The dead are hanging around your neck like millstones..."," Just how many sailors have you left to rot among the corals?!"),"Captain "+GetFullName(pchar)+", your passion for commerce has surpassed all my expectations!"+RandPhraseSimple(" Want to make any last-minute purchases before setting sail?"," Are you looking for something special?"))),"cycle",10,npchar,Dialog.CurrentNode);
 			// belamour legendary edition на пару с Акулой -->
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && npchar.location == "caracas_store")
 			{
 				if(pchar.questTemp.SharkGoldFleet == "start" || pchar.questTemp.SharkGoldFleet == "afterGvik")
 				{
-					dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's there! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Wanna trade or just take some stuff for free? Hey, just kidding...","Can't say that I am glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Wanna trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are shunning you, and this is bad for my business,"),LinkRandPhrase("Wanna trade, mynheer? Just a second, I will cash up - you know, there are dubious types around... Of course, I don't mean you, captain!","If I saw you in the open sea, "+GetAddress_Form(NPChar)+", I would likely order to add sails... But here, in my shop, I can offer you to trade.","Cap, I will warn you right away: if the fabric is stained with blood and coffee stinks with gunpowder, I won't take it. Otherwise take a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to greet you again, "+GetAddress_Form(NPChar)+"! Buying or seling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I am always happy to see my favourite customer here. What will it be this time - buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I am so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your pick.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I am glad to see you again! Wanna take a look at the assortment of our wares?","Glad to see you, captain! I knew that you would like our quality goods. Wanna take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please come in! All the wares just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, make your pick, whatever you like!","What would you like this time, captain? I am glad that you still remember how to find me. We have all the wares you might need - the very best quality!")));
-					link.l14 = "Listen, I'm about to leave to Porto Bello now and would like to buy a shipment of coffee and cocoa from you. Say, three hundred units of both."; 
+					dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's here! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Want to trade or just take something for free? Hey, just kidding...","Can't say that I'm glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Want to trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are avoiding you, and this is bad for my business,"),LinkRandPhrase("Care to trade, mynheer? Just a moment, I'll count the cash – you know, there are some shady types about... Of course, I don't mean you, captain!","If I saw you on the open sea, "+GetAddress_Form(NPChar)+", I would probably order more sails... But here, in my shop, I can offer you a trade.","Cap, I'll warn you right away: if the fabric is stained with blood and the coffee reeks of gunpowder, I won't take it. Otherwise, take a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to see you again, "+GetAddress_Form(NPChar)+"! Buying or selling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I am always happy to see my favourite customer here. What will it be this time – buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I'm so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your choice.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I'm glad to see you again! Care to take a look at our selection of wares?","Glad to see you, captain! I knew you'd appreciate our quality goods. Want to take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please, come in! All the wares are just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, take your pick, whatever you like!","What would you like this time, captain? I'm glad you still remember how to find me. We have all the wares you might need - the very best quality!")));
+					link.l14 = "Listen, I'm about to leave for Porto Bello now and would like to buy a shipment of coffee and cocoa from you. Say, three hundred units of each."; 
 					link.l14.go = "SharkGoldFleet";
 				}
 			}
 			if(CheckAttribute(pchar,"questTemp.SharkGoldFleet") && npchar.location == "caracas_store" && pchar.questTemp.SharkGoldFleet == "buyincar")
 			{
-				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's there! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Wanna trade or just take some stuff for free? Hey, just kidding...","Can't say that I am glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Wanna trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are shunning you, and this is bad for my business,"),LinkRandPhrase("Wanna trade, mynheer? Just a second, I will cash up - you know, there are dubious types around... Of course, I don't mean you, captain!","If I saw you in the open sea, "+GetAddress_Form(NPChar)+", I would likely order to add sails... But here, in my shop, I can offer you to trade.","Cap, I will warn you right away: if the fabric is stained with blood and coffee stinks with gunpowder, I won't take it. Otherwise take a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to greet you again, "+GetAddress_Form(NPChar)+"! Buying or seling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I am always happy to see my favourite customer here. What will it be this time - buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I am so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your pick.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I am glad to see you again! Wanna take a look at the assortment of our wares?","Glad to see you, captain! I knew that you would like our quality goods. Wanna take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please come in! All the wares just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, make your pick, whatever you like!","What would you like this time, captain? I am glad that you still remember how to find me. We have all the wares you might need - the very best quality!")));
+				dialog.Text = pcharrepphrase(LinkRandPhrase(LinkRandPhrase("Oh, look who's here! Well, as they say, money has no smell, so come in, captain, and let's trade...","I cannot say that I am glad to see you, "+GetFullName(pchar)+"... But I can still trade with you.","He-he... Well, I would not invite you to my home, captain - but my shop is still at your service."),LinkRandPhrase("Oh, look who's there! Isn't that "+GetFullName(pchar)+"! Want to trade or just take some stuff for free? Hey, just kidding...","Can't say that I'm glad to see you here, "+GetAddress_Form(NPChar)+". But if you have money to spend - come in, come in...","Want to trade, captain "+GetFullName(pchar)+"? If so, could you please be quick about it? Other customers are avoiding you, and this is bad for my business,"),LinkRandPhrase("Care to trade, mynheer? Just a moment, I'll count the cash – you know, there are some shady types about... Of course, I don't mean you, captain!","If I saw you on the open sea, "+GetAddress_Form(NPChar)+", I would probably order more sails... But here, in my shop, I can offer you a trade.","Cap, I'll warn you straight away: if the fabric is stained with blood and the coffee reeks of gunpowder, I won't take it. Otherwise, take a look and make your pick.")),LinkRandPhrase(LinkRandPhrase("And I am glad to see you again, "+GetAddress_Form(NPChar)+"! Buying or selling - I am always happy to help you.","I beg you, "+GetAddress_Form(NPChar)+", come in! I'm always happy to see my favourite customer here. What will it be this time - buying or selling?","Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! I'm so happy to see you again! What will it be this time - buying or selling?"),LinkRandPhrase("Do you like our wares, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"? I am always at your service - take a look and make your choice.","Hello, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+". I'm glad to see you again! Care to take a look at our selection of wares?","Glad to see you, captain! I knew you would appreciate our quality goods. Care to take a look at what's new?"),LinkRandPhrase("Oh, "+GetAddress_Form(NPChar)+" "+GetFullName(pchar)+"! Please, come in! All the wares are just for you - and with great discounts on this occasion!","Captain "+GetFullName(pchar)+", once again you've made me happy with your visit! Please, take your pick, whatever you like!","What would you like this time, captain? I'm glad you still remember how to find me. We have all the wares you might need - the very best quality!")));
 				link.l14 = "I'm here for coffee and cocoa. "; 
 				link.l14.go = "SharkGoldFleet_again";
 			}
 										
 			// <-- на пару с Акулой
-			link.l1 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("Show me what you've got, you old pirate!",
-													               "I just wanted to take a look at your wares, my good man."),
-													pcharrepphrase("I swear by the gallows, " +GetFullName(npchar)+", I will not let you put me off! Show me your wares right now!",
-													               "Let's take a look at your goods, " +GetAddress_FormToNPC(NPChar)+ ".")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("That's for sure! The dead ones won't bite! Now, what do you have in your hold?",
-													               "You better get to your business, my good man. What kind of wares can you offer me?"),
-												    pcharrepphrase("There will come a day when you become my prize, he-he. Just kidding. Show me your wares.",
-													               "Let's discuss our commercial affairs, " +GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ "")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("What do I want? I want to buy something!",
-													               "Drinking will bring you to your grave, " +GetFullName(npchar)+ ". I want to take a look at your wares."),
-												    pcharrepphrase("I know your discounts! Two pounds of cacao at the price of three! Now show me your wares.",
-													               "That's always good. Let's haggle, then.")),
-											  "Show me your wares. Least said, soonest mended. I am in a hurry.",
-											  npchar, Dialog.CurrentNode);
+			link.l1 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("Show me what you've got, you old pirate!","I just wanted to take a look at your wares, my good man."),pcharrepphrase("I swear by the gallows, "+GetFullName(npchar)+", I will not let you put me off! Show me your wares right now!","Let's take a look at your goods, "+GetAddress_FormToNPC(NPChar)+".")),NPCharRepPhrase(npchar,pcharrepphrase("That's for sure! The dead ones won't bite! Now, what do you have in your hold?","You'd best get to your business, my good man. What kind of wares can you offer me?"),pcharrepphrase("There will come a day when you become my prize, heh-heh. Just kidding. Show me your wares.","Let's discuss our business affairs, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"")),NPCharRepPhrase(npchar,pcharrepphrase("What do I want? I want to buy something!","Drinking will bring you to your grave, "+GetFullName(npchar)+". I want to take a look at your wares."),pcharrepphrase("I know your discounts! Two pounds of cacao for the price of three! Now show me your wares.","That's always good. Let's haggle, then.")),"Show me your wares. Least said, soonest mended. I'm in a hurry.",npchar,Dialog.CurrentNode);
 			link.l1.go = "market";
-			link.l2 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("Oh, I'd really like to stab someone, Alright, let's get down to business.",
-													               "Let's get down to other business, my good man."),
-													pcharrepphrase("Caramba! I am here with a different business!",
-													               "I want to talk to you about a particular business, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+".")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("I have business with you, old pirate!",
-													               "Let's get down to business, mate!"),
-													pcharrepphrase("I swear by the devil, you will not trick me, rascal! I have different business with you!",
-													               "I absolutely agree, " +GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ ", I wanted to discuss other affairs with you.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Loaded up already? I have business with you.",
-													               "I Came here not for trading, my good man. I have other business."),
-													pcharrepphrase("May the thunder strike you down for prices like those! I have business with you.",
-													               "Discounts are always nice, " + GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ ", but I have different business with you.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Hold your tongue, you old drunkard, I have business with you",
-													               "You're sickened because of rum, I guess. Not that I am fond of yourself, either. Let's get down to business."),
-													pcharrepphrase("You have already ripped me off, rascal! I have business with you.",
-													               "Your irony is inappropriate. I have other business with you.")),
-											   npchar, Dialog.CurrentNode);
+			link.l2 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("Oh, I'd really like to stab someone. Alright, let's get down to business.","Let's get down to other business, my good man."),pcharrepphrase("Caramba! I'm here on different business!","I want to talk to you about a particular business, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+".")),NPCharRepPhrase(npchar,pcharrepphrase("I have business with you, old pirate!","Let's get down to business, mate!"),pcharrepphrase("I swear by the devil, you will not trick me, rascal! I have other business with you!","I absolutely agree, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+", I wanted to discuss other matters with you.")),NPCharRepPhrase(npchar,pcharrepphrase("Loaded up already? I have business with you.","I came here not for trading, my good man. I have other business."),pcharrepphrase("May thunder strike you down for prices like those! I have business with you.","Discounts are always nice, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+", but I have other business with you.")),NPCharRepPhrase(npchar,pcharrepphrase("Hold your tongue, you old drunkard, I have business with you","You're sick from rum, I suppose. Not that I'm particularly fond of you, either. Let's get down to business."),pcharrepphrase("You have already ripped me off, rascal! I have business with you.","Your irony is inappropriate. I have other business with you.")),npchar,Dialog.CurrentNode);
 			link.l2.go = "business";
-			/*link.l3 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("First business, then merry-making. I want to ask you something.",
-													               "Not right now. I need information."),
-													pcharrepphrase("To hell with your prices! First you're gonna tell me everything I need.",
-													               "With pleasure. I wanted to ask something.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Thanks for the advice, old murderer. I wanted to ask you something.",
-													               "I had a particular question."),
-												    pcharrepphrase("Gold can wait. I wanted to ask you something.",
-													               "Yes, I agree. I wanted to ask you something.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("I do believe that you know, what I was going to ask.",
-													               "I hope you will answer my question."),
-													pcharrepphrase("Can you think of anything besides your price tags? 'Cause that's what I was going to ask you about.",
-													               "That doesn't interest me. I need information.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Don't get too excited, pal! I was just going to ask you a question.",
-													               "Don't get too excited, or you'll have a stroke. Just answer one question, and I shall leave"),
-													pcharrepphrase("I don't expect you to say something smart, since you have the brain of a roach. But surely you must know something.",
-													               "I will not delay you for long. Just one question.")),
-											   npchar, Dialog.CurrentNode);*/
+			/*link.l3 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("First business, then merrymaking. I want to ask you something.","Not right now. I need information."),pcharrepphrase("To hell with your prices! First, you're going to tell me everything I need.","With pleasure. I wanted to ask you something.")),NPCharRepPhrase(npchar,pcharrepphrase("Thanks for the advice, old murderer. I wanted to ask you something.","I had a particular question."),pcharrepphrase("Gold can wait. I wanted to ask you something.","Yes, I agree. I wanted to ask you something.")),NPCharRepPhrase(npchar,pcharrepphrase("I do believe that you know what I was going to ask.","I hope you will answer my question."),pcharrepphrase("Can you think of anything besides your price tags? 'Cause that's what I was going to ask you about.","That doesn't interest me. I need information.")),NPCharRepPhrase(npchar,pcharrepphrase("Don't get too excited, pal! I was just going to ask you a question.","Don't get too excited, or you'll have a stroke. Just answer one question, and I shall leave"),pcharrepphrase("I don't expect you to say anything clever, since you have the brain of a roach. But surely you must know something.","I will not keep you long. Just one question.")),npchar,Dialog.CurrentNode);*/
 			//link.l3 = "I'm on another matter.";
 			//link.l3.go = "quests";
 			// --> Jason, генер почтового курьера 2 уровня
@@ -375,17 +280,17 @@ void ProcessDialogEvent()
 			//Jason --> мини-квест Дефицитный товар
 			if (CheckAttribute(pchar, "questTemp.Wine.Trader") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 			{
-				link.l13 = "I'd like to purchase a batch of European wine from you - fifty-sixty bottles. I was told that you had enough of it in stock.."; 
+				link.l13 = "I'd like to purchase a batch of European wine from you - fifty or sixty bottles. I was told that you have enough in stock.."; 
 				link.l13.go = "Wine_Trader";
 			}
 			if (CheckAttribute(pchar, "questTemp.Wine.Repeat2") && NPChar.location == pchar.questTemp.Wine.City + "_store" && CheckCharacterItem(pchar, "letter_1") && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 			{
-				link.l13 = "Hello again. Please, take a look at this letter - perhaps you would reconsider your position regarding selling wine to me?"; 
+				link.l13 = "Hello again. Please, take a look at this letter – perhaps you would reconsider your position regarding selling wine to me?"; 
 				link.l13.go = "Wine_Repeat2";
 			}
 			if (CheckAttribute(pchar, "questTemp.Wine.wait") && NPChar.location == pchar.questTemp.Wine.City + "_store" && !CheckAttribute(pchar, "questTemp.Wine.fail"))
 			{
-				link.l13 = "It's me again. Can we resume our interrupted wine deal? I managed to raise enough money."; 
+				link.l13 = "It's me again. Can we resume our interrupted wine deal? I've managed to raise enough money."; 
 				link.l13.go = "Wine_Price";
 			}
 			// <-- мини-квест Дефицитный товар
@@ -395,7 +300,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "quest.storehelper") && pchar.questTemp.Sharlie == "ship")
 				{
-					Link.l2 = "Listen, monsieur, I'm looking for a job. Not like a full-time job or labor hauling bags of cargo, but more like running errands, so to speak. Do you happen to need assistance?";
+					Link.l2 = "Listen, monsieur, I'm looking for a job. Not a full-time position or heavy labour hauling cargo, but more like running errands, so to speak. Do you happen to need any assistance?";
 					Link.l2.go = "Sharlie_storehelper";
 				}
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Storehelper") && pchar.questTemp.Sharlie.Storehelper == "return")
@@ -415,7 +320,7 @@ void ProcessDialogEvent()
 				}
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Junglejew") && !CheckAttribute(npchar, "quest.junglejew"))
 				{
-					link.l4 = "Take a look at these earrings, monsieur. I've found them on the body of a bandit that was killed in the jungle. This is clearly the work of a fine jeweler which, I'm sure, is not from around here. Is there anything you can say about these earrings?";
+					link.l4 = "Take a look at these earrings, monsieur. I found them on the body of a bandit who was killed in the jungle. This is clearly the work of a fine jeweler, which, I'm sure, is not from around here. Is there anything you can say about these earrings?";
 					link.l4.go = "Sharlie_junglejew";
 				}
 			}
@@ -424,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				if(pchar.GenQuest.EncGirl == "toLoverFather" && pchar.GenQuest.EncGirl.LoverFather == "store_keeper" && pchar.GenQuest.EncGirl.LoverCity == npchar.city)
 				{
-					link.l9 = "Hello, I came by your son's invitation."; 
+					link.l9 = "Hello, I came at your son's invitation."; 
 					link.l9.go = "EncGirl_4";
 					pchar.quest.EncGirl_GetLoverFather.over = "yes";
 				}
@@ -437,115 +342,19 @@ void ProcessDialogEvent()
 					}
 				}				
 			}			
-			link.l5 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("See you, old drunkard.",
-													               "Have a nice day, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"."),
-													pcharrepphrase("Caramba! Don't leave anywhere, I'll come back again.",
-													               "It was nice having you here, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"! Goodbye!")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Cast off!",
-													               "Goodbye, my good man."),
-													pcharrepphrase("Hey! What are you hiding there? Rum? No?! Alright, I'll go moisten my throat.",
-													               "I am sorry, but I have urgent business in town.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Heh! Well, see ya!",
-													               "I have to go. Farewell, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!"),
-													pcharrepphrase("And don't even think to argue with me! I have no time for this!",
-													               "Perhaps, I need to go and check what's up on my ship. Farewell, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("What's up, old chap? It's me - " +GetFullName(pchar)+ "! Sleep yourself sober, I'll come back later.",
-													               "I am afraid your liver will finish you off before I get a chance to come to you again."),
-													pcharrepphrase("Keep counting your guineas and doubloons, you old fox! I will be back.",
-													               "I was happy to see you, " + GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!")),
-											  npchar, Dialog.CurrentNode);
+			link.l5 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("See you, old drunkard.","Have a nice day, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"."),pcharrepphrase("Caramba! Don't go anywhere, I'll be back soon.","It was nice having you here, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"! Goodbye!")),NPCharRepPhrase(npchar,pcharrepphrase("Cast off!","Goodbye, my good man."),pcharrepphrase("Hey! What are you hiding there? Rum? No? Alright, I'll go moisten my throat.","I am sorry, but I have urgent business in town.")),NPCharRepPhrase(npchar,pcharrepphrase("Heh! Well, see you!","I have to go. Farewell, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!"),pcharrepphrase("And don't even think about arguing with me! I have no time for this!","Perhaps I should go and see what's happening on my ship. Farewell, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!")),NPCharRepPhrase(npchar,pcharrepphrase("What's up, old chap? It's me - "+GetFullName(pchar)+"! Sleep it off, I'll come back later.","I am afraid your liver will finish you off before I get a chance to come to you again."),pcharrepphrase("Keep counting your guineas and doubloons, you old fox! I'll be back.","I was glad to see you, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!")),npchar,Dialog.CurrentNode);
 			link.l5.go = "exit";
 		break;
 		
 		case "Helen_node_1":
-			dialog.text = "What can I do for you? Stock the Rainbow, sell some loot? I doubt you're interested in the current profitable freights, ha-ha.";
-			link.l1 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("Show me what you've got, you old pirate!",
-													               "I just wanted to take a look at your wares, my good man."),
-													pcharrepphrase("I swear by the gallows, " +GetFullName(npchar)+", I will not let you put me off! Show me your wares right now!",
-													               "Let's take a look at your goods, " +GetAddress_FormToNPC(NPChar)+ ".")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("That's for sure! The dead ones won't bite! Now, what do you have in your hold?",
-													               "You better get to your business, my good man. What kind of wares can you offer me?"),
-												    pcharrepphrase("There will come a day when you become my prize, he-he. Just kidding. Show me your wares.",
-													               "Let's discuss our commercial affairs, " +GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ "")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("What do I want? I want to buy something!",
-													               "Drinking will bring you to your grave, " +GetFullName(npchar)+ ". I want to take a look at your wares."),
-												    pcharrepphrase("I know your discounts! Two pounds of cacao at the price of three! Now show me your wares.",
-													               "That's always good. Let's haggle, then.")),
-											  "Show me your wares. Least said, soonest mended. I am in a hurry.",
-											  npchar, Dialog.CurrentNode);
+			dialog.text = "What can I do for you? Stock the Rainbow, sell some loot? I doubt you're interested in the current profitable cargoes, ha-ha.";
+			link.l1 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("Show me what you've got, you old pirate!","I just wanted to take a look at your wares, my good man."),pcharrepphrase("I swear by the gallows, "+GetFullName(npchar)+", I will not let you brush me off! Show me your wares right now!","Let's take a look at your goods, "+GetAddress_FormToNPC(NPChar)+".")),NPCharRepPhrase(npchar,pcharrepphrase("That's for sure! The dead ones won't bite! Now, what do you have in your hold?","You'd best get to your business, my good man. What kind of wares can you offer me?"),pcharrepphrase("There will come a day when you become my prize, heh-heh. Just kidding. Show me your wares.","Let's discuss our business affairs, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"")),NPCharRepPhrase(npchar,pcharrepphrase("What do I want? I want to buy something!","Drinking will bring you to your grave, "+GetFullName(npchar)+". I want to take a look at your wares."),pcharrepphrase("I know your discounts! Two pounds of cacao for the price of three! Now show me your wares.","That's always good. Let's haggle, then.")),"Show me your wares. Least said, soonest mended. I'm in a hurry.",npchar,Dialog.CurrentNode);
 			link.l1.go = "market";
-			link.l2 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("Oh, I'd really like to stab someone, Alright, let's get down to business.",
-													               "Let's get down to other business, my good man."),
-													pcharrepphrase("Caramba! I am here with a different business!",
-													               "I want to talk to you about a particular business, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+".")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("I have business with you, old pirate!",
-													               "Let's get down to business, mate!"),
-													pcharrepphrase("I swear by the devil, you will not trick me, rascal! I have different business with you!",
-													               "I absolutely agree, " +GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ ", I wanted to discuss other affairs with you.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Loaded up already? I have business with you.",
-													               "I Came here not for trading, my good man. I have other business."),
-													pcharrepphrase("May the thunder strike you down for prices like those! I have business with you.",
-													               "Discounts are always nice, " + GetAddress_FormToNPC(NPChar)+ " " +GetFullName(npchar)+ ", but I have different business with you.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Hold your tongue, you old drunkard, I have business with you",
-													               "You're sickened because of rum, I guess. Not that I am fond of yourself, either. Let's get down to business."),
-													pcharrepphrase("You have already ripped me off, rascal! I have business with you.",
-													               "Your irony is inappropriate. I have other business with you.")),
-											   npchar, Dialog.CurrentNode);
+			link.l2 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("Oh, I'd really like to stab someone. Alright, let's get down to business.","Let's get down to other business, my good man."),pcharrepphrase("Caramba! I'm here on different business!","I want to talk to you about a particular business, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+".")),NPCharRepPhrase(npchar,pcharrepphrase("I have business with you, old pirate!","Let's get down to business, mate!"),pcharrepphrase("I swear by the devil, you won't trick me, rascal! I have other business with you!","I absolutely agree, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+", I wanted to discuss other matters with you.")),NPCharRepPhrase(npchar,pcharrepphrase("Loaded up already? I have business with you.","I came here not for trading, my good man. I have other business."),pcharrepphrase("May thunder strike you down for prices like those! I have business with you.","Discounts are always nice, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+", but I have other business with you.")),NPCharRepPhrase(npchar,pcharrepphrase("Hold your tongue, you old drunkard, I have business with you","You're sick from rum, I suppose. Not that I'm particularly fond of you, either. Let's get down to business."),pcharrepphrase("You have already ripped me off, rascal! I have business with you.","Your irony is inappropriate. I have other business with you.")),npchar,Dialog.CurrentNode);
 			link.l2.go = "business";
-			link.l3 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("First business, then merry-making. I want to ask you something.",
-													               "Not right now. I need information."),
-													pcharrepphrase("To hell with your prices! First you're gonna tell me everything I need.",
-													               "With pleasure. I wanted to ask something.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Thanks for the advice, old murderer. I wanted to ask you something.",
-													               "I had a particular question."),
-												    pcharrepphrase("Gold can wait. I wanted to ask you something.",
-													               "Yes, I agree. I wanted to ask you something.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("I do believe that you know, what I was going to ask.",
-													               "I hope you will answer my question."),
-													pcharrepphrase("Can you think of anything besides your price tags? 'Cause that's what I was going to ask you about.",
-													               "That doesn't interest me. I need information.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Don't get too excited, pal! I was just going to ask you a question.",
-													               "Don't get too excited, or you'll have a stroke. Just answer one question, and I shall leave"),
-													pcharrepphrase("I don't expect you to say something smart, since you have the brain of a roach. But surely you must know something.",
-													               "I will not delay you for long. Just one question.")),
-											   npchar, Dialog.CurrentNode);
+			link.l3 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("First business, then merrymaking. I want to ask you something.","Not right now. I need information."),pcharrepphrase("To hell with your prices! First, you're going to tell me everything I need.","With pleasure. I wanted to ask you something.")),NPCharRepPhrase(npchar,pcharrepphrase("Thanks for the advice, old murderer. I wanted to ask you something.","I had a particular question."),pcharrepphrase("Gold can wait. I wanted to ask you something.","Yes, I agree. I wanted to ask you something.")),NPCharRepPhrase(npchar,pcharrepphrase("I do believe that you know what I was going to ask.","I hope you will answer my question."),pcharrepphrase("Can you think of anything besides your price tags? 'Cause that's what I was going to ask you about.","That doesn't interest me. I need information.")),NPCharRepPhrase(npchar,pcharrepphrase("Don't get too excited, pal! I was just going to ask you a question.","Don't get too excited, or you'll have a stroke. Just answer one question, and I shall leave."),pcharrepphrase("I don't expect you to say anything clever, since you have the brain of a roach. But surely you must know something.","I will not keep you long. Just one question.")),npchar,Dialog.CurrentNode);
 			link.l3.go = "quests";
-			link.l5 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,
-			                                        pcharrepphrase("See you, old drunkard.",
-													               "Have a nice day, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"."),
-													pcharrepphrase("Caramba! Don't leave anywhere, I'll come back again.",
-													               "It was nice having you here, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"! Goodbye!")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Cast off!",
-													               "Goodbye, my good man."),
-													pcharrepphrase("Hey! What are you hiding there? Rum? No?! Alright, I'll go moisten my throat.",
-													               "I am sorry, but I have urgent business in town.")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("Heh! Well, see ya!",
-													               "I have to go. Farewell, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!"),
-													pcharrepphrase("And don't even think to argue with me! I have no time for this!",
-													               "Perhaps, I need to go and check what's up on my ship. Farewell, "+GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!")),
-											   NPCharRepPhrase(npchar,
-											        pcharrepphrase("What's up, old chap? It's me - " +GetFullName(pchar)+ "! Sleep yourself sober, I'll come back later.",
-													               "I am afraid your liver will finish you off before I get a chance to come to you again."),
-													pcharrepphrase("Keep counting your guineas and doubloons, you old fox! I will be back.",
-													               "I was happy to see you, " + GetAddress_FormToNPC(NPChar)+" " +GetFullName(npchar)+"!")),
-											  npchar, Dialog.CurrentNode);
+			link.l5 = HeroStringReactionRepeat(NPCharRepPhrase(npchar,pcharrepphrase("See you, old drunkard.","Have a nice day, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"."),pcharrepphrase("Caramba! Don't go anywhere, I'll be back soon.","It was nice having you here, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"! Goodbye!")),NPCharRepPhrase(npchar,pcharrepphrase("Cast off!","Goodbye, my good man."),pcharrepphrase("Hey! What are you hiding there? Rum? No? Alright, I'll go wet my whistle.","I am sorry, but I have urgent business in town.")),NPCharRepPhrase(npchar,pcharrepphrase("Heh! Well, see you!","I have to go. Farewell, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!"),pcharrepphrase("And don't even think of arguing with me! I have no time for this!","Perhaps I should go and see what's happening on my ship. Farewell, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!")),NPCharRepPhrase(npchar,pcharrepphrase("What's up, old chap? It's me - "+GetFullName(pchar)+"! Sleep it off, I'll come back later.","I am afraid your liver will finish you off before I get a chance to come to you again."),pcharrepphrase("Keep counting your guineas and doubloons, you old fox! I'll be back.","I was glad to see you, "+GetAddress_FormToNPC(NPChar)+" "+GetFullName(npchar)+"!")),npchar,Dialog.CurrentNode);
 			link.l5.go = "exit";
 		break;
 
@@ -554,19 +363,14 @@ void ProcessDialogEvent()
 			//занят ПГГ
 			if (CheckFreeServiceForNPC(NPChar, "Store") != -1)	 // to_do имя сунуть
 			{
-				dialog.text = "Sorry, but I am too busy right now. So many customers! Come back tomorrow.";
+				dialog.text = "Sorry, but I'm too busy right now. So many customers! Come back tomorrow.";
 				link.l1 = "Oh, really? Well, I'll come back later, then.";
 				link.l1.go = "exit";
 				break;
 			}
 //navy <--
-			dialog.text = RandPhraseSimple("I have round shot, sailcloth, medicine, precious lumber and other goods! What are you interested in?", "Wanna buy sugar and spices? Or, perhaps, rum and gunpowder?");
-			link.l1 = pcharrepphrase(LinkRandPhrase("I have a lot of loot in my hold! Money has no smell, has it?",
-			                         "I need to dump the loot in my hold and fill it with your gold. Ha-ha!",
-									 "Oh, I know that you would sell your mother for a sack of full-weight doubloons! But I just need to replenish my supplies."),
-									 LinkRandPhrase("I want to sell my cargo and replenish supplies.",
-			                         "I want to purchase goods for sale.",
-									 "Show me the cannonballs, bombs and stuff like that."));
+			dialog.text = RandPhraseSimple("I have round shot, sailcloth, medicine, fine timber and other goods! What are you interested in?","Want to buy sugar and spices? Or perhaps rum and gunpowder?");
+			link.l1 = pcharrepphrase(LinkRandPhrase("I have a lot of loot in my hold! Money has no smell, does it?","I need to dump the loot in my hold and fill it with your gold. Ha-ha!","Oh, I know that you would sell your mother for a sack of full-weight doubloons! But I just need to replenish my supplies."),LinkRandPhrase("I want to sell my cargo and replenish supplies.","I want to purchase goods for sale.","Show me the cannonballs, bombs, and things like that."));
 			link.l1.go = "trade_1";
 
 			if(CheckFunctionalTreasurer() && CheckAttribute(PChar, "TransferGoods.Enable")) // Автозакупка товаров
@@ -575,10 +379,7 @@ void ProcessDialogEvent()
 				link.l5.go = "TransferGoods";
 			}
 			
-			link.l3 = pcharrepphrase(RandPhraseSimple("I am leaving without a trade. See ya!",
-			                                          "I'll go moisten my throat. You stay there!"),
-									 RandPhraseSimple("No, I don't have time for trading at the moment. Farewell.",
-									                  "I am sorry, I have urgent business to do. Goodbye!"));
+			link.l3 = pcharrepphrase(RandPhraseSimple("I am leaving without a trade. See you!","I'll go wet my whistle. You stay there!"),RandPhraseSimple("No, I don't have time for trading at the moment. Farewell.","I am sorry, I have urgent business to attend to. Goodbye!"));
 			link.l3.go = "exit";
 		break;
 		
@@ -589,14 +390,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_2":
-			dialog.text = "Oh, captain, thank you very much! How is she? Is she hurt? It's been a day since she ran away, bad girl. Does it look like I am going to do her any harm? I have found her a husband. Arranged a marriage. A rich, young fiance. He may have bad looks, but who gives a damn about face features. No! She always tries to get everything her own way. Same as her mother always did, flames!\nAlthough, she would not have been born if her mum didn't run away with some promising idiot long ago... well, whatever... Youth is naive, stupid and cruel.";
-			link.l1 = "Of course, you're the father and it's up to you to decide, but I wouldn't hurry with the wedding...";
+			dialog.text = "Oh, captain, thank you so much! How is she? Is she hurt? It's been a day since she ran away, the naughty girl. Do I look like I'm going to do her any harm? I've found her a husband. Arranged a marriage. A rich, young fiancé. He may not be much to look at, but who gives a damn about appearances. No! She always tries to get her own way. Just like her mother always did, blast it!\nAlthough, she wouldn't have been born if her mother hadn't run off with some promising fool long ago... well, whatever... Youth is naive, foolish and cruel.";
+			link.l1 = "Of course, you're the father and it's up to you to decide, but I wouldn't rush into the wedding...";
 			link.l1.go = "EncGirl_3";
 		break;
 		
 		case "EncGirl_3":
-			dialog.text = "What do you know? Do you have kids of your own? No? Talk to me when you do...\nYes... I promised a reward to the man who will bring her back, here, take it.";
-			link.l1 = "Thanks. And keep an eye on her. I have a hunch that she wouldn't stop at that.";
+			dialog.text = "What do you know? Do you have children of your own? No? Talk to me when you do...\nYes... I promised a reward to the person who brings her back. Here, take it.";
+			link.l1 = "Thanks. And keep an eye on her. I have a hunch she won't stop at that.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("EncGirl_ToLoverParentsExit");
 		break;
@@ -604,27 +405,27 @@ void ProcessDialogEvent()
 		case "EncGirl_4":
 			if(sti(pchar.GenQuest.EncGirl.LoverFatherAngry) == 0)
 			{
-				dialog.text = "Oh, so you are "+ GetSexPhrase("that captain, who brought","that lass, who brought") +" my prodigal son with a young bride?";
+				dialog.text = "Oh, so you are "+GetSexPhrase("that captain who brought","that lass who brought")+" my prodigal son with a young bride?";
 				link.l1 = "Yes, I helped them escape.";
 				link.l1.go = "EncGirl_5";
 			}
 			else
 			{
-				dialog.text = "Oh, there "+ GetSexPhrase("he is, our benefactor","she is, our benefactress") +". Expecting a reward, I take it?";
-				link.l1 = "Well, I'm fine without a reward, but just your thanks would do.";
+				dialog.text = "Oh, there "+GetSexPhrase("he is, our benefactor","She is, our benefactress")+". Expecting a reward, I take it?";
+				link.l1 = "Well, I'm fine without a reward, but your thanks alone would do.";
 				link.l1.go = "EncGirl_6";			
 			}
 		break;
 		
 		case "EncGirl_5":
-			dialog.text = "I am very grateful to you that you haven't abandoned my child in dire straits and helped him to find a way out of a delicate situation. Allow me to thank you and please accept this modest sum and a gift from me personally.";
-			link.l1 = "Thanks. Helping out this young couple was my pleasure.";
+			dialog.text = "I am very grateful to you for not abandoning my child in dire straits and for helping him find a way out of a delicate situation. Allow me to thank you, and please accept this modest sum and a gift from me personally.";
+			link.l1 = "Thank you. It was my pleasure to help this young couple.";
 			link.l1.go = "EncGirl_5_1";
 		break;
 		
 		case "EncGirl_6":
-			dialog.text = "Thanks? What thanks?! That blockhead has been hanging around without a job for half a year - and look at him, he's got enough time for love affairs! When I was his age, I was already running my own business! Pff! A governor has a marriageable daughter - and that dunce has brought a slut without kith or kin to my house and dared to ask for my blessing!";
-			link.l1 = "Hmm... Apparently, you don't believe in sincere feelings?";
+			dialog.text = "Thanks? What thanks?! That blockhead has been hanging around without a job for half a year - and look at him, he's got enough time for love affairs! When I was his age, I was already running my own business! Pff! The governor has a marriageable daughter - and that dunce has brought a wench without kith or kin to my house and dared to ask for my blessing!";
+			link.l1 = "Hmm... Apparently, you don't believe in genuine feelings?";
 			link.l1.go = "EncGirl_6_1";		
 		break;
 		
@@ -639,8 +440,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "EncGirl_6_1":
-			dialog.text = "What feelings? What kind of feelings are you talking about? Feelings... how can one be so light-minded at your age?! Shame on you to indulge the young in their caprices and act as a procurer! You not only have taken a girl from her home, but you also ruined my greenhorn's life. There will be no thanks to you. Farewell.";
-			link.l1 = "Alright, and all the same to you...";
+			dialog.text = "What feelings? What kind of feelings are you talking about? Feelings... how can one be so thoughtless at your age?! Shame on you for indulging the young in their whims and acting as a procurer! You have not only taken a girl from her home, but you have also ruined my greenhorn's life. There will be no thanks for you. Farewell.";
+			link.l1 = "Alright, and the same to you...";
 			link.l1.go = "EncGirl_6_2";
 		break;
 		
@@ -661,9 +462,7 @@ void ProcessDialogEvent()
 			
 			if(sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
-				dialog.text = LinkRandPhrase("...Already done. Now all that's left is deciding, which ship to load.",
-					"Your treasurer has already done that. Let's decide now, which ship is to be loaded.",
-					"Yes, " + PChar.name + ", I know. He already paid me a visit. Now, which ship are we going to load?");
+				dialog.text = LinkRandPhrase("...Already done. Now all that's left is deciding which ship to load.","Your treasurer has already done that. Let's decide now which ship is to be loaded.","Yes, "+PChar.name+", I know. He already paid me a visit. Now, which ship are we going to load?");
 					
 				for(i=0; i<COMPANION_MAX; i++)
 				{
@@ -679,27 +478,19 @@ void ProcessDialogEvent()
 					}
 				}
 				
-				Link.l99    = "I've crossed my mind, nothing needs.";
+				Link.l99 = "I've changed my mind, nothing else is needed.";
 				Link.l99.go = "exit";
 			}
 			else // Корабля нету
 			{
-				dialog.text = NPCharRepPhrase(npchar, pcharrepphrase("Are you kidding me? Where is your ship? I don't see her at the pier!",
-					"I swear to the devil, you will not trick me! Your ship is not at the pier!"),
-					pcharrepphrase("I don't see your ship in the port, captain " +GetFullName(pchar)+ ". I do hope she's not the 'Flying Dutchman'?",
-					"Captain, it's much easier to load the cargo from the pier. And I prefer to do it that way. Bring your ship fast and come back."));
-				link.l1 = NPCharRepPhrase(npchar, pcharrepphrase("" +RandSwear()+"What a trouble! Alright, old slyboots, see you soon!",
-					"I did not want to deceive you, " +GetFullName(npchar)+ ", a ship is on the other side of the island."),
-					pcharrepphrase("No. My ship is called the 'Black Pearl'. Why did you turn pale? Haha! Just kidding!",
-					"Thanks for the advice, necessarily I'll use it."));
+				dialog.text = NPCharRepPhrase(npchar,pcharrepphrase("Are you kidding me? Where is your ship? I don't see it at the pier!","I swear to the devil, you will not trick me! Your ship is not at the pier!"),pcharrepphrase("I don't see your ship in the port, Captain "+GetFullName(pchar)+". I do hope she's not the 'Flying Dutchman'?","Captain, it's much easier to load the cargo from the pier. And I prefer to do it that way. Bring your ship quickly and come back."));
+				link.l1 = NPCharRepPhrase(npchar,pcharrepphrase(""+RandSwear()+"What a bother! Alright, old slyboots, see you soon!","I did not want to deceive you, "+GetFullName(npchar)+", there's a ship on the other side of the island."),pcharrepphrase("No. My ship is called the 'Black Pearl.' Why did you turn pale? Haha! Just kidding!","Thanks for the advice, I'll be sure to use it."));
 				link.l1.go = "exit";
 			}
 			break;
 			
 		case "TransferGoods_2": // Тут уже не проверяем, есть корабль или нету (выбрали корабль, в который груз не помещается)
-			dialog.text = LinkRandPhrase("So, cap, which ship are we going to load?",
-				"So, which ship is to be loaded, then?",
-				PChar.name + ", which ship's hold shall we load with the goods?");
+			dialog.text = LinkRandPhrase("So, captain, which ship are we going to load?","So, which ship is to be loaded, then?",PChar.name+", which ship's hold should we load with the goods?");
 				
 			for(i=0; i<COMPANION_MAX; i++)
 			{
@@ -715,7 +506,7 @@ void ProcessDialogEvent()
 				}
 			}
 			
-			Link.l99    = "I've changed my mind, I do not need anything.";
+			Link.l99 = "I've changed my mind, I don't need anything.";
 			Link.l99.go = "exit";
 			break;
 			
@@ -728,9 +519,7 @@ void ProcessDialogEvent()
 			{
 				if(TransferGoods_StartTransfer(chref, NPChar.City) != 0)
 				{
-					dialog.text = LinkRandPhrase("Everything is ready! The loading of the selected ship has begun.", 
-						"Alright, the loading of goods on the selected ship has begun.",
-						"Cap, the loading of goods on the selected ship has begun.");
+					dialog.text = LinkRandPhrase("Everything is ready! Loading of the selected ship has begun.","Alright, loading the goods onto the selected ship has begun.","Cap, loading the goods onto the selected ship has begun.");
 					link.l1 = "Thank you. Pleasure doing business with you.";
 					link.l1.go = "exit";
           SetPriceListByStoreMan(rColony); // mitrokosta обновляем список цен
@@ -738,9 +527,7 @@ void ProcessDialogEvent()
 				}
 				else
 				{
-					dialog.text = LinkRandPhrase("Captain, all the goods requested by your treasurer, are already present on board of the ship you indicated!", 
-						"Cap, all the goods are already present on board of the ship you indicated!",
-						"Cap, that ship doesn't require servicing, since all the goods are already there.");
+					dialog.text = LinkRandPhrase("Captain, all the goods requested by your treasurer are already on board the ship you indicated!","Cap, all the goods are already on board the ship you indicated!","Cap, that ship doesn't need servicing, since all the goods are already there.");
 					link.l1 = "Yeah, right.";
 					link.l1.go = "exit";
 					link.l2 = "Guess I'll need to pick another ship, then.";
@@ -749,9 +536,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = LinkRandPhrase("I am afraid, a ship of that type simply cannot hold that much.", 
-					"Cap, your ship will not hold that much cargo!",
-					"Captain, the hold of your ship cannot take that much cargo!");
+				dialog.text = LinkRandPhrase("I am afraid, a ship of that type simply cannot hold that much.","Cap, your ship can't hold that much cargo!","Captain, the hold of your ship cannot take that much cargo!");
 				link.l1 = "Yeah, you're right. I'll need to pick another ship.";
 				link.l1.go = "TransferGoods_2";
 				link.l2 = "I've been thinking... I don't need to buy anything.";
@@ -771,14 +556,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-			    dialog.text = NPCharRepPhrase(npchar, pcharrepphrase("Are you kidding me? Where is your ship? I don't see her at the pier!",
-					"I swear to the devil, you will not trick me! Your ship is not at the pier!"),
-					pcharrepphrase("I don't see your ship in the port, captain " +GetFullName(pchar)+ ". I do hope she's not the 'Flying Dutchman'?",
-					"Captain, it's much easier to load the cargo from the pier. Bring your ship fast and come back."));
-				link.l1 = NPCharRepPhrase(npchar, pcharrepphrase("" +RandSwear()+"What a trouble! Alright, old slyboots, see you soon!",
-					"I did not want to deceive you, " +GetFullName(npchar)+ ", a ship is on the other side of the island."),
-					pcharrepphrase("No. My ship is called the 'Black Pearl'. Why did you turn pale? Haha! Just kidding!",
-					"Thanks for the advice, they will use it."));
+			    dialog.text = NPCharRepPhrase(npchar,pcharrepphrase("Are you kidding me? Where is your ship? I don't see it at the pier!","I swear to the devil, you will not trick me! Your ship is not at the pier!"),pcharrepphrase("I don't see your ship in the port, Captain "+GetFullName(pchar)+". I do hope she's not the 'Flying Dutchman'?","Captain, it's much easier to load the cargo from the pier. Bring your ship quickly and come back."));
+				link.l1 = NPCharRepPhrase(npchar,pcharrepphrase(""+RandSwear()+"What a bother! Alright, old slyboots, see you soon!","I did not want to deceive you, "+GetFullName(npchar)+", there's a ship on the other side of the island."),pcharrepphrase("No. My ship is called the 'Black Pearl.' Why did you turn pale? Haha! Just kidding!","Thanks for the advice, they will make use of it."));
 			    link.l1.go = "exit";//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 			}
 		break;
@@ -787,10 +566,10 @@ void ProcessDialogEvent()
 			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar, "Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
 			if(sti(NPChar.MoneyForStorage) > 0) 
 			{
-				dialog.text = "As for the rent, you still owe me " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ".";
+				dialog.text = "As for the rent, you still owe me "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
 				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
 				{
-					link.l1 = "Alright, I'll pay for the rent now.";
+					link.l1 = "Alright, I'll pay the rent now.";
 					link.l1.go = "storage_3";
 				}
 				else
@@ -811,9 +590,8 @@ void ProcessDialogEvent()
 		
 		case "storage_01":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "Yeah, I have a warehouse in the port - it can hold 50000 centners of cargo. For " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + " per month I can provide safekeeping of your goods. "+
-				"This includes guarding, protection from waterlogging and fighting the rats. What do you say? Also... I'll need a month's payment in advance.";	
-			link.l1 = "Suit. Can I take a look at it? Do you have many rats there?";
+			dialog.text = "Yeah, I have a warehouse in the port - it can hold 50,000 centners of cargo. For "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+" per month, I can provide safekeeping for your goods. "+"This includes guarding, protection from flooding, and dealing with the rats. What do you say? Also... I'll need a month's payment in advance.";	
+			link.l1 = "Suit. May I take a look at it? Do you have many rats there?";
 			link.l1.go = "storage_1";
 			link.l2 = "No, I'm just asking. I can use it when necessary...";
 			link.l2.go = "exit";
@@ -821,7 +599,7 @@ void ProcessDialogEvent()
 		
 		case "storage_1":
 			NPChar.MoneyForStorage = GetStoragePriceExt(NPChar, pchar); 
-			dialog.text = "As I said, I require payment for a month in advance. And no rats!";
+			dialog.text = "As I said, I require payment a month in advance. And no rats!";
 			if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))
 			{
 				link.l1 = "You are... quite mercantile, I must say. Here's your money - I'll rent this shed.";
@@ -862,10 +640,10 @@ void ProcessDialogEvent()
 		break;		
 
 		case "storage_04":
-			dialog.text = "Leaving already? What a pity - that's really an excellent place on great terms. I assure you that you will be getting a deal like this one nowhere else in the Caribbean.";
-			link.l1 = "I said - absolve. Or are you suggesting me paying for storage of air? Look for another renter.";
+			dialog.text = "Leaving already? What a pity - that's truly an excellent place with great terms. I assure you, you won't find a deal like this anywhere else in the Caribbean.";
+			link.l1 = "I said - absolve. Or are you suggesting I pay for storing air? Look for another renter.";
 			link.l1.go = "storage_4";
-			link.l2 = "Nowhere in the Caribbean, you say? Alright, I'll bag it for a while, then.";
+			link.l2 = "Nowhere in the Caribbean, you say? Alright, I'll drop it for a while, then.";
 			link.l2.go = "exit";
 		break;
 		
@@ -873,7 +651,7 @@ void ProcessDialogEvent()
 			NPChar.MoneyForStorage = GetNpcQuestPastMonthParam(NPChar,"Storage.Date") * sti(NPChar.Storage.MoneyForStorage); 
 			if(sti(NPChar.MoneyForStorage) > 0) 			
 			{
-				dialog.text = "And for the rent, you still owe me " + FindRussianMoneyString(sti(NPChar.MoneyForStorage)) + ".";
+				dialog.text = "And as for the rent, you still owe me "+FindRussianMoneyString(sti(NPChar.MoneyForStorage))+".";
 				if(sti(pchar.money) >= sti(NPChar.MoneyForStorage))			
 				{
 					link.l1 = "Fine.";
@@ -912,7 +690,7 @@ void ProcessDialogEvent()
 			{
 				if (!CheckAttribute(npchar, "Contraoffer") || GetNpcQuestPastDayParam(npchar, "Contraoffer") >= 30) 
 				{
-					dialog.text = "Oh! You're just in time, captain. I would like to ask you to do me a favor.";
+					dialog.text = "Oh! You're just in time, Captain. I would like to ask you to do me a favour.";
 					link.l1 = "Let's listen."; 
 					link.l1.go = "Contraoffer";
 					break;
@@ -928,7 +706,7 @@ void ProcessDialogEvent()
 			
 			if (!CheckAttribute(pchar, "GenQuest.Contraoffer.Slaves") && sti(npchar.quest.Contraoffer.chance) == 2 && GetNpcQuestPastDayParam(npchar, "Contraoffer") >= 30) //единичный вариант за всю игру, ака 'пасхалка'
 			{
-				dialog.text = "Oh! You're just in time, captain. I require a special favor.";
+				dialog.text = "Oh! You're just in time, Captain. I require a special favour.";
 				link.l5 = "Let's listen."; 
 				link.l5.go = "Contraoffer_slaves";
 				break;
@@ -945,7 +723,7 @@ void ProcessDialogEvent()
 			//Jason --> генератор Неудачливый вор
 			if (CheckAttribute(pchar, "GenQuest.Device.Shipyarder") && NPChar.location == pchar.GenQuest.Device.Shipyarder.City + "_store" && pchar.GenQuest.Device.Shipyarder == "begin" && !CheckAttribute(npchar, "quest.Device"))
 			{
-   				link.l16 = "Listen, you're dealing in all sorts of goods... Yesterday or today - did anyone offer you to buy "+pchar.GenQuest.Device.Shipyarder.Type+"?";
+   				link.l16 = "Listen, you deal in all sorts of goods... Yesterday or today - did anyone offer to sell you "+pchar.GenQuest.Device.Shipyarder.Type+"?";
 				link.l16.go = "Device_Trader";
 			}
 			// <-- генератор Неудачливый вор
@@ -954,7 +732,7 @@ void ProcessDialogEvent()
 			// belamour legendary edition втречается чаще
 			if (!CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && !CheckAttribute(npchar, "quest.Sunplace") && sti(npchar.nation) != PIRATE && sti(pchar.rank) < 20 && hrand(2) == 2 && !CheckAttribute(pchar, "questTemp.Shadowtrader_Block")) 
 			{
-				dialog.text = "Captain, I would like to ask you for a favor, and I am willing to pay you handsomely, should you agree.";
+				dialog.text = "Captain, I would like to ask you for a favour, and I am willing to pay you handsomely, should you agree.";
 				link.l1 = "Interesting. Well, what's the trouble?"; 
 				link.l1.go = "Sunplace_begin";
 				break;
@@ -963,15 +741,15 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && pchar.GenQuest.Sunplace.Trader == "complete" && npchar.location == pchar.GenQuest.Sunplace.Trader.City + "_store") 
 			{
 				dialog.text = "Captain, I am glad to see you. I already know that you have fulfilled my request regarding "+pchar.GenQuest.Sunplace.Trader.Enemyname+".";
-				link.l1 = "Heh! That's for sure. "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name")))+" "+pchar.GenQuest.Sunplace.Trader.ShipName+" and the cargo - " + GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods))+ ", no longer belong to your rival."; 
+				link.l1 = "Heh! That's for sure. "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType),"Name")))+" "+pchar.GenQuest.Sunplace.Trader.ShipName+" and the cargo - "+GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods))+", no longer belong to your rival."; 
 				link.l1.go = "Sunplace_complete";
 				break;
 			}
 			
 			if (CheckAttribute(pchar, "GenQuest.Sunplace.Trader") && pchar.GenQuest.Sunplace.Trader == "complete_murder" && npchar.location == pchar.GenQuest.Sunplace.Trader.City + "_store") 
 			{
-				dialog.text = "My Lord, captain... Why did you kill him? I only asked you to sink his ship! Holy Virgin, I now have the blood of an innocent man on my hands...";
-				link.l1 = "Heh! What's the matter with you, " + npchar.name + "? Who cares - he will never bother you again, and that's what matters!"; 
+				dialog.text = "My Lord, Captain... Why did you kill him? I only asked you to sink his ship! Holy Virgin, now I have the blood of an innocent man on my hands...";
+				link.l1 = "Heh! What's the matter with you, "+npchar.name+"? Who cares – he'll never bother you again, and that's what matters!"; 
 				link.l1.go = "Sunplace_complete_murder";
 				break;
 			}
@@ -982,13 +760,13 @@ void ProcessDialogEvent()
 			iTmp = CheckAvailableTaskForNPC(NPChar, PGG_TASK_WORKONSTORE);
 			if (iTmp != -1)
 			{
-				dialog.text = "I had a job, but " + GetFullName(&Characters[iTmp]) + " has already undertaken to do it for me.";
+				dialog.text = "I had a job, but "+GetFullName(&Characters[iTmp])+" has already undertaken to do it for me.";
 				link.l1 = "Oh, really? Well, I'll come back later, then.";
 				link.l1.go = "exit";
 				break;
 			}
 //navy <--
-			dialog.text = NPCharRepPhrase(npchar,"What business?! Tell me everything!","I am listening. What's that deal you're talking about?");
+			dialog.text = NPCharRepPhrase(npchar,"What business?! Tell me everything!","I am listening. What's this deal you're talking about?");
             ok = (rColony.from_sea == "") || (Pchar.location.from_sea == rColony.from_sea);
             if (sti(Pchar.Ship.Type) != SHIP_NOTUSED && ok)
 			{
@@ -996,22 +774,21 @@ void ProcessDialogEvent()
     			{
     				if (pchar.CargoQuest.TraderID == npchar.id )
     				{
-    					link.l1 = RandPhraseSimple("I have a batch of goods for your store in the hold of my ship.", "My ship was chartered to deliver the goods to your store. The wares are being unloaded now.");
+    					link.l1 = RandPhraseSimple("I have a batch of goods for your store in the hold of my ship.","My ship was chartered to deliver the goods to your store. The wares are being unloaded now.");
     					link.l1.go = "generate_quest_2";
     				}
     				else
     				{
                         if (!CheckQuestAttribute("generate_trade_quest_progress",  "failed") && pchar.CargoQuest.GiveTraderID == npchar.id && GetNationRelation2MainCharacter(sti(characters[GetCharacterIndex(pchar.CargoQuest.TraderID)].nation)) == RELATION_ENEMY)
                         {
-                            link.l1 = "Unfortunately, I am forced to abandon their commitments. The political situation does not allow me to deliver the goods.";
+                            link.l1 = "Unfortunately, I am forced to abandon my commitments. The political situation does not allow me to deliver the goods.";
             				link.l1.go = "generate_quest_cannot_done";
                         }
                         else
                         {
                             if (rand(1) == 1)
                             {
-                                link.l1 = RandPhraseSimple("I can offer you to charter my ship for shipping cargo.",
-								                           "I have a great ship and I can deliver any cargo wherever you might need.");
+                                link.l1 = RandPhraseSimple("I can offer to charter my ship for cargo transport.","I have a fine ship and I can deliver any cargo wherever you might need.");
             				    link.l1.go = "generate_quest_not_closed";
         				    }
     				    }
@@ -1019,7 +796,7 @@ void ProcessDialogEvent()
     			}
     			else
     			{
-    				link.l1 = "Would you like to charter a ship, " +GetAddress_FormToNPC(NPChar)+ "? I have a reliable vessel and experienced crew.";
+    				link.l1 = "Would you like to charter a ship, "+GetAddress_FormToNPC(NPChar)+"? I have a reliable vessel and an experienced crew.";
     				link.l1.go = "generate_quest";
     			}
 				link.l22 = "I'm on another matter.";
@@ -1027,26 +804,19 @@ void ProcessDialogEvent()
     			// --> на кредитный генератор
     			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
     			{
-	                link.l3 = pcharrepphrase(RandPhraseSimple("Oh, I was really drained in the sea... Well, mate, money is a real issue for me right now.",
-	                                                          "Alright, old fox, let's discuss our financial affairs."),
-	                                        RandPhraseSimple("I would like to discuss the financial issues with you.",
-	                                                         "Let's discuss financial matters, we have to talk about them."));,
+	                link.l3 = pcharrepphrase(RandPhraseSimple("Oh, I was really exhausted out at sea... Well, mate, money is a real issue for me right now.","Alright, old fox, let's discuss our financial affairs."),RandPhraseSimple("I would like to discuss the financial matters with you.","Let's discuss financial matters, we need to talk about them."));,
 	
 	                link.l3.go = "LoanForAll";
                 }
 				//квест мэра - на связь с нашим шпионом
   				if (CheckAttribute(pchar, "GenQuest.Intelligence") && pchar.GenQuest.Intelligence.SpyId == npchar.id && pchar.GenQuest.Intelligence == "") 
 				{
-					link.l4 = RandPhraseSimple("I am here on request of one man. His name is governor " + GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId)) + ".", 
-						GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId)) + " sent me to you. I am supposed to pick up something...");
+					link.l4 = RandPhraseSimple("I am here at the request of one man. His name is Governor "+GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId))+".",GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId))+" sent me to you. I'm supposed to pick up something...");
 					link.l4.go = "IntelligenceForAll";
 				}	
 				
 				//homo 25/06/06 слухи
-                link.l6 = pcharrepphrase(RandPhraseSimple("Can you tell me the latest gossips? You're hanging around here all day, anyway.",
-                                                          "Make no fuss, you old fraud - better tell me what's new on the dry land?"),
-                                        RandPhraseSimple("It seems that I spent forever at sea. What's new in your region?",
-                                                         "You probably know all the latest news? What important happened?"));,
+                link.l6 = pcharrepphrase(RandPhraseSimple("Can you tell me the latest gossip? You're hanging around here all day, anyway.","Don't make a fuss, you old fraud - better tell me what's new on dry land?"),RandPhraseSimple("It feels like I've spent an eternity at sea. What's new in your region?","You probably know all the latest news? What important things have happened?"));,
 
     		    link.l6.go = "rumours_trader";
 
@@ -1055,16 +825,16 @@ void ProcessDialogEvent()
 				{
 					if(CheckAttribute(NPChar,"Storage.Activate"))
 					{
-						link.l7 = "Take me to the warehouse. I want to see, what condition it is in.";
+						link.l7 = "Take me to the warehouse. I want to see what condition it is in.";
 						link.l7.go = "storage_0";
-						link.l8 = "I decided to release the warehouse. I don't need it now.";
+						link.l8 = "I've decided to release the warehouse. I don't need it now.";
 						link.l8.go = "storage_04";
 					}
 					else
 					{
 						if(!CheckAttribute(NPChar,"Storage.NoActivate"))
 						{
-							link.l7 = "Excuse me, my good man - aren't you renting warehouses, by a chance?";
+							link.l7 = "Excuse me, my good man - aren't you renting warehouses, by any chance?";
 							link.l7.go = "storage_01";
 						}	
 					}
@@ -1073,42 +843,38 @@ void ProcessDialogEvent()
 				// Jason --> квест губера на поиск дезертира
 				if(CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE)
 				{
-					link.l8 = "You see, I am trying to find my companion, "+pchar.GenQuest.FindFugitive.Name+" is his name. In Port-Royal, people at the tavern told me that he was heading to your settlement. Have you met him, by a chance?";
+					link.l8 = "You see, I am trying to find my companion, "+pchar.GenQuest.FindFugitive.Name+" is his name. In Port Royal, people at the tavern told me that he was heading to your settlement. Have you met him, by any chance?";
 					link.l8.go = "FindFugitiveSt";
 				}
 				//<-- поиск дезертира
 				
 				// <-- homo
-				link.l99 = "But there's no time for talks now.";
+				link.l99 = "But there's no time to talk now.";
     			link.l99.go = "no_quests";
 			}
 			else
 			{
-                link.l1 = NPCharRepPhrase(npchar, pcharrepphrase("" +RandSwear()+"I left the ship on the other side of the island. I'll come back later!", "I beg your pardon, " +GetFullName(npchar)+ ", I'll come later. My ship has not yet approached the pier."), pcharrepphrase("Devil! These idiots didn't prepare the ship for loading! I'll come back later!", "Excuse me, I must give orders to moor my ship at the pier!"));
+                link.l1 = NPCharRepPhrase(npchar,pcharrepphrase(""+RandSwear()+"I left the ship on the other side of the island. I'll come back later!","I beg your pardon, "+GetFullName(npchar)+", I'll come later. My ship hasn't reached the pier yet."),pcharrepphrase("Devil! These idiots haven't prepared the ship for loading! I'll come back later!","Excuse me, I must give orders to moor my ship at the pier!"));
                 link.l1.go = "exit";
 				link.l22 = "I'm on another matter.";
 				link.l22.go = "quests";
     			// --> на кредитный генератор
     			if (CheckAttribute(pchar, "GenQuest.LoanChest.TakeChest") && sti(pchar.GenQuest.LoanChest.TargetIdx) == sti(NPChar.index))
     			{
-	                link.l3 = pcharrepphrase(RandPhraseSimple("Oh, I was really drained in the sea... Well, mate, money is a real issue for me right now.",
-	                                                          "Alright, old fox, let's discuss our financial affairs."),
-	                                        RandPhraseSimple("I would like to discuss with you the financial issues.",
-	                                                         "Let's discuss financial matters, we have to talk about."));,
+	                link.l3 = pcharrepphrase(RandPhraseSimple("Oh, I was truly exhausted at sea... Well, mate, money is a real issue for me right now.","Alright, old fox, let's discuss our financial affairs."),RandPhraseSimple("I would like to discuss the financial matters with you.","Let's discuss financial matters we need to talk about."));,
 	
 	                link.l3.go = "LoanForAll";
                 }
 				//квест мэра - на связь с нашим шпионом
   				if (CheckAttribute(pchar, "GenQuest.Intelligence") && pchar.GenQuest.Intelligence.SpyId == npchar.id && pchar.GenQuest.Intelligence == "") 
 				{
-					link.l7 = RandPhraseSimple("I am here on request of one man. His name is governor " + GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId)) + ".", 
-						GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId)) + " sent me to you. I am supposed to pick up something...");
+					link.l7 = RandPhraseSimple("I am here at the request of one man. His name is Governor "+GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId))+".",GetFullName(characterFromId(pchar.GenQuest.Intelligence.MayorId))+" sent me to you. I'm supposed to pick up something...");
 					link.l7.go = "IntelligenceForAll";
 				}
 				// Jason --> квест губера на поиск дезертира
 				if(CheckAttribute(pchar, "GenQuest.FindFugitive") && sti(NPChar.nation) == PIRATE)
 				{
-					link.l8 = "You see, I am trying to find my companion, "+pchar.GenQuest.FindFugitive.Name+" is his name. In Port-Royal, people at the tavern told me that he was heading to your settlement. Have you met him, by a chance?";
+					link.l8 = "You see, I am trying to find my companion, "+pchar.GenQuest.FindFugitive.Name+" is his name. In Port Royal, people at the tavern told me that he was heading to your settlement. Have you met him, by any chance?";
 					link.l8.go = "FindFugitiveSt";
 				}
 				//<-- поиск дезертира
@@ -1122,7 +888,7 @@ void ProcessDialogEvent()
 				//проверка враждебности нам страны торговца
 				if (sti(NPChar.nation) != PIRATE && GetNationRelation2MainCharacter(sti(NPChar.nation)) == RELATION_ENEMY)
 				{
-					dialog.text = "No, I don't need your services! At least, while you're enemies with " + NationNameAblative(sti(NPChar.nation)) + ".";
+					dialog.text = "No, I don't need your services! At least, not while you're enemies with "+NationNameAblative(sti(NPChar.nation))+".";
 					link.l1 = "In that case, farewell.";
 					link.l1.go = "exit";
 				}
@@ -1131,10 +897,8 @@ void ProcessDialogEvent()
                     // проверка на проф пригодность -->
                     if (isBadReputation(pchar, 42))
                     {
-                        dialog.text = RandSwear() + "You're " + GetFullName(pchar)+ ", aren't you? They say " +
-                                      RandPhraseSimple("a lot of scary things about you","a lot of ugly things about you") + ", and I don't want to deal with you.";
-						link.l1 = RandPhraseSimple("Of course - you make a mistake once, and everybody will gladly spit at you.",
-						                           RandSwear()+ "Well, there are better things to do at sea, "+GetFullName(npchar)+".");
+                        dialog.text = RandSwear()+"You're "+GetFullName(pchar)+", aren't you? They say "+RandPhraseSimple("a lot of frightening things about you","a lot of ugly things about you")+", and I don't want to deal with you.";
+						link.l1 = RandPhraseSimple("Of course - you make a mistake once, and everybody will gladly spit on you.",RandSwear()+"Well, there are better things to do at sea, "+GetFullName(npchar)+".");
 						link.l1.go = "exit";
                         break;
                     }
@@ -1143,7 +907,7 @@ void ProcessDialogEvent()
 
 					if (iTradeNation < 0)
 					{
-						dialog.text = NPCharRepPhrase(npchar, "Heh, "+GetAddress_Form(NPChar)+", I don't have time for freights today. Come back tomorrow.","Come back tomorrow. Perhaps, I will make you an advantageous offer.");
+						dialog.text = NPCharRepPhrase(npchar,"Heh, "+GetAddress_Form(NPChar)+", I don't have time for freight today. Come back tomorrow.","Come back tomorrow. Perhaps I will make you an advantageous offer.");
 						link.l1 = "Alright, I'll come back tomorrow.";
 						link.l1.go = "exit";
 					}
@@ -1160,8 +924,8 @@ void ProcessDialogEvent()
 							if (sti(Goods[iTradeGoods].Weight)/sti(Goods[iTradeGoods].Units)*sti(iQuantityGoods) > 1500) iQuantityGoods = makeint(1500/(sti(Goods[iTradeGoods].Weight)/sti(Goods[iTradeGoods].Units))); //Jason: больше 1500 массы не дадим - большие фрахты только через ПУ
     						if (iQuantityGoods < 100)// это в шт. товара
     						{
-    							dialog.text = NPCharRepPhrase(npchar, "Your pitiful old tub cannot hold the entire batch, so there will be no deal today.","Unfortunately, captain "+GetFullName(pchar)+", I will need a more capacious ship for my delivery.");
-    							link.l1 = NPCharRepPhrase(npchar, "My ship is decent, but I get your point. Goodbye.","I can see your point, business is business. Farewell.");
+    							dialog.text = NPCharRepPhrase(npchar,"Your pitiful old tub can't hold the entire batch, so there will be no deal today.","Unfortunately, captain "+GetFullName(pchar)+", I will need a larger ship for my delivery.");
+    							link.l1 = NPCharRepPhrase(npchar,"My ship is decent, but I take your point. Goodbye.","I see your point, business is business. Farewell.");
     							link.l1.go = "exit";
     						}
     						else
@@ -1184,23 +948,18 @@ void ProcessDialogEvent()
                                 sTemp = "";
                                 if (pchar.CargoQuest.iTradeIsland != Characters[storeMan].city)
 								{
-                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Dat");
+                                    sTemp = ", which is on " + XI_ConvertString(pchar.CargoQuest.iTradeIsland+"Voc");
                                 }
-                                dialog.text =  "Oh! I was just about to ask you for a favor. You see, I need to deliver the cargo of " +
-                                               GetGoodsNameAlt(iTradeGoods)+ " in amount of " + FindRussianQtyString(iQuantityGoods) + " to the town of " +
-                                           sNation + sTemp + ", and the sooner the better. If you manage to do it for " +  FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired)) +
-                                           ", then upon arrival you will receive " +
-                                           FindRussianMoneyString(iMoney) + " as your reward. What do you say?";
+                                dialog.text = "Oh! I was just about to ask you for a favour. You see, I need to deliver the cargo of "+GetGoodsNameAlt(iTradeGoods)+" in the amount of "+FindRussianQtyString(iQuantityGoods)+" to the town of "+sNation+sTemp+", and the sooner the better. If you manage to do it by "+FindRussianDaysString(makeint(pchar.CargoQuest.iDaysExpired))+", then upon arrival you will receive "+FindRussianMoneyString(iMoney)+" as your reward. What do you say?";
     							link.l1 = "I think I agree.";
     							link.l1.go = "exit_trade";
-    							link.l2  = "This is probably not for me.";
+    							link.l2 = "This is probably not for me.";
     							link.l2.go = "exit";
     						}
                         }
                         else
                         {
-                            dialog.text = "Political realities in the archipelago do not allow me to trade. "+
-                                          XI_ConvertString(NationShortName(sti(NPChar.nation))+"hunter") + " is in hostility with everyone and left just me in the store.";
+                            dialog.text = "Political realities in the archipelago do not allow me to trade. "+XI_ConvertString(NationShortName(sti(NPChar.nation))+"hunter")+" is hostile to everyone and left just me in the store.";
     						link.l1 = "Oh! I am sorry. Best of luck.";
     						link.l1.go = "exit";
                         }
@@ -1209,8 +968,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				dialog.text = NPCharRepPhrase(npchar, "Get lost, I have no time for idle chatter!","I have already told you that I don't have anything for you.");
-				link.l1 = NPCharRepPhrase(npchar, "You must be courteous, or I'll teach you to be polite!", "Oh, I am sorry!");
+				dialog.text = NPCharRepPhrase(npchar,"Get lost, I have no time for idle chatter!","I have already told you that I don't have anything for you.");
+				link.l1 = NPCharRepPhrase(npchar,"You must be courteous, or I'll teach you some manners!","Oh, I'm sorry!");
 				link.l1.go = "exit";
 			}
 		break;
@@ -1224,8 +983,8 @@ void ProcessDialogEvent()
 		case "generate_quest_2":
 			if (pchar.quest.generate_trade_quest_progress == "failed")
 			{
-				dialog.text = RandSwear() + "Don't you think that you remembered about that deal a bit too late? I had to order the goods again. Farewell.";
-				link.l1 = "Forgive me, but I was in a hurry. Maybe if I cover your losses, my reputation will be restored?";
+				dialog.text = RandSwear()+"Don't you think you remembered that deal a bit too late? I had to order the goods again. Farewell.";
+				link.l1 = "Forgive me, but I was in a hurry. Perhaps if I cover your losses, my reputation will be restored?";
 				link.l1.go = "generate_quest_failed";
 				link.l9 = "All the best.";
 				link.l9.go = "exit";
@@ -1236,9 +995,7 @@ void ProcessDialogEvent()
                 iTradeGoods    =  makeint(pchar.CargoQuest.iTradeGoods);
                 iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
                 
-                dialog.text = "Indeed! I've been waiting for it quite some time. You have to deliver me a cargo of " +
-                GetGoodsNameAlt(iTradeGoods) + " in amount of " + FindRussianQtyString(iQuantityGoods) + " and receive for it " +
-                FindRussianMoneyString(sti(pchar.CargoQuest.iMoney)) + ".";
+                dialog.text = "Indeed! I've been waiting for it for quite some time. You have to deliver me a cargo of "+GetGoodsNameAlt(iTradeGoods)+" in the amount of "+FindRussianQtyString(iQuantityGoods)+" and receive for it "+FindRussianMoneyString(sti(pchar.CargoQuest.iMoney))+".";
 				link.l1 = "Exactly.";
 				link.l1.go = "generate_quest_ready";
 			}
@@ -1250,11 +1007,8 @@ void ProcessDialogEvent()
             // блок кидалова нас на бабки -->
             if (rand(8) == 1 && sti(Goods[iTradeGoods].Cost) <= 44 && GetQuestPastDayParam("CargoQuest") > 5)
             {
-                dialog.text = RandSwear() + "I must apologize to you, "+GetAddress_Form(NPChar)+
-                              ".  You see, The problem is that I was " + RandPhraseSimple("in an embarrassing situation and I won't be able to pay you"," already purchased that cargo from a different vendor for a better price")+
-                              ". As a payment for your charter I suggest you keep all the cargo you were delivering.";
-				link.l1 = RandSwear() + RandPhraseSimple("And I've been protecting that damn cargo from all dangers! I killed two hundred rats because of it!",
-                                                         "You put me in a stalemate, and I will have to agree.");
+                dialog.text = RandSwear()+"I must apologise to you, "+GetAddress_Form(NPChar)+".  You see, the problem is that I was "+RandPhraseSimple("in an embarrassing situation and I won't be able to pay you"," already purchased that cargo from another vendor for a better price")+". As payment for your charter, I suggest you keep all the cargo you were delivering.";
+				link.l1 = RandSwear()+RandPhraseSimple("And I've been protecting that damn cargo from every danger! I killed two hundred rats because of it!","You've put me in a stalemate, so I must agree.");
 				link.l1.go = "exit";
 				ChangeCharacterComplexReputation(pchar,"nobility", 2);
 				AddCharacterExpToSkill(pchar, "Sailing", 60);
@@ -1274,10 +1028,8 @@ void ProcessDialogEvent()
 			if (GetSquadronGoods(pchar, iTradeGoods) < iQuantityGoods)
 			{
                 iTmp = iQuantityGoods - GetSquadronGoods(pchar, iTradeGoods);
-                dialog.text = "That's not the entire batch! According to our deal I need "
-                              + FindRussianQtyString(iTmp) + " units more.";
-				link.l9 = RandPhraseSimple("Yes, indeed. I'll have to compensate for the shortage then. See you later.",
-                                           RandSwear() +"These cursed rats have spoiled the cargo. I will compensate the shortage and come back again.");
+                dialog.text = "That's not the entire batch! According to our deal, I need "+FindRussianQtyString(iTmp)+" units more.";
+				link.l9 = RandPhraseSimple("Yes, indeed. I'll have to make up for the shortage then. See you later.",RandSwear()+"These cursed rats have spoiled the cargo. I will make up for the shortage and return.");
 				link.l9.go = "exit";
                 AddQuestRecord("DELIVERY_TRADE_QUEST", "8");
                 AddQuestUserData("DELIVERY_TRADE_QUEST", "sHaveNotQty", iTmp);
@@ -1311,8 +1063,8 @@ void ProcessDialogEvent()
             iTradeGoods    =  makeint(pchar.CargoQuest.iTradeGoods);
             iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
             iMoney =  3*makeint(iQuantityGoods * sti(Goods[iTradeGoods].Cost) / sti(Goods[iTradeGoods].Units));
-			dialog.text = "Alright... The sum of " + FindRussianMoneyString(iMoney) + " will just cover the damages caused by the violation of the terms of our deal.";
-			link.l1 = "Wow! No, that won't do! Never again shall I be delivering any cargo! There's enough of that crap at sea!";
+			dialog.text = "Alright... The sum of "+FindRussianMoneyString(iMoney)+" will only cover the damages caused by the violation of the terms of our deal.";
+			link.l1 = "Shiver me timbers! No, that won't do! Never again shall I deliver any cargo! There's enough of that crap at sea!";
 			link.l1.go = "exit";
             if (sti(pchar.Money) >= iMoney)
             {
@@ -1354,17 +1106,16 @@ void ProcessDialogEvent()
             iTradeGoods    =  makeint(pchar.CargoQuest.iTradeGoods);
             iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
 
-            dialog.text = "Hmm. I heard that you haven't fulfilled your obligations stated in the previous contract - and you are asking for another? You had to deliver the cargo of " +
-            LanguageConvertString(iSeaGoods, "seg_" + Goods[iTradeGoods].Name)+ " to " + XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony) + ".";
-			link.l1 = "Yes, indeed! You're correct!";
+            dialog.text = "Hmm. I heard that you haven't fulfilled your obligations under the previous contract - and now you're asking for another? You were supposed to deliver the cargo of "+LanguageConvertString(iSeaGoods,"seg_"+Goods[iTradeGoods].Name)+" to "+XI_ConvertString("Colony"+pchar.CargoQuest.iTradeColony)+".";
+			link.l1 = "Yes, indeed! You're right!";
 			link.l1.go = "exit";
 		break;
 		
 		case "generate_quest_cannot_done":
-            dialog.text = RandSwear() + GetAddress_Form(NPChar) +", you're letting me down!!! Perhaps you will do something to resolve this issue?";
+            dialog.text = RandSwear()+GetAddress_Form(NPChar)+", you're letting me down!!! Perhaps you could do something to resolve this issue?";
 			link.l1 = "Alright. I will do my best to deliver the shipment.";
 			link.l1.go = "exit";
-			link.l2 = "No, I can't. I am sorry";
+			link.l2 = "No, I can't. I'm sorry";
 			link.l2.go = "generate_quest_cannot_done_2";
 			
 		break;
@@ -1374,15 +1125,13 @@ void ProcessDialogEvent()
             iQuantityGoods =  makeint(pchar.CargoQuest.iQuantityGoods);
             if (GetSquadronGoods(pchar, iTradeGoods) < iQuantityGoods)
 			{
-				dialog.text = "Hold on! There are not enough goods on board of your ship! You don't have "
-                              + FindRussianQtyString(iQuantityGoods - GetSquadronGoods(pchar, iTradeGoods)) + " units of cargo.";
-				link.l9 = RandPhraseSimple("Yes, indeed. I'll have to compensate for the shortage then.",
-                                           RandSwear() +"The rats have spoiled the cargo. I will buy the missing amount and come back again.");
+				dialog.text = "Hold on! There are not enough goods on board your ship! You don't have "+FindRussianQtyString(iQuantityGoods - GetSquadronGoods(pchar,iTradeGoods))+" units of cargo.";
+				link.l9 = RandPhraseSimple("Yes, indeed. I'll have to make up for the shortage then.",RandSwear()+"The rats have spoiled the cargo. I will buy the missing amount and return.");
 				link.l9.go = "exit";
 			}
 			else
 			{
-                dialog.text = "I see, I see... I'll accept the shipment back.";
+                dialog.text = "I see, I see... I'll take the shipment back.";
     			link.l1 = "Thank you! I will not fail you again!";
     			link.l1.go = "exit";
     			ChangeCharacterComplexReputation(pchar,"nobility", -3);
@@ -1401,7 +1150,7 @@ void ProcessDialogEvent()
 	
 //Jason --> мини-квест Дефицитный товар
 		case "Wine_Trader":
-			dialog.text = "What are you talking about? Clearly, you were misled - I never dealt in European wine in such amounts. One-two bottles, not more. But the local wine is a different story - I have enough of that stuff, and it is sold by demijohns, not bottles!";
+			dialog.text = "What are you talking about? Clearly, you were misled - I never dealt in European wine in such quantities. One or two bottles, no more. But the local wine is a different story - I have plenty of that stuff, and it is sold by the demijohn, not by the bottle!";
 			link.l1 = "Dash it! But I was told...";
 			link.l1.go = "Wine_Trader_1";
 		break;
@@ -1419,7 +1168,7 @@ void ProcessDialogEvent()
 		case "Wine_Repeat2":
 			RemoveItems(PChar, "letter_1", 1);
 			PlaySound("interface\important_item.wav");
-			dialog.text = "Now that's a different story. You know, various types are coming here, asking unnecessary questions. So, let's bargain, then?";
+			dialog.text = "Now that's a different story. You know, all sorts come here, asking unnecessary questions. So, shall we bargain, then?";
 			link.l1 = "Sure!";
 			link.l1.go = "Wine_Price";
 			pchar.questTemp.Wine.wait = "true";
@@ -1430,7 +1179,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Wine_Price":
-			dialog.text = "How many bottles you need? The price of one bottle is 500 pesos, and the minimum batch is 20 bottles.";
+			dialog.text = "How many bottles do you need? The price of one bottle is 500 pesos, and the minimum batch is 20 bottles.";
 			link.l1 = "";
 			Link.l1.edit = 4;
 			link.l1.go = "Wine_Qty";
@@ -1443,7 +1192,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.Wine.Qty = sti(iQty);
 			if (iQty < 20)
 			{
-				dialog.text = "I am not a peddler, captain. As I can recall, you were talking about a larger batch?";
+				dialog.text = "I am not a peddler, captain. As I recall, you were talking about a larger batch?";
 				link.l1 = "I am sorry... Let's reconsider the amount, then.";
 				link.l1.go = "Wine_Price";
 				break;
@@ -1456,7 +1205,7 @@ void ProcessDialogEvent()
 				break;
 			}
 			pchar.questTemp.Wine.Summ = sti(iQty)*500;
-			dialog.text = ""+sti(iQty)+" Bottles? Fine. That will cost you " + FindRussianMoneyString(sti(pchar.questTemp.Wine.Summ))".";
+			dialog.text = ""+sti(iQty)+" Bottles? Fine. That will cost you "+FindRussianMoneyString(sti(pchar.questTemp.Wine.Summ))".";
 			if (makeint(Pchar.money) >= sti(pchar.questTemp.Wine.Summ))
 			{
 				link.l1 = "Here you go.";
@@ -1467,14 +1216,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Wine_Qty_exit":
-			dialog.text = "That's alright, but try not to take too long. This stuff is quite popular here.";
+			dialog.text = "That's all right, but try not to take too long. This stuff is quite popular here.";
 			link.l1 = "I'll be back soon!";
 			link.l1.go = "exit";
 		break;
 		
 		case "Wine_Qty_1":
 			AddMoneyToCharacter(pchar, -sti(pchar.questTemp.Wine.Summ));
-			dialog.text = "Let's see... Everything seems alright. You can collect your purchase.";
+			dialog.text = "Let's see... Everything seems in order. You can collect your purchase.";
 			link.l1 = "Thank you! Best of luck!";
 			link.l1.go = "Wine_Qty_2";
 		break;
@@ -1505,7 +1254,7 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Contraoffer.Trader.Summ = sti(pchar.GenQuest.Contraoffer.Trader.Price)*sti(pchar.GenQuest.Contraoffer.Trader.Qty);//сумма
 			pchar.GenQuest.Contraoffer.Trader.Days = 30+hrand(20);//срок
 			pchar.GenQuest.Contraoffer.Trader.Chance = rand(5);//17% вероятности, что патруль накроет
-			dialog.text = "I planned to strike a good bargain, but I still need a particular merchandise for it - " + GetGoodsNameAlt(iCGood)+ ". The problem is that this merchandise is a contraband in our colony, so I can't count on buying it from trading captains\nAll I need are " + FindRussianQtyString(sti(pchar.GenQuest.Contraoffer.Trader.Qty)) + " units of it. Perhaps, you could deliver it to me? I will pay you well, " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Price)) + " per unit, which will amount to " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ". Oh, and I need it no later than in "+FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Trader.Days))+". So, will you help me?";
+			dialog.text = "I planned to strike a good bargain, but I still need a particular item for it - "+GetGoodsNameAlt(iCGood)+". The problem is that this merchandise is contraband in our colony, so I can't count on buying it from trading captains\nAll I need are "+FindRussianQtyString(sti(pchar.GenQuest.Contraoffer.Trader.Qty))+" units of it. Perhaps you could deliver it to me? I will pay you well, "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Price))+" per unit, which will amount to "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ))+". Oh, and I need it no later than "+FindRussianDaysString(sti(pchar.GenQuest.Contraoffer.Trader.Days))+". So, will you help me?";
 			link.l1 = "Hmm... Sounds interesting. I agree!";
 			link.l1.go = "Contraoffer_1";
 			link.l2 = "Delivering smuggled goods? Sorry, not interested.";
@@ -1514,8 +1263,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_1":
-			dialog.text = "Excellent. I am glad that you agreed. So, I'll be waiting for your return with the goods.";
-			link.l1 = "I will soon be back!";
+			dialog.text = "Excellent. I'm glad you agreed. So, I'll be waiting for your return with the goods.";
+			link.l1 = "I will be back soon!";
 			link.l1.go = "exit";
 			rColony = GetColonyByIndex(FindColony(npchar.city));
 			SetNull2StoreGood(rColony, sti(pchar.GenQuest.Contraoffer.Trader.Goods));//нулим товар
@@ -1540,20 +1289,20 @@ void ProcessDialogEvent()
 			if (amount > 0)
 			{
 				dialog.text = "Are you joking? You don't have the full amount of goods I need!";
-				link.l1 = "I am sorry, my bad...";
+				link.l1 = "I am sorry, my mistake...";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "Let's see, then. You were supposed to deliver a load of " + GetGoodsNameAlt(iCGood)+ " in amount of " + FindRussianQtyString(pchar.GenQuest.Contraoffer.Trader.Qty) + ". Correct?";
-				link.l1 = "Exactly, " + GetAddress_FormToNPC(NPChar) + ".";
+				dialog.text = "Let's see, then. You were supposed to deliver a load of "+GetGoodsNameAlt(iCGood)+" in the amount of "+FindRussianQtyString(pchar.GenQuest.Contraoffer.Trader.Qty)+". Correct?";
+				link.l1 = "Exactly, "+GetAddress_FormToNPC(NPChar)+".";
 				link.l1.go = "Contraoffer_pay";
 			}
 		break;
 		
 		case "Contraoffer_pay":
-			dialog.text = "Thanks for your work. Please, take your payment - " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ)) + ".";
-		link.l1 = "Thank you! Pleasure doing business with you.";
+			dialog.text = "Thank you for your work. Please, take your payment - "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Trader.Summ))+".";
+		link.l1 = "Thank you! A pleasure doing business with you.";
 		link.l1.go = "Contraoffer_complete";
 		break;
 		
@@ -1570,7 +1319,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar,"nobility", -1);
 			if (pchar.GenQuest.Contraoffer.Trader.Chance == 3)
 			{
-				dialog.text = "Oops... Captain, seems like we have a problem here...";
+				dialog.text = "Oops... Captain, it seems we have a problem here...";
 				link.l1 = "What is it again?";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("Contraoffer_Patrol");
@@ -1603,8 +1352,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Contraoffer_slaves_1":
-			dialog.text = "Exactly - it's very profitable indeed. Well, then I will be waiting for your return with my slaves.";
-			link.l1 = "I will not keep you waiting for long. See you!";
+			dialog.text = "Exactly - it's very profitable indeed. Well then, I will be waiting for your return with my slaves.";
+			link.l1 = "I won't keep you waiting long. See you!";
 			link.l1.go = "exit";
 			pchar.GenQuest.Contraoffer.Slaves.Yes = "begin";
 			pchar.GenQuest.Contraoffer.Slaves.City = npchar.city;
@@ -1622,20 +1371,20 @@ void ProcessDialogEvent()
 			if (amount > 0)
 			{
 				dialog.text = "Are you joking? You don't have all the slaves I need!";
-				link.l1 = "I am sorry, my bad...";
+				link.l1 = "I am sorry, my mistake...";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "Let's see, then. You were going to deliver to me a batch of slaves in the amount of " + FindRussianQtyString(pchar.GenQuest.Contraoffer.Slaves.Qty) + ". Correct?";
-				link.l1 = "Exactly, " + GetAddress_FormToNPC(NPChar) + ".";
+				dialog.text = "Let's see, then. You were going to deliver to me a batch of slaves in the amount of "+FindRussianQtyString(pchar.GenQuest.Contraoffer.Slaves.Qty)+". Correct?";
+				link.l1 = "Exactly, "+GetAddress_FormToNPC(NPChar)+".";
 				link.l1.go = "Contraoffer_slaves_pay";
 			}
 		break;
 		
 		case "Contraoffer_slaves_pay":
-			dialog.text = "Thanks for your work. Please take your payment - " + FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Slaves.Money)) + ". Also, please accept this. I am certain you will find it useful.";
-			link.l1 = "Thank you! Pleasure doing business with you.";
+			dialog.text = "Thank you for your work. Please take your payment - "+FindRussianMoneyString(sti(pchar.GenQuest.Contraoffer.Slaves.Money))+". Also, please accept this. I am certain you will find it useful.";
+			link.l1 = "Thank you! A pleasure doing business with you.";
 			link.l1.go = "Contraoffer_slaves_complete";
 		break;
 		
@@ -1659,8 +1408,8 @@ void ProcessDialogEvent()
 		
 		//Jason --> генератор Неудачливый вор
 		case "Device_Trader":
-			dialog.text = "Hmm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Never heard of it before... Just what is it, actually? I've never heard about such a thing in all my time.";
-			link.l1 = "Well, it's a shipwright's tool, "+pchar.GenQuest.Device.Shipyarder.Describe+". Was anyone offering anything like that to you?";
+			dialog.text = "Hmm, "+pchar.GenQuest.Device.Shipyarder.Type+"? Never heard of it before... What is it, actually? I've never heard of such a thing in all my time.";
+			link.l1 = "Well, it's a shipwright's tool, "+pchar.GenQuest.Device.Shipyarder.Describe+". Was anyone offering you anything like that?";
 			link.l1.go = "Device_Trader_1";
 			npchar.quest.Device = "true";
 		break;
@@ -1668,14 +1417,14 @@ void ProcessDialogEvent()
 		case "Device_Trader_1":
 			if (sti(pchar.GenQuest.Device.Shipyarder.Chance1) == 0)
 			{
-				dialog.text = "Hmm... Yeah, there was one strange guy. But he didn't tell me what that thing was, he just tried to sell it to me. But what would I need it for, if I have no idea what its for? How would I resell it? So, I just refused.";
-				link.l1 = "And how did he look like and where did he go? I need that instrument badly.";
+				dialog.text = "Hmm... Yeah, there was one strange guy. But he didn't tell me what that thing was, he just tried to sell it to me. But what would I need it for, if I have no idea what it's for? How would I resell it? So, I just refused.";
+				link.l1 = "And what did he look like, and where did he go? I need that instrument badly.";
 				link.l1.go = "Device_Common";
 			}
 			else
 			{
 				dialog.text = "No, nothing like that. Sorry, I can't help you. Ask around.";
-				link.l1 = "I see. Well - time to ask around!";
+				link.l1 = "I see. Well, time to ask around!";
 				link.l1.go = "exit";
 			}
 		break;
@@ -1683,8 +1432,8 @@ void ProcessDialogEvent()
 
 		//Jason --> генератор Место под солнцем
 		case "Sunplace_begin":
-			dialog.text = "Competition... There's no business without it. Greedy bastards that strive to break into your a cozy business and use all sorts of nefarious methods to entice clientele to themselves\nBut it's the lyrics. And in fact, I would like to ask you to help me get rid of one of those of my competitors. No, kill it is not necessary. Simply capture or sink his ship with cargo.";
-			link.l1 = "Hmm... well, if you are paying well, I can arrange this.";
+			dialog.text = "Competition... There's no business without it. Greedy bastards who strive to break into your cozy business and use all sorts of nefarious methods to lure clientele away.\nBut that's just talk. In fact, I would like to ask you to help me get rid of one of my competitors. No, killing is not necessary. Simply capture or sink his ship with its cargo.";
+			link.l1 = "Hmm... well, if you're paying well, I can arrange this.";
 			link.l1.go = "Sunplace_1";
 			link.l2 = "No, I am not interfering in your mercantile quarrels. Go sink your rival without my aid.";
 			link.l2.go = "Sunplace_exit";
@@ -1706,14 +1455,14 @@ void ProcessDialogEvent()
 			pchar.GenQuest.Sunplace.Trader.DaysQty = 5 + hrand(5);//дни
 			pchar.GenQuest.Sunplace.Trader.Money = sti(pchar.GenQuest.Sunplace.Trader.Shiptype)*3000;//оплата
 			pchar.GenQuest.Sunplace.Trader.Goods = GOOD_COFFEE + hrand(sti(GOOD_PAPRIKA - GOOD_COFFEE));//товар
-			dialog.text = "Very well. So, the name of your man is "+pchar.GenQuest.Sunplace.Trader.Enemyname+". Recently he had sent out "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType), "Name") + "Acc"))+" '"+pchar.GenQuest.Sunplace.Trader.ShipName+"' with a cargo of " + GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods))+ ". He paid quite a decent sum for this cargo, so losing it will be quite a hit at his purse.";
-			link.l1 = "And could you tell me, where exactly to look for that 'friend' of yours?";
+			dialog.text = "Very well. So, the name of your man is "+pchar.GenQuest.Sunplace.Trader.Enemyname+". Recently he had sent out "+GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(pchar.GenQuest.Sunplace.Trader.ShipType),"Name")+"Acc"))+" '"+pchar.GenQuest.Sunplace.Trader.ShipName+"' with a cargo of "+GetGoodsNameAlt(sti(pchar.GenQuest.Sunplace.Trader.Goods))+". He paid quite a decent sum for this cargo, so losing it will be quite a blow to his purse.";
+			link.l1 = "And could you tell me where exactly I should look for that 'friend' of yours?";
 			link.l1.go = "Sunplace_2";
 		break;
 		
 		case "Sunplace_2":
-			dialog.text = "My 'friend' is currently at his home in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". You don't need him - you need his ship, which, as I found out after about "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" will be passing near " + XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen") + ". You can sink it, can take it by boarding it - it does not matter. The main thing is to make sure the ship and the cargo are no longer the property of "+pchar.GenQuest.Sunplace.Trader.Enemyname +". And I don't care, who's gonna claim it - you or the sea. For that job I will pay you " + FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money))".";
-			link.l1 = "I got it. Well, time to depart then!";
+			dialog.text = "My 'friend' is currently at his home in "+XI_ConvertString("Colony"+pchar.GenQuest.Sunplace.Trader.CityT+"Voc")+". You don't need him - you need his ship, which, as I found out after about "+FindRussianDaysString(sti(pchar.GenQuest.Sunplace.Trader.DaysQty))+" will be passing near "+XI_ConvertString(pchar.GenQuest.Sunplace.Trader.Shore+"Gen")+". You can sink it, or take it by boarding - it does not matter. The main thing is to make sure the ship and the cargo are no longer the property of "+pchar.GenQuest.Sunplace.Trader.Enemyname+". And I don't care who claims it - you or the sea. For that job, I will pay you "+FindRussianMoneyString(sti(pchar.GenQuest.Sunplace.Trader.Money)) + ".";
+			link.l1 = "I got it. Well, time to set off then!";
 			link.l1.go = "Sunplace_3";
 		break;
 		
@@ -1743,8 +1492,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_complete":
-			dialog.text = "Excellent! I knew that I could count on you. I guess I will not be asking about the whereabouts of that ship and the cargo. It's not my business, after all. And my friend will need quite some time to recover from such a blow, he-he. Here, please take your money - and thank you for a great job.";
-			link.l1 = "You're welcome... See you, " + npchar.name + "!";
+			dialog.text = "Excellent! I knew I could count on you. I suppose I won't ask about the whereabouts of that ship and its cargo. It's none of my business, after all. And my friend will need quite some time to recover from such a blow, heh-heh. Here, please take your money – and thank you for a job well done.";
+			link.l1 = "You're welcome... See you, "+npchar.name+"!";
 			link.l1.go = "Sunplace_complete_1";
 		break;
 		
@@ -1761,14 +1510,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sunplace_complete_murder":
-			dialog.text = "Poor "+pchar.GenQuest.Sunplace.Trader.Enemyname+", what a gruesome fate! And though indirect, I am the cause of his demise! You don't understand, captain! Did I ask you to kill him? I planned that after the loss of money spent on the cargo he would again have to... well, nevermind... You...";
-			link.l1 = "Hey, listen - stop your whining, alright? You asked me to rid you of a rival - I did it. Even better - having lost the cargo, he still could become rich again and continue harming your business. Now there is not much he can do being a dead man.";
+			dialog.text = "Poor "+pchar.GenQuest.Sunplace.Trader.Enemyname+", what a gruesome fate! And though indirect, I am the cause of his demise! You don't understand, captain! Did I ask you to kill him? I planned that after the loss of money spent on the cargo he would again have to... well, never mind... You...";
+			link.l1 = "Hey, listen - stop your whining, alright? You asked me to get rid of your rival - I did it. Even better - if he had only lost the cargo, he could have become rich again and kept harming your business. Now there’s not much he can do, being a dead man.";
 			link.l1.go = "Sunplace_complete_murder_1";
 		break;
 		
 		case "Sunplace_complete_murder_1":
-			dialog.text = "That's it! Enough! I don't want to hear these blasphemous speeches no more! Take your bloody money and leave my shop at once!";
-			link.l1 = "Hey, " + npchar.name + ", calm down, will you? Or I will cool your temper down myself - my saber is always at my side! Alright, don't get scared, I was just kidding. Listen, I am sorry it turned out like this - but it was you who had misled me in the first place. Farewell.";
+			dialog.text = "That's it! Enough! I don't want to hear these blasphemous speeches anymore! Take your bloody money and leave my shop at once!";
+			link.l1 = "Hey, "+npchar.name+", calm down, will you? Or I'll cool your temper myself - my sabre is always at my side! Alright, don't be frightened, I was only joking. Listen, I'm sorry it turned out this way - but you were the one who misled me in the first place. Farewell.";
 			link.l1.go = "Sunplace_complete_murder_2";
 		break;
 		
@@ -1789,14 +1538,14 @@ void ProcessDialogEvent()
 		case "FindFugitiveSt":
 			if (NPChar.city == pchar.GenQuest.FindFugitive.City && sti(pchar.GenQuest.FindFugitive.Chance) == 1)
 			{
-				dialog.text = NPCStringReactionRepeat(""+pchar.GenQuest.FindFugitive.Name+"? Yeah, I know him. He purchased provisions for his long boat from me. During the day he is usually fishing somewhere in secluded coves, but every evening he can be found in the tavern.", "You have already asked me about that man, and I told you everything I knew!", "Are you kidding me or are you indeed an idiot?! You're asking all the same questions for a third time already!", "Just to think, how such an idiot became captain...", "block", 1, npchar, Dialog.CurrentNode);
-				link.l1 = HeroStringReactionRepeat("Thank you, you've helped me immensely!", "Yeah, yeah, fine.", "Now, now, don't get so excited. I just forgot.", "Well, he did, as you can see...", npchar, Dialog.CurrentNode); 
+				dialog.text = NPCStringReactionRepeat(""+pchar.GenQuest.FindFugitive.Name+"? Yeah, I know him. He bought provisions for his longboat from me. During the day, he's usually fishing somewhere in secluded coves, but every evening he can be found in the tavern.","You have already asked me about that man, and I told you everything I knew!","Are you kidding me, or are you truly an idiot?! You're asking the same questions for the third time already!","Just to think, how could such an idiot become captain...","block",1,npchar,Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("Thank you, you've helped me immensely!","Yeah, yeah, fine.","Now, now, don't get so excited. I just forgot.","Well, he did, as you can see...",npchar,Dialog.CurrentNode); 
 				link.l1.go = DialogGoNodeRepeat("FindFugitiveSt_1", "exit", "", "", npchar, Dialog.CurrentNode);
 			}
 			else
 			{
-				dialog.text = NPCStringReactionRepeat("I don't know what people were saying at the tavern of Port Royal, but I never met that man in my shop. Actually, I've never seen him anywhere. Ask around in the village - perhaps, someone will tell you...", "You have already asked me about that man, and I told you: I don't know!", "Are you kidding me or are you ineed an idiot?! You're asking all the same questions for a third time already!", "Just to think, how such an idiot became captain...", "block", 1, npchar, Dialog.CurrentNode);
-				link.l1 = HeroStringReactionRepeat("I see. Well, thanks anyway.", "Yeah, yeah, fine.", "Now, now, don't get so excited. I just forgot.", "Well, he did, as you can see...", npchar, Dialog.CurrentNode); 
+				dialog.text = NPCStringReactionRepeat("I don't know what people were saying at the tavern in Port Royal, but I never met that man in my shop. Actually, I've never seen him anywhere. Ask around the village - perhaps someone will tell you...","You have already asked me about that man, and I told you: I don't know!","Are you kidding me or are you indeed an idiot?! You're asking all the same questions for the third time already!","Just to think, how did such an idiot become captain...","block",1,npchar,Dialog.CurrentNode);
+				link.l1 = HeroStringReactionRepeat("I see. Well, thank you anyway.","Yeah, yeah, fine.","Now, now, don't get so excited. I just forgot.","Well, he did, as you can see...",npchar,Dialog.CurrentNode); 
 				link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);	
 			}
 		break;
@@ -1816,14 +1565,14 @@ void ProcessDialogEvent()
 		// --> Карибские нравы - временное завершение
 		// belamour legendary edition -->
 		case "trial":
-			dialog.text = "My Lord, what's the matter with you, young man! Please, be more restrained and choose your words carefully when talking about respected people! Gerard LeCroix left Guadeloupe with an expedition to the mainland, but he left your reward here for you. Are you satisfied now?";
-			link.l1 = "Hm... Please, excuse me, monsieur. I got heated up a bit...";
+			dialog.text = "My Lord, what is the matter with you, young man! Please, be more restrained and choose your words carefully when speaking about respected people! Gerard LeCroix left Guadeloupe with an expedition to the mainland, but he left your reward here for you. Are you satisfied now?";
+			link.l1 = "Hm... Please, excuse me, monsieur. I got a bit carried away...";
 			link.l1.go = "trial_1";
 		break;
 		
 		case "trial_1":
-			dialog.text = "Very good. Mr. Lecroix left your reward to the local lighthouse keeper - they are old friends. You only need to visit him and collect the due payment. Monsieur Lecroix is an honest man, so I think you will be satisfied with your reward.";
-			link.l1 = "Got it, thank you! Then I go to the lighthouse keeper. Now let me take a break.";
+			dialog.text = "Very good. Monsieur Lecroix left your reward with the local lighthouse keeper - they are old friends. You only need to visit him and collect your payment. Monsieur Lecroix is an honest man, so I think you will be satisfied with your reward.";
+			link.l1 = "Got it, thank you! Then I'll go to the lighthouse keeper. Now let me take a break.";
 			link.l1.go = "trial_2";
 		break;
 		
@@ -1850,14 +1599,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "trialA":
-			dialog.text = "Yes, he was here, waiting for you. But, probably, the task that he entrusted to you turned out to be more difficult than originally expected, so he did not wait and went on an expedition to the mainland. He left your reward with a trusted person.";
-			link.l1 = "Yes, I really had unforeseen circumstances, but I successfully completed the assignment. Glad to hear that my payment is waiting for me. Who can I get it from?";
+			dialog.text = "Yes, he was here, waiting for you. But perhaps the task he entrusted to you proved more difficult than expected, so he did not wait and set off on an expedition to the mainland. He left your reward with a trusted person.";
+			link.l1 = "Yes, I really had unforeseen circumstances, but I successfully completed the assignment. I'm glad to hear that my payment is waiting for me. Who should I collect it from?";
 			link.l1.go = "trialA_1";
 		break;
 		
 		case "trialA_1":
-			dialog.text = "Mr. Lecroix left your reward to the local lighthouse keeper - they are old friends. You only need to visit him and collect the due payment. Monsieur Lecroix is an honest man, so I think you will be satisfied with your reward.";
-			link.l1 = "Got it, thank you! Then I go to the lighthouse keeper. Now let me take a break.";
+			dialog.text = "Mr. Lecroix left your reward with the local lighthouse keeper – they are old friends. You only need to visit him and collect your payment. Monsieur Lecroix is an honest man, so I think you will be satisfied with your reward.";
+			link.l1 = "Got it, thank you! Then I'll go to the lighthouse keeper. Now let me take a break.";
 			link.l1.go = "trialA_2";
 		break;
 		
@@ -1881,28 +1630,28 @@ void ProcessDialogEvent()
 		break;
 		// <-- legendary edition
 		/*case "trial":
-			dialog.text = "God, why are you so loud, young man! Calm down, and watch your tongue while talking about respected people! Gerard LeCroix left Guadeloupe with an expedition to the mainland, but for you he left a message\nDid you calm down, sir? Ready to listen to me?";
-			link.l1 = "Hm... Please, excuse me, monsieur. I got heated up a bit. I am listening.";
+			dialog.text = "God, why are you so loud, young man! Calm down, and mind your tongue when speaking of respected people! Gerard LeCroix left Guadeloupe with an expedition to the mainland, but he left a message for you\nHave you calmed down, sir? Ready to listen to me?";
+			link.l1 = "Hm... Please, excuse me, monsieur. I got a bit heated. I'm listening.";
 			link.l1.go = "trial_1";
 		break;
 		
 		case "trial_1":
-			dialog.text = "Very good. Next time try to ask first, and then cry out loud. Alright... Do you know a man by the name Simon Maurois?";
-			link.l1 = "Ha! Everyone has heard of Simon Maurois! Or course I know him.";
+			dialog.text = "Very good. Next time, try to ask first, and then cry out loud. Alright... Do you know a man by the name of Simon Maurois?";
+			link.l1 = "Ha! Everyone has heard of Simon Maurois! Of course I know him.";
 			link.l1.go = "trial_2";
-			link.l2 = "Never heard about him. Who is he?";
+			link.l2 = "Never heard of him. Who is he?";
 			link.l2.go = "trial_3";
 		break;
 		
 		case "trial_2":
-			dialog.text = "Excellent. Go to him, then. It was him who financed the expedition of monsieur Shoke, so you can collect your reward from him. So, was it really necessary to get so steamed up?";
-			link.l1 = "Once again, I beg for your pardon... Thanks for your help, monsieur. I will see monsieur Maurois at once!";
+			dialog.text = "Excellent. Go to him, then. It was he who financed the expedition of monsieur Shoke, so you can collect your reward from him. So, was it really necessary to get so steamed up?";
+			link.l1 = "Once again, I beg your pardon... Thank you for your help, monsieur. I will see monsieur Maurois at once!";
 			link.l1.go = "trial_exit";
 		break;
 		
 		case "trial_3":
-			dialog.text = "He is the owner of Maurois banking house and the head of the branch in Capsterville. So you'll have to go to Saint-Christopher and visit the bank of Capsterville. It was monsieur Maurois who financed the expedition of monsieur Shoke, so you can collect your reward from him. So, was it really necessary to get so steamed up?";
-			link.l1 = "Once again, I beg for your pardon... Thanks for your help, monsieur. I will see monsieur Maurois at once!";
+			dialog.text = "He is the owner of the Maurois banking house and the head of the branch in Capsterville. So you'll have to go to Saint-Christopher and visit the Capsterville bank. It was Monsieur Maurois who financed Monsieur Shoke's expedition, so you can collect your reward from him. So, was it really necessary to get so worked up?";
+			link.l1 = "Once again, I beg your pardon... Thank you for your help, monsieur. I will see monsieur Maurois at once!";
 			link.l1.go = "trial_exit";
 		break;
 		
@@ -1916,17 +1665,17 @@ void ProcessDialogEvent()
 		
 		// belamour legendary edition на пару с Акулой -->
 		case "SharkGoldFleet":
-			dialog.text = "Ah, the enterprising merchant! You can immediately see the business approach. I respect it. Sure, I have the good you need.";
-			link.l1 = "I'm sure I can sell it for a profit. As far as I know, there is a good demand for this good in Porto Bello. How much will it cost me?";
+			dialog.text = "Ah, the enterprising merchant! I can see your business sense straight away. I respect that. Of course, I have the goods you need.";
+			link.l1 = "I'm sure I can sell it for a profit. As far as I know, there is good demand for this good in Porto Bello. How much will it cost me?";
 			link.l1.go = "SharkGoldFleet_01";
 		break;
 		
 		case "SharkGoldFleet_01":
 			pchar.questTemp.SharkGoldFleet = "buyincar";
-			dialog.text = "So-so... So, three hundred units of coffee... And the same amount of cocoa... It will cost you..."+sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300))+" pesos!";
+			dialog.text = "So-so... So, three hundred units of coffee... And the same amount of cocoa... That will cost you..."+sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)],GOOD_COFFEE,PRICE_TYPE_BUY,pchar,300)+GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)],GOOD_CHOCOLATE,PRICE_TYPE_BUY,pchar,300))+" pesos!";
 			if(pchar.money < sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
 			{
-				link.l1 = "Hmm... Excuse me, I don't seem to have enough cash. Wait, please: I'm running to the ship for money now - and I'll be right back!";
+				link.l1 = "Hmm... Excuse me, I don't seem to have enough cash. Wait, please: I'll run to the ship for some money now - and I'll be right back!";
 				link.l1.go = "exit";
 			}
 			else
@@ -1939,14 +1688,14 @@ void ProcessDialogEvent()
 		case "SharkGoldFleet_02":
 			if(GetCargoFreeSpace(pchar) < 1200)
 			{
-				dialog.text = "Wait a minute, senor. It seems you don't have enough room on your ship for such a party. Clear the hold and return.";
-				link.l1 = "Oh, I forgot to unload! Wait a minute - I'll be right there!";
+				dialog.text = "Wait a minute, señor. It seems you don't have enough room on your ship for such a party. Clear the hold and return.";
+				link.l1 = "Oh, I forgot to unload! Wait a moment - I'll be right there!";
 				link.l1.go = "exit";
 			}
 			else
 			{
-				dialog.text = "Great! I will immediately give the order for the goods to be loaded onto your ship. It's a pleasure to do business with you!";
-				link.l1 = "Mutually, senor! And now let me take my leave: things do not wait.";
+				dialog.text = "Great! I'll give the order at once for the goods to be loaded onto your ship. It's a pleasure doing business with you!";
+				link.l1 = "Mutually, señor! And now let me take my leave: things do not wait.";
 				link.l1.go = "SharkGoldFleet_03";
 			}
 		break;
@@ -1961,10 +1710,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "SharkGoldFleet_again":
-			dialog.text = "Goods are waiting for you. Did you bring money?";
+			dialog.text = "Goods are waiting for you. Did you bring the money?";
 			if(pchar.money < sti(GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_COFFEE, PRICE_TYPE_BUY, pchar, 300) + GetStoreGoodsPrice(&stores[sti(rColony.StoreNum)], GOOD_CHOCOLATE, PRICE_TYPE_BUY, pchar, 300)))
 			{
-				link.l1 = "Not yet. I just wanted to make sure your offer stands. And the money will come soon.";
+				link.l1 = "Not yet. I just wanted to make sure your offer still stands. And the money will come soon.";
 				link.l1.go = "exit";
 			}
 			else

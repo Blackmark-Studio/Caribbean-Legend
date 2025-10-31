@@ -1,20 +1,20 @@
-News {Test Bêta Ouvert 1.6}
+News {Mise à jour 1.6}
 News_descr
 {
 ************************   Ohé !   ***********************
-La version bêta 1.6 et le nouveau DLC sont disponibles
+Bienvenue dans la version 1.6 !
 ------------------------------------------------------------------------------------------------
-— Vous pouvez y basculer dans votre bibliothèque Steam
-— Nouvelle partie - non obligatoire
-— Nous avons complètement modifié le système de combat et de progression. Les changements sont si importants que nous avons vraiment besoin de vos retours
-— Partagez vos impressions sur les canaux Discord et Telegram officiels, ainsi que sur Steam
+— Le patch 1.6 est disponible
+— Vous pouvez trouver la liste détaillée des changements dans les actualités en cliquant sur le bouton ci-dessous
+— La construction de personnage et la rejouabilité ont été ajoutées au jeu
 — Si vous chargez une sauvegarde d'une autre version, n'oubliez pas de réattribuer les compétences du héros et des officiers
-— Désactivez toutes les modifications jusqu'à ce que les auteurs du Steam Workshop mettent à jour leurs travaux
-— Vous pouvez trouver une liste détaillée des changements dans les actualités en cliquant sur le bouton ci-dessous
-— Le DLC "Supporter Pack" est maintenant disponible à l'achat !
-— Merci de jouer !
+— Système de combat entièrement remanié
+— Une dizaine de nouvelles mécaniques et plus d'une centaine d'améliorations
+— DLC "Supporter Pack" sorti
+— Pas besoin de recommencer une nouvelle partie
+— Veuillez désactiver tous les mods
+— Vous pouvez toujours revenir à n'importe quel patch majeur précédent via la bibliothèque Steam
 }
 News_Attention { }
-
 [News]
 IsRead = false

@@ -115,6 +115,7 @@ void chrCharacterEntryToLocator()
 		break;
 	case "item":
 		Item_OnEnterLocator(loc, locator);
+		CheckDolly(loc, locator);
 		break;
 	case "randitem":
 		RandItem_OnEnterLocator(loc, locator);
@@ -144,6 +145,7 @@ void chrCharacterEntryToLocator()
 			LAi_CheckKillCharacter(chr);
 			if(bDrawBars) SendMessage(chr, "lfff", MSG_CHARACTER_VIEWDAMAGE, (15+MOD_SKILL_ENEMY_RATE), MakeFloat(MakeInt(hp)), MakeFloat(MakeInt(chr.chr_ai.hp_max)));
 		}
+		CheckTeleport();
 		break;
 		
 		case "event":
@@ -306,6 +308,7 @@ void chrCharacterExitFromLocator()
 			ReleaseSound(0);
 			bMainCharacterInFire = false;
 		}
+		Log_SetActiveAction("Nothing");
 		break;
 		case "event":
 			Log_SetActiveAction("Nothing");
@@ -420,5 +423,33 @@ bool chrIsEnableReload()
 	if(DialogRun != 0) return false;
 	if(qmIsNoReload() != false) return false;
 	return true;
+}
+
+bool CheckTeleport()
+{
+	ref location = &Locations[FindLocation(pchar.location)];
+	
+	if (CheckAttribute(location, "id") && location.id == "KhaelRoa_Treasure_Alcove") // калеуче
+	{
+		Log_SetActiveAction("Teleport");
+		return true;
+	}
+	
+	return false;
+}
+
+bool CheckDolly(ref location, string locator)
+{
+	if (CheckAttribute(location, "dolly"))
+	{
+		bool bOk = (IsCharacterInLocator(pchar, "item", "dolly1")) || (IsCharacterInLocator(pchar, "item", "dolly2")) || (IsCharacterInLocator(pchar, "item", "dolly3"))
+		if (CheckAttribute(location, "canteleport") && bOk && !CheckAttribute(pchar, "questTemp.LSC.MaryBye"))
+		{
+			Log_SetActiveAction("Teleport");
+			return true;
+		}
+	}
+	
+	return false;
 }
 

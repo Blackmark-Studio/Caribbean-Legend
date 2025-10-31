@@ -1,56 +1,12 @@
-IslaMona_1
-{
-Rodrigo
-}
-IslaMona_2
-{
-Jiménez
-}
-
-IslaMona_3
-{
-Am nächsten Morgen...
-}
-
-IslaMona_4
-{
-Rodrigo Jimenez bereitete eine weitere Ladung Eisenholz auf der Isla Mona vor
-}
-
-IslaMona_5
-{
-Ihr habt @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> Flaschen Rum geliefert
-}
-
-IslaMona_6
-{
-Ihr habt @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> Flaschen Wein geliefert
-}
-
-IslaMona_7
-{
-@<sti(pchar.questTemp.IslaMona.Factory.Goods)> Eisenholz wurden dem Lagerhaus hinzugefügt
-}
-
-IslaMona_8
-{
-Alonso
-}
-IslaMona_9
-{
-
-}
-
-IslaMona_10
-{
-Francisco
-}
-IslaMona_11
-{
-de Alba
-}
-
-IslaMona_12
-{
-So wie es sich anhört, war die Falle ein Erfolg! Zeit, ins Dorf zu gehen!
-}
+IslaMona_1 {Rodrigo}
+IslaMona_2 {Jiménez}
+IslaMona_3 {Am nächsten Morgen...}
+IslaMona_4 {Rodrigo Jimenez bereitete eine weitere Ladung Eisenholz auf der Isla Mona vor}
+IslaMona_5 {Ihr habt @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> Flaschen Rum geliefert}
+IslaMona_6 {Ihr habt @<sti(pchar.questTemp.IslaMona.Factory.Bottle)> Flaschen Wein geliefert}
+IslaMona_7 {@<sti(pchar.questTemp.IslaMona.Factory.Goods)> Eisenholz wurden dem Lagerhaus hinzugefügt}
+IslaMona_8 { }
+IslaMona_9 { }
+IslaMona_10 {Francisco}
+IslaMona_11 {de Alba}
+IslaMona_12 {So wie es sich anhört, war die Falle ein Erfolg! Zeit, ins Dorf zu gehen!}

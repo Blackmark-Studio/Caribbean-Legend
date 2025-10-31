@@ -515,7 +515,7 @@ void ProcessDialogEvent()
 			link.l1 = "Ты думаешь, эти капонги - это всё, чего вам  стоит опасаться? Ты сильно ошибаешься...";
 			link.l1.go = "hayamee_bad_4";
 			if (stf(pchar.questTemp.Indian.relation) < 40.0) notification("Индейцы вас не уважают "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Не открыта способность", "Trustworthy");
+			if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 		break;
 		
 		case "hayamee_bad_4":
@@ -542,7 +542,7 @@ void ProcessDialogEvent()
 			link.l1 = "Передай Тагофе, что я дам ему мой самый красивый пистолет. А тебе много украшений.";
 			link.l1.go = "hayamee_2";
 			notification("Индейцы вас уважают "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			notification("Вызывающий доверие", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		break;
 		
 		case "hayamee_2":

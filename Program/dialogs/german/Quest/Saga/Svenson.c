@@ -1206,9 +1206,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61":
 			dialog.text = "Sehr gut. Dann teilen wir es in der Mitte.";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Hier, bitte. Ich habe "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1222,9 +1222,9 @@ void ProcessDialogEvent()
 		
 		case "saga_61_1":
 			dialog.text = "Famos. Wie viel hast du mitgebracht?";
-			if (CheckCharacterItem(pchar, "gold_dublon"))
+			if (PCharDublonsTotal() > 0)
 			{
-				npchar.quest.bakaut_pay = GetCharacterItem(pchar, "gold_dublon"); // дублоны в кармане
+				npchar.quest.bakaut_pay = func_min(sti(npchar.quest.bakaut_sum), PCharDublonsTotal()); // дублоны в кармане
 				link.l1 = "Hier, bitte. Ich habe "+FindRussianQtyString(sti(npchar.quest.bakaut_pay))+".";
 				link.l1.go = "bakaut_pay";
 			}
@@ -1244,7 +1244,7 @@ void ProcessDialogEvent()
 			}
 			else iTemp = sti(npchar.quest.bakaut_sum)-sti(npchar.quest.bakaut_pay);
 			npchar.quest.bakaut_sum = iTemp; // запоминаем остаток
-			RemoveItems(pchar, "gold_dublon", sti(npchar.quest.bakaut_pay));
+			RemoveDublonsFromPCharTotal(sti(npchar.quest.bakaut_pay));
 			Log_Info("Du hast "+sti(npchar.quest.bakaut_pay)+" Dublonen gegeben");
 			PlaySound("interface\important_item.wav");
 			if (iTemp == 0)
@@ -1687,7 +1687,7 @@ void ProcessDialogEvent()
 				dialog.text = "Freut mich, dass dir das Pockholz gefällt, " + sStr + ". Die Lieferungen zu vergrößern ist kein Problem, aber es gibt da ein 'Aber', verstehst du. Mit steigenden Mengen entsteht auch eine Spur, die unerwünschte Aufmerksamkeit auf sich ziehen kann, besonders von den englischen Behörden. Aber wenn wir zuverlässige Hände, treue Ohren und Leute in der Residenz hinzufügen, die uns helfen, im Schatten zu bleiben, kann alles arrangiert werden. Allerdings wird das nicht billig - dreitausend Dublonen, um die Stadtkasse und die Bedürfnisse Englands zu umgehen. Dann kann ich dir auch fünfmal mehr liefern. Was sagst du dazu?";
 				link.l1 = "Dreitausend Dublonen? Jan, das ist ja Raubüberfall am helllichten Tag! Könnten wir nicht irgendwie mit geringeren Kosten auskommen? Vielleicht gibt es einen Weg, die Sache ohne solch märchenhafte Summen zu regeln?";
 				link.l1.go = "UpgradeBakaut_1";
-				notification("Skill Check Passed", SKILL_COMMERCE);
+				Notification_Skill(true, 60, SKILL_COMMERCE);
 			}
 			else
 			{

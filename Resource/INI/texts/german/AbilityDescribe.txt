@@ -1,569 +1,356 @@
-newline  {
-
-}
-
-BasicDefense	{Grundlegende Verteidigung}
-perkBasicDefense
+newline
 {
-Erlittener Schaden am Charakter reduziert sich um 10%.
-}
 
-AdvancedDefense	{Fortgeschrittene Verteidigung}
-perkAdvancedDefense
-{
-Erlittener Schaden am Charakter reduziert sich um 20%.
 }
-
-CriticalHit	{Kritischer Treffer}
-perkCriticalHit
-{
-Der Charakter erhält eine 5% Chance, einen kritischen Treffer beim Gegner zu landen.
-}
-
-Ciras	{Kürass}
-perkCiras
-{
-Diese Fähigkeit erlaubt das Tragen eines Kürass.
-}
-
-SwordplayProfessional	{Professioneller Fechter}
-perkSwordplayProfessional
-{
-15% Chance einen kritischen Treffer beim Gegner zu landen. Erlittener SChaden am Charakter reduzirt sich um 30%.
-}
-
-Grus	{Packesel}
-perkGrus
-{
-Mit dieser Fähigkeit das Tragegewicht um 30 Pfund.
-}
-
-Rush	{Die Ometochtli Tinktur}
-perkRush
-{
-Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.
-Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.
-~
-Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
-}
-
-Tireless	{Unermüdlich}
-perkTireless
-{
-You get your second wind in combat, which helps you reduce fighting fatigue. (+15% energy recovery).
-}
-
-HardHitter {Harter Schläger}
-perkHardHitter
-{
-Ein erfolgreicher schwerer Angriff bringt einen Schadensbonus von 30%.
-}
-
-BladeDancer	{Klingentanz}
-perkBladeDancer
-{
-Ein erfolgreicher Gruppenangriff erhält einen Schadensbonus von 30%.
-}
-
-Sliding	{Unaufhaltsamer Schlag}
-perkSliding
-{
-Du hast eine zusätzliche Chance von 20%, die gegnerische Blockade zu durchbrechen. 
-1% extra für jeden (S).
-}
-
+BasicDefense {Grundverteidigung}
+perkBasicDefense {Reduziert erlittenen Schaden um 5 %.}
+AdvancedDefense {Fortgeschrittene Verteidigung}
+perkAdvancedDefense {Verringert erlittenen Schaden um 3 % und gegnerischen kritischen Schaden um 10 %.}
+CriticalHit {Kritischer Treffer}
+perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um 3,5 %.}
+Grus {Starker Rückhalt}
+perkGrus {Erhöht das Traggewicht um 35 Pfund.}
+Tireless {Unermüdlichkeit}
+perkTireless {Energieerholungsgeschwindigkeit steigt um 15 %.}
+HardHitter {Schwere Hand}
+perkHardHitter {Schwere Angriffe mit Schweren Waffen verursachen 15 % mehr Schaden. Schaltet fortgeschrittenen Schweren Angriff frei.}
+BladeDancer {Tanz mit Säbeln}
+perkBladeDancer {Rundumschlag mit gekrümmten Waffen verursacht 30 % mehr Schaden.}
+Sliding {Unwiderstehlicher Schlag}
+perkSliding {Hieb- oder Stichangriff mit einer leichten Waffe kann mit einer Chance von $percent($perkBaseValue(Sliding|1)) einen Block durchbrechen, indem ein einzigartiger fortgeschrittener Schlag eingesetzt wird.}
 Gunman {Musketier}
 perkGunman
 {
-Der Charakter nutzt Handfeuerwaffen effektiver: Nachladen ist 10% schneller und die Genauigkeit erhöht sich um 10%. 
-Sie können Arkebusen, Musketen, Mörser und andere schwere einläufige Waffen verwenden.
-Nur der Charakter und ganz bestimmte Vorhutgruppen können solche Waffen ausrüsten.
+Erhöht den Schaden und die Nachladegeschwindigkeit von Feuerwaffen um $percent($perkBaseValue(Gunman|1)). Ermöglicht die Verwendung von zweihändigen Einzelschuss- und einhändigen Mehrschusswaffen.
+ ~
+ Offiziere können $key(descriptor_TwoHanded|ItemsDescriptors.txt) nur verwenden, wenn sie ausdrücklich dazu angewiesen werden.
 }
-
-GunProfessional {Schütze}
-perkGunProfessional
-{
-25% schnelleres Nachladen von Feuerwaffen. 25 % höhere Genauigkeit.
-Sie können mehrläufige und Repetierwaffen verwenden.
-Sie können mit einer Muskete durch Verbündete schießen, ohne sie zu treffen. Volltreffer!
-}
-
-IronWill	{Eiserner Wille}
-perkIronWill
-{
-Sie können einmal in drei Minuten einen tödlichen Schlag überleben.
-Verringert eine Meuterei-Chance.
-Gilt für den Hauptcharakter, seinen Bootsmann und die Vorhut.
-}
-
-SharedExperience	{Schnelles Lernen}
-perkSharedExperience
-{
-Schnellerer Stufenaufstieg und schnellerer Erwerb von Fertigkeitspunkten, gleichbedeutend mit dem Erwerb eines zusätzlichen Talentpunktes (T).
-Die durch die Fähigkeiten des Helden gewonnene Erfahrung wird mit Passagieren, Offizieren und Begleitern in doppelter Höhe geteilt und beträgt 10%, 50% bzw. 33%.
-}
-
-Medic	{Ausgezeichnete Gesundheit}
-perkMedic
-{
-Diese Fähigkeit erlaubt es, die Gesundheit schneller wiederherzustellen, wenn man tagsüber keine schweren Wunden ertragen musste. Verringert die Abnahme der Gesundheit, wenn der Charakter verwundet ist. Funktioniert beim Segeln, aber langsamer.
-~
-Fähigkeit nur für Spieler verfügbar
-}
-
-HPPlus	{Erhöhtes Leben}
-perkHPPlus
-{
-Diese Fähigkeit erhöht die maximalen Trefferpunkte des Helden mit jeder neuen Stufe um einen zusätzlichen Punkt. Rückwirkend.
-}
-
-EnergyPlus	{Erhöhte Ausdauer}
-perkEnergyPlus
-{
-Erhöht die maximalen Energiepunkte des Helden um einen Punkt für jede neue Stufe. Rückwirkend.
-}
-
-ByWorker	{Schwarzarbeit}
-perkByWorker
-{
-Dieser Charakter kann zwei Offiziersposten gleichzeitig belegen.
-~
-~
-~
-~
-~
-Fähigkeit nur für Offiziere verfügbar	 
-}
-
-perkByWorkerShort
-{
-Dieser Charakter kann zwei Offiziersposten gleichzeitig belegen
-}
-
-ByWorker2	{Tausendsassa}
-perkByWorker2
-{
-Dieser Charakter kann drei Offiziersposten gleichzeitig belegen.
-~
-~
-~
-~
-~
-Fähigkeit nur für Offiziere verfügbar	
-}
-
-perkByWorker2Short
-{
-Dieser Charakter kann drei Offiziersposten gleichzeitig belegen
-}
-
-Trustworthy	{Vertrauenswürdig}
-perkTrustworthy
-{
-Der negative Ruf des Helden beeinflusst nicht mehr die Entscheidung der meisten Auftragsgeber, ihn einzustellen, da sie von seinem Charisma begeistert sind.
-~
-Verbesserte Fähigkeit, Wachen zu täuschen.
-~
-Zugang zu zusätzlichen Besatzungsmitgliedern und Offizieren, die in Tavernen angeheuert werden können.
-~
-Schaltet einzigartige Optionen in ausgewählten Quests frei.
-~
-Fähigkeit nur für Spieler verfügbar
-}
-
-ShipEscape	{Notfallrettung}
+GunProfessional {Plänkler}
+perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um 9 %. Ermöglicht die Nutzung von zweihändigen Repetier-Schusswaffen.}
+IronWill {Eiserner Wille}
+perkIronWill {Ermöglicht es dir, alle 3 Minuten eine tödliche Wunde zu überleben.}
+SharedExperience {Schnelllerner}
+perkSharedExperience {Beschleunigt die Fähigkeitsentwicklung um 5 %.}
+Medic {Gesunde Gewohnheiten}
+perkMedic {Erhöht die Gesundheit um 25 Punkte. Verdoppelt die passive Heilung, wenn die Gesundheit unter der Hälfte des Maximums liegt.}
+HPPlus {Wachsende Gesundheit}
+perkHPPlus {Erhöht die HP des Charakters um $perkBaseValue(HPPlus|1) für jeden neuen Rang. Der Perk wirkt retroaktiv.}
+EnergyPlus {Wachsende Energie}
+perkEnergyPlus {Erhöht den Energievorrat des Charakters pro neuem Rang um 1. Rückwirkend.}
+ByWorker {Talentiert}
+perkByWorker {Eine Figur kann zwei Offiziersposten gleichzeitig innehaben}
+perkByWorkerShort {Ein Charakter kann gleichzeitig zwei Offiziersposten innehaben}
+ByWorker2 {Genie}
+perkByWorker2 {Der Charakter kann bis zu drei Offiziersposten gleichzeitig innehaben.}
+perkByWorker2Short {Ein Charakter kann gleichzeitig drei Offiziersposten innehaben}
+Trustworthy {Vertrauenswürdig}
+perkTrustworthy {Schaltet alternative Überredungsoptionen in Dialogen für bestimmte Quests frei. Erleichtert das Vermeiden von Strafen und das Betreten feindlicher Städte.}
+ShipEscape {Zweite Chance}
 perkShipEscape
 {
-Sie können ein Rettungsboot benutzen, um sich von einem sinkenden Schiff zu retten.
-~
-Wenn ein Begleiter diese Fähigkeit besitzt, entkommt er oder sie einem sinkenden Schiff oder einem Brander und kehrt mit einem Rettungsboot zu Ihnen zurück.
+Rettung per Beiboot vom sinkenden Heldenschiff auf ein anderes Schiff der Flotte.
+Erlaubt es, im Kampf bei weniger als 15 % Rumpf über das Laderaum-Menü auf ein anderes Flottenschiff zu wechseln oder zu übertragen.
+Hat ein Begleiter diese Fähigkeit, entkommt er von einem sinkenden Schiff oder Brander und kehrt als Passagier per Beiboot auf das Heldenschiff zurück.
 }
-
-Alchemy	{Alchemie}
-perkAlchemy
-{
-Diese Fähigkeit ermöglicht die Herstellung von Gegenständen, Instrumenten und Komponenten durch chemische oder mechanische Umwandlung.
-~
-~
-~
-~
-Fähigkeit nur für Spieler verfügbar
-}
-
-FastReload {Schnelles Nachladen}
-perkFastReload
-{
-Das Nachladen von Kanonen wird um 10% beschleunigt.
-}
-
-ImmediateReload	{Vorbereitetes Nachladen}
-perkImmediateReload
-{
-Nach dem Einsatz dieser Fähigkeit wird der nächste Nachladevorgang um 30% beschleunigt. Diese Fähigkeit hat eine Abklingzeit von 5 Minuten.
-}
-
-HullDamageUp	{Erhöhter Schaden am Rumpf}
-perkHullDamageUp
-{
-Der Schaden am Rumpf eines gegnerischen Schiffes wird um 15% erhöht.
-}
-
-SailsDamageUp	{Erhöhter Schaden an Segeln}
-perkSailsDamageUp
-{
-Der Schaden an Segeln eines gegnerischen Schiffes wird um 15% erhöht.
-}
-
-CrewDamageUp {Erhöhter Schaden für die Crew}
-perkCrewDamageUp
-{
-Der Schaden an der Crew eines gegnerischen Schiffes wird um 15% erhöht.
-}
-
-CriticalShoot	{Kritischer Schuss}
-perkCriticalShoot
-{
-Der Charakter erhält eine 5% Chance, mit einer auf den Feind abgefeuerten Salve einen kritischen Treffer zu erzielen.
-}
-
-LongRangeShoot	{Erhöhte Schussreichweite}
-perkLongRangeShoot
-{
-Schussreichweite von Kanonen wird um 15% erhöht.
-}
-
-CannonProfessional	{Professioneller Kanonier}
-perkCannonProfessional
-{
-Der Schaden an einem beliebigen Teil des gegnerischen Schiffes wird um 30% erhöht. Die Chance, einen kritischen Treffer zu erzielen, wird um 15% erhöht.
-}
-
-LongRangeGrappling	{Effektives Entern}
-perkLongRangeGrappling
-{
-Die Reichweite zum Entern wird um 15% erhöht.
-}
-
-MusketsShoot {Gewehrsalve}
+Alchemy {Alchemie}
+perkAlchemy {Rezepte benötigen keine Werkzeuge mehr. Gewährt 15 % Chance, beim Benutzen einen Trank zu sparen.}
+FastReload {Schießübung}
+perkFastReload {Nachladegeschwindigkeit der Kanonen steigt um 10 %.}
+ImmediateReload {Vorbereiteter Schuss}
+perkImmediateReload {Das nächste Nachladen ist 30 % schneller. Alle 5 Minuten einsetzbar.}
+HullDamageUp {Schwachstellen}
+perkHullDamageUp {Schaden am Rumpf feindlicher Schiffe erhöht sich um 10 %.}
+SailsDamageUp {Takelage-Schuss}
+perkSailsDamageUp {Schadenswirkung auf die Segel feindlicher Schiffe ist um 10 % erhöht.}
+CrewDamageUp {Deckbesen}
+perkCrewDamageUp {Schaden an der feindlichen Schiffsbesatzung steigt um 10 %.}
+CriticalShoot {Kritischer Schuss}
+perkCriticalShoot {Der Charakter erhält eine Chance, eine kritische Salve gegen den Feind abzugeben. Chance: 5 %.}
+LongRangeShoot {Breitseitenreichweite}
+perkLongRangeShoot {Kanonenreichweite erhöht sich um 10 %}
+CannonProfessional {Experten-Kanonier}
+perkCannonProfessional {Erhöht Schaden an allen Schiffsteilen, Ziel- und Ausrichtgeschwindigkeit der Kanonen sowie kritische Trefferschance um 10 %.}
+LongRangeGrappling {Wolfsgreifer}
+perkLongRangeGrappling {Die Enterdistanz erhöht sich um 15 %.}
+MusketsShoot {Musketensalve}
 perkMusketsShoot
 {
-Unmittelbar vor dem Entern wird eine Gewehrsalve abgefeuert.
-~
-Die Verluste des Gegners hängen von der Größe des Schiffes und der Anzahl der Enter-Offiziere ab, die sich in Position befinden.
+Vor dem Entern wird eine Musketensalve abgefeuert.
+Die Verluste hängen von der Schiffsklasse und der Anzahl der Vorhut ab.
 }
-
-GrapplingProfessional	{Professionelles Entern}
-perkGrapplingProfessional
-{
-Die Reichweite des Enterns wurde um 25% erhöht. Ein Schiff kann jetzt in jedem Winkel und bei jeder Schiffsgeschwindigkeit geentert werden.
-}
-
-BasicBattleState	{Grundlegende Schiffsverteidigung}
-perkBasicBattleState
-{
-Der allgemeine Schaden, der dem Schiff zugefügt wird, wird um 15% reduziert.
-}
-
-AdvancedBattleState	{Verbesserte Schiffsverteifigung}
-perkAdvancedBattleState
-{
-Der allgemeine Schaden, der dem Schiff zugefügt wird, wird um 25% reduziert.
-}
-
-ShipDefenseProfessional	{Professionelle Schiffsverteidigung}
-perkShipDefenseProfessional
-{
-Der allgemeine Schaden, der dem Schiff zugefügt wird, wird um 25% reduziert. Die Chance, einen kritischen Treffer zu erhalten, wird um 70% verringert.
-}
-
-
-ShipSpeedUp	{Erhöhte Schiffsgeschwindigkeit}
-perkShipSpeedUp
-{
-Die Höchstgeschwindigkeit des Schiffes wird um 15% erhöht.
-}
-
-ShipTurnRateUp	{Verbesserte Manövrierfähigkeit der Schiffe.}
-perkShipTurnRateUp
-{
-Die Manövrierfähigkeit des Schiffes wird um 15% erhöht.
-}
-
-StormProfessional	{Überleben in Stürmen}
-perkStormProfessional
-{
-Der durch Stürme verursachte Schaden wird um 30% reduziert.
-}
-
-Turn180	{Schnelles Wenden}
-perkTurn180
-{
-1 Minute lang ist die Geschwindigkeit des Wendens 4-mal schneller. Diese Fähigkeit hat eine Abklingzeit von 3 Minuten.
-}
-
-SailingProfessional	{Erfahrener Seemann}
-perkSailingProfessional
-{
-Die Geschwindigkeit und Manövrierfähigkeit des Schiffes wird um 20% erhöht. 3/4 der normalen Schiffe auf der Weltkarte können umgangen werden.
-}
-
-SeaDogProfessional	{Schrecken der Meere}
+GrapplingProfessional {Erfahrener Bootsmann}
+perkGrapplingProfessional {Die Enterdistanz ist um 25 % erhöht. Möglich aus jedem Annäherungswinkel und bei jeder Geschwindigkeit.}
+BasicBattleState {Grundlegende Schiffverteidigung}
+perkBasicBattleState {Jeglicher Schaden am Schiff wird um 10 % reduziert.}
+AdvancedBattleState {Fortgeschrittener Schiffsschutz}
+perkAdvancedBattleState {Jeglicher Schaden am Schiff wird um weitere 10 % reduziert.}
+ShipDefenseProfessional {Erfahrener Zimmermann}
+perkShipDefenseProfessional {Jeglicher erlittene Schiffsschaden wird um weitere 5 % reduziert. Verringert feindlichen kritischen Schaden um 35 %.}
+ShipSpeedUp {Schnelle Fahrt}
+perkShipSpeedUp {Erhöht die maximale Geschwindigkeit des Schiffs um 15 %.}
+ShipTurnRateUp {Schiffsmanövrierbarkeit erhöhen}
+perkShipTurnRateUp {Erhöht die Manövrierfähigkeit des Schiffs um 15 %.}
+StormProfessional {Sturmsicher}
+perkStormProfessional {Sturmschaden um 30 % verringert.}
+Turn180 {Ausweichmanöver}
+perkTurn180 {Schiffe drehen sich 1 Minute lang 4-mal schneller. Alle 3 Minuten einsetzbar.}
+SailingProfessional {Experten-Navigator}
+perkSailingProfessional {Schiffsgeschwindigkeit und Manövrierfähigkeit um 5 % erhöht. Bessere Fluchtchancen.}
+SeaDogProfessional {Schrecken der Meere}
 perkSeaDogProfessional
 {
-Beim Anblick der Flagge des Schreckens der Meere wagen es selbst die kühnsten Abenteurer und Banditen nicht, ihr Glück herauszufordern. Erhöht die Flottenstärke um 30%.
+Beim Anblick des Banners der Meeresgeißel wagen selbst die kühnsten Abenteurer und Gesetzlosen nicht, ihr Schicksal herauszufordern. Erhöht die Flottenstärke um $percent($PerkBaseValue(SeaDogProfessional|1)).
 ~
-~
-~
-Die Fähigkeit ist nur für den Spieler verfügbar und erfordert Stufe 25.
+Fähigkeit nur für den Spieler verfügbar; benötigt Rang $attr($context.rank).
 }
-
-
-FlagPir	{Piratenflagge}
+FlagPir {Jolly Roger}
 perkFlagPir
 {
-Gibt Ihnen die Möglichkeit, Ihre Flagge in die Jolly Roger zu ändern.
+Fähigkeit, deine Flagge zur Jolly Roger zu wechseln.
 ~
-~
-~
-~
-~
-Fähigkeit nur für Spieler verfügbar
+Diese Fertigkeit ist nur für den Spieler verfügbar.
 }
-
-FlagEng	{Englische Flagge}
+FlagEng {Flagge Englands}
 perkFlagEng
 {
-Gibt Ihnen die Möglichkeit, Ihre Flagge in die Flagge von England zu ändern. Die Wahrscheinlichkeit, dass deine Tarnung nicht funktioniert, hängt von der Tarnung, der Anzahl und den Klassen der Schiffe im Geschwader sowie von der Anzahl der feindlichen Schiffe und Kopfgelder ab.
-~
-~
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
 ~
 Fähigkeit nur für Spieler verfügbar
 }
-
-FlagFra	{Französische Flagge}
+FlagFra {Flagge von Frankreich}
 perkFlagFra
 {
-Gibt Ihnen die Möglichkeit, Ihre Flagge in die Flagge von Frankreich zu ändern. Die Wahrscheinlichkeit, dass deine Tarnung nicht funktioniert, hängt von der Tarnung, der Anzahl und den Klassen der Schiffe im Geschwader sowie von der Anzahl der feindlichen Schiffe und Kopfgelder ab.
-~
-~
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
 ~
 Fähigkeit nur für Spieler verfügbar
 }
-
-FlagSpa	{Spanische Flagge}
+FlagSpa {Flagge von Spanien}
 perkFlagSpa
 {
-Gibt Ihnen die Möglichkeit, Ihre Flagge in die Flagge von Spanien zu ändern. Die Wahrscheinlichkeit, dass deine Tarnung nicht funktioniert, hängt von der Tarnung, der Anzahl und den Klassen der Schiffe im Geschwader sowie von der Anzahl der feindlichen Schiffe und Kopfgelder ab.
-~
-~
-~
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.~
 Fähigkeit nur für Spieler verfügbar
 }
-
-FlagHol	{Holländische Flagge}
+FlagHol {Flagge der Niederlande}
 perkFlagHol
 {
-Gibt Ihnen die Möglichkeit, Ihre Flagge in die Flagge von Holland zu ändern. Die Wahrscheinlichkeit, dass deine Tarnung nicht funktioniert, hängt von der Tarnung, der Anzahl und den Klassen der Schiffe im Geschwader sowie von der Anzahl der feindlichen Schiffe und Kopfgelder ab.
-~
-~
+Die Entdeckungswahrscheinlichkeit hängt von Tarnung, Schiffsklasse und Flottengröße, gegnerischer Flottengröße und Bedrohungsstufe ab.
 ~
 Fähigkeit nur für Spieler verfügbar
 }
-
-Brander	{Brander}
-perkBrander
-{
-Bietet die Möglichkeit, ein verbündetes Schiff in der Nähe eines feindlichen Schiffes detonieren zu lassen, wodurch dem feindlichen Schiff großer Schaden zugefügt wird.
-}
-
-Troopers	{Belagerungstaktik}
+Troopers {Belagerungstaktik}
 perkTroopers
 {
-Bietet die Möglichkeit, die Besatzungen aller Schiffe der Flotte für den Angriff auf eine Festung zu verwenden und sie als vereinte Streitkräfte zu entsenden.
-Verringert die Truppengröße, die für einen Landangriff auf die Siedlung benötigt wird.
+Möglichkeit, die Mannschaften deiner Flotte vor dem Sturm auf eine Festung zu vereinen.
+Reduziert die für einen Landangriff auf eine Siedlung benötigte Mannschaftszahl.
 }
-
-BasicCommerce	{Grundlegender Handel}
-perkBasicCommerce
-{
-10% Rabatt in den Geschäften.
-}
-
-AdvancedCommerce	{Verbesserter Handel}
-perkAdvancedCommerce
-{
-+10% Verkaufsbonus in Geschäften.
-}
-
-ProfessionalCommerce	{Professionelles Handeln}
-perkProfessionalCommerce
-{
-Diese Fähigkeit gibt - 15% Rabatt und +15% Verkaufsbonus auf alle Handelsgeschäfte.
-}
-
-Carpenter	{Automatische Reparatur}
-perkCarpenter
-{
-Diese Fähigkeit funktioniert bei Abenteuern an Land oder auf der Weltkarte. Auf dem Schiff, wenn der Kapitän diese Fähigkeit besitzt, wird ein beschädigter Rumpf oder die Takelage an vorhandenen Masten langsam wiederhergestellt. Benötigt werden Planken zur Reparatur des Rumpfes und Segeltuch zur Reparatur von Segeln.
-}
-
-InstantRepair	{Reparatur im Kampf}
+BasicCommerce {Grundlegendes Handeln}
+perkBasicCommerce {Einkäufe sind 4% günstiger. Gefragte Waren werden in Banken und Märkten hervorgehoben.}
+AdvancedCommerce {Fortgeschrittener Handel}
+perkAdvancedCommerce {Der Verkauf von Waren ist 4 % profitabler.}
+ProfessionalCommerce {Erfahrener Zahlmeister}
+perkProfessionalCommerce {Der Handel mit Waren ist 8 % profitabler.}
+Carpenter {Passive Reparatur}
+perkCarpenter {Rumpf und Segel werden während der Reise langsam repariert. Planken und Segeltuch werden benötigt.}
+InstantRepair {Kampf-Reparatur}
 perkInstantRepair
 {
-Eine schnelle Reparatur, die auch in der Hitze des Gefechts durchgeführt werden kann. Sie brauchen Planken, um den Rumpf zu reparieren, und Segeltuch, um die Segel zu befestigen. Gefallene Masten können nicht wiederhergestellt werden.
-Maximale Wiederherstellung des Schiffsrumpfes - bis zu 65 % der verfügbaren Mittel.
-90 Sekunden Abklingzeit.
+Schnelle Reparatur im Gefecht. Stellt bis zu 80 % der verfügbaren Haltbarkeit wieder her. Benötigt Planken für den Rumpf und Segeltuch für die Segel.
+Alle 1,5 Minuten einsetzbar.
 }
-
-LightRepair	{Notfall-Reparatur}
+LightRepair {Notfallreparatur}
 perkLightRepair
 {
-Diese Fähigkeit erlaubt es, die Schiffshülle ohne Ressourcen zu reparieren, aber die Reparatur überschreitet nicht 10% der verfügbaren HP. Ohne diese Fähigkeit bricht das Schiff auseinander, wenn die HP des Rumpfes weniger als 10% betragen.
-Funktioniert alle 3 Minuten für 60 Sekunden.
-Die automatische Reparatur wird um 50 % beschleunigt.
+Fähigkeit, bis zu 10 % der Schiffshülle ohne zusätzliche Ressourcen zu reparieren. Ohne diese Fertigkeit zerfällt das Schiff langsam, wenn die Hüllen-HP unter 10 % fallen.
+Alle 3 Minuten einsetzbar.
 }
-
-Builder	{Professionelle Reparatur}
-perkBuilder
-{
-Der Verbrauch von Planken und Segeltuch während einer Reparatur wird um 25% reduziert. Die automatische Reparatur wird um 100% beschleunigt.
-}
-
-SelfRepair {Vollständige Reparatur}
+Builder {Schadenskontrolle}
+perkBuilder {Der Verbrauch von Planken und Segeltuch bei Reparaturen ist um 25 % reduziert.}
+SelfRepair {Komplettreparatur}
 perkSelfRepair
 {
-Mit dieser Fähigkeit können Sie Ihr Schiff mit Hilfe Ihrer Mannschaft an einem beliebigen Ufer vollständig reparieren. Ihr solltet Planken zum Reparieren des Rumpfes und Segeltuch zum Befestigen der Segel in eurem Laderaum haben. Ermöglicht die vollständige Wiederherstellung von Rumpf, Segeln und Masten.
-Die Reparatur kann nur an Land in Küstennähe durchgeführt werden.
-}
+Die Fähigkeit, dein Schiff mit deiner Crew an jedem geeigneten Ufer vollständig zu reparieren. Für Rumpf und Masten werden Planken benötigt, für die Segel Segeltuch. Eine vollständige Wiederherstellung von Rumpf, Segeln und Masten ist möglich.
 
-WindCatcher	{Erhöhte Dynamik}
+Reparaturoptionen sind nur an Land in Küstenorten verfügbar.
+}
+WindCatcher {Meeresgespür}
 perkWindCatcher
 {
-Du spürst die kleinste Änderung der Windrichtung und kannst sie zu deinem Vorteil nutzen. (+10% auf die Beschleunigung des Schiffes).
-}
+Das Schiff beschleunigt 10 % schneller.
 
-SailsMan	{Schnelles Segeln}
-perkSailsMan
-{
-Sie haben es geschafft, alle Vorgänge im Zusammenhang mit den Segeln um 10% zu beschleunigen.
+Erhöht die Geschwindigkeit auf der Weltkarte in bekannten Gewässern – wenn du eine Karte hast.
 }
-
-Doctor1	{Doktor}
-perkDoctor1
-{
-Im Seekampf verringert diese Fähigkeit die Verluste durch Verwundungen und Kartätsche um 10%.
-}
-
-Doctor2	{Lebensretter}
-perkDoctor2
-{
-Im Seekampf verringert diese Fähigkeit die Verluste durch Verwundungen und Kartätsche um 20%.
-}
-
-InstantBoarding {Sofortiges Entern}
-FencingMaster {Fechtmeister}
-perkFencingMaster
-{
-Wenn man im Kampf getroffen wird, verbraucht man keine Energie.
-~
-10% Chance, einen kritischen Treffer zu landen.
-~
-Ein erfolgreicher Schnellangriff erhält einen Schadensbonus von 30%.
-~
-Nur mit Duellanten-Hintergrund.
-}
-
-TannedLeather {Gegerbtes Leder}
-perkTannedLeather
-{
-Leichte Rüstung und Kleidung schützen 20% effektiver.
-~
-~
-~
-Nur mit Duellanten-Hintergrund.
-}
-
-RatsWolf {Rattenfänger}
-perkRatsWolf
-{
-Es ist unwahrscheinlich, dass Ihr Schiff durch Ratten oder andere Schädlinge beschädigt wird.
-~
-~
-~
-Nur mit Buchhalter-Hintergrund.
-}
-
-Mimicry {Nachahmen}
-perkMimicry
-{
-Die Wahrscheinlichkeit, von Kriegsschiffen und Festungen entdeckt zu werden, wird um 50% reduziert
-~
-~
-~
-~
-~
-Nur mit Buchhalter-Hintergrund.
-}
-
-TreasureHunter {Schatzjäger}
-perkTreasureHunter
-{
-Hervorragendes Gespür ermöglicht es Ihnen, Schätze mit besserem Inhalt zu finden
-~
-~
-~
-~
-~
-Nur mit Buchhalter-Hintergrund.
-}
-
-Dragoon {Bronzereiter}
-perkDragoon
-{
-Kürasse schützen 15% effektiver.
-~
-Erfolgreiche Hieb- und schwere Angriffe erhalten einen Schadensbonus von 15% bzw. 30%.
-~
-~
-Nur mit Athleten-Hintergrund.
-}
-
-SecondWind {Lebendiger Hauch}
-perkSecondWind
-{
-Die Energierückgewinnung ist 15 % schneller.
-~
-~
-~
-Nur Athleten-Hintergrund.
-}
-
-Jager {Jäger}
-perkJager
-{
-Das Nachladen von Schusswaffen ist 40 % schneller.
-~
-~
-~
-Nur Scharfschützen-Hintergrund.
-}
-
+SailsMan {Schnelle Segel}
+perkSailsMan {Dank modernster Zuckerbrot-und-Peitsche-Methoden werden alle Segelmanöver 10 % schneller ausgeführt.}
+Doctor1 {Arzt}
+perkDoctor1 {Verringert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 5%.}
+Doctor2 {Experten-Arzt}
+perkDoctor2 {Reduziert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 10 %.}
+TannedLeather {Dickes Fell}
+perkTannedLeather {Leichte Rüstung schützt 50 % besser und verbraucht 30 % weniger Energie beim Rückstoß.}
+RatsWolf {Rattenwolf}
+perkRatsWolf {Auf dem Schiff dieses Charakters wird die Ladung nicht von Ratten oder anderem Ungeziefer beschädigt.}
+Mimicry {Mimikry}
+perkMimicry {Heimlichkeitsproben auf See sind 50 % effektiver.}
+TreasureHunter {Schatzsucher}
+perkTreasureHunter {Schatzkartenhändler erscheinen häufiger und die Schätze selbst sind wertvoller.}
+Dragoon {Dragoner}
+perkDragoon {Schaden von mittleren Waffen um 10 % erhöht.}
 Bombardier {Bombardier}
-perkBombardier
-{
-Kanonen überleben länger in einem Kampf.
-~
-~
-~
-Nur Scharfschützen-Hintergrund.
-}
-
+perkBombardier {Haltbarkeit der Kanonen ist erhöht.}
 Sniper {Scharfschütze}
-perkSniper
+perkSniper {Ein Treffer mit einer Schusswaffe entzieht dem Feind Energie.}
+perkTreeMusketer {Musketier}
+perkTreeSoldier {Soldat}
+perkTreeMastery {Meisterschaft}
+perkTreeBackground {Hintergrund}
+perkTreeFencing {Fechter}
+perkTreePirat {Pirat}
+perkTreeAdventurer {Abenteurer}
+perkTreeOfficer {Offizier}
+perkTreeFlags {Wimpel}
+perkTreeCannoner {$key(Cannoner)}
+perkTreeBoatswain {$key(Boatswain)}
+perkTreeCarpenter {$key(Carpenter)}
+perkTreeNavigator {$key(Navigator)}
+perkTreeTreasurer {$key(Treasurer)}
+perkTreeDoctor {$key(Doctor)}
+FastHands {Schnelle Hände}
+perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um 20 %.}
+AmmoRig {Ausrüstung}
+perkAmmoRig {Das Nachladen von Schusswaffen ist 5 % schneller.}
+Preaim {Einschießen}
+perkPreaim {Zielmodus ist 15 % schneller.}
+KeenEye {Scharfes Auge}
+perkKeenEye {Kopfschüsse verursachen $percent($perkBaseValue(KeenEye|1)) mehr Schaden.}
+PowderFeel {Sinn für Schwarzpulver}
+perkPowderFeel {Die mit Alchemie hergestellte Munitionmenge steigt um $percent($perkBaseValue(PowderFeel|1)).}
+Drill {Drill}
+perkDrill {Bewegungsgeschwindigkeit mit Musketen und Zielgeschwindigkeit um 18 % erhöht. Schaltet fortgeschrittene Schussstellungen frei.}
+LeadRain {Bleiregen}
+perkLeadRain {Kartätsche verursacht 5 % mehr Schaden für jeden getroffenen Feind.}
+ShootToKill {Schießbefehl}
+perkShootToKill {Ein Treffer mit einer Schusswaffe verlangsamt den Feind und reduziert seine Bewegungsgeschwindigkeit um 25 %. Dauer: 5 Sekunden.}
+Muscles {Berg aus Muskeln}
+perkMuscles {Alle Angriffe mit schweren Waffen verbrauchen 10 % weniger Energie und sind 4 % schneller. Betäubungserholung ist 15 % schneller.}
+Conquest {Conquista}
+perkConquest {Hieb-Angriffe und schwere Angriffe mit geraden langen Waffen verursachen 15 % mehr Schaden.}
+PalaceGuard {Palastwache}
+perkPalaceGuard {Schwere gekrümmte Waffen verursachen 15 % mehr Schaden mit Angriffen und zusätzlich 5 % mehr Schaden mit Rundumschlägen.}
+CunningStrike {Heimtückischer Schlag}
+perkCunningStrike {Leichte Waffen haben 3 % erhöhte Krit-Chance. Angriffe von hinten verursachen 10 % mehr Schaden.}
+Heartbreaker {Herzensbrecher}
+perkHeartbreaker {Schnelle Angriffe mit geraden langen Waffen verursachen 10 % mehr Schaden und sind 3 % schneller.}
+Dodgy {Glück}
+perkDodgy {Sprint-Schub ist 30 % stärker und verbraucht weniger Energie.}
+Exhaustion {Erschöpfung}
+perkExhaustion {Parieren mit kurzen Waffen entzieht 20 % mehr Energie. Gegnerische Betäubung hält 10 % länger an.}
+Reaper {Schnitter}
+perkReaper {Kritischer Schaden um 30 % erhöht, und kritische Chance bei schnellen Angriffen um 3 % erhöht.}
+MarathonRunner {Marathonläufer}
+perkMarathonRunner {Sprint wird 15 % schneller und verbraucht ein Drittel weniger Energie.}
+PerfectBalance {Perfektes Gleichgewicht}
+perkPerfectBalance {Mittlere Waffen in der Hand verringern erlittenen Schaden um 10 %.}
+Flanking {Flankieren}
+perkFlanking {Angriffe mit gekrümmten Waffen sind 5 % schneller. Schaltet fortgeschrittenen Rundumschlag frei.}
+SabreHurricane {Säbelwirbel}
+perkSabreHurricane {Hieb- und schnelle Angriffe mit mittleren gekrümmten Waffen haben einen größeren Bogen, treffen benachbarte Feinde und verursachen 10 % mehr Schaden.}
+Practice {Praxisentwicklung}
+perkPractice {Jeder ausrüstbare herstellbare Gegenstand erhöht alle Fähigkeiten um 2.}
+Strychnine {Strychnin}
+perkStrychnine {Schläge und Schüsse haben eine 9% Chance, das Ziel zu vergiften. Stapelt sich mit Amulett-Boni.}
+DarkHorse {Geheimfavorit}
+perkDarkHorse {Jedes ausgerüstete Alltags-Amulett und Talisman erhöht Gesundheit und Energie um 2,5 %.}
+Master {Meister}
+perkMaster {Jeder hergestellte Gegenstand, der ein Werkzeug benötigt, erhöht den ausgehenden Schaden um 0,1 %.}
+Quiet {Leichtfüßig}
+perkQuiet {Du kannst beim Stehlen nicht entdeckt werden.}
+Looting {Gründliche Durchsuchung}
+perkLooting {Nach dem abgeschlossenen Entern durchsuchen die Matrosen automatisch das Deck und bringen dir die gesamte Beute.}
+Collection {Kuriosität}
+perkCollection {Jeder auf dem Schiff platzierte exotische Gegenstand bringt 1.000 Pesos pro Tag in einem nicht feindlichen Hafen.}
+Tiefit {Angepasst}
+perkTiefit {Der Fertigkeitsbonus von Alltäglich- und Schmuck-Gegenständen ist um 3 erhöht.}
+Investor {Investor}
+perkInvestor {Der Einlagenzinssatz wird um 1 % erhöht.}
+Gossip {Mittelpunkt der Aufmerksamkeit}
+perkGossip {Der Bonus auf Flottenstärke durch exotische Gegenstände steigt um 5 %.}
+Captain {Kapitän}
+perkCaptain {Der Charakter kann ein Schiff der Klasse 4 und höher als Teil einer Eskadre kommandieren. Man muss kein Genie sein, um einen Lugger oder eine Schaluppe zu steuern, aber für ein ernsthaftes Schiff reicht reine Kühnheit nicht aus.}
+Chance {Alles oder Nichts}
+perkChance {Einzellader-Schusswaffen verursachen 15 % mehr Schaden bei kritischen Treffern. Kritische Trefferchance von einhändigen Schusswaffen um 2 % erhöht.}
+Bayonet {Bajonettangriff}
+perkBayonet {Zweihändige Nahkampfangriffe verursachen 15 % mehr Schaden und zusätzlich 30 % mehr Schaden mit Bajonett.}
+Kern {Kern}
+perkKern {Repetier-Schusswaffen erhalten 8 % mehr Schaden und 4 % schnellere Nachladegeschwindigkeit pro leerem Schuss.}
+MeatGrinder {Fleischwolf}
+perkMeatGrinder {Schaden von kurzen Waffen um 10 % erhöht.}
+NeckStrike {Hieb zum Hals}
+perkNeckStrike {Langwaffenschaden um 10 % erhöht.}
+Stabbing {Messerstecherei}
+perkStabbing {Schaden von Kurzwaffen um 8 % erhöht.}
+Virtuosity {Virtuosität}
+perkVirtuosity {Schaden von leichten Waffen um 10 % erhöht.}
+Puncher {Locher}
+perkPuncher {Schaden von geraden Waffen um 10 % erhöht.}
+Reach {Reichweite}
+perkReach {Langwaffen-Schaden um 8 % erhöht.}
+Inertia {Trägheit}
+perkInertia {Schwere Waffen verursachen 10 % mehr Schaden.}
+OttomanGrip {Osmanischer Griff}
+perkOttomanGrip {Gekrümmte Waffen verursachen 10 % mehr Schaden.}
+Mule {Percheron}
+perkMule {Training zahlt sich aus – schwere Waffen und Rüstung verlangsamen dich um 50 % weniger, und die Traglast steigt pro Rang um 2 Pfund.}
+BeneathWaterline {Unter der Wasserlinie}
+perkBeneathWaterline {Beim Treffer auf ein Schiff besteht die Chance, unterhalb der Wasserlinie zu durchschlagen, wodurch das Ziel geflutet und verlangsamt wird, bis das Leck repariert ist.}
+CoordinatedBoarding {Gemeinsames Entern}
+perkCoordinatedBoarding {Ermöglicht einem Schiff der Flotte, sich einem von seinem eigenen Kapitän geführten Entern anzuschließen, wenn es nah genug ist.}
+Involvement {Waffenschmied}
+perkInvolvement {Der Bootsmann kommt beim Entern an Deck und kämpft auf deiner Seite. Er ersetzt einen Matrosen und kann nicht getötet werden.}
+BruteForce {Rohe Gewalt}
+perkBruteForce {Schwer bewaffnete Soldaten mit Äxten und Rüstung ersetzen beim Entern einige deiner normalen Matrosen.}
+Ambuscade {Hinterhaltregiment}
+perkAmbuscade {Duelleure mit Rapiere und Repetierpistolen ersetzen einige deiner regulären Matrosen beim Entern.}
+LoneWolf {Einzelgänger}
+perkLoneWolf {Bessere Fluchtchance und Flottenstärke steigt um $percent($perkBaseValue(LoneWolf|1)), solange du nur ein Schiff in der Flotte hast.}
+Thrift {Sparsamkeit}
+perkThrift {Verringert den Einfluss von Segelschäden auf Geschwindigkeit und Manövrierbarkeit um 10 %.}
+QuickGlance {Schnelles Auge}
+perkQuickGlance {Bestimmt Schiffstyp und Merkmal beim Anvisieren mit dem Fernrohr.}
+TrainedEye {Scharfes Auge}
+perkTrainedEye {Ermöglicht eine grobe Schätzung der Wertgegenstände auf einem Schiff beim Beobachten mit dem Fernrohr.}
+TradeConnections {Handelsverbindungen}
+perkTradeConnections {Preislisten werden beim Besuch einer Kolonie automatisch aktualisiert.}
+Intendant {Intendant}
+perkIntendant {Reduziert die Geschwindigkeits‑ und Manövrierfähigkeitsstrafe durch Beladung des Laderaums während des Kampfes und bei der Flucht.}
+Doctor {Arzt}
+perkDoctor {Reduziert Mannschaftsverluste durch Wunden und Kartätsche im Seegefecht um 5 %.}
+BoardingPrepare {Vorbereitung}
+perkBoardingPrepare {Die Entermannschaft erhält Tränke während des Enterns.}
+Cook {Koch}
+perkCook {Reduziert den Proviantverbrauch um 5 %.}
+ChiefCook {Oberkoch}
+perkChiefCook {Reduziert den Proviantverbrauch um 10 %.}
+Bartender {Barkeeper}
+perkBartender {Reduziert den Rumverbrauch um 5 %.}
+Moonshiner {Destillateur}
+perkMoonshiner {Reduziert den Rumverbrauch um 10 %.}
+Quartermaster {Quartiermeister}
+perkQuartermaster {Erhöht die maximale Mannschaft um 10 %.}
+InstantBoarding {Sofortiges Entern}
+Rush {Die Ometochtli Tinktur}
+perkRush
 {
-Das Schießen mit persönlichen Schusswaffen schockiert das Ziel und zwingt es, Energie zu verlieren.
-~
-~
-~
-Nur Scharfschützen-Hintergrund.
+Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.~Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
 }
+perkTrustworthy_alternate {Als Offizier erhält der Charakter eine um $percent($perkBaseValue(Trustworthy|1)) verringerte Bezahlung.}
+perkAlchemy_alternate {Gewährt eine Chance von $percent($perkBaseValue(Alchemy|1)), beim Gebrauch einen Trank nicht zu verbrauchen.}
+perkPreaim_alternate {Der Charakter verursacht $percent($perkBaseValue(Preaim|2)) mehr Schaden mit Schüssen gegen Gegner, die nicht volle Gesundheit haben.}
+perkKeenEye_alternate {Der Charakter erhält eine um $percent($perkBaseValue(KeenEye|2)) erhöhte Chance auf kritische Schüsse.}
+perkPowderFeel_alternate {Der Charakter erhält eine Chance von $percent($perkBaseValue(PowderFeel|2)), beim Schuss keine Munition zu verbrauchen.}
+perkMarathonRunner_alternate {Der Charakter erhöht seinen Energievorrat um $number($perkBaseValue(MarathonRunner|3)).}
+perkQuiet_alternate {Der Charakter verursacht $percent($perkBaseValue(Quiet|1)) mehr Schaden bei Angriffen von hinten.}
+perkCollection_alternate {Jeder exotische Gegenstand, den der Charakter ausrüstet, erhöht seinen Schaden um $percent($perkBaseValue(Collection|2)).}
+perkInvestor_alternate {Erhöht die Fertigkeiten Handel und Führung des Charakters um $number($perkBaseValue(Investor|2)).}
+perkGossip_alternate {In der Rolle des Gefährten erhöht der Charakter die Macht der Eskadre um $percent($perkBaseValue(Gossip|1)).}
+perkMaster_alternate {Jeder vom Charakter getrunkene Trank erhöht den verursachten Schaden um $percent($perkBaseValue(Master|2)).}
+perkLooting_alternate {Erhöht die Traglast um $perkBaseValue(Looting|1) Pfund.}

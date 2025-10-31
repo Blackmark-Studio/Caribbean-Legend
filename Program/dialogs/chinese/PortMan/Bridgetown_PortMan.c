@@ -219,11 +219,16 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         // 卡莱乌切
         case "caleuche":
             dialog.text = "先生, 我需要船的确切名字。 我们港口有很多叫杰克和杰克逊的人。 那么, 船名是什么? ";
-            link.l1 = "";
-            Link.l1.edit = 2;
-            link.l1.go = "caleuche_name";
-            link.l2 = "问题是我不知道他那破船的名字。 很奇怪, 有个鸟女, 出生... ";
-            link.l2.go = "caleuche_1";
+            link.l1 = "海妖"; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "拉弥亚"; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "鹰身女妖"; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "复仇女神"; 
+			link.l4.go = "caleuche_wrong_name";
+            link.l5 = "问题是我不知道他那破船的名字。 很奇怪, 有个鸟女, 出生... ";
+            link.l5.go = "caleuche_1";
         break;
         
         case "caleuche_1":
@@ -235,31 +240,38 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
         
         case "caleuche_2":
             dialog.text = "那么? 你有船的名字吗? 我在听。 ";
-            link.l1 = "";
-            Link.l1.edit = 2;
-            link.l1.go = "caleuche_name";
+            link.l1 = "海妖。"; 
+			link.l1.go = "caleuche_wrong_name";
+			link.l2 = "拉弥亚。"; 
+			link.l2.go = "caleuche_wrong_name";
+			link.l3 = "鹰身女妖。"; 
+			link.l3.go = "caleuche_name";
+			link.l4 = "复仇女神。"; 
+			link.l4.go = "caleuche_wrong_name";
+			link.l5 = "我还需要再想想。";
+			link.l5.go = "exit";
         break;
         
         case "caleuche_name":
-            if (GetStrSmallRegister(dialogEditStrings[2]) == "harpy")
-            {
                 dialog.text = "‘哈皮’? 当然, 我知道那艘三桅小帆船。 船长是雷金纳德.杰克逊。 但他很久没来布里奇敦了。 我听说他现在为荷兰西印度公司工作。 所以你应该去威廉斯塔德找他。 ";
                 link.l1 = "非常感谢! 你帮了我大忙。 ";
                 link.l1.go = "caleuche_3";
-            }
-            else
-            {
-                dialog.text = "抱歉, 这名字没印象。 你确定这位船长来过布里奇敦吗? ";
-                link.l1 = "我确定。 好吧, 也许我会想到什么... ";
-                link.l1.go = "exit";
-            }
+				DelLandQuestMark(npchar);
         break;
+		
+		case "caleuche_wrong_name":
+			dialog.text = "抱歉, 这名字没印象。 你确定这位船长来过布里奇敦吗? ";
+            link.l1 = "我确定。 好吧, 也许我会想到什么... ";
+            link.l1.go = "exit";
+			npchar.questTemp.caleuche = "true";
+		break;
         
         case "caleuche_3":
             DialogExit();
             AddQuestRecord("Caleuche", "18");
             pchar.questTemp.Caleuche.Garpiya = "gwik"; 
             npchar.quest.garpiya = "true";
+			AddLandQuestMarkToPhantom("GVIK", "HWIC_headclerk");
         break;
     }
     UnloadSegment(NPChar.FileDialog2);  // 如果switch内部某处通过return退出, 别忘了进行卸载

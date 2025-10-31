@@ -1,0 +1,1603 @@
+#QUEST JacobVanBerg_Journal
+Jacob van Berg naplója
+#TEXT 1
+... Elegem van ebbôl a tilalomból, hogy angol kereskedôket fosztogatok!
+Ennek semmi értelme! Elsüllyeszteni olyan hajókat, amelyeket ki lehet fosztani!
+... Elegem van ebbôl 'Flying Dutchman' ideából, az elején még vicces és jövedelmezô volt, de most már ideje véget vetni ennek.
+... Elegem van ezekbôl az idióta küldetésekbôl a munkaadóm részérôl. Az utolsó parancs az volt, hogy hívjam vissza annak a helynek a koordinátáit, ahol elsüllyesztettem azt az angol flottát. Azóta már annyi fluyt volt! Az egyetlen dolog, amire emlékszem, hogy a 12 fok 48' szélességi fokon hajóztam.
+... Elegem van abból is, hogy már hetek óta várom ezt a sárga bôrû kínai hírnököt. Ha két napon belül nem érkezik meg, akkor visszahajózom a Boca De La Sierpe-öbölbe, fogom a hajómat, és otthagyom ezt a várva várt zûrzavart.
+#TEXT 2
+... egy másik áldozatot kell elkapnia - valami idiótát, aki megvette a 'Valkyrie' a félig halott Fleetwoodot. A fickó most Blueweld felé hajózik, és a hajója tele van rabszolgákkal...
+... ez a vadászat lesz az utolsó, elegem volt a szörnyeteg játékból, ideje búcsút venni, mert az utolsó beszélgetésem a mesterrel elég kellemetlen volt. Még mindig azt követeli tôlem, hogy emlékezzek vissza, hol süllyesztettem el azt a brit flottát. Mintha már évekkel ezelôtt lett volna, csak arra emlékszem, hogy a szélességi fok 12 fok 48'. Még azzal a sárga bôrû fattyúval is próbál ijesztgetni. Nem, nekem elég volt ezekbôl 'ghost' játékokból. Itt az ideje, hogy valami komolyabbat csináljak, és elmenjek innen vissza Európába...
+... Gondolom, meg kellene változtatnom a zászlómat 'Mirage' ról 'Valkyrie'. ra, úgyis a kezembe kerül. Leszarom a mester kívánságát, hogy az Esmeralda-öbölbe szállítsa. Ez a szárazföldi patkány már 'Meifeng', baszd meg, nem kap 'Valkyrie' too!
+
+#QUEST Fleetwood_Journal
+Richard Fleetwood naplója
+#TEXT 1
+... szegény Abi könyörög, hogy találjam meg azt a szigetet, ahol ôt és az apját találtam. A fenébe, bárcsak emlékeznék, hol történt mindez. Hosszúság 64 fok 41' - ez minden, amire emlékszem. Láttam a 'repülô hollandot' ott, és megpróbáltam üldözôbe venni. Nem sikerült, de helyette megtaláltam azt a szigetet Abival és az apjával. Úgy tûnik, az öreg zsidó azt hiszi, hogy én voltam az, aki elsüllyesztette a hajójukat. Remélem, hogy az édes Abi nem gondolja ugyanezt.
+... majdnem bizonyítékot kaptunk Rodenburg kapcsolatára 'Flying Dutchman'. A jó öreg Charlie azt mondta, hogy a bázisa helyét a dominikai Castle Bruce Bay-re változtatta. Reményeim szerint hamarosan véget ér a történet, mielôtt a kannibálok széttépik ôket. Ez egy nem akármilyen történet lesz!
+...hasznos lenne, ha lelepleznénk a patkányunkat Bridgetownban. Remélem, nem a kormányzó az, de ki más lenne ennyire tájékozott a tervezett kereskedelmi útvonalakról és járôrözésekrôl?
+
+#QUEST Merdok_Archive
+Johan van Merden archívumának utolsó oldalai
+#TEXT 1
+... ez várható volt. Túl jól ismerem Lucast. Az elôléptetése után nem lesz nyugtom...
+... ez 'Flying Dutchman' idea egy szép példa arra, hogy Rodenburg hogyan üzletel. Nem hagy békén. Bezárom a patikámat, fel kell készülnöm az ostromra, miközben várom a hajót, ami kivisz a Karib-tengerrôl...
+... úgy néz ki, hogy Lucas' új ügynök jó ember, nem akarom megölni, hátha az a szemétláda elküldi a Szent Jánosba. Bár sokkal jobb, mint Ostin legényei által meghalni. Lucas képes felbérelni ôket. Eléggé tele van pénzzel...
+#TEXT 2
+... ez 'Flying Dutchman' idea egy szép példa arra, hogy Rodenburg hogyan üzletel. Komolyan szabotálta az angol kereskedôk' aktivitását...
+... Joachim Merriman teljesítette az alku rá esô részét, és jól megfizetett a nefrit koponyáért. Félmillió nyolcrészes ezüst darab, nem kis összeg...
+... ezután Merriman megkért mindenkit, hogy hagyják el ôt, valamiféle csapdát akart készíteni azoknak, akik idejönnek, hogy megtaláljanak minket. Tonzag úgy döntött, hogy elmegy és megnézi a csapdát. Egy óra múlva a portugál egyedül jött vissza, sötéten viccelôdött, hogy Tonzagnak nem kellett volna utána jönnie, de azért sokat segített...
+
+#QUEST LetterToAbi
+Richard Fleetwood levele Abigailnek.
+#TEXT 1
+"Dear Abi! Ahogy ígértem, elviszlek magamhoz Szent Jánosba. Ez a futár a legjobb barátom, a neve Charlie. Megbízhatsz benne. Elvisz téged Antiguára, ne habozz, kövessétek ôt. Tudok a szerencsétlenségedrôl, ígérem, hogy a legközelebbi alkalommal megtérítem apád pénzét, és semmi sem állhat közénk. Alig várom, hogy lássalak.
+Richard."
+
+#QUEST LetterToFleetwood
+Levél Richard Fleetwoodnak az Abigailért fizetendô váltságdíj feltételeivel.
+#TEXT 1
+Nálam van a te Abigailed, és soha nem fogod megtalálni. Ô lett az én 'vendégem' miután felszálltam a fickó hajójára. Az ár 200,000 pezó. A levele szerint rengeteg pénze van. Találkozzunk a Turks-szigeten az északi öbölben. Jöjjön egyedül a briggeden. Ne merészeld bántani vagy követni a hírnökömet, figyelni fogom. Ha hírnököm 30 percen belül nem hagyja el a házadat, vagy követnek, küldök neked egy dobozt, amelyben a kedvesed ujja és füle van. És ha nem hoz semmilyen választ, vagy nem hagyja el a lakásodat, akkor levágom Abi fejét, és elküldöm neked. Remélem, hogy észnél leszel, angol, Abi élete a te kezedben van. 200.000 pezó az ár, és ha nem kapom meg, akkor darabokban kapja meg a lányát.
+Mr. Evil
+
+#QUEST FleetwoodAnswer
+Richard Fleetwood válasza
+#TEXT 1
+Egyetértek a feltételeivel, Mr. Evil. Találkozunk Törökországban, elhozom a pénzt, amit kér. Ne bántsa Abigailt, különben életem hátralévô részét arra fogom fordítani, hogy megbosszuljam.
+Richard Fleetwood
+
+#QUEST LetterToLucas
+Richard Fleetwood levele Lucas Rodenburgnak.
+#TEXT 1
+Végeztél, Rodenburg. Letartóztattam John Murdock vegyészt, mert holland ügynök, és lefoglaltam egy igen érdekes archívumot is. A férfi nem sokáig bírta... és most már van egy rejtjelkulcsom. Szilárd bizonyítékom van arra, hogy kapcsolatban állsz a Repülô holland' üzlettel, vagy, hogy helyesebben fogalmazzak, a társaddal, Jacob van Berggel, aki angol hajókra vadászik. Sok kedves tény van abban az archívumban, megmondom ôszintén. Multinacionális botrányt ígérhetek neked, a saját fônökeid is elfordulnak majd tôled, ha megtudják, mit tettél. Bár gondolkoztam... talán tízmilliót kellene készítened az archívumért cserébe...
+Richard Fleetwood
+
+#QUEST LetterFromGaston
+Callow Gaston levele
+#TEXT 1
+Ha ezt olvasod, az azt jelenti, hogy én már halott vagyok.
+Jól átvertél azzal a rabszolga dologgal. Hercule Tonzagot soha senki nem tudta becsapni. Ez a valódi nevem. Vagyis az volt.
+A férfi, aki megölt engem, szintén nagyon veszélyes fenyegetés az ön számára. Ez az oka annak, hogy segítek neked túlélni, és bosszút állsz rajta a halálomért. Kár, hogy ebben az életben ellenségek voltunk. Sok közös dolgunk volt, és együtt tudtunk volna dolgozni.
+Ne bízz senkiben, különösen ne abban az angol kémben. Ô küldött a halálba, még azt sem mondta el neked, hogy az egész Karib-tenger vadászik a 'Valkyrie' kapitányára, és Curacao kormányzója nagy összeget fog fizetni a fejéért.
+Túl sok hollandot küldött a cápák közé a maga embere. Majdnem ugyanannyi van neki, mint annak a szemét Van Bergnek.
+Biztos vagyok benne, hogy mindezt nem tudtam. Szóval tartsd magad távol az angolodtól, ha élni akarsz. Miért érdekel téged ez a rohadt politika?
+De van egy ember, aki sokkal veszélyesebb. Ô Lucas Rodenburg, a barátod legnagyobb ellensége. Fleetwood segítôjének lenni elég ahhoz, hogy a feketelistáján találd magad. A Cég igazgatóhelyettese, katonák és járôrök védelme alatt, nem fogod elkapni. De van egy megoldás.
+Keress egy patikust St. John's-ban. A neve John Murdock. Ô volt Lucas Rodenburg jobb keze. Neki dolgoztam, és Lucas úgy döntött, hogy mindkettônktôl megszabadul. Nem számít, ki ölt meg engem, Longway vagy a Liga emberei. Rodenburg parancsára öltek meg. Ô is ugyanezt fogja tenni veled, ha nem te csapsz le elôször.
+Találd meg a vegyészt Lucas elôtt. A valódi neve van Merden, és valószínûleg St. John's tömlöcében rejtôzik. Mondd meg neki, hogy tôlem jöttél. Segíteni fog neked az igazságszolgáltatásban. Van valami, amivel elcsábíthatja Lucast Curacaóból. És te jól csinálod az ilyen dolgokat.
+Sok szerencsét neked, idegen! Ne feledd Hercule Tonzagot.
+Ezt a nevet csak én és van Merden ismertük. Most már te is tudod.
+
+#QUEST	LetterFromFleetwood
+Richard Fleetwood búcsúja
+#TEXT	1
+Isten veled, hûséges barátom!
+Meg kellett csalnom téged Abigail iránti szerelmemmel. Ne ítélj el, ô az egyetlen, aki számít nekem. Nem bízhattam rád egy ilyen fontos beszélgetést az apjával. Hogy ôszinte legyek, a szemem valójában nem is olyan rossz. Sokkal könnyebb, ha ezt ebben a levélben mondom el neked. Hidd el, mindkettônknek jobb lesz.
+Fizettem Salomonnak, elvettem Abigailt, és most végleg kiszálltam a játékból. Nem kockáztathatom az életét és a boldogságát. A 'Valkyrie' Londonba hajózik, miközben ezt a levelet olvasod.
+Most már egyedül vagy Rodenburggal és a zsoldosaival szemben. Remélem, hogy életben maradsz. Hûséges Charlie-m visszautasította a visszatérést Angliába, és úgy tûnik, hogy most elôször nem engedelmeskedett a parancsomnak. Ez nekem sem tetszik. Charlie ad neked némi aranyat. Ez majd elsimítja csalódásodat.
+Vedd fel Charlie-t tüzérnek. Ô addig fog szolgálni téged, amíg nem rontod el a becsületedet, mint én tettem.
+Sok szerencsét és gyôzelmet kívánok!
+Utóirat: Egy indián sámán azt mondta nekem, hogy az élôhalottak meg tudják védeni a kincseket, ha valamilyen helyi varázslattal megátkozták ôket, és a testük egy részét a ládába tették. Ez az oka annak, hogy Gaston fejét egy ládában találták meg a szigeten.
+Azt a szörnyeteget, akivel találkoztál, Chavinavinak hívják. A helyi mesék szerint ôk Yum Cimil - a maja halálisten - kegyencei. Az ember, aki megidézte, egy nagyon erôs varázsló. Ez a másik ok, amiért elviszem Abi-t. Félek. És nem magam miatt. Abi terhes. Sok szerencsét!
+
+#QUEST LetterToMerdok
+Lucas Rodenburg levele Johan van Merdennek.
+#TEXT 1
+
+Johan! Ismersz engem, úgyis megszerzem a hülye archívumodat. A kérdés csak az, hogy te hozod el nekem, vagy Ostin' boys. Nekem nem is kell a rejtjelezésed, bár tisztában vagyok vele, hogy valahol a gödrödben rejtegeted. Én magam akarom elégetni azokat a papírokat.
+Nem fogod elhagyni Antiguát. Adok neked egy utolsó esélyt a túlélésre régi barátságunkért.
+Várni foglak a régi helyünkön. Longway átadja az üzenetet. Tudom, hogy valamiért ragaszkodik hozzád, és nem fogok meglepôdni, ha nem jön vissza. Ô fogja átadni az üzenetet, és te el fogod olvasni. Ezért a kínai ezúttal egyedül fog visszatérni. 'Meifeng' most már új kapitánya van.
+Nincs szükségem az életedre. Csak nem akarok semmilyen meglepetést a múltamból. A zsidó aranyat és a portugáloktól az indiai koponyáért kapott pénzt megtarthatod magadnak.
+Tudja, van Merden, várom magát, de a türelmemnek van határa. És amikor elérjük ôket, a Liga el fog bánni veled.
+Régi barátod és parancsnokod,
+Lucas.
+
+#QUEST LSC_Alvorado
+Karibi krónikák - Elátkozott hely
+#TEXT 1
+
+Ignacio Alvarado, a 'Santiago' gálya kapitányának útinaplója.
+20.06.1620
+Fogalmam sincs, idôsebbek, mit tettünk, hogy ilyen sorsot érdemeltünk. Milyen bûnökért? Nem tudok válaszolni, de elmondom, amit láttam. A Szent Szûzre esküszöm, hogy mindez igaz!
+1620 nyara. A nevem Ignacio Alvarado, a gálya kapitánya vagyok 'Santiago'. Havannából Vera Cruzba hajózunk, amikor a halálos vihar ránk csapott. Elvesztettük uralmunkat a hajónk felett, és észak felé kellett sodródnunk. Egy hétig hatalmas hullámok sújtottak bennünket, de a hajónk elég szívós volt. A hajóteste túlélte, és egy nap egy furcsa sziget közelében találtuk magunkat, amely gyakorlatilag egy hajótemetô volt.
+Hatalmas volt, rengeteg törmelék, életnek minden jele nélkül. A hajónkkal felfedeztük ezt a furcsa helyet. Láttam egy kis átjárót a törmelékeken keresztül, és hamarosan elértük ennek a temetônek a közepét - egy hatalmas hadihajó, a 'San Augustine'....
+28.06.1620
+... Meglepô módon ott csend volt, semmi jele a szélnek. Engem és az embereket megtámadtak, amikor a hadihajó fedélzetére értünk. Furcsa fekete szörnyek. Nagy volt a számuk, és meg kellett adnunk magunkat.
+... a sziget lakott volt. Minden faj és nemzetiség képviselteti magát. Mindannyian az elmúlt ötven év hajótöréseinek áldozatai. Hála Istennek, a saját fajtájuknak tekintettek minket. Nem tudják, hogy a hajónk túlélte. Az Igazság Szigete. Így hívják. De én elnevezem 'Az elhagyott hajók városa'. Ez az egyetlen név, amit egy ilyen hely megérdemel.
+Két klán birtokolja ezt a szigetet. Sajnos a Rivados klán foglyul ejtett minket. Vademberek utódai, úgy bánnak a fehér emberekkel, mint mi az afrikaiakkal és az indiánokkal. Kis csónakunkat elkobozták, és elvittek minket 'San Geronimóba' , hogy a helyi hagyományok szerint feláldozzanak minket valami kôbálványnak. Észrevettem, hogy a hajó a közeljövôben elsüllyed, és attól tartottam, hogy mi...
+29.06.1620
+...a Narwhal klán az ellenségük. Fehér emberek, akik többnyire az elsô fehér helyiek utódaiból állnak. Szerencsénkre megtámadták a hajót, hogy kiszabadítsák társaikat. És mi megmenekültünk. A Narwalok azt mondták, hogy egy órával a feláldozásunk elôtt álltunk. A helyzetünk egy kicsit jobb lett, de még mindig a Sziget foglyai voltunk, mert nem volt lehetôségünk arra, hogy a...
+03.07.1620
+... a rakterekben rengeteg kincs van, ruhák, fegyverek, szerszámok, rum, bor és fûszerek. Bár a készletek és az élelem eléggé korlátozottak. Ez az oka annak, hogy a helyi klánok a 'San Augustine' semleges területnek tekintik. Ez egy kapu, hogy a törmeléken keresztül haladjon. Csak kis hajók hajózhatnak oda, és a helyieknek bôven van belôlük, hogy csempészekkel kereskedjenek. Kincseket élelemért. Ez így mûködik. Az arany itt nem ér semmit...
+05.07.1620
+...nem sok maradt. A helyiek nem bíznak egymásban, a holmikat erôs zárakkal ellátott ládákba rejtik. Néhány ügyes úszó megpróbál lemerülni és a fenekén kutatni. Azt mondják, hogy rengeteg kincs van ott. Nagyon bátraknak kell lenniük, hogy ilyen mélyre merüljenek. Óriási ellenséges rákok élnek ott. Az a legfélelmetesebb, hogy láttam ôket! Nagy karmok és mérgezô állkapcsok. Néha feljönnek a felszínre és...
+07.07.1620
+A bôrszínünk ellenére a Narwalok nem bíznak bennünk. Talán eretnekek, hollandok és angolok, akik gyûlölik az igaz katolikusokat. Vagy talán csak attól félnek, hogy spanyol katonákat hozhatunk ide, hogy véget vessenek az anarchiájuknak. Mindenesetre nem hívtak meg minket az egyik kis hajójukra, hogy Kubába hajózzunk, hogy kereskedjünk.
+...titokban a Narwhals elôl, leírtam a sziget útvonalát. Talán Ôexcellenciája Sancho de Alkis, Kuba tábornoka, hasznosnak találja, hogy elérje ezt a helyet és véget vessen neki.
+15.07.1620
+Egy helyi fiatalember, aki az írországi Dublinban született, és az egyház hûséges fia, felajánlotta nekünk, hogy meneküljünk el az Elhagyott Hajók Városából. Úgy tûnik, hogy ez a bátor ember rájött, hogy a hajónk egy darabban van. Holnap ellopjuk a Rivados' hajót. Segítsen minket a Szent Szûz!
+21.07.1620
+Sikerült! De ismét a vihar kezében vagyunk. A hajótestünk megsérült, és csak egy napunk van arra, hogy biztonságos helyet találjunk, különben nem lesz irigylésre méltó a sorsunk. Minden ember pánikba esik, kivéve bátor fiatal ír fiúnkat. Nem kétséges, nagy jövô vár rá, ha túléljük ezt a zûrzavart...
+
+#QUEST Legend_CapBucher
+Karibi krónikák - Mészáros kapitány legendája
+#TEXT 1
+
+Nem tudni, honnan jött ez a kegyetlen és vakmerô kalóz. Egyesek ördögnek tartották, mások csodálták bátorságát és szerencséjét, amely lehetôvé tette számára, hogy elkerüljön minden üldözést a 'Neptun'. nevû fregattján. Nevét a szigetvilág minden kocsmájában ismerték. Mészáros nem kímélt senkit. Sem az embereit, sem az ellenségeit, de a legénysége mindig tele volt, mert az új mészárosokat mindig szívesen látta. Csak a kapitány, szállásmestere, Jacob Jackman, a csónakmester, Henry, a hóhér, és a vörös hajú szépség, Jessica voltak legyôzhetetlenek. Jessica minden portyán elkísérte Butchert. Azt mondták róla, hogy Oliver Rose, egy gazdag barbadosi ültetvényes lánya.
+Ez a vörös démonlány valamiféle talizmán volt Butcher számára. De egy nap kapitányunk szerelmes lett. A híres Nicolas Sharp lányába. Ô már halott volt.
+És Butcher meg akart szabadulni Jessicától. Vagy eladta ôt egy hatalmas összegért, vagy egyszerûen csak elengedte... Azóta senki sem látta Jess-t.
+Isla Tesoro minden második kalóza beleszeretett Beatrice Sharpba, és minden kalóz csodálta ôt, és kész volt az életét adni érte. Rengeteg kérôje volt, és a bátyja, Blaze bárkit választhatott. Nem tudni, miért nem kedvelte Butchert, de valami sötét dolog volt köztük. Mészárosnak el kellett lopnia Beatricét, és ezt meg is tette. Azt is mondják, hogy nem lopta el, a lány szerette ôt és megszöktek.
+Mészárosnak sok ellensége volt az életmódja miatt. Volt egy különleges ellenség, aki már régóta üldözte ôt. A férfi régi brit egyenruhát és maszkot viselt. Az igazi nevét már elfelejtették, ezért Maszknak hívták. Egy nap Jessica eljött a Maszkhoz és azt mondta, hogy ismeri Mészáros titkát. Van egy kis sziget északon, ahol Mészáros létrehozta a bázisát és a raktárát. Jessica ajánlata egyszerû volt - segít megszervezni egy rajtaütést, de ô is részt akart venni benne. Úgy tûnt, hogy bosszút akar állni volt szerelmén. A Maszk beleegyezett. A lány segítsége nélkül sosem találta volna meg ezt a szigetet.
+Alighogy kimondta, máris megtette. Nem kellett sokáig várniuk. Mészárosnak nem volt szerencséje a spanyolokkal harcolni. Túl sok embert vesztett, és a hajója súlyosan megsérült. Alig értek el a szigetre, hogy megjavítsák a hajót és pihenjenek egy kicsit. De ez még csak a kezdet volt! A vöröskabátosok mindenhonnan rájuk támadtak, és Jessica vezette ôket, aki a szörnyû lángpengés kardjával volt felfegyverkezve. Megölte Beatricét, de Mészáros keze által elesett.
+Nem volt esélye. Az embereit a parton ölték meg. Bár Jackman és a hóhér nem kerültek elô. A kapitányt Antiguára vitték. A két nôt együtt temették el a szigeten.
+Akár hiszik, akár nem, azt mondják, hogy azon a szigeten egykor halászok kötöttek ki. Másnap reggel holtan találták ôket. A sebeik szörnyûek voltak, mintha egy flamberge okozta volna ôket. Azóta az emberek éjszakánként elkerülik a szigetet. Még a kalózok is.
+Mészárost Antiguán végezték ki. Felakasztották, mint bármelyik közönséges kalózt. Ez volt a története vége. A vége talán másképp alakult volna, ha nem utasítja el a vörös talizmánt.
+A Maszk nem sokáig élt ezután. Másnap holtan találták. A torkát egy cápafog vágta át. Azt mondják, hogy Shark Dodson volt az, aki megölte. Azt is mondják, hogy a barátja húgát szerette. Mindig egy cápafogat hordott a nyakában. De errôl nem mondott semmit. Ez már nagyon régen volt...
+
+#QUEST Mask
+Karibi krónikák - Az álarcos ember
+#TEXT 1
+
+... 1634. június 17-én a fregatt 'Neptun' hagyta el a skóciai Glasgowból Bridgetownba.
+A 'Neptun' nemcsak utasokat, leveleket és fegyvereket szállított a sziget helyôrsége számára, hanem elítélteket is szállított a barbadosi ültetvényekre.
+Ezt a katonai fregattot nem rabszolgaszállításra tervezték, a szerencsétlen rabokat a kis raktérben tartották, friss levegô nélkül, egyetlen lánccal összekötve.
+A bûnözôk fontossága volt az elsôdleges oka annak, hogy egy ilyen erôs hadihajót választottak a kézbesítésükre. Mindannyian részt vettek egy kormánypuccsban. Egyikük igazán figyelemre méltó volt. Lawrence, egy fiatal londoni nemes. Sportos, merész szemû. A kastélyát feldúlták és eladták. Az apja, Providence egykori korzója, gazdag földbirtokos és a brit parlament tagja, nem tudta átvészelni a polgárháború minden ôrültségét, és meghalt. Ez a tény arra késztette Lawrence-t, hogy megváltoztassa politikai nézeteit, és csatlakozzon más nemesi összeesküvôkhöz a Lord Protector ellen.
+Joshua Leadbeater kapitány nem örült a börtönôrségnek, mégis egy csinos és fiatal utas, Jessica Rose jelenléte feldobta a monoton utazást. A barbadosi gazdag ültetvényes lánya teljesen elnyerte a kemény kapitány szívét. Annak ellenére, hogy ez volt az elsô útja Nyugat-Indiába, gyorsan eltelt számára a két hónap.
+Az Antillákhoz közeledve a fregattot kalózok támadták meg, akiknek sikerült elég közel kerülniük ahhoz, hogy a fedélzetre szálljanak. Egy diszharmonikus szalvéta hatalmas lyukat ütött a kalózbárkán, de ez nem volt elég. A kalózok közel álltak a gyôzelemhez, de Leadbeater parancsnoksága és jól képzett matrózai megállították ôket. Leadbeater megnyerhette volna ezt a harcot, ha a Lawrence parancsnoksága alatt álló foglyok nem támadják meg ôt és az embereit hátulról. Ez volt a harc fordulópontja. Leadbeater kapta a grapeshotot az arcába. Azt hitték, hogy meghalt. Az emberei morálja gyorsan romlott, és fél óra múlva vége volt.
+A csata után Lawrence és a kalózkapitány összevesztek Jessica miatt. A kalóz a legénysége szórakoztatására akarta felhasználni a lányt. Lawrence ragaszkodott ahhoz, hogy váltságdíjat kérjen érte. A szavakat gyorsan felváltották a kardok, és a kalóz egy pillanat alatt meghalt. Lawrence a legjobb londoni vívókkal edzett.
+A kalóz legénysége Lawrence-re szavazott, és ô lett az új kapitány. A bárkát hagyták elsüllyedni, és a félholt matrózokkal is így tettek. Leadbeater is köztük volt, az arcán lévô szörnyû seb ellenére túlélte, hogy láthassa, amint Lawrence megöleli a lányt. A lányt, akirôl álmodott.
+Jacob Jackmannek köszönhetôen Lawrence megkapta a becenevét - Mészáros. Hamarosan ez a név minden kocsmában ismertté vált Kubától Barbadosig.
+Leadbeater sors nem hagyta meghalni. Felvette ôt egy hajó. Az arca teljesen elpusztult, mindig maszkot és parókát kellett viselnie. Mészáros megtalálása lett a rögeszméje és az élet egyetlen értelme...
+
+#QUEST RegataLetter
+Meghívás a regattára
+#TEXT 1
+
+Kedves kapitány! Meghívjuk Önt a Nagy Karibi Regattára. Ha érdekli a dolog, azonnal induljon Port Royalba, hozzám, Jamaica fôkormányzójához. Vegye tudomásul, hogy az egyetlen hajótípus, amely részt vehet, a luggerek, ezért fel kell készítenie a hajóját. Ne felejtsétek el, hogy a hajórajotok más hajóitok ne vegyétek magatokkal. A századok nem vehetnek részt a regattán. A Port Royalba való szabad bejutást garantáljuk számotokra.
+A nevezési díj 50.000 pezó, ez lesz a részed a díjjal járó pénzdíjból.
+Az angol gyarmatok fôkormányzója, gróf Edward Doiley.
+
+#QUEST RegataRules
+A regatta szabályai és feltételei
+#TEXT 1
+
+Start és cél - Port Royal, Jamaica.
+Útvonal, összesen öt útvonal:
+
+Port Royal (Jamaica) - Belize (West Spanish Main)
+Belize (West Spanish Main) - Kikötô-au-Prince (Espanola)
+Kikötô-au-Prince (Hispaniola) - St. John's (Antigua)
+St. John's (Antigua) - Bridgetown (Barbados)
+Bridgetown (Barbados) - Port Royal (Jamaica)
+Minden résztvevônek minden városban fel kell keresnie a kikötômestert, hogy bejelentkezzen és regisztrálja elôrehaladását, ellenkezô esetben kizárják. Az irodák a regatta ideje alatt éjjel-nappal mûködnek.
+Nem lehet:
+
+Vitorlásszázaddal vitorlázni.
+Lecserélni az eredeti luggert.
+Az elôírt útvonalat be kell tartani.
+#QUEST Sharlie_Father
+Henri de Monper levele
+#TEXT 1
+
+Üdvözlet, Charles
+Már majdnem elfelejtettem, hogy nézel ki. Tudod, hogy nem értékelem a tétlen életmódodat. Megtiltottam, hogy a birtokunkon mutatkozz, amíg nem látod be a józan eszed, és nem követed a bátyád példáját, és nem választasz egy nemesnek megfelelôbb foglalkozást, mint festéket ragasztani vászonra és gazdag kurtizánok ágynemûjére.
+De a körülmények arra kényszerítenek, hogy a segítségedet kérjem.
+Michel bátyád eltûnt. Már majdnem egy éve, hogy hírt kaptam róla. Legutóbb arról írt nekem, hogy részt kíván venni valamilyen újvilági expedícióban, és talán nem tud majd rendszeresen írni nekem. Egy hajónak három hónapba telik átkelni az Atlanti-óceánon. A gyarmatainkkal jó a kommunikáció, és a posta is eljut.
+Attól tartok, hogy bajba kerülhetett. A honfitársunkhoz, Chevalier de la Brignais-hoz írt leveleim megválaszolatlanok maradtak, pedig Michel a legközelebbi barátjának nevezte a férfit, és tudomásom szerint nem kísérte el Michel-t az expedíciójára.
+Könyörgöm, hagyja ott festményét és asszonyait, hajózzon Martinique-ra, és foglalkozzon ezzel a bizonytalansággal. Megöl engem. Volt tengerésztiszt vagyok, és inkább tudom a legrosszabbat, minthogy a bizonytalansággal éljek.
+Sajnos, nem tudok pénzt adni erre az útra. A birtokunk hanyatlóban van, és a rossz termés tönkretett. Michel megígérte, hogy visszatérése után mindent rendbe hoz, de...
+Kérlek, fiam, felejtsd el a régi sebeket, és tedd meg, amit kérek, talán ez az utolsó dolog, amit kérek tôled. Te vagy az egyetlen, aki megteheti ezt értem.
+Az apja, Henri de Monper
+Gascogne, 1654. április 6.
+
+#QUEST Sharlie_Father_1
+Henri de Monper levele
+#TEXT 1
+
+Kedves Charles, szeretett fiam, hosszú idô telt el azóta, hogy elhajóztál a bátyád keresésére, és még hosszabb idô telt el azóta, hogy utoljára láttalak. Mérhetetlenül boldog vagyok, hogy megfogadtad a tanácsomat, és a de Monper névhez méltó utat választottad. Évekkel ezelôtti utolsó találkozásunkkor még elképzelni sem mertem, hogy a haditengerészet tisztje leszel, és aztán még ennél is tovább jutsz - az Újvilág fôkormányzóságának magaslataira! Büszke vagyok rád, fiam!
+De mi történt Michellel? Évek óta nem tudok a sorsáról! Nemrég a birtokunkat meglátogatta a Chevalier la Brignais, de csak annyit sikerült megtudnom, hogy Michelt valami nagyon súlyos dologgal vádolták. Remélem, hogy mindent elmesél majd, ha visszatért Franciaországba.
+Charles, a családi birtokunk most egy kicsit jobban áll, mégis a segítséged nagy segítség lenne. Mindazonáltal nem fogok itt semmilyen nyomást gyakorolni rád, mint ahogyan szoktam. Csak ne feledd, hogy az embert csak a tettei és a cselekedetei határozzák meg. A Mindenható Isten legyen veled.
+Az apja, Henri de Monper
+
+#QUEST Sharlie_Shevallie
+Chevalier de La Brignais levele
+#TEXT 1
+
+Monsieur de Maure, mélységes sajnálattal kell tájékoztatnom önt, hogy az ön bátyját, Michel de Monper-t súlyos bûncselekményekkel vádolják, és Philippe de Poincy, az Antillák fôkormányzója parancsára letartóztatásban van. Ez a lovag a mi parancsnokunk, és ô képviseli a máltai rendet Nyugat-Indiában. Egy évvel ezelôtt egy titkos expedíciót küldtek a parancsnoksága alatt, az ön szegény bátyja is részt vett benne. Az a hír járja, hogy Martinique-ot eladták a rendnek, és talán az expedíciónak is köze volt hozzá. Nem tudok semmilyen részletet. Sem azt, hogy hol tartják fogva Michel-t, sem az expedíció célját. Valószínûleg ez egy olyan titok, amely a fejébe kerül mindenkinek, aki érdeklôdést mutat iránta.
+Ezt az információt megbízható embereimtôl kaptam. Nem akartam apádat megbántani ilyen rossz hírrel.
+Ezt a levelet szolgám el fogja hozni neked, és amint elolvassa, elégeti. A karrieremet és az életemet kockáztatom, de nem állhatok félre, amikor a barátom bajban van. Egyszer megmentette az életemet Barcelona falainál.
+Talán sikerül megmentenie a bátyját, és helyrehozza a dolgokat, nem hiszek a bûnösségében. Engem a Rendre tett esküm köt, így nem tudok több segítséget nyújtani. Most már minden a te kezedben van.
+Bízom a bölcsességedben és a nemességedben.
+Chevalier de La Brignais
+Málta, 1654. június 15.
+
+#QUEST Sharlie_Lover
+Lulu jegyzete
+#TEXT 1
+
+Édes Charles! Megszakad a szívem, mégis arra kell kérnem, hogy minél hamarabb szökj el Párizsból. Kétségtelen, hogy a férjem tud a kalandjainkról. Engem nem merne bántani a helyzetem miatt, de te nagy veszélyben vagy, szerelmem.
+Bátor felszarvazott férjünknek karácsonykor Flandriába kellene vinnie katonáit. Az unokatestvérem mondta ezt nekem. Úgy látszik, hogy legújabb dekoltázsa végleg az ôrületbe kergette az ifjú Lajost.
+Te pedig jobb, ha eltûnsz egy idôre a gyarmatokon. Remek alkalom, hogy megnyugtassa a lelkiismeretét, és meglátogassa szegény apját.
+Kíméld magad, drágám, és ne feledd, hogy várni fogok rád. Remélem, hogy ezek a csecsebecsék egy kicsit enyhítik az elválásunk szomorúságát.
+Utóirat: Légy óvatos, és ne feledkezz meg a kis Luluról. Azt mondják, hogy a Karib-tengeri lányok nagyon szenvedélyesek a déli nap alatt... Ó, nézz rám, máris irigykedem!
+Párizs, 1654. január 24.
+
+#QUEST Chad_Mary_letter
+Chad Kapper levele Mary Casperhez.
+#TEXT 1
+
+... a tervem beválik, és Alan bosszút áll. Mindannyian jól járunk majd a halálával. Te, én, Narwhals. Küklopszot kell likvidálnod, amikor elvégzi a munkát. Csináljátok, amikor fizetni fogtok neki. Ne kockáztass, csak lôdd le hátulról. A fekete holttestét és a puskát Rivados területén hagyjuk. Senki sem kételkedik abban, hogy niggerek ölték meg Dodsont. A narválok összefognak Shark embereivel, és mi végzünk azokkal a niggerekkel. Te és én fogunk uralkodni a szigeten - mint egy király és egy királynô.
+#TEXT 2
+
+...ez az utolsó figyelmeztetés, te hülye lány. Tényleg azt hiszed, hogy csak úgy magadra hagylak, miután részletesen elmondtam neked a Cápa megölésére vonatkozó terveimet? Nem, édesem, mi most már össze vagyunk kötve, és te megteszed, amit kell - kifizeted a puskát, elveszed a kulcsot, és elôkészíted a mi drága Giuseppénket...
+... neheztelsz rám Alan halála miatt, de értsd meg, szépfiú, a pletykák Shark 'involúciójáról' Alan halálában jól beváltak a célomnak. Narwhals most ellene áll. Ezért tudtam barátkozni közöttük és elôkészíteni ezt a merényletet. Ezzel a Milrow-val szemben nem volt remény, úgyis a ketrecében rohadt volna meg...
+... Azt tanácsolom, fogadd el, hogy hozzám tartozol, és csakis hozzám, bármelyik barátoddal ugyanúgy bánok majd, ahogyan Alannal tettem. Nekem nincs szükségem nagy és tiszta szerelemre tôled, butuska, nekem te kellesz, és meg fogom kapni, amit akarok. Ne hidd, hogy szörnyeteg vagyok, nem, ha Steven meghalt, és én leszek az admirális, esküszöm, megkapod, amit akarsz...
+... gondolj bele. Ha nem jelensz meg 'Tartarus' este tizenegy elôtt, akkor nem látod meg a hajnalt. Hûséges embereim vannak a narválok között, és ôk egy pillanat alatt kivágják a beleidet a kabinodban. Ne is reménykedj abban, hogy azok az okos zárak vagy a csinos arcod megment a szablyától. Értsd meg, Mary: vagy velem maradsz és birtokba veszed ezt a szigetet, vagy rákokat fogsz etetni a szépségeiddel...
+Csád.
+
+#QUEST Letter_Facio
+Giuseppe magyarázatai
+#TEXT 1
+
+... ezt a levelet Dodsonhoz a hajóskapitány és az ôrült Mary nagy nyomására írta. Erôs érveik voltak - a pisztoly az arcomba. Ennek a párosnak még fiatalabb koromban sem tudnék ellenállni. Engedelmeskednem kellett, és részévé kellett válnom piszkos tervüknek...
+... Chadnek és Marynek van egy kis csapat cinkosa, akik holtan akarják látni Sharkot. Amikor Dodson bejut a kabinomba, megtámadják, és esélye sem lesz. Jó Isten, légy irgalmas a lelkének!
+... Nem akarok részt venni ebben az ôrületben. Nem érdekel, ki nyeri ezt a harcot. Kapper egy veszélyes kígyó, és szerencsére nem fog egyetlen tanút sem életben hagyni. És még ha az admirális életben is marad, akkor, gondolom, nem fog kegyelmezni szegény Giuseppének. Ezért hagyom itt ezt a levelet, remélve, hogy az admirális emberei megtalálják. Én kiszállok ebbôl a játékból, elrejtôzöm egy olyan helyen, ahol sem Kapper, sem a szukája nem fog megtalálni. Ott maradok egy darabig, amíg ennek a zûrzavarnak vége nem lesz...
+
+#QUEST Letter_valet
+Levél David Fackmannak, más néven Knive-nak.
+#TEXT 1
+
+Dávid, várd meg a Barbazon embert, küldd el Marcushoz egy törökökrôl szóló mesével.
+Maradj távol ettôl, Tyrex kitalálhatja, hogy a hírnököt azért küldték, hogy becsapja. Hagyd, hogy a barbazon férfi vállalja a kockázatot. Sajnálom, hogy megvárakoztattam, de szükségünk van Jacques' részvételére a vetélytársa kiiktatásában. Ez vérrel fogja összekötni ôt. Tehát hagyja, hogy a társát észrevegyék La Vegában.
+Ellenôrizd újra a csapdát. Tyrex belerohan, semmi kétség, személyesen fog a brigantin fedélzetére szállni. Vizsgáljátok meg a puskaport és a lövészeket a parton. Sima és tiszta kell legyen.
+Ghoul és Prowler az északi öbölben vár rád. Követni fogják a parancsaidat. Jól ismerik a polákot. Prowler megkapta a további utasításaimat arra vonatkozóan, hogy mit kell tennie, ha Tyrex képes lesz túlélni.
+Barbazon a mi oldalunkon lesz, amint Tyrex végzett. A következô célunk az lesz, hogy Fekete Pásztor hûséges legyen hozzánk. Gondolkodjatok el Forest Devil megölésén. Ez az ember ésszerûtlen.
+A fônök az Isla Tesorót a briteknek akarja adni, és érméket akar csinálni. Ezúttal nem, bassza meg. A hóhér halott, de az embereim közel vannak a lány megszerzéséhez. Légy óvatos Charles de Maure-ral. Svensonnak dolgozik, és nagyon bosszantóan viselkedik. Úgy tûnik, nála van a lány. Még nem ismerem a terveit.
+Közel vagyunk, hamarosan a testvérek a miénk lesznek. Ne feledd, testvér, te vagy az egyetlen ember, akiben megbízom. Szóval légy óvatos, és ne kockáztass túl sokat.
+Jákob.
+
+#QUEST Letter_jess
+Jessica Rose jegyzetei
+#TEXT 1
+
+több vers Jessica keze írta, úgy tûnik, hogy nagyon szerette Butchert, még azután is, hogy megcsalta ôt Beatrice-szal.
+
+... I see the 'Neptune' masts! Megsérült, de nekem megfelel. Hamarosan meglátom ezt a kis kurvát, aki mindent elvett tôlem.
+
+... Nyugodt vagyok! Teljesen nyugodt vagyok! Bosszú!
+
+1636. április 12., 78 fok. 33' West
+
+#QUEST Letter_beatriss
+Beatrice Sharp levele a bátyjának, Blaze-nek.
+#TEXT 1
+
+Kedves bátyám, bocsáss meg nekem!
+Szeretem Lawrence Beltropot, és én magam választottam ôt. Az én szerelmemet arra kényszerítették, hogy kalóz és számkivetett legyen, hogy Mészáros kapitány legyen. Többet érdemel, az igazságtalanság megmérgezte ôt, mégsem sikerült elpusztítania a legjobbat az emberbôl. Remélem, hogy egy nap visszatérünk Európába, és a családi élet meggyógyítja ôt.
+Egy dolog gyorsíthatja meg a visszatérésünket. Blaze, most már nagybácsi vagy! Van egy lányunk, Helen. Talán ô helyreállíthatja a családunkat. Hidd el, Lawrence semmit sem tudott az apja árulásáról. Nem kell felelnie az apja tetteiért. Sôt, mindig is csodálta apánkat, és mindig tudta, hogy a Karib-tengeren vannak barátai. Ne tedd tönkre a barátságunkat, hallgass a szívedre. Lawrence a lányom apja, tehát most már a rokonod.
+Utóirat: A kis Helen most nincs velem. Belize-ben hagytuk a dajkájával, Gladys Chandlerrel. Kedves asszonynak tûnik. Ha én... nos, ne tegyük. Amint tudom, elküldöm a levelet.
+Szeretett húgod, Beatrice.
+
+#QUEST Letter_Mishelle
+Michel de Monper levele
+#TEXT 1
+
+Kedves bátyám!
+El tudom képzelni az érzelmeidet, miután elolvastad ezt a levelet. De számomra itt nincs mit tenni. Elég sokáig maradtam itt. Életemet születésem óta egy nagy célnak szenteltem, és természetesen nem mondhatom el neked. Mindennek, amit tettem, egyetlen oka, egyetlen célja volt. A bebörtönzésem azonban nem volt része a tervnek. Mégis képes voltál megoldani ezt a kis bonyodalmat. Köszönöm.
+Már nincs szükségem a nevemre. De Monper. Sem a múltamra, sem a máltai rendre. Azzal, hogy segítettem nektek megvédeni Saint Pierre-t, törlesztettem adósságomat az országnak. Új korszak jön, és nem lesz helye ilyen apróságoknak.
+Ne próbáljon meg keresni engem. Tudom, hogy meg fogjátok tenni, de szeretném, ha rájönnétek: ez értéktelen és veszélyes. Térj vissza Franciaországba, az apádhoz. Ahogy én látom, van elég pénzed, és a tengerészeti tehetséged is jó szolgálatot tesz majd. Ne habozz, a karibiak egyszer s mindenkorra megváltoznak. És ez nem fog neked tetszeni.
+Ég veled!
+
+#QUEST Letter_Vincento
+Vincento atya levele
+#TEXT 1
+
+Üdvözletem, Charles de Maure kapitány.
+Tökéletesen tisztában vagyok veled és a tetteiddel. És nagyra értékelem az ajánlatodat, még ha figyelembe is veszem, hogy Spanyolország ellenségeinek szolgálsz. A római katolikus egyháznak jól jön a segítség minden katolikus kereszténytôl, aki szívesen segít nekünk, nemzetisége és pozíciója ellenére. Különösen akkor, amikor az egész kereszténységet fenyegetés fenyegeti.
+Mindazonáltal, mielôtt a helyemre fogadlak, be kell bizonyítanod tetteid tisztaságát és ôszinteségét. Figyelj most, fiam.
+Három gyönyörû és drága tárgyat kellett volna szállítaniuk Santiago-i gyülekezetünkbe egyenesen Spanyolországból. Egy arany ostensor, egy lazurit gyûrûs kereszt és egy arany füstölô. Megpróbálom a legjobb plébániává tenni az egész Újvilágban. A gályát 'Santa Margarita', , amely ezeket a tárgyakat szállította, nem messze Espanola partjaitól valami francia magánhajó vette fedélzetére. Elfoglalta a gályát, ellopta a szent tárgyainkat, és még egy laikus testvért is megölt, aki megpróbálta megvédeni ôket. Ez nem maradhat büntetlenül. Keressétek meg az átkozott bûnözôt, fogjátok el, és élve adjátok a Szent Inkvizíció kezére. Meg kell találnotok és vissza kell adnotok az ellopott tárgyakat is. Jelentkezz a világítótorony mesterénél, kerüld a spanyol katonákkal való beszélgetést. Ha megteszed, amit kérek, akkor elmondom neked a részleteket az ügyrôl, ami téged érdekel.
+Ôméltósága, inkvizítor, Padre Vincento.
+
+#QUEST Letter_Vincento_next
+Vincento atya második levele
+#TEXT 1
+
+Isten áldjon meg téged, fiam!
+Szép munka, hogy átadtad nekünk ezt az eretneket. A szegény lélek már megbánta bûneit, és készen áll a vezeklésre. Elmondta, hol vannak a tárgyaink. Örömmel közlöm veled ezt az információt. A füstölôt és az ostensort eladtuk a willemstadi bankárnak. A keresztet Basse-Terre plébániájának ajándékozta, hogy lemossa saját bûneit. Sok szerencsét és Isten vigyázzon önökre!
+Ôméltósága, inkvizítor, Padre Vincento.
+
+#QUEST Letter_Vincento_last
+Vincento atya harmadik levele
+#TEXT 1
+
+Üdvözletem, fiam. Remélem, hogy elolvasod ezt, és nem hagyod, hogy haragod eluralkodjon rajtad.
+Alonso de Maldonado nem engedelmeskedett a parancsomnak és az akaratomnak. Csatlakoznia kellett volna hozzátok, de nem harcolni. A büszkeség és a bosszúvágy rossz társak Krisztus harcosának. Ez a caballero mélyen feldühített engem.
+Mégis remélem, hogy meglátod az igazságot, és megérted, hogy én mindig a te oldaladon álltam. Ugyanaz a célunk. Ez nagy és jó - megmenteni a világunkat és megakadályozni, hogy a gonosz gyôzzön ebben a csatában. Most már van egy erôs fegyvered az indián démon ellen - az ereklyéje. Te, és csakis te vezetheted Krisztus seregét.
+Kérem, hogy találkozzunk, Charles de Maure. Hogy garantáljam jó szándékomat, felajánlom, hogy semleges területen, Curacaón találkozunk. Van egy temetô nem messze Willemstad-tól. Keressen meg ott. Két hétig fogok várni rád. Remélem, hogy helyesen fog dönteni. Biztosíthatom, hogy nem fogom bántani, csak segíteni akarok. Ne feledd, fiam, minden jó keresztény sorsa a te kezedben van.
+Ôméltósága, inkvizítor, Padre Vincento.
+
+#QUEST Letter_Dichoso
+Miguel Dichoso levele Arturo Lopezhez
+#TEXT 1
+
+Arturo, készülj fel a közelgô találkozóra. Charles komoly ember. Helyezd el okosan az embereidet, hogy megakadályozd a szökését. Vidd a legjobb katonáidat, és ne feledkezz meg a mesterlövészekrôl sem. Ne hagyj neki egyetlen esélyt sem. Kerítsétek körbe a temetôt, hátha valahogyan mégis ki tud majd jutni a kriptából. Az egyetlen dolog, amit kérek, hogy hagyjátok ôt katonaként becsülettel meghalni. Legyen halála gyors és fájdalommentes. Ha végeztetek, keressetek meg. Megadom a jutalmadat és a további utasításokat.
+Miguel Dichoso.
+
+#QUEST ArchyBook
+Archibald Calhoun naplója - Válogatott töredékek
+#TEXT 1
+
+... Tudtam, hogy a hajón maradni halálos, ezért vittem egy hordót vízzel és néhány holmimat azzal az iránytûvel együtt, amelyet az indiántól kaptam. Talán ez a lelet megment engem...
+... Átkozottul boldog voltam, amikor megláttam a partot. De csak egy kis lakatlan sziget volt. Soha nem hallottam róla. A mágikus iránytû megint átvert engem...
+... Nem találtam itt embereket. Csak belegondolva, talán mégiscsak szerencsém van, hogy felfalnak a vademberek, nem a legjobb megoldás...
+... hála Istennek, van itt édesvíz, teknôsök és rákok. Rákok mászkálnak a parton. Olyan sok van belôlük, hogy úgy döntöttem, ezt a helyet Rák-szigetnek nevezem el... Én vagyok a felfedezô, hogy úgy mondjam...
+... A sors ismét kegyes volt szegény Calhounhoz - talált egy szerszámosládát a parton. Most már van egy rendes fejszém és egy fûrészem, így elkezdhetek házat építeni, van rá esély, hogy itt maradok életem végéig...
+... hónapok teltek el, és egyetlen vitorla sem volt. Tábortüzet gyújtottam a domb tetején, hogy amint meglátok egy hajót, meggyújtsam. De mi van, ha spanyol hajó lesz az? Ebben az esetben az inkvizíció kezében találom magam...
+... a ház építése folyamatban van... Sikerült egy tisztességes kunyhót építenem. Mindenesetre, meg fog védeni az esôtôl és a naptól...
+... Minden reggel horgászom. Néha nagy halakat fogok egy kézmûves szigonnyal. Ma nagyszerû harcot vívtam egy cápával. Majdnem megette volna a jó Archie-t, de a kezem csodákra képes, így a jó Archie inkább egy cápát eszik meg. A hús jó volt, de minden érmémet odaadnám egy kis disznóhúsért és egy sörért...
+...a házam készen áll. Egy cápakoponyát szegeztem a bejárat alá. A vadászati trófeám. Eh, minden arany a világon egy hordó whiskyért!...
+... Másfél év. Megszoktam a remeteséget. De reménykedem, hogy visszatérhetek a külvilágba...
+...vitorlák! Hála Istennek - vitorlák! És a hajó britnek tûnik. Nem spanyolok! A máglyám készen áll, és megpróbálok annyi füstöt csinálni, amennyit csak tudok...
+...észrevettek! A hajó közeledik. Látom az angol zászlót. Megmentettek!
+... ez lehetetlen... ez Willy Paterson! Régi barátom és honfitársam, a skót Willy! Az öreg Calhoun nem bírja visszatartani a könnyeit, két év után a saját nyelvét hallja!...
+... Willy parancsnoksága alatt fogok szolgálni. Ha ô nem lett volna - örökre ott maradtam volna. Elegem volt a kalandokból, indián amulettekbôl, kétes kincsekbôl és Jézus Rendjébôl. Új életet kezdek. Az iránytûmet a kunyhómban hagytam. Maradjon ott, értéktelen és veszélyes tárgy...
+... Elhagyom a Rák-szigetet. Zöld dombja majdnem eltûnt a horizonton. Örökre emlékezni fogok a helyére - 16 fok észak, 71 fok nyugat. Kétlem, hogy a lábam még egyszer rálépne...
+
+#QUEST SQCapBook
+ASanta Quiteria',naplója ' utolsó oldalai
+#TEXT 1
+
+... végre elértük San-Jose-t. Itt fogunk élelmet és vizet szerezni. Úgy tûnik, Miguel Dichoso nem érti, hogy Európába hajózunk. Furcsa a viselkedése: készen és feszülten vár valamire. A báró figyelmeztetett, hogy Dichoso rendkívül veszélyes - óvatosnak kell lennem...
+... Meglep, hogy Dichoso volt az egyetlen hódító, aki túlélte a Tayasalba induló expedíciót. Egyesek szerint a vezetékneve önmagát bizonyítja - 'lucky one'. én nem hiszem. A szemei túlságosan kemények. Ó, nem, persze, hogy nem, sem betegség, sem indiánméreg nem végzett a túlélôkkel, hanem Dichoso pengéje és pisztolya...
+... Tobagóba hajózik. Ott búcsúzunk el Migueltôl. És újra szabadon lélegezhetek majd. Kétlem, hogy könnyû lesz megszabadulni tôle. Ez az ember mindig megkapja, amit akar. Hogy tud ilyet tenni? Eladja 'Santa Quiteria' twin 'San Martin' annak az eretnek Dodsonnak minden gyanú nélkül? Megöli Blaze Sharpot, keresztbe tesz Dodsonnak, és egymás ellen uszítja a testvéreket? Hogyan volt képes megtalálni Tayasalt és kincsekkel megrakodva elhagyni, miközben más, jól képzett és ideálisan felkészült expedíciósokat az Itza likvidált?...
+...nem messze Tobagótól. Dichoso lehangoltan, feszülten, de nyugodtan néz. Az arcán lévô sebhely vörös lett. Miguel vár valamire, az eget és a horizontot figyeli. Mindegy, hamarosan megszabadulunk tôle.
+... ez természetfeletti... A legerôsebb vihar ránk rohant, és most valahová keletre viszi a hajónkat. A fregatt irányíthatatlan. Dichoso megtántorodik. Vigyor ül ki az arcára, és úgy tûnik, a vihar egyáltalán nem ijeszti meg...
+... Trinidad mögöttünk van. A hullámok és a szél északnyugatra visz minket. Nem tehetünk semmit...
+... jó hír, hogy az óriási hullám elmosta Dichosót, miközben Martinique mellett haladtunk el. Most már megszabadultunk ettôl a szörnyû embertôl. Talán ez egy jó jel...
+...a fenébe is, a Karib-szigeteknek ezen a részén soha nem voltak szigetek. A partra vetettek bennünket. Nem mindenki élte túl, bár sokan közülünk még mindig életben vannak. A hajónk két darabra tört, de még mindig itt van, a homokban rekedt. A vihar nem ér véget...
+...felfedeztünk egy partot és egy öblöt. A sziget ismeretlen és lakatlan. De nem ez a legrosszabb része. Ez a hely hátborzongató, és itt mindig vihar van. Úgy tûnik, mintha a nap soha nem világított volna erre a helyre. Elátkozott sziget...
+... Itza kincseit kimosta a víz a raktérbôl. Most már mindenhol ott vannak, néhányat a vízbôl szedtünk ki. Tiltó sziklák veszik körül az öblöt. Az egyetlen út egy elárasztott barlangba vezet. Van egy lyuk, ami egy víz alatti barlang belsejébe vezet, bár senki sem volt elég bátor, hogy felfedezze...
+... két tengerész nem tért vissza az öbölbe. A holttestüket a barlangban találtuk meg. Mindkettôjüket karddal ölték meg. Ki tehette ezt? Ott temettük el ôket, és elkezdtünk éjszakai ôrséget szervezni.
+... még mindig történnek rejtélyes gyilkosságok. Három ember három napja. Valami láthatatlan, kardos mészáros áldozatai. Az emberek félnek. Nincs menekvés errôl a helyrôl. Istenem, segíts rajtunk!
+...ez a hely el van átkozva! Ez volt a legszörnyûbb dolog, amit életemben láttam. Mindenre készen álltam, de erre nem! Azok, akiket a mészáros megölt, visszatértek és a túlélôkre támadnak. Most testeket égetünk el...
+...az imák nem találtak meghallgatásra. Pánikba estem. Átkozott Miguel Dichoso - mindez miatta van! Biztos vagyok benne, hogy ez nem véletlen...
+... egy rémálmokkal teli éjszaka. Végre láttuk az éjszakai gyilkost. Egy hatalmas csontváz, egy nagy karddal. Bárkit megöl egy vagy két találattal, a mi pengéink és golyóink nem okoznak kárt. Teljesen legyôzhetetlen! Miután értéktelenül próbáltunk megküzdeni vele, én, a szállásmesterünk és három matrózunk úgy döntöttünk, hogy visszavonulunk vissza a tengerre, és bebújunk 'Santa Quiteria' belsôbe. A parton már órák óta hallottuk a szörnyû kiáltásokat, hogy embereket gyilkolnak...
+...élôhalottak uralják a partot. Járkálnak, szörnyû hangokat adnak ki, és a rothadó hús szörnyû szagát árasztják. Bezárkóztunk a hajó rakterébe. Most annak az óriási szörnynek a lépéseit és a sétáló halottak dübörgését halljuk...
+...a szállásmester teljesen megôrült. Tayasal dolgokat használt, hogy valamiféle pogány oltárt készítsen. Hisztériásan hisztizik, indiai isteneket, démonokat hív... Nem értem. A matrózok a sarokban ülnek, és hallgatják az ôrült üvöltését...
+...és a kardcsapások tönkreteszik az ajtót. A Mészáros idejön. Semmilyen barikád nem állíthatja meg. Megértem, hogy hamarosan meghalunk, ez a dolog megállíthatatlan. Ezt írom, miközben hallom, ahogy az ôrült a pogány démonait hívja és a matrózok kiáltozásait, rájönnek, hogy végük van. Készen állok a halálra. Ha ezt olvasod - menj el errôl a szörnyû helyrôl! Tayasal kincsei... Dichoso... Dichoso... ÁTOK RÁD!...
+
+#QUEST RingCapBook
+Feljegyzések a Santa Lucia 'Journalból'
+#TEXT 1
+
+... Most Caracastól a part mentén hajózunk egy indián falu felé, személyesen nekem készítették elô a koprát. Megveszem az adókat és az árfelárakat elkerülve...
+...mert aznap valami ünnepi alkalom volt. Meghívták a szomszédos falu egyik magas rangú fônökét és a rokonait is. Sok kashirie-t ittak. És akkor megláttam ôt - ô maga volt a szépség. Rájöttem, hogy ô az, aki a feleségem lesz...
+... a neve Vavaya, és kiderült, hogy ô a fônök legfiatalabb lánya. Beszélgettem vele, és átadtam neki néhány ajándékot. És úgy tûnik, hogy az udvarlásomat jól fogadta...
+... Itt maradok még egy kicsit. Koprát rakodnak a hajómra, és továbbra is ismerem az ifjú Vavayát. Beleszerettem. Hála Istennek, ô is így érez! Én vagyok a legboldogabb ember! A helyi hagyományok szerint váltságdíjra készülök érte...
+...de az apja visszautasította! Nem fogadta el nagylelkû ajándékaimat, és szó szerint kidobott a kunyhójából. Könnyeket láttam kedvesem arcán - ô is velem akar lenni! Akkor hát eldôlt a dolog! Nem hagyom, hogy egy vadember, még az apja sem, tönkretegye a boldogságunkat...
+... Vavaya ragaszkodik hozzá, hogy feláldozzon néhány ékszert a törzs isteneinek, hogy megkapja a támogatásukat. Megegyeztem, hogy amikor megérkezünk Új-Spanyolországba, végül elfelejti a pogány hagyományait, és igazi keresztény lesz. És most mennünk kell...
+...a fehér ember soha nem lenne képes megtalálni ezt a szent helyet. Ezerszer is meghalhatnék Vavaya nélkül - mutatott meg nekem minden csapdát, csukát és mérgezett tût...
+... ez hihetetlen! Soha nem láttam még ennyi aranyat! Tojás nagyságú rögök voltak! Ezeknek a kincseknek a fele is elég lenne ahhoz, hogy egész életedben gazdag légy. Vavaya tiltakozott, de sikerült meggyôznöm... Még az áldozatomat is megdupláztam, hogy megnyugtassam a szerelmemet...
+... alig két héttel késôbb én, az elsôtisztem és egy szállásmester fedett kocsin szállítottuk az indiai aranyat a hajónkra. Ezt eddig senki más nem tudta. Nem bízom a tengerészekben. Különben is, a legénység dühös volt, mert két hétig vad partok közelében tartózkodtam, ezt azért kellett tennem, hogy elszökjek Vavaya apja elôl...
+...éjjel elvittük az aranyat, és elrejtettük az egyik kopra ládába. A tetejére is tettünk egy kis koprát, hogy letakarjuk. Végre, újra hajózunk. Még két hét és elérjük Új-Spanyolországot. Vavaya és én a templomban fogunk összeházasodni. Egymásnak teremtettek minket, és együtt maradunk, amíg meg nem halunk...
+...ez a harmadik nap a holtponton. A hajó alig mozog. Látom a tudatlan matrózok mogorva pillantásait, nézik az én gyönyörû Vavayámat, és rossz jelnek tartják...
+... az egyik matróz elejtett egy arzénes flaskát, miközben a raktérben a patkányokkal foglalkozott. Még mindig nem értem. Ötven gallon víz elromlott. A holt nyugalom még mindig megöl minket. A kedvesem az istene bocsánatáért imádkozik, komolyan gondolja, hogy ez az egész zûrzavar a mi büntetésünk az ellopott aranyért...
+... már tíz ember haldoklik a hirtelen jött lázjárványban. A matrózok morognak. A csónakmester alig tud rendet tartani. Az elsô halottat a vízbe dobták. A friss víz már majdnem elfogyott. Istenem, küldj nekünk szelet!
+... végre friss szél. Az emberek egyharmada beteg. Néhány matróz ellopott egy ládát drága rummal tegnap este. A hajóskapitány ostorral büntette ôket. A legénység nagyon haragszik rám, tisztek, és szegény Vavayámra. Nem engedem ki, félek az életéért. Már alig várom, hogy láthassam Kubát, vehetnék vizet, és felvehetnék egy új legénységet...
+...az átkozott vademberek hirtelen megjelentek a semmibôl. A szkúnárjuk húszfontos ágyúival nem jelentett veszélyt a hajómra, de az embereim a láz után gyengék voltak, alig bírták a vásznakat. A kalózok ágyúgolyói néhány lyukat ütöttek a hajónkon, bár komolyabb kár nem keletkezett. Megtettük, amit tudtunk, és hála Istennek, a kalózoknak vissza kellett vonulniuk...
+...a legénységem Vavaya halálát követeli. Azt hiszik, hogy ez a szegény indiai nô egy boszorkány, aki felelôs minden szerencsétlenségünkért. Hûséges tisztjeim és én az utolsó golyóig megvédjük ôt, ha kell. A levegôben lázadás szaga terjeng, és nem látom Kuba partjait - kétségtelen, hogy a harc után eltévedtünk...
+... a fedélzetet vér borítja. Az elsôtiszt és a csónakmester halott, a szállásmester megsebesült, és egyetlen muskétával sem bírja sokáig a dühöngô matrózok ellen. Bezártam a kabinomat, és eddig jól vagyok. A szerelmem hátul áll, és töltéseket ad át nekem. Édes arca ijedt. De nem a lázadóktól, nem. A szemembe néz, és azt suttogja: 'Istenek' bosszú!'...
+... a szívem megszakad! Egy pisztolygolyó fúródott az ajtón, és eltalálta drága Vavayám gyönyörû mellkasát. Próbálom elállítani a vérzését, de nem vagyok orvos... Majdnem kifogytam a lôszerbôl, a muskétám az egyetlen, ami megakadályozza ôket a közvetlen támadásban...
+... szegény Vavaya meghalt. Nyugodtan halt meg, mosollyal az arcán. Nem volt félelem a szemében, csak szeretet és bánat. Imádkoztam érte, és most már készen állok, hogy csatlakozzam hozzá - nincs már okom nélküle élni... Egy másik golyó megsebesítette a lábamat. Alig tudok mozogni...
+...a puskapor már majdnem elfogyott. Már csak négy töltet van a kétcsövû pisztolyomban. Az íróasztalom mögött ülök, és készülök arra, hogy fehér emberként és kapitányként becsülettel meghaljak. Közeledik a vihar. Nagyon erôs lesz...
+... betörik az ajtót. Hamarosan vége lesz, és egy jobb világban fogok találkozni az én Vavayámmal. Rá gondolok. Talán igaza volt. Mindez átoknak tûnik. 'Istenek' bosszú'! doboz az arannyal... volt ez egyáltalán....
+ 
+#QUEST Recipe
+Receptek
+#TEXT Gold_dublon
+Az aranydublonokat általában a ládában tartják, egyenként 150 darabot.
+
+#TEXT clock2
+Feltöltött idôzítô: feltöltetlen idôzítô + homokóra.
+
+#TEXT bussol
+Boussole: iránytû + asztrolábium.
+
+#TEXT cartridge
+Papírpatron
+
+A svéd muskétások által készített figyelemre méltó újítás, amely megduplázza a töltés sebességét!
+
+Egy töltényre és egy adag puskaporra van szükséged a kézmûvességhez. Fogj egy darab papírt, készíts egy papírcsövet, és tegyél bele egy kis lôport és a töltényt. Készítsd el a megfelelô méretû töltényt. A töltés elôtt ellenôrizd a patront.
+
+Hozzávalók: A töltényt a lövedékkel együtt kell elkészíteni: Szemcsés lôpor, ólomgolyó.
+
+#TEXT powder_pellet
+Petard
+
+Kábító lövedék, amely elkábítja az ellenséget anélkül, hogy kárt tenne a tulajdonában.
+
+Vegyél egy vékony rézlemezt, formázd üvegpohár alakúra, és adj hozzá tíz adag lôport. Zárd le a rezet, és helyezd a csôbe. Készíts egy lyukat a gyújtózsinór számára.
+
+Hozzávalók: A füstölô és a füstölt fátyol: Rézedény, szemcsés lôpor, gyertya, zsineg.
+Eszközök: Fémmegmunkáló szerszám
+
+#TEXT grenade
+Grenade
+
+A britek által tökéletesített spanyol találmány, amely képes nagyobb ellenséges erôket távolról eltalálni.
+
+Készítsünk elô egy rézlemezt és tizenkét golyót. Hajlítsátok a lemezt fej alakúra, hogy illeszkedjen az aknavetô csövéhez. Tegyél bele néhány golyót, majd tíz adag puskaport, és zárd le a rézhüvelyt. Csinálj egy lyukat az alsó oldalára, és dugaszold be egy fa orsóval. Harc közben vedd ki az orsót, helyezd bele a gyújtózsinórt vagy kanócot, borítsd be salétrommal, és rögzítsd viasszal vagy az orsóval.
+
+Hozzávalók: A füstölô és a füstölt fátyol: Rézedény, szemcsés lôpor, gyertya, zsineg.
+Eszközök: Fémmegmunkáló szerszám
+
+#TEXT harpoon
+Arrow
+
+Egy vékony fémrúd, amely képes átlyukasztani a páncélt és a benne lévô személyt.
+
+Fogj egy vékony fémrudat, akár egy egyszerû szigonyt, és vágj le egy másfél ujjnyi hosszú darabot.
+
+Hozzávalók: Szigony
+Fémmegmunkáló szerszám, Érintôkô
+
+#TEXT shotgun_bullet
+Revolver golyók
+
+Szokatlan, henger alakú, kúpos végû ólomgolyók. Nagyon pontosak, jól kiegyensúlyozottak és alakjuk miatt halálosak.
+
+Olvaszd meg a tûzön az ólmot, és készíts belôle golyót. Tegye egy rongyba és hûtse ki. Kerülje a vízzel való érintkezést!
+
+Összetevôk: - Az ólom és az ólom és az ólom és az ólom és az ólom és az ólom és az ólom és az ólom és az ólom és az ólom között: Ólomgolyók
+Eszközök: Ólomgolyó, ólom, golyó, golyó, golyó, golyó, golyó, golyó: Golyóforma, olvasztótégely, ikonlámpa
+
+#TEXT shotgun_cartridge
+Revolverpatron
+
+A lôpor és a lövedékek kompakt tárolására szolgál a kilövéshez.
+
+Vegye a rendelkezésre álló legvékonyabb papírt, borítsa be lôporral, alkohollal és viasszal. Szárítsa meg. Fedje be a töltény alját lisztpasztával, és készítsen csonka henger alakú hüvelyt. Tegyünk bele fekete lôport. Zárjuk le a szabad végét, és hajtsuk össze. Fedje be a töltényt pergamen vagy bôrrel. Töltés közben lyukassza ki a papír alját.
+
+Revolver golyó, Revolver puskapor.
+Eszközök: A pisztoly és a pisztolyszerszámok: Ruhakészlet, gyertya
+
+#TEXT GunCap_colt
+Capsules
+
+Eldobható, egyenként a pisztolybimbókra helyezve. A revolver zárjában lévô töltet meggyújtására szolgál. Nagyon hatékony bármilyen idôjárás és fegyverállás esetén.
+
+Szükséged van egy tiszta rézlemezre, olvasztótégelyre, vésôre és tiszafára a kézmûvességhez. Készíts néhány kerek darabot a rézlemezbôl. Olvaszd meg a viaszt, adj hozzá ezüst fulminátot, és tedd a rézhenger belsejébe.
+
+Hozzávalók: Az ólomból készült ólom és az ólomból készült ólom: Réz rúd, gyertyák, ezüst fulminát
+Olvasztótégely, ikonlámpa, fémmegmunkáló szerszám.
+
+#TEXT OxyHydSilver
+Ezüst fulminát
+
+A töltényben lévô puskapor meggyújtásához használt robbanóanyag.
+
+Fogj egy tiszta, üres lombikot, adj hozzá némi ezüstöt, és oldd fel salétromsavval. Fedd le a palacknyílást, hogy a gáz bent maradjon. Adj hozzá egy kis alkoholt, melegítsd fel a lombikot, majd adj hozzá még több alkoholt. A lombik alján fényes kristályok fognak képzôdni. Hûtsd le a lombikot vízben. Vegye ki a kristályokat, öblítse le vízzel, és szárítsa meg. Óvatosan tárolja, és a robbanások elkerülése érdekében ne használjon egyszerre túl sok hozzávalót.
+
+Összetevôk: 1: Ezüstrúd, salétromsav, alkohol
+Eszközök: Alkímiai eszközök, ikonlámpa
+
+#TEXT GunEchin
+Szögek töltése
+
+Vágott vasrudakat használnak az ellenség ellen, csak közelrôl hatásos, kábító hatást okoz. Könnyû és célt tévesztve repül, így a pontos célzás szükségtelen. Azonban károsíthatja a csövet, ezért kerüld a használatát kiváló vagy hosszú csövekkel.
+
+Egy patron elkészítéséhez vágj szögeket vagy más fémhulladékot, és rögzítsd ôket viasszal. Csomagolja a puskaporral együtt egy papírpatronnal.
+
+Hozzávalók: A lôszerhez a lôszerrel együtt a lôszerrel együtt a lôszerrel együtt a lôszerrel együtt a lôszerrel együtt: Szögek, gyertya, szemcsés lôpor.
+Eszközök: A puskapor és a lôpor: Fémmegmunkáló szerszám, Olvasztótégely, ikonlámpa.
+
+#TEXT potion2
+Elixir
+
+Egy inka találmány, amely enyhíti a fájdalmat, megszünteti a méreg hatását, és gyorsan gyógyítja a sebeket, az úgynevezett "Kôharcos.".
+
+Aprítsd fel a gyömbérgyökeret, a sabadilla gyógynövényt, az ördögfû hamuját, add hozzá egy részeges nyálát, és hagyd állni. Ezután melegítsd fel, és adj hozzá gyógyító fôzetet.
+
+Hozzávalók: - A bájitaltan, a gyógynövényt, a gyógyítót és a gyógynövényt: Gyógyital, gyömbérgyökér, ördögfû x3, Sabadilla, üres fiola, régi bögre, gyertya, borostyán.
+Eszközök: Mozsár és pörkölô, ezüstkanál, alkímiás láda.
+Készített mennyiség: 3 darab
+
+#TEXT potion3
+Antidotum
+
+Ritka összetevôkbôl készült fôzet, számos helyi méreg ellenszere. Undorító ízû és szagú, de hatásos.
+
+Egy félig teli üveg vízhez adj verbenalevelet, néhány guarana magot, szegfûborsot, gyömbérgyökeret és ipecacot. Zárja le az üveget, és melegítse fel a tûzön. Amikor a folyadék zavarossá válik, adjunk hozzá egy nagy gyöngyöt. Hûtés után szûrje le a folyadékot.
+
+Összetevôk: 1: Verbena, Guarana, Ipecac, Fûszerpaprika, Üres üveg, Nagy gyöngyszem.
+Eszközök: Rézedény, fakanál, ikonlámpa, mozsár és pisztoly, alkímiás láda.
+Készített mennyiség: 3 darab
+
+#TEXT potion4
+Keverék
+
+Ez a legjobb patikus receptje alapján készült fôzet nemcsak a mérgezést gyógyítja, hanem az egészséget is helyreállítja.
+
+Daráld le a gyógynövényeket, és az így kapott levest keverd össze egy üveg elixírrel.
+
+Elixír, Ördögfû, Sabadilla, Verbena, Ipecac, Guarana, Jamaikai bors, Ellenszer.
+Eszközök: Mozsár és pörkölô, alkimista láda.
+Készített mennyiség: 3 darab
+
+#TEXT berserker_potion
+Ometochtli tinktúra
+
+Az aztékok ellenezték a részegséget. Törvényeik szerint minden részeg embert ki kellett végezni. Ezt a folyadékot ironikusan az erôs italok azték istenérôl nevezték el.
+
+Adjunk ördögfûvet, szegfûborsot és egy pint forró rumot egy üres üvegcsébe, zárjuk le egy viaszdugóval smaragddal, és hûtsük le.
+
+Összetevôk: Oochotchmochet, Oochotchmochet, Oochotchmochet, Oochotchmochet: Rum, Fûszer, ördögfû x2, gyertya, smaragd, üres üvegcsék.
+Eszközök: A szerszámok: 1: Mozsár és pörkölô, alkímiás láda
+
+#TEXT mangarosapower
+Szökôár
+
+A ritka gyomból, Manga Rosából készült egyedi bájital Amelia receptje alapján növeli az erôdet, kitartásodat és harci képességeidet. A hatás 2 napig tart.
+
+Adj hozzá Rózsaszín Mangó lombot, Ipecacot és gyömbérgyökeret egy rézedénybe. Adj hozzá egy pint rumot, és hagyd állni néhány órán át. Ezután adj hozzá három kis gyöngyöt és borostyánt, majd alacsony tûzön melegítsd fel. Hûtsük le a folyadékot, szûrjük le, és zárjuk le az üveget.
+
+Hozzávalók: - Az üvegbôl készült bor: Rózsaszín Mangó, Ipecac, Gyömbérgyökér, Rum, Kis gyöngy x3, Borostyán, Üres üvegcsében.
+Eszközök: A szerszámok: 1: Alkimista láda, Ikon-lámpa, Rézedény
+
+#TEXT mangarosafast
+Squall
+
+A ritka gyomnövénybôl, a mangarózából Amelia receptje alapján készült egyedi bájital növeli a reakciókészségedet, az érzékek élességét és a harci képességeidet. A hatás 2 napig tart.
+
+Adja hozzá a mangarózsa lombját, a verbénát és a guaranát egy ezüstös üvegbe. Adjunk hozzá egy kis bort, két nagy gyöngyöt és borostyánt, majd hagyjuk állni néhány órát. Szûrje le a folyadékot, és zárja le az üveget.
+
+Mangarosa, Verbena, Guarana x2, Jó bor, Nagy gyöngy x2, Borostyán, Üres üveg.
+Eszközök: Alkímiás láda, Ezüstkanál, Ezüstedény, Mozsár és pörkölô.
+
+#TEXT mangarosatotal
+Tengeri ölelés
+
+A ritka gyomnövénybôl, Mangarosából Amelia receptje alapján készült egyedi fôzet növeli az erôt, az állóképességet, a reakciókészséget, az érzékek élességét, a karizmát, a beszédkészséget, a szerencsét és a harci képességeket. A hatás 2 napig tart.
+
+Adjunk mangarosa lombot egy bögrébe. Adj hozzá egy gyógyító fôzetet, két nagy és három kis gyöngyöt, egy darab kék borostyánt, és melegítsd alacsony lángon. Hûtsd le a folyadékot, tedd egy tiszta üvegcsébe, és zárd le.
+
+Mangarosa, Nagy gyöngy x2, Kis gyöngy x3, Kék borostyán, Üres üvegcsében.
+Eszközök: A szerszámok: 1: Alkímiás láda, fakanál, bögre, mozsár és mozsártörô, ikonlámpa.
+
+#TEXT totem_01
+'Dübörgő hang' Talizmán
+
+A harci tapasztalat és a hit csodákra képes.
+
+Fogj egy fém bögrét, tegyél bele egy kis ezüstöt. Melegítsd fel, majd hûtsd le, és adj hozzá erôs rumot. Tegyél egy ametisztet a közepébe. Tegyél kék borostyánt az arcára, és takard be a bögrét a saját árnyékoddal. Ezután öntsd ki a rumot, és köpd ki a követ. A rituálé legjobb idôpontja éjfél. Ez egy nagyon erôs talizmán.
+
+Hozzávalók: Talisztikus talizmán: Palack rum, Régi bögre, Ezüströg, Ametiszt.
+Eszközök: Ikon-lámpa
+
+#TEXT totem_02
+'Bokaharapó' Talizmán
+
+A legénységed engedelmeskedni és tisztelni fogja a kapitányukat. Néha a jó megtorlás a legjobb módja annak, hogy megmutasd a lázadóknak a lehetséges jövôjüket, és rettegésre késztesd ôket.
+
+Csavard ki a három korbácsot, és válaszd ki a legerôsebb szárat. Mártsd patkányméreg, szegfûbors és dohány kék borostyán folyadékába. A rubint a másik oldalról helyezd a szárba.
+
+Hozzávalók: Ostor x3, Aranyrög x3, Rubin, Kék borostyán, Zsineg, Fûszer, Dohány, Arzén.
+Eszközök: A szerszámok: Szertár, mozsár és mozsárdöfô
+
+#TEXT totem_03
+Cupid's Balm' Talizmán
+
+Erôs érzelmi hatással bíró afrodiziákum. Segít leküzdeni a depressziót, antibakteriális, gombaölô, vírusellenes és gyulladáscsökkentô tulajdonságokkal rendelkezik. Elengedhetetlen a gyakori szexhez különbözô partnerekkel.
+
+Tegyük össze Herkules-bogárport, denevérszárnyport, Guarana magokat és apró rézreszeléket. Melegítsük fel, majd hûtsük le. Jácint és kék borostyán felhasználásával alakítsuk porrá. Adjunk a porhoz gyömbérgyökeret. Tárolja hûvös, sötét helyen.
+
+Összetevôk: - Keverje össze a gyógynövényt, és tegye bele a szódabikarbónát: Hercules bogár x5, denevérszárny, Guarana x3, gyömbérgyökér, jácint, kék borostyán, rézsútos rúd.
+Eszközök: Alkímiás láda, ikonlámpa, mozsár és pöröly.
+
+#TEXT totem_04
+A bûntárs talizmánja
+
+Türkizzel és nyersvasból készült gyûrûkkel berakott ezüstkarika, amely viselôje hûségét biztosítja annak, aki a rajta lévô átkot készítette. Ôsi, de nagyon hatékony talizmán.
+
+Készítsen egy ezüstös, gyönyörû szalagot. Vegyünk használt bilincseket, és vágjunk néhány gyûrût a láncba. Tegyél ép gyûrûket a szalag díszébe. Ezután tegye a bilincsek maradványait egy darab ruhába, és készítsen csomót a kék borostyánnal. Óvatosan és gyorsan cselekedjen. Melegítsd fel a türkiz darabot, és szorítsd ökölbe. Rögzítse a türkizdarabot a szalag közepén. Gyôzd meg az illetôt, hogy saját kezûleg tegye fel a szalagot. Suttogja "So legyen" , mielôtt megajándékozná a szalagot. A cigányok és a vörös hajúak jobban meg tudják készíteni ezt a talizmánt.
+
+Hozzávalók: A máglya a következô összetevôkbôl áll: - A máglya a következô összetevôkbôl áll: Ezüströg x7, Bilincsek, Guarana x3, Gyömbérgyökér, Jácint, Kék borostyán, Rézrúd, Gyertya.
+Eszközök: Fémmegmunkáló szerszám
+
+#TEXT totem_05
+'Vas köldök' Talizmán
+
+Ez az öv segít kényelmesebb viselni a fegyveredet, és megvéd a kábító hatásoktól a harc során.
+
+Fogd a neked tetszô öveket, és rakd össze ôket. Adj hozzá néhány gyûrût és tartót. A csatot készítsd el egy nagy darab csontból - a teknôspáncél jól illik hozzá. Rögzítsd hozzá a csatot, egy kis kék borostyánnal és jádefénnyel. Suttogj a tükör elôtt állva: "A kô kemény, a fém kemény, - a szellem is az." A talizmán addig hat, amíg talpon állsz. Kerüld el a hatalmas ütéseket.
+
+Hozzávalók: Bôr öv x3, Teknôspáncél fésû, Vasrúd, Jade, Kék borostyán
+Eszközök: A táltosok és a táltosok: Fémmegmunkáló szerszám, Tükör
+
+#TEXT totem_06
+'Gonter' Talizmán
+
+Egy univerzális varázslat a kedvenc cipôdre. Lehet, hogy csak önhipnózis, de mûködik.
+
+Fogj egy régi cipôt, vedd ki a talpbetétet. Tegyél Herkulesbogarat a talpbetétbe, tedd a csomagot a rézrúdra, majd tegyél kék borostyánt az öklödbe és zúzd össze a csomagot. Gyújtsd meg a bôrt a krizopráz szikráival. A salakot tedd egy tiszta lombikba. Törd össze a lombikot a sarkaddal, amikor néhány mérföldet kell gyalogolnod egy nehéz teherrel.
+
+Régi cipô, Herkulesbogár, Üres fiola, Rézrúd, krizopráz, kék borostyán.
+Eszközök: Kovakô
+
+#TEXT totem_07
+'Minstrel' Talizmán
+
+Egy képzett bárd nem szereti az ezüst zsinórokat: túl törékeny és nem praktikus. De a képzetlen hallgatóknak határozottan tetszeni fognak a drága lant ezüsthangjai egy gáláns kalandor kezében. A fösvénységrôl és vérszegénységrôl szóló pletykák kevésbé tûnnek majd fontosnak.
+
+Készíts néhány ezüst zsinórt viaszból és faágakból. Vedd körül magad kék borostyánnal és lapis lazulival. A viasz olvasztása közben gondolj a hallgatóidra. Ezután melegítsd fel az ezüstöt, és kalapáccsal készíts egy kerek korongot. Vékony spirális vágással alakítson ki húrokat.
+
+Hozzávalók: - A zsinórok és a zsinórozás, valamint a zsinórozás és a zsinórozás: Ezüströg x5, Lapis lazuli, Kék borostyán
+Eszközök: A gyöngyházfényû gyöngyházfényû gyöngyház és a gyöngyházfényû gyöngyház: Fémmegmunkáló szerszám, ikonlámpa
+
+#TEXT totem_08
+'Tûz ura' Talizmán
+
+A Maya Itzamna nevû Mennyek Ura. Az indiánok túlságosan félnek attól, hogy rosszul mondják ki a nevét. Itzamna a tûz erejét képviseli. Az emberek az ô jóvoltából szeretnek élni, és gyakran nagy ihletet és lelkesedést éreznek. Ez az amulett az Itzamna rituálé része. Csak az a személy végezheti el a rituálét, aki valakinek az életét vette el.
+
+Vegyük a dohánypipát, egy darab tûzopált és kék borostyánt. Vegyél fogót, köveket és egy nagy adag ördögfûvet. Gyújtsd meg a parazsat, és tegyél bele egy aranyrögöt, fújj a lángokra, fogaid között kék borostyánt tartva. Fújd meg a parazsat az ördögfûvel. Ezután tegyél egy keveset ebbôl a gyomból a parázson, és köpd bele a borostyánt. Add hozzá az arzént és a tüzes opált. Amikor kihûlt, vedd ki az opált a hamuból, és tedd a pipába. Ez a te talizmánod. Ügyelj arra, hogy a pipa az ég felé nézzen, miközben viseled az amulettet.
+
+Hozzávalók: A máglya és az amulett a következô összetevôkbôl áll: 1: Ördögfû x3, Porcelánpipa, Zsineg, Aranyrög, Tûzopál, Kék borostyán.
+Eszközök: Fémmegmunkáló szerszám
+
+#TEXT totem_09
+'Arguzin' Talizmán
+
+A jó csapatmunka elengedhetetlen a gyôzelemhez. Ezért a hajóskapitány fontos legénységi tag, akinek mindig vannak hangos és dühös parancsok a tarsolyában.
+
+Készíts egy platinagolyót, és tedd a csónakmester pipájába. Tegyél kék borostyánt a jobb sarka alá, akvamarin színt pedig a bal sarka alá. Tartsd a kürtöt közel a mellkasodhoz. Fordulj délnek és imádkozz.
+
+Csónakos pipája, Platina rúd, Akvamarin, Kék borostyán
+Eszközök: Fémmegmunkáló szerszám
+
+#TEXT totem_10
+'Boldogasszonykészítô' Talizmán
+
+Spanyol lovagi törvény: Katonai bátorság, vad merészség, a szív hölgyének önzetlen szolgálata és Szûz Mária tisztelete. Az arany mellkereszt és a koralldarab birtokosai terjeszthették véreik hagyományait.
+
+A szertartás egyszerû. Vágd kereszt alakúra a tenyered, tedd a mellkeresztet a sebre, nyomd meg kék borostyánnal, és zárd ökölbe a kezed. A kés pengéjével fogjon fel egy csepp vért, "feed" a pengével, majd hagyja, hogy a csepp a koralldarabra hulljon. Ez a te ereklyéd.
+
+Hozzávalók: Csatolókés, Arany mellkereszt, Korall, Kék borostyán
+A kék borostyán helyettesíthetô gyémánttal (a szellem harcosai számára) vagy morionnal (a könnyû lovasok számára).
+
+#TEXT totem_11
+'Vámpír' Talizmán
+
+A harci energia nem végtelen - az ellenséged és a te energiád energiája. A helyiek úgy tartják, hogy Huitzilopochtli, a háború azték istene minden harcot figyel, és fogyasztja a harci energiát. A hatalom rituáléja lehetôvé teszi, hogy energiát nyerj az ellenségedbôl, ha feláldozod a lelkét.
+
+Vágd le egy kiválasztott személy ujját a gyûrûvel. Szenteld a zsákmányt az istennek: a tengert Tlalocnak, a napot Tonatiuhnak, a szelet Quetzalcoatlnak, a tüzet Hiuteuktlinak. Ez az ereklye képes bezárni az ajtókat, megvédi a rejtôzködôket, és elfordítja az emberek tekintetét. A jobb eredményekért tegyél többet. Vedd le a tôrrôl a gyûrût, és tegyél rá egy opált, egy meteoritot és kék borostyánt. Ha a kört borostyánnal fejezed be, akkor energiát szívsz el az ellenségeidbôl. Varrd a drágaköveket a szárnyba, és a következô harc elôtt dobd le a lábad elé.
+
+Hozzávalók: A szárnyakkal a szárnyakkal együtt, a szárnyakkal együtt, a szárnyakkal együtt, a szárnyakkal együtt, a szárnyakkal együtt: Bûbájos csont, denevérszárny, opál, meteorit, kék borostyán.
+Eszközök: Ruhakészlet
+
+#TEXT totem_12
+'Jaguár fia' Talizmán
+
+Az aztékok szerették az áldozatokat isteneik tiszteletére, és arénákat építettek, ahol a foglyok a végsôkig harcoltak. A jaguár karma mindig is szerencsét hozó talizmánnak számított a vadászok számára.
+
+Forralja fel ezt a trófeát egy ezüst edényben gyöngyporral, verbénával, kék borostyánnal és jácinttal a hihetetlen pontosság érdekében. Ez a talizmán csak sötét helyeken mûködik.
+
+Jaguár karma x1, Kis gyöngyök x5, Verbena x1, Jácint x1, Kék borostyán x1.
+Eszközök: A táltosok és a táltosok: Ezüst korsó, mozsár és mozsártörô
+
+#TEXT totem_13
+'Joker' Talizmán
+
+A Joker egy kiszámíthatatlan kártya, a legnagyobb és legkisebb a Nagy Arkanok bármelyikében. A kártya célja, hogy tulajdonosa akarata szerint cselekedjen.
+
+Fessük a kereket az asztalra, osszuk négy részre. Vegyél négy kártyát egy pakliból, és helyezd ôket a kerék négy darabjára a színüknek megfelelôen. A Jokert képpel lefelé fordítva helyezd középre. Tegyél rá egy gyertyát. Vegyél a kezedbe egy vasdarabot, egy krizoberillt, egy kék borostyánt és egy nagy gyöngyöt. Ezután fújd el a gyertyát.
+
+Hozzávalók: Joker: A Joker nem lehet, hogy a Joker nem lehet, hogy a Joker nem lehet, hogy a Joker nem lehet, hogy a Joker nem lehet: Kártyapakli, gyertya, nagy gyöngy, vasrúd, krizoberill, kék borostyán.
+A kék borostyán helyettesíthetô gyémánttal (a szellem harcosai számára) vagy morionnal (a könnyû lovasok számára).
+Eszközök: Toll és tinta
+
+
+
+#QUEST Rome
+Latin kifejezések
+#TEXT 1
+Ab ovo usque ad mala - lábtól a fejig
+Alea jacta est - a kocka el van vetve
+Alter ego - egy másik én
+Amat victoria curam - a gyôzelem a gondoskodásnak kedvez
+Ars longa, vita brevis - a mûvészet hosszú, az élet rövid
+Audaces fortuna juvat - a szerencse a bátraknak kedvez
+Aurea mediocritas - arany középút
+Aut vincere, aut mori - vagy gyôzni, vagy meghalni
+Aut Caesar, aut nihil - vagy Cézár, vagy semmi.
+Sagre diem - ragadd meg a napot!
+Casus belli - háborús esemény
+Circulus vitiosus - ördögi kör
+Cogito, ergo sum - Gondolkodom, tehát vagyok.
+Cognosce te ipsum - ismerd meg önmagadat
+Conditio sine qua non - ami nélkül nincs semmi
+Consumor aliis inserviendo - mások szolgálatában fogyasztva
+Contra spem - remény a remény ellen
+Conditio sine qua non - nélkülözhetetlen feltétel
+Debes, ergo potes - kell, tehát lehet
+De gustibus non est disputandum - az ízlésekrôl nem lehet vitatkozni
+De lingua stulla incommoda multa - a buta szavak nagy problémákat okoznak
+De mortuis aut bene aut nihil - csak jót mondj a halottakról
+Dulce et decorum est pro patria mori - édes és tisztességes dolog meghalni a hazáért.
+Dum spiro, spero - amíg lélegzem, addig reménykedem.
+Duos lepores insequens, neutrum cepit - két nyulat kergetve, egyiket sem kapja el.
+Dura lex, sed lex - a törvény kemény, de ez a törvény.
+Epistula non erubescit - a levél nem pirul el
+Errare humanum est - tévedni emberi dolog
+Est modus in rebus - a dolgoknak van egy középútja
+Ex ungue leonem - a karomból (bírálhatjuk) az oroszlánt
+Fama clamosa - hangos pletyka
+Fac simile - hasonló dolgot tesz hasonlóvá
+Ferro ignique - tûzzel és karddal
+Festina lente - siess lassan
+Finis coronat opus - a vég megkoronázza a mûvet
+Gloria victoribus - a gyôztesek dicsôsége
+Gutta cavat lapidem - egy vízcsepp üregesíti a követ
+Hic et nunc - itt és most
+Homo homini lupus est - az ember az ember farkasa
+Labor omnia vincit - a kemény munka mindent legyôz
+Littera scripta manet - az írott szó megmarad
+Mala herba cito crescit - a rossz fû gyorsan nô
+Memento mori - ne feledd, hogy meg fogsz halni
+Nec sutor ultra crepidam - a suszter maradjon a végsôkig
+Ne varietur - nehogy megváltozzon
+Nil desperandum - semmit sem szabad kétségbeesni
+Non progredi est regredi - ha nem haladsz elôre, hátrálsz.
+Nulla dies sine linea - egy napot sem lehet vonal nélkül húzni
+Omne minium nocet - minden túlzás veszélyes
+Omnia mea mecum porto - mindent, ami az enyém, magammal viszek.
+Opera et studio - munka és tanulás
+Per aspera ad astra - a nehézségeken át a csillagokig
+Per fas et nefas - jó és rossz
+Pigritia mater vitiorum - a lustaság a bûn anyja
+Quilibet fortunae suae faber - minden ember a saját szerencséjének az építôje.
+Quod licet Jovi, non licet bovi - amit Jupiternek szabad, azt az ökörnek nem szabad.
+Radices litterarum amarae sunt, fructus dulces - a tudományok gyökerei keserûek, gyümölcsei édesek.
+Repetitio est mater studiorum - az ismétlés a tanulás anyja.
+Res ipsa loquitur - a dolog önmagáért beszél.
+Sapienti sat - elég a bölcseknek
+Scientia potentia est - a tudás maga a hatalom.
+Sine ira et studio - harag és szeretet nélkül
+Si vis pacem para bellum - ha békét akarsz, készülj fel a háborúra
+Sol lucet omnibus - a nap mindenkire süt
+Suum cuique - mindenkinek a sajátja
+Tempora mutantur - az idôk változnak
+Tertium non datur - a harmadik nem adatik meg
+Ultima ratio - a végsô érv
+Una hirundo non facit ver - egy fecske nem csinál tavaszt
+Usus est optimus magister - a tapasztalat a legjobb tanító.
+Vae victis - jaj a legyôzöttnek!
+Veni, vidi, vici - jöttem, láttam, gyôztem.
+Viribus unitis - egységes erôfeszítés
+Vita sine libertate, nihil - az élet szabadság nélkül semmi
+
+#QUEST	Wolfreek_Journal
+Wulfric Johannsen naplója - töredékek
+#TEXT	1
+==============================================================================================================================================================
+Január 30. Elfogtam egy spanyol bárkát, a 'Atocha' 50 mérföldre Blueweldtôl. A zsákmány 1244 egység kávé. Most Blueweld felé tartok.
+Január 31. Sikeresen jó mennyiségû érmét csináltam a kávéból. Most a Mosquito Bay felé tartok.
+************************************************************
+Március 1. ABaliente egy spanyol bárkára, a 'Baliente' keltette fel a figyelmemet Trinidad partjaitól nem messze. Több mint 150 hordó gyanta volt a fedélzetén. Megszabadítottam ettôl a tehertôl.
+Március 4. A martinique-i hajóépítô jól megfizette nekem a gyantát aranyban és ezüstben. Ideje elhajózni a Mosquito Bay-be.
+************************************************************
+Április 15. Elfogtam egy holland kereskedelmi szkúnert, a 'Hooda' nem messze Port Royaltól. 1510 egység kakaót szereztem. Most Port Royal felé tartok.
+Április 16. Megtöltöttem a ládáimat további pezókkal a zsákmányolt kakaónak köszönhetôen. Ideje elhajózni a Mosquito Bay felé.
+************************************************************
+Június 8. Sikeresen megtámadtam és elfoglaltam egy futárhajót, a 'San Eugenio', Kumana kormányzójának tulajdonát. A fedélzetén 2000 dublon volt. Most a Mosquito Bay felé tart.
+************************************************************
+Augusztus 22.  Megörökítettem egy gleccsert a 'Santa Isavelle' nem messze Dominikától. Vasfával és gyantával volt megrakva. A willemstadi csempészekhez kell fordulnom, hogy eladjam az anyagot.
+Augusztus 26. Az üzlet jól sikerült, a nyereség beváltotta a várakozásaimat. Ideje elhajózni Porto Bellóba, a Mosquito Baybe.
+************************************************************
+==============================================================================================================================================================
+#TEXT	2
+==============================================================================================================================================================
+Február 15. Az a cartagenai ékszerész jó ember - 200 gyémántot és 200 rubint fizetett nekem a feleségének. Nos, egy darabban fogja megkapni, nekem pedig Tortugába kellene mennem Gaspard Parmentier-hez.
+************************************************************
+Május 1. A gyöngyhalászok elleni rajtaütésünk Boca de la Sierpe-nél elég jól sikerült. 598 nagy és 1759 kis gyöngy került a ládáinkba. 
+Május 2. Ideje felkeresni Gaspard Parmentier-t.
+************************************************************
+Július 22. Megtaláltam és kiástam Connie Two Pesos kincsét az egyik legénysége által rajzolt térkép alapján. 15 000 pezót jól elköltöttem. Rengeteg ékszer és drágakô, Connie bizonyára bankárok és nemes hölgyek specialistája volt. Ideje meglátogatni Gaspard Parmentier-t.
+************************************************************
+November 10. Eladott holland rabszolga a Los-Teques-i bányákban egy halom aranyrögért. Ideje meglátogatni Gaspard Parmentier-t.
+************************************************************
+==============================================================================================================================================================
+#TEXT	3
+Március 9. A 'Freyja' plankákkal és élelemmel megrakodva indult a gordon felé.
+Március 17. Megérkeztünk, most az áruk kirakodásának és a javítások elvégzésének ideje következik.
+************************************************************
+Május 15. Jamaika, Port Royal. Azonnal a gord felé kell indulni. Az embereknek pihenésre van szükségük, és négy nap múlva meg is kapják.
+************************************************************
+Július 2. Vége a kubai kalandomnak. A spanyolok emlékezni fognak erre a leckére. Most - San Antonio-fok, majd a gordon felé.
+Július 9. Jó olyan helyen lenni, ahol biztonságban van az ember.
+************************************************************
+Szeptember 4. Lángok! Egy spanyol hajóraj portyázik a Mosquitos-öböl közelében. Irány a gordon feléjük, tíz-tizenegy nap múlva ott leszünk.
+************************************************************
+November 20. Kifizettem Levasseur-nek a szokásos díját. A kapzsi szemétláda ennyit markol a semmittevésért. Mindegy, egy-két éven belül úgyis elhagyom ezt a vidéket és ezt az életet. Most már a gord felé kellene mennem, az emberek biztos aggódnak.
+November 26. Itt vagyunk. Pár hétig itt fogok pihenni.
+************************************************************
+Január 11. Végre a kereskedô visszatért Basse-Terre-be. Hatalmas nyereséget kaptam ebbôl az üzletbôl, megérte több mint egy hétig várni rá. Élelmiszert kell vennem és elindulnom a gordon felé.
+Január 14. Három nap kedvezô széllel és itt vagyunk. Gyorsan, mint a madarak.
+============================================================================================================================================================
+#QUEST Ignasio_Journal
+Ignacio Marco naplója - töredékek
+#TEXT 1
+... Joker és én megegyeztünk a jelzéseinkben - fel kell emelnem a spanyol zászlókat, ha a század Santo Domingón keresztül Puerto Ricóba tart. Jolly Roger Isla Tesoro-nak és a törököknek. Francia színeket Tortugára és a törökökre.
+
+... a spanyolok megváltoztatták menetrendjüket - a Karib-tengerbôl való kilépésük helye Isla Tesoro és Turks között lesz. Sikerült is kiszámolnom a tartózkodási helyük lehetséges koordinátatartományát a @<sMonth> @<sDay> @<sYear>alatt: 23°0' - 23°30' észak és 64°25' - 64°55' nyugat. Ki kellene találnom, hogyan tájékoztassam errôl Jokert, hogy könnyebb legyen levadászni ôket.
+
+#QUEST GG_Letter_1
+Angerran de Chievous levele
+#TEXT 1
+Tisztelt Charles de Maure,
+Egy bizonyos, ön által jól ismert hölgy igencsak elszomorodott az ön legutóbbi tettei miatt. Beleegyezett, hogy egyelôre, ha akarva-akaratlanul is, de a társaságomban marad. Feltételezem, hogy az Ön iránti érzései nem kölcsönösek; azonban, ha tévedek, akkor üzletet köthetünk. Mindennek ára van, és beszéljük meg egy hét múlva a guadeloupe-i Basse-Terre-ben. Tíz napod van, nem több, hogy eldöntsd, mit akarsz. De Lyon kormányzó jó barátom, és beleegyezett, hogy megszervezze a találkozónkat.
+
+Üdvözlettel,
+Angerran de Chievous
+
+P.S. Bár a lány csinos, nem az én ízlésemnek megfelelô, de vegye tudomásul, hogy én kényszeríteni fogom magam, hogy túllépjem a határt, ha ez rosszul esik önnek. Talán még holnap is. Ha ez a köztünk lévô kérdés egyáltalán nem oldódik meg, akkor az embereim elé dobom; ôk nem olyan válogatósak, mint mi.
+
+#QUEST Letter_Portugal
+A portugál Bartolomeo levele
+#TEXT 1
+Senor de Maure,
+Elnézést kérek, hogy csak így magára hagytam. Nagy öröm volt önnel üzletet kötni; azt kell mondanom, hogy ön egy kivételesen elkötelezett ember. Feltételezem, hogy a britek majd elmondják önnek a történet hiányzó részeit. Nem fogok bocsánatot kérni, amiért kihasználtalak, hiszen ez mindannyiunknak jól jött.
+
+Tényleg régen írtam utoljára elegáns leveleket, de itt az ideje, hogy visszatérjen az igazi énem. Kár, hogy nem osztoztunk egy-két pohár jó rumon. Talán majd egyszer, amikor a nemzeteink közelebb lesznek egymáshoz? Az elsô lépést már megtettük, hogy ez megtörténjen. Isten éltessen!
+
+Ôszintén üdvözlöm,
+Senor Bartolomeo, Baron de la Cueva
+
+#QUEST Letter_France
+Henry de Monper levele
+#TEXT 1
+Szervusz, Charles.
+Nem tudom, hogy ez a levél eljut-e hozzád, és hogy az elôzôek mind eljutottak-e, és ha el is jut, emlékezni fogsz-e rá, hogy ki az, de megpróbálom. Tudom, hogy az ecseteket és a festékeket nem könnyû kardra cserélni, de nem gondoltam volna, hogy a tollal a legnehezebb lesz. Mióta kérésemre elmentél a bátyád keresésére, egyetlen szót sem kaptam tôled vagy tôle. Az eltelt idô alatt sikerült megbékélnem azzal a ténnyel, hogy a de Monper családnak el kellett szakadnia, de képzelheti, mennyire meglepôdtem, amikor levelet kaptam egy régi ismerôsömtôl az újvilági gyarmatokról. Még a betegségem is visszalépett egy lépést az ilyen hírek hallatán. Szegény Michel sorsát gyászoltam, de teljes szívembôl örültem az ön sikereinek. Igen, téged mint tengerésztisztet, mint kapitányt látni, aki a szerencséjét helyes útra terelte, számomra éppoly meglepô, mint amilyen örömteli. De attól tartok, nem sok idôm maradt a gratulációkra és a szemrehányásokra - az öregség adhat ugyan haladékot, de nem hátrál meg és nem múlik el. Tehát, fiam, egy másik, a legfontosabb dolgot kell megoldanunk. Ehhez a levélhez, amelyet régi barátomon, Benoit-n keresztül küldök, csatolom azon dokumentumok másolatát, amelyek igazolják, hogy te, Charles de Maure, mostantól Chevalier de Monper vagy - az én örökösöm és dicsô családunk folytatója... Még egyszer meg kell kérnem, hogy térjen vissza a családi birtokra. Minden papírt hitelesítettek, és a jelenléted nem szükséges ahhoz, hogy belépj az örökségbe és átvedd a címet, de ahhoz, hogy nyugodt lélekkel mehessek Istenhez, tudnom kell, hogy a családom nem fog eltûnni utánam. Nem tudom, emlékszik-e a La Brigne családra, de Yvonne, a legkisebb lányuk kivirult, és egészen alkalmas a házasságra. Az apja és a bátyja elôzetesen beleegyezését adta, de az esküvôt minden szabály szerint kell lejátszanunk. Ez egy méltó vezetéknév, és hozományként Guillaume La Brigne kész felajánlani egy kis szôlôbirtokot a birtokunktól néhány mérföldre. Neked, Charles, már meg kellett volna értened, mi a kötelesség és a felelôsség; aki e tudás nélkül nem állhat egy hadihajó hídján, és most az egész de Monper családért viselsz felelôsséget. Mostantól te vagy az utolsó fiam és az örökösöm. Gyere vissza, hogy teljesítsd gyermeki kötelességedet, és fogadd el szülôi áldásomat az oltárnál, hogy apád békében távozhasson.
+
+Apád tele van elvárásokkal. Henri de Monper.
+Gascogne.
+
+#QUEST Letter_Marquesa
+Julianne Botot levele
+#TEXT 1
+Charles, emlékszel, okom van rá, hogy haragszom rád, és még mindig nem vagyok kész arra, hogy ôszintén örüljek a boldogságodnak, úgyhogy hagyjuk az udvariaskodást, és térjünk a lényegre:
+A nézeteltéréseink ellenére nem kívánok neked semmi rosszat, de vannak emberek, akik igen. Megértem, hogy ez nem újdonság számodra. De a következôt tudnod kell: vannak emberek, akik ártani akarnak neked. Hogy hogyan és mikor csapnak le, azt nem tudom. De vigyázz - ha megölnek, az nem hoz nekem boldogságot.
+
+D.B.
+
+#TEXT 2
+Charles, emlékszel, okom van rá, hogy haragszom rád, és még mindig nem vagyok kész arra, hogy ôszintén örüljek a boldogságodnak, úgyhogy hagyjuk az udvariaskodást, és térjünk a lényegre:
+A nézeteltéréseink ellenére nem kívánok neked semmi rosszat, de vannak emberek, akik igen. Megértem, hogy ez nem újdonság számodra. De a következôt tudnod kell: vannak emberek, akik ártani akarnak neked. Hogy hogyan és mikor csapnak le, azt nem tudom. De vigyázz - ha megölnek, az nem hoz nekem boldogságot.
+
+D.B.
+
+Utóirat: pontosítok - ha megölnek, talán még egy könnycseppet is ejtenék. De jobb, ha nem nézzük meg.
+
+#TEXT 3
+Kedves barátom, szólíthatlak így? Most nem vagyok a városban, és nem fogok tudni személyesen gratulálni, de kérlek, fogadd jókívánságaimat. Igen, képzeld el! A kurtizánok mégiscsak hisznek a szerelemben, és szeretném hinni, hogy ön megtalálta a sajátját. Hálás vagyok neked, amiért ezt a hitet belém vetetted, és ez sokáig melegíteni fog engem. Légy boldog; megérdemled!
+
+Jó barátod.
+
+U.i. És most a lényegre térve - értsd meg, nem zavartalak volna ok nélkül. Vigyázz a jó emberrel! Nem mindenki lát körülötted okot az örömre az esküvôdben. Tartsd kéznél a fegyvert és légy résen. Aggódom érted és kívánom, hogy újra boldog légy.
+
+#TEXT 4
+Kedves barátom, szólíthatlak így? Most nem vagyok a városban, és nem fogok tudni személyesen gratulálni, de kérlek, fogadd jókívánságaimat. Nem sürgetlek, hogy emlékezz rám - ez nevetséges, egyezzünk meg, de tudd - a szívemben fogom hordozni az emlékedet az utolsó napomig. Légy boldog, bárhol is vagy!
+
+Jó barátod.
+
+U.i. És most a lényegre térve - értsd meg, nem zavartalak volna ok nélkül. Vigyázz a jó emberrel! Nem mindenki lát körülötted okot az örömre az esküvôdben. Tartsd kéznél a fegyvert és légy résen. Aggódom érted és kívánom, hogy újra boldog légy.
+
+#TEXT 1-1
+Charles, okom van rá, hogy haragszom rád, emlékszel, és még mindig nem állok készen arra, hogy ôszintén örüljek a boldogságodnak, de megpróbálom. Légy boldog és vigyázz magadra.
+
+D.B.
+
+#TEXT 2-1
+Charles, van okom arra, hogy haragudjak rád, emlékszel, és még mindig nem vagyok kész arra, hogy ôszintén örüljek a boldogságodnak, de megpróbálom. Légy boldog és maradj biztonságban. Tisztázom - ha megölnek, talán még egy könnycseppet is ejtenék. De jobb, ha nem nézzük meg.
+
+D.B.
+
+Utóirat: pontosítok - ha megölnek, talán még egy könnycseppet is ejtenék. De jobb, ha nem nézzük meg.
+
+#TEXT 3-1
+Kedves barátom, szólíthatlak így? Most nem vagyok a városban, és nem fogok tudni személyesen gratulálni, de kérlek, fogadd jókívánságaimat. Igen, képzeld el! A kurtizánok mégiscsak hisznek a szerelemben, és szeretném hinni, hogy ön megtalálta a sajátját. Hálás vagyok neked, amiért ezt a hitet belém vetetted, és ez sokáig melegíteni fog engem. Légy boldog; megérdemled!
+
+Jó barátod.
+
+#TEXT 4-1
+Kedves barátom, szólíthatlak így? Most nem vagyok a városban, és nem fogok tudni személyesen gratulálni, de kérlek, fogadd jókívánságaimat. Nem sürgetlek, hogy emlékezz rám - ez nevetséges, egyezzünk meg, de tudd - a szívemben fogom hordozni az emlékedet az utolsó napomig. Légy boldog, bárhol is vagy!
+
+Jó barátod.
+
+#QUEST	IslaMonaData
+Isla Mona: építés
+#TEXT	1
+Megerôsíteni, javítani és új házakat építeni: 1000 deszka, 500 tégla, 200 bôrköteg, 300 darab vitorlavászon, 50 hordó gyanta és 200 készlet ruházat.
+Építési idôszak: 6 hónap.
+
+#TEXT	2
+Móló építése, az öböl megtisztítása és világítás felszerelése. Ez lehetôvé teszi három 3-6 rangú hajó vagy egy 1-2 rangú hajó befogadását.
+Szükséges anyagok: 300 deszka, 50 tégla, 150 darab vitorlavászon, 20 hordó gyanta.
+Építési idôszak: 4 hónap.
+************
+Ha a házad elsô emeletét kocsmává akarod alakítani, építs bútorokat és konyhát, a pincét pedig töltsd fel alkohollal. Ez lehetôvé teszi, hogy akár 300 embert is elszállásoljon a szigeten tartalékként.
+Szükséges anyagok: 200 deszka, 200 tégla, 100 bôr, 50 darab vitorlavászon, 10 hordó gyanta, 1000 rum, 1000 bor.
+Építési idôszak: 3 hónap.
+************
+A gyár felépítése, a terület megtisztítása, a munkások lakhatásának és biztonságának megszervezése, valamint egy raktár létrehozása az anyagok számára.
+Szükséges anyagok: 500 deszka, 250 tégla, 200 bôr, 100 darab vitorlavászon, 30 hordó gyanta.
+További tételek: 1 muskéta (minden).
+Építési idôszak: 6 hónap.
+************
+#TEXT	3
+Egy templom építéséhez, amely harmóniát hoz Isla Monára, és megörvendeztet minket, telepeseket.
+Szükséges anyagok: 300 deszka, 100 tégla, 10 hordó gyanta, 20 vasfa, 100 mahagóni.
+További tárgyak: 50 aranyrög, 100 gyertya, 30 borostyán, 1 kék borostyán.
+Építési idô: 2 hónap.
+
+#QUEST ChickenGodOptionalQuests
+Aruba listája
+#TEXT 1
+Aruba exkluzív kereskedelmi ajánlata! Értékek és tiszta lelkiismeret a halandó tested feljavításáért cserébe, kapitány @<sName>!
+Elsô feladat:
+Sajnálattal közlöm önnel, de eléggé házas vagyok. Az egyetlen bökkenô az, hogy a kormányzó, a férje, boldogan nem tud róla, hehe. Gyengéd vagyok a kasztíliaiak iránt, úgyhogy maradjunk a szakmában. Tájékoztassa a senorát, hogy találkozója van egy ôsi pogány piramisnál, és kísérje ide.
+Második feladat:
+A tenger kegyetlen tud lenni bizonyos lelkekkel, fogságban hagyva ôket vagy sodródva. Feltétlenül meg kell mentenünk ezeket a szerencsétleneket, ezért gyûjtsetek össze egy harmincfôs csoporttal. Ne kérdezd, miért; csak szerezd meg ôket.
+Harmadik feladat:
+Sürgôsen szükségem van egy olasz kézmûvességhez illô öltözékre. A jelenlegi ruhatáram nem elégséges, úgyhogy szerezzen nekem valamit, amit viselhetek, kérem.
+Negyedik feladat:
+A bodzakövek gyakran eltûnnek, és úgy tûnik, nem tudok eleget szerezni belôlük. Tudod, mit kell tenned.
+
+#QUEST	Guide_AtSea
+Útmutató: A tengeren
+#TEXT	1
+A móló minden kikötô szíve. Régebben vitorláztam, ezért hadd meséljek nektek a tengerészetrôl.
+Elôször is, ne feledd a legfontosabb dolgot: meg se próbálj kormányozni egy hajót, ha nincs elég pontod a navigációs képességedben! Ha ez a követelmény nem teljesül, a többi képességed és a tisztjeid is szenvedni fognak'..
+Rosszabbul fogtok harcolni, rosszabbul lôni, rosszabbul kereskedni, és így tovább. Ez azt jelenti, hogy ha megpróbálsz egy hadihajót kormányozni a jelenlegi navigációs képzettségeddel, nem jutsz messzire, és a hajó úgy fog viselkedni, mint egy nagy fakád.
+Jelenleg egy tartánt vagy egy hosszú hajót tudsz kezelni. De fel tudsz - és fel is kell - bérelni egy navigátort. Általában a kocsmákban találod ôket más zsoldosokkal együtt.
+Elôször mindig ellenôrizd a képzettségi szintjüket. Ha nem elég magas a hajódhoz, pontosan ugyanazokat a problémákat fogod tapasztalni, amiket már említettem.
+************************************************************
+A szükséges navigációs szintet a hajó osztálya határozza meg. Minél nagyobb a hajó, annál nagyobb tudás kell a vezetéséhez. Én például csak a negyedik osztályig jutottam: briggek, xebekek, fluytok. Egy pinasz vagy korvett már túl sok nekem, nem is beszélve a másodosztályú hajókról, mint a nehéz fregattok vagy galeonok.
+Ami az óriás vonalhajókat vagy a hadihajókat illeti... az ilyen szörnyetegeket csak a navigáció szakértôi tudják irányítani. Évekbe telik, mire elsajátítják a képességet, és ne feledkezzünk meg a pénzrôl sem. Egy csatahajó és legénysége egy hónap alatt kiürítheti a pénztárcádat, ha nem vagy olyan gazdag, mint maga Lajos király.
+Vigyázzatok a tiszti pozícióitokra. Egy hajóskapitány kiképzi a legénységedet és hatékonyabbá teszi a beszállásodat, egy pénztáros pedig pénzügyi tevékenységet végez helyetted, és megszabadítja a hajódat a patkányoktól. Egy sebész meggyógyítja a sebesültjeidet és csökkenti a csatában elhalálozók számát, egy ács kijavítja a hajón keletkezett károkat, az elôôrsök pedig megmentik a bôrödet, ha kalózok kezdik ellepni a fedélzetedet. Figyelj a jelöltek képességeire és hírnevükre.
+************************************************************
+Minden embernek van egy. Ez mutatja meg az embert, hogy milyen is valójában.
+Ha becsületes ember vagy, és mindig igyekszel jót tenni, akkor keress olyan tiszteket, akik osztják az eszményeidet. Ha pedig kalóz akarsz lenni... nos, érted a lényeget. A becsületes emberek nem fognak söpredéknek dolgozni; ennek az ellenkezôje is igaz.
+Most egy kicsit a hajótípusokról. Vannak kereskedelmi és hadihajók. A kereskedelmi hajókat tágas rakterük jellemzi, míg a hadihajókat a nagy legénység és erős ágyúk. Tipikus kereskedelmi hajók: bark, fluyt, pinasz; katonaiak: sloop, snauw, galleon. Vannak sokoldalú hajók is, kiegyensúlyozott jellemzőkkel — például lugger, szkúner, brigantin. Jó példák portyázó hajókra: brigg, korvett, xebek. A hajóknak különbözô a kötélzetük is; vannak, amelyek többnyire négyszögletes kötélzetûek, és vannak, amelyek többnyire orr-hajó kötélzetûek, amelyek a hajó legjobb orr-szögét képezik.
+Az off-bow szög határozza meg, hogy a kötélzetet hogyan befolyásolja a szél, és hogy a hajó milyen irányban fogja elérni a legjobb sebességet, amire képes. Ha már a tengeren vagy, keresd meg a nyilat a minitérképen; ez lesz az off-bow szöged.
+************************************************************
+Ezután következik a legénységed. Te és a hajód semmit sem érsz az embereid nélkül. Minden tengerésznek három dologhoz kell értenie: a kötélzet kezeléséhez, az ágyúk kezeléséhez és a harchoz. Minden nemzet csak e három tevékenység egyikében jeleskedik. Spanyolországnak például a világ legjobb harcosai vannak, a fedélzeteseik viszont páncélzatot viselnek, így a grabancslövés, a szeletelés és a szúrás nem egészen olyan hatékony ellenük. Természetesen a kézifegyverekrôl beszélek, az ágyúgolyó grabanclövések fütyülnek a testpáncélokra.
+Látogass el Spanyolország, Anglia és Franciaország kocsmáiba, ha álomlegénységet szeretnél összeállítani. Figyelj az embereid moráljára, rendszeresen lássák el ôket rummal, kurvákkal és pénzzel. Ha így teszel, az embereid meghalnak érted. Ha ezt nem teszed meg, akkor lázadni fognak. Egy motivált profi többet ér tíz újoncnál a harcban. Ne feledkezz meg az orvosról sem, vagy fejleszd a saját orvosi képességeidet, hogy elkerüld az extra veszteségeket.
+Most néhány szó a tengeri csatákról. A Karib-tenger veszélyes, hemzseg a spanyol ôrjáratoktól és kalózoktól, így elôbb-utóbb a nyílt tengeren fogsz összecsapni velük.
+************************************************************
+ A hajóágyúk négyféle lôszert használnak: Körlövés, szôlôlövés, lánclövés és bombák.
+A kerek lövedék univerzális, és a legolcsóbban megvásárolható; ezeknek van a legnagyobb hatékony lôtávolságuk is. Széttépik az ellenség vitorláit, elpusztítják a hajótestüket, és megölik a legénységüket.
+A lánclövedéknek tisztességes tûztávolsága van; céljuk az ellenség kötélzetének megsemmisítése, hogy lelassítsák ôket. Jól használhatóak, ha üldözni vagy menekülni akarsz. Ha szerencséd van, akár egy egész árbocot is leszedhetsz.
+Bombák. Akkor használd ôket, ha el akarod süllyeszteni az ellenfél hajóját. A bombák okozzák a legnagyobb kárt a hajótestben, de ezeknek a második legrövidebb a lôtávolságuk, ezért elôször közelebb kell jönnöd, ami végzetesnek bizonyulhat. A lövedékek közül is ezek kerülnek a legtöbbe.
+A szôlôlövések a legjobb választás, ha az ellenséges hajó fedélzetére akarsz lépni és elfoglalni azt. Ezek a csúnya kis rovarok kiirtják az embereket, de a legrövidebb lôtávolság miatt kockázatos a használatuk. Viszont meg is érheti a fáradtságot.
+Tartsd vissza a tüzet, ha nem vagy biztos benne, hogy elég kárt tudsz-e okozni. Minden sortûz a puskapor és az ágyúk ára' condition. Néha felrobbanhatnak, különösen, ha túl gyakran lôsz. Mindig manôverezz, próbálj meg a széllel kapcsolatban jobb pozíciót elfoglalni. Ha az ellenség túl veszélyes, és nem tudsz elmenekülni, próbáld meg provokálni ôket, hogy folyamatosan lôjenek rád távolról anélkül, hogy sérülést szenvednél. Ez a trükk végül kiüríti a puskapor készleteiket. Ez napokig is eltarthat, ezért jobb, ha fedezéket találsz, például sziklákat vagy egy partvonalat. Természetesen ez a taktika nem fog mûködni a nyílt tengeren.
+Aknák. Szintén remek módja annak, hogy elsüllyeszd ôket. Kigúnyold ôket, hogy üldözzenek, és dobjatok aknákat. Minden akna tisztességes mennyiségû puskaport igényel, de már egyetlen akna is szinte megsemmisíthet egy luggert.
+************************************************************
+Szerezz egy távcsövet, és használd az ellenség megfigyelésére, és növeld a 'Sail to' fast travel képesség diszkrécióját. Egy jó távcsôvel remek taktikai áttekintést kaphatsz például arról, hogy az ellenfél hajóján vannak-e muskétás egységek. Az ellenséges muskétások sok emberedet elkaszálhatják a fedélzeten, ezért mindenképpen adj nekik egy kis szôlôlövést, mielôtt a fedélzetre lépsz.
+Isten éltessen, kapitány!
+
+
+#QUEST	Guide_OnLand
+Útmutató: A szárazföldön
+#TEXT	1
+A városkapuk egyenesen a sziget belsejének dzsungelébe vezetnek, a civilizáció végsô határára - már amilyen az. Nappal két katona ôrzi ôket, akik mindenkit ellenôriznek, aki belép a városba. Éjszaka nem teljesítenek szolgálatot. Ezért kétféleképpen lehet bejutni.
+Elôször is, horgonyt vethetsz a kikötôben, és a mólón szállhatsz ki. Másodszor, ha sunyi akarsz lenni, partra szállhatsz a sziget valamelyik másik öblében vagy partján, és a dzsungelen keresztül a városkapukig utazhatsz.
+Néha spanyol gyarmatokat kell majd meglátogatnod, ezért ne feledd: háborúban állunk a spanyolokkal, ezért eszedbe se jusson spanyol zászló nélkül behajózni a kikötôjükbe, különben az erôd azonnal tüzet nyit, és gyufafává változtatja a hajódat. Különleges képességeket kell elsajátítanod, és óvatosan kell eljárnod, hogy bejuss az ellenséges településekre. Tudd, hogy a spanyol kikötôkben csak úgy vethetsz biztonságosan horgonyt, ha megtanulod a 'felhúzni a spanyol zászlót' vagy 'felhúzni a holland zászlót'.nevû perket.
+************************************************************
+Az ilyen trükkök megtanulása idôt és tapasztalatot igényel. 'A zászlófelvonás' nem azt jelenti, hogy egyszerûen felhúzunk néhány sárga és piros rongyot, hanem különbözô álcázó intézkedéseket kell végrehajtani a beolvadás érdekében. A sikeres megtévesztés esélye függ a lopakodási képességed szintjétôl, az osztályodtól és a flottádban lévô hajók számától. Egyetlen kis sloopot könnyû spanyol hajónak feltüntetni, de ugyanez nem mondható el öt állig felfegyverzett fregattról! Ha nem tudod becsapni az erôdôröket és a kikötôi tiszteket, akkor fontold meg, hogy a városkapukon átosonsz, ahogy már említettem. Várjatok éjszakáig, hogy elkerüljétek az ôröket, és beléphessetek. Kerüld a városban járôrözô katonákat, különösen éjszaka. Keress egy kocsmát, pihenj ott reggelig, és menj a dolgodra. Ne harcolj a katonákkal, ha veszélybe kerültél; fuss be egy üres házba, hogy lerázd ôket, és maradj ott fél órát. Ez majd arra készteti ôket, hogy abbahagyják a vadászatot rád. Alattomos, nem igaz? Ha nincs kedved ehhez a bravúrhoz, vegyél kereskedelmi engedélyt a hollandoktól. Ez megkímél az ellenséges területen való lopakodás fáradalmaitól, és lehetôvé teszi, hogy nyíltan hajózhass be.
+A kereskedelmi engedélyt a tiszteletreméltó Holland Nyugat-indiai Társaság székhelyén, a curacaói Willemstadban található központban lehet beszerezni. Ez békés szándékaidat jelzi, és a feltételek lejártáig bármelyik kikötôbe beléphetsz vele. Van azonban néhány hátulütôje is. Elôször is, a Társaságnak különleges szabályai és követelményei vannak, amelyeket minden kapitánynak, aki hajlandó megvásárolni az engedélyt, be kell tartania. Másodszor, sokba kerül. És az utolsó és egyben a legrosszabb, hogy még mindig szükséged van egy 'zászló' perkára, hogy ellenséges kikötôkben landolhass. Ellenkezô esetben az erôd nehézágyúi azonnal lelônek.
+************************************************************
+Hadd tanítsak neked néhány vívási tippet.
+Háromféle hideg acél van: könnyû, közepes és nehéz. Minden típus elsajátításához más és más képességek és készségek szükségesek, ezért külön-külön kell megtanulnod ôket. Minden osztálynak megvannak az elônyei és hátrányai.
+A könnyû fegyverek, beleértve a fóliákat és a rapirokat, alacsony energiaigényûek, de a legkevesebb kárt okozzák.
+A nehézfegyverek, például a fejsze, egyetlen csapással képesek ölni, bár gyorsan kimerítik az energiádat, és elôfordulhat, hogy két csapás között pihenned kell.
+A közepes fegyverek, mint például a szablya vagy a bicska, a középutat jelentik, jó súlyt és sebzési potenciált ötvözve. Számos vívómozdulat és trükk áll a rendelkezésedre: gyorstámadás, csapástámadás, nehéz támadás és csoportos támadás. Emellett parírozhatsz, cselezhetsz és blokkolhatsz is.
+A gyorstámadás... nos, gyors, a legkisebb energiát igényli a végrehajtásához, és kiválóan alkalmas hosszú tôrökhöz. Fejszékhez többnyire használhatatlan. A csapástámadás elég sokoldalú, tisztességes sebességgel rendelkezik, jelentôs energiaveszteséggel, jó a szablyákhoz, széles kardokhoz és fejszékhez, de nem túl hatékony a rapírokkal. A nehéz támadást felülrôl osztják, kiváló választás fejszékhez, jól mûködik rövid szablyákhoz és bicskákhoz, azonban a rapirokat egyszerûen nem ilyen mozdulatokra tervezték. Ez a támadás hatalmas mennyiségû energiát von el, lassú, de bénító sebzést okoz, és figyelmen kívül hagyja az ellenfél blokkjait.
+A blokkolás használhatatlan a nehéz támadások ellen, és a tapasztalt ellenfeleknek mindig van esélyük arra, hogy megtörjék a blokkodat. A hárítás sokkal jobb; megnyitja az ellenfeled a támadások elôtt, és arra kényszeríti, hogy energiát veszítsen. Több sikeres hárítással az ellenfeled teljesen elveszíti a kezdeményezôkészségét, és kénytelen védekezni, miközben neked teljes elônyöd van.
+A finomságok trükkösek és kockázatosak. Az ellenfeled becsapása és egy gyors szúrás azonnali kiosztása csak kis energiaveszteséget igényel, de koncentráltnak, figyelmesnek kell lenned, és a harc ritmusában kell lenned. Ennek a mozdulatnak az elsajátítása sok gyakorlást igényel tôled, de kifizetôdô - még a profi párbajtôrözôk és kardforgató mesterek is elbuknak a kezed által. Annak érdekében, hogy minden támadástípusból a lehetô legnagyobb kárt okozza, mindegyikhez a megfelelô fegyvert kell használnod. 
+************************************************************
+A lökéstámadás a hosszú, nehéz, egyenes rapírral vagy 0 és 0,5 közötti egyensúlyú kardokkal fog a legjobban teljesíteni. A hosszú, ívelt szablyák vagy szablyák, amelyek egyensúlya 1,5 és 2 között van, kiválóak a vágó és nehéz támadásokhoz. Egy 2,0-s egyensúlyú nehéz fejsze tökéletes nehéz támadásokhoz, de egy ilyen fegyver használata sok energiát és ügyességet igényel. A csoportos támadás nem érdemes az elsôdleges mozdulatodnak lenni, inkább védekezô, de egy ívelt, könnyû, hosszú kard, amelynek egyensúlya 1,25 körül van, csodákra képes a körülötted lévô ellenségek csoportjai ellen. Végül a legjobb fegyver a feintéshez a tôr; fontold meg, hogy ezt a mozdulatot tedd a specialitásoddá. A fegyver súlya határozza meg, hogy mennyi energiát igényel egy-egy támadó mozdulat, és ez befolyásolja a sebzést is. Ne feledd, hogy a tökéletes fegyver megtalálása idôbe telhet, a harci stílusodon való munka pedig még több idôt vesz igénybe. 
+Az egyszerre több ellenséggel való szembenézés bonyolítja a dolgokat. Egy tisztességes harcos képes leszámolni néhány rosszul képzett bolonddal együtt a nyílt terepen, de ha egy tucatnyi gazember közeledik feléd - kerüld el mindenáron a bekerítést, menekülj el, keress magadnak egy sarkot vagy néhány lépcsôt, ajtót, bármit, kényszerítsd ôket, hogy egyenként, vagy ketten egy ellen harcoljanak veled. Egy másodperc alatt felszeletelnek, ha hibázol, úgyhogy kényszerítsd ôket, hogy a te feltételeid szerint játsszanak, ne veszítsd el a kezdeményezést, és vigyázz az energiádra. Bár hallottam egy speciális indián bájitalról, ami lehetôvé tette a kard és fejsze mestereinek, hogy egyszerre öt-hat ellenséget is megöljenek néhány csoportos támadással.
+Ometochtli keverék, vagy hogy is hívják. Egy ôsi indián recept. Kérdezzétek a kereskedôket, lehet, hogy valaki egyszer eladja nektek. De elôbb meg kell tanulnod az alkímiát, hogy használni tudd a receptet...
+************************************************************ Since we are already talking about potions - let me tell you about healing. If you need to fix a small wound, use a healing essence. Serious hits can be treated with a healing elixir. Healing mixtures, rum, and wine also restore your health. An antidote and mixture will do fine if you are poisoned. I also recommend ginger root; it wonderfully freshens your breath. It also heals without any side effects, unlike essences and elixirs.
+Az esszenciák, elixírek és keverékek károsítják az egészséget. Ahogy kis túránk elején említettem, ez rossz. A rossz egészség a képzettségi szinted csökkenését okozza, csökkenti az életpontjaid és az energiád összmennyiségét. Az alvás, a szex és egy ritka bájital, az 'Ish-Chel könnyei' helyreállítja az egészséget, ha az nem ment teljesen tönk Ha már túl késô, keress fel egy papot; ôk díj ellenében segítenek.
+A tûzfegyverek a legegyszerûbbek. Célozz és lôj! Használj grapeshotot, ha több ellenség van. Komolyabb összecsapásokhoz szerezz muskétát vagy puskát. Halálos sebzést okoz, és mindig eltalálhatod az embereket a fenékkel.
+Sok szerencsét, kapitány, és ne feledd: mindig egyedül vagy, ha a szárazföldön halsz meg.
+
+#QUEST PZ_LongwayProshaetsya
+Longway búcsúlevele
+#TEXT	1
+Kapitány úr,
+Könnyebb a kemény igazságokat papíron kifejezni, mint szemtôl szembe - különösen, ha nem akartad elengedni Longwayt, amikor a legnagyobb szüksége lett volna rá az életében. És nem is magának, hanem egy számára nagyon fontos embernek.
+Mégis, Longway megköszöni neked a fehér embertôl ritkaságszámba menô dolgot - valódi tiszteletet. Az ön tisztelete késztetett arra, hogy szembeszegüljek a parancsokkal, és szembeszálljak azokkal, akiknek a megmentôimnek kellene lenniük. Emberek, akiket valaha barátoknak tartottam, de akik, legnagyobb bánatomra, soha nem voltak azok.
+Most Longwaynek mennie kell. Amint teljesítette a kötelességét, meg fog találni téged és visszatér. És akkor bocsánatot fog kérni. Valójában már most bocsánatot kér a kellemetlenségekért, amiket a távozása okoz.
+Réges-régen tettem egy ígéretet és egy fogadalmat - magamnak és egy nagyon fontos embernek is. Minden más kötelességnél és ígéretnél fontosabbat. Minden más embernél fontosabbat - még önnél is, kapitány úr.
+Longway remélte, hogy megérti. De mivel te nem, kénytelen volt elmenekülni. Ennek ellenére még egyszer köszöni a tiszteletet.
+A viszontlátásig,
+Longway
+
+#QUEST PZ_ArchiveOneMerden
+Van Merden archívuma - Összefoglaló
+#TEXT	1
+1637 körül Antoon van Diemen, Holland Kelet-India fôkormányzója új, baljóslatú rést fedezett fel az emberéletekkel való kereskedelemben - a legvonzóbb ázsiai lányok elrablását a szigetekrôl és esetenként a kínai szárazföldrôl. Ezek a mûveletek nem gyakori tömeges emberrablások voltak, hanem inkább ritka, titkos akciók, mivel bármilyen nyilvánosságra kerülés katasztrófát jelentett volna. Van Diemen nem félt honfitársai haragjától; e hitvány kereskedelembôl hatalmas haszon származott: gyönyörû, egzotikus nôket küldtek az Óvilágba, hogy a legtöbbet ajánlónak - nemeseknek és gazdag kereskedôknek egyaránt - eladják ôket. Az igazi fenyegetést azonban a kínai nagyurak jelentették, akik, ha rájöttek volna az igazságra, valószínûleg véres bosszút álltak volna más hatalmas szövetségesek támogatásával.
+Az akció lebonyolításához van Diemennek megbízható cinkosokra volt szüksége. A belsô körét hívta segítségül - olyan embereket, akik a térségben gyûltek össze. Ezek közé tartozott közeli barátja és jobbkeze, Joep van der Vink; Oliveiro Fermentelos, egy portugál disszidens, aki átállt a holland oldalra; és Johan van Merden, a terv másik kulcsszereplôje.
+Nyolc hosszú éven át virágzott ez a sötét vállalkozás, és tönkretett életek nyomát hagyta maga után. Az elrabolt lányok családjai összetörtek, és a piszkos munkát végzô zsoldosokat gyakran likvidálták, hogy titokban tartsák a mûveletet. A pótlásuk könnyû volt, mivel mindig akadtak új újoncok.
+De aztán valami rosszul sült el. Fermentelos, aki a Morning Star nevû nehéz gálya fedélzetén irányította ezeket a zsoldosegységeket, hirtelen nem jelentett többé van Merdennek. A kommunikációs lánc megszakadt, és az akció veszélybe került. Néhány hónappal késôbb egy Longway nevû férfi lépett a színre.
+Chang Tu, egy kisstílû kalóz és csempész egy szárazföldi kínai faluból, élete darabokra tört, amikor Oliveiro Fermentelos elrabolta a húgát, Chang Xinget. Fermentelos, akit a gyengédség eltorzult érzése vezérelt, közeledett hozzá, de a lány visszautasította. Dühében nemcsak a lányt rabolta el, hanem Chang Tu szüleit is meggyilkolta. Fermentelos ezt titokban tartotta, mivel egy ilyen értékes "commodity" ellopása nem maradhatott észrevétlen, még a saját szövetségesei elôtt sem.
+A bosszútól fûtve Chang Tu - akit most már Longway néven ismertek - üldözôbe vette húga elrablóját Formosába, ahol találkozott van Merden egyik emberével. Az a döntés született, hogy Longwayt Johan van Merdenhez viszik. A terv egyszerû volt: kideríteni, mit akar a kínai, és ha szükséges, likvidálni. Johan azonban, megérezve a lehetôséget, úgy döntött, hogy segít Longwaynek - nem kedvességbôl, hanem abból a vágyból, hogy megszabaduljon egy kellemetlen társától.
+Van Merden soha nem bízott Fermentelosban, mindig árulásra számított a ravasz portugáltól. Most, hogy Fermentelos a levegôben lógott, Johan esélyt látott arra, hogy rendezze a régi számlákat. Úgy vélte, hogy a többi társa, van der Vink és van Diemen is kicsalta tôle a hasznot. Ezért Johan elküldte Longwayt Batáviába, abban a reményben, hogy a kínai és van Diemen talán megölik egymást. Longwayt felfegyverezte egy régi ismerôsének, Oliver Trustnak címzett levéllel, amelyben segítséget kért egy régóta fennálló adósság rendezéséhez.
+Johan van Merden azonban megdöbbent, amikor Longway nemcsak túlélte, de sikerült megölnie van Diement és van der Vinket is. Formosába visszatérve Longway egy közvetítôn keresztül újabb találkozót keresett Johannal. Attól tartva, hogy Longway rájött, hogy teljes mértékben részt vett az emberkereskedô hálózatban, Johan zsoldosokat szervezett, hogy rajtaütésszerûen lecsapjanak rá az utcán. Longway azonban legyôzte ôket, és Johan, aki mindig is gyáva volt, úgy tett, mintha segítene neki - bár a beszélgetésük alatt végig az asztal alatt tartott egy pisztolyt.
+Gyôzelmei ellenére Longway nem jutott közelebb a Hajnalcsillag vagy a húga hollétének megtalálásához. Kétségbeesésében ismét van Merdenhez fordult, akit az "elsô fehér barátjának nevezett." Johan majdnem nevetett az irónián, de szórakozottságát azzal leplezte, hogy egyszerûen csak az öregség teszi szentimentálissá.
+Cserébe van Merden ígéretéért, hogy segít megtalálni Fermentelost, Longway elkezdett neki dolgozni. Johan volt az, aki a "Longway," hívójelet adta neki, amely az angol "Long Way" kifejezésbôl származik - ez a név illik az útra, amelyet Longway bejárt, és az útra, amely még elôtte áll, most Lucas Rodenburg parancsnoksága alatt.
+
+#QUEST ChroniclesMadness
+Az ôrület krónikái: rész
+#TEXT	1
+******
+Atyám, mennyire hiányzol. A bölcs tanácsod, a nyugodt hangod. Valahányszor Havannában vagyok, mindig meglátogatlak. Ott, a sírodban, mérföldekre a várostól, órákig tudok ülni, és a következô lépésemen gondolkodni. Nyugodj békében, apám. Áldozatod nem lesz hiábavaló - megtisztítom ezeket a vizeket a szigetvilág sötét zugaiban bujkáló bûnözô patkányoktól. Különösen azoktól, akik felelôsek a halálodért. 
+******
+Ó, milyen vak voltam! Azt hittem, minden gonoszság a rongyosoktól és a csempészektôl származik. Nem... Ahogy mondják, a hal a fejétôl rothad. Maga a király, Isten áldja meg, látja ezt - ezért küldött engem különleges hatalommal. De minél tovább hajózom, annál jobban megértem - a fertôzés túl mélyre terjedt. A kormányzóink, ezek a "noble" emberek - semmivel sem jobbak, mint az udvari intrikusok Madridban! Persze nem mindannyian. Te, atyám, más voltál. De a többiek... Megvesztegetések, intrikák, nepotizmus - mind virágzott, mint a mérgezô virágok. Mintha az udvar betegsége átterjedt volna az óceánon a gyarmatainkra. Már nem vagyok benne biztos, hogy a szokásos intézkedések elegendôek.
+******
+Ma hosszú beszélgetést folytattam a Világosítóval. Egy rendkívüli ember - mintha átlátna rajtam. Mindent, ami nyugtalanított, mindent, amire még gondolni is féltem - szavakba öntött. Azt mondta, hogy az Úr néha határozott cselekvést követel harcosaitól. Hogy az irgalom erô nélkül üres hang. Hogy az igazi hit a küzdelemben ismerhetô meg. A vele való beszélgetés után sok minden világossá vált számomra.
+******
+Megpróbálnak megállítani. Elôször azt hittem - a Birodalom ellenségei. De nem - a saját népünk! Álarcos zsoldosok, tiszteletre méltó házakból származó bérgyilkosok. Az egyik elfogott bevallotta - egy kormányzó küldte, akit nemrég megdorgáltam. Így van ez? Nos, most már tudom - túl puhány voltam. Ideje másképp cselekedni. "Néha le kell vágni egy beteg végtagot, hogy megmentsük a testet."
+******
+Az Úr jeleket küld nekem. Minden kikötô, minden város tisztulásért kiált. Most már tisztábban látom. Nem elég csak adót szedni és csempészeket elfogni. Valami többre van szükség. A szent tûznek ki kell égetnie a mocskot. Egyelôre igyekszem a törvények szerint cselekedni, de úgy érzem, ez nem elég. "Az Úr büntetô kardjává válni." Úgy tûnik, közeleg az óra.
+******
+Néha kétségek gyötörnek. Ilyen pillanatokban újraolvasom az Ô leveleit. Emlékszem a beszélgetéseinkre. Igen, gyenge voltam. De most már tisztán látom az utamat. A szigetvilágot elárasztja a bûn. Minden várost, minden kikötôt meg kell tisztítani. És ha ehhez vért kell ontani - hát legyen. Végül is, a bûneinket nem Krisztus vére mosta le?
+Amikor befejezem nagyszerû munkámat, ezek a vizek megtisztulnak. De most... most felkészülök. Erôt gyûjtök. Várom a jelet. Tudni fogom, mikor jön el az idô, hogy cselekedjek. És akkor senki sem lesz képes megállítani engem.
+
+#QUEST LegendaryShips
+Információk a legendás hajókról
+#TEXT	1
+"Szent Irgalom"
+***********************
+Szent Irgalmasságot az Escorial küldte Európából, hogy felügyelje a spanyol gyarmatokat. Kapitánya, Don Alamida a spanyol korona híres szolgája, a korrupció és a bûnözés kíméletlen harcosa, a katolikus hit buzgó híve. 
+A Holy Mercy a gyarmatok között hajózik, útját Havannában kezdi és fejezi be, és kizárólag a küldetésére összpontosít. 
+Az Alamida minden egyes kikötôben több napot tölt, néha hosszabb idôt is. Azt mondják, ilyenkor még az utcán is lehet vele találkozni, de a helyiek nem különösebben vágynak az ilyen találkozásokra - a spanyolokban a senor csak félelmet és félelmet kelt.
+A Szent Irgalomnak tapasztalt és hûséges legénysége van, amelyet Alamida személyesen választott ki. Minden matróz kész az életével is megvédeni a hazáját és a kapitányt. Azt mondják, Don Fernando elrendelte, hogy a Holy Mercy-t soha nem szabad elfoglalni, és azt suttogják, hogy ha a legénységnek leküzdhetetlen esélyekkel kellene szembenéznie a hajóra szálláskor, akkor inkább a mélybe küldenék a hajót, minthogy lássák, ahogy a fedélzetre szállnak.
+#TEXT	2
+"Lady Beth"
+***********************
+Lady Beth egy igazi szépség. Anglia tengerészzsenijének csodája, parancsnoka Albert Blackwood, a királyi haditengerészet egykori tisztje. Valóban nem mindenkinek sikerül ilyen látványosan dezertálni! Otthagyta a szolgálatot, megölt egy fényes karriert, és ellopott egy hadihajót - mindezt kincsvadászatért!
+És nem hiába. Már talált annyit, hogy megvehesse fél Barbadost, de még többet akar. Ha a tengeren találkozol vele - meg se próbáld meg feltartóztatni. Túl jó a hajó, a kapitány pedig tapasztalt és óvatos. Az utóbbi idôben Blackwood gyakran megfordult Kajmán-szigeteken - éjjel-nappal áskálódik, halálra dolgoztatja az embereket. Ha úgy döntesz, hogy utánanézel - vigyél magaddal nem kevesebb, mint hatvan embert és jó lôfegyvereket... Valójában még ez sem biztos, hogy elég lesz.
+Remélem, tudsz lôni, hiszen Fox ezredes egy századnyi egykori tengerészgyalogos gyalogosa dezertált vele. Profik, semmi sem hasonlít a közönséges gyilkosokhoz. És soha ne támadjátok meg a francia kikötôkben - ott védelmet és pártfogókat kap, akik részesedést kapnak a leleteibôl.
+#TEXT	3
+"Memento"
+***********************
+A 'Memento' - egy igazi kalózlegenda. Egy fekete brigg, melynek kapitánya Mortimer Grim volt.
+Grim kizárólag rabszolgatartókra vadászik. Azt mondják, hogy kiszabadítja a rabszolgákat és kemény arannyal kivásárolja a halálraítélteket. Nemes ügy - ha a többit nem tudod. 
+Ha nem emberi rakományt szállítasz, Grim nem nyúl hozzád. Furcsa, de megvannak az elvei. De ha rabszolgákat szállítasz... imádkozz, hogy ne láss fekete vitorlákat a horizonton. 
+A 'Memento' kalózparadicsomok között hajózik, de ritkán köt ki. A legénység hónapokig a fedélzeten él, mintha félne szilárd talajra lépni. A pletykák szerint a hajó egyszer túlélt egy szörnyû járványt - ezért olyan nehéz megölni a legénységet.
+Ha azt tervezed, hogy felveszed velük a harcot, pakolj több ágyút. A 'Memento' fedélzetre lépése szinte lehetetlen - a legénység úgy harcol, mintha megszállottak lennének, mintha nem félnének a haláltól. Az egyetlen módja, hogy legyôzzük ôket, ha szilánkokra robbantjuk a hajót, és elvisszük a menedéküket. A szilánkok nem ijesztik meg ôket, de a közvetlen grapeshot találatok - az már más kérdés.
+Sok szerencsét. És ne feledjétek a halált.
+
+#QUEST StoriesTreasures
+Kincses mesék
+#TEXT	1
+************************************************************
+Ez a rejtekhely az enyém, a San Sebastián barkentine leendô kapitányáé! Ha én vagyok az, aki ezt olvassa, ne felejtsd el: Miguel tartozik neked, és valószínûleg még mindig nem fizetett.
+Ha te olvasod ezt, remélem, nem a legénységem tagja vagy. De ha igen, akkor tudd meg: Már régóta gyanítom, hogy patkány vagy.
+#TEXT	2
+************************************************************
+Egyre jobban szeretek Tyrexnek dolgozni. Ez már a harmadik rejtett rejtekhelyem.
+Szóval nem felejtem el, hol vannak az elôzôek: az egyikben kezdtem kalózkarrieremet, a másikban pedig lelôttem azt az átkozott kövér macskát.
+#TEXT	3
+************************************************************
+Ha megtaláltad ezt a rejtekhelyet, tudd, hogy nem kalózok vagy adószedôk elôl rejtettem el. Hanem a saját feleségem elôl.
+Három évvel ezelôtt megtiltotta, hogy a kocsmába menjek. Két évvel ezelôtt hatalmas veszekedést kezdett, amikor vettem egy új dirket. Egy évvel ezelôtt pedig kiverte két fogamat.
+De a kincsemet itt soha nem fogja elérni! Azt hiszi, hogy mindent elvesztettem egy kártyapartiban.
+Igyál egy italt a kedvemért, amíg én azzal vagyok elfoglalva, hogy meggyôzzem a boszorkányomat, hogy ez a pénz eleve nem is volt nálam.
+#TEXT	4
+************************************************************
+Martin, ha ezt olvasod, az azt jelenti, hogy megtaláltad, amit neked hagytam. Szóval nem volt minden hiábavaló. Tizennégy festmény hat hónap alatt, és az a felpuffadt varangy még mindig többet akar! Nincs szükségem többé aranyra vagy ékszerekre, sem a nagyképû meghívásaira a rezidenciára.
+De mielôtt eltûntem, hagytam neki egy búcsúajándékot: a saját portréját - semmi hízelgés, semmi csizmadiázás. Hadd lássa ôt mindenki olyannak, amilyen valójában.
+#TEXT	5
+************************************************************
+Ha ezt olvasod, az azt jelenti, hogy a láda tartalma a tiéd.
+Az a végzetes találkozás a szôke kalózzal mindent megváltoztatott. Nem tudom, hogyan fogok most továbblépni, de ez az arany túl sokba került nekem. Túl sok szenvedést okoztam, hogy megszerezzem, bár korábban sosem gondolkodtam ilyen szempontból.
+Most már értem, mire van igazán szükségem.
+Vedd el, ha akarod, de hadd figyelmeztesselek - a kocka el van vetve.
+#TEXT	6
+************************************************************
+1648 szeptembere.
+A kapitány azt mondja, hogy holnap a századunk megrohamozza az erôdöt. Azt mondják, a falak erôsek, az ágyúk ádázak, és a katonák nem olyanok, akik harc nélkül megadnák magukat.
+Ha sikerül élve visszajönnöm, esküszöm, hogy a zsákmány felét az egyháznak adományozom.
+#TEXT	7
+************************************************************
+Soha nem gondoltam volna, hogy ilyen félelmet érzek. Sikerült túlélnem egy átkozott vihart, árulást, egy királynôt, egy királyt, és még az átkozott brit flottát is. Még egy utolsó munka van hátra, és úgy remeg a térdem, mintha ez lenne az elsô alkalom.
+Soha nem ígértem senkinek semmit, de a papír mindent kibír. Én, Sammy, a Striker kapitánya, ünnepélyesen esküszöm: ha visszajövök ide az aranyamért, végleg elhagyom ezt a nyomorult szigetvilágot.
+#TEXT	8
+************************************************************
+Ha mindezt eladtam volna a barátunknak Tortugán, akkor olyan lakomát rendeznék, amirôl még a spanyol kikötôkben is pletykálnának. De nem, ez a tiéd, Charlie, az öregkorodra, a fiatalabb, vadabb énedtôl.
+Ne merészeld az egészet rumra és portói lányokra költeni, hallod, te részeges? Ismerlek téged - ha egyszer a kezedbe kerül néhány dublón, egyenesen beleveted magad az olcsó szeszbe és egy lány ölelésébe.
+Remélem, elég sokáig élsz ahhoz, hogy abbahagyd ezt az átkozott kalózkodást.
+#TEXT	9
+************************************************************
+James, remélem, te találtad meg elôbb ezt a rejtekhelyet. Ez az, amit sikerült ellopnom a holland kereskedô kabinjából, mielôtt a többi csôcselék odaért volna. A felét add Isabelnek, ahogy megbeszéltük. A többit elköltheted magadra.
+#TEXT	10
+************************************************************
+Öten voltunk - most már csak ketten maradtunk. Csak mi ismerjük ezt a helyet.
+Aki nem vitte el ezt a rejtekhelyet, ne feledje: ez az arany nem mulatozásra és mulatozásra való. Hanem a bosszúért. Az egész Trevińo családnak felelnie kell azért, amit velünk tettek.
+Vagy ôk, vagy mi. Nincs más lehetôség.
+#TEXT	11
+************************************************************
+Az arany földbe temetése nem a legjobb módja a vagyon védelmének. De nem tehetek róla, tetszik nekem. Elrejteni, hogy senki se találja meg - ez az igazi izgalom.
+Ha ezt a levelet olvasod, az azt jelenti, hogy vesztettem. Most te jössz.
+#TEXT	12
+************************************************************
+Nem számít, milyen keményen próbálkozom, nem számít, hány ajtón kopogtatok, mennyire könyörgök - mind hiába. A kormányzó nem hajlandó meghallgatni. Azt mondja, nincs pénz egy expedícióra. Két katonát tud nélkülözni, de csak akkor, ha minden költséget magam fedezek. De én nem hátrálok meg! Tudom, hogy a legendás smaragd, a Kormorán Szelleme valahol a sziget dzsungelében van elrejtve. Létezik, és a világnak szüksége van rá. Meg fogom találni, bármi áron. Ez a kincs az elsô befektetésem ebbe a jövôbeli expedícióba.
+#TEXT	13
+************************************************************
+Az inkvizíció egyre jobban figyel engem. Túl veszélyes ezen a szigetcsoporton maradni.
+Kedvesem, ha el kell vinned ezt a kincset, és egyedül kell elhajóznod, ne habozz egy pillanatig sem.
+Szeretlek, és azt akarom, hogy biztonságban legyél. Ne aggódj miattam - befejezem, amire vállalkoztam, és visszatérek a karjaidba.
+#TEXT	14
+************************************************************
+Csempésznek lenni a legjobb munka a világon! Még csak rövid ideje vagyok a Karib-tengeren, de máris aranyban úszom. És egyetlen kormányzó sem mondhatja meg, hogy mit tegyek!
+De nincs olyan, hogy túl sok arany. Addig nem állok le, amíg gazdagabb nem leszek, mint maga a király!
+Akkor majd rájön, hogy mit vesztett. Annak a katonának igaza volt - valaki, akinek van itt tudása, hónapok alatt meggazdagodhat.
+#TEXT	15
+************************************************************
+Remy, szerelmem, apám rájött ránk! Soha nem láttam még ilyen dühösnek. Még engem is megütött, és bezárt a szobámba.
+Drágám, féltelek téged! Megparancsolta a testvéreimnek, hogy keressenek meg és öljenek meg téged. De nekem sikerült egy kicsit elszöknöm, és minden ékszeremet a rejtekhelyünkön hagytam. Kérlek, add el - legyen elég, hogy elmenekülhessünk errôl az elátkozott szigetrôl. Hogy hová, az nem számít, amíg veled lehetek hátralévô életemben.
+Ne aggódjatok miattam. Van nálam egy fiola méreg, és ha valami történik veled, habozás nélkül beveszem. Ha ezen a világon nem lehetünk együtt, talán Isten megkegyelmez, és a mennyben újra egyesít minket.
+Örökké a tiéd,
+Juanita.
+#TEXT	16
+************************************************************
+Azt mondják, a szegénység nemesíti az embert, de csak a könyvekben. A valóságban az igazi, tiszteletre méltó polgár a gazdag. Mindenki más csak a szolgája.
+Még néhány szerencsés találat, és csatlakozom a körükhöz. Hamarosan saját ültetvényem lesz, szolgáim, pazar fogadások és a kormányzó figyelme. Nem lesz többé szûk, dohos kabin egy kereskedelmi hajón.
+Nem szabad elfelejtenem, hogy vegyek egy finom nemesi pengét - új státuszom jelképét.
+#TEXT	17
+************************************************************
+Ha levonom Gaston részesedését a tippért, a legénység fizetését és a kenôpénzt annak a zsíros fôvárosi nagykutyának, még mindig marad egy tekintélyes összeg. Nem tudom, honnan szerzi az információit, de még néhány ilyen jövedelmezô rablás, és máris rendezhetem az adósságaimat. Csak remélem, hogy a Társaság nem fog elkapni, mielôtt visszahajózom Európába. Óvatosnak kell lennem.
+#TEXT	18
+************************************************************
+Henry, egy kicsit több zsákmányhoz jutottunk. Tudod, mit kell vele tenned.
+Csak ne egy bankba tedd az egészet. Ha az ellenség megjelenik a városban, a pénzünknek annyi, és túl öreg vagyok már ahhoz, hogy újra hajóra szálljak késsel a fogam között.
+Intézd el magad - a Bluevelde-ben történtek után Anderson nem volt önmaga. Jó esély van rá, hogy bekattan, és az összes bevételünket az értelmetlen bosszúhadjáratába fekteti. Már százszor elmondtam neki, hogy nem változtathatod meg, amit tettél, de nem hajlandó hallgatni rám.
+Nem bízom benne.
+#TEXT	19
+************************************************************
+Április 13.
+Ma bizarr rendelést kaptam egy portugál fickótól. A portugálok a Karib-tengeren ritkák, mint a tyúkszem, és ez az ember egy csomó bennszülött csecsebecsét kért tôlem. A felajánlott érme jó, úgyhogy elvállalom a munkát.
+Május 2.
+Átadtam az elsô adag amulettet. A fizetés az ígéretnek megfelelôen megtörtént. Ez a vállalkozás elég jövedelmezônek tûnik, úgyhogy folytatom.
+Május 28.
+Második szállítmány teljesítve, a fizetés teljes egészében megtörtént. Fogalmam sincs Merriman valódi származásáról, de a zsebe mélyen zsebében van, és az ambíciói is mélyebbek. 2 hónap múlva találkozunk egy eldugott helyen - a havannai temetôben. Borúsan hangzik, de jobb, mint adóst üldözni a dzsungel sûrûjében. A vállalkozásból származó összes jövôbeli bevételt itt fogjuk elrejteni.
+#TEXT	20
+************************************************************
+Ed, ezzel aranyat találtál! Amit ebben a cache-ben látsz, az még a harmadát sem teszi ki egyetlen útról származó zsákmányomnak. Ha megosztom veletek ezt a kincses térképet, az feldob minket.
+Figyeljetek jól - a Spanish Main-tól északra, Kuba és Florida közé ékelôdve, van egy hihetetlen település, amely számtalan hajóroncs csontjaira épült. Furcsa hajók, némelyik elég régi ahhoz, hogy a mi nagyapáinkat szállította. Mindegyik zátonyra futott és összeolvadt, mint valami ôrült asztalos rémálma. És Ed, emberek élnek ott, valódi, lélegzô lelkek! A hely hemzseg az értéktárgyaktól, és csak élelemért cserébe adják el ôket. Nézz utána a havannai csempészeknek, ha kételkedsz bennem.
+Már meggazdagodtam ebbôl. Jobb, ha sietsz, mielôtt valaki más is kiszagolja.
+#TEXT	21
+************************************************************
+A "Rapid"brigg hajónaplója.
+Június 19.
+Trinidadi vizeken portyázott, keresztezte egy spanyol kereskedelmi konvoj útját könnyû kísérettel. Vérontás nélkül megoldották, szerény zsákmányt szereztek.
+Június 24. 
+Járôrözés a Willemstad-Blueveld kereskedelmi útvonalon. Üres vizek, kivéve egy különös, ismeretlen színekben pompázó hajót, amelyet a horizonton láttak.
+Július 18.
+Vadászat a willemstadi vizek közelében, holland ôrjáratba botlott. Menekülésünk során ismét találkoztunk ugyanazzal a titokzatos hajóval. Azt hittük, hogy csapdába estünk a kalapács és az üllô között, de furcsa módon a hollandok ugyanúgy féltek tôle, mint mi. Elsurrantunk a zûrzavarban.
+Augusztus 3.
+Kezdett gyanússá válni, hogy ez a fantomhajó valahol Curaçao közelében rejtôzik. Ismét kiszúrtam, ezúttal közelebbi felderítéssel. Az elsô tiszt ragaszkodik a portugál jelzésekhez, de én továbbra is szkeptikus vagyok - a portugáloknak semmi keresnivalójuk ezeken a vizeken. Elrendeltem a Main part menti átvizsgálását.
+Szeptember 12.
+Kialakulóban a minta. Ez a hajó nagyjából évente kétszer jelenik meg, több hónapig kísérti a Trinidad, Curaçao és a Main közötti háromszöget, majd eltûnik, mint a reggeli köd.
+Október 8.
+A szellemhajó már nem látható. Úgy tûnik, teljesen elhagyta a karibi vizeket. A legénység belefáradt ebbe az eredménytelen vadászatba, ezért észak felé, a Kis-Antillák felé módosítottuk az irányt. Talán ott méltóbb zsákmányt találunk, nehezebb pénztárcával.
+#TEXT	22
+************************************************************
+Vettem, olvassa el figyelmesen és kövesse pontosan az utasításokat.
+Valami ôrült brit kincsvadász szaglászik a Karib-tengeren. Ha ásóval felszerelt vörös kabátosokat pillantasz meg, fuss, mintha maga az ördög lenne a sarkadban - nem kegyelmeznek a riválisoknak. Ürítsétek ki az összes rejtekhelyünket, gyûjtsetek össze mindent, ami értékes, aztán irány Antigua, ahol az emberünk vár rátok - már intézkedtem. Néhány aranyat elveszítünk a mosás során, de a többit tisztán fogjuk kihozni. Maradjunk a brit területeken - ez a Blackwood nem meri majd ott mutatkozni. Úgy tudsz dolgozni, hogy nem kell a hátad mögé nézned. Fogalmam sincs, milyen haragot táplálnak ellene, de a hajója csak francia kikötôkben köt ki.
+#TEXT	23
+************************************************************
+Hans, ha ezt olvasod, akkor tudd - a bosszúm még itt a Karib-tengeren is beteljesületlen marad. A prédánk nincs itt. Apám kardjának emléke elhomályosul az elmémben, és ellenségünk arca árnyékba borul.
+Sok mindent átvészeltünk már együtt, öreg barátom, de a dühöm még mindig féktelen. Ha elôre láttam volna a következményeket, nagyobb erôvel kerestem volna a békét. Talán kevesebb lélek lépte volna át a végsô küszöböt. Mondd meg Teresának, hogy még mindig szeretem, és megtartottam a fogadalmamat, bár a hazautat nem élem túl. Ebben a ládában van minden, amit vérrel és acéllal szereztem, bár a tétlen kényelem íze már rég hamuvá vált. Talán te még megízlelheted.
+H.
+#TEXT	24
+************************************************************
+René, a Karib-tenger napról napra árulóbbá válik. Hamarosan a mi fajtánk nem talál itt kikötôt. Te és én az elsôk között voltunk, akik megneszeltük Cromwell új hajóhadát, amelyet a koronaékszerük, a Victory vezetett. Céljuk, hogy megszelídítsék ezeket a vad szigeteket, és a hollandokat a helyükre tegyék, de az ösztöneim azt súgják, hogy ennek mindenki számára rossz vége lesz.
+És ez még nem minden - a franciákat nem fogják lekörözni a Csatorna menti szomszédaik. A bresti hajógyárból egy igazi szörnyeteg csúszott ki, amelyet az egyik királyukról kereszteltek el. Nem tudok mindenért kezeskedni, amit hallottam, de egy olyan úszó erôdrôl beszélnek, amilyet még soha nem láttak, és hamarosan elhajózik ezekre a vizekre.
+Itt az ideje, hogy bedobjuk a lapjainkat, úgy vélem. A részed az utolsó vállalkozásunkból ebben a ládában van. Én a hazai partok felé tartok, és erôsen ajánlom, hogy ti is tegyétek ugyanezt.
+Martin.
+#TEXT	25
+************************************************************
+Reid, kiásta az egész történetet errôl az Alonso figuráról. A hidegvérû fattyú Vane kapitány alatt szolgált a "Xenon" fedélzetén, elôtte pedig éveket töltött hivatásos hóhérként. Ez megmagyarázza halálos képességeit és azt a csontig hatoló tekintetét, amely a csontvelôt is megfagyasztja. Azt beszélik, hogy végleg letette a bicskát, de idônként látták a karibi kikötôkben, amint valami fiatal, forrófejû kapitányt követ. Legyetek résen és vigyázzatok magatokra.
+#TEXT	26
+************************************************************
+Lucas, Artois és Mode, ez a láda tartalmazza az elôleget Rodenburg úr legújabb megbízásáért. Egy új játékos a régi Európából sodródott partjainkra, a Gascon névre hallgat. Friss érkezése ellenére máris nagy vihart kavart, és több befolyásos úr érdekeit is sárba tiporta.
+Az a feladatotok, hogy gyûjtsetek össze minden információt róla, és havonta, váltásban tegyetek jelentést. Ugyanaz a találkozási pont, mint korábban.
+Mellékelek három másolatot a külsejérôl és a hajó nevérôl. Leggyakrabban a Kis-Antillák környékén látják.
+#TEXT	27
+************************************************************
+Karl, ez tiszta ôrület. A moszkoviták basse-terre-i rezidenciáján végrehajtott rajtaütésemet már kétszer is meghiúsították, és mindkétszer azért, mert valami részeg bolond úgy döntött, hogy a lehetô legrosszabb pillanatban próbál szerencsét. De ez a legutóbbi fiaskó minden képzeletet felülmúl - miközben a rajtaütés elôkészítését végeztem, valami botcsinálta bennszülött berontott a házba. Épphogy megúsztam bôrrel, a fajankó akkora lármát csapott, hogy az ôrök szinte azonnal ellepték a helyet. Ezeket a problémákat most már neked kell megoldanod. Az elôleged és az elfuserált munkáért járó kártérítés a ládában van.
+#TEXT	28
+************************************************************
+Kedves naplóm, újabb lépést tettem az igazi hatalom felé. Tízezer! Tízezer dublont követelt egy elfeledett dzsungel istensége. Ahhoz képest, hogy halhatatlan, "magát" halandónak nevezi, feltûnôen fukar - számtalan évszázad után azt gondolnád, hogy már kinôtte a halandói pénz iránti igényt.
+Mégis, az alku áll - tízezer érme, és a világ sorsa az én játékszerem lesz! Igazán csekély ár.
+Az egyetlen bosszantó dolog a helyi pénzváltóktól összekaparni ezeket a dublónokat, örökké ingázva a rejtekhelyem és a város között.
+#TEXT	29
+************************************************************
+Vittorio, most fejeztem be életem legfurcsább szerzôdését. Panamában találkoztam egy különös, európai díszbe öltözött bennszülöttel, aki egy marék tiszta dublont fizetett nekem, hogy a személyes inasaként mûködjek. Verseket szavaltam, bort töltöttem neki, és úgy beszéltem hozzá, mint valami kontinentális arisztokrata. Vég nélkül fecsegett elveszett templomokról és eretnek istenekrôl, bár egyébként elég ártalmatlannak tûnt.
+A fizetség fedezi az adósságaimat, és maradt elég, hogy Havannába utazzak, ahogy terveztük.
+#TEXT	30
+************************************************************
+Bárki is találja ezt - adja át Marcusnak, és ne olvassa tovább. Ha Marcus nem jelent neked semmit - tedd vissza és húzz a picsába.
+Marcus, Gaston veszélyes maszkabált játszik. Ô egy felbérelt gyilkos, akinek kétes ügyei vannak Bridgetownban. A legutóbbi razzia során Jimmy és én véletlenül kereszteztük az útját - most Jimmy eteti a cápákat. Itt van a részed egy kis extrával. Spanyol területre megyek, ahová nem tud követni.
+#TEXT	31
+************************************************************
+Mr. Lynch, megtaláltam, amit keresett. Az ön által keresett személy Antiguán tartózkodik, és a jobbkezével együtt bûnös a hazánk elleni súlyos bûncselekményekben. Az Ôfelsége fregattja elleni áruló támadás "Sussex" az ô mûvük volt, nem a hollandoké, ahogyan azt jelentették. Minden bizonyítékot továbbítok a közös kapcsolatunknak, amint megérkezik a fizetésem maradék része.
+#TEXT	32
+************************************************************
+Anna, a kitartásod kifizetôdött - a szökevény alkimista, Gino, tényleg itt bujkál valahol a szigeteken. A Kis-Antillákon kihûlt a nyomuk, de én közelebb vagyok hozzá, mint valaha. Ez a betegség napról napra mélyebben marcangol, de nála van a gyógymód, és semmi sem állíthat meg, amíg meg nem találom.
+Kérlek, fogadd el ennek a ládának a tartalmát hálából és személyes felajánlásként. Tudom, hogy Becky sorsa még mindig haragot ébreszt benned, de add meg nekem legalább az esélyt, hogy jóvátegyem.
+Jack.
+#QUEST PortRoyal_town_Letter
+Port Royal titkai
+
+#TEXT 1
+************************************************************
+Kedvesem, ha ezt olvasod, az azt jelenti, hogy már nem vagyok itt. A betegség szedte áldozatait, és most már csak egy emlék vagyok a múltból. 
+Ez nem valószínû, hogy bármit is változtatna az életeden. Folytatni fogod az utadat, mint mindig: könnyedén, magabiztosan, visszatekintés nélkül. 
+De mielôtt visszatérnél a szkúnárodhoz, és ismét eltûnnél a horizonton túlra, szeretném, ha teljesítenéd a kérésemet. 
+Nem volt senki, akire hagyhatnám mindenemet, így hát azé lesz, aki elsô pillantásra, az elsô szóval, az elsô mosollyal meghódította a szívemet. Arra kérlek, járd végig azokat a helyeket, ahol egykor útjaink keresztezték egymást. Idézd fel azokat a pillanatokat, amelyek kétségtelenül többet jelentettek nekem, mint neked. És ennek az útnak a végén megkapod mindazt, amit az elmúlt évek alatt sikerült megszereznem. Szeretném, ha még egyszer utoljára éreznéd érzéseim teljes erejét, mielôtt örökre elfelejtenél.
+Utóirat: Egy gyertya megmutatja az utat a vágyotthoz. Még akkor is, ha nincs meggyújtva.
+
+#TEXT 2
+************************************************************
+Emlékszel arra az estére, amikor az esô zuhogott az utcán, és te nevetve hátrahajtottad a fejed, és hagytad, hogy az esôcseppek megérintsék az arcodat? Mondtam neked, hogy egy nap elnyerem a szívedet, de te csak vigyorogtál válaszul.
+Aztán beszélgetésünket megzavarta két matróz egy magánhajóról, és nekem kellett a helyükre tennem ôket. Mindig emlékezni fogok arra, ahogy aznap este rám néztél.
+Térj vissza arra a helyre, idézd fel azt a pillanatot. Emlékezz mindenre, ami azon az estén történt.
+Utóirat: A bor, akárcsak az emberek, tud titkot tartani.
+
+#TEXT 3
+************************************************************
+Mindig kegyetlenül ôszinte voltál, talán túlságosan is. A nyerseséged nem egyszer megbántott, de még a legszebb rózsáknak is kell, hogy legyenek tövisei, nem igaz?
+A következô jegyzet egy különleges helyen fekszik - ott, ahol megbeszéltük, hogy találkozunk, de másnap nem jöttél el. Elhajóztál, magamra hagyva az új verseimmel és a vallomással, amit készítettem.
+Késôbb elmagyaráztad, hogy sietve horgonyt kellett vetned egy újabb tengerész babona miatt, amit sosem sikerült teljesen megértenem.
+Utóirat: A legjobb búvóhely az, ahol mindig zajos és zsúfolt, ahol senki sem gondol arra, hogy valami ismeretlen rejtôzhet a közelben.
+
+#TEXT 4
+************************************************************
+Mindig is nevettél, amikor azt mondtam, hogy én leszek neked Kuba kormányzója. Volt némi igazság ezekben a szavakban - bármit hajlandó voltam megtenni érted. De a szerelem nem tûri a kényszert, és bármennyire is igyekeztem, bármennyire is rohantam hozzád, a távolság köztünk változatlan maradt. Most már nem számít. Most már mindez csak a múlt.
+Már csak egy lépés választ el attól, hogy magadhoz vedd, amit én hagytam neked. Minden üzenet tartalmaz egy nyomot. Rakd össze ôket, és tudni fogod, hol keress.
+A sikerhez szükséged lesz egy kulcsra. Ott hagytam, ahol egykor a naplementét néztük, és a világ minden dolgáról beszélgettünk, a malomkövek zúgása és egy öreg szélmalom nyikorgása közepette.
+Ez volt a szükséges óvintézkedés, hogy rajtad kívül senki más ne juthasson el erre a helyre. Mindig is okos és találékony voltál - talán túlságosan is.
+Utóirat: Ahol a hullámok a parthoz szólnak, ott találsz egy ajtót, amely mögött ott rejlik az ajándékomat ôrzô titok.
+
+#TEXT 5
+************************************************************
+Szóval, tessék.
+Nem tudom, miért választottad ezt az utat. Talán csak szórakozásból. Talán szánalomból. De szeretném hinni, hogy legalább egy kicsit többet jelentettem neked, mint a többi hódolód.
+A Szivárvány elvitt téged a horizonton túlra, és én néztem, ahogy a vitorlái elhalványulnak az est aranyló fényében, és csak egy dologban reménykedtem - hogy újra láthatlak.
+Egy olyan szerelemmel, amire sosem volt szükséged, a tiéd az utolsó leheletemig,
+Francis.
+
+#QUEST Villemstad_town_Letter
+Willemstad titkai
+
+#TEXT 1
+************************************************************
+Sikerült megtalálnod ezt az üzenetet, ami azt jelenti, hogy Attano úr jól tanított téged. De nem mindenki képes arra, hogy közülünk valóvá váljon. Be kell bizonyítanod, hogy minden szükséges készséggel rendelkezel ahhoz, hogy a legnehezebb feladatokat is megoldd.
+Nagyon figyelünk téged. Amint teljesíted ezt a feladatot, hagyunk neked egy másikat. Ha minden próbát sikerül teljesítened, akkor közénk fogsz tartozni.
+
+A következô feladat az, hogy megtaláld a legjobb helyet, ahonnan megfigyelheted a Holland Nyugat-indiai Társaság irodáját. Csak éles elmével és éles szemmel lehet kiválasztani a megfelelô kilátópontot. Figyeljetek az utcákra, figyeljetek a város zúgására, és használjátok ki az árnyékokat, hogy észrevétlenek maradjatok.
+
+Ne feledje: az ôrök mindig résen vannak. Azonnal észreveszik, ha valaki ott álldogál és bámulja a bejáratot. Úgy kell kinézned, mint aki a saját, akár tétlen ügyeivel van elfoglalva.
+
+Utóirat: Az út a rejtett dolgokhoz nem mindig nyilvánvaló. Csak az tud végigmenni az úton, aki megérti, hogy még egy meggyújtatlan gyertya is felfedheti a titkot.
+
+#TEXT 2
+************************************************************
+Folytasd az utadat, bizonyítva, hogy nemcsak eszed, hanem ravaszságod is van. Aki azonban egyedül cselekszik, az kudarcra van ítélve. Itt az ideje, hogy találj egy helyet, ahol találkozhatsz a kapcsolatoddal.  
+Olyan hely legyen, amely nem vet fel kérdéseket, de lehetôvé teszi a kíváncsi fülek nélküli beszélgetést. Nagy körültekintéssel kell kiválasztanod, hogy senki ne bújhasson el a közelben, és ne hallgatózzon. Ilyenkor fontosabb, hogy elôbb kiszúrd a leselkedô kémet, mint hogy te magad eltévedj.  
+
+És ne feledd: a külsô zajok - legyen az sirályok kiáltása, a mólónak csapódó hullámok hangja vagy a horgonylánc csattogása - segítenek elrejteni a szavaidat a kíváncsi bámészkodók elôl.  
+
+Utóirat: Egy lámpás még a legmegbízhatóbb rejtekhelyet is felfedheti. De más helyzetben a megfelelô ajtóhoz mutat utat.
+
+#TEXT 3
+************************************************************
+Ezt az üzenetet olvasod, tehát az elôzô feladatot teljesítetted. A jó megfigyelô nemcsak azt tudja, hogyan kell figyelni, hanem azt is, hogyan kell megtalálni azokat a helyeket, ahová elrejthetik az eszközeiket, hogy szükség esetén gyorsan hozzáférjenek.
+Most egy elhagyatott és biztonságos helyet kell találnod - olyat, ahol fel tudsz állítani egy rejtekhelyet. Válassz egy olyan rejtett sarkot, amely nem kelti fel a járókelôk figyelmét vagy kíváncsiságát.
+
+Ne felejtsd el: az ôrök észreveszik azokat, akik keresgélve járkálnak. Mozogj magabiztosan, mintha tudnád, hová mész. Hagyd, hogy a városlakók azt higgyék, hogy csak egy újabb tengerész vagy, aki üzleti ügyben van itt.
+
+Utóirat: A téglaház a szilárdságot és a megbízhatóságot szimbolizálja. Megvédheti a kincseket és a titkokat is a nemkívánatos vendégektôl.
+
+#TEXT 4
+************************************************************
+Sok mindent megtanultál már, de a legfontosabb szabály, hogy mindig legyen egy tartalék terved. Mindenkinek, aki sikeres akar lenni a szakmánkban, rendelkeznie kell egy megbízható titkos rejtekhellyel. Egy otthon, ahol menedéket találhatunk, ahol kivárhatunk, vagy várhatunk az új parancsokra.  
+A következô lépésed az, hogy megtaláld ezt a helyet. El van rejtve a kíváncsi szemek elôl, mégis a körülötte lévô sikátorok elég forgalmasak és zajosak ahhoz, hogy elfedjék a mozgásodat, különösen esténként, amikor a kocsma tele van emberekkel, és aligha léphetsz be a sikátorba anélkül, hogy ne találkoznál verekedéssel.  
+Részeg városlakók és fáradt ácsok pillantanak rád, miközben hazafelé tartanak, nem sejtve semmit, hiszen titkos természetét csak te ismered. Csak a gyûrûvel - a rend iránti hûséged jelképével - juthatsz el oda. Ez lesz a kulcsod is. Keresd a gyûrût a rezidenciával szemben, egy félreesô helyen.  
+Ne feledd: a rejtekhelyeden legyen minden, amire szükséged van: pénz, élelem, gyógyszerek. És ami a legfontosabb - a rejtekhelynek titokban kell maradnia, amit csak ti tudtok.
+  
+Utóirat: A háromemeletes házra nézve a legtöbben csak azt látják, ami a föld fölé emelkedik. De a legtitkosabb általában alatta rejtôzik.
+  
+P.P.S. Ha valóban megérdemled, hogy a testvériségünk tagja légy, akkor képes leszel meglátni az összefüggéseket ott, ahol mások csak értelmetlenséget látnak.
+
+#TEXT 5
+************************************************************
+Átmentél azokon a próbákon, amelyeket csak kevesek kiválasztottjai tudnak leküzdeni. Bebizonyítottad, hogy tudsz figyelni, rejtôzködni, titkos beszélgetéseket folytatni és minden lépésedet megtervezni. Most már közénk tartozol. Ennek a ládának a tartalma a személyes tartalékod egy esôs napra, és ez a szoba a biztonságos rejtekhelyed. Emlékezz erre a pillanatra. Ettôl a naptól kezdve többé már nem csak egy arc vagy a tömegben - a testvériség része vagy.
+
+#QUEST LeFransua_town_Letter
+Le Fransua titkai
+
+#TEXT 1
+************************************************************
+Anne, a bajom és az ihletem...
+Valószínűleg most is a várost járod, engem keresve... Ne fáradj. Már a tengeren vagyok.
+És az istenit, ne hidd, hogy ez könnyű volt nekem. Ezek az idióták nem hagytak választást – vagy elviselnek téged, de nem osztoznak a zsákmányon egy kurvával, vagy osztoznak, de akkor te nem lehetsz a legénység tagja... Dühös voltam, Anne, de vitatkozni egy fegyveres tömeggel rossz ötlet.
+Ha megvontam volna tőlük az információkat, elvesztettem volna a frissen megszerzett kapitányi posztomat. Szóval előbb elnyerem a bizalmukat, aztán visszatérsz. És akkor együtt vezetjük ezeket a kutyákat, esküszöm az utolsó ingemre.
+Hátrahagytam neked mindent, ami nálam volt. Elég, hogy eljuss Nassau-ba... hacsak persze nem döntesz úgy megint, hogy valaki ágyában kötsz ki út közben. A jegyzetek a városban vannak elrejtve. Gyűjtsd össze őket – és tudni fogod, merre indulj. Olyan helyeket választottam, ahová csak neked lenne eszed benézni.
+
+#TEXT 2
+************************************************************
+Igen, igen, „Menj a pokolba, Jack!” – már hallom, ahogy ezt mondod. „Először otthagysz, most meg még ezek után a nyomorult cetlik után is nekem kell rohangálnom?!”
+Mit tehettem volna? Itt senkiben sem lehet megbízni egy rohadt rézpénz erejéig sem. És Barbazon kutyái, mint Marco – két dublonért még az anyjukat is láncon vezetnék. Szóval hidd el, a lehetőségek közül ez volt a legjobb.
+
+P.S. A sziget legmagasabb dombján. De ne siess oda, míg össze nem szedsz mindent, amire szükséged van.
+
+#TEXT 3
+************************************************************
+Nassau minden egyes rohadt percben változik. Amikor visszatérsz, súgd meg a „barátnődnek”, hogy mindent tudni akarok arról, mi történik a városban. Minden pletykát, minden szót.
+Egyelőre – szükséged van egy kulcsra. Jól el van rejtve. Keress egy keskeny átjárót egy hordó mögött – ott, ahol az őrök mászkálnak a fejed felett.
+P.S. Minden, amire szükséged van, ott van az alatt a nevetséges erődítmény alatt. Én jobbat építettem volna.
+
+#TEXT 4
+************************************************************
+Ezzel a cuccal eljutsz Nassau-ba.
+Megoldjuk, Anne. Újra együtt leszünk, mint régen. Hiszem, hogy a sors nekem nagy kapitányi jövőt szánt, és a nagyságot nem adják ingyen. De biztosíthatlak, minden alkalommal, amikor az emberek Jack Rackham kapitány nevét említik, a tiéd is elhangzik majd.
+Várj Nassau-ban. Visszatérek zsákmánnyal. És ha nem, akkor keresned kell valaki mást, aki elviseli a természetedet. Sok szerencsét hozzá.
+
+#QUEST FortFrance_town_Letter
+Saint-Pierre titkai
+
+#TEXT 1
+************************************************************
+Barátom. Sietve kellett elhagynom Saint-Pierre-t. Nem lehetek többé része egy játéknak, amelyben nincs helye a becsületnek, és egy testvér élete csupán csereeszköz. Amíg a Rendben olyanok vannak, akik eladták a lelkiismeretüket, megtagadom, hogy annak nevében szolgáljak.
+Michelt letartóztatták. Pietrót megölték. Tudta, milyen kockázatot vállal, és az utolsó küldetése előtt ránk hagyott mindent, amije volt. Személyesen akartam átadni neked, de nem tudtam.
+Néhány jegyzetet elrejtettem neked olyan helyeken, amelyeket jól ismersz. Bennük rejlenek a nyomok. Gyűjtsd össze őket. Elvezetnek oda, ahol minden kiderül.
+P.S. Minden láda ugyanúgy néz ki. De csak egy rejti azt, amire valóban szükséged van.
+
+#TEXT 2
+************************************************************
+Talán elítélsz majd a távozásomért. De nem volt más választásom. Hűséges maradok testvéreimhez és az Úrhoz életem végéig – de nem azokhoz, akik kapzsiságból megszegték az esküjüket. És soha nem sodornám veszélybe Alíciát. Minden veszteséget megért, hogy megtaláljam életem szerelmét a világ végén!
+P.S. Keresd azt az ajtót, amelyen át be lehet látni.
+
+#TEXT 3
+************************************************************
+Ugyanazt a küldetést kellett volna végrehajtanom, mint Pietrónak. De otthon hárman vártak rám. Zsoldosok. Összecsaptunk, és szerencsém volt, hogy élve kijutottam.
+Mielőtt fegyvert rántottak volna, átadták Levasseur "üdvözletét". Pietro halála és Michel letartóztatása után sejthette, hogy valaki vadászik rá. De azt nem tudhatta, kit küldenek a fejéért – a végrehajtó nevét csak a legmagasabb rangú tisztek és a parancsnok ismerték.
+Árulók a Testvériség soraiban!
+P.S. Menj lefelé. Amíg már egyetlen lépcső sem vezet mélyebbre.
+
+#TEXT 4
+************************************************************
+Amikor minden véget ért, és kiléptem a házból, Valigny várt rám. A vigyora mindent elárult: ő volt az, aki megmutatta a zsoldosoknak a házam. És semmilyen jámbor beszéd nem tud meggyőzni az ellenkezőjéről.
+P.S. Az utad ahhoz a helyhez vezet, amit elhagytam.
+P.S.S. Hogy elérd, ami el van rejtve, szükséged lesz egy kulcsra. Ott keresd, ahol mindannyian erőt és ihletet merítünk, amikor a Teremtőhöz fordulunk.
+
+#TEXT 5
+************************************************************
+Ismered az összeesküvés igazságát. Tudsz a bányáról Saint-Martinon. És "Heinrich" üldözéséről.
+Először bírósági ítélet nélkül vetették tömlöcbe Michelt – tudod, ki adta ki a parancsot. Aztán Pietro meghalt. Most én következem.
+Testvéreink élete ezeknek az embereknek csupán eszköz arra, hogy hatalmon maradjanak és saját problémáikat megoldják. A legjobbjaink meghalnak vagy börtönbe kerülnek. És tudod jól, kinek a munkája ez – a Rend hamarosan zsoldosbandává silányul, éppoly aljas módon, mint Rodenburg hóhérai.
+Hamarosan levelet küldök a Nagymesternek – biztos vagyok benne, hogy megérti a helyzetet, és meghozza az egyetlen helyes döntést.
+Elviszem Alíciát és Port Royalba megyek.
+Az Úr őrizzen téged.
+És ha egyszer újra keresztezik egymást útjaink – remélem, még mindig a barátodnak nevezel majd.
+
+#QUEST LadyBeth_Book
+Blackwood naplója
+#TEXT 1
+***************
+Példás tiszt, Blackwood. Mindenben ilyen rendet tart - a dokumentációtól a harci alakzatokig. Messzire fog jutni," mondta a kormányzó, gratulálva a csempészek elleni sikeres akcióhoz. Elizabeth ott volt a fogadáson - csodálatot láttam a szemében. Úgy tûnik, minden a helyére kerül, pontosan úgy, ahogyan azt megálmodtam, miközben a tengerészeti ranglétrán másztam.
+***************
+Megint felébredtem ugyanabból a rémálomból. Bristol koszos dokkjai, az állandóan részeg apám, üres gyomor... Úgy tûnt, hogy egy tiszti kinevezésnek és a kifogástalan szolgálatnak mindezt el kellett volna törölnie. De nem. Amint meghallottam az öreg ültetvényes visszautasítását - és itt van újra. 'Megérti, hadnagy úr... Azt jelenti...' Mintha megint én lennék az az éhes fiú a dokkokból.
+***************
+A döntés megszületett. "Beth" egy gyönyörû hajó, és a legénység hûséges hozzám. Furcsa - készek elhagyni a szolgálatot, tudván, hogy kincsek után fogok kutatni. 'Soha nem hagyott cserben minket, uram,' mondta Harris. És én sem fogom ôket cserbenhagyni.
+***************
+Sikerült! Nem csak szerencse, hanem a módszer megerôsítése. Térképek, számítások, helyiek kikérdezése - minden mûködik, mint az óramû. A legénység jókedvû, bár látom, hogy néhányan nincsenek hozzászokva a keresés ilyen alapos megszervezéséhez. Kezdem megérteni - ez nem elég.
+***************
+ Második év a "Beth." Elég arany egy cím megvásárlásához. A matrózok divatos jerkákat vásároltak maguknak, mindenkit vendégül látnak a kocsmákban, drága csecsebecsékkel dicsekednek. Örülök nekik - ki tudná nálam jobban, milyen érzés nyomorúságos fillérekért dolgozni.
+Ami engem illet... Még mindig látom ezeket az álmokat. Elizabeth azt írja, hogy várakozik. És az apja még mindig úgy hív engem ", hogy tengerész." Valami többre van szükségem. Valami igazira. Hogy eltereljem a figyelmemet, még egy kis chartát is írtam a kincsvadászatról, és elküldtem Barbadosra. Mit is mondhatnék - a katonák imádnak szabályzatot írni. Én pedig örömmel csinálom.
+***************
+Ma minden megváltozott. Úgy tûnik, olvasni tudok a gondolataimban. "Rossz helyen keres, kapitány. Ezek a szánalmas leletek csupán morzsák és a tehetséged elpazarlása. Az igazi kincsek nem csak gazdagítanak - lehetôvé teszik, hogy megváltoztasd a sorsodat." Azt hittem, jó úton járok. De mekkorát tévedtem.
+***************
+A tehetséges arquebus nem hagy kétséget! Cortez kincsei léteznek, és valahol a Kajmán-szigeteken vannak elásva! Addig nem nyugszom, amíg nem ásom ki az összes ottani földdarabot! Harris hadnagy azt mondja, kezdek megváltozni. Én azt mondom, jó úton járok.
+***************
+Kiássa az egész szigetet. Sok értéket találtam, de nem azt, amit keresek. Kár, ami Harrisszel és a többiekkel történt, de nem engedhetek meg magamnak viszályt a legénységben azok után, amit értük tettem. A túlzott lelkiismeretesség jó a haditengerészetnél, de itt olyan emberekre van szükségem, akik készek bepiszkolni a kezüket. Franciákat kell felvennem a legénységbe, ami személy szerint elég megalázó számomra. Azonban néhány méltó ember talán akadhat ebben a kikötôi csôcselékben. Meg kell változtatnom a megközelítésemet.
+***************
+A kereskedelmi útvonalak tanulmányozása. Minden hajó információforrás... és ingyen munkaerô. A kapitányaik tudnak valamit Cortez kincseirôl, a legénység pedig hozzászokott a munkához és az alacsony fizetéshez. Itt az ideje, hogy határozottabban cselekedjünk. Esküszöm minden viharra, hogy megtalálom ezt az átkozott aranyat!
+***************
+Ma hallottam, hogy matrózok beszélgetnek a kocsmában. "Blackwood most gazdagabb, mint bármelyik ültetvényes," mondták. De én tudom - az egész csak flitter. Az igazi kincs a Kajmán-szigeteken vár. És én meg fogom találni. Még akkor is, ha ezer embert kell oda küldenem ásóval és láncra verve.
+***************
+Valószínûleg ez az expedíció lesz az utolsó. Mostantól az új alapszabály szerint fogok dolgozni - nincs többé toborzás és kocsmákban való idôpocsékolás. Ez a sziget lesz az erôdöm, és a körülötte lévô tér - a táplálékom. Vicces - egykor büszke voltam arra, hogy a társadalom aljáról emelkedtem fel. Most már tudom - még mélyebbre kell süllyedni ahhoz, hogy igazán magasra emelkedj.
+Csak várjatok meg engem.
+
+#QUEST SharlieTutorial_Journal
+Ulysse kapitány naplója
+#TEXT 1
+1654. szeptember 19.  
+A Mare Caribaeum vizére pontosan a menetrend szerint léptünk be. A szél kedvezô, és nincsenek incidensek.
+
+1654. szeptember 20.  
+Váratlan találkozás a tengeren egy kasztíliai kollégával: kiszúrta a karavellát "La Pícara" útban San José felé Dominicán keresztül. Elég messzire tévedtél, Lorenzo.
+
+1654. szeptember 21.  
+A szél továbbra is kedvezô. Paul Lourie matróznak sikerült vitába keverednie a társaival, ezért Alonso most ôt bízza meg a legnehezebb feladatokkal. Nem szabad elfelejtenem, hogy utánanézzek ennek az ügynek.
+
+1654. szeptember 22.  
+A Capsterville kikötôjében bejegyzett Augustine futárhajó "Augustine"vámvizsgálatot végzett a hajónkon. Gyarmati hatóságaink annyira bizalmatlanok egymással, hogy a fôkormányzó nem riad vissza attól, hogy a nagyobb kereskedelmi hajókat még a célkikötôjük elérése elôtt feltartóztassa és átkutassa.
+
+Az utaslista áttekintése után a "Augustine" hadnagya utasított minket, hogy sodródjunk és várjuk meg a további utasításokat. Tekintve, hogy csak egy utasunk van, nem nehéz kitalálni, ki hozta rám ezt a sok bajt.  
+Még jó, hogy nem utasítottak arra, hogy kövessük ôket Capsterville-be, de ez az ostobaság így is egy szép összegbe fog nekem kerülni.  
+Beszélnem kéne azzal a fickóval, és jól megrázni.
+
+#QUEST SharlieTutorial_ListOfSailors
+A pénztáros feljegyzése
+#TEXT 1
+Fizetendô:  
+Alonso Pimentel tengerész: 50 dublon  
+Henry Chaussone matróz: 35 dublont.  
+Sailor Paul Lourie: 25 dubloon (a rohadt idióta majdnem mindent tönkretett!)
+
+Begyûjtendô:  
+Germain Chat tengerésztôl: 7 peso a Chantal macskája által tönkretett papírért.  
+Devegni kapitánytól: 2000 peso orvosi mûszerekért.  
+Charles de Maure utastól: 30 peso egy elrontott hordó friss vízért és 200 peso egy sérült csörlôkötélért.
+
+#TEXT 2
+Fizetendô:  
+Alonso Pimentel tengerész: 50 dublon  
+Henry Chaussone matróz: 35 dublont.  
+Sailor Paul Lourie: 25 dubloon (a rohadt idióta majdnem mindent tönkretett!)
+
+Begyûjtendô:  
+Germain Chat tengerésztôl: 7 peso a Chantal macskája által tönkretett papírért.  
+Devegni kapitánytól: 2000 peso orvosi mûszerekért.  
+Charles de Maure utastól: 30 peso egy elrontott hordó friss vízért.
+
+#QUEST GS_Letters
+Egy belize-i tisztviselô igazi arcát felfedô feljegyzések
+#TEXT 1
+***************
+Flyut "Bat". Elhajózás 14-én. Kereskedelmi út Belize és Port Royal között. Kevés gárdista a fedélzeten. A rakomány cukornád. Az ötödik részemet a szokásos csatornákon keresztül kell leszállítani.
+***************
+Pinnace "Wavebreaker". 26-án indul útnak. Kereskedelmi útvonal Belize és Capsterville között. Értékes ébenfa a fedélzeten. A bolondok a nedvességtôl elrontott puskaporral indulnak. Emlékezzetek a részemre, hogy ne nézzetek szembe a nemtetszésemmel.
+***************
+Galleon "Silver Wind". Horgonyt vetni a 18. napon. Kereskedelmi út Belize és Blueveld között. Emberi rakomány - rabszolgák! Gazdag fosztogatás ez, úgyhogy lássátok, hogy a részem sietve megérkezik hozzám. A bolondok kíséret nélkül hajóznak.
+***************
+
+#QUEST Memento_Book
+Grim naplója
+#TEXT 1
+Új megbízás az Admiralitásból. Szállítás "speciális rakomány" egy ellenséges kolóniára. Mortimer Grim kapitány beleegyezett, hogy bôkezû honorárium ellenében rendelkezésre bocsátja remek briggjét. Jó ember, becsületes tengerész. A legénysége kiváló - tapasztalt, hûséges emberek. Kár, hogy meg kell ôket tévesztenem a rakományt illetôen.
+
+És igen, tudom, hogy ez hogy néz ki. Az angol korona titkos ügynöke, Yorick Graves naplót vezet, amelyben nyíltan megosztja küldetésének titkait. Nem érdekel! Különben ilyen munkával az ember megôrülne. Courtney, ha ezt olvasod - csókold meg a seggem!
+
+Mortimer túl sok kérdést tesz fel a rakományról. Hazudnom kellett - motyogtam valamit a karibi dzsungelben lázas betegeknek szánt gyógyszerekrôl. Természetesen hitt nekem. Grim egy olyan világban él, ahol a Királyi Haditengerészet tisztjének szava még mindig jelent valamit.
+
+A rakományt lezárt ládákban hozták a fedélzetre. A legénység morgolódik - a ládák nehezek, és a szag furcsa. Mortimer ügyesen viccelôdött. Még engem is megnevettetett.
+
+A fenébe! Kiszabadult! Az elsô lázas esetek a legénység körében. Mortimer engedélyt kért, hogy kinyithassa a ládákat, ellenôrizze a gyógyszereket. Hadbírósággal fenyegetôzve meg kellett tiltanom. Gyûlölöm magam ezért.
+
+Isten irgalmazzon, mit tettem... A pestis. A kapitány tegnap meghalt.
+
+Egyedül.
+
+Beszélek Mortimerrel. Vagy inkább azzal, ami megmaradt belôle. Már nem dühös. Megérti. Azt mondja, mindenki kap egy esélyt a megváltásra. De hogyan lehet ezt jóvátenni? Hogyan hozza vissza ezeket az embereket?
+
+Dominika partjainál mentették meg ôket a bennszülöttek. A sámán azt mondta, hogy a halottak tanítsák az élôket. Mit taníthatnék én bárkinek is?
+
+Egy nagy csata zajlott a sziget közelében. A túlélôk partra vetették magukat, készen álltak a mészárlás folytatására, de én megállítottam ôket. Nem tudom, honnan van bennem ez az erô. Nem tudom, hogy élek-e még, vagy ez a túlvilág. De a Memento nem hajózik legénység nélkül. És hajó nélkül nem tudok vezekelni a bûneimért.
+
+Yorick Graves halott, és Mortimer Grimre úgy fognak emlékezni, mint a halálraítéltek megmentôjére. Így kell lennie. Remélem, tetszik az ötlet. Most már a Memento része vagy. A hajó része.
+
+Megmentettünk egy tucat indiánt egy rabszolgatartó raktárából. A dublonok nagy részét odaadtam az embereimnek, a korábbi foglyokat pedig Dominikára viszem.
+
+A sámán letépte a koponyát és elrejtette valahol! Tollas idióta! Levágtam volna az új bicskámmal, ha nincs a törzset meglátogató misszionárius.
+
+Mindent elmondtam neki. Hihetetlen érzés. Most már tudom, mit kell tennem! "Hagyd, hogy a holtak tanítsák az élôket." Természetesen! Nem elég megmenteni az embereket a láncoktól vagy a huroktól. Magától a haláltól is meg kell menteni ôket! És ezt csak úgy tudod megtenni, ha egy másik embert is keresztülviszel azon, amin én. Meghalni és visszatérni. Sajnálom ôket? Persze, hogy sajnálom. De igazam volt. Soha senki nem sajnált engem.
+
+Már találtam egy új koponyát - nem mindenki képes átvészelni a halál próbáját. Így még jobb is. Maradjon Mortimer szemgödre Dominikán, és ne lássa, mi történik a hajóján. Nem értené meg.
+
+#QUEST WildRose_Records
+Excerpts from records of ships wrecked at Justice Island in June 1638
+#TEXT 1
+“...15 June. Brig 'Wrangler'. A ship of His Majesty King Charles I.  
+Driven ashore on the southeast side of the outer ring. Salvaged from the wreck:  
+- 11 casks of Scotch ale  
+- 20 casks of fresh water  
+- 17 crates of provisions  
+- 3 guns, 16-pounders  
+- 18 muskets  
+- 29 pieces of edged weapons  
+- 4 crates of ammunition  
+- 15 rolls of canvas  
+Four survivors:  
+- Joshua Casper (captain)  
+- Teresa Casper  
+- Anthony Young  
+- Pieter Friddiks...”
+
+#QUEST WildRose_Records_2
+Extracts from the church book of Padre Domingo De la Cruz, summer 1638
+#TEXT 1
+“7 June. Funeral service for the newly departed servant of God Maximilian van Ekkus.  
+
+18 June. Funeral service for the newly departed servants of God Anthony Young and Pieter Friddiks.  
+
+25 June. Funeral service for the newly departed servant of God Teresa V. Casper. Prayers for the repose of the servants of God Jean-Pierre R. Sorren and Umberto Rojas (bodies not found).  
+
+5 July. Baptism of the servant of God Thierry G. Legros (born 27 February).  
+
+3 August. Baptism of the servant of God Fabian O. Galard (born 10 June) and the servant of God Mary J. Casper (born 22 June).”
+
+#QUEST WildRose_Records_3
+Certain details from the personal file of Joshua Casper
+#TEXT 1
+Joshua Anthony Casper, born 1586 AD in the city of Portsmouth.  
+In service of His Majesty’s Navy since June 1611.  
+1619: passed exam for lieutenant, appointed to the frigate 'Reversible'...  
+1625: transferred to the frigate 'Triumph' as first officer...  
+1630: appointed captain of the brig 'Cornwall'... Lost at sea with ship and crew in 1638.  
+Unmarried. No children.  
+Exemplary officer, recipient of many awards and commendations, no censures or reprimands recorded...
+
+#QUEST WildRose_Records_4
+Contents of the order to Captain Joshua Casper to deliver wages to Antigua and Providence
+#TEXT 1
+To Captain of the brig 'Cornwall', Joshua Anthony Casper — proceed to the town of Dundalk for unloading of military stores, thereafter cross the Atlantic Ocean to deliver wages to the garrisons of the islands of Antigua and Providence. Upon completion of the task, report to the Governor of Antigua - Thomas Warner, grant the crew leave, then return to England to the home port.  
+Responsibility for preparing the brig 'Cornwall' for the voyage, instructing the crew, loading provisions and the mentioned cargo rests with Captain Joshua Anthony Casper.  
+
+Signed in my own hand,  
+Vice Admiral Robert Bertie, 3rd Earl of Lindsey  
+8 January 1638  
+London, England
+
+#QUEST WildRose_Records_5
+Certain details from the report of Captain Joshua Casper on the Atlantic crossing
+#TEXT 1
+...Departed London, 14 January 1638, course set for Dundalk...  
+...Arrived in Dundalk, 19 January 1638, began unloading military stores...  
+...Departed Dundalk, 21 January 1638, set course southwest...  
+...10 February 1638, off the island of São Miguel (Azores), engaged in battle with the Spanish galleon 'Toro'. Estimated armament: about 50 heavy guns. Having shot away the enemy’s mainmast, I resolved not to endanger the mission entrusted by the Admiralty and withdrew, steering west. Casualties: 32 men, including the following officers: First Mate Rupert Northwood, Lieutenant Edward Matts, Lieutenant Samuel Downes. The dead were buried at sea according to the traditions of His Majesty’s Navy.  
+...Arrived at the island of Antigua, 1 June 1638, delivered to Governor Sir Thomas Warner the chest with wages for the garrison...  
+
+Signed in my own hand,  
+Captain of His Majesty’s ship 'Cornwall', Joshua Anthony Casper  
+2 June 1638  
+St. John’s, island of Antigua
+
+#QUEST WildRose_Records_6
+Letter from Jerome Sauvernier to Fadey the Muscovite
+#TEXT 1
+Monsieur Fadey, I hope this letter finds you in good health. Alas, I cannot say the same of myself. In the “Glass Eye” a violent brawl broke out, in which I was unlucky enough to be caught. A serious wound, though not life-threatening, forces me to remain for some time in this most inhospitable town.  
+As for your commission — I have good news. I have managed to pick up the trail of a man named Rupert Casper. I will give you the details on my return to Basse-Terre. I regret to keep you waiting.  
+Jerome Sauvernier
+
+#QUEST LEDR_Book_1
+Excerpts from the diary of Diego Velázquez de Cuéllar
+#TEXT 1
+"Today we destroyed yet another village of savages. Not one of them withstood our blades. The men who dared resist we killed on the spot, the rest we fettered in chains. Their huts were burned to cinders, the granaries emptied, and all valuables became our spoil. Those who tried to hide their children were slain before the eyes of those who survived. Their tears flowed like rivers, washing the triumph of our standards. These lands now belong to Spain. We brought here order and the will of the Lord, even if by the price of blood."
+
+"My design was fulfilled. The savages came to parley. Their chiefs sat about the fire, naively believing in the possibility of peace. But true peace comes only through blood. We surrounded the hut, barred the door and set it alight. At first there were cries — furious, doomed. Then all fell quiet, only the crackle of the fire breaking the silence. The smell of scorched flesh filled the air like a blessing from the Lord himself. These savages will never raise their heads again."
+
+"Cacique Atuay received his due. I forced him to watch the execution of his people: women were thrown into the flames, youths had their heads cleft, and children screamed in terror. He was bound to a post in the center of the great pyre. I watched as the flame embraced his body. Yet he did not cry out from pain. No, his voice was calm and full of scorn toward us. He begged for nothing, instead hurling curses in our direction. Foolish savage! He believed his words could frighten us. The wind will scatter that delusion along with the ash of his body."
+
+"After that execution I began to notice strange things. By day the monks intoned of God’s grace, but at night shadows would seem to come alive around us. It felt as if the women’s weeping, the children’s screams, and the savages’ curses echoed in my very ears. Last night one of the sailors died. His body was found torn to pieces, as if wild beasts had fallen upon him. I ordered all to pray, but the prayers were useless. Now I am convinced: it is Atuay. He has laid a curse upon us."
+
+"The curse… It will not leave me. It nests within like a serpent coiling round the heart. Each night I see the burning huts, hear the cries and moans of the dead, calling me to answer. Their charred skeletons rise from the ashes, their hollow sockets stare at me with hatred. Even now, in this room, I hear their steps. The doors creak slowly, as if someone enters, yet I see no one. My hands shake so badly the quill scarcely obeys. There is no salvation. The Lord has forsaken me, as I forsook mercy. They are near. Soon they will take me..."

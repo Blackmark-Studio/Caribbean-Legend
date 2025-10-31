@@ -1,9 +1,2 @@
-LAi_fightparams_1
-{
-Уворот от выстрела
-}
-
-LAi_fightparams_2
-{
-Солдатская шляпа разрушена
-}
+LAi_fightparams_1 {Уворот от выстрела}
+LAi_fightparams_2 {Солдатская шляпа разрушена}

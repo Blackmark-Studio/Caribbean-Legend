@@ -962,13 +962,13 @@ Będziesz walczył gorzej, strzelał gorzej, handlował gorzej, itd. Oznacza to,
 W tej chwili możesz sobie pozwolić na tartan lub długą łódź. Ale możesz - i powinieneś - zatrudnić nawigatora. Zazwyczaj można ich spotkać w tawernach wraz z innymi najemnikami.
 Zawsze sprawdzaj najpierw poziom ich umiejętności. Jeśli nie będzie ona wystarczająco wysoka dla twojego statku, doświadczysz tych samych problemów, o których wspomniałem wcześniej.
 ************************************************************
-O tym decyduje ranga statku. Na przykład, mam wystarczające doświadczenie (45 punktów), aby sterować statkiem czwartej rangi bez kar. Brygady, barkentyny, fluity, ksebeki i korwety wymagają więcej, więc nie będę mógł ich prawidłowo wykorzystać. Nie są to nawet okręty drugiej kategorii, takie jak fregaty czy ciężkie galeony.
+Poziom wymaganej nawigacji zależy od klasy statku. Im większy okręt, tym więcej trzeba umiejętności, by nim sterować. Ja, na przykład, opanowałem prowadzenie tylko do czwartej klasy: brygi, szebeki, flauty. Pinasa czy korweta to już nie moja liga, nie wspominając o statkach drugiej klasy, takich jak ciężkie fregaty czy galeony.
 Jeśli chodzi o olbrzymie okręty liniowe i wojenne... tylko eksperci w dziedzinie nawigacji potrafią kontrolować takie potwory. Opanowanie tej umiejętności zajmuje lata. Nie zapominaj też o pieniądzach. Okręt wojenny wraz z załogą może opróżnić twój portfel w ciągu miesiąca, jeśli nie jesteś tak bogaty jak sam król Ludwik.
 Pamiętajcie o zajmowanych stanowiskach oficerskich. Bosman szkoli załogę i sprawia, że abordaż jest skuteczniejszy, intendent zajmie się za ciebie operacjami finansowymi i oczyści twój statek ze szczurów. Chirurg leczy rannych ludzi i zmniejsza liczbę ofiar poległych w bitwie, cieśla naprawia wszelkie uszkodzenia statku, a strażnicy ratują skórę, gdy piraci zaczynają atakować twój pokład. Zwróć uwagę na umiejętności kandydatów i ich reputację.
 ************************************************************
 Każdy mężczyzna ma takie. Pokazuje człowieka takiego, jakim jest naprawdę.
 Jeśli jesteś człowiekiem honoru i zawsze starasz się czynić dobro, to szukaj oficerów, którzy podzielają twoje ideały. A jeśli chcesz zostać piratem... no cóż, już wiesz, o co chodzi. Uczciwi ludzie nie będą pracować dla szumowin; sytuacja odwrotna jest również prawdziwa.
-Porozmawiajmy teraz o typach statków. Istnieją dwa rodzaje: statki handlowe i okręty wojenne. Statki handlowe mają duże ładownie i z reguły są wolniejsze. Okręty wojenne są szybkie i mają silne działa, kosztem ładowności. Barki, fluity i karaki to dobre, solidne statki handlowe. Lugry, brygi i korwety są okrętami wojennymi. Istnieją oczywiście statki hybrydowe, które nadają się zarówno do handlu, jak i do walki: śnieżne, szkunery i galeony. Statki mają również różne układy olinowania; niektóre mają głównie ożaglowanie rejowe, inne zaś ożaglowanie dziobowo-rufowe, które tworzy najlepszy kąt pochylenia dziobu statku.
+Teraz trochę o typach statków. Są statki handlowe i wojenne. Handlowe wyróżniają się pojemnym ładownią, wojenne — liczną załogą i silnym uzbrojeniem. Przykłady handlowych: bark, flauta, pinasa; wojennych: szalupa, sznau, galeon. Są też statki uniwersalne, o zrównoważonych parametrach — lugier, szkuner, brygantyna. Dobre statki rajderskie to bryg, korweta i szebeka. Statki mają również różne układy olinowania; niektóre mają głównie ożaglowanie rejowe, inne zaś ożaglowanie dziobowo-rufowe, które tworzy najlepszy kąt pochylenia dziobu statku.
 Kąt odchylenia dziobu od osi statku decyduje o tym, jak wiatr oddziałuje na olinowanie i na jakim kursie statek będzie mógł osiągnąć największą możliwą prędkość. Gdy już będziesz na morzu, znajdź strzałkę na minimapie. Będzie to twój kąt odchylenia od dziobu.
 ************************************************************
 Następnie Twoja załoga. Ty i twój statek jesteście niczym bez ludzi, którzy go obsługują. Każdy żeglarz musi umieć robić trzy rzeczy: obsługiwać olinowanie, obsługiwać armaty i walczyć. Każdy naród wyróżnia się tylko w jednej z tych trzech dziedzin. Na przykład Hiszpania ma najlepszych wojowników na świecie, a ich strażnicy noszą zbroje, więc kartacze, cięcia i pchnięcia nie są przeciwko nim tak skuteczne. Mówię oczywiście o broni ręcznej; pociski armatnie nie przejmują się pancerzami.
@@ -1325,6 +1325,74 @@ P.P.S. Jeśli naprawdę zasługujesz, żeby być częścią naszego braterstwa, 
 ************************************************************
 Przeszedłeś próby, z którymi radzą sobie tylko nieliczni wybrani. Udowodniłeś, że potrafisz obserwować, ukrywać się, prowadzić sekretne rozmowy i planować każdy swój krok. Teraz jesteś jednym z nas. Zawartość tej skrzyni to twój osobisty zapas na czarną godzinę, a ten pokój to twoja bezpieczna kryjówka. Zapamiętaj tę chwilę. Od dziś nie jesteś już jednym z wielu – jesteś częścią bractwa.
 
+#QUEST LeFransua_town_Letter
+Tajemnice Le Fransua
+
+#TEXT 1
+************************************************************
+Anne, mój kłopot i moja inspiracjo...
+Pewnie teraz błąkasz się po mieście, próbując mnie znaleźć... Nie fatyguj się. Jestem już na morzu.
+I do diabła, nie myśl, że przyszło mi to łatwo. Ci durnie nie dali mi wyboru – albo cię tolerują i nie dzielą się łupem z dziwką, albo się dzielą, ale ciebie w załodze nie ma... Byłem wściekły, Anne, ale kłócenie się z bandą uzbrojonych głupców to zły pomysł.
+Gdybym odciął ich od wskazówek, straciłbym stanowisko kapitana zaraz po jego zdobyciu. Najpierw więc zdobędę ich zaufanie, a potem wrócisz. I wtedy poprowadzimy te psy razem, przysięgam na swoją ostatnią koszulę.
+Zostawiłem ci wszystko, co miałem przy sobie. Wystarczy, żebyś dotarła do Nassau... chyba że znowu postanowisz po drodze wskoczyć komuś do łóżka. Notatki są ukryte w mieście. Zbierz je – a dowiesz się, dokąd iść. Wybrałem miejsca, do których tylko ty miałabyś odwagę zajrzeć.
+
+#TEXT 2
+************************************************************
+Tak, tak, "Spierdalaj, Jack!", – słyszę, jak to właśnie mówisz. "Najpierw mnie zostawiłeś, a teraz mam jeszcze ganiać za jakimiś pieprzonymi kartkami?!"
+A co miałem zrobić? Tu nie ma nikogo, komu można by zaufać choćby zgniłą miedziaką. A pieski Barbazona, takie jak Marco – za dwa dublony przyprowadzą nawet własną matkę na łańcuchu. Uwierz mi więc, spośród wszystkich możliwych decyzji ta była najlepsza.
+
+P.S. Na najwyższym wzgórzu wyspy. Ale nie pędź tam, dopóki nie zbierzesz wszystkiego, czego potrzebujesz.
+
+#TEXT 3
+************************************************************
+Nassau zmienia się z każdą pieprzoną minutą. Gdy wrócisz, szepnij swojej "koleżance", że chcę wiedzieć wszystko, co dzieje się w mieście. Każdą plotkę, każde słowo.
+Na razie – potrzebujesz klucza. Jest dobrze ukryty. Szukaj wąskiego przejścia za beczką – tam, gdzie nad twoją głową kręcą się strażnicy.
+P.S. Wszystko, czego potrzebujesz, znajdziesz pod tym żałosnym fortecznym dziwactwem. Ja zbudowałbym lepiej.
+
+#TEXT 4
+************************************************************
+Z tymi rzeczami dotrzesz do Nassau.
+Poradzimy sobie, Anne. Znów będziemy razem, jak dawniej. Wierzę, że los przeznaczył mi wielkość jako kapitanowi, a wielkość nie przychodzi łatwo. Ale zapewniam cię, za każdym razem, gdy ludzie wspomną kapitana Jacka Rackhama, wypowiedzą też twoje imię.
+Czekaj w Nassau. Wrócę z łupem. A jeśli nie, będziesz musiała znaleźć kogoś innego, kto zniesie twój charakterek. Powodzenia z tym.
+
+#QUEST FortFrance_town_Letter
+Tajemnice Saint-Pierre
+
+#TEXT 1
+************************************************************
+Mój przyjacielu. Musiałem w pośpiechu opuścić Saint-Pierre. Nie mogę już być częścią gry, w której nie ma miejsca na honor, a życie brata to tylko karta przetargowa. Dopóki w Zakonie są tacy, którzy sprzedali swoje sumienie, odmawiam służby dla jego dobra.
+Michela aresztowano. Pietro został zabity. Wiedział, jakie ponosi ryzyko, i przed ostatnią misją przekazał nam wszystko, co miał. Chciałem oddać ci to osobiście, ale nie dałem rady.
+Ukryłem dla ciebie kilka notatek w miejscach, które dobrze znasz. Zawierają wskazówki. Zbierz je. Zaprowadzą cię tam, gdzie wszystko się wyjaśni.
+P.S. Wszystkie skrzynie wyglądają tak samo. Ale tylko jedna zawiera to, czego naprawdę potrzebujesz.
+
+#TEXT 2
+************************************************************
+Możesz mnie potępić za odejście. Ale nie miałem wyboru. Będę wierny braciom i Panu do końca moich dni – ale nie tym, którzy zdradzili przysięgę dla własnej chciwości. I nigdy nie narażę Alicji. Warto było stracić wszystko, by znaleźć miłość życia na końcu świata!
+P.S. Szukaj drzwi, przez które widać wnętrze.
+
+#TEXT 3
+************************************************************
+Miałem wykonać to samo zadanie co Pietro. Ale w domu czekali na mnie. Trzech. Najemnicy. Starliśmy się, i miałem szczęście, że przeżyłem.
+Zanim sięgnęli po broń, przekazali mi "pozdrowienia" od Levasseura. Po śmierci Pietro i aresztowaniu Michela, mógł się domyślić, że ktoś ruszył na jego trop. Ale nie mógł wiedzieć, kogo dokładnie wyślą po jego głowę – nazwisko wykonawcy znali tylko najwyżsi oficerowie i komendant.
+Zdrajcy w szeregach Bractwa!
+P.S. Idź w dół. Tak długo, aż nie zostanie ani jeden schodek prowadzący niżej.
+
+#TEXT 4
+************************************************************
+Kiedy wszystko się skończyło i wyszedłem z domu, spotkałem Valigny'ego. Jego uśmieszek mówił wszystko: to on wskazał najemnikom mój dom. I żadne jego pobożne słowa nie przekonają mnie do zmiany zdania.
+P.S. Twoja droga prowadzi do miejsca, które opuściłem.
+P.S.S. Aby dostać się do tego, co ukryte, będziesz potrzebować klucza. Szukaj go tam, gdzie każdy z nas czerpie siłę i inspirację, zwracając się do Stwórcy.
+
+#TEXT 5
+************************************************************
+Znasz prawdę o spisku. Wiesz o kopalni na Sint Marteen. O polowaniu na "Heinricha".
+Najpierw, bez procesu, uwięziono Michela – wiesz, kto wydał rozkaz. Potem zginął Pietro. Teraz przyszła moja kolej.
+Życie naszych braci to dla tych ludzi tylko narzędzie, by utrzymać władzę i załatwiać swoje sprawy. Najlepsi z nas giną albo trafiają do więzienia. I przez kogoś, kogo dobrze znasz, Zakon wkrótce stanie się bandą najemników – taką samą jak siepacze Rodenburga.
+Wkrótce wyślę list do Wielkiego Mistrza – jestem pewien, że wszystko wyjaśni i podejmie jedyną słuszną decyzję.
+Zabieram Alicję i ruszam do Port Royal.
+Niech Pan cię strzeże.
+I jeśli nasze ścieżki kiedyś znów się przetną – mam nadzieję, że wciąż nazwiesz mnie przyjacielem.
+
 #QUEST LadyBeth_Book
 Dziennik Blackwooda
 
@@ -1433,3 +1501,91 @@ Szaman oderwał czaszkę i gdzieś ją schował! Głupi pióropusz! Rozciąłbym
 Opowiedziałem mu wszystko. Niesamowite uczucie. Teraz wiem, co robić! "Niech martwy uczy żywego." Oczywiście! Mało uratować ludzi od kajdan czy stryczka. Trzeba ich uratować od samej śmierci! A można to zrobić tylko zmuszając kogoś, by przeszedł to, co ja. Umrzeć i wrócić. Żal mi ich? Oczywiście. Ale I. miał rację. Mnie nikt nigdy nie żałował.
 
 Nową czaszkę już znalazłem—nie każdy przechodzi próbę śmierci. Tak nawet lepiej. Niech oczodoły Mortimera zostaną na Dominice i nie widzą, co się dzieje na jego statku. I tak by nie zrozumiał.
+
+#QUEST WildRose_Records
+Fragmenty zapisów o statkach, które rozbiły się przy Wyspie Sprawiedliwości w czerwcu 1638 roku
+#TEXT 1
+„...15 czerwca. Bryg 'Rangler'. Statek Jego Królewskiej Mości Karola I. 
+Przybity do południowo-wschodniej strony zewnętrznego pierścienia. Z pokładu zdjęto:
+- 11 beczek szkockiego ale
+- 20 beczek wody pitnej
+- 17 skrzyń prowiantu
+- 3 działa 16-funtowe
+- 18 muszkietów
+- 29 sztuk broni białej
+- 4 skrzynie amunicji
+- 15 rolek płótna
+Ocalono 4 osoby:
+- Joshua Casper (kapitan)
+- Teresa Casper
+- Anthony Young
+- Peter Friddicks...”
+
+#QUEST WildRose_Records_2
+Wypisy z księgi kościelnej padre Domingo De la Cruz za lato 1638 roku
+#TEXT 1
+„7 czerwca. Przeprowadzono obrzęd pogrzebu zmarłego niewolnika Bożego Maximiliana van Eckusa.
+
+18 czerwca. Przeprowadzono obrzęd pogrzebu zmarłych niewolników Bożych Anthony’ego Younga i Petera Friddicksa.
+
+25 czerwca. Przeprowadzono obrzęd pogrzebu zmarłej niewolnicy Bożej Teresy V. Casper. Odmówiono modlitwy za dusze niewolników Bożych Jean-Pierre’a R. Sorrena i Umberto Rojasa (ciała nie znaleziono).
+
+5 lipca. Przeprowadzono obrzęd chrztu niewolnika Bożego Thierry’ego G. Legro (urodzony 27 lutego).
+
+3 sierpnia. Przeprowadzono obrzęd chrztu niewolnika Bożego Fabiana O. Gallarda (urodzony 10 czerwca) i niewolnicy Bożej Mary J. Casper (urodzona 22 czerwca).”
+
+#QUEST WildRose_Records_3
+Niektóre dane z akt osobistych Joshuay Caspera
+#TEXT 1
+Joshua Anthony Casper urodził się w 1586 roku od R.H. w mieście Portsmouth. 
+W służbie Jego Wysokości od czerwca 1611 roku. 
+W 1619 zdał egzamin na stopień porucznika, mianowany na fregatę 'Obratimy'...
+W 1625 przeniesiony na fregatę 'Triumf' na stanowisko starszego oficera...
+W 1630 mianowany kapitanem brygu 'Cornwall'... Zaginął bez śladu wraz ze statkiem i załogą w 1638 roku.
+Nie był żonaty. Dzieci nie posiadał. 
+Wzorowy oficer, posiadał liczne odznaczenia i wyróżnienia, bez notatek o naganach czy upomnieniach...
+
+#QUEST WildRose_Records_4
+Treść rozkazu dla kapitana Joshuay Caspera w sprawie dostarczenia żołdu na Antigua i Providence
+#TEXT 1
+Kapitanowi brygu 'Cornwall' Joshua Anthony Casper — udać się do miasta Dundalk w celu rozładunku amunicji wojskowej, następnie przekroczyć Ocean Atlantycki w celu dostarczenia żołdu służbom garnizonów wysp Antigua i Providence. Po wykonaniu zadania złożyć raport gubernatorowi wyspy Antigua - Thomasowi Warnerowi, zapewnić odpoczynek załodze statku, po czym wrócić do Anglii do portu macierzystego. 
+Odpowiedzialność za przygotowanie brygu 'Cornwall' do rejsu, przeszkolenie załogi, załadunek prowiantu i wspomnianego ładunku — powierza się kapitanowi Joshua Anthony Casper.
+
+Podpisano przeze mnie osobiście,  
+Wiceadmirał Robert Bertie, 3. hrabia Lindsay  
+8 stycznia 1638 roku  
+Londyn, Anglia
+
+#QUEST WildRose_Records_5
+Niektóre szczegóły raportu kapitana Joshuay Caspera o przeprawie przez Atlantyk
+#TEXT 1
+...Opuszczono Londyn 14 stycznia 1638 roku, obrano kurs na Dundalk...
+...Przybyto do Dundalk 19 stycznia 1638 roku, przystąpiono do rozładunku amunicji wojskowej...
+...Opuszczono Dundalk 21 stycznia 1638 roku, obrano kurs na południowy zachód...
+...10 lutego 1638 roku przy wyspie São Miguel (Azory) weszliśmy w walkę z hiszpańskim galeonem 'Toro'. Uzbrojenie przeciwnika oceniono na około 50 ciężkich dział. Po strąceniu grot-masztu przeciwnika podjęto decyzję, by nie ryzykować realizacji zadania wyznaczonego przez Admiralicję i opuścić pole bitwy, obrano kurs na zachód. Straty wyniosły 32 osoby, w tym następujących oficerów: starszy oficer Rupert Nortwood, porucznik Edward Matts, porucznik Samuel Downs. Zmarłych pochowano w morzu, zgodnie z tradycją ustaloną w Flocie Jego Królewskiej Mości.
+...Przybyto na wyspę Antigua 1 czerwca 1638 roku, przekazano gubernatorowi wyspy sir Thomasowi Warnerowi skrzynię z żołdem dla garnizonu...
+
+Podpisano przeze mnie osobiście,  
+Kapitan statku Jego Królewskiej Mości 'Cornwall' Joshua Anthony Casper  
+2 czerwca 1638 roku  
+Saint Johns, wyspa Antigua
+
+#QUEST WildRose_Records_6
+List Jerome’a Souverniera do Fadeya Moskovita
+#TEXT 1
+Monsieur Fadey, mam nadzieję, że mój list zastanie Pana w dobrym zdrowiu. Niestety, o sobie nie mogę powiedzieć tego samego. W 'Szklanym Oku' doszło do brutalnej bijatyki, w której niestety nie miałem szczęścia uczestniczyć bez uszczerbku na zdrowiu. Poważna rana, która na szczęście nie zagraża mojemu życiu, zmusza mnie do pozostania przez pewien czas w tym niezbyt gościnnym mieście.  
+Jeśli chodzi o Pana zlecenie — mam dobre wieści. Udało mi się odnaleźć ślad człowieka o imieniu Rupert Casper. Szczegóły przekażę po powrocie do Bas-Ter. Przepraszam, że zmuszam Pana do oczekiwania.  
+Jerome Souvernier
+
+#QUEST LEDR_Book_1
+Fragmenty dziennika Diego Velázquez de Cuéllar
+#TEXT 1
+"Dzisiaj zniszczyliśmy kolejną wioskę dzikusów. Żaden z nich nie oprze się naszym klingom. Mężczyzn, którzy odważyli się stawić opór, zabijano na miejscu, resztę zakuto w łańcuchy. Ich chaty spłonęły doszczętnie, spichlerze opustoszały, a wszystko, co miało wartość, stało się naszym łupem. Ci, którzy próbowali ukryć dzieci, zostali zabici na oczach tych, którym udało się przeżyć. Ich łzy płynęły jak rzeki, obmywając triumf naszych sztandarów. Te ziemie należą teraz do Hiszpanii. Przynieśliśmy tu ład i wolę Pana, choćby kosztem krwi."
+
+"Mój plan się wypełnił. Dzicy przyszli na negocjacje. Ich wodzowie siedzieli wokół ognia, naiwnie wierząc w możliwość pokoju. Ale prawdziwy pokój przychodzi tylko przez krew. Otoczyliśmy chatę, podpieraliśmy drzwi i podpaliliśmy ją. Najpierw były krzyki — wściekłe, skazane na zagładę. Potem zapadła cisza, tylko trzask ognia przerwał milczenie. Zapach przypalonego ciała wypełnił powietrze, jak błogosławieństwo Pana samego. Ci dzicy już nigdy nie podniosą głowy."
+
+"Cacique Atuéy spotkał się z zasłużoną karą. Kazałem mu patrzeć, jak wykonywano jego lud: kobiety wrzucano w ogień, młodziom ścinano głowy, a dzieci krzyczały ze strachu. Przywiązano go do pala w centrum wielkiego stosu. Widziałem osobiście, jak płomienie owijały się wokół jego ciała. Ale nie krzyczał z bólu. Nie, jego głos był pełen pogardy dla nas. Nawet umierając znalazł siłę, by pluć przekleństwami w naszą stronę. Głupi dzikus! Wierzył, że jego słowa nas przestraszą. Wiatr rozwieje te brednie wraz z popiołem jego ciała."
+
+"Po tej egzekucji zacząłem dostrzegać coś dziwnego. Za dnia mnisi głosili o łasce Bożej, ale w nocy wokół zaczynały ożywać cienie. Wydawało mi się, że słyszę płacz kobiet, krzyki dzieci i przekleństwa dzikusów w uszach. Ostatniej nocy zginął jeden z marynarzy. Jego ciało znaleziono podrzebane na strzępy, jakby dzikie bestie się na niego rzuciły. Nakazałem wszystkim modlić się, ale modlitwy były daremne. Teraz jestem pewien: to Atuéy. On zesłał na nas klątwę. Ci barbarzyńcy nie wybaczają. Nigdy."
+
+"Klątwa... Nie opuszcza mnie. Gniazduje we mnie jak wąż oplatający serce. Każdej nocy widzę płonące chaty, słyszę krzyki i jęki umarłych, którzy wzywają mnie do rachunku. Ich zwęglone szkielety powstają z popiołów, ich puste oczodoły patrzą na mnie z nienawiścią. Nawet teraz, w tym pokoju, słyszę ich kroki. Drzwi skrzypią powoli, jakby ktoś wchodził, a jednak nikogo nie widzę. Ręce drżą tak mocno, że pióro ledwie słucha. Ratunku brak. Pan mnie opuścił, tak jak ja porzuciłem miłosierdzie. Już są blisko. Wkrótce przyjdą po mnie...

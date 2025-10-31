@@ -1,12 +1,8 @@
-
 new_string
 {
 
 }
-
-Uninstalled_Mods_Founded {
-   Attention !
-   Il n'y a pas assez de mods installés pour jouer sur cette sauvegarde. Vous ne devriez pas jouer ainsi.
-   Installez-les ou chargez une sauvegarde antérieure qui a été faite avant que le mod ne soit installé. Mods :
-   ~
- }
+Uninstalled_Mods_Founded
+{
+Attention !   Il n'y a pas assez de mods installés pour jouer sur cette sauvegarde. Vous ne devriez pas jouer ainsi.   Installez-les ou chargez une sauvegarde antérieure qui a été faite avant que le mod ne soit installé. Mods :   ~
+}

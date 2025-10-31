@@ -35,7 +35,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Affidabile) Ma anche tu devi ammettere, il Signore agisce attraverso le persone. Cosa succede se la zingara è semplicemente uno strumento della Sua volontà? E se il Suo disegno è così profondo che noi, semplici mortali, non possiamo capire? Il Signore opera in modi misteriosi, non è vero?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Trustworthy", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{

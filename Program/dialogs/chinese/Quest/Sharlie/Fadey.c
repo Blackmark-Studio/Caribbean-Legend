@@ -1,3 +1,5 @@
+int iFadeyPseudoGlobal;
+
 // Фадей Московит
 void ProcessDialogEvent()
 {
@@ -21,12 +23,12 @@ void ProcessDialogEvent()
 			{
 				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "ready"))
 				{
-					link.l32 = "法杰伊，您认识一个叫阿隆索的人吗？";
+					link.l32 = "法杰伊, 您认识一个叫阿隆索的人吗? ";
 					link.l32.go = "LoyaltyPack_Fadey_1";
 				}
 				if (CheckAttributeEqualTo(pchar, "questTemp.LoyaltyPack.Fadey", "money") && PCharDublonsTotal() >= 1000)
 				{
-					link.l32 = "法杰伊，我准备买下您的镜甲胸甲。";
+					link.l32 = "法杰伊, 我准备买下您的镜甲胸甲。";
 					link.l32.go = "LoyaltyPack_Fadey_1000";
 				}
 			}
@@ -57,11 +59,11 @@ void ProcessDialogEvent()
 				if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu") && pchar.questTemp.Sharlie.Tichingitu == "dublon")
 				{
 					dialog.text = "啊, 又是你啊, 我亲爱的朋友! 怎么样, 你带来给印第安人的赎金金币了吗? ";
-					if (CheckAttribute(pchar, "questTemp.Sharlie.Tichingitu80"))
+					if (CheckAttribute(npchar, "questTemp.Sharlie.Tichingitu_Skidka"))
 					{
-						if (PCharDublonsTotal() >= 80) // belamour legendary edition
+						if (PCharDublonsTotal() >= 35) // belamour legendary edition
 						{
-							link.l1 = "是的。这是你的八十枚达布隆。";
+							link.l1 = "是的。给您，您的35达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -72,9 +74,9 @@ void ProcessDialogEvent()
 					}
 					else
 					{
-						if (PCharDublonsTotal() >= 100) // belamour legendary edition
+						if (PCharDublonsTotal() >= 40) // belamour legendary edition
 						{
-							link.l1 = "是的。这是一百枚达布隆。";
+							link.l1 = "是的。给您，您的40达布隆。";
 							link.l1.go = "Tichingitu_7";
 						}
 						else
@@ -149,9 +151,9 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar,"questTemp.Mtraxx.MagicBox") && pchar.questTemp.Mtraxx.MagicBox == "FindMoney")
 				{
 					dialog.text = "啊, 原来又是你啊, 我亲爱的朋友! 怎么样, 钱找到了吗? ";
-					if(PCharDublonsTotal() >= 300)
+					if(PCharDublonsTotal() >= 75)
 					{
-						link.l1 = "我已经准备好了, Fadey先生! 这是您的300枚达布隆金币。";
+						link.l1 = "我已经准备好了, Fadey先生! 这是您的75枚达布隆金币。";
 						link.l1.go = "pistols_4D";
 					}
 					if(sti(Pchar.money) >= 40000)
@@ -159,7 +161,7 @@ void ProcessDialogEvent()
 						link.l2 = "我带来了, Fadey先生! 这是您的四万比索。";
 						link.l2.go = "pistols_4P";
 					}
-					if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) 
+					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) 
 					{
 						link.l3 = "不, 只是来看看。我还在找合适的价钱。";
 						link.l3.go = "exit";
@@ -178,7 +180,7 @@ void ProcessDialogEvent()
 				if(CheckAttribute(pchar,"questTemp.Mtraxx.MagicBox") && pchar.questTemp.Mtraxx.MagicBox == "FindMoney")
 				{
 					dialog.text = "啊, 又是你啊, 我亲爱的朋友! 怎么样, 钱找到了吗? ";
-					if(PCharDublonsTotal() >= 300)
+					if(PCharDublonsTotal() >= 75)
 					{
 						link.l1 = "拿上这三百枚达布隆。我会让水手们把这个箱子搬到我的船上。哎呀, 要不是有你, Fadey, 俺可怎么办啊? ! 你都不知道你帮了俺多大的忙! ";
 						link.l1.go = "pistols_5D";
@@ -188,7 +190,7 @@ void ProcessDialogEvent()
 						link.l2 = "拿去, 四万比索。我让水手们把这箱子搬到我的船上。哎呀, 要不是有你, Fadey, 老子可怎么办啊? ! 你根本不知道你帮了我多大的忙! ";
 						link.l2.go = "pistols_5P";
 					}
-					if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+					if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 					{
 						link.l3 = "没呢, 刚过来。我还在凑够钱。";
 						link.l3.go = "exit";
@@ -196,7 +198,29 @@ void ProcessDialogEvent()
 					link.l4 = "抱歉啊, Fadey, 俺现在身无分文。定金你就留着吧, 希望能补偿你这次的花销, 剩下的俺自己想办法。后会有期! ";
 					link.l4.go = "pistols_x";
 					break;
+					
 				}
+				//--> Дикая Роза
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey"))
+				{
+					dialog.text = "哎呀, 您来了, 善人! 一听说您的船在我们港口抛锚, 我就盼着您能来拜访我。";
+					link.l1 = "您好, "+npchar.name+"。 我就不啰嗦了。 我和我的同伴玛丽正在寻找她的父亲, 他二十年前神秘失踪了……";
+					link.l1.go = "WildRose_Fadey_4";
+					break;
+				}
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_2")) 
+				{
+					link.l31 = "关于玛丽的父亲……";
+					link.l31.go = "WildRose_Fadey_return";
+				}
+				if (CheckAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_3"))
+				{
+					dialog.text = "哎呀, "+pchar.name+", 您来了!";
+					link.l1 = "您看起来容光焕发, "+npchar.name+"。 快说说, 查到什么消息了吗? ";
+					link.l1.go = "WildRose_Fadey_16";
+					break;
+				}
+				//<-- Дикая Роза
 				// <-- legendary edition
 				if (CheckAttribute(pchar, "questTemp.Guardoftruth.Baster_church") && pchar.questTemp.Guardoftruth.Baster_church == "seek")
 				{
@@ -404,8 +428,8 @@ void ProcessDialogEvent()
 			SetQuestHeader("Tichingitu");
 			AddQuestRecord("Tichingitu", "1");
 			pchar.questTemp.Sharlie.Tichingitu = "true";
-			AddDialogExitQuestFunction("SetTichingituJail");
-			SetFunctionTimerCondition("FreeTichingituOver", 0, 0, 10, false);
+			AddDialogExitQuestFunction("Tichingitu_SetTichingituJail");
+			SetFunctionTimerCondition("Tichingitu_FreeTichingituOver", 0, 0, 10, false);
 			pchar.questTemp.Sharlie = "takeknife";
 		break;
 		
@@ -441,19 +465,19 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_5":
-			dialog.text = "好吧, 好吧。一百枚金达布隆。这可是我的最终报价了。咱们说的是达布隆, 不是比索。我们的银行家肯定能凑出这么多钱来兑换。";
-			if(PCharDublonsTotal() >= 100) // belamour legendary edition
+			dialog.text = "好吧, 好吧, 40金达布隆。但这是最后的价格。而且必须是达布隆，不是比索。我们的放债人那里肯定有一些。";
+			if(PCharDublonsTotal() >= 40) // belamour legendary edition
 			{
-				link.l1 = "我现在就有你要的数目。拿去吧, 这是一百枚达布隆。";
+				link.l1 = "哦，你远大啊，我的朋友。你说服我了!35金——一文不减!";
 				link.l1.go = "Tichingitu_7";
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("值得信赖", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "值得信赖的Fadey, 听我说……我明白你有多郁闷, 但现在只有我愿意用真金白银补偿你这点麻烦。";
 				link.l2.go = "Tichingitu_7_TW";
 			}
-			else notification("特质检查失败", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "好吧, 我这就去拿你要的东西。";
 			link.l3.go = "Tichingitu_6";
 		break;
@@ -462,7 +486,7 @@ void ProcessDialogEvent()
 			dialog.text = "朋友, 你在这儿前途无量, 老子跟你说。好吧! 八十金币—一分都不能少! ";
 			link.l1 = "";
 			link.l1.go = "Tichingitu_6";
-			pchar.questTemp.Sharlie.Tichingitu80 = true;
+			npchar.questTemp.Sharlie.Tichingitu_Skidka = true;
 		break;
 		
 		case "Tichingitu_6":
@@ -473,12 +497,12 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Tichingitu_7":
-			if(CheckAttribute(pchar,"questTemp.Sharlie.Tichingitu80"))
+			if(CheckAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka"))
 			{
-				RemoveDublonsFromPCharTotal(80);
-				DeleteAttribute(pchar,"questTemp.Sharlie.Tichingitu80");
+				RemoveDublonsFromPCharTotal(35);
+				DeleteAttribute(npchar,"questTemp.Sharlie.Tichingitu_Skidka");
 			}
-			else RemoveDublonsFromPCharTotal(100); // belamour legendary edition
+			else RemoveDublonsFromPCharTotal(40); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "很好。我这就写个便条盖上印章, 稍等片刻……给你。把这个交给指挥官, 你就能把你的印第安人带走了。我是真不明白你为啥这么操心他, 不过那是你的事。你打算干啥, 把他带去假面舞会当展品? 哈哈, 真有意思! ";
 			link.l1 = "上帝无所不见, Fadey。救人一命是高尚的行为。";
@@ -740,8 +764,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "pistols_4":
-			dialog.text = "好吧, 那么……手枪, 还有几支火枪, 每支都要配火药和弹丸……所以……我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付三百枚达布隆。";
-			if(PCharDublonsTotal() >= 300)
+			dialog.text = "好吧, 那么……手枪, 还有几支火枪, 每支都要配火药和弹丸……所以……我不能保证能把你要的东西全都弄齐, 但我一定尽力而为。与此同时, 我需要你先付四万比索的定金, 或者你愿意的话, 也可以付75枚达布隆。";
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "把金币拿去吧, Fadey。正好老子身上现在就有几枚。";
 				link.l1.go = "pistols_4D";
@@ -751,7 +775,7 @@ void ProcessDialogEvent()
 				link.l2 = "俺的达布隆全花光了, 拿比索吧, Fadey。";
 				link.l2.go = "pistols_4P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "我要去找我的银行家, 马上回来! ";
 				link.l3.go = "exit";
@@ -763,7 +787,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_4D":
 			SetFunctionTimerCondition("Mtraxx_MagicBoxready", 0, 0, 1, false);
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Tomorow";
             dialog.text = "明天再来, "+pchar.name+", 我就把你要的物资准备好。";
 			link.l1 = "那我就不打扰了。明天见! ";
@@ -787,7 +811,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5":
 			dialog.text = "小子, 老头我能在这么紧的时间里把你要的东西全都找齐, 算你走运! 你可得感恩戴德! 好了, 最后一笔钱。把之前押金同样数目的钱再给我一份, 然后拿走你的武器吧。";
-			if(PCharDublonsTotal() >= 300)
+			if(PCharDublonsTotal() >= 75)
 			{
 				link.l1 = "拿着这三百枚达布隆。我会让我的人把武器搬到我的船上。要不是有你, Fadey, 老子可怎么办啊? 你根本不知道你帮了我多大的忙! ";
 				link.l1.go = "pistols_5D";
@@ -797,7 +821,7 @@ void ProcessDialogEvent()
 				link.l2 = "拿上四万比索吧。我会让我的人把武器搬到我的船上。要不是你, Fadey, 俺还真不知道该怎么办! 你根本不知道你帮了俺多大的忙! ";
 				link.l2.go = "pistols_5P";
 			}
-			if(PCharDublonsTotal() < 300 || sti(Pchar.money) < 40000) // возможность найти без отказа
+			if(PCharDublonsTotal() < 75 || sti(Pchar.money) < 40000) // возможность найти без отказа
 			{
 				link.l3 = "该死, 我怎么能把钱忘了? 我很快就回来。";
 				link.l3.go = "exit";
@@ -809,7 +833,7 @@ void ProcessDialogEvent()
 		
 		case "pistols_5D":
 			Log_Info("Fadey 的武器已装载到船上");
-			RemoveDublonsFromPCharTotal(300);
+			RemoveDublonsFromPCharTotal(75);
 			pchar.questTemp.Mtraxx.MagicBox = "Full";
 			if(CheckAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves")) DeleteAttribute(pchar,"questTemp.Mtraxx.GiveMeSlaves");
             dialog.text = "帮助有需要的人是荣誉, 帮助付钱的人是乐趣。下次你到巴斯特尔, 记得来找我打个招呼。";
@@ -828,63 +852,206 @@ void ProcessDialogEvent()
 		break;
 		// <-- legendary edition
 		
+		//--> Дикая Роза
+		case "WildRose_Fadey_4":
+			dialog.text = "哎呀, "+pchar.name+", 您可真闯下大事了! 想法当然是好的, 可二十年过去了, 他身上什么事都有可能发生……";
+			link.l1 = "您说得对, 法捷。但我们花了许多时间与精力, 走了很长的路——如今已经快到终点。 我们几乎把他的情况都查清楚了: 姓名、在英王海军的服役经历、所乘战舰的名字…… 以及一些生平细节。 线索断在1638年六月卡托切角的那场海难。";
+			link.l1.go = "WildRose_Fadey_5";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey");
+		break;
+
+		case "WildRose_Fadey_5":
+			dialog.text = "卡托切? 哎呀, 善人, 那种地方就是拿棍子打我也不去——那里满是该死的野人! 若他真在那里没被海水吞没, 那十有八九也成了那些该死土著的盘中餐……";
+			link.l1 = "我们有证据, 他在海难后幸存, 并设法到了古巴。或许他死在那里, 但从我们听到的情况来看——他足够机敏狡猾, 能避开宗教裁判所的爪牙。他多半不会留在古巴, 更可能是在群岛某个殖民地定居下来……";
+			link.l1.go = "WildRose_Fadey_6";
+		break;
+
+		case "WildRose_Fadey_6":
+			dialog.text = "世上奇事不少, 我的朋友, 凡事皆有可能。但我还是不明白, 你为何要向我说这些。";
+			link.l1 = ""+npchar.name+", 您的关系比不少总督还广。我敢肯定, 您手下必有能干的小伙子, 能办一些不复杂的差事……";
+			link.l1.go = "WildRose_Fadey_7_1";
+			link.l2 = ""+npchar.name+", 您是受人尊敬、颇有声望的人。 您在上流社会也有人脉, 生意往来绝不限于瓜德罗普。 既然您不可能事事亲力亲为, 自然要依靠一些可靠的人, 替您跑腿办事……";
+			link.l2.go = "WildRose_Fadey_7_2";
+		break;
+
+		case "WildRose_Fadey_7_1":
+			dialog.text = "您真是聪明又敏锐, "+pchar.name+"。这话您肯定听过不少次。我手下确实有人才, 这是事实。那就说说, 您想让他们去做什么? ";
+			link.l1 = "我想请您派他们去群岛上的几个殖民地, 打听一下关于我们要找的那个人。也许有人听说过他, 甚至见过他。我当然愿意全额承担费用。"+npchar.name+", 这对玛丽至关重要, 而我们已无人可求助。";
+			link.l1.go = "WildRose_Fadey_8";
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+		break;
+
+		case "WildRose_Fadey_7_2":
+			dialog.text = "您真是聪明又敏锐, "+pchar.name+"。这话您肯定听过不少次。我手下确实有人才, 这是事实。那就说说, 您想让他们去做什么? ";
+			link.l1 = "我想请您派他们去群岛上的几个殖民地, 打听一下关于我们要找的那个人。 也许有人听说过他, 甚至见过他。 我当然愿意全额承担费用。"+npchar.name+", 这对玛丽至关重要, 而我们已无人可求助。";
+			link.l1.go = "WildRose_Fadey_8";
+			AddCharacterExpToSkill(pchar, "sneak", 100);
+		break;
+
+		case "WildRose_Fadey_8":
+			dialog.text = "我怎能拒绝像您这样的好朋友呢, "+pchar.name+"? 何况您愿意为这件善事慷慨解囊。 既如此, 请告诉我, 这人叫什么名字? ";
+			link.l1 = "关于名字, 我不太确定。他可能叫鲁珀特·卡斯珀, 也可能叫约书亚·诺斯伍德。";
+			link.l1.go = "WildRose_Fadey_9";
+		break;
+
+		case "WildRose_Fadey_9":
+			dialog.text = "好吧, 若真是叫这名字的人, 我们一定能找到……";
+			link.l1 = "太好了, "+npchar.name+"。那我们谈谈报酬? ";
+			link.l1.go = "WildRose_Fadey_10";
+		break;
+
+		case "WildRose_Fadey_10":
+			dialog.text = "虽说不大愉快, 但也无可避免。";
+			link.l1 = "那我们就开始吧。 他不太可能去西班牙人或荷兰人的地盘。 他在安提瓜留下过痕迹, 那儿没必要去找他, 巴巴多斯大概也是如此。 他可能去了西印度大陆、牙买加 (赶走西班牙人后) 、法国殖民地, 甚至是海盗聚居地。";
+			link.l1.go = "WildRose_Fadey_11";
+		break;
+
+		case "WildRose_Fadey_11":
+			dialog.text = "先说明白, 亲爱的朋友。 我在巴斯特尔住了这么久, 从没听说过有人用过这些名字。 所以在这里找没意义。 在马提尼克和圣克里斯托弗, 我也认识一些英国绅士, 可里头也没有此人。";
+			link.l1 = "也就是说, 搜寻范围大大缩小了。";
+			link.l1.go = "WildRose_Fadey_12";
+		break;
+
+		case "WildRose_Fadey_12":
+			dialog.text = "托尔图加自然得查一查——同一个人我会派去拉维加、普林西比港与太子港。 还会派人去伯利兹和布鲁费尔德, 以及牙买加和伊斯拉特索罗。";
+			link.l1 = "这要花我多少钱? ";
+			link.l1.go = "WildRose_Fadey_13";
+		break;
+
+		case "WildRose_Fadey_13":
+			dialog.text = "这些人个个熟练能干, 所以每人要付150个达布隆。 至于去托尔图加、伊斯帕尼奥拉和古巴的那位, 还得额外奖励50金币。 毕竟要跑四个地方。";
+			link.l1 = "总共800个达布隆……好吧, 咱们结算? ";
+			link.l1.go = "WildRose_Fadey_14";
+		break;
+		
+		case "WildRose_Fadey_14":
+			dialog.text = "正是, 何必再浪费时间? 您身上带够金子了吗, 善人? ";
+			if (PCharDublonsTotal() >= 800)
+			{
+				link.l1 = "当然。来, 请收下。";
+				link.l1.go = "WildRose_Fadey_14_pay";
+			}
+			else
+			{
+				link.l1 = "嗯……我身上没带全额。";
+				link.l1.go = "WildRose_Fadey_14_nopay";
+			}
+		break;
+		
+		case "WildRose_Fadey_14_pay":
+			RemoveDublonsFromPCharTotal(800);
+			dialog.text = "太好了, 我亲爱的朋友! 我立刻写信给我的人, 他们马上就会着手去办。 他们得找合适的船只前往那些地方, 这需要点时间。 而航程如何, 全看风力, 那在主的手中。不过我估计, 一个月后他们就能回来。";
+			link.l1 = "那我们一个月后见, "+npchar.name+"。 再次感谢, 您帮了我们大忙。回头见! ";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap5_Fadey_1");
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_2");
+		break;
+		
+		case "WildRose_Fadey_14_nopay":
+			dialog.text = "我明白, "+pchar.name+", 这可不是小数目。 我会等着您把钱凑齐再来找我。";
+			link.l1 = "我很快就回来。";
+			link.l1.go = "exit";
+			pchar.questTemp.WildRose_Etap5_Fadey_2 = true;
+		break;
+		
+		case "WildRose_Fadey_return":
+			dialog.text = "我记得您的事, 亲爱的朋友。 想必您已经准备好那800个达布隆了? ";
+			if (PCharDublonsTotal() >= 800)
+				{
+					link.l21 = "请收下, 法捷先生! 这是您的金子, 一分不少。";
+					link.l21.go = "WildRose_Fadey_14_pay";
+				}
+			link.l31 = "我还在凑钱, 但放心, 我不会让您等太久。";
+			link.l31.go = "exit";
+		break;
+		
+		case "WildRose_Fadey_16":
+			dialog.text = "成功了, 我的朋友——真是成功了! 我所有人都空手而归, 除了一个。热罗姆·索韦涅去了伯利兹, 他没回来, 但寄来了消息。是对您有利的好消息。";
+			link.l1 = "他给您写了信? 我们能看看吗? ";
+			link.l1.go = "WildRose_Fadey_17";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap5_Fadey_3");
+		break;
+
+		case "WildRose_Fadey_17":
+			dialog.text = "当然, "+pchar.name+"。 我特地替您保存着, 就知道您会想看。来吧, 我的朋友。";
+			link.l1 = "谢谢, 我们现在就读。";
+			link.l1.go = "WildRose_Fadey_18";
+			AddQuestRecordInfo("WildRose_Records_6", "1");
+		break;
+		
+		case "WildRose_Fadey_18":
+			dialog.text = "好久没见您露出这样的笑容了, 善人! ";
+			link.l1 = "那当然了, "+npchar.name+"! 我们等这一刻太久了! 不过您知道吗, 我们一直相信会成功! 我都不知道该怎么感谢您, 您是这一切最重要的一环。";
+			link.l1.go = "WildRose_Fadey_19";
+		break;
+
+		case "WildRose_Fadey_19":
+			dialog.text = "哎呀, 别说这些了, 好小子! 您是我的朋友, 而朋友嘛, 自然该互相帮衬。近期就再来找我吧——我相信热罗姆很快会康复, 然后搭上第一艘船……";
+			link.l1 = "我想我们会加快进度。 我们自己去伯利兹, 与您的信使直接谈谈。 再次谢过, "+npchar.name+"。您无法想象您为我们做了什么! 后会有期! ";
+			link.l1.go = "exit";
+			AddDialogExitQuestFunction("WildRose_Etap5_Fadey_5");
+		break;
+		//<-- Дикая Роза
+
 		//--> LoyaltyPack
 		case "LoyaltyPack_Fadey_1":
-			dialog.text = "我亲爱的朋友阿隆索·皮门特尔，在您船上服役的那位？哈！当然认识。每次您的船进港，这位好汉总要来找我喝一杯。我的朋友所剩无几了，#имя_гг。每一个我都珍惜。";
+			dialog.text = "我亲爱的朋友阿隆索·皮门特尔, 在您船上服役的那位? 哈! 当然认识。每次您的船进港, 这位好汉总要来找我喝一杯。我的朋友所剩无几了, "+pchar.name+"。每一个我都珍惜。";
 			link.l1 = "阿隆索跟我讲了你们战争冒险的精彩故事。他甚至把您的弹药带送给了我。";
 			link.l1.go = "LoyaltyPack_Fadey_2";
 			DelLandQuestMark(npchar);
 		break;
 
 		case "LoyaltyPack_Fadey_2":
-			dialog.text = "我希望并相信最精彩的他都留着没说。但既然阿隆索与您分享了我们的友谊，我也有个稀奇物给您。看看吧！";
-			link.l1 = "这是……盔甲？";
+			dialog.text = "我希望并相信最精彩的他都留着没说。但既然阿隆索与您分享了我们的友谊, 我也有个稀奇物给您。看看吧! ";
+			link.l1 = "这是……盔甲? ";
 			link.l1.go = "LoyaltyPack_Fadey_3";
 		break;
 
 		case "LoyaltyPack_Fadey_3":
-			dialog.text = "唉，朋友。这是我在那场该死的战争中穿过的镜甲仅存的部分。后来在斯摩棱斯克附近，我还得\n"+
-			"无论如何，即使这样它看起来也很华丽，保护性更好。而且我完全穿不下了！";
-			link.l1 = "看起来很异国情调……即使对这里来说也是。华丽的礼物，法杰伊。谢谢您。";
+			dialog.text = "唉, 朋友。 这是我在那场该死的战争中穿过的镜甲仅存的部分。 后来在斯摩棱斯克附近, 我还得\n"+
+			"无论如何, 即使这样它看起来也很华丽, 保护性更好。而且我完全穿不下了! ";
+			link.l1 = "看起来很异国情调……即使对这里来说也是。华丽的礼物, 法杰伊。谢谢您。";
 			link.l1.go = "LoyaltyPack_Fadey_4";
 		break;
 		
 		case "LoyaltyPack_Fadey_4":
-			dialog.text = "对您，我的朋友，只要一千金币。";
+			dialog.text = "对您, 我的朋友, 只要一千金币。";
 			if (PCharDublonsTotal() >= 600)
 			{
 				if (GetSummonSkillFromName(pchar, SKILL_Commerce) >= 60)
 				{
-					link.l1 = "让我纠正你，亲爱的法杰伊。一千金币是全套盔甲的价格。只要胸甲呢？";
+					link.l1 = "让我纠正你, 亲爱的法杰伊。一千金币是全套盔甲的价格。 只要胸甲呢? ";
 					link.l1.go = "LoyaltyPack_Fadey_5";
 					Notification_Skill(true, 60, SKILL_COMMERCE);
 				}
 				else if (PCharDublonsTotal() >= 1000)
 				{
-					link.l1 = "难怪您和阿隆索合得来。拿着您的金子。";
+					link.l1 = "难怪您和阿隆索合得来。 拿着您的金子。";
 					link.l1.go = "LoyaltyPack_Fadey_1000";
 					Notification_Skill(false, 60, SKILL_COMMERCE);
 				}
 			}
-			link.l2 = "哈！您差点骗到我了，法杰伊！也许下次吧。";
+			link.l2 = "哈! 您差点骗到我了, 法杰伊! 也许下次吧。";
 			link.l2.go = "LoyaltyPack_Fadey_MoneyLater";
 		break;
 		
 		case "LoyaltyPack_Fadey_MoneyLater":
-			dialog.text = "当然，不着急。我的镜甲会一直等着您。";
+			dialog.text = "当然, 不着急。 我的镜甲会一直等着您。";
 			link.l1 = "...";
 			link.l1.go = "exit";
 			pchar.questTemp.LoyaltyPack.Fadey = "money";
 		break;
 		
 		case "LoyaltyPack_Fadey_5":
-			dialog.text = "哦，真精明，真机灵！那好吧，六百金币我就割爱了。";
-			link.l1 = "难怪您和阿隆索合得来。拿着您的金子。";
+			dialog.text = "哦, 真精明, 真机灵! 那好吧, 六百金币我就割爱了。";
+			link.l1 = "难怪您和阿隆索合得来。 拿着您的金子。";
 			link.l1.go = "LoyaltyPack_Fadey_600";
 		break;
 		
 		case "LoyaltyPack_Fadey_1000":
-			dialog.text = "好买卖。谢谢您，我把镜甲交给值得信赖的人。照顾好阿隆索，船长。";
+			dialog.text = "好买卖。谢谢您, 我把镜甲交给值得信赖的人。照顾好阿隆索, 船长。";
 			link.l1 = "这到底是谁在照顾谁…";
 			link.l1.go = "LoyaltyPack_Fadey_end";
 			RemoveDublonsFromPCharTotal(1000);
@@ -892,7 +1059,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LoyaltyPack_Fadey_600":
-			dialog.text = "好买卖。谢谢您，我把镜甲交给值得信赖的人。照顾好阿隆索，船长。";
+			dialog.text = "好买卖。谢谢您, 我把镜甲交给值得信赖的人。照顾好阿隆索, 船长。";
 			link.l1 = "这到底是谁在照顾谁…";
 			link.l1.go = "LoyaltyPack_Fadey_end";
 			RemoveDublonsFromPCharTotal(600);
@@ -1324,14 +1491,15 @@ void ProcessDialogEvent()
 		
 		case "relation":
 			rate = wdmGetNationThreat(sti(pchar.GenQuest.FadeyNation));
+			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", false);
+			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
 			if (rate < 2)
 			{
-				dialog.text = "当然。我可是听说过你的那些冒险—或者说倒霉事。你的小麻烦, 交给我吧, 只要金子够多, 什么事都能摆平。三百个金路易, 老子就能把你从锅里捞出来。";
-				if (PCharDublonsTotal() >= 300) // belamour legendary edition
+				dialog.text = "当然。我可是听说过你的那些冒险—或者说倒霉事。你的小麻烦, 交给我吧, 只要金子够多, 什么事都能摆平。" + sTemp + ", 老子就能把你从锅里捞出来。";
+				if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 				{
 					link.l1 = "太好了! 金子在这儿。";
 					link.l1.go = "agree";
-					iTotalTemp = 300;
 				}
 				link.l2 = "那正好是俺去拿金币的时候。";
 				link.l2.go = "exit";
@@ -1340,24 +1508,22 @@ void ProcessDialogEvent()
 			{
 				if (rate < 4)
 				{
-					dialog.text = "当然。你的那些冒险—或者说倒霉事, 俺可是听说过的。你那点小麻烦, 俺能搞定。只要金子给得够, 啥事都能摆平。六百枚金达布隆, 俺就能把你从锅里捞出来。";
-					if (PCharDublonsTotal() >= 600) // belamour legendary edition
+					dialog.text = "当然。你的那些冒险—或者说倒霉事, 俺可是听说过的。你那点小麻烦, 俺能搞定。只要金子给得够, 啥事都能摆平。" + sTemp + ", 俺就能把你从锅里捞出来。";
+					if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 					{
 						link.l1 = "太好了! 金子在这儿。";
 						link.l1.go = "agree";
-						iTotalTemp = 600;
 					}
 					link.l2 = "那正好是俺去拿金币的时机。";
 					link.l2.go = "exit";
 				}
 				else
 				{
-					dialog.text = "是啊, 你现在可是麻烦大了! 这事儿老子也没法全给你摆平。不过, 眼下这场要劈在你罪恶脑袋上的霹雳, 老子倒是能帮你缓一缓。以后只要你有钱有心, 咱们随时还能再行贿一次。七百枚金达布隆, 老子就能开始替你摆平这些烂事。";
-					if (PCharDublonsTotal() >= 700) // belamour legendary edition
+					dialog.text = "是啊, 你现在可是麻烦大了! 这事儿老子也没法全给你摆平。不过, 眼下这场要劈在你罪恶脑袋上的霹雳, 老子倒是能帮你缓一缓。以后只要你有钱有心, 咱们随时还能再行贿一次。" + sTemp + ", 老子就能开始替你摆平这些烂事。";
+					if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 					{
 						link.l1 = "老子受够了那些海盗猎人追着不放。金子给你。";
 						link.l1.go = "agree";
-						iTotalTemp = 700;
 					}
 					link.l2 = "那正好是俺去拿金币的时候。";
 					link.l2.go = "exit";
@@ -1366,7 +1532,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "agree":
-			RemoveDublonsFromPCharTotal(iTotalTemp); // belamour legendary edition
+			RemoveDublonsFromPCharTotal(iFadeyPseudoGlobal); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 			dialog.text = "好吧, 给我十到十五天左右。这期间我会安排见面, 把这些事都处理好。大概两周内就能搞定。";
 			link.l1 = "谢谢你, Fadey! 我会等着的……";
@@ -1376,7 +1542,7 @@ void ProcessDialogEvent()
 		case "agree_1":
 			DialogExit();
             bOk = HasShipTrait(pchar, "trait23");
-            rate = 10 + rand(5);
+            rate = 10 + hrand(5);
             rate = GetIntByCondition(bOk, rate, rate / 2);
 			SetFunctionTimerCondition("ChangeNationRelationFromFadeyComplete", 0, 0, rate, false);
 			pchar.GenQuest.FadeyNation.Rate = GetDiplomatRate(bOk, sti(pchar.GenQuest.FadeyNation));
@@ -1384,8 +1550,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "contraband":
-			dialog.Text = "你干嘛要去惹他们啊, 老兄? 在这片地方, 走私贩可不算最坏的人, 他们还能让你赚上一笔。行吧, 我帮你, 我知道怎么哄他们高兴……七百达布隆, 别讨价还价。";
-			if (PCharDublonsTotal() >= 700) // belamour legendary edition
+			iFadeyPseudoGlobal = DiplomatDublonPayment(rate, "Fadey", true);
+			sTemp = FindRussianDublonString(iFadeyPseudoGlobal);
+			dialog.Text = "你干嘛要去惹他们啊, 老兄? 在这片地方, 走私贩可不算最坏的人, 他们还能让你赚上一笔。行吧, 我帮你, 我知道怎么哄他们高兴……" + sTemp + ", 别讨价还价。";
+			if (PCharDublonsTotal() >= iFadeyPseudoGlobal) // belamour legendary edition
 			{
 				Link.l1 = "好吧, Fadey, 我同意。拿走你的金币吧。";
 				Link.l1.go = "Contraband_Agreed";
@@ -1399,7 +1567,7 @@ void ProcessDialogEvent()
 			Link.l1 = "谢谢! ";
 			Link.l1.go = "exit";
 			ChangeContrabandRelation(pchar, GetIntByCondition(HasShipTrait(pchar, "trait23"), 25, 40));
-			RemoveDublonsFromPCharTotal(700); // belamour legendary edition
+			RemoveDublonsFromPCharTotal(iFadeyPseudoGlobal); // belamour legendary edition
 			PlaySound("interface\important_item.wav");
 		break;
 		

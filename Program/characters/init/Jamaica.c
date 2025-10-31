@@ -192,7 +192,7 @@ int CreateJamaicaCharacters(int n)
 	n = n + 1;
 
     makeref(ch,Characters[n]);
-	ch.name 	= GetCharacterName("Smuggler");	// Контрабандист
+	ch.name 	= GetCharacterName("Smuggler_" + rand(6));	// Контрабандист
 	ch.lastname = "";
 	ch.id		= "PortRoyal_Smuggler";
 	ch.model    = "citiz_29";
@@ -284,7 +284,6 @@ int CreateJamaicaCharacters(int n)
 	SetCharacterPerk(ch, "ShipDefenseProfessional");
 	SetCharacterPerk(ch, "ShipSpeedUp");
 	SetCharacterPerk(ch, "ShipTurnRateUp");
-	SetCharacterPerk(ch, "SwordplayProfessional");
 	SetCharacterPerk(ch, "AdvancedDefense");
 	SetCharacterPerk(ch, "CriticalHit");
 	SetCharacterPerk(ch, "Sliding");

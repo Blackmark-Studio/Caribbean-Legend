@@ -168,7 +168,7 @@ void LAi_type_warrior_CharacterUpdate(aref chr, float dltTime)
 					if(nMainCharacterIndex == sti(chrFindNearCharacters[i].index))
 					{					
 						//нашли ГГ, проверяем, не в сундуке ли.						
-						if (bMainCharacterInBox)
+						if (bMainCharacterInBox && !HasPerk(pchar, "Quiet"))
 						{
 							//Нападаем на новую цель
 							LAi_group_Attack(chr, Pchar);

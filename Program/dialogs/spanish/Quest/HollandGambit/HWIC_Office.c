@@ -353,6 +353,8 @@ void ProcessDialogEvent()
 		dialog.text = "Déjame revisar los registros del manifiesto....Ikema, Immerzeel, Jacobs...Jackson, lo encontré. Hmm, el Kapitein Reginald Jackson está actualmente realizando operaciones de envío regulares entre Port Royal y Philipsburg. Búscalo en esa ruta. Ahora, kapitein, debo advertirte de antemano: si estás planeando alguna travesura, será mejor que no lo hagas, porque ese Kapitein Jackson está bajo nuestra protección. ¿Nos entendemos, mynheer?";
 		link.l1 = "Solo tengo negocios con él. Un trato común. No pretendo hacerle daño de ninguna manera.";
 		link.l1.go = "caleuche_1";
+		DelLandQuestMark(npchar);
+		DelLandQuestMarkToPhantom();
 		break;
 
 	case "caleuche_1":
@@ -362,11 +364,8 @@ void ProcessDialogEvent()
 		break;
 
 	case "caleuche_2":
-		DialogExit();
-		pchar.questTemp.Caleuche.Garpiya = "capitan";
-		pchar.questTemp.Garpiya = "to_portroyal";
-		AddQuestRecord("Caleuche", "19");
-		DoQuestFunctionDelay("Caleuche_CreateGarpiyaInWorld", 1.0);
+			DialogExit();
+			AddDialogExitQuestFunction("Caleuche_PrepareCreateGarpiya");
 		break;
 
 	// новый босс ГВИК

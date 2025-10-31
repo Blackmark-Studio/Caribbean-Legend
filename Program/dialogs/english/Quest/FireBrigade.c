@@ -15,22 +15,22 @@ void ProcessDialogEvent()
 	{
 // ГРИФФОНДОР -->
 		case "FireBrigade_fra":
-			dialog.text = GetSexPhrase("", "A woman... and a captain! Now I've seen everything. Mademoiselle, you are stunning. It's a shame your beauty brought so much sorrow to the Crown of France\n") + "That's how all Poincy's orders end. One in prison. The other—will either join him or fall in battle today.";
+			dialog.text = GetSexPhrase("","A woman... and a captain! Now I've seen everything. Mademoiselle, you are stunning. It's a shame your beauty has brought so much sorrow to the Crown of France\n")+"That's how all of Poincy's orders end. One in prison. The other—will either join him or fall in battle today.";
 			link.l1 = "You're clearly out of place here. Why send such a bright officer and such a fine ship to do a bounty hunter's dirty work?";
 			link.l1.go = "FraOff_1";
 		break;
 
         case "FraOff_1":
-			dialog.text = "Orders aren't up for discussion, they're to be carried out. If every captain chose which orders were worthy—we wouldn't have the Navy.";
+			dialog.text = "Orders aren't up for discussion, they're to be carried out. If every captain chose which orders were worthy—we wouldn't have a Navy.";
 			link.l1 = "Tell that to your men.";
 			link.l1.go = "FraOff_2";
         break;
 
         case "FraOff_2":
-			dialog.text = "You've cornered me and are trying to break my loyalties and my oath. That's a low blow, given the circumstances. Let's finish this with the clash of blades, not words!";
+			dialog.text = "You've cornered me and are trying to break my loyalties and my oath. That's a low blow, given the circumstances. Let's settle this with the clash of blades, not words!";
 			link.l1 = "(Leadership) There's a third way. Stop doing dirty work unworthy of an officer. Join me—and I'll show you a different world.";
 			link.l1.go = "FraOff_HireCheck";
-            link.l2 = "To arms then!";
+            link.l2 = "To arms, then!";
 			link.l2.go = "FraOff_ExitFight";
         break;
 
@@ -51,7 +51,7 @@ void ProcessDialogEvent()
 
         case "FraOff_Sucess":
 			dialog.text = "That's true. And I'm tired of putting up with it. I'm ready to serve under your command, if you promise to leave the French alone.";
-			link.l1 = "I don't know who our paths will cross with, and I can't guarantee anything. But I promise to be reasonable. Welcome to the crew, Officer " + NPChar.name + "!"; // своего имени он вообще-то не называл
+			link.l1 = "I don't know whose paths we will cross, and I can't guarantee anything. But I promise to be reasonable. Welcome to the crew, Officer "+NPChar.name+"!"; // своего имени он вообще-то не называл
 			link.l1.go = "FraOff_Hired";
         break;
 
@@ -71,8 +71,8 @@ void ProcessDialogEvent()
 // ЭЛЬ КАСАДОР -->
 		case "FireBrigade_spa":
             // to_do: чек нуля?
-			dialog.text = "So this is what public enemy looks like. I hope you're proud of that title, pirate. You must have worked hard to earn it\nAccording to the Casa de Contratación, you've taken down " + (Statistic_AddValue(PChar, "spa_AbordShip", 0) + Statistic_AddValue(PChar, "spa_KillShip", 0)) + " ships flying the Spanish Crown's flag. And today, my beautiful ship will join that list" + GetSexPhrase(".","\nWoe to the Spanish fleet! We've suffered from disease, favoritism, treachery... But to be bested by a woman?");
-			link.l1 = " You're the last one standing, your crew is dead. And you are too, you just haven't realized it yet.";
+			dialog.text = "So this is what a public enemy looks like. I hope you're proud of that title, pirate. You must have worked hard to earn it\nAccording to the Casa de Contratación, you've taken down "+(Statistic_AddValue(PChar,"spa_AbordShip",0)+Statistic_AddValue(PChar,"spa_KillShip",0))+" ships flying the Spanish Crown's flag. And today, my beautiful ship will join that list"+GetSexPhrase(".","\nWoe to the Spanish fleet! We've suffered from disease, favouritism, treachery... But to be bested by a woman?");
+			link.l1 = " You're the last one standing, your crew is dead. And you are too, you just haven't realised it yet.";
 			link.l1.go = "Alonso_1";
 			if(Statistic_AddValue(PChar, "spa_AbordShip", 0) + Statistic_AddValue(PChar, "spa_KillShip", 0) < 1)
 			{
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "Alonso_1":
-            dialog.text = "It's a shame de Alba didn't get this assignment. He would've done better. But I'll try to finish the job anyway.";
+            dialog.text = "It's a shame de Alba didn't get this assignment. He would have done better. But I'll try to finish the job anyway.";
             link.l1 = "You're a true son of your homeland. Prepare to meet its heroes, señor.";
             link.l1.go = "Alonso_2";
             link.l2 = "The hunter became the prey. All your speeches were for nothing—it's as old as time.";
@@ -119,7 +119,7 @@ void ProcessDialogEvent()
 // ХИМЕРА -->
         case "FireBrigade_eng":
             // to_do: ты-вы у элен
-            dialog.text = GetSexPhrase(PChar.Name + "! Your name pops up in the reports so often, I feel like we've known each other for ages", "Miss McArthur! Does your patron know what you're up to? Ah, never mind. I'm sure he'll be my next job anyway") + "\nYou're lucky: my bosses love sending urgent orders that contradict the last ones. If I weren't busy cleaning up the old crew from Antigua... Well, never mind. Enough. You're distracting me from real work.";
+            dialog.text = GetSexPhrase(PChar.Name+"! Your name appears in the reports so often, I feel as if we've known each other for ages","Miss McArthur! Does your patron know what you're up to? Ah, never mind. I'm sure he'll be my next job anyway.")+"\nYou're lucky: my bosses love sending urgent orders that contradict the previous ones. If I weren't busy clearing out the old crew from Antigua... Well, never mind. Enough. You're distracting me from real work.";
 			link.l1 = "You're distracting me too.";
 			link.l1.go = "Cortny_ExitFight";
 		break;
@@ -139,16 +139,16 @@ void ProcessDialogEvent()
 		break;
 
         case "Kneepel_1":
-            dialog.text = "Charlie Knippel in the flesh. The best gunner in the English navy!";
+            dialog.text = "Charlie Knippel in the flesh. The best gunner in the English Navy!";
 			link.l1 = "Courtney said he spent a long time tracking you down. What's the story?";
 			link.l1.go = "Kneepel_2";	
 		break;
 
         case "Kneepel_2":
-            dialog.text = "For many years I served a brave English captain named Richard Fleetwood. We fought many battles together, serving our true passion—the English Navy. But one day, everything changed\nThe London brass used us as pawns. We attacked our own. Dirtied our uniforms cleaning up after others. And now it's our turn...";
-			link.l1 = "No judgment here. Life's complicated, especially when you're not your own master.";
+            dialog.text = "For many years I served a brave English captain named Richard Fleetwood. We fought many battles together, serving our true passion—the English Navy. But one day, everything changed.\nThe London brass used us as pawns. We attacked our own. Dirtied our uniforms cleaning up after others. And now it's our turn...";
+			link.l1 = "No judgement here. Life's complicated, especially when you're not your own master.";
 			link.l1.go = "Kneepel_2_good";
-            link.l2 = "So, would you say the shadows of old sins finally caught up with you?";
+            link.l2 = "So, would you say the shadows of old sins have finally caught up with you?";
 			link.l2.go = "Kneepel_2_bad";
 		break;
 
@@ -177,7 +177,7 @@ void ProcessDialogEvent()
 		break;
 
         case "Kneepel_3_good":
-            dialog.text = "There's a noose waiting for me at home, same with the Spanish and Dutch, and I don't care for the French. But you, it seems, need a good gunner. I'm in, Captain. I'll head to the cabin at the first chance. Drop by sometime, we'll have a chat over some shot.";
+            dialog.text = "There's a noose waiting for me at home, same with the Spanish and Dutch, and I don't care for the French. But you, it seems, need a good gunner. I'm in, Captain. I'll head to the cabin at the first chance. Drop by sometime, we'll have a chat over some rum.";
 			link.l1 = "Welcome aboard.";
 			link.l1.go = "Kneepel_Hired";	
 		break;
@@ -224,13 +224,13 @@ void ProcessDialogEvent()
 // МЕЙФЕНГ -->
         case "FireBrigade_hol":
 			dialog.text = "You're not the one who was supposed to make it this far. Meifeng is the Company's fang. My squadron is the avenging blade. You broke both. That... doesn't happen.";
-			link.l1 = "They sent you after me like I was a beast. And I fought—like a cornered animal. When it's fight or die, your mind gets clear. In the end, there's only one question left: Will I make it to the cabin of the legendary xebec—or not.";
+			link.l1 = "They sent you after me as if I were a beast. And I fought—like a cornered animal. When it's fight or die, your mind becomes clear. In the end, there's only one question left: Will I make it to the cabin of the legendary xebec—or not.";
 			link.l1.go = "Longway_1";
 		break;
 
 		case "Longway_1":
-			dialog.text = GetSexPhrase("", "Strange—to see a woman in command. That doesn't happen too. ") + "Were you expecting me?";
-			link.l1 = "Yes. Meifeng is a ship with a history. When I crossed the Dutch, I knew sooner or later they'd send you after me. It would've been an honorable end... but look how things turned out.";
+			dialog.text = GetSexPhrase("","Strange—to see a woman in command. That doesn't happen often. ")+"Were you expecting me?";
+			link.l1 = "Yes. Meifeng is a ship with a history. When I crossed the Dutch, I knew sooner or later they'd send you after me. It would have been an honourable end... but look how things turned out.";
 			link.l1.go = "Longway_2";
 		break;
 
@@ -269,74 +269,26 @@ void ProcessDialogEvent()
 		case "Longway_Success":
             notification("Skill Check Passed", SKILL_LEADERSHIP);
 			dialog.text = "You're not like Rodenburg. He saw me as a tool. You—as an equal. Sacrificing yourself isn't a virtue. I'm ready to hear your terms.";
-			link.l1 = "It's simple. Be my navigator on my flagship. Or, if you wish, you'll get your own ship and sail under my flag. You won't have to clean up after the Company or hide their skeletons in the closet anymore. I'm free—and I offer you that freedom with me.";
+			link.l1 = "It's simple. Be my navigator on my flagship. Or, if you wish, you can have your own ship and sail under my flag. You won't have to clean up after the Company or hide their skeletons in the closet anymore. I'm free—and I offer you that freedom with me.";
 			link.l1.go = "Longway_Success_over";
 		break;
 
 		case "Longway_Success_over":
-			dialog.text = "I've seen much: blood, gold, betrayal. The Company pays—but doesn't respect. Gives a ship—but keeps you chained. You... give a choice. If you keep your word—Longway will no longer be a hunter for someone else's will. He'll be a man. A captain. Or—stand beside a captain who knows where to sail.";
-			link.l1 = "Welcome to the crew, Navigator Longway..";
+			dialog.text = "I've seen much: blood, gold, betrayal. The Company pays—but doesn't respect. Gives a ship—but keeps you chained. You... offer a choice. If you keep your word—Longway will no longer be a hunter for someone else's will. He'll be a man. A captain. Or—stand beside a captain who knows where to sail.";
+			link.l1 = "Welcome to the crew, Navigator Longway.";
 			link.l1.go = "Longway_Hired";
 		break;
 
 		case "Longway_Hired":
-            sld = GetCharacter(NPC_GenerateCharacter("Longway_FP", "Longway", "man", "Longway", 20, HOLLAND, -1, false, "quest"));
-			sld.name = StringFromKey("QuestsUtilite_42");
-			sld.lastname = StringFromKey("QuestsUtilite_43");
-			sld.greeting = "Longway";
-			sld.Dialog.Filename = "Quest\HollandGambit\Longway.c";
-			sld.Dialog.currentnode = "Longway_officer";
-			sld.rank = 20;
-			sld.money = 5000;
-			SetSelfSkill(sld, 45, 45, 45, 40, 50);
-			SetShipSkill(sld, 50, 20, 25, 25, 65, 20, 20, 50, 15);
-			SetSPECIAL(sld, 8, 9, 6, 5, 10, 7, 5);
-			LAi_SetHP(sld, 250, 250);
-			SetCharacterPerk(sld, "Energaiser");
-			SetCharacterPerk(sld, "AdvancedDefense");
-			SetCharacterPerk(sld, "ShipSpeedUp");
-			SetCharacterPerk(sld, "ShipTurnRateUp");
-			SetCharacterPerk(sld, "StormProfessional");
-			SetCharacterPerk(sld, "WindCatcher");
-			SetCharacterPerk(sld, "SailsMan");
-			SetCharacterPerk(sld, "SailingProfessional");
-            sTemp = GetGeneratedItem("blade_41");
-            GiveItem2Character(sld, sTemp);
-            EquipCharacterbyItem(sld, sTemp);
-            sTemp = GetCharacterEquipByGroup(NPChar, GUN_ITEM_TYPE);
-            if(sTemp != "")
-            {
-                GiveItem2Character(sld,   sTemp);
-                EquipCharacterbyItem(sld, sTemp);
-                sTemp = LAi_GetCharacterBulletType(NPChar, GUN_ITEM_TYPE);
-                LAi_SetCharacterBulletType(sld, sTemp);
-                LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, sTemp);
-                sTemp = LAi_GetCharacterGunpowderType(NPChar, GUN_ITEM_TYPE);
-                if(sTemp != "") AddItems(sld, sTemp, 30 + rand(20));
-            }
-			TakeNItems(sld, "potion2", 1);
-            sld.quest.meeting = true;
-			sld.quest.OfficerPrice = sti(pchar.rank)*200; // Артефакт
-			sld.OfficerWantToGo.DontGo = true;
-			sld.loyality = MAX_LOYALITY;
-			sld.OfficerImmortal = true;
-			sld.Health.HP    = 60.0;
-			sld.Health.maxHP = 60.0;
-            sld.CanTakeMushket = true;
-			SetCharacterPerk(sld, "ShipEscape");
-			AddPassenger(pchar, sld, false);
-			SetCharacterRemovable(sld, true);
-			sld.Payment = true;
-			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
+			sld = InitLongwayFP("Longway_FP", NPChar);
+			NPChar.lifeday = 0;
+			LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
+			LAi_SetActorType(NPChar);
+			LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
 
-            NPChar.lifeday = 0;
-            LAi_group_MoveCharacter(NPChar, LAI_GROUP_PLAYER);
-            LAi_SetActorType(NPChar);
-            LAi_ActorGoToLocation(NPChar, "reload", "reload1", "none", "", "", "", -1);
-
-            AddDialogExitQuest("pchar_back_to_player");
-            PostEvent("LAi_event_boarding_EnableReload", 5000);
-            DialogExit();
+			AddDialogExitQuest("pchar_back_to_player");
+			PostEvent("LAi_event_boarding_EnableReload", 5000);
+			DialogExit();
 		break;
 	}
 }

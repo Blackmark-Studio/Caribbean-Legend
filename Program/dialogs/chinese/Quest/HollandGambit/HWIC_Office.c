@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 						link.l1.go = "silk_info";
 						break;
 					}
-					else notification("声誉太低! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+					else Notification_Reputation(false, 61, "low");
 				}
 			}
 			dialog.text = "日安, " +GetFullName(pchar)+ "船长! 我能为你做什么? ";
@@ -491,14 +491,14 @@ void ProcessDialogEvent()
 				dialog.text = "我欣赏你的商业态度, 并愿意考虑你的请求。 也许我们可以把数量增加五倍。 然而, 组织这样的供应需要大量资源, 我们需要扩大存储空间, 加强安全保障, 并确保可靠的运输路线。 既然这对你也有好处, 我建议我们共同承担这些费用。 ";
 				link.l1 = "这一切听起来很合理, 你认为需要多少资金来支付这些费用? ";
 				link.l1.go = "UpgradeSilk_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "我理解你想增加供应的兴趣, 但在这个阶段我很难同意这样的改变。 我不怀疑你对发展的渴望, 但这种交易需要更多的贸易事务经验和对自己行为的信心。 我建议你增加谈判艺术的知识, 然后带着更具体的提议回来。 当你准备好时, 我很乐意加强我们的合作。 ";
 				link.l1 = "嗯... 好吧, 我以后再谈这个。 ";
 				link.l1.go = "exit";
-				notification("技能检查失败 (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 			NextDiag.TempNode = "HWIC_Boss";
 		break;

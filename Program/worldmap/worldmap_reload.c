@@ -297,23 +297,23 @@ bool WdmAddEncountersData()
     int numLoadEnc = 0;
     object LoadEnc;
 
-	//Перебираем все энкоунтеры карты
+    int BattleSecond = -1;
 	for(i = 0; i < numEncounters; i++)
 	{
-		//Получим информацию о данном энкоунтере
-        if(numShips >= MAX_SHIPS_LOAD_FROM_WDM) break;
+        if(numShips >= MAX_SHIPS_LOAD_FROM_WDM && BattleSecond == -1) break;
 		if(wdmSetCurrentShipData(iSort[i]))
 		{
-			//Если не активен, то пропустим его
-			if(MakeInt(worldMap.encounter.select) == 0) continue;
-			//Добавляем информацию об морских энкоунтере
+			if(worldMap.encounter.select == "0") continue;
 			string encStringID = worldMap.encounter.id;
 			if(encStringID == "") continue;
 			encStringID = "encounters." + encStringID + ".encdata";
 			if(!CheckAttribute(&worldMap, encStringID)) continue;
 			int mapEncSlot = FindFreeMapEncounterSlot();
 			if(mapEncSlot < 0) continue;
-			ref mapEncSlotRef = GetMapEncounterRef(mapEncSlot);
+            ref mapEncSlotRef = GetMapEncounterRef(mapEncSlot);
+
+            if (BattleSecond != -1) BattleSecond = -1;
+            else BattleSecond = worldMap.encounter.attack;
 
             bool bTaskLock;
 			aref encDataForSlot;

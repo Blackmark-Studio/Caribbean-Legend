@@ -246,21 +246,26 @@ void wdmRecalcReloadToSea()
         }
     }
 
+    int BattleSecond = -1;
     bool bTargetInBattle = false;
 	for(i = 0; i < numEncounters; i++)
 	{
-        if(numShips >= MAX_SHIPS_LOAD_FROM_WDM) break;
+        if(numShips >= MAX_SHIPS_LOAD_FROM_WDM && BattleSecond == -1) break;
 		if(wdmSetCurrentShipData(iSort[i]))
 		{
-			if(MakeInt(worldMap.encounter.select) == 0) continue;
+			if(worldMap.encounter.select == "0") continue;
 			isShipEncounterType++;
+
+            // Если битва, то запрещаем break по MAX_SHIPS_LOAD_FROM_WDM для следующей итерации
+            // Текущая логика создания энок гарантирует, что второй участник битвы будет в iSort[i+1]
+            if (BattleSecond != -1) BattleSecond = -1; // Тут запрет снимется
+            else BattleSecond = worldMap.encounter.attack;
 
 			string encID = worldMap.encounter.id;
             if (i == 0 && iMapTarget >= 0)
             {
                 sTargetId = encID;
-                if(sti(worldMap.encounter.attack) != -1)
-                    bTargetInBattle = true;
+                if(BattleSecond != -1) bTargetInBattle = true;
             }
 
 			aref rEncounter;
@@ -399,21 +404,11 @@ void wdmRecalcReloadToSea()
 			{
 				switch(sti(rEncounter.Nation))
 				{		        
-					case ENGLAND:		
-						totalInfo = totalInfo + XI_ConvertString("under english flag");
-					break;
-					case FRANCE:		
-						totalInfo = totalInfo + XI_ConvertString("under french flag");
-					break;
-					case SPAIN:		
-						totalInfo = totalInfo + XI_ConvertString("under spanish flag");
-					break;
-					case HOLLAND:		
-						totalInfo = totalInfo + XI_ConvertString("under dutch flag");
-					break;
-					case PIRATE:		
-						totalInfo = totalInfo + ".";
-					break;
+					case ENGLAND: totalInfo = totalInfo + XI_ConvertString("under english flag"); break;
+					case FRANCE:  totalInfo = totalInfo + XI_ConvertString("under french flag");  break;
+					case SPAIN:   totalInfo = totalInfo + XI_ConvertString("under spanish flag"); break;
+					case HOLLAND: totalInfo = totalInfo + XI_ConvertString("under dutch flag");   break;
+					case PIRATE:  totalInfo = totalInfo + "."; break;
 				}
 			}
 

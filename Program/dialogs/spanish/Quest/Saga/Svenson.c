@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 				dialog.text = "Me alegra que el guayacán sea de tu agrado, " + sStr + ". Aumentar los envíos no es problema, pero hay un 'pero', ya sabes. Con el aumento de volumen aparece también un rastro que puede atraer atención indeseada, especialmente de las autoridades inglesas. Pero si añadimos al negocio manos confiables, oídos fieles y personas en la residencia que ayuden a permanecer en las sombras, todo se puede arreglar. Claro que no saldrá barato - tres mil doblones para evitar el tesoro de la ciudad y las necesidades de Inglaterra. Entonces podré suministrarte cinco veces más. ¿Qué dices?";
 				link.l1 = "¿Tres mil doblones? ¡Jan, eso es un robo a plena luz del día! ¿No podríamos arreglárnoslas con menos gastos? ¿Quizás haya una manera de resolver el asunto sin tales sumas fabulosas?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Buena idea, pero debo decir que para tales volúmenes en asuntos comerciales se necesita un poco más de experiencia y habilidad. Si te apresuras, hay más riesgo que beneficio. Hagamos esto: adquiere un poco más de experiencia, y cuando estés list"+GetSexPhrase("o","a")+" para lotes más grandes, vuelve. Entonces discutiremos todo adecuadamente.";
 				link.l1 = "Hmm... Está bien. Volvamos a esta conversación más tarde.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

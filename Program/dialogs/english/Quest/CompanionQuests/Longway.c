@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "And how did you manage to pull it off, Longway?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 61, "low");
 			}
 		break;
 		
@@ -5008,14 +5008,14 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "Medic"))
 				{
-					notification("Excellent Health", "Medic");
+					Notification_Perk(true, "Medic");
 					dialog.text = "(Excellent Health) Ugh... Looks like you weren't lying, Charles, alright...";
 					link.l1 = "I have no need to deceive you, my dear...";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_18";
 				}
 				else
 				{
-					notification("Perk check failed", "Medic");
+					Notification_Perk(false, "Medic");
 					dialog.text = "Charles, are you... are you serious?! What was that?";
 					link.l1 = "Oh, that heat is doing me no good. Ahem.";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_19";

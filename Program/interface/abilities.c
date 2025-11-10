@@ -335,8 +335,7 @@ void SetVariable()
 		 CreateString(true,"lifepath",
 										"LifePath=" + GEN_GetArchetype(xi_refCharacter, 0) +
 										" Hobby=" + GEN_GetArchetype(xi_refCharacter, 1) +
-										" var=" + GetAttributeOrDefault(xi_refCharacter, "personality.templateVar", "0") +
-										,
+										" var=" + GetAttributeOrDefault(xi_refCharacter, "personality.templateVar", "0"),
 										"INTERFACE_ULTRASMALL",COLOR_NORMAL,430,1000, SCRIPT_ALIGN_LEFT,1.0);
 		}
 
@@ -667,7 +666,7 @@ void FillSkillTables()
 	GameInterface.TABLE_SPECIAL.select = 0;
 	GameInterface.TABLE_SPECIAL.hr.td1.str = "";
 
-	for (i=0; i<=7; i++)
+	for (i=1; i<=7; i++)
 	{
 	    row = "tr" + i;
 	    skillName = GetSkillNameByTRIdx("SPECIALType", i);
@@ -1204,7 +1203,7 @@ void SetPerksTabMode(int nMode)
 	if (nMode == 2) start = 8; 
 	for (int i = 0; i < 8; i++)
 	{
-		string treeName = DLGO(GetConvertStrB("perkTree" + GetTreeByIndex(i+start), "AbilityDescribe.txt"), &NullCharacter);
+		string treeName = DLG_Convert("perkTree" + GetTreeByIndex(i+start), "AbilityDescribe.txt", &NullObject);
 		SetFormatedText("TEXT_PERK_TREE_" + (i+1), treeName);
 	}
 

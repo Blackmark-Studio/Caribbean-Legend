@@ -1687,14 +1687,14 @@ void ProcessDialogEvent()
 				dialog.text = "Freut mich, dass dir das Pockholz gefällt, " + sStr + ". Die Lieferungen zu vergrößern ist kein Problem, aber es gibt da ein 'Aber', verstehst du. Mit steigenden Mengen entsteht auch eine Spur, die unerwünschte Aufmerksamkeit auf sich ziehen kann, besonders von den englischen Behörden. Aber wenn wir zuverlässige Hände, treue Ohren und Leute in der Residenz hinzufügen, die uns helfen, im Schatten zu bleiben, kann alles arrangiert werden. Allerdings wird das nicht billig - dreitausend Dublonen, um die Stadtkasse und die Bedürfnisse Englands zu umgehen. Dann kann ich dir auch fünfmal mehr liefern. Was sagst du dazu?";
 				link.l1 = "Dreitausend Dublonen? Jan, das ist ja Raubüberfall am helllichten Tag! Könnten wir nicht irgendwie mit geringeren Kosten auskommen? Vielleicht gibt es einen Weg, die Sache ohne solch märchenhafte Summen zu regeln?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Gute Idee, aber ich muss sagen, für solche Mengen im Handelsgeschäft braucht man etwas mehr Erfahrung und Geschick. Eile birgt mehr Risiko als Nutzen. Machen wir es so: Sammle noch etwas mehr Erfahrung, und wenn du für größere Partien bereit bist, komm wieder. Dann besprechen wir alles ordentlich.";
 				link.l1 = "Hmm... In Ordnung. Kommen wir später auf dieses Gespräch zurück.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

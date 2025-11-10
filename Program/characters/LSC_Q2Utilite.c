@@ -137,6 +137,7 @@ void RemoveAllCharacterItems(ref _ch, bool _removemoney)
 	RemoveCharacterEquip(_ch, MAPS_ITEM_TYPE);
 	RemoveCharacterEquip(_ch, TOOL_ITEM_TYPE);
 	RemoveCharacterEquip(_ch, TALISMAN_ITEM_TYPE);
+	RemoveCharacterEquip(_ch, HAT_ITEM_TYPE);
 	
 	RemoveCharacterArtefactEquip(_ch, ITEM_SLOT1_TYPE);
 	RemoveCharacterArtefactEquip(_ch, ITEM_SLOT2_TYPE);
@@ -174,6 +175,8 @@ void RemoveAllCharacterItems(ref _ch, bool _removemoney)
 	{
 		_ch.money = 0;
 	}
+
+	CT_UpdateCashTables(_ch);
 }
 
 // снести всех пассажиров и компаньонов ГГ
@@ -590,7 +593,7 @@ void initStartState2Character(ref ch)
 	}
 	// Квест "Долгий путь к виселице"
 	pchar.quest.Portugal_QuestMark.win_condition.l1 = "Rank";
-	pchar.quest.Portugal_QuestMark.win_condition.l1.value = 15;
+	pchar.quest.Portugal_QuestMark.win_condition.l1.value = 7;
 	pchar.quest.Portugal_QuestMark.win_condition.l1.operation = ">=";
 	PChar.quest.Portugal_QuestMark.function = "Portugal_QuestMark";
 	// Квест "Цена чахотки"

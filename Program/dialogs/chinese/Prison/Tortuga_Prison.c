@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "好吧... 你不像我那样了解我的老板。 再见, 指挥官。 ";
                 link.l1.go = "exit";
 				
-                notification("技能检查失败 (60)", SKILL_LEADERSHIP);
+                Notification_Skill(false, 60, SKILL_LEADERSHIP);
                 AddQuestRecord("Tonzag", "3.1");
             } else {
                 dialog.text = "你知道吗? 我想我会告诉你。 有人向驻军特别养老金基金慷慨捐赠了免税款项。 作为感谢, 捐赠者被允许协助迅速合法地处决一名臭名昭著的罪犯! ";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l2 = "是我的朋友吗? ";
                 link.l2.go = "tonzag_bail_truth_b_1";
 				
-                notification("技能检查通过", SKILL_LEADERSHIP);
+                Notification_Skill(true, 60, SKILL_LEADERSHIP);
             }
         break;
         
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l1 = "好吧... 你不像我那样了解我的老板。 再见, 指挥官。 ";
                 link.l1.go = "exit";
 				
-                notification("技能检查失败 (60)", SKILL_LEADERSHIP);
+                Notification_Skill(false, 60, SKILL_LEADERSHIP);
                 AddQuestRecord("Tonzag", "3.1");
             } else {
                 dialog.text = "你知道吗? 我想我会告诉你。 有人向驻军特别养老金基金慷慨捐赠了免税款项。 作为感谢, 捐赠者被允许协助迅速合法地处决一名臭名昭著的罪犯! ";
@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
                 link.l2 = "是我的朋友吗? ";
                 link.l2.go = "tonzag_bail_truth_b_1";
 				
-                notification("技能检查通过", SKILL_LEADERSHIP);
+                Notification_Skill(true, 60, SKILL_LEADERSHIP);
             }
         break;
         

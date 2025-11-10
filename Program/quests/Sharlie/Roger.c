@@ -6976,8 +6976,8 @@ void Mtraxx_RetributionHellHotWater(string qName) // горячая вода
 	if (!CheckAttribute(pchar, "GenQuest.Hotwater")) return;
 	int n = 1;
 	if (MOD_SKILL_ENEMY_RATE == 10) n = 2;
-	if (pchar.location == "Judgement_dungeon_10") LAi_ApplyCharacterDamage(pchar, n, "other");
-	else LAi_ApplyCharacterDamage(pchar, n, "other");
+	if (pchar.location == "Judgement_dungeon_10") LAi_ApplyCharacterDamage(pchar, n, "other", false);
+	else LAi_ApplyCharacterDamage(pchar, n, "other", false);
 	LAi_CheckKillCharacter(pchar);
 	DoQuestFunctionDelay("Mtraxx_RetributionHellHotWaterPause", 0.5);
 }
@@ -7054,7 +7054,7 @@ void Mtraxx_RetributionHellSplashReaction() // реакция на гейзер
 	}
 	AddCharacterHealth(pchar, -3);
 	PlaySound("People\hotwater2.wav");
-	LAi_ApplyCharacterDamage(pchar, n, "other");
+	LAi_ApplyCharacterDamage(pchar, n, "other", true);
 	LAi_CheckKillCharacter(pchar);
 }
 
@@ -7066,7 +7066,7 @@ void Mtraxx_RetributionHellCough(string qName) // кашляет
 	LAi_ActorAnimation(pchar, "recoil", "pchar_back_to_player", 3.0);
 	int i = rand(3)+1;
 	PlaySound("ambient\land\cough_0"+i+".wav");
-	LAi_ApplyCharacterDamage(pchar, 5, "other");
+	LAi_ApplyCharacterDamage(pchar, 5, "other", false);
 	LAi_CheckKillCharacter(pchar);	
 	DoQuestFunctionDelay("Mtraxx_RetributionHellCoughPause", 4);
 }
@@ -9938,7 +9938,7 @@ bool Roger_QuestComplete(string sQuestName, string qname)
 		CreateLocationParticles("blood_big", "quest", "quest4", 2.0, 0, 0, "");
 		PlaySound("People Fight\Damage_NPC_03.wav");
 		i = makeint(LAi_GetCharacterHP(pchar)/2); // 3 прогона
-		LAi_ApplyCharacterDamage(pchar, i, "fire");
+		LAi_ApplyCharacterDamage(pchar, i, "fire", true);
 		n = MOD_SKILL_ENEMY_RATE; // 3 прогона
 		AddCharacterHealth(pchar, -n);
 		DoQuestCheckDelay("Mtraxx_RetributionJeffryAngry", 1.0);

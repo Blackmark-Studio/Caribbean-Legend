@@ -71,11 +71,12 @@ void CT_UpdateCommonTable(ref chr)
 void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bHero, int healthImpact, bool bEnableEffects, bool bSelfSkill)
 {
 	aref modificator;
-	makearef(modificator, table.(skillName));
+	string modifierName = SKILL_TYPE + skillName;
+	makearef(modificator, table.(modifierName));
 
 	if (!CheckAttribute(chr, "Skill."+skillName))
 	{
-		table.(skillName) = 1;
+		table.(modifierName) = 1;
 		modificator.base = 1;
 		return;
 	}
@@ -84,7 +85,7 @@ void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bH
 	
 	if (!bEnableEffects)
 	{
-		table.(skillName) =	skillN;
+		table.(modifierName) =	skillN;
 		return;
 	}
 	
@@ -97,30 +98,30 @@ void CT_SetSkill(ref chr, aref table, aref itemsTable, string skillName, bool bH
 	
 	// Экипировка
 	int equipN = 0;
-	equipN += GetAttributeInt(itemsTable, SKILL_TYPE + skillName);
+	equipN += GetAttributeInt(itemsTable, modifierName);
 
 	if (equipN > 0)
 	{
 		aref equipModifier;
-		string attr = SKILL_TYPE + skillName;
-		makearef(equipModifier, itemsTable.(attr));
+		makearef(equipModifier, itemsTable.(modifierName));
 		CopyAttributesSafe(modificator, equipModifier);
 	}
 	skillN += equipN;
 
-	table.(skillName) = skillN;
+	table.(modifierName) = skillN;
 	if (bSelfSkill || !bHero) return;
-	table.(skillName).officer.backup = skillN;
+	SetAttribute(table, modifierName + ".officer.backup", skillN);
 	CT_SetOfficerOverride(&table, &skillName);
 }
 
 void CT_SetSpecial(ref chr, aref table, aref itemsTable, string skillName, bool bHero, int healthImpact)
 {
 	aref modificator;
-	makearef(modificator, table.(skillName));
+	string modifierName = SPECIAL_TYPE + skillName;
+	makearef(modificator, table.(modifierName));
 	if (!CheckAttribute(chr, "SPECIAL."+skillName))
 	{
-		table.(skillName) = 3;
+		table.(modifierName) = 3;
 		modificator.base = 3;
 		return;
 	}
@@ -134,15 +135,14 @@ void CT_SetSpecial(ref chr, aref table, aref itemsTable, string skillName, bool 
 	modificator.health = healthImpact;
 
 	// Экипировка
-	equipN += GetAttributeInt(itemsTable, SPECIAL_TYPE + skillName);
+	equipN += GetAttributeInt(itemsTable, modifierName);
 	if (equipN > 0)
 	{
 		aref equipModifier;
-		string attr = SPECIAL_TYPE + skillName;
-		makearef(equipModifier, itemsTable.(attr));
+		makearef(equipModifier, itemsTable.(modifierName));
 		CopyAttributesSafe(modificator, equipModifier);
 	}
 
 	skillN += equipN;
-	table.(skillName) = skillN;
+	table.(modifierName) = skillN;
 }

@@ -194,7 +194,7 @@ void ProcessDialogEvent()
 				dialog.text = "Csapdába akarsz csalni! Nem uram, nincs nálam méreg. Növényeim és bájitalaim vannak, de mérgeim nincsenek.";
 				link.l1 = "Akkor mindegy. Ne szegezd rám a gonosz szemét.";
 				link.l1.go = "exit";
-				notification("A képességek ellenôrzése sikertelen.", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

@@ -123,13 +123,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Documenti? Naturalmente è tutto perfettamente in ordine. Non stai davvero pensando di controllarlo, vero?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Honor check passed", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Documentazione?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Honor level too low! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -154,13 +154,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Forse posso darti uno sconto. Ma non è tutto. Voglio essere il tuo fornitore abituale. Garantisco consegne regolari e puntuali. Affitterò un magazzino a Basse-Terre, e riceverai la tua merce direttamente da lì senza ritardi. Ci sarà sempre abbastanza alcol immagazzinato per prevenire qualsiasi carenza. Con lo sconto, il prezzo sarà di duecentoquaranta dobloni. Cosa ne dici?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Check passed", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Bene, sono disposto a ridurre il prezzo a duecentoquaranta dobloni per spedizione, puntando a una partnership a lungo termine. In futuro, posso soddisfare tutte le vostre esigenze e garantire un approvvigionamento affidabile. Cosa ne dici?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Skill too low (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Certo, Capitano! Quindi, quanto vuoi per la tua spedizione?";
 				link.l1 = "Per ogni dieci bottiglie di vino voglio trenta dobloni, e cinque dobloni per ogni dieci bottiglie di rum. L'intera spedizione - cento bottiglie di ciascuno - ti costerà trecento cinquanta dobloni.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Honor check passed", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Mi dispiace, Capitano, ma la tua reputazione lascia ancora molto a desiderare.";
 				link.l1 = "Maledizione...";
 				link.l1.go = "exit";
-				notification("Honor too low! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

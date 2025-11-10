@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 				link.l1 = "Gracias. Ha tomado la decisión correcta.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie");
-				notification("Prueba superada", SKILL_COMMERCE);
+				Notification_Skill(true, 25, SKILL_COMMERCE);
 				GiveItem2Character(pchar, "SM_necklace_Julie");
 				ChangeCharacterComplexReputation(pchar, "nobility", 2);
 				AddMoneyToCharacter(pchar, -5000);
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 				link.l1 = "Si no quiere entregarlo por las buenas, lo tomaré por la fuerza.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Habilidad insuficiente (25)", SKILL_COMMERCE);
+				Notification_Skill(false, 25, SKILL_COMMERCE);
 			}
 		break;
 

@@ -1,8 +1,8 @@
-string GetHumanReadableReason(string reasonName, ref chr)
+string GetHumanReadableReason(string sourceName, ref chr)
 {
 	bool replaceByEquipName = false;
 
-	switch (reasonName)
+	switch (sourceName)
 	{
 		case GUN_ITEM_TYPE: replaceByEquipName = true; break;
 		case BLADE_ITEM_TYPE: replaceByEquipName = true; break;
@@ -23,22 +23,22 @@ string GetHumanReadableReason(string reasonName, ref chr)
 	// источником является предмет экипировки
 	if (replaceByEquipName)
 	{
-		string itemId = GetCharacterEquipByGroup(chr, reasonName);
+		string itemId = GetCharacterEquipByGroup(chr, sourceName);
 		return GetItemName(itemId);
 	}
 
 	// источником является перк через модификаторы
-	if (CheckAttribute(ChrPerksList, "list." + reasonName)) return GetPerkName(reasonName);
+	if (CheckAttribute(ChrPerksList, "list." + sourceName)) return GetPerkName(sourceName);
 
 	// источником является коллбэк от перка
-	if (HasSubStr(reasonName, "Perk_"))
+	if (HasSubStr(sourceName, "Perk_"))
 	{
-		DLG_ReplaceAllMatches(&reasonName, "Perk_", "", 0);
-		return GetPerkName(reasonName);
+		DLG_ReplaceAllMatches(&sourceName, "Perk_", "", 0);
+		return GetPerkName(sourceName);
 	}
 
 	// прочие источники
-	return GetConvertStrB("Source"+reasonName, "RPGDescribe.txt");
+	return GetConvertStrB("Source"+sourceName, "RPGDescribe.txt");
 }
 
 string GetModifierName(string modifier)

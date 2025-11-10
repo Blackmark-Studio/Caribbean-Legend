@@ -778,6 +778,7 @@ void SharlieTutorial_ActThree()
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "EnemyPirate_1";
+	LAi_SetHP(sld, 25.0, 25.0);
 	GiveItem2Character(sld, "blade_05");
 	EquipCharacterByItem(sld, "blade_05");
 	AddMoneyToCharacter(sld, 20);
@@ -827,7 +828,6 @@ void SharlieTutorial_TrumBitva_3_1(string qName)
 		PostEvent("TW_Release", 2000);
 	}
 	chrDisableReloadToLocation = false;
-	LAi_RemoveCheckMinHP(pchar);
 	sld = &Locations[FindLocation("Quest_Deck_Medium")];
 	sld.locators_radius.item.item1 = 0.5;
 	sld.locators_radius.item.item2 = 0.5;
@@ -841,7 +841,6 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	chrDisableReloadToLocation = true;
 	InterfaceStates.Buttons.Save.enable = false;
 	QuestPointerDelLoc("Quest_Deck", "reload", "reload_gundeck1");
-	LAi_SetCheckMinHP(pchar, 1, true, "SharlieTutorial_Ranen");
 	for (i=1; i<=8; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_DeadSailor_"+i, "citiz_3"+i, "man", "man_dead", 1, FRANCE, 0, true, "pirate"));
@@ -874,6 +873,7 @@ void SharlieTutorial_TrumBitva_4(string qName)
 	sld.lastname = "";
 	sld.Dialog.Filename = "Quest\Sharlie\Tutorial.c";
 	sld.Dialog.currentnode = "SailorAlive_1";
+	LAi_SetHP(sld, 50.0, 50.0);
 	LAi_SetCheckMinHP(sld, 10, true, "SharlieTutorial_AlonsoSkritoeBessmertie");
 	ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "goto", "goto5");
 	//TeleportCharacterToPosAy(sld, -5.80, 14.32, 1.53, 1.50);
@@ -918,8 +918,8 @@ void SharlieTutorial_TrumBitva_5()
 			//LAi_SetCheckMinHP(sld, 1, true, "SharlieTutorial_TrumBitva_5_1");
 		}
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Пролог враг 1 волна
-		float hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.5, 1.0);
-		LAi_SetHP(sld, hp, hp);
+		LAi_SetHP(sld, 10.0, 10.0);
+		sld.MultiFighter = 0.3;
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
 		LAi_group_SetRelation("EnemyFight", LAI_GROUP_PLAYER, LAI_GROUP_ENEMY);
@@ -975,6 +975,7 @@ void SharlieTutorial_TrumBitva_6_1(string qName)
 
 void SharlieTutorial_TrumBitva_8()
 {
+	LAi_SetCurHPMax(pchar);
 	TW_Release();
 	LAi_GunSetChargeQuant(pchar, GUN_ITEM_TYPE, 1);
 	DoQuestFunctionDelay("SharlieTutorial_TrumBitva_8_1", 2.5);
@@ -982,9 +983,12 @@ void SharlieTutorial_TrumBitva_8()
 
 void SharlieTutorial_TrumBitva_8_1(string qName)
 {
+	float hp;
 	SetMusic("music_abordage");
 	PlaySound("interface\abordage_wining.wav");
 	PlaySound("Sea Battles\popadan_bomb_002.wav");
+	LAi_RemoveCheckMinHP(pchar);
+	LAi_SetCheckMinHP(pchar, 1, true, "SharlieTutorial_Ranen");
 	LAi_LocationFightDisable(loadedLocation, false);
 	LAi_SetFightMode(pchar, true);
 	sld = CharacterFromID("SharlieTutorial_Alonso");
@@ -994,7 +998,7 @@ void SharlieTutorial_TrumBitva_8_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6); // RB Пролог враг 1 2 волна
-		float hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.5, 1.0);
+		hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.2, 1.0);
 		LAi_SetHP(sld, hp, hp);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		sld.lifeday = 0;
@@ -1013,21 +1017,7 @@ void SharlieTutorial_TrumBitva_9(string qName)
 
 void SharlieTutorial_TrumBitva_9_1(string qName)
 {
-	/*for (i=1; i<=2; i++)
-	{
-		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_AllySailor_"+i, "citiz_3"+i, "man", "man", 1, FRANCE, 0, true, "pirate"));
-		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
-		GiveItem2Character(sld, "pistol1");
-		EquipCharacterByItem(sld, "pistol1");
-		AddItems(sld, "bullet", 1);
-		AddItems(sld, "GunPowder", 1);
-		LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
-		LAi_GunSetChargeQuant(sld, GUN_ITEM_TYPE, 1);
-		LAi_SetHP(sld, 10.0, 10.0);
-		LAi_CharacterDisableDialog(sld);
-		LAi_SetWarriorType(sld);
-		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
-	}*/
+	float hp;
 	sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_AllySailor_1", "citiz_31", "man", "man", 1, FRANCE, 0, true, "pirate"));
 	ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 	GiveItem2Character(sld, "pistol1");
@@ -1037,6 +1027,8 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	LAi_SetCharacterUseBullet(sld, GUN_ITEM_TYPE, "bullet");
 	LAi_GunSetChargeQuant(sld, GUN_ITEM_TYPE, 1);
 	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+	hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.2, 1.0);
+	LAi_SetHP(sld, hp, hp);
 	LAi_CharacterDisableDialog(sld);
 	LAi_SetWarriorType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -1045,6 +1037,8 @@ void SharlieTutorial_TrumBitva_9_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+		hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.2, 1.0);
+		LAi_SetHP(sld, hp, hp);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");
@@ -1061,11 +1055,14 @@ void SharlieTutorial_TrumBitva_10(string qName)
 
 void SharlieTutorial_TrumBitva_10_1(string qName)
 {
+	float hp;
 	for (i=3; i<=4; i++)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_AllySailor_"+i, "citiz_3"+i, "man", "man", 1, FRANCE, 0, true, "pirate"));
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_hold1");
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_COMMONER, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+		hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.2, 1.0);
+		LAi_SetHP(sld, hp, hp);
 		LAi_CharacterDisableDialog(sld);
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
@@ -1075,6 +1072,8 @@ void SharlieTutorial_TrumBitva_10_1(string qName)
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("SharlieTutorial_EnemyPirate_"+i, "citiz_4"+(rand(8)+1), "man", "man", 1, PIRATE, 0, true, "pirate"));
 		ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_ELITE, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
+		hp = GetFloatModifiedByDifficulty(LAi_GetCharacterMaxHP(sld), 0.2, 1.0);
+		LAi_SetHP(sld, hp, hp);
 		ChangeCharacterAddressGroup(sld, "Quest_Deck_Medium", "reload", "reload_camp");
 		LAi_SetWarriorType(sld);
 		LAi_group_MoveCharacter(sld, "EnemyFight");

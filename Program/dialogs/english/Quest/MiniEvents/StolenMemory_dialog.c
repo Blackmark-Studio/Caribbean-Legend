@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 				link.l1 = "Your wisdom matches your generosity, sir. This decision will not be regretted.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie");
-				notification("Check passed", SKILL_COMMERCE);
+				Notification_Skill(true, 25, SKILL_COMMERCE);
 				GiveItem2Character(pchar, "SM_necklace_Julie");
 				ChangeCharacterComplexReputation(pchar, "nobility", 2);
 				AddMoneyToCharacter(pchar, -5000);
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 				link.l1 = "If you refuse a gentleman's agreement, then I shall claim what I seek by less civilized means.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Insufficient skill level (25)", SKILL_COMMERCE);
+				Notification_Skill(false, 25, SKILL_COMMERCE);
 			}
 		break;
 		

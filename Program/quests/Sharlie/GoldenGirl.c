@@ -858,6 +858,7 @@ void GoldenGirl_CortnyBandosFight() //
 	LAi_SetActorType(sld);
 	LAi_ActorRunToLocator(sld, "quest", "quest1", "", -1);
 	sld = characterFromId("Cortny");
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_RANDOM, GEN_RANDOM_PIRATES, 0.6);
 	LAi_SetWarriorType(sld);
 	LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	LAi_SetFightMode(sld, true);

@@ -128,15 +128,15 @@ void ProcessDialogEvent()
 			dialog.text = "Heh! Mój błąd, Kapitanie. Faktycznie, rozkazy Levasseura wyraźnie mówiły, by wyeliminować nie tylko rycerza, ale i wszystkich jego towarzyszy. Wszystkich, rozumiesz? Z tymi ludźmi nie ma żartów i ich żądania trzeba traktować poważnie. Nie powstrzymuj mnie przed wykonaniem mojej pracy, Kapitanie. Jeszcze jedno brudne zadanie i potem jestem z tobą do końca, przysięgam!";
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
-				notification("Posiadasz wymaganą reputacje!", "None");
-				notification("Jesteś godny zaufania!", "Trustworthy");
+				Notification_Reputation(true, 71, "low");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = " (Godny zaufania) (Wysoki honor) Powiedziałeś kiedyś, że jestem przeznaczony do wielkich rzeczy, i cieszyło Cię, że mogłeś w tym pomóc.";
 				link.l1.go = "SKD_DomAnri_VD";
 			}
 			else
 			{
-				notification("Zbyt niska reputacja! ("+XI_ConvertString(GetReputationName(71))+")", "None");
-				notification("Nie jesteś godny zaufania.", "Trustworthy");
+				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Do diabła z tobą! Wykonaj swoją brudną robotę. Przyjmuję twoją przysięgę, i lepiej, żebyś traktował ją śmiertelnie poważnie. Czy się rozumiemy?";
 			link.l2.go = "SKD_DomAnri_DuranDruzhba";

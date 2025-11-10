@@ -488,14 +488,14 @@ void ProcessDialogEvent()
 				dialog.text = "Señor"+GetSexPhrase("","ita")+" "+GetSexPhrase("pańskie","pani")+" pragnienie zakupu większej ilości żywicy niewątpliwie świadczy o zaufaniu do naszego interesu. Jednak pojawia się pewna trudność: wraz ze zwiększeniem wydobycia rośnie ryzyko zwrócenia uwagi władz wyspy, a kontrola nad takimi partiami wymaga ludzi i środków bezpieczeństwa, co, przyznaję, nie jest tanie. Jeśli jest "+GetSexPhrase("pan","pani")+" "+GetSexPhrase("gotowy","gotowa")+" dodać do ceny trzy tysiące dublonów jako jednorazową opłatę, zatrudnię godnych zaufania ludzi, którzy będą w stanie chronić ładunki i zapobiec wyciekom informacji. Wtedy nasza trasa stanie się bezpieczniejsza, a ja będę mógł dostarczać "+GetSexPhrase("panu","pani")+" trzysta beczek żywicy miesięcznie. Jako rekompensatę za "+GetSexPhrase("pańską","pani")+" inwestycję, zaproponuję "+GetSexPhrase("panu","pani")+" jako klientowi hurtowemu piętnastoprocentową zniżkę na wszystkie przyszłe partie.";
 				link.l1 = "Trzy tysiące dublonów za bezpieczeństwo dostaw? Señor Sergio, nie ukrywam, ta cena wydaje mi się niewiarygodna - jakby proponował mi pan spisek w Eskorialu, a nie tylko zapewnienie ochrony ładunków żywicy!";
 				link.l1.go = "UpgradeOil_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Señor"+GetSexPhrase("","ita")+", cenię "+GetSexPhrase("pańskie","pani")+" zainteresowanie, ale tak duże transakcje wymagają doświadczenia i ostrożności. Przyznam, że "+GetSexPhrase("pański","pani")+" poziom w sprawach handlowych nie jest jeszcze wystarczająco wysoki, aby poradzić sobie z taką ilością. Radzę nabrać jeszcze trochę doświadczenia i wrócić do mnie, gdy będzie "+GetSexPhrase("pan gotowy","pani gotowa")+" na większe partie. Wtedy, być może, omówimy sprawę dogłębnie.";
 				link.l1 = "Dobrze. Wrócimy do tej kwestii później.";
 				link.l1.go = "oil_trade_exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

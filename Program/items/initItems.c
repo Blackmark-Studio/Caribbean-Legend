@@ -3692,7 +3692,7 @@ int InitItems()
 	n = InitStdTalisman(n, "talisman15", "", "ITEMS_39",  7, rand(5000), 0.5,             ""); // Оберег 'Чёрная метка' cle 1.3 DLC
 	n = InitStdTalisman(n, "talisman16", "", "ITEMS_24",  7, rand(5000), 0.5,             ""); // Золотой нож cle 1.5
 	n = InitStdTalisman(n, "talisman17", "", "ITEMS_39",  8, rand(5000), 0.5,       "doctor"); // Оберег Liber Misericordiae cle 1.5 DLC SP1
-	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,             ""); // Оберег Устав Блеквуда SP2
+	n = InitStdTalisman(n, "talisman18", "", "ITEMS_39", 16, rand(5000), 0.5,    "boatswain"); // Оберег Устав Блеквуда SP2
 	n = InitStdTalisman(n, "talisman19", "", "ITEMS_41", 7,  rand(5000), 2.2,             ""); // Оберег Череп
 	n = InitStdTalisman(n, "talisman20", "", "ITEMS_41", 10,       4200, 1.2,             ""); // Берендейка стрельца
 	n = InitStdTalisman(n, "talisman21", "", "ITEMS_41", 15, rand(5000), 0.5,             ""); // Оберег контрабандиста

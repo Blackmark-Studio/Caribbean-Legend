@@ -135,8 +135,8 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Reputation(false, 71, "low");
-				Notification_Perk(false, "Trustworthy");
+				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "Zum Teufel mit dir! Mach deine schmutzige Arbeit. Ich akzeptiere deinen Eid, und du solltest ihn tödlich ernst nehmen. Verstehen wir uns?";
 			link.l2.go = "SKD_DomAnri_DuranDruzhba";

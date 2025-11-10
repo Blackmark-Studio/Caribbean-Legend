@@ -488,14 +488,14 @@ void ProcessDialogEvent()
 				dialog.text = "Señor"+GetSexPhrase("","ita")+", votre désir d'acheter plus de résine témoigne sans doute de votre confiance dans notre entreprise. Cependant, une difficulté se présente : avec l'augmentation des volumes, le risque d'attirer l'attention des autorités de l'île grandit, et le contrôle de tels lots nécessite du personnel et des mesures de sécurité qui, je l'avoue, ne sont pas bon marché. Si vous êtes prêt"+GetSexPhrase("","e")+" à ajouter trois mille doublons au prix, en tant que paiement unique, j'embaucherai des personnes fiables, capables de protéger les cargaisons et d'empêcher les fuites d'informations. Notre itinéraire deviendra alors plus sûr, et je pourrai vous fournir trois cents barils de résine par mois. Pour compenser votre investissement, je vous offrirai, en tant qu'acheteur en gros, une remise de quinze pour cent sur tous les lots futurs.";
 				link.l1 = "Trois mille doublons pour sécuriser les livraisons ? Señor Sergio, je ne vous cache pas que ce prix me semble incroyable - comme si vous me proposiez de monter une conspiration à l'Escorial plutôt que de simplement sécuriser la cargaison de résine !";
 				link.l1.go = "UpgradeOil_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Señor"+GetSexPhrase(" ","ita")+", j'apprécie votre intérêt, mais de telles transactions importantes exigent de l'expérience et de la prudence. À vrai dire, votre niveau dans les affaires commerciales n'est pas encore assez élevé pour gérer un tel volume. Je vous conseille d'acquérir encore un peu d'expérience et de revenir me voir lorsque vous serez prêt"+GetSexPhrase("","e")+" pour des lots plus importants. Alors, peut-être, nous discuterons de l'affaire en profondeur.";
 				link.l1 = "Très bien. Nous reviendrons sur cette question plus tard.";
 				link.l1.go = "oil_trade_exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

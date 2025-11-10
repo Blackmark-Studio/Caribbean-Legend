@@ -927,13 +927,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Mówisz o przyjaźni, ale kradniesz mi za plecami? To jest pierwszy i ostatni raz, Longway. Czy rozumiesz?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
-				notification("Zbyt niska reputacja! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+				Notification_Reputation(false, 61, "low");
 			}
 			else
 			{
 				link.l1 = "„A jak udało ci się to zrobić, Longway?”";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				notification("Posiadasz wysoką reputację!", "None");
+				Notification_Reputation(true, 61, "low");
 			}
 		break;
 		
@@ -5008,14 +5008,14 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "Medic"))
 				{
-					notification("Cieszysz się doskonałym zdrowiem!", "Medic");
+					Notification_Perk(true, "Medic");
 					dialog.text = "(Doskonałe Zdrowie) Uch... Wygląda na to, że nie kłamałeś, Charles, tak, co nie...";
 					link.l1 = "Nie mam potrzeby cię oszukiwać, moja droga...";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_18";
 				}
 				else
 				{
-					notification("Nie jesteś w pełni zdrowia.", "Medic");
+					Notification_Perk(false, "Medic");
 					dialog.text = "Czy ty... czy ty mówisz serio, Charles?! Co to było?";
 					link.l1 = "Och, ten upał mi nie służy. Ahem.";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_19";
@@ -6567,14 +6567,14 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Godny zaufania) (Przywództwo) Longway... Chang Tu. Przestań. Wiem, że nie byłem dla ciebie idealnym Kapitanem. Ale czy naprawdę chcesz mnie za to tak bardzo zabić? Po tym wszystkim, przez co przeszliśmy? Najpierw Rodenburg, teraz poszukiwanie twojej siostry.";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet9";
-				notification("Jesteś godny zaufania!", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				notification("Sukces!", SKILL_LEADERSHIP);
 			}
 			else
 			{
 				link.l1 = "Nie jestem twoją rodziną ani niańką. Wydaję rozkazy, nie zastanawiając się, czy przypadkiem cię nie obraziłem. Stawiasz żądania, jakbyśmy byli starymi małżonkami, na Boga...";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet15";
-				if (!IsCharacterPerkOn(pchar, "Trustworthy")) notification("Nie jesteś godny zaufania!", "Trustworthy");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 				if (GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 85) notification("Zbyt niska umiejętność! (85)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Aj. Widzę to teraz. Jesteś tak samo zgniłą kanalią, która dba tylko o siebie... Longway. Tak jak twoja siostra. Moja rodzina przetrwa ten dzień. Twoja - nie. Idź do diabła!";
@@ -6868,7 +6868,7 @@ void ProcessDialogEvent()
 					{
 						link.l1 = "„(Godny zaufania) (Przywództwo) Ruszymy za twoją siostrą, obiecuję. Ale Levasseur nie tknął jej przez cały ten czas.”"+sStr+" jest w znacznie większym niebezpieczeństwie niż Chang Xing. Pomóż mi ją najpierw ocalić, a będę ci bardzo wdzięczny.";
 						link.l1.go = "PZ_Longway_FlagMartinInfo_VD1";
-						notification("Jesteś godny zaufania!", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 						notification("Sukces!", SKILL_LEADERSHIP);
 					}
 					else

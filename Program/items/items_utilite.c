@@ -27,7 +27,7 @@ void DoCharacterUsedItem(ref chref, string itmID)
 		
 		if(sti(chref.index)!=GetMainCharacterIndex())
 		{
-			if(ShowCharString()) Log_Chr(chref, XI_ConvertString("Health UpLog"));
+			if(!bDrawBars && ShowCharString()) Log_Chr(chref, XI_ConvertString("Health UpLog"));
 		}
 		else 
 		{
@@ -1074,7 +1074,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 			if (_locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l1)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l2)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l3)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l4)) || _locator == "fire"+(sti(pchar.questTemp.Ksochitam.GuardMaskFire.l5)))
 			{
 				LaunchIncasFire(pchar, true);
-				LAi_ApplyCharacterDamage(pchar, MOD_SKILL_ENEMY_RATE*30, "other");
+				LAi_ApplyCharacterDamage(pchar, MOD_SKILL_ENEMY_RATE*30, "other", true);
 				LAi_CheckKillCharacter(pchar);				
 			}			
 		}
@@ -1086,7 +1086,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 				{
 					CreateLocationParticles("fire_incas_Simple", "item", "incasfire"+i, 0, 0, 0, "fortfire");
 					LaunchIncasFire(pchar, true);
-					LAi_ApplyCharacterDamage(pchar, 500, "other");
+					LAi_ApplyCharacterDamage(pchar, 500, "other", true);
 					LAi_CheckKillCharacter(pchar);				
 				}
 			}
@@ -1152,7 +1152,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 		{
 			i = 30;
 			PlaySound("People\hotwater1.wav");
-			LAi_ApplyCharacterDamage(pchar, i, "other");
+			LAi_ApplyCharacterDamage(pchar, i, "other", false);
 			LAi_CheckKillCharacter(pchar);
 		}
 		if (findsubstr(_locator, "smoke" , 0) != -1)
@@ -1160,7 +1160,7 @@ void QuestCheckEnterLocItem(aref _location, string _locator) /// <<<провер
 			i = rand(3)+1;
 			PlaySound("ambient\land\cough_0"+i+".wav");
 			i = 15;
-			LAi_ApplyCharacterDamage(pchar, i, "other");
+			LAi_ApplyCharacterDamage(pchar, i, "other", false);
 			LAi_CheckKillCharacter(pchar);
 		}
 		if (CheckAttribute(pchar, "questTemp.Mtraxx.HellSplash"))

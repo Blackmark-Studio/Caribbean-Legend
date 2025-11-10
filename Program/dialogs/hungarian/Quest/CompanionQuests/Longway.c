@@ -927,13 +927,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Barátságról beszélsz, de lopsz tôlem a hátam mögött? Ez az elsô és utolsó alkalom, Longway. Megértetted?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Grubim_1";
-				notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+				Notification_Reputation(false, 61, "low");
 			}
 			else
 			{
 				link.l1 = "És hogyan sikerült ezt véghezvinned, Longway?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 61, "low");
 			}
 		break;
 		
@@ -5008,14 +5008,14 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "Medic"))
 				{
-					notification("Kiváló egészség", "Medic");
+					Notification_Perk(true, "Medic");
 					dialog.text = "(Kiváló egészség) Ugh... Úgy tûnik, hogy nem hazudtál, Charles, rendben...";
 					link.l1 = "Nincs szükségem arra, hogy becsapjalak, kedvesem...";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_18";
 				}
 				else
 				{
-					notification("A képességek ellenôrzése sikertelen.", "Medic");
+					Notification_Perk(false, "Medic");
 					dialog.text = "Charles, te... komolyan mondod?! Mi volt ez?";
 					link.l1 = "Ó, ez a hôség nem tesz jót nekem. Ahem.";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_19";
@@ -6567,7 +6567,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Megbízható) (Vezetô) Hosszú út... Chang Tu. Állj! Tudom, hogy nem én voltam a tökéletes kapitány számodra. De tényleg ennyire meg akarsz ölni ezért? Azok után, amin keresztülmentünk? Elôször Rodenburg, most pedig a húgod keresése.";
 				link.l1.go = "PZ_Longway_SisterDialog_Ubezhdaet9";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
 			}
 			else
@@ -6868,7 +6868,7 @@ void ProcessDialogEvent()
 					{
 						link.l1 = "(megbízható) (vezetés) A húgod után megyünk, ígérem. De Levasseur nem nyúlt hozzá egész idô alatt. " + sStr + " sokkal nagyobb veszélyben van, mint Chang Xing. Ha segítesz megmenteni ôt, akkor jövök neked egy nagy szívességgel.";
 						link.l1.go = "PZ_Longway_FlagMartinInfo_VD1";
-						notification("Megbízható", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 						notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
 					}
 					else

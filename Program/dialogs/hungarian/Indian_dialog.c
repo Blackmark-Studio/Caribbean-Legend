@@ -530,7 +530,7 @@ link.l1.go = "hayamee_1_1";
 			link.l1 = "Mondd meg Tagofának, hogy neki adom a legszebb pisztolyomat. Neked pedig sok ékszerem van.";
 			link.l1.go = "hayamee_2";
 			notification("Az indiánok tisztelnek téged "+stf(pchar.questTemp.Indian.relation)+"/40", "None");
-			notification("Megbízható", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		break;
 		
 		case "hayamee_2":

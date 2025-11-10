@@ -1313,6 +1313,7 @@ itmname_SM_necklace_Julie {Naszyjnik Julii d’Armagnac}
 itmdescr_SM_necklace_Julie {Klejnot bliski sercu Julii. Elegancki i wyrafinowany, jakby sam przechowywał jej wspomnienia. Jeśli są rzeczy zdolne strzec tajemnic, ten naszyjnik z pewnością do nich należy.}
 itmname_TBP_letter {Otwarty list}
 itmdescr_TBP_letter {"Myślałaś, że możesz mnie szantażować i ujść bezkarnie? Myliłaś się. Wkrótce pożałujesz swojej zuchwałości. Twoja śmierć będzie długa i bolesna, i nikt cię nie uratuje.​"}
+itmdescr_letter_open_Regata {List z zaproszeniem dla uczestnika regat.}
 itmname_kaleuche_amulet1 {Dziwny amulet}
 itmdescr_kaleuche_amulet1 {Indyjski amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
 itmname_kaleuche_amulet1_potion {Eliksir Tuttuathapaka}

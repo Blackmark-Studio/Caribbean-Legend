@@ -995,7 +995,7 @@ void ProcessDialogEvent()
 			ChangeCharacterComplexReputation(pchar, "authority", -1);
 			if(sti(pchar.reputation.nobility) > 65)
 			{
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 66, "low");
 				pchar.questTemp.GoldenGirl.Julianna_Helper = "true";
 				dialog.text = "Я понимаю, Шарль. Хотела бы и я верить в идеальную любовь, но её на свете, видимо, нет. Будем спасать хоть что-то.";
 				link.l1 = "Спасибо, маркиза. Я должен исправить свои ошибки. Я многое понял в этой истории, и молю Господа лишь о том, чтобы мой урок не вышел слишком жестоким.";
@@ -1003,7 +1003,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(66))+")", "None");
+				Notification_Reputation(false, 66, "low");
 				dialog.text = "Вы сделали свой выбор, и я поддерживала вас сколько могла, но на это я не пойду. Бросить всё ради любви, которую вы сами оставили за дверью моей спальни! Это очень мило, Шарль, но я не столь юна и наивна, простите.";
 				link.l1 = "Боюсь, маркиза, я вынужден настоять. Я не могу потерять её.";
 				link.l1.go = "Julianna_127";

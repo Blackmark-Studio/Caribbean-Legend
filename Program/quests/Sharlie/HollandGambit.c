@@ -2111,6 +2111,7 @@ void CreateKnippelShip(string qName)//создаем бригантину Чар
 	sld = characterFromId("Knippel");
 	sld.nation = HOLLAND;
 	FantomMakeSmallSailor(sld, SHIP_BRIGANTINE, StringFromKey("HollandGambit_20"), CANNON_TYPE_CULVERINE_LBS8, 45, 90, 85, 30, 80);
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_CANNONER, GEN_ARCHETYPE_BOATSWAIN, GEN_RANDOM_PIRATES, 0.6);
 	// belamour для легких уровней половина команды -->
 	if(MOD_SKILL_ENEMY_RATE < 7) SetCrewQuantity(sld, sti(GetMaxCrewQuantity(sld))/2);
 	// <-- legendary edition		 
@@ -2595,6 +2596,7 @@ void CuracaoExploring(string qName)//на Кюрасао
 	Group_SetType("Meifeng_Empty", "pirate");//тип группы
 	sld = characterFromId("Longway");
 	FantomMakeSmallSailor(sld, SHIP_MAYFANG, GetShipName("Meifeng"), CANNON_TYPE_CANNON_LBS16, 50, 65, 65, 50, 90);
+	ForceAutolevel(sld, GEN_TYPE_ENEMY, GEN_BOSS, GEN_ARCHETYPE_RANDOM, GEN_ARCHETYPE_NAVIGATOR, GEN_RANDOM_PIRATES, 0.6);
 	Character_SetAbordageEnable(sld, false);//нельзя абордировать
 	sld.AnalizeShips = true;
 	SetCharacterPerk(sld, "MusketsShoot");

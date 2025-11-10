@@ -123,13 +123,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "¿Con los documentos? Por supuesto, todo está en perfecto orden. No pensará revisarlos, ¿verdad?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Prueba de honor superada", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "¿Con los documentos?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("¡Nivel de honor demasiado bajo! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -154,13 +154,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Quizás pueda ofrecerle un descuento. Pero eso no es todo. Quiero convertirme en su proveedor permanente. Le garantizo que no habrá problemas con las entregas. Alquilaré un almacén en Bass-Terre, y usted recibirá la mercancía directamente desde allí, sin demoras. Siempre habrá suficiente licor para anticiparse a cualquier tipo de interrupciones. En cuanto a la suma, con el descuento será de doscientos cuarenta doblones. ¿Qué dice?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Prueba superada", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Bueno, estoy dispuest"+GetSexPhrase("o","a")+" a reducir el precio a doscientos cuarenta doblones por lote, ya que estoy interesado en una cooperación a largo plazo. En el futuro, podré satisfacer completamente todas sus necesidades y asegurar entregas sin interrupciones. ¿Qué dice?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Habilidad insuficiente (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 
@@ -220,14 +220,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "¡Por supuesto, capitán! Entonces, ¿cuánto quiere por su cargamento?";
 				link.l1 = "Por cada diez botellas de vino quiero treinta doblones, y por el ron, cinco doblones. Todo el lote de cien botellas de ron y cien de vino le costará trescientos cincuenta doblones.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("¡Reputación honorable verificada!", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Lo lamento, capitán, pero su reputación aún deja mucho que desear.";
 				link.l1 = "¡Maldita sea...";
 				link.l1.go = "exit";
-				notification("¡Nivel de honor demasiado bajo! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

@@ -203,14 +203,14 @@ void ProcessDialogEvent()
 				);				
 				link.l1 = "Ej, nie przesadzaj, cygańska dziewko! Nie zamierzam truć ludzi — to kobiecy sposób zabijania, nie w moim stylu. Na mężczyzn mam swój miecz, ale z tymi przeklętymi szczurami za cholerę nie mogę sobie poradzić!";
 				link.l1.go = "get_poison_2";
-				if (IsCharacterPerkOn(pchar, "Trustworthy")) notification("Godny zaufania", "Trustworthy");
+				if (IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				dialog.text = "Próbujesz mnie wrobić! Nie, panie, nie mam żadnej trucizny! Mam tylko rośliny i mikstury, ale żadnych trucizn!";
 				link.l1 = "Dobrze, już dobrze! Obejdę się bez tego. Ale nie patrz na mnie tak, jakbyś już szykowała przekleństwo!";
 				link.l1.go = "exit";
-				notification("Brak zaufania", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}	
 		break;
 		

@@ -3016,14 +3016,14 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(值得信赖) (荣誉) (领导力) 今天的血已经够多了, 让。 我自己来处理这个。 ";
 				link.l1.go = "merida_head_dobro_1";
-				notification("值得信赖", "Trustworthy");
-				notification("信誉检查通过", "None");
+				Notification_Perk(true, "Trustworthy");
+				Notification_Reputation(true, 50, "low");
 				notification("技能检查通过", SKILL_Leadership);
 			}
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
+				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("技能检查失败 (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "动手吧。 我不参与。 也不想看。 ";

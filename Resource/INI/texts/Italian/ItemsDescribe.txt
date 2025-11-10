@@ -1308,6 +1308,7 @@ itmname_SM_necklace_Julie {Collana di Julie d’Armagnac}
 itmdescr_SM_necklace_Julie {Un gioiello caro al cuore di Julie. Elegante e raffinato, sembra custodire i suoi ricordi. Se esistono oggetti in grado di conservare segreti, questa collana è senza dubbio uno di essi.}
 itmname_TBP_letter {Lettera aperta}
 itmdescr_TBP_letter {"Pensavi di potermi ricattare e farla franca? Ti sbagliavi. Presto rimpiangerai la tua audacia. La tua morte sarà lenta e dolorosa, e nessuno verrà a salvarti."}
+itmdescr_letter_open_Regata {Lettera d’invito a un partecipante alla regata.}
 itmname_kaleuche_amulet1 {Strano amuleto}
 itmdescr_kaleuche_amulet1 {Un amuleto indiano fatto di un ciottolo liscio e dipinto in modo sgargiante.}
 itmname_kaleuche_amulet1_potion {Pozione di Tuttuathapak}

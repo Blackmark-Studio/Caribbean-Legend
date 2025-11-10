@@ -1323,6 +1323,7 @@ itmname_SM_necklace_Julie {Julie d'Armagnac's Necklace}
 itmdescr_SM_necklace_Julie {A jewel close to Julie's heart. Elegant and refined, it seems to guard her memories itself. If there are objects capable of keeping secrets, this necklace surely ranks among them.}
 itmname_TBP_letter {Opened Letter}
 itmdescr_TBP_letter {"You thought you could blackmail me and remain unpunished? You were wrong. Very soon you will regret your audacity. Your death will be long and painful, and no one will save you.​"}
+itmdescr_letter_open_Regata {Invitation letter to a Regatta participant.}
 itmname_kaleuche_amulet1 {Strange amulet}
 itmdescr_kaleuche_amulet1 {An Indian amulet made of a smooth pebble and garishly painted.}
 itmname_kaleuche_amulet1_potion {Tuttuathapak's potion}

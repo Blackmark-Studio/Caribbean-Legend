@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 				dialog.text = "Glad you're taking a liking to the ironwood, "+sStr+". Increasing shipments isn't a problem, but there's a catch, as you understand. With larger volumes comes a trail that might attract unwanted attention, especially from the English authorities. But if we add reliable hands, trustworthy ears, and people in the residence who'll help us stay in the shadows, everything can be arranged. Though it won't come cheap – three thousand doubloons to bypass the city treasury and England's needs. Then I can supply you with five times more. What do you say?";
 				link.l1 = "Three thousand doubloons? Jan, that's daylight robbery! Couldn't we manage with lower expenses? Perhaps there's a way to settle the matter without such extravagant sums?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Good idea, but I must say, for such volumes in trade you need a bit more experience and skill. Hurry, and there's more risk than benefit. Let's do this: gain a little more experience, and when you're ready for larger batches, come back. Then we'll discuss everything properly.";
 				link.l1 = "Hmm... Alright. Let's return to this conversation later.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

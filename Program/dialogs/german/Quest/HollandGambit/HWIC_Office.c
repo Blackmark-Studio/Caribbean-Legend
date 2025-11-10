@@ -487,14 +487,14 @@ void ProcessDialogEvent()
 				dialog.text = "Ich schätze Ihren geschäftlichen Ansatz und bin bereit, Ihre Anfrage zu prüfen. Vielleicht könnten wir das Volumen, sagen wir, verfünffachen. Allerdings wird die Organisation solcher Lieferungen erhebliche Ressourcen erfordern. Wir müssen Lagerräume erweitern, die Sicherheit verstärken und zuverlässige Lieferwege gewährleisten. Da dies auch Ihnen zugute kommt, schlage ich vor, dass wir diese Kosten unter uns aufteilen.";
 				link.l1 = "Das klingt alles vernünftig. Welchen Betrag halten Sie für notwendig, um diese Ausgaben zu decken?";
 				link.l1.go = "UpgradeSilk_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Ich verstehe Ihr Interesse an einer Erhöhung der Lieferungen, allerdings fällt es mir in dieser Phase schwer, solchen Änderungen zuzustimmen. Ich zweifle nicht an Ihrem Streben nach Entwicklung, aber für diese Art von Transaktion benötigt man viel mehr Erfahrung in Handelsangelegenheiten und Vertrauen in die eigenen Handlungen. Ich schlage vor, dass Sie Ihre Kenntnisse in der Kunst der Verhandlung erweitern und dann mit einem konkreteren Vorschlag zu mir zurückkehren. Wenn Sie bereit sind, freue ich mich darauf, unsere Zusammenarbeit zu stärken.";
 				link.l1 = "Hmm... Gut. Ich werde später auf dieses Gespräch zurückkommen.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 			NextDiag.TempNode = "HWIC_Boss";
 		break;

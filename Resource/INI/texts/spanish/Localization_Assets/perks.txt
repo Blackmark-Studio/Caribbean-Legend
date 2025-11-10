@@ -6,3 +6,4 @@ perks_5 {$rand(No hay mucho que sacar de la bodega de '$attr($context.ship.name)
 perks_6 {En el barco @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> murió en la estampida.}
 perks_7 {Según los cálculos, @<_ShipName> ha llegado a @<_PortName>.}
 perks_8 {Aún en camino.}
+perks_9 {Cuota de exhibición cobrada.}

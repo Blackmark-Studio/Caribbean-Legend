@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "А то как же, знаю я своё начальство... Прощайте, комендант.";
 				link.l1.go = "exit";
 				
-				notification("Недостаточно развит навык (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "А знаете что? Я вам расскажу. В особый пенсионный фонд гарнизона поступило щедрое, не облагаемое налогами, пожертвование. В качестве ответной любезности дарителю было разрешено способствовать скорейшей и законной казни известного преступника!";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "Моего друга?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Проверка пройдена", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "А то как же, знаю я своё начальство... Прощайте, комендант.";
 				link.l1.go = "exit";
 				
-				notification("Недостаточно развит навык (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "А знаете что? Я вам расскажу. В особый пенсионный фонд гарнизона поступило щедрое, не облагаемое налогами, пожертвование. В качестве ответной любезности дарителю было разрешено способствовать скорейшей и законной казни известного преступника!";
@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "Моего друга?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Проверка пройдена", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		

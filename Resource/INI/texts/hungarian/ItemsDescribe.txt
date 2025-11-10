@@ -1323,6 +1323,7 @@ itmname_SM_necklace_Julie {Julie d'Armagnac nyaklánca}
 itmdescr_SM_necklace_Julie {Julie szívéhez közel álló ékszer. Elegáns és kifinomult, úgy tûnik, hogy magát az emlékeit ôrzi. Ha vannak olyan tárgyak, amelyek képesek titkokat ôrizni, ez a nyaklánc biztosan közéjük tartozik.}
 itmname_TBP_letter {Megnyitott levél}
 itmdescr_TBP_letter {"Azt hitted, hogy megzsarolhatsz és büntetlenül maradhatsz? Tévedtél. Hamarosan meg fogja bánni a vakmerôségét. A halálod hosszú és fájdalmas lesz, és senki sem fog megmenteni."}
+itmdescr_letter_open_Regata {Invitation letter to a Regatta participant.}
 itmname_kaleuche_amulet1 {Különös amulett}
 itmdescr_kaleuche_amulet1 {Sima kavicsból készült, rikítóan festett indián amulett.}
 itmname_kaleuche_amulet1_potion {Tuttuathapak bájitala}

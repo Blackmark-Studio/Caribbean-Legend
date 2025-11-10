@@ -36,13 +36,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Digne de confiance) Mais même vous devez admettre que le Seigneur agit à travers les hommes. Et si la gitane n'était qu'un instrument entre Ses mains ? Et si Son dessein était si profond que nous, simples mortels, ne pouvons le comprendre ? Les voies du Seigneur sont impénétrables, n'est-ce pas ?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Digne de confiance", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Vous forcez un père à regarder sa fille s'éteindre lentement, plutôt que de lui permettre de tenter de la sauver. Est-ce cela la miséricorde ?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Compétence non débloquée", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		

@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 				dialog.text = "Cieszę się, że gwajakowiec przypadł ci do gustu, " + sStr + ". Zwiększenie partii to nie problem, ale jest tu pewne 'ale', sam"+GetSexPhrase("","a")+" rozumiesz. Ze zwiększeniem objętości pojawia się też ślad, który może przyciągnąć niepotrzebną uwagę, szczególnie ze strony władz angielskich. Ale jeśli dodamy do interesu pewne ręce, wierne uszy i ludzi w rezydencji, którzy pomogą pozostać w cieniu, wszystko można zorganizować. Prawda, że to nie będzie tanie - trzy tysiące dublonów za ominięcie skarbca miasta i potrzeb Anglii. Wtedy będę mógł dostarczyć ci pięć razy więcej. Co ty na to?";
 				link.l1 = "Trzy tysiące dublonów? Jan, to przecież rabunek w biały dzień! Czy nie można jakoś poradzić sobie mniejszym kosztem? Może jest sposób załatwić sprawę bez takich bajońskich sum?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Dobry pomysł, ale muszę powiedzieć, że do takich wolumenów w sprawach handlowych potrzeba nieco więcej doświadczenia i umiejętności. Pośpieszysz się - więcej ryzyka niż pożytku. Zróbmy tak: zdobądź jeszcze trochę doświadczenia, a kiedy będziesz "+GetSexPhrase("gotowy","gotowa")+" na większe partie, wpadnij. Wtedy omówimy wszystko jak należy.";
 				link.l1 = "Hmm... Dobrze. Wrócimy do tej rozmowy później.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

@@ -123,13 +123,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Paperwork? Of course it’s all perfectly in order. You’re not actually planning to check it, are you?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Honor check passed", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Paperwork?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Honor level too low! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -154,13 +154,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Perhaps I can give you a discount. But that’s not all. I want to be your regular supplier. I guarantee smooth and timely deliveries. I’ll rent a warehouse in Basse-Terre, and you’ll receive your stock directly from there without delay. There will always be enough alcohol stored to prevent any shortages. With the discount, the price will be two hundred and forty doubloons. What do you say?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Check passed", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Alright, I'm willing to lower the price to two hundred and forty doubloons per shipment — I'm aiming for a long-term partnership. In the future, I can meet all your needs and ensure a reliable supply. What do you say?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Skill too low (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Of course, Captain! So, how much do you want for your shipment?";
 				link.l1 = "For every ten bottles of wine I want thirty doubloons, and five doubloons for every ten bottles of rum. The whole shipment — one hundred bottles of each — will cost you three hundred and fifty doubloons.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Honor check passed", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "I'm sorry, Captain, but your reputation still leaves much to be desired.";
 				link.l1 = "Damn...";
 				link.l1.go = "exit";
-				notification("Honor too low! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

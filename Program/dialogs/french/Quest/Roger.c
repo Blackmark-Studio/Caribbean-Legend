@@ -3017,13 +3017,13 @@ void ProcessDialogEvent()
 				link.l1 = "(Digne de confiance) (Honneur) (Leadership) Ça suffit de sang pour aujourd'hui, Jean. Je vais m'en occuper moi-même.";
 				link.l1.go = "merida_head_dobro_1";
 				Notification_Perk(true, "Trustworthy");
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 50, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
+				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Fais-le. Je ne m'en mêle pas. Et je ne regarde pas non plus.";

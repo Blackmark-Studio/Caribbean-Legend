@@ -92,8 +92,8 @@ void initNewMainCharacter()//инициализация главного гер�
 	{        
 		case "HeroType_1":	//Дуэлянт
 			SetSPECIAL(ch, 5, 7, 6, 5, 6, 9, 5);
-			SetSelfSkill(ch, 10, 1, 1, 1, 1);
-			SetShipSkill(ch, 5, 1, 1, 1, 1, 1, 10, 5, 1);
+			SetSelfSkill(ch, 8, 1, 1, 3, 1);
+			SetShipSkill(ch, 5, 1, 1, 3, 1, 1, 8, 5, 1);
 			SetCharacterPerk(ch, "HT1");
 			SetCharacterPerk(ch, "TannedLeather");
 			ch.StartShip = SHIP_SLOOP;
@@ -101,8 +101,8 @@ void initNewMainCharacter()//инициализация главного гер�
 		
 		case "HeroType_2":	//Счетовод
 			SetSPECIAL(ch,  6, 5, 6, 9, 6, 4, 7);
-			SetSelfSkill(ch, 1, 1, 1, 1, 1);
-			SetShipSkill(ch, 10, 10, 1, 1, 1, 1, 1, 5, 5);
+			SetSelfSkill(ch, 1, 3, 1, 1, 1);
+			SetShipSkill(ch, 8, 8, 1, 1, 1, 3, 1, 5, 5);
 			SetCharacterPerk(ch, "HT2");
 			SetCharacterPerk(ch, "RatsWolf");
 			SetCharacterPerk(ch, "Mimicry");
@@ -112,8 +112,8 @@ void initNewMainCharacter()//инициализация главного гер�
 		
 		case "HeroType_3":	//Атлет
 			SetSPECIAL(ch, 9, 5, 8, 4, 5, 6, 6);
-			SetSelfSkill(ch, 1, 5, 10, 1, 1);
-			SetShipSkill(ch, 1, 1, 1, 1, 1, 5, 1, 10, 1);
+			SetSelfSkill(ch, 1, 5, 8, 1, 3);
+			SetShipSkill(ch, 1, 1, 1, 1, 1, 5, 3, 8, 1);
 			SetCharacterPerk(ch, "HT3");
 			SetCharacterPerk(ch, "Mule");
 			ch.StartShip = SHIP_LUGGER;
@@ -121,8 +121,8 @@ void initNewMainCharacter()//инициализация главного гер�
 		
 		case "HeroType_4":	//Стрелок
 			SetSPECIAL(ch, 4, 8, 7, 4, 5, 6, 9);
-			SetSelfSkill(ch, 1, 1, 1, 10, 5);
-			SetShipSkill(ch, 1, 1, 10, 5, 1, 1, 1, 1, 1);
+			SetSelfSkill(ch, 3, 1, 1, 8, 5);
+			SetShipSkill(ch, 1, 1, 8, 5, 1, 3, 1, 1, 1);
 			SetCharacterPerk(ch, "HT4");
 			SetCharacterPerk(ch, "Bombardier");
 			SetCharacterPerk(ch, "Sniper");

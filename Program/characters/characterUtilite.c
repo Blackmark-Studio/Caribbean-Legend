@@ -2505,6 +2505,11 @@ void SetEquipedItemToCharacter(ref chref, string groupID, string itemID)
 		break;
 
 		case HAT_ITEM_TYPE:
+			if(!bEquip) 
+			{
+				SendMessage(chref, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
+				break;
+			}
 			if(CheckAttribute(arItm,"model"))	{modelName = arItm.model;}
 			SendMessage(chref, "lsl", MSG_CHARACTER_EX_MSG, "UntieItem", 10);
 			if(HasHatLocator(chref))

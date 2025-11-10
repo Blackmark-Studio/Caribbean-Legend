@@ -383,7 +383,7 @@ void ProcessDialogEvent()
 		case "rat_yes_1500":
 			if(GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 90)
 			{
-				notification("Képességpróba Sikertelen (90)", SKILL_COMMERCE);
+				Notification_Skill(false, 90, SKILL_COMMERCE);
 				dialog.text = "Nem, "+pchar.name+", nem fog megtörténni. A patkányokat el tudom intézni méreggel, de ez a páncél egy nap megmentheti az életed. És úgy fogsz kinézni benne, mint egy olasz herceg. Ezerötszáz, ez az utolsó ajánlatom. Gondolja át nyugodtan, és majd szóljon nekem. A páncél addig vár rád, amíg szükséged van rá, csak neked adom el.";
 				link.l1 = "Sancho, ha nem te lennél az egyetlen kocsmáros ebben a sivár temetôben... Meggondolom az ajánlatodat.";
 				link.l1.go = "rat_yes_1500exit";
@@ -391,7 +391,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 90, SKILL_COMMERCE);
 				dialog.text = "Ahhoz képest, hogy katonai kapitány és kalóz, te aztán tudsz tárgyalni! Emlékszel Jostra? Egyszer sikerült neki kedvezményesen megvennie az összes arzénemet, miközben a patkányok már kínoztak. Rendben, "+pchar.name+", te nyertél. Lecsapok még ötszázat neked! De ez az utolsó ajánlatom!";
 				link.l1 = "Ez még mindig úgy érzem, mintha átverés lenne, de legalább most már nem fogom magam tipikus bajba jutott kislánynak érezni a dzsungelben. Várj a pénzre, hamarosan hozom.";
 				link.l1.go = "rat_yes_1000exit";

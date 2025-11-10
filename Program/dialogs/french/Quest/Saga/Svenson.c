@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 				dialog.text = "Ravi que le gaïac te plaise, " + sStr + ". Augmenter les livraisons n'est pas un problème, mais il y a un hic, tu comprends. Avec l'augmentation des volumes apparaît une trace qui peut attirer l'attention indésirable, surtout des autorités anglaises. Mais si nous ajoutons à l'affaire des mains fiables, des oreilles fidèles, et des gens dans la résidence qui aideront à rester dans l'ombre, tout peut s'arranger. C'est vrai que cela ne sera pas bon marché - trois mille doublons pour contourner le trésor de la ville et les besoins de l'Angleterre. Alors je pourrai te fournir cinq fois plus. Qu'en dis-tu ?";
 				link.l1 = "Trois mille doublons ? Jan, c'est du vol en plein jour ! Ne pourrait-on pas s'en sortir avec moins de dépenses ? Peut-être y a-t-il un moyen de régler l'affaire sans de telles sommes fabuleuses ?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Bonne idée, mais je dois dire que pour de tels volumes dans les affaires commerciales, il faut un peu plus d'expérience et d'habileté. Se précipiter apporte plus de risque que de profit. Faisons ainsi : acquiers encore un peu d'expérience, et quand tu seras prêt"+GetSexPhrase("","e")+" pour de plus grands lots, reviens. Alors nous discuterons de tout comme il se doit.";
 				link.l1 = "Hmm... D'accord. Revenons à cette conversation plus tard.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

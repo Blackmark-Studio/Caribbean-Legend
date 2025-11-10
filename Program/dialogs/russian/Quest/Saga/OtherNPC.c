@@ -407,7 +407,7 @@ void ProcessDialogEvent()
 		case "GonsalesB_3_10":
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) > 34 && makeint(pchar.reputation.nobility) < 48)
 			{
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 48, "low");
 				notification("Проверка пройдена", SKILL_LEADERSHIP);
 				dialog.text = "Дьявол! Сам Чарли Принц предлагает мне пойти к нему абордажником! Чёрт тебя подери, я согласен! Давай обратно мой клинок и десять тысяч песо впридачу. Вот уж не думал, что всё так обернётся!";
 				link.l1 = "Держи. И прикуси язык: никто в этом городе не должен знать, кто я такой, понял?";
@@ -416,7 +416,7 @@ void ProcessDialogEvent()
 			}
 			if(makeint(pchar.reputation.nobility) > 47)
 			{
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(48))+")", "None");
+				Notification_Reputation(false, 48, "low");
 				dialog.text = "Ну нет. Может быть капитан ты и нормальный, да только, думается мне, чистоплюй тот ещё. Да, когда-то ты держал испанцев в страхе, совершил дерзкий налёт на Картахену - но всё это только при помощи Маркуса Тиракса. А самому заниматься честным разбоем у тебя кишка тонка. Так что гони деньги!";
 			}
 			if(GetSummonSkillFromName(pchar, SKILL_LEADERSHIP) < 35)

@@ -380,7 +380,7 @@ void ProcessDialogEvent()
 						link.l1.go = "silk_info";
 						break;
 					}
-					else notification("Túl alacsony a hírneve! ("+XI_ConvertString(GetReputationName(61))+")", "None");
+					else Notification_Reputation(false, 61, "low");
 				}
 			}
 			dialog.text = "Jó napot, Kapitein " + GetFullName(pchar) + "! Miben lehetek a szolgálatára?";
@@ -491,14 +491,14 @@ void ProcessDialogEvent()
 				dialog.text = "Nagyra értékelem az üzleti hozzáállásodat és hajlandó vagyok megfontolni a kérésedet. Talán növelhetnénk a mennyiséget, mondjuk, ötszörösére. Azonban az ilyen ellátmányok megszervezése jelentôs erôforrásokat igényel. Bôvítenünk kell a raktárhelyiséget, megerôsíteni a biztonságot, és biztosítani a megbízható szállítási útvonalakat. Mivel ez önöknek is elônyös, javaslom, hogy osszuk meg ezeket a kiadásokat egymás között.";
 				link.l1 = "Ez mind ésszerûnek hangzik. Mekkora összeget tart szükségesnek ezeknek a kiadásoknak a fedezéséhez?";
 				link.l1.go = "UpgradeSilk_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Megértem, hogy érdekel a készletek növelése, azonban ebben a szakaszban nehezen tudok belemenni ilyen változtatásokba. Nem vonom kétségbe a fejlôdésre való törekvését, de egy ilyen ügylethez sokkal több tapasztalatra van szükség a kereskedelmi ügyekben és a saját tetteiben való bizalomra. Javaslom, hogy gyarapítsa tudását a tárgyalás mûvészetében, majd térjen vissza hozzám egy konkrétabb javaslattal. Ha készen áll, örömmel megerôsítem együttmûködésünket.";
 				link.l1 = "Hmm... Rendben. Késôbb visszatérek erre a beszélgetésre.";
 				link.l1.go = "exit";
-				notification("Képességpróba Sikertelen (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 			NextDiag.TempNode = "HWIC_Boss";
 		break;

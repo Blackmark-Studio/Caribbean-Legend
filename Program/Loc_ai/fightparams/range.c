@@ -106,7 +106,8 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 	ModifyGunDamageByPerks(attacker, enemy, &damageMtp, nEnemies);                    // перки, не вынесенные в модификаторы
 	ModifyGunDamageByAiming(fAimingTime, &damageMtp);                                   // прицеливание
 	ModifyGunDamageByQuestSituations(attacker, enemy, &damageMtp);                    // особые ситуации
-	ModifyDamageMtpByCrit(attacker, enemy, &aTable, &eTable, weaponType, SHOT_STRIKE, &damageMtp); // крит попадание
+	bool isCrit = false;
+	ModifyDamageMtpByCrit(attacker, enemy, &aTable, &eTable, weaponType, SHOT_STRIKE, &damageMtp, &isCrit); // крит попадание
 	if (isHeadShot) ModifyDamageMtpByHeadshot(attacker, &aTable, enemy, weaponType, &damageMtp); // хедшот
 
 	if (!HasDescriptor(rAmmo, "PiercingAmmo")) damageMtp -= GetDamageReduction(&eTable); // вражеское снижение урона
@@ -114,7 +115,7 @@ void LAi_ApplyCharacterFireDamage(ref attacker, ref enemy, int nEnemies, float f
 	int resultDamage = MakeInt(damage * func_fmax(0, damageMtp) + 0.5);                 // итого базовый урон * мультипликатор
 	if (resultDamage <= 0.0) return;
 
-	LAi_ApplyCharacterDamage(enemy, resultDamage, "fire");
+	LAi_ApplyCharacterDamage(enemy, resultDamage, "fire", isCrit);
 	LAi_Achievments_ExtraDamage(attacker, resultDamage);
 
 	if (CheckAttributeEqualTo(enemy,"model.animation", "man")) enemy.DamageFromShot = attacker.chr_ai.(weaponType).bullet;

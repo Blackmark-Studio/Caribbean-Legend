@@ -1317,6 +1317,7 @@ itmname_SM_necklace_Julie {Die Halskette von Julie d’Armagnac}
 itmdescr_SM_necklace_Julie {Ein Juwel, das Julies Herz nahesteht. Elegant und fein, scheint es ihre Erinnerungen selbst zu bewahren. Wenn es Dinge gibt, die Geheimnisse bewahren können – dann gehört diese Halskette zweifellos dazu.}
 itmname_TBP_letter {Geöffneter Brief}
 itmdescr_TBP_letter {"Du dachtest, du könntest mich erpressen und ungestraft davonkommen? Du hast dich geirrt. Schon bald wirst du deine Dreistigkeit bereuen. Dein Tod wird lang und schmerzhaft sein, und niemand wird dich retten.​"}
+itmdescr_letter_open_Regata {Einladungsschreiben an einen Regatta-Teilnehmer.}
 itmname_kaleuche_amulet1 {Seltsames Amulett}
 itmdescr_kaleuche_amulet1 {Ein indianisches Amulett, das aus einem glatten Kieselstein besteht und bunt bemalt ist.}
 itmname_kaleuche_amulet1_potion {Tuttuathapaks Trank}

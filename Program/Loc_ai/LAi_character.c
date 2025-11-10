@@ -139,6 +139,7 @@ void LAi_UseHealthBottle(aref chr, float healthInBottle)
 	}
 	chr.chr_ai.hp_bottle = stf(chr.chr_ai.hp_bottle) + healthInBottle;
 	if(chr.id == Characters[nMainCharacterIndex].id) chr.chr_ai.usedbottlemax = stf(chr.chr_ai.hp_bottle);
+	SendMessage(chr, "l", MSG_CHARACTER_ACTIVEHEAL);
 }
 // boal
 void LAi_UseHealthBottleSpeed(aref chr, float healthSpeed)

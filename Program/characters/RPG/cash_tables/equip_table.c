@@ -14,7 +14,7 @@ void CT_UpdateEquipTable(ref chr)
 
 	aref staticTable = CT_GetTable(chr, CT_STATIC);
 	CT_MergeTables(&table, &staticTable); // подливаем статические модификаторы
-	RunTableCallbacks(chr, CT_EQUIP, &table, &NullCharacter);
+	RunTableCallbacks(chr, CT_EQUIP, &table, &NullObject);
 }
 
 void ApplyEquipModifiers(ref chr, ref table, ref equipment)

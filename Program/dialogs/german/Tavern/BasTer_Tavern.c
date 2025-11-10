@@ -124,13 +124,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Die Papiere? Natürlich ist alles in bester Ordnung. Sie werden sie doch wohl nicht überprüfen wollen?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Ehrenprüfung bestanden", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Die Papiere?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Ehre zu niedrig! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -155,13 +155,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Vielleicht kann ich Ihnen einen Preisnachlass geben. Und noch etwas: ich möchte Ihr fester Lieferant werden. Ich garantiere pünktliche Lieferungen ohne Ausfälle. Ich werde ein Lagerhaus in Basse-Terre mieten, damit Sie Ihre Waren direkt dort abholen können – immer pünktlich und ausreichend bestückt. Der Preis mit Rabatt: zweihundertvierzig Dublonen. Was sagen Sie?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Prüfung bestanden", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Na gut, ich kann den Preis auf zweihundertvierzig Dublonen pro Lieferung senken – ich bin an einer langfristigen Zusammenarbeit interessiert. Ich kann Ihre Bedürfnisse vollständig abdecken und stabile Lieferungen gewährleisten. Was sagen Sie?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Handelskunst zu niedrig (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -221,14 +221,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Natürlich, Kapitän! Also, wie viel verlangen Sie für Ihre Lieferung?";
 				link.l1 = "Ich möchte dreißig Dublonen für je zehn Flaschen Wein und fünf Dublonen für zehn Flaschen Rum. Insgesamt macht das für hundert Flaschen Rum und hundert Flaschen Wein dreihundertfünfzig Dublonen.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Ehrenprüfung bestanden", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Es tut mir leid, Kapitän, aber Ihr Ruf lässt immer noch zu wünschen übrig.";
 				link.l1 = "Verdammt...";
 				link.l1.go = "exit";
-				notification("Ehrenstufe zu niedrig! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

@@ -241,7 +241,7 @@ void ProcessDialogEvent()
 			dialog.text = "Amico mio, suppongo che non siate un principiante nell'arte della spada?";
 			link.l1 = "Ah! Ho già superato un abbordaggio e addirittura...";
 			link.l1.go = "guide_50";
-			if (FindCharacterItemByGroupWithout_knife_03(pchar, BLADE_ITEM_TYPE) == "")
+			if (GetCharacterEquipByGroup(pchar, BLADE_ITEM_TYPE) == "unarmed")
 			{
 				GiveItem2Character(pchar, "blade_05");
 				EquipCharacterByItem(Pchar, "blade_05");
@@ -352,30 +352,4 @@ void ProcessDialogEvent()
 		break;
 	}
 }
-
-string FindCharacterItemByGroupWithout_knife_03(ref chref, string groupID)
-{
-	ref refItm;
-    string resultItemId;
-
-	resultItemId  = "";
-	for(i=TOTAL_ITEMS-1; i>=0; i--)
-	{
-		refItm = &Items[i];
-		if( !CheckAttribute(refItm,"groupID") ) continue;
-		if(refItm.groupID!=groupID) continue;
-		if( !CheckAttribute(chref,"items."+refItm.id) ) continue;
-		if(refItm.id == "knife_03") continue;
-		if (groupID == BLADE_ITEM_TYPE)
-		{
-			resultItemId  = refItm.id;
-		}
-	}
 	
-	if (resultItemId != "")
-	{
-        return resultItemId;
-	}
-
-	return "";
-}

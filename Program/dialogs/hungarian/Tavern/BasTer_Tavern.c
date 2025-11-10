@@ -125,13 +125,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "A papírmunkával? Természetesen minden tökéletesen rendben van. Ugye nem akarja ellenôrizni, ugye?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("A becsületellenôrzés átment.", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Papírmunka?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("A becsület szintje túl alacsony! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -156,13 +156,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Talán adhatok önnek kedvezményt. De ez még nem minden. Szeretnék a rendszeres beszállítója lenni. Garantálom a zökkenômentes és idôben történô szállítást. Basse-Terre-ben bérelek egy raktárat, és Ön onnan közvetlenül, késedelem nélkül megkapja a készletét. Mindig lesz elegendô alkohol raktáron, hogy elkerüljük a hiányt. A kedvezménnyel együtt az ár kétszáznegyven dublon lesz. Mit szól hozzá?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("A csekk átadva", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Rendben, hajlandó vagyok csökkenteni az árat kétszáznegyven dublonnára szállítmányonként - hosszú távú partnerségre törekszem. A jövôben minden igényét ki tudom elégíteni, és megbízható ellátást tudok biztosítani. Mit szólsz hozzá?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Túl alacsony képzettség (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -222,14 +222,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Természetesen, kapitány! Szóval, mennyit kér a szállítmányáért?";
 				link.l1 = "Minden tíz üveg borért harminc dublont kérek, és minden tíz üveg rumért öt dublont. Az egész szállítmány - száz palack mindegyikbôl - háromszázötven dublonnába kerül.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("A becsületellenôrzés átment.", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Sajnálom, kapitány, de a hírneve még mindig hagy kívánnivalót maga után.";
 				link.l1 = "A fenébe...";
 				link.l1.go = "exit";
-				notification("Túl alacsony a becsület! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

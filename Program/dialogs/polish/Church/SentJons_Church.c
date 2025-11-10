@@ -35,13 +35,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Wywołujący zaufanie) Ale przecież nawet ojciec musi przyznać, że Pan działa przez ludzi. Co, jeśli cyganka jest jedynie narzędziem w rękach Bożych? Co, jeśli Jego plan jest tak głęboki, że nam, zwykłym śmiertelnikom, nie dane jest go zrozumieć? Drogi Pańskie są niezbadane, czyż nie?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Wywołujący zaufanie", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Zmusza ojciec ojca, by patrzył, jak jego córka powoli gaśnie, zamiast pozwolić mu spróbować ją uratować. Czy to jest miłosierdzie?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Nie otwarta umiejętność", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 

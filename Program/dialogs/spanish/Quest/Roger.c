@@ -1293,7 +1293,7 @@ void ProcessDialogEvent()
 			Notification_Perk(true, "Trustworthy");
 		}
 		else
-			notification("¡Comprobación de beneficios fallida!", "Trustworthy");
+			Notification_Perk(false, "Trustworthy");
 		link.l3 = "¿Sabes qué, Cutlass? Olvídalo. ¿Somos piratas o qué? ¿Y Jean? ¿O su bonita cara es su único recurso? Prepara un cofre - nos ceñiremos al plan original.";
 		link.l3.go = "Pelly_62";
 		break;
@@ -3029,15 +3029,15 @@ void ProcessDialogEvent()
 			link.l1 = "(Confiable) (Honor) (Liderazgo) Ya es suficiente sangre por hoy, Jean. Me encargaré de esto yo mismo.";
 			link.l1.go = "merida_head_dobro_1";
 			Notification_Perk(true, "Trustworthy");
-			notification("¡Comprobación de reputación aprobada!", "None");
+			Notification_Reputation(true, 50, "low");
 			notification("¡Prueba de habilidad aprobada!", SKILL_Leadership);
 		}
 		else
 		{
 			if (!IsCharacterPerkOn(pchar, "Trustworthy"))
-				notification("¡Comprobación de beneficios fallida!", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			if (sti(pchar.reputation.nobility) < 50)
-				notification("¡Reputación demasiado baja! (" + XI_ConvertString(GetReputationName(50)) + ")", "None");
+				Notification_Reputation(false, 50, "low");
 			if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50)
 				notification("¡Prueba de habilidad fallida! (50)", SKILL_LEADERSHIP);
 		}

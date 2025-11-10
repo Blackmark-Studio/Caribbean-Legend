@@ -18,8 +18,8 @@ int GetSpecialWithEffects(ref chr, string specialName)
 {
 	if (!LAi_IsArmed(chr)) return GetSpecialBase(chr, &specialName);
 
-	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + specialName)) CT_UpdateCommonTable(chr);
-	int specialValue = CT_GetInt(chr, CT_COMMON, &specialName);
+	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + SPECIAL_TYPE + specialName)) CT_UpdateCommonTable(chr);
+	int specialValue = CT_GetInt(chr, CT_COMMON, SPECIAL_TYPE + specialName);
 	return iClamp(1, SPECIAL_MAX, specialValue);
 }
 
@@ -64,13 +64,3 @@ void SetRandSPECIAL(ref _refCharacter)
                (2 + rand(8)));
 }
 
-// Jason: спец.атрибут
-int ApplySPECIALQuestPenalty(ref rChar, String sSkillName)
-{
-	int iValue = 0;
-	int iPenalty = sti(rChar.GenQuest.EnergyPenalty);
-	
-	if(sSkillName == SPECIAL_A) iValue = -iPenalty;
-	
-	return iValue;
-}

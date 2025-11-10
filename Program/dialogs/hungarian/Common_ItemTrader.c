@@ -256,7 +256,7 @@ void ProcessDialogEvent()
 			}
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(Megbízható) kössünk kompromisszumot. Ön most ingyen ad egy ajánlást, én pedig viszonzom egy ajánlással, amit késôbb szintén ingyen adok át önnek. Ez a borüzlet csak a kezdet.";
 				link.l2.go = "Wine_Bottles_free";
 			}

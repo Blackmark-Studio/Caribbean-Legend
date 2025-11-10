@@ -43,7 +43,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "您在强迫一位父亲看着女儿日渐衰弱, 而不是让他尝试拯救她。 这是仁慈的吗? ";
                 link.l1.go = "dwh_pastor_bez_VD_1";
-                notification("能力未解锁", "Trustworthy");
+                Notification_Perk(false, "Trustworthy");
             }
         break;
 

@@ -2615,7 +2615,7 @@ void ProcessDialogEvent()
 		case "IslaMona_4":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 85)
 			{
-				notification("Zbyt niska umiejętność (85)", SKILL_COMMERCE);
+				Notification_Skill(false, 85, SKILL_COMMERCE);
 				dialog.text = "Nie obchodzi mnie, czy zamawiasz żywą dziewkę. Dziewięćset.";
 				link.l1 = "Dobrze, dobrze, dobrze. Wezmę to.";
 				link.l1.go = "IslaMona_7";
@@ -2623,7 +2623,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 85, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 800;
 				dialog.text = "Jesteś pewien? Nie zapomnisz? Dobrze, zetnijmy kolejną setkę. Ale to już wszystko!";
 				link.l1 = "Nie zapomnę. Umowa stoi!";
@@ -2645,7 +2645,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Zbyt niska umiejętność (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "Dzieci dziewcząt z burdelu się nie liczą, "+pchar.name+". Rzygam tobą. Tysiąc doublonów na beczce, albo się żegnamy.";
 				link.l1 = "Co masz na myśli, że nie liczą? Uh-huh. Zgadzam się, jesteś oszustem.";
@@ -2654,7 +2654,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Nie wiedziałem, że masz dzieci. I że sprawy mają się tak źle. Dobrze, nie narzekaj. Siedemset. To prawie strata.";
 				link.l1 = "Nie zapomnę. Umowa stoi!";

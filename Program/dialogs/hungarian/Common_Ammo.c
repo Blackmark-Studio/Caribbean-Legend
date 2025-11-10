@@ -503,7 +503,7 @@ void ProcessDialogEvent()
 			link.l1.go = "zpq_ex3";
 			if(CheckCharacterPerk(pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "(megbízható) Kezdem azt hinni, hogy meg fogsz csalni, ezért nem megyek el innen a 125 000 pesóm nélkül!";
 				link.l2.go = "zpq_ex4";
 			}

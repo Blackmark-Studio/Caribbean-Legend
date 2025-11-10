@@ -32,7 +32,7 @@ int CT_GetInt(ref chr, string tableName, string skillName)
 
 void CT_SetNavyPenalty(ref chr, ref table, bool bHero, bool bCompanion)
 {
-	int sailSkill = GetAttributeInt(table, SKILL_SAILING);
+	int sailSkill = GetAttributeInt(table, SKILL_TYPE + SKILL_SAILING);
 	int needSkill = GetShipClassNavySkill(GetCharacterShipClass(chr));
 	int diff = func_max(0, needSkill - sailSkill);
 
@@ -58,15 +58,16 @@ void CT_SetCompanionOverride(ref chr, ref admiralTable, ref companionTable)
 	for (int i=1; i<=7; i++)
 	{
 		string skillName = GetSkillNameByTRIdx("ShipType", i);
-		int compSkillValue = sti(companionTable.(skillName));
-		int admiralSkillValue = sti(admiralTable.(skillName).officer.backup);
+		string modifierName = SKILL_TYPE + skillName;
+		int compSkillValue = sti(companionTable.(modifierName));
+		int admiralSkillValue = sti(admiralTable.(modifierName).officer.backup);
 		int diff = admiralSkillValue - compSkillValue;
-		companionTable.(skillName).admiral = diff;
-		companionTable.(skillName).admiral.backup = compSkillValue;
+		companionTable.(modifierName).admiral = diff;
+		companionTable.(modifierName).admiral.backup = compSkillValue;
 		companionTable.flags.admiral = true;
 		if (diff < 0) continue;
 
-		companionTable.(skillName) = admiralSkillValue;
+		companionTable.(modifierName) = admiralSkillValue;
 	}
 
 	CT_SetNavyPenalty(chr, companionTable, false, true);
@@ -81,8 +82,9 @@ void CT_RemoveCompanionOverride(ref chr, ref companionTable)
 	for (int i=1; i<=7; i++)
 	{
 		string skillName = GetSkillNameByTRIdx("ShipType", i);
-		companionTable.(skillName) = companionTable.(skillName).admiral.backup;
-		DeleteAttribute(companionTable, skillName+".admiral");
+		string modifierName = SKILL_TYPE + skillName;
+		companionTable.(modifierName) = companionTable.(modifierName).admiral.backup;
+		DeleteAttribute(companionTable, modifierName+".admiral");
 		if (skillName != SKILL_SAILING) continue;
 	}
 
@@ -93,16 +95,17 @@ void CT_RemoveCompanionOverride(ref chr, ref companionTable)
 void CT_SetOfficerOverride(ref table, string skillName)
 {
 	string jobName = GetJobBySkillName(skillName);
+	string modifierName = SKILL_TYPE + skillName;
 	int iOfficer = sti(pchar.Fellows.Passengers.(jobName));
-	int pcharSKill = sti(table.(skillName).officer.backup);
+	int pcharSKill = GetAttributeInt(table, modifierName + ".officer.backup");
 	int officerSkill = 0;
 	if (iOfficer > -1) officerSkill = GetSkillWithEffects(&Characters[iOfficer], skillName);
 
 	int diff = func_max(0, officerSkill - pcharSKill);
-	if (diff > 0) table.(skillName) = officerSkill;
-	else table.(skillName) = pcharSKill;
+	if (diff > 0) SetAttribute(table, modifierName, officerSkill);
+	else SetAttribute(table, modifierName, pcharSKill);
 
-	table.(skillName).officer = diff;
+	SetAttribute(table, modifierName + ".officer", diff);
 }
 
 // Процессим зависимость компаньонов от ГГ засчёт адмиральской шляпы
@@ -119,7 +122,7 @@ void CT_UpdateCashTablesAdmiral(ref admiralTable)
 		CT_RemoveCompanionOverride(chr, &companionTable);
 		if (!bHat) continue;
 
-		CT_SetCompanionOverride(chr, &admiralTable, &companionTable);
+		CT_SetCompanionOverride(chr, admiralTable, &companionTable);
 	}
 }
 

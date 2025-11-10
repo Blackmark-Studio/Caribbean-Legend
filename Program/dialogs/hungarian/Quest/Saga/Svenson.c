@@ -1687,14 +1687,14 @@ void ProcessDialogEvent()
 				dialog.text = "Örülök, hogy megkedvelted a vasfát, " + sStr + ". A szállítmányok növelése nem probléma, de van egy bökkenô, ahogy érted. A nagyobb mennyiséggel együtt jár egy olyan nyomvonal, ami nem kívánt figyelmet kelthet, különösen az angol hatóságok részérôl. De ha megbízható kezeket, megbízható füleket és olyan embereket adunk hozzá a rezidencián, akik segítenek nekünk az árnyékban maradni, minden megoldható. Bár nem lesz olcsó - háromezer dublont, hogy megkerüljük a város kincstárát és Anglia igényeit. Akkor én ötször ennyivel többet tudok neked adni. Mit szólsz hozzá?";
 				link.l1 = "Háromezer dublont? Jan, ez rablás! Nem tudnánk kevesebb kiadással is boldogulni? Talán van rá mód, hogy ilyen mesés összegek nélkül rendezzük az ügyet?";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Jó ötlet, de azt kell mondanom, hogy a kereskedelmi ügyek ilyen volumenéhez egy kicsit több tapasztalatra és ügyességre van szükség. Ha sietsz, több a kockázat, mint a haszon. Csináljuk így: szerezzünk még egy kis tapasztalatot, és ha készen állsz a nagyobb tételekre, gyere vissza. Akkor majd mindent megbeszélünk rendesen.";
 				link.l1 = "Hmm... Rendben. Térjünk vissza erre a beszélgetésre késôbb.";
 				link.l1.go = "exit";
-				notification("Képességpróba Sikertelen (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

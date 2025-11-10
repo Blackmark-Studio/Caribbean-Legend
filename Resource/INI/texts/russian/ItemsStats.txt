@@ -279,7 +279,7 @@ itm_stat_descr_lacrima_patris_bonus
 {
 ~
 ~
-Текущий бонус: $number($attr($context.KillerBonus.appliedbonus)) урона и $number($attr($context.KillerBonus.RangeBonus)) % дальности.
+Текущий бонус: $number($attr($context.KillerBonus.appliedbonus)) урона и $number($attr($context.KillerBonus.RangeBonus)) % дальности.
 }
 itm_stat_blade_WR_1 {Усердие}
 itm_stat_descr_blade_WR_1 {Увеличивает скорость восстановления здоровья в бою в пять раз.}

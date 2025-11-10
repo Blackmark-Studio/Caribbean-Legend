@@ -1686,14 +1686,14 @@ void ProcessDialogEvent()
 				dialog.text = "Felice che tu abbia preso gusto per il legno di ferro, "+sStr+"Aumentare i carichi non è un problema, ma c’è un tranello, come ben capisci. Più merci, più rischio di lasciare tracce che potrebbero attirare attenzioni sgradite, soprattutto quelle maledette autorità inglesi. Se però mettiamo gente affidabile, orecchie fidate e qualcuno nella residenza che ci aiuti a restare nell’ombra, tutto si può sistemare. Ma non sarà a buon mercato, tremila dobloni per svicolare dal tesoro cittadino e dalle grinfie d’Inghilterra. Dopodiché potrò fornirti cinque volte tanto. Che ne dici?";
 				link.l1 = " Tremila dobloni? Jan, questo è un furto alla luce del sole! Non potremmo cavarcela con meno spese? Forse c’è modo di risolvere la faccenda senza queste cifre da capogiro? ";
 				link.l1.go = "UpgradeBakaut_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Buona idea, ma devo dire che per traffici di questa portata serve un po’ più di mestiere e fiuto. Se ti affretti troppo, rischi più di quanto ci guadagni. Facciamo così: fai un po’ di esperienza in più, e quando sarai pronto per carichi maggiori, torna pure. Allora ne parleremo come si deve.";
 				link.l1 = "Hmm... Va bene. Torneremo su questo discorso più tardi.";
 				link.l1.go = "exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

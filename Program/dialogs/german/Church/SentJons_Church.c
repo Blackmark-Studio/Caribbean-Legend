@@ -35,13 +35,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Vertrauenswürdig) Doch selbst Ihr müsst anerkennen, dass der Herr durch Menschen wirkt. Was, wenn die Zigeunerin nur ein Werkzeug in seiner Hand ist? Was, wenn sein Plan so tief ist, dass wir ihn nicht begreifen können? Gottes Wege sind unergründlich, nicht wahr?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Vertrauenswürdig", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Ihr zwingt einen Vater, zuzusehen, wie seine Tochter langsam dahinsiecht, anstatt ihm zu erlauben, sie zu retten. Ist das Barmherzigkeit?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Fähigkeit nicht freigeschaltet", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 

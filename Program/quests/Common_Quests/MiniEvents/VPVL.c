@@ -88,7 +88,7 @@ bool VPVL_QuestComplete(string sQuestName, string qname)
 		LAi_LocationFightDisable(&Locations[FindLocation("Shore39")], false); 
 		EndQuestMovie(); 
 		LAi_SetHP(sld, 10.0, 100.0);    //Чтобы не восставал из мёртвых
-		LAi_ApplyCharacterDamage(sld, 112, "fire"); 
+		LAi_ApplyCharacterDamage(sld, 112, "fire", true); 
 		LAi_CheckKillCharacter(sld);
 	}
 	

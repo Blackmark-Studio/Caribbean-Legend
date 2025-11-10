@@ -6,3 +6,4 @@ perks_5 {$rand('$attr($context.ship.name)'的货舱里没什么可拿的|看起�
 perks_6 {在@<rChar.Ship.Name>号船上, @<FindRussianSailorString(cn, "No")>在拥挤中丧生。}
 perks_7 {根据计算, @<_ShipName>已抵达@<_PortName>。}
 perks_8 {仍在途中。}
+perks_9 {展览费用已收取。}

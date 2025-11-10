@@ -324,6 +324,7 @@ void Notification(string strLog, string ability)
 		case "Sailor": IconIndex = 206; break;
 		case "CoordinatedBoarding": IconIndex = 207; break;
 		case "TrainedEye": IconIndex = 208; break;
+		case "Collection": IconIndex = 193; break;
 		case "None": IconIndex = 239; break;
 	}
 

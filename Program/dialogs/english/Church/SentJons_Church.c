@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "You’re forcing a father to watch his daughter waste away, instead of letting him try to save her. Is that merciful?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Ability not unlocked", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 

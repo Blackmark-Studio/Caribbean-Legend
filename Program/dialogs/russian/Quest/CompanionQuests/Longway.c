@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "А как тебе это удалось провернуть, Лонгвэй?";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 61, "low");
 			}
 		break;
 		
@@ -5052,14 +5052,14 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "Medic"))
 				{
-					notification("Отменное здоровье", "Medic");
+					Notification_Perk(true, "Medic");
 					dialog.text = "(Отменное здоровье) Фу-у-х... Похоже, ты не соврал, Шарль, да...";
 					link.l1 = "Мне нет нужды тебя обманывать, дорогая...";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_18";
 				}
 				else
 				{
-					notification("Не открыта способность", "Medic");
+					Notification_Perk(false, "Medic");
 					dialog.text = "Шарль, ты... ты это серьёзно?! Это что такое было?";
 					link.l1 = "Ох-х, ну и жара...";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_19";

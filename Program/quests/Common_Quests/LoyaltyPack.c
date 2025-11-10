@@ -93,6 +93,7 @@ void LoyaltyPack_Fadey_DlgExit()
 bool RemoveAlonsoFromHold()
 {
 	if(CheckAttributeEqualTo(pchar, "questTemp.HWIC.Self", "KnippelPrisoner")) return true;
+	if(CheckAttributeEqualTo(pchar, "questTemp.HWIC.Self", "LongwayPrisoner")) return true;
 	
 	return false;
 }

@@ -123,13 +123,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Les documents ? Bien sûr, tout est en règle. Vous n’allez tout de même pas vérifier, si ?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Test de noblesse réussi", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Les documents ?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Niveau de noblesse trop bas ! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -154,13 +154,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Très bien, je peux vous accorder une remise. Et ce n’est pas tout. Je souhaite devenir votre fournisseur régulier. Je vous garantis une livraison sans faille. J’ai déjà loué un entrepôt à Basse-Terre, et vous recevrez les marchandises directement de là, sans aucun retard. Il y aura toujours suffisamment d’alcool pour anticiper toute pénurie. Avec la remise, cela vous coûtera deux cent quarante doublons. Qu’en dites-vous ?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Négociation réussie", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Eh bien, je suis prêt"+GetSexPhrase("","e")+" à baisser le prix à deux cent quarante doublons pour la cargaison, car je vise une collaboration à long terme. Je peux répondre à tous vos besoins en boissons et assurer des livraisons régulières. Qu’en dites-vous ?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Compétence insuffisante (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Bien sûr, capitaine ! Alors, quel prix demandez-vous pour votre cargaison ?";
 				link.l1 = "Je demande trente doublons pour chaque dizaine de bouteilles de vin, et cinq doublons pour le rhum. Cela fait cent bouteilles de chaque, soit trois cent cinquante doublons.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Réputation suffisante", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Désolé, capitaine, mais votre réputation laisse encore à désirer.";
 				link.l1 = "Merde...";
 				link.l1.go = "exit";
-				notification("Réputation trop basse ! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

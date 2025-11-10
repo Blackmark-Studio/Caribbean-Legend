@@ -1606,9 +1606,12 @@ void MarchCap_fail(string qName)//компаньон погиб по пути
 
 void MarchCap1_fail(string qName)//компаньон погиб в бою
 {
-	if (CheckAttribute(pchar, "GenQuest.MarchCap.Pirate")) pchar.quest.MarchCap1_DieHard.over = "yes"; //снять прерывание
+	if (CheckAttribute(pchar, "GenQuest.MarchCap.Pirate")) DeleteQuestCondition("MarchCap1_DieHard");
 	Island_SetReloadEnableGlobal(pchar.GenQuest.MarchCap.Island, true);//на остров можно
-	pchar.quest.MarchCap1_AfterBattle.over = "yes"; //снять прерывание
+	DeleteQuestCondition("MarchCap1_AfterBattle");
+	DeleteQuestCondition("MarchCap1_fail");
+	DeleteQuestCondition("MarchCap1_fail1");
+	DeleteQuestCondition("MarchCap1_fail2");
 	sld = characterFromId("MarchCap");	
 	AddQuestRecord("MarchCap", "4");
 	AddQuestUserData("MarchCap", "sName", GetFullName(sld));

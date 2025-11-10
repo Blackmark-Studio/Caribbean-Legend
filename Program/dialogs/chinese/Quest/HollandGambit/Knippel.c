@@ -140,8 +140,7 @@ void ProcessDialogEvent()
 		case "Knippel_check"://开始检查玩家的各项条件
 			if(makeint(PChar.reputation.nobility) < 48)//贵族声誉低
 			{
-				// belamour legendary edition 显示标准
-				notification("声誉太低! (冒险家)", "None");
+				Notification_Reputation(false, 48, "low");
 				PlaySound("Voice\English\hambit\Charlie Knippel-04.wav");
 				dialog.text = "快乐的老英格兰不需要流氓的服务, 链弹打我屁股! 恭敬地说, 你可以滚蛋了。 ";
 				link.l1 = "嘿, 伙计, 注意你的嘴, 否则我就把它缝起来! ";
@@ -150,7 +149,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("声誉检查通过", "None");
+				Notification_Reputation(true, 48, "low");
 			}
 			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 30)//航海技能低
 			{

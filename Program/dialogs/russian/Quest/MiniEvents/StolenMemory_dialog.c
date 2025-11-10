@@ -229,7 +229,7 @@ void ProcessDialogEvent()
 				link.l1 = "Благодарю вас. Вы сделали правильный выбор.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie");
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 25, SKILL_COMMERCE);
 				GiveItem2Character(pchar, "SM_necklace_Julie");
 				ChangeCharacterComplexReputation(pchar, "nobility", 2);
 				AddMoneyToCharacter(pchar, -5000);
@@ -240,7 +240,7 @@ void ProcessDialogEvent()
 				link.l1 = "Раз уж вы не хотите расстаться с ожерельем по-хорошему, значит - я заберу его силой.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Недостаточно развит навык (25)", SKILL_COMMERCE);
+				Notification_Skill(false, 25, SKILL_COMMERCE);
 			}
 		break;
 		

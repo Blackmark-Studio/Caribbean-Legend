@@ -123,13 +123,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Z dokumentami? Oczywiście, wszystko w najlepszym porządku. Nie zamierzacie ich przecież sprawdzać?";
 				link.l1.go = "TPZ_Tavern2_2";
-				notification("Test honoru zaliczony", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "Z dokumentami?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Zbyt niski poziom honoru! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -154,13 +154,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Mogę dać wam zniżkę. Ale to nie wszystko. Chcę zostać waszym stałym dostawcą. Gwarantuję brak opóźnień. Wynajmę magazyn w Basse-Terre i towar będzie dostarczany stamtąd bez zwłoki. Alkohol zawsze będzie w zapasie, by zapobiec wszelkim niedoborom. A co do ceny – zniżka sprawia, że partia wyniesie was tylko 240 dubloonów. Co wy na to?";
 				link.l1.go = "TPZ_Tavern2_4";
-				notification("Test umiejętności zdany", SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Cóż, mogę zejść z ceny do dwustu czterdziestu dubloonów za partię, ponieważ zależy mi na długoterminowej współpracy. W przyszłości będę w stanie całkowicie zaspokoić wszystkie wasze potrzeby i zapewnić nieprzerwane dostawy. Co wy na to?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Niewystarczający poziom umiejętności (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -220,14 +220,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Oczywiście, kapitanie! A więc, ile chcecie za swoją partię?";
 				link.l1 = "Za każde dziesięć butelek wina chcę trzydzieści dubloonów, a za rum – pięć. Cała partia to sto butelek rumu i tyle samo wina, razem daje to trzysta pięćdziesiąt dubloonów.";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("Test honoru zdany", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Przykro mi, kapitanie, ale wasza reputacja wciąż pozostawia wiele do życzenia.";
 				link.l1 = "Cholera...";
 				link.l1.go = "exit";
-				notification("Zbyt niski poziom honoru! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

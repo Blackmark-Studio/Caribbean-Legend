@@ -101,7 +101,7 @@ void ProcessDialogEvent()
 					{
 						link.l2 = "(Megbízható) Tisztelt szenátorok, a tisztességes és kölcsönösen elônyös kereskedelemért vagyok itt. Kérem, engedjenek az ültetvénytulajdonoshoz.";
 						link.l2.go = "mtraxx_soldier_1";
-						notification("Megbízható", "Trustworthy");
+						Notification_Perk(true, "Trustworthy");
 					}
 				}
 				else
@@ -295,7 +295,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(megbízható) Tisztelt uram, engedje meg, hogy tiltakozzam! A legjobb minôségû árut hoztam önnek. Ismerem minden egyes egység értékét, mind az általam kínált, mind az önök által cserébe kínált árut. Kicsit nagyobb rakományt érdemlek az önök részérôl, és ez az üzlet még mindig nyereséges lesz önöknek - ezt önök is nagyon jól tudják.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -312,7 +312,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(megbízható) Tisztelt uram, engedje meg, hogy tiltakozzam! A legjobb minôségû árut hoztam önnek. Ismerem minden egyes egység értékét, mind az általam kínált, mind az önök által cserébe kínált árut. Kicsit nagyobb rakományt érdemlek az önök részérôl, és ez az üzlet még mindig nyereséges lesz önöknek - ezt önök is nagyon jól tudják.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -329,7 +329,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(megbízható) Tisztelt uram, engedje meg, hogy tiltakozzam! A legjobb minôségû árut hoztam önnek. Ismerem minden egyes egység értékét, mind az általam kínált, mind az önök által cserébe kínált árut. Kicsit nagyobb rakományt érdemlek az önök részérôl, és ez az üzlet még mindig nyereséges lesz önöknek - ezt önök is nagyon jól tudják.";
 				link.l1.go = "mtraxx_PlantVykup_2";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 		break;
 		
@@ -406,14 +406,14 @@ void ProcessDialogEvent()
 				dialog.text = "Igen, van kereslet Jean Picardra - nem csak a bor felszolgálásában. Egy befolyásos angol már felvette velem a kapcsolatot. Egy férfi, hogy is hívják... Pattornson? Átadott nekem egy levelet.";
 				link.l1 = "De sem Pattornson, sem az ügyfele nem jelentkezett még. Kész vagyok megvenni Jean-t magától itt és most. Nevezze meg az árát - a hölgyek várnak!";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 70, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Á, jól kijöttek. Megértem. De attól tartok, vissza kell utasítanom - Jean Picard nem eladó. Sajnálom, senor.";
 				link.l1 = "Ó? Miért is? Hajlandó vagyok bôségesen fizetni. Csak mondja meg az árat.";
 				link.l1.go = "mtraxx_PlantVykup_6";
-				notification("Képességpróba Sikertelen (70)", SKILL_COMMERCE);
+				Notification_Skill(false, 70, SKILL_COMMERCE);
 			}
 		break;
 		

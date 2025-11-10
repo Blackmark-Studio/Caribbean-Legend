@@ -1279,13 +1279,13 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "(Megbízható) Ideges vagyok. Gabe gyáva, de nem hülye. Mi van, ha egy egész szakasznyi katona jön ide helyette? Vagy megközelítik az öblöt, és elsüllyesztik a hajónkat?";
 				link.l1.go = "BM_IronsJamaicaJungle_GabePlan_VD1";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l2 = "Gabe látott engem. Futnom kellett.";
 				link.l2.go = "BM_IronsJamaicaJungle_GabePlan_4";
-				notification("A képességek ellenôrzése sikertelen.", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		

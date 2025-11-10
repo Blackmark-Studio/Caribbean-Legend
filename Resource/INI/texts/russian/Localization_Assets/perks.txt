@@ -6,3 +6,4 @@ perks_5 {$rand(Ловить в трюме '$attr($context.ship.name)' особо
 perks_6 {На корабле @<rChar.Ship.Name> от давки погибло @<FindRussianSailorString(cn, "No")>.}
 perks_7 {По расчётам @<_ShipName> прибыл в @<_PortName>.}
 perks_8 {Ещё в пути.}
+perks_9 {Собраны деньги за демонстрацию коллекции.}

@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("钱不够。 (1000)", "Money");
+				Notification_Money(false, 1000, "peso");
 			}
 			link.l2 = "抱歉, 伙计, 你得找别人了。我有更重要的事要做, 没空送信。";
 			link.l2.go = "Sailor_end";

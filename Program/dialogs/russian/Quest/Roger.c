@@ -3024,13 +3024,13 @@ void ProcessDialogEvent()
 				link.l1 = "(Вызывающий доверие) (Честь) (Харизма) На сегодня хватит крови, Жан. Я сам.";
 				link.l1.go = "merida_head_dobro_1";
 				Notification_Perk(true, "Trustworthy");
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 50, "low");
 				notification("Проверка пройдена", SKILL_Leadership);
 			}
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(50))+")", "None");
+				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Недостаточно развит навык (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Ну хорошо. Действуй. Я этим заниматься не собираюсь. И смотреть - тоже.";

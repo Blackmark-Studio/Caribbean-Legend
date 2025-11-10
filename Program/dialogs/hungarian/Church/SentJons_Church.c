@@ -37,13 +37,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Trustworthy) De még neked is el kell ismerned, hogy az Úr embereken keresztül cselekszik. Mi van, ha a cigány csupán eszköze az Ô akaratának? Mi van, ha az Ô terve olyan mélyreható, amit mi egyszerû halandók nem érthetünk meg? Az Úr titokzatos utakon jár, nem igaz?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Arra kényszerítesz egy apát, hogy végignézze a lánya pusztulását, ahelyett, hogy hagynád, hogy megpróbálja megmenteni. Ez irgalmas?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("A képességet nem nyitották ki", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 

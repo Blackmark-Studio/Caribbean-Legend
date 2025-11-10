@@ -198,13 +198,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "És mit gondol, ki tudott volna leteríteni egy egész járôrcsapatot egy tiszt vezetésével?";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(megbízható) Banditák, ki más? Szégyellem bevallani, de nemrég épphogy megúsztam egy hatalmas bandát.";
 				link.l1.go = "PZ_IshemLongway_Blef_2";
 			}
 			else
 			{
-				notification("A képességek ellenôrzése sikertelen.", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "De honnan tudnám? Bárki lehetett volna - rablók, kalózok, kémek...";
 				link.l1.go = "PZ_IshemLongway_Blef_netVD_1";
 			}

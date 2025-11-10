@@ -6,3 +6,4 @@ perks_5 {$rand(Im Laderaum der '$attr($context.ship.name)' gibt es kaum etwas zu
 perks_6 {Auf dem Schiff @<rChar.Ship.Name> kam @<FindRussianSailorString(cn, "No")> in der Enge ums Leben.}
 perks_7 {Nach Berechnungen ist @<_ShipName> in @<_PortName> eingetroffen.}
 perks_8 {Noch unterwegs.}
+perks_9 {Ausstellungsgebühr eingezogen.}

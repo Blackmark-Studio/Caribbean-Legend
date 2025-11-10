@@ -1530,7 +1530,7 @@ case "Europe":
 			dialog.text = "Miért érdeklik az indiánok, Monsieur? Bár... nos, igen, ön frissen érkezett Európából\nHow's Paris? Még mindig szétnyomják a városi patkányokat, vagy már meghívják ôket az úrvacsorára? Nálunk ugyanis patkányok helyett bennszülöttek élnek. Üzletelnek a kalózokkal, megtámadják a favágókat, megeszik az embereket, a fenébe\nHárom nappal ezelôtt valami okos egyén már eladott egy muskétát az ilyeneknek. És képzeld, mi történt? Azok a szemetek megölték az összes katonát az ôrjáratban, amelyet egyébként a barátom és bajtársam vezetett. Megtaláltuk az áruló gyarmatosítót, és felkötöttük a napon száradni, hogy példát statuáljunk vele. Fegyvert adni indiánoknak! Ez árulás! Árulás Franciaország ellen! Már egy ideje követjük ezt a színes majmot, mivel már ismerôs arccá vált a különbözô rendezvényeken\nHát, most eléri gyors és megérdemelt végét. Továbbléphet, kapitány. Ne keveredjen bele olyan ügyekbe, amelyek nem tartoznak magára. Maga nem része ennek a háborúnak... Még nem... Vagy mégis?!";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Megbízható) Tudja, biztos úr... Charles de Maure kapitány vagyok, a Fadey Muscovite vendége. Bizonyos érdekeltségünk van ebben az indiánban... úgyhogy ne zavarjuk egymás kötelességeit. Egyetért, hadnagy úr?";
 				link.l1.go = "ZsI_officer_Mir";
 			}
@@ -1737,7 +1737,7 @@ case "Europe":
 			dialog.text = "Ez nem szívesség, kapitány, hanem egy kölcsönösen elônyös vállalkozás! Negyven aranyat fizetek, ha idôben elkísér St. Pierre-be.";
 			if (IsCharacterPerkOn(Pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Megbízható) Mivel az ellenkezô irányba tartok, Monsieur, elôre kérem a fizetséget.";
 				link.l1.go = "MOT_Barbie_Torg";
 			}

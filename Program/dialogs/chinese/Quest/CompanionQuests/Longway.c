@@ -933,7 +933,7 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "你是怎么做到的, 朗威? ";
 				link.l1.go = "PZ_LongwayRazgovorOProshlom_Proshaem_1";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 61, "low");
 			}
 		break;
 		
@@ -5008,14 +5008,14 @@ void ProcessDialogEvent()
 			{
 				if (IsCharacterPerkOn(pchar, "Medic"))
 				{
-					notification("Excellent Health", "Medic");
+					Notification_Perk(true, "Medic");
 					dialog.text = "(身体极佳) 呃... 看来你没撒谎, 查尔斯, 知道吗... ";
 					link.l1 = "我没必要欺骗你, 亲爱的... ";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_18";
 				}
 				else
 				{
-					notification("Perk check failed", "Medic");
+					Notification_Perk(false, "Medic");
 					dialog.text = "查尔斯, 你是... 认真的吗? 那是什么? ";
 					link.l1 = "哦, 这热度对我没好处。 咳咳。 ";
 					link.l1.go = "PZ_MaryRazgovorOBordeli_Bad_19";

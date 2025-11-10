@@ -848,14 +848,14 @@ void ProcessDialogEvent()
 			dialog.text = "Mi a játékod, kapitány? Több oldal hiányzik - olyan oldalak, amelyek nagyon fontosak számomra. Azt hitte, nem veszem észre, hogy felhasználhassa ellenem? Vagy azt remélte, hogy többet kaphat belôle? Attól tartok, mindkettôben csalódást kell okoznom.";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(Megbízható) Elnézést kérek. Az egyetlen hibám az volt, hogy nem néztem meg elôzetesen magam az archívumot.";
 				link.l1.go = "VD_Merdok_book_3";
 				SetTimerCondition("PZ_Etap1_Start", 0, 0, 30, false);	// 1 этап стартует через 30 дней
 			}
 			else
 			{
-				notification("A képességek ellenôrzése sikertelen.", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 				link.l1 = "Tényleg kitépném a lapokat, majd közömbös tekintettel átadnám az archívumot?";
 				link.l1.go = "Merdok_book_3";
 				SetTimerCondition("PZ_LigaInJungle", 0, 0, 7, false);	// проверку не прошёл, значит нападёт Лига через неделю, после чего начнётся таймер на 30 дней 1 этапа

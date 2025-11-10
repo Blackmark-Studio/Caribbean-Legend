@@ -2695,7 +2695,7 @@ void ProcessDialogEvent()
 		case "IslaMona_6":
             if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) < 100)
 			{
-				notification("Képességpróba Sikertelen (100)", SKILL_COMMERCE);
+				Notification_Skill(false, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 1000;
 				dialog.text = "A bordélyházi lányok gyermekei nem számítanak, "+pchar.name+". Elegem van belôled. Ezer dublont a hordóra, vagy búcsút mondunk.";
 				link.l1 = "Hogy érted, hogy nem? Aha. Egyetértek, te egy csaló vagy.";
@@ -2704,7 +2704,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 100, SKILL_COMMERCE);
 				pchar.questTemp.IslaMona.Shipyarder.Money = 700;
 				dialog.text = "Nem tudtam, hogy vannak gyerekeid. És hogy ennyire rosszul állnak a dolgok. Rendben, ne panaszkodj. Hétszáz. Ez majdnem veszteség.";
 				link.l1 = "Nem felejtem el. Megegyeztünk!";

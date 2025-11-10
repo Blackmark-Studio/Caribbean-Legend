@@ -1345,6 +1345,7 @@ itmname_SM_necklace_Julie {Julie d'Armagnac 的项链}
 itmdescr_SM_necklace_Julie {Julie 心爱的珠宝。 优雅精致, 似乎自身就守护着她的记忆。 如果有能保守秘密的物品, 这条项链肯定属于其中之一。}
 itmname_TBP_letter {已拆封信}
 itmdescr_TBP_letter {'你以为你可以敲诈我而不受惩罚? 你错了。 很快你就会后悔你的大胆。 你的死亡将漫长而痛苦, 没有人会救你。'}
+itmdescr_letter_open_Regata {致帆船赛参赛者的邀请函。}
 itmname_kaleuche_amulet1 {奇怪的护身符}
 itmdescr_kaleuche_amulet1 {由光滑鹅卵石制成并涂有鲜艳颜色 的印第安护身符。}
 itmname_kaleuche_amulet1_potion {Tuttuathapak 的药水}

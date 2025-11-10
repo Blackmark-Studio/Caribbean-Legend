@@ -530,7 +530,7 @@ link.l1.go = "hayamee_1_1";
 			link.l1 = "告诉塔戈法我会给他我最漂亮的手枪。 给你我有很多珠宝。 ";
 			link.l1.go = "hayamee_2";
 			notification("印第安人尊重你 " + stf(pchar.questTemp.Indian.relation) + "/40", "None");
-			notification("可信赖", "Trustworthy");
+			Notification_Perk(true, "Trustworthy");
 		break;
 		
 		case "hayamee_2":

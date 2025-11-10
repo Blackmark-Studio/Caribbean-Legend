@@ -22,10 +22,11 @@ bool LAi_IsHitCritical(ref attacker, ref table, string weaponType, string strike
 	return false;
 }
 
-void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, float damageMtp)
+void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref enemyLandTable, string weaponType, string strikeType, float damageMtp, bool isCrit)
 {
 	if (!LAi_IsHitCritical(attacker, attackerLandTable, weaponType, strikeType)) return; // если крит
-
+	
+	isCrit = true;
 	float criticalDamageMtp = GetCritDamageMtp(attackerLandTable, weaponType);           // получаем наш + крит урона
 	criticalDamageMtp -= GetCritDefence(enemyLandTable);                                 // вычитаем вражеское снижение крит урона
 	if (criticalDamageMtp > 0) damageMtp += criticalDamageMtp;                           // добавляем модификатор
@@ -33,7 +34,11 @@ void ModifyDamageMtpByCrit(ref attacker, ref enemy, ref attackerLandTable, ref e
 	string notifyKey = "Critical Hit";
 	if (strikeType == SHOT_STRIKE) notifyKey = "CriticalShot";
 	AddCharacterExpToSkill(attacker, SKILL_FORTUNE, 5);
-	if (ShowCharString()) Log_Chr(enemy, XI_ConvertString(notifyKey));
+	if (ShowCharString())
+	{
+		if(strikeType == SHOT_STRIKE || !bDrawBars)
+			Log_Chr(enemy, XI_ConvertString(notifyKey));
+	}
 	else if (IsMainCharacter(attacker)) Log_Info(XI_ConvertString(notifyKey));
 }
 
@@ -335,7 +340,7 @@ void LAi_Location_CharacterSGFire()
 	LAi_group_Attack(attack, enemy);
 	//AddCharacterExp(attack, 100*kDmg);
 	//Наносим повреждение
-	LAi_ApplyCharacterDamage(enemy, MakeInt((5 + rand(5))*kDmg),"fire");
+	LAi_ApplyCharacterDamage(enemy, MakeInt((5 + rand(5))*kDmg),"fire", false);
 	//Проверим на смерть
 	LAi_CheckKillCharacter(enemy);
 }

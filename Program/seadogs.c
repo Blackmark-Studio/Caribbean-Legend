@@ -127,6 +127,25 @@ native bool IsInSafeMode();
 //OR
 //2: enabled in engine.ini mod_safe_mode = 1
 
+// https://partner.steamgames.com/doc/features/enhancedrichpresence#4
+// https://partner.steamgames.com/doc/api/ISteamFriends#SetRichPresence
+// status       :   A UTF-8 string that will show up
+//                   in the 'view game info' dialog in the Steam friends list.
+// steam_display:   Names a rich presence localization token
+//                   that will be displayed in the viewing
+//                   user's selected language in the Steam client UI.
+//                   See Rich Presence Localization for more info,
+//                   including a link to a page for testing this rich presence data.
+//                   If steam_display is not set to a valid localization tag,
+//                   then rich presence will not be displayed in the Steam client.
+// Returns false if Steam API is not available or bad key/value arguments
+native bool SteamSetRichPresence(string sKey, string sValue);
+// https://partner.steamgames.com/doc/api/ISteamFriends#ClearRichPresence
+// Clears all of the current user's Rich Presence key/values.
+// Returns false if Steam API is not available (NoSteam engine build)
+native bool SteamClearRichPresence();
+#include "RichPresence.c"
+
 #libriary "script_libriary_test"
 #libriary "dx9render_script_libriary"
 #libriary "SteamApiScriptLib"
@@ -286,6 +305,7 @@ void Main()
 		UnloadSegment("Interface\BaseInterface.c");
 	}
 	
+	InitializeRichPresence();
 	SetEventHandler("Control Activation","proc_break_video",0);
 	InterfaceStates.Launched = false;
 	SetEventHandler(EVENT_END_VIDEO,"Main_LogoVideo",0);

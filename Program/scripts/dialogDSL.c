@@ -25,7 +25,7 @@ string DLG_Convert(string key, string filename, ref context)
   object tempContext;
   CopyAttributes(&tempContext, context);
   tempContext.filename = filename;
-  if (filename != "") result = GetConvertStrB(key, filename);
+  if (filename != "") result = GetConvertStr(key, filename);
   else result = xiStr(key); // empty filename so we looking in common.ini
 
   if (result == "" || result == " ") return "Key " + key + " in " + filename;

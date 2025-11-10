@@ -488,14 +488,14 @@ void ProcessDialogEvent()
 				dialog.text = "先生"+GetSexPhrase("","ita")+", 你购买更多树脂的愿望无疑表明了你对我们业务的信任。 然而, 有一个复杂性\n随着数量的增加, 吸引岛上当局注意的风险也会增加, 控制这样的运输需要人员和安全措施, 我承认, 这并不便宜。 如果你愿意在价格上增加三千杜布隆, 作为一次性付款, 我会雇佣可靠的人来保护货物并防止信息泄露。 然后我们的路线将变得更安全, 我可以每月为你提供三百桶树脂。 为了补偿你的投资, 作为批发买家, 我会为你提供所有未来 shipments 的百分之十五的折扣。 ";
 				link.l1 = "三千杜布隆来保障运输? 塞尔吉奥先生, 我不隐瞒, 这个价格似乎令人难以置信 - 好像你在提议埃斯科里亚尔的阴谋, 而不仅仅是保障树脂货物! ";
 				link.l1.go = "UpgradeOil_1";
-				notification("技能检定成功", SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "先生"+GetSexPhrase("","ita")+", 我感谢你的兴趣, 但这样的大交易需要经验和谨慎。 老实说, 你在交易事务上的水平还不足以处理这么大的 volume。 我建议你多获得一点经验, 等你准备好接受更大的 shipments 时再回来找我。 然后, 也许我们会彻底讨论这个问题。 ";
 				link.l1 = "很好。 我们以后再谈这个问题。 ";
 				link.l1.go = "oil_trade_exit";
-				notification("技能检定失败 (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

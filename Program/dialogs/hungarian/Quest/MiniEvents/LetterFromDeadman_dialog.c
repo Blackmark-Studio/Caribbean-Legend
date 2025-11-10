@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Nincs elég pénz (1000)", "Money");
+				Notification_Money(false, 1000, "peso");
 			}
 			link.l2 = "Sajnálom, barátom, de mást kell keresned. Fontosabb dolgaim vannak annál, mint hogy leveleket kézbesítsek.";
 			link.l2.go = "Sailor_end";

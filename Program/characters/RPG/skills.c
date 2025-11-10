@@ -12,12 +12,13 @@ int GetSkillWithEffects(ref chr, string skillName)
 	if (!LAi_IsArmed(chr)) return GetSkillBase(chr, &skillName);
 
 	int skillValue;
-	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + skillName)) CT_UpdateCommonTable(chr);
+	string modifierName = SKILL_TYPE + skillName;
+	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + modifierName)) CT_UpdateCommonTable(chr);
 	if (IsMainCharacter(chr) && isShipTypeSkill(&skillName)) 
 	{
-		skillValue = CT_GetInt(chr, CT_COMMON, "officer.backup." + skillName);
+		skillValue = CT_GetInt(chr, CT_COMMON, modifierName + ".officer.backup");
 	}
-	else skillValue = CT_GetInt(chr, CT_COMMON, &skillName);
+	else skillValue = CT_GetInt(chr, CT_COMMON, modifierName);
 
 	skillValue += GetStatusIntValue(chr, &skillName);
 	return iClamp(1, SKILL_MAX, skillValue);
@@ -26,8 +27,9 @@ int GetSkillWithEffects(ref chr, string skillName)
 // Получить уровень скилла с учётом офицеров
 int GetSkillWithOfficer(ref chr, string skillName)
 {
-	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + skillName)) CT_UpdateCommonTable(chr);
-	int skillValue = CT_GetInt(chr, CT_COMMON, &skillName) + GetStatusIntValue(chr, &skillName);
+	string modifierName = SKILL_TYPE + skillName;
+	if (!CheckAttribute(chr, "ct." + CT_COMMON + "." + modifierName)) CT_UpdateCommonTable(chr);
+	int skillValue = CT_GetInt(chr, CT_COMMON, &modifierName) + GetStatusIntValue(chr, &skillName);
 	return iClamp(1, SKILL_MAX, skillValue);
 }
 

@@ -488,14 +488,14 @@ void ProcessDialogEvent()
 				dialog.text = "Señor"+GetSexPhrase("","ita")+", il tuo desiderio di acquistare altra resina dimostra una certa fiducia nei nostri affari. Tuttavia, c’è una piccola complicazione...\nAumentando i volumi cresce anche il rischio di attirare l’attenzione delle autorità dell’isola, e gestire spedizioni così grosse richiede uomini fidati e misure di sicurezza, che, ti avverto, non costano poco. Se sei disposto ad aggiungere tremila dobloni al prezzo, come pagamento unico, assumerò gente affidabile che proteggerà la merce e terrà la bocca chiusa. Così la nostra rotta diventerà più sicura e potrò fornirti trecento barili di resina al mese. Per ricompensarti dell’investimento, ti offrirò uno sconto del quindici per cento su tutte le future spedizioni, come cliente all’ingrosso.";
 				link.l1 = "Tremila dobloni per mettere al sicuro le spedizioni? Señor Sergio, non lo nego, questo prezzo mi pare assurdo – sembra quasi che tu voglia ordire una congiura all’Escorial invece di proteggere qualche barile di pece!";
 				link.l1.go = "UpgradeOil_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Señor"+GetSexPhrase("","ita")+", apprezzo il tuo interesse, ma affari di tale portata richiedono esperienza e prudenza. A dire il vero, il tuo livello nelle questioni di commercio non è ancora abbastanza alto per gestire un carico simile. Ti consiglio di fare un po’ più di esperienza e tornare da me quando sarai pronto per spedizioni più grandi. Allora, forse, ne parleremo sul serio.";
 				link.l1 = "Molto bene. Torneremo su questa faccenda più tardi.";
 				link.l1.go = "oil_trade_exit";
-				notification("Skill Check Failed (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 		break;
 		

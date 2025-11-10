@@ -228,7 +228,7 @@ void ProcessDialogEvent()
 				link.l1 = "A bölcsessége megegyezik a nagylelkûségével, uram. Ezt a döntést nem fogjuk megbánni.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie");
-				notification("A csekk átadva", SKILL_COMMERCE);
+				Notification_Skill(true, 25, SKILL_COMMERCE);
 				GiveItem2Character(pchar, "SM_necklace_Julie");
 				ChangeCharacterComplexReputation(pchar, "nobility", 2);
 				AddMoneyToCharacter(pchar, -5000);
@@ -239,7 +239,7 @@ void ProcessDialogEvent()
 				link.l1 = "Ha megtagadod az úriemberi megállapodást, akkor kevésbé civilizált eszközökkel fogom követelni, amit keresek.";
 				link.l1.go = "exit";
 				AddDialogExitQuestFunction("UV_Ozherelie_Duel");
-				notification("Elégtelen készségszint (25)", SKILL_COMMERCE);
+				Notification_Skill(false, 25, SKILL_COMMERCE);
 			}
 		break;
 		

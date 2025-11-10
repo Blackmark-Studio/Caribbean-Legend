@@ -5966,7 +5966,7 @@ bool CheckCaribGuns() // Jason: есть ли пистоли для продаж
 
 void MakeHellFireDamage() // Jason: урон огнем на рифе
 {
-	LAi_ApplyCharacterDamage(pchar, 45+MOD_SKILL_ENEMY_RATE*3, "other");
+	LAi_ApplyCharacterDamage(pchar, 45+MOD_SKILL_ENEMY_RATE*3, "other", true);
 	LAi_CheckKillCharacter(pchar);
 	PlaySound("People Fight\Death_NPC_08.wav");
 }
@@ -5979,7 +5979,7 @@ void MakeHellSplashDamage() // Jason: урон водой на рифе
 	// belamour legendary edition оберег ловца скрытые свойства
 	if(!IsEquipCharacterByArtefact(pchar, "talisman10"))
 	{
-		LAi_ApplyCharacterDamage(pchar, 90+MOD_SKILL_ENEMY_RATE*6, "other");
+		LAi_ApplyCharacterDamage(pchar, 90+MOD_SKILL_ENEMY_RATE*6, "other", true));
 		LAi_CheckKillCharacter(pchar);
 		PlaySound("People Fight\Death_NPC_08.wav");
 	}
@@ -6455,7 +6455,7 @@ void MakeIndianPoisonAttack(ref chref, ref _attack) // яд индейцев т�
 		else log_info(StringFromKey("QuestsUtilite_274", GetFullName(chref)));
 		chref.quest.indianpoisoned.info = true;
 	}
-	LAi_ApplyCharacterDamage(chref, 15, "other");
+	LAi_ApplyCharacterDamage(chref, 15, "other", false);
 	DoQuestFunctionDelay("MakeIndianPoisonAttackCycle", 0.5);
 }
 

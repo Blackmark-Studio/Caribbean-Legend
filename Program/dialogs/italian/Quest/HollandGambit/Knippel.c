@@ -140,8 +140,7 @@ void ProcessDialogEvent()
 		case "Knippel_check"://начинаем проверять нашего ГГ по всем статьям
 			if(makeint(PChar.reputation.nobility) < 48)//низкая репа
 			{
-				// belamour legendary edition покажем критерии
-				notification("Reputation Too Low! (Adventurer)", "None");
+				Notification_Reputation(false, 48, "low");
 				PlaySound("Voice\English\hambit\Charlie Knippel-04.wav");
 				dialog.text = "Alla Vecchia Inghilterra non servono i servizi di canaglie, doppia palla il mio culo! Con tutto il rispetto, vattene affanculo.";
 				link.l1 = "Ehi, ehi compare, bada a come parli o ti cucirò la bocca!";
@@ -150,7 +149,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 48, "low");
 			}
 			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 30)//низкая навигация
 			{

@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				notification("Not enough money (1000)", "Money");
+				Notification_Money(false, 1000, "peso");
 			}
 			link.l2 = "Sorry, mate, but you'll have to find someone else. I've got more important things to do than delivering letters.";
 			link.l2.go = "Sailor_end";

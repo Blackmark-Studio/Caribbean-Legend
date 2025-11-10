@@ -530,7 +530,7 @@ void FillSkillTables()
 	GameInterface.TABLE_SPECIAL.hr.td1.str = "";
 //	SetFormatedText("STR_1", XI_ConvertString("Characteristics"));
 
-	for (i=0; i<=7; i++)
+	for (i=1; i<=7; i++)
 	{
 	    row = "tr" + i;
 	    skillName = GetSkillNameByTRIdx("SPECIALType", i);

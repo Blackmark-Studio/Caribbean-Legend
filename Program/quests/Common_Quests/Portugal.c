@@ -5,6 +5,7 @@ void Portugal_QuestMark(string qName)//квестмарка
 {
 	AddMapQuestMarkCity("marigo", false);
 	AddLandQuestMark(characterFromId("Marigo_Hostess"), "questmarkmain");
+	// Для патча с НИ сюда лучше вставить новый атрибут, который будет проверяться из диалога хозяйки в бордели
 }
 
 void Portugal_BeginOver(string qName)//не пришли
@@ -188,7 +189,6 @@ void PortugalOnStreet(string qName)//охотники в Сент-Джонсе
 	{
 		sld = GetCharacter(NPC_GenerateCharacter("PortugalHunter_"+i, "citiz_"+(i+42), "man", "man", sti(pchar.rank)+1, PIRATE, -1, true, "quest"));
 		FantomMakeCoolFighter(sld, sti(pchar.rank)+1, 30, 30, "blade_10", "pistol1", "bullet", 0);
-		LAi_SetHP(sld, 70.0, 70.0);
 		DeleteAttribute(sld, "SaveItemsForDead");
 		DeleteAttribute(sld, "DontClearDead");
 		sld.dialog.FileName = "Quest\Portugal_dialog.c";

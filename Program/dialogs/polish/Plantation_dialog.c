@@ -406,14 +406,14 @@ void ProcessDialogEvent()
 				dialog.text = "Tak, jest zapotrzebowanie na Jean Picard - nie tylko do podawania wina. Już skontaktował się ze mną wpływowy Anglik. Mężczyzna o imieniu, jak to było... Pattornson? Przekazał mi list.";
 				link.l1 = "Ale ani Pattornson, ani jego klient jeszcze nie przyszli. Jestem gotów kupić od ciebie Jean tutaj i teraz. Nazwij swoją cenę - panie czekają!";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 70, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Ach, rozumiem. Ale obawiam się, że muszę odmówić - Jean Picard nie jest na sprzedaż. Przykro mi, senorze.";
 				link.l1 = "Oh? Dlaczego? Jestem gotów zapłacić hojnie. Po prostu podaj swoją cenę.";
 				link.l1.go = "mtraxx_PlantVykup_6";
-				notification("Skill Check Failed (70)", SKILL_COMMERCE);
+				Notification_Skill(false, 70, SKILL_COMMERCE);
 			}
 		break;
 		

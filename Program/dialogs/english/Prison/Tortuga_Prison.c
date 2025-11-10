@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiight... You don't know my boss like I do. So long, commandant.";
 				link.l1.go = "exit";
 				
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "You know what? I think I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "My friend?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiight... You don't know my boss like I do. So long, commandant.";
 				link.l1.go = "exit";
 				
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "You know what? I think I will tell you. A generous, tax-free donation was made to the special garrison pension fund. As a gesture of gratitude, the donor was allowed to contribute to the swift and lawful execution of a notorious criminal!";
@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "My friend?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		

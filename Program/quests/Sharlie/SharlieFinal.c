@@ -2763,7 +2763,7 @@ void GuardOT_KillMCOfficerInJungle() // убиваем офицеров ГГ
 		ChangeCharacterAddressGroup(sld, "IslaDeVieques_HouseEntrance", "quest", "officers"+i);
 		if(CheckCharacterPerk(sld, "IronWill"))
 		{
-			LAi_ApplyCharacterDamage(sld, 1000, "fire");
+			LAi_ApplyCharacterDamage(sld, 1000, "fire", true);
 			LAi_CheckKillCharacter(sld);
 		}
 		if(CheckAttribute(sld, "OfficerImmortal"))
@@ -2771,7 +2771,7 @@ void GuardOT_KillMCOfficerInJungle() // убиваем офицеров ГГ
 			sld.Health.HP = makefloat(sld.Health.HP)/2.0;
 			sld.Health.maxHP = makefloat(sld.Health.maxHP)/2.0;
 			
-			LAi_ApplyCharacterDamage(sld, 1000, "fire");
+			LAi_ApplyCharacterDamage(sld, 1000, "fire", true);
 			LAi_CheckKillCharacter(sld);
 		}
 		else LAi_KillCharacter(sld);
@@ -4104,7 +4104,7 @@ void Tieyasal_TempleFightGuard(string qName) // драка с гардами и�
 
 void Tieyasal_TempleDefendActivation() // защита
 {
-	LAi_ApplyCharacterDamage(pchar, 100, "other");
+	LAi_ApplyCharacterDamage(pchar, 100, "other", true);
 	LAi_CheckKillCharacter(pchar);			
 	GetCharacterPos(pchar, &locx, &locy, &locz);
 	string locator = LAi_FindNearestLocator("rld", locx, locy, locz);
@@ -4779,7 +4779,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "hit_fire", "pchar_back_to_player", 0.8);
 		CreateLocationParticles("blood_big", "quest", "shot"+sTotalTemp, 2.0, 0, 0, "");
-		LAi_ApplyCharacterDamage(pchar, 150, "fire");
+		LAi_ApplyCharacterDamage(pchar, 150, "fire", true);
 		LAi_CheckKillCharacter(pchar);
 	}
 	else if (sQuestName == "Terrapin_GirlShot") // застрелили девушку
@@ -4806,7 +4806,7 @@ bool SharlieFinal_QuestComplete(string sQuestName, string qname)
 		LAi_SetActorType(pchar);
 		LAi_ActorAnimation(pchar, "hit_fire", "pchar_back_to_player", 1.0);
 		CreateLocationParticles("blood_big", "quest", "roof", 2.0, 0, 0, "");
-		LAi_ApplyCharacterDamage(pchar, 150, "fire");
+		LAi_ApplyCharacterDamage(pchar, 150, "fire", true);
 		LAi_CheckKillCharacter(pchar);
 		// ставим горожанина
 		sld = GetCharacter(NPC_GenerateCharacter("TerrapinRoofMan", "citiz_15", "man", "man", 25, FRANCE, -1, true, "quest"));

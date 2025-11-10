@@ -155,6 +155,7 @@ string 	sSpManGenNames[21], sSpWomenGenNames[9], sSpGenFamilies[54];
 object Names;
 
 object NullCharacter;
+object NullObject; // заглушка, не записывайте сюда ничего
 object Characters[TOTAL_CHARACTERS];
 object Locations[1106];
 object Islands[38];

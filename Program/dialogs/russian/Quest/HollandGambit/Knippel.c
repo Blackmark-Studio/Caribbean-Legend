@@ -140,8 +140,7 @@ void ProcessDialogEvent()
 		case "Knippel_check"://начинаем проверять нашего ГГ по всем статьям
 			if(makeint(PChar.reputation.nobility) < 48)//низкая репа
 			{
-				// belamour legendary edition покажем критерии
-				notification("Слишком низкий уровень чести! (Авантюрист)", "None");
+				Notification_Reputation(false, 48, "low");
 				PlaySound("VOICE\Russian\hambit\Charlie Knippel-04.wav");
 				dialog.text = "Англия не нуждается в услугах проходимцев, книппель мне в корму! Я ничего не могу вам посоветовать.";
 				link.l1 = "Эй-эй, полегче, приятель, с выражениями!";
@@ -150,7 +149,7 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 48, "low");
 			}
 			if(GetSummonSkillFromName(pchar, SKILL_SAILING) < 30)//низкая навигация
 			{

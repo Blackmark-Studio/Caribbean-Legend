@@ -406,14 +406,14 @@ void ProcessDialogEvent()
 				dialog.text = "是的, 让.皮卡德很抢手 —不只是为了斟酒。 一位有影响力的英国人已经联系过我。 一个叫... 帕托姆森的人? 他给我送了封信。 ";
 				link.l1 = "但帕托姆森和他的客户都还没出现。 我准备现在就从你这里买下让。 开个价吧 —女士们还在等着呢! ";
 				link.l1.go = "mtraxx_PlantVykup_10";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 70, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "啊, 投缘。 我明白。 但恐怕我必须拒绝 —让.皮卡德不出售。 对不起, 先生。 ";
 				link.l1 = "哦? 为什么? 我愿意出高价。 开个价吧。 ";
 				link.l1.go = "mtraxx_PlantVykup_6";
-				notification("Skill Check Failed (70)", SKILL_COMMERCE);
+				Notification_Skill(false, 70, SKILL_COMMERCE);
 			}
 		break;
 		

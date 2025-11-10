@@ -35,13 +35,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "(Confiable) Pero seguramente incluso usted debe reconocer que el Señor actúa a través de las personas. ¿Y si la gitana es simplemente un instrumento en las manos de Dios? ¿Y si Su designio es tan profundo que nosotros, simples mortales, no podemos comprenderlo? Los caminos del Señor son misteriosos, ¿no es así?";
 				link.l1.go = "dwh_pastor_VD_1";
-				notification("Confiable", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
 			else
 			{
 				link.l1 = "Está obligando a un padre a ver cómo su hija se desvanece lentamente en lugar de permitirle intentar salvarla. ¿Es eso misericordia?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Habilidad no desbloqueada", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 		

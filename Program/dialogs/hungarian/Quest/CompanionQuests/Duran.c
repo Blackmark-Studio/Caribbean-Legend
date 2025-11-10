@@ -129,14 +129,14 @@ void ProcessDialogEvent()
 			if (IsCharacterPerkOn(pchar, "Trustworthy") && sti(pchar.reputation.nobility) > 70)
 			{
 				Notification_Reputation(true, 71, "low");
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l1 = "(megbízható) (becsület) Egyszer azt mondtad, hogy arra rendeltettél, hogy magasan repüljek, és te örömmel járultál hozzá ehhez.";
 				link.l1.go = "SKD_DomAnri_VD";
 			}
 			else
 			{
-				Notification_Reputation(false, 71, "low");
-				notification("A képességek ellenôrzése sikertelen.", "Trustworthy");
+				if (sti(pchar.reputation.nobility) < 71) Notification_Reputation(false, 71, "low");
+				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
 			}
 			link.l2 = "A pokolba veled! Végezd el a piszkos munkát. Elfogadom az esküdet, és jobb, ha halálosan komolyan veszed. Megértjük egymást?";
 			link.l2.go = "SKD_DomAnri_DuranDruzhba";

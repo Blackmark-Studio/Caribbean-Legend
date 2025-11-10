@@ -10,7 +10,7 @@ void SetItemStatsTooltip(ref chr, string sCurrentNode, string header, string tex
 	object itemInfo;
 	string statName;
 	makearef(itemStats, itemInfo.stats);
-	SetUIAttributesItem(currentItem, &itemStats, &NullCharacter);
+	SetUIAttributesItem(currentItem, &itemStats, &NullObject);
 	if (GetAttributesNum(itemStats) < iColumn + 1) return;
 
 	stat = GetAttributeN(itemStats, iColumn);

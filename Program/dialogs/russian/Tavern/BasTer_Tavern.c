@@ -125,13 +125,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "С документами? Разумеется, всё в полном порядке. Вы же не собираетесь в них заглядывать?";
 				link.l1.go = "TPZ_Tavern2_2";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				link.l1 = "С документами?";
 				link.l1.go = "TPZ_Tavern2_2_badrep";
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 			DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
 			DelLandQuestMark(npchar);
@@ -156,13 +156,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Пожалуй, я смогу сделать вам скидку. Но это ещё не всё. Я хочу стать вашим поставщиком на постоянной основе. Гарантирую - никаких накладок с поставками не будет. Я арендую склад в Бас-Тере, и вы будете получать товар прямо оттуда, без задержек. Там всегда будет достаточно спиртного, чтобы предвосхитить любого рода перебои. Что до суммы - с учётом скидки она составит двести сорок дублонов. Что скажете?";
 				link.l1.go = "TPZ_Tavern2_4";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 50, SKILL_COMMERCE);
 			}
 			else
 			{
 				link.l1 = "Что ж, я готов"+GetSexPhrase("","а")+" уступить в цене до двухсот сорока дублонов за партию, ведь я настроен на долгосрочное сотрудничество. В дальнейшем я смогу полностью удовлетворить все ваши потребности и обеспечить бесперебойные поставки. Что скажете?";
 				link.l1.go = "TPZ_Tavern2_7";
-				notification("Недостаточно развит навык (50)", SKILL_COMMERCE);
+				Notification_Skill(false, 50, SKILL_COMMERCE);
 			}
 		break;
 		
@@ -222,14 +222,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "Конечно, капитан! Итак, сколько вы хотите за вашу партию?";
 				link.l1 = "За каждую десятку бутылок вина я хочу получить по тридцать дублонов, за ром - по пять дублонов. Вся партия из ста бутылок рома и такого же количества вина обойдётся вам в триста пятьдесят дублонов.";
 				link.l1.go = "TPZ_Tavern2_3";
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "Сожалею, капитан, но ваша репутация всё ещё оставляет желать лучшего.";
 				link.l1 = "Дьявол...";
 				link.l1.go = "exit";
-				notification("Слишком низкий уровень чести! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

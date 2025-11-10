@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiight... Nie znasz mojego szefa tak dobrze, jak ja. Do widzenia, komendancie.";
 				link.l1.go = "exit";
 				
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "Wiesz co? Myślę, że ci powiem. Hojna, wolna od podatku darowizna została przekazana na specjalny fundusz emerytalny garnizonu. W geście wdzięczności, darczyńcy pozwolono przyczynić się do szybkiego i zgodnego z prawem wykonania wyroku na notorycznym przestępcy!";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "Mój przyjacielu?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiight... Ty nie znasz mojego szefa tak jak ja. Do zobaczenia, komendancie.";
 				link.l1.go = "exit";
 				
-				notification("Skill Check Failed (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "Wiesz co? Myślę, że ci powiem. Hojna, wolna od podatku darowizna została przekazana na specjalny fundusz emerytalny garnizonu. W geście wdzięczności, darczyńca został dopuszczony do przyczynienia się do szybkiej i zgodnej z prawem egzekucji notorycznego przestępcy!";
@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "Mój przyjacielu?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Skill Check Passed", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		

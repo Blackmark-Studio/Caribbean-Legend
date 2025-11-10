@@ -2622,6 +2622,8 @@ void WildRose_Etap6_LifeAfterDeath_29()
 		LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 	}
 	sld = GetCharacter(NPC_GenerateCharacter("WildRose_Alonso", "Alonso", "man", "man", 20, FRANCE, 0, false, "pirate"));
+	sld.name = GetCharacterName("Alonso");
+	sld.lastname = "";
 	GiveItem2Character(sld, "blade_10");
 	EquipCharacterByItem(sld, "blade_10");
 	if (CheckAttribute(pchar, "questTemp.WildRose_Etap6_BadEnd")) ChangeCharacterAddressGroup(sld, pchar.location, "reload", "reload1");

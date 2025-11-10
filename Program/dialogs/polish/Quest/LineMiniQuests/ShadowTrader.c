@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Jesteś godny zaufania", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "Stój, łotrze! Nie wiedziałeś, że musisz płacić podatki za prowadzenie działalności handlowej? Nikt nie łamie prawa na moich wodach! "+GetFullName(npchar)+", złamałeś prawo i twoje skradzione dobra są teraz skonfiskowane! Za drzwiami stoi uzbrojona straż, więc nawet nie próbuj udawać głupiego!";
 				link.l2.go = "ShadowTrader_2";
 			}

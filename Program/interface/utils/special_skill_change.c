@@ -115,9 +115,10 @@ void SetSkillsTooltip(string sCurrentNode, string header, string text, string ba
 	if (!CheckAttribute(&GameInterface, sCurrentNode + "." + sRow + ".UserData.ID")) return;
 
 	string skillName = GameInterface.(sCurrentNode).(sRow).UserData.ID;
+	string modifierName = skillType + skillName;
 	header = XI_ConvertString(skillName);
 	aref skillAttribute;
-	makearef(skillAttribute, cashTable.(skillName));
+	makearef(skillAttribute, cashTable.(modifierName));
 	GetStatusIntWithInfo(xi_refCharacter, skillName, &skillAttribute, true); // добавляем эффекты статусов
 
 	int lngFileID = LanguageOpenFile("RPGDescribe.txt");

@@ -41,7 +41,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			{
 				link.l1 = "Stai costringendo un padre a guardare sua figlia deteriorarsi, invece di lasciarlo cercare di salvarla. È questa la pietà?";
 				link.l1.go = "dwh_pastor_bez_VD_1";
-				notification("Ability not unlocked", "Trustworthy");
+				Notification_Perk(false, "Trustworthy");
 			}
 		break;
 

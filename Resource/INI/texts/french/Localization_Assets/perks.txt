@@ -6,3 +6,4 @@ perks_5 {$rand(Il n’y a pas grand-chose à prendre dans la cale du '$attr($con
 perks_6 {Sur le navire @<rChar.Ship.Name>, @<FindRussianSailorString(cn, "No")> est mort dans la cohue.}
 perks_7 {D’après les calculs, @<_ShipName> est arrivé à @<_PortName>.}
 perks_8 {Toujours en route.}
+perks_9 {Frais d’exposition perçus.}

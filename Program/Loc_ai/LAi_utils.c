@@ -305,7 +305,7 @@ float LAi_GetCharacterLuckLevel(aref character)
 // boal skill <--
 
 //Применить повреждение к персонажу
-void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType)
+void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType, bool isCritical)
 {
 	// временная неуязвимость
 	if(IsInvulnerable(chr))
@@ -329,7 +329,7 @@ void LAi_ApplyCharacterDamage(aref chr, int dmg, string DamageType)
 	float hp    = stf(chr.chr_ai.hp);
 	// отображаем урон на полоске
 	if(bDrawBars)
-		SendMessage(chr, "lf", MSG_CHARACTER_SMOOTHDMG, hp);
+		SendMessage(chr, "lfl", MSG_CHARACTER_SMOOTHDMG, hp, isCritical);
 	//Пересчитываем
 	if (damage > hp)  damage = hp;
 	hp = hp - damage;
@@ -1433,7 +1433,7 @@ void MakePoisonAttack(ref attack, ref enemy)
 {
 	if (!CheckAttribute(enemy, "chr_ai.poison"))
 	{
-		if(ShowCharString()) Log_Chr(enemy, XI_ConvertString("is poisonedLog"));
+		if(!bDrawBars && ShowCharString()) Log_Chr(enemy, XI_ConvertString("is poisonedLog"));
 		else
 		{
 			if (enemy.index == GetMainCharacterIndex()) Log_Info(XI_ConvertString("You've been poisoned"));
@@ -1615,7 +1615,7 @@ void LAi_Explosion(ref chr, int damage)
 		float dist = -1.0;
 		if(GetCharacterDistByChr3D(chr, findCh, &dist) && dist < 4)
 		{
-			LAi_ApplyCharacterDamage(findCh, damage, "fire");		
+			LAi_ApplyCharacterDamage(findCh, damage, "fire", true);		
 			if (sti(LAi_GetCharacterHP(findCh)) < damage + 1) 
 			{ 
 				if(findCh.chr_ai.group != LAI_GROUP_PLAYER)  
@@ -1630,7 +1630,7 @@ void LAi_Explosion(ref chr, int damage)
 		}
 	}	
 
-	LAi_ApplyCharacterDamage(chr, damage, "fire");	
+	LAi_ApplyCharacterDamage(chr, damage, "fire", true);	
 	if (sti(LAi_GetCharacterHP(chr)) < damage + 1) Lai_KillCharacter(chr);
 }
 

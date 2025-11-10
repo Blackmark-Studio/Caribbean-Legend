@@ -1283,9 +1283,9 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "Nie mam teraz takiej złotej góry.";
 				link.l2.go = "Pelly_44_1";
-				notification("Jesteś godny zaufania", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 			}
-			else notification("Nie jesteś godny zaufania", "Trustworthy");
+			else Notification_Perk(false, "Trustworthy");
 			link.l3 = "Wiesz co, Tasak? Zapomnij o tym. Jesteśmy piratami, czy nie? A Jean? Czy jego ładna buźka to jedyny jego atut? Przygotuj skrzynię - trzymamy się oryginalnego planu.";
 			link.l3.go = "Pelly_62";
 		break;
@@ -3016,13 +3016,13 @@ void ProcessDialogEvent()
 				link.l1 = "(Godny zaufania) (Honor) (Przywództwo) Wystarczy krwi na dzisiaj, Jean. Zajmę się tym sam.";
 				link.l1.go = "merida_head_dobro_1";
 				Notification_Perk(true, "Trustworthy");
-				Notification_Reputation(true, 71, "low");
+				Notification_Reputation(true, 50, "low");
 				notification("Skill Check Passed", SKILL_Leadership);
 			}
 			else
 			{
 				if (!IsCharacterPerkOn(pchar, "Trustworthy")) Notification_Perk(false, "Trustworthy");
-				if (sti(pchar.reputation.nobility) < 50) notification("Reputation Too Low! ("+XI_ConvertString(GetReputationName(50))+")", "None");
+				if (sti(pchar.reputation.nobility) < 50) Notification_Reputation(false, 50, "low");
 				if (GetCharacterSkill(pchar, SKILL_LEADERSHIP) < 50) notification("Skill Check Failed (50)", SKILL_LEADERSHIP);
 			}
 			link.l2 = "Zrób to. Nie będę się mieszał. I nie będę też patrzył.";

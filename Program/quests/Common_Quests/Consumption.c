@@ -3,8 +3,11 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Consumption_QuestMark(string qName)//квестмарка
 {
-	AddMapQuestMarkCity("PortSpein", false);
-	AddLandQuestMark(characterFromId("PortSpein_waitress"), "questmarkmain");
+	if (CheckAttributeEqualTo(pchar, "questTemp.HWIC.Detector", "holl_win") || CheckAttributeEqualTo(pchar, "questTemp.HWIC.Detector", "eng_win") || CheckAttributeEqualTo(pchar, "questTemp.HWIC.Detector", "self_win") || SandBoxMode)
+	{
+		AddMapQuestMarkCity("PortSpein", false);
+		AddLandQuestMark(characterFromId("PortSpein_waitress"), "questmarkmain");
+	}
 }
 
 void Consumption_CommandantHouse(string qName)//создаем слугу и заполняем сундуки

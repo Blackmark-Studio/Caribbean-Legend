@@ -125,13 +125,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "文件? 当然一切都完全合规。 你不会真的打算检查吧? ";
                 link.l1.go = "TPZ_Tavern2_2";
-                notification("荣誉检查通过", "None");
+                Notification_Reputation(true, 40, "low");
             }
             else
             {
                 link.l1 = "文件? ";
                 link.l1.go = "TPZ_Tavern2_2_badrep";
-                notification("荣誉等级太低! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+                Notification_Reputation(false, 40, "low");
             }
             DeleteAttribute(pchar, "questTemp.TPZ_Tavern_2");
             DelLandQuestMark(npchar);
@@ -156,13 +156,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
             {
                 link.l1 = "也许我可以给你打折。 但这还不是全部。 我想成为你的常规供应商。 我保证顺利及时的交货。 我会在巴斯特尔租一个仓库, 你可以直接从那里收到货物, 不会有延误。 总会有足够的酒储存着, 以防止任何短缺。 有了折扣, 价格将是二百四十杜布隆。 你觉得怎么样? ";
                 link.l1.go = "TPZ_Tavern2_4";
-                notification("检查通过", SKILL_COMMERCE);
+                Notification_Skill(true, 50, SKILL_COMMERCE);
             }
             else
             {
                 link.l1 = "好吧, 我愿意把价格降到每批二百四十杜布隆 —我的目标是长期合作。 将来, 我可以满足你所有的需求, 并确保可靠的供应。 你觉得怎么样? ";
                 link.l1.go = "TPZ_Tavern2_7";
-                notification("技能太低(50)", SKILL_COMMERCE);
+                Notification_Skill(false, 50, SKILL_COMMERCE);
             }
         break;
         
@@ -222,14 +222,14 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				dialog.text = "当然, 船长! 那么, 你的这批货想要多少钱? ";
 				link.l1 = "每十瓶葡萄酒我要三十杜布隆, 每十瓶朗姆酒要五杜布隆。 整批货 —各一百瓶 —将花费你三百五十杜布隆。 ";
 				link.l1.go = "TPZ_Tavern2_3";
-				notification("荣誉检查通过", "None");
+				Notification_Reputation(true, 40, "low");
 			}
 			else
 			{
 				dialog.text = "对不起, 船长, 但你的声誉还有很大的提升空间。 ";
 				link.l1 = "该死... ";
 				link.l1.go = "exit";
-				notification("荣誉太低! ("+XI_ConvertString(GetReputationName(40))+")", "None");
+				Notification_Reputation(false, 40, "low");
 			}
 		break;
 		

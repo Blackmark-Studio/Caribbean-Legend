@@ -65,7 +65,7 @@ void ProcessDialogEvent()
 			link.l1.go = "ShadowTrader_1";
 			if (IsCharacterPerkOn(pchar, "Trustworthy"))
 			{
-				notification("Megbízható", "Trustworthy");
+				Notification_Perk(true, "Trustworthy");
 				link.l2 = "Állj meg ott, bûnözô söpredék! Nem tudtad, hogy a kereskedelmi vállalkozás mûködtetéséért adót kell fizetni? Senki sem szegheti meg a törvényt az én felügyeletem alatt! " + GetFullName(npchar) + ", megszegtétek a törvényt és a lopott árutok mostantól elveszett! Fegyveres katonák állnak mögöttem az ajtó elôtt, úgyhogy meg se próbáljon hülyét játszani!";
 				link.l2.go = "ShadowTrader_2";
 			}

@@ -501,6 +501,7 @@ void CalculateInfoDataF2()
 	loadedLocation.bar_params.text_offset = 0.06;			// вертикальный оффсет текста (в мировых координатах)
 	loadedLocation.bar_params.damage_time = 0.3;			// время плавного уменьшения полоски урона
 	loadedLocation.bar_params.damage_time_min = 0.3;		// время задержки полоски урона
+	loadedLocation.bar_params.bar_height = 1.15;
 	// цвета (альфа игнорируется)
 /*	loadedLocation.bar_params.hp_color = argb(255, 128, 20, 20);		// хп
 	loadedLocation.bar_params.energy_color = argb(255, 20, 20, 128);	// энергия

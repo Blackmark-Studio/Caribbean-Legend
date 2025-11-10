@@ -72,8 +72,8 @@ void LAi_ApplyCharacterAttackDamage(ref attacker, ref enemy, string strikeType, 
 	float damageMtp = 1 + GetDamageMtp(&aTable, &strikeType, weaponType);             // мультипликатор урона по умолчанию 1
 	if (isBackstab) damageMtp += GetStabMtp(attacker);                                // мультипликатор удара в спину
 	if (!LAi_IsGroupDamagableEnemy(attacker, enemy)) return;                          // проверка ударов по своим
-
-	ModifyDamageMtpByCrit(attacker, enemy, &aTable, &eTable, weaponType, strikeType, &damageMtp); // крит попадание
+	bool isCrit = false;
+	ModifyDamageMtpByCrit(attacker, enemy, &aTable, &eTable, weaponType, strikeType, &damageMtp, &isCrit); // крит попадание
 	ModifyBladeDamageByQuestSituations(attacker, enemy, &damageMtp);                  // особые ситуации
 	damageMtp -= GetDamageReduction(&eTable);                                         // вражеское снижение урона
 	if (isMiniStrike) damageMtp -= 0.7;                                               // если пробили ложным ударом фехтовальщика, а блока и не было
@@ -89,7 +89,7 @@ void LAi_ApplyCharacterAttackDamage(ref attacker, ref enemy, string strikeType, 
 			SendMessage(enemy, "lfff", MSG_CHARACTER_VIEWDAMAGE, resultDamage, stf(enemy.chr_ai.hp), stf(enemy.chr_ai.hp_max));
 		return;
 	}
-	LAi_ApplyCharacterDamage(enemy, MakeInt(resultDamage + 0.5), "fight");
+	LAi_ApplyCharacterDamage(enemy, MakeInt(resultDamage + 0.5), "fight", isCrit);
 	MakePoisonAttackCheckSex(attacker, enemy, &aTable, &eTable);
 	LAi_CheckKillCharacter(enemy);
 

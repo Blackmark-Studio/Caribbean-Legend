@@ -97,7 +97,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiiiiii rendben... Maga nem ismeri úgy a fônökömet, mint én. Viszlát, parancsnok.";
 				link.l1.go = "exit";
 				
-				notification("Képességpróba Sikertelen (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "Tudja mit? Azt hiszem, elmondom. Nagylelkû, adómentes adományt tettek a különleges helyôrségi nyugdíjalapba. Hálából az adományozó hozzájárulhatott egy hírhedt bûnözô gyors és törvényes kivégzéséhez!";
@@ -106,7 +106,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "A barátom?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		
@@ -118,7 +118,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l1 = "Riiiiiiiiiii rendben... Maga nem ismeri úgy a fônökömet, mint én. Viszlát, parancsnok.";
 				link.l1.go = "exit";
 				
-				notification("Képességpróba Sikertelen (60)", SKILL_LEADERSHIP);
+				Notification_Skill(false, 60, SKILL_LEADERSHIP);
 				AddQuestRecord("Tonzag", "3.1");
 			} else {
 				dialog.text = "Tudja mit? Azt hiszem, elmondom. Nagylelkû, adómentes adományt tettek a különleges helyôrségi nyugdíjalapba. Hálából az adományozó hozzájárulhatott egy hírhedt bûnözô gyors és törvényes kivégzéséhez!";
@@ -127,7 +127,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 				link.l2 = "A barátom?";
 				link.l2.go = "tonzag_bail_truth_b_1";
 				
-				notification("Képességellenôrzés megfelelt", SKILL_LEADERSHIP);
+				Notification_Skill(true, 60, SKILL_LEADERSHIP);
 			}
 		break;
 		

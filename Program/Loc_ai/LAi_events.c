@@ -260,7 +260,7 @@ void LAi_CharacterFire()
 	float fAimingTime = GetEventData();	// evganat - прицеливание
 	
 	// belamour Берендейка стрельца
-	if(IsMainCharacter(attack) && IsCharacterEquippedArtefact(attack, "talisman20"))
+	if (IsCharacterEquippedArtefact(attack, "talisman20"))
 	{
 		ref talisman = ItemsFromID("talisman20");
 		if(CheckAttribute(talisman, "durability"))
@@ -369,7 +369,7 @@ void LAi_CharacterFire()
 									
 			if( CheckAttribute(attack, "chr_ai."+sType+".selfdmg" ) && sti(attack.chr_ai.(sType).selfdmg) > 0 && findCh.id == attack.id && rand(4) == 1)	
 			{
-				LAi_ApplyCharacterDamage( &Characters[idx], 10 + rand(sti(weapon.dmg_min) - 10), "fire" );
+				LAi_ApplyCharacterDamage(&Characters[idx], 10 + rand(sti(weapon.dmg_min) - 10), "fire", false);
 				if(stf(attack.chr_ai.hp) < 1.0) attack.chr_ai.hp = 1 + makeint(rand(10));
 			}
 		}
@@ -893,7 +893,7 @@ void Event_PerkCollection()
 	if (!CheckAttribute(cabin, "box1")) return;
 
 	int exoticQty = GetAttributeInt(pchar, "ct.equip.descriptors.Exotic");
-	Log_Info("Деньги за коллекцию?: " + exoticQty);
+	Notification(StringFromKey("perks_9"), "Collection");
 	AddToAttributeInt(cabin, "box1.money", exoticQty * PERK_VALUE_COLLECTION);
 }
 

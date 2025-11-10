@@ -487,14 +487,14 @@ void ProcessDialogEvent()
 				dialog.text = "Doceniam pańskie podejście do biznesu i jestem gotów rozważyć pańską prośbę. Być może moglibyśmy zwiększyć wolumen, powiedzmy, pięciokrotnie. Jednak organizacja takich dostaw będzie wymagać znacznych zasobów. Będziemy musieli rozszerzyć powierzchnię magazynową, wzmocnić ochronę i zapewnić niezawodne trasy dostaw. Ponieważ przynosi to korzyści również panu, proponuję, abyśmy podzielili między sobą te wydatki.";
 				link.l1 = "To wszystko brzmi rozsądnie. Jaką kwotę uważa pan za niezbędną do pokrycia tych wydatków?";
 				link.l1.go = "UpgradeSilk_1";
-				Notification_Skill(true, 60, SKILL_COMMERCE);
+				Notification_Skill(true, 80, SKILL_COMMERCE);
 			}
 			else
 			{
 				dialog.text = "Rozumiem pańskie zainteresowanie zwiększeniem dostaw, jednak na tym etapie nie jest to możliwe. Nie wątpię w pańskie szczere intencje handlowe, ale tego rodzaju transakcja wymaga znacznie większego doświadczenia w sprawach handlowych i pewności własnych działań. Sugeruję, aby poszerzył pan swoją wiedzę w sztuce negocjacji, a następnie wrócił do mnie z bardziej konkretną propozycją. Gdy już będzie pan gotowy, z przyjemnością wzmocnię naszą współpracę.";
 				link.l1 = "Hmm... Dobrze. Wrócimy do tej rozmowy później.";
 				link.l1.go = "exit";
-				notification("Test umiejętności nie powiódł się (80)", SKILL_COMMERCE);
+				Notification_Skill(false, 80, SKILL_COMMERCE);
 			}
 			NextDiag.TempNode = "HWIC_Boss";
 		break;

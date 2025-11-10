@@ -1352,7 +1352,7 @@ void FMQN_ChooseContinue() // продолжаем квест
 	pchar.GenQuest.SmugglersBlock = "marigo_tavern"; 
 	DeleteAttribute(pchar, "questTemp.FMQN.Choose");
 	if (GetNationRelation(ENGLAND, HOLLAND) == RELATION_ENEMY) {AddQuestRecord("FMQ_Nevis", "4");}
-	else {log_info(AddQuestRecord("FMQ_Nevis", "4_1"));}
+	else {AddQuestRecord("FMQ_Nevis", "4_1");}
 	pchar.quest.FMQN_to_port.win_condition.l1 = "location";
 	pchar.quest.FMQN_to_port.win_condition.l1.location = "Marigo_town";
 	pchar.quest.FMQN_to_port.win_condition.l2 = "Ship_location";

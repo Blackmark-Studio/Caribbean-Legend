@@ -769,6 +769,212 @@ void ProcessDialogEvent()
 			link.l1.go = "LH_abbat_38";
 		break;
 		
+		//--> Дикая Роза
+		case "WildRose_Abb_2":
+			dialog.text = "So you have come to me for counsel, my children? Well then, I am all ears.";
+			link.l1 = "Rather for assistance, Father. Assistance from a man who has connections and knows all manner of people...";
+			link.l1.go = "WildRose_Abb_3";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua");
+		break;
+
+		case "WildRose_Abb_3":
+			dialog.text = "Forgive me for interrupting you, my son, but I must remind you that I am but a humble abbot, not some secret agent.";
+			link.l1 = "Yet a humble abbot might know a secret agent, might he not? Or at least suggest how one might reach him?";
+			link.l1.go = "WildRose_Abb_4_fortune";
+			link.l2 = "The matter that brought us here truly concerns certain long-forgotten secrets... We are only trying to drag them back into the light.";
+			link.l2.go = "WildRose_Abb_4_stealth";
+		break;
+
+		case "WildRose_Abb_4_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Now, young man, this I do not like. Get to the point, and then we shall see how – or if – I may help you.";
+			link.l1 = "Yes, Father. I shall try to be brief...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_4_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = ""+pchar.name+", do not speak in riddles – it is, I confess, wearisome.";
+			link.l1 = "Yes, Father. I shall try to be brief...";
+			link.l1.go = "WildRose_Abb_5";
+		break;
+
+		case "WildRose_Abb_5":
+			dialog.text = "Go on, my son.";
+			link.l1 = "My companion, Mary Casper, is seeking her father – or at least some scrap of information about him. We have discovered that he was an officer in the English Navy and served aboard the brig 'Wrangler', which wrecked at Cape Catoche in 1638.";
+			link.l1.go = "WildRose_Abb_6";
+		break;
+
+		case "WildRose_Abb_6":
+			dialog.text = "And you hope that he yet lives? After so many years?";
+			link.l1 = "Even if he did not survive the wreck, Mary wishes to know where her father came from, what manner of man he was, the life he led... Official papers are sparse in detail – yet even in them one may find something of value, do you not agree, Father?";
+			link.l1.go = "WildRose_Abb_7";
+		break;
+
+		case "WildRose_Abb_7":
+			dialog.text = "You are right in your reasoning, my son. Yours is a good and godly endeavor. But I still fail to grasp what exactly you expect of me.";
+			link.l1 = "You have long dwelt in the Archipelago, Father. Perhaps you know someone with access to colonial archives concerning officers of the English Navy?";
+			link.l1.go = "WildRose_Abb_8_stealth";
+			link.l2 = "We need a man with access to the colonial archives where records of English naval officers are kept. Surely you know of such a one, Father.";
+			link.l2.go = "WildRose_Abb_8_charisma";
+		break;
+
+		case "WildRose_Abb_8_stealth":
+			AddCharacterExpToSkill(pchar, "Sneak", 100);
+			dialog.text = "Do you understand what you are asking, my son? The point is not merely that such information may be a military secret...";
+			link.l1 = "And what else then, Father? I shall speak plainly...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_8_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Do you understand what you are asking, my son? The point is not merely that such information may be a military secret...";
+			link.l1 = "And what else then, Father? I shall speak plainly...";
+			link.l1.go = "WildRose_Abb_9";
+		break;
+
+		case "WildRose_Abb_9":
+			dialog.text = "The problem lies with those very colonial archives. Twenty years ago Jamaica was under the Spaniards, and St. John’s and Bridgetown under constant threat of raids. It is unlikely any Royal Navy ships were stationed there...";
+			link.l1 = "You mean the Admiralty archives in London, Father?";
+			link.l1.go = "WildRose_Abb_10";
+		break;
+
+		case "WildRose_Abb_10":
+			dialog.text = "Perhaps. The papers should have been sent to the Admiralty. To obtain them will not be easy.";
+			link.l1 = "But it can be done, can it not, Father?";
+			link.l1.go = "WildRose_Abb_11";
+		break;
+
+		case "WildRose_Abb_11":
+			dialog.text = "Nothing is impossible, my son. But it will require effort... and payment.";
+			link.l1 = "Of course, Father. Shall I give the money to you, or must I meet with someone else?";
+			link.l1.go = "WildRose_Abb_12";
+		break;
+
+		case "WildRose_Abb_12":
+			dialog.text = "I will meet someone else myself, my son. What I need from you is... eight hundred doubloons.";
+			link.l1 = "Very well, Father. How long will it take?";
+			link.l1.go = "WildRose_Abb_13";
+		break;
+
+		case "WildRose_Abb_13":
+			dialog.text = "I reckon two months. And, by the way, you have not told me the name of the one you seek.";
+			link.l1 = "That man’s name is Joshua Casper.";
+			link.l1.go = "WildRose_Abb_14";
+		break;
+
+		case "WildRose_Abb_14":
+			dialog.text = "I shall remember it. If you are ready to give me the full sum now — I will send word as soon as tomorrow.";
+			if (PCharDublonsTotal() >= 800)
+			{
+				link.l1 = "Of course, Father. Here, take it. Eight hundred in gold.";
+				link.l1.go = "WildRose_Abb_14_pay";
+			}
+			link.l2 = "No, Father, I do not have such money on me. But I shall return soon and bring it.";
+			link.l2.go = "WildRose_Abb_14_nopay";
+		break;
+
+		case "WildRose_Abb_14_pay":
+			RemoveDublonsFromPCharTotal(800);
+			dialog.text = "Very well, "+pchar.name+". Return in two months – I am certain by then I shall have one answer or another for you.";
+			link.l1 = "Thank you, Father. Until we meet again!";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_1");
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2");
+		break;
+
+		case "WildRose_Abb_14_nopay":
+			dialog.text = "As you say, my son.";
+			link.l1 = "I will return soon.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+			pchar.questTemp.WildRose_Etap3_Benua_2 = true;
+		break;
+		
+		case "WildRose_Abb_16":
+			dialog.text = "He learned both of Joshua Casper and of his ship – which, however, was not the 'Wrangler'. No brig of that name ever belonged to the Royal Navy.";
+			link.l1 = "Hm... I am absolutely certain the vessel Joshua Casper served on bore that name. And what of Joshua himself?";
+			link.l1.go = "WildRose_Abb_17";
+			DelLandQuestMark(npchar);
+			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_3");
+		break;
+
+		case "WildRose_Abb_17":
+			dialog.text = "That man was a fine officer with many merits and awards – all recorded in his personal file. Though he did not belong to the true faith, he was a worthy captain. Mademoiselle may well be proud of such roots.";
+			link.l1 = "That is good news, Father. But if you permit, let us return to the ship. If it was not the 'Wrangler', then what was its name?";
+			link.l1.go = "WildRose_Abb_19";
+			AddQuestRecordInfo("WildRose_Records_3", "1");
+		break;
+
+		case "WildRose_Abb_19":
+			dialog.text = "'Cornwall'. He left Plymouth in January of 1638 with orders to deliver wages to the garrisons of Antigua and Providence.";
+			link.l1 = "Incredible...";
+			link.l1.go = "WildRose_Abb_20";
+			AddQuestRecordInfo("WildRose_Records_4", "1");
+		break;
+
+		case "WildRose_Abb_20":
+			dialog.text = "Whether the ship reached its final destination, I do not know. But it did put in at St. John’s. In the port office there remains a report by Captain Casper dated June 2 of that year.";
+			link.l1 = "I knew you were not as simple as you try to appear, Father! This document, I presume, contains some important details?";
+			link.l1.go = "WildRose_Abb_21_charisma";
+			link.l2 = "We are forever in your debt, Father. Since you mentioned this document – it must contain something important, then?";
+			link.l2.go = "WildRose_Abb_21_honor";
+			AddQuestRecordInfo("WildRose_Records_5", "1");
+		break;
+
+		case "WildRose_Abb_21_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Only a report of a battle with the Spanish galleon 'Toro' near the Azores, in which a third of the crew perished – read the report, it tells all.";
+			link.l1 = "One more question: since you had access to the records of Antigua’s port authority, did you by chance come across Joshua Casper’s name anywhere else?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_21_honor":
+			AddComplexSelfExpToScill(100, 100, 100, 100);
+			dialog.text = "Only a report of a battle with the Spanish galleon 'Toro' near the Azores, in which a third of the crew perished – read the report, it tells all.";
+			link.l1 = "One more question: since you had access to the records of Antigua’s port authority, did you by chance come across Joshua Casper’s name anywhere else?";
+			link.l1.go = "WildRose_Abb_22";
+		break;
+
+		case "WildRose_Abb_22":
+			dialog.text = "You ask much of me, my son. If you mean to suggest that he may have survived that shipwreck and later returned to the fleet – I very much doubt it.";
+			link.l1 = "The Lord works in mysterious ways, Father.";
+			link.l1.go = "WildRose_Abb_23";
+		break;
+
+		case "WildRose_Abb_23":
+			dialog.text = "Indeed, my son. But you see, his personal file states that Joshua Casper was born in 1586...";
+			link.l1 = "Perhaps you are right, Father.";
+			link.l1.go = "WildRose_Abb_24_fortune";
+			link.l2 = "You know, Father, in my years in the Caribbean I have seen such things that I could believe even the most unlikely of tales.";
+			link.l2.go = "WildRose_Abb_24_charisma";
+		break;
+
+		case "WildRose_Abb_24_fortune":
+			AddCharacterExpToSkill(pchar, "Fortune", 100);
+			dialog.text = "Surely such an officer was worthy of dying in battle. But if one is to speak philosophically, in a sense that too was a battle...";
+			link.l1 = "I am no philosopher, Father. But thank you for everything...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_24_charisma":
+			AddCharacterExpToSkill(pchar, "Leadership", 100);
+			dialog.text = "Surely such an officer was worthy of dying in battle. But if one is to speak philosophically, in a sense that too was a battle...";
+			link.l1 = "I am no philosopher, Father. But thank you for everything...";
+			link.l1.go = "WildRose_Abb_25";
+		break;
+
+		case "WildRose_Abb_25":
+			dialog.text = "The Lord leads you on this path, my children, and to aid you is my humble duty. But I fear there is nothing more I can do for you in this matter...";
+			link.l1 = "I understand, Father. Well then, allow us to take our leave.";
+			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
+			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
+		break;
+		//<-- Дикая Роза
+		
 		case "LH_abbat_38":
 			DialogExit();
 			LAi_CharacterDisableDialog(npchar);

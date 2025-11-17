@@ -2489,13 +2489,10 @@ void Del_Alonso_DlgExit()
 	sld.dialog.currentnode = "Del_shturman";
 	LAi_SetSitType(sld);
 	sld.greeting = "officer_hire";
-	SetSelfSkill(sld, 21, 23, 18, 33, 25);
-	SetShipSkill(sld, 25, 10, 8, 6, 35, 11, 13, 25, 14);
 	SetSPECIAL(sld, 7, 10, 6, 8, 7, 8, 4);
 	sld.rank = 5;
-	SetCharacterPerk(sld, "ShipSpeedUp");
-	SetCharacterPerk(sld, "HullDamageUp");
-	SetCharacterPerk(sld, "BasicDefense");
+	ForceAdaptivelevel(sld, 5, GEN_TYPE_OFFICER, GEN_MINIBOSS, GEN_ARCHETYPE_NAVIGATOR, GEN_ARCHETYPE_DOCTOR, GEN_FIXED_PIRATES, 0.5);
+
 	FreeSitLocator("FortFrance_tavern", "sit4");
 	ChangeCharacterAddressGroup(sld, "FortFrance_tavern", "sit", "sit4");
 	AddLandQuestMark(characterFromId("Del_shturman"), "questmarkmain");

@@ -142,7 +142,7 @@ void ProcessDialogEvent()
 				dialog.Text = "Czy przywiozłeś moje pięć tysięcy niewolników?";
 				if (GetSquadronGoods(Pchar, GOOD_SLAVES) >= 5000)
 				{
-					Link.l1 = "Mam. Są w moim ładowni.";
+					Link.l1 = "Mam. Są w mojej ładowni.";
 					Link.l1.go = "Havana_Fort_yesA";
 				}
 				else
@@ -190,7 +190,7 @@ void ProcessDialogEvent()
 			
 			if(NPChar.quest.meeting == "0")
 			{
-				dialog.Text = LinkRandPhrase(LinkRandPhrase("Dzień dobry, "+GetAddress_Form(NPChar)+"Jak mogę ci pomóc? Czy my się znamy?","Wejdź, kapitanie. Nazywam się "+GetFullName(npchar)+" a ja jestem miejscowym bankierem.","Miło cię poznać, "+GetAddress_Form(NPChar)+"! Jestem miejscowym bankierem, a jeśli masz problem z pieniędzmi, to mogę ci pomóc."),LinkRandPhrase("Czy już się spotkaliśmy, kapitanie? Ja jestem "+GetFullName(npchar)+", a ja jestem miejscowym bankierem.","Wejdź, kapitanie. Nazywam się "+GetFullName(npchar)+" a ja jestem miejscowym bankierem.","Witaj, "+GetAddress_Form(NPChar)+" . Jestem "+GetFullName(npchar)+", lokalny bankier."),LinkRandPhrase("Miło cię poznać, "+GetAddress_Form(NPChar)+", jestem "+GetFullName(npchar)+" tylko skromny bankier w tym cudownym mieście.","To twoja decyzja, kapitanie! Chcesz pożyczyć ode mnie trochę monet czy pożyczyć pieniądze na procent?","Panie kapitanie! Bardzo się cieszę, że odwiedziłeś moje skromne biuro!"));
+				dialog.Text = LinkRandPhrase(LinkRandPhrase("Dzień dobry, "+GetAddress_Form(NPChar)+"Jak mogę ci pomóc? Czy my się znamy?","Wejdź, kapitanie. Nazywam się "+GetFullName(npchar)+" jestem miejscowym bankierem.","Miło cię poznać, "+GetAddress_Form(NPChar)+"! Jestem miejscowym bankierem, a jeśli masz problem z pieniędzmi, to mogę ci pomóc."),LinkRandPhrase("Czy już się spotkaliśmy, kapitanie? Ja jestem "+GetFullName(npchar)+", a ja jestem miejscowym bankierem.","Wejdź, kapitanie. Nazywam się "+GetFullName(npchar)+" a ja jestem miejscowym bankierem.","Witaj, "+GetAddress_Form(NPChar)+" . Jestem "+GetFullName(npchar)+", lokalny bankier."),LinkRandPhrase("Miło cię poznać, "+GetAddress_Form(NPChar)+", jestem "+GetFullName(npchar)+" tylko skromny bankier w tym cudownym mieście.","To twoja decyzja, kapitanie! Chcesz pożyczyć ode mnie trochę monet czy pożyczyć pieniądze na procent?","Panie kapitanie! Bardzo się cieszę, że odwiedziłeś moje skromne biuro!"));
 				link.l1 = RandPhraseSimple(LinkRandPhrase("Z przyjemnością! Właśnie spacerowałem po mieście i postanowiłem cię odwiedzić.","Z przyjemnością, jestem "+GetFullName(pchar)+", miło cię poznać."," "+GetFullName(pchar)+" , kapitan statku o nazwie "+pchar.ship.name+" , miło cię poznać. To jest bank, prawda?"),RandPhraseSimple("Miło cię poznać. Ja jestem "+GetFullName(pchar)+". Kapitan statku o imieniu "+pchar.ship.name+" Chciałem cię tylko poznać.","Aha, więc macie tu bank, prawda? Miło cię poznać, jestem "+GetFullName(pchar)+", kapitan własnego statku."));
 				link.l1.go = "next";
 				NPChar.quest.meeting = "1";

@@ -9,7 +9,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, string header, string te
 	{
 		case "life":
 			text += newStr() + " " + newStr() + " ";
-			base = GetCharacterBaseHPValue(chr);
+			base = makefloat(makeint(GetCharacterBaseHPValue(chr)));
 			base += GetAttributeFloat(&equipTable, M_HP_PER_RANK) * (sti(chr.rank) - 1);
 			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + fts(base, 0);
 			SetCharacterStat(chr, &equipTable, M_HP_MAX, &goodText, "ToHumanNumber", 0)
@@ -17,7 +17,7 @@ void SetCharacterStatsTooltip(ref chr, string statName, string header, string te
 		break;
 		case "energy":
 			text += newStr() + " " + newStr() + " ";
-			base = GetCharacterBaseEnergy(chr);
+			base = makefloat(makeint(GetCharacterBaseEnergy(chr)));
 			base += GetAttributeFloat(&equipTable, M_ENERGY_PER_RANK) * (sti(chr.rank) - 1);
 			text += GetConvertStr("SourceBase", "RPGDescribe.txt") + ": " + fts(base, 0);
 			SetCharacterStat(chr, &equipTable, M_ENERGY_MAX, &goodText, "ToHumanNumber", 0)
@@ -96,7 +96,12 @@ void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
 		break;
 		case "gunDamage":
 		{
-			SetCharacterStatGroup(chr, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, "", result, 1.0);
+			object tempTable;
+			MergeModifiers(&tempTable, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, SHOT_STRIKE + "_" + M_DAMAGE);
+			string ammoModifier = GetGunAmmoType(chr, item) + "_" + M_DAMAGE;
+			MergeModifiers(&tempTable, equipTable, SHOT_STRIKE + "_" + M_DAMAGE, ammoModifier);
+			SetCharacterStatGroup(chr, &tempTable, SHOT_STRIKE + "_" + M_DAMAGE, "", result, 1.0);
+
 			result += newStr() + " " + newStr() + " ";
 			SetCharacterStatGroup(chr, equipTable, M_HEADSHOT_DAMAGE, "", result, (1.0+HEADSHOT_MTP));
 		}
@@ -104,6 +109,19 @@ void AddItemUICharacterModifiers(ref chr, string result, ref stat, ref item)
 	}
 
 	DeleteAttribute(&TEV, "dummy");
+}
+
+string GetGunAmmoType(ref chr, ref item)
+{
+	if (GetCharacterEquipByGroup(chr, item.groupId) == item.id)
+	{
+		string ammoType = LAi_GetCharacterBulletType(chr, item.groupId);
+		if (IsBulletGrape(ammoType)) return GRAPESHOT;
+		else return BULLET;
+	}
+	else if (IsBulletGrape(item.type.t1.bullet)) return GRAPESHOT;
+
+	return BULLET;
 }
 
 void SetUIAttackDamge(ref chr, ref item, string result, ref landTable, string strikeType)

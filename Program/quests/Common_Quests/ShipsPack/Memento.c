@@ -491,6 +491,7 @@ void Memento_Dich_EtapThree_Paluba_4_1()
 	sld = &locations[FindLocation("Clone_location")];
 	//убираем сначала лишнее
 	DeleteAttribute(&locations[FindLocation("Clone_location")], "models");
+	SetDefaultLightingModels(FindLocation("Clone_location"));
 	//Models
 	sld.filespath.models = "locations\decks\inside_cabin_4"; // каюта брига/"Мементо"
 	//Always

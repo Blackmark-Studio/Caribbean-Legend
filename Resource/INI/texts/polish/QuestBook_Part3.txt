@@ -11,25 +11,25 @@ Byłem za wolny i kupiec postanowił mnie zostawić i wypłynąć sam.
 #TEXT 1-5
 Balthazar Ridderbrock nie żyje. Misja nieudana i nie chcę rozmawiać o tym z Rodenburgiem.
 #TEXT 1-6
-Zrobione. Balthazar Ridderbrock dotarł do Philipsburg. Otrzymałem 5000 pesos – Ridderbrock to niezwykle hojny człowiek... Wracam do Willemstad.
+Zrobione. Balthazar Ridderbrock dotarł do Philipsburga. Otrzymałem 5000 pesos – Ridderbrock to niezwykle hojny człowiek... Wracam do Willemstad.
 #TEXT 1-7
-Kolejna misja od Lucasa Rodenburga - schwytać „Mirage”. Najpierw muszę zabić jej kapitana, Jacoba van Berga. Chiński Longway mi pomoże. Jest kapitanem xebec Meifeng, ale przez jakiś czas przydzielono mi dowodzenie nią zamiast niego.
+Kolejna misja od Lucasa Rodenburga - schwytać „Miraż”. Najpierw muszę zabić jego kapitana, Jacoba van Berga. Chińczyk Longway mi pomoże. Jest kapitanem szebeki 'Meifeng', ale przez jakiś czas przydzielono mi dowodzenie nią zamiast niego.
 #TEXT 1-8
-Meifeng oraz Longway są pod moimi rozkazami. Powinienem poszukać Jacoba van Berga w @<sCity>, w lokalnej tawernie.. Czas wypłynąć.
+'Meifeng' oraz Longway są pod moimi rozkazami. Powinienem poszukać Jacoba van Berga w @<sCity>, w lokalnej karczmie.. Czas wypłynąć.
 #TEXT 1-9
 Byłem za wolny i Longway opuścił moją załogę. Misja nieudana.
 #TEXT 1-10
-Nie udało mi się zdobyć „Mirage” bez utraty „Meifeng”. Longway opuścił moją załogę. Lepiej teraz trzymać się z dala od Rodenburga...
+Nie udało mi się zdobyć 'Miraż' bez utraty 'Meifeng'. Longway opuścił moją załogę. Lepiej teraz trzymać się z dala od Rodenburga...
 #TEXT 1-11
-Jacob van Berg został wyeliminowany. Znalazłem także bardzo interesujący dziennik pokładowy. Okazuje się, że van Berg wykonywał czyjeś rozkazy. Ale czyje? I dlaczego był tak zainteresowany szerokością geograficzną 12 stopni 48'? A kim jest ten chiński posłaniec? Longway? To jedyny Azjata, jakiego tutaj spotkałem. Pytania, pytania i brak odpowiedzi... Jedno jest pewne – powinienem szukać „Mirage” w pobliżu wybrzeża Boca De La Sierpe.
+Jacob van Berg został wyeliminowany. Znalazłem także bardzo interesujący dziennik pokładowy. Okazuje się, że van Berg wykonywał czyjeś rozkazy. Ale czyje? I dlaczego był tak zainteresowany szerokością geograficzną 12 stopni 48'? A kim jest ten chiński posłaniec? Longway? To jedyny Azjata, jakiego tutaj spotkałem. Pytania, pytania i brak odpowiedzi... Jedno jest pewne – powinienem szukać 'Miraż' w pobliżu wybrzeża Boca De La Sierpe.
 #TEXT 1-12
-Widzę „Mirage” stąd. Piraci są bezczynni, nie okazują żadnych oznak podejrzeń. Wygląda na to, że rozpoznają „Meifeng” jako swoją własną... Świetnie, mam pierwszy strzał.
+Widzę 'Miraż'. Piraci są bezczynni, nie okazują żadnych oznak podejrzeń. Wygląda na to, że rozpoznają 'Meifeng' jako swego... Świetnie, mam pierwszy strzał.
 #TEXT 1-13
-Zatopiłem „Mirage”. Niepowodzenie.
+Zatopiłem „Miraż”. Niepowodzenie.
 #TEXT 1-14
-Walka zakończona sukcesem; „Mirage” została zdobyta. Mogę wrócić do Willemstad.
+Walka zakończona sukcesem; 'Miraż' został zdobyty. Mogę wrócić do Willemstad.
 #TEXT 1-15
-Otrzymałem nagrodę za zdobycie „Mirage”. Teraz muszę wykonać drugą część planu Lucasa Rodenburga. Muszę użyć „Mirage”, by wywabnić angielskiego kapitana Richarda Fleetwooda i go zlikwidować. Aby to zrobić, muszę powiedzieć informatorowi Fleetwooda, że „Mirage” widziano niedaleko Dominiki. John Murdock, chemik ze St. John's, powie mi imię tego informatora. Longway pomoże mi w walce z Fleetwoodem i przygotuje zasadzkę na Dominice.
+Otrzymałem nagrodę za zdobycie 'Miraż'. Teraz muszę wykonać drugą część planu Lucasa Rodenburga. Muszę użyć 'Miraż', by wywabnić angielskiego kapitana Richarda Fleetwooda i go zlikwidować. Aby to zrobić, muszę powiedzieć informatorowi Fleetwooda, że 'Miraż' widziano niedaleko Dominiki. John Murdock, chemik ze St. John's, powie mi imię tego informatora. Longway pomoże mi w walce z Fleetwoodem i przygotuje zasadzkę na Dominice.
 #TEXT 1-15_1
 Byłem za wolny, a pan Rodenburg stracił nadzieję na moje powroty. W rezultacie jestem teraz poszukiwany. To było pechowe z mojej strony.
 #TEXT 1-16
@@ -37,20 +37,20 @@ Zgodnie z informacjami chemika, Charlie Knippel to informator, którego potrzebu
 #TEXT 1-17
 Knippel jest taki naiwny! Łatwo było wmówić mu te wszystkie bzdury! Teraz powinienem popłynąć na Dominikę i tam czekać na przybycie Fleetwooda.
 #TEXT 1-18
-Dotarłem na Dominikę, ale nie ma żadnego śladu po „Meifeng”. Cholerni Chińczycy, może się spóźniają, albo... będę musiał zrobić to sam.
+Dotarłem na Dominikę, ale nie ma żadnego śladu po 'Meifeng'. Cholerni Chińczycy, może się spóźniają, albo... będę musiał zrobić to sam.
 #TEXT 1-19
-„Valkyrie” została zatopiona wraz z Fleetwoodem i jego dziennikiem. Szkoda, nie dostanę żadnej dodatkowej nagrody.
+'Walkiria' została zatopiona wraz z Fleetwoodem i jego dziennikiem. Szkoda, nie dostanę żadnej dodatkowej nagrody.
 #TEXT 1-20
-„Valkyrie” została zdobyta, a ja znalazłem dziennik pokładowy. Skurczybyk Fleetwood zaminował swój statek, ledwo udało mi się uciec. Jest tam wiele interesujących notatek. Zamierzam wyrwać jedną z jego stron, zanim przekażę dokumenty Rodenburgowi. To sprytne; tylko ja będę znał dokładną lokalizację tej wyspy. I dlaczego wszyscy są tak zainteresowani jej znalezieniem?
-Ciekawe, Fleetwood wierzył, że Rodenburg ma coś wspólnego z „duchowym statkiem”. Brzmi to jak prawda; piraci z „Mirage” nie zaatakowali „Meifeng” pierwsi. A mimo to Lucas nakazał mi zabić van Berga. Ale jeśli się mylę, a Rodenburg pozbywa się dowodów... cholera, skala tego człowieka jest imponująca! Ale dlaczego Longway nie przybył, by mi pomóc? Tam było ciężko. Za dużo pytań i nieznanych nazwisk. Póki co.
+'Walkiria' została zdobyta, i znalazłem dziennik pokładowy. Skurczybyk Fleetwood zaminował swój statek, ledwo udało mi się uciec. Jest tam wiele interesujących notatek. Zamierzam wyrwać jedną z jego stron, zanim przekażę dokumenty Rodenburgowi. To sprytne; tylko ja będę znał dokładną lokalizację tej wyspy. I dlaczego wszyscy są tak zainteresowani jej znalezieniem?
+Ciekawe, Fleetwood wierzył, że Rodenburg ma coś wspólnego ze „statkiem widmo”. Brzmi to jak prawda; piraci z 'Miraż' nie zaatakowali 'Meifeng' pierwsi. A mimo to Lucas nakazał mi zabić van Berga. Ale jeśli się mylę, a Rodenburg pozbywa się dowodów... cholera, skala tego człowieka jest imponująca! Ale dlaczego Longway nie przybył, by mi pomóc? Tam było ciężko. Za dużo pytań i nieznanych nazwisk. Póki co.
 #TEXT 1-21
-Wszedłem na pokład „Valkyrie”, ale nie znalazłem dziennika pokładowego. I tak nie było czasu; Fleetwood podpalił swój statek, a ja ledwo uciekłem.
+Wszedłem na pokład 'Walkirii', ale nie znalazłem dziennika pokładowego. I tak nie było czasu; Fleetwood podpalił swój statek, a ja ledwo uciekłem.
 #TEXT 1-22
-„Meifeng” jest tutaj, w porcie, ale wciąż żadnego śladu po samym Longwayu. Nawet nie przypłynął na Dominikę. To dziwne...
+'Meifeng' jest tutaj, w porcie, ale wciąż żadnego śladu po samym Longwayu. Nawet nie przypłynął na Dominikę. To dziwne...
 #TEXT 1-23
-Nie wiem, dlaczego to zrobiłem, ale zaatakowałem „Meifeng” prosto w porcie. Teraz Holendrzy mnie nienawidzą. Może piję za dużo rumu...
+Nie wiem, dlaczego to zrobiłem, ale zaatakowałem 'Meifeng' prosto w porcie. Teraz Holendrzy mnie nienawidzą. Może piję za dużo rumu...
 #TEXT 1-24
-Lucas zapłacił mi za moją pracę. Poza tym, zostałem mianowany dowódcą „Meifeng” zamiast zaginionego Longwaya. Wszystko świetnie, ale mój statek został zatopiony w walce z angielskimi prywatnymi okrętami prosto w porcie. Powinienem udać się po swoje odszkodowanie. Powinienem też odwiedzić gubernatora jutro – Rodenburg powiedział, że mam zostać nominowany do odznaczenia państwowego.
+Lucas zapłacił mi za moją pracę. Poza tym, zostałem mianowany dowódcą 'Meifeng' zamiast zaginionego Longwaya. Wszystko świetnie, ale mój statek został zatopiony w walce z angielskimi kaperami prosto w porcie. Powinienem udać się po swoje odszkodowanie. Powinienem też odwiedzić gubernatora jutro – Rodenburg powiedział, że mam zostać nominowany do odznaczenia państwowego.
 #TEXT 1-25
 Rozkaz od Matthias'a Becka i cenny instrument nawigacyjny od Lucasa Rodenburga. Myślę, że moja kariera idzie w dobrą stronę...
 #TEXT 1-26
@@ -84,8 +84,8 @@ Longway zaproponował dołączenie do mojej załogi. Zgodziłem się.
 #TEXT 1-39
 Znalazłem archiwum Johna Murdocka, a właściwie Johana van Merdena. Niestety, nie da się tego przeczytać – to bezsensowne litery. Zdecydowanie potrzebny jest jakiś szyfr. Ale gdzie mogę go znaleźć?
 #TEXT 1-40
-Zaszyfrowałem archiwum, a to był mój błąd... Lucas jest... zły. Cóż, pieprzyć go. To niebezpieczny człowiek, który ma wystarczającą moc, by mnie zniszczyć. Będę udawał, że nic nie wiem; poza tym nie chcę złamać serca pięknej Abigail. To jej wybór, a Fleetwood był aniołem w porównaniu do Rodenburga.
-A zaczynam posiadać domy. Wygląda na to, że mam pierwszy, z lochami pod spodem.
+Odszyfrowałem archiwum, a to był mój błąd... Lucas jest... zły. Cóż, pieprzyć go. To niebezpieczny człowiek, który ma wystarczającą moc, by mnie zniszczyć. Będę udawał, że nic nie wiem; poza tym nie chcę złamać serca pięknej Abigail. To jej wybór, a Fleetwood był aniołem w porównaniu do Rodenburga.
+I zaczynam posiadać domy. Wygląda na to, że mam pierwszy, z lochami pod spodem.
 #TEXT 1-41
 Zgłosiłem Rodenburgowi eliminację van Merdena. Lucas płynie z Abigail z powrotem do Europy. Cóż, powodzenia im...
 #TEXT 1-42
@@ -97,7 +97,7 @@ Obawy Rodenburga się spełniły. Zostałem ogłuszony prosto na ulicy, blisko b
 #TEXT 1-45
 Udało mi się uciec, a mój porywacz i jego kumpel nie żyją. Moje wyposażenie musi być gdzieś w pobliżu. Powinienem je znaleźć. Szkoda, że nadal nie wiem, dlaczego zostałem porwany. Pieprzyć to! Muszę zabrać list od bankiera i wrócić do Willemstad. Santiago sprawia, że czuję się niepewnie...
 #TEXT 1-46
-Hołda Rodenburga jest imponująca. Wciąż brak wskazówek dotyczących sytuacji w Santiago. Może dowiem się więcej w przyszłości. Teraz mam siedem dni, żeby się przygotować.
+Buta Rodenburga jest imponująca. Wciąż brak wskazówek dotyczących sytuacji w Santiago. Może dowiem się więcej w przyszłości. Teraz mam siedem dni, żeby się przygotować.
 #TEXT 1-47
 Byłem za późno. Zaufanie Rodenburga do mnie zostało zrujnowane. Teraz muszę spodziewać się łowców nagród...
 #TEXT   1-48
@@ -130,13 +130,13 @@ Karczmarz był dość rozbawiony moimi planami regularnego zaopatrywania Barbado
 #TEXT 2-13
 Rozmawiałem z lichwiarzem o dużej pożyczce na zakup cennych towarów.
 #TEXT 2-14
-Zatopiłem „Mirage”. To porażka.
+Zatopiłem 'Miraż'. To porażka.
 #TEXT 2-15
 Teraz rozumiem! Tylko barman usłyszał o niewolnikach. Teraz wiem, dlaczego był tak rozbawiony. Wygląda na to, że wszyscy inni, w tym gubernator, nie mają z tym nic wspólnego. Nie ma potrzeby się spieszyć, najpierw muszę powiedzieć Richardowi o karczmarzu.
-To był idealny moment, by zabić van Berga! Ale kto za nim stoi? Powinienem zapytać Richarda o Azjatę. I dlaczego Rodenburg jest tak zainteresowany jakąś fletą, która zatonęła na szerokości geograficznej 12 stopni 48'?
-„Mirage” – tak nazywa się ten ptak! No cóż, pasuje do niej... Teraz muszę popłynąć na Antiguę.
+To był idealny moment, by zabić van Berga! Ale kto za nim stoi? Powinienem zapytać Richarda o Azjatę. I dlaczego Rodenburg jest tak zainteresowany jakąś fluitą, która zatonęła na szerokości geograficznej 12 stopni 48'?
+'Miraż' – tak nazywa się ten ptak! No cóż, pasuje do niej... Teraz muszę popłynąć na Antiguę.
 #TEXT 2-16
-Richard powiedział mi o wyspie i jej długości geograficznej. Teraz tylko ja znam jej prawdziwą lokalizację. Powinienem popłynąć tam przy najbliższej okazji... Najpierw jednak muszę odwiedzić Curaçao i dostarczyć Richardowi jego łapówkę – Abigail Shneur.
+Richard powiedział mi o wyspie i jej długości geograficznej. Teraz tylko ja znam jej prawdziwą lokalizację. Powinienem popłynąć tam przy najbliższej okazji... Najpierw jednak muszę odwiedzić Kurakao i dostarczyć Richardowi jego łapówkę – Abigail Shneur.
 #TEXT 2-17
 Abigail nie ma w domu, jest tam tylko jej szalony ojciec. Powiedział mi, gdzie mogę ją znaleźć – w kościele.
 #TEXT 2-18
@@ -146,12 +146,12 @@ Abigail prosi mnie, bym odnalazł monety jej ojca. Wygląda na to, że Solomon u
 #TEXT 2-19
 Jezu, powinienem jak najszybciej pójść do kościoła i zapalić świecę... To był najstraszniejszy dzień w moim życiu. Gdy tylko zbliżyłem się do skrzyni, eksplodowała, a ja ledwo uszedłem z życiem. Był tam też cholerny potwór! Teraz wierzę w miejscową magię. Chyba powinienem poprosić Richarda o podwyżkę. W skrzyni czekała mnie kolejna niespodzianka – głowa Gastona, barmana z Barbadosu. Znał szerokość geograficzną, to pewne. Van Berg tego nie ukrywał. Ale długość? Tę znał tylko Fleetwood! Co tu się, do diabła, dzieje? Muszę powiedzieć o wszystkim Richardowi i pozwolić mu zdecydować, co dalej. W końcu to jego sprawa.
 #TEXT 2-20
-Byłem zbyt zajęty własnymi sprawami i nie dotarłem na Curaçao na czas.
+Byłem zbyt zajęty własnymi sprawami i nie dotarłem na Kurakao na czas.
 #TEXT 2-21
-Richard nie potrafił wyjaśnić, co się właściwie dzieje. Dziwne. Muszę popłynąć na Barbados i sprawdzić, czy Gaston naprawdę nie żyje. Potem powinienem udać się do laguny Blanca na Curaçao – Charlie będzie tam na mnie czekał z monetami dla ojca Abigail. Mam na to 20 dni.
+Richard nie potrafił wyjaśnić, co się właściwie dzieje. Dziwne. Muszę popłynąć na Barbados i sprawdzić, czy Gaston naprawdę nie żyje. Potem powinienem udać się do laguny Blanca na Kurakao – Charlie będzie tam na mnie czekał z monetami dla ojca Abigail. Mam na to 20 dni.
 #TEXT 2-22
 Rozmowa z umarłym była upiorna, ale biedny Hercule miał rację. Nie obchodzi mnie, kto wygra tę grę – Londyn czy Amsterdam. Ale w tej chwili Richard jest moim przyjacielem, a Lucas wrogiem. Taka jest sytuacja.
-Powinienem się pospieszyć i spotkać z Charliem na Curaçao. Potem muszę odnaleźć chemika. Myślę, że nie ma potrzeby mówić Fleetwoodowi o liście Herculesa.
+Powinienem się pospieszyć i spotkać z Charliem na Kurakao. Potem muszę odnaleźć chemika. Myślę, że nie ma potrzeby mówić Fleetwoodowi o liście Hercule'a.
 #TEXT 2-23
 Cholera, to dopiero śmiech! Najlepsze życzenia od wszystkich, a ja zostałem sam na sam z Lucasem. Zrobili ze mnie najniższą szmatę w tym bałaganie. Fleetwood to pies! Tonzag miał rację – nie mogę nikomu ufać. Nie mogę tu mieć przyjaciół, tylko wrogów.
 Czas lepiej poznać van Merdena i raz na zawsze pozbyć się Rodenburga.
@@ -160,9 +160,9 @@ Cholera! Archiwum jest zaszyfrowane, nie będę w stanie go odczytać bez kodu. 
 Okazuje się, że Longway i Portugalczycy przechytrzyli mnie na wyspie. Wygląda na to, że zabili Tonzaga. Może się przestraszyli? To by wyjaśniało, dlaczego van Merden już uznał go za martwego. A Tonzag mu ufał...
 Wygląda na to, że ta mapa pokazuje lokalizację ich skrytki. Powinienem to sprawdzić później. Może znajdę tam coś ciekawego, a nie tylko monety. Jest jednak jeden problem – gdzie jest ta grota? Jak nazywa się ta wyspa? Jestem pewien, że leży gdzieś na „ich terenie”, wspominali o tym. Powinienem jeszcze raz przejrzeć dokumenty...
 #TEXT 2-25
-Lucas Rodenburg na „Meifengu” spotkał mnie w pobliżu Kajmanów. Oczywiście czekał tam na van Merdena. Oboje już nie żyją. Powinienem przeszukać tę wyspę w poszukiwaniu ich skrytki. Jezu, oby tym razem bez potworów...
+Lucas Rodenburg na 'Meifengu' spotkał mnie w pobliżu Kajmanów. Oczywiście czekał tam na van Merdena. Oboje już nie żyją. Powinienem przeszukać tę wyspę w poszukiwaniu ich skrytki. Jezu, oby tym razem bez potworów...
 #TEXT 2-26
-Archiwum zostało odszyfrowane. Myliłem się – Johan nie zdradził Herculesa, to jego własna ciekawość go zgubiła. A ten Joachim Merriman... Dobrze, że nie spotkałem tego czarnoksiężnika na Curaçao. Mam przeczucie, że jeszcze się kiedyś spotkamy.
+Archiwum zostało odszyfrowane. Myliłem się – Johan nie zdradził Hercule'a, to jego własna ciekawość go zgubiła. A ten Joachim Merriman... Dobrze, że nie spotkałem tego czarnoksiężnika na Kurakao. Mam przeczucie, że jeszcze się kiedyś spotkamy.
 #TEXT 2-27
 Lucas nie żyje, więc do diabła z nim! Richard i Abigail pewnie już o mnie zapomnieli, niech i ich diabli wezmą! A ja żyję, z monetami w skrzyniach i domem na własność. Mam nawet własne lochy. Zaczynam lubić tę robotę.
 
@@ -197,7 +197,7 @@ John obiecał znaleźć jakieś haki na Richarda Fleetwooda. Powinienem odwiedzi
 #TEXT 3-15
 Byłem zbyt późno, a Richard Fleetwood już odpłynął – wraca do Anglii z eskadrą wojskową. Co za szkoda...
 #TEXT 3-16
-John powiedział, że Fleetwood wysłał swojego lojalnego agenta, Charliego Knippela, na Curaçao, by sprowadził mu jakąś żydowską dziewczynę. Nasz Brytyjczyk się zakochał. Oczywiście mogę to wykorzystać przeciwko niemu. Muszę przechwycić Charliego Knippela, który płynie na „Zeekalfie” pod banderą Holandii.
+John powiedział, że Fleetwood wysłał swojego lojalnego agenta, Charliego Knippela, na Kurakao, by sprowadził mu jakąś żydowską dziewczynę. Nasz Brytyjczyk się zakochał. Oczywiście mogę to wykorzystać przeciwko niemu. Muszę przechwycić Charliego Knippela, który płynie na 'Zeekalfie' pod banderą Holandii.
 #TEXT 3-17
 Spóźniłem się i nie ma śladu po Charliem ani jego brygantynie. Mój plan jest zrujnowany.
 #TEXT 3-18
@@ -205,7 +205,7 @@ Charlie Knippel zatonął razem ze swoim statkiem. Mój plan jest zrujnowany.
 #TEXT 3-19
 Charlie Knippel był dla mnie za silny i musiałem się wycofać. Mój plan jest zrujnowany.
 #TEXT 3-20
-„Zeekalf” został zdobyty, Charlie Knippel pojmany i zamknięty w ładowni. Rozkazałem go przesłuchać. Powinienem zejść na dół i sprawdzić, czy są już jakieś wyniki.
+'Zeekalf' został zdobyty, Charlie Knippel pojmany i zamknięty w ładowni. Rozkazałem go przesłuchać. Powinienem zejść na dół i sprawdzić, czy są już jakieś wyniki.
 #TEXT 3-21
 Charlie miał przy sobie list dla Abigail Shneur. Nigdy go nie widziała; mogę się za niego podać i wziąć ją jako zakładniczkę. To ryzykowne, ale warte spróbowania. Kierunek – Willemstad.
 #TEXT 3-22
@@ -215,7 +215,7 @@ Abigail jest na pokładzie. Kierunek – Antigua.
 #TEXT 3-24
 John przygotowuje pokój dla Abigail. Czas ją tam zaprowadzić.
 #TEXT 3-25
-Teraz zamierzam szantażować Fleetwooda i zażądać prywatnego spotkania. Jeśli ma serce, musi zgodzić się na moje warunki... Potrzebuję posłańca. John polecił mi pijaka imieniem Jack Garrison. Znajdę go w tawernie.
+Teraz zamierzam szantażować Fleetwooda i zażądać prywatnego spotkania. Jeśli ma serce, musi zgodzić się na moje warunki... Potrzebuję posłańca. John polecił mi pijaka imieniem Jack Garrison. Znajdę go w karczmie.
 #TEXT 3-26
 List został przekazany Jackowi. Muszę za nim podążyć.
 #TEXT 3-27
@@ -227,9 +227,9 @@ Byłem zbyt wolny i mój wielki plan jest całkowicie zrujnowany.
 #TEXT 3-30
 Byłem zbyt zajęty własnymi sprawami i przegapiłem Fleetwooda w zatoce. Mój wielki plan jest całkowicie zrujnowany.
 #TEXT 3-31
-Fleetwood jest sprytny – nie przyniósł pieniędzy, tylko swoje czerwone płaszcze. Nie pomogło mu to jednak – człowiek nie żyje. Kieruję się na mój statek. Jego brygantyna musi być gdzieś w pobliżu; może powinienem wziąć ją jako nagrodę?
+Fleetwood jest sprytny – nie przyniósł pieniędzy, tylko swoje czerwone kubraki. Nie pomogło mu to jednak – człowiek nie żyje. Kieruję się na mój statek. Jego bryg musi być gdzieś w pobliżu; może powinienem wziąć go jako nagrodę?
 #TEXT 3-32
-Brygantyna Fleetwooda, „Valkyrie”, żeglowała w pobliżu wyspy. Wygrałem bitwę.
+Bryg patrolowy Fleetwooda, 'Walkiria', żeglował w pobliżu wyspy. Wygrałem bitwę.
 #TEXT 3-33
 Zasadzka została przygotowana. Czas czekać na przybycie Fleetwooda. Powinien tu być lada moment.
 #TEXT 3-34
@@ -238,7 +238,7 @@ John pogratulował mi i powiedział, że Tonzag czeka na mnie w lochu. W między
 Tonzag podarował mi doskonałą lekką zbroję. Wspomniał też, że Murdock ma dla mnie nowe zadanie.
 #TEXT 3-36
 John Murdock zaproponował mi udział w walce przeciwko Lucasowi Rodenburgowi, wicedyrektorowi Holenderskiej Kompanii Zachodnioindyjskiej. Plan jest prosty: muszę przechwycić brygantynę kurierską Kompanii, udawać Fleetwooda i wysłać wiadomość do Rodenburga, która zmusi go do popełnienia jakiegoś błędu.
-Brygantyna nazywa się „Hoop”; mogę ją znaleźć gdzieś między Antiguą a Saint-Christopher. Płynie z Philipsburga do Willemstad.
+Brygantyna nazywa się 'Hoop'; mogę ją znaleźć gdzieś między Antiguą a Świętym Krzysztofem. Płynie z Philipsburga do Willemstad.
 #TEXT 3-37
 Nie udało mi się znaleźć brygantyny. Mój plan jest zrujnowany.
 #TEXT 3-38
@@ -246,32 +246,32 @@ Zatopiłem statek. Mój plan jest zrujnowany.
 #TEXT 3-39
 Brygantyna została przechwycona i uwolniona. Jej kapitan otrzymał wiadomość dla Rodenburga. Muszę dostać się do Willemstad, by dowiedzieć się, jaka będzie reakcja na moją wiadomość.
 #TEXT 3-40
-Dotarłem do Willemstad. Znajduje się tu ciekawy statek – szebeka „Meifeng”. Murdock kiedyś mi o niej wspominał. Świetny okręt. Powinienem zapytać ludzi w tawernie o niego, jego załogę i właściciela – Lucasa Rodenburga.
+Dotarłem do Willemstad. Znajduje się tu ciekawy statek – szebeka 'Meifeng'. Murdock kiedyś mi o niej wspominał. Świetny okręt. Powinienem zapytać ludzi w karczmie o niego, jego załogę i właściciela – Lucasa Rodenburga.
 #TEXT 3-41
-Nie wiem dlaczego, ale zaatakowałem „Meifeng” prosto w porcie, psując swój plan i rujnując swoje relacje z Holandią.
+Nie wiem dlaczego, ale zaatakowałem 'Meifeng' prosto w porcie, psując swój plan i rujnując swoje relacje z Holandią.
 #TEXT 3-42
 Zatopiłem galeon Petera Stuyvesanta. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-43
-Galeon Stuyvesanta zatonął podczas naszej podróży do Curaçao. Teraz nie będę mógł zrealizować swojego planu.
+Galeon Stuyvesanta zatonął podczas naszej podróży do Kurakao. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-44
-Dowiedziałem się wielu rzeczy od ludzi w tawernie. Lokalny gubernator, Matthias Beck, został zakuty w kajdany na rozkaz Lucasa, który sam przejął jego stanowisko. Co za historia... Wygląda na to, że moja wiadomość wywołała tu niezłe zamieszanie.
-Ważny szczegół – „Meifeng” jest załadowywana amunicją, a jej załogę zastępują bezwzględni najemnicy i bandyci. Powinienem przechwycić statek i przesłuchać chińskiego kapitana.
+Dowiedziałem się wielu rzeczy od ludzi w karczmie. Lokalny gubernator, Matthias Beck, został zakuty w kajdany na rozkaz Lucasa, który sam przejął jego stanowisko. Co za historia... Wygląda na to, że moja wiadomość wywołała tu niezłe zamieszanie.
+Ważny szczegół – 'Meifeng' jest załadowywany amunicją, a jego załogę zastępują bezwzględni najemnicy i bandyci. Powinienem przechwycić statek i przesłuchać chińskiego kapitana.
 #TEXT 3-45
-„Meifeng” została przechwycona, a kapitan Longway zamknięty w ładowni. Powinienem zejść na dół i wydobyć od niego informacje.
+'Meifeng' został przechwycony, a kapitan Longway zamknięty w ładowni. Powinienem zejść na dół i wydobyć od niego informacje.
 #TEXT 3-46
-Zatopiłem „Meifeng”. Teraz nie będę mógł zrealizować swojego planu.
+Zatopiłem 'Meifeng'. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-47
-Straciłem „Meifeng”, statek odpłynął. Teraz nie będę mógł zrealizować swojego planu.
+Straciłem 'Meifeng', statek odpłynął. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-48
 Chińczyk zgodził się udzielić informacji w zamian za wolność. Muszę go wysadzić na Przylądku Niedostępnym na Marie Galante.
 #TEXT 3-49
-To się robi coraz ciekawsze! Rodenburg rozkazał Longwayowi zabić Petera Stuyvesanta! To zdecydowanie zamach stanu. Wieszają ludzi za coś takiego. Muszę odnaleźć Stuyvesanta i powiedzieć mu wszystko. On zajmie się Lucasem natychmiast. Galeon Petera będzie krążył w pobliżu Saint-Christopher przez tydzień.
+To się robi coraz ciekawsze! Rodenburg rozkazał Longwayowi zabić Petera Stuyvesanta! To zdecydowanie zamach stanu. Wieszają ludzi za coś takiego. Muszę odnaleźć Stuyvesanta i powiedzieć mu wszystko. On zajmie się Lucasem natychmiast. Galeon Petera będzie krążył w pobliżu Świętego Krzysztofa przez tydzień.
 #TEXT 3-50
 Nie znalazłem galeonu. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-51
 Byłem zbyt wolny w żegludze do Willemstad i galeon Petera odpłynął. Teraz nie będę mógł zrealizować swojego planu.
 #TEXT 3-52
-Galeon Stuyvesanta jest teraz częścią mojej eskadry. Kierunek – Curaçao!
+Galeon Stuyvesanta jest teraz częścią mojej eskadry. Kierunek – Kurakao!
 #TEXT 3-53
 Stuyvesant aresztował Rodenburga i wsadził go do więzienia. Moja misja jest zakończona, ale muszę jutro odwiedzić rezydencję – obiecano mi nagrodę...
 #TEXT 3-54
@@ -281,9 +281,9 @@ Poznałem pewnego Portugalczyka imieniem Joachim Merriman. Obiecał mi pół mil
 #TEXT 3-56
 Powiedziałem Johnowi o moim sukcesie. Wspomniałem mu także o Jacobie van Bergu, co wyraźnie go zaniepokoiło. Muszę odwieźć Abigail z powrotem. Jest w kościele.
 #TEXT 3-57
-Porozmawiałem z Abigail. Kurs na Curaçao.
+Porozmawiałem z Abigail. Kurs na Kurakao.
 #TEXT 3-58
-Solomon podał mi jedynie nazwę fletu i imię jego kapitana. Powinienem porozmawiać z zarządcą portu.
+Solomon podał mi jedynie nazwę fluity i imię jego kapitana. Powinienem porozmawiać z zarządcą portu.
 #TEXT 3-59
 Kapitan, którego szukam, odpłynął na Trynidad.
 #TEXT 3-60
@@ -1182,8 +1182,7 @@ Minęły cztery miesiące na zebranie materiałów. Szkoda, że nie udało mi si
 #QUEST renovate_fdm
 Renowacja Statku Duchów
 #TEXT 1
-Główny stoczniowiec z Isla Tesoro, Alexus, zgodził się przebudować statek-duch. Ta restauracja nie tylko zmieni jego wygląd, ale także znacznie go ulepszy pod każdym względem — przestarzałe i zużyte elementy zostaną wymienione, a konstrukcja uzupełniona nowoczesnymi rozwiązaniami.
-To wszystko będzie kosztować szaloną sumę, a dodatkowo będziesz musiał odnaleźć i przywieźć mu potrzebne materiały: po 150 jednostek bakautu, jedwabiu, lin i żywicy.
+Kapitan statku na Isla Tesoro, Alexus, poprosił mnie, abym zebrał i dostarczył mu materiały potrzebne do renowacji statku widmo. Potrzebuje 150 sztuk żelaznego drewna, 200 beczek żywicy, 170 zwój jedwabiu okrętowego oraz 130 warstw lin konopnych.
 
 #TEXT 2
 @<sQty> @<sGood> zostało.
@@ -2674,27 +2673,27 @@ Czarny Znak
 #TEXT 1
 Dziś byłem świadkiem niezwykłej sceny i poznałem niezwykłego człowieka. Gdy przechodziłem obok latarni morskiej na Barbadosie, zobaczyłem przemytników czekających na klienta. Zauważyli mnie i kazali mi się wynosić, żebym nie spłoszył ich kupca. Ironią losu było to, że ich groźba była jednocześnie ostrzeżeniem – gdybym od razu odszedł, mogłoby mnie ominąć całe widowisko. Ledwie zaczęliśmy rozmawiać, zostaliśmy zaatakowani przez patrol oraz mieszczanina, który kogoś wśród nas szukał. Osobą, na którą polowali, był Tommy Irons – strzelec wyborowy, który podczas angielskiej rewolucji stracił pamięć. Irons spał z żoną owego cywila, więc rogacz zebrał oddział żołnierzy, żeby go ścigać. Byłem pod wrażeniem, gdy Tommy jednym celnym strzałem z latarni odstrzelił mu głowę, więc gdy zaproponował mi swoje usługi, postanowiłem go zatrudnić. Miał też całkiem wygórowane wymagania. Jego nieustanne przechwałki i żarty zaczynają mnie irytować, ale liczy się talent, prawda?
 #TEXT 2
-Pięćset sztuk złota. Za takie pieniądze można kupić – no cóż, sporo. To rozbój w biały dzień! Przy latarni na Barbadosie spotkałem Tommy’ego Ironsa – najemnika i utalentowanego strzelca, który dobrze zna swoją wartość. Aż za dobrze. Dogadaliśmy się, że do mnie dołączy za sakiewkę złota. Przez kilka dni będzie na mnie czekał w miejscowej jaskini.
+Dwieście pięćdziesiąt sztuk złota. Za takie pieniądze można kupić – no cóż, sporo. To rozbój w biały dzień! Przy latarni na Barbadosie spotkałem Tommy’ego Ironsa – najemnika i utalentowanego strzelca, który dobrze zna swoją wartość. Aż za dobrze. Dogadaliśmy się, że do mnie dołączy za sakiewkę złota. Przez kilka dni będzie na mnie czekał w miejscowej jaskini.
 #TEXT 3
 Nie udało mi się zebrać takiej sumy w zaledwie parę dni. Gdyby zażądał peso – w porządku – tu rzeczywiście rosną na drzewach. Ale nie, monsieur najlepszy strzelec świata chciał tylko dobrówek. Nic dziwnego, że przy takim podejściu i wymaganiach wciąż podróżuje samotnie. Nie żałuję.
 #TEXT 4
 Przyniosłem Tommy’emu złoto, którego chciał, i jeśli jest choć w połowie tak dobry, jak się przechwala, to był to opłacalny wydatek. Oby tylko nie wpędził mnie w kłopoty...
 #TEXT 5
-Widziałem już różne dziwactwa, ale Tommy Irons wyróżnia się nawet w tym szalonym świecie. Kiedyś, na obrzeżach miasta, poprosił mnie o jedną papierową nabojnicę. Tylko jedną. Gdy powiedziałem mu, że nie mam czegoś takiego w kieszeniach, ale mogę przynieść więcej ze statku, Tommy opuścił moją załogę. I zrobił z tego niezłą scenę. Chyba za mocno oberwał w głowę tam w Anglii. Mam nadzieję, że nigdy więcej nie spotkam kogoś takiego jak on – kto zostawia mnie tylko dlatego, że nie spełniłem jego zachcianki od razu.
+Widziałem już różne dziwactwa, ale Tommy Irons wyróżnia się nawet w tym szalonym świecie. Niedawno, na obrzeżach miasta, poprosił mnie o jeden papierowy nabój. Tylko jeden. Gdy powiedziałem mu, że nie mam czegoś takiego w kieszeniach, ale mogę przynieść więcej ze statku, Tommy opuścił moją załogę. I zrobił z tego niezłą scenę. Chyba za mocno oberwał w głowę tam w Anglii. Mam nadzieję, że nigdy więcej nie spotkam kogoś takiego jak on – kto zostawia mnie tylko dlatego, że nie spełniłem jego zachcianki od razu.
 #TEXT 6
 Czy jestem prawdziwym kapitanem, czy brakuje mi odwagi? Tommy długo się nad tym zastanawiał, zanim opuścił mój statek. Opowiedział mi więcej o swojej przeszłości – tej prawdziwej, a nie historii, którą przedstawił, gdy się poznaliśmy. Dołączył do piratów i wychwalał Jacka, swojego poprzedniego kapitana, nie mając do niego żalu za to, że odmówił pomocy w zemście. Ale kiedy ja zrobiłem to samo, nazwał mnie słabym. Ludzie często sobie zaprzeczają, więc nie powinno mnie to dziwić. Nie zamierzam narażać się Anglii przez tego szaleńca. I nie żałuję, że odszedł.
 #TEXT 7
-Tommy zaczął mi ufać, więc opowiedział mi historię swojego życia, gdy szliśmy przez dżunglę. Okazało się, że znał Francisa – cywila, którego zastrzelił z latarni morskiej – od dawna. Byli towarzyszami broni, dopóki Reasley i inny mężczyzna nie uciekli z pola bitwy, a potem nie oskarżyli Tommy’ego o zdradę. Przez nich Irons został zesłany na ciężkie roboty w kamieniołomach na Barbadosie. Kiedy tylko dowiedział się, że jego starzy wrogowie są na Archipelagu, ogarnęła go żądza zemsty. Jack, jego dawny kapitan piratów, odmówił pomocy, więc Tommy odszedł od załogi i sam wziął sprawy w swoje ręce. Drugi zdrajca, Gabriel Callow, kontynuował karierę wojskową. Był tchórzem wtedy i jest nim teraz – zwykle żegluje wokół Jamajki na swoim statku, Principio, unikając większych okrętów wojennych i nawet statków kupieckich większych od barku. Może Tommy nie powiedział mi od razu całej prawdy, ale postanowiłem pomóc mu w jego zemście. Zdobędziemy bark, podniesiemy fałszywą banderę i zwabimy Gabe’a do walki.
+Tommy zaczął mi ufać, więc opowiedział mi historię swojego życia, gdy szliśmy przez dżunglę. Okazało się, że znał Francisa – cywila, którego zastrzelił z latarni morskiej – od dawna. Byli towarzyszami broni, dopóki Reasley i inny mężczyzna nie uciekli z pola bitwy, a potem nie oskarżyli Tommy’ego o zdradę. Przez nich Irons został zesłany na ciężkie roboty w kamieniołomach na Barbadosie. Kiedy tylko dowiedział się, że jego starzy wrogowie są na Archipelagu, ogarnęła go żądza zemsty. Jack, jego dawny kapitan piratów, odmówił pomocy, więc Tommy odszedł od załogi i sam wziął sprawy w swoje ręce. Drugi zdrajca, Gabriel Callow, kontynuował karierę wojskową. Był tchórzem wtedy i jest nim teraz – zwykle żegluje wokół Jamajki na swoim statku, 'Principio', unikając większych okrętów wojennych i nawet statków kupieckich większych od barku. Może Tommy nie powiedział mi od razu całej prawdy, ale postanowiłem pomóc mu w jego zemście. Zdobędziemy barke, podniesiemy fałszywą banderę i zwabimy Gabe’a do walki.
 #TEXT 8
-Czasem zapominam, jak przydatną umiejętnością jest udawanie głupiego w odpowiednim momencie – rzadko sam z niej korzystałem. Tommy Irons jednak nie był tak prosty, jak myślałem. Poprosił mnie o pomoc i powiedział mi, co naprawdę się z nim stało – zarówno tutaj, jak i w Anglii. Nie było żadnej rezygnacji – Irons został wrobiony przez dwóch żołnierzy, którzy doprowadzili do jego skazania na ciężkie roboty w kamieniołomach na Barbadosie. Widząc przewagę wroga, zdezerterowali, a potem oskarżyli Tommy’ego o spiskowanie ze zwolennikami króla. Jednak los nie był aż tak okrutny – statek wiozący Ironsa został zaatakowany przez piratów, którzy go uratowali. W ten sposób do nich dołączył. Pewnego dnia dowiedział się, że dwaj ludzie, którzy zrujnowali mu życie, są tutaj. Piraci odmówili pomocy, więc opuścił ich statek, by wymierzyć sprawiedliwość na własną rękę. Jeden z nich to Frank Reasley, ten sam „rogacz” z latarni morskiej. Drugi, Gabriel Callow, pozostał w wojsku, awansował na porucznika i został kapitanem. Osiedlił się w Port Royal, ale Tommy nie wie dokładnie gdzie. Postanowiłem pomóc mu w jego sprawie. Ruszamy do Portland Cove na Jamajce.
+Czasem zapominam, jak przydatną umiejętnością jest udawanie głupiego w odpowiednim momencie – rzadko sam z niej korzystałem. Tommy Irons jednak nie był tak prosty, jak myślałem. Poprosił mnie o pomoc i powiedział mi, co naprawdę się z nim stało – zarówno tutaj, jak i w Anglii. Nie było żadnej rezygnacji – Irons został wrobiony przez dwóch żołnierzy, którzy doprowadzili do jego skazania na ciężkie roboty w kamieniołomach na Barbadosie. Widząc przewagę wroga, zdezerterowali, a potem oskarżyli Tommy’ego o spiskowanie ze zwolennikami króla. Jednak los nie był aż tak okrutny – statek wiozący Ironsa został zaatakowany przez piratów, którzy go uratowali. W ten sposób do nich dołączył. Pewnego dnia dowiedział się, że dwaj ludzie, którzy zrujnowali mu życie, są tutaj. Piraci odmówili pomocy, więc opuścił ich statek, by wymierzyć sprawiedliwość na własną rękę. Jeden z nich to Frank Reasley, ten sam „rogacz” z latarni morskiej. Drugi, Gabriel Callow, pozostał w wojsku, awansował na porucznika i został kapitanem. Osiedlił się w Port Royal, ale Tommy nie wie dokładnie gdzie. Postanowiłem pomóc mu w jego sprawie. Ruszamy do Zatoczki Portland na Jamajce.
 #TEXT 9
 To nie jest takie proste, jak się wydawało na pierwszy rzut oka. Tak myślałem, gdy Tommy opowiedział mi swoją historię i poprosił o pomoc. A teraz, po rozmowie z lokalnym pijakiem o Gabe’ie, moje podejrzenia tylko się wzmocniły. Wszyscy w mieście dobrze o nim mówią. Nawet sam pułkownik Doyley wyraża się o nim z uznaniem. Gabe ma reputację uczciwego i odważnego żołnierza, co nie pasuje do opowieści Ironsa. Callow mieszka w domu obok sklepu, ale jest tam tylko w nocy – od dziesiątej wieczorem do szóstej rano. Może lepiej najpierw z nim porozmawiać, zamiast po prostu zostawić wiadomość i zniknąć w ciemności...
 #TEXT 10
 Zgniłe osoby często potrafią przekonać innych, że są uczciwe. Nawet tych, którzy świetnie oceniają ludzi – Gabe zdobył zaufanie samego pułkownika Doyley’a. Dowiedziałem się też w tawernie, że ma opinię uczciwego i odważnego człowieka. Jakie to ironiczne. Jego dom jest obok sklepu, ale prawie w nim nie bywa – tylko wieczorami, gdy wszystkie główne miejsca w mieście są zamknięte. To nawet lepiej – mogę wejść tam i zostawić wiadomość w dowolnym momencie.
 #TEXT 11
-Widziałem już wiele kłótni między starymi małżeństwami. Bywa to zabawne. A to, co dziś widziałem, bardzo mi je przypominało. Gabe połknął przynętę, a my pomyślnie go przejęliśmy. W kajucie Tommy dołączył do mnie, by wymienić kilka uprzejmości z Callowem. Każdy z nich przedstawił swoją wersję wydarzeń z Anglii, wzajemnie się oskarżając. Potem Tommy i ja dokończyliśmy to, co zaczęliśmy. Był wdzięczny, że pomogłem mu się zemścić, więc w końcu uwolnił się od żalu, który go trawił, i zamknął ten niezbyt przyjemny rozdział swojego życia. Po czym rzucił dwie swoje klasyczne żarty. Pierwszy: że nie jestem już jego kapitanem, ale prawdziwym przyjacielem. A drugi? Wręczył mi czarną plamę. Ale nie byle jaką – tę, która była przeznaczona dla Gabe’a. Tommy jest przekonany, że gdy wyszywał Jolly Rogera na swojej starej jedwabnej chuście, ten kawałek materiału natychmiast przyniósł mu szczęście. Mam nadzieję, że teraz przyniesie je i mnie.
+Widziałem już wiele kłótni między starymi małżeństwami. Bywa to zabawne. A to, co dziś widziałem, bardzo mi je przypominało. Gabe połknął przynętę, a my pomyślnie go przejęliśmy. W kajucie Tommy dołączył do mnie, by wymienić kilka uprzejmości z Callowem. Każdy z nich przedstawił swoją wersję wydarzeń z Anglii, wzajemnie się oskarżając. Potem Tommy i ja dokończyliśmy to, co zaczęliśmy. Był wdzięczny, że pomogłem mu się zemścić, więc w końcu uwolnił się od żalu, który go trawił, i zamknął ten niezbyt przyjemny rozdział swojego życia. Po czym rzucił swoje dwa klasyczne żarty. Pierwszy: że nie jestem już jego kapitanem, ale prawdziwym przyjacielem. A drugi? Wręczył mi czarną plamę. Ale nie byle jaką – tę, która była przeznaczona dla Gabe’a. Tommy jest przekonany, że gdy wyszywał Wesołego Rogera na swojej starej jedwabnej chuście, to kawałek materiału natychmiast przyniósł mu szczęście. Mam nadzieję, że teraz przyniesie je i mnie.
 #TEXT 12
-Gdzie to widziano, żeby statek kupiecki zatopił okręt wojenny? A jednak dokładnie to się stało. Kto wie, co Gabe planował – może chciał nas zmęczyć długą walką, połamać kilka masztów i wybić załogę przed abordażem. A może domyślił się, że nie jesteśmy kupcami, i zamiast uciekać, zamierzał posłać nas na dno. Ale kolejna nasza salwa trafiła pod linię wody, i ten stary pink, który ledwo się trzymał na powierzchni, w końcu poszedł na dno. Tommy śmiał się do rozpuku z absurdalności sytuacji, ale gdy się uspokoił, przyznał, że wolałby rozprawić się z Gabe’em twarzą w twarz. Mimo to cieszył się, że to już koniec. Tak bardzo, że nazwał mnie przyjacielem. I dał mi czarną plamę – ale oczywiście nie w tamtym sensie...
+Gdzie to widziano, żeby statek kupiecki zatopił okręt wojenny? A jednak dokładnie to się stało. Kto wie, co Gabe planował – może chciał nas zmęczyć długą walką, połamać kilka masztów i wybić załogę przed abordażem. A może domyślił się, że nie jesteśmy kupcami, i zamiast uciekać, zamierzał posłać nas na dno. Ale kolejna nasza salwa trafiła pod linię wody, i ta stara pinka, który ledwo się trzymała na powierzchni, w końcu poszła na dno. Tommy śmiał się do rozpuku z absurdalności sytuacji, ale gdy się uspokoił, przyznał, że wolałby rozprawić się z Gabe’em twarzą w twarz. Mimo to cieszył się, że to już koniec. Tak bardzo, że nazwał mnie przyjacielem. I dał mi czarną plamę – ale oczywiście nie w tamtym sensie...
 #TEXT 13
 Zrobione. Ponieważ Gabe rzadko bywa w domu, uniknięcie złapania było łatwe. Teraz pozostaje tylko wrócić do Tommy’ego. Miejmy nadzieję, że Callow zajrzy do swojego biurka i kufrów zaraz po powrocie do domu, zamiast od razu kłaść się spać, bo inaczej możemy długo czekać.
 #TEXT 14
@@ -2702,7 +2701,7 @@ Dziś widziałem, jak zawsze sarkastyczny Tommy uśmiechał się i śmiał z pra
 #TEXT 15
 Gdy wszedłem do domu Gabe’a, od razu na niego wpadłem – albo jest bardzo czujnym śpiochem, albo w ogóle nie spał. Nie wygląda na podstępnego tchórza, w przeciwieństwie do tego, co mówił Tommy. Podczas naszej rozmowy Gabe twierdził, że Irons nie był tym, za kogo się podawał, i to on zdradził ich kompanię. Nie wiem, kto mówi prawdę. Ale nie zamierzam schodzić na ich poziom, zmieniać stron i łamać danego słowa. Zacząłem to z Tommym i z nim to skończę. Gabe przyjął wiadomość i czarną plamę z moich rąk. Wracam do zatoki.
 #TEXT 16
-Zawsze było w Tommym coś, co nie dawało mi spokoju. I miałem rację, że porozmawiałem z Callowem. Gabe jest rzeczywiście oficerem pełnym opanowania, odwagi i dyscypliny – wszystko, co o nim mówią, jest prawdą. Pułkownik Doyley rzeczywiście zna się na ludziach. Tego feralnego dnia w Anglii to Thomas uciekł z pola bitwy, po tym jak obiecał Ironsidom, że sprowadzi posiłki. Czekali, odpierając atak królewskiej kawalerii, i niemal wszyscy zginęli. W jaki sposób Tommy odniósł swoją ranę – jeśli w ogóle – pozostaje zagadką. Postanowiłem przyjąć ofertę Gabriela i ponownie postawić Thomasa przed sądem. Ale nie sądzę, żeby się poddał. Dlatego Callow rusza po posiłki, a ja wracam do zatoki, gdzie wszyscy się spotkamy.
+Zawsze było w Tommym coś, co nie dawało mi spokoju. I miałem rację, gdy porozmawiałem z Callowem. Gabe jest rzeczywiście oficerem pełnym opanowania, odwagi i dyscypliny – wszystko, co o nim mówią, jest prawdą. Pułkownik Doyley rzeczywiście zna się na ludziach. Tego feralnego dnia w Anglii to Thomas uciekł z pola bitwy, po tym jak obiecał Ironsidom, że sprowadzi posiłki. Czekali, odpierając atak królewskiej kawalerii, i niemal wszyscy zginęli. W jaki sposób Tommy odniósł swoją ranę – jeśli w ogóle – pozostaje zagadką. Postanowiłem przyjąć ofertę Gabriela i ponownie postawić Thomasa przed sądem. Ale nie sądzę, żeby się poddał. Dlatego Callow rusza po posiłki, a ja wracam do zatoki, gdzie wszyscy się spotkamy.
 #TEXT 17
 Mam dość ludzi próbujących mnie wykorzystywać. Tommy, dzięki swoim doświadczeniom w armii i wśród piratów, stał się świetnym sędzią charakteru, więc od razu domyślił się, że spóźniłem się, bo rozmawiałem z Gabe’em. Ten pojawił się zaraz po tym, jak zabiłem wściekłego Ironsa – ani sekundy wcześniej. Callow powiedział, że tylko zbierał najlepszych ludzi do aresztowania Toma. I wtedy wszystko stało się jasne – Gabe po prostu czekał, aż pozabijamy się nawzajem. Powiedziałem mu więc, co o nim myślę. Najwyraźniej Tommy miał rację przez cały czas, bo Callow, zamiast uspokajać człowieka, który właśnie pozbył się jego starego wroga, stwierdził, że nie zamierza słuchać moich spekulacji, a potem rzucił się na mnie ze swoimi „najlepszymi ludźmi”. Najwyraźniej to miał być koniec tej historii, która zaczęła się w Anglii – śmierć wszystkich zamieszanych w tę sprawę: Tommy’ego, Franka, a teraz także Gabe’a.
 #TEXT 18
@@ -2719,12 +2718,12 @@ No cóż, teraz wszystko jasne! Sprytny lichwiarz z Saint-Pierre zdał sobie spr
 #TEXT   3
 Zapłaciłem dług za mojego niegrzecznego nawigatora. Niech mieszkańcy się śmieją. Nadal jestem pewien, że postąpiłem słusznie.
 #TEXT   4
-Postanowiłem nie żądać okupu od Deluc. Znalezienie nowego nawigatora jest o wiele łatwiejsze niż ciągłe ratowanie tego starego łobuza.
+Postanowiłem nie żądać okupu za Deluca. Znalezienie nowego nawigatora jest o wiele łatwiejsze niż ciągłe ratowanie tego starego łobuza.
 
 #QUEST TheFormerKnight
-Był Rycerz Zakonu Maltańskiego
+Były Rycerz Zakonu Maltańskiego
 #TEXT   1
-Ledwie wszedłem do karczmy, gdy podszedł do mnie mój oficer, Claude Durand. Na początku myślałem, że łobuz poprosi o pieniądze, jak zwykle, ale sprawa okazała się o wiele poważniejsza. Jest winien Levasseurowi przysługę i obawia się, że jej niewypełnienie może go kosztować życie. Przysługa jest ponura: wytropić i zabić byłego rycerza Zakonu Maltańskiego, którego nazwiska nie znamy. Ukrywa się w jednej z angielskich kolonii. Miecz, siła i umiejętności Duranda są dla mnie cenne, a on w zamian oferuje swoją lojalność. Zgodziłem się mu pomóc, ale nawet jeśli uda nam się znaleźć tę igłę w stogu siana, walka z tym człowiekiem z pewnością nie będzie łatwym zadaniem.
+Ledwie wszedłem do karczmy, gdy podszedł do mnie mój oficer, Claude Durand. Na początku myślałem, że drań poprosi o pieniądze, jak zwykle, ale sprawa okazała się o wiele poważniejsza. Jest winien Levasseurowi przysługę i obawia się, że jej niewypełnienie może go kosztować życie. Przysługa jest ponura: wytropić i zabić byłego rycerza Zakonu Maltańskiego, którego nazwiska nie znamy. Ukrywa się w jednej z angielskich kolonii. Miecz, siła i umiejętności Duranda są dla mnie cenne, a on w zamian oferuje swoją bezgraniczną lojalność. Zgodziłem się mu pomóc, ale nawet jeśli uda nam się znaleźć tę igłę w stogu siana, walka z tym człowiekiem z pewnością nie będzie łatwym zadaniem.
 #TEXT   2
 Udało nam się wytropić i wyeliminować byłego Rycerza Zakonu. Durand miał zamiar zabić kobietę Rycerza, która miała pecha, że ​​była w domu w tym czasie. Na szczęście udało mi się z nim porozmawiać. Niepokojące jest to, że był zdolny do takiego czynu, ale rozmawiałem z nim i jestem pewien, że pod moim dowództwem nie będzie już więcej myślał o takich rzeczach.
 #TEXT   3
@@ -2735,17 +2734,17 @@ Udało nam się wytropić i wyeliminować byłego Rycerza Zakonu. Durand miał z
 #QUEST Tichingitu
 Tichingitu
 #TEXT   1
-Po tym, jak Fadey został okradziony, inny złodziej włamał się do jego mieszkania. Był to Indianin, najwyraźniej w barwach wojennych. Fadeyowi udało się go zatrzymać i przekazać złodzieja komendantowi. Słyszałem o nich tak wiele, ale nigdy nie widziałem Indianina na żywo. Skoro los rzucił mnie do Nowego Świata, dlaczego nie poznać lepiej tego tubylca? W końcu są ważną częścią tego świata.
+Po tym, jak Fadiej został okradziony, inny złodziej włamał się do jego mieszkania. Był to Indianin, najwyraźniej w barwach wojennych. Fadiejowi udało się go zatrzymać i przekazać złodzieja komendantowi. Słyszałem o nich tak wiele, ale nigdy nie widziałem Indianina na żywo. Skoro los rzucił mnie do Nowego Świata, dlaczego nie poznać lepiej tego tubylca? W końcu są ważną częścią tego świata.
 #TEXT   2
-Odwiedziłem Indianina, który włamał się do domu Fadeya. Nazywa się Tichingitu. Powiedział, że przyszedł do miasta w poszukiwaniu jedzenia. Kara, jaką Fadey i komendant dla niego zaplanowali, wydaje się dość surowa. Powinienem omówić to z naczelnikiem więzienia. Może uda mi się go przekonać, żeby złagodził wyrok.
+Odwiedziłem Indianina, który włamał się do domu Fadieja. Nazywa się Tichingitu. Powiedział, że przyszedł do miasta w poszukiwaniu jedzenia. Kara, jaką Fadiej i komendant dla niego zaplanowali, wydaje się dość surowa. Powinienem omówić to z naczelnikiem więzienia. Może uda mi się go przekonać, żeby złagodził wyrok.
 #TEXT   3
-Za garść złotych dublonów Fadey okazał wielkoduszność i zgodził się ułaskawić Indianina. Komendant nie ma nic przeciwko temu układowi, a ja mogę teraz poinformować Tichingitu, że jest wolny.
+Za garść złotych dublonów Fadiej okazał wielkoduszność i zgodził się ułaskawić Indianina. Komendant nie ma nic przeciwko temu układowi, a ja mogę teraz poinformować Tichingitu, że jest wolny.
 #TEXT   4
 Indianin wyraził chęć dołączenia do mojej załogi. Po krótkim namyśle zgodziłem się. Lojalny ochroniarz, który zna się na muszkiecie, bez wątpienia będzie przydatny.
 #TEXT   5
 Indianin, pod wrażeniem mojego bezinteresownego uratowania jego skóry z rąk sprawiedliwości, uporczywie prosił, aby dołączyć do mojej załogi jako ochroniarz. Odmówiłem mu. Obawiam się, że obecność nieochrzczonego dzikusa w załodze wywoła negatywną reakcję wśród mężczyzn.
 #TEXT   6
-Nie poszedłem do Indianina w więzieniu. On prawdopodobnie już został powieszony.
+Nie poszedłem do Indianina w więzieniu. Prawdopodobnie już został powieszony.
 
 #QUEST Regata
 Regata
@@ -2847,16 +2846,16 @@ Alonso Pimentel, starszy marynarz i głos mojej załogi, chce ze mną porozmawia
 #TEXT 2
 Choć Alonso docenił moje skromne sukcesy jako kapitana, wyraźnie się o mnie martwi. Wsparł radą, obdarował przydatnym sprzętem i podzielił się historią. Może jeśli będę kontynuował w tym samym duchu, usłyszę dalszy ciąg.
 #TEXT 3
-Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
+Alonso prosi o rozmowe ze mną. Jak zwykle, znajdę go w ładowni. Ciekawe co mi teraz powie. . .
 #TEXT 4
-Minął prawie rok, a załoga wreszcie nabrała do mnie zaufania. Alonso mistrzowsko uniknął moich pytań o swoją przeszłość, ale podzielił się kolejną ze swoich wojennych historii. Wyraźnie poważnie traktuje tę część swoich obowiązków, która dotyczy morale załogi. Prawie jak spowiednik, choć wątpię, by księża obdarowywali swoją trzódkę przepisami na moskiewską nalewkę i wysokiej jakości broń palną. Ciąg dalszy nastąpi?
+Minął prawie rok, a załoga wreszcie nabrała do mnie zaufania. Alonso mistrzowsko uniknął moich pytań o swoją przeszłość, ale podzielił się kolejną ze swoich wojennych historii. Wyraźnie poważnie traktuje tę część swoich obowiązków, która dotyczy morale załogi. Prawie jak spowiednik, choć wątpię, by księża obdarowywali swoją trzódkę przepisami na moskiewską nalewkę i wysokiej jakości bronią palną. Ciąg dalszy nastąpi?
 #TEXT 5
 Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
 #TEXT 6
 Teraz jestem posiadaczem nie tylko pewnej sławy na Karaibach, ale także idiotycznie wyglądającego kapelusza. Choć może chronić głowę perspektywicznego kapitana, na pewno rozpadnie się po paru solidnych uderzeniach. Niemniej mój triumf został nieco zepsuty tragiczną historią, którą opowiedział mi dziś Alonso. Nie wiem, czego ma mnie nauczyć, ale chciałbym poznać jego "moskiewskiego przyjaciela".
 #TEXT 7
-Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni.
+Alonso poprosił o spotkanie. Jak zwykle, znajdę go w ładowni. Może w końcu dowiem się o tym "moskiewskim druhu". . .
 #TEXT 8
-Fadey? Ten sam Fadey z Basse-Terre? Ależ ten świat jest mały! Powinienem go odwiedzić.
+Fadiej? Ten sam Fadey z Basse-Terre? Ależ ten świat jest mały! Powinienem go odwiedzić.
 #TEXT 9
-Spotkanie z Fadejem zmusiło mnie do przemyśleń o wielu rzeczach. Ilu jeszcze takich "Alonso" jest w mojej załodze? Ile historii i osobliwych ludzkich losów? Usłyszałem tylko jeden głos, a teraz mam ich setki. Nie wiem, jak zakończy się moja karaibska odyseja, ale dzięki trosce Alonso i jego prostym prezentom jestem w pełni wyposażony, przygotowany i gotowy spotkać swój los.
+Spotkanie z Fadiejem zmusiło mnie do przemyśleń o wielu rzeczach. Ilu jeszcze takich "Alonso" jest w mojej załodze? Ile historii i osobliwych ludzkich losów? Usłyszałem tylko jeden głos, a teraz mam ich setki. Nie wiem, jak zakończy się moja karaibska odyseja, ale dzięki trosce Alonso i jego prostym prezentom jestem w pełni wyposażony, przygotowany i gotowy spotkać swój los.

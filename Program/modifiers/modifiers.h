@@ -32,6 +32,8 @@
 
 #define MELEE "Melee"
 #define RANGE "Range"
+#define BULLET "bulet"
+#define GRAPESHOT "grapeshot"
 
 #define WEAPON_LIGHT 0
 #define WEAPON_MEDIUM 1

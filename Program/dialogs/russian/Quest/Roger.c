@@ -1429,40 +1429,7 @@ void ProcessDialogEvent()
 		
 		case "Pelly_61":
             DialogExit();
-			DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
-			chrDisableReloadToLocation = true;
-			LocatorReloadEnterDisable("shore37", "boat", false);
-			bQuestDisableMapEnter = false;
-			AddQuestRecord("Roger_3", "29");
-			pchar.questTemp.Mtraxx = "plant_success";
-			QuestSetCurrentNode("Terrax", "mtraxx_27");
-			//SetFunctionTimerCondition("Mtraxx_PlantGoHomeOver", 0, 0, 40, false);
-			SetFunctionTimerCondition("Mtraxx_PlantOpenMaracaibo", 0, 0, 5, false);
-			
-			sld = characterFromId("Mtr_plantation_boss");
-			sld.lifeday = 0;
-			
-			sld = &Locations[FindLocation("shore37")];
-			sld.DisableEncounters = false;
-			sld = ItemsFromID("fire");
-			sld.shown = false;
-			DeleteAttribute(sld, "fire");
-			for (i=1; i<=4; i++)
-			{
-				if (GetCharacterIndex("Pelly_sailor_"+i) != -1)
-				{
-					sld = characterFromId("Pelly_sailor_"+i);
-					sld.lifeday = 0;
-					LAi_SetActorType(sld);
-					LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "", 5);
-				}
-			}
-			sld = characterFromId("Pelly");
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "OpenTheDoors", 5);
-			sld = characterFromId("mrt_Rocur");
-			LAi_SetActorType(sld);
-			LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "", 5);
+			AddDialogExitQuestFunction("Mtraxx_PlantSuccessfulRedemption");
 		break;
 		
 		case "Pelly_62":

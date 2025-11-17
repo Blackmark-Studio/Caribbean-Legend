@@ -284,7 +284,7 @@ Aktueller Bonus: $number($attr($context.KillerBonus.appliedbonus)) Schaden und $
 itm_stat_blade_WR_1 {Fleiß}
 itm_stat_descr_blade_WR_1 {Erhöht die Regeneration im Kampf auf das Fünffache.}
 itm_stat_secondary_hat6 {Geschätzter Händler}
-itm_stat_descr_secondary_hat6 {Erhöht die Schlagkraft der Handelsschiffe in der Eskadre um 15 % und verringert die Penalisierung der Fluchtchance vor Handelsschiffen um 3.}
+itm_stat_descr_secondary_hat6 {Erhöht die Schlagkraft der Handelsschiffe in der Eskadre um 40 % und verringert die Penalisierung der Fluchtchance vor Handelsschiffen um 3.}
 itm_stat_KhaelRoa_item {Jaguar}
 itm_stat_descr_KhaelRoa_item {Erhöht den von Schusswaffen verursachten Schaden um das Zehnfache.}
 itm_stat_indian_poison {Taíno}

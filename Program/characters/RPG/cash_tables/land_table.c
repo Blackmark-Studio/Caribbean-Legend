@@ -18,6 +18,7 @@ void CT_UpdateLandTable(ref chr)
 
 	CT_SetWeaponDamageCoeff(&landTable, &equipTable, chr, blade);
 	if (hasMusket) CT_SetMusketDamageCoeff(&landTable, &equipTable, chr);
+	CT_SetAmmoDamage(&landTable, &equipTable, chr);
 
 	CT_SetAllCritChance(&landTable, &equipTable, chr, hasMusket);
 	CT_SetAllCritDamage(&landTable, &equipTable, chr, hasMusket);
@@ -36,6 +37,12 @@ void CT_UpdateLandTable(ref chr)
 
 	// мультифайтер
 	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "" + M_DAMAGE, stf(chr.MultiFighter));
+}
+
+void CT_SetAmmoDamage(ref landTable, ref equipTable, ref chr)
+{
+	CopyModifier(landTable, equipTable, GRAPESHOT + "_" + M_DAMAGE);
+	CopyModifier(landTable, equipTable, BULLET + "_" + M_DAMAGE);
 }
 
 void CT_SetStrikeAngles(ref landTable, ref equipTable, ref chr)

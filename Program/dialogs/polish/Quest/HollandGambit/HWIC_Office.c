@@ -63,7 +63,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "HWIC_officer_1":
-			dialog.text = "Wtedy idź na górę do biura pana Rodenburga.";
+			dialog.text = "W takim razie idź na górę do biura pana Rodenburga.";
 			link.l1 = "Dzięki, już idę.";
 			link.l1.go = "HWIC_officer_exit";
 			// belamour legendary edition переехали по другому адресу

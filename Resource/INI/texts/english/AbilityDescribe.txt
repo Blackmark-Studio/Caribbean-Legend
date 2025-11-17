@@ -3,9 +3,9 @@ newline
 
 }
 BasicDefense {Basic Defense}
-perkBasicDefense {Reduces incoming damage by 5%.}
+perkBasicDefense {Reduces incoming damage by $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Advanced Defense}
-perkAdvancedDefense {Reduces incoming damage by 3%, and enemy critical damage by 10%.}
+perkAdvancedDefense {Reduces incoming damage by $percent($perkBaseValue(AdvancedDefence|1)), and enemy critical damage by $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Critical hit}
 perkCriticalHit {Increases base critical hit chance by 3.5%.}
 Grus {Strong Backbone}
@@ -26,7 +26,7 @@ Increases firearm damage and reload speed by $percent($perkBaseValue(Gunman|1)).
  Officers can use $key(descriptor_TwoHanded|ItemsDescriptors.txt) only if explicitly instructed to do so.
 }
 GunProfessional {Skirmisher}
-perkGunProfessional {Increases damage and reload speed of firearms by 9%. Unlocks the ability to use two-handed multi-shot firearms.}
+perkGunProfessional { }
 IronWill {Iron Will}
 perkIronWill {Allows you to survive a fatal wound once every 3 minutes.}
 SharedExperience {Quick Learner}

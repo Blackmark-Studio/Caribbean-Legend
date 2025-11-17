@@ -8,3 +8,5 @@ incomingDamageReduction {伤害防御}
 RangeIncomingDamageReduction {枪击防御}
 Shot_Damage {枪械伤害}
 HeadshotDamage {爆头伤害}
+Grapeshot_Damage {使用霰弹射击时造成更高伤害}
+Bullet_Damage {使用子弹射击时造成更高伤害}

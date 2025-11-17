@@ -18,13 +18,13 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "valet_1":
-			dialog.text = NPCStringReactionRepeat("Nie, nie wiem, kamracie. Niczym ci nie mogę pomóc.","Już ci mówiłem, że nie wiem!","Czy jesteś pijany, czy po prostu się wygłupiasz?","Zostaw mnie w spokoju!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Nie, nie wiem, kamracie. Niczym ci nie mogę pomóc.","Już ci mówiłem, że nie wiem!","Czy jesteś pijany, czy po prostu się wygłupiasz?","Zostaw mnie w spokoju!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Widzę. To szkoda...","To szkoda. Myślałem, że będziesz pamiętać...","Jestem trzeźwy! Po prostu jestem uparty...","Hm...",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;
 		
 		case "valet_2":
-			dialog.text = NPCStringReactionRepeat("Ach, panie David Fackman! On wynajmuje dom niedaleko stoczni. Szukaj go tam.","Przecież ci odpowiedziałem. Jakżeś mnie słuchał?","Czy jesteś pijany, czy tylko się wygłupiasz?","Zostaw mnie w spokoju!","blokada",1,npchar,Dialog.CurrentNode);
+			dialog.text = NPCStringReactionRepeat("Ach, panie David Fackman! On wynajmuje dom niedaleko stoczni. Szukaj go tam.","Przecież ci odpowiedziałem. Jakżeś mnie słuchał?","Czy jesteś pijany, czy tylko się wygłupiasz?","Zostaw mnie w spokoju!","block",1,npchar,Dialog.CurrentNode);
 			link.l1 = HeroStringReactionRepeat("Dziękuję!","Tak. Przykro mi.","Jestem trzeźwy! Po prostu jestem uparty...","Hm...",npchar,Dialog.CurrentNode); 
 			link.l1.go = DialogGoNodeRepeat("exit", "", "", "", npchar, Dialog.CurrentNode);
 		break;

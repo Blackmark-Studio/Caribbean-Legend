@@ -116,6 +116,7 @@ void WildRose_Etap1_EscapeSlaves_5()
 	sld = CharacterFromID("Mary");
 	sld.dialog.filename = "Quest\CompanionQuests\WildRose.c";
 	sld.dialog.currentnode = "Mary_4";
+	LAi_SetActorType(sld);
 	LAi_ActorWaitDialog(pchar, sld);
 	LAi_ActorDialogNow(sld, Pchar, "", -1);
 }

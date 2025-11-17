@@ -2704,8 +2704,8 @@ void ProcessDialogEvent()
 		case "BurntShip5":
 			sCapitainId = GenerateRandomName(sti(NPChar.nation), "man");
 			
-			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany we wszystkich Karaibach. A została zbudowana w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
-			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie niezwykłe cechy miała, że jej właściciel był z niej tak dumny?";
+			dialog.text = "Nie! Oczywiście, że nie! Panie, zbaw moją duszę, inaczej straciłbym głowę. Ładownia była całkowicie pusta, dzięki Ci Panie, Najświętsza Panno Maryjo!\n"+"I problem polega na tym, że statek należy do... a raczej, należał do pana "+sCapitainId+", znany na całych Karaibach. A został zbudowany w Europie na specjalne zamówienie, z niezwykłymi cechami. "+"I ten armator był zbyt dumny i chełpił się na prawo i lewo, taki głupiec, Boże wybacz mi... Co mu teraz powiem? Lepiej się zabiję, przysięgam...";
+			link.l1 = "Och, teraz widzę, w czym tkwi problem, rzeczywiście. A co było takiego wyjątkowego w tym statku? Jakie cechy były tak niezwykłe, że jego właściciel był z niego tak dumny?";
 			link.l1.go = "BurntShip6";
 			
 			NPChar.Quest.BurntShip.ShipOwnerName = sCapitainId;
@@ -2720,15 +2720,15 @@ void ProcessDialogEvent()
 			switch(attrL)
 			{
 				case "speedrate":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s wind speed was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " knots. That was the privateer's pride... And now he'd just tell his boys to hang me in the yard. What devil has brought him to our harbor together with that pirate tub...";
+					attrL = "Prędkość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " węzłów. To była duma korsarza... A teraz kazałby swoim chłopakom powiesić mnie na dziedzińcu. Jaki diabeł sprowadził go do naszego portu razem z tą piracką łajbą...";
 				break;
 				
 				case "turnrate":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "'s maneuverability was more than " + NPChar.Quest.BurntShip.ShipNeededValue + " units. That was the soldier's pride... And now he'd just have me flogged to death. What devil advised him to leave his tub there...";
+					attrL = "Manewrowość jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + " wynosiła więcej niż " + NPChar.Quest.BurntShip.ShipNeededValue + " cali. To była duma żołnierza... A teraz będzie kazał mnie wychłostać na śmierć. Jaki diabeł mu doradził, żeby zostawił tu swoją łajbe...";
 				break;
 				
 				case "capacity":
-					attrL = "His " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' had a deadweight of over " + NPChar.Quest.BurntShip.ShipNeededValue + " units. Greed is bad, I'll tell ya. And now he'd just have me quartered in court. What devil advised him to leave his tub there...";
+					attrL = "Ładownia na jego " + GetStrSmallRegister(XI_ConvertString(ShipsTypes[iTest].Name + "Acc")) + "' mogła pomieścić ładunek, oscylujący aż do " + NPChar.Quest.BurntShip.ShipNeededValue + " jednostek. Chciwość jest zła, mówię ci. A teraz kazałby mnie poćwiartować w sądzie. Jaki diabeł mu doradził, żeby zostawił tam swoją łajbe...";
 				break;
 			}
 			

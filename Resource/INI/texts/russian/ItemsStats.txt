@@ -284,7 +284,7 @@ itm_stat_descr_lacrima_patris_bonus
 itm_stat_blade_WR_1 {Усердие}
 itm_stat_descr_blade_WR_1 {Увеличивает скорость восстановления здоровья в бою в пять раз.}
 itm_stat_secondary_hat6 {Уважаемый негоциант}
-itm_stat_descr_secondary_hat6 {Увеличивает мощь торговых кораблей в эскадре на 15%, уменьшает штраф к шансу побега от торговых кораблей на 3.}
+itm_stat_descr_secondary_hat6 {Увеличивает мощь торговых кораблей в эскадре на 40%, уменьшает штраф к шансу побега от торговых кораблей на 3.}
 itm_stat_KhaelRoa_item {Ягуар}
 itm_stat_descr_KhaelRoa_item {Увеличивает урон, наносимый огнестрельным оружием, в 10 раз.}
 itm_stat_indian_poison {Таино}

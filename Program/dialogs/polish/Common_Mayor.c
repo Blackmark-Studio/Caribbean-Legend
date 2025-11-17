@@ -1806,7 +1806,7 @@ void ProcessDialogEvent()
 							arName.nation = PIRATE;
 							arName.sex = "man";
 							SetRandomNameToCharacter(arName); //имя бандита в структуру квеста	
-							dialog.text = "Właśnie teraz mam dla ciebie misję. W dżungli niedaleko "+XI_ConvertString("Colony"+npchar.city+"Gen")+" banda rabusiów się pojawiła, i wiem, że herszt nazywa się "+GetFullName(arName)+"Zlokalizuj i wyeliminuj tę bandę oprychów.";
+							dialog.text = "Właśnie mam dla ciebie misję. W dżungli niedaleko "+XI_ConvertString("Colony"+npchar.city+"Gen")+" pojawiła się banda rabusiów, i wiem, że herszt nazywa się "+GetFullName(arName)+". Zlokalizuj i wyeliminuj tę bandę oprychów.";
 							link.l1 = "Czy jestem w jakiś sposób ograniczony w kwestii warunków?";
 							link.l1.go = "DestroyGang";
 						break;

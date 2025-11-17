@@ -3202,6 +3202,7 @@ void InitShips()
 	refShip.SP              			= 100;
 
 	refship.Type.War					= true;
+	refship.Type.Merchant			= false;
 	refship.Spec                        = SHIP_SPEC_WAR;
 	refship.QuestShip                   = true;
 	refship.QuestSP						= true;

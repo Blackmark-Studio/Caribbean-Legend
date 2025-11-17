@@ -11,10 +11,10 @@ itm_stat_descr_damageReduction {Ten procent jest odejmowany od otrzymanych obra�
 itm_stat_attack {Obrażenia}
 itm_stat_descr_attack
 {
-Uderzenie: #sattack.fast.min#–#sattack.fast.max# obrażeń
-Pchnięcie: #sattack.force.min#–#sattack.force.max# obrażeń
-Atak okrężny: #sattack.round.min#–#sattack.round.max# obrażeń
-Uderzenie przebijające: #sattack.break.min#–#sattack.break.max# obrażeń
+Cięcie: #sattack.fast.min#–#sattack.fast.max# obrażeń
+Szybki atak: #sattack.force.min#–#sattack.force.max# obrażeń
+Atak grupowy: #sattack.round.min#–#sattack.round.max# obrażeń
+Ciężki atak: #sattack.break.min#–#sattack.break.max# obrażeń
 }
 itm_stat_gundamage {Obrażenia od broni palnej.}
 itm_stat_descr_gundamage {Obrażenia zadawane w walce dystansowej zależą od umiejętności, parametrów broni i amunicji.}
@@ -26,9 +26,9 @@ itm_stat_radius {Zasięg żeglugi}
 itm_stat_descr_radius {Liczba jardów, o którą zwiększa się zasięg szybkiej podróży między statkami a zatokami.}
 itm_stat_mainEffect {Główny}
 itm_stat_secondaryEffect {Poboczny}
-itm_stat_hat9 {Co martwe}
+itm_stat_hat9 {Co martwe...}
 itm_stat_descr_hat9 {Zmniejsza karę za uszkodzenia statku na siłę o 30%}
-itm_stat_secondary_hat9 {Nie może umrzeć}
+itm_stat_secondary_hat9 {...umrzeć nie może}
 itm_stat_descr_secondary_hat9 {Pozwala uniknąć obrażeń od strzału w 10% przypadków}
 itm_stat_durability {Wytrzymałość}
 itm_stat_hat1 {Ciągła praktyka}
@@ -155,7 +155,7 @@ itm_stat_totem_07 {Przyzwanie}
 itm_stat_descr_totem_07
 {
 Nowi ochotnicy dołączą za niższą cenę, nawet jeśli mają długi wobec załogi.
-Może użyć tylko główny bohater. Zwiększa liczbę rekrutów w tawernie o 5%.
+Może użyć tylko główny bohater. Zwiększa liczbę rekrutów w karczmie o 5%.
 }
 itm_stat_totem_08 {Osobiste zaangażowanie}
 itm_stat_descr_totem_08 {Zwiększa obrażenia przy celowanym ogniu morskim o 10%.}
@@ -250,7 +250,7 @@ itm_stat_descr_blade_SP_3 {Blokuje leczenie ze wszystkich źródeł. Za każde 2
 itm_stat_blade_41 {Elastyczność}
 itm_stat_descr_blade_41 {Zyskuje premię do obrażeń z najwyżej rozwiniętej umiejętności broni białej.}
 itm_stat_lacrima_patris {Droga Sprawiedliwego}
-itm_stat_descr_lacrima_patris {Za każde 10 zabitych bandytów i łotrów obrażenia rosną o 2, a zasięg dział Mercy o 1%.}
+itm_stat_descr_lacrima_patris {Za każde 10 zabitych bandytów i łotrów obrażenia rosną o 2, a zasięg dział Miłosierdzia o 1%.}
 itm_stat_blade_WR {Pilność}
 itm_stat_descr_blade_WR {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}
 itm_stat_suit5 {Epolety}
@@ -284,7 +284,7 @@ itm_stat_descr_lacrima_patris_bonus
 itm_stat_blade_WR_1 {Pilność}
 itm_stat_descr_blade_WR_1 {Pięciokrotnie zwiększa szybkość regeneracji zdrowia w walce.}
 itm_stat_secondary_hat6 {Szanowny negocjant}
-itm_stat_descr_secondary_hat6 {Zwiększa siłę statków handlowych w eskadrze o 15% i zmniejsza karę do szansy ucieczki przed statkami handlowymi o 3.}
+itm_stat_descr_secondary_hat6 {Zwiększa siłę statków handlowych w eskadrze o 40% i zmniejsza karę do szansy ucieczki przed statkami handlowymi o 3.}
 itm_stat_KhaelRoa_item {Jaguar}
 itm_stat_descr_KhaelRoa_item {Zwiększa obrażenia zadawane bronią palną dziesięciokrotnie.}
 itm_stat_indian_poison {Taíno}

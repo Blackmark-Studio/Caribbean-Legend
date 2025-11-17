@@ -871,11 +871,8 @@ void ProcessDialogEvent()
 				link.l1 = "当然可以, 神父。 请收下。 八百金达布隆。 ";
 				link.l1.go = "WildRose_Abb_14_pay";
 			}
-			else
-			{
-				link.l1 = "对不起, 神父, 我现在身上没有这么多钱。 但我很快会回来带来它们。 ";
-				link.l1.go = "WildRose_Abb_14_nopay";
-			}
+			link.l2 = "对不起, 神父, 我现在身上没有这么多钱。 但我很快会回来带来它们。 ";
+			link.l2.go = "WildRose_Abb_14_nopay";
 		break;
 
 		case "WildRose_Abb_14_pay":
@@ -883,6 +880,7 @@ void ProcessDialogEvent()
 			dialog.text = "很好, "+pchar.name+"。 两个月后来找我——到时我应该能给你一个答复。 ";
 			link.l1 = "谢谢您, 神父。 回头见! ";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_1");
 			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2");
 		break;
@@ -891,6 +889,7 @@ void ProcessDialogEvent()
 			dialog.text = "随你吧, 孩子。 ";
 			link.l1 = "我很快就会回来。 ";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			pchar.questTemp.WildRose_Etap3_Benua_2 = true;
 		break;
 
@@ -971,6 +970,7 @@ void ProcessDialogEvent()
 			dialog.text = "主在引导你们, 孩子们, 帮助你们便是我卑微的职责。 但恐怕这件事上我已帮不上更多……";
 			link.l1 = "我明白, 神父。 那么, 请允许我们告辞。 ";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
 		break;
 		//<-- Дикая Роза

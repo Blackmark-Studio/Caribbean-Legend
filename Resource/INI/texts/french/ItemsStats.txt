@@ -284,7 +284,7 @@ Bonus actuel : $number($attr($context.KillerBonus.appliedbonus)) de dégâts et 
 itm_stat_blade_WR_1 {Diligence}
 itm_stat_descr_blade_WR_1 {Augmente la régénération de santé en combat par cinq.}
 itm_stat_secondary_hat6 {Négociant estimé}
-itm_stat_descr_secondary_hat6 {Augmente la puissance des navires marchands de l'escadre de 15 % et réduit la pénalité à la chance de fuir face aux navires marchands de 3.}
+itm_stat_descr_secondary_hat6 {Augmente la puissance des navires marchands de l'escadre de 40 % et réduit la pénalité à la chance de fuir face aux navires marchands de 3.}
 itm_stat_KhaelRoa_item {Jaguar}
 itm_stat_descr_KhaelRoa_item {Multiplie par dix les dégâts infligés par les armes à feu.}
 itm_stat_indian_poison {Taíno}

@@ -58,9 +58,9 @@ Mówią, że @<sName> zamierza spotkać się ze szmuglerami w miejscu zwanym @<s
 #QUEST Gen_PGGQuest1  
 Zadanie Poboczne: Piracka Propozycja  
 #TEXT q1_Tavern  
-Spotkałem dziwnego pirata w tawernie. Powiedział mi, że ma dla mnie interesującą propozycję. Jego statek nazywa się "@<sShipName>". Czeka na mnie. Może powinienem go odwiedzić? 
+Spotkałem dziwnego pirata w karczmie. Powiedział mi, że ma dla mnie interesującą propozycję. Jego statek nazywa się "@<sShipName>". Czeka na mnie. Może powinienem go odwiedzić? 
 #TEXT q1_Tavern_1  
-Spotkałem dziwnego pirata w tawernie. Powiedział mi, że ma dla mnie interesującą propozycję. Jego statek nazywa się "@<sShipName>". Czeka na mnie. Może powinienem go odwiedzić? 
+Spotkałem dziwnego pirata w karczmie. Powiedział mi, że ma dla mnie interesującą propozycję. Jego statek nazywa się "@<sShipName>". Czeka na mnie. Może powinienem go odwiedzić? 
 #TEXT q1_Close  
 Jego propozycja nie wydawała się właściwa, więc ją odrzuciłem.  
 #TEXT q1_Detail_A  
@@ -98,11 +98,11 @@ Podzielić łup? Wolałbym poderżnąć kilka gardeł i wziąć wszystko dla sie
 #QUEST Rumour_GoldFleet  
 Wydarzenie: Hiszpańska Złota Flota  
 #TEXT 1  
-Krążą plotki, że hiszpańska złota flota niedawno opuściła Porto Bello i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
+Krążą plotki, że hiszpańska złota flota niedawno opuściła Portobelo i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
 #TEXT 2  
-Krążą plotki, że hiszpańska złota flota niedawno opuściła Porto Bello i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
+Krążą plotki, że hiszpańska złota flota niedawno opuściła Portobelo i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
 #TEXT 3  
-Krążą plotki, że hiszpańska złota flota niedawno opuściła Porto Bello i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
+Krążą plotki, że hiszpańska złota flota niedawno opuściła Portobelo i zmierza w kierunku Hawany. Być może jeszcze tam nie dotarła. Może powinienem spróbować ją przechwycić?  
 #TEXT 4  
 Hiszpański złoty konwój został zatopiony. Było ciężko, ale nagroda była tego warta.  
 #TEXT 5  
@@ -1342,16 +1342,16 @@ Manga Rosa
 #TEXT 1
 Znalazłem bardzo nietypową roślinę. Jest wysoka, ma podzielone liście i ładnie pachnie, a zapach jest odurzający. Nigdy czegoś takiego nie widziałem. Czuję, że ta roślina jest przydatna, więc ją zabrałem. Muszę znaleźć kogoś, kto zna tę roślinę.
 #TEXT 2
-Ta roślina nazywa się Manga Rosa; dziewczyna handlowa powiedziała mi, że Indianie i Cyganie dobrze mi za nią zapłacą.
+Ta roślina nazywa się Manga Rosa; handlarka powiedziała mi, że Indianie i Cyganie dobrze mi za nią zapłacą.
 #TEXT 3
-Cyganie płacą pięćdziesiąt dukatów za każdą Manga Rosa. Nie mogę uwierzyć, że roślina może kosztować tyle. Jeśli znajdę więcej Manga Rosa, mogę je sprzedać Cyganom, ale tylko jedną roślinę raz.
+Cyganie płacą pięćdziesiąt dublonów za każdą Manga Rosa. Nie mogę uwierzyć, że roślina może kosztować tyle. Jeśli znajdę więcej Manga Rosa, mogę je sprzedać Cyganom, ale tylko jedną roślinę.
 #TEXT 4
-Cyganie używają Manga Rosa do mieszania z tytoniem. Czarownica odmówiła powiedzenia mi tajemnicy tego dodatku, ale powiedziała mi o jednej czarownicy o imieniu Amelia, która zna tajemnice tej rośliny. Mieszka w domu gdzieś na południowy zachód od Main.
+Cyganie używają Manga Rosa do mieszania z tytoniem. Czarownica odmówiła powiedzenia mi tajemnicy tego dodatku, ale powiedziała mi o jednej czarownicy o imieniu Amelia, która zna tajemnice tej rośliny. Mieszka w domu gdzieś na południowy zachód od kontynentu.
 
 #QUEST Amulet_Mayak4_Lighthouseroom
 Wydarzenie: Latarnia Morska I Amulety
 #TEXT 1
-Strażnik latarni morskiej w Guadeloupe obiecał mi zdobyć @<sAml> w ciągu dwóch miesięcy za 15 000 pesos.
+Strażnik latarni morskiej na Gwadelupie obiecał mi zdobyć @<sAml> w ciągu dwóch miesięcy za 15 000 pesos.
 #TEXT 2
 Amulet został dostarczony. Teraz mogę złożyć kolejne zamówienie.
 
@@ -1365,30 +1365,30 @@ Amulet został dostarczony. Teraz mogę złożyć kolejne zamówienie.
 #QUEST Amulet_Mayak11_Lighthouseroom
 Wydarzenie: Latarnia Morska I Amulety
 #TEXT 1
-Strażnik latarni morskiej w Cartagena obiecał mi zdobyć @<sAml> w ciągu dwóch miesięcy za 15 000 pesos.
+Strażnik latarni morskiej w Kartagenie obiecał mi zdobyć @<sAml> w ciągu dwóch miesięcy za 15 000 pesos.
 #TEXT 2
 Amulet został dostarczony. Teraz mogę złożyć kolejne zamówienie.
 
 #QUEST Unique_Goods
 Wydarzenie: Strategiczne Towary
 #TEXT 1
-Jan Svenson ma na sprzedaż 25 kawałków żelaznego drewna każdego 14. i 28. dnia miesiąca. Cena za jedną partię to 750 dukatów.
+Jan Svenson ma na sprzedaż 25 kawałków drewna twardego każdego 14. i 28. dnia miesiąca. Cena za jedną partię to 750 dukatów.
 #TEXT 1_1
-Udało mi się wynegocjować z Janem Svensonem zwiększenie dostaw bakautu. Teraz, każdego 14. i 28. dnia miesiąca, mogę kupować u niego 125 kłód bakautu za 3150 dublonów.
+Udało mi się wynegocjować z Janem Svensonem zwiększenie dostaw drewna twardego. Teraz, każdego 14. i 28. dnia miesiąca, mogę kupować u niego 125 kłód drewna twardego za 3150 dublonów.
 #TEXT 2
-Fadey Muscovite sprzeda mi 50 zwojów lin każdego 20. dnia miesiąca. Cena za jedną partię to 500 dukatów.
+Fadiej Moskal sprzeda mi 50 zwojów lin każdego 20. dnia miesiąca. Cena za jedną partię to 500 dublonów.
 #TEXT   2_1
-Udało mi się wynegocjować z Fadiejem Moskowitem zwiększenie dostaw konopnych lin. Teraz, każdego 20. dnia miesiąca, mogę kupować od Fadieja 250 zwojów lin za 2125 dublonów.
+Udało mi się wynegocjować z Fadiejem Moskalem zwiększenie dostaw konopnych lin. Teraz, każdego 20. dnia miesiąca, mogę kupować od Fadieja 250 zwojów lin za 2125 dublonów.
 #TEXT 3
 Od teraz mam pozwolenie na zakup 30 sztuk jedwabiu okrętowego każdego pierwszego i piętnastego dnia miesiąca od nowego wicedyrektora Holenderskiej Kompanii Zachodnioindyjskiej. Cena za jedną partię to 600 dukatów.
 #TEXT 3_1
 Udało mi się wynegocjować z wicedyrektorem Holenderskiej Kompanii Handlowej w Willemstadzie zwiększenie dostaw jedwabiu. Teraz, każdego 1. i 15. dnia miesiąca, mogę kupować u niego 150 bel jedwabiu w cenie 17 dublonów za każdą, co daje łączną kwotę 2550 dublonów za całą partię.
 #TEXT 4
-Sergio Saldo zaproponował mi sprzedaż 60 beczek żywicy każdego piątego dnia miesiąca. Cena za jedną partię to 600 dukatów.
+Sergio Saldo zaproponował mi sprzedaż 60 beczek żywicy każdego piątego dnia miesiąca. Cena za jedną partię to 600 dublonów.
 #TEXT 4_1
 Udało mi się wynegocjować z Sergiem Saldo zwiększenie dostaw żywicy. Teraz, każdego 5. dnia miesiąca, mogę nabywać w latarni morskiej w Trinidadzie 300 beczek żywicy za 2550 dublonów.
 #TEXT 5
-Partia 20 kawałków żelaznego drewna każdego 15. dnia miesiąca od Rodrigo Jimeneza, menedżera mojej fabryki. Fabryka może przechować do 6 partii przed zatrzymaniem całej pracy. Płatność jest natychmiastowa za wszystkie partie w magazynie. Koszt każdej: 200 dukatów, 5 butelek rumu, 5 butelek wina. Łącznie: 10 dukatów za kawałek drewna. Nieźle...
+Partia 20 kawałków drewna twardego każdego 15. dnia miesiąca od Rodrigo Jimeneza, menedżera mojej faktorii. Faktoria może przechować do 6 partii przed zatrzymaniem całej pracy. Płatność jest natychmiastowa za wszystkie partie w magazynie. Koszt każdej: 200 dublonów, 5 butelek rumu, 5 butelek wina. Łącznie: 10 dublonów za kawałek drewna. Nieźle...
 
 #QUEST Useful_Acquaintances
 Sznurki do Pociągnięcia
@@ -1397,7 +1397,7 @@ Sznurki do Pociągnięcia
 U Cyganki z Saint John's zawsze mogę kupić mangarosę - trzy łodygi za trzysta pięćdziesiąt złotych dublonów.
 #TEXT   2
 ************************************************************
-W tawernie w Willemstad zawsze czekają na mnie odpoczynek i przyjemność. Zatroszczy się o to urocza Betsy Price.
+W karczmie w Willemstad zawsze czekają na mnie odpoczynek i przyjemność. Zatroszczy się o to urocza Betsy Price.
 #TEXT   3
 ************************************************************
 Naczelnik portu w Belize udzielił mi pięćdziesięcioprocentowej zniżki na postoju jednego statku do drugiej klasy włącznie, na dowolny okres. Statek będzie pod jego osobistym nadzorem i nie ucierpi w przypadku oblężenia miasta.
@@ -1409,7 +1409,7 @@ Od teraz mogę kupować wino i rum 15. dnia każdego miesiąca u Christiana Delu
 Udało mi się wynegocjować z Christianem zwiększenie dostaw. Teraz będzie odkładał dla mnie po sto butelek wina i rumu każdego 15. dnia miesiąca. Cena pozostała bez zmian – sto trzydzieści dublonów za całą partię.
 #TEXT   6
 ************************************************************
-W tawernie w Puerto Principe czekają na mnie darmowy nocleg, trunki na koszt lokalu, a do tego właściciel obiecał, że dzięki jego staraniom przybędzie marynarzy chętnych służyć pod moim dowództwem.
+W karczmie w Puerto Principe czekają na mnie darmowy nocleg, trunki na koszt lokalu, a do tego właściciel obiecał, że dzięki jego staraniom przybędzie marynarzy chętnych służyć pod moim dowództwem.
 #TEXT   7
 ************************************************************
 U kowala w San José będę mógł zaopatrywać się w potrzebne mi materiały i wyroby. Dostawy u niego odbywają się raz w miesiącu.
@@ -1418,7 +1418,7 @@ U kowala w San José będę mógł zaopatrywać się w potrzebne mi materiały i
 #QUEST FMQ_Guadeloupe
 Cena Dyskrecji
 #TEXT 1
-Zbliżył się do mnie mężczyzna o imieniu Bertrand Pinette na ulicach Basse-Terre. Zaproponował mi dostarczenie jego i dwóch jego przyjaciół do Mosquitoes Bay w Hiszpańskim Maine w ciągu dziesięciu dni. Przyjąłem zlecenie. Powinienem spotkać pasażerów na plaży Capster o godzinie dziesiątej tej nocy.
+Na ulicach Basse-Terre, podszedł do mnie mężczyzna o imieniu Bertrand Pinette. Zaproponował mi dostarczenie jego i dwóch jego przyjaciół do Zatoki Komarów na Hiszpańskim Kontynencie w ciągu dziesięciu dni. Przyjąłem zlecenie. Powinienem spotkać pasażerów na plaży Capster o godzinie dziesiątej tej nocy.
 #TEXT 2
 Jest już północ, a ja spóźniłem się na odbiór pasażerów.
 #TEXT 3
@@ -1432,24 +1432,24 @@ Pasażerowie zostali dostarczeni. Powinienem jak najszybciej oddalić się od hi
 #TEXT 7
 Moje przeczucia się sprawdziły; dostarczenie Bertranda Pinette i jego towarzyszy okazało się bardziej kłopotliwe niż opłacalne. Uciekinier wojenny, dezerter i oszust - jakie to towarzystwo. Jestem pewien, że Pinette zarobił fortunę na tej podróży. A ja muszę odnaleźć Pinette'a i przywrócić go do Guadeloupe. Nic nie mogę zrobić, jestem szantażowany przez tego sukinsyna bankiera. Powinienem popłynąć do Panamy, ponieważ to tam docelowo zmierzali moi pasażerowie. Muszę też pamiętać, by w przyszłości trzymać język za zębami!
 #TEXT 8
-Nie znalazłem ani Pinette'a, ani jego dziewczyn w Panamie. Zgadza się, musiał mnie oszukać z ostrożności. Teraz muszę udać się do Portobello.
+Nie znalazłem ani Pinette'a, ani jego kolegów w Panamie. Zgadza się, musiał mnie oszukać z ostrożności. Teraz muszę udać się do Portobelo.
 #TEXT 9
 Barman udzielił mi świetnej rady, by bezpośrednio zwrócić się do Dona Carlosa de Milyar w sprawie Pinette'a. Świetnie. To najprostsza droga, by skończyć w lokalnym więzieniu. Wzrok barmana mówi mi, że wie o wiele więcej niż mi powiedział. Powinienem go przekonać, by podzielił się ze mną informacjami.
 #TEXT 10
-Więc, nie znalazłem Pinette'a, chociaż udało mi się znaleźć trop trzeciego pasażera - francuskiego dezertera. Teraz jest hiszpańskim donem, dowódcą Sario. Nagroda za zdradę, jak przypuszczam. Nie mam innego wyjścia, jak tylko zaatakować jego łajbę i schwytać 'Don Juana'. Nawet jeśli nie wskaże mi miejsca, w którym jest Bertrand, mogę go wykorzystać, by złagodzić gniew gubernatora Guadeloupe.
+Więc, nie znalazłem Pinette'a, chociaż udało mi się znaleźć trop trzeciego pasażera - francuskiego dezertera. Teraz jest hiszpańskim donem, dowódcą 'Sario'. Nagroda za zdradę, jak przypuszczam. Nie mam innego wyjścia, jak tylko zaatakować jego łajbę i schwytać 'Don Juana'. Nawet jeśli nie wskaże mi miejsca, w którym jest Bertrand, mogę go wykorzystać, by złagodzić gniew gubernatora Guadeloupe.
 #TEXT 11
-Wygląda na to, że miałem szczęście: sloop 'Sario' stacjonuje w Portobello. Atakowanie go przed fortem nie byłoby moim najmądrzejszym pomysłem. Powinienem poczekać, aż opuści port i wypłynie na otwarte morze.
+Wygląda na to, że miałem szczęście: slup 'Sario' stacjonuje w Portobelo. Atakowanie go przed fortem nie byłoby moim najmądrzejszym pomysłem. Powinienem poczekać, aż opuści port i wypłynie na otwarte morze.
 
 #TEXT 12
 Sario jest już na otwartym morzu. Powinienem go ścigać!
 #TEXT 13
-Popełniłem błąd i zaatakowałem Sario w porcie Portobello. Jean-Juan nie żyje. Wszystkie tropy zniknęły, a ja nie mam pojęcia, gdzie znaleźć Pinette'a. Powinienem spodziewać się kłopotów z francuskimi władzami.
+Popełniłem błąd i zaatakowałem Sario w porcie Portobelo. Jean-Juan nie żyje. Wszystkie tropy zniknęły, a ja nie mam pojęcia, gdzie znaleźć Pinette'a. Powinienem spodziewać się kłopotów z francuskimi władzami.
 #TEXT 14
 Don Juan jest uwięziony i znajduje się w mojej ładowni. Powinienem porozmawiać z nim o Pinette.
 #TEXT 15
-Nie udało mi się zdobyć Sario i schwytać Jean-Juana. Wszystkie tropy zniknęły, a ja nie mam pojęcia, gdzie znaleźć Pinette'a. Powinienem spodziewać się kłopotów z francuskimi władzami.
+Nie udało mi się zdobyć 'Sario' i schwytać Jean-Juana. Wszystkie tropy zniknęły, a ja nie mam pojęcia, gdzie znaleźć Pinette'a. Powinienem spodziewać się kłopotów z francuskimi władzami.
 #TEXT 16
-Mój więzień jest gotów podzielić się informacjami o Bertrancie Pinette. Kieruję się do Mosquito Bay.
+Mój więzień jest gotów podzielić się informacjami o Bertrancie Pinette. Kieruję się do Zatoki Komarów.
 #TEXT 17
 Bertrand Pinette postanowił kontynuować swoje brudne interesy na Barbadosie. Powinienem go szukać na największej plantacji tam.
 #TEXT 18
@@ -1486,7 +1486,7 @@ Zmienilem zdanie i zdecydowałem, że nie odwiedzę szkutnika.
 #TEXT 3
 Prośba szkutnika o zaatakowanie hiszpańskiego konwoju handlowego nie wzbudziła mojego zainteresowania, więc odmówiłem.
 #TEXT 4
-Szkutnik zaproponował mi zadanie przechwycenia hiszpańskiego konwoju płynącego z Port-of-Spain na Trynidadzie do San Juan na Portoryko. Muszę zdobyć statek 'Bensecho', załadowany rzadką i cenną żywicą. Jeśli mi się uda, zysk wyniesie około 1500 dublonów!
+Szkutnik zaproponował mi zadanie przechwycenia hiszpańskiego konwoju płynącego z San Jose na Trynidadzie do San Juan na Portoryko. Muszę zdobyć statek 'Bensecho', załadowany rzadką i cenną żywicą. Jeśli mi się uda, zysk wyniesie około 1500 dublonów!
 #TEXT 5
 'Bensecho' został zatopiony w środku walki. Szkoda.
 #TEXT 6
@@ -1533,15 +1533,15 @@ Zabrałem sobie czas na rejs, a Brytyjczycy zaczęli bunt. Musiałem ich zabić.
 #TEXT 3
 Porucznik Caspar Gratton postanowił, że pomogę mu w jego operacji wojskowej przeciwko Holendrom. Ani mowy. Ucieczka z Sint-Maarten to już jego problem.
 #TEXT 4
-Il tenente Kaspar Gratton e i suoi soldati sono stati portati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe ricompensato generosamente. Già... speriamo solo di non avere guai con gli olandesi alla fine. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti degli olandesi, e secondo, per cercare di scoprire cosa ci fanno davvero qui questi marines britannici.
+Porucznik Kaspar Gratton i jego żołnierze zostali przewiezieni na Sint Maarten, ale nie otrzymałem zapłaty. Zamiast tego porucznik poprosił mnie, abym poczekał kilka dni, a następnie zabrał ich na Antiguę, gdzie jego dowódca, pułkownik Fox, hojnie mnie wynagrodzi. Tak... miejmy tylko nadzieję, że ostatecznie nie wpadniemy w kłopoty z Holendrami. Płyne do portu Philipsburg: po pierwsze, żeby rozwiać wszelkie podejrzenia Holendrów, a po drugie, żeby spróbować dowiedzieć się, co tak naprawdę robią tu brytyjscy marines.
 #TEXT   4_1
-Il tenente Kaspar Gratton e i suoi soldati sono stati consegnati a Sint Maarten, ma non ho ricevuto alcun pagamento. Al contrario, il tenente ha chiesto di attendere un paio di giorni e poi portarli ad Antigua, dove il suo comandante, il colonnello Fox, mi avrebbe pagato generosamente. Bene, bene... speriamo che alla fine non siano i miei guai con gli olandesi. Mi dirigo al porto di Philipsburg: primo, per sviare eventuali sospetti da parte loro; secondo, per cercare di capire cosa ci fanno qui i marines britannici, visto che attualmente tra Olanda e Inghilterra c'è pace.
+Porucznik Kaspar Gratton i jego żołnierze zostali dostarczeni na Sint Maarten, ale nie otrzymałem zapłaty. Zamiast tego porucznik poprosił mnie, abym poczekał kilka dni, a następnie zabrał ich na Antiguę, gdzie jego dowódca, pułkownik Fox, hojnie mi zapłaci. No cóż… miejmy nadzieję, że nie skończę z problemami z Holendrami. Płyne do portu Philipsburg: po pierwsze, żeby rozwiać wszelkie podejrzenia z ich strony; po drugie, żeby spróbować zrozumieć, co robią tu brytyjscy marines, skoro obecnie między Holandią a Anglią panuje pokój.
 #TEXT 5
 Minęły trzy dni, a nic się nie dowiedziałem. Powinienem wrócić na plażę Grand Case – może porucznik już tam jest?
 #TEXT 6
 Porucznik Caspar Gratton jednak się nie pojawił. Mam przeczucie, że nigdy się nie pojawi. Powinienem stąd spadać, zanim będzie za późno.
 #TEXT 7
-To robi się coraz lepsze... Przywiozłem angielską grupę rajdową na Sint-Maarten z misją infiltracji więzienia w Philipsburgu i uwolnienia brytyjskich oficerów! Jeśli Holendrzy się o tym dowiedzą, skończę. Powinienem spróbować znaleźć moich pasażerów w dżunglach i ostrzec ich przed zasadzką? A może lepiej po prostu jak najszybciej stąd uciekać?
+To robi się coraz lepsze... Przywiozłem angielską grupę rajdową na Sint-Maarten z misją infiltracji więzienia w Philipsburgu i uwolnienia brytyjskich oficerów! Jeśli Holendrzy się o tym dowiedzą, skończę na szubienicy. Powinienem spróbować znaleźć moich pasażerów w dżunglach i ostrzec ich przed zasadzką? A może lepiej po prostu jak najszybciej stąd uciekać?
 
 #TEXT 8
 Ten chłopak od gubernatora wystraszył mnie na maksa! Myślałem, że Holendrzy dowiedzieli się o mojej roli w brytyjskiej operacji wojskowej... Ale spokojnie, gubernator zaproponował, żebym wziął udział w polowaniu na angielskich szpiegów i obiecał sowitą nagrodę za każdą solidną informację. Gdyby tylko wiedział, z kim ma do czynienia... Muszę znaleźć Brytyjczyków i ostrzec ich, a jeśli to już za późno, uciekać z tej wyspy.
@@ -1550,7 +1550,7 @@ Ten chłopak od gubernatora wystraszył mnie na maksa! Myślałem, że Holendrzy
 Ten chłopak od gubernatora wystraszył mnie na maksa! Myślałem, że Holendrzy dowiedzieli się o mojej roli w brytyjskiej operacji wojskowej... Ale spokojnie, gubernator zaproponował, żebym wziął udział w polowaniu na angielskich szpiegów i obiecał nagrodę za każdą solidną informację. Gdyby tylko wiedział, z kim ma do czynienia... Zgodziłem się pomóc. Teraz muszę znaleźć Brytyjczyków i ostrzec ich przed nadchodzącym niebezpieczeństwem, albo mogę pomóc Holendrom. Poważnie, nic mi nie zawdzięcza porucznik; okłamał mnie, nie zapłacił – dlaczego w ogóle miałbym się przejmować? Tak czy inaczej, teraz powinienem udać się do komendanta.
 
 #TEXT 10
-Komendant jest jakoś bardzo nerwowy. Powiedział mi coś ciekawego – zniknęła holenderska patrole. To chyba robota moich przyjaciół. Idę do dżungli.
+Komendant jest jakoś bardzo nerwowy. Powiedział mi coś ciekawego – zniknął holenderski patroe. To chyba robota moich przyjaciół. Idę do dżungli.
 #TEXT 11
 Ta robota „pasażera” kosztuje mnie sporo! Teraz porucznik chce, żebym pomógł im w uwolnieniu uwięzionych oficerów. Ładna robota, poruczniku... Idę do miasta. Brytyjczycy mają agenta w lokalnym kościele, nazywa się Filippe Jacobsen. Znajdę go tam od 6 do 10 rano. Można również sprzedać rajdową ekipę komendantowi Philipsburga.
 
@@ -1600,7 +1600,7 @@ Zrobione! Teraz powinniśmy szybko udać się na plażę Grand Case i opuścić 
 Wydaje się, że zostaliśmy ujawnieni przez Holendrów – była zasadzka na plaży. To była ciężka walka, ale udało nam się przetrwać.
 
 #TEXT 27
-Miałem walkę z holenderską jednostką patrolową. Zwycięstwo jest moje, ale to nie koniec – korweta „Zeepard” jest na nas. Nie powinienem angażować się w tę bitwę; czas płynąć do Antigui.
+Miałem walkę z holenderską jednostką patrolową. Zwycięstwo jest moje, ale to nie koniec – korweta „Zeepard” nas ściga. Nie powinienem angażować się w tę bitwę; czas płynąć na Antiguę.
 
 #TEXT 28
 W końcu dostarczyłem Brytyjczyków na Antiguę. Powinienem jutro odwiedzić pułkownika Foxa z Królewskich Marines. Mam nadzieję, że będzie dla mnie hojny.
@@ -1614,7 +1614,7 @@ Zabrałem sobie czas przywożąc Brytyjczyków na Antiguę, a oni opuścili mój
 #QUEST FMQ_Tortuga
 Prawie Jak w Domu
 #TEXT 1
-Tortuga powitała mnie zaproszeniem od żony gubernatora, by odwiedzić jej rozrywkę dziś wieczorem po szóstej. Ciekawie będzie zaobserwować lokalną arystokrację. Mam nadzieję, że nie spotkam tam żadnych wkurzonych mężów, którzy zostali ukarani rogowi z powodu mnie. Kiedyś to zdarzało się często w moim kraju.
+Tortuga powitała mnie zaproszeniem od żony gubernatora, by zapewnić jej rozrywkę dziś wieczorem po szóstej. Ciekawie będzie zaobserwować lokalną arystokrację. Mam nadzieję, że nie spotkam tam żadnych wkurzonych mężów, którzy nie dostali rogów z mego powodu. Kiedyś w moim kraju, zdarzało się do nadwyraz często.
 #TEXT 2
 Tortuga jest interesująca. Kobiety tutaj wiedzą, czego chcą. Wypełniłem uszy jednej ładnej, głupiej dziewczynie moimi bzdurnymi opowieściami, i oto jesteśmy – zaproszono mnie, by zobaczyć ją i jej przyjaciółki w altanie w pałacu gubernatora dzisiaj wieczorem po szóstej. W Europie kobiety podziwiają szlachetnych artystów z notorycznych rodzin. Tutaj wystarczy mieć statek. Brat miał rację; pieniądze dobrze wydane.
 #TEXT 3
@@ -1624,15 +1624,15 @@ Nie spodziewałem się tego. A może jednak? Żona lokalnego gubernatora chciał
 #TEXT 5
 Zdecydowałem się nie ostrzegać. Rodzinne sprawy to brudna sprawa.
 #TEXT 6
-Wieczór szybko stracił swój romantyczny zapach. Żona lokalnego gubernatora chce okraść swojego męża. Oczywiście moimi rękami. Klejnoty są w skrzyni. Zrobiono już duplikat klucza, a w tej chwili znajduje się on w rękach jakiegoś pirata, który tonie w butelce w tawernie. Jak to się wszystko stało, zastanawiam się? Pani mnie gra? A może jest głupia? Tak czy inaczej, potrzebuję pieniędzy; Michel nie wyjdzie ze swojej celi sam.
+Wieczór szybko stracił swój romantyczny zapach. Żona lokalnego gubernatora chce okraść swojego męża. Oczywiście moimi rękami. Klejnoty są w skrzyni. Zrobiono już duplikat klucza, a w tej chwili znajduje się on w rękach jakiegoś pirata, który tonie w butelce w karczmie. Jak to się wszystko stało, zastanawiam się? Pani mnie ogrywa? A może jest głupia? Tak czy inaczej, potrzebuję pieniędzy; Michel sam ze swojej celi nie wyjdzie.
 #TEXT 7
 Powiedziałem Levasseurowi o planach jego żony; niezbyt spodobały mu się te wiadomości, oszalał, dał mi żebraczą sumę monet i pokazał drzwi. Chyba zaczynam żałować tej kobiety...
 #TEXT 8
-Za późno, by szukać pirata z kluczem w tawernie. Cóż, mniej intryg – mniej kłopotów.
+Za późno, by szukać pirata z kluczem w karczmie. Cóż, mniej intryg – mniej kłopotów.
 #TEXT 9
-Cholera, wszystko teraz jasne, dzięki mojemu nowemu znajomemu. On również obiecano to samo, ale był na tyle sprytny, by odpuścić. Ja też nie jestem idiotą. Czy powinienem ostrzec męża? Muszę teraz podjąć decyzję.
+Cholera, teraz wszystko jasne, dzięki mojemu nowemu znajomemu. Jemu również obiecano to samo, ale był na tyle sprytny, by odpuścić. Ja też nie jestem idiotą. Czy powinienem ostrzec męża? Muszę teraz podjąć decyzję.
 #TEXT 10
-Moje spotkanie z piratem było owocne. Pięćdziesiąt doubloonów za duplikat klucza i dobrą radę. Muszę uważać na Levasseurową sukę. Ona wyraźnie próbuje mnie oszukać.
+Moje spotkanie z piratem było owocne. Pięćdziesiąt dublonów za duplikat klucza i dobrą radę. Muszę uważać na Levasseurową sukę. Ona wyraźnie próbuje mnie oszukać.
 #TEXT 11
 Żona gubernatora chciała, żebym dał jej duplikat klucza i zobaczył się z nią następnego dnia po mojej części. Jakoś nie czułem się z tym komfortowo i odmówiłem. Czas znaleźć skrzynię i zabrać łup.
 #TEXT 12
@@ -1654,7 +1654,7 @@ To wcale nie jest śmieszne. Najemny zbir próbował mnie zabić minutę temu, i
 #TEXT 20
 Wyobraź to sobie, ta suka miała iluzję, że dam jej część po tym, jak wynajęła zabójcę, by mnie zabił? Ha! Ugryź mnie.
 #TEXT 21
-Zrobione. Mam moją część, ale wciąż czuję, że użyto mnie jak dziwkę. Następnym razem będę mądrzejszy. Wygląda na to, że to zawsze tak wygląda tutaj. Prawie jak w domu.
+Zrobione. Mam moją część, ale wciąż czuję, że użyto mnie jak dziwkę. Następnym razem będę mądrzejszy. Wygląda na to, że to zawsze tak tutaj wygląda. Prawie jak w domu.
 #TEXT 22
 Co za wtopa! Cholera, ta dziewczyna okradła mnie, kiedy bawiliśmy się w łóżku. Nikt się o tym nie dowie, więc załóżmy, że to była najdroższa dziwka mojego życia. Nauka wyniesiona. Mam nadzieję.
 #TEXT 23
@@ -1794,7 +1794,7 @@ Przegapiłem Utrecht. Byłem tak blisko, a jednak nie udało mi się jej znaleź
 #TEXT 14
 Porażka! Zmarnowałem swoją szansę na umowę z pracownikiem; wziął mnie za patrolowca, przestraszył się i głupio zaatakował. Idiota. Musiałem wszystkich zabić. Szkoda, ale to już koniec.
 #TEXT 15
-Zrobione. Udało mi się zawrzeć umowę z pracownikiem. 5 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
+Zrobione. Udało mi się zawrzeć umowę z pracownikiem. 25 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
 #TEXT 16
 Minęły już dwa miesiące. Bald Geffrey pewnie już sprzedał swój jedwab komuś innemu. Szkoda... ale myślę, że wciąż mogę dostarczyć informacje o nabywcy do Tyrexa. Powinienem dotrzeć do La Vega za dziesięć dni, żeby dać Tyrexowi czas na zebranie wystarczającej ilości jedwabiu. Mam nadzieję, że złagodzi to jego możliwą złość.
 #TEXT 17
@@ -1806,7 +1806,7 @@ Przekazałem informacje, które uzyskałem od Husky'ego Billy'ego, władzom loka
 #TEXT 20
 Zrobione. Mój konkurent został wyeliminowany przez patrol wojskowy. Nawet otrzymałem nagrodę w wysokości 10 000 pesos, co miłe. Powinienem spotkać się z budowniczym statków; teraz powinien być bardziej przekonujący.
 #TEXT 21
-Zrobione. Udało mi się zawrzeć umowę z budowniczym statków. 5 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
+Zrobione. Udało mi się zawrzeć umowę z budowniczym statków. 25 doubloonów za rolkę. Teraz powinienem wypłynąć na St. Christopher i zobaczyć Bald Geffreya.
 #TEXT 22
 Bald Geffrey otrzymał rozkaz – wkrótce wyruszy na Jamajkę z pierwszą partią jedwabiu statkowego od Marcusa Tyrexa. Powinienem wypłynąć do La Vega.
 #TEXT 23
@@ -2164,4 +2164,4 @@ Udało mi się uciec z ciemności lochów i wrzącego piekła. To naprawdę chrz
 #TEXT	19
 Gdy wyszedłem i wróciłem na brzeg, wciąż balansując między szaleństwem, strachem, niepewnością i nadzieją, mój wierny przyjaciel i towarzysz, @<pcharname>, spotkał mnie na brzegu. Dzięki Bogu, przeżył również ten dzień. W długiej rozmowie pomógł mi zrozumieć wiele rzeczy. I podjąć właściwą decyzję. Charlie Prince, pirat na smyczy Tyrexa, zginął dziś dla świata pośród tych gejzerów. A Charles de Maure, francuski szlachcic, nie jakiś nieszczęsny pirat, żył dalej. I nikt, nigdy więcej, nie będzie mu mówił, co ma robić. Nikt nie stanie mu na drodze między nim a jego celem. Ja zdecyduję, jakie są moje cele i jak je osiągnąć. Odwiedzę mojego brata i powiem mu, że nic dobrego nie wyszło z jego drogiego Terraxa. Niech mówi, co chce - znajdę inny sposób.
 #TEXT	20
-W katakumbach stanąłem twarzą w twarz z teatrem szaleństwa i wirem emocji. Zostałem wytropiony przez słynnego hiszpańskiego łowcę piratów, Don Enrico de la Vegę, znanego jako Zorro. Był nienagannie ubrany i nosił lekki, ale solidny napierśnik pod ubraniem. Mój oficer i przyjaciel, Hercule Tonzag, pokrzyżował plany szlachcica. Widząc go, ten doświadczony łowca nagród niemal zadrżał ze strachu, co było zaskakujące, ale też przywróciło mnie do zmysłów. W końcu zorganizowaliśmy polowanie na łowcę. Don Enrico, przyparty do muru, okazał się doświadczonym i niebezpiecznym, ale niehonorowym przeciwnikiem, choć miał pewną godność. Ale razem pokonaliśmy tego lisa - choć wolałbym nazwać go wężem. Nawet z pomocą Herkulesa nie było łatwo. Poprowadził mnie przez tajne przejście, które odkrył, ponieważ to, przez które wszedłem, było zablokowane skałami. Czas, abym zobaczył brata - postanowiłem zerwać wszelkie więzi z Tyrexem, ponieważ nie przybliżyło mnie to do uratowania Michela, wbrew jego oczekiwaniom. Jeśli kiedykolwiek to wznowię, to tylko na moich warunkach. I tylko jako Charles de Maure - dumny, szlachetny i godny człowiek, nie jakiś pionek księcia. Żegnaj, Charlie, pójdę dalej bez ciebie.
+W katakumbach stanąłem twarzą w twarz z teatrem szaleństwa i wirem emocji. Zostałem wytropiony przez słynnego hiszpańskiego łowcę piratów, Don Enrico de la Vegę, znanego jako Zorro. Był nienagannie ubrany i nosił lekki, ale solidny napierśnik pod ubraniem. Mój oficer i przyjaciel, Hercule Tonzag, pokrzyżował plany szlachcica. Widząc go, ten doświadczony łowca nagród niemal zadrżał ze strachu, co było zaskakujące, ale też przywróciło mnie do zmysłów. W końcu zorganizowaliśmy polowanie na łowcę. Don Enrico, przyparty do muru, okazał się doświadczonym i niebezpiecznym, ale niehonorowym przeciwnikiem, choć miał pewną godność. Ale razem pokonaliśmy tego lisa - choć wolałbym nazwać go wężem. Nawet z pomocą Hercule nie było łatwo. Poprowadził mnie przez tajne przejście, które odkrył, ponieważ to, przez które wszedłem, było zablokowane skałami. Czas, abym zobaczył brata - postanowiłem zerwać wszelkie więzi z Tyrexem, ponieważ nie przybliżyło mnie to do uratowania Michela, wbrew jego oczekiwaniom. Jeśli kiedykolwiek to wznowię, to tylko na moich warunkach. I tylko jako Charles de Maure - dumny, szlachetny i godny człowiek, nie jakiś pionek księcia. Żegnaj, Charlie, pójdę dalej bez ciebie.

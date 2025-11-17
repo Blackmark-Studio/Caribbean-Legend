@@ -130,3 +130,15 @@ void CopyModifier(ref rTo, ref rFrom, string modifier)
 	if (!CheckAttribute(rFrom, modifier)) return;
 	rTo.(modifier) = rFrom.(modifier);
 }
+
+// Складываем бонусы от одного модификатора в другой
+void MergeModifiers(ref rTo, ref rFrom, string modifierNameTo, string modifierNameFrom)
+{
+	if (!CheckAttribute(rFrom, modifierNameFrom)) return;
+
+	aref modifierTo, modifierFrom;
+	makearef(modifierTo, rTo.(modifierNameTo));
+	makearef(modifierFrom, rFrom.(modifierNameFrom));
+	CopyAttributesSafe(modifierTo, modifierFrom);
+	AddToAttributeFloat(rTo, modifierNameTo, GetAttributeFloat(rFrom, modifierNameFrom));
+}

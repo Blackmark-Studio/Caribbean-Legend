@@ -1113,6 +1113,7 @@ void PotionChanger() // лечебные зелья
 	ref rItem;
 	aref Items, arItems;
 	string sItem
+	p = PtnNum();
 	
 	makearef(arItems, pchar.items);
 	int iItemsNum = GetAttributesNum(arItems);
@@ -1120,9 +1121,8 @@ void PotionChanger() // лечебные зелья
 	{
 		sItem = GetAttributeName(GetAttributeN(arItems, i));
 		rItem = ItemsFromID(sItem);
-		if(!CheckAttribute(rItem, "potion")) continue;
 		if(!CheckAttribute(rItem, "potion.health")) continue;
-		p = PtnNum();		 
+
 		n++;
 		if(n == p-1)
 		{
@@ -1220,8 +1220,7 @@ int PtnNum()
 	{
 		sItem = GetAttributeName(GetAttributeN(arItems, i));
 		rItem = ItemsFromID(sItem);
-		if(!CheckAttribute(rItem, "potion")) continue;
-		if(sItem == "potion3") continue;
+		if(!CheckAttribute(rItem, "potion.health")) continue;
 		qty++;
 		if(CheckAttribute(pchar, "GenQuest.Potion_choice") && pchar.GenQuest.Potion_choice == sItem) return qty;
 	}

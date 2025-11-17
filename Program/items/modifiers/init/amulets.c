@@ -364,7 +364,7 @@ bool InitAmuletModifiers(ref item)
 		case "talisman6":
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
-			AddDescriptor(item, JOB_TREASURER, -1);
+			AddDescriptor(item, JOB_DOCTOR, -1);
 		}
 		break;
 		case "talisman14":
@@ -451,6 +451,7 @@ bool InitAmuletModifiers(ref item)
 		{
 			AddDescriptor(item, M_AMULET_TYPE, AMULET_CHURCH);
 			AddDescriptor(item, JOB_BOATSWAIN, -1);
+			AddCallback(item, CT_EQUIP, "BlackwoodsCharter");
 		}
 		break;
 		case "talisman19":

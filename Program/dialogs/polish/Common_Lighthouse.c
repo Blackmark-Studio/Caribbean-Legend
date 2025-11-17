@@ -60,7 +60,7 @@ void ProcessDialogEvent()
 			else
 			{
 				dialog.text = "O, mój stary przyjacielu, kapitanie "+GetFullName(pchar)+"! Wchodź, wchodź! Co cię tym razem tutaj sprowadza?";
-				link.l1 = "Witaj, stary solony! Czy nie wylasz tu w samotności w swoim latarni morskiej?";
+				link.l1 = "Witaj, stary druhu! Nie konasz jeszcze od samotności w tej latarni morskiej?";
 				link.l1.go = "Lightman_talk";
 			}
 			NextDiag.TempNode = "First time";

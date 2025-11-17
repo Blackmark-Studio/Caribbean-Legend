@@ -110,3 +110,15 @@ void Perk_MasterAlternate(ref chr)
 	IncreaseLandModifier(chr, BREAK_STRIKE + "_" + M_DAMAGE, PERK_VALUE2_MASTER, "Perk_Master");
 	IncreaseLandModifier(chr, SHOT_STRIKE  + "_" + M_DAMAGE, PERK_VALUE2_MASTER, "Perk_Master");
 }
+
+string PerkMasterDescription(ref chr)
+{
+	string key = "perkMaster";
+	if (!IsMainCharacter(chr)) key += "_alternate";
+	string baseText = DLG_Convert(key, "AbilityDescribe.txt", &NullObject);
+
+	float bonus = GetAttributeFloat(chr, "ct.static.fast_Damage.perk_master");
+	if (bonus == 0) return baseText;
+
+	return baseText + " " + DLG_Convert("perkMaster_currentBonus", "AbilityDescribe.txt", chr);
+}

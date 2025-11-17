@@ -272,14 +272,14 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_Irons_15":
-			dialog.text = "Och, jaki nudziarz z ciebie. Czy nie nauczyli cię cierpliwości, "+GetSexPhrase("młodzieńcu","dziewczyno")+"? Nie miałem nic do roboty w domu oprócz strzelania do kaczek i jeleni, więc karnąłem się do Nowego Świata. Pływałem z piratami przez jakiś czas dla zabawy, a kiedy zmęczyłem się bezprawiem, zostałem najemnikiem.";
-			link.l1 = "Nie bardzo oryginalna historia.";
+			dialog.text = "Och, jaki nudziarz z ciebie. Czy nie nauczyli cię cierpliwości, "+GetSexPhrase("młodzieńcze","dziewczyno")+"? Nie miałem nic do roboty w domu oprócz strzelania do kaczek i jeleni, więc karnąłem się do Nowego Świata. Pływałem z piratami przez jakiś czas dla zabawy, a kiedy zmęczyłem się bezprawiem, zostałem najemnikiem.";
+			link.l1 = "Niezbyt oryginalna historia.";
 			link.l1.go = "BM_Irons_16";
 		break;
 		
 		case "BM_Irons_16":
 			dialog.text = "Może masz lepszą? Chętnie bym wysłuchał. A tak z innej beczki... nie potrzebujesz przypadkiem ochroniarza? Bo wyglądasz... słabo. Martwię się, że daleko nie zajdziesz, hehe. Pamiętaj, to świta tworzy królów. A zła kompania może ich zgubić.";
-			link.l1 = "I co by "+GetSexPhrase("taki król miał","taka królowa miała")+" z takim orszakiem jak ty? Tytuł "+GetSexPhrase("króla","lrólowej")+" z gnojowiska?";
+			link.l1 = "I co by "+GetSexPhrase("taki król miał","taka królowa miała")+" z takim orszakiem jak ty? Tytuł "+GetSexPhrase("pana","panny")+" z gnojowiska?";
 			link.l1.go = "BM_Irons_17";
 		break;
 		
@@ -311,7 +311,7 @@ void ProcessDialogEvent()
 		case "BM_Irons_Hire1":
 			RemoveDublonsFromPCharTotal(150);
 			
-			dialog.text = "Nie jesteś taki zły, jak myślałem! Ale lepiej upewnij się, że się nie znudzę. Szkoda by było marnować mój talent, prawda? Tommy i "+pchar.name+"  Zaszalejmy na Karaibach! ";
+			dialog.text = "Nie jesteś taki zły, jak myślałem! Ale lepiej upewnij się, że się nie znudzę. Szkoda by było marnować mój talent, prawda? Tommy i "+pchar.name+"!  Zaszalejmy na Karaibach! ";
 			link.l1 = "Ucz się szanować hierarchię dowodzenia, Tommy. Po drugie, jestem dla ciebie kapitanem. Rozumiesz?";
 			link.l1.go = "BM_Irons_Hire2";
 		break;
@@ -427,7 +427,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsFirstJungle_2":
-			dialog.text = "Czy nie masz przy sobie dodatkowej rundy amunicji? Nie tylko kulę, ale pełnoprawny, papierem owinięty ładunek.";
+			dialog.text = "Czy nie masz przy sobie dodatkowej sztuki amunicji? Nie tylko kulę, ale pełnoprawny, papierem owinięty ładunek.";
 			link.l1 = "Czy to kolejny z twoich dowcipów? Regularnie daję ci kule i naboje, cokolwiek potrzebujesz. I dlaczego dokładnie jeden nabój, a nie garść?";
 			link.l1.go = "BM_IronsFirstJungle_3";
 		break;
@@ -436,7 +436,7 @@ void ProcessDialogEvent()
 			dialog.text = "Czemu tak źle przyjmujesz moją prośbę? Nie proszę o krwawe perły, tylko o nabój. Czekałem nawet, aż wyjdziemy do dżungli, żeby cię nie rozpraszać w interesach w mieście. Więc, masz nabój?";
 			if (CheckCharacterItem(PChar, "cartridge") || CheckCharacterItem(PChar, "bullet"))
 			{
-				link.l1 = "Tak, mam kolejkę. Proszę bardzo. Tylko nie rób ze mnie głupca z tym nabojem. Rozumiesz, Tommy?";
+				link.l1 = "Tak, mam. Proszę bardzo. Tylko nie rób ze mnie głupca z tym nabojem. Rozumiesz, Tommy?";
 				link.l1.go = "BM_IronsFirstJungle_7";
 			}
 			link.l2 = "Na ten moment nie, nie mam. To nie tak, że noszę jedną kulę w kieszeni, zastanawiając się, co jeśli Tommy o nią poprosi...?";
@@ -644,7 +644,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_16":
-			dialog.text = "Do diabła, tak! Najlepsze lata mojego życia. Jack Mills był kapitanem przez duże K - mam nadzieję, że pewnego dnia będziesz taki jak on. Pływałem na jego 'Crane' przez około dwa lata, aż...";
+			dialog.text = "Do diabła, tak! Najlepsze lata mojego życia. Jack Mills był Kapitanem przez duże K - mam nadzieję, że pewnego dnia będziesz taki jak on. Pływałem na jego 'Żurawiu' przez około dwa lata, aż...";
 			link.l1 = "... aż miałeś dość bezprawia, jak mówiłeś? Dlaczego mówisz, że to były najlepsze lata twojego życia?";
 			link.l1.go = "BM_IronsThirdJungle_17";
 		break;
@@ -727,15 +727,15 @@ void ProcessDialogEvent()
 			{
 				link.l1 = "Jeśli jest kapitanem statku płynącego na Jamajkę, cały czas patroluje wody wyspy. Atakowanie pod fałszywą banderą jest lepsze niż próbowanie czegokolwiek w mieście.";
 				link.l1.go = "BM_IronsThirdJungle_Sea1";	// Морской вариант
-				notification("Skill Check Passed", SKILL_SAILING);
-				notification("Skill Check Passed", SKILL_ACCURACY);
-				notification("Skill Check Passed", SKILL_GRAPPLING);
+				notification("Sukces!", SKILL_SAILING);
+				notification("Sukces!", SKILL_ACCURACY);
+				notification("Sukces!", SKILL_GRAPPLING);
 			}
 			else
 			{
-				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 25) notification("Skill Check Failed (25)", SKILL_SAILING);
-				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 25) notification("Skill Check Failed (25)", SKILL_ACCURACY);
-				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 25) notification("Skill Check Failed (25)", SKILL_GRAPPLING);
+				if (GetSummonSkillFromName(pchar, SKILL_SAILING) < 25) notification("Zbyt niska umiejętność (25)", SKILL_SAILING);
+				if (GetSummonSkillFromName(pchar, SKILL_ACCURACY) < 25) notification("Zbyt niska umiejętność (25)", SKILL_ACCURACY);
+				if (GetSummonSkillFromName(pchar, SKILL_GRAPPLING) < 25) notification("Zbyt niska umiejętność (25)", SKILL_GRAPPLING);
 			}
 			link.l2 = "Nie jest to bez wad, i zostawiasz wiele przypadkowi. Ale ogólnie, jest do zrobienia. Jestem z tobą, Tommy. Pozbyłeś się jednego, nie możesz pozwolić, by drugi odszedł, prawda?";
 			link.l2.go = "BM_IronsThirdJungle_Land1";	// Сухопутный вариант
@@ -750,13 +750,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsThirdJungle_Sea2":
-			dialog.text = "Heh, może nie jesteś tchórzem, ale on jest, chociaż cwany. Nie zaatakuje żołnierza ani nawet pirata większego od jego statku. Jeśli zobaczy coś takiego na horyzoncie, schowa się pod skrzydło fortu.";
-			link.l1 = "Hmm, a co z   okrętami kupieckimi?";
+			dialog.text = "Heh, może nie jesteś tchórzem, ale on jest, chociaż cwanym. Nie zaatakuje żołnierza ani nawet pirata większego od jego statku. Jeśli zobaczy coś takiego na horyzoncie, schowa się pod skrzydło fortu.";
+			link.l1 = "Hmm, a co z okrętami kupieckimi?";
 			link.l1.go = "BM_IronsThirdJungle_Sea3";
 		break;
 		
 		case "BM_IronsThirdJungle_Sea3":
-			dialog.text = "Tak, to może zadziałać! Ale znowu, nic większego niż bark! Gabe to nie tylko tchórz - nigdy nie był na tyle chciwy, by pozwolić, żeby to przeważyło jego ostrożność.";
+			dialog.text = "Tak, to może zadziałać! Ale znowu, nic większego niż barke! Gabe to nie tylko tchórz - nigdy nie był na tyle chciwy, by pozwolić, żeby to przeważyło jego ostrożność.";
 			link.l1 = "Miejmy nadzieję, że to zadziała, Tommy. A więc, barka piątej klasy pod hiszpańską lub holenderską banderą. Przygotuj się na spotkanie ze swoim starym wojennym towarzyszem!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("BM_SeaVariant");
@@ -949,8 +949,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsClone4":
-			dialog.text = "Nie ma wyboru! Zaatakować statek angielskiej marynarki!";
-			link.l1 = "Oh, miał wybór od samego początku. I wybrał, by mi pomóc. Ty i Frankie też mieliście wybór. Wybraliście ucieczkę, żeby nie zginąć. A potem wróciliście i znaleźliście mnie na wpół martwego. I opowiedzieliście swoje nikczemne kłamstwa na trybunale. Wiedzieliście, że nikt mnie nie posłucha, bo dostałem w głowę i straciłem pamięć!";
+			dialog.text = "Nie miał wyboru! Zaatakował statek angielskiej marynarki!";
+			link.l1 = "Och, miał wybór od samego początku. I wybrał, by mi pomóc. Ty i Frankie też mieliście wybór. Wybraliście ucieczkę, żeby nie zginąć. A potem wróciliście i znaleźliście mnie na wpół martwego. I opowiedzieliście swoje nikczemne kłamstwa na trybunale. Wiedzieliście, że nikt mnie nie posłucha, bo dostałem w głowę i straciłem pamięć!";
 			link.l1.go = "BM_IronsClone5";
 		break;
 		
@@ -962,7 +962,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "BM_IronsClone8":
-			dialog.text = "Cóż, Gabe został obalony, hehehe. Od dawna chciałem to powiedzieć. Szkoda, że nie możesz już tego usłyszeć, kolego. O, poczekaj! Może możesz - z Piekła.";
+			dialog.text = "Cóż, Gabe został obalony, hehehe. Od dawna chciałem to powiedzieć. Szkoda, że nie możesz już tego usłyszeć, kolego. O, poczekaj! Może usłyszysz - z Piekła.";
 			link.l1 = "Chodź, Tommy. Nawet jeśli tego nie słyszał, to widział i wiedział, że to dokładnie twój plan i zemsta. I nie mógł nic na to poradzić.";
 			link.l1.go = "BM_IronsClone9";
 		break;
@@ -990,7 +990,7 @@ void ProcessDialogEvent()
 			if (startHeroType == 4) 
 			{
 				dialog.text = "Ach, daj spokój! Czuję, że wszystko, przez co przeszliśmy, zbliżyło nas do siebie, Ellie. Moglibyśmy być czymś więcej niż tylko kapitanem i oficerem. Przyznaj - nawet jeśli tylko przed sobą czujesz to samo.";
-				link.l1 = "Tylko w twoich najśmielszych snach, Tommy. I to Helen, nie Ellie. Ale przypuszczam, że teraz możesz mnie nazywać Rumba.";
+				link.l1 = "Tylko w twoich najśmielszych snach, Tommy. I jestem Helen, nie Ellie. Ale przypuszczam, że teraz możesz mnie nazywać Rumba.";
 				link.l1.go = "BM_IronsClone12";
 			}
 			else

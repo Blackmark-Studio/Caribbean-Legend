@@ -72,15 +72,15 @@ void zpq_seaBattle(string qName)
 // belamour legendary edition 
 void UpgradeShipZPQ(ref chr)
 {
-	sld = chr;
+	ref sld = chr;
 	RealShips[sti(sld.Ship.Type)].MaxCaliber = 8;
 	//RealShips[sti(sld.Ship.Type)].CannonsQuantity = 10;
-	RealShips[sti(sld.Ship.Type)].MinCrew = 9;
+	/* RealShips[sti(sld.Ship.Type)].MinCrew = 9;
 	RealShips[sti(sld.Ship.Type)].OptCrew = 40;
 	RealShips[sti(sld.Ship.Type)].MaxCrew = 50;
 	RealShips[sti(sld.Ship.Type)].SpeedRate = 9.75;
 	RealShips[sti(sld.Ship.Type)].TurnRate = 70.70;
-	RealShips[sti(sld.Ship.Type)].HP = 750;
+	RealShips[sti(sld.Ship.Type)].HP = 750; */
 	RealShips[sti(sld.Ship.Type)].ship.upgrades.hull = 1;
 	UpgradeShipParameter(sld, "SpeedRate");
 	UpgradeShipParameter(sld, "TurnRate");
@@ -89,7 +89,7 @@ void UpgradeShipZPQ(ref chr)
 	{
 		DeleteAttribute(&RealShips[sti(sld.Ship.Type)],"Tuning.Capacity");
 	}
-	RealShips[sti(sld.Ship.Type)].Capacity = 950;
+	//RealShips[sti(sld.Ship.Type)].Capacity = 950;
 	UpgradeShipParameter(sld, "Capacity");
 	UpgradeShipParameter(sld, "HP");
 	UpgradeShipParameter(sld, "MaxCrew");

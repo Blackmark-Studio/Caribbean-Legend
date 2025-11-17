@@ -446,6 +446,7 @@ void QuestComplete(string sQuestName, string qname)
             if (IsEntity(&worldMap) && GetCrewQuantity(pchar) > 0 && !IsCharacterEquippedArtefact(pchar, "totem_02"))
         	{
                 MunityOnShip("ShipMunity");
+				ChangeCharacterComplexReputation(pchar,"authority", 25);
             }
         break;
 

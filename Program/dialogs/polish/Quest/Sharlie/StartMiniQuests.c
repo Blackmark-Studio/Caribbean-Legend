@@ -765,8 +765,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Prosper_noweapon":
-			dialog.text = "Monsieur, gdzie jest twój ostrze?";
-			link.l1 = "Zdaje się, że gdzieś to zgubiłem.";
+			dialog.text = "Monsieur, gdzie jest twoje ostrze?";
+			link.l1 = "Zdaje się, że gdzieś je zgubiłem.";
 			link.l1.go = "Prosper_noweapon_1";
 		break;
 		

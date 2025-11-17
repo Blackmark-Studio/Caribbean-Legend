@@ -284,7 +284,7 @@ Bonus attuale: $number($attr($context.KillerBonus.appliedbonus)) danni e $number
 itm_stat_blade_WR_1 {Diligenza}
 itm_stat_descr_blade_WR_1 {Aumenta di cinque volte la rigenerazione della salute in combattimento.}
 itm_stat_secondary_hat6 {Stimatissimo negoziante}
-itm_stat_descr_secondary_hat6 {Aumenta la potenza delle navi mercantili nella squadriglia del 15% e riduce la penalità alla probabilità di fuga dalle navi mercantili di 3.}
+itm_stat_descr_secondary_hat6 {Aumenta la potenza delle navi mercantili nella squadriglia del 40% e riduce la penalità alla probabilità di fuga dalle navi mercantili di 3.}
 itm_stat_KhaelRoa_item {Jaguar}
 itm_stat_descr_KhaelRoa_item {Aumenta i danni inflitti dalle armi da fuoco di dieci volte.}
 itm_stat_indian_poison {Taíno}

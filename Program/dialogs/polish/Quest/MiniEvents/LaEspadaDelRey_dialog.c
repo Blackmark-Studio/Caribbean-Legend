@@ -40,18 +40,18 @@ void ProcessDialogEvent()
 		
 		case "LEDR_Gonsalo_2":
 			dialog.text = "Heh... Czyli plotki rozchodzą się szybciej niż wiatr. Tak, to ja. Gonzalo Peralta – jedyny, który wciąż żyje z rozbitków 'La Espada del Rey'.";
-			link.l1 = "A ja jestem kapitanem "+GetFullName(pchar)+". Chcesz jeszcze raz rzucić okiem na swój statek?";
+			link.l1 = "Ja jestem kapitan "+GetFullName(pchar)+". Chcesz jeszcze raz rzucić okiem na swój statek?";
 			link.l1.go = "LEDR_Gonsalo_3";
 		break;
 
 		case "LEDR_Gonsalo_3":
-			dialog.text = "Tak. Wiesz, od jakiegoś czasu dręczy mnie ten sam koszmar. Ale rzecz даже nie w nim... Wierz lub nie, ale każdego ranka, gdy tylko koszmar się kończy, budzę się i... przede mną stoi cholerny szkielet...";
-			link.l1 = "W indiańskim stroju. Słyszałem, że wszystkim opowiadasz tę historyjkę.";
+			dialog.text = "Tak. Wiesz, od jakiegoś czasu dręczy mnie ten sam koszmar. Ale nie w tym rzecz... Wierz lub nie, ale każdego ranka, gdy tylko koszmar się kończy, budzę się i... przede mną stoi cholerny szkielet...";
+			link.l1 = "W indiańskim stroju. Słyszałem, że wszystkim opowiadasz tę bajkę.";
 			link.l1.go = "LEDR_Gonsalo_4";
 		break;
 
 		case "LEDR_Gonsalo_4":
-			dialog.text = "Bajka? Heh... Chciałbym, żeby to była tylko bajka. Jeszcze parę miesięcy temu prowadziłem spokojne życie, jak przystało na starego emerytowanego marynarza. Ale teraz ten worek kości pojawia się u mnie każdego ranka, patrzy na mnie, wydaje przeraźliwy krzyk... knypel mi w żagiel, każdemu bosmanowi krew by zamarzła w żyłach... a potem rzuca się do walki. I wiesz co? Z każdym razem atakuje coraz zacieklej. Właśnie dlatego chcę jak najszybciej dotrzeć do statku – nie opuszcza mnie przeczucie, że muszę tam coś odnaleźć.";
+			dialog.text = "Bajkę? Heh... Chciałbym, żeby to była tylko bajka. Jeszcze parę miesięcy temu prowadziłem spokojne życie, jak przystało na starego emerytowanego marynarza. Ale teraz ten worek kości pojawia się u mnie każdego ranka, patrzy na mnie, wydaje przeraźliwy krzyk... knypel mi w żagiel, każdemu bosmanowi krew by zamarzła w żyłach... a potem rzuca się do walki. I wiesz co? Z każdym razem atakuje coraz zacieklej. Właśnie dlatego chcę jak najszybciej dotrzeć do statku – nie opuszcza mnie przeczucie, że muszę tam coś odnaleźć.";
 			link.l1 = "Hmm... Ciekawe sprawy. I czego chcesz tam szukać po tylu latach?";
 			link.l1.go = "LEDR_Gonsalo_5";
 		break;
@@ -70,7 +70,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_6":
-			dialog.text = "Jeszcze jak jestem związany, niech mnie piorun trafi... W tym śnie jestem z poległą załogą  na 'La Espada del Rey'. My... rabujemy wioski Karaibów na Hispanioli, zabijamy wszystkich bez wyjątku – mężczyzn, kobiety, dzieci. Tych, którzy walczą, i nawet tych, którzy padają na kolana, błagając o litość. Wypalamy osady jedna po drugiej. Strzały Indian, ich maczugi przeciwko nam – to jak dziurawa tartana przeciwko okrętowi wojennemu. Karaibowie, w rozpaczy, proszą o rozmowy, i wtedy...";
+			dialog.text = "Jeszcze jak jestem związany, niech mnie piorun trafi... W tym śnie jestem z poległą załogą na 'La Espada del Rey'. My... rabujemy wioski Karaibów na Hispanioli, zabijamy wszystkich bez wyjątku – mężczyzn, kobiety, dzieci. Tych, którzy walczą, i nawet tych, którzy padają na kolana, błagając o litość. Wypalamy osady jedna po drugiej. Strzały Indian, ich maczugi przeciwko nam – to jak dziurawa tartana przeciwko okrętowi wojennemu. Karaibowie, w rozpaczy, proszą o rozmowy, i wtedy...";
 			link.l1 = "Panie zmiłuj się! Więc brałeś udział w tych bezecnościach? Tobie nie pomoc potrzebna, tylko konopny krawat!";
 			link.l1.go = "LEDR_Gonsalo_7";
 		break;
@@ -82,13 +82,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_8":
-			dialog.text = "Карибы запросили переговоров, и капитан согласился. Он пригласил всех их в одну из тех хижин, которые 'мы' захватили. Вожди пришли — два десятка человек, не меньше, во главе с их королевой — Анакоаной. Только вот сам капитан внутрь не зашёл... никто из нас не зашёл. Как только вошёл последний из вождей — дверь захлопнули и подпёрли балками. А потом... чёрт побери... подожгли. Пощадили только королеву, но ненадолго. Её заставили смотреть, как её народ сгорает живьём... А потом вздёрнули на дереве.";
+			dialog.text = "Karaibowie poprosili o negocjacje, a kapitan się zgodził. Zaprosił ich wszystkich do jednej ze zdobytych przez nas chat. Przybyli wodzowie – co najmniej dwudziestu czterech, na czele z ich królową, Anakoaną. Ale sam kapitan nie wszedł do środka… nikt z nas nie wszedł. Gdy tylko ostatni z wodzów wszedł, drzwi zatrzasnęły się i podparły belkami. A potem… cholera… podpalili je. Tylko królowa ocalała, ale nie na długo. Zmuszona była patrzeć, jak jej lud płonie żywcem… A potem powiesili ją na drzewie.";
 			link.l1 = "I to powtarza się każdej nocy? Ten sam sen, wciąż od nowa? Wiesz, nie zdziwiłbym się, gdyby po czymś takim ten szkielet był tylko wytworem twojego szalonego umysłu...";
 			link.l1.go = "LEDR_Gonsalo_9";
 		break;
 
 		case "LEDR_Gonsalo_9":
-			dialog.text = "To jeszcze nie wszystko. Ci, którzy przeżyli, Karaibowie, uciekli na Kubę, gdzie znaleźli wsparcie u miejscowych plemion i wkrótce zebrali się w jedną armię – pod dowództwem jakiegoś wodza. Atuay – chyba tak się nazywał. Szli za nim jak za ostatnią nadzieją. Ale bez trudu wybiliśmy wszystkich. Atuay został pojmany i przygotowany do egzekucji. Gdy przywiązano go do krzyża, szykując się do spalenia, mnich zaproponował mu przyjęcie prawdziwej wiary – powiedział, że to złagodzi jego cierpienia i zapewni mu miejsce w raju. Atuay zapytał mnicha, czy raj jest otwarty dla Hiszpanów. Kiedy tamten odpowiedział, że dla dobrych Hiszpanów oczywiście jest otwarty, kasik bez wahania odparł, że w takim razie nie chce do raju, tylko do piekła – byle nie dzielić schronienia z ludźmi tak okrutnymi. Potem powiedział jeszcze kilka słów w swoim języku i stos został podpalony. Nie wydał z siebie ani dźwięku, gdy płomienie zaczęły trawić jego ciało. Na morze przysięgam, nie chciałbym widzieć czegoś takiego na jawie. Mój sen zawsze kończy się tak samo: kapitan siedzi nieruchomo. Tylko świeca obok kopci, a on wciąż przewraca jakieś podniszczone strony dziennika. Powoli, jakby każde słowo ważyło tonę, i mamrocze coś pod nosem. Nawet we śnie, "+GetSexPhrase("chłopak","dziewczyna")+", rozumiem – to znak. Czas chwycić za klingę, bo on już atakuje\nPomóż mi pozbyć się tego koszmaru, kapitanie. Chodź ze mną do zatoki. Sam tam nie pójdę – prochu w prochownicach już nie starcza. Ale zanim odpowiesz, muszę cię uprzedzić: nie mam czym ci zapłacić, inaczej już ustawiłaby się tu kolejka chętnych do pomocy. Pozostaje więc liczyć na wsparcie naszego brata – marynarza.";
+			dialog.text = "To jeszcze nie wszystko. Ci, którzy przeżyli, Karaibowie, uciekli na Kubę, gdzie znaleźli wsparcie u miejscowych plemion i wkrótce zebrali się w jedną armię – pod dowództwem jakiegoś wodza. Atuay – chyba tak się nazywał. Szli za nim jak za ostatnią nadzieją. Ale bez trudu wybiliśmy wszystkich. Atuay został pojmany i przygotowany do egzekucji. Gdy przywiązano go do krzyża, szykując się do spalenia, mnich zaproponował mu przyjęcie prawdziwej wiary – powiedział, że to złagodzi jego cierpienia i zapewni mu miejsce w raju. Atuay zapytał mnicha, czy raj jest otwarty dla Hiszpanów. Kiedy tamten odpowiedział, że dla dobrych Hiszpanów oczywiście jest otwarty, kasik bez wahania odparł, że w takim razie nie chce do raju, tylko do piekła – byle nie dzielić schronienia z ludźmi tak okrutnymi. Potem powiedział jeszcze kilka słów w swoim języku i stos został podpalony. Nie wydał z siebie ani dźwięku, gdy płomienie zaczęły trawić jego ciało. Na morze przysięgam, nie chciałbym widzieć czegoś takiego na jawie. Mój sen zawsze kończy się tak samo: kapitan siedzi nieruchomo. Tylko świeca obok kopci, a on wciąż przewraca jakieś podniszczone strony dziennika. Powoli, jakby każde słowo ważyło tonę, i mamrocze coś pod nosem. Nawet we śnie, "+GetSexPhrase("chłopcze","dziewczyno")+", rozumiem – to znak. Czas chwycić za klingę, bo on już atakuje\nPomóż mi pozbyć się tego koszmaru, kapitanie. Chodź ze mną do zatoki. Sam tam nie pójdę – prochu w prochownicach już nie starcza. Ale zanim odpowiesz, muszę cię uprzedzić: nie mam czym ci zapłacić, inaczej już ustawiłaby się tu kolejka chętnych do pomocy. Pozostaje więc liczyć na wsparcie naszego brata – marynarza.";
 			link.l1 = "No dobrze. Jeśli wyprawa na statek pomoże ci pozbyć się tych snów i innych wizji, pomogę ci. Wchodź na pokład. Gdy tylko skończę swoje sprawy, ruszamy do zatoki.";
 			link.l1.go = "LEDR_Gonsalo_10";
 		break;
@@ -103,8 +103,8 @@ void ProcessDialogEvent()
 		case "LEDR_Gonsalo_11":
 			if (GetHour() >= 7 && GetHour() <= 19)
 			{
-				dialog.text = "Oto on... Kiedyś duma hiszpańskiej floty handlowej, a teraz - kupa zgniłych desek, cudem trzymających się razem.";
-				link.l1 = "Rzadko widuje się taki olbrzym powalony – leżący na brzegu.   Jak on się tu znalazł?";
+				dialog.text = "Oto ona... Kiedyś duma hiszpańskiej floty handlowej, a teraz - kupa zgniłych desek, cudem trzymających się razem.";
+				link.l1 = "Rzadko widuje się takiego olbrzyma – leżącego na brzegu. Jak on się tu znalazł?";
 				link.l1.go = "LEDR_Gonsalo_12";
 				link.l2 = "No to rozejrzyjmy się. Może naprawdę uda ci się tu coś znaleźć.";
 				link.l2.go = "LEDR_Gonsalo_20_1";
@@ -120,7 +120,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_12":
-			dialog.text = "Wyszliśmy wtedy z Santiago i obraliśmy kurs na Sewillę. Ładunku było niewiele, za to mieliśmy jednego pasażera – ważną osobistość, biskupa we własnej osobie. Załodze, powiem szczerze, taki rejs nie przypadł do gustu... ale kto nas kiedyś słuchał?\nDo oceanu wtedy nie dotarliśmy. Pod Turks zaatakował nas piracki bryg – szybki, zwrotny, uzbrojony po zęby. Nie byle nędzarze, tylko prawdziwe wilki morskie. Kapitan najpierw chciał dać nogę – nie chciał ryzykować życiem biskupa. Ale przy takim wietrze nie dało się zawrócić, a od południa nadciągała już burza. Więc nie było wyboru – zaczęła się walka.";
+			dialog.text = "Wypłyneliśmy wtedy z Santiago i obraliśmy kurs na Sewillę. Ładunku było niewiele, za to mieliśmy jednego pasażera – ważną osobistość, biskupa we własnej osobie. Załodze, powiem szczerze, taki rejs nie przypadł do gustu... ale kto nas kiedyś słuchał?\nDo oceanu wtedy nie dotarliśmy. Pod Turks zaatakował nas piracki bryg – szybki, zwrotny, uzbrojony po zęby. Nie byle nędzarze, tylko prawdziwe wilki morskie. Kapitan najpierw chciał dać nogę – nie chciał ryzykować życiem biskupa. Ale przy takim wietrze nie dało się zawrócić, a od południa nadciągała już burza. Więc nie było wyboru – zaczęła się walka.";
 			link.l1 = "Znaleźć się między młotem a kowadłem to nie jest godny pozazdroszczenia los.   I co było dalej?";
 			link.l1.go = "LEDR_Gonsalo_13";
 			AddCharacterExpToSkill(pchar, "Sailing", 200);
@@ -145,7 +145,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_16":
-			dialog.text = "Powrót na statek był zbyt niebezpieczny. Ci, którzy zaryzykowali i poszli tam po łup, mogli nie podzielić się zdobyczą i strzelić do każdego, kto znajdzie się obok… przypadkiem. A może — i wcale nie przypadkiem\nPrzysięgam na morze, przesiedziałem w tawernie cały tydzień, wypytując każdego, kto odwiedził zatokę. Ale nikt nie słyszał ani o moich chłopakach, ani o tym, co się z nimi stało\nW końcu pogodziłem się z myślą: wygląda na to, że jestem jedynym, który przeżył tę przeklętą burzę. Po prostu los był dla mnie łaskawszy niż dla innych. A może... to wszystko dzięki amuletowi, który kiedyś podarował mi młody, wtedy jeszcze kapitan Eugenio de la Torre. Zawsze miałem go przy sobie. I, do diabła, wygląda na to, że naprawdę przynosił szczęście.";
+			dialog.text = "Powrót na statek był zbyt niebezpieczny. Ci, którzy zaryzykowali i poszli tam po łup, mogli nie podzielić się zdobyczą i strzelić do każdego, kto znajdzie się obok… przypadkiem. A może — i wcale nie przypadkiem\nPrzysięgam na morze, przesiedziałem w karczmie cały tydzień, wypytując każdego, kto odwiedził zatokę. Ale nikt nie słyszał ani o moich chłopakach, ani o tym, co się z nimi stało\nW końcu pogodziłem się z myślą: wygląda na to, że jestem jedynym, który przeżył tę przeklętą burzę. Po prostu los był dla mnie łaskawszy niż dla innych. A może... to wszystko dzięki amuletowi, który kiedyś podarował mi młody, wtedy jeszcze kapitan Eugenio de la Torre. Zawsze miałem go przy sobie. I, do diabła, wygląda na to, że naprawdę przynosił szczęście.";
 			link.l1 = "I gdzie on teraz jest? Wygląda na to, że przed szkieletami nie chroni, heh...";
 			link.l1.go = "LEDR_Gonsalo_17";
 		break;
@@ -186,13 +186,13 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_22":
-			dialog.text = "Co za bzdury? Myślisz, że przylazłbym tu przez cały archipelag dla kilku dubloonów po czterdziestu latach? Gdybyś choć raz zobaczył tego szkieleta, nawet by ci to do głowy nie przyszło.";
+			dialog.text = "Co za bzdury? Myślisz, że przylazłbym tu przez cały archipelag dla kilku dublonów po czterdziestu latach? Gdybyś choć raz zobaczył tego szkieleta, nawet by ci to do głowy nie przyszło.";
 			link.l1 = "No dobrze, dobrze, nie denerwuj się. I jak zamierzasz dostać się na statek?";
 			link.l1.go = "LEDR_Gonsalo_23";
 		break;
 
 		case "LEDR_Gonsalo_23":
-			dialog.text = "Na rufie jest ukryte drzwi. Kapitan sam je wyciął – na wypadek, gdyby abordaż nie poszedł po naszej myśli. Przysięgam na gromy, sam nie wcisnę tam swojego starego cielska, ale we dwóch...";
+			dialog.text = "Na rufie są ukryte drzwi. Kapitan sam je wyciął – na wypadek, gdyby abordaż nie poszedł po naszej myśli. Przysięgam na gromy, sam nie wcisnę tam swojego starego cielska, ale we dwóch...";
 			link.l1 = "No dobrze, prowadź, skończmy z tym.";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("LEDR_5");
@@ -242,7 +242,7 @@ void ProcessDialogEvent()
 		
 		case "LEDR_Gonsalo_27":
 			dialog.text = "No i co tam, kapitanie? Udało się coś znaleźć?";
-			link.l1 = "Wygląda na to, że to była skrzynia biskupa. Ja nasz"+GetSexPhrase("szedł","ла")+"   jest tam coś. Spójrz.";
+			link.l1 = "Wygląda na to, że to była skrzynia biskupa. Coś w niej jest. Spójrz.";
 			link.l1.go = "LEDR_Gonsalo_28";
 		break;
 
@@ -253,7 +253,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_29":
-			dialog.text = "Diabeł, on jakby palił mi dłonie!";
+			dialog.text = "Niech to diabli, on jakby palił mi dłonie!";
 			link.l1 = "Pali ci ręce? Daj spokój, to tylko stary dziennik. Czy naprawdę wierzysz, że kryje się w nim jakaś mroczna siła?";
 			link.l1.go = "LEDR_Gonsalo_30";
 		break;
@@ -289,7 +289,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LEDR_Gonsalo_34_share":
-			dialog.text = "Skoro tak – nie odmówię. Każdemu są potrzebne pieniądze, a mi teraz szczególnie. Już mnie na żaden statek nie wezmą jako marynarza – za stary jestem. Więc dziękuję, kapitanie, że mnie nie odprawiłeś."+GetSexPhrase("ся","ась")+", jak inni.";
+			dialog.text = "Skoro tak – nie odmówię. Każdemu są potrzebne pieniądze, a mi teraz szczególnie. Już mnie na żaden statek nie wezmą jako marynarza – za stary jestem. Więc dziękuję, kapitanie, że mnie nie odprawiłeś, jak inni.";
 			link.l1 = "Przyznam, na początku twoja opowieść wydała mi się brednią szaleńca. Ale mówiłeś o tym tak przekonująco, że czy chcesz, czy nie, zaczynasz w to wierzyć. A jednak pojawienie się tych indiańskich nieumarłych zaskoczyło mnie zupełnie.";
 			link.l1.go = "LEDR_Gonsalo_35_1";
 			link.l2 = "Po prostu postanowiłem sprawdzić, czy nie jesteś szalony. Sam rozumiesz, w takie historie trudno uwierzyć.";
@@ -309,7 +309,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_35_1":
-			dialog.text = "Teraz już wiesz, co czułem, gdy po raz pierwszy zobaczyłem tę nieumarłą. Mam nadzieję, że to już koniec na zawsze... Inaczej kolejnego takiego spotkania raczej nie przeżyję.";
+			dialog.text = "Teraz już wiesz, co czułem, gdy po raz pierwszy zobaczyłem tego nieumarłego. Mam nadzieję, że to już koniec na zawsze... Inaczej kolejnego takiego spotkania raczej nie przeżyję.";
 			link.l1 = "No dobrze, skoro tu skończyliśmy, czas się stąd zbierać. Wchodź na pokład, wysadzę cię w porcie Sharptown.";
 			link.l1.go = "LEDR_Gonsalo_36";
 			AddCharacterExpToSkill(pchar, "leadership", 100);

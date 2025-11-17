@@ -3,13 +3,13 @@ newline
 
 }
 BasicDefense {Podstawowa obrona}
-perkBasicDefense {Zmniejsza otrzymywane obrażenia o 5%.}
+perkBasicDefense {Odpowiednie trzymanie gardy to podstawa - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Zaawansowana obrona}
-perkAdvancedDefense {Zmniejsza otrzymywane obrażenia o 3% oraz obrażenia krytyczne od wroga o 10%.}
+perkAdvancedDefense {Obierając odpowiednią pozycje, jesteś w stanie zminimalizować ryzyko bycia trafionym w najbardziej newralgiczne punkty ciała - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(AdvancedDefence|1)) oraz obrażenia krytyczne od wroga o $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Cios krytyczny}
-perkCriticalHit {Zwiększa bazową szansę na trafienie krytyczne o 3,5%.}
+perkCriticalHit {Odpowiednio wymierzony cios może odmienić niemal każdą walke - Zwiększa bazową szansę na cios krytyczny o 3,5%.}
 Grus {Mocny kręgosłup}
-perkGrus {Zwiększa udźwig o 35 funtów.}
+perkGrus {Noszenie ciężkich rzeczy wymaga mocnych pleców, ty szczęśliwie takowy posiadasz - Udźwig zostaje zwiększony o 35 funtów.}
 Tireless {Niezmordowanie}
 perkTireless {Szybkość regeneracji energii zwiększa się o 15%.}
 HardHitter {Ciężka ręka}
@@ -17,7 +17,7 @@ perkHardHitter {Ciężkie ataki bronią ciężką zadają o 15% więcej obraże�
 BladeDancer {Taniec z szablami}
 perkBladeDancer {Atak grupowy zakrzywioną bronią zadaje o 30% więcej obrażeń.}
 Sliding {Nieodparty cios}
-perkSliding {Cięcie lub szybki atak lekką bronią może przebić blok z 20% szansą.}
+perkSliding {Gdy wróg zasłania się przed tobą swym ostrzem, ty wiesz jak trzeba uderzyć by zrobić krzywde - Cięcie lub szybki atak lekką bronią może przebić blok z 20% szansą.}
 Gunman {Muszkieter}
 perkGunman
 {
@@ -26,21 +26,21 @@ Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBa
  Oficerowie mogą używać $key(descriptor_TwoHanded|ItemsDescriptors.txt) tylko wtedy, gdy zostanie to im wyraźnie polecone.
 }
 GunProfessional {Strzelec}
-perkGunProfessional {Zwiększa obrażenia i szybkość przeładowania broni palnej o 9%. Odblokowuje możliwość używania dwuręcznej broni palnej wielostrzałowej.}
+perkGunProfessional {Zwiększa obrażenia i szybkość przeładowania broni palnej o $percent($perkBaseValue(GunProfessional|1)). Odblokowuje możliwość używania dwuręcznej broni palnej wielostrzałowej.}
 IronWill {Żelazna wola}
-perkIronWill {Pozwala przetrwać śmiertelną ranę raz na 3 minuty.}
-SharedExperience {Bystry Uczeń}
-perkSharedExperience {Przyspiesza rozwój umiejętności o 5%.}
+perkIronWill {Czasami wiara w siebie samego potrafi przenosić góry - Pozwala przetrwać śmiertelną ranę raz na 3 minuty.}
+SharedExperience {Bystry uczeń}
+perkSharedExperience {Przyspiesza rozwój umiejętności o 5%, co odpowiada dodatkowemu punktowi Intelektu.}
 Medic {Zdrowe nawyki}
 perkMedic {Zwiększa zdrowie o 25 punktów. Podwaja pasywne leczenie, gdy zdrowie spadnie poniżej połowy maksimum.}
 HPPlus {Rosnące zdrowie}
-perkHPPlus {Zwiększa zapas HP postaci o $perkBaseValue(HPPlus|1) za każdy nowy poziom rangi. Perk działa retroaktywnie.}
+perkHPPlus {Zwiększa zdrowie postaci o $perkBaseValue(HPPlus|1) za każdy nowy poziom rangi. Perk działa retroaktywnie.}
 EnergyPlus {Rosnąca energia}
-perkEnergyPlus {Zwiększa zapas energii postaci o 1 za każdy nowy rang. Działa wstecznie.}
+perkEnergyPlus {Zwiększa zapas energii postaci o 1 za każdy nowy rang. Działa retroaktywnie.}
 ByWorker {Utalentowany}
 perkByWorker {Postać może zajmować jednocześnie dwa stanowiska oficerskie}
 perkByWorkerShort {Postać może pełnić jednocześnie dwie funkcje oficerskie}
-ByWorker2 {Genius}
+ByWorker2 {Geniusz}
 perkByWorker2 {Postać może pełnić jednocześnie do trzech funkcji oficerskich.}
 perkByWorker2Short {Postać może pełnić trzy stanowiska oficerskie jednocześnie}
 Trustworthy {Godny zaufania}
@@ -75,7 +75,8 @@ perkLongRangeGrappling {Dystans abordażu zwiększa się o 15%.}
 MusketsShoot {Salwa muszkietowa}
 perkMusketsShoot
 {
-Salwa z muszkietów oddana przed abordażem.
+Salwa z muszkietów zostaje oddana przed abordażem.
+Sojuszniczy muszkieteczy pojawiają się podczas abordażu.
 Liczba ofiar zależy od klasy statku i liczby Gwardzistów.
 }
 GrapplingProfessional {Doświadczony bosman}
@@ -103,38 +104,38 @@ Na widok bandery Postrachu Mórz nawet najodważniejsi awanturnicy i banici nie 
 ~
 Umiejętność dostępna tylko dla gracza; wymaga rangi $attr($context.rank).
 }
-FlagPir {Jolly Roger}
+FlagPir {Wesoły Roger}
 perkFlagPir
 {
-Możliwość zmiany flagi na Jolly Roger.
+Możliwość zmiany flagi na Wesołego Rogera.
 ~
 Umiejętność dostępna tylko dla gracza.
 }
 FlagEng {Flaga Anglii}
 perkFlagEng
 {
-Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
+Możliwość zmiany flagi na angielską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
 ~
 Umiejętność dostępna tylko dla gracza
 }
 FlagFra {Flaga Francji}
 perkFlagFra
 {
-Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
+Możliwość zmiany flagi na francuską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
 ~
 Umiejętność dostępna tylko dla gracza
 }
 FlagSpa {Flaga Hiszpanii}
 perkFlagSpa
 {
-Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
+Możliwość zmiany flagi na hiszpańską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
 ~
 Umiejętność dostępna tylko dla gracza
 }
 FlagHol {Flaga Niderlandów}
 perkFlagHol
 {
-Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
+Możliwość zmiany flagi na holenderską. Szansa wykrycia zależy od Składania, klasy i liczebności twojej floty, liczebności floty wroga oraz poziomu Zagrożenia.
 ~
 Umiejętność dostępna tylko dla gracza
 }
@@ -228,7 +229,7 @@ perkPowderFeel {Ilość amunicji wytwarzanej dzięki Alchemii wzrasta o 15%.}
 Drill {Musztra}
 perkDrill {Szybkość ruchu z muszkietami i podczas celowania zwiększona o 18%. Odblokowuje zaawansowane postawy strzeleckie.}
 LeadRain {Ołowiany deszcz}
-perkLeadRain {Kartacz zadaje o 5% więcej obrażeń za każdego trafionego wroga.}
+perkLeadRain {Śrut zadaje o 5% więcej obrażeń za każdego trafionego wroga.}
 ShootToKill {Strzelać, by zabić}
 perkShootToKill {Trafienie wroga bronią palną spowalnia go, zmniejszając jego szybkość ruchu o 25%. Czas trwania: 5 sekund.}
 Muscles {Góra mięśni}
@@ -242,7 +243,7 @@ perkCunningStrike {Broń Lekka ma o 3% większą szansę na trafienie krytyczne.
 Heartbreaker {Łamacz serc}
 perkHeartbreaker {Szybkie ataki prostą długą bronią zadają 10% więcej obrażeń i są o 3% szybsze.}
 Dodgy {Szczęście}
-perkDodgy {Sprintowe pchnięcie jest o 30% silniejsze i zużywa mniej energii.}
+perkDodgy {Szybki atak jest o 30% silniejszy i zużywa mniej energii.}
 Exhaustion {Wyczerpanie}
 perkExhaustion {Parowanie Krótką bronią wyczerpuje 20% więcej energii. Czas Ogłuszenia przeciwnika wydłużony o 10%.}
 Reaper {Żniwiarz}
@@ -263,20 +264,20 @@ DarkHorse {Czarny koń}
 perkDarkHorse {Każdy wyposażony zwyczajny amulet i artefakt zwiększa zdrowie i energię o 2,5%.}
 Master {Mistrz}
 perkMaster {Każdy wytworzony przedmiot wymagający narzędzi zwiększa zadawane obrażenia o 0,1%.}
-Quiet {Lekki Krok}
+Quiet {Lekki krok}
 perkQuiet {Nie można cię wykryć podczas kradzieży.}
 Looting {Dokładne przeszukanie}
 perkLooting {Po zakończeniu abordażu marynarze automatycznie przeszukują pokład i dostarczają ci cały łup.}
 Collection {Ciekawostka}
 perkCollection {Każdy egzotyczny przedmiot na statku przynosi 1000 peso za dzień postoju w neutralnym porcie.}
-Tiefit {Dopasow.}
+Tiefit {Dopasowanie}
 perkTiefit {Premia do umiejętności z przedmiotów zwyczajnych i ozdobnych zwiększona o 3.}
 Investor {Inwestor}
 perkInvestor {Oprocentowanie depozytu zwiększone o 1%.}
 Gossip {W centrum uwagi}
 perkGossip {Premia do Siły Floty z egzotycznych przedmiotów zwiększona o 5%.}
 Captain {Kapitan}
-perkCaptain {Postać może dowodzić statkiem o randze 4 i wyższej w składzie eskadry. Nie trzeba być geniuszem, by sterować luggerem lub slupem, ale do poważnego statku sama śmiałość nie wystarczy.}
+perkCaptain {Postać może dowodzić statkiem o randze 4 i wyższej. Nie trzeba być geniuszem, by sterować luggerem lub slupem, ale do poważnego statku sama śmiałość nie wystarczy.}
 Chance {Wszystko albo nic}
 perkChance {Jednostrzałowa broń palna zadaje 15% więcej obrażeń przy trafieniach krytycznych. Szansa na krytyk jednoręcznej broni palnej zwiększona o 2%.}
 Bayonet {Szarża z bagnetem}
@@ -303,9 +304,9 @@ Mule {Percheron}
 perkMule {Trening się opłaca – ciężka broń i zbroja spowalniają cię o 50% mniej.}
 BeneathWaterline {Pod linią wodną}
 perkBeneathWaterline {Przy trafieniu w statek istnieje szansa przebicia poniżej linii wodnej, co zalewa i spowalnia cel do czasu naprawy uszkodzenia.}
-CoordinatedBoarding {Wspólne abordaż}
+CoordinatedBoarding {Wspólny abordaż}
 perkCoordinatedBoarding {Pozwala okrętowi z floty dołączyć do abordażu prowadzonego przez własnego kapitana, jeśli jest wystarczająco blisko.}
-Involvement {Ruszkownik}
+Involvement {Przykład odwagi}
 perkInvolvement {Bosman wychodzi na pokład podczas abordażu i dołącza do walki po twojej stronie. Zastępuje jednego z marynarzy i nie może zginąć.}
 BruteForce {Brutalna siła}
 perkBruteForce {Ciężkozbrojni żołnierze z toporami i zbrojami zastępują część zwykłych marynarzy podczas abordażu.}

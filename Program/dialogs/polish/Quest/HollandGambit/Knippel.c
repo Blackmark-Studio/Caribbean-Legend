@@ -26,7 +26,7 @@ void ProcessDialogEvent()
 		//ветка на взятие 2 варианта прохождения - за Англию
 		if(CheckAttribute(pchar, "questTemp.HWIC.CanTake") && !CheckAttribute(pchar, "questTemp.HWIC.CanTake.Eng") && !CheckAttribute(npchar, "quest.HWICTake") && !CheckAttribute(pchar, "questTemp.HWIC.Holl") && !CheckAttribute(pchar, "questTemp.HWIC.Self"))
 		{
-			dialog.text = "Ahoy, kamracie, łańcuchowy strzał w moją rzyć! Co cię tu sprowadza?";
+			dialog.text = "Ahoj, kamracie, łańcuchówką w moją rzyć! Co cię tu sprowadza?";
 			link.l1 = "Łańcuchowe kule twoje... co? A, nieważne, chciałem tylko się przywitać.";
 			link.l1.go = "exit";
 			link.l2 = "Witaj, panie Knippel. Ha, rozumiem, dlaczego nazywają cię Knippel. Tak czy inaczej, słyszałem plotki, że kiedyś służyłeś w angielskiej flocie. Mam wspaniały statek i wykwalifikowaną załogę. Chciałbym zaoferować siebie i mój statek na służbę angielskiej Koronie... eee... Wspólnocie. Czy możesz mi dać jakieś rady lub polecić kogoś, a może pomóc mi w tej sprawie?";
@@ -38,13 +38,13 @@ void ProcessDialogEvent()
 		{
 			if (pchar.questTemp.HWIC.Holl == "toKnippel")
 			{
-				dialog.text = "Ahoymatey, łańcuchowa kula moja dupa! Co cię tu sprowadza?";
+				dialog.text = "Ahoj, kamracie, łańcuchówką w moją rzyć! Co cię tu sprowadza?";
 				link.l1 = "Witaj, Panie Knippel. Ha, widzę, dlaczego nazywają cię Knippel. Krążą plotki, że kiedyś służyłeś w angielskiej marynarce wojennej, dlatego chcę cię prosić o pomoc...";
 				link.l1.go = "Dominica";
 				DelLandQuestMark(npchar);
 				break;
 			}
-			dialog.text = "Łańcuchowy strzał w moje cztery litery! Czego chcesz, kumplu?";
+			dialog.text = "Łańcuchówką w moją rzyć! Czego chcesz, kumplu?";
 			link.l1 = "Nie, to nic. Wychodzę.";
 			link.l1.go = "exit";
 			break;
@@ -54,7 +54,7 @@ void ProcessDialogEvent()
 		{
 			if (pchar.questTemp.HWIC.Eng == "TakeHollConvoy")
 			{
-				dialog.text = "Ahoy kapitanie, słyszałem plotki o przechwyceniu srebrnego konwoju...";
+				dialog.text = "Ahoj kapitanie, słyszałem plotki o przechwyceniu srebrnego konwoju...";
 				link.l1 = "Jesteś dobrze poinformowany, panie Knippel.";
 				link.l1.go = "HollConvoy_Check";
 				DelLandQuestMark(npchar);
@@ -81,7 +81,7 @@ void ProcessDialogEvent()
 			link.l1.go = "exit";
 		break;
 		}
-			dialog.text = "Ahoy, kamracie, łańcuchowy strzał, psiakrew! Co cię tu przygnało?";
+			dialog.text = "Ahoj, kamracie, łańcuchowy strzał, psiakrew! Co cię tu przygnało?";
 			link.l1 = "Cześć, tylko wpadłem na chwilę.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "First time";
@@ -89,8 +89,8 @@ void ProcessDialogEvent()
 
 //-------------------------------------------за Голландию--------------------------------------------------	
 		case "Dominica":
-			dialog.text = "Ahoy, toż to prawda? A jak stary marynarz, co dawno kotwicę zarzucił, może ci pomóc, kamracie?";
-			link.l1 = "Widzisz... Jestem tylko zwykłym kapitanem i odbywam regularne rejsy między Martyniką a Curaçao. Tak więc dwa razy zostałem zaatakowany przez statek-widmo niedaleko Martyniki... Ale wiesz co, to nie jest Fata Morgana ani Latający Holender. Udało mi się poszarpać jej żagle zwykłymi kulami armatnimi!";
+			dialog.text = "Ahoj, toż to prawda? A jak stary marynarz, co dawno kotwicę zarzucił, może ci pomóc, kamracie?";
+			link.l1 = "Widzisz... Jestem tylko zwykłym kapitanem i odbywam regularne rejsy między Martyniką a Kurakao. Tak więc dwa razy zostałem zaatakowany przez 'statek-widmo' niedaleko Martyniki... Ale wiesz co, to nie jest 'Miraż' ani 'Latający Holender'. Udało mi się poszarpać jego żagle zwykłymi kulami armatnimi!";
 			link.l1.go = "Dominica_1";			
 		break;
 		
@@ -102,7 +102,7 @@ void ProcessDialogEvent()
 		
 		case "Dominica_2":
 			dialog.text = "Niech mnie kule biją, kapitanie...";
-			link.l1 = "Mathias Beck, gubernator Curacao, po prostu zlekceważył moje skargi. Powiedział, że opowieści o statku widmo to bzdury, a moi strażnicy byli pijani grogiem. Gubernator Martyniki obiecał wysłać tam patrol, ale jego oczy mówiły mi, że nie będzie się tym przejmował. Nie mogę wrócić na Martynikę, dopóki ten przeklęty pirat 'widmo' krąży w pobliżu. Mój statek jest mały, podobnie jak moja załoga, jest prawdopodobne, że nie przeżyjemy trzeciego spotkania z nim...";
+			link.l1 = "Mathias Beck, gubernator Kurakao, po prostu zlekceważył moje skargi. Powiedział, że opowieści o statku widmo to bzdury, a moi marynarze byli pijani grogiem. Gubernator Martyniki obiecał wysłać tam patrol, ale jego oczy mówiły mi, że nie będzie się tym przejmował. Nie mogę wrócić na Martynikę, dopóki ten przeklęty pirat 'widmo' krąży w pobliżu. Mój statek jest mały, podobnie jak moja załoga, jest prawdopodobne, że nie przeżyjemy trzeciego spotkania z nim...";
 			link.l1.go = "Dominica_3";			
 		break;
 		
@@ -113,7 +113,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Dominica_4":
-			dialog.text = "Między Barbados a Martyniką? Ya har! Tłusta i bogata trasa handlowa. To brzmi dokładnie jak coś, co zrobiłby ten szczur lądowy.";
+			dialog.text = "Między Barbados a Martyniką? Arrr! Tłusta i bogata trasa handlowa. To brzmi dokładnie jak coś, co zrobiłby ten szczur lądowy.";
 			link.l1 = "Nie jestem bogaty ani tłusty, i nie mam pieniędzy, by przekupić kapitana marynarki dla eskorty wojskowej. Ale jeśli Sir Fleetwood już poluje na tego szczura pokładowego, mógłbyś mu powiedzieć, gdzie może znaleźć tego 'Latającego Holendra'?";
 			link.l1.go = "Dominica_5";			
 		break;
@@ -166,7 +166,7 @@ void ProcessDialogEvent()
 			{
 				notification("Skill Check Passed", SKILL_SAILING);
 			}
-			dialog.text = "Ahoy, jesteś tu w samą porę, kapitanie, łańcuchowa kula w moją rufę! Richard nie wiedział, na kogo może liczyć w tej ryzykownej sprawie, nawet rozważał jej odrzucenie... Więc dzisiaj ptaszki możliwości śpiewają słodko w twoje uszy. Jeśli spełnisz nasze standardy, polecę cię pewnemu bardzo ważnemu człowiekowi. Masz wystarczająco śrutu w portkach, żeby sobie z tym poradzić?";
+			dialog.text = "Ahoj, jesteś tu w samą porę, kapitanie, łańcuchowa kula w moją rufę! Richard nie wiedział, na kogo może liczyć w tej ryzykownej sprawie, nawet rozważał jej odrzucenie... Więc dzisiaj ptaszki możliwości śpiewają słodko w twoje uszy. Jeśli spełnisz nasze standardy, polecę cię pewnemu bardzo ważnemu człowiekowi. Masz wystarczająco śrutu w portkach, żeby sobie z tym poradzić?";
 			link.l1 = "Jestem nabity kartaczami, panie Knippel.";
 			link.l1.go = "Knippel_task";
 		break;
@@ -178,14 +178,14 @@ void ProcessDialogEvent()
 			DelMapQuestMarkCity("Bridgetown");
 			DelMapQuestMarkCity("Villemstad");
 			DelMapQuestMarkCity("SentJons");
-			dialog.text = "Ar har! Widzę, że twój drąg jest gotowy, kapitanie! Wkrótce poleci iskra! Teraz słuchaj uważnie. Srebrna flota Holenderskiej Kompanii Zachodnioindyjskiej opuściła Willemstad na Curacao dzień lub dwa temu. Płynie do Philipsburg. Tym razem w flocie jest tylko kilka statków. Jeden Galeon z srebrem w ładowni oraz dwa eskortowce. Przechwyć srebrną flotę, zdobądź Galeon z ładunkiem srebra i doprowadź go do Antigui. Możesz jednak zatopić eskorty, są jednorazowe. Traf ich w wątroby, yar!";
+			dialog.text = "Arrrr! Widzę, że twój drąg jest gotowy, kapitanie! Wkrótce poleci iskra! Teraz słuchaj uważnie. Srebrna flota Holenderskiej Kompanii Zachodnioindyjskiej opuściła Willemstad na Kurakao dzień lub dwa temu. Płynie do Philipsburg. Tym razem w flocie jest tylko kilka statków. Jeden Galeon z srebrem w ładowni oraz dwa eskortowce. Przechwyć srebrną flotę, zdobądź Galeon z ładunkiem srebra i doprowadź go do Antigui. Możesz jednak zatopić eskorty, są jednorazowe. Traf ich w wątroby, yarr!";
 			link.l1 = "Ich dni są policzone.";
 			link.l1.go = "Knippel_task_1";
 			DelLandQuestMark(npchar);
 		break;
 		
 		case "Knippel_task_1":
-			dialog.text = "Mała rada, kapitanie. Szlak handlowy z Curacao do Sint Maarten leży niedaleko brzegów St. Christopher. Radziłbym przygotować tam zasadzkę. Przygotuj siebie i swój statek dobrze do tej potyczki. Zadzieranie z Kompanią Zachodnioindyjską to nie spacer po parku z piękną dziewczyną.";
+			dialog.text = "Mała rada, kapitanie. Szlak handlowy z Kurakao do Sint Maarten leży niedaleko brzegów Św. Krzysztofa. Radziłbym przygotować tam zasadzkę. Przygotuj siebie i swój statek dobrze do tej potyczki. Zadzieranie z Kompanią Zachodnioindyjską to nie spacer po parku z piękną dziewczyną.";
 			link.l1 = "Zdaję sobie sprawę, w co się pakuję, ale doceniam twoją szczerość, panie Knippel. Wrócę z holenderskim srebrem.";
 			link.l1.go = "Knippel_task_2";			
 		break;
@@ -260,17 +260,17 @@ void ProcessDialogEvent()
 			AddQuestRecord("Holl_Gambit", "2-4");
 			SetTimerFunction("EnglandGambit_2_ZadanieStart", 0, 0, 1);
 			pchar.questTemp.HWIC.Eng = "Wait";
-			AddSimpleRumourCity("They say that you captured a Dutch ship filled with silver. Well done! You are a valiant sailor, captain! Godspeed!", "SentJons", 10, 3, "");
+			AddSimpleRumourCity("Mówią, że zdobyłeś holenderski statek pełen srebra. Brawo! Jesteś dzielnym żeglarzem, kapitanie! Powodzenia!", "SentJons", 10, 3, "");
 		break;
 		
 		case "Fleetwood_house":
-			dialog.text = "Zadaję sobie to samo pytanie... Jakiś drań rzucił pieprz w oczy kapitana Fleetwooda i dźgnął go w pierś, zanim Richard zdołał chwycić za ostrze. Morderca liczył, że jednym pchnięciem zakończy kapitana, bo nie miał czasu na kolejne, ale nie udało mu się. Kapitan Fleetwood zawsze nosi kirys pod płaszczem\nTen plugawy szumowina, łańcuchowy strzał wątrobę jego załatwił, zdołał uciec i zniknąć. Wygląda na to, że ma przyjaciół w mieście. Jedyny szczegół, który kapitan pamięta, to że zabójca ma tylko jedno oko. To nam jednak niewiele pomoże, bo ostatnio na dokach krąży sporo takich Cyklopów\nRichard stracił dużo krwi, a pieprz strasznie podrażnił mu oczy, przez co teraz jest prawie ślepy...";
+			dialog.text = "Zadaję sobie to samo pytanie... Jakiś drań rzucił pieprz w oczy kapitana Fleetwooda i dźgnął go w pierś, zanim Richard zdołał chwycić za ostrze. Morderca liczył, że jednym pchnięciem zakończy kapitana, bo nie miał czasu na kolejne, ale nie udało mu się. Kapitan Fleetwood zawsze nosi kirys pod płaszczem\nTen plugawiec, łańcuchowy strzał wątrobę jego załatwił, zdołał uciec i zniknąć. Wygląda na to, że ma przyjaciół w mieście. Jedyny szczegół, który kapitan pamięta, to że zabójca ma tylko jedno oko. To nam jednak niewiele pomoże, bo ostatnio na dokach krąży sporo takich Cyklopów\nRichard stracił dużo krwi, a pieprz strasznie podrażnił mu oczy, przez co teraz jest prawie ślepy...";
 			link.l1 = "Pieprz mielony? To kosztowny sposób, by kogoś oślepić. Fleetwood musiał naprawdę kogoś wkurzyć. Przykro mi z powodu twojego kapitana. Czy poszukiwania napastnika przyniosły jakieś rezultaty?";
 			link.l1.go = "Fleetwood_house_1";
 		break;
 		
 		case "Fleetwood_house_1":
-			dialog.text = "Marines Cap'na Fleetwooda przeszukali całe miasto i okoliczne zatoki, ale nic nie znaleźli, niech ich kule zeżrą! Jeśli nie znaleźliśmy go zaraz po ataku, to teraz nie ma co marzyć o odnalezieniu tego drania. Cap'n Fleetwood ma wielu wrogów... Ale, kapitanie, mój dowódca chce cię zobaczyć mimo tego wypadku. Odpoczywa teraz w swoim domu, więc chodźmy do niego. Podążaj za mną!";
+			dialog.text = "Marines Kapitana Fleetwooda przeszukali całe miasto i okoliczne zatoki, ale nic nie znaleźli, niech ich kule zeżrą! Jeśli nie znaleźliśmy go zaraz po ataku, to teraz nie ma co marzyć o odnalezieniu tego drania. Kapitan Fleetwood ma wielu wrogów... Ale, kapitanie, mój dowódca chce cię zobaczyć mimo tego wypadku. Odpoczywa teraz w swoim domu, więc chodźmy do niego. Podążaj za mną!";
 			link.l1 = "Prowadź, panie Knippel.";
 			link.l1.go = "Fleetwood_house_2";
 		break;
@@ -323,11 +323,11 @@ void ProcessDialogEvent()
 			NextDiag.CurrentNode = NextDiag.TempNode;
 			DialogExit();
 			SetFunctionTimerCondition("GotoBridgetownOver", 0, 0, 30, false);//на все дела - 1 месяц
-			AddSimpleRumourCity("They say that Sir Richard Fleetwood himself is indebted in you. You are a very important man in our town, sir", "SentJons", 10, 3, "");
+			AddSimpleRumourCity("Mówią, że sam sir Richard Fleetwood jest panu wdzięczny. Jest pan bardzo ważną osobą w naszym mieście, panie.", "SentJons", 10, 3, "");
 		break;
 		
 		case "hired":
-			dialog.text = "Ahoy kapitanie! Potrzebujesz czegoś?";
+			dialog.text = "Ahoj kapitanie! Potrzebujesz czegoś?";
 			link.l1 = "Nie, nic.";
 			link.l1.go = "exit";
 			NextDiag.TempNode = "hired";
@@ -337,7 +337,7 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\hambit\Charlie Knippel-07.wav");
 			if (pchar.questTemp.HWIC.Eng == "MirageFail")
 			{
-				dialog.text = "Jesteś kompletnym głupcem, kamracie, łańcuch kul moją dupę! Nie udało ci się wykonać elementarnego zadania - przechwycić 'Mirage' bez utraty 'Valkyrie'\nNasza załoga nie będzie już służyć pod twoim dowództwem. Jesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on lubi idiotów tak mało, jak my.";
+				dialog.text = "Jesteś kompletnym głupcem, kamracie, łańcuch kul w moją dupę! Nie udało ci się wykonać elementarnego zadania - przechwycić 'Miraż' bez utraty 'Walkirii'\nNasza załoga nie będzie już służyć pod twoim dowództwem. Jesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on lubi idiotów tak mało, jak my.";
 				link.l1 = "Pieprz się ty i twój pan!";
 				link.l1.go = "exit";
 			}
@@ -349,13 +349,13 @@ void ProcessDialogEvent()
 			}
 			if (pchar.questTemp.HWIC.Eng == "VanBergFailInWorld")
 			{
-				dialog.text = "Jesteś kompletnym idiotą, kumplu, łańcuchowy strzał w moją dupę! Kazano ci grać samotnego kupca na 'Valkyrie', a co zrobiłeś? Przestraszyłeś pirata swoją flotyllą!\nJesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on nie lubi idiotów tak samo jak my.";
+				dialog.text = "Jesteś kompletnym idiotą, kumplu, łańcuchowy strzał w moją dupę! Kazano ci grać samotnego kupca na 'Walkirii', a co zrobiłeś? Przestraszyłeś pirata swoją flotyllą!\nJesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on nie lubi idiotów tak samo jak my.";
 				link.l1 = "Pierdolisz ty i twój pan!";
 				link.l1.go = "exit";
 			}
 			if (pchar.questTemp.HWIC.Eng == "MirageTake")
 			{
-				dialog.text = "Ty kompletny idioto, kamracie, łańcuchowa kula w moją dupę! Czy zdecydowałeś się marnować nasz czas na cokolwiek innego niż schwytanie 'Mirage' i żeglowanie do Antigui?\nNasza załoga nie będzie ci dłużej służyć. Jesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on nie lubi idiotów tak samo jak my.";
+				dialog.text = "Ty kompletny idioto, kamracie, łańcuchowa kula w moją dupę! Czy zdecydowałeś się marnować nasz czas na cokolwiek innego niż schwytanie 'Miraż' i żeglowanie do Antigui?\nNasza załoga nie będzie ci dłużej służyć. Jesteśmy pewni, że Sir Fleetwood zatwierdzi naszą decyzję, on nie lubi idiotów tak samo jak my.";
 			link.l1 = "Pierdolisz się ty i twój pan!";
 			link.l1.go = "exit";
 			}
@@ -430,10 +430,10 @@ void ProcessDialogEvent()
 		break;
 		
 		case "OnCuracao_4":
-			dialog.text = "Czytałeś to, kapitanie? Będę szczery. Wstyd mi za kapitana Fleetwooda i za to, co zrobił, łańcuchową kulą... ach, do diabła z tym. Rodenburg był wściekły, gdy dowiedział się o romansie Abigail z Richardem. Patrole piesze przeszukują Curaçao, a wojskowe statki Kompanii patrolują lokalne wody. Musimy się stąd wynieść, do diabła.\n Kapitanie, potrzebujesz artylerzysty? Nie potrzebuję luksusu - tylko normalnych racji morskich regularnie. Nie jestem dobry w szermierce, za stary na to, ale mogę strącić topgallanty z kupieckiego statku z tysiąca kroków.";
-			link.l1 = "No cholera, chciałbym zobaczyć, jak to zrobisz, panie Knippel. Witaj na pokładzie!";
+			dialog.text = "Czytałeś to, kapitanie? Będę szczery. Wstyd mi za kapitana Fleetwooda i za to, co zrobił, łańcuchową kulą... ach, do diabła z tym. Rodenburg był wściekły, gdy dowiedział się o romansie Abigail z Richardem. Patrole piesze przeszukują Kurakao, a wojskowe statki Kompanii patrolują lokalne wody. Musimy się stąd wynieść, do diabła.\n Kapitanie, potrzebujesz artylerzysty? Nie potrzebuję luksusu - tylko normalnych racji morskich. Nie jestem dobry w szermierce, za stary na to, ale mogę strącić topgallanty z kupieckiego statku z tysiąca kroków.";
+			link.l1 = "No cholera, chciałbym zobaczyć, jak to robisz, panie Knippel. Witaj na pokładzie!";
 			link.l1.go = "Knippel_hire";
-			link.l2 = "Żałuję, że w ogóle pomogłem wam, angielskim łajdakom. Teraz nie wiem, jak wyjść z tego bałaganu. Idźcie swoją drogą, mam dość niespodzianek.";
+			link.l2 = "Żałuję, że w ogóle pomogłem wam, angielskim łajdakom. Teraz nie wiem, jak wyjść z tego bałaganu. Idź swoją drogą, mam dość niespodzianek.";
 			link.l2.go = "Knippel_exit";
 			DelLandQuestMark(npchar);
 		break;
@@ -476,7 +476,7 @@ void ProcessDialogEvent()
 //------------------------------------------------против всех-----------------------------------------------
 		case "Knippel_abordage":
 			dialog.text = "Stój, ty szczurze ładowni! Czemu zaatakowałeś ten spokojny holenderski statek? Nie mam żadnych cennych towarów ani złota, kulą łańcuchową w moją rzyć!";
-			link.l1 = "Holenderski statek? Haha! Nie rozśmieszaj mnie, 'Holendrze'. Zaatakowałem twój brygantynę, aby cię pojmać, drogi Charlie. Witamy w moim ładowni. Porozmawiamy o tym, dokąd płynąłeś i dlaczego...";
+			link.l1 = "Holenderski statek? Haha! Nie rozśmieszaj mnie, 'Holendrze'. Zaatakowałem twoją brygantynę, aby cię pojmać, drogi Charlie. Witamy w mojej ładowni. Porozmawiamy o tym, dokąd płynąłeś i dlaczego...";
 			link.l1.go = "Knippel_abordage_1";	
 		break;
 		
@@ -525,7 +525,7 @@ void ProcessDialogEvent()
 			dialog.text = "Ahoj kapitanie, łańcuchowy pocisk w moją dupę!";
 			if (CheckAttribute(pchar, "questTemp.Dolly_Tieyasal") && !CheckAttribute(npchar, "quest.Tieyasal"))
 			{
-				Link.l4 = "Panie Knippel, udaję się do starożytnego, zaginionego indiańskiego miasta Tayasal. Będę szczery, to będzie naprawdę niebezpieczna wyprawa i również niezwykła - musimy tam dotrzeć przez ten...magiczny idol. Czy dołączysz do mnie?";
+				Link.l4 = "Panie Knippel, udaję się do starożytnego, zaginionego indiańskiego miasta Tayasal. Będę szczery, to będzie naprawdę niebezpieczna wyprawa i również niezwykła - musimy tam dotrzeć przez ten... magiczny idol. Czy dołączysz do mnie?";
 				Link.l4.go = "tieyasal";
 			}
 			
@@ -551,14 +551,14 @@ void ProcessDialogEvent()
 			}
 			Link.l1 = "Słuchaj moich rozkazów!";
             Link.l1.go = "stay_follow";
-			link.l2 = "To nic. Zwolniony!";
+			link.l2 = "Nieważne. Spocznij!";
 			link.l2.go = "exit";
 			NextDiag.TempNode = "Knippel_officer";
 		break;
 		
 		/////////////////////////// ответы для казначея ///////////////////////////////////
 		case "QMASTER_1":
-			dialog.Text = "Niech mnie... Działa są w porządku, wymieniamy te, które wybuchają, i trzymamy proch suchym i bezpiecznym. Jakiego raportu się spodziewałeś, kapitanie? Jestem starym artylerzystą, nie kwatermistrzem. Łańcuchowe strzały, psiakrew, jestem najlepszym artylerzystą na Karaibach, pamiętaj!";
+			dialog.Text = "Niech mnie... Działa są w porządku, wymieniamy te, które wybuchają, i trzymamy proch sucho i bezpiecznie. Jakiego raportu się spodziewałeś, kapitanie? Jestem starym artylerzystą, nie kwatermistrzem. Łańcuchowe strzały, psiakrew, jestem najlepszym artylerzystą na Karaibach, pamiętaj!";
 			Link.l1 = "Nie ma tu co się kłócić, panie Knippel, znasz się na swoim fachu. Znajdę sobie kwatermistrza, nie martw się.";
 			Link.l1.go = "exit";
 		break;	
@@ -609,7 +609,7 @@ void ProcessDialogEvent()
 			break;
 
 		case "Companion_TaskBoardingYes":
-			dialog.Text = "Zostanie to zrobione.";
+			dialog.Text = "Tak jest!";
 			Link.l1 = "Spocznij.";
 			Link.l1.go = "exit";
 			NPChar.Tasks.CanBoarding = true;
@@ -617,13 +617,13 @@ void ProcessDialogEvent()
 
 		case "Companion_TaskChangeNo":
 			dialog.Text = "Tak jest!";
-			Link.l1 = "Zostanie to zrobione.";
+			Link.l1 = "Spocznij.";
 			Link.l1.go = "exit";
 			NPChar.Tasks.CanChangeShipAfterBoarding = false;
 			break;
 
 		case "Companion_TaskChangeYes":
-			dialog.Text = "To będzie zrobione.";
+			dialog.Text = "Tak jest!";
 			Link.l1 = "Spocznij.";
 			Link.l1.go = "exit";
 			NPChar.Tasks.CanChangeShipAfterBoarding = true;
@@ -683,7 +683,7 @@ void ProcessDialogEvent()
             Pchar.questTemp.HiringOfficerIDX = GetCharacterIndex(Npchar.id);
             AddDialogExitQuestFunction("LandEnc_OfficerStay");
             dialog.Text = "Zmiana usposobienia!";
-            Link.l1 = "Zwolniony.";
+            Link.l1 = "Spocznij.";
             Link.l1.go = "Exit";
             Npchar.chr_ai.tmpl = LAI_TMPL_STAY;
         break;
@@ -691,7 +691,7 @@ void ProcessDialogEvent()
         case "Boal_Follow":
             SetCharacterTask_FollowCharacter(Npchar, PChar);
             dialog.Text = "Nastąpiła zmiana nastawienia!";
-            Link.l1 = "Zwolniony.";
+            Link.l1 = "Spocznij.";
             Link.l1.go = "Exit";
         break;
 	//<-- ----------------------------------- офицерский блок ----------------------------------------

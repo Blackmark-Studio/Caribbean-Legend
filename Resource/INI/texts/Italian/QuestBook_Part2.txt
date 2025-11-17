@@ -239,7 +239,7 @@ Sono uscito vincitore: il carico non arriverà mai a destinazione. Posso tornare
 #TEXT 9
 @<MayorName>, il governatore di @<ColonyName>, mi ha incaricato di trovare e eliminare un pirata senza scrupoli di nome @<sName>. Secondo le mie informazioni, questa canaglia farà razzie sulla sua nave "@<sShipName>" nei pressi di @<sCity> tra @<sDay>. La mia ricompensa sarà di @<sMoney>.
 #TEXT 9-1
-Il lavoro è fatto. Lui e tutto il suo equipaggio sono stati eliminati. Posso tornare за наградой.
+Il lavoro è fatto. Lui e tutto il suo equipaggio sono stati eliminati. Posso tornare per il premio.
 #TEXT 10
 @<MayorName>, il governatore di @<ColonyName>, mi ha incaricato di trovare e consegnare un criminale di nome @<sName>. Da quel che so, l'uomo che cerco sarà a bordo della nave "@<sShipName>", che partirà da @<sCity> il @<sDay1> e farà rotta verso @<sCityA>. Sembra che avrò solo il @<sDay2> per intercettarli. La mia ricompensa è di @<sMoney>.
 #TEXT 10-1
@@ -542,7 +542,7 @@ Accidenti! Non sono riuscito a catturare la brigantina "@<sShipName>". Beh, ora 
 #TEXT 16
 Sono riuscito a inseguire e catturare "@<sShipName>". Ho trovato anche i documenti che mi servivano. Ora posso finalmente tirare un sospiro di sollievo.
 #TEXT 17
-Sono riuscito a inseguire e catturare "@<sShipName>", ma non ho trovato nessун documento a bordo. Forse erano falsi? Devo parlare con l'usuraio.
+Sono riuscito a inseguire e catturare "@<sShipName>", ma non ho trovato nessun documento a bordo. Forse erano falsi? Devo parlare con l'usuraio.
 #TEXT 18
 Devo trovare e catturare il pesante galeone "@<sShipName>" che naviga da @<sAreal> verso Santiago. Devo stare all'erta: trasporta tremila schiavi, un vero tesoro!
 #TEXT 19
@@ -679,7 +679,7 @@ Che sfortuna, sono stato costretto a consegnare il pacco a dei farabutti. Devo v
 #TEXT 12
 Non appena sono uscito dall'ufficio del comandante del porto, sono stato fermato da due uomini mascherati. Sembravano veri mercenari, gente pericolosa e professionale. Ho deciso che era meglio fallire la missione piuttosto che rischiare la vita. Devo tornare dal comandante del porto e spiegargli tutto.
 #TEXT 13
-Non appena uscito dall'ufficio del capitано del porto, mi si è avvicinato un tizio che mi ha proposto di seguirlo in una taverna per parlare del pacco. Ho rifiutato: la cosa non mi piaceva affatto.
+Non appena uscito dall'ufficio del capitаno del porto, mi si è avvicinato un tizio che mi ha proposto di seguirlo in una taverna per parlare del pacco. Ho rifiutato: la cosa non mi piaceva affatto.
 #TEXT 14
 Sono stato attaccato da una fregata proprio al porto; sembra che sia la nave di quel dannato agente che ha cercato di "sistemarmi".
 #TEXT 15
@@ -778,7 +778,7 @@ Il capo del porto di @<sStartCity> mi ha chiesto di intervenire in una rissa poc
 #TEXT 42
 Ho perso troppo tempo a terra: la battaglia è finita senza di me. Missione fallita.
 #TEXT 43
-La battaglia è stata un successo: tutte le navi pirатов уничтожены, у нас нет потерь. Могу возвращаться за наградой.
+La battaglia è stata un successo: Tutte le navi dei pirati sono state distrutte, non abbiamo subito perdite. Posso tornare indietro per ricevere la ricompensa.
 #TEXT 44
 La battaglia è andata bene, ma abbiamo perso una nave mercantile. Devo riferirlo.
 #TEXT 45
@@ -944,7 +944,7 @@ Ha! Ho battuto quel mercante: nel porto di @<sCity> non c'è nessun flauto. Mi f
 #TEXT 3
 Sul serio... Avevo tutte le vele spiegate, eppure quel mercante mi ha battuto; il suo fluyt è già in porto. Devo incontrarlo in taverna.
 #TEXT 4
-Ho ricevuto il mio premio dall'oste. Bene. Chissà, forse ci sono altri mercanti troppo sicурi di sé?
+Ho ricevuto il mio premio dall'oste. Bene. Chissà, forse ci sono altri mercanti troppo sicuri di sé?
 #TEXT 5
 Questa volta ho perso, ma ci saranno sicuramente altri mercanti come lui. E allora vedremo!
 #TEXT 6
@@ -1575,7 +1575,7 @@ Ho cambiato idea e ho deciso di non aiutare la moglie nella sua impresa. Troppo 
 #TEXT 15
 Il mio incontro con il pirata è stato fruttuoso. Il barista e le sue ragazze avranno parecchio da pulire. Ho la chiave di riserva: è ora di andare dalla moglie.
 #TEXT 16
-È fatta. Domani sera vedrò la moglie del governatore e prenderò la mia parte. Eppure, mentre scrivo это, mi sento... strano? Ingenuo? Stupido?
+È fatta. Domani sera vedrò la moglie del governatore e prenderò la mia parte. Eppure, mentre scrivo questo, mi sento... strano? Ingenuo? Stupido?
 #TEXT 17
 Questo non è affatto divertente. Poco fa un sicario ha cercato di uccidermi, e credo persino di sapere chi l'ha mandato. Però, alla fine, mi è andata bene: ho il bottino e ora nella mia ciurma c'è un altro buon combattente. È ora di andare a trovare il... cliente.
 #TEXT 18

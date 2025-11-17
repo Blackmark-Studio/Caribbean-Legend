@@ -36,7 +36,7 @@ void ProcessDialogEvent()
 	{
 		pchar.questTemp.TavernVisit.(NPCCity) = true;
 		pchar.questTemp.TavernVisit.counter = sti(pchar.questTemp.TavernVisit.counter) + 1;
-		notification("Pierwsza wizyta w tawernie " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
+		notification("Pierwsza wizyta w karczmie " + XI_ConvertString(NPCCity + "TavernName"), "Drunk");
 	}	
 	
 	switch(Dialog.CurrentNode)
@@ -605,7 +605,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "hold_genquest2":
-			dialog.text = "Jak mogę nie być pewien, jeśli znam tutaj wszystkich osobiście. To nie pierwszy rok, kiedy prowadzę tutaj tawernę."+"Widziałem ich wszystkich we wszystkich możliwych stanach. Czasami żona przychodziła odebrać swojego męża, czasem wychodzili sami, a czasami musiałem ich wyrzucić. 'Czy jestem pewien?!' Oczywiście, że tak!";
+			dialog.text = "Jak mogę nie być pewien, jeśli znam tutaj wszystkich osobiście. To nie pierwszy rok, kiedy prowadzę tutaj karczme."+"Widziałem ich wszystkich we wszystkich możliwych stanach. Czasami żona przychodziła odebrać swojego męża, czasem wychodzili sami, a czasami musiałem ich wyrzucić. 'Czy jestem pewien?!' Oczywiście, że tak!";
 			link.l1 = "Cóż, dzięki i tak...";	
 			link.l1.go = "exit";
 			pchar.GenQuest.Hold_GenQuest = "prisoner_escaped";
@@ -1798,7 +1798,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "LadyBeth_Room_2":
-			dialog.text = "Obsesja, o to chodzi. Na początku był hojny, dobry facet. Jego marynarze szastali pieniędzmi w tawernach, kupowali prezenty dziewczynom. Prawdziwe święto się zaczynało, gdy 'Lady Beth' zawijała do portu. A teraz? Teraz tylko kupują prowiant i zaciągają ludzi bez zastanowienia. Jakby nie potrzebowali marynarzy, tylko rąk do pracy. Ale może pan sam z nim porozmawiać.";
+			dialog.text = "Obsesja, o to chodzi. Na początku był hojny, dobry facet. Jego marynarze szastali pieniędzmi w tawernach, kupowali prezenty dziewczynom. Prawdziwe święto się zaczynało, gdy 'Panienka Beth' zawijała do portu. A teraz? Teraz tylko kupują prowiant i zaciągają ludzi bez zastanowienia. Jakby nie potrzebowali marynarzy, tylko rąk do pracy. Racze sam z nim porozmawiać.";
 			link.l1 = "Może zajrzę. Dzięki.";
 			link.l1.go = "exit";
 			pchar.questTemp.LadyBeth_TavernRoomDialog = true;

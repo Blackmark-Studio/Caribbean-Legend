@@ -200,10 +200,10 @@ void initNewMainCharacter()//инициализация главного гер�
 		DeleteAttribute(pchar, "StartShip");
 		
 		SetCurrentTime(19, 00);
-		CreateWeatherEnvironment();
 		WeatherParams.Rain 			= false;
 		WeatherParams.Rain.ThisDay 	= false;
 		pchar.questTemp.TimeLock = true;
+		CreateSky(3);
 		
 		SeaCameras_SetShipCameraAy(115.0);
 		

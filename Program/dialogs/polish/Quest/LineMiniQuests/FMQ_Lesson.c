@@ -79,7 +79,7 @@ void ProcessDialogEvent()
 		case "greguar_4":
 			PlaySound("Voice\English\LE\Greguar\Greguar_05.wav");
 			dialog.text = "Cholera te czerwone skóry! Prawie nas mieli! Teraz jestem pewien, że w wiosce zostały tylko kobiety i dzieci. Ruszać się!";
-			link.l1 = "Nie jestem aż tak pewien, że wspomniałeś o muszkietach, nie widziałem ich... Ach, nieważne. Ruszajmy!";
+			link.l1 = "Nie jestem aż tak pewny. Wspomniałeś o muszkietach, a ich nie widziałem... Ach, nieważne. Ruszajmy!";
 			link.l1.go = "exit";
 			AddDialogExitQuestFunction("FMQL_GoToJungle");
 		break;
@@ -151,7 +151,7 @@ void ProcessDialogEvent()
 		
 		case "greguar_15":
 			dialog.text = "Dobrze się spisaliśmy, "+pchar.name+". Teraz musimy tylko sprzedać ładunek bez wzbudzania podejrzeń. Mam solidnego kupca, będzie na nas czekał w zatoce Lamentin o północy. Nie zabieraj żadnych oficerów i unikaj tego miejsca przed spotkaniem, klient jest bardzo nerwowym jegomościem.";
-			link.l1 = "Biznes to biznes. Ładunek musi zostać sprzedany i to bezpiecznie, inaczej mój dług wobec de Poincy jeszcze bardziej wzrośnie. Dobrze, będę tam do północy.";
+			link.l1 = "Biznes to biznes. Ładunek musi zostać sprzedany i to bezpiecznie, inaczej mój dług wobec de Poincy jeszcze bardziej wzrośnie. Dobrze, będę tam o północy.";
 			link.l1.go = "greguar_16";
 		break;
 		
@@ -237,8 +237,8 @@ void ProcessDialogEvent()
 		break;
 		
 		case "greguar_25":
-			dialog.text = "Ahh... Nie jesteś najbystrzejszym uczniem, jakiego miałem. Dobrze... każdy ma swoje!";
-			link.l1 = "... ";
+			dialog.text = "Ahh... Nie jesteś najbystrzejszym uczniem, jakiego miałem. Dobrze... co kto lubi!";
+			link.l1 = "Pożałujesz tego noża w moje plecy!";
 			link.l1.go = "exit";
 			AddDialogExitQuest("FMQL_BattleOnBeach");
 		break;
@@ -257,7 +257,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "prosper_1":
-			dialog.text = "Było głupotą z mojej strony dołączyć do tej ekspedycji, zastanawiam się, czy moja córka jeszcze mnie kiedyś zobaczy. Selina? Cóż, siedzi w domu i marzy o tobie! Młodzież z Martyniki straciła już wszelką nadzieję... Wiesz, nie żałuję już zakupu tego muszkietu. Solidna broń palna. Niezawodna. To również dodatkowy powód, by wziąć udział w kolejnej samobójczej wyprawie, choć teraz jest ona trochę mniej samobójcza, odkąd się pojawiłeś. Ich wioska jest niedaleko, ale nasze problemy dopiero się zaczną.";
+			dialog.text = "Głupotą było z mojej strony dołączać do tej ekspedycji, zastanawiam się, czy moja córka jeszcze mnie kiedyś zobaczy. Selina? Cóż, siedzi w domu i marzy o tobie! Młodzież z Martyniki straciła już wszelką nadzieję... Wiesz, nie żałuję już zakupu tego muszkietu. Solidna broń palna. Niezawodna. To również dodatkowy powód, by wziąć udział w kolejnej samobójczej wyprawie, choć teraz jest ona trochę mniej samobójcza, odkąd się pojawiłeś. Ich wioska jest niedaleko, ale nasze problemy dopiero się zaczną.";
 			link.l1 = "";
 			link.l1.go = "prosper_2";
 		break;
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 		
 		case "prosper_9x":
 			dialog.text = "Żyjemy i jesteśmy w domu! Przysięgam, mam dość przygód... na kilka następnych miesięcy, ha-ha! Powinienem iść do mojej córki, proszę odwiedź nas, "+pchar.name+". I proszę, bądź ostrożny.";
-			link.l1 = "Nie obiecuję niczego, Prosper. Pomyślnych wiatrów!";
+			link.l1 = "Nie obiecuję niczego, Prosper. Pomyślności!";
 			link.l1.go = "prosper_10";
 		break;
 		
@@ -357,21 +357,21 @@ void ProcessDialogEvent()
 			LAi_RemoveCheckMinHP(npchar);
 			PlaySound("Voice\English\pirat_guard_4.wav");
 			dialog.text = "Ostrzegałem cię, kapitanie, żebyś był ostrożny! Miałem podejrzenia co do tego drania.";
-			link.l1 = "Prosper! Dziękuję! Ale jak się o tym dowiedziałeś?";
+			link.l1 = "Prosper?! Dziękuję! Ale jak się o tym dowiedziałeś?";
 			link.l1.go = "prosper_12";
 		break;
 		
 		case "prosper_12":
 			sTemp = "";
-			if (CheckAttribute(pchar, "questTemp.FMQL.PirateDead")) sTemp = "Poor lad, even though he was a pirate.";
-			dialog.text = "Johnny zrobił się zbyt gadatliwy. To ten czerwonoskóry facet, który leży teraz na piasku. Przyszedł do burdelu i próbował poderwać dziewczynę. Odmówili mu obsługi, Johnny wpadł w furię, zaczął krzyczeć, że wkrótce się wzbogaci, kiedy on i jego kumple zabiją jakiegoś kapitana w dżungli. Wiedziałem, co się święci i pobiegłem do twojego oficera, który także zdążył zdobyć złą sławę w mieście."+sTemp+"Jestem ci wiele winien, "+pchar.name+", więc nie musisz mi zbyt mocno dziękować.";
+			if (CheckAttribute(pchar, "questTemp.FMQL.PirateDead")) sTemp = " Szkoda, że zginął. Przynajmniej do końca próbował być ci wierny... ";
+			dialog.text = "Johnny zrobił się zbyt gadatliwy. To ten czerwonoskóry facet, który leży teraz na piasku. Przyszedł do burdelu i próbował poderwać dziewczynę. Odmówili mu obsługi, Johnny wpadł w furię, zaczął krzyczeć, że wkrótce się wzbogaci, kiedy on i jego kumple zabiją jakiegoś kapitana w dżungli. Wiedziałem, co się święci i pobiegłem do twojego oficera, który zdążył sobie wyrobić złą sławe na mieście."+sTemp+"Jestem ci wiele winien, "+pchar.name+", więc nie musisz mi zbyt mocno dziękować.";
 			link.l1 = "I tak, bardzo Ci dziękuję, Prosper! Było tu ciężko... za ciężko. Chcesz dołączyć do mojej załogi? Potrzebuję oficera takiego jak Ty. Trudno znaleźć lojalnych ludzi w dzisiejszych czasach, zwłaszcza strzelców wyborowych.";
 			link.l1.go = "prosper_13";
 		break;
 		
 		case "prosper_13":
 			dialog.text = "Nie, mój przyjacielu. Mam zobowiązania wobec mojej córki. Kazała mi przysiąc, że porzucę moje przygody. To była moja ostatnia. Cholera, co za szkoda, ale kocham moją córkę bardziej niż cokolwiek na świecie. Żegnaj, "+pchar.name+". I... Selina mówi o tobie cały czas. Może kiedyś mógłbyś nas odwiedzić?";
-			link.l1 = "Kto wie, może tak zrobię... Żegnaj, Prosper! Życzę twojej córce, by znalazła dobrego męża... (do siebie) Lekcja nauczona, monsieur Gregoire, lekcja nauczona... każdemu swoje, jak powiedział... Zapamiętam to.";
+			link.l1 = "Kto wie, może tak zrobię... Żegnaj, Prosper! Życzę twojej córce, by znalazła dobrego męża... (do siebie) Lekcja odrobiona, monsieur Gregoire, lekcja odrobiona... co kto lubi, jak powiedział... Zapamiętam to.";
 			link.l1.go = "prosper_14";
 		break;
 		
@@ -427,8 +427,8 @@ void ProcessDialogEvent()
 		case "FMQL_beach":
 			pchar.quest.FMQL_pirate_dead.over = "yes";
 			LAi_RemoveCheckMinHP(npchar);
-			dialog.text = "Tak, kapitanie. Przepiłem żeglowanie nie bez powodu.";
-			link.l1 = "Ty? Jak?!";
+			dialog.text = "Kurwa mać... a ten wieczór wydawał się być taki przyjemny...";
+			link.l1 = "Claude?! Co do cholery!?? Jak mnie znalazłeś?!";
 			link.l1.go = "FMQL_beach_1";
 		break;
 		
@@ -440,7 +440,7 @@ void ProcessDialogEvent()
 		
 		case "FMQL_beach_2":
 			sld = CharacterFromID("FMQL_Prosper");
-			dialog.text = "Nie! Zakochała się! Do diabła, powinienem był stamtąd uciec! Byłem już gotów nawet wyskoczyć przez okno, gdyby nie to, że wtedy pojawił się twój przyjaciel, wrzeszcząc na mnie o tym łajdaku, twoim byłym towarzyszu, który chce cię oszukać i zabić.";
+			dialog.text = "Gorzej! Zakochała się! Do diabła, powinienem był dać dyla i jak najszybciej stamtąd uciec! Byłem już gotów nawet wyskoczyć przez okno, gdyby nie to, że wtedy pojawił się twój przyjaciel. Zaczął na mnie wrzeszczeć o jakimś łajdaku, twoim byłym towarzyszu, który chce cię oszukać i zabić.";
 			if (LAi_GetCharacterHP(sld) > 0)
 			{
 				link.l1 = "Dobra robota, Prosper...";
@@ -448,14 +448,14 @@ void ProcessDialogEvent()
 			}
 			else
 			{
-				link.l1 = "Prosper... tak mi przykro. Zajmę się twoją córką. Lekcja nauczona, monsieur Gregoire... Co tam wtedy powiedziałeś? Każdemu swoje? Powinienem to zapamiętać.";
+				link.l1 = "Prosper... tak mi przykro. Zajmę się twoją córką. Lekcja odrobiona, monsieur Gregoire... Co tam wtedy powiedziałeś? Co kto lubi? Powinienem to zapamiętać.";
 				link.l1.go = "FMQL_beach_3";
 			}
 		break;
 		
 		case "FMQL_beach_3":
-			dialog.text = "Czy wyruszamy, kapitanie?";
-			link.l1 = "Tak. Dzięki za twoją usługę. Trzymaj się z dala od kielicha, a ocalimy cię od tej piękności. Chodźmy.";
+			dialog.text = "Możemy stąd iść, kapitanie?";
+			link.l1 = "Tak. Dzięki za twoją pomoc. Trzymaj się z dala od kielicha, a my ocalimy cię od tej piękności. Chodźmy.";
 			if (CheckAttribute(pchar, "questTemp.FMQL.ProsperDead")) link.l1.go = "FMQL_beach_5";
 			else link.l1.go = "FMQL_beach_4";
 		break;

@@ -389,7 +389,7 @@ Maze {Świątynia Chavinsów}
 Alcove {Sanktuarium}
 Merrimancave {Jaskinia Merrimana}
 River {Brzeg rzeki}
-Jungle Fort {Fort w Dzungli}
+Jungle Fort {Fort w Dżungli}
 Basement {Piwnica}
 Ruins {Ruiny}
 Ulysse {Pokład 'Ulysse'}

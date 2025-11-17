@@ -123,6 +123,12 @@ void ProcessInterfaceControls()
 
 void ProcessExitCancel()
 {
+	if (XI_IsWindowEnable("MAP_WINDOW"))
+	{
+		ExitMapWindow();
+		return;
+	}
+
 	IDoExit(RC_INTERFACE_ANY_EXIT);
 }
 
@@ -2857,6 +2863,7 @@ void ExitMapWindow()
 	XI_WindowShow("MAP_WINDOW", false);
 	XI_WindowDisable("MAP_WINDOW", true);
 	XI_WindowDisable("MAIN_WINDOW", false);
+	XI_WindowDisable("ITEM_WINDOW", false);
 
 	SetFormatedText("MAP_TEXT", "");
 	SetCurrentNode("TABLE_ITEMS");
@@ -2867,7 +2874,8 @@ void ShowMapWindow()
 	XI_WindowShow("MAP_WINDOW", true);
 	XI_WindowDisable("MAP_WINDOW", false);
 	XI_WindowDisable("MAIN_WINDOW", true);
-	
+	XI_WindowDisable("ITEM_WINDOW", true);
+
 	SetCurrentNode("MAP_TEXT");
 }
 

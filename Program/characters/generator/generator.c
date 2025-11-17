@@ -216,6 +216,8 @@ void GEN_BuyPerks(ref chr, bool continueLeveling)
 
 	SetFreePerkPoints(chr, sti(perkPoints.self), "self");
 	SetFreePerkPoints(chr, sti(perkPoints.ship), "ship");
+	SetAttribute(chr, "perks.FreePoints_self_exp", sti(perkPoints.self_left));
+	SetAttribute(chr, "perks.FreePoints_ship_exp", sti(perkPoints.ship_left));
 }
 
 string GEN_GetArchetypeCategory(string mainArchetype, string secondaryArchetype)

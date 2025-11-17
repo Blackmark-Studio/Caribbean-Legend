@@ -141,6 +141,7 @@ void SkipSailorPayment()
 		if (IsEntity(&worldMap) && GetCrewQuantity(mchref) > 0 && !IsCharacterEquippedArtefact(mchref, "totem_02"))
     	{
             MunityOnShip("ShipMunity");
+			ChangeCharacterComplexReputation(pchar,"authority", 25);
         }
 		else
         {

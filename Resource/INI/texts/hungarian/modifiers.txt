@@ -8,3 +8,5 @@ incomingDamageReduction {Damage Protection}
 RangeIncomingDamageReduction {Gunfire Damage Protection}
 Shot_Damage {Gunfire Damage}
 HeadshotDamage {Headshot Damage}
+Grapeshot_Damage {Increased damage when firing grapeshot}
+Bullet_Damage {Increased damage when firing bullets}

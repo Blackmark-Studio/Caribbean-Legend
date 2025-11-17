@@ -471,6 +471,7 @@ void DailyEatCrewUpdateForShip(ref rChar, bool IsCompanionTraveler) // IsCompani
 			{
 				Log_Info(StringFromKey("food_16", rChar.Ship.Name));
 				MunityOnShip("ShipMunity");
+				ChangeCharacterComplexReputation(pchar,"authority", 25);
 			}
 		}
 	}

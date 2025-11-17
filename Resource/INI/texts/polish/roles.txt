@@ -1,4 +1,4 @@
-portman {Mistrz portu}
+portman {Nadzorca Portu}
 drinker_0 {Najsłynniejszy pirat na tych wodach}
 drinker_1 {Mistrz opowieści prawdziwych historii}
 drinker_2 {Emerytowany agent specjalny Escorialu}
@@ -8,16 +8,16 @@ drinker_5 {Wesołek, nieustraszony i prawy}
 drinker_6 {Wspaniały mężczyzna w pełni sił}
 drinker_7 {Szef od drobiazgów}
 drinker_8 {Starszy Pijanego Pokładu}
-drinker_9 {Drugi kuzyn nie byle kogo w GIVK.}
+drinker_9 {Drugi kuzyn nie byle kogo w HKW.}
 pofficer {Kandydat}
 hovernor {Gubernator}
 tavernkeeper {Karczmarz}
 waitress {Kelnerka}
 trader {Kupiec}
-shipyarder {Stoczniowiec}
+shipyarder {Szkutnik}
 priest {Kapłan}
 Ghovernor {Gubernator Generalny}
-Phovernor {Baron}
+Phovernor {Piracki Baron}
 usurer {Bankier}
 poorman {Żebrak}
 gipsy {Cyganka}
@@ -28,12 +28,12 @@ noble {Szlachcic}
 monk {Mnich}
 chaplain {Kapelan}
 potion_merchant {Alchemik}
-veteran_merchant {Kowal żelaza}
-armourer_merchant {Ruszkownik}
+veteran_merchant {Sprzedawca Rupieci}
+armourer_merchant {Sprzedawca Wyposażenia}
 monk_merchant {Sprzedawca Relikwii Świętych}
 indian_merchant {Wróżka}
 lightman_merchant {Latarnik}
-cemeteryman_merchant {Strażnik cmentarza}
+cemeteryman_merchant {Strażnik Cmentarza}
 legend {Legenda}
 soldier_town {Strażnik}
 banditos {Łotr}

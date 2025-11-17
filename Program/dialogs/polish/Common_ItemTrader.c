@@ -168,7 +168,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Wine_Bottles":
-			dialog.text = "Ha! Jestem tylko sprzedawcą detalicznym, nie hurtownikiem. Sprzedawałbym tak dużo butelek przez ponad pół roku - to wino jest rzadkie i drogie, i nie każdy na to stać, wiesz. Nie mam aż tak wielu.";
+			dialog.text = "Ha! Jestem tylko sprzedawcą detalicznym, nie hurtownikiem. Sprzedawałbym tak dużo butelek przez ponad pół roku - to wino jest rzadkie i drogie, i nie każdego na to stać, wiesz. Nie mam aż tak wielu.";
 			link.l1 = "Dobrze, nie masz ich - nie ma problemu. Ale skądś je zdobywasz dla siebie, prawda? Może mógłbyś mi powiedzieć nazwę swojego dostawcy, a ja bym od niego kupił bezpośrednio. Czy może wino dostarczane jest do ciebie z Europy?";
 			link.l1.go = "Wine_Bottles_1";
 		break;
@@ -235,7 +235,7 @@ void ProcessDialogEvent()
 		case "Wine_Repeat1":
 			DeleteAttribute(pchar, "questTemp.Wine.Repeat1");
 			dialog.text = "Co masz na myśli mówiąc to? Wyjaśnij się.";
-			link.l1 = "Oszukałeś mnie, łotrzyku! Właśnie byłem w sklepie, "+pchar.questTemp.Wine.Name+" nigdy nie handluje winem, sam mi to powiedział! Oddaj mi moje pieniądze!";
+			link.l1 = "Oszukałeś mnie, łotrze! Właśnie byłem w sklepie, "+pchar.questTemp.Wine.Name+" nigdy nie handluje winem, sam mi to powiedział! Oddaj mi moje pieniądze!";
 			link.l1.go = "Wine_Repeat1_fail";
 			link.l2 = "Było nieporozumienie... Przyszedłem do sklepikarza, a "+pchar.questTemp.Wine.Name+" twierdził, że nigdy nie handlował winem. Jak możesz to wyjaśnić?";
 			link.l2.go = "Wine_Repeat1_1";
@@ -283,7 +283,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Bottles_3":
 			AddMoneyToCharacter(pchar, -2000);
-			dialog.text = "Jesteś dziwnym ptakiem, kapitanie! Oczywiście, zdaję sobie sprawę, że twój skarbnik zajmuje się wszystkimi finansami, ale czasami powinieneś też korzystać ze swojego własnego rozumu. Będziesz miał okazję kupić porządną partię win hurtowo bez mojej marży i zarobić sporo. Więc nie przeszkadzajmy sobie w zarabianiu pieniędzy, bo to ty teraz wyglądasz na chciwego.\nDobrze... (piszę) Tutaj, weź ten list - "+pchar.questTemp.Wine.Name+"  sprzeda ci wino bez żadnych pytań.";
+			dialog.text = "Jesteś dziwnym ptakiem, kapitanie! Oczywiście, zdaję sobie sprawę, że twój skarbnik zajmuje się wszystkimi finansami, ale czasami powinieneś też korzystać ze swojego własnego rozumu. Będziesz miał okazję kupić porządną partię win hurtowo bez mojej marży i zarobić sporo. Więc nie przeszkadzajmy sobie w zarabianiu pieniędzy, bo to ty teraz wyglądasz na chciwego.\nDobrze... (piszę) Tutaj, weź ten list - "+pchar.questTemp.Wine.Name+" sprzeda ci wino bez żadnych pytań.";
 			link.l1 = "Mam taką nadzieję... Jeśli coś pójdzie znowu nie tak, wrócę. Do zobaczenia!";
 			link.l1.go = "Wine_Bottles_4";
 		break;
@@ -310,7 +310,7 @@ void ProcessDialogEvent()
 		
 		case "Wine_Repeat1_fail":
 			dialog.text = "Oh, więc przyszedłeś tu, aby mi grozić i być niegrzeczny? Wołam strażników! Hej, strażnicy! Tu jest!";
-			link.l1 = "Och, zamknij się! Wygrałeś, odchodzę! Przeklęty ty "+NPCharSexPhrase(npchar,"","")+", kormoranie, niech cię zrujnuje!";
+			link.l1 = "Och, zamknij się! Wygrałeś, odchodzę! Ty kormoranie, niech cię szlag!";
 			link.l1.go = "exit";
 			AddQuestRecord("Wine", "7");
 			DelLandQuestMark(npchar);
@@ -342,7 +342,7 @@ void ProcessDialogEvent()
 			}
 			if (sti(pchar.Money) > 2299)
 			{
-				link.l2 = "Cena wydaje się niesprawiedliwa. Co powiesz na zniżkę dla przyjaciela Fadeya Moskiewskiego?";
+				link.l2 = "Cena wydaje się niesprawiedliwa. Co powiesz na zniżkę dla przyjaciela Fadieja Moskala?";
 				link.l2.go = "ZsI_Torg";
 			}
 			link.l3 = "Trzy tysiące? To rabunek! Do widzenia, Panie!";
@@ -364,7 +364,7 @@ void ProcessDialogEvent()
 			link.l1 = "Do widzenia, Monsieur.";
 			link.l1.go = "ZsI_PokupaemPistolety_3";
 			AddMoneyToCharacter(pchar, -3000);
-			Log_info("You have acquired the required pistols for Cocoa Leaf");
+			Log_info("Zdobyłeś wymagane pistolety dla Liścia Kakaowca");
 			PlaySound("Interface\important_item.wav");
 		break;
 		
@@ -382,7 +382,7 @@ void ProcessDialogEvent()
 			if (GetSummonSkillFromName(pchar, SKILL_COMMERCE) > 18)
 			{
 				Notification_Skill(true, 19, SKILL_COMMERCE);
-				dialog.text = "Rzeczywiście, Kapitanie. Przyjaciele Fadeya zawsze są tutaj mile widziani. Dwa tysiące trzysta za całość?";
+				dialog.text = "Rzeczywiście, Kapitanie. Przyjaciele Fadieja zawsze są tutaj mile widziani. Dwa tysiące trzysta za całość?";
 				link.l1 = "To brzmi lepiej. Wezmę to.";
 				link.l1.go = "ZsI_Torg_2";
 				AddCharacterExpToSkill(pchar, "Commerce", 30);
@@ -390,7 +390,7 @@ void ProcessDialogEvent()
 			else
 			{
 				Notification_Skill(false, 19, SKILL_COMMERCE);
-				dialog.text = "Przyjaciele Pana Fadey'a zawsze są mile widziani, ale ceny nie mają przyjaciół. To będzie trzy tysiące peso, Kapitanie.";
+				dialog.text = "Przyjaciele Pana Fadieja zawsze są mile widziani, ale ceny nie mają przyjaciół. To będzie trzy tysiące peso, Kapitanie.";
 				if (sti(pchar.Money) > 2999)
 				{
 					link.l1 = "Drogo, ale w porządku. Wezmę to.";
@@ -398,7 +398,7 @@ void ProcessDialogEvent()
 				}
 				link.l2 = "Trzy tysiące? To rabunek! Do widzenia, Panie!";
 				link.l2.go = "ZsI_NetDeneg";
-				//Log_info("Trading skill is not sufficient");
+				//Log_info("Umiejętności handlowe nie wystarczą");
 				AddCharacterExpToSkill(pchar, "Commerce", -30);
 			}
 		break;
@@ -408,7 +408,7 @@ void ProcessDialogEvent()
 			link.l1 = "Żegnaj, Monsieur.";
 			link.l1.go = "ZsI_PokupaemPistolety_3";
 			AddMoneyToCharacter(pchar, -2300);
-			Log_info("You have acquired the required pistols for Cocoa Leaf");
+			Log_info("Zdobyłeś wymagane pistolety dla Liścia Kakaowca");
 			PlaySound("Interface\important_item.wav");
 		break;
 		// <-- мини-квест "Знакомство с индейцами"
@@ -469,7 +469,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "mangarosa_1":
-			dialog.text = "Nomadyczni cyganie i dzicy wykazują wielkie zainteresowanie tymi roślinami. Kiedyś widziałem, jak cygan płacił garść złota za tylko jeden taki pień. Ale nie mam pojęcia, po co im to potrzebne.";
+			dialog.text = "Nomadyczni cyganie i dzikusy wykazują wielkie zainteresowanie tymi roślinami. Kiedyś widziałem, jak cygan płacił garść złota za tylko jeden taki pień. Ale nie mam pojęcia, po co im to potrzebne.";
 			link.l1 = "Rozumiem... Cóż, to już coś przynajmniej! Teraz wiem, gdzie dalej pytać. Bardzo ci dziękuję!";
 			link.l1.go = "mangarosa_2";
 		break;
@@ -484,7 +484,7 @@ void ProcessDialogEvent()
 		
 		//--> Украденное воспоминание
 		case "UV_Lavochniki_1":
-    		dialog.text = "Niestety, "+GetAddress_Form(NPChar)+", nie mam już od dawna nic naprawdę cennego. Popyt na takie rzeczy, wiecie, dziś jest niewielki. Zwykli ludzie kupują tylko tanie błyskotki, a szlachta prawie nie zagląda do mojego sklepu.";
+    		dialog.text = "Niestety, "+GetAddress_Form(NPChar)+", nie mam już od dawna nic naprawdę cennego. Popyt na takie rzeczy, wiesz, dziś jest niewielki. Zwykli ludzie kupują tylko tanie błyskotki, a szlachta prawie nie zagląda do mojego sklepu.";
     		link.l1 = "W porządku...";
     		link.l1.go = "exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki");
@@ -502,13 +502,13 @@ void ProcessDialogEvent()
  		break;
 		
 		case "UV_Lavochniki_3":
-    		dialog.text = "Kapitanie, obawiam się, że przybyliście za późno... Zaledwie kilka godzin temu sprzedałem wspaniały naszyjnik pewnemu zamożnemu kapitanowi. Czasem trafiają mi się rzeczy, które mogą oczarować nawet najbardziej upartą damę\nWpadnijcie jutro – być może Giselle... to znaczy... moi dostawcy... znajdą dla was klejnot, który na zawsze skradnie serce każdej kobiety.";
+    		dialog.text = "Kapitanie, obawiam się, że przybyłeś za późno... Zaledwie kilka godzin temu sprzedałem wspaniały naszyjnik pewnemu zamożnemu kapitanowi. Czasem trafiają mi się rzeczy, które mogą oczarować nawet najbardziej upartą damę\nWpadnij jutro – być może Giselle... to znaczy... moi dostawcy... znajdą dla ciebie klejnot, który na zawsze skradnie serce każdej kobiety.";
     		link.l1 = "Nie mam czasu, potrzebuję ozdoby natychmiast. Powiedz mi, jak nazywał się ten kapitan, któremu sprzedałeś naszyjnik?";
     		link.l1.go = "UV_Lavochniki_3_1";
  		break;
 		
 		case "UV_Lavochniki_3_1":
-    		dialog.text = "Tristan Renier, kapitan 'Golden Seagull'. Jego statek nadal stoi w porcie. Ale szczerze mówiąc, wątpię, by chciał się rozstać z tym naszyjnikiem. Jeśli odmówi, wpadnijcie jutro. Przysięgam, kapitanie, nie pożałujecie.";
+    		dialog.text = "Tristan Renier, kapitan 'Złotej Mewy'. Jego statek nadal stoi w porcie. Ale szczerze mówiąc, wątpię, by chciał się rozstać z tym naszyjnikiem. Jeśli odmówi, wpadnij jutro. Przysięgam, kapitanie, nie pożałujesz.";
     		link.l1 = "...";
     		link.l1.go = "UV_Lavochniki_exit";
 			DeleteAttribute(pchar, "questTemp.UV_Lavochniki_3");

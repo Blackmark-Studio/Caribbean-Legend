@@ -58,7 +58,7 @@ land_MapAtlas {Mapy}
 land_Rest {Odpocznij}
 go_store {Sklep}
 go_shipyard {Stocznia}
-go_tavern {Tawerna}
+go_tavern {Karczma}
 go_residence {Rezydencja}
 go_port {Port}
 go_loanshark {Bank}

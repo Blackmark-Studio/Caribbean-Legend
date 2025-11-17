@@ -121,7 +121,7 @@ void ProcessDialogEvent()
 							else {n = 450;}
 							if (PCharDublonsTotal() >= n)
 							{
-								link.l1 = "Tak, mam. Oto twoje doubloony.";
+								link.l1 = "Tak, mam. Oto twoje dublony.";
 								link.l1.go = "saga_5";
 							}
 							else
@@ -137,7 +137,7 @@ void ProcessDialogEvent()
 						// пятая проверка времени
 						if (CheckAttribute(pchar, "questTemp.Saga.Late"))
 						{
-							dialog.text = "Panie, dlaczego pracowałeś tak wolno?! Wszystko skończone dla twego zleceniodawcy. Okres ważności testamentu wygasł i Isla Tesoro teraz należy do Anglii. Wkrótce stanie się bazą wojskową."link.l1 ="Wow!  Wydaje się, że wszystkie moje wysiłki poszły na marne...";
+							dialog.text = "Panie, dlaczego pracowałeś tak wolno?! Wszystko już jest skończone dla twego zleceniodawcy. Okres ważności testamentu wygasł i Isla Tesoro teraz należy do Anglii. Wkrótce stanie się bazą wojskową."link.l1 ="Wow!  Wydaje się, że wszystkie moje wysiłki poszły na marne...";
 							link.l1.go = "saga_l3";
 						}
 						else
@@ -150,7 +150,7 @@ void ProcessDialogEvent()
 							}
 							else
 							{
-								link.l1 = "Tak. Naprawdę mam wyczerpujące dowody.";
+								link.l1 = "Tak. Mam wystarczające dowody.";
 								link.l1.go = "saga_14";
 							}
 						}
@@ -174,7 +174,7 @@ void ProcessDialogEvent()
 					dialog.text = "Dzień dobry, panie. Zakładam, że przyniósł pan moją opłatę?";
 					if (PCharDublonsTotal() >= 450)
 					{
-						link.l1 = "Tak, mam. Oto twoje doubloony.";
+						link.l1 = "Tak, mam. Oto twoje dublony.";
 						link.l1.go = "saga_36";
 					}
 					link.l2 = "Wiesz, panie Loxley, myślałem... Chodzi mi o to, że 900 dublonów to więcej niż wystarczająco za twoją pracę.";
@@ -208,22 +208,22 @@ void ProcessDialogEvent()
 		
 		case "saga_1":
 			dialog.text = "Nicolas Sharp... No, no. Muszę odwiedzić archiwum i zapoznać się z materiałami dotyczącymi Isla Tesoro. Czy masz przy sobie mapę?";
-			link.l1 = "Mam, ale dam ci to dopiero po podpisaniu umowy. Więc, co z ceną za twoje usługi?";
+			link.l1 = "Mam, ale dam ci ją dopiero po podpisaniu umowy. Więc, co z ceną za twoje usługi?";
 			link.l1.go = "saga_2";
 		break;
 		
 		case "saga_2":
 			sTemp = "";
-			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = " Your esteemed involvement won't go unnoticed either. Cartagena... There will be questions.";
+			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = " Twoje szanowne zaangażowanie również nie pozostanie niezauważone. Kartagena... Będą pytania.";
 			dialog.text = "Jak już mówiłem - to nie będzie łatwe. Musisz udowodnić prawo własności do całej wyspy, a nie do jakiejś starej łajby czy chatki. Poza tym, Nicolas Sharp był piratem, a pomaganie piratom lub ich krewnym jest kosztowne."+sTemp;
 			link.l1 = "Czy zamierzasz powiedzieć mi rzeczywistą sumę?";
 			link.l1.go = "saga_3";
 		break;
 		
 		case "saga_3":
-			sTemp = "four hundred and fifty";
-			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = "one thousand";
-			dialog.text = "Panie, ostateczna suma zostanie ustalona podczas procesu. Jeszcze nie wiem, jak problematyczne to będzie. Ale jestem gotów oszacować zaliczkę - "+sTemp+"  дублонów. Tę sumę złota trzeba będzie zapłacić ponownie raz lub dwa, w zależności od tego, jak dobrze pójdzie nasz interes.\nPrzynieś mi pieniądze za tydzień, potrzebuję czasu, aby sprawdzić archiwa i przygotować się. Potem dokonamy ustaleń. Zgoda?";
+			sTemp = "czterysta pięćdziesiąt";
+			if(CheckAttribute(pchar,"questTemp.Mtraxx.Cartahena.Gold")) sTemp = "tysiąc ";
+			dialog.text = "Panie, ostateczna suma zostanie ustalona podczas procesu. Jeszcze nie wiem, jak problematyczne to będzie. Ale jestem gotów oszacować zaliczkę - "+sTemp+"  dublonów. Tę sumę złota trzeba będzie zapłacić ponownie raz lub dwa, w zależności od tego, jak dobrze pójdzie nasz interes.\nPrzynieś mi pieniądze za tydzień, potrzebuję czasu, aby sprawdzić archiwa i przygotować się. Potem dokonamy ustaleń. Zgoda?";
 			link.l1 = "Polecili Cię jako najlepszego prawnika w archipelagu, więc mamy umowę. Do zobaczenia za tydzień!";
 			link.l1.go = "saga_4";
 		break;
@@ -309,15 +309,15 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_14":
-			dialog.text = "Czyżby tak? Przyjrzyjmy się tym dowodom.";
-			link.l1 = "To prywatny list napisany przez Beatrice Sharp do jej brata. Napisano tutaj, że urodziła córkę i że jej ojcem był w rzeczywistości Lawrence Beltrope. Dziewczynka została wysłana do młodej wdowy imieniem Gladys Chandler. Lawrence Beltrope jest również znany jako kapitan Rzeźnik. Proszę, weź list...";
+			dialog.text = "Czyżby? Przyjrzyjmy się tym dowodom.";
+			link.l1 = "To prywatny list napisany przez Beatrice Sharp do jej brata. Napisano tutaj, że urodziła córkę i że jej ojcem był w rzeczywistości Lawrence Beltrope. Dziewczynka została wysłana do młodej wdowy imieniem Gladys Chandler. Lawrence Beltrope jest również znany jako kapitan Rzeźnik. Proszę, weź ten list...";
 			link.l1.go = "saga_15";
 		break;
 		
 		case "saga_15":
 			RemoveItems(pchar, "Letter_beatriss", 1);
-			dialog.text = "I'm sorry, I don't have any text to translate. Could you provide the text you need translated?";
-			link.l1 = "Gladys jest gotowa potwierdzić to pod przysięgą. Jest również gotowa potwierdzić, że ojciec przedstawił się jako kapitan Butcher.";
+			dialog.text = "Niesamowite znalezisko! To jest właśnie to, czego potrzebowaliśmy! Rozumiem, że Panienka Gladys powtwierdzi tą historie?";
+			link.l1 = "Gladys jest gotowa potwierdzić to pod przysięgą. Jest również gotowa potwierdzić, że ojciec przedstawił się jako kapitan Rzeźnik.";
 			link.l1.go = "saga_16";
 		break;
 		
@@ -325,13 +325,13 @@ void ProcessDialogEvent()
 			if (CheckAttribute(pchar, "questTemp.Saga.Beltrop_die")) // Белтроп убит
 			{
 				dialog.text = "Chwileczkę! Kapitan Rzeźnik, zły pirat i zabójca angielskich poddanych, został powieszony w fortecy St. John's dwadzieścia lat temu. A Lawrence Beltrope, bliski przyjaciel Richarda Doyle'a, zmarł tragicznie niedawno. A co najważniejsze, Doyle chciał uczynić go nowym gubernatorem Sharptown!";
-				link.l1 = "Ha! Pewnie, nikt o tym nie wie... Mam pisemne zeznanie Raymonda Bakera, byłego kata z St. John's, że został zmuszony pod groźbą pewnej śmierci do sfingowania egzekucji Butchera! Proszę, spójrz...";
+				link.l1 = "Ha! Pewnie, nikt o tym nie wie... Mam pisemne zeznanie Raymonda Bakera, byłego kata z St. John's, że został zmuszony pod groźbą pewnej śmierci do sfingowania egzekucji Rzeźnika! Proszę, spójrz...";
 				link.l1.go = "saga_17";
 			}
 			else
 			{
 				dialog.text = "Chwileczkę! Kapitan Butcher, zły pirat i zabójca angielskich poddanych, został powieszony w forcie St. John's dwadzieścia lat temu. A Lawrence Beltrope żyje i mieszka w jednej z najlepszych rezydencji Port Royal. I co najważniejsze, Doyle chce go uczynić nowym gubernatorem Sharptown!";
-				link.l1 = "Ha! Pewnie, nikt o tym nie wie... Mam pisemne zeznanie Raymonda Bakera, byłego kata z St. John's, że został zmuszony pod groźbą pewnej śmierci, by sfingować egzekucję Butchera! Proszę, spójrz...";
+				link.l1 = "Ha! Pewnie, nikt o tym nie wie... Mam pisemne zeznanie Raymonda Bakera, byłego kata z St. John's, że został zmuszony pod groźbą pewnej śmierci, by sfingować egzekucję Rzeźnika! Proszę, spójrz...";
 				link.l1.go = "saga_17";
 			}
 		break;
@@ -456,7 +456,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_28":
-			dialog.text = "Pozwól mi pogratulować ci, Panie, i twej przełożonej. Ona jest teraz prawowitą władczynią Ilsa Tesoro. Warto wypić za to trochę szampana!";
+			dialog.text = "Pozwól mi pogratulować ci, Panie, i twej przełożonej. Ona jest teraz prawowitą władczynią Isla Tesoro. Warto wypić za to trochę szampana!";
 			link.l1 = "Absolutnie, panie Loxley. Twoja mowa była naprawdę znakomita. Myślałem, że pułkownik Doyle dostanie zawału serca, kiedy powiedziałeś sądowi, że Lawrence Beltrop jest kapitanem Rzeźnikiem.";
 			link.l1.go = "saga_29";
 		break;
@@ -476,13 +476,13 @@ void ProcessDialogEvent()
 		break;
 		
 		case "saga_30":
-			dialog.text = "Oczywiście, Panie. Sprawdziłem każdy przecinek w nich. Możesz być pewien, że są w porządku.";
+			dialog.text = "Oczywiście, Panie. Sprawdziłem każdy przecinek. Możesz być pewien, że są w porządku.";
 			link.l1 = "Bardzo dobrze...";
 			link.l1.go = "saga_31";
 		break;
 		
 		case "saga_31":
-			dialog.text = "Cóż, moja robota jest skończona. Sprawa była skomplikowana, ale wygraliśmy ją razem. Teraz, Sir, pozostaje tylko zapłacić mi ostatnią część mojej opłaty. Bez presji, zdaję sobie sprawę, że musisz być zajęty. Ale wierzę, że znajdziesz czas, aby dostarczyć mi ostatnie 450 doublonów w ciągu tygodnia.\nPoza tym, klient taki jak Ty zawsze może liczyć na znaczne zniżki. Mogę Ci bardzo pomóc, mam znajomości we wszystkich stolicach archipelagu, nawet w tych wrogich, więc każdy problem prawny, z jakim się zetkniesz, może być rozwiązany.";
+			dialog.text = "Cóż, moja robota jest skończona. Sprawa była skomplikowana, ale wygraliśmy ją razem. Teraz, Sir, pozostaje tylko zapłacić mi ostatnią część mojej opłaty. Bez presji, zdaję sobie sprawę, że musisz być zajęty. Ale wierzę, że znajdziesz czas, aby dostarczyć mi ostatnie 450 dublonów w ciągu tygodnia.\nPoza tym, klient taki jak Ty zawsze może liczyć na znaczne zniżki. Mogę Ci bardzo pomóc, mam znajomości we wszystkich stolicach archipelagu, nawet w tych wrogich, więc każdy problem prawny, z jakim się zetkniesz, może być rozwiązany.";
 			link.l1 = "Doskonałe. Teraz wiem, kogo zapytać.";
 			link.l1.go = "saga_32";
 		break;
@@ -501,7 +501,7 @@ void ProcessDialogEvent()
 		
 		case "saga_34":
 			dialog.text = "Przypuszczam, że tak, jest on kapitanem Rzeźnikiem, piratem i bandytą. Choć teraz nie ma go w Port Royal. Miał tyle szczęścia, że opuścił miasto, udając się w głąb wyspy. Ale polowanie się zaczęło i na pewno zostanie schwytany.";
-			link.l1 = "Widzę... Czy dokumenty są w porządku?";
+			link.l1 = "Rozumiem... Czy dokumenty są w porządku?";
 			link.l1.go = "saga_30";
 		break;
 		
@@ -555,7 +555,7 @@ void ProcessDialogEvent()
 		// провалы Саги
 		case "saga_l3":
 			dialog.text = "Panie, wygralibyśmy twoją sprawę, gdybyś przyszedł do mnie wcześniej. Testament stracił ważność. Przykro mi.";
-			link.l1 = "Eh, jestem jeszcze bardziej przykro! No cóż, żegnaj, panie Loxley.";
+			link.l1 = "Eh, jest mi jeszcze bardziej przykro! No cóż, żegnaj, panie Loxley.";
 			link.l1.go = "saga_l3_1";
 			// Элен - к разговору
 			sld = characterFromId("Helena");
@@ -627,12 +627,12 @@ void ProcessDialogEvent()
 			i = sti(npchar.quest.relation);
 			iLoxlyPseudoGlobal = CalculateRelationSum(i, true);
 			int iRate = abs(ChangeCharacterNationReputation(pchar, i, 0));
-			if (iRate <= 10) sTemp = "Well, I wouldn't call that trouble. Just a little problem. I will settle the affair at once";
-			if (iRate > 10 && iRate <= 30) sTemp = "Yes, your reputation is slightly spoiled but I don't see anything critical. I will settle the affair at once";
-			if (iRate > 30 && iRate <= 60) sTemp = "Yes, you went down the wrong path with the authorities. It won't be easy but I am sure that I will be able to settle your disagreements without a hitch";
-			if (iRate > 60 && iRate <= 90) sTemp = "And how did you do that, Sir? Your troubles are not just serious, they are really serious. The authorities are very eager to get you. I will have to put a lot of effort into settling your disagreements";
-			if (iRate > 90) sTemp = "Well... The situation is catastrophic - you are claimed to be the most bitter enemy. It will be tough but I am the best lawyer in the Caribbean after all, so I will settle your disagreements";
-			dialog.text = " "+sTemp+" z "+XI_ConvertString(Nations[i].Name+"Abl")+"To będzie cię kosztować "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
+			if (iRate <= 10) sTemp = "Cóż, nie nazwałbym tego kłopotem. To tylko mały problem. Od razu rozwiąże sprawe";
+			if (iRate > 10 && iRate <= 30) sTemp = "Tak, twoja reputacja jest lekko nadszarpnięta, ale nie widzę w tym nic poważnego. Od razu załatwię tą sprawe";
+			if (iRate > 30 && iRate <= 60) sTemp = "Tak, obrałeś złą drogę z władzami. Nie będzie łatwo, ale jestem pewien, że uda mi się bezproblemowo rozwiązać wasze nieporozumienia";
+			if (iRate > 60 && iRate <= 90) sTemp = "Panie, jak pan to zrobił? Pańskie problemy nie są po prostu poważne, są naprawdę poważne. Władze bardzo chcą pana dopaść. Będę musiał włożyć wiele wysiłku w rozwiązanie waszych nieporozumień";
+			if (iRate > 90) sTemp = "Cóż... Sytuacja jest katastrofalna – rzekomo jesteś naszym największym wrogiem. Będzie ciężko, ale w końcu jestem najlepszym prawnikiem na Karaibach, więc rozstrzygnę wasze nieporozumienia";
+			dialog.text = " "+sTemp+" z narodem "+XI_ConvertString(Nations[i].Name+"Abl")+". To będzie cię kosztować "+FindRussianMoneyString(iLoxlyPseudoGlobal)+".";
 			if(sti(pchar.money) >= iLoxlyPseudoGlobal)
 			{
 				link.l1 = "Zgoda, panie Loxley, zgadzam się. Oto twoje pieniądze i postaraj się załatwić sprawy jak najszybciej.";
@@ -645,7 +645,7 @@ void ProcessDialogEvent()
 
 		case "relation":
 			i = sti(npchar.quest.relation);
-			dialog.text = "Przyjemność robić interesy z tobą, sir. Możesz znów swobodnie oddychać, twój problem zniknie w ciągu najbliższych dwóch tygodni. Proszę unikać jakichkolwiek konfrontacji z "+XI_ConvertString(Nations[i].Name+"Abl")+", podczas gdy jestem w trakcie negocjacji.";
+			dialog.text = "Przyjemność robić interesy z tobą, sir. Możesz znów swobodnie oddychać, twój problem zniknie w ciągu najbliższych dwóch tygodni. Proszę unikać jakichkolwiek konfrontacji z narodem "+XI_ConvertString(Nations[i].Name+"Abl")+", podczas gdy ja będe w trakcie negocjacji.";
 			link.l1 = "Dobrze, rozważę twoje ostrzeżenie. Dziękuję i żegnaj!";
 			link.l1.go = "exit";
 			AddMoneyToCharacter(pchar, -iLoxlyPseudoGlobal);

@@ -1777,6 +1777,46 @@ void Mtraxx_PlantEscapeInShore(string qName) // в бухте
 	}
 }
 
+void Mtraxx_PlantSuccessfulRedemption() // успешный выкуп Красавчика и уходим в море
+{
+	DeleteAttribute(pchar,"questTemp.Mtraxx.MagicBox");
+	chrDisableReloadToLocation = true;
+	LocatorReloadEnterDisable("shore37", "boat", false);
+	bQuestDisableMapEnter = false;
+	AddQuestRecord("Roger_3", "29");
+	pchar.questTemp.Mtraxx = "plant_success";
+	QuestSetCurrentNode("Terrax", "mtraxx_27");
+	//SetFunctionTimerCondition("Mtraxx_PlantGoHomeOver", 0, 0, 40, false);
+	SetFunctionTimerCondition("Mtraxx_PlantOpenMaracaibo", 0, 0, 5, false);
+	
+	sld = characterFromId("Mtr_plantation_boss");
+	sld.lifeday = 0;
+	
+	sld = &Locations[FindLocation("shore37")];
+	sld.DisableEncounters = false;
+	sld = ItemsFromID("fire");
+	sld.shown = false;
+	DeleteAttribute(sld, "fire");
+	for (i=1; i<=4; i++)
+	{
+		if (GetCharacterIndex("Pelly_sailor_"+i) != -1)
+		{
+			sld = characterFromId("Pelly_sailor_"+i);
+			sld.lifeday = 0;
+			LAi_SetActorType(sld);
+			LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "", 5);
+		}
+	}
+	sld = characterFromId("Pelly");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "OpenTheDoors", 5);
+	sld = characterFromId("mrt_Rocur");
+	LAi_SetActorType(sld);
+	LAi_ActorRunToLocation(sld, "reload", "sea", "none", "", "", "", 5);
+	DelLandQuestMark(CharacterFromID("Fadey"));
+	DelMapQuestMarkCity("BasTer");
+}
+
 void Mtraxx_PlantFailFinal() // провалили дело
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("shore37")], false);
@@ -1791,6 +1831,8 @@ void Mtraxx_PlantFailFinal() // провалили дело
 	Mtraxx_PlantPellyClear();
 	AddQuestRecord("Roger_3", "17");
 	Mtraxx_TerraxReset(3);
+	DelLandQuestMark(CharacterFromID("Fadey"));
+	DelMapQuestMarkCity("BasTer");
 }
 
 void Mtraxx_PlantSeaEscape() // уходим в море
@@ -1808,6 +1850,8 @@ void Mtraxx_PlantSeaEscape() // уходим в море
 	pchar.quest.mtraxx_plant_seabattle.win_condition.l1 = "location";
 	pchar.quest.mtraxx_plant_seabattle.win_condition.l1.location = "Maracaibo";
 	pchar.quest.mtraxx_plant_seabattle.function = "Mtraxx_PlantSeaBattle";
+	DelLandQuestMark(CharacterFromID("Fadey"));
+	DelMapQuestMarkCity("BasTer");
 }
 
 void Mtraxx_PlantSeaBattle(string qName) // бой с испанской эскадрой

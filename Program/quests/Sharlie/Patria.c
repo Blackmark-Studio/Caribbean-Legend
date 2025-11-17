@@ -1942,7 +1942,7 @@ void Patria_SiegeAddEngSquadron() // присоединяем эскадру д'
 		sld = GetCharacter(NPC_GenerateCharacter("Patria_SiegeCapNew_"+i, "off_hol_"+(7-i), "man", "man", 35, HOLLAND, -1, true, "quest"));
 		if (i == 1) 
 		{
-			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 12.5, 29.5, 0.38);
+			sld.Ship.Type = GenerateShipHand(sld, SHIP_LSHIP_HOL, 42, 9500, 840, 11500, 350000, 9.5, 29.5, 0.38);
 			sld.Ship.name = GetShipName("Oliphant");
 			SetBaseShipData(sld);
 			sld.Ship.Cannons.Type = CANNON_TYPE_CULVERINE_LBS36;

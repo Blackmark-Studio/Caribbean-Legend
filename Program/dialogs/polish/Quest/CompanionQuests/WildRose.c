@@ -2689,7 +2689,7 @@ void ProcessDialogEvent()
 		break;
 
 		case "WildRose_Chimiset_44":
-			dialog.text = "To nie ma sensu, Mary. Wystarczy, że spojrzysz w lustro – jesteście do siebie podobne jak dwie krople wody. Tylko to przenikliwe spojrzenie odziedziczyłeś po ojcu.";
+			dialog.text = "To nie ma sensu, Mary. Wystarczy, że spojrzysz w lustro – jesteście do siebie podobne jak dwie krople wody. Tylko oczy masz po ojcu.";
 			link.l1 = "...";
 			link.l1.go = "WildRose_Chimiset_44_add";
 			CharacterTurnByChr(CharacterFromID("Mary"), CharacterFromID("Chimiset"));

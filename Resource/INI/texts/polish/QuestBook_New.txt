@@ -35,7 +35,7 @@ Cham dostał nauczkę, a urażony honor został obroniony! Muszę przekazać te 
 O cholera. Przegapiłem pojedynek. Co za głupiec ze mnie.
 
 #TEXT 3
-Nieszczęsny ojciec, nic niewarty syn, honor damy... No dobrze, zobaczymy, jak to się skończy tym razem. Na początek odwiedzę tawernę i burdel.
+Nieszczęsny ojciec, nic niewarty syn, honor damy... No dobrze, zobaczymy, jak to się skończy tym razem. Na początek odwiedzę karczme i zamtuz.
 
 #TEXT 3_1
 Doskonale! Teraz została tylko jedna drobnostka – zarżnąć drania.
@@ -47,13 +47,13 @@ Sprawa zakończona, ojciec i syn mogą spać spokojnie... przynajmniej do nastę
 Cóż, przegapiłem to – i co z tego? Nic wielkiego.
 
 #TEXT 5
-Czy sytuacja jest aż tak zła, skoro władze wydają listy kaperskie przypadkowym rzezimieszkom i pijakom? Powinienem odwiedzić tawernę i zobaczyć, kto terroryzuje miejscową ludność.
+Czy sytuacja jest aż tak zła, skoro władze wydają listy kaperskie przypadkowym rzezimieszkom i pijakom? Powinienem odwiedzić karczmę i zobaczyć, kto terroryzuje miejscową ludność.
 
 #TEXT 6
 O jednego łajdaka mniej na świecie. Miło robić dobre uczynki.
 
 #TEXT 6_1
-Zmieniłem zdanie – nie będę walczył. Po prostu nie mam nastroju. Poza tym dziewczyna powinna posmakować wszystkich uroków bycia konkubiną dzielnego korsarza w porównaniu z pracą pokojówki w tawernie.
+Zmieniłem zdanie – nie będę walczył. Po prostu nie mam nastroju. Poza tym dziewczyna powinna posmakować wszystkich uroków bycia konkubiną dzielnego korsarza w porównaniu z pracą pokojówki w karczmie.
 
 #TEXT 7
 Pojedynek! I to z naprawdę ważnego powodu.
@@ -1021,7 +1021,7 @@ Udało mi się odzyskać naszyjnik Julie. Teraz pora go zwrócić właścicielce
 Naszyjnik wrócił do swojej uroczej właścicielki. Złodziejką okazała się jej pokojówka – ta sama Giselle. Teraz Julie wykorzystuje całą swoją przebiegłość, by wymierzyć karę sprytnej oszustce. Nie chciał bym być teraz na jej miejscu.
 
 #QUEST VPVL
-Uwięziony w Wielkim Połowie
+Uwięziony w wielkim połowie
 #TEXT 1
 Po Saint Pierre krążą opowieści o zaginięciu lokalnego rybaka Pierre'a Carno. Przez dwa pełne przypływy i odpływy jego statek nie powrócił do portu, podczas gdy jego żona Lea, nękana strachem, utrzymuje samotną wartę na nabrzeżu, wypatrując w wzburzonych wodach sylwetki męża. Tylko jego bezpieczny powrót mógłby ukoić jej zranionego ducha. Jednak bezlitosne morze strzeże swoich tajemnic, a z każdym uderzeniem dzwonu nadzieja staje się coraz słabsza, a jego szanse na oszukanie śmierci coraz mniejsze​.
 #TEXT 2
@@ -1074,19 +1074,19 @@ W kieszeniach Javiera znalazłem tylko kartkę. Najwyraźniej po tej transakcji 
 #TEXT	9
 Wyprowadzenie Javiera z równowagi nie było takie trudne. Będąc o krok od zawarcia transakcji, nie wytrzymał presji – uświadomiwszy sobie, że wszystko może runąć w jednej chwili, rzucił się do walki bez namysłu. Francuz, który przybył po księgę, oferował mi osiemdziesiąt tysięcy peso – ale udało mi się wytargować za nią sto pięćdziesiąt! Myślę, że teraz lepiej nie pokazywać się Sebastianowi na oczy. W kieszeniach Javiera nie było nic oprócz notatki. Wynika z niej, że po tej transakcji Javier planował opuścić wyspę wraz z kimś innym. Trzeba sprawdzić, co chowają w tamtej grocie. Byłoby bardzo korzystnie, gdyby znalazły się tam pieniądze, bo sprawa z Felipe wciąż nie jest rozwiązana. Nie chciałbym rozstawać się z pieniędzmi uzyskanymi ze sprzedaży księgi.
 #TEXT	9_1
-Udało mi się pokonać Javiera! Jego sztuczki działają na prostaków, ale przeciwko poważnemu graczowi są bezużyteczne. Nie potrafił pogodzić się z porażką i oskarżył mnie o oszustwo. Cóż, musiałem sprowadzić go na ziemię. Francuz, który przybył po książkę, zaproponował mi osiemdziesiąt tysięcy peso – ale udało mi się wynegocjować sto pięćdziesiąt tysięcy! Myślę, że teraz lepiej, żebym nie wpadł Sebastianowi w oczy. 
+Udało mi się pokonać Javiera! Jego sztuczki działają na prostaków, ale przeciwko poważnemu graczowi są bezużyteczne. Nie potrafił pogodzić się z porażką i oskarżył mnie o oszustwo. Cóż, musiałem sprowadzić go na ziemię, dosłownie. Francuz, który przybył po książkę, zaproponował mi osiemdziesiąt tysięcy peso – ale udało mi się wynegocjować sto pięćdziesiąt tysięcy! Myślę, że teraz lepiej, żebym nie wpadł Sebastianowi w oczy. 
 W kieszeniach Javiera nie było nic oprócz kartki. Najwyraźniej po tej transakcji Javier planował opuścić wyspę razem z kimś. Muszę sprawdzić, co ukrywają w tej grocie.
 #TEXT	10
 Księga wróciła w ręce swojego właściciela. Mam nadzieję, że Sebastian naprawdę wyciągnął lekcję i mój wysiłek nie pójdzie na marne.
 #TEXT	11
 Pieniędzy Felipe Alarconowi nie oddałem. Widocznie takiego kroku nie docenił – teraz cała hiszpańska brać marzy, by powiesić mnie na placu.
 #TEXT	12
-Pieniędzy Felipe Alarconowi nie oddałem. Takiego gestu nie docenił – rzucił się do ataku. Poradziłem sobie z nim bez trudu, ale z miasta, wygląda na to, będę musiał przebijać się z walką.
+Pieniędzy Felipe Alarconowi nie oddałem. Takiego gestu nie docenił – rzucił się do ataku. Poradziłem sobie z nim bez trudu, ale z miasta, wygląda na to, będę musiał przebijać się walką.
 
 #QUEST LFD
 List od nieboszczyka
 #TEXT	1
-W Porto Bello krążą plotki, że kapitan fregaty "Águila" zrobił awanturę swojemu kwatermistrzowi za to, że wypuścił załogę do miasta. Zazwyczaj, jeśli załogę trzyma się na pokładzie, to albo mają coś do ukrycia, albo statek rzeczywiście nie zamierza długo pozostawać w porcie.
+W Portobelo krążą plotki, że kapitan fregaty "Águila" zrobił awanturę swojemu kwatermistrzowi za to, że wypuścił załogę do miasta. Zazwyczaj, jeśli załogę trzyma się na pokładzie, to albo mają coś do ukrycia, albo statek rzeczywiście nie zamierza długo pozostawać w porcie.
 Trzeba pogadać z marynarzami, może znajdzie się sposób, by na tym zarobić.
 #TEXT	2
 Na ulicach Porto Bello spotkałem marynarza z tej właśnie fregaty. Ryzykował spóźnieniem na statek przez przedłużające się poszukiwania pewnej Marisy Caldera. W ładowni swojego statku, pośród rupieci, natknął się na stary list adresowany do niej i postanowił go dostarczyć w nadziei na nagrodę.
@@ -1122,7 +1122,7 @@ Znów jesteśmy na tym statkowym cmentarzysku... Nie mam wielkiej ochoty tutaj z
 Wciąż niepokoi mnie złe przeczucie co do planu Mary, ale wycofać się już za późno.
 #TEXT	5
 Nie udało się porozmawiać z Donaldem — zorganizował ćwiczenia dla swojego klanu na zewnętrznym pierścieniu. Wygląda na to, że Wyspa Sprawiedliwości znów czekają niespokojne czasy. Mam nadzieję, że Layton Dexter będzie miał siłę i wolę, by utrzymać sytuację pod kontrolą, ale tak czy inaczej trzeba jak najszybciej zdobyć potrzebne informacje i się stamtąd wynieść. Ostatnie, czego bym chciał, to znaleźć się pod ogniem krzyżowym ludzi, którzy walczą o nic.  
-Grinspie powinien wrócić jutro — czas oczekiwania można skrócić w kajucie Mary na 'Ceres Smiti'.
+Grinspie powinien wrócić jutro — czas oczekiwania można skrócić w kajucie Mary na 'Ceres Smithy'.
 #TEXT	6
 Rozmowa z Grinspiem okazała się niemal bezowocna. Twierdzi, że pojawił się na Wyspie kilka lat po urodzeniu Mary i nie znał jej rodziców. Nie ma nikogo, kto mógłby to potwierdzić, ale nie sądzę, by miał powód kłamać.  
 Coś jednak udało się ustalić. Po pierwsze: Mary urodziła się tutaj, na Wyspie — powiedział Donaldowi Eric Udett, stary żeglarz, który ją wychowywał i niestety już odszedł. Po drugie: w wychowaniu Mary brała udział Aurelie Bertin — mieszka na Wyspie od dawna i jeśli była przy narodzinach Mary, to zapewne znała jej rodziców.  
@@ -1172,7 +1172,7 @@ Fadey, jak można się było spodziewać, zażądał niemało, ale wciąż mniej
 #TEXT	32
 Jesteśmy prawie na miejscu. Dzieli nas odległość od Bas-Ter do Belize. Tam znajduje się człowiek o imieniu Jerome Souvernier, który twierdzi, że udało mu się odnaleźć Ruperta Caspera. Stawiamy wszystkie żagle i kierujemy kurs na zachód. Dwadzieścia lat oczekiwania Mary na spotkanie z ojcem prawie dobiegło końca.
 #TEXT	33
-Jesteśmy w Belize. Myślę, że odnalezienie Jerome’a Souverniera nie będzie trudne. Jestem pewien, że właściciel tawerny wie, gdzie się zatrzymał. Mimo to trochę martwi mnie ta bójka w 'Szklanym Oku' z udziałem Jerome’a. Wykonywał odpowiedzialne i dobrze opłacone zlecenie — i z jakiegoś powodu wplątał się w bijatykę. Być może miało to związek z jego śledztwem dotyczącym Ruperta Caspera. Dlatego lepiej nie robić zbędnego hałasu i dobrze przemyśleć, czy przeprowadzać przesłuchania w tawernie.
+Jesteśmy w Belize. Myślę, że odnalezienie Jerome’a Souverniera nie będzie trudne. Jestem pewien, że właściciel karczmy wie, gdzie się zatrzymał. Mimo to trochę martwi mnie ta bójka w 'Szklanym Oku' z udziałem Jerome’a. Wykonywał odpowiedzialne i dobrze opłacone zlecenie — i z jakiegoś powodu wplątał się w bijatykę. Być może miało to związek z jego śledztwem dotyczącym Ruperta Caspera. Dlatego lepiej nie robić zbędnego hałasu i dobrze przemyśleć, czy przeprowadzać przesłuchania w karczmie.
 #TEXT	35
 Przeszliśmy długą, krętą drogę — i doszliśmy do gorzkiego wniosku: uważaj na swoje pragnienia. Taki właśnie morał przyniosła nam ta historia. Biedna Mary, oczywiście zasługuje na lepszego ojca niż Rupert Nortwood… ale rodziców się nie wybiera.  
 Cóż, jakby nie był potworny rezultat i jak bardzo nie targało nas rozczarowanie — życie toczy się dalej. Całą tę noc spędziliśmy na brzegu, w ciszy, przerywanej od czasu do czasu rozmowami o wydarzeniach. Mary dzielnie zniosła ten cios. Nie będzie dręczyć siebie myślami o tym, kim był jej ojciec i jakie „czyny” popełnił. A ja… zrobię wszystko, co w mojej mocy, żeby myślała o tym jak najrzadziej.
@@ -1180,10 +1180,10 @@ Cóż, jakby nie był potworny rezultat i jak bardzo nie targało nas rozczarowa
 #QUEST LEDR
 La Espada Del Rey
 #TEXT	1
-Mówią, że po Sharptownie kręci się facet z tego samego statku, który teraz leży rozbity na brzegu zatoki Sabu-Matilla. Twierdzi, że jest jedynym ocalałym z katastrofy. Teraz chce tam wrócić, ale sam nie ma odwagi — a na usprawiedliwienie opowiada bajki o szkielecie w indiańskim stroju. No cóż, zobaczymy... Może rzeczywiście warto go odprowadzić. Ciekawe, co takiego go tam ciągnie po tylu latach?
+Mówią, że po Sharptown kręci się facet z tego samego statku, który teraz leży rozbity na brzegu zatoki Sabu-Matilla. Twierdzi, że jest jedynym ocalałym z katastrofy. Teraz chce tam wrócić, ale sam nie ma odwagi — a na usprawiedliwienie opowiada bajki o szkielecie w indiańskim stroju. No cóż, zobaczymy... Może rzeczywiście warto go odprowadzić. Ciekawe, co takiego go tam ciągnie po tylu latach?
 #TEXT	2
 Zgodziłem się pomóc starcowi, Gonsalo Peralcie. Nie wygląda na wariata, jeśli nie liczyć tych jego dziwacznych opowieści. Cóż, nie powinno to zająć dużo czasu — zatoka jest niedaleko.
 #TEXT	3
 Kiedy zgodziłem się odprowadzić starca, nie przypuszczałem, że przyjdzie mi walczyć ze szkieletami. Szkieletami! Dobrze, że szczęście nam sprzyjało i mimo szoku udało nam się je odeprzeć. W kajucie kapitana znaleźliśmy kufer biskupa, pełen klejnotów i stary dziennik należący do Diego Velázqueza de Cuéllara — słynnego konkwistadora i pierwszego gubernatora Kuby. Nawet pobieżna lektura tych wspomnień przyprawia o dreszcze. Może to on jest kluczem do rozwiązania klątwy, która prześladuje Gonsalo.
 #TEXT	4
-Dziennik to już przeszłość. Odprowadziłem Gonsala tam, gdzie go spotkałem — do Sharptown. Niech żyje w spokoju, jeśli koszmary naprawdę go opuściły. A ja lepiej trzymam język za zębami — takie historie potrafią się łatwo obrócić przeciwko temu, kto je opowiada.
+Dziennik to już przeszłość. Odprowadziłem Gonsala tam, gdzie go spotkałem — do Sharptown. Niech żyje w pokoju, jeśli koszmary naprawdę go opuściły. A ja lepiej trzymam język za zębami — takie historie potrafią się łatwo obrócić przeciwko temu, kto je opowiada.

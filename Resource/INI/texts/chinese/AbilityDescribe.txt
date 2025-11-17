@@ -3,9 +3,9 @@ newline
 
 }
 BasicDefense {基础防御}
-perkBasicDefense {受到的伤害降低5%。}
+perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
 AdvancedDefense {高级防御}
-perkAdvancedDefense {使受到的伤害降低3%, 敌方暴击伤害降低10%。}
+perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefence|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefence|2))。}
 CriticalHit {暴击}
 perkCriticalHit {基础暴击率提高3.5%。}
 Grus {强健脊梁}
@@ -26,7 +26,7 @@ perkGunman
  军官只有在明确命令下才能使用 $key(descriptor_TwoHanded|ItemsDescriptors.txt)。
 }
 GunProfessional {散兵}
-perkGunProfessional {使火器的伤害和装填速度提高9%。解锁双手多发火器的使用能力。}
+perkGunProfessional {Increases damage and reload speed of firearms by $percent($perkBaseValue(GunProfessional|1)). Unlocks the ability to use two-handed multi-shot firearms.}
 IronWill {钢铁意志}
 perkIronWill {每3分钟可幸存一次致命伤。}
 SharedExperience {学得快}

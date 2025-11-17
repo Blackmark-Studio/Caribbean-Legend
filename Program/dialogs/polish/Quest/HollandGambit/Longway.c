@@ -34,7 +34,7 @@ void ProcessDialogEvent()
 			link.l1.go = "Longway_friend";
 			link.l2 = "Dobrze cię widzieć, Longway. Nazywam się Charles de Maure. Nie ma czasu do stracenia - mynheer Rodenburg docenia szybką i wysokiej jakości pracę. Gdzie teraz ukrywa się Jacob van Berg?";
 			link.l2.go = "Longway_neutral";
-			link.l3 = "Cóż, a moje to Charles de Maure! Miejmy nadzieję, że nasze będą dobrze współpracować! Więc, mynheer Longway, powiedz mi, proszę, gdzie nasze powinny szukać Jacoba van Berga?";
+			link.l3 = "Cóż, a moje to Charles de Maure! Miejmy nadzieję, że nasze statki będą dobrze współpracować! Więc, mynheer Longway, powiedz mi, proszę, gdzie nasze okręty powinny szukać Jacoba van Berga?";
 			link.l3.go = "Longway_enemy";
 			NextDiag.TempNode = "First time";
 			pchar.questTemp.HWIC.Holl.JacobCity = SelectJacobCity();
@@ -42,22 +42,22 @@ void ProcessDialogEvent()
 		
 //-----------------------------------------------за Голландию-----------------------------------------------
 		case "Longway_neutral":
-			dialog.text = "Longway jest pewien, że będziemy dobrze współpracować, chuanzhang. Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Generał")+"Zaaranżowałem spotkanie z nim w lokalnej tawernie. Będzie tam.";
+			dialog.text = "Longway jest pewien, że będziemy dobrze współpracować, chuanzhang. Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". Zaaranżowałem spotkanie z nim w lokalnej karczmie. Będzie tam.";
 			link.l1 = "Wypłyńmy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayNeutral = "true";//признак враждебности китайца
 		break;
 		
 		case "Longway_enemy":
-			dialog.text = "Rozkaz prawa mynheera Rodenburga dla Longway... Jacob van Berg obecnie w "+XI_ConvertString("Kolonia"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+"Zaaranżowałem spotkanie z nim w lokalnej tawernie. Będzie tam.";
-			link.l1 = "Wypływamy w morze!";
+			dialog.text = "Rozkaz prawa mynheera Rodenburga dla Longway... Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Gen")+". Zaaranżowałem spotkanie z nim w lokalnej karczmie. Będzie tam.";
+			link.l1 = "Wypływamy w morze zatem!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayEnemy = "true";//признак враждебности китайца
 			Notification_Approve(false, "Longway");
 		break;
 		
 		case "Longway_friend":
-			dialog.text = "Longway zrobi wszystko, co w jego mocy, chuanzhang. A Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"Umówiłem się z nim na spotkanie w lokalnej tawernie. Będzie tam.";
+			dialog.text = "Longway zrobi wszystko, co w jego mocy, chuanzhang. A Jacob van Berg obecnie w "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+". Umówiłem się z nim na spotkanie w lokalnej karczmie. Będzie tam.";
 			link.l1 = "Wyruszajmy w morze!";
 			link.l1.go = "Longway_JacobGo";	
 			pchar.questTemp.HWIC.Holl.LongwayFriend = "true";//признак враждебности китайца
@@ -85,7 +85,7 @@ void ProcessDialogEvent()
 			pchar.questTemp.HWIC.Holl = "JacobOnMain";
 			if(bImCasual)
 			{
-				NewGameTip("Exploration mode: quest duration doubled");
+				NewGameTip("Tryb eksploracji: podwojony czas trwania zadania");
 				SetFunctionTimerCondition("JacobOnMainOver", 0, 0, 30, false);
 			}
 			else SetFunctionTimerCondition("JacobOnMainOver", 0, 0, 15, false);
@@ -102,14 +102,14 @@ void ProcessDialogEvent()
 			PlaySound("Voice\English\hambit\Longway-02.wav");
 			if (pchar.questTemp.HWIC.Holl == "MirageFail")
 			{
-				dialog.text = "Ty głupcze, mongolski bałwanie, chuanzhang! Mieliśmy łatwe zadanie - zdobyć 'Mirage' bez straty 'Meifeng'. Była łatwym celem bez swojego chuanzhang, a jednak nie udało ci się wykonać zadania\nLongway ani nie będzie ci służył, ani cię więcej nie zobaczy. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
+				dialog.text = "Ty głupcze, mongolski bałwanie, chuanzhang! Mieliśmy łatwe zadanie - zdobyć 'Miraż' bez straty 'Meifeng'. Był łatwym celem bez swojego chuanzhang, a jednak nie udało ci się wykonać zadania\nLongway ani nie będzie ci służył, ani cię więcej nie zobaczy. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
 				link.l1 = "Do diabła z tobą i twoim panem!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-10");
 			}
 			if (pchar.questTemp.HWIC.Holl == "JacobOnMain" || pchar.questTemp.HWIC.Holl == "JacobInRoom")
 			{
-				dialog.text = "Ty idioto Mongoł, chuanzhang! Zmarnowaliśmy zbyt wiele czasu na rozwiązywanie twoich spraw zamiast spotkać się z Jacobem van Bergiem. On już odszedł z "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nNie udało ci się wykonać zadania. Longway nie chce ci ani służyć, ani cię więcej widzieć. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
+				dialog.text = "Ty idioto mongolski bałwanie, chuanzhang! Zmarnowaliśmy zbyt wiele czasu na rozwiązywanie twoich spraw zamiast spotkać się z Jacobem van Bergiem. On już odszedł z "+XI_ConvertString("Colony"+pchar.questTemp.HWIC.Holl.JacobCity+"Dat")+"\nNie udało ci się wykonać zadania. Longway nie chce ci ani służyć, ani cię więcej widzieć. Longway jest pewien, że Mynheer Rodenburg zatwierdzi jego decyzję.";
 				link.l1 = "Do diabła z tobą i twoim panem!";
 				link.l1.go = "exit";
 				AddQuestRecord("Holl_Gambit", "1-9");

@@ -552,6 +552,7 @@ void Tonzag_LoadDeck() {
 			LAi_SetActorType(sld);
 			LAi_group_MoveCharacter(sld, LAI_GROUP_PLAYER);
 			LAi_ActorTurnToLocator(sld, "quest", "quest6");
+			LAi_CharacterDisableDialog(sld);
 			
 			sailorsCount++;
 		}
@@ -824,7 +825,7 @@ void Tonzag_SeeCabin() {
 	LAi_ActorFollow(pchar, sld, "ActorDialog_Any2Pchar", 3.0);
 	//LAi_ActorDialogDelay(sld, pchar, "", 3.0);
 	
-	for (i = 1; i <= 3; i++) {
+	for (i = 1; i <= 2; i++) {
 		sld = GetCharacter(NPC_GenerateCharacter("Tonzag_DeadMan_" + i, "killer_" + (1 + rand(4)), "man", "man_dead", 10, PIRATE, 0, false, "pirate"));
 		sTemp = GetGeneratedItem("topor_04");
 		GiveItem2Character(sld, sTemp);
@@ -832,7 +833,7 @@ void Tonzag_SeeCabin() {
 		sld.DontClearDead = true;
 		sld.CantLoot = true;
 		sld.DeadWithBlade = true;
-		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc" + (i - 1));
+		ChangeCharacterAddressGroup(sld, pchar.location, "rld", "loc" + (i));
 		LAi_SetFightMode(sld, true);
 		LAi_KillCharacter(sld);
 	}
@@ -873,7 +874,7 @@ void Tonzag_MaryBoardingDialog1() {
 	
 	sld = CharacterFromID("Tonzag");
 	LAi_SetActorType(sld);
-	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "Tonzag_CabinMaryDialog", -1);
+	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "Tonzag_CabinMaryDialog", 10);
 	
 	sld = CharacterFromID("Mary");
 	LAi_SetActorType(sld);
@@ -893,7 +894,7 @@ void Tonzag_HelenBoardingDialog1() {
 	
 	sld = CharacterFromID("Tonzag");
 	LAi_SetActorType(sld);
-	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "Tonzag_CabinHelenaDialog", -1);
+	LAi_ActorGoToLocation(sld, "reload", "reload1", "none", "", "", "Tonzag_CabinHelenaDialog", 10);
 	
 	sld = CharacterFromID("Helena");
 	LAi_SetActorType(sld);

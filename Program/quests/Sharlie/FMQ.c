@@ -179,6 +179,7 @@ void FMQG_MutiniOnShip(string qName) // бунт
 	pchar.quest.FMQG_SailFinish.over = "yes";
 	pchar.questTemp.FMQG = "mutiny";
 	MunityOnShip("ShipMunity");
+	ChangeCharacterComplexReputation(pchar,"authority", 25);
 	DelMapQuestMarkShore("shore47");
 }
 
@@ -1259,6 +1260,7 @@ void FMQN_MutiniOnShip(string qName) // бунт
 	pchar.quest.FMQN_sailing.over = "yes";
 	pchar.questTemp.FMQN = "mutiny";
 	MunityOnShip("ShipMunity");
+	ChangeCharacterComplexReputation(pchar,"authority", 25);
 	for(i = 0; i < MAX_LOCATIONS; i++)
 	{	
 		sld = &Locations[i];

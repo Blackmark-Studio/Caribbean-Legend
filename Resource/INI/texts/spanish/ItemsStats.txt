@@ -284,7 +284,7 @@ itm_stat_descr_lacrima_patris_bonus
 itm_stat_blade_WR_1 {Diligencia}
 itm_stat_descr_blade_WR_1 {Aumenta por cinco la velocidad de regeneración de salud en combate.}
 itm_stat_secondary_hat6 {Estimado negociante}
-itm_stat_descr_secondary_hat6 {Aumenta la potencia de los barcos mercantes en la escuadra en un 15 % y reduce la penalización a la probabilidad de huir de los barcos mercantes en 3.}
+itm_stat_descr_secondary_hat6 {Aumenta la potencia de los barcos mercantes en la escuadra en un 40 % y reduce la penalización a la probabilidad de huir de los barcos mercantes en 3.}
 itm_stat_KhaelRoa_item {Jaguar}
 itm_stat_descr_KhaelRoa_item {Aumenta el daño infligido por armas de fuego diez veces.}
 itm_stat_indian_poison {Taíno}

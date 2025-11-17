@@ -189,6 +189,7 @@ void DelCharacterPerkNoCash(ref chref, string perkName)
 {
 	DeleteAttribute(chref,"perks.list."+perkName);
 	RemoveChrModifier(chref, perkName);
+	RemoveChrModifier(chref, "perk_" + perkName);
 	aref callbacks = GetPerkCallbacks(perkName);
 	makearef(callbacks, ChrPerksList.list.(perkName).modifiers.callbacks);
 	for (int i = 0; i < GetAttributesNum(callbacks); i++)
@@ -625,7 +626,8 @@ int СharacterPerksEnb(ref chr, string perkType)
         perkName = GetAttributeName(GetAttributeN(arPerksRoot,i));
         if(CheckAttribute(arPerksRoot, perkName + ".Hidden")) continue;
 		if(!CheckAttribute(chr, "perks.list."+perkName)) continue;
-        if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) arPerksRoot.(perkName).BaseType = "self";
+		if(perkName == "") continue;
+		if(!CheckAttribute(arPerksRoot, perkName + ".BaseType")) arPerksRoot.(perkName).BaseType = "self";
 		if(CheckAttributeEqualTo(arPerksRoot, perkName + ".BaseType", perkType)) total++;
 	} 
 	return total;
@@ -772,8 +774,6 @@ int GetFreePerkPoints(ref chr, string type)
 
 void SetFreePerkPoints(ref chr, int value, string type)
 {
-	if (value < 1) return;
-
 	SetAttribute(chr, "perks.FreePoints_" + type, value);
 }
 
@@ -814,6 +814,7 @@ string GetPerkDescribe(ref ref_Id_Idx, ref chr)
 	string perkName = GetAttributeName(perk);
 	string descrKey = "perk" + perkName;
 	if (!IsMainCharacter(chr) && HasDescriptor(perk, "Alternate")) descrKey += "_alternate";
+	if (perkName == "master") return PerkMasterDescription(chr);
 	return DLG_Convert(descrKey, "AbilityDescribe.txt", &perk);
 }
 

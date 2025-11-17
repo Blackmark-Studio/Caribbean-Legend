@@ -1,20 +1,20 @@
-#define PERK_VALUE_PREAIM 0.15             // скорость сведения прицела
-#define PERK_VALUE2_PREAIM 0.10            // урон по врагам с неполным здоровьем
-#define PERK_VALUE_FAST_HANDS 0.20         // скорость выхватывания оружия
-#define PERK_VALUE_AMMO_RIG 0.05           // скорость перезарядки
-#define PERK_VALUE_GUNMAN 0.08             // урон и скорость перезарядки
+#define PERK_VALUE_PREAIM 0.18             // скорость сведения прицела
+#define PERK_VALUE2_PREAIM 0.20            // урон по врагам с неполным здоровьем
+#define PERK_VALUE_FAST_HANDS 0.25         // скорость выхватывания оружия
+#define PERK_VALUE_AMMO_RIG 0.08           // скорость перезарядки
+#define PERK_VALUE_GUNMAN 0.10             // урон и скорость перезарядки
 #define PERK_VALUE_KEEN_EYE 0.50           // урон хедшота
 #define PERK_VALUE2_KEEN_EYE 0.02          // бонус крит-шанс огнестрела для не ГГ
 #define PERK_VALUE_DRILL 0.18              // скорость бега с мушкетами и ходьбы в прицеливании
 #define PERK_VALUE_LEAD_RAIN 0.05          // урон от количества врагов
-#define PERK_VALUE_GUN_PROFESSIONAL 0.12   // урон и скорость перезарядки
-#define PERK_VALUE_BASIC_DEFENSE 0.05      // защита от урона
-#define PERK_VALUE_ADVANCED_DEFENSE 0.03   // защита от урона
+#define PERK_VALUE_GUN_PROFESSIONAL 0.15   // урон и скорость перезарядки
+#define PERK_VALUE_BASIC_DEFENSE 0.06      // защита от урона
+#define PERK_VALUE_ADVANCED_DEFENSE 0.04   // защита от урона
 #define PERK_VALUE2_ADVANCED_DEFENSE 0.10  // защита от крита
 #define PERK_VALUE_MEDIC 25                // бонус хп
 #define PERK_VALUE_MUSCLES 0.10            // меньше энергии на удары тяжёлым оружием
 #define PERK_VALUE2_MUSCLES 0.04           // атак спид тяжёлым оружием
-#define PERK_VALUE3_MUSCLES 0.15           // ошеломление становится слабее
+#define PERK_VALUE3_MUSCLES 0.25           // ошеломление становится слабее
 #define PERK_VALUE_HEARTBREAKER 0.10       // урон прямым длинным оружием
 #define PERK_VALUE2_HEARTBREAKER 0.03      // атак спид выпада
 #define PERK_VALUE_CRITICAL_HIT 0.035      // крит-шанс

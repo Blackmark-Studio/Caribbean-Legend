@@ -3,9 +3,9 @@ newline
 
 }
 BasicDefense {Défense de base}
-perkBasicDefense {Réduit les dégâts subis de 5 %.}
+perkBasicDefense {Réduit les dégâts subis de $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Défense avancée}
-perkAdvancedDefense {Réduit les dégâts subis de 3 % et les dégâts critiques ennemis de 10 %.}
+perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefence|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Coup critique}
 perkCriticalHit {Augmente la chance de coup critique de base de 3,5 %.}
 Grus {Échine solide}
@@ -26,7 +26,7 @@ Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent
  Les officiers ne peuvent utiliser $key(descriptor_TwoHanded|ItemsDescriptors.txt) que s’ils en reçoivent l’ordre explicite.
 }
 GunProfessional {Tirailleur}
-perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de 9 %. Débloque l’utilisation des armes à feu à deux mains multi-coup.}
+perkGunProfessional {Augmente les dégâts et la vitesse de rechargement des armes à feu de $percent($perkBaseValue(GunProfessional|1)). Débloque l’utilisation des armes à feu à deux mains multi-coup.}
 IronWill {Volonté de fer}
 perkIronWill {Permet de survivre à une blessure mortelle toutes les 3 minutes.}
 SharedExperience {Apprenti rapide}

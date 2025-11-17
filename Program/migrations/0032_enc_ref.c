@@ -27,29 +27,7 @@ void ApplyMigration(ref migrationState)
     ref item;
     item = ItemsFromId("Vodka");
     item.time = 50;
-    ReapplyPerksItems0032();
 
     item = ItemsFromId("talisman17");
     item.kind = "doctor";
-}
-
-// Обновляем перки/дескрипторы
-void ReapplyPerksItems0032()
-{
-	if(LoadSegment("items\modifiers\init\init.c"))
-	{
-		InitModifiers();
-		UnloadSegment("items\modifiers\init\init.c");
-	}
-
-	InitPerks();
-	object fellows = GetAllFellows(pchar, true);
-	for (int i=0; i < GetAttributesNum(&fellows); i++)
-	{
-		int idx = sti(GetAttributeValue(GetAttributeN(&fellows, i)));
-		ref chr = GetCharacter(idx);
-		if (!CheckAttribute(chr, "perks.list")) continue;
-		ReapplyAllPerks(chr);
-	}
-	trace("Применили фикс перков/предметов");
 }

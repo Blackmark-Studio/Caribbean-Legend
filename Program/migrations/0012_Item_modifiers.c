@@ -108,6 +108,8 @@ void KukulklanStoleMyPerks()
 
 		SetFreePerkPoints(chr, sti(temp.self), "self");
 		SetFreePerkPoints(chr, sti(temp.ship), "ship");
+		SetAttribute(chr, "perks.FreePoints_self_exp", sti(temp.self_left));
+		SetAttribute(chr, "perks.FreePoints_ship_exp", sti(temp.ship_left));
 
 		if (IsMainCharacter(chr))
 		{

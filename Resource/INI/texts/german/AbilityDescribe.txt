@@ -3,9 +3,9 @@ newline
 
 }
 BasicDefense {Grundverteidigung}
-perkBasicDefense {Reduziert erlittenen Schaden um 5 %.}
+perkBasicDefense {Reduziert erlittenen Schaden um $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Fortgeschrittene Verteidigung}
-perkAdvancedDefense {Verringert erlittenen Schaden um 3 % und gegnerischen kritischen Schaden um 10 %.}
+perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefence|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefence|2)).}
 CriticalHit {Kritischer Treffer}
 perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um 3,5 %.}
 Grus {Starker Rückhalt}
@@ -26,7 +26,7 @@ Erhöht den Schaden und die Nachladegeschwindigkeit von Feuerwaffen um $percent(
  Offiziere können $key(descriptor_TwoHanded|ItemsDescriptors.txt) nur verwenden, wenn sie ausdrücklich dazu angewiesen werden.
 }
 GunProfessional {Plänkler}
-perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um 9 %. Ermöglicht die Nutzung von zweihändigen Repetier-Schusswaffen.}
+perkGunProfessional {Erhöht Schaden und Nachladegeschwindigkeit von Schusswaffen um $percent($perkBaseValue(GunProfessional|1)). Ermöglicht die Nutzung von zweihändigen Repetier-Schusswaffen.}
 IronWill {Eiserner Wille}
 perkIronWill {Ermöglicht es dir, alle 3 Minuten eine tödliche Wunde zu überleben.}
 SharedExperience {Schnelllerner}

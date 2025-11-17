@@ -200,7 +200,7 @@ itmname_pistol1 {Pistola común}
 itmdescr_pistol1 {Es una pistola militar con un pedernal ordinario y un alambre para llevarla en el cinturón. Es fácil de manejar y por eso es ampliamente utilizada, usa balas de plomo como munición.}
 itmname_pistol2 {Revólver}
 itmdescr_pistol2 {Cañón lateral de metralla triple. Muy difícil de fabricar, raro y costoso.}
-itmname_pistol3 { }
+itmname_pistol3 {Trombón}
 itmdescr_pistol3 {Escopeta de abordaje. El trombón sirve de poco contra enemigos ágiles o hombres de armas aislados, pero un disparo a una multitud de mendigos causará la impresión adecuada.}
 itmname_pistol4 {Pistola de cuatro cañones}
 itmdescr_pistol4 {Pistola de cuatro cañones, una maravilla de la ingeniería. Recarga lenta, pero cuatro disparos pueden cambiar cualquier combate.}
@@ -1123,7 +1123,7 @@ itmname_Mineral23 {Clavo}
 itmdescr_Mineral23 {Clavos para martillo comunes. Se pueden usar para reparar calzado, techos o barcos.}
 itmname_Mineral24 {Cinturón}
 itmdescr_Mineral24 {Un cinturón de cuero común para mantener los pantalones en su lugar y llevar objetos útiles.}
-itmname_Mineral25 {Sílbato de Contramaestre}
+itmname_Mineral25 {Silbato de Contramaestre}
 itmdescr_Mineral25 {Todo contramaestre que se precie debe tener uno. Este silbato se utiliza para dar órdenes a la tripulación.}
 itmname_Mineral26 {Mazo de cartas}
 itmdescr_Mineral26 {Una cantidad destartalada de naipes.}

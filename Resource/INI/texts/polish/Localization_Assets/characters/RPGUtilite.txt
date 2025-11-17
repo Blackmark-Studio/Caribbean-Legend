@@ -13,11 +13,11 @@ RPGUtilite_12 {Reputacja wzrosła!}
 RPGUtilite_13 {Reputacja spadła!}
 RPGUtilite_14 {Nagroda ~}
 RPGUtilite_15 {Wrogie}
-RPGUtilite_16 {Neutralne}
-RPGUtilite_17 {Dobre}
-RPGUtilite_18 {Świetne}
-RPGUtilite_19 {Sympatia}
-RPGUtilite_20 {Przyjazność}
+RPGUtilite_16 {Kiepskie}
+RPGUtilite_17 {Słabe}
+RPGUtilite_18 {Normalne}
+RPGUtilite_19 {Dobre}
+RPGUtilite_20 {Sympatia}
 RPGUtilite_21 {Podziw}
 RPGUtilite_22 {Rainbow}
 RPGUtilite_23 {Quicksilver}

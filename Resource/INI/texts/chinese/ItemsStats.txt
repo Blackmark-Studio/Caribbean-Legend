@@ -276,7 +276,7 @@ itm_stat_descr_lacrima_patris_bonus
 itm_stat_blade_WR_1 {勤勉}
 itm_stat_descr_blade_WR_1 {战斗中生命恢复速度提升五倍。}
 itm_stat_secondary_hat6 {尊敬的商人}
-itm_stat_descr_secondary_hat6 {将舰队中商船的力量提高15%, 并将从商船逃离成功率的惩罚减少3。}
+itm_stat_descr_secondary_hat6 {将舰队中商船的力量提高40%, 并将从商船逃离成功率的惩罚减少3。}
 itm_stat_KhaelRoa_item {美洲虎}
 itm_stat_descr_KhaelRoa_item {将火器造成的伤害提高十倍。}
 itm_stat_indian_poison {泰诺}

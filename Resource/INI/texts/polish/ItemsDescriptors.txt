@@ -5,12 +5,12 @@ descriptor_GoodFit {Zwykły}
 descriptor_HeartDefence {Wzmocn.}
 descriptor_Unremarkable {Zwykły}
 descriptor_WeaponType_0 {Lekka}
-descriptor_WeaponType_1 {Średnia}
+descriptor_WeaponType_1 {Wyważona}
 descriptor_WeaponType_2 {Ciężka}
-descriptor_WeaponLength_0 {Krótki}
-descriptor_WeaponLength_1 {Długi}
-descriptor_WeaponCurvature_0 {Prosty}
-descriptor_WeaponCurvature_1 {Zakrzywiony}
+descriptor_WeaponLength_0 {Krótka}
+descriptor_WeaponLength_1 {Długa}
+descriptor_WeaponCurvature_0 {Prosta}
+descriptor_WeaponCurvature_1 {Zakrzywiona}
 descriptor_ArmorType_0 {Lekka}
 descriptor_ArmorType_1 {Średnia}
 descriptor_ArmorType_2 {Ciężka}
@@ -22,21 +22,21 @@ descriptor_ArmorMaterial_4 {Kuta}
 descriptor_AmuletType_0 {Zwyczajny}
 descriptor_AmuletType_1 {Pogański}
 descriptor_AmuletType_2 {Chrześc.}
-descriptor_SingleCharge {Jednostrz.}
+descriptor_SingleCharge {Jednostrzał}
 descriptor_MultiCharge {Wielostrzał}
-descriptor_OneHanded {Jednoręczne}
-descriptor_TwoHanded {Dwuręczne}
+descriptor_OneHanded {Jednoręczny}
+descriptor_TwoHanded {Dwuręczny}
 descriptor_Bayonet {Bagnet}
 descriptor_PiercingAmmo {Przeciwpanc.}
-descriptor_StunAmmo {Ogłuszające}
-descriptor_EmpoweredAmmo {Wzmacniające}
+descriptor_StunAmmo {Ogłuszający}
+descriptor_EmpoweredAmmo {Wzmacniający}
 descriptor_SpyGlass {Obserwacja}
-descriptor_SpyGlass_Crew_0 {Szacunek załogi}
+descriptor_SpyGlass_Crew_0 {Szacowanie załogi}
 descriptor_SpyGlass_Crew_1 {Ocena załogi}
 descriptor_SpyGlass_Crew_2 {Liczba załogi}
 descriptor_SpyGlass_Caliber_0 {Armaty}
 descriptor_SpyGlass_Caliber_1 {Uzbrojenie}
-descriptor_Special {Specjalny}
+descriptor_Special {Specjalna}
 descriptor_Tool {Narzędzie}
 descriptor_Valuable {Cenny}
 descriptor_BulletNeedPowder {Proch}
@@ -45,8 +45,8 @@ descriptor_GrapeAmmo {Kartacz}
 descriptor_BulletAmmo {Kula}
 descriptor_BombAmmo {Granat}
 descriptor_HealPotion {Leczenie}
-descriptor_Alcohol {Odurzające}
-descriptor_EnhancingPotion {Wzmacniające}
+descriptor_Alcohol {Odurzający}
+descriptor_EnhancingPotion {Wzmacniający}
 descriptor_AntidotePotion {Antidotum}
 descriptor_Metal {Metal}
 descriptor_Trinket {Ozdoba}
@@ -55,7 +55,7 @@ descriptor_descr_EnhancingPotion {Posiada specjalny efekt wzmacniający.}
 descriptor_descr_AntidotePotion {Usuwa trucizny, zatrzymuje zatrucie.}
 descriptor_descr_Metal {Wydobywany z ziemi i używany w alchemii.}
 descriptor_descr_Trinket {Wykwintne i mniej wykwintne przedmioty, które odróżniają ludzi z gustem od prostaków. Można wymienić na dublony u lichwiarzy.}
-descriptor_Junk {Rupiecie}
+descriptor_Junk {Rupieć}
 descriptor_Herb {Zioło}
 descriptor_descr_Herb {Dar ziemi. Głównie używany w alchemii do tworzenia maści i mikstur.}
 descriptor_descr_Fancy {Ten przedmiot wyróżnia się paradnym wyglądem, zdobieniami i kosztownymi materiałami. Noszenie go zwiększa Dowodzenie o $number($DescriptorBaseValue(Fancy)). Efekty się kumulują.}
@@ -72,9 +72,9 @@ descriptor_descr_Unremarkable
 Każdy ma taki przedmiot. Z nim nie wyróżnisz się ani nie zostaniesz zapamiętany.
 Zwiększa Skrytność o $number($DescriptorBaseValue(Unremarkable)). Efekty się kumulują.
 }
-descriptor_descr_WeaponType_0 {Broń Lekka jest lżejsza, zwinniejsza i przeznaczona głównie do pojedynków. Ataki tą bronią są o 5% szybsze.}
+descriptor_descr_WeaponType_0 {Broń lekka jest lżejsza, zwinniejsza i przeznaczona głównie do pojedynków. Ataki tą bronią są o 5% szybsze.}
 descriptor_descr_WeaponType_1 {Broń wyważona łączy wagę i szybkość, dzięki czemu jest najbardziej wszechstronna. Doskonała do bójek i walk abordażowych.}
-descriptor_descr_WeaponType_2 {Broń Ciężka ma ogromną wagę i zadaje równie potężne obrażenia. Wadą jest 5% wolniejsze tempo ataku.}
+descriptor_descr_WeaponType_2 {Broń ciężka ma ogromną wagę i zadaje równie potężne obrażenia. Wadą jest 5% wolniejsze tempo ataku.}
 descriptor_descr_WeaponLength_0 {Ta broń wymaga zbliżenia się do wroga i najlepiej sprawdza się w walce wręcz.}
 descriptor_descr_WeaponLength_1 {Ta broń ma dobry zasięg i wymaga otwartej przestrzeni, by być skuteczna.}
 descriptor_descr_WeaponCurvature_0 {Ta broń jest prosta lub lekko zakrzywiona, przez co lepiej nadaje się do szybkich ataków niż do cięć.}
@@ -123,7 +123,7 @@ descriptor_Quest {Zadanie}
 descriptor_descr_Quest {Przedmiot ten jest potrzebny do pewnego zadania. Nie można go odłożyć ani sprzedać.}
 descriptor_Map {Mapa}
 descriptor_descr_Map {Strzęp papieru z oznaczeniami jakiejś okolicy. Wszystkie takie przedmioty są natychmiast kopiowane do atlasu.}
-descriptor_Fragile {Kruche}
+descriptor_Fragile {Kruchy}
 descriptor_descr_Fragile {Ten przedmiot psuje się po określonej liczbie użyć.}
 descriptor_Cannoner {$key(Cannoner)}
 descriptor_Boatswain {$key(Boatswain)}
@@ -131,12 +131,12 @@ descriptor_Carpenter {$key(Carpenter)}
 descriptor_Navigator {$key(Navigator)}
 descriptor_Treasurer {$key(Treasurer)}
 descriptor_Doctor {$key(Doctor)}
-descriptor_descr_Cannoner {Efekt działa na kanoniera.}
-descriptor_descr_Boatswain {Efekt działa na bosmana.}
-descriptor_descr_Carpenter {Efekt działa na stolarza.}
-descriptor_descr_Navigator {Efekt działa na nawigatora.}
-descriptor_descr_Treasurer {Efekt działa na skarbnika.}
-descriptor_descr_Doctor {Efekt działa na lekarza.}
+descriptor_descr_Cannoner {Efekt działa na kanonierze.}
+descriptor_descr_Boatswain {Efekt działa na bosmanie.}
+descriptor_descr_Carpenter {Efekt działa na cieśli.}
+descriptor_descr_Navigator {Efekt działa na nawigatorze.}
+descriptor_descr_Treasurer {Efekt działa na kwatermistrzu.}
+descriptor_descr_Doctor {Efekt działa na lekarzu.}
 descriptor_Ingredient {Składnik}
 descriptor_Jewelery {Klejnot}
 descriptor_descr_Jewelery {Kamienie szlachetne i półszlachetne. Można sprzedać lub użyć w alchemii.}

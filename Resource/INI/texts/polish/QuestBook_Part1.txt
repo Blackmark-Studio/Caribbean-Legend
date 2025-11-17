@@ -8,7 +8,7 @@ To nie ma sensu! Zatapiać statki, które można splądrować!
 ... Mam już dość czekania na tego żółtoskórego chińskiego posłańca. Minęły już tygodnie. Jeśli nie dotrze tu w ciągu dwóch dni, to wrócę do zatoki Boca De La Sierpe, wezmę swój statek i zostawię ten bałagan za sobą.
 #TEXT 2
 ... trzeba złapać kolejną ofiarę - jakiegoś idiotę, który kupił „Valkyrie” od tego półżywego Fleetwooda. Facet płynie teraz do Blueweld, a jego statek jest wypełniony niewolnikami...
-...to polowanie będzie moim ostatnim, mam już dość grania potworem, czas się pożegnać, bo moja ostatnia rozmowa z mistrzem była dość nieprzyjemna. Nadal żąda, żebym przypomniał sobie, gdzie zatopiłem tę brytyjską flet. To było wieki temu, pamiętam tylko, że szerokość geograficzna wynosiła 12 stopni i 48'. On nawet próbuje mnie nastraszyć tym żółtoskórym draniem. Nie, mam już dość tych gier-widm. Czas zrobić coś poważnego i uciekać stąd z powrotem do Europy...
+...to polowanie będzie moim ostatnim, mam już dość grania potworem, czas się pożegnać, bo moja ostatnia rozmowa z mistrzem była dość nieprzyjemna. Nadal żąda, żebym przypomniał sobie, gdzie zatopiłem tą brytyjską fluite. To było wieki temu, pamiętam tylko, że szerokość geograficzna wynosiła 12 stopni i 48'. On nawet próbuje mnie nastraszyć tym żółtoskórym draniem. Nie, mam już dość tych gier-widm. Czas zrobić coś poważnego i uciekać stąd z powrotem do Europy...
 ... Chyba powinienem zmienić flagę z „Mirage” na „Valkyrie”. Tak czy inaczej trafi w moje ręce. Nie obchodzi mnie, że kapitan chce ją dostarczyć do zatoki Esmeraldy. Ten szczur lądowy już ma „Meifenga”, pieprzyć go, nie dostanie też „Valkyrie”!
 
 #QUEST Fleetwood_Journal
@@ -21,9 +21,9 @@ Dziennik Richarda Fleetwooda
 #QUEST Merdok_Archive
 Ostatnie strony archiwum Johana van Merdena
 #TEXT 1
-... tego się spodziewano. Znam Lucasa aż za dobrze. Nie zaznam spokoju po jego awansie...
+... tego się nie spodziewałem. Znam Lucasa aż za dobrze. Nie zaznam spokoju po jego awansie...
 ... pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. Nie da mi spokoju. Zamykam aptekę, muszę przygotować się na oblężenie, czekając na statek, który zabierze mnie z Karaibów...
-... wygląda na to, że nowy agent Lucasa jest w porządku, nie chcę go zabijać, bo ten drań może go wysłać do St. John's. Choć to o wiele lepsze niż śmierć z rąk chłopaków Ostina. Lucas jest w stanie ich zatrudnić. Jest cały wypchany monetami...
+... wygląda na to, że nowy agent Lucasa jest w porządku, nie chcę go zabijać, bo ten drań może go wysłać do St. John's. Choć to o wiele lepsze niż śmierć z rąk chłopaków Ostina. Lucas jest w stanie ich zatrudnić. Wprost sra pieniędzmi...
 #TEXT 2
 ... pomysł „Latającego Holendra” jest dobrym przykładem sposobu, w jaki Rodenburg prowadzi interesy. To poważnie sabotowało działalność angielskich kupców...
 ... Joachim Merriman wywiązał się ze swojej części umowy i dobrze zapłacił za nefrytową czaszkę. Pół miliona ósemek, całkiem spora suma...
@@ -666,7 +666,7 @@ Składniki: Nóż ze sprzączką, Złoty krzyż piersiowy, Koral, Niebieski burs
 Niebieski bursztyn możesz zastąpić diamentem (dla wojowników ducha) lub morionem (dla łatwych jeźdźców).
 
 #TEXT totem_11
-Talizman „Wampira”
+Talizman „Upióra”
 
 Energia bojowa nie jest nieskończona – dotyczy to zarówno energii twoich wrogów, jak i twojej. Miejscowi wierzą, że Huitzilopochtli, aztecki bóg wojny, obserwuje każdą walkę i pochłania energię bitewną. Rytuał mocy pozwala ci zdobyć energię od wroga poprzez poświęcenie jego duszy.
 
@@ -702,7 +702,7 @@ Narzędzia: pióro i tusz
 Wyrażenia łacińskie
 #TEXT 1
 Ab ovo usque ad mala – od stóp do głowy
-Alea jacta est – kość została rzucona
+Alea iacta est – kości zostały rzucone
 Alter ego - inne ja
 Amat victoria curam - zwycięstwo sprzyja trosce
 Ars longa, vita brevis - sztuka jest długa, życie krótkie
@@ -710,15 +710,15 @@ Audaces fortuna juvat – fortuna sprzyja odważnym
 Aurea mediocritas – złoty środek
 Aut Vincere, aut Mori – albo zwyciężyć, albo umrzeć
 Aut Сaesаr, aut nihil - albo Cezar, albo nic
-Sarpe diem - chwytaj dzień
-Casus belli - wydarzenie wojenne
+Carpe diem - chwytaj dzień
+Casus belli - powód do wojny
 Circulus vitiosus – błędne koło
 Cogito, ergo sum – Myślę, więc jestem
 Cognosce te ipsum – poznaj siebie
 Conditio sine qua non - bez którego nie ma nic
 Consumor aliis inserviendo – skonsumowany w służbie innym
 Contra spem – nadzieja przeciw nadziei
-Warunek sine qua non – warunek niezbędny
+Conditio sine qua non – warunek niezbędny
 Debes, ergo potes - powinieneś, więc możesz
 De gustibus non est disputandum – o gustach się nie dyskutuje
 De lingua stulla incommoda multa - głupie słowa powodują duże problemy
@@ -769,7 +769,7 @@ Suum cuique - każdemu jego własne
 Tempora mutantur – czasy się zmieniają
 Tertium non datur - trzecia część nie jest podana
 Ultima ratio – ostateczny argument
-Jedna jaskółka wiosny nie czyni - Una hirundo non facit ver
+Una hirundo non facit ver - Jedna jaskółka wiosny nie czyni
 Usus est optimus magister - doświadczenie jest najlepszym nauczycielem
 Vae victis – biada zwyciężonym!
 Veni, vidi, vici – przybyłem, zobaczyłem, zwyciężyłem
@@ -1300,7 +1300,7 @@ P.S. Droga do tego, co ukryte, nie zawsze jest oczywista. Tylko ten, kto rozumie
 
 #TEXT 2
 ************************************************************
-Kontynuujesz swoją drogę, udowadniając, że masz nie tylko intellect, ale także przebiegłość. Jednak każdy, kto działa samodzielnie, jest skazany na porażkę. Czas znaleźć miejsce, w którym możesz spotkać się z twoim kontaktem.
+Kontynuujesz swoją drogę, udowadniając, że masz nie tylko intelekt, ale także przebiegłość. Jednak każdy, kto działa samodzielnie, jest skazany na porażkę. Czas znaleźć miejsce, w którym możesz spotkać się z twoim kontaktem.
 Powinno to być miejsce, które nie budzi podejrzeń, ale pozwala prowadzić rozmowę bez ciekawskich uszu. Musisz wybrać je z należytą starannością, aby nikt nie mógł się ukryć w pobliżu i podsłuchiwać. W takich sprawach ważniejsze jest dostrzec czającego się szpiega jako pierwszego, niż zgubić się samemu.  
 I pamiętaj: hałas na zewnątrz - czy to krzyki mew, dźwięk fal rozbijających się o pomost, czy brzęk łańcucha kotwicy - pomoże ukryć twoje słowa przed ciekawskimi spojrzeniami.  
 P.S. Latarnia może ujawnić nawet najbardziej niezawodne ukrycie. Ale w innej sytuacji wskaże drogę do odpowiednich drzwi.
@@ -1315,7 +1315,7 @@ P.S. Ceglany dom to symbol trwałości i niezawodności. Może chronić zarówno
 #TEXT 4
 ************************************************************
 Już wiele się nauczyłeś, ale najważniejsza zasada to zawsze mieć plan awaryjny. Każdy, kto chce odnieść sukces w naszym fachu, musi mieć niezawodne tajne schronienie. Dom, w którym można się ukryć, poczekać lub czekać na nowe rozkazy.  
-Twój następny krok to znalezienie tego miejsca. Jest daleko od ciekawskich spojrzeń, ale uliczki wokół są wystarczająco tłoczne i hałaśliwe, by ukryć twoje ruchy, szczególnie wieczorem, gdy tawerna jest pełna ludzi, a z trudnością można wejść w zaułek bez napotkania na bójkę.  
+Twój następny krok to znalezienie tego miejsca. Jest daleko od ciekawskich spojrzeń, ale uliczki wokół są wystarczająco tłoczne i hałaśliwe, by ukryć twoje ruchy, szczególnie wieczorem, gdy karczma jest pełna ludzi, a z trudnością można wejść w zaułek bez napotkania na bójkę.  
 Pijani mieszkańcy i zmęczeni stolarze spojrzą na ciebie wracając do domu, nie podejrzewając niczego, ponieważ jego tajemna natura będzie znana tylko tobie. Możesz się do niego dostać tylko z pierścieniem - symbolem twojej lojalności wobec Zakonu. Będzie to także twój klucz. Szukaj pierścienia naprzeciw rezydencji, w zacisznym miejscu.  
 Pamiętaj: twoje schronienie musi zawierać wszystko, czego potrzebujesz: pieniądze, zaopatrzenie, lekarstwa. A co najważniejsze - musi pozostawać tajemnicą znaną tylko tobie.  
 P.S. Patrząc na trzyipiętrowy dom, większość widzi tylko to, co wznosi się ponad ziemię. Ale najbardziej tajemnicze zwykle ukrywa się pod nią.  

@@ -118,9 +118,9 @@ itmdescr_knife_01
 Wygląda jak zwykły sztylet... moskal Fadey twierdzi, że sztylet ten został zaczarowany przez indiańskich szamanów i kryje w sobie wiele ukrytych tajemnic.Ale jakich dokładnie?
 }
 itmname_knife_02 {Maria}
-itmdescr_knife_02 {Piękna daga należąca do Diego de Montoya. Wyraźnie broń była starannie pielęgnowana — jakby miała dla byłego właściciela wartość sentymentalną.}
+itmdescr_knife_02 {Piękna daga należąca do Diego de Montoya. Broń była starannie pielęgnowana — jakby miała dla byłego właściciela wartość sentymentalną.}
 itmname_knife_03 {Rodzinny Sztylet}
-itmdescr_knife_03 {Broń rodowa de Monpe, znana również jako 'wykałaczka'. Cenny przedmiot, możliwy do sprzedaży w potrzebie — po co inaczej regalia rodowe?}
+itmdescr_knife_03 {Broń rodowa de Monper, znana również jako 'wykałaczka'. Cenny przedmiot, możliwy do sprzedaży w potrzebie — po co inaczej regalia rodowe?}
 itmname_khopesh1 {Chopesz}
 itmdescr_khopesh1 {Rytualna broń z czasów, gdy bogowie chodzili jeszcze po ziemi.}
 itmname_khopesh2 {Chopesz Aruby}
@@ -191,10 +191,10 @@ itmname_blade_SP_3 {Wisielec}
 itmdescr_blade_SP_3 {Czaszka Yoricka, osadzona zamiast jelca, zachęca do porzucenia strachu przed śmiercią i spojrzenia Kostusze prosto w oczy, uwalniając prawdziwą siłę wojownika.}
 itmname_pistol1 {Pistolet}
 itmdescr_pistol1 {Pistolet wojskowy ze zwykłym zamkiem skałkowym i hakiem do noszenia przy pasku. Stosunkowo tani, łatwy w obsłudze i dlatego szeroko stosowany.}
-itmname_pistol2 {Srutowiec}
+itmname_pistol2 {Śrutowiec}
 itmdescr_pistol2 {Trójlufowa boczna kartaczownica. Bardzo trudna w produkcji, rzadka i kosztowna.}
-itmname_pistol3 {Puzon}
-itmdescr_pistol3 {Kartaczownica abordażowa. Trombon ma niewielkie zastosowanie przeciw zwinym pojedynczym przeciwnikom lub zbrojnym, jednak strzał w tłum żebraków zrobi odpowiednie wrażenie.}
+itmname_pistol3 {Trombon}
+itmdescr_pistol3 {Śrutownica abordażowa. Trombon ma niewielkie zastosowanie przeciw zwinym pojedynczym przeciwnikom lub zbrojnym, jednak strzał w tłum żebraków zrobi odpowiednie wrażenie.}
 itmname_pistol4 {Pistolet czterolufowy}
 itmdescr_pistol4 {Czterolufowy pistolet, cud inżynierii. Przeładowuje się powoli, ale cztery strzały mogą odmienić każdy pojedynek.}
 itmname_pistol5 {Pistolet pojedynkowy}
@@ -203,8 +203,8 @@ itmname_pistol6 {Pistolet Dwulufowy}
 itmdescr_pistol6 {Pistolet dwulufowy - bardzo przyjemny dla tych, którzy lubią bezpieczeństwo, jakie zapewnia drugi strzał.}
 itmname_pistol7 {Rewolwer Colt}
 itmdescr_pistol7 {Rewolwer kapiszonowy z pierwszej połowy XIX wieku, sygnowany przez Colt. Strzał chwilowo dezorientuje przeciwników. Wymaga specjalnej amunicji.}
-itmname_pistol8 {Garlacz}
-itmdescr_pistol8 {Unikalny muszkieton floty, nadający się do strzelania jedną ręką. Używa stalowych kul, które łatwo poradzą sobie z każdą zbroją.}
+itmname_pistol8 {Garłacz}
+itmdescr_pistol8 {Unikalny pseucho-muszkiet floty, nadający się do strzelania jedną ręką. Używa stalowych strzał, które łatwo poradzą sobie z każdą zbroją.}
 itmname_pistol9 {Podkręcony pistolet}
 itmdescr_pistol9 {Jednostrzałowy saski pistolet o wyjątkowej rzadkości, strzelający dwiema kulami po kolei. Cechuje się długim czasem przeładowania.}
 itmname_pistol10 {Złoty Orzeł}
@@ -219,10 +219,10 @@ itmname_pistol14 {Dwulufowy pistolet pojedynkowy}
 itmdescr_pistol14 {Wyjątkowo kosztowne, śmiertelnie groźne i zupełnie niepraktyczne dzieło sztuki.}
 itmname_mortairgun {Ręczne Działo}
 itmdescr_mortairgun {Moździerz ręczny – doskonały do atakowania małych grup wroga. Najlepiej sprawdza się podczas zasadzki.}
-itmname_mushket1 {Muszkiet z zamkiem zapłonowym}
+itmname_mushket1 {Muszkiet z zamkiem lontowym}
 itmdescr_mushket1 {Potężny, ciężki muszkiet piechoty z niezawodnym zamkiem lontowym.}
 itmname_mushket2 {Karabin marynarki wojennej}
-itmdescr_mushket2 {Skrócona wersja najnowszej angielskiej fuzji ze sztykiem. Standardowe wyposażenie piechoty kolonialnej i morskiej.}
+itmdescr_mushket2 {Skrócona wersja najnowszego angielskiego muszkietu z bagnetem. Standardowe wyposażenie piechoty kolonialnej i morskiej.}
 itmname_mushket3 {Arkebuz}
 itmdescr_mushket3
 {
@@ -263,10 +263,10 @@ itmname_nocirass {Bez kirysu}
 itmdescr_nocirass {Nosząc zbroję przez długi czas, można się zmęczyć. Odciąż się, wyprostuj nogi i wypij filiżankę gorącej kawy z cynamonem lub czegoś mocniejszego.}
 itmname_cirass1 {Zbroja piechoty}
 itmdescr_cirass1 {Pancerz piechoty używany podczas oblężeń twierdz. Doskonale chroni przed stalą i ołowiem, ale krępuje ruchy, czyniąc posiadacza niezdarnym w walce wręcz. Zyskał szerokie rozpowszechnienie zarówno w Europie, jak i na Karaibach.}
-itmname_cirass2 {Kirasa reitarska}
+itmname_cirass2 {Kirys rajtarski}
 itmdescr_cirass2 {Kuta, wysokiej jakości kirasa ciężkiej kawalerii. Doskonale chroni klatkę piersiową i plecy, ale w szyku piechoty jej waga i słabe dopasowanie wpływają na szybkość i zwinność noszącego.}
 itmname_cirass3 {Kirys paradny}
-itmdescr_cirass3 {Lekka kirysa z wysokiej jakości stali. Można nosić pod kaftanem. Nieznacznie ogranicza ruchy, skutecznie chroni jedynie przed rykoszetami i powierzchownymi ciosami.}
+itmdescr_cirass3 {Lekki kirys z wysokiej jakości stali. Można nosić pod kaftanem. Nieznacznie ogranicza ruchy, skutecznie chroni jedynie przed rykoszetami i powierzchownymi ciosami.}
 itmname_cirass4 {Kirys mediolański}
 itmdescr_cirass4 {Rzadka zbroja najwyższej jakości. Skutecznie chroni przed ostrzem i kulą, a przy tym zaskakująco lekka. Jej sekret to liczne rowki nadające elastyczność i wytrzymałość.}
 itmname_cirass5 {Skórzany pas}
@@ -314,9 +314,9 @@ itmdescr_hat5 {Taki kapelusz większość marynarzy widzi raz w życiu, jeśli w
 itmname_hat6 {Holenderski kapelusz}
 itmdescr_hat6 {Drogi i elegancki kapelusz, chętnie noszony przez przeciętnych kupców. Nietypowy kształt pozwala z daleka rozpoznać negocjatora i przygotować się na twarde targowanie.}
 itmname_hat7 {Szczęśliwy kapelusz}
-itmdescr_hat7 {Mówią, że ten zadziorny kapelusz przynosi szczęście. Choć podniszczony i naznaczony czasem, wciąż wygląda szlachetnie. Jeśli udało ci się zdobyć taki, bądź pewien, że w najtrudniejszym momencie zawsze będziesz mieć asa w rękawie.}
-itmname_hat8 {Kapelusz Charliego Prince’a}
-itmdescr_hat8 {Ten kapelusz przeraża kupców—zwłaszcza hiszpańskich—bardziej niż sama Czarna Bandera. Sława jego właściciela sprawia, że nawet najtwardszy wilk morski blednie i drży. Przeklęty niech będzie dzień narodzin Charliego Prince’a.}
+itmdescr_hat7 {Mówią, że ten zawadiacki kapelusz przynosi szczęście. Choć nadgryziony zębem czasu, wciąż ma w sobie coś szlachetnego. Jeśli trafisz na taki kapelusz, możesz być pewien: w trudnej chwili przemkniesz obok strażnika, wyciągniesz właściwą kartę z talii i znajdziesz na dnie kieszeni zagubioną kulę.}
+itmname_hat8 {Kapelusz Charliego Księcia}
+itmdescr_hat8 {Ten kapelusz przeraża kupców—zwłaszcza hiszpańskich—bardziej niż sama Czarna Bandera. Sława jego właściciela sprawia, że nawet najtwardszy wilk morski blednie i drży. Przeklęty niech będzie dzień narodzin Charliego Księcia.}
 itmname_hat9 {Kapelusz Grima}
 itmdescr_hat9 {Ten kapelusz znany jest w każdym zakątku Karaibów i wszędzie wspominany z dreszczem. Tylko szaleniec zaatakuje statek jego właściciela, a spotkanie twarzą w twarz sprawi, że strach odbierze ci pamięć o szabli i pistolecie. Pamiętaj: łatwo przejść na tamtą stronę. Powrót to prawdziwe wyzwanie.}
 itmname_hat10 {Kapelusz najemnika}
@@ -385,14 +385,14 @@ itmname_talisman9 {Order Św. Ludwika}
 itmdescr_talisman9 {Najbardziej pożądana nagroda każdego francuskiego kapitana.}
 itmname_talisman10 {Artefakt 'Łapacz'}
 itmdescr_talisman10 {Amulet poławiaczy pereł.}
-itmname_talisman11 {Artefakt 'Kamień Żmijowy'}
+itmname_talisman11 {Kamień Żmijowy}
 itmdescr_talisman11 {Po prostu kamień z dziurką. Na szczęście!}
 itmname_talisman12 {Medalion Odporności}
 itmdescr_talisman12 {Figurka bożka Taíno, która chroni przed chorobami i złym okiem.}
 itmname_talisman13 {Figurka Taino}
 itmdescr_talisman13 {Figurka bóstwa Taino, patrona bogactwa i gromadzenia.}
 itmname_talisman14 {Artefakt 'Ranyi'}
-itmdescr_talisman14 {Brosza zaklęta przez taoistycznych mnichów, w kształcie ryby z głową węża, pozwala podróżować znacznie szybciej.}
+itmdescr_talisman14 {Broszka, zaklęta przez taoistycznych mnichów, w kształcie ryby z głową węża, pozwala podróżować znacznie szybciej.}
 itmname_talisman15 {Artefakt 'Czarny Znak'}
 itmdescr_talisman15 {Nosiciel Czarnej Plamy natychmiast staje się otoczony przesądami, legendami i plotkami.}
 itmname_talisman16 {Artefakt 'Złoty Nóż Ceremonialny'}
@@ -417,7 +417,7 @@ talisman19_InSlot
 Statek istnieje po obu stronach zasłony jednocześnie. Drewno było żywe, stało się martwe, by służyć żywym. Czaszka kapitana „Memento” przypomina każdej załodze, że śmierci nie ma i trzeba walczyć do końca.~Każde 2% utraconego kadłuba zwiększa szybkość i obrażenia dział o 0,75% i 0,5%.~Brak kar, można używać wielokrotnie.
 }
 itmname_talisman20 {Przepaska strzelca}
-itmdescr_talisman20 {Bandolier z kilku pasów, prochownica i liczne papierowe ładunki. Spotykany w różnych formach na europejskich polach bitew, lecz ten egzemplarz przybył z dalekich stron, ozdobiony wizerunkami fantastycznych bestii z surowych syberyjskich lasów.}
+itmdescr_talisman20 {Bandolier z kilku pasów, prochownicy i licznych papierowych ładunków. Spotykany w różnych formach na europejskich polach bitew, lecz ten egzemplarz przybył z dalekich stron, ozdobiony wizerunkami fantastycznych bestii z surowych syberyjskich lasów.}
 itmname_talisman20_part {Prochownica muszkietera}
 itmdescr_talisman20_part {Fantazyjna prochownica o nietypowym kształcie, ozdobiona wizerunkami egzotycznych zwierząt z odległych krain. Krawędzie haftowane wschodnioeuropejskim wzorem.}
 itmname_totem_01 {Talizman 'Żeliwne Gardło'}
@@ -425,7 +425,7 @@ itmdescr_totem_01 {Kubek z zaklęciem przeciw upiciu i srebrnym denkiem.}
 itmname_totem_02 {Talizman 'Gryzak'}
 itmdescr_totem_02 {Przerażająco wyglądający bicz do egzekucji.}
 itmname_totem_03 {Talizman 'Balsam Kupidyna'}
-itmdescr_totem_03 {Specjalna maść w drogim butonierce.}
+itmdescr_totem_03 {Specjalna maść w drogiej butonierce.}
 itmname_totem_04 {Talizman 'Myrmidon'}
 itmdescr_totem_04 {Srebrna bransoleta na rękę z turkusem.}
 itmname_totem_05 {Talizman 'Żelazne Ciało'}
@@ -455,8 +455,8 @@ Lalka rytualna — przerażający artefakt indiański, który według podań wi�
 itmname_indian_2 {Amulet 'Tester prochu'}
 itmdescr_indian_2
 {
-Urządzenie do sprawdzania jakości prochu. ~
- Wysokiej jakości proch zwiększa obrażenia wszelkich pocisków dzięki bardziej równomiernemu spalaniu, ale jest szczególnie przydatny przy tworzeniu własnej amunicji.
+Narzędzie, służące do odmierzania właściwej ilości prochu, gwarantując maksymalną efektywność wystrzału, i bezpieczeńswo użytkownika.
+ ~Zwiększa zadawane wrogom obrażenia
 }
 itmname_indian_3 {Amulet 'Nóż ceremonialny'}
 itmdescr_indian_3
@@ -464,7 +464,7 @@ itmdescr_indian_3
 Nóż z obsydianu do ofiar. Nie wiadomo, ile dusz zebrał w próbach uzyskania błogosławieństw herezjańskich bogów Azteków, ale krawędź obsydianu nie stępiła się do dziś.
  ~Zwiększa obrażenia krytyczne zadawane wrogom; niech Bóg spocznie nad ich duszami.
 }
-itmname_indian_4 {Amulet 'Główia'}
+itmname_indian_4 {Amulet 'Głowica'}
 itmdescr_indian_4
 {
 Wisiorek pokryty runami asatru. Nie wiadomo, jak trafił na Karaiby, ale wzbudza osobliwą skłonność do toporów.
@@ -525,13 +525,13 @@ itmdescr_amulet_5 {Duch błyskawic z panteonu voodoo. ~Sprawia, że kanonierzy s
 itmname_amulet_6 {Amulet 'Matka Boska'}
 itmdescr_amulet_6 {Poświęcona relikwiarka z wizerunkiem Matki Boskiej. ~Pomaga uniknąć śmierci i okaleczeń.}
 itmname_amulet_7 {Amulet 'Woda święcona'}
-itmdescr_amulet_7 {Srebrna piersiówka‑zawieszka wypełniona święconą wodą. ~Chroni przed chorobami i ranami — zarówno duchowymi, jak i cielesnymi.}
+itmdescr_amulet_7 {Srebrna piersiówka, wypełniona święconą wodą. ~Chroni przed chorobami i ranami — zarówno duchowymi, jak i cielesnymi.}
 itmname_amulet_8 {Amulet 'Kotwica'}
 itmdescr_amulet_8 {Srebrny wisiorek z zaklęciem. ~Marynarze wierzą, że chroni kadłub przed zbłąkaną kulą poniżej linii wodnej.}
 itmname_amulet_9 {Amulet 'Enkolpion'}
 itmdescr_amulet_9 {Masyny srebrny krzyż z relikwiami św. Krzysztofa. ~Chroni pielgrzymów w podróży, pomaga ocalić żagle podczas bitwy.}
 itmname_amulet_10 {Amulet 'Cudotwórca'}
-itmdescr_amulet_10 {Medalik św. Mikołaja, patrona żeglarzy. ~Z nim każdy marynarz ma większą szansę wrócić do domu żywy i zdrowy.}
+itmdescr_amulet_10 {Medalik Św. Mikołaja, patrona żeglarzy. ~Z nim każdy marynarz ma większą szansę wrócić do domu żywy i zdrowy.}
 itmname_amulet_11 {Amulet 'Cimaruta'}
 itmdescr_amulet_11 {Amulet tchnący starożytną magią. ~Przynosi nadprzyrodzone szczęście, chroniąc załogę przed ogniem muszkietowym przed abordażem.}
 itmname_obereg_1 {Amulet 'Teredo'}
@@ -725,7 +725,7 @@ itmdescr_map_barbados {Mapa przedstawiająca układ wyspy Barbados wraz z jej cz
 itmname_map_cayman {Mapa Kajmanu}
 itmdescr_map_cayman {Mapa niezasiedlonej wyspy Kajman.}
 itmname_map_Curacao {Mapa Kurakao}
-itmdescr_map_Curacao {Przybliżona mapa wyspy Curacao, wciąż nadająca się do podróżowania.}
+itmdescr_map_Curacao {Przybliżona mapa wyspy Kurakao, wciąż nadająca się do podróżowania.}
 itmname_map_guad {Mapa Gwadelupy}
 itmdescr_map_guad {Dokładna mapa wyspy Gwadelupa.}
 itmname_map_TORTUGA {Mapa Tortugi}
@@ -761,7 +761,7 @@ itmdescr_map_part1 {Część mapy skarbów. Aby dowiedzieć się dokąd owa mapa
 itmname_map_part2 {Część mapy skarbów}
 itmdescr_map_part2 {Część mapy skarbów. Aby dowiedzieć się dokąd owa mapa prowadzi, należy odnaleźć pozostałe jej fragmenty.}
 itmname_map_LSC {Mapa Miasta Porzuconych Statków}
-itmdescr_map_LSC {Każdy odwiedzający w Mieście Opuszczonych Statków będzie beznadziejnie zagubiony bez takiej mapy.}
+itmdescr_map_LSC {Każdy odwiedzający w Mieście Porzuconych Statków będzie beznadziejnie zagubiony bez takiej mapy.}
 itmname_A_map_beliz {Doskonała mapa Belize}
 itmdescr_A_map_beliz {Niezwykle dokładna mapa przedstawiająca okolice Belize. Na odwrocie widnieje sygnatura imienia i nazwiska kartografa – Jose Dios'a.}
 itmname_A_map_santa {Doskonała mapa Blueweld}
@@ -816,10 +816,10 @@ itmname_map_half_blaze {Połowa mapy Sharpa}
 itmdescr_map_half_blaze {Połowa legendarnej mapy, która kiedyś należała do Blaze Sharpa.}
 itmname_map_sharp_full {Mapa Nicholasa Sharpa}
 itmdescr_map_sharp_full {Mapa Isla del Tesoro ułożona poprzez połączenie dwóch połówek. Ten, kto posiada tę mapę, ten dowodzi swych praw do własności wyspy.}
-itmname_LSC_navigation_map {Wskazówki nawigacyjne do Miasta Opuszczonych Statków}
+itmname_LSC_navigation_map {Wskazówki nawigacyjne do Miasta Porzuconych Statków}
 itmdescr_LSC_navigation_map
 {
-Bez tego dokumentu niemożliwe jest dotarcie do Miasta Opuszczonych Statków drogą morską.Najpierw należy wypłynąć na 24°21' N i 84°50' W.Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
+Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.Najpierw należy wypłynąć na 24°21' N i 84°50' W.Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
 }
 itmname_RingCapBook {Dziennik pokładowy 'Santa Lucia'}
 itmdescr_RingCapBook
@@ -827,12 +827,12 @@ itmdescr_RingCapBook
 Dziennik pokładowy Pinasy 'Santa Lucia'.Warto przeczytać – wpisy trwają aż do samej śmierci załogi statku.
 }
 itmname_leather_bag {Walizeczka}
-itmdescr_leather_bag {Walizeczka dziewczyny, która uciekła z domu publicznego. Zawiera trochę pieniędzy, dokumenty, porządną sukienkę i kilka innych osobistych rzeczy. Walizeczka dość żałośnie jest cięższa od jej zawartości.}
+itmdescr_leather_bag {Walizeczka dziewczyny, która uciekła z domu publicznego. Zawiera trochę pieniędzy, dokumenty, porządną sukienkę i kilka innych osobistych rzeczy. Sama walizeczka jest dość żałośnie cięższa od jej zawartości.}
 itmname_sicretLetter {Tajna depesza}
 itmdescr_sicretLetter {Pakiet dokumentów dla gubernatora #sCity#. #sMayor# oczekuje go jak najszybciej.}
 itmname_letter_1 {Zapieczętowany list}
 itmdescr_letter_1 {List jest zapieczętowany. Aby poznać jego treść, należy go przeczytać, ale trzeba najpierw złamać pieczęć.}
-itmdescr_letter_1_Fadey {Prośba Fadeya Moskala o ułaskawienie indiańskiego przestępcy Tichingitu.}
+itmdescr_letter_1_Fadey {Prośba Fadieja Moskala o ułaskawienie indiańskiego przestępcy Tichingitu.}
 itmdescr_letter_SharkGoldFleet_1 {Zapieczętowana korespondencja od nadzorcy portu w Karakas. Należy dostarczyć osobiście do nadzorcy portu w Portobelo.}
 itmname_letter_2 {Zapieczętowany list}
 itmdescr_letter_2 {List jest zapieczętowany. Aby poznać jego treść, należy go przeczytać, ale trzeba najpierw złamać pieczęć.}
@@ -887,7 +887,7 @@ itmdescr_letter_vargant
 Jeśli plan nie wypali, będę czekał na ciebie i Davida w zatoce Sabu-Matila na pokładzie "Centuriona". Odpowiadasz za mojego brata głową. Rób, co on powie, jakby to byłbym ja. Nie myśl nawet o wyzwaniu Tyrexa – w mgnieniu oka połamie was na kawałki.Jackman.
 }
 itmname_letter_parol {Notatka}
-itmdescr_letter_parol {Informujemy, że właściciel zmienił hasło do wejścia do kopalni. Nowe hasło to 'Neptune'.}
+itmdescr_letter_parol {Informujemy, że właściciel zmienił hasło do wejścia do kopalni. Nowe hasło to 'Neptun'.}
 itmdescr_letter_ouster
 {
 Stare miejsce już nie jest bezpieczne. Anglicy się czegoś dowiedzieli. Będę czekał na ciebie z ładunkiem przez tydzień na 12°1' N i 60°11' W. Nie zawiedź mnie tym razem!M.R.
@@ -1129,7 +1129,10 @@ itmdescr_Mineral29 {Kwas azotowy znany od VIII wieku. Może być używany do pro
 itmname_Mineral30 {Kajdany Niewolników}
 itmdescr_Mineral30 {Kajdany ręczne używane przez handlarzy niewolników, aby chronić ich własność przed zniknięciem.}
 itmname_Mineral31 {Zaklęta Kość}
-itmdescr_Mineral31 {Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.}
+itmdescr_Mineral31
+{
+Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.(-10 do Charyzmy, -10 do Oportunizmu).
+}
 itmname_Mineral32 {Forma na Pociski}
 itmdescr_Mineral32 {To urządzenie umożliwia odlewanie pocisków o odpowiednim kształcie i rozmiarze dla rewolweru Colt.}
 itmname_Mineral33 {Barwnik}
@@ -1239,7 +1242,7 @@ itmdescr_cask_whisky {Drewniana skrzynka zawierająca kilka butelek wyśmienitej
 itmname_cask_gin {Beczka ginu}
 itmdescr_cask_gin {Beczka wykwintnego europejskiego ginu. Na Karaibach taki trunek dostępny jest tylko dla nielicznych.}
 itmname_buben {Tamburyn szamański}
-itmdescr_buben {Indyjski tamburyn używany przez ich szamanów do kontaktu z duchami. Tak przynajmniej mówią kolonistom...}
+itmdescr_buben {Indiański tamburyn używany przez ich szamanów do kontaktu z duchami. Tak przynajmniej mówią kolonistom...}
 itmname_smoking_tube {Fajka}
 itmdescr_smoking_tube {Wytworna fajka do palenia od rdzennych mieszkańców Ameryki Północnej. Jak to się tu znalazło?}
 itmname_chemistry {Podręcznik chemii Lavoisiera}
@@ -1251,18 +1254,18 @@ itmdescr_witches_hammer {Traktat o czarownicach, znany jako 'Młot na czarownice
 itmname_calendar_maya {Kalendarz Majów}
 itmdescr_calendar_maya {Kalendarz Majów, złożony z pięciu fragmentów.}
 itmname_splinter_js {Ozdobiony odłamek}
-itmdescr_splinter_js {Kamienny odłamek z pięknym indyjskim ornamentem, należący do Jana Svensona.}
+itmdescr_splinter_js {Kamienny odłamek z pięknym indiańskim ornamentem, należący do Jana Svensona.}
 itmname_splinter_nh {Ozdobiony odłamek}
-itmdescr_splinter_nh {Kamienny odłamek z pięknym indyjskim ornamentem, należący do Nathaniela Hawka.}
+itmdescr_splinter_nh {Kamienny odłamek z pięknym indiańskim ornamentem, należący do Nathaniela Hawka.}
 itmname_splinter_mt {Ozdobiony odłamek}
-itmdescr_splinter_mt {Kamienny odłamek z pięknym indyjskim ornamentem, należący do Marcusa Tyrex.}
+itmdescr_splinter_mt {Kamienny odłamek z pięknym indiańskim ornamentem, należący do Marcusa Tyrex.}
 itmname_splinter_zm {Ozdobiony odłamek}
-itmdescr_splinter_zm {Kamienny odłamek z pięknym indyjskim ornamentem, należący do Zachary'ego Marlowa.}
+itmdescr_splinter_zm {Kamienny odłamek z pięknym indiańskim ornamentem, należący do Zachary'ego Marlowa.}
 itmname_splinter_jb {Ozdobiony odłamek}
-itmdescr_splinter_jb {Kamienny odłamek z pięknym indyjskim ornamentem, należący do Jacquesa Barbazona.}
+itmdescr_splinter_jb {Kamienny odłamek z pięknym indiańskim ornamentem, należący do Jacquesa Barbazona.}
 itmname_Almanac {Almanach}
 itmdescr_Almanac {Gruba książka.}
-itmdescr_jinobook {Almanach należący do Gino Guineily.}
+itmdescr_jinobook {Almanach należący do Gino Guineila.}
 itmdescr_Almanac_FMQP {Książka księgowa Luisa Ortiza.}
 itmname_VerifyPaper {List żelazny}
 itmdescr_VerifyPaper {List żelazny.}
@@ -1318,13 +1321,13 @@ itmname_kaleuche_amulet1 {Dziwny amulet}
 itmdescr_kaleuche_amulet1 {Indyjski amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
 itmname_kaleuche_amulet1_potion {Eliksir Tuttuathapaka}
 itmdescr_kaleuche_amulet1_potion {Eliksir przygotowany z Manga Rosa przez Tuttuathapaka, szamana Indian Carib. Daje trwały wzrost szybkości reakcji i poprawia umiejętności w walce lekkimi broniami.}
-itmname_kaleuche_amulet2 {Indyjski amulet}
+itmname_kaleuche_amulet2 {Indiański amulet}
 itmdescr_kaleuche_amulet2 {Oryginalny indyjski amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
 itmdescr_kaleuche_amulet2_sword {Amulet, zaczarowany przez Tuttuathapaka, szamana Indian Carib. Sprawia, że świątynia Chavinavi jest podatna na twoje bronie i zapewnia ochronę przed ich atakami. Zwiększa umiejętności w używaniu broni o 25%.}
 itmname_kaleuche_amulet2_potion {Eliksir Tuttuathapaka}
 itmdescr_kaleuche_amulet2_potion {Eliksir przygotowany z Manga Rosa przez Tuttuathapaka, szamana Indian Carib. Daje trwały wzrost wytrzymałości i poprawia umiejętności w walce średnimi broniami.}
-itmname_kaleuche_amulet3 {Indyjski amulet}
-itmdescr_kaleuche_amulet3 {Oryginalny indyjski amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
+itmname_kaleuche_amulet3 {Indiański amulet}
+itmdescr_kaleuche_amulet3 {Oryginalny indiański amulet wykonany z gładkiego kamienia i jaskrawo pomalowany.}
 itmdescr_kaleuche_amulet3_shield {Amulet, zaczarowany przez Tuttuathapaka, szamana Indian Carib. Sprawia, że świątynia Chavinavi jest podatna na twoje bronie i zapewnia ochronę przed ich atakami. Zmniejsza otrzymywane obrażenia o 25% i zapobiega zatruciom.}
 itmname_kaleuche_amulet3_potion {Eliksir Tuttuathapaka}
 itmdescr_kaleuche_amulet31_potion {Eliksir przygotowany z Manga Rosa przez Tuttuathapaka, szamana Indian Carib. Daje trwały wzrost siły i poprawia umiejętności w walce ciężkimi broniami.}
@@ -1353,7 +1356,7 @@ itmdescr_key_candlestick_PortRoyal {Stary, zużyty klucz. Na razie nie wiadomo, 
 itmname_key_candlestick_FortFrance {Klucz}
 itmdescr_key_candlestick_FortFrance {Stary, zużyty klucz. Na razie nie wiadomo, co otwiera.}
 itmname_key_candlestick_Villemstad {Pierścień Tajnego Zakonu}
-itmdescr_key_candlestick_Villemstad {Masywny, zabytkowy pierścień z rubinem. Najwyraźniej ma mi posłużyć jako klucz.}
+itmdescr_key_candlestick_Villemstad {Masywny, zabytkowy pierścień z rubinem. Najwyraźniej ma posłużyć jako klucz.}
 itmname_LadyBeth_Book {Dziennik Blackwooda}
 itmdescr_LadyBeth_Book {Myśli nieszczęsnego człowieka.}
 itmname_LadyBeth_Map {Mapa Blackwooda}
@@ -1367,15 +1370,15 @@ itmdescr_Tutorial_journal {Czwarty tom dziennika kapitana „Ulysse”. Dopiero 
 itmname_Suspicious_Potion {Podejrzana mikstura}
 itmdescr_Suspicious_Potion {Lepiej, żeby zadziałała.}
 itmname_LFD_letter {List do Marisy Caldera}
-itmdescr_LFD_letter {Pociemniały atrament i pożółkły od czasu papier zdradzają sędziwy – jak na listy – wiek tej wiadomości. Treść jest starannie zabezpieczona pieczęcią z wosku. Zazwyczaj takie listy mają szczególną wartość. Adresatką jest pewna Marisa Caldera z Porto-Bello.}
+itmdescr_LFD_letter {Pociemniały atrament i pożółkły od czasu papier zdradzają sędziwy – jak na listy – wiek tej wiadomości. Treść jest starannie zabezpieczona pieczęcią z wosku. Zazwyczaj takie listy mają szczególną wartość. Adresatką jest pewna Marisa Caldera z Portobelo.}
 itmname_OZ_book {Księga rzemiosła kowalskiego}
 itmdescr_OZ_book {Skarbnica wiedzy Sebastiana, którą zdołał przegrać w karty. Ciężka, stara księga, cała zapisana rysunkami i notatkami – prawdziwy skarb dla każdego kowala.}
 itmname_OZ_letter {Notatka}
-itmdescr_OZ_letter {O północy spotykamy się w grocie. Zabierzemy nasze rzeczy i wyruszymy na Przylądek Galera. Stamtąd nas zabiorą i wreszcie opuścimy tę podupadłą wyspę. Nie mogę się doczekać, by dobrać się do znacznie grubszej ryby niż ci nędzni prostacy.}
+itmdescr_OZ_letter {O północy spotykamy się w grocie. Zabierzemy nasze rzeczy i wyruszymy na Przylądek Galery. Stamtąd nas zabiorą i wreszcie opuścimy tę podupadłą wyspę. Nie mogę się doczekać, by dobrać się do znacznie grubszej ryby niż ci nędzni prostacy.}
 itmname_wolfreeks_book {Dziennik Pokładowy}
 itmdescr_wolfreeks_book {Dziennik Pokładowy Wulfrica Iogansena.}
 itmdescr_ignasio_book {Dziennik Pokładowy Ignacio Marco.}
-itmname_Bunch {Zestaw zimnych broni}
+itmname_Bunch {Zestaw broni}
 itmdescr_Bunch {Zestaw 30 zwykłych toporów i mieczy.}
 itmname_Dove {Gołąb pocztowy}
 itmdescr_Dove {Gołąb pocztowy o imieniu Spike. Ten odważny pierzasty przyjaciel potrafi wrócić do La Vega z każdego miejsca na Karaibach.}
@@ -1391,7 +1394,7 @@ itmdescr_indian_poison
 itmname_mapEnrico {Mapa Camilli}
 itmdescr_mapEnrico {Prowadzi do skarbów w hiszpańskiej wiosce górniczej, zaginionej i opuszczonej 20 lat temu.}
 itmname_Reserve_item_01 {Zamknięty list}
-itmdescr_Reserve_item_01 {To list zaadresowany do kapitana Eclatanta.}
+itmdescr_Reserve_item_01 {To list zaadresowany do kapitana 'Eclatant'.}
 itmdescr_Reserve_item_01_1 {List do dyrektora Holenderskiej Kompanii Wschodnioindyjskiej, Petera Stuyvesanta, od Chevaliera Philippe'a de Poincy.}
 itmdescr_Reserve_item_01_2 {List od dyrektora Holenderskiej Kompanii Wschodnioindyjskiej, Petera Stuyvesanta, do Chevaliera Philippe'a de Poincy.}
 itmdescr_Reserve_item_01_3 {List do gubernatora Jamajki, pułkownika Edwarda Doily, od Chevaliera Philippe'a de Poincy.}
@@ -1430,6 +1433,6 @@ itmdescr_blade_WR {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść z
 itmname_hat11 {Kapelusz Teresy}
 itmdescr_hat11 {Nakrycie głowy matki Mary, zachowane przez Aurélie Bertin. Mimo upływu lat wciąż emanuje dawnym wdziękiem i elegancją.}
 itmname_talisman21 {Talizman przemytnika}
-itmdescr_talisman21 {Sakiewka z ziołami i popiołem, fiolka ciemnego płynu i medalion z czaszką — dziwny zestaw dla obcych, lecz cenny talizman dla wtajemniczonych w handel cieniem. Taki artefakt noszą tylko prawdziwi przemytnicy.}
+itmdescr_talisman21 {Sakiewka z ziołami i popiołem, fiolka ciemnego płynu i medalion z czaszką — dziwny zestaw dla obcych, lecz cenny talizman dla wtajemniczonych w szemranych interesach. Taki artefakt noszą tylko prawdziwi przemytnicy.}
 itmname_blade_WR_1 {Odrodzony}
 itmdescr_blade_WR_1 {Wspaniała szabla Ruperta Northwooda. Potężna rękojeść ze złotym feniksem świadczy o bólu i odrodzeniu. Ostrze lśni jak lustro, a na głowni wyryto: VULNERATUS NON VICTUS — „Ranny, lecz niepokonany”. Tylko Bóg wie, ile dusz pochłonął ten miecz…}

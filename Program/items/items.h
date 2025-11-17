@@ -117,11 +117,11 @@ int ITEMS_QUANTITY = 606; // не забываем менять номер
 #define WEAPON_HEAVY_WEIGHT_MTP_2 0.2
 
 // Снижение урона от брони, 1 процент = 0.01
-#define ARMOR_FABRIC_DAMAGE_REDUCTION  0.04
+#define ARMOR_FABRIC_DAMAGE_REDUCTION  0.05
 #define ARMOR_LEATHER_DAMAGE_REDUCTION 0.08
-#define ARMOR_PLATES_DAMAGE_REDUCTION  0.15
-#define ARMOR_STAMPS_DAMAGE_REDUCTION  0.22
-#define ARMOR_MOLDED_DAMAGE_REDUCTION  0.35
+#define ARMOR_PLATES_DAMAGE_REDUCTION  0.16
+#define ARMOR_STAMPS_DAMAGE_REDUCTION  0.24
+#define ARMOR_MOLDED_DAMAGE_REDUCTION  0.40
 
 // Влияние типов оружия на атак-спид
 #define WEAPON_MEDIUM_ATTACK_SPEED_MTP -0.05
@@ -129,7 +129,7 @@ int ITEMS_QUANTITY = 606; // не забываем менять номер
 
 // Влияние типов брони на мув-спид
 #define ARMOR_MEDIUM_MOVE_SPEED_MTP -0.06
-#define ARMOR_HEAVY_MOVE_SPEED_MTP  -0.10
+#define ARMOR_HEAVY_MOVE_SPEED_MTP  -0.12
 
 
 object Items[1134];

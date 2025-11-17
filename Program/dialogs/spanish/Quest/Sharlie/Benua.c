@@ -889,11 +889,8 @@ void ProcessDialogEvent()
 				link.l1 = "Por supuesto, padre. Aquí tiene. Ochocientos doblones.";
 				link.l1.go = "WildRose_Abb_14_pay";
 			}
-			else
-			{
-				link.l1 = "No, padre, no tengo esa cantidad conmigo. Pero regresaré pronto con el dinero.";
-				link.l1.go = "WildRose_Abb_14_nopay";
-			}
+			link.l2 = "No, padre, no tengo esa cantidad conmigo. Pero regresaré pronto con el dinero.";
+			link.l2.go = "WildRose_Abb_14_nopay";
 		break;
 
 		case "WildRose_Abb_14_pay":
@@ -901,6 +898,7 @@ void ProcessDialogEvent()
 			dialog.text = "Muy bien, "+pchar.name+". Regresa dentro de dos meses — estoy seguro de que para entonces tendré alguna respuesta para ti.";
 			link.l1 = "Gracias, padre. ¡Hasta pronto!";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_1");
 			DeleteAttribute(pchar, "questTemp.WildRose_Etap3_Benua_2");
 		break;
@@ -909,6 +907,7 @@ void ProcessDialogEvent()
 			dialog.text = "Como digas, hijo mío.";
 			link.l1 = "Regresaré pronto.";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			pchar.questTemp.WildRose_Etap3_Benua_2 = true;
 		break;
 
@@ -989,6 +988,7 @@ void ProcessDialogEvent()
 			dialog.text = "El Señor los guía en este camino, hijos míos, y ayudarlos es mi humilde deber. Pero me temo que no podré ayudarlos más en este asunto...";
 			link.l1 = "Lo entiendo, padre. Entonces, permítanos despedirnos.";
 			link.l1.go = "exit";
+			NextDiag.TempNode = "First time";
 			AddDialogExitQuestFunction("WildRose_Etap3_Paperwork_5");
 		break;
 		// --> Дикая Роза

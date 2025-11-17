@@ -5289,6 +5289,11 @@ void SetPassengerParameter(string _sIndex, bool bEnemy) //Jason, общие па
 	{
 		pchar.GenQuest.(_sIndex).City = FindEnemyCityToMC(true);
 		pchar.GenQuest.(_sIndex).Enemycity = true;
+		if(pchar.GenQuest.(_sIndex).City == "none")
+		{
+			pchar.GenQuest.(_sIndex).City = FindFriendCityToMC(true);
+			DeleteAttribute(pchar, "GenQuest." + _sIndex + ".City");
+		}
 	}
 	else pchar.GenQuest.(_sIndex).City = FindFriendCityToMC(true); //целевой город
 	pchar.GenQuest.(_sIndex).StartCity = GetCurrentTown(); //стартовый город

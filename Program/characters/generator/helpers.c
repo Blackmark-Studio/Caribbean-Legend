@@ -12,16 +12,23 @@ void GEN_SummPerkPoints(ref chr, ref points)
 {
 	int self = GEN_SELF_PERKS_PENALTY;
 	int ship = GEN_SHIP_PERKS_PENALTY;
-	for (int i = 1; i < 15; i++)
+	int selfRate = GetFreePoints_SelfRate(chr);
+	int shipRate = GetFreePoints_ShipRate(chr);
+	string skillName;
+
+	for (int i = 1; i <= 7; i++)
 	{
-		string skillName = GetSkillNameByIdx(i);
-		if (i < 7)
-			self += sti(chr.skill.(skillName));
-		else
-			ship += sti(chr.skill.(skillName));
+		skillName = GetSkillNameByTRIdx("SelfType", i);
+		self += sti(chr.skill.(skillName));
+
+		skillName = GetSkillNameByTRIdx("ShipType", i);
+		ship += sti(chr.skill.(skillName));
 	}
-	points.self = makeint(self / GetFreePoints_SelfRate(chr));
-	points.ship = makeint(ship / GetFreePoints_ShipRate(chr));
+
+	points.self = makeint(self / selfRate);
+	points.ship = makeint(ship / shipRate);
+	points.self_left = self % selfRate;
+	points.ship_left = ship % shipRate;
 }
 
 // 0 основной, 1 вторичный

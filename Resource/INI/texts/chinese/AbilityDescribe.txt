@@ -5,7 +5,7 @@ newline
 BasicDefense {基础防御}
 perkBasicDefense {受到的伤害降低$percent($perkBaseValue(BasicDefense|1))。}
 AdvancedDefense {高级防御}
-perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefence|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefence|2))。}
+perkAdvancedDefense {使受到的伤害降低$percent($perkBaseValue(AdvancedDefense|1)), 敌方暴击伤害降低$percent($perkBaseValue(AdvancedDefense|2))。}
 CriticalHit {暴击}
 perkCriticalHit {基础暴击率提高3.5%。}
 Grus {强健脊梁}
@@ -212,11 +212,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {快手}
-perkFastHands {将火器的拔出和收回速度提高20%。}
+perkFastHands {将火器的拔出和收回速度提高$percent($perkBaseValue(FastHands|1))。}
 AmmoRig {装备}
-perkAmmoRig {火器的装填速度提高5%。}
+perkAmmoRig {火器的装填速度提高$percent($perkBaseValue(AmmoRig|1))。}
 Preaim {校准}
-perkPreaim {瞄准模式快15%。}
+perkPreaim {瞄准模式快$percent($perkBaseValue(Preaim|1))。}
 KeenEye {慧眼}
 perkKeenEye {爆头造成$percent($perkBaseValue(KeenEye|1))更多伤害。}
 PowderFeel {火药感知}
@@ -351,3 +351,4 @@ perkInvestor_alternate {将角色的贸易和领导技能提高 $number($perkBas
 perkGossip_alternate {作为伙伴时, 角色将舰队的战力提升 $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {角色每饮用一瓶药剂, 外放伤害增加 $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {将可携带重量增加 $perkBaseValue(Looting|1) 磅。}
+perkMaster_currentBonus {当前加成：$percent($attr($context.ct.static.fast_Damage.perk_master))}

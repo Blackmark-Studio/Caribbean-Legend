@@ -345,11 +345,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sergio_24":
-			if (startHeroType == 1) sStr = "француз";
-			if (startHeroType == 2) sStr = "испанец";
-			if (startHeroType == 3) sStr = "англичанин";
-			if (startHeroType == 4) sStr = "англичанка";
-			dialog.text = "Капитан, вы показались мне честным человеком, которому можно доверять. Также немаловажное значение имеет то, что вы - " + sStr + ", и у вас есть свой корабль. Я предлагаю заключить торговое соглашение.";
+			dialog.text = "Капитан, вы показались мне честным человеком, которому можно доверять. Также немаловажное значение имеет то, что вы - "+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+", и у вас есть свой корабль. Я предлагаю заключить торговое соглашение.";
 			link.l1 = "Очень интересно! И какое же?";
 			link.l1.go = "Sergio_25";
 		break;

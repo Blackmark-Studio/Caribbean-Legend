@@ -5,7 +5,7 @@ newline
 BasicDefense {Defensa básica}
 perkBasicDefense {Reduce el daño recibido en un $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Defensa avanzada}
-perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefence|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Reduce el daño recibido en un $percent($perkBaseValue(AdvancedDefense|1)) y el daño crítico enemigo en un $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Golpe crítico}
 perkCriticalHit {Aumenta la probabilidad base de golpe crítico en un 3,5%.}
 Grus {Espina fuerte}
@@ -216,9 +216,9 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Manos rápidas}
-perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un 20%.}
+perkFastHands {Aumenta la velocidad de desenfundar y enfundar armas de fuego en un $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Equipamiento}
-perkAmmoRig {La recarga de armas de fuego es un 5% más rápida.}
+perkAmmoRig {La recarga de armas de fuego es un $percent($perkBaseValue(AmmoRig|1)) más rápida.}
 Preaim {Ajuste de mira}
 perkPreaim {El modo de apuntado es un 15% más rápido.}
 KeenEye {Ojo agudo}
@@ -355,3 +355,4 @@ perkInvestor_alternate {Aumenta las habilidades Comercio y Liderazgo del persona
 perkGossip_alternate {Como compañero, el personaje aumenta el poder de la escuadra en $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Cada poción que consuma el personaje aumenta el daño saliente en $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Aumenta la capacidad de carga en $perkBaseValue(Looting|1) libras.}
+perkMaster_currentBonus {Bono actual: $percent($attr($context.ct.static.fast_Damage.perk_master))}

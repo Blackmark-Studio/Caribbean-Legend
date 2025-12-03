@@ -5,80 +5,123 @@ newline
 Key Layout {Układ klawiszy}
 Key Layout_descr
 {
-Alternatywny układ klawiszy wprowadza kilka zmian w sterowaniu, dodaje nowe polecenia i odblokowuje dodatkowe funkcje:~- zmieniono polecenia szybkiej akcji i przeszukiwania ciał- zmieniono użycie wzmacniających mikstur- osobne skróty klawiszowe dla każdego okna postaci
+Alternatywny układ klawiszy wprowadza kilka zmian w sterowaniu, dodaje nowe polecenia i odblokowuje dodatkowe funkcje:
+~
+- zmieniono polecenia szybkiej akcji i przeszukiwania ciał
+- zmieniono użycie wzmacniających mikstur
+- osobne skróty klawiszowe dla każdego okna postaci
 }
 OptKurs {Kąt poza dziobem}
 OptKurs_descr
 {
-Czarne strzałki na minimapie pokazują kurs, na którym twój statek osiągnie maksymalną prędkość.~Niektóre typy statków potrafią płynąć niemal pod wiatr, co przydaje się, gdy trzeba dogonić kupca lub uciec przed okrętem wojennym.~Wiatr stale zmienia siłę i kierunek. Staraj się dostosowywać kurs, szukając kompromisu między optymalnym kątem a kierunkiem do celu.
+Czarne strzałki na minimapie pokazują kurs, na którym twój statek osiągnie maksymalną prędkość.
+~
+Niektóre typy statków potrafią płynąć niemal pod wiatr, co przydaje się, gdy trzeba dogonić kupca lub uciec przed okrętem wojennym.
+~
+Wiatr stale zmienia siłę i kierunek. Staraj się dostosowywać kurs, szukając kompromisu między optymalnym kątem a kierunkiem do celu.
 }
 SeaTimeScaleUp {Przyspieszenie czasu}
 SeaTimeScaleUp_descr
 {
-Używaj przyspieszenia czasu – to oszczędza czas, zwłaszcza na morzu.~Sterowanie: + i -
+Używaj przyspieszenia czasu – to oszczędza czas, zwłaszcza na morzu.
+~
+Sterowanie: + i -
 }
 SeaTimeScaleUp_controlsimg1 {TimeScaleFasterBA}
 SeaTimeScaleUp_controlsimg2 {TimeScaleSlowerBA}
 SeaFastTravel {Szybka podróż}
 SeaFastTravel_descr
 {
-Menu akcji daje dostęp do wielu przydatnych funkcji zarówno na lądzie, jak i na morzu.~Funkcja „Płyń do” pozwala natychmiast znaleźć się w pobliżu sojuszniczego statku lub punktu geograficznego. Zasięg można zwiększyć, używając rzadszych i droższych lunet.~Użyj menu akcji, aby szybko dotrzeć do „Ducha” i wysłać do niego szalupę.
+Menu akcji daje dostęp do wielu przydatnych funkcji zarówno na lądzie, jak i na morzu.
+~
+Funkcja „Płyń do” pozwala natychmiast znaleźć się w pobliżu sojuszniczego statku lub punktu geograficznego. Zasięg można zwiększyć, używając rzadszych i droższych lunet.
+~
+Użyj menu akcji, aby szybko dotrzeć do „Ducha” i wysłać do niego szalupę.
 }
 SeaFastTravel_controlsimg1 {BICommandsActivate}
 LandTimeScaleDown {Spowolnienie czasu}
 LandTimeScaleDown_descr
 {
-W trudnych walkach warto spowolnić czas. To nic złego – Caribbean Legend to wymagająca gra.~Sterowanie: + i -
+W trudnych walkach warto spowolnić czas. To nic złego – Caribbean Legend to wymagająca gra.
+~
+Sterowanie: + i -
 }
 LandTimeScaleDown_controlsimg1 {TimeScaleFasterBA}
 LandTimeScaleDown_controlsimg2 {TimeScaleSlowerBA}
 GuideFight {Walka na lądzie}
 GuideFight_descr
 {
-Opanowanie walki w tej grze wymaga czasu. Jeśli masz włączone podpowiedzi, skróty klawiszowe zobaczysz w prawym dolnym rogu ekranu.~Najpierw naucz się kombinacji „Parowanie – Cięcie”. Udane parowanie ataku przeciwnika ogłusza go i odbiera energię, dając ci bezpieczną okazję do kontrataku.~Obrażenia zależą od umiejętności postaci, jakości broni, amuletów i typów ataków.
+Opanowanie walki w tej grze wymaga czasu. Jeśli masz włączone podpowiedzi, skróty klawiszowe zobaczysz w prawym dolnym rogu ekranu.
+~
+Najpierw naucz się kombinacji „Parowanie – Cięcie”. Udane parowanie ataku przeciwnika ogłusza go i odbiera energię, dając ci bezpieczną okazję do kontrataku.
+~
+Obrażenia zależą od umiejętności postaci, jakości broni, amuletów i typów ataków.
 }
 GuideFight_controlsimg1 {ChrAttackChoseBase}
 GuideFight_controlsimg2 {ChrAttackBase}
 OneToOneCave {Wykorzystanie otoczenia}
 OneToOneCave_descr
 {
-Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.~Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
+Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.
+~
+Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
 }
 OneToOneBoarding {Wykorzystanie otoczenia}
 OneToOneBoarding_descr
 {
-Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.~Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
+Jeśli wróg walczy z tobą trzech do jednego, staraj się wykorzystać teren, by zyskać przewagę w walce.
+~
+Prawie zawsze można znaleźć miejsce, gdzie przeciwnicy będą musieli walczyć z tobą pojedynczo lub po dwóch.
 }
 Collision {Zmiana pozycji}
 Collision_descr
 {
-Czasem podczas walki trzeba zmienić pozycję – przebić się przez szyk wroga lub obejść sojuszników.~Twój bohater automatycznie odpycha sojuszników, a wrogów – sprintem lub unikami.Sprint w walce zużywa energię, więc korzystaj z niego rozsądnie.
+Czasem podczas walki trzeba zmienić pozycję – przebić się przez szyk wroga lub obejść sojuszników.
+~
+Twój bohater automatycznie odpycha sojuszników, a wrogów – sprintem lub unikami.
+Sprint w walce zużywa energię, więc korzystaj z niego rozsądnie.
 }
 Collision_controlsimg1 {ChrFightMode}
 Collision_controlsimg2 {ChrSprint}
 WorldMap {Mapa świata}
 WorldMap_descr
 {
-Mapa świata pozwala odbywać morskie podróże po świecie gry. Nie musisz dopływać do każdego miasta czy zatoki – wystarczy opuścić mapę świata w pobliżu celu i użyć funkcji „Płyń do”.~Umiejętne korzystanie z „Płyń do” pozwala znacznie skrócić czas podróży. Na przykład możesz opuścić mapę świata po jednej stronie wyspy, użyć szybkiej podróży, by znaleźć się w zatoce po drugiej stronie, i stamtąd wrócić na mapę świata.~Używaj skrótów klawiszowych, by powiększać mapę i otwierać atlas.
+Mapa świata pozwala odbywać morskie podróże po świecie gry. Nie musisz dopływać do każdego miasta czy zatoki – wystarczy opuścić mapę świata w pobliżu celu i użyć funkcji „Płyń do”.
+~
+Umiejętne korzystanie z „Płyń do” pozwala znacznie skrócić czas podróży. Na przykład możesz opuścić mapę świata po jednej stronie wyspy, użyć szybkiej podróży, by znaleźć się w zatoce po drugiej stronie, i stamtąd wrócić na mapę świata.
+~
+Używaj skrótów klawiszowych, by powiększać mapę i otwierać atlas.
 }
 WorldMap_controlsimg1 {WMapCameraSwitch}
 WorldMap_controlsimg2 {MapView}
 LandMap {Nawigacja lądowa}
 LandMap_descr
 {
-Podróżowanie po lądzie jest łatwiejsze, jeśli korzystasz z mapy wyspy. To szczególnie przydatne w zadaniach, skradaniu się i poszukiwaniu skarbów.Wszystkie dostępne mapy znajdziesz w Atlasie.Mapy można kupić lub znaleźć.
+Podróżowanie po lądzie jest łatwiejsze, jeśli korzystasz z mapy wyspy. To szczególnie przydatne w zadaniach, skradaniu się i poszukiwaniu skarbów.
+Wszystkie dostępne mapy znajdziesz w Atlasie.
+Mapy można kupić lub znaleźć.
 }
 LandMap_controlsimg1 {MapView}
 Navigator {Nawigacja}
 Navigator_descr
 {
-Wyznacz nawigatora z wysoką umiejętnością Nawigacji!~Nawigacja przede wszystkim określa, jak dużymi statkami może dowodzić postać.~Na przykład piąta klasa wymaga 25 punktów, a czwarta już 45. Przekroczenie tego limitu skutkuje karami do wszystkich cech.~Wymagania dla każdej klasy można zobaczyć, klikając prawym przyciskiem myszy na ikonie umiejętności w oknie postaci.
+Wyznacz nawigatora z wysoką umiejętnością Nawigacji!
+~
+Nawigacja przede wszystkim określa, jak dużymi statkami może dowodzić postać.
+~
+Na przykład piąta klasa wymaga 25 punktów, a czwarta już 45. Przekroczenie tego limitu skutkuje karami do wszystkich cech.
+~
+Wymagania dla każdej klasy można zobaczyć, klikając prawym przyciskiem myszy na ikonie umiejętności w oknie postaci.
 }
 Navigator_controlsimg1 {Abilities}
 Alchemy {Alchemia}
 Alchemy_descr
 {
-Wytwarzanie przedmiotów – zwłaszcza talizmanów, mikstur i amunicji – może znacznie ułatwić życie. To szczególnie przydatne w walkach z bossami.~Aby wytworzyć przedmiot, musisz znaleźć lub kupić przepis. Składników nie trzeba nosić przy sobie – możesz je przechowywać w skrzyni w kajucie.~Na początku gry możesz wybrać Perk Alchemii i zacząć kupować przepisy lub odłożyć to na później, gdy będziesz mieć zestawy narzędzi i nie będzie trzeba wydawać cennego punktu Perka na Alchemię.
+Wytwarzanie przedmiotów – zwłaszcza talizmanów, mikstur i amunicji – może znacznie ułatwić życie. To szczególnie przydatne w walkach z bossami.
+~
+Aby wytworzyć przedmiot, musisz znaleźć lub kupić przepis. Składników nie trzeba nosić przy sobie – możesz je przechowywać w skrzyni w kajucie.
+~
+Na początku gry możesz wybrać Perk Alchemii i zacząć kupować przepisy lub odłożyć to na później, gdy będziesz mieć zestawy narzędzi i nie będzie trzeba wydawać cennego punktu Perka na Alchemię.
 }
 Alchemy_controlsimg1 {Alchemy}
 LandMapAtSea { }
@@ -86,41 +129,85 @@ LandMapAtSea_descr {Cel twojego zadania jest po drugiej stronie wyspy. Wypłyń 
 Salary {Utrzymanie statku}
 Salary_descr
 {
-Wypłaty dla oficerów i załogi odbywają się co miesiąc i mogą znacznie utrudnić życie kapitanowi.~Ostateczna suma zależy od umiejętności „Handel” i „Dowodzenie”, klasy statku i poziomu trudności. Nawet na małych jednostkach warto mieć na pokładzie Kwatermistrza, a duży okręt wojenny może zrujnować nawet kraj.~Jeśli masz włączoną opcję podziału łupów, suma wypłat może być jeszcze większa.
+Wypłaty dla oficerów i załogi odbywają się co miesiąc i mogą znacznie utrudnić życie kapitanowi.
+~
+Ostateczna suma zależy od umiejętności „Handel” i „Dowodzenie”, klasy statku i poziomu trudności. Nawet na małych jednostkach warto mieć na pokładzie Kwatermistrza, a duży okręt wojenny może zrujnować nawet kraj.
+~
+Jeśli masz włączoną opcję podziału łupów, suma wypłat może być jeszcze większa.
 }
 Salary_controlsimg1 {ShipState}
 Dubloons {Dublony}
 Dubloons_descr
 {
-Złote dublony są prawdziwą miarą bogactwa bohatera i jego zdolności do rozwiązywania problemów pieniędzmi. Zwykle przechowuje się je w małych skrzyniach, które można otworzyć z panelu rzemiosła dostępnego w menu akcji. Tam też można je uzupełnić, jeśli masz wystarczająco dublonów.~Zawsze staraj się zdobywać te złote monety, bo najpotężniejsi ludzie archipelagu pomagają tylko za dublony.~Dobre źródła dublonów to skarby, depozyty bankowe, handel towarami strategicznymi i lichwiarze.~Nie musisz nosić złota przy sobie – wystarczy przechowywać je w jednej ze skrzyń w kajucie.
+Złote dublony są prawdziwą miarą bogactwa bohatera i jego zdolności do rozwiązywania problemów pieniędzmi. Zwykle przechowuje się je w małych skrzyniach, które można otworzyć z panelu rzemiosła dostępnego w menu akcji. Tam też można je uzupełnić, jeśli masz wystarczająco dublonów.
+~
+Zawsze staraj się zdobywać te złote monety, bo najpotężniejsi ludzie archipelagu pomagają tylko za dublony.
+~
+Dobre źródła dublonów to skarby, depozyty bankowe, handel towarami strategicznymi i lichwiarze.
+~
+Nie musisz nosić złota przy sobie – wystarczy przechowywać je w jednej ze skrzyń w kajucie.
 }
 Dubloons_controlsimg1 {LICommandsActivate}
 Box {Przechowywanie przedmiotów}
 Box_descr
 {
-W skrzyniach w kapitańskiej kajucie możesz przechowywać nieograniczoną liczbę rzeczy osobistych.~Sprzedawaj nadmiar, ale zawsze trzymaj zapas klejnotów, broni, amunicji i składników do alchemii w kajucie.~Poza obowiązkowym wyposażeniem warto mieć przy sobie tylko zestaw mikstur, amuletów i kul do broni palnej.~Inni kapitanowie też tak robią, więc zawsze warto przeszukać skrzynie w kajucie zdobytego statku.
+W skrzyniach w kapitańskiej kajucie możesz przechowywać nieograniczoną liczbę rzeczy osobistych.
+~
+Sprzedawaj nadmiar, ale zawsze trzymaj zapas klejnotów, broni, amunicji i składników do alchemii w kajucie.
+~
+Poza obowiązkowym wyposażeniem warto mieć przy sobie tylko zestaw mikstur, amuletów i kul do broni palnej.
+~
+Inni kapitanowie też tak robią, więc zawsze warto przeszukać skrzynie w kajucie zdobytego statku.
 }
 Health {Spadek zdrowia}
 Health_descr
 {
-Twoje „Zdrowie” spadło! Ten parametr opisuje ogólny stan postaci i wpływa na wszystkie jej cechy.~„Zdrowie” spada po użyciu prostych środków leczniczych, w sytuacjach fabularnych, po piciu alkoholu i przeciążeniu.~Odzyskuje się je za pomocą specjalnych mikstur, rozrywek, odpoczynku w karczmie lub po prostu z czasem. W trudnych przypadkach mogą pomóc kapłani.~Unikalni oficerowie również tracą „Zdrowie”, jeśli zostaną ciężko ranni w walce. Na szczęście sami je regenerują.
+Twoje „Zdrowie” spadło! Ten parametr opisuje ogólny stan postaci i wpływa na wszystkie jej cechy.
+~
+„Zdrowie” spada po użyciu prostych środków leczniczych, w sytuacjach fabularnych, po piciu alkoholu i przeciążeniu.
+~
+Odzyskuje się je za pomocą specjalnych mikstur, rozrywek, odpoczynku w karczmie lub po prostu z czasem. W trudnych przypadkach mogą pomóc kapłani.
+~
+Unikalni oficerowie również tracą „Zdrowie”, jeśli zostaną ciężko ranni w walce. Na szczęście sami je regenerują.
 }
 Amulet {Amulety}
 Amulet_descr
 {
-Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.~Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.~Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.~Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.
+Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.
+~
+Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.
+~
+Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
+~
+Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.
 }
 Amulet_controlsimg1 {Inventory}
 Perk {Punkty Zdolności}
 Perk_descr
 {
-Właśnie zdobyłeś swój pierwszy Punkt Zdolności! To najważniejszy element rozwoju postaci i dzieli się na morskie i osobiste.~Morskie zdolności czynią cię groźniejszym na morzu, osobiste – na lądzie i w kontaktach z ludźmi.~Oba typy rozwijają się niezależnie wraz ze wzrostem twoich umiejętności osobistych i okrętowych. Średnio każde 30 punktów jednej grupy daje jeden PP.~Aby szybko zdobywać morskie zdolności, wykonuj kontrakty i frachty. Osobiste rosną szybciej, jeśli walczysz różnymi typami broni i spędzasz czas w karczmach.~Pamiętaj, że osobiste zdolności są znacznie cenniejsze, bo większość morskich Perków można zastąpić oficerami.
+Właśnie zdobyłeś swój pierwszy Punkt Zdolności! To najważniejszy element rozwoju postaci i dzieli się na morskie i osobiste.
+~
+Morskie zdolności czynią cię groźniejszym na morzu, osobiste – na lądzie i w kontaktach z ludźmi.
+~
+Oba typy rozwijają się niezależnie wraz ze wzrostem twoich umiejętności osobistych i okrętowych. Średnio każde 30 punktów jednej grupy daje jeden PP.
+~
+Aby szybko zdobywać morskie zdolności, wykonuj kontrakty i frachty. Osobiste rosną szybciej, jeśli walczysz różnymi typami broni i spędzasz czas w karczmach.
+~
+Pamiętaj, że osobiste zdolności są znacznie cenniejsze, bo większość morskich Perków można zastąpić oficerami.
 }
 Perk_controlsimg1 {Abilities}
 Fighter {Gwardzista}
 Fighter_descr
 {
-Gwardziści to twoi najbardziej zaufani oficerowie, ochroniarze i awangarda. Pójdą za tobą wszędzie i spędzisz z nimi najwięcej czasu.~Możesz mieć przy sobie do trzech wojowników. Poza ochroną kapitana na lądzie, awangarda zwiększa skuteczność abordażu i pomaga przenosić ciężkie skarby.~Niepowtarzalnych oficerów można znaleźć tylko w zadaniach. Nie każdy z nich jest skutecznym gwardzistą, ale wszyscy mają wpływ na fabułę i nie mogą zginąć w zwykłej walce.~Nie zapomnij wyposażyć ludzi w amulety, środki lecznicze, broń i amunicję. Przedmioty można wymieniać przez menu akcji lub dowolną skrzynię.~Gwardzistom możesz rozkazać trzymać pozycję, podążać za tobą lub atakować za pomocą skrótów lub w dialogu.
+Gwardziści to twoi najbardziej zaufani oficerowie, ochroniarze i awangarda. Pójdą za tobą wszędzie i spędzisz z nimi najwięcej czasu.
+~
+Możesz mieć przy sobie do trzech wojowników. Poza ochroną kapitana na lądzie, awangarda zwiększa skuteczność abordażu i pomaga przenosić ciężkie skarby.
+~
+Niepowtarzalnych oficerów można znaleźć tylko w zadaniach. Nie każdy z nich jest skutecznym gwardzistą, ale wszyscy mają wpływ na fabułę i nie mogą zginąć w zwykłej walce.
+~
+Nie zapomnij wyposażyć ludzi w amulety, środki lecznicze, broń i amunicję. Przedmioty można wymieniać przez menu akcji lub dowolną skrzynię.
+~
+Gwardzistom możesz rozkazać trzymać pozycję, podążać za tobą lub atakować za pomocą skrótów lub w dialogu.
 }
 Fighter_controlsimg1 {Abilities}
 Fighter_controlsimg2 {OfficersFollow}
@@ -129,18 +216,41 @@ Fighter_controlsimg4 {OfficersHold}
 Rest {Zmiana pory dnia}
 Rest_descr
 {
-Możesz zmieniać porę dnia!~Wszystko w grze zależy od czasu: w nocy nie ma strażników na molo ani przy bramach miasta, załogę w karczmach można wynająć tylko w dzień, a niektórzy bohaterowie bardzo zwracają uwagę na porę, zwłaszcza jeśli dla nich pracujesz.~Korzystaj z tej funkcji swobodnie na morzu i w dziczy, ale w miastach najlepiej nocować w karczmie.
+Możesz zmieniać porę dnia!
+~
+Wszystko w grze zależy od czasu: w nocy nie ma strażników na molo ani przy bramach miasta, załogę w karczmach można wynająć tylko w dzień, a niektórzy bohaterowie bardzo zwracają uwagę na porę, zwłaszcza jeśli dla nich pracujesz.
+~
+Korzystaj z tej funkcji swobodnie na morzu i w dziczy, ale w miastach najlepiej nocować w karczmie.
 }
 Rest_controlsimg1 {BICommandsActivate}
 Stealth {Skradanie}
 Stealth_descr
 {
-Musisz się przyzwyczaić, że w większości osad na Karaibach nie jesteś mile widziany.~Do wrogiego miasta można się dostać na dwa sposoby: przez port lub bramę.~Bezpieczne przybicie do wrogiego portu wymaga poważnych przygotowań. Potrzebujesz bandery kraju, do którego się zakradasz, lub do tego, który nie jest wrogi, i odpowiednio wysokiej umiejętności „Skradanie”.~Przez bramę najlepiej wchodzić nocą, gdy nie ma strażników. Unikaj żołnierzy i przenocuj w karczmie. W razie alarmu znajdź dom i przeczekaj tam kilka godzin. Plusem tej metody jest brak konieczności wydawania cennego punktu zdolności na odblokowanie bander.~Wszystkich tych problemów można uniknąć, kupując na Kurakao licencję kompanii handlowej i wydając morski Punkt zdolności na jedną z neutralnych bander.
+Musisz się przyzwyczaić, że w większości osad na Karaibach nie jesteś mile widziany.
+~
+Do wrogiego miasta można się dostać na dwa sposoby: przez port lub bramę.
+~
+Bezpieczne przybicie do wrogiego portu wymaga poważnych przygotowań. Potrzebujesz bandery kraju, do którego się zakradasz, lub do tego, który nie jest wrogi, i odpowiednio wysokiej umiejętności „Skradanie”.
+~
+Przez bramę najlepiej wchodzić nocą, gdy nie ma strażników. Unikaj żołnierzy i przenocuj w karczmie. W razie alarmu znajdź dom i przeczekaj tam kilka godzin. Plusem tej metody jest brak konieczności wydawania cennego punktu zdolności na odblokowanie bander.
+~
+Wszystkich tych problemów można uniknąć, kupując na Kurakao licencję kompanii handlowej i wydając morski Punkt zdolności na jedną z neutralnych bander.
 }
 SeaBattle {Bitwa morska}
 SeaBattle_descr
 {
-Witamy w bitwie morskiej, kapitanie!Twój główny cel: przetrwać i zatopić wrogie statki.~Każdy statek ma trzy główne cechy: kadłub, żagle i załogę. Jeśli kadłub spadnie do zera – statek tonie. Uszkodzone żagle spowalniają, a zmniejszenie załogi ułatwia abordaż i spowalnia wszystkie działania na statku.~Do skutecznego uszkadzania każdej z tych cech służy inna amunicja. Kartacz – na załogę, łańcuchy – na żagle i maszty, bomby – na kadłub. Kule – uniwersalne, o największym zasięgu. Na obrażenia wpływa nie tylko typ amunicji, ale i działo – im większe, tym większe obrażenia.~Są dwa główne tryby ognia. Szybki strzał dostępny jest, gdy wrogi statek jest w sektorze ostrzału. Nie jest zbyt celny ani skuteczny na początku gry, ale pozwala na dynamiczną walkę. Strzał celowany aktywuje się przyciskiem celowania i pozwala bardzo precyzyjnie strzelać z burty. Trzeba się przyzwyczaić, ale warto.~Unikaj ognia wroga i najpierw niszcz żagle i maszty – wtedy przeciwnicy staną się dużo mniej groźni.~Każdy statek, w zależności od ożaglowania, ma optymalny kurs względem wiatru, na którym osiąga maksymalną prędkość. Ten kurs oznaczony jest czarnymi strzałkami na kompasie. Umiejętne wykorzystanie mocnych stron statku to klucz do zwycięstwa w bitwie morskiej.
+Witamy w bitwie morskiej, kapitanie!
+Twój główny cel: przetrwać i zatopić wrogie statki.
+~
+Każdy statek ma trzy główne cechy: kadłub, żagle i załogę. Jeśli kadłub spadnie do zera – statek tonie. Uszkodzone żagle spowalniają, a zmniejszenie załogi ułatwia abordaż i spowalnia wszystkie działania na statku.
+~
+Do skutecznego uszkadzania każdej z tych cech służy inna amunicja. Kartacz – na załogę, łańcuchy – na żagle i maszty, bomby – na kadłub. Kule – uniwersalne, o największym zasięgu. Na obrażenia wpływa nie tylko typ amunicji, ale i działo – im większe, tym większe obrażenia.
+~
+Są dwa główne tryby ognia. Szybki strzał dostępny jest, gdy wrogi statek jest w sektorze ostrzału. Nie jest zbyt celny ani skuteczny na początku gry, ale pozwala na dynamiczną walkę. Strzał celowany aktywuje się przyciskiem celowania i pozwala bardzo precyzyjnie strzelać z burty. Trzeba się przyzwyczaić, ale warto.
+~
+Unikaj ognia wroga i najpierw niszcz żagle i maszty – wtedy przeciwnicy staną się dużo mniej groźni.
+~
+Każdy statek, w zależności od ożaglowania, ma optymalny kurs względem wiatru, na którym osiąga maksymalną prędkość. Ten kurs oznaczony jest czarnymi strzałkami na kompasie. Umiejętne wykorzystanie mocnych stron statku to klucz do zwycięstwa w bitwie morskiej.
 }
 SeaBattle_controlsimg1 {hk_charge1}
 SeaBattle_controlsimg2 {hk_charge2}
@@ -151,18 +261,33 @@ SeaBattle_controlsimg6 {Ship_Fire}
 BoardingTactics {Abordaż}
 BoardingTactics_descr
 {
-Przed abordażem warto oddać przynajmniej kilka salw kartaczem, by osłabić załogę przeciwnika, nie narażając się na odpowiedź. Gdy masz przewagę liczebną, podpłyń jak najbliżej, wyrównaj prędkość i ruszaj do ataku!~Im wyższa twoja morska umiejętność „Abordaż”, tym łatwiej będzie ci skutecznie abordować wrogi statek.~Skuteczność abordażu zależy od liczby, umiejętności i morale twojej załogi. Doświadczony bosman, gwardziści, amulety i rozwinięte umiejętności walki kapitana mogą zniwelować przewagę liczebną wroga.
+Przed abordażem warto oddać przynajmniej kilka salw kartaczem, by osłabić załogę przeciwnika, nie narażając się na odpowiedź. Gdy masz przewagę liczebną, podpłyń jak najbliżej, wyrównaj prędkość i ruszaj do ataku!
+~
+Im wyższa twoja morska umiejętność „Abordaż”, tym łatwiej będzie ci skutecznie abordować wrogi statek.
+~
+Skuteczność abordażu zależy od liczby, umiejętności i morale twojej załogi. Doświadczony bosman, gwardziści, amulety i rozwinięte umiejętności walki kapitana mogą zniwelować przewagę liczebną wroga.
 }
 Mushket {Muszkiety}
 Mushket_descr
 {
-Długolufowa broń palna jest niezwykle groźna w walce. Może jej używać tylko główny bohater z zdolnością „Muszkieter” oraz niektórzy unikalni oficerowie. Najlepszym przykładem jest Tichingitu – jemu warto oddać pierwszy muszkiet.~W przeciwieństwie do broni białej, każda broń palna jest bardzo wszechstronna – rozwijając postać jako strzelca, zakładając odpowiednie amulety i ekwipunek oraz używając różnych typów amunicji, możesz odwrócić losy każdej walki.
+Długolufowa broń palna jest niezwykle groźna w walce. Może jej używać tylko główny bohater z zdolnością „Muszkieter” oraz niektórzy unikalni oficerowie. Najlepszym przykładem jest Tichingitu – jemu warto oddać pierwszy muszkiet.
+~
+W przeciwieństwie do broni białej, każda broń palna jest bardzo wszechstronna – rozwijając postać jako strzelca, zakładając odpowiednie amulety i ekwipunek oraz używając różnych typów amunicji, możesz odwrócić losy każdej walki.
 }
 Mushket_controlsimg1 {Inventory}
 CameraControlFP {Ahoj!}
 CameraControlFP_descr
 {
-Witamy na Karaibach, kapitanie!~Caribbean Legend to trudna gra, ale łatwa do opanowania. Jeśli nie grałeś jeszcze w tryb fabularny, polecamy poświęcić mu kilka godzin, by poznać podstawowe mechaniki.~Sterowanie odbywa się za pomocą klawiszy ruchu i myszy. Twoja postać może chodzić i biegać we wszystkich kierunkach, a także używać sprintu, by przyspieszyć.Menu akcji jest również bardzo przydatne – znajdziesz tam wiele praktycznych funkcji.~Możesz swobodnie rozglądać się myszką – to pozwala znaleźć ukryte przedmioty, kontrolować walkę i po prostu podziwiać widoki.~Dzięki za grę i do zobaczenia na morzu!
+Witamy na Karaibach, kapitanie!
+~
+Caribbean Legend to trudna gra, ale łatwa do opanowania. Jeśli nie grałeś jeszcze w tryb fabularny, polecamy poświęcić mu kilka godzin, by poznać podstawowe mechaniki.
+~
+Sterowanie odbywa się za pomocą klawiszy ruchu i myszy. Twoja postać może chodzić i biegać we wszystkich kierunkach, a także używać sprintu, by przyspieszyć.
+Menu akcji jest również bardzo przydatne – znajdziesz tam wiele praktycznych funkcji.
+~
+Możesz swobodnie rozglądać się myszką – to pozwala znaleźć ukryte przedmioty, kontrolować walkę i po prostu podziwiać widoki.
+~
+Dzięki za grę i do zobaczenia na morzu!
 }
 CameraControlFP_controlsimg1 {ChrForward}
 CameraControlFP_controlsimg2 {ChrStrafeLeft}
@@ -173,31 +298,62 @@ CameraControlFP_controlsimg6 {LICommandsActivate}
 MarksmanMode {Celowanie}
 MarksmanMode_descr
 {
-Każdą bronią palną możesz celować, by strzelać precyzyjniej. Przytrzymaj przycisk celowania, by wejść w ten tryb. Puść, by wyjść bez strzału.~Strzały z celowania są dokładniejsze i groźniejsze, ale masz ograniczone pole widzenia i poruszasz się wolniej.~Im dłużej celujesz, tym większe obrażenia zadasz. Strzał w głowę zadaje jeszcze więcej. Jeśli otrzymasz obrażenia, celowanie zostaje przerwane, a postać się zachwieje.
+Każdą bronią palną możesz celować, by strzelać precyzyjniej. Przytrzymaj przycisk celowania, by wejść w ten tryb. Puść, by wyjść bez strzału.
+~
+Strzały z celowania są dokładniejsze i groźniejsze, ale masz ograniczone pole widzenia i poruszasz się wolniej.
+~
+Im dłużej celujesz, tym większe obrażenia zadasz. Strzał w głowę zadaje jeszcze więcej. Jeśli otrzymasz obrażenia, celowanie zostaje przerwane, a postać się zachwieje.
 }
 MarksmanMode_controlsimg1 {ChrAiming}
 Trading {Podstawy handlu}
 Trading_descr
 {
-Handel to rozbudowany i złożony system, w którym na ceny kupna i sprzedaży wpływa wiele czynników.~W handlu lądowym najważniejsza jest umiejętność „Handel” postaci oraz jej historia.~W handlu morskim czynników jest więcej – typ towaru, pochodzenie, wielkość kolonii, szlaki eksportu i importu oraz umiejętności Kwatermistrza.~Prędzej czy później wszystko opanujesz, ale na razie warto zdobyć przydatny amulet do handlu.
+Handel to rozbudowany i złożony system, w którym na ceny kupna i sprzedaży wpływa wiele czynników.
+~
+W handlu lądowym najważniejsza jest umiejętność „Handel” postaci oraz jej historia.
+~
+W handlu morskim czynników jest więcej – typ towaru, pochodzenie, wielkość kolonii, szlaki eksportu i importu oraz umiejętności Kwatermistrza.
+~
+Prędzej czy później wszystko opanujesz, ale na razie warto zdobyć przydatny amulet do handlu.
 }
-Prologue_Navigation {Sterowanie statkiem}Prologue_Navigation_descr
+Prologue_Navigation {Sterowanie statkiem}
+Prologue_Navigation_descr
 {
-Witamy na Morzu Karaibskim!~Steruj statkiem za pomocą klawiszy skrętu. Statki są ciężkie i mają dużą bezwładność, więc skręcają powoli. Poczuj to.~Sterowanie żaglami i prędkością odbywa się za pomocą klawiszy trybu żagli.~Są trzy tryby żagli: pełne, bojowe i zwinięte. Na pełnych żaglach statek jest najszybszy, na bojowych lepiej skręca, a zwinięte żagle pozwalają na płynne zatrzymanie.~Podczas sztormów i pod ostrzałem warto zwijać żagle, przy skręcaniu i celowaniu – przełączyć na tryb bojowy, a do pościgu najlepiej nadają się pełne żagle.~Wypróbuj różne tryby żagli i skręty, poczuj bezwładność statku i podziwiaj zachód słońca!
+Witamy na Morzu Karaibskim!
+~
+Steruj statkiem za pomocą klawiszy skrętu. Statki są ciężkie i mają dużą bezwładność, więc skręcają powoli. Poczuj to.
+~
+Sterowanie żaglami i prędkością odbywa się za pomocą klawiszy trybu żagli.
+~
+Są trzy tryby żagli: pełne, bojowe i zwinięte. Na pełnych żaglach statek jest najszybszy, na bojowych lepiej skręca, a zwinięte żagle pozwalają na płynne zatrzymanie.
+~
+Podczas sztormów i pod ostrzałem warto zwijać żagle, przy skręcaniu i celowaniu – przełączyć na tryb bojowy, a do pościgu najlepiej nadają się pełne żagle.
+~
+Wypróbuj różne tryby żagli i skręty, poczuj bezwładność statku i podziwiaj zachód słońca!
 }
 Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Kontrola czasu}Prologue_TimeScale_descr
+Prologue_TimeScale {Kontrola czasu}
+Prologue_TimeScale_descr
 {
-Wiele rzeczy w grze dzieje się dość wolno – np. zmiana trybu żagli czy przeładowanie dział.~Możesz przyspieszać i spowalniać czas na morzu, na lądzie i na mapie świata.~Poczuj władzę nad czasem i idź na pokład – ktoś chce z tobą porozmawiać.
+Wiele rzeczy w grze dzieje się dość wolno – np. zmiana trybu żagli czy przeładowanie dział.
+~
+Możesz przyspieszać i spowalniać czas na morzu, na lądzie i na mapie świata.
+~
+Poczuj władzę nad czasem i idź na pokład – ktoś chce z tobą porozmawiać.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoj!}Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoj!}
+Prologue_CameraControl_descr
 {
-Witamy na pokładzie „Ulysse”! Przygotowaliśmy dla ciebie krótką przygodę na start.~Na „Ulysse” jest wiele ciekawych zajęć. Gdy będziesz gotów ruszyć dalej – wybierz opcję „Zakończ sprawy” w dialogu z kapitanem.~Dzięki za grę i do zobaczenia na morzu!
+Witamy na pokładzie „Ulysse”! Przygotowaliśmy dla ciebie krótką przygodę na start.
+~
+Na „Ulysse” jest wiele ciekawych zajęć. Gdy będziesz gotów ruszyć dalej – wybierz opcję „Zakończ sprawy” w dialogu z kapitanem.
+~
+Dzięki za grę i do zobaczenia na morzu!
 }
 Prologue_CameraControl_controlsimg1 {ChrForward}
 Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
@@ -205,59 +361,150 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Dziennik pokładowy i dokumenty}Prologue_Logbook_descr
+Prologue_Logbook {Dziennik pokładowy i dokumenty}
+Prologue_Logbook_descr
 {
-Każde zadanie, które podejmiesz, jest zapisywane w „Dzienniku”. Warto uważnie czytać dialogi i wpisy w „Dzienniku” – często są tam ważne wskazówki i instrukcje.~Zapoznaj się z wpisami w „Dzienniku”. Wszystkie drobne zadania podjęte na pokładzie „Ulysse” będą tam widoczne.
+Każde zadanie, które podejmiesz, jest zapisywane w „Dzienniku”. Warto uważnie czytać dialogi i wpisy w „Dzienniku” – często są tam ważne wskazówki i instrukcje.
+~
+Zapoznaj się z wpisami w „Dzienniku”. Wszystkie drobne zadania podjęte na pokładzie „Ulysse” będą tam widoczne.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Złożone zadania, dokumenty i rzemiosło}
+Prologue_Logbook_controlsimg1 {QuestBook}
+Prologue_Inventory {Złożone zadania, dokumenty i rzemiosło}
 Prologue_Inventory_descr
 {
-Poza zadaniami „Dziennik” zawiera też inne ważne informacje.~W sekcji „Dokumenty” możesz przeczytać wszystkie znalezione notatki.~Teraz musisz przeczytać notatkę od Kwatermistrza i rozdać dublony załodze według listy.~Aby wyjąć dublony ze skrzyni, otwórz ją za pomocą mechaniki rzemiosła – Alchemii.Na początku masz niewiele przepisów, ale z czasem będzie ich więcej.
+Poza zadaniami „Dziennik” zawiera też inne ważne informacje.
+~
+W sekcji „Dokumenty” możesz przeczytać wszystkie znalezione notatki.
+~
+Teraz musisz przeczytać notatkę od Kwatermistrza i rozdać dublony załodze według listy.
+~
+Aby wyjąć dublony ze skrzyni, otwórz ją za pomocą mechaniki rzemiosła – Alchemii.
+Na początku masz niewiele przepisów, ale z czasem będzie ich więcej.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alchemy}
-Prologue_Amulet {Amulety}Prologue_Amulet_descr
+Prologue_Amulet {Amulety}
+Prologue_Amulet_descr
 {
-Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.~Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.~Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.~Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.~Uwaga: po aktywacji zdjęcie amuletu lub talizmanu niszczy go – decyduj rozważnie.
+Amulety to potężne wzmacniacze postaci i dzielą się na ofensywne, defensywne i wspierające. Nie możesz jednocześnie założyć amuletu ofensywnego i defensywnego, więc dobieraj zestawy rozsądnie.
+~
+Poza amuletami są jeszcze dwa typy wzmacniaczy: talizmany i rzadkie artefakty.
+~
+Talizmany działają dłużej niż amulety i mają szersze efekty, a artefakty są bardzo silne, działają bez ograniczeń i mają osobne miejsce w ekwipunku.
+~
+Zawsze miej w ekwipunku kilka zestawów – na trudne testy umiejętności i ciężkie walki na morzu i lądzie.
+~
+Uwaga: po aktywacji zdjęcie amuletu lub talizmanu niszczy go – decyduj rozważnie.
 }
-Prologue_Trading {Podstawy handlu}Prologue_Trading_descr
+Prologue_Trading {Podstawy handlu}
+Prologue_Trading_descr
 {
-Handel to rozbudowany i złożony system, w którym na ceny wpływa wiele czynników – przede wszystkim twoja umiejętność „Handel”.~W handlu morskim czynników jest jeszcze więcej – typ towaru, pochodzenie, wielkość kolonii, szlaki eksportu i importu oraz umiejętności Kwatermistrza.~Prędzej czy później wszystko opanujesz, ale na razie warto zdobyć przydatny amulet.
+Handel to rozbudowany i złożony system, w którym na ceny wpływa wiele czynników – przede wszystkim twoja umiejętność „Handel”.
+~
+W handlu morskim czynników jest jeszcze więcej – typ towaru, pochodzenie, wielkość kolonii, szlaki eksportu i importu oraz umiejętności Kwatermistrza.
+~
+Prędzej czy później wszystko opanujesz, ale na razie warto zdobyć przydatny amulet.
 }
-Prologue_Overload {Przeciążenie}Prologue_Overload_descr
+Prologue_Overload {Przeciążenie}
+Prologue_Overload_descr
 {
-Po raz pierwszy napotkałeś ograniczenie wagi, jaką możesz nosić.Każda postać ma maksymalny udźwig, zależny od siły, wytrzymałości, umiejętności i amuletów.~Spróbuj znaleźć coś, co zwiększy maksymalny udźwig twojej postaci – na przykład u bosmana w mesie.
+Po raz pierwszy napotkałeś ograniczenie wagi, jaką możesz nosić.
+Każda postać ma maksymalny udźwig, zależny od siły, wytrzymałości, umiejętności i amuletów.
+~
+Spróbuj znaleźć coś, co zwiększy maksymalny udźwig twojej postaci – na przykład u bosmana w mesie.
 }
-Prologue_AutoFire {Bitwa morska}Prologue_AutoFire_descr
+Prologue_AutoFire {Bitwa morska}
+Prologue_AutoFire_descr
 {
-Twoja pierwsza bitwa morska rozgrywa się w wyobraźni Charlesa de Maure – więc nie bój się eksperymentować.~Każdy statek ma trzy główne cechy: kadłub, żagle i załogę. Jeśli kadłub spadnie do zera – statek tonie. Uszkodzone żagle spowalniają, a zmniejszenie załogi wpływa na abordaż, przeładowanie i sterowanie żaglami.~Każdy typ amunicji ma swoje zastosowanie: kartacz – na załogę, łańcuchy – na żagle i maszty, bomby – na kadłub. Kule – uniwersalne, o największym zasięgu. Na obrażenia wpływa nie tylko typ amunicji, ale i działo – im większe, tym większe obrażenia.~Są dwa główne tryby ognia. Szybki strzał dostępny jest, gdy wrogi statek jest w sektorze ostrzału. Nie jest zbyt celny ani skuteczny na początku gry, ale pozwala na dynamiczną walkę.~Jeśli walka wydaje się zbyt wolna, przyspiesz ją klawiszami kontroli czasu.
+Twoja pierwsza bitwa morska rozgrywa się w wyobraźni Charlesa de Maure – więc nie bój się eksperymentować.
+~
+Każdy statek ma trzy główne cechy: kadłub, żagle i załogę. Jeśli kadłub spadnie do zera – statek tonie. Uszkodzone żagle spowalniają, a zmniejszenie załogi wpływa na abordaż, przeładowanie i sterowanie żaglami.
+~
+Każdy typ amunicji ma swoje zastosowanie: kartacz – na załogę, łańcuchy – na żagle i maszty, bomby – na kadłub. Kule – uniwersalne, o największym zasięgu. Na obrażenia wpływa nie tylko typ amunicji, ale i działo – im większe, tym większe obrażenia.
+~
+Są dwa główne tryby ognia. Szybki strzał dostępny jest, gdy wrogi statek jest w sektorze ostrzału. Nie jest zbyt celny ani skuteczny na początku gry, ale pozwala na dynamiczną walkę.
+~
+Jeśli walka wydaje się zbyt wolna, przyspiesz ją klawiszami kontroli czasu.
 }
-Prologue_AimingFire {Strzał celowany}Prologue_AimingFire_descr
+Prologue_AimingFire {Strzał celowany}
+Prologue_AimingFire_descr
 {
-Strzał celowany pozwala bardzo precyzyjnie strzelać z burty. Trzeba się przyzwyczaić, ale warto.~Kółka dział pokazują rzeczywiste położenie i trajektorie dział burtowych. Potrzebują czasu, by ustawić się na wskazany punkt na środku ekranu.~Po naciśnięciu przycisku działa strzelają tam, gdzie były ich kółka w momencie wydania rozkazu, więc celuj z wyprzedzeniem, jeśli trzeba.~Wyceluj w statek przeciwnika, by go oznaczyć. Po zdobyciu możesz celować w dowolną część lub strzelać z wyprzedzeniem.~Wraz ze wzrostem umiejętności kapitana i Kanoniera rośnie szybkość celowania i gęstość ognia.~Jeśli gwałtownie przesuniesz celownik – obsługa dział się pogubi i będzie celować wolniej niż zwykle.~Strzał celowany z burty świetnie nadaje się do niszczenia kluczowych elementów statku na dużą odległość – zwłaszcza żagli i masztów.
+Strzał celowany pozwala bardzo precyzyjnie strzelać z burty. Trzeba się przyzwyczaić, ale warto.
+~
+Kółka dział pokazują rzeczywiste położenie i trajektorie dział burtowych. Potrzebują czasu, by ustawić się na wskazany punkt na środku ekranu.
+~
+Po naciśnięciu przycisku działa strzelają tam, gdzie były ich kółka w momencie wydania rozkazu, więc celuj z wyprzedzeniem, jeśli trzeba.
+~
+Wyceluj w statek przeciwnika, by go oznaczyć. Po zdobyciu możesz celować w dowolną część lub strzelać z wyprzedzeniem.
+~
+Wraz ze wzrostem umiejętności kapitana i Kanoniera rośnie szybkość celowania i gęstość ognia.
+~
+Jeśli gwałtownie przesuniesz celownik – obsługa dział się pogubi i będzie celować wolniej niż zwykle.
+~
+Strzał celowany z burty świetnie nadaje się do niszczenia kluczowych elementów statku na dużą odległość – zwłaszcza żagli i masztów.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Atak}Prologue_FightAttack_descr
+Prologue_FightAttack {Atak}
+Prologue_FightAttack_descr
 {
-Walki w Caribbean Legend są brutalne i szybkie, ale teraz jesteś względnie bezpieczny.~Każda postać jest uzbrojona i ma umiejętności bojowe. Im lepsza broń i bardziej doświadczony bohater, tym większe obrażenia zadasz.~Masz do dyspozycji kilka ataków i obron.~Zacznijmy od trzech głównych ataków.~Cięcie. Szybkie, zadaje mniejsze obrażenia i zużywa średnią ilość energii.~Wypad. Wolniejszy od cięcia, zadaje średnie obrażenia i zużywa mało energii.~Przebijający atak. Wolny i potężny, zadaje ogromne obrażenia i może przebić blok.~Wypróbuj wszystkie te ataki na piracie.
+Walki w Caribbean Legend są brutalne i szybkie, ale teraz jesteś względnie bezpieczny.
+~
+Każda postać jest uzbrojona i ma umiejętności bojowe. Im lepsza broń i bardziej doświadczony bohater, tym większe obrażenia zadasz.
+~
+Masz do dyspozycji kilka ataków i obron.
+~
+Zacznijmy od trzech głównych ataków.
+~
+Cięcie. Szybkie, zadaje mniejsze obrażenia i zużywa średnią ilość energii.
+~
+Wypad. Wolniejszy od cięcia, zadaje średnie obrażenia i zużywa mało energii.
+~
+Przebijający atak. Wolny i potężny, zadaje ogromne obrażenia i może przebić blok.
+~
+Wypróbuj wszystkie te ataki na piracie.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Obrona w walce}Prologue_FightDefence_descr
+Prologue_FightDefence {Obrona w walce}
+Prologue_FightDefence_descr
 {
-Świetnie! Teraz obrona.~Blok. Pozwala zablokować każdy atak oprócz przebijającego. Podczas bloku możesz się powoli poruszać i nie zużywasz energii. Silni przeciwnicy mogą przebić blok nawet zwykłymi atakami – bądź gotów.~Parowanie. Pozwala odbić każdy atak i sprawia, że przeciwnik traci równowagę i energię.~Unik. Pozwala zmienić pozycję lub uniknąć strzału.~Poćwicz parowanie i blokowanie ataków pirata.~A potem – pokonaj go.
+Świetnie! Teraz obrona.
+~
+Blok. Pozwala zablokować każdy atak oprócz przebijającego. Podczas bloku możesz się powoli poruszać i nie zużywasz energii. Silni przeciwnicy mogą przebić blok nawet zwykłymi atakami – bądź gotów.
+~
+Parowanie. Pozwala odbić każdy atak i sprawia, że przeciwnik traci równowagę i energię.
+~
+Unik. Pozwala zmienić pozycję lub uniknąć strzału.
+~
+Poćwicz parowanie i blokowanie ataków pirata.
+~
+A potem – pokonaj go.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Strzelectwo}Prologue_Marksmanship_descr
+Prologue_Marksmanship {Strzelectwo}
+Prologue_Marksmanship_descr
 {
-Broń palna jest rzadsza niż biała, ale ryzyko dostania kulki na Karaibach jest wciąż duże – bądź czujny.~Na lądzie, podobnie jak na morzu, są dwa tryby strzału: szybki i celowany.~Szybki strzał aktywuje się jednym przyciskiem. Szybki, ale mało skuteczny.~Strzał celowany może zadać znacznie większe obrażenia, ale czyni cię bezbronnym. Im dłużej celujesz, tym większe obrażenia. Strzał w głowę zadaje jeszcze więcej.~Przytrzymaj przycisk celowania, by wejść w ten tryb. Naciśnij atak, by strzelić. Puść celowanie, by wyjść bez strzału.
+Broń palna jest rzadsza niż biała, ale ryzyko dostania kulki na Karaibach jest wciąż duże – bądź czujny.
+~
+Na lądzie, podobnie jak na morzu, są dwa tryby strzału: szybki i celowany.
+~
+Szybki strzał aktywuje się jednym przyciskiem. Szybki, ale mało skuteczny.
+~
+Strzał celowany może zadać znacznie większe obrażenia, ale czyni cię bezbronnym. Im dłużej celujesz, tym większe obrażenia. Strzał w głowę zadaje jeszcze więcej.
+~
+Przytrzymaj przycisk celowania, by wejść w ten tryb. Naciśnij atak, by strzelić. Puść celowanie, by wyjść bez strzału.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Przeszukiwanie}Prologue_DeadSearch_descr
+Prologue_DeadSearch {Przeszukiwanie}
+Prologue_DeadSearch_descr
 {
-Po każdej walce czas na łupy.Każdego pokonanego przeciwnika możesz przeszukać przyciskiem przeszukiwania.~Znajdź eliksir leczniczy dla Alonso!
+Po każdej walce czas na łupy.
+Każdego pokonanego przeciwnika możesz przeszukać przyciskiem przeszukiwania.
+~
+Znajdź eliksir leczniczy dla Alonso!
 }
+

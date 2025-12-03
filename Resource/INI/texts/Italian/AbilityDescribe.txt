@@ -5,7 +5,7 @@ newline
 BasicDefense {Difesa base}
 perkBasicDefense {Riduce i danni subiti del $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Difesa avanzata}
-perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefence|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Riduce i danni subiti del $percent($perkBaseValue(AdvancedDefense|1)) e i danni critici nemici del $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Colpo critico}
 perkCriticalHit {Aumenta la probabilità base di colpo critico del 3,5%.}
 Grus {Schiena forte}
@@ -216,11 +216,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mani rapide}
-perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del 20%.}
+perkFastHands {Aumenta la velocità di estrazione e riposizionamento delle armi da fuoco del $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Equipaggiamento}
-perkAmmoRig {La ricarica delle armi da fuoco è più veloce del 5%.}
+perkAmmoRig {La ricarica delle armi da fuoco è più veloce del $percent($perkBaseValue(AmmoRig|1)).}
 Preaim {Puntamento}
-perkPreaim {La modalità mira è più veloce del 15%.}
+perkPreaim {La modalità mira è più veloce del $percent($perkBaseValue(Preaim|1)).}
 KeenEye {Occhio attento}
 perkKeenEye {I colpi alla testa infliggono il $percent($perkBaseValue(KeenEye|1)) di danni in più.}
 PowderFeel {Senso della polvere nera}
@@ -355,3 +355,4 @@ perkInvestor_alternate {Aumenta le abilità Commercio e Leadership del personagg
 perkGossip_alternate {Nel ruolo di compagno, il personaggio aumenta la potenza della squadriglia di $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Ogni pozione bevuta dal personaggio aumenta il danno in uscita di $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Aumenta il peso trasportabile di $perkBaseValue(Looting|1) libbre.}
+perkMaster_currentBonus {Bonus attuale: $percent($attr($context.ct.static.fast_Damage.perk_master))}

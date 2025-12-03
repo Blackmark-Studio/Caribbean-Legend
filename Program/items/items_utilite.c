@@ -1520,7 +1520,7 @@ float fLiberMisBonus(ref chr)
 
 void addArticlesBonus()
 {
-	if(!IsEquipCharacterByArtefact(pchar, "talisman18")) return;
+	if(!IsCharacterEquippedArtefact(pchar, "talisman18")) return;
 	
 	ref Articles = ItemsFromID("talisman18");
 	
@@ -1538,7 +1538,7 @@ void addArticlesBonus()
 float ArticlesBonus(ref chr)
 {
 	if(!IsMainCharacter(chr)) return 0.0;
-	if(!IsEquipCharacterByArtefact(pchar, "talisman18")) return 0.0;
+	if(!IsCharacterEquippedArtefact(pchar, "talisman18")) return 0.0;
 	ref Articles = ItemsFromID("talisman18");
 	
 	if(!CheckAttribute(Articles, "QBonus")) return 0.0;

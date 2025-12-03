@@ -1187,6 +1187,14 @@ void DefendSP_BeforeSeaBattle(string qName) // убираем солдат на�
 			sld.lifeday = 0;
 		}
 	}
+	for (i=1; i<=7; i++)
+	{
+		if (GetCharacterIndex("DefendSP_frabase_"+i) != -1)
+		{
+			sld = CharacterFromID("DefendSP_frabase_"+i);
+			sld.lifeday = 0;
+		}
+	}
 	// переделываем коммандера и форт
 	sld = CharacterFromID("FortFrance Fort Commander");
 	sld.FaceId = 204;

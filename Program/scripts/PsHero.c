@@ -844,29 +844,29 @@ void PGG_UpdateShipEquip(ref chr)
 	curTown = chr.PGGAi.location.town;
 	if (curTown != "")
 	{
-		if (rand(5) == 2)   // нулим матросов в городе
-		{
-			PGG_DebugLog("PGG нулим матросов в городе " + curTown);
-			refTown = GetColonyByIndex(FindColony(curTown));
-			SetCrewQuantity(refTown, 0);
-			chref = CharacterFromID(curTown + "_tavernkeeper");
-			SaveCurrentNpcQuestDateParam(chref, "CrewHired");
-			chref.CrewHired.PGGId = chr.id;
+		// if (rand(5) == 2)   // нулим матросов в городе
+		// {
+		// 	PGG_DebugLog("PGG нулим матросов в городе " + curTown);
+		// 	refTown = GetColonyByIndex(FindColony(curTown));
+		// 	SetCrewQuantity(refTown, 0);
+		// 	chref = CharacterFromID(curTown + "_tavernkeeper");
+		// 	SaveCurrentNpcQuestDateParam(chref, "CrewHired");
+		// 	chref.CrewHired.PGGId = chr.id;
 
-			AddRemoveGoodsInStore(curTown, GOOD_BALLS, makeint(195*1.4 + rand(20)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_BOMBS, makeint(60*1.4 + rand(40)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_KNIPPELS, makeint(95*1.4 + rand(20)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_GRAPES, makeint(75*1.4 + rand(20)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_BALLS, makeint(195*1.4 + rand(20)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_BOMBS, makeint(60*1.4 + rand(40)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_KNIPPELS, makeint(95*1.4 + rand(20)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_GRAPES, makeint(75*1.4 + rand(20)), false);
 
-			AddRemoveGoodsInStore(curTown, GOOD_POWDER, makeint(350*1.4 + rand(60)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_SAILCLOTH, makeint(5*1.4 + rand(20)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_PLANKS, makeint(10*1.4 + rand(40)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_POWDER, makeint(350*1.4 + rand(60)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_SAILCLOTH, makeint(5*1.4 + rand(20)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_PLANKS, makeint(10*1.4 + rand(40)), false);
 
-			AddRemoveGoodsInStore(curTown, GOOD_FOOD, makeint(8*1.4 + rand(50)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_WEAPON, makeint(6*1.4 + rand(25)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_RUM, makeint(4*1.4 + rand(20)), false);
-			AddRemoveGoodsInStore(curTown, GOOD_MEDICAMENT, makeint(4*1.4 + rand(25)), false);
-		}
+		// 	AddRemoveGoodsInStore(curTown, GOOD_FOOD, makeint(8*1.4 + rand(50)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_WEAPON, makeint(6*1.4 + rand(25)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_RUM, makeint(4*1.4 + rand(20)), false);
+		// 	AddRemoveGoodsInStore(curTown, GOOD_MEDICAMENT, makeint(4*1.4 + rand(25)), false);
+		// }
 	}
 }
 

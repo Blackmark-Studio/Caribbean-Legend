@@ -93,7 +93,8 @@ void ChrRebalance(ref chr, int targetRank, int chrtype, int powerLvl, bool rando
 	else CT_UpdateCashTables(chr);
 
 	SetFantomHP(chr);                 // хпшечку в макс
-	SetEnergyToCharacter(chr);        // энергию в макс
+	SetEnergyToCharacter(chr);        // потолок энергии
+	Lai_CharacterChangeEnergy(chr, 100.0); // энергию в макс
 	UpdateNpcFightAI(chr);            // апдейт всех желаний стрелять, бить определенными ударами и т. п.
 }
 

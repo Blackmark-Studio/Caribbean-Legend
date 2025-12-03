@@ -7,75 +7,114 @@ Key Layout_descr { }
 OptKurs {Off-bow szög}
 OptKurs_descr
 {
-a minitérképen fekete nyilak mutatják azt a pályát, ahol a hajód eléri a csúcssebességet.~Néhány hajó szinte széllel szemben is képes vitorlázni, ami praktikus a kereskedôk üldözésénél vagy a hadihajók elôl való menekülésnél.~A szél ereje és iránya mindig változik. Állítsd be az irányt, hogy a legjobb vitorlásszöget egyensúlyba hozd a célállomásoddal.
+a minitérképen fekete nyilak mutatják azt a pályát, ahol a hajód eléri a csúcssebességet.
+~
+Néhány hajó szinte széllel szemben is képes vitorlázni, ami praktikus a kereskedôk üldözésénél vagy a hadihajók elôl való menekülésnél.
+~
+A szél ereje és iránya mindig változik. Állítsd be az irányt, hogy a legjobb vitorlásszöget egyensúlyba hozd a célállomásoddal.
 }
 SeaTimeScaleUp {Idôgyorsítás}
 SeaTimeScaleUp_descr
 {
-Használd az idôgyorsítást, hogy idôt takaríts meg, különösen a tengeren.~Vezérlôk: + és -
+Használd az idôgyorsítást, hogy idôt takaríts meg, különösen a tengeren.
+~
+Vezérlôk: + és -
 }
 SeaTimeScaleUp_controlsimg1 {TimeScaleFasterBA}
 SeaTimeScaleUp_controlsimg2 {TimeScaleSlowerBA}
 SeaFastTravel {Gyors utazás}
 SeaFastTravel_descr
 {
-Az akciómenüben számos hasznos funkcióhoz férhetsz hozzá mind a szárazföldön, mind a tengeren.~A 'Sail To' funkcióval azonnal egy baráti hajó vagy tereptárgy közelébe tudsz menni. A hatótávolságot ritkább, drágább kémszemüvegekkel növelheted.~Az akciómenü segítségével gyorsan elérheted a 'Ghost' és küldhetsz hozzá egy hajót.
+Az akciómenüben számos hasznos funkcióhoz férhetsz hozzá mind a szárazföldön, mind a tengeren.
+~
+A 'Sail To' funkcióval azonnal egy baráti hajó vagy tereptárgy közelébe tudsz menni. A hatótávolságot ritkább, drágább kémszemüvegekkel növelheted.
+~
+Az akciómenü segítségével gyorsan elérheted a 'Ghost' és küldhetsz hozzá egy hajót.
 }
 SeaFastTravel_controlsimg1 {BICommandsActivate}
 LandTimeScaleDown {Idôlassítás}
 LandTimeScaleDown_descr
 {
-Kemény harcokban az idô lelassítása sokat segíthet. Nem kell szégyenkezned - a Caribbean Legend egy kihívásokkal teli játék.~Vezérlôk: + és -
+Kemény harcokban az idô lelassítása sokat segíthet. Nem kell szégyenkezned - a Caribbean Legend egy kihívásokkal teli játék.
+~
+Vezérlôk: + és -
 }
 LandTimeScaleDown_controlsimg1 {TimeScaleFasterBA}
 LandTimeScaleDown_controlsimg2 {TimeScaleSlowerBA}
 GuideFight {Szárazföldi harc}
 GuideFight_descr
 {
-A harcok elsajátításához ebben a játékban idôre van szükség. Ha a súgók engedélyezve vannak, a jobb alsó sarokban gyorsbillentyûket láthatsz.~Kezdd a 'Parry - Slash' combo megtanulásával. Az ellenséges támadás kivédése elkábítja ôket és elszívja az energiájukat, így biztos támadási lehetôséget kapsz.~A sebzés függ a karaktered képzettségétôl, a fegyver minôségétôl, az amulettektôl és a támadástípusoktól.
+A harcok elsajátításához ebben a játékban idôre van szükség. Ha a súgók engedélyezve vannak, a jobb alsó sarokban gyorsbillentyûket láthatsz.
+~
+Kezdd a 'Parry - Slash' combo megtanulásával. Az ellenséges támadás kivédése elkábítja ôket és elszívja az energiájukat, így biztos támadási lehetôséget kapsz.
+~
+A sebzés függ a karaktered képzettségétôl, a fegyver minôségétôl, az amulettektôl és a támadástípusoktól.
 }
 GuideFight_controlsimg1 {ChrAttackChoseBase}
 GuideFight_controlsimg2 {ChrAttackBase}
 OneToOneCave {A környezet használata}
 OneToOneCave_descr
 {
-Ha túlerôben vagy, használd a terepet az elônyödre.~Szinte mindig találhatsz olyan helyet, ahol az ellenség kénytelen egy-két emberrel egyszerre harcolni ellened.
+Ha túlerôben vagy, használd a terepet az elônyödre.
+~
+Szinte mindig találhatsz olyan helyet, ahol az ellenség kénytelen egy-két emberrel egyszerre harcolni ellened.
 }
 OneToOneBoarding {A környezet használata}
 OneToOneBoarding_descr
 {
-Ha túlerôben vagy, használd a terepet az elônyödre.~Szinte mindig találhatsz olyan helyet, ahol az ellenség kénytelen egy-két emberrel egyszerre harcolni ellened.
+Ha túlerôben vagy, használd a terepet az elônyödre.
+~
+Szinte mindig találhatsz olyan helyet, ahol az ellenség kénytelen egy-két emberrel egyszerre harcolni ellened.
 }
 Collision {Helyzetváltoztatás}
 Collision_descr
 {
-Néha a csatában pozíciót kell változtatnod - áttörni az ellenséges vonalakon, vagy megkerülni a szövetségeseket.~Hôsöd automatikusan ellöki magát a szövetségesek mellett, de sprintelnie vagy kitérnie kell, hogy átjusson az ellenségen.A harc közbeni sprintelés energiát fogyaszt, ezért használd okosan.
+Néha a csatában pozíciót kell változtatnod - áttörni az ellenséges vonalakon, vagy megkerülni a szövetségeseket.
+~
+Hôsöd automatikusan ellöki magát a szövetségesek mellett, de sprintelnie vagy kitérnie kell, hogy átjusson az ellenségen.
+A harc közbeni sprintelés energiát fogyaszt, ezért használd okosan.
 }
 Collision_controlsimg1 {ChrFightMode}
 Collision_controlsimg2 {ChrSprint}
 WorldMap {Világtérkép}
 WorldMap_descr
 {
-A világtérkép lehetôvé teszi, hogy a tengeren keresztül utazhass a játék világában. Nem kell minden városba vagy öbölbe elhajóznod - csak lépj ki a világtérképrôl a célpontod közelében, és használd a 'Sail To'.parancsot.~A 'Sail To' okos használata sok valós idôt takaríthat meg. Például egy sziget egyik oldalán kiléphetsz a világtérképrôl, gyorsan elutazhatsz a másik oldalon lévô öbölbe, majd onnan visszatérhetsz a világtérképre.~A térkép nagyításához és az atlasz megnyitásához a gyorsbillentyûket használhatod.
+A világtérkép lehetôvé teszi, hogy a tengeren keresztül utazhass a játék világában. Nem kell minden városba vagy öbölbe elhajóznod - csak lépj ki a világtérképrôl a célpontod közelében, és használd a 'Sail To'.parancsot.
+~
+A 'Sail To' okos használata sok valós idôt takaríthat meg. Például egy sziget egyik oldalán kiléphetsz a világtérképrôl, gyorsan elutazhatsz a másik oldalon lévô öbölbe, majd onnan visszatérhetsz a világtérképre.
+~
+A térkép nagyításához és az atlasz megnyitásához a gyorsbillentyûket használhatod.
 }
 WorldMap_controlsimg1 {WMapCameraSwitch}
 WorldMap_controlsimg2 {MapView}
 LandMap {Szárazföldi navigáció}
 LandMap_descr
 {
-A szárazföldön való utazás egyszerûbb, ha a szigettérképet használod. Ez különösen hasznos a küldetések, a lopakodás és a kincskeresés során.Az összes elérhetô térkép megtalálható az atlaszban.Térképeket vásárolhatsz vagy találhatsz.
+A szárazföldön való utazás egyszerûbb, ha a szigettérképet használod. Ez különösen hasznos a küldetések, a lopakodás és a kincskeresés során.
+Az összes elérhetô térkép megtalálható az atlaszban.
+Térképeket vásárolhatsz vagy találhatsz.
 }
 LandMap_controlsimg1 {MapView}
 Navigator {Navigáció}
 Navigator_descr
 {
-Jelölj ki egy magas navigációs képességgel rendelkezô navigátort!~A navigáció elsôsorban azt határozza meg, hogy egy karakter mekkora hajókat tud irányítani.~Például az 5-ös fokozatú hajókhoz 25 pontra van szükség, a 4-es fokozatúakhoz 45 pontra. E határértékek túllépése büntetést ad a karakter összes statisztikájára.~Az egyes Ráták követelményeit a karakterablakban a jobb gombbal a képesség ikonjára kattintva láthatod.
+Jelölj ki egy magas navigációs képességgel rendelkezô navigátort!
+~
+A navigáció elsôsorban azt határozza meg, hogy egy karakter mekkora hajókat tud irányítani.
+~
+Például az 5-ös fokozatú hajókhoz 25 pontra van szükség, a 4-es fokozatúakhoz 45 pontra. E határértékek túllépése büntetést ad a karakter összes statisztikájára.
+~
+Az egyes Ráták követelményeit a karakterablakban a jobb gombbal a képesség ikonjára kattintva láthatod.
 }
 Navigator_controlsimg1 {Abilities}
 Alchemy {Alkímia}
 Alchemy_descr
 {
-A tárgyak készítése - különösen a talizmánok, bájitalok és lôszerek - nagyban megkönnyítheti az életedet, különösen a fônöki harcokban.~Egy tárgy elkészítéséhez receptet kell találnod vagy vásárolnod. Nem kell magaddal vinned a hozzávalókat - csak rejtsd el ôket egy ládában a kabinodban.~A játék elején választhatsz, hogy megszerzed az alkímia perket, és elkezdesz recepteket gyûjteni, vagy várhatsz a játék közepéig, amikor már rendelkezel szerszámkészletekkel, és nem kell értékes perkpontot költened alkímiára.
+A tárgyak készítése - különösen a talizmánok, bájitalok és lôszerek - nagyban megkönnyítheti az életedet, különösen a fônöki harcokban.
+~
+Egy tárgy elkészítéséhez receptet kell találnod vagy vásárolnod. Nem kell magaddal vinned a hozzávalókat - csak rejtsd el ôket egy ládában a kabinodban.
+~
+A játék elején választhatsz, hogy megszerzed az alkímia perket, és elkezdesz recepteket gyûjteni, vagy várhatsz a játék közepéig, amikor már rendelkezel szerszámkészletekkel, és nem kell értékes perkpontot költened alkímiára.
 }
 Alchemy_controlsimg1 {Alkímia}
 LandMapAtSea { }
@@ -83,41 +122,85 @@ LandMapAtSea_descr {A célod a sziget másik oldalán van. Hagyd el az öblöt j
 Salary {Hajófenntartás}
 Salary_descr
 {
-Havonta fizeted a tisztjeidet és a legénységedet, ami igazi kihívás lehet egy kapitány számára.~A végösszeg függ a kereskedelmi és vezetôi képességeidtôl, a hajó Rate-tól és a nehézségi szinttôl. Még a kis hajókon is kell egy pénztáros a fedélzeten, egy nagy hadihajó pedig csôdbe vihet egy országot.~Ha a zsákmánymegosztás engedélyezve van, a kifizetések még magasabbak lehetnek.
+Havonta fizeted a tisztjeidet és a legénységedet, ami igazi kihívás lehet egy kapitány számára.
+~
+A végösszeg függ a kereskedelmi és vezetôi képességeidtôl, a hajó Rate-tól és a nehézségi szinttôl. Még a kis hajókon is kell egy pénztáros a fedélzeten, egy nagy hadihajó pedig csôdbe vihet egy országot.
+~
+Ha a zsákmánymegosztás engedélyezve van, a kifizetések még magasabbak lehetnek.
 }
 Salary_controlsimg1 {ShipState}
 Dubloons {Dupla ágyak}
 Dubloons_descr
 {
-Az aranydublonok a gazdagságod és a pénzzel való problémamegoldó képességed igazi mércéje. Általában kis ládákban tartják ôket, amelyeket az akciómenü kézmûves paneljébôl nyithatsz meg. Ezeket a ládákat ott is meg tudod tölteni, ha van elég dubloonod.~Mindig próbáld megkeresni ezeket az aranyérméket - a Karib-tengeren csak a leghatalmasabb emberek segítenek neked a dubloonokért.~A dubloonok jó forrásai közé tartoznak a kincsek, a bankbetétek, a stratégiai áruk kereskedelme és a pénzkölcsönzôk.~Az aranyat nem kell magaddal vinned - csak tartsd egy ládában a kabinodban.
+Az aranydublonok a gazdagságod és a pénzzel való problémamegoldó képességed igazi mércéje. Általában kis ládákban tartják ôket, amelyeket az akciómenü kézmûves paneljébôl nyithatsz meg. Ezeket a ládákat ott is meg tudod tölteni, ha van elég dubloonod.
+~
+Mindig próbáld megkeresni ezeket az aranyérméket - a Karib-tengeren csak a leghatalmasabb emberek segítenek neked a dubloonokért.
+~
+A dubloonok jó forrásai közé tartoznak a kincsek, a bankbetétek, a stratégiai áruk kereskedelme és a pénzkölcsönzôk.
+~
+Az aranyat nem kell magaddal vinned - csak tartsd egy ládában a kabinodban.
 }
 Dubloons_controlsimg1 {LICommandsActivate}
 Box {Tárgyak tárolása}
 Box_descr
 {
-A kapitányi kabin ládáiban korlátlan számú személyes tárgyat tárolhatsz.~Add el a felesleges dolgokat, de mindig tarts a kabinodban egy készlet drágaköveket, fegyvereket, lôszert és alkímiai alapanyagokat.~A fô felszerelésed mellett okos dolog, ha csak egy készlet bájitalokat, amuletteket és töltényeket viszel magaddal a lôfegyvereidhez.~Más kapitányok is így tesznek, ezért mindig fosztogasd a ládákat minden elfoglalt hajó kabinjában.
+A kapitányi kabin ládáiban korlátlan számú személyes tárgyat tárolhatsz.
+~
+Add el a felesleges dolgokat, de mindig tarts a kabinodban egy készlet drágaköveket, fegyvereket, lôszert és alkímiai alapanyagokat.
+~
+A fô felszerelésed mellett okos dolog, ha csak egy készlet bájitalokat, amuletteket és töltényeket viszel magaddal a lôfegyvereidhez.
+~
+Más kapitányok is így tesznek, ezért mindig fosztogasd a ládákat minden elfoglalt hajó kabinjában.
 }
 Health {Életerô csepp}
 Health_descr
 {
-Your 'Vitality' has dropped! Ez a stat mutatja a karaktered általános állapotát, és hatással van minden attribútumodra.~'Az életerô' az alapgyógyítás, a történet eseményei, az ivás és a túlterhelés használatától csökken.~Állítsd helyre speciális bájitalokkal, romantikával, a kocsmában való pihenéssel vagy egyszerûen csak az idô múlásával. Nehéz esetekben a papok segíthetnek.~Az egyedi tisztek is elveszítik 'Vitalitás' ha súlyosan megsebesülnek a csatában. Szerencsére maguktól visszaszerzik.
+Your 'Vitality' has dropped! Ez a stat mutatja a karaktered általános állapotát, és hatással van minden attribútumodra.
+~
+'Az életerô' az alapgyógyítás, a történet eseményei, az ivás és a túlterhelés használatától csökken.
+~
+Állítsd helyre speciális bájitalokkal, romantikával, a kocsmában való pihenéssel vagy egyszerûen csak az idô múlásával. Nehéz esetekben a papok segíthetnek.
+~
+Az egyedi tisztek is elveszítik 'Vitalitás' ha súlyosan megsebesülnek a csatában. Szerencsére maguktól visszaszerzik.
 }
 Amulet {Amulettek}
 Amulet_descr
 {
-Az amulettek erôteljes erôsítôk a karaktered számára, és támadó, védekezô és támogató típusok léteznek. Nem tudsz egyszerre támadó és védekezô amulettet felszerelni, ezért bölcsen válaszd meg a készleteket.~Két másik típusú erôsítô is létezik: a talizmánok és a bûbájok.~A talizmánok tovább tartanak, mint az amulettek, és szélesebb körû hatásuk van, míg a bûbájok rendkívül erôsek, örökké tartanak, és saját leltárhelyük van.~Mindig tarts néhány készletet a leltárban a kemény képességellenôrzések és a kemény tengeri és szárazföldi harcok esetére.
+Az amulettek erôteljes erôsítôk a karaktered számára, és támadó, védekezô és támogató típusok léteznek. Nem tudsz egyszerre támadó és védekezô amulettet felszerelni, ezért bölcsen válaszd meg a készleteket.
+~
+Két másik típusú erôsítô is létezik: a talizmánok és a bûbájok.
+~
+A talizmánok tovább tartanak, mint az amulettek, és szélesebb körû hatásuk van, míg a bûbájok rendkívül erôsek, örökké tartanak, és saját leltárhelyük van.
+~
+Mindig tarts néhány készletet a leltárban a kemény képességellenôrzések és a kemény tengeri és szárazföldi harcok esetére.
 }
 Amulet_controlsimg1 {Készlet}
 Perk {Perk-pontok}
 Perk_descr
 {
-Most szerezted meg az elsô Perk Pontodat (PP)! Ezek a karakterfejlôdés legfontosabb részei, és tengeri és személyes perkekre oszlanak.~A tengeri perkek erôsebbé tesznek a tengeren, a személyes perkek a szárazföldön és a beszélgetésekben segítenek.~Mindkét PP-típus külön-külön fejlôdik, ahogy a személyes és a hajós képességeid fejlôdnek. Átlagosan minden 30 pont egy képességcsoportban egy PP-t ad.~Ha gyorsan szeretnél tengeri PP-t szerezni, köss hajószerzôdéseket és bérleti szerzôdéseket. A személyes PP gyorsabban nô, ha különbözô fegyverekkel harcolsz és idôt töltesz a kocsmákban.~A személyes PP-k sokkal értékesebbek, mivel a legtöbb tengeri perket a tisztek fedezhetik.
+Most szerezted meg az elsô Perk Pontodat (PP)! Ezek a karakterfejlôdés legfontosabb részei, és tengeri és személyes perkekre oszlanak.
+~
+A tengeri perkek erôsebbé tesznek a tengeren, a személyes perkek a szárazföldön és a beszélgetésekben segítenek.
+~
+Mindkét PP-típus külön-külön fejlôdik, ahogy a személyes és a hajós képességeid fejlôdnek. Átlagosan minden 30 pont egy képességcsoportban egy PP-t ad.
+~
+Ha gyorsan szeretnél tengeri PP-t szerezni, köss hajószerzôdéseket és bérleti szerzôdéseket. A személyes PP gyorsabban nô, ha különbözô fegyverekkel harcolsz és idôt töltesz a kocsmákban.
+~
+A személyes PP-k sokkal értékesebbek, mivel a legtöbb tengeri perket a tisztek fedezhetik.
 }
 Perk_controlsimg1 {Abilities}
 Fighter {Elsôtisztek}
 Fighter_descr
 {
-A vanguardok a legmegbízhatóbb tisztek, testôrök és a frontvonal. Követnek téged a sûrûjébe, és sok idôt fogsz velük tölteni.~Legfeljebb három vadászt tarthatsz magaddal. Amellett, hogy a kapitányt ôrzik a szárazföldön, az elôôrs növeli a beszállás hatékonyságát, és segít a nehéz kincsek elszállításában.~Néhány egyedi tisztet csak a küldetések során találhatsz. Nem mindegyikük nagyszerû elôôrs, de mind hatással van a történetre, és nem halhatnak meg a normál harcban.~Ne felejtsd el felszerelni az embereidet amulettekkel, gyógyítással, fegyverekkel és lôszerrel. A tárgyakat az akciómenüben vagy bármelyik ládában cserélheted.~Az elôôrsöknek parancsot adhatsz, hogy tartsák a pozíciójukat, kövessenek vagy támadjanak a gyorsbillentyûk vagy a párbeszéd segítségével.
+A vanguardok a legmegbízhatóbb tisztek, testôrök és a frontvonal. Követnek téged a sûrûjébe, és sok idôt fogsz velük tölteni.
+~
+Legfeljebb három vadászt tarthatsz magaddal. Amellett, hogy a kapitányt ôrzik a szárazföldön, az elôôrs növeli a beszállás hatékonyságát, és segít a nehéz kincsek elszállításában.
+~
+Néhány egyedi tisztet csak a küldetések során találhatsz. Nem mindegyikük nagyszerû elôôrs, de mind hatással van a történetre, és nem halhatnak meg a normál harcban.
+~
+Ne felejtsd el felszerelni az embereidet amulettekkel, gyógyítással, fegyverekkel és lôszerrel. A tárgyakat az akciómenüben vagy bármelyik ládában cserélheted.
+~
+Az elôôrsöknek parancsot adhatsz, hogy tartsák a pozíciójukat, kövessenek vagy támadjanak a gyorsbillentyûk vagy a párbeszéd segítségével.
 }
 Fighter_controlsimg1 {Abilities}
 Fighter_controlsimg2 {OfficersFollow}
@@ -126,18 +209,41 @@ Fighter_controlsimg4 {OfficersHold}
 Rest {Napszak}
 Rest_descr
 {
-Megváltoztathatod a napszakot!~A játékban minden az idôt követi: éjszaka az ôrök elhagyják a dokkokat és a városkapukat, a kocsmákban csak nappal tudsz legénységet felvenni, és egyes karakterek válogatósak az idôvel kapcsolatban, különösen, ha nekik dolgozol.~A tengeren és a vadonban szabadon használhatod ezt a tulajdonságot, de a városokban a legjobb, ha a tavernában alszol.
+Megváltoztathatod a napszakot!
+~
+A játékban minden az idôt követi: éjszaka az ôrök elhagyják a dokkokat és a városkapukat, a kocsmákban csak nappal tudsz legénységet felvenni, és egyes karakterek válogatósak az idôvel kapcsolatban, különösen, ha nekik dolgozol.
+~
+A tengeren és a vadonban szabadon használhatod ezt a tulajdonságot, de a városokban a legjobb, ha a tavernában alszol.
 }
 Rest_controlsimg1 {BICommandsActivate}
 Stealth {Lopakodás}
 Stealth_descr
 {
-Hozzá kell szoknod, hogy a legtöbb karibi településen nem szívesen látnak.~Egy ellenséges városba kétféleképpen lehet belopózni: a kikötôn vagy a kapukon keresztül.~A biztonságos kikötés egy ellenséges kikötôben komoly elôkészületeket igényel. Nem ellenséges zászlót kell vezetned, és elég magas lopakodási képességgel kell rendelkezned.~A kapukon keresztül a legjobb éjszaka menni, amikor nem ôrzik ôket. Kerüld el a katonákat, és pihenj meg egy kocsmában. Ha riadó van, keress egy házat és várj néhány órát. A pozitívum, hogy nem kell értékes perkpontot költened a zászlók feloldásához.~Mindezeket a problémákat átugorhatod, ha Curaçaón vásárolsz egy kereskedelmi társasági engedélyt, és egy tengeri perkpontot semleges zászlóra költesz.
+Hozzá kell szoknod, hogy a legtöbb karibi településen nem szívesen látnak.
+~
+Egy ellenséges városba kétféleképpen lehet belopózni: a kikötôn vagy a kapukon keresztül.
+~
+A biztonságos kikötés egy ellenséges kikötôben komoly elôkészületeket igényel. Nem ellenséges zászlót kell vezetned, és elég magas lopakodási képességgel kell rendelkezned.
+~
+A kapukon keresztül a legjobb éjszaka menni, amikor nem ôrzik ôket. Kerüld el a katonákat, és pihenj meg egy kocsmában. Ha riadó van, keress egy házat és várj néhány órát. A pozitívum, hogy nem kell értékes perkpontot költened a zászlók feloldásához.
+~
+Mindezeket a problémákat átugorhatod, ha Curaçaón vásárolsz egy kereskedelmi társasági engedélyt, és egy tengeri perkpontot semleges zászlóra költesz.
 }
 SeaBattle {Tengeri csata}
 SeaBattle_descr
 {
-Üdvözöljük a tengeri csatában, kapitány!A fô célod: túlélni és elsüllyeszteni az ellenséges hajókat.~Minden hajónak három fô statisztikája van: hajótest, vitorlák és legénység. Ha a hajótest eléri a nullát, a hajó elsüllyed. A sérült vitorlák lelassítanak, a legénység elvesztése pedig megkönnyíti a partraszállást, és lassítja a hajó minden akcióját.~Mindegyik statnak megvan a legjobb lôszere: grapeshot a legénységhez, chain shot a vitorlákhoz és árbocokhoz, bombák a hajótesthez. Az ágyúgolyók univerzálisak, a legnagyobb hatótávolsággal. A sebzés a lôszer típusától és az azt kilövô ágyútól is függ - minél nagyobb az ágyú, annál nagyobb a sebzés.~Két fô tüzelési mód van. A gyorslövés akkor áll rendelkezésre, amikor az ellenség a tüzelôívedben van. Kezdetben nem túl pontos vagy hatékony, de lehetôvé teszi a dinamikus harcot. A célzott lövés a célzás gombbal aktiválható, és lehetôvé teszi, hogy oldalról nagyon pontosan lôj. Gyakorlatot igényel, de megéri.~Kerüld az ellenséges tüzet, és célozd meg elôször a vitorlákat és árbocokat - ez sokkal kevésbé teszi veszélyessé az ellenséget.~Minden hajónak, a fúrótornyától függôen, van egy optimális iránya a szélhez képest a maximális sebesség eléréséhez. Ezt az iránytû fekete nyilakkal jelzik. A tengeri csaták megnyerésének kulcsa, ha kihasználod a hajód erôsségeit.
+Üdvözöljük a tengeri csatában, kapitány!
+A fô célod: túlélni és elsüllyeszteni az ellenséges hajókat.
+~
+Minden hajónak három fô statisztikája van: hajótest, vitorlák és legénység. Ha a hajótest eléri a nullát, a hajó elsüllyed. A sérült vitorlák lelassítanak, a legénység elvesztése pedig megkönnyíti a partraszállást, és lassítja a hajó minden akcióját.
+~
+Mindegyik statnak megvan a legjobb lôszere: grapeshot a legénységhez, chain shot a vitorlákhoz és árbocokhoz, bombák a hajótesthez. Az ágyúgolyók univerzálisak, a legnagyobb hatótávolsággal. A sebzés a lôszer típusától és az azt kilövô ágyútól is függ - minél nagyobb az ágyú, annál nagyobb a sebzés.
+~
+Két fô tüzelési mód van. A gyorslövés akkor áll rendelkezésre, amikor az ellenség a tüzelôívedben van. Kezdetben nem túl pontos vagy hatékony, de lehetôvé teszi a dinamikus harcot. A célzott lövés a célzás gombbal aktiválható, és lehetôvé teszi, hogy oldalról nagyon pontosan lôj. Gyakorlatot igényel, de megéri.
+~
+Kerüld az ellenséges tüzet, és célozd meg elôször a vitorlákat és árbocokat - ez sokkal kevésbé teszi veszélyessé az ellenséget.
+~
+Minden hajónak, a fúrótornyától függôen, van egy optimális iránya a szélhez képest a maximális sebesség eléréséhez. Ezt az iránytû fekete nyilakkal jelzik. A tengeri csaták megnyerésének kulcsa, ha kihasználod a hajód erôsségeit.
 }
 SeaBattle_controlsimg1 {hk_charge1}
 SeaBattle_controlsimg2 {hk_charge2}
@@ -148,18 +254,33 @@ SeaBattle_controlsimg6 {Ship_Fire}
 BoardingTactics {Beszállás}
 BoardingTactics_descr
 {
-A partraszállás elôtt lôj ki néhány grapeshot sortüzet, hogy meggyengítsd az ellenséges legénységet - anélkül, hogy viszonoznád a tüzet. Amint elônybe kerültél, menj minél közelebb, tartsd a sebességet, és szállj fel!~Minél magasabb a 'Vanguard' tengeri képességed, annál könnyebb megragadni az ellenséges hajókat.~A partraszállás sikere a legénységed létszámától, képességeitôl és moráljától függ. Egy tapasztalt hajóparancsnok, elôôrsök, amulettek és erôs harci képességek ellensúlyozhatják az ellenség létszámát.
+A partraszállás elôtt lôj ki néhány grapeshot sortüzet, hogy meggyengítsd az ellenséges legénységet - anélkül, hogy viszonoznád a tüzet. Amint elônybe kerültél, menj minél közelebb, tartsd a sebességet, és szállj fel!
+~
+Minél magasabb a 'Vanguard' tengeri képességed, annál könnyebb megragadni az ellenséges hajókat.
+~
+A partraszállás sikere a legénységed létszámától, képességeitôl és moráljától függ. Egy tapasztalt hajóparancsnok, elôôrsök, amulettek és erôs harci képességek ellensúlyozhatják az ellenség létszámát.
 }
 Mushket {Muskéták}
 Mushket_descr
 {
-A hosszú csövû lôfegyverek halálosak a harcban. Csak a "Muskétás" perkkel rendelkezô fôszereplô és néhány egyedi tiszt használhatja ôket. A legjobb példa erre Teachingitu - neki adjátok az elsô muskétátokat.~A közelharci fegyverekkel ellentétben az összes lôfegyver nagyon rugalmas - fejleszd a karakteredet lövészként, szerelj fel bizonyos amuletteket és felszereléseket, és használj különbözô lôszertípusokat, hogy bármilyen harcot megfordíts.
+A hosszú csövû lôfegyverek halálosak a harcban. Csak a "Muskétás" perkkel rendelkezô fôszereplô és néhány egyedi tiszt használhatja ôket. A legjobb példa erre Teachingitu - neki adjátok az elsô muskétátokat.
+~
+A közelharci fegyverekkel ellentétben az összes lôfegyver nagyon rugalmas - fejleszd a karakteredet lövészként, szerelj fel bizonyos amuletteket és felszereléseket, és használj különbözô lôszertípusokat, hogy bármilyen harcot megfordíts.
 }
 Mushket_controlsimg1 {Készlet}
 CameraControlFP {Ahoy!}
 CameraControlFP_descr
 {
-Üdvözöljük a Karib-tengeren, kapitány!~A Caribbean Legend egy kemény játék, de könnyen játszható. Ha még nem próbáltad ki a sztorimódot, azt javasoljuk, hogy tölts el néhány órát az alapok elsajátításával.~A játékot a mozgásbillentyûkkel és az egérrel irányítod. A karaktered bármilyen irányban tud sétálni és futni, és sprintelni az extra sebességért.Az akciómenü is nagyon hasznos - nézd meg a sok praktikus funkciót.~Az egérrel szabadon körülnézhetsz - rejtett tárgyakat kereshetsz, szemmel tarthatod a harcot, vagy csak élvezheted a látványt.~Köszönöm a játékot - találkozunk a tengeren!
+Üdvözöljük a Karib-tengeren, kapitány!
+~
+A Caribbean Legend egy kemény játék, de könnyen játszható. Ha még nem próbáltad ki a sztorimódot, azt javasoljuk, hogy tölts el néhány órát az alapok elsajátításával.
+~
+A játékot a mozgásbillentyûkkel és az egérrel irányítod. A karaktered bármilyen irányban tud sétálni és futni, és sprintelni az extra sebességért.
+Az akciómenü is nagyon hasznos - nézd meg a sok praktikus funkciót.
+~
+Az egérrel szabadon körülnézhetsz - rejtett tárgyakat kereshetsz, szemmel tarthatod a harcot, vagy csak élvezheted a látványt.
+~
+Köszönöm a játékot - találkozunk a tengeren!
 }
 CameraControlFP_controlsimg1 {ChrForward}
 CameraControlFP_controlsimg2 {ChrStrafeLeft}
@@ -170,31 +291,62 @@ CameraControlFP_controlsimg6 {LICommandsActivate}
 MarksmanMode {Célzás}
 MarksmanMode_descr
 {
-Bármilyen lôfegyverrel célozhatsz a jobb pontosság érdekében. Tartsd lenyomva a célzás gombot, hogy belépj ebbe a módba. Engedd el a kilépéshez lövés nélkül.~A célzott lövések pontosabbak és halálosabbak, de elveszítesz némi látótávolságot és lassabban mozogsz.~Minél tovább célzol, annál több kárt okozol. A fejlövések még többet okoznak. Ha sérülést szenvedsz, a célzásod visszaáll, és a karaktered megtántorodik.
+Bármilyen lôfegyverrel célozhatsz a jobb pontosság érdekében. Tartsd lenyomva a célzás gombot, hogy belépj ebbe a módba. Engedd el a kilépéshez lövés nélkül.
+~
+A célzott lövések pontosabbak és halálosabbak, de elveszítesz némi látótávolságot és lassabban mozogsz.
+~
+Minél tovább célzol, annál több kárt okozol. A fejlövések még többet okoznak. Ha sérülést szenvedsz, a célzásod visszaáll, és a karaktered megtántorodik.
 }
 MarksmanMode_controlsimg1 {ChrAiming}
 Trading {Kereskedés alapjai}
 Trading_descr
 {
-A kereskedelem egy mély, összetett rendszer, ahol sok tényezô befolyásolja a vételi és eladási árakat.~A szárazföldön a karaktered kereskedelmi képessége és háttere számít a legtöbbet.~A tengeren több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.~Elôbb-utóbb mindezt ki fogod találni, de egyelôre szerezz egy hasznos kereskedelmi amulettet.
+A kereskedelem egy mély, összetett rendszer, ahol sok tényezô befolyásolja a vételi és eladási árakat.
+~
+A szárazföldön a karaktered kereskedelmi képessége és háttere számít a legtöbbet.
+~
+A tengeren több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.
+~
+Elôbb-utóbb mindezt ki fogod találni, de egyelôre szerezz egy hasznos kereskedelmi amulettet.
 }
-Prologue_Navigation {Hajóirányítás}Prologue_Navigation_descr
+Prologue_Navigation {Hajóirányítás}
+Prologue_Navigation_descr
 {
-Üdvözöljük a Karib-tengeren!~Fordítsd meg a hajódat a kormánygombokkal. A hajók nehezek és nagy a tehetetlenségi erejük, ezért lassan fordulnak. Szerezz ráérzést.~A vitorlákat és a sebességet a vitorlamód gombokkal irányíthatod.~Három vitorlamód van: teljes, harci és lefelé. A teljes vitorlák a leggyorsabbak, a csatavitorlák fordulnak a legjobban, a lefelé pedig egyenletes megállást eredményez.~Viharban és tûz alatt engedd le a vitorlákat. Forduláshoz és célzáshoz használd a harc üzemmódot. Üldözéshez semmi sem jobb, mint a teljes vitorlák.~Próbáld ki a különbözô vitorlamódokat és fordulókat, érezd a hajó tehetetlenségét, és élvezd a naplementét!
+Üdvözöljük a Karib-tengeren!
+~
+Fordítsd meg a hajódat a kormánygombokkal. A hajók nehezek és nagy a tehetetlenségi erejük, ezért lassan fordulnak. Szerezz ráérzést.
+~
+A vitorlákat és a sebességet a vitorlamód gombokkal irányíthatod.
+~
+Három vitorlamód van: teljes, harci és lefelé. A teljes vitorlák a leggyorsabbak, a csatavitorlák fordulnak a legjobban, a lefelé pedig egyenletes megállást eredményez.
+~
+Viharban és tûz alatt engedd le a vitorlákat. Forduláshoz és célzáshoz használd a harc üzemmódot. Üldözéshez semmi sem jobb, mint a teljes vitorlák.
+~
+Próbáld ki a különbözô vitorlamódokat és fordulókat, érezd a hajó tehetetlenségét, és élvezd a naplementét!
 }
 Prologue_Navigation_controlsimg1 {Ship_SailUp}
 Prologue_Navigation_controlsimg2 {Ship_TurnLeft}
 Prologue_Navigation_controlsimg3 {Ship_SailDown}
 Prologue_Navigation_controlsimg4 {Ship_TurnRight}
-Prologue_TimeScale {Idôszabályozás}Prologue_TimeScale_descr
+Prologue_TimeScale {Idôszabályozás}
+Prologue_TimeScale_descr
 {
-A játékban sok minden lassan történik - például a vitorlamód váltása vagy az ágyúk újratöltése.~A tengeren, a szárazföldön és a világtérképen felgyorsíthatod vagy lelassíthatod az idôt.~Élvezd az idô feletti hatalmadat, majd irány a hajó fedélzete. Valaki beszélni akar veled.
+A játékban sok minden lassan történik - például a vitorlamód váltása vagy az ágyúk újratöltése.
+~
+A tengeren, a szárazföldön és a világtérképen felgyorsíthatod vagy lelassíthatod az idôt.
+~
+Élvezd az idô feletti hatalmadat, majd irány a hajó fedélzete. Valaki beszélni akar veled.
 }
 Prologue_TimeScale_controlsimg1 {TimeScaleFasterBA}
 Prologue_TimeScale_controlsimg2 {TimeScale}
-Prologue_CameraControl {Ahoy!}Prologue_CameraControl_descr
+Prologue_CameraControl {Ahoy!}
+Prologue_CameraControl_descr
 {
-Üdvözöljük az "Ulysse" fedélzetén! Egy rövid induló kalanddal készültünk neked.~A "Ulysse" rengeteg tennivalót kínál. Ha készen állsz a továbblépésre, válaszd "Üzletet kötni" a kapitány párbeszédében.~Köszönöm a játékot - találkozunk a tengeren!
+Üdvözöljük az "Ulysse" fedélzetén! Egy rövid induló kalanddal készültünk neked.
+~
+A "Ulysse" rengeteg tennivalót kínál. Ha készen állsz a továbblépésre, válaszd "Üzletet kötni" a kapitány párbeszédében.
+~
+Köszönöm a játékot - találkozunk a tengeren!
 }
 Prologue_CameraControl_controlsimg1 {ChrForward}
 Prologue_CameraControl_controlsimg2 {ChrStrafeLeft}
@@ -202,59 +354,150 @@ Prologue_CameraControl_controlsimg3 {ChrBackward}
 Prologue_CameraControl_controlsimg4 {ChrStrafeRight}
 Prologue_CameraControl_controlsimg5 {ShipCamera_Turn_H}
 Prologue_CameraControl_controlsimg6 {LICommandsActivate}
-Prologue_Logbook {Napló és dokumentumok}Prologue_Logbook_descr
+Prologue_Logbook {Napló és dokumentumok}
+Prologue_Logbook_descr
 {
-Minden küldetésedet a "Napló"rögzíti. Fontos, hogy figyelmesen elolvasd a párbeszédeket és a naplóbejegyzéseket - gyakran kulcsfontosságú részleteket és utasításokat tartalmaznak.~Nézd meg a "Logbook" bejegyzéseket. Minden kisebb feladat, amit a “Ulysse” fedélzetén végeztek, ott fog megjelenni.
+Minden küldetésedet a "Napló"rögzíti. Fontos, hogy figyelmesen elolvasd a párbeszédeket és a naplóbejegyzéseket - gyakran kulcsfontosságú részleteket és utasításokat tartalmaznak.
+~
+Nézd meg a "Logbook" bejegyzéseket. Minden kisebb feladat, amit a “Ulysse” fedélzetén végeztek, ott fog megjelenni.
 }
-Prologue_Logbook_controlsimg1 {QuestBook}Prologue_Inventory {Összetett küldetések, dokumentumok és kézmûvesség}
+Prologue_Logbook_controlsimg1 {QuestBook}
+Prologue_Inventory {Összetett küldetések, dokumentumok és kézmûvesség}
 Prologue_Inventory_descr
 {
-A küldetések mellett a "Naplókönyv" más fontos információkat is tartalmaz.~A "Dokumentumok" részben az összes talált jegyzetet elolvashatja.~Most el kell olvasnod a hajó pénztárosának feljegyzését, és ki kell osztanod a duplont a legénységnek a felsoroltak szerint.~Ahhoz, hogy dublonokat szerezz egy ládából, nyisd ki azt az Alkímia készítés mechanikával.Most még csak néhány recepted van, de késôbb még többet kapsz.
+A küldetések mellett a "Naplókönyv" más fontos információkat is tartalmaz.
+~
+A "Dokumentumok" részben az összes talált jegyzetet elolvashatja.
+~
+Most el kell olvasnod a hajó pénztárosának feljegyzését, és ki kell osztanod a duplont a legénységnek a felsoroltak szerint.
+~
+Ahhoz, hogy dublonokat szerezz egy ládából, nyisd ki azt az Alkímia készítés mechanikával.
+Most még csak néhány recepted van, de késôbb még többet kapsz.
 }
 Prologue_Inventory_controlsimg1 {QuestBook}
 Prologue_Inventory_controlsimg2 {Alkímia}
-Prologue_Amulet {Amulettek}Prologue_Amulet_descr
+Prologue_Amulet {Amulettek}
+Prologue_Amulet_descr
 {
-Az amulettek erôteljes erôsítôk a karaktered számára, és támadó, védekezô és támogató típusok léteznek. Nem tudsz egyszerre támadó és védekezô amulettet felszerelni, ezért bölcsen válaszd meg a készleteket.~Két másik típusú erôsítô is létezik: a talizmánok és a bûbájok.~A talizmánok tovább tartanak, mint az amulettek, és szélesebb körû hatásuk van, míg a bûbájok rendkívül erôsek, örökké tartanak, és saját leltárhelyük van.~Mindig tarts néhány készletet a leltárban a kemény képességellenôrzések és a kemény tengeri és szárazföldi harcok esetére.~Vigyázat: ha egyszer aktiválódik, egy amulett vagy talizmán eltávolítása elpusztítja azt - válassz óvatosan.
+Az amulettek erôteljes erôsítôk a karaktered számára, és támadó, védekezô és támogató típusok léteznek. Nem tudsz egyszerre támadó és védekezô amulettet felszerelni, ezért bölcsen válaszd meg a készleteket.
+~
+Két másik típusú erôsítô is létezik: a talizmánok és a bûbájok.
+~
+A talizmánok tovább tartanak, mint az amulettek, és szélesebb körû hatásuk van, míg a bûbájok rendkívül erôsek, örökké tartanak, és saját leltárhelyük van.
+~
+Mindig tarts néhány készletet a leltárban a kemény képességellenôrzések és a kemény tengeri és szárazföldi harcok esetére.
+~
+Vigyázat: ha egyszer aktiválódik, egy amulett vagy talizmán eltávolítása elpusztítja azt - válassz óvatosan.
 }
-Prologue_Trading {Kereskedés alapjai}Prologue_Trading_descr
+Prologue_Trading {Kereskedés alapjai}
+Prologue_Trading_descr
 {
-A kereskedés egy mély, összetett rendszer, ahol számos tényezô befolyásolja az árakat - elsôsorban az Ön 'Kereskedelem ' készsége.~A tengeren még több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.~Elôbb-utóbb mindezt ki fogod találni, de egyelôre vegyél fel egy hasznos amulettet.
+A kereskedés egy mély, összetett rendszer, ahol számos tényezô befolyásolja az árakat - elsôsorban az Ön 'Kereskedelem ' készsége.
+~
+A tengeren még több tényezô van - az áru típusa, eredete, a kolónia mérete, a kereskedelmi útvonalak és a pénztárosod képességei.
+~
+Elôbb-utóbb mindezt ki fogod találni, de egyelôre vegyél fel egy hasznos amulettet.
 }
-Prologue_Overload {Túlterhelés}Prologue_Overload_descr
+Prologue_Overload {Túlterhelés}
+Prologue_Overload_descr
 {
-Elérted az elsô hordozható súlyhatárt.Minden karakternek van egy maximális cipelési súlya, amely az erônléten, állóképességtől, a képességeken és az amuletteken alapul.~Próbálj találni valamit, amivel növelheted a maximális cipelési súlyodat - talán a hajóskapitánytól a legénységi szálláson.
+Elérted az elsô hordozható súlyhatárt.
+Minden karakternek van egy maximális cipelési súlya, amely az erônléten, állóképességtől, a képességeken és az amuletteken alapul.
+~
+Próbálj találni valamit, amivel növelheted a maximális cipelési súlyodat - talán a hajóskapitánytól a legénységi szálláson.
 }
-Prologue_AutoFire {Tengeri csata}Prologue_AutoFire_descr
+Prologue_AutoFire {Tengeri csata}
+Prologue_AutoFire_descr
 {
-Az elsô tengeri csatád Charles de Maure képzeletében zajlik - ne aggódj, csak kísérletezz!~Minden hajónak három fô statisztikája van: a hajótest, a vitorlák és a legénység. Ha a hajótest eléri a nullát, a hajó elsüllyed. A sérült vitorlák lelassítanak, a legénység elvesztése pedig befolyásolja a beszállást, az újratöltést és a vitorlák kezelését.~Minden lôszertípusnak megvan a maga haszna: a grapeshot a legénységre, a chain shot a vitorlákra és árbocokra, a bombák a hajótestre. Az ágyúgolyók univerzálisak, a legnagyobb hatótávolsággal. A sebzés a lôszer típusától és az azt kilövô ágyútól is függ - minél nagyobb az ágyú, annál nagyobb a sebzés.~Két fô tüzelési mód van. A gyorslövés akkor áll rendelkezésre, amikor az ellenség a tüzelôívedben van. Kezdetben nem túl pontos vagy hatékony, de lehetôvé teszi a dinamikus harcot.~Ha a csatát túl lassúnak érzed, gyorsítsd fel az idôvezérlô billentyûkkel.
+Az elsô tengeri csatád Charles de Maure képzeletében zajlik - ne aggódj, csak kísérletezz!
+~
+Minden hajónak három fô statisztikája van: a hajótest, a vitorlák és a legénység. Ha a hajótest eléri a nullát, a hajó elsüllyed. A sérült vitorlák lelassítanak, a legénység elvesztése pedig befolyásolja a beszállást, az újratöltést és a vitorlák kezelését.
+~
+Minden lôszertípusnak megvan a maga haszna: a grapeshot a legénységre, a chain shot a vitorlákra és árbocokra, a bombák a hajótestre. Az ágyúgolyók univerzálisak, a legnagyobb hatótávolsággal. A sebzés a lôszer típusától és az azt kilövô ágyútól is függ - minél nagyobb az ágyú, annál nagyobb a sebzés.
+~
+Két fô tüzelési mód van. A gyorslövés akkor áll rendelkezésre, amikor az ellenség a tüzelôívedben van. Kezdetben nem túl pontos vagy hatékony, de lehetôvé teszi a dinamikus harcot.
+~
+Ha a csatát túl lassúnak érzed, gyorsítsd fel az idôvezérlô billentyûkkel.
 }
-Prologue_AimingFire {Célzott tûz}Prologue_AimingFire_descr
+Prologue_AimingFire {Célzott tûz}
+Prologue_AimingFire_descr
 {
-A célzott tûzzel nagyon pontosan lôhetsz oldalról. Gyakorlatot igényel, de megéri.~A lövegkörök mutatják a széles oldali ágyúid valós helyzetét és röppályáját. Idôre van szükségük, hogy a képernyô közepén lévô célponthoz igazodjanak.~Amikor tüzelsz, az ágyúk oda lônek, ahol a körük abban a pillanatban van, így szükség esetén vezesd a célt.~Célozz egy ellenséges hajóra, hogy megcélozd azt. Miután elfogtad, bármelyik részre célozhatsz, vagy vezetheted a lövéseket.~Ahogy a kapitány és a Cannoneer képességeid fejlôdnek, úgy javul az ágyúk célzása és tûzgyorsasága.~Ha gyorsan mozgatod a célzást, a tüzérek összezavarodnak, és a szokásosnál lassabban céloznak.~A célzott sortüzek nagyszerûek a kritikus hajórészek nagy távolságból történô eltalálására - különösen a vitorlák és árbocok esetében.
+A célzott tûzzel nagyon pontosan lôhetsz oldalról. Gyakorlatot igényel, de megéri.
+~
+A lövegkörök mutatják a széles oldali ágyúid valós helyzetét és röppályáját. Idôre van szükségük, hogy a képernyô közepén lévô célponthoz igazodjanak.
+~
+Amikor tüzelsz, az ágyúk oda lônek, ahol a körük abban a pillanatban van, így szükség esetén vezesd a célt.
+~
+Célozz egy ellenséges hajóra, hogy megcélozd azt. Miután elfogtad, bármelyik részre célozhatsz, vagy vezetheted a lövéseket.
+~
+Ahogy a kapitány és a Cannoneer képességeid fejlôdnek, úgy javul az ágyúk célzása és tûzgyorsasága.
+~
+Ha gyorsan mozgatod a célzást, a tüzérek összezavarodnak, és a szokásosnál lassabban céloznak.
+~
+A célzott sortüzek nagyszerûek a kritikus hajórészek nagy távolságból történô eltalálására - különösen a vitorlák és árbocok esetében.
 }
 Prologue_AimingFire_controlsimg1 {ChrAimingShot}
 Prologue_AimingFire_controlsimg2 {FireCamera_Set}
-Prologue_FightAttack {Támadás}Prologue_FightAttack_descr
+Prologue_FightAttack {Támadás}
+Prologue_FightAttack_descr
 {
-A Caribbean Legendben a harc brutális és gyors, de egyelôre biztonságban vagy.~Minden karakter fel van fegyverezve és harci képességekkel rendelkezik. Minél jobb a fegyvered és minél tapasztaltabb a hôsöd, annál több kárt okozol.~Számos támadó és védekezô mozdulatod van.~Kezdjük a három fô támadással.~Csapás. Gyors, kevesebb kárt okoz, mérsékelt energiát használ.~Lökés. Lassabb, mint a csapás, közepes sebzést okoz, kevés energiát használ.~Nehéz támadás. Lassú és erôteljes, hatalmas sebzést okoz, és képes blokkokat áttörni.~Próbáld ki ezeket a támadásokat a kalózon.
+A Caribbean Legendben a harc brutális és gyors, de egyelôre biztonságban vagy.
+~
+Minden karakter fel van fegyverezve és harci képességekkel rendelkezik. Minél jobb a fegyvered és minél tapasztaltabb a hôsöd, annál több kárt okozol.
+~
+Számos támadó és védekezô mozdulatod van.
+~
+Kezdjük a három fô támadással.
+~
+Csapás. Gyors, kevesebb kárt okoz, mérsékelt energiát használ.
+~
+Lökés. Lassabb, mint a csapás, közepes sebzést okoz, kevés energiát használ.
+~
+Nehéz támadás. Lassú és erôteljes, hatalmas sebzést okoz, és képes blokkokat áttörni.
+~
+Próbáld ki ezeket a támadásokat a kalózon.
 }
 Prologue_FightAttack_controlsimg1 {ChrAltAttackBase}
 Prologue_FightAttack_controlsimg2 {ChrAttackBase}
 Prologue_FightAttack_controlsimg3 {ChrAttackBreakBase}
-Prologue_FightDefence {Combat Védelem}Prologue_FightDefence_descr
+Prologue_FightDefence {Combat Védelem}
+Prologue_FightDefence_descr
 {
-Szép volt! Most a védekezés.~Blokkolás. Minden támadást blokkol, kivéve a nehéz támadást. Lassan mozoghatsz blokkolás közben, és nem használ energiát. Az erôs ellenfelek normál támadásokkal megtörhetik a blokkolásodat, szóval légy készenlétben.~Védekezés. Bármilyen támadást hárít, és az ellenséget egyensúly- és energiavesztésre készteti.~Kitérés. Lehetôvé teszi a pozícióváltást vagy a lövés elkerülését.~Próbáld meg hárítani és blokkolni a kalóz támadásait.~Aztán-ezeld ki ôt.
+Szép volt! Most a védekezés.
+~
+Blokkolás. Minden támadást blokkol, kivéve a nehéz támadást. Lassan mozoghatsz blokkolás közben, és nem használ energiát. Az erôs ellenfelek normál támadásokkal megtörhetik a blokkolásodat, szóval légy készenlétben.
+~
+Védekezés. Bármilyen támadást hárít, és az ellenséget egyensúly- és energiavesztésre készteti.
+~
+Kitérés. Lehetôvé teszi a pozícióváltást vagy a lövés elkerülését.
+~
+Próbáld meg hárítani és blokkolni a kalóz támadásait.
+~
+Aztán-ezeld ki ôt.
 }
 Prologue_FightDefence_controlsimg1 {ChrBlock}
 Prologue_FightDefence_controlsimg2 {ChrParry}
-Prologue_Marksmanship {Lövészet}Prologue_Marksmanship_descr
+Prologue_Marksmanship {Lövészet}
+Prologue_Marksmanship_descr
 {
-A lôfegyverek ritkábbak, mint a közelharci fegyverek, de a Karib-tengeren még mindig komoly kockázatot jelent, hogy meglônek, ezért maradj éber.~A szárazföldön két lövési mód van, akárcsak a tengeren: gyorslövés és célzott lövés.~A gyorslövés egy egyszerû gombnyomás. Gyors, de nem túl hatékony.~A célzott lövés sokkal több kárt okozhat, de védtelenül hagy. Minél tovább célzol, annál több kárt okozol. A fejlövések még többet okoznak.~Tartsd lenyomva a célzás gombot, hogy belépj ebbe a módba. A lövéshez nyomd meg a támadás gombot. Engedd el a célzást a kilépéshez lövés nélkül.
+A lôfegyverek ritkábbak, mint a közelharci fegyverek, de a Karib-tengeren még mindig komoly kockázatot jelent, hogy meglônek, ezért maradj éber.
+~
+A szárazföldön két lövési mód van, akárcsak a tengeren: gyorslövés és célzott lövés.
+~
+A gyorslövés egy egyszerû gombnyomás. Gyors, de nem túl hatékony.
+~
+A célzott lövés sokkal több kárt okozhat, de védtelenül hagy. Minél tovább célzol, annál több kárt okozol. A fejlövések még többet okoznak.
+~
+Tartsd lenyomva a célzás gombot, hogy belépj ebbe a módba. A lövéshez nyomd meg a támadás gombot. Engedd el a célzást a kilépéshez lövés nélkül.
 }
 Prologue_Marksmanship_controlsimg1 {ChrAiming}
 Prologue_Marksmanship_controlsimg2 {ChrAimingShot}
-Prologue_DeadSearch {Fosztogatás}Prologue_DeadSearch_descr
+Prologue_DeadSearch {Fosztogatás}
+Prologue_DeadSearch_descr
 {
-Minden harc után itt az ideje, hogy zsákmányt gyûjts.Bármelyik elesett ellenséget megkeresheted a zsákmány gomb megnyomásával.~Találd meg a gyógyító elixírt, amire Alonsónak szüksége van!
+Minden harc után itt az ideje, hogy zsákmányt gyûjts.
+Bármelyik elesett ellenséget megkeresheted a zsákmány gomb megnyomásával.
+~
+Találd meg a gyógyító elixírt, amire Alonsónak szüksége van!
 }
+

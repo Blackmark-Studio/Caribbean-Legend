@@ -819,7 +819,9 @@ itmdescr_map_sharp_full {Mapa Isla del Tesoro ułożona poprzez połączenie dw�
 itmname_LSC_navigation_map {Wskazówki nawigacyjne do Miasta Porzuconych Statków}
 itmdescr_LSC_navigation_map
 {
-Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.Najpierw należy wypłynąć na 24°21' N i 84°50' W.Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
+Bez tego dokumentu niemożliwe jest dotarcie do Miasta Porzuconych Statków drogą morską.
+Najpierw należy wypłynąć na 24°21' N i 84°50' W.
+Następnie należy płynąć zgodnie z precyzyjnymi wskazówkami.
 }
 itmname_RingCapBook {Dziennik pokładowy 'Santa Lucia'}
 itmdescr_RingCapBook
@@ -1131,7 +1133,8 @@ itmdescr_Mineral30 {Kajdany ręczne używane przez handlarzy niewolników, aby c
 itmname_Mineral31 {Zaklęta Kość}
 itmdescr_Mineral31
 {
-Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.(-10 do Charyzmy, -10 do Oportunizmu).
+Ludzka kość palca z miedzianym pierścieniem. Używana przez czarownice voodoo do czarów.
+(-10 do Charyzmy, -10 do Oportunizmu).
 }
 itmname_Mineral32 {Forma na Pociski}
 itmdescr_Mineral32 {To urządzenie umożliwia odlewanie pocisków o odpowiednim kształcie i rozmiarze dla rewolweru Colt.}

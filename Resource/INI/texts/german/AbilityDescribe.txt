@@ -5,7 +5,7 @@ newline
 BasicDefense {Grundverteidigung}
 perkBasicDefense {Reduziert erlittenen Schaden um $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Fortgeschrittene Verteidigung}
-perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefence|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Verringert erlittenen Schaden um $percent($perkBaseValue(AdvancedDefense|1)) und gegnerischen kritischen Schaden um $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Kritischer Treffer}
 perkCriticalHit {Erhöht die Grundchance auf kritische Treffer um 3,5 %.}
 Grus {Starker Rückhalt}
@@ -215,11 +215,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Schnelle Hände}
-perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um 20 %.}
+perkFastHands {Erhöht die Zieh- und Holstergeschwindigkeit von Schusswaffen um $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Ausrüstung}
-perkAmmoRig {Das Nachladen von Schusswaffen ist 5 % schneller.}
+perkAmmoRig {Das Nachladen von Schusswaffen ist $percent($perkBaseValue(AmmoRig|1)) schneller.}
 Preaim {Einschießen}
-perkPreaim {Zielmodus ist 15 % schneller.}
+perkPreaim {Zielmodus ist $percent($perkBaseValue(Preaim|1)) chneller.}
 KeenEye {Scharfes Auge}
 perkKeenEye {Kopfschüsse verursachen $percent($perkBaseValue(KeenEye|1)) mehr Schaden.}
 PowderFeel {Sinn für Schwarzpulver}
@@ -340,7 +340,10 @@ InstantBoarding {Sofortiges Entern}
 Rush {Die Ometochtli Tinktur}
 perkRush
 {
-Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.~Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
+Berauschende Tinktur, die zur sofortigen Manifestation von enormer Kraft und Ausdauer, einer deutlichen Steigerung der Geschicklichkeit und Reaktionsschnelligkeit mit intensiver Aggression und Unempfindlichkeit gegenüber Schmerzen beiträgt.
+Für 12 Sekunden werden die Angriffe des Charakters viel mächtiger und der eingehende Schaden wird reduziert.
+~
+Diese Fähigkeit hat eine Abklingzeit von 1 Minute.
 }
 perkTrustworthy_alternate {Als Offizier erhält der Charakter eine um $percent($perkBaseValue(Trustworthy|1)) verringerte Bezahlung.}
 perkAlchemy_alternate {Gewährt eine Chance von $percent($perkBaseValue(Alchemy|1)), beim Gebrauch einen Trank nicht zu verbrauchen.}
@@ -354,3 +357,4 @@ perkInvestor_alternate {Erhöht die Fertigkeiten Handel und Führung des Charakt
 perkGossip_alternate {In der Rolle des Gefährten erhöht der Charakter die Macht der Eskadre um $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Jeder vom Charakter getrunkene Trank erhöht den verursachten Schaden um $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Erhöht die Traglast um $perkBaseValue(Looting|1) Pfund.}
+perkMaster_currentBonus {Aktueller Bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}

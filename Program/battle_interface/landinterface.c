@@ -1444,9 +1444,9 @@ void BLI_SetPossibleCommands()
 		}
 	}
 	
-	bOk  = bSeaActive && !bAbordageStarted;
-	bOk1 = bLandInterfaceStart && !LAi_IsFightMode(pchar);			
-	if(bOk || bOk1) 
+	//bOk  = bSeaActive && !bAbordageStarted;
+	//bOk1 = bLandInterfaceStart && !LAi_IsFightMode(pchar);			
+	if(MapCommandEnable()) 
 	{ 
 		bUseCommand = true;
 		objLandInterface.Commands.MapAtlas.enable = true;	
@@ -2437,4 +2437,16 @@ void BI_CrosshairRefresh(float fAimingTime, bool isFindedTarget, aref target)
 	BI_CrosshairUpdatePos(arElement, fSteady);
 	makearef(arElement, objLandInterface.crosshair.elements.right);
 	BI_CrosshairUpdatePos(arElement, fSteady);
+}
+
+bool MapCommandEnable()
+{
+	if(CharacterIsDead(GetMainCharacter())) return false;
+	if(SendMessage(GetMainCharacter(),"ls",MSG_CHARACTER_EX_MSG,"CheckFightMode") != 0) return false;
+	if(bDisableCharacterMenu) return false;// boal
+	if(bAbordageStarted && !bCabinStarted && !bDeckBoatStarted) return false;
+	if(loadedLocation.type == "underwater") return false; // belamour фикс прогулок под водой
+	if(CheckAttribute(pchar,"chr_ai.type") && pchar.chr_ai.type != "player") return false;
+	if(questMovieIsLockPlayerCtrl) return false;
+	return true;
 }

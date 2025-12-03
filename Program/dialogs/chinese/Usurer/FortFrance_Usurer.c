@@ -262,8 +262,8 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 		
 		case "Del_Deluck_3":
-			dialog.text = "这只是我的工作，船长！到今天为止，您航海士的总债务为40达布隆，而且别忘了，利息也在累积……您会支付吗？";
-			link.l1 = "我还没准备好回答, 但我会考虑的。 再见! ";
+			dialog.text = "这只是我的工作, 船长! 到今天为止, 您航海士的总债务为40达布隆, 而且别忘了, 利息也在累积…… 您会支付吗?";
+			link.l1 = "我还没准备好回答, 但我会考虑的。 再见!";
 			link.l1.go = "Del_Deluck_4";
 		break;
 		

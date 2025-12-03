@@ -343,11 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sergio_24":
-			if (startHeroType == 1) sStr = "francuzem, co osobiście nie sprawia mi problemu";
-			if (startHeroType == 2) sStr = "rodowitym hiszpanem, a rodacy muszą sobie pomagać,";
-			if (startHeroType == 3) sStr = "anglikiem";
-			if (startHeroType == 4) sStr = "angielką";
-			dialog.text = "Kapitanie, zdajesz się być człowiekiem, któremu można zaufać. Kolejną bardzo istotną rzeczą jest to, że jesteś "+sStr+" i masz własny statek. Proponuję zawrzeć umowę handlową.";
+			dialog.text = "Kapitanie, zdajesz się być człowiekiem, któremu można zaufać. Kolejną bardzo istotną rzeczą jest to, że jesteś "+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+" i masz własny statek. Proponuję zawrzeć umowę handlową.";
 			link.l1 = "Brzmi obiecująco! Jaki to rodzaj umowy?";
 			link.l1.go = "Sergio_25";
 		break;

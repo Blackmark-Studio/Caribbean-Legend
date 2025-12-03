@@ -2082,6 +2082,7 @@ void LadyBeth_ShipInShore_Vnutri_3(string qName)
 	sld.Payment = true;
 	sld.location = "none";
 	sld.DontClearDead = true;
+	RemoveCaptainOfficers(sld);
 	SaveCurrentNpcQuestDateParam(sld, "HiredDate");
 	SetCompanionIndex(pchar, -1, sti(sld.index));
 	//трюм корабля

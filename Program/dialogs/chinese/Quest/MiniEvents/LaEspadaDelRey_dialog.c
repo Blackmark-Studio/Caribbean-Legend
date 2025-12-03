@@ -133,8 +133,8 @@ void ProcessDialogEvent()
 		break;
 
 		case "LEDR_Gonsalo_14":
-			dialog.text = "事情就是这样发生的。 船上一片混乱。 狂风把缆绳撕碎, 桅杆一个接一个倒下, 砸烂甲板, 压伤船员。 如果你没来得及把自己绑好, 就会被直接卷进海里。 "; if you did, you were crushed by the wreckage. It was no better below deck—cannons, crates, cannonballs flew back and forth like demons, grinding up everything in their path. When we were finally thrown ashore, I was unconscious. I came to on the sand. Boatswain Sergio found me. He had two others with him.";
-			link.l1 = "这么大的船, 收获却不多。 ";
+			dialog.text = "事情就是这样发生的。 整艘船一片混乱。 狂风撕裂了索具, 桅杆一个接一个倒下, 砸碎甲板, 压死人。 来不及把自己绑牢的就被浪卷到海里; 绑住了的又被残骸压住。 甲板下也好不了多少——炮、箱子、炮弹像恶鬼一样来回乱飞, 碾碎一路上的所有东西。 最后我们被掀到岸上时, 我已经失去知觉。 我是在沙滩上醒过来的。 水手长塞尔吉奥找到我, 他身边还带着另外两个人。";
+			link.l1 = "这么大的船, 收获却不多。";
 			link.l1.go = "LEDR_Gonsalo_15";
 		break;
 

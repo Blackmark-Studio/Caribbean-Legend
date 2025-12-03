@@ -5,7 +5,7 @@ void Perk_Muscles(ref chr, ref table, ref function, ref context, string funcName
 {
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) != WEAPON_HEAVY) return;
 
-	SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + M_ACTION_SPEED, PERK_VALUE2_MUSCLES, funcName);
+	SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED, PERK_VALUE2_MUSCLES, funcName);
 }
 
 void Perk_PerfectBalance(ref chr, ref table, ref function, ref context, string funcName)
@@ -236,7 +236,7 @@ void Perk_Mule(ref chr, ref table, ref function, ref context, string funcName)
 {
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) == WEAPON_HEAVY)
 	{
-		SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + M_ACTION_SPEED, PERK_VALUE2_MULE * -WEAPON_HEAVY_ATTACK_SPEED_MTP, funcName);
+		SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED, PERK_VALUE2_MULE * -WEAPON_HEAVY_ATTACK_SPEED_MTP, funcName);
 	}
 
 	if (GetAttributeInt(table, HAS + M_ARMOR_TYPE) == ARMOR_HEAVY)
@@ -263,6 +263,6 @@ void Perk_TieFitAlternate(ref chr, ref table, ref function, ref context, string 
 		case ARMOR_HEAVY:  armorSpeedBonus = -ARMOR_HEAVY_MOVE_SPEED_MTP  * PERK_VALUE2_TIE_FIT; break;
 	}
 
-	if (weaponSpeedBonus > 0.0) SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + M_ACTION_SPEED, weaponSpeedBonus, "Perk_TieFit");
+	if (weaponSpeedBonus > 0.0) SetModifierFromSourceDirect(table, BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED, weaponSpeedBonus, "Perk_TieFit");
 	if (armorSpeedBonus > 0.0)  SetModifierFromSourceDirect(table, M_MOVE_SPEED, armorSpeedBonus, "Perk_TieFit");
 }

@@ -3912,7 +3912,7 @@ void Mtraxx_IgnasioCreateMarko() // ставим Игнасио Марко
 	FantomMakeCoolFighter(sld, 30, 80, 80, "blade_10", "pistol6", "bullet", 150);
 	sld.Dialog.Filename = "Quest\Roger.c";
 	sld.dialog.currentnode = "ignasio";
-	sld.greeting = "captain";
+	//sld.greeting = "captain";
 	sld.name = StringFromKey("Roger_67");
 	sld.lastname = StringFromKey("Roger_68");
 	SetCharacterPerk(sld, "BasicDefense");
@@ -6633,6 +6633,7 @@ void Mtraxx_RetributionPellyFight(string qName) // бой с Тесаком
 void Mtraxx_RetributionSetJeffry(string qName) // ставим Джеффри в шахту №2
 {
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_03")], true);//запретить драться
+	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], true);//запретить драться
 	chrDisableReloadToLocation = true;
 	// ставим Джеффри и его пиратов
 	int iRank = sti(pchar.rank)+MOD_SKILL_ENEMY_RATE;
@@ -6745,6 +6746,7 @@ void Mtraxx_RetributionJeffryFight(string qName) // бой с Джеффри
 	
 	// belamour legendary edition
 	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_03")], false);
+	LAi_LocationFightDisable(&Locations[FindLocation("Judgement_dungeon_05")], false);
 	chrDisableReloadToLocation = true;
 	LAi_group_Delete("EnemyFight");
 	sld = characterFromId("Jeffry");

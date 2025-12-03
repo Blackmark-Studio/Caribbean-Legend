@@ -335,10 +335,10 @@ void ChangeAttributesFromCharacter(ref CopyChref, ref PastChref, bool _dialogCop
 		}
 	}
 
-	if (CheckAttribute(PastChref,"сt"))
+	if (CheckAttribute(PastChref,"ct"))
 	{
-		makearef(arToChar, CopyChref.сt);
-		makearef(arFromChar, PastChref.сt);
+		makearef(arToChar, CopyChref.ct);
+		makearef(arFromChar, PastChref.ct);
 		CopyAttributes(arToChar, arFromChar);
 	}
 

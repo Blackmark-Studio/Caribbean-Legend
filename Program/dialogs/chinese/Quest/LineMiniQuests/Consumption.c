@@ -343,11 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sergio_24":
-			if (startHeroType == 1) sStr = "法国人";
-			if (startHeroType == 2) sStr = "西班牙人";
-			if (startHeroType == 3) sStr = "英国人";
-			if (startHeroType == 4) sStr = "英国人";
-			dialog.text = "船长, 你看起来是个可以信任的人。 另一个非常重要的事情是你是" + sStr + "人, 有自己的船。 我建议我们达成一项贸易协议。 ";
+			dialog.text = "船长, 你看起来是个可以信任的人。 另一个非常重要的事情是你是"+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+"人, 有自己的船。 我建议我们达成一项贸易协议。 ";
 			link.l1 = "听起来很有希望! 什么样的协议? ";
 			link.l1.go = "Sergio_25";
 		break;

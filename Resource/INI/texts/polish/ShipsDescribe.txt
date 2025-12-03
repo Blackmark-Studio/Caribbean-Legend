@@ -26,7 +26,8 @@ Galeon_l {Galeon powstał na początku XVI wieku na bazie karaki i od początku 
 Galeon_sm {Symbol hiszpańskiej potęgi i ambicji. Pokłady lśnią złotymi ozdobami, a na rufie wznosi się wizerunek Matki Miłosierdzia, patronki statku. Dla jednych 'Santa Misericordia' to uosobienie porządku, dla innych – znienawidzony symbol królewskiego ucisku. A niektórzy widzą w niej prawdziwą Opatrzność Bożą.}
 LadyBeth
 {
-Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ten snow ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.Lata jej służby wojskowej dawno minęły, a sława poprzedniego właściciela częściej przyciąga handlarzy antykami i mapami skarbów niż wilków morskich.
+Wspaniały przykład angielskiego szkutnictwa, stworzony do samodzielnej służby patrolowej na niebezpiecznych wodach. Ten snow ma doskonałe właściwości żeglugowe i imponujące uzbrojenie jak na swoje rozmiary, co pozwala jej konkurować z jednostkami wyższych klas.
+Lata jej służby wojskowej dawno minęły, a sława poprzedniego właściciela częściej przyciąga handlarzy antykami i mapami skarbów niż wilków morskich.
 }
 Memento {W tym statku trudno dostrzec stary design angielskiego bryga, który rekompensuje swoje słabe właściwości żeglugowe imponującą siłą ognia i ciężkim, solidnym kadłubem. Ozdobiony plemiennymi amuletami i przesiąknięty śmiercią, przeraża nie tylko wrogów, ale także własną załogę.}
 Corvette {Korwety są przeznaczone do rozpoznania, służby kurierskiej i operacji krążowniczych. Dobra prędkość i zwrotność pozwalają korwecie dogonić lżejsze jednostki i skutecznie unikać walki z cięższymi.}

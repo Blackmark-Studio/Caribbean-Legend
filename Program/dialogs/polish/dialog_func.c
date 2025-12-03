@@ -281,19 +281,41 @@ string NationNameMan(int pNation)
     switch(pNation)
 	{
 		case ENGLAND:
-            return "Anglik";
+            return "anglik";
 		break;
 		case FRANCE:
-            return "Francuz";
+            return "francuz";
 		break;
 		case SPAIN:
-            return "Hiszpan";
+            return "hiszpan";
 		break;
 		case HOLLAND:
-			return "Holender";
+			return "holender";
 		break;
 		case PIRATE:
 			return "pirat";
+		break;
+	}
+}
+
+string NationNameWoman(int pNation)
+{
+    switch(pNation)
+	{
+		case ENGLAND:
+			return "angielka";
+		break;
+		case FRANCE:
+			return "francuzka";
+		break;
+		case SPAIN:
+			return "hiszpanka";
+		break;
+		case HOLLAND:
+			return "holenderka";
+		break;
+		case PIRATE:
+			return "piratka";
 		break;
 	}
 }
@@ -303,16 +325,16 @@ string NationNamePeople(int pNation)
     switch(pNation)
 	{
 		case ENGLAND:
-            return "Anglicy";
+            return "anglicy";
 		break;
 		case FRANCE:
-            return "Francuzi";
+            return "francuzi";
 		break;
 		case SPAIN:
-            return "Hiszpanie";
+            return "hiszpanie";
 		break;
 		case HOLLAND:
-			return "Holendrzy";
+			return "holendrzy";
 		break;
 		case PIRATE:
 			return "piraci";
@@ -325,16 +347,16 @@ string NationNamePeopleAcc(int pNation)
     switch(pNation)
 	{
         case ENGLAND:
-            return "Anglików";
+            return "anglików";
         break;
         case FRANCE:
-            return "Francuzów";
+            return "francuzów";
         break;
         case SPAIN:
-            return "Hiszpanów";
+            return "hiszpanów";
         break;
         case HOLLAND:
-            return "Holendrów";
+            return "holendrów";
         break;
         case PIRATE:
             return "piratów";

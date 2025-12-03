@@ -5,7 +5,7 @@ newline
 BasicDefense {Основная защита}
 perkBasicDefense {Снижает получаемый урон на $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Продвинутая защита}
-perkAdvancedDefense {Снижает получаемый урон на $percent($perkBaseValue(AdvancedDefence|1)), а вражеский критический урон - на $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Снижает получаемый урон на $percent($perkBaseValue(AdvancedDefense|1)), а вражеский критический урон - на $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Критический удар}
 perkCriticalHit {Увеличивает базовый шанс критического удара на 3,5%.}
 Grus {Крепкий хребет}
@@ -210,9 +210,9 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Быстрые руки}
-perkFastHands {Увеличивает скорость выхватывания и убирания огнестрельного оружия на 20%.}
+perkFastHands {Увеличивает скорость выхватывания и убирания огнестрельного оружия на $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Разгрузка}
-perkAmmoRig {Перезарядка огнестрельного оружия ускорена на 5%.}
+perkAmmoRig {Перезарядка огнестрельного оружия ускорена на $percent($perkBaseValue(AmmoRig|1)).}
 Preaim {Пристрелка}
 perkPreaim {Сведение прицела в режиме прицеливания ускорено на $percent($perkBaseValue(Preaim|1)).}
 KeenEye {Зоркий глаз}
@@ -335,8 +335,7 @@ InstantBoarding {Читовый абордаж}
 Rush {Тинктура Ометочтли}
 perkRush
 {
-Пьянящая настойка, способствующая мгновенному проявлению огромной силы и выносливости, существенному увеличению ловкости и быстроты реакции, нечувствительностью к боли и повышенной агрессивностью.
-Действует не более двенадцати секунд с 1-минутным интервалом
+Пьянящая настойка, способствующая мгновенному проявлению огромной силы и выносливости, существенному увеличению ловкости и быстроты реакции, нечувствительностью к боли и повышенной агрессивностью.Действует не более двенадцати секунд с 1-минутным интервалом
 }
 perkTrustworthy_alternate {Будучи офицером, персонаж довольствуется сниженным на $percent($perkBaseValue(Trustworthy|1)) жалованием.}
 perkAlchemy_alternate {Даёт шанс в $percent($perkBaseValue(Alchemy|1)) не потратить зелье при использовании.}

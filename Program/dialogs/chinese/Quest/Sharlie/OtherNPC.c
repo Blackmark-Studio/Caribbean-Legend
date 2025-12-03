@@ -289,7 +289,7 @@ void ProcessDialogEvent()
 		case "Sharlie_sailor_3":
 			dialog.text = "如果只是我自己, 我会立刻签约。 但我有四十个来自‘尤利西斯号’的兄弟跟着我。 他们信任我给他们未来; 我必须确保你不会让他们失望\n"+
 			"你有什么样的船? ";
-			link.l1 = "船就是船, " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name")) + "。 为什么, 这很重要吗? ";
+			link.l1 = "船就是船, " + GetStrSmallRegister(XI_ConvertString(GetBaseShipParamFromType(sti(RealShips[sti(pchar.ship.type)].basetype), "Name"))) + "。 为什么, 这很重要吗? ";
 			link.l1.go = "Sharlie_sailor_4";
 		break;
 		

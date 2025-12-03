@@ -216,11 +216,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Quick Hands}
-perkFastHands {Increases the speed of drawing and holstering firearms by 20%.}
+perkFastHands {Increases the speed of drawing and holstering firearms by $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Loadout}
-perkAmmoRig {Reloading of firearms is 5% faster.}
+perkAmmoRig {Reloading of firearms is $percent($perkBaseValue(AmmoRig|1)) faster.}
 Preaim {Sighting}
-perkPreaim {Aim mode is 15% faster.}
+perkPreaim {Aim mode is $percent($perkBaseValue(Preaim|1)) faster.}
 KeenEye {Keen Eye}
 perkKeenEye {Headshots deal $percent($perkBaseValue(KeenEye|1)) more damage.}
 PowderFeel {Sense of Gunpowder}
@@ -355,3 +355,4 @@ perkInvestor_alternate {Increases the character's Trade and Leadership skills by
 perkGossip_alternate {As a companion, the character increases the squadron's might by $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Each potion consumed by the character increases outgoing damage by $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Increases carry weight by $perkBaseValue(Looting|1) pounds.}
+perkMaster_currentBonus {Current bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}

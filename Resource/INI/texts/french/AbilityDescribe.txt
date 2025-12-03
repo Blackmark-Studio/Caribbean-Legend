@@ -5,7 +5,7 @@ newline
 BasicDefense {Défense de base}
 perkBasicDefense {Réduit les dégâts subis de $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Défense avancée}
-perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefence|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Réduit les dégâts subis de $percent($perkBaseValue(AdvancedDefense|1)) et les dégâts critiques ennemis de $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Coup critique}
 perkCriticalHit {Augmente la chance de coup critique de base de 3,5 %.}
 Grus {Échine solide}
@@ -216,11 +216,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Mains rapides}
-perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de 20 %.}
+perkFastHands {Augmente la vitesse de dégainement et de rengainement des armes à feu de $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Équipement}
-perkAmmoRig {Le rechargement des armes à feu est 5 % plus rapide.}
+perkAmmoRig {Le rechargement des armes à feu est $percent($perkBaseValue(AmmoRig|1)) plus rapide.}
 Preaim {Ajustement}
-perkPreaim {Le mode visée est 15 % plus rapide.}
+perkPreaim {Le mode visée est $percent($perkBaseValue(Preaim|1)) plus rapide.}
 KeenEye {Œil vif}
 perkKeenEye {Les tirs à la tête infligent $percent($perkBaseValue(KeenEye|1)) de dégâts en plus.}
 PowderFeel {Instinct de poudre}
@@ -341,7 +341,10 @@ InstantBoarding {Abordage Instantané}
 Rush {La concoction Ometochtli}
 perkRush
 {
-Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. ~Cet avantage a un temps de recharge de 1 minute.
+Concoction enivrante, contribuant à la manifestation instantanée d'une force et d'une endurance considérables, d'une augmentation significative de la dextérité et de la rapidité de réaction, d'une agressivité intense et d'une insensibilité à la douleur.
+Pendant 12 secondes, les attaques du personnage deviennent beaucoup plus puissantes et les dégâts subis sont réduits. 
+~
+Cet avantage a un temps de recharge de 1 minute.
 }
 perkTrustworthy_alternate {En tant qu'officier, le personnage perçoit un salaire réduit de $percent($perkBaseValue(Trustworthy|1)).}
 perkAlchemy_alternate {Donne une chance de $percent($perkBaseValue(Alchemy|1)) de ne pas consommer la potion lors de son utilisation.}
@@ -355,3 +358,4 @@ perkInvestor_alternate {Augmente les compétences Commerce et Leadership du pers
 perkGossip_alternate {En tant que compagnon, le personnage augmente la puissance de l'escadre de $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Chaque potion bue par le personnage augmente les dégâts infligés de $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Augmente la capacité de portage de $perkBaseValue(Looting|1) livres.}
+perkMaster_currentBonus {Bonus actuel : $percent($attr($context.ct.static.fast_Damage.perk_master))}

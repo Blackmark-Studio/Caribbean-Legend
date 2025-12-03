@@ -5,7 +5,7 @@ newline
 BasicDefense {Podstawowa obrona}
 perkBasicDefense {Odpowiednie trzymanie gardy to podstawa - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(BasicDefense|1)).}
 AdvancedDefense {Zaawansowana obrona}
-perkAdvancedDefense {Obierając odpowiednią pozycje, jesteś w stanie zminimalizować ryzyko bycia trafionym w najbardziej newralgiczne punkty ciała - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(AdvancedDefence|1)) oraz obrażenia krytyczne od wroga o $percent($perkBaseValue(AdvancedDefence|2)).}
+perkAdvancedDefense {Obierając odpowiednią pozycje, jesteś w stanie zminimalizować ryzyko bycia trafionym w najbardziej newralgiczne punkty ciała - Zmniejsza otrzymywane obrażenia o $percent($perkBaseValue(AdvancedDefense|1)) oraz obrażenia krytyczne od wroga o $percent($perkBaseValue(AdvancedDefense|2)).}
 CriticalHit {Cios krytyczny}
 perkCriticalHit {Odpowiednio wymierzony cios może odmienić niemal każdą walke - Zwiększa bazową szansę na cios krytyczny o 3,5%.}
 Grus {Mocny kręgosłup}
@@ -217,11 +217,11 @@ perkTreeNavigator {$key(Navigator)}
 perkTreeTreasurer {$key(Treasurer)}
 perkTreeDoctor {$key(Doctor)}
 FastHands {Szybkie ręce}
-perkFastHands {Zwiększa szybkość dobywania i chowania broni palnej o 20%.}
+perkFastHands {Zwiększa szybkość dobywania i chowania broni palnej o $percent($perkBaseValue(FastHands|1)).}
 AmmoRig {Ekwipunek}
-perkAmmoRig {Przeładowanie broni palnej jest o 5% szybsze.}
+perkAmmoRig {Przeładowanie broni palnej jest o $percent($perkBaseValue(AmmoRig|1)) szybsze.}
 Preaim {Przystrzelanie}
-perkPreaim {Tryb celowania szybszy o 15%.}
+perkPreaim {Tryb celowania szybszy o $percent($perkBaseValue(Preaim|1)).}
 KeenEye {Bystre oko}
 perkKeenEye {Strzały w głowę zadają o 40% więcej obrażeń.}
 PowderFeel {Wyczucie prochu}
@@ -356,3 +356,4 @@ perkInvestor_alternate {Zwiększa umiejętności Handlu i Przywództwa postaci o
 perkGossip_alternate {W roli kompana postać zwiększa siłę eskadry o $percent($perkBaseValue(Gossip|1)).}
 perkMaster_alternate {Każde wypite przez postać mikstura zwiększa zadawane obrażenia o $percent($perkBaseValue(Master|2)).}
 perkLooting_alternate {Zwiększa noszony ciężar o $perkBaseValue(Looting|1) funtów.}
+perkMaster_currentBonus {Aktualny bonus: $percent($attr($context.ct.static.fast_Damage.perk_master))}

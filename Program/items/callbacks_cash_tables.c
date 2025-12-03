@@ -21,7 +21,7 @@ void Battleaxe(ref chr, ref table, ref function, ref context, string funcName)
 	float value = stf(function.arg0);
 	if (GetAttributeInt(table, HAS + M_WEAPON_TYPE) != WEAPON_HEAVY) return;
 
-	SetModifierFromSourceDirect(table, BREAK_STRIKE + "_" + M_DAMAGE, value, ITEM_SLOT_TYPE);
+	IncreaseModifierFromSourceDirect(table, BREAK_STRIKE + "_" + M_DAMAGE, value, ITEM_SLOT_TYPE);
 }
 
 // Ускоряем круговые удары коротким и пробивающие удары длинным
@@ -44,7 +44,7 @@ void ElTrozo(ref chr, ref table, ref function, ref context, string funcName)
 	string modifierName = BLADE_ITEM_TYPE + "_" + M_ACTION_SPEED;
 	int amuletsCount = GetAttributeInt(table, "descriptors." + M_AMULET_TYPE + "_" + AMULET_PAGAN);
 	float value = stf(function.arg0) * amuletsCount;
-	SetModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
+	IncreaseModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
 }
 
 // Молитвослов снижает входящий урон огнестрела от церковных шмоток
@@ -54,7 +54,7 @@ void Euchologion(ref chr, ref table, ref function, ref context, string funcName)
 	int amuletsCount = GetAttributeInt(table, "descriptors." + M_AMULET_TYPE + "_" + AMULET_CHURCH);
 	float value = stf(function.arg0) * amuletsCount;
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value *= 2;
-	SetModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
+	IncreaseModifierFromSourceDirect(table, modifierName, value, ITEM_SLOT_TYPE);
 }
 
 // Нательный крест уменьшает урон от критов
@@ -62,7 +62,7 @@ void Crucifix(ref chr, ref table, ref function, ref context, string funcName)
 {
 	float value = stf(function.arg0);
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value = 0.20;
-	SetModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, value, ITEM_SLOT_TYPE);
+	IncreaseModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, value, ITEM_SLOT_TYPE);
 }
 
 // Святая вода даёт макс хп
@@ -70,7 +70,7 @@ void HolyWater(ref chr, ref table, ref function, ref context, string funcName)
 {
 	float value = stf(function.arg0);
 	if (ShipBonus2Artefact(chr, SHIP_GALEON_SM)) value = 0.25;
-	SetModifierFromSourceDirect(table, M_MTP_HP_MAX, value, ITEM_SLOT_TYPE);
+	IncreaseModifierFromSourceDirect(table, M_MTP_HP_MAX, value, ITEM_SLOT_TYPE);
 }
 
 // Экзотическое оружие наносит больше урона
@@ -112,7 +112,7 @@ void NgomboShield(ref chr, ref table, ref function, ref context, string funcName
 		SetAttribute(table, M_REDUCE_DAMAGE + ".cirass", armorDefence + bonusArmor);
 	}
 
-	if (HasDescriptor(table, "HeartDefence")) SetModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, stf(function.arg1), ITEM_SLOT_TYPE);
+	if (HasDescriptor(table, "HeartDefence")) IncreaseModifierFromSourceDirect(table, M_REDUCE_CRIT_DAMAGE, stf(function.arg1), CIRASS_ITEM_TYPE);
 }
 
 // Книжка Аламиды увеличивает защиту и защиту от урона

@@ -759,10 +759,10 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 		break;
 
 		case "FDM_hull_01":
-			dialog.text = "好吧，我们来算算……要彻底重建船体，我需要各150单位的bakaut、绳索、船用丝绸和树脂——以及10000枚金质双倍金币。别那样看我；大部分钱都用在材料上。这活等同于把船拆散再从头重建。";
-			link.l1 = "算了吧，我不行。把这么多资源运来，还要交出一山黄金去重建，我还没准备好。我 останусь с тем, что есть.";
+			dialog.text = "好吧, 我们来算算…… 要彻底重建船体, 我需要各150单位的bakaut、绳索、船用丝绸和树脂——以及10000枚金质双倍金币。 别那样看我; 大部分钱都用在材料上。 这活等同于把船拆散再从头重建。";
+			link.l1 = "不, 我不这么认为。 我还没准备好带那么多资源, 也不想为了重建交出一大堆金币。 我会用我现有的东西。";
 			link.l1.go = "FDM_hull_thinking";
-			link.l2 = "唉, 为了我的船还有什么不能做的... 好吧, 成交。 ";
+			link.l2 = "唉, 为了我的船还有什么不能做的... 好吧, 成交。";
 			link.l2.go = "FDM_hull_02";
 		break;
 
@@ -963,7 +963,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 			dialog.text = "那么, 你把钱带来了吗? ";
 			if(PCharDublonsTotal() >= 10000)
 			{
-    			link.l2 = "是的，我带来了。按约定的那10 000枚足重的双倍金币。";
+    			link.l2 = "是的, 我带来了。 按约定的那10 000枚足重的双倍金币。";
     			link.l2.go = "FDM_hull_waitmaterials";
             }
             else
@@ -999,6 +999,7 @@ void ProcessCommonDialogEvent(ref NPChar, aref Link, aref NextDiag)
 					UpgradeShipParameter(pchar, tuningName);
 				}
 			}
+			if(CheckAttribute(newShip, "Traits")) RealShips[sti(pchar.Ship.Type)].Traits = newShip.Traits;
 			SetShipSailsFromFile(pchar, "ships/parus_silk.tga");
 			SetSailsColor(pchar, 0); // 白色棉质船帆
 			pchar.ship.hp = GetCharacterShipMaxHP(pchar);

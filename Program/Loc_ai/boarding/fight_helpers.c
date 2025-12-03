@@ -33,7 +33,7 @@ void BRD_FireMusketsShoot(ref pchar, ref echr, int mclass, int eclass, int realm
 		
 		mDamage = mDamage * isEquippedArtefactUse(echr, "amulet_11", 1.0, 0.90);
 		mDamage = mDamage * isEquippedArtefactUse(pchar, "indian_6", 1.0, 1.10);
-		if (IsEquipCharacterByArtefact(pchar, "talisman18"))
+		if (IsCharacterEquippedArtefact(pchar, "talisman18"))
 		{
 			mDamage *= 1.0 + ArticlesBonus(pchar);
 		}

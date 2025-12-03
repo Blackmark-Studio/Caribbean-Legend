@@ -2200,6 +2200,7 @@ bool ThisItemCanBeEquip(aref arItem)
 	if(arItem.groupID == HAT_ITEM_TYPE)
 	{
 		if (!HasHatLocator(xi_refCharacter) && !CanEquipHatDirectly(xi_refCharacter)) return false;
+		if (GetCharacterEquipByGroup(xi_refCharacter, CIRASS_ITEM_TYPE) == "underwater") return false;
 	}
 
 	/* if (xi_refCharacter.id == "Mary" && arItem.groupID == BLADE_ITEM_TYPE)
@@ -2230,9 +2231,12 @@ bool ThisItemCanBeEquip(aref arItem)
 	{
 		return false;
 	}
+
+	if (arItem.id == "underwater" && !IsMainCharacter(xi_refCharacter)) return false;
 	
 	if (arItem.groupID == GUN_ITEM_TYPE) 
 	{
+		if (GetCharacterEquipByGroup(xi_refCharacter, CIRASS_ITEM_TYPE) == "underwater") return false;
 		if (!CheckAttribute(arItem,"chargeQ") )
 		{
 			return false;
@@ -2315,14 +2319,6 @@ bool ThisItemCanBeEquip(aref arItem)
 		else SendMessage(&GameInterface,"lsls",MSG_INTERFACE_MSG_TO_NODE,"EQUIP_BUTTON",0, "#"+XI_ConvertString("Equip that"));
 	}
 	
-	if (IsMainCharacter(xi_refCharacter) || CheckAttribute(xi_refCharacter, "CanTakeMushket"))
-	{
-		if(arItem.ID == "underwater" && IsMusketer(xi_refCharacter))
-		{
-			return false;
-		}
-	}
-	
 	/*if (CheckAttribute(xi_refCharacter, "CanTakeMushket"))
 	{
 		if(CheckAttribute(xi_refCharacter, "IsMushketer"))
@@ -2371,6 +2367,13 @@ void EquipPress()
 
 	if (CheckAttribute(itmRef, "groupID"))
 	{
+		if (itmRef.ID == "underwater") 
+		{
+			RemoveCharacterEquip(xi_refCharacter, MUSKET_ITEM_TYPE);
+			RemoveCharacterEquip(xi_refCharacter, GUN_ITEM_TYPE);
+			RemoveCharacterEquip(xi_refCharacter, HAT_ITEM_TYPE);
+		}
+
 		string itmGroup = itmRef.groupID;
 		if (itmGroup == MAPS_ITEM_TYPE)
 		{

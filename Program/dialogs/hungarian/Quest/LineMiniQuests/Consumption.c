@@ -343,11 +343,7 @@ void ProcessDialogEvent()
 		break;
 		
 		case "Sergio_24":
-			if (startHeroType == 1) sStr = "Francia";
-			if (startHeroType == 2) sStr = "Spanyol";
-			if (startHeroType == 3) sStr = "English";
-			if (startHeroType == 4) sStr = "English";
-			dialog.text = "Kapitány, ön olyan embernek tûnik, akiben meg lehet bízni. Egy másik nagyon fontos dolog, hogy ön " + sStr + " és saját hajója van. Javaslom, kössünk kereskedelmi megállapodást.";
+			dialog.text = "Kapitány, ön olyan embernek tûnik, akiben meg lehet bízni. Egy másik nagyon fontos dolog, hogy ön "+GetSexPhrase(""+NationNameMan(sti(pchar.baseNation))+"",""+NationNameWoman(sti(pchar.baseNation))+"")+" és saját hajója van. Javaslom, kössünk kereskedelmi megállapodást.";
 			link.l1 = "Ígéretesnek hangzik! Milyen megállapodást?";
 			link.l1.go = "Sergio_25";
 		break;

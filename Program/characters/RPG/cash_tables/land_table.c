@@ -36,7 +36,7 @@ void CT_UpdateLandTable(ref chr)
 	CT_SetStrikeAngles(&landTable, &equipTable, chr);
 
 	// мультифайтер
-	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "" + M_DAMAGE, stf(chr.MultiFighter));
+	if (CheckAttribute(chr, "MultiFighter")) AddToAttributeFloat(landTable, BLADE_ITEM_TYPE + "_" + M_DAMAGE, stf(chr.MultiFighter));
 }
 
 void CT_SetAmmoDamage(ref landTable, ref equipTable, ref chr)

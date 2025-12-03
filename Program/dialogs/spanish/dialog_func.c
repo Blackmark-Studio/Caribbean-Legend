@@ -297,6 +297,28 @@ string NationNameMan(int pNation)
 		break;
 	}
 }
+
+string NationNameWoman(int pNation)
+{
+	switch (pNation)
+	{
+	case ENGLAND:
+		return "Inglés";
+		break;
+	case FRANCE:
+		return "Francés";
+		break;
+	case SPAIN:
+		return "Español";
+		break;
+	case HOLLAND:
+		return "Holandés";
+		break;
+	case PIRATE:
+		return "un pirata";
+		break;
+	}
+}
 // boal 13.03.2004 <--
 string NationNamePeople(int pNation)
 {
